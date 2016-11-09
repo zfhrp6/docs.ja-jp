@@ -1,39 +1,42 @@
 ---
 layout: HubPage
-
-title: .NET Core Documentation
-description:
-keywords:
-author:
-manager:
+title: ".NET Core ドキュメント"
+description: 
+keywords: 
+author: 
+manager: 
 ms.date: 06/20/2016
 ms.topic: hubpage
-ms.prod:
-ms.service:
-ms.technology:
-ms.suite:
-ms.assetid:
+ms.prod: 
+ms.service: 
+ms.technology: 
+ms.suite: 
+ms.assetid: 
+translationtype: Human Translation
+ms.sourcegitcommit: 1c68e4bcceffb895a758a6f8abdda41cdafc3590
+ms.openlocfilehash: b9abce6984193957930ebf1ba74822b4cdfe6789
+
 ---
 
 <article id="main">
     <section id="hero-content" class="graph">
-        <h1>.NET Documentation</h1>
-        <h2>Welcome to .NET! This is the home of the technical documentation for .NET Core, C#, F# and Visual Basic, including basic concepts, getting started instructions, tutorials and samples. You can look for an answer to a challenging problem or learn .NET for the first time.</h2>
+        <h1>.NET ドキュメント</h1>
+        <h2>.NET にようこそ! ここには、基本概念、作業開始手順、チュートリアル、サンプルを含む .NET Core、C#、F#、Visual Basic に関する技術文書が記載されています。 困難な問題への回答を見つけたり、初心者が .NET を学習したりできます。</h2>
     </section>
     <aside class="alert section-border">
-        <p>Download .NET Core today</p>
+        <p>.NET Core today を今すぐダウンロードしてください</p>
         <ol class="action-list">
-            <li><a href="https://dot.net/core" class="button-bordered button-translucent">Get it!</a></li>
+            <li><a href="https://dot.net/core" class="button-bordered button-translucent">ここをクリック</a></li>
         </ol>
     </aside>
     <section id="featured" class="container">
-        <h2 class="section-heading"><span class="icon icon-lightbulb-checked"></span> Featured Content</h2>
+        <h2 class="section-heading"><span class="icon icon-lightbulb-checked"></span> 重点コンテンツ</h2>
         <div class="features row">
             <ul class="column-half">
-                <li><a href="docs/core/index.md">Get started with .NET Core</a></li>
+                <li><a href="docs/core/index.md">.NET Core の概要</a></li>
             </ul>
             <ul class="column-half">
-                <li><a href="https://docs.asp.net">Get started with ASP.NET Core</a></li>
+                <li><a href="https://docs.asp.net">ASP.NET Core の概要</a></li>
             </ul>
         </div>
     </section>
@@ -44,30 +47,30 @@ ms.assetid:
                     <header class="journey-step-header row">
                         <div class="title column-third">
                             <span class="icon icon-tip"></span>
-                            <p>Learn the Platform</p>
+                            <p>プラットフォームについて</p>
                         </div>
                         <p class="description column-two-thirds">
-                            Get started with .NET Core and learn the fundamentals of the .NET platform.
+.NET Core を使ってみて、.NET プラットフォームの基本事項を学習します。
                         </p>
                     </header>
                     <section class="journey-step-elements content">
                         <ul class="row">
                             <li class="column column-third">
                                 <a href="docs/welcome.md">
-                                    <h3>.NET Core Documentation</h3>
-                                    <p>Learn .NET Core concepts and language syntax.</p>
+                                    <h3>.NET Core ドキュメント</h3>
+                                    <p>.NET Core の概念と言語構文について学習します。</p>
                                 </a>
                             </li>
                             <li class="column column-third">
                                 <a href="api/index.md">
-                                    <h3>API Reference</h3>
-                                    <p>Browse the .NET API, organized by namespace.</p>
+                                    <h3>API リファレンス</h3>
+                                    <p>名前空間別に編成された .NET API を参照します。</p>
                                 </a>
                             </li>
                             <li class="column column-third">
                                 <a href="docs/core/index.md">
-                                    <h3>Getting Started with .NET Core</h3>
-                                    <p>Learn how to build .NET Core console apps at the command-line or in Visual Studio.</p>
+                                    <h3>.NET Core の概要</h3>
+                                    <p>コマンドラインまたは Visual Studio で .NET Core コンソール アプリをビルドする方法について学習します。</p>
                                 </a>
                             </li>
                         </ul>
@@ -77,10 +80,10 @@ ms.assetid:
                     <header class="journey-step-header row">
                         <div class="title column-third">
                             <span class="icon icon-tip"></span>
-                            <p>Web &amp; Cloud</p>
+                            <p>Web &amp; クラウド</p>
                         </div>
                         <p class="description column-two-thirds">
-                            Learn how to create scalable web apps with ASP.NET Core, including deployment to Microsoft Azure.
+Microsoft Azure へのデプロイを含め、ASP.NET Core でスケーラブルな Web アプリを作成する方法について学習します。
                         </p>
                     </header>
                     <section class="journey-step-elements content">
@@ -88,19 +91,19 @@ ms.assetid:
                             <li class="column column-third">
                                 <a href="https://docs.asp.net">
                                     <h3>ASP.NET Core</h3>
-                                    <p>Learn how to build web sites and services using ASP.NET Core.</p>
+                                    <p>ASP.NET Core を使用して Web サイトおよびサービスをビルドする方法について学習します。</p>
                                 </a>
                             </li>
                             <li class="column column-third">
                                 <a href="https://docs.asp.net/en/latest/data">
-                                    <h3>Accessing Data</h3>
-                                    <p>Learn about Entity Framework for modeling your databases or how to access SQL Server and other databases using .NET.</p>
+                                    <h3>データへのアクセス</h3>
+                                    <p>データベースをモデル化するための Entity Framework について、または .NET を使用して SQL Server およびその他のデータベースにアクセスする方法について学習します。</p>
                                 </a>
                             </li>
                             <li class="column column-third">
                                 <a href="https://www.visualstudio.com/features/azure-tools-vs">
                                     <h3>Microsoft Azure</h3>
-                                    <p>Get Started developing applications using Microsoft Azure.</p>
+                                    <p>Microsoft Azure を使用してアプリケーションの開発を開始します。</p>
                                 </a>
                             </li>
                         </ul>
@@ -110,24 +113,24 @@ ms.assetid:
                     <header class="journey-step-header row">
                         <div class="title column-third">
                             <span class="icon icon-tip"></span>
-                            <p>Mobile</p>
+                            <p>携帯</p>
                         </div>
                         <p class="description column-two-thirds">
-                            Learn how .NET Core and Xamarin can enable you to develop for iOS and Android using C# or about building applications using the Universal Windows Platform (UWP) for Windows 10 devices.
+.NET Core と Xamarin を使用して C# で iOS および Android 向けの開発を行う方法、または Windows 10 デバイス用のユニバーサル Windows プラットフォーム (UWP) を使用してアプリケーションをビルドする方法について学習します。
                         </p>
                     </header>
                     <section class="journey-step-elements content">
                         <ul class="row">
                             <li class="column column-third">
                                 <a href="https://developer.xamarin.com/guides/ios/getting_started/">
-                                    <h3>Android and iOS apps</h3>
-                                    <p>Learn how to build native iOS and Android applications with Xamarin.</p>
+                                    <h3>Android および iOS アプリ</h3>
+                                    <p>Xamarin を使用してネイティブ iOS および Android アプリケーションをビルドする方法について学習します。</p>
                                 </a>
                             </li>
                             <li class="column column-third">
                                 <a href="https://developer.microsoft.com/en-us/windows/getstarted">
-                                    <h3>Universal Windows Platform</h3>
-                                    <p>Learn how to build Windows 10 UWP apps, which can run on all Windows 10 devices.</p>
+                                    <h3>ユニバーサル Windows プラットフォーム</h3>
+                                    <p>すべての Windows 10 デバイス上で実行できる Windows 10 UWP アプリをビルドする方法について学習します。</p>
                                 </a>
                             </li>
                         </ul>
@@ -137,24 +140,24 @@ ms.assetid:
                     <header class="journey-step-header row">
                         <div class="title column-third">
                             <span class="icon icon-tip"></span>
-                            <p>Desktop</p>
+                            <p>デスクトップ</p>
                         </div>
                         <p class="description column-two-thirds">
-                            Learn how you can build desktop applications for Windows and macOS.
+Windows および macOS 向けにデスクトップ アプリケーションをビルドする方法について学習します。
                         </p>
                     </header>
                     <section class="journey-step-elements content">
                         <ul class="row">
                             <li class="column column-third">
                                 <a href="https://msdn.microsoft.com/library/54xbah2z.aspx">
-                                    <h3>Windows Desktop</h3>
-                                    <p>Learn how to build Windows desktop applications with Windows Forms or Windows Presentation Framework (WPF).</p>
+                                    <h3>Windows デスクトップ</h3>
+                                    <p>Windows フォームまたは Windows Presentation Framework (WPF) を使用して Windows デスクトップ アプリケーションをビルドする方法について学習します。</p>
                                 </a>
                             </li>
                             <li class="column column-third">
                                 <a href="https://developer.xamarin.com/guides/cross-platform/macios/">
-                                    <h3>macOS Desktop</h3>
-                                    <p>Learn how to build macOS desktop applications with Xamarin.</p>
+                                    <h3>macOS デスクトップ</h3>
+                                    <p>Xamarin を使用して macOS デスクトップ アプリケーションをビルドする方法について学習します。</p>
                                 </a>
                             </li>
                         </ul>
@@ -164,30 +167,29 @@ ms.assetid:
                     <header class="journey-step-header row">
                         <div class="title column-third">
                             <span class="icon icon-tip"></span>
-                            <p>Gaming</p>
+                            <p>ゲーム</p>
                         </div>
                         <p class="description column-two-thirds">
-                            Learn how to build games using .NET
-                        </p>
+.NET を使用してゲームをビルドする方法について学習します。 </p>
                     </header>
                     <section class="journey-step-elements content">
                         <ul class="row">
                             <li class="column column-third">
                                 <a href="http://docs.cryengine.com/display/CEPROG/CE%23+Programming">
                                     <h3>CRYENGINE</h3>
-                                    <p>Build games for desktop, console and mobile in C# with CRYENGINE.</p>
+                                    <p>CRYENGINE を使用して C# でデスクトップ、コンソール、およびモバイル向けにゲームをビルドします。</p>
                                 </a>
                             </li>
                             <li class="column column-third">
                                 <a href="http://www.monogame.net/documentation/?page=main">
                                     <h3>MonoGame</h3>
-                                    <p>Build games for desktop, console and mobile in C# with MonoGame.</p>
+                                    <p>MonoGame を使用して C# でデスクトップ、コンソール、およびモバイル向けにゲームをビルドします。</p>
                                 </a>
                             </li>
                             <li class="column column-third">
                                 <a href="http://docs.unity3d.com/Manual/index.html">
                                     <h3>Unity</h3>
-                                    <p>Build games for desktop, console and mobile in C# with Unity.</p>
+                                    <p>Unity を使用して C# でデスクトップ、コンソール、およびモバイル向けにゲームをビルドします。</p>
                                 </a>
                             </li>
                         </ul>
@@ -197,3 +199,9 @@ ms.assetid:
         </section>
     </div>
 </article>
+
+
+
+<!--HONumber=Nov16_HO1-->
+
+
