@@ -66,6 +66,6 @@ GC には大きなオブジェクト ヒープ (LOH) と呼ばれる、大きな
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Nov16_HO3-->
 
 
