@@ -161,6 +161,6 @@ GitHub の .NET Core リポジトリでは、コミットおよび PR が毎日�
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Nov16_HO3-->
 
 

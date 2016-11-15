@@ -99,6 +99,6 @@ ASP.NET Core の学習に最適なリソースは、[ASP.NET のサイト](https
 このチュートリアルでは、Windows コンテナーで既存のコンソール アプリケーションを展開する方法について説明します。 作成するコードの完成版は、[GitHub の core-docs リポジトリ](https://github.com/dotnet/docs/tree/master/samples/framework/docker/ConsoleRandomAnswerGenerator)にあります。
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Nov16_HO3-->
 
 
