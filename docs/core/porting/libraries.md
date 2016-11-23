@@ -12,11 +12,11 @@ ms.devlang: dotnet
 ms.assetid: a0fd860d-d6b6-4659-b325-8a6e6f5fa4a1
 translationtype: Human Translation
 ms.sourcegitcommit: 46061efa8e33c6a73befa5181eb33b8deb2fa637
-ms.openlocfilehash: 051c8d46abdafe722eec77a440e384efbae0e70a
+ms.openlocfilehash: 503cf3628ee317f701f467bddc4bcb5998b82af4
 
 ---
 
-# <a name="porting-to-net-core-libraries"></a>.NET Core への移植 - ライブラリ
+# <a name="porting-to-net-core---libraries"></a>.NET Core への移植 - ライブラリ
 
 .NET Core 1.0 がリリースされ、既存のライブラリをコードを移植してクロスプラットフォームを実行できるようになりました。  この記事では、.NET Standard Library、使用できないテクノロジ、.NET Core 1.0 で使用できる少ない数の API の考慮、.NET Core SDK Preview 2 に付属するツールの使用方法、推奨されるコードの移植方法について説明します。
 
@@ -241,7 +241,7 @@ Visual Studio の新しい Xproj プロジェクト システムでは、`projec
 Visual Studio の従来のプロジェクト システムでは、.NET Core をターゲット設定することができます。ターゲット設定するには、ポータブル クラス ライブラリ (PCL) を作成し、プロジェクト構成ダイアログで [.NET Core] を選択します。  次に、.NET Standard に基づくようにプロジェクトのターゲットを再設定する必要があります。
 
 1. Visual Studio でプロジェクト ファイルを右クリックし、[プロパティ] を選択します。
-2. [ビルド] で [Convert to .NET Standard] (.NET Standard に変換) を選択します。
+2. [ビルド] で 「Convert to .NET Standard」 (.NET Standard に変換) を選択します。
 
 より高度なプロジェクト システムが必要な場合、これを選択することをお勧めします。  `xproj` プロジェクト システムなどのプラットフォーム固有のアセンブリを生成してマルチターゲットを設定する場合、「[How to Make Portable Class Libraries Work for You](https://blogs.msdn.microsoft.com/dsplaisted/2012/08/27/how-to-make-portable-class-libraries-work-for-you/)」(ポータブル クラス ライブラリを活用する方法) の説明を参照して、"おとり" の PCL を作成する必要があります。
 
@@ -354,6 +354,6 @@ Visual Studio の従来のプロジェクト システムでは、.NET Core を�
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Nov16_HO3-->
 
 

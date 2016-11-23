@@ -231,7 +231,7 @@ Visual Studio 2015 は、.NET Core アプリケーション開発用の機能を
 
 1.  [プロパティ] ノードをダブルクリックして、プロジェクトのプロパティ ページを開きます
 
-2.  [Targeting header] (対象ヘッダー) で、[Target .NET Platform Standard] (対象 .NET Platform Standard) ハイパーリンクをクリックします
+2.  「Targeting header」 (対象ヘッダー) で、「Target .NET Platform Standard」 (対象 .NET Platform Standard) ハイパーリンクをクリックします
 
 3.  確認を求められたら [はい] をクリックします
 

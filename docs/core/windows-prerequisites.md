@@ -12,7 +12,7 @@ ms.devlang: dotnet
 ms.assetid: c33b1241-ab66-4583-9eba-52cf51146f5a
 translationtype: Human Translation
 ms.sourcegitcommit: 130b94a745b0e3222e205d8af26194239130ec9c
-ms.openlocfilehash: 04018ec65272745ef98a2a96eb30009bcf44cb2e
+ms.openlocfilehash: 2e6483b3f1b8b9e1f36a0f4f7377319871fd5674
 
 ---
 
@@ -57,8 +57,8 @@ Visual C++ 再頒布可能ファイルのバージョンは、Windows のバー�
 
 [Visual Studio 2015 更新プログラム 3.3](https://msdn.microsoft.com/library/mt752379.aspx) を実行していることを確認します。
 
-* [**ヘルプ**] メニューの [**About Microsoft Visual Studio**] (Microsoft Visual Studio のバージョン情報) を選択します。
-* [**About Microsoft Visual Studio**] (Microsoft Visual Studio のバージョン情報) ダイアログ ボックスのバージョン番号が 14.0.25424.00 以上であり、"更新プログラム 3" が含まれている必要があります。
+* [**ヘルプ**] メニューの **「About Microsoft Visual Studio」** (Microsoft Visual Studio のバージョン情報) を選択します。
+* **「About Microsoft Visual Studio」** (Microsoft Visual Studio のバージョン情報) ダイアログ ボックスのバージョン番号が 14.0.25424.00 以上であり、"更新プログラム 3" が含まれている必要があります。
 * 更新プログラム 3 が含まれていない場合、まず [Visual Studio 2015 の更新プログラム 3](https://www.visualstudio.com/news/releasenotes/vs2015-update3-vs) をダウンロードしてインストールする必要があります。
 * 更新プログラム 3 がインストールされているが、バージョン番号が 14.0.25424.00 よりも小さい場合、[Visual Studio 2015 更新プログラム 3.3](https://msdn.microsoft.com/library/mt752379.aspx) をダウンロードしてインストールする必要があります。
 
@@ -77,10 +77,10 @@ NuGet は、.NET Core などの Microsoft 開発プラットフォーム用の�
 > [!NOTE]
 現時点では、[.NET Core 1.0.1 - VS 2015 Tooling Preview 2][sdk] のオフライン インストーラーはダウンロードできません。 代わりに、[正規のブートストラップ] [sdk] をダウンロードし、(`/layout c:\path` などの) コマンド ライン オプションを使用してオフラインのレイアウトを取得します。 その後、実行可能ファイルをローカル パスから実行し、オフラインのインストーラーとして使用します。 なお、これは完全なレイアウトであるため、この手順によって、約 1 GB のサポート対象のすべての言語のすべてのパッケージがダウンロードされます。
 
-[SDK]: https://go.microsoft.com/fwlink/?LinkID=827546
+[sdk]: https://go.microsoft.com/fwlink/?LinkID=827546
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Nov16_HO3-->
 
 
