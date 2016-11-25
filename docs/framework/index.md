@@ -11,12 +11,12 @@ ms.technology: dotnet-bcl
 ms.devlang: dotnet
 ms.assetid: a27b2ae4-154e-4b2b-b221-0c4c05185274
 translationtype: Human Translation
-ms.sourcegitcommit: 6b9ae37f4053d292c21b02f9e7f93ccd32a78976
-ms.openlocfilehash: 9228135d6d4f60ef005375712b1c549423b72803
+ms.sourcegitcommit: 38561c2d25c6950d166bf706f4306c867e683b04
+ms.openlocfilehash: cd7442b304ff28b02826a84684b594dfdd0d9873
 
 ---
 
-# <a name="net-framework"></a>.NET Framework
+# <a name="net-framework-on-docker-guide"></a>Docker 上の .NET Framework のガイド
 
 .NET Framework は、Windows、Windows Phone、Windows Server、および Microsoft Azure 用のアプリケーションを作成するための開発プラットフォームです。 .NET Framework は、共通言語ランタイム (CLR) と、広範なテクノロジをサポートするクラス、インターフェイス、および値型が含まれる .NET Framework クラス ライブラリで構成されます。 .NET Framework によって、マネージ実行環境の使用、開発と配置の簡略化、Visual Basic、Visual C# および F# を含む各種のプログラミング言語との統合などが可能になります。
 
@@ -25,6 +25,6 @@ ms.openlocfilehash: 9228135d6d4f60ef005375712b1c549423b72803
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Nov16_HO3-->
 
 

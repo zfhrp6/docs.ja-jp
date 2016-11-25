@@ -12,7 +12,7 @@ ms.devlang: dotnet
 ms.assetid: 3af62252-1dfa-4336-8d2f-5cfdb57d7724
 translationtype: Human Translation
 ms.sourcegitcommit: 15c55a87beb64f265a164db918c7721c7690fadf
-ms.openlocfilehash: ca63b25bb5f5e98167aaa8b74a7204fcd77b3523
+ms.openlocfilehash: 7a3f972debee1e90deda57e5604214ff4756da4a
 
 ---
 
@@ -33,13 +33,13 @@ ms.openlocfilehash: ca63b25bb5f5e98167aaa8b74a7204fcd77b3523
   * 同じソリューション ファイルの異なるプロジェクト ファイルをまたいで .NET Core ライブラリを共有することはできません。 これをサポートするには、[ポータブル クラス ライブラリを作成する](#support-pcl)ことが推奨されます。
   * MSBuild のターゲットやタスクでサポートされるプロジェクト ビルドや読み込み変更は許可されません。 これをサポートするには、[ポータブル クラス ライブラリを作成する](#support-pcl)ことが推奨されます。
 
-* [**既存のプロジェクトと新しい .NET Core プロジェクトを別々に保存する**][option-xproj-folder]
+* <a name="support-vs"></a>[**既存のプロジェクトと新しい .NET Core プロジェクトを別々に保存する**][option-xproj-folder]
   
   *効果:*
   * 既存のプロジェクトで引き続き開発をサポートします。Visual Studio 2015 を所有していない開発者/貢献者はアップグレードする必要がありません。
   * 既存のプロジェクトで新しいバグが発生する可能性が減ります。既存のプロジェクトではコード チャーンが要求されないためです。
 
-* [**既存のプロジェクトを保持し、.NET Core をターゲットにするポータブル クラス ライブラリ (PCL) を作成する**][option-pcl]
+* <a name="support-pcl"></a>[**既存のプロジェクトを保持し、.NET Core をターゲットにするポータブル クラス ライブラリ (PCL) を作成する**][option-pcl]
 
   *効果:*
   * デスクトップまたは Web プロジェクトで .NET Core ライブラリを参照し、同じソリューションの完全 .NET Framework をターゲットにします。
@@ -58,7 +58,7 @@ ms.openlocfilehash: ca63b25bb5f5e98167aaa8b74a7204fcd77b3523
 
 下に説明する既存のプロジェクトの制約や複雑性にもよりますが、このリポジトリのために .NET Core のサポートを追加する方法がいくつかあります。
 
-## <a name="replace-existing-projects-with-a-multitargeted-net-core-project-xproj"></a>既存のプロジェクトとターゲットが複数ある .NET Core Project (xproj) を置換します
+## <a name="replace-existing-projects-with-a-multi-targeted-net-core-project-xproj"></a>既存のプロジェクトとターゲットが複数ある .NET Core Project (xproj) を置換します
 
 リポジトリを再整理できます。既存の `*.csproj` ファイルが削除され、複数のフレームワークをターゲットにするシングル `*.xproj` ファイルが作成されます。  異なるフレームワークに対してシングル プロジェクトでコンパイルできるので、この方法が推奨されます。  さまざまなコンパイル オプション、依存関係などを処理することもできます。 対象のフレームワークごとに。
 
@@ -125,6 +125,6 @@ project.json と xproj に移行する方法に関する詳細については、
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Nov16_HO3-->
 
 

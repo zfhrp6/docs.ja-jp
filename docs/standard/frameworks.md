@@ -1,6 +1,6 @@
 ---
-title: "フレームワーク"
-description: "フレームワーク"
+title: "フレームワークとターゲット"
+description: ".NET のコードを記述するときのフレームワーク ターゲットの概念について説明します。"
 keywords: .NET, .NET Core
 author: richlander
 manager: wpickett
@@ -11,12 +11,12 @@ ms.technology: .net-core-technologies
 ms.devlang: dotnet
 ms.assetid: 6ef56a2e-593d-497b-925a-1e25bb6df2e6
 translationtype: Human Translation
-ms.sourcegitcommit: 246d381246e78a27b7097d6b8126f421b52014de
-ms.openlocfilehash: 5b87ddfcfc66ebc05e2e559517180f93813a0806
+ms.sourcegitcommit: 38561c2d25c6950d166bf706f4306c867e683b04
+ms.openlocfilehash: 82ba6f4abe200dc48158eac1ad3e3609feeda2c9
 
 ---
 
-# <a name="frameworks"></a>フレームワーク
+# <a name="frameworks-and-targets"></a>フレームワークとターゲット
 
 .NET エコシステムには、フレームワークの概念があります。 フレームワークは、特定のプラットフォームをターゲットにするために使用できる API を定義します。 .NET Framework 4.6 は、これらのプラットフォームの 1 つです。 フレームワークは、Visual Studio やその他の IDE およびエディターで、適切な API セットを提供するために使用されます。 これらは、対象としているフレームワークの適切なパッケージ (および基になるアセット) を確実に作成して使用するため、NuGet パッケージの運用と使用の両方で NuGet でも使用されます。 .NET エコシステムにおける基軸通貨の 1 つとしてフレームワークを考えることができます。 概念は正確性のためにあり、実行時に @System.MissingMethodException やフレンドがユーザーおよび顧客に表示されないようにしるものです。
 
@@ -61,6 +61,6 @@ ms.openlocfilehash: 5b87ddfcfc66ebc05e2e559517180f93813a0806
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Nov16_HO3-->
 
 
