@@ -215,7 +215,7 @@ End If
  
 [RegexOptions.None](xref:System.Text.RegularExpressions.RegexOptions.None) オプションは正規表現エンジンの既定の動作を表しているので、メソッド呼び出しで明示的に指定されることはほとんどありません。 代わりに、options パラメーターを使用せずにコンストラクターまたは静的パターン一致メソッドが呼び出されます。
 
-## <a name="caseinsensitive-matching"></a>大文字と小文字を区別しない一致
+## <a name="case-insensitive-matching"></a>大文字と小文字を区別しない一致
 
 [RegexOptions.IgnoreCase](xref:System.Text.RegularExpressions.RegexOptions.IgnoreCase) オプションまたは **i** インライン オプションを指定すると、大文字と小文字を区別しない一致が実行されます。 既定では、現在のカルチャの大文字と小文字の表記規則が使用されます。
 
@@ -543,7 +543,7 @@ End Class
 '    Joe: 164
 ```
 
-## <a name="singleline-mode"></a>単一行モード
+## <a name="single-line-mode"></a>単一行モード
 
 [RegexOptions.Singleline](xref:System.Text.RegularExpressions.RegexOptions.Singleline) オプションまたは s インライン オプションを指定すると、正規表現エンジンでは、入力文字列が単一行で構成されているかのように処理されます。 具体的には、ピリオド (**.**) 言語要素の動作を変更して、改行文字 (**\n** または \u000A) を除く任意の文字ではなく、改行文字を含む任意の 1 文字と一致するようにします。
 
@@ -1233,7 +1233,7 @@ End Module
 '       Instead, it is a nonsensical paragraph.
 ```
 
-## <a name="righttoleft-mode"></a>右から左モード
+## <a name="right-to-left-mode"></a>右から左モード
 
 既定では、正規表現エンジンは左から右の方向に検索します。 この検索の方向を反転するには、[RegexOptions.RightToLeft](xref:System.Text.RegularExpressions.RegexOptions.RightToLeft) オプションを使用します。 検索は、文字列の最後の文字位置から自動的に開始されます。 [Regex.Match(String, Int32)](xref:System.Text.RegularExpressions.Regex.Match(System.String,System.Int32)) など、開始位置のパラメーターを含むパターン一致メソッドの場合は、検索の開始位置である右端の文字位置のインデックスが開始位置になります。 
 
