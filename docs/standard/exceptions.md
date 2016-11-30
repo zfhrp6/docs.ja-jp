@@ -26,7 +26,7 @@ ms.openlocfilehash: 5271b63a47aa2fcc81cd9c8b1ffd22e618829412
 
 .NET では、例外は [System.Exception](xref:System.Exception) クラスから継承されるオブジェクトです。 例外は問題が発生したコード領域からスローされます。 例外は、アプリケーションが処理するかプログラムが終了するまで、スタックに渡されます。
 
-## <a name="exceptions-vs-traditional-errorhandling-methods"></a>例外と従来のエラー処理メソッド
+## <a name="exceptions-vs-traditional-error-handling-methods"></a>例外と従来のエラー処理メソッド
 
 言語のエラー処理モデルは従来、エラーを検出してそれに対応したハンドラーを見つける言語固有の方法か、オペレーティング システムが備えているエラー処理機構のいずれかを使用していました。 .NET が例外処理を実装する方法は、次の利点をもたらします。
 
@@ -247,7 +247,7 @@ public class ProcessFile
 }
 ```
 
-## <a name="how-to-create-userdefined-exceptions"></a>ユーザー定義の例外を作成する方法
+## <a name="how-to-create-user-defined-exceptions"></a>ユーザー定義の例外を作成する方法
 
 .NET 基本クラス @System.Exception. から最終的に派生した例外クラスの階層構造を提供します。ただし、定義済みの例外のいずれも要件を満たさない場合は、@System.Exception クラスから派生することによって、独自の例外クラスを作成できます。
 
