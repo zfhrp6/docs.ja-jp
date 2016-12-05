@@ -32,7 +32,7 @@ ms.openlocfilehash: d8b2def6b766aa1af9318fe5b0620f4db4a2ee43
                                     </div>
                                 </div>
                                 <div class="cardText">
-                                    <h3>C# の使用を開始する</h3>
+                                    <h3>C# の使用を開始する#</h3>
                                 </div>
                             </div>
                         </div>
@@ -177,7 +177,7 @@ ms.openlocfilehash: d8b2def6b766aa1af9318fe5b0620f4db4a2ee43
                                             <div class="cardText">
                                                 <h3><a href="/dotnet/articles/csharp">C# のガイド</a></h3>
                                                 <p><a href="/dotnet/articles/csharp/getting-started">開始するには</a></p>
-                                                <p><a href="/dotnet/articles/csharp/tour-of-csharp">C# のツアー</a></p>
+                                                <p><a href="/dotnet/articles/csharp/tour-of-csharp">C# のツアー#</a></p>
                                                 <p><a href="/dotnet/articles/csharp/language-reference">C# 言語リファレンス</a></p>
                                             </div>
                                         </div>
@@ -196,7 +196,7 @@ ms.openlocfilehash: d8b2def6b766aa1af9318fe5b0620f4db4a2ee43
                                             <div class="cardText">
                                                 <h3><a href="/dotnet/articles/fsharp">F# のガイド</a></h3>
                                                 <p><a href="/dotnet/articles/fsharp/tutorials/getting-started">開始するには</a></p>
-                                                <p><a href="/dotnet/articles/fsharp/tour">F# のツアー</a></p>
+                                                <p><a href="/dotnet/articles/fsharp/tour">F# のツアー#</a></p>
                                                 <p><a href="/dotnet/articles/fsharp/language-reference">F# 言語リファレンス</a></p>
                                             </div>
                                         </div>
