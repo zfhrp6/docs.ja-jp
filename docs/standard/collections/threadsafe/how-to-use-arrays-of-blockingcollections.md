@@ -3,11 +3,11 @@ title: "方法: パイプラインでブロッキング コレクションの配
 description: "方法: パイプラインでブロッキング コレクションの配列を使用する"
 keywords: .NET, .NET Core
 author: mairaw
-manager: wpickett
+ms.author: mairaw
 ms.date: 06/20/2016
 ms.topic: article
-ms.prod: .net-core
-ms.technology: .net-core-technologies
+ms.prod: .net
+ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: 278a6566-09ba-4022-8802-e160e75b86af
 translationtype: Human Translation

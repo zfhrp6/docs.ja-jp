@@ -4,11 +4,10 @@ description: ".NET Core CLI ツールと共有ランタイムをインストー�
 keywords: "dotnet-install, dotnet-install スクリプト, .NET Core"
 author: blackdwarf
 ms.author: mairaw
-manager: wpickett
 ms.date: 10/12/2016
 ms.topic: article
 ms.prod: .net-core
-ms.technology: .net-core-technologies
+ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: 59b9c456-2bfd-4adc-8202-a1c6a0a6c787
 translationtype: Human Translation
@@ -17,7 +16,7 @@ ms.openlocfilehash: 08a401abed36e68caa7172e05184d18469fef48f
 
 ---
 
-#<a name="dotnetinstall-scripts-reference"></a>dotnet-install スクリプト参照
+#<a name="dotnet-install-scripts-reference"></a>dotnet-install スクリプト参照
 
 ## <a name="name"></a>名前
 dotnet-install.ps1 | dotnet-install.sh - コマンド ライン インターフェイス (CLI) ツールと共有ランタイムをインストールするために使用するスクリプト

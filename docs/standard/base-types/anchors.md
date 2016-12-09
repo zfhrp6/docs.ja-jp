@@ -4,11 +4,10 @@ description: "正規表現のアンカー"
 keywords: .NET, .NET Core
 author: stevehoag
 ms.author: shoag
-manager: wpickett
 ms.date: 07/28/2016
 ms.topic: article
-ms.prod: .net-core
-ms.technology: .net-core-technologies
+ms.prod: .net
+ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: 96dff1be-3005-4ba5-af1b-323182a26085
 translationtype: Human Translation
@@ -835,7 +834,7 @@ End Module
 `\w*` | 0 個以上の単語に使用される文字に一致します。
 `\b` | ワード境界で照合を終了します。
  
-## <a name="nonword-boundary-b"></a>ワード境界以外: \B
+## <a name="non-word-boundary-b"></a>ワード境界以外: \B
 
 **\B** アンカーは、ワード境界には一致しないことを指定します。 これは、**\b** アンカーと逆の働きをします。
 

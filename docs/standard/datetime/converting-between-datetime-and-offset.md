@@ -3,11 +3,11 @@ title: "DateTime と DateTimeOffset 間の変換"
 description: "DateTime と DateTimeOffset 間の変換"
 keywords: .NET, .NET Core
 author: stevehoag
-manager: wpickett
+ms.author: shoag
 ms.date: 08/15/2016
 ms.topic: article
-ms.prod: .net-core
-ms.technology: .net-core-technologies
+ms.prod: .net
+ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: fab3af5b-5d0f-4384-a40a-1b5d99b30dd1
 translationtype: Human Translation
@@ -417,7 +417,7 @@ Console.WriteLine("{0} converted to {1} {2}", _
 '       11/4/2007 4:00:00 AM -05:00 converted to 11/4/2007 1:00:00 AM Local
 ```
 
-## <a name="a-generalpurpose-conversion-method"></a>汎用変換メソッド
+## <a name="a-general-purpose-conversion-method"></a>汎用変換メソッド
 
 次の例では、[DateTimeOffset](xref:System.DateTimeOffset) 値を [DateTime](xref:System.DateTime) 値に変換する `ConvertFromDateTimeOffset` という名前のメソッドを定義します。 オフセットに基づき、[DateTimeOffset](xref:System.DateTimeOffset) 値が UTC 時刻、現地時刻、またはその他の時刻であるかどうかを判断し、その結果に応じて、返される日時値の [Kind](xref:System.DateTime.Kind) プロパティを定義します。 
 

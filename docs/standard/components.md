@@ -3,12 +3,11 @@ title: ".NET アーキテクチャ コンポーネント"
 description: ".NET Standard Library、.NET ランタイム、ツールなど、主要な .NET アーキテクチャ コンポーネントについて説明します。"
 keywords: ".NET, .NET Standard Library, .NET Standard, .NET Core, .NET Framework, Xamarin, MSBuild, C#, F#, VB, コンパイラ"
 author: cartermp
-manager: wpickett
-ms.author: cartermp
+ms.author: mairaw
 ms.date: 11/16/2016
 ms.topic: article
 ms.prod: .net
-ms.technology: .net-core-technologies
+ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: 2e38e9d9-8284-46ee-a15f-199adc4f26f4
 translationtype: Human Translation

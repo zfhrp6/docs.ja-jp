@@ -3,11 +3,11 @@ title: "フレームワーク ライブラリ"
 description: "フレームワーク ライブラリ"
 keywords: .NET, .NET Core
 author: richlander
-manager: wpickett
+ms.author: ronpet
 ms.date: 06/20/2016
 ms.topic: article
-ms.prod: .net-core
-ms.technology: .net-core-technologies
+ms.prod: .net
+ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: 7b77b6c1-8367-4602-bff3-91e4c05ac643
 translationtype: Human Translation
@@ -58,7 +58,7 @@ BCL は最も基本的な型およびユーティリティの機能を提供し�
 *   [XDocument](https://msdn.microsoft.com/library/system.xml.linq.xdocument.aspx): LINQ を使用して XML ドキュメントのロードと照会をするための API です。
 *   [StreamReader](https://msdn.microsoft.com/library/system.io.streamreader.aspx): ファイル ([StreamWriter](https://msdn.microsoft.com/library/system.io.stringwriter.aspx)) を読み取るための API です。ファイルの書き込みに使用できます。
 
-## <a name="appmodel-apis"></a>アプリ モデル API
+## <a name="app-model-apis"></a>アプリ モデル API
 
 .NET で使用できる多くのアプリ モデルが、複数の企業から提供されています。
 

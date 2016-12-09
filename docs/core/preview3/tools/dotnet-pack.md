@@ -2,12 +2,12 @@
 title: "dotnet-pack コマンド | .NET Core SDK"
 description: "dotnet-pack コマンドでは、.NET Core プロジェクトの NuGet パッケージを作成します。"
 keywords: "dotnet-pack, CLI, CLI コマンド, .NET Core"
-author: mairaw
-manager: wpickett
+author: blackdwarf
+ms.author: mairaw
 ms.date: 10/12/2016
 ms.topic: article
 ms.prod: .net-core
-ms.technology: .net-core-technologies
+ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: 8b4b8cef-f56c-4a10-aa01-fde8bfaae53e
 translationtype: Human Translation

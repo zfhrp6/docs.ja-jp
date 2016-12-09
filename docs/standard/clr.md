@@ -3,11 +3,11 @@ title: "共通言語ランタイム (CLR)"
 description: "共通言語ランタイム (CLR)"
 keywords: .NET, .NET Core
 author: rpetrusha
-manager: wpickett
+ms.author: ronpet
 ms.date: 06/20/2016
 ms.topic: article
-ms.prod: .net-core
-ms.technology: .net-core-technologies
+ms.prod: .net
+ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: 7704d9c9-e5fa-4969-a423-081cce0e21e6
 translationtype: Human Translation

@@ -4,11 +4,10 @@ description: "正規表現におけるバックトラッキング"
 keywords: .NET, .NET Core
 author: stevehoag
 ms.author: shoag
-manager: wpickett
 ms.date: 07/28/2016
 ms.topic: article
-ms.prod: .net-core
-ms.technology: .net-core-technologies
+ms.prod: .net
+ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: 8a3e6298-26b7-4c99-bd97-c9892f6c9418
 translationtype: Human Translation
@@ -236,7 +235,7 @@ End Module
 
 バックトラッキングを使用すると、強力かつ柔軟な正規表現を作成できますが、 前のセクションで見たように、受け入れられないほどのパフォーマンスの低下が伴うことがあります。 過度なバックトラッキングを回避するには、[Regex](xref:System.Text.RegularExpressions.Regex) オブジェクトをインスタンス化したり静的な正規表現の一致メソッドを呼び出したりするときに、タイムアウト間隔を定義する必要があります。 これについては、次のセクションで説明します。 また、.NET Core では、バックトラッキングを制限または抑制する 3 つの正規表現言語要素がサポートされています。これらを使用すると、パフォーマンスをほとんど低下させずに複雑な正規表現を使用できます。それらの言語要素とは、[非バックトラッキング部分式](#nonbacktracking-subexpression)、[後読みアサーション](#lookbehind-assertions)、および[先読みアサーション](#lookahead-assertions)です。 各言語要素の詳細については、「[正規表現でのグループ化構成体](grouping.md)」を参照してください。
 
-### <a name="defining-a-timeout-interval"></a>タイムアウト間隔の定義
+### <a name="defining-a-time-out-interval"></a>タイムアウト間隔の定義
 
 正規表現エンジンが単一の一致を検索する最長間隔を表すタイムアウト値を設定できます。それを超えると試行が中止され、[RegexMatchTimeoutException](xref:System.Text.RegularExpressions.RegexMatchTimeoutException) 例外がスローされます。 タイムアウト間隔を指定するには、インスタンス正規表現の `Regex(String, RegexOptions, TimeSpan)` コンストラクターに [TimeSpan](xref:System.TimeSpan) 値を指定します。 また、各静的パターン一致メソッドには、[Regex.Regex(String, RegexOptions, TimeSpan)] パラメーターに対する [TimeSpan](xref:System.TimeSpan) 値を持つオーバーロードがあり、これを使用してタイムアウト値を指定できます。 既定のタイムアウト間隔は [Regex.InfiniteMatchTimeout](xref:System.Text.RegularExpressions.Regex.InfiniteMatchTimeout) に設定されており、正規表現エンジンはタイムアウトしません。 
 

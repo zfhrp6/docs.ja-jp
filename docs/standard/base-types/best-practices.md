@@ -4,11 +4,10 @@ description: "正規表現に関するベスト プラクティス"
 keywords: .NET, .NET Core
 author: stevehoag
 ms.author: shoag
-manager: wpickett
 ms.date: 07/26/2016
 ms.topic: article
-ms.prod: .net-core
-ms.technology: .net-core-technologies
+ms.prod: .net
+ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: 096fd614-91bf-4296-be24-12f62b062294
 translationtype: Human Translation
@@ -686,7 +685,7 @@ End Module
 **(?<**=_subexpression_**)** | ゼロ幅の肯定後読みです。 現在の位置からの後読みにより、*subexpression* が入力文字列に一致するかどうかを確認します。
 **(?<!**_subexpression_**)** | ゼロ幅の否定後読みです。 現在の位置からの後読みにより、*subexpression* が入力文字列に一致しないかどうかを確認します。
  
-## <a name="use-timeout-values"></a>タイムアウト値を使用する
+## <a name="use-time-out-values"></a>タイムアウト値を使用する
 
 正規表現が正規表現パターンにほぼ一致する入力を処理する場合は、パフォーマンスに大きな影響を与える過度なバックトラッキングに依存することがよくあります。 慎重にバックトラッキングの使用を検討し、ほぼ一致する入力に対して正規表現をテストすることに加えて、過度なバックトラッキングが発生した場合にその影響を確実に最小限に抑えるために、必ずタイムアウト値を設定する必要があります。
 

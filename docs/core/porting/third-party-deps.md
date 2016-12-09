@@ -3,11 +3,10 @@ title: ".NET Core への移植 - サードパーティの依存関係の分析"
 description: ".NET Core への移植 - サードパーティの依存関係の分析"
 keywords: .NET, .NET Core
 author: cartermp
-manager: wpickett
+ms.author: mairaw
 ms.date: 06/20/2016
 ms.topic: article
 ms.prod: .net-core
-ms.technology: .net-core-technologies
 ms.devlang: dotnet
 ms.assetid: b446e9e0-72f6-48f6-92c6-70ad0ce3f86a
 translationtype: Human Translation

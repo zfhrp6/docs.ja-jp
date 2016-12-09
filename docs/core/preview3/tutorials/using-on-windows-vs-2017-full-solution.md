@@ -3,11 +3,10 @@ title: "Visual Studio 2017 を使用した Windows での完全な .NET Core ソ
 description: "Visual Studio 2017 を使用した Windows での完全な .NET Core ソリューションの構築"
 keywords: .NET, .NET Core
 author: bleroy
-manager: wpickett
+ms.author: mairaw
 ms.date: 11/16/2016
 ms.topic: article
 ms.prod: .net-core
-ms.technology: .net-core-technologies
 ms.devlang: dotnet
 ms.assetid: d743134a-08a3-4ff6-aab7-49f71f0568c3
 translationtype: Human Translation
@@ -26,9 +25,9 @@ Visual Studio 2017 は、.NET Core アプリケーション開発用の機能を
 
 [前提条件のページ](../windows-prerequisites.md)の指示に従って、環境を更新します。
 
-# <a name="a-solution-using-only-net-core-projects"></a>.NET Core プロジェクトのみを使用するソリューション
+## <a name="a-solution-using-only-net-core-projects"></a>.NET Core プロジェクトのみを使用するソリューション
 
-## <a name="writing-the-library"></a>ライブラリの作成
+### <a name="writing-the-library"></a>ライブラリの作成
 
 1. Visual Studio で、**[ファイル]**、**[新規作成]**、**[プロジェクト]** の順に選択します。 **[新しいプロジェクト]** ダイアログで **[Visual C#]** ノードを展開し、**[.NET Core]** ノードを選択して **[クラス ライブラリ (.NET Standard)]** を選択します。 
 

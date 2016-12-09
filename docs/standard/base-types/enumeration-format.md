@@ -3,11 +3,11 @@ title: "列挙型書式指定文字列"
 description: "列挙型書式指定文字列"
 keywords: .NET, .NET Core
 author: stevehoag
-manager: wpickett
+ms.author: shoag
 ms.date: 07/25/2016
 ms.topic: article
-ms.prod: .net-core
-ms.technology: .net-core-technologies
+ms.prod: .net
+ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: 4d581898-99bc-42c3-816c-d8238f45096f
 translationtype: Human Translation

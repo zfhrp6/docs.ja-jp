@@ -4,11 +4,10 @@ description: "正規表現でのグループ化構成体"
 keywords: .NET, .NET Core
 author: stevehoag
 ms.author: shoag
-manager: wpickett
 ms.date: 07/29/2016
 ms.topic: article
-ms.prod: .net-core
-ms.technology: .net-core-technologies
+ms.prod: .net
+ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: e0bf3718-e64b-460b-b73d-66678cec6093
 translationtype: Human Translation
@@ -613,7 +612,7 @@ Next
 '    'decidedly ' found at index 9. 
 ```
 
-## <a name="zerowidth-positive-lookahead-assertions"></a>ゼロ幅の肯定先読みアサーション
+## <a name="zero-width-positive-lookahead-assertions"></a>ゼロ幅の肯定先読みアサーション
 
 次のグループ化構成体は、ゼロ幅の肯定先読みアサーションを定義します。
 
@@ -692,7 +691,7 @@ End Module
 `\w+` | 1 つ以上の単語文字に一致します。
 `(?=\sis\b)` | 単語文字に使用される文字の後に、空白文字とワード境界で終了する文字列 "is" が続くかどうかを確認します。 該当する場合は一致と見なされます。
 
-## <a name="zerowidth-negative-lookahead-assertions"></a>ゼロ幅の否定先読みアサーション
+## <a name="zero-width-negative-lookahead-assertions"></a>ゼロ幅の否定先読みアサーション
 
 次のグループ化構成体は、ゼロ幅の否定先読みアサーションを定義します。
 
@@ -806,7 +805,7 @@ End Module
 `\b` | ワード境界で照合を終了します。
 `\p{P})` | 次の文字が区切り記号 (ピリオドやコンマなど) ではない場合は一致と見なされます。
  
-## <a name="zerowidth-positive-lookbehind-assertions"></a>ゼロ幅の正の後読みアサーション
+## <a name="zero-width-positive-lookbehind-assertions"></a>ゼロ幅の正の後読みアサーション
 
 次のグループ化構成体は、ゼロ幅の正の後読みアサーションを定義します。
 
@@ -866,7 +865,7 @@ End Module
  
 ゼロ幅の正の後読みアサーションは、キャプチャされたグループの最後の文字がそのグループの正規表現パターンと一致する文字のサブセットになる必要がある場合に、バックトラッキングを制限するためにも使用されます。 たとえば、グループが連続するすべての単語文字をキャプチャする場合に、ゼロ幅の正の後読みアサーションを使用して、最後の文字がアルファベットになるように要求できます。 
 
-## <a name="zerowidth-negative-lookbehind-assertions"></a>ゼロ幅の負の後読みアサーション
+## <a name="zero-width-negative-lookbehind-assertions"></a>ゼロ幅の負の後読みアサーション
 
 次のグループ化構成体は、ゼロ幅の負の後読みアサーションを定義します。
 

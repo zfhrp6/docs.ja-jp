@@ -3,12 +3,11 @@ title: ".NET の使用を開始する"
 description: "言語とプラットフォームの観点から、.NET の使用開始に関するさまざまな記事の一覧を示します。"
 keywords: ".NET, 使用開始, C#, F#, Visual Basic"
 author: cartermp
-manager: wpickett
-ms.author: phcart
+ms.author: mairaw
 ms.date: 11/16/2016
 ms.topic: article
 ms.prod: .net
-ms.technology: .net-core-technologies
+ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: 81c07080-acdf-4aef-a66d-0ab52fab2c04
 translationtype: Human Translation

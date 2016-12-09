@@ -4,11 +4,10 @@ description: "正規表現の動作の詳細"
 keywords: .NET, .NET Core
 author: stevehoag
 ms.author: shoag
-manager: wpickett
 ms.date: 07/28/2016
 ms.topic: article
-ms.prod: .net-core
-ms.technology: .net-core-technologies
+ms.prod: .net
+ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: 6f11047f-45a4-4caf-a259-18abe08cc0d2
 translationtype: Human Translation
@@ -480,7 +479,7 @@ End Module
 
 非バックトラッキング部分式の詳細については、「[正規表現でのグループ化構成体](grouping.md)」をご覧ください。
 
-### <a name="righttoleft-matching"></a>右から左への一致
+### <a name="right-to-left-matching"></a>右から左への一致
 
 右から左への一致。[Regex](xref:System.Text.RegularExpressions.Regex) クラス コンストラクターまたは静的インスタンス一致メソッドに [RegexOptions.RightToLeft](xref:System.Text.RegularExpressions.RegexOptions.RightToLeft) オプションを設定すると指定されます。 この機能は、左から右ではなく右から左に向かって検索する場合や、パターンの左側ではなく右側で検索を開始した方が効果的な場合に便利です。 次の例に示すように、右から左への一致を使用すると、最長一致の量指定子の動作を変更できます。 この例では、数字で終わる文に対して 2 つの検索を実行します。 最長一致の量指定子 `+` を使用する左から右への検索では、文中の 6 桁の数字の 1 つと一致しますが、右から左への検索では 6 桁の数字すべてと一致します。 正規表現パターンの説明については、このセクションで前に示した最短一致の量指定子の例を参照してください。
 

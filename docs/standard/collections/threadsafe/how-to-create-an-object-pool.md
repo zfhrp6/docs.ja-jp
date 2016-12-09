@@ -3,11 +3,11 @@ title: "方法: ConcurrentBag を使用してオブジェクト プールを作�
 description: "方法: ConcurrentBag を使用してオブジェクト プールを作成する"
 keywords: .NET, .NET Core
 author: mairaw
-manager: wpickett
+ms.author: mairaw
 ms.date: 06/20/2016
 ms.topic: article
-ms.prod: .net-core
-ms.technology: .net-core-technologies
+ms.prod: .net
+ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: 87a6ada1-ee27-423d-b587-82e7cb45361b
 translationtype: Human Translation

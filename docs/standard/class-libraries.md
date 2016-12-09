@@ -3,11 +3,11 @@ title: ".NET クラス ライブラリ"
 description: ".NET クラス ライブラリ"
 keywords: .NET, .NET Core
 author: richlander
-manager: wpickett
+ms.author: mairaw
 ms.date: 06/20/2016
 ms.topic: article
-ms.prod: .net-core
-ms.technology: .net-core-technologies
+ms.prod: .net
+ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: a67484c3-fe92-44d8-8fa3-36fa2071d880
 translationtype: Human Translation
@@ -26,7 +26,7 @@ ms.openlocfilehash: eee8fcaff41db5821e4b6aa61875d6a4bcd80b10
 *   **ポータブル** クラス ライブラリは、API のサブセットへのアクセスがあり、複数のプラットフォームを対象とするアプリケーションとライブラリで使用できます。
 *   **.NET Core** クラス ライブラリは、プラットフォーム固有のライブラリとポータブル ライブラリの概念を両方の長所を持つ 1 つのモデルに統合しています。
 
-## <a name="platformspecific-class-libraries"></a>プラットフォーム固有のクラス ライブラリ
+## <a name="platform-specific-class-libraries"></a>プラットフォーム固有のクラス ライブラリ
 
 プラットフォーム固有のライブラリは 1 つの .NET プラットフォーム (たとえば、Windows 上の .NET Framework) にバインドされるため、既知の 1 つの実行環境に大きく依存する可能性があります。 そのような環境は既知の API のセット (.NET および OS API) を公開し、予想される状態 (Windows レジストリ) を維持および公開します。
 

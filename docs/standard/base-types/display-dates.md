@@ -3,11 +3,11 @@ title: "方法: グレゴリオ暦以外の暦の日付を表示する"
 description: "方法: グレゴリオ暦以外の暦の日付を表示する"
 keywords: .NET, .NET Core
 author: stevehoag
-manager: wpickett
+ms.author: shoag
 ms.date: 07/26/2016
 ms.topic: article
-ms.prod: .net-core
-ms.technology: .net-core-technologies
+ms.prod: .net
+ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: 93f06e1d-544b-4ccc-a0b2-95cd674852cb
 translationtype: Human Translation
@@ -16,7 +16,7 @@ ms.openlocfilehash: 85c9d450be48c553ea3a1f1a0f16c298941fa325
 
 ---
 
-# <a name="how-to-display-dates-in-nongregorian-calendars"></a>方法: グレゴリオ暦以外の暦の日付を表示する
+# <a name="how-to-display-dates-in-non-gregorian-calendars"></a>方法: グレゴリオ暦以外の暦の日付を表示する
 
 [DateTime](xref:System.DateTime) 型と [DateTimeOffset](xref:System.DateTimeOffset) 型は既定の暦としてグレゴリオ暦を使用しています。 つまり、日付と時刻値の `ToString` メソッドを呼び出すと、その日付の時刻が別の暦を使用して作成された場合でも、その日付の時刻はグレゴリオ暦の文字列形式で表示されます。 これを次の例で示します。この例では、2 つの方法を使用してペルシャ暦で日付と時刻の値を作成していますが、[ToString](xref:System.DateTime.ToString) メソッドを呼び出すと、これらの日付と時刻の値はグレゴリオ暦で表示されます。 この例では、一般的に使われているものの、特定の暦で日付を表示するには正しくない 2 つの手法が反映されています。
 

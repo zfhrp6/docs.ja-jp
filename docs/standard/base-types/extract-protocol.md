@@ -3,11 +3,11 @@ title: "方法: URL からプロトコルとポート番号を抽出する"
 description: "方法: URL からプロトコルとポート番号を抽出する"
 keywords: .NET, .NET Core
 author: stevehoag
-manager: wpickett
+ms.author: shoag
 ms.date: 07/28/2016
 ms.topic: article
-ms.prod: .net-core
-ms.technology: .net-core-technologies
+ms.prod: .net
+ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: d2462fb4-6d61-44ab-8466-73f1f06c3058
 translationtype: Human Translation

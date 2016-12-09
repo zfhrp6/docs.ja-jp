@@ -4,11 +4,10 @@ description: "dotnet-nuget-push コマンドでは、パッケージをサーバ
 keywords: "dotnet-nuget-push, CLI, CLI コマンド, .NET Core"
 author: karann-msft
 ms.author: mairaw
-manager: wpickett
 ms.date: 11/11/2016
 ms.topic: article
 ms.prod: .net-core
-ms.technology: .net-core-technologies
+ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: f54d9adf-94f8-41cc-bb52-42f7ca3be6ff
 translationtype: Human Translation

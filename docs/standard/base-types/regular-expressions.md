@@ -3,11 +3,11 @@ title: ".NET の正規表現"
 description: ".NET の正規表現"
 keywords: .NET, .NET Core
 author: stevehoag
-manager: wpickett
+ms.author: shoag
 ms.date: 07/26/2016
 ms.topic: article
-ms.prod: .net-core
-ms.technology: .net-core-technologies
+ms.prod: .net
+ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: d1a640cf-09ca-48f7-800c-a627a6d549c9
 translationtype: Human Translation
@@ -150,7 +150,7 @@ End Module
 
 入力文字列には部分文字列 "this? This" が含まれています。 ただし、句読点が介在するので、重複として識別されません。
 
-### <a name="example-3-dynamically-building-a-culturesensitive-regular-expression"></a>例 3: カルチャに依存した正規表現の動的な構築
+### <a name="example-3-dynamically-building-a-culture-sensitive-regular-expression"></a>例 3: カルチャに依存した正規表現の動的な構築
 
 ここでは、正規表現による強力なテキスト処理と、.NET の柔軟なグローバリゼーション機能を組み合わせて使用する例を紹介します。 この例では、システムの現在のカルチャで用いられている通貨値の形式を調べるために、[NumberFormatInfo](xref:System.Globalization.NumberFormatInfo) オブジェクトが使用されています。 さらに、その情報を基に、テキストから通貨値を抽出する正規表現を動的に構築します。 検出された一致ごとに、数値文字列のみを含んだサブグループを抽出し、[Decimal](xref:System.Decimal) 値に変換して、通算の合計を計算します。 
 

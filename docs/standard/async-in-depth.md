@@ -3,11 +3,11 @@ title: "非同期の詳細"
 description: ".NET での非同期コードの動作についての詳細な説明"
 keywords: ".NET, .NET Core, .NET の標準"
 author: cartermp
-manager: wpickett
+ms.author: wiwagn
 ms.date: 06/20/2016
 ms.topic: article
-ms.prod: .net-core
-ms.technology: .net-core-technologies
+ms.prod: .net
+ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: 1e38f9d9-8f84-46ee-a15f-199aec4f2e34
 translationtype: Human Translation
@@ -35,7 +35,7 @@ Task は、[Promise Model of Concurrency](https://en.wikipedia.org/wiki/Futures_
 
 タスクと、タスクを処理するさまざまな方法について詳しく知るには、[タスクベースの非同期パターン (TAP) に関する記事](https://msdn.microsoft.com/library/hh873175.aspx)を参照してください。
 
-## <a name="deeper-dive-into-tasks-for-an-iobound-operation"></a>I/O バインド操作に関するタスクの詳細
+## <a name="deeper-dive-into-tasks-for-an-io-bound-operation"></a>I/O バインド操作に関するタスクの詳細
 
 次のセクションでは、一般的な非同期 I/O 呼び出しで実行される処理の概要について説明します。 はじめに例を 2 つ示します。
 
@@ -117,7 +117,7 @@ public async Task<string> GetFirstCharactersCountAsync(string url, int count)
 
 さらに、UI スレッドへの作業の処理依頼 (UI の更新など) は、`async` メソッドを使用すればとても簡単で、余分な作業 (スレッドセーフ デリゲートの呼び出しなど) は必要ありません。
 
-## <a name="deeper-dive-into-task-and-taskt-for-a-cpubound-operation"></a>CPU バインド操作の Task と Task<T> の詳細
+## <a name="deeper-dive-into-task-and-taskt-for-a-cpu-bound-operation"></a>CPU バインド操作の Task と Task<T> の詳細
 
 CPU バインドの `async` コードは、I/O バインドの `async` コードとは少し異なります。  作業は CPU で実行されるため、スレッドを計算専用にすることを避ける方法はありません。  `async` と `await` を使用すると、バックグラウンドのスレッドをクリーンな方法で使用でき、非同期メソッドの呼び出し元の応答性を維持できます。  これにより共有データに対する保護は提供されないことに注意してください。  共有データを使用している場合は、適切な同期戦略を適用する必要があります。
 

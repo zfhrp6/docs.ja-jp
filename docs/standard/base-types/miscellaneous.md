@@ -4,11 +4,10 @@ description: "正規表現でのその他のコンストラクト"
 keywords: .NET, .NET Core
 author: stevehoag
 ms.author: shoag
-manager: wpickett
 ms.date: 07/29/2016
 ms.topic: article
-ms.prod: .net-core
-ms.technology: .net-core-technologies
+ms.prod: .net
+ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: 478901dc-db6c-4d90-9d3b-f5cfdca2cbf5
 translationtype: Human Translation
@@ -228,7 +227,7 @@ End Module
 '       Group 1: Dreaded
 ```
 
-## <a name="endofline-comment"></a>行末のコメント
+## <a name="end-of-line-comment"></a>行末のコメント
 
 シャープ記号 (**#**) は、正規表現パターンの末尾のエスケープ解除された # 文字から始まり、行の末尾まで続く x モード コメントをマークします。 このコンストラクトを使用するには、[Regex](xref:System.Text.RegularExpressions.Regex) オブジェクトをインスタンス化したり、静的 [Regex](xref:System.Text.RegularExpressions.Regex) メソッドを呼び出したりする際に、**x** オプションを有効にする (インライン オプションによって) か、または *option* パラメーターに [RegexOptions.IgnorePatternWhitespace](xref:System.Text.RegularExpressions.RegexOptions.IgnorePatternWhitespace) 値を指定する必要があります。 
 

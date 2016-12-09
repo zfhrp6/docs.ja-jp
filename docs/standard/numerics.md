@@ -3,11 +3,11 @@ title: ".NET Core における数値"
 description: ".NET Core における数値"
 keywords: .NET, .NET Core
 author: rpetrusha
-manager: wpickett
+ms.author: ronpet
 ms.date: 06/20/2016
 ms.topic: article
-ms.prod: .net-core
-ms.technology: .net-core-technologies
+ms.prod: .net
+ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: 6b8696be-55f5-4b66-98f3-69ff827c2c49
 translationtype: Human Translation
@@ -39,7 +39,7 @@ ms.openlocfilehash: 2930bf6879df3cd16cbd0221ae6dfcba9b41de2e
      
 符号なし整数型が CLS に準拠していないことに注意してください。 詳細については、[.NET 共通型システムと共通言語仕様](common-type-system.md)に関するページを参照してください。
 
-## <a name="floatingpoint-types"></a>浮動小数点型
+## <a name="floating-point-types"></a>浮動小数点型
 
 .NET Core には、次の表に示す 3 つプリミティブ浮動小数点型が含まれています。 
 
@@ -61,7 +61,7 @@ ms.openlocfilehash: 2930bf6879df3cd16cbd0221ae6dfcba9b41de2e
 
 [System.Numerics.Complex](https://docs.microsoft.com/dotnet/core/api/System.Numerics.Complex) 型は、複素数つまり実数部と虚数部のある数を表します。 これは、算術、比較、等価、明示的な変換、および暗黙的な変換の演算子の標準セットをサポートします。さらに数学、代数、および三角関数のメソッドもサポートします。 
 
-## <a name="simdenabled-vector-types"></a>SIMD 対応ベクター型
+## <a name="simd-enabled-vector-types"></a>SIMD 対応ベクター型
 
 `System.Numerics` 名前空間には、.NET Core 用の SIMD 対応ベクター型のセットが含まれています。 SIMD では、一部の操作をハードウェア レベルで並列に処理できます。その結果、ベクターに対して計算を実行する数値演算アプリ、科学系アプリ、グラフィックス アプリでは、パフォーマンスが大幅に向上します。 
 

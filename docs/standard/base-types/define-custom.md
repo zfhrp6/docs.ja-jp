@@ -3,11 +3,11 @@ title: "方法: カスタム数値書式プロバイダーを定義して使用�
 description: "方法: カスタム数値書式プロバイダーを定義して使用する"
 keywords: .NET, .NET Core
 author: stevehoag
-manager: wpickett
+ms.author: shoag
 ms.date: 07/26/2016
 ms.topic: article
-ms.prod: .net-core
-ms.technology: .net-core-technologies
+ms.prod: .net
+ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: 9b184114-6612-4c1a-a2db-2e24e65b0f77
 translationtype: Human Translation
