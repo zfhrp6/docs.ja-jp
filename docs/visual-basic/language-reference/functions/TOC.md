@@ -1,0 +1,5 @@
+# [文字列関数 (Visual Basic)](string-functions.md)
+# [CType 関数 (Visual Basic)](ctype-function.md)
+# [Type Conversion Functions (Visual Basic)](type-conversion-functions.md)
+# [関数 (Visual Basic)](index.md)
+# [数値演算関数 (Visual Basic)](math-functions.md)

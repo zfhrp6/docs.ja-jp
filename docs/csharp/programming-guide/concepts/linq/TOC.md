@@ -1,0 +1,8 @@
+# [Query Syntax and Method Syntax in LINQ (C#)](query-syntax-and-method-syntax-in-linq.md)
+# [Getting Started with LINQ in C#](getting-started-with-linq.md)
+# [Type Relationships in LINQ Query Operations (C#)](type-relationships-in-linq-query-operations.md)
+# [LINQ によるデータ変換 (C#)](data-transformations-with-linq.md)
+# [LINQ and Generic Types (C#)](linq-and-generic-types.md)
+# [C# Features That Support LINQ](features-that-support-linq.md)
+# [Introduction to LINQ Queries (C#)](introduction-to-linq-queries.md)
+# [Walkthrough: Writing Queries in C# (LINQ)](walkthrough-writing-queries-linq.md)

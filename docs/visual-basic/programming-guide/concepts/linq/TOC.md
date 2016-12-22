@@ -1,0 +1,5 @@
+# [チュートリアル: Visual Basic でクエリを記述する](walkthrough-writing-queries.md)
+# [Visual Basic Features That Support LINQ](features-that-support-linq.md)
+# [Type Relationships in Query Operations (Visual Basic)](type-relationships-in-query-operations.md)
+# [初めての LINQ クエリの作成 (Visual Basic)](writing-your-first-linq-query.md)
+# [基本的なクエリ操作 (Visual Basic)](basic-query-operations.md)

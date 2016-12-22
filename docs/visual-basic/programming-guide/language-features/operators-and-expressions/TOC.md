@@ -1,0 +1,7 @@
+# [How to: Test Whether Two Objects Are the Same (Visual Basic)](how-to-test-whether-two-objects-are-the-same.md)
+# [Common Tasks Performed with Visual Basic Operators](common-tasks-performed-with-visual-basic-operators.md)
+# [Logical and Bitwise Operators in Visual Basic](logical-and-bitwise-operators.md)
+# [Efficient Combination of Operators (Visual Basic)](efficient-combination-of-operators.md)
+# [Operators and Expressions in Visual Basic](index.md)
+# [Arithmetic Operators in Visual Basic](arithmetic-operators.md)
+# [How to: Match a String against a Pattern (Visual Basic)](how-to-match-a-string-against-a-pattern.md)

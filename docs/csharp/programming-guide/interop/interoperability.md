@@ -1,0 +1,59 @@
+---
+title: "相互運用性 (C# プログラミング ガイド) | Microsoft Docs"
+ms.custom: ""
+ms.date: "12/15/2016"
+ms.prod: "visual-studio-dev14"
+ms.reviewer: ""
+ms.suite: ""
+ms.technology: 
+  - "devlang-csharp"
+ms.tgt_pltfrm: ""
+ms.topic: "article"
+dev_langs: 
+  - "CSharp"
+helpviewer_keywords: 
+  - "C# 言語, 相互運用性"
+  - "COM 相互運用機能"
+  - "相互運用性"
+  - "プラットフォーム呼び出し, アクセス (API に C# を使用して)"
+ms.assetid: 238bb95a-e962-4026-bbd5-197055bdb8ee
+caps.latest.revision: 31
+caps.handback.revision: 31
+author: "BillWagner"
+ms.author: "wiwagn"
+manager: "wpickett"
+---
+# 相互運用性 (C# プログラミング ガイド)
+[!INCLUDE[vs2017banner](../../../csharp/includes/vs2017banner.md)]
+
+相互運用機能によって、アンマネージ コードへの既存の投資を保護し活用できます。  共通言語ランタイム \(CLR: Common Language Runtime\) の制御の下で動作するコードを*マネージ コード*、CLR の外部で動作するコードを*アンマネージ コード*と言います。  アンマネージ コードの例としては、COM、COM\+、C\+\+ の各コンポーネント、ActiveX コンポーネント、および Microsoft Win32 API があります。  
+  
+ [!INCLUDE[dnprdnshort](../../../csharp/getting-started/includes/dnprdnshort_md.md)] は、プラットフォーム呼び出しサービス、<xref:System.Runtime.InteropServices> 名前空間、C\+\+ 相互運用性、および COM 相互運用性 \(COM interop\) を通じてアンマネージ コードとの相互運用を可能にします。  
+  
+## このセクションの内容  
+ [相互運用性の概要](../../../csharp/programming-guide/interop/interoperability-overview.md)  
+ C\# マネージ コードとアンマネージ コード間で相互運用するメソッドについて説明します。  
+  
+ [方法: Visual C\# の機能を使用して Office 相互運用オブジェクトにアクセスする](../Topic/How%20to:%20Access%20Office%20Interop%20Objects%20by%20Using%20Visual%20C%23%20Features%20\(C%23%20Programming%20Guide\).md)  
+ Visual C\# 2010 で導入された、Office プログラミングを容易に行うための機能について説明します。  
+  
+ [方法: COM 相互運用機能を使用したプログラミングでインデックス付きプロパティを使用する](../../../csharp/programming-guide/interop/how-to-use-indexed-properties-in-com-interop-rogramming.md)  
+ インデックス付きのプロパティを使用してパラメーターを持つ COM プロパティにアクセスする方法について説明します。  
+  
+ [方法: プラットフォーム呼び出しを使用して Wave ファイルを再生する](../Topic/How%20to:%20Use%20Platform%20Invoke%20to%20Play%20a%20Wave%20File%20\(C%23%20Programming%20Guide\).md)  
+ プラットフォーム呼び出しサービスを利用して、Windows オペレーティング システムで .wav サウンド ファイルを再生する方法について説明します。  
+  
+ [チュートリアル: Office のプログラミング](../../../csharp/programming-guide/interop/walkthrough-office-programming.md)  
+ Excelのブックおよびブックへのリンクを含むWord文書を作成する方法を示します。  
+  
+ [COM クラスの例](../../../csharp/programming-guide/interop/example-com-class.md)  
+ C\# クラスを COM オブジェクトとして公開する方法を説明します。  
+  
+## C\# 言語仕様  
+ [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec_md.md)]  
+  
+## 参照  
+ <xref:System.Runtime.InteropServices.Marshal.ReleaseComObject%2A?displayProperty=fullName>   
+ [C\# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
+ [アンマネージ コードとの相互運用](../Topic/Interoperating%20with%20Unmanaged%20Code.md)   
+ [チュートリアル: Office のプログラミング](../../../csharp/programming-guide/interop/walkthrough-office-programming.md)

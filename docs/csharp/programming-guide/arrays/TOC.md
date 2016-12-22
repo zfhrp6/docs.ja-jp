@@ -1,0 +1,7 @@
+# [オブジェクトとしての配列 (C# プログラミング ガイド)](arrays-as-objects.md)
+# [暗黙的に型指定される配列 (C# プログラミング ガイド)](implicitly-typed-arrays.md)
+# [配列 (C# プログラミング ガイド)](index.md)
+# [ref と out を使用した配列の引き渡し (C# プログラミング ガイド)](passing-arrays-using-ref-and-out.md)
+# [配列での foreach の使用 (C# プログラミング ガイド)](using-foreach-with-arrays.md)
+# [ジャグ配列 (C# プログラミング ガイド)](jagged-arrays.md)
+# [多次元配列 (C# プログラミング ガイド)](multidimensional-arrays.md)
