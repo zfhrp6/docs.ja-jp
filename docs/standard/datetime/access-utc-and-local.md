@@ -3,16 +3,16 @@ title: "方法: 定義済みの UTC オブジェクトおよびローカル タ�
 description: "方法: 定義済みの UTC オブジェクトおよびローカル タイム ゾーン オブジェクトにアクセスする"
 keywords: .NET, .NET Core
 author: stevehoag
-manager: wpickett
+ms.author: shoag
 ms.date: 08/11/2016
 ms.topic: article
-ms.prod: .net-core
-ms.technology: .net-core-technologies
+ms.prod: .net
+ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: 13454d47-d957-421b-9ecd-940058b8835e
 translationtype: Human Translation
 ms.sourcegitcommit: c40c28da09e8a122b542463c197196c82c81dd19
-ms.openlocfilehash: 865e41ca544e8931d0a7037310387e077d8a5547
+ms.openlocfilehash: ab419cf365b61399ea41e99c15e276584ad0db31
 
 ---
 
@@ -119,6 +119,6 @@ End Try
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Nov16_HO3-->
 
 

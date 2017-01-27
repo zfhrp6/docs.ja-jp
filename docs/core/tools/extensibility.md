@@ -2,17 +2,17 @@
 title: ".NET Core CLI の拡張モデル"
 description: ".NET Core CLI の拡張モデル"
 keywords: "CLI, 拡張, カスタム コマンド, .NET Core"
-author: mairaw
-manager: wpickett
+author: blackdwarf
+ms.author: mairaw
 ms.date: 06/20/2016
 ms.topic: article
 ms.prod: .net-core
-ms.technology: .net-core-technologies
+ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: 1bebd25a-120f-48d3-8c25-c89965afcbcd
 translationtype: Human Translation
 ms.sourcegitcommit: aeb199a9aeb1584570ad2a2942e2f22c75a59616
-ms.openlocfilehash: ea16d4b841f5c93da222df56db36d6fb70ea35f9
+ms.openlocfilehash: 4223f296224c9b62c88b72f0f643c8b8b6fc9f6b
 
 ---
 
@@ -29,14 +29,14 @@ CLI ツールは、主に次の 2 つの方法で拡張できます。
 
 上記で説明した 2 つの拡張メカニズムは、排他的ではありません。両方または一方のみを使用することができます。 どちらを選択するかは、拡張機能で実現しようとしている目標によって大きく異なります。
 
-## <a name="perproject-based-extensibility"></a>各プロジェクト ベースの拡張機能
+## <a name="per-project-based-extensibility"></a>各プロジェクト ベースの拡張機能
 各プロジェクトのツールは、NuGet パッケージとして配布される[ポータブル コンソール アプリケーション](../deploying/index.md)です。 ツールは、ツールを参照および復元するプロジェクトのコンテキスト内でのみ使用できます。プロジェクトのコンテキストの外部 (たとえば、プロジェクトが含まれているディレクトリの外) での起動は、コマンドを見つけることができないために失敗します。
 
 `project.json` の外部は必要ないため、これらのツールはビルド サーバーにも最適です。 ビルド処理では、ビルドを行うプロジェクトの復元が実行され、ツールが利用可能になります。 F# などの言語プロジェクトも、このカテゴリに入ります。結局、各プロジェクトは 1 つの特定の言語でのみ記述できます。 
 
 最後に、この拡張モデルは、プロジェクトのビルド出力へのアクセス権が必要なツールの作成をサポートします。 たとえば、[ASP.NET](https://www.asp.net/) MVC アプリケーションのさまざまな Razor ビュー ツールが、このカテゴリに分類されます。 
 
-### <a name="consuming-perproject-tools"></a>各プロジェクト ツールの利用
+### <a name="consuming-per-project-tools"></a>各プロジェクト ツールの利用
 これらのツールを利用するには、`tools` ノードを自分の `project.json` に追加する必要があります。 `tools` ノード内で、ツールが存在するパッケージを参照します。 `dotnet restore` を実行した後、ツールとその依存関係が復元されます。 
 
 実行するためにプロジェクトのビルド出力を読み込む必要があるツールの場合、通常、別の依存関係がプロジェクト ファイル内の標準の依存関係に一覧されています。 つまり、プロジェクトのコードを読み込むツールには、次の 2 つのコンポーネントがあるということです。 
@@ -101,7 +101,7 @@ CLI ツールは、主に次の 2 つの方法で拡張できます。
 * [フレームワーク固有の依存関係の実装](https://github.com/dotnet/cli/tree/rel/1.0.0-preview2/TestAssets/TestPackages/dotnet-desktop-and-portable)
 
 
-### <a name="pathbased-extensibility"></a>パス ベースの拡張機能
+### <a name="path-based-extensibility"></a>パス ベースの拡張機能
 通常、パス ベースの拡張機能は、概念的に複数のプロジェクトに対応するツールが必要な開発用コンピューターに使用されます。 この拡張機能のメカニズムの主なデメリットは、ツールが存在するマシンに関連付けられていることです。 別のコンピューターで拡張機能が必要な場合は、それを展開する必要があります。
 
 このパターンの CLI ツールセットの拡張は、非常に単純です。 [.NET Core CLI の概要](index.md)に関するページにあるように、`dotnet` ドライバーは、`dotnet-<command>` 規則にふさわしい名前が付けられた任意のコマンドを実行することができます。 この既定の解決ロジックは、最初にいくつかの場所をプローブし、最後にシステム パスに取りかかります。 要求されたコマンドがシステム パスに存在し、起動することができるバイナリである場合、`dotnet` ドライバーでそれを起動します。 
@@ -132,6 +132,6 @@ macOS では、このスクリプトを `dotnet-clean` として保存し、そ�
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Nov16_HO3-->
 
 

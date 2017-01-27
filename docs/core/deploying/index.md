@@ -3,16 +3,15 @@ title: ".NET Core アプリケーション展開"
 description: ".NET Core アプリケーション展開"
 keywords: ".NET, .NET Core, .NET Core 展開"
 author: rpetrusha
-manager: wpickett
+ms.author: ronpet
 ms.date: 09/08/2016
 ms.topic: article
 ms.prod: .net-core
-ms.technology: .net-core-technologies
 ms.devlang: dotnet
 ms.assetid: da7a31a0-8072-4f23-82aa-8a19184cb701
 translationtype: Human Translation
 ms.sourcegitcommit: 663f4102b82512e64ab39d8046c7298a7cf37de7
-ms.openlocfilehash: 96eb2cc7ca948b3e372fa1363b1741624d791d27
+ms.openlocfilehash: 5509f09b3f7957049194ea7af9952bb6b5ec7539
 
 ---
 
@@ -24,11 +23,11 @@ ms.openlocfilehash: 96eb2cc7ca948b3e372fa1363b1741624d791d27
 
 - 自己完結型の展開。 FDD とは異なり、自己完結型の展開 (SCD) は、ターゲット システムに存在するいずれの共有コンポーネントにも依存しません。 .NET Core ライブラリと .NET Core ランタイムの両方を含むすべてのコンポーネントがアプリケーションに含まれており、他の .NET Core アプリケーションから分離されています。 SCD には、プラットフォーム固有の .NET Core ホストの名前変更後のバージョンである実行可能ファイル (`app` という名前のアプリケーション用の Windows プラットフォーム上の `app.exe` など)、および実際のアプリケーションである .dll ファイル (`app.dll` など) が含まれています。
 
-## <a name="frameworkdependent-deployments-fdd"></a>フレームワークに依存する展開 (FDD) ##
+## <a name="framework-dependent-deployments-fdd"></a>フレームワークに依存する展開 (FDD) ##
 
 FDD では、アプリ、およびサードパーティの依存関係のみを展開します。 アプリは、ターゲット システムに存在する .NET Core のバージョンを使用するので、.NET Core を展開する必要はありません。 これは、.NET Core アプリの既定の展開モデルです。
 
-### <a name="why-create-a-frameworkdependent-deployment"></a>フレームワークに依存する展開を作成する理由 ###
+### <a name="why-create-a-framework-dependent-deployment"></a>フレームワークに依存する展開を作成する理由 ###
 
 FDD の展開には、次のいくつかの利点があります。
 
@@ -44,7 +43,7 @@ FDD の展開には、次のいくつかの利点があります。
 
 - 将来のリリースでは、ユーザーの認識なしに .NET Core ランタイムおよびライブラリが変更される場合があります。 まれなケースでは、アプリのビヘイビアーが変更される可能性があります。
 
-### <a name="deploying-a-frameworkdependent-deployment"></a>フレームワークに依存する展開を展開する ###
+### <a name="deploying-a-framework-dependent-deployment"></a>フレームワークに依存する展開を展開する ###
 
 サードパーティの依存関係を含まない、フレームワークに依存する展開を展開するプロセスには、アプリのビルド、テスト、および発行が含まれます。 C# で記述された次の単純な例は、このプロセスを示しています。 この例では、コマンドラインの [dotnet ユーティリティ](../tools/dotnet.md)を使用しますが、Visual Studio や Visual Studio Code などの開発環境を使用して、この例をコンパイル、テスト、および発行することもできます。
 
@@ -101,7 +100,7 @@ FDD の展開には、次のいくつかの利点があります。
 
 また、アプリケーション インストールの一環として、インストーラーはアプリケーション バイナリに加えて、共有フレームワーク インストーラーをバンドルするか、または前提条件として共有フレームワークがあるか確認する必要があります。  共有フレームワークのインストールは、コンピューター全体が対象なので、管理者/ルート アクセスを必要とします。
 
-### <a name="deploying-a-frameworkdependent-deployment-with-thirdparty-dependencies"></a>サードパーティの依存関係を含む、フレームワークに依存する展開を展開する ###
+### <a name="deploying-a-framework-dependent-deployment-with-third-party-dependencies"></a>サードパーティの依存関係を含む、フレームワークに依存する展開を展開する ###
 
 1 つまたは複数のサードパーティの依存関係を含む、フレームワークに依存する展開を展開するプロセスでは、`dotnet restore` コマンドを実行できるようにするために、次の 3 つの追加手順を実行します。
 
@@ -121,11 +120,11 @@ FDD の展開には、次のいくつかの利点があります。
 
 サードパーティの依存関係を含む、フレームワークに依存する展開は、サードパーティの依存関係と同じ移植性を持つことに注意してください。 たとえば、サードパーティ ライブラリが macOS のみをサポートする場合、アプリを Windows システムに移植することはできません。 この状況は、サードパーティの依存関係自体がネイティブ コードに依存する場合に生じる可能性があります。 この好例は Kestrel サーバーです。 このようなサードパーティの依存関係を含むアプリケーションに対して FDD が作成されると、発行された出力には、ネイティブの依存関係がサポートする (そして、その NuGet パッケージ内に存在する) 各[ランタイム識別子 (RID)](../rid-catalog.md#what-are-rids) のフォルダーが含まれます。
 
-## <a name="selfcontained-deployments-scd"></a>自己完結型の展開 (SCD) ##
+## <a name="self-contained-deployments-scd"></a>自己完結型の展開 (SCD) ##
 
 自己完結型の展開では、アプリおよびすべてのサードパーティの依存関係だけでなく、アプリのビルドに使用する .NET Core のバージョンも展開します。 ただし、SCD の作成には、さまざまなプラットフォーム上の [.NET Core のネイティブの依存関係](https://github.com/dotnet/core/blob/master/Documentation/prereqs.md)自体 (たとえば、macOS 上の OpenSSL) は含まれないので、アプリケーションを実行する前にこれらの依存関係をインストールする必要があります。 
 
-### <a name="why-deploy-a-selfcontained-deployment"></a>自己完結型の展開を展開する理由 ###
+### <a name="why-deploy-a-self-contained-deployment"></a>自己完結型の展開を展開する理由 ###
 
 自己完結型の展開を展開するのには、次の 2 つの主な利点があります。
 
@@ -141,7 +140,7 @@ FDD の展開には、次のいくつかの利点があります。
 
 - 多数の自己完結型の .NET Core アプリをシステムに展開すると、各アプリが .NET Core ファイルを複製するので、非常に多くのディスク領域を使用する可能性があります。
 
-### <a name="a-namesimpleselfa-deploying-a-simple-selfcontained-deployment"></a>単純な自己完結型の展開を展開する ###
+### <a name="a-namesimpleselfa-deploying-a-simple-self-contained-deployment"></a><a name="simpleSelf"></a>単純な自己完結型の展開を展開する ###
 
 サードパーティの依存関係を含まない自己完結型の展開を展開するプロセスには、プロジェクトの作成、project.json ファイルの変更、アプリのビルド、テスト、および発行が含まれます。  C# で記述された次の単純な例は、このプロセスを示しています。 この例では、コマンドラインの `dotnet` ユーティリティを使用します。ただし、Visual Studio や Visual Studio Code などの開発環境を使用して、この例をコンパイル、テスト、および発行することもできます。
 
@@ -262,7 +261,7 @@ FDD の展開には、次のいくつかの利点があります。
 }
 ```
 
-### <a name="deploying-a-selfcontained-deployment-with-thirdparty-dependencies"></a>サードパーティの依存関係を含む自己完結型の展開を展開する ###
+### <a name="deploying-a-self-contained-deployment-with-third-party-dependencies"></a>サードパーティの依存関係を含む自己完結型の展開を展開する ###
 
 1 つまたは複数のサードパーティの依存関係を含む自己完結型の展開を展開するプロセスには、サードパーティの依存関係の追加が含まれます。
 
@@ -304,7 +303,7 @@ FDD の展開には、次のいくつかの利点があります。
 
 サードパーティ ライブラリを含む自己完結型の展開は、そのライブラリでサポートされるプラットフォームにのみ展開できます。 これは、フレームワークに依存する展開でネイティブの依存関係と共にサードパーティの依存関係を含む場合に似ています。 
 
-### <a name="deploying-a-selfcontained-deployment-with-a-smaller-footprint"></a>フットプリントがより小さい自己完結型の展開を展開する ###
+### <a name="deploying-a-self-contained-deployment-with-a-smaller-footprint"></a>フットプリントがより小さい自己完結型の展開を展開する ###
 
 ターゲット システムで十分な記憶域の可用性が問題になる可能性がある場合は、一部のシステム コンポーネントを除外することで、アプリの全体的なフットプリントを削減できます。 このためには、アプリによって project.json ファイルに含まれる .NET Core コンポーネントを明示的に定義します。
 

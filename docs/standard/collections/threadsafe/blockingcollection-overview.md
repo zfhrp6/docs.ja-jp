@@ -3,16 +3,16 @@ title: "BlockingCollection の概要"
 description: "BlockingCollection の概要"
 keywords: .NET, .NET Core
 author: mairaw
-manager: wpickett
+ms.author: mairaw
 ms.date: 06/20/2016
 ms.topic: article
-ms.prod: .net-core
-ms.technology: .net-core-technologies
+ms.prod: .net
+ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: a1a867de-53c2-49ca-9a1a-e5770a942724
 translationtype: Human Translation
 ms.sourcegitcommit: e07788926a995b41571be276379ad9285747951d
-ms.openlocfilehash: 991b4b8389cc967881c2c39d29c387687047489f
+ms.openlocfilehash: 64a01b5e21e012dfaae07a02f5fb27932be9cf98
 
 ---
 
@@ -134,6 +134,6 @@ consumer が複数のコレクションから同時に項目を取得する必�
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Nov16_HO3-->
 
 

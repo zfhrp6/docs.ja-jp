@@ -3,32 +3,32 @@ title: "Windows/Linux/macOS の .NET Core でのコマンド ラインの使用�
 description: "Windows、Linux、または macOS の .NET Core での、.NET Core コマンド ライン インターフェイス (CLI) の使用に関する概要"
 keywords: .NET, .NET Core
 author: cartermp
-manager: wpickett
+ms.author: mairaw
 ms.date: 06/20/2016
 ms.topic: article
 ms.prod: .net-core
-ms.technology: .net-core-technologies
+ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: be988f09-7349-43b0-97fb-3a703d4587ce
 translationtype: Human Translation
-ms.sourcegitcommit: aeb199a9aeb1584570ad2a2942e2f22c75a59616
-ms.openlocfilehash: aafa0c110dc3a2820f7e050d70b9450af1db35d8
+ms.sourcegitcommit: 37e14d5cdf1593f6a8b1ecee9d9828647b023548
+ms.openlocfilehash: 5493ccb77e62d20d5101728ef8ab1744ea697fb8
 
 ---
 
 # <a name="getting-started-with-net-core-on-windowslinuxmacos-using-the-command-line"></a>Windows/Linux/macOS の .NET Core でのコマンド ラインの使用に関する概要
 
-このガイドでは、.NET Core CLI ツールを使用してクロスプラットフォーム コンソール アプリを作成する方法を説明します。  最も基本的なコンソール アプリから始めて、最終的にテストを含む複数プロジェクトまで拡張します。 既に作成してあるものを基にして、これらの機能を追加していきます。
+このガイドでは、.NET Core CLI ツールを使用して、基本的なクロスプラットフォーム コンソール アプリをビルドする方法を説明します。
 
 .NET Core CLI ツールセットに慣れていない場合は、「[.NET Core SDK overview](../sdk.md)」(.NET Core SDK の概要) を参照してください。
 
 ## <a name="prerequisites"></a>必須コンポーネント
 
-始める前に、[最新の .NET Core CLI ツール](https://www.microsoft.com/net/core)があることを確認します。  テキスト エディターも必要です。
+始める前に、[最新の .NET Core CLI ツール](https://www.microsoft.com/net/core)があることを確認します。 テキスト エディターも必要です。
 
 ## <a name="hello-console-app"></a>Hello コンソール アプリ
 
-最初に、適切な名前のフォルダーに移動するか、新しく作成します。  サンプル コードでは "Hello" という名前を使用しています ([こちら](https://github.com/dotnet/docs/tree/master/samples/core/console-apps/Hello)を参照)。
+適切な名前のフォルダーに移動するか、新しく作成します。 サンプル コードでは "Hello" という名前を使用しています ([こちら](https://github.com/dotnet/docs/tree/master/samples/core/console-apps/Hello)を参照)。
 
 コマンド プロンプトを開いて次のように入力します。
 
@@ -97,7 +97,7 @@ Hello, World!
 
 [`dotnet build`](../tools/dotnet-build.md) を実行し、ビルド コンソール アプリケーションを実行しないでコードをコンパイルすることもできます。
 
-### <a name="building-a-selfcontained-application"></a>自己完結型アプリケーションのビルド
+### <a name="building-a-self-contained-application"></a>自己完結型アプリケーションのビルド
 
 ポータブル アプリケーションではなく自己完結型アプリケーションをコンパイルします。 異なる種類のアプリケーションとその展開方法については、[.NET Core での移植性の種類についての記事](../deploying/index.md)を参照してください。
 
@@ -306,7 +306,7 @@ namespace NumberFun
 }
 ```
 
-次に、以下に示すように、`Program.cs`  ファイルの `Main()` メソッドを変更します。 この例では、`Program.cs` に `using System;` ステートメントがあるものと想定しています。 `using static System.Console;` ステートメントがある場合は、`Console.` を `Console.WriteLine` から削除します。  
+次に、以下に示すように、`Program.cs` ファイルの `Main()` メソッドを変更します。 この例では、`Program.cs` に `using System;` ステートメントがあるものと想定しています。 `using static System.Console;` ステートメントがある場合は、`Console.` を `Console.WriteLine` から削除します。  
 
 ```csharp
 public static void Main(string[] args)
@@ -647,6 +647,6 @@ SUMMARY: Total: 1 targets, Passed: 1, Failed: 0.
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Nov16_HO3-->
 
 

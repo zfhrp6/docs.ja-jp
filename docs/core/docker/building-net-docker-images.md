@@ -3,16 +3,16 @@ title: ".NET Core の Docker イメージのビルド"
 description: "Docker イメージと .NET Core について"
 keywords: .NET, .NET Core, Docker
 author: spboyer
-manager: wpickett
+ms.author: shboyer
 ms.date: 08/29/2016
 ms.topic: article
 ms.prod: .net-core
-ms.technology: .net-core-technologies
+ms.technology: dotnet-docker
 ms.devlang: dotnet
 ms.assetid: 03c28597-7e73-46d6-a9c3-f9cb55642739
 translationtype: Human Translation
 ms.sourcegitcommit: 1cb9e19ec9c9c0764244aeec5f62b812cbd91aef
-ms.openlocfilehash: be658d2c660aff736eceffe23757c13154e78582
+ms.openlocfilehash: 8cc784c267e9ca85ae110f8c92e0191f6fee6596
 
 ---
  
@@ -223,6 +223,6 @@ Docker ジェネレーターを使用して Web API アプリケーションに�
 
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Nov16_HO3-->
 
 

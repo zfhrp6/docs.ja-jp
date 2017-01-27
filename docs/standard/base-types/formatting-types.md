@@ -4,16 +4,15 @@ description: "型の書式設定"
 keywords: .NET, .NET Core
 author: stevehoag
 ms.author: shoag
-manager: wpickett
 ms.date: 07/20/2016
 ms.topic: article
-ms.prod: .net-core
-ms.technology: .net-core-technologies
+ms.prod: .net
+ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: cf497639-9f91-45cb-836f-998d1cea2f43
 translationtype: Human Translation
 ms.sourcegitcommit: b20713600d7c3ddc31be5885733a1e8910ede8c6
-ms.openlocfilehash: 6c6ddfdbe288fe012adf31fd4d45af1b697d1132
+ms.openlocfilehash: 2dc4d1deff8d1b72cbe433c45dda873e9caa26fb
 
 ---
 
@@ -666,7 +665,7 @@ End Module
 [列挙型書式指定文字列](enumeration-format.md) | 列挙型の文字列形式を作成するために使用される標準書式指定文字列について説明します。
 [Guid.ToString(String)](xref:System.Guid.ToString(System.String)) | [Guid](xref:System.Guid) 値の標準的書式指定文字列について説明します。
 
-## <a name="culturesensitive-formatting-with-format-providers-and-the-iformatprovider-interface"></a>書式プロバイダーと IFormatProvider インターフェイスによるカルチャに依存した書式指定
+## <a name="culture-sensitive-formatting-with-format-providers-and-the-iformatprovider-interface"></a>書式プロバイダーと IFormatProvider インターフェイスによるカルチャに依存した書式指定
 
 書式指定子を利用することでオブジェクトの書式をカスタマイズできますが、多くの場合、意味のあるオブジェクトの文字列形式を生成するには追加の書式設定情報が必要です。 たとえば、"C" 標準書式指定文字列または "$ #,#.00" などのカスタム書式指定文字列を使用して数字を通貨値として書式設定する場合、少なくとも、正しい通貨記号、桁区切り記号、および小数点記号についての情報を書式設定された文字列に含めることができる必要があります。 .NET では、[IFormatProvider](xref:System.IFormatProvider) インターフェイスによって、この追加の書式設定情報を利用できるようにします。このインターフェイスは、数値型および日付/時刻型の `ToString` メソッドの 1 つ以上のオーバーロードに対するパラメーターとして提供されます。 [IFormatProvider](xref:System.IFormatProvider) の実装は .NET で使用され、カルチャ固有の書式指定をサポートします。 それぞれ異なるカルチャを示す 3 つの [IFormatProvider](xref:System.IFormatProvider) オブジェクトを使用してオブジェクトの書式を設定した場合に、その文字列形式がどのように変化するかを次の例に示します。
 
@@ -730,7 +729,7 @@ End Module
 
 また、これらのクラスのうちのいずれかを置き換える独自の書式プロバイダーを実装できます。 ただし、実装の `GetFormat` メソッドは、書式設定情報を `ToString` メソッドに渡す場合、前の表に示した型のオブジェクトを返す必要があります。
 
-### <a name="culturesensitive-formatting-of-numeric-values"></a>数値のカルチャに依存した書式設定
+### <a name="culture-sensitive-formatting-of-numeric-values"></a>数値のカルチャに依存した書式設定
 
 既定では、数値の書式指定はカルチャに依存します。 書式指定メソッドを呼び出すときにカルチャを指定しない場合は、現在のスレッド カルチャの書式指定規則が使用されます。 次に示す例では、現在のスレッド カルチャを 4 回変更した後に、[Decimal.ToString(String)](xref:System.Decimal.ToString(System.String)) メソッドを呼び出します。 各ケースでは、結果の文字列は、現在のカルチャの書式指定規則を反映します。 これは、各数値型の `ToString` メソッドへの呼び出しを、`ToString(String)` メソッドと `ToString(String, IFormatProvider)` メソッドがラップするためです。 
 
@@ -856,7 +855,7 @@ End Module
 '       fr:    1 043,630
 ```
 
-### <a name="culturesensitive-formatting-of-date-and-time-values"></a>日付と時刻の値のカルチャに依存した書式設定
+### <a name="culture-sensitive-formatting-of-date-and-time-values"></a>日付と時刻の値のカルチャに依存した書式設定
 
 既定では、日時の値の書式指定はカルチャに依存します。 書式指定メソッドを呼び出すときにカルチャを指定しない場合は、現在のスレッド カルチャの書式指定規則が使用されます。 次に示す例では、現在のスレッド カルチャを 4 回変更した後に、[DateTime.ToString(String)](xref:System.DateTime.ToString(System.String)) メソッドを呼び出します。 各ケースでは、結果の文字列は、現在のカルチャの書式指定規則を反映します。 これは、[DateTime.ToString()](xref:System.DateTime.ToString)、[DateTime.ToString(String)](xref:System.DateTime.ToString(System.String))、[DateTimeOffset.ToString()](xref:System.DateTimeOffset.ToString(System.String))、[DateTimeOffset.ToString(String)](xref:System.DateTimeOffset.ToString(System.String)) の各メソッドが、[DateTime.ToString(String, IFormatProvider)](xref:System.DateTime.ToString(System.String,System.IFormatProvider)) メソッドおよび [DateTimeOffset.ToString(String, IFormatProvider)](xref:System.DateTimeOffset.ToString(System.String,System.IFormatProvider)) メソッドへの呼び出しをラップするためです。
 
@@ -1404,6 +1403,6 @@ End Module
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Nov16_HO3-->
 
 

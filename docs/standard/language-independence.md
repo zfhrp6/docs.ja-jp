@@ -4,20 +4,19 @@ description: "言語への非依存性、および言語非依存コンポーネ
 keywords: .NET, .NET Core
 author: stevehoag
 ms.author: shoag
-manager: wpickett
 ms.date: 07/22/2016
 ms.topic: article
-ms.prod: .net-core
-ms.technology: .net-core-technologies
+ms.prod: .net
+ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: 2dbed1bc-86f5-43cd-9a57-adbb1c5efba4
 translationtype: Human Translation
 ms.sourcegitcommit: b20713600d7c3ddc31be5885733a1e8910ede8c6
-ms.openlocfilehash: 47a407d1c1e768a027aaca63ee7a668e992467b2
+ms.openlocfilehash: 1458cfdb81c53b7eab384c1b7f3e65c7ad7d8098
 
 ---
 
-# <a name="language-independence-and-languageindependent-components"></a>言語への非依存性、および言語非依存コンポーネント
+# <a name="language-independence-and-language-independent-components"></a>言語への非依存性、および言語非依存コンポーネント
 
 .NET プラットフォームは言語に依存しません。 つまり、開発者は、C#、F#、および Visual Basic などの .NET プラットフォームを対象とする多くの言語のいずれかで開発できることを意味します。 .NET プラットフォーム用に開発されたクラス ライブラリの型とメンバーには、最初に記述された言語を知らなくてもアクセスできます。元の言語の規則に従う必要もありません。 コンポーネントを開発しているのであれば、コンポーネントの言語にかかわらず、すべての .NET アプリからそのコンポーネントにアクセスできます。
 
@@ -2816,7 +2815,7 @@ End Class
 
 ライブラリではなくアプリを開発している場合 (つまり、他のアプリ開発者が使用できる型またはメンバーを公開しない場合)、アプリが使用するプログラム要素は、そのプログラム要素が使用する言語でサポートされていない場合に CLS に準拠する必要があります。 この場合、CLS 非準拠の要素を使用しようとすると、言語コンパイラによってエラーが生成されます。 
 
-## <a name="crosslanguage-interoperability"></a>言語間の相互運用性
+## <a name="cross-language-interoperability"></a>言語間の相互運用性
 
 言語に依存しないということは、いくつか意味があります。 1 つには、ある言語で記述された型を、別の言語で記述されたアプリからシームレスに使用できることを意味します。 また、複数の言語で記述されたコードを 1 つの .NET .NET Framework アセンブリにまとめることもできます。ここでは、この点について焦点を当てて説明します。 
 
@@ -2956,6 +2955,6 @@ csc example.cs /r:UtilityLib.dll
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Nov16_HO3-->
 
 

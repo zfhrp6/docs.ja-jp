@@ -4,16 +4,15 @@ description: "カスタム数値書式指定文字列"
 keywords: .NET, .NET Core
 author: stevehoag
 ms.author: shoag
-manager: wpickett
 ms.date: 07/25/2016
 ms.topic: article
-ms.prod: .net-core
-ms.technology: .net-core-technologies
+ms.prod: .net
+ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: 7b1c16ee-956f-4e9c-8502-c3dd6598c51d
 translationtype: Human Translation
 ms.sourcegitcommit: b20713600d7c3ddc31be5885733a1e8910ede8c6
-ms.openlocfilehash: e36c0117f6f011589299fa59a8abd139870c2257
+ms.openlocfilehash: 2d5a051efd074d02f2a5e9ff03c11e1d9a202d7f
 
 ---
 
@@ -598,11 +597,11 @@ Console.WriteLine(String.Format("{0:" + fmt3 + "}", zeroValue))
 
 ## <a name="notes"></a>ノート
 
-### <a name="floatingpoint-infinities-and-nan"></a>浮動小数点の無限大値と NaN (非数) 値
+### <a name="floating-point-infinities-and-nan"></a>浮動小数点の無限大値と NaN (非数) 値
 
 [Single](xref:System.Single) の浮動小数点型または [Double](xref:System.Double) の浮動小数点型が正の無限大、負の無限大、または NaN (非数) である場合は、書式指定文字列とは関係なく、現在適用可能な [NumberFormatInfo](xref:System.Globalization.NumberFormatInfo) オブジェクトによって指定される [PositiveInfinitySymbol](xref:System.Globalization.NumberFormatInfo.PositiveInfinitySymbol)、[NegativeInfinitySymbol](xref:System.Globalization.NumberFormatInfo.NegativeInfinitySymbol)、または [NaNSymbol](xref:System.Globalization.NumberFormatInfo.NaNSymbol) の各プロパティの値は、書式設定された文字列となります。 
 
-### <a name="rounding-and-fixedpoint-format-strings"></a>丸めと固定小数点の書式指定文字列
+### <a name="rounding-and-fixed-point-format-strings"></a>丸めと固定小数点の書式指定文字列
 
 固定小数点の書式指定文字列 (つまり指数表記の書式指定文字を含まない書式指定文字列) の場合は、小数点以下の桁数が小数点の右側にある桁プレースホルダーの数と同じである数値に丸められます。 書式指定文字列に小数点が含まれていない場合には、最も近い整数に丸められます。 数値の桁数が、整数部の桁プレースホルダーの数よりも大きい場合には、桁プレースホルダーに収まらない桁が、結果の文字列の 1 番目の桁プレースホルダーの直前にコピーされます。
 
@@ -651,6 +650,6 @@ Console.WriteLine(value2)
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Nov16_HO3-->
 
 

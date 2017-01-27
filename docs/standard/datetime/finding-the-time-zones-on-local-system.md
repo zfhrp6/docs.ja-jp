@@ -3,16 +3,16 @@ title: "ローカル システムで定義されているタイム ゾーンの�
 description: "ローカル システムで定義されているタイム ゾーンの検索"
 keywords: .NET, .NET Core
 author: stevehoag
-manager: wpickett
+ms.author: shoag
 ms.date: 08/15/2016
 ms.topic: article
-ms.prod: .net-core
-ms.technology: .net-core-technologies
+ms.prod: .net
+ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: 3a6ee323-f3cf-486d-aa0c-103931f1eba9
 translationtype: Human Translation
 ms.sourcegitcommit: c40c28da09e8a122b542463c197196c82c81dd19
-ms.openlocfilehash: 4f8913e3c193e7c76160ac45d576c4cf75d11fed
+ms.openlocfilehash: e7f07a1f86ca31a24e25d98de2f8918ff098db24
 
 ---
 
@@ -43,6 +43,6 @@ ms.openlocfilehash: 4f8913e3c193e7c76160ac45d576c4cf75d11fed
 [タイム ゾーン間での時刻の変換](converting-between-time-zones.md)
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Nov16_HO3-->
 
 
