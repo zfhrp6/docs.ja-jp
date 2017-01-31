@@ -10,16 +10,16 @@ ms.prod: aspnet-core
 ms.devlang: dotnet
 ms.assetid: 4172512e-b93d-4169-abdb-bd0b0b2d657e
 translationtype: Human Translation
-ms.sourcegitcommit: 5870a3cf6d8d2abd4bd1851a8d00bb70adbda752
-ms.openlocfilehash: fe7b64a0d3fc1ebd1948a21f670711c891aee757
+ms.sourcegitcommit: 2ad428dcda9ef213a8487c35a48b33929259abba
+ms.openlocfilehash: 7ea67d2b85db454ccecc9c6601f86be28e94931c
 
 ---
 
 # <a name="getting-started-with-aspnet-core"></a>ASP.NET Core の概要    
     
-ASP.NET Core Web アプリケーションの開発に関するチュートリアルについては、「[ASP.NET Core documentation](https://docs.asp.net)」 (ASP.NET Core のドキュメント) を参照することをお勧めしています。
+ASP.NET Core Web アプリケーションの開発に関するチュートリアルについては、「[ASP.NET Core documentation](https://docs.microsoft.com/aspnet/core/)」 (ASP.NET Core のドキュメント) を参照することをお勧めしています。
 
 
-<!--HONumber=Nov16_HO3-->
+<!--HONumber=Jan17_HO3-->
 
 
