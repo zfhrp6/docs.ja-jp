@@ -3,8 +3,8 @@ layout: HubPage
 hide_bc: true
 title: ".NET ドキュメント"
 translationtype: Human Translation
-ms.sourcegitcommit: c8b9e166a49c86dcabfa89887db1dce3a8e45f4f
-ms.openlocfilehash: d8b2def6b766aa1af9318fe5b0620f4db4a2ee43
+ms.sourcegitcommit: 2ad428dcda9ef213a8487c35a48b33929259abba
+ms.openlocfilehash: 44b21665593717023aef7a85fe88a60d07519327
 
 ---
 <div id="main" class="v2">
@@ -21,7 +21,7 @@ ms.openlocfilehash: d8b2def6b766aa1af9318fe5b0620f4db4a2ee43
                                     </div>
                                 </div>
                                 <div class="cardText">
-                                    <h3>C# の使用を開始する</h3>
+                                    <h3>C# の使用を開始する#</h3>
                                 </div>
                             </div>
                         </div>
@@ -85,8 +85,8 @@ ms.openlocfilehash: d8b2def6b766aa1af9318fe5b0620f4db4a2ee43
                                                 </div>
                                             </div>
                                             <div class="cardText">
-                                                <h3><a href="/dotnet/articles/welcome">.NET とは何ですか?</a></h3>
-                                                <p><a href="https://www.microsoft.com/net">開始するには</a></p>
+                                                <h3><a href="/dotnet/articles/welcome">.NET とは</a></h3>
+                                                <p><a href="/dotnet/articles/standard/getting-started">開始するには</a></p>
                                                 <p><a href="/dotnet/articles/standard/tour">.NET のツアー</a></p>
                                                 <p><a href="/dotnet/articles/standard/components">.NET アーキテクチャの概念</a></p>
                                             </div>
@@ -108,7 +108,7 @@ ms.openlocfilehash: d8b2def6b766aa1af9318fe5b0620f4db4a2ee43
                                                 <p><a href="/dotnet/articles/core/getting-started">開始するには</a></p>
                                                 <p><a href="/dotnet/articles/core/tutorials">チュートリアル</a></p>
                                                 <p><a href="/dotnet/articles/core/porting">.NET Framework からの移植</a></p>
-                                                <p><a href="https://docs.asp.net/en/latest/getting-started.html">ASP.NET Core</a></p>
+                                                <p><a href="/aspnet/core/getting-started">ASP.NET Core</a></p>
                                             </div>
                                         </div>
                                     </div>
