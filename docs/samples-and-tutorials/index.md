@@ -10,8 +10,8 @@ ms.prod: .net
 ms.devlang: dotnet
 ms.assetid: 617310e7-336b-4864-8dab-7e2021512929
 translationtype: Human Translation
-ms.sourcegitcommit: 15c55a87beb64f265a164db918c7721c7690fadf
-ms.openlocfilehash: 17023a076df7b99a26a20ddc7b78984dd170d001
+ms.sourcegitcommit: 2ad428dcda9ef213a8487c35a48b33929259abba
+ms.openlocfilehash: f44193d8f7bc9f67acb8b04966e02beca18a0653
 
 ---
 
@@ -21,7 +21,7 @@ ms.openlocfilehash: 17023a076df7b99a26a20ddc7b78984dd170d001
 
 F# プログラミング言語の学習に最適なリソースは、[F# Foundation のサイト](http://fsharp.org/learn.html)にあります。 
 
-ASP.NET Core の学習に最適なリソースは、[ASP.NET のサイト](https://docs.asp.net/en/latest/tutorials/index.html)にあります。
+ASP.NET Core の学習に最適なリソースは、[ASP.NET のサイト](https://docs.microsoft.com/aspnet/core/tutorials/)にあります。
 
 さらに、オンライン プレイグラウンドを使用した C# の学習に関心がある場合は、[インタラクティブ チュートリアル](http://go.microsoft.com/fwlink/?LinkId=817234)をお試しください。
 
@@ -58,7 +58,7 @@ ASP.NET Core の学習に最適なリソースは、[ASP.NET のサイト](https
 
 **[デリゲートとイベント](../csharp/delegates-events.md)**
 
-このサンプルは、C# デリゲートとイベントの構文および機能を示しています。 作成するコードの完成版は、[GitHub の core-docs リポジトリ](https://github.com/dotnet/docs/tree/master/samples/csharp/delegates-and-events)にあります。 イベントに重点を置いた 2 つ目のサンプルも、[同じリポジトリ](https://github.com/dotnet/docs/tree/master/samples/csharp/events)にあります。
+このサンプルは、C# デリゲートとイベントの構文および機能を示しています。 作成するコードの完成版は、[GitHub の core-docs リポジトリ](https://github.com/dotnet/docs/tree/master/samples/csharp/delegates-and-events)にあります。 イベントに重点を置いた&2; つ目のサンプルも、[同じリポジトリ](https://github.com/dotnet/docs/tree/master/samples/csharp/events)にあります。
 
 **[式ツリー](../csharp/expression-trees.md)**
 
@@ -98,6 +98,6 @@ ASP.NET Core の学習に最適なリソースは、[ASP.NET のサイト](https
 このチュートリアルでは、Windows コンテナーで既存のコンソール アプリケーションを展開する方法について説明します。 作成するコードの完成版は、[GitHub の core-docs リポジトリ](https://github.com/dotnet/docs/tree/master/samples/framework/docker/ConsoleRandomAnswerGenerator)にあります。
 
 
-<!--HONumber=Nov16_HO3-->
+<!--HONumber=Jan17_HO3-->
 
 

@@ -3,16 +3,15 @@ title: ".NET Core チュートリアル"
 description: ".NET Core チュートリアル"
 keywords: .NET, .NET Core
 author: richlander
-manager: wpickett
+ms.author: mairaw
 ms.date: 06/24/2016
 ms.topic: article
 ms.prod: .net-core
-ms.technology: .net-core-technologies
 ms.devlang: dotnet
 ms.assetid: f6f654b1-1d2c-4105-8376-7c1959e23803
 translationtype: Human Translation
-ms.sourcegitcommit: 15c55a87beb64f265a164db918c7721c7690fadf
-ms.openlocfilehash: 9ab2f607e8ec5a24712ced5eec688894ca8ae394
+ms.sourcegitcommit: 2ad428dcda9ef213a8487c35a48b33929259abba
+ms.openlocfilehash: 1829b32f1a5f92c5ee065c3107750621681ac82c
 
 ---
 
@@ -27,9 +26,9 @@ ms.openlocfilehash: 9ab2f607e8ec5a24712ced5eec688894ca8ae394
 - [.NET Core 1.0 のパッケージ依存関係バージョンを管理する方法](managing-package-dependency-versions.md)
 - [MSBuild を使用して .NET Core プロジェクトを作成する](target-dotnetcore-with-msbuild.md)
 
-ASP.NET Core Web アプリケーションの開発に関するチュートリアルについては、「[ASP.NET Core documentation](https://docs.asp.net)」 (ASP.NET Core のドキュメント) を参照することをお勧めしています。
+ASP.NET Core Web アプリケーションの開発に関するチュートリアルについては、「[ASP.NET Core documentation](https://docs.microsoft.com/aspnet/core/)」 (ASP.NET Core のドキュメント) を参照することをお勧めしています。
 
 
-<!--HONumber=Nov16_HO3-->
+<!--HONumber=Jan17_HO3-->
 
 
