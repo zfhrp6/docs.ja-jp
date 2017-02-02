@@ -1,4 +1,4 @@
-# <a name="using-the-cli-preview3-folder-and-sub-folders"></a>cli-preview3 フォルダーとサブフォルダーの使用
+# <a name="using-the-preview3-folder-and-sub-folders"></a>preview3 フォルダーとサブフォルダーの使用
 
 このフォルダーは tools フォルダーに対応する最上位ノードですが、.NET Core tooling Preview 3 リリースの差分が含まれます。
 
@@ -37,6 +37,6 @@ LTS ページ (または親の index.md) から新しい現在のリリースの
 準備ができたら、現在の各リリースをメインの [docs](../docs) フォルダーにマージし、目次ノードをマージして、別のドキュメント セットとして公開できます。 ファイルの LTS バージョンとファイルの現在のリリースの両方に変更をマージすることが必要になる可能性がありますが、このような変更の方が比較的簡単なはずです。
 
 
-<!--HONumber=Nov16_HO3-->
+<!--HONumber=Jan17_HO3-->
 
 

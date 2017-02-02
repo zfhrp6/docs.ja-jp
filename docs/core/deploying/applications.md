@@ -1,30 +1,17 @@
 ---
-title: ".NET Core アプリケーションの配置"
-description: ".NET Core アプリケーションの配置"
-keywords: .NET, .NET Core
-ms.date: 06/20/2016
-ms.topic: article
-ms.prod: .net-core
-ms.devlang: dotnet
-ms.assetid: 1db00fb1-d947-480d-8d7d-7152e67b0585
+redirect_url: /dotnet/articles/core/deploying
 translationtype: Human Translation
-ms.sourcegitcommit: 15c55a87beb64f265a164db918c7721c7690fadf
-ms.openlocfilehash: e3825b880ef73e176fb23618d9814e2d54f692c8
+ms.sourcegitcommit: 8f7cf8796796934ed4c4cf723e58a0076460c346
+ms.openlocfilehash: 52a20f639dace8b69370dc4884147eae31fc7ed6
 
 ---
 
 # <a name="-deploying-net-core-applications"></a>🔧 .NET Core アプリケーションの配置
 
-> **注:**
-> 
-> このトピックはまだ作成されておりません。 
->
-> 適用範囲や方法を具体化するのに役立つ皆様からのご意見をお待ちしております。 
-> 
-> ご意見の投稿方法の詳細については、[GitHub](https://github.com/dotnet/docs/blob/master/CONTRIBUTING.md) でご確認ください。
->
+## <a name="content-moved"></a>このコンテンツは移動しました。
+この記事は、「[.NET Core アプリケーション展開](index.md)」に移動されました。
 
 
-<!--HONumber=Nov16_HO3-->
+<!--HONumber=Jan17_HO3-->
 
 

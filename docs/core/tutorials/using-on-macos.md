@@ -10,8 +10,8 @@ ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: 8ad82148-dac8-4b31-9128-b0e9610f4d9b
 translationtype: Human Translation
-ms.sourcegitcommit: 2339be6aef7e2ff942f1f1999a12f48ee4a77ee8
-ms.openlocfilehash: b9d53f32347572614a67e1cc432089f8e18d7cdf
+ms.sourcegitcommit: 7ac95fa4b2aac81b2e8d33cedf2faf36a0bbf210
+ms.openlocfilehash: 33d87c3236e5f592cd59eab77df1059ac089b88c
 
 ---
 
@@ -122,7 +122,7 @@ namespace Library
 }
 ```
 
-このコードでは、静的 using、式本体のメンバー、補間文字列など、C# の最新の機能を利用しています。これらについては、「[Learn C#](../../csharp/index.md)」(C# ガイド) を参照してください。
+このコードでは、静的な using、式本体のメンバー、補間文字列など、C# の最新の機能を利用しています。これらについては、[C# の詳細](../../csharp/index.md)に関するセクションを参照してください。
 
 コードを更新したので、`dotnet build` を使用してライブラリをビルドできます。
 
@@ -247,6 +247,6 @@ Windows で実行している場合は、アプリケーションの `project.js
 
 
 
-<!--HONumber=Nov16_HO3-->
+<!--HONumber=Jan17_HO3-->
 
 

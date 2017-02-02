@@ -3,16 +3,15 @@ title: "MSBuild を使用して .NET Core プロジェクトを作成する"
 description: "MSBuild を使用して .NET Core プロジェクトを作成する"
 keywords: .NET, .NET Core
 author: dsplaisted
-manager: wpickett
+ms.author: mairaw
 ms.date: 06/20/2016
 ms.topic: article
 ms.prod: .net-core
-ms.technology: .net-core-technologies
 ms.devlang: dotnet
 ms.assetid: 13c66464-4f14-4db6-aa8b-06f25e7ba894
 translationtype: Human Translation
-ms.sourcegitcommit: a04755da6417bb28bad5f28a18ead9feeba2d957
-ms.openlocfilehash: 5d37e78be88828d6c82777f96b6334903aecbe53
+ms.sourcegitcommit: 098cb31bb79e47ebb2ad2e8c2f56d2d5d6da4079
+ms.openlocfilehash: 6a992d985948a22da58db8317bc04d2f1828fc05
 
 ---
 
@@ -21,15 +20,18 @@ ms.openlocfilehash: 5d37e78be88828d6c82777f96b6334903aecbe53
 .NET Core ツールは [project.json から MSBuild ベースのプロジェクトに移行](https://blogs.msdn.microsoft.com/dotnet/2016/05/23/changes-to-project-json/)されます。
 MSBuild を使用する最初のバージョンの .NET Core ツールが次のバージョンの Visual Studio と共に出荷される予定です。  ただし、現在、.NET Core プロジェクトに MSBuild を利用できます。その方法をこのページで紹介します。
 
-現在、*新しい*プロジェクトで .NET Core をターゲットにしているユーザーの大半に project.json で既定のツールを利用することを推奨しています。それは次のような理由によります。
+.NET Core をターゲットにする新規プロジェクトでは、以下の理由から既定のツールと *project.json* を使用することをお勧めします。
 
-- MSBuild はまだ project.json のさまざまな長所に対応していません
-- ASP.NET ベースのツールの大半は現在のところ、MSBuild プロジェクトと連動しません
-- MSBuild を使用する .NET Core ツールをリリースするとき、project.json プロジェクトから MSBuild プロジェクトに自動的に変換できるようになります 
+- MSBuild は、まだ *project.json* のさまざまな機能に対応していません。
+- ASP.NET ベースのツールの大半は現在のところ、MSBuild プロジェクトと連動していません。
+- MSBuild ベースの .NET Core ツールは、リリース時に *project.json* が MSBuild ベースに自動で変換されます。
 
-既存のプロジェクトで MSBuild を既に使用しているとき、それを .NET Core に移植するのであれば、あるいは、project.json プロジェクトを十分にサポートしないシナリオでビルドに MSBuild の拡張性を利用する場合、MSBuild を使用し、.NET Core をターゲットにすれば、効率的になることがあります。
+次の場合は MSBuild の使用を検討してください。
 
-## <a name="prerequisites"></a>必須コンポーネント
+ - MSBuild を使用する既存のプロジェクトを .NET Core に移植する場合
+ - プロジェクトで、*project.json* ではサポートが不十分な MSBuild の拡張機能を使用する場合
+
+## <a name="prerequisites"></a>前提条件
 
 - [Visual Studio 2015 更新プログラム 3](https://www.visualstudio.com/en-us/news/releasenotes/vs2015-update3-vs) 以降
 - [Visual Studio 用の .NET Core ツール](https://www.visualstudio.com/downloads/download-visual-studio-vs)
@@ -130,6 +132,6 @@ Visual Studio でプロジェクトを作成し、.NET Core をターゲット�
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Jan17_HO3-->
 
 

@@ -3,17 +3,16 @@ title: "サーバー アプリ用 .NET Core と .NET Framework の選択"
 description: ".NET でのサーバー アプリのビルド時に考慮する必要がある .NET の種類に関するガイドです。"
 keywords: .NET, .NET Core, .NET Framework
 author: cartermp
-manager: wpickett
-ms.author: phcart
+ms.author: mairaw
 ms.date: 11/16/2016
 ms.topic: article
-ms.prod: .net-core
-ms.technology: .net-core-technologies
+ms.prod: .net
+ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: 155553e4-89a2-418d-be88-4e75f6c3cc69
 translationtype: Human Translation
-ms.sourcegitcommit: d6ce9e3dd3c1189f35d147d140bb45095b3d77a5
-ms.openlocfilehash: a0563f7437711ddbee309803e97ab653aa160337
+ms.sourcegitcommit: 572bec82e08d6b47a188e51964c8c2f440fa471c
+ms.openlocfilehash: e23514daacb34739b26b7a31afea2ccb30296e79
 
 ---
 
@@ -44,19 +43,19 @@ ms.openlocfilehash: a0563f7437711ddbee309803e97ab653aa160337
 
 複数のプラットフォーム (Windows、Linux および macOS) でアプリケーション (Web/サービス) を実行できるようにすることが目的であれば、明らかに .NET Core は最良の選択です。
 
-.NET Core では、開発ワークステーションとして前述のオペレーティング システムもサポートします。 Visual Studio では、Windows 用の統合開発環境 (IDE) が提供されます。  Visual Studio コードは、IntelliSense とデバッグを含む、.NET Core を完全にサポートする macOS、Linux および Windows でも使用できます。 また、Sublime、Emacs、VI などのサードパーティ製のほとんどのエディターを .NET Core で使用することができ、オープン ソースの [Omnisharp](http://www.omnisharp.net/) プロジェクトを使用してエディターの IntelliSense を取得できます。 さらに、コード エディターをまったく使用せず、サポートされているすべてのプラットフォームで利用可能な .NET Core コマンドライン ツールを直接使用することもできます。
+.NET Core では、開発ワークステーションとして前述のオペレーティング システムもサポートします。 Visual Studio では、Windows 用の統合開発環境 (IDE) が提供されます。  Visual Studio コードは、IntelliSense とデバッグを含む、.NET Core を完全にサポートする macOS、Linux および Windows でも使用できます。 また、Sublime、Emacs、VI などのサードパーティ製のほとんどのエディターを .NET Core で使用することができ、オープン ソースの [Omnisharp](http://www.omnisharp.net/) プロジェクトを使用してエディターの IntelliSense を取得できます。 さらに、コード エディターをまったく使用せずに、サポートされているすべてのプラットフォームで利用可能な .NET Core コマンドライン ツールを直接使用することもできます。
 
 ### <a name="microservices-architecture"></a>マイクロサービス アーキテクチャ
 
 複数の独立した動的にスケーラブルなステートフルまたはステートレス マイクロサービスで構成されるマイクロサービス指向のシステムを採用する場合は、.NET Core が最適です。 .NET Core は軽量で、その API サーフェイスはマイクロサービスのスコープに合わせて最小化することができます。 マイクロサービス アーキテクチャでは、サービスの境界をまたいでテクノロジを混在させることもできます。これにより、.NET Framework、Java、Ruby、またはその他のモノリシック テクノロジで開発された他のマイクロサービスやサービスと連動する新しいマイクロサービスで .NET Core を段階的に採用することができます。
 
-使用できるインフラストラクチャ プラットフォームは多数あります。 大規模で複雑なマイクロサービス システムでは、[Azure Service Fabric](https://azure.microsoft.com/en-us/services/service-fabric/) を使用できます。 ステートレス マイクロサービスでは、[Azure App Service](https://azure.microsoft.com/en-us/services/app-service/) などの他の製品を使用することもできます。 Docker ベースのマイクロサービスの代替手段は、以下の説明のように、どのような種類のマイクロサービスのアプローチにもフィットします。 これらすべてのプラットフォームでは .NET Core がサポートされるため、マイクロサービスをホストするには最適です。
+使用できるインフラストラクチャ プラットフォームは多数あります。 大規模で複雑なマイクロサービス システムでは、[Azure Service Fabric](https://azure.microsoft.com/services/service-fabric/) を使用できます。 ステートレス マイクロサービスでは、[Azure App Service](https://azure.microsoft.com/services/app-service/) などの他の製品を使用することもできます。 Docker ベースのマイクロサービスの代替手段は、以下の説明のように、どのような種類のマイクロサービスのアプローチにもフィットします。 これらすべてのプラットフォームでは .NET Core がサポートされるため、マイクロサービスをホストするには最適です。
 
 ### <a name="containers"></a>コンテナー
 
 一般的に、コンテナーはマイクロサービス アーキテクチャと併用されますが、アーキテクチャ パターンに従う Web アプリやサービスをコンテナー化するために使用することもできます。 Windows コンテナーで .NET Framework を使用できますが、モジュール性があり、軽量な .NET Core はコンテナーには最適です。  コンテナーを作成して展開する場合、そのイメージのサイズは .NET Framework より .NET Core の方がはるかに小さくなります。  また、クロスプラットフォームであるため、Linux Docker コンテナーなどにサーバー アプリを展開することができます。
 
-したがって、独自の Linux または Windows インフラストラクチャで Docker コンテナーをホストしたり、クラスターでコンテナー ベースのアプリケーションを管理、オーケストレーションおよびスケーリングできる [Azure Container Service](https://azure.microsoft.com/en-us/services/container-service/) などのクラウド サービスを使用したりすることができます。
+したがって、独自の Linux または Windows インフラストラクチャで Docker コンテナーをホストしたり、クラスターでコンテナー ベースのアプリケーションを管理、オーケストレーションおよびスケーリングできる [Azure Container Service](https://azure.microsoft.com/services/container-service/) などのクラウド サービスを使用したりすることができます。
 
 ### <a name="a-need-for-high-performance-and-scalable-systems"></a>高パフォーマンスでスケーラブルなシステムの必要性
 
@@ -110,6 +109,7 @@ Microsoft やサードパーティ製のプラットフォームの中には、.
 * [.NET コンポーネントの概要](components.md)
 
 
-<!--HONumber=Nov16_HO3-->
+
+<!--HONumber=Jan17_HO3-->
 
 

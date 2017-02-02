@@ -3,16 +3,16 @@ title: "Windows コンテナーへの ASP.NET MVC アプリケーションの移
 description: "既存の ASP.NET MVC アプリケーションを取得し、Windows Docker コンテナーで実行する方法について説明します。"
 keywords: "Windows コンテナー, Docker, ASP.NET MVC"
 author: BillWagner
-manager: wpickett
+ms.author: wiwagn
 ms.date: 09/28/2016
 ms.topic: article
-ms.prod: .net-framework-4.6
+ms.prod: .net-framework
 ms.technology: dotnet-mvc
 ms.devlang: dotnet
 ms.assetid: c9f1d52c-b4bd-4b5d-b7f9-8f9ceaf778c4
 translationtype: Human Translation
-ms.sourcegitcommit: 15c55a87beb64f265a164db918c7721c7690fadf
-ms.openlocfilehash: 3e8a8a953cbb3dde6ddf386f8c3b3a1fd4c549f1
+ms.sourcegitcommit: 90fe68f7f3c4b46502b5d3770b1a2d57c6af748a
+ms.openlocfilehash: c81e9783499ede9a612969f16a7e85d77fa921c4
 
 ---
 
@@ -42,7 +42,7 @@ Windows コンテナー内で既存の .NET Framework ベースのアプリケ�
 作業を始める前に、[Docker for Windows](https://docs.docker.com/docker-for-windows/) Version 1.12 Beta 26 またはそれ以降をインストールする必要があります。 現時点では Windows コンテナー サポートはベータ チャネルのみで使用できます。
 
 > [!IMPORTANT]
-> Windows Server 2016 を使用している場合は、Docker コンテナーを実行する前に「[コンテナー ホストの展開 - Windows Server](https://msdn.microsoft.com/en-us/virtualization/windowscontainers/deployment/deployment)」にある手順に従う必要があります。
+> Windows Server 2016 を使用している場合は、Docker コンテナーを実行する前に「[コンテナー ホストの展開 - Windows Server](https://msdn.microsoft.com/virtualization/windowscontainers/deployment/deployment)」にある手順に従う必要があります。
 
 Docker をインストールして開始した後、Windows ベースの Docker イメージを実行するために、トレイ アイコンを右クリックし、**[Switch to Windows containers]** (Windows コンテナーに切り替え) を選択する必要があります。 このコマンドの実行には数秒かかります。
 
@@ -181,6 +181,6 @@ docker rm randomanswers
 
 
 
-<!--HONumber=Nov16_HO3-->
+<!--HONumber=Jan17_HO3-->
 
 
