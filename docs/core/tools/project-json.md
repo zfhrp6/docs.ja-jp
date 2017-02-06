@@ -1,5 +1,5 @@
 ---
-title: "project.json 参照"
+title: "project.json リファレンス | Microsoft Docs"
 description: "project.json 参照"
 keywords: .NET, .NET Core, project.json
 author: aL3891
@@ -11,12 +11,15 @@ ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: 3aef32bd-ee2a-4e24-80f8-a2b615e0336d
 translationtype: Human Translation
-ms.sourcegitcommit: 4023c5ec72055fee78863a43b60989e1eb34fb22
-ms.openlocfilehash: 68b152cda54b5356dce48f4a8330b2ecb9c9d2e0
+ms.sourcegitcommit: 2ad428dcda9ef213a8487c35a48b33929259abba
+ms.openlocfilehash: a1a27c6653d61ab612b76a4522dffdf82afecafc
 
 ---
 
 # <a name="projectjson-reference"></a>project.json 参照
+
+> [!WARNING]
+> このトピックは .NET Core Tools Preview 2 を対象としています。 Visual Studio 2017 RC - .NET Core Tools Preview 4 のドキュメントについては、「[.NET Core コマンド ライン インターフェイス ツール (Tooling Preview 4)](../preview3/tools/index.md)」のセクションを参照してください。
 
 project.json ファイルは .NET Core プロジェクトで利用され、プロジェクトのメタデータ、コンパイル情報、依存関係を定義します。 この参照トピックでは、project.json ファイルで定義できるすべてのプロパティの一覧を確認できます。
 
@@ -322,7 +325,7 @@ project.json ファイルは .NET Core プロジェクトで利用され、プ�
 型: Object
 
 プロジェクトのパッケージ依存関係を定義するオブジェクト。このオブジェクトの各キーがパッケージの名前であり、各値にバージョン情報が含まれています。
-詳細については、NuGet ドキュメント サイトの記事「[依存解決](https://docs.nuget.org/ndocs/consume-packages/dependency-resolution#dependency-resolution-in-nuget-3-x)」を参照してください。
+詳細については、NuGet ドキュメント サイトの記事「[依存解決](https://docs.microsoft.com/nuget/consume-packages/dependency-resolution#dependency-resolution-in-nuget-3x)」を参照してください。
 
 例:
 
@@ -344,7 +347,7 @@ project.json ファイルは .NET Core プロジェクトで利用され、プ�
 ### <a name="version"></a>version
 型: String
 
-依存関係のバージョンまたはバージョン範囲を指定します。 \* ワイルドカードを利用し、[浮動依存関係バージョン](https://docs.nuget.org/ndocs/consume-packages/dependency-resolution#floating-versions)を指定します。
+依存関係のバージョンまたはバージョン範囲を指定します。 \* ワイルドカードを利用し、[浮動依存関係バージョン](https://docs.microsoft.com/nuget/consume-packages/dependency-resolution#floating-versions)を指定します。
 
 例:
 
@@ -384,7 +387,7 @@ project.json ファイルは .NET Core プロジェクトで利用され、プ�
 ### <a name="include"></a>include
 型: String
 
-依存関係パッケージの一部を含みます。 `all`、`runtime`、`compile`、`build`、`contentFiles`、`native`、`analyzers`、`none` というフラグの 1 つまたは複数を指定できます。
+依存関係パッケージの一部を含みます。 `all`、`runtime`、`compile`、`build`、`contentFiles`、`native`、`analyzers`、`none` というフラグの&1; つまたは複数を指定できます。
 複数のフラグはコンマ区切りリストで定義されます。
 詳細については、NuGet リポジトリの「[Managing dependency package assets](https://github.com/NuGet/Home/wiki/%5BSpec%5D-Managing-dependency-package-assets)」 (依存関係パッケージ資産の管理) 仕様を参照してください。
 
@@ -404,7 +407,7 @@ project.json ファイルは .NET Core プロジェクトで利用され、プ�
 ### <a name="exclude"></a>exclude
 型: String
 
-依存関係パッケージの一部を除外します。 `all`、`runtime`、`compile`、`build`、`contentFiles`、`native`、`analyzers`、`none` というフラグの 1 つまたは複数を指定できます。
+依存関係パッケージの一部を除外します。 `all`、`runtime`、`compile`、`build`、`contentFiles`、`native`、`analyzers`、`none` というフラグの&1; つまたは複数を指定できます。
 複数のフラグはコンマ区切りリストで定義されます。
 詳細については、NuGet リポジトリの「[Managing dependency package assets](https://github.com/NuGet/Home/wiki/%5BSpec%5D-Managing-dependency-package-assets)」 (依存関係パッケージ資産の管理) 仕様を参照してください。
 
@@ -424,7 +427,7 @@ project.json ファイルは .NET Core プロジェクトで利用され、プ�
 ### <a name="supressparent"></a>supressParent
 型: String
 
-プロジェクトのコンシューマーの追加除外を定義します。 `all`、`runtime`、`compile`、`build`、`contentFiles`、`native`、`analyzers`、`none` というフラグの 1 つを指定できます。
+プロジェクトのコンシューマーの追加除外を定義します。 `all`、`runtime`、`compile`、`build`、`contentFiles`、`native`、`analyzers`、`none` というフラグの&1; つを指定できます。
 詳細については、NuGet リポジトリの「[Managing dependency package assets](https://github.com/NuGet/Home/wiki/%5BSpec%5D-Managing-dependency-package-assets)」 (依存関係パッケージ資産の管理) 仕様を参照してください。
 
 ```json
@@ -688,7 +691,7 @@ AnyCpu、x86、x64 など、ターゲット プラットフォームの名前。
 ### <a name="xmldoc"></a>xmlDoc
 型: Boolean
 
-ソース コードにあるスラッシュが 3 つのコメントから XML ドキュメントを生成する場合は `true`、それ以外の場合は `false`。 既定値は、`false` です。
+ソース コードにあるスラッシュが&3; つのコメントから XML ドキュメントを生成する場合は `true`、それ以外の場合は `false`。 既定値は、`false` です。
 
 例:
 
@@ -1608,7 +1611,7 @@ Debug や Release など、プロパティがこのプロジェクトのさま�
 
 DLL ファイルをラップするために使用されます。 この DLL を含むパッケージを参照し、生成できます。 
 
-値がアセンブリ パスである String プロパティ、`assembly` が 1 つ含まれます。   
+値がアセンブリ パスである String プロパティ、`assembly` が&1; つ含まれます。   
 
 例:
 
@@ -1643,7 +1646,7 @@ DLL ファイルをラップするために使用されます。 この DLL を�
 ## <a name="usersecretsid"></a>userSecretsId
 型: String
 
-開発時に使用されるユーザー シークレット ID を指定します。 詳細については、「[Safe storage of app secrets during development](https://docs.asp.net/en/latest/security/app-secrets.html)」 (開発中のアプリ シークレットの安全な保存) を参照してください。
+開発時に使用されるユーザー シークレット ID を指定します。 詳細については、「[Safe storage of app secrets during development](https://docs.microsoft.com/aspnet/core/security/app-secrets)」 (開発中のアプリ シークレットの安全な保存) を参照してください。
 
 例:
 

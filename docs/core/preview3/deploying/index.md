@@ -1,24 +1,26 @@
 ---
-title: ".NET Core アプリケーション展開"
+title: ".NET Core アプリケーション展開 | Microsoft Docs"
 description: ".NET Core アプリケーション展開"
 keywords: ".NET, .NET Core, .NET Core 展開"
 author: rpetrusha
-manager: wpickett
+ms.author: ronpet
 ms.date: 11/13/2016
 ms.topic: article
 ms.prod: .net-core
-ms.technology: .net-core-technologies
 ms.devlang: dotnet
 ms.assetid: da7a31a0-8072-4f23-82aa-8a19184cb701
 translationtype: Human Translation
-ms.sourcegitcommit: 1a84c694945fe0c77468eb77274ab46618bccae6
-ms.openlocfilehash: d99d1a68fd6d1daf68670d6d73c07fe1009d92d9
+ms.sourcegitcommit: 2ad428dcda9ef213a8487c35a48b33929259abba
+ms.openlocfilehash: a22431b63a0bde8739e33c39fa24380baaa7be54
 
 ---
 
-# <a name="net-core-application-deployment"></a>.NET Core アプリケーション展開 #
+# <a name="net-core-application-deployment-net-core-tools-preview-4"></a>.NET Core アプリケーション展開 (.NET Core Tools Preview 4)
 
-.NET Core アプリケーションに対して、次の 2 種類の展開を作成できます。 
+> [!WARNING]
+> このトピックは、Visual Studio 2017 RC - .NET Core Tools Preview 4 を対象としています。 .NET Core Tools Preview 2 のドキュメントについては、「[.NET Core アプリケーション展開](../../deploying/index.md)」トピックを参照してください。
+
+.NET Core アプリケーションに対して、次の&2; 種類の展開を作成できます。 
 
 - フレームワークに依存する展開。 名前が示すように、フレームワークに依存する展開 (FDD) は、ターゲット システムに存在する .NET Core のシステム全体の共有バージョンに依存します。 .NET Core は既に存在するので、アプリは .NET Core のインストール間で移植することもできます。 アプリには、それ自体のコード、および .NET Core ライブラリの外部にあるサードパーティの依存関係のみが含まれています。 FDD には、コマンドラインから [dotnet ユーティリティ](../tools/dotnet.md)を使用して起動できる .dll ファイルが含まれています。 たとえば、`dotnet app.dll` は `app` という名前のアプリケーションを実行します。
 
@@ -103,7 +105,7 @@ FDD の展開には、次のいくつかの利点があります。
 
 ### <a name="deploying-a-framework-dependent-deployment-with-third-party-dependencies"></a>サードパーティの依存関係を含む、フレームワークに依存する展開を展開する ###
 
-1 つまたは複数のサードパーティの依存関係を含む、フレームワークに依存する展開を展開するプロセスでは、`dotnet restore` コマンドを実行できるようにするために、次の 3 つの追加手順を実行します。
+1 つまたは複数のサードパーティの依存関係を含む、フレームワークに依存する展開を展開するプロセスでは、`dotnet restore` コマンドを実行できるようにするために、次の&3; つの追加手順を実行します。
 
 1. 任意のサードパーティ ライブラリへの参照を `csproj` ファイルの `<ItemGroup>` セクションに追加します。 次の `<ItemGroup>` のセクションでは、既定のプロジェクトに依存関係を含む、Json.NET をサード パーティ製のライブラリとする、`<ItemGroup>` を示します。
 
@@ -122,7 +124,7 @@ FDD の展開には、次のいくつかの利点があります。
       </ItemGroup>
     ```
 
-上の例では、SDK の依存関係は残っています。 コマンド ライン ツールが機能するには、必要なすべてのターゲットを復元する必要があるため、この依存関係は仕様で必要です。  
+ 上の例では、SDK の依存関係は残っています。 コマンド ライン ツールが機能するには、必要なすべてのターゲットを復元する必要があるため、この依存関係は仕様で必要です。  
 
 2. サードパーティの依存関係を含む NuGet パッケージをまだダウンロードしていない場合は、ダウンロードします。 パッケージをダウンロードするには、依存関係を追加した後で `dotnet restore` コマンドを実行します。 発行時に依存関係はローカルの NuGet キャッシュからが解決されるので、システムで使用可能になる必要があります。
 
@@ -134,7 +136,7 @@ FDD の展開には、次のいくつかの利点があります。
 
 ### <a name="why-deploy-a-self-contained-deployment"></a>自己完結型の展開を展開する理由 ###
 
-自己完結型の展開を展開するのには、次の 2 つの主な利点があります。
+自己完結型の展開を展開するのには、次の&2; つの主な利点があります。
 
 - アプリで展開されている .NET Core のバージョンは、あなただけがコントロールできます。 .NET Core を操作できるのはあなただけです。
 
@@ -190,7 +192,7 @@ FDD の展開には、次のいくつかの利点があります。
     }
     ```
 
-3. `csproj` ファイルで、アプリがターゲットとするプラットフォームを定義する `<RuntimeIdentifiers>` タグを `<PropertyGroup>` セクションの下に作成し、ターゲットとする各プラットフォームのランタイム識別子を指定します。 ランタイム識別子の一覧については、「[Runtime IDentifier catalog](../../rid-catalog.md)」 (ランタイム識別子のカタログ) を参照してください。 たとえば、次の `runtimes` セクションは、アプリが 64 ビット Windows 10 オペレーティング システムおよび 64 ビット OS X バージョン 10.11 オペレーティング システムで実行されることを示します。
+3. `csproj` ファイルで、アプリがターゲットとするプラットフォームを定義する `<RuntimeIdentifiers>` タグを `<PropertyGroup>` セクションの下に作成し、ターゲットとする各プラットフォームのランタイム識別子を指定します。 ランタイム識別子の一覧については、「[Runtime IDentifier catalog](../../rid-catalog.md)」 (ランタイム識別子のカタログ) を参照してください。 たとえば、次の例は、アプリが 64 ビット Windows 10 オペレーティング システムおよび 64 ビット OS X バージョン 10.11 オペレーティング システムで実行されることを示します。
 
     ```xml
         <PropertyGroup>
@@ -318,18 +320,16 @@ FDD の展開には、次のいくつかの利点があります。
 
 ターゲット システムで十分な記憶域の可用性が問題になる可能性がある場合は、一部のシステム コンポーネントを除外することで、アプリの全体的なフットプリントを削減できます。 このためには、アプリによって csproj ファイルに含まれる .NET Core コンポーネントを明示的に定義します。
 
-フットプリントがより小さい自己完結型の展開を作成するには、まず次の 2 つの手順に従って自己完結型の展開を作成します。 `dotnet new` コマンドを実行し、C# ソース コードをアプリに追加したら、次の手順を実行します。
+フットプリントがより小さい自己完結型の展開を作成するには、まず次の&2; つの手順に従って自己完結型の展開を作成します。 `dotnet new` コマンドを実行し、C# ソース コードをアプリに追加したら、次の手順を実行します。
 
-1. `csproj` ファイルを開き、`frameworks` セクションを次のコードに置き換えます。
+1. `csproj` ファイルを開き、`<TargetFramework>` 要素を次のものと置き換えます。
 
     ```xml
-    <PropertyGroup>
       <TargetFramework>netstandard1.6</TargetFramework>
-  </PropertyGroup>
   ```
 この操作は、`netcoreapp1.0`フレームワーク全体 (.NET Core CLR, .NET Core ライブラリ、およびその他の多数のシステム コンポーネントを含む) を使用する代わりに、アプリが .NET 標準ライブラリのみを使用することを示します。
 
-2. `dependencies` セクションを次のコードに置き換えます。
+2. パッケージ参照を含む `<ItemGroup>` を次のものと置き換えます。
 
     ```xml
     <ItemGroup>
@@ -360,7 +360,7 @@ FDD の展開には、次のいくつかの利点があります。
     ```
     
 
-完全なサンプル `csproj` ファイルについては、このセクションの後の部分に示されています。
+ 完全なサンプル `csproj` ファイルについては、このセクションの後の部分に示されています。
 
 4. `dotnet restore` コマンドを実行して、プロジェクトで指定された依存関係を復元します。
 
@@ -390,7 +390,7 @@ FDD の展開には、次のいくつかの利点があります。
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" />
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>netcoreapp1.0</TargetFramework>
+    <TargetFramework>netstandard1.6</TargetFramework>
     <VersionPrefix>1.0.0</VersionPrefix>
     <DebugType>Portable</DebugType>
     <RuntimeIdentifiers>win10-x64;osx.10.11-x64</RuntimeIdentifiers>
@@ -422,6 +422,6 @@ FDD の展開には、次のいくつかの利点があります。
 
 
 
-<!--HONumber=Nov16_HO3-->
+<!--HONumber=Jan17_HO3-->
 
 

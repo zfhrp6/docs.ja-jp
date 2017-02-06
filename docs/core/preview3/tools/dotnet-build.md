@@ -1,22 +1,25 @@
 ---
-title: "dotnet-build コマンド | .NET Core SDK"
+title: "dotnet-build コマンド | Microsoft Docs"
 description: "dotnet-build コマンドは、プロジェクトとそのすべての依存関係をします。"
 keywords: "dotnet-build, CLI, CLI コマンド, .NET Core"
-author: mairaw
-manager: wpickett
+author: blackdwarf
+ms.author: mairaw
 ms.date: 10/13/2016
 ms.topic: article
 ms.prod: .net-core
-ms.technology: .net-core-technologies
+ms.technology: dotnet-cli
 ms.devlang: dotnet
-ms.assetid: 70285a83-4103-4617-be8b-d0e1e9a4a91d
+ms.assetid: 5e1a2bc4-a919-4a86-8f33-a9b218b1fcb3
 translationtype: Human Translation
-ms.sourcegitcommit: 1a84c694945fe0c77468eb77274ab46618bccae6
-ms.openlocfilehash: 04c4d77b31bf4a1bdb425d837c490440e7312e57
+ms.sourcegitcommit: 2ad428dcda9ef213a8487c35a48b33929259abba
+ms.openlocfilehash: d2eeeccd6b3bdf82ba02fea6ce89785ef19d4116
 
 ---
 
-#<a name="dotnet-build"></a>dotnet-build
+#<a name="dotnet-build-tooling-preview-4"></a>dotnet-build (Tooling Preview 4)
+
+> [!WARNING]
+> このトピックは、Visual Studio 2017 RC - .NET Core Tools Preview 4 を対象としています。 .NET Core Tools Preview 2 バージョンについては、「[dotnet-build](../../tools/dotnet-build.md)」トピックを参照してください。
 
 ## <a name="name"></a>名前 
 dotnet-build -- プロジェクトとそのすべての依存関係をビルドします。 
@@ -31,7 +34,7 @@ dotnet-build -- プロジェクトとそのすべての依存関係をビルド�
 ## <a name="description"></a>説明
 
 `dotnet build` コマンドは、ソース プロジェクトとその依存関係から複数のソース ファイルをバイナリにビルドします。 既定では、結果のバイナリは中間言語 (IL) になり、拡張子は DLL になります。 
-`dotnet build` は、ホストがアプリケーションを実行するために必要なものの概要を示す `\*.deps` ファイルのドロップも行います。  
+`dotnet build` は、ホストがアプリケーションを実行するために必要なものの概要を示す `*.deps` ファイルのドロップも行います。  
 
 ビルドには、アセット ファイル (アプリケーションのすべての依存関係を一覧するファイル) が存在している必要があります。つまり、コードをビルドする前に [`dotnet restore`](dotnet-restore.md) を実行する必要があるということです。
 
@@ -100,6 +103,6 @@ dotnet-build -- プロジェクトとそのすべての依存関係をビルド�
 
 
 
-<!--HONumber=Nov16_HO3-->
+<!--HONumber=Jan17_HO3-->
 
 

@@ -1,5 +1,5 @@
 ---
-title: "dotnet-install スクリプト | .NET Core SDK"
+title: "dotnet-install スクリプト | Microsoft Docs"
 description: ".NET Core CLI ツールと共有ランタイムをインストールする dotnet-install スクリプトについて説明します。"
 keywords: "dotnet-install, dotnet-install スクリプト, .NET Core"
 author: blackdwarf
@@ -9,14 +9,17 @@ ms.topic: article
 ms.prod: .net-core
 ms.technology: dotnet-cli
 ms.devlang: dotnet
-ms.assetid: 59b9c456-2bfd-4adc-8202-a1c6a0a6c787
+ms.assetid: b64e7e6f-ffb4-4fc8-b43b-5731c89479c2
 translationtype: Human Translation
-ms.sourcegitcommit: 1a84c694945fe0c77468eb77274ab46618bccae6
-ms.openlocfilehash: 08a401abed36e68caa7172e05184d18469fef48f
+ms.sourcegitcommit: 2ad428dcda9ef213a8487c35a48b33929259abba
+ms.openlocfilehash: 9f241774dd8977bbb26b5143d9f5d094af1ce05d
 
 ---
 
-#<a name="dotnet-install-scripts-reference"></a>dotnet-install スクリプト参照
+#<a name="dotnet-install-scripts-reference-tooling-preview-4"></a>dotnet-install スクリプト リファレンス (Tooling Preview 4)
+
+> [!WARNING]
+> このトピックは、Visual Studio 2017 RC - .NET Core Tools Preview 4 を対象としています。 .NET Core Tools Preview 2 バージョンについては、「[dotnet-install スクリプト リファレンス](../../tools/dotnet-install-script.md)」トピックを参照してください。
 
 ## <a name="name"></a>名前
 dotnet-install.ps1 | dotnet-install.sh - コマンド ライン インターフェイス (CLI) ツールと共有ランタイムをインストールするために使用するスクリプト
@@ -37,7 +40,7 @@ macOS/Linux の場合:
 ## <a name="description"></a>説明
 `dotnet-install` スクリプトは、CLI ツールチェーンと共有ランタイムの非管理者インストールを実行するために使用されます。 スクリプトは [CLI GitHub リポジトリ](https://github.com/dotnet/cli/tree/rel/1.0.0-preview2/scripts/obtain)からダウンロードできます。 
 
-その主なユース ケースは、自動化シナリオと非管理者インストールに役立ちます。 このスクリプトは 2 つ (Windows で動作する PowerShell 用と、Linux/OS X で動作する bash スクリプト用にそれぞれ 1 つずつ) あります。両方とも動作は同じです。 bash スクリプトでは PowerShell スイッチも "認識される" ため、全体で使用できます。 
+その主なユース ケースは、自動化シナリオと非管理者インストールに役立ちます。 このスクリプトは&2; つ (Windows で動作する PowerShell 用と、Linux/OS X で動作する bash スクリプト用にそれぞれ&1; つずつ) あります。両方とも動作は同じです。 bash スクリプトでは PowerShell スイッチも "認識される" ため、全体で使用できます。 
 
 インストール スクリプトは CLI ビルド ドロップから ZIP/tarball ファイルをダウンロードし、既定の場所または `--install-dir` で指定された場所へのインストールに進みます。 既定では、インストール スクリプトは SDK をダウンロードしてインストールします。共有ランタイムのみを取得する場合は、`--shared-runtime` 引数を指定できます。 
 
@@ -126,6 +129,6 @@ macOS/Linux の場合:
 
 
 
-<!--HONumber=Nov16_HO3-->
+<!--HONumber=Jan17_HO3-->
 
 

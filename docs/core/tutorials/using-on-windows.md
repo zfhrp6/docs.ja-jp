@@ -10,14 +10,15 @@ ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: d743134a-08a3-4ff6-aab7-49f71f0568c3
 translationtype: Human Translation
-ms.sourcegitcommit: 54da8aebd64e86c064214074bc261f72c3b0aedc
-ms.openlocfilehash: bf7bf944ebbf3c53ee6206f86e1a168111b54378
+ms.sourcegitcommit: a8019c9fc25ef458aa555743e61cd83a3beb11ed
+ms.openlocfilehash: 446ada6d325a81f9c0078e4771866d99af341aed
 
 ---
 
 # <a name="getting-started-with-net-core-on-windows-using-visual-studio-2015"></a>Visual Studio 2015 を使用した Windows での .NET Core の概要
 
-著者: [Bertrand Le Roy](https://github.com/bleroy)、[Phillip Carter](https://github.com/cartermp)
+> [!WARNING]
+> このトピックは、Visual Studio 2015 - .NET Core Tools Preview 2 を対象としています。 Visual Studio 2017 RC - .NET Core Tools Preview 4 バージョンについては、「[Visual Studio 2017 を使用した Windows での .NET Core の概要](../preview3/tutorials/using-on-windows-vs-2017.md)」トピックを参照してください。
 
 Visual Studio 2015 は、.NET Core アプリケーション開発用の機能をすべて備えた開発環境を提供します。 このドキュメントでは、一般的な .NET Core ソリューションまたは .NET Core コンポーネントを含むソリューションを Visual Studio を使用して構築するために必要な手順について説明します。 シナリオには、.NET Core の最新バージョン対応として明示的にビルドされていないサードパーティ製ライブラリのテストと使用が含まれます。 
 
@@ -31,7 +32,7 @@ Visual Studio 2015 は、.NET Core アプリケーション開発用の機能を
 
 1. Visual Studio を開き、**[ファイル]** メニューで **[新規作成]**、**[プロジェクト]** の順に選択します。
 
-2. **[新しいプロジェクト]** ダイアログの **[テンプレート]** の一覧で、**[Visual C#]** ノードを展開し、**[.NET Core]** を選択します。 **クラス ライブラリ (.NET Core)** 用、**コンソール アプリケーション (.NET Core)** 用、**ASP.NET Core Web アプリケーション (.NET Core)** 用の 3 つの新しいプロジェクト テンプレートが表示されます。
+2. **[新しいプロジェクト]** ダイアログの **[テンプレート]** の一覧で、**[Visual C#]** ノードを展開し、**[.NET Core]** を選択します。 **クラス ライブラリ (.NET Core)** 用、**コンソール アプリケーション (.NET Core)** 用、**ASP.NET Core Web アプリケーション (.NET Core)** 用の&3; つの新しいプロジェクト テンプレートが表示されます。
 
 <a name="a-solution-using-only-net-core-projects"></a>.NET Core プロジェクトのみを使用するソリューション
 ----------------------------------------
@@ -151,7 +152,7 @@ Visual Studio 2015 は、.NET Core アプリケーション開発用の機能を
 
 8. **[参照マネージャー]** ダイアログ ボックスで、**[参照]** を選択してビルドした `Library.dll` の場所を参照し (..Golden\src\Library\bin\Debug\netstandard1.4 パスの下)、**[追加]** をクリックします。 
 
-   .NET Framework から .NET Core コードを参照するもう 1 つの方法としては、ライブラリをパッケージ化し、パッケージを参照することもできます。
+   .NET Framework から .NET Core コードを参照するもう&1; つの方法としては、ライブラリをパッケージ化し、パッケージを参照することもできます。
 
 9. **[参照]** ノードのコンテキスト メニューを開き、**[NuGet パッケージの管理]** を選択します。
 
@@ -275,6 +276,6 @@ Visual Studio 2015 は、.NET Core アプリケーション開発用の機能を
 
 
 
-<!--HONumber=Nov16_HO3-->
+<!--HONumber=Jan17_HO4-->
 
 

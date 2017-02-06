@@ -1,5 +1,5 @@
 ---
-title: "Visual Studio 2017 を使用した Windows での完全な .NET Core ソリューションの構築"
+title: "Visual Studio 2017 を使用した Windows での完全な .NET Core ソリューションの構築 | Microsoft Docs"
 description: "Visual Studio 2017 を使用した Windows での完全な .NET Core ソリューションの構築"
 keywords: .NET, .NET Core
 author: bleroy
@@ -8,16 +8,17 @@ ms.date: 11/16/2016
 ms.topic: article
 ms.prod: .net-core
 ms.devlang: dotnet
-ms.assetid: d743134a-08a3-4ff6-aab7-49f71f0568c3
+ms.assetid: ba7e082c-a7c8-431e-a342-f67734b660f6
 translationtype: Human Translation
-ms.sourcegitcommit: 07b62bd7163193eff8dc8f61fda7a45a924bba2b
-ms.openlocfilehash: 9e65979d2f41e39e89109c2c5480acaebbef757f
+ms.sourcegitcommit: 82dfcb532ce6c14e93c5baedb61b619cc18e69f1
+ms.openlocfilehash: 02c48cd7e2fc551b82bb7afa53a3dd228e02dca1
 
 ---
 
-# <a name="building-a-complete-net-core-solution-on-windows-using-visual-studio-2017"></a>Visual Studio 2017 を使用した Windows での完全な .NET Core ソリューションの構築
+# <a name="building-a-complete-net-core-solution-on-windows-using-visual-studio-2017-tooling-preview-4"></a>Visual Studio 2017 を使用した Windows での完全な .NET Core ソリューションの構築 (Tooling Preview 4)
 
-著者: [Bertrand Le Roy](https://github.com/bleroy)、[Phillip Carter](https://github.com/cartermp)
+> [!WARNING]
+> このトピックは、Visual Studio 2017 RC - .NET Core Tools Preview 4 を対象としています。 .NET Core Tools Preview 2 バージョンについては、「[Visual Studio 2015 を使用した Windows での .NET Core の概要](../../tutorials/using-on-windows.md)」トピックを参照してください。
 
 Visual Studio 2017 は、.NET Core アプリケーション開発用の機能をすべて備えた開発環境を提供します。 このドキュメントでは、再利用可能なライブラリ、サードパーティ製ライブラリのテストと使用を含む、一般的な .NET Core ソリューションをビルドするために必要な手順について説明します。 
 
@@ -66,7 +67,7 @@ Visual Studio 2017 は、.NET Core アプリケーション開発用の機能を
 
 ### <a name="writing-the-console-app"></a>コンソール アプリの作成
 
-1. ソリューション エクスプローラーで、ソリューションのコンテキスト メニューを開き、新しい**コンソール アプリケーション (.NET Core)** プロジェクトを追加します。 名前を "App" にして、場所を `Golden\src` に設定します。
+1. ソリューション エクスプローラーで、ソリューションのコンテキスト メニューを開き、新しい**コンソール アプリケーション (.NET Core)** プロジェクトを追加します。 それに "App" という名前を付けます。
 
 2. **App** プロジェクトで、**[依存関係]** ノードのコンテキスト メニューを開き、**[追加]**、**[参照]** の順に選択します。 
 
@@ -74,7 +75,7 @@ Visual Studio 2017 は、.NET Core アプリケーション開発用の機能を
 
 6. **App** ノードのコンテキスト メニューを開き、**[スタートアップ プロジェクトに設定]** を選択します。 これで、F5 キーまたは Ctrl + F5 キーを押したときにコンソール アプリケーションが起動します。
 
-7. `Program.cs` ファイルを開き、`using Library;` ディレクティブをファイルの先頭に追加して、`Console.WriteLine($"The answer is {new Thing().Get(42)}");` を `Main` メソッドに追加します。
+7. `Program.cs` ファイルを開き、`using Library;` ディレクティブをファイルの先頭に追加して、`Console.WriteLine($"The answer is {new Thing().Get(42)}.");` を `Main` メソッドに追加します。
 
 8. 追加した行の後にブレークポイントを設定します。
 
@@ -84,6 +85,6 @@ Visual Studio 2017 は、.NET Core アプリケーション開発用の機能を
 
 
 
-<!--HONumber=Nov16_HO3-->
+<!--HONumber=Jan17_HO4-->
 
 

@@ -1,26 +1,29 @@
 ---
-title: "dotnet-pack コマンド | .NET Core SDK"
+title: "dotnet-pack コマンド | Microsoft Docs"
 description: "dotnet-pack コマンドでは、.NET Core プロジェクトの NuGet パッケージを作成します。"
 keywords: "dotnet-pack, CLI, CLI コマンド, .NET Core"
-author: mairaw
-manager: wpickett
+author: blackdwarf
+ms.author: mairaw
 ms.date: 10/12/2016
 ms.topic: article
 ms.prod: .net-core
-ms.technology: .net-core-technologies
+ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: 8b4b8cef-f56c-4a10-aa01-fde8bfaae53e
 translationtype: Human Translation
-ms.sourcegitcommit: c6ee3f5663d0a3f62914e8de474cca4d15340c9d
-ms.openlocfilehash: e83c8ad302590bcd77129c3ff325e498da751e69
+ms.sourcegitcommit: 2ad428dcda9ef213a8487c35a48b33929259abba
+ms.openlocfilehash: 227bdaabc88bddbf2014788d72ef87e75f956795
 
 ---
 
-#<a name="dotnetpack"></a>dotnet-pack
+#<a name="dotnet-pack"></a>dotnet-pack
 
-## <a name="name"></a>Name
+> [!WARNING]
+> このトピックは .NET Core Tools Preview 2 を対象としています。 Visual Studio 2017 RC - .NET Core Tools Preview 4 バージョンについては、「[dotnet-pack (Tooling Preview 4)](../preview3/tools/dotnet-pack.md)」トピックを参照してください。
 
-`dotnet-pack`- NuGet パッケージにコードをパックします。
+## <a name="name"></a>名前
+
+`dotnet-pack` - NuGet パッケージにコードをパックします。
 
 ## <a name="synopsis"></a>構文
 
@@ -31,7 +34,7 @@ ms.openlocfilehash: e83c8ad302590bcd77129c3ff325e498da751e69
 
 ## <a name="description"></a>説明
 
-`dotnet pack` コマンドはプロジェクトをビルドし、NuGet パッケージを作成します。 この操作の結果として、拡張子が `nupkg` の 2 つのパッケージが生成されます。 1 つのパッケージにコードが含まれ、もう 1 つにはデバッグ シンボルが含まれます。 
+`dotnet pack` コマンドはプロジェクトをビルドし、NuGet パッケージを作成します。 この操作の結果として、拡張子が `nupkg` の&2; つのパッケージが生成されます。 1 つのパッケージにコードが含まれ、もう&1; つにはデバッグ シンボルが含まれます。 
 
 パックされるプロジェクトの NuGet 依存関係が nuspec ファイルに追加されるため、パッケージのインストール時に解決できます。 プロジェクト間参照はプロジェクト内にはパッケージ化されません。 現時点では、プロジェクト間の依存関係がある場合は、プロジェクトごとにパッケージが必要になります。
 
@@ -90,6 +93,6 @@ app1 プロジェクトをパックします。
 `dotnet pack --version-suffix "ci-1234"`
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Jan17_HO3-->
 
 

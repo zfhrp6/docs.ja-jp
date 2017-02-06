@@ -1,5 +1,5 @@
 ---
-title: "dotnet-test コマンド | .NET Core SDK"
+title: "dotnet-test コマンド | Microsoft Docs"
 description: "`dotnet test` コマンドは、指定されたプロジェクトで単体テストを実行する場合に使用されます。"
 keywords: "dotnet-test, CLI, CLI コマンド, .NET Core"
 author: blackdwarf
@@ -9,14 +9,17 @@ ms.topic: article
 ms.prod: .net-core
 ms.technology: dotnet-cli
 ms.devlang: dotnet
-ms.assetid: 3a0fa917-eb0a-4d7e-9217-d06e65455675
+ms.assetid: 4bf0aef4-148a-41c6-bb95-0a9e1af8762e
 translationtype: Human Translation
-ms.sourcegitcommit: 1a84c694945fe0c77468eb77274ab46618bccae6
-ms.openlocfilehash: 66c9f949980612f6e21b6d441c004cc09f4eb7d3
+ms.sourcegitcommit: 2ad428dcda9ef213a8487c35a48b33929259abba
+ms.openlocfilehash: fb4627f5f8754ff3432d92e20dff2684a92fbeb5
 
 ---
 
-#<a name="dotnet-test"></a>dotnet-test
+#<a name="dotnet-test-tooling-preview-4"></a>dotnet-test (Tooling Preview 4)
+
+> [!WARNING]
+> このトピックは、Visual Studio 2017 RC - .NET Core Tools Preview 4 を対象としています。 .NET Core Tools Preview 2 バージョンについては、「[dotnet-test](../../tools/dotnet-test.md)」トピックを参照してください。
 
 ## <a name="name"></a>名前
 
@@ -28,7 +31,7 @@ ms.openlocfilehash: 66c9f949980612f6e21b6d441c004cc09f4eb7d3
     [--settings] [--listTests] [--testCaseFilter] 
     [--testAdapterPath] [--logger] 
     [--configuration] [--output] [--framework] [--diag]
-    [--noBuild]`  
+    [--no-build]`  
 
 ## <a name="description"></a>説明
 
@@ -119,7 +122,7 @@ ms.openlocfilehash: 66c9f949980612f6e21b6d441c004cc09f4eb7d3
 
 指定されたランタイムのテスト バイナリを検索します。
 
-`--noBuild` 
+`--no-build` 
 
 実行の前にテスト プロジェクトをビルドしません。 
 
@@ -145,6 +148,6 @@ test1 プロジェクトでテストを実行します。
 
 
 
-<!--HONumber=Nov16_HO3-->
+<!--HONumber=Jan17_HO3-->
 
 

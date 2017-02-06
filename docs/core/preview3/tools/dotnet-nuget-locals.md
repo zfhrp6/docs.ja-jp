@@ -1,5 +1,5 @@
 ---
-title: "dotnet-nuget-locals コマンド | .NET Core SDK"
+title: "dotnet-nuget-locals コマンド | Microsoft Docs"
 description: "dotnet-nuget-locals コマンドは、HTTP 要求キャッシュ、一時的なキャッシュ、コンピューター全体のグローバル パッケージ フォルダーなどのローカルの NuGet リソースをクリアまたは一覧表示します。"
 keywords: "dotnet-nuget-locals, CLI, CLI コマンド, .NET Core"
 author: karann-msft
@@ -11,8 +11,8 @@ ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: 8440229e-317e-4dc1-9463-cba5fdb12c3b
 translationtype: Human Translation
-ms.sourcegitcommit: 1a84c694945fe0c77468eb77274ab46618bccae6
-ms.openlocfilehash: 08c51ecb4e042254c89f618d6baff1b407af0113
+ms.sourcegitcommit: 2ad428dcda9ef213a8487c35a48b33929259abba
+ms.openlocfilehash: 5f8c3be091b515553eb0db0ccfaee6bb8c620cff
 
 ---
 
@@ -93,10 +93,10 @@ ms.openlocfilehash: 08c51ecb4e042254c89f618d6baff1b407af0113
 
 ## <a name="troubleshooting"></a>トラブルシューティング
 
-`dotnet-nuget-locals` コマンドを使用しているときに発生する一般的な問題やエラーについては、「[Managing the NuGet cache](https://docs.nuget.org/ndocs/consume-packages/managing-the-nuget-cache)」 (NuGet キャッシュを管理する) をご覧ください。
+`dotnet-nuget-locals` コマンドを使用しているときに発生する一般的な問題やエラーについては、「[Managing the NuGet cache](https://docs.microsoft.com/nuget/consume-packages/managing-the-nuget-cache)」 (NuGet キャッシュを管理する) をご覧ください。
 
 
 
-<!--HONumber=Nov16_HO3-->
+<!--HONumber=Jan17_HO3-->
 
 

@@ -1,5 +1,5 @@
 ---
-title: "Windows/Linux/macOS の .NET Core でのコマンド ラインの使用に関する概要 (SDK Preview 3)"
+title: "Windows/Linux/macOS の .NET Core でのコマンド ラインの使用に関する概要 (SDK Preview 4) | Microsoft Docs"
 description: "Windows、Linux、または macOS の .NET Core での、.NET Core コマンド ライン インターフェイス (CLI) の使用に関する概要"
 keywords: .NET, .NET Core
 author: cartermp
@@ -9,22 +9,25 @@ ms.topic: article
 ms.prod: .net-core
 ms.technology: dotnet-cli
 ms.devlang: dotnet
-ms.assetid: be988f09-7349-43b0-97fb-3a703d4587ce
+ms.assetid: 41632e63-d5c6-4427-a09e-51dc1116d45f
 translationtype: Human Translation
-ms.sourcegitcommit: ab71aab99505f211fe4adc86957eda4707761f1c
-ms.openlocfilehash: 01b17021e79bcdb2dc69f97b709f4aa63dbab9aa
+ms.sourcegitcommit: 2ad428dcda9ef213a8487c35a48b33929259abba
+ms.openlocfilehash: e84012937be6ede9170dde7ff88575d2f4fa1052
 
 ---
 
-# <a name="getting-started-with-net-core-on-windowslinuxmacos-using-the-command-line-sdk-preview-3"></a>Windows/Linux/macOS の .NET Core でのコマンド ラインの使用に関する概要 (SDK Preview 3)
+# <a name="getting-started-with-net-core-on-windowslinuxmacos-using-the-command-line-tooling-preview-4"></a>Windows/Linux/macOS の .NET Core でのコマンド ラインの使用に関する概要 (Tooling Preview 4)
+
+> [!WARNING]
+> このトピックは、Visual Studio 2017 RC - .NET Core Tools Preview 4 を対象としています。 .NET Core Tools Preview 2 バージョンについては、「[Windows/Linux/macOS の .NET Core でのコマンド ラインの使用に関する概要](../../tutorials/using-with-xplat-cli.md)」トピックを参照してください。
 
 このガイドでは、.NET Core CLI ツールを使用してクロスプラットフォーム コンソール アプリを作成する方法を説明します。  最も基本的なコンソール アプリから始めて、最終的にテストを含む複数プロジェクトまで拡張します。 既に作成してあるものを基にして、これらの機能を追加していきます。
 
 .NET Core CLI ツールセットに慣れていない場合は、「[.NET Core SDK overview](../tools/dotnet.md)」(.NET Core SDK の概要) を参照してください。
 
-## <a name="prerequisites"></a>前提条件
+## <a name="prerequisites"></a>必須コンポーネント
 
-始める前に、[.NET Core CLI ツール Preview 3 以降](https://github.com/dotnet/core/blob/master/release-notes/preview3-download.md)があることを確認します。  テキスト エディターも必要です。
+始める前に、[.NET Core CLI ツール Preview 4 以降](https://github.com/dotnet/core/blob/master/release-notes/preview3-download.md)があることを確認します。  テキスト エディターも必要です。
 
 ## <a name="hello-console-app"></a>Hello コンソール アプリ
 
@@ -314,10 +317,10 @@ $ dotnet run
  
 このガイドでは、.NET Core コンソール アプリの作成方法について、基礎からマルチプロジェクト システムと単体テストまで説明しました。  次は、あなた自身が優れたコンソール アプリを作る番です。
  
-コンソール アプリのより高度な例については、「[.NET Core コマンド ラインを使用したプロジェクトの整理およびテスト (SDK Preview 3)](using-with-xplat-cli-msbuild-folders.md)」というチュートリアルを参照してください。
+コンソール アプリのより高度な例については、「[.NET Core コマンド ラインを使用したプロジェクトの整理およびテスト (SDK Preview 4)](using-with-xplat-cli-msbuild-folders.md)」というチュートリアルを参照してください。
 
 
 
-<!--HONumber=Nov16_HO3-->
+<!--HONumber=Jan17_HO3-->
 
 

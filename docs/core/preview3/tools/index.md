@@ -1,23 +1,25 @@
 ---
-title: ".NET Core コマンドライン インターフェイス (CLI) ツール"
+title: ".NET Core コマンド ライン インターフェイス (CLI) ツール | Microsoft Docs"
 description: "コマンドライン インターフェイス (CLI) とその主要な機能の概要"
 keywords: "CLI, CLI ツール, .NET, .NET Core"
 author: blackdwarf
 ms.author: mairaw
-manager: wpickett
 ms.date: 10/06/2016
 ms.topic: article
 ms.prod: .net-core
-ms.technology: .net-core-technologies
+ms.technology: dotnet-cli
 ms.devlang: dotnet
-ms.assetid: b70e9ac0-c8be-49f7-9332-95ab93e0e7bc
+ms.assetid: 7c5eee9f-d873-4224-8f5f-ed83df329a59
 translationtype: Human Translation
-ms.sourcegitcommit: 1a84c694945fe0c77468eb77274ab46618bccae6
-ms.openlocfilehash: d9e689524a3100f1c5c129bdf13ed691a850ad2e
+ms.sourcegitcommit: 2ad428dcda9ef213a8487c35a48b33929259abba
+ms.openlocfilehash: 524504bd05fd15bdd6afd686c9e5d8edd1c4cc0f
 
 ---
 
-# <a name="net-core-command-line-interface-tools"></a>.NET Core コマンドライン インターフェイス ツール
+# <a name="net-core-command-line-interface-tools-tooling-preview-4"></a>.NET Core コマンド ライン インターフェイス ツール (Tooling Preview 4)
+
+> [!WARNING]
+> このトピックは、Visual Studio 2017 RC - .NET Core Tools Preview 4 を対象としています。 .NET Core Tools Preview 2 バージョンについては、「[.NET Core コマンド ライン インターフェイス ツール](../../tools/index.md)」トピックを参照してください。
 
 .NET Core コマンドライン インターフェイス (CLI) は、.NET Core アプリケーションを開発するための新しい基本クロスプラットフォーム ツールチェーンです。 これは、統合開発環境 (IDE)、エディター、ビルド オーケストレーターなど、他の上位レベルのツールがビルド時に基にする主要なレイヤーなので、"基本" です。 
 
@@ -36,6 +38,7 @@ ms.openlocfilehash: d9e689524a3100f1c5c129bdf13ed691a850ad2e
 既定では、次のコマンドがインストールされます。
 
 * [new](dotnet-new.md)
+* [migrate](dotnet-migrate.md)
 * [restore](dotnet-restore.md)
 * [run](dotnet-run.md)
 * [build](dotnet-build.md)
@@ -56,14 +59,14 @@ dotnet build --output /stuff
 dotnet /stuff/new.dll
 ```
 
-前の例に示されるように、CLI ツールの使用方法にはパターンがあります。 そのパターン内で、各コマンドの次の 3 つの主要部分を特定できます。
+前の例に示されるように、CLI ツールの使用方法にはパターンがあります。 そのパターン内で、各コマンドの次の&3; つの主要部分を特定できます。
 
 1. [ドライバー ("dotnet")](#driver)
 2. [コマンド ("動詞")](#the-verb)
 3. [コマンド引数](#the-arguments)
 
 ### <a name="driver"></a>ドライバー
-ドライバーの名前は [dotnet](dotnet.md) です。 これは最初に呼び出す部分です。 ドライバーには、次の 2 つの役割があります。
+ドライバーの名前は [dotnet](dotnet.md) です。 これは最初に呼び出す部分です。 ドライバーには、次の&2; つの役割があります。
 
 1. ポータブル アプリの実行
 2. 動詞の実行
@@ -79,17 +82,18 @@ dotnet /stuff/new.dll
 コマンドラインで渡す引数は、呼び出される実際の動詞/コマンドへの引数です。 たとえば、`dotnet publish --output publishedapp` と入力すると、`--output` 引数が `publish` コマンドに渡されます。 
 
 ## <a name="types-of-application-portability"></a>アプリケーションの移植性の種類
-CLI は、次の 2 つの主な方法でアプリケーションを移植できるようにします。
+CLI は、次の&2; つの主な方法でアプリケーションを移植できるようにします。
 
 1. .NET Core がインストールされている任意の場所で実行される、完全に移植可能なアプリケーション
 2. 自己完結型の展開
 
 これらの両方の方法の詳細については、[.NET Core アプリケーション展開](../deploying/index.md)に関するトピックを参照してください。 
 
-## <a name="migration-from-preview-3projectjson"></a>Preview 3/project.json からの移行
+## <a name="migration-from-preview-4projectjson"></a>Preview 4/project.json からの移行
 Preview 2 ツールおよび project.json プロジェクトを使用していた場合、コマンドの詳細およびプロジェクトの移行方法については、[dotnet migrate](dotnet-migrate.md) コマンドのドキュメントを参照してください。 
 
-> **注:** 現在、`dotnet migrate` コマンドでは、Preview 2 以前の project.json ファイルを移行できません。 
+> [!NOTE]
+> 現在、`dotnet migrate` コマンドでは、Preview 2 以前の project.json ファイルは移行されません。 
 
 ## <a name="extensibility"></a>機能拡張
 もちろん、ワークフローで使用できるすべてのツールが Core CLI ツールに含まれるわけではありません。 ただし、.NET Core CLI には、プロジェクトに追加のツールを指定できるようにする機能拡張モデルがあります。 詳細については、[.NET Core CLI 機能拡張モデル](extensibility.md)に関するトピックを参照してください。
@@ -101,6 +105,6 @@ Preview 2 ツールおよび project.json プロジェクトを使用してい�
 
 
 
-<!--HONumber=Nov16_HO3-->
+<!--HONumber=Jan17_HO3-->
 
 
