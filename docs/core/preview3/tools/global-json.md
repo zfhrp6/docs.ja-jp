@@ -11,17 +11,17 @@ ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: 96102f96-d403-4385-8ef6-5d80e406eb0c
 translationtype: Human Translation
-ms.sourcegitcommit: 2ad428dcda9ef213a8487c35a48b33929259abba
-ms.openlocfilehash: 97a9ee85025c15e21d4a7cbdce31d35d3894e7d6
+ms.sourcegitcommit: 796df1549a7553aa93158598d62338c02d4df73e
+ms.openlocfilehash: b814bfc79c2fcd0fd15b9494c18c6d0443a70fb1
 
 ---
 
-# <a name="globaljson-reference-tooling-preview-4"></a>global.json リファレンス (Tooling Preview 4)
+# <a name="globaljson-reference-net-core-tools-rc4"></a>global.json リファレンス (.NET Core Tools RC4)
 
 > [!WARNING]
-> このトピックは、Visual Studio 2017 RC - .NET Core Tools Preview 4 を対象としています。 .NET Core Tools Preview 2 バージョンについては、「[global.json リファレンス](../../tools/global-json.md)」トピック参照してください。
+> このトピックは .NET Core Tools RC4 を対象としています。 .NET Core Tools Preview 2 バージョンについては、「[global.json リファレンス](../../tools/global-json.md)」トピック参照してください。
 
-global.json ファイルは、.NET Core コマンド ラインの Preview 4 に引き続き存在します。 ただし、その主な目的は以前のリリースのようにソリューションのメタデータを定義することではなく、`sdk` プロパティによって使用されている CLI バージョンを選択できるようにすることです。 
+global.json ファイルは、.NET Core コマンド ラインの RC4 に引き続き存在します。 ただし、その主な目的は以前のリリースのようにソリューションのメタデータを定義することではなく、`sdk` プロパティによって使用されている CLI バージョンを選択できるようにすることです。 
 
 このリファレンスはこのような事実を反映しています。 
 
@@ -46,6 +46,6 @@ SDK に関する情報を指定します。
 ```
 
 
-<!--HONumber=Jan17_HO3-->
+<!--HONumber=Feb17_HO2-->
 
 

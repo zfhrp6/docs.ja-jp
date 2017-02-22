@@ -11,15 +11,15 @@ ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: 88cba792-3640-41de-b55d-00f575e9d5e2
 translationtype: Human Translation
-ms.sourcegitcommit: 2ad428dcda9ef213a8487c35a48b33929259abba
-ms.openlocfilehash: 3315c8b0d2033643d81a7b14f31d6e8aed6a15b1
+ms.sourcegitcommit: 796df1549a7553aa93158598d62338c02d4df73e
+ms.openlocfilehash: 83555650a5a3ce9ed28d329aa82f5ead75e2d9cb
 
 ---
 
 #<a name="net-core-cli-test-communication-protocol"></a>.NET Core CLI テスト通信プロトコル
 
 > [!WARNING]
-> このトピックは .NET Core Tools Preview 2 を対象としています。 Visual Studio 2017 RC - .NET Core Tools Preview 4 のドキュメントについては、「[.NET Core コマンド ライン インターフェイス ツール (Tooling Preview 4)](../preview3/tools/index.md)」のセクションを参照してください。
+> このトピックは .NET Core Tools Preview 2 を対象としています。 .NET Core Tools RC4 ドキュメントについては、「[.NET Core コマンドライン インターフェイス ツール (.NET Core Tools RC4)](../preview3/tools/index.md)」セクションを参照してください。
 
 ## <a name="introduction"></a>はじめに
 dotnet テストにポートを渡すときはいつでも、デザイン時、このコマンドが実行されます。 つまり、`dotnet test` は TCP を利用してそのポートに接続し、そのポートに接続されている要素と確立済みの一連のメッセージを交換します。 これが行われるとき、ランナーも、`dotnet test` がそれとの通信に使用する新しいポートを受け取ります。 ランナーも TCP を利用して `dotnet test` と通信する理由は、デザイン モードでは、コンソールに結果を出力するだけでは十分ではないためです。 このコマンドは、テスト実行の結果を含むアダプター構造メッセージを送信する必要があります。
@@ -54,6 +54,6 @@ dotnet テストにポートを渡すときはいつでも、デザイン時、�
 
 
 
-<!--HONumber=Jan17_HO3-->
+<!--HONumber=Feb17_HO2-->
 
 

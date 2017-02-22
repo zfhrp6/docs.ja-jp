@@ -1,6 +1,6 @@
 ---
-title: ".NET Core コマンド ラインを使用したプロジェクトの整理およびテスト (SDK Preview 3)"
-description: ".NET Core コマンド ラインを使用したプロジェクトの整理およびテスト (SDK Preview 3)"
+title: ".NET Core コマンド ラインを使用したプロジェクトの整理およびテスト (.NET Core Tools RC4) | Microsoft Docs"
+description: ".NET Core コマンド ラインを使用したプロジェクトの整理およびテスト (.NET Core Tools RC4)"
 keywords: .NET, .NET Core
 author: cartermp
 ms.author: mairaw
@@ -9,16 +9,19 @@ ms.topic: article
 ms.prod: .net-core
 ms.technology: dotnet-cli
 ms.devlang: dotnet
-ms.assetid: be988f09-7349-43b0-97fb-3a703d4587ce
+ms.assetid: 52ff1be3-d92e-4477-9c84-8c1771e87ab5
 translationtype: Human Translation
-ms.sourcegitcommit: 07b62bd7163193eff8dc8f61fda7a45a924bba2b
-ms.openlocfilehash: 0a3122a3c10838b74801bcc910070745cb9bf0d5
+ms.sourcegitcommit: 796df1549a7553aa93158598d62338c02d4df73e
+ms.openlocfilehash: bcb5ce9772ca2f3e35ebd7ec948d011ec04296e0
 
 ---
 
-# <a name="organizing-and-testing-projects-with-the-net-core-command-line-sdk-preview-3"></a>.NET Core コマンド ラインを使用したプロジェクトの整理およびテスト (SDK Preview 3)
+# <a name="organizing-and-testing-projects-with-the-net-core-command-line-net-core-tools-rc4"></a>.NET Core コマンド ラインを使用したプロジェクトの整理およびテスト (.NET Core Tools RC4)
 
-このチュートリアルでは、「[Windows/Linux/macOS の .NET Core でのコマンド ラインの使用に関する概要 (SDK Preview 3)](./using-with-xplat-cli-msbuild.md)」に従って、簡単な "hello world" シナリオより高度なよく構成されたアプリケーションを作成するための準備方法を示します。
+> [!WARNING]
+> このトピックは .NET Core Tools RC4 を対象としています。 .NET Core Tools Preview 2 バージョンについては、「[Windows/Linux/macOS の .NET Core でのコマンド ラインの使用に関する概要](../../tutorials/using-with-xplat-cli.md)」トピックを参照してください。
+
+このチュートリアルでは、「[Windows/Linux/macOS の .NET Core でのコマンド ラインの使用に関する概要 (.NET Core Tools RC4)](./using-with-xplat-cli-msbuild.md)」に従って、簡単な "hello world" シナリオより高度で、よく構成されたアプリケーションを作成するための準備方法を示します。
 
 ## <a name="using-folders-to-organize-code"></a>フォルダーを使用してコードを整理する
 
@@ -58,7 +61,7 @@ ms.openlocfilehash: 0a3122a3c10838b74801bcc910070745cb9bf0d5
 
 ### <a name="example-pet-types"></a>例: ペットの種類
 
-この例では、`Dog` と `Cat` という 2 つの新しい種類を作成し、`IPet` という共通インターフェイスを実装します。
+この例では、`Dog` と `Cat` という&2; つの新しい種類を作成し、`IPet` という共通インターフェイスを実装します。
 
 フォルダーの構造:
 
@@ -221,7 +224,7 @@ Meow!
       |__NewTypesTests.csproj
 ```
 
-テスト プロジェクトに必要な 2 つの新しい要素があります。
+テスト プロジェクトに必要な&2; つの新しい要素があります。
 
 1. 以下のものを含む正しい `NewTypesTests.csproj` ファイル:
 
@@ -322,6 +325,6 @@ SUMMARY: Total: 1 targets, Passed: 1, Failed: 0.
 
 
 
-<!--HONumber=Nov16_HO3-->
+<!--HONumber=Feb17_HO2-->
 
 

@@ -1,5 +1,5 @@
 ---
-title: "dotnet-publish コマンド | .NET Core SDK"
+title: "dotnet-publish コマンド | Microsoft Docs"
 description: "dotnet-publish コマンドは、.NET Core プロジェクトをディレクトリに発行します。"
 keywords: "dotnet-publish, CLI, CLI コマンド, .NET Core"
 author: blackdwarf
@@ -9,16 +9,19 @@ ms.topic: article
 ms.prod: .net-core
 ms.technology: dotnet-cli
 ms.devlang: dotnet
-ms.assetid: 8a7e1c52-5c57-4bf5-abad-727450ebeefd
+ms.assetid: f2ef275a-7c5e-430a-8c30-65f52af62771
 translationtype: Human Translation
-ms.sourcegitcommit: 1a84c694945fe0c77468eb77274ab46618bccae6
-ms.openlocfilehash: e480c32faa22859de74e06f3a199fba1c0720c46
+ms.sourcegitcommit: 796df1549a7553aa93158598d62338c02d4df73e
+ms.openlocfilehash: 0d222382640fc239760f8f51c69f1f306674d7ca
 
 ---
 
-#<a name="dotnet-publish"></a>dotnet-publish
+#<a name="dotnet-publish-net-core-tools-rc4"></a>dotnet-publish (.NET Core Tools RC4)
 
-## <a name="name"></a>Name
+> [!WARNING]
+> このトピックは .NET Core Tools RC4 を対象としています。 .NET Core Tools Preview 2 バージョンについては、「[dotnet-publish](../../tools/dotnet-publish.md)」トピックを参照してください。
+
+## <a name="name"></a>名前
 
 `dotnet-publish` - アプリケーションとそのすべての依存関係をフォルダーにパックし、発行できるようにします。
 
@@ -94,6 +97,6 @@ ms.openlocfilehash: e480c32faa22859de74e06f3a199fba1c0720c46
 
 
 
-<!--HONumber=Nov16_HO3-->
+<!--HONumber=Feb17_HO2-->
 
 

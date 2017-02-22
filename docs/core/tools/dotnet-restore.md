@@ -1,26 +1,29 @@
 ---
-title: "dotnet-restore コマンド | .NET Core SDK"
+title: "dotnet-restore コマンド | Microsoft Docs"
 description: "dotnet restore コマンドを使用して、依存関係とプロジェクト固有のツールを復元する方法について説明します"
 keywords: "dotnet-restore, CLI, CLI コマンド, .NET Core"
-author: mairaw
-manager: wpickett
+author: blackdwarf
+ms.author: mairaw
 ms.date: 10/07/2016
 ms.topic: article
 ms.prod: .net-core
-ms.technology: .net-core-technologies
+ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: 60489b25-38de-47e6-bed1-59d9f42e2d46
 translationtype: Human Translation
-ms.sourcegitcommit: c6ee3f5663d0a3f62914e8de474cca4d15340c9d
-ms.openlocfilehash: 3c6c651aebfac0c27f340021d7779d37aa8bfe38
+ms.sourcegitcommit: 796df1549a7553aa93158598d62338c02d4df73e
+ms.openlocfilehash: df8174aa3252568d7112305af07e6399d96ca32f
 
 ---
 
-#<a name="dotnetrestore"></a>dotnet-restore
+#<a name="dotnet-restore"></a>dotnet-restore
 
-## <a name="name"></a>Name
+> [!WARNING]
+> このトピックは .NET Core Tools Preview 2 を対象としています。 .NET Core Tools RC4 バージョンについては、「[dotnet-restore (.NET Core Tools RC4)](../preview3/tools/dotnet-restore.md)」トピックを参照してください。
 
-`dotnet-restore`- プロジェクトの依存関係とツールを復元します。
+## <a name="name"></a>名前
+
+`dotnet-restore` - プロジェクトの依存関係とツールを復元します。
 
 ## <a name="synopsis"></a>構文
 
@@ -102,7 +105,7 @@ NuGet でレガシ リポジトリのランタイム識別子 (RID) を推測で
 
 `dotnet restore -f c:\packages\mypackages` 
 
-フォールバック ソースとして指定された 2 つのファイル パスを使用して、現在のディレクトリでプロジェクトの依存関係とツールを復元します。
+フォールバック ソースとして指定された&2; つのファイル パスを使用して、現在のディレクトリでプロジェクトの依存関係とツールを復元します。
 
 `dotnet restore -f c:\packages\mypackages -f c:\packages\myotherpackages` 
 
@@ -111,6 +114,6 @@ NuGet でレガシ リポジトリのランタイム識別子 (RID) を推測で
 `dotnet restore --verbosity Error`
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Feb17_HO2-->
 
 

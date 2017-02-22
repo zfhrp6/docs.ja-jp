@@ -11,15 +11,15 @@ ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: be988f09-7349-43b0-97fb-3a703d4587ce
 translationtype: Human Translation
-ms.sourcegitcommit: 2ad428dcda9ef213a8487c35a48b33929259abba
-ms.openlocfilehash: a5a5039c5043f46772110d6750d04f14a3f43c86
+ms.sourcegitcommit: 796df1549a7553aa93158598d62338c02d4df73e
+ms.openlocfilehash: 8f0ad79eafde695b956e89f48073dba2651b51cb
 
 ---
 
 # <a name="getting-started-with-net-core-on-windowslinuxmacos-using-the-command-line"></a>Windows/Linux/macOS の .NET Core でのコマンド ラインの使用に関する概要
 
 > [!WARNING]
-> このトピックは .NET Core Tools Preview 2 を対象としています。 .NET Core Tools Preview 4 バージョンについては、「[Windows/Linux/macOS の .NET Core でのコマンド ラインの使用に関する概要 (Tooling Preview 4)](../preview3/tutorials/using-with-xplat-cli-msbuild.md)」トピックを参照してください。
+> このトピックは .NET Core Tools Preview 2 を対象としています。 .NET Core Tools RC4 バージョンについては、「[Windows/Linux/macOS の .NET Core でのコマンド ラインの使用に関する概要 (.NET Core Tools RC4)](../preview3/tutorials/using-with-xplat-cli-msbuild.md)」トピックを参照してください。
 
 このガイドでは、.NET Core CLI ツールを使用して、基本的なクロスプラットフォーム コンソール アプリをビルドする方法を説明します。
 
@@ -615,7 +615,7 @@ public class PetTests
     {
         string expected = "Meow!";
         string actual = new Cat().TalkToOwner();
-        
+           
         Assert.Equal(expected, actual);
     }
 }
@@ -650,6 +650,6 @@ SUMMARY: Total: 1 targets, Passed: 1, Failed: 0.
 
 
 
-<!--HONumber=Jan17_HO3-->
+<!--HONumber=Feb17_HO2-->
 
 

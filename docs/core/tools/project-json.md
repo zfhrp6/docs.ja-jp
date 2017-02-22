@@ -11,15 +11,15 @@ ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: 3aef32bd-ee2a-4e24-80f8-a2b615e0336d
 translationtype: Human Translation
-ms.sourcegitcommit: 2ad428dcda9ef213a8487c35a48b33929259abba
-ms.openlocfilehash: a1a27c6653d61ab612b76a4522dffdf82afecafc
+ms.sourcegitcommit: 8fba5c76375763abf90e2e17d3bcc9d0039089f0
+ms.openlocfilehash: 2cdb43a9095217498c12c97548e4aa632b13a59c
 
 ---
 
 # <a name="projectjson-reference"></a>project.json 参照
 
 > [!WARNING]
-> このトピックは .NET Core Tools Preview 2 を対象としています。 Visual Studio 2017 RC - .NET Core Tools Preview 4 のドキュメントについては、「[.NET Core コマンド ライン インターフェイス ツール (Tooling Preview 4)](../preview3/tools/index.md)」のセクションを参照してください。
+> このトピックは .NET Core Tools Preview 2 を対象としています。 .NET Core Tools RC4 ドキュメントについては、「[.NET Core コマンドライン インターフェイス ツール (.NET Core Tools RC4)](../preview3/tools/index.md)」セクションを参照してください。
 
 project.json ファイルは .NET Core プロジェクトで利用され、プロジェクトのメタデータ、コンパイル情報、依存関係を定義します。 この参照トピックでは、project.json ファイルで定義できるすべてのプロパティの一覧を確認できます。
 
@@ -1658,6 +1658,6 @@ DLL ファイルをラップするために使用されます。 この DLL を�
 
 
 
-<!--HONumber=Jan17_HO3-->
+<!--HONumber=Feb17_HO3-->
 
 

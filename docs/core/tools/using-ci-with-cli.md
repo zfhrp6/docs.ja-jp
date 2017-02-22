@@ -11,15 +11,15 @@ ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: 5fb15297-a276-417f-8c4f-267281357769
 translationtype: Human Translation
-ms.sourcegitcommit: 2ad428dcda9ef213a8487c35a48b33929259abba
-ms.openlocfilehash: dc68271dcca6a64bbcbeb487050e809fae40c8aa
+ms.sourcegitcommit: 796df1549a7553aa93158598d62338c02d4df73e
+ms.openlocfilehash: 0363bdfcb75f51789393e1459d23fcb644c7fb11
 
 ---
 
 # <a name="using-net-core-sdk-and-tools-in-continuous-integration-ci"></a>継続的インテグレーション (CI) で .NET Core SDK とツールを使用する
 
 > [!WARNING]
-> このトピックは .NET Core Tools Preview 2 を対象としています。 Visual Studio 2017 RC - .NET Core Tools Preview 4 バージョンについては、「[継続的インテグレーション (CI) で .NET Core SDK とツールを使用する (Tooling Preview 4)](../preview3/tools/using-ci-with-cli.md)」トピックを参照してください。
+> このトピックは .NET Core Tools Preview 2 を対象としています。 .NET Core Tools RC4 バージョンについては、「[継続的インテグレーション (CI) で .NET Core SDK とツールを使用する (.NET Core Tools RC4)](../preview3/tools/using-ci-with-cli.md)」トピックを参照してください。
 
 ## <a name="overview"></a>概要
 このドキュメントでは、ビルド サーバーでの .NET Core SDK とそのツールの使用方法について説明します。 一般に、CI ビルド サーバーでは、何らかの方法でインストールを自動化することが望まれます。 可能な限り自動化に管理者特権を必要としないことが理想的です。 
@@ -93,6 +93,6 @@ install:
 
 
 
-<!--HONumber=Jan17_HO3-->
+<!--HONumber=Feb17_HO2-->
 
 

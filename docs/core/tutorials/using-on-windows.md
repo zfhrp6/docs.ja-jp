@@ -10,15 +10,15 @@ ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: d743134a-08a3-4ff6-aab7-49f71f0568c3
 translationtype: Human Translation
-ms.sourcegitcommit: a8019c9fc25ef458aa555743e61cd83a3beb11ed
-ms.openlocfilehash: 446ada6d325a81f9c0078e4771866d99af341aed
+ms.sourcegitcommit: 796df1549a7553aa93158598d62338c02d4df73e
+ms.openlocfilehash: 29019587d2d847c5184d07024fa763c8af805d50
 
 ---
 
 # <a name="getting-started-with-net-core-on-windows-using-visual-studio-2015"></a>Visual Studio 2015 を使用した Windows での .NET Core の概要
 
 > [!WARNING]
-> このトピックは、Visual Studio 2015 - .NET Core Tools Preview 2 を対象としています。 Visual Studio 2017 RC - .NET Core Tools Preview 4 バージョンについては、「[Visual Studio 2017 を使用した Windows での .NET Core の概要](../preview3/tutorials/using-on-windows-vs-2017.md)」トピックを参照してください。
+> このトピックは、Visual Studio 2015 - .NET Core Tools Preview 2 を対象としています。 .NET Core Tools RC4 バージョンについては、「[Visual Studio 2017 を使用した Windows での .NET Core の概要](../preview3/tutorials/using-on-windows-vs-2017.md)」トピックを参照してください。
 
 Visual Studio 2015 は、.NET Core アプリケーション開発用の機能をすべて備えた開発環境を提供します。 このドキュメントでは、一般的な .NET Core ソリューションまたは .NET Core コンポーネントを含むソリューションを Visual Studio を使用して構築するために必要な手順について説明します。 シナリオには、.NET Core の最新バージョン対応として明示的にビルドされていないサードパーティ製ライブラリのテストと使用が含まれます。 
 
@@ -229,11 +229,11 @@ Visual Studio 2015 は、.NET Core アプリケーション開発用の機能を
 -------------------------------------
 ポータブル クラス ライブラリ ツールは、.NET Standard を対象とするように PCL を自動的に変更できます。 
 
-1.  [プロパティ] ノードをダブルクリックして、プロジェクトのプロパティ ページを開きます
+1.    [プロパティ] ノードをダブルクリックして、プロジェクトのプロパティ ページを開きます
 
-2.  「Targeting header」 (対象ヘッダー) で、「Target .NET Platform Standard」 (対象 .NET Platform Standard) ハイパーリンクをクリックします
+2.    「Targeting header」 (対象ヘッダー) で、「Target .NET Platform Standard」 (対象 .NET Platform Standard) ハイパーリンクをクリックします
 
-3.  確認を求められたら [はい] をクリックします
+3.    確認を求められたら [はい] をクリックします
 
 もともと PCL の対象になっていたすべての対象を含む .NET Standard のバージョンを、ツールが自動的に選択します。 プロジェクト プロパティ ページの [.NET Standard] ドロップダウンを使用して、別のバージョンの .NET Standard を対象にできます。
  
@@ -241,17 +241,17 @@ Visual Studio 2015 は、.NET Core アプリケーション開発用の機能を
 
 ### <a name="manually-edit-projectjson-to-target-net-standard-from-an-existing-portable-class-library"></a>既存のポータブル クラス ライブラリから .NET Standard を対象にするように project.json を手動で編集する
 
-1.  project.json の "supports" 要素に "dnxcore50" が含まれる場合は、それを削除します。
+1.    project.json の "supports" 要素に "dnxcore50" が含まれる場合は、それを削除します。
 
-2.  "Microsoft.NETCore" に対する依存関係を削除します
+2.    "Microsoft.NETCore" に対する依存関係を削除します
 
-3.  依存する "Microsoft.NETCore.Portable.Compatibility" のバージョンを "1.0.0" から "1.0.1" に変更します
+3.    依存する "Microsoft.NETCore.Portable.Compatibility" のバージョンを "1.0.0" から "1.0.1" に変更します
 
-4.  "NETStandard.Library" のバージョン "1.6.0" に対する依存関係を追加します
+4.    "NETStandard.Library" のバージョン "1.6.0" に対する依存関係を追加します
 
-5.  "frameworks" 要素から "dotnet" フレームワーク (およびその中の "imports" 要素) を削除します
+5.    "frameworks" 要素から "dotnet" フレームワーク (およびその中の "imports" 要素) を削除します
 
-6.  ` "netstandard1.x” : { } ` を frameworks 要素に追加します。x は、対象にする .NET Standard のバージョンに置き換えます
+6.    ` "netstandard1.x” : { } ` を frameworks 要素に追加します。x は、対象にする .NET Standard のバージョンに置き換えます
 
 ### <a name="example-projectjson"></a>project.json の例
 
@@ -276,6 +276,6 @@ Visual Studio 2015 は、.NET Core アプリケーション開発用の機能を
 
 
 
-<!--HONumber=Jan17_HO4-->
+<!--HONumber=Feb17_HO2-->
 
 

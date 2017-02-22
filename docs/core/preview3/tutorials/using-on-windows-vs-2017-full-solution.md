@@ -10,15 +10,15 @@ ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: ba7e082c-a7c8-431e-a342-f67734b660f6
 translationtype: Human Translation
-ms.sourcegitcommit: 82dfcb532ce6c14e93c5baedb61b619cc18e69f1
-ms.openlocfilehash: 02c48cd7e2fc551b82bb7afa53a3dd228e02dca1
+ms.sourcegitcommit: 796df1549a7553aa93158598d62338c02d4df73e
+ms.openlocfilehash: 04f5264eaaa16be299e0d72f587ee232a5e61ca9
 
 ---
 
-# <a name="building-a-complete-net-core-solution-on-windows-using-visual-studio-2017-tooling-preview-4"></a>Visual Studio 2017 を使用した Windows での完全な .NET Core ソリューションの構築 (Tooling Preview 4)
+# <a name="building-a-complete-net-core-solution-on-windows-using-visual-studio-2017-net-core-tools-rc4"></a>Visual Studio 2017 を使用した Windows での完全な .NET Core ソリューションの構築 (.NET Core Tools RC4)
 
 > [!WARNING]
-> このトピックは、Visual Studio 2017 RC - .NET Core Tools Preview 4 を対象としています。 .NET Core Tools Preview 2 バージョンについては、「[Visual Studio 2015 を使用した Windows での .NET Core の概要](../../tutorials/using-on-windows.md)」トピックを参照してください。
+> このトピックは .NET Core Tools RC4 を対象としています。 .NET Core Tools Preview 2 バージョンについては、「[Visual Studio 2015 を使用した Windows での .NET Core の概要](../../tutorials/using-on-windows.md)」トピックを参照してください。
 
 Visual Studio 2017 は、.NET Core アプリケーション開発用の機能をすべて備えた開発環境を提供します。 このドキュメントでは、再利用可能なライブラリ、サードパーティ製ライブラリのテストと使用を含む、一般的な .NET Core ソリューションをビルドするために必要な手順について説明します。 
 
@@ -85,6 +85,6 @@ Visual Studio 2017 は、.NET Core アプリケーション開発用の機能を
 
 
 
-<!--HONumber=Jan17_HO4-->
+<!--HONumber=Feb17_HO2-->
 
 

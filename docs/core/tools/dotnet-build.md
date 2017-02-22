@@ -1,25 +1,28 @@
 ---
-title: "dotnet-build コマンド | .NET Core SDK"
+title: "dotnet-build コマンド | Microsoft Docs"
 description: "dotnet-build コマンドは、プロジェクトとそのすべての依存関係をします。"
 keywords: "dotnet-build, CLI, CLI コマンド, .NET Core"
-author: mairaw
-manager: wpickett
+author: blackdwarf
+ms.author: mairaw
 ms.date: 10/13/2016
 ms.topic: article
 ms.prod: .net-core
-ms.technology: .net-core-technologies
+ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: 70285a83-4103-4617-be8b-d0e1e9a4a91d
 translationtype: Human Translation
-ms.sourcegitcommit: c6ee3f5663d0a3f62914e8de474cca4d15340c9d
-ms.openlocfilehash: 344f8154c63bbb3c5ce6840bc7c7b1659950c223
+ms.sourcegitcommit: 796df1549a7553aa93158598d62338c02d4df73e
+ms.openlocfilehash: bb64da75a2e7bc2d379bc1685b4187493792db78
 
 ---
 
-#<a name="dotnetbuild"></a>dotnet-build
+#<a name="dotnet-build"></a>dotnet-build
+
+> [!WARNING]
+> このトピックは .NET Core Tools Preview 2 を対象としています。 .NET Core Tools RC4 バージョンについては、「[dotnet-build (.NET Core Tools RC4)](../preview3/tools/dotnet-build.md)」トピックを参照してください。
 
 ## <a name="name"></a>名前 
-dotnet-build -- プロジェクトとそのすべての依存関係をビルドします。 
+`dotnet-build` - プロジェクトとそのすべての依存関係をビルドします。 
 
 ## <a name="synopsis"></a>構文
 
@@ -76,11 +79,11 @@ dotnet-build -- プロジェクトとそのすべての依存関係をビルド�
 
 ビルドに使用する構成を定義します。  省略した場合は、既定で `Debug` に設定されます。
 
-`-r|--runtime [RUNTIME_IDENTIFIER]`
+`-r|--runtime <RUNTIME_IDENTIFIER>`
 
 ビルドのターゲット ランタイムです。 使用できるランタイム ID (RID) については、[RID カタログ](../rid-catalog.md)に関するページを参照してください。 
 
-`--version-suffix [VERSION_SUFFIX]`
+`--version-suffix <VERSION_SUFFIX>`
 
 [project.json](project-json.md#version) ファイルのバージョン フィールドで `*` を置き換える必要がある値を定義します。 形式は NuGet のバージョン ガイドラインに従います。 
 
@@ -111,6 +114,6 @@ dotnet-build -- プロジェクトとそのすべての依存関係をビルド�
 `dotnet build --runtime ubuntu.16.04-x64`
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Feb17_HO2-->
 
 

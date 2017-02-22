@@ -1,26 +1,29 @@
 ---
-title: "dotnet-test コマンド | .NET Core SDK"
+title: "dotnet-test コマンド | Microsoft Docs"
 description: "`dotnet test` コマンドは、指定されたプロジェクトで単体テストを実行する場合に使用されます。"
 keywords: "dotnet-test, CLI, CLI コマンド, .NET Core"
-author: mairaw
-manager: wpickett
+author: blackdwarf
+ms.author: mairaw
 ms.date: 10/07/2016
 ms.topic: article
 ms.prod: .net-core
-ms.technology: .net-core-technologies
+ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: 3a0fa917-eb0a-4d7e-9217-d06e65455675
 translationtype: Human Translation
-ms.sourcegitcommit: c6ee3f5663d0a3f62914e8de474cca4d15340c9d
-ms.openlocfilehash: b12861f0ce3c40bf4db51994ea5d4a92b8ef0162
+ms.sourcegitcommit: 796df1549a7553aa93158598d62338c02d4df73e
+ms.openlocfilehash: 871a6f736272309f6fae74b06f437c7271df2321
 
 ---
 
-#<a name="dotnettest"></a>dotnet-test
+#<a name="dotnet-test"></a>dotnet-test
 
-## <a name="name"></a>Name
+> [!WARNING]
+> このトピックは .NET Core Tools Preview 2 を対象としています。 .NET Core Tools RC4 バージョンについては、「[dotnet-test (.NET Core Tools RC4)](../preview3/tools/dotnet-test.md)」トピックを参照してください。
 
-`dotnet-test`- 構成済みのテスト ランナーを使用して、単体テストを実行します。
+## <a name="name"></a>名前
+
+`dotnet-test` - 構成済みのテスト ランナーを使用して、単体テストを実行します。
 
 ## <a name="synopsis"></a>構文
 
@@ -66,7 +69,7 @@ ms.openlocfilehash: b12861f0ce3c40bf4db51994ea5d4a92b8ef0162
 }
 ```
 
-`dotnet test`では、以下の 2 つの実行モードがサポートされます。
+`dotnet test`では、以下の&2; つの実行モードがサポートされます。
 
 1. コンソール: コンソール モードでは、`dotnet test` は単に渡されたコマンドを完全に実行し、結果を出力します。 --port を渡さずに `dotnet test` を呼び出すと、常にコンソール モードで実行されるため、ランナーはコンソール モードで実行されます。
 2. デザイン時: エディターや統合開発環境 (IDE) などの他のツールのコンテキストで使用されます。 このモードの詳細については、[dotnet-test プロトコル](test-protocol.md) のドキュメントを参照してください。 
@@ -132,6 +135,6 @@ test1 プロジェクトでテストを実行します。
 [ランタイム識別子 (RID) のカタログ](../rid-catalog.md)
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Feb17_HO2-->
 
 

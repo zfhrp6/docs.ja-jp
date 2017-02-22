@@ -1,68 +1,116 @@
 ---
-title: "dotnet-new コマンド | .NET Core"
+title: "dotnet-new コマンド | Microsoft Docs"
 description: "dotnet-new コマンドは、現在のディレクトリに新しい .NET Core プロジェクトを作成します。"
 keywords: "dotnet-new, CLI, CLI コマンド, .NET Core"
-author: mairaw
-manager: wpickett
-ms.date: 10/12/2016
+author: blackdwarf
+ms.author: mairaw
+ms.date: 02/15/2017
 ms.topic: article
 ms.prod: .net-core
-ms.technology: .net-core-technologies
+ms.technology: dotnet-cli
 ms.devlang: dotnet
-ms.assetid: 263c3d05-3a47-46a6-8023-3ca16b488410
+ms.assetid: fcc3ed2e-9265-4d50-b59e-dc2e5c190b34
 translationtype: Human Translation
-ms.sourcegitcommit: 1a84c694945fe0c77468eb77274ab46618bccae6
-ms.openlocfilehash: 49f0a5e9b385c09a31cc463a77a74894b4304792
+ms.sourcegitcommit: 96fd8ea3e55ea33e0bdd0bf3c50a10d0de6db1a1
+ms.openlocfilehash: f0c62647c5817db2057c60a7a95a62f08f7889a5
 
 ---
+#<a name="dotnet-new-net-core-tools-rc4"></a>dotnet-new (.NET Core Tools RC4)
 
-#<a name="dotnet-new"></a>dotnet-new
+> [!WARNING]
+> このトピックは .NET Core Tools RC4 を対象としています。 .NET Core Tools Preview 2 バージョンについては、「[dotnet-new](../../tools/dotnet-new.md)」トピックを参照してください。
 
 ## <a name="name"></a>名前
-dotnet-new -- 現在のディレクトリに新しい .NET Core プロジェクトを作成します。
+dotnet-new - 現在のディレクトリに新しい .NET Core プロジェクトを作成します。
 
 ## <a name="synopsis"></a>構文
-`dotnet new [--help] [--type] [--lang]`
+```
+dotnet new [template] [-lang|--language] [-n|--name] [-o|--output] [-h|--help]
+dotnet new [template] [-l|--list]
+dotnet new [-all|--show-all]
+dotnet new [-h|--help]
+```
 
 ## <a name="description"></a>説明
-`dotnet new` コマンドは、コマンド ライン インターフェイス (CLI) ツールセットを試すために有効な .NET Core プロジェクトとサンプル ソース コードを初期化するのに便利です。 
+`dotnet new` コマンドは、コマンドライン インターフェイス (CLI) ツールセットを試すために有効な .NET Core プロジェクトとサンプル ソース コードを初期化するのに便利です。 
 
-このコマンドは、ディレクトリのコンテキストで呼び出されます。 このコマンドが呼び出されると、以下の 2 つの主な成果物が現在のディレクトリにドロップされます。 
-
-1. サンプルの "Hello World" プログラムを含む `Program.cs` (または `Program.fs`) ファイル。
-2. 有効な csproj プロジェクト ファイルです。
+このコマンドは、ディレクトリのコンテキストで呼び出されます。 呼び出されると、コマンドに渡されたテンプレートとオプションに基づき、リソースとファイルが用意されます。 
 
 その後、プロジェクトをコンパイルし、さらに編集することができます。 
 
+## <a name="arguments"></a>引数
+template - コマンドが呼び出されたときにインスタンス化するテンプレート。
+
+このコマンドには、テンプレートの規定の一覧が含まれます。`dotnet new --help` を使用してください。 
+
 ## <a name="options"></a>オプション
+
+`-l|--list`         
+
+指定した名前を含むテンプレートを一覧表示します。
+
+`-lang|--language`  
+
+作成するテンプレートの言語を指定します。
+
+`-n|--name`         
+
+作成される出力の名前。 名前が指定されていない場合、現在のディレクトリの名前が使用されます。
+
+`-o|--output`       
+
+生成された出力を配置する場所。
+
+`-all|--show-all`   
+
+特定の種類のプロジェクトのテンプレートをすべて表示します。
 
 `-h|--help`
 
-コマンドの短いヘルプを印刷します。  
+コマンドのヘルプを印刷します。
 
-`-l|--lang <C#|F#>`
+## <a name="template-options"></a>テンプレート オプション
+プロジェクト テンプレートはそれぞれ、追加のオプションが与えられている場合があります。 たとえば、コア テンプレートの場合、次のオプションが与えられています。
 
-プロジェクトの言語です。 既定値は `C#` です。 他の有効値は `csharp`、`fsharp`、`cs`、`fs` です。
+**console、xunit、mstest**
 
-`-t|--type`
+`-f|--framework` - ターゲットにするフレームワークを指定します。 値: netcoreapp1.0 または netcoreapp1.1 (既定: netcoreapp1.0)
 
-プロジェクトの種類です。 C# の場合の有効値は `console`、`web`、`lib`、`xunittest` で、F# の場合は `console` のみが有効です。 
+**web、webapi**
+
+`-f|--framework` - ターゲットにするフレームワークを指定します。 値: netcoreapp1.0 または netcoreapp1.1 (既定: netcoreapp1.0)
+ 
+**mvc**
+
+`-f|--framework` - ターゲットにするフレームワークを指定します。 値: netcoreapp1.0 または netcoreapp1.1 (既定: netcoreapp1.0)
+
+`-au|--authentication` -  使用する認証の種類。 値: なしまたは個別 (既定: なし)
+
+`-uld|--use-local-db` - SQLite の代わりに LocalDB を使用するかどうか。 値: true または false (既定: false)
+
+**classlib**
+
+`-f|--framework` - ターゲットにするフレームワークを指定します。 値: netcoreapp1.0、netcoreapp1.1、netstandard1.0 - 1.6 (既定: netstandard1.4)。
 
 ## <a name="examples"></a>例
 
-現在のディレクトリに、C# コンソール アプリケーション プロジェクトを作成します。
+現在のディレクトリに F# コンソール アプリケーション プロジェクトを作成します。
 
-`dotnet new` または `dotnet new --lang c#` 
+`dotnet new console -lang f#` 
    
-現在のディレクトリに、F# コンソール アプリケーション プロジェクトを作成します。
+現在のディレクトリに新しい ASP.NET Core C# MVC アプリケーション プロジェクトを作成します。.NET Core 1.0 を対象にする認証はありません。  
 
-`dotnet new --lang f#`
-  
-現在のディレクトリに、新しい ASP.NET Core C# アプリケーション プロジェクトを作成します。
+`dotnet new mvc -au None -f netcoreapp1.0`
+ 
+.NET Core 1.1 を対象にする新しい XUnit アプリケーションを作成します。
 
-`dotnet new -t web`
+`dotnet new xunit --Framework netcoreapp1.1`
+
+MVC に利用できるすべてのテンプレートを一覧表示します。
+
+`dotnet new mvc -l`
 
 
-<!--HONumber=Nov16_HO3-->
+<!--HONumber=Feb17_HO3-->
 
 

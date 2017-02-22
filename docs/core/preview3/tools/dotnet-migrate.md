@@ -1,5 +1,5 @@
 ---
-title: "dotnet-migrate コマンド | .NET Core SDK"
+title: "dotnet-migrate コマンド | Microsoft Docs"
 description: "dotnet-migrate コマンドは、プロジェクトとそのすべての依存関係を移行します。"
 keywords: "dotnet-migrate, CLI, CLI コマンド, .NET Core"
 author: blackdwarf
@@ -9,17 +9,19 @@ ms.topic: article
 ms.prod: .net-core
 ms.technology: dotnet-cli
 ms.devlang: dotnet
-ms.assetid: 70285a83-4103-4617-be8b-d0e1e9a4a91d
+ms.assetid: 0da07253-5ae1-42e9-9455-bffee9950952
 translationtype: Human Translation
-ms.sourcegitcommit: 1a84c694945fe0c77468eb77274ab46618bccae6
-ms.openlocfilehash: 150d70e3f0a80f7f6e733abee3691a0fe420919f
+ms.sourcegitcommit: 796df1549a7553aa93158598d62338c02d4df73e
+ms.openlocfilehash: 57ae01419c6f7a75970816e1245094c38c5247fa
 
 ---
 
 #<a name="dotnet-migrate"></a>dotnet-migrate
 
+[!INCLUDE[preview-warning](../../../includes/warning.md)]
+
 ## <a name="name"></a>名前 
-dotnet-migrate -- Preview 2 .NET Core プロジェクトを Preview 3 .NET Core プロジェクトに移行します。
+dotnet-migrate -- Preview 2 .NET Core プロジェクトを RC4 .NET Core プロジェクトに移行します。
 
 ## <a name="synopsis"></a>構文
 
@@ -30,7 +32,7 @@ dotnet-migrate -- Preview 2 .NET Core プロジェクトを Preview 3 .NET Core 
     [<arguments>]`
 
 ## <a name="description"></a>説明
-`dotnet migrate` コマンドは、有効な Preview 2 `project.json` ベースのプロジェクトを有効な Preview 3 `csproj` プロジェクトに移行します。 既定では、このコマンドは、ルート プロジェクトとルート プロジェクトに含まれるすべてのプロジェクト参照を移行します。 この動作は、実行時に `--skip-project-references` オプションを使用して、無効にすることができます。 
+`dotnet migrate` コマンドは、有効な Preview 2 `project.json` ベースのプロジェクトを有効な RC4 `csproj` プロジェクトに移行します。 既定では、このコマンドは、ルート プロジェクトとルート プロジェクトに含まれるすべてのプロジェクト参照を移行します。 この動作は、実行時に `--skip-project-references` オプションを使用して、無効にすることができます。 
 
 移行は次のいずれかで実行できます。
 
@@ -42,7 +44,7 @@ dotnet-migrate -- Preview 2 .NET Core プロジェクトを Preview 3 .NET Core 
 
 既定では、移行操作は、標準出力 (STDOUT) に移行プロセスの状態を出力します。 `--report-file` オプションを使用する場合、出力は指定したファイルにも保存されます。 
 
-Preview 3 の時点で、`dotnet migrate` コマンドは、有効な Preview 2 `project.json` ファイルのみをサポートしています。 つまり、このコマンドを使用して、古い DNX や Preview 1 `project.json` ファイルを直接 csproj に移行することはできません。最初に Preview 2 project.json ファイルに移行して、csproj ファイルに移行する必要があります。 今後、Preview 1 プロジェクトのサポートも追加する予定です。 
+RC4 の時点で、`dotnet migrate` コマンドは、有効な Preview 2 `project.json` ファイルのみをサポートしています。 つまり、このコマンドを使用して、古い DNX や Preview 1 `project.json` ファイルを直接 csproj に移行することはできません。最初に Preview 2 project.json ファイルに移行して、csproj ファイルに移行する必要があります。 今後、Preview 1 プロジェクトのサポートも追加する予定です。 
 
 ## <a name="options"></a>オプション
 
@@ -90,11 +92,9 @@ Preview 3 の時点で、`dotnet migrate` コマンドは、有効な Preview 2 
 
 現在のプロジェクトのみを移行し、プロジェクト間の依存関係は移行しません。特定の SDK バージョンを使用します。
 
-`dotnet migrate -s -v 1.0.0-preview3`
+`dotnet migrate -s -v 1.0.0-preview4`
 
 
-
-
-<!--HONumber=Nov16_HO3-->
+<!--HONumber=Feb17_HO2-->
 
 

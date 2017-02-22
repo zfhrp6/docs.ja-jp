@@ -1,5 +1,5 @@
 ---
-title: "dotnet コマンド | .NET Core SDK"
+title: "dotnet コマンド | Microsoft Docs"
 description: "dotnet コマンド (.NET Core CLI ツールの一般的なドライバー) とその使用法について説明します。"
 keywords: "dotnet, CLI, CLI コマンド, .NET Core"
 author: blackdwarf
@@ -9,14 +9,17 @@ ms.topic: article
 ms.prod: .net-core
 ms.technology: dotnet-cli
 ms.devlang: dotnet
-ms.assetid: 93015521-2127-4fe9-8fce-ca79bcc4ff49
+ms.assetid: 256e468e-eaaa-4715-b5fb-8cbddcf80e69
 translationtype: Human Translation
-ms.sourcegitcommit: 1a84c694945fe0c77468eb77274ab46618bccae6
-ms.openlocfilehash: bbc13c8cca82e660f0f8ccf7d88c0340d9c06e68
+ms.sourcegitcommit: 796df1549a7553aa93158598d62338c02d4df73e
+ms.openlocfilehash: c80b5e7e26366b5253816e81a8203f90690eec1e
 
 ---
 
-#<a name="dotnet-command"></a>dotnet コマンド
+#<a name="dotnet-command-net-core-tools-rc4"></a>dotnet コマンド (.NET Core Tools RC4)
+
+> [!WARNING]
+> このトピックは .NET Core Tools RC4 を対象としています。 .NET Core Tools Preview 2 バージョンについては、「[dotnet コマンド](../../tools/dotnet.md)」トピックを参照してください。
 
 ## <a name="name"></a>名前
 
@@ -70,9 +73,9 @@ CLI ツールのバージョンを印刷します。
 * [dotnet-pack](dotnet-pack.md)
    * コードの NuGet パッケージを作成します。
 * [dotnet-migrate](dotnet-migrate.md)
-   * 有効な Preview 2 プロジェクトを Preview 3 プロジェクトに移行します。
+   * 有効な Preview 2 プロジェクトを RC4 プロジェクトに移行します。
 * [dotnet-msbuild](dotnet-msbuild.md)
-   * MSBuild コマンドラインへのアクセスを提供します。
+   * MSBuild コマンド ラインへのアクセスを提供します。
 
 ## <a name="examples"></a>例
 
@@ -107,6 +110,6 @@ CLI ツールのバージョンを印刷します。
 
 
 
-<!--HONumber=Nov16_HO3-->
+<!--HONumber=Feb17_HO2-->
 
 

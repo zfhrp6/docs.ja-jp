@@ -4,21 +4,21 @@ description: ".NET Core アプリケーション展開"
 keywords: ".NET, .NET Core, .NET Core 展開"
 author: rpetrusha
 ms.author: ronpet
-ms.date: 11/13/2016
+ms.date: 07/02/2017
 ms.topic: article
 ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: da7a31a0-8072-4f23-82aa-8a19184cb701
 translationtype: Human Translation
-ms.sourcegitcommit: 2ad428dcda9ef213a8487c35a48b33929259abba
-ms.openlocfilehash: a22431b63a0bde8739e33c39fa24380baaa7be54
+ms.sourcegitcommit: 796df1549a7553aa93158598d62338c02d4df73e
+ms.openlocfilehash: 8917a7639f042cb25a469ee9ba7fb7cd582c3821
 
 ---
 
-# <a name="net-core-application-deployment-net-core-tools-preview-4"></a>.NET Core アプリケーション展開 (.NET Core Tools Preview 4)
+# <a name="net-core-application-deployment-net-core-tools-rc4"></a>.NET Core アプリケーション展開 (.NET Core Tools RC4)
 
 > [!WARNING]
-> このトピックは、Visual Studio 2017 RC - .NET Core Tools Preview 4 を対象としています。 .NET Core Tools Preview 2 のドキュメントについては、「[.NET Core アプリケーション展開](../../deploying/index.md)」トピックを参照してください。
+> このトピックは .NET Core Tools RC4 を対象としています。 .NET Core Tools Preview 2 のドキュメントについては、「[.NET Core アプリケーション展開](../../deploying/index.md)」トピックを参照してください。
 
 .NET Core アプリケーションに対して、次の&2; 種類の展開を作成できます。 
 
@@ -111,16 +111,7 @@ FDD の展開には、次のいくつかの利点があります。
 
     ```xml
       <ItemGroup>
-        <PackageReference Include="Microsoft.NETCore.App">
-          <Version>1.0.1</Version>
-        </PackageReference>
-        <PackageReference Include="Newtonsoft.Json">
-          <Version>9.0.1</Version>
-        </PackageReference>
-        <PackageReference Include="Microsoft.NET.Sdk">
-          <Version>1.0.0-alpha-20161102-2</Version>
-          <PrivateAssets>All</PrivateAssets>
-        </PackageReference>
+        <PackageReference Include="Newtonsoft.Json" Version="9.0.1" />
       </ItemGroup>
     ```
 
@@ -203,15 +194,7 @@ FDD の展開には、次のいくつかの利点があります。
 
 4. `dotnet restore` コマンドを実行して、プロジェクトで指定された依存関係を復元します。
 
-5. `dotnet build` コマンドを使用して、各ターゲット プラットフォーム上のアプリのデバッグ ビルドを作成します。 ビルドするランタイム識別子を指定しない限り、`dotnet build` コマンドは、現在のシステムのランタイム ID のみのビルドを作成します。 次のコマンドを使用して、両方のターゲット プラットフォームに対してアプリをビルドできます。
-
-    ```console
-    dotnet build -r win10-x64
-    dotnet build -r osx.10.11-x64
-    ```
-各プラットフォームのアプリのデバッグ ビルドは、プロジェクトの `.\bin\Debug\netcoreapp1.0\<runtime_identifier>` サブディレクトリ内にあります。
-
-6. プログラムをテストしてデバッグしたら、次のように両方のターゲット プラットフォームに対して `dotnet publish` コマンドを使用して、ターゲット プラットフォームごとにアプリで展開するファイルを作成できます。
+5. プログラムをテストしてデバッグしたら、次のように両方のターゲット プラットフォームに対して `dotnet publish` コマンドを使用して、ターゲット プラットフォームごとにアプリで展開するファイルを作成できます。
 
    ```console
    dotnet publish -c release -r win10-x64
@@ -219,15 +202,14 @@ FDD の展開には、次のいくつかの利点があります。
    ```
 これにより、各ターゲット プラットフォームに対してアプリのリリース (デバッグではなく) バージョンが作成されます。 作成されたファイルは、プロジェクトの `.\bin\release\netcoreapp1.0\<runtime_identifier>` サブディレクトリのサブディレクトリ内にある、`publish` という名前のサブディレクトリに配置されます。 各サブディレクトリには、アプリの起動に必要なファイルの完全なセット (アプリ ファイルとすべての .NET Core ファイルの両方) が含まれています。
 
-7. アプリケーションのファイルと共に、発行プロセスは、アプリに関するデバッグ情報を含むプログラム データベース (.pdb) ファイルを出力します。 このファイルは、主に例外のデバッグに役立ちます。アプリケーションのファイルと共にパッケージ化しないように選択することもできます。
+6. アプリケーションのファイルと共に、発行プロセスは、アプリに関するデバッグ情報を含むプログラム データベース (.pdb) ファイルを出力します。 このファイルは、主に例外のデバッグに役立ちます。アプリケーションのファイルと共にパッケージ化しないように選択することもできます。
 
 発行されたファイルは、任意の方法で展開できます。 たとえば、zip ファイル内にパッケージ化したり、単純な `copy` コマンドを使用したり、任意のインストール パッケージで展開したりできます。 
 
 このプロジェクトの完全な `csproj` ファイルを次に示します。
 
 ```xml
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" />
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp1.0</TargetFramework>
@@ -235,24 +217,6 @@ FDD の展開には、次のいくつかの利点があります。
     <DebugType>Portable</DebugType>
     <RuntimeIdentifiers>win10-x64;osx.10.11-x64</RuntimeIdentifiers>
   </PropertyGroup>
-  <ItemGroup>
-    <Compile Include="**\*.cs" />
-    <EmbeddedResource Include="**\*.resx" />
-  </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="Microsoft.NETCore.App">
-      <Version>1.0.1</Version>
-    </PackageReference>
-    <PackageReference Include="Newtonsoft.Json">
-      <Version>9.0.1</Version>
-    </PackageReference>
-    <PackageReference Include="Microsoft.NET.Sdk">
-      <Version>1.0.0-alpha-20161102-2</Version>
-      <PrivateAssets>All</PrivateAssets>
-    </PackageReference>
-  </ItemGroup>
-
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
 ```
 
@@ -265,16 +229,7 @@ FDD の展開には、次のいくつかの利点があります。
 
     ```xml
       <ItemGroup>
-        <PackageReference Include="Microsoft.NETCore.App">
-          <Version>1.0.1</Version>
-        </PackageReference>
-        <PackageReference Include="Microsoft.NET.Sdk">
-          <Version>1.0.0-alpha-20161102-2</Version>
-          <PrivateAssets>All</PrivateAssets>
-        </PackageReference>
-        <PackageReference Include="Newtonsoft.Json">
-          <Version>9.0.1</Version>
-        </PackageReference>
+        <PackageReference Include="Newtonsoft.Json" Version="9.0.1" />
       </ItemGroup>
     ```
 2. サードパーティの依存関係を含む NuGet パッケージをシステムにまだダウンロードしていない場合は、ダウンロードします。 依存関係をアプリで使用できるようにするには、依存関係を追加してから、`dotnet restore` コマンドを実行します。 発行時に依存関係はローカルの NuGet キャッシュからが解決されるので、システムで使用可能になる必要があります。
@@ -282,8 +237,7 @@ FDD の展開には、次のいくつかの利点があります。
 このプロジェクトの完全な csproj ファイルを次に示します。
 
 ```xml
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" />
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp1.0</TargetFramework>
@@ -292,23 +246,8 @@ FDD の展開には、次のいくつかの利点があります。
     <RuntimeIdentifiers>win10-x64;osx.10.11-x64</RuntimeIdentifiers>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="**\*.cs" />
-    <EmbeddedResource Include="**\*.resx" />
+    <PackageReference Include="Newtonsoft.Json" Version="9.0.1" />
   </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="Microsoft.NETCore.App">
-      <Version>1.0.1</Version>
-    </PackageReference>
-    <PackageReference Include="Newtonsoft.Json">
-      <Version>9.0.1</Version>
-    </PackageReference>
-    <PackageReference Include="Microsoft.NET.Sdk">
-      <Version>1.0.0-alpha-20161102-2</Version>
-      <PrivateAssets>All</PrivateAssets>
-    </PackageReference>
-  </ItemGroup>
-
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
 ```
 
@@ -331,23 +270,12 @@ FDD の展開には、次のいくつかの利点があります。
 
 2. パッケージ参照を含む `<ItemGroup>` を次のものと置き換えます。
 
-    ```xml
-    <ItemGroup>
-      <PackageReference Include="NETSTandard.Library">
-        <Version>1.6.0</Version>
-      </PackageReference>
-      <PackageReference Include="Microsoft.NETCore.Runtime.CoreCLR">
-        <Version>1.0.2</Version>
-      </PackageReference>
-      <PackageReference Include="Microsoft.NETCore.DotNetHostPolicy">
-        <Version>1.0.1</Version>
-      </PackageReference>
-      <PackageReference Include="Microsoft.NET.Sdk">
-        <Version>1.0.0-alpha-20161102-2</Version>
-        <PrivateAssets>All</PrivateAssets>
-      </PackageReference>
-    </ItemGroup>
-  ```
+  ```xml
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NETCore.Runtime.CoreCLR" Version="1.0.2" />
+    <PackageReference Include="Microsoft.NETCore.DotNetHostPolicy" Version="1.0.1" />
+  </ItemGroup>
+```
 
    これにより、アプリで使用されるシステム コンポーネントが定義されます。 アプリでパッケージ化されたシステム コンポーネントには、.NET 標準ライブラリ、.NET Core ランタイム、および .NET Core ホストが含まれています。 これにより、フットプリントがより小さい自己完結型の展開が生成されます。
 
@@ -364,14 +292,7 @@ FDD の展開には、次のいくつかの利点があります。
 
 4. `dotnet restore` コマンドを実行して、プロジェクトで指定された依存関係を復元します。
 
-5. `dotnet build` コマンドを使用して、各ターゲット プラットフォーム上のアプリのデバッグ ビルドを作成します。 ビルドするランタイム識別子を指定しない限り、`dotnet build` コマンドは、現在のシステムのランタイム ID のみのビルドを作成します。 次のコマンドを使用して、両方のターゲット プラットフォームに対してアプリをビルドできます。
-
-    ```console
-    dotnet build -r win10-x64
-    dotnet build -r osx.10.11-x64
-    ```
-
-6. プログラムをテストしてデバッグしたら、次のように両方のターゲット プラットフォームに対して `dotnet publish` コマンドを使用して、ターゲット プラットフォームごとにアプリで展開するファイルを作成できます。
+5. プログラムをテストしてデバッグしたら、次のように両方のターゲット プラットフォームに対して `dotnet publish` コマンドを使用して、ターゲット プラットフォームごとにアプリで展開するファイルを作成できます。
 
    ```console
    dotnet publish -c release -r win10-x64
@@ -379,15 +300,14 @@ FDD の展開には、次のいくつかの利点があります。
    ```
 これにより、各ターゲット プラットフォームに対してアプリのリリース (デバッグではなく) バージョンが作成されます。 作成されたファイルは、プロジェクトの `.\bin\release\netstandard1.6\<runtime_identifier>` サブディレクトリのサブディレクトリ内にある、`publish` という名前のサブディレクトリに配置されます。 各サブディレクトリには、アプリの起動に必要なファイルの完全なセット (アプリ ファイルとすべての .NET Core ファイルの両方) が含まれています。
 
-7. アプリケーションのファイルと共に、発行プロセスは、アプリに関するデバッグ情報を含むプログラム データベース (.pdb) ファイルを出力します。 このファイルは、主に例外のデバッグに役立ちます。アプリケーションのファイルと共にパッケージ化しないように選択することもできます。
+6. アプリケーションのファイルと共に、発行プロセスは、アプリに関するデバッグ情報を含むプログラム データベース (.pdb) ファイルを出力します。 このファイルは、主に例外のデバッグに役立ちます。アプリケーションのファイルと共にパッケージ化しないように選択することもできます。
 
 発行されたファイルは、任意の方法で展開できます。 たとえば、zip ファイル内にパッケージ化したり、単純な `copy` コマンドを使用したり、任意のインストール パッケージで展開したりできます。 
 
 このプロジェクトの完全な `csproj` ファイルを次に示します。
 
 ```xml
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" />
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netstandard1.6</TargetFramework>
@@ -396,32 +316,15 @@ FDD の展開には、次のいくつかの利点があります。
     <RuntimeIdentifiers>win10-x64;osx.10.11-x64</RuntimeIdentifiers>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="**\*.cs" />
-    <EmbeddedResource Include="**\*.resx" />
+    <PackageReference Include="Microsoft.NETCore.Runtime.CoreCLR" Version="1.0.2" />
+    <PackageReference Include="Microsoft.NETCore.DotNetHostPolicy" Version="1.0.1" />
   </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="NETSTandard.Library">
-      <Version>1.6.0</Version>
-    </PackageReference>
-    <PackageReference Include="Microsoft.NETCore.Runtime.CoreCLR">
-      <Version>1.0.2</Version>
-    </PackageReference>
-    <PackageReference Include="Microsoft.NETCore.DotNetHostPolicy">
-      <Version>1.0.1</Version>
-    </PackageReference>
-    <PackageReference Include="Microsoft.NET.Sdk">
-      <Version>1.0.0-alpha-20161102-2</Version>
-      <PrivateAssets>All</PrivateAssets>
-    </PackageReference>
-  </ItemGroup>
-
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
 ```
 
 
 
 
-<!--HONumber=Jan17_HO3-->
+<!--HONumber=Feb17_HO2-->
 
 

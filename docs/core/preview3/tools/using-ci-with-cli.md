@@ -1,5 +1,5 @@
 ---
-title: "継続的インテグレーション (CI) で .NET Core SDK とツールを使用する"
+title: "継続的インテグレーション (CI) で .NET Core SDK とツールを使用する | Microsoft Docs"
 description: "継続的インテグレーション (CI) で .NET Core SDK とツールを使用する"
 keywords: .NET, .NET Core
 author: blackdwarf
@@ -9,24 +9,27 @@ ms.topic: article
 ms.prod: .net-core
 ms.technology: dotnet-cli
 ms.devlang: dotnet
-ms.assetid: 5fb15297-a276-417f-8c4f-267281357769
+ms.assetid: 0d6e1e34-277c-4aaf-9880-3ebf81023857
 translationtype: Human Translation
-ms.sourcegitcommit: 1a84c694945fe0c77468eb77274ab46618bccae6
-ms.openlocfilehash: 0fda867f1d29caaca716ad27baf6e43146cb99df
+ms.sourcegitcommit: 796df1549a7553aa93158598d62338c02d4df73e
+ms.openlocfilehash: 95c7f0f9911c7cb37c12afec74d0e942db77fbf6
 
 ---
 
-# <a name="using-net-core-sdk-and-tools-in-continuous-integration-ci"></a>継続的インテグレーション (CI) で .NET Core SDK とツールを使用する
+# <a name="using-net-core-sdk-and-tools-in-continuous-integration-ci-net-core-tools-rc4"></a>継続的インテグレーション (CI) で .NET Core SDK とツールを使用する (.NET Core Tools RC4)
+
+> [!WARNING]
+> このトピックは .NET Core Tools RC4 を対象としています。 .NET Core Tools Preview 2 バージョンについては、「[継続的インテグレーション (CI) で .NET Core SDK とツールを使用する](../../tools/using-ci-with-cli.md)」トピックを参照してください。
 
 ## <a name="overview"></a>概要
 このドキュメントでは、ビルド サーバーでの .NET Core SDK とそのツールの使用方法について説明します。 一般に、CI ビルド サーバーでは、何らかの方法でインストールを自動化することが望まれます。 可能な限り自動化に管理者特権を必要としないことが理想的です。 
 
-SaaS CI ソリューションの場合、いくつかのオプションがあります。 このドキュメントでは、非常に一般的な 2 つのオプションである [TravisCI](https://travis-ci.org/) と [AppVeyor](https://www.appveyor.com/) について説明します。 もちろん、他にも多くのサービスがありますが、インストールと使用のメカニズムはどれも似ています。
+SaaS CI ソリューションの場合、いくつかのオプションがあります。 このドキュメントでは、非常に一般的な&2; つのオプションである [TravisCI](https://travis-ci.org/) と [AppVeyor](https://www.appveyor.com/) について説明します。 もちろん、他にも多くのサービスがありますが、インストールと使用のメカニズムはどれも似ています。
 
 ## <a name="installation-options-for-ci-build-servers"></a>CI ビルド サーバーのインストール オプション
 
 ## <a name="using-the-native-installers"></a>ネイティブ インストーラーの使用
-管理者特権が必要なインストーラーを使用しても問題がない場合は、各プラットフォーム用のネイティブ インストーラーをビルド サーバーの設定に使用できます。 この方法には (特に Linux ビルド サーバーの場合)、SDK の実行に必要な依存関係が自動的にインストールされるという 1 つの利点があります。 ネイティブ インストーラーはシステム全体バージョンの SDK もインストールし、これは望ましい場合があります。そうでない場合は、以下で説明する[インストーラー スクリプトの使用](#using-the-installer-script)を検討する必要があります。 
+管理者特権が必要なインストーラーを使用しても問題がない場合は、各プラットフォーム用のネイティブ インストーラーをビルド サーバーの設定に使用できます。 この方法には (特に Linux ビルド サーバーの場合)、SDK の実行に必要な依存関係が自動的にインストールされるという&1; つの利点があります。 ネイティブ インストーラーはシステム全体バージョンの SDK もインストールし、これは望ましい場合があります。そうでない場合は、以下で説明する[インストーラー スクリプトの使用](#using-the-installer-script)を検討する必要があります。 
 
 このアプローチは簡単に使用できます。 Linux では、フィードに基づくパッケージ マネージャー (Ubuntu の `apt-get` または CentOS の `yum`) を使用するか、パッケージ自体 (DEB または RPM) を使用します。 前者の場合は、パッケージを含むフィードの設定が必要です。
 
@@ -88,8 +91,6 @@ install:
 ```
 
 
-
-
-<!--HONumber=Nov16_HO3-->
+<!--HONumber=Feb17_HO2-->
 
 

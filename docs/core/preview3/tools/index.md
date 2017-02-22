@@ -11,15 +11,15 @@ ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: 7c5eee9f-d873-4224-8f5f-ed83df329a59
 translationtype: Human Translation
-ms.sourcegitcommit: 2ad428dcda9ef213a8487c35a48b33929259abba
-ms.openlocfilehash: 524504bd05fd15bdd6afd686c9e5d8edd1c4cc0f
+ms.sourcegitcommit: 796df1549a7553aa93158598d62338c02d4df73e
+ms.openlocfilehash: bcb9e39ed400ad93ae9b38890caa6c579f4a1594
 
 ---
 
-# <a name="net-core-command-line-interface-tools-tooling-preview-4"></a>.NET Core コマンド ライン インターフェイス ツール (Tooling Preview 4)
+# <a name="net-core-command-line-interface-tools-net-core-tools-rc4"></a>.NET Core コマンドライン インターフェイス ツール (.NET Core Tools RC4)
 
 > [!WARNING]
-> このトピックは、Visual Studio 2017 RC - .NET Core Tools Preview 4 を対象としています。 .NET Core Tools Preview 2 バージョンについては、「[.NET Core コマンド ライン インターフェイス ツール](../../tools/index.md)」トピックを参照してください。
+> このトピックは .NET Core Tools RC4 を対象としています。 .NET Core Tools Preview 2 バージョンについては、「[.NET Core コマンド ライン インターフェイス ツール](../../tools/index.md)」トピックを参照してください。
 
 .NET Core コマンドライン インターフェイス (CLI) は、.NET Core アプリケーションを開発するための新しい基本クロスプラットフォーム ツールチェーンです。 これは、統合開発環境 (IDE)、エディター、ビルド オーケストレーターなど、他の上位レベルのツールがビルド時に基にする主要なレイヤーなので、"基本" です。 
 
@@ -89,7 +89,7 @@ CLI は、次の&2; つの主な方法でアプリケーションを移植でき
 
 これらの両方の方法の詳細については、[.NET Core アプリケーション展開](../deploying/index.md)に関するトピックを参照してください。 
 
-## <a name="migration-from-preview-4projectjson"></a>Preview 4/project.json からの移行
+## <a name="migration-from-rc4projectjson"></a>RC4/project.json からの移行
 Preview 2 ツールおよび project.json プロジェクトを使用していた場合、コマンドの詳細およびプロジェクトの移行方法については、[dotnet migrate](dotnet-migrate.md) コマンドのドキュメントを参照してください。 
 
 > [!NOTE]
@@ -105,6 +105,6 @@ Preview 2 ツールおよび project.json プロジェクトを使用してい�
 
 
 
-<!--HONumber=Jan17_HO3-->
+<!--HONumber=Feb17_HO2-->
 
 

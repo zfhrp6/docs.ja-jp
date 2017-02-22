@@ -1,25 +1,28 @@
 ---
-title: "dotnet-new コマンド | .NET Core"
+title: "dotnet-new コマンド | Microsoft Docs"
 description: "dotnet-new コマンドは、現在のディレクトリに新しい .NET Core プロジェクトを作成します。"
 keywords: "dotnet-new, CLI, CLI コマンド, .NET Core"
-author: mairaw
-manager: wpickett
+author: blackdwarf
+ms.author: mairaw
 ms.date: 10/12/2016
 ms.topic: article
 ms.prod: .net-core
-ms.technology: .net-core-technologies
+ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: 263c3d05-3a47-46a6-8023-3ca16b488410
 translationtype: Human Translation
-ms.sourcegitcommit: c6ee3f5663d0a3f62914e8de474cca4d15340c9d
-ms.openlocfilehash: 29ccc12ff893d316c816d22da862f90bfc9334ff
+ms.sourcegitcommit: 796df1549a7553aa93158598d62338c02d4df73e
+ms.openlocfilehash: a49fe94ca8f678c614fb7f58767693c73e34c737
 
 ---
 
-#<a name="dotnetnew"></a>dotnet-new
+#<a name="dotnet-new"></a>dotnet-new
+
+> [!WARNING]
+> このトピックは .NET Core Tools Preview 2 を対象としています。 .NET Core Tools RC4 バージョンについては、「[dotnet-new (.NET Core Tools RC4)](../preview3/tools/dotnet-new.md)」トピックを参照してください。
 
 ## <a name="name"></a>名前
-dotnet-new -- 現在のディレクトリに新しい .NET Core プロジェクトを作成します。
+`dotnet-new` -- 現在のディレクトリに新しい .NET Core プロジェクトを作成します。
 
 ## <a name="synopsis"></a>構文
 `dotnet new [--help] [--type] [--lang]`
@@ -27,7 +30,7 @@ dotnet-new -- 現在のディレクトリに新しい .NET Core プロジェク�
 ## <a name="description"></a>説明
 `dotnet new` コマンドは、コマンド ライン インターフェイス (CLI) ツールセットを試すために有効な .NET Core プロジェクトとサンプル ソース コードを初期化するのに便利です。 
 
-このコマンドは、ディレクトリのコンテキストで呼び出されます。 このコマンドが呼び出されると、以下の 2 つの主な成果物が現在のディレクトリにドロップされます。 
+このコマンドは、ディレクトリのコンテキストで呼び出されます。 このコマンドが呼び出されると、以下の&2; つの主な成果物が現在のディレクトリにドロップされます。 
 
 1. サンプルの "Hello World" プログラムを含む `Program.cs` (または `Program.fs`) ファイル。
 2. 有効な `project.json` ファイル。
@@ -63,6 +66,6 @@ dotnet-new -- 現在のディレクトリに新しい .NET Core プロジェク�
 `dotnet new -t web`
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Feb17_HO2-->
 
 

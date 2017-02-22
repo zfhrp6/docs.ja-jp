@@ -11,15 +11,15 @@ ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: 8a7e1c52-5c57-4bf5-abad-727450ebeefd
 translationtype: Human Translation
-ms.sourcegitcommit: 2ad428dcda9ef213a8487c35a48b33929259abba
-ms.openlocfilehash: f9fb64a90bdbd2096d4752279b1670fad8e8703f
+ms.sourcegitcommit: 796df1549a7553aa93158598d62338c02d4df73e
+ms.openlocfilehash: 1cf1611ab83874ad44855521d21040d102206338
 
 ---
 
 #<a name="dotnet-publish"></a>dotnet-publish
 
 > [!WARNING]
-> このトピックは .NET Core Tools Preview 2 を対象としています。 Visual Studio 2017 RC - .NET Core Tools Preview 4 バージョンについては、「[dotnet-publish (Tooling Preview 4)](../preview3/tools/dotnet-publish.md)」トピックを参照してください。
+> このトピックは .NET Core Tools Preview 2 を対象としています。 .NET Core Tools RC4 バージョンについては、「[dotnet-publish (.NET Core Tools RC4)](../preview3/tools/dotnet-publish.md)」トピックを参照してください。
 
 ## <a name="name"></a>名前
 
@@ -105,6 +105,6 @@ project.json ファイルのバージョン フィールドで `*` を置き換�
 * [ランタイム識別子 (RID) のカタログ](../rid-catalog.md)
 
 
-<!--HONumber=Jan17_HO3-->
+<!--HONumber=Feb17_HO2-->
 
 

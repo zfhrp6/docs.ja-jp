@@ -11,15 +11,15 @@ ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: b64e7e6f-ffb4-4fc8-b43b-5731c89479c2
 translationtype: Human Translation
-ms.sourcegitcommit: 2ad428dcda9ef213a8487c35a48b33929259abba
-ms.openlocfilehash: 9f241774dd8977bbb26b5143d9f5d094af1ce05d
+ms.sourcegitcommit: 796df1549a7553aa93158598d62338c02d4df73e
+ms.openlocfilehash: 0063ac1220a1f01eef6e7300b0907518863ee01e
 
 ---
 
-#<a name="dotnet-install-scripts-reference-tooling-preview-4"></a>dotnet-install スクリプト リファレンス (Tooling Preview 4)
+#<a name="dotnet-install-scripts-reference-net-core-tools-rc4"></a>dotnet-install スクリプト参照 (.NET Core Tools RC4)
 
 > [!WARNING]
-> このトピックは、Visual Studio 2017 RC - .NET Core Tools Preview 4 を対象としています。 .NET Core Tools Preview 2 バージョンについては、「[dotnet-install スクリプト リファレンス](../../tools/dotnet-install-script.md)」トピックを参照してください。
+> このトピックは .NET Core Tools RC4 を対象としています。 .NET Core Tools Preview 2 バージョンについては、「[dotnet-install スクリプト リファレンス](../../tools/dotnet-install-script.md)」トピックを参照してください。
 
 ## <a name="name"></a>名前
 dotnet-install.ps1 | dotnet-install.sh - コマンド ライン インターフェイス (CLI) ツールと共有ランタイムをインストールするために使用するスクリプト
@@ -129,6 +129,6 @@ macOS/Linux の場合:
 
 
 
-<!--HONumber=Jan17_HO3-->
+<!--HONumber=Feb17_HO2-->
 
 

@@ -1,26 +1,29 @@
 ---
-title: "dotnet-restore コマンド | .NET Core SDK"
-description: "dotnet restore コマンドを使用して、依存関係とプロジェクト固有のツールを復元する方法について説明します"
+title: "dotnet-restore コマンド | Microsoft Docs"
+description: "dotnet restore コマンドを使用して、依存関係とプロジェクト固有のツールを復元する方法について説明します。"
 keywords: "dotnet-restore, CLI, CLI コマンド, .NET Core"
-author: mairaw
-manager: wpickett
+author: blackdwarf
+ms.author: mairaw
 ms.date: 10/07/2016
 ms.topic: article
 ms.prod: .net-core
-ms.technology: .net-core-technologies
+ms.technology: dotnet-cli
 ms.devlang: dotnet
-ms.assetid: 60489b25-38de-47e6-bed1-59d9f42e2d46
+ms.assetid: fd7a5769-afbe-4838-bbaf-3ae0cfcbb914
 translationtype: Human Translation
-ms.sourcegitcommit: 1a84c694945fe0c77468eb77274ab46618bccae6
-ms.openlocfilehash: 6fb08a8765ad720b51e796aa0991087413d02e44
+ms.sourcegitcommit: 796df1549a7553aa93158598d62338c02d4df73e
+ms.openlocfilehash: 594956488dee39903feba44e10d6bb81801412a4
 
 ---
 
-#<a name="dotnet-restore"></a>dotnet-restore
+#<a name="dotnet-restore-net-core-tools-rc4"></a>dotnet-restore (.NET Core Tools RC4)
 
-## <a name="name"></a>Name
+> [!WARNING]
+> このトピックは .NET Core Tools RC4 を対象としています。 .NET Core Tools Preview 2 バージョンについては、「[dotnet-restore](../../tools/dotnet-restore.md)」トピックを参照してください。
 
-`dotnet-restore`- プロジェクトの依存関係とツールを復元します。
+## <a name="name"></a>名前
+
+`dotnet-restore` - プロジェクトの依存関係とツールを復元します。
 
 ## <a name="synopsis"></a>構文
 
@@ -84,13 +87,13 @@ P2P 参照を含むプロジェクトを復元するときに、ルート プロ
 
 指定されたパスで見つかった `app1` プロジェクトの依存関係とツールを復元します。
 
-`dotnet restore ~/projects/app1/app1.csproj``
+`dotnet restore ~/projects/app1/app1.csproj`
     
 フォールバック ソースとして指定されたファイル パスを使用して、現在のディレクトリでプロジェクトの依存関係とツールを復元します。
 
 `dotnet restore -f c:\packages\mypackages` 
 
-フォールバック ソースとして指定された 2 つのファイル パスを使用して、現在のディレクトリでプロジェクトの依存関係とツールを復元します。
+フォールバック ソースとして指定された&2; つのファイル パスを使用して、現在のディレクトリでプロジェクトの依存関係とツールを復元します。
 
 `dotnet restore -f c:\packages\mypackages -f c:\packages\myotherpackages` 
 
@@ -100,6 +103,6 @@ P2P 参照を含むプロジェクトを復元するときに、ルート プロ
 
 
 
-<!--HONumber=Nov16_HO3-->
+<!--HONumber=Feb17_HO2-->
 
 
