@@ -3,16 +3,17 @@ title: "方法: 文字列から無効な文字を取り除く"
 description: "方法: 文字列から無効な文字を取り除く"
 keywords: .NET, .NET Core
 author: stevehoag
-manager: wpickett
+ms.author: shoag
 ms.date: 07/28/2016
 ms.topic: article
-ms.prod: .net-core
-ms.technology: .net-core-technologies
+ms.prod: .net
+ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: f1df4967-7887-41d2-b60f-0da9be67c8fa
 translationtype: Human Translation
-ms.sourcegitcommit: fb00da6505c9edb6a49d2003ae9bcb8e74c11d6c
-ms.openlocfilehash: 062bb3ec3c5a3baac05af76b9d2d7bcc74fa2573
+ms.sourcegitcommit: 90fe68f7f3c4b46502b5d3770b1a2d57c6af748a
+ms.openlocfilehash: 59824a372405036c2ab6fac2730b67c9c2dfa7f4
+ms.lasthandoff: 03/02/2017
 
 ---
 
@@ -22,7 +23,7 @@ ms.openlocfilehash: 062bb3ec3c5a3baac05af76b9d2d7bcc74fa2573
 
 ## <a name="example"></a>例
 
-この例で定義されている `CleanInput` メソッドを使用して、ユーザー入力を受け付けるテキスト フィールドに入力された、問題を引き起こす可能性がある文字を削除することができます。 この場合、`CleanInput` は、ピリオド (.)、アット記号 (@),、ハイフン (-) を除く英数字以外のすべての文字を取り除き、残りの文字列を返します。 ただし、正規表現パターンを変更して、入力文字列に含めない任意の文字を取り除くこともできます。
+この例で定義されている `CleanInput` メソッドを使用して、ユーザー入力を受け付けるテキスト フィールドに入力された、問題を引き起こす可能性がある文字を削除することができます。 この場合、`CleanInput` は、ピリオド (.)、アット記号 (@)、ハイフン (-) を除く英数字以外のすべての文字を取り除き、残りの文字列を返します。 ただし、正規表現パターンを変更して、入力文字列に含めない任意の文字を取り除くこともできます。
 
 ```csharp
 using System;
@@ -70,9 +71,4 @@ End Module
 [.NET 正規表現](regular-expressions.md)
 
 [正規表現の例](regex-examples.md)
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

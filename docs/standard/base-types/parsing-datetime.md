@@ -11,8 +11,9 @@ ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: e61514cd-5329-4eb8-b122-482fffb54ab7
 translationtype: Human Translation
-ms.sourcegitcommit: fb00da6505c9edb6a49d2003ae9bcb8e74c11d6c
-ms.openlocfilehash: 8b0c5a64db50163d196017ebb410e454eb5a6af9
+ms.sourcegitcommit: 90fe68f7f3c4b46502b5d3770b1a2d57c6af748a
+ms.openlocfilehash: f0131baa0874880b6697458426da5ae9ce1705b7
+ms.lasthandoff: 03/02/2017
 
 ---
 
@@ -22,7 +23,7 @@ ms.openlocfilehash: 8b0c5a64db50163d196017ebb410e454eb5a6af9
 
 解析は、日付と時刻の区切り記号、および月、日、および年号の名前に使用される文字列などの情報を提供する書式プロバイダーのプロパティの影響を受けます。 書式プロバイダーは、現在の [DateTimeFormatInfo](xref:System.Globalization.DateTimeFormatInfo) オブジェクトです。このオブジェクトは、現在のスレッド カルチャによって暗黙的に指定されるか、または解析するメソッドの [IFormatProvider](xref:System.IFormatProvider) パラメーターによって明示的に指定されます。 [IFormatProvider](xref:System.IFormatProvider) パラメーターには、カルチャ ([DateTimeFormatInfo](xref:System.Globalization.DateTimeFormatInfo) オブジェクト) を表す [CultureInfo](xref:System.Globalization.CultureInfo) オブジェクトを指定します。 
 
-解析される日付の文字列形式には、月と、少なくとも日付または年を含める必要があります。 時刻の文字列形式は、時間と、少なくとも分または AM/PM 指定子を含める必要があります。 ただし、可能な場合は、解析により省略されたコンポーネントに既定値が指定されます。 欠落している日付には現在の日付が規定で設定され、欠落している年には現在の年が規定で設定され、欠落している月の日付には月の最初の日が規定で設定され、欠落している時刻には午前 0 時が規定で設定されます。 
+解析される日付の文字列形式には、月と、少なくとも日付または年を含める必要があります。 時刻の文字列形式は、時間と、少なくとも分または AM/PM 指定子を含める必要があります。 ただし、可能な場合は、解析により省略されたコンポーネントに既定値が指定されます。 欠落している日付には現在の日付が規定で設定され、欠落している年には現在の年が規定で設定され、欠落している月の日付には月の最初の日が規定で設定され、欠落している時刻には午前&0; 時が規定で設定されます。 
 
 文字列形式で時刻のみを指定する場合、解析は、[Today](xref:System.DateTime.Today) プロパティの対応する値に、その [Year](xref:System.DateTime.Year)、[Month](xref:System.DateTime.Month)、および [Day](xref:System.DateTime.Day) プロパティを設定した [DateTime](xref:System.DateTime) オブジェクトを返します。 ただし、[DateTimeStyles.NoCurrentDateDefault](xref:System.Globalization.DateTimeStyles.NoCurrentDateDefault) 定数が解析メソッドで指定されている場合、結果の年、月、日付のプロパティの値は 1 に設定されます。
 
@@ -188,10 +189,5 @@ End Module
 [.NET での型の書式設定](formatting-types.md)
 
 [.NET での型変換](type-conversion.md)
-
-
-
-
-<!--HONumber=Nov16_HO3-->
 
 

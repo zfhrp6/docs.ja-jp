@@ -11,14 +11,15 @@ ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: 13454d47-d957-421b-9ecd-940058b8835e
 translationtype: Human Translation
-ms.sourcegitcommit: c40c28da09e8a122b542463c197196c82c81dd19
-ms.openlocfilehash: ab419cf365b61399ea41e99c15e276584ad0db31
+ms.sourcegitcommit: 90fe68f7f3c4b46502b5d3770b1a2d57c6af748a
+ms.openlocfilehash: fcc48e40cdad25c6142dbc3a86513b816378fa4b
+ms.lasthandoff: 03/02/2017
 
 ---
 
 # <a name="how-to-access-the-predefined-utc-and-local-time-zone-objects"></a>方法: 定義済みの UTC オブジェクトおよびローカル タイム ゾーン オブジェクトにアクセスする
 
-[System.TimeZoneInfo](xref:System.TimeZoneInfo) クラスに用意されている 2 つのプロパティ、`Utc` および `Local` を使用すると、コードから定義済みのタイム ゾーン オブジェクトにアクセスできます。 このトピックでは、これらのプロパティから返される `TimeZoneInfo` オブジェクトにアクセスする方法について説明します。
+[System.TimeZoneInfo](xref:System.TimeZoneInfo) クラスに用意されている&2; つのプロパティ、`Utc` および `Local` を使用すると、コードから定義済みのタイム ゾーン オブジェクトにアクセスできます。 このトピックでは、これらのプロパティから返される `TimeZoneInfo` オブジェクトにアクセスする方法について説明します。
 
 ## <a name="to-access-the-coordinated-universal-time-utc-timezoneinfo-object"></a>世界協定時刻 (UTC) の TimeZoneInfo オブジェクトにアクセスするには
 
@@ -116,9 +117,4 @@ End Try
 [日付、時刻およびタイム ゾーン](index.md)
 
 [ローカル システムで定義されているタイム ゾーンの検索](finding-the-time-zones-on-local-system.md)
-
-
-
-<!--HONumber=Nov16_HO3-->
-
 

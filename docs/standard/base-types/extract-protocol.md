@@ -11,8 +11,9 @@ ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: d2462fb4-6d61-44ab-8466-73f1f06c3058
 translationtype: Human Translation
-ms.sourcegitcommit: fb00da6505c9edb6a49d2003ae9bcb8e74c11d6c
-ms.openlocfilehash: 72e0c9401406dcac4eb693b056b88a531f2a0748
+ms.sourcegitcommit: 90fe68f7f3c4b46502b5d3770b1a2d57c6af748a
+ms.openlocfilehash: 578b70412e876001f4462e2409739acf3609097b
+ms.lasthandoff: 03/02/2017
 
 ---
 
@@ -70,14 +71,14 @@ End Module
 ------- | ----------- 
 `^` | 文字列の先頭から照合を開始します。
 `(?<proto>\w+)` | 1 つ以上の単語文字に一致します。 このグループに proto と名前を付けます。
-`://` | 後に 2 つのスラッシュ記号が続くコロンと一致します。
-`[^/]+?` | スラッシュ記号以外の任意の文字の 1 回以上の (ただし、可能な限り少ない) 出現と一致します。
-`(?<port>:\d+)?` | 後に 1 桁以上の文字が続くコロンの 0 回または 1 回の出現と一致します。 このグループに port と名前を付けます。
+`://` | 後に&2; つのスラッシュ記号が続くコロンと一致します。
+`[^/]+?` | スラッシュ記号以外の任意の文字の&1; 回以上の (ただし、可能な限り少ない) 出現と一致します。
+`(?<port>:\d+)?` | 後に&1; 桁以上の文字が続くコロンの&0; 回または&1; 回の出現と一致します。 このグループに port と名前を付けます。
 `/` | スラッシュ記号に一致します。
  
-[Match.Result](xref:System.Text.RegularExpressions.Match.Result(System.String)) メソッドは、正規表現パターンでキャプチャされた 2 つの名前付きグループの値を連結する、`${proto}${port}` 置換シーケンスを展開します。 これは、[Match.Groups](xref:System.Text.RegularExpressions.Match.Groups) プロパティによって返されたコレクション オブジェクトから取得した文字列を明示的に連結するための便利な代替です。
+[Match.Result](xref:System.Text.RegularExpressions.Match.Result(System.String)) メソッドは、正規表現パターンでキャプチャされた&2; つの名前付きグループの値を連結する、`${proto}${port}` 置換シーケンスを展開します。 これは、[Match.Groups](xref:System.Text.RegularExpressions.Match.Groups) プロパティによって返されたコレクション オブジェクトから取得した文字列を明示的に連結するための便利な代替です。
 
-例では、[Match.Result](xref:System.Text.RegularExpressions.Match.Result(System.String)) メソッドを 2 つの置換 `${proto}` と `${port}` とともに使用して、キャプチャされたグループを出力文字列に含めます。 代わりに、次のコードに示されているように、一致の [GroupCollection](xref:System.Text.RegularExpressions.GroupCollection) オブジェクトから、キャプチャされたグループを取得することができます。
+例では、[Match.Result](xref:System.Text.RegularExpressions.Match.Result(System.String)) メソッドを&2; つの置換 `${proto}` と `${port}` とともに使用して、キャプチャされたグループを出力文字列に含めます。 代わりに、次のコードに示されているように、一致の [GroupCollection](xref:System.Text.RegularExpressions.GroupCollection) オブジェクトから、キャプチャされたグループを取得することができます。
 
 ```csharp
 Console.WriteLine(m.Groups["proto"].Value + m.Groups["port"].Value); 
@@ -92,9 +93,4 @@ Console.WriteLine(m.Groups("proto").Value + m.Groups("port").Value)
 [.NET 正規表現](regular-expressions.md)
 
 [正規表現の例](regex-examples.md)
-
-
-
-<!--HONumber=Nov16_HO3-->
-
 

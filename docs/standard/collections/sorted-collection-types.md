@@ -3,22 +3,23 @@ title: "Sorted コレクション型"
 description: "Sorted コレクション型"
 keywords: .NET, .NET Core
 author: mairaw
-manager: wpickett
+ms.author: mairaw
 ms.date: 06/20/2016
 ms.topic: article
-ms.prod: .net-core
-ms.technology: .net-core-technologies
+ms.prod: .net
+ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: bdc9c13e-e56a-433b-a293-c92364f6e9cb
 translationtype: Human Translation
-ms.sourcegitcommit: 149086110d7470d97e1ab3e5969269626290b523
-ms.openlocfilehash: a5f6e2ef7f765dccf1fee0e2de60dea8aec003b9
+ms.sourcegitcommit: 90fe68f7f3c4b46502b5d3770b1a2d57c6af748a
+ms.openlocfilehash: 28d5024f759b3a7474aef1fa344d39f9933b6322
+ms.lasthandoff: 03/02/2017
 
 ---
 
 # <a name="sorted-collection-types"></a>Sorted コレクション型  
  
- [System.Collections.SortedList](https://docs.microsoft.com/dotnet/core/api/System.Collections.SortedList) クラス、[System.Collections.Generic.SortedList&lt;TKey, TValue&gt;](https://docs.microsoft.com/dotnet/core/api/System.Collections.Generic.SortedList-2) ジェネリック クラス、および [System.Collections.Generic.SortedDictionary&lt;TKey, TValue&gt;](https://docs.microsoft.com/dotnet/core/api/System.Collections.Generic.SortedDictionary-2) ジェネリック クラスは、[IDictionary](https://docs.microsoft.com/dotnet/core/api/System.Collections.IDictionary) インターフェイスを実装する点において [Hashtable](https://docs.microsoft.com/dotnet/core/api/System.Collections.Hashtable) クラスと [Dictionary&lt;TKey, TValue&gt;](https://docs.microsoft.com/dotnet/core/api/System.Collections.Generic.Dictionary-2) ジェネリック クラスに似ていますが、キーによる並べ替え順序で自身の要素を維持し、ハッシュ テーブルの O(1) 挿入と取得の特性を備えていません。 これら 3 つのクラスには、次のような共通の特徴があります。  
+ [System.Collections.SortedList](https://docs.microsoft.com/dotnet/core/api/System.Collections.SortedList) クラス、[System.Collections.Generic.SortedList&lt;TKey, TValue&gt;](https://docs.microsoft.com/dotnet/core/api/System.Collections.Generic.SortedList-2) ジェネリック クラス、および [System.Collections.Generic.SortedDictionary&lt;TKey, TValue&gt;](https://docs.microsoft.com/dotnet/core/api/System.Collections.Generic.SortedDictionary-2) ジェネリック クラスは、[IDictionary](https://docs.microsoft.com/dotnet/core/api/System.Collections.IDictionary) インターフェイスを実装する点において [Hashtable](https://docs.microsoft.com/dotnet/core/api/System.Collections.Hashtable) クラスと [Dictionary&lt;TKey, TValue&gt;](https://docs.microsoft.com/dotnet/core/api/System.Collections.Generic.Dictionary-2) ジェネリック クラスに似ていますが、キーによる並べ替え順序で自身の要素を維持し、ハッシュ テーブルの O(1) 挿入と取得の特性を備えていません。 これら&3; つのクラスには、次のような共通の特徴があります。  
 
  *   3 つのすべてのクラスは、[System.Collections.IDictionary](https://docs.microsoft.com/dotnet/core/api/System.Collections.IDictionary) インターフェイスを実装します。 2 つのジェネリック クラスは、[System.Collections.Generic.IDictionary&lt;TKey, TValue&gt;](https://docs.microsoft.com/dotnet/core/api/System.Collections.Generic.IDictionary-2) ジェネリック インターフェイスも実装します。  
  
@@ -56,9 +57,4 @@ ms.openlocfilehash: a5f6e2ef7f765dccf1fee0e2de60dea8aec003b9
 [ConcurrentDictionary&lt;TKey, TValue&gt;](https://docs.microsoft.com/dotnet/core/api/System.Collections.Concurrent.ConcurrentDictionary-2)  
  
 [一般的に使用されるコレクション型](commonly-used-collection-types.md) 
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

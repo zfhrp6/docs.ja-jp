@@ -11,8 +11,9 @@ ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: d602f260-e7cf-49c8-a37f-731f40e4a538
 translationtype: Human Translation
-ms.sourcegitcommit: fb00da6505c9edb6a49d2003ae9bcb8e74c11d6c
-ms.openlocfilehash: 16f38150f26b477de5685d2d3b0ef18afb94c236
+ms.sourcegitcommit: 90fe68f7f3c4b46502b5d3770b1a2d57c6af748a
+ms.openlocfilehash: a27f78bc3c0753a7c5bc752bb6391839bfc21e75
+ms.lasthandoff: 03/02/2017
 
 ---
 
@@ -47,7 +48,7 @@ ms.openlocfilehash: 16f38150f26b477de5685d2d3b0ef18afb94c236
 
 ## <a name="narrowing-conversions"></a>縮小変換
 
-[Single](xref:System.Single) または [Double](xref:System.Double) への縮小変換では、情報が失われる可能性があります。 ターゲット型がソースの大きさを正確に表現できない場合、結果の型は定数 `PositiveInfinity` または `NegativeInfinity` に設定されます。 `PositiveInfinity` は、正の数を 0 で除算した結果であり、[Single](xref:System.Single) または [Double](xref:System.Double) の値が `MaxValue` フィールドの値を超える場合にも返されます。 `NegativeInfinity` は、負の数を 0 で除算した結果であり、[Single](xref:System.Single) または [Double](xref:System.Double) の値が `MinValue` フィールドの値を下回る場合にも返されます。 [Double](xref:System.Double) から [Single](xref:System.Single) への変換は、`PositiveInfinity` または `NegativeInfinity` になる場合があります。
+[Single](xref:System.Single) または [Double](xref:System.Double) への縮小変換では、情報が失われる可能性があります。 ターゲット型がソースの大きさを正確に表現できない場合、結果の型は定数 `PositiveInfinity` または `NegativeInfinity` に設定されます。 `PositiveInfinity` は、正の数を&0; で除算した結果であり、[Single](xref:System.Single) または [Double](xref:System.Double) の値が `MaxValue` フィールドの値を超える場合にも返されます。 `NegativeInfinity` は、負の数を&0; で除算した結果であり、[Single](xref:System.Single) または [Double](xref:System.Double) の値が `MinValue` フィールドの値を下回る場合にも返されます。 [Double](xref:System.Double) から [Single](xref:System.Single) への変換は、`PositiveInfinity` または `NegativeInfinity` になる場合があります。
 
 その他のデータ型についても、縮小変換によって情報が失われる可能性があります。 ただし、変換される型の値が、ターゲット型の `MaxValue` フィールドと `MinValue` フィールドで指定された範囲外にある場合は、[OverflowException](xref:System.OverflowException) がスローされます。また、ターゲット型の値がその `MaxValue` または `MinValue` を超えないことを確認するために、ランタイムによって変換がチェックされます。 [System.Convert](xref:System.Convert) クラスを使用して実行される変換は、常にこの方法でチェックされます。
 
@@ -72,10 +73,5 @@ ms.openlocfilehash: 16f38150f26b477de5685d2d3b0ef18afb94c236
 [System.Convert](xref:System.Convert)
 
 [型変換](type-conversion.md)
-
-
-
-
-<!--HONumber=Nov16_HO3-->
 
 

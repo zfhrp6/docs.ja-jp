@@ -11,8 +11,9 @@ ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: d1a640cf-09ca-48f7-800c-a627a6d549c9
 translationtype: Human Translation
-ms.sourcegitcommit: fb00da6505c9edb6a49d2003ae9bcb8e74c11d6c
-ms.openlocfilehash: 1fc1edd64c330fe579f389750432665ed982976e
+ms.sourcegitcommit: 90fe68f7f3c4b46502b5d3770b1a2d57c6af748a
+ms.openlocfilehash: ac26821819b22aa3ea47e6945bb5c8575dcd9807
+ms.lasthandoff: 03/02/2017
 
 ---
 
@@ -22,7 +23,7 @@ ms.openlocfilehash: 1fc1edd64c330fe579f389750432665ed982976e
 
 ## <a name="how-regular-expressions-work"></a>正規表現の動作
 
-正規表現を使ったテキスト処理の最も重要な部分は、.NET の [System.Text.RegularExpressions.Regex](xref:System.Text.RegularExpressions.Regex) オブジェクトによって表される正規表現エンジンです。 正規表現を使ったテキスト処理では、正規表現エンジンに対し、最低でも次の 2 つの情報を与える必要があります。
+正規表現を使ったテキスト処理の最も重要な部分は、.NET の [System.Text.RegularExpressions.Regex](xref:System.Text.RegularExpressions.Regex) オブジェクトによって表される正規表現エンジンです。 正規表現を使ったテキスト処理では、正規表現エンジンに対し、最低でも次の&2; つの情報を与える必要があります。
 
 * テキストを識別する正規表現パターン。 
   
@@ -34,7 +35,7 @@ ms.openlocfilehash: 1fc1edd64c330fe579f389750432665ed982976e
 
 * 入力されたテキストに特定の正規表現パターンが出現するかどうかを調べるには、[Regex.IsMatch](xref:System.Text.RegularExpressions.Regex.IsMatch(System.String)) メソッドを呼び出します。 テキストを検証するために [IsMatch](xref:System.Text.RegularExpressions.Regex.IsMatch(System.String)) メソッドを使用する例については、「[方法: 文字列が有効な電子メール形式であるかどうかを検証する](verify-format.md)」をご覧ください。
 
-* 正規表現パターンと一致したテキストを 1 つまたはすべて取得するには、[Regex.Match](xref:System.Text.RegularExpressions.Regex.Match(System.String)) メソッドまたは [Regex.Matches](xref:System.Text.RegularExpressions.Regex.Matches(System.String)) メソッドを呼び出します。 前者は、一致したテキストの情報を保持する [System.Text.RegularExpressions.Match](xref:System.Text.RegularExpressions.Match) オブジェクトを返します。 後者は、解析対象のテキストに見つかった各一致につき 1 つの [System.Text.RegularExpressions.Match](xref:System.Text.RegularExpressions.Match) オブジェクトを含む [MatchCollection](xref:System.Text.RegularExpressions.MatchCollection) オブジェクトを返します。 
+* 正規表現パターンと一致したテキストを&1; つまたはすべて取得するには、[Regex.Match](xref:System.Text.RegularExpressions.Regex.Match(System.String)) メソッドまたは [Regex.Matches](xref:System.Text.RegularExpressions.Regex.Matches(System.String)) メソッドを呼び出します。 前者は、一致したテキストの情報を保持する [System.Text.RegularExpressions.Match](xref:System.Text.RegularExpressions.Match) オブジェクトを返します。 後者は、解析対象のテキストに見つかった各一致につき&1; つの [System.Text.RegularExpressions.Match](xref:System.Text.RegularExpressions.Match) オブジェクトを含む [MatchCollection](xref:System.Text.RegularExpressions.MatchCollection) オブジェクトを返します。 
 
 * 正規表現パターンと一致したテキストを置換するには、[Regex.Replace](xref:System.Text.RegularExpressions.Regex.Replace(System.String,System.String)) メソッドを呼び出します。 [Replace](xref:System.Text.RegularExpressions.Regex.Replace(System.String,System.String)) メソッドを使用して日付形式を変更したり文字列から無効な文字を削除したりする例については、「[方法: 文字列から無効な文字を取り除く](strip-characters.md)」および「[正規表現の例: 日付形式の変更](changing-formats.md)」をご覧ください。
 
@@ -285,14 +286,14 @@ End Module
 構文 | 説明
 ------ | -------
 `\$` | 入力文字列に含まれる単一のドル記号 ($) を検索します。 この正規表現パターン文字列に使用されている円記号は、ドル記号を正規表現のアンカーではなく、文字として扱うことを意味します。 ドル記号 ($) を単独で指定した場合、正規表現エンジンは、比較の開始位置を文字列の終端に設定します。現在のカルチャの通貨記号が正規表現記号として解釈されるのを防ぐため、この例では、[Escape](xref:System.Text.RegularExpressions.Regex.Escape(System.String)) メソッドを呼び出して文字をエスケープしています。
-`\s*` | 空白文字の 0 回以上の繰り返しを検索します。
-`[-+]?` | 正の符号または負の符号の 0 回または 1 回の繰り返しを検索します。
-`([0-9]{0,3}(,[0-9]{3})*(\.[0-9]+)?)` | 外側の丸かっこで囲まれている表現は、キャプチャ グループまたは部分式として定義されます。 一致が見つかった場合、一致文字列のその部分に関する情報を、[Match.Groups](xref:System.Text.RegularExpressions.Match.Groups) プロパティから返された [GroupCollection](xref:System.Text.RegularExpressions.GroupCollection) オブジェクトの 2 つ目の [Group](xref:System.Text.RegularExpressions.Group) オブジェクトから取得できます。 (コレクションの 1 つ目の要素は、一致した文字列全体を表します)。
+`\s*` | 空白文字の&0; 回以上の繰り返しを検索します。
+`[-+]?` | 正の符号または負の符号の&0; 回または&1; 回の繰り返しを検索します。
+`([0-9]{0,3}(,[0-9]{3})*(\.[0-9]+)?)` | 外側の丸かっこで囲まれている表現は、キャプチャ グループまたは部分式として定義されます。 一致が見つかった場合、一致文字列のその部分に関する情報を、[Match.Groups](xref:System.Text.RegularExpressions.Match.Groups) プロパティから返された [GroupCollection](xref:System.Text.RegularExpressions.GroupCollection) オブジェクトの&2; つ目の [Group](xref:System.Text.RegularExpressions.Group) オブジェクトから取得できます。 (コレクションの&1; つ目の要素は、一致した文字列全体を表します)。
 `[0-9]{0,3}` | 10 進数字 (0 ～ 9) の 0 回以上、3 回以下の繰り返しを検索します。
-`(,[0-9]{3})*` | 桁区切り記号と 3 桁の 10 進数字の 0 回以上の繰り返しを検索します。
+`(,[0-9]{3})*` | 桁区切り記号と&3; 桁の&10; 進数字の&0; 回以上の繰り返しを検索します。
 `\.` | 単一の小数点を検索します。
-`[0-9]+` | 10 進数字の 1 回以上の繰り返しを検索します。
-`(\.[0-9]+)?` | 小数点と 1 桁以上の数字の 0 回または 1 回の繰り返しを検索します。
+`[0-9]+` | 10 進数字の&1; 回以上の繰り返しを検索します。
+`(\.[0-9]+)?` | 小数点と&1; 桁以上の数字の&0; 回または&1; 回の繰り返しを検索します。
 
 ## <a name="related-topics"></a>関連トピック
 
@@ -309,10 +310,5 @@ End Module
 [System.Text.RegularExpressions](xref:System.Text.RegularExpressions)
 
 [System.Text.RegularExpressions.Regex](xref:System.Text.RegularExpressions.Regex)
-
-
-
-
-<!--HONumber=Nov16_HO3-->
 
 

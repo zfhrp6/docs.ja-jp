@@ -11,8 +11,9 @@ ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: bbfe6465-329d-4982-869d-472e7ef85d93
 translationtype: Human Translation
-ms.sourcegitcommit: 254e89abefd28419bd2f36a047e4df939f7ff8da
-ms.openlocfilehash: 8eb9274def2683fae20765cbf701b706293744fc
+ms.sourcegitcommit: 90fe68f7f3c4b46502b5d3770b1a2d57c6af748a
+ms.openlocfilehash: be44dce8181be45f6d73fcf498a873fb94aa56a6
+ms.lasthandoff: 03/02/2017
 
 ---
 
@@ -79,10 +80,5 @@ C#、F#、および Visual Basic は .NET プラットフォームを対象と�
 ------------
 
 .NET はオープンな [ECMA 規格](https://github.com/dotnet/coreclr/blob/master/Documentation/project-docs/dotnet-standards.md)によって指定されています。この規格は各機能について概説したもので、新しい実装を行う場合に使用することができます。 Microsoft の .NET 以外に、Mono と Unity が最も普及している .NET 実装もあります。
-
-
-
-
-<!--HONumber=Nov16_HO3-->
 
 

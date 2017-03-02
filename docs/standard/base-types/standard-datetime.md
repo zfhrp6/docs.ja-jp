@@ -4,22 +4,22 @@ description: "標準の日時書式指定文字列"
 keywords: .NET, .NET Core
 author: stevehoag
 ms.author: shoag
-manager: wpickett
 ms.date: 07/25/2016
 ms.topic: article
-ms.prod: .net-core
-ms.technology: .net-core-technologies
+ms.prod: .net
+ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: be239871-10cc-4949-b548-200bb260630a
 translationtype: Human Translation
-ms.sourcegitcommit: b20713600d7c3ddc31be5885733a1e8910ede8c6
-ms.openlocfilehash: 1196459d74038edb1268c619dac3da69f38e7860
+ms.sourcegitcommit: 90fe68f7f3c4b46502b5d3770b1a2d57c6af748a
+ms.openlocfilehash: f9247bae0d290db570b8cd8885e654524ea2f36b
+ms.lasthandoff: 03/02/2017
 
 ---
 
 # <a name="standard-date-and-time-format-strings"></a>標準の日時書式指定文字列
 
-標準の日時書式指定文字列は、単一の書式指定子を使用して日付と時刻の値のテキスト表現を定義します。 空白を含む複数の文字で構成される日時書式指定文字列は、カスタム日時書式指定文字列として解釈されます。詳細については、「[カスタム日時書式指定文字列](custom-datetime.md)」をご覧ください。 標準またはカスタムの書式指定文字列には、次の 2 とおりの使用方法があります。
+標準の日時書式指定文字列は、単一の書式指定子を使用して日付と時刻の値のテキスト表現を定義します。 空白を含む複数の文字で構成される日時書式指定文字列は、カスタム日時書式指定文字列として解釈されます。詳細については、「[カスタム日時書式指定文字列](custom-datetime.md)」をご覧ください。 標準またはカスタムの書式指定文字列には、次の&2; とおりの使用方法があります。
 
 * 書式設定操作によって生成される文字列を定義する。
 
@@ -46,7 +46,7 @@ ms.openlocfilehash: 1196459d74038edb1268c619dac3da69f38e7860
 "u" | 並べ替え可能な日付と時刻のパターン (世界時刻)。 | [DateTime](xref:System.DateTime) 値の場合: `2009-06-15T13:45:30 -> 2009-06-15 13:45:30Z` [DateTimeOffset](xref:System.DateTimeOffset) 値の場合: `2009-06-15T13:45:30 -> 2009-06-15 20:45:30Z`
 "U" | 完全な日付と時刻のパターン (世界時刻)。 | `2009-06-15T13:45:30 -> Monday, June 15, 2009 8:45:30 PM (en-US)`; `2009-06-15T13:45:30 -> den 15 juni 2009 20:45:30 (sv-SE)`; `2009-06-15T13:45:30 -> Δευτέρα, 15 Ιουνίου 2009 8:45:30 μμ (el-GR)`
 "Y"、"y" | 年月パターン。 | `2009-06-15T13:45:30 -> June, 2009 (en-US)`; `2009-06-15T13:45:30 -> juni 2009 (da-DK)`; `2009-06-15T13:45:30 -> Juni 2009 (id-ID)`
-その他の 1 文字 | 未定義の指定子。 | ランタイム [FormatException](xref:System.FormatException) をスローします。
+その他の&1; 文字 | 未定義の指定子。 | ランタイム [FormatException](xref:System.FormatException) をスローします。
 
 ## <a name="how-standard-format-strings-work"></a>標準書式指定文字列の動作
 
@@ -100,7 +100,7 @@ ms.openlocfilehash: 1196459d74038edb1268c619dac3da69f38e7860
   Console.WriteLine(thisDate.ToString("d", fmt))   ' Displays 15.3.2008
   ```
   
-標準書式指定文字列には、長いカスタム書式指定文字列に代わる、不変の省略形としての利用価値もあります。 このカテゴリに該当する標準書式指定文字列は、"O" (または "o")、"R" (または "r")、"s"、"u" の 4 つです。 これらの文字列は、インバリアント カルチャで定義されたカスタム書式指定文字列に対応します。 これらの書式指定文字列によって生成される日時値の文字列形式は、カルチャに関係なく一定です。 次の表で、この 4 つの標準日時書式指定文字列について説明します。
+標準書式指定文字列には、長いカスタム書式指定文字列に代わる、不変の省略形としての利用価値もあります。 このカテゴリに該当する標準書式指定文字列は、"O" (または "o")、"R" (または "r")、"s"、"u" の&4; つです。 これらの文字列は、インバリアント カルチャで定義されたカスタム書式指定文字列に対応します。 これらの書式指定文字列によって生成される日時値の文字列形式は、カルチャに関係なく一定です。 次の表で、この&4; つの標準日時書式指定文字列について説明します。
 
 標準書式指定文字列 | DateTimeFormatInfo.InvariantInfo プロパティによる定義 | カスタム書式指定文字列
 ---------------------- | ---------------------------------------------------- | --------------------
@@ -376,7 +376,7 @@ Console.WriteLine(date1.ToString("m", _
 ' Displays 10 April
 ```
 
-## <a name="the-roundtrip-o-o-format-specifier"></a>ラウンドトリップ ("O"、"o") 書式指定子
+## <a name="the-round-trip-o-o-format-specifier"></a>ラウンドトリップ ("O"、"o") 書式指定子
 
 "O" または "o" 標準書式指定子は、タイム ゾーン情報を保持するパターンを使用するカスタム日時書式指定文字列を表し、ISO 8601 に準拠する結果文字列を生成します。 この書式指定子は、[DateTime](xref:System.DateTime) 値の日付と時刻の値を、[DateTime.Kind](xref:System.DateTime.Kind) プロパティと共にテキストとして保持できるように設計されています。 styles パラメーターが [DateTimeStyles.RoundtripKind](xref:System.Globalization.DateTimeStyles.RoundtripKind) に設定されている場合は、[DateTime.Parse(String, IFormatProvider, DateTimeStyles)](xref:System.DateTime.Parse(System.String,System.IFormatProvider,System.Globalization.DateTimeStyles)) または [DateTime.ParseExact](xref:System.DateTime.ParseExact(System.String,System.String,System.IFormatProvider,System.Globalization.DateTimeStyles)) メソッドを使用して、書式設定された文字列を変換前の文字列に戻すことができます。 
 
@@ -748,10 +748,5 @@ Console.WriteLine(date1.ToString("y", CultureInfo.CreateSpecificCulture("af-ZA")
 [型の書式設定](formatting-types.md)
 
 [カスタム日時書式指定文字列](custom-datetime.md)
-
-
-
-
-<!--HONumber=Nov16_HO1-->
 
 

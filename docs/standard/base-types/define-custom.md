@@ -11,8 +11,9 @@ ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: 9b184114-6612-4c1a-a2db-2e24e65b0f77
 translationtype: Human Translation
-ms.sourcegitcommit: fb00da6505c9edb6a49d2003ae9bcb8e74c11d6c
-ms.openlocfilehash: bb62bdd03d4af4f764ac3bc8734c67902fffa798
+ms.sourcegitcommit: 90fe68f7f3c4b46502b5d3770b1a2d57c6af748a
+ms.openlocfilehash: fdea0fe76b1c5f1e9ae23582219c847fe80b317f
+ms.lasthandoff: 03/02/2017
 
 ---
 
@@ -26,7 +27,7 @@ ms.openlocfilehash: bb62bdd03d4af4f764ac3bc8734c67902fffa798
 
 * カスタムの [CultureInfo](xref:System.Globalization.CultureInfo) オブジェクトまたは [NumberFormatInfo](xref:System.Globalization.NumberFormatInfo) オブジェクト: 記号を定義し、数値の文字列形式を表示するために使用されるパターンの書式を設定します。 これらは、*provider* パラメーターを持つ [ToString](xref:System.Int32.ToString(System.IFormatProvider)) などの数値書式指定メソッドと共に使用できます。 通常、*provider* パラメーターは、カルチャに固有の書式を指定するために使用されます。
 
-一部の例には (アプリケーションで書式設定されたアカウント番号や ID 番号、郵便番号を表示する必要がある場合など)、これら 3 つの方法は適していません。 .NET では、[CultureInfo](xref:System.Globalization.CultureInfo) オブジェクトでも [NumberFormatInfo](xref:System.Globalization.NumberFormatInfo) オブジェクトでもない書式設定オブジェクトを定義して、数値を書式設定する方法を決定することもできます。 このトピックでは、このようなオブジェクトを実装するため、詳細な手順を説明し、電話番号の書式を設定する例について説明します。
+一部の例には (アプリケーションで書式設定されたアカウント番号や ID 番号、郵便番号を表示する必要がある場合など)、これら&3; つの方法は適していません。 .NET では、[CultureInfo](xref:System.Globalization.CultureInfo) オブジェクトでも [NumberFormatInfo](xref:System.Globalization.NumberFormatInfo) オブジェクトでもない書式設定オブジェクトを定義して、数値を書式設定する方法を決定することもできます。 このトピックでは、このようなオブジェクトを実装するため、詳細な手順を説明し、電話番号の書式を設定する例について説明します。
 
 ## <a name="to-define-a-custom-format-provider"></a>カスタム書式プロバイダーを定義するには
 
@@ -58,7 +59,7 @@ ms.openlocfilehash: bb62bdd03d4af4f764ac3bc8734c67902fffa798
 
 ## <a name="example"></a>例
 
-次の例では、米国の電話番号を表す数値を NANP または E.123 形式に変換する、`TelephoneFormatter` という名前のカスタム数値書式プロバイダーを定義します。 このメソッドは、"N" (NANP 形式を出力) と "I" (国際 E.123 形式を出力) の 2 つの書式指定子を処理します。
+次の例では、米国の電話番号を表す数値を NANP または E.123 形式に変換する、`TelephoneFormatter` という名前のカスタム数値書式プロバイダーを定義します。 このメソッドは、"N" (NANP 形式を出力) と "I" (国際 E.123 形式を出力) の&2; つの書式指定子を処理します。
 
 ```csharp
 using System;
@@ -244,9 +245,4 @@ End If
 ## <a name="see-also"></a>関連項目
 
 [書式設定操作の実行](performing-formatting-operations.md)
-
-
-
-<!--HONumber=Nov16_HO3-->
-
 

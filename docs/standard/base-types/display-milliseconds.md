@@ -11,8 +11,9 @@ ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: 78599e33-1c3f-4335-b320-751e35906338
 translationtype: Human Translation
-ms.sourcegitcommit: fb00da6505c9edb6a49d2003ae9bcb8e74c11d6c
-ms.openlocfilehash: 9bcec8a610ed0fd47d168e23fb1454067e2d3fac
+ms.sourcegitcommit: 90fe68f7f3c4b46502b5d3770b1a2d57c6af748a
+ms.openlocfilehash: 7a110cf28ac8de558cd1460c61a650fc8a80e51a
+ms.lasthandoff: 03/02/2017
 
 ---
 
@@ -153,7 +154,7 @@ Console.WriteLine(dateValue.ToString("FFF"))
 
 日付および時刻のミリ秒部分を含む完全なカスタム書式指定子を定義する場合、アプリケーションの現在のカルチャの時間要素の取り決めに対応しない可能性のあるハードコーディングされた書式を定義するという問題が生じます。 これに代わるより良い方法は、現在のカルチャの [DateTimeFormatInfo](xref:System.Globalization.DateTimeFormatInfo) オブジェクトで定義されているいずれかの日付および時刻表示パターンを取得して、ミリ秒を含むようにそれを修正することです。 この例では、この方法も示されています。 現在のカルチャの完全な日付および時刻パターンを [DateTimeFormatInfo.FullDateTimePattern](xref:System.Globalization.DateTimeFormatInfo.FullDateTimePattern) プロパティから取得した後、その秒パターンの後にカスタム パターン `.ffff` を挿入します。 この例では、1 つのメソッド呼び出しでこの操作を実行するために正規表現が使われていることに注意してください。
 
-また、カスタム書式指定子を使用して、ミリ秒以外の秒の端数を表示することもできます。 たとえば、カスタム書式指定子 `f` または `F` は 1/10 秒を表示し、カスタム書式指定子 `ff` または `FF` は 1/100 秒、カスタム書式指定子 `ffff` または `FFFF` は 1/10000 秒をそれぞれ表示します。 返される文字列内では、ミリ秒の端数は丸められるのではなく、切り捨てられます。 次の例では、これらの書式指定子が使用されています。
+また、カスタム書式指定子を使用して、ミリ秒以外の秒の端数を表示することもできます。 たとえば、カスタム書式指定子 `f` または `F` は&1;/10 秒を表示し、カスタム書式指定子 `ff` または `FF` は&1;/100 秒、カスタム書式指定子 `ffff` または `FFFF` は&1;/10000 秒をそれぞれ表示します。 返される文字列内では、ミリ秒の端数は丸められるのではなく、切り捨てられます。 次の例では、これらの書式指定子が使用されています。
 
 ```csharp
 DateTime dateValue = new DateTime(2008, 7, 16, 8, 32, 45, 180); 
@@ -185,10 +186,5 @@ Console.WriteLine("{0} seconds", dateValue.ToString("s.ffff"))
 [System.Globalization.DateTimeFormatInfo](xref:System.Globalization.DateTimeFormatInfo)
 
 [カスタム日時書式指定文字列](custom-datetime.md)
-
-
-
-
-<!--HONumber=Nov16_HO3-->
 
 

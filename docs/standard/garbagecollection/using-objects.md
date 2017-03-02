@@ -3,16 +3,17 @@ title: "IDisposable を実装するオブジェクトの使用"
 description: "IDisposable を実装するオブジェクトの使用"
 keywords: .NET, .NET Core
 author: stevehoag
-manager: wpickett
+ms.author: shoag
 ms.date: 08/19/2016
 ms.topic: article
-ms.prod: .net-core
-ms.technology: .net-core-technologies
+ms.prod: .net
+ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: df780a6e-734e-44b8-9747-9f7783f79e20
 translationtype: Human Translation
-ms.sourcegitcommit: 213ce098bcc2b5e31c55e759d895254d5ca33caa
-ms.openlocfilehash: 51655742b8975c84eae3f58c4ef0f7381a0bed6b
+ms.sourcegitcommit: 90fe68f7f3c4b46502b5d3770b1a2d57c6af748a
+ms.openlocfilehash: 63ad1233b5eab63670fd51f41f86269f643209a7
+ms.lasthandoff: 03/02/2017
 
 ---
 
@@ -131,7 +132,7 @@ End With
 End Module
 ```
 
-また、C# の `using` ステートメントでは、単一のステートメントで複数のリソースを取得できます。そのようなステートメントは、内部的には複数の using ステートメントを入れ子にした場合と同等です。 次の例では、2 つの異なるファイルの内容を読み取るために、[StreamReader](xref:System.IO.StreamReader) の 2 つのオブジェクトをインスタンス化します。 
+また、C# の `using` ステートメントでは、単一のステートメントで複数のリソースを取得できます。そのようなステートメントは、内部的には複数の using ステートメントを入れ子にした場合と同等です。 次の例では、2 つの異なるファイルの内容を読み取るために、[StreamReader](xref:System.IO.StreamReader) の&2; つのオブジェクトをインスタンス化します。 
 
 ```cs
 using System;
@@ -235,10 +236,5 @@ End Module
 
 [アンマネージ リソースのクリーンアップ](unmanaged.md)
 
-
-
-
-
-<!--HONumber=Nov16_HO1-->
 
 

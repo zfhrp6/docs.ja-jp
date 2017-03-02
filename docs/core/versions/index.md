@@ -3,16 +3,16 @@ title: ".NET Core バージョン管理"
 description: ".NET Core バージョン管理"
 keywords: .NET, .NET Core
 author: richlander
-manager: wpickett
+ms.author: mairaw
 ms.date: 06/20/2016
 ms.topic: article
 ms.prod: .net-core
-ms.technology: .net-core-technologies
 ms.devlang: dotnet
 ms.assetid: f6f684b1-1d2c-4105-8376-7c1959e23803
 translationtype: Human Translation
-ms.sourcegitcommit: bb15293c569fa92f1acf6315c5fe7f2cd9cb6f68
-ms.openlocfilehash: 3db91c84c887645bd3054fab70841657aa045c54
+ms.sourcegitcommit: 90fe68f7f3c4b46502b5d3770b1a2d57c6af748a
+ms.openlocfilehash: 636c86fed9952542a256c075eb9e388b70cff174
+ms.lasthandoff: 03/02/2017
 
 ---
 
@@ -76,7 +76,7 @@ MAJOR.MINOR.PATCH[-PRERELEASE-BUILDNUMBER]
 
 更新されたパッケージを参照するメタパッケージの更新は、メタパッケージの修正プログラム バージョンを使用して表されます。 修正プログラム バージョンには、更新されたフレームワーク バージョンが含まれることはありません。 したがって、メタパッケージは、厳密には SemVer 準拠であると言えません。そのバージョン管理スキームが、基になるパッケージでの変更の度合いを表さず、主に API レベルであるためです。 
 
-.NET Core には、次の 2 の主なメタパッケージがあります。
+.NET Core には、次の&2; の主なメタパッケージがあります。
 
 **NETStandard.Library**
 
@@ -158,9 +158,4 @@ GitHub の .NET Core リポジトリでは、コミットおよび PR が毎日�
   }
 }
 ```
-
-
-
-<!--HONumber=Nov16_HO3-->
-
 

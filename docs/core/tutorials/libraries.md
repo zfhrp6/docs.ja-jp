@@ -3,16 +3,17 @@ title: "クロス プラットフォーム ツールによるライブラリの�
 description: "クロス プラットフォーム ツールによるライブラリの開発"
 keywords: .NET, .NET Core
 author: cartermp
-manager: wpickett
+ms.author: mairaw
 ms.date: 06/20/2016
 ms.topic: article
 ms.prod: .net-core
-ms.technology: .net-core-technologies
+ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: 9f6e8679-bd7e-4317-b3f9-7255a260d9cf
 translationtype: Human Translation
-ms.sourcegitcommit: 0882a5ca2f7814e2fd168dce40705d11b199f102
-ms.openlocfilehash: caf72bec4a5d3276d1fdeafc4fa3816e5f00c296
+ms.sourcegitcommit: 90fe68f7f3c4b46502b5d3770b1a2d57c6af748a
+ms.openlocfilehash: 7f419e1fc2c9f442b08e19ede4e84f9cf6843a94
+ms.lasthandoff: 03/02/2017
 
 ---
 
@@ -63,7 +64,7 @@ ms.openlocfilehash: caf72bec4a5d3276d1fdeafc4fa3816e5f00c296
 
 さらに、[依存する NuGet パッケージ](https://www.nuget.org/packages/NETStandard.Library/)に対応するのは `NETStandard.Library` バージョン `1.6.0` です。  コンソール アプリなど、`Microsoft.NETCore.App` への依存を妨げるものは何もありませんが、一般的には推奨されません。  `NETStandard.Library` で指定されていないパッケージの API が必要な場合は、`NETStandard.Library` に加え、`project.json` ファイルの `dependencies` セクションにそのバージョンを指定できます。
 
-.NET Standard をターゲット設定する場合、ニーズに応じて主に 3 つのオプションがあります。
+.NET Standard をターゲット設定する場合、ニーズに応じて主に&3; つのオプションがあります。
 
 1. 最新バージョンの .NET Standard である `netstandard1.6` を使用できます。最新の API にアクセスできることを重視し、対応する実装が少なくなることが気にならない場合にお勧めです。
 2. 古いバージョンの .NET Standard を使用すると、以前の .NET 実装をターゲットに設定することができます。 この場合、一部の最新の API にアクセスできないという欠点があります。
@@ -485,7 +486,7 @@ let result =
 * **AwesomeLibrary.CSharp** - C で使用するためのパブリック API を含むプロジェクト#
 * **AwesomeLibrary.FSharp** - F で使用するためのパブリック API を含むプロジェクト#
 
-### <a name="projecttoproject-referencing"></a>プロジェクト間参照
+### <a name="project-to-project-referencing"></a>プロジェクト間参照
 
 プロジェクトを参照する最適な方法は次のとおりです。
 
@@ -522,7 +523,7 @@ let result =
 
 ### <a name="structuring-a-solution"></a>ソリューションの構築
 
-マルチプロジェクト ソリューションのもう 1 つの重要な側面は、全体のプロジェクト構造を適切に構築することです。 マルチプロジェクト ライブラリを構築するには、最上位レベルの `/src` フォルダーと `/test` フォルダーを使用する必要があります。
+マルチプロジェクト ソリューションのもう&1; つの重要な側面は、全体のプロジェクト構造を適切に構築することです。 マルチプロジェクト ライブラリを構築するには、最上位レベルの `/src` フォルダーと `/test` フォルダーを使用する必要があります。
 
 ```
 /AwesomeLibrary
@@ -576,9 +577,4 @@ $ dotnet test
 ```
 
 以上です。
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

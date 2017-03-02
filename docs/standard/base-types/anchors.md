@@ -11,8 +11,9 @@ ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: 96dff1be-3005-4ba5-af1b-323182a26085
 translationtype: Human Translation
-ms.sourcegitcommit: b20713600d7c3ddc31be5885733a1e8910ede8c6
-ms.openlocfilehash: ef2a63115f1efbe2418c348a3379fe7dd2face86
+ms.sourcegitcommit: 90fe68f7f3c4b46502b5d3770b1a2d57c6af748a
+ms.openlocfilehash: 53345ba6ffda09a21cf4c626124797a3818aa504
+ms.lasthandoff: 03/02/2017
 
 ---
 
@@ -35,7 +36,7 @@ ms.openlocfilehash: ef2a63115f1efbe2418c348a3379fe7dd2face86
 
 **^** アンカーは、その後に続くパターンが、文字列の最初の文字位置から始まる必要があることを指定します。 [RegexOptions.Multiline](xref:System.Text.RegularExpressions.RegexOptions.Multiline) オプションを指定して **^** を使用した場合は (「[正規表現のオプション](options.md)」を参照)、各行の先頭に一致します。
 
-次の例では、正規表現で **^** アンカーを使用して、プロ野球チームが存続した年数に関する情報を抽出します。 この例では、`Regex.Matches` メソッドの 2 つのオーバーロードを呼び出しています。 
+次の例では、正規表現で **^** アンカーを使用して、プロ野球チームが存続した年数に関する情報を抽出します。 この例では、`Regex.Matches` メソッドの&2; つのオーバーロードを呼び出しています。 
 
 * [Matches(String, String)](xref:System.Text.RegularExpressions.Regex.Matches(System.String,System.String)) オーバーロードの呼び出しでは、入力文字列内で正規表現パターンに一致する最初の部分文字列が検索されます。 
 
@@ -182,14 +183,14 @@ End Module
 パターン | 説明
 ------- | ----------- 
 `^` | 入力文字列の先頭から (または、`RegexOptions.Multiline` オプションを指定してメソッドが呼び出された場合は行の先頭から) 照合を開始します。
-`((\w+(\s?)){2,}` | 1 個以上の単語文字の後に 0 個または 1 個の空白が続くパターンが、2 回繰り返される部分に一致します。 これが最初のキャプチャ グループです。 この表現は、2 番目と 3 番目のキャプチャ グループも定義します。2 番目のグループはキャプチャされた単語で構成され、3 番目のグループはキャプチャされた空白で構成されます。 
+`((\w+(\s?)){2,}` | 1 個以上の単語文字の後に&0; 個または&1; 個の空白が続くパターンが、2 回繰り返される部分に一致します。 これが最初のキャプチャ グループです。 この表現は、2 番目と&3; 番目のキャプチャ グループも定義します。2 番目のグループはキャプチャされた単語で構成され、3 番目のグループはキャプチャされた空白で構成されます。 
 `,\s` | コンマおよびそれに続く空白文字に一致します。
-`(\w+\s\w+)` | 1 個以上の単語文字の後に 1 個の空白が続き、さらに 1 個以上の単語文字が続くパターンに一致します。 これが 4 番目のキャプチャ グループです。
+`(\w+\s\w+)` | 1 個以上の単語文字の後に&1; 個の空白が続き、さらに&1; 個以上の単語文字が続くパターンに一致します。 これが&4; 番目のキャプチャ グループです。
 `,` | コンマに一致します。
-`\s\d{4}` | 1 個の空白の後に 4 個の 10 進数字が続くパターンに一致します。
-`(-(\d{4}`&#124;`present))?` |  1 個のハイフンの後に 4 個の 10 進数字または文字列 "present" が続くパターンの、0 回または 1 回の繰り返しに一致します。 これが 6 番目のキャプチャ グループです。 7 番目のキャプチャ グループも含まれています。 
-`,?` | コンマの 0 回または 1 回の繰り返しに一致します。
-`(\s\d{4}(-(\d{4}`&#124;`present))?,?)+` | 1 個のスペース、4 個の 10 進数字、1 個のハイフンの後に 4 個の 10 進数字または文字列 "present" が続くパターンの 0 回または 1 回の繰り返し、0 個または 1 個のコンマが並んだパターンの、1 回以上の繰り返しに一致します。 これが 5 番目のキャプチャ グループです。
+`\s\d{4}` | 1 個の空白の後に&4; 個の&10; 進数字が続くパターンに一致します。
+`(-(\d{4}`&#124;`present))?` |    1 個のハイフンの後に&4; 個の&10; 進数字または文字列 "present" が続くパターンの、0 回または&1; 回の繰り返しに一致します。 これが&6; 番目のキャプチャ グループです。 7 番目のキャプチャ グループも含まれています。 
+`,?` | コンマの&0; 回または&1; 回の繰り返しに一致します。
+`(\s\d{4}(-(\d{4}`&#124;`present))?,?)+` | 1 個のスペース、4 個の&10; 進数字、1 個のハイフンの後に&4; 個の&10; 進数字または文字列 "present" が続くパターンの&0; 回または&1; 回の繰り返し、0 個または&1; 個のコンマが並んだパターンの、1 回以上の繰り返しに一致します。 これが&5; 番目のキャプチャ グループです。
  
 ## <a name="end-of-string-or-line-"></a>文字列または行の末尾: $
 
@@ -197,7 +198,7 @@ End Module
 
 [RegexOptions.Multiline](xref:System.Text.RegularExpressions.RegexOptions.Multiline) オプションを指定して **$** を使用した場合は、行の末尾にも一致します。 **$** は、**\n** に一致しますが、**\r\n** (復帰文字と改行文字の組み合わせ、つまり CR/LF) には一致しないことに注意してください。 CR/LF 文字の組み合わせに一致させるには、正規表現パターンに **\r ?$** を含めます。
 
-次の例では、前のセクション「文字列または行の先頭」の例で使用した正規表現パターンに **$** アンカーを追加しています。 5 つのテキスト行を含む元の入力文字列に対して使用した場合、[Regex.Matches(String, String)](xref:System.Text.RegularExpressions.Regex.Matches(System.String,System.String)) メソッドは一致を見つけることができません。これは、最初の行の末尾が **$** パターンに一致しないためです。 元の入力文字列を文字列配列に分割すると、`Regex.Matches(String, String)` メソッドは 5 つの各行の一致に成功します。 *options* パラメーターを `RegexOptions.Multiline` に設定して [Regex.Matches(String, String, RegexOptions)](xref:System.Text.RegularExpressions.Regex.Matches(System.String,System.String,System.Text.RegularExpressions.RegexOptions)) メソッドを呼び出すと、一致は見つかりません。これは、正規表現パターンで復帰要素 (\u+000D) が考慮されないためです。 ただし、**$** を **\r?$** に置き換え、*options* パラメーターを `RegexOptions.Multiline` に設定して `Regex.Matches(String, String, RegexOptions)` メソッドを呼び出すと、正規表現パターンが変更され、再び 5 つの一致が検索されます。
+次の例では、前のセクション「文字列または行の先頭」の例で使用した正規表現パターンに **$** アンカーを追加しています。 5 つのテキスト行を含む元の入力文字列に対して使用した場合、[Regex.Matches(String, String)](xref:System.Text.RegularExpressions.Regex.Matches(System.String,System.String)) メソッドは一致を見つけることができません。これは、最初の行の末尾が **$** パターンに一致しないためです。 元の入力文字列を文字列配列に分割すると、`Regex.Matches(String, String)` メソッドは&5; つの各行の一致に成功します。 *options* パラメーターを `RegexOptions.Multiline` に設定して [Regex.Matches(String, String, RegexOptions)](xref:System.Text.RegularExpressions.Regex.Matches(System.String,System.String,System.Text.RegularExpressions.RegexOptions)) メソッドを呼び出すと、一致は見つかりません。これは、正規表現パターンで復帰要素 (\u+000D) が考慮されないためです。 ただし、**$** を **\r?$** に置き換え、*options* パラメーターを `RegexOptions.Multiline` に設定して `Regex.Matches(String, String, RegexOptions)` メソッドを呼び出すと、正規表現パターンが変更され、再び&5; つの一致が検索されます。
 
 ```csharp
 using System;
@@ -437,7 +438,7 @@ End Module
 
 **\A** アンカーは、入力文字列の先頭に一致する必要があることを指定します。 これは **^** アンカーと同じですが、**\A** では [RegexOptions.Multiline](xref:System.Text.RegularExpressions.RegexOptions.Multiline) オプションが無視される点が異なります。 したがって、複数行の入力文字列でも最初の行の先頭にのみ一致することができます。
 
-次の例は、**^** アンカーおよび **$** アンカーの例と似ています。 この例では、正規表現で **\A** アンカーを使用して、プロ野球チームが存続した年数に関する情報を抽出します。 入力文字列には 5 つの行が含まれます。 [Regex.Matches(String, String, RegexOptions)](xref:System.Text.RegularExpressions.Regex.Matches(System.String,System.String,System.Text.RegularExpressions.RegexOptions)) メソッドの呼び出しでは、入力文字列内で正規表現パターンに一致する最初の部分文字列が検索されます。 この例からわかるように、`Multiline` オプションの効果はありません。
+次の例は、**^** アンカーおよび **$** アンカーの例と似ています。 この例では、正規表現で **\A** アンカーを使用して、プロ野球チームが存続した年数に関する情報を抽出します。 入力文字列には&5; つの行が含まれます。 [Regex.Matches(String, String, RegexOptions)](xref:System.Text.RegularExpressions.Regex.Matches(System.String,System.String,System.Text.RegularExpressions.RegexOptions)) メソッドの呼び出しでは、入力文字列内で正規表現パターンに一致する最初の部分文字列が検索されます。 この例からわかるように、`Multiline` オプションの効果はありません。
 
 ```csharp
 using System;
@@ -609,7 +610,7 @@ End Module
 
 **\z** アンカーは、入力文字列の末尾に一致する必要があることを指定します。 **$** 言語要素と同様に、**\z** では [RegexOptions.Multiline](xref:System.Text.RegularExpressions.RegexOptions.Multiline) オプションが無視されます。 **\Z** 言語要素とは異なり、**\z** は文字列末尾にある **\n** 文字には一致しません。 したがって、入力文字列の最後の行にのみ一致することができます。
 
-次の例では、正規表現で **\z** アンカーを使用して、プロ野球チームが存続した年数に関する情報を抽出します。この正規表現は、アンカーを除けば前のセクションで取り上げた例と同じです。 この例は、文字列配列の 5 つの各要素と正規表現パターン `^((\w+(\s?)){2,}),\s(\w+\s\w+),(\s\d{4}(-(\d{4}|present))?,?)+\r?\z` の一致を試みます。 これらのうち、2 つの文字列は復帰文字と改行文字で終わり、別の 1 つの文字列は改行文字で終わっています。残りの 2 つの文字列の末尾には、復帰文字も改行文字もありません。 出力結果が示すように、復帰文字も改行文字もない文字列だけがパターンに一致します。 
+次の例では、正規表現で **\z** アンカーを使用して、プロ野球チームが存続した年数に関する情報を抽出します。この正規表現は、アンカーを除けば前のセクションで取り上げた例と同じです。 この例は、文字列配列の&5; つの各要素と正規表現パターン `^((\w+(\s?)){2,}),\s(\w+\s\w+),(\s\d{4}(-(\d{4}|present))?,?)+\r?\z` の一致を試みます。 これらのうち、2 つの文字列は復帰文字と改行文字で終わり、別の&1; つの文字列は改行文字で終わっています。残りの&2; つの文字列の末尾には、復帰文字も改行文字もありません。 出力結果が示すように、復帰文字も改行文字もない文字列だけがパターンに一致します。 
 
 ```csharp
 using System;
@@ -772,10 +773,10 @@ End Module
 ------- | ----------- 
 `\G` | 最後の一致の終了位置から開始します。
 `\w+` | 1 つ以上の単語文字に一致します。
-`\s?` | 0 個または 1 個の空白に一致します。
+`\s?` | 0 個または&1; 個の空白に一致します。
 `\w*` | 0 個以上の単語に使用される文字に一致します。
-`(\w+\s?\w*)` | 1 個以上の単語文字の後に 0 個または 1 個の空白が続き、さらに 0 個以上の単語文字が続くパターンに一致します。 これが最初のキャプチャ グループです。
-`,?` | リテラルのコンマ文字の 0 回または 1 回の繰り返しに一致します。
+`(\w+\s?\w*)` | 1 個以上の単語文字の後に&0; 個または&1; 個の空白が続き、さらに&0; 個以上の単語文字が続くパターンに一致します。 これが最初のキャプチャ グループです。
+`,?` | リテラルのコンマ文字の&0; 回または&1; 回の繰り返しに一致します。
  
 ## <a name="word-boundary-b"></a>ワード境界: \b
 
@@ -894,9 +895,4 @@ End Module
 
 [正規表現のオプション](options.md)
  
-
-
-
-<!--HONumber=Nov16_HO3-->
-
 

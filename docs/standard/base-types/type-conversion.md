@@ -4,16 +4,16 @@ description: "型変換"
 keywords: .NET, .NET Core
 author: stevehoag
 ms.author: shoag
-manager: wpickett
 ms.date: 07/22/2016
 ms.topic: article
-ms.prod: .net-core
-ms.technology: .net-core-technologies
+ms.prod: .net
+ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: c9a53222-89cb-47e5-983d-4f0f204e31ba
 translationtype: Human Translation
-ms.sourcegitcommit: b20713600d7c3ddc31be5885733a1e8910ede8c6
-ms.openlocfilehash: ba4a356921cb43b88d3ad8e6ef7487699f442385
+ms.sourcegitcommit: 90fe68f7f3c4b46502b5d3770b1a2d57c6af748a
+ms.openlocfilehash: 0a774a170b7703b900c2044708b07faeb4e51548
+ms.lasthandoff: 03/02/2017
 
 ---
 
@@ -698,7 +698,7 @@ End Try
 
 ### <a name="custom-conversions-with-the-changetype-method"></a>ChangeType メソッドを使用するカスタム変換
 
-[Convert](xref:System.Convert) クラスは、各基本型どうしの変換をサポートするだけでなく、カスタム型を 1 つ以上の定義済みの型に変換できます。 この変換は [Convert.ChangeType(Object, Type, IFormatProvider)](xref:System.Convert.ChangeType(System.Object,System.Type,System.IFormatProvider)) メソッドによって実行されます。さらに、このメソッドが、値パラメーターの [IConvertible.ToType](xref:System.IConvertible.ToType(System.Type,System.IFormatProvider)) メソッドに対する呼び出しをラップします。 したがって、値パラメーターで表されるオブジェクトで、[IConvertible](xref:System.IConvertible) インターフェイスの実装を提供する必要があります。
+[Convert](xref:System.Convert) クラスは、各基本型どうしの変換をサポートするだけでなく、カスタム型を&1; つ以上の定義済みの型に変換できます。 この変換は [Convert.ChangeType(Object, Type, IFormatProvider)](xref:System.Convert.ChangeType(System.Object,System.Type,System.IFormatProvider)) メソッドによって実行されます。さらに、このメソッドが、値パラメーターの [IConvertible.ToType](xref:System.IConvertible.ToType(System.Type,System.IFormatProvider)) メソッドに対する呼び出しをラップします。 したがって、値パラメーターで表されるオブジェクトで、[IConvertible](xref:System.IConvertible) インターフェイスの実装を提供する必要があります。
 
 > [!NOTE]
 > [Convert.ChangeType(Object, Type)](xref:System.Convert.ChangeType(System.Object,System.Type)) メソッドと [Convert.ChangeType(Object, Type, IFormatProvider)](xref:System.Convert.ChangeType(System.Object,System.Type,System.IFormatProvider)) メソッドは [Type](xref:System.Type) オブジェクトを使用して値の変換後の型を指定するため、コンパイル時には型がわからないオブジェクトへの動的な変換に使用することができます。 ただし、値の [IConvertible](xref:System.IConvertible) の実装も、この変換をサポートする必要があることに注意してください。 
@@ -1226,8 +1226,3 @@ TypeConverter を使用した変換 | IConvertible を使用した変換
 [IConvertible](xref:System.IConvertible)
 
 [型変換の表](conversion-tables.md)
-
-
-<!--HONumber=Nov16_HO1-->
-
-

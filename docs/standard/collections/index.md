@@ -11,8 +11,9 @@ ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: 9e70255a-c02a-4046-86b7-10c84bab2d38
 translationtype: Human Translation
-ms.sourcegitcommit: cfe65fcba1b3fdc09ffcac704a760d8ce29ea60b
-ms.openlocfilehash: a6ebc7bfcd42b93505a2e5c2c460f4f2cbe618a0
+ms.sourcegitcommit: 90fe68f7f3c4b46502b5d3770b1a2d57c6af748a
+ms.openlocfilehash: 30e53c38bd58e15668e01f2af79defb0a0918192
+ms.lasthandoff: 03/02/2017
 
 ---
 
@@ -20,7 +21,7 @@ ms.openlocfilehash: a6ebc7bfcd42b93505a2e5c2c460f4f2cbe618a0
 
 多くの場合、類似するデータはコレクションとして格納および操作すると、より効率的に処理できます。 [System.Array](https://docs.microsoft.com/dotnet/core/api/System.Array) クラス、または [System.Collections](https://docs.microsoft.com/dotnet/core/api/System.Collections)、 [System.Collections.Generic](https://docs.microsoft.com/dotnet/core/api/System.Collections.Generic)、[System.Collections.Concurrent](https://docs.microsoft.com/dotnet/core/api/System.Collections.Concurrent) の各名前空間のクラスを使用して、コレクションの個々の要素または一定の範囲の要素を追加、削除、または変更することができます。
 
-主要なコレクションの型として、ジェネリック コレクションと非ジェネリック コレクションの 2 つがあります。 ジェネリック コレクションはコンパイル時にタイプ セーフです。 このため、通常、ジェネリック コレクションの方がパフォーマンスが高くなります。 ジェネリック コレクションは構築時に型パラメーターを受け取りますが、項目をコレクションに追加またはコレクションから削除するときに [Object](https://docs.microsoft.com/dotnet/core/api/System.Object) 型との間でキャストする必要はありません。 非ジェネリック コレクションでは、項目が [Object](https://docs.microsoft.com/dotnet/core/api/System.Object) として項目が保存され、キャストが必要です。 以前のコードには非ジェネリック コレクションが含まれている場合があります。
+主要なコレクションの型として、ジェネリック コレクションと非ジェネリック コレクションの&2; つがあります。 ジェネリック コレクションはコンパイル時にタイプ セーフです。 このため、通常、ジェネリック コレクションの方がパフォーマンスが高くなります。 ジェネリック コレクションは構築時に型パラメーターを受け取りますが、項目をコレクションに追加またはコレクションから削除するときに [Object](https://docs.microsoft.com/dotnet/core/api/System.Object) 型との間でキャストする必要はありません。 非ジェネリック コレクションでは、項目が [Object](https://docs.microsoft.com/dotnet/core/api/System.Object) として項目が保存され、キャストが必要です。 以前のコードには非ジェネリック コレクションが含まれている場合があります。
 
 [System.Collections.Concurrent](https://docs.microsoft.com/dotnet/core/api/System.Collections.Concurrent) 名前空間のコレクションによって、複数のスレッドからコレクション項目にアクセスするための効率的なスレッド セーフ操作が可能になります。
 
@@ -34,7 +35,7 @@ ms.openlocfilehash: a6ebc7bfcd42b93505a2e5c2c460f4f2cbe618a0
     
 * **コレクションの内容を配列にコピーする機能**
 
-   `CopyTo` メソッドを使用してすべてのコレクションを配列にコピーできます。ただし、新しい配列の要素の順序は、列挙子が返す順序に基づきます。 結果の配列は、常に下限がゼロの 1 次元です。
+   `CopyTo` メソッドを使用してすべてのコレクションを配列にコピーできます。ただし、新しい配列の要素の順序は、列挙子が返す順序に基づきます。 結果の配列は、常に下限がゼロの&1; 次元です。
     
 また、多くのコレクション クラスに次の機能が含まれています。
 
@@ -95,9 +96,4 @@ Sorted コレクションを使用する | [System.Collections.Generic.SortedLis
 
 [System.Linq](https://docs.microsoft.com/dotnet/core/api/System.Linq)
   
-
-
-
-<!--HONumber=Nov16_HO3-->
-
 

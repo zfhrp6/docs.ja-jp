@@ -11,8 +11,9 @@ ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: e393430a-731a-49fa-83de-ff7ed52d5704
 translationtype: Human Translation
-ms.sourcegitcommit: b20713600d7c3ddc31be5885733a1e8910ede8c6
-ms.openlocfilehash: 209d24d32eb3b235ff2fde2ef11ffd0ee4e930cf
+ms.sourcegitcommit: 90fe68f7f3c4b46502b5d3770b1a2d57c6af748a
+ms.openlocfilehash: 85cd57d33b03f7a2105ee3f770b2f8bcc0a57ee4
+ms.lasthandoff: 03/02/2017
 
 ---
 
@@ -24,7 +25,7 @@ ms.openlocfilehash: 209d24d32eb3b235ff2fde2ef11ffd0ee4e930cf
 
 通常、数値の文字列形式はカルチャによって異なります。 通貨記号、グループ (または千単位) 区切り、および小数点記号などの数値文字列の要素は、カルチャによって大きく異なります。 暗黙的または明示的のいずれかの解析メソッドでは、これらのカルチャ固有のバリエーションを認識する書式プロバイダーを使用します。 書式プロバイダーが `Parse` または `TryParse` メソッドの呼び出しで指定されない場合、現在のスレッド カルチャ ([NumberFormatInfo.CurrentInfo](xref:System.Globalization.NumberFormatInfo.CurrentInfo) プロパティで返された [NumberFormatInfo](xref:System.Globalization.NumberFormatInfo) オブジェクト) と関連付けられた書式プロバイダーが使用されます。 
 
-書式プロバイダーは、[IFormatProvider](xref:System.Globalization.NumberFormatInfo.CurrentInfo) 実装によって示されます。 このインターフェイスには、1 つのメンバー ([GetFormat](xref:System.IFormatProvider.GetFormat(System.Type)) メソッド) があり、その 1 つのパラメーターは、書式設定される型を示す [Type](xref:System.Type) オブジェクトです。 このメソッドは、書式情報を示すオブジェクトを返します。 .NET では、数値文字列を解析するために、次の 2 つの [IFormatProvider](xref:System.Globalization.NumberFormatInfo.CurrentInfo) の実装をサポートします。
+書式プロバイダーは、[IFormatProvider](xref:System.Globalization.NumberFormatInfo.CurrentInfo) 実装によって示されます。 このインターフェイスには、1 つのメンバー ([GetFormat](xref:System.IFormatProvider.GetFormat(System.Type)) メソッド) があり、その&1; つのパラメーターは、書式設定される型を示す [Type](xref:System.Type) オブジェクトです。 このメソッドは、書式情報を示すオブジェクトを返します。 .NET では、数値文字列を解析するために、次の&2; つの [IFormatProvider](xref:System.Globalization.NumberFormatInfo.CurrentInfo) の実装をサポートします。
 
 * [CultureInfo.GetFormat](xref:System.Globalization.CultureInfo.GetFormat(System.Type)) メソッドが、カルチャ固有の書式情報を提供する [NumberFormatInfo](xref:System.Globalization.NumberFormatInfo) オブジェクトを返す、[CultureInfo](xref:System.Globalization.CultureInfo) オブジェクト。
 
@@ -141,7 +142,7 @@ End Module
 
 ## <a name="parsing-and-numberstyles-values"></a>解析と NumberStyles 値
 
-解析操作が処理できるスタイル要素 (空白文字、グループ区切り、小数点の記号など) は、[NumberStyles](xref:System.Globalization.NumberStyles) 列挙値によって定義されます。 既定では、整数値を表す文字列は、[NumberStyles.Integer](xref:System.Globalization.NumberStyles.Integer) 値を使用して解析されます。これは、数値、先頭と末尾の空白、および先頭の符号のみを許可します。 浮動小数点値を表す文字列は、[NumberStyles.Float](xref:System.Globalization.NumberStyles.Float) と [NumberStyles.AllowThousands](xref:System.Globalization.NumberStyles.AllowThousands) 値の組み合わせを使用して解析されます。この複合スタイルは、先頭と末尾の空白、先頭の符号、小数点記号、グループ区切り、および指数と共に 10 進数を許可します。 [NumberStyles](xref:System.Globalization.NumberStyles) 型のパラメーターを含む、`Parse` または `TryParse` メソッドのオーバーロードを呼び出し、1 つ以上の [NumberStyles](xref:System.Globalization.NumberStyles) フラグを設定すると、解析操作が成功するように、文字列で示すことができるスタイル要素を制御することができます。 
+解析操作が処理できるスタイル要素 (空白文字、グループ区切り、小数点の記号など) は、[NumberStyles](xref:System.Globalization.NumberStyles) 列挙値によって定義されます。 既定では、整数値を表す文字列は、[NumberStyles.Integer](xref:System.Globalization.NumberStyles.Integer) 値を使用して解析されます。これは、数値、先頭と末尾の空白、および先頭の符号のみを許可します。 浮動小数点値を表す文字列は、[NumberStyles.Float](xref:System.Globalization.NumberStyles.Float) と [NumberStyles.AllowThousands](xref:System.Globalization.NumberStyles.AllowThousands) 値の組み合わせを使用して解析されます。この複合スタイルは、先頭と末尾の空白、先頭の符号、小数点記号、グループ区切り、および指数と共に&10; 進数を許可します。 [NumberStyles](xref:System.Globalization.NumberStyles) 型のパラメーターを含む、`Parse` または `TryParse` メソッドのオーバーロードを呼び出し、1 つ以上の [NumberStyles](xref:System.Globalization.NumberStyles) フラグを設定すると、解析操作が成功するように、文字列で示すことができるスタイル要素を制御することができます。 
 
 たとえば、グループ区切りを含む文字列は、[Int32.Parse(String)](xref:System.Int32.Parse(System.String)) メソッドを使用して、[Int32](xref:System.Int32) 値に変換することはできません。 ただし、次の例に示すように、[NumberStyles.AllowThousands](xref:System.Globalization.NumberStyles.AllowThousands) フラグを使用した場合、この変換は成功します。
 
@@ -324,10 +325,5 @@ End Module
 [.NET での文字列の解析](parsing-strings.md)
 
 [.NET での型の書式設定](formatting-types.md)
-
-
-
-
-<!--HONumber=Nov16_HO3-->
 
 

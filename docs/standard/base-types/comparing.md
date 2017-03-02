@@ -11,8 +11,9 @@ ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: 920ee5e8-3d61-4941-b5af-fc50eaee427c
 translationtype: Human Translation
-ms.sourcegitcommit: fb00da6505c9edb6a49d2003ae9bcb8e74c11d6c
-ms.openlocfilehash: 2ad585bd5475cf39aeae5dadc9ce3864c501a205
+ms.sourcegitcommit: 90fe68f7f3c4b46502b5d3770b1a2d57c6af748a
+ms.openlocfilehash: 47ee37886fa2662a89730e9d52ee04987e37da2f
+ms.lasthandoff: 03/02/2017
 
 ---
 
@@ -33,13 +34,13 @@ ms.openlocfilehash: 2ad585bd5475cf39aeae5dadc9ce3864c501a205
 
 ## <a name="compare"></a>比較
 
-静的な [String.Compare](xref:System.String.Compare(System.String,System.Int32,System.String,System.Int32,System.Int32)) メソッドは、2 つの文字列を詳細に比較する手段を提供します。 このメソッドはカルチャに対応しています。 この機能は、2 つの文字列、または 2 つの文字列の部分文字列を比較するために使用できます。 また、大文字と小文字の区別やカルチャの違いを考慮または無視するためのオーバーロードも用意されています。 このメソッドによって返される可能性のある 3 つの整数値を次の表に示します。 
+静的な [String.Compare](xref:System.String.Compare(System.String,System.Int32,System.String,System.Int32,System.Int32)) メソッドは、2 つの文字列を詳細に比較する手段を提供します。 このメソッドはカルチャに対応しています。 この機能は、2 つの文字列、または&2; つの文字列の部分文字列を比較するために使用できます。 また、大文字と小文字の区別やカルチャの違いを考慮または無視するためのオーバーロードも用意されています。 このメソッドによって返される可能性のある&3; つの整数値を次の表に示します。 
 
 戻り値 | 条件
 ------------ | ---------
-負の整数 | 最初の文字列は、並べ替え順序が 2 番目の文字列の前に置かれます。そうでない場合、最初の文字列は `null` です。
-0 | 最初の文字列と 2 番目の文字列は等価です。そうでない場合、両方の文字列が `null` です。
-正の整数、または 1 | 最初の文字列は、並べ替え順序が 2 番目の文字列の後に続きます。そうでない場合、2 番目の文字列は null です。
+負の整数 | 最初の文字列は、並べ替え順序が&2; 番目の文字列の前に置かれます。そうでない場合、最初の文字列は `null` です。
+0 | 最初の文字列と&2; 番目の文字列は等価です。そうでない場合、両方の文字列が `null` です。
+正の整数、または 1 | 最初の文字列は、並べ替え順序が&2; 番目の文字列の後に続きます。そうでない場合、2 番目の文字列は null です。
  
 > [!IMPORTANT]
 > [String.Compare](xref:System.String.Compare(System.String,System.Int32,System.String,System.Int32,System.Int32)) メソッドは、主に文字列の並べ替えに使用するものです。 等価性をテストする (つまり、ある文字列が別の文字列より大きいか小さいかを問題にせずに戻り値 0 を明示的に検索する) 目的では、[String.Compare](xref:System.String.Compare(System.String,System.Int32,System.String,System.Int32,System.Int32)) メソッドを使用しないでください。 2 つの文字列が等価かどうかを判断するには、[String.Equals(String, String, StringComparison)](xref:System.String.Equals(System.String,System.String,System.StringComparison)) メソッドを使用してください。
@@ -60,7 +61,7 @@ Console.WriteLine(String.Compare(string1, "Hello World?"))
 
 ## <a name="compareordinal"></a>CompareOrdinal
 
-[String.CompareOrdinal](xref:System.String.CompareOrdinal(System.String,System.Int32,System.String,System.Int32,System.Int32)) メソッドは、ローカル カルチャを考慮せずに 2 つの文字列オブジェクトを比較します。 このメソッドの戻り値は、上の表で示した `Compare` メソッドによって返される値と同じです。
+[String.CompareOrdinal](xref:System.String.CompareOrdinal(System.String,System.Int32,System.String,System.Int32,System.Int32)) メソッドは、ローカル カルチャを考慮せずに&2; つの文字列オブジェクトを比較します。 このメソッドの戻り値は、上の表で示した `Compare` メソッドによって返される値と同じです。
 
 > [!IMPORTANT]
 > [String.CompareOrdinal](xref:System.String.CompareOrdinal(System.String,System.Int32,System.String,System.Int32,System.Int32)) メソッドは、主に文字列の並べ替えに使用するものです。 等価性をテストする (つまり、ある文字列が別の文字列より大きいか小さいかを問題にせずに戻り値 0 を明示的に検索する) 目的では、[String.CompareOrdinal](xref:System.String.CompareOrdinal(System.String,System.Int32,System.String,System.Int32,System.Int32)) メソッドを使用しないでください。 2 つの文字列が等価かどうかを判断するには、[String.Equals(String, String, StringComparison)](xref:System.String.Equals(System.String,System.String,System.StringComparison)) メソッドを使用してください。
@@ -216,10 +217,5 @@ Console.WriteLine(string1.LastIndexOf("l"))
 
 
 
-
-
-
-
-<!--HONumber=Nov16_HO3-->
 
 

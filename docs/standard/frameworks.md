@@ -11,14 +11,15 @@ ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: 6ef56a2e-593d-497b-925a-1e25bb6df2e6
 translationtype: Human Translation
-ms.sourcegitcommit: 38561c2d25c6950d166bf706f4306c867e683b04
-ms.openlocfilehash: 82ba6f4abe200dc48158eac1ad3e3609feeda2c9
+ms.sourcegitcommit: 90fe68f7f3c4b46502b5d3770b1a2d57c6af748a
+ms.openlocfilehash: f0c1987f46bd3715c54e270c15eea4b8ee7b67e6
+ms.lasthandoff: 03/02/2017
 
 ---
 
 # <a name="frameworks-and-targets"></a>フレームワークとターゲット
 
-.NET エコシステムには、フレームワークの概念があります。 フレームワークは、特定のプラットフォームをターゲットにするために使用できる API を定義します。 .NET Framework 4.6 は、これらのプラットフォームの 1 つです。 フレームワークは、Visual Studio やその他の IDE およびエディターで、適切な API セットを提供するために使用されます。 これらは、対象としているフレームワークの適切なパッケージ (および基になるアセット) を確実に作成して使用するため、NuGet パッケージの運用と使用の両方で NuGet でも使用されます。 .NET エコシステムにおける基軸通貨の 1 つとしてフレームワークを考えることができます。 概念は正確性のためにあり、実行時に @System.MissingMethodException やフレンドがユーザーおよび顧客に表示されないようにしるものです。
+.NET エコシステムには、フレームワークの概念があります。 フレームワークは、特定のプラットフォームをターゲットにするために使用できる API を定義します。 .NET Framework 4.6 は、これらのプラットフォームの 1 つです。 フレームワークは、Visual Studio やその他の IDE およびエディターで、適切な API セットを提供するために使用されます。 これらは、対象としているフレームワークの適切なパッケージ (および基になるアセット) を確実に作成して使用するため、NuGet パッケージの運用と使用の両方で NuGet でも使用されます。 .NET エコシステムにおける基軸通貨の&1; つとしてフレームワークを考えることができます。 概念は正確性のためにあり、実行時に @System.MissingMethodException やフレンドがユーザーおよび顧客に表示されないようにしるものです。
 
 ## <a name="framework-versions"></a>フレームワークのバージョン
 
@@ -58,9 +59,4 @@ ms.openlocfilehash: 82ba6f4abe200dc48158eac1ad3e3609feeda2c9
 
 - `.NETFramework`
 - `net`
-
-
-
-<!--HONumber=Nov16_HO3-->
-
 
