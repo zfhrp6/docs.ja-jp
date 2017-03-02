@@ -13,6 +13,7 @@ ms.assetid: 5e1a2bc4-a919-4a86-8f33-a9b218b1fcb3
 translationtype: Human Translation
 ms.sourcegitcommit: 796df1549a7553aa93158598d62338c02d4df73e
 ms.openlocfilehash: c2c0ae3711c866268c4e8c066b4213e110e771b9
+ms.lasthandoff: 02/10/2017
 
 ---
 
@@ -53,7 +54,7 @@ dotnet-build -- プロジェクトとそのすべての依存関係をビルド�
 
 `-h|--help`
 
-コマンドの短いヘルプを印刷します。  
+コマンドの短いヘルプを印刷します。
 
 `-o|--output <OUTPUT_DIRECTORY>`
 
@@ -69,11 +70,11 @@ dotnet-build -- プロジェクトとそのすべての依存関係をビルド�
 
 `-r|--runtime [RUNTIME_IDENTIFIER]`
 
-ビルドのターゲット ランタイムです。 使用できるランタイム ID (RID) については、[RID カタログ](../../rid-catalog.md)に関するページを参照してください。 
+ビルドのターゲット ランタイムです。 使用できるランタイム ID (RID) については、[RID カタログ](../../rid-catalog.md)に関するページを参照してください。
 
 `--version-suffix [VERSION_SUFFIX]`
 
-プロジェクト ファイルのバージョン フィールドで `*` を置き換える必要がある値を定義します。 形式は NuGet のバージョン ガイドラインに従います。 
+プロジェクト ファイルのバージョン フィールドで `*` を置き換える必要がある値を定義します。 形式は NuGet のバージョン ガイドラインに従います。
 
 `--build-profile`
 
@@ -100,9 +101,4 @@ dotnet-build -- プロジェクトとそのすべての依存関係をビルド�
 特定のランタイム (この例では、Ubuntu 16.04) 用にプロジェクトとその依存関係をビルドします。
 
 `dotnet build --runtime ubuntu.16.04-x64`
-
-
-
-<!--HONumber=Feb17_HO2-->
-
 
