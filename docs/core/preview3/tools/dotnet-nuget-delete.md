@@ -1,5 +1,5 @@
 ---
-title: "dotnet-nuget-delete コマンド | .NET Core SDK"
+title: "dotnet-nuget-delete コマンド | Microsoft Docs"
 description: "dotnet-nuget-delete コマンドは、サーバーからパッケージを削除または一覧から削除します。"
 keywords: "dotnet-nuget-delete, CLI, CLI コマンド, .NET Core"
 author: karann-msft
@@ -11,8 +11,9 @@ ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: 6ddffde4-c789-4e90-990e-d35f6a6565d4
 translationtype: Human Translation
-ms.sourcegitcommit: 1a84c694945fe0c77468eb77274ab46618bccae6
-ms.openlocfilehash: a338f91d33347d48eefe572ea61da5d58d5c639a
+ms.sourcegitcommit: 2ad428dcda9ef213a8487c35a48b33929259abba
+ms.openlocfilehash: 787b1427b1064943570cbc361042ab2f20d11088
+ms.lasthandoff: 01/21/2017
 
 ---
 
@@ -62,7 +63,7 @@ ms.openlocfilehash: a338f91d33347d48eefe572ea61da5d58d5c639a
 `--config-file <FILE>`
 
 NuGet の構成ファイルは、標準的な構成ファイルの検出とチェーン プロセスによって検出されたその他の構成ファイルに置き換えて、このコマンド専用に使用されます。 パスは絶対パスでも相対パスでもかまいません。
-構成ファイルの詳細については、「[Configuring NuGet Behavior](https://docs.nuget.org/ndocs/consume-packages/configuring-nuget-behavior)」 (NuGet 動作を構成する) をご覧ください。 
+構成ファイルの詳細については、「[Configuring NuGet Behavior](https://docs.microsoft.com/nuget/consume-packages/configuring-nuget-behavior)」 (NuGet 動作を構成する) をご覧ください。
 
 ## <a name="examples"></a>例
 
@@ -81,9 +82,4 @@ MyPackage パッケージのバージョン 1.0 を削除します。
 最も高い詳細レベルで、MyPackage パッケージのバージョン 1.0 を削除します。
 
 `dotnet nuget delete MyPackage 1.0 --verbosity detailed`
-
-
-
-<!--HONumber=Nov16_HO3-->
-
 
