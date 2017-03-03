@@ -4,16 +4,16 @@ description: "正規表現での文字クラス"
 keywords: .NET, .NET Core
 author: stevehoag
 ms.author: shoag
-manager: wpickett
 ms.date: 07/29/2016
 ms.topic: article
-ms.prod: .net-core
-ms.technology: .net-core-technologies
+ms.prod: .net
+ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: c7a9305f-7144-4fe8-80e8-a727bf7d223f
 translationtype: Human Translation
-ms.sourcegitcommit: b20713600d7c3ddc31be5885733a1e8910ede8c6
-ms.openlocfilehash: f8ebb1db670669e2e8666cd5ef90f72237c105e4
+ms.sourcegitcommit: 90fe68f7f3c4b46502b5d3770b1a2d57c6af748a
+ms.openlocfilehash: ae677af2590636fd144d8978a3500c37f9d33615
+ms.lasthandoff: 03/03/2017
 
 ---
 
@@ -39,14 +39,14 @@ ms.openlocfilehash: f8ebb1db670669e2e8666cd5ef90f72237c105e4
 
 * 空白以外の文字。 入力文字列内の文字が、空白文字以外の文字のいずれかです。 詳細については、「[空白以外の文字](#non-white-space-character-s)」を参照してください。
 
-* 10 進数。 入力文字列内の文字が、Unicode 10 進数に分類される各種文字のいずれかです。 詳細については、「[10 進数字](#decimal-digit-character-d)」を参照してください。
+* 10 進数。 入力文字列内の文字が、Unicode&10; 進数に分類される各種文字のいずれかです。 詳細については、「[10 進数字](#decimal-digit-character-d)」を参照してください。
 
-* 10 進数字以外の文字。 入力文字列内の文字が、Unicode 10 進数以外の文字のいずれかです。 詳細については、「[数字以外の文字](#non-digit-character-d)」を参照してください。
+* 10 進数字以外の文字。 入力文字列内の文字が、Unicode&10; 進数以外の文字のいずれかです。 詳細については、「[数字以外の文字](#non-digit-character-d)」を参照してください。
 
 
 .NET は、文字クラスの減算式をサポートしています。これにより、ある文字クラスから別の文字クラスを除外した結果を文字のセットとして定義できます。 詳細については、「[文字クラス減算](#character-class-subtraction)」を参照してください。
 
-## <a name="positive-character-group-"></a>文字グループの肯定: [ ]
+## <a name="positive-character-group--"></a>文字グループの肯定: [ ]
 
 文字グループの肯定では、いずれかが入力文字列に含まれると一致と見なされる文字の一覧を指定します。 この文字の一覧は、個別に指定されることも範囲として指定されることも、その両方であることもあります。 
 
@@ -54,7 +54,7 @@ ms.openlocfilehash: f8ebb1db670669e2e8666cd5ef90f72237c105e4
 
 [*character*_*group*]
 
-ここで、*character_group* は、入力文字列に含まれるなら一致と見なされる個別の文字の一覧です。 *character*_*group* は、リテラル文字、[エスケープ文字](escapes.md)、または文字クラスを 1 つ以上組み合わせて構成されます。 
+ここで、*character_group* は、入力文字列に含まれるなら一致と見なされる個別の文字の一覧です。 *character*_*group* は、リテラル文字、[エスケープ文字](escapes.md)、または文字クラスを&1; つ以上組み合わせて構成されます。 
 
 文字の範囲を指定する構文は次のとおりです。
 
@@ -69,7 +69,7 @@ ms.openlocfilehash: f8ebb1db670669e2e8666cd5ef90f72237c105e4
 パターン | 説明
 ------- | ----------- 
 `[aeiou]` | すべての母音と一致します。
-`[\p{P}\d]` | すべての句読点および 10 進数字と一致します。
+`[\p{P}\d]` | すべての句読点および&10; 進数字と一致します。
 `[\s\p{P}]` | すべての空白および句読点と一致します。
  
 次の例では、"a" および "e" という文字を含む文字グループの肯定を定義し、入力文字列内で "grey" または "gray" という語の後に別の語が続くと一致と見なされるようにします。
@@ -176,7 +176,7 @@ End Module
 
 [^*character*_*group*]
 
-ここで、*character_group* は、入力文字列に含まれない場合に一致と見なされる個別の文字の一覧です。 *character*_*group* は、リテラル文字、[エスケープ文字](escapes.md)、または文字クラスを 1 つ以上組み合わせて構成されます。 
+ここで、*character_group* は、入力文字列に含まれない場合に一致と見なされる個別の文字の一覧です。 *character*_*group* は、リテラル文字、[エスケープ文字](escapes.md)、または文字クラスを&1; つ以上組み合わせて構成されます。 
 
 文字の範囲を指定する構文は次のとおりです。
 
@@ -184,19 +184,19 @@ End Module
 
 ここで、*firstCharacter* は範囲の最初の文字で、*lastCharacter* は範囲の最後の文字です。 文字範囲は連続する一連の文字で、範囲の最初の文字、ハイフン (-)、および範囲の最後の文字を指定することで定義されます。 2 つの文字の Unicode コード ポイントが隣接している場合、それらの文字は連続しています。
 
-複数の文字範囲を連結することもできます。 たとえば、"0" ～ "9" の範囲の 10 進数、"a" ～ "f" の範囲の小文字、および "A" ～ "F" の範囲の大文字を指定するには、`[0-9a-fA-F]` を使用します。
+複数の文字範囲を連結することもできます。 たとえば、"0" ～ "9" の範囲の&10; 進数、"a" ～ "f" の範囲の小文字、および "A" ～ "F" の範囲の大文字を指定するには、`[0-9a-fA-F]` を使用します。
 
 文字グループの否定における先頭のキャレット文字 (^) は、文字グループが文字グループの肯定ではなく文字グループの否定であることを示し、省略できません。
 
 > [!IMPORTANT]
-> 大規模な正規表現パターンにおける文字グループの否定は、ゼロ幅アサーションではありません。 つまり、正規表現エンジンは、文字グループの否定を評価した後に、入力文字列内で 1 文字進みます。
+> 大規模な正規表現パターンにおける文字グループの否定は、ゼロ幅アサーションではありません。 つまり、正規表現エンジンは、文字グループの否定を評価した後に、入力文字列内で&1; 文字進みます。
 
 文字グループの否定を含む一般的な正規表現パターンをいくつか次の表に示します。
 
 パターン | 説明
 ------- | ----------- 
 `[^aeiou]` | 母音を除くすべての文字と一致します。
-`[^\p{P}\d]` | 句読点および 10 進数字を除くすべての文字と一致します。
+`[^\p{P}\d]` | 句読点および&10; 進数字を除くすべての文字と一致します。
  
 次の例は、"th" という文字で始まってその後に "o" が続かない語と一致します。 
 
@@ -255,41 +255,41 @@ End Module
 
 ## <a name="any-character-"></a>任意の文字: .
 
-ピリオド文字 (.) は、**\n** (改行文字、**\u000A**) を除く任意の文字と一致しますが、次の 2 つの制限があります。
+ピリオド文字 (.) は、**\n** (改行文字、**\u000A**) を除く任意の文字と一致しますが、次の&2; つの制限があります。
 
 * 正規表現パターンが [RegexOptions.Singleline](xref:System.Text.RegularExpressions.RegexOptions.Singleline) オプションで修飾されている場合、または . 文字クラスを含むパターンの一部が **s** オプションで修飾されている場合は、 は任意の文字と一致します。 詳細については、「[正規表現のオプション](options.md)」を参照してください。
 
-  以下の例には、. [RegexOptions.Singleline](xref:System.Text.RegularExpressions.RegexOptions.Singleline) オプションが指定された既定の文字クラスの異なる動作が示されています。 正規表現 `^.+` は文字列の先頭から開始し、すべての文字と一致します。 既定では、照合は 1 行目の末尾で終了します。正規表現パターンは復帰文字 **\r** または **\u000D** と一致しますが、**\n** とは一致しません。 [RegexOptions.Singleline](xref:System.Text.RegularExpressions.RegexOptions.Singleline) オプションは入力文字列全体を単一行として解釈するので、**\n** を含む入力文字列内のすべての文字と一致します。
+  以下の例には、. [RegexOptions.Singleline](xref:System.Text.RegularExpressions.RegexOptions.Singleline) オプションが指定された既定の文字クラスの異なる動作が示されています。 正規表現 `^.+` は文字列の先頭から開始し、すべての文字と一致します。 既定では、照合は&1; 行目の末尾で終了します。正規表現パターンは復帰文字 **\r** または **\u000D** と一致しますが、**\n** とは一致しません。 [RegexOptions.Singleline](xref:System.Text.RegularExpressions.RegexOptions.Singleline) オプションは入力文字列全体を単一行として解釈するので、**\n** を含む入力文字列内のすべての文字と一致します。
 
-  ```csharp
-  using System;
-  using System.Text.RegularExpressions;
+```csharp
+using System;
+using System.Text.RegularExpressions;
 
-  public class Example
-  {
-     public static void Main()
-     {
-        string pattern = "^.+";
-        string input = "This is one line and" + Environment.NewLine + "this is the second.";
-        foreach (Match match in Regex.Matches(input, pattern))
-           Console.WriteLine(Regex.Escape(match.Value));
+public class Example
+{
+   public static void Main()
+   {
+      string pattern = "^.+";
+      string input = "This is one line and" + Environment.NewLine + "this is the second.";
+      foreach (Match match in Regex.Matches(input, pattern))
+         Console.WriteLine(Regex.Escape(match.Value));
 
-        Console.WriteLine();
-        foreach (Match match in Regex.Matches(input, pattern, RegexOptions.Singleline))
-           Console.WriteLine(Regex.Escape(match.Value));
-     }
-  }
-  // The example displays the following output:
-  //       This\ is\ one\ line\ and\r
-  //       
-  //       This\ is\ one\ line\ and\r\nthis\ is\ the\ second\.
-  ```
+      Console.WriteLine();
+      foreach (Match match in Regex.Matches(input, pattern, RegexOptions.Singleline))
+         Console.WriteLine(Regex.Escape(match.Value));
+   }
+}
+// The example displays the following output:
+//       This\ is\ one\ line\ and\r
+//       
+//       This\ is\ one\ line\ and\r\nthis\ is\ the\ second\.
+```
 
-  ```vb
-  Imports System.Text.RegularExpressions
+```vb
+Imports System.Text.RegularExpressions
 
-  Module Example
-     Public Sub Main()
+Module Example
+    Public Sub Main()
         Dim pattern As String = "^.+"
         Dim input As String = "This is one line and" + vbCrLf + "this is the second."
         For Each match As Match In Regex.Matches(input, pattern)
@@ -305,46 +305,46 @@ End Module
   '       This\ is\ one\ line\ and\r
   '       
   '       This\ is\ one\ line\ and\r\nthis\ is\ the\ second\.
-  ```
+```
 
   > [!NOTE]
   > **\n** を除く任意の文字と一致するので、. 文字クラスも **\r** (復帰文字、**\u000D**) と一致します。
  
-* 文字グループの肯定または文字グループの否定に含まれているピリオドは、文字クラスではなくリテラルのピリオド文字として扱われます。 詳細については、このトピックで前述した「[文字グループの肯定](#positive-character-group--)」または「[文字グループの否定](#negative-character-group-)」を参照してください。 ピリオド文字 (**.**) を文字クラスとしても文字グループの肯定のメンバーとしても含む正規表現を定義する例を次に示します。 正規表現 `\b.*[.?!;:](\s|\z)` はワード境界から開始し、ピリオドを含む 4 つの句読点のいずれかが検出されるまで任意の文字と一致し、空白文字または文字列の末尾と一致します。
+* 文字グループの肯定または文字グループの否定に含まれているピリオドは、文字クラスではなくリテラルのピリオド文字として扱われます。 詳細については、このトピックで前述した「[文字グループの肯定](#positive-character-group--)」または「[文字グループの否定](#negative-character-group-)」を参照してください。 ピリオド文字 (**.**) を文字クラスとしても文字グループの肯定のメンバーとしても含む正規表現を定義する例を次に示します。 正規表現 `\b.*[.?!;:](\s|\z)` はワード境界から開始し、ピリオドを含む&4; つの句読点のいずれかが検出されるまで任意の文字と一致し、空白文字または文字列の末尾と一致します。
 
-  ```csharp
-  using System;
-  using System.Text.RegularExpressions;
+```csharp
+using System;
+using System.Text.RegularExpressions;
 
-  public class Example
-  {
-     public static void Main()
-     {
-        string pattern = @"\b.*[.?!;:](\s|\z)";
-        string input = "this. what: is? go, thing.";
-        foreach (Match match in Regex.Matches(input, pattern))
-           Console.WriteLine(match.Value);
-     }
-  }
-  // The example displays the following output:
-  //       this. what: is? go, thing.
-  ```
+public class Example
+{
+   public static void Main()
+   {
+      string pattern = @"\b.*[.?!;:](\s|\z)";
+      string input = "this. what: is? go, thing.";
+      foreach (Match match in Regex.Matches(input, pattern))
+         Console.WriteLine(match.Value);
+   }
+}
+// The example displays the following output:
+//       this. what: is? go, thing.
+```
 
-  ```vb
-  Imports System.Text.RegularExpressions
+```vb
+Imports System.Text.RegularExpressions
 
-  Module Example
-     Public Sub Main()
-        Dim pattern As STring = "\b.*[.?!;:](\s|\z)"
-        Dim input As String = "this. what: is? go, thing."
-        For Each match As Match In Regex.Matches(input, pattern)
-           Console.WriteLine(match.Value)
-        Next   
-     End Sub
-  End Module
-  ' The example displays the following output:
-  '       this. what: is? go, thing.
-  ```
+Module Example
+   Public Sub Main()
+      Dim pattern As STring = "\b.*[.?!;:](\s|\z)"
+      Dim input As String = "this. what: is? go, thing."
+      For Each match As Match In Regex.Matches(input, pattern)
+         Console.WriteLine(match.Value)
+      Next   
+   End Sub
+End Module
+' The example displays the following output:
+'       this. what: is? go, thing.
+```
 
   > [!NOTE]
   > 任意の文字と一致するので、. 言語要素は、正規表現パターンが任意の文字と複数回一致する場合に最短一致の量指定子と共によく使用されます。 詳細については、「[正規表現での量指定子](quantifiers.md)」を参照してください。 
@@ -396,13 +396,13 @@ End Module
 ------- | ----------- 
 `\b` | ワード境界から開始します。
 `\p{IsGreek}+` | 1 つ以上のギリシャ文字と一致します。
-`(\s)?` | 0 個または 1 個の空白文字と一致します。
-`(\p{IsGreek}+(\s)?)+` | 1 つ以上のギリシャ文字の後に 0 個または 1 個の空白文字が 1 回以上続くパターンに一致します。 
+`(\s)?` | 0 個または&1; 個の空白文字と一致します。
+`(\p{IsGreek}+(\s)?)+` | 1 つ以上のギリシャ文字の後に&0; 個または&1; 個の空白文字が&1; 回以上続くパターンに一致します。 
 `\p{Pd}` | Punctuation, Dash (句読点、ダッシュ) 文字と一致します。
 `\s` | 空白文字と一致します。
 `\p{IsBasicLatin}+` | 1 つ以上の基本的なラテン文字と一致します。
-`(\s)?` | 0 個または 1 個の空白文字と一致します。
-`(\p{IsBasicLatin}+(\s)?)+` | 1 つ以上の基本的なラテン文字の後に 0 個または 1 個の空白文字が 1 回以上続くパターンに一致します。
+`(\s)?` | 0 個または&1; 個の空白文字と一致します。
+`(\p{IsBasicLatin}+(\s)?)+` | 1 つ以上の基本的なラテン文字の後に&0; 個または&1; 個の空白文字が&1; 回以上続くパターンに一致します。
 
 ## <a name="negative-unicode-category-or-unicode-block-p"></a>Unicode カテゴリまたは Unicode ブロックの否定: \P{}
 
@@ -458,7 +458,7 @@ End Module
 '       120
 ```
 
-正規表現パターン `(\P{Sc})+` は、通貨記号以外の 1 つ以上の文字と一致し、実質的に結果文字列から通貨記号を削除します。
+正規表現パターン `(\P{Sc})+` は、通貨記号以外の&1; つ以上の文字と一致し、実質的に結果文字列から通貨記号を削除します。
 
 ## <a name="word-character-w"></a>単語に使用される文字: \w
 
@@ -473,7 +473,7 @@ Lo | Letter, Other (字、その他)
 Lm | Letter, Modifier (字、修飾)
 Mn | Mark, Nonspacing (結合文字、幅なし)
 Nd | Number, Decimal Digit (数、10 進数字)
-Pc | Punctuation, Connector (句読点、接続)。 このカテゴリには 10 文字が含まれ、そのうち最もよく使用される文字は LOWLINE 文字 (_)、u+005F です。
+Pc | Punctuation, Connector (句読点、接続)。 このカテゴリには&10; 文字が含まれ、そのうち最もよく使用される文字は LOWLINE 文字 (_)、u+005F です。
  
 ECMAScript 準拠の動作が指定された場合、**\w** は `[a-zA-Z_0-9]` と同じになります。 ECMAScript 正規表現の詳細については、「[正規表現のオプション](options.md)」の「[ECMAScript 一致の動作](options.md#ecmascript-matching-behavior)」のセクションを参照してください。 
 
@@ -550,7 +550,7 @@ End Module
 '       'nn' found in 'stunned' at position 3.
 ```
 
-## <a name="nonword-character-w"></a>単語に使用されない文字: \W
+## <a name="non-word-character-w"></a>単語に使用されない文字: \W
 
 **\W** は、単語に使用される文字以外の任意の文字と一致します。 **\W** 言語要素は、次の文字クラスと同じ結果をもたらします。
 
@@ -569,20 +569,20 @@ Lo | Letter, Other (字、その他)
 Lm | Letter, Modifier (字、修飾)
 Mn | Mark, Nonspacing (結合文字、幅なし)
 Nd | Number, Decimal Digit (数、10 進数字)
-Pc | Punctuation, Connector (句読点、接続)。 このカテゴリには 10 文字が含まれ、そのうち最もよく使用される文字は LOWLINE 文字 (_)、u+005F です。
+Pc | Punctuation, Connector (句読点、接続)。 このカテゴリには&10; 文字が含まれ、そのうち最もよく使用される文字は LOWLINE 文字 (_)、u+005F です。
  
 ECMAScript 準拠の動作が指定された場合、**\W** は `[^a-zA-Z_0-9]` と同じになります。 ECMAScript 正規表現の詳細については、「[正規表現のオプション](options.md)」の「[ECMAScript 一致の動作](options.md#ecmascript-matching-behavior)」のセクションを参照してください。 
 
 > [!NOTE]
 > \w 言語要素は単語に使用される任意の文字と一致するので、正規表現パターンが単語に使用される任意の文字の後に特定の単語に使用される文字が続く語と複数回一致する場合に最短一致の量指定子と共によく使用されます。 詳細については、「[正規表現での量指定子](quantifiers.md)」を参照してください。 
 
-**\W** 文字クラスの例を次に示します。 この例では、単語の後に 1 つまたは 2 つの単語に使用されない文字 (空白や句読点など) が続く場合に一致する正規表現パターン `\b(\w+)(\W){1,2}` を定義しています。 この正規表現の解釈を次の表に示します。
+**\W** 文字クラスの例を次に示します。 この例では、単語の後に&1; つまたは&2; つの単語に使用されない文字 (空白や句読点など) が続く場合に一致する正規表現パターン `\b(\w+)(\W){1,2}` を定義しています。 この正規表現の解釈を次の表に示します。
 
 要素 | 説明
 ------- | ----------- 
 \b | ワード境界から照合を開始します。
 (\w+) | 1 つ以上の単語文字に一致します。 これが最初のキャプチャ グループです。
-(\W){1,2} | 単語に使用されない文字と 1 回または 2 回一致します。 これが 2 番目のキャプチャ グループです。
+(\W){1,2} | 単語に使用されない文字と&1; 回または&2; 回一致します。 これが&2; 番目のキャプチャ グループです。
  
 ```csharp
 using System;
@@ -677,9 +677,9 @@ End Module
 '          Non-word character(s):'.' (\u002E)
 ```
 
-2 番目のキャプチャ グループの `Group` オブジェクトには、キャプチャされた単語に使用されない文字が 1 つだけ含まれるので、この例では、`CaptureCollection` プロパティによって返される `Group.Captures` オブジェクトから、キャプチャされたすべての単語に使用されない文字を取得します。
+2 番目のキャプチャ グループの `Group` オブジェクトには、キャプチャされた単語に使用されない文字が&1; つだけ含まれるので、この例では、`CaptureCollection` プロパティによって返される `Group.Captures` オブジェクトから、キャプチャされたすべての単語に使用されない文字を取得します。
 
-## <a name="whitespace-character-s"></a>空白文字: \s
+## <a name="white-space-character-s"></a>空白文字: \s
 
 **\s** は、任意の空白文字と一致します。 次の表に示すエスケープ シーケンスおよび Unicode カテゴリと同じ結果をもたらします。 
 
@@ -702,7 +702,7 @@ ECMAScript 準拠の動作が指定された場合、**\s** は `[ \f\n\r\t\v]` 
 ------- | -----------
 \b | ワード境界から照合を開始します。
 \w+ | 1 つ以上の単語文字に一致します。 
-(e)? | "e" と 0 回または 1 回一致します。
+(e)? | "e" と&0; 回または&1; 回一致します。
 s | "s" と一致します。
 (\s&#124;$) | 空白文字または入力文字列の末尾と一致します。
  
@@ -746,19 +746,19 @@ End Module
 '       leaves
 ```
 
-## <a name="nonwhitespace-character-s"></a>空白以外の文字: \S
+## <a name="non-white-space-character-s"></a>空白以外の文字: \S
 
 **\S** は、空白文字以外の任意の文字と一致します。 `[^\f\n\r\t\v\x85\p{Z}]` 正規表現パターン、または空白文字と一致する **\s** に相当する正規表現パターンの逆と同じ結果をもたらします。 詳細については、前の「空白文字: \s」セクションを参照してください。
 
 ECMAScript 準拠の動作が指定された場合、**\S** は `[^ \f\n\r\t\v]` と同じになります。 ECMAScript 正規表現の詳細については、「[正規表現のオプション](options.md)」の「[ECMAScript 一致の動作](options.md#ecmascript-matching-behavior)」のセクションを参照してください。
 
-**\S** 言語要素の例を次に示します。 正規表現パターン \b(\S+)\s? は、空白文字で区切られた文字列と一致します。 一致部分の GroupCollection オブジェクトの 2 番目の要素に一致する文字列が含まれます。 この正規表現の解釈を次の表に示します。
+**\S** 言語要素の例を次に示します。 正規表現パターン \b(\S+)\s? は、空白文字で区切られた文字列と一致します。 一致部分の GroupCollection オブジェクトの&2; 番目の要素に一致する文字列が含まれます。 この正規表現の解釈を次の表に示します。
 
 要素 | 説明
 ------- | ----------- 
 `\b` | ワード境界から照合を開始します。
 `(\S+)` | 1 つ以上の空白以外の文字と一致します。 これが最初のキャプチャ グループです。
-`\s?` | 0 個または 1 個の空白文字と一致します。 
+`\s?` | 0 個または&1; 個の空白文字と一致します。 
  
 ```csharp
 using System;
@@ -853,12 +853,12 @@ ECMAScript 準拠の動作が指定された場合、**\d** は `[0-9]` と同�
 要素 | 説明
 ------- | ----------- 
 `^` | 入力文字列の先頭から照合を開始します。
-`\(?` | 0 個または 1 個のリテラル "(" 文字と一致します。 
-`\d{3}` | 3 個の 10 進数と一致します。 
-`\)?` | 0 個または 1 個のリテラル ")" 文字と一致します。
+`\(?` | 0 個または&1; 個のリテラル "(" 文字と一致します。 
+`\d{3}` | 3 個の&10; 進数と一致します。 
+`\)?` | 0 個または&1; 個のリテラル ")" 文字と一致します。
 `[\s-]` | ハイフンまたは空白文字と一致します。
-`(\(?\d{3}\)?[\s-])?` | 省略可能な左かっこの後に 3 個の 10 進数が続く部分、省略可能な右かっこ、および空白文字またはハイフンと 0 回または 1 回一致します。 これが最初のキャプチャ グループです。
-`\d{3}-\d{4}` | 3 個の 10 進数の後にハイフンおよび 4 個以上の 10 進数が続く場合に一致します。
+`(\(?\d{3}\)?[\s-])?` | 省略可能な左かっこの後に&3; 個の&10; 進数が続く部分、省略可能な右かっこ、および空白文字またはハイフンと&0; 回または&1; 回一致します。 これが最初のキャプチャ グループです。
+`\d{3}-\d{4}` | 3 個の&10; 進数の後にハイフンおよび&4; 個以上の&10; 進数が続く場合に一致します。
 `$` | 入力文字列の末尾と一致します。
  
 ```csharp
@@ -922,20 +922,20 @@ End Module
 '       01 999-9999: match failed
 ```
 
-## <a name="nondigit-character-d"></a>数字以外の文字: \D
+## <a name="non-digit-character-d"></a>数字以外の文字: \D
 
 **\D** は、数字以外と一致します。 `\P{Nd}` 正規表現パターンと同じ結果をもたらします。
 
 ECMAScript 準拠の動作が指定された場合、**\D** は `[^0-9]` と同じになります。 ECMAScript 正規表現の詳細については、「[正規表現のオプション](options.md)」の「[ECMAScript 一致の動作](options.md#ecmascript-matching-behavior)」のセクションを参照してください。
 
-**\D** 言語要素の例を次に示します。 部品番号などの文字列が 10 進数および 10 進数以外の文字を適切に組み合わせて構成されているかどうかをテストします。 正規表現パターン `^\D\d{1,5}\D*$` は、次の表に示すように定義されています。
+**\D** 言語要素の例を次に示します。 部品番号などの文字列が&10; 進数および&10; 進数以外の文字を適切に組み合わせて構成されているかどうかをテストします。 正規表現パターン `^\D\d{1,5}\D*$` は、次の表に示すように定義されています。
 
 要素 | 説明
 ------- | ----------- 
 `^` | 入力文字列の先頭から照合を開始します。
 `\D` | 数字以外の文字と一致します。 
-`\d{1,5}` | 1 ～ 5 個の 10 進数と一致します。 
-`\D*` | 0 個または 1 個以上の 10 進数以外の文字と一致します。 
+`\d{1,5}` | 1 ～&5; 個の&10; 進数と一致します。 
+`\D*` | 0 個または&1; 個以上の&10; 進数以外の文字と一致します。 
 `$` | 入力文字列の末尾と一致します。
  
 ```csharp
@@ -1142,7 +1142,7 @@ FF00 ～ FFEF | **IsHalfwidthandFullwidthForms**
 FFF0 ～ FFFF | **IsSpecials**
  
 <a name="character-class-subtraction"></a>
-## <a name="character-class-subtraction-basegroup-excludedgroup"></a>文字クラスの減算: [base_group - [excluded_group]]
+## <a name="character-class-subtraction-basegroup---excludedgroup"></a>文字クラスの減算: [base_group - [excluded_group]]
 
 文字クラスは、文字のセットを定義します。 文字クラス減算によって、ある文字クラスから別の文字クラスの文字を除外した文字セットが生成されます。 
 
@@ -1158,14 +1158,14 @@ __[__*base*_*group*-__[__*excluded*_*group*__]]--
 
 文字クラス減算では、任意の文字クラスを使用できます。 \u0000 ～ \uFFFF の Unicode 文字から空白文字 (**\s**)、句読点一般カテゴリの文字 (**\p{P}**)、**IsGreek** 名前付きブロックの文字 (**\p{IsGreek}**)、および Unicode NEXT LINE 制御文字 (\x85) を除いた文字のセットを定義するには、`[\u0000-\uFFFF-[\s\p{P}\p{IsGreek}\x85]]` を使用します。
 
-有効な結果を生成する文字クラス減算式の文字クラスを選択します。 どの文字にも一致しない空の文字セットを生成する式、または元の基本グループと同じになる式は避けてください。 たとえば、`[\p{IsBasicLatin}-[\x00-\x7F]]` という式は、**IsBasicLatin** 一般カテゴリから **IsBasicLatin** 文字範囲のすべての文字を減算して空のセットを生成します。 同様に、`[a-z-[0-9]]` という式は元の基本グループと同じセットを生成します。 これは、"a" ～ "z" の文字範囲である基本グループに、"0" ～ "9" という 10 進数字の文字範囲から成る除外対象グループ内の文字が含まれないためです。 
+有効な結果を生成する文字クラス減算式の文字クラスを選択します。 どの文字にも一致しない空の文字セットを生成する式、または元の基本グループと同じになる式は避けてください。 たとえば、`[\p{IsBasicLatin}-[\x00-\x7F]]` という式は、**IsBasicLatin** 一般カテゴリから **IsBasicLatin** 文字範囲のすべての文字を減算して空のセットを生成します。 同様に、`[a-z-[0-9]]` という式は元の基本グループと同じセットを生成します。 これは、"a" ～ "z" の文字範囲である基本グループに、"0" ～ "9" という&10; 進数字の文字範囲から成る除外対象グループ内の文字が含まれないためです。 
 
-入力文字列内の 0 および奇数と一致する正規表現 `^[0-9-[2468]]+$` を定義する例を次に示します。 この正規表現の解釈を次の表に示します。
+入力文字列内の&0; および奇数と一致する正規表現 `^[0-9-[2468]]+$` を定義する例を次に示します。 この正規表現の解釈を次の表に示します。
 
 要素 | 説明
 ------- | ----------- 
 `^` | 入力文字列の先頭から照合を開始します。
-`[0-9-[2468]]+` | 2、4、6、および 8 を除く 0 ～ 9 の文字の 1 回以上の出現と一致します。 つまり、0 または奇数の 1 回以上の出現と一致します。
+`[0-9-[2468]]+` | 2、4、6、および 8 を除く 0 ～ 9 の文字の 1 回以上の出現と一致します。 つまり、0 または奇数の&1; 回以上の出現と一致します。
 `$` | 入力文字列の末尾で照合を終了します。
  
 ```csharp
@@ -1214,8 +1214,3 @@ End Module
 ## <a name="see-also"></a>関連項目
 
 [正規表現のオプション](options.md)
-
-
-<!--HONumber=Nov16_HO1-->
-
-

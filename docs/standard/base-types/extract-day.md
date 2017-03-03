@@ -4,16 +4,16 @@ description: "方法: 特定の日付から曜日を抽出する"
 keywords: .NET, .NET Core
 author: stevehoag
 ms.author: shoag
-manager: wpickett
 ms.date: 07/26/2016
 ms.topic: article
-ms.prod: .net-core
-ms.technology: .net-core-technologies
+ms.prod: .net
+ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: 88a8f8b9-f5c9-4503-b968-84468b52bb8e
 translationtype: Human Translation
-ms.sourcegitcommit: b20713600d7c3ddc31be5885733a1e8910ede8c6
-ms.openlocfilehash: f7ae17ac6dbc23e18d18561d5e5ae7efc037c63e
+ms.sourcegitcommit: 90fe68f7f3c4b46502b5d3770b1a2d57c6af748a
+ms.openlocfilehash: 1b9d1d497524e62e5758c9be7be7b586a421a258
+ms.lasthandoff: 03/03/2017
 
 ---
 
@@ -65,65 +65,65 @@ End Module
 
     a.  現在のカルチャの曜日の省略名を抽出するには、日付と時刻の値の [DateTime.ToString(String)](xref:System.DateTimeSystem.DateTime.ToString(System.String) インスタンス メソッドまたは [DateTimeOffset.ToString(String)](xref:System.DateTimeOffset.ToString(System.String)) インスタンス メソッドを呼び出し、*format* パラメーターとして文字列 "ddd" を渡します。 次の例に、`ToString(String)` メソッドの呼び出しを示します。
     
-    ```csharp
-    using System;
+```csharp
+using System;
 
-    public class Example
-    {
-       public static void Main()
-       {
-          DateTime dateValue = new DateTime(2008, 6, 11);
-          Console.WriteLine(dateValue.ToString("ddd"));   
-       }
-    }
-    // The example displays the following output:
-    //       Wed
-    ```
+public class Example
+{
+   public static void Main()
+   {
+  DateTime dateValue = new DateTime(2008, 6, 11);
+  Console.WriteLine(dateValue.ToString("ddd"));   
+   }
+}
+// The example displays the following output:
+//       Wed
+```
 
-    ```vb
-    Module Example
-       Public Sub Main()
-          Dim dateValue As Date = #6/11/2008#
-          Console.WriteLine(dateValue.ToString("ddd"))    
-       End Sub
-    End Module
-    ' The example displays the following output:
-    '       Wed
-    ```
+```vb
+Module Example
+   Public Sub Main()
+  Dim dateValue As Date = #6/11/2008#
+      Console.WriteLine(dateValue.ToString("ddd"))    
+   End Sub
+End Module
+' The example displays the following output:
+'       Wed
+```
+
+    b. To extract the abbreviated weekday name for a specific culture, call the date and time value’s [DateTime.ToString(String, IFormatProvider)](xref:System.DateTime.ToString(System.String,System.IFormatProvider)) or [DateTimeOffset.ToString(String, IFormatProvider)](xref:System.DateTimeOffset.ToString(System.String,System.IFormatProvider)) instance method. Pass the string "ddd" as the *format* parameter. Pass either a [CultureInfo](xref:System.Globalization.CultureInfo) or a [DateTimeFormatInfo](xref:System.Globalization.DateTimeFormatInfo) object that represents the culture whose weekday name you want to retrieve as the *provider* parameter. The following code illustrates a call to the [ToString(String, IFormatProvider)](xref:System.DateTime.ToString(System.String,System.IFormatProvider)) method using a [CultureInfo](xref:System.Globalization.CultureInfo) object that represents the fr-FR culture.
     
-    b.  特定のカルチャの曜日の省略名を抽出するには、日付と時刻の値の [DateTime.ToString(String, IFormatProvider)](xref:System.DateTime.ToString(System.String,System.IFormatProvider)) インスタンス メソッドまたは [DateTimeOffset.ToString(String, IFormatProvider)](xref:System.DateTimeOffset.ToString(System.String,System.IFormatProvider)) インスタンス メソッドを呼び出します。 *format* パラメーターとして文字列 "ddd" を渡します。 曜日名を取得するカルチャを表す [CultureInfo](xref:System.Globalization.CultureInfo) または [DateTimeFormatInfo](xref:System.Globalization.DateTimeFormatInfo) オブジェクトのいずれかを *provider* パラメーターとして渡します。 次のコードは、fr-FR カルチャを表す [CultureInfo](xref:System.Globalization.CultureInfo) オブジェクトを使用した [ToString(String, IFormatProvider)](xref:System.DateTime.ToString(System.String,System.IFormatProvider)) メソッドの呼び出しを示します。
-    
-    ```csharp
-    using System;
-    using System.Globalization;
+```csharp
+using System;
+using System.Globalization;
 
-    public class Example
-    {
+public class Example
+{
     public static void Main()
     {
         DateTime dateValue = new DateTime(2008, 6, 11);
         Console.WriteLine(dateValue.ToString("ddd", 
                             new CultureInfo("fr-FR")));    
     }
-    }
-    // The example displays the following output:
-    //       mer. 
-    ```
+}
+// The example displays the following output:
+//       mer. 
+```
 
-    ```vb
-    Imports System.Globalization
+```vb
+Imports System.Globalization
 
-    Module Example
-       Public Sub Main()
-          Dim dateValue As Date = #6/11/2008#
-          Console.WriteLine(dateValue.ToString("ddd", 
-                            New CultureInfo("fr-FR")))    
-       End Sub
-    End Module
-    ' The example displays the following output:
-    '       mer.
-    ```
-    
+Module Example
+   Public Sub Main()
+      Dim dateValue As Date = #6/11/2008#
+      Console.WriteLine(dateValue.ToString("ddd", 
+                        New CultureInfo("fr-FR")))
+   End Sub
+End Module
+' The example displays the following output:
+'       mer.
+```
+
 ## <a name="to-extract-the-full-weekday-name-from-a-specific-date"></a>特定の日付から曜日の正式な名前を抽出するには
 
 1. 文字列形式の日付を処理している場合には、静的 [DateTime.Parse](xref:System.DateTime.Parse(System.String)) または [DateTimeOffset.Parse](xref:System.DateTimeOffset.Parse(System.String)) メソッドを使用して、その日付を [DateTime](xref:System.DateTime) 値または [DateTimeOffset](xref:System.DateTimeOffset) 値に変換します。
@@ -131,66 +131,66 @@ End Module
 2. 次の手順で現在のカルチャまたは特定のカルチャの曜日の省略名を抽出できます。
 
     a.  現在のカルチャの曜日の省略名を抽出するには、日付と時刻の値の [DateTime.ToString(String)](xref:System.DateTimeSystem.DateTime.ToString(System.String) インスタンス メソッドまたは [DateTimeOffset.ToString(String)](xref:System.DateTimeOffset.ToString(System.String)) インスタンス メソッドを呼び出し、*format* パラメーターとして文字列 "dddd" を渡します。 次の例に、`ToString(String)` メソッドの呼び出しを示します。
-    
-    ```csharp
-    using System;
 
-    public class Example
-    {
+```csharp
+using System;
+
+public class Example
+{
     public static void Main()
     {
         DateTime dateValue = new DateTime(2008, 6, 11);
         Console.WriteLine(dateValue.ToString("dddd"));    
     }
-    }
-    // The example displays the following output:
-    //       Wednesday
-    ```
+}
+// The example displays the following output:
+//       Wednesday
+```
 
-    ```vb
-    Module Example
-       Public Sub Main()
-          Dim dateValue As Date = #6/11/2008#
-          Console.WriteLine(dateValue.ToString("dddd"))
-       End Sub
-    End Module
-    ' The example displays the following output:
-    '       Wednesday
-    ```
-    
-    b.  特定のカルチャの曜日の名前を抽出するには、日付と時刻の値の [DateTime.ToString(String, IFormatProvider)](xref:System.DateTime.ToString(System.String,System.IFormatProvider)) インスタンス メソッドまたは [DateTimeOffset.ToString(String, IFormatProvider)](xref:System.DateTimeOffset.ToString(System.String,System.IFormatProvider)) インスタンス メソッドを呼び出します。 *format* パラメーターとして文字列 "dddd" を渡します。 曜日名を取得するカルチャを表す [CultureInfo](xref:System.Globalization.CultureInfo) または [DateTimeFormatInfo](xref:System.Globalization.DateTimeFormatInfo) オブジェクトのいずれかを *provider* パラメーターとして渡します。 次のコードは、es-ES カルチャを表す [CultureInfo](xref:System.Globalization.CultureInfo) オブジェクトを使用した [ToString(String, IFormatProvider)](xref:System.DateTime.ToString(System.String,System.IFormatProvider)) メソッドの呼び出しを示します。
-    
-    ```csharp
-    using System;
-    using System.Globalization;
+```vb
+Module Example
+   Public Sub Main()
+      Dim dateValue As Date = #6/11/2008#
+      Console.WriteLine(dateValue.ToString("dddd"))
+   End Sub
+End Module
+' The example displays the following output:
+'       Wednesday
+```
 
-    public class Example
-    {
+    b. To extract the weekday name for a specific culture, call the date and time value’s [DateTime.ToString(String, IFormatProvider)](xref:System.DateTime.ToString(System.String,System.IFormatProvider)) or [DateTimeOffset.ToString(String, IFormatProvider)](xref:System.DateTimeOffset.ToString(System.String,System.IFormatProvider)) instance method. Pass the string "dddd" as the *format* parameter. Pass either a [CultureInfo](xref:System.Globalization.CultureInfo) or a [DateTimeFormatInfo](xref:System.Globalization.DateTimeFormatInfo) object that represents the culture whose weekday name you want to retrieve as the *provider* parameter. The following code illustrates a call to the [ToString(String, IFormatProvider)](xref:System.DateTime.ToString(System.String,System.IFormatProvider)) method using a [CultureInfo](xref:System.Globalization.CultureInfo) object that represents the es-ES  culture.
+
+```csharp
+using System;
+using System.Globalization;
+
+public class Example
+{
     public static void Main()
     {
         DateTime dateValue = new DateTime(2008, 6, 11);
         Console.WriteLine(dateValue.ToString("dddd", 
                             new CultureInfo("es-ES")));    
     }
-    }
-    // The example displays the following output:
-    //       miércoles.
-    ```
+}
+// The example displays the following output:
+//       miércoles.
+```
 
-    ```vb
-    Imports System.Globalization
+```vb
+Imports System.Globalization
 
-    Module Example
-       Public Sub Main()
-          Dim dateValue As Date = #6/11/2008#
-          Console.WriteLine(dateValue.ToString("dddd", _
-                            New CultureInfo("es-ES")))     
-       End Sub
-    End Module
-    ' The example displays the following output:
-    '       miércoles.
-    ```
-    
+Module Example
+   Public Sub Main()
+      Dim dateValue As Date = #6/11/2008#
+      Console.WriteLine(dateValue.ToString("dddd", _
+                        New CultureInfo("es-ES"))) 
+   End Sub
+End Module
+' The example displays the following output:
+'       miércoles.
+```
+
 ## <a name="example"></a>例
 
 この例は、[Datetime.DayOfWeek](xref:System.DateTime.DayOfWeek) プロパティと[DateTimeOffset.DayOfWeek](xref:System.DateTimeOffset.DayOfWeek) プロパティ、および[DateTime.ToString(String)](xref:System.DateTime.ToString(System.String) メソッドまたは [DateTimeOffset.ToString(String)](xref:System.DateTimeOffset.ToString(System.String)) メソッドを呼び出し、特定の日付の曜日、曜日の省略名、および曜日の正式な名前を表す番号を取得します。 
@@ -338,9 +338,9 @@ End Module
 '       lundi
 ```
 
-それぞれの言語には、.NET の機能と重複する機能または補足する機能が存在していることがあります。 たとえば Visual Basic には次の 2 つの関数があります。
+それぞれの言語には、.NET の機能と重複する機能または補足する機能が存在していることがあります。 たとえば Visual Basic には次の&2; つの関数があります。
 
-* `Weekday`: 特定の日付の曜日を示す番号を返します。 この関数では週の初日の序数値が 1 ですが、[Datetime.DayOfWeek](xref:System.DateTime.DayOfWeek) プロパティでは週の初日の序数値はゼロです。
+* `Weekday`: 特定の日付の曜日を示す番号を返します。 この関数では週の初日の序数値が&1; ですが、[Datetime.DayOfWeek](xref:System.DateTime.DayOfWeek) プロパティでは週の初日の序数値はゼロです。
 
 * `WeekdayName`: 現在のカルチャで、特定の曜日番号に対応する曜日名を返します。
 
@@ -476,9 +476,4 @@ End Module
 
 [カスタムの日時と書式指定文字列](custom-datetime.md)
     
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 
