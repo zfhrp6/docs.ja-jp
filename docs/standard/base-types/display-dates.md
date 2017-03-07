@@ -11,14 +11,15 @@ ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: 93f06e1d-544b-4ccc-a0b2-95cd674852cb
 translationtype: Human Translation
-ms.sourcegitcommit: fb00da6505c9edb6a49d2003ae9bcb8e74c11d6c
-ms.openlocfilehash: 85c9d450be48c553ea3a1f1a0f16c298941fa325
+ms.sourcegitcommit: 90fe68f7f3c4b46502b5d3770b1a2d57c6af748a
+ms.openlocfilehash: 69a33b3e162c07a1d8a065a150c6db96f04334f6
+ms.lasthandoff: 03/02/2017
 
 ---
 
 # <a name="how-to-display-dates-in-non-gregorian-calendars"></a>方法: グレゴリオ暦以外の暦の日付を表示する
 
-[DateTime](xref:System.DateTime) 型と [DateTimeOffset](xref:System.DateTimeOffset) 型は既定の暦としてグレゴリオ暦を使用しています。 つまり、日付と時刻値の `ToString` メソッドを呼び出すと、その日付の時刻が別の暦を使用して作成された場合でも、その日付の時刻はグレゴリオ暦の文字列形式で表示されます。 これを次の例で示します。この例では、2 つの方法を使用してペルシャ暦で日付と時刻の値を作成していますが、[ToString](xref:System.DateTime.ToString) メソッドを呼び出すと、これらの日付と時刻の値はグレゴリオ暦で表示されます。 この例では、一般的に使われているものの、特定の暦で日付を表示するには正しくない 2 つの手法が反映されています。
+[DateTime](xref:System.DateTime) 型と [DateTimeOffset](xref:System.DateTimeOffset) 型は既定の暦としてグレゴリオ暦を使用しています。 つまり、日付と時刻値の `ToString` メソッドを呼び出すと、その日付の時刻が別の暦を使用して作成された場合でも、その日付の時刻はグレゴリオ暦の文字列形式で表示されます。 これを次の例で示します。この例では、2 つの方法を使用してペルシャ暦で日付と時刻の値を作成していますが、[ToString](xref:System.DateTime.ToString) メソッドを呼び出すと、これらの日付と時刻の値はグレゴリオ暦で表示されます。 この例では、一般的に使われているものの、特定の暦で日付を表示するには正しくない&2; つの手法が反映されています。
 
 ```csharp
 PersianCalendar persianCal = new PersianCalendar();
@@ -314,7 +315,7 @@ End Class
 '       1387/04/13
 ```
 
-各 [CultureInfo](xref:System.Globalization.CultureInfo) オブジェクトは、[OptionalCalendars](xref:System.Globalization.CultureInfo.OptionalCalendars) プロパティに示されている 1 つ以上の暦をサポートできます。 これらのいずれかがカルチャの既定の暦として指定され、読み取り専用の [CultureInfo.Calendar](xref:System.Globalization.CultureInfo.Calendar) プロパティによって返されます。 オプションの暦のもう 1 つは、その暦を表す [Calendar](xref:System.Globalization.Calendar) オブジェクトを [CultureInfo.DateTimeFormat](xref:System.Globalization.CultureInfo.DateTimeFormat) プロパティによって返された [DateTimeFormatInfo.Calendar](xref:System.Globalization.DateTimeFormatInfo.Calendar) プロパティに割り当てることで、既定値として指定することができます。 ただし、[PersianCalendar](xref:System.Globalization.PersianCalendar) クラスによって表されるペルシャ暦などの一部の暦は、どのカルチャのオプションの暦としても機能しません。   
+各 [CultureInfo](xref:System.Globalization.CultureInfo) オブジェクトは、[OptionalCalendars](xref:System.Globalization.CultureInfo.OptionalCalendars) プロパティに示されている&1; つ以上の暦をサポートできます。 これらのいずれかがカルチャの既定の暦として指定され、読み取り専用の [CultureInfo.Calendar](xref:System.Globalization.CultureInfo.Calendar) プロパティによって返されます。 オプションの暦のもう&1; つは、その暦を表す [Calendar](xref:System.Globalization.Calendar) オブジェクトを [CultureInfo.DateTimeFormat](xref:System.Globalization.CultureInfo.DateTimeFormat) プロパティによって返された [DateTimeFormatInfo.Calendar](xref:System.Globalization.DateTimeFormatInfo.Calendar) プロパティに割り当てることで、既定値として指定することができます。 ただし、[PersianCalendar](xref:System.Globalization.PersianCalendar) クラスによって表されるペルシャ暦などの一部の暦は、どのカルチャのオプションの暦としても機能しません。   
 
 例では、特定の暦を使用して日付の文字列形式を生成する詳細の多くを処理するため、再利用可能な暦ユーティリティ クラス `CalendarUtility` を定義しています。 `CalendarUtility` クラスには次のメンバーがあります。 
 
@@ -331,9 +332,4 @@ End Class
 ## <a name="see-also"></a>関連項目
 
 [書式設定操作の実行](performing-formatting-operations.md)
-
-
-
-<!--HONumber=Nov16_HO3-->
-
 

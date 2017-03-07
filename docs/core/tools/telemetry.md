@@ -1,22 +1,25 @@
 ---
-title: ".NET Core ツールの製品利用統計情報"
+title: ".NET Core ツールの製品利用統計情報 | Microsoft Docs"
 description: .NET Core
 keywords: .NET, .NET Core
 author: richlander
-manager: wpickett
+ms.author: mairaw
 ms.date: 07/06/2016
 ms.topic: article
 ms.prod: .net-core
-ms.technology: .net-core-technologies
+ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: f2b312bb-f80b-4b0d-9101-93908f06a6fa
 translationtype: Human Translation
-ms.sourcegitcommit: c53c7d3b5733e15e066fd975bf3fa414ee96bbd1
-ms.openlocfilehash: 4717b1f608051dc748ba3f1ceb94d6ddd94250bb
+ms.sourcegitcommit: 796df1549a7553aa93158598d62338c02d4df73e
+ms.openlocfilehash: f19efabc4330682ebfe6e38384086e2338cd6264
 
 ---
 
 # <a name="net-core-tools-telemetry"></a>.NET Core ツールの製品利用統計情報
+
+> [!WARNING]
+> このトピックは .NET Core Tools Preview 2 を対象としています。 .NET Core Tools RC4 バージョンについては、「[.NET Core ツールの製品利用統計情報 (.NET Core Tools RC4)](../preview3/tools/telemetry.md)」トピックを参照してください。
 
 .NET Core ツールには、利用情報を回収する[製品利用統計情報機能](https://github.com/dotnet/cli/pull/2145)があります。 .NET Team がこのツールの利用方法を理解しておくことが重要です。それにより、ツールが改善されます。
 
@@ -105,6 +108,6 @@ a minute to complete and will only happen once.
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Feb17_HO2-->
 
 

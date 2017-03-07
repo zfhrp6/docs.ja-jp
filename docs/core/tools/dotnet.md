@@ -1,22 +1,25 @@
 ---
-title: "dotnet コマンド | .NET Core SDK"
+title: "dotnet コマンド | Microsoft Docs"
 description: "dotnet コマンド (.NET Core CLI ツールの一般的なドライバー) とその使用法について説明します。"
 keywords: "dotnet, CLI, CLI コマンド, .NET Core"
-author: mairaw
-manager: wpickett
+author: blackdwarf
+ms.author: mairaw
 ms.date: 10/07/2016
 ms.topic: article
 ms.prod: .net-core
-ms.technology: .net-core-technologies
+ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: 93015521-2127-4fe9-8fce-ca79bcc4ff49
 translationtype: Human Translation
-ms.sourcegitcommit: c6ee3f5663d0a3f62914e8de474cca4d15340c9d
-ms.openlocfilehash: 77c37ac3d4d0ba9ad1feac539debe40b0ee31161
+ms.sourcegitcommit: 796df1549a7553aa93158598d62338c02d4df73e
+ms.openlocfilehash: a6a4bc5dad16bb1455fd8f7bc6a5c3609a06b88a
 
 ---
 
 #<a name="dotnet-command"></a>dotnet コマンド
+
+> [!WARNING]
+> このトピックは .NET Core Tools Preview 2 を対象としています。 .NET Core Tools RC4 バージョンについては、「[dotnet コマンド (.NET Core Tools RC4)](../preview3/tools/dotnet.md)」トピックを参照してください。
 
 ## <a name="name"></a>名前
 
@@ -84,7 +87,9 @@ CLI ツールのバージョンを印刷します。
 
 `dotnet build`
 
-`myapp.dll` という名前のポータブル アプリを実行する: `dotnet myapp.dll`
+`myapp.dll` という名前のポータブル アプリを実行します。
+
+`dotnet myapp.dll`
 
 ## <a name="environment"></a>環境 
 
@@ -101,6 +106,6 @@ CLI ツールのバージョンを印刷します。
 .NET Core ツールの使用に関するデータを収集し、Microsoft に送信するかどうかを指定します。 `true` の場合は、テレメトリ機能が無効になります (指定できる値は true、1、yes です)。それ以外の場合は `false` です (指定できる値は false、0、no です)。 設定されていない場合、既定で `false` (つまり、テレメトリ機能が有効) になります。
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Feb17_HO2-->
 
 

@@ -11,8 +11,9 @@ ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: 2db2c3e6-953e-4913-8168-d707c437f2df
 translationtype: Human Translation
-ms.sourcegitcommit: b20713600d7c3ddc31be5885733a1e8910ede8c6
-ms.openlocfilehash: a2a9fe356a0b2e9cf9415714bc01b77ea86229fc
+ms.sourcegitcommit: 90fe68f7f3c4b46502b5d3770b1a2d57c6af748a
+ms.openlocfilehash: af32095fa5f11ec7eba5924c969fbd6ab179cbd4
+ms.lasthandoff: 03/02/2017
 
 ---
 
@@ -25,7 +26,7 @@ RegexOptions のメンバー | インライン文字 | 効果
 [None](xref:System.Text.RegularExpressions.RegexOptions.None) | 使用できません | 既定の動作を使用します。 詳細については、「[既定のオプション](#default-options)」を参照してください。
 [IgnoreCase](xref:System.Text.RegularExpressions.RegexOptions.IgnoreCase) | **i** | 大文字と小文字を区別しない一致を使用します。 詳細については、「[大文字と小文字を区別しない一致](#case-insensitive-matching)」を参照してください。
 [Multiline](xref:System.Text.RegularExpressions.RegexOptions.Multiline) | **m** | 複数行モードを使用します。**^** と **$** は、(入力文字列の先頭および末尾ではなく) 各行の先頭および末尾と一致します。 詳細については、「[複数行モード](#multiline-mode)」を参照してください。
-[Singleline](xref:System.Text.RegularExpressions.RegexOptions.Singleline) | **s** | 単一行モードを使用します。ピリオド (**.**) は任意の 1 文字と一致します (**\n** を除くすべての文字の代用)。 詳細については、「[単一行モード](#single-line-mode)」を参照してください。
+[Singleline](xref:System.Text.RegularExpressions.RegexOptions.Singleline) | **s** | 単一行モードを使用します。ピリオド (**.**) は任意の&1; 文字と一致します (**\n** を除くすべての文字の代用)。 詳細については、「[単一行モード](#single-line-mode)」を参照してください。
 [ExplicitCapture](xref:System.Text.RegularExpressions.RegexOptions.ExplicitCapture) | **n** | 名前のないグループをキャプチャしません。 **(?<**_name_**>** _subexpression_**)** という形式で、明示的に名前または番号が付加されたグループのみを有効なキャプチャ対象とします。 詳細については、「[明示的なキャプチャのみ](#explicit-captures-only)」を参照してください。
 [Compiled](xref:System.Text.RegularExpressions.RegexOptions.Compiled) | 使用できません | 正規表現をアセンブリにコンパイルします。 詳細については、「[コンパイルされた正規表現](#compiled-regular-expressions)」を参照してください。
 [IgnorePatternWhitespace](xref:System.Text.RegularExpressions.RegexOptions.IgnorePatternWhitespace) | **x** | エスケープされていない空白をパターンから除外し、シャープ記号 (**#**) の後ろのコメントを有効にします。 詳細については、「[空白を無視](#ignore-white-space)」を参照してください。
@@ -35,7 +36,7 @@ RegexOptions のメンバー | インライン文字 | 効果
  
 ## <a name="specifying-the-options"></a>オプションの指定
 
-正規表現のオプションは、次の 3 種類の方法のいずれかで指定できます。
+正規表現のオプションは、次の&3; 種類の方法のいずれかで指定できます。
 
 * [Regex.Regex(String, RegexOptions)](xref:System.Text.RegularExpressions.Regex.%23ctor(System.String,System.Text.RegularExpressions.RegexOptions)) のような [System.Text.RegularExpressions.Regex](xref:System.Text.RegularExpressions.Regex) クラス コンストラクターの *options* パラメーターまたは [Regex.Match(String, String, RegexOptions)](xref:System.Text.RegularExpressions.Regex.Match(System.String,System.String,System.Text.RegularExpressions.RegexOptions)) のような静的 (Visual Basic の共有) パターン一致メソッドで。 *options* パラメーターは [System.Text.RegularExpressions.RegexOptions](xref:System.Text.RegularExpressions.RegexOptions) 列挙値をビットごとの OR で組み合わせたものです。 
 
@@ -129,7 +130,7 @@ RegexOptions のメンバー | インライン文字 | 効果
 > コンストラクターまたはメソッド呼び出しの options パラメーターで指定した正規表現オプションが正規表現パターンのインラインで指定したオプションと競合した場合は、インラインで指定したオプションが使用されます。
  
 
-次に示す 5 種類の正規表現オプションは、*options* パラメーターとインラインの両方で設定できます。
+次に示す&5; 種類の正規表現オプションは、*options* パラメーターとインラインの両方で設定できます。
 
 * [RegexOptions.IgnoreCase](xref:System.Text.RegularExpressions.RegexOptions.IgnoreCase)
 
@@ -141,7 +142,7 @@ RegexOptions のメンバー | インライン文字 | 効果
 
 * [RegexOptions.IgnorePatternWhitespace](xref:System.Text.RegularExpressions.RegexOptions.IgnorePatternWhitespace)
 
-次に示す 5 種類の正規表現オプションは *options* パラメーターを使用して設定することはできますが、インラインで設定することはできません。
+次に示す&5; 種類の正規表現オプションは *options* パラメーターを使用して設定することはできますが、インラインで設定することはできません。
 
 * [RegexOptions.None](xref:System.Text.RegularExpressions.RegexOptions.None)
 
@@ -201,7 +202,7 @@ End If
 
 * **^** 言語要素および **$** 言語要素は、入力文字列の先頭および末尾と一致します。
 
-* **.** 言語要素は、**\n** を除く任意の 1 文字と一致します。
+* **.** 言語要素は、**\n** を除く任意の&1; 文字と一致します。
 
 * 正規表現パターンに含まれる空白は、リテラルの空白文字として解釈されます。
 
@@ -339,7 +340,7 @@ End Module
 
 既定では、**$** は入力文字列の末尾とのみ一致します。 [RegexOptions.Multiline](xref:System.Text.RegularExpressions.RegexOptions.Multiline) オプションを指定した場合は、改行文字 **(\n)** または入力文字列の末尾と一致します。 ただし、復帰とライン フィード文字の組み合わせとは一致しません。 この組み合わせと正常に一致させるには、**$** を単独で使用する代わりに、部分式 **\r?$** を使用します。 
 
-次の例では、ボウリング参加者の名前とスコアを抽出し、降順に並べ替えて、[SortedList&lt;TKey, TValue&gt;](xref:System.Collections.Generic.SortedList%602) コレクションに追加しています。 [Matches](xref:System.Text.RegularExpressions.Regex.Matches(System.String)) メソッドは 2 回呼び出されています。 最初のメソッド呼び出しでは、`^(\w+)\s(\d+)$` という正規表現が使用され、オプションは設定されていません。 出力結果が示すように、正規表現エンジンは入力パターンを入力文字列の先頭および末尾と一致させることができないので、一致は検出されません。 2 番目のメソッド呼び出しでは、正規表現は `^(\w+)\s(\d+)\r?$` に変更されており、オプションは [RegexOptions.Multiline](xref:System.Text.RegularExpressions.RegexOptions.Multiline) に設定されています。 出力結果が示すように、名前とスコアの照合は正常に行われ、スコアは降順で表示されています。
+次の例では、ボウリング参加者の名前とスコアを抽出し、降順に並べ替えて、[SortedList&lt;TKey, TValue&gt;](xref:System.Collections.Generic.SortedList%602) コレクションに追加しています。 [Matches](xref:System.Text.RegularExpressions.Regex.Matches(System.String)) メソッドは&2; 回呼び出されています。 最初のメソッド呼び出しでは、`^(\w+)\s(\d+)$` という正規表現が使用され、オプションは設定されていません。 出力結果が示すように、正規表現エンジンは入力パターンを入力文字列の先頭および末尾と一致させることができないので、一致は検出されません。 2 番目のメソッド呼び出しでは、正規表現は `^(\w+)\s(\d+)\r?$` に変更されており、オプションは [RegexOptions.Multiline](xref:System.Text.RegularExpressions.RegexOptions.Multiline) に設定されています。 出力結果が示すように、名前とスコアの照合は正常に行われ、スコアは降順で表示されています。
 
 ```csharp
 using System;
@@ -459,8 +460,8 @@ End Class
 `^` | 行の先頭から始まります。
 `(\w+)` | 1 つ以上の単語文字に一致します。 これが最初のキャプチャ グループです。
 `\s` | 空白文字と一致します。
-`(\d+)` | 1 個以上の 10 進数と一致します。 これが 2 番目のキャプチャ グループです。
-`\r?` | 0 個または 1 個の復帰文字と一致します。
+`(\d+)` | 1 個以上の&10; 進数と一致します。 これが&2; 番目のキャプチャ グループです。
+`\r?` | 0 個または&1; 個の復帰文字と一致します。
 `$` | 行の末尾で終了します。
  
 次の例は、前の例と等価ですが、インライン オプション **(?m)** を使用して複数行オプションを設定している点が異なります。
@@ -544,9 +545,9 @@ End Class
 
 ## <a name="single-line-mode"></a>単一行モード
 
-[RegexOptions.Singleline](xref:System.Text.RegularExpressions.RegexOptions.Singleline) オプションまたは s インライン オプションを指定すると、正規表現エンジンでは、入力文字列が単一行で構成されているかのように処理されます。 具体的には、ピリオド (**.**) 言語要素の動作を変更して、改行文字 (**\n** または \u000A) を除く任意の文字ではなく、改行文字を含む任意の 1 文字と一致するようにします。
+[RegexOptions.Singleline](xref:System.Text.RegularExpressions.RegexOptions.Singleline) オプションまたは s インライン オプションを指定すると、正規表現エンジンでは、入力文字列が単一行で構成されているかのように処理されます。 具体的には、ピリオド (**.**) 言語要素の動作を変更して、改行文字 (**\n** または \u000A) を除く任意の文字ではなく、改行文字を含む任意の&1; 文字と一致するようにします。
 
-以下の例には、動作が図示されています。 言語要素は [RegexOptions.Singleline](xref:System.Text.RegularExpressions.RegexOptions.Singleline) オプションの使用時に変わります。 正規表現 `^.+` は文字列の先頭から開始し、すべての文字と一致します。 既定では、照合は 1 行目の末尾で終了します。正規表現パターンは復帰文字 **\r** (\u000D) と一致しますが、**\n** とは一致しません。 [RegexOptions.Singleline](xref:System.Text.RegularExpressions.RegexOptions.Singleline) オプションは入力文字列全体を単一行として解釈するので、**\n** を含む入力文字列内のすべての文字と一致します。
+以下の例には、動作が図示されています。 言語要素は [RegexOptions.Singleline](xref:System.Text.RegularExpressions.RegexOptions.Singleline) オプションの使用時に変わります。 正規表現 `^.+` は文字列の先頭から開始し、すべての文字と一致します。 既定では、照合は&1; 行目の末尾で終了します。正規表現パターンは復帰文字 **\r** (\u000D) と一致しますが、**\n** とは一致しません。 [RegexOptions.Singleline](xref:System.Text.RegularExpressions.RegexOptions.Singleline) オプションは入力文字列全体を単一行として解釈するので、**\n** を含む入力文字列内のすべての文字と一致します。
 
 ```csharp
 using System;
@@ -906,11 +907,11 @@ End Module
 パターン | 説明
 ------- | ----------- 
 `\b` | ワード境界から始まります。
-`\(?` | 左かっこ ("(") の 0 回または 1 回の繰り返しと一致します。
-`(?>\w+),?` | 1 個以上の単語文字の後に 0 個または 1 個のコンマが続くパターンと一致します。 単語文字の照合中にバックトラックは実行されません。
-`\s?` | 0 個または 1 個の空白文字と一致します。
-`((\w+),?\s?)+` | 1 個以上の単語文字、0 個または 1 個のコンマ、および 0 個または 1 個の空白文字が 1 回以上続くパターンと一致します。
-`[\.!?]\)?` | 3 種類の区切り記号のいずれかの後に 0 個または 1 個の右かっこ (")") が続くパターンと一致します。
+`\(?` | 左かっこ ("(") の&0; 回または&1; 回の繰り返しと一致します。
+`(?>\w+),?` | 1 個以上の単語文字の後に&0; 個または&1; 個のコンマが続くパターンと一致します。 単語文字の照合中にバックトラックは実行されません。
+`\s?` | 0 個または&1; 個の空白文字と一致します。
+`((\w+),?\s?)+` | 1 個以上の単語文字、0 個または&1; 個のコンマ、および&0; 個または&1; 個の空白文字が&1; 回以上続くパターンと一致します。
+`[\.!?]\)?` | 3 種類の区切り記号のいずれかの後に&0; 個または&1; 個の右かっこ (")") が続くパターンと一致します。
  
 **(?n)** インライン要素を使用して、自動的なキャプチャを抑制することもできます。 次の例では、前の例の正規表現パターンを変更して、**(?n)** インライン要素を [RegexOptions.ExplicitCapture](xref:System.Text.RegularExpressions.RegexOptions.ExplicitCapture) オプションの代わりに使用しています。
 
@@ -1120,7 +1121,7 @@ End Module
 
 ただし次に説明する状況では、[RegexOptions.IgnorePatternWhitespace](xref:System.Text.RegularExpressions.RegexOptions.IgnorePatternWhitespace) オプションを使用している場合でも、正規表現の空白文字は無視されません。 
 
-* 文字クラス内の空白は常に、空白として解釈されます。 たとえば、正規表現パターン `[ .,;:]` は、空白文字、ピリオド、コンマ、セミコロン、またはコロンの任意の 1 文字と一致します。 
+* 文字クラス内の空白は常に、空白として解釈されます。 たとえば、正規表現パターン `[ .,;:]` は、空白文字、ピリオド、コンマ、セミコロン、またはコロンの任意の&1; 文字と一致します。 
 
 * かっこで囲まれた量指定子 (**{**_n_**}**、**{**_n_**,}**、**{**_n_**,**_m_**}** など) には空白を使用できません。 たとえば、正規表現パターン **\d{1. 3}** は、空白文字が含まれているため、1 ～ 3 桁の数値のどのシーケンスにも一致しません。 
 
@@ -1240,7 +1241,7 @@ End Module
 > 右から左モードを使用するには、[RegexOptions.RightToLeft](xref:System.Text.RegularExpressions.RegexOptions.RightToLeft) 値を [Regex](xref:System.Text.RegularExpressions.Regex) クラス コンストラクターまたは静的パターン一致メソッドの options パラメーターに渡す必要があります。 インライン オプションとしては使用できません。 
  
 
-[RegexOptions.RightToLeft](xref:System.Text.RegularExpressions.RegexOptions.RightToLeft) オプションは、検索の方向のみを変更します。このオプションを指定すると、正規表現パターンが右から左に解釈されるわけではありません。 たとえば、正規表現 `\bb\w+\s` は、文字 "b" で始まる単語とそれに続く空白文字と一致します。 次の例では、入力文字列は、1 文字以上の "b" を含む 3 つの単語で構成されています。 最初の単語は "b" で始まり、2 番目の単語は "b" で終わり、3 番目の単語は語内に 2 文字の "b" を含んでいます。 この例の出力結果が示すように、最初の単語のみが正規表現パターンと一致しています。 
+[RegexOptions.RightToLeft](xref:System.Text.RegularExpressions.RegexOptions.RightToLeft) オプションは、検索の方向のみを変更します。このオプションを指定すると、正規表現パターンが右から左に解釈されるわけではありません。 たとえば、正規表現 `\bb\w+\s` は、文字 "b" で始まる単語とそれに続く空白文字と一致します。 次の例では、入力文字列は、1 文字以上の "b" を含む&3; つの単語で構成されています。 最初の単語は "b" で始まり、2 番目の単語は "b" で終わり、3 番目の単語は語内に&2; 文字の "b" を含んでいます。 この例の出力結果が示すように、最初の単語のみが正規表現パターンと一致しています。 
 
 ```csharp
 using System;
@@ -1331,11 +1332,11 @@ End Module
 
 パターン | 説明
 ------- | ----------- 
-`(?<=\d{1,2}\s)` | 一致の先頭の前には、1 桁または 2 桁の 10 進数とそれに続く空白が必要です。
+`(?<=\d{1,2}\s)` | 一致の先頭の前には、1 桁または&2; 桁の&10; 進数とそれに続く空白が必要です。
 `\w+` | 1 つ以上の単語文字に一致します。
-`,?` | 0 個または 1 個のコンマと一致します。
+`,?` | 0 個または&1; 個のコンマと一致します。
 `\s` | 空白文字と一致します。
-`\d{4}` | 4 桁の 10 進数と一致します。
+`\d{4}` | 4 桁の&10; 進数と一致します。
  
 ## <a name="ecmascript-matching-behavior"></a>ECMAScript 一致の動作
 
@@ -1346,11 +1347,11 @@ End Module
  
 [RegexOptions.ECMAScript](xref:System.Text.RegularExpressions.RegexOptions.ECMAScript) オプションは、[RegexOptions.IgnoreCase](xref:System.Text.RegularExpressions.RegexOptions.IgnoreCase) オプションか [RegexOptions.Multiline](xref:System.Text.RegularExpressions.RegexOptions.Multiline) オプションとのみ組み合わせることができます。 これ以外のオプションと同時に正規表現で使用すると、[ArgumentOutOfRangeException](xref:System.ArgumentOutOfRangeException) が発生します。
 
-ECMAScript と標準正規表現は、文字クラスの構文、自己参照キャプチャ グループ、および 8 進数と前方参照の解釈という 3 つの点で動作が異なります。 
+ECMAScript と標準正規表現は、文字クラスの構文、自己参照キャプチャ グループ、および&8; 進数と前方参照の解釈という&3; つの点で動作が異なります。 
 
 * 文字クラスの構文。 標準正規表現が Unicode をサポートしているのに対して、ECMAScript は Unicode をサポートしていないので、ECMAScript の文字クラスの構文には制限が多く、文字クラスの言語要素によっては意味が異なります。 たとえば、ECMAScript は、Unicode カテゴリやブロック要素 (*\p* および **\P**) などの言語要素をサポートしていません。 同様に、単語文字と一致する **\w** 要素は、ECMAScript を使用した場合は **[a-zA-Z_0-9]** 文字クラスと等価になり、標準の動作を使用した場合は **[\p{Ll}\p{Lu}\p{Lt}\p{Lo}\p{Nd}\p{Pc}\p{Lm}]** と等価になります。 詳細については、「[正規表現の文字クラス](classes.md)」を参照してください。
 
-  次の例は、標準パターン一致と ECMAScript パターン一致の違いを示しています。 この例では、単語とそれに続く空白文字と一致する正規表現 `\b(\w+\s*)+` を定義しています。 入力は 2 つの文字列で構成され、一方の文字列ではラテン語文字セットが使用され、もう一方の文字列ではキリル文字セットが使用されています。 出力結果が示すように、ECMAScript 一致を使用した [Regex.IsMatch(String, String, RegexOptions)](xref:System.Text.RegularExpressions.Regex.IsMatch(System.String,System.String,System.Text.RegularExpressions.RegexOptions)) メソッドの呼び出しではキリル文字の単語が照合されないのに対して、標準一致を使用したメソッドの呼び出しではキリル文字の単語が照合されています。 
+  次の例は、標準パターン一致と ECMAScript パターン一致の違いを示しています。 この例では、単語とそれに続く空白文字と一致する正規表現 `\b(\w+\s*)+` を定義しています。 入力は&2; つの文字列で構成され、一方の文字列ではラテン語文字セットが使用され、もう一方の文字列ではキリル文字セットが使用されています。 出力結果が示すように、ECMAScript 一致を使用した [Regex.IsMatch(String, String, RegexOptions)](xref:System.Text.RegularExpressions.Regex.IsMatch(System.String,System.String,System.Text.RegularExpressions.RegexOptions)) メソッドの呼び出しではキリル文字の単語が照合されないのに対して、標準一致を使用したメソッドの呼び出しではキリル文字の単語が照合されています。 
 
   ```csharp
   using System;
@@ -1662,10 +1663,5 @@ Thread.CurrentThread.CurrentCulture = defaultCulture
 ## <a name="see-also"></a>関連項目
 
 [正規表現言語 - クイック リファレンス](quick-ref.md)
-
-
-
-
-<!--HONumber=Nov16_HO3-->
 
 

@@ -11,14 +11,15 @@ ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: 2dd84ee8-9f0f-4054-9537-155857a460cd
 translationtype: Human Translation
-ms.sourcegitcommit: c40c28da09e8a122b542463c197196c82c81dd19
-ms.openlocfilehash: f8a603bab32afd0b8e7d13c9c5755e3f14a9d2bd
+ms.sourcegitcommit: 90fe68f7f3c4b46502b5d3770b1a2d57c6af748a
+ms.openlocfilehash: aeb1928be32584ee4b6acf7c9a4f4330daedc590
+ms.lasthandoff: 03/02/2017
 
 ---
 
 # <a name="choosing-between-datetime-datetimeoffset-timespan-and-timezoneinfo"></a>DateTime、DateTimeOffset、TimeSpan、および TimeZoneInfo の使い分け
 
-日時情報を使用する .NET アプリケーションは非常に多様であり、その情報をさまざまな方法で使用できます。 より一般的な日時情報の用途には、次の 1 つ以上が含まれます。
+日時情報を使用する .NET アプリケーションは非常に多様であり、その情報をさまざまな方法で使用できます。 より一般的な日時情報の用途には、次の&1; つ以上が含まれます。
 
 * 日付のみを反映する (時刻情報は重要ではない)。
 
@@ -75,7 +76,7 @@ ms.openlocfilehash: f8a603bab32afd0b8e7d13c9c5755e3f14a9d2bd
 
 * 一般的な日付と時刻の演算を実行する。
 
-* その時刻が 2 つの別々の値または構造体の 2 つのメンバーである場合、関連する複数の時刻を保持する。
+* その時刻が&2; つの別々の値または構造体の&2; つのメンバーである場合、関連する複数の時刻を保持する。
 
 > [!NOTE]
 > [DateTimeOffset](xref:System.DateTimeOffset) 値のこの用途は、[DateTime](xref:System.DateTime) 値の用途と比べてはるかに一般的です。 その結果、[DateTimeOffset](xref:System.DateTimeOffset) はアプリケーション開発の既定の日付時刻型と見なされます。
@@ -200,19 +201,19 @@ End Module
 '          (GMT+01:00) West Central Africa
 ```
 
-この例の日付と時刻の値はそれぞれ少なくとも 3 つの異なるタイム ゾーンに属することができることを出力は示しています。 [DateTimeOffset](xref:System.DateTimeOffset) 値の 6/10/2007 は、日付と時刻の値が夏時間を表す場合、UTC のそのオフセットは必ずしも元のタイム ゾーンの基本 UTC オフセット、またはその表示名から見つかる UTC のオフセットと一致しないことを示しています。 これは、単一の [DateTimeOffset](xref:System.DateTimeOffset) 値はそのタイム ゾーンと密接に関連していないために夏時間との間のタイム ゾーンの遷移を反映することができないことを意味しています。 これは特に、日付と時刻の演算を使用して [DateTimeOffset](xref:System.DateTimeOffset) 値を操作する際に問題となる可能性があります。 タイム ゾーンの調整規則を考慮に入れた日付と時刻の演算を実行する方法については、「[日付と時刻を使用した算術演算の実行](performing-arithmetic-operations.md)」を参照してください。
+この例の日付と時刻の値はそれぞれ少なくとも&3; つの異なるタイム ゾーンに属することができることを出力は示しています。 [DateTimeOffset](xref:System.DateTimeOffset) 値の 6/10/2007 は、日付と時刻の値が夏時間を表す場合、UTC のそのオフセットは必ずしも元のタイム ゾーンの基本 UTC オフセット、またはその表示名から見つかる UTC のオフセットと一致しないことを示しています。 これは、単一の [DateTimeOffset](xref:System.DateTimeOffset) 値はそのタイム ゾーンと密接に関連していないために夏時間との間のタイム ゾーンの遷移を反映することができないことを意味しています。 これは特に、日付と時刻の演算を使用して [DateTimeOffset](xref:System.DateTimeOffset) 値を操作する際に問題となる可能性があります。 タイム ゾーンの調整規則を考慮に入れた日付と時刻の演算を実行する方法については、「[日付と時刻を使用した算術演算の実行](performing-arithmetic-operations.md)」を参照してください。
 
 ## <a name="the-timespan-structure"></a>TimeSpan 構造体
 
-[System.TimeSpan](xref:System.TimeSpan) 構造体は、時間間隔を表します。 その 2 つの一般的な用途は、次のとおりです。 
+[System.TimeSpan](xref:System.TimeSpan) 構造体は、時間間隔を表します。 その&2; つの一般的な用途は、次のとおりです。 
 
 * 2 つの日付と時刻の値の間の時間を反映する。 たとえば、ある値から [DateTime](xref:System.DateTime) 値を減算すると、[TimeSpan](xref:System.TimeSpan) 値が返されます。 
 
-* 経過時間を測定する。 たとえば、[Stopwatch.Elapsed](xref:System.Diagnostics.Stopwatch.Elapsed) プロパティは、経過時間の測定を開始する [System.Diagnostics.Stopwatch](xref:System.Diagnostics.Stopwatch) メソッドの 1 つを呼び出してから経過した時間間隔を反映する [TimeSpan](xref:System.TimeSpan) 値を返します。
+* 経過時間を測定する。 たとえば、[Stopwatch.Elapsed](xref:System.Diagnostics.Stopwatch.Elapsed) プロパティは、経過時間の測定を開始する [System.Diagnostics.Stopwatch](xref:System.Diagnostics.Stopwatch) メソッドの&1; つを呼び出してから経過した時間間隔を反映する [TimeSpan](xref:System.TimeSpan) 値を返します。
 
 値が特定時刻への参照がない値が時間を反映する際、[DateTime](xref:System.DateTime) 値の代わりに [TimeSpan](xref:System.TimeSpan) 値を使用することもできます。 この用途は [DateTime.TimeOfDay](xref:System.DateTime.TimeOfDay) および [DateTimeOffset.TimeOfDay](xref:System.DateTimeOffset.TimeOfDay) プロパティと似ています。これらのプロパティは、日付への参照なしの時間を表す [TimeSpan](xref:System.TimeSpan) 値を返します。 たとえば、[TimeSpan](xref:System.TimeSpan) 構造体を使用して、ストアの開店時刻または閉店時刻を反映したり、標準イベントが発生したときの時刻を表したりするために使用できます。
 
-以下の例では、開店時刻と閉店時刻用の [TimeSpan](xref:System.TimeSpan) オブジェクト、およびストアのタイム ゾーンを表す [TimeZoneInfo](xref:System.TimeZoneInfo) オブジェクトを含む `StoreInfo` 構造体を定義します。 構造体には、`IsOpenNow`、`IsOpenAt` という 2 つのメソッドも含まれます。これは、ローカル タイム ゾーンにいると想定されるユーザーによって指定された時刻にストアがオープンするかどうかを示します。  
+以下の例では、開店時刻と閉店時刻用の [TimeSpan](xref:System.TimeSpan) オブジェクト、およびストアのタイム ゾーンを表す [TimeZoneInfo](xref:System.TimeZoneInfo) オブジェクトを含む `StoreInfo` 構造体を定義します。 構造体には、`IsOpenNow`、`IsOpenAt` という&2; つのメソッドも含まれます。これは、ローカル タイム ゾーンにいると想定されるユーザーによって指定された時刻にストアがオープンするかどうかを示します。  
 
 ```csharp
 using System;
@@ -347,15 +348,10 @@ End Module
 
 [System.TimeZoneInfo](xref:System.TimeZoneInfo) クラスは地球のタイム ゾーンを表し、1 つのタイム ゾーンの日付と時刻の値を、別のタイム ゾーンの日付と時刻の値に変換できるようにします。 [TimeZoneInfo](xref:System.TimeZoneInfo) クラスにより、日付と時刻を使用して、どの日付と時刻の値も明確に単一時点を識別できるようにすることができます。
 
-場合によっては、[TimeZoneInfo](xref:System.TimeZoneInfo) クラスをフル活用するために、開発作業をさらに実行する必要が生じることもあります。 日付と時刻の値は、それが属するタイム ゾーンに密接に関連付けられていません。 結果として、アプリケーションが日付と時刻をその関連タイム ゾーンとリンクするメカニズムを提供していない場合、特定の日付と時刻の値とそのタイム ゾーンの関連付けは簡単に解除されます。 この情報をリンクする 1 つの方法は、日付と時刻の値とその関連タイム ゾーン オブジェクトの両方を含むクラスまたは構造体を定義するという方法です。
+場合によっては、[TimeZoneInfo](xref:System.TimeZoneInfo) クラスをフル活用するために、開発作業をさらに実行する必要が生じることもあります。 日付と時刻の値は、それが属するタイム ゾーンに密接に関連付けられていません。 結果として、アプリケーションが日付と時刻をその関連タイム ゾーンとリンクするメカニズムを提供していない場合、特定の日付と時刻の値とそのタイム ゾーンの関連付けは簡単に解除されます。 この情報をリンクする&1; つの方法は、日付と時刻の値とその関連タイム ゾーン オブジェクトの両方を含むクラスまたは構造体を定義するという方法です。
 
 日付と時刻のオブジェクトをインスタンスするときにその日付と時刻の値が属するタイム ゾーンがわかっている場合のみ、.NET でタイム ゾーンのサポートを利用できます。 特に Web またはネットワーク アプリケーションでは、これは該当しません。
 
 ## <a name="see-also"></a>関連項目
 
 [日付、時刻およびタイム ゾーン](index.md)
-
-
-<!--HONumber=Nov16_HO3-->
-
-

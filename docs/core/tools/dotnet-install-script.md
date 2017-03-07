@@ -1,26 +1,28 @@
 ---
-title: "dotnet-install スクリプト | .NET Core SDK"
+title: "dotnet-install スクリプト | Microsoft Docs"
 description: ".NET Core CLI ツールと共有ランタイムをインストールする dotnet-install スクリプトについて説明します。"
 keywords: "dotnet-install, dotnet-install スクリプト, .NET Core"
 author: blackdwarf
 ms.author: mairaw
-manager: wpickett
 ms.date: 10/12/2016
 ms.topic: article
 ms.prod: .net-core
-ms.technology: .net-core-technologies
+ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: 59b9c456-2bfd-4adc-8202-a1c6a0a6c787
 translationtype: Human Translation
-ms.sourcegitcommit: b20713600d7c3ddc31be5885733a1e8910ede8c6
-ms.openlocfilehash: 30e969c55d08b3ac276c6e7786fa96985dbb0a6b
+ms.sourcegitcommit: 796df1549a7553aa93158598d62338c02d4df73e
+ms.openlocfilehash: 8c5812828b5a19646d6ccbfe9f7cf2215889201f
 
 ---
 
-#<a name="dotnetinstall-scripts-reference"></a>dotnet-install スクリプト参照
+#<a name="dotnet-install-scripts-reference"></a>dotnet-install スクリプト参照
+
+> [!WARNING]
+> このトピックは .NET Core Tools Preview 2 を対象としています。 .NET Core Tools RC4 バージョンについては、「[dotnet-install スクリプト参照 (.NET Core Tools RC4)](../preview3/tools/dotnet-install-script.md)」トピックを参照してください。
 
 ## <a name="name"></a>名前
-dotnet-install.ps1 | dotnet-install.sh - コマンド ライン インターフェイス (CLI) ツールと共有ランタイムをインストールするために使用するスクリプト
+`dotnet-install.ps1` | `dotnet-install.sh` - コマンド ライン インターフェイス (CLI) ツールと共有ランタイムをインストールするために使用するスクリプトです。
 
 ## <a name="synopsis"></a>構文
 Windows の場合:
@@ -38,7 +40,7 @@ macOS/Linux の場合:
 ## <a name="description"></a>説明
 `dotnet-install` スクリプトは、CLI ツールチェーンと共有ランタイムの非管理者インストールを実行するために使用されます。 スクリプトは [CLI GitHub リポジトリ](https://github.com/dotnet/cli/tree/rel/1.0.0-preview2/scripts/obtain)からダウンロードできます。 
 
-その主なユース ケースは、自動化シナリオと非管理者インストールに役立ちます。 このスクリプトは 2 つ (Windows で動作する PowerShell 用と、Linux/OS X で動作する bash スクリプト用にそれぞれ 1 つずつ) あります。両方とも動作は同じです。 bash スクリプトでは PowerShell スイッチも "認識される" ため、全体で使用できます。 
+その主なユース ケースは、自動化シナリオと非管理者インストールに役立ちます。 このスクリプトは&2; つ (Windows で動作する PowerShell 用と、Linux/OS X で動作する bash スクリプト用にそれぞれ&1; つずつ) あります。両方とも動作は同じです。 bash スクリプトでは PowerShell スイッチも "認識される" ため、全体で使用できます。 
 
 インストール スクリプトは CLI ビルド ドロップから ZIP/tarball ファイルをダウンロードし、既定の場所または `--install-dir` で指定された場所へのインストールに進みます。 既定では、インストール スクリプトは SDK をダウンロードしてインストールします。共有ランタイムのみを取得する場合は、`--shared-runtime` 引数を指定できます。 
 
@@ -64,7 +66,7 @@ macOS/Linux の場合:
 
 `-InstallDir [DIR]`
 
-インストール先のパスです。 存在しない場合は、ディレクトリが作成されます。 既定値は *%LocalAppData%\.dotnet* です。
+インストール先のパスです。 存在しない場合は、ディレクトリが作成されます。 既定値は *%LocalAppData%\Microsoft\dotnet*です。
 
 `-Debug`
 
@@ -127,6 +129,6 @@ macOS/Linux の場合:
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Feb17_HO2-->
 
 

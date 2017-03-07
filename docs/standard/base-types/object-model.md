@@ -11,8 +11,9 @@ ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: a1e611ec-c6a2-48c6-9c52-0ed845787621
 translationtype: Human Translation
-ms.sourcegitcommit: b20713600d7c3ddc31be5885733a1e8910ede8c6
-ms.openlocfilehash: becfe2624ad1ee1d03707ef48c780f518eb8eb28
+ms.sourcegitcommit: 90fe68f7f3c4b46502b5d3770b1a2d57c6af748a
+ms.openlocfilehash: 4e8744c6c7a42c3803bf9716a3ae271b7284be3d
+ms.lasthandoff: 03/02/2017
 
 ---
 
@@ -109,11 +110,11 @@ End Module
 パターン | 説明
 ------- | ----------- 
 `^` | 入力文字列の先頭と一致します。
-`\d{3}` | 3 個の 10 進数と一致します。
+`\d{3}` | 3 個の&10; 進数と一致します。
 `-` | ハイフンと一致します。
-`\d{2}` | 2 桁の 10 進数と一致します。
+`\d{2}` | 2 桁の&10; 進数と一致します。
 `-` | ハイフンと一致します。
-`\d{4}` | 4 桁の 10 進数と一致します。
+`\d{4}` | 4 桁の&10; 進数と一致します。
 `$` | 入力文字列の末尾と一致します。
  
 ### <a name="extracting-a-single-match-or-the-first-match"></a>単一の一致または最初の一致の抽出
@@ -171,7 +172,7 @@ End Module
 `\b` | ワード境界から照合を開始します。
 `(\w+)` | 1 つ以上の単語文字に一致します。 これが最初のキャプチャ グループです。
 `\W+` | 1 個以上の単語文字に使用されない文字と一致します。
-`(\1)` | 最初にキャプチャされた文字列と一致します。 これが 2 番目のキャプチャ グループです。 
+`(\1)` | 最初にキャプチャされた文字列と一致します。 これが&2; 番目のキャプチャ グループです。 
 `\b` | ワード境界で照合を終了します。
  
 ### <a name="extracting-all-matches"></a>すべての一致の抽出
@@ -218,7 +219,7 @@ End Module
 
 ### <a name="replacing-a-matched-substring"></a>一致した部分文字列の置換
 
-[Regex.Replace](xref:System.Text.RegularExpressions.Regex.Replace(System.String,System.String)) メソッドは、正規表現パターンに一致した各部分文字列を指定された文字列または正規表現パターンに置き換えて、置換が適用された入力文字列全体を返します。 たとえば、次のコードでは、文字列内の 10 進数の前に米国の通貨記号が追加されます。
+[Regex.Replace](xref:System.Text.RegularExpressions.Regex.Replace(System.String,System.String)) メソッドは、正規表現パターンに一致した各部分文字列を指定された文字列または正規表現パターンに置き換えて、置換が適用された入力文字列全体を返します。 たとえば、次のコードでは、文字列内の&10; 進数の前に米国の通貨記号が追加されます。
 
 ```csharp
 using System;
@@ -258,9 +259,9 @@ End Module
 パターン | 説明
 ------- | ----------- 
 `\b` | ワード境界から照合を開始します。
-`\d+` | 1 個以上の 10 進数と一致します。
+`\d+` | 1 個以上の&10; 進数と一致します。
 `\.` | ピリオドと一致します。
-`\d{2}` | 2 桁の 10 進数と一致します。
+`\d{2}` | 2 桁の&10; 進数と一致します。
 `\b` | ワード境界で照合を終了します。
  
 置換パターン `$$$&` の解釈を次の表に示します。
@@ -326,17 +327,17 @@ End Module
 パターン | 説明
 ------- | -----------
 `\b` | ワード境界から照合を開始します。
-`\d{1,2}` | 1 桁または 2 桁の 10 進数と一致します。
+`\d{1,2}` | 1 桁または&2; 桁の&10; 進数と一致します。
 `\.` | ピリオドと一致します。
 `\s` | 空白文字と一致します。
  
 ## <a name="the-matchcollection-and-match-objects"></a>MatchCollection オブジェクトと Match オブジェクト
 
-[Regex](xref:System.Text.RegularExpressions.Regex) メソッドは、正規表現のオブジェクト モデルに含まれる [MatchCollection](xref:System.Text.RegularExpressions.MatchCollection) と [Match](xref:System.Text.RegularExpressions.Match) の 2 つのオブジェクトを返します。 
+[Regex](xref:System.Text.RegularExpressions.Regex) メソッドは、正規表現のオブジェクト モデルに含まれる [MatchCollection](xref:System.Text.RegularExpressions.MatchCollection) と [Match](xref:System.Text.RegularExpressions.Match) の&2; つのオブジェクトを返します。 
 
 ### <a name="the-match-collection"></a>MatchCollection
 
-[Regex.Matches](xref:System.Text.RegularExpressions.Regex.Matches(System.String)) メソッドは、正規表現エンジンによって検出されたすべての一致文字列を入力文字列に出現する順序で表す [Match](xref:System.Text.RegularExpressions.Match) オブジェクトを含む [MatchCollection](xref:System.Text.RegularExpressions.MatchCollection) オブジェクトを返します。 一致がない場合、このメソッドは、メンバーのない [Match](xref:System.Text.RegularExpressions.Match) オブジェクトを含む [MatchCollection](xref:System.Text.RegularExpressions.MatchCollection) オブジェクトを返します。 [MatchCollection](xref:System.Text.RegularExpressions.MatchCollection) `Item` プロパティを使用すると、コレクションの個々のメンバーに、0 から [MatchCollection.Count](xref:System.Text.RegularExpressions.MatchCollection.Count) プロパティの値より 1 小さい値までの範囲のインデックスでアクセスできます。 'Item` は、コレクションのインデクサー (C# の場合) および既定のプロパティ (Visual Basic の場合) です。
+[Regex.Matches](xref:System.Text.RegularExpressions.Regex.Matches(System.String)) メソッドは、正規表現エンジンによって検出されたすべての一致文字列を入力文字列に出現する順序で表す [Match](xref:System.Text.RegularExpressions.Match) オブジェクトを含む [MatchCollection](xref:System.Text.RegularExpressions.MatchCollection) オブジェクトを返します。 一致がない場合、このメソッドは、メンバーのない [Match](xref:System.Text.RegularExpressions.Match) オブジェクトを含む [MatchCollection](xref:System.Text.RegularExpressions.MatchCollection) オブジェクトを返します。 [MatchCollection](xref:System.Text.RegularExpressions.MatchCollection) `Item` プロパティを使用すると、コレクションの個々のメンバーに、0 から [MatchCollection.Count](xref:System.Text.RegularExpressions.MatchCollection.Count) プロパティの値より&1; 小さい値までの範囲のインデックスでアクセスできます。 'Item` は、コレクションのインデクサー (C# の場合) および既定のプロパティ (Visual Basic の場合) です。
 
 既定では、[Regex.Matches](xref:System.Text.RegularExpressions.Regex.Matches(System.String)) メソッドを呼び出すと、遅延評価を使用して [MatchCollection](xref:System.Text.RegularExpressions.MatchCollection) オブジェクトに値が設定されます。 値の設定が完了しているコレクションを必要とするプロパティ ([MatchCollection.Count](xref:System.Text.RegularExpressions.MatchCollection.Count) プロパティや `Item` プロパティなど) にアクセスする場合は、パフォーマンスが低下する可能性があります。 そのため、[MatchCollection.GetEnumerator](xref:System.Text.RegularExpressions.MatchCollection.GetEnumerator) メソッドによって返される [IEnumerator](xref:System.Collections.IEnumerator) オブジェクトを使用してコレクションにアクセスすることをお勧めします。 個々の言語は、C# の `foreach` やコレクションの IEnumerator](xref:System.Collections.IEnumerator) インターフェイスをラップする Visual Basic の `For Each' など、構成体を提供します。
 
@@ -413,9 +414,9 @@ End Module
 
 ### <a name="the-match"></a>Match
 
-[Match](xref:System.Text.RegularExpressions.Match) クラスは、1 回の正規表現検索に一致した結果を表します。 [Match](xref:System.Text.RegularExpressions.Match) オブジェクトには 2 つの方法でアクセスできます。
+[Match](xref:System.Text.RegularExpressions.Match) クラスは、1 回の正規表現検索に一致した結果を表します。 [Match](xref:System.Text.RegularExpressions.Match) オブジェクトには&2; つの方法でアクセスできます。
 
-* Regex.Matches メソッドから返される [MatchCollection](xref:System.Text.RegularExpressions.MatchCollection) オブジェクトから取得する。 個々の [Match](xref:System.Text.RegularExpressions.Match) オブジェクトを取得するには、`foreach` 構成体 (C# の場合) または `For Each...Next` 構成体 (Visual Basic の場合) を使用してコレクションを反復処理するか、[MatchCollection](xref:System.Text.RegularExpressions.MatchCollection) `Item` プロパティを使用してインデックスまたは名前で特定の [Match](xref:System.Text.RegularExpressions.Match) オブジェクトを取得します。 また、0 からコレクションのオブジェクト数より 1 小さい値までの範囲のインデックスでコレクションを反復処理して、コレクションから個々の [Match](xref:System.Text.RegularExpressions.Match) オブジェクトを取得することもできます。 ただし、このメソッドは [MatchCollection.Count](xref:System.Text.RegularExpressions.MatchCollection.Count) プロパティにアクセスするので、遅延評価を活用できません。 
+* Regex.Matches メソッドから返される [MatchCollection](xref:System.Text.RegularExpressions.MatchCollection) オブジェクトから取得する。 個々の [Match](xref:System.Text.RegularExpressions.Match) オブジェクトを取得するには、`foreach` 構成体 (C# の場合) または `For Each...Next` 構成体 (Visual Basic の場合) を使用してコレクションを反復処理するか、[MatchCollection](xref:System.Text.RegularExpressions.MatchCollection) `Item` プロパティを使用してインデックスまたは名前で特定の [Match](xref:System.Text.RegularExpressions.Match) オブジェクトを取得します。 また、0 からコレクションのオブジェクト数より&1; 小さい値までの範囲のインデックスでコレクションを反復処理して、コレクションから個々の [Match](xref:System.Text.RegularExpressions.Match) オブジェクトを取得することもできます。 ただし、このメソッドは [MatchCollection.Count](xref:System.Text.RegularExpressions.MatchCollection.Count) プロパティにアクセスするので、遅延評価を活用できません。 
 
   次の例では、`foreach` 構成体を使用してコレクションを反復処理することで、個々の [Match](xref:System.Text.RegularExpressions.Match) オブジェクトを [MatchCollection](xref:System.Text.RegularExpressions.MatchCollection) オブジェクトから取得します。 この正規表現は、単純に入力文字列内の文字列 "abc" と一致します。
 
@@ -509,7 +510,7 @@ End Module
   '       abc found at position 12.
   ```
 
-[Match](xref:System.Text.RegularExpressions.Match) クラスの 2 つのプロパティによってコレクション オブジェクトが返されます。
+[Match](xref:System.Text.RegularExpressions.Match) クラスの&2; つのプロパティによってコレクション オブジェクトが返されます。
 
 * [Match.Groups](xref:System.Text.RegularExpressions.Match.Groups) プロパティは、正規表現パターンのキャプチャ グループに一致する部分文字列の情報を含む [GroupCollection](xref:System.Text.RegularExpressions.GroupCollection) オブジェクトを返します。 
 
@@ -517,7 +518,7 @@ End Module
 
 これらのオブジェクトの詳細については、このトピックで後述する「[GroupCollection](#the-group-collection)」および「[CaptureCollection](#the-capture-collection)」を参照してください。
 
-[Match](xref:System.Text.RegularExpressions.Match) クラスの 2 つの追加プロパティに、一致文字列の情報が保持されます。 `Match.Value` プロパティは、正規表現パターンに一致する入力文字列内の部分文字列を返します。 `Match.Index` プロパティは、入力文字列内の一致する文字列の 0 から始まる開始位置を返します。
+[Match](xref:System.Text.RegularExpressions.Match) クラスの&2; つの追加プロパティに、一致文字列の情報が保持されます。 `Match.Value` プロパティは、正規表現パターンに一致する入力文字列内の部分文字列を返します。 `Match.Index` プロパティは、入力文字列内の一致する文字列の&0; から始まる開始位置を返します。
 
 [Match](xref:System.Text.RegularExpressions.Match) クラスには、2 つのパターン一致メソッドもあります。
 
@@ -573,10 +574,10 @@ End Module
 パターン | 説明
 ------- | -----------
 `\b` | ワード境界から照合を開始します。
-`\d+` | 1 個以上の 10 進数と一致します。
-`(,\d{3})*` | コンマの後に 3 桁の 10 進数字が続くパターンの 0 回以上の出現と一致します。
+`\d+` | 1 個以上の&10; 進数と一致します。
+`(,\d{3})*` | コンマの後に&3; 桁の&10; 進数字が続くパターンの&0; 回以上の出現と一致します。
 `\.` | 小数点文字と一致します。
-`\d{2} | 2 桁の 10 進数と一致します。
+`\d{2} | 2 桁の&10; 進数と一致します。
 `\b` | ワード境界で照合を終了します。
  
 置換パターン **$$ $&** は、一致した部分文字列がドル記号 (**$**) (`$$` パターン)、空白、および一致文字列の値 (`$&` パターン) に置き換えられることを示します。
@@ -651,17 +652,17 @@ End Module
 `\b` | ワード境界から照合を開始します。
 `(\w+)` | 1 つ以上の単語文字に一致します。 これが最初のキャプチャ グループです。
 `\s` | 空白文字と一致します。
-`(\d{1,2})` | 1 桁または 2 桁の 10 進数と一致します。 これが 2 番目のキャプチャ グループです。
+`(\d{1,2})` | 1 桁または&2; 桁の&10; 進数と一致します。 これが&2; 番目のキャプチャ グループです。
 `,` | コンマに一致します。
 `\s` | 空白文字と一致します。
-`(\d{4})` | 4 桁の 10 進数と一致します。 これが 3 番目のキャプチャ グループです。
+`(\d{4})` | 4 桁の&10; 進数と一致します。 これが&3; 番目のキャプチャ グループです。
 `\b` | ワード境界で照合を終了します。
  
 ## <a name="the-captured-group"></a>キャプチャ グループ
 
 [Group](xref:System.Text.RegularExpressions.Group) クラスは、1 つのキャプチャ グループによるキャプチャの結果を表します。 正規表現で定義されているキャプチャ グループを表す [Group](xref:System.Text.RegularExpressions.Group) オブジェクトは、[Match.Groups](xref:System.Text.RegularExpressions.Match.Groups) プロパティによって返される [GroupCollection](xref:System.Text.RegularExpressions.GroupCollection) オブジェクトの [Item](xref:System.Text.RegularExpressions.GroupCollection.Item(System.Int32)) プロパティによって返されます。 [Item](xref:System.Text.RegularExpressions.GroupCollection.Item(System.Int32)) プロパティは、[Group](xref:System.Text.RegularExpressions.Group) クラスのインデクサー (C# の場合) および既定のプロパティ (Visual Basic の場合) です。 `foreach` 構成体を使用してコレクションを反復処理することで、個々のメンバーを取得することもできます。 例については、前のセクションを参照してください。
 
-次の例では、入れ子にしたグループ化構成体を使用して部分文字列をキャプチャし、グループ化します。 正規表現パターン `(a(b))c` は、文字列 "abc" と一致します。 部分文字列 "ab" を最初のキャプチャ グループに代入し、部分文字列 "b" を 2 番目のキャプチャ グループに代入します。
+次の例では、入れ子にしたグループ化構成体を使用して部分文字列をキャプチャし、グループ化します。 正規表現パターン `(a(b))c` は、文字列 "abc" と一致します。 部分文字列 "ab" を最初のキャプチャ グループに代入し、部分文字列 "b" を&2; 番目のキャプチャ グループに代入します。
 
 ```csharp
 List<int> matchposition = new List<int>();
@@ -746,7 +747,7 @@ Console.WriteLine(m.Groups("value").Value)
  
 [Group](xref:System.Text.RegularExpressions.Group) クラスのプロパティには、キャプチャ グループの情報が保持されます。キャプチャされた部分文字列が `Group.Value` プロパティに含まれ、キャプチャ グループの入力テキスト内での開始位置が `Group.Index` プロパティによって示され、キャプチャされたテキストの長さが `Group.Length` プロパティに含まれ、部分文字列がキャプチャ グループによって定義されたパターンと一致したかどうかが `Group.Success` プロパティによって示されます。
 
-量指定子をグループに適用する場合 (詳細については、「[正規表現での量指定子](quantifiers.md)」を参照)、キャプチャ グループごとに 1 つのキャプチャという関係が 2 つの方法で変更されます。
+量指定子をグループに適用する場合 (詳細については、「[正規表現での量指定子](quantifiers.md)」を参照)、キャプチャ グループごとに&1; つのキャプチャという関係が&2; つの方法で変更されます。
 
 * __*__ または __*?__ 量指定子 (0 回以上の一致を指定する) をグループに適用した場合、キャプチャ グループには入力文字列で一致した文字列が含まれない可能性があります。 キャプチャされたテキストがない場合、[Group](xref:System.Text.RegularExpressions.Group) オブジェクトのプロパティは次の表に示すように設定されます。
 
@@ -756,7 +757,7 @@ Console.WriteLine(m.Groups("value").Value)
   `Value` | [String.Empty](xref:System.String.Empty) 
   `Length` | 0
  
-  具体的な例を次に示します。 正規表現パターン `aaa(bbb)*ccc` では、最初のキャプチャ グループ (部分文字列 "bbb") は 0 回以上一致できます。 入力文字列 "aaaccc" はパターンに一致するので、キャプチャ グループには一致文字列が含まれません。
+  具体的な例を次に示します。 正規表現パターン `aaa(bbb)*ccc` では、最初のキャプチャ グループ (部分文字列 "bbb") は&0; 回以上一致できます。 入力文字列 "aaaccc" はパターンに一致するので、キャプチャ グループには一致文字列が含まれません。
 
   ```csharp
   using System;
@@ -802,7 +803,7 @@ Console.WriteLine(m.Groups("value").Value)
   '       The first capturing group has no match.
   ```
 
-* 量指定子は、キャプチャ グループによって定義されたパターンの複数回の出現と一致できます。 この場合、[Group](xref:System.Text.RegularExpressions.Group) オブジェクトの `Value` プロパティと `Length` プロパティには、最後にキャプチャされた部分文字列の情報のみが保持されます。 たとえば、次の正規表現は、ピリオドで終わる 1 文と一致します。 この正規表現では 2 つのグループ化構成体が使用されています。最初のグループ化構成体は個々の単語および空白文字をキャプチャし、2 番目のグループ化構成体は個々の単語をキャプチャします。 この例の出力結果が示すように、正規表現では文全体が正常にキャプチャされますが、2 番目のキャプチャ グループでは最後の単語のみがキャプチャされます。
+* 量指定子は、キャプチャ グループによって定義されたパターンの複数回の出現と一致できます。 この場合、[Group](xref:System.Text.RegularExpressions.Group) オブジェクトの `Value` プロパティと `Length` プロパティには、最後にキャプチャされた部分文字列の情報のみが保持されます。 たとえば、次の正規表現は、ピリオドで終わる&1; 文と一致します。 この正規表現では&2; つのグループ化構成体が使用されています。最初のグループ化構成体は個々の単語および空白文字をキャプチャし、2 番目のグループ化構成体は個々の単語をキャプチャします。 この例の出力結果が示すように、正規表現では文全体が正常にキャプチャされますが、2 番目のキャプチャ グループでは最後の単語のみがキャプチャされます。
 
   ```csharp
   using System;
@@ -857,7 +858,7 @@ Console.WriteLine(m.Groups("value").Value)
 
 量指定子がキャプチャ グループに適用されない場合、[CaptureCollection](xref:System.Text.RegularExpressions.CaptureCollection) オブジェクトには [Group](xref:System.Text.RegularExpressions.Group) オブジェクトと同じ一致文字列の情報が保持されるので、関心の低い単一の [Capture](xref:System.Text.RegularExpressions.Capture) オブジェクトが含まれます。 量指定子がキャプチャ グループに適用される場合、[CaptureCollection](xref:System.Text.RegularExpressions.CaptureCollection) オブジェクトにはキャプチャ グループによって行われたすべてのキャプチャが含まれ、コレクションの最後のメンバーは [Group](xref:System.Text.RegularExpressions.Group) オブジェクトと同じキャプチャを表します。 
 
-たとえば、正規表現パターン `((a(b))c)+` (量指定子 `+` は 1 つ以上の文字列が一致することを指定) を使用して文字列 "abcabcabc" から一致する文字列をキャプチャする場合、各 [Group](xref:System.Text.RegularExpressions.Group) オブジェクトの [CaptureCollection](xref:System.Text.RegularExpressions.CaptureCollection) オブジェクトには、3 個のメンバーが含まれることになります。
+たとえば、正規表現パターン `((a(b))c)+` (量指定子 `+` は&1; つ以上の文字列が一致することを指定) を使用して文字列 "abcabcabc" から一致する文字列をキャプチャする場合、各 [Group](xref:System.Text.RegularExpressions.Group) オブジェクトの [CaptureCollection](xref:System.Text.RegularExpressions.CaptureCollection) オブジェクトには、3 個のメンバーが含まれることになります。
 
 ```csharp
 using System;
@@ -949,7 +950,7 @@ End Module
 '             Capture 2: 'b' at position 7
 ```
 
-次の例では、正規表現 `(Abc)+` を使用して、文字列 "XYZAbcAbcAbcXYZAbcAb" の中から文字列 "Abc" の連続した出現を 1 つ以上検索します。 この例は、[Group.Captures](xref:System.Text.RegularExpressions.Group.Captures) プロパティを使用して、キャプチャした部分文字列の複数のグループを返す方法を示しています。
+次の例では、正規表現 `(Abc)+` を使用して、文字列 "XYZAbcAbcAbcXYZAbcAb" の中から文字列 "Abc" の連続した出現を&1; つ以上検索します。 この例は、[Group.Captures](xref:System.Text.RegularExpressions.Group.Captures) プロパティを使用して、キャプチャした部分文字列の複数のグループを返す方法を示しています。
 
 ```csharp
 {
@@ -1040,9 +1041,9 @@ End Module
 
 ## <a name="the-individual-capture"></a>個々のキャプチャ
 
-[Capture](xref:System.Text.RegularExpressions.Capture) クラスには、単一の部分式キャプチャの結果が含まれます。 一致したテキストが [Capture.Value](xref:System.Text.RegularExpressions.Capture.Value) プロパティに含まれ、一致した部分文字列の入力文字列内での開始位置 (起点を 0 とする) が [Capture.Index](xref:System.Text.RegularExpressions.Capture.Index) プロパティによって示されます。 
+[Capture](xref:System.Text.RegularExpressions.Capture) クラスには、単一の部分式キャプチャの結果が含まれます。 一致したテキストが [Capture.Value](xref:System.Text.RegularExpressions.Capture.Value) プロパティに含まれ、一致した部分文字列の入力文字列内での開始位置 (起点を&0; とする) が [Capture.Index](xref:System.Text.RegularExpressions.Capture.Index) プロパティによって示されます。 
 
-次の例では、選択した都市の気温の入力文字列を解析します。 都市とその気温を区切るためにコンマ (",") が使用され、各都市のデータを区切るためにセミコロン (";") が使用されています。 入力文字列全体が単一の一致を表します。 文字列の解析に使用される正規表現パターン `((\w+(\s\w+)*),(\d+);)+` では、都市名が 2 番目のキャプチャ グループに代入され、気温が 4 番目のキャプチャ グループに代入されます。
+次の例では、選択した都市の気温の入力文字列を解析します。 都市とその気温を区切るためにコンマ (",") が使用され、各都市のデータを区切るためにセミコロン (";") が使用されています。 入力文字列全体が単一の一致を表します。 文字列の解析に使用される正規表現パターン `((\w+(\s\w+)*),(\d+);)+` では、都市名が&2; 番目のキャプチャ グループに代入され、気温が&4; 番目のキャプチャ グループに代入されます。
 
 ```csharp
 using System;
@@ -1102,12 +1103,12 @@ End Module
 パターン | 説明
 ------- | -----------
 `\w+` | 1 つ以上の単語文字に一致します。
-`(\s\w+)*` | 空白文字の後に 1 個以上の単語文字が続くパターンの 0 回以上の出現と一致します。 このパターンは、複数の単語で構成される都市名と一致します。 これが 3 番目のキャプチャ グループです。
-`(\w+(\s\w+)*)` | 1 個以上の単語文字の後に空白文字および 1 個以上の単語文字の 0 回以上の出現が続くパターンと一致します。 これが 2 番目のキャプチャ グループです。
+`(\s\w+)*` | 空白文字の後に&1; 個以上の単語文字が続くパターンの&0; 回以上の出現と一致します。 このパターンは、複数の単語で構成される都市名と一致します。 これが&3; 番目のキャプチャ グループです。
+`(\w+(\s\w+)*)` | 1 個以上の単語文字の後に空白文字および&1; 個以上の単語文字の&0; 回以上の出現が続くパターンと一致します。 これが&2; 番目のキャプチャ グループです。
 `,` | コンマに一致します。
-`(\d+)` | 1 桁以上の数字と一致します。 これが 4 番目のキャプチャ グループです。
+`(\d+)` | 1 桁以上の数字と一致します。 これが&4; 番目のキャプチャ グループです。
 `;` | セミコロンと一致します。
-`((\w+(\s\w+)*),(\d+);)+` | 単語、追加の単語、コンマ、1 桁以上の数字、およびセミコロンが 1 回以上続くパターンと一致します。 これが最初のキャプチャ グループです。 
+`((\w+(\s\w+)*),(\d+);)+` | 単語、追加の単語、コンマ、1 桁以上の数字、およびセミコロンが&1; 回以上続くパターンと一致します。 これが最初のキャプチャ グループです。 
  
 ## <a name="see-also"></a>関連項目
 
@@ -1116,10 +1117,5 @@ End Module
 [.NET 正規表現](regular-expressions.md)
 
 [正規表現言語 - クイック リファレンス](quick-ref.md)
-
-
-
-
-<!--HONumber=Nov16_HO3-->
 
 

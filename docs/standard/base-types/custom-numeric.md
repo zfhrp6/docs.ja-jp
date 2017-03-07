@@ -11,8 +11,9 @@ ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: 7b1c16ee-956f-4e9c-8502-c3dd6598c51d
 translationtype: Human Translation
-ms.sourcegitcommit: b20713600d7c3ddc31be5885733a1e8910ede8c6
-ms.openlocfilehash: 2d5a051efd074d02f2a5e9ff03c11e1d9a202d7f
+ms.sourcegitcommit: 90fe68f7f3c4b46502b5d3770b1a2d57c6af748a
+ms.openlocfilehash: 017ee2b6feb87841f31660fe6cb76ccbefd5c83b
+ms.lasthandoff: 03/02/2017
 
 ---
 
@@ -79,26 +80,26 @@ Console.WriteLine(String.Format(CultureInfo.InvariantCulture,
 // Displays 0.6
 
 value = 1234567890;
-Console.WriteLine(value.ToString("0,0", CultureInfo.InvariantCulture)); 
+Console.WriteLine(value.ToString("0,0", CultureInfo.InvariantCulture));    
 Console.WriteLine(String.Format(CultureInfo.InvariantCulture, 
-                                "{0:0,0}", value)); 
+                                "{0:0,0}", value));    
 // Displays 1,234,567,890      
 
 CultureInfo elGR = CultureInfo.CreateSpecificCulture("el-GR");
-Console.WriteLine(value.ToString("0,0", elGR)); 
-Console.WriteLine(String.Format(elGR, "{0:0,0}", value));   
+Console.WriteLine(value.ToString("0,0", elGR));    
+Console.WriteLine(String.Format(elGR, "{0:0,0}", value));    
 // Displays 1.234.567.890
 
 value = 1234567890.123456;
-Console.WriteLine(value.ToString("0,0.0", CultureInfo.InvariantCulture));   
+Console.WriteLine(value.ToString("0,0.0", CultureInfo.InvariantCulture));    
 Console.WriteLine(String.Format(CultureInfo.InvariantCulture, 
-                                "{0:0,0.0}", value));   
+                                "{0:0,0.0}", value));    
 // Displays 1,234,567,890.1  
 
 value = 1234.567890;
-Console.WriteLine(value.ToString("0,0.00", CultureInfo.InvariantCulture));  
+Console.WriteLine(value.ToString("0,0.00", CultureInfo.InvariantCulture));    
 Console.WriteLine(String.Format(CultureInfo.InvariantCulture, 
-                                "{0:0,0.00}", value));  
+                                "{0:0,0.00}", value));    
 // Displays 1,234.57
 ```
 
@@ -131,9 +132,9 @@ Console.WriteLine(String.Format(CultureInfo.InvariantCulture,
 ' Displays 0.6
 
 value = 1234567890
-Console.WriteLine(value.ToString("0,0", CultureInfo.InvariantCulture))  
+Console.WriteLine(value.ToString("0,0", CultureInfo.InvariantCulture))    
 Console.WriteLine(String.Format(CultureInfo.InvariantCulture, 
-                                "{0:0,0}", value))  
+                                "{0:0,0}", value))    
 ' Displays 1,234,567,890      
 Dim elGR As CultureInfo = CultureInfo.CreateSpecificCulture("el-GR")
 Console.WriteLine(value.ToString("0,0", elGR))
@@ -147,13 +148,13 @@ Console.WriteLine(String.Format(CultureInfo.InvariantCulture,
 ' Displays 1,234,567,890.1  
 
 value = 1234.567890
-Console.WriteLine(value.ToString("0,0.00", CultureInfo.InvariantCulture))   
+Console.WriteLine(value.ToString("0,0.00", CultureInfo.InvariantCulture))    
 Console.WriteLine(String.Format(CultureInfo.InvariantCulture, 
-                                "{0:0,0.00}", value))   
+                                "{0:0,0.00}", value))    
 ' Displays 1,234.57
 ```
 
-## <a name="the-custom-specifier"></a>"#" カスタム指定子
+## <a name="the--custom-specifier"></a>"#" カスタム指定子
 
 "#" カスタム書式指定子は、桁プレースホルダー記号として機能します。 書式が指定される値で、書式指定文字列の "#" 記号に対応する位置に数字がある場合には、この数字が結果の文字列にコピーされます。 それ以外の場合は、結果の文字列のこの位置には何も格納されません。 
 
@@ -251,9 +252,9 @@ End Module
 '      The value is: ' .324'
 ```
 
-## <a name="the-custom-specifier"></a>"." カスタム指定子
+## <a name="the--custom-specifier"></a>"." カスタム指定子
 
-"." カスタム書式指定子は、ローカライズされた小数点を結果の文字列に挿入します。 書式指定文字列の 1 番目のピリオドによって、書式設定後の値での小数点の位置が決定します。指定されている他のピリオドは無視されます。 
+"." カスタム書式指定子は、ローカライズされた小数点を結果の文字列に挿入します。 書式指定文字列の&1; 番目のピリオドによって、書式設定後の値での小数点の位置が決定します。指定されている他のピリオドは無視されます。 
 
 結果の文字列の中で小数点として使用される文字は、ピリオドであるとは限りません。書式設定を制御する [NumberFormatInfo](xref:System.Globalization.NumberFormatInfo) オブジェクトの [NumberDecimalSeparator](xref:System.Globalization.NumberFormatInfo.NumberDecimalSeparator) プロパティによって決定されます。
 
@@ -325,17 +326,17 @@ Dim value As Double
 ' Displays 8.6E+4
 ```
 
-## <a name="the-custom-specifier"></a>"," カスタム指定子
+## <a name="the--custom-specifier"></a>"," カスタム指定子
 
 "," 文字は、桁区切り記号および数値位取り指定子の両方として機能します。 
 
-* 桁区切り記号: 数値の整数部の桁を書式設定する 2 つの桁プレースホルダー (0 または #) の間に 1 つ以上のコンマが指定されている場合は、出力の整数部分で各数値グループの間に桁区切り記号文字が挿入されます。 
+* 桁区切り記号: 数値の整数部の桁を書式設定する&2; つの桁プレースホルダー (0 または #) の間に&1; つ以上のコンマが指定されている場合は、出力の整数部分で各数値グループの間に桁区切り記号文字が挿入されます。 
 
   現在の [NumberFormatInfo](xref:System.Globalization.NumberFormatInfo) オブジェクトの [NumberGroupSeparator](xref:System.Globalization.NumberFormatInfo.NumberGroupSeparator) プロパティと [NumberGroupSizes](xref:System.Globalization.NumberFormatInfo.NumberGroupSizes) プロパティによって、桁区切り記号として使用される文字および各数値グループのサイズが決まります。 たとえば、文字列 "#,#" およびインバリアント カルチャを使用して数値 1000 が書式設定される場合は、出力が "1,000" となります。
   
 * 数値位取り指定子: 明示的または暗黙的な小数点のすぐ左側に 1 つ以上のコンマが指定されている場合は、コンマごとに書式設定対象の数値が 1000 で除算されます。 たとえば、"0,," 文字列を使用して数値 1 億が書式設定された場合、出力は "100" となります。 
 
-桁区切り記号および数値位取り指定子は、同じ書式指定文字列で使用できます。 たとえば、"#,0,," 文字列およびインバリアント カルチャを使用して 10 億の数値を書式設定した場合、出力は "1,000" となります。 
+桁区切り記号および数値位取り指定子は、同じ書式指定文字列で使用できます。 たとえば、"#,0,," 文字列およびインバリアント カルチャを使用して&10; 億の数値を書式設定した場合、出力は "1,000" となります。 
 
 桁区切り記号としてコンマを使用する例を次に示します。
 
@@ -369,9 +370,9 @@ Console.WriteLine(String.Format(CultureInfo.InvariantCulture,
 
 ```csharp
 double value = 1234567890;
-Console.WriteLine(value.ToString("#,,", CultureInfo.InvariantCulture)); 
+Console.WriteLine(value.ToString("#,,", CultureInfo.InvariantCulture));    
 Console.WriteLine(String.Format(CultureInfo.InvariantCulture, 
-                                "{0:#,,}", value)); 
+                                "{0:#,,}", value));    
 // Displays 1235   
 
 Console.WriteLine(value.ToString("#,,,", CultureInfo.InvariantCulture));
@@ -388,7 +389,7 @@ Console.WriteLine(String.Format(CultureInfo.InvariantCulture,
 ```vb
 Dim value As Double = 1234567890
   Console.WriteLine(value.ToString("#,,", CultureInfo.InvariantCulture))    
-  Console.WriteLine(String.Format(CultureInfo.InvariantCulture, "{0:#,,}", value))  
+  Console.WriteLine(String.Format(CultureInfo.InvariantCulture, "{0:#,,}", value))    
   ' Displays 1235   
 
   Console.WriteLine(value.ToString("#,,,", CultureInfo.InvariantCulture))
@@ -402,7 +403,7 @@ Dim value As Double = 1234567890
 ' Displays 1,235
 ```
 
-## <a name="the-custom-specifier"></a>"%" カスタム指定子
+## <a name="the--custom-specifier"></a>"%" カスタム指定子
 
 書式指定文字列にパーセント記号 (%) があると、書式設定前に数値に 100 が乗算されます。 数値では、書式指定文字列の % に対応する位置にローカライズされたパーセント記号が挿入されます。 使用されるパーセント記号は、現在の [NumberFormatInfo](xref:System.Globalization.NumberFormatInfo) オブジェクトの [PercentSymbol](xref:System.Globalization.NumberFormatInfo.PercentSymbol) プロパティによって定義されます。
 
@@ -424,7 +425,7 @@ Console.WriteLine(String.Format(CultureInfo.InvariantCulture,
 ' Displays 8.6% 
 ```
 
-## <a name="the-custom-specifier"></a>"‰" カスタム指定子
+## <a name="the--custom-specifier"></a>"‰" カスタム指定子
 
 書式指定文字列にパーミル文字 (‰ または \u2030) があると、書式設定前に数値に 1000 が乗算されます。 返される文字列では、書式指定文字列の ‰ に対応する位置に適切なパーミル記号が挿入されます。 使用されるパーミル文字は、カルチャ固有の書式設定情報を指定するオブジェクトの [NumberFormatInfo.PerMilleSymbol](xref:System.Globalization.NumberFormatInfo.PerMilleSymbol) プロパティによって定義されます。
 
@@ -450,7 +451,7 @@ Console.WriteLine(String.Format(CultureInfo.InvariantCulture,
 
 ## <a name="the-e-and-e-custom-specifiers"></a>"E" カスタム指定子と "e" カスタム指定子
 
-書式指定文字列に "E"、"E+"、"E-"、"e"、"e+"、または "e-" が含まれており、これらの文字の直後にゼロが 1 つ以上続く場合には、指数表記を使用して数値の書式が設定されます。また、数値と指数の間に "E" または "e" が挿入されます。 指数表記インジケーターの後に続くゼロの数によって、出力の指数部の最小桁数が決まります。 書式 "E+" または "e+" は、正符号または負符号が指数部の前に常に挿入されることを示します。 書式 "E"、"E-"、"e"、または "e-" は、指数部が負の値の場合にだけその前に符号文字が挿入されることを示します。
+書式指定文字列に "E"、"E+"、"E-"、"e"、"e+"、または "e-" が含まれており、これらの文字の直後にゼロが&1; つ以上続く場合には、指数表記を使用して数値の書式が設定されます。また、数値と指数の間に "E" または "e" が挿入されます。 指数表記インジケーターの後に続くゼロの数によって、出力の指数部の最小桁数が決まります。 書式 "E+" または "e+" は、正符号または負符号が指数部の前に常に挿入されることを示します。 書式 "E"、"E-"、"e"、または "e-" は、指数部が負の値の場合にだけその前に符号文字が挿入されることを示します。
 
 次の例では、指数表記の指定子を使用して、さまざまな数値の書式を設定します。
 
@@ -490,18 +491,18 @@ Console.WriteLine(String.Format(CultureInfo.InvariantCulture,
 ' Displays 8.6E004
 ```
 
-## <a name="the-escape-character"></a>"\"" エスケープ文字
+## <a name="the--escape-character"></a>"\"" エスケープ文字
 
 書式指定文字列内の "#"、"0"、"."、","、"%"、"‰" の各記号は、リテラル文字ではなく書式指定子として解釈されます。 カスタム書式指定文字列内での位置によっては、大文字および小文字の "E"、および + 記号と - 記号も書式指定子として解釈されます。 
 
 文字が書式指定子として解釈されないようにするには、その文字の前に、エスケープ文字の円記号を付けます。 エスケープ文字は、その後に続く文字が、そのまま結果の文字列に含める必要がある文字リテラルであることを示します。
 
-結果の文字列に円記号を含める場合は、円記号をもう 1 つ付加して、円記号自体をエスケープする必要があります (\\)。 
+結果の文字列に円記号を含める場合は、円記号をもう&1; つ付加して、円記号自体をエスケープする必要があります (\\)。 
 
 > [!NOTE]
-> C# コンパイラなど、一部のコンパイラでは、同様に、1 つの円記号がエスケープ文字として解釈されることがあります。 書式設定時に文字列が正しく解釈されるようにするには、C# では、逐語的文字列リテラル文字 (@ 文字) を文字列の前に使用します。また、各円記号の前にもう 1 つ円記号を付ける方法もあります。 両方の方法を次の C# の例に示します。
+> C# コンパイラなど、一部のコンパイラでは、同様に、1 つの円記号がエスケープ文字として解釈されることがあります。 書式設定時に文字列が正しく解釈されるようにするには、C# では、逐語的文字列リテラル文字 (@ 文字) を文字列の前に使用します。また、円記号の前にもう&1; つ円記号を付ける方法もあります。 両方の方法を次の C# の例に示します。
 
-次の例では、エスケープ文字を使用して、書式設定操作で "#"、"0"、"\"" の各文字がエスケープ文字としても書式指定子としても解釈されないようにします。 この例では、円記号をもう 1 つ付けて、円記号がリテラル文字として解釈されるようにしています。
+次の例では、エスケープ文字を使用して、書式設定操作で "#"、"0"、"\"" の各文字がエスケープ文字としても書式指定子としても解釈されないようにします。 この例では、円記号をもう&1; つ付けて、円記号がリテラル文字として解釈されるようにしています。
 
 ```csharp
 int value = 123;
@@ -539,15 +540,15 @@ Console.WriteLine(String.Format("{0:\\\\\\ ##0 dollars and \0\0 cents \\\\\\}",
 ' Displays \\\ 123 dollars and 00 cents \\\
 ```
 
-## <a name="the-section-separator"></a>";" セクション区切り記号
+## <a name="the--section-separator"></a>";" セクション区切り記号
 
-セミコロン (;) は、値が正、負、ゼロのいずれであるかに応じて異なる書式設定を数値に適用する条件付き書式指定子です。 このように数値の内容によって適用する書式を変更するには、カスタム書式指定文字列に、セミコロンで区切ったセクションを最大 3 つまで作成します。 これらのセクションの説明を次に示します。 
+セミコロン (;) は、値が正、負、ゼロのいずれであるかに応じて異なる書式設定を数値に適用する条件付き書式指定子です。 このように数値の内容によって適用する書式を変更するには、カスタム書式指定文字列に、セミコロンで区切ったセクションを最大&3; つまで作成します。 これらのセクションの説明を次に示します。 
 
 セクションの数 | 説明
 ------------------ | -----------
 1 つ | 書式指定文字列はすべての値に適用されます。
 2 つ | 最初のセクションが正の値とゼロに適用され、2 番目のセクションが負の値に適用されます。 書式設定対象の数値が負の数値であるが、2 番目のセクションの書式指定に従って丸めた結果ゼロになる場合には、1 番目のセクションの書式に従ってこのゼロが書式設定されます。
-3 つ | 最初のセクションが正の値、2 番目のセクションが負の値、3 番目のセクションがゼロに適用されます。 ゼロ以外の値すべてに 1 番目のセクションが適用される場合には、2 番目のセクションが空になる (セミコロンの間に何も表示されない) ことがあります。 書式設定対象の数値がゼロ以外の負の数値であるが、1 番目または 2 番目のセクションの書式に従って丸めた結果ゼロになる場合には、3 番目のセクションの書式に従ってこのゼロが書式設定されます。
+3 つ | 最初のセクションが正の値、2 番目のセクションが負の値、3 番目のセクションがゼロに適用されます。 ゼロ以外の値すべてに&1; 番目のセクションが適用される場合には、2 番目のセクションが空になる (セミコロンの間に何も表示されない) ことがあります。 書式設定対象の数値がゼロ以外の負の数値であるが、1 番目または&2; 番目のセクションの書式に従って丸めた結果ゼロになる場合には、3 番目のセクションの書式に従ってこのゼロが書式設定されます。
 
 セクション区切り記号は、最後の値が書式設定されるときに、数値に関連付けられた既存の書式設定をすべて無視します。 たとえば、セクション区切り記号を使用する場合、負の値はマイナス記号を付けずに表示されます。 最終的に書式設定された値にマイナス記号を付ける場合は、カスタム書式指定子の中に明示的にマイナス記号を含める必要があります。 
 
@@ -603,7 +604,7 @@ Console.WriteLine(String.Format("{0:" + fmt3 + "}", zeroValue))
 
 ### <a name="rounding-and-fixed-point-format-strings"></a>丸めと固定小数点の書式指定文字列
 
-固定小数点の書式指定文字列 (つまり指数表記の書式指定文字を含まない書式指定文字列) の場合は、小数点以下の桁数が小数点の右側にある桁プレースホルダーの数と同じである数値に丸められます。 書式指定文字列に小数点が含まれていない場合には、最も近い整数に丸められます。 数値の桁数が、整数部の桁プレースホルダーの数よりも大きい場合には、桁プレースホルダーに収まらない桁が、結果の文字列の 1 番目の桁プレースホルダーの直前にコピーされます。
+固定小数点の書式指定文字列 (つまり指数表記の書式指定文字を含まない書式指定文字列) の場合は、小数点以下の桁数が小数点の右側にある桁プレースホルダーの数と同じである数値に丸められます。 書式指定文字列に小数点が含まれていない場合には、最も近い整数に丸められます。 数値の桁数が、整数部の桁プレースホルダーの数よりも大きい場合には、桁プレースホルダーに収まらない桁が、結果の文字列の&1; 番目の桁プレースホルダーの直前にコピーされます。
 
 ## <a name="example"></a>例
 
@@ -646,10 +647,5 @@ Console.WriteLine(value2)
 [方法: 先行するゼロを数値に埋め込む](pad-number.md)
 
 [複合書式指定](composite-format.md)
-
-
-
-
-<!--HONumber=Nov16_HO3-->
 
 

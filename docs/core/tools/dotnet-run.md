@@ -1,26 +1,29 @@
 ---
-title: "dotnet-run コマンド | .NET Core SDK"
+title: "dotnet-run コマンド | Microsoft Docs"
 description: "dotnet-run コマンドは、ソース コードからアプリケーションを実行する便利なオプションを提供します。"
 keywords: "dotnet-run, CLI, CLI コマンド, .NET Core"
-author: mairaw
-manager: wpickett
+author: blackdwarf
+ms.author: mairaw
 ms.date: 10/07/2016
 ms.topic: article
 ms.prod: .net-core
-ms.technology: .net-core-technologies
+ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: 495ff50b-cb30-4d30-8f20-beb3d5e7c31f
 translationtype: Human Translation
-ms.sourcegitcommit: c6ee3f5663d0a3f62914e8de474cca4d15340c9d
-ms.openlocfilehash: 18731d9fcc190371d908779a69a81114e0685aba
+ms.sourcegitcommit: 796df1549a7553aa93158598d62338c02d4df73e
+ms.openlocfilehash: 2e14cd14bc3d5ed86c841e46dc80c2649f239a82
 
 ---
 
-#<a name="dotnetrun"></a>dotnet-run
+#<a name="dotnet-run"></a>dotnet-run
+
+> [!WARNING]
+> このトピックは .NET Core Tools Preview 2 を対象としています。 .NET Core Tools RC4 バージョンについては、「[dotnet-run (.NET Core Tools RC4)](../preview3/tools/dotnet-run.md)」トピックを参照してください。
 
 ## <a name="name"></a>名前 
 
-dotnet-run -- 明示的なコンパイルや起動コマンドなしで、ソース コードを 'インプレース' で実行します。
+`dotnet-run` -- 明示的なコンパイルや起動コマンドなしで、ソース コードを 'インプレース' で実行します。
 
 ## <a name="synopsis"></a>構文
 
@@ -77,6 +80,6 @@ dotnet-run -- 明示的なコンパイルや起動コマンドなしで、ソー
 `dotnet run --configuration Release -- --help`
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Feb17_HO2-->
 
 

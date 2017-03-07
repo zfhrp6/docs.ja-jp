@@ -11,8 +11,9 @@ ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: fab3af5b-5d0f-4384-a40a-1b5d99b30dd1
 translationtype: Human Translation
-ms.sourcegitcommit: c40c28da09e8a122b542463c197196c82c81dd19
-ms.openlocfilehash: 99ec9d8c433025bbc5122fe3ea364fe84f33a1f8
+ms.sourcegitcommit: 90fe68f7f3c4b46502b5d3770b1a2d57c6af748a
+ms.openlocfilehash: 2ba70e9ea39148d040bdb46d5e00ea50dcbb8980
+ms.lasthandoff: 03/02/2017
 
 ---
 
@@ -25,7 +26,7 @@ ms.openlocfilehash: 99ec9d8c433025bbc5122fe3ea364fe84f33a1f8
 
 ## <a name="conversions-from-datetime-to-datetimeoffset"></a>DateTime から DateTimeOffset への変換
 
-[DateTimeOffset](xref:System.DateTimeOffset) 構造体は、ほとんどの変換に適した、[DateTime](xref:System.DateTime) から [DateTimeOffset](xref:System.DateTimeOffset) への変換を実行する次の 2 つの相当する方法を提供します。
+[DateTimeOffset](xref:System.DateTimeOffset) 構造体は、ほとんどの変換に適した、[DateTime](xref:System.DateTime) から [DateTimeOffset](xref:System.DateTimeOffset) への変換を実行する次の&2; つの相当する方法を提供します。
 
 * [DateTimeOffset(DateTime)](xref:System.DateTimeOffset) コンストラクター。[DateTime](xref:System.DateTime) 値に基づいて新しい [DateTimeOffset](xref:System.DateTimeOffset) オブジェクトを作成します。
 
@@ -82,7 +83,7 @@ Console.WriteLine("Converted {0} {1} to a DateTimeOffset value of {2}", _
 '    Converted 6/19/2008 7:00:00 AM Local to a DateTimeOffset value of 6/19/2008 7:00:00 AM -07:00
 ```
 
-ただし、[Kind](xref:System.DateTime.Kind) プロパティが [DateTimeKind.Unspecified](xref:System.DateTimeKind.Unspecified) である [DateTime](xref:System.DateTime) 値については、これらの 2 つの変換メソッドは、オフセットがローカル タイム ゾーンのオフセットである [DateTimeOffset](xref:System.DateTimeOffset) 値を生成します。 米国の太平洋標準時ゾーンでの実行例を次に示します。
+ただし、[Kind](xref:System.DateTime.Kind) プロパティが [DateTimeKind.Unspecified](xref:System.DateTimeKind.Unspecified) である [DateTime](xref:System.DateTime) 値については、これらの&2; つの変換メソッドは、オフセットがローカル タイム ゾーンのオフセットである [DateTimeOffset](xref:System.DateTimeOffset) 値を生成します。 米国の太平洋標準時ゾーンでの実行例を次に示します。
 
 ```csharp
 DateTime time1 = new DateTime(2008, 6, 19, 7, 0, 0);  // Kind is DateTimeKind.Unspecified
@@ -145,7 +146,7 @@ End Try
 '    Converted 6/19/2008 7:00:00 AM Unspecified to a DateTime value of 6/19/2008 7:00:00 AM -05:00
 ```
 
-このコンストラクター オーバーロードの 2 番目のパラメーターは、UTC からの時刻のオフセットを表す [System.TimeSpan](xref:System.TimeSpan) オブジェクトです。このオブジェクトは、時刻の対応するタイム ゾーンの [TimeZoneInfo.GetUtcOffset(DateTime)](xref:System.TimeZoneInfo) メソッドを呼び出して取得する必要があります。 このメソッドの単一のパラメーターは、変換する日時を表す [DateTime](xref:System.DateTime) 値です。 タイム ゾーンで夏時間がサポートされている場合、このパラメーターにより、このメソッドはその特定の日時に対して適切なオフセットを決定できます。
+このコンストラクター オーバーロードの&2; 番目のパラメーターは、UTC からの時刻のオフセットを表す [System.TimeSpan](xref:System.TimeSpan) オブジェクトです。このオブジェクトは、時刻の対応するタイム ゾーンの [TimeZoneInfo.GetUtcOffset(DateTime)](xref:System.TimeZoneInfo) メソッドを呼び出して取得する必要があります。 このメソッドの単一のパラメーターは、変換する日時を表す [DateTime](xref:System.DateTime) 値です。 タイム ゾーンで夏時間がサポートされている場合、このパラメーターにより、このメソッドはその特定の日時に対して適切なオフセットを決定できます。
 
 ## <a name="conversions-from-datetimeoffset-to-datetime"></a>DateTimeOffset から DateTime への変換
 
@@ -234,13 +235,13 @@ End Try
 '    6/19/2008 7:00:00 AM -05:00 converts to 6/19/2008 7:00:00 AM Unspecified 
 ```
 
-つまり、[DateTime](xref:System.DateTime) プロパティを使用すると、変換によって [DateTimeOffset](xref:System.DateTimeOffset) 値と UTC との関係に関するすべての情報が失われます。 このことは、UTC 時刻またはシステムの現地時刻に対応する [DateTimeOffset](xref:System.DateTimeOffset) 値に影響を与えます。これは、[DateTime](xref:System.DateTime) 構造体が、その [Kind](xref:System.DateTime.Kind) プロパティでこれらの 2 つのタイム ゾーンのみを反映するためです。
+つまり、[DateTime](xref:System.DateTime) プロパティを使用すると、変換によって [DateTimeOffset](xref:System.DateTimeOffset) 値と UTC との関係に関するすべての情報が失われます。 このことは、UTC 時刻またはシステムの現地時刻に対応する [DateTimeOffset](xref:System.DateTimeOffset) 値に影響を与えます。これは、[DateTime](xref:System.DateTime) 構造体が、その [Kind](xref:System.DateTime.Kind) プロパティでこれらの&2; つのタイム ゾーンのみを反映するためです。
 
 [DateTimeOffset](xref:System.DateTimeOffset) を [DateTime](xref:System.DateTime) 値に変換するときにできるだけ多くのタイム ゾーン情報を保持するには、[DateTimeOffset.UtcDateTime](xref:System.DateTimeOffset.UtcDateTime) プロパティと [DateTimeOffset.LocalDateTime](xref:System.DateTimeOffset.LocalDateTime) プロパティを使用します。 
 
 ## <a name="converting-a-utc-time"></a>UTC 時刻の変換
 
-変換された [DateTime](xref:System.DateTime) 値が UTC 時刻であることを示すには、[DateTimeOffset.UtcDateTime](xref:System.DateTimeOffset.UtcDateTime) プロパティの値を取得します。 このプロパティは、[DateTimeOffset.DateTime](xref:System.DateTimeOffset.DateTime) プロパティと次の 2 つの点で異なります。
+変換された [DateTime](xref:System.DateTime) 値が UTC 時刻であることを示すには、[DateTimeOffset.UtcDateTime](xref:System.DateTimeOffset.UtcDateTime) プロパティの値を取得します。 このプロパティは、[DateTimeOffset.DateTime](xref:System.DateTimeOffset.DateTime) プロパティと次の&2; つの点で異なります。
 
 * [Kind](xref:System.DateTime.Kind) プロパティが [DateTimeKind.Utc](xref:System.DateTimeKind.Utc) である [DateTime](xref:System.DateTime) 値を返します。
 
@@ -300,7 +301,7 @@ Console.WriteLine("{0} converted to {1} {2}", _
 
 ## <a name="converting-a-local-time"></a>現地時刻の変換
 
-[DateTimeOffset](xref:System.DateTimeOffset) 値が現地時刻を表すことを示すには、[DateTimeOffset.DateTime](xref:System.DateTimeOffset.DateTime) プロパティによって返される [DateTime](xref:System.DateTime) 値を静的な [DateTime.SpecifyKind(DateTime, DateTimeKind)](xref:System.DateTime.SpecifyKind(System.DateTime,System.DateTimeKind)) メソッドに渡します。 このメソッドは、その最初のパラメーターとして渡された日時を返しますが、[Kind](xref:System.DateTime.Kind) プロパティを、その 2 番目のパラメーターによって指定された値に設定します。 次のコードは、オフセットがローカル タイム ゾーンのオフセットに対応する [DateTimeOffset](xref:System.DateTimeOffset) 値を変換する際に、[SpecifyKind(DateTime, DateTimeKind)](xref:System.DateTime.SpecifyKind(System.DateTime,System.DateTimeKind)) メソッドを使用します。
+[DateTimeOffset](xref:System.DateTimeOffset) 値が現地時刻を表すことを示すには、[DateTimeOffset.DateTime](xref:System.DateTimeOffset.DateTime) プロパティによって返される [DateTime](xref:System.DateTime) 値を静的な [DateTime.SpecifyKind(DateTime, DateTimeKind)](xref:System.DateTime.SpecifyKind(System.DateTime,System.DateTimeKind)) メソッドに渡します。 このメソッドは、その最初のパラメーターとして渡された日時を返しますが、[Kind](xref:System.DateTime.Kind) プロパティを、その&2; 番目のパラメーターによって指定された値に設定します。 次のコードは、オフセットがローカル タイム ゾーンのオフセットに対応する [DateTimeOffset](xref:System.DateTimeOffset) 値を変換する際に、[SpecifyKind(DateTime, DateTimeKind)](xref:System.DateTime.SpecifyKind(System.DateTime,System.DateTimeKind)) メソッドを使用します。
 
 ```csharp
 DateTime sourceDate = new DateTime(2008, 6, 19, 7, 0, 0);
@@ -516,7 +517,7 @@ Console.WriteLine("{0} converted to {1} {2}", _
 '    6/19/2008 7:00:00 AM -05:00 converted to 6/19/2008 7:00:00 AM Unspecified
 ```
 
-このコードは次の 2 つのことを前提としますが、アプリケーションおよびその日時値のソースによっては常に有効とは限らないことに注意してください。
+このコードは次の&2; つのことを前提としますが、アプリケーションおよびその日時値のソースによっては常に有効とは限らないことに注意してください。
 
 * オフセットが [TimeSpan.Zero](xref:System.TimeSpan.Zero) である日時値が UTC を表すことを前提とします。 実際には、UTC は特定のタイム ゾーンの時刻ではなく、世界のタイム ゾーンの時刻を標準化する際に基準となる時刻です。 タイム ゾーンのオフセットが [Zero](xref:System.TimeSpan.Zero) である場合もあります。
 
@@ -528,10 +529,5 @@ Console.WriteLine("{0} converted to {1} {2}", _
 
 
 
-
-
-
-
-<!--HONumber=Nov16_HO3-->
 
 

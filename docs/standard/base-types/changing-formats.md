@@ -11,8 +11,9 @@ ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: 3e196697-981c-4c1d-93dd-c3b236ef36dd
 translationtype: Human Translation
-ms.sourcegitcommit: fb00da6505c9edb6a49d2003ae9bcb8e74c11d6c
-ms.openlocfilehash: 65cdec2c8bc8caf44329ee44bd574e612723be11
+ms.sourcegitcommit: 90fe68f7f3c4b46502b5d3770b1a2d57c6af748a
+ms.openlocfilehash: f801e8761ad2dfe80915cc4425c359cfae99949e
+ms.lasthandoff: 03/02/2017
 
 ---
 
@@ -119,11 +120,11 @@ End Module
 パターン | 説明
 ------- | ----------- 
 `\b` | ワード境界から照合を開始します。
-`(?<month>\d{1,2})` | 1 桁または 2 桁の 10 進数と一致します。 これは、`month` キャプチャ グループです。
+`(?<month>\d{1,2})` | 1 桁または&2; 桁の&10; 進数と一致します。 これは、`month` キャプチャ グループです。
 `/` | スラッシュ マークと一致します。
-`(?<day>\d{1,2})` | 1 桁または 2 桁の 10 進数と一致します。 これは、`day` キャプチャ グループです。
+`(?<day>\d{1,2})` | 1 桁または&2; 桁の&10; 進数と一致します。 これは、`day` キャプチャ グループです。
 `/` | スラッシュ マークと一致します。
-`(?<year>\d{2,4})` | 2 ～ 4 の 10 進数と一致します。 これは、`year` キャプチャ グループです。
+`(?<year>\d{2,4})` | 2 ～&4; の&10; 進数と一致します。 これは、`year` キャプチャ グループです。
 `\b` | ワード境界で照合を終了します。
  
 パターン `${day}-${month}-${year}` は、次の表に示すように置換文字列を定義します。
@@ -141,9 +142,4 @@ End Module
 [.NET 正規表現](regular-expressions.md)
 
 [正規表現の例](regex-examples.md)
-
-
-
-<!--HONumber=Nov16_HO3-->
-
 

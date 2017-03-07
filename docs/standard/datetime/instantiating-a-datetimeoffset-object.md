@@ -11,8 +11,9 @@ ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: 476fe67b-6be4-4435-88ab-ced37304f1d1
 translationtype: Human Translation
-ms.sourcegitcommit: c40c28da09e8a122b542463c197196c82c81dd19
-ms.openlocfilehash: 3b6e2cc973b9587cc9950ecd6898b8a321a01036
+ms.sourcegitcommit: 90fe68f7f3c4b46502b5d3770b1a2d57c6af748a
+ms.openlocfilehash: 26be324eb5d58b94a71e89aba213f107cf8dfd1e
+ms.lasthandoff: 03/02/2017
 
 ---
 
@@ -28,7 +29,7 @@ ms.openlocfilehash: 3b6e2cc973b9587cc9950ecd6898b8a321a01036
 
 ## <a name="date-and-time-literals"></a>日付と時刻のリテラル
 
-これをサポートしている言語では、[DateTime](xref:System.DateTime) 値をインスタンス化する最も一般的な方法の 1 つが、ハード コーディングされたリテラル値として日付と時刻を指定することです。 たとえば、次の Visual Basic コードでは、値が 2008 年 1 月 1 日午前 10時 00分の [DateTime](xref:System.DateTime) オブジェクトを作成しています。
+これをサポートしている言語では、[DateTime](xref:System.DateTime) 値をインスタンス化する最も一般的な方法の&1; つが、ハード コーディングされたリテラル値として日付と時刻を指定することです。 たとえば、次の Visual Basic コードでは、値が 2008 年 1 月 1 日午前 10時 00分の [DateTime](xref:System.DateTime) オブジェクトを作成しています。
 
 ```vb
 Dim literalDate1 As Date = #05/01/2008 8:06:32 AM#
@@ -50,7 +51,7 @@ Console.WriteLine(literalDate.ToString())
 
 ## <a name="datetimeoffset-constructors"></a>DateTimeOffset コンストラクター
 
-[System.DateTimeOffset](xref:System.DateTimeOffset) 型は、5 つのコンストラクターを定義します。 それらのうちの 3 つは、[DateTime](xref:System.DateTime) コンストラクターに直接対応し、UTC からの日付と時刻のオフセットを定義する [System.TimeSpan](xref:System.TimeSpan) 型のパラメーターが追加されています。 これらにより、個々の日付と時刻のコンポーネントの値に基づいて、[DateTimeOffset](xref:System.DateTimeOffset) 値を定義できます。 たとえば、次のコードはこれらの 3 つのコンストラクターを使用して、7/1/2008 12:05 AM +01:00 の同じ値で [DateTimeOffset](xref:System.DateTimeOffset) オブジェクトをインスタンス化しています。
+[System.DateTimeOffset](xref:System.DateTimeOffset) 型は、5 つのコンストラクターを定義します。 それらのうちの&3; つは、[DateTime](xref:System.DateTime) コンストラクターに直接対応し、UTC からの日付と時刻のオフセットを定義する [System.TimeSpan](xref:System.TimeSpan) 型のパラメーターが追加されています。 これらにより、個々の日付と時刻のコンポーネントの値に基づいて、[DateTimeOffset](xref:System.DateTimeOffset) 値を定義できます。 たとえば、次のコードはこれらの 3 つのコンストラクターを使用して、7/1/2008 12:05 AM +01:00 の同じ値で [DateTimeOffset](xref:System.DateTimeOffset) オブジェクトをインスタンス化しています。
 
 ```csharp
 DateTimeOffset dateAndTime;
@@ -111,9 +112,9 @@ Console.WriteLine(dateAndTime)
 '       5/1/2008 8:06:32 AM +01:00
 ```
 
-[PersianCalendar](xref:System.Globalization.PersianCalendar) オブジェクトをそのコンストラクターへの引数の 1 つとして使用して、インスタンス化された [DateTimeOffset](xref:System.DateTimeOffset) オブジェクトの値がコンソールに表示されると、ペルシャ暦ではなく、グレゴリオ暦の日付として表されることに注意してください。 
+[PersianCalendar](xref:System.Globalization.PersianCalendar) オブジェクトをそのコンストラクターへの引数の&1; つとして使用して、インスタンス化された [DateTimeOffset](xref:System.DateTimeOffset) オブジェクトの値がコンソールに表示されると、ペルシャ暦ではなく、グレゴリオ暦の日付として表されることに注意してください。 
 
-他の 2 つのコンストラクターは、DateTime 値から [DateTimeOffset](xref:System.DateTimeOffset) オブジェクトを作成します。 1 つ目のコンストラクターには、[DateTimeOffset](xref:System.DateTimeOffset) 値に変換される 1 つのパラメーター [DateTime](xref:System.DateTime) 値があります。 結果の [DateTimeOffset](xref:System.DateTimeOffset) 値のオフセットは、コンストラクターの単一の [DateTime](xref:System.DateTime) パラメーターの [Kind](xref:System.DateTime.Kind) プロパティによって異なります。 その値が [DateTimeKind.Utc](xref:System.DateTimeKind.Utc) の場合、オフセットは [TimeSpan.Zero](xref:System.TimeSpan.Zero) に等しい値に設定されます。 それ以外の場合、オフセットはローカル タイム ゾーンのオフセットと等しい値に設定されます。 次の例に、このコンストラクターを使用して、UTC とローカル タイム ゾーンを表す [DateTimeOffset](xref:System.DateTimeOffset) オブジェクトをインスタンス化する方法を示します。
+他の&2; つのコンストラクターは、DateTime 値から [DateTimeOffset](xref:System.DateTimeOffset) オブジェクトを作成します。 1 つ目のコンストラクターには、[DateTimeOffset](xref:System.DateTimeOffset) 値に変換される&1; つのパラメーター [DateTime](xref:System.DateTime) 値があります。 結果の [DateTimeOffset](xref:System.DateTimeOffset) 値のオフセットは、コンストラクターの単一の [DateTime](xref:System.DateTime) パラメーターの [Kind](xref:System.DateTime.Kind) プロパティによって異なります。 その値が [DateTimeKind.Utc](xref:System.DateTimeKind.Utc) の場合、オフセットは [TimeSpan.Zero](xref:System.TimeSpan.Zero) に等しい値に設定されます。 それ以外の場合、オフセットはローカル タイム ゾーンのオフセットと等しい値に設定されます。 次の例に、このコンストラクターを使用して、UTC とローカル タイム ゾーンを表す [DateTimeOffset](xref:System.DateTimeOffset) オブジェクトをインスタンス化する方法を示します。
 
 ```csharp
 // Declare date; Kind property is DateTimeKind.Unspecified
@@ -198,7 +199,7 @@ Console.WriteLine(targetTime)
 > [!NOTE]
 > 単一の [DateTime](xref:System.DateTime) パラメーターを持つ [DateTimeOffset](xref:System.DateTimeOffset) コンストラクターのオーバーロードを呼び出すことは、[DateTime](xref:System.DateTime) 値の [DateTimeOffset](xref:System.DateTimeOffset) への暗黙の変換を実行することと同じです。
 
-[DateTime](xref:System.DateTime) 値から [DateTimeOffset](xref:System.DateTimeOffset) オブジェクトを作成する 2 つ目のコンストラクターには、変換する [DateTime](xref:System.DateTime) 値と UTC からの日付と時刻のオフセットを表す [TimeSpan](xref:System.TimeSpan) 値の 2 つのパラメーターがあります。 このオフセット値はコンストラクターの最初のパラメーターの [Kind](xref:System.DateTime.Kind) プロパティに対応している必要があり、そうでないと、[System.ArgumentException](xref:System.ArgumentException) がスローされます。 最初のパラメーターの [Kind](xref:System.DateTime.Kind) プロパティが、[DateTimeKind.Utc](xref:System.DateTimeKind.Utc) である場合、2 番目のパラメーターの値は [TimeSpan.Zero](xref:System.TimeSpan.Zero) である必要があります。 最初のパラメーターの [Kind](xref:System.DateTime.Kind) プロパティが [DateTimeKind.Local](xref:System.DateTimeKind.Local) である場合、2 番目のパラメーターの値はローカル システムのタイム ゾーンのオフセットである必要があります。 最初のパラメーターの [Kind](xref:System.DateTime.Kind) プロパティが [DateTimeKind.Unspecified](xref:System.DateTimeKind.Unspecified) である場合は、オフセットに任意の有効な値を指定できます。 次のコードは、[DateTime](xref:System.DateTime) 値を [DateTimeOffset](xref:System.DateTimeOffset) 値に変換するためのこのコンストラクターの呼び出しを示しています。
+[DateTime](xref:System.DateTime) 値から [DateTimeOffset](xref:System.DateTimeOffset) オブジェクトを作成する&2; つ目のコンストラクターには、変換する [DateTime](xref:System.DateTime) 値と UTC からの日付と時刻のオフセットを表す [TimeSpan](xref:System.TimeSpan) 値の&2; つのパラメーターがあります。 このオフセット値はコンストラクターの最初のパラメーターの [Kind](xref:System.DateTime.Kind) プロパティに対応している必要があり、そうでないと、[System.ArgumentException](xref:System.ArgumentException) がスローされます。 最初のパラメーターの [Kind](xref:System.DateTime.Kind) プロパティが、[DateTimeKind.Utc](xref:System.DateTimeKind.Utc) である場合、2 番目のパラメーターの値は [TimeSpan.Zero](xref:System.TimeSpan.Zero) である必要があります。 最初のパラメーターの [Kind](xref:System.DateTime.Kind) プロパティが [DateTimeKind.Local](xref:System.DateTimeKind.Local) である場合、2 番目のパラメーターの値はローカル システムのタイム ゾーンのオフセットである必要があります。 最初のパラメーターの [Kind](xref:System.DateTime.Kind) プロパティが [DateTimeKind.Unspecified](xref:System.DateTimeKind.Unspecified) である場合は、オフセットに任意の有効な値を指定できます。 次のコードは、[DateTime](xref:System.DateTime) 値を [DateTimeOffset](xref:System.DateTimeOffset) 値に変換するためのこのコンストラクターの呼び出しを示しています。
 
 ```csharp
 DateTime sourceDate = new DateTime(2008, 5, 1, 8, 30, 0);
@@ -313,7 +314,7 @@ Console.WriteLine(targetTime)
 
 ## <a name="implicit-type-conversion"></a>無効な型変換
  
-[System.DateTimeOffset](xref:System.DateTimeOffset) 型は、[System.DateTime](xref:System.DateTime) 値から [DateTimeOffset](xref:System.DateTimeOffset) 値への 1 つの暗黙的な型変換をサポートしています (暗黙的な型変換とは、明示的なキャスト (C# の場合) または変換 (Visual Basic の場合) を必要とせず、情報を失わない 1 つの型から別の型への変換です)。 これにより、次のようなコードが可能となります。
+[System.DateTimeOffset](xref:System.DateTimeOffset) 型は、[System.DateTime](xref:System.DateTime) 値から [DateTimeOffset](xref:System.DateTimeOffset) 値への&1; つの暗黙的な型変換をサポートしています (暗黙的な型変換とは、明示的なキャスト (C# の場合) または変換 (Visual Basic の場合) を必要とせず、情報を失わない&1; つの型から別の型への変換です)。 これにより、次のようなコードが可能となります。
 
 ```csharp
 DateTimeOffset targetTime;
@@ -363,7 +364,7 @@ Console.WriteLine(targetTime)
 
 ## <a name="parsing-the-string-representation-of-a-date-and-time"></a>日付と時刻の文字列形式の解析
 
-[System.DateTimeOffset](xref:System.DateTimeOffset) 型は、日付と時刻の文字列形式を [DateTimeOffset](xref:System.DateTimeOffset) 値に変換できる 4 つのメソッドをサポートしています。
+[System.DateTimeOffset](xref:System.DateTimeOffset) 型は、日付と時刻の文字列形式を [DateTimeOffset](xref:System.DateTimeOffset) 値に変換できる&4; つのメソッドをサポートしています。
 
 * [Parse](xref:System.DateTimeOffset.Parse(System.String)) は、日付と時刻の文字列形式を [DateTimeOffset](xref:System.DateTimeOffset) 値に変換し、変換が失敗した場合、例外をスローします。
 
@@ -373,7 +374,7 @@ Console.WriteLine(targetTime)
 
 * [TryParseExact](xref:System.DateTimeOffset.TryParseExact(System.String,System.String,System.IFormatProvider,System.Globalization.DateTimeStyles,System.DateTimeOffset@)) は、指定した形式の日付と時刻の文字列形式を、[DateTimeOffset](xref:System.DateTimeOffset) 値に変換しようと試みます。 変換が失敗すると、メソッドは `false` を返します。
 
-次の例では、[DateTimeOffset](xref:System.DateTimeOffset) 値をインスタンス化するこれらの 4 つの各文字列変換メソッドの呼び出しを示しています。
+次の例では、[DateTimeOffset](xref:System.DateTimeOffset) 値をインスタンス化するこれらの&4; つの各文字列変換メソッドの呼び出しを示しています。
 
 ```csharp
 string timeString; 
@@ -482,10 +483,5 @@ End If
 ## <a name="see-also"></a>関連項目
 
 [日付、時刻およびタイム ゾーン](index.md)
-
-
-
-
-<!--HONumber=Nov16_HO3-->
 
 

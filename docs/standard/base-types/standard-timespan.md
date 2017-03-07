@@ -3,16 +3,17 @@ title: "標準 TimeSpan 書式指定文字列"
 description: "標準 TimeSpan 書式指定文字列"
 keywords: .NET, .NET Core
 author: stevehoag
-manager: wpickett
+ms.author: shoag
 ms.date: 07/26/2016
 ms.topic: article
-ms.prod: .net-core
-ms.technology: .net-core-technologies
+ms.prod: .net
+ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: 4e0f02f1-4abd-47b5-8995-5c3ff45b0ce1
 translationtype: Human Translation
-ms.sourcegitcommit: fb00da6505c9edb6a49d2003ae9bcb8e74c11d6c
-ms.openlocfilehash: a31f0da1f5b502d8b983f4d496c4b9a520b0309c
+ms.sourcegitcommit: 90fe68f7f3c4b46502b5d3770b1a2d57c6af748a
+ms.openlocfilehash: 4e6b58cd8b29b4a9d46bd43a03c1e8c6c45dfcaa
+ms.lasthandoff: 03/02/2017
 
 ---
 
@@ -123,7 +124,7 @@ End Module
 ---------------- | ---- | ----------- | --------
 "c" | 固定 (不変) 書式 | この指定子はカルチャに依存しません。 [-][d’.’]hh’:’mm’:’ss[‘.’fffffff] の書式になります。 ("t" と "T" の各書式指定文字列によって生成される結果は同じになります。) | `TimeSpan.Zero -> 00:00:00`; `New TimeSpan(0, 0, 30, 0) -> 00:30:00`; `New TimeSpan(3, 17, 25, 30, 500) -> 3.17:25:30.5000000`
 "g" | 一般の短い書式 | この指定子は必要なものだけを出力します。 カルチャに依存し、[-][d’:’]h’:’mm’:’ss[.FFFFFFF] の書式になります。 | `New TimeSpan(1, 3, 16, 50, 500) -> 1:3:16:50.5 (en-US)`; `New TimeSpan(1, 3, 16, 50, 500) -> 1:3:16:50,5 (fr-FR)`; `New TimeSpan(1, 3, 16, 50, 599) -> 1:3:16:50.599 (en-US)`; `New TimeSpan(1, 3, 16, 50, 599) -> 1:3:16:50,599 (fr-FR)`
-"G" | 一般の長い書式 | この指定子は、常に日数と 7 桁の小数部を出力します。 カルチャに依存し、[-]d’:’hh’:’mm’:’ss.fffffff の書式になります。 | `New TimeSpan(18, 30, 0) -> 0:18:30:00.0000000 (en-US)`; `New TimeSpan(18, 30, 0) -> 0:18:30:00,0000000 (fr-FR)` 
+"G" | 一般の長い書式 | この指定子は、常に日数と&7; 桁の小数部を出力します。 カルチャに依存し、[-]d’:’hh’:’mm’:’ss.fffffff の書式になります。 | `New TimeSpan(18, 30, 0) -> 0:18:30:00.0000000 (en-US)`; `New TimeSpan(18, 30, 0) -> 0:18:30:00,0000000 (fr-FR)` 
 
 ## <a name="the-constant-c-format-specifier"></a>固定の ("c") 書式指定子
 
@@ -140,7 +141,7 @@ End Module
 *hh* | "00" ～ "23" の範囲の時間数。
 *mm* | "00" ～ "59" の範囲の分数。
 *ss* | "0" ～ "59" の範囲の秒数。
-*fffffff* | 省略可能な秒の小数部。 "0000001" (1 ティック、つまり 1,000 万分の 1 秒) ～ "9999999" (1,000 万分の 9,999,999 秒、つまり 1 秒より 1 ティック少ない) までの範囲の値が可能です。 
+*fffffff* | 省略可能な秒の小数部。 "0000001" (1 ティック、つまり&1;,000 万分の&1; 秒) ～ "9999999" (1,000 万分の&9;,999,999 秒、つまり&1; 秒より&1; ティック少ない) までの範囲の値が可能です。 
 
 "g" および "G" 書式指定子とは異なり、"c" 書式指定子はカルチャに依存しません。 不変で、かつ .NET Framework 4 より前のすべての .NET Framework バージョンに共通する [TimeSpan](xref:System.TimeSpan) 値の文字列形式を生成します。 "c" は、既定の [TimeSpan](xref:System.TimeSpan) 書式文字列です。[TimeSpan.ToString](xref:System.TimeSpan.ToString) メソッドは、"c" 書式指定文字列を使用して時間間隔値の書式を設定します。
 
@@ -366,10 +367,5 @@ End Module
 [複合書式指定](composite-format.md)
 
 [文字列の解析](parsing-strings.md)
-
-
-
-
-<!--HONumber=Nov16_HO1-->
 
 

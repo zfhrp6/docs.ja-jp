@@ -3,16 +3,17 @@ title: "StringBuilder クラスの使用"
 description: "StringBuilder クラスの使用"
 keywords: .NET, .NET Core
 author: stevehoag
-manager: wpickett
+ms.author: shoag
 ms.date: 07/26/2016
 ms.topic: article
-ms.prod: .net-core
-ms.technology: .net-core-technologies
+ms.prod: .net
+ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: f4f5d1c7-d84d-4867-810f-2708cd6de0da
 translationtype: Human Translation
-ms.sourcegitcommit: fb00da6505c9edb6a49d2003ae9bcb8e74c11d6c
-ms.openlocfilehash: 1e8453b78827d8c02f29135ddfb832956ab40f3c
+ms.sourcegitcommit: 90fe68f7f3c4b46502b5d3770b1a2d57c6af748a
+ms.openlocfilehash: 076e10e095b50cc96187f2ec13ade2365d83dad3
+ms.lasthandoff: 03/02/2017
 
 ---
 
@@ -35,7 +36,7 @@ Imports System.Text
 
 ## <a name="instantiating-a-stringbuilder-object"></a>StringBuilder オブジェクトのインスタンス化
 
-以下の例に示すように、オーバーロードされたコンストラクター メソッドの 1 つで変数を初期化することにより、[StringBuilder](xref:System.Text.StringBuilder) クラスの新しいインスタンスを作成することができます。
+以下の例に示すように、オーバーロードされたコンストラクター メソッドの&1; つで変数を初期化することにより、[StringBuilder](xref:System.Text.StringBuilder) クラスの新しいインスタンスを作成することができます。
 
 ```csharp
 StringBuilder MyStringBuilder = new StringBuilder("Hello World!");
@@ -47,7 +48,7 @@ Dim MyStringBuilder As New StringBuilder("Hello World!")
 
 ## <a name="setting-the-capacity-and-length"></a>容量と長さの設定
 
-[StringBuilder](xref:System.Text.StringBuilder) は、カプセル化する文字列内の文字数を拡張できるようにする動的オブジェクトですが、保持可能な最大文字数の値を指定することができます。 この値を、オブジェクトの容量と呼びます。これを現行の [StringBuilder](xref:System.Text.StringBuilder) が保持する文字列の長さと混同すべきではありません。 たとえば、"Hello" という長さ 5 の文字列を持つ [StringBuilder](xref:System.Text.StringBuilder) クラスの新しいインスタンスを作成するときに、オブジェクトの最大容量として 25 を指定することができます。 [StringBuilder](xref:System.Text.StringBuilder) を変更する際、容量に達するまでは、自動再割り当ては発生しません。 容量に達すると、新しい領域が自動的に割り当てられ、容量が 2 倍になります。 オーバーロードされたコンストラクターのいずれかを使用して、[StringBuilder](xref:System.Text.StringBuilder) クラスの容量を指定することができます。 次の例は、`MyStringBuilder` オブジェクトを最大 25 の領域に拡張できることを示しています。
+[StringBuilder](xref:System.Text.StringBuilder) は、カプセル化する文字列内の文字数を拡張できるようにする動的オブジェクトですが、保持可能な最大文字数の値を指定することができます。 この値を、オブジェクトの容量と呼びます。これを現行の [StringBuilder](xref:System.Text.StringBuilder) が保持する文字列の長さと混同すべきではありません。 たとえば、"Hello" という長さ 5 の文字列を持つ [StringBuilder](xref:System.Text.StringBuilder) クラスの新しいインスタンスを作成するときに、オブジェクトの最大容量として 25 を指定することができます。 [StringBuilder](xref:System.Text.StringBuilder) を変更する際、容量に達するまでは、自動再割り当ては発生しません。 容量に達すると、新しい領域が自動的に割り当てられ、容量が&2; 倍になります。 オーバーロードされたコンストラクターのいずれかを使用して、[StringBuilder](xref:System.Text.StringBuilder) クラスの容量を指定することができます。 次の例は、`MyStringBuilder` オブジェクトを最大 25 の領域に拡張できることを示しています。
 
 ```csharp
 StringBuilder MyStringBuilder = new StringBuilder("Hello World!", 25);
@@ -105,7 +106,7 @@ Console.WriteLine(MyStringBuilder)
 
 ### <a name="appendformat"></a>AppendFormat
 
-[StringBuilder.AppendFormat](xref:System.Text.StringBuilder.AppendFormat(System.IFormatProvider,System.String,System.Object)) メソッドは、[StringBuilder](xref:System.Text.StringBuilder) オブジェクトの末尾にテキストを追加します。 これは、書式設定される 1 つ以上のオブジェクトの [IFormattable](xref:System.IFormattable) 実装を呼び出すことにより、複合書式機能をサポートしています (詳細については、[Composite Formatting](composite-format.md) を参照してください)。 そのため、数値、日時、および列挙の値に対して標準書式文字列を受け取り、数値と日時の値、およびカスタム型に定義されている書式文字列に対してカスタム書式文字列を受け取ります。 (書式設定については、「[型の書式設定](formatting-types.md)」を参照してください。)このメソッドを使用して、変数の書式をカスタマイズし、その値を [StringBuilder](xref:System.Text.StringBuilder) に追加することができます。 次の例では、AppendFormat メソッドを使用して、[StringBuilder](xref:System.Text.StringBuilder) オブジェクトの末尾に、通貨値として書式設定されている整数値を挿入しています。
+[StringBuilder.AppendFormat](xref:System.Text.StringBuilder.AppendFormat(System.IFormatProvider,System.String,System.Object)) メソッドは、[StringBuilder](xref:System.Text.StringBuilder) オブジェクトの末尾にテキストを追加します。 これは、書式設定される&1; つ以上のオブジェクトの [IFormattable](xref:System.IFormattable) 実装を呼び出すことにより、複合書式機能をサポートしています (詳細については、[Composite Formatting](composite-format.md) を参照してください)。 そのため、数値、日時、および列挙の値に対して標準書式文字列を受け取り、数値と日時の値、およびカスタム型に定義されている書式文字列に対してカスタム書式文字列を受け取ります。 (書式設定については、「[型の書式設定](formatting-types.md)」を参照してください。)このメソッドを使用して、変数の書式をカスタマイズし、その値を [StringBuilder](xref:System.Text.StringBuilder) に追加することができます。 次の例では、AppendFormat メソッドを使用して、[StringBuilder](xref:System.Text.StringBuilder) オブジェクトの末尾に、通貨値として書式設定されている整数値を挿入しています。
 
 ```csharp
 int MyInt = 25; 
@@ -127,7 +128,7 @@ Console.WriteLine(MyStringBuilder)
 
 ### <a name="insert"></a>挿入
 
-[StringBuilder.Insert](xref:System.Text.StringBuilder.Insert(System.Int32,System.Char)) メソッドは、現行の [StringBuilder](xref:System.Text.StringBuilder) オブジェクトの指定された位置に、文字列またはオブジェクトを追加します。 次の例では、このメソッドを使用して、[StringBuilder](xref:System.Text.StringBuilder) オブジェクトの 6 番目の位置に単語を挿入しています。
+[StringBuilder.Insert](xref:System.Text.StringBuilder.Insert(System.Int32,System.Char)) メソッドは、現行の [StringBuilder](xref:System.Text.StringBuilder) オブジェクトの指定された位置に、文字列またはオブジェクトを追加します。 次の例では、このメソッドを使用して、[StringBuilder](xref:System.Text.StringBuilder) オブジェクトの&6; 番目の位置に単語を挿入しています。
 
 ```csharp
 StringBuilder MyStringBuilder = new StringBuilder("Hello World!");
@@ -251,9 +252,4 @@ End Module
 [基本的な文字列操作](basic-string-operations.md)
 
 [型の書式設定](formatting-types.md)
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

@@ -11,8 +11,9 @@ ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: 589ac5ec-8365-4a0d-bc38-72183718110c
 translationtype: Human Translation
-ms.sourcegitcommit: c40c28da09e8a122b542463c197196c82c81dd19
-ms.openlocfilehash: bb5cda188b6970c23e41faf82990034c3cf144ab
+ms.sourcegitcommit: 90fe68f7f3c4b46502b5d3770b1a2d57c6af748a
+ms.openlocfilehash: b872cc4c2b799ddafc9df263795d860754d1ec17
+ms.lasthandoff: 03/02/2017
 
 ---
 
@@ -87,13 +88,13 @@ Module DateManipulation
 End Module
 ```
 
-[DateTime.CompareTo(DateTime, DateTime)](xref:System.DateTime.Compare(System.DateTime,System.DateTime)) メソッドは、現地時刻が UTC 時刻より早い (より小さい) という結果を出力しており、減算の操作は、UTC と米国の太平洋標準時ゾーンにあるシステムの現地時刻との差が7 時間であることを示しています。 しかし、これら 2 つの値は、ある特定の時点を異なる表現で示したものであるため、この場合、時間差の原因は、UTC を基準としたローカル タイム ゾーンのオフセットにあることは明らかです。 
+[DateTime.CompareTo(DateTime, DateTime)](xref:System.DateTime.Compare(System.DateTime,System.DateTime)) メソッドは、現地時刻が UTC 時刻より早い (より小さい) という結果を出力しており、減算の操作は、UTC と米国の太平洋標準時ゾーンにあるシステムの現地時刻との差が7 時間であることを示しています。 しかし、これら&2; つの値は、ある特定の時点を異なる表現で示したものであるため、この場合、時間差の原因は、UTC を基準としたローカル タイム ゾーンのオフセットにあることは明らかです。 
 
 一般的に、[DateTimeKind](xref:System.DateTimeKind) プロパティは、[DateTime](xref:System.DateTime) の比較および算術メソッドによって返される結果に影響を与えません (2 つの同じ時点の比較結果が示すとおり)。ただし、その結果の解釈には影響を与えることがあります。 例:
 
-* 算術演算の実行対象となる 2 つの日付と時刻の値の [DateTimeKind](xref:System.DateTimeKind) プロパティが両方とも [DateTimeKind.Utc](xref:System.DateTimeKind.Utc) である場合、実行結果には、2 つの値の実際の時間差が反映されます。 同様に、そのような 2 つの日付と時刻の値を比較した結果には、2 つの時間の関係が正確に反映されます。
+* 算術演算の実行対象となる&2; つの日付と時刻の値の [DateTimeKind](xref:System.DateTimeKind) プロパティが両方とも [DateTimeKind.Utc](xref:System.DateTimeKind.Utc) である場合、実行結果には、2 つの値の実際の時間差が反映されます。 同様に、そのような&2; つの日付と時刻の値を比較した結果には、2 つの時間の関係が正確に反映されます。
 
-* 算術演算または比較操作の実行対象となる 2 つの日付と時刻の値の [DateTimeKind](xref:System.DateTimeKind) プロパティが両方とも [DateTimeKind.Local](xref:System.DateTimeKind.Local) であるか、または 2 つの日付と時刻の値の [DateTimeKind](xref:System.DateTimeKind) プロパティ値が異なる場合、実行結果には、2 つの値の間の時刻差が反映されます。 
+* 算術演算または比較操作の実行対象となる&2; つの日付と時刻の値の [DateTimeKind](xref:System.DateTimeKind) プロパティが両方とも [DateTimeKind.Local](xref:System.DateTimeKind.Local) であるか、または&2; つの日付と時刻の値の [DateTimeKind](xref:System.DateTimeKind) プロパティ値が異なる場合、実行結果には、2 つの値の間の時刻差が反映されます。 
 
 * ローカルの日付と時刻の値に対する算術演算または比較操作では、特定の値があいまいであるかや、無効であるかどうかは考慮されず、ローカル タイム ゾーンでの夏時間の開始や終了による調整規則の影響についても考慮されません。
 
@@ -101,7 +102,7 @@ End Module
 
 * タイム ゾーンが指定されていない時刻と UTC または現地時刻との差を比較または計算する操作では、単純な時刻差が反映されます。 タイム ゾーンの違いは考慮されず、結果にはタイム ゾーン調整規則の適用が反映されません。 
 
-* タイム ゾーンが指定されていない 2 つの時刻の差を比較または計算する操作の結果には、2 つの異なるタイム ゾーンの時刻の差を反映した未知の時間差が含まれる場合があります。
+* タイム ゾーンが指定されていない&2; つの時刻の差を比較または計算する操作の結果には、2 つの異なるタイム ゾーンの時刻の差を反映した未知の時間差が含まれる場合があります。
 
 多くの場合、タイム ゾーンの違いは日付と時刻の計算には影響しないか、または日付と時刻のデータのコンテキストによって比較操作や算術演算の意味が規定されます。 これらの詳細については、「[DateTime、DateTimeOffset、TimeSpan、および TimeZoneInfo の使い分け](choosing-between-datetime.md)」をご覧ください。
 
@@ -315,10 +316,5 @@ End Module
 
 [方法: 日付と時刻の演算でタイム ゾーンを使用する](use-time-zones-in-arithmetic.md)
 
-
-
-
-
-<!--HONumber=Nov16_HO3-->
 
 

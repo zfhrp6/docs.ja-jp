@@ -11,8 +11,9 @@ ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: 81c07080-acdf-4aef-a66d-0ab52fab2c04
 translationtype: Human Translation
-ms.sourcegitcommit: 10e9195efdbfa031698a8b0f8e8c3479babd9727
-ms.openlocfilehash: a08b0a0f95d43eb995f015f7e408f77fe4ab9d63
+ms.sourcegitcommit: 90fe68f7f3c4b46502b5d3770b1a2d57c6af748a
+ms.openlocfilehash: 9791191a4b79978838c97c8d8beb2049a8fb1696
+ms.lasthandoff: 03/02/2017
 
 ---
 
@@ -24,7 +25,7 @@ ms.openlocfilehash: a08b0a0f95d43eb995f015f7e408f77fe4ab9d63
 
 * 「[C# Getting Started](../csharp/getting-started/index.md)」 (C# 入門) の記事と「[C# のチュートリアル](../csharp/tutorials/index.md)」では、主に C# を使って開発を始めるさまざまな方法が示されています。
 
-* 「[F# Getting Started](../fsharp/tutorials/getting-started/index.md)」 (F# 入門) のチュートリアルでは、F# を使う主要な方法として、Visual Studio、Visual Studio のコード、コマンドライン ツールの 3 種類が説明されています。
+* 「[F# Getting Started](../fsharp/tutorials/getting-started/index.md)」 (F# 入門) のチュートリアルでは、F# を使う主要な方法として、Visual Studio、Visual Studio のコード、コマンドライン ツールの&3; 種類が説明されています。
 
 * 「[Visual Basic の概要](../visual-basic/getting-started/index.md)」の記事では、Visual Studio での Visual Basic の使用に関するガイド、および他の学習リソースが提供されています。
 
@@ -37,8 +38,3 @@ ms.openlocfilehash: a08b0a0f95d43eb995f015f7e408f77fe4ab9d63
 ## <a name="getting-started-using-docker-on-net-framework"></a>.NET Framework で Docker の使用を開始する
 
 「[.NET Framework で Docker を使用する](../framework/docker/index.md)」では、Windows Docker コンテナーで .NET Framework を使用する方法が示されています。
-
-
-<!--HONumber=Nov16_HO3-->
-
-

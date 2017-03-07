@@ -11,8 +11,9 @@ ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: c7b7c005-628d-427a-91ad-af0c3958c00e
 translationtype: Human Translation
-ms.sourcegitcommit: e07788926a995b41571be276379ad9285747951d
-ms.openlocfilehash: bad7fd4e9cda1976a31f287d7c95d81d113a30fa
+ms.sourcegitcommit: 90fe68f7f3c4b46502b5d3770b1a2d57c6af748a
+ms.openlocfilehash: 6826c0c2e86d0a1add1f88b001c13143ee098634
+ms.lasthandoff: 03/02/2017
 
 ---
 
@@ -20,7 +21,7 @@ ms.openlocfilehash: bad7fd4e9cda1976a31f287d7c95d81d113a30fa
 
 [System.Collections](https://docs.microsoft.com/dotnet/core/api/System.Collections) クラスは、削除する要素を検索するか、キーと値のペアの値を返すかに関係なく、コレクションの管理に関連するほぼすべての処理において比較を実行します。
 
-通常、コレクションは等値比較子か順序比較子、またはその両方を使用します。 比較には 2 つのコンストラクターが使用されます。 
+通常、コレクションは等値比較子か順序比較子、またはその両方を使用します。 比較には&2; つのコンストラクターが使用されます。 
 
 ## <a name="checking-for-equality"></a>等価性のチェック
 
@@ -36,7 +37,7 @@ ms.openlocfilehash: bad7fd4e9cda1976a31f287d7c95d81d113a30fa
 
 `BinarySearch`、`Sort` などのメソッドは、コレクション要素に対して順序比較子を使用します。 コレクションの要素間または要素と指定された値との間で比較を実行できます。 オブジェクトの比較には、既定の比較子と明示的な比較子の概念が適用されます。 
 
-既定の比較子は、比較される 1 つ以上のオブジェクトに依存して `IComparable` インターフェイスを実装します。 リスト コレクションの値として使用されるか、またはディクショナリ コレクションのキーとして使用されるすべてのクラスで、`IComparable` を実装することをお勧めします。 ジェネリック コレクションの場合、等価比較は次の基準に従って決定されます。
+既定の比較子は、比較される&1; つ以上のオブジェクトに依存して `IComparable` インターフェイスを実装します。 リスト コレクションの値として使用されるか、またはディクショナリ コレクションのキーとして使用されるすべてのクラスで、`IComparable` を実装することをお勧めします。 ジェネリック コレクションの場合、等価比較は次の基準に従って決定されます。
 
 *   T 型で [System.IComparable&lt;T&gt;](https://docs.microsoft.com/dotnet/core/api/System.IComparable-1) ジェネリック インターフェイスが実装されている場合、既定の比較子はそのインターフェイスの `CompareTo(T)` メソッドです。
 
@@ -200,9 +201,4 @@ public class Example
 [IComparable](https://docs.microsoft.com/dotnet/core/api/System.IComparable)
 
 [IComparable&lt;T&gt;](https://docs.microsoft.com/dotnet/core/api/System.IComparable-1)
-
-
-
-<!--HONumber=Nov16_HO3-->
-
 

@@ -11,8 +11,9 @@ ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: a1a867de-53c2-49ca-9a1a-e5770a942724
 translationtype: Human Translation
-ms.sourcegitcommit: e07788926a995b41571be276379ad9285747951d
-ms.openlocfilehash: 64a01b5e21e012dfaae07a02f5fb27932be9cf98
+ms.sourcegitcommit: 90fe68f7f3c4b46502b5d3770b1a2d57c6af748a
+ms.openlocfilehash: 8a770fb7143a547031daf231d1a0863322c3cfaa
+ms.lasthandoff: 03/02/2017
 
 ---
 
@@ -34,7 +35,7 @@ ms.openlocfilehash: 64a01b5e21e012dfaae07a02f5fb27932be9cf98
 
 *   キャンセル トークンを使用したキャンセル。
 
-*   `foreach` を使用した 2 種類の列挙。 
+*   `foreach` を使用した&2; 種類の列挙。 
 
     1. 読み取り専用の列挙。
     
@@ -97,7 +98,7 @@ Task.Run(() =>
 
 ## <a name="timed-blocking-operations"></a>時間制限付きのブロッキング操作
 
-境界のあるコレクションにおける時間制限付きの `TryAdd` 操作および `TryTake` 操作では、メソッドは項目を追加または取得しようと試みます。 項目を使用できる場合、その項目は参照渡しで渡された変数に格納され、メソッドは `true` を返します。 指定されたタイムアウト期間を経過しても項目が取得されない場合、メソッドは `false` を返します。 その後、再びコレクションへのアクセスを試みる前に、他の必要な処理をスレッドで自由に実行できます。 時間制限付きのブロッキング アクセスの例については、「[方法: BlockingCollection の項目を個別に追加および取得する](how-to-add-and-take-items.md)」の 2 番目の例を参照してください。
+境界のあるコレクションにおける時間制限付きの `TryAdd` 操作および `TryTake` 操作では、メソッドは項目を追加または取得しようと試みます。 項目を使用できる場合、その項目は参照渡しで渡された変数に格納され、メソッドは `true` を返します。 指定されたタイムアウト期間を経過しても項目が取得されない場合、メソッドは `false` を返します。 その後、再びコレクションへのアクセスを試みる前に、他の必要な処理をスレッドで自由に実行できます。 時間制限付きのブロッキング アクセスの例については、「[方法: BlockingCollection の項目を個別に追加および取得する](how-to-add-and-take-items.md)」の&2; 番目の例を参照してください。
 
 ## <a name="cancelling-add-and-take-operations"></a>追加操作と取得操作の取り消し
 
@@ -119,7 +120,7 @@ BlockingCollection<string> bc = new BlockingCollection<string>(new ConcurrentBag
 
 `BlockingCollection<T>` は `GetConsumingEnumerable` メソッドを提供します。これにより、コンシューマーは `foreach` ステートメントを使用して、コレクションが完成するまで (コレクションが空になり、それ以上項目が追加されなくなるまで) 項目を削除できます。 詳細については、「[方法: ForEach を使用して BlockingCollection 内の項目を削除する](how-to-use-foreach-to-remove.md)」を参照してください。
 
-## <a name="using-many-blockingcollections-as-one"></a>多数の BlockingCollection を 1 つとして使用する
+## <a name="using-many-blockingcollections-as-one"></a>多数の BlockingCollection を&1; つとして使用する
 
 consumer が複数のコレクションから同時に項目を取得する必要のあるシナリオでは、`BlockingCollection<T>` の配列を作成し、`TakeFromAny` や `AddToAny` などの静的メソッドを使用できます。これらのメソッドでは、配列内の任意のコレクションを対象に追加または取得の操作を実行できます。 いずれかのコレクションがブロックしている場合、メソッドはすぐに別のコレクションを試します。これは、操作を実行できるコレクションが見つかるまで続行されます。 詳細については、「[方法: パイプラインでブロッキング コレクションの配列を使用する](how-to-use-arrays-of-blockingcollections.md)」を参照してください。
 
@@ -130,10 +131,5 @@ consumer が複数のコレクションから同時に項目を取得する必�
 [コレクションとデータ構造体](../index.md)
 
 [スレッドセーフなコレクション](index.md)
-
-
-
-
-<!--HONumber=Nov16_HO3-->
 
 

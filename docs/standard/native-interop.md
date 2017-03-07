@@ -11,14 +11,15 @@ ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: 3c357112-35fb-44ba-a07b-6a1c140370ac
 translationtype: Human Translation
-ms.sourcegitcommit: 3aeaba5c8cf800c652941b5e6c2bc9f072849893
-ms.openlocfilehash: 36041eda54290484741c375ae776b7bf1a74d7a1
+ms.sourcegitcommit: d18b21b67c154c4a8cf8211aa5d1473066c53656
+ms.openlocfilehash: 13a4e4e7a588d55e82c5c4cde8f825c3b4502bb4
+ms.lasthandoff: 03/02/2017
 
 ---
 
 # <a name="native-interoperability"></a>ネイティブ相互運用性
 
-このドキュメントでは、.NET プラットフォームで使用可能な "ネイティブ相互運用性" を実行する 3 つのすべての方法についてもう少し深く掘り下げます。
+このドキュメントでは、.NET プラットフォームで使用可能な "ネイティブ相互運用性" を実行する&3; つのすべての方法についてもう少し深く掘り下げます。
 
 ネイティブ コードを呼び出す理由はいくつかあります。
 
@@ -29,11 +30,11 @@ ms.openlocfilehash: 36041eda54290484741c375ae776b7bf1a74d7a1
 もちろん、上の一覧は、開発者がネイティブ コンポーネントとやり取りしたいと考える、またはその必要があるすべての可能性のある状況やシナリオを取り上げていません。 たとえば、.NET クラス ライブラリは、ネイティブ相互運用性サポートを使用して、コンソールのサポートと操作、ファイル システムのアクセスなど、そのかなりの数の API を実装しています。 ただし、それを必要とする場合に、オプションがあることに注意することが重要です。
 
 > [!NOTE]
-> このドキュメントのほとんどの例は、.NET Core でサポートされる 3 つすべてのプラットフォーム (Windows、Linux、macOS) について提示しています。 ただし、短い解説的な例については、Windows ファイル名と拡張子 (つまり、ライブラリの場合は "dll") を使用する 1 つのサンプルだけを示します。 これは、それらの機能が Linux や macOS で使用できないわけではなく、単に便宜上のためにのみそうしています。
+> このドキュメントのほとんどの例は、.NET Core でサポートされる&3; つすべてのプラットフォーム (Windows、Linux、macOS) について提示しています。 ただし、短い解説的な例については、Windows ファイル名と拡張子 (つまり、ライブラリの場合は "dll") を使用する&1; つのサンプルだけを示します。 これは、それらの機能が Linux や macOS で使用できないわけではなく、単に便宜上のためにのみそうしています。
 
 ## <a name="platform-invoke-pinvoke"></a>プラットフォーム呼び出し (P/Invoke)
 
-P/invoke は、アンマネージ ライブラリ内の構造体、コールバック、および関数をマネージ コードからアクセスできるようにするテクノロジです。 P/Invoke API のほとんどは、`System` と `System.Runtime.InteropServices` の 2 つの名前空間に含まれます。 これらの 2 つの名前空間を使用して、ネイティブ コンポーネントと通信する方法を記述する属性にアクセスできます。
+P/invoke は、アンマネージ ライブラリ内の構造体、コールバック、および関数をマネージ コードからアクセスできるようにするテクノロジです。 P/Invoke API のほとんどは、`System` と `System.Runtime.InteropServices` の&2; つの名前空間に含まれます。 これらの&2; つの名前空間を使用して、ネイティブ コンポーネントと通信する方法を記述する属性にアクセスできます。
 
 最も一般的な例から始めましょう。これはマネージ コードでアンマネージ関数を呼び出します。 コマンドライン アプリケーションからメッセージ ボックスを表示してみましょう。
 
@@ -157,7 +158,7 @@ namespace ConsoleApplication1 {
 *   13 ～ 16 行目は、デリゲートを実装しています。 この簡単な例では、ハンドルだけコンソールに出力します。
 *   最後に、19 行目で、外部メソッドを呼び出し、デリゲートを渡しています。
 
-Linux と macOS の例を、以下に示します。 それらの場合、`libc` C ライブラリに見つかる `ftw` 関数を使用します。 この関数は、ディレクトリ階層をスキャンするために使用し、そのパラメーターの 1 つとして、関数へのポインターを受け取ります。 上記のメソッドのシグネチャは次のとおりです。`int (*fn) (const char *fpath, const struct stat *sb, int typeflag)`
+Linux と macOS の例を、以下に示します。 それらの場合、`libc` C ライブラリに見つかる `ftw` 関数を使用します。 この関数は、ディレクトリ階層をスキャンするために使用し、そのパラメーターの&1; つとして、関数へのポインターを受け取ります。 上記のメソッドのシグネチャは次のとおりです。`int (*fn) (const char *fpath, const struct stat *sb, int typeflag)`
 
 ```cs
 using System;
@@ -273,7 +274,7 @@ namespace PInvokeSamples {
 
 ```cs
 [DllImport("somenativelibrary.dll"]
-static extern int MethodA([MarshalAs(UnmanagedType.LPStr) string parameter);
+static extern int MethodA([MarshalAs(UnmanagedType.LPStr)] string parameter);
 
 ```
 
@@ -350,9 +351,4 @@ public class StatClass {
 *   [PInvoke.net wiki](http://www.pinvoke.net) は、一般的な Win32 API とそれらを呼び出す方法に関する情報を記載した優れた Wiki です。
 *   [MSDN の P/Invoke](https://msdn.microsoft.com/library/zbz07712.aspx)
 *   [P/invoke に関する Mono のドキュメント](http://www.mono-project.com/docs/advanced/pinvoke/)
-
-
-
-<!--HONumber=Nov16_HO3-->
-
 

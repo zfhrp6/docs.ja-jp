@@ -11,8 +11,9 @@ ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: 3adea434-e2ed-4023-b4f5-b0608b4cf53f
 translationtype: Human Translation
-ms.sourcegitcommit: fb00da6505c9edb6a49d2003ae9bcb8e74c11d6c
-ms.openlocfilehash: e14e386a04c64726e4eacb63dc8855a356a18ba0
+ms.sourcegitcommit: 90fe68f7f3c4b46502b5d3770b1a2d57c6af748a
+ms.openlocfilehash: 7b3acb4571cddc19520f8534828d94844c9d59e6
+ms.lasthandoff: 03/02/2017
 
 ---
 
@@ -36,7 +37,7 @@ ms.openlocfilehash: e14e386a04c64726e4eacb63dc8855a356a18ba0
 
 キャッシュされる正規表現の最大数は、`static` (Visual Basic では `Shared`) [Regex.CacheSize](xref:System.Text.RegularExpressions.Regex.CacheSize) プロパティの値によって決定されます。 既定では、正規表現エンジンは最大 15 個のコンパイルされた正規表現をキャッシュします。 コンパイルされた正規表現の数がキャッシュ サイズを超えた場合は、最近の使用頻度が最も低い正規表現が破棄され、新しい正規表現がキャッシュされます。 
 
-アプリケーションでは、次の 2 つの方法のいずれかでプリコンパイル済みの正規表現を利用できます。
+アプリケーションでは、次の&2; つの方法のいずれかでプリコンパイル済みの正規表現を利用できます。
 
 * [Regex](xref:System.Text.RegularExpressions.Regex) オブジェクトの静的メソッドを使用して、正規表現を定義する。 別の静的メソッド呼び出しで既に定義されている正規表現パターンを使用している場合、正規表現エンジンはこれをキャッシュから取得します。 そうでない場合、エンジンは正規表現をコンパイルしてキャッシュに追加します。
 
@@ -48,10 +49,5 @@ ms.openlocfilehash: e14e386a04c64726e4eacb63dc8855a356a18ba0
 ## <a name="see-also"></a>関連項目
 
 [.NET 正規表現](regular-expressions.md)
-
-
-
-
-<!--HONumber=Nov16_HO3-->
 
 

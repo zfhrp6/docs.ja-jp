@@ -11,12 +11,15 @@ ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: be988f09-7349-43b0-97fb-3a703d4587ce
 translationtype: Human Translation
-ms.sourcegitcommit: 37e14d5cdf1593f6a8b1ecee9d9828647b023548
-ms.openlocfilehash: 5493ccb77e62d20d5101728ef8ab1744ea697fb8
+ms.sourcegitcommit: 796df1549a7553aa93158598d62338c02d4df73e
+ms.openlocfilehash: 8f0ad79eafde695b956e89f48073dba2651b51cb
 
 ---
 
 # <a name="getting-started-with-net-core-on-windowslinuxmacos-using-the-command-line"></a>Windows/Linux/macOS の .NET Core でのコマンド ラインの使用に関する概要
+
+> [!WARNING]
+> このトピックは .NET Core Tools Preview 2 を対象としています。 .NET Core Tools RC4 バージョンについては、「[Windows/Linux/macOS の .NET Core でのコマンド ラインの使用に関する概要 (.NET Core Tools RC4)](../preview3/tutorials/using-with-xplat-cli-msbuild.md)」トピックを参照してください。
 
 このガイドでは、.NET Core CLI ツールを使用して、基本的なクロスプラットフォーム コンソール アプリをビルドする方法を説明します。
 
@@ -125,7 +128,7 @@ Hello, World!
 
 サポートされているランタイムの完全な一覧は、[RID カタログ](../rid-catalog.md)を参照してください。 
  
-これら 2 つの変更を行った後、`dotnet restore` を実行し、次に `dotnet build` を実行してネイティブな実行可能ファイルを作成します。 その後、生成されたネイティブ実行可能ファイルを実行できます。 
+これら&2; つの変更を行った後、`dotnet restore` を実行し、次に `dotnet build` を実行してネイティブな実行可能ファイルを作成します。 その後、生成されたネイティブ実行可能ファイルを実行できます。 
 
 次の例では Windows の場合のコマンドを示します。 この例では、ネイティブ実行可能ファイルが生成される場所が示されており、プロジェクト ディレクトリの名前は HelloNative です。
 
@@ -555,7 +558,7 @@ Meow!
 |__global.json
 ```
 
-テスト プロジェクトに必要な 2 つの新しい要素があります。
+テスト プロジェクトに必要な&2; つの新しい要素があります。
 
 1. 以下のものを含む正しい `project.json`:
 
@@ -612,7 +615,7 @@ public class PetTests
     {
         string expected = "Meow!";
         string actual = new Cat().TalkToOwner();
-        
+           
         Assert.Equal(expected, actual);
     }
 }
@@ -647,6 +650,6 @@ SUMMARY: Total: 1 targets, Passed: 1, Failed: 0.
 
 
 
-<!--HONumber=Nov16_HO3-->
+<!--HONumber=Feb17_HO2-->
 
 

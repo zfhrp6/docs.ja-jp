@@ -3,16 +3,17 @@ title: "LINQ (統合言語クエリ)"
 description: "LINQ (統合言語クエリ)"
 keywords: .NET, .NET Core
 author: cartermp
-manager: wpickett
+ms.author: wiwagn
 ms.date: 06/20/2016
 ms.topic: article
-ms.prod: .net-core
-ms.technology: .net-core-technologies
+ms.prod: .net
+ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: c00939e1-59e3-4e61-8fe9-08ad6b3f1295
 translationtype: Human Translation
-ms.sourcegitcommit: 6992d907b152d67c51f43ec517902fb2effc6db2
-ms.openlocfilehash: 4cb0c523a31faf319c1e07ceaa8a8122d3046be8
+ms.sourcegitcommit: 90fe68f7f3c4b46502b5d3770b1a2d57c6af748a
+ms.openlocfilehash: 6d9c163255939c3732177ecccb373479ab610447
+ms.lasthandoff: 03/02/2017
 
 ---
 
@@ -216,7 +217,7 @@ var results = DirectionsProcessor.GetDirections(start, end)
 
 ```
 
-*   最後に、より高度なサンプルを以下に示します。同じ型の 2 つのインスタンスのプロパティ値が等しいかどうかを判断します ([この StackOverflow の投稿](http://stackoverflow.com/a/844855)から借用し、変更したもの)。
+*   最後に、より高度なサンプルを以下に示します。同じ型の&2; つのインスタンスのプロパティ値が等しいかどうかを判断します ([この StackOverflow の投稿](http://stackoverflow.com/a/844855)から借用し、変更したもの)。
 
 ```cs
 public static bool PublicInstancePropertiesEqual<T>(this T self, T to, params string[] ignore) where T : class
@@ -275,9 +276,4 @@ LINQ で簡単に表すことができる (つまり、純粋関数で副作用�
 *   [101 個の LINQ サンプル](https://code.msdn.microsoft.com/101-LINQ-Samples-3fb9811b)
 *   [Linqpad](https://www.linqpad.net/)。プレイグラウンド環境とデータベース クエリ エンジン (C#/F#/VB 用)
 *   [EduLinq](http://codeblog.jonskeet.uk/2011/02/23/reimplementing-linq-to-objects-part-45-conclusion-and-list-of-posts/)。LINQ to Objects の実装方法を学習するための電子書籍
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

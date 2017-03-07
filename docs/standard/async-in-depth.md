@@ -11,8 +11,9 @@ ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: 1e38f9d9-8f84-46ee-a15f-199aec4f2e34
 translationtype: Human Translation
-ms.sourcegitcommit: de0dab146fc811e895dc32f98f877db5e757f82b
-ms.openlocfilehash: c8ff0f81054feddb4ee7042926c817de525034f9
+ms.sourcegitcommit: 90fe68f7f3c4b46502b5d3770b1a2d57c6af748a
+ms.openlocfilehash: 4c66c1dc6fb1d51eb2a7d6566fbf62b5f19b556b
+ms.lasthandoff: 03/02/2017
 
 ---
 
@@ -24,8 +25,8 @@ I/O および CPU バインドの非同期コードは、.NET のタスクベー
 
 Task は、[Promise Model of Concurrency](https://en.wikipedia.org/wiki/Futures_and_promises) (並行性の Promise 型モデル) として知られるモデルを実装するために使用される構成体です。  つまり、今後のある時点で作業が完了することを "約束" し、クリーン API を使用した約束の調整を可能にします。
 
-*   `Task` は、値を返さない 1 回の操作を表します。
-*   `Task<T>` は、`T` 型の値を返す 1 回の操作を表します。
+*   `Task` は、値を返さない&1; 回の操作を表します。
+*   `Task<T>` は、`T` 型の値を返す&1; 回の操作を表します。
 
 作業の抽象化は非同期に発生し、スレッド処理の抽象化では*ない*ため、タスクについて判断することが重要です。 既定では、タスクは現在のスレッドで実行され、必要に応じてオペレーティング システムに作業を委任します。 必要に応じて、`Task.Run` API を使用して、タスクを別のスレッドで実行することを明示的に要求できます。
 
@@ -37,14 +38,14 @@ Task は、[Promise Model of Concurrency](https://en.wikipedia.org/wiki/Futures_
 
 ## <a name="deeper-dive-into-tasks-for-an-io-bound-operation"></a>I/O バインド操作に関するタスクの詳細
 
-次のセクションでは、一般的な非同期 I/O 呼び出しで実行される処理の概要について説明します。 はじめに例を 2 つ示します。
+次のセクションでは、一般的な非同期 I/O 呼び出しで実行される処理の概要について説明します。 はじめに例を&2; つ示します。
 
 最初の例では、非同期メソッドを呼び出し、未完了のアクティブなタスクを返します。
 
 ```csharp
 public Task<string> GetHtmlAsync()
 {
-    // Execution is synchronous here
+     // Execution is synchronous here
     var client = new HttpClient();
     
     return client.GetStringAsync("http://www.dotnetfoundation.org");
@@ -79,7 +80,7 @@ public async Task<string> GetFirstCharactersCountAsync(string url, int count)
 
 `GetStringAsync()` を呼び出すと、ネイティブ ネットワーク ライブラリへの P/Invoke interop 呼び出しに到達するまで、下位レベルの .NET ライブラリ (おそらく他の非同期メソッドを呼び出す) を介して呼び出しが行われます。 ネイティブ ライブラリはその後、システム API 呼び出し (Linux のソケットへの `write()` など) を実行することがあります。 ネイティブまたはマネージ境界にタスク オブジェクトが作成されます。作成には [TaskCompletionSource](xref:System.Threading.Tasks.TaskCompletionSource%601.SetResult(%600)) が使用される可能性があります。 タスク オブジェクトは上位レイヤーに渡され、操作が実行される場合もあれば直接返される場合もありますが、最終的に最初の呼び出し元に戻されます。 
 
-上記の 2 番目の例で、`Task<T>` オブジェクトが `GetStringAsync` から返されます。 `await` キーワードを使用すると、メソッドは新しく作成したタスク オブジェクトを返します。 `GetFirstCharactersCountAsync` メソッドのこの場所から呼び出し元に制御が戻ります。 [Task&lt;T&gt;](xref:System.Threading.Tasks.Task%601) オブジェクトのメソッドとプロパティを使用すると、呼び出し元はタスクの進行状況を監視できます。タスクは、GetFirstCharactersCountAsync の残りのコードが実行されれば完了します。
+上記の&2; 番目の例で、`Task<T>` オブジェクトが `GetStringAsync` から返されます。 `await` キーワードを使用すると、メソッドは新しく作成したタスク オブジェクトを返します。 `GetFirstCharactersCountAsync` メソッドのこの場所から呼び出し元に制御が戻ります。 [Task&lt;T&gt;](xref:System.Threading.Tasks.Task%601) オブジェクトのメソッドとプロパティを使用すると、呼び出し元はタスクの進行状況を監視できます。タスクは、GetFirstCharactersCountAsync の残りのコードが実行されれば完了します。
 
 システム API 呼び出しの後、要求はカーネル領域に入り、OS のネットワーク サブシステム (Linux カーネルの `/net` など) に移ります。  ここで、OS はネットワーク要求を*非同期的に*処理します。  詳細は使用する OS によって異なる場合がありますが (デバイス ドライバーの呼び出しが、ランタイムに返送されるシグナルとしてスケジュールされている場合や、デバイス ドライバー呼び出しが行われた*後*にシグナルが返送される場合があります)、最終的にはネットワーク要求が進行中であることがランタイムに通知されます。  この時点で、デバイス ドライバーに関する処理はスケジュール済み、進行中、または既に完了済み (要求が既に "接続" されていない状態) のいずれかですが、すべてが非同期に発生するため、デバイス ドライバーはすぐに別の処理を実行できます。
 
@@ -103,7 +104,7 @@ public async Task<string> GetFirstCharactersCountAsync(string url, int count)
 
 2 種類のサーバーについて考えます。非同期コードを実行しているサーバーと、実行していないサーバーです。  この例では、各サーバーには、サービス要求に使用できるスレッドが 5 つだけあります。  これは非現実的な少ない数であり、デモの目的に限って使用していることに注意してください。
 
-どちらのサーバーも 6 件の同時要求を受信したとします。 各要求で I/O 操作を 1 回実行します。  非同期コードを*使用しない*サーバーは、5 つのスレッドのいずれかが I/O バインドの作業を完了して応答を書き込むまで、6 番目の要求をキューに入れておく必要があります。 サーバーに 20 番目の要求が到着すると、キューが長くなりすぎるため、サーバー速度が低下し始める可能性があります。
+どちらのサーバーも 6 件の同時要求を受信したとします。 各要求で I/O 操作を&1; 回実行します。  非同期コードを*使用しない*サーバーは、5 つのスレッドのいずれかが I/O バインドの作業を完了して応答を書き込むまで、6 番目の要求をキューに入れておく必要があります。 サーバーに 20 番目の要求が到着すると、キューが長くなりすぎるため、サーバー速度が低下し始める可能性があります。
 
 非同期コードを*実行している*サーバーでも、6 番目の要求はキューに入れられますが、`async` と `await` を使用しているため、各スレッドは I/O バインドの作業が完了した時点ではなく、開始した時点で解放されます。  20 番目の要求が到着する時点までに受信要求のキューは大幅に短くなり (キューに何らかの要求が格納されている場合)、サーバーの速度低下は発生しません。
 
@@ -146,8 +147,3 @@ public async Task<int> CalculateResult(InputData data)
 ### <a name="why-does-async-help-here"></a>async が役に立つ理由
 
 `async`と `await` は、応答性を必要とする場合に CPU バインドの作業を管理する際のベスト プラクティスです。 CPU バインドの作業で async を使用するには、複数のパターンがあります。 async を使用すると小さいながらも負荷がかかるため、厳密なループ処理にはお勧めしません。  この新しい機能を利用してコードを記述するかどうかは、ユーザーの判断に任されます。
-
-
-<!--HONumber=Nov16_HO3-->
-
-

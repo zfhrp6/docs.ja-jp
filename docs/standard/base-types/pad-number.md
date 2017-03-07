@@ -11,8 +11,9 @@ ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: a517c066-b11e-4815-826b-9262611eac40
 translationtype: Human Translation
-ms.sourcegitcommit: fb00da6505c9edb6a49d2003ae9bcb8e74c11d6c
-ms.openlocfilehash: 0a136d88dfbc83d40ff8a204f275537c24f9748b
+ms.sourcegitcommit: 90fe68f7f3c4b46502b5d3770b1a2d57c6af748a
+ms.openlocfilehash: 92f8796eae0f269cacfa4cf70330c5e3c0826717
+ms.lasthandoff: 03/02/2017
 
 ---
 
@@ -24,15 +25,15 @@ ms.openlocfilehash: 0a136d88dfbc83d40ff8a204f275537c24f9748b
 
 1. 整数値を表示する際の最小桁数を決定します。 この数には先行桁数も含みます。
 
-2. 整数値を 10 進数値と 16 進数値のどちらで表示するかを決定します。
+2. 整数値を&10; 進数値と&16; 進数値のどちらで表示するかを決定します。
 
-    * 整数値を 10 進数値として表示するには、`ToString(String)` メソッドを呼び出し、format パラメーターの値として文字列 "D*n*" を渡します。この *n* は、文字列の最小長を表します。
+    * 整数値を&10; 進数値として表示するには、`ToString(String)` メソッドを呼び出し、format パラメーターの値として文字列 "D*n*" を渡します。この *n* は、文字列の最小長を表します。
     
-    * 整数値を 16 進数値として表示するには、`ToString(String)` メソッドを呼び出し、format パラメーターの値として文字列 "X*n*" を渡します。この *n* は、文字列の最小長を表します。
+    * 整数値を&16; 進数値として表示するには、`ToString(String)` メソッドを呼び出し、format パラメーターの値として文字列 "X*n*" を渡します。この *n* は、文字列の最小長を表します。
     
   また、[Console.WriteLine](xref:System.Console.WriteLine) や [String.Format](xref:System.String.Format(System.IFormatProvider,System.String,System.Object)) など、[複合書式指定](composite-format.md)を使用するメソッドでもこの書式指定文字列を使用できます。  
   
-次の例は、書式指定された数値全体の長さが 8 文字以上になるように、先行ゼロを使用してさまざまな数値を書式指定します。
+次の例は、書式指定された数値全体の長さが&8; 文字以上になるように、先行ゼロを使用してさまざまな数値を書式指定します。
 
 ```csharp
 byte byteValue = 254;
@@ -109,7 +110,7 @@ Console.WriteLine("{0,22:D8} {0,22:X8}", ulngValue)
 
 1. 整数値に表示する先行ゼロの数を決定します。
 
-2. 整数値を 10 進数値と 16 進数値のどちらで表示するかを決定します。 10 進数値として書式指定する場合には標準書式指定子 "D" を使用する必要があります。16 進数値として書式指定する場合には標準書式指定子 "X" を使用する必要があります。
+2. 整数値を&10; 進数値と&16; 進数値のどちらで表示するかを決定します。 10 進数値として書式指定する場合には標準書式指定子 "D" を使用する必要があります。16 進数値として書式指定する場合には標準書式指定子 "X" を使用する必要があります。
 
 3. 整数値の `ToString("D").Length` メソッドまたは `ToString("X").Length` メソッドを使用して、先行ゼロが埋め込まれていない数値文字列の長さを決定します。 
 
@@ -117,7 +118,7 @@ Console.WriteLine("{0,22:D8} {0,22:X8}", ulngValue)
 
 5. 整数値の `ToString(String)` メソッドを呼び出し、10 進数値文字列の場合は "D*n*"、16 進数値の場合は "X*n*" を渡します。*n* は埋め込み文字列全体の長さを表します。 書式指定文字列 "D*n*" または "X*n*"は、複合書式指定をサポートするメソッドでも使用できます。
 
-次の例は、整数値に 5 つの先行ゼロを埋め込みます。
+次の例は、整数値に&5; つの先行ゼロを埋め込みます。
 
 ```csharp
 int value = 160934;
@@ -149,7 +150,7 @@ Console.WriteLine(value.ToString("X" + hexLength.ToString()))
 
 3. 数値の `ToString(String)` メソッドを呼び出し、カスタム書式指定文字列を渡します。 カスタム書式指定文字列は、複合書式指定をサポートしているメソッドでも使用できます。
 
-次の例は、書式指定された数値全体の長さが 8 文字以上の整数になるように、先行ゼロを使用してさまざまな数値を書式指定します。
+次の例は、書式指定された数値全体の長さが&8; 文字以上の整数になるように、先行ゼロを使用してさまざまな数値を書式指定します。
 
 ```csharp
 string fmt = "00000000.##";
@@ -233,7 +234,7 @@ Console.WriteLine(formatString, dblValue)
 
 4. 数値の ToString(String) メソッド、または複合書式指定をサポートするメソッドのパラメーターとして、カスタム書式指定文字列を指定します。
 
-次の例は、2 つの [Double](xref:System.Double) 値を 5 つの先行ゼロで埋め込みます。
+次の例は、2 つの [Double](xref:System.Double) 値を&5; つの先行ゼロで埋め込みます。
 
 ```csharp
 double[] dblValues = { 9034521202.93217412, 9034521202 };
@@ -294,10 +295,5 @@ Next
 [カスタム数値書式指定文字列](custom-numeric.md)
 
 [複合書式指定](composite-format.md)
-
-
-
-
-<!--HONumber=Nov16_HO3-->
 
 

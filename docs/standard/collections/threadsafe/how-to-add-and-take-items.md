@@ -3,22 +3,23 @@ title: "方法: BlockingCollection の項目を個別に追加および取得す
 description: "方法: BlockingCollection の項目を個別に追加および取得する"
 keywords: .NET, .NET Core
 author: mairaw
-manager: wpickett
+ms.author: mairaw
 ms.date: 06/20/2016
 ms.topic: article
-ms.prod: .net-core
-ms.technology: .net-core-technologies
+ms.prod: .net
+ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: 2b9d39ab-0993-4453-b021-b04870098bf7
 translationtype: Human Translation
-ms.sourcegitcommit: c15f2da15c6448cf1c36dea2d5fd53e734bb6608
-ms.openlocfilehash: 4f73f3bf2000a0ff4cd600d72bb161206a58d23a
+ms.sourcegitcommit: 90fe68f7f3c4b46502b5d3770b1a2d57c6af748a
+ms.openlocfilehash: e560eb44f783aaa50ec335df4f3171090d238f32
+ms.lasthandoff: 03/03/2017
 
 ---
 
 # <a name="how-to-add-and-take-items-individually-from-a-blockingcollection"></a>方法: BlockingCollection の項目を個別に追加および取得する
 
-この例では、ブロッキングと非ブロッキングの 2 つの方法で [BlockingCollection&lt;T&gt;]( https://docs.microsoft.com/dotnet/core/api/System.Collections.Concurrent.BlockingCollection-1) の項目を追加、削除する方法を示します。 `BlockingCollection<T>` の詳細については、「[BlockingCollection の概要](blockingcollection-overview.md)」を参照してください。 
+この例では、ブロッキングと非ブロッキングの&2; つの方法で [BlockingCollection&lt;T&gt;](https://docs.microsoft.com/dotnet/core/api/System.Collections.Concurrent.BlockingCollection-1) の項目を追加、削除する方法を示します。 `BlockingCollection<T>` の詳細については、「[BlockingCollection の概要](blockingcollection-overview.md)」を参照してください。 
 
 空になって追加する要素がなくなるまで `BlockingCollection<T>` を列挙する方法の例については、「[方法: ForEach を使用して BlockingCollection 内の項目を削除する](how-to-use-foreach-to-remove.md)」を参照してください。
 
@@ -91,7 +92,7 @@ class Program
 
 ## <a name="example"></a>例
 
-この 2 番目の例では、操作をブロックしないように、項目を追加および取得する方法を示します。 項目が存在しない場合、サイズ制限のあるコレクションの最大容量に達した場合、またはタイムアウト期間が経過した場合、`TryAdd` または `TryTake` 操作は false を返します。 これによりスレッドはしばらくの間、他の何らかの有益な処理を行い、後からもう一度新しいアイテムを取得するか、以前に追加できなかった項目を追加しようとします。 このプログラムはまた、`BlockingCollection<T>` へのアクセス時にキャンセルを実装する方法も示しています。
+この&2; 番目の例では、操作をブロックしないように、項目を追加および取得する方法を示します。 項目が存在しない場合、サイズ制限のあるコレクションの最大容量に達した場合、またはタイムアウト期間が経過した場合、`TryAdd` または `TryTake` 操作は false を返します。 これによりスレッドはしばらくの間、他の何らかの有益な処理を行い、後からもう一度新しいアイテムを取得するか、以前に追加できなかった項目を追加しようとします。 このプログラムはまた、`BlockingCollection<T>` へのアクセス時にキャンセルを実装する方法も示しています。
 
 ```csharp
 using System;
@@ -218,12 +219,7 @@ class ProgramWithCancellation
 
 ## <a name="see-also"></a>関連項目
 
-[System.Collections.Concurrent]( https://docs.microsoft.com/dotnet/core/api/System.Collections.Concurrent)
+[System.Collections.Concurrent](https://docs.microsoft.com/dotnet/core/api/System.Collections.Concurrent)
 
 [BlockingCollection の概要](blockingcollection-overview.md)
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

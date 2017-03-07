@@ -3,16 +3,15 @@ title: "プロジェクトを整理し、.NET Framework と .NET Core をサポ�
 description: "プロジェクトを整理し、.NET Framework と .NET Core をサポートする"
 keywords: .NET, .NET Core
 author: conniey
-manager: wpickett
+ms.author: mairaw
 ms.date: 07/18/2016
 ms.topic: article
 ms.prod: .net-core
-ms.technology: .net-core-technologies
 ms.devlang: dotnet
 ms.assetid: 3af62252-1dfa-4336-8d2f-5cfdb57d7724
 translationtype: Human Translation
-ms.sourcegitcommit: 15c55a87beb64f265a164db918c7721c7690fadf
-ms.openlocfilehash: 7a3f972debee1e90deda57e5604214ff4756da4a
+ms.sourcegitcommit: 90fe68f7f3c4b46502b5d3770b1a2d57c6af748a
+ms.openlocfilehash: ed2fdad2a784f4e4ce1f8a660b5bb151935fd2d4
 
 ---
 
@@ -62,14 +61,14 @@ ms.openlocfilehash: 7a3f972debee1e90deda57e5604214ff4756da4a
 
 リポジトリを再整理できます。既存の `*.csproj` ファイルが削除され、複数のフレームワークをターゲットにするシングル `*.xproj` ファイルが作成されます。  異なるフレームワークに対してシングル プロジェクトでコンパイルできるので、この方法が推奨されます。  さまざまなコンパイル オプション、依存関係などを処理することもできます。 対象のフレームワークごとに。
 
-![複数のフレームワークをターゲットにする xproj を作成します][example-xproj]
+![複数のフレームワークをターゲットにする xproj の作成][example-xproj]
 
 [**ソース コード**][example-xproj-code]
 
 注目するべき変更点:
 * `global.json` の追加
 * `packages.config` および `*.csproj` を `project.json` および `*.xproj` に置換
-* [Car の project.json][example-xproj-projectjson] とその[テスト プロジェクト][example-xproj-projectjson-test] の変更。既存の .NET Framework のビルドなどをサポートします。
+* [Car の project.json][example-xproj-projectjson] とその[テスト プロジェクト][example-xproj-projectjson-test] を、既存の .NET Framework などのビルドをサポートするように変更
 
 ## <a name="create-a-portable-class-library-pcl-to-target-net-core"></a>ポータブル クラス ライブラリ (PCL) を作成し、.NET Core をターゲットにします。
 
@@ -98,15 +97,15 @@ ms.openlocfilehash: 7a3f972debee1e90deda57e5604214ff4756da4a
     * これにより、複数の project.json/package.config ファイルが同じフォルダーに存在することに起因する前述のパッケージ復元問題が回避されます。
     * プロジェクトを別々のフォルダーに保存すれば、(project.json により) Visual Studio 2015 を所有する必要がありません。  古いプロジェクトだけを開く別個のソリューションを作成できます。
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
-project.json と xproj に移行する方法に関する詳細については、「[.NET Core porting documentation][porting-doc]」 (.NET Core 移行ドキュメント) を参照してください。
+project.json と xproj に移行する方法に関する詳細については、[.NET Core の移植に関するドキュメント][porting-doc]のページを参照してください。
 
 [porting-doc]: index.md
 [example-initial-project]: media/project-structure/project.png "既存のプロジェクト"
 [example-initial-project-code]: https://github.com/dotnet/docs/tree/master/samples/framework/libraries/migrate-library/
 
-[example-xproj]: media/project-structure/project.xproj.png "複数のフレームワークをターゲットにする xproj を作成します"
+[example-xproj]: media/project-structure/project.xproj.png "複数のフレームワークをターゲットにする xproj の作成"
 [example-xproj-code]: https://github.com/dotnet/docs/tree/master/samples/framework/libraries/migrate-library-xproj/
 [example-xproj-projectjson]: https://github.com/dotnet/docs/tree/master/samples/framework/libraries/migrate-library-xproj/src/Car/project.json
 [example-xproj-projectjson-test]: https://github.com/dotnet/docs/tree/master/samples/framework/libraries/migrate-library-xproj/tests/Car.Tests/project.json
@@ -125,6 +124,6 @@ project.json と xproj に移行する方法に関する詳細については、
 
 
 
-<!--HONumber=Nov16_HO3-->
+<!--HONumber=Jan17_HO3-->
 
 

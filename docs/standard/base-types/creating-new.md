@@ -11,8 +11,9 @@ ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: 639397c7-e694-43e0-845b-1681c62bd9fd
 translationtype: Human Translation
-ms.sourcegitcommit: fb00da6505c9edb6a49d2003ae9bcb8e74c11d6c
-ms.openlocfilehash: 29a0ca2d58bb6ae037a97c84a53ce388da2dbeae
+ms.sourcegitcommit: 90fe68f7f3c4b46502b5d3770b1a2d57c6af748a
+ms.openlocfilehash: 793b5bc4b26967104459fa2559c6127bb82f3a9d
+ms.lasthandoff: 03/02/2017
 
 ---
 
@@ -114,7 +115,7 @@ Console.WriteLine(String.Join(" ", words))
 
 ### <a name="insert"></a>挿入
 
-`String.Insert` メソッドは、別の文字列内の指定の位置に文字列を挿入することで、新しい文字列を作成します。 このメソッドは、0 から始まるインデックスを使用します。 次の例では、`MyString` の 5 番目のインデックス位置に文字列を挿入し、この値を持つ新しい文字列を作成します。
+`String.Insert` メソッドは、別の文字列内の指定の位置に文字列を挿入することで、新しい文字列を作成します。 このメソッドは、0 から始まるインデックスを使用します。 次の例では、`MyString` の&5; 番目のインデックス位置に文字列を挿入し、この値を持つ新しい文字列を作成します。
 
 ```csharp
 string sentence = "Once a time.";   
@@ -131,7 +132,7 @@ Dim sentence As String = "Once a time."
 
 ### <a name="copyto"></a>CopyTo
 
-`String.CopyTo` メソッドは、文字配列に文字列の部分をコピーします。 文字列の開始インデックスと、コピーする文字数の両方を指定できます。 このメソッドは、ソース インデックス、文字配列、コピー先のインデックス、およびコピーする文字数を受け取ります。 すべてのインデックスは 0 から始まります。
+`String.CopyTo` メソッドは、文字配列に文字列の部分をコピーします。 文字列の開始インデックスと、コピーする文字数の両方を指定できます。 このメソッドは、ソース インデックス、文字配列、コピー先のインデックス、およびコピーする文字数を受け取ります。 すべてのインデックスは&0; から始まります。
 
 次の例では、`CopyTo` メソッドを使用して、文字列オブジェクトから文字配列の最初のインデックス位置に、単語 "Hello" の文字をコピーします。
 
@@ -162,10 +163,5 @@ Console.WriteLine("The new character array: {0}", New String(charArray))
 [基本的な文字列操作](basic-string-operations.md)
 
 [複合書式指定](composite-format.md)
-
-
-
-
-<!--HONumber=Nov16_HO3-->
 
 

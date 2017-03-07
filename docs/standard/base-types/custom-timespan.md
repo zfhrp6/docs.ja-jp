@@ -4,16 +4,16 @@ description: "カスタム TimeSpan 書式指定文字列"
 keywords: .NET, .NET Core
 author: stevehoag
 ms.author: shoag
-manager: wpickett
 ms.date: 07/25/2016
 ms.topic: article
-ms.prod: .net-core
-ms.technology: .net-core-technologies
+ms.prod: .net
+ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: e79745eb-6ebd-4e62-85c4-4f2830c27285
 translationtype: Human Translation
-ms.sourcegitcommit: b20713600d7c3ddc31be5885733a1e8910ede8c6
-ms.openlocfilehash: 168bd497891ead884413fad4542943a24de7a7f4
+ms.sourcegitcommit: 90fe68f7f3c4b46502b5d3770b1a2d57c6af748a
+ms.openlocfilehash: bec60437d4345decaf38f2bbb9434922ac889683
+ms.lasthandoff: 03/03/2017
 
 ---
 
@@ -154,32 +154,32 @@ End Module
 "d" または "%d" | 時間間隔の日数。 | `new TimeSpan(6, 14, 32, 17, 685):` `%d --> "6"`;  `d\.hh\:mm --> "6.14:32"`
 "dd"、"dddddddd" | 必要に応じて先行ゼロで埋められた、時間間隔の日数。 | `new TimeSpan(6, 14, 32, 17, 685):` `ddd --> "006"`; `dd\.hh\:mm --> "06.14:32"`
 "h" または "%h" | 日数の一部としてカウントされない、時間間隔の時間数。 1 桁の時間に先行ゼロは付きません。 | `new TimeSpan(6, 14, 32, 17, 685):` `%h --> "14"`; `hh\:mm --> "14:32"`
-"hh" | 日数の一部としてカウントされない、時間間隔の時間数。 1 桁の時間には、先頭に 0 が付けられます。 | `new TimeSpan(6, 14, 32, 17, 685):` `hh --> "14"`  `new TimeSpan(6, 8, 32, 17, 685):` `hh --> 08`
+"hh" | 日数の一部としてカウントされない、時間間隔の時間数。 1 桁の時間には、先頭に&0; が付けられます。 | `new TimeSpan(6, 14, 32, 17, 685):` `hh --> "14"`  `new TimeSpan(6, 8, 32, 17, 685):` `hh --> 08`
 "m" または "%m" | 時間数および日数のいずれの一部としても含まれない、時間間隔の分数。 1 桁の分に先行ゼロは付きません。 | `new TimeSpan(6, 14, 8, 17, 685):` `%m --> "8"`; `h\:m --> "14:8"`
-"mm" | 時間数および日数のいずれの一部としても含まれない、時間間隔の分数。 1 桁の分には、先頭に 0 が付きます。 | `new TimeSpan(6, 14, 8, 17, 685):` `mm --> "08"` `new TimeSpan(6, 8, 5, 17, 685):` `d\.hh\:mm\:ss --> 6.08:05:17`
+"mm" | 時間数および日数のいずれの一部としても含まれない、時間間隔の分数。 1 桁の分には、先頭に&0; が付きます。 | `new TimeSpan(6, 14, 8, 17, 685):` `mm --> "08"` `new TimeSpan(6, 8, 5, 17, 685):` `d\.hh\:mm\:ss --> 6.08:05:17`
 "s" または "%s" | 時間数、日数、および分数のいずれの一部としても含まれない、時間間隔の秒数。 1 桁の秒に先行ゼロは付きません。 | `TimeSpan.FromSeconds(12.965):` `%s --> 12`; `s\.fff --> 12.965`
-"ss" | 時間数、日数、および分数のいずれの一部としても含まれない、時間間隔の秒数。 1 桁の秒には、先頭に 0 が付きます。 | `TimeSpan.FromSeconds(6.965):` `ss --> 06`; `ss\.fff --> 06.965`
-"f" または "%f" | 時間間隔の秒部分の 1/10。 | `TimeSpan.FromSeconds(6.895):` `f --> 8`; `ss\.f --> 06.8`
-"ff" | 時間間隔の秒部分の 1/100。 | `TimeSpan.FromSeconds(6.895):` `ff --> 89`; `ss\.ff --> 06.89`
-"fff" | 時間間隔の秒部分の 1/1000。 | `TimeSpan.FromSeconds(6.895):` `fff --> 895`; `ss\.fff --> 06.895`
-"ffff" | 時間間隔の秒部分の 1/10000。 | `TimeSpan.Parse("0:0:6.8954321"):` `ffff --> 8954`; `ss\.ffff --> 06.8954`
-"fffff" | 時間間隔の秒部分の 1/100000。 | `TimeSpan.Parse("0:0:6.8954321"):` `ffff --> 89543`; `ss\.ffff --> 06.89543`
-"ffffff" | 時間間隔の秒部分の 1/1000000。 | `TimeSpan.Parse("0:0:6.8954321"):` `ffff --> 895432`; `ss\.ffff --> 06.895432`
-"fffffff" | 時間間隔の秒部分の 1/10000000 (またはタイマー刻みの小数部)。 | `TimeSpan.Parse("0:0:6.8954321"):` `ffff --> 8954321`; `ss\.ffff --> 06.8954321`
-"F" または "%F" | 時間間隔の秒部分の 1/10。 その桁がゼロの場合には、何も表示されません。 | `TimeSpan.Parse("00:00:06.32"):` `%F: 3`  `TimeSpan.Parse("0:0:3.091"):` `ss\.F: 03.`
-"FF" | 時間間隔の秒部分の 1/100。 小数の後続のゼロは表示されません。また、2 桁のゼロも含まれません。 |  `TimeSpan.Parse("00:00:06.3291791"):` `FFFFFF: 32`  `TimeSpan.Parse("0:0:3.1900000"):` `ss\.FFFFFF: 03.1`
-"FFF" | 時間間隔の秒部分の 1/1000。 小数の後続のゼロは含まれません。 |  `TimeSpan.Parse("00:00:06.3291791"):` `FFFFFF: 329`  `TimeSpan.Parse("0:0:3.1900000"):` `ss\.FFFFFF: 03.1`
-"FFFF" | 時間間隔の秒部分の 1/10000。 小数の後続のゼロは含まれません。 |  `TimeSpan.Parse("00:00:06.3291791"):` `FFFFFF: 3291`  `TimeSpan.Parse("0:0:3.1900000"):` `ss\.FFFFFF: 03.1`
-"FFFFF" | 時間間隔の秒部分の 1/100000。 小数の後続のゼロは含まれません。 | `TimeSpan.Parse("00:00:06.3291791"):` `FFFFFF: 32917`  `TimeSpan.Parse("0:0:3.1900000"):` `ss\.FFFFFF: 03.1`
-"FFFFFF" | 時間間隔の秒部分の 1/1000000。 小数の後続のゼロは表示されません。 | `TimeSpan.Parse("00:00:06.3291791"):` `FFFFFF: 329179`  `TimeSpan.Parse("0:0:3.1900000"):` `ss\.FFFFFF: 03.1`
-"FFFFFFF" | 時間間隔の秒部分の 1/10000000。 小数の後続のゼロは表示されません。また、7 桁のゼロも表示されません。 | `TimeSpan.Parse("00:00:06.3291791"):` `FFFFFF: 3291791`  `TimeSpan.Parse("0:0:3.1900000"):` `ss\.FFFFFF: 03.19`
+"ss" | 時間数、日数、および分数のいずれの一部としても含まれない、時間間隔の秒数。 1 桁の秒には、先頭に&0; が付きます。 | `TimeSpan.FromSeconds(6.965):` `ss --> 06`; `ss\.fff --> 06.965`
+"f" または "%f" | 時間間隔の秒部分の&1;/10。 | `TimeSpan.FromSeconds(6.895):` `f --> 8`; `ss\.f --> 06.8`
+"ff" | 時間間隔の秒部分の&1;/100。 | `TimeSpan.FromSeconds(6.895):` `ff --> 89`; `ss\.ff --> 06.89`
+"fff" | 時間間隔の秒部分の&1;/1000。 | `TimeSpan.FromSeconds(6.895):` `fff --> 895`; `ss\.fff --> 06.895`
+"ffff" | 時間間隔の秒部分の&1;/10000。 | `TimeSpan.Parse("0:0:6.8954321"):` `ffff --> 8954`; `ss\.ffff --> 06.8954`
+"fffff" | 時間間隔の秒部分の&1;/100000。 | `TimeSpan.Parse("0:0:6.8954321"):` `ffff --> 89543`; `ss\.ffff --> 06.89543`
+"ffffff" | 時間間隔の秒部分の&1;/1000000。 | `TimeSpan.Parse("0:0:6.8954321"):` `ffff --> 895432`; `ss\.ffff --> 06.895432`
+"fffffff" | 時間間隔の秒部分の&1;/10000000 (またはタイマー刻みの小数部)。 | `TimeSpan.Parse("0:0:6.8954321"):` `ffff --> 8954321`; `ss\.ffff --> 06.8954321`
+"F" または "%F" | 時間間隔の秒部分の&1;/10。 その桁がゼロの場合には、何も表示されません。 | `TimeSpan.Parse("00:00:06.32"):` `%F: 3`  `TimeSpan.Parse("0:0:3.091"):` `ss\.F: 03.`
+"FF" | 時間間隔の秒部分の&1;/100。 小数の後続のゼロは表示されません。また、2 桁のゼロも含まれません。 |  `TimeSpan.Parse("00:00:06.3291791"):` `FFFFFF: 32`  `TimeSpan.Parse("0:0:3.1900000"):` `ss\.FFFFFF: 03.1`
+"FFF" | 時間間隔の秒部分の&1;/1000。 小数の後続のゼロは含まれません。 |  `TimeSpan.Parse("00:00:06.3291791"):` `FFFFFF: 329`  `TimeSpan.Parse("0:0:3.1900000"):` `ss\.FFFFFF: 03.1`
+"FFFF" | 時間間隔の秒部分の&1;/10000。 小数の後続のゼロは含まれません。 |  `TimeSpan.Parse("00:00:06.3291791"):` `FFFFFF: 3291`  `TimeSpan.Parse("0:0:3.1900000"):` `ss\.FFFFFF: 03.1`
+"FFFFF" | 時間間隔の秒部分の&1;/100000。 小数の後続のゼロは含まれません。 | `TimeSpan.Parse("00:00:06.3291791"):` `FFFFFF: 32917`  `TimeSpan.Parse("0:0:3.1900000"):` `ss\.FFFFFF: 03.1`
+"FFFFFF" | 時間間隔の秒部分の&1;/1000000。 小数の後続のゼロは表示されません。 | `TimeSpan.Parse("00:00:06.3291791"):` `FFFFFF: 329179`  `TimeSpan.Parse("0:0:3.1900000"):` `ss\.FFFFFF: 03.1`
+"FFFFFFF" | 時間間隔の秒部分の&1;/10000000。 小数の後続のゼロは表示されません。また、7 桁のゼロも表示されません。 | `TimeSpan.Parse("00:00:06.3291791"):` `FFFFFF: 3291791`  `TimeSpan.Parse("0:0:3.1900000"):` `ss\.FFFFFF: 03.19`
 'string' | リテラル文字列区切り記号 | `new TimeSpan(14, 32, 17):` `hh':'mm':'ss --> "14:32:17"`
 \ | エスケープ文字。 | `new TimeSpan(14, 32, 17):` `hh\:mm\:ss --> "14:32:17"`
 その他の文字 | エスケープされないその他の文字はすべて、カスタム書式指定子として解釈されます。 | `new TimeSpan(14, 32, 17):` `hh\:mm\:ss --> "14:32:17"`
 
 ## <a name="the-d-custom-format-specifier"></a>"d" カスタム書式指定子
 
-"d" カスタム書式指定子は、時間間隔の日数を表す [TimeSpan.Days](xref:System.TimeSpan.Days) プロパティの値を出力します。 値が 1 桁を超える場合でも、[TimeSpan](xref:System.TimeSpan) 値の完全な日数が出力されます。 [TimeSpan.Days](xref:System.TimeSpan.Days) プロパティの値が 0 の場合、指定子は "0" を出力します。
+"d" カスタム書式指定子は、時間間隔の日数を表す [TimeSpan.Days](xref:System.TimeSpan.Days) プロパティの値を出力します。 値が&1; 桁を超える場合でも、[TimeSpan](xref:System.TimeSpan) 値の完全な日数が出力されます。 [TimeSpan.Days](xref:System.TimeSpan.Days) プロパティの値が&0; の場合、指定子は "0" を出力します。
 
 "d" カスタム書式指定子が単独で使用される場合は、間違って標準書式指定文字列として解釈されないように "%d" を指定します。 具体的な例を次に示します。
 
@@ -219,7 +219,7 @@ Console.WriteLine(ts3.ToString("d\.hh\:mm\:ss"))
 '       3.04:03:17
 ```
 
-## <a name="the-dddddddddd-custom-format-specifiers"></a>"dd" ～ "dddddddd" カスタム書式指定子
+## <a name="the-dd-dddddddd-custom-format-specifiers"></a>"dd" ～ "dddddddd" カスタム書式指定子
 
 "dd"、"ddd"、"dddd"、"ddddd"、"dddddd"、"ddddddd"、および "dddddddd" カスタム書式指定子は、時間間隔の日数を表す [TimeSpan.Days](xref:System.TimeSpan.Days) プロパティの値を出力します。 
 
@@ -674,11 +674,11 @@ Console.WriteLine(interval2.ToString("ss\.fff"))
 
 ## <a name="the-f-custom-format-specifier"></a>"f" カスタム書式指定子
 
-"f" カスタム書式指定子は、時間間隔の秒部分の 1/10 を出力します。 書式指定操作では、これより下位の小数桁は切り捨てられます。 [TimeSpan.ParseExact](xref:System.TimeSpan.ParseExact(System.String,System.String,System.IFormatProvider)) メソッドまたは [TimeSpan.TryParseExact](xref:System.TimeSpan.TryParseExact(System.String,System.String,System.IFormatProvider,System.Globalization.TimeSpanStyles,System.TimeSpan@)) メソッドを呼び出す解析操作では、入力文字列に 1 桁の小数部が含まれている必要があります。 
+"f" カスタム書式指定子は、時間間隔の秒部分の&1;/10 を出力します。 書式指定操作では、これより下位の小数桁は切り捨てられます。 [TimeSpan.ParseExact](xref:System.TimeSpan.ParseExact(System.String,System.String,System.IFormatProvider)) メソッドまたは [TimeSpan.TryParseExact](xref:System.TimeSpan.TryParseExact(System.String,System.String,System.IFormatProvider,System.Globalization.TimeSpanStyles,System.TimeSpan@)) メソッドを呼び出す解析操作では、入力文字列に&1; 桁の小数部が含まれている必要があります。 
 
 "f" カスタム書式指定子が単独で使用される場合は、誤って標準書式指定文字列として解釈されないように "%f" を指定します。
 
-次の例では、"f" カスタム書式指定子を使用して、[TimeSpan](xref:System.TimeSpan) 値の秒部分の 1/10 を表示します。 "f" は最初に唯一の書式指定子として使用されてから、カスタム書式指定文字列で "s" 指定子と結合されます。
+次の例では、"f" カスタム書式指定子を使用して、[TimeSpan](xref:System.TimeSpan) 値の秒部分の&1;/10 を表示します。 "f" は最初に唯一の書式指定子として使用されてから、カスタム書式指定文字列で "s" 指定子と結合されます。
 
 ```csharp
 TimeSpan ts = new TimeSpan(1003498765432);
@@ -752,9 +752,9 @@ Next
 
 ## <a name="the-ff-custom-format-specifier"></a>"ff" カスタム書式指定子
 
-"ff" カスタム書式指定子は、時間間隔の秒部分の 1/100 を出力します。 書式指定操作では、これより下位の小数桁は切り捨てられます。 [TimeSpan.ParseExact](xref:System.TimeSpan.ParseExact(System.String,System.String,System.IFormatProvider)) メソッドまたは [TimeSpan.TryParseExact](xref:System.TimeSpan.TryParseExact(System.String,System.String,System.IFormatProvider,System.Globalization.TimeSpanStyles,System.TimeSpan@)) メソッドを呼び出す解析操作では、入力文字列に 2 桁の小数部が含まれている必要があります。 
+"ff" カスタム書式指定子は、時間間隔の秒部分の&1;/100 を出力します。 書式指定操作では、これより下位の小数桁は切り捨てられます。 [TimeSpan.ParseExact](xref:System.TimeSpan.ParseExact(System.String,System.String,System.IFormatProvider)) メソッドまたは [TimeSpan.TryParseExact](xref:System.TimeSpan.TryParseExact(System.String,System.String,System.IFormatProvider,System.Globalization.TimeSpanStyles,System.TimeSpan@)) メソッドを呼び出す解析操作では、入力文字列に&2; 桁の小数部が含まれている必要があります。 
 
-次の例では、"ff" カスタム書式指定子を使用して、[TimeSpan](xref:System.TimeSpan) 値の秒部分の 1/100 を表示します。 "ff" は最初に唯一の書式指定子として使用されてから、カスタム書式指定文字列で "s" 指定子と結合されます。
+次の例では、"ff" カスタム書式指定子を使用して、[TimeSpan](xref:System.TimeSpan) 値の秒部分の&1;/100 を表示します。 "ff" は最初に唯一の書式指定子として使用されてから、カスタム書式指定文字列で "s" 指定子と結合されます。
 
 ```csharp
 TimeSpan ts = new TimeSpan(1003498765432);
@@ -828,9 +828,9 @@ Next
 
 ## <a name="the-fff-custom-format-specifier"></a>"fff" カスタム書式指定子
 
-"fff" カスタム書式指定子 ("f" 文字が 3 つ) は、時間間隔の秒部分の 1/1000 を出力します。 書式指定操作では、これより下位の小数桁は切り捨てられます。 [TimeSpan.ParseExact](xref:System.TimeSpan.ParseExact(System.String,System.String,System.IFormatProvider)) メソッドまたは [TimeSpan.TryParseExact](xref:System.TimeSpan.TryParseExact(System.String,System.String,System.IFormatProvider,System.Globalization.TimeSpanStyles,System.TimeSpan@)) メソッドを呼び出す解析操作では、入力文字列に 3 桁の小数部が含まれている必要があります。 
+"fff" カスタム書式指定子 ("f" 文字が&3; つ) は、時間間隔の秒部分の&1;/1000 を出力します。 書式指定操作では、これより下位の小数桁は切り捨てられます。 [TimeSpan.ParseExact](xref:System.TimeSpan.ParseExact(System.String,System.String,System.IFormatProvider)) メソッドまたは [TimeSpan.TryParseExact](xref:System.TimeSpan.TryParseExact(System.String,System.String,System.IFormatProvider,System.Globalization.TimeSpanStyles,System.TimeSpan@)) メソッドを呼び出す解析操作では、入力文字列に&3; 桁の小数部が含まれている必要があります。 
 
-次の例では、"fff" カスタム書式指定子を使用して、[TimeSpan](xref:System.TimeSpan) 値の秒部分の 1/1000 を表示します。 "fff" は最初に唯一の書式指定子として使用されてから、カスタム書式指定文字列で "s" 指定子と結合されます。
+次の例では、"fff" カスタム書式指定子を使用して、[TimeSpan](xref:System.TimeSpan) 値の秒部分の&1;/1000 を表示します。 "fff" は最初に唯一の書式指定子として使用されてから、カスタム書式指定文字列で "s" 指定子と結合されます。
 
 ```csharp
 TimeSpan ts = new TimeSpan(1003498765432);
@@ -903,9 +903,9 @@ Next
 ```
 
 ## <a name="the-ffff-custom-format-specifier"></a>"ffff" カスタム書式指定子
-"ffff" カスタム書式指定子 ("f" 文字が 4 つ) は、時間間隔の秒部分の 1/10000 を出力します。 書式指定操作では、これより下位の小数桁は切り捨てられます。 [TimeSpan.ParseExact](xref:System.TimeSpan.ParseExact(System.String,System.String,System.IFormatProvider)) メソッドまたは [TimeSpan.TryParseExact](xref:System.TimeSpan.TryParseExact(System.String,System.String,System.IFormatProvider,System.Globalization.TimeSpanStyles,System.TimeSpan@)) メソッドを呼び出す解析操作では、入力文字列に 4 桁の小数部が含まれている必要があります。 
+"ffff" カスタム書式指定子 ("f" 文字が&4; つ) は、時間間隔の秒部分の&1;/10000 を出力します。 書式指定操作では、これより下位の小数桁は切り捨てられます。 [TimeSpan.ParseExact](xref:System.TimeSpan.ParseExact(System.String,System.String,System.IFormatProvider)) メソッドまたは [TimeSpan.TryParseExact](xref:System.TimeSpan.TryParseExact(System.String,System.String,System.IFormatProvider,System.Globalization.TimeSpanStyles,System.TimeSpan@)) メソッドを呼び出す解析操作では、入力文字列に&4; 桁の小数部が含まれている必要があります。 
 
-次の例では、"ffff" カスタム書式指定子を使用して、[TimeSpan](xref:System.TimeSpan) 値の秒部分の 1/10000 を表示します。 "ffff" は最初に唯一の書式指定子として使用されてから、カスタム書式指定文字列で "s" 指定子と結合されます。
+次の例では、"ffff" カスタム書式指定子を使用して、[TimeSpan](xref:System.TimeSpan) 値の秒部分の&1;/10000 を表示します。 "ffff" は最初に唯一の書式指定子として使用されてから、カスタム書式指定文字列で "s" 指定子と結合されます。
 
 ```csharp
 TimeSpan ts = new TimeSpan(1003498765432);
@@ -978,9 +978,9 @@ Next
 ```
 
 ## <a name="the-fffff-custom-format-specifier"></a>"fffff" カスタム書式指定子
-"fffff" カスタム書式指定子 ("f" 文字が 5 つ) は、時間間隔の秒部分の 1/100000 を出力します。 書式指定操作では、これより下位の小数桁は切り捨てられます。 [TimeSpan.ParseExact](xref:System.TimeSpan.ParseExact(System.String,System.String,System.IFormatProvider)) メソッドまたは [TimeSpan.TryParseExact](xref:System.TimeSpan.TryParseExact(System.String,System.String,System.IFormatProvider,System.Globalization.TimeSpanStyles,System.TimeSpan@)) メソッドを呼び出す解析操作では、入力文字列に 5 桁の小数部が含まれている必要があります。 
+"fffff" カスタム書式指定子 ("f" 文字が&5; つ) は、時間間隔の秒部分の&1;/100000 を出力します。 書式指定操作では、これより下位の小数桁は切り捨てられます。 [TimeSpan.ParseExact](xref:System.TimeSpan.ParseExact(System.String,System.String,System.IFormatProvider)) メソッドまたは [TimeSpan.TryParseExact](xref:System.TimeSpan.TryParseExact(System.String,System.String,System.IFormatProvider,System.Globalization.TimeSpanStyles,System.TimeSpan@)) メソッドを呼び出す解析操作では、入力文字列に&5; 桁の小数部が含まれている必要があります。 
 
-次の例では、"fffff" カスタム書式指定子を使用して、[TimeSpan](xref:System.TimeSpan) 値の秒部分の 1/100000 を表示します。 "fffff" は最初に、唯一の書式指定子として使用されてから、カスタム書式指定文字列で "s" 指定子と結合されます。
+次の例では、"fffff" カスタム書式指定子を使用して、[TimeSpan](xref:System.TimeSpan) 値の秒部分の&1;/100000 を表示します。 "fffff" は最初に、唯一の書式指定子として使用されてから、カスタム書式指定文字列で "s" 指定子と結合されます。
 
 ```csharp
 TimeSpan ts = new TimeSpan(1003498765432);
@@ -1054,9 +1054,9 @@ Next
 
 ## <a name="the-ffffff-custom-format-specifier"></a>"ffffff" カスタム書式指定子
 
-"ffffff" カスタム書式指定子 ("f" 文字が 6 つ) は、時間間隔の秒部分の 1/1000000 を出力します。 書式指定操作では、これより下位の小数桁は切り捨てられます。 [TimeSpan.ParseExact](xref:System.TimeSpan.ParseExact(System.String,System.String,System.IFormatProvider)) メソッドまたは [TimeSpan.TryParseExact](xref:System.TimeSpan.TryParseExact(System.String,System.String,System.IFormatProvider,System.Globalization.TimeSpanStyles,System.TimeSpan@)) メソッドを呼び出す解析操作では、入力文字列に 6 桁の小数部が含まれている必要があります。 
+"ffffff" カスタム書式指定子 ("f" 文字が&6; つ) は、時間間隔の秒部分の&1;/1000000 を出力します。 書式指定操作では、これより下位の小数桁は切り捨てられます。 [TimeSpan.ParseExact](xref:System.TimeSpan.ParseExact(System.String,System.String,System.IFormatProvider)) メソッドまたは [TimeSpan.TryParseExact](xref:System.TimeSpan.TryParseExact(System.String,System.String,System.IFormatProvider,System.Globalization.TimeSpanStyles,System.TimeSpan@)) メソッドを呼び出す解析操作では、入力文字列に&6; 桁の小数部が含まれている必要があります。 
 
-次の例では、"ffffff" カスタム書式指定子を使用して、[TimeSpan](xref:System.TimeSpan) 値の秒部分の 1/1000000 を表示します。 最初に唯一の書式指定子として使用されてから、カスタム書式指定文字列で "s" 指定子と結合されます。
+次の例では、"ffffff" カスタム書式指定子を使用して、[TimeSpan](xref:System.TimeSpan) 値の秒部分の&1;/1000000 を表示します。 最初に唯一の書式指定子として使用されてから、カスタム書式指定文字列で "s" 指定子と結合されます。
 
 ```csharp
 TimeSpan ts = new TimeSpan(1003498765432);
@@ -1130,7 +1130,7 @@ Next
 
 ## <a name="the-fffffff-custom-format-specifier"></a>"fffffff" カスタム書式指定子
 
-"fffffff" カスタム書式指定子 ("f" 文字が 7 つ) は、時間間隔の秒部分の 1/10000000 (またはタイマー刻みの小数部) を出力します。 [TimeSpan.ParseExact](xref:System.TimeSpan.ParseExact(System.String,System.String,System.IFormatProvider)) メソッドまたは [TimeSpan.TryParseExact](xref:System.TimeSpan.TryParseExact(System.String,System.String,System.IFormatProvider,System.Globalization.TimeSpanStyles,System.TimeSpan@)) メソッドを呼び出す解析操作では、入力文字列に 7 桁の小数部が含まれている必要があります。 
+"fffffff" カスタム書式指定子 ("f" 文字が&7; つ) は、時間間隔の秒部分の&1;/10000000 (またはタイマー刻みの小数部) を出力します。 [TimeSpan.ParseExact](xref:System.TimeSpan.ParseExact(System.String,System.String,System.IFormatProvider)) メソッドまたは [TimeSpan.TryParseExact](xref:System.TimeSpan.TryParseExact(System.String,System.String,System.IFormatProvider,System.Globalization.TimeSpanStyles,System.TimeSpan@)) メソッドを呼び出す解析操作では、入力文字列に&7; 桁の小数部が含まれている必要があります。 
 
 次の例では、"fffffff" カスタム書式指定子を使用して、[TimeSpan](xref:System.TimeSpan) 値のタイマー刻みの小数部を表示します。 最初に唯一の書式指定子として使用されてから、カスタム書式指定文字列で "s" 指定子と結合されます。
 
@@ -1206,11 +1206,11 @@ Next
 
 ## <a name="the-f-custom-format-specifier"></a>"F" カスタム書式指定子
 
-"F" カスタム書式指定子は、時間間隔の秒部分の 1/10 を出力します。 書式指定操作では、これより下位の小数桁は切り捨てられます。 時間間隔の秒部分の 1/10 が 0 の場合、それは結果文字列に含まれません。 [TimeSpan.ParseExact](xref:System.TimeSpan.ParseExact(System.String,System.String,System.IFormatProvider)) メソッドまたは [TimeSpan.TryParseExact](xref:System.TimeSpan.TryParseExact(System.String,System.String,System.IFormatProvider,System.Globalization.TimeSpanStyles,System.TimeSpan@)) メソッドを呼び出す解析操作では、秒の 1/10 の桁を使用するかどうかはオプションです。
+"F" カスタム書式指定子は、時間間隔の秒部分の&1;/10 を出力します。 書式指定操作では、これより下位の小数桁は切り捨てられます。 時間間隔の秒部分の&1;/10 が&0; の場合、それは結果文字列に含まれません。 [TimeSpan.ParseExact](xref:System.TimeSpan.ParseExact(System.String,System.String,System.IFormatProvider)) メソッドまたは [TimeSpan.TryParseExact](xref:System.TimeSpan.TryParseExact(System.String,System.String,System.IFormatProvider,System.Globalization.TimeSpanStyles,System.TimeSpan@)) メソッドを呼び出す解析操作では、秒の&1;/10 の桁を使用するかどうかはオプションです。
 
 "F" カスタム書式指定子が単独で使用される場合は、誤って標準書式指定文字列として解釈されないように "%F" を指定します。
 
-次の例では、"F" カスタム書式指定子を使用して、[TimeSpan](xref:System.TimeSpan) 値の秒部分の 1/10 を表示します。 このカスタム書式指定子は解析操作でも使用されます。
+次の例では、"F" カスタム書式指定子を使用して、[TimeSpan](xref:System.TimeSpan) 値の秒部分の&1;/10 を表示します。 このカスタム書式指定子は解析操作でも使用されます。
 
 ```csharp
 Console.WriteLine("Formatting:");
@@ -1279,9 +1279,9 @@ Next
 
 ## <a name="the-ff-custom-format-specifier"></a>"FF" カスタム書式指定子
 
-"FF" カスタム書式指定子は、時間間隔の秒部分の 1/100 を出力します。 書式指定操作では、これより下位の小数桁は切り捨てられます。 後続の小数のゼロがある場合、それらの数字は結果文字列に含まれません。 [TimeSpan.ParseExact](xref:System.TimeSpan.ParseExact(System.String,System.String,System.IFormatProvider)) メソッドまたは [TimeSpan.TryParseExact](xref:System.TimeSpan.TryParseExact(System.String,System.String,System.IFormatProvider,System.Globalization.TimeSpanStyles,System.TimeSpan@)) メソッドを呼び出す解析操作では、秒の 1/10 および 1/100 の桁を使用するかどうかはオプションです。
+"FF" カスタム書式指定子は、時間間隔の秒部分の&1;/100 を出力します。 書式指定操作では、これより下位の小数桁は切り捨てられます。 後続の小数のゼロがある場合、それらの数字は結果文字列に含まれません。 [TimeSpan.ParseExact](xref:System.TimeSpan.ParseExact(System.String,System.String,System.IFormatProvider)) メソッドまたは [TimeSpan.TryParseExact](xref:System.TimeSpan.TryParseExact(System.String,System.String,System.IFormatProvider,System.Globalization.TimeSpanStyles,System.TimeSpan@)) メソッドを呼び出す解析操作では、秒の&1;/10 および&1;/100 の桁を使用するかどうかはオプションです。
 
-次の例では、"FF" カスタム書式指定子を使用して、[TimeSpan](xref:System.TimeSpan) 値の秒部分の 1/100 を表示します。 このカスタム書式指定子は解析操作でも使用されます。
+次の例では、"FF" カスタム書式指定子を使用して、[TimeSpan](xref:System.TimeSpan) 値の秒部分の&1;/100 を表示します。 このカスタム書式指定子は解析操作でも使用されます。
 
 ```csharp
 Console.WriteLine("Formatting:");
@@ -1350,9 +1350,9 @@ Next
 
 ## <a name="the-fff-custom-format-specifier"></a>"FFF" カスタム書式指定子
 
-"FFF" カスタム書式指定子 ("F" 文字が 3 つ) は、時間間隔の秒部分の 1/1000 を出力します。 書式指定操作では、これより下位の小数桁は切り捨てられます。 後続の小数のゼロがある場合、それらの数字は結果文字列に含まれません。 [TimeSpan.ParseExact](xref:System.TimeSpan.ParseExact(System.String,System.String,System.IFormatProvider)) メソッドまたは [TimeSpan.TryParseExact](xref:System.TimeSpan.TryParseExact(System.String,System.String,System.IFormatProvider,System.Globalization.TimeSpanStyles,System.TimeSpan@)) メソッドを呼び出す解析操作では、秒の 1/10、1/100、および 1/1000 の桁を使用するかどうかはオプションです。
+"FFF" カスタム書式指定子 ("F" 文字が&3; つ) は、時間間隔の秒部分の&1;/1000 を出力します。 書式指定操作では、これより下位の小数桁は切り捨てられます。 後続の小数のゼロがある場合、それらの数字は結果文字列に含まれません。 [TimeSpan.ParseExact](xref:System.TimeSpan.ParseExact(System.String,System.String,System.IFormatProvider)) メソッドまたは [TimeSpan.TryParseExact](xref:System.TimeSpan.TryParseExact(System.String,System.String,System.IFormatProvider,System.Globalization.TimeSpanStyles,System.TimeSpan@)) メソッドを呼び出す解析操作では、秒の&1;/10、1/100、および&1;/1000 の桁を使用するかどうかはオプションです。
 
-次の例では、"FFF" カスタム書式指定子を使用して、[TimeSpan](xref:System.TimeSpan) 値の秒部分の 1/1000 を表示します。 このカスタム書式指定子は解析操作でも使用されます。
+次の例では、"FFF" カスタム書式指定子を使用して、[TimeSpan](xref:System.TimeSpan) 値の秒部分の&1;/1000 を表示します。 このカスタム書式指定子は解析操作でも使用されます。
 
 ```csharp
 Console.WriteLine("Formatting:");
@@ -1421,9 +1421,9 @@ Next
 
 ## <a name="the-ffff-custom-format-specifier"></a>"FFFF" カスタム書式指定子
 
-"FFFF" カスタム書式指定子 ("F" 文字が 4 つ) は、時間間隔の秒部分の 1/10000 を出力します。 書式指定操作では、これより下位の小数桁は切り捨てられます。 後続の小数のゼロがある場合、それらの数字は結果文字列に含まれません。 [TimeSpan.ParseExact](xref:System.TimeSpan.ParseExact(System.String,System.String,System.IFormatProvider)) メソッドまたは [TimeSpan.TryParseExact](xref:System.TimeSpan.TryParseExact(System.String,System.String,System.IFormatProvider,System.Globalization.TimeSpanStyles,System.TimeSpan@)) メソッドを呼び出す解析操作では、秒の 1/10、1/100、1/1000、および 1/10000 の桁を使用するかどうかはオプションです。
+"FFFF" カスタム書式指定子 ("F" 文字が&4; つ) は、時間間隔の秒部分の&1;/10000 を出力します。 書式指定操作では、これより下位の小数桁は切り捨てられます。 後続の小数のゼロがある場合、それらの数字は結果文字列に含まれません。 [TimeSpan.ParseExact](xref:System.TimeSpan.ParseExact(System.String,System.String,System.IFormatProvider)) メソッドまたは [TimeSpan.TryParseExact](xref:System.TimeSpan.TryParseExact(System.String,System.String,System.IFormatProvider,System.Globalization.TimeSpanStyles,System.TimeSpan@)) メソッドを呼び出す解析操作では、秒の&1;/10、1/100、1/1000、および&1;/10000 の桁を使用するかどうかはオプションです。
 
-次の例では、"FFFF" カスタム書式指定子を使用して、[TimeSpan](xref:System.TimeSpan) 値の秒部分の 1/10000 を表示します。 "FFFF" カスタム書式指定子は解析操作でも使用されます。
+次の例では、"FFFF" カスタム書式指定子を使用して、[TimeSpan](xref:System.TimeSpan) 値の秒部分の&1;/10000 を表示します。 "FFFF" カスタム書式指定子は解析操作でも使用されます。
 
 ```csharp
 Console.WriteLine("Formatting:");
@@ -1492,9 +1492,9 @@ Next
 
 ## <a name="the-fffff-custom-format-specifier"></a>"FFFFF" カスタム書式指定子
 
-"FFFFF" カスタム書式指定子 ("F" 文字が 5 つ) は、時間間隔の秒部分の 1/100000 を出力します。 書式指定操作では、これより下位の小数桁は切り捨てられます。 後続の小数のゼロがある場合、それらの数字は結果文字列に含まれません。 [TimeSpan.ParseExact](xref:System.TimeSpan.ParseExact(System.String,System.String,System.IFormatProvider)) メソッドまたは [TimeSpan.TryParseExact](xref:System.TimeSpan.TryParseExact(System.String,System.String,System.IFormatProvider,System.Globalization.TimeSpanStyles,System.TimeSpan@)) メソッドを呼び出す解析操作では、秒の 1/10、1/100、1/1000、1/10000、および 1/100000 の桁を使用するかどうかはオプションです。
+"FFFFF" カスタム書式指定子 ("F" 文字が&5; つ) は、時間間隔の秒部分の&1;/100000 を出力します。 書式指定操作では、これより下位の小数桁は切り捨てられます。 後続の小数のゼロがある場合、それらの数字は結果文字列に含まれません。 [TimeSpan.ParseExact](xref:System.TimeSpan.ParseExact(System.String,System.String,System.IFormatProvider)) メソッドまたは [TimeSpan.TryParseExact](xref:System.TimeSpan.TryParseExact(System.String,System.String,System.IFormatProvider,System.Globalization.TimeSpanStyles,System.TimeSpan@)) メソッドを呼び出す解析操作では、秒の&1;/10、1/100、1/1000、1/10000、および&1;/100000 の桁を使用するかどうかはオプションです。
 
-次の例では、"FFFFF" カスタム書式指定子を使用して、[TimeSpan](xref:System.TimeSpan) 値の秒部分の 1/100000 を表示します。 "FFFFF" カスタム書式指定子は解析操作でも使用されます。
+次の例では、"FFFFF" カスタム書式指定子を使用して、[TimeSpan](xref:System.TimeSpan) 値の秒部分の&1;/100000 を表示します。 "FFFFF" カスタム書式指定子は解析操作でも使用されます。
 
 ```csharp
 Console.WriteLine("Formatting:");
@@ -1563,9 +1563,9 @@ Next
 
 ## <a name="the-ffffff-custom-format-specifier"></a>"FFFFFF" カスタム書式指定子
 
-"FFFFFF" カスタム書式指定子 ("F" 文字が 6 つ) は、時間間隔の秒部分の 1/1000000 を出力します。 書式指定操作では、これより下位の小数桁は切り捨てられます。 後続の小数のゼロがある場合、それらの数字は結果文字列に含まれません。 [TimeSpan.ParseExact](xref:System.TimeSpan.ParseExact(System.String,System.String,System.IFormatProvider)) メソッドまたは [TimeSpan.TryParseExact](xref:System.TimeSpan.TryParseExact(System.String,System.String,System.IFormatProvider,System.Globalization.TimeSpanStyles,System.TimeSpan@)) メソッドを呼び出す解析操作では、秒の 1/10、1/100、1/1000、1/10000、1/100000 および 1/1000000 の桁を使用するかどうかはオプションです。
+"FFFFFF" カスタム書式指定子 ("F" 文字が&6; つ) は、時間間隔の秒部分の&1;/1000000 を出力します。 書式指定操作では、これより下位の小数桁は切り捨てられます。 後続の小数のゼロがある場合、それらの数字は結果文字列に含まれません。 [TimeSpan.ParseExact](xref:System.TimeSpan.ParseExact(System.String,System.String,System.IFormatProvider)) メソッドまたは [TimeSpan.TryParseExact](xref:System.TimeSpan.TryParseExact(System.String,System.String,System.IFormatProvider,System.Globalization.TimeSpanStyles,System.TimeSpan@)) メソッドを呼び出す解析操作では、秒の&1;/10、1/100、1/1000、1/10000、1/100000 および&1;/1000000 の桁を使用するかどうかはオプションです。
 
-次の例では、"FFFFFF" カスタム書式指定子を使用して、[TimeSpan](xref:System.TimeSpan) 値の秒部分の 1/1000000 を表示します。 このカスタム書式指定子は解析操作でも使用されます。
+次の例では、"FFFFFF" カスタム書式指定子を使用して、[TimeSpan](xref:System.TimeSpan) 値の秒部分の&1;/1000000 を表示します。 このカスタム書式指定子は解析操作でも使用されます。
 
 ```csharp
 Console.WriteLine("Formatting:");
@@ -1634,7 +1634,7 @@ Next
 
 ## <a name="the-fffffff-custom-format-specifier"></a>"FFFFFFF" カスタム書式指定子
 
-"FFFFFFF" カスタム書式指定子 ("F" 文字が 7 つ) は、時間間隔の秒部分の 1/10000000 (またはタイマー刻みの小数部) を出力します。 後続の小数のゼロがある場合、それらの数字は結果文字列に含まれません。 [TimeSpan.ParseExact](xref:System.TimeSpan.ParseExact(System.String,System.String,System.IFormatProvider)) メソッドまたは [TimeSpan.TryParseExact](xref:System.TimeSpan.TryParseExact(System.String,System.String,System.IFormatProvider,System.Globalization.TimeSpanStyles,System.TimeSpan@)) メソッドを呼び出す解析操作では、入力文字列の 7 桁の小数部を使用するかどうかはオプションです。
+"FFFFFFF" カスタム書式指定子 ("F" 文字が&7; つ) は、時間間隔の秒部分の&1;/10000000 (またはタイマー刻みの小数部) を出力します。 後続の小数のゼロがある場合、それらの数字は結果文字列に含まれません。 [TimeSpan.ParseExact](xref:System.TimeSpan.ParseExact(System.String,System.String,System.IFormatProvider)) メソッドまたは [TimeSpan.TryParseExact](xref:System.TimeSpan.TryParseExact(System.String,System.String,System.IFormatProvider,System.Globalization.TimeSpanStyles,System.TimeSpan@)) メソッドを呼び出す解析操作では、入力文字列の&7; 桁の小数部を使用するかどうかはオプションです。
 
 次の例では、"FFFFFFF" カスタム書式指定子を使用して、[TimeSpan](xref:System.TimeSpan) 値の秒部分の小数部を表示します。 このカスタム書式指定子は解析操作でも使用されます。
 
@@ -1707,47 +1707,47 @@ Next
 
 空白文字など、書式指定文字列内のエスケープされないその他の文字は、カスタム書式指定子として解釈されます。 ほとんどの場合、エスケープされないその他の文字が存在すると、[FormatException](xref:System.FormatException) が発生します。 
 
-書式指定文字列にリテラル文字を含める方法は 2 つあります。
+書式指定文字列にリテラル文字を含める方法は&2; つあります。
 
 * 単一引用符 (リテラル文字列の区切り記号) で囲みます。 
 
-* エスケープ文字として解釈される円記号 ("\") を前に付けます。 このため、C# では、書式指定文字列に @-quoted,、またはリテラル文字の前に追加の円記号が指定されている必要があります。
+* エスケープ文字として解釈される円記号 ("\") を前に付けます。 このため、C# では、書式指定文字列に @-quoted、またはリテラル文字の前に追加の円記号が指定されている必要があります。
 
   条件ロジックを使用してエスケープされたリテラルを書式指定文字列に含めることが必要になる場合もあります。 次の例では、条件ロジックを使用して負の時間間隔の符号を含めます。 
   
-  ```csharp
-  using System;
+```csharp
+using System;
 
-  public class Example
-  {
-     public static void Main()
-     {
-        TimeSpan result = new DateTime(2010, 01, 01) - DateTime.Now; 
-        String fmt = (result < TimeSpan.Zero ?  "\\-" : "") + "dd\\.hh\\:mm";
+public class Example
+{
+   public static void Main()
+   {
+      TimeSpan result = new DateTime(2010, 01, 01) - DateTime.Now; 
+      String fmt = (result < TimeSpan.Zero ?  "\\-" : "") + "dd\\.hh\\:mm";
 
-        Console.WriteLine(result.ToString(fmt));
-        Console.WriteLine("Interval: {0:" + fmt + "}", result);
-     }
-  }
-  // The example displays output like the following:
-  //       -1291.10:54
-  //       Interval: -1291.10:54
-  ```
+      Console.WriteLine(result.ToString(fmt));
+      Console.WriteLine("Interval: {0:" + fmt + "}", result);
+   }
+}
+// The example displays output like the following:
+//       -1291.10:54
+//       Interval: -1291.10:54
+```
 
-  ```vb
-  Module Example
-     Public Sub Main()
-        Dim result As TimeSpan = New DateTime(2010, 01, 01) - Date.Now 
-        Dim fmt As String = If(result < TimeSpan.Zero, "\-", "") + "dd\.hh\:mm"
+```vb
+Module Example
+   Public Sub Main()
+      Dim result As TimeSpan = New DateTime(2010, 01, 01) - Date.Now 
+      Dim fmt As String = If(result < TimeSpan.Zero, "\-", "") + "dd\.hh\:mm"
 
-        Console.WriteLine(result.ToString(fmt))
-        Console.WriteLine("Interval: {0:" + fmt + "}", result)
-     End Sub
-  End Module
-  ' The example displays output like the following:
-  '       -1291.10:54
-  '       Interval: -1291.10:54
-  ```
+      Console.WriteLine(result.ToString(fmt))
+      Console.WriteLine("Interval: {0:" + fmt + "}", result)
+   End Sub
+End Module
+' The example displays output like the following:
+'       -1291.10:54
+'       Interval: -1291.10:54
+```
   
 .NET では、時間間隔の区切り記号の文法が定義されていません。 そのため、日と時間、時間と分、分と秒、および秒と秒の小数部の間の区切り記号は、書式指定文字列ですべて文字リテラルとして扱う必要があります。
 
@@ -1784,10 +1784,5 @@ Console.WriteLine(interval.ToString(fmt))
 [型の書式設定](formatting-types.md)
 
 [標準 TimeSpan 書式指定文字列](standard-timespan.md)  
-
-
-
-
-<!--HONumber=Nov16_HO1-->
 
 

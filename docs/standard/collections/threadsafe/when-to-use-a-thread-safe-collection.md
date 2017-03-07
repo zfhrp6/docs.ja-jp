@@ -3,20 +3,21 @@ title: "スレッド セーフなコレクションを使用する状況"
 description: "スレッド セーフなコレクションを使用する状況"
 keywords: .NET, .NET Core
 author: mairaw
-manager: wpickett
+ms.author: mairaw
 ms.date: 06/20/2016
 ms.topic: article
-ms.prod: .net-core
-ms.technology: .net-core-technologies
+ms.prod: .net
+ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: a2a42d44-f6a5-4f16-9000-026221d66349
 translationtype: Human Translation
-ms.sourcegitcommit: e07788926a995b41571be276379ad9285747951d
-ms.openlocfilehash: 74f421a5badd9f2c7bf10fa1dfdf98161bba2ce8
+ms.sourcegitcommit: 90fe68f7f3c4b46502b5d3770b1a2d57c6af748a
+ms.openlocfilehash: b0b88a85cb4048849464381656a30e8c8ea694d8
+ms.lasthandoff: 03/02/2017
 
 ---
 
-# <a name="when-to-use-a-threadsafe-collection"></a>スレッド セーフなコレクションを使用する状況
+# <a name="when-to-use-a-thread-safe-collection"></a>スレッド セーフなコレクションを使用する状況
 
 `ConcurrentQueue`、`ConcurrentStack`、`ConcurrentDictionary`、`ConcurrentBag` と `BlockingCollection` コレクション型は、マルチ スレッドの追加および削除の操作をサポートするために、特別に設計されています。 スレッド セーフを確保するために、これらの新しい型では、さまざまな種類の効率的なロック同期機構とロック制御の不要な同期機構が使用されます。 同期を行うと、操作にオーバーヘッドが追加されます。 オーバーヘッドの量は、使用する同期の種類、実行する操作の種類、およびその他の要因 (コレクションに同時にアクセスしようとするスレッドの数など) によって異なります。
 
@@ -30,7 +31,7 @@ ms.openlocfilehash: 74f421a5badd9f2c7bf10fa1dfdf98161bba2ce8
 
 *高速化:* 同じシナリオで別の型と比較してアルゴリズムのパフォーマンスが向上することです。
 
-*スケーラビリティ:* コンピューターのコア数に比例したパフォーマンスの向上。 スケーリングするアルゴリズムのパフォーマンスは、コア数が 2 の場合よりも 8 の場合の方が向上します。
+*スケーラビリティ:* コンピューターのコア数に比例したパフォーマンスの向上。 スケーリングするアルゴリズムのパフォーマンスは、コア数が&2; の場合よりも&8; の場合の方が向上します。
 
 ## <a name="concurrentqueuelttgt-vs-queuelttgt"></a>ConcurrentQueue&lt;T&gt; 対 Queue&lt;T&gt;
 
@@ -71,9 +72,4 @@ ms.openlocfilehash: 74f421a5badd9f2c7bf10fa1dfdf98161bba2ce8
 [System.Collections.Concurrent](https://docs.microsoft.com/dotnet/core/api/System.Collections.Concurrent)
 
 [スレッドセーフなコレクション](index.md)
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

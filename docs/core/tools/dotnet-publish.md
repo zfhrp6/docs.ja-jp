@@ -1,24 +1,27 @@
 ---
-title: "dotnet-publish コマンド | .NET Core SDK"
+title: "dotnet-publish コマンド | Microsoft Docs"
 description: "dotnet-publish コマンドは、.NET Core プロジェクトをディレクトリに発行します。"
 keywords: "dotnet-publish, CLI, CLI コマンド, .NET Core"
-author: mairaw
-manager: wpickett
+author: blackdwarf
+ms.author: mairaw
 ms.date: 10/07/2016
 ms.topic: article
 ms.prod: .net-core
-ms.technology: .net-core-technologies
+ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: 8a7e1c52-5c57-4bf5-abad-727450ebeefd
 translationtype: Human Translation
-ms.sourcegitcommit: c6ee3f5663d0a3f62914e8de474cca4d15340c9d
-ms.openlocfilehash: 2b00a2c6da73c2252997b63aca8fc475cac8999f
+ms.sourcegitcommit: 796df1549a7553aa93158598d62338c02d4df73e
+ms.openlocfilehash: 1cf1611ab83874ad44855521d21040d102206338
 
 ---
 
-#<a name="dotnetpublish"></a>dotnet-publish
+#<a name="dotnet-publish"></a>dotnet-publish
 
-## <a name="name"></a>Name
+> [!WARNING]
+> このトピックは .NET Core Tools Preview 2 を対象としています。 .NET Core Tools RC4 バージョンについては、「[dotnet-publish (.NET Core Tools RC4)](../preview3/tools/dotnet-publish.md)」トピックを参照してください。
+
+## <a name="name"></a>名前
 
 `dotnet-publish` - アプリケーションとそのすべての依存関係をフォルダーにパックし、発行できるようにします。
 
@@ -102,6 +105,6 @@ project.json ファイルのバージョン フィールドで `*` を置き換�
 * [ランタイム識別子 (RID) のカタログ](../rid-catalog.md)
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Feb17_HO2-->
 
 

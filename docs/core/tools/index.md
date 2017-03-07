@@ -1,23 +1,25 @@
 ---
-title: ".NET Core コマンドライン インターフェイス (CLI) ツール"
+title: ".NET Core コマンド ライン インターフェイス (CLI) ツール | Microsoft Docs"
 description: "コマンドライン インターフェイス (CLI) とその主要な機能の概要"
 keywords: "CLI, CLI ツール, .NET, .NET Core"
 author: blackdwarf
 ms.author: mairaw
-manager: wpickett
 ms.date: 10/06/2016
 ms.topic: article
 ms.prod: .net-core
-ms.technology: .net-core-technologies
+ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: b70e9ac0-c8be-49f7-9332-95ab93e0e7bc
 translationtype: Human Translation
-ms.sourcegitcommit: b20713600d7c3ddc31be5885733a1e8910ede8c6
-ms.openlocfilehash: 3a3326f96cf69d0ac466e52107597d80c2790b62
+ms.sourcegitcommit: 796df1549a7553aa93158598d62338c02d4df73e
+ms.openlocfilehash: 1d7a3d90c6ba9079fe5d36b9c9922928d6a6f137
 
 ---
 
-# <a name="net-core-commandline-interface-tools"></a>.NET Core コマンドライン インターフェイス ツール
+# <a name="net-core-command-line-interface-tools"></a>.NET Core コマンドライン インターフェイス ツール
+
+> [!WARNING]
+> このトピックは .NET Core Tools Preview 2 を対象としています。 .NET Core Tools RC4 バージョンについては、「[.NET Core コマンドライン インターフェイス ツール (.NET Core Tools RC4)](../preview3/tools/index.md)」トピックを参照してください。
 
 .NET Core コマンドライン インターフェイス (CLI) は、.NET Core アプリケーションを開発するための新しい基本クロスプラットフォーム ツールチェーンです。 これは、統合開発環境 (IDE)、エディター、ビルド オーケストレーターなど、他の上位レベルのツールがビルド時に基にする主要なレイヤーなので、"基本" です。 
 
@@ -56,14 +58,14 @@ dotnet build --output /stuff
 dotnet /stuff/new.dll
 ```
 
-前の例に示されるように、CLI ツールの使用方法にはパターンがあります。 そのパターン内で、各コマンドの次の 3 つの主要部分を特定できます。
+前の例に示されるように、CLI ツールの使用方法にはパターンがあります。 そのパターン内で、各コマンドの次の&3; つの主要部分を特定できます。
 
 1. [ドライバー ("dotnet")](#driver)
 2. [コマンド ("動詞")](#the-verb)
 3. [コマンド引数](#the-arguments)
 
 ### <a name="driver"></a>ドライバー
-ドライバーの名前は [dotnet](dotnet.md) です。 これは最初に呼び出す部分です。 ドライバーには、次の 2 つの役割があります。
+ドライバーの名前は [dotnet](dotnet.md) です。 これは最初に呼び出す部分です。 ドライバーには、次の&2; つの役割があります。
 
 1. ポータブル アプリの実行
 2. 動詞の実行
@@ -79,7 +81,7 @@ dotnet /stuff/new.dll
 コマンドラインで渡す引数は、呼び出される実際の動詞/コマンドへの引数です。 たとえば、`dotnet publish --output publishedapp` と入力すると、`--output` 引数が `publish` コマンドに渡されます。 
 
 ## <a name="types-of-application-portability"></a>アプリケーションの移植性の種類
-CLI は、次の 2 つの主な方法でアプリケーションを移植できるようにします。
+CLI は、次の&2; つの主な方法でアプリケーションを移植できるようにします。
 
 1. .NET Core がインストールされている任意の場所で実行される、完全に移植可能なアプリケーション
 2. 自己完結型の展開
@@ -99,6 +101,6 @@ CLI は、次の 2 つの主な方法でアプリケーションを移植でき�
 
 
 
-<!--HONumber=Nov16_HO3-->
+<!--HONumber=Feb17_HO2-->
 
 

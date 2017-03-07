@@ -3,24 +3,25 @@ title: "方法: 日付と時刻の値をラウンドトリップさせる"
 description: "日付と時刻の値をラウンドトリップさせる方法"
 keywords: .NET, .NET Core
 author: stevehoag
-manager: wpickett
+ms.author: shoag
 ms.date: 07/26/2016
 ms.topic: article
-ms.prod: .net-core
-ms.technology: .net-core-technologies
+ms.prod: .net
+ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: 15690f18-1bb9-4bb8-bc11-0b737e2f0859
 translationtype: Human Translation
-ms.sourcegitcommit: fb00da6505c9edb6a49d2003ae9bcb8e74c11d6c
-ms.openlocfilehash: 00a09c8a60138a1828d4e8c62dd72b88abbf4bbe
+ms.sourcegitcommit: 90fe68f7f3c4b46502b5d3770b1a2d57c6af748a
+ms.openlocfilehash: 79c4da0cc6b4436fcbd5b345e23b387f2ad933d1
+ms.lasthandoff: 03/02/2017
 
 ---
 
-# <a name="how-to-roundtrip-date-and-time-values"></a>方法: 日付と時刻の値をラウンドトリップさせる
+# <a name="how-to-round-trip-date-and-time-values"></a>方法: 日付と時刻の値をラウンドトリップさせる
 
 ある特定の時点を明確に表すように日付と時刻の値を保つことは、多くのアプリケーションに共通する要件です。 このトピックでは、[DateTime](xref:System.DateTime) 値と [DateTimeOffset](xref:System.DateTimeOffset) 値を保存して、保存した日時とまったく同じ時点を表すように復元する方法について説明します。
 
-## <a name="to-roundtrip-a-datetime-value"></a>DateTime 値をラウンドトリップさせるには
+## <a name="to-round-trip-a-datetime-value"></a>DateTime 値をラウンドトリップさせるには
 
 1. [DateTime.ToString(String)](xref:System.DateTime.ToString(System.String)) メソッドを "o" 書式指定子と共に呼び出して、[DateTime](xref:System.DateTime) 値を対応する文字列形式に変換します。
 
@@ -95,9 +96,9 @@ Console.WriteLine("Read {0} ({2}) from {1}.", restoredDate.ToString(), _
 '    Read 6/12/2008 6:45:15 PM (Local) from .\DateFile.txt.
 ```
 
-[DateTime](xref:System.DateTime) 値をラウンドトリップさせる場合、この方法により、あらゆる現地時刻と協定世界時刻を適切に保存できます。 たとえば、現地時刻の [DateTime](xref:System.DateTime) 値が米国太平洋標準時タイム ゾーンのシステムで保存され、米国中部標準時タイム ゾーンのシステムで復元された場合、復元された日付と時刻は 2 つのタイム ゾーンの時差を反映し、元の時刻より 2 時間後になります。 ただし、タイム ゾーンが指定されていない時刻の場合、この方法では必ずしも正確な結果を得られるわけではありません。 [Kind](xref:System.DateTime.Kind) プロパティが [Unspecified](xref:System.DateTimeKind.Unspecified) である [DateTime](xref:System.DateTime) 値はすべて現地時刻として扱われます。 それ以外では、[DateTime](xref:System.DateTime) は間違った時点を示すことになります。 この制限を回避するには、日付と時刻の値と該当するタイム ゾーンを確実に関連付けてから保存操作と復元操作を行います。
+[DateTime](xref:System.DateTime) 値をラウンドトリップさせる場合、この方法により、あらゆる現地時刻と協定世界時刻を適切に保存できます。 たとえば、現地時刻の [DateTime](xref:System.DateTime) 値が米国太平洋標準時タイム ゾーンのシステムで保存され、米国中部標準時タイム ゾーンのシステムで復元された場合、復元された日付と時刻は&2; つのタイム ゾーンの時差を反映し、元の時刻より&2; 時間後になります。 ただし、タイム ゾーンが指定されていない時刻の場合、この方法では必ずしも正確な結果を得られるわけではありません。 [Kind](xref:System.DateTime.Kind) プロパティが [Unspecified](xref:System.DateTimeKind.Unspecified) である [DateTime](xref:System.DateTime) 値はすべて現地時刻として扱われます。 それ以外では、[DateTime](xref:System.DateTime) は間違った時点を示すことになります。 この制限を回避するには、日付と時刻の値と該当するタイム ゾーンを確実に関連付けてから保存操作と復元操作を行います。
 
-## <a name="to-roundtrip-a-datetimeoffset-value"></a>DateTimeOffset 値をラウンドトリップさせるには
+## <a name="to-round-trip-a-datetimeoffset-value"></a>DateTimeOffset 値をラウンドトリップさせるには
 
 [DateTimeOffset.ToString(String)](xref:System.DateTimeOffset.ToString(System.String)) メソッドを "o" 書式指定子と共に呼び出して、[DateTimeOffset](xref:System.DateTimeOffset) 値を対応する文字列形式に変換します。
 
@@ -175,10 +176,5 @@ Console.WriteLine("Read {0} from {1}.", restoredDateOff.ToString(), fileName)
 [書式設定操作の実行](performing-formatting-operations.md)
 
 [標準の日時書式指定文字列](standard-datetime.md)
-
-
-
-
-<!--HONumber=Nov16_HO1-->
 
 

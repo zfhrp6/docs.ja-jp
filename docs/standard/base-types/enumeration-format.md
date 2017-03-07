@@ -11,8 +11,9 @@ ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: 4d581898-99bc-42c3-816c-d8238f45096f
 translationtype: Human Translation
-ms.sourcegitcommit: fb00da6505c9edb6a49d2003ae9bcb8e74c11d6c
-ms.openlocfilehash: 9f5b60a75bf4b92b88d249be2f95f312ddb6909c
+ms.sourcegitcommit: 90fe68f7f3c4b46502b5d3770b1a2d57c6af748a
+ms.openlocfilehash: 804884f75eb30764c0b8aaf2c8cd115029811157
+ms.lasthandoff: 03/02/2017
 
 ---
 
@@ -78,7 +79,7 @@ Console.WriteLine(attributes.ToString("D"))                  ' Displays 34
 
 ## <a name="the-x-or-x-format-strings"></a>X または x 書式指定文字列
 
-X または x 書式指定文字列は、列挙エントリを 16 進数値として表示します。 値は、最小の 8 桁の長さにするため、必要に応じて先頭にゼロを付けて表されます。 次の例は、X 書式指定子を示しています。
+X または x 書式指定文字列は、列挙エントリを&16; 進数値として表示します。 値は、最小の&8; 桁の長さにするため、必要に応じて先頭にゼロを付けて表されます。 次の例は、X 書式指定子を示しています。
 
 ```csharp
 Console.WriteLine(ConsoleColor.Cyan.ToString("X"));   // Displays 0000000B
@@ -96,7 +97,7 @@ Console.WriteLine(attributes.ToString("X"))            ' Displays 00000022
 
 ## <a name="example"></a>例
 
-次の例では、`Red`、`Blue`、`Green` の 3 つのエントリから構成される、`Colors` と呼ばれる列挙型を定義します。
+次の例では、`Red`、`Blue`、`Green` の&3; つのエントリから構成される、`Colors` と呼ばれる列挙型を定義します。
 
  ```csharp
  public enum Color {Red = 1, Blue = 2, Green = 3}
@@ -157,10 +158,5 @@ Console.WriteLine("The value of myColor is 0x{0}.", _
 ## <a name="see-also"></a>関連項目
 
 [型の書式設定](formatting-types.md)
-
-
-
-
-<!--HONumber=Nov16_HO3-->
 
 
