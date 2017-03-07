@@ -1226,3 +1226,4 @@ TypeConverter を使用した変換 | IConvertible を使用した変換
 [IConvertible](xref:System.IConvertible)
 
 [型変換の表](conversion-tables.md)
+
