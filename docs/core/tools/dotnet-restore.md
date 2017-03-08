@@ -1,25 +1,23 @@
 ---
 title: "dotnet-restore コマンド | Microsoft Docs"
-description: "dotnet restore コマンドを使用して、依存関係とプロジェクト固有のツールを復元する方法について説明します"
+description: "dotnet restore コマンドを使用して、依存関係とプロジェクト固有のツールを復元する方法について説明します。"
 keywords: "dotnet-restore, CLI, CLI コマンド, .NET Core"
 author: blackdwarf
 ms.author: mairaw
-ms.date: 10/07/2016
+ms.date: 03/06/2017
 ms.topic: article
 ms.prod: .net-core
 ms.technology: dotnet-cli
 ms.devlang: dotnet
-ms.assetid: 60489b25-38de-47e6-bed1-59d9f42e2d46
+ms.assetid: fd7a5769-afbe-4838-bbaf-3ae0cfcbb914
 translationtype: Human Translation
-ms.sourcegitcommit: 796df1549a7553aa93158598d62338c02d4df73e
-ms.openlocfilehash: df8174aa3252568d7112305af07e6399d96ca32f
+ms.sourcegitcommit: 195664ae6409be02ca132900d9c513a7b412acd4
+ms.openlocfilehash: a55cd932045a59f08146dff367a87eb6fe61f6e5
+ms.lasthandoff: 03/07/2017
 
 ---
 
 #<a name="dotnet-restore"></a>dotnet-restore
-
-> [!WARNING]
-> このトピックは .NET Core Tools Preview 2 を対象としています。 .NET Core Tools RC4 バージョンについては、「[dotnet-restore (.NET Core Tools RC4)](../preview3/tools/dotnet-restore.md)」トピックを参照してください。
 
 ## <a name="name"></a>名前
 
@@ -27,33 +25,30 @@ ms.openlocfilehash: df8174aa3252568d7112305af07e6399d96ca32f
 
 ## <a name="synopsis"></a>構文
 
-`dotnet restore [root] [--help] [--force-english-output] [--source]  
-    [--packages] [--disable-parallel] [--fallbacksource] [--configfile] 
-    [--no-cache] [--infer-runtimes] [--verbosity] [--ignore-failed-sources]`
+```
+dotnet restore [root] [-s|--source] [-r|--runtime] [--packages] [--disable-parallel] [--configfile] [--no-cache] [--ignore-failed-sources] [--no-dependencies] [-v|--verbosity]
+dotnet restore [-h|--help]
+```
 
 ## <a name="description"></a>説明
 
-`dotnet restore` コマンドでは NuGet を使用して、依存関係と、[project.json](project-json.md) ファイルに指定されているプロジェクト固有のツールを復元します。 既定では、依存関係とツールの復元は並列に実行されます。
+`dotnet restore` コマンドでは NuGet を使用して、依存関係と、プロジェクト ファイルに指定されているプロジェクト固有のツールを復元します。 既定では、依存関係とツールの復元は並列に実行されます。
 
 依存関係を復元するには、NuGet で、パッケージを配置するフィードが必要になります。 フィードは、通常、NuGet.config 構成ファイルを通じて提供されます。CLI ツールがインストールされている場合は、既定のものがあります。 プロジェクト ディレクトリに独自の NuGet.config ファイルを作成することで、さらにフィードを指定できます。 フィードは、コマンド プロンプトでの呼び出しごとに指定することもできます。 
 
 依存関係については、`--packages` 引数を使用して復元操作中に復元されたパッケージの配置場所を指定することができます。 指定しない場合は、既定の NuGet パッケージ キャッシュが使用されます。 すべてのオペレーティング システムのユーザーのホーム ディレクトリ内の `.nuget/packages` ディレクトリにあります (たとえば、Linux の場合は */home/user1*、Windows の場合は *C:\Users\user1*)。
 
-プロジェクト固有のツールについては、`dotnet restore` はまず、ツールがパックされているパッケージを復元し、[project.json](project-json.md) に指定されているツールの依存関係の復元に進みます。 
+プロジェクト固有のツールについては、`dotnet restore` はまず、ツールがパックされているパッケージを復元し、プロジェクト ファイルに指定されているツールの依存関係の復元に進みます。
 
 ## <a name="options"></a>オプション
 
-`[root]` 
+`root` 
     
- 復元するプロジェクトまたはプロジェクト フォルダーのリストです。 各値として、[project.json](project-json.md) または [global.json](global-json.md) ファイルへのパス、あるいはフォルダーへのパスを指定できます。 フォルダーが指定されている場合、復元操作ではすべてのサブディレクトリ内の [project.json](project-json.md) ファイルを再帰的に検索し、見つかった各 [project.json](project-json.md) ファイルに対して復元します。
+復元するプロジェクト ファイルへのオプションのパスです。 
 
 `-h|--help`
 
 コマンドの短いヘルプを印刷します。
-
- `--force-english-output`
-
-インバリアントの英語ベースのカルチャを使用して、アプリケーションの実行を強制します。
 
 `-s|--source <SOURCE>`
 
@@ -67,10 +62,6 @@ ms.openlocfilehash: df8174aa3252568d7112305af07e6399d96ca32f
 
 複数プロジェクトの並行復元を無効にします。 
 
-`-f|--fallbacksource <FEED>`
-
-他のすべてのソースが失敗した場合に復元操作でフォールバックとして使用するパッケージ ソースのリストを指定します。 すべての有効なフィード形式を使用できます。 このオプションを複数回指定することによって、複数のフォールバック ソースを指定できます。
-
 `--configfile <FILE>`
 
 復元操作で使用する NuGet 構成ファイル (NuGet.config) です。
@@ -79,17 +70,17 @@ ms.openlocfilehash: df8174aa3252568d7112305af07e6399d96ca32f
 
 パッケージとの HTTP 要求をキャッシュしないように指定します。
 
-`--infer-runtimes`
-
-NuGet でレガシ リポジトリのランタイム識別子 (RID) を推測できるようにするための一時オプションです。
-
-`--verbosity [LEVEL]`
-
-使用するログの詳細度です。 指定できる値は、`Debug`、`Verbose`、`Information`、`Minimal`、`Warning`、`Error` です。
-
 ` --ignore-failed-sources`
 
 バージョン要件を満たしているパッケージがある場合は、失敗したソースに関する警告のみです。
+
+`--no-dependencies`
+
+P2P 参照を含むプロジェクトを復元するときに、ルート プロジェクトだけの参照を復元しないでください。
+
+`--verbosity <LEVEL>`
+
+出力にこの量の詳細を表示します。 レベルには、`normal`、`quiet`、または `detailed` を指定できます。
 
 ## <a name="examples"></a>例
 
@@ -99,7 +90,7 @@ NuGet でレガシ リポジトリのランタイム識別子 (RID) を推測で
 
 指定されたパスで見つかった `app1` プロジェクトの依存関係とツールを復元します。
 
-`dotnet restore ~/projects/app1/project.json`
+`dotnet restore ~/projects/app1/app1.csproj`
     
 フォールバック ソースとして指定されたファイル パスを使用して、現在のディレクトリでプロジェクトの依存関係とツールを復元します。
 
@@ -112,8 +103,4 @@ NuGet でレガシ リポジトリのランタイム識別子 (RID) を推測で
 現在のディレクトリでプロジェクトの依存関係とツールを復元し、出力にエラーのみを表示します。
 
 `dotnet restore --verbosity Error`
-
-
-<!--HONumber=Feb17_HO2-->
-
 

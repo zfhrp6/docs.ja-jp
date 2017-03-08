@@ -9,17 +9,15 @@ ms.topic: article
 ms.prod: .net-core
 ms.technology: dotnet-cli
 ms.devlang: dotnet
-ms.assetid: 5fb15297-a276-417f-8c4f-267281357769
+ms.assetid: 0d6e1e34-277c-4aaf-9880-3ebf81023857
 translationtype: Human Translation
-ms.sourcegitcommit: 796df1549a7553aa93158598d62338c02d4df73e
-ms.openlocfilehash: 0363bdfcb75f51789393e1459d23fcb644c7fb11
+ms.sourcegitcommit: 195664ae6409be02ca132900d9c513a7b412acd4
+ms.openlocfilehash: 0579d59e8da24428d9e174baf0cc865d62c08195
+ms.lasthandoff: 03/07/2017
 
 ---
 
 # <a name="using-net-core-sdk-and-tools-in-continuous-integration-ci"></a>継続的インテグレーション (CI) で .NET Core SDK とツールを使用する
-
-> [!WARNING]
-> このトピックは .NET Core Tools Preview 2 を対象としています。 .NET Core Tools RC4 バージョンについては、「[継続的インテグレーション (CI) で .NET Core SDK とツールを使用する (.NET Core Tools RC4)](../preview3/tools/using-ci-with-cli.md)」トピックを参照してください。
 
 ## <a name="overview"></a>概要
 このドキュメントでは、ビルド サーバーでの .NET Core SDK とそのツールの使用方法について説明します。 一般に、CI ビルド サーバーでは、何らかの方法でインストールを自動化することが望まれます。 可能な限り自動化に管理者特権を必要としないことが理想的です。 
@@ -89,10 +87,3 @@ install:
   - ps: $url = "https://dotnetcli.blob.core.windows.net/dotnet/preview/Binaries/$($env:CLI_VERSION)/dotnet-dev-win-x64.$($env:CLI_VERSION.ToLower()).zip"
   # follow normal installation from binaries
 ```
-
-
-
-
-<!--HONumber=Feb17_HO2-->
-
-
