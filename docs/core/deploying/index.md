@@ -1,24 +1,22 @@
 ---
-title: ".NET Core アプリケーション展開"
+title: ".NET Core アプリケーション展開 | Microsoft Docs"
 description: ".NET Core アプリケーション展開"
 keywords: ".NET, .NET Core, .NET Core 展開"
 author: rpetrusha
 ms.author: ronpet
-ms.date: 09/08/2016
+ms.date: 03/06/2017
 ms.topic: article
 ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: da7a31a0-8072-4f23-82aa-8a19184cb701
 translationtype: Human Translation
-ms.sourcegitcommit: 796df1549a7553aa93158598d62338c02d4df73e
-ms.openlocfilehash: 694502a105224543063cfc08e9310dc02c1d2319
+ms.sourcegitcommit: 195664ae6409be02ca132900d9c513a7b412acd4
+ms.openlocfilehash: 0e186665619bd76c5ba3d1e605b885a12aa15c66
+ms.lasthandoff: 03/07/2017
 
 ---
 
-# <a name="net-core-application-deployment"></a>.NET Core アプリケーション展開 #
-
-> [!WARNING]
-> このトピックは .NET Core Tools Preview 2 を対象としています。 .NET Core Tools RC4 バージョンについては、「[.NET Core アプリケーション展開 (.NET Core Tools RC4)](../preview3/deploying/index.md)」トピックを参照してください。
+# <a name="net-core-application-deployment"></a>.NET Core アプリケーション展開
 
 .NET Core アプリケーションに対して、次の&2; 種類の展開を作成できます。 
 
@@ -50,7 +48,7 @@ FDD の展開には、次のいくつかの利点があります。
 
 サードパーティの依存関係を含まない、フレームワークに依存する展開を展開するプロセスには、アプリのビルド、テスト、および発行が含まれます。 C# で記述された次の単純な例は、このプロセスを示しています。 この例では、コマンドラインの [dotnet ユーティリティ](../tools/dotnet.md)を使用しますが、Visual Studio や Visual Studio Code などの開発環境を使用して、この例をコンパイル、テスト、および発行することもできます。
 
-1. プロジェクトのディレクトリを作成し、コマンドラインから [dotnet new](../tools/dotnet-new.md) と入力して、新しい C# コンソール プロジェクトを作成します。
+1. プロジェクトのディレクトリを作成し、コマンドラインから `[dotnet new console](../tools/dotnet-new.md)` と入力して、新しい C# コンソール プロジェクトを作成します。
 
 2. エディターで `Program.cs` ファイルを開き、自動生成されたコードを次のコードに置き換えます。 テキストの入力を求めるプロンプトが表示されてから、ユーザーが入力した個々の単語が表示されます。 正規表現 `\w+` を使用して、入力テキストの単語を分離します。
 
@@ -93,9 +91,9 @@ FDD の展開には、次のいくつかの利点があります。
 
 4. [dotnet build](../tools/dotnet-build.md) コマンドを使用して、アプリのデバッグ ビルドを作成します。
 
-5. プログラムをデバッグしてテストしたら、`dotnet publish -f netcoreapp1.0 -c release` コマンドを使用して、アプリで展開するファイルを作成できます。 これにより、リリース (デバッグではなく) バージョンのアプリが作成されます。
+5. プログラムをデバッグしてテストしたら、`dotnet publish -f netcoreapp1.1 -c release` コマンドを使用して、アプリで展開するファイルを作成できます。 これにより、リリース (デバッグではなく) バージョンのアプリが作成されます。
 
-   作成されたファイルは、プロジェクトの `.\bin\release\netcoreapp1.0` サブディレクトリのサブディレクトリ内にある、`publish` という名前のディレクトリに配置されます。
+   作成されたファイルは、プロジェクトの `.\bin\release\netcoreapp1.1` サブディレクトリのサブディレクトリ内にある、`publish` という名前のディレクトリに配置されます。
 
 6. アプリケーションのファイルと共に、発行プロセスは、アプリに関するデバッグ情報を含むプログラム データベース (.pdb) ファイルを出力します。 このファイルは、主に例外のデバッグに役立ちます。アプリケーションのファイルと共にパッケージ化しないように選択することもできます。
 
@@ -107,17 +105,15 @@ FDD の展開には、次のいくつかの利点があります。
 
 1 つまたは複数のサードパーティの依存関係を含む、フレームワークに依存する展開を展開するプロセスでは、`dotnet restore` コマンドを実行できるようにするために、次の&3; つの追加手順を実行します。
 
-1. 任意のサードパーティ ライブラリへの参照を `project.json` ファイルの `dependencies` セクションに追加します。 次の `dependencies` セクションは、サードパーティ ライブラリとして Json.NET を使用します。
+1. 任意のサードパーティ ライブラリへの参照を `csproj` ファイルの `<ItemGroup>` セクションに追加します。 次の `<ItemGroup>` のセクションでは、既定のプロジェクトに依存関係を含む、Json.NET をサード パーティ製のライブラリとする、`<ItemGroup>` を示します。
 
-    ```json
-    "dependencies": {
-      "Microsoft.NETCore.App": {
-        "type": "platform",
-        "version": "1.0.0"
-      },
-      "Newtonsoft.Json": "9.0.1"
-    },
+    ```xml
+      <ItemGroup>
+        <PackageReference Include="Newtonsoft.Json" Version="9.0.1" />
+      </ItemGroup>
     ```
+
+ 上の例では、SDK の依存関係は残っています。 コマンド ライン ツールが機能するには、必要なすべてのターゲットを復元する必要があるため、この依存関係は仕様で必要です。  
 
 2. サードパーティの依存関係を含む NuGet パッケージをまだダウンロードしていない場合は、ダウンロードします。 パッケージをダウンロードするには、依存関係を追加した後で `dotnet restore` コマンドを実行します。 発行時に依存関係はローカルの NuGet キャッシュからが解決されるので、システムで使用可能になる必要があります。
 
@@ -143,11 +139,11 @@ FDD の展開には、次のいくつかの利点があります。
 
 - 多数の自己完結型の .NET Core アプリをシステムに展開すると、各アプリが .NET Core ファイルを複製するので、非常に多くのディスク領域を使用する可能性があります。
 
-### <a name="a-namesimpleselfa-deploying-a-simple-self-contained-deployment"></a><a name="simpleSelf"></a>単純な自己完結型の展開を展開する ###
+### <a name="simpleSelf"></a>単純な自己完結型の展開を展開する ###
 
-サードパーティの依存関係を含まない自己完結型の展開を展開するプロセスには、プロジェクトの作成、project.json ファイルの変更、アプリのビルド、テスト、および発行が含まれます。  C# で記述された次の単純な例は、このプロセスを示しています。 この例では、コマンドラインの `dotnet` ユーティリティを使用します。ただし、Visual Studio や Visual Studio Code などの開発環境を使用して、この例をコンパイル、テスト、および発行することもできます。
+サードパーティの依存関係を含まない自己完結型の展開を展開するプロセスには、プロジェクトの作成、csproj ファイルの変更、アプリのビルド、テスト、および発行が含まれます。  C# で記述された次の単純な例は、このプロセスを示しています。 この例では、コマンドラインの `dotnet` ユーティリティを使用します。ただし、Visual Studio や Visual Studio Code などの開発環境を使用して、この例をコンパイル、テスト、および発行することもできます。
 
-1. プロジェクトのディレクトリを作成し、コマンドラインから `dotnet new` と入力して、新しい C# コンソール プロジェクトを作成します。
+1. プロジェクトのディレクトリを作成し、コマンドラインから `dotnet new console` と入力して、新しい C# コンソール プロジェクトを作成します。
 
 2. エディターで `Program.cs` ファイルを開き、自動生成されたコードを次のコードに置き換えます。 テキストの入力を求めるプロンプトが表示されてから、ユーザーが入力した個々の単語が表示されます。 正規表現 `\w+` を使用して、入力テキストの単語を分離します。
 
@@ -185,121 +181,72 @@ FDD の展開には、次のいくつかの利点があります。
     }
     ```
 
-3. `project.json` ファイルを開き、`frameworks` セクションで次の行を削除します。
+3. `csproj` ファイルで、アプリがターゲットとするプラットフォームを定義する `<RuntimeIdentifiers>` タグを `<PropertyGroup>` セクションの下に作成し、ターゲットとする各プラットフォームのランタイム識別子を指定します。 ランタイム識別子の一覧については、「[Runtime IDentifier catalog](../rid-catalog.md)」 (ランタイム識別子のカタログ) を参照してください。 たとえば、次の例は、アプリが 64 ビット Windows 10 オペレーティング システムおよび 64 ビット OS X バージョン 10.11 オペレーティング システムで実行されることを示します。
 
-   ```json
-   "type": "platform",
-   ```
-フレームワーク セクションは、変更後に次のように表示されます。
-
-    ```json
-    "frameworks": {
-      "netcoreapp1.0": {
-        "dependencies": {
-          "Microsoft.NETCore.App": {
-             "version": "1.0.0"
-          }
-        }
-      }
-    }
+    ```xml
+        <PropertyGroup>
+          <RuntimeIdentifiers>win10-x64;osx.10.11-x64</RuntimeIdentifiers>
+        </PropertyGroup>
     ```
-`"type": "platform"` 属性を削除すると、システム全体にわたるプラットフォーム パッケージではなく、アプリに対してローカルのコンポーネントのセットとして、フレームワークが提供されることを示します。
+なお、RID の分離にはセミコロンを追加する必要があることに注意してください。 また、`<RuntimeIdentifier>` 要素は、`csproj` ファイルの任意の `<PropertyGroup>` に入れることが可能です。 完全なサンプル `csproj` ファイルについては、このセクションの後の部分に示されています。
 
-4. `project.json` ファイルで、アプリがターゲットとするプラットフォームを定義する `runtimes` セクションを作成し、ターゲットとする各プラットフォームのランタイム識別子を指定します。 ランタイム識別子の一覧については、「[Runtime IDentifier catalog](../rid-catalog.md)」 (ランタイム識別子のカタログ) を参照してください。 たとえば、次の `runtimes` セクションは、アプリが 64 ビット Windows 10 オペレーティング システムおよび 64 ビット OS X バージョン 10.10 オペレーティング システムで実行されることを示します。
+4. `dotnet restore` コマンドを実行して、プロジェクトで指定された依存関係を復元します。
 
-    ```json
-        "runtimes": {
-          "win10-x64": {},
-          "osx.10.10-x64": {}
-        }
-    ```
-また、前のセクションから `runtimes` セクションを区切るコンマを追加する必要もあります。
-完全なサンプル `project.json` ファイルについては、このセクションの後の部分に示されています。
-
-6. `dotnet restore` コマンドを実行して、プロジェクトで指定された依存関係を復元します。
-
-7. `dotnet build` コマンドを使用して、各ターゲット プラットフォーム上のアプリのデバッグ ビルドを作成します。 ビルドするランタイム識別子を指定しない限り、`dotnet build` コマンドは、現在のシステムのランタイム ID のみのビルドを作成します。 次のコマンドを使用して、両方のターゲット プラットフォームに対してアプリをビルドできます。
-
-    ```console
-    dotnet build -r win10-x64
-    dotnet build -r osx.10.10-x64
-    ```
-各プラットフォームのアプリのデバッグ ビルドは、プロジェクトの `.\bin\Debug\netcoreapp1.0\<runtime_identifier>` サブディレクトリ内にあります。
-
-8. プログラムをテストしてデバッグしたら、次のように両方のターゲット プラットフォームに対して `dotnet publish` コマンドを使用して、ターゲット プラットフォームごとにアプリで展開するファイルを作成できます。
+5. プログラムをテストしてデバッグしたら、次のように両方のターゲット プラットフォームに対して `dotnet publish` コマンドを使用して、ターゲット プラットフォームごとにアプリで展開するファイルを作成できます。
 
    ```console
    dotnet publish -c release -r win10-x64
-   dotnet publish -c release -r osx.10.10-x64
+   dotnet publish -c release -r osx.10.11-x64
    ```
-これにより、各ターゲット プラットフォームに対してアプリのリリース (デバッグではなく) バージョンが作成されます。 作成されたファイルは、プロジェクトの `.\bin\release\netcoreapp1.0\<runtime_identifier>` サブディレクトリのサブディレクトリ内にある、`publish` という名前のサブディレクトリに配置されます。 各サブディレクトリには、アプリの起動に必要なファイルの完全なセット (アプリ ファイルとすべての .NET Core ファイルの両方) が含まれています。
+これにより、各ターゲット プラットフォームに対してアプリのリリース (デバッグではなく) バージョンが作成されます。 作成されたファイルは、プロジェクトの `.\bin\release\netcoreapp1.1\<runtime_identifier>` サブディレクトリのサブディレクトリ内にある、`publish` という名前のサブディレクトリに配置されます。 各サブディレクトリには、アプリの起動に必要なファイルの完全なセット (アプリ ファイルとすべての .NET Core ファイルの両方) が含まれています。
 
-9. アプリケーションのファイルと共に、発行プロセスは、アプリに関するデバッグ情報を含むプログラム データベース (.pdb) ファイルを出力します。 このファイルは、主に例外のデバッグに役立ちます。アプリケーションのファイルと共にパッケージ化しないように選択することもできます。
+6. アプリケーションのファイルと共に、発行プロセスは、アプリに関するデバッグ情報を含むプログラム データベース (.pdb) ファイルを出力します。 このファイルは、主に例外のデバッグに役立ちます。アプリケーションのファイルと共にパッケージ化しないように選択することもできます。
 
 発行されたファイルは、任意の方法で展開できます。 たとえば、zip ファイル内にパッケージ化したり、単純な `copy` コマンドを使用したり、任意のインストール パッケージで展開したりできます。 
 
-このプロジェクトの完全な `project.json` ファイルを次に示します。
+このプロジェクトの完全な `csproj` ファイルを次に示します。
 
-```json
-{
-  "version": "1.0.0-*",
-  "buildOptions": {
-    "debugType": "portable",
-    "emitEntryPoint": true
-  },
-  "dependencies": {},
-  "frameworks": {
-    "netcoreapp1.0": {
-      "dependencies": {
-        "Microsoft.NETCore.App": {
-          "version": "1.0.0"
-        }
-      }
-    }
-  },
-  "runtimes": {
-    "win10-x64": {},
-    "osx.10.10-x64": {}
-  }
-}
+```xml
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp1.1</TargetFramework>
+    <VersionPrefix>1.0.0</VersionPrefix>
+    <DebugType>Portable</DebugType>
+    <RuntimeIdentifiers>win10-x64;osx.10.11-x64</RuntimeIdentifiers>
+  </PropertyGroup>
+</Project>
 ```
+
 
 ### <a name="deploying-a-self-contained-deployment-with-third-party-dependencies"></a>サードパーティの依存関係を含む自己完結型の展開を展開する ###
 
 1 つまたは複数のサードパーティの依存関係を含む自己完結型の展開を展開するプロセスには、サードパーティの依存関係の追加が含まれます。
 
-1. 任意のサードパーティ ライブラリへの参照を `project.json` ファイルの `dependencies` セクションに追加します。 次の `dependencies` セクションは、サードパーティ ライブラリとして Json.NET を使用します。
+1. 任意のサードパーティ ライブラリへの参照を `csproj` ファイルの `<ItemGroup>` セクションに追加します。 次の `<ItemGroup>` セクションは、サードパーティ ライブラリとして Json.NET を使用します。
 
-    ```json
-    "dependencies": {
-      "Microsoft.NETCore.App": "1.0.0",
-      "Newtonsoft.Json": "9.0.1"
-    },
+    ```xml
+      <ItemGroup>
+        <PackageReference Include="Newtonsoft.Json" Version="9.0.1" />
+      </ItemGroup>
     ```
 2. サードパーティの依存関係を含む NuGet パッケージをシステムにまだダウンロードしていない場合は、ダウンロードします。 依存関係をアプリで使用できるようにするには、依存関係を追加してから、`dotnet restore` コマンドを実行します。 発行時に依存関係はローカルの NuGet キャッシュからが解決されるので、システムで使用可能になる必要があります。
 
-このプロジェクトの完全な project.json ファイルを次に示します。
+このプロジェクトの完全な csproj ファイルを次に示します。
 
-```json
-{
-  "version": "1.0.0-*",
-  "buildOptions": {
-    "debugType": "portable",
-    "emitEntryPoint": true
-  },
-  "dependencies": {
-    "Microsoft.NETCore.App": "1.0.0",
-    "Newtonsoft.Json": "9.0.1"
-  },
-  "frameworks": {
-    "netcoreapp1.0": {
-    }
-  },
-  "runtimes": {
-    "win10-x64": {},
-    "osx.10.10-x64": {}
-  }
-}
+```xml
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp1.1</TargetFramework>
+    <VersionPrefix>1.0.0</VersionPrefix>
+    <DebugType>Portable</DebugType>
+    <RuntimeIdentifiers>win10-x64;osx.10.11-x64</RuntimeIdentifiers>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="9.0.1" />
+  </ItemGroup>
+</Project>
 ```
 
 アプリケーションを展開すると、アプリで使用されるすべてのサードパーティの依存関係も、アプリケーション ファイルに含まれています。 アプリが実行されているシステム上にサードパーティ ライブラリが既に存在している必要はありません。
@@ -308,92 +255,68 @@ FDD の展開には、次のいくつかの利点があります。
 
 ### <a name="deploying-a-self-contained-deployment-with-a-smaller-footprint"></a>フットプリントがより小さい自己完結型の展開を展開する ###
 
-ターゲット システムで十分な記憶域の可用性が問題になる可能性がある場合は、一部のシステム コンポーネントを除外することで、アプリの全体的なフットプリントを削減できます。 このためには、アプリによって project.json ファイルに含まれる .NET Core コンポーネントを明示的に定義します。
+ターゲット システムで十分な記憶域の可用性が問題になる可能性がある場合は、一部のシステム コンポーネントを除外することで、アプリの全体的なフットプリントを削減できます。 このためには、アプリによって csproj ファイルに含まれる .NET Core コンポーネントを明示的に定義します。
 
-フットプリントがより小さい自己完結型の展開を作成するには、まず次の&2; つの手順に従って自己完結型の展開を作成します。 `dotnet new` コマンドを実行し、C# ソース コードをアプリに追加したら、次の手順を実行します。
+フットプリントがより小さい自己完結型の展開を作成するには、まず次の&2; つの手順に従って自己完結型の展開を作成します。 `dotnet new console` コマンドを実行し、C# ソース コードをアプリに追加したら、次の手順を実行します。
 
-1. `project.json` ファイルを開き、`frameworks` セクションを次のコードに置き換えます。
+1. `csproj` ファイルを開き、`<TargetFramework>` 要素を次のものと置き換えます。
 
-    ```json
-    "frameworks": {
-      "netstandard1.6": { }
-    }
-    ```
-これにより、次の&2; つのことが行われます。
+  ```xml
+  <TargetFramework>netstandard1.6</TargetFramework>
+  ```
+この操作は、`netcoreapp1.0`フレームワーク全体 (.NET Core CLR, .NET Core ライブラリ、およびその他の多数のシステム コンポーネントを含む) を使用する代わりに、アプリが .NET 標準ライブラリのみを使用することを示します。
 
-    * `netcoreapp1.0` フレームワーク全体 (.NET Core CLR, .NET Core ライブラリ、およびその他の多数のシステム コンポーネントを含む) を使用する代わりに、アプリが .NET 標準ライブラリのみを使用することを示します。
+2. パッケージ参照を含む `<ItemGroup>` を次のものと置き換えます。
 
-    * `"type": "platform"` 属性を削除すると、システム全体にわたるプラットフォーム パッケージではなく、アプリに対してローカルのコンポーネントのセットとして、フレームワークが提供されることを示します。
+  ```xml
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NETCore.Runtime.CoreCLR" Version="1.0.2" />
+    <PackageReference Include="Microsoft.NETCore.DotNetHostPolicy" Version="1.0.1" />
+  </ItemGroup>
+  ```
 
-2. `dependencies` セクションを次のコードに置き換えます。
-
-    ```json
-    "dependencies": {
-      "NETStandard.Library": "1.6.0",
-      "Microsoft.NETCore.Runtime.CoreCLR": "1.0.2",
-      "Microsoft.NETCore.DotNetHostPolicy":  "1.0.1"
-    },
-    ```
    これにより、アプリで使用されるシステム コンポーネントが定義されます。 アプリでパッケージ化されたシステム コンポーネントには、.NET 標準ライブラリ、.NET Core ランタイム、および .NET Core ホストが含まれています。 これにより、フットプリントがより小さい自己完結型の展開が生成されます。
 
-3. 「[単純な自己完結型の展開を展開する](#simpleSelf)」で行ったように、`project.json` ファイルで、アプリがターゲットとするプラットフォームを定義する `runtimes` セクションを作成し、ターゲットとする各プラットフォームのランタイム識別子を指定します。 ランタイム識別子の一覧については、「[Runtime IDentifier catalog](../rid-catalog.md)」 (ランタイム識別子のカタログ) を参照してください。 たとえば、次の `runtimes` セクションは、アプリが 64 ビット Windows 10 オペレーティング システムおよび 64 ビット OS X バージョン 10.10 オペレーティング システムで実行されることを示します。
+3. 「[単純な自己完結型の展開を展開する](#simpleSelf)」で行ったように、`csproj` ファイルの `<PropertyGroup>`に、アプリがターゲットとするプラットフォームを定義する `<RuntimeIdentifiers>` 要素を作成し、ターゲットとする各プラットフォームのランタイム識別子を指定します。 ランタイム識別子の一覧については、「[Runtime IDentifier catalog](../rid-catalog.md)」 (ランタイム識別子のカタログ) を参照してください。 たとえば、次の例は、アプリが 64 ビット Windows 10 オペレーティング システムおよび 64 ビット OS X バージョン 10.11 オペレーティング システムで実行されることを示します。
 
-    ```json
-        "runtimes": {
-          "win10-x64": {},
-          "osx.10.10-x64": {}
-        }
+    ```xml
+    <PropertyGroup>
+      <RuntimeIdentifiers>win10-x64;osx.10.11-x64</RuntimeIdentifiers>
+    </PropertyGroup>
     ```
-また、前のセクションから `runtimes` セクションを区切るコンマを追加する必要もあります。
-完全なサンプル `project.json` ファイルについては、このセクションの後の部分に示されています。
+    
+   完全なサンプル `csproj` ファイルについては、このセクションの後の部分に示されています。
 
 4. `dotnet restore` コマンドを実行して、プロジェクトで指定された依存関係を復元します。
 
-5. `dotnet build` コマンドを使用して、各ターゲット プラットフォーム上のアプリのデバッグ ビルドを作成します。 ビルドするランタイム識別子を指定しない限り、`dotnet build` コマンドは、現在のシステムのランタイム ID のみのビルドを作成します。 次のコマンドを使用して、両方のターゲット プラットフォームに対してアプリをビルドできます。
-
-    ```console
-    dotnet build -r win10-x64
-    dotnet build -r osx.10.10-x64
-    ```
-
-6. プログラムをテストしてデバッグしたら、次のように両方のターゲット プラットフォームに対して `dotnet publish` コマンドを使用して、ターゲット プラットフォームごとにアプリで展開するファイルを作成できます。
+5. プログラムをテストしてデバッグしたら、次のように両方のターゲット プラットフォームに対して `dotnet publish` コマンドを使用して、ターゲット プラットフォームごとにアプリで展開するファイルを作成できます。
 
    ```console
    dotnet publish -c release -r win10-x64
-   dotnet publish -c release -r osx.10.10-x64
+   dotnet publish -c release -r osx.10.11-x64
    ```
 これにより、各ターゲット プラットフォームに対してアプリのリリース (デバッグではなく) バージョンが作成されます。 作成されたファイルは、プロジェクトの `.\bin\release\netstandard1.6\<runtime_identifier>` サブディレクトリのサブディレクトリ内にある、`publish` という名前のサブディレクトリに配置されます。 各サブディレクトリには、アプリの起動に必要なファイルの完全なセット (アプリ ファイルとすべての .NET Core ファイルの両方) が含まれています。
 
-7. アプリケーションのファイルと共に、発行プロセスは、アプリに関するデバッグ情報を含むプログラム データベース (.pdb) ファイルを出力します。 このファイルは、主に例外のデバッグに役立ちます。アプリケーションのファイルと共にパッケージ化しないように選択することもできます。
+6. アプリケーションのファイルと共に、発行プロセスは、アプリに関するデバッグ情報を含むプログラム データベース (.pdb) ファイルを出力します。 このファイルは、主に例外のデバッグに役立ちます。アプリケーションのファイルと共にパッケージ化しないように選択することもできます。
 
 発行されたファイルは、任意の方法で展開できます。 たとえば、zip ファイル内にパッケージ化したり、単純な `copy` コマンドを使用したり、任意のインストール パッケージで展開したりできます。 
 
-このプロジェクトの完全な `project.json` ファイルを次に示します。
+このプロジェクトの完全な `csproj` ファイルを次に示します。
 
-```json
-   {
-     "version": "1.0.0-*",
-     "buildOptions": {
-       "debugType": "portable",
-       "emitEntryPoint": true
-     },
-     "dependencies": {
-       "NETStandard.Library": "1.6.0",
-       "Microsoft.NETCore.Runtime.CoreCLR": "1.0.2",
-       "Microsoft.NETCore.DotNetHostPolicy":  "1.0.1"
-     },
-     "frameworks": {
-       "netstandard1.6": { }
-     },
-     "runtimes": {
-       "win10-x64": {},
-       "osx.10.10-x64": {}
-     }
-   }
+```xml
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netstandard1.6</TargetFramework>
+    <VersionPrefix>1.0.0</VersionPrefix>
+    <DebugType>Portable</DebugType>
+    <RuntimeIdentifiers>win10-x64;osx.10.11-x64</RuntimeIdentifiers>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NETCore.Runtime.CoreCLR" Version="1.0.2" />
+    <PackageReference Include="Microsoft.NETCore.DotNetHostPolicy" Version="1.0.1" />
+  </ItemGroup>
+</Project>
 ```
-
-
-
-<!--HONumber=Feb17_HO2-->
 
 

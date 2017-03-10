@@ -10,9 +10,9 @@ ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: 815ac74c-4bd9-4a94-a87c-78288b27c0e2
 translationtype: Human Translation
-ms.sourcegitcommit: 90fe68f7f3c4b46502b5d3770b1a2d57c6af748a
-ms.openlocfilehash: 76ab06edfed3cb124ac79f0d5d0c3480c0a5f170
-ms.lasthandoff: 03/02/2017
+ms.sourcegitcommit: 095ebad90e3f0b188d208d22f6f16b9552f8ea86
+ms.openlocfilehash: ca9d57a3ef3382c4957de5edb55959f1a3f13ee0
+ms.lasthandoff: 03/06/2017
 
 ---
 
@@ -34,7 +34,9 @@ ms.lasthandoff: 03/02/2017
 
 .NET Core プロジェクトでの単体テストの詳細については、次を参照してください。
 
-この [xunit と .NET CLI による単体テストの作成チュートリアル](unit-testing-with-dotnet-test.md)を試してみてください。
+この [xUnit と .NET CLI による単体テストの作成チュートリアル](unit-testing-with-dotnet-test.md)を試してみてください。 
 
-XUnit チームは、書き込みが [.NET Core および Visual Studio で xunit を使用する方法](http://xunit.github.io/docs/getting-started-dotnet-core.html)を示すチュートリアルを作成しました。
+XUnit チームは、書き込みが [.NET Core および Visual Studio で xUnit を使用する方法](http://xunit.github.io/docs/getting-started-dotnet-core.html)を示すチュートリアルを作成しました。
+
+MSTest を使用する場合は、[MSTest と .NET CLI を使用して単体テストを作成する方法のチュートリアル](unit-testing-with-mstest.md)を試してください。
 

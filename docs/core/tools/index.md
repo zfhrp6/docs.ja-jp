@@ -4,22 +4,20 @@ description: "コマンドライン インターフェイス (CLI) とその主�
 keywords: "CLI, CLI ツール, .NET, .NET Core"
 author: blackdwarf
 ms.author: mairaw
-ms.date: 10/06/2016
+ms.date: 03/06/2017
 ms.topic: article
 ms.prod: .net-core
 ms.technology: dotnet-cli
 ms.devlang: dotnet
-ms.assetid: b70e9ac0-c8be-49f7-9332-95ab93e0e7bc
+ms.assetid: 7c5eee9f-d873-4224-8f5f-ed83df329a59
 translationtype: Human Translation
-ms.sourcegitcommit: 796df1549a7553aa93158598d62338c02d4df73e
-ms.openlocfilehash: 1d7a3d90c6ba9079fe5d36b9c9922928d6a6f137
+ms.sourcegitcommit: 195664ae6409be02ca132900d9c513a7b412acd4
+ms.openlocfilehash: 4e3137d8506342662d145481d5e9fde1d53b9ba3
+ms.lasthandoff: 03/07/2017
 
 ---
 
-# <a name="net-core-command-line-interface-tools"></a>.NET Core コマンドライン インターフェイス ツール
-
-> [!WARNING]
-> このトピックは .NET Core Tools Preview 2 を対象としています。 .NET Core Tools RC4 バージョンについては、「[.NET Core コマンドライン インターフェイス ツール (.NET Core Tools RC4)](../preview3/tools/index.md)」トピックを参照してください。
+# <a name="net-core-command-line-interface-tools-net-core-sdk-10-tools"></a>.NET Core コマンドライン インターフェイス ツール (.NET Core SDK 1.0 ツール)
 
 .NET Core コマンドライン インターフェイス (CLI) は、.NET Core アプリケーションを開発するための新しい基本クロスプラットフォーム ツールチェーンです。 これは、統合開発環境 (IDE)、エディター、ビルド オーケストレーターなど、他の上位レベルのツールがビルド時に基にする主要なレイヤーなので、"基本" です。 
 
@@ -38,6 +36,7 @@ ms.openlocfilehash: 1d7a3d90c6ba9079fe5d36b9c9922928d6a6f137
 既定では、次のコマンドがインストールされます。
 
 * [new](dotnet-new.md)
+* [migrate](dotnet-migrate.md)
 * [restore](dotnet-restore.md)
 * [run](dotnet-run.md)
 * [build](dotnet-build.md)
@@ -52,7 +51,7 @@ ms.openlocfilehash: 1d7a3d90c6ba9079fe5d36b9c9922928d6a6f137
 さらなる詳細に進む前に、10,000 フィート ビューから CLI の操作がどのように見えるか確認しましょう。 次の例では、CLI 標準インストールから複数のコマンドを使用して、新しい単純なコンソール アプリケーションを初期化し、依存関係を復元して、アプリケーションをビルドしてから実行します。 
 
 ```console
-dotnet new
+dotnet new console
 dotnet restore
 dotnet build --output /stuff
 dotnet /stuff/new.dll
@@ -88,8 +87,11 @@ CLI は、次の&2; つの主な方法でアプリケーションを移植でき
 
 これらの両方の方法の詳細については、[.NET Core アプリケーション展開](../deploying/index.md)に関するトピックを参照してください。 
 
-## <a name="migration-from-dnx"></a>DNX からの移行
-.NET Core 1.0 RC1 で DNX を使用した場合、何が実行され、また、これらの新しいツールが DNX ツールにどのように関連するのかという疑問が生じるかもしれません。 手短に言えば、DNX ツールは .NET Core CLI ツールに置き換えられました。 既存のプロジェクトが存在するか、またはコマンドがどのようにマップされるかがわからない場合は、[DNX から CLI への移行](../migrating-from-dnx.md)に関するトピックを参照して詳細を把握できます。 
+## <a name="migration-from-projectjson"></a>project.json からの移行
+Preview 2 ツールおよび *project.json* プロジェクトを使用していた場合、コマンドの詳細およびプロジェクトの移行方法については、[dotnet migrate](dotnet-migrate.md) コマンドのドキュメントを参照してください。 
+
+> [!NOTE]
+> 現在、`dotnet migrate` コマンドでは、Preview 2 以前の *project.json* ファイルは移行されません。 
 
 ## <a name="extensibility"></a>機能拡張
 もちろん、ワークフローで使用できるすべてのツールが Core CLI ツールに含まれるわけではありません。 ただし、.NET Core CLI には、プロジェクトに追加のツールを指定できるようにする機能拡張モデルがあります。 詳細については、[.NET Core CLI 機能拡張モデル](extensibility.md)に関するトピックを参照してください。
@@ -98,9 +100,4 @@ CLI は、次の&2; つの主な方法でアプリケーションを移植でき
 ここでは、CLI の最も重要な機能の簡潔な概要を示しました。 詳細については、このサイトのリファレンスおよび概念説明のトピックを参照してください。 使用できるその他のリソースもあります。
 * [dotnet/CLI](https://github.com/dotnet/cli/) GitHub リポジトリ
 * [作業開始手順](https://aka.ms/dotnetcoregs/)
-
-
-
-<!--HONumber=Feb17_HO2-->
-
 
