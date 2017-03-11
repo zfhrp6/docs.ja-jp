@@ -1,5 +1,0 @@
-# [デリゲートの使用](using-delegates.md)
-# [名前付きメソッドを使用したデリゲートと匿名メソッドを使用したデリゲート](delegates-with-named-vs-anonymous-methods.md)
-# [デリゲート](index.md)
-# [方法 : デリゲートを宣言し、インスタンス化して使用する](how-to-declare-instantiate-and-use-a-delegate.md)
-# [方法 : デリゲートを結合する (マルチキャスト デリゲート)](how-to-combine-delegates-multicast-delegates.md)

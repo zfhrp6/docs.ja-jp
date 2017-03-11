@@ -1,7 +1,0 @@
-# [How to: Create a List of Items](how-to-create-a-list-of-items.md)
-# [チュートリアル: Visual Basic でクエリを記述する](walkthrough-writing-queries.md)
-# [Visual Basic Features That Support LINQ](features-that-support-linq.md)
-# [Type Relationships in Query Operations (Visual Basic)](type-relationships-in-query-operations.md)
-# [Getting Started with LINQ in Visual Basic](getting-started-with-linq.md)
-# [初めての LINQ クエリの作成](writing-your-first-linq-query.md)
-# [基本的なクエリ操作 (Visual Basic)](basic-query-operations.md)

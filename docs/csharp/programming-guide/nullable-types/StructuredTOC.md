@@ -1,5 +1,0 @@
-# [null 許容型 (C# プログラミング ガイド)](index.md)
-## [Null 許容型の使用 (C# プログラミング ガイド)](using-nullable-types.md)
-## [Null 許容型のボックス化 (C# プログラミング ガイド)](boxing-nullable-types.md)
-## [方法: Null 許容型を識別する (C# プログラミング ガイド)](how-to-identify-a-nullable-type.md)
-## [方法: bool? から bool に安全にキャストする (C# プログラミング ガイド)](how-to-safely-cast-from-bool-to-bool.md)
