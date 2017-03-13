@@ -31,7 +31,7 @@ caps.handback.revision: 11
   
  次の例では、`Alias` キーワードを使用して advapi32.dll の関数 \(`GetUserNameA`\) の名前を指定し、この例の中ではこの関数の代わりに `getUserName` を使用しています。  関数 `getUserName` はサブ `getUser` で呼び出され、現在のユーザーの名前を表示します。  
   
- [!code-vb[VbVbalrStatements#15](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/alias-clause_1.vb)]  
+ [!code-vb[VbVbalrStatements#15](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/alias-clause_1.vb)]  
   
 ## 参照  
  [キーワード](../../../visual-basic/language-reference/keywords/index.md)

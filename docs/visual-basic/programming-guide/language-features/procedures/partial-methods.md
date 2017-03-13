@@ -65,15 +65,15 @@ End Sub
 ## 例  
  Product.Designer.vb という名前のファイルに、`Quantity` プロパティがある `Product` クラスを定義します。  
   
- [!code-vb[VbVbalrPartialMeths#4](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/partial-methods_1.vb)]  
+ [!code-vb[VbVbalrPartialMeths#4](./codesnippet/VisualBasic/partial-methods_1.vb)]  
   
  Product.vb という名前のファイルに、`QuantityChanged` の実装を用意します。  
   
- [!code-vb[VbVbalrPartialMeths#5](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/partial-methods_2.vb)]  
+ [!code-vb[VbVbalrPartialMeths#5](./codesnippet/VisualBasic/partial-methods_2.vb)]  
   
  最後に、プロジェクトの Main メソッド内で `Product` インスタンスを宣言し、`Quantity` プロパティの初期値を指定します。  
   
- [!code-vb[VbVbalrPartialMeths#6](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/partial-methods_3.vb)]  
+ [!code-vb[VbVbalrPartialMeths#6](./codesnippet/VisualBasic/partial-methods_3.vb)]  
   
  次のメッセージを表示するメッセージ ボックスが表示されます。  
   

@@ -86,14 +86,14 @@ result = expression1 Or expression2
 ## <a name="example"></a>例  
  次の例では、 `Or` オペレーターが 2 つの式の包括的論理和を実行します。 結果は、 `Boolean` を表す値が 2 つの式のいずれかのかどうか `True`します。  
   
- [!code-vb[VbVbalrOperators#35](../../../visual-basic/language-reference/operators/codesnippet/visualbasic/or-operator_1.vb)]  
+ [!code-vb[VbVbalrOperators#35](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/or-operator_1.vb)]  
   
  前の例の結果を生成する `True`, 、`True`, 、および `False`, 、それぞれします。  
   
 ## <a name="example"></a>例  
  次の例では、 `Or` オペレーターが 2 つの数値式のビットごとの包括的論理和を実行します。 結果パターン内のビットは、オペランドの対応するビットのいずれか 1 に設定されている場合に設定されます。  
   
- [!code-vb[VbVbalrOperators#36](../../../visual-basic/language-reference/operators/codesnippet/visualbasic/or-operator_2.vb)]  
+ [!code-vb[VbVbalrOperators#36](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/or-operator_2.vb)]  
   
  前の例では、それぞれ 10、14 日、14 の結果を生成します。  
   

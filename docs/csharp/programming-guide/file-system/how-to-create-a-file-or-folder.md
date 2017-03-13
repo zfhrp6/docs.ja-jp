@@ -22,7 +22,7 @@ caps.handback.revision: 22
 プログラムによって、コンピューター上でのフォルダーの作成、サブフォルダーの作成、サブフォルダー内でのファイルの作成、およびファイルへのデータの記述を行うことができます。  
   
 ## 使用例  
- [!code-cs[csFilesandFolders#10](../../../csharp/programming-guide/file-system/codesnippet/csharp/csFilesFolders/FileIteration.cs#10)]  
+ [!code-cs[csFilesandFolders#10](../../../csharp/programming-guide/file-system/codesnippet/CSharp/how-to-create-a-file-or-folder_1.cs)]  
   
  フォルダーが既に存在していた場合、<xref:System.IO.Directory.CreateDirectory%2A> は何も実行せず、例外はスローされません。  ただし <xref:System.IO.File.Create%2A?displayProperty=fullName> は、既存のファイルを新しいファイルに置き換えます。  この例では、既存のファイルの置換を抑制するために、`if`\-`else` ステートメントを使用します。  
   

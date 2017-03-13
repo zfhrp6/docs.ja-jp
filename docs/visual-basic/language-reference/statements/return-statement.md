@@ -52,7 +52,7 @@ Return expression
 ## 使用例  
  次のコード例では、`Return` ステートメントを何回も使って、プロシージャで何も行う必要がなくなった時点で呼び出し元のコードに制御を戻しています。  
   
- [!code-vb[VbVbalrStatements#53](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/return-statement_1.vb)]  
+ [!code-vb[VbVbalrStatements#53](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/return-statement_1.vb)]  
   
 ## 参照  
  [Function Statement](../../../visual-basic/language-reference/statements/function-statement.md)   

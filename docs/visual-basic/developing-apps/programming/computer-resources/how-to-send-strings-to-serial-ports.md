@@ -35,7 +35,7 @@ caps.handback.revision: 13
   
  <xref:System.IO.Ports.SerialPort.WriteLine%2A> メソッドはシリアル ポートにデータを送信します。  
   
- [!code-vb[VbVbalrMyComputer#33](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/visualbasic/VbVbalrMyComputer/Class2.vb#33)]  
+ [!code-vb[VbVbalrMyComputer#33](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/VisualBasic/how-to-send-strings-to-serial-ports_1.vb)]  
   
 ## コードのコンパイル  
   

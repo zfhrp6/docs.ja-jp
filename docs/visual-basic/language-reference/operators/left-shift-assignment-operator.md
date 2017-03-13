@@ -56,7 +56,7 @@ variableorproperty <<= amount
 ## 使用例  
  `<<=` 演算子を使用して、整数型 \(`Integer`\) 変数のビット パターンを、指定されたビット数だけ左にシフトし、結果を元の変数に代入する例を、次に示します。  
   
- [!code-vb[VbVbalrOperators#13](../../../visual-basic/language-reference/operators/codesnippet/visualbasic/left-shift-assignment-op_1_1.vb)]  
+ [!code-vb[VbVbalrOperators#13](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/left-shift-assignment-operator_1.vb)]  
   
 ## 参照  
  [\<\< Operator](../../../visual-basic/language-reference/operators/left-shift-operator.md)   

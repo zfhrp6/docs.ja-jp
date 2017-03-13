@@ -38,7 +38,7 @@ class Employee
 ## 使用例  
  この例では、`Employee` クラスに `name` および `salary` という 2 つのプライベート データ メンバーが含まれています。  これらのメンバーは、プライベート メンバーであり、メンバー メソッド以外からはアクセスできません。  `GetName` および `Salary` というパブリック メソッドが追加され、プライベート メンバーへの制御されたアクセスを許可します。  `name` メンバーはパブリック メソッドを介してアクセスされ、`salary` メンバーはパブリックな読み取り専用プロパティを介してアクセスされます。  詳細については、「[プロパティ](../../../csharp/programming-guide/classes-and-structs/properties.md)」を参照してください。  
   
- [!code-cs[csrefKeywordsModifiers#10](../../../csharp/language-reference/keywords/codesnippet/csharp/csrefKeywordsModifiers/csrefKeywordsModifiers.cs#10)]  
+ [!code-cs[csrefKeywordsModifiers#10](../../../csharp/language-reference/keywords/codesnippet/CSharp/private_1.cs)]  
   
 ## C\# 言語仕様  
  [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec-md.md)]  

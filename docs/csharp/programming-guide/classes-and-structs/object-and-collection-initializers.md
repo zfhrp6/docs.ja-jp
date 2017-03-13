@@ -19,9 +19,9 @@ caps.handback.revision: 27
 # オブジェクト初期化子とコレクション初期化子 (C# プログラミング ガイド)
 オブジェクト初期化子を使用すると、オブジェクトの作成時にアクセスできるフィールドまたはプロパティに、コンストラクターを呼び出して代入ステートメントを使用しなくても、値を割り当てることができます。  オブジェクト初期化子の構文では、コンストラクターの引数を指定することも、引数 \(およびかっこ構文\) を省略することもできます。  以下の例では、名前付きの型である `Cat` でオブジェクト初期化子を使用する方法と、既定のコンストラクターを呼び出す方法を示します。  `Cat` クラス内で自動実装プロパティが使用されています。  詳細については、「[自動実装プロパティ](../../../csharp/programming-guide/classes-and-structs/auto-implemented-properties.md)」を参照してください。  
   
- [!code-cs[csProgGuideLINQ#39](../../../csharp/programming-guide/arrays/codesnippet/csharp/csLINQProgRef/csRef30LangFeatures_2.cs#39)]  
+ [!code-cs[csProgGuideLINQ#39](../../../csharp/programming-guide/arrays/codesnippet/CSharp/object-and-collection-initializers_1.cs)]  
   
- [!code-cs[csProgGuideLINQ#45](../../../csharp/programming-guide/arrays/codesnippet/csharp/csLINQProgRef/csRef30LangFeatures_2.cs#45)]  
+ [!code-cs[csProgGuideLINQ#45](../../../csharp/programming-guide/arrays/codesnippet/CSharp/object-and-collection-initializers_2.cs)]  
   
 ## オブジェクト初期化子と匿名型  
  オブジェクト初期化子は、どのような場合にも使用できますが、[!INCLUDE[vbteclinq](../../../csharp/includes/vbteclinq-md.md)] クエリ式で使用すると、特に有用です。  クエリ式では、次の宣言に示すように、オブジェクト初期化子を使用することによってのみ初期化できる[匿名型](../../../csharp/programming-guide/classes-and-structs/anonymous-types.md)が頻繁に使用されます。  
@@ -32,7 +32,7 @@ var pet = new { Age = 10, Name = "Fluffy" };
   
  匿名型を使用すると、`select` クエリ式の [!INCLUDE[vbteclinq](../../../csharp/includes/vbteclinq-md.md)] 句によって元のシーケンスのオブジェクトを値と形状が元とは異なるオブジェクトに変換できます。  この方法は、シーケンス内の各オブジェクトの情報の一部のみを保存する場合に便利です。  次の例は、製品オブジェクト \(`p`\) に多くのフィールドおよびメソッドが含まれており、製品名および単価を含むオブジェクトのシーケンスを作成することにのみ関心があることを想定しています。  
   
- [!code-cs[csProgGuideLINQ#40](../../../csharp/programming-guide/arrays/codesnippet/csharp/csLINQProgRef/csRef30LangFeatures_2.cs#40)]  
+ [!code-cs[csProgGuideLINQ#40](../../../csharp/programming-guide/arrays/codesnippet/CSharp/object-and-collection-initializers_3.cs)]  
   
  このクエリが実行されると、`productInfos` 変数には、次の例に示す `foreach` ステートメントでアクセスできるオブジェクトのシーケンスが格納されます。  
   
@@ -61,11 +61,11 @@ List<int> digits2 = new List<int> { 0 + 1, 12 % 3, MakeInt() };
   
  次のコレクション初期化子は、前の例で定義されている `Cat` クラスのオブジェクトをオブジェクト初期化子を使用して初期化します。  個々のオブジェクト初期化子は、かっこで囲まれ、コンマで区切られています。  
   
- [!code-cs[csProgGuideLINQ#41](../../../csharp/programming-guide/arrays/codesnippet/csharp/csLINQProgRef/csRef30LangFeatures_2.cs#41)]  
+ [!code-cs[csProgGuideLINQ#41](../../../csharp/programming-guide/arrays/codesnippet/CSharp/object-and-collection-initializers_4.cs)]  
   
  コレクションの [null](../../../csharp/language-reference/keywords/null.md) メソッドで許容されている場合、コレクション初期化子の要素として `Add` を指定できます。  
   
- [!code-cs[csProgGuideLINQ#42](../../../csharp/programming-guide/arrays/codesnippet/csharp/csLINQProgRef/csRef30LangFeatures_2.cs#42)]  
+ [!code-cs[csProgGuideLINQ#42](../../../csharp/programming-guide/arrays/codesnippet/CSharp/object-and-collection-initializers_5.cs)]  
   
  コレクションがインデックス作成をサポートしている場合は、インデックス付きの要素を指定することができます。  
   
@@ -79,7 +79,7 @@ var numbers = new Dictionary<int, string> {
 ```  
   
 ## 使用例  
- [!code-cs[csProgGuideLINQ#46](../../../csharp/programming-guide/arrays/codesnippet/csharp/csLINQProgRef/csRef30LangFeatures_2.cs#46)]  
+ [!code-cs[csProgGuideLINQ#46](../../../csharp/programming-guide/arrays/codesnippet/CSharp/object-and-collection-initializers_6.cs)]  
   
 ## 参照  
  [C\# プログラミング ガイド](../../../csharp/programming-guide/index.md)   

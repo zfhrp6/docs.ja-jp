@@ -73,7 +73,7 @@ caps.handback.revision: 14
 ## 使用例  
  この例では、`#If...Then...#Else` ブロックを使用して、特定のステートメントをコンパイルするかどうかを決定します。  
   
- [!code-vb[VbVbalrConditionalComp#1](../../../visual-basic/language-reference/directives/codesnippet/visualbasic/if-then-else-directives_1.vb)]  
+ [!code-vb[VbVbalrConditionalComp#1](../../../visual-basic/language-reference/directives/codesnippet/VisualBasic/if-then-else-directives_1.vb)]  
   
 ## 参照  
  [\#Const Directive](../../../visual-basic/language-reference/directives/const-directive.md)   

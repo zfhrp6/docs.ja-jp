@@ -44,7 +44,7 @@ caps.handback.revision: 39
   
 6.  Program.cs の内容を次のコードで置き換えます。  
   
-     [!code-cs[csProgGuide#21](../../../csharp/programming-guide/inside-a-program/codesnippet/csharp/csProgGuide/progGuide.cs#21)]  
+     [!code-cs[csProgGuide#21](../../../csharp/programming-guide/inside-a-program/codesnippet/CSharp/hello-world-your-first-program_1.cs)]  
   
 7.  F5 キーを押してプロジェクトを実行します。  `Hello World!` という行を含むコマンド プロンプト ウィンドウが表示されます。  
   
@@ -53,11 +53,11 @@ caps.handback.revision: 39
 ## コメント  
  最初の行はコメントになっています。  「`//`」という文字があると、これ以降その行はコメントになります。  
   
- [!code-cs[csProgGuide#32](../../../csharp/programming-guide/inside-a-program/codesnippet/csharp/csProgGuide/progGuide.cs#32)]  
+ [!code-cs[csProgGuide#32](../../../csharp/programming-guide/inside-a-program/codesnippet/CSharp/hello-world-your-first-program_2.cs)]  
   
  テキスト ブロックを `/*` 文字と `*/` 文字で囲んでコメントにすることもできます。  これを次の例に示します。  
   
- [!code-cs[csProgGuide#33](../../../csharp/programming-guide/inside-a-program/codesnippet/csharp/csProgGuide/progGuide.cs#33)]  
+ [!code-cs[csProgGuide#33](../../../csharp/programming-guide/inside-a-program/codesnippet/CSharp/hello-world-your-first-program_3.cs)]  
   
 ## Main メソッド  
  C\# コンソール アプリケーションには、`Main` メソッドが必要です。このメソッドの中で制御を開始して終了します。  `Main` メソッドでは、オブジェクトを作成し、ほかのメソッドを実行します。  
@@ -66,19 +66,19 @@ caps.handback.revision: 39
   
 -   `void` 型を返すことができます。  
   
-     [!code-cs[csProgGuideMain#12](../../../csharp/programming-guide/inside-a-program/codesnippet/csharp/hello-world-your-first-p_4.cs)]  
+     [!code-cs[csProgGuideMain#12](../../../csharp/programming-guide/inside-a-program/codesnippet/CSharp/hello-world-your-first-program_4.cs)]  
   
 -   整数を返すこともできます。  
   
-     [!code-cs[csProgGuideMain#13](../../../csharp/programming-guide/inside-a-program/codesnippet/csharp/hello-world-your-first-p_5.cs)]  
+     [!code-cs[csProgGuideMain#13](../../../csharp/programming-guide/inside-a-program/codesnippet/CSharp/hello-world-your-first-program_5.cs)]  
   
 -   どちらの戻り値の型でも、次のように引数を受け取ることができます。  
   
-     [!code-cs[csProgGuideMain#19](../../../csharp/programming-guide/inside-a-program/codesnippet/csharp/hello-world-your-first-p_6.cs)]  
+     [!code-cs[csProgGuideMain#19](../../../csharp/programming-guide/inside-a-program/codesnippet/CSharp/hello-world-your-first-program_6.cs)]  
   
      または  
   
-     [!code-cs[csProgGuideMain#18](../../../csharp/programming-guide/inside-a-program/codesnippet/csharp/hello-world-your-first-p_7.cs)]  
+     [!code-cs[csProgGuideMain#18](../../../csharp/programming-guide/inside-a-program/codesnippet/CSharp/hello-world-your-first-program_7.cs)]  
   
  `Main` メソッドのパラメーターである `args` は、`string` の配列で、プログラムの実行時に使用したコマンド ライン引数を含みます。  C\+\+ とは異なり、この配列には実行可能 \(exe\) ファイルの名前は含まれていません。  
   
@@ -89,9 +89,9 @@ caps.handback.revision: 39
 ## 入出力  
  C\# プログラムは、普通、.NET Framework のランタイム ライブラリが提供する入出力サービスを使用します。  ステートメント `System.Console.WriteLine("Hello World!");` では、<xref:System.Console.WriteLine%2A> メソッドを使用しています。  これは、ランタイム ライブラリの <xref:System.Console> クラスの出力メソッドの 1 つです。  文字列パラメーターを標準出力ストリームに出力し、最後に改行を付け加えます。  別の入出力操作には、他の <xref:System.Console> メソッドを使用できます。  `using System;` ディレクティブをプログラムの開始時にインクルードした場合は、完全に修飾せずに <xref:System> クラスおよびメソッドを直接使用できます。  たとえば、`System.Console.WriteLine` の代わりに `Console.WriteLine` を呼び出すことができます。  
   
- [!code-cs[csProgGuide#1](../../../csharp/programming-guide/inside-a-program/codesnippet/csharp/csProgGuide/using.cs#1)]  
+ [!code-cs[csProgGuide#1](../../../csharp/programming-guide/inside-a-program/codesnippet/CSharp/hello-world-your-first-program_8.cs)]  
   
- [!code-cs[csProgGuide#23](../../../csharp/programming-guide/inside-a-program/codesnippet/csharp/csProgGuide/progGuide.cs#23)]  
+ [!code-cs[csProgGuide#23](../../../csharp/programming-guide/inside-a-program/codesnippet/CSharp/hello-world-your-first-program_9.cs)]  
   
  入出力メソッドの詳細については、「<xref:System.IO>」を参照してください。  
   

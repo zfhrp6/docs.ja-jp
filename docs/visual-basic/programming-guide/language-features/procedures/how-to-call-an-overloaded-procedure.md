@@ -37,9 +37,9 @@ caps.handback.revision: 12
   
      [How to: Define Multiple Versions of a Procedure](../../../../visual-basic/programming-guide/language-features/procedures/how-to-define-multiple-versions-of-a-procedure.md) で宣言した `post` プロシージャを呼び出す例を次に示します。  顧客 ID を取得して、それが文字列型 \(`String`\) か整数型 \(`Integer`\) かを判断し、どちらの場合でも同じプロシージャを呼び出します。  
   
-     [!code-vb[VbVbcnProcedures#56](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/how-to-call-an-overloade_1.vb)]  
+     [!code-vb[VbVbcnProcedures#56](./codesnippet/VisualBasic/how-to-call-an-overloaded-procedure_1.vb)]  
   
-     [!code-vb[VbVbcnProcedures#57](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/how-to-call-an-overloade_2.vb)]  
+     [!code-vb[VbVbcnProcedures#57](./codesnippet/VisualBasic/how-to-call-an-overloaded-procedure_2.vb)]  
   
 ## 参照  
  [Procedures](../../../../visual-basic/programming-guide/language-features/procedures/index.md)   

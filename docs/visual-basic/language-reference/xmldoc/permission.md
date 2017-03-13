@@ -45,7 +45,7 @@ caps.handback.revision: 9
 ## 使用例  
  次の例は、`<permission>` タグを使用して、`ReadFile` メソッドには <xref:System.Security.Permissions.FileIOPermission> が必要であるという説明を記述しています。  
   
- [!code-vb[VbVbcnXmlDocComments#7](../../../visual-basic/language-reference/xmldoc/codesnippet/visualbasic/permission_1.vb)]  
+ [!code-vb[VbVbcnXmlDocComments#7](../../../visual-basic/language-reference/xmldoc/codesnippet/VisualBasic/permission_1.vb)]  
   
 ## 参照  
  [XML Comment Tags](../../../visual-basic/language-reference/xmldoc/recommended-xml-tags-for-documentation-comments.md)

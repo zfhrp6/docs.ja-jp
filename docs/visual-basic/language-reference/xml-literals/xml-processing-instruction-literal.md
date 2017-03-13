@@ -66,7 +66,7 @@ caps.handback.revision: 19
 ## 使用例  
  XML ドキュメントのスタイルシートを示す処理命令を作成する例を次に示します。  
   
- [!code-vb[VbXMLSamples#28](../../../visual-basic/language-reference/operators/codesnippet/visualbasic/xml-processing-instructi_1.vb)]  
+ [!code-vb[VbXMLSamples#28](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/xml-processing-instruction-literal_1.vb)]  
   
 ## 参照  
  <xref:System.Xml.Linq.XProcessingInstruction>   

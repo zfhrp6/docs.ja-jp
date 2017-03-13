@@ -55,7 +55,7 @@ caps.handback.revision: 16
   
 -   `Event` キーワードを使って `Widget` クラス内にイベントを宣言します。  イベントは `ByVal` および `ByRef` 引数を受け取ることができます。`Widget` の `PercentDone` イベントの例を示します。  
   
-     [!code-vb[VbVbcnWalkthroughDeclaringAndRaisingEvents#1](../../../../visual-basic/programming-guide/language-features/events/codesnippet/visualbasic/VbEventWalkthrough/Widget.vb#1)]  
+     [!code-vb[VbVbcnWalkthroughDeclaringAndRaisingEvents#1](../../../../visual-basic/programming-guide/language-features/events/codesnippet/VisualBasic/walkthrough-declaring-and-raising-events_1.vb)]  
   
  呼び出し元のオブジェクトが `PercentDone` イベントを受け取るとき、`Percent` 引数には完了したタスクの割合が含まれています。  `Cancel` 引数を `True` に設定すると、イベントを発生させるメソッドをキャンセルできます。  
   
@@ -68,11 +68,11 @@ caps.handback.revision: 16
   
 1.  このクラスによって使用される `Timer` プロパティへのアクセスを簡単にするために、クラス モジュールの宣言セクションの先頭で、`Class Widget` ステートメントの上に `Imports` ステートメントを追加します。  
   
-     [!code-vb[VbVbcnWalkthroughDeclaringAndRaisingEvents#2](../../../../visual-basic/programming-guide/language-features/events/codesnippet/visualbasic/VbEventWalkthrough/Widget.vb#2)]  
+     [!code-vb[VbVbcnWalkthroughDeclaringAndRaisingEvents#2](../../../../visual-basic/programming-guide/language-features/events/codesnippet/VisualBasic/walkthrough-declaring-and-raising-events_2.vb)]  
   
 2.  `Widget` クラスに次のコードを追加します。  
   
-     [!code-vb[VbVbcnWalkthroughDeclaringAndRaisingEvents#3](../../../../visual-basic/programming-guide/language-features/events/codesnippet/visualbasic/VbEventWalkthrough/Widget.vb#3)]  
+     [!code-vb[VbVbcnWalkthroughDeclaringAndRaisingEvents#3](../../../../visual-basic/programming-guide/language-features/events/codesnippet/VisualBasic/walkthrough-declaring-and-raising-events_3.vb)]  
   
  アプリケーションで `LongTask` メソッドを呼び出すと、`Widget` クラスは `PercentDone` イベントを `MinimumInterval` 秒間隔で発生させます。  イベントが返されると、`LongTask` は `Cancel` 引数が `True` に設定されたかどうかを確認します。  
   

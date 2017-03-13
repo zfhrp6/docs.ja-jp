@@ -49,7 +49,7 @@ caps.handback.revision: 16
 ## 使用例  
  次のコードは、クラスおよびそのメンバーの ID 文字列がどのように生成されるかを示します。  
   
- [!code-vb[VbVbcnXmlDocComments#10](../../../visual-basic/language-reference/xmldoc/codesnippet/visualbasic/processing-the-xml-file_1.vb)]  
+ [!code-vb[VbVbcnXmlDocComments#10](../../../visual-basic/language-reference/xmldoc/codesnippet/VisualBasic/processing-the-xml-file_1.vb)]  
   
 ## 参照  
  [\/doc](../../../visual-basic/reference/command-line-compiler/doc.md)   

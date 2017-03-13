@@ -47,7 +47,7 @@ caps.handback.revision: 19
 ## 使用例  
  複数ファイルの例を次に示します。  最初のファイルは、次のように \<include\> タグを使用しています。  
   
- [!code-cs[csProgGuideDocComments#5](../../../csharp/programming-guide/xmldoc/codesnippet/csharp/include_1.cs)]  
+ [!code-cs[csProgGuideDocComments#5](../../../csharp/programming-guide/xmldoc/codesnippet/CSharp/include_1.cs)]  
   
  2 番目のファイル xml\_include\_tag.doc には、次のドキュメント コメントが記述されています。  
   

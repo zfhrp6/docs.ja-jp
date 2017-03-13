@@ -10,14 +10,14 @@ caps.handback.revision: 15
 ## 使用例  
  例外処理コードをクエリ式の外に移動する方法の例を次に示します。  これは、メソッドがクエリのローカル変数に依存しない場合にのみ可能です。  
   
- [!code-cs[csProgGuideLINQ#10](../../../csharp/programming-guide/arrays/codesnippet/csharp/csLINQProgRef/csrefLINQHowTos.cs#10)]  
+ [!code-cs[csProgGuideLINQ#10](../../../csharp/programming-guide/arrays/codesnippet/CSharp/how-to-handle-exceptions-in-query-expressions_1.cs)]  
   
 ## 使用例  
  場合によっては、クエリの実行を即座に停止することが、クエリ内からスローされる例外に対する最良の対処方法になります。  クエリ本体の内部からスローされる可能性のある例外の処理方法の例を次に示します。  `SomeMethodThatMightThrow` で、クエリの実行を停止する必要のある例外が発生する可能性があると仮定します。  
   
  `try` ブロックは `foreach` ループを包含しますが、クエリ自体は包含しません。  これは、クエリを実際に実行する場所が `foreach` ループであるためです。  詳細については、「[Introduction to LINQ Queries \(C\#\)](../../../csharp/programming-guide/concepts/linq/introduction-to-linq-queries.md)」を参照してください。  
   
- [!code-cs[csProgGuideLINQ#12](../../../csharp/programming-guide/arrays/codesnippet/csharp/csLINQProgRef/csrefLINQHowTos.cs#12)]  
+ [!code-cs[csProgGuideLINQ#12](../../../csharp/programming-guide/arrays/codesnippet/CSharp/how-to-handle-exceptions-in-query-expressions_2.cs)]  
   
 ## コードのコンパイル  
   

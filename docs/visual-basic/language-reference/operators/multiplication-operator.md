@@ -68,7 +68,7 @@ number1 * number2
 ## 使用例  
  `*` 演算子を使って 2 つの数値を乗算する例を次に示します。  結果は、2 つのオペランドの積です。  
   
- [!code-vb[VbVbalrOperators#4](../../../visual-basic/language-reference/operators/codesnippet/visualbasic/multiplication-operator_1.vb)]  
+ [!code-vb[VbVbalrOperators#4](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/multiplication-operator_1.vb)]  
   
 ## 参照  
  [\*\= Operator](../../../visual-basic/language-reference/operators/multiplication-assignment-operator.md)   

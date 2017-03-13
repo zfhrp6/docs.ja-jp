@@ -67,7 +67,7 @@ object...<descendant>
 ## 使用例  
  次の例では、`contacts` オブジェクトの、`name` という名前の最初の子孫ノードの値、および `phone` という名前のすべての子孫ノードの値にアクセスする方法を示します。  
   
- [!code-vb[VbXMLSamples#25](../../../visual-basic/language-reference/operators/codesnippet/visualbasic/xml-descendant-axis-prop_1.vb)]  
+ [!code-vb[VbXMLSamples#25](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/xml-descendant-axis-property_1.vb)]  
   
  このコードは、次のテキストを表示します。  
   
@@ -78,7 +78,7 @@ object...<descendant>
 ## 使用例  
  次の例では、`ns` を XML 名前空間プレフィックスとして宣言します。  その後、この名前空間のプレフィックスを使用して XML リテラルを作成し、修飾名 `ns:name` を持つ最初の子ノードの値にアクセスします。  
   
- [!code-vb[VbXMLSamples#26](../../../visual-basic/language-reference/operators/codesnippet/visualbasic/xml-descendant-axis-prop_2.vb)]  
+ [!code-vb[VbXMLSamples#26](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/xml-descendant-axis-property_2.vb)]  
   
  このコードは、次のテキストを表示します。  
   

@@ -42,7 +42,7 @@ caps.handback.revision: 8
   
      次の例では、`myString` が単一の文字 `H` で構成されるかどうかを調べます。  
   
-     [!code-vb[VbVbalrOperators#70](../../../../visual-basic/language-reference/operators/codesnippet/visualbasic/how-to-match-a-string-ag_1.vb)]  
+     [!code-vb[VbVbalrOperators#70](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/how-to-match-a-string-against-a-pattern_1.vb)]  
   
 ### 文字列式の文字がワイルドカード文字と一致するか調べるには  
   
@@ -50,7 +50,7 @@ caps.handback.revision: 8
   
      次の例は、`myString` が単一の文字 `W` と、それに続く任意の 2 文字で構成されるかどうかを調べます。  
   
-     [!code-vb[VbVbalrOperators#71](../../../../visual-basic/language-reference/operators/codesnippet/visualbasic/how-to-match-a-string-ag_2.vb)]  
+     [!code-vb[VbVbalrOperators#71](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/how-to-match-a-string-against-a-pattern_2.vb)]  
   
 ### 文字列式の文字が文字のリストと一致するか調べるには  
   
@@ -58,7 +58,7 @@ caps.handback.revision: 8
   
      次の例は、`myString` が有効な任意の文字と、それに続く 1 文字 \(`A`、`C`、または `E` のいずれか\) で構成されるかどうかを調べます。  
   
-     [!code-vb[VbVbalrOperators#72](../../../../visual-basic/language-reference/operators/codesnippet/visualbasic/how-to-match-a-string-ag_3.vb)]  
+     [!code-vb[VbVbalrOperators#72](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/how-to-match-a-string-against-a-pattern_3.vb)]  
   
      この一致では、大文字と小文字が区別されます。  
   
@@ -68,7 +68,7 @@ caps.handback.revision: 8
   
      次の例は、`myString` が文字列 `num` と、それに続く 1 文字 \(`i`、`j`、`k`、`l`、`m`、または `n` のいずれか\) で構成されるかどうかを調べます。  
   
-     [!code-vb[VbVbalrOperators#73](../../../../visual-basic/language-reference/operators/codesnippet/visualbasic/how-to-match-a-string-ag_4.vb)]  
+     [!code-vb[VbVbalrOperators#73](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/how-to-match-a-string-against-a-pattern_4.vb)]  
   
      この一致では、大文字と小文字が区別されます。  
   
@@ -85,7 +85,7 @@ caps.handback.revision: 8
   
      次の例では、7 桁の電話番号 `phoneNum` が、3 桁の数字の後に空白、ハイフン \(`–`\)、ピリオド \(`.`\) のいずれかが続くか、または文字が何も入らずに 4 桁の数字がそのまま続くかを調べます。  
   
-     [!code-vb[VbVbalrOperators#74](../../../../visual-basic/language-reference/operators/codesnippet/visualbasic/how-to-match-a-string-ag_5.vb)]  
+     [!code-vb[VbVbalrOperators#74](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/how-to-match-a-string-against-a-pattern_5.vb)]  
   
 ## 参照  
  [Comparison Operators](../../../../visual-basic/language-reference/operators/comparison-operators.md)   

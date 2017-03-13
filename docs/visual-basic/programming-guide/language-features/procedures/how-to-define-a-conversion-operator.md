@@ -35,11 +35,11 @@ caps.handback.revision: 14
 ## 使用例  
  構造体  `digit`  と `Byte` の間の変換演算子を定義する例は次のようになります。  
   
- [!code-vb[VbVbcnProcedures#27](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/how-to-define-a-conversi_1.vb)]  
+ [!code-vb[VbVbcnProcedures#27](./codesnippet/VisualBasic/how-to-define-a-conversion-operator_1.vb)]  
   
  構造体 `digit` を、次のコードを使用してテストしてください。  
   
- [!code-vb[VbVbcnProcedures#28](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/how-to-define-a-conversi_2.vb)]  
+ [!code-vb[VbVbcnProcedures#28](./codesnippet/VisualBasic/how-to-define-a-conversion-operator_2.vb)]  
   
 ## 参照  
  [Operator Procedures](../../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md)   

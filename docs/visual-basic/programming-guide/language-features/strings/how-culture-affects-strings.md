@@ -53,7 +53,7 @@ caps.handback.revision: 20
   
  日付を特定カルチャの文字列に変換するには、その日付オブジェクトの <xref:System.DateTime.ToString%28System.IFormatProvider%29> メソッドに <xref:System.Globalization.CultureInfo> オブジェクトを渡します。  たとえば次のコードでは、日付はアプリケーションのカルチャ設定に関係なく常に "07\/04\/2005 00:00:00" と表示されます。  
   
- [!code-vb[VbVbalrConcepts#1](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/codesnippet/visualbasic/how-culture-affects-stri_1.vb)]  
+ [!code-vb[VbVbalrConcepts#1](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/codesnippet/VisualBasic/how-culture-affects-strings_1.vb)]  
   
 > [!NOTE]
 >  日付リテラルは常に English カルチャに従って解釈されます。  
@@ -69,11 +69,11 @@ caps.handback.revision: 20
   
  `StrComp` 関数は、2 つの文字列を並べ替え順序に基づいて比較した結果を表す整数を返します。  結果が正の場合は、1 番目の文字列の方が 2 番目の文字列より大きいことになります。  結果が負の場合は 1 番目の文字列の方が小さく、0 の場合は 2 つの文字列が等しいことになります。  
   
- [!code-vb[VbVbalrStrings#22](../../../../visual-basic/language-reference/functions/codesnippet/visualbasic/how-culture-affects-stri_2.vb)]  
+ [!code-vb[VbVbalrStrings#22](../../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/how-culture-affects-strings_2.vb)]  
   
  [!INCLUDE[dnprdnshort](../../../../csharp/getting-started/includes/dnprdnshort-md.md)] に用意されている、`StrComp` 関数と同様の機能を持つ <xref:System.String.Compare%2A?displayProperty=fullName> メソッドを使用することもできます。  このメソッドは、基本文字列クラスのオーバーロードされた静的メソッドです。  次のコードは、このメソッドの使用例です。  
   
- [!code-vb[VbVbalrStrings#48](../../../../visual-basic/language-reference/functions/codesnippet/visualbasic/how-culture-affects-stri_3.vb)]  
+ [!code-vb[VbVbalrStrings#48](../../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/how-culture-affects-strings_3.vb)]  
   
  比較の実行方法をより細かく制御するには、<xref:System.String.Compare%2A> メソッドのオーバーロードを使用します。  <xref:System.String.Compare%2A?displayProperty=fullName> メソッドでは、`comparisonType` 引数を使用して比較の種類を指定できます。  
   

@@ -45,7 +45,7 @@ Continue { Do | For | While }
 ## 使用例  
  次のコード例は `Continue While` ステートメントを使用して、除数が 0 の場合に配列の次の列にスキップします。  `Continue While` は `For` ループの内部にあります。  制御は `For` ループを含む内側の `While` ループの次の反復処理である `While col < lastcol` ステートメントに移ります。  
   
- [!code-vb[VbVbalrStatements#14](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/continue-statement_1.vb)]  
+ [!code-vb[VbVbalrStatements#14](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/continue-statement_1.vb)]  
   
 ## 参照  
  [Do...Loop Statement](../../../visual-basic/language-reference/statements/do-loop-statement.md)   

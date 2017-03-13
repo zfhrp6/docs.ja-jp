@@ -75,11 +75,11 @@ Next [ counter ]
   
  次の例では、1 の値を持つ `index` の変数の先頭は `index` の到達 5.の値の後に終了した場合は、ループ反復ごとにインクリメントします。  
   
- [!code-vb[VbVbalrStatements#111](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/for-next-statement_1.vb)]  
+ [!code-vb[VbVbalrStatements#111](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/for-next-statement_1.vb)]  
   
  次の例では、2 時の `number` の変数の先頭は `number` の到達 0 の値の終了後にループの各反復処理の軽減され、0.25。  `-.25` の `Step` の引数はループの各反復で値 0.25 が低くなります。  
   
- [!code-vb[VbVbalrStatements#112](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/for-next-statement_2.vb)]  
+ [!code-vb[VbVbalrStatements#112](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/for-next-statement_2.vb)]  
   
 > [!TIP]
 >  ループまたはのステートメントを実行する回数先立ってわからない場合 [While...End While Statement](../../../visual-basic/language-reference/statements/while-end-while-statement.md) か [Do...Loop Statement](../../../visual-basic/language-reference/statements/do-loop-statement.md) は適しています。  一方、指定の回数だけループを実行する場合は、`For`...`Next` ループが最適です。  このループでは、最初にループに入るときに、繰り返しの回数を決定します。  
@@ -87,7 +87,7 @@ Next [ counter ]
 ## ループの入れ子  
  `For` ループは入れ子構造にできます。つまり、ループの中に別のループを入れることができます。  次の例は、それぞれ異なる step 値を指定した入れ子になった `For`...`Next` 構造体を示しています。  外側のループでは、ループの反復処理が実行されるたびに文字列が作成されます。  内側のループでは、ループの反復処理が実行されるたびにループ カウンター変数がデクリメントされます。  
   
- [!code-vb[VbVbalrStatements#113](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/for-next-statement_3.vb)]  
+ [!code-vb[VbVbalrStatements#113](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/for-next-statement_3.vb)]  
   
  ループの入れ子は、各ループに一意の変数を `counter` ある必要があります。  
   
@@ -100,7 +100,7 @@ Next [ counter ]
   
  次の例は、`Continue For` ステートメントと `Exit For` ステートメントの使用方法を示しています。  
   
- [!code-vb[VbVbalrStatements#115](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/for-next-statement_4.vb)]  
+ [!code-vb[VbVbalrStatements#115](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/for-next-statement_4.vb)]  
   
  `Exit For` ステートメントは、`For`…`Next` ループで何度でも使用できます。  入れ子構造になっている `For`…`Next` ループ内で使用すると、`Exit For` は最も内側のループを抜け、入れ子構造の 1 つ外側のレベルに制御を移します。  
   
@@ -168,17 +168,17 @@ Next [ counter ]
 ## 使用例  
  次の例では、ジェネリック リストからすべての要素を削除しています。  [For Each...Next ステートメント](../../../visual-basic/language-reference/statements/for-each-next-statement.md)の代わりに、降順で繰り返し発生 `For`…`Next` のステートメントを示しています。  この例では `removeAt` のメソッドに、削除された要素の後に要素のインデックス値が小さくなるため、この方法を使用します。  
   
- [!code-vb[VbVbalrStatements#114](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/for-next-statement_5.vb)]  
+ [!code-vb[VbVbalrStatements#114](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/for-next-statement_5.vb)]  
   
 ## 使用例  
  次の例では、[Enum Statement](../../../visual-basic/language-reference/statements/enum-statement.md)を使用して宣言された列挙型を繰り返します。  
   
- [!code-vb[VbVbalrStatements#116](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/for-next-statement_6.vb)]  
+ [!code-vb[VbVbalrStatements#116](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/for-next-statement_6.vb)]  
   
 ## 使用例  
  次の例では、ステートメントのパラメーターで `+`、`-`、`>=`、および `<=` の各演算子のオーバーロードを持つクラスを使用しています。  
   
- [!code-vb[VbVbalrStatements#117](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/for-next-statement_7.vb)]  
+ [!code-vb[VbVbalrStatements#117](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/for-next-statement_7.vb)]  
   
 ## 参照  
  <xref:System.Collections.Generic.List%601>   

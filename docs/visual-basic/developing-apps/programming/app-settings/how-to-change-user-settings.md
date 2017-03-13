@@ -34,7 +34,7 @@ caps.handback.revision: 18
 ## 使用例  
  この例では、`Nickname` ユーザー設定の値を変更します。  
   
- [!code-vb[VbVbalrMyResources#7](../../../../visual-basic/developing-apps/programming/app-settings/codesnippet/visualbasic/VbVbalrMyResources2/Form1.vb#7)]  
+ [!code-vb[VbVbalrMyResources#7](../../../../visual-basic/developing-apps/programming/app-settings/codesnippet/VisualBasic/how-to-change-user-settings_1.vb)]  
   
  この例が動作するためには、アプリケーションに `String` 型の `Nickname` ユーザー設定が必要です。  
   

@@ -84,14 +84,14 @@ result = expression1 And expression2
 ## 使用例  
  `And` 演算子を使って 2 つの式の論理積を求める例を次に示します。  結果は、2 つの式の両方が `True` かどうかを表す `Boolean` 値です。  
   
- [!code-vb[VbVbalrOperators#22](../../../visual-basic/language-reference/operators/codesnippet/visualbasic/and-operator_1.vb)]  
+ [!code-vb[VbVbalrOperators#22](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/and-operator_1.vb)]  
   
  先の例では、`True`、`False` という結果がそれぞれ生成されます。  
   
 ## 使用例  
  `And` 演算子を使って、2 つの数式のビットごとの論理積を求める例を次に示します。  2 つのオペランドの対応するビットが両方とも 1 にセットされていれば、結果パターンにビットがセットされます。  
   
- [!code-vb[VbVbalrOperators#23](../../../visual-basic/language-reference/operators/codesnippet/visualbasic/and-operator_2.vb)]  
+ [!code-vb[VbVbalrOperators#23](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/and-operator_2.vb)]  
   
  先の例では 8、2、0 という結果がそれぞれ生成されます。  
   

@@ -71,14 +71,14 @@ caps.handback.revision: 23
   
  次の例では、基本クラス `Payroll,` と派生クラス `BonusPayroll` を定義しています。この派生クラスは、継承したメソッド `PayEmployee` をオーバーライドします。  `RunPayroll` プロシージャは、`Payroll` オブジェクトと `BonusPayroll` オブジェクトを作成し、`Pay` 関数に渡します。この関数は、この 2 つのオブジェクトの `PayEmployee` メソッドを実行します。  
   
- [!code-vb[VbVbalrOOP#28](../../../../visual-basic/misc/codesnippet/visualbasic/VbVbalrOOP/OOP.vb#28)]  
+ [!code-vb[VbVbalrOOP#28](../../../../visual-basic/misc/codesnippet/VisualBasic/inheritance-basics_1.vb)]  
   
 ## MyBase キーワード  
  `MyBase` キーワードは、クラスの現在のインスタンスの基本クラスを参照するオブジェクト変数のように動作します。  `MyBase` は、派生クラスでオーバーライドまたはシャドウされている基本クラスのメンバーにアクセスする目的でよく使用されます。  特に、派生クラスのコンストラクターから基本クラスのコンストラクターを明示的に呼び出すために、`MyBase.New` がよく使用されます。  
   
  たとえば、基本クラスから継承したメソッドをオーバーライドする派生クラスをデザインするとします。  この場合は、次の例で示すように、オーバーライドしたメソッドで基本クラスのメソッドを呼び出し、戻り値を変更できます。  
   
- [!code-vb[VbVbalrOOP#109](../../../../visual-basic/misc/codesnippet/visualbasic/VbVbalrOOP/OOP.vb#109)]  
+ [!code-vb[VbVbalrOOP#109](../../../../visual-basic/misc/codesnippet/VisualBasic/inheritance-basics_2.vb)]  
   
  `MyBase` を使用するときには、次の制約があります。  
   

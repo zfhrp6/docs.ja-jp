@@ -32,7 +32,7 @@ caps.handback.revision: 9
 ## 使用例  
  次のコード例は、`My.Request` オブジェクトからヘッダー コレクションを取得し、`My.Response` オブジェクトを使ってそれを ASP.NET ページに書き込みます。  
   
- [!code-vb[VbVbalrMyWeb#1](../../../visual-basic/language-reference/objects/codesnippet/visualbasic/my-request-object_1.aspx)]  
+ [!code-vb[VbVbalrMyWeb#1](../../../visual-basic/language-reference/objects/codesnippet/VisualBasic/my-request-object_1.aspx)]  
   
 ## 参照  
  <xref:System.Web.HttpRequest>   

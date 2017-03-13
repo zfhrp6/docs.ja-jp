@@ -7,7 +7,7 @@ caps.handback.revision: 30
   
  C\# プログラムでは、エントリ ポイントは 1 つだけに限られます。  `Main` メソッドのあるクラスが複数ある場合、どの `Main` メソッドをエントリ ポイントとして使用するか指定するために、**\/main** コンパイラ オプションを使用してプログラムをコンパイルする必要があります。  詳細については、「[\/main \(Specify Location of Main Method\)](../../../csharp/language-reference/compiler-options/main-compiler-option.md)」を参照してください。  
   
- [!code-cs[csProgGuideMain#17](../../../csharp/programming-guide/inside-a-program/codesnippet/csharp/main-and-command-line-ar_1.cs)]  
+ [!code-cs[csProgGuideMain#17](../../../csharp/programming-guide/inside-a-program/codesnippet/CSharp/main-and-command-line-arguments_1.cs)]  
   
 ## 概要  
   

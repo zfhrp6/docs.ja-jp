@@ -24,14 +24,14 @@ caps.handback.revision: 19
   
  クエリ式の簡単な `select` 句の例を次に示します。  
   
- [!code-cs[cscsrefQueryKeywords#8](../../../csharp/language-reference/keywords/codesnippet/csharp/csquerykeywords/Select.cs#8)]  
+ [!code-cs[cscsrefQueryKeywords#8](../../../csharp/language-reference/keywords/codesnippet/CSharp/select-clause_1.cs)]  
   
  `select` 句で生成されるシーケンスの型によって、クエリ変数 `queryHighScores` の型が決まります。  最も簡単なケースでは、`select` で範囲変数だけを指定します。  この場合、返されるシーケンスにはデータ ソースと同じ型の要素が含まれます。  詳細については、「[Type Relationships in LINQ Query Operations](../../../csharp/programming-guide/concepts/linq/type-relationships-in-linq-query-operations.md)」を参照してください。  一方、`select` 句には、ソース データを新しい型に変換 \(または*投影*\) するための強力な機構も用意されています。  詳細については、「[LINQ によるデータ変換 \(C\#\)](../../../csharp/programming-guide/concepts/linq/data-transformations-with-linq.md)」を参照してください。  
   
 ## 使用例  
  `select` 句で指定できるさまざまな形式すべてを次の例に示します。  それぞれのクエリで、`select` 句と*クエリ変数*の型 \(`studentQuery1`、`studentQuery2` など\) の関係を確認してください。  
   
- [!code-cs[cscsrefQueryKeywords#9](../../../csharp/language-reference/keywords/codesnippet/csharp/csquerykeywords/Select.cs#9)]  
+ [!code-cs[cscsrefQueryKeywords#9](../../../csharp/language-reference/keywords/codesnippet/CSharp/select-clause_2.cs)]  
   
  前の例の `studentQuery8` に示したように、返されるシーケンスの要素を、ソース要素のプロパティのサブセットだけに制限することが必要になる場合があります。  返されるシーケンスをできる限り小さいサイズにすることにより、必要となるメモリ量を減らし、クエリの実行速度を高めることができます。  これは、`select` 句で匿名型を作成し、オブジェクト初期化子を使用して、ソース要素の適切なプロパティでその匿名型を初期化することにより実現できます。  この操作を行う方法の例については、「[オブジェクト初期化子とコレクション初期化子](../../../csharp/programming-guide/classes-and-structs/object-and-collection-initializers.md)」を参照してください。  
   

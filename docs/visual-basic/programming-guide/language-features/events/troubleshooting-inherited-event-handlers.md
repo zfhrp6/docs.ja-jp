@@ -33,7 +33,7 @@ caps.handback.revision: 11
   
 -   継承されたイベント ハンドラーに [Handles](../../../../visual-basic/language-reference/statements/handles-clause.md) 句が含まれてないことを確認してください。  基本クラス内のメソッドが既にイベントと関連付けられている場合は、そのイベントが発生します。  継承されたメソッドから `Handles` 句を削除してください。  
   
-     [!code-vb[VbVbalrEvents#32](../../../../visual-basic/language-reference/statements/codesnippet/visualbasic/VbVbalrEvents/Class1.vb#32)]  
+     [!code-vb[VbVbalrEvents#32](../../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/troubleshooting-inherited-event-handlers_1.vb)]  
   
 -   継承されたメソッドに `Handles` キーワードが含まれていない場合は、コードに余分な [AddHandler Statement](../../../../visual-basic/language-reference/statements/addhandler-statement.md)がないこと、または同じイベントを処理する追加のメソッドがないことを確認してください。  
   

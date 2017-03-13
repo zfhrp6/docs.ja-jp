@@ -66,11 +66,11 @@ caps.handback.revision: 16
 ## 使用例  
  次の例には、配列変数を受け取ってその要素を操作する 2 つのプロシージャがあります。  `increase` プロシージャは、各要素に単純に 1 を加算します。  `replace` プロシージャは、新しい配列をパラメーター `a()` 煮割り当て、各要素に 1 を加算します。  
   
- [!code-vb[VbVbcnProcedures#35](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/how-to-change-the-value-_1.vb)]  
+ [!code-vb[VbVbcnProcedures#35](./codesnippet/VisualBasic/how-to-change-the-value-of-a-procedure-argument_1.vb)]  
   
- [!code-vb[VbVbcnProcedures#36](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/how-to-change-the-value-_2.vb)]  
+ [!code-vb[VbVbcnProcedures#36](./codesnippet/VisualBasic/how-to-change-the-value-of-a-procedure-argument_2.vb)]  
   
- [!code-vb[VbVbcnProcedures#37](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/how-to-change-the-value-_3.vb)]  
+ [!code-vb[VbVbcnProcedures#37](./codesnippet/VisualBasic/how-to-change-the-value-of-a-procedure-argument_3.vb)]  
   
  最初の `MsgBox` の呼び出しでは、"After increase\(n\): 11, 21, 31, 41" と表示されます。  配列  `n`  は参照型なので、引き渡し方法が `ByVal` でも、 `replace`  によってこのメンバーを変更できます。  
   

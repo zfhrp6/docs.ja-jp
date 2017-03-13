@@ -44,7 +44,7 @@ caps.handback.revision: 18
 ## 使用例  
  次の例では、`b` は `Byte` 型変数です。  このステートメントは、変数の範囲と、その範囲にビット シフト演算子を適用する例を示しています。  
   
- [!code-vb[VbVbalrDataTypes#16](../../../visual-basic/language-reference/data-types/codesnippet/visualbasic/byte-data-type_1.vb)]  
+ [!code-vb[VbVbalrDataTypes#16](../../../visual-basic/language-reference/data-types/codesnippet/VisualBasic/byte-data-type_1.vb)]  
   
 ## 参照  
  <xref:System.Byte?displayProperty=fullName>   

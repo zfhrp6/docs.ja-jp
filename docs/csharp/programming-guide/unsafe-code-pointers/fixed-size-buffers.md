@@ -31,11 +31,11 @@ private fixed char name[30];
   
  たとえば、C\# 2.0 より前のバージョンでは、次の `struct` のサイズは 8 バイトです。  `pathName` 配列は、ヒープに割り当てられた配列への参照です。  
   
- [!code-cs[csProgGuidePointers#19](../../../csharp/programming-guide/unsafe-code-pointers/codesnippet/csharp/Pointers/Pointers.cs#19)]  
+ [!code-cs[csProgGuidePointers#19](../../../csharp/programming-guide/unsafe-code-pointers/codesnippet/CSharp/fixed-size-buffers_1.cs)]  
   
  C\# 2.0 以降では、`struct` に埋め込まれた配列を保持できるようになりました。  次の例では、`fixedBuffer` 配列のサイズは固定です。  配列の要素にアクセスするには、`fixed` ステートメントを使用して、最初の要素へのポインターを取得します。  `fixed` ステートメントは、`fixedBuffer` のインスタンスをメモリ内の特定の場所に固定します。  
   
- [!code-cs[csProgGuidePointers#20](../../../csharp/programming-guide/unsafe-code-pointers/codesnippet/csharp/Pointers/Pointers.cs#20)]  
+ [!code-cs[csProgGuidePointers#20](../../../csharp/programming-guide/unsafe-code-pointers/codesnippet/CSharp/fixed-size-buffers_2.cs)]  
   
  128 要素の `char` 配列のサイズは 256 バイトです。  固定サイズの [char](../../../csharp/language-reference/keywords/char.md) バッファーは、エンコーディングとは無関係に、常に 1 文字につき 2 バイトを使用します。  これは、`CharSet = CharSet.Auto` や `CharSet = CharSet.Ansi` によって char バッファーが API メソッドや構造体にマーシャリングされる場合でも同じです。  詳細については、「<xref:System.Runtime.InteropServices.CharSet>」を参照してください。  
   

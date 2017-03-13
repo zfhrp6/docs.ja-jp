@@ -22,7 +22,7 @@ C\# では、メモリ内の文字列はすべて Unicode \(UTF\-16\) として�
 ## 使用例  
  8 ビット ASCII でエンコードされているテキスト ファイルを変換し、Windows コード ページ 737 に従ってソース テキストを解釈する方法を次の例に示します。  
   
- [!code-cs[csProgGuideStrings#34](../../../csharp/programming-guide/strings/codesnippet/csharp/CSRefStrings/Strings.cs#34)]  
+ [!code-cs[csProgGuideStrings#34](../../../csharp/programming-guide/strings/codesnippet/CSharp/how-to-convert-between-legacy-encodings-and-unicode_1.cs)]  
   
 ## 参照  
  [文字列](../../../csharp/programming-guide/strings/index.md)

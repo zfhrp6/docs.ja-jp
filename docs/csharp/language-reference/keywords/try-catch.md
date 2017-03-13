@@ -136,7 +136,7 @@ static void Main()
 ## <a name="example"></a>例  
  例外が発生する可能性がある `ProcessString` メソッドへの呼び出しを含む `try` ブロックの例を次に示します。 `catch` 句には、メッセージを画面に表示するだけの例外ハンドラーがあります。 `throw` ステートメントが `MyMethod` の内側から呼び出されると、システムによって `catch` ステートメントが検索され、メッセージ `Exception caught` が表示されます。  
   
- [!code-cs[csrefKeywordsExceptions#2](../../../csharp/language-reference/keywords/codesnippet/csharp/try-catch_1.cs)]  
+ [!code-cs[csrefKeywordsExceptions#2](../../../csharp/language-reference/keywords/codesnippet/CSharp/try-catch_1.cs)]  
   
 ## <a name="example"></a>例  
  次の例では、2 種類の catch ブロックが使用され、特殊性が最も高い最初の例外がキャッチされます。  
@@ -145,7 +145,7 @@ static void Main()
   
  この例で特殊性が最も低い catch ブロックを最初に配置すると、"`A previous catch clause already catches all exceptions of this or a super type ('System.Exception')`" というエラー メッセージが表示されます。  
   
- [!code-cs[csrefKeywordsExceptions#3](../../../csharp/language-reference/keywords/codesnippet/csharp/try-catch_2.cs)]  
+ [!code-cs[csrefKeywordsExceptions#3](../../../csharp/language-reference/keywords/codesnippet/CSharp/try-catch_2.cs)]  
   
 ## <a name="example"></a>例  
  次の例では、非同期メソッドの例外処理を示します。 非同期タスクからスローされる例外をキャッチするには、`try` ブロックに `await` 式を配置し、`catch` ブロックで例外をキャッチします。  
@@ -154,14 +154,14 @@ static void Main()
   
  `throw new OperationCancelledException` 行のコメントを解除して、非同期処理を取り消したときに何が起こるかを示します。 タスクの `IsCanceled` プロパティが `true` に設定され、例外が `catch` ブロックでキャッチされます。 この例に該当しない一部の条件では、タスクの `IsFaulted` プロパティが `true` に設定され、`IsCanceled` が `false` に設定されます。  
   
- [!code-cs[csAsyncExceptions#2](../../../csharp/language-reference/keywords/codesnippet/csharp/try-catch_3.cs)]  
+ [!code-cs[csAsyncExceptions#2](../../../csharp/language-reference/keywords/codesnippet/CSharp/try-catch_3.cs)]  
   
 ## <a name="example"></a>例  
  次の例では、複数のタスクで複数の例外が発生する可能性がある例外処理について説明します。 `try`ブロックへの呼び出しによって返されるタスクの待機<xref:System.Threading.Tasks.Task.WhenAll%2A?displayProperty=fullName>します。 WhenAll が適用される 3 つのタスクが完了すると、このタスクは完了します。  
   
  3 つのタスクでそれぞれ例外が発生します。 `catch`は、例外を反復処理ブロック、`Exception.InnerExceptions`プロパティによって返されたタスクの<xref:System.Threading.Tasks.Task.WhenAll%2A?displayProperty=fullName>します。  
   
- [!code-cs[csAsyncExceptions#4](../../../csharp/language-reference/keywords/codesnippet/csharp/try-catch_4.cs)]  
+ [!code-cs[csAsyncExceptions#4](../../../csharp/language-reference/keywords/codesnippet/CSharp/try-catch_4.cs)]  
   
 ## <a name="c-language-specification"></a>C# 言語仕様  
  [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec-md.md)]  

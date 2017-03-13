@@ -39,7 +39,7 @@ caps.handback.revision: 13
   
 3.  相互運用機能アセンブリへのアクセスを単純化するために、COM オブジェクトを使用するクラスまたはモジュールの先頭に `Imports` ステートメントを追加します。  たとえば、次のコード例では、`Microsoft InkEdit Control 1.0` ライブラリで参照されているオブジェクトの `INKEDLib` 名前空間をインポートします。  
   
-     [!code-vb[VbVbalrInterop#40](../../../visual-basic/programming-guide/com-interop/codesnippet/visualbasic/vbvbalrinterop/Class1.vb#40)]  
+     [!code-vb[VbVbalrInterop#40](../../../visual-basic/programming-guide/com-interop/codesnippet/VisualBasic/how-to-reference-com-objects_1.vb)]  
   
 ### Tlbimp を使用して相互運用機能アセンブリを作成するには  
   

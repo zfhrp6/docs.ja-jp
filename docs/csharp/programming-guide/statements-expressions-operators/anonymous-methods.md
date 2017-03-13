@@ -22,15 +22,15 @@ C\# 2.0 より前のバージョンでは、[デリゲート](../../../csharp/la
   
  匿名メソッドは、基本的にコード ブロックをデリゲート パラメーターとして渡すために作成します。  2 つの例を次に示します。  
   
- [!code-cs[csProgGuideDelegates#6](../../../csharp/programming-guide/delegates/codesnippet/csharp/csrefDelegates/Delegates.cs#6)]  
+ [!code-cs[csProgGuideDelegates#6](../../../csharp/programming-guide/delegates/codesnippet/CSharp/anonymous-methods_1.cs)]  
   
- [!code-cs[csProgGuideDelegates#5](../../../csharp/programming-guide/delegates/codesnippet/csharp/csrefDelegates/Delegates.cs#5)]  
+ [!code-cs[csProgGuideDelegates#5](../../../csharp/programming-guide/delegates/codesnippet/CSharp/anonymous-methods_2.cs)]  
   
  匿名メソッドを使用すると、別のメソッドを作成する必要がないため、デリゲートをインスタンス化する際のコーディングのオーバーヘッドを削減できます。  
   
  たとえば、デリゲートの代わりにコード ブロックを指定すると、メソッドを作成するのが余分なオーバーヘッドと思われる場合に役立つことがあります。  新しいスレッドを開始する場合などがそのよい例です。  このクラスではスレッドを作成し、スレッドが実行するコードも含みますが、デリゲート用の追加のメソッドは作成していません。  
   
- [!code-cs[csProgGuideDelegates#7](../../../csharp/programming-guide/delegates/codesnippet/csharp/csrefDelegates/Delegates.cs#7)]  
+ [!code-cs[csProgGuideDelegates#7](../../../csharp/programming-guide/delegates/codesnippet/CSharp/anonymous-methods_3.cs)]  
   
 ## 解説  
  匿名メソッドのパラメーターのスコープは、*匿名メソッド ブロック*です。  
@@ -39,7 +39,7 @@ C\# 2.0 より前のバージョンでは、[デリゲート](../../../csharp/la
   
  匿名メソッドの宣言をスコープに含むローカル変数とパラメーターは、匿名メソッドの*外部*変数と呼ばれます。  たとえば、次のコード セグメントに示されている `n` は外部変数です。  
   
- [!code-cs[csProgGuideDelegates#8](../../../csharp/programming-guide/delegates/codesnippet/csharp/csrefDelegates/Delegates.cs#8)]  
+ [!code-cs[csProgGuideDelegates#8](../../../csharp/programming-guide/delegates/codesnippet/CSharp/anonymous-methods_4.cs)]  
   
  外部変数への参照`n`と呼ばれます*キャプチャ* 、デリゲートを作成します。  匿名メソッドを参照するデリゲートがガベージ コレクションの対象にされるまでローカル変数とは異なり、キャプチャされた変数の有効期間を拡張します。  
   
@@ -58,7 +58,7 @@ C\# 2.0 より前のバージョンでは、[デリゲート](../../../csharp/la
   
  どちらの場合も、デリゲートを呼び出すと、メッセージが表示されます。  
   
- [!code-cs[csProgGuideDelegates#4](../../../csharp/programming-guide/delegates/codesnippet/csharp/csrefDelegates/Delegates.cs#4)]  
+ [!code-cs[csProgGuideDelegates#4](../../../csharp/programming-guide/delegates/codesnippet/CSharp/anonymous-methods_5.cs)]  
   
 ## 参照  
  [C\# リファレンス](../../../csharp/language-reference/index.md)   

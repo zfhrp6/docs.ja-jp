@@ -21,43 +21,43 @@ caps.handback.revision: 26
   
  インスタンス コンストラクターの例を次に示します。  
   
- [!code-cs[csProgGuideObjects#5](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/instance-constructors_1.cs)]  
+ [!code-cs[csProgGuideObjects#5](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/instance-constructors_1.cs)]  
   
 > [!NOTE]
 >  このクラスにはパブリック フィールドが含まれていますが、これはわかりやすくするためです。  パブリック フィールドの使用は、推奨されるプログラミング手法ではありません。この場合、プログラム内のすべてのメソッドに、オブジェクトの内部処理への無制限で検証されないアクセスが許可されるからです。  通常、データ メンバーはプライベートにし、クラス メソッドとプロパティのみを介してアクセスする必要があります。  
   
  このインスタンス コンストラクターは、`CoOrds` クラスからオブジェクトを作成するときに呼び出されます。  引数を取らないこのようなコンストラクターを*既定のコンストラクター*と呼びます。  これは、コンストラクターを追加する場合に便利です。  たとえば、`CoOrds` クラスに、データ メンバーの初期値を指定できるコンストラクターを追加できます。  
   
- [!code-cs[csProgGuideObjects#76](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/instance-constructors_2.cs)]  
+ [!code-cs[csProgGuideObjects#76](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/instance-constructors_2.cs)]  
   
  これにより、次のように、既定値や特定の初期値を使って `CoOrd` オブジェクトを作成できます。  
   
- [!code-cs[csProgGuideObjects#77](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/instance-constructors_3.cs)]  
+ [!code-cs[csProgGuideObjects#77](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/instance-constructors_3.cs)]  
   
  クラスにコンストラクターがない場合は、既定のコンストラクターが自動的に生成され、既定値を使用してオブジェクト フィールドが初期化されます。  たとえば、[int](../../../csharp/language-reference/keywords/int.md) は 0 に初期化されます。  既定値の詳細については、「[既定値の一覧表](../../../csharp/language-reference/keywords/default-values-table.md)」を参照してください。  したがって、`CoOrds` クラスの既定のコンストラクターはすべてのデータ メンバーをゼロに初期化するので、クラスの機能を変更せずに完全に削除できます。  下の「例 1」は複数のコンストラクターを使用する完全な例で、「例 2」は自動的に生成されるコンストラクターの例を示しています。  
   
  また、インスタンス コンストラクターを使用すると、基本クラスのインスタンス コンストラクターを呼び出すこともできます。  クラス コンストラクターは、初期化子を通じて基本クラスのコンストラクターを呼び出すことができます。次にその例を示します。  
   
- [!code-cs[csProgGuideObjects#78](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/instance-constructors_4.cs)]  
+ [!code-cs[csProgGuideObjects#78](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/instance-constructors_4.cs)]  
   
  この例の `Circle` クラスは、`Circle` の派生元の `Shape` によって提供されるコンストラクターに、半径と高さを表す値を渡します。  下の「例 3」は、`Shape` と `Circle` を使用する完全な例を示しています。  
   
 ## 例 1  
  次の例は、クラス コンストラクターを 2 つ使用するクラスを示しています。1 つのコンストラクターには引数がなく、もう 1 つのコンストラクターには引数が 2 つあります。  
   
- [!code-cs[csProgGuideObjects#4](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/instance-constructors_5.cs)]  
+ [!code-cs[csProgGuideObjects#4](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/instance-constructors_5.cs)]  
   
 ## 例 2  
  次の例の `Person` クラスにはコンストラクターがありません。この場合は、既定のコンストラクターが自動的に使用され、フィールドは既定値に初期化されます。  
   
- [!code-cs[csProgGuideObjects#8](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/instance-constructors_6.cs)]  
+ [!code-cs[csProgGuideObjects#8](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/instance-constructors_6.cs)]  
   
  `age` の既定値は `0`、`name` の既定値は `null` です。  既定値の詳細については、「[既定値の一覧表](../../../csharp/language-reference/keywords/default-values-table.md)」を参照してください。  
   
 ## 例 3  
  次の例は、基本クラスの初期化子の使い方を示しています。  `Circle` クラスは一般的なクラス `Shape` から派生しており、`Cylinder` クラスは `Circle` クラスから派生しています。  どちらの派生クラスのコンストラクターも、基本クラスの初期化子を使用しています。  
   
- [!code-cs[csProgGuideObjects#9](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/instance-constructors_7.cs)]  
+ [!code-cs[csProgGuideObjects#9](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/instance-constructors_7.cs)]  
   
  基本クラスのコンストラクターを呼び出すその他の例については、「[virtual](../../../csharp/language-reference/keywords/virtual.md)」、「[オーバーライド](../../../csharp/language-reference/keywords/override.md)」、および「[base](../../../csharp/language-reference/keywords/base.md)」を参照してください。  
   

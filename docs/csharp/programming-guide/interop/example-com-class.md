@@ -38,7 +38,7 @@ caps.handback.revision: 17
  クラスによってクラス インターフェイスが実装されます。クラスでは、複数のインターフェイスを実装できますが、最初に実装されるのは既定のクラス インターフェイスです。  ここで、COM に対して公開するメソッドとプロパティを実装します。  このメソッドとプロパティは、パブリックとしてマークされており、クラス インターフェイスの宣言と同じであることが必要です。  また、ここでクラスから発生するイベントを宣言します。  このイベントは、パブリックとしてマークされており、イベント インターフェイスの宣言と同じであることが必要です。  
   
 ## 使用例  
- [!code-cs[csProgGuideInterop#8](../../../csharp/programming-guide/interop/codesnippet/csharp/example-com-class_1.cs)]  
+ [!code-cs[csProgGuideInterop#8](../../../csharp/programming-guide/interop/codesnippet/CSharp/example-com-class_1.cs)]  
   
 ## 参照  
  [C\# プログラミング ガイド](../../../csharp/programming-guide/index.md)   

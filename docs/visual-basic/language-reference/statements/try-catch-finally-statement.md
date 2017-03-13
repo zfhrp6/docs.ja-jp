@@ -123,7 +123,7 @@ End Try
   
  発生する可能性が高い条件をチェックするのに、`Try…Catch` ステートメントが常に必要なわけではありません。  ファイルを開く前にファイルの有無をチェックする例を次に示します。  これにより、<xref:System.IO.File.OpenText%2A> メソッドによってスローされる例外をキャッチする必要性が低くなります。  
   
- [!code-vb[VbVbalrStatements#94](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/try-catch-finally-statem_1.vb)]  
+ [!code-vb[VbVbalrStatements#94](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/try-catch-finally-statement_1.vb)]  
   
  `Catch` ブロック内のコードで、スレッド セーフなログまたは適切なメッセージを通じて、例外がユーザーに適切に報告されるようにしてください。  そうでない場合、例外に気付かないままになる可能性があります。  
   
@@ -148,31 +148,31 @@ End Try
 ## 部分的に信頼されている状況  
  ネットワーク共有でホストされているアプリケーションなど、部分的に信頼されている状況では、`Try...Catch...Finally` はその呼び出しを含むメソッドが呼び出される前に発生したセキュリティ例外をキャッチしません。  次のコード例をサーバー共有に配置し、そこから実行すると、"System.Security.SecurityException: 要求が失敗しました。" のエラーが発生します。セキュリティ例外の詳細については、<xref:System.Security.SecurityException> クラスの説明を参照してください。  
   
- [!code-vb[VbVbalrStatements#85](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/try-catch-finally-statem_2.vb)]  
+ [!code-vb[VbVbalrStatements#85](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/try-catch-finally-statement_2.vb)]  
   
  このような部分的に信頼されている状況では、`Process.Start` ステートメントを別の `Sub` に入れる必要があります。  `Sub` の最初の呼び出しは失敗します。  これによって、`Try...Catch` は、`Process.Start` を含んでいる `Sub` が開始されてセキュリティ例外が生成される前に、その失敗をキャッチできます。  
   
 ## 使用例  
  次の例は、`Try...Catch...Finally` ステートメントの構造を示しています。  
   
- [!code-vb[VbVbalrStatements#86](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/try-catch-finally-statem_3.vb)]  
+ [!code-vb[VbVbalrStatements#86](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/try-catch-finally-statement_3.vb)]  
   
 ## 使用例  
  次の例では、`CreateException` メソッドにより `NullReferenceException` がスローされます。  `Try` ブロックには、例外を生成するコードはありません。  そのため、`CreateException` メソッドは例外を処理しません。  `RunSample` メソッドが例外を処理します。これは、`CreateException` メソッドの呼び出しが `Try` ブロック内にあるためです。  
   
  例には、最も特殊な例外から最も一般的な例外の順に、いくつかの種類の例外のための `Catch` ステートメントが含まれています。  
   
- [!code-vb[VbVbalrStatements#91](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/try-catch-finally-statem_4.vb)]  
+ [!code-vb[VbVbalrStatements#91](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/try-catch-finally-statement_4.vb)]  
   
 ## 使用例  
  次の例は、`Catch When` ステートメントを使用して、条件式によってフィルターする方法を示しています。  条件式が `True` と評価された場合に、`Catch` ブロック内のコードが実行されます。  
   
- [!code-vb[VbVbalrStatements#92](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/try-catch-finally-statem_5.vb)]  
+ [!code-vb[VbVbalrStatements#92](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/try-catch-finally-statement_5.vb)]  
   
 ## 使用例  
  次の例には、`Try` ブロックに含まれている `Try…Catch` ステートメントがあります。  内側の `Catch` ブロックによって、`InnerException` プロパティが元の例外に設定されている例外がスローされます。  外側の `Catch` ブロックによって、それ自体の例外と内側の例外が報告されます。  
   
- [!code-vb[VbVbalrStatements#93](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/try-catch-finally-statem_6.vb)]  
+ [!code-vb[VbVbalrStatements#93](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/try-catch-finally-statement_6.vb)]  
   
 ## 使用例  
  次の例では、非同期のメソッドの例外処理を示します。  async のタスクに適用する例外をキャッチするには、`Await` の式は、呼び出し元の `Try` ブロックになり、例外は `Catch` ブロックでキャッチされます。  
@@ -181,14 +181,14 @@ End Try
   
  非同期処理を取り消すとコメントから外すとどうなるかを示す `Throw New OperationCancelledException` の行。  例外は `Catch` ブロックでキャッチして、タスクの `IsCanceled` のプロパティは `True`に設定されます。  ただし、条件では、この例には適用されません `IsFaulted` は、`True` に設定され、`IsCanceled` は `False`に設定されます。  
   
- [!code-vb[csAsyncExceptions#1](../../../csharp/language-reference/keywords/codesnippet/visualbasic/try-catch-finally-statem_7.vb)]  
+ [!code-vb[csAsyncExceptions#1](../../../csharp/language-reference/keywords/codesnippet/VisualBasic/try-catch-finally-statement_7.vb)]  
   
 ## 使用例  
  次の例では、複数のタスクが複数の例外が発生する可能性がある場所で例外処理を示します。  `Try` ブロックに <xref:System.Threading.Tasks.Task.WhenAll%2A?displayProperty=fullName> が返したタスクの `Await` の式が含まれています。  タスクは <xref:System.Threading.Tasks.Task.WhenAll%2A?displayProperty=fullName> が適用される 3 種類のタスクが完了すると完了します。  
   
  3 個のタスクの原因の各例外。  `Catch` ブロックは `Task.WhenAll` が返したタスクの `Exception.InnerExceptions` のプロパティに、例外を反復処理します。  
   
- [!code-vb[csAsyncExceptions#3](../../../csharp/language-reference/keywords/codesnippet/visualbasic/try-catch-finally-statem_8.vb)]  
+ [!code-vb[csAsyncExceptions#3](../../../csharp/language-reference/keywords/codesnippet/VisualBasic/try-catch-finally-statement_8.vb)]  
   
 ## 参照  
  <xref:Microsoft.VisualBasic.Information.Err%2A>   

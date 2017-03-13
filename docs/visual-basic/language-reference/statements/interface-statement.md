@@ -104,7 +104,7 @@ End Interface
   
      クラスのインスタンスを変数に割り当てる場合、そのメンバーのアクセス レベルは、変数のデータ型が基のインターフェイスかそれとも実装先のクラスかによって変わります。  次に例を示します。  
   
-     [!code-vb[VbVbalrStatements#39](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/interface-statement_1.vb)]  
+     [!code-vb[VbVbalrStatements#39](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/interface-statement_1.vb)]  
   
      `varAsInterface` を指定してクラス メンバーにアクセスする場合は、すべてのメンバーがパブリック アクセスになります。  ただし、`varAsClass` を指定してメンバーにアクセスする場合、`Sub` プロシージャである `doSomething` はプライベート アクセスになります。  
   
@@ -117,7 +117,7 @@ End Interface
 ## 使用例  
  次の例は `Interface` ステートメントを使用して、`thisInterface` という名前のインターフェイスを定義します。これを実装するには、`Property` ステートメントと `Function` ステートメントを使用する必要があります。  
   
- [!code-vb[VbVbalrStatements#40](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/interface-statement_2.vb)]  
+ [!code-vb[VbVbalrStatements#40](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/interface-statement_2.vb)]  
   
  インターフェイス内で `Property` ステートメントと `Function` ステートメントで開始されたブロックが、`End Property` と `End Function` で終了していない点に注意してください。  インターフェイスには、そのメンバーのシグネチャのみを定義します。  `Property` ブロックと `Function` ブロックの完全な定義は、`thisInterface` を実装するクラスに記述されています。  
   

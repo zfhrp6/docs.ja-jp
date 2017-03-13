@@ -30,7 +30,7 @@ caps.handback.revision: 19
   
  [Option Infer](../../../../visual-basic/language-reference/statements/option-infer-statement.md) が `Off` で、[Option Strict](../../../../visual-basic/language-reference/statements/option-strict-statement.md) が `On` である場合、明示的にデータ型を指定してすべての定数を宣言する必要があります。  次の例では、`MyByte` のデータ型が、データ型 `Byte` として明示的に宣言されています。  
   
- [!code-vb[VbVbalrConstants#1](../../../../visual-basic/programming-guide/language-features/constants-enums/codesnippet/visualbasic/constant-and-literal-dat_1.vb)]  
+ [!code-vb[VbVbalrConstants#1](../../../../visual-basic/programming-guide/language-features/constants-enums/codesnippet/VisualBasic/constant-and-literal-data-types_1.vb)]  
   
  `Option Infer` が `On`、または `Option Strict` が `Off` である場合、`As` 句でデータ型を指定せずに定数を宣言する必要があります。  コンパイラにより、式の種類から定数の型が決定されます。  整数リテラルは、既定で整数型 \(`Integer`\) にキャストされます。  浮動小数点数の既定のデータ型は `Double` であり、キーワード `True` と `False` は `Boolean` 定数を指定します。  
   
@@ -48,11 +48,11 @@ myDecimal = 100000000000000000000   ' This causes a compiler error.
   
  前の例を修正するには、リテラルの末尾に型文字 `D` を追加します。これにより、リテラルが `Decimal` として表されるようになります。  
   
- [!code-vb[VbVbalrConstants#2](../../../../visual-basic/programming-guide/language-features/constants-enums/codesnippet/visualbasic/constant-and-literal-dat_2.vb)]  
+ [!code-vb[VbVbalrConstants#2](../../../../visual-basic/programming-guide/language-features/constants-enums/codesnippet/VisualBasic/constant-and-literal-data-types_2.vb)]  
   
  型文字と囲み文字の正しい使用方法を次の例に示します。  
   
- [!code-vb[VbVbalrConstants#3](../../../../visual-basic/programming-guide/language-features/constants-enums/codesnippet/visualbasic/constant-and-literal-dat_3.vb)]  
+ [!code-vb[VbVbalrConstants#3](../../../../visual-basic/programming-guide/language-features/constants-enums/codesnippet/VisualBasic/constant-and-literal-data-types_3.vb)]  
   
  次の表は、[!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] で使用できる囲み文字と型文字の一覧です。  
   

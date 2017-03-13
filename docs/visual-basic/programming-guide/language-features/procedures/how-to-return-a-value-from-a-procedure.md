@@ -35,11 +35,11 @@ caps.handback.revision: 12
   
      次の `Function` プロシージャは、直角三角形の最も長い辺 \(斜辺\) を計算し、結果を呼び出し元のコードに返します。  
   
-     [!code-vb[VbVbcnProcedures#1](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/how-to-return-a-value-fr_1.vb)]  
+     [!code-vb[VbVbcnProcedures#1](./codesnippet/VisualBasic/how-to-return-a-value-from-a-procedure_1.vb)]  
   
      `hypotenuse` を呼び出す一般的な例は次のようになります。このコードは戻り値を格納します。  
   
-     [!code-vb[VbVbcnProcedures#6](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/how-to-return-a-value-fr_2.vb)]  
+     [!code-vb[VbVbcnProcedures#6](./codesnippet/VisualBasic/how-to-return-a-value-from-a-procedure_2.vb)]  
   
 ### Exit Function または End Function を使用して値を返すには  
   

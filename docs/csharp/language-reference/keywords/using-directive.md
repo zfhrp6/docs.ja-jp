@@ -77,7 +77,7 @@ class Program
  次の例は、名前空間の `using` エイリアスを定義して使用する方法を示しています。  
   
 ### コード  
- [!code-cs[csrefKeywordsNamespace#8](../../../csharp/language-reference/keywords/codesnippet/csharp/using-directive_1.cs)]  
+ [!code-cs[csrefKeywordsNamespace#8](../../../csharp/language-reference/keywords/codesnippet/CSharp/using-directive_1.cs)]  
   
 ### コメント  
  using エイリアス ディレクティブの右側には、オープン ジェネリック型を配置できません。  たとえば、List\<T\> の using エイリアスを作成することはできませんが、List\<int\> の using エイリアスは作成できます。  
@@ -88,7 +88,7 @@ class Program
  次の例は、クラスの `using` ディレクティブと `using` エイリアスを定義する方法を示しています。  
   
 ### コード  
- [!code-cs[csrefKeywordsNamespace#9](../../../csharp/language-reference/keywords/codesnippet/csharp/using-directive_2.cs)]  
+ [!code-cs[csrefKeywordsNamespace#9](../../../csharp/language-reference/keywords/codesnippet/CSharp/using-directive_2.cs)]  
   
 ## C\# 言語仕様  
  [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec-md.md)]  

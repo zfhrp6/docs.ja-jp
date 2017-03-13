@@ -21,11 +21,11 @@ C\# では、例外による影響を受けることがあるコードを分割�
   
  次の例では、`try-catch` ステートメント、`try-finally` ステートメント、および `try-catch-finally` ステートメントについて示します。  
   
- [!code-cs[csProgGuideExceptions#6](../../../csharp/programming-guide/exceptions/codesnippet/csharp/exception-handling_1.cs)]  
+ [!code-cs[csProgGuideExceptions#6](../../../csharp/programming-guide/exceptions/codesnippet/CSharp/exception-handling_1.cs)]  
   
- [!code-cs[csProgGuideExceptions#7](../../../csharp/programming-guide/exceptions/codesnippet/csharp/exception-handling_2.cs)]  
+ [!code-cs[csProgGuideExceptions#7](../../../csharp/programming-guide/exceptions/codesnippet/CSharp/exception-handling_2.cs)]  
   
- [!code-cs[csProgGuideExceptions#8](../../../csharp/programming-guide/exceptions/codesnippet/csharp/exception-handling_3.cs)]  
+ [!code-cs[csProgGuideExceptions#8](../../../csharp/programming-guide/exceptions/codesnippet/CSharp/exception-handling_3.cs)]  
   
  `catch` ブロックも `finally` ブロックも存在しない `try` ブロックは、コンパイラ エラーになります。  
   
@@ -40,11 +40,11 @@ C\# では、例外による影響を受けることがあるコードを分割�
   
 -   より限定的な新しい例外を生成し、スローできる場合。  
   
-     [!code-cs[csProgGuideExceptions#9](../../../csharp/programming-guide/exceptions/codesnippet/csharp/exception-handling_4.cs)]  
+     [!code-cs[csProgGuideExceptions#9](../../../csharp/programming-guide/exceptions/codesnippet/CSharp/exception-handling_4.cs)]  
   
 -   例外を部分的に処理してから、他の処理に例外を渡すことがあります。  次の例では、例外を再スローする前にエラー ログにエントリを追加するために `catch` ブロックが使用されています。  
   
-     [!code-cs[csProgGuideExceptions#10](../../../csharp/programming-guide/exceptions/codesnippet/csharp/exception-handling_5.cs)]  
+     [!code-cs[csProgGuideExceptions#10](../../../csharp/programming-guide/exceptions/codesnippet/CSharp/exception-handling_5.cs)]  
   
 ## finally ブロック  
  `finally` ブロックでは、`try` ブロックで実行されるアクションをクリーンアップできます。  `finally` ブロックが存在する場合、このブロックは、`try` ブロックと、一致した `catch` ブロックの後で最後に実行されます。  `finally` ブロックは、例外がスローされたかどうか、または例外の種類に一致する `catch` ブロックが見つかったかどうかとは無関係に常に実行されます。  
@@ -53,7 +53,7 @@ C\# では、例外による影響を受けることがあるコードを分割�
   
  次の例では、`finally` ブロックを使用して、`try` ブロックで開かれたファイルを閉じます。  ファイルを閉じる前に、ファイル ハンドルの状態がチェックされることに注意してください。  `try` ブロックでファイルを開くことができない場合でも、ファイル ハンドルの値は `null` のままであるため、`finally` ブロックでファイルを閉じようとすることはありません。  また、`try` ブロックで正常にファイルが開かれている場合は、`finally` ブロックでファイルが閉じられます。  
   
- [!code-cs[csProgGuideExceptions#11](../../../csharp/programming-guide/exceptions/codesnippet/csharp/exception-handling_6.cs)]  
+ [!code-cs[csProgGuideExceptions#11](../../../csharp/programming-guide/exceptions/codesnippet/CSharp/exception-handling_6.cs)]  
   
 ## C\# 言語仕様  
  [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec-md.md)]  

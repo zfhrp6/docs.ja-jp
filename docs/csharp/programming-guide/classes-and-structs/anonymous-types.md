@@ -41,7 +41,7 @@ Console.WriteLine(v.Amount + v.Message);
   
  匿名型のメンバー名を指定しない場合、コンパイラは初期化に使用されるプロパティと同じ名前を匿名型メンバーに付けます。  前の例で示されているように、式を使用して初期化されるプロパティの名前を指定する必要があります。  次の例では、`Color` と `Price` が匿名型のプロパティの名前になっています。  
   
- [!code-cs[csRef30Features#81](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/anonymous-types_1.cs)]  
+ [!code-cs[csRef30Features#81](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/anonymous-types_1.cs)]  
   
  通常、変数の初期化に匿名型を使用する場合は、[var](../../../csharp/language-reference/keywords/var.md) を使用することにより、変数を暗黙的に型指定したローカル変数として宣言します。  コンパイラだけが匿名型の基になる名前にアクセスできるため、変数宣言では型の名前を指定できません。  `var` の詳細については、「[暗黙的に型指定されるローカル変数](../../../csharp/programming-guide/classes-and-structs/implicitly-typed-local-variables.md)」を参照してください。  
   

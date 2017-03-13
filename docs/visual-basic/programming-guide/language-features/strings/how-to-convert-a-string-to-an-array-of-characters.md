@@ -30,12 +30,12 @@ caps.handback.revision: 7
 ## 使用例  
  文字列を分割して `Char` 型の配列に格納する方法、および文字列を分割して Unicode テキスト文字の `String` 型の配列に格納する方法は次の例のようになります。  このような違いがあるのは、Unicode テキスト文字は 2 つ以上の `Char` 型の文字 \(サロゲート ペアまたは組み合わせ文字の並びなど\) で構成される場合があるからです。  詳細については、www.unicode.org の「<xref:System.Globalization.TextElementEnumerator>」および 「The Unicode Standard」を参照してください。  
   
- [!code-vb[VbVbalrStrings#75](../../../../visual-basic/language-reference/functions/codesnippet/visualbasic/how-to-convert-a-string-_2_1.vb)]  
+ [!code-vb[VbVbalrStrings#75](../../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/how-to-convert-a-string-to-an-array-of-characters_1.vb)]  
   
 ## 使用例  
  文字列を Unicode テキスト文字に分割することは非常に困難ですが、これは文字列のビジュアル表現に関する情報が必要な場合には必要です。  次の例では、<xref:System.Globalization.StringInfo.SubstringByTextElements%2A> メソッドを使用して、文字列を構成する Unicode テキスト文字に関する情報を取得します。  
   
- [!code-vb[VbVbalrStrings#76](../../../../visual-basic/language-reference/functions/codesnippet/visualbasic/how-to-convert-a-string-_2_2.vb)]  
+ [!code-vb[VbVbalrStrings#76](../../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/how-to-convert-a-string-to-an-array-of-characters_2.vb)]  
   
 ## 参照  
  <xref:System.String.Chars%2A>   

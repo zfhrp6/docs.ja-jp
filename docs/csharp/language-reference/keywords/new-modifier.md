@@ -20,7 +20,7 @@ caps.handback.revision: 28
   
  継承されたメンバーを隠ぺいするには、派生クラスで同じメンバー名を使用してメンバーを宣言し、`new` キーワードで修飾します。  例:  
   
- [!code-cs[csrefKeywordsOperator#8](../../../csharp/language-reference/keywords/codesnippet/csharp/csrefKeywordsOperator/csrefKeywordsOperators.cs#8)]  
+ [!code-cs[csrefKeywordsOperator#8](../../../csharp/language-reference/keywords/codesnippet/CSharp/new-modifier_1.cs)]  
   
  この例では、`BaseC.Invoke` は `DerivedC.Invoke` で隠ぺいされます。  `x` フィールドは、似た名前によって隠ぺいされないため、影響を受けません。  
   
@@ -39,12 +39,12 @@ caps.handback.revision: 28
 ## 使用例  
  この例では、基底クラス `BaseC` と派生クラス `DerivedC` が同じフィールド名 `x` を使用するため、継承されるフィールドの値が隠ぺいされます。  この例では、`new` 修飾子の使い方を示します。  また、基底クラスの隠ぺいされたメンバーに完全修飾名を使ってアクセスする方法も示します。  
   
- [!code-cs[csrefKeywordsOperator#9](../../../csharp/language-reference/keywords/codesnippet/csharp/csrefKeywordsOperator/csrefKeywordsOperators.cs#9)]  
+ [!code-cs[csrefKeywordsOperator#9](../../../csharp/language-reference/keywords/codesnippet/CSharp/new-modifier_2.cs)]  
   
 ## 使用例  
  この例では、入れ子になったクラスが、基底クラスにある同名のクラスを隠ぺいします。  この例では、`new` 修飾子を使って警告メッセージが表示されないようにする方法に加えて、完全修飾名を使用してクラスの隠ぺいされたメンバーにアクセスする方法も示します。  
   
- [!code-cs[csrefKeywordsOperator#10](../../../csharp/language-reference/keywords/codesnippet/csharp/csrefKeywordsOperator/csrefKeywordsOperators.cs#10)]  
+ [!code-cs[csrefKeywordsOperator#10](../../../csharp/language-reference/keywords/codesnippet/CSharp/new-modifier_3.cs)]  
   
  `new` 修飾子を削除すると、プログラムのコンパイルおよび実行は行われますが、次の警告が出力されます。  
   

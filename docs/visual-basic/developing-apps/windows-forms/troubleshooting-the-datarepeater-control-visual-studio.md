@@ -46,8 +46,8 @@ dataRepeater1.Top = productsBindingNavigator.Height;
   
  この問題は、複製されないプロパティを <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.ItemCloned> イベントで復元するなどの方法で解決できます。このイベントは既定の複製処理が完了した後に発生します。  <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.ItemCloned> イベント ハンドラーで、<xref:System.Windows.Forms.ListBox> コントロールの <xref:System.Windows.Forms.ListBox.Items%2A> コレクションを修復する方法を次の例に示します。  
   
- [!code-cs[VbPowerPacksDataRepeaterItemCloned#1](../../../visual-basic/developing-apps/windows-forms/codesnippet/csharp/DataRepeaterItemClonedCS/ItemCloned.cs#1)]
- [!code-vb[VbPowerPacksDataRepeaterItemCloned#1](../../../visual-basic/developing-apps/windows-forms/codesnippet/visualbasic/DataRepeaterItemCloned/ItemCloned.vb#1)]  
+ [!code-cs[VbPowerPacksDataRepeaterItemCloned#1](../../../visual-basic/developing-apps/windows-forms/codesnippet/CSharp/troubleshooting-the-datarepeater-control-visual-studio_1.cs)]
+ [!code-vb[VbPowerPacksDataRepeaterItemCloned#1](../../../visual-basic/developing-apps/windows-forms/codesnippet/VisualBasic/troubleshooting-the-datarepeater-control-visual-studio_1.vb)]  
   
 ## 項目ヘッダーに選択記号が表示されない  
  <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> コントロールで項目ヘッダーの <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.SelectionColor%2A> プロパティを変更すると、選択した色によっては選択記号が見えなくなることがあります。  <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.ItemHeaderSize%2A> プロパティを変更することによっても選択記号が見えなくなることがあります。  

@@ -19,7 +19,7 @@ caps.handback.revision: 31
 # 構造体 (C# プログラミング ガイド)
 構造体は、次のように [struct](../../../csharp/language-reference/keywords/struct.md) キーワードで定義します。  
   
- [!code-cs[csProgGuideObjects#39](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/structs_1.cs)]  
+ [!code-cs[csProgGuideObjects#39](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/structs_1.cs)]  
   
  構造体は、構文上ではクラスとほとんど変わりませんが、次のようにクラスよりも制限されます。  
   

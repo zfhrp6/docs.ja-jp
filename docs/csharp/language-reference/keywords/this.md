@@ -30,7 +30,7 @@ caps.handback.revision: 19
   
 -   似た名前によって隠ぺいされるメンバーを修飾します。たとえば、次のように使います。  
   
- [!code-cs[csrefKeywordsAccess#4](../../../csharp/language-reference/keywords/codesnippet/csharp/this_1.cs)]  
+ [!code-cs[csrefKeywordsAccess#4](../../../csharp/language-reference/keywords/codesnippet/CSharp/this_1.cs)]  
   
 -   オブジェクトを他のメソッドにパラメーターとして渡します。たとえば、次のように使います。  
   
@@ -40,14 +40,14 @@ caps.handback.revision: 19
   
 -   インデクサーを宣言します。たとえば、次のように使います。  
   
- [!code-cs[csrefKeywordsAccess#5](../../../csharp/language-reference/keywords/codesnippet/csharp/this_2.cs)]  
+ [!code-cs[csrefKeywordsAccess#5](../../../csharp/language-reference/keywords/codesnippet/CSharp/this_2.cs)]  
   
  静的メンバー関数は、クラス レベルで存在し、オブジェクトの一部ではないため、`this` ポインターを持っていません。  静的メソッドで `this` を参照するとエラーになります。  
   
 ## 使用例  
  この例では、似た名前によって隠ぺいされている `Employee` クラスのメンバー `name` と `alias` を修飾するために `this` が使用されています。  また、別のクラスに属するメソッド `CalcTax` にオブジェクトを渡すためにも使用されています。  
   
- [!code-cs[csrefKeywordsAccess#3](../../../csharp/language-reference/keywords/codesnippet/csharp/this_3.cs)]  
+ [!code-cs[csrefKeywordsAccess#3](../../../csharp/language-reference/keywords/codesnippet/CSharp/this_3.cs)]  
   
 ## C\# 言語仕様  
  [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec-md.md)]  

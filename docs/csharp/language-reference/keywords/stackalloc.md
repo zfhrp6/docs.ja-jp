@@ -43,7 +43,7 @@ block = stackalloc int[100];
  フィボナッチの数列の最初の 20 個の数値を計算して表示するコード例を次に示します。  それぞれの数値は、前の 2 つの数値の和になっています。  このコードでは、`int` 型の要素を 20 個保持するのに十分なサイズを持つメモリ ブロックが、ヒープではなくスタックに割り当てられます。  割り当てられたブロックのアドレスは、`fib` ポインターに格納されます。  このメモリは、ガベージ コレクションの対象外であるため、[fixed](../../../csharp/language-reference/keywords/fixed-statement.md) を使用して固定する必要はありません。  メモリ ブロックの有効期間は、このブロックを定義するメソッドの有効期間に限定されます。  メソッドから制御が戻る前にメモリを解放することはできません。  
   
 ## 使用例  
- [!code-cs[csrefKeywordsOperator#15](../../../csharp/language-reference/keywords/codesnippet/csharp/csrefKeywordsOperator/csrefKeywordsOperators.cs#15)]  
+ [!code-cs[csrefKeywordsOperator#15](../../../csharp/language-reference/keywords/codesnippet/CSharp/stackalloc_1.cs)]  
   
 ## セキュリティ  
  アンセーフ コードは、セーフ コードほど安全ではありません。  ただし、`stackalloc` を使用すると、共通言語ランタイム \(CLR: Common Language Runtime\) のバッファー オーバーラン検出機能が自動的に有効になります。  バッファー オーバーランが検出されると、悪意のあるコードが実行される可能性を最小限に抑えるため、プロセスはできる限り迅速に終了されます。  

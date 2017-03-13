@@ -51,7 +51,7 @@ variableorproperty &= expression
 ## 使用例  
  次の例では、`&=` 演算子を使って、2 つの文字列型 \(`String`\) の変数を連結し、結果を最初の変数に代入します。  
   
- [!code-vb[VbVbalrOperators#3](../../../visual-basic/language-reference/operators/codesnippet/visualbasic/and-assignment-operator_1.vb)]  
+ [!code-vb[VbVbalrOperators#3](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/and-assignment-operator_1.vb)]  
   
 ## 参照  
  [& Operator](../../../visual-basic/language-reference/operators/concatenation-operator.md)   

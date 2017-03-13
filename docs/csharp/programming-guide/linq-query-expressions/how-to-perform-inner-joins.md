@@ -20,7 +20,7 @@ caps.handback.revision: 25
 ## 簡単なキーの結合の例  
  次の例は、2 つのユーザー定義型 `Person` と `Pet` のオブジェクトが含まれた 2 つのコレクションを作成します。  クエリでは、C\# の `join` 句を使用して、`Person` オブジェクトを `Owner` がその `Person` である `Pet` オブジェクトと一致させます。  C\# の `select` 句では、クエリ結果のオブジェクトの表示内容を定義します。  この例では、クエリ結果のオブジェクトは、飼い主の姓とペットの名前で構成された匿名型です。  
   
- [!code-cs[CsLINQProgJoining#1](../../../csharp/programming-guide/linq-query-expressions/codesnippet/csharp/Joins/joins.cs#1)]  
+ [!code-cs[CsLINQProgJoining#1](../../../csharp/programming-guide/linq-query-expressions/codesnippet/CSharp/how-to-perform-inner-joins_1.cs)]  
   
  `LastName` が "Huff" の `Person` オブジェクトは、`Pet.Owner` がその `Person` に等しい `Pet` オブジェクトがないため、結果セットに表示されません。  
   
@@ -31,7 +31,7 @@ caps.handback.revision: 25
   
  次の例は、`Employee` オブジェクトのリストと `Student` オブジェクトのリストを使用して、学生でもある社員を調べます。  これらの型の両方に、<xref:System.String> 型の `FirstName` プロパティと `LastName` プロパティがあります。  それぞれのリストの要素から結合キーを作成する関数が、各要素の `FirstName` プロパティと `LastName` プロパティで構成された匿名型を返します。  結合操作で、これらの複合キーが等しいかどうか比較され、それぞれのリストの氏名が一致するオブジェクトのペアが返されます。  
   
- [!code-cs[CsLINQProgJoining#2](../../../csharp/programming-guide/linq-query-expressions/codesnippet/csharp/Joins/joins.cs#2)]  
+ [!code-cs[CsLINQProgJoining#2](../../../csharp/programming-guide/linq-query-expressions/codesnippet/CSharp/how-to-perform-inner-joins_2.cs)]  
   
 ## 使用例  
   
@@ -44,7 +44,7 @@ caps.handback.revision: 25
   
  C\# の 2 番目の `join` 句では、`Person` 型の `Owner` プロパティと動物の名前の最初の文字で構成される複合キーに基づいて、最初の結合で返された匿名型を、指定された犬のリストの `Dog` オブジェクトに関連付けます。  この操作で、一致するそれぞれのペアの `Cat.Name` プロパティと `Dog.Name` プロパティが含まれた匿名型のシーケンスが返されます。  これは内部結合であるため、2 番目のデータ ソースと一致する、最初のデータ ソースのオブジェクトのみが返されます。  
   
- [!code-cs[CsLINQProgJoining#3](../../../csharp/programming-guide/linq-query-expressions/codesnippet/csharp/Joins/joins.cs#3)]  
+ [!code-cs[CsLINQProgJoining#3](../../../csharp/programming-guide/linq-query-expressions/codesnippet/CSharp/how-to-perform-inner-joins_3.cs)]  
   
 ## 使用例  
   
@@ -57,7 +57,7 @@ caps.handback.revision: 25
   
  `query1` の結果は、`into` 句のない `join` 句を使用して内部結合を実行することで得られた結果セットと同じです。  `query2` 変数は、これと同等のクエリを示しています。  
   
- [!code-cs[CsLINQProgJoining#4](../../../csharp/programming-guide/linq-query-expressions/codesnippet/csharp/Joins/joins.cs#4)]  
+ [!code-cs[CsLINQProgJoining#4](../../../csharp/programming-guide/linq-query-expressions/codesnippet/CSharp/how-to-perform-inner-joins_4.cs)]  
   
 ## コードのコンパイル  
   

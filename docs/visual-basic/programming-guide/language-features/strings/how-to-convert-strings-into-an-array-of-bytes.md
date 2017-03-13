@@ -30,7 +30,7 @@ caps.handback.revision: 8
 ## 使用例  
  この例では、<xref:System.Text.Encoding.Unicode%2A?displayProperty=fullName> エンコーディング クラスの <xref:System.Text.Encoding.GetBytes%2A> メソッドを使用して、文字列をバイトの配列に変換します。  
   
- [!code-vb[VbVbalrStrings#74](../../../../visual-basic/language-reference/functions/codesnippet/visualbasic/how-to-convert-strings-i_1.vb)]  
+ [!code-vb[VbVbalrStrings#74](../../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/how-to-convert-strings-into-an-array-of-bytes_1.vb)]  
   
  文字列をバイト配列に変換する場合、エンコーディング オプションを選択できます。  
   

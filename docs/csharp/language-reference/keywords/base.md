@@ -37,14 +37,14 @@ caps.handback.revision: 14
 ## 使用例  
  この例では、基本クラス `Person` および派生クラス `Employee` の両方に、`Getinfo` という名前のメソッドがあります。  `base` キーワードを使用すると、基本クラスの `Getinfo` メソッドを派生クラス内で呼び出すことができます。  
   
- [!code-cs[csrefKeywordsAccess#1](../../../csharp/language-reference/keywords/codesnippet/csharp/base_1.cs)]  
+ [!code-cs[csrefKeywordsAccess#1](../../../csharp/language-reference/keywords/codesnippet/CSharp/base_1.cs)]  
   
  その他の例については、「[new](../../../csharp/language-reference/keywords/new.md)」、「[virtual](../../../csharp/language-reference/keywords/virtual.md)」、および「[override](../../../csharp/language-reference/keywords/override.md)」を参照してください。  
   
 ## 使用例  
  この例では、派生クラスのインスタンスを作成するときに呼び出される、基本クラスのコンストラクターを指定する方法を示します。  
   
- [!code-cs[csrefKeywordsAccess#2](../../../csharp/language-reference/keywords/codesnippet/csharp/base_2.cs)]  
+ [!code-cs[csrefKeywordsAccess#2](../../../csharp/language-reference/keywords/codesnippet/CSharp/base_2.cs)]  
   
 ## C\# 言語仕様  
  [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec-md.md)]  

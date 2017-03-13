@@ -10,7 +10,7 @@ caps.handback.revision: 15
  継続の詳細については、「[into](../../../csharp/language-reference/keywords/into.md)」を参照してください。  次の例では、インメモリ データ構造をデータ ソースとして使用していますが、任意の種類の [!INCLUDE[vbteclinq](../../../csharp/includes/vbteclinq-md.md)] データ ソースで同じ基本原則が当てはまります。  
   
 ## 使用例  
- [!code-cs[csProgGuideLINQ#23](../../../csharp/programming-guide/arrays/codesnippet/csharp/csLINQProgRef/csrefLINQHowTos.cs#23)]  
+ [!code-cs[csProgGuideLINQ#23](../../../csharp/programming-guide/arrays/codesnippet/CSharp/how-to-perform-a-subquery-on-a-grouping-operation_1.cs)]  
   
 ## コードのコンパイル  
  この例には、「[方法 : オブジェクトのコレクションを照会する](../../../csharp/programming-guide/linq-query-expressions/how-to-query-a-collection-of-objects.md)」のサンプル アプリケーションで定義されているオブジェクトへの参照があります。  このメソッドをコンパイルして実行するには、メソッドをそのアプリケーションの `StudentClass` クラスに貼り付け、`Main` メソッドからそのメソッドを呼び出すコードを追加します。  

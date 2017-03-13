@@ -82,7 +82,7 @@ caps.handback.revision: 9
   
      <xref:System.Data.Linq.DataContext> のプロパティとして公開されるテーブルを照会し、その結果の数、合計、および平均を算出するには、次のコードを `Load` イベントに追加します。  この例では、`Aggregate` 句を使用して単一の結果を照会し、`Group By` 句を使用してグループ化された結果の平均を示します。  
   
-     [!code-vb[VbLINQToSQLHowTos#13](../../../../visual-basic/programming-guide/language-features/linq/codesnippet/visualbasic/StoredProcedureHowTo/Form6.vb#13)]  
+     [!code-vb[VbLINQToSQLHowTos#13](../../../../visual-basic/programming-guide/language-features/linq/codesnippet/VisualBasic/how-to-count-sum-or-average-data-by-using-linq_1.vb)]  
   
 4.  F5 キーを押してプロジェクトを実行し、結果を確認します。  
   

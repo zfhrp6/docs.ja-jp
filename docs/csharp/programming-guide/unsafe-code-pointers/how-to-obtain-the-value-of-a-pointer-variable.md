@@ -32,9 +32,9 @@ caps.handback.revision: 17
 ## 使用例  
  次の例では、異なる型のポインターを使用して `char` 型の変数にアクセスしています。  変数に割り当てられる物理アドレスは一定ではないので、`theChar` のアドレスは、実行するたびに変化することに注意してください。  
   
- [!code-cs[csProgGuidePointers#5](../../../csharp/programming-guide/unsafe-code-pointers/codesnippet/csharp/Pointers/Pointers2.cs#5)]  
+ [!code-cs[csProgGuidePointers#5](../../../csharp/programming-guide/unsafe-code-pointers/codesnippet/CSharp/how-to-obtain-the-value-of-a-pointer-variable_1.cs)]  
   
- [!code-cs[csProgGuidePointers#6](../../../csharp/programming-guide/unsafe-code-pointers/codesnippet/csharp/Pointers/Pointers.cs#6)]  
+ [!code-cs[csProgGuidePointers#6](../../../csharp/programming-guide/unsafe-code-pointers/codesnippet/CSharp/how-to-obtain-the-value-of-a-pointer-variable_2.cs)]  
   
   **Value of theChar \= Z**  
 **Address of theChar \= 12F718**  

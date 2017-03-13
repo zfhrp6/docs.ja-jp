@@ -53,7 +53,7 @@ caps.handback.revision: 21
 ## パラメーターのデータ型  
  パラメーターのデータ型を宣言するには、パラメーターの宣言の中で `As` 句を使用します。  たとえば、次の関数は、文字列型と整数型の引数を受け取ります。  
   
- [!code-vb[VbVbcnProcedures#32](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/procedure-parameters-and_1.vb)]  
+ [!code-vb[VbVbcnProcedures#32](./codesnippet/VisualBasic/procedure-parameters-and-arguments_1.vb)]  
   
  型チェック スイッチ \([Option Strict Statement](../../../../visual-basic/language-reference/statements/option-strict-statement.md)\) が `Off,` の場合、`As` 句は省略可能です。ただし、いずれかのパラメーターがこれを使用している場合は、すべてのパラメーターで使用する必要があります。  型チェックが `On` になっている場合は、プロシージャのすべての引数に `As` 句が必要です。  
   

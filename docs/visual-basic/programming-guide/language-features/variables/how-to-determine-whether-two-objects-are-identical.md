@@ -52,7 +52,7 @@ caps.handback.revision: 19
 ## 使用例  
  1 組の `Object` 変数が同じクラス インスタンスを指しているかどうかをテストする例を、次に示します。  
   
- [!code-vb[VbVbalrKeywords#14](../../../../visual-basic/language-reference/codesnippet/visualbasic/how-to-determine-whether_1_1.vb)]  
+ [!code-vb[VbVbalrKeywords#14](../../../../visual-basic/language-reference/codesnippet/VisualBasic/how-to-determine-whether-two-objects-are-identical_1.vb)]  
   
  前の例では、次の出力が表示されます。  
   

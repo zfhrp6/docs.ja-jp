@@ -33,7 +33,7 @@ class SampleClass
 ## 使用例  
  次の例では、`PointTest` および `MainClass` という 2 つのクラスが宣言されています。  `PointTest` のパブリック メンバー `x` と `y` は、`MainClass` から直接アクセスされます。  
   
- [!code-cs[csrefKeywordsModifiers#13](../../../csharp/language-reference/keywords/codesnippet/csharp/csrefKeywordsModifiers/csrefKeywordsModifiers.cs#13)]  
+ [!code-cs[csrefKeywordsModifiers#13](../../../csharp/language-reference/keywords/codesnippet/CSharp/public_1.cs)]  
   
  `public` アクセス レベルを [private](../../../csharp/language-reference/keywords/private.md) または [protected](../../../csharp/language-reference/keywords/protected.md) に変更すると、次のエラー メッセージが表示されることになります。  
   

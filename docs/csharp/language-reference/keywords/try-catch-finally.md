@@ -25,7 +25,7 @@ caps.handback.revision: 21
  例外の再スローの詳細および例については、「[try\-catch](../../../csharp/language-reference/keywords/try-catch.md)」および「[例外のスロー](../Topic/How%20to:%20Explicitly%20Throw%20Exceptions.md)」を参照してください。  `finally` ブロックに関する詳細については、 [try\-finally](../../../csharp/language-reference/keywords/try-finally.md)を参照してください。  
   
 ## 使用例  
- [!code-cs[csrefKeywordsExceptions#1](../../../csharp/language-reference/keywords/codesnippet/csharp/try-catch-finally_1.cs)]  
+ [!code-cs[csrefKeywordsExceptions#1](../../../csharp/language-reference/keywords/codesnippet/CSharp/try-catch-finally_1.cs)]  
   
 ## C\# 言語仕様  
  [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec-md.md)]  

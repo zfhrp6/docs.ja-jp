@@ -39,7 +39,7 @@ x = x & y
  `&=` 演算子は直接オーバーロードできませんが、二項 [& 演算子](../../../csharp/language-reference/operators/and-operator.md)はユーザー定義型でオーバーロードできます。詳細については、「[operator \(C\# リファレンス\)](../../../csharp/language-reference/keywords/operator.md)」を参照してください。  
   
 ## 使用例  
- [!code-cs[csRefOperators#34](../../../csharp/language-reference/operators/codesnippet/csharp/csrefOperators/csrefOperators.cs#34)]  
+ [!code-cs[csRefOperators#34](../../../csharp/language-reference/operators/codesnippet/CSharp/and-assignment-operator_1.cs)]  
   
 ## 参照  
  [C\# リファレンス](../../../csharp/language-reference/index.md)   

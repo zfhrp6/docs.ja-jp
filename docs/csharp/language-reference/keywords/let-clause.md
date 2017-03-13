@@ -29,7 +29,7 @@ caps.handback.revision: 15
   
 2.  範囲変数 `word` に対して `ToLower` を一度だけクエリで呼び出すことができるようにする。  `let` を使用しない場合、`where` 句の各述語で `ToLower` を呼び出す必要があります。  
   
- [!code-cs[cscsrefQueryKeywords#28](../../../csharp/language-reference/keywords/codesnippet/csharp/csquerykeywords/Let.cs#28)]  
+ [!code-cs[cscsrefQueryKeywords#28](../../../csharp/language-reference/keywords/codesnippet/CSharp/let-clause_1.cs)]  
   
 ## 参照  
  [C\# リファレンス](../../../csharp/language-reference/index.md)   

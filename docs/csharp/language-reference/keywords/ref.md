@@ -27,17 +27,17 @@ caps.handback.revision: 32
   
  `ref` パラメーターを使用するには、メソッド定義と呼び出し元のメソッドの両方が、次の例に示すように `ref` キーワードを明示的に使用する必要があります。  
   
- [!code-cs[csrefKeywordsMethodParams#6](../../../csharp/language-reference/keywords/codesnippet/csharp/ref_1.cs)]  
+ [!code-cs[csrefKeywordsMethodParams#6](../../../csharp/language-reference/keywords/codesnippet/CSharp/ref_1.cs)]  
   
  `ref` パラメーターに渡す引数は、渡す前に初期化する必要があります。  これは、引数を渡す前に明示的に初期化する必要がある `out` パラメーターとは異なります。  詳細については、「[out](../../../csharp/language-reference/keywords/out.md)」を参照してください。  
   
  クラスのメンバーは、`ref` と `out` だけが異なるシグネチャを持つことはできません。  1 つの型の 2 つのメンバー間の違いが、1 つには `ref` パラメーターがあり、もう 1 つには `out` パラメーターがあることのみの場合は、コンパイラ エラーが発生します。  たとえば、次のコードはコンパイルされません。  
   
- [!code-cs[csrefKeywordsMethodParams#2](../../../csharp/language-reference/keywords/codesnippet/csharp/ref_2.cs)]  
+ [!code-cs[csrefKeywordsMethodParams#2](../../../csharp/language-reference/keywords/codesnippet/CSharp/ref_2.cs)]  
   
  ただし、次の例に示すように、1 つのメソッドに `ref` または `out` パラメーターがあり、もう 1 つのメソッドに値パラメーターがある場合は、オーバーロードすることができます。  
   
- [!code-cs[csrefKeywordsMethodParams#7](../../../csharp/language-reference/keywords/codesnippet/csharp/ref_3.cs)]  
+ [!code-cs[csrefKeywordsMethodParams#7](../../../csharp/language-reference/keywords/codesnippet/CSharp/ref_3.cs)]  
   
  非表示やオーバーライドなど、シグネチャの一致が必要な他の状況では、`ref` と `out` はシグネチャの一部であり互いに一致しません。  
   
@@ -54,7 +54,7 @@ caps.handback.revision: 32
 ## 使用例  
  前の例は、参照渡しで値型を渡したときの動作を示しています。  また、`ref` キーワードを使用して参照型を渡すこともできます。  参照型を参照渡しで渡すと、呼び出されたメソッドで、参照パラメーターが参照する呼び出し元のメソッドのオブジェクトを置換できます。  オブジェクトの格納場所は、参照パラメーターの値としてメソッドに渡されます。  パラメーターの格納場所の値を変更する場合は \(新しいオブジェクトをポイント\)、呼び出し元が参照する格納場所を変更することもできます。  次の例では、参照型のインスタンスを `ref` パラメーターとして渡します。  参照型を値渡しまたは参照渡しで渡す方法の詳細については、「[参照型のパラメーターの引き渡し](../../../csharp/programming-guide/classes-and-structs/passing-reference-type-parameters.md)」を参照してください。  
   
- [!code-cs[csrefKeywordsMethodParams#8](../../../csharp/language-reference/keywords/codesnippet/csharp/ref_4.cs)]  
+ [!code-cs[csrefKeywordsMethodParams#8](../../../csharp/language-reference/keywords/codesnippet/CSharp/ref_4.cs)]  
   
 ## C\# 言語仕様  
  [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec-md.md)]  

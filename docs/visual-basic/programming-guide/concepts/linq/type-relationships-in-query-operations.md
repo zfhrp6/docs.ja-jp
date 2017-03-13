@@ -38,7 +38,7 @@ LINQ クエリの各部分
   
  [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] では、*暗黙の型指定*とも呼ばれるローカル型の推論が実装され、厳密な型指定を行いやすくなっています。  この機能は、前の例で使用されているほか、[!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq-md.md)] のサンプルおよびドキュメント全体にわたって使用されています。  Visual Basic では、単に `As` 句のない `Dim` ステートメントを使用することで、ローカル型の推論を適用させることができます。  次の例では、`city` は文字列として厳密に型指定されます。  
   
- [!code-vb[VbLINQTypeRels#1](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/visualbasic/type-relationships-in-qu_1.vb)]  
+ [!code-vb[VbLINQTypeRels#1](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/VisualBasic/type-relationships-in-query-operations_1.vb)]  
   
 > [!NOTE]
 >  ローカル型の推論は、`Option Infer` が `On` に設定されているときにのみ機能します。  詳細については、「[Option Infer Statement](../../../../visual-basic/language-reference/statements/option-infer-statement.md)」を参照してください。  
@@ -47,16 +47,16 @@ LINQ クエリの各部分
   
  場合によっては、データ ソースから返された型に一致しない範囲変数に対して、明示的な型を指定する必要が生じます。  `As` 句を使用することによって、範囲変数の型を指定できます。  ただし、`Option Strict` が `On` に設定されている場合に[縮小変換](../../../../visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions.md)が行われると、エラーが発生する結果になります。  このため、データ ソースから取得された値に対して変換を実行することをお勧めします。  <xref:System.Linq.Enumerable.Cast%2A> メソッドを使用して、データ ソースの値を明示的な範囲変数の型に変換できます。  また、`Select` 句で選択された値を、範囲変数の型とは異なる明示的な型にキャストすることもできます。  これらの点を次のコードに示します。  
   
- [!code-vb[VbLINQTypeRels#4](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/visualbasic/type-relationships-in-qu_2.vb)]  
+ [!code-vb[VbLINQTypeRels#4](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/VisualBasic/type-relationships-in-query-operations_2.vb)]  
   
 ## ソース データの要素全体を返すクエリ  
  次の例は、ソース データから選択された要素のシーケンスを返す [!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq-md.md)] クエリ操作を示しています。  ソースの `names` には文字列の配列が含まれ、クエリ出力は、文字 M から始まる文字列を含むシーケンスです。  
   
- [!code-vb[VbLINQTypeRels#2](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/visualbasic/type-relationships-in-qu_3.vb)]  
+ [!code-vb[VbLINQTypeRels#2](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/VisualBasic/type-relationships-in-query-operations_3.vb)]  
   
  これは次のコードと同等ですが、より短く、簡単に記述できます。  Visual Basic では、ローカル型の推論に依存するスタイルでクエリを記述することをお勧めします。  
   
- [!code-vb[VbLINQTypeRels#3](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/visualbasic/type-relationships-in-qu_4.vb)]  
+ [!code-vb[VbLINQTypeRels#3](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/VisualBasic/type-relationships-in-query-operations_4.vb)]  
   
  型が暗黙的に決定されるか、または明示的に決定されるかに関係なく、前の両方のコード例には、次のような関係が存在します。  
   

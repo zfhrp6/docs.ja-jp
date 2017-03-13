@@ -31,7 +31,7 @@ caps.handback.revision: 23
   
  各 null 許容型は、ジェネリックな <xref:System.Nullable%601> 構造体から作成されます。  データベースを使って、仕事に関連する活動を記録すると仮定します。  次のコード例は、null 許容 `Boolean` データ型を作成し、この型の変数を宣言する方法を示しています。  宣言を記述するには 3 種類の方法があります。  
   
- [!code-vb[VbVbalrNullableValue#1](../../../../visual-basic/programming-guide/language-features/data-types/codesnippet/visualbasic/nullable-value-types_1.vb)]  
+ [!code-vb[VbVbalrNullableValue#1](../../../../visual-basic/programming-guide/language-features/data-types/codesnippet/VisualBasic/nullable-value-types_1.vb)]  
   
  変数 `ridesBusToWork` には、`True` または `False` の値を格納できるほか、まったく値が格納されない状態も許されます。  初期の既定値は、まったく値のない状態です。今回の例では、これはその人物についてまだ情報が取得されていないことを意味します。  これとは対照的に、`False` は、その人物に関する情報が取得され、仕事のバスに乗務していないことを示します。  
   
@@ -45,18 +45,18 @@ caps.handback.revision: 23
 ### 既定値  
  null 許容型の変数を宣言すると、その変数の <xref:System.Nullable%601.HasValue%2A> プロパティは、既定で `False` 値に設定されます。  つまり、既定では、変数は、基になる値型の既定値が格納されるのではなく、定義済みの値が格納されていない状態になります。  次のコード例では、`Integer` 型の既定値は 0 ですが、変数 `numberOfChildren` に定義済みの初期値は格納されません。  
   
- [!code-vb[VbVbalrNullableValue#2](../../../../visual-basic/programming-guide/language-features/data-types/codesnippet/visualbasic/nullable-value-types_2.vb)]  
+ [!code-vb[VbVbalrNullableValue#2](../../../../visual-basic/programming-guide/language-features/data-types/codesnippet/VisualBasic/nullable-value-types_2.vb)]  
   
  null 値は、未定義または未知の値を示すには便利です。  `numberOfChildren` を `Integer` として宣言した場合、情報が現在使用できないことを示すために使用できる値はありません。  
   
 ### 値の格納  
  null 許容型の変数またはプロパティに値を格納する方法は、通常と変わりません。  次のコード例では、前の例で宣言した変数 `numberOfChildren` に値を代入しています。  
   
- [!code-vb[VbVbalrNullableValue#3](../../../../visual-basic/programming-guide/language-features/data-types/codesnippet/visualbasic/nullable-value-types_3.vb)]  
+ [!code-vb[VbVbalrNullableValue#3](../../../../visual-basic/programming-guide/language-features/data-types/codesnippet/VisualBasic/nullable-value-types_3.vb)]  
   
  null 許容型の変数またはプロパティに定義済みの値が格納されている場合でも、値が代入されていない初期状態に戻すことができます。  これを行うには、変数またはプロパティを `Nothing` に設定します。以下に例を示します。  
   
- [!code-vb[VbVbalrNullableValue#4](../../../../visual-basic/programming-guide/language-features/data-types/codesnippet/visualbasic/nullable-value-types_4.vb)]  
+ [!code-vb[VbVbalrNullableValue#4](../../../../visual-basic/programming-guide/language-features/data-types/codesnippet/VisualBasic/nullable-value-types_4.vb)]  
   
 > [!NOTE]
 >  null 許容型の変数に `Nothing` を代入することはできますが、変数の値が `Nothing` であるかどうかを等号を使用してテストすることはできません。  等号を使用した比較 `someVar = Nothing` は、常に `Nothing` と評価されます。  変数の <xref:System.Nullable%601.HasValue%2A> プロパティが `False` かどうかをテストしたり、`Is` 演算子または `IsNot` 演算子を使用してテストしたりすることはできます。  
@@ -64,7 +64,7 @@ caps.handback.revision: 23
 ### 値の取得  
  null 許容型の変数から値を取得するには、その変数の <xref:System.Nullable%601.HasValue%2A> プロパティを使って、変数に値が含まれているかどうかを最初にテストする必要があります。  <xref:System.Nullable%601.HasValue%2A> が `False` のときに値を読み取ろうとすると、[!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] は <xref:System.InvalidOperationException> 例外をスローします。  次のコード例は、前の例で使用した変数 `numberOfChildren` から値を読み取るための推奨される方法です。  
   
- [!code-vb[VbVbalrNullableValue#5](../../../../visual-basic/programming-guide/language-features/data-types/codesnippet/visualbasic/nullable-value-types_5.vb)]  
+ [!code-vb[VbVbalrNullableValue#5](../../../../visual-basic/programming-guide/language-features/data-types/codesnippet/VisualBasic/nullable-value-types_5.vb)]  
   
 ## Null 許容型の比較  
  null 許容の `Boolean` 変数をブール式で使用すると、結果は `True`、`False`、または `Nothing` になります。  次に示すのは、`And` および `Or` についての真理値表です。  `b1` と `b2` は 3 つの値を持つことができるので、9 つの組み合わせを評価します。  
@@ -83,7 +83,7 @@ caps.handback.revision: 23
   
  ブール変数の値またはブール式の値が `Nothing` の場合は、`true` でも `false` でもありません。  例を次に示します。  
   
- [!code-vb[VbVbalrNullableValue#6](../../../../visual-basic/programming-guide/language-features/data-types/codesnippet/visualbasic/nullable-value-types_6.vb)]  
+ [!code-vb[VbVbalrNullableValue#6](../../../../visual-basic/programming-guide/language-features/data-types/codesnippet/VisualBasic/nullable-value-types_6.vb)]  
   
  この例では、`b1 And b2` は `Nothing` と評価されます。  したがって、各 `If` ステートメントでは `Else` 句が実行され、出力は次のようになります。  
   
@@ -97,11 +97,11 @@ caps.handback.revision: 23
 ## 反映  
  算術演算、比較演算、シフト演算、または型演算のオペランドの一方または両方が null 許容の場合は、演算の結果も null 許容になります。  両方のオペランドの値が `Nothing` ではない場合は、どちらも null 許容型ではないものとして、オペランドの基になる値に対して演算が実行されます。  次の例では、変数 `compare1` と `sum1` は暗黙的に型指定されています。  これらの変数の上にマウス ポインターを置くと、コンパイラが両方の変数を null 許容型と見なしていることがわかります。  
   
- [!code-vb[VbVbalrNullableValue#7](../../../../visual-basic/programming-guide/language-features/data-types/codesnippet/visualbasic/nullable-value-types_7.vb)]  
+ [!code-vb[VbVbalrNullableValue#7](../../../../visual-basic/programming-guide/language-features/data-types/codesnippet/VisualBasic/nullable-value-types_7.vb)]  
   
  一方または両方のオペランドの値が `Nothing` の場合は、結果は `Nothing` になります。  
   
- [!code-vb[VbVbalrNullableValue#8](../../../../visual-basic/programming-guide/language-features/data-types/codesnippet/visualbasic/nullable-value-types_8.vb)]  
+ [!code-vb[VbVbalrNullableValue#8](../../../../visual-basic/programming-guide/language-features/data-types/codesnippet/VisualBasic/nullable-value-types_8.vb)]  
   
 ## データのある null 許容型の使用  
  データベースは、null 許容型が使用される最も重要な場所です。  現在すべてのデータベース オブジェクトで null 許容型がサポートされているわけではありませんが、デザイナー生成テーブル アダプターではサポートされています。  詳細については、「[TableAdapter の概要](/visual-studio/data-tools/tableadapter-overview)」の「TableAdapter での Null 許容型のサポート」を参照してください。  

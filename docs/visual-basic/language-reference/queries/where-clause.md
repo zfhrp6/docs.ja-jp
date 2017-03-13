@@ -46,12 +46,12 @@ Where condition
 ## 使用例  
  次のクエリ式では、`From` 句を使用して、`customers` コレクション内の各 `Customer` オブジェクト用の範囲変数 `cust` を宣言します。  `Where` 句は、この範囲変数を使用して、出力を指定された地区の顧客に制限します。  `For Each` ループにより、クエリ結果内の各顧客の会社名が表示されます。  
   
- [!code-vb[VbSimpleQuerySamples#23](../../../visual-basic/language-reference/queries/codesnippet/visualbasic/VbSimpleQuerySamples/QuerySamples1.vb#23)]  
+ [!code-vb[VbSimpleQuerySamples#23](../../../visual-basic/language-reference/queries/codesnippet/VisualBasic/where-clause_1.vb)]  
   
 ## 使用例  
  次の例では `Where` の句で `And` と `Or` の論理演算子を使用します。  
   
- [!code-vb[VbSimpleQuerySamples#31](../../../visual-basic/language-reference/queries/codesnippet/visualbasic/VbSimpleQuerySamples/QuerySamples1.vb#31)]  
+ [!code-vb[VbSimpleQuerySamples#31](../../../visual-basic/language-reference/queries/codesnippet/VisualBasic/where-clause_2.vb)]  
   
 ## 参照  
  [Introduction to LINQ in Visual Basic](../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)   

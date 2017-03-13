@@ -43,7 +43,7 @@ caps.handback.revision: 22
 ## 単項論理演算子  
  [Not Operator](../../../../visual-basic/language-reference/operators/not-operator.md) は、`Boolean` 式の*論理否定*を求めます。  これにより、オペランドの論理上の逆の値が得られます。  式の評価が `True` の場合、`Not` は `False` を返します。式の評価が `False` の場合、`Not` は `True` を返します。  次に例を示します。  
   
- [!code-vb[VbVbalrOperators#77](../../../../visual-basic/language-reference/operators/codesnippet/visualbasic/logical-and-bitwise-oper_1.vb)]  
+ [!code-vb[VbVbalrOperators#77](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/logical-and-bitwise-operators_1.vb)]  
   
 ## 二項論理演算子  
  [And Operator](../../../../visual-basic/language-reference/operators/and-operator.md) は、2 つの `Boolean` 式の*論理積*を求めます。  両方の式の評価が `True` の場合、`And` は `True` を返します。  少なくとも一方の式の評価が `False` の場合、`And` は `False` を返します。  
@@ -54,7 +54,7 @@ caps.handback.revision: 22
   
  `And`、`Or`、および `Xor` 演算子の例を次に示します。  
   
- [!code-vb[VbVbalrOperators#78](../../../../visual-basic/language-reference/operators/codesnippet/visualbasic/logical-and-bitwise-oper_2.vb)]  
+ [!code-vb[VbVbalrOperators#78](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/logical-and-bitwise-operators_2.vb)]  
   
 ## 論理演算子のショートサーキット  
  [AndAlso Operator](../../../../visual-basic/language-reference/operators/andalso-operator.md)は、2 つの `Boolean` 式の論理積を求めるという点では `And` 演算子によく似ています。  両者の大きな違いは、`AndAlso` は*ショートサーキット*の動作を示すという点にあります。  `AndAlso` 式の 1 番目の式の評価が `False` の場合は、2 番目の式の評価がどうなっても最終的な結果は変わらないので、2 番目の式は評価されないまま、`AndAlso` は `False` を返します。  
@@ -66,18 +66,18 @@ caps.handback.revision: 22
   
  次の例は、`And` と `Or`、さらにそのショートサーキット版の演算子の違いを示しています。  
   
- [!code-vb[VbVbalrOperators#81](../../../../visual-basic/language-reference/operators/codesnippet/visualbasic/logical-and-bitwise-oper_3.vb)]  
+ [!code-vb[VbVbalrOperators#81](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/logical-and-bitwise-operators_3.vb)]  
   
- [!code-vb[VbVbalrOperators#80](../../../../visual-basic/language-reference/operators/codesnippet/visualbasic/logical-and-bitwise-oper_4.vb)]  
+ [!code-vb[VbVbalrOperators#80](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/logical-and-bitwise-operators_4.vb)]  
   
- [!code-vb[VbVbalrOperators#79](../../../../visual-basic/language-reference/operators/codesnippet/visualbasic/logical-and-bitwise-oper_5.vb)]  
+ [!code-vb[VbVbalrOperators#79](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/logical-and-bitwise-operators_5.vb)]  
   
  上記の例では、`checkIfValid()` の呼び出しがショートサーキットされると、このプロシージャ内の重要なコードが実行されないという点に注意してください。  1 つ目の `If` ステートメントは、`12 > 45` が `False` を返すときでも `checkIfValid()` を呼び出します。なぜなら、`And` はショートサーキットを行わないからです。  2 つ目の `If` ステートメントは、`checkIfValid()` を呼び出しません。`12 > 45` が `False` を返すので、`AndAlso` が 2 つ目の式をショートサーキットするからです。  3 つ目の `If` ステートメントは、`12 < 45` が `True` を返すときでも `checkIfValid()` を呼び出します。なぜなら、`Or` はショートサーキットを行わないからです。  4 つ目の `If` ステートメントは、`checkIfValid()` を呼び出しません。`12 < 45` が `True` を返すので、`OrElse` が 2 つ目の式をショートサーキットするからです。  
   
 ## ビット処理演算  
  ビット処理演算子は、2 つの整数値をバイナリ \(基数 2\) の形式で評価します。  対応する位置のビットを比較し、比較結果に基づいて値を割り当てます。  次に `And` 演算子の例を示します。  
   
- [!code-vb[VbVbalrConcepts#2](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/codesnippet/visualbasic/logical-and-bitwise-oper_6.vb)]  
+ [!code-vb[VbVbalrConcepts#2](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/codesnippet/VisualBasic/logical-and-bitwise-operators_6.vb)]  
   
  この例では、`x` の値が 1 に設定されます。  このような結果になる理由は次のとおりです。  
   

@@ -42,13 +42,13 @@ System.Convert.ToInt32("35")
 ## リテラルと簡易名  
  式の中で最も単純なのがリテラルと簡易名の 2 つのタイプです。  リテラルは、名前を持たない定数値です。  たとえば、次のコード例の `5` と `"Hello World"` は共にリテラル値です。  
   
- [!code-cs[csProgGuideStatements#2](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/expressions_1.cs)]  
+ [!code-cs[csProgGuideStatements#2](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/expressions_1.cs)]  
   
  リテラルの詳細については、「[型](../../../csharp/language-reference/keywords/types.md)」を参照してください。  
   
  前の例の `i` と `s` は、どちらもローカル変数を識別する簡易名です。  これらの変数を式で使用すると、変数名は、変数のメモリ位置に現在格納されている値に評価されます。  これを次の例に示します。  
   
- [!code-cs[csProgGuideStatements#3](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/expressions_2.cs)]  
+ [!code-cs[csProgGuideStatements#3](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/expressions_2.cs)]  
   
 ## 呼び出し式  
  次のコード例では、`DoWork` の呼び出しが呼び出し式です。  

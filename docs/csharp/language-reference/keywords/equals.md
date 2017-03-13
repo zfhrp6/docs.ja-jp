@@ -24,7 +24,7 @@ caps.handback.revision: 6
 ## 使用例  
  `join` 句での `equals` キーワードの使用例を次に示します。  
   
- [!code-cs[csrefKeywordsContextual#12](../../../csharp/language-reference/keywords/codesnippet/csharp/equals_1.cs)]  
+ [!code-cs[csrefKeywordsContextual#12](../../../csharp/language-reference/keywords/codesnippet/CSharp/equals_1.cs)]  
   
 ## 参照  
  [LINQ クエリ式](../../../csharp/programming-guide/linq-query-expressions/index.md)

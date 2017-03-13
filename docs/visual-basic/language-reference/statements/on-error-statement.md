@@ -85,7 +85,7 @@ On Error { GoTo [ line | 0 | -1 ] | Resume Next }
 ## Throw ステートメント  
  `Err.Raise` メソッドによってエラーを発生させたときは、`Exception` プロパティが <xref:System.Exception> クラスの新しいインスタンスに設定されます。  派生した例外型の例外を発生させるには、`Throw` ステートメントを使用します。  **Throw** ステートメントは、スローする例外インスタンスを指定する 1 つのパラメーターを持っています。  これらの機能を既存の例外処理サポートで使用する方法を次に示します。  
   
- [!code-vb[VbVbalrErrorHandling#17](../../../visual-basic/language-reference/statements/codesnippet/visualbasic/on-error-statement_1.vb)]  
+ [!code-vb[VbVbalrErrorHandling#17](../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/on-error-statement_1.vb)]  
   
  `On Error GoTo` ステートメントは、例外クラスに関係なく、すべてのエラーをトラップするという点に注意してください。  
   
@@ -103,7 +103,7 @@ On Error { GoTo [ line | 0 | -1 ] | Resume Next }
   
  エラーが発生しないときにエラー処理コードが実行されないようにするには、次のコード例のように、エラー処理ルーチンの直前に `Exit Sub`、`Exit Function`、または `Exit Property` ステートメントを指定します。  
   
- [!code-vb[VbVbalrErrorHandling#18](../../../visual-basic/language-reference/statements/codesnippet/visualbasic/on-error-statement_2.vb)]  
+ [!code-vb[VbVbalrErrorHandling#18](../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/on-error-statement_2.vb)]  
   
  この例では、エラー処理コードが `Exit Sub` ステートメントに続く形で `End Sub` ステートメントよりも前に置かれ、プロシージャのフローからは分離されています。  エラー処理コードは、プロシージャ内の任意の場所に指定できます。  
   
@@ -112,7 +112,7 @@ On Error { GoTo [ line | 0 | -1 ] | Resume Next }
   
  他のオブジェクトにアクセスするオブジェクトを作成する場合は、アクセス先のオブジェクトが戻す未処理のエラーを処理する必要があります。  このオブジェクト内でエラーを処理できない場合は、`Err.Number` 内のエラー コードをこのオブジェクトの独自のエラーのいずれかに割り当てて、もう 1 レベル上の呼び出し元に渡します。  独自のエラーを指定するには、独自のエラー コードを `VbObjectError` 定数に追加する必要があります。  たとえば、独自のエラー コードが 1052 の場合は、次のように割り当てます。  
   
- [!code-vb[VbVbalrErrorHandling#19](../../../visual-basic/language-reference/statements/codesnippet/visualbasic/on-error-statement_3.vb)]  
+ [!code-vb[VbVbalrErrorHandling#19](../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/on-error-statement_3.vb)]  
   
 > [!CAUTION]
 >  Windows ダイナミック リンク ライブラリ \(DLL: Dynamic Link Library\) の呼び出し中にシステム エラーが起こった場合は例外が発生しないため、Visual Basic エラー トラッピングではトラッピングされません。  DLL 関数を呼び出すときは、API の仕様に従ってそれぞれの戻り値を調べ、処理が正しく実行されたかどうかを確認する必要があります。エラーの場合には、`Err` オブジェクトの `LastDLLError` プロパティの値を調べます。  
@@ -120,7 +120,7 @@ On Error { GoTo [ line | 0 | -1 ] | Resume Next }
 ## 使用例  
  この例では、`On Error GoTo` ステートメントを使用して、プロシージャ内のエラー処理ルーチンの場所を指定します。  ゼロによる除算が行われると、エラー番号 6 が生成されます。  このエラーがエラー処理ルーチンで処理された後、エラーが発生したステートメントに制御が戻ります。  `On Error GoTo 0` ステートメントはエラー トラッピングを無効にします。  その後で、`On Error Resume Next` ステートメントを使用してエラー トラッピングを遅延させ、次のステートメントによって生成されたエラーのコンテキストが確認できるようにします。  `Err.Clear` は、エラーを処理した後に `Err` オブジェクトのプロパティをクリアするために使用されます。  
   
- [!code-vb[VbVbalrErrorHandling#20](../../../visual-basic/language-reference/statements/codesnippet/visualbasic/on-error-statement_4.vb)]  
+ [!code-vb[VbVbalrErrorHandling#20](../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/on-error-statement_4.vb)]  
   
 ## 必要条件  
  **名前空間**: [Microsoft.VisualBasic](../../../visual-basic/language-reference/runtime-library-members.md)  

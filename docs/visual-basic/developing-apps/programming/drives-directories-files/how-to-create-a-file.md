@@ -25,7 +25,7 @@ caps.handback.revision: 15
 この例では、<xref:System.IO.File> クラスの <xref:System.IO.File.Create%2A> メソッドを使用して、指定したパスに空のテキスト ファイルを作成します。  
   
 ## 使用例  
- [!code-vb[VbFileIOMisc#1](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/visualbasic/how-to-create-a-file_1.vb)]  
+ [!code-vb[VbFileIOMisc#1](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/VisualBasic/how-to-create-a-file_1.vb)]  
   
 ## コードのコンパイル  
  `file` 変数を使用して、ファイルに書き込みます。  

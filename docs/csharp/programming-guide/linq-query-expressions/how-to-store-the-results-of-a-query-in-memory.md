@@ -16,7 +16,7 @@ caps.handback.revision: 13
  クエリ結果を格納するときは、次の例に示すように、返されたコレクション オブジェクトを新しい変数に代入することをお勧めします。  
   
 ## 使用例  
- [!code-cs[csProgGuideLINQ#25](../../../csharp/programming-guide/arrays/codesnippet/csharp/csLINQProgRef/csrefLINQHowTos.cs#25)]  
+ [!code-cs[csProgGuideLINQ#25](../../../csharp/programming-guide/arrays/codesnippet/CSharp/how-to-store-the-results-of-a-query-in-memory_1.cs)]  
   
 ## コードのコンパイル  
   

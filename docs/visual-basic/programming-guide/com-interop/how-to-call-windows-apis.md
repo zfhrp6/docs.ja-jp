@@ -27,7 +27,7 @@ caps.handback.revision: 14
 次に示すのは、user32.dll の `MessageBox` 関数を定義および呼び出して、その関数に文字列を渡す例です。  
   
 ## 使用例  
- [!code-vb[VbVbalrInterop#1](../../../visual-basic/programming-guide/com-interop/codesnippet/visualbasic/vbvbalrinterop/Class1.vb#1)]  
+ [!code-vb[VbVbalrInterop#1](../../../visual-basic/programming-guide/com-interop/codesnippet/VisualBasic/how-to-call-windows-apis_1.vb)]  
   
 ## コードのコンパイル  
  この例には、次の項目が必要です。  

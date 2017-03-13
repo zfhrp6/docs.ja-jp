@@ -34,15 +34,15 @@ caps.handback.revision: 12
 ## オーバーロードの使用方法  
  別のデータ型を処理するプロシージャに同じ名前を付けるオブジェクト モデルを使用している場合は、特にオーバーロードが有効です。  たとえば、複数のデータ型を表示できるクラスの `Display` プロシージャは、次のようになります。  
   
- [!code-vb[VbVbalrOOP#64](../../../../visual-basic/misc/codesnippet/visualbasic/VbVbalrOOP/OOP.vb#64)]  
+ [!code-vb[VbVbalrOOP#64](../../../../visual-basic/misc/codesnippet/VisualBasic/overloaded-properties-and-methods_1.vb)]  
   
  オーバーロードを利用しない場合は、各プロシージャの動作が同じであっても、次のようにそれぞれに別の名前を付ける必要があります。  
   
- [!code-vb[VbVbalrOOP#65](../../../../visual-basic/misc/codesnippet/visualbasic/VbVbalrOOP/OOP.vb#65)]  
+ [!code-vb[VbVbalrOOP#65](../../../../visual-basic/misc/codesnippet/VisualBasic/overloaded-properties-and-methods_2.vb)]  
   
  オーバーロードを利用すると、使用するデータ型を選択できるようになるため、プロパティやメソッドの使い方が簡単になります。  たとえば、上のオーバーロードされた `Display` メソッドを呼び出すには、以下のどのコード行でも使用できます。  
   
- [!code-vb[VbVbalrOOP#66](../../../../visual-basic/misc/codesnippet/visualbasic/VbVbalrOOP/OOP.vb#66)]  
+ [!code-vb[VbVbalrOOP#66](../../../../visual-basic/misc/codesnippet/VisualBasic/overloaded-properties-and-methods_3.vb)]  
   
  実行時には、指定したパラメーターのデータ型に基づき、[!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] によって正しいプロシージャが呼び出されます。  
   
@@ -72,11 +72,11 @@ caps.handback.revision: 12
   
 2.  `TaxClass` クラスに次のコードを追加します。  
   
-     [!code-vb[VbVbalrOOP#67](../../../../visual-basic/misc/codesnippet/visualbasic/VbVbalrOOP/OOP.vb#67)]  
+     [!code-vb[VbVbalrOOP#67](../../../../visual-basic/misc/codesnippet/VisualBasic/overloaded-properties-and-methods_4.vb)]  
   
 3.  フォームに次のプロシージャを追加します。  
   
-     [!code-vb[VbVbalrOOP#68](../../../../visual-basic/misc/codesnippet/visualbasic/VbVbalrOOP/OOP.vb#68)]  
+     [!code-vb[VbVbalrOOP#68](../../../../visual-basic/misc/codesnippet/VisualBasic/overloaded-properties-and-methods_5.vb)]  
   
 4.  フォームにボタンを追加し、ボタンの `Button1_Click` イベントから `ShowTax` プロシージャを呼び出します。  
   

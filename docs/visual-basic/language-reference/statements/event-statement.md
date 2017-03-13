@@ -91,7 +91,7 @@ End Event
 ## 解説  
  宣言したイベントは、`RaiseEvent` ステートメントを使って発生させます。  通常、イベントの宣言と発生は、次のように行われます。  
   
- [!code-vb[VbVbalrEvents#13](../../../visual-basic/language-reference/statements/codesnippet/visualbasic/VbVbalrEvents/Class1.vb#13)]  
+ [!code-vb[VbVbalrEvents#13](../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/event-statement_1.vb)]  
   
 > [!NOTE]
 >  イベントの引数は、プロシージャの引数と同様に宣言できます。ただし、イベントに対して名前付き引数、`ParamArray` 引数、または `Optional` 引数を指定することはできません。  イベントは値を返しません。  
@@ -115,11 +115,11 @@ End Event
   
  `Form1` クラスの宣言セクションに、`WithEvents` 変数を追加します。  
   
- [!code-vb[VbVbalrEvents#14](../../../visual-basic/language-reference/statements/codesnippet/visualbasic/VbVbalrEvents/Class1.vb#14)]  
+ [!code-vb[VbVbalrEvents#14](../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/event-statement_2.vb)]  
   
  `Form1` のコードに次のコードを追加します。  `Form_Load` や `Button_Click` など、重複して存在する可能性のあるプロシージャを置き換えます。  
   
- [!code-vb[VbVbalrEvents#15](../../../visual-basic/language-reference/statements/codesnippet/visualbasic/VbVbalrEvents/Class1.vb#15)]  
+ [!code-vb[VbVbalrEvents#15](../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/event-statement_3.vb)]  
   
  F5 キーを押して上の例を実行し、"**Start**" というラベルのボタンをクリックします。  最初のテキスト ボックスで、秒のカウント ダウンが開始されます。  カウントダウンが終わると \(10 秒が経過すると\)、1 つ目のテキスト ボックスに "Done" と表示されます。  
   

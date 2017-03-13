@@ -32,7 +32,7 @@ caps.handback.revision: 43
 
 Visual Basic のコンパイラでは、*型の推定*を使用して、`As` 句なしで宣言されているローカル変数のデータ型を決定します。  コンパイラは、初期化式の型から変数の型を推測します。  これにより、次の例で示すように、型を明示的に示さずに変数を宣言できます。この宣言の結果、`num1` と `num2` はどちらも整数として厳密に型指定されます。  
   
- [!code-vb[VbVbalrTypeInference#1](../../../../visual-basic/language-reference/statements/codesnippet/visualbasic/local-type-inference_1.vb)]  
+ [!code-vb[VbVbalrTypeInference#1](../../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/local-type-inference_1.vb)]  
   
 > [!NOTE]
 >  前の例の `num2` を `Integer` として型指定できない場合は、`Dim num3 As Object = 3` や `Dim num4 As Double = 3` のような宣言を使用して、別の型を指定できます。  
@@ -47,23 +47,23 @@ Visual Basic のコンパイラでは、*型の推定*を使用して、`As` 句
 ## 例  
  型の推論は、`As` 句なしで宣言されたローカル変数が初期化される場合に行われます。  コンパイラは、変数の型として、代入された初期値の型を使用します。  たとえば、次の各コード行は、`String` 型の変数を宣言しています。  
   
- [!code-vb[VbVbalrTypeInference#2](../../../../visual-basic/language-reference/statements/codesnippet/visualbasic/local-type-inference_2.vb)]  
+ [!code-vb[VbVbalrTypeInference#2](../../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/local-type-inference_2.vb)]  
   
  次のコードは、整数の配列を作成する 2 種類の同等の方法を示します。  
   
- [!code-vb[VbVbalrTypeInference#3](../../../../visual-basic/language-reference/statements/codesnippet/visualbasic/local-type-inference_3.vb)]  
+ [!code-vb[VbVbalrTypeInference#3](../../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/local-type-inference_3.vb)]  
   
  型の推論を使用すると、ループ制御変数の型を決定する場合に便利です。  次のコードでは、前の例の `someNumbers2` が整数の配列なので、コンパイラは `number` が `Integer` であると推論します。  
   
- [!code-vb[VbVbalrTypeInference#4](../../../../visual-basic/language-reference/statements/codesnippet/visualbasic/local-type-inference_4.vb)]  
+ [!code-vb[VbVbalrTypeInference#4](../../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/local-type-inference_4.vb)]  
   
  次の例で示すように、ローカル型の推論を `Using` ステートメントで使用して、リソース名の型を設定できます。  
   
- [!code-vb[VbVbalrTypeInference#7](../../../../visual-basic/language-reference/statements/codesnippet/visualbasic/local-type-inference_5.vb)]  
+ [!code-vb[VbVbalrTypeInference#7](../../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/local-type-inference_5.vb)]  
   
  次の例で示すように、関数の戻り値から変数の型を推論することもできます。  `Process.GetProcesses` はプロセスの配列を返すため、`pList1` と `pList2` はどちらもプロセスの配列です。  
   
- [!code-vb[VbVbalrTypeInference#5](../../../../visual-basic/language-reference/statements/codesnippet/visualbasic/local-type-inference_6.vb)]  
+ [!code-vb[VbVbalrTypeInference#5](../../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/local-type-inference_6.vb)]  
   
 ## Option Infer  
  ローカル型の推論が特定のファイルで許可されているかどうか `Option Infer` を指定します。  このオプションを有効または無効にするには、次のいずれかのステートメントをファイルの先頭に追加します。  

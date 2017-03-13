@@ -24,14 +24,14 @@ caps.handback.revision: 13
   
  暗黙的に型指定される配列の作成方法の例を次に示します。  
   
- [!code-cs[csProgGuideLINQ#37](../../../csharp/programming-guide/arrays/codesnippet/csharp/csLINQProgRef/csRef30LangFeatures_2.cs#37)]  
+ [!code-cs[csProgGuideLINQ#37](../../../csharp/programming-guide/arrays/codesnippet/CSharp/implicitly-typed-arrays_1.cs)]  
   
  前の例の暗黙的に型指定される配列では、初期化ステートメントの左側に角かっこは使用されていません。  また、ジャグ配列は、1 次元配列と同じように `new []` を使用して初期化されます。  
   
 ## オブジェクト初期化子で暗黙的に型指定される配列  
  配列が含まれた匿名型を作成する場合、その型のオブジェクト初期化子で配列を暗黙的に型指定する必要があります。  次の例では、`contacts` は匿名型の暗黙的に型指定された配列で、それぞれに `PhoneNumbers` という名前の配列が含まれています。  オブジェクト初期化子の内部に `var` キーワードは使用されていません。  
   
- [!code-cs[csProgGuideLINQ#38](../../../csharp/programming-guide/arrays/codesnippet/csharp/csLINQProgRef/csRef30LangFeatures_2.cs#38)]  
+ [!code-cs[csProgGuideLINQ#38](../../../csharp/programming-guide/arrays/codesnippet/CSharp/implicitly-typed-arrays_2.cs)]  
   
 ## 参照  
  [C\# プログラミング ガイド](../../../csharp/programming-guide/index.md)   

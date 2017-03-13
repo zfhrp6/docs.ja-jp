@@ -73,14 +73,14 @@ result = Not expression
 ## 使用例  
  次の例では、`Not` 演算子を使って 2 つの `Boolean` 式の論理否定を求めます。  結果は、式の値を反転させた `Boolean` 値です。  
   
- [!code-vb[VbVbalrOperators#33](../../../visual-basic/language-reference/operators/codesnippet/visualbasic/not-operator_1.vb)]  
+ [!code-vb[VbVbalrOperators#33](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/not-operator_1.vb)]  
   
  前の例では、`False` と `True` の結果を順に生成します。  
   
 ## 使用例  
  `Not` 演算子を使って、数式のビットごとの論理否定を求める例を次に示します。  結果パターンのビットは、符号ビットを含めて、オペランド パターンで対応するビットを反転した値にセットされます。  
   
- [!code-vb[VbVbalrOperators#34](../../../visual-basic/language-reference/operators/codesnippet/visualbasic/not-operator_2.vb)]  
+ [!code-vb[VbVbalrOperators#34](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/not-operator_2.vb)]  
   
  前の例では、–11、–9、–7 の結果を順に生成します。  
   

@@ -64,7 +64,7 @@ caps.handback.revision: 16
 ## <a name="example"></a>例  
  この例の値を表示、 `Nickname` 設定します。  
   
- [!code-vb[VbVbalrMyResources#14](../../../visual-basic/developing-apps/programming/app-settings/codesnippet/visualbasic/VbVbalrMyResources2/Form1.vb#14)]  
+ [!code-vb[VbVbalrMyResources#14](../../../visual-basic/developing-apps/programming/app-settings/codesnippet/VisualBasic/my-settings-object_1.vb)]  
   
  この例を実行するには、アプリケーションが必要な `Nickname` 型の設定 `String`します。  
   

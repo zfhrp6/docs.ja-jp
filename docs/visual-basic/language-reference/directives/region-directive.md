@@ -49,7 +49,7 @@ Visual Basic ファイルのコードのセクションを折りたたんで非�
 ## 使用例  
  `#Region` ディレクティブの使用例を次に示します。  
   
- [!code-vb[VbVbalrConditionalComp#4](../../../visual-basic/language-reference/directives/codesnippet/visualbasic/region-directive_1.vb)]  
+ [!code-vb[VbVbalrConditionalComp#4](../../../visual-basic/language-reference/directives/codesnippet/VisualBasic/region-directive_1.vb)]  
   
 ## 参照  
  [\#If...Then...\#Else Directives](../../../visual-basic/language-reference/directives/if-then-else-directives.md)   

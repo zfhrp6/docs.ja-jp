@@ -28,7 +28,7 @@ caps.handback.revision: 27
 ## 使用例  
  チュートリアルを実行している場合は、そのチュートリアルで作成するプロジェクトの Module1.vb ファイルとして、このコードを使用できます。  `Main` メソッドの \*\*\*\* でマークされた行を、チュートリアルで指定されたクエリとクエリ実行に置き換えます。  
   
- [!code-vb[VbLINQHowToCreateList#1](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/visualbasic/how-to-create-a-list-of-_1.vb)]  
+ [!code-vb[VbLINQHowToCreateList#1](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/VisualBasic/how-to-create-a-list-of-items_1.vb)]  
   
 ## 参照  
  [ビデオ操作方法: Writing Queries in Visual Basic \(Visual Basic でのクエリの記述\)](http://msdn.microsoft.com/library/bb820884.aspx)   

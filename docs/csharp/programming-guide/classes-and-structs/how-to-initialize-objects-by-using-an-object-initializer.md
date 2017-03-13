@@ -26,12 +26,12 @@ caps.handback.revision: 20
 ## 使用例  
  オブジェクト初期化子を使用して、新しい `StudentName` 型を初期化する方法を次の例に示します。  
   
- [!code-cs[csProgGuideLINQ#35](../../../csharp/programming-guide/arrays/codesnippet/csharp/csLINQProgRef/csRef30LangFeatures_2.cs#35)]  
+ [!code-cs[csProgGuideLINQ#35](../../../csharp/programming-guide/arrays/codesnippet/CSharp/how-to-initialize-objects-by-using-an-object-initializer_1.cs)]  
   
 ## 使用例  
  コレクション初期化子を使用して、`StudentName` 型のコレクションを初期化する方法を次の例に示します。  コレクション初期化子は、コンマで区切られた一連のオブジェクト初期化子です。  
   
- [!code-cs[csProgGuideLINQ#36](../../../csharp/programming-guide/arrays/codesnippet/csharp/csLINQProgRef/csRef30LangFeatures_2.cs#36)]  
+ [!code-cs[csProgGuideLINQ#36](../../../csharp/programming-guide/arrays/codesnippet/CSharp/how-to-initialize-objects-by-using-an-object-initializer_2.cs)]  
   
 ## コードのコンパイル  
  このコードを実行するには、[!INCLUDE[vsprvs](../../../csharp/includes/vsprvs-md.md)] で作成した Visual C\# コンソール アプリケーション プロジェクトに、クラスをコピーして貼り付けます。  詳細については、「[How to: Create a LINQ Project](../Topic/How%20to:%20Create%20a%20LINQ%20Project.md)」を参照してください。  

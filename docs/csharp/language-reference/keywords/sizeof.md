@@ -58,7 +58,7 @@ int intSize = sizeof(int);
  struct などその他のすべての型については、`sizeof` 演算子はアンセーフ コード ブロックでのみ使用できます。  <xref:System.Runtime.InteropServices.Marshal.SizeOf%2A?displayProperty=fullName> メソッドは使用できますが、このメソッドの戻り値が `sizeof` の戻り値と等しいとは限りません。  <xref:System.Runtime.InteropServices.Marshal.SizeOf%2A?displayProperty=fullName> は値のマーシャリング後にサイズを返します。一方、`sizeof` は、共通言語ランタイムによる割り当ての後に埋め込みを含めたサイズを返します。  
   
 ## 使用例  
- [!code-cs[csrefKeywordsOperator#11](../../../csharp/language-reference/keywords/codesnippet/csharp/csrefKeywordsOperator/csrefKeywordsOperators.cs#11)]  
+ [!code-cs[csrefKeywordsOperator#11](../../../csharp/language-reference/keywords/codesnippet/CSharp/sizeof_1.cs)]  
   
 ## C\# 言語仕様  
  [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec-md.md)]  

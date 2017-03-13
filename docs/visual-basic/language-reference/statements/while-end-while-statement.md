@@ -78,17 +78,17 @@ End While
 ## 使用例  
  次の例では、`index` 変数が 10 を上回るまで、ループ内のステートメントが実行され続けます。  
   
- [!code-vb[VbVbalrStatements#171](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/while-end-while-statement_1.vb)]  
+ [!code-vb[VbVbalrStatements#171](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/while-end-while-statement_1.vb)]  
   
 ## 使用例  
  次の例は、`Continue While` ステートメントと `Exit While` ステートメントの使用方法を示しています。  
   
- [!code-vb[VbVbalrStatements#172](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/while-end-while-statement_2.vb)]  
+ [!code-vb[VbVbalrStatements#172](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/while-end-while-statement_2.vb)]  
   
 ## 使用例  
  次の例では、テキスト ファイルのすべての行が読み取られます。  <xref:System.IO.File.OpenText%2A> メソッドによりファイルが開かれ、文字を読み取る <xref:System.IO.StreamReader> が返されます。  `While` では、`StreamReader` の <xref:System.IO.StreamReader.Peek%2A> のメソッドは、ファイルが追加の文字が含まれているかどうかを判定します。  
   
- [!code-vb[VbVbalrStatements#173](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/while-end-while-statement_3.vb)]  
+ [!code-vb[VbVbalrStatements#173](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/while-end-while-statement_3.vb)]  
   
 ## 参照  
  [Loop Structures](../../../visual-basic/programming-guide/language-features/control-flow/loop-structures.md)   

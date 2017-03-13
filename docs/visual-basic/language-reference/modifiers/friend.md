@@ -46,7 +46,7 @@ caps.handback.revision: 25
 ## 使用例  
  次のクラスでは、`Friend` 修飾子を使用すると、同じアセンブリ内の他のプログラミング要素が特定のメンバーにアクセスできるようになります。  
   
- [!code-vb[VbVbalrAccessModifiers#1](../../../visual-basic/language-reference/modifiers/codesnippet/visualbasic/friend_1.vb)]  
+ [!code-vb[VbVbalrAccessModifiers#1](../../../visual-basic/language-reference/modifiers/codesnippet/VisualBasic/friend_1.vb)]  
   
 ## 使用方法  
  これらのコンテキストで `Friend` 修飾子を使用して:  

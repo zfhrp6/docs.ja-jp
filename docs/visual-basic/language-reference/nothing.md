@@ -36,11 +36,11 @@ caps.handback.revision: 31
   
  変数が許容ではない値型の場合はそれを `Nothing` を割り当てる宣言型の既定値に設定します。  型に変数のメンバーが含まれている場合は、すべてに既定値が設定されます。  次にスカラー型の場合の例を示します。  
   
- [!code-vb[VbVbalrKeywords#7](../../visual-basic/language-reference/codesnippet/visualbasic/nothing_1.vb)]  
+ [!code-vb[VbVbalrKeywords#7](../../visual-basic/language-reference/codesnippet/VisualBasic/nothing_1.vb)]  
   
  変数が参照型の場合`Nothing` に変数の型の `null` の参照に変数の設定に割り当てられます。  `null` の参照に設定した変数はオブジェクトに関連付けられません。  次に例を示します。  
   
- [!code-vb[VbVbalrKeywords#8](../../visual-basic/language-reference/codesnippet/visualbasic/nothing_2.vb)]  
+ [!code-vb[VbVbalrKeywords#8](../../visual-basic/language-reference/codesnippet/VisualBasic/nothing_2.vb)]  
   
  null 許容値型または参照 \(\) 変数が `null` かどうかを確認する場合は`= Nothing` または `<> Nothing` を使用しないでください。  `Is Nothing` または `IsNot Nothing` を使用します。  
   
@@ -48,7 +48,7 @@ caps.handback.revision: 31
   
  `Is` 演算子と `IsNot` 演算子を使用した比較の例を次に示します。  
   
- [!code-vb[VbVbalrKeywords#9](../../visual-basic/language-reference/codesnippet/visualbasic/nothing_3.vb)]  
+ [!code-vb[VbVbalrKeywords#9](../../visual-basic/language-reference/codesnippet/VisualBasic/nothing_3.vb)]  
   
  `As` 句を使用しないで変数を宣言し、それを `Nothing` に設定した場合、その変数の型は `Object` になります。  次に例を示します: `Dim something = Nothing` コンパイル時のエラーが `Option Strict` が有効で`Option Infer` がオフの場合この場合です。  
   

@@ -44,9 +44,9 @@ caps.handback.revision: 16
 ## 使用例  
  `ByRef` のパラメーター宣言をオーバーライドする例を次に示します。  `ByVal` を強制している呼び出しの部分で、かっこが二重に記述されている点に注意してください。  
   
- [!code-vb[VbVbcnProcedures#39](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/how-to-force-an-argument_1.vb)]  
+ [!code-vb[VbVbcnProcedures#39](./codesnippet/VisualBasic/how-to-force-an-argument-to-be-passed-by-value_1.vb)]  
   
- [!code-vb[VbVbcnProcedures#40](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/how-to-force-an-argument_2.vb)]  
+ [!code-vb[VbVbcnProcedures#40](./codesnippet/VisualBasic/how-to-force-an-argument-to-be-passed-by-value_2.vb)]  
   
  引数リストの内部で `str` が二重のかっこに囲まれると、`setNewString` プロシージャは呼び出し元のコードにあるその値を変更できず、`MsgBox` に "Cannot be replaced if passed ByVal" と表示します。  `str` が二重のかっこで囲まれなければ、プロシージャは値を変更でき、`MsgBox` には "This is a new value for the inString argument" と表示されます。  
   

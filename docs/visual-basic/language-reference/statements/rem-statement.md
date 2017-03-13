@@ -53,7 +53,7 @@ REM comment
 ## 使用例  
  `REM` ステートメントを使ってプログラムにコメントを記述するコード例は、次のとおりです。  次の例では、`REM` の代わりに一重引用符 \(`'`\) を使用する方法も示します。  
   
- [!code-vb[VbVbalrStatements#6](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/rem-statement_1.vb)]  
+ [!code-vb[VbVbalrStatements#6](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/rem-statement_1.vb)]  
   
 ## 参照  
  [Comments in Code](../../../visual-basic/programming-guide/program-structure/comments-in-code.md)   

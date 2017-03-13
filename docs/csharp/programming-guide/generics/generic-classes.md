@@ -43,27 +43,27 @@ caps.handback.revision: 30
   
  型パラメーターの規則と制約には、ジェネリック クラスの動作 \(特に、継承とメンバーのアクセシビリティ\) について、暗示的な意味合いがあります。  次に進む前に、いくつかの用語を理解しておく必要があります。  ジェネリック クラスで、`Node<T>,` クライアント コードでクラスを参照するには、型の引数を指定してクローズ構築型 \(`Node<int>`\) を作成します。  または、たとえばジェネリックな基本クラスを指定するときに型パラメーターを指定せずに、オープン構築型 \(`Node<T>`\) を作成します。  ジェネリック クラスは、具象、クローズ構築、またはオープン構築の各基本クラスから継承できます。  
   
- [!code-cs[csProgGuideGenerics#16](../../../csharp/programming-guide/generics/codesnippet/csharp/generic-classes_1.cs)]  
+ [!code-cs[csProgGuideGenerics#16](../../../csharp/programming-guide/generics/codesnippet/CSharp/generic-classes_1.cs)]  
   
  非ジェネリック クラス \(つまり具象クラス\) は、クローズ構築の基本クラスからは継承できますが、オープン構築のクラスや型パラメーターからは継承できません。実行時に、クライアント コードから基本クラスをインスタンス化するときに必要な型の引数を提示する方法がないためです。  
   
- [!code-cs[csProgGuideGenerics#17](../../../csharp/programming-guide/generics/codesnippet/csharp/generic-classes_2.cs)]  
+ [!code-cs[csProgGuideGenerics#17](../../../csharp/programming-guide/generics/codesnippet/CSharp/generic-classes_2.cs)]  
   
  オープン構築型から継承するジェネリック クラスの場合、継承するクラスで共有されない基本クラスの型パラメーターに対して、型の引数を提示する必要があります。次にコード例を示します。  
   
- [!code-cs[csProgGuideGenerics#18](../../../csharp/programming-guide/generics/codesnippet/csharp/generic-classes_3.cs)]  
+ [!code-cs[csProgGuideGenerics#18](../../../csharp/programming-guide/generics/codesnippet/CSharp/generic-classes_3.cs)]  
   
  オープン構築型から継承するジェネリック クラスでは、基本型に対する制約のスーパーセットである制約、または基本型に対する制約を暗示する制約を指定する必要があります。  
   
- [!code-cs[csProgGuideGenerics#19](../../../csharp/programming-guide/generics/codesnippet/csharp/generic-classes_4.cs)]  
+ [!code-cs[csProgGuideGenerics#19](../../../csharp/programming-guide/generics/codesnippet/CSharp/generic-classes_4.cs)]  
   
  ジェネリック型では、次のように複数の型パラメーターと制約を使用できます。  
   
- [!code-cs[csProgGuideGenerics#20](../../../csharp/programming-guide/generics/codesnippet/csharp/generic-classes_5.cs)]  
+ [!code-cs[csProgGuideGenerics#20](../../../csharp/programming-guide/generics/codesnippet/CSharp/generic-classes_5.cs)]  
   
  オープン構築型とクローズ構築j型は、メソッドのパラメーターとして使用できます。  
   
- [!code-cs[csProgGuideGenerics#21](../../../csharp/programming-guide/generics/codesnippet/csharp/generic-classes_6.cs)]  
+ [!code-cs[csProgGuideGenerics#21](../../../csharp/programming-guide/generics/codesnippet/CSharp/generic-classes_6.cs)]  
   
  ジェネリック クラスがインターフェイスを実装する場合、そのクラスのすべてのインスタンスをそのインターフェイスにキャストできます。  
   

@@ -38,8 +38,8 @@ Visual Basic には、コレクション間で共通する値に基づいて複�
   
 2.  このトピックのサンプルでは、次のコード例の `Person` 型、`Pet` 型、およびデータを使用します。  このコードを、Visual Basic で作成された既定の `Module1` モジュール内にコピーしてください。  
   
-     [!code-vb[VbLINQHowTos#1](../../../../visual-basic/programming-guide/language-features/linq/codesnippet/visualbasic/VbLINQHowTos/Module1.vb#1)]  
-    [!code-vb[VbLINQHowTos#2](../../../../visual-basic/programming-guide/language-features/linq/codesnippet/visualbasic/VbLINQHowTos/Module1.vb#2)]  
+     [!code-vb[VbLINQHowTos#1](../../../../visual-basic/programming-guide/language-features/linq/codesnippet/VisualBasic/how-to-combine-data-with-linq-by-using-joins_1.vb)]  
+    [!code-vb[VbLINQHowTos#2](../../../../visual-basic/programming-guide/language-features/linq/codesnippet/VisualBasic/how-to-combine-data-with-linq-by-using-joins_2.vb)]  
   
 ## Join 句を使用した内部結合の実行  
  内部結合は、2 つのコレクションのデータを結合します。  指定したキー値が一致する項目が含まれます。  どちらのコレクションの項目でも、他方のコレクションの中に一致する項目がない項目は除外されます。  
@@ -54,7 +54,7 @@ Visual Basic には、コレクション間で共通する値に基づいて複�
   
 1.  次のコードをプロジェクトの `Module1` モジュールに追加すると、暗黙的な内部結合と明示的な内部結合の両方の例を確認できます。  
   
-     [!code-vb[VbLINQHowTos#4](../../../../visual-basic/programming-guide/language-features/linq/codesnippet/visualbasic/VbLINQHowTos/Module1.vb#4)]  
+     [!code-vb[VbLINQHowTos#4](../../../../visual-basic/programming-guide/language-features/linq/codesnippet/VisualBasic/how-to-combine-data-with-linq-by-using-joins_3.vb)]  
   
 ## Group Join 句を使用した左外部結合の実行  
  左外部結合では、結合の左側にあるコレクションのすべての項目と、結合の右側にあるコレクションの中の一致する値を持つ項目だけを含めます。  結合の右側のコレクションの項目のうち、左側のコレクションの中に一致する項目がない項目は、クエリ結果から除外されます。  
@@ -67,7 +67,7 @@ Visual Basic には、コレクション間で共通する値に基づいて複�
   
 1.  グループ化された左外部結合とグループ化されていない左外部結合の例を両方とも確認するには、次のコードをプロジェクトの `Module1` モジュールに追加します。  
   
-     [!code-vb[VbLINQHowTos#3](../../../../visual-basic/programming-guide/language-features/linq/codesnippet/visualbasic/VbLINQHowTos/Module1.vb#3)]  
+     [!code-vb[VbLINQHowTos#3](../../../../visual-basic/programming-guide/language-features/linq/codesnippet/VisualBasic/how-to-combine-data-with-linq-by-using-joins_4.vb)]  
   
 ## 複合キーを使用した結合の実行  
  結合するコレクションの値を一致させるときに、`Join` 句または `Group Join` 句の中で `And` キーワードを使用することで、複数のキー フィールドを識別できます。  `And` キーワードは、指定されたすべてのキー フィールドが、結合する項目で一致する必要があることを指定します。  
@@ -76,7 +76,7 @@ Visual Basic には、コレクション間で共通する値に基づいて複�
   
 1.  複合キーを使用する結合の例を確認するには、次のコードをプロジェクトの `Module1` モジュールに追加します。  
   
-     [!code-vb[VbLINQHowTos#5](../../../../visual-basic/programming-guide/language-features/linq/codesnippet/visualbasic/VbLINQHowTos/Module1.vb#5)]  
+     [!code-vb[VbLINQHowTos#5](../../../../visual-basic/programming-guide/language-features/linq/codesnippet/VisualBasic/how-to-combine-data-with-linq-by-using-joins_5.vb)]  
   
 ## コードの実行  
   
@@ -84,7 +84,7 @@ Visual Basic には、コレクション間で共通する値に基づいて複�
   
 1.  このトピックのコード例を実行するには、プロジェクト内の`Module1` モジュールの `Sub Main` を、次のコードに置き換えます。  
   
-     [!code-vb[VbLINQHowTos#6](../../../../visual-basic/programming-guide/language-features/linq/codesnippet/visualbasic/VbLINQHowTos/Module1.vb#6)]  
+     [!code-vb[VbLINQHowTos#6](../../../../visual-basic/programming-guide/language-features/linq/codesnippet/VisualBasic/how-to-combine-data-with-linq-by-using-joins_6.vb)]  
   
 2.  F5 キーを押して、コード例を実行します。  
   

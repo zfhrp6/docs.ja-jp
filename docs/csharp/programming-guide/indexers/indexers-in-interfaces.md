@@ -27,14 +27,14 @@ caps.handback.revision: 18
   
  次に示すのは、インターフェイス インデクサーのアクセサーの例です。  
   
- [!code-cs[csProgGuideIndexers#3](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/indexers-in-interfaces_1.cs)]  
+ [!code-cs[csProgGuideIndexers#3](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/indexers-in-interfaces_1.cs)]  
   
  インデクサーのシグネチャは、同じインターフェイスで宣言されている他のすべてのインデクサーのシグネチャとは異なるシグネチャである必要があります。  
   
 ## 使用例  
  次の例は、インターフェイスのインデクサーの実装方法を示しています。  
   
- [!code-cs[csProgGuideIndexers#4](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/indexers-in-interfaces_2.cs)]  
+ [!code-cs[csProgGuideIndexers#4](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/indexers-in-interfaces_2.cs)]  
   
  前の例では、インターフェイス メンバーの完全限定名を使うことで、明示的なインターフェイス メンバーの実装を使用できます。  次に例を示します。  
   

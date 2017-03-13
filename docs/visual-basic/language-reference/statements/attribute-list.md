@@ -62,7 +62,7 @@ caps.handback.revision: 18
 ## 使用例  
  <xref:System.Runtime.InteropServices.DllImportAttribute> 属性を `Function` プロシージャのスケルトン定義に適用する例は次のようになります。  
   
- [!code-vb[VbVbalrStatements#1](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/attribute-list_1.vb)]  
+ [!code-vb[VbVbalrStatements#1](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/attribute-list_1.vb)]  
   
  <xref:System.Runtime.InteropServices.DllImportAttribute> は、属性が適用されたプロシージャが、アンマネージ ダイナミック リンク ライブラリ \(DLL: Dynamic\-Link Library\) のエントリ ポイントであることを示します。  この属性は、DLL 名を位置指定引数として指定し、その他の情報を変数初期化子として指定します。  
   

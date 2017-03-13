@@ -93,7 +93,7 @@ End Set
 ## 使用例  
  `Set` ステートメントを使って、プロパティの値を設定するコード例を次に示します。  
   
- [!code-vb[VbVbalrStatements#55](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/set-statement_1.vb)]  
+ [!code-vb[VbVbalrStatements#55](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/set-statement_1.vb)]  
   
 ## 参照  
  [Get Statement](../../../visual-basic/language-reference/statements/get-statement.md)   

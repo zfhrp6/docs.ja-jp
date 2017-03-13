@@ -28,7 +28,7 @@ caps.handback.revision: 20
 ## 使用例  
  この例では、`My.Application.Log.WriteEntry` メソッドを使用してトレース情報を書き込みます。  
   
- [!code-vb[VbVbalrMyApplicationLog#11](../../../../visual-basic/developing-apps/programming/log-info/codesnippet/visualbasic/VbVbalrMyApplicationLog/Form1.vb#11)]  
+ [!code-vb[VbVbalrMyApplicationLog#11](../../../../visual-basic/developing-apps/programming/log-info/codesnippet/VisualBasic/how-to-write-log-messages_1.vb)]  
   
 ## .NET Framework セキュリティ  
  ログに書き込むデータに、ユーザーのパスワードなどの機密情報が含まれないように注意してください。 詳細については、「[アプリケーション ログの使用](../../../../visual-basic/developing-apps/programming/log-info/working-with-application-logs.md)」を参照してください。  

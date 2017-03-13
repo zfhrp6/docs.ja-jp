@@ -46,7 +46,7 @@ RaiseEvent eventname[( argumentlist )]
   
  イベントが発生したモジュールと宣言された場所が異なる場合は、エラーが発生します。  次のコードは、イベントの宣言と、そのイベントが発生するプロシージャの例を示しています。  
   
- [!code-vb[VbVbalrEvents#37](../../../visual-basic/language-reference/statements/codesnippet/visualbasic/VbVbalrEvents/Class1.vb#37)]  
+ [!code-vb[VbVbalrEvents#37](../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/raiseevent-statement_1.vb)]  
   
  モジュール内で明示的に宣言されていないイベントを `RaiseEvent` ステートメントで発生させることはできません。  たとえば、すべてのフォームは <xref:System.Windows.Forms.Form?displayProperty=fullName> から <xref:System.Windows.Forms.Control.Click> イベントを継承していますが、このイベントを派生フォーム内で `RaiseEvent` を使用して発生させることはできません。  フォーム モジュールで `Click` イベントを宣言する場合、このイベントは、フォーム独自の <xref:System.Windows.Forms.Control.Click> イベントをシャドウします。  <xref:System.Windows.Forms.Control.OnClick%2A> メソッドを呼び出して、フォームの <xref:System.Windows.Forms.Control.Click> イベントを呼び出すことができます。  
   
@@ -71,12 +71,12 @@ RaiseEvent eventname[( argumentlist )]
   
  `Form1` クラスの宣言セクションに、`WithEvents` 変数を追加します。  
   
- [!code-vb[VbVbalrEvents#14](../../../visual-basic/language-reference/statements/codesnippet/visualbasic/VbVbalrEvents/Class1.vb#14)]  
+ [!code-vb[VbVbalrEvents#14](../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/raiseevent-statement_2.vb)]  
   
 ## 使用例  
  `Form1` のコードに以下のコードを追加します。  `Form_Load` や `Button_Click` など、重複して存在する可能性のあるプロシージャを置き換えます。  
   
- [!code-vb[VbVbalrEvents#15](../../../visual-basic/language-reference/statements/codesnippet/visualbasic/VbVbalrEvents/Class1.vb#15)]  
+ [!code-vb[VbVbalrEvents#15](../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/raiseevent-statement_3.vb)]  
   
  F5 キーを押して上記のコード例を実行し、**\[Start\]** というラベルのボタンをクリックしてください。  1 つ目のテキスト ボックスが秒のカウントダウンを開始します。  カウントダウンが終わると \(10 秒が経過すると\)、1 つ目のテキスト ボックスに "Done" と表示されます。  
   

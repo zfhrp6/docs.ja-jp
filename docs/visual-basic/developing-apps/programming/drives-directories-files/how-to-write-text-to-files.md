@@ -32,7 +32,7 @@ caps.handback.revision: 19
   
 -   `WriteAllText` メソッドを使用して、ファイルおよび書き込むテキストを指定し、テキストをファイルに書き込みます。  この例では、`"This is new text."` という行を `test.txt` という名前のファイルに書き込みます。ファイルに既存のテキストがある場合は、この行を追加します。  
   
-     [!code-vb[VbFileIOWrite#3](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/visualbasic/how-to-write-text-to-files_1.vb)]  
+     [!code-vb[VbFileIOWrite#3](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/VisualBasic/how-to-write-text-to-files_1.vb)]  
   
 #### 複数の文字列をファイルに書き込むには  
   
@@ -40,7 +40,7 @@ caps.handback.revision: 19
   
      この例では、`Documents and Settings` ディレクトリにあるファイルの名前を `FileList.txt` に書き込みます。その際、それぞれの間に復帰を挿入して、読みやすくなるようにします。  
   
-     [!code-vb[VbFileIOWrite#4](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/visualbasic/how-to-write-text-to-files_2.vb)]  
+     [!code-vb[VbFileIOWrite#4](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/VisualBasic/how-to-write-text-to-files_2.vb)]  
   
 ## 信頼性の高いプログラミング  
  次の条件を満たす場合は、例外が発生する可能性があります。  

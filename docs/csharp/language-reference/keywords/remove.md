@@ -23,7 +23,7 @@ caps.handback.revision: 8
 ## 使用例  
  次の例は、カスタムの [add](../../../csharp/language-reference/keywords/add.md) アクセサーと `remove` アクセサーが指定されているイベントを示しています。  サンプル全体については、「[方法 : インターフェイス イベントを実装する](../../../csharp/programming-guide/events/how-to-implement-interface-events.md)」を参照してください。  
   
- [!code-cs[csrefKeywordsContextual#15](../../../csharp/language-reference/keywords/codesnippet/csharp/remove_1.cs)]  
+ [!code-cs[csrefKeywordsContextual#15](../../../csharp/language-reference/keywords/codesnippet/CSharp/remove_1.cs)]  
   
  通常は、独自のカスタム イベント アクセサーを提供する必要はありません。  大部分のシナリオでは、イベントを宣言するときにコンパイラによって自動的に生成されるアクセサーで十分です。  
   

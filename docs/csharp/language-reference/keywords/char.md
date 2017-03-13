@@ -30,7 +30,7 @@ caps.handback.revision: 27
 ## リテラル  
  `char` 型の定数は、文字リテラル、16 進のエスケープ シーケンス、Unicode 表現として記述できます。  また、整数の文字コードをキャストできます。  次の例では、4 つの `char` 変数を同じ文字 `X` で初期化しています。  
   
- [!code-cs[csrefKeywordsTypes#19](../../../csharp/language-reference/keywords/codesnippet/csharp/char_1.cs)]  
+ [!code-cs[csrefKeywordsTypes#19](../../../csharp/language-reference/keywords/codesnippet/CSharp/char_1.cs)]  
   
 ## 変換  
  `char` は、[ushort](../../../csharp/language-reference/keywords/ushort.md)、[int](../../../csharp/language-reference/keywords/int.md)、[uint](../../../csharp/language-reference/keywords/uint.md)、[long](../../../csharp/language-reference/keywords/long.md)、[ulong](../../../csharp/language-reference/keywords/ulong.md)、[float](../../../csharp/language-reference/keywords/float.md)、[double](../../../csharp/language-reference/keywords/double.md)、または [decimal](../../../csharp/language-reference/keywords/decimal.md) に暗黙的に変換できます。  ただし、他の型から `char` 型への暗黙の型変換はありません。  

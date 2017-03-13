@@ -31,7 +31,7 @@ caps.handback.revision: 13
   
      次の例では、文字列 `"This is a test string."` を `Testfile.txt` という名前のファイルに書き込みます。  
   
-     [!code-vb[VbFileIOWrite#6](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/visualbasic/how-to-append-to-text-fi_1.vb)]  
+     [!code-vb[VbFileIOWrite#6](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/VisualBasic/how-to-append-to-text-files_1.vb)]  
   
 ## 信頼性の高いプログラミング  
  次の条件を満たす場合は、例外が発生する可能性があります。  

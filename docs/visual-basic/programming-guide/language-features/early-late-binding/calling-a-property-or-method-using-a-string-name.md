@@ -44,11 +44,11 @@ caps.handback.revision: 17
   
  たとえば、次のコードに示すように、新しい関数 `SquareRoot` を持つ `MathClass` クラスを含むアセンブリへの参照を追加するとします。  
   
- [!code-vb[VbVbalrOOP#53](../../../../visual-basic/misc/codesnippet/visualbasic/VbVbalrOOP/OOP.vb#53)]  
+ [!code-vb[VbVbalrOOP#53](../../../../visual-basic/misc/codesnippet/VisualBasic/calling-a-property-or-method-using-a-string-name_1.vb)]  
   
  アプリケーションは、テキスト ボックス コントロールを使用して、呼び出すメソッドとその引数を制御できます。  たとえば、`TextBox1` に評価する式を入力し、`TextBox2` に関数の名前を入力する場合は、次のコードを使用して `TextBox1` の式に対して `SquareRoot` 関数を呼び出します。  
   
- [!code-vb[VbVbalrOOP#54](../../../../visual-basic/misc/codesnippet/visualbasic/VbVbalrOOP/OOP.vb#54)]  
+ [!code-vb[VbVbalrOOP#54](../../../../visual-basic/misc/codesnippet/VisualBasic/calling-a-property-or-method-using-a-string-name_2.vb)]  
   
  `TextBox1` に「64」を入力し、`TextBox2` に「SquareRoot」を入力してから、`CallMath` プロシージャを呼び出した場合は、`TextBox1` の数値の平方根が評価されます。  この例のコードは `SquareRoot` 関数を呼び出し、`TextBox1` に "8" \(64 の平方根\) を返します。この関数の引数は必須で、評価する式を含む文字列を指定します。  `TextBox2` に不正な文字列を入力した場合、文字列にメソッドではなくプロパティの名前を指定した場合、またはメソッドに渡す必須引数が不足していた場合は、ランタイム エラーが発生します。  `CallByName` 関数を使用する場合は、信頼性の高いエラー処理コードを追加して、このようなエラーに対処する必要があります。  
   

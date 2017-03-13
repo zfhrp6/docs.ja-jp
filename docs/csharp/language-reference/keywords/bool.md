@@ -27,23 +27,23 @@ caps.handback.revision: 30
 ## リテラル  
  `bool` 変数にはブール値を代入できます。  `bool` として評価される式を `bool` 変数に代入することもできます。  
   
- [!code-cs[csrefKeywordsTypes#1](../../../csharp/language-reference/keywords/codesnippet/csharp/bool_1.cs)]  
+ [!code-cs[csrefKeywordsTypes#1](../../../csharp/language-reference/keywords/codesnippet/CSharp/bool_1.cs)]  
   
  `bool` 変数の既定値は `false` です。  `bool?` 変数の既定値は `null` です。  
   
 ## 変換  
  C\+\+ では、`bool` 型の値を `int` 型の値に変換できます。つまり、`false` は 0 と等価であり、`true` は 0 以外の値と等価です。  C\# では、`bool` 型とその他の型は変換できません。  たとえば、C\# では次の `if` ステートメントは無効です。  
   
- [!code-cs[csrefKeywordsTypes#2](../../../csharp/language-reference/keywords/codesnippet/csharp/bool_2.cs)]  
+ [!code-cs[csrefKeywordsTypes#2](../../../csharp/language-reference/keywords/codesnippet/CSharp/bool_2.cs)]  
   
  `int` 型の変数をテストするには、次のように、明示的に特定の値 \(たとえば 0\) と比較する必要があります。  
   
- [!code-cs[csrefKeywordsTypes#3](../../../csharp/language-reference/keywords/codesnippet/csharp/bool_3.cs)]  
+ [!code-cs[csrefKeywordsTypes#3](../../../csharp/language-reference/keywords/codesnippet/CSharp/bool_3.cs)]  
   
 ## 使用例  
  ここでは、キーボードから文字が入力されると、入力文字がアルファベットかどうかをチェックするプログラムの例を示します。  アルファベットの場合は、大文字か小文字かをチェックします。  これらのチェックは、<xref:System.Char.IsLetter%2A> および <xref:System.Char.IsLower%2A> を使用して実行され、この両方が `bool` 型を返します。  
   
- [!code-cs[csrefKeywordsTypes#4](../../../csharp/language-reference/keywords/codesnippet/csharp/bool_4.cs)]  
+ [!code-cs[csrefKeywordsTypes#4](../../../csharp/language-reference/keywords/codesnippet/CSharp/bool_4.cs)]  
   
 ## C\# 言語仕様  
  [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec-md.md)]  

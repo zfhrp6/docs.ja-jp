@@ -18,18 +18,18 @@ caps.handback.revision: 20
 # Main() の戻り値 (C# プログラミング ガイド)
 `Main` メソッドは `void` を返すことができます。  
   
- [!code-cs[csProgGuideMain#12](../../../csharp/programming-guide/inside-a-program/codesnippet/csharp/main-return-values_1.cs)]  
+ [!code-cs[csProgGuideMain#12](../../../csharp/programming-guide/inside-a-program/codesnippet/CSharp/main-return-values_1.cs)]  
   
  `int` 型を返すこともできます。  
   
- [!code-cs[csProgGuideMain#13](../../../csharp/programming-guide/inside-a-program/codesnippet/csharp/main-return-values_2.cs)]  
+ [!code-cs[csProgGuideMain#13](../../../csharp/programming-guide/inside-a-program/codesnippet/CSharp/main-return-values_2.cs)]  
   
  `Main` の戻り値を使用しない場合は、`void` を返すと、コードを少し簡素化できます。  一方、整数を返すと、他のプログラムや、実行可能ファイルを呼び出すスクリプトに、ステータス情報を伝達できます。  `Main` からの戻り値にアクセスする方法を次の例に示します。  
   
 ## 使用例  
  この例では、バッチ ファイルを使用してプログラムを実行し、`Main` 関数の戻り値をテストします。  プログラムを Windows で実行すると、`Main` 関数から返された値が、`ERRORLEVEL` という環境変数に格納されます。  `ERRORLEVEL` 変数を検査することで、バッチ ファイルが実行結果を判断できます。  従来より、ゼロの戻り値は、実行が成功したことを示します。  次の例は、`Main` 関数からゼロを返す簡単なプログラムです。  ゼロは、プログラムが正常に実行されたことを示します。  プログラムを MainReturnValTest.cs として保存してください。  
   
- [!code-cs[csProgGuideMain#14](../../../csharp/programming-guide/inside-a-program/codesnippet/csharp/main-return-values_3.cs)]  
+ [!code-cs[csProgGuideMain#14](../../../csharp/programming-guide/inside-a-program/codesnippet/CSharp/main-return-values_3.cs)]  
   
 ## 使用例  
  この例ではバッチ ファイルを使用するため、コマンド プロンプトからコードをコンパイルすることをお勧めします。  「[How to: Set Environment Variables for the Visual Studio Command Line](../../../csharp/language-reference/compiler-options/how-to-set-environment-variables-for-the-visual-studio-command-line.md)」の手順に従ってコマンド ライン ビルドを有効にするか、**\[スタート\]** メニューの **\[Visual Studio ツール\]** から Visual Studio コマンド プロンプトを使用します。  コマンド プロンプトで、プログラムを保存したフォルダーに移動します。  次のコマンドにより、MainReturnValTest.cs がコンパイルされ、MainReturnValTest.exe という実行可能ファイルが生成されます。  

@@ -62,7 +62,7 @@ caps.handback.revision: 21
   
  ユーザー固有のアクセサーを指定して、2 つのイベントをクラス内の単一のイベントで表すか、別々のイベントで表すかを指定できます。  たとえば、インターフェイスの仕様により、イベントを複数回発生させる必要がある場合、各イベントをクラス内の別々の実装に関連付けることができます。  次の例では、サブスクライバーで `IShape` または `IDrawingObject` の図形参照をキャストすることにより、受信する `OnDraw` イベントを確認します。  
   
- [!code-cs[csProgGuideEvents#10](../../../csharp/programming-guide/events/codesnippet/csharp/how-to-implement-interfa_1.cs)]  
+ [!code-cs[csProgGuideEvents#10](../../../csharp/programming-guide/events/codesnippet/CSharp/how-to-implement-interface-events_1.cs)]  
   
 ## 参照  
  [C\# プログラミング ガイド](../../../csharp/programming-guide/index.md)   

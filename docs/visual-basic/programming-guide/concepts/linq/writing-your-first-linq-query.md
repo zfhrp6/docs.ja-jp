@@ -46,7 +46,7 @@ caps.handback.revision: 54
 > [!NOTE]
 >  [\[コンパイル\] ページ、プロジェクト デザイナー \(Visual Basic\)](/visual-studio/ide/reference/compile-page-project-designer-visual-basic)で、**\[Option Infer\]** がに設定されていることを確認します。  
   
- [!code-vb[VbLINQFirstQuery#1](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/visualbasic/writing-your-first-linq-_1.vb)]  
+ [!code-vb[VbLINQFirstQuery#1](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/VisualBasic/writing-your-first-linq-query_1.vb)]  
   
  出力  
   
@@ -59,7 +59,7 @@ caps.handback.revision: 54
   
  ソース データが既に <xref:System.Collections.Generic.IEnumerable%601>を実装するデータ ソースの *標準クエリ演算子* の機能を実装するために、[!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq-md.md)] のプロバイダーが必要です。  たとえば、[!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq-md.md)] は、次の例に示すように、クエリ可能な <xref:System.Xml.Linq.XElement> 型に XML ドキュメントを読み込む処理を行います。  標準クエリ演算子の詳細については、「[Standard Query Operators Overview](../../../../visual-basic/programming-guide/concepts/linq/standard-query-operators-overview.md)」を参照してください。  
   
- [!code-vb[VbLINQFirstQuery#2](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/visualbasic/writing-your-first-linq-_2.vb)]  
+ [!code-vb[VbLINQFirstQuery#2](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/VisualBasic/writing-your-first-linq-query_2.vb)]  
   
  [!INCLUDE[vbtecdlinq](../../../../csharp/includes/vbtecdlinq-md.md)] では、まず、デザイン時に手動で、または[Object Relational Designer \(O\/R Designer\)](/visual-studio/data-tools/linq-to-sql-tools-in-visual-studio2) を使用して、オブジェクト リレーショナル マッピングを作成します。  オブジェクトに対するクエリを記述すると、実行時には、[!INCLUDE[vbtecdlinq](../../../../csharp/includes/vbtecdlinq-md.md)] によってデータベースとの通信が処理されます。  次の例では、`customers` はデータベースのテーブルを表し、<xref:System.Data.Linq.Table%601> はジェネリック <xref:System.Linq.IQueryable%601> をサポートします。  
   
@@ -74,7 +74,7 @@ caps.handback.revision: 54
   
  次の例のクエリを実行すると、整数の配列 `numbers` からすべての偶数が返されます。  
   
- [!code-vb[VbLINQFirstQuery#1](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/visualbasic/writing-your-first-linq-_1.vb)]  
+ [!code-vb[VbLINQFirstQuery#1](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/VisualBasic/writing-your-first-linq-query_1.vb)]  
   
  クエリ式には、`From`、`Where`、および `Select` の 3 つの句が含まれています。  クエリ式の各句の機能と目的については、「[基本的なクエリ操作 \(Visual Basic\)](../../../../visual-basic/programming-guide/concepts/linq/basic-query-operations.md)」で説明しています。  詳細については、「[Queries](../../../../visual-basic/language-reference/queries/queries.md)」を参照してください。  [!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq-md.md)] では、クエリ定義が変数に格納され、後で実行されることがよくあります。  前の例の `evensQuery` のようなクエリ変数は、クエリ可能型である必要があります。`evensQuery` の型はローカル型の推論を使用して、コンパイラにより再配置 `IEnumerable(Of Integer)`です。  
   
@@ -86,13 +86,13 @@ caps.handback.revision: 54
 ### 遅延実行  
  一般的な [!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq-md.md)] クエリでは、前の例の `evensQuery` ようなものが定義されます。  つまり、クエリを作成しても、すぐには実行されません。  代わりに、クエリ変数 `evensQuery` にクエリ定義が格納されます。  クエリは後で実行され、通常は、値のシーケンスを返す `For Each` ループを使用するか、`Count` や `Max` などの標準クエリ演算子を適用することで行われます。  この処理を*遅延実行*と呼びます。  
   
- [!code-vb[VbLINQFirstQuery#7](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/visualbasic/writing-your-first-linq-_3.vb)]  
+ [!code-vb[VbLINQFirstQuery#7](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/VisualBasic/writing-your-first-linq-query_3.vb)]  
   
  値のシーケンスの場合、取得したデータにアクセスするには、`For Each` ループの反復変数 \(前の例の `number`\) を使用します。  クエリ変数 `evensQuery` にはクエリ結果ではなくクエリ定義が保持されているため、クエリ変数を複数回使用することで、必要に応じて何度でもクエリを実行できます。  たとえば、アプリケーションで使用しているデータベースが、別のアプリケーションによって頻繁に更新されるとします。  データベースのデータを取得するクエリを作成したら、`For Each` ループを使用してクエリを繰り返し実行することで、常に最新のデータを取得できます。  
   
  次の例は、遅延実行のしくみを示しています。  前の例と同様に、`evensQuery2` が定義され、`For Each` ループで実行されますが、その後でデータ ソース `numbers` の一部の要素が変更されます。  次に、2 回目の `For Each` ループによって `evensQuery2` が再実行されます。  2 回目は、`For Each` ループが `numbers` の新しい値を使用してクエリを再実行するため、結果が異なります。  
   
- [!code-vb[VbLINQFirstQuery#3](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/visualbasic/writing-your-first-linq-_4.vb)]  
+ [!code-vb[VbLINQFirstQuery#3](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/VisualBasic/writing-your-first-linq-query_4.vb)]  
   
  出力  
   
@@ -109,15 +109,15 @@ caps.handback.revision: 54
   
  次の例のクエリは、整数の配列に含まれる偶数の数を返します。  クエリ定義は保存されず、`numEvens` は単純な `Integer` になります。  
   
- [!code-vb[VbLINQFirstQuery#4](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/visualbasic/writing-your-first-linq-_5.vb)]  
+ [!code-vb[VbLINQFirstQuery#4](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/VisualBasic/writing-your-first-linq-query_5.vb)]  
   
  `Aggregate` メソッドを使用しても、同じ結果を得ることができます。  
   
- [!code-vb[VbLINQFirstQuery#5](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/visualbasic/writing-your-first-linq-_6.vb)]  
+ [!code-vb[VbLINQFirstQuery#5](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/VisualBasic/writing-your-first-linq-query_6.vb)]  
   
  次のコードに示すように、クエリ \(即時実行の場合\) またはクエリ変数 \(遅延実行の場合\) に対して `ToList` メソッドまたは `ToArray` メソッドを呼び出すことでも、クエリを強制的に実行できます。  
   
- [!code-vb[VbLINQFirstQuery#6](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/visualbasic/writing-your-first-linq-_7.vb)]  
+ [!code-vb[VbLINQFirstQuery#6](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/VisualBasic/writing-your-first-linq-query_7.vb)]  
   
  前の例では、`evensQuery3` はクエリ変数ですが、`evensList` はリストで、`evensArray` は配列です。  
   

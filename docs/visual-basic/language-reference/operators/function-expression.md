@@ -67,19 +67,19 @@ End Function
 ## 使用例  
  単純なラムダ式を作成する 2 とおりの方法を次の例に示します。  最初の方法では、`Dim` を使用して関数の名前を提要します。  関数を呼び出すには、パラメーターの値を指定します。  
   
- [!code-vb[VbVbalrLambdas#1](../../../visual-basic/language-reference/operators/codesnippet/visualbasic/vbvbalrlambdas/Class1.vb#1)]  
+ [!code-vb[VbVbalrLambdas#1](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/function-expression_1.vb)]  
   
- [!code-vb[VbVbalrLambdas#2](../../../visual-basic/language-reference/operators/codesnippet/visualbasic/vbvbalrlambdas/Class1.vb#2)]  
+ [!code-vb[VbVbalrLambdas#2](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/function-expression_2.vb)]  
   
 ## 使用例  
  または、関数の宣言と実行を同時に行うことができます。  
   
- [!code-vb[VbVbalrLambdas#3](../../../visual-basic/language-reference/operators/codesnippet/visualbasic/vbvbalrlambdas/Class1.vb#3)]  
+ [!code-vb[VbVbalrLambdas#3](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/function-expression_3.vb)]  
   
 ## 使用例  
  以下は、引数をインクリメントし、その値を返すラムダ式の例です。  この例では、ラムダ式関数の単一行と複数行の両方の構文を示しています。  その他の例については、「[Lambda Expressions](../../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md)」を参照してください。  
   
- [!code-vb[VbVbalrLambdas#14](../../../visual-basic/language-reference/operators/codesnippet/visualbasic/vbvbalrlambdas/Class1.vb#14)]  
+ [!code-vb[VbVbalrLambdas#14](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/function-expression_4.vb)]  
   
 ## 使用例  
  ラムダ式は、[!INCLUDE[vbteclinqext](../../../csharp/getting-started/includes/vbteclinqext-md.md)] において多くのクエリ演算子の基礎になっており、メソッド ベースのクエリで明示的に使用できます。  次の例では、典型的な [!INCLUDE[vbteclinq](../../../csharp/includes/vbteclinq-md.md)] クエリと、それに続いてクエリのメソッド形式への変換を示します。  

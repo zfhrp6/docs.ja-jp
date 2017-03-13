@@ -82,11 +82,11 @@ caps.handback.revision: 17
 ### 宣言と呼び出しの説明  
  次の構造体は、符号付き 128 ビットの整数値を、上位と下位の構成部分として格納します。  `+` 演算子を定義し、2 つの  `veryLong`  値を追加し、最終的な  `veryLong`  値を生成します。  
   
- [!code-vb[VbVbcnProcedures#23](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/operator-procedures_1.vb)]  
+ [!code-vb[VbVbcnProcedures#23](./codesnippet/VisualBasic/operator-procedures_1.vb)]  
   
  次の例では、 `veryLong` で定義された `+` 演算子の一般的な呼び出しを示します。  
   
- [!code-vb[VbVbcnProcedures#24](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/operator-procedures_2.vb)]  
+ [!code-vb[VbVbcnProcedures#24](./codesnippet/VisualBasic/operator-procedures_2.vb)]  
   
  使用例を含む詳細については、「[Operator Overloading in Visual Basic 2005](http://go.microsoft.com/fwlink/?LinkId=101703)」を参照してください。  
   

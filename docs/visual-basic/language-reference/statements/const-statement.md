@@ -98,12 +98,12 @@ Const constantlist
 ## 使用例  
  `Const` ステートメントを使って、リテラル値の代わりに使用する定数を宣言するコード例は、次のとおりです。  
   
- [!code-vb[VbVbalrStatements#13](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/const-statement_1.vb)]  
+ [!code-vb[VbVbalrStatements#13](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/const-statement_1.vb)]  
   
 ## 使用例  
  データ型が `Object` である定数を定義すると、Visual Basic コンパイラはそれを `Object` 型ではなく、`initializer` 型にします。  次の例では、定数 `naturalLogBase` のランタイム型は `Decimal` です。  
   
- [!code-vb[VbVbalrStatements#87](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/const-statement_2.vb)]  
+ [!code-vb[VbVbalrStatements#87](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/const-statement_2.vb)]  
   
  この例では、`CStr` を使用して <xref:System.Type> を `String` に変換できないため、[GetType Operator](../../../visual-basic/language-reference/operators/gettype-operator.md) から返された <xref:System.Type> オブジェクトの <xref:System.Type.ToString%2A> メソッドが使用されます。  
   

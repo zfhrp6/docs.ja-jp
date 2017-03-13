@@ -44,14 +44,14 @@ root.GetDirectories("*.*", System.IO.SearchOption.AllDirectories);
   
  処理される特定の例外、および各ファイルまたは各フォルダーに対して実行される特定の操作は、例としてのみ用意したものです。  特定の要件を満たすには、このコードを修正する必要があります。  詳細については、コード内のコメントを参照してください。  
   
- [!code-cs[csFilesandFolders#1](../../../csharp/programming-guide/file-system/codesnippet/csharp/csFilesFolders/FileIteration.cs#1)]  
+ [!code-cs[csFilesandFolders#1](../../../csharp/programming-guide/file-system/codesnippet/CSharp/how-to-iterate-through-a-directory-tree_1.cs)]  
   
 ## 使用例  
  再帰を使用せずにディレクトリ ツリー内のファイルおよびフォルダーを反復処理する方法を、次の例に示します。  この方法では、後入れ先出し \(LIFO: Last In First Out\) スタックである <xref:System.Collections.Generic.Stack%601> コレクション型を使用します。  
   
  処理される特定の例外、および各ファイルまたは各フォルダーに対して実行される特定の操作は、例としてのみ用意したものです。  特定の要件を満たすには、このコードを修正する必要があります。  詳細については、コード内のコメントを参照してください。  
   
- [!code-cs[csFilesandFolders#2](../../../csharp/programming-guide/file-system/codesnippet/csharp/csFilesFolders/FileIteration.cs#2)]  
+ [!code-cs[csFilesandFolders#2](../../../csharp/programming-guide/file-system/codesnippet/CSharp/how-to-iterate-through-a-directory-tree_2.cs)]  
   
  アプリケーションにフォルダーを開くアクセス許可があるかどうか確認するためにすべてのフォルダーをテストするのは、通常、たいへん時間がかかります。  そのため、コード例には、`try/catch` ブロック内の操作のその部分のみが含まれています。  `catch` ブロックを修正すると、フォルダーへのアクセスを拒否されたとき、アクセス許可を昇格して再びアクセスを試行できます。  原則として、アプリケーションが不明の状態にならずに処理できる例外のみをキャッチします。  
   

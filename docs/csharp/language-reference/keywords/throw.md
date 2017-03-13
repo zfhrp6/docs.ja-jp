@@ -36,7 +36,7 @@ throw new MyException();
 ## 使用例  
  `throw` ステートメントで例外をスローする例を次に示します。  
   
- [!code-cs[csrefKeywordsExceptions#5](../../../csharp/language-reference/keywords/codesnippet/csharp/throw_1.cs)]  
+ [!code-cs[csrefKeywordsExceptions#5](../../../csharp/language-reference/keywords/codesnippet/CSharp/throw_1.cs)]  
   
 ## コード例  
  「[try\-catch](../../../csharp/language-reference/keywords/try-catch.md)」および「[方法 : 例外を明示的にスローする](../Topic/How%20to:%20Explicitly%20Throw%20Exceptions.md)」の例を参照してください。  

@@ -51,7 +51,7 @@ caps.handback.revision: 15
 ## 使用例  
  [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] の <xref:Microsoft.VisualBasic.Interaction.Environ%2A> を呼び出して、オペレーティング システムの環境変数の値を取得する例を次に示します。  最初の行では `Environ` を式から呼び出し、2 行目ではこれを代入ステートメントから呼び出します。  `Environ` は、唯一の引数として変数名を受け取ります。  変数の値が呼び出し元のコードに返されます。  
   
- [!code-vb[VbVbcnProcedures#7](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/how-to-call-a-procedure-_0_1.vb)]  
+ [!code-vb[VbVbcnProcedures#7](./codesnippet/VisualBasic/how-to-call-a-procedure-that-returns-a-value_1.vb)]  
   
 ## 参照  
  [Function プロシージャ](../../../../visual-basic/programming-guide/language-features/procedures/function-procedures.md)   

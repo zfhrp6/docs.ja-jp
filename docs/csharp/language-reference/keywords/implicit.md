@@ -22,7 +22,7 @@ caps.handback.revision: 19
 `implicit` キーワードを使用して、暗黙のユーザー定義型変換演算子を宣言します。  変換を実行してもデータ損失が発生する心配がない場合に、ユーザー定義型からその他の型、またはその他の型からユーザー型への暗黙の型変換を有効にするために使用します。  
   
 ## 使用例  
- [!code-cs[csrefKeywordsConversion#5](../../../csharp/language-reference/keywords/codesnippet/csharp/implicit_1.cs)]  
+ [!code-cs[csrefKeywordsConversion#5](../../../csharp/language-reference/keywords/codesnippet/CSharp/implicit_1.cs)]  
   
  不要なキャストを省けるため、暗黙の型変換を行う場合はソース コードが読みやすくなります。  ただし、暗黙の型変換では、一方の型からもう一方の型へ明示的にキャストする必要がないため、予期しない結果が発生しないように注意する必要があります。  暗黙の演算子は、通常、プログラマが変換を認識していなくても安全に使用できるように、変換中に例外をスローしたり情報を失ったりしないことが必要です。  このような条件を満たせない変換演算子には、`explicit` キーワードを使用する必要があります。  詳細については、「[変換演算子の使用 \(C\# プログラミング ガイド\)](../../../csharp/programming-guide/statements-expressions-operators/using-conversion-operators.md)」を参照してください。  
   

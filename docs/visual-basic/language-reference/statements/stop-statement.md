@@ -47,7 +47,7 @@ Stop
 ## 使用例  
  `Stop` ステートメントを使って、`For...Next` ループを繰り返すごとに中断するコード例は、次のとおりです。  
   
- [!code-vb[VbVbalrStatements#56](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/stop-statement_1.vb)]  
+ [!code-vb[VbVbalrStatements#56](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/stop-statement_1.vb)]  
   
 ## 参照  
  [End Statement](../../../visual-basic/language-reference/statements/end-statement.md)

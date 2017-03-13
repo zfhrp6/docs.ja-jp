@@ -70,9 +70,9 @@ Option Explicit { On | Off }
 ## 使用例  
  次の例では、`Option Explicit` ステートメントを使用して、すべての変数を明示的に宣言するよう強制します。  宣言されていない変数を使用すると、コンパイル時にエラーが発生します。  
   
- [!code-vb[VbVbalrStatements#47](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/option-explicit-statement_1.vb)]  
+ [!code-vb[VbVbalrStatements#47](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/option-explicit-statement_1.vb)]  
   
- [!code-vb[VbVbalrStatements#48](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/option-explicit-statement_2.vb)]  
+ [!code-vb[VbVbalrStatements#48](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/option-explicit-statement_2.vb)]  
   
 ## 参照  
  [Dim Statement](../../../visual-basic/language-reference/statements/dim-statement.md)   

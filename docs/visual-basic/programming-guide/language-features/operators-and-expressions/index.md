@@ -67,7 +67,7 @@ caps.handback.revision: 18
   
  次の例ように、1 つの式またはステートメントで複数の演算子を使うこともできます。  
   
- [!code-vb[VbVbalrOperators#56](../../../../visual-basic/language-reference/operators/codesnippet/visualbasic/index_1.vb)]  
+ [!code-vb[VbVbalrOperators#56](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/index_1.vb)]  
   
  この例では、[!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] によって代入演算子 \(`=`\) の右側にある式の演算が実行され、次にその結果の値が左側にある変数 `x` に代入されます。  1 つの式で使用できる演算子の数には、事実上制限はありません。ただし、正しい結果を得るためには、[Operator Precedence in Visual Basic](../../../../visual-basic/language-reference/operators/operator-precedence.md)を理解する必要があります。  
   

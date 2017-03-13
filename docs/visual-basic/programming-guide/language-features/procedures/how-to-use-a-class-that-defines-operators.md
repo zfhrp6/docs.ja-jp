@@ -35,9 +35,9 @@ caps.handback.revision: 21
 ## 使用例  
  次の例では、SQL 文字列と [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] 文字列を相互に変換する変換演算子 \([CType 関数](../../../../visual-basic/language-reference/functions/ctype-function.md)\) を定義する SQL 構造体 <xref:System.Data.SqlTypes.SqlString> にアクセスします。  SQL 文字列を [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] 文字列に変換するには `CType(`*SQL 文字列式*, `String)` を使用し、逆の変換を行うには `CType(`*Visual Basic 文字列式*, <xref:System.Data.SqlTypes.SqlString>`)` を使用します。  
   
- [!code-vb[VbVbcnProcedures#30](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/how-to-use-a-class-that-_1.vb)]  
+ [!code-vb[VbVbcnProcedures#30](./codesnippet/VisualBasic/how-to-use-a-class-that-defines-operators_1.vb)]  
   
- [!code-vb[VbVbcnProcedures#31](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/how-to-use-a-class-that-_2.vb)]  
+ [!code-vb[VbVbcnProcedures#31](./codesnippet/VisualBasic/how-to-use-a-class-that-defines-operators_2.vb)]  
   
  <xref:System.Data.SqlTypes.SqlString> 構造体は、`String` から <xref:System.Data.SqlTypes.SqlString> へ、そして <xref:System.Data.SqlTypes.SqlString> から `String` への変換を行う変換演算子 \([CType 関数](../../../../visual-basic/language-reference/functions/ctype-function.md)\) を定義します。  `title` を `jobTitle` に代入するステートメントは最初の演算子を使用し、<xref:Microsoft.VisualBasic.Interaction.MsgBox%2A> 関数の呼び出しは 2 つ目の演算子を使用します。  
   

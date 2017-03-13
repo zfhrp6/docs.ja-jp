@@ -29,7 +29,7 @@ caps.handback.revision: 20
   
 -   他の変数で行うように、配列を渡す前に、配列を宣言し、<xref:System.Enum.GetValues%2A> メソッドを使用して列挙型を変換します。  次の例は、列挙体 <xref:Microsoft.VisualBasic.FirstDayOfWeek> を繰り返し処理して、列挙体の各メンバーを表示します。  
   
-     [!code-vb[VbEnumsTask#7](../../../../visual-basic/language-reference/statements/codesnippet/visualbasic/WindowsApplication1/Class2.vb#7)]  
+     [!code-vb[VbEnumsTask#7](../../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/how-to-iterate-through-an-enumeration_1.vb)]  
   
 ## 参照  
  [Enumerations Overview](../../../../visual-basic/programming-guide/language-features/constants-enums/enumerations-overview.md)   

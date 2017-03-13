@@ -32,7 +32,7 @@ caps.handback.revision: 13
   
 -   メンバー名を列挙型で修飾します。  たとえば次の例では、変数 `DayValue` に、`FirstDayOfWeek` 列挙型の `Saturday` メンバーを割り当てます。  
   
-     [!code-vb[VbEnumsTask#19](../../../../visual-basic/language-reference/statements/codesnippet/visualbasic/WindowsApplication1/Class2.vb#19)]  
+     [!code-vb[VbEnumsTask#19](../../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/how-to-refer-to-an-enumeration-member_1.vb)]  
   
 ## 参照  
  [How to: Declare an Enumeration](../../../../visual-basic/programming-guide/language-features/constants-enums/how-to-declare-enumerations.md)   

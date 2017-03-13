@@ -35,7 +35,7 @@ caps.handback.revision: 28
   
  たとえば、次のコード例は、コレクションから顧客リストを返し、住所に基づいて顧客をグループ化する LINQ クエリを示しています。  
   
- [!code-vb[VbVbalrIntroToLINQ#1](../../../../visual-basic/programming-guide/language-features/linq/codesnippet/visualbasic/introduction-to-linq_1.vb)]  
+ [!code-vb[VbVbalrIntroToLINQ#1](../../../../visual-basic/programming-guide/language-features/linq/codesnippet/VisualBasic/introduction-to-linq_1.vb)]  
   
  このトピックには、次の項目に関する情報が含まれています。  
   
@@ -62,7 +62,7 @@ caps.handback.revision: 28
 ##  <a name="RunningtheExamples"></a> 例の実行  
  概要と「LINQ クエリの構造」セクションの例を実行するには、次のコードを含めます。このコードは、顧客と注文の一覧を返します。  
   
- [!code-vb[VbVbalrIntroToLINQ#31](../../../../visual-basic/programming-guide/language-features/linq/codesnippet/visualbasic/introduction-to-linq_2.vb)]  
+ [!code-vb[VbVbalrIntroToLINQ#31](../../../../visual-basic/programming-guide/language-features/linq/codesnippet/VisualBasic/introduction-to-linq_2.vb)]  
   
 ##  <a name="LINQProviders"></a> LINQ プロバイダー  
  *LINQ プロバイダー*は、[!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] LINQ クエリを、クエリ対象のデータ ソースに対応付けます。  LINQ クエリを記述すると、そのクエリは、プロバイダーによって、データ ソースが実行できるコマンドに変換されます。  プロバイダーは、ソースのデータを、クエリ結果を構成するオブジェクトに変換する操作も行います。  最後に、プロバイダーは、データ ソースに更新が送信されるときに、オブジェクトをデータに変換します。  
@@ -82,23 +82,23 @@ caps.handback.revision: 28
   
  クエリ式は、`From` 句で始まります。  この句は、クエリのソース データと、ソース データの各要素を個別に参照するために使用される変数を識別します。  これらの変数は、*範囲変数*または*反復変数*と呼ばれます。  `From` 句は、`Aggregate` クエリ以外のクエリでは必須です。このクエリでは、`From` 句は省略できます。  `From` 句または `Aggregate` 句でクエリのスコープとソースを識別した後、クエリを絞り込むためのクエリ句を自由に組み合わせて記述できます。  クエリ句の詳細については、このトピックの「[!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] LINQ クエリ演算子」を参照してください。  たとえば、次のクエリでは、顧客データのソース コレクションを `customers` 変数として識別し、`cust` という名前の反復変数を識別します。  
   
- [!code-vb[VbVbalrIntroToLINQ#2](../../../../visual-basic/programming-guide/language-features/linq/codesnippet/visualbasic/introduction-to-linq_3.vb)]  
+ [!code-vb[VbVbalrIntroToLINQ#2](../../../../visual-basic/programming-guide/language-features/linq/codesnippet/VisualBasic/introduction-to-linq_3.vb)]  
   
  この例はそのままでも有効なクエリですが、結果を絞り込むクエリ句を追加すると、はるかに強力なクエリになります。  たとえば、`Where` 句を追加して、結果を 1 つ以上の値でフィルター処理できます。  クエリ式は、1 行のコードです。追加のクエリ句は、クエリの末尾に単純に追加できます。  クエリを読みやすくするために、行連結文字のアンダースコア \(\_\) を使用して、複数のテキスト行に分割できます。  次のコード例は、`Where` 句を含むクエリの例を示しています。  
   
- [!code-vb[VbVbalrIntroToLINQ#3](../../../../visual-basic/programming-guide/language-features/linq/codesnippet/visualbasic/introduction-to-linq_4.vb)]  
+ [!code-vb[VbVbalrIntroToLINQ#3](../../../../visual-basic/programming-guide/language-features/linq/codesnippet/VisualBasic/introduction-to-linq_4.vb)]  
   
  別の強力なクエリ句として、`Select` 句があります。この句を使用すると、データ ソースから選択したフィールドだけを返すことができます。  LINQ クエリは、厳密に型指定されたオブジェクトの列挙可能なコレクションを返します。  クエリは、匿名型または名前付きの型のコレクションを返すことができます。  `Select` 句を使用して、データ ソースから単一のフィールドを返すことができます。  これを行った場合、返されるコレクションの型は、その単一のフィールドの型になります。  `Select` 句を使用して、データ ソースから複数のフィールドを返すこともできます。  これを行った場合、返されるコレクションの型は、新しい匿名型になります。  クエリで返されたフィールドを、指定した名前付きの型のフィールドと一致させることもできます。  次のコード例は、データ ソースから選択されたフィールドのデータが設定されたメンバーのコレクションで、匿名型のコレクションを返すクエリ式を示します。  
   
- [!code-vb[VbVbalrIntroToLINQ#4](../../../../visual-basic/programming-guide/language-features/linq/codesnippet/visualbasic/introduction-to-linq_5.vb)]  
+ [!code-vb[VbVbalrIntroToLINQ#4](../../../../visual-basic/programming-guide/language-features/linq/codesnippet/VisualBasic/introduction-to-linq_5.vb)]  
   
  LINQ クエリを使用して、複数のデータ ソースを結合し、単一の結果を返すこともできます。  これは、1 つまたは複数の `From` 句を使用するか、`Join` クエリ句または `Group Join` クエリ句を使用して実行できます。  次のコード例は、顧客データと注文データを結合し、顧客データと注文データが格納された匿名型のコレクションを返すクエリ式を示します。  
   
- [!code-vb[VbVbalrIntroToLINQ#5](../../../../visual-basic/programming-guide/language-features/linq/codesnippet/visualbasic/introduction-to-linq_6.vb)]  
+ [!code-vb[VbVbalrIntroToLINQ#5](../../../../visual-basic/programming-guide/language-features/linq/codesnippet/VisualBasic/introduction-to-linq_6.vb)]  
   
  `Group Join` 句を使用して、顧客オブジェクトのコレクションを格納する階層的なクエリ結果を作成できます。  各顧客オブジェクトには、その顧客のすべての注文のコレクションを含むプロパティがあります。  次のコード例は、顧客データと注文データを階層的な結果として結合し、匿名型のコレクションを返すクエリ式を示します。  このクエリは、顧客の注文データのコレクションを格納する `CustomerOrders` プロパティを含む型を返します。  その顧客のすべての注文の合計を格納する `OrderTotal` プロパティも含まれます   \(このクエリは、LEFT OUTER JOIN と同等です\)。  
   
- [!code-vb[VbVbalrIntroToLINQ#6](../../../../visual-basic/programming-guide/language-features/linq/codesnippet/visualbasic/introduction-to-linq_7.vb)]  
+ [!code-vb[VbVbalrIntroToLINQ#6](../../../../visual-basic/programming-guide/language-features/linq/codesnippet/VisualBasic/introduction-to-linq_7.vb)]  
   
  上記以外にも、強力なクエリ式を作成するために使用できる、さまざまな LINQ クエリ演算子があります。  このトピックの次のセクションで、クエリ式で使用できるさまざまなクエリ句について説明します。  [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] クエリ句の詳細については、「[Queries](../../../../visual-basic/language-reference/queries/queries.md)」を参照してください。  
   
@@ -108,26 +108,26 @@ caps.handback.revision: 28
 |||  
 |-|-|  
 |用語|定義|  
-|[From Clause](../../../../visual-basic/language-reference/queries/from-clause.md)|クエリを開始するには、`From` 句または `Aggregate` 句のいずれかが必要です。  `From` 句は、クエリのソース コレクションと反復変数を指定します。  例:<br /><br /> [!code-vb[VbVbalrIntroToLINQ#7](../../../../visual-basic/programming-guide/language-features/linq/codesnippet/visualbasic/introduction-to-linq_8.vb)]|  
-|[Select Clause](../../../../visual-basic/language-reference/queries/select-clause.md)|省略可能です。  クエリの反復変数のセットを宣言します。  例:<br /><br /> [!code-vb[VbVbalrIntroToLINQ#8](../../../../visual-basic/programming-guide/language-features/linq/codesnippet/visualbasic/introduction-to-linq_9.vb)]<br /><br /> `Select` 句の指定がない場合、クエリの反復変数は、`From` 句または `Aggregate` 句で指定された反復変数で構成されます。|  
-|[Where Clause](../../../../visual-basic/language-reference/queries/where-clause.md)|省略可能です。  クエリのフィルター処理条件を指定します。  例:<br /><br /> [!code-vb[VbVbalrIntroToLINQ#9](../../../../visual-basic/programming-guide/language-features/linq/codesnippet/visualbasic/introduction-to-linq_10.vb)]|  
-|[Order By Clause](../../../../visual-basic/language-reference/queries/order-by-clause.md)|省略可能です。  クエリ内に列の並べ替え順序を指定します。  例:<br /><br /> [!code-vb[VbVbalrIntroToLINQ#10](../../../../visual-basic/programming-guide/language-features/linq/codesnippet/visualbasic/introduction-to-linq_11.vb)]|  
-|[Join Clause](../../../../visual-basic/language-reference/queries/join-clause.md)|省略可能です。  2 つのコレクションを単一のコレクションに結合します。  例:<br /><br /> [!code-vb[VbVbalrIntroToLINQ#11](../../../../visual-basic/programming-guide/language-features/linq/codesnippet/visualbasic/introduction-to-linq_12.vb)]|  
-|[Group By 句](../../../../visual-basic/language-reference/queries/group-by-clause.md)|省略可能です。  クエリ結果の要素をグループ化します。  これを使用して、グループごとに集計関数を適用できます。  例:<br /><br /> [!code-vb[VbVbalrIntroToLINQ#12](../../../../visual-basic/programming-guide/language-features/linq/codesnippet/visualbasic/introduction-to-linq_13.vb)]|  
-|[Group Join Clause](../../../../visual-basic/language-reference/queries/group-join-clause.md)|省略可能です。  2 つのコレクションを、単一の階層コレクションに結合します。  例:<br /><br /> [!code-vb[VbVbalrIntroToLINQ#13](../../../../visual-basic/programming-guide/language-features/linq/codesnippet/visualbasic/introduction-to-linq_14.vb)]|  
-|[Aggregate Clause](../../../../visual-basic/language-reference/queries/aggregate-clause.md)|クエリを開始するには、`From` 句または `Aggregate` 句のいずれかが必要です。  `Aggregate` 句は、1 つ以上の集計関数をコレクションに適用します。  たとえば、`Aggregate` 句を使用して、クエリで返されたすべての要素の合計を計算できます。<br /><br /> [!code-vb[VbVbalrIntroToLINQ#14](../../../../visual-basic/programming-guide/language-features/linq/codesnippet/visualbasic/introduction-to-linq_15.vb)]<br /><br /> `Aggregate` 句を使用してクエリを変更することもできます。  たとえば、`Aggregate` 句を使用して、関連するクエリ コレクションに対して計算を実行できます。<br /><br /> [!code-vb[VbVbalrIntroToLINQ#15](../../../../visual-basic/programming-guide/language-features/linq/codesnippet/visualbasic/introduction-to-linq_16.vb)]|  
-|[Let Clause](../../../../visual-basic/language-reference/queries/let-clause.md)|省略可能です。  値を計算し、その値をクエリ内の新しい変数に代入します。  例:<br /><br /> [!code-vb[VbVbalrIntroToLINQ#16](../../../../visual-basic/programming-guide/language-features/linq/codesnippet/visualbasic/introduction-to-linq_17.vb)]|  
-|[Distinct Clause](../../../../visual-basic/language-reference/queries/distinct-clause.md)|省略可能です。  現在の反復変数の値を制限して、クエリ結果内で重複する値を除去します。  例:<br /><br /> [!code-vb[VbVbalrIntroToLINQ#17](../../../../visual-basic/programming-guide/language-features/linq/codesnippet/visualbasic/introduction-to-linq_18.vb)]|  
-|[Skip Clause](../../../../visual-basic/language-reference/queries/skip-clause.md)|省略可能です。  コレクション内の指定された数の要素をバイパスし、残りの要素を返します。  例:<br /><br /> [!code-vb[VbVbalrIntroToLINQ#18](../../../../visual-basic/programming-guide/language-features/linq/codesnippet/visualbasic/introduction-to-linq_19.vb)]|  
-|[Skip While Clause](../../../../visual-basic/language-reference/queries/skip-while-clause.md)|省略可能です。  指定された条件が `true` である限り、コレクションの要素をバイパスし、残りの要素を返します。  例:<br /><br /> [!code-vb[VbVbalrIntroToLINQ#19](../../../../visual-basic/programming-guide/language-features/linq/codesnippet/visualbasic/introduction-to-linq_20.vb)]|  
-|[Take Clause](../../../../visual-basic/language-reference/queries/take-clause.md)|省略可能です。  コレクションの先頭から、指定された数の連続する要素を返します。  例:<br /><br /> [!code-vb[VbVbalrIntroToLINQ#20](../../../../visual-basic/programming-guide/language-features/linq/codesnippet/visualbasic/introduction-to-linq_21.vb)]|  
-|[Take While Clause](../../../../visual-basic/language-reference/queries/take-while-clause.md)|省略可能です。  指定された条件が `true` である限り、コレクションの要素を含むようにし、残りの要素をバイパスします。  例:<br /><br /> [!code-vb[VbVbalrIntroToLINQ#21](../../../../visual-basic/programming-guide/language-features/linq/codesnippet/visualbasic/introduction-to-linq_22.vb)]|  
+|[From Clause](../../../../visual-basic/language-reference/queries/from-clause.md)|クエリを開始するには、`From` 句または `Aggregate` 句のいずれかが必要です。  `From` 句は、クエリのソース コレクションと反復変数を指定します。  例:<br /><br /> [!code-vb[VbVbalrIntroToLINQ#7](../../../../visual-basic/programming-guide/language-features/linq/codesnippet/VisualBasic/introduction-to-linq_8.vb)]|  
+|[Select Clause](../../../../visual-basic/language-reference/queries/select-clause.md)|省略可能です。  クエリの反復変数のセットを宣言します。  例:<br /><br /> [!code-vb[VbVbalrIntroToLINQ#8](../../../../visual-basic/programming-guide/language-features/linq/codesnippet/VisualBasic/introduction-to-linq_9.vb)]<br /><br /> `Select` 句の指定がない場合、クエリの反復変数は、`From` 句または `Aggregate` 句で指定された反復変数で構成されます。|  
+|[Where Clause](../../../../visual-basic/language-reference/queries/where-clause.md)|省略可能です。  クエリのフィルター処理条件を指定します。  例:<br /><br /> [!code-vb[VbVbalrIntroToLINQ#9](../../../../visual-basic/programming-guide/language-features/linq/codesnippet/VisualBasic/introduction-to-linq_10.vb)]|  
+|[Order By Clause](../../../../visual-basic/language-reference/queries/order-by-clause.md)|省略可能です。  クエリ内に列の並べ替え順序を指定します。  例:<br /><br /> [!code-vb[VbVbalrIntroToLINQ#10](../../../../visual-basic/programming-guide/language-features/linq/codesnippet/VisualBasic/introduction-to-linq_11.vb)]|  
+|[Join Clause](../../../../visual-basic/language-reference/queries/join-clause.md)|省略可能です。  2 つのコレクションを単一のコレクションに結合します。  例:<br /><br /> [!code-vb[VbVbalrIntroToLINQ#11](../../../../visual-basic/programming-guide/language-features/linq/codesnippet/VisualBasic/introduction-to-linq_12.vb)]|  
+|[Group By 句](../../../../visual-basic/language-reference/queries/group-by-clause.md)|省略可能です。  クエリ結果の要素をグループ化します。  これを使用して、グループごとに集計関数を適用できます。  例:<br /><br /> [!code-vb[VbVbalrIntroToLINQ#12](../../../../visual-basic/programming-guide/language-features/linq/codesnippet/VisualBasic/introduction-to-linq_13.vb)]|  
+|[Group Join Clause](../../../../visual-basic/language-reference/queries/group-join-clause.md)|省略可能です。  2 つのコレクションを、単一の階層コレクションに結合します。  例:<br /><br /> [!code-vb[VbVbalrIntroToLINQ#13](../../../../visual-basic/programming-guide/language-features/linq/codesnippet/VisualBasic/introduction-to-linq_14.vb)]|  
+|[Aggregate Clause](../../../../visual-basic/language-reference/queries/aggregate-clause.md)|クエリを開始するには、`From` 句または `Aggregate` 句のいずれかが必要です。  `Aggregate` 句は、1 つ以上の集計関数をコレクションに適用します。  たとえば、`Aggregate` 句を使用して、クエリで返されたすべての要素の合計を計算できます。<br /><br /> [!code-vb[VbVbalrIntroToLINQ#14](../../../../visual-basic/programming-guide/language-features/linq/codesnippet/VisualBasic/introduction-to-linq_15.vb)]<br /><br /> `Aggregate` 句を使用してクエリを変更することもできます。  たとえば、`Aggregate` 句を使用して、関連するクエリ コレクションに対して計算を実行できます。<br /><br /> [!code-vb[VbVbalrIntroToLINQ#15](../../../../visual-basic/programming-guide/language-features/linq/codesnippet/VisualBasic/introduction-to-linq_16.vb)]|  
+|[Let Clause](../../../../visual-basic/language-reference/queries/let-clause.md)|省略可能です。  値を計算し、その値をクエリ内の新しい変数に代入します。  例:<br /><br /> [!code-vb[VbVbalrIntroToLINQ#16](../../../../visual-basic/programming-guide/language-features/linq/codesnippet/VisualBasic/introduction-to-linq_17.vb)]|  
+|[Distinct Clause](../../../../visual-basic/language-reference/queries/distinct-clause.md)|省略可能です。  現在の反復変数の値を制限して、クエリ結果内で重複する値を除去します。  例:<br /><br /> [!code-vb[VbVbalrIntroToLINQ#17](../../../../visual-basic/programming-guide/language-features/linq/codesnippet/VisualBasic/introduction-to-linq_18.vb)]|  
+|[Skip Clause](../../../../visual-basic/language-reference/queries/skip-clause.md)|省略可能です。  コレクション内の指定された数の要素をバイパスし、残りの要素を返します。  例:<br /><br /> [!code-vb[VbVbalrIntroToLINQ#18](../../../../visual-basic/programming-guide/language-features/linq/codesnippet/VisualBasic/introduction-to-linq_19.vb)]|  
+|[Skip While Clause](../../../../visual-basic/language-reference/queries/skip-while-clause.md)|省略可能です。  指定された条件が `true` である限り、コレクションの要素をバイパスし、残りの要素を返します。  例:<br /><br /> [!code-vb[VbVbalrIntroToLINQ#19](../../../../visual-basic/programming-guide/language-features/linq/codesnippet/VisualBasic/introduction-to-linq_20.vb)]|  
+|[Take Clause](../../../../visual-basic/language-reference/queries/take-clause.md)|省略可能です。  コレクションの先頭から、指定された数の連続する要素を返します。  例:<br /><br /> [!code-vb[VbVbalrIntroToLINQ#20](../../../../visual-basic/programming-guide/language-features/linq/codesnippet/VisualBasic/introduction-to-linq_21.vb)]|  
+|[Take While Clause](../../../../visual-basic/language-reference/queries/take-while-clause.md)|省略可能です。  指定された条件が `true` である限り、コレクションの要素を含むようにし、残りの要素をバイパスします。  例:<br /><br /> [!code-vb[VbVbalrIntroToLINQ#21](../../../../visual-basic/programming-guide/language-features/linq/codesnippet/VisualBasic/introduction-to-linq_22.vb)]|  
   
  [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] クエリ句の詳細については、「[Queries](../../../../visual-basic/language-reference/queries/queries.md)」を参照してください。  
   
  LINQ によって提供される列挙可能でクエリ可能な型のメンバーを呼び出すことで、追加の LINQ クエリ機能を使用できます。  これらの追加機能は、クエリ式の結果に対して特定のクエリ演算子を呼び出すことで使用できます。  たとえば、次のコード例では、<xref:System.Linq.Enumerable.Union%2A> メソッドを使用して、2 つのクエリの結果を、1 つのクエリ結果に結合します。  また、<xref:System.Linq.Enumerable.ToList%2A> メソッドを使用して、クエリ結果をジェネリック リストとして返します。  
   
- [!code-vb[VbVbalrIntroToLINQ#22](../../../../visual-basic/programming-guide/language-features/linq/codesnippet/visualbasic/introduction-to-linq_23.vb)]  
+ [!code-vb[VbVbalrIntroToLINQ#22](../../../../visual-basic/programming-guide/language-features/linq/codesnippet/VisualBasic/introduction-to-linq_23.vb)]  
   
  その他の LINQ 機能の詳細については、「[Standard Query Operators Overview](../../../../visual-basic/programming-guide/concepts/linq/standard-query-operators-overview.md)」を参照してください。  
   
@@ -165,7 +165,7 @@ caps.handback.revision: 28
   
  次のコード例は、XML 要素を作成し、そのサブ要素と属性にアクセスし、LINQ を使用してその要素の内容を照会する方法を示しています。  
   
- [!code-vb[VbXmlSamples#8](../../../../visual-basic/language-reference/operators/codesnippet/visualbasic/introduction-to-linq_24.vb)]  
+ [!code-vb[VbXmlSamples#8](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/introduction-to-linq_24.vb)]  
   
  詳細については、「[XML](../../../../visual-basic/programming-guide/language-features/xml/index.md)」を参照してください。  
   

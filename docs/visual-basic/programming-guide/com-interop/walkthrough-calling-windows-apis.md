@@ -54,7 +54,7 @@ Windows API は、Windows オペレーティング システムの一部であ�
   
 4.  次の `Declare` 関数を、DLL を使用するクラスまたはモジュールに追加します。  
   
-     [!code-vb[VbVbalrInterop#9](../../../visual-basic/programming-guide/com-interop/codesnippet/visualbasic/vbvbalrinterop/Class1.vb#9)]  
+     [!code-vb[VbVbalrInterop#9](../../../visual-basic/programming-guide/com-interop/codesnippet/VisualBasic/walkthrough-calling-windows-apis_1.vb)]  
   
 ### Declare ステートメントの構成要素  
  `Declare` ステートメントは次の要素で構成されます。  
@@ -88,7 +88,7 @@ Windows API は、Windows オペレーティング システムの一部であ�
   
 3.  クラスまたはモジュールに同等の `Const` ステートメントを追加して、これらの定数をアプリケーションで使用できるようにします。  次に例を示します。  
   
-     [!code-vb[VbVbalrInterop#11](../../../visual-basic/programming-guide/com-interop/codesnippet/visualbasic/vbvbalrinterop/Class1.vb#11)]  
+     [!code-vb[VbVbalrInterop#11](../../../visual-basic/programming-guide/com-interop/codesnippet/VisualBasic/walkthrough-calling-windows-apis_2.vb)]  
   
 ###### DLL プロシージャを呼び出すには  
   
@@ -96,7 +96,7 @@ Windows API は、Windows オペレーティング システムの一部であ�
   
 2.  追加したボタンの `Click` イベント ハンドラーにプロシージャを呼び出すためのコードを追加し、適切な引数を指定します。  
   
-     [!code-vb[VbVbalrInterop#12](../../../visual-basic/programming-guide/com-interop/codesnippet/visualbasic/vbvbalrinterop/Class1.vb#12)]  
+     [!code-vb[VbVbalrInterop#12](../../../visual-basic/programming-guide/com-interop/codesnippet/VisualBasic/walkthrough-calling-windows-apis_3.vb)]  
   
 3.  F5 キーを押してプロジェクトを実行します。  **\[はい\]** 応答ボタンと **\[いいえ\]** 応答ボタンのあるメッセージ ボックスが表示されます。  いずれかのボタンをクリックします。  
   
@@ -109,11 +109,11 @@ Windows API は、Windows オペレーティング システムの一部であ�
   
 2.  `MarshalAs` 属性へのアクセスを簡単にするために、クラスまたはモジュールのコードの先頭に `Imports` ステートメントを追加します。次に例を示します。  
   
-     [!code-vb[VbVbalrInterop#13](../../../visual-basic/programming-guide/com-interop/codesnippet/visualbasic/vbvbalrinterop/Class1.vb#13)]  
+     [!code-vb[VbVbalrInterop#13](../../../visual-basic/programming-guide/com-interop/codesnippet/VisualBasic/walkthrough-calling-windows-apis_4.vb)]  
   
 3.  インポートした関数の関数プロトタイプを、使用するクラスまたはモジュールに追加します。また、パラメーターまたは戻り値に `MarshalAs` 属性を適用します。  次の例では、`void*` 型を受け取る API 呼び出しを `AsAny` としてマーシャリングしています。  
   
-     [!code-vb[VbVbalrInterop#14](../../../visual-basic/programming-guide/com-interop/codesnippet/visualbasic/vbvbalrinterop/Class1.vb#14)]  
+     [!code-vb[VbVbalrInterop#14](../../../visual-basic/programming-guide/com-interop/codesnippet/VisualBasic/walkthrough-calling-windows-apis_5.vb)]  
   
 ## DllImport による API 呼び出し  
  タイプ ライブラリを持たない DLL 内の関数を呼び出すもう 1 つの方法として、`DllImport` 属性があります。  `DllImport` は、`Declare` ステートメントを使用する場合とほぼ同じ働きをしますが、関数の呼び出し方をより細かく制御できます。  
@@ -132,23 +132,23 @@ Windows API は、Windows オペレーティング システムの一部であ�
   
 5.  `DllImport` へのアクセスを簡単にするために、スタートアップ フォーム クラスのコードの先頭に `Imports` ステートメントを追加します。  
   
-     [!code-vb[VbVbalrInterop#13](../../../visual-basic/programming-guide/com-interop/codesnippet/visualbasic/vbvbalrinterop/Class1.vb#13)]  
+     [!code-vb[VbVbalrInterop#13](../../../visual-basic/programming-guide/com-interop/codesnippet/VisualBasic/walkthrough-calling-windows-apis_4.vb)]  
   
 6.  フォームの `End Class` ステートメントの前に空の関数を宣言し、`MoveFile` という名前を付けます。  
   
 7.  関数宣言に `Public` 修飾子および `Shared` 修飾子を適用し、Windows API 関数で使用される引数に基づいて `MoveFile` のパラメーターを設定します。  
   
-     [!code-vb[VbVbalrInterop#16](../../../visual-basic/programming-guide/com-interop/codesnippet/visualbasic/vbvbalrinterop/Class1.vb#16)]  
+     [!code-vb[VbVbalrInterop#16](../../../visual-basic/programming-guide/com-interop/codesnippet/VisualBasic/walkthrough-calling-windows-apis_6.vb)]  
   
      関数は任意の有効なプロシージャ名を持つことができます。`DllImport` 属性によって、この名前が DLL で指定されます。  また、パラメーターと戻り値の相互運用性マーシャリングも処理されるため、API によって使用されるデータ型と同様の Visual Studio データ型を選択できます。  
   
 8.  `DllImport` 属性を空の関数に適用します。  最初のパラメーターは、呼び出しの対象となる関数を含む DLL の名前と場所です。  Windows システム ディレクトリに格納されたファイルのパスを指定する必要はありません。  2 番目のパラメーターは、Windows API 内の関数の名前を指定する名前付き引数です。  この例では、`DllImport` 属性は `MoveFile` の呼び出しを強制的に KERNEL32.DLL 内の `MoveFileW` に転送します。  `MoveFileW` メソッドは、パス `src` からパス `dst` にファイルをコピーします。  
   
-     [!code-vb[VbVbalrInterop#17](../../../visual-basic/programming-guide/com-interop/codesnippet/visualbasic/vbvbalrinterop/Class1.vb#17)]  
+     [!code-vb[VbVbalrInterop#17](../../../visual-basic/programming-guide/com-interop/codesnippet/VisualBasic/walkthrough-calling-windows-apis_7.vb)]  
   
 9. 関数を呼び出すには、コードを `Button2_Click` イベント ハンドラーに追加します。  
   
-     [!code-vb[VbVbalrInterop#18](../../../visual-basic/programming-guide/com-interop/codesnippet/visualbasic/vbvbalrinterop/Class1.vb#18)]  
+     [!code-vb[VbVbalrInterop#18](../../../visual-basic/programming-guide/com-interop/codesnippet/VisualBasic/walkthrough-calling-windows-apis_8.vb)]  
   
 10. Test.txt という名前のファイルを作成し、ハード ドライブ上の C:\\Tmp ディレクトリに配置します。  必要に応じて Tmp ディレクトリを作成します。  
   

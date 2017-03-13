@@ -32,7 +32,7 @@ caps.handback.revision: 23
 ## char 型 \(Char\)  
  char データ型 \(`Char`\) は、2 バイト \(16 ビット\) の Unicode 文字の 1 文字です。  常に 1 文字しか格納しない変数の場合は、`Char` として宣言します。  次に例を示します。  
   
- [!code-vb[VbVbalrCharTypes#1](../../../../visual-basic/programming-guide/language-features/data-types/codesnippet/visualbasic/character-data-types_1.vb)]  
+ [!code-vb[VbVbalrCharTypes#1](../../../../visual-basic/programming-guide/language-features/data-types/codesnippet/VisualBasic/character-data-types_1.vb)]  
   
  `Char` または `String` 変数で指定可能な値は、Unicode 文字セット内の*コード ポイント*、または文字コードです。  Unicode 文字には、基本 ASCII 文字セット、その他各種のアルファベット文字、アクセント、通貨記号、分数、発音記号、数学および科学技術記号が含まれます。  
   
@@ -44,7 +44,7 @@ caps.handback.revision: 23
 ## 文字列型 \(String\)  
  文字列型 \(`String`\) は、0 個以上の 2 バイト \(16 ビット\) の Unicode 文字列です。  変数に格納する文字数が不定の場合は、変数を `String` 型で宣言します。  次に例を示します。  
   
- [!code-vb[VbVbalrCharTypes#2](../../../../visual-basic/programming-guide/language-features/data-types/codesnippet/visualbasic/character-data-types_2.vb)]  
+ [!code-vb[VbVbalrCharTypes#2](../../../../visual-basic/programming-guide/language-features/data-types/codesnippet/VisualBasic/character-data-types_2.vb)]  
   
  詳細については、「[String Data Type](../../../../visual-basic/language-reference/data-types/string-data-type.md)」を参照してください。  
   

@@ -55,8 +55,8 @@ caps.handback.revision: 15
   
 4.  `Event` プロシージャに次のコードを追加します。  
   
-     [!code-cs[VbPowerpacksShape#1](../../../visual-basic/developing-apps/windows-forms/codesnippet/csharp/VbPowerpacksShapeCS/VbPowerpacksShape.cs#1)]
-     [!code-vb[VbPowerpacksShape#1](../../../visual-basic/developing-apps/windows-forms/codesnippet/visualbasic/VbPowerpacksShape/VbPowerpacksShape.vb#1)]  
+     [!code-cs[VbPowerpacksShape#1](../../../visual-basic/developing-apps/windows-forms/codesnippet/CSharp/how-to-draw-shapes-with-the-ovalshape-and-rectangleshape-controls_1.cs)]
+     [!code-vb[VbPowerpacksShape#1](../../../visual-basic/developing-apps/windows-forms/codesnippet/VisualBasic/how-to-draw-shapes-with-the-ovalshape-and-rectangleshape-controls_1.vb)]  
   
 ## 図形のカスタマイズ  
  既定の設定を使用すると、<xref:Microsoft.VisualBasic.PowerPacks.OvalShape> と <xref:Microsoft.VisualBasic.PowerPacks.RectangleShape> の各コントロールが、1 ピクセル幅で透明な背景を持つ黒い実線の境界線と共に表示されます。  プロパティを設定することにより、境界線の幅、スタイル、および色を変更できます。  追加のプロパティを使用すると、図形の背景を純色、パターン、グラデーション塗りつぶし、またはイメージに変更できます。  

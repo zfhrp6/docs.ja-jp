@@ -31,7 +31,7 @@ caps.handback.revision: 31
   
  まず、`Shape` という基底クラスと、`Rectangle`、`Circle`、`Triangle` などの派生クラスを作成します。  `Shape` クラスで `Draw` という仮想メソッドを定義し、各派生クラスでそれをオーバーライドして、そのクラスが表す特定の図形を描画します。  `List<Shape>` オブジェクトを作成し、Circle、Triangle、および Rectangle を追加します。  描画サーフェイスを更新するには、[foreach](../../../csharp/language-reference/keywords/foreach-in.md) ループを使用してリストを反復処理し、リスト内の各 `Shape` オブジェクトの `Draw` メソッドを呼び出します。  リスト内の各オブジェクトの宣言された型は `Shape` ですが、呼び出されるのは実行時の型 \(それぞれの派生クラスでオーバーライドされたメソッド\) になります。  
   
- [!code-cs[csProgGuideInheritance#50](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/polymorphism_1.cs)]  
+ [!code-cs[csProgGuideInheritance#50](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/polymorphism_1.cs)]  
   
  C\# では、すべての型がポリモーフィックです。これは、ユーザー定義型を含むすべての型が <xref:System.Object> から派生するためです。  
   
@@ -48,42 +48,42 @@ caps.handback.revision: 31
   
  派生クラスが基底クラスのメンバーをオーバーライドできるのは、基底クラスのメンバーが [virtual](../../../csharp/language-reference/keywords/virtual.md) または [abstract](../../../csharp/language-reference/keywords/abstract.md) として宣言されている場合だけです。  派生メンバーでは、[override](../../../csharp/language-reference/keywords/override.md) キーワードを使用して、そのメソッドが仮想呼び出しに加わることを明示的に示す必要があります。  次にコード例を示します。  
   
- [!code-cs[csProgGuideInheritance#20](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/polymorphism_2.cs)]  
+ [!code-cs[csProgGuideInheritance#20](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/polymorphism_2.cs)]  
   
  フィールドは仮想メンバーにできません。仮想メンバーにできるのは、メソッド、プロパティ、イベント、およびインデクサーに限られます。  派生クラスが仮想メンバーをオーバーライドすると、派生クラスのメンバーは、そのクラスのインスタンスが基底クラスのインスタンスとしてアクセスされるときでも呼び出されます。  次にコード例を示します。  
   
- [!code-cs[csProgGuideInheritance#21](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/polymorphism_3.cs)]  
+ [!code-cs[csProgGuideInheritance#21](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/polymorphism_3.cs)]  
   
  仮想メソッドとプロパティを使用すると、派生クラスは、基底クラスのメソッドの実装を使用せずに基底クラスを拡張できます。  詳細については、「[Override キーワードと New キーワードによるバージョン管理](../../../csharp/programming-guide/classes-and-structs/versioning-with-the-override-and-new-keywords.md)」を参照してください。  1 つまたは一連のメソッドを定義し、その実装を派生クラスに任せるもう 1 つの方法として、インターフェイスがあります。  詳細については、「[インターフェイス](../../../csharp/programming-guide/interfaces/index.md)」を参照してください。  
   
 ### 新しいメンバーによる基底クラスのメンバーの隠ぺい  
  派生メンバーに基底クラスのメンバーと同じ名前を付けながら、そのメンバーが仮想呼び出しに加わらないようにするには、[new](../../../csharp/language-reference/keywords/new.md) キーワードを使用します。  `new` キーワードは、置き換えられるクラス メンバーの戻り値の型の前に配置します。  次にコード例を示します。  
   
- [!code-cs[csProgGuideInheritance#18](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/polymorphism_4.cs)]  
+ [!code-cs[csProgGuideInheritance#18](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/polymorphism_4.cs)]  
   
  基底クラスのメンバーが隠ぺいされても、派生クラスのインスタンスを基底クラスのインスタンスにキャストすることで、クライアント コードから基底クラスのメンバーにアクセスできます。  次に例を示します。  
   
- [!code-cs[csProgGuideInheritance#19](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/polymorphism_5.cs)]  
+ [!code-cs[csProgGuideInheritance#19](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/polymorphism_5.cs)]  
   
 ### 派生クラスが仮想メンバーをオーバーライドしないようにする  
  仮想メンバーは、それを最初に宣言したクラスとの間でどれほど多くのクラスが宣言されても、いつまでも仮想のままです。  たとえば、クラス A が仮想メンバーを宣言し、クラス B がクラス A から派生し、クラス C がクラス B から派生した場合、クラス C は仮想メンバーを継承し、クラス B がその仮想メンバーのオーバーライドを宣言したかどうかに関係なく、そのメンバーをオーバーライドできます。  次にコード例を示します。  
   
- [!code-cs[csProgGuideInheritance#22](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/polymorphism_6.cs)]  
+ [!code-cs[csProgGuideInheritance#22](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/polymorphism_6.cs)]  
   
  派生クラスでは、オーバーライドを [sealed](../../../csharp/language-reference/keywords/sealed.md) として宣言することで仮想継承を中止できます。  この場合、クラス メンバーの宣言で、`override` キーワードの前に `sealed` キーワードを指定する必要があります。  次にコード例を示します。  
   
- [!code-cs[csProgGuideInheritance#24](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/polymorphism_7.cs)]  
+ [!code-cs[csProgGuideInheritance#24](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/polymorphism_7.cs)]  
   
  上の例では、`DoWork` メソッドは C から派生したどのクラスに対しても仮想メソッドではありません。  C のインスタンスに対しては、B 型や A 型にキャストされた場合でも、依然として仮想メソッドです。  シール メソッドは、次のコード例に示すように、`new` キーワードを使用して派生クラスに置き換えることができます。  
   
- [!code-cs[csProgGuideInheritance#25](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/polymorphism_8.cs)]  
+ [!code-cs[csProgGuideInheritance#25](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/polymorphism_8.cs)]  
   
  このコード例では、`DoWork` が、D 型の変数を使用して D で呼び出されると、新しい `DoWork` が呼び出されます。  また、C 型、B 型、または A 型の変数を使用して D のインスタンスにアクセスした場合、`DoWork` への呼び出しは、仮想継承の規則に従って、クラス C の `DoWork` の実装に転送されます。  
   
 ### 派生クラスからの基底クラスの仮想メンバーへのアクセス  
  メソッドやプロパティを置き換えたり、オーバーライドしたりした派生クラスでは、base キーワードを使用することで、基底クラスのメソッドやプロパティにアクセスできます。  次にコード例を示します。  
   
- [!code-cs[csProgGuideInheritance#26](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/polymorphism_9.cs)]  
+ [!code-cs[csProgGuideInheritance#26](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/polymorphism_9.cs)]  
   
  詳細については、「[base](../../../csharp/language-reference/keywords/base.md)」を参照してください。  
   

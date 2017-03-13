@@ -37,7 +37,7 @@ These characters are from the extended ASCII character set (Windows code page 12
   
 ```  
   
- [!code-cs[csProgGuideStrings#33](../../../csharp/programming-guide/strings/codesnippet/csharp/CSRefStrings/Strings.cs#33)]  
+ [!code-cs[csProgGuideStrings#33](../../../csharp/programming-guide/strings/codesnippet/CSharp/how-to-convert-rtf-to-plain-text_1.cs)]  
   
  RTF 文字は 8 ビットでエンコードされます。  ただし、ユーザーは指定されたコード ページから拡張 ASCII 文字に加えて Unicode 文字を指定できます。  <xref:System.Windows.Forms.RichTextBox.Text%2A?displayProperty=fullName> プロパティは [string](../../../csharp/language-reference/keywords/string.md) 型であるため、文字は Unicode UTF\-16 としてエンコードされます。  ソース RTF ドキュメントの拡張 ASCII 文字と Unicode 文字は、テキスト出力で正しくエンコードされます。  
   

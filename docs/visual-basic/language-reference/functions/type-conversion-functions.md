@@ -178,73 +178,73 @@ CUShort(expression)
 ## CBool の例  
  `CBool` 関数を使って式をブール型 \(`Boolean`\) の値に変換する例を次に示します。  式が 0 でない値のときは、`CBool` 関数は `True` を返します。それ以外は `False` を返します。  
   
- [!code-vb[VbVbalrFunctions#1](../../../visual-basic/language-reference/functions/codesnippet/visualbasic/type-conversion-functions_1.vb)]  
+ [!code-vb[VbVbalrFunctions#1](../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/type-conversion-functions_1.vb)]  
   
 ## CByte の例  
  `CByte` 関数を使って式を \(`Byte`\) に変換する例を次に示します。  
   
- [!code-vb[VbVbalrFunctions#2](../../../visual-basic/language-reference/functions/codesnippet/visualbasic/type-conversion-functions_2.vb)]  
+ [!code-vb[VbVbalrFunctions#2](../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/type-conversion-functions_2.vb)]  
   
 ## CChar の例  
  `CChar` 関数を使って、文字列型 \(`String`\) の式の最初の文字を char 型 \(`Char`\) に変換する例を次に示します。  
   
- [!code-vb[VbVbalrFunctions#3](../../../visual-basic/language-reference/functions/codesnippet/visualbasic/type-conversion-functions_3.vb)]  
+ [!code-vb[VbVbalrFunctions#3](../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/type-conversion-functions_3.vb)]  
   
  `CChar` の入力引数は `Char` または `String` データ型である必要があります。  `CChar` には数値データ型を入力できないため、`CChar` を使って数値を文字に変換することはできません。  次の例では、コード ポイント \(文字コード\) を表す数値を取得し、それを対応する文字に変換します。  ここでは、<xref:Microsoft.VisualBasic.Interaction.InputBox%2A> 関数を使って数字の文字列を取得し、`CInt` を使って文字列を整数型 \(`Integer`\) に変換し、`ChrW` を使ってその数値を `Char` に変換しています。  
   
- [!code-vb[VbVbalrFunctions#4](../../../visual-basic/language-reference/functions/codesnippet/visualbasic/type-conversion-functions_4.vb)]  
+ [!code-vb[VbVbalrFunctions#4](../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/type-conversion-functions_4.vb)]  
   
 ## CDate の例  
  `CDate` 関数を使って文字列を日付型 \(`Date`\) の値に変換する例を次に示します。  一般的には、この例のように文字列で日付\/時刻を表すことはお勧めできません。  文字列の代わりに、日付リテラルや時刻リテラル \(\#Feb 12, 1969\# や \#4:45:23 PM\# など\) を使ってください。  
   
- [!code-vb[VbVbalrFunctions#5](../../../visual-basic/language-reference/functions/codesnippet/visualbasic/type-conversion-functions_5.vb)]  
+ [!code-vb[VbVbalrFunctions#5](../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/type-conversion-functions_5.vb)]  
   
 ## CDbl の例  
- [!code-vb[VbVbalrFunctions#6](../../../visual-basic/language-reference/functions/codesnippet/visualbasic/type-conversion-functions_6.vb)]  
+ [!code-vb[VbVbalrFunctions#6](../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/type-conversion-functions_6.vb)]  
   
 ## CDec の例  
  `CDec` 関数を使って数値を `Decimal` に変換する例を次に示します。  
   
- [!code-vb[VbVbalrFunctions#7](../../../visual-basic/language-reference/functions/codesnippet/visualbasic/type-conversion-functions_7.vb)]  
+ [!code-vb[VbVbalrFunctions#7](../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/type-conversion-functions_7.vb)]  
   
 ## CInt の例  
  `CInt` 関数を使って値を `Integer` に変換する例を次に示します。  
   
- [!code-vb[VbVbalrFunctions#8](../../../visual-basic/language-reference/functions/codesnippet/visualbasic/type-conversion-functions_8.vb)]  
+ [!code-vb[VbVbalrFunctions#8](../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/type-conversion-functions_8.vb)]  
   
 ## CLng の例  
  `CLng` 関数を使って値を `Long` に変換する例を次に示します。  
   
- [!code-vb[VbVbalrFunctions#9](../../../visual-basic/language-reference/functions/codesnippet/visualbasic/type-conversion-functions_9.vb)]  
+ [!code-vb[VbVbalrFunctions#9](../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/type-conversion-functions_9.vb)]  
   
 ## CObj の例  
  `CObj` 関数を使って数値を `Object` に変換する例を次に示します。  オブジェクト型 \(`Object`\) の変数自体には、4 バイトのポインターだけが含まれます。このポインターは、変数に代入された倍精度浮動小数点数型 \(`Double`\) の値を指しています。  
   
- [!code-vb[VbVbalrFunctions#10](../../../visual-basic/language-reference/functions/codesnippet/visualbasic/type-conversion-functions_10.vb)]  
+ [!code-vb[VbVbalrFunctions#10](../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/type-conversion-functions_10.vb)]  
   
 ## CSByte の例  
  `CSByte` 関数を使って数値を `SByte` に変換する例を次に示します。  
   
- [!code-vb[VbVbalrFunctions#11](../../../visual-basic/language-reference/functions/codesnippet/visualbasic/type-conversion-functions_11.vb)]  
+ [!code-vb[VbVbalrFunctions#11](../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/type-conversion-functions_11.vb)]  
   
 ## CShort の例  
  `CShort` 関数を使って数値を `Short` に変換する例を次に示します。  
   
- [!code-vb[VbVbalrFunctions#12](../../../visual-basic/language-reference/functions/codesnippet/visualbasic/type-conversion-functions_12.vb)]  
+ [!code-vb[VbVbalrFunctions#12](../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/type-conversion-functions_12.vb)]  
   
 ## CSng の例  
  `CSng` 関数を使って値を `Single` に変換する例を次に示します。  
   
- [!code-vb[VbVbalrFunctions#13](../../../visual-basic/language-reference/functions/codesnippet/visualbasic/type-conversion-functions_13.vb)]  
+ [!code-vb[VbVbalrFunctions#13](../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/type-conversion-functions_13.vb)]  
   
 ## CStr の例  
  `CStr` 関数を使って数値を `String` に変換する例を次に示します。  
   
- [!code-vb[VbVbalrFunctions#14](../../../visual-basic/language-reference/functions/codesnippet/visualbasic/type-conversion-functions_14.vb)]  
+ [!code-vb[VbVbalrFunctions#14](../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/type-conversion-functions_14.vb)]  
   
  `CStr` 関数を使って `Date` の値を `String` の値に変換する例を次に示します。  
   
- [!code-vb[VbVbalrFunctions#15](../../../visual-basic/language-reference/functions/codesnippet/visualbasic/type-conversion-functions_15.vb)]  
+ [!code-vb[VbVbalrFunctions#15](../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/type-conversion-functions_15.vb)]  
   
  `CStr` は常に、現在のロケールに対する標準の短い形式 \("6\/15\/2003 4:35:47 PM " など\) で日付型 \(`Date`\) の値を表示します。  しかし、`CStr` は 1\/1\/0001 \(日付\) および 00:00:00 \(時刻\) の*基準値*を表示しません。  
   
@@ -253,17 +253,17 @@ CUShort(expression)
 ## CUInt の例  
  `CUInt` 関数を使って数値を `UInteger` に変換する例を次に示します。  
   
- [!code-vb[VbVbalrFunctions#16](../../../visual-basic/language-reference/functions/codesnippet/visualbasic/type-conversion-functions_16.vb)]  
+ [!code-vb[VbVbalrFunctions#16](../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/type-conversion-functions_16.vb)]  
   
 ## CULng の例  
  `CULng` 関数を使って数値を `ULong` に変換する例を次に示します。  
   
- [!code-vb[VbVbalrFunctions#17](../../../visual-basic/language-reference/functions/codesnippet/visualbasic/type-conversion-functions_17.vb)]  
+ [!code-vb[VbVbalrFunctions#17](../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/type-conversion-functions_17.vb)]  
   
 ## CUShort の例  
  `CUShort` 関数を使って数値を `UShort` に変換する例を次に示します。  
   
- [!code-vb[VbVbalrFunctions#18](../../../visual-basic/language-reference/functions/codesnippet/visualbasic/type-conversion-functions_18.vb)]  
+ [!code-vb[VbVbalrFunctions#18](../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/type-conversion-functions_18.vb)]  
   
 ## 参照  
  <xref:Microsoft.VisualBasic.Strings.Asc%2A>   

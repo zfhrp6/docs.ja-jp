@@ -55,7 +55,7 @@ classify = (input > 0) ? "positive" : "negative";
  条件演算子は、オーバーロードできません。  
   
 ## 使用例  
- [!code-cs[csRefOperators#41](../../../csharp/language-reference/operators/codesnippet/csharp/csrefOperators/csrefOperators.cs#41)]  
+ [!code-cs[csRefOperators#41](../../../csharp/language-reference/operators/codesnippet/CSharp/conditional-operator_1.cs)]  
   
 ## 参照  
  [C\# リファレンス](../../../csharp/language-reference/index.md)   

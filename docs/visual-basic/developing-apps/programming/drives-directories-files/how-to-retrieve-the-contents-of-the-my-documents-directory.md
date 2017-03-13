@@ -27,7 +27,7 @@ caps.handback.revision: 13
   
 -   `ReadAllText` メソッドを使用して、指定したディレクトリの各ファイルからテキストを読み取ります。  次のコードでは、ディレクトリとファイルを指定し、`ReadAllText` を使用して、`patients` という名前の文字列に読み取ります。  
   
-     [!code-vb[VbVbcnMyFileSystem#15](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/visualbasic/how-to-retrieve-the-cont_1.vb)]  
+     [!code-vb[VbVbcnMyFileSystem#15](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/VisualBasic/how-to-retrieve-the-contents-of-the-my-documents-directory_1.vb)]  
   
 ## 参照  
  <xref:Microsoft.VisualBasic.FileIO.SpecialDirectories>   

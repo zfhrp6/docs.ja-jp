@@ -66,11 +66,11 @@ COM オブジェクトと [!INCLUDE[dnprdnshort](../../../csharp/getting-started
 ##  <a name="vbconinteroperabilitymarshalinganchor6"></a> .NET Framework クラスのインスタンスの作成  
  通常、[!INCLUDE[dnprdnshort](../../../csharp/getting-started/includes/dnprdnshort-md.md)] クラスのインスタンスを作成するときは、`New` ステートメントとクラス名を使用します。  相互運用アセンブリによって表される COM クラスを持つということは、`New` ステートメントとインターフェイスを使用できる 1 つのケースです。  COM クラスと `Inherits` ステートメントを使用する場合を除いて、インターフェイスはクラスと同様に使用できます。  次のコードは、`Command` オブジェクトを、Microsoft ActiveX データ オブジェクト 2.8 ライブラリの COM オブジェクトへの参照があるプロジェクト内で作成する方法を示します。  
   
- [!code-vb[VbVbalrInterop#20](../../../visual-basic/programming-guide/com-interop/codesnippet/visualbasic/vbvbalrinterop/Class1.vb#20)]  
+ [!code-vb[VbVbalrInterop#20](../../../visual-basic/programming-guide/com-interop/codesnippet/VisualBasic/troubleshooting-interoperability_1.vb)]  
   
  ただし、COM クラスを派生クラスの基本クラスとして使用する場合は、COM クラスを表す相互運用クラスを使用する必要があります。次に例を示します。  
   
- [!code-vb[VbVbalrInterop#21](../../../visual-basic/programming-guide/com-interop/codesnippet/visualbasic/vbvbalrinterop/Class1.vb#21)]  
+ [!code-vb[VbVbalrInterop#21](../../../visual-basic/programming-guide/com-interop/codesnippet/VisualBasic/troubleshooting-interoperability_2.vb)]  
   
 > [!NOTE]
 >  相互運用機能アセンブリは、COM クラスを表すインターフェイスを暗黙的に実装します。  `Implements` ステートメントを使用してこれらのインターフェイスを実装しないでください。エラーが発生します。  
@@ -90,19 +90,19 @@ Set db = DBEngine.OpenDatabase("C:\nwind.mdb")
   
  [!INCLUDE[vbprvblong](../../../visual-basic/developing-apps/customizing-extending-my/includes/vbprvblong-md.md)] では、必ず COM オブジェクトのインスタンスを作成してから、これらのメソッドを使用する必要があります。  [!INCLUDE[vbprvblong](../../../visual-basic/developing-apps/customizing-extending-my/includes/vbprvblong-md.md)] でこれらのメソッドを使用するには、目的のクラスの変数を宣言し、New キーワードを使用して、オブジェクト変数にオブジェクトを割り当てます。  クラスのインスタンスが 1 つだけ作成されていることを確認するときには、`Shared` キーワードを使用できます。  
   
- [!code-vb[VbVbalrInterop#23](../../../visual-basic/programming-guide/com-interop/codesnippet/visualbasic/vbvbalrinterop/Class1.vb#23)]  
+ [!code-vb[VbVbalrInterop#23](../../../visual-basic/programming-guide/com-interop/codesnippet/VisualBasic/troubleshooting-interoperability_3.vb)]  
   
 ##  <a name="vbconinteroperabilitymarshalinganchor9"></a> イベント ハンドラーで処理されないエラー  
  相互運用の一般的な問題の 1 つに、COM オブジェクトが発生したイベントを処理するイベント ハンドラーのエラーがあります。  `On Error` ステートメントまたは `Try...Catch...Finally` ステートメントを使用してエラーを明確にチェックしない限り、このようなエラーは無視されます。  次の例は Microsoft ActiveX データ オブジェクト 2.8 ライブラリの COM オブジェクトへの参照を含む [!INCLUDE[vbprvblong](../../../visual-basic/developing-apps/customizing-extending-my/includes/vbprvblong-md.md)] プロジェクトの一部です。  
   
- [!code-vb[VbVbalrInterop#24](../../../visual-basic/programming-guide/com-interop/codesnippet/visualbasic/vbvbalrinterop/Class1.vb#24)]  
+ [!code-vb[VbVbalrInterop#24](../../../visual-basic/programming-guide/com-interop/codesnippet/VisualBasic/troubleshooting-interoperability_4.vb)]  
   
  この例のコードは、エラーが通知されるように記述されています。  しかし、`Try...Catch...Finally` ブロックを使用せずにこのコードを実行すると、`OnError Resume Next` ステートメントを使用した場合と同じようにエラーが無視されます。  エラー処理がなければ、ゼロによる除算は通知なしで失敗します。  この種のエラーが未処理の例外エラーとして通知されることはないため、COM オブジェクトからのイベントを処理するイベント ハンドラーで例外処理の手段を講じることが重要です。  
   
 ### COM 相互運用エラーについて  
  相互運用の呼び出しでは、エラー処理を組み込んでいないと、エラーが発生してもそれに関する情報がほとんど得られません。  可能な場合は、必ず構造化されたエラー処理を使用して、エラー発生時の問題に関する情報が通知されるようにしてください。  これは、特にアプリケーションをデバッグするときに役立ちます。  次に例を示します。  
   
- [!code-vb[VbVbalrInterop#25](../../../visual-basic/programming-guide/com-interop/codesnippet/visualbasic/vbvbalrinterop/Class1.vb#25)]  
+ [!code-vb[VbVbalrInterop#25](../../../visual-basic/programming-guide/com-interop/codesnippet/VisualBasic/troubleshooting-interoperability_5.vb)]  
   
  例外オブジェクトの内容を調べることにより、エラーの説明 \(HRESULT\) や、COM エラーのソースなどの情報が得られます。  
   
@@ -122,11 +122,11 @@ Set db = DBEngine.OpenDatabase("C:\nwind.mdb")
   
  呼び出し先のプロシージャにアクセスできる場合は、`ByVal` キーワードを使用して `ReadOnly` プロパティを受け入れるパラメーターを宣言することにより、このエラーを阻止できます。  次に例を示します。  
   
- [!code-vb[VbVbalrInterop#26](../../../visual-basic/programming-guide/com-interop/codesnippet/visualbasic/vbvbalrinterop/Class1.vb#26)]  
+ [!code-vb[VbVbalrInterop#26](../../../visual-basic/programming-guide/com-interop/codesnippet/VisualBasic/troubleshooting-interoperability_6.vb)]  
   
  呼び出し先のプロシージャのソース コードにアクセスできない場合は、呼び出し元プロシージャをさらにかっこで囲むことにより、プロパティを強制的に値で渡すことができます。  たとえば、Microsoft ActiveX データ オブジェクト 2.8 ライブラリの COM オブジェクトへの参照を含むプロジェクトでは、次のように指定できます。  
   
- [!code-vb[VbVbalrInterop#27](../../../visual-basic/programming-guide/com-interop/codesnippet/visualbasic/vbvbalrinterop/Class1.vb#27)]  
+ [!code-vb[VbVbalrInterop#27](../../../visual-basic/programming-guide/com-interop/codesnippet/VisualBasic/troubleshooting-interoperability_7.vb)]  
   
 ##  <a name="vbconinteroperabilitymarshalinganchor12"></a> 相互運用機能を公開するアセンブリの配置  
  COM インターフェイスを公開するアセンブリの配置については、いくつかの考慮事項があります。  たとえば、別のアプリケーションが同じ COM アセンブリを参照する場合、問題が発生する可能性があります。  このような状況として一般的なのは、新しいバージョンのアセンブリをインストールした後、別のアプリケーションが依然として古いバージョンのアセンブリを使用している場合です。  同じ DLL を共有するアセンブリのいずれかをアンインストールすると、他のアセンブリでその DLL が使用できなくなる可能性があります。  

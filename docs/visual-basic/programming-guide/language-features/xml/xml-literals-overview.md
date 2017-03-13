@@ -36,11 +36,11 @@ caps.handback.revision: 27
 ## 単純なリテラル  
  [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] コード内に有効な XML を入力するか渡すことによって、[!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq-md.md)] オブジェクトを作成できます。  XML 要素リテラルは、<xref:System.Xml.Linq.XElement> オブジェクトを返します。  詳細については、「[XML Element Literal](../../../../visual-basic/language-reference/xml-literals/xml-element-literal.md)」および「[XML Literals and the XML 1.0 Specification](../../../../visual-basic/programming-guide/language-features/xml/xml-literals-and-the-xml-1-0-specification.md)」を参照してください。  次の例は、複数の子要素を持つ XML 要素を作成します。  
   
- [!code-vb[VbXMLSamples#5](../../../../visual-basic/language-reference/operators/codesnippet/visualbasic/xml-literals-overview_1.vb)]  
+ [!code-vb[VbXMLSamples#5](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/xml-literals-overview_1.vb)]  
   
  XML リテラルを `<?xml version="1.0"?>` から始めることで、XML ドキュメントを作成できます。次に例を示します。  XML ドキュメント リテラルは、<xref:System.Xml.Linq.XDocument> オブジェクトを返します。  詳細については、「[XML Document Literal](../../../../visual-basic/language-reference/xml-literals/xml-document-literal.md)」を参照してください。  
   
- [!code-vb[VbXMLSamples#6](../../../../visual-basic/language-reference/operators/codesnippet/visualbasic/xml-literals-overview_2.vb)]  
+ [!code-vb[VbXMLSamples#6](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/xml-literals-overview_2.vb)]  
   
 > [!NOTE]
 >  [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] での XML リテラルの構文は、XML 1.0 仕様と一致しません。  詳細については、「[XML Literals and the XML 1.0 Specification](../../../../visual-basic/programming-guide/language-features/xml/xml-literals-and-the-xml-1-0-specification.md)」を参照してください。  
@@ -57,12 +57,12 @@ caps.handback.revision: 27
   
  たとえば、次のコードでは、埋め込まれたクエリを使用して `phoneNumbers2` 配列のメンバーから XML 要素を作成し、それらの要素を `contact2` の子として追加します。  
   
- [!code-vb[VbXMLSamples#7](../../../../visual-basic/language-reference/operators/codesnippet/visualbasic/xml-literals-overview_3.vb)]  
+ [!code-vb[VbXMLSamples#7](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/xml-literals-overview_3.vb)]  
   
 ## コンパイラによる XML リテラルからのオブジェクトの作成方法  
  [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] コンパイラは、XML リテラルを対応する [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq-md.md)] コンストラクターへの呼び出しに変換して [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq-md.md)] オブジェクトを構築します。  たとえば、[!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] コンパイラは、次のコード例を、XML バージョン命令用の <xref:System.Xml.Linq.XProcessingInstruction> コンストラクターへの呼び出し、`<contact>`、`<name>`、および `<phone>` の各要素用の <xref:System.Xml.Linq.XElement> コンストラクターへの呼び出し、および `type` 属性用の <xref:System.Xml.Linq.XAttribute> コンストラクターへの呼び出しに変換します。  特に、次の例の属性の場合、[!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] コンパイラは、<xref:System.Xml.Linq.XAttribute.%23ctor%28System.Xml.Linq.XName%2CSystem.Object%29> コンストラクターを 2 回呼び出します。  1 回目の呼び出しでは、`name` パラメーターの値 `type` と、`value` パラメーターの値 `home` を渡します。  2 回目の呼び出しでも `name` パラメーターの値 `type` を渡しますが、`value` パラメーターの値 `work` は渡しません。  
   
- [!code-vb[VbXMLSamples#6](../../../../visual-basic/language-reference/operators/codesnippet/visualbasic/xml-literals-overview_2.vb)]  
+ [!code-vb[VbXMLSamples#6](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/xml-literals-overview_2.vb)]  
   
 ## 参照  
  <xref:System.Xml.Linq.XElement>   

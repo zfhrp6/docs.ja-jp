@@ -90,17 +90,17 @@ caps.handback.revision: 33
 ## 使用例  
  ジェネリックなディクショナリ クラスのスケルトン定義の例を次に示します。スケルトン関数がディクショナリに新しいエントリを追加しています。  
   
- [!code-vb[VbVbalrStatements#3](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/type-list_1.vb)]  
+ [!code-vb[VbVbalrStatements#3](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/type-list_1.vb)]  
   
 ## 使用例  
  `dictionary` がジェネリックなので、コードはそこからさまざまなオブジェクトを作成できます。各オブジェクトは同じ関数を含みますが、さまざまなデータ型に対して処理を実行します。  文字列 \(`String`\) のエントリと整数 \(`Integer`\) のキーを使って `dictionary` オブジェクトを作成するコード行の例を次に示します。  
   
- [!code-vb[VbVbalrStatements#4](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/type-list_2.vb)]  
+ [!code-vb[VbVbalrStatements#4](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/type-list_2.vb)]  
   
 ## 使用例  
  先の例と同等のスケルトン定義の例は、次のとおりです。  
   
- [!code-vb[VbVbalrStatements#5](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/type-list_3.vb)]  
+ [!code-vb[VbVbalrStatements#5](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/type-list_3.vb)]  
   
 ## 参照  
  [Of](../../../visual-basic/language-reference/statements/of-clause.md)   

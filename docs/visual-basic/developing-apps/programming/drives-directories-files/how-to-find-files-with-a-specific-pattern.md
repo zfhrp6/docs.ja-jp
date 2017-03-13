@@ -34,7 +34,7 @@ caps.handback.revision: 23
   
 -   `GetFiles` メソッドを使用して、検索するディレクトリの名前とパス、およびパターンを指定します。  次の例では、拡張子が `.dll` のすべてのファイルをディレクトリ内から取得し、`ListBox1` に追加します。  
   
-     [!code-vb[VbFileIOMisc#4](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/visualbasic/how-to-find-files-with-a_1.vb)]  
+     [!code-vb[VbFileIOMisc#4](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/VisualBasic/how-to-find-files-with-a-specific-pattern_1.vb)]  
   
 ## .NET Framework セキュリティ  
  次の条件を満たす場合は、例外が発生する可能性があります。  

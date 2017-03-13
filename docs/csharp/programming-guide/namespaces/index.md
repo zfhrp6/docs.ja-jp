@@ -19,19 +19,19 @@ caps.handback.revision: 27
 # 名前空間 (C# プログラミング ガイド)
 C\# プログラミングでは、名前空間が 2 つの点で盛んに使用されます。  1 つは、.NET Framework では、次のように名前空間を使用して多くのクラスを編成します。  
   
- [!code-cs[csProgGuide#22](../../../csharp/programming-guide/inside-a-program/codesnippet/csharp/csProgGuide/progGuide.cs#22)]  
+ [!code-cs[csProgGuide#22](../../../csharp/programming-guide/inside-a-program/codesnippet/CSharp/index_1.cs)]  
   
  `System` が名前空間で、`Console` がこの名前空間のクラスです。  `using` キーワードを使用すると、次の例のように完全な名前を記述する必要がなくなります。  
   
- [!code-cs[csProgGuide#1](../../../csharp/programming-guide/inside-a-program/codesnippet/csharp/csProgGuide/using.cs#1)]  
+ [!code-cs[csProgGuide#1](../../../csharp/programming-guide/inside-a-program/codesnippet/CSharp/index_2.cs)]  
   
- [!code-cs[csProgGuide#25](../../../csharp/programming-guide/inside-a-program/codesnippet/csharp/csProgGuide/progGuide.cs#25)]  
+ [!code-cs[csProgGuide#25](../../../csharp/programming-guide/inside-a-program/codesnippet/CSharp/index_3.cs)]  
   
  詳細については、「[using ディレクティブ](../../../csharp/language-reference/keywords/using-directive.md)」を参照してください。  
   
  もう 1 つは、独自の名前空間を宣言すると、大型のプログラミング プロジェクトでクラス名とメソッド名のスコープの管理が容易になります。  次の例に示すように、[namespace](../../../csharp/language-reference/keywords/namespace.md) キーワードを使用して名前空間を宣言します。  
   
- [!code-cs[csProgGuideNamespaces#6](../../../csharp/programming-guide/namespaces/codesnippet/csharp/Namespaces/Namespaces.cs#6)]  
+ [!code-cs[csProgGuideNamespaces#6](../../../csharp/programming-guide/namespaces/codesnippet/CSharp/index_4.cs)]  
   
 ## 名前空間の概要  
  名前空間には、次の特徴があります。  

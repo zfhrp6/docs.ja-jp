@@ -39,11 +39,11 @@ caps.handback.revision: 15
 ## 使用例  
  次の例では、構造体  `height` の `+` 演算子を定義しています。  この構造体では、フィート単位とインチ単位の高さを扱います。  1 *インチ*は 2.54 センチメートル、1 *フィート* は 12 インチです。  値の正規化 \(12.0 以下のインチ\) を確実にするために、コンストラクターは *モジュロ* 12 の演算を実行します。  `+` 演算子は、コンストラクターを使って正規化された値を生成します。  
   
- [!code-vb[VbVbcnProcedures#25](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/how-to-define-an-operator_1.vb)]  
+ [!code-vb[VbVbcnProcedures#25](./codesnippet/VisualBasic/how-to-define-an-operator_1.vb)]  
   
  `height`  構造体をテストするためには、次のコードを使用してください。  
   
- [!code-vb[VbVbcnProcedures#26](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/how-to-define-an-operator_2.vb)]  
+ [!code-vb[VbVbcnProcedures#26](./codesnippet/VisualBasic/how-to-define-an-operator_2.vb)]  
   
  使用例を含む詳細については、「[Operator Overloading in Visual Basic 2005](http://go.microsoft.com/fwlink/?LinkId=101703)」を参照してください。  
   

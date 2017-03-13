@@ -117,7 +117,7 @@ End Try
   
  <xref:System.IO.TextWriter> と <xref:System.IO.TextReader> のクラスが <xref:System.IDisposable> のインターフェイスを実装するため、コードは、ファイルが読み取りおよび書き込み操作の後で正しく閉じるように `Using` のステートメントを使用できます。  
   
- [!code-vb[VbVbalrStatements#50](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/using-statement_1.vb)]  
+ [!code-vb[VbVbalrStatements#50](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/using-statement_1.vb)]  
   
 ## 参照  
  <xref:System.IDisposable>   

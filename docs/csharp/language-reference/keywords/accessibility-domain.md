@@ -23,7 +23,7 @@ caps.handback.revision: 17
 ## 使用例  
  この例には、トップ レベルの型 `T1` と、2 つの入れ子にされたクラス `M1` および `M2` があります。  クラスには、異なる種類の宣言されたアクセシビリティを持つフィールドがあります。  `Main` メソッドでは、各ステートメントに続くコメントが、各メンバーのアクセシビリティ ドメインを示しています。  アクセス不可のメンバーを参照しようとするステートメントがコメントになっている点に注意してください。  アクセス不可のメンバーを参照したために発生したコンパイラ エラーを見るには、コメントを一度に 1 つずつ解除してください。  
   
- [!code-cs[csrefKeywordsModifiers#4](../../../csharp/language-reference/keywords/codesnippet/csharp/csrefKeywordsModifiers/csrefKeywordsModifiers.cs#4)]  
+ [!code-cs[csrefKeywordsModifiers#4](../../../csharp/language-reference/keywords/codesnippet/CSharp/accessibility-domain_1.cs)]  
   
 ## C\# 言語仕様  
  [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec-md.md)]  

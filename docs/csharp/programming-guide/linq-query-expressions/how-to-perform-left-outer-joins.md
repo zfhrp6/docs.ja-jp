@@ -15,7 +15,7 @@ caps.handback.revision: 23
 > [!NOTE]
 >  参照型の既定値はです `null`; したがって、この例では null 参照を持つように `Pet` の各コレクションの各要素にアクセスする前に確認します。  
   
- [!code-cs[CsLINQProgJoining#7](../../../csharp/programming-guide/linq-query-expressions/codesnippet/csharp/Joins/joins.cs#7)]  
+ [!code-cs[CsLINQProgJoining#7](../../../csharp/programming-guide/linq-query-expressions/codesnippet/CSharp/how-to-perform-left-outer-joins_1.cs)]  
   
 ## コードのコンパイル  
   

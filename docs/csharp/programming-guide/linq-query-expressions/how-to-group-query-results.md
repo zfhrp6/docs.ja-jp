@@ -20,44 +20,44 @@ caps.handback.revision: 19
 ## 使用例  
  このトピックのすべての例で、次のヘルパー クラスとデータ ソースが使用されています。  
   
- [!code-cs[csProgGuideLINQ#15](../../../csharp/programming-guide/arrays/codesnippet/csharp/csLINQProgRef/csrefLINQHowTos.cs#15)]  
+ [!code-cs[csProgGuideLINQ#15](../../../csharp/programming-guide/arrays/codesnippet/CSharp/how-to-group-query-results_1.cs)]  
   
 ## 使用例  
  グループ化キーとして要素の 1 つのプロパティを使用してソース要素をグループ化する方法を次の例に示します。  この例では、キーは学生の姓である `string` です。  部分文字列をキーとして使用することもできます。  このグループ化操作では、型の既定の等値比較子が使用されています。  
   
  `StudentClass` クラスに次のメソッドを貼り付けます。  `Main` メソッド内の呼び出しステートメントを `sc.GroupBySingleProperty()` に変更します。  
   
- [!code-cs[csProgGuideLINQ#17](../../../csharp/programming-guide/arrays/codesnippet/csharp/csLINQProgRef/csrefLINQHowTos.cs#17)]  
+ [!code-cs[csProgGuideLINQ#17](../../../csharp/programming-guide/arrays/codesnippet/CSharp/how-to-group-query-results_2.cs)]  
   
 ## 使用例  
  グループ化キーとしてオブジェクトのプロパティ以外のものを使用してソース要素をグループ化する方法を次の例に示します。  この例では、キーは学生の姓の最初の文字です。  
   
  `StudentClass` クラスに次のメソッドを貼り付けます。  `Main` メソッド内の呼び出しステートメントを `sc.GroupBySubstring()` に変更します。  
   
- [!code-cs[csProgGuideLINQ#18](../../../csharp/programming-guide/arrays/codesnippet/csharp/csLINQProgRef/csrefLINQHowTos.cs#18)]  
+ [!code-cs[csProgGuideLINQ#18](../../../csharp/programming-guide/arrays/codesnippet/CSharp/how-to-group-query-results_3.cs)]  
   
 ## 使用例  
  グループ化キーとして数値の範囲を使用してソース要素をグループ化する方法を次の例に示します。  このクエリでは、姓と名および学生が属するパーセンタイルの範囲のみを含む匿名型に結果が格納されます。  結果を表示するのに完全な `Student` オブジェクトを使用する必要がないため、匿名型が使用されています。  `GetPercentile` は、学生の平均点に基づいてパーセンタイルを計算するヘルパー関数です。  メソッドは 0 ～ 10 の整数を返します。  
   
- [!code-cs[csProgGuideLINQ#50](../../../csharp/programming-guide/arrays/codesnippet/csharp/csLINQProgRef/csrefLINQHowTos.cs#50)]  
+ [!code-cs[csProgGuideLINQ#50](../../../csharp/programming-guide/arrays/codesnippet/CSharp/how-to-group-query-results_4.cs)]  
   
  `StudentClass` クラスに次のメソッドを貼り付けます。  `Main` メソッド内の呼び出しステートメントを `sc.GroupByRange()` に変更します。  
   
- [!code-cs[csProgGuideLINQ#19](../../../csharp/programming-guide/arrays/codesnippet/csharp/csLINQProgRef/csrefLINQHowTos.cs#19)]  
+ [!code-cs[csProgGuideLINQ#19](../../../csharp/programming-guide/arrays/codesnippet/CSharp/how-to-group-query-results_5.cs)]  
   
 ## 使用例  
  ブール型の比較式を使用してソース要素をグループ化する方法を次の例に示します。  この例では、ブール式を使用して、学生の試験の平均点が 75 点より高いかどうかを調べています。  前の例と同様、完全なソース要素は必要ないため、結果は匿名型に格納されます。  匿名型のプロパティは `Key` メンバーのプロパティになること、およびクエリの実行時に名前でアクセスできることに注意してください。  
   
  `StudentClass` クラスに次のメソッドを貼り付けます。  `Main` メソッド内の呼び出しステートメントを `sc.GroupByBoolean()` に変更します。  
   
- [!code-cs[csProgGuideLINQ#20](../../../csharp/programming-guide/arrays/codesnippet/csharp/csLINQProgRef/csrefLINQHowTos.cs#20)]  
+ [!code-cs[csProgGuideLINQ#20](../../../csharp/programming-guide/arrays/codesnippet/CSharp/how-to-group-query-results_6.cs)]  
   
 ## 使用例  
  匿名型を使用して複数の値を含むキーをカプセル化する方法を次の例に示します。  この例では、最初のキー値は学生の姓の最初の文字です。  2 番目のキー値は、最初の試験で学生が 85 点を超えたかどうかを示すブール値です。  キーとして任意のプロパティを使用してグループを並べ替えることができます。  
   
  `StudentClass` クラスに次のメソッドを貼り付けます。  `Main` メソッド内の呼び出しステートメントを `sc.GroupByCompositeKey()` に変更します。  
   
- [!code-cs[csProgGuideLINQ#21](../../../csharp/programming-guide/arrays/codesnippet/csharp/csLINQProgRef/csrefLINQHowTos.cs#21)]  
+ [!code-cs[csProgGuideLINQ#21](../../../csharp/programming-guide/arrays/codesnippet/CSharp/how-to-group-query-results_7.cs)]  
   
 ## コードのコンパイル  
  テストする各メソッドをコピーし、`StudentClass` クラスに貼り付けます。  メソッドの呼び出しステートメントを `Main` メソッドに追加し、F5 キーを押します。  

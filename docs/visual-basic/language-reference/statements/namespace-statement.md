@@ -86,17 +86,17 @@ End Namespace
 ## 使用例  
  次のコード例は、入れ子の関係になるように 2 つの名前空間を宣言します。  
   
- [!code-vb[VbVbalrStatements#43](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/namespace-statement_1.vb)]  
+ [!code-vb[VbVbalrStatements#43](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/namespace-statement_1.vb)]  
   
 ## 使用例  
  入れ子になった複数の名前空間を 1 行で宣言するコード例を次に示します。これは前のコード例と同じ意味を持ちます。  
   
- [!code-vb[VbVbalrStatements#41](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/namespace-statement_2.vb)]  
+ [!code-vb[VbVbalrStatements#41](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/namespace-statement_2.vb)]  
   
 ## 使用例  
  次のコード例は、前の例で定義したクラスにアクセスします。  
   
- [!code-vb[VbVbalrStatements#42](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/namespace-statement_3.vb)]  
+ [!code-vb[VbVbalrStatements#42](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/namespace-statement_3.vb)]  
   
 ## 使用例  
  次のコード例は、新しいジェネリックなリスト クラスのスケルトンを定義し、それを <xref:System.Collections.Generic?displayProperty=fullName> 名前空間に追加します。  

@@ -23,7 +23,7 @@ caps.handback.revision: 23
   
  unchecked コンテキストでは、式がチェック先の型の範囲外にある値を生成した場合、オーバーフローにはフラグが付きません。  たとえば、次の例では `unchecked` ブロックまたは式で計算が実行されるため、結果が整数に対して大きすぎることは無視され、`int1` に値 \-2,147,483,639 が代入されます。  
   
- [!code-cs[csrefKeywordsChecked#5](../../../csharp/language-reference/keywords/codesnippet/csharp/unchecked_1.cs)]  
+ [!code-cs[csrefKeywordsChecked#5](../../../csharp/language-reference/keywords/codesnippet/CSharp/unchecked_1.cs)]  
   
  `unchecked` 環境を削除すると、コンパイル エラーが発生します。  式のすべての項が定数であるため、オーバーフローはコンパイル時に検出できます。  
   
@@ -34,7 +34,7 @@ caps.handback.revision: 23
 ## 使用例  
  `unchecked` キーワードの使用方法を次の例に示します。  
   
- [!code-cs[csrefKeywordsChecked#2](../../../csharp/language-reference/keywords/codesnippet/csharp/unchecked_2.cs)]  
+ [!code-cs[csrefKeywordsChecked#2](../../../csharp/language-reference/keywords/codesnippet/CSharp/unchecked_2.cs)]  
   
 ## C\# 言語仕様  
  [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec-md.md)]  

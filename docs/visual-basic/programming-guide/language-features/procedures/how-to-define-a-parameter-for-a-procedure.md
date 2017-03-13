@@ -45,7 +45,7 @@ caps.handback.revision: 15
   
      次の例では、3 つのパラメーターを持つ `Sub` プロシージャの骨組みを定義します。  最初の 2 つのパラメーターは必須で、3 つ目は省略可能です。  パラメーターの一覧の中で、各パラメーターの定義はコンマで区切られます。  
   
-     [!code-vb[VbVbcnProcedures#33](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/how-to-define-a-paramete_1.vb)]  
+     [!code-vb[VbVbcnProcedures#33](./codesnippet/VisualBasic/how-to-define-a-parameter-for-a-procedure_1.vb)]  
   
      最初のパラメーターは  `customer`  オブジェクトを受け入れ、引数は [ByRef](../../../../visual-basic/language-reference/modifiers/byref.md) で渡されているので、`updateCustomer` は `c` に渡された変数を直接更新できます。  最後の 2 つの引数は [ByVal](../../../../visual-basic/language-reference/modifiers/byval.md) で渡されているので、プロシージャはこれらの値を変更することはできません。  
   

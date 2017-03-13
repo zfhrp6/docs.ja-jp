@@ -29,7 +29,7 @@ caps.handback.revision: 17
 >  この例で使用されているファイルは" "トピック [方法: テキスト ファイルに書き込む](../../../csharp/programming-guide/file-system/how-to-write-to-a-text-file.md)に作成されます。  
   
 ## 使用例  
- [!code-cs[csFilesandFolders#4](../../../csharp/programming-guide/file-system/codesnippet/csharp/csFilesFolders/FileIteration.cs#4)]  
+ [!code-cs[csFilesandFolders#4](../../../csharp/programming-guide/file-system/codesnippet/CSharp/how-to-read-from-a-text-file_1.cs)]  
   
 ## コードのコンパイル  
  コードをコピーして、Cのコンソール アプリケーションに貼り付けます。  

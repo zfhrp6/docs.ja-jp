@@ -26,15 +26,15 @@ caps.handback.revision: 29
   
  フィールドは、フィールドのアクセス レベル、フィールドの型、フィールドの名前を順に指定して、クラス ブロック内で宣言します。  次に例を示します。  
   
- [!code-cs[csProgGuideObjects#61](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/fields_1.cs)]  
+ [!code-cs[csProgGuideObjects#61](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/fields_1.cs)]  
   
  オブジェクト内のフィールドにアクセスするには、`objectname.fieldname` のように、オブジェクト名の後にピリオドを追加し、その後にフィールド名を続けます。  次に例を示します。  
   
- [!code-cs[csProgGuideObjects#62](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/fields_2.cs)]  
+ [!code-cs[csProgGuideObjects#62](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/fields_2.cs)]  
   
  フィールドには、フィールドの宣言時に代入演算子を使用して初期値を設定できます。  たとえば、`day` フィールドに自動的に `"Monday"` を代入するには、次の例のように `day` を宣言します。  
   
- [!code-cs[csProgGuideObjects#63](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/fields_3.cs)]  
+ [!code-cs[csProgGuideObjects#63](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/fields_3.cs)]  
   
  フィールドは、オブジェクト インスタンスのコンストラクターが呼び出される直前に初期化されます。  コンストラクターがフィールドの値を代入すると、フィールドの宣言中に指定された値はすべて上書きされます。  詳細については、「[コンストラクターの使用](../../../csharp/programming-guide/classes-and-structs/using-constructors.md)」を参照してください。  
   

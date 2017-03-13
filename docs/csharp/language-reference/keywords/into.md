@@ -24,7 +24,7 @@ caps.handback.revision: 18
 ## 使用例  
  `into` キーワードを使用して、推論された型 `IGrouping` を持つ一時識別子 `fruitGroup` を使用可能にする方法の例を次に示します。  識別子を使用することにより、各グループに対して <xref:System.Linq.Enumerable.Count%2A> メソッドを呼び出し、2 つ以上の単語を含むグループのみを選択できます。  
   
- [!code-cs[cscsrefQueryKeywords#18](../../../csharp/language-reference/keywords/codesnippet/csharp/csquerykeywords/Into.cs#18)]  
+ [!code-cs[cscsrefQueryKeywords#18](../../../csharp/language-reference/keywords/codesnippet/CSharp/into_1.cs)]  
   
  `into` を `group` 句で使用する必要があるのは、各グループに対して追加のクエリ操作を実行する場合だけです。  詳細については、「[group 句](../../../csharp/language-reference/keywords/group-clause.md)」を参照してください。  
   

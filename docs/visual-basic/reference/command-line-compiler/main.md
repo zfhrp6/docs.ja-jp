@@ -41,7 +41,7 @@ caps.handback.revision: 19
   
  <xref:System.Windows.Forms.Form> を継承するクラスが `location` に指定され、そのクラスに `Main` プロシージャが存在しなかった場合は、アプリケーションを起動する既定の `Main` プロシージャがコンパイラによって提供されます。  これにより、開発環境で作成したコードをコマンド ラインでコンパイルできるようになります。  
   
- [!code-vb[VbVbalrCompiler#16](../../../visual-basic/reference/command-line-compiler/codesnippet/visualbasic/main_1.vb)]  
+ [!code-vb[VbVbalrCompiler#16](../../../visual-basic/reference/command-line-compiler/codesnippet/VisualBasic/main_1.vb)]  
   
 ### Visual Studio 統合開発環境で \/main を設定するには  
   

@@ -8,7 +8,7 @@ caps.handback.revision: 6
 ## 使用例  
  このクエリは、グループ結合を作成し、次にまだスコープ内にあるカテゴリ要素に基づいて各グループを並べ替えます。  匿名型初期化子の内部では、結果のシーケンス内の一致するすべての要素がサブクエリによって順序付けられます。  
   
- [!code-cs[csProgGuideLINQ#81](../../../csharp/programming-guide/arrays/codesnippet/csharp/csLINQProgRef/csRef30LangFeatures_2.cs#81)]  
+ [!code-cs[csProgGuideLINQ#81](../../../csharp/programming-guide/arrays/codesnippet/CSharp/how-to-order-the-results-of-a-join-clause_1.cs)]  
   
 ## コードのコンパイル  
   

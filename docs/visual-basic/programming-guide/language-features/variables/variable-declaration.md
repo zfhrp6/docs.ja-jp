@@ -76,7 +76,7 @@ Dim l, m As Long, x, y As Single
 ## ローカル型の推論  
  *型の推論* は、`As` 句なしで宣言されているローカル変数のデータ型の決定に使用されます。  コンパイラは、初期化式の型から変数の型を推測します。  これにより、型を明示的に指定せずに変数を宣言することができます。  次の例では、`num1` と `num2` は両方とも整数として厳密に型指定されています。  
   
- [!code-vb[VbVbalrTypeInference#1](../../../../visual-basic/language-reference/statements/codesnippet/visualbasic/variable-declaration_1.vb)]  
+ [!code-vb[VbVbalrTypeInference#1](../../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/variable-declaration_1.vb)]  
   
  ローカル型の推論を使用する場合には、`Option Infer` を `On` に設定する必要があります。  詳細については、「[Local Type Inference](../../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md)」および「[Option Infer Statement](../../../../visual-basic/language-reference/statements/option-infer-statement.md)」を参照してください。  
   

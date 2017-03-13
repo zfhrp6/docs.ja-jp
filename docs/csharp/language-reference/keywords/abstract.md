@@ -24,7 +24,7 @@ caps.handback.revision: 24
 ## 使用例  
  この例では、`Square` クラスは `ShapesClass` から派生したクラスであるので、このクラスにより `Area` が実装されます。  
   
- [!code-cs[csrefKeywordsModifiers#1](../../../csharp/language-reference/keywords/codesnippet/csharp/csrefKeywordsModifiers/csrefKeywordsModifiers.cs#1)]  
+ [!code-cs[csrefKeywordsModifiers#1](../../../csharp/language-reference/keywords/codesnippet/CSharp/abstract_1.cs)]  
   
  抽象クラスには、以下に示す特徴があります。  
   
@@ -66,12 +66,12 @@ caps.handback.revision: 24
   
  インターフェイスを実装する抽象クラスは、抽象メソッドにインターフェイス メソッドを割り当てることもあります。  次に例を示します。  
   
- [!code-cs[csrefKeywordsModifiers#2](../../../csharp/language-reference/keywords/codesnippet/csharp/csrefKeywordsModifiers/csrefKeywordsModifiers.cs#2)]  
+ [!code-cs[csrefKeywordsModifiers#2](../../../csharp/language-reference/keywords/codesnippet/CSharp/abstract_2.cs)]  
   
 ## 使用例  
  この例では、`DerivedClass` クラスは抽象クラス `BaseClass` の派生クラスです。  この抽象クラスには `AbstractMethod` という抽象メソッドと、`X` および `Y` という 2 つの抽象プロパティがあります。  
   
- [!code-cs[csrefKeywordsModifiers#3](../../../csharp/language-reference/keywords/codesnippet/csharp/csrefKeywordsModifiers/csrefKeywordsModifiers.cs#3)]  
+ [!code-cs[csrefKeywordsModifiers#3](../../../csharp/language-reference/keywords/codesnippet/CSharp/abstract_3.cs)]  
   
  上の例で、次に示すようなステートメントを使用して抽象クラスのインスタンスの作成を試みるとします。  
   

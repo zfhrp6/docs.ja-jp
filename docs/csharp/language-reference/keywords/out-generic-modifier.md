@@ -30,7 +30,7 @@ caps.handback.revision: 15
 ## 使用例  
  共変のジェネリック インターフェイスを宣言、拡張、および実装する方法を次の例に示します。  また、共変のインターフェイスを実装するクラスの暗黙の型変換を使用する方法も示します。  
   
- [!code-cs[csVarianceKeywords#3](../../../csharp/language-reference/keywords/codesnippet/csharp/out-generic-modifier_1.cs)]  
+ [!code-cs[csVarianceKeywords#3](../../../csharp/language-reference/keywords/codesnippet/CSharp/out-generic-modifier_1.cs)]  
   
  ジェネリック インターフェイスでは、次の条件を満たす場合に型パラメーターを共変と宣言できます。  
   
@@ -44,7 +44,7 @@ caps.handback.revision: 15
 ## 使用例  
  共変の汎用デリゲートを宣言、インスタンス化、および起動する方法を次の例に示します。  また、デリゲート型を暗黙的に変換する方法も示します。  
   
- [!code-cs[csVarianceKeywords#4](../../../csharp/language-reference/keywords/codesnippet/csharp/out-generic-modifier_2.cs)]  
+ [!code-cs[csVarianceKeywords#4](../../../csharp/language-reference/keywords/codesnippet/CSharp/out-generic-modifier_2.cs)]  
   
  汎用デリゲートでは、メソッドの戻り値の型としてのみ使用されてメソッド引数の型として使用されない型を共変と宣言できます。  
   

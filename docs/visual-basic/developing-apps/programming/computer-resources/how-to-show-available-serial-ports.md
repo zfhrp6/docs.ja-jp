@@ -33,7 +33,7 @@ caps.handback.revision: 20
   
  通常は、利用可能なシリアル ポートの一覧から、アプリケーションで使用するシリアル ポートをユーザーが選択します。  この例では、シリアル ポートの名前を <xref:System.Windows.Forms.ListBox> コントロールに格納しています。  詳細については、「[ListBox コントロール](../Topic/ListBox%20Control%20\(Windows%20Forms\).md)」を参照してください。  
   
- [!code-vb[VbVbalrMyComputer#45](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/visualbasic/VbVbalrMyComputer/Class2.vb#45)]  
+ [!code-vb[VbVbalrMyComputer#45](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/VisualBasic/how-to-show-available-serial-ports_1.vb)]  
   
  このコードの例は、IntelliSense コード スニペットとしても利用できます。  コード スニペット ピッカーでは、これは **\[接続とネットワーク\]** にあります。  詳細については、「[コード スニペット](/visual-studio/ide/code-snippets)」を参照してください。  
   

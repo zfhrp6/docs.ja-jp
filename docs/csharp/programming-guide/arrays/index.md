@@ -23,7 +23,7 @@ caps.handback.revision: 33
   
  次の例では、1 次元配列、多次元配列、およびジャグ配列を作成しています。  
   
- [!code-cs[csProgGuideArrays#1](../../../csharp/programming-guide/arrays/codesnippet/csharp/index_1.cs)]  
+ [!code-cs[csProgGuideArrays#1](../../../csharp/programming-guide/arrays/codesnippet/CSharp/index_1.cs)]  
   
 ## 配列の概要  
  配列には、次の特徴があります。  

@@ -42,11 +42,11 @@ caps.handback.revision: 20
 ## <a name="reading-a-value-from-the-registry"></a>レジストリから値を読み取る  
  次のコードでは、HKEY_CURRENT_USER から文字列を読み取る方法を示します。  
   
- [!code-vb[VbResourceTasks#20](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/visualbasic/reading-from-and-writing_1.vb)]  
+ [!code-vb[VbResourceTasks#20](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/VisualBasic/reading-from-and-writing-to-the-registry-using-the-microsoft-win32-namespace_1.vb)]  
   
  次のコードは、HKEY_CURRENT_USER から文字列を読み取り、値を増分した後、書き込みます。  
   
- [!code-vb[VbResourceTasks#21](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/visualbasic/reading-from-and-writing_2.vb)]  
+ [!code-vb[VbResourceTasks#21](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/VisualBasic/reading-from-and-writing-to-the-registry-using-the-microsoft-win32-namespace_2.vb)]  
   
 ## <a name="see-also"></a>関連項目  
  <xref:System.SystemException>   

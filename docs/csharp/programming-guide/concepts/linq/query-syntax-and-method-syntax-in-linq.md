@@ -27,7 +27,7 @@ caps.handback.revision: 28
 ## 標準クエリ演算子の拡張メソッド  
  単純な*クエリ式*と、*メソッド ベースのクエリ*として作成された意味的に同等のクエリを次の例に示します。  
   
- [!code-cs[csLINQGettingStarted#22](../../../../csharp/programming-guide/concepts/linq/codesnippet/csharp/GettingStarted/Class1.cs#22)]  
+ [!code-cs[csLINQGettingStarted#22](../../../../csharp/programming-guide/concepts/linq/codesnippet/CSharp/query-syntax-and-method-syntax-in-linq_1.cs)]  
   
  2 つの例の出力結果は同じです。  どちらの形式でも、クエリ変数の型は同じ <xref:System.Collections.Generic.IEnumerable%601> であることがわかります。  
   

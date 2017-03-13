@@ -71,7 +71,7 @@ caps.handback.revision: 27
 ## 使用例  
  次の例では、`Delegate` ステートメントを使って、2 つの数字を操作して数字を返すデリゲートを宣言します。  `DelegateTest` メソッドはこのデリゲートの型のインスタンスを受け取り、デリゲートを使って 1 組の数字を操作します。  
   
- [!code-vb[VbVbalrDelegates#14](../../../visual-basic/language-reference/operators/codesnippet/visualbasic/delegate-statement_1.vb)]  
+ [!code-vb[VbVbalrDelegates#14](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/delegate-statement_1.vb)]  
   
 ## 参照  
  [AddressOf Operator](../../../visual-basic/language-reference/operators/addressof-operator.md)   

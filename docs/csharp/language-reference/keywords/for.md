@@ -24,7 +24,7 @@ caps.handback.revision: 39
 ## 使用例  
  次の例では、`i` の値がコンソールに出力され、1でループの各反復処理の間にインクリメントされます。  
   
- [!code-cs[csrefKeywordsIteration#2](../../../csharp/language-reference/keywords/codesnippet/csharp/for_1.cs)]  
+ [!code-cs[csrefKeywordsIteration#2](../../../csharp/language-reference/keywords/codesnippet/CSharp/for_1.cs)]  
   
  前の例の `for` のステートメントは次のアクションを実行します。  
   
@@ -101,11 +101,11 @@ for (initializer; condition; iterator)
   
  次の例では、複数のあまり一般的なオプションを示します。: 値を初期化子、および反復子のセクションの両方の `Console.WriteLine` のメソッド、および反復子のセクションの2種類の変数の値の変更を開始する初期化子のセクションの外部ループ変数に割り当てます。  
   
- [!code-cs[csrefKeywordsIteration#8](../../../csharp/language-reference/keywords/codesnippet/csharp/for_2.cs)]  
+ [!code-cs[csrefKeywordsIteration#8](../../../csharp/language-reference/keywords/codesnippet/CSharp/for_2.cs)]  
   
  `for` のステートメントを定義する式はすべて省略可能です。  たとえば、次のステートメントでは、無限ループを作成します。  
   
- [!code-cs[csrefKeywordsIteration#3](../../../csharp/language-reference/keywords/codesnippet/csharp/for_3.cs)]  
+ [!code-cs[csrefKeywordsIteration#3](../../../csharp/language-reference/keywords/codesnippet/CSharp/for_3.cs)]  
   
 ## C\# 言語仕様  
  [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec-md.md)]  

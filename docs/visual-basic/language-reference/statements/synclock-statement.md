@@ -89,13 +89,13 @@ End SyncLock
  `simpleMessageList` クラスが 1 つのメッセージ リストをすべてのインスタンスで共有する場合は、`messagesList` 変数と `messagesLast` 変数を `Shared` として宣言します。  この場合、`messagesLock` も `Shared` で宣言して、すべてのインスタンスが単一のロック オブジェクトを使用するようにしてください。  
   
 ### コード  
- [!code-vb[VbVbalrThreading#1](../../../visual-basic/language-reference/statements/codesnippet/visualbasic/synclock-statement_1.vb)]  
+ [!code-vb[VbVbalrThreading#1](../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/synclock-statement_1.vb)]  
   
 ### 説明  
  次の例では、スレッドおよび `SyncLock` が使用されています。  `SyncLock` ステートメントが存在する限り、ステートメント ブロックはクリティカル セクションであり、`balance` は負の数にはなりません。  `SyncLock` ステートメントと `End SyncLock` ステートメントをコメント アウトすると、`SyncLock` キーワードを使用しない場合の効果を確認できます。  
   
 ### コード  
- [!code-vb[VbVbalrThreading#21](../../../visual-basic/language-reference/statements/codesnippet/visualbasic/synclock-statement_2.vb)]  
+ [!code-vb[VbVbalrThreading#21](../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/synclock-statement_2.vb)]  
   
 ### コメント  
   

@@ -85,7 +85,7 @@ expression1 / expression2
 ## 使用例  
  `/` 演算子を使って浮動小数点の除算を実行する例を次に示します。  結果は、2 つのオペランドの商です。  
   
- [!code-vb[VbVbalrOperators#16](../../../visual-basic/language-reference/operators/codesnippet/visualbasic/floating-point-division-_1_1.vb)]  
+ [!code-vb[VbVbalrOperators#16](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/floating-point-division-operator_1.vb)]  
   
  この例の式は、2.5 と 3.333333 の値を返します。  たとえ両方のオペランドが整数定数であっても、結果が必ず浮動小数点 \(`Double`\) になっていることに注意してください。  
   

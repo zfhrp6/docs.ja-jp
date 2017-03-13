@@ -30,19 +30,19 @@ caps.handback.revision: 24
   
 -   `DeleteFile` メソッドを使用してファイルを削除します。  次のコードは、`test.txt` という名前のファイルを削除する方法の例です。  
   
-     [!code-vb[VbVbcnMyFileSystem#22](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/visualbasic/how-to-delete-a-file_1.vb)]  
+     [!code-vb[VbVbcnMyFileSystem#22](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/VisualBasic/how-to-delete-a-file_1.vb)]  
   
 ### ユーザーに確認したうえでテキスト ファイルを削除するには  
   
 -   `DeleteFile` メソッドを使用してファイルを削除します。その際、`showUI` を `AllDialogs` に設定します。  次のコードは、`test.txt` という名前のファイルを、ユーザーに確認したうえで削除する方法の例です。  
   
-     [!code-vb[VbFileIOMisc#9](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/visualbasic/how-to-delete-a-file_2.vb)]  
+     [!code-vb[VbFileIOMisc#9](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/VisualBasic/how-to-delete-a-file_2.vb)]  
   
 ### テキスト ファイルを削除してごみ箱に送るには  
   
 -   `DeleteFile` メソッドを使用してファイルを削除します。その際、`recycle` パラメーターに `SendToRecycleBin` を指定します。  次のコードは、`test.txt` という名前のファイルを削除して**ごみ箱**に送る方法の例です。  
   
-     [!code-vb[VbFileIOMisc#10](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/visualbasic/how-to-delete-a-file_3.vb)]  
+     [!code-vb[VbFileIOMisc#10](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/VisualBasic/how-to-delete-a-file_3.vb)]  
   
 ## 信頼性の高いプログラミング  
  次の条件を満たす場合は、例外が発生する可能性があります。  

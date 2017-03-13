@@ -32,7 +32,7 @@ caps.handback.revision: 19
   
 -   `CopyDirectory` メソッドを使用し、コピー元とコピー先のディレクトリ名を指定します。  次の例では、`TestDirectory1` という名前のディレクトリを `TestDirectory2` にコピーします。その際、既存のファイルは上書きします。  
   
-     [!code-vb[VbVbcnMyFileSystem#16](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/visualbasic/how-to-copy-a-directory-_1.vb)]  
+     [!code-vb[VbVbcnMyFileSystem#16](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/VisualBasic/how-to-copy-a-directory-to-another-directory_1.vb)]  
   
      このコードの例は、IntelliSense コード スニペットとしても利用できます。  コード スニペット ピッカーでは、コード例は **\[ファイル システム \- ドライブ、フォルダー、およびファイルの処理\]** にあります。  詳細については、「[コード スニペット](/visual-studio/ide/code-snippets)」を参照してください。  
   

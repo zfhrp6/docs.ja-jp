@@ -35,7 +35,7 @@ XML リテラルと埋め込み式を組み合わせて、実行時に作成さ�
   
 -   次の例は、`contactName` 変数に格納されているテキストを、開始名前要素と終了名前要素の間に挿入する方法を示します。  
   
-     [!code-vb[VbXMLSamples#39](../../../../visual-basic/language-reference/operators/codesnippet/visualbasic/how-to-embed-expressions_1.vb)]  
+     [!code-vb[VbXMLSamples#39](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/how-to-embed-expressions-in-xml-literals_1.vb)]  
   
      この例を実行すると、次の出力が生成されます。  
   
@@ -49,7 +49,7 @@ XML リテラルと埋め込み式を組み合わせて、実行時に作成さ�
   
 -   次の例は、`phoneType` 変数に格納されたテキストを、`type` 属性の値として挿入する方法を示します。  
   
-     [!code-vb[VbXMLSamples#40](../../../../visual-basic/language-reference/operators/codesnippet/visualbasic/how-to-embed-expressions_2.vb)]  
+     [!code-vb[VbXMLSamples#40](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/how-to-embed-expressions-in-xml-literals_2.vb)]  
   
      この例を実行すると、次の出力が生成されます。  
   
@@ -65,7 +65,7 @@ XML リテラルと埋め込み式を組み合わせて、実行時に作成さ�
   
      この方法で要素を作成するときは、\<\/\> タグで閉じる必要があります。  
   
-     [!code-vb[VbXMLSamples#41](../../../../visual-basic/language-reference/operators/codesnippet/visualbasic/how-to-embed-expressions_3.vb)]  
+     [!code-vb[VbXMLSamples#41](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/how-to-embed-expressions-in-xml-literals_3.vb)]  
   
      この例を実行すると、次の出力が生成されます。  
   

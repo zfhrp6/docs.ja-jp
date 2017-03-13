@@ -24,17 +24,17 @@ caps.handback.revision: 30
   
  `out` キーワードによって、参照により引数が渡されます。  これは、[ref](../../../csharp/language-reference/keywords/ref.md) キーワードと同様ですが、`ref` は渡す前に、変数を初期化する必要があります。  `out` パラメーターを使用するには、メソッド定義と呼び出し元のメソッドの両方で `out` キーワードを明示的に使用する必要があります。  次に例を示します。  
   
- [!code-cs[csrefKeywordsMethodParams#1](../../../csharp/language-reference/keywords/codesnippet/csharp/out_1.cs)]  
+ [!code-cs[csrefKeywordsMethodParams#1](../../../csharp/language-reference/keywords/codesnippet/CSharp/out_1.cs)]  
   
  `out` 引数として渡された変数を渡す前に初期化する必要はありませんが、呼び出されたメソッドには、メソッドが返す前に値を割り当てる必要があります。  
   
  `ref` キーワードと `out` キーワードは実行時の動作が異なりますが、コンパイル時に、メソッド シグネチャの一部とは見なされません。  したがって、唯一の違いが、1 つのメソッドは `ref` 引数を使用し、もう一方のメソッドは `out` 引数を使用することである場合、メソッドはオーバーロードできません。  たとえば、次のコードはコンパイルされません。  
   
- [!code-cs[csrefKeywordsMethodParams#2](../../../csharp/language-reference/keywords/codesnippet/csharp/out_2.cs)]  
+ [!code-cs[csrefKeywordsMethodParams#2](../../../csharp/language-reference/keywords/codesnippet/CSharp/out_2.cs)]  
   
  ただし、次のように 1 つのメソッドが `ref` 引数または `out` 引数を使用し、他のメソッドがいずれも使用しない場合はオーバーロードを実行できます。  
   
- [!code-cs[csrefKeywordsMethodParams#3](../../../csharp/language-reference/keywords/codesnippet/csharp/out_3.cs)]  
+ [!code-cs[csrefKeywordsMethodParams#3](../../../csharp/language-reference/keywords/codesnippet/CSharp/out_3.cs)]  
   
  プロパティは変数ではないため、`out` パラメーターとして渡すことはできません。  
   
@@ -49,7 +49,7 @@ caps.handback.revision: 30
 ## 使用例  
  `out` メソッドの宣言は、複数の値を返すメソッドが必要な場合に便利です。  次の例では `out` を使用して、1 つのメソッド呼び出しで 3 つの変数を返します。  3 番目の引数が null に割り当てられることに注意してください。  これにより、必要に応じてメソッドが値を返すことができます。  
   
- [!code-cs[csrefKeywordsMethodParams#4](../../../csharp/language-reference/keywords/codesnippet/csharp/out_4.cs)]  
+ [!code-cs[csrefKeywordsMethodParams#4](../../../csharp/language-reference/keywords/codesnippet/CSharp/out_4.cs)]  
   
 ## 参照  
  [C\# リファレンス](../../../csharp/language-reference/index.md)

@@ -22,7 +22,7 @@ caps.handback.revision: 21
   
  null 許容ブール型では、式 `a != b` と `!(a == b)` は必ずしも同じにはなりません。一方または両方の値が null になる可能性があるためです。  式内の null 値を正しく処理するには個別に `true` 演算子と `false` 演算子の両方をオーバーロードする必要があります。  `true` 演算子と `false` 演算子をオーバーロードし、使用する方法を次の例に示します。  
   
- [!code-cs[csrefKeywordsOperator#16](../../../csharp/language-reference/keywords/codesnippet/csharp/csrefKeywordsOperator/csrefKeywordsOperators.cs#16)]  
+ [!code-cs[csrefKeywordsOperator#16](../../../csharp/language-reference/keywords/codesnippet/CSharp/false-operator_1.cs)]  
   
  `true` 演算子と `false` 演算子をオーバーロードする型は [if](../../../csharp/language-reference/keywords/if-else.md)、[do](../../../csharp/language-reference/keywords/do.md)、[while](../../../csharp/language-reference/keywords/while.md)、および [for](../../../csharp/language-reference/keywords/for.md) の各ステートメント内の制御式や、[条件式](../../../csharp/language-reference/operators/conditional-operator.md)で使用できます。  
   

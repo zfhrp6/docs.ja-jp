@@ -78,7 +78,7 @@ caps.handback.revision: 5
   
      データ コンテキストのプロパティとして公開されるテーブルを照会し、その結果を並べ替えるには、`Load` イベントに次のコードを追加します。  このクエリでは、顧客の受注数に基づいて結果が降順に並べ替えられます。  受注数が同じ顧客は、会社名に基づいて昇順 \(既定\) で並べ替えられます。  
   
-     [!code-vb[VbLINQToSQLHowTos#10](../../../../visual-basic/programming-guide/language-features/linq/codesnippet/visualbasic/StoredProcedureHowTo/Form4.vb#10)]  
+     [!code-vb[VbLINQToSQLHowTos#10](../../../../visual-basic/programming-guide/language-features/linq/codesnippet/VisualBasic/how-to-sort-query-results-by-using-linq_1.vb)]  
   
 4.  F5 キーを押してプロジェクトを実行し、結果を確認します。  
   

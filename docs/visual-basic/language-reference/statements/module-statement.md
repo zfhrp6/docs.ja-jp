@@ -102,7 +102,7 @@ End Module
 -   **修飾。**1 つのプロジェクトが複数のモジュールを持つことができます。また、名前の同じメンバーを複数のモジュールに宣言できます。  ただし、モジュールの外部にあるメンバーを参照する場合は、適切なモジュール名を使ってメンバーへの参照を修飾する必要があります。  詳細については、「[References to Declared Elements](../../../visual-basic/programming-guide/language-features/declared-elements/references-to-declared-elements.md)」を参照してください。  
   
 ## 使用例  
- [!code-vb[VbVbalrStatements#69](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/module-statement_1.vb)]  
+ [!code-vb[VbVbalrStatements#69](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/module-statement_1.vb)]  
   
 ## 参照  
  [Class Statement](../../../visual-basic/language-reference/statements/class-statement.md)   

@@ -25,7 +25,7 @@ caps.handback.revision: 24
   
  定数は、宣言するときに初期化する必要があります。  次に例を示します。  
   
- [!code-cs[csProgGuideObjects#64](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/constants_1.cs)]  
+ [!code-cs[csProgGuideObjects#64](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/constants_1.cs)]  
   
  この例では、定数 `months` は常に 12 になり、クラス自体によっても変更できません。  実際、コンパイラが C\# ソース コードで定数の識別子 \(この場合は `months`\) を検出すると、コンパイラが生成する IL \(Intermediate Language\) コードには、識別子の代わりにリテラル値が直接出力されます。  実行時に定数に関連付けられる変数アドレスが存在しないため、`const` フィールドは、参照渡しすることも、式の左辺値として指定することもできません。  
   
@@ -34,17 +34,17 @@ caps.handback.revision: 24
   
  同じ型の複数の定数を、次のように同時に宣言できます。  
   
- [!code-cs[csProgGuideObjects#65](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/constants_2.cs)]  
+ [!code-cs[csProgGuideObjects#65](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/constants_2.cs)]  
   
  定数の初期化に使用する式は、循環参照を形成しない限り別の定数を参照できます。  次に例を示します。  
   
- [!code-cs[csProgGuideObjects#66](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/constants_3.cs)]  
+ [!code-cs[csProgGuideObjects#66](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/constants_3.cs)]  
   
  定数は、[public](../../../csharp/language-reference/keywords/public.md)、[private](../../../csharp/language-reference/keywords/private.md)、[protected](../../../csharp/language-reference/keywords/protected.md)、[internal](../../../csharp/language-reference/keywords/internal.md)、または `protected` `internal` とマークできます。  これらのアクセス修飾子によって、クラスのユーザーが定数にアクセスする方法が定義されます。  詳細については、「[アクセス修飾子](../../../csharp/programming-guide/classes-and-structs/access-modifiers.md)」を参照してください。  
   
  定数の値は型のすべてのインスタンスで同じであるため、定数は[静的](../../../csharp/language-reference/keywords/static.md)フィールドのようにアクセスされます。  定数の宣言に `static` キーワードは使用しません。  定数を定義しているクラスに含まれていない式で定数を使用する場合は、クラス名、ピリオド、および定数の名前を使用する必要があります。  次に例を示します。  
   
- [!code-cs[csProgGuideObjects#67](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/constants_4.cs)]  
+ [!code-cs[csProgGuideObjects#67](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/constants_4.cs)]  
   
 ## C\# 言語仕様  
  [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec-md.md)]  

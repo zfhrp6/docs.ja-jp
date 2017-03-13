@@ -41,7 +41,7 @@ x | y
 ## 使用例  
  次の例では、使用する式は `||` 1番目のオペランドだけが評価されます。  使用する式 `|`両方のオペランドが評価されます。  2番目の例では、ランタイム例外が両方のオペランドが評価されると発生します。  
   
- [!code-cs[csRefOperators#52](../../../csharp/language-reference/operators/codesnippet/csharp/csrefOperators/csrefOperators.cs#52)]  
+ [!code-cs[csRefOperators#52](../../../csharp/language-reference/operators/codesnippet/CSharp/conditional-or-operator_1.cs)]  
   
 ## 参照  
  [C\# リファレンス](../../../csharp/language-reference/index.md)   

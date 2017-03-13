@@ -33,7 +33,7 @@ caps.handback.revision: 13
   
      次のコード例は、<xref:System.Xml.Linq.XDocument.Load%28System.String%29> メソッドを使用して、テキスト ファイルから <xref:System.Xml.Linq.XDocument> オブジェクトに XML を取得する方法を示しています。  
   
-     [!code-vb[VbXMLSamples#43](../../../../visual-basic/language-reference/operators/codesnippet/visualbasic/how-to-load-xml-from-a-f_1.vb)]  
+     [!code-vb[VbXMLSamples#43](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/how-to-load-xml-from-a-file-string-or-stream_1.vb)]  
   
 ### 文字列から XML を読み込むには  
   
@@ -41,7 +41,7 @@ caps.handback.revision: 13
   
      次のコード例は、<xref:System.Xml.Linq.XDocument.Parse%28System.String%29?displayProperty=fullName> メソッドを使用して、文字列から <xref:System.Xml.Linq.XDocument> オブジェクトに XML を取得する方法を示しています。  
   
-     [!code-vb[VbXMLSamples#47](../../../../visual-basic/language-reference/operators/codesnippet/visualbasic/how-to-load-xml-from-a-f_2.vb)]  
+     [!code-vb[VbXMLSamples#47](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/how-to-load-xml-from-a-file-string-or-stream_2.vb)]  
   
 ### ストリームから XML を読み込むには  
   
@@ -49,7 +49,7 @@ caps.handback.revision: 13
   
  次のコード例は、<xref:System.Xml.Linq.XNode.ReadFrom%2A> メソッドを使用して、XML ストリームから <xref:System.Xml.Linq.XDocument> オブジェクトに XML を取得する方法を示しています。  
   
- [!code-vb[VbXMLSamples#46](../../../../visual-basic/language-reference/operators/codesnippet/visualbasic/how-to-load-xml-from-a-f_3.vb)]  
+ [!code-vb[VbXMLSamples#46](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/how-to-load-xml-from-a-file-string-or-stream_3.vb)]  
   
 ## 参照  
  <xref:System.Xml.Linq.XDocument.Load%2A?displayProperty=fullName>   

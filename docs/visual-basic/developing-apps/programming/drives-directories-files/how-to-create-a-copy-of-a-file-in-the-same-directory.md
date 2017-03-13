@@ -32,13 +32,13 @@ caps.handback.revision: 21
   
 -   `CopyFile` メソッドを使用します。その際、対象のファイルと場所を指定します。  次の例では、`test.txt` のコピーを `test2.txt` という名前で作成します。  
   
-     [!code-vb[VbVbcnMyFileSystem#51](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/visualbasic/how-to-create-a-copy-of-_0_1.vb)]  
+     [!code-vb[VbVbcnMyFileSystem#51](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/VisualBasic/how-to-create-a-copy-of-a-file-in-the-same-directory_1.vb)]  
   
 ### ファイルのコピーを同じフォルダーに作成し、既存のファイルを上書きするには  
   
 -   `CopyFile` メソッドを使用します。その際、対象のファイルと場所を指定し、`overwrite` を `True` に設定します。  次の例では、`test.txt` のコピーを `test2.txt` という名前で作成し、同じ名前のファイルが既に存在する場合は上書きします。  
   
-     [!code-vb[VbVbcnMyFileSystem#52](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/visualbasic/how-to-create-a-copy-of-_0_2.vb)]  
+     [!code-vb[VbVbcnMyFileSystem#52](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/VisualBasic/how-to-create-a-copy-of-a-file-in-the-same-directory_2.vb)]  
   
 ## 信頼性の高いプログラミング  
  次の条件を満たす場合は、例外がスローされる可能性があります。  

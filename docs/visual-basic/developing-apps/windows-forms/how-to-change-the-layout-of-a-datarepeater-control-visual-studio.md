@@ -38,16 +38,16 @@ caps.handback.revision: 10
   
 1.  ボタンまたはメニューの `Click` イベント ハンドラーに次のコードを追加します。  
   
-     [!code-cs[VbPowerPacksDataRepeaterLayout#1](../../../visual-basic/developing-apps/windows-forms/codesnippet/csharp/VbPowerPacksDataRepeaterLayoutCS/VbPowerPacksDataRepeaterLayout.cs#1)]
-     [!code-vb[VbPowerPacksDataRepeaterLayout#1](../../../visual-basic/developing-apps/windows-forms/codesnippet/visualbasic/VbPowerPacksDataRepeaterLayout/VbPowerPacksDataRepeaterLayout.vb#1)]  
+     [!code-cs[VbPowerPacksDataRepeaterLayout#1](../../../visual-basic/developing-apps/windows-forms/codesnippet/CSharp/how-to-change-the-layout-of-a-datarepeater-control-visual-studio_1.cs)]
+     [!code-vb[VbPowerPacksDataRepeaterLayout#1](../../../visual-basic/developing-apps/windows-forms/codesnippet/VisualBasic/how-to-change-the-layout-of-a-datarepeater-control-visual-studio_1.vb)]  
   
 2.  多くの場合、例のセクションに示されているようなコードを追加して、<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.ItemTemplate%2A> のサイズおよびコントロールの位置を新しい方向に合わせて変更する必要があります。  
   
 ## 使用例  
  イベント ハンドラー内で <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.LayoutStyleChanged> イベントに応答する方法を次の例に示します。  この例では、フォームに `DataRepeater1` という名前の <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> コントロールが配置され、そのコントロールの <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.ItemTemplate%2A> に `TextBox1` および `TextBox2` という名前の 2 つの <xref:System.Windows.Forms.TextBox> コントロールが配置されている必要があります。  
   
- [!code-cs[VbPowerPacksDataRepeaterLayout#2](../../../visual-basic/developing-apps/windows-forms/codesnippet/csharp/VbPowerPacksDataRepeaterLayoutCS/VbPowerPacksDataRepeaterLayout.cs#2)]
- [!code-vb[VbPowerPacksDataRepeaterLayout#2](../../../visual-basic/developing-apps/windows-forms/codesnippet/visualbasic/VbPowerPacksDataRepeaterLayout/VbPowerPacksDataRepeaterLayout.vb#2)]  
+ [!code-cs[VbPowerPacksDataRepeaterLayout#2](../../../visual-basic/developing-apps/windows-forms/codesnippet/CSharp/how-to-change-the-layout-of-a-datarepeater-control-visual-studio_2.cs)]
+ [!code-vb[VbPowerPacksDataRepeaterLayout#2](../../../visual-basic/developing-apps/windows-forms/codesnippet/VisualBasic/how-to-change-the-layout-of-a-datarepeater-control-visual-studio_2.vb)]  
   
 ## 参照  
  <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater>   

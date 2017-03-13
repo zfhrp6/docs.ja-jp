@@ -81,12 +81,12 @@ End With
 ## 使用例  
  次の例では、各 `With` ブロックが単一のオブジェクトに対して一連のステートメントを実行します。  
   
- [!code-vb[VbVbalrWithStatement#2](../../../visual-basic/language-reference/statements/codesnippet/visualbasic/vbwpfapp/mainwindow.xaml.vb#2)]  
+ [!code-vb[VbVbalrWithStatement#2](../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/with-end-with-statement_1.vb)]  
   
 ## 使用例  
  次の例では、`With…End With` ステートメントを入れ子にしています。  入れ子にされた `With` ステートメント内の構文では、内側のオブジェクトを参照します。  
   
- [!code-vb[VbVbalrWithStatement#1](../../../visual-basic/language-reference/statements/codesnippet/visualbasic/vbwpfapp/mainwindow.xaml.vb#1)]  
+ [!code-vb[VbVbalrWithStatement#1](../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/with-end-with-statement_2.vb)]  
   
 ## 参照  
  <xref:System.Collections.Generic.List%601>   

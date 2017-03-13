@@ -63,7 +63,7 @@ End Sub
 ## 使用例  
  以下は、コンソールに値を書き込むラムダ式の例です。  この例では、ラムダ式サブルーチンの単一行と複数行の両方の構文を示しています。  その他の例については、「[Lambda Expressions](../../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md)」を参照してください。  
   
- [!code-vb[VbVbalrLambdas#15](../../../visual-basic/language-reference/operators/codesnippet/visualbasic/vbvbalrlambdas/Class1.vb#15)]  
+ [!code-vb[VbVbalrLambdas#15](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/sub-expression_1.vb)]  
   
 ## 参照  
  [Sub Statement](../../../visual-basic/language-reference/statements/sub-statement.md)   

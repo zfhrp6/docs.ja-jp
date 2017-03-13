@@ -53,7 +53,7 @@ caps.handback.revision: 22
 ## 使用例  
  この例では、既定の `SidebarMenu` フォームのタイトルを変更します。  
   
- [!code-vb[VbVbalrMyForms#2](../../../visual-basic/language-reference/objects/codesnippet/visualbasic/my-forms-object_1.vb)]  
+ [!code-vb[VbVbalrMyForms#2](../../../visual-basic/language-reference/objects/codesnippet/VisualBasic/my-forms-object_1.vb)]  
   
  この例を実行するには、`SidebarMenu` という名前のフォームがプロジェクト内に含まれている必要があります。  詳細については、「[How to: Add Windows Forms to a Project](http://msdn.microsoft.com/ja-jp/3d7bb25f-fd90-47cf-9378-fa0d764686c1)」を参照してください。  
   

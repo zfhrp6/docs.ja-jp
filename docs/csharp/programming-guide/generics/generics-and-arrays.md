@@ -21,7 +21,7 @@ C\# 2.0 以降では、下限がゼロの 1 次元配列には、<xref:System.Co
   
  次のコード例では、<xref:System.Collections.Generic.IList%601> 入力パラメーターを使用する単一のジェネリック メソッドで、リストと配列 \(この場合は整数の配列\) の両方に対して反復処理を実行する方法を示します。  
   
- [!code-cs[csProgGuideGenerics#35](../../../csharp/programming-guide/generics/codesnippet/csharp/generics-and-arrays_1.cs)]  
+ [!code-cs[csProgGuideGenerics#35](../../../csharp/programming-guide/generics/codesnippet/CSharp/generics-and-arrays_1.cs)]  
   
 ## 参照  
  <xref:System.Collections.Generic>   

@@ -23,12 +23,12 @@ caps.handback.revision: 13
   
  2 番目のメソッドでは、左側のカテゴリの一覧にカテゴリ ID があるすべての商品のシーケンスが生成されます。  `let` 句と `Contains` メソッドを使用して、一時配列を作成しています。  クエリの前に配列を作成し、最初の `from` 句を削除することもできます。  
   
- [!code-cs[csProgGuideLINQ#64](../../../csharp/programming-guide/arrays/codesnippet/csharp/csLINQProgRef/csRef30LangFeatures_2.cs#64)]  
+ [!code-cs[csProgGuideLINQ#64](../../../csharp/programming-guide/arrays/codesnippet/CSharp/how-to-perform-custom-join-operations_1.cs)]  
   
 ## 使用例  
  次の例のクエリでは、一致するキーに基づいて 2 つのシーケンスを結合する必要がありますが、内部 \(右側\) のシーケンスの場合、join 句自体より前にシーケンスを取得することはできません。  `join` 句を使用してこの結合を実行した場合は、`Split` メソッドを要素ごとに呼び出す必要があります。  複数の `from` 句を使用することにより、クエリでメソッドを繰り返し呼び出すことのオーバーヘッドを回避できます。  ただし、`join` は最適化されているため、この例の場合は複数の `from` 句を使用するよりも処理はやはり速くなります。  結果は、主に、メソッド呼び出しにかかる負荷によって決まります。  
   
- [!code-cs[csProgGuideLINQ#13](../../../csharp/programming-guide/arrays/codesnippet/csharp/csLINQProgRef/csrefLINQHowTos.cs#13)]  
+ [!code-cs[csProgGuideLINQ#13](../../../csharp/programming-guide/arrays/codesnippet/CSharp/how-to-perform-custom-join-operations_2.cs)]  
   
 ## コードのコンパイル  
   

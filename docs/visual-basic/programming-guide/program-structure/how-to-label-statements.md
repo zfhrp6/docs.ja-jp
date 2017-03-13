@@ -41,7 +41,7 @@ caps.handback.revision: 18
   
      たとえば、次に示すコード行には、それぞれ `Jump` と `120` のラベルが付けられています。  
   
-     [!code-vb[VbVbalrStatements#708](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/how-to-label-statements_1.vb)]  
+     [!code-vb[VbVbalrStatements#708](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/how-to-label-statements_1.vb)]  
   
 ## 参照  
  [Statements](../../../visual-basic/programming-guide/language-features/statements.md)   

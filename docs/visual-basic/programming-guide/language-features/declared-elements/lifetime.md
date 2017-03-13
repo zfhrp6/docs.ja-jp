@@ -67,7 +67,7 @@ caps.handback.revision: 14
  [Static](../../../../visual-basic/language-reference/modifiers/static.md) キーワードを使用して変数を宣言する例を、次に示します   \([Dim Statement](../../../../visual-basic/language-reference/statements/dim-statement.md) で、`Static` などの修飾子を使用している場合は、`Dim` キーワードは不要です\)。  
   
 ### コード  
- [!code-vb[VbVbalrKeywords#13](../../../../visual-basic/language-reference/codesnippet/visualbasic/lifetime_1.vb)]  
+ [!code-vb[VbVbalrKeywords#13](../../../../visual-basic/language-reference/codesnippet/VisualBasic/lifetime_1.vb)]  
   
 ### コメント  
  前の例では、変数 `applesSold` は、プロシージャ `runningTotal` が呼び出し元のコードに戻された後でも、引き続き存在します。  次に `runningTotal` が呼び出されたとき、`applesSold` は前に計算した値を保持しています。  

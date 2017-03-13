@@ -30,7 +30,7 @@ caps.handback.revision: 19
 ## 使用例  
  この例は、コマンド ライン アプリケーションに渡されるコマンド ライン引数を示しています。  次の出力は、上の表の最初のエントリに対するものです。  
   
- [!code-cs[csProgGuideMain#9](../../../csharp/programming-guide/inside-a-program/codesnippet/csharp/how-to-display-command-l_1.cs)]  
+ [!code-cs[csProgGuideMain#9](../../../csharp/programming-guide/inside-a-program/codesnippet/CSharp/how-to-display-command-line-arguments_1.cs)]  
   
 ## 参照  
  [C\# プログラミング ガイド](../../../csharp/programming-guide/index.md)   

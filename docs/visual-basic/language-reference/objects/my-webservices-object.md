@@ -49,7 +49,7 @@ caps.handback.revision: 17
 ## 使用例  
  この例では、`TemperatureConverter` XML Web サービスの `FahrenheitToCelsius` メソッドを呼び出し、結果を返します。  
   
- [!code-vb[VbVbalrMyWebService#1](../../../visual-basic/language-reference/objects/codesnippet/visualbasic/VbVbalrMyWebService/Form1.vb#1)]  
+ [!code-vb[VbVbalrMyWebService#1](../../../visual-basic/language-reference/objects/codesnippet/VisualBasic/my-webservices-object_1.vb)]  
   
  この例を実行するためには、プロジェクトが `Converter` という名前の Web サービスを参照していて、その Web サービスが `ConvertTemperature` メソッドを公開している必要があります。  詳細については、「[Accessing Application Web Services](../../../visual-basic/developing-apps/programming/accessing-application-web-services.md)」を参照してください。  
   

@@ -27,7 +27,7 @@ caps.handback.revision: 22
   
  `GenericList<T>` クラスで `default` キーワードを使用する方法の例を次に示します。  詳細については、「[ジェネリックの概要 \(C\# プログラミング ガイド\)](../../../csharp/programming-guide/generics/introduction-to-generics.md)」を参照してください。  
   
- [!code-cs[csProgGuideGenerics#41](../../../csharp/programming-guide/generics/codesnippet/csharp/default-keyword-in-gener_1.cs)]  
+ [!code-cs[csProgGuideGenerics#41](../../../csharp/programming-guide/generics/codesnippet/CSharp/default-keyword-in-generic-code_1.cs)]  
   
 ## 参照  
  <xref:System.Collections.Generic>   

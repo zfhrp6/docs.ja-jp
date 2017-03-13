@@ -57,13 +57,13 @@ caps.handback.revision: 26
 ## 例  
  次の例では、関数 `calcSum`を定義し、ダイヤルいます。  パラメーター `args` の `ParamArray` の修飾子は可変数の引数を使用すると、関数ができます。  
   
- [!code-vb[VbVbalrStatements#26](../../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/parameter-arrays_1.vb)]  
+ [!code-vb[VbVbalrStatements#26](../../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/parameter-arrays_1.vb)]  
   
  パラメーター配列を受け取るプロシージャを定義し、パラメーター配列に渡されたすべての要素の値を出力する例を次に示します。  
   
- [!code-vb[VbVbcnProcedures#48](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/parameter-arrays_2.vb)]  
+ [!code-vb[VbVbcnProcedures#48](./codesnippet/VisualBasic/parameter-arrays_2.vb)]  
   
- [!code-vb[VbVbcnProcedures#49](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/parameter-arrays_3.vb)]  
+ [!code-vb[VbVbcnProcedures#49](./codesnippet/VisualBasic/parameter-arrays_3.vb)]  
   
 ## 参照  
  <xref:Microsoft.VisualBasic.Information.UBound%2A>   

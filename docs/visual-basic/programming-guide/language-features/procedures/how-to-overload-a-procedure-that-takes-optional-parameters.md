@@ -47,11 +47,11 @@ caps.handback.revision: 17
   
      次の例では、省略可能なパラメーターを使用するよう定義されたプロシージャ、オーバーロードされた同等の 2 つのプロシージャ、そして最後に、無効なオーバーロードされたバージョンと有効なオーバーロードされたバージョンを示します。  
   
-     [!code-vb[VbVbcnProcedures#59](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/how-to-overload-a-proced_1_1.vb)]  
+     [!code-vb[VbVbcnProcedures#59](./codesnippet/VisualBasic/how-to-overload-a-procedure-that-takes-optional-parameters_1.vb)]  
   
-     [!code-vb[VbVbcnProcedures#60](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/how-to-overload-a-proced_1_2.vb)]  
+     [!code-vb[VbVbcnProcedures#60](./codesnippet/VisualBasic/how-to-overload-a-procedure-that-takes-optional-parameters_2.vb)]  
   
-     [!code-vb[VbVbcnProcedures#61](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/how-to-overload-a-proced_1_3.vb)]  
+     [!code-vb[VbVbcnProcedures#61](./codesnippet/VisualBasic/how-to-overload-a-procedure-that-takes-optional-parameters_3.vb)]  
   
 ## 省略可能なパラメーターが複数ある場合  
  省略可能なパラメーターが複数あるパラメーターの場合、通常は 2 つ以上のオーバーロードされたバージョンが必要です。  たとえば、省略可能なパラメーターが 2 つあり、呼び出し元のコードがいずれかのパラメーターを渡すか渡さないかを、もう 1 つのパラメーターの有無に関係なく決める場合、オーバーロードされたバージョンは 4 つ \(渡される引数の組み合わせの数\) 必要です。  

@@ -84,11 +84,11 @@ Visual Basic の XML IntelliSense は、XML スキーマで定義されている
   
 2.  次の例で示すように、コード ファイルの先頭に、対象の XML 名前空間の `Imports` ステートメントを追加します。  
   
-     [!code-vb[VbXMLSamples#1](../../../../visual-basic/language-reference/operators/codesnippet/visualbasic/how-to-enable-xml-intell_1.vb)]  
+     [!code-vb[VbXMLSamples#1](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/how-to-enable-xml-intellisense_1.vb)]  
   
      既定の名前空間、つまり名前空間プレフィックスのない XML 要素および属性に適用される名前空間として、XML 名前空間をインポートするには、対象となる既定の XML 名前空間に `Imports` ステートメントを追加します。  名前空間プレフィックスは指定しないでください。  次に、`Imports` ステートメントの例を示します。  
   
-     [!code-vb[VbXmlSamples#50](../../../../visual-basic/language-reference/operators/codesnippet/visualbasic/how-to-enable-xml-intell_2.vb)]  
+     [!code-vb[VbXmlSamples#50](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/how-to-enable-xml-intellisense_2.vb)]  
   
 #### プロジェクト内のすべてのファイルに XML 名前空間をインポートするには  
   

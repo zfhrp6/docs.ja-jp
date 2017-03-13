@@ -30,11 +30,11 @@ caps.handback.revision: 11
   
 1.  使用する特定の型のパラメーターを宣言します。次に例を示します。  
   
-     [!code-vb[VbVbalrStatements#95](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/as-any-is-not-supported-_1.vb)]  
+     [!code-vb[VbVbalrStatements#95](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/as-any-is-not-supported-in-declare-statements_1.vb)]  
   
 2.  呼び出しているプロシージャで `Void*` が必要とされている場合は、<xref:System.Runtime.InteropServices.MarshalAsAttribute> 属性を使用して `As Any` を指定します。  
   
-     [!code-vb[VbVbalrStatements#96](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/as-any-is-not-supported-_2.vb)]  
+     [!code-vb[VbVbalrStatements#96](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/as-any-is-not-supported-in-declare-statements_2.vb)]  
   
 ## 参照  
  <xref:System.Runtime.InteropServices.MarshalAsAttribute>   

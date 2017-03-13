@@ -36,22 +36,22 @@ caps.handback.revision: 30
   
 -   `CreateSubKey` メソッドを使用して、キーを配置するハイブ、およびキーの名前を指定します。  パラメーター  `Subkey`  では、大文字と小文字は区別されません。  レジストリ キー `MyTestKey` を HKEY\_CURRENT\_USER の下に作成する例を次に示します。  
   
-     [!code-vb[VbResourceTasks#17](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/visualbasic/how-to-create-a-registry_1.vb)]  
+     [!code-vb[VbResourceTasks#17](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/VisualBasic/how-to-create-a-registry-key-and-set-its-value_1.vb)]  
   
 #### レジストリ キーを作成し、値を設定するには  
   
 1.  `CreateSubkey` メソッドを使用して、キーを配置するハイブ、およびキーの名前を指定します。  レジストリ キー `MyTestKey` を HKEY\_CURRENT\_USER の下に作成する例を次に示します。  
   
-     [!code-vb[VbResourceTasks#17](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/visualbasic/how-to-create-a-registry_1.vb)]  
+     [!code-vb[VbResourceTasks#17](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/VisualBasic/how-to-create-a-registry-key-and-set-its-value_1.vb)]  
   
 2.  `SetValue` メソッドを使用して、値を設定します。  この例では、文字列値を次のように設定します。   "MyTestKeyValue" が "This is a test value" になります。  
   
-     [!code-vb[VbResourceTasks#14](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/visualbasic/how-to-create-a-registry_2.vb)]  
+     [!code-vb[VbResourceTasks#14](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/VisualBasic/how-to-create-a-registry-key-and-set-its-value_2.vb)]  
   
 ## 使用例  
  レジストリ キー `MyTestKey` を HKEY\_CURRENT\_USER の下に作成し、文字列値 `MyTestKeyValue` を `This is a test value` に設定する例を次に示します。  
   
- [!code-vb[VbResourceTasks#15](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/visualbasic/how-to-create-a-registry_3.vb)]  
+ [!code-vb[VbResourceTasks#15](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/VisualBasic/how-to-create-a-registry-key-and-set-its-value_3.vb)]  
   
 ## 信頼性の高いプログラミング  
  レジストリの構造を調べて、キーの適切な場所を見つけることができます。  たとえば、現在のユーザーの HKEY\_CURRENT\_USER\\Software key を開き、会社名を使用してキーを作成するとします。  その後で、会社名のキーにレジストリ値を追加します。  

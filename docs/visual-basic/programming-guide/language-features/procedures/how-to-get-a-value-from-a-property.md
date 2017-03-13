@@ -39,7 +39,7 @@ caps.handback.revision: 11
   
      次の例は、[!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] の `Now` プロパティの値を読み込みます。`Get` プロシージャが暗黙的に呼び出されています。  
   
-     [!code-vb[VbVbalrDateProperties#4](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/VbVbalrDateProperties/Module1.vb#4)]  
+     [!code-vb[VbVbalrDateProperties#4](./codesnippet/VisualBasic/how-to-get-a-value-from-a-property_1.vb)]  
   
 2.  プロパティが引数を受け取る場合、プロパティ名に続けて、かっこで囲んだ引数リストを指定します。  指定する引数がない場合は、かっこを省略することもできます。  
   

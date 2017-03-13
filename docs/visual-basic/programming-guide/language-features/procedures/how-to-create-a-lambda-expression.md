@@ -36,15 +36,15 @@ caps.handback.revision: 27
   
 3.  パラメーター リストの次に、関数の本体として、式を 1 つ入力します。  この式の評価値が、この関数によって返される値になります。  戻り値の型を指定するのに `As` 句は使用しません。  
   
-     [!code-vb[VbVbalrLambdas#1](../../../../visual-basic/language-reference/operators/codesnippet/visualbasic/vbvbalrlambdas/Class1.vb#1)]  
+     [!code-vb[VbVbalrLambdas#1](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/how-to-create-a-lambda-expression_1.vb)]  
   
      ラムダ式は、整数の引数を渡すことによって呼び出します。  
   
-     [!code-vb[VbVbalrLambdas#2](../../../../visual-basic/language-reference/operators/codesnippet/visualbasic/vbvbalrlambdas/Class1.vb#2)]  
+     [!code-vb[VbVbalrLambdas#2](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/how-to-create-a-lambda-expression_2.vb)]  
   
 4.  または、次の例のようにしても、同じ結果を得ることができます。  
   
-     [!code-vb[VbVbalrLambdas#3](../../../../visual-basic/language-reference/operators/codesnippet/visualbasic/vbvbalrlambdas/Class1.vb#3)]  
+     [!code-vb[VbVbalrLambdas#3](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/how-to-create-a-lambda-expression_3.vb)]  
   
 ### 単一行のラムダ式サブルーチンを作成するには  
   
@@ -58,11 +58,11 @@ caps.handback.revision: 27
   
 3.  パラメーター リストの次に、サブルーチンの本体として、ステートメントを 1 つ入力します。  
   
-     [!code-vb[VbVbalrLambdas#17](../../../../visual-basic/language-reference/operators/codesnippet/visualbasic/vbvbalrlambdas/Class1.vb#17)]  
+     [!code-vb[VbVbalrLambdas#17](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/how-to-create-a-lambda-expression_4.vb)]  
   
      ラムダ式は、文字列の引数を渡すことによって呼び出します。  
   
-     [!code-vb[VbVbalrLambdas#18](../../../../visual-basic/language-reference/operators/codesnippet/visualbasic/vbvbalrlambdas/Class1.vb#18)]  
+     [!code-vb[VbVbalrLambdas#18](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/how-to-create-a-lambda-expression_5.vb)]  
   
 ### 複数行のラムダ式関数を作成するには  
   
@@ -78,11 +78,11 @@ caps.handback.revision: 27
   
 4.  関数の本体に、式を作成して値を返すための次のコードを追加します。  戻り値の型を指定するのに `As` 句は使用しません。  
   
-     [!code-vb[VbVbalrLambdas#19](../../../../visual-basic/language-reference/operators/codesnippet/visualbasic/vbvbalrlambdas/Class1.vb#19)]  
+     [!code-vb[VbVbalrLambdas#19](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/how-to-create-a-lambda-expression_6.vb)]  
   
      ラムダ式は、整数の引数を渡すことによって呼び出します。  
   
-     [!code-vb[VbVbalrLambdas#20](../../../../visual-basic/language-reference/operators/codesnippet/visualbasic/vbvbalrlambdas/Class1.vb#20)]  
+     [!code-vb[VbVbalrLambdas#20](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/how-to-create-a-lambda-expression_7.vb)]  
   
 ### 複数行のラムダ式サブルーチンを作成するには  
   
@@ -98,20 +98,20 @@ caps.handback.revision: 27
   
 4.  関数の本体に、サブルーチンが呼び出されたときに実行する次のコードを追加します。  
   
-     [!code-vb[VbVbalrLambdas#21](../../../../visual-basic/language-reference/operators/codesnippet/visualbasic/vbvbalrlambdas/Class1.vb#21)]  
+     [!code-vb[VbVbalrLambdas#21](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/how-to-create-a-lambda-expression_8.vb)]  
   
      ラムダ式は、文字列の引数を渡すことによって呼び出します。  
   
-     [!code-vb[VbVbalrLambdas#22](../../../../visual-basic/language-reference/operators/codesnippet/visualbasic/vbvbalrlambdas/Class1.vb#22)]  
+     [!code-vb[VbVbalrLambdas#22](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/how-to-create-a-lambda-expression_9.vb)]  
   
 ## 使用例  
  ラムダ式の一般的な使用目的は、`Delegate` 型のパラメーターの引数として渡すことができる関数を定義することです。  次の例では、<xref:System.Diagnostics.Process.GetProcesses%2A> メソッドが、ローカル コンピューターで実行中のプロセスの配列を返します。  <xref:System.Linq.Enumerable> クラスの <xref:System.Linq.Enumerable.Where%2A> メソッドは、引数として `Boolean` デリゲートを必要とします。  この例では、その目的を果たすために、ラムダ式が使用されます。  ラムダ式は、スレッドが 1 つだけあるプロセスで、`filteredList` で選択されたプロセスごとに、`True` を返します。  
   
- [!code-vb[VbVbalrLambdas#10](../../../../visual-basic/language-reference/operators/codesnippet/visualbasic/vbvbalrlambdas/Class4.vb#10)]  
+ [!code-vb[VbVbalrLambdas#10](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/how-to-create-a-lambda-expression_10.vb)]  
   
  前のコード例は、[!INCLUDE[vbteclinqext](../../../../csharp/getting-started/includes/vbteclinqext-md.md)] 構文で記述された次のコードに相当します。  
   
- [!code-vb[VbVbalrLambdas#11](../../../../visual-basic/language-reference/operators/codesnippet/visualbasic/vbvbalrlambdas/Class5.vb#11)]  
+ [!code-vb[VbVbalrLambdas#11](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/how-to-create-a-lambda-expression_11.vb)]  
   
 ## 参照  
  <xref:System.Linq.Enumerable>   

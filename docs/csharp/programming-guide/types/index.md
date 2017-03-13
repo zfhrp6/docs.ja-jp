@@ -42,7 +42,7 @@ caps.handback.revision: 53
   
  コンパイラは、型情報を使用して、コード内で実行されるすべての操作が*タイプ セーフ*であることを確認します。  たとえば、[int](../../../csharp/language-reference/keywords/int.md) 型の変数を宣言すると、その変数は加算演算と減算演算で使用できます。  同じ演算を [bool](../../../csharp/language-reference/keywords/bool.md) 型の変数に対して実行しようとすると、コンパイラで次の例ようなエラーが発生します。  
   
- [!code-cs[csProgGuideTypes#42](../../../csharp/programming-guide/nullable-types/codesnippet/csharp/index_1.cs)]  
+ [!code-cs[csProgGuideTypes#42](../../../csharp/programming-guide/nullable-types/codesnippet/CSharp/index_1.cs)]  
   
 > [!NOTE]
 >  C や C\+\+ と異なり、C\# では、[bool](../../../csharp/language-reference/keywords/bool.md) を [int](../../../csharp/language-reference/keywords/int.md) に変換することはできません。  
@@ -52,11 +52,11 @@ caps.handback.revision: 53
 ### 変数宣言での型の指定  
  プログラム内で変数や定数を宣言するときは、その型を指定するか、[var](../../../csharp/language-reference/keywords/var.md) キーワードを使用して、コンパイラが型を推論できるようにする必要があります。  次の例では、組み込みの数値型と複雑なユーザー定義の型の両方を使用する変数宣言を示します。  
   
- [!code-cs[csProgGuideTypes#36](../../../csharp/programming-guide/nullable-types/codesnippet/csharp/index_2.cs)]  
+ [!code-cs[csProgGuideTypes#36](../../../csharp/programming-guide/nullable-types/codesnippet/CSharp/index_2.cs)]  
   
  メソッドのパラメーターおよび戻り値の型は、メソッド シグネチャで指定します。  入力引数として [int](../../../csharp/language-reference/keywords/int.md) を使用する必要があり、戻り値として文字列を返すメソッドのシグネチャを次に示します。  
   
- [!code-cs[csProgGuideTypes#35](../../../csharp/programming-guide/nullable-types/codesnippet/csharp/index_3.cs)]  
+ [!code-cs[csProgGuideTypes#35](../../../csharp/programming-guide/nullable-types/codesnippet/CSharp/index_3.cs)]  
   
  変数を宣言すると、新しい型を使用してその変数を再度宣言することはできず、宣言された型と互換性のない値をその変数に代入することはできません。  たとえば、[int](../../../csharp/language-reference/keywords/int.md) を宣言してから、それに [true](../../../csharp/language-reference/keywords/true-literal.md) のブール値を代入することはできません。  ただし、たとえば新しい変数に代入するときや、メソッドの引数として渡すときに、値を他の型に変換することは可能です。  データの損失を伴わない*型変換*は、コンパイラによって自動的に実行されます。  データの損失を伴う可能性のある変換には、ソース コードに *cast* を記述する必要があります。  
   
@@ -107,13 +107,13 @@ char c = 'Z';
   
  独自のカスタム値型を作成するには、[struct](../../../csharp/language-reference/keywords/struct.md) キーワードを使用します。  通常、構造体は、次の例に示すように、少数の関連する変数のコンテナーとして使用します。  
   
- [!code-cs[csProgGuideObjects#1](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/index_4.cs)]  
+ [!code-cs[csProgGuideObjects#1](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/index_4.cs)]  
   
  構造体の詳細については、「[構造体](../../../csharp/programming-guide/classes-and-structs/structs.md)」を参照してください。  [!INCLUDE[dnprdnshort](../../../csharp/getting-started/includes/dnprdnshort-md.md)] における値型の詳細については、「[共通型システム](../../../standard/base-types/common-type-system.md)」を参照してください。  
   
  別の種類の値型として、[列挙体](../../../csharp/language-reference/keywords/enum.md)があります。  列挙体は、一連の名前付き整数定数を定義します。  たとえば、.NET Framework クラス ライブラリの <xref:System.IO.FileMode?displayProperty=fullName> 列挙体には、ファイルを開く方法を指定する一連の名前付き整数定数が格納されています。  これは、次の例のように定義されます。  
   
- [!code-cs[csProgGuideTypes#44](../../../csharp/programming-guide/nullable-types/codesnippet/csharp/index_5.cs)]  
+ [!code-cs[csProgGuideTypes#44](../../../csharp/programming-guide/nullable-types/codesnippet/CSharp/index_5.cs)]  
   
  定数 `System.IO.FileMode.Create` は、2 という値を持ちます。  しかし、人間がソース コードを読む場合は名前があるとわかりやすいため、このような場合は、リテラルの数値の定数を使用するよりも、列挙体を使用する方がよいと言えます。  詳細については、「<xref:System.IO.FileMode?displayProperty=fullName>」を参照してください。  
   
@@ -137,7 +137,7 @@ IMyInterface iface = new MyClass();
   
  配列は、その要素が値型の場合でも、すべて参照型です。  配列は、<xref:System.Array?displayProperty=fullName> クラスから暗黙的に派生しますが、C\# に用意されている次の例のような簡単な構文で宣言および使用します。  
   
- [!code-cs[csProgGuideTypes#45](../../../csharp/programming-guide/nullable-types/codesnippet/csharp/index_6.cs)]  
+ [!code-cs[csProgGuideTypes#45](../../../csharp/programming-guide/nullable-types/codesnippet/CSharp/index_6.cs)]  
   
  参照型では、継承が全面的にサポートされています。  クラスの作成時には、[シール](../../../csharp/language-reference/keywords/sealed.md) クラスとして定義されているものを除く、他のすべてのインターフェイスまたはクラスから継承できます。また、作成したクラスから他のクラスを継承し、仮想メソッドをオーバーライドすることもできます。  独自のクラスを作成する方法の詳細については、「[クラスと構造体](../../../csharp/programming-guide/classes-and-structs/index.md)」を参照してください。  継承と仮想メソッドの詳細については、「[継承](../../../csharp/programming-guide/classes-and-structs/inheritance.md)」を参照してください。  
   
@@ -146,7 +146,7 @@ IMyInterface iface = new MyClass();
   
  リテラルは型指定され、すべての型は最終的に <xref:System.Object?displayProperty=fullName> から派生するため、次のようなコードを記述してコンパイルできます。  
   
- [!code-cs[csProgGuideTypes#37](../../../csharp/programming-guide/nullable-types/codesnippet/csharp/index_7.cs)]  
+ [!code-cs[csProgGuideTypes#37](../../../csharp/programming-guide/nullable-types/codesnippet/CSharp/index_7.cs)]  
   
 ## ジェネリック型  
  クライアント コードが型のインスタンスを作成したときに提供される実際の型 \(*具象型*\) のプレースホルダーとして使用される 1 つまたは複数の*型パラメーター*で、型を宣言することもできます。  このような型は、*ジェネリック型*と呼ばれます。  たとえば、.NET Framework の型 <xref:System.Collections.Generic.List%601?displayProperty=fullName> には、慣例により *T* という名前が与えられる 1 つの型パラメーターがあります。  この型のインスタンスを作成するときには、たとえば文字列の場合なら、リストに含まれるオブジェクトの型を次のように指定します。  

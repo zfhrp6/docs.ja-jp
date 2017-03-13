@@ -27,7 +27,7 @@ caps.handback.revision: 7
 この例では、文字列がファイル名またはパスを表しているかどうかを示す `Boolean` 値を返します。  この検証処理では、ファイル システムで許可されていない文字が名前に含まれているかどうかを調べます。  
   
 ## 使用例  
- [!code-vb[VbVbcnRegEx#4](../../../../visual-basic/programming-guide/language-features/strings/codesnippet/visualbasic/how-to-validate-file-nam_1.vb)]  
+ [!code-vb[VbVbcnRegEx#4](../../../../visual-basic/programming-guide/language-features/strings/codesnippet/VisualBasic/how-to-validate-file-names-and-paths_1.vb)]  
   
  この例では、名前中のコロンの位置が正しくないとか、ディレクトリ名がない、または名前の長さがシステム定義の最大長を超えている、というチェックは行いません。  また、アプリケーションが指定の名前のファイル システム リソースにアクセスするアクセス許可を持っているかどうかのチェックも行いません。  
   

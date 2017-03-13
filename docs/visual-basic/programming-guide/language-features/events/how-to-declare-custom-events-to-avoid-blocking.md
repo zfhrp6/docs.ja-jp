@@ -34,7 +34,7 @@ caps.handback.revision: 12
   
  コードで `Click` イベントが生成されると、`RaiseEvent` アクセサーから、<xref:System.Web.Services.Protocols.LogicalMethodInfo.BeginInvoke%2A> メソッドを使ってすべてのイベント ハンドラー デリゲートが非同期に呼び出されます。  このメソッドは、各ハンドラーをワーカー スレッドに呼び出してから、すぐに制御を返すので、ハンドラーが別のハンドラーをブロックすることはありません。  
   
- [!code-vb[VbVbalrEvents#27](../../../../visual-basic/language-reference/statements/codesnippet/visualbasic/VbVbalrEvents/Class1.vb#27)]  
+ [!code-vb[VbVbalrEvents#27](../../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/how-to-declare-custom-events-to-avoid-blocking_1.vb)]  
   
 ## 参照  
  <xref:System.Collections.ArrayList>   

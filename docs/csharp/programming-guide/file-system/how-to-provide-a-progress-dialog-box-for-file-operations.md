@@ -33,7 +33,7 @@ caps.handback.revision: 15
 ## 使用例  
  次のコードは、`sourcePath` で指定されたディレクトリを `destinationPath` で指定されたディレクトリにコピーします。  また、操作の完了までに必要な残りの予測時間を示す、標準的なダイアログ ボックスを表示します。  
   
- [!code-cs[csFilesandFolders#11](../../../csharp/programming-guide/file-system/codesnippet/csharp/csFilesFolders/FileIteration.cs#11)]  
+ [!code-cs[csFilesandFolders#11](../../../csharp/programming-guide/file-system/codesnippet/CSharp/how-to-provide-a-progress-dialog-box-for-file-operations_1.cs)]  
   
 ## 参照  
  [ファイル システムとレジストリ](../../../csharp/programming-guide/file-system/file-system-and-the-registry.md)

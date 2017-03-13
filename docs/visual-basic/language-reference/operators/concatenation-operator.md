@@ -59,7 +59,7 @@ result = expression1 & expression2
 ## 使用例  
  `&` 演算子を使って文字列の連結を行う例を次に示します。  結果は、2 つの文字列オペランドの連結を表す文字列値になります。  
   
- [!code-vb[VbVbalrOperators#2](../../../visual-basic/language-reference/operators/codesnippet/visualbasic/concatenation-operator_1.vb)]  
+ [!code-vb[VbVbalrOperators#2](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/concatenation-operator_1.vb)]  
   
 ## 参照  
  [&\= Operator](../../../visual-basic/language-reference/operators/and-assignment-operator.md)   

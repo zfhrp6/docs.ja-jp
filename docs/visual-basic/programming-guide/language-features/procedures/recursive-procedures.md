@@ -31,7 +31,7 @@ caps.handback.revision: 13
   
  次のプロシージャは、再帰を使って元の引数の階乗を計算します。  
   
- [!code-vb[VbVbcnProcedures#51](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/recursive-procedures_1.vb)]  
+ [!code-vb[VbVbcnProcedures#51](./codesnippet/VisualBasic/recursive-procedures_1.vb)]  
   
 ## 再帰プロシージャの考慮事項  
  **制限条件**。  再帰プロシージャでは、再帰を終了する条件を最低 1 つテストする必要があります。また、妥当な回数の再帰呼び出しを行ってもこの条件が満たされない場合の処理も必要です。  必ず満たされる条件を最低 1 つ用意しないと、プロシージャが無限ループに陥る可能性が高くなります。  

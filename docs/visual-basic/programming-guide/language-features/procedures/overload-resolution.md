@@ -50,9 +50,9 @@ caps.handback.revision: 21
   
  次の例は、上で説明したオーバーロード解決のプロセスを示しています。  
   
- [!code-vb[VbVbcnProcedures#62](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/overload-resolution_1.vb)]  
+ [!code-vb[VbVbcnProcedures#62](./codesnippet/VisualBasic/overload-resolution_1.vb)]  
   
- [!code-vb[VbVbcnProcedures#63](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/overload-resolution_2.vb)]  
+ [!code-vb[VbVbcnProcedures#63](./codesnippet/VisualBasic/overload-resolution_2.vb)]  
   
  1 回目の呼び出しでは、コンパイラは最初のオーバーロードを除外します。1 つ目の引数の型 \(`Short`\) が、対応するパラメーターの型 \(`Byte`\) よりも大きいからです。  次に、3 番目のオーバーロードを除去します。2 番目のオーバーロードの各引数型 \(`Short` と `Single`\) よりも、3 番目のオーバーロードで対応する引数型 \(`Integer` と `Single`\) の方が大きいからです。  2 番目のオーバーロードの方が拡大変換が少なくて済むため、コンパイラは 2 番目を使用して呼び出します。  
   

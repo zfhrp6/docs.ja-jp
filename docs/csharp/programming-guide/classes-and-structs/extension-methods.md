@@ -24,13 +24,13 @@ caps.handback.revision: 35
   
  整数の配列において、標準クエリ演算子の `OrderBy` メソッドを呼び出す方法を次の例に示します。  かっこ内の式はラムダ式です。  標準クエリ演算子の多くはパラメーターとしてラムダ式を受け取りますが、拡張メソッドでは、これは必須ではありません。  詳細については、「[ラムダ式](../../../csharp/programming-guide/statements-expressions-operators/lambda-expressions.md)」を参照してください。  
   
- [!code-cs[csProgGuideExtensionMethods#3](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/extension-methods_1.cs)]  
+ [!code-cs[csProgGuideExtensionMethods#3](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/extension-methods_1.cs)]  
   
  拡張メソッドは、静的メソッドとして定義しますが、インスタンス メソッドの構文を使用して呼び出します。  最初のパラメーターでは、メソッドが操作する型を指定します。このパラメーターの前には [this](../../../csharp/language-reference/keywords/this.md) 修飾子を付加します。  `using` ディレクティブを使用して名前空間をソース コードに明示的にインポートした場合、拡張メソッドはそのスコープでのみ有効です。  
   
  <xref:System.String?displayProperty=fullName> クラスに対して拡張メソッドを定義する例を次に示します。  入れ子になっていない、非ジェネリックの静的クラス内で定義されていることに注意してください。  
   
- [!code-cs[csProgGuideExtensionMethods#4](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/extension-methods_2.cs)]  
+ [!code-cs[csProgGuideExtensionMethods#4](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/extension-methods_2.cs)]  
   
  この `using` ディレクティブを使用することで、`WordCount` 拡張メソッドをスコープに取り込むことができます。  
   
@@ -70,7 +70,7 @@ using System.Linq;
   
  コンパイラは、一致するシグネチャを持つインスタンス メソッドを検出できない場合、一致する拡張メソッド \(存在する場合\) にバインドします。  
   
- [!code-cs[csProgGuideExtensionMethods#5](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/extension-methods_3.cs)]  
+ [!code-cs[csProgGuideExtensionMethods#5](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/extension-methods_3.cs)]  
   
 ## 一般的なガイドライン  
  拡張メソッドは、一般的に、必要な場合に限り注意して実装することをお勧めします。  クライアント コードで既存の型を拡張する必要がある場合、可能であれば既存の型から派生した新しい型を作成することで行ってください。  詳細については、「[継承](../../../csharp/programming-guide/classes-and-structs/inheritance.md)」を参照してください。  

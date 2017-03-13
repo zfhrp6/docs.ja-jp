@@ -30,7 +30,7 @@ caps.handback.revision: 19
   
 -   `CreateDirectory` メソッドに、ディレクトリを作成する場所の完全パスを指定します。  この例では、`NewDirectory` ディレクトリを `C:\Documents and Settings\All Users\Documents` に作成します。  
   
-     [!code-vb[VbVbcnMyFileSystem#2](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/visualbasic/how-to-create-a-directory_1.vb)]  
+     [!code-vb[VbVbcnMyFileSystem#2](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/VisualBasic/how-to-create-a-directory_1.vb)]  
   
 ## 信頼性の高いプログラミング  
  次の条件を満たす場合は、例外が発生する可能性があります。  

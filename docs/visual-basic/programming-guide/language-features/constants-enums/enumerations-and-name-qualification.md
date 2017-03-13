@@ -36,26 +36,26 @@ caps.handback.revision: 20
 
 通常、列挙型のメンバーを参照する場合は、その列挙型の名前で修飾する必要があります。  たとえば、列挙型 `Days` のメンバー `Sunday` を参照するには、次の構文を使います。  
   
- [!code-vb[VbEnumsTask#18](../../../../visual-basic/language-reference/statements/codesnippet/visualbasic/WindowsApplication1/Class2.vb#18)]  
+ [!code-vb[VbEnumsTask#18](../../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/enumerations-and-name-qualification_1.vb)]  
   
 ## Imports ステートメントの使用  
  次の例に示すように、コードの名前空間宣言セクションに `Imports` ステートメントを追加すると、完全限定名を使わなくても済むようになります。  
   
- [!code-vb[VbEnumsTask#22](../../../../visual-basic/language-reference/statements/codesnippet/visualbasic/WindowsApplication1/Class1.vb#22)]  
+ [!code-vb[VbEnumsTask#22](../../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/enumerations-and-name-qualification_2.vb)]  
   
  `Imports` ステートメントは、参照されるプロジェクトおよびアセンブリから、およびステートメントが使用されるモジュールと同じプロジェクト内から、名前空間の名前をインポートします。  このステートメントを追加すると、次のように、修飾子を付けずに列挙型のメンバーを参照できるようになります。  
   
- [!code-vb[VbEnumsTask#24](../../../../visual-basic/language-reference/statements/codesnippet/visualbasic/WindowsApplication1/Class1.vb#24)]  
+ [!code-vb[VbEnumsTask#24](../../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/enumerations-and-name-qualification_3.vb)]  
   
  関連する定数を列挙型にまとめると、同じ定数名を異なるコンテキストで使うことができます。  たとえば、列挙型 `Days` と列挙型 `WorkDays` の両方で、曜日の定数に対して同じ名前を使用できます。  列挙型で `Imports` ステートメントを使う場合は、あいまいな参照にならないように注意する必要があります。  次に例を示します。  
   
- [!code-vb[VbEnumsTask#22](../../../../visual-basic/language-reference/statements/codesnippet/visualbasic/WindowsApplication1/Class1.vb#22)]  
+ [!code-vb[VbEnumsTask#22](../../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/enumerations-and-name-qualification_2.vb)]  
   
- [!code-vb[VbEnumsTask#25](../../../../visual-basic/language-reference/statements/codesnippet/visualbasic/WindowsApplication1/Class1.vb#25)]  
+ [!code-vb[VbEnumsTask#25](../../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/enumerations-and-name-qualification_4.vb)]  
   
  `Monday` が `Days` と `Workdays` の両方の列挙型のメンバーになっている場合、このコードはコンパイラ エラーになります。  定数を個別に参照するときにあいまいな参照を回避するには、定数名を列挙型で修飾します。  次のコードは、列挙型 `Days` と列挙型 `WorkDays` の定数 `Saturday` を参照します。  
   
- [!code-vb[VbEnumsTask#32](../../../../visual-basic/language-reference/statements/codesnippet/visualbasic/WindowsApplication1/Class2.vb#32)]  
+ [!code-vb[VbEnumsTask#32](../../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/enumerations-and-name-qualification_5.vb)]  
   
 ## 参照  
  [Constants and Enumerations](../../../../visual-basic/language-reference/constants-and-enumerations.md)   

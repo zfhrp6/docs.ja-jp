@@ -96,12 +96,12 @@ Option Infer がオフのときの IntelliSense
 ## 使用例  
  次の例では、`Option Infer` ステートメントがローカル型推論をどのように有効にするかを示します。  
   
- [!code-vb[VbVbalrTypeInference#6](../../../visual-basic/language-reference/statements/codesnippet/visualbasic/option-infer-statement_1.vb)]  
+ [!code-vb[VbVbalrTypeInference#6](../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/option-infer-statement_1.vb)]  
   
 ## 使用例  
  次の例では、変数が `Object` として識別されたときに、ランタイム型が異なる場合があることを示します。  
   
- [!code-vb[VbVbalrTypeInference#11](../../../visual-basic/language-reference/statements/codesnippet/visualbasic/option-infer-statement_2.vb)]  
+ [!code-vb[VbVbalrTypeInference#11](../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/option-infer-statement_2.vb)]  
   
 ## 参照  
  [Dim Statement](../../../visual-basic/language-reference/statements/dim-statement.md)   

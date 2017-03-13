@@ -51,7 +51,7 @@ caps.handback.revision: 11
 ## 使用例  
  この例では、`<include>` タグを使用してメンバーもドキュメントのコメントを `commentFile.xml` ファイルからインポートします。  
   
- [!code-vb[VbVbcnXmlDocComments#4](../../../visual-basic/language-reference/xmldoc/codesnippet/visualbasic/include_1.vb)]  
+ [!code-vb[VbVbcnXmlDocComments#4](../../../visual-basic/language-reference/xmldoc/codesnippet/VisualBasic/include_1.vb)]  
   
  `commentFile.xml` の形式は次のとおりです。  
   

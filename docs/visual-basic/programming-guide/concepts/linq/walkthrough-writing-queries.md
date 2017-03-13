@@ -66,11 +66,11 @@ caps.handback.revision: 68
   
 1.  プロジェクトの `Main` メソッドで、次のようにマークされている場所を探します。  
   
-     [!code-vb[VbLINQWalkthrough#1](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/visualbasic/walkthrough-writing-quer_1_1.vb)]  
+     [!code-vb[VbLINQWalkthrough#1](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/VisualBasic/walkthrough-writing-queries_1.vb)]  
   
      次のコードをコピーして貼り付けます。  
   
-     [!code-vb[VbLINQWalkthrough#2](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/visualbasic/walkthrough-writing-quer_1_2.vb)]  
+     [!code-vb[VbLINQWalkthrough#2](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/VisualBasic/walkthrough-writing-queries_2.vb)]  
   
 2.  マウス ポインターをコード内の `studentQuery` の上に置き、コンパイラが割り当てた型が `IEnumerable(Of Student)` であることを確認します。  
   
@@ -81,7 +81,7 @@ caps.handback.revision: 68
   
 1.  プロジェクト内のクエリの下に、次の `For Each` ループを追加します。  
   
-     [!code-vb[VbLINQWalkthrough#3](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/visualbasic/walkthrough-writing-quer_1_3.vb)]  
+     [!code-vb[VbLINQWalkthrough#3](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/VisualBasic/walkthrough-writing-queries_3.vb)]  
   
 2.  マウス ポインターをループ制御変数 `studentRecord` の上に置き、データ型を確認します。  `studentQuery` は `Student` インスタンスのコレクションを返すので、`studentRecord` の型は `Student` であると推論されます。  
   
@@ -112,7 +112,7 @@ caps.handback.revision: 68
   
 1.  クエリ式にローカル識別子を取り入れるには、このセクションのコードを追加します。  ローカル識別子には、中間結果が保持されます。  次の例の `name` は、学生の名前と姓を連結したものを保持する識別子です。  ローカル識別子は、利便性のために使用できるほか、式の結果が格納されるので何度も計算を行う必要がなくなり、パフォーマンスの向上につながります。  
   
-     [!code-vb[VbLINQWalkthrough#4](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/visualbasic/walkthrough-writing-quer_1_4.vb)]  
+     [!code-vb[VbLINQWalkthrough#4](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/VisualBasic/walkthrough-writing-queries_4.vb)]  
   
 2.  Ctrl キーを押しながら F5 キーを押して、アプリケーションをビルドおよび実行します。  コンソール ウィンドウで結果を確認します。  
   
@@ -120,7 +120,7 @@ caps.handback.revision: 68
   
 1.  ソース内の要素とは異なる要素のシーケンスを生成するクエリを作成するには、このセクションのクエリと `For Each` ループを追加します。  次の例では、ソースは `Student` オブジェクトのコレクションですが、返されるのは各オブジェクトの 1 つのメンバーだけです。この場合は、Garcia という姓を持つ学生の名だけが返されます。  `currentStudent.First` は文字列なので、`studentQuery3` が返すシーケンスのデータ型は `IEnumerable(Of String)` \(文字列のシーケンス\) になります。  前の例のように、`studentQuery3` に対するデータ型の割り当ては、コンパイラによってローカル型の推論を使用して決定されます。  
   
-     [!code-vb[VbLINQWalkthrough#5](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/visualbasic/walkthrough-writing-quer_1_5.vb)]  
+     [!code-vb[VbLINQWalkthrough#5](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/VisualBasic/walkthrough-writing-queries_5.vb)]  
   
 2.  マウス ポインターをコード内の `studentQuery3` の上に置き、割り当てられた型が `IEnumerable(Of String)` であることを確認します。  
   
@@ -132,14 +132,14 @@ caps.handback.revision: 68
   
      次の例では、成績順位が 1 位から 10 位までの最上級生の名前と順位を成績順に返すクエリを作成します。  この例では、`studentQuery4` の型を推論する必要があります。これは、`Select` 句から返されるのは匿名型のインスタンスであり、匿名型には使用できる名前がないためです。  
   
-     [!code-vb[VbLINQWalkthrough#6](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/visualbasic/walkthrough-writing-quer_1_6.vb)]  
+     [!code-vb[VbLINQWalkthrough#6](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/VisualBasic/walkthrough-writing-queries_6.vb)]  
   
 2.  Ctrl キーを押しながら F5 キーを押して、アプリケーションをビルドおよび実行します。  コンソール ウィンドウで結果を確認します。  
   
 ## その他の例  
  これで基本的な事項は理解できたので、[!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq-md.md)] クエリの柔軟性と利便性を紹介するその他の例の一覧を次に示します。  それぞれの例の前には、その動作についての簡単な説明が記載されています。  推論された型を確認するために各クエリのクエリ結果変数の上にマウス ポインターを置きます。結果を生成するには、`For Each` ループを使用します。  
   
- [!code-vb[VbLINQWalkthrough#7](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/visualbasic/walkthrough-writing-quer_1_7.vb)]  
+ [!code-vb[VbLINQWalkthrough#7](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/VisualBasic/walkthrough-writing-queries_7.vb)]  
   
 ## 追加情報  
  クエリの基本的な概念を理解したら、関心のある特定の種類の [!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq-md.md)] プロバイダーのドキュメントやサンプルに進むことができます。  

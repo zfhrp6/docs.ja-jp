@@ -34,11 +34,11 @@ caps.handback.revision: 23
   
  `New` 句は、宣言ステートメントまたは代入ステートメントの中で使用できます。  ステートメントが実行されると、指定したクラスの適切なコンストラクターが呼び出されて、指定した引数が渡されます。  次に例を示します。この例では、2 つのコントラクターを持つ `Customer` クラスのインスタンスを作成します。一方はパラメーターを受け取らず、もう一方は文字列パラメーターを受け取ります。  
   
- [!code-vb[VbVbalrKeywords#11](../../../visual-basic/language-reference/codesnippet/visualbasic/new-operator_1.vb)]  
+ [!code-vb[VbVbalrKeywords#11](../../../visual-basic/language-reference/codesnippet/VisualBasic/new-operator_1.vb)]  
   
  配列はクラスであることから、`New` は次のとおり、新しい配列のインスタンスを作成できます。  
   
- [!code-vb[VbVbalrKeywords#12](../../../visual-basic/language-reference/codesnippet/visualbasic/new-operator_2.vb)]  
+ [!code-vb[VbVbalrKeywords#12](../../../visual-basic/language-reference/codesnippet/VisualBasic/new-operator_2.vb)]  
   
  新しいインスタンスを作成するためのメモリが不足している場合、共通言語ランタイム \(CLR\) は <xref:System.OutOfMemoryException> エラーをスローします。  
   

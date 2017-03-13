@@ -48,7 +48,7 @@ caps.handback.revision: 14
   
      [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] の <xref:Microsoft.VisualBasic.Interaction.MsgBox%2A> 関数を呼び出す例を次に示します。  
   
-     [!code-vb[VbVbcnProcedures#34](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/how-to-pass-arguments-to_1.vb)]  
+     [!code-vb[VbVbcnProcedures#34](./codesnippet/VisualBasic/how-to-pass-arguments-to-a-procedure_1.vb)]  
   
      この例では、必須である最初の引数が指定されています。この引数は表示されるメッセージの文字列です。  オプションである 2 つ目のパラメーターは省略されています。これはメッセージ ボックスに表示するボタンを指定する引数です。  値を指定せずに呼び出しているため、`MsgBox` は既定値である `MsgBoxStyle.OKOnly` を使用し、**\[OK\]** ボタンだけを表示します。  
   

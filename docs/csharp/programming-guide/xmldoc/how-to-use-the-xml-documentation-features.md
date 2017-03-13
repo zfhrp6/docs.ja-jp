@@ -20,7 +20,7 @@ caps.handback.revision: 19
 次の例では、ドキュメント化された型の基本的な概要を説明します。  
   
 ## <a name="example"></a>例  
- [!code-cs[csProgGuideDocComments#15](../../../csharp/programming-guide/xmldoc/codesnippet/csharp/how-to-use-the-xml-docum_1.cs)]  
+ [!code-cs[csProgGuideDocComments#15](../../../csharp/programming-guide/xmldoc/codesnippet/CSharp/how-to-use-the-xml-documentation-features_1.cs)]  
   
  **この .xml ファイルには、上記のコード サンプルが生成されます。**  
 **\<? xml version =「1.0」ですか?>**  

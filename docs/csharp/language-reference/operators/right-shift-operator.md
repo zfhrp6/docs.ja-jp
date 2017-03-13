@@ -31,7 +31,7 @@ caps.handback.revision: 15
  `>>` 演算子はユーザー定義型でオーバーロードできます。オーバーロードでは、最初のオペランドの型はユーザー定義型、2 番目のオペランドの型は [int](../../../csharp/language-reference/keywords/int.md) である必要があります。  詳細については、「[operator \(C\# リファレンス\)](../../../csharp/language-reference/keywords/operator.md)」を参照してください。  二項演算子をオーバーロードすると、対応する代入演算子がある場合には、この演算子も暗黙でオーバーロードされます。  
   
 ## 使用例  
- [!code-cs[csRefOperators#26](../../../csharp/language-reference/operators/codesnippet/csharp/csrefOperators/csrefOperators.cs#26)]  
+ [!code-cs[csRefOperators#26](../../../csharp/language-reference/operators/codesnippet/CSharp/right-shift-operator_1.cs)]  
   
 ## 参照  
  [C\# リファレンス](../../../csharp/language-reference/index.md)   

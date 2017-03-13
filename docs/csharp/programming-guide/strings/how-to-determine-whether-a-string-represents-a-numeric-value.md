@@ -34,7 +34,7 @@ bool result = int.TryParse(s, out i); //i now = 108
 ## 使用例  
  `long` 値、`byte` 値、および `decimal` 値の文字列表現を指定して `TryParse` を使用する方法を次の例に示します。  
   
- [!code-cs[csProgGuideStrings#14](../../../csharp/programming-guide/strings/codesnippet/csharp/CSRefStrings/Strings.cs#14)]  
+ [!code-cs[csProgGuideStrings#14](../../../csharp/programming-guide/strings/codesnippet/CSharp/how-to-determine-whether-a-string-represents-a-numeric-value_1.cs)]  
   
 ## 信頼性の高いプログラミング  
  プリミティブ数値型は、`Parse` 静的メソッドも実装します。このメソッドは、文字列が有効な数値でない場合は例外をスローします。  一般に、数値が有効でない場合は単に false を返す `TryParse` の方が効率的です。  

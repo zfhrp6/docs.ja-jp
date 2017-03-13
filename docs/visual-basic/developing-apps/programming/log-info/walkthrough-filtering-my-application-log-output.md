@@ -36,7 +36,7 @@ caps.handback.revision: 22
   
 3.   <xref:System.Windows.Forms.Control.Click> 、Button1 のイベント ハンドラーは、次のコードを追加します。  
   
-     [!code-vb[VbVbcnMyApplicationLogFiltering#1](../../../../visual-basic/developing-apps/programming/log-info/codesnippet/visualbasic/VbVbcnMyApplicationLogFiltering/Form1.vb#1)]  
+     [!code-vb[VbVbcnMyApplicationLogFiltering#1](../../../../visual-basic/developing-apps/programming/log-info/codesnippet/VisualBasic/walkthrough-filtering-my-application-log-output_1.vb)]  
   
 4.  デバッガーでアプリケーションを実行します。  
   

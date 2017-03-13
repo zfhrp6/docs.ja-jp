@@ -42,7 +42,7 @@ caps.handback.revision: 10
 ## 使用例  
  次の例は、`DoesRecordExist` の remarks セクションで `<seealso>` タグを使用して、`UpdateRecord` メソッドを参照します。  
   
- [!code-vb[VbVbcnXmlDocComments#6](../../../visual-basic/language-reference/xmldoc/codesnippet/visualbasic/seealso_1.vb)]  
+ [!code-vb[VbVbcnXmlDocComments#6](../../../visual-basic/language-reference/xmldoc/codesnippet/VisualBasic/seealso_1.vb)]  
   
 ## 参照  
  [XML Comment Tags](../../../visual-basic/language-reference/xmldoc/recommended-xml-tags-for-documentation-comments.md)

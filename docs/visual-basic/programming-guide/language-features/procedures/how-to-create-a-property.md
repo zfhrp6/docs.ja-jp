@@ -63,11 +63,11 @@ caps.handback.revision: 15
 ## 使用例  
  次の例は、読み取り\/書き込みプロパティを作成して、ファースト ネームとラスト ネームの 2 つの部分で構成されるフル ネームを格納します。  呼び出しコードが `fullName` を読み込むと、`Get` プロシージャが 2 つの部分を組み合わせてフル ネームを返します。  呼び出しコードが新しいフル ネームを代入すると、`Set` プロシージャはそれを 2 つの部分に分割します。  フル ネームに空白が含まれない場合は、全体をファースト ネームとして格納します。  
   
- [!code-vb[VbVbcnProcedures#8](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/how-to-create-a-property_1.vb)]  
+ [!code-vb[VbVbcnProcedures#8](./codesnippet/VisualBasic/how-to-create-a-property_1.vb)]  
   
  `fullName` の Property プロシージャを呼び出す一般的な例は次のとおりです。  最初の呼び出しでプロパティ値が設定され、2 番目の呼び出しで値が取得されます。  
   
- [!code-vb[VbVbcnProcedures#9](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/how-to-create-a-property_2.vb)]  
+ [!code-vb[VbVbcnProcedures#9](./codesnippet/VisualBasic/how-to-create-a-property_2.vb)]  
   
 ## 参照  
  [Procedures](../../../../visual-basic/programming-guide/language-features/procedures/index.md)   

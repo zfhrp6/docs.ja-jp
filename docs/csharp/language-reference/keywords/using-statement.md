@@ -21,7 +21,7 @@ caps.handback.revision: 31
 ## 使用例  
  using ステートメントの使用方法を次の例に示します。  
   
- [!code-cs[csrefKeywordsNamespace#4](../../../csharp/language-reference/keywords/codesnippet/csharp/using-statement_1.cs)]  
+ [!code-cs[csrefKeywordsNamespace#4](../../../csharp/language-reference/keywords/codesnippet/CSharp/using-statement_1.cs)]  
   
 ## 解説  
  <xref:System.IO.File> および <xref:System.Drawing.Font> は、アンマネージ リソース \(この場合はファイル ハンドルとデバイス コンテキスト\) にアクセスするマネージ型の例です。  アンマネージ リソースや、それをカプセル化するクラス ライブラリ型は他にもたくさんあります。  そのような型はすべて、<xref:System.IDisposable> インターフェイスを実装する必要があります。  
@@ -30,15 +30,15 @@ caps.handback.revision: 31
   
  `using` ステートメントを使うと、オブジェクトでのメソッドの呼び出し中に例外が発生した場合でも <xref:System.IDisposable.Dispose%2A> が必ず呼び出されます。  オブジェクトを try ブロックに配置し、finally ブロックで <xref:System.IDisposable.Dispose%2A> を呼び出しても、同じ結果が得られます。実際には、コンパイラは `using` ステートメントをこのように変換します。  前のコード例は、コンパイル時に次のコードに展開されます \(オブジェクトのスコープの範囲を定義する中かっこが加えられています\)。  
   
- [!code-cs[csrefKeywordsNamespace#5](../../../csharp/language-reference/keywords/codesnippet/csharp/using-statement_2.cs)]  
+ [!code-cs[csrefKeywordsNamespace#5](../../../csharp/language-reference/keywords/codesnippet/CSharp/using-statement_2.cs)]  
   
  `using` ステートメントでは、次の例に示すように、型のインスタンスを複数宣言できます。  
   
- [!code-cs[csrefKeywordsNamespace#6](../../../csharp/language-reference/keywords/codesnippet/csharp/using-statement_3.cs)]  
+ [!code-cs[csrefKeywordsNamespace#6](../../../csharp/language-reference/keywords/codesnippet/CSharp/using-statement_3.cs)]  
   
  リソース オブジェクトをインスタンス化して、変数を `using` ステートメントに渡すことは可能ですが、これはベスト プラクティスではありません。  この場合、アンマネージ リソースへのアクセスはおそらくできなくなっているのにもかかわらず、制御が `using` ブロックを離れた後もオブジェクトはスコープ内に残ります。  つまり、完全に初期化されることはありません。  `using` ブロックの外側でオブジェクトを使おうとすると、例外がスローされる可能性があります。  このため、通常は、オブジェクトを `using` でインスタンス化して、そのスコープを `using` ブロックに制限することをお勧めします。  
   
- [!code-cs[csrefKeywordsNamespace#7](../../../csharp/language-reference/keywords/codesnippet/csharp/using-statement_4.cs)]  
+ [!code-cs[csrefKeywordsNamespace#7](../../../csharp/language-reference/keywords/codesnippet/CSharp/using-statement_4.cs)]  
   
 ## C\# 言語仕様  
  [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec-md.md)]  

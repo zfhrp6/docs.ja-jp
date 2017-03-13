@@ -21,29 +21,29 @@ caps.handback.revision: 28
   
  型パラメーターに関する制約としてインターフェイスを指定すると、そのインターフェイスを実装する型のみを使用できます。  次のコード例で、`GenericList<T>` クラスから派生する `SortedList<T>` クラスを示します。  詳細については、「[ジェネリックの概要](../../../csharp/programming-guide/generics/introduction-to-generics.md)」を参照してください。  `SortedList<T>` は、制約 `where T : IComparable<T>` を追加します。  これによって、`SortedList<T>` の `BubbleSort` メソッドが、リスト要素でジェネリックの <xref:System.IComparable%601.CompareTo%2A> メソッドを使用できるようになります。  この例では、リスト要素は単純なクラス `Person` であり、`IComparable<Person>` を実装しています。  
   
- [!code-cs[csProgGuideGenerics#29](../../../csharp/programming-guide/generics/codesnippet/csharp/generic-interfaces_1.cs)]  
+ [!code-cs[csProgGuideGenerics#29](../../../csharp/programming-guide/generics/codesnippet/CSharp/generic-interfaces_1.cs)]  
   
  単一の型に対する制約として、次のように複数のインターフェイスを指定できます。  
   
- [!code-cs[csProgGuideGenerics#30](../../../csharp/programming-guide/generics/codesnippet/csharp/generic-interfaces_2.cs)]  
+ [!code-cs[csProgGuideGenerics#30](../../../csharp/programming-guide/generics/codesnippet/CSharp/generic-interfaces_2.cs)]  
   
  1 つのインターフェイスで、次のように複数の型パラメーターを定義できます。  
   
- [!code-cs[csProgGuideGenerics#31](../../../csharp/programming-guide/generics/codesnippet/csharp/generic-interfaces_3.cs)]  
+ [!code-cs[csProgGuideGenerics#31](../../../csharp/programming-guide/generics/codesnippet/CSharp/generic-interfaces_3.cs)]  
   
  クラスに適用される継承の規則が、インターフェイスにも適用されます。  
   
- [!code-cs[csProgGuideGenerics#32](../../../csharp/programming-guide/generics/codesnippet/csharp/generic-interfaces_4.cs)]  
+ [!code-cs[csProgGuideGenerics#32](../../../csharp/programming-guide/generics/codesnippet/CSharp/generic-interfaces_4.cs)]  
   
  ジェネリック インターフェイスが非バリアントの場合 \(つまり、型パラメーターを戻り値としてのみ使用する場合\)、そのジェネリック インターフェイスは、非ジェネリック インターフェイスから継承できます。  .NET Framework クラス ライブラリでは、<xref:System.Collections.Generic.IEnumerable%601> は <xref:System.Collections.IEnumerable> から継承されます。<xref:System.Collections.Generic.IEnumerable%601.GetEnumerator%2A> の戻り値と <xref:System.Collections.Generic.IEnumerator%601.Current%2A> プロパティの getter で、<xref:System.Collections.Generic.IEnumerable%601> のみが `T` を使用するためです。  
   
  具象クラスでは、次のように閉じた構造のインターフェイスを実装できます。  
   
- [!code-cs[csProgGuideGenerics#33](../../../csharp/programming-guide/generics/codesnippet/csharp/generic-interfaces_5.cs)]  
+ [!code-cs[csProgGuideGenerics#33](../../../csharp/programming-guide/generics/codesnippet/CSharp/generic-interfaces_5.cs)]  
   
  ジェネリック クラスでは、インターフェイスで必要なすべての引数がクラスのパラメーター リストに指定されている場合、次のように、ジェネリック インターフェイスまたは閉じた構造のインターフェイスを実装できます。  
   
- [!code-cs[csProgGuideGenerics#34](../../../csharp/programming-guide/generics/codesnippet/csharp/generic-interfaces_6.cs)]  
+ [!code-cs[csProgGuideGenerics#34](../../../csharp/programming-guide/generics/codesnippet/CSharp/generic-interfaces_6.cs)]  
   
  メソッドのオーバーロードを管理する規則は、ジェネリック クラス、ジェネリック構造体、ジェネリック インターフェイスのそれぞれのメソッドに対して同じです。  詳細については、「[ジェネリック メソッド](../../../csharp/programming-guide/generics/generic-methods.md)」を参照してください。  
   

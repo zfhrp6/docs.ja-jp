@@ -34,7 +34,7 @@ caps.handback.revision: 11
   
  このクラスのすべてのイベントは、`Events` フィールドを使用して、各イベントをどのメソッドが処理しているかを持続的に追跡します。  
   
- [!code-vb[VbVbalrEvents#22](../../../../visual-basic/language-reference/statements/codesnippet/visualbasic/VbVbalrEvents/Class1.vb#22)]  
+ [!code-vb[VbVbalrEvents#22](../../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/how-to-declare-custom-events-to-conserve-memory_1.vb)]  
   
 ## 参照  
  <xref:System.ComponentModel.EventHandlerList>   

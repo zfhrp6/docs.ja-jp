@@ -37,14 +37,14 @@ caps.handback.revision: 27
   
  たとえば、[!INCLUDE[dnprdnshort](../../../csharp/getting-started/includes/dnprdnshort-md.md)] では <xref:System.Windows.Forms?displayProperty=fullName> 名前空間に <xref:System.Windows.Forms.ListBox> クラスが定義されています。 次のコードは、このクラスの完全修飾名を使用して変数を宣言する方法を示しています。  
   
- [!code-vb[VbVbalrApplication#6](../../../visual-basic/programming-guide/program-structure/codesnippet/visualbasic/namespaces_1.vb)]  
+ [!code-vb[VbVbalrApplication#6](../../../visual-basic/programming-guide/program-structure/codesnippet/VisualBasic/namespaces_1.vb)]  
   
 ## 名前の競合の回避  
  [!INCLUDE[dnprdnshort](../../../csharp/getting-started/includes/dnprdnshort-md.md)] の名前空間は、他のライブラリで似た名前が使用されている場合にクラス ライブラリの開発者が遭遇する、*名前空間の汚染*と呼ばれる問題に対処しています。 このような既存コンポーネントとの競合は、*名前の競合*とも呼ばれます。  
   
  たとえば、`ListBox` という名前の新しいクラスを作成した場合、プロジェクト内ではこのクラスを修飾子を付けずに使用できます。 ただし、同じプロジェクトで [!INCLUDE[dnprdnshort](../../../csharp/getting-started/includes/dnprdnshort-md.md)] の <xref:System.Windows.Forms.ListBox> クラスを使用する場合は、参照を一意にするために完全修飾参照を使用する必要があります。 参照が一意でない場合、[!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] は、名前があいまいであることを示すエラーを生成します。 次のコード例では、これらのオブジェクトを宣言する方法を示しています。  
   
- [!code-vb[VbVbalrApplication#7](../../../visual-basic/programming-guide/program-structure/codesnippet/visualbasic/namespaces_2.vb)]  
+ [!code-vb[VbVbalrApplication#7](../../../visual-basic/programming-guide/program-structure/codesnippet/VisualBasic/namespaces_2.vb)]  
   
  次の図は、いずれも `ListBox` という名前のオブジェクトを持つ、2 つの名前空間の階層を表しています。  
   
@@ -57,17 +57,17 @@ caps.handback.revision: 27
 ## 完全修飾名  
  完全修飾名は、オブジェクトが定義されている名前空間の名前で始まるオブジェクト参照です。 他のプロジェクトで定義されているオブジェクトを使用するには、**\[プロジェクト\]** メニューの **\[参照の追加\]** をクリックしてそのクラスへの参照を作成し、コード内でそのオブジェクトの完全修飾名を使用します。 次のコードは、別のプロジェクトの名前空間のオブジェクトを使用して完全修飾名を使用する方法を示しています。  
   
- [!code-vb[VbVbalrApplication#8](../../../visual-basic/programming-guide/program-structure/codesnippet/visualbasic/namespaces_3.vb)]  
+ [!code-vb[VbVbalrApplication#8](../../../visual-basic/programming-guide/program-structure/codesnippet/VisualBasic/namespaces_3.vb)]  
   
  完全修飾名を使用すると、どのオブジェクトを使用するかをコンパイラが認識できるため、名前の競合を防止できます。 ただし、名前自体が長くなるため、使いにくくなります。 この問題を回避するには、`Imports` ステートメントを使って*エイリアス*を定義します。エイリアスとは、完全修飾名の代わりに使用できる短い名前です。 たとえば、次のコード例では、2 つの完全修飾名に対してエイリアスを作成し、作成したエイリアスを使って 2 つのオブジェクトを定義しています。  
   
- [!code-vb[VbVbalrApplication#9](../../../visual-basic/programming-guide/program-structure/codesnippet/visualbasic/namespaces_4.vb)]  
+ [!code-vb[VbVbalrApplication#9](../../../visual-basic/programming-guide/program-structure/codesnippet/VisualBasic/namespaces_4.vb)]  
   
- [!code-vb[VbVbalrApplication#10](../../../visual-basic/programming-guide/program-structure/codesnippet/visualbasic/namespaces_5.vb)]  
+ [!code-vb[VbVbalrApplication#10](../../../visual-basic/programming-guide/program-structure/codesnippet/VisualBasic/namespaces_5.vb)]  
   
  エイリアスを指定せずに `Imports` ステートメントを使用すると、インポートした名前空間のすべての名前を修飾子を付けずに使用できます。ただし、それらの名前がプロジェクト内で一意であることが必要です。 プロジェクトに、同じ名前の複数の項目を持つ名前空間をインポートする `Imports` ステートメントがある場合は、それらの名前を使用するときに完全修飾名を使用する必要があります。 たとえば、プロジェクトに次の 2 つの `Imports` ステートメントがあるとします。  
   
- [!code-vb[VbVbalrApplication#11](../../../visual-basic/programming-guide/program-structure/codesnippet/visualbasic/namespaces_6.vb)]  
+ [!code-vb[VbVbalrApplication#11](../../../visual-basic/programming-guide/program-structure/codesnippet/VisualBasic/namespaces_6.vb)]  
   
  この場合、完全修飾名を使わずに `Class1` を使おうとすると、[!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] から、`Class1` という名前があいまいであることを指摘するエラーが生成されます。  
   
@@ -114,7 +114,7 @@ End Namespace
   
  次の例では、プロジェクトのルート名前空間から名前空間を宣言するために `Global` キーワードを使用しています。  
   
- [!code-vb[VbVbalrApplication#22](../../../visual-basic/programming-guide/program-structure/codesnippet/visualbasic/namespaces_7.vb)]  
+ [!code-vb[VbVbalrApplication#22](../../../visual-basic/programming-guide/program-structure/codesnippet/VisualBasic/namespaces_7.vb)]  
   
  名前空間宣言では、`Global` を別の名前空間に入れ子にすることはできません。  
   
@@ -126,7 +126,7 @@ End Namespace
   
  名前空間の宣言に `Global` キーワードが含まれていない場合、<xref:System.Text.StringBuilder> にアクセスするには、`Global.System.Text.StringBuilder` を指定する必要があります。`ConsoleApplication1` という名前のプロジェクトで、`Global` キーワードが使用されていない場合、`System.Text` を参照すると、`ConsoleApplication1.System.Text` にアクセスすることになります。  
   
- [!code-vb[VbVbalrApplication#21](../../../visual-basic/programming-guide/program-structure/codesnippet/visualbasic/namespaces_8.vb)]  
+ [!code-vb[VbVbalrApplication#21](../../../visual-basic/programming-guide/program-structure/codesnippet/VisualBasic/namespaces_8.vb)]  
   
 ## 参照  
  <xref:System.Windows.Forms.ListBox>   

@@ -23,12 +23,12 @@ caps.handback.revision: 21
   
  この例の次のコード セグメントでは、区切り記号として ' ' と '\-' を使用して "This is a sample sentence." という文をトークンに分割する `Tokens` クラスを使用しています。  コードでは、これらのトークンを表示するために `foreach` ステートメントを使用しています。  
   
- [!code-cs[csProgGuideCollections#3](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/how-to-access-a-collecti_1.cs)]  
+ [!code-cs[csProgGuideCollections#3](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/how-to-access-a-collection-class-with-foreach_1.cs)]  
   
 ## 使用例  
  内部では、`Tokens` クラスは配列を使用してトークンを格納します。  配列で <xref:System.Collections.IEnumerator> と <xref:System.Collections.IEnumerable> を実装しているため、このコード例では `Tokens` クラスでこれらを定義するのではなく、配列の列挙型メソッド \(<xref:System.Collections.IEnumerable.GetEnumerator%2A>、<xref:System.Collections.IEnumerator.MoveNext%2A>、<xref:System.Collections.IEnumerator.Reset%2A>、および <xref:System.Collections.IEnumerator.Current%2A>\) を使用することもできました。  この例にメソッド定義が含まれているのは、メソッドを定義する方法と各メソッドの動作を明確にするためです。  
   
- [!code-cs[csProgGuideCollections#2](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/how-to-access-a-collecti_2.cs)]  
+ [!code-cs[csProgGuideCollections#2](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/how-to-access-a-collection-class-with-foreach_2.cs)]  
   
  C\# では、`foreach` と互換性を保つために、コレクション クラスで <xref:System.Collections.IEnumerable> と <xref:System.Collections.IEnumerator> を実装する必要はありません。  必須の <xref:System.Collections.IEnumerable.GetEnumerator%2A>、<xref:System.Collections.IEnumerator.MoveNext%2A>、<xref:System.Collections.IEnumerator.Reset%2A>、および <xref:System.Collections.IEnumerator.Current%2A> の各メンバーがクラスに含まれていれば、クラスで `foreach` を使用できます。  インターフェイスを省略すると、`Current` の戻り値の型を <xref:System.Object> よりも明確に定義できるという利点があります。  これによりタイプ セーフになります。  
   

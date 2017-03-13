@@ -24,7 +24,7 @@ caps.handback.revision: 16
 ## 使用例  
  この例では、クラス コンストラクターに値を割り当てる場合でも、`ChangeYear` メソッドでは `year` フィールドの値を変更できません。  
   
- [!code-cs[csrefKeywordsModifiers#14](../../../csharp/language-reference/keywords/codesnippet/csharp/csrefKeywordsModifiers/csrefKeywordsModifiers.cs#14)]  
+ [!code-cs[csrefKeywordsModifiers#14](../../../csharp/language-reference/keywords/codesnippet/CSharp/readonly_1.cs)]  
   
  `readonly` のフィールドに値の代入ができるのは、次のコンテキスト内に限られます。  
   
@@ -44,7 +44,7 @@ public static readonly uint timeStamp = (uint)DateTime.Now.Ticks;
 ```  
   
 ## 使用例  
- [!code-cs[csrefKeywordsModifiers#15](../../../csharp/language-reference/keywords/codesnippet/csharp/csrefKeywordsModifiers/csrefKeywordsModifiers.cs#15)]  
+ [!code-cs[csrefKeywordsModifiers#15](../../../csharp/language-reference/keywords/codesnippet/CSharp/readonly_2.cs)]  
   
  上の例で、次のようにステートメントを使用するとします。  
   

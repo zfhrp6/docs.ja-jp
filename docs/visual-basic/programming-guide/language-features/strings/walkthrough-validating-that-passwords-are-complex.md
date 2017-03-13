@@ -31,7 +31,7 @@ caps.handback.revision: 17
 ## 例  
   
 ### コード  
- [!code-vb[VbVbcnRegEx#1](../../../../visual-basic/programming-guide/language-features/strings/codesnippet/visualbasic/walkthrough-validating-t_1.vb)]  
+ [!code-vb[VbVbcnRegEx#1](../../../../visual-basic/programming-guide/language-features/strings/codesnippet/VisualBasic/walkthrough-validating-that-passwords-are-complex_1.vb)]  
   
 ## コードのコンパイル  
  このメソッドを呼び出すには、パスワードを格納する文字列を渡します。  

@@ -10,7 +10,7 @@ caps.handback.revision: 8
 ## 使用例  
  次のクエリでは、1 回目の試験で 90 点以上得点した生徒が返されます。  
   
- [!code-cs[csProgGuideLINQ#15](../../../csharp/programming-guide/arrays/codesnippet/csharp/csLINQProgRef/csrefLINQHowTos.cs#15)]  
+ [!code-cs[csProgGuideLINQ#15](../../../csharp/programming-guide/arrays/codesnippet/CSharp/how-to-query-a-collection-of-objects_1.cs)]  
   
  このクエリは、実際に試すことができるように意図的にシンプルにしてあります。  たとえば、`where` 句でその他の述語を試したり、`orderby` 句を使用して結果を並べ替えたりできます。  
   

@@ -24,7 +24,7 @@ caps.handback.revision: 6
 ## 使用例  
  `group` 句での `by` コンテキスト キーワードの使用例を次に示します。ここでは、各学生の姓の 1 文字目に従って学生をグループ化するように指定しています。  
   
- [!code-cs[csrefKeywordsContextual#10](../../../csharp/language-reference/keywords/codesnippet/csharp/by_1.cs)]  
+ [!code-cs[csrefKeywordsContextual#10](../../../csharp/language-reference/keywords/codesnippet/CSharp/by_1.cs)]  
   
 ## 参照  
  [LINQ クエリ式](../../../csharp/programming-guide/linq-query-expressions/index.md)

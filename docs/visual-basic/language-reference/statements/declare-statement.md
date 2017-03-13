@@ -141,14 +141,14 @@ Declare [ charsetmodifier ] [ Function ] name Lib "libname" _
 ## 使用例  
  次の例では、現在のユーザーの名前を返す `Function` プロシージャへの外部参照を宣言します。  その後、外部プロシージャ `GetUserNameA` を `getUser` プロシージャの一部として呼び出します。  
   
- [!code-vb[VbVbalrStatements#15](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/declare-statement_1.vb)]  
+ [!code-vb[VbVbalrStatements#15](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/declare-statement_1.vb)]  
   
 ## 使用例  
  <xref:System.Runtime.InteropServices.DllImportAttribute> を使うと、アンマネージ コード内の関数を別の方法で使うことができます。  インポートした関数を `Declare` ステートメントを使わずに宣言する例を次に示します。  
   
- [!code-vb[VbVbalrStatements#16](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/declare-statement_2.vb)]  
+ [!code-vb[VbVbalrStatements#16](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/declare-statement_2.vb)]  
   
- [!code-vb[VbVbalrStatements#1](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/declare-statement_3.vb)]  
+ [!code-vb[VbVbalrStatements#1](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/declare-statement_3.vb)]  
   
 ## 参照  
  <xref:Microsoft.VisualBasic.ErrObject.LastDllError%2A>   

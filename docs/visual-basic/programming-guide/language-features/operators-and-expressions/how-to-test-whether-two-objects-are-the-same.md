@@ -32,7 +32,7 @@ caps.handback.revision: 11
   
 -   2 つの変数をオペランドとして、[Is Operator](../../../../visual-basic/language-reference/operators/is-operator.md) または [IsNot Operator](../../../../visual-basic/language-reference/operators/isnot-operator.md)を使用します。  
   
-     [!code-vb[VbVbalrOperators#69](../../../../visual-basic/language-reference/operators/codesnippet/visualbasic/how-to-test-whether-two-_1.vb)]  
+     [!code-vb[VbVbalrOperators#69](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/how-to-test-whether-two-objects-are-the-same_1.vb)]  
   
  2 つのオブジェクトが同じインスタンスを参照しているかどうかに応じて、特定のアクションを実行することがあります。  前述の例では、`c` というコントロールをフォーム `f` 上のアクティブなコントロールと比較しています。  アクティブなコントロールがない場合、またはアクティブなコントロールが `c` と同じインスタンスでない場合は、`If` ステートメントが失敗し、プロシージャはこれ以上の処理を行わずに制御を返します。  
   

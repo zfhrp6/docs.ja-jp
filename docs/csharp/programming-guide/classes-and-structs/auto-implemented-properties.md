@@ -22,7 +22,7 @@ C\# 3.0 以降では、自動実装プロパティを使用することで、プ
 ## 使用例  
  次の例に、自動実装プロパティを持つ簡単なクラスを示します。  
   
- [!code-cs[csProgGuideLINQ#28](../../../csharp/programming-guide/arrays/codesnippet/csharp/csLINQProgRef/csRef30LangFeatures_2.cs#28)]  
+ [!code-cs[csProgGuideLINQ#28](../../../csharp/programming-guide/arrays/codesnippet/CSharp/auto-implemented-properties_1.cs)]  
   
  C\# 6 以降では、フィールドと同様に自動実装プロパティを初期化することができます。  
   

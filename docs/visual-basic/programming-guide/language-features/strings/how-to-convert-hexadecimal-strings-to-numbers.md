@@ -33,7 +33,7 @@ caps.handback.revision: 9
   
      <xref:System.Convert.ToInt32%2A> メソッドの最初の引数が変換する文字列です。  2 番目の引数には、数値がどのベースで表現されているかを指定します。16 進であればベース 16 です。  
   
-     [!code-vb[VbVbalrStrings#62](../../../../visual-basic/language-reference/functions/codesnippet/visualbasic/how-to-convert-hexadecim_1.vb)]  
+     [!code-vb[VbVbalrStrings#62](../../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/how-to-convert-hexadecimal-strings-to-numbers_1.vb)]  
   
 ## 参照  
  <xref:Microsoft.VisualBasic.Conversion.Hex%2A>   

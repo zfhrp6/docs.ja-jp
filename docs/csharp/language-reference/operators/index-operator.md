@@ -26,11 +26,11 @@ caps.handback.revision: 20
 ## 解説  
  配列型は、型名の後に `[]` が続きます。  
   
- [!code-cs[csRefOperators#43](../../../csharp/language-reference/operators/codesnippet/csharp/csrefOperators/csrefOperators.cs#43)]  
+ [!code-cs[csRefOperators#43](../../../csharp/language-reference/operators/codesnippet/CSharp/index-operator_1.cs)]  
   
  配列の要素にアクセスするには、目的の要素の添字を角かっこで囲みます。  
   
- [!code-cs[csRefOperators#44](../../../csharp/language-reference/operators/codesnippet/csharp/csrefOperators/csrefOperators.cs#44)]  
+ [!code-cs[csRefOperators#44](../../../csharp/language-reference/operators/codesnippet/CSharp/index-operator_2.cs)]  
   
  配列の添字が範囲外の場合は、例外がスローされます。  
   
@@ -38,15 +38,15 @@ caps.handback.revision: 20
   
  たとえば、.NET Framework では任意の型のキーと値を関連付ける `Hashtable` 型を定義しています。  
   
- [!code-cs[csRefOperators#45](../../../csharp/language-reference/operators/codesnippet/csharp/csrefOperators/csrefOperators.cs#45)]  
+ [!code-cs[csRefOperators#45](../../../csharp/language-reference/operators/codesnippet/CSharp/index-operator_3.cs)]  
   
  角かっこは、[属性](../Topic/Attributes%20\(C%23%20and%20Visual%20Basic\).md)を指定するためにも使用します。  
   
- [!code-cs[csRefOperators#46](../../../csharp/language-reference/operators/codesnippet/csharp/csrefOperators/csrefOperators.cs#46)]  
+ [!code-cs[csRefOperators#46](../../../csharp/language-reference/operators/codesnippet/CSharp/index-operator_4.cs)]  
   
  角かっこを使用して、ポインターにインデックスを作成できます。  
   
- [!code-cs[csRefOperators#47](../../../csharp/language-reference/operators/codesnippet/csharp/csrefOperators/csrefOperators.cs#47)]  
+ [!code-cs[csRefOperators#47](../../../csharp/language-reference/operators/codesnippet/CSharp/index-operator_5.cs)]  
   
  添字の範囲チェックは行われません。  
   

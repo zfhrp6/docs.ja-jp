@@ -46,13 +46,13 @@ caps.handback.revision: 18
 ## 使用例  
  次の例では、[ParamArray](../../../../visual-basic/language-reference/modifiers/paramarray.md) パラメーターで定義されたプロシージャを示し、これに相当する一連のオーバーロードされたプロシージャを示します。  
   
- [!code-vb[VbVbcnProcedures#69](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/how-to-overload-a-proced_0_1.vb)]  
+ [!code-vb[VbVbcnProcedures#69](./codesnippet/VisualBasic/how-to-overload-a-procedure-that-takes-an-indefinite-number-of-parameters_1.vb)]  
   
- [!code-vb[VbVbcnProcedures#70](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/how-to-overload-a-proced_0_2.vb)]  
+ [!code-vb[VbVbcnProcedures#70](./codesnippet/VisualBasic/how-to-overload-a-procedure-that-takes-an-indefinite-number-of-parameters_2.vb)]  
   
  このようなプロシージャは、パラメーター配列として 1 次元配列を受け取るパラメーター リストではオーバーロードできません。  ただし、他の暗黙のオーバーロードのシグネチャは使用できます。  次の宣言はこのことを示しています。  
   
- [!code-vb[VbVbcnProcedures#71](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/how-to-overload-a-proced_0_3.vb)]  
+ [!code-vb[VbVbcnProcedures#71](./codesnippet/VisualBasic/how-to-overload-a-procedure-that-takes-an-indefinite-number-of-parameters_3.vb)]  
   
  オーバーロードされたバージョンのコードでは、呼び出し元のコードが `ParamArray` パラメーターに 1 つ以上の値を渡しているか、また、いくつ渡しているかをテストする必要はありません。  [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] は呼び出し元の引数リストに一致するバージョンにコントロールを渡します。  
   

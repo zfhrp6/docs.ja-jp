@@ -41,7 +41,7 @@ i = "Hello"; // Error: "Cannot implicitly convert type 'string' to 'int'"
 ## 暗黙の型変換  
  組み込みの数値型では、格納する値を切り捨てたり丸めたりしなくても変数に格納できる場合、暗黙の型変換を行うことができます。  たとえば、[long](../../../csharp/language-reference/keywords/long.md) 型 \(8 バイト整数\) の変数には、[int](../../../csharp/language-reference/keywords/int.md) \(32 ビット コンピューター上の 4 バイト\) に格納できるどの値でも格納できます。  次の例では、コンパイラは、右側の値を `long` 型に暗黙的に変換してから `bigNum` に代入しています。  
   
- [!code-cs[csProgGuideTypes#34](../../../csharp/programming-guide/nullable-types/codesnippet/csharp/casting-and-type-convers_1.cs)]  
+ [!code-cs[csProgGuideTypes#34](../../../csharp/programming-guide/nullable-types/codesnippet/CSharp/casting-and-type-conversions_1.cs)]  
   
  暗黙の数値変換の一覧については、「[暗黙的な数値変換の一覧表](../../../csharp/language-reference/keywords/implicit-numeric-conversions-table.md)」を参照してください。  
   
@@ -55,7 +55,7 @@ Base b = d; // Always OK.
 ## 明示的な変換  
  ただし、変換により情報を失う可能性がある場合、コンパイラにより*キャスト*と呼ばれる明示的な変換を実行することが要求されます。  キャストは、ユーザーが変換を行うこと、およびデータ損失の可能性を認識していることをコンパイラに明示的に通知する方法です。  キャストを実行するには、変換される値または変数の前のかっこ内にキャストする型を指定します。  次のプログラムは、[double](../../../csharp/language-reference/keywords/double.md) を [int](../../../csharp/language-reference/keywords/int.md) にキャストします。  このプログラムは、キャストしないとコンパイルできません。  
   
- [!code-cs[csProgGuideTypes#2](../../../csharp/programming-guide/nullable-types/codesnippet/csharp/casting-and-type-convers_2.cs)]  
+ [!code-cs[csProgGuideTypes#2](../../../csharp/programming-guide/nullable-types/codesnippet/CSharp/casting-and-type-conversions_2.cs)]  
   
  許可される明示的な数値変換の一覧については、「[明示的な数値変換の一覧表](../../../csharp/language-reference/keywords/explicit-numeric-conversions-table.md)」を参照してください。  
   
@@ -80,7 +80,7 @@ Giraffe g2 = (Giraffe) a;
 ## 実行時の型変換の例外  
  一部の参照型変換では、コンパイラはキャストが有効になるかどうかを判断できません。  正常にコンパイルされるキャスト操作が、実行時に失敗する可能性があります。  次の例に示すように、実行時に失敗する型キャストにより、<xref:System.InvalidCastException> がスローされます。  
   
- [!code-cs[csProgGuideTypes#41](../../../csharp/programming-guide/nullable-types/codesnippet/csharp/casting-and-type-convers_3.cs)]  
+ [!code-cs[csProgGuideTypes#41](../../../csharp/programming-guide/nullable-types/codesnippet/CSharp/casting-and-type-conversions_3.cs)]  
   
  C\# には [is](../../../csharp/language-reference/keywords/is.md) 演算子と [as](../../../csharp/language-reference/keywords/as.md) 演算子が用意されており、実際にキャストを実行する前に互換性をテストできます。  詳細については、「[方法: as 演算子と is 演算子を使用して安全にキャストする](../../../csharp/programming-guide/types/how-to-safely-cast-by-using-as-and-is-operators.md)」を参照してください。  
   

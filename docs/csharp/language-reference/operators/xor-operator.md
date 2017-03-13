@@ -25,7 +25,7 @@ caps.handback.revision: 19
  `^` 演算子はユーザー定義型でオーバーロードできます。詳細については、「[operator](../../../csharp/language-reference/keywords/operator.md)」を参照してください。  通常、整数型に対する演算は、列挙に対して適用されます。  
   
 ## 使用例  
- [!code-cs[csRefOperators#30](../../../csharp/language-reference/operators/codesnippet/csharp/csrefOperators/csrefOperators.cs#30)]  
+ [!code-cs[csRefOperators#30](../../../csharp/language-reference/operators/codesnippet/CSharp/xor-operator_1.cs)]  
   
  前の例の `0xf8 ^ 0x3f` では、次の 2 つのバイナリ値に対してビットごとの排他的 OR 演算を行います。これらは 16 進値の F8 と 3F に相当します。  
   

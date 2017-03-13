@@ -46,17 +46,17 @@ Order By orderExp1 [ Ascending | Descending ] [, orderExp2 [...] ]
 ## 使用例  
  次のクエリ式では、`From` 句を使用して、`books` コレクションの範囲変数 `book` を宣言します。  `Order By` 句は、価格の昇順 \(既定\) にクエリ結果を並べ替えます。  同じ価格の本は、書名の昇順に並べられます。  `Select` 句は、クエリによって返される値として `Title` プロパティと `Price` プロパティを選択します。  
   
- [!code-vb[VbSimpleQuerySamples#24](../../../visual-basic/language-reference/queries/codesnippet/visualbasic/VbSimpleQuerySamples/QuerySamples1.vb#24)]  
+ [!code-vb[VbSimpleQuerySamples#24](../../../visual-basic/language-reference/queries/codesnippet/VisualBasic/order-by-clause_1.vb)]  
   
 ## 使用例  
  次のクエリ式は、`Order By` 句を使用して、クエリ結果を価格の降順に並べ替えます。  同じ価格の本は、書名の昇順に並べられます。  
   
- [!code-vb[VbSimpleQuerySamples#25](../../../visual-basic/language-reference/queries/codesnippet/visualbasic/VbSimpleQuerySamples/QuerySamples1.vb#25)]  
+ [!code-vb[VbSimpleQuerySamples#25](../../../visual-basic/language-reference/queries/codesnippet/VisualBasic/order-by-clause_2.vb)]  
   
 ## 使用例  
  次のクエリ式は、`Select` 句を使用して、書名、価格、発行日、および著者を選択します。  その後、範囲変数の `Title`、`Price`、`PublishDate`、`Author` の各フィールドに、新しいスコープを設定します。  `Order By` 句は、著者名、書名、価格の順に、新しい範囲変数を並べ替えます。  各列は、既定の順序 \(昇順\) に並べられます。  
   
- [!code-vb[VbSimpleQuerySamples#26](../../../visual-basic/language-reference/queries/codesnippet/visualbasic/VbSimpleQuerySamples/QuerySamples1.vb#26)]  
+ [!code-vb[VbSimpleQuerySamples#26](../../../visual-basic/language-reference/queries/codesnippet/VisualBasic/order-by-clause_3.vb)]  
   
 ## 参照  
  [Introduction to LINQ in Visual Basic](../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)   

@@ -60,7 +60,7 @@ object.Value
 ## 使用例  
  次の例は、<xref:System.Xml.Linq.XElement.Value%2A> プロパティを使用して <xref:System.Xml.Linq.XElement> オブジェクトのコレクションの最初のノードにアクセスする方法を示しています。  この例では、子軸プロパティを使用して、`contact` オブジェクトの中の `phone` という名前のすべての子ノードのコレクションを取得します。  
   
- [!code-vb[VbXMLSamples#15](../../../visual-basic/language-reference/operators/codesnippet/visualbasic/xml-value-property_1.vb)]  
+ [!code-vb[VbXMLSamples#15](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/xml-value-property_1.vb)]  
   
  このコードは、次のテキストを表示します。  
   
@@ -69,7 +69,7 @@ object.Value
 ## 使用例  
  次の例は、<xref:System.Xml.Linq.XAttribute> オブジェクトのコレクションから XML 属性の値を取得する方法を示しています。  この例では、属性軸プロパティを使用して、すべての `phone` 要素の `type` 属性の値を表示します。  
   
- [!code-vb[VbXMLSamples#16](../../../visual-basic/language-reference/operators/codesnippet/visualbasic/xml-value-property_2.vb)]  
+ [!code-vb[VbXMLSamples#16](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/xml-value-property_2.vb)]  
   
  このコードは、次のテキストを表示します。  
   

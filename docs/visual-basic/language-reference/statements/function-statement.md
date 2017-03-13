@@ -201,11 +201,11 @@ End Function
   
   `Return` ステートメントは、同時に戻り値を割り当てるし、次の例のように、関数が終了します。  
   
- [!code-vb[VbVbalrStatements#24](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/function-statement_1.vb)]  
+ [!code-vb[VbVbalrStatements#24](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/function-statement_1.vb)]  
   
  次の例では、戻り値を割り当てて、関数名に `myFunction` し、使用して、 `Exit Function` を返すステートメントです。  
   
- [!code-vb[VbVbalrStatements#23](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/function-statement_2.vb)]  
+ [!code-vb[VbVbalrStatements#23](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/function-statement_2.vb)]  
   
   `Exit Function` と `Return` ステートメントからすぐに終了が発生する、 `Function` プロシージャです。 任意の数の `Exit Function` と `Return` ステートメントが任意の場所で、手順と混在させることが `Exit Function` と `Return` ステートメントです。  
   
@@ -248,19 +248,19 @@ End Function
 ## <a name="example"></a>例  
  次の例では、 `Function` を名前、パラメーター、およびコードの本体を形成する宣言ステートメント、 `Function` プロシージャです。  `ParamArray` 修飾子により、可変個の引数を受け入れるように機能します。  
   
- [!code-vb[VbVbalrStatements#25](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/function-statement_3.vb)]  
+ [!code-vb[VbVbalrStatements#25](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/function-statement_3.vb)]  
   
 ## <a name="example"></a>例  
  次の例では、前の例で宣言された関数を呼び出します。  
   
- [!code-vb[VbVbalrStatements#26](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/function-statement_4.vb)]  
+ [!code-vb[VbVbalrStatements#26](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/function-statement_4.vb)]  
   
 ## <a name="example"></a>例  
  次の例で `DelayAsync` は、 `Async``Function` の戻り値の型を持つ <xref:System.Threading.Tasks.Task%601>します。 `DelayAsync` には、整数を返す `Return` ステートメントがあります。 したがって、関数宣言の `DelayAsync` の戻り値の型を持っている必要がある `Task(Of Integer)`です。 戻り値の型である `Task(Of Integer)`, の評価、 `Await` 式 `DoSomethingAsync` 整数値を生成します。 これを次のステートメントに示します: `Dim result As Integer = Await delayTask`です。  
   
   `startButton_Click` 手順の例は、 `Async Sub` プロシージャです。  `DoSomethingAsync` は、 `Async` 関数への呼び出しのタスク `DoSomethingAsync` 、次のステートメントで示すように、待機する必要があります: `Await DoSomethingAsync()`です。  `startButton_Click``Sub` でプロシージャを定義する必要があります、 `Async` 修飾子があるため、 `Await` 式です。  
   
- [!code-vb[csAsyncMethod#1](../../../csharp/programming-guide/classes-and-structs/codesnippet/visualbasic/asyncfunctionvb/mainwindow.xaml.vb#1)]  
+ [!code-vb[csAsyncMethod#1](../../../csharp/programming-guide/classes-and-structs/codesnippet/VisualBasic/function-statement_5.vb)]  
   
 ## <a name="see-also"></a>「  
  [Sub ステートメント](../../../visual-basic/language-reference/statements/sub-statement.md)   

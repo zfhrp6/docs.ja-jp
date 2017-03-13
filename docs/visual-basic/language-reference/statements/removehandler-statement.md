@@ -48,7 +48,7 @@ RemoveHandler event, AddressOf eventhandler
 >  カスタム イベントの場合は、`RemoveHandler` ステートメントがイベントの `RemoveHandler` アクセサーを呼び出します。  カスタム イベントの詳細については、「[Event Statement](../../../visual-basic/language-reference/statements/event-statement.md)」を参照してください。  
   
 ## 使用例  
- [!code-vb[VbVbalrEvents#17](../../../visual-basic/language-reference/statements/codesnippet/visualbasic/VbVbalrEvents/Class1.vb#17)]  
+ [!code-vb[VbVbalrEvents#17](../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/removehandler-statement_1.vb)]  
   
 ## 参照  
  [AddHandler Statement](../../../visual-basic/language-reference/statements/addhandler-statement.md)   

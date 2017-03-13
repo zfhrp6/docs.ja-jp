@@ -47,7 +47,7 @@ GetXmlNamespace(xmlNamespacePrefix)
 ## 使用例  
  次の例では、`ns` を XML 名前空間プレフィックスとしてインポートします。  その後、この名前空間のプレフィックスを使用して XML リテラルを作成し、修飾名 `ns:phone` を持つ最初の子ノードにアクセスします。  次に、この子ノードを `ShowName` サブルーチンに渡します。このサブルーチンは、`GetXmlNamespace` 演算子を使用して修飾名を作成します。  その後、`ShowName` サブルーチンから <xref:System.Xml.Linq.XNode.Ancestors%2A> メソッドに修飾名を渡して、親の `ns:contact` ノードを取得します。  
   
- [!code-vb[VbXMLSamples#38](../../../visual-basic/language-reference/operators/codesnippet/visualbasic/getxmlnamespace-operator_1.vb)]  
+ [!code-vb[VbXMLSamples#38](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/getxmlnamespace-operator_1.vb)]  
   
  `TestGetXmlNamespace.RunSample()` を呼び出すと、次のテキストを含むメッセージ ボックスが表示されます。  
   

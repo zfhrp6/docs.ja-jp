@@ -48,7 +48,7 @@ Take count
 ## 使用例  
  次のコード例では、`Take` 句を `Skip` 句と一緒に使用して、ページのクエリからデータを返します。  GetCustomers 関数は、`Skip` 句を使用して、指定された開始インデックス値までリストの顧客をバイパスし、`Take` 句を使用して、そのインデックス値から始まる顧客のページを返します。  
   
- [!code-vb[VbSimpleQuerySamples#1](../../../visual-basic/language-reference/queries/codesnippet/visualbasic/VbSimpleQuerySamples/QuerySamples1.vb#1)]  
+ [!code-vb[VbSimpleQuerySamples#1](../../../visual-basic/language-reference/queries/codesnippet/VisualBasic/take-clause_1.vb)]  
   
 ## 参照  
  [Introduction to LINQ in Visual Basic](../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)   

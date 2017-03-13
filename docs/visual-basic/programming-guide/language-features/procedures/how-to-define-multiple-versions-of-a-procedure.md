@@ -42,7 +42,7 @@ caps.handback.revision: 14
 ## 使用例  
  `Sub` プロシージャを定義し、顧客の残高に対してトランザクションをポストする例を次に示します。  `Overloads` キーワードを指定して、プロシージャのバージョンを 2 つ定義しています。1 つは顧客を名前で受け取り、もう 1 つは口座番号で受け取ります。  
   
- [!code-vb[VbVbcnProcedures#72](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/how-to-define-multiple-v_1.vb)]  
+ [!code-vb[VbVbcnProcedures#72](./codesnippet/VisualBasic/how-to-define-multiple-versions-of-a-procedure_1.vb)]  
   
  呼び出し元のコードでは、顧客 ID を文字列 \(`String`\) または数値 \(`Integer`\) で取得しますが、どちらの場合でも同じ呼び出しステートメントを使用できます。  
   

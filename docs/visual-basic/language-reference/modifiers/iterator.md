@@ -48,12 +48,12 @@ caps.handback.revision: 11
 ## 使用例  
  次の例は、反復子の関数を示します。  反復子の関数に [For… Next には](../../../visual-basic/language-reference/statements/for-next-statement.md) のループ内にある `Yield` ステートメントがあります。  `Main` の [各には](../../../visual-basic/language-reference/statements/for-each-next-statement.md) のステートメント本体の各反復で `Power` の反復子関数に呼び出しを作成します。  反復子の関数に対する各呼び出しは `For…Next` のループの次の反復処理中に発生する `Yield` ステートメントの次の実行に進みます。  
   
- [!code-vb[VbVbalrStatements#98](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/iterator_1.vb)]  
+ [!code-vb[VbVbalrStatements#98](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/iterator_1.vb)]  
   
 ## 使用例  
  次の例は、反復子である `Get` のアクセサーを示します。  `Iterator` の修飾子は、プロパティ宣言にあります。  
   
- [!code-vb[VbVbalrStatements#99](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/iterator_2.vb)]  
+ [!code-vb[VbVbalrStatements#99](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/iterator_2.vb)]  
   
  その他の例については、「[反復子](../Topic/Iterators%20\(C%23%20and%20Visual%20Basic\).md)」を参照してください。  
   

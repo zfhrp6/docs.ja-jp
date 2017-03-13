@@ -63,12 +63,12 @@ Inherits basetypenames
 ## 使用例  
  次の例は、`Inherits` ステートメントを使用して、`thisClass` というクラスに `anotherClass` という基本クラスのすべてのメンバーを継承する方法を示しています。  
   
- [!code-vb[VbVbalrStatements#37](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/inherits-statement_1.vb)]  
+ [!code-vb[VbVbalrStatements#37](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/inherits-statement_1.vb)]  
   
 ## 使用例  
  次の例は、複数のインターフェイスを継承する方法を示しています。  
   
- [!code-vb[VbVbalrStatements#38](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/inherits-statement_2.vb)]  
+ [!code-vb[VbVbalrStatements#38](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/inherits-statement_2.vb)]  
   
  これにより、`thisInterface` というインターフェイスには、<xref:System.IComparable>、<xref:System.IDisposable>、および <xref:System.IFormattable> の各インターフェイスにあるすべての定義が含まれるようになります。これらの継承されたメンバーは、2 つのオブジェクトを特定の型として比較する機能、割り当てられたリソースを解放する機能、およびオブジェクトの値を `String` で表現する機能を備えています。  `thisInterface` を実装するクラスは、すべての基本インターフェイスのすべてのメンバーを実装する必要があります。  
   

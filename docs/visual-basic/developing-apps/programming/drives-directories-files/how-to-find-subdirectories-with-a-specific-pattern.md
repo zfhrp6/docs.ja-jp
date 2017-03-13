@@ -30,7 +30,7 @@ caps.handback.revision: 16
   
 -   `GetDirectories` メソッドを使用して、検索するディレクトリの名前およびパスを指定します。  次の例では、ディレクトリ構造内のディレクトリのうちで、名前に "Logs" という単語を含むものをすべて取得し、`ListBox1` に追加します。  
   
-     [!code-vb[VbVbcnFileAccess#1](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/visualbasic/how-to-find-subdirectori_1.vb)]  
+     [!code-vb[VbVbcnFileAccess#1](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/VisualBasic/how-to-find-subdirectories-with-a-specific-pattern_1.vb)]  
   
 ## 信頼性の高いプログラミング  
  次の条件を満たす場合は、例外が発生する可能性があります。  

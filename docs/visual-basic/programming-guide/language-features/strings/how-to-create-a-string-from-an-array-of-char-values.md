@@ -25,7 +25,7 @@ caps.handback.revision: 10
 個別の文字から文字列 "abcd" を作成する例を次に示します。  
   
 ## 使用例  
- [!code-vb[VbVbalrStrings#61](../../../../visual-basic/language-reference/functions/codesnippet/visualbasic/how-to-create-a-string-f_1.vb)]  
+ [!code-vb[VbVbalrStrings#61](../../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/how-to-create-a-string-from-an-array-of-char-values_1.vb)]  
   
 ## コードのコンパイル  
  このメソッドには、特別な要件はありません。  

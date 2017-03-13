@@ -19,17 +19,17 @@ caps.handback.revision: 16
 この例では、`IDimensions` [インターフェイス](../../../csharp/language-reference/keywords/interface.md)と `Box` クラスが宣言されています。このクラスは、`getLength` と `getWidth` の各インターフェイス メンバーを明示的に実装しています。  メンバーには、`dimensions` インターフェイス インスタンスを使ってアクセスします。  
   
 ## 使用例  
- [!code-cs[csProgGuideInheritance#8](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/how-to-explicitly-implem_1_1.cs)]  
+ [!code-cs[csProgGuideInheritance#8](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/how-to-explicitly-implement-interface-members_1.cs)]  
   
 ## 信頼性の高いプログラミング  
   
 -   `Main` メソッド内の次の行は、コンパイル エラーを生じるため、コメント アウトされます。  明示的に実装されるインターフェイス メンバーには、[クラス](../../../csharp/language-reference/keywords/class.md) インスタンスからはアクセスできません。  
   
-     [!code-cs[csProgGuideInheritance#45](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/how-to-explicitly-implem_1_2.cs)]  
+     [!code-cs[csProgGuideInheritance#45](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/how-to-explicitly-implement-interface-members_2.cs)]  
   
 -   `Main` メソッドの以下の行では、メソッドがインターフェイスのインスタンスから呼び出されるため、ボックスの寸法を正常に出力できます。  
   
-     [!code-cs[csProgGuideInheritance#46](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/how-to-explicitly-implem_1_3.cs)]  
+     [!code-cs[csProgGuideInheritance#46](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/how-to-explicitly-implement-interface-members_3.cs)]  
   
 ## 参照  
  [C\# プログラミング ガイド](../../../csharp/programming-guide/index.md)   

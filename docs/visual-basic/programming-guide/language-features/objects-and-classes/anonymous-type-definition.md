@@ -26,7 +26,7 @@ caps.handback.revision: 21
 ## コンパイラが生成するコード  
  次の `product` の定義の場合、コンパイラは、`Name`、`Price`、および `OnHand` を含む新しいクラス定義を作成します。  
   
- [!code-vb[VbVbalrAnonymousTypes#25](../../../../visual-basic/language-reference/modifiers/codesnippet/visualbasic/anonymous-type-definition_1.vb)]  
+ [!code-vb[VbVbalrAnonymousTypes#25](../../../../visual-basic/language-reference/modifiers/codesnippet/VisualBasic/anonymous-type-definition_1.vb)]  
   
  このクラス定義には、次のようなプロパティの定義が含まれます。  主要なプロパティには `Set` メソッドがないことに注意してください。  主要なプロパティの値は読み取り専用です。  
   
@@ -75,13 +75,13 @@ End Class
   
      たとえば、次の例では、`Equals` は、`employee01` と `employee08` に対してのみ `True` を返します。  各行の前のコメントは、新しいインスタンスが `employee01` と一致しない理由を示します。  
   
-     [!code-vb[VbVbalrAnonymousTypes#24](../../../../visual-basic/language-reference/modifiers/codesnippet/visualbasic/anonymous-type-definition_2.vb)]  
+     [!code-vb[VbVbalrAnonymousTypes#24](../../../../visual-basic/language-reference/modifiers/codesnippet/VisualBasic/anonymous-type-definition_2.vb)]  
   
 -   `GetHashcode` は、適切な一意の GetHashCode アルゴリズムを提供します。  このアルゴリズムは、主要なプロパティのみを使用してハッシュ コードを計算します。  
   
 -   `ToString` は、次の例に示すように、連結されたプロパティ値の文字列を返します。  主要なプロパティとそれ以外のプロパティの両方を含みます。  
   
-     [!code-vb[VbVbalrAnonymousTypes#29](../../../../visual-basic/language-reference/modifiers/codesnippet/visualbasic/anonymous-type-definition_3.vb)]  
+     [!code-vb[VbVbalrAnonymousTypes#29](../../../../visual-basic/language-reference/modifiers/codesnippet/VisualBasic/anonymous-type-definition_3.vb)]  
   
  明示的に名前を付けられた匿名型のプロパティは、これらの生成されるメソッドと競合することはできません。  つまり、`.Equals`、`.GetHashCode`、または `.ToString` を使用してプロパティに名前を付けることはできません。  
   

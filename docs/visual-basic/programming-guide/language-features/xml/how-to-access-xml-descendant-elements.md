@@ -28,7 +28,7 @@ caps.handback.revision: 19
 この例では、子孫軸プロパティを使用して、ある XML 要素に含まれる、指定した名前を持つすべての XML 要素にアクセスする方法を示します。  具体的には、`Value` プロパティを使用して、`name` 子孫軸プロパティが返すコレクション内の最初の要素の値を取得します。  `name` 子孫軸プロパティは、`contacts` オブジェクトに含まれる `name` という名前の要素をすべて取得します。  また、この例では、`phone` 子孫軸プロパティを使用して、`contacts` オブジェクトに含まれる `phone` という名前のすべての子孫にもアクセスします。  
   
 ## 使用例  
- [!code-vb[VbXMLSamples#31](../../../../visual-basic/language-reference/operators/codesnippet/visualbasic/how-to-access-xml-descen_1.vb)]  
+ [!code-vb[VbXMLSamples#31](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/how-to-access-xml-descendant-elements_1.vb)]  
   
 ## コードのコンパイル  
  この例には、次の項目が必要です。  

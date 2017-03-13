@@ -46,7 +46,7 @@ caps.handback.revision: 23
 ## 使用例  
  `DirectCast` の 2 つの使用例を次に示します。1 つは実行時に失敗し、もう 1 つは成功します。  
   
- [!code-vb[VbVbalrKeywords#1](../../../visual-basic/language-reference/codesnippet/visualbasic/directcast-operator_1.vb)]  
+ [!code-vb[VbVbalrKeywords#1](../../../visual-basic/language-reference/codesnippet/VisualBasic/directcast-operator_1.vb)]  
   
  この例では、`q` のランタイム型は倍精度浮動小数点数型 \(`Double`\) です。  `Double` は `Integer` に変換できるので、`CType` は成功します。  しかし、最初の `DirectCast` は実行時に失敗します。`Double` のランタイム型は `Integer` に変換可能ですが、継承の関係にはないからです。  2 番目の `DirectCast` は、<xref:System.Windows.Forms.Form> 型から <xref:System.Windows.Forms.Control> 型への変換です。<xref:System.Windows.Forms.Form> は <xref:System.Windows.Forms.Control> を継承しているので成功します。  
   

@@ -42,12 +42,12 @@ caps.handback.revision: 29
 ## 使用例  
  次の例では、public のフィールド変数を `volatile` として宣言する方法を示します。  
   
- [!code-cs[csrefKeywordsModifiers#24](../../../csharp/language-reference/keywords/codesnippet/csharp/csrefKeywordsModifiers/csrefKeywordsModifiers.cs#24)]  
+ [!code-cs[csrefKeywordsModifiers#24](../../../csharp/language-reference/keywords/codesnippet/CSharp/volatile_1.cs)]  
   
 ## 使用例  
  次の例では、補助スレッドつまりワーカー スレッドを作成および使用して、プライマリ スレッドとの並行処理を実行する方法を示します。  マルチスレッド処理の背景情報については、「[Threading](../Topic/Managed%20Threading.md)」および「[スレッド](../Topic/Threading%20\(C%23%20and%20Visual%20Basic\).md)」を参照してください。  
   
- [!code-cs[csProgGuideThreading#1](../../../csharp/language-reference/keywords/codesnippet/csharp/volatile_2.cs)]  
+ [!code-cs[csProgGuideThreading#1](../../../csharp/language-reference/keywords/codesnippet/CSharp/volatile_2.cs)]  
   
 ## C\# 言語仕様  
  [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec-md.md)]  

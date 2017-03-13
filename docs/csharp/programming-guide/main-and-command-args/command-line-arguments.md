@@ -18,16 +18,16 @@ caps.handback.revision: 27
 # コマンド ライン引数 (C# プログラミング ガイド)
 `Main` メソッドに引数を渡すには、次のいずれかの方法でメソッドを定義します。  
   
- [!code-cs[csProgGuideMain#2](../../../csharp/programming-guide/inside-a-program/codesnippet/csharp/command-line-arguments_1.cs)]  
+ [!code-cs[csProgGuideMain#2](../../../csharp/programming-guide/inside-a-program/codesnippet/CSharp/command-line-arguments_1.cs)]  
   
- [!code-cs[csProgGuideMain#3](../../../csharp/programming-guide/inside-a-program/codesnippet/csharp/command-line-arguments_2.cs)]  
+ [!code-cs[csProgGuideMain#3](../../../csharp/programming-guide/inside-a-program/codesnippet/CSharp/command-line-arguments_2.cs)]  
   
 > [!NOTE]
 >  Windows フォーム アプリケーションの `Main` メソッドでコマンド ライン引数を有効にするには、program.cs の `Main` のシグネチャを手動で変更する必要があります。  Windows フォーム デザイナーが生成するコードは、入力パラメーターなしの `Main` を作成します。  <xref:System.Environment.CommandLine%2A?displayProperty=fullName> または <xref:System.Environment.GetCommandLineArgs%2A?displayProperty=fullName> を使用して、コンソールまたは Windows アプリケーション内の任意の場所からコマンド ライン引数にアクセスすることもできます。  
   
  `Main` メソッドのパラメーターは <xref:System.String> の配列で、コマンド ライン引数を表しています。  通常は、`Length` プロパティを調べて引数があるかどうかを確認します。次はその例です。  
   
- [!code-cs[csProgGuideMain#4](../../../csharp/programming-guide/inside-a-program/codesnippet/csharp/command-line-arguments_3.cs)]  
+ [!code-cs[csProgGuideMain#4](../../../csharp/programming-guide/inside-a-program/codesnippet/CSharp/command-line-arguments_3.cs)]  
   
  また、<xref:System.Convert> クラスまたは `Parse` メソッドを使って、文字列型の引数を数値型に変換できます。  たとえば、次のステートメントでは、<xref:System.Int64.Parse%2A> メソッドを使用して `string` を `long` 値に変換します。  
   
@@ -56,7 +56,7 @@ long num = Convert.ToInt64(s);
   
 1.  次のコードをテキスト エディターに貼り付け、`Factorial.cs` という名前でテキスト ファイルとして保存します。  
   
-     [!code-cs[csProgGuideMain#16](../../../csharp/programming-guide/inside-a-program/codesnippet/csharp/command-line-arguments_4.cs)]  
+     [!code-cs[csProgGuideMain#16](../../../csharp/programming-guide/inside-a-program/codesnippet/CSharp/command-line-arguments_4.cs)]  
   
 2.  **\[スタート\]** 画面または **\[スタート\]** メニューから、Visual Studio の **\[開発者コマンド プロンプト\]** ウィンドウを開き、先ほど作成したファイルが含まれているフォルダーに移動します。  
   

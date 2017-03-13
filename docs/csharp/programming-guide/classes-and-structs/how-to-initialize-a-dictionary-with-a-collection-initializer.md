@@ -21,7 +21,7 @@ caps.handback.revision: 10
 ## 使用例  
  次のコード例では、<xref:System.Collections.Generic.Dictionary%602> が `StudentName` 型のインスタンスで初期化されます。  
   
- [!code-cs[csProgGuideLINQ#34](../../../csharp/programming-guide/arrays/codesnippet/csharp/csLINQProgRef/csRef30LangFeatures_2.cs#34)]  
+ [!code-cs[csProgGuideLINQ#34](../../../csharp/programming-guide/arrays/codesnippet/CSharp/how-to-initialize-a-dictionary-with-a-collection-initializer_1.cs)]  
   
  コレクションの各要素の中かっこの 2 つのペアに注目してください。  最も内側の中かっこは `StudentName` のオブジェクト初期化子を囲み、最も外側の中かっこは、`students` <xref:System.Collections.Generic.Dictionary%602> に追加されるキーと値のペアの初期化子を囲んでいます。  最後に、ディクショナリのコレクション初期化子全体が中かっこで囲まれています。  
   

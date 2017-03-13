@@ -29,7 +29,7 @@ caps.handback.revision: 35
   
 -   クラス定義を分割するには、次のように [partial](../../../csharp/language-reference/keywords/partial-type.md) キーワード修飾子を使用します。  
   
- [!code-cs[csProgGuideObjects#26](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/partial-classes-and-meth_1.cs)]  
+ [!code-cs[csProgGuideObjects#26](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/partial-classes-and-methods_1.cs)]  
   
  `partial` キーワードは、クラス、構造体、またはインターフェイスの他の部分を名前空間内で定義できることを示します。  `partial` キーワードは、すべての部分で使用する必要があります。  最終的な型を形成するためには、コンパイル時にすべての部分が用意できている必要があります。  また、すべての部分で同じアクセシビリティ \(`public` や `private` など\) を使用する必要があります。  
   
@@ -42,15 +42,15 @@ caps.handback.revision: 35
   
  次の例は、入れ子にされた型は、それを包含する型自体が partial でない場合でも、partial にできることを示しています。  
   
- [!code-cs[csProgGuideObjects#25](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/partial-classes-and-meth_2.cs)]  
+ [!code-cs[csProgGuideObjects#25](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/partial-classes-and-methods_2.cs)]  
   
  部分型定義の属性は、コンパイル時に結合されます。  たとえば、次の宣言について考えてみます。  
   
- [!code-cs[csProgGuideObjects#23](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/partial-classes-and-meth_3.cs)]  
+ [!code-cs[csProgGuideObjects#23](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/partial-classes-and-methods_3.cs)]  
   
  これらは、次の宣言と等価です。  
   
- [!code-cs[csProgGuideObjects#24](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/partial-classes-and-meth_4.cs)]  
+ [!code-cs[csProgGuideObjects#24](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/partial-classes-and-methods_4.cs)]  
   
  各部分型定義に含まれる次の要素は、すべて結合されます。  
   
@@ -66,24 +66,24 @@ caps.handback.revision: 35
   
  たとえば、次の宣言について考えてみます。  
   
- [!code-cs[csProgGuideObjects#21](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/partial-classes-and-meth_5.cs)]  
+ [!code-cs[csProgGuideObjects#21](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/partial-classes-and-methods_5.cs)]  
   
  これらは、次の宣言と等価です。  
   
- [!code-cs[csProgGuideObjects#22](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/partial-classes-and-meth_6.cs)]  
+ [!code-cs[csProgGuideObjects#22](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/partial-classes-and-methods_6.cs)]  
   
 ### 制約  
  部分クラス定義の使用時には、以下の規則が適用されます。  
   
 -   同じ型の部分である部分型定義はすべて `partial` で修飾する必要があります。  たとえば、次のクラス宣言はエラーになります。  
   
-     [!code-cs[csProgGuideObjects#20](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/partial-classes-and-meth_7.cs)]  
+     [!code-cs[csProgGuideObjects#20](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/partial-classes-and-methods_7.cs)]  
   
 -   `partial` 修飾子は、`class`、`struct`、または `interface` キーワードの直前にのみ配置できます。  
   
 -   入れ子にされた部分型は、次の例で示すように、部分型定義で宣言できます。  
   
-     [!code-cs[csProgGuideObjects#19](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/partial-classes-and-meth_8.cs)]  
+     [!code-cs[csProgGuideObjects#19](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/partial-classes-and-methods_8.cs)]  
   
 -   同じ型の部分である部分型定義はすべて同じアセンブリまたは同じモジュール \(.exe ファイルまたは .dll ファイル\) 内で定義する必要があります。  部分定義は、複数のモジュールにまたがることができません。  
   
@@ -117,7 +117,7 @@ caps.handback.revision: 35
  次の例では、クラス `CoOrds` のフィールドとコンストラクターを 1 つの部分クラス定義で宣言し、メンバー `PrintCoOrds` を別の部分クラス定義で宣言しています。  
   
 ### コード  
- [!code-cs[csProgGuideObjects#17](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/partial-classes-and-meth_9.cs)]  
+ [!code-cs[csProgGuideObjects#17](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/partial-classes-and-methods_9.cs)]  
   
 ## 例 2  
   
@@ -125,7 +125,7 @@ caps.handback.revision: 35
  次の例は、部分構造体と部分インターフェイスも開発できることを示しています。  
   
 ### コード  
- [!code-cs[csProgGuideObjects#18](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/partial-classes-and-meth_10.cs)]  
+ [!code-cs[csProgGuideObjects#18](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/partial-classes-and-methods_10.cs)]  
   
 ## 部分メソッド  
  部分クラスまたは構造体に部分メソッドを含めることができます。  クラスのある部分にメソッドのシグネチャが含まれます。  同じ部分または別の部分に、オプションの実装を定義できます。  実装を備えていない場合、メソッドとメソッドに対するすべての呼び出しは、コンパイル時に削除されます。  

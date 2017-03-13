@@ -27,7 +27,7 @@ caps.handback.revision: 25
  次の例の出力は違いを示しています。  クラス インスタンスの `willIChange` フィールドの値は、メソッド `ClassTaker` に呼び出しによってクラス インスタンスの指定したフィールドを検索するには、メソッドがパラメーターのアドレスを使用するので変更されます。  呼び出し元のメソッドの構造体の `willIChange` フィールドは、メソッド `StructTaker` 、アドレスのコピーを呼び出し、引数の値が構造体自体のコピーであるため変更されません。  `StructTaker` は コピーを変更し、 `StructTaker` への呼び出しが完了すると、コピーは失われます。  
   
 ## 使用例  
- [!code-cs[csProgGuideObjects#32](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/how-to-know-the-differen_1.cs)]  
+ [!code-cs[csProgGuideObjects#32](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/how-to-know-the-difference-passing-a-struct-and-passing-a-class-to-a-method_1.cs)]  
   
 ## 参照  
  [C\# プログラミング ガイド](../../../csharp/programming-guide/index.md)   

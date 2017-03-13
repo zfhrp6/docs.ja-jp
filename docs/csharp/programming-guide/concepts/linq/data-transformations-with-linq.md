@@ -40,11 +40,11 @@ caps.handback.revision: 15
 ## 複数の入力を 1 つの出力シーケンスに結合する  
  [!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq-md.md)] クエリを使用して、複数の入力シーケンスの要素を含む 1 つの出力シーケンスを作成できます。  次の例は、2 つのインメモリ データ構造を結合する方法を示していますが、ソースが XML、SQL、または DataSet のデータを結合する場合も、同じ基本原則を適用できます。  次の 2 つのクラス型があるとします。  
   
- [!code-cs[CsLINQGettingStarted#7](../../../../csharp/programming-guide/concepts/linq/codesnippet/csharp/GettingStarted/Class1.cs#7)]  
+ [!code-cs[CsLINQGettingStarted#7](../../../../csharp/programming-guide/concepts/linq/codesnippet/CSharp/data-transformations-with-linq_1.cs)]  
   
  クエリの例を次に示します。  
   
- [!code-cs[CSLinqGettingStarted#8](../../../../csharp/programming-guide/concepts/linq/codesnippet/csharp/GettingStarted/Class1.cs#8)]  
+ [!code-cs[CSLinqGettingStarted#8](../../../../csharp/programming-guide/concepts/linq/codesnippet/CSharp/data-transformations-with-linq_2.cs)]  
   
  詳細については、「[join 句](../../../../csharp/language-reference/keywords/join-clause.md)」および「[select 句](../../../../csharp/language-reference/keywords/select-clause.md)」を参照してください。  
   
@@ -70,7 +70,7 @@ caps.handback.revision: 15
 ## インメモリ オブジェクトを XML に変換する  
  [!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq-md.md)] クエリを使用すると、インメモリ データ構造、SQL データベース、[!INCLUDE[vstecado](../../../../csharp/programming-guide/concepts/linq/includes/vstecado-md.md)] データセット、XML ストリーム、および XML ドキュメントの間でデータ変換を簡単に行うことができます。  インメモリ データ構造のオブジェクトを XML 要素に変換する例を次に示します。  
   
- [!code-cs[CsLINQGettingStarted#9](../../../../csharp/programming-guide/concepts/linq/codesnippet/csharp/GettingStarted/Class1.cs#9)]  
+ [!code-cs[CsLINQGettingStarted#9](../../../../csharp/programming-guide/concepts/linq/codesnippet/CSharp/data-transformations-with-linq_3.cs)]  
   
  このコードを実行すると、次の XML 出力が生成されます。  
   
@@ -102,7 +102,7 @@ caps.handback.revision: 15
 > [!NOTE]
 >  クエリが他のドメインに変換される場合、クエリ式でのメソッド呼び出しはサポートされません。  たとえば、[!INCLUDE[vbtecdlinq](../../../../csharp/includes/vbtecdlinq-md.md)] で C\# の通常のメソッドを呼び出すことはできません。これは、C\# のメソッドのコンテキストが SQL Server にないためです。  ただし、ストアド プロシージャをメソッドにマップして呼び出すことは可能です。  詳細については、「[Stored Procedures](../Topic/Stored%20Procedures.md)」を参照してください。  
   
- [!code-cs[CsLINQGettingStarted#10](../../../../csharp/programming-guide/concepts/linq/codesnippet/csharp/GettingStarted/Class1.cs#10)]  
+ [!code-cs[CsLINQGettingStarted#10](../../../../csharp/programming-guide/concepts/linq/codesnippet/CSharp/data-transformations-with-linq_4.cs)]  
   
 ## 参照  
  [LINQ \(Language\-Integrated Query\)](../Topic/LINQ%20\(Language-Integrated%20Query\).md)   

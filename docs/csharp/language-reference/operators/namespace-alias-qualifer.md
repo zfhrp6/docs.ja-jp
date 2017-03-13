@@ -22,7 +22,7 @@ caps.handback.revision: 21
 # :: 演算子 (C# リファレンス)
 名前空間エイリアス修飾子 \(`::`\) を使用して識別子を検索できます。  この例に示すように、常に 2 つの識別子の間に配置します。  
   
- [!code-cs[csRefOperators#27](../../../csharp/language-reference/operators/codesnippet/csharp/csrefOperators/csrefOperators.cs#27)]  
+ [!code-cs[csRefOperators#27](../../../csharp/language-reference/operators/codesnippet/CSharp/namespace-alias-qualifer_1.cs)]  
   
 ## 解説  
  名前空間エイリアス修飾子として `global` を指定できます。  これにより、エイリアスを使用した名前空間ではなく、グローバル名前空間で検索が実行されます。  

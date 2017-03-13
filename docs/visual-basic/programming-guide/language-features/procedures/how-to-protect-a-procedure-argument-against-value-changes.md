@@ -38,11 +38,11 @@ caps.handback.revision: 14
 ## 使用例  
  次の例には、配列変数を受け取ってその要素を操作する 2 つのプロシージャがあります。  `increase` プロシージャは、各要素に単純に 1 を加算します。  `replace` プロシージャは、新しい配列をパラメーター `a()` 煮割り当て、各要素に 1 を加算します。  ただし、この新しい配列の代入は、呼び出し元のコードの基の配列変数には反映されません。  
   
- [!code-vb[VbVbcnProcedures#35](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/how-to-protect-a-procedu_1.vb)]  
+ [!code-vb[VbVbcnProcedures#35](./codesnippet/VisualBasic/how-to-protect-a-procedure-argument-against-value-changes_1.vb)]  
   
- [!code-vb[VbVbcnProcedures#38](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/how-to-protect-a-procedu_2.vb)]  
+ [!code-vb[VbVbcnProcedures#38](./codesnippet/VisualBasic/how-to-protect-a-procedure-argument-against-value-changes_2.vb)]  
   
- [!code-vb[VbVbcnProcedures#37](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/how-to-protect-a-procedu_3.vb)]  
+ [!code-vb[VbVbcnProcedures#37](./codesnippet/VisualBasic/how-to-protect-a-procedure-argument-against-value-changes_3.vb)]  
   
  最初の `MsgBox` の呼び出しでは、"After increase\(n\): 11, 21, 31, 41" と表示されます。  配列  `n`  は参照型なので、引き渡し方法が `ByVal` でも、 `replace`  によってこのメンバーを変更できます。  
   

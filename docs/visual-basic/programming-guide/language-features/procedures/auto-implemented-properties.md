@@ -30,15 +30,15 @@ caps.handback.revision: 20
   
  自動実装プロパティを使用することで、プロパティを既定値も含めて 1 つの行で宣言できます。  次に、プロパティ宣言の 3 つの例を示します。  
   
- [!code-vb[VbVbalrAutoImplementedProperties#1](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/auto-implemented-propert_1_1.vb)]  
+ [!code-vb[VbVbalrAutoImplementedProperties#1](./codesnippet/VisualBasic/auto-implemented-properties_1.vb)]  
   
  自動実装プロパティは、プライベート フィールドにプロパティ値が格納されたプロパティに相当します。  自動実装プロパティを次のコード例に示します。  
   
- [!code-vb[VbVbalrAutoImplementedProperties#5](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/auto-implemented-propert_1_2.vb)]  
+ [!code-vb[VbVbalrAutoImplementedProperties#5](./codesnippet/VisualBasic/auto-implemented-properties_2.vb)]  
   
  次のコード例は、前の自動実装プロパティの例で示したコードと同じ結果になります。  
   
- [!code-vb[VbVbalrAutoImplementedProperties#2](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/auto-implemented-propert_1_3.vb)]  
+ [!code-vb[VbVbalrAutoImplementedProperties#2](./codesnippet/VisualBasic/auto-implemented-properties_3.vb)]  
   
  次のコードは、読み取り専用プロパティの実装を示しています。  
   
@@ -73,7 +73,7 @@ End Class
 ## 自動実装プロパティの初期化  
  フィールドの初期化に使用する式は、すべて自動実装プロパティの初期化にも使用できます。  自動実装プロパティを初期化する場合、その式は評価され、そのプロパティの `Set` プロシージャに渡されます。  次のコード例は、初期値を持ついくつかの自動実装プロパティを示しています。  
   
- [!code-vb[VbVbalrAutoImplementedProperties#3](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/auto-implemented-propert_1_4.vb)]  
+ [!code-vb[VbVbalrAutoImplementedProperties#3](./codesnippet/VisualBasic/auto-implemented-properties_4.vb)]  
   
  `Interface` のメンバーである自動実装プロパティ、または `MustOverride` としてマークされた自動実装プロパティを初期化することはできません。  
   
@@ -81,7 +81,7 @@ End Class
   
  自動実装プロパティを配列として宣言した場合、明示的な配列の範囲は指定できません。  しかし、次の例に示すように、配列初期化子を使用して値を指定することができます。  
   
- [!code-vb[VbVbalrAutoImplementedProperties#4](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/auto-implemented-propert_1_5.vb)]  
+ [!code-vb[VbVbalrAutoImplementedProperties#4](./codesnippet/VisualBasic/auto-implemented-properties_5.vb)]  
   
 ## 標準構文を必要とするプロパティ定義  
  自動実装プロパティは使いやすく、多くのプログラミング シナリオに対応します。  しかし、自動実装プロパティを使用できない状況もあるため、代わりに標準または*展開された*プロパティ構文を使用する必要があります。  

@@ -31,7 +31,7 @@ caps.handback.revision: 11
   
 -   次の例のように、コードのセクションを `#Region` ステートメントと `#End Region` ステートメントの間に配置します。  
   
-     [!code-vb[VbVbalrConditionalComp#6](../../../visual-basic/language-reference/directives/codesnippet/visualbasic/how-to-collapse-and-hide_1.vb)]  
+     [!code-vb[VbVbalrConditionalComp#6](../../../visual-basic/language-reference/directives/codesnippet/VisualBasic/how-to-collapse-and-hide-sections-of-code_1.vb)]  
   
      1 つのコード ファイルで複数の `#Region` ブロックを使用できます。したがって、プロシージャやクラスのブロックを各ユーザーが独自に定義でき、それらを折りたたむことができます。  `#Region` ブロックを他の `#Region` ブロック内に入れ子にすることもできます。  
   

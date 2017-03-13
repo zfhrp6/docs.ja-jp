@@ -25,12 +25,12 @@ caps.handback.revision: 17
 ## 使用例  
  次の例では、最初のクエリは単語を A から始めてアルファベット順に並べ替え、2 番目のクエリは同じ単語を降順に並べ替えます   \(`ascending` キーワードは既定の並べ替え値であるため、省略できます\)。  
   
- [!code-cs[cscsrefQueryKeywords#20](../../../csharp/language-reference/keywords/codesnippet/csharp/csquerykeywords/Orderby.cs#20)]  
+ [!code-cs[cscsrefQueryKeywords#20](../../../csharp/language-reference/keywords/codesnippet/CSharp/orderby-clause_1.cs)]  
   
 ## 使用例  
  学生の姓で 1 番目の並べ替えを実行し、学生の名で 2 番目の並べ替えを実行する例を次に示します。  
   
- [!code-cs[cscsrefQueryKeywords#22](../../../csharp/language-reference/keywords/codesnippet/csharp/csquerykeywords/Orderby.cs#22)]  
+ [!code-cs[cscsrefQueryKeywords#22](../../../csharp/language-reference/keywords/codesnippet/CSharp/orderby-clause_2.cs)]  
   
 ## 解説  
  コンパイル時に、`orderby` 句は <xref:System.Linq.Enumerable.OrderBy%2A> メソッドの呼び出しに変換されます。  `orderby` 句の複数のキーは、<xref:System.Linq.Enumerable.ThenBy%2A> メソッド呼び出しに変換されます。  

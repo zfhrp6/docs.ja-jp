@@ -22,29 +22,29 @@ caps.handback.revision: 20
   
  以前のバージョンの C\# では、プロパティとしてメソッドにアクセスできるのは、`get` メソッドがパラメーターを持たず、`set` が値パラメーターを 1 つだけ持っている場合に限られていました。  しかし、すべての COM プロパティがその制限に適合しているわけではありません。  たとえば、Excel の [Range プロパティ](http://go.microsoft.com/fwlink/?LinkId=166053)には、範囲の名前のパラメーターが必要な `get` アクセサーがあります。  以前は、`Range` プロパティに直接アクセスできなかったため、次の例に示すように、このプロパティの代わりに `get_Range` メソッドを使用する必要がありました。  
   
- [!code-cs[csProgGuideIndexedProperties#1](../../../csharp/programming-guide/interop/codesnippet/csharp/indexedpropscom/program.cs#1)]  
+ [!code-cs[csProgGuideIndexedProperties#1](../../../csharp/programming-guide/interop/codesnippet/CSharp/how-to-use-indexed-properties-in-com-interop-rogramming_1.cs)]  
   
  インデックス付きプロパティを使用すると、次のように記述することができます。  
   
- [!code-cs[csProgGuideIndexedProperties#2](../../../csharp/programming-guide/interop/codesnippet/csharp/indexedpropscom/program.cs#2)]  
+ [!code-cs[csProgGuideIndexedProperties#2](../../../csharp/programming-guide/interop/codesnippet/CSharp/how-to-use-indexed-properties-in-com-interop-rogramming_2.cs)]  
   
 > [!NOTE]
 >  上記の例では、Visual C\# 2010 で導入された[省略可能な引数](../../../csharp/programming-guide/classes-and-structs/named-and-optional-arguments.md)機能を使用することもできます。この機能を使用すると、`Type.Missing` を省略できます。  
   
  同様に、Visual C\# 2008 以前で、[Range](http://go.microsoft.com/fwlink/?LinkId=179211) オブジェクトの `Value` プロパティの値を設定するには、2 つの引数が必要です。  1 つは、範囲値の型を指定する省略可能なパラメーターの引数です。  もう 1 つは、`Value` プロパティの値を指定します。  Visual C\# 2010 より前の C\# では、引数を 1 つしか指定できませんでした。  このため、通常の set メソッドを使用するのではなく、`set_Value` メソッドかまたは別のプロパティ \([Value2](http://go.microsoft.com/fwlink/?LinkId=166050)\) を使用する必要がありました。  これらの方法について、次の例で説明します。  どちらの場合も、セル A1 の値が `Name` に設定されます。  
   
- [!code-cs[csProgGuideIndexedProperties#3](../../../csharp/programming-guide/interop/codesnippet/csharp/indexedpropscom/program.cs#3)]  
+ [!code-cs[csProgGuideIndexedProperties#3](../../../csharp/programming-guide/interop/codesnippet/CSharp/how-to-use-indexed-properties-in-com-interop-rogramming_3.cs)]  
   
  インデックス付きプロパティを使用すると、代わりに次のようなコードを記述できます。  
   
- [!code-cs[csProgGuideIndexedProperties#4](../../../csharp/programming-guide/interop/codesnippet/csharp/indexedpropscom/program.cs#4)]  
+ [!code-cs[csProgGuideIndexedProperties#4](../../../csharp/programming-guide/interop/codesnippet/CSharp/how-to-use-indexed-properties-in-com-interop-rogramming_4.cs)]  
   
  独自のインデックス付きプロパティを作成することはできません。  この機能でサポートされているのは、既存のインデックス付きプロパティの使用だけです。  
   
 ## 使用例  
  コード例全体を次に示します。  Office API にアクセスするプロジェクトの設定方法の詳細については、「[方法: Visual C\# の機能を使用して Office 相互運用オブジェクトにアクセスする](../../../csharp/programming-guide/interop/how-to-access-office-onterop-objects.md)」を参照してください。  
   
- [!code-cs[csProgGuideIndexedProperties#5](../../../csharp/programming-guide/interop/codesnippet/csharp/indexedpropscom/program.cs#5)]  
+ [!code-cs[csProgGuideIndexedProperties#5](../../../csharp/programming-guide/interop/codesnippet/CSharp/how-to-use-indexed-properties-in-com-interop-rogramming_5.cs)]  
   
 ## 参照  
  [名前付き引数と省略可能な引数](../../../csharp/programming-guide/classes-and-structs/named-and-optional-arguments.md)   

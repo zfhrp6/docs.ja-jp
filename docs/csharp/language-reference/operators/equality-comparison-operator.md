@@ -25,7 +25,7 @@ caps.handback.revision: 14
  `==` 演算子はユーザー定義の値型でオーバーロードできます。詳細については、「[operator](../../../csharp/language-reference/keywords/operator.md)」を参照してください。  ユーザー定義の参照型でオーバーロードはできますが、既定では、組み込み参照型とユーザー定義参照型のいずれに対しても `==` は前述のとおりに機能します。  `==` をオーバーロードする場合は、[\!\=](../../../csharp/language-reference/operators/not-equal-operator.md) もオーバーロードする必要があります。  通常、整数型に対する演算は、列挙に対して適用されます。  
   
 ## 使用例  
- [!code-cs[csRefOperators#36](../../../csharp/language-reference/operators/codesnippet/csharp/csrefOperators/csrefOperators.cs#36)]  
+ [!code-cs[csRefOperators#36](../../../csharp/language-reference/operators/codesnippet/CSharp/equality-comparison-operator_1.cs)]  
   
 ## 参照  
  [C\# リファレンス](../../../csharp/language-reference/index.md)   

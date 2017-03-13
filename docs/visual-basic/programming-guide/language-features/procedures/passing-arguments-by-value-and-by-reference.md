@@ -75,7 +75,7 @@ caps.handback.revision: 23
  値渡しで引数を渡す場合と参照渡しで引数を渡す場合の例を次に示します。  プロシージャ `Calculate` には、`ByVal` パラメーターと `ByRef` パラメーターの両方があります。  このプロシージャのタスクは、指定された利率 \(`rate`\) と総額 \(`debt`\) に基づいて、`debt` の元の値に利率を適用して `debt` の新しい値を計算することです。  `debt` は `ByRef` パラメーターであるため、新しい総額は、`debt` に対応する呼び出し元コードの引数の値に反映されます。  `rate` の値は `Calculate` で変更されないため、このパラメーターは `ByVal` パラメーターです。  
   
 ### コード  
- [!code-vb[VbVbcnProcedures#74](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/passing-arguments-by-val_1.vb)]  
+ [!code-vb[VbVbcnProcedures#74](./codesnippet/VisualBasic/passing-arguments-by-value-and-by-reference_1.vb)]  
   
 ## 参照  
  [Procedures](../../../../visual-basic/programming-guide/language-features/procedures/index.md)   

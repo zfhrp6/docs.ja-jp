@@ -27,9 +27,9 @@ caps.handback.revision: 5
 ## 既定インスタンス  
  既定インスタンスとは、ランタイムが提供するクラスのインスタンスで、`Dim` ステートメントおよび `New` ステートメントを使用して宣言およびインスタンス化する必要はありません。  次の例は、`Form1` という名前の <xref:System.Windows.Forms.Form> クラスのインスタンスを宣言およびインスタンス化した方法と、`My.Forms` を通じてこの <xref:System.Windows.Forms.Form> クラスの既定インスタンスを取得できるようにする方法を具体的に示しています。  
   
- [!code-vb[VbVbcnMy#5](../../../visual-basic/developing-apps/development-with-my/codesnippet/visualbasic/default-object-instances_1.vb)]  
+ [!code-vb[VbVbcnMy#5](../../../visual-basic/developing-apps/development-with-my/codesnippet/VisualBasic/default-object-instances-provided-by-my-forms-and-my-webservices_1.vb)]  
   
- [!code-vb[VbVbcnMy#6](../../../visual-basic/developing-apps/development-with-my/codesnippet/visualbasic/default-object-instances_2.vb)]  
+ [!code-vb[VbVbcnMy#6](../../../visual-basic/developing-apps/development-with-my/codesnippet/VisualBasic/default-object-instances-provided-by-my-forms-and-my-webservices_2.vb)]  
   
  `My.Forms` オブジェクトは、プロジェクト内に存在するすべての `Form` クラスの既定インスタンスのコレクションを返します。  同様に、`My.WebServices` は、アプリケーション内で参照を作成したすべての Web サービスのプロキシ クラスの既定インスタンスを提供します。  
   

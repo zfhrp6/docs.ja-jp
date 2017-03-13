@@ -31,7 +31,7 @@ caps.handback.revision: 18
  `<<` 演算子はユーザー定義型でオーバーロードできます。詳細については、「[operator](../../../csharp/language-reference/keywords/operator.md)」を参照してください。オーバーロードでは、最初のオペランドの型はユーザー定義型、2 番目のオペランドの型は `int` である必要があります。  二項演算子をオーバーロードすると、対応する代入演算子がある場合には、この演算子も暗黙でオーバーロードされます。  
   
 ## 使用例  
- [!code-cs[csRefOperators#14](../../../csharp/language-reference/operators/codesnippet/csharp/csrefOperators/csrefOperators.cs#14)]  
+ [!code-cs[csRefOperators#14](../../../csharp/language-reference/operators/codesnippet/CSharp/left-shift-operator_1.cs)]  
   
 ## コメント  
  1 と 33 では下位 5 ビットが同じであるため、`i<<1` と `i<<33`  の結果は同じになります。  

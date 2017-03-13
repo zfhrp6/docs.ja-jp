@@ -28,7 +28,7 @@ caps.handback.revision: 18
 ここでは、子軸プロパティを使用して、XML 要素内で指定した名前を持つすべての XML 子要素にアクセスする方法の例を示します。  具体的には、<xref:System.Xml.Linq.XElement.Value%2A> プロパティを使用して、`name` 子軸プロパティが返すコレクション内の最初の要素の値を取得します。  `name` 子軸プロパティは、`contact` オブジェクト内の `phone` という名前の子要素をすべて取得します。  この例では、`phone` 子軸プロパティを使用して、`contact` オブジェクトに含まれる `phone` という名前のすべての子要素へのアクセスも実行します。  
   
 ## 使用例  
- [!code-vb[VbXMLSamples#10](../../../../visual-basic/language-reference/operators/codesnippet/visualbasic/how-to-access-xml-child-_1.vb)]  
+ [!code-vb[VbXMLSamples#10](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/how-to-access-xml-child-elements_1.vb)]  
   
 ## コードのコンパイル  
  この例には、次の項目が必要です。  

@@ -21,7 +21,7 @@ XML ドキュメント タグ内の `cref` 属性は、"コード参照" を意�
 ## 使用例  
  [\<see\>](../../../csharp/programming-guide/xmldoc/see.md) タグで使用される `cref` 属性の例を次に示します。  
   
- [!code-cs[csProgGuideDocComments#3](../../../csharp/programming-guide/xmldoc/codesnippet/csharp/cref-attribute_1.cs)]  
+ [!code-cs[csProgGuideDocComments#3](../../../csharp/programming-guide/xmldoc/codesnippet/CSharp/cref-attribute_1.cs)]  
   
  コンパイルすると、プログラムによって次の XML ファイルが生成されます。  たとえば、`GetZero` メソッドの `cref` 属性は、コンパイラによって `"M:TestNamespace.TestClass.GetZero"` に変換されていることに注意してください。  "M:" プレフィックスは "メソッド" を意味します。これは、Sandcastle などのドキュメント ツールで認識される表記規則です。  すべてのプレフィックスの一覧については、「[XML ファイルの処理](../../../csharp/programming-guide/xmldoc/processing-the-xml-file.md)」を参照してください。  
   

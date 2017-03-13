@@ -19,7 +19,7 @@ caps.handback.revision: 21
 # 方法: ToString メソッドをオーバーライドする (C# プログラミング ガイド)
 C\# のすべてのクラスと構造体は、<xref:System.Object> クラスを暗黙的に継承します。  そのため、C\# では、すべてのオブジェクトが <xref:System.Object.ToString%2A> メソッドを取得します。このメソッドは、該当するオブジェクトの文字列形式を返します。  たとえば、`int` 型の変数はすべて `ToString` メソッドを持ち、次のようにその変数の内容を文字列として返すことができます。  
   
- [!code-cs[csProgGuideInheritance#37](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/how-to-override-the-tost_1.cs)]  
+ [!code-cs[csProgGuideInheritance#37](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/how-to-override-the-tostring-method_1.cs)]  
   
  カスタムのクラスまたは構造体を作成するときは、クライアント コードにカスタム型の情報を提供するため、<xref:System.Object.ToString%2A> メソッドをオーバーライドする必要があります。  
   
@@ -40,11 +40,11 @@ C\# のすべてのクラスと構造体は、<xref:System.Object> クラスを�
   
      次の例では、特定のクラス インスタンスに固有のデータに加えて、クラス名も返されます。  
   
-     [!code-cs[csProgGuideInheritance#36](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/how-to-override-the-tost_2.cs)]  
+     [!code-cs[csProgGuideInheritance#36](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/how-to-override-the-tostring-method_2.cs)]  
   
      `ToString` メソッドをテストする方法を次のコード例に示します。  
   
-     [!code-cs[csProgGuideInheritance#38](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/how-to-override-the-tost_3.cs)]  
+     [!code-cs[csProgGuideInheritance#38](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/how-to-override-the-tostring-method_3.cs)]  
   
 ## 参照  
  <xref:System.IFormattable>   

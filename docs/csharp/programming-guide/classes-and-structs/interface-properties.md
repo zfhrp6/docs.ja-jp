@@ -19,7 +19,7 @@ caps.handback.revision: 13
 # インターフェイスのプロパティ (C# プログラミング ガイド)
 [interface](../../../csharp/language-reference/keywords/interface.md) に対してプロパティを宣言できます。  次に示すのは、インターフェイス インデクサーのアクセサーの例です。  
   
- [!code-cs[csProgGuideProperties#14](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/interface-properties_1.cs)]  
+ [!code-cs[csProgGuideProperties#14](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/interface-properties_1.cs)]  
   
  インターフェイス プロパティのアクセサーには、本体がありません。  したがって、アクセサーの目的は、プロパティが読み取り\/書き込み、読み取り専用、または書き込み専用のいずれであるかを示すことです。  
   
@@ -28,19 +28,19 @@ caps.handback.revision: 13
   
  プロパティの完全修飾名を使用して、メンバーが宣言されているインターフェイスを参照しています。  次に例を示します。  
   
- [!code-cs[csProgGuideProperties#16](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/interface-properties_2.cs)]  
+ [!code-cs[csProgGuideProperties#16](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/interface-properties_2.cs)]  
   
  これは、「[明示的なインターフェイスの実装](../../../csharp/programming-guide/interfaces/explicit-interface-implementation.md)」と呼ばれます。  たとえば、`Employee` クラスが 2 つのインターフェイス `ICitizen` と `IEmployee` を実装し、両方のインターフェイスに `Name` プロパティがある場合は、明示的なインターフェイス メンバーの実装が必要になります。  つまり、次のプロパティ宣言では  
   
- [!code-cs[csProgGuideProperties#16](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/interface-properties_2.cs)]  
+ [!code-cs[csProgGuideProperties#16](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/interface-properties_2.cs)]  
   
  `IEmployee` インターフェイスの `Name` プロパティが実装されます。一方、次の宣言では  
   
- [!code-cs[csProgGuideProperties#17](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/interface-properties_3.cs)]  
+ [!code-cs[csProgGuideProperties#17](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/interface-properties_3.cs)]  
   
  `ICitizen` インターフェイスの `Name` プロパティが実装されます。  
   
- [!code-cs[csProgGuideProperties#15](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/interface-properties_4.cs)]  
+ [!code-cs[csProgGuideProperties#15](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/interface-properties_4.cs)]  
   
   **`210 Hazem Abolrous`**    
 ## 出力例  

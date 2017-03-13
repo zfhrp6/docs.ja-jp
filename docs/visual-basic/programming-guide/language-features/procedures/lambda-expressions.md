@@ -35,19 +35,19 @@ caps.handback.revision: 52
   
  次の例は、引数をインクリメントし、その値を返すラムダ式を示します。  この例では、ラムダ式関数の単一行と複数行の両方の構文を示しています。  
   
- [!code-vb[VbVbalrLambdas#14](../../../../visual-basic/language-reference/operators/codesnippet/visualbasic/vbvbalrlambdas/Class1.vb#14)]  
+ [!code-vb[VbVbalrLambdas#14](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/lambda-expressions_1.vb)]  
   
  次の例は、コンソールに値を書き込むラムダ式です。  この例では、ラムダ式サブルーチンの単一行と複数行の両方の構文を示しています。  
   
- [!code-vb[VbVbalrLambdas#15](../../../../visual-basic/language-reference/operators/codesnippet/visualbasic/vbvbalrlambdas/Class1.vb#15)]  
+ [!code-vb[VbVbalrLambdas#15](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/lambda-expressions_2.vb)]  
   
  上記の例では、ラムダ式が変数名に割り当てられていることに注意してください。  この場合、変数を参照するたびにラムダ式を呼び出すことになります。  次の例に示すように、ラムダ式の宣言と呼び出しを同時に行うこともできます。  
   
- [!code-vb[VbVbalrLambdas#3](../../../../visual-basic/language-reference/operators/codesnippet/visualbasic/vbvbalrlambdas/Class1.vb#3)]  
+ [!code-vb[VbVbalrLambdas#3](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/lambda-expressions_3.vb)]  
   
  ラムダ式は、関数呼び出しの戻り値として返すことができます \(このトピックの「[コンテキスト](#context)」セクションに例が示されています\)。また、次の例に示すように、デリゲート型を受け取るパラメーターの引数として渡すこともできます。  
   
- [!code-vb[VbVbalrLambdas#8](../../../../visual-basic/language-reference/operators/codesnippet/visualbasic/vbvbalrlambdas/Class2.vb#8)]  
+ [!code-vb[VbVbalrLambdas#8](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/lambda-expressions_4.vb)]  
   
 ## ラムダ式の構文  
  ラムダ式の構文は、標準の関数やサブルーチンの構文に似ています。  相違点を次に示します。  
@@ -125,7 +125,7 @@ End Class
   
  コンテナー スコープ内のローカル変数とパラメーターは、そのスコープの有効期間以降もアクセスされる可能性があります。  ラムダ式を参照するデリゲートがガベージ コレクションの対象にならない限り、元の環境での変数へのアクセスは保持されます。  次の例では、変数 `target` は、ラムダ式 `playTheGame` が定義されているメソッド `makeTheGame` にローカルです。  返されたラムダ式は、`Main` で `takeAGuess` に割り当てられ、ローカル変数 `target` へのアクセスを保持し続けていることに注意してください。  
   
- [!code-vb[VbVbalrLambdas#12](../../../../visual-basic/language-reference/operators/codesnippet/visualbasic/vbvbalrlambdas/Class6.vb#12)]  
+ [!code-vb[VbVbalrLambdas#12](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/lambda-expressions_5.vb)]  
   
  次の例では、入れ子になったラムダ式の広範囲のアクセス権を示します。  返されたラムダ式は、`Main` から `aDel` として実行されるときに、これらの要素にアクセスします。  
   
@@ -139,16 +139,16 @@ End Class
   
 -   ラムダ式がネストされるラムダ式のパラメーター: `level2`  
   
- [!code-vb[VbVbalrLambdas#9](../../../../visual-basic/language-reference/operators/codesnippet/visualbasic/vbvbalrlambdas/Class3.vb#9)]  
+ [!code-vb[VbVbalrLambdas#9](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/lambda-expressions_6.vb)]  
   
 ## デリゲート型への変換  
  ラムダ式は、互換性のあるデリゲート式に明示的に変換できます。  互換性の一般的な要件については、「[Relaxed Delegate Conversion](../../../../visual-basic/programming-guide/language-features/delegates/relaxed-delegate-conversion.md)」を参照してください。  たとえば、次のコード例は、明示的に `Func(Of Integer, Boolean)` または対応するデリゲート シグネチャに変換するラムダ式を示しています。  
   
- [!code-vb[VbVbalrLambdas#16](../../../../visual-basic/language-reference/operators/codesnippet/visualbasic/vbvbalrlambdas/Class1.vb#16)]  
+ [!code-vb[VbVbalrLambdas#16](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/lambda-expressions_7.vb)]  
   
  次のコード例は、暗黙的に `Sub(Of Double, String, Double)` または対応するデリゲート シグネチャに変換するラムダ式を示しています。  
   
- [!code-vb[VbVbalrLambdas#23](../../../../visual-basic/language-reference/operators/codesnippet/visualbasic/vbvbalrlambdas/class7.vb#23)]  
+ [!code-vb[VbVbalrLambdas#23](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/lambda-expressions_8.vb)]  
   
  ラムダ式をデリゲートに割り当てるときやプロシージャに引数として渡すときは、パラメーター名を指定してデータ型を省略することで、デリゲートから型が取得されるようにできます。  
   
@@ -156,11 +156,11 @@ End Class
   
 -   次の例は、null 許容引数に値が割り当てられた場合は `True` を返し、値が `Nothing` の場合は `False` を返すラムダ式を定義します。  
   
-     [!code-vb[VbVbalrLambdas#4](../../../../visual-basic/language-reference/operators/codesnippet/visualbasic/vbvbalrlambdas/Class1.vb#4)]  
+     [!code-vb[VbVbalrLambdas#4](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/lambda-expressions_9.vb)]  
   
 -   次の例は、配列内の最後の要素のインデックスを返すラムダ式を定義します。  
   
-     [!code-vb[VbVbalrLambdas#5](../../../../visual-basic/language-reference/operators/codesnippet/visualbasic/vbvbalrlambdas/Class1.vb#5)]  
+     [!code-vb[VbVbalrLambdas#5](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/lambda-expressions_10.vb)]  
   
 ## 参照  
  [Procedures](../../../../visual-basic/programming-guide/language-features/procedures/index.md)   

@@ -58,7 +58,7 @@ End
 ## 使用例  
  ユーザーが要求した場合に `End` ステートメントを使用してコードの実行を終了させるコード例は、次のとおりです。  
   
- [!code-vb[VbVersHelp60Controls#64](../../../visual-basic/language-reference/statements/codesnippet/visualbasic/VbVersHelp60Controls/Form1.vb#64)]  
+ [!code-vb[VbVersHelp60Controls#64](../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/end-statement_1.vb)]  
   
 ## スマート デバイス開発者のためのメモ  
  このステートメントはサポートされていません。  

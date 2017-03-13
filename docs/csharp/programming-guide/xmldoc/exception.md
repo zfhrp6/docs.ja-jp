@@ -43,7 +43,7 @@ caps.handback.revision: 16
  例外処理の詳細については、「[例外と例外処理](../../../csharp/programming-guide/exceptions/exceptions-and-exception-handling.md)」を参照してください。  
   
 ## 使用例  
- [!code-cs[csProgGuideDocComments#4](../../../csharp/programming-guide/xmldoc/codesnippet/csharp/exception_1.cs)]  
+ [!code-cs[csProgGuideDocComments#4](../../../csharp/programming-guide/xmldoc/codesnippet/CSharp/exception_1.cs)]  
   
 ## 参照  
  [C\# プログラミング ガイド](../../../csharp/programming-guide/index.md)   

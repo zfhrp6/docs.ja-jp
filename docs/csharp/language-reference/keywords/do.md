@@ -24,7 +24,7 @@ caps.handback.revision: 22
 ## 使用例  
  次の例では、変数 `x` が 5 未満である限り、`do-while` ループ ステートメントが実行されます。  
   
- [!code-cs[csrefKeywordsIteration#1](../../../csharp/language-reference/keywords/codesnippet/csharp/do_1.cs)]  
+ [!code-cs[csrefKeywordsIteration#1](../../../csharp/language-reference/keywords/codesnippet/CSharp/do_1.cs)]  
   
  [while](../../../csharp/language-reference/keywords/while.md) ステートメントとは異なり、`do-while` ループは条件式が評価される前に 1 回は実行されます。  
   

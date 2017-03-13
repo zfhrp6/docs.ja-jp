@@ -28,7 +28,7 @@ caps.handback.revision: 15
   
  条件に基づいてコンパイルするコードのブロックを指定するには `#If...Then...#Else` ディレクティブを使用します。  たとえば、同じソース コードからフランス語バージョンおよびドイツ語バージョンのアプリケーションを作成するには、定義済みの定数 `FrenchVersion` および `GermanVersion` を使用して、プラットフォーム固有のコードを `#If...Then` ステートメントの中に記述します。  この方法を次の例で示します。  
   
- [!code-vb[VbVbalrConditionalComp#5](../../../visual-basic/language-reference/directives/codesnippet/visualbasic/conditional-compilation_1.vb)]  
+ [!code-vb[VbVbalrConditionalComp#5](../../../visual-basic/language-reference/directives/codesnippet/VisualBasic/conditional-compilation_1.vb)]  
   
  コンパイル時に条件付きコンパイル定数 `FrenchVersion` の値を `True` に設定すると、フランス語バージョンの部分のコードがコンパイルされます。  定数 `GermanVersion` の値を `True` に設定すると、ドイツ語バージョンのコードがコンパイルされます。  どちらの値も `True` に設定しない場合は、最後の `Else` ブロックのコードが実行されます。  
   

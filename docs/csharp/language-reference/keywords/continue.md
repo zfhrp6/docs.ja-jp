@@ -24,7 +24,7 @@ caps.handback.revision: 20
 ## 使用例  
  この例では、カウンターが初期化され、1 から 10 までがカウントされます。  式 `(i < 9)`とともに `continue` のステートメントを使用して、`for` 本体の `continue` から行末までのステートメントはスキップされます。  
   
- [!code-cs[csrefKeywordsJump#3](../../../csharp/language-reference/keywords/codesnippet/csharp/continue_1.cs)]  
+ [!code-cs[csrefKeywordsJump#3](../../../csharp/language-reference/keywords/codesnippet/CSharp/continue_1.cs)]  
   
 ## C\# 言語仕様  
  [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec-md.md)]  

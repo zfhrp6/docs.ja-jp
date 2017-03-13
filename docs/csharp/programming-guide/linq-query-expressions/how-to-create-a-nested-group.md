@@ -6,7 +6,7 @@ caps.handback.revision: 12
 [!INCLUDE[vbteclinq](../../../csharp/includes/vbteclinq-md.md)] クエリ式で入れ子になったグループを作成する方法を次の例に示します。  学年または成績レベルに基づいて作成した各グループを、さらに各自の名前に基づくグループに分割します。  
   
 ## 使用例  
- [!code-cs[csProgGuideLINQ#24](../../../csharp/programming-guide/arrays/codesnippet/csharp/csLINQProgRef/csrefLINQHowTos.cs#24)]  
+ [!code-cs[csProgGuideLINQ#24](../../../csharp/programming-guide/arrays/codesnippet/CSharp/how-to-create-a-nested-group_1.cs)]  
   
  入れ子になったグループの内部の要素を反復処理するために、3 つの入れ子になった `foreach` ループが必要です。  
   

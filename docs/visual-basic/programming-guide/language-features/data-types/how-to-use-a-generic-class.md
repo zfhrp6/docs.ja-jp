@@ -52,7 +52,7 @@ caps.handback.revision: 24
   
      次の例では、同じクラス (<xref:System.Collections.Generic.Queue%601?displayProperty=fullName>) を使用して、異なるデータ型の項目を保持する 2 つのキュー オブジェクトを作成しています。 項目は各キューの末尾に追加された後に削除され、各キューの先頭から項目が表示されます。  
   
-     [!code-vb[VbVbalrDataTypes#9](../../../../visual-basic/language-reference/data-types/codesnippet/visualbasic/how-to-use-a-generic-class_1.vb)]  
+     [!code-vb[VbVbalrDataTypes#9](../../../../visual-basic/language-reference/data-types/codesnippet/VisualBasic/how-to-use-a-generic-class_1.vb)]  
   
 ## <a name="see-also"></a>関連項目  
  [データ型](../../../../visual-basic/programming-guide/language-features/data-types/index.md)   

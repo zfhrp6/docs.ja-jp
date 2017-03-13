@@ -128,7 +128,7 @@ caps.handback.revision: 32
 ## <a name="example"></a>例  
  次の例では、2 つの入れ子になった空要素を持つ単純な XML 要素を作成する方法を示します。  
   
- [!code-vb[VbXMLSamples#20](../../../visual-basic/language-reference/operators/codesnippet/visualbasic/xml-element-literal_1.vb)]  
+ [!code-vb[VbXMLSamples#20](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/xml-element-literal_1.vb)]  
   
  この例では、次のテキストを表示します。 リテラルは、空の要素の構造を維持することを確認します。  
   
@@ -142,7 +142,7 @@ caps.handback.revision: 32
 ## <a name="example"></a>例  
  次の例では、組み込み式を使用して、要素の名前を指定し、属性を作成する方法を示します。  
   
- [!code-vb[VbXMLSamples#21](../../../visual-basic/language-reference/operators/codesnippet/visualbasic/xml-element-literal_2.vb)]  
+ [!code-vb[VbXMLSamples#21](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/xml-element-literal_2.vb)]  
   
  このコードを実行すると、次のテキストが表示されます。  
   
@@ -153,7 +153,7 @@ caps.handback.revision: 32
 ## <a name="example"></a>例  
  次の例では、`ns` を名前空間プレフィックスとして宣言します。 XML リテラルを作成する名前空間のプレフィックスを使用し、要素の最終的なフォームを表示します。  
   
- [!code-vb[VbXMLSamples#22](../../../visual-basic/language-reference/operators/codesnippet/visualbasic/xml-element-literal_3.vb)]  
+ [!code-vb[VbXMLSamples#22](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/xml-element-literal_3.vb)]  
   
  このコードを実行すると、次のテキストが表示されます。  
   

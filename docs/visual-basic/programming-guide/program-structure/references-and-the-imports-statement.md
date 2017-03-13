@@ -45,15 +45,15 @@ caps.handback.revision: 12
 ## Imports ステートメントでのエイリアスの使用  
  `Imports` ステートメントを使用すると、参照の完全限定名を明示的に入力する必要がなくなるため、クラスのメソッドへのアクセスが簡単になります。  エイリアスを使用すると、名前空間の一部に覚えやすい名前を割り当てることができます。  たとえば、1 つの文字列を複数の行に表示するキャリッジ リターンとライン フィードは、<xref:Microsoft.VisualBasic?displayProperty=fullName> 名前空間にある <xref:Microsoft.VisualBasic.ControlChars> モジュールの一部です。  この定数をエイリアスを使わずにプログラムで使用するには、次のコードを入力する必要があります。  
   
- [!code-vb[VbVbalrApplication#3](../../../visual-basic/programming-guide/program-structure/codesnippet/visualbasic/references-and-the-impor_1.vb)]  
+ [!code-vb[VbVbalrApplication#3](../../../visual-basic/programming-guide/program-structure/codesnippet/VisualBasic/references-and-the-imports-statement_1.vb)]  
   
  `Imports` ステートメントは、モジュールの `Option` ステートメントの次の行に記述する必要があります。  <xref:Microsoft.VisualBasic.ControlChars?displayProperty=fullName> モジュールをインポートして、エイリアスを割り当てる例は、次のコード片のとおりです。  
   
- [!code-vb[VbVbalrApplication#4](../../../visual-basic/programming-guide/program-structure/codesnippet/visualbasic/references-and-the-impor_2.vb)]  
+ [!code-vb[VbVbalrApplication#4](../../../visual-basic/programming-guide/program-structure/codesnippet/VisualBasic/references-and-the-imports-statement_2.vb)]  
   
  これ以降、この名前空間を参照する場合は、次のように入力するだけで済みます。  
   
- [!code-vb[VbVbalrApplication#5](../../../visual-basic/programming-guide/program-structure/codesnippet/visualbasic/references-and-the-impor_3.vb)]  
+ [!code-vb[VbVbalrApplication#5](../../../visual-basic/programming-guide/program-structure/codesnippet/VisualBasic/references-and-the-imports-statement_3.vb)]  
   
  `Imports` ステートメントでエイリアス名を指定しなかった場合は、インポートした名前空間で定義されている要素を修飾子を付けずにモジュール内で使用できます。  エイリアス名を指定した場合は、その名前空間に含まれている名前の修飾子としてエイリアス名を使用する必要があります。  
   

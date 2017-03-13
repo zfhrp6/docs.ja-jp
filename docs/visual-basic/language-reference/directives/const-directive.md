@@ -53,7 +53,7 @@ Visual Basic の条件付きコンパイル定数を定義します。
 ## 使用例  
  `#Const` ディレクティブの使用例を次に示します。  
   
- [!code-vb[VbVbalrConditionalComp#3](../../../visual-basic/language-reference/directives/codesnippet/visualbasic/const-directive_1.vb)]  
+ [!code-vb[VbVbalrConditionalComp#3](../../../visual-basic/language-reference/directives/codesnippet/VisualBasic/const-directive_1.vb)]  
   
 ## 参照  
  [\/define](../../../visual-basic/reference/command-line-compiler/define.md)   

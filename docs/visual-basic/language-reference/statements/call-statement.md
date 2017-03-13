@@ -49,7 +49,7 @@ caps.handback.revision: 13
 ## 使用例  
  次のコードは `Call` のキーワードがプロシージャをダイヤルする必要とする 2 例に示します。  どちらの例では、という式は ID から開始されません。  
   
- [!code-vb[VbVbalrStatements#97](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/call-statement_1.vb)]  
+ [!code-vb[VbVbalrStatements#97](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/call-statement_1.vb)]  
   
 ## 参照  
  [Function Statement](../../../visual-basic/language-reference/statements/function-statement.md)   

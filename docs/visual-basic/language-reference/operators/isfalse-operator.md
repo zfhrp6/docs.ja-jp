@@ -35,7 +35,7 @@ caps.handback.revision: 14
 ## 使用例  
  次のコード例では、`IsFalse` および `IsTrue` 演算子の定義を含む構造体の骨組みを定義します。  
   
- [!code-vb[VbVbalrOperators#28](../../../visual-basic/language-reference/operators/codesnippet/visualbasic/isfalse-operator_1.vb)]  
+ [!code-vb[VbVbalrOperators#28](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/isfalse-operator_1.vb)]  
   
 ## 参照  
  [IsTrue Operator](../../../visual-basic/language-reference/operators/istrue-operator.md)   

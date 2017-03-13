@@ -26,7 +26,7 @@ caps.handback.revision: 16
 次のコード例では、<xref:System.String> オブジェクト上で <xref:System.String.IndexOf%2A> メソッドを呼び出して、最初に見つかった部分文字列のインデックスを報告します。  
   
 ## 使用例  
- [!code-vb[VbVbalrStrings#71](../../../../visual-basic/language-reference/functions/codesnippet/visualbasic/how-to-search-within-a-s_1.vb)]  
+ [!code-vb[VbVbalrStrings#71](../../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/how-to-search-within-a-string_1.vb)]  
   
 ## コードのコンパイル  
  この例には、次の項目が必要です。  

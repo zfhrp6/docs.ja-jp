@@ -45,12 +45,12 @@ AddressOf procedurename
 ## 使用例  
  `AddressOf` 演算子を使って、ボタンの `Click` イベントを処理するデリゲートを指定する例を次に示します。  
   
- [!code-vb[VbVbalrDelegates#8](../../../visual-basic/language-reference/operators/codesnippet/visualbasic/addressof-operator_1.vb)]  
+ [!code-vb[VbVbalrDelegates#8](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/addressof-operator_1.vb)]  
   
 ## 使用例  
  `AddressOf` 演算子を使用して、スレッドの起動関数を指定する例を次に示します。  
   
- [!code-vb[VbVbalrDelegates#9](../../../visual-basic/language-reference/operators/codesnippet/visualbasic/addressof-operator_2.vb)]  
+ [!code-vb[VbVbalrDelegates#9](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/addressof-operator_2.vb)]  
   
 ## 参照  
  [Declare Statement](../../../visual-basic/language-reference/statements/declare-statement.md)   

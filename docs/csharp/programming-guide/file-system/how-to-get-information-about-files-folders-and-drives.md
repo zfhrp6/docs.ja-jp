@@ -41,7 +41,7 @@ System.IO.DriveInfo di = new System.IO.DriveInfo(@"C:\");
 ## 使用例  
  ファイルおよびフォルダーに関する情報へのさまざまなアクセス方法を次の例に示します。  
   
- [!code-cs[csFilesandFolders#6](../../../csharp/programming-guide/file-system/codesnippet/csharp/csFilesFolders/FileIteration.cs#6)]  
+ [!code-cs[csFilesandFolders#6](../../../csharp/programming-guide/file-system/codesnippet/CSharp/how-to-get-information-about-files-folders-and-drives_1.cs)]  
   
 ## 信頼性の高いプログラミング  
  ユーザー指定のパス文字列を処理する場合、次の条件の例外も処理する必要があります。  

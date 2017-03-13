@@ -24,17 +24,17 @@ caps.handback.revision: 21
 ## 使用例  
  次の例には、条件付きステートメントに 1 から 100 までをカウントするカウンターがあります。ただし、`break` ステートメントによってループは 4 回で終了します。  
   
- [!code-cs[csrefKeywordsJump#1](../../../csharp/language-reference/keywords/codesnippet/csharp/break_1.cs)]  
+ [!code-cs[csrefKeywordsJump#1](../../../csharp/language-reference/keywords/codesnippet/CSharp/break_1.cs)]  
   
 ## 使用例  
  この例では、`break` ステートメントを使用して入れ子になった内側のループから抜け出し、外側のループに制御を戻します。  
   
- [!code-cs[csrefKeywordsJump#7](../../../csharp/language-reference/keywords/codesnippet/csharp/break_2.cs)]  
+ [!code-cs[csrefKeywordsJump#7](../../../csharp/language-reference/keywords/codesnippet/CSharp/break_2.cs)]  
   
 ## 使用例  
  [switch](../../../csharp/language-reference/keywords/switch.md) ステートメント内での `break` の使用例を次に示します。  
   
- [!code-cs[csrefKeywordsJump#2](../../../csharp/language-reference/keywords/codesnippet/csharp/break_3.cs)]  
+ [!code-cs[csrefKeywordsJump#2](../../../csharp/language-reference/keywords/codesnippet/CSharp/break_3.cs)]  
   
  `4` を入力すると、出力は次のようになります。  
   

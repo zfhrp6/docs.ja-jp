@@ -65,8 +65,8 @@ caps.handback.revision: 46
   
 2.  次の `Imports` ステートメント \(Visual Basic\) または `using` ディレクティブ \(C\#\) が含まれていない場合は、コード ファイルの先頭に追加します。  
   
-     [!code-cs[csOfficeWalkthrough#1](../../../csharp/programming-guide/interop/codesnippet/csharp/officewalkthroughcs/thisaddin.cs#1)]
-     [!code-vb[csOfficeWalkthrough#1](../../../csharp/programming-guide/interop/codesnippet/visualbasic/officewalkthroughsnippets - vb/thisaddin.vb#1)]  
+     [!code-cs[csOfficeWalkthrough#1](../../../csharp/programming-guide/interop/codesnippet/CSharp/walkthrough-office-programming_1.cs)]
+     [!code-vb[csOfficeWalkthrough#1](../../../csharp/programming-guide/interop/codesnippet/VisualBasic/walkthrough-office-programming_1.vb)]  
   
 ### 銀行口座の一覧を作成するには  
   
@@ -74,20 +74,20 @@ caps.handback.revision: 46
   
 2.  `Account` クラスの定義を次のコードに置き換えます。  クラス定義では、Visual Studio 2010 の Visual Basic の新機能である*自動実装プロパティ*を使用します。  詳細については、「[Auto\-Implemented Properties](../../../visual-basic/programming-guide/language-features/procedures/auto-implemented-properties.md)」を参照してください。  
   
-     [!code-cs[csOfficeWalkthrough#2](../../../csharp/programming-guide/interop/codesnippet/csharp/officewalkthroughcs/account.cs#2)]
-     [!code-vb[csOfficeWalkthrough#2](../../../csharp/programming-guide/interop/codesnippet/visualbasic/officewalkthroughsnippets - vb/account.vb#2)]  
+     [!code-cs[csOfficeWalkthrough#2](../../../csharp/programming-guide/interop/codesnippet/CSharp/walkthrough-office-programming_2.cs)]
+     [!code-vb[csOfficeWalkthrough#2](../../../csharp/programming-guide/interop/codesnippet/VisualBasic/walkthrough-office-programming_2.vb)]  
   
 3.  2 つの口座を含む `bankAccounts` 一覧を作成するには、次のコードを追加する、ThisAddIn.vb または ThisAddIn.cs の `ThisAddIn_Startup` メソッドに追加します。  リスト宣言では、Visual Studio 2010 の Visual Basic の新機能である*コレクション初期化子*を使用します。  詳細については、「[Collection Initializers](../../../visual-basic/programming-guide/language-features/collection-initializers/index.md)」を参照してください。  
   
-     [!code-cs[csOfficeWalkthrough#3](../../../csharp/programming-guide/interop/codesnippet/csharp/officewalkthroughcs/thisaddin.cs#3)]
-     [!code-vb[csOfficeWalkthrough#3](../../../csharp/programming-guide/interop/codesnippet/visualbasic/officewalkthroughsnippets - vb/thisaddin.vb#3)]  
+     [!code-cs[csOfficeWalkthrough#3](../../../csharp/programming-guide/interop/codesnippet/CSharp/walkthrough-office-programming_3.cs)]
+     [!code-vb[csOfficeWalkthrough#3](../../../csharp/programming-guide/interop/codesnippet/VisualBasic/walkthrough-office-programming_3.vb)]  
   
 ### データを Excel にエクスポートするには  
   
 1.  同じファイル内で、次のメソッドを `ThisAddIn` クラスに追加します。  このメソッドは、Excel ブックを設定し、データを Excel ブックにエクスポートします。  
   
-     [!code-cs[csOfficeWalkthrough#4](../../../csharp/programming-guide/interop/codesnippet/csharp/officewalkthroughcs/thisaddin.cs#4)]
-     [!code-vb[csOfficeWalkthrough#4](../../../csharp/programming-guide/interop/codesnippet/visualbasic/officewalkthroughsnippets - vb/thisaddin.vb#4)]  
+     [!code-cs[csOfficeWalkthrough#4](../../../csharp/programming-guide/interop/codesnippet/CSharp/walkthrough-office-programming_4.cs)]
+     [!code-vb[csOfficeWalkthrough#4](../../../csharp/programming-guide/interop/codesnippet/VisualBasic/walkthrough-office-programming_4.vb)]  
   
      C\# の 2 つの新しい機能は、このメソッドで使用されます。  これら両方の機能は、Visual Basic で既に存在します。  
   
@@ -97,11 +97,11 @@ caps.handback.revision: 46
   
     -   [Range](http://go.microsoft.com/fwlink/?LinkId=210911) オブジェクトの `Range` および `Offset` プロパティは*インデックス付きプロパティ*機能を使用します。  この機能では、次の一般的な C\# 構文を使用して COM 型からこれらのプロパティを使用することができます。  また、インデックス付きプロパティを使用すると、`Value2` プロパティを使用せずに、`Range` オブジェクトの `Value` プロパティを使用できます。  `Value` プロパティはインデックス付きですが、インデックスはオプションです。  次の例では、省略可能な引数とインデックス付きプロパティは連携しています。  
   
-         [!code-cs[csOfficeWalkthrough#5](../../../csharp/programming-guide/interop/codesnippet/csharp/officewalkthroughcs/thisaddin.cs#5)]  
+         [!code-cs[csOfficeWalkthrough#5](../../../csharp/programming-guide/interop/codesnippet/CSharp/walkthrough-office-programming_5.cs)]  
   
          以前のバージョンの言語では、次の特殊な構文が必要です。  
   
-         [!code-cs[csOfficeWalkthrough#6](../../../csharp/programming-guide/interop/codesnippet/csharp/officewalkthroughcs/thisaddin.cs#6)]  
+         [!code-cs[csOfficeWalkthrough#6](../../../csharp/programming-guide/interop/codesnippet/CSharp/walkthrough-office-programming_6.cs)]  
   
          独自のインデックス付きプロパティを作成することはできません。  この機能では、既存のインデックス付きプロパティの使用のみがサポートされます。  
   
@@ -109,14 +109,14 @@ caps.handback.revision: 46
   
 2.  次のコードを `DisplayInExcel` の末尾に追加して、コンテンツに合わせて列の幅を調整します。  
   
-     [!code-cs[csOfficeWalkthrough#7](../../../csharp/programming-guide/interop/codesnippet/csharp/officewalkthroughcs/thisaddin.cs#7)]
-     [!code-vb[csOfficeWalkthrough#7](../../../csharp/programming-guide/interop/codesnippet/visualbasic/officewalkthroughsnippets - vb/thisaddin.vb#7)]  
+     [!code-cs[csOfficeWalkthrough#7](../../../csharp/programming-guide/interop/codesnippet/CSharp/walkthrough-office-programming_7.cs)]
+     [!code-vb[csOfficeWalkthrough#7](../../../csharp/programming-guide/interop/codesnippet/VisualBasic/walkthrough-office-programming_7.vb)]  
   
      これらの追加機能では、C\# 2010 の別の新機能である、[dynamic](../../../csharp/language-reference/keywords/dynamic.md) 型がある場合と同様に Office などの COM ホストから返される `Object` 値の処理を示します。  これは、**\[相互運用機能型の埋め込み\]** が既定値の `True` に設定されている場合、または同様に、アセンブリが [\/link](../../../csharp/language-reference/compiler-options/link-compiler-option.md) コンパイラ オプションによって参照されている場合に発生します。  `dynamic` 型では既に Visual Basic で使用できる遅延バインディングが可能であり、Visual C\# 2008 以前のバージョンの言語で必要な明示的なキャストを回避します。  
   
      たとえば、`excelApp.Columns[1]` は `Object` を返し、`AutoFit` は Excel の [Range](http://go.microsoft.com/fwlink/?LinkId=210911) メソッドであるとします。  `dynamic` がない場合、`Range` のインスタンスとして、`excelApp.Columns[1]` によって返されたオブジェクトをキャストしてから、`AutoFit` メソッドを呼び出す必要があります。  
   
-     [!code-cs[csOfficeWalkthrough#8](../../../csharp/programming-guide/interop/codesnippet/csharp/officewalkthroughcs/thisaddin.cs#8)]  
+     [!code-cs[csOfficeWalkthrough#8](../../../csharp/programming-guide/interop/codesnippet/CSharp/walkthrough-office-programming_8.cs)]  
   
      相互運用機能型の埋め込みの詳細については、このトピックの後半の「PIA 参照を検索するには」および「PIA の依存関係を復元するには」の手順を参照してください。  `dynamic` の詳細については、「[動的](../../../csharp/language-reference/keywords/dynamic.md)」または「[dynamic 型の使用](../../../csharp/programming-guide/types/using-type-dynamic.md)」を参照してください。  
   
@@ -124,8 +124,8 @@ caps.handback.revision: 46
   
 1.  `ThisAddIn_StartUp` メソッドの末尾に、次のコードを追加します。  `DisplayInExcel` に対する呼び出しには、2 つの引数が含まれています。  最初の引数は、処理する口座の一覧の名前です。  2 番目の引数は、データの処理方法を定義する複数行のラムダ式です。  各口座の `ID` 値と `balance` 値が隣接するセルに表示され、残高が 0 より少ない場合、行が赤で表示されます。  複数行のラムダ式は、Visual Basic 2010 の新しい機能です。  詳細については、「[Lambda Expressions](../../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md)」を参照してください。  
   
-     [!code-cs[csOfficeWalkthrough#9](../../../csharp/programming-guide/interop/codesnippet/csharp/officewalkthroughcs/thisaddin.cs#9)]
-     [!code-vb[csOfficeWalkthrough#9](../../../csharp/programming-guide/interop/codesnippet/visualbasic/officewalkthroughsnippets - vb/thisaddin.vb#9)]  
+     [!code-cs[csOfficeWalkthrough#9](../../../csharp/programming-guide/interop/codesnippet/CSharp/walkthrough-office-programming_9.cs)]
+     [!code-vb[csOfficeWalkthrough#9](../../../csharp/programming-guide/interop/codesnippet/VisualBasic/walkthrough-office-programming_9.vb)]  
   
 2.  プログラムを実行するには、F5 キーを押します。  口座からのデータを含む Excel ワークシートが表示されます。  
   
@@ -133,12 +133,12 @@ caps.handback.revision: 46
   
 1.  `ThisAddIn_StartUp` メソッドの末尾に次のコードを追加して、Excel ブックへのリンクを含む Word 文書を作成します。  
   
-     [!code-cs[csOfficeWalkthrough#10](../../../csharp/programming-guide/interop/codesnippet/csharp/officewalkthroughcs/thisaddin.cs#10)]
-     [!code-vb[csOfficeWalkthrough#10](../../../csharp/programming-guide/interop/codesnippet/visualbasic/officewalkthroughsnippets - vb/thisaddin.vb#10)]  
+     [!code-cs[csOfficeWalkthrough#10](../../../csharp/programming-guide/interop/codesnippet/CSharp/walkthrough-office-programming_10.cs)]
+     [!code-vb[csOfficeWalkthrough#10](../../../csharp/programming-guide/interop/codesnippet/VisualBasic/walkthrough-office-programming_10.vb)]  
   
      このコードは、COM プログラミングで `ref` キーワードを省略する機能、名前付き引数、省略可能な引数など、C\# の新機能のいくつかを示します。  Visual Basic でこれらの機能は既に存在します。  [PasteSpecial](http://go.microsoft.com/fwlink/?LinkId=147099) メソッドには 7 つのパラメーターがあります。これらはすべて省略可能な参照パラメーターとして定義されます。  Visual C\# 2010 より前では、意味のある値を渡すことができない場合でも、7 つのパラメーターの引数として使用するオブジェクト変数を定義する必要がありました。  名前付き引数と省略可能な引数を使用すると、アクセスするパラメーターを名前で指定し、これらのパラメーターにのみ引数を渡すことができます。  この例では、引数は、クリップボードのブックへのリンクを作成する必要があること \(`Link` パラメーター\)、およびリンクがアイコンとして Word 文書に表示されること \(`DisplayAsIcon` パラメーター\) を示すために渡されます。  Visual C\# 2010 では、これらの引数の `ref` キーワードを省略することもできます。  Visual C\# 2008 の以下のコード セグメントを Visual C\# 2010 で必要な単一の行と比較します。  
   
-     [!code-cs[csOfficeWalkthrough#11](../../../csharp/programming-guide/interop/codesnippet/csharp/officewalkthroughcs/thisaddin.cs#11)]  
+     [!code-cs[csOfficeWalkthrough#11](../../../csharp/programming-guide/interop/codesnippet/CSharp/walkthrough-office-programming_11.cs)]  
   
 ### アプリケーションを実行するには  
   

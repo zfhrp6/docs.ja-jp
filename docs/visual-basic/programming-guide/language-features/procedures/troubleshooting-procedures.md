@@ -50,7 +50,7 @@ caps.handback.revision: 17
   
  **正しい方法:** 返される配列の要素を変更できるようにするには、内部配列をローカル変数として定義します。  次の例はコンパイル エラーが発生しません。  
   
- [!code-vb[VbVbcnProcedures#66](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/troubleshooting-procedures_1.vb)]  
+ [!code-vb[VbVbcnProcedures#66](./codesnippet/VisualBasic/troubleshooting-procedures_1.vb)]  
   
 ## 引数がプロシージャ呼び出しによって変更されない  
  呼び出しコードの引数の基になるプログラミング要素を、プロシージャで変更できるようにする場合は、参照渡しで渡す必要があります。  ただし、値渡しで渡した場合でも、プロシージャはその参照型の引数の要素にアクセスできます。  
@@ -61,13 +61,13 @@ caps.handback.revision: 17
   
  次の例には、配列変数を値渡しで受け取ってその要素を操作する 2 つのプロシージャが定義されています。  `increase` プロシージャは、各要素に単純に 1 を加算します。  `replace` プロシージャは、パラメーター `a()` に新しい配列を代入してから各要素に 1 を加算します。  ただし、この新しい配列の代入は、呼び出し元のコードの基の配列変数には反映されません。なぜなら、`a()` が `ByVal` で宣言されているからです。  
   
- [!code-vb[VbVbcnProcedures#35](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/troubleshooting-procedures_2.vb)]  
+ [!code-vb[VbVbcnProcedures#35](./codesnippet/VisualBasic/troubleshooting-procedures_2.vb)]  
   
- [!code-vb[VbVbcnProcedures#38](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/troubleshooting-procedures_3.vb)]  
+ [!code-vb[VbVbcnProcedures#38](./codesnippet/VisualBasic/troubleshooting-procedures_3.vb)]  
   
  次に、`increase` と `replace` を呼び出す例を示します。  
   
- [!code-vb[VbVbcnProcedures#37](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/troubleshooting-procedures_4.vb)]  
+ [!code-vb[VbVbcnProcedures#37](./codesnippet/VisualBasic/troubleshooting-procedures_4.vb)]  
   
  最初の `MsgBox` の呼び出しでは、"After increase\(n\): 11, 21, 31, 41" と表示されます。  `n` が参照型なので、`ByVal` で渡されていても `increase` はそのメンバーを変更できます。  
   
@@ -75,7 +75,7 @@ caps.handback.revision: 17
   
  **正しい方法:** 基になる変数要素そのものを変更可能にするには、参照渡しで渡します。  `replace` の宣言を変更し、呼び出しコードで配列を別の配列に置き換えることができるようにする例を次に示します。  
   
- [!code-vb[VbVbcnProcedures#64](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/troubleshooting-procedures_5.vb)]  
+ [!code-vb[VbVbcnProcedures#64](./codesnippet/VisualBasic/troubleshooting-procedures_5.vb)]  
   
 ## オーバーロードを定義できない  
  プロシージャのオーバーロードを定義する場合は、名前を同じにしてシグネチャを変える必要があります。  シグネチャが同じで、コンパイラがプロシージャ宣言をオーバーロードと区別できない場合は、エラーが発生します。  
@@ -117,9 +117,9 @@ caps.handback.revision: 17
   
  次の例は、オーバーロード解決のプロセスを示しています。  
   
- [!code-vb[VbVbcnProcedures#62](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/troubleshooting-procedures_6.vb)]  
+ [!code-vb[VbVbcnProcedures#62](./codesnippet/VisualBasic/troubleshooting-procedures_6.vb)]  
   
- [!code-vb[VbVbcnProcedures#63](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/troubleshooting-procedures_7.vb)]  
+ [!code-vb[VbVbcnProcedures#63](./codesnippet/VisualBasic/troubleshooting-procedures_7.vb)]  
   
  1 回目の呼び出しでは、コンパイラは最初のオーバーロードを除外します。1 つ目の引数の型 \(`Short`\) が、対応するパラメーターの型 \(`Byte`\) よりも大きいからです。  次に、3 番目のオーバーロードを除去します。2 番目のオーバーロードの各引数型 \(`Short` と `Single`\) よりも、3 番目のオーバーロードで対応する引数型 \(`Integer` と `Single`\) の方が大きいからです。  2 番目のオーバーロードの方が拡大変換が少なくて済むため、コンパイラは 2 番目を使用して呼び出します。  
   
@@ -127,7 +127,7 @@ caps.handback.revision: 17
   
  **正しい方法:** オーバーロードされたプロシージャを明確に呼び出すには、[CType 関数](../../../../visual-basic/language-reference/functions/ctype-function.md) を使用して引数のデータ型をパラメーターの型に一致させます。  次の例で呼び出される `z` は、必ず 2 番目のオーバーロードに解決します。  
   
- [!code-vb[VbVbcnProcedures#65](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/troubleshooting-procedures_8.vb)]  
+ [!code-vb[VbVbcnProcedures#65](./codesnippet/VisualBasic/troubleshooting-procedures_8.vb)]  
   
 ### 省略可能な引数やパラメーター配列の引数を持つオーバーロードの解決  
  プロシージャの 2 つのオーバーロードのシグネチャが同じで、唯一の違いが最後のパラメーターの宣言 \(一方が [Optional](../../../../visual-basic/language-reference/modifiers/optional.md) で、他方は [ParamArray](../../../../visual-basic/language-reference/modifiers/paramarray.md)\) である場合、コンパイラはそのプロシージャの呼び出しを、より厳密に一致している方に解決します。  詳細については、「[Overload Resolution](../../../../visual-basic/programming-guide/language-features/procedures/overload-resolution.md)」を参照してください。  

@@ -23,7 +23,7 @@ caps.handback.revision: 26
 # アクセサーのアクセシビリティの制限 (C# プログラミング ガイド)
 プロパティやインデクサーの [get](../../../csharp/language-reference/keywords/get.md) および [set](../../../csharp/language-reference/keywords/set.md) の部分は、*アクセサー*と呼ばれます。  既定では、これらのアクセサーの参照範囲、つまりアクセス レベルは、それが属するプロパティまたはインデクサーのアクセス レベルと同じになります。  詳細については、「[アクセシビリティ レベル](../../../csharp/language-reference/keywords/accessibility-levels.md)」を参照してください。  ただし、これらのアクセサーのいずれかへのアクセスを制限すると便利な場合があります。  この場合は、通常、`set` アクセサーのアクセシビリティを制限し、`get` アクセサーはパブリックにアクセス可能にしておきます。  次に例を示します。  
   
- [!code-cs[csProgGuideIndexers#6](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/restricting-accessor-acc_1.cs)]  
+ [!code-cs[csProgGuideIndexers#6](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/restricting-accessor-accessibility_1.cs)]  
   
  この例では、`Name` というプロパティが `get` アクセサーおよび `set` アクセサーを定義しています。  `get` アクセサーは、プロパティ自体のアクセシビリティ レベル \(この場合は `public`\) を受け取りますが、`set` アクセサーは、[protected](../../../csharp/language-reference/keywords/protected.md) アクセス修飾子をアクセサー自体に適用することにより、明示的に制限されています。  
   
@@ -41,12 +41,12 @@ caps.handback.revision: 26
 ## アクセサーのオーバーライド時のアクセス修飾子  
  プロパティやインデクサーをオーバーライドした場合、オーバーライドされたアクセサーは、オーバーライド側のコードにアクセスできる必要があります。  また、プロパティとインデクサーの両方のアクセシビリティ レベル、およびアクセサーのアクセシビリティ レベルは、オーバーライドされた、対応するプロパティとインデクサー、およびアクセサーに適合する必要があります。  次に例を示します。  
   
- [!code-cs[csProgGuideIndexers#7](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/restricting-accessor-acc_2.cs)]  
+ [!code-cs[csProgGuideIndexers#7](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/restricting-accessor-accessibility_2.cs)]  
   
 ## インターフェイスの実装  
  アクセサーを使用してインターフェイスを実装するときは、アクセサーでアクセス修飾子を使用できません。  ただし、`get` などの 1 つのアクセサーを使用してインターフェイスを実装する場合は、次の例に示すように、もう 1 つのアクセサーでアクセス修飾子を使用できます。  
   
- [!code-cs[csProgGuideIndexers#8](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/restricting-accessor-acc_3.cs)]  
+ [!code-cs[csProgGuideIndexers#8](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/restricting-accessor-accessibility_3.cs)]  
   
 ## アクセサーのアクセシビリティ ドメイン  
  アクセサーでアクセス修飾子を使用した場合は、この修飾子によって、アクセサーの[アクセシビリティ ドメイン](../../../csharp/language-reference/keywords/accessibility-domain.md)が決定されます。  
@@ -58,7 +58,7 @@ caps.handback.revision: 26
   
  また、次の例は、`private` や `protected` などの制限付きのアクセス修飾子を、`DerivedClass` の `Name` プロパティの `set` アクセサーに指定すると、このアクセサーにアクセスできなくなり、このプロパティに値を割り当てると、エラーが生成されることも示しています。  
   
- [!code-cs[csProgGuideIndexers#5](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/restricting-accessor-acc_4.cs)]  
+ [!code-cs[csProgGuideIndexers#5](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/restricting-accessor-accessibility_4.cs)]  
   
 ## コメント  
  宣言 `new private string Id` を `new public string Id` に置き換えると、次の出力が得られます。  

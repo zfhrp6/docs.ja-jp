@@ -52,7 +52,7 @@ caps.handback.revision: 20
   
 -   次の例に示すように、アクセス指定子、`Const` キーワード、および式を含む宣言を記述します。  
   
-     [!code-vb[VbEnumsTask#8](../../../../visual-basic/language-reference/statements/codesnippet/visualbasic/WindowsApplication1/Class2.vb#8)]  
+     [!code-vb[VbEnumsTask#8](../../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/how-to-declare-a-constant_1.vb)]  
   
      [Option Infer](../../../../visual-basic/language-reference/statements/option-infer-statement.md) が `Off` で [Option Strict](../../../../visual-basic/language-reference/statements/option-strict-statement.md) が `On` である場合、明示的にデータ型 \(`Boolean`、`Byte`、`Char`、`DateTime`、`Decimal`、`Double`、`Integer`、`Long`、`Short`、`Single` または `String`\) を指定して定数を宣言する必要があります。  
   
@@ -62,7 +62,7 @@ caps.handback.revision: 20
   
 -   次の例に示すように、`As` キーワードおよび明示的なデータ型が含まれる宣言を記述します。  
   
-     [!code-vb[VbEnumsTask#9](../../../../visual-basic/language-reference/statements/codesnippet/visualbasic/WindowsApplication1/Class2.vb#9)]  
+     [!code-vb[VbEnumsTask#9](../../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/how-to-declare-a-constant_2.vb)]  
   
      複数の定数を 1 行で宣言することもできますが、1 行で宣言する定数は 1 つだけにした方がコードが読みやすくなります。  1 行で複数の定数を宣言した場合、すべてが同じアクセス レベル \(`Public`、`Private`、`Friend`、`Protected`、または `Protected Friend`\) を持っている必要があります。  
   

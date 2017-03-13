@@ -22,7 +22,7 @@ C\# では、オブジェクトのコピー コンストラクターが提供さ
 ## 使用例  
  次の例で、`Person` [クラス](../../../csharp/language-reference/keywords/class.md)は、`Person` のインスタンスを引数として受け取るコピー コンストラクターを定義しています。  引数のプロパティの値は、`Person`の新しいインスタンスのプロパティに割り当てられています。  このコードには、コピーするインスタンスの `Name` プロパティと `Age` プロパティをクラスのインスタンス コンストラクターに渡す代替のコピー コンストラクターが含まれています。  
   
- [!code-cs[csProgGuideObjects#16](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/how-to-write-a-copy-cons_1.cs)]  
+ [!code-cs[csProgGuideObjects#16](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/how-to-write-a-copy-constructor_1.cs)]  
   
 ## 参照  
  <xref:System.ICloneable>   

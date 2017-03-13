@@ -38,7 +38,7 @@ public delegate int TestDelegate(MyType m, long num);
  デリゲートは、互換性のある戻り値の型と入力パラメーターを持つメソッドまたはラムダ式でインスタンス化する必要があります。  メソッド シグネチャで許容される範囲の詳細については、「[デリゲートの分散](../Topic/Variance%20in%20Delegates%20\(C%23%20and%20Visual%20Basic\).md)」を参照してください。  匿名メソッドで使用する場合、デリゲートおよびデリゲートと関連付けるコードを共に宣言します。  デリゲートをインスタンス化するこの 2 つの方法について説明します。  
   
 ## 使用例  
- [!code-cs[csrefKeywordsTypes#8](../../../csharp/language-reference/keywords/codesnippet/csharp/delegate_1.cs)]  
+ [!code-cs[csrefKeywordsTypes#8](../../../csharp/language-reference/keywords/codesnippet/CSharp/delegate_1.cs)]  
   
 ## C\# 言語仕様  
  [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec-md.md)]  

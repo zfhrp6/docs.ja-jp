@@ -23,7 +23,7 @@ caps.handback.revision: 14
 ## 使用例  
  この例の <xref:System.IndexOutOfRangeException> は最も適切な例外ではありません。呼び出し元から `index` 引数が渡されてエラーが発生したため、より適切なメソッドは <xref:System.ArgumentOutOfRangeException> になります。  
   
- [!code-cs[csProgGuideExceptions#5](../../../csharp/programming-guide/exceptions/codesnippet/csharp/how-to-handle-an-excepti_1.cs)]  
+ [!code-cs[csProgGuideExceptions#5](../../../csharp/programming-guide/exceptions/codesnippet/CSharp/how-to-handle-an-exception-using-try-catch_1.cs)]  
   
 ## コメント  
  例外を発生させるコードが `try` ブロックに囲まれています。  そのすぐ後に追加されている `catch` ステートメントが、`IndexOutOfRangeException` が発生した場合に処理します。  `catch` ブロックは、`IndexOutOfRangeException` を処理し、代わりにより適切な `ArgumentOutOfRangeException` 例外をスローします。  呼び出し元にできるだけ多くの情報を提供するため、元の例外を新しい例外の <xref:System.Exception.InnerException%2A> として指定することをお勧めします。  <xref:System.Exception.InnerException%2A> プロパティは [readonly](../../../csharp/language-reference/keywords/readonly.md) なので、コンストラクターまたは新しい例外で割り当てる必要があります。  

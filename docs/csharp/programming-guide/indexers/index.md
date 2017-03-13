@@ -23,7 +23,7 @@ caps.handback.revision: 29
   
  次の例では、ジェネリック クラスが定義され、値の割り当てと取得の手段として単純な [get](../../../csharp/language-reference/keywords/get.md) と [set](../../../csharp/language-reference/keywords/set.md) のアクセサー メソッドが提供されます。  `Program` クラスは、文字列の格納用にこのクラスのインスタンスを作成します。  
   
- [!code-cs[csProgGuideIndexers#9](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/index_1.cs)]  
+ [!code-cs[csProgGuideIndexers#9](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/index_1.cs)]  
   
 > [!NOTE]
 >  その他の例については、「[関連項目](../../../csharp/programming-guide/indexers/index.md#BKMK_RelatedSections)」を参照してください。  

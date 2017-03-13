@@ -26,7 +26,7 @@ caps.handback.revision: 8
 ## Visual Basic ランタイムと .NET Framework  
  次に例を示します。  
   
- [!code-vb[VbVbalrStrings#47](../../../../visual-basic/language-reference/functions/codesnippet/visualbasic/nothing-and-strings_1.vb)]  
+ [!code-vb[VbVbalrStrings#47](../../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/nothing-and-strings_1.vb)]  
   
  [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] ランタイムは通常、`Nothing` を空の文字列 \(""\) として扱います。  一方、[!INCLUDE[dnprdnshort](../../../../csharp/getting-started/includes/dnprdnshort-md.md)] では、`Nothing` に対して文字列操作を実行しようとすると、例外がスローされます。  
   

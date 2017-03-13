@@ -64,7 +64,7 @@ caps.handback.revision: 45
   
  たとえば、`String` などの特定のデータ型を操作するキュー クラスを作成し、使用する必要があるとします。 次の例に示すように、このようなクラスは、<xref:System.Collections.Generic.Queue%601?displayProperty=fullName> から宣言できます。  
   
- [!code-vb[VbVbalrDataTypes#1](../../../../visual-basic/language-reference/data-types/codesnippet/visualbasic/generic-types_1.vb)]  
+ [!code-vb[VbVbalrDataTypes#1](../../../../visual-basic/language-reference/data-types/codesnippet/VisualBasic/generic-types_1.vb)]  
   
  このときに、`stringQ` を使って、`String` 値だけを扱うように指定できます。`stringQ` は、`Object` 値を汎用的に扱うのではなく `String` だけを扱うことを意味するので、遅延バインディングまたは型変換は行いません。 その結果、実行時間が短縮され、ランタイム エラーが減少します。  
   
@@ -73,15 +73,15 @@ caps.handback.revision: 45
 ## ジェネリック クラスの例  
  次の例は、ジェネリック クラスのスケルトン定義を示しています。  
   
- [!code-vb[VbVbalrDataTypes#2](../../../../visual-basic/language-reference/data-types/codesnippet/visualbasic/generic-types_2.vb)]  
+ [!code-vb[VbVbalrDataTypes#2](../../../../visual-basic/language-reference/data-types/codesnippet/VisualBasic/generic-types_2.vb)]  
   
  このスケルトンでは、`t` は*型パラメーター*です。これはプレースホルダーなので、このクラスを宣言するときにはデータ型で置き換えます。 コードの他の部分では、`t` をさまざまなデータ型で置き換えることにより、`classHolder` のさまざまなバージョンを宣言できます。 このようにして宣言した 2 つのクラスを次の例に示します。  
   
- [!code-vb[VbVbalrDataTypes#3](../../../../visual-basic/language-reference/data-types/codesnippet/visualbasic/generic-types_3.vb)]  
+ [!code-vb[VbVbalrDataTypes#3](../../../../visual-basic/language-reference/data-types/codesnippet/VisualBasic/generic-types_3.vb)]  
   
  このステートメントでは、*構成されるクラス*を宣言し、その中で型パラメーターを特定の型に置き換えています。 この置き換えは、構成されるクラスのコード全体に反映されます。 次の例は、`integerClass` の `processNewItem` プロシージャがどのようなコードになるかを示しています。  
   
- [!code-vb[VbVbalrDataTypes#4](../../../../visual-basic/language-reference/data-types/codesnippet/visualbasic/generic-types_4.vb)]  
+ [!code-vb[VbVbalrDataTypes#4](../../../../visual-basic/language-reference/data-types/codesnippet/VisualBasic/generic-types_4.vb)]  
   
  この例より完全なコード例については、「[方法 : 複数のデータ型に同一の機能を提供できるクラスを定義する](../../../../visual-basic/programming-guide/language-features/data-types/how-to-define-a-class-that-can-provide-identical-functionality.md)」を参照してください。  
   
@@ -119,7 +119,7 @@ caps.handback.revision: 45
 ### 制約の例  
  次の例は、<xref:System.IComparable> の実装を型引数に強制する制約があるクラスのスケルトン定義を示しています。  
   
- [!code-vb[VbVbalrDataTypes#5](../../../../visual-basic/language-reference/data-types/codesnippet/visualbasic/generic-types_5.vb)]  
+ [!code-vb[VbVbalrDataTypes#5](../../../../visual-basic/language-reference/data-types/codesnippet/VisualBasic/generic-types_5.vb)]  
   
  後続のコードで、<xref:System.IComparable> を実装しない型を渡して `itemManager` からクラスを作成しようとすると、コンパイラがエラーを生成します。  
   
@@ -141,7 +141,7 @@ caps.handback.revision: 45
 ### 複数の制約の例  
  次の例は、型パラメーターに制約リストがあるジェネリック クラスのスケルトン定義を示しています。 このクラスのインスタンスを作成するコードでは、型引数が <xref:System.IComparable> インターフェイスと <xref:System.IDisposable> インターフェイスの両方を実装し、参照型であり、アクセス可能なパラメーターなしのコンストラクターを公開する必要があります。  
   
- [!code-vb[VbVbalrDataTypes#6](../../../../visual-basic/language-reference/data-types/codesnippet/visualbasic/generic-types_6.vb)]  
+ [!code-vb[VbVbalrDataTypes#6](../../../../visual-basic/language-reference/data-types/codesnippet/VisualBasic/generic-types_6.vb)]  
   
 ## 重要な用語  
  ジェネリック型に関連して、以下の新しい用語が使用されます。  

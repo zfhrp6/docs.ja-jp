@@ -155,7 +155,7 @@ result = string Like pattern
 ## 使用例  
  式の比較に用いる関係比較演算子のさまざまな使用例を次に示します。  関係比較演算子は、指定した式が真 \(`True`\) かどうかを表す `Boolean` 型の結果を返します。  `>` 演算子と `<` 演算子を文字列に適用する場合は、通常のアルファベット順で文字列の比較が行われます。  この順序は、ロケールの設定に依存する可能性があります。  並べ替えが大文字と小文字を区別するかどうかは、[Option Compare ステートメント](../../../visual-basic/language-reference/statements/option-compare-statement.md)の設定値によって決まります。  
   
- [!code-vb[VbVbalrOperators#1](../../../visual-basic/language-reference/operators/codesnippet/visualbasic/comparison-operators_1.vb)]  
+ [!code-vb[VbVbalrOperators#1](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/comparison-operators_1.vb)]  
   
  上の例では、最初の比較が `False` を返し、その他の比較が `True` を返します。  
   

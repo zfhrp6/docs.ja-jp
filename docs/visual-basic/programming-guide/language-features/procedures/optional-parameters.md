@@ -57,12 +57,12 @@ sub name(argument 1, , , argument 4)
   
  `MsgBox` の最初の呼び出しでは、`MsgBox` で定義された順番で 3 つの引数を指定します。  2 番目の呼び出しでは、必須の引数だけを指定します。  3 番目と 4 番目の呼び出しでは、1 つ目と 3 つ目の引数を指定します。  3 番目の呼び出しでは引数を位置で指定し、4 番目の呼び出しでは引数を名前で指定します。  
   
- [!code-vb[VbVbcnProcedures#47](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/optional-parameters_1.vb)]  
+ [!code-vb[VbVbcnProcedures#47](./codesnippet/VisualBasic/optional-parameters_1.vb)]  
   
 ## 省略可能な引数があるかどうかの確認  
  引数が省略されているのか、呼び出し元のコードで既定値が明示的に指定されているのかについて、プロシージャで実行時に検出することはできません。  この区別が必要な場合は、ありそうにない値を既定値に設定します。  次のプロシージャでは、省略可能なパラメーター  `office` を定義し、その既定値  `QJZ` をテストして、呼び出しの際にこの引数が省略されているかどうかを確認します。  
   
- [!code-vb[VbVbcnProcedures#46](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/optional-parameters_2.vb)]  
+ [!code-vb[VbVbcnProcedures#46](./codesnippet/VisualBasic/optional-parameters_2.vb)]  
   
  省略可能なパラメーターが `String` などの参照型の場合は、`Nothing` を既定値として使用できます。ただし、`Nothing` が引数の値として使用されることが予想される場合を除きます。  
   

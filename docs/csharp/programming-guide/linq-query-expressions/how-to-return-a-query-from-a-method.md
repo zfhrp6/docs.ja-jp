@@ -10,7 +10,7 @@ caps.handback.revision: 11
 ## 使用例  
  次の例では、最初のメソッドはクエリを戻り値として返し、2 番目のメソッドはクエリを `out` パラメーターとして返します。  どちらの場合も返されるのはクエリであり、クエリ結果ではないことに注意してください。  
   
- [!code-cs[csProgGuideLINQ#80](../../../csharp/programming-guide/arrays/codesnippet/csharp/csLINQProgRef/csRef30LangFeatures_2.cs#80)]  
+ [!code-cs[csProgGuideLINQ#80](../../../csharp/programming-guide/arrays/codesnippet/CSharp/how-to-return-a-query-from-a-method_1.cs)]  
   
 ## コードのコンパイル  
   

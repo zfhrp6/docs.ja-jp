@@ -43,7 +43,7 @@ caps.handback.revision: 15
 ## 使用例  
  次の例では、強制的な継承と強制的なオーバーライドを示します。  基本クラス `shape` は、変数 `acrossLine` を定義します。  `circle` クラスと `square` クラスは、`shape` から継承されます。  これらのクラスは、`acrossLine` の定義を継承しますが、図形の種類によって計算が異なるため、`area` 関数を定義する必要があります。  
   
- [!code-vb[VbVbalrKeywords#2](../../../visual-basic/language-reference/codesnippet/visualbasic/mustinherit_1.vb)]  
+ [!code-vb[VbVbalrKeywords#2](../../../visual-basic/language-reference/codesnippet/VisualBasic/mustinherit_1.vb)]  
   
  `shape1` と `shape2` は、`shape` 型として定義できます。  ただし、`shape` からオブジェクトを作成することはできません。`area` 関数の機能がないことと、`MustInherit` とマークされているためです。  
   

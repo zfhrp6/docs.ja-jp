@@ -28,11 +28,11 @@ caps.handback.revision: 32
   
  T は、入れ子になった `Node` クラスで使用できることに注意してください。  `GenericList<T>` を、たとえば、`GenericList<int>` のように具体的な型でインスタンス化すると、`T` の各出現箇所は、`int` に置き換えられます。  
   
- [!code-cs[csProgGuideGenerics#2](../../../csharp/programming-guide/generics/codesnippet/csharp/introduction-to-generics_1.cs)]  
+ [!code-cs[csProgGuideGenerics#2](../../../csharp/programming-guide/generics/codesnippet/CSharp/introduction-to-generics_1.cs)]  
   
  次のコード例は、クライアント コードで `GenericList<T>` ジェネリック クラスを使用して整数のリストを作成する方法を示しています。  このコードの型引数を変更するだけで、文字列や他の任意のカスタム型のリストを生成するように簡単に修正できます。  
   
- [!code-cs[csProgGuideGenerics#3](../../../csharp/programming-guide/generics/codesnippet/csharp/introduction-to-generics_2.cs)]  
+ [!code-cs[csProgGuideGenerics#3](../../../csharp/programming-guide/generics/codesnippet/CSharp/introduction-to-generics_2.cs)]  
   
 ## 参照  
  <xref:System.Collections.Generic>   

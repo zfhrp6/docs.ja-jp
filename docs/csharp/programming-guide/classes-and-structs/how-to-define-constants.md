@@ -27,7 +27,7 @@ caps.handback.revision: 7
  整数型以外の定数を定義する 1 つの方法としては、`Constants` という名前の 1 つの静的クラスにそれらをグループ化します。  これを行うには、次の例に示すように、クラス名の前に定数へのすべての参照を付ける必要があります。  
   
 ## 使用例  
- [!code-cs[csProgGuideObjects#89](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/how-to-define-constants_1.cs)]  
+ [!code-cs[csProgGuideObjects#89](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/how-to-define-constants_1.cs)]  
   
  クラス名修飾子を使用すると、定数を使用するユーザーは、それが定数であり変更できないことがわかります。  
   

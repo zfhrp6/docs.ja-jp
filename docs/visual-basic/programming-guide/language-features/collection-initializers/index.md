@@ -29,7 +29,7 @@ caps.handback.revision: 23
   
  コレクション初期化子は、`From` キーワードの後に中かっこ \(`{}`\) を使用して指定します。  この構文は、「[配列](../../../../visual-basic/programming-guide/language-features/arrays/index.md)」に説明されている配列リテラル構文に似ています。  コレクションの作成のためにコレクション初期化子を使用する各種の方法を次の例に示します。  
   
- [!code-vb[VbVbalrCollectionInitializers#1](../../../../visual-basic/programming-guide/language-features/arrays/codesnippet/visualbasic/index_1.vb)]  
+ [!code-vb[VbVbalrCollectionInitializers#1](../../../../visual-basic/programming-guide/language-features/arrays/codesnippet/VisualBasic/index_1.vb)]  
   
 > [!NOTE]
 >  C\# にも、コレクション初期化子があります。  C\# のコレクション初期化子の機能は、Visual Basic のコレクション初期化子の機能と同じです。  C\# のコレクション初期化子の詳細については、「[オブジェクト初期化子とコレクション初期化子](../../../../csharp/programming-guide/classes-and-structs/object-and-collection-initializers.md)」を参照してください。  
@@ -37,11 +37,11 @@ caps.handback.revision: 23
 ## 構文  
  コレクション初期化子は、次のコードに示すように、`From` キーワードの後に、コンマ区切りの値を中かっこ \(`{}`\) で囲んだリストから構成されます。  
   
- [!code-vb[VbVbalrCollectionInitializers#2](../../../../visual-basic/programming-guide/language-features/arrays/codesnippet/visualbasic/index_2.vb)]  
+ [!code-vb[VbVbalrCollectionInitializers#2](../../../../visual-basic/programming-guide/language-features/arrays/codesnippet/VisualBasic/index_2.vb)]  
   
  <xref:System.Collections.Generic.List%601> や <xref:System.Collections.Generic.Dictionary%602> などのコレクションを作成する場合、次のコードに示すように、コレクション初期化子の前にコレクション型を指定する必要があります。  
   
- [!code-vb[VbVbalrCollectionInitializers#13](../../../../visual-basic/programming-guide/language-features/arrays/codesnippet/visualbasic/index_3.vb)]  
+ [!code-vb[VbVbalrCollectionInitializers#13](../../../../visual-basic/programming-guide/language-features/arrays/codesnippet/VisualBasic/index_3.vb)]  
   
 > [!NOTE]
 >  コレクション初期化子とオブジェクト初期化子を組み合わせて、同じコレクション オブジェクトを初期化することはできません。  オブジェクト初期化子を使用して、コレクション初期化子内のオブジェクトを初期化できます。  
@@ -57,11 +57,11 @@ caps.handback.revision: 23
   
  例として、コレクション初期化子を使用して `List(Of Customer)` コレクションを作成する方法を次のコード例に示します。  コードの実行時、各 `Customer` オブジェクトはジェネリック リストの `Add(Customer)` メソッドに渡されます。  
   
- [!code-vb[VbVbalrCollectionInitializers#9](../../../../visual-basic/programming-guide/language-features/arrays/codesnippet/visualbasic/index_4.vb)]  
+ [!code-vb[VbVbalrCollectionInitializers#9](../../../../visual-basic/programming-guide/language-features/arrays/codesnippet/VisualBasic/index_4.vb)]  
   
  次のコード例に、同等の内容でコレクション初期化子を使用しない方法を示します。  
   
- [!code-vb[VbVbalrCollectionInitializers#10](../../../../visual-basic/programming-guide/language-features/arrays/codesnippet/visualbasic/index_5.vb)]  
+ [!code-vb[VbVbalrCollectionInitializers#10](../../../../visual-basic/programming-guide/language-features/arrays/codesnippet/VisualBasic/index_5.vb)]  
   
  `Customer` オブジェクトのコンストラクターと一致するパラメーターがある `Add` メソッドがコレクションにある場合、次のセクションで説明するように、`Add` メソッドのパラメーター値は、コレクション初期化子内で入れ子にすることができます。  コレクションに `Add` メソッドがない場合、拡張メソッドとしてメソッドを作成できます。  コレクションに拡張メソッドとして `Add` メソッドを作成する方法の例については、「[How to: Create an Add Extension Method Used by a Collection Initializer](../../../../visual-basic/programming-guide/language-features/collection-initializers/how-to-create-an-add-extension-method-used-by-a-collection-initializer.md)」を参照してください。  コレクション初期化子内で使用できるカスタム コレクションを作成する方法の例については、「[How to: Create a Collection Used by a Collection Initializer](../../../../visual-basic/programming-guide/language-features/collection-initializers/how-to-create-a-collection-used-by-a-collection-initializer.md)」を参照してください。  
   
@@ -70,11 +70,11 @@ caps.handback.revision: 23
   
  入れ子にした値を使用してコレクションを作成する場合、入れ子にされた値リストの各要素は、要素型と一致する `Add` メソッドに引数として渡されます。  例として、<xref:System.Collections.Generic.Dictionary%602> を作成し、このキーを `Integer` 型にし、値を `String` 型にするコードを次に示します。  入れ子にされた値リストの各値は、`Dictionary` の <xref:System.Collections.Generic.Dictionary%602.Add%2A> メソッドに照合されます。  
   
- [!code-vb[VbVbalrCollectionInitializers#5](../../../../visual-basic/programming-guide/language-features/arrays/codesnippet/visualbasic/index_6.vb)]  
+ [!code-vb[VbVbalrCollectionInitializers#5](../../../../visual-basic/programming-guide/language-features/arrays/codesnippet/VisualBasic/index_6.vb)]  
   
  上のコード例は、次のコードと同じ結果になります。  
   
- [!code-vb[VbVbalrCollectionInitializers#6](../../../../visual-basic/programming-guide/language-features/arrays/codesnippet/visualbasic/index_7.vb)]  
+ [!code-vb[VbVbalrCollectionInitializers#6](../../../../visual-basic/programming-guide/language-features/arrays/codesnippet/VisualBasic/index_7.vb)]  
   
  入れ子にされた値リストは、入れ子の最初のレベルからのみコレクション型の `Add` メソッドに送られます。  入れ子の最初のレベルより下のレベルは、配列リテラルとして扱われ、入れ子にされた値リストはコレクションの `Add` メソッドに照合されません。  
   

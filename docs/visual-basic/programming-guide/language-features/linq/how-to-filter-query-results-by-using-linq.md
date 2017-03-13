@@ -78,13 +78,13 @@ caps.handback.revision: 6
   
      データ コンテキストのプロパティとして公開されたテーブルを照会するには、`Load` イベントに次のコードを追加します。  クエリは結果をフィルター処理し、`London` に住んでいる顧客だけを返します。  
   
-     [!code-vb[VbLINQToSQLHowTos#11](../../../../visual-basic/programming-guide/language-features/linq/codesnippet/visualbasic/StoredProcedureHowTo/Form5.vb#11)]  
+     [!code-vb[VbLINQToSQLHowTos#11](../../../../visual-basic/programming-guide/language-features/linq/codesnippet/VisualBasic/how-to-filter-query-results-by-using-linq_1.vb)]  
   
 4.  F5 キーを押してプロジェクトを実行し、結果を確認します。  
   
 5.  次のフィルターも試してみてください。  
   
-     [!code-vb[VbLINQToSQLHowTos#12](../../../../visual-basic/programming-guide/language-features/linq/codesnippet/visualbasic/StoredProcedureHowTo/Form5.vb#12)]  
+     [!code-vb[VbLINQToSQLHowTos#12](../../../../visual-basic/programming-guide/language-features/linq/codesnippet/VisualBasic/how-to-filter-query-results-by-using-linq_2.vb)]  
   
 ## 参照  
  [LINQ](../../../../visual-basic/programming-guide/language-features/linq/index.md)   

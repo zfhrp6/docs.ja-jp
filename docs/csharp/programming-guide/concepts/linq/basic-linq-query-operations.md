@@ -46,7 +46,7 @@ caps.handback.revision: 37
 ## データ ソースの取得  
  [!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq-md.md)] クエリに必要な最初の手順は、データ ソースを指定することです。  ほとんどのプログラミング言語と同様に、C\# でも、変数は使用する前に宣言しておく必要があります。  [!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq-md.md)] クエリでは、データ ソース \(`customers`\) と*範囲変数* \(`cust`\) を定義するために `from` 句が最初に使用されます。  
   
- [!code-cs[csLINQGettingStarted#23](../../../../csharp/programming-guide/concepts/linq/codesnippet/csharp/GettingStarted/Class1.cs#23)]  
+ [!code-cs[csLINQGettingStarted#23](../../../../csharp/programming-guide/concepts/linq/codesnippet/CSharp/basic-linq-query-operations_1.cs)]  
   
  範囲変数は `foreach` ループの反復変数に似ていますが、クエリ式で実際の反復が発生しない点が異なります。  クエリが実行されると、範囲変数は `customers` の連続する各要素への参照として機能します。  `cust` の型はコンパイラで推論できるので、明示的に指定する必要はありません。  追加の範囲変数は `let` 句で定義できます。  詳細については、「[let 句](../../../../csharp/language-reference/keywords/let-clause.md)」を参照してください。  
   
@@ -56,22 +56,22 @@ caps.handback.revision: 37
 ## フィルター処理  
  おそらく、最も一般的なクエリ操作は、ブール式の形式でフィルターを適用することです。  フィルターにより、式が true になる要素だけがクエリから返されます。  結果は `where` 句を使用して生成されます。  フィルターは、基本的に、ソース シーケンスから除外する要素を指定します。  次の例では、住所がロンドンにある `customers` だけが返されます。  
   
- [!code-cs[csLINQGettingStarted#24](../../../../csharp/programming-guide/concepts/linq/codesnippet/csharp/GettingStarted/Class1.cs#24)]  
+ [!code-cs[csLINQGettingStarted#24](../../../../csharp/programming-guide/concepts/linq/codesnippet/CSharp/basic-linq-query-operations_2.cs)]  
   
  使い慣れた C\# の論理 `AND` 演算子と論理 `OR` 演算子を使用すると、必要に応じていくつでも `where` 句にフィルター式を適用できます。  たとえば、住所が "ロンドン" にあり、かつ \(`AND`\) 名前が "Devon" の顧客だけを返すには、次のコードを記述します。  
   
- [!code-cs[csLINQGettingStarted#25](../../../../csharp/programming-guide/concepts/linq/codesnippet/csharp/GettingStarted/Class1.cs#25)]  
+ [!code-cs[csLINQGettingStarted#25](../../../../csharp/programming-guide/concepts/linq/codesnippet/CSharp/basic-linq-query-operations_3.cs)]  
   
  住所がロンドンまたはパリにある顧客を返すには、次のコードを記述します。  
   
- [!code-cs[csLINQGettingStarted#26](../../../../csharp/programming-guide/concepts/linq/codesnippet/csharp/GettingStarted/Class1.cs#26)]  
+ [!code-cs[csLINQGettingStarted#26](../../../../csharp/programming-guide/concepts/linq/codesnippet/CSharp/basic-linq-query-operations_4.cs)]  
   
  詳細については、「[where 句](../../../../csharp/language-reference/keywords/where-clause.md)」を参照してください。  
   
 ## 順序付け  
  返されるデータを並べ替えると便利な場合がよくあります。  `orderby` 句は、返されるシーケンス内の要素を、並べ替える型の既定の比較子に従って並べ替えます。  たとえば、次のクエリは、`Name` プロパティに基づいて結果を並べ替えるように拡張できます。  `Name` は文字列なので、既定の比較子によってアルファベット順 \(A ～ Z\) に並べ替えられます。  
   
- [!code-cs[csLINQGettingStarted#27](../../../../csharp/programming-guide/concepts/linq/codesnippet/csharp/GettingStarted/Class1.cs#27)]  
+ [!code-cs[csLINQGettingStarted#27](../../../../csharp/programming-guide/concepts/linq/codesnippet/CSharp/basic-linq-query-operations_5.cs)]  
   
  結果を逆の順序 \(Z ～ A\) で並べ替えるには、`orderby…descending` 句を使用します。  
   
@@ -80,20 +80,20 @@ caps.handback.revision: 37
 ## グループ化  
  `group` 句を使用すると、指定したキーに基づいて結果をグループ化できます。  たとえば、結果を `City` 別にグループ化して、住所がロンドンまたはパリにあるすべての顧客を別々のグループに分けることができます。  この場合のキーは `cust.City` です。  
   
- [!code-cs[csLINQGettingStarted#28](../../../../csharp/programming-guide/concepts/linq/codesnippet/csharp/GettingStarted/Class1.cs#28)]  
+ [!code-cs[csLINQGettingStarted#28](../../../../csharp/programming-guide/concepts/linq/codesnippet/CSharp/basic-linq-query-operations_6.cs)]  
   
  `group` 句でクエリを終了すると、結果はリストのリストという形式になります。  リストの各要素はオブジェクトであり、このオブジェクトには、`Key` メンバーと、そのキーに基づいてグループ化された要素のリストが含まれます。  グループのシーケンスを生成するクエリを反復処理する場合は、入れ子になった `foreach` ループを使用する必要があります。  外側のループで各グループを反復処理し、内側のループで各グループのメンバーを反復処理します。  
   
  グループ操作の結果を参照する必要がある場合は、`into` キーワードを使用して、さらに照会が可能な識別子を作成できます。  次のクエリでは、顧客が 2 人よりも多いグループだけが返されます。  
   
- [!code-cs[csLINQGettingStarted#29](../../../../csharp/programming-guide/concepts/linq/codesnippet/csharp/GettingStarted/Class1.cs#29)]  
+ [!code-cs[csLINQGettingStarted#29](../../../../csharp/programming-guide/concepts/linq/codesnippet/CSharp/basic-linq-query-operations_7.cs)]  
   
  詳細については、「[group 句](../../../../csharp/language-reference/keywords/group-clause.md)」を参照してください。  
   
 ## 結合  
  結合操作は、データ ソースで明示的にモデル化されていないシーケンス間に関連付けを作成します。  たとえば、場所が同じであるすべての顧客と販売業者を検索するには、結合を実行できます。  [!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq-md.md)] では、`join` 句はデータベース テーブルを直接操作するのではなく、常にオブジェクト コレクションに対して動作します。  
   
- [!code-cs[csLINQGettingStarted#36](../../../../csharp/programming-guide/concepts/linq/codesnippet/csharp/GettingStarted/Class1.cs#36)]  
+ [!code-cs[csLINQGettingStarted#36](../../../../csharp/programming-guide/concepts/linq/codesnippet/CSharp/basic-linq-query-operations_8.cs)]  
   
  [!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq-md.md)] では、SQL ほど頻繁に `join` を使う必要はありません。これは、[!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq-md.md)] の外部キーが、オブジェクト モデルでは項目のコレクションを保持するプロパティとして表されるためです。  たとえば、`Customer` オブジェクトには `Order` オブジェクトのコレクションが含まれます。  結合を実行しなくても、ドット表記を使用して注文にアクセスできます。  
   

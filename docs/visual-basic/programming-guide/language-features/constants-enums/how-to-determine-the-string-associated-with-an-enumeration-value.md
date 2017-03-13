@@ -29,7 +29,7 @@ caps.handback.revision: 12
   
 -   <xref:System.Enum.GetNames%2A> メソッドを使用して、列挙値のメンバーに関連付けられている文字列を取得します。  この例では、列挙型 `flavorEnum` を宣言し、次に <xref:System.Enum.GetNames%2A> メソッドを使用して各メンバーに関連付けられている文字列を表示します。  
   
-     [!code-vb[VbEnumsTask#2](../../../../visual-basic/language-reference/statements/codesnippet/visualbasic/WindowsApplication1/Class2.vb#2)]  
+     [!code-vb[VbEnumsTask#2](../../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/how-to-determine-the-string-associated-with-an-enumeration-value_1.vb)]  
   
 ## 参照  
  <xref:System.Enum.GetValues%2A>   

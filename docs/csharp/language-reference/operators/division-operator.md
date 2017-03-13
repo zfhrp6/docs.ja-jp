@@ -27,7 +27,7 @@ caps.handback.revision: 21
  2 つの整数を除算したときの結果は常に整数になります。  7 の結果は、\/2 は 3 です。  7 の残りの部分を決定するのには\/3、剰余演算子を使用 \([%](../../../csharp/language-reference/operators/modulus-operator.md)\)。  商を有理数または小数として得るには、非除数または除数を `float` 型または `double` 型にします。  次の例のように、小数点の右側にある数字を入れて配当金または除数としては、10 進数を表す場合は、暗黙的に型を割り当てることができます。  
   
 ## 使用例  
- [!code-cs[csRefOperators#42](../../../csharp/language-reference/operators/codesnippet/csharp/csrefOperators/csrefOperators.cs#42)]  
+ [!code-cs[csRefOperators#42](../../../csharp/language-reference/operators/codesnippet/CSharp/division-operator_1.cs)]  
   
 ## 参照  
  [C\# リファレンス](../../../csharp/language-reference/index.md)   

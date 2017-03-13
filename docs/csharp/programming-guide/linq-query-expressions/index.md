@@ -9,7 +9,7 @@ caps.handback.revision: 21
   
  完全なクエリ操作の例を次に示します。  完全な操作には、データ ソースの作成、クエリ式の定義、および `foreach` ステートメントでのクエリの実行が含まれます。  
   
- [!code-cs[csProgGuideLINQ#11](../../../csharp/programming-guide/arrays/codesnippet/csharp/csLINQProgRef/csrefLINQHowTos.cs#11)]  
+ [!code-cs[csProgGuideLINQ#11](../../../csharp/programming-guide/arrays/codesnippet/CSharp/index_1.cs)]  
   
  C\# の [!INCLUDE[vbteclinq](../../../csharp/includes/vbteclinq-md.md)] の基本的な事項の詳細については、「[Getting Started with LINQ in C\#](../../../csharp/programming-guide/concepts/linq/getting-started-with-linq.md)」を参照してください。  
   

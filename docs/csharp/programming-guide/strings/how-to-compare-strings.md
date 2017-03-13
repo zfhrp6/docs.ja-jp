@@ -29,17 +29,17 @@ caps.handback.revision: 23
 ## 使用例  
  ユーザーのコンピューターのロケールに基づき値が変更される文字列を正確に比較する方法を、次の例に示します。  また、C\# の*文字列インターン*機能も示します。  プログラムで 2 つ以上の同じ文字列変数を宣言すると、コンパイラはそれらをすべて同じ場所に保管します。  <xref:System.Object.ReferenceEquals%2A> メソッドを呼び出すことで、2 つの文字列がメモリ内の同じオブジェクトを実際に参照しているか確認できます。  例に示されているように、インターンを避けるために <xref:System.String.Copy%2A?displayProperty=fullName> メソッドを使用してください。  
   
- [!code-cs[csProgGuideStrings#11](../../../csharp/programming-guide/strings/codesnippet/csharp/CSRefStrings/Strings.cs#11)]  
+ [!code-cs[csProgGuideStrings#11](../../../csharp/programming-guide/strings/codesnippet/CSharp/how-to-compare-strings_1.cs)]  
   
 ## 使用例  
  <xref:System.StringComparison> 列挙体を受け取る <xref:System.String?displayProperty=fullName> メソッドを使用して文字列を比較する方法 \(推奨されている方法\) を、次の例に示します。  ここでは、<xref:System.String.CompareTo%2A?displayProperty=fullName> インスタンス メソッドは使用しません。これは、オーバーロードが <xref:System.StringComparison> を受け取らないためです。  
   
- [!code-cs[csProgGuideStrings#31](../../../csharp/programming-guide/strings/codesnippet/csharp/CSRefStrings/Strings.cs#31)]  
+ [!code-cs[csProgGuideStrings#31](../../../csharp/programming-guide/strings/codesnippet/CSharp/how-to-compare-strings_2.cs)]  
   
 ## 使用例  
  <xref:System.StringComparer?displayProperty=fullName> パラメーターを受け取る静的 <xref:System.Array> メソッドを使用したカルチャ依存の方法で、配列内の文字列を並べ替える方法および検索する方法を、次の例に示します。  
   
- [!code-cs[csProgGuideStrings#32](../../../csharp/programming-guide/strings/codesnippet/csharp/CSRefStrings/Strings.cs#32)]  
+ [!code-cs[csProgGuideStrings#32](../../../csharp/programming-guide/strings/codesnippet/CSharp/how-to-compare-strings_3.cs)]  
   
  <xref:System.Collections.Hashtable?displayProperty=fullName>、<xref:System.Collections.Generic.Dictionary%602?displayProperty=fullName>、<xref:System.Collections.Generic.List%601?displayProperty=fullName> などのコレクション クラスには、要素またはキーの型が `string` の場合に <xref:System.StringComparer?displayProperty=fullName> パラメーターを受け取るコンストラクターがあります。  通常は、これらのコンストラクターをできるだけ使用し、`Ordinal` または `OrdinalIgnoreCase` を指定する必要があります。  
   

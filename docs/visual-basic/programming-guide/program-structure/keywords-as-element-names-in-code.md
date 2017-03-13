@@ -26,7 +26,7 @@ caps.handback.revision: 11
 
 変数、クラス、メンバーなどのプログラム要素には、予約キーワードと同じ名前を付けることができます。  たとえば、`Loop` という名前の変数を作成できます。  ただし、予約された `Loop` キーワードと同じ名前を持つ別の `Loop` を指すには、次の例に示すように、先頭に完全な修飾文字列を付けるか、角かっこ \(`[ ]`\) で囲む必要があります。  
   
- [!code-vb[VbVbcnConventions#8](../../../visual-basic/programming-guide/language-features/codesnippet/visualbasic/keywords-as-element-name_1.vb)]  
+ [!code-vb[VbVbcnConventions#8](../../../visual-basic/programming-guide/language-features/codesnippet/VisualBasic/keywords-as-element-names-in-code_1.vb)]  
   
  このどちらも行わない場合、次の例に示すように、Visual Basic では組み込みの `Loop` キーワードを使用していると想定し、エラーを生成します。  
   

@@ -71,28 +71,28 @@ caps.handback.revision: 30
   
 3.  `ComClass1` に次の定数を追加します。  これにより、COM オブジェクトに必要な グローバル一意識別子 \(GUID\) 定数が格納されます。  
   
-     [!code-vb[VbVbalrInterop#2](../../../visual-basic/programming-guide/com-interop/codesnippet/visualbasic/vbvbalrinterop/Class1.vb#2)]  
+     [!code-vb[VbVbalrInterop#2](../../../visual-basic/programming-guide/com-interop/codesnippet/VisualBasic/walkthrough-creating-com-objects_1.vb)]  
   
 4.  **\[ツール\]** メニューの **\[GUID の作成\]** をクリックします。  **\[GUID の作成\]** ダイアログ ボックスで、**\[レジストリ形式\]** をクリックし、**\[コピー\]** をクリックします。  **\[終了\]** をクリックします。  
   
 5.  `ClassId` の空白の文字列を GUID で置き換え、前後にある中かっこを削除します。  たとえば、Guidgen によって提供された GUID が `"{2C8B0AEE-02C9-486e-B809-C780A11530FE}"` である場合、コードは次のようになります。  
   
-     [!code-vb[VbVbalrInterop#3](../../../visual-basic/programming-guide/com-interop/codesnippet/visualbasic/vbvbalrinterop/Class1.vb#3)]  
+     [!code-vb[VbVbalrInterop#3](../../../visual-basic/programming-guide/com-interop/codesnippet/VisualBasic/walkthrough-creating-com-objects_2.vb)]  
   
 6.  次の例のように、`InterfaceId` 定数と `EventsId` 定数に対してこれまでの手順を繰り返します。  
   
-     [!code-vb[VbVbalrInterop#4](../../../visual-basic/programming-guide/com-interop/codesnippet/visualbasic/vbvbalrinterop/Class1.vb#4)]  
+     [!code-vb[VbVbalrInterop#4](../../../visual-basic/programming-guide/com-interop/codesnippet/VisualBasic/walkthrough-creating-com-objects_3.vb)]  
   
     > [!NOTE]
     >  COM コンポーネントが他の COM コンポーネントと競合しないよう、GUID が新しく、一意であることを確認する必要があります。  
   
 7.  `ComClass` 属性を `ComClass1` に追加して、クラス ID、インターフェイス ID、およびイベント ID のグローバル一意識別子 \(GUID: global unique identifier\) を指定します。次に例を示します。  
   
-     [!code-vb[VbVbalrInterop#5](../../../visual-basic/programming-guide/com-interop/codesnippet/visualbasic/vbvbalrinterop/Class1.vb#5)]  
+     [!code-vb[VbVbalrInterop#5](../../../visual-basic/programming-guide/com-interop/codesnippet/VisualBasic/walkthrough-creating-com-objects_4.vb)]  
   
 8.  COM クラスにはパラメーターなしの `Public Sub New()` コンストラクターを指定する必要があります。指定しなかった場合、クラスが正しく登録されません。  パラメーターなしのコンストラクターをクラスに追加します。  
   
-     [!code-vb[VbVbalrInterop#6](../../../visual-basic/programming-guide/com-interop/codesnippet/visualbasic/vbvbalrinterop/Class1.vb#6)]  
+     [!code-vb[VbVbalrInterop#6](../../../visual-basic/programming-guide/com-interop/codesnippet/VisualBasic/walkthrough-creating-com-objects_5.vb)]  
   
 9. プロパティ、メソッド、およびイベントをクラスに追加して、最後に `End Class` ステートメントを記述します。  **\[ビルド\]** メニューの **\[ソリューションのビルド\]** をクリックします。  [!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] によってアセンブリが作成され、COM オブジェクトがオペレーティング システムに登録されます。  
   

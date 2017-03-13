@@ -81,7 +81,7 @@ caps.handback.revision: 6
   
      次のコードを `Load` イベントに追加します。  このコードは、データ コンテキストのプロパティとして公開されるテーブルを照会し、結果の最小値と最大値を求めます。  この例では、`Aggregate` 句を使用して単一の結果を照会し、`Group By` 句を使用してグループ化された結果の平均を示します。  
   
-     [!code-vb[VbLINQToSQLHowTos#14](../../../../visual-basic/programming-guide/language-features/linq/codesnippet/visualbasic/StoredProcedureHowTo/Form7.vb#14)]  
+     [!code-vb[VbLINQToSQLHowTos#14](../../../../visual-basic/programming-guide/language-features/linq/codesnippet/VisualBasic/how-to-find-the-minimum-or-maximum-value-in-a-query-result_1.vb)]  
   
 4.  F5 キーを押してプロジェクトを実行し、結果を確認します。  
   

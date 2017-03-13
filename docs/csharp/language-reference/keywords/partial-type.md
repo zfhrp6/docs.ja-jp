@@ -23,11 +23,11 @@ caps.handback.revision: 24
   
  次に File1.cs の部分型定義を示します。  
   
- [!code-cs[csrefKeywordsContextual#3](../../../csharp/language-reference/keywords/codesnippet/csharp/partial-type_1.cs)]  
+ [!code-cs[csrefKeywordsContextual#3](../../../csharp/language-reference/keywords/codesnippet/CSharp/partial-type_1.cs)]  
   
  次に File2.cs での宣言を示します。  
   
- [!code-cs[csrefKeywordsContextual#4](../../../csharp/language-reference/keywords/codesnippet/csharp/partial-type_2.cs)]  
+ [!code-cs[csrefKeywordsContextual#4](../../../csharp/language-reference/keywords/codesnippet/CSharp/partial-type_2.cs)]  
   
 ## 解説  
  クラス型、構造体型、またはインターフェイス型を複数のファイルに分割する操作は、大規模なプロジェクトや、[Windows Forms Designer](http://msdn.microsoft.com/ja-jp/3c3d61f8-f36c-4d41-b9c3-398376fabb15) で自動生成されるコードを処理する場合に役立ちます。  部分型には、[部分メソッド](../../../csharp/language-reference/keywords/partial-method.md) が含まれる場合があります。  詳細については、「[部分クラスと部分メソッド](../../../csharp/programming-guide/classes-and-structs/partial-classes-and-methods.md)」を参照してください。  

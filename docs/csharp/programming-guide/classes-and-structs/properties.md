@@ -24,7 +24,7 @@ caps.handback.revision: 38
  この例では、`TimePeriod` クラスに期間が格納されています。  このクラスには、内部的に秒単位で期間が格納されていますが、時間単位で期間を指定できる `Hours` という名前のプロパティも用意されています。  `Hours` プロパティのアクセサーでは、時間と秒の変換が実行されます。  
   
 ## 使用例  
- [!code-cs[csProgGuideProperties#1](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/properties_1.cs)]  
+ [!code-cs[csProgGuideProperties#1](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/properties_1.cs)]  
   
 ## 式の本文の定義  
  一般的には、単純に式の結果をすぐに返すプロパティを指定します。  `=>` を使用してこれらのプロパティを定義するための構文ショートカットがあります。  

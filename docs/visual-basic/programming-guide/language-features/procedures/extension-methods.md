@@ -36,17 +36,17 @@ caps.handback.revision: 41
 ### 説明  
  <xref:System.String> データ型の `Print` 拡張を定義する例を次に示します。  このメソッドでは、`Console.WriteLine` を使用して文字列を表示します。  `Print` メソッドのパラメーター `aString` では、このメソッドによって <xref:System.String> クラスを拡張することを指定します。  
   
- [!code-vb[VbVbalrExtensionMethods#1](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/ConsoleApplication1/StringExtensions.vb#1)]  
+ [!code-vb[VbVbalrExtensionMethods#1](./codesnippet/VisualBasic/extension-methods_1.vb)]  
   
  拡張メソッド定義に拡張属性 `<Extension()>` を設定している点に注目してください。  メソッドが定義されているモジュールに拡張属性を設定するかどうかは任意ですが、それぞれの拡張メソッドにはこの設定が必要です。  拡張属性にアクセスするためには、<xref:System.Runtime.CompilerServices> をインポートする必要があります。  
   
  拡張メソッドはモジュール内でのみ宣言できます。  通常、拡張メソッドを定義するモジュールと拡張メソッドを呼び出すモジュールは、別々になります。  必要に応じて、拡張メソッドが含まれているモジュールをインポートすることによって、そのモジュールをスコープの中に入れます。  `Print` が含まれているモジュールをスコープの中に入れたら、引数を使用しない通常のインスタンス メソッド \(`ToUpper` など\) の場合と同じ要領でそのメソッドを呼び出すことができます。  
   
- [!code-vb[VbVbalrExtensionMethods#2](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/ConsoleApplication1/Class1.vb#2)]  
+ [!code-vb[VbVbalrExtensionMethods#2](./codesnippet/VisualBasic/extension-methods_2.vb)]  
   
  次に取り上げる `PrintAndPunctuate` の例も <xref:System.String> の拡張ですが、今回は 2 つのパラメーターを定義します。  最初のパラメーター `aString` では、この拡張メソッドによって <xref:System.String> を拡張することを指定します。  2 番目のパラメーター `punc` では、メソッドの呼び出し時に引数として渡す区切り記号の文字列を指定します。  このメソッドでは、文字列の後にその区切り記号を表示します。  
   
- [!code-vb[VbVbalrExtensionMethods#3](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/ConsoleApplication1/Class2.vb#3)]  
+ [!code-vb[VbVbalrExtensionMethods#3](./codesnippet/VisualBasic/extension-methods_3.vb)]  
   
  このメソッドを呼び出すときには、`punc` の引数として `example.PrintAndPunctuate(".")` を渡します。  
   
@@ -120,7 +120,7 @@ End Module
   
  拡張メソッドは遅延バインディングでは考慮されません。  次の例では、`anObject.PrintMe()` ステートメントで <xref:System.MissingMemberException> 例外が発生します。これは、2 番目の `PrintMe` 拡張メソッド定義を削除した場合に発生する例外と同じです。  
   
- [!code-vb[VbVbalrExtensionMethods#9](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/ConsoleApplication1/Class6.vb#9)]  
+ [!code-vb[VbVbalrExtensionMethods#9](./codesnippet/VisualBasic/extension-methods_4.vb)]  
   
 ## ベスト プラクティス  
  拡張メソッドは、既存の型を拡張するための便利で強力な手段になります。  それでも、適切に使用するにはいくつかの注意点があります。  ここで取り上げる注意点は、主にクラス ライブラリを作成するときに当てはまりますが、拡張メソッドを使用するアプリケーションであればどんなアプリケーションにも影響する可能性があります。  
@@ -140,23 +140,23 @@ End Module
 ## 拡張メソッド、インスタンス メソッド、およびプロパティ  
  スコープ内のインスタンス メソッドが、呼び出し元ステートメントの引数と互換性があるシグネチャを持っている場合、拡張メソッドよりもそのインスタンス メソッドの方が優先的に使用されます。  この場合、より適合する拡張メソッドがあっても、インスタンス メソッドの方が優先されます。  次の例では、`ExampleClass` に、`Integer` 型のパラメーターを 1 つ持つ `ExampleMethod` という名前のインスタンス メソッドが含まれています。  拡張メソッド `ExampleMethod` は `ExampleClass` を拡張し、`Long` 型のパラメーターを 1 つ持ちます。  
   
- [!code-vb[VbVbalrExtensionMethods#4](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/ConsoleApplication1/Class4.vb#4)]  
+ [!code-vb[VbVbalrExtensionMethods#4](./codesnippet/VisualBasic/extension-methods_5.vb)]  
   
  次のコードでは、`ExampleMethod` の最初の呼び出しで、拡張メソッドが呼び出されます。これは、`arg1` が `Long` であり、拡張メソッドの `Long` パラメーターとのみ互換性があるためです。  `ExampleMethod` の 2 回目の呼び出しでは、`Integer` 引数 `arg2` があるため、インスタンス メソッドが呼び出されます。  
   
- [!code-vb[VbVbalrExtensionMethods#5](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/ConsoleApplication1/Class4.vb#5)]  
+ [!code-vb[VbVbalrExtensionMethods#5](./codesnippet/VisualBasic/extension-methods_6.vb)]  
   
  次は、2 つのメソッド間でパラメーターのデータ型が逆になっています。  
   
- [!code-vb[VbVbalrExtensionMethods#6](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/ConsoleApplication1/Class5.vb#6)]  
+ [!code-vb[VbVbalrExtensionMethods#6](./codesnippet/VisualBasic/extension-methods_7.vb)]  
   
  今回は、`Main` 内のコードはどちらの場合でもインスタンス メソッドを呼び出します。  これは、`arg1` と `arg2` は `Long` へ拡大変換され、どちらの場合でも拡張メソッドよりインスタンス メソッドの方が優先されるためです。  
   
- [!code-vb[VbVbalrExtensionMethods#7](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/ConsoleApplication1/Class5.vb#7)]  
+ [!code-vb[VbVbalrExtensionMethods#7](./codesnippet/VisualBasic/extension-methods_8.vb)]  
   
  つまり、既存のインスタンス メソッドの代わりに拡張メソッドを使用することはできません。  ただし、拡張メソッドとインスタンス メソッドの名前が同じでもシグネチャが競合しない場合は、両方のメソッドを使用できます。  たとえば、クラス `ExampleClass` に引数を使用しない `ExampleMethod` という名前のメソッドがあるとします。拡張メソッドの名前がそのメソッドと同じでもシグネチャが違えば、その拡張メソッドを使用することは可能です。次に例を示します。  
   
- [!code-vb[VbVbalrExtensionMethods#8](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/ConsoleApplication1/Module3.vb#8)]  
+ [!code-vb[VbVbalrExtensionMethods#8](./codesnippet/VisualBasic/extension-methods_9.vb)]  
   
  このコードの出力は次のようになります。  
   

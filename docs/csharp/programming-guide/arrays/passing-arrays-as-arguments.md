@@ -21,15 +21,15 @@ caps.handback.revision: 21
 ## 引数としての 1 次元配列の受け渡し  
  初期化された 1 次元配列をメソッドに渡すことができます。  たとえば、次のステートメントは配列を印刷メソッドに渡します。  
   
- [!code-cs[csProgGuideArrays#34](../../../csharp/programming-guide/arrays/codesnippet/csharp/passing-arrays-as-argume_1.cs)]  
+ [!code-cs[csProgGuideArrays#34](../../../csharp/programming-guide/arrays/codesnippet/CSharp/passing-arrays-as-arguments_1.cs)]  
   
  印刷メソッドの部分的な実装を次のコードに示します。  
   
- [!code-cs[csProgGuideArrays#33](../../../csharp/programming-guide/arrays/codesnippet/csharp/passing-arrays-as-argume_2.cs)]  
+ [!code-cs[csProgGuideArrays#33](../../../csharp/programming-guide/arrays/codesnippet/CSharp/passing-arrays-as-arguments_2.cs)]  
   
  次の例に示すように、新しい配列の初期化と受け渡しを 1 ステップで行うことができます。  
   
- [!code-cs[CsProgGuideArrays#35](../../../csharp/programming-guide/arrays/codesnippet/csharp/passing-arrays-as-argume_3.cs)]  
+ [!code-cs[CsProgGuideArrays#35](../../../csharp/programming-guide/arrays/codesnippet/CSharp/passing-arrays-as-arguments_3.cs)]  
   
 ## 例  
   
@@ -37,20 +37,20 @@ caps.handback.revision: 21
  次の例では、文字列の配列は初期化され、文字列の `PrintArray` メソッドに引数として渡されます。  メソッドは配列の要素を表示します。  次に、配列引数を値渡しで送信しても、配列要素の変更の妨げにはならないことを示すために、`ChangeArray` メソッドと `ChangeArrayElement` メソッドが呼び出されています。  
   
 ### コード  
- [!code-cs[csProgGuideArrays#30](../../../csharp/programming-guide/arrays/codesnippet/csharp/passing-arrays-as-argume_4.cs)]  
+ [!code-cs[csProgGuideArrays#30](../../../csharp/programming-guide/arrays/codesnippet/CSharp/passing-arrays-as-arguments_4.cs)]  
   
 ## 引数としての多次元配列の受け渡し  
  初期化された多次元配列は、1 次元配列を渡す場合と同じ方法でメソッドに渡します。  
   
- [!code-cs[csProgGuideArrays#41](../../../csharp/programming-guide/arrays/codesnippet/csharp/passing-arrays-as-argume_5.cs)]  
+ [!code-cs[csProgGuideArrays#41](../../../csharp/programming-guide/arrays/codesnippet/CSharp/passing-arrays-as-arguments_5.cs)]  
   
  2 次元配列を引数として受け入れる印刷メソッドの部分宣言を次のコードに示します。  
   
- [!code-cs[csProgGuideArrays#36](../../../csharp/programming-guide/arrays/codesnippet/csharp/passing-arrays-as-argume_6.cs)]  
+ [!code-cs[csProgGuideArrays#36](../../../csharp/programming-guide/arrays/codesnippet/CSharp/passing-arrays-as-arguments_6.cs)]  
   
  次の例に示すように、新しい配列の初期化と受け渡しを 1 ステップで行うことができます。  
   
- [!code-cs[csProgGuideArrays#32](../../../csharp/programming-guide/arrays/codesnippet/csharp/passing-arrays-as-argume_7.cs)]  
+ [!code-cs[csProgGuideArrays#32](../../../csharp/programming-guide/arrays/codesnippet/CSharp/passing-arrays-as-arguments_7.cs)]  
   
 ## 例  
   
@@ -58,7 +58,7 @@ caps.handback.revision: 21
  次の例では、整数の 2 次元配列を初期化し、`Print2DArray` メソッドに渡します。  メソッドは配列の要素を表示します。  
   
 ### コード  
- [!code-cs[csProgGuideArrays#31](../../../csharp/programming-guide/arrays/codesnippet/csharp/passing-arrays-as-argume_8.cs)]  
+ [!code-cs[csProgGuideArrays#31](../../../csharp/programming-guide/arrays/codesnippet/CSharp/passing-arrays-as-arguments_8.cs)]  
   
 ## 参照  
  [C\# プログラミング ガイド](../../../csharp/programming-guide/index.md)   

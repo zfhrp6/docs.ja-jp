@@ -46,7 +46,7 @@ caps.handback.revision: 11
   
  たとえば、次のコードは、1 つの関数、1 つのプロパティ、および 1 つのイベントを持つインターフェイスを定義します。  
   
- [!code-vb[VbVbalrOOP#17](../../../../visual-basic/misc/codesnippet/visualbasic/VbVbalrOOP/OOP.vb#17)]  
+ [!code-vb[VbVbalrOOP#17](../../../../visual-basic/misc/codesnippet/VisualBasic/index_1.vb)]  
   
 ## インターフェイスの実装  
  [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] では、予約語 `Implements` が 2 つの方法で使用されます。  `Implements` ステートメントは、クラスまたは構造体がインターフェイスを実装することを示します。  `Implements` キーワードは、クラス メンバーまたは構造体メンバーが特定のインターフェイス メンバーを実装することを示します。  
@@ -59,7 +59,7 @@ caps.handback.revision: 11
   
  たとえば、次のコードは、インターフェイスのメソッドを実装する `Sub1` という名前のサブルーチンを宣言する方法を示しています。  
   
- [!code-vb[VbVbalrOOP#69](../../../../visual-basic/misc/codesnippet/visualbasic/VbVbalrOOP/OOP.vb#69)]  
+ [!code-vb[VbVbalrOOP#69](../../../../visual-basic/misc/codesnippet/VisualBasic/index_2.vb)]  
   
  実装するメンバーのパラメーターの型と戻り値の型は、インターフェイスのインターフェイス プロパティまたはメンバー宣言と一致する必要があります。  インターフェイスの要素を実装する最も一般的な方法は、前の例で示されているように、インターフェイスと同じ名前を持つメンバーを使用する方法です。  
   
@@ -67,7 +67,7 @@ caps.handback.revision: 11
   
  `Implements` を使用すると、次の例のように、インターフェイスで定義されている複数のメソッドを実装する 1 つのメソッドを記述することもできます。  
   
- [!code-vb[VbVbalrOOP#70](../../../../visual-basic/misc/codesnippet/visualbasic/VbVbalrOOP/OOP.vb#70)]  
+ [!code-vb[VbVbalrOOP#70](../../../../visual-basic/misc/codesnippet/VisualBasic/index_3.vb)]  
   
  インターフェイス メンバーを実装するには、プライベート メンバーを使用することができます。  プライベート メンバーでインターフェイスのメンバーを実装すると、そのメンバーは、クラスのオブジェクト変数で直接利用できない場合でも、インターフェイスを通じて利用できるようになります。  
   
@@ -76,15 +76,15 @@ caps.handback.revision: 11
   
  次の例では、2 つのインターフェイスが定義されます。  2 番目のインターフェイス `Interface2` は `Interface1` を継承し、追加のプロパティとメソッドを定義します。  
   
- [!code-vb[VbVbalrOOP#39](../../../../visual-basic/misc/codesnippet/visualbasic/VbVbalrOOP/OOP.vb#39)]  
+ [!code-vb[VbVbalrOOP#39](../../../../visual-basic/misc/codesnippet/VisualBasic/index_4.vb)]  
   
  次の例は、前の例で定義されたインターフェイスである `Interface1` を実装します。  
   
- [!code-vb[VbVbalrOOP#40](../../../../visual-basic/misc/codesnippet/visualbasic/VbVbalrOOP/OOP.vb#40)]  
+ [!code-vb[VbVbalrOOP#40](../../../../visual-basic/misc/codesnippet/VisualBasic/index_5.vb)]  
   
  最後の例は、`Interface1` から継承されたメソッドを含めて、`Interface2` を実装します。  
   
- [!code-vb[VbVbalrOOP#41](../../../../visual-basic/misc/codesnippet/visualbasic/VbVbalrOOP/OOP.vb#41)]  
+ [!code-vb[VbVbalrOOP#41](../../../../visual-basic/misc/codesnippet/VisualBasic/index_6.vb)]  
   
  readwrite プロパティを使用して、readonly プロパティを実装できます \(つまり、実装するクラスで readonly を宣言する必要はありません\)。  インターフェイスを実装する場合、少なくともインターフェイスが宣言しているメンバーを実装することになりますが、プロパティを書き込み可能にするなど、追加の機能を提供することもできます。  
   

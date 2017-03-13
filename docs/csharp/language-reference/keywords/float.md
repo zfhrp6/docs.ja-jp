@@ -58,7 +58,7 @@ float x = 3.5F;
 ## 使用例  
  次の例では、[int](../../../csharp/language-reference/keywords/int.md)、[short](../../../csharp/language-reference/keywords/short.md)、および `float` は数式で使用されているため、`float` 型を結果として返します。  `float` は、<xref:System.Single?displayProperty=fullName> 型のエイリアスです。この式には [double](../../../csharp/language-reference/keywords/double.md) が存在しない点に注意してください。  
   
- [!code-cs[csrefKeywordsTypes#13](../../../csharp/language-reference/keywords/codesnippet/csharp/float_1.cs)]  
+ [!code-cs[csrefKeywordsTypes#13](../../../csharp/language-reference/keywords/codesnippet/CSharp/float_1.cs)]  
   
 ## C\# 言語仕様  
  [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec-md.md)]  

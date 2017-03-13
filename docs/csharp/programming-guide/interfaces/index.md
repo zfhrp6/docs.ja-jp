@@ -23,7 +23,7 @@ caps.handback.revision: 45
   
  インターフェイスを定義するには、次の例に示すように、[interface](../../../csharp/language-reference/keywords/interface.md) キーワードを使用します。  
   
- [!code-cs[csProgGuideInheritance#47](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/index_1.cs)]  
+ [!code-cs[csProgGuideInheritance#47](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/index_1.cs)]  
   
  <xref:System.IEquatable%601> インターフェイスを実装するすべてのクラスまたは構造体は、インターフェイスで指定された署名に一致する <xref:System.IEquatable%601.Equals%2A> メソッドの定義を含む必要があります。  したがって、`IEquatable<T>` を実装するクラスが `Equals` メソッドを含むと想定したうえで、これを使用してクラスの 1 つのインスタンスが同じクラスの別のインスタンスと等しいかどうかを判定できます。  
   
@@ -39,7 +39,7 @@ caps.handback.revision: 45
   
  IEquatable\<T\> インターフェイスの実装例を次に示します。  実装するクラスの `Car` は、<xref:System.IEquatable%601.Equals%2A> メソッドの実装を提供する必要があります。  
   
- [!code-cs[csProgGuideInheritance#48](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/index_2.cs)]  
+ [!code-cs[csProgGuideInheritance#48](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/index_2.cs)]  
   
  クラスのプロパティとインデクサーでは、インターフェイスに定義されているプロパティまたはインデクサーの追加のアクセサーを定義できます。  たとえば、インターフェイスで [get](../../../csharp/language-reference/keywords/get.md) アクセサーを持つプロパティを宣言するとします。  このインターフェイスを実装するクラスでは、`get` アクセサーと [set](../../../csharp/language-reference/keywords/set.md) アクセサーの両方を持つ同じプロパティを宣言できます。  ただし、プロパティまたはインデクサーで明示的な実装を使用する場合は、これらのアクセサーが一致する必要があります。  明示的な実装の詳細については、「[明示的なインターフェイスの実装](../../../csharp/programming-guide/interfaces/explicit-interface-implementation.md)」および「[インターフェイスのプロパティ](../../../csharp/programming-guide/classes-and-structs/interface-properties.md)」を参照してください。  
   

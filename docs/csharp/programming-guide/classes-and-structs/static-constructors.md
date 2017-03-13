@@ -19,7 +19,7 @@ caps.handback.revision: 23
 # 静的コンストラクター (C# プログラミング ガイド)
 静的コンストラクターは、[静的](../../../csharp/language-reference/keywords/static.md)データの初期化、または 1 回だけ実行する必要がある特定の処理の実行に使用されます。  静的コンストラクターは、最初のインスタンスを作成する前、または静的メンバーが参照される前に自動的に呼び出されます。  
   
- [!code-cs[csProgGuideObjects#14](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/static-constructors_1.cs)]  
+ [!code-cs[csProgGuideObjects#14](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/static-constructors_1.cs)]  
   
  静的コンストラクターには、次のような特徴があります。  
   
@@ -40,7 +40,7 @@ caps.handback.revision: 23
 ## 使用例  
  この例では、`Bus` クラスには静的コンストラクターがあります。  `Bus` の最初のインスタンスを作成すると \(`bus1`\)、クラスを初期化するために静的コンストラクターが呼び出されます。  `Bus` のインスタンスを 2 つ作成しても、静的コンストラクターは 1 回だけ、インスタンス コンストラクターの前に実行されることが、次のサンプル出力からわかります。  
   
- [!code-cs[csProgGuideObjects#15](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/static-constructors_2.cs)]  
+ [!code-cs[csProgGuideObjects#15](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/static-constructors_2.cs)]  
   
 ## 参照  
  [C\# プログラミング ガイド](../../../csharp/programming-guide/index.md)   

@@ -28,7 +28,7 @@ caps.handback.revision: 21
   
 -   `My.Computer.FileSystem.RenameFile` メソッドを使用してファイルの名前を変更します。  この例では、`Test.txt` というファイル名を `SecondTest.txt` に変更します。  
   
-     [!code-vb[VbVbcnMyFileSystem#9](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/visualbasic/how-to-rename-a-file_1.vb)]  
+     [!code-vb[VbVbcnMyFileSystem#9](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/VisualBasic/how-to-rename-a-file_1.vb)]  
   
  このコードの例は、IntelliSense コード スニペットとしても利用できます。  コード スニペット ピッカーでは、このスニペットは **\[ファイル システム \- ドライブ、フォルダー、およびファイルの処理\]** にあります。  詳細については、「[コード スニペット](/visual-studio/ide/code-snippets)」を参照してください。  
   

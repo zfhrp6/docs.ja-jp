@@ -31,15 +31,15 @@ caps.handback.revision: 13
 ## TypeName および TypeOf…Is  
  `TypeName` 関数は文字列を返します。このため、たとえば次のコードのように、オブジェクトのクラス名を格納したり表示したりする場合に適しています。  
   
- [!code-vb[VbVbalrOOP#92](../../../../visual-basic/misc/codesnippet/visualbasic/VbVbalrOOP/OOP.vb#92)]  
+ [!code-vb[VbVbalrOOP#92](../../../../visual-basic/misc/codesnippet/VisualBasic/determining-object-type_1.vb)]  
   
  `TypeOf...Is` 演算子は、`TypeName` を使った同等の文字列比較に比べ、処理が大幅に速くなります。このため、オブジェクトの型をテストする場合に適しています。  次のコード片では、`If...Then...Else` ステートメントの中で `TypeOf...Is` が使用されています。  
   
- [!code-vb[VbVbalrOOP#93](../../../../visual-basic/misc/codesnippet/visualbasic/VbVbalrOOP/OOP.vb#93)]  
+ [!code-vb[VbVbalrOOP#93](../../../../visual-basic/misc/codesnippet/VisualBasic/determining-object-type_2.vb)]  
   
  TypeOf...Is 演算子を使用する場合には注意が必要です。  `TypeOf...Is` 演算子は、オブジェクトが特定の型である場合、または特定の型から派生してる場合に `True` を返します。  オブジェクトは、[!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] のほとんどの作業で使用されます。中には、文字列や整数のように、通常はオブジェクトと見なされない要素もあります。  これらのオブジェクトは、<xref:System.Object> から派生し、メソッドを継承しています。  `Integer` が渡されて `Object` で評価されると、`TypeOf...Is` 演算子は `True` を返します。  次の例では、パラメーター `InParam` は `Object` と `Integer` の両方であると報告されます。  
   
- [!code-vb[VbVbalrOOP#94](../../../../visual-basic/misc/codesnippet/visualbasic/VbVbalrOOP/OOP.vb#94)]  
+ [!code-vb[VbVbalrOOP#94](../../../../visual-basic/misc/codesnippet/VisualBasic/determining-object-type_3.vb)]  
   
  次の例は、`TypeOf...Is` と `TypeName` の両方を使って、引数 `Ctrl` で渡されるオブジェクトの型を調べます。  `TestObject` プロシージャは、3 種類のコントロールで `ShowType` を呼び出します。  
   
@@ -51,7 +51,7 @@ caps.handback.revision: 13
   
 3.  フォームに次のコードを追加します。  
   
-     [!code-vb[VbVbalrOOP#95](../../../../visual-basic/misc/codesnippet/visualbasic/VbVbalrOOP/OOP.vb#95)]  
+     [!code-vb[VbVbalrOOP#95](../../../../visual-basic/misc/codesnippet/VisualBasic/determining-object-type_4.vb)]  
   
 ## 参照  
  <xref:Microsoft.VisualBasic.Information.TypeName%2A>   

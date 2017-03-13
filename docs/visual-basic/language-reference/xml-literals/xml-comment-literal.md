@@ -62,7 +62,7 @@ caps.handback.revision: 19
 ## 使用例  
  "This is a comment" というテキストを含む XML コメントを作成する例を次に示します。  
   
- [!code-vb[VbXMLSamples#9](../../../visual-basic/language-reference/operators/codesnippet/visualbasic/xml-comment-literal_1.vb)]  
+ [!code-vb[VbXMLSamples#9](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/xml-comment-literal_1.vb)]  
   
 ## 参照  
  <xref:System.Xml.Linq.XComment>   

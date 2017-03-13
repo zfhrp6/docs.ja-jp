@@ -37,7 +37,7 @@ public virtual double Area()
   
  `virtual` 修飾子は、`static`、`abstract, private`、または `override` の各修飾子と一緒には使用できません。  仮想プロパティの例を次に示します。  
   
- [!code-cs[csrefKeywordsModifiers#26](../../../csharp/language-reference/keywords/codesnippet/csharp/csrefKeywordsModifiers/csrefKeywordsModifiers.cs#26)]  
+ [!code-cs[csrefKeywordsModifiers#26](../../../csharp/language-reference/keywords/codesnippet/CSharp/virtual_1.cs)]  
   
  仮想プロパティは抽象メソッドと同様に動作しますが、宣言の構文および呼び出しの構文に相違があります。  
   
@@ -56,7 +56,7 @@ public Cylinder(double r, double h): base(r, h) {}
   
  次のプログラムはメソッドに関連付けられたオブジェクトへ `Area()` ためのメソッドの適切な実装を呼び出すことによって各図形の適切な領域を計算して表示します。  
   
- [!code-cs[csrefKeywordsModifiers#23](../../../csharp/language-reference/keywords/codesnippet/csharp/csrefKeywordsModifiers/csrefKeywordsModifiers.cs#23)]  
+ [!code-cs[csrefKeywordsModifiers#23](../../../csharp/language-reference/keywords/codesnippet/CSharp/virtual_2.cs)]  
   
 ## C\# 言語仕様  
  [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec-md.md)]  

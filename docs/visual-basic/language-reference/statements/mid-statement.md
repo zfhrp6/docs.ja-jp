@@ -68,7 +68,7 @@ Mid( _
 ## 使用例  
  `Mid` ステートメントを使って、文字列変数内の指定された文字数をある文字列の文字に置き換える例を次に示します。  
   
- [!code-vb[VbVbalrStrings#5](../../../visual-basic/language-reference/functions/codesnippet/visualbasic/mid-statement_1.vb)]  
+ [!code-vb[VbVbalrStrings#5](../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/mid-statement_1.vb)]  
   
 ## 必要条件  
  **名前空間**: [Microsoft.VisualBasic](../../../visual-basic/language-reference/runtime-library-members.md)  

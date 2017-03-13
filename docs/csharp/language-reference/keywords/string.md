@@ -103,7 +103,7 @@ Console.WriteLine(a);
  C\# での文字列の詳細については、「[文字列](../../../csharp/programming-guide/strings/index.md)」を参照してください。  
   
 ## 使用例  
- [!code-cs[csrefKeywordsTypes#17](../../../csharp/language-reference/keywords/codesnippet/csharp/string_1.cs)]  
+ [!code-cs[csrefKeywordsTypes#17](../../../csharp/language-reference/keywords/codesnippet/CSharp/string_1.cs)]  
   
 ## C\# 言語仕様  
  [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec-md.md)]  

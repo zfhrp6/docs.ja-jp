@@ -69,7 +69,7 @@ result = pattern >> amount
 ## 使用例  
  `>>` 演算子を使用して整数値の算術右シフトを実行する例を次に示します。  結果のデータ型は、シフトされる前の式と常に同じ型になります。  
   
- [!code-vb[VbVbalrOperators#14](../../../visual-basic/language-reference/operators/codesnippet/visualbasic/right-shift-operator_1.vb)]  
+ [!code-vb[VbVbalrOperators#14](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/right-shift-operator_1.vb)]  
   
  この例の結果は次のようになります。  
   
@@ -87,7 +87,7 @@ result = pattern >> amount
   
  負の値の算術シフトを実行する例を次に示します。  
   
- [!code-vb[VbVbalrOperators#55](../../../visual-basic/language-reference/operators/codesnippet/visualbasic/right-shift-operator_2.vb)]  
+ [!code-vb[VbVbalrOperators#55](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/right-shift-operator_2.vb)]  
   
  この例の結果は次のようになります。  
   

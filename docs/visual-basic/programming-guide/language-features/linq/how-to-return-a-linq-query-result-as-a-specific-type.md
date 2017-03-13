@@ -72,7 +72,7 @@ caps.handback.revision: 8
   
 3.  Form1 クラスの `End Class` ステートメントの後ろに次のコードを追加します。このコードは、このサンプルのクエリ結果を保持する `CustomerInfo` 型を作成します。  
   
-     [!code-vb[VbLINQToSQLHowTos#16](../../../../visual-basic/programming-guide/language-features/linq/codesnippet/visualbasic/StoredProcedureHowTo/Form8.vb#16)]  
+     [!code-vb[VbLINQToSQLHowTos#16](../../../../visual-basic/programming-guide/language-features/linq/codesnippet/VisualBasic/how-to-return-a-linq-query-result-as-a-specific-type_1.vb)]  
   
 4.  O\/R デザイナーにテーブルを追加すると、デザイナーによって <xref:System.Data.Linq.DataContext> オブジェクトがプロジェクトに追加されます。  このオブジェクトには、これらのテーブルにアクセスするために必要なコードで、個々のオブジェクトと各テーブルのコレクションにアクセスするためのコードが格納されます。  プロジェクトの <xref:System.Data.Linq.DataContext> オブジェクトには、.dbml ファイルの名前に基づいて名前が付けられます。  このプロジェクトの場合、<xref:System.Data.Linq.DataContext> オブジェクトの名前は `northwindDataContext` になります。  
   
@@ -80,7 +80,7 @@ caps.handback.revision: 8
   
      Form1 クラスの `Load` イベントに次のコードを追加します。このコードは、データ コンテキストのプロパティとして公開されたテーブルを照会します。  クエリの `Select` 句によって、クエリ結果の各項目の型として、匿名型の代わりに新しい `CustomerInfo` 型が作成されます。  
   
-     [!code-vb[VbLINQToSQLHowTos#15](../../../../visual-basic/programming-guide/language-features/linq/codesnippet/visualbasic/StoredProcedureHowTo/Form8.vb#15)]  
+     [!code-vb[VbLINQToSQLHowTos#15](../../../../visual-basic/programming-guide/language-features/linq/codesnippet/VisualBasic/how-to-return-a-linq-query-result-as-a-specific-type_2.vb)]  
   
 5.  F5 キーを押してプロジェクトを実行し、結果を確認します。  
   

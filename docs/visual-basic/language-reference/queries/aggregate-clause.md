@@ -61,31 +61,31 @@ Aggregate element [As type] In collection _
 |||  
 |-|-|  
 |Function|Description|  
-|`All`|コレクション内のすべての要素が、指定された条件を満たす場合は `true` を返します。それ以外の場合は `false` を返します。  例を次に示します。<br /><br /> [!code-vb[VbSimpleQuerySamples#5](../../../visual-basic/language-reference/queries/codesnippet/visualbasic/VbSimpleQuerySamples/QuerySamples1.vb#5)]|  
-|`Any`|コレクション内のいずれかの要素が、指定された条件を満たす場合は `true` を返します。それ以外の場合は `false` を返します。  例を次に示します。<br /><br /> [!code-vb[VbSimpleQuerySamples#6](../../../visual-basic/language-reference/queries/codesnippet/visualbasic/VbSimpleQuerySamples/QuerySamples1.vb#6)]|  
-|`Average`|コレクション内のすべての要素の平均を計算します。または、コレクション内のすべての要素に対して、指定された式を計算します。  例を次に示します。<br /><br /> [!code-vb[VbSimpleQuerySamples#7](../../../visual-basic/language-reference/queries/codesnippet/visualbasic/VbSimpleQuerySamples/QuerySamples1.vb#7)]|  
-|`Count`|コレクション内の要素の数をカウントします。  オプションの `Boolean` 式を指定することで、コレクション内で条件を満たしている要素の数だけをカウントできます。  例を次に示します。<br /><br /> [!code-vb[VbSimpleQuerySamples#8](../../../visual-basic/language-reference/queries/codesnippet/visualbasic/VbSimpleQuerySamples/QuerySamples1.vb#8)]|  
+|`All`|コレクション内のすべての要素が、指定された条件を満たす場合は `true` を返します。それ以外の場合は `false` を返します。  例を次に示します。<br /><br /> [!code-vb[VbSimpleQuerySamples#5](../../../visual-basic/language-reference/queries/codesnippet/VisualBasic/aggregate-clause_1.vb)]|  
+|`Any`|コレクション内のいずれかの要素が、指定された条件を満たす場合は `true` を返します。それ以外の場合は `false` を返します。  例を次に示します。<br /><br /> [!code-vb[VbSimpleQuerySamples#6](../../../visual-basic/language-reference/queries/codesnippet/VisualBasic/aggregate-clause_2.vb)]|  
+|`Average`|コレクション内のすべての要素の平均を計算します。または、コレクション内のすべての要素に対して、指定された式を計算します。  例を次に示します。<br /><br /> [!code-vb[VbSimpleQuerySamples#7](../../../visual-basic/language-reference/queries/codesnippet/VisualBasic/aggregate-clause_3.vb)]|  
+|`Count`|コレクション内の要素の数をカウントします。  オプションの `Boolean` 式を指定することで、コレクション内で条件を満たしている要素の数だけをカウントできます。  例を次に示します。<br /><br /> [!code-vb[VbSimpleQuerySamples#8](../../../visual-basic/language-reference/queries/codesnippet/VisualBasic/aggregate-clause_4.vb)]|  
 |`Group`|`Group By` 句または `Group Join` 句の結果としてグループ化されているクエリ結果を参照します。  `Group` 関数は、`Group By` 句または `Group Join` 句の `Into` 句でのみ有効です。  使用例を含む詳細については、「[Group By 句](../../../visual-basic/language-reference/queries/group-by-clause.md)」および「[Group Join Clause](../../../visual-basic/language-reference/queries/group-join-clause.md)」を参照してください。|  
 |`LongCount`|コレクション内の要素の数をカウントします。  オプションの `Boolean` 式を指定することで、コレクション内で条件を満たしている要素の数だけをカウントできます。  結果を `Long` として返します。  例については、`Count` 集計関数を参照してください。|  
-|`Max`|コレクションの最大値を計算します。または、コレクション内のすべての要素に対して、指定された式を計算します。  例を次に示します。<br /><br /> [!code-vb[VbSimpleQuerySamples#9](../../../visual-basic/language-reference/queries/codesnippet/visualbasic/VbSimpleQuerySamples/QuerySamples1.vb#9)]|  
-|`Min`|コレクションの最小値を計算します。または、コレクション内のすべての要素に対して、指定された式を計算します。  例を次に示します。<br /><br /> [!code-vb[VbSimpleQuerySamples#10](../../../visual-basic/language-reference/queries/codesnippet/visualbasic/VbSimpleQuerySamples/QuerySamples1.vb#10)]|  
-|`Sum`|コレクション内のすべての要素の合計を計算します。または、コレクション内のすべての要素に対して、指定された式を計算します。  例を次に示します。<br /><br /> [!code-vb[VbSimpleQuerySamples#15](../../../visual-basic/language-reference/queries/codesnippet/visualbasic/VbSimpleQuerySamples/QuerySamples1.vb#15)]|  
+|`Max`|コレクションの最大値を計算します。または、コレクション内のすべての要素に対して、指定された式を計算します。  例を次に示します。<br /><br /> [!code-vb[VbSimpleQuerySamples#9](../../../visual-basic/language-reference/queries/codesnippet/VisualBasic/aggregate-clause_5.vb)]|  
+|`Min`|コレクションの最小値を計算します。または、コレクション内のすべての要素に対して、指定された式を計算します。  例を次に示します。<br /><br /> [!code-vb[VbSimpleQuerySamples#10](../../../visual-basic/language-reference/queries/codesnippet/VisualBasic/aggregate-clause_6.vb)]|  
+|`Sum`|コレクション内のすべての要素の合計を計算します。または、コレクション内のすべての要素に対して、指定された式を計算します。  例を次に示します。<br /><br /> [!code-vb[VbSimpleQuerySamples#15](../../../visual-basic/language-reference/queries/codesnippet/VisualBasic/aggregate-clause_7.vb)]|  
   
 ## 使用例  
  次のコード例は、`Aggregate` 句を使用して集計関数をクエリ結果に適用する方法を示しています。  
   
- [!code-vb[VbSimpleQuerySamples#4](../../../visual-basic/language-reference/queries/codesnippet/visualbasic/VbSimpleQuerySamples/QuerySamples1.vb#4)]  
+ [!code-vb[VbSimpleQuerySamples#4](../../../visual-basic/language-reference/queries/codesnippet/VisualBasic/aggregate-clause_8.vb)]  
   
 ## ユーザー定義集計関数の作成  
  <xref:System.Collections.Generic.IEnumerable%601> 型に拡張メソッドを追加することで、独自のカスタム集計関数をクエリ式の中に指定できます。  カスタム メソッドでは、その集計関数を参照した列挙可能なコレクションに対して計算または操作を実行できます。  拡張メソッドの詳細については、「[拡張メソッド](../../../visual-basic/programming-guide/language-features/procedures/extension-methods.md)」を参照してください。  
   
  たとえば、次のコード例は、数値コレクションの中央値を計算するカスタム集計関数を示します。  `Median` 拡張メソッドには 2 つのオーバーロードがあります。  最初のオーバーロードは、入力として `IEnumerable(Of Double)` 型のコレクションを受け取ります。  `Double` 型のクエリ フィールドに対して `Median` 集計関数が呼び出された場合は、このメソッドが呼び出されます。  `Median` メソッドの 2 番目のオーバーロードには、任意のジェネリック型を渡すことができます。  `Median` メソッドのジェネリック オーバーロードは、`Func(Of T, Double)` ラムダ式を参照する 2 番目のパラメーターを受け取り、コレクション内の型の値を対応する `Double` 型の値として投影するために使用します。  その後、中央値の計算を `Median` メソッドの他のオーバーロードに委任します。  ラムダ式の詳細については、「[Lambda Expressions](../../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md)」を参照してください。  
   
- [!code-vb[VbSimpleQuerySamples#18](../../../visual-basic/language-reference/queries/codesnippet/visualbasic/VbSimpleQuerySamples/UserDefinedAggregates.vb#18)]  
+ [!code-vb[VbSimpleQuerySamples#18](../../../visual-basic/language-reference/queries/codesnippet/VisualBasic/aggregate-clause_9.vb)]  
   
  次のコード例は、`Integer` 型のコレクションと `Double` 型のコレクションに対して `Median` 集計関数を呼び出す例を示します。  `Double` 型のコレクションに対して `Median` 集計関数を呼び出すクエリでは、`Double` 型のコレクションを入力として受け取る `Median` メソッドのオーバーロードが呼び出されます。  `Integer` 型のコレクションに対して `Median` 集計関数を呼び出すクエリでは、`Median` メソッドのジェネリック オーバーロードが呼び出されます。  
   
- [!code-vb[VbSimpleQuerySamples#19](../../../visual-basic/language-reference/queries/codesnippet/visualbasic/VbSimpleQuerySamples/UserDefinedAggregates.vb#19)]  
+ [!code-vb[VbSimpleQuerySamples#19](../../../visual-basic/language-reference/queries/codesnippet/VisualBasic/aggregate-clause_10.vb)]  
   
 ## 参照  
  [Introduction to LINQ in Visual Basic](../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)   

@@ -36,7 +36,7 @@ caps.handback.revision: 19
   
  [!CODE [VbVbalrStatements#49](../CodeSnippet/VS_Snippets_VBCSharp/VbVbalrStatements#49)]  
   
- [!code-vb[VbVbalrVariables#2](../../../../visual-basic/programming-guide/language-features/variables/codesnippet/visualbasic/troubleshooting-variables_2.vb)]  
+ [!code-vb[VbVbalrVariables#2](../../../../visual-basic/programming-guide/language-features/variables/codesnippet/VisualBasic/troubleshooting-variables_1.vb)]  
   
  この例の場合、`p` で使用できるのは <xref:System.Object> クラス自体のメンバーのみです。`Left` プロパティは含まれません。 一方、`q` は、<xref:System.Windows.Forms.Label> 型として宣言されているため、<xref:System.Windows.Forms> 名前空間の <xref:System.Windows.Forms.Label> クラスのすべてのメソッドとプロパティを使用できます。  
   

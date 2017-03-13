@@ -21,17 +21,17 @@ caps.handback.revision: 16
 ## 使用例  
  指定した文字列内のサブストリングを置き換える、または削除するさまざまな方法を次の例に示します。  
   
- [!code-cs[csProgGuideStrings#28](../../../csharp/programming-guide/strings/codesnippet/csharp/CSRefStrings/Strings.cs#28)]  
+ [!code-cs[csProgGuideStrings#28](../../../csharp/programming-guide/strings/codesnippet/CSharp/how-to-modify-string-contents_1.cs)]  
   
 ## 使用例  
  配列表記を使用して文字列内の個々の文字にアクセスするには、`[]` 演算子をオーバーロードして内部文字バッファーにアクセスする方法を提供する <xref:System.Text.StringBuilder> オブジェクトを使用します。  また、<xref:System.String.ToCharArray%2A> メソッドを使用することで、文字列を文字の配列に変換することもできます。  次の例では、`ToCharArray` を使用して配列を作成しています。  その後、この配列の要素の一部を変更しています。  さらに、入力パラメーターとして文字配列を受け取る文字列コンストラクターを呼び出して、新しい文字列を作成しています。  
   
- [!code-cs[csProgGuideStrings#24](../../../csharp/programming-guide/strings/codesnippet/csharp/CSRefStrings/Strings.cs#24)]  
+ [!code-cs[csProgGuideStrings#24](../../../csharp/programming-guide/strings/codesnippet/CSharp/how-to-modify-string-contents_2.cs)]  
   
 ## 使用例  
  次の例は、C スタイルの文字配列と同様の方法でアンセーフ コードを使用して埋め込み文字列を変更する、非常にまれな場合のために用意したものです。  この例では、fixed キーワードを使用して "埋め込まれている" 個々の文字にアクセスする方法を示します。  また、文字列に対しアンセーフ操作を実行すると発生する可能性のある副作用を示します。この副作用の原因は、C\# コンパイラが文字列を内部に格納する \(保持する\) 方法です。  通常、この方法は、特に必要な場合以外は使用しないでください。  
   
- [!code-cs[csProgGuideStrings#29](../../../csharp/programming-guide/strings/codesnippet/csharp/CSRefStrings/Strings.cs#29)]  
+ [!code-cs[csProgGuideStrings#29](../../../csharp/programming-guide/strings/codesnippet/CSharp/how-to-modify-string-contents_3.cs)]  
   
 ## 参照  
  [C\# プログラミング ガイド](../../../csharp/programming-guide/index.md)   

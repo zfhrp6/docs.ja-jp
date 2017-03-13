@@ -147,19 +147,19 @@ Option Strict { On | Off }
 ## 使用例  
  暗黙の型変換が縮小変換になるために発生するコンパイル時のエラーの例を次に示します。  このエラーのカテゴリは、**\[コンパイル\]** ページの **\[暗黙的な変換\]** 条件に対応します。  
   
- [!code-vb[VbVbalrStatements#161](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/option-strict-statement_1.vb)]  
+ [!code-vb[VbVbalrStatements#161](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/option-strict-statement_1.vb)]  
   
 ## 使用例  
  遅延バインディングによるコンパイル時のエラーの例を次に示します。  このエラーのカテゴリは、**\[コンパイル\]** ページの **\[遅延バインディング; 呼び出しは実行時に失敗する可能性があります\]** 条件に対応します。  
   
- [!code-vb[VbVbalrStatements#162](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/option-strict-statement_2.vb)]  
+ [!code-vb[VbVbalrStatements#162](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/option-strict-statement_2.vb)]  
   
 ## 使用例  
  変数が暗黙的に `Object` 型指定で宣言されたために発生するコンパイル時のエラーの例を次に示します。  このエラーのカテゴリは、**\[コンパイル\]** ページの **\[暗黙的な型; Object と見なされます\]** 条件に対応します。  
   
- [!code-vb[VbVbalrStatements#163](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/option-strict-statement_3.vb)]  
+ [!code-vb[VbVbalrStatements#163](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/option-strict-statement_3.vb)]  
   
- [!code-vb[VbVbalrStatements#164](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/option-strict-statement_4.vb)]  
+ [!code-vb[VbVbalrStatements#164](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/option-strict-statement_4.vb)]  
   
 ## 参照  
  [Widening and Narrowing Conversions](../../../visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions.md)   

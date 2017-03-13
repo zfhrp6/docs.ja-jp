@@ -55,7 +55,7 @@ variableorproperty >>= amount
 ## 使用例  
  `>>=` 演算子を使って、整数型 \(`Integer`\) 変数のビット パターンを、指定されたビット数だけ右にシフトし、結果を元の変数に代入する例を次に示します。  
   
- [!code-vb[VbVbalrOperators#15](../../../visual-basic/language-reference/operators/codesnippet/visualbasic/right-shift-assignment-o_1_1.vb)]  
+ [!code-vb[VbVbalrOperators#15](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/right-shift-assignment-operator_1.vb)]  
   
 ## 参照  
  [\>\> Operator](../../../visual-basic/language-reference/operators/right-shift-operator.md)   

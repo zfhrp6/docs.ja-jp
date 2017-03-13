@@ -35,21 +35,21 @@ caps.handback.revision: 24
   
 1.  それぞれで異なる `Enum` が宣言されている次のコード例のように、コード アクセス レベル、`Enum` キーワード、および有効な名前が含まれる宣言を記述します。  
   
-     [!code-vb[VbEnumsTask#3](../../../../visual-basic/language-reference/statements/codesnippet/visualbasic/WindowsApplication1/Class2.vb#3)]  
+     [!code-vb[VbEnumsTask#3](../../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/how-to-declare-enumerations_1.vb)]  
   
 2.  列挙型で定数を定義します。  既定では、列挙型の中の最初の定数は `0` に初期化され、それに続く定数は、それぞれ前の定数に 1 を加えた値に初期化されます。  たとえば、次の列挙型 `Days` では、`Sunday` の値は `0`、`Monday` の値は `1`、`Tuesday` の値は `2` になります。  
   
-     [!code-vb[VbEnumsTask#4](../../../../visual-basic/language-reference/statements/codesnippet/visualbasic/WindowsApplication1/Class2.vb#4)]  
+     [!code-vb[VbEnumsTask#4](../../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/how-to-declare-enumerations_2.vb)]  
   
 3.  代入ステートメントを使うと、列挙型の中の定数に明示的に値を代入できます。  定数には、負の数を含む任意の整数値を代入できます。  たとえば、エラーの状況を表すために、0 よりも小さな値の定数を使うことができます。  次の列挙型では、定数 `Invalid` に値 `–1` が明示的に代入されます。また、定数 `Sunday` に、値 `0` が代入されます。  これは列挙型の最初の定数であるため、`Saturday` も値 `0` に初期化されます。  `Monday` の値は `1` です \(`Sunday` の値よりも 1 つ多い\)。また、`Tuesday` の値は `2`、のように続きます。  
   
-     [!code-vb[VbEnumsTask#5](../../../../visual-basic/language-reference/statements/codesnippet/visualbasic/WindowsApplication1/Class2.vb#5)]  
+     [!code-vb[VbEnumsTask#5](../../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/how-to-declare-enumerations_3.vb)]  
   
 ### 列挙型を明示的な型として宣言するには  
   
 -   次の例に示すように、`As` 句を使用して列挙型を指定します。  
   
-     [!code-vb[VbEnumsTask#6](../../../../visual-basic/language-reference/statements/codesnippet/visualbasic/WindowsApplication1/Class2.vb#6)]  
+     [!code-vb[VbEnumsTask#6](../../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/how-to-declare-enumerations_4.vb)]  
   
 ## 参照  
  [Enumerations and Name Qualification](../../../../visual-basic/programming-guide/language-features/constants-enums/enumerations-and-name-qualification.md)   

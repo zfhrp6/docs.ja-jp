@@ -43,15 +43,15 @@ caps.handback.revision: 9
   
  値を比較する式は、次のような `If...Then` 構築で最もよく使用されます。  
   
- [!code-vb[VbVbalrOperators#84](../../../../visual-basic/language-reference/operators/codesnippet/visualbasic/value-comparisons_1.vb)]  
+ [!code-vb[VbVbalrOperators#84](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/value-comparisons_1.vb)]  
   
  等号 \(`=`\) は、代入演算子としてだけでなく、比較演算子としても使用されます。  比較演算子として使用された場合は、左側の値が右側の値と等しいかどうかを評価します。たとえば、次のように使います。  
   
- [!code-vb[VbVbalrOperators#85](../../../../visual-basic/language-reference/operators/codesnippet/visualbasic/value-comparisons_2.vb)]  
+ [!code-vb[VbVbalrOperators#85](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/value-comparisons_2.vb)]  
   
  比較式は、この他にも、`Boolean` 値が必要な場合 \(`If`、`While`、`Loop`、または `ElseIf` などのステートメントの中など\) や、`Boolean` 変数に値を代入したり渡したりする場合などに使用できます。  次の例では、比較式によって返される値が `Boolean` 変数に代入されています。  
   
- [!code-vb[VbVbalrOperators#86](../../../../visual-basic/language-reference/operators/codesnippet/visualbasic/value-comparisons_3.vb)]  
+ [!code-vb[VbVbalrOperators#86](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/value-comparisons_3.vb)]  
   
 ## 参照  
  [Boolean Expressions](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/boolean-expressions.md)   

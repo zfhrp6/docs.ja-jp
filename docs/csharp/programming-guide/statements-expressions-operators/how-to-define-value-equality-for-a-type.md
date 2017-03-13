@@ -51,7 +51,7 @@ caps.handback.revision: 15
 ## 使用例  
  次の例は、クラス \(参照型\) に値の等価性を実装する方法を示します。  
   
- [!code-cs[csProgGuideStatements#19](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/how-to-define-value-equa_1.cs)]  
+ [!code-cs[csProgGuideStatements#19](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/how-to-define-value-equality-for-a-type_1.cs)]  
   
  クラス \(参照型\) に対して、両方の <xref:System.Object.Equals%28System.Object%29?displayProperty=fullName> メソッドの既定の実装では、参照の等価性の比較を実行し、値の等価性のチェックを実行しません。  実装側が仮想メソッドをオーバーライドする場合、仮想メソッドに値の等価性のセマンティクスを提供することが目的です。  
   
@@ -60,7 +60,7 @@ caps.handback.revision: 15
 ## 使用例  
  構造体 \(値型\) に値の等価性を実装する方法を次の例に示します。  
   
- [!code-cs[csProgGuideStatements#20](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/how-to-define-value-equa_2.cs)]  
+ [!code-cs[csProgGuideStatements#20](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/how-to-define-value-equality-for-a-type_2.cs)]  
   
  構造体の場合、<xref:System.Object.Equals%28System.Object%29?displayProperty=fullName> \(<xref:System.ValueType?displayProperty=fullName> でオーバーライドされるバージョン\) の既定の実装は、リフレクションを使用して特定の型の全フィールドの値を比較することによって、値の等価性のチェックを実行します。  実装側が構造体の `Equals` 仮想メソッドをオーバーライドする場合、その目的は、値の等価性のチェックをより効率的に実行することと、オプションで構造体のフィールドまたはプロパティの一部のサブセットを比較することです。  
   

@@ -82,12 +82,12 @@ Console.WriteLine((double)dec + dub);
   
  ここでは、同じ式に `decimal` と [int](../../../csharp/language-reference/keywords/int.md) が混在している例を示します。  結果は `decimal` 型になります。  
   
- [!code-cs[csrefKeywordsTypes#6](../../../csharp/language-reference/keywords/codesnippet/csharp/decimal_1.cs)]  
+ [!code-cs[csrefKeywordsTypes#6](../../../csharp/language-reference/keywords/codesnippet/CSharp/decimal_1.cs)]  
   
 ## 使用例  
  ここでは、通貨の書式指定文字列を使用して、出力の書式を指定する例を示します。  小数点以下の桁数が $0.99 を超えるため、`x` を丸めている点に注意してください。  変数 `y` は最大固定桁数を表し、正しい書式で正確に表示されます。  
   
- [!code-cs[csrefKeywordsTypes#7](../../../csharp/language-reference/keywords/codesnippet/csharp/decimal_2.cs)]  
+ [!code-cs[csrefKeywordsTypes#7](../../../csharp/language-reference/keywords/codesnippet/CSharp/decimal_2.cs)]  
   
 ## C\# 言語仕様  
  [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec-md.md)]  

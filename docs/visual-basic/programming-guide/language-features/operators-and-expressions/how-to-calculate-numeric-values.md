@@ -52,7 +52,7 @@ caps.handback.revision: 13
   
 -   数式で表される値を変数に代入するには、次のコード例のように代入ステートメントを使用します。  
   
-     [!code-vb[VbVbalrOperators#82](../../../../visual-basic/language-reference/operators/codesnippet/visualbasic/how-to-calculate-numeric_1.vb)]  
+     [!code-vb[VbVbalrOperators#82](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/how-to-calculate-numeric-values_1.vb)]  
   
      上記の例では、等値演算子 \(`=`\) の右側にある式の値が、演算子の左側にある変数 `j` に代入されるので、`j` の値は 276 となります。  
   
@@ -65,7 +65,7 @@ caps.handback.revision: 13
   
 -   最初に実行する演算子をかっこで囲みます。  次のコード例は、同じオペランドと演算子で結果が異なる 2 つの式を示しています。  
   
-     [!code-vb[VbVbalrOperators#83](../../../../visual-basic/language-reference/operators/codesnippet/visualbasic/how-to-calculate-numeric_2.vb)]  
+     [!code-vb[VbVbalrOperators#83](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/how-to-calculate-numeric-values_2.vb)]  
   
      この例では、`j` を計算する際に、`(67 + i)` を囲むかっこにより通常の優先順位がオーバーライドされるため加算演算子 \(`+`\) が最初に実行され、`j` に代入される値は 276 \(4 掛ける 69\) になります。  `k` を計算する際には、演算子は通常の優先順位 \(`+` の前に `*`\) で実行され、`k` に代入される値は 270 \(268 足す 2\) になります。  
   

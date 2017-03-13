@@ -74,17 +74,17 @@ int x = (int)Days.Sun;
 ## 使用例  
  次の例では、列挙型 `Days` を宣言しています。 2 つの列挙子は明示的に整数に変換され、整数変数に代入されます。  
   
- [!code-cs[csrefKeywordsTypes#10](../../../csharp/language-reference/keywords/codesnippet/csharp/enum_1.cs)]  
+ [!code-cs[csrefKeywordsTypes#10](../../../csharp/language-reference/keywords/codesnippet/CSharp/enum_1.cs)]  
   
 ## 使用例  
  次の例では、基本型オプションを使用して `long` 型をメンバーに持つ `enum` を宣言しています。 列挙型の基になる型が `long` であっても、列挙型メンバーはキャストを使用して `long` 型に明示的に変換する必要があることにご注意ください。  
   
- [!code-cs[csrefKeywordsTypes#11](../../../csharp/language-reference/keywords/codesnippet/csharp/enum_2.cs)]  
+ [!code-cs[csrefKeywordsTypes#11](../../../csharp/language-reference/keywords/codesnippet/CSharp/enum_2.cs)]  
   
 ## 使用例  
  次のコード例では、`enum` 宣言での <xref:System.FlagsAttribute?displayProperty=fullName> 属性の使用とその効果を示します。  
   
- [!code-cs[csrefKeywordsTypes#12](../../../csharp/language-reference/keywords/codesnippet/csharp/enum_3.cs)]  
+ [!code-cs[csrefKeywordsTypes#12](../../../csharp/language-reference/keywords/codesnippet/CSharp/enum_3.cs)]  
   
 ## コメント  
  この例では、`Flags` を削除すると次の値が表示されます。  

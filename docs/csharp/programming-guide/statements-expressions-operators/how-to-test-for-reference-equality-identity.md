@@ -24,7 +24,7 @@ caps.handback.revision: 13
  また、<xref:System.Object.ReferenceEquals%2A?displayProperty=fullName> が値型に対して常に `false` を返す理由と、文字列が等しいかどうかを確認するために <xref:System.Object.ReferenceEquals%2A> を使用しない理由を例に示します。  
   
 ## 使用例  
- [!code-cs[csProgGuideObjects#90](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/how-to-test-for-referenc_1.cs)]  
+ [!code-cs[csProgGuideObjects#90](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/how-to-test-for-reference-equality-identity_1.cs)]  
   
  <xref:System.Object?displayProperty=fullName> 汎用基底クラスの `Equals` の実装では、参照が等しいかどうかのチェックを実行しますが、このチェックを使用しないようにお勧めします。クラスがメソッドをオーバーライドする場合、予期した結果が得られない可能性があるためです。  `==` 演算子と `!=` 演算子についても同様です。  参照型を操作しようとしている場合、\=\= および `!=` の既定の動作では参照が等しいかどうかのチェックを実行します。  ただし、派生クラスは演算子をオーバーロードすることによって、値が等しいかどうかのチェックを実行します。  エラーが発生する可能性を最小限に抑えるために、2 つのオブジェクトの参照が等しいかどうかを確認する必要がある場合は、常に <xref:System.Object.ReferenceEquals%2A> を使用することをお勧めします。  
   

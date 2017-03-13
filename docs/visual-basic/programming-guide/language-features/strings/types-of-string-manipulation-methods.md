@@ -27,7 +27,7 @@ caps.handback.revision: 12
 ## Visual Basic 言語と .NET Framework  
  [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] のメソッドは、言語に固有の関数として使用されます。  したがって、コード内で修飾子を付けずに使用できます。  次のコードは、[!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] の文字列操作コマンドの典型的な使用例です。  
   
- [!code-vb[VbVbalrStrings#44](../../../../visual-basic/language-reference/functions/codesnippet/visualbasic/types-of-string-manipula_1.vb)]  
+ [!code-vb[VbVbalrStrings#44](../../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/types-of-string-manipulation-methods_1.vb)]  
   
  この例では、`Mid` 関数が `aString` を直接処理し、値を `bString` に代入しています。  
   
@@ -39,14 +39,14 @@ caps.handback.revision: 12
 #### 共有メソッド  
  共有メソッドは、`String` クラス自体のメソッドであり、クラスのインスタンスを必要としません。  これらのメソッドを修飾するには、`String` クラスのインスタンスではなく、クラスの名前 \(`String`\) を使います。  次に例を示します。  
   
- [!code-vb[VbVbalrStrings#45](../../../../visual-basic/language-reference/functions/codesnippet/visualbasic/types-of-string-manipula_2.vb)]  
+ [!code-vb[VbVbalrStrings#45](../../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/types-of-string-manipulation-methods_2.vb)]  
   
  この例の <xref:System.String.Copy%2A?displayProperty=fullName> メソッドは静的メソッドであり、指定された式を処理し、結果値を `bString` に代入します。  
   
 #### インスタンス メソッド  
  これに対して、インスタンス メソッドは、`String`の特定のインスタンスのメソッドであり、インスタンス名で修飾する必要があります。  次に例を示します。  
   
- [!code-vb[VbVbalrStrings#46](../../../../visual-basic/language-reference/functions/codesnippet/visualbasic/types-of-string-manipula_3.vb)]  
+ [!code-vb[VbVbalrStrings#46](../../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/types-of-string-manipulation-methods_3.vb)]  
   
  この例の <xref:System.String.Substring%2A?displayProperty=fullName> メソッドは、`String` のインスタンス \(`aString`\) のメソッドです。  `aString` に対して処理を実行し、値を `bString` に代入します。  
   

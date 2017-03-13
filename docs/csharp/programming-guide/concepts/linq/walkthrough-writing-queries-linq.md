@@ -62,7 +62,7 @@ caps.handback.revision: 30
   
 -   プロジェクトの `Program` クラスに、`Student` クラスおよび初期化された生徒のリストを追加します。  
   
-     [!code-cs[CsLinqGettingStarted#11](../../../../csharp/programming-guide/concepts/linq/codesnippet/csharp/GettingStarted/Class1.cs#11)]  
+     [!code-cs[CsLinqGettingStarted#11](../../../../csharp/programming-guide/concepts/linq/codesnippet/CSharp/walkthrough-writing-queries-linq_1.cs)]  
   
 #### Students リストに新しい Student を追加するには  
   
@@ -76,7 +76,7 @@ caps.handback.revision: 30
   
      クエリの範囲変数である `student` は、ソース内の各 `Student` への参照として機能します。これにより、各オブジェクトのメンバーにアクセスできるようになります。  
   
- [!code-cs[CsLINQGettingStarted#12](../../../../csharp/programming-guide/concepts/linq/codesnippet/csharp/GettingStarted/Class1.cs#12)]  
+ [!code-cs[CsLINQGettingStarted#12](../../../../csharp/programming-guide/concepts/linq/codesnippet/CSharp/walkthrough-writing-queries-linq_2.cs)]  
   
 ## クエリの実行  
   
@@ -90,7 +90,7 @@ caps.handback.revision: 30
   
 2.  このコードを追加したら、Ctrl キーを押しながら F5 キーを押してアプリケーションをビルドおよび実行し、**\[コンソール\]** ウィンドウで結果を確認します。  
   
- [!code-cs[CsLINQGettingStarted#13](../../../../csharp/programming-guide/concepts/linq/codesnippet/csharp/GettingStarted/Class1.cs#13)]  
+ [!code-cs[CsLINQGettingStarted#13](../../../../csharp/programming-guide/concepts/linq/codesnippet/CSharp/walkthrough-writing-queries-linq_3.cs)]  
   
 #### 別のフィルター条件を追加するには  
   
@@ -130,11 +130,11 @@ caps.handback.revision: 30
   
 1.  グループ化は、クエリ式の強力な機能です。  クエリで group 句を使用すると、グループのシーケンスが生成されます。各グループには、1 つの `Key` と、そのグループのすべてのメンバーで構成される 1 つのシーケンスが含まれます。  次の新しいクエリは、生徒の姓の頭文字をキーとして生徒をグループ化します。  
   
-     [!code-cs[CsLINQGettingStarted#14](../../../../csharp/programming-guide/concepts/linq/codesnippet/csharp/GettingStarted/Class1.cs#14)]  
+     [!code-cs[CsLINQGettingStarted#14](../../../../csharp/programming-guide/concepts/linq/codesnippet/CSharp/walkthrough-writing-queries-linq_4.cs)]  
   
 2.  ここでは、クエリの型が変わっていることに注意してください。  このクエリでは、`char` 型のキーを持つグループのシーケンスと、`Student` オブジェクトのシーケンスが生成されます。  クエリの型が変わっているため、次のコードでは `foreach` 実行ループも変更されています。  
   
-     [!code-cs[CsLINQGettingStarted#15](../../../../csharp/programming-guide/concepts/linq/codesnippet/csharp/GettingStarted/Class1.cs#15)]  
+     [!code-cs[CsLINQGettingStarted#15](../../../../csharp/programming-guide/concepts/linq/codesnippet/CSharp/walkthrough-writing-queries-linq_5.cs)]  
   
 3.  Ctrl キーを押しながら F5 キーを押してアプリケーションを実行し、**\[コンソール\]** ウィンドウで結果を確認します。  
   
@@ -144,7 +144,7 @@ caps.handback.revision: 30
   
 1.  `IGroupings` の `IEnumerables` を明示的にコーディングする方法は、すぐに面倒になる可能性があります。  `var` を使用すると、同じクエリと `foreach` ループをごく簡単に記述できます。  `var` キーワードは、オブジェクトの型を変更するのではなく、コンパイラに型を推論するように指示します。  `studentQuery` の型と反復変数 `group`を `var` に変更して、クエリを再実行してください。  内部の `foreach` ループでは、反復変数の型が `Student` のままであるため、クエリは変更前と同様に機能します。  `s` 反復変数を `var` に変更して、クエリを再実行してください。  この場合も、変更前とまったく同じ結果が得られます。  
   
-     [!code-cs[CsLINQGettingStarted#16](../../../../csharp/programming-guide/concepts/linq/codesnippet/csharp/GettingStarted/Class1.cs#16)]  
+     [!code-cs[CsLINQGettingStarted#16](../../../../csharp/programming-guide/concepts/linq/codesnippet/CSharp/walkthrough-writing-queries-linq_6.cs)]  
   
      [var](../../../../csharp/language-reference/keywords/var.md) の詳細については、「[暗黙的に型指定されるローカル変数](../../../../csharp/programming-guide/classes-and-structs/implicitly-typed-local-variables.md)」を参照してください。  
   
@@ -152,7 +152,7 @@ caps.handback.revision: 30
   
 1.  前のクエリを実行すると、グループはアルファベット順に並んでいないことがわかります。  これを変更するには、`group` 句の後に `orderby` 句を挿入します。  ただし、`orderby` 句を使用するには、まず `group` 句で作成されたグループへの参照として機能する識別子を指定する必要があります。  この識別子は、次のように `into` キーワードを使用することで指定します。  
   
-     [!code-cs[csLINQGettingStarted#17](../../../../csharp/programming-guide/concepts/linq/codesnippet/csharp/GettingStarted/Class1.cs#17)]  
+     [!code-cs[csLINQGettingStarted#17](../../../../csharp/programming-guide/concepts/linq/codesnippet/CSharp/walkthrough-writing-queries-linq_7.cs)]  
   
      このクエリを実行すると、グループはアルファベット順に並べられます。  
   
@@ -160,7 +160,7 @@ caps.handback.revision: 30
   
 1.  `let` キーワードを使用すると、クエリ式で任意の式の結果に識別子を割り当てることができます。  この識別子は、次の例のように利便性のために使用できるほか、式の結果が格納されるので何度も計算を行う必要がなくなり、パフォーマンスの向上につながります。  
   
-     [!code-cs[csLINQGettingStarted#18](../../../../csharp/programming-guide/concepts/linq/codesnippet/csharp/GettingStarted/Class1.cs#18)]  
+     [!code-cs[csLINQGettingStarted#18](../../../../csharp/programming-guide/concepts/linq/codesnippet/CSharp/walkthrough-writing-queries-linq_8.cs)]  
   
      詳細については、「[let 句](../../../../csharp/language-reference/keywords/let-clause.md)」を参照してください。  
   
@@ -168,17 +168,17 @@ caps.handback.revision: 30
   
 1.  「[Query Syntax and Method Syntax in LINQ](../../../../csharp/programming-guide/concepts/linq/query-syntax-and-method-syntax-in-linq.md)」で説明したように、一部のクエリ操作は、メソッドの構文を使用する方法でしか表すことができません。  次のコードは、ソース シーケンス内の各 `Student` の総合得点を計算し、そのクエリの結果に対して `Average()` メソッドを呼び出して、クラスの平均点を計算します。  クエリ式がかっこで囲まれていることに注意してください。  
   
-     [!code-cs[csLINQGettingStarted#19](../../../../csharp/programming-guide/concepts/linq/codesnippet/csharp/GettingStarted/Class1.cs#19)]  
+     [!code-cs[csLINQGettingStarted#19](../../../../csharp/programming-guide/concepts/linq/codesnippet/CSharp/walkthrough-writing-queries-linq_9.cs)]  
   
 #### select 句で型を変換または投影するには  
   
 1.  クエリでは、ソース シーケンス内の要素とは異なる要素のシーケンスが生成されることがよくあります。  前のクエリと実行ループを削除またはコメント アウトして、次のコードに置き換えてください。  このクエリでは、`Students` ではなく文字列のシーケンスが返されます。これは `foreach` ループにも影響します。  
   
-     [!code-cs[csLINQGettingStarted#20](../../../../csharp/programming-guide/concepts/linq/codesnippet/csharp/GettingStarted/Class1.cs#20)]  
+     [!code-cs[csLINQGettingStarted#20](../../../../csharp/programming-guide/concepts/linq/codesnippet/CSharp/walkthrough-writing-queries-linq_10.cs)]  
   
 2.  このチュートリアルで既に説明したコードによって、クラスの平均点はおよそ 334 点であることが示されました。  合計点がクラス平均を上回る `Students` のシーケンスを、それぞれの `Student ID` と共に生成するには、`select` ステートメントで匿名型を使用できます。  
   
-     [!code-cs[csLINQGettingStarted#21](../../../../csharp/programming-guide/concepts/linq/codesnippet/csharp/GettingStarted/Class1.cs#21)]  
+     [!code-cs[csLINQGettingStarted#21](../../../../csharp/programming-guide/concepts/linq/codesnippet/CSharp/walkthrough-writing-queries-linq_11.cs)]  
   
 ## 次の手順  
  C\# におけるクエリの基本的な使用方法を理解したら、関心のある特定の種類の [!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq-md.md)] プロバイダーのドキュメントやサンプルに進むことができます。  

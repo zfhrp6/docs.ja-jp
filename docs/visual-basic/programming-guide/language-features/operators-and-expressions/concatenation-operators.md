@@ -32,7 +32,7 @@ caps.handback.revision: 17
   
  これらの演算子は、次のように `String` 型の変数を連結することもできます。  
   
- [!code-vb[VbVbalrOperators#76](../../../../visual-basic/language-reference/operators/codesnippet/visualbasic/concatenation-operators_1.vb)]  
+ [!code-vb[VbVbalrOperators#76](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/concatenation-operators_1.vb)]  
   
 ## 2 つの連結演算子の相違点  
  [\+ Operator](../../../../visual-basic/language-reference/operators/addition-operator.md) の基本的な機能は、2 つの数値を加算することです。  ただし、数値オペランドを文字列オペランドに連結することもできます。  `+` 演算子は、一連の複雑な規則に従って、加算、連結、コンパイル エラーのシグナルの送信、ランタイム <xref:System.InvalidCastException> 例外のスローのどれを行うかを決定します。  

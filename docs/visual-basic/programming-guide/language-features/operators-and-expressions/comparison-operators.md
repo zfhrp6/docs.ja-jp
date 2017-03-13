@@ -70,17 +70,17 @@ caps.handback.revision: 13
 ## オブジェクトの比較  
  [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] では、2 つのオブジェクト参照変数を[Is Operator](../../../../visual-basic/language-reference/operators/is-operator.md)と [IsNot Operator](../../../../visual-basic/language-reference/operators/isnot-operator.md)を使って比較します。  この 2 つの演算子のどちらを使っても、2 つの参照変数が同じオブジェクトのインスタンスを参照しているかどうかを調べることができます。  次に例を示します。  
   
- [!code-vb[VbVbalrOperators#65](../../../../visual-basic/language-reference/operators/codesnippet/visualbasic/comparison-operators_1.vb)]  
+ [!code-vb[VbVbalrOperators#65](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/comparison-operators_1.vb)]  
   
  この例では、両方の変数が同じインスタンスを参照しているので、`x Is y` は `True` に評価されます。  この結果を次の例と比べてみてください。  
   
- [!code-vb[VbVbalrOperators#66](../../../../visual-basic/language-reference/operators/codesnippet/visualbasic/comparison-operators_2.vb)]  
+ [!code-vb[VbVbalrOperators#66](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/comparison-operators_2.vb)]  
   
  この例では、`x Is y` は `False` になります。これは、変数は同じ型のオブジェクトを参照していますが、参照しているインスタンスが異なるためです。  
   
  2 つのオブジェクトが同じインスタンスをポイントしていないことを調べる場合は、`IsNot` 演算子を使うと `Not` と `Is` を合わせた不恰好な文法を使わずに済みます。  次に例を示します。  
   
- [!code-vb[VbVbalrOperators#67](../../../../visual-basic/language-reference/operators/codesnippet/visualbasic/comparison-operators_3.vb)]  
+ [!code-vb[VbVbalrOperators#67](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/comparison-operators_3.vb)]  
   
  この例の `If a IsNot b` は、`If Not a Is b` と同じ意味になります。  
   
@@ -91,7 +91,7 @@ caps.handback.revision: 13
   
  `typename` にインターフェイスの型を指定すると、オブジェクトがそのインターフェイス型を実装している場合に、`TypeOf`...`Is` の式が `True` を返します。  `typename` にクラス型を指定すると、オブジェクトがそのクラスのインスタンスであるか、またはそのクラスの派生クラスのインスタンスである場合に `True` が返されます。  次に例を示します。  
   
- [!code-vb[VbVbalrOperators#68](../../../../visual-basic/language-reference/operators/codesnippet/visualbasic/comparison-operators_4.vb)]  
+ [!code-vb[VbVbalrOperators#68](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/comparison-operators_4.vb)]  
   
  この例では、`x` の型が `Button` であり、`Control` から継承しているので、`TypeOf x Is Control` の式は `True` になります。  
   

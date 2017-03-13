@@ -32,14 +32,14 @@ caps.handback.revision: 16
 ## LINQ クエリの IEnumerable\<T\> 変数  
  [!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq-md.md)] クエリ変数は、<xref:System.Collections.Generic.IEnumerable%601> か、または <xref:System.Linq.IQueryable%601> などの派生型として型指定されます。  `IEnumerable<Customer>` として型指定されたクエリ変数は、クエリが実行されたときに 0 個以上の `Customer` オブジェクトのシーケンスが作成されることを意味します。  
   
- [!code-cs[csLINQGettingStarted#34](../../../../csharp/programming-guide/concepts/linq/codesnippet/csharp/GettingStarted/Class1.cs#34)]  
+ [!code-cs[csLINQGettingStarted#34](../../../../csharp/programming-guide/concepts/linq/codesnippet/CSharp/linq-and-generic-types_1.cs)]  
   
  詳細については、「[Type Relationships in LINQ Query Operations](../../../../csharp/programming-guide/concepts/linq/type-relationships-in-linq-query-operations.md)」を参照してください。  
   
 ## コンパイラによるジェネリック型の宣言の処理  
  必要に応じて、[var](../../../../csharp/language-reference/keywords/var.md) キーワードを使用することにより、ジェネリックの構文を使わないようにすることもできます。  `var` キーワードは、`from` 句で指定されたデータ ソースを調べてクエリ変数の型を推論するようにコンパイラに指示します。  次の例では、前の例と同じコンパイル済みコードが生成されます。  
   
- [!code-cs[csLINQGettingStarted#35](../../../../csharp/programming-guide/concepts/linq/codesnippet/csharp/GettingStarted/Class1.cs#35)]  
+ [!code-cs[csLINQGettingStarted#35](../../../../csharp/programming-guide/concepts/linq/codesnippet/CSharp/linq-and-generic-types_2.cs)]  
   
  `var` キーワードは、変数の型が明らかな場合、または入れ子になったジェネリック型 \(グループ クエリで生成されるものなど\) を明示的に指定する必要がない場合に便利です。  一般に、`var` を使用すると、他の開発者にとってコードが読みにくくなる可能性があることを理解しておいてください。  詳細については、「[暗黙的に型指定されるローカル変数](../../../../csharp/programming-guide/classes-and-structs/implicitly-typed-local-variables.md)」を参照してください。  
   

@@ -45,15 +45,15 @@ caps.handback.revision: 18
   
 -   プログラムの実行を終了する [End \<keyword\> Statement](../../../visual-basic/language-reference/statements/end-keyword-statement.md) キーワードが無効になります。  次のプログラムは、`/netcf` なしでコンパイルおよび実行可能ですが、`/netcf` を指定するとコンパイル時に失敗します。  
   
-     [!code-vb[VbVbalrCompiler#34](../../../visual-basic/reference/command-line-compiler/codesnippet/visualbasic/netcf_1.vb)]  
+     [!code-vb[VbVbalrCompiler#34](../../../visual-basic/reference/command-line-compiler/codesnippet/VisualBasic/netcf_1.vb)]  
   
 -   すべての形式の遅延バインディング。  認識されている遅延バインディングのシナリオと同じ状況になると、コンパイル時エラーが発生します。  次のプログラムは、`/netcf` なしでコンパイルおよび実行可能ですが、`/netcf` を指定するとコンパイル時に失敗します。  
   
-     [!code-vb[VbVbalrCompiler#35](../../../visual-basic/reference/command-line-compiler/codesnippet/visualbasic/netcf_2.vb)]  
+     [!code-vb[VbVbalrCompiler#35](../../../visual-basic/reference/command-line-compiler/codesnippet/VisualBasic/netcf_2.vb)]  
   
 -   [Auto](../../../visual-basic/language-reference/modifiers/auto.md)、[Ansi](../../../visual-basic/language-reference/modifiers/ansi.md)、[Unicode](../../../visual-basic/language-reference/modifiers/unicode.md) 修飾子が無効になります。  [Declare Statement](../../../visual-basic/language-reference/statements/declare-statement.md) ステートメントの構文も `Declare Sub|Function name Lib "library" [Alias "alias"] [([arglist])]` に変更されます。  `/netcf` によるコンパイルへの影響を、次のコードで示します。  
   
-     [!code-vb[VbVbalrCompiler#36](../../../visual-basic/reference/command-line-compiler/codesnippet/visualbasic/netcf_3.vb)]  
+     [!code-vb[VbVbalrCompiler#36](../../../visual-basic/reference/command-line-compiler/codesnippet/VisualBasic/netcf_3.vb)]  
   
 -   [!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] で削除された Visual Basic 6.0 のキーワードを使用すると、`/netcf` を使用した場合に別のエラーが発生します。  これにより、次のキーワードに対するエラー メッセージが影響を受けます。  
   

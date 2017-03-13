@@ -66,14 +66,14 @@ result = expression1 OrElse expression2
 ## 使用例  
  `OrElse` 演算子を使って 2 つの式の論理和を求める例を次に示します。  結果は、2 つの式のどちらかが真かどうかを表すブール値です。  最初の式が真 \(`True`\) の場合、2 番目の式は評価されません。  
   
- [!code-vb[VbVbalrOperators#37](../../../visual-basic/language-reference/operators/codesnippet/visualbasic/orelse-operator_1.vb)]  
+ [!code-vb[VbVbalrOperators#37](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/orelse-operator_1.vb)]  
   
  先の例では、`True`、`True`、`False` という結果がそれぞれ生成されます。  `firstCheck` の計算では、最初の式が `True` であるため、2 番目の式は評価されません。  一方、`secondCheck` の計算では、2 番目の式も評価されます。  
   
 ## 使用例  
  2 つのプロシージャ呼び出しを含む `If`...`Then` ステートメントの例を次に示します。  最初の呼び出しが `True` を返した場合、2 番目のプロシージャは呼び出されません。  このため、2 番目のプロシージャがコードのこの部分で必ず処理されるべき重要なタスクを実行する場合に、予期しない結果が返される可能性があります。  
   
- [!code-vb[VbVbalrOperators#38](../../../visual-basic/language-reference/operators/codesnippet/visualbasic/orelse-operator_2.vb)]  
+ [!code-vb[VbVbalrOperators#38](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/orelse-operator_2.vb)]  
   
 ## 参照  
  [Logical\/Bitwise Operators](../../../visual-basic/language-reference/operators/logical-bitwise-operators.md)   

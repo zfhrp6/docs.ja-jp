@@ -41,7 +41,7 @@ caps.handback.revision: 14
 ## 使用例  
  参照型の引数に `ByVal` パラメーターの引き渡し方法を使用する例を次に示します。  この例では、引数は `c1` で、`Class1` クラスのインスタンスです。  `ByVal` によって、プロシージャ内のコードで参照引数の基になる値 `c1` を変更できないようにすることができますが、`c1` のアクセス可能なフィールドとプロパティは保護されません。  
   
- [!code-vb[VbVbalrKeywords#10](../../../visual-basic/language-reference/codesnippet/visualbasic/byval_1.vb)]  
+ [!code-vb[VbVbalrKeywords#10](../../../visual-basic/language-reference/codesnippet/VisualBasic/byval_1.vb)]  
   
 ## 参照  
  [キーワード](../../../visual-basic/language-reference/keywords/index.md)   

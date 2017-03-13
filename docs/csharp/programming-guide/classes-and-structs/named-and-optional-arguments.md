@@ -55,7 +55,7 @@ caps.handback.revision: 43
 ## 例  
  次のコードには、このセクションの例が実装されています。  
   
- [!code-cs[csProgGuideNamedAndOptional#1](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/namedandoptionalsnippets/program.cs#1)]  
+ [!code-cs[csProgGuideNamedAndOptional#1](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/named-and-optional-arguments_1.cs)]  
   
 ## 省略可能な引数  
  メソッド、コンストラクター、インデクサー、またはデリゲートの定義では、そのパラメーターが必須であるか、省略可能であるかを指定できます。  どの呼び出しでも、すべての必須パラメーターに対して引数を指定する必要があります。ただし、省略可能なパラメーターの引数は省略できます。  
@@ -70,7 +70,7 @@ caps.handback.revision: 43
   
  省略可能なパラメーターは、パラメーター リストの末尾で必須パラメーターの後に定義されます。  呼び出し元は、連続する省略可能なパラメーターのいずれか 1 つに対して引数を指定する場合、前にあるすべての省略可能なパラメーターに引数を指定する必要があります。   引数リストでコンマ区切りのスペースはサポートされていません。  たとえば、次のコードでは、1 つの必須パラメーターと 2 つの省略可能なパラメーターでインスタンス メソッド `ExampleMethod` が定義されます。  
   
- [!code-cs[csProgGuideNamedAndOptional#15](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/namedandoptionalsnippets/optional.cs#15)]  
+ [!code-cs[csProgGuideNamedAndOptional#15](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/named-and-optional-arguments_2.cs)]  
   
  次に示す `ExampleMethod` の呼び出しでは、3 番目のパラメーターに引数が指定されていますが、2 番目のパラメーターには指定されていないため、コンパイル エラーが発生します。  
   
@@ -91,7 +91,7 @@ ExampleMethod の省略可能なパラメーター
 ## 例  
  次の例では、`ExampleClass` のコンストラクターに省略可能なパラメーターが 1 つあります。  `ExampleMethod` インスタンス メソッドには、`required` という 1 つの必須パラメーターと、`optionalstr` および `optionalint` という 2 つの省略可能なパラメーターがあります。  `Main` のコードに示すように、いくつかの異なる方法でコンストラクターとメソッドを呼び出すことができます。  
   
- [!code-cs[csProgGuideNamedAndOptional#2](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/namedandoptionalsnippets/optional.cs#2)]  
+ [!code-cs[csProgGuideNamedAndOptional#2](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/named-and-optional-arguments_3.cs)]  
   
 ## COM インターフェイス  
  名前付き引数と省略可能な引数を動的オブジェクトやその他の拡張機能のサポートと併用すると、Office オートメーション API などの COM API との相互運用性が向上します。  
@@ -103,11 +103,11 @@ AutoFormat のパラメーター
   
  C\# 3.0 および旧バージョンの C\# では、次の例に示すように、各パラメーターの引数が必要です。  
   
- [!code-cs[csProgGuideNamedAndOptional#3](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/namedandoptionalsnippets/namedandoptcom.cs#3)]  
+ [!code-cs[csProgGuideNamedAndOptional#3](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/named-and-optional-arguments_4.cs)]  
   
  しかし、C\# 4.0 の導入により、名前付き引数と省略可能な引数を使用すると、`AutoFormat` の呼び出しを大幅に簡略化できます。  名前付き引数と省略可能な引数を使用すると、パラメーターの既定値の変更を望まない場合に、省略可能なパラメーターの引数を省略できます。  次の呼び出しでは、7 つのパラメーターのうち 1 つのパラメーターのみに値を指定しています。  
   
- [!code-cs[csProgGuideNamedAndOptional#13](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/namedandoptionalsnippets/namedandoptcom.cs#13)]  
+ [!code-cs[csProgGuideNamedAndOptional#13](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/named-and-optional-arguments_5.cs)]  
   
  使用例を含む詳細については、「[方法: Office プログラミングで名前付き引数と省略可能な引数を使用する](../../../csharp/programming-guide/classes-and-structs/how-to-use-named-and-optional-arguments-in-office-programming.md)」および「[方法: Visual C\# の機能を使用して Office 相互運用オブジェクトにアクセスする](../../../csharp/programming-guide/interop/how-to-access-office-onterop-objects.md)」を参照してください。  
   

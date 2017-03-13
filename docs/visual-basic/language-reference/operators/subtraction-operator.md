@@ -72,7 +72,7 @@ caps.handback.revision: 14
 ## 使用例  
  次の例では、`–` 演算子を使用して 2 つの数値の差を求め、結果を返し、その後、数値を否定します。  
   
- [!code-vb[VbVbalrOperators#10](../../../visual-basic/language-reference/operators/codesnippet/visualbasic/subtraction-operator_1.vb)]  
+ [!code-vb[VbVbalrOperators#10](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/subtraction-operator_1.vb)]  
   
  これらのステートメントを実行した後では、`binaryResult` には 124.45、`unaryResult` には –334.90 が含まれます。  
   

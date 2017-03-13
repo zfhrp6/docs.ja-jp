@@ -103,15 +103,15 @@ COM オブジェクト内の `Public` クラス \(以前のバージョンの [!
   
 6.  `MathClass` の先頭に次のコードを追加して、COM クラスを継承します。  
   
-     [!code-vb[VbVbalrInterop#31](../../../visual-basic/programming-guide/com-interop/codesnippet/visualbasic/vbvbalrinterop/Class1.vb#31)]  
+     [!code-vb[VbVbalrInterop#31](../../../visual-basic/programming-guide/com-interop/codesnippet/VisualBasic/walkthrough-implementing-inheritance-with-com-objects_1.vb)]  
   
 7.  次のコードを `MathClass` に追加して、基本クラスのパブリック メソッドをオーバーロードします。  
   
-     [!code-vb[VbVbalrInterop#32](../../../visual-basic/programming-guide/com-interop/codesnippet/visualbasic/vbvbalrinterop/Class1.vb#32)]  
+     [!code-vb[VbVbalrInterop#32](../../../visual-basic/programming-guide/com-interop/codesnippet/VisualBasic/walkthrough-implementing-inheritance-with-com-objects_2.vb)]  
   
 8.  次のコードを `MathClass` に追加して、継承されるクラスを拡張します。  
   
-     [!code-vb[VbVbalrInterop#33](../../../visual-basic/programming-guide/com-interop/codesnippet/visualbasic/vbvbalrinterop/Class1.vb#33)]  
+     [!code-vb[VbVbalrInterop#33](../../../visual-basic/programming-guide/com-interop/codesnippet/VisualBasic/walkthrough-implementing-inheritance-with-com-objects_3.vb)]  
   
  新しいクラスは、COM オブジェクト内の基本クラスのプロパティを継承し、メソッドをオーバーロードし、新しいメソッドを定義してクラスを拡張します。  
   
@@ -121,7 +121,7 @@ COM オブジェクト内の `Public` クラス \(以前のバージョンの [!
   
 2.  ボタンの `Click` イベント ハンドラー プロシージャに、次のコードを追加します。このコードは、`MathClass` のインスタンスを作成し、オーバーロードされたメソッドを呼び出します。  
   
-     [!code-vb[VbVbalrInterop#34](../../../visual-basic/programming-guide/com-interop/codesnippet/visualbasic/vbvbalrinterop/Class1.vb#34)]  
+     [!code-vb[VbVbalrInterop#34](../../../visual-basic/programming-guide/com-interop/codesnippet/VisualBasic/walkthrough-implementing-inheritance-with-com-objects_4.vb)]  
   
 3.  F5 キーを押してプロジェクトを実行します。  
   

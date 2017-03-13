@@ -24,7 +24,7 @@ caps.handback.revision: 14
  代入演算子は、オーバーロードできません。  ただし、暗黙の変換演算子を型に定義すると、それらの型で代入演算子を使用できるようになります。  詳細については、「[変換演算子の使用](../../../csharp/programming-guide/statements-expressions-operators/using-conversion-operators.md)」を参照してください。  
   
 ## 使用例  
- [!code-cs[csRefOperators#49](../../../csharp/language-reference/operators/codesnippet/csharp/csrefOperators/csrefOperators.cs#49)]  
+ [!code-cs[csRefOperators#49](../../../csharp/language-reference/operators/codesnippet/CSharp/assignment-operator_1.cs)]  
   
 ## 参照  
  [C\# リファレンス](../../../csharp/language-reference/index.md)   

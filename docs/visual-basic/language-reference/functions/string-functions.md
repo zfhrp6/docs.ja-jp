@@ -58,27 +58,27 @@ Visual Basic で文字列の検索と操作のために用意されている関�
 ## 使用例  
  `UCase` 関数を使って文字列を大文字に変換して返す例を次に示します。  
   
- [!code-vb[VbVbalrStrings#31](../../../visual-basic/language-reference/functions/codesnippet/visualbasic/string-functions_1.vb)]  
+ [!code-vb[VbVbalrStrings#31](../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/string-functions_1.vb)]  
   
 ## 使用例  
  この例では、文字列変数から、`LTrim` 関数を使って先頭の空白を除去し、`RTrim` 関数を使って後続の空白を除去しています。  また、`Trim` 関数を使って両方のタイプの空白を除去しています。  
   
- [!code-vb[VbVbalrStrings#25](../../../visual-basic/language-reference/functions/codesnippet/visualbasic/string-functions_2.vb)]  
+ [!code-vb[VbVbalrStrings#25](../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/string-functions_2.vb)]  
   
 ## 使用例  
  `Mid` 関数を使って、文字列から指定された字数を返す例を次に示します。  
   
- [!code-vb[VbVbalrStrings#17](../../../visual-basic/language-reference/functions/codesnippet/visualbasic/string-functions_3.vb)]  
+ [!code-vb[VbVbalrStrings#17](../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/string-functions_3.vb)]  
   
 ## 使用例  
  `Len` 関数を使って文字列の文字数を返す例を次に示します。  
   
- [!code-vb[VbVbalrStrings#33](../../../visual-basic/language-reference/functions/codesnippet/visualbasic/string-functions_4.vb)]  
+ [!code-vb[VbVbalrStrings#33](../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/string-functions_4.vb)]  
   
 ## 使用例  
  `InStr` 関数を使って、ある文字列の中から指定された文字列を検索し、最初に見つかった文字位置を返す例を次に示します。  
   
- [!code-vb[VbVbalrStrings#8](../../../visual-basic/language-reference/functions/codesnippet/visualbasic/string-functions_5.vb)]  
+ [!code-vb[VbVbalrStrings#8](../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/string-functions_5.vb)]  
   
 ## 使用例  
  `String` の書式指定とユーザー定義の書式指定の両方を使って値の書式を指定する、`Format` 関数のさまざまな使用例を次に示します。  日付の区切り記号 \(`/`\)、時刻の区切り記号 \(`:`\)、および午前\/午後を示す文字 \(`t` および `tt`\) について、システムで実際に表示される書式は、コードが使用するロケール設定によって決まります。  時刻と日付を開発環境で表示する場合は、コード ロケールの短い時刻書式と短い日付書式が使用されます。  
@@ -86,7 +86,7 @@ Visual Basic で文字列の検索と操作のために用意されている関�
 > [!NOTE]
 >  24 時間制を使用するロケールでは、午前\/午後を示す記号 \(`t` および `tt`\) では何も表示されません。  
   
- [!code-vb[VbVbalrStrings#27](../../../visual-basic/language-reference/functions/codesnippet/visualbasic/string-functions_6.vb)]  
+ [!code-vb[VbVbalrStrings#27](../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/string-functions_6.vb)]  
   
 ## 参照  
  [キーワード](../../../visual-basic/language-reference/keywords/index.md)   

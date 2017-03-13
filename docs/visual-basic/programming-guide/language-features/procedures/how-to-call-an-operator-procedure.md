@@ -53,7 +53,7 @@ caps.handback.revision: 16
 ## 使用例  
  次の例は、2 つの <xref:System.TimeSpan> 構造体を作成し、この 2 つを足し合わせて、結果を 3 つ目の <xref:System.TimeSpan> 構造体に格納します。  <xref:System.TimeSpan> 構造体には演算子プロシージャが定義され、複数の標準演算子をオーバーロードしています。  
   
- [!code-vb[VbVbcnProcedures#29](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/how-to-call-an-operator-_1.vb)]  
+ [!code-vb[VbVbcnProcedures#29](./codesnippet/VisualBasic/how-to-call-an-operator-procedure_1.vb)]  
   
  上の例では <xref:System.TimeSpan> で標準の `+` 演算子がオーバーロードされているため、`combinedSpan` の値を計算するときに演算子プロシージャが呼び出されます。  
   

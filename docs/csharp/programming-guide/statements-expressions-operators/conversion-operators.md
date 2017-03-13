@@ -21,7 +21,7 @@ caps.handback.revision: 22
 # 変換演算子 (C# プログラミング ガイド)
 C\# では、クラスや構造体で変換を宣言して、他のクラスや構造体と基本型との相互変換を行うことができます。  変換は演算子のように定義でき、変換先の型に応じた名前が付けられます。  変換対象の引数の型または変換結果の型のうち両方ではなく一方は、包含型である必要があります。  
   
- [!code-cs[csProgGuideStatements#10](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/conversion-operators_1.cs)]  
+ [!code-cs[csProgGuideStatements#10](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/conversion-operators_1.cs)]  
   
 ## 変換演算子の概要  
  変換演算子には、次の特徴があります。  

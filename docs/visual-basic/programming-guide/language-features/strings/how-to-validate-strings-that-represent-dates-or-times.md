@@ -25,7 +25,7 @@ caps.handback.revision: 11
 次のコード例は、文字列が有効な日付または時刻を表しているかどうかを示す `Boolean` 値を設定します。  
   
 ## 使用例  
- [!code-vb[VbVbcnRegEx#2](../../../../visual-basic/programming-guide/language-features/strings/codesnippet/visualbasic/how-to-validate-strings-_1.vb)]  
+ [!code-vb[VbVbcnRegEx#2](../../../../visual-basic/programming-guide/language-features/strings/codesnippet/VisualBasic/how-to-validate-strings-that-represent-dates-or-times_1.vb)]  
   
 ## コードのコンパイル  
  `("01/01/03")` および `"9:30 PM"` は、実際に検証する日付と時刻に置き換えてください。  この文字列は、別のハードコーディングされた文字列、`String` 変数、または文字列を返す `InputBox` などのメソッドで置き換えることができます。  

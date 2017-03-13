@@ -37,7 +37,7 @@ caps.handback.revision: 48
 ## 使用例  
  次の例では、3 つのメンバーを含む `MyCustomClass` が `ProgrammingGuide` 名前空間の最上位に定義されます。  `MyCustomClass` のインスタンス \(オブジェクト\) は `Program` クラスの `Main` メソッドで作成され、オブジェクトのメソッドとプロパティにはドット表記を使用してアクセスします。  
   
- [!code-cs[csProgGuideObjects#88](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/index_1.cs)]  
+ [!code-cs[csProgGuideObjects#88](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/index_1.cs)]  
   
 ## カプセル化  
  *カプセル化*は、オブジェクト指向プログラミングの原理と言われることもあります。  カプセル化の原理に基づくと、クラスまたは構造体は、クラスや構造体の外部のコードに対してメンバーがアクセスする方法を指定できます。  クラスやアセンブリの外部からの使用を意図されていないメソッドや変数は非表示にして、コーディング エラーや悪意のある攻略が生じる潜在性を軽減できます。  

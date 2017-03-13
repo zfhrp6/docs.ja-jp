@@ -89,7 +89,7 @@ End Select
 ## 使用例  
  `Select Case` 構造を使用して、変数 `number` の値に対応する行を書き込む例を次に示します。  2 番目の `Case` ステートメントに `number` の現在の値に一致する値が含まれるため、"Between 6 and 8, inclusive" を書き込むステートメントが実行されます。  
   
- [!code-vb[VbVbalrStatements#54](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/select-case-statement_1.vb)]  
+ [!code-vb[VbVbalrStatements#54](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/select-case-statement_1.vb)]  
   
 ## 参照  
  <xref:Microsoft.VisualBasic.Interaction.Choose%2A>   

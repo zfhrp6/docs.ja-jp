@@ -17,14 +17,14 @@ caps.handback.revision: 23
 ### グループ化結合の例  
  `Pet.Owner` プロパティと一致する `Person` に基づいて、`Person` オブジェクトと `Pet` オブジェクトの型のグループ化結合を行う例を次に示します。  一致ごとにペアを作成する非グループ化結合と異なり、グループ化結合では、最初のコレクションの要素ごとに 1 つのオブジェクト \(この例では `Person` オブジェクト\) のみを作成します。  次に、2 番目のコレクションの対応する要素 \(この例では `Pet` オブジェクト\) がコレクションにグループ化されます。  最後に、結果セレクター機能により、`Person.FirstName` と `Pet` オブジェクトのコレクションで構成される一致ごとに匿名型が作成されます。  
   
- [!code-cs[CsLINQProgJoining#5](../../../csharp/programming-guide/linq-query-expressions/codesnippet/csharp/Joins/joins.cs#5)]  
+ [!code-cs[CsLINQProgJoining#5](../../../csharp/programming-guide/linq-query-expressions/codesnippet/CSharp/how-to-perform-grouped-joins_1.cs)]  
   
 ## 使用例  
   
 ### XML を作成するグループ化結合の例  
  グループ化結合は、[!INCLUDE[sqltecxlinq](../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq-md.md)] を使用して XML を作成するのに適しています。  次の例は前の例に似ていますが、匿名型を作成するのではなく、結果セレクター機能により、結合されたオブジェクトを表す XML 要素を作成する点が異なります。  [!INCLUDE[sqltecxlinq](../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq-md.md)] の詳細については、「[LINQ to XML](../../../visual-basic/programming-guide/concepts/linq/linq-to-xml.md)」を参照してください。  
   
- [!code-cs[CsLINQProgJoining#6](../../../csharp/programming-guide/linq-query-expressions/codesnippet/csharp/Joins/joins.cs#6)]  
+ [!code-cs[CsLINQProgJoining#6](../../../csharp/programming-guide/linq-query-expressions/codesnippet/CSharp/how-to-perform-grouped-joins_2.cs)]  
   
 ## コードのコンパイル  
   

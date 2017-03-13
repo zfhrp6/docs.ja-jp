@@ -28,7 +28,7 @@ caps.handback.revision: 18
 ここでは、属性軸プロパティを使用して、XML 要素内の XML 属性に名前を指定してアクセスする方法の例を示します。  具体的には、`type` 属性軸プロパティを使用して、`phone` オブジェクト内の `type` という名前の属性にアクセスします。  
   
 ## 使用例  
- [!code-vb[VbXMLSamples#11](../../../../visual-basic/language-reference/operators/codesnippet/visualbasic/how-to-access-xml-attrib_1.vb)]  
+ [!code-vb[VbXMLSamples#11](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/how-to-access-xml-attributes_1.vb)]  
   
 ## 参照  
  <xref:System.Xml.Linq.XElement.Attributes%2A?displayProperty=fullName>   

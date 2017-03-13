@@ -38,7 +38,7 @@ x = x ^ y
  ^\= 演算子は直接オーバーロードできませんが、ユーザー定義型では [^ 演算子](../../../csharp/language-reference/operators/xor-operator.md)をオーバーロードできます \(「[演算子](../../../csharp/language-reference/keywords/operator.md)」を参照\)。  
   
 ## 使用例  
- [!code-cs[csRefOperators#23](../../../csharp/language-reference/operators/codesnippet/csharp/csrefOperators/csrefOperators.cs#23)]  
+ [!code-cs[csRefOperators#23](../../../csharp/language-reference/operators/codesnippet/CSharp/xor-assignment-operator_1.cs)]  
   
 ## 参照  
  [C\# リファレンス](../../../csharp/language-reference/index.md)   

@@ -27,7 +27,7 @@ caps.handback.revision: 8
 ## 使用例  
  文字列内の文字に関するデータを取得したり、文字列内の文字の位置を調べたりできます。  文字列は、文字 \(`Char` 型のインスタンス\) の配列と見なすことができるため、<xref:System.String.Chars%2A> プロパティを使って文字のインデックスを参照すると、特定の文字を取得できます。  
   
- [!code-vb[VbVbalrStrings#49](../../../../visual-basic/language-reference/functions/codesnippet/visualbasic/how-to-access-characters_1.vb)]  
+ [!code-vb[VbVbalrStrings#49](../../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/how-to-access-characters-in-strings_1.vb)]  
   
  <xref:System.String.Chars%2A> プロパティの `index` パラメーターは、0 から始まります。  
   

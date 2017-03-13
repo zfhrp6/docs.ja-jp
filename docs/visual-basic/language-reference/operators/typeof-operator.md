@@ -68,7 +68,7 @@ result = TypeOf objectexpression IsNot typename
 ## 使用例  
  次の例では、`TypeOf`...`Is` 式でさまざまなデータ型を使用して、2 つのオブジェクト参照変数の型の互換性をテストしています。  
   
- [!code-vb[VbVbalrOperators#39](../../../visual-basic/language-reference/operators/codesnippet/visualbasic/typeof-operator_1.vb)]  
+ [!code-vb[VbVbalrOperators#39](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/typeof-operator_1.vb)]  
   
  変数 `refInteger` は、実行時の型 `Integer` を持ちます。  `Integer` と互換性がありますが、`Double` との互換性はありません。  変数 `refForm` は、実行時の型 <xref:System.Windows.Forms.Form> を持ちます。  この変数は、<xref:System.Windows.Forms.Form> \(同じ型\)、<xref:System.Windows.Forms.Control> \(<xref:System.Windows.Forms.Form> は <xref:System.Windows.Forms.Control> を継承する\)、および <xref:System.ComponentModel.IComponent> \(<xref:System.Windows.Forms.Form> は <xref:System.ComponentModel.IComponent> を実装する <xref:System.ComponentModel.Component> を継承する\) と互換性があります。  ただし、`refForm` には <xref:System.Windows.Forms.Label> との互換性はありません。  
   

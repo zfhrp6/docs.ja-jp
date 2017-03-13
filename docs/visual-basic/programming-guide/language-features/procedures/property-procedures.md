@@ -108,11 +108,11 @@ End Property
 ### 宣言と呼び出しの説明  
  次のプロパティは、フル ネームをファースト ネームとラスト ネームの 2 つの部分に分けて格納します。  呼び出しコードが  `fullName` を読み込むと、`Get` プロシージャが 2 つの部分を組み合わせてフル ネームを返します。  呼び出しコードが新しいフル ネームを代入すると、`Set` プロシージャはそれを 2 つの部分に分割します。  フル ネームに空白が含まれない場合は、全体をファースト ネームとして格納します。  
   
- [!code-vb[VbVbcnProcedures#8](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/property-procedures_1.vb)]  
+ [!code-vb[VbVbcnProcedures#8](./codesnippet/VisualBasic/property-procedures_1.vb)]  
   
  `fullName` の Property プロシージャを呼び出す一般的な例は次のとおりです。  
   
- [!code-vb[VbVbcnProcedures#9](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/property-procedures_2.vb)]  
+ [!code-vb[VbVbcnProcedures#9](./codesnippet/VisualBasic/property-procedures_2.vb)]  
   
 ## 参照  
  [Procedures](../../../../visual-basic/programming-guide/language-features/procedures/index.md)   

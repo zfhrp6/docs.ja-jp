@@ -35,18 +35,18 @@ caps.handback.revision: 9
   
      たとえば、`Custom Event`が `Custom Event Test(ByVal sender As Object, ByVal i As Integer)` で定義されている場合、対応するデリゲートの定義は次のようになります。  
   
-     [!code-vb[VbVbalrEventError#18](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/custom-modifier-is-not-v_1.vb)]  
+     [!code-vb[VbVbalrEventError#18](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/custom-modifier-is-not-valid-on-events-declared-without-explicit-delegate-types_1.vb)]  
   
 2.  カスタム イベントのパラメーター リストを、デリゲート型を指定する `As` 句で書き換えます。  
   
      先の例を使用すると、`Custom Event`の宣言は次のように書き換えられます。  
   
-     [!code-vb[VbVbalrEventError#19](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/custom-modifier-is-not-v_2.vb)]  
+     [!code-vb[VbVbalrEventError#19](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/custom-modifier-is-not-valid-on-events-declared-without-explicit-delegate-types_2.vb)]  
   
 ## 使用例  
  次の例は、`Custom Event` を宣言して、必須である `As` 句をデリゲート型と一緒に指定します。  
   
- [!code-vb[VbVbalrEventError#2](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/custom-modifier-is-not-v_3.vb)]  
+ [!code-vb[VbVbalrEventError#2](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/custom-modifier-is-not-valid-on-events-declared-without-explicit-delegate-types_3.vb)]  
   
 ## 参照  
  [Event Statement](../../../visual-basic/language-reference/statements/event-statement.md)   

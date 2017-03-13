@@ -20,7 +20,7 @@ caps.handback.revision: 44
 # null 許容型 (C# プログラミング ガイド)
 null 許容型は、<xref:System.Nullable%601?displayProperty=fullName> 構造体のインスタンスです。  null 許容型は、基礎となる値型の正しい範囲の値だけでなく、`null` 値も表すことができます。  たとえば、`Nullable<Int32>` \("Int32 の Nullable" と読みます\) には、\-2147483648 から 2147483647 の任意の値、または `null` 値を割り当てることができます。  `Nullable<bool>` には、[true](../../../csharp/language-reference/keywords/true.md)、[false](../../../csharp/language-reference/keywords/false.md)、または [null](../../../csharp/language-reference/keywords/null.md) の値を割り当てることができます。  数値型と Boolean 型に `null` を割り当てる機能が便利なのは、値を割り当てられていない可能性がある要素を含むデータベースや他のデータ型を処理するときです。  たとえば、データベースの Boolean フィールドには、値 `true` または `false` を格納するか、未定義にすることが可能です。  
   
- [!code-cs[csProgGuideTypes#3](../../../csharp/programming-guide/nullable-types/codesnippet/csharp/index_1.cs)]  
+ [!code-cs[csProgGuideTypes#3](../../../csharp/programming-guide/nullable-types/codesnippet/CSharp/index_1.cs)]  
   
  この例は次の出力を表示します。  
   

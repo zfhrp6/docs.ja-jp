@@ -80,12 +80,12 @@ number1 Mod number2
 ## 使用例  
  `Mod` 演算子を使って、2 つの数値の除算を行い、その剰余を取得する例を次に示します。  どちらかの数値が浮動小数点数の場合、結果は剰余を表す浮動小数点数になります。  
   
- [!code-vb[VbVbalrOperators#31](../../../visual-basic/language-reference/operators/codesnippet/visualbasic/mod-operator_1.vb)]  
+ [!code-vb[VbVbalrOperators#31](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/mod-operator_1.vb)]  
   
 ## 使用例  
  浮動小数点数のオペランドによって誤差が生じる例を次に示します。  最初のステートメントのオペランドは、どちらも倍精度浮動小数点型 \(`Double`\) であり、無限に繰り返されるバイナリ分数である 0.2 が、値 0.20000000000000001 として格納されています。  2 つ目のステートメントでは、リテラルの型文字 `D` が指定されているため、2 つのオペランドが 10 進型 \(`Decimal`\) になり、0.2 が正確に表現されています。  
   
- [!code-vb[VbVbalrOperators#32](../../../visual-basic/language-reference/operators/codesnippet/visualbasic/mod-operator_2.vb)]  
+ [!code-vb[VbVbalrOperators#32](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/mod-operator_2.vb)]  
   
 ## 参照  
  <xref:Microsoft.VisualBasic.Conversion.Int%2A>   

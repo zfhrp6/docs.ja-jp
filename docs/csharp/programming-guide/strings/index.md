@@ -25,7 +25,7 @@ caps.handback.revision: 41
 ## 文字列の宣言と初期化  
  次の例に示すように、文字列はさまざまな方法で宣言および初期化できます。  
   
- [!code-cs[csProgGuideStrings#1](../../../csharp/programming-guide/strings/codesnippet/csharp/CSRefStrings/Strings.cs#1)]  
+ [!code-cs[csProgGuideStrings#1](../../../csharp/programming-guide/strings/codesnippet/CSharp/index_1.cs)]  
   
  文字列を文字の配列で初期化する場合を除き、文字列オブジェクトの作成に [new](../../../csharp/language-reference/keywords/new-operator.md) 演算子を使用しないでください。  
   
@@ -34,22 +34,22 @@ caps.handback.revision: 41
 ## 文字列オブジェクトの不変性  
  文字列オブジェクトは*変更不可*です。つまり、作成した文字列オブジェクトは変更できません。  文字列を変更するように見える <xref:System.String> メソッドと C\# 演算子はすべて、実際には新しい文字列オブジェクトで結果を返します。  次の例では、`s1` と `s2` の内容を連結して 1 つの文字列を形成するときに、2 つの元の文字列は変更されません。  `+=` 演算子で、連結した内容を含む新しい文字列が作成されます。  新しいオブジェクトは変数 `s1` に代入され、`s1` に代入された元のオブジェクトはガベージ コレクションに対して解放されます。これは、他の変数がこのオブジェクトへの参照を保持していないためです。  
   
- [!code-cs[csProgGuideStrings#2](../../../csharp/programming-guide/strings/codesnippet/csharp/CSRefStrings/Strings.cs#2)]  
+ [!code-cs[csProgGuideStrings#2](../../../csharp/programming-guide/strings/codesnippet/CSharp/index_2.cs)]  
   
  文字列の "変更" では、実際には文字列が新しく作成されるため、文字列への参照を作成するときには注意が必要です。  文字列の参照を作成し、基の文字列を "変更" する場合、参照は文字列が変更されたときに作成された新しいオブジェクトではなく、元のオブジェクトを指したままになります。  この動作を表すコードの例を次に示します。  
   
- [!code-cs[csProgGuideStrings#25](../../../csharp/programming-guide/strings/codesnippet/csharp/CSRefStrings/Strings.cs#25)]  
+ [!code-cs[csProgGuideStrings#25](../../../csharp/programming-guide/strings/codesnippet/CSharp/index_3.cs)]  
   
  元の文字列での検索操作や置換操作などの変更に基づく新しい文字列を作成する方法の詳細については、「[方法 : 文字列の内容を変更する](../../../csharp/programming-guide/strings/how-to-modify-string-contents.md)」を参照してください。  
   
 ## 標準リテラル文字列と逐語的リテラル文字列  
  次の例に示すように、C\# で提供されるエスケープ文字を埋め込む必要がある場合は、標準リテラル文字列を使用します。  
   
- [!code-cs[csProgGuideStrings#3](../../../csharp/programming-guide/strings/codesnippet/csharp/CSRefStrings/Strings.cs#3)]  
+ [!code-cs[csProgGuideStrings#3](../../../csharp/programming-guide/strings/codesnippet/CSharp/index_4.cs)]  
   
  文字列テキストに円記号が含まれる場合 \(ファイル パスなど\) は、使いやすさと読みやすさを考慮して、逐語的文字列を使用します。  逐語的文字列は、文字列テキストの一部として改行文字を保持するため、複数行文字列の初期化に使用できます。  引用符を逐語的文字列に埋め込むには、二重の引用符を使用します。  逐語的文字列の一般的な使用方法の例を次に示します。  
   
- [!code-cs[csProgGuideStrings#4](../../../csharp/programming-guide/strings/codesnippet/csharp/CSRefStrings/Strings.cs#4)]  
+ [!code-cs[csProgGuideStrings#4](../../../csharp/programming-guide/strings/codesnippet/CSharp/index_5.cs)]  
   
 ## 文字列のエスケープ シーケンス  
   
@@ -76,23 +76,23 @@ caps.handback.revision: 41
 ## 書式指定文字列  
  書式指定文字列は、内容が実行時に動的に決定される文字列です。  静的な <xref:System.String.Format%2A> メソッドを使用して、実行時に他の値に置換されるプレースホルダーを中かっこ内に埋め込むことで、書式指定文字列を作成します。  書式指定文字列を使用して、ループの各反復処理の結果を出力する例を次に示します。  
   
- [!code-cs[csProgGuideStrings#26](../../../csharp/programming-guide/strings/codesnippet/csharp/CSRefStrings/Strings.cs#26)]  
+ [!code-cs[csProgGuideStrings#26](../../../csharp/programming-guide/strings/codesnippet/CSharp/index_6.cs)]  
   
  <xref:System.Console.WriteLine%2A> メソッドのオーバーロードは、パラメーターとして書式指定文字列を受け取ります。  したがって、メソッドを明示的に呼び出さずに書式指定リテラル文字列を埋め込むことができます。  ただし、<xref:System.Diagnostics.Trace.WriteLine%2A> メソッドを使用して Visual Studio の **\[出力\]** ウィンドウにデバッグ出力を表示する場合は、<xref:System.String.Format%2A> メソッドを明示的に呼び出す必要があります。これは、<xref:System.Diagnostics.Trace.WriteLine%2A> は、書式指定文字列ではなく文字列のみを受け入れるためです。  書式指定文字列の詳細については、「[型の書式設定](../Topic/Formatting%20Types%20in%20the%20.NET%20Framework.md)」を参照してください。  
   
 ## 部分文字列  
  部分文字列は、1 つの文字列に含まれる一連の文字です。  元の文字列の一部から新しい文字列を作成するには、<xref:System.String.Substring%2A> メソッドを使用します。  <xref:System.String.IndexOf%2A> メソッドを使用して、1 つまたは複数の部分文字列を検索できます。  指定されたすべての部分文字列を新しい文字列に置換するには、<xref:System.String.Replace%2A> メソッドを使用します。  <xref:System.String.Substring%2A> メソッドと同様に、<xref:System.String.Replace%2A> は実際には新しい文字列を返し、元の文字列は変更しません。  詳細については、「[方法 : String のメソッドを使用して文字列を検索する](../../../csharp/programming-guide/strings/how-to-search-strings-using-string-methods.md)」および「[方法 : 文字列の内容を変更する](../../../csharp/programming-guide/strings/how-to-modify-string-contents.md)」を参照してください。  
   
- [!code-cs[csProgGuideStrings#7](../../../csharp/programming-guide/strings/codesnippet/csharp/CSRefStrings/Strings.cs#7)]  
+ [!code-cs[csProgGuideStrings#7](../../../csharp/programming-guide/strings/codesnippet/CSharp/index_7.cs)]  
   
 ## 各文字へのアクセス  
  次の例に示すように、配列表記とインデックス値を使用すると、それぞれの文字への読み取り専用アクセスが可能になります。  
   
- [!code-cs[csProgGuideStrings#9](../../../csharp/programming-guide/strings/codesnippet/csharp/CSRefStrings/Strings.cs#9)]  
+ [!code-cs[csProgGuideStrings#9](../../../csharp/programming-guide/strings/codesnippet/CSharp/index_8.cs)]  
   
  <xref:System.String> メソッドが、文字列内の個別の文字を変更する必要がある機能を提供していない場合は、<xref:System.Text.StringBuilder> オブジェクトを使用して個別の文字の "埋め込み先" を変更し、<xref:System.Text.StringBuilder> メソッドを使用することで、結果を格納する新しい文字列を作成できます。  次の例では、特定の方法で元の文字列を変更し、将来使用するためにその結果を保存する必要があるとします。  
   
- [!code-cs[csProgGuideStrings#8](../../../csharp/programming-guide/strings/codesnippet/csharp/CSRefStrings/Strings.cs#8)]  
+ [!code-cs[csProgGuideStrings#8](../../../csharp/programming-guide/strings/codesnippet/CSharp/index_9.cs)]  
   
 ## null 文字列と空の文字列  
  空の文字列は、文字数ゼロの <xref:System.String?displayProperty=fullName> オブジェクトのインスタンスです。  空の文字列は、空のテキスト フィールドを表すため、さまざまなプログラミング シナリオでよく使用されます。  空の文字列は有効な <xref:System.String?displayProperty=fullName> オブジェクトなので、メソッドを呼び出すことができます。  空の文字列は、次のように初期化されます。  
@@ -103,16 +103,16 @@ string s = String.Empty;
   
  一方、null 文字列は <xref:System.String?displayProperty=fullName> オブジェクトのインスタンスを参照しないので、null 文字列でメソッドを呼び出そうとすると <xref:System.NullReferenceException> が発生します。  しかし、null 文字列を他の文字列に連結したり、他の文字列と比較することは可能です。  次に、null 文字列の参照によって例外がスローされる場合とされない場合の例を示します。  
   
- [!code-cs[csProgGuideStrings#27](../../../csharp/programming-guide/strings/codesnippet/csharp/CSRefStrings/Strings.cs#27)]  
+ [!code-cs[csProgGuideStrings#27](../../../csharp/programming-guide/strings/codesnippet/CSharp/index_10.cs)]  
   
 ## 文字列を迅速に作成するための StringBuilder の使用  
  .NET での文字列操作は高度に最適化されており、ほとんどの場合パフォーマンスに大きく影響することはありません。  ただし、短いループが数百回または数千回実行されている場合など、シナリオによっては文字列操作がパフォーマンスに影響する可能性があります。  <xref:System.Text.StringBuilder> クラスが作成する文字列バッファーにより、プログラムで大量の文字列操作を実行する場合のパフォーマンスが向上します。  <xref:System.Text.StringBuilder> 文字列を使用すると、組み込み文字列データ型ではサポートされていない個別の文字を再割り当てできます。  たとえば、このコードでは、新しい文字列を作成せずに、文字列の内容を変更します。  
   
- [!code-cs[csProgGuideStrings#20](../../../csharp/programming-guide/strings/codesnippet/csharp/CSRefStrings/Strings.cs#20)]  
+ [!code-cs[csProgGuideStrings#20](../../../csharp/programming-guide/strings/codesnippet/CSharp/index_11.cs)]  
   
  この例では、<xref:System.Text.StringBuilder> オブジェクトを使用して、複数の数値型から 1 つの文字列を作成します。  
   
- [!code-cs[csProgGuideStrings#15](../../../csharp/programming-guide/strings/codesnippet/csharp/CSRefStrings/Strings.cs#15)]  
+ [!code-cs[csProgGuideStrings#15](../../../csharp/programming-guide/strings/codesnippet/CSharp/index_12.cs)]  
   
 ## 文字列、拡張メソッド、および LINQ  
  <xref:System.String> 型は <xref:System.Collections.Generic.IEnumerable%601> を実装するため、<xref:System.Linq.Enumerable> クラスで定義されている拡張メソッドを文字列で使用できます。  見やすさを考慮して、これらのメソッドは <xref:System.String> 型の IntelliSense からは除外されていますが、使用できます。  文字列で [!INCLUDE[vbteclinq](../../../csharp/includes/vbteclinq-md.md)] クエリ式を使用することもできます。  詳細については、「[LINQ and Strings](../../../visual-basic/programming-guide/concepts/linq/linq-and-strings.md)」を参照してください。  

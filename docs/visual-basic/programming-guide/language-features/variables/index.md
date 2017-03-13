@@ -33,7 +33,7 @@ caps.handback.revision: 27
 ## 値の代入  
  計算を実行して結果を変数に代入するには、次の例のように、代入ステートメントを使用します。  
   
- [!code-vb[VbVbalrVariables#1](../../../../visual-basic/programming-guide/language-features/variables/codesnippet/visualbasic/index_1.vb)]  
+ [!code-vb[VbVbalrVariables#1](../../../../visual-basic/programming-guide/language-features/variables/codesnippet/VisualBasic/index_1.vb)]  
   
 > [!NOTE]
 >  この例で使用されている等号 \(`=`\) は、等値演算子ではなく代入演算子です。  値は変数 `applesSold` に代入されます。  

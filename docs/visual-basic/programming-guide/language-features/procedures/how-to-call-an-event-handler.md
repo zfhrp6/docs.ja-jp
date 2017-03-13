@@ -45,7 +45,7 @@ caps.handback.revision: 19
   
      イベントの定義例と、イベントを発生させるクラスを参照する `WithEvents` 変数の定義例を次に示します。  イベントを処理する `Sub` プロシージャでは `Handles` 句を使用して、クラスおよびプロシージャが処理するイベントが指定されています。  
   
-     [!code-vb[VbVbcnProcedures#4](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/how-to-call-an-event-han_1.vb)]  
+     [!code-vb[VbVbcnProcedures#4](./codesnippet/VisualBasic/how-to-call-an-event-handler_1.vb)]  
   
 ### AddHandler を使用してイベント ハンドラーを呼び出すには  
   
@@ -57,7 +57,7 @@ caps.handback.revision: 19
   
      次の例に定義された `Sub` プロシージャは、フォームの <xref:System.Windows.Forms.Form.Closing> イベントを処理します。  次に、[AddHandler Statement](../../../../visual-basic/language-reference/statements/addhandler-statement.md)を使って `catchClose` プロシージャを <xref:System.Windows.Forms.Form.Closing> のイベント ハンドラーとして関連付けています。  
   
-     [!code-vb[VbVbcnProcedures#5](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/how-to-call-an-event-han_2.vb)]  
+     [!code-vb[VbVbcnProcedures#5](./codesnippet/VisualBasic/how-to-call-an-event-handler_2.vb)]  
   
      [RemoveHandler Statement](../../../../visual-basic/language-reference/statements/removehandler-statement.md)を実行すると、イベント ハンドラーをイベントから切り離すことができます。  
   

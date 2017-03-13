@@ -37,7 +37,7 @@ caps.handback.revision: 38
   
  次の例は、前の図に示したクラスの関係が C\# でどのように表現されるかを示しています。  また、この例は、`WorkItem` で仮想メソッド <xref:System.Object.ToString%2A?displayProperty=fullName> をオーバーライドする方法と、`ChangeRequest` クラスで `WorkItem` のメソッドの実装を継承する方法も示しています。  
   
- [!code-cs[csProgGuideInheritance#49](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/inheritance_1.cs)]  
+ [!code-cs[csProgGuideInheritance#49](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/inheritance_1.cs)]  
   
 ## 抽象メソッドと仮想メソッド  
  基本クラスでメソッドが [virtual](../../../csharp/language-reference/keywords/virtual.md) として宣言されている場合、派生クラスはそのメソッドを独自の実装で[オーバーライド](../../../csharp/language-reference/keywords/override.md)できます。  基本クラスでメンバーが [abstract](../../../csharp/language-reference/keywords/abstract.md) として宣言されている場合は、クラスから直接継承される非抽象クラスで、そのメソッドをオーバーライドする必要があります。  派生クラス自体が抽象クラスの場合は、抽象メンバーを実装せずに継承します。  抽象メンバーと仮想メンバーは、オブジェクト指向プログラミングの重要な特性の 2 つ目であるポリモーフィズムの基礎です。  詳細については、「[ポリモーフィズム](../../../csharp/programming-guide/classes-and-structs/polymorphism.md)」を参照してください。  

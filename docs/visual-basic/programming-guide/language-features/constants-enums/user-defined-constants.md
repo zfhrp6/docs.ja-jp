@@ -33,15 +33,15 @@ caps.handback.revision: 19
 ## Const ステートメントの使用方法  
  `Const` ステートメントでは、数値および日付や時刻を表す値を定数の値にできます。  
   
- [!code-vb[VbEnumsTask#10](../../../../visual-basic/language-reference/statements/codesnippet/visualbasic/WindowsApplication1/Class2.vb#10)]  
+ [!code-vb[VbEnumsTask#10](../../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/user-defined-constants_1.vb)]  
   
  また、文字列型 \(`String`\) の定数も定義できます。  
   
- [!code-vb[VbEnumsTask#13](../../../../visual-basic/language-reference/statements/codesnippet/visualbasic/WindowsApplication1/Class2.vb#13)]  
+ [!code-vb[VbEnumsTask#13](../../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/user-defined-constants_2.vb)]  
   
  通常、等号 \(`=`\) の右側には数値またはリテラル文字列を指定しますが、数値または文字列に評価される式を指定することもできます。ただし、指定する式の中に関数の呼び出しを含めることはできません。  また、既に定義された定数を使って別の定数を定義することもできます。次に例を示します。  
   
- [!code-vb[VbEnumsTask#15](../../../../visual-basic/language-reference/statements/codesnippet/visualbasic/WindowsApplication1/Class2.vb#15)]  
+ [!code-vb[VbEnumsTask#15](../../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/user-defined-constants_3.vb)]  
   
 ## ユーザー定義定数のスコープ  
  `Const` ステートメントのスコープは、同じ場所で宣言される変数のスコープと同じです。  スコープは、次のいずれかの方法で指定できます。  
@@ -59,8 +59,8 @@ caps.handback.revision: 19
 ### 循環参照の回避  
  定数の値は、他の定数を使って定義できるため、複数の定数の間で*循環参照*が発生する可能性があります。  循環参照は、次のように、複数のパブリック定数が互いに参照し合うと発生します。  
   
- [!code-vb[VbEnumsTask#16](../../../../visual-basic/language-reference/statements/codesnippet/visualbasic/WindowsApplication1/Class2.vb#16)]  
-[!code-vb[VbEnumsTask#17](../../../../visual-basic/language-reference/statements/codesnippet/visualbasic/WindowsApplication1/Class2.vb#17)]  
+ [!code-vb[VbEnumsTask#16](../../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/user-defined-constants_4.vb)]  
+[!code-vb[VbEnumsTask#17](../../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/user-defined-constants_5.vb)]  
   
  循環参照があると、[!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] でコンパイラ エラーが発生します。  
   

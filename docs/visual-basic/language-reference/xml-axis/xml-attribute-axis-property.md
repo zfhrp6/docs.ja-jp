@@ -74,7 +74,7 @@ object.@<attribute>
 ## 使用例  
  次の例は、`type` という名前の XML 属性の値を、`phone` という名前の XML 要素のコレクションから取得する方法を示します。  
   
- [!code-vb[VbXMLSamples#12](../../../visual-basic/language-reference/operators/codesnippet/visualbasic/xml-attribute-axis-prope_1.vb)]  
+ [!code-vb[VbXMLSamples#12](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/xml-attribute-axis-property_1.vb)]  
   
  このコードは、次のテキストを表示します。  
   
@@ -89,7 +89,7 @@ object.@<attribute>
 ## 使用例  
  次の例は、XML 要素の属性を宣言によって XML の一部として作成する方法と、<xref:System.Xml.Linq.XElement> オブジェクトのインスタンスに属性を追加することによって動的に作成する方法の両方を示しています。  `type` 属性は宣言によって作成され、`owne` 属性は動的に作成されます。  
   
- [!code-vb[VbXMLSamples#44](../../../visual-basic/language-reference/operators/codesnippet/visualbasic/xml-attribute-axis-prope_2.vb)]  
+ [!code-vb[VbXMLSamples#44](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/xml-attribute-axis-property_2.vb)]  
   
  このコードは、次のテキストを表示します。  
   
@@ -100,7 +100,7 @@ object.@<attribute>
 ## 使用例  
  次の例では、山かっこを使用した構文によって、`number-type` という名前の XML 属性の値を取得します。この名前は、[!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] の有効な識別子ではありません。  
   
- [!code-vb[VbXMLSamples#13](../../../visual-basic/language-reference/operators/codesnippet/visualbasic/xml-attribute-axis-prope_3.vb)]  
+ [!code-vb[VbXMLSamples#13](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/xml-attribute-axis-property_3.vb)]  
   
  このコードは、次のテキストを表示します。  
   
@@ -109,7 +109,7 @@ object.@<attribute>
 ## 使用例  
  次の例では、`ns` を XML 名前空間プレフィックスとして宣言します。  その後、この名前空間のプレフィックスを使用して XML リテラルを作成し、修飾名 "`ns:name`" を持つ最初の子ノードにアクセスします。  
   
- [!code-vb[VbXMLSamples#14](../../../visual-basic/language-reference/operators/codesnippet/visualbasic/xml-attribute-axis-prope_4.vb)]  
+ [!code-vb[VbXMLSamples#14](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/xml-attribute-axis-property_4.vb)]  
   
  このコードは、次のテキストを表示します。  
   

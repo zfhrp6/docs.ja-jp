@@ -29,7 +29,7 @@ caps.handback.revision: 9
 ## 使用例  
  この例では、<xref:System.Text.Encoding.Unicode%2A?displayProperty=fullName> エンコーディング クラスの <xref:System.Text.Encoding.GetString%2A> メソッドを使用して、バイト配列内のすべてのバイトを文字列に変換します。  
   
- [!code-vb[VbVbalrStrings#72](../../../../visual-basic/language-reference/functions/codesnippet/visualbasic/how-to-convert-an-array-_1.vb)]  
+ [!code-vb[VbVbalrStrings#72](../../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/how-to-convert-an-array-of-bytes-into-a-string_1.vb)]  
   
  バイト配列を文字列に変換する場合、エンコーディング オプションを選択できます。  
   

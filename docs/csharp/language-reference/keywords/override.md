@@ -24,7 +24,7 @@ caps.handback.revision: 26
 ## 使用例  
  この例では、`Square` クラスが `Area` のオーバーライド実装を提供する必要があります。これは、`Area` が抽象 `ShapesClass` から継承されているためです。  
   
- [!code-cs[csrefKeywordsModifiers#1](../../../csharp/language-reference/keywords/codesnippet/csharp/csrefKeywordsModifiers/csrefKeywordsModifiers.cs#1)]  
+ [!code-cs[csrefKeywordsModifiers#1](../../../csharp/language-reference/keywords/codesnippet/CSharp/override_1.cs)]  
   
  `override` メソッドは、基本クラスから継承されたメンバーの新しい実装を提供します。  `override` 宣言によってオーバーライドされたメソッドを、オーバーライドされた基本メソッドと言います。  オーバーライドされた基本メソッドは、`override` メソッドと同じシグネチャを持つ必要があります。  継承の詳細については、「[継承](../../../csharp/programming-guide/classes-and-structs/inheritance.md)」を参照してください。  
   
@@ -41,7 +41,7 @@ caps.handback.revision: 26
 ## 使用例  
  この例では、`Employee` という基本クラスと、`SalesEmployee` という派生クラスを定義します。  `SalesEmployee` クラスには追加のプロパティ `salesbonus` があり、このプロパティを処理に含めるために、`CalculatePay` メソッドをオーバーライドします。  
   
- [!code-cs[csrefKeywordsModifiers#9](../../../csharp/language-reference/keywords/codesnippet/csharp/csrefKeywordsModifiers/csrefKeywordsModifiers.cs#9)]  
+ [!code-cs[csrefKeywordsModifiers#9](../../../csharp/language-reference/keywords/codesnippet/CSharp/override_2.cs)]  
   
 ## C\# 言語仕様  
  [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec-md.md)]  

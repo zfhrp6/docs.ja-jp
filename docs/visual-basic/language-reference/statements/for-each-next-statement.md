@@ -73,7 +73,7 @@ Next [ element ]
   
  次の例では、`For Each`\[…\]`Next` のステートメントはリスト コレクションのすべての要素に対して繰り返します。  
   
- [!code-vb[VbVbalrStatements#121](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/for-each-next-statement_1.vb)]  
+ [!code-vb[VbVbalrStatements#121](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/for-each-next-statement_1.vb)]  
   
  その他の例については、「[コレクション](../Topic/Collections%20\(C%23%20and%20Visual%20Basic\).md)」および「[配列](../../../visual-basic/programming-guide/language-features/arrays/index.md)」を参照してください。  
   
@@ -82,7 +82,7 @@ Next [ element ]
   
  次の例は、入れ子になった `For Each`…`Next` 構造体を示しています。  
   
- [!code-vb[VbVbalrStatements#122](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/for-each-next-statement_2.vb)]  
+ [!code-vb[VbVbalrStatements#122](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/for-each-next-statement_2.vb)]  
   
  ループを入れ子にする場合は、各ループは `element` の一意の変数を指定する必要があります。  
   
@@ -95,7 +95,7 @@ Next [ element ]
   
  次の例は、`Continue For` ステートメントおよび `Exit For` ステートメントの使用方法を示しています。  
   
- [!code-vb[VbVbalrStatements#123](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/for-each-next-statement_3.vb)]  
+ [!code-vb[VbVbalrStatements#123](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/for-each-next-statement_3.vb)]  
   
  `Exit For` ステートメントは、`For Each` ループで何度でも使用できます。  入れ子構造になっている `For Each`ループの中で使用すると、`Exit For` により、実行で最も内側のループが終了し、入れ子構造の 1 つ外側のレベルに制御が移されます。  
   
@@ -114,7 +114,7 @@ Next [ element ]
   
  次の例は、反復子関数を使用します。  反復子の関数に [次に、…](../../../visual-basic/language-reference/statements/for-next-statement.md) のループ内にある `Yield` のステートメントがあります。  `ListEvenNumbers` のメソッドでは、`For Each` ステートメントのメイン フレームの各反復で `Yield` の次のステートメントに進む反復子の関数への呼び出しを作成します。  
   
- [!code-vb[VbVbalrStatements#127](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/for-each-next-statement_4.vb)]  
+ [!code-vb[VbVbalrStatements#127](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/for-each-next-statement_4.vb)]  
   
  詳細については、「[反復子](../Topic/Iterators%20\(C%23%20and%20Visual%20Basic\).md)」、「[Yield ステートメント](../../../visual-basic/language-reference/statements/yield-statement.md)」、および「[Iterator](../../../visual-basic/language-reference/modifiers/iterator.md)」を参照してください。  
   
@@ -142,7 +142,7 @@ Next [ element ]
   
  次の例では、`n` の初期値として `m` の割り当ては `Integer` への `Long` の変換が縮小変換であるための `Option Strict` がいつあるかコンパイルされます。  ただし、`For Each` ステートメントでは、`number` への代入で同じ `Long` から `Integer` への変換が必要とされますが、コンパイラ エラーは報告されません。  大きな数値が含まれる `For Each` ステートメントでは、<xref:Microsoft.VisualBasic.CompilerServices.Conversions.ToInteger%2A> が大きな数値に適用された場合に実行時エラーが発生します。  
   
- [!code-vb[VbVbalrStatements#89](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/for-each-next-statement_5.vb)]  
+ [!code-vb[VbVbalrStatements#89](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/for-each-next-statement_5.vb)]  
   
 ### IEnumerator の呼び出し  
  `For Each`...`Next` ループの実行を開始するときには、`group` が有効なコレクション オブジェクトを参照しているかどうかが検証されます。  有効なコレクション オブジェクトでない場合は、例外がスローされます。  有効なコレクション オブジェクトである場合は、列挙子オブジェクトの <xref:System.Collections.IEnumerator.MoveNext%2A> メソッドと <xref:System.Collections.IEnumerator.Current%2A> プロパティが呼び出され、1 つ目の要素が返されます。  `MoveNext` が次の要素がないことを示した場合、つまりコレクションが空の場合は、`For Each` ループは停止し、`Next` ステートメントの次のステートメントに制御が渡されます。  それ以外の場合は、`element` が 1 つ目の要素に設定され、ステートメント ブロックが実行されます。  
@@ -163,7 +163,7 @@ Next [ element ]
 ## 使用例  
  次の例では、<xref:System.IO.DirectoryInfo> クラスを使用して、C:\\ ディレクトリ内のすべてのフォルダーを一覧表示します。  
   
- [!code-vb[VbVbalrStatements#124](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/for-each-next-statement_6.vb)]  
+ [!code-vb[VbVbalrStatements#124](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/for-each-next-statement_6.vb)]  
   
 ## 使用例  
  次の例は、コレクションを並べ替えるための手順を示します。  <xref:System.Collections.Generic.List%601>に格納されている `Car` の例の並べ替えのインスタンスを示します。  `Car` のクラスは <xref:System.IComparable%601.CompareTo%2A> のメソッドは、実行する必要のある <xref:System.IComparable%601> のインターフェイスを実装します。  
@@ -172,7 +172,7 @@ Next [ element ]
   
  `ListCars` のメソッドでは、`cars.Sort()` のステートメントは、リストを並べ替えます。  <xref:System.Collections.Generic.List%601> の <xref:System.Collections.Generic.List%601.Sort%2A> のメソッドへの呼び出しは、この `CompareTo` のメソッドを `List`の `Car` のオブジェクトを自動的に呼び出します。  
   
- [!code-vb[VbVbalrStatements#125](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/for-each-next-statement_7.vb)]  
+ [!code-vb[VbVbalrStatements#125](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/for-each-next-statement_7.vb)]  
   
 ## 参照  
  [コレクション](../Topic/Collections%20\(C%23%20and%20Visual%20Basic\).md)   

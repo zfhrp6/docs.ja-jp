@@ -46,11 +46,11 @@ caps.handback.revision: 13
   
 3.  `My.Settings` オブジェクトを、プロパティ グリッド用に選択されたオブジェクトとして設定します。  
   
-     [!code-vb[VbVbalrMyResources#11](../../../../visual-basic/developing-apps/programming/app-settings/codesnippet/visualbasic/VbVbalrMyResources2/Form1.vb#11)]  
+     [!code-vb[VbVbalrMyResources#11](../../../../visual-basic/developing-apps/programming/app-settings/codesnippet/VisualBasic/how-to-create-property-grids-for-user-settings_1.vb)]  
   
 4.  ユーザー設定のみを表示するようにプロパティ グリッドを構成します。  
   
-     [!code-vb[VbVbalrMyResources#12](../../../../visual-basic/developing-apps/programming/app-settings/codesnippet/visualbasic/VbVbalrMyResources2/Form1.vb#12)]  
+     [!code-vb[VbVbalrMyResources#12](../../../../visual-basic/developing-apps/programming/app-settings/codesnippet/VisualBasic/how-to-create-property-grids-for-user-settings_2.vb)]  
   
     > [!NOTE]
     >  アプリケーション スコープの設定のみを表示するには、<xref:System.Configuration.UserScopedSettingAttribute>の代わりに <xref:System.Configuration.ApplicationScopedSettingAttribute> の属性を使用します。  

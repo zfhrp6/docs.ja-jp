@@ -35,7 +35,7 @@ caps.handback.revision: 15
 ## 使用例  
  この例では、`LastChanged` ユーザー設定の値を変更し、`My.Settings.Save` メソッドを呼び出して、その変更内容を保存します。  
   
- [!code-vb[VbVbalrMyResources#5](../../../../visual-basic/developing-apps/programming/app-settings/codesnippet/visualbasic/VbVbalrMyResources2/Form1.vb#5)]  
+ [!code-vb[VbVbalrMyResources#5](../../../../visual-basic/developing-apps/programming/app-settings/codesnippet/VisualBasic/how-to-persist-user-settings_1.vb)]  
   
  この例が動作するためには、アプリケーションに `Date` 型の `LastChanged` ユーザー設定が必要です。  詳細については、「[アプリケーションの設定の管理 \(.NET\)](/visual-studio/ide/managing-application-settings-dotnet)」を参照してください。  
   

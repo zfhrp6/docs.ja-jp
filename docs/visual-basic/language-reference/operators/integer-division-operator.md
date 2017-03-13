@@ -73,7 +73,7 @@ expression1 \ expression2
 ## 使用例  
  `\` 演算子を使って整数の除算を実行する例を次に示します。  結果は、2 つのオペランドの商の整数部分を表す整数です。余りは破棄されます。  
   
- [!code-vb[VbVbalrOperators#18](../../../visual-basic/language-reference/operators/codesnippet/visualbasic/integer-division-operator_1.vb)]  
+ [!code-vb[VbVbalrOperators#18](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/integer-division-operator_1.vb)]  
   
  この例の式は、2、3、33、および \-22 の値をそれぞれ返します。  
   

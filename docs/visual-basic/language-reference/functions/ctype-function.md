@@ -64,7 +64,7 @@ CType(expression, typename)
 ## 使用例  
  `CType` 関数を使用して任意の式を `Single` データ型に変換する例を次に示します。  
   
- [!code-vb[VbVbalrFunctions#24](../../../visual-basic/language-reference/functions/codesnippet/visualbasic/ctype-function_1.vb)]  
+ [!code-vb[VbVbalrFunctions#24](../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/ctype-function_1.vb)]  
   
  その他の例については、「[Implicit and Explicit Conversions](../../../visual-basic/programming-guide/language-features/data-types/implicit-and-explicit-conversions.md)」を参照してください。  
   

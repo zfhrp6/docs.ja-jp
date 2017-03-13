@@ -31,21 +31,21 @@ caps.handback.revision: 17
   
  モジュールのスケルトン定義およびそのモジュールの 2 つのメンバーを、次の例に示します。  
   
- [!code-vb[VbVbalrDeclaredElements#1](../../../../visual-basic/programming-guide/language-features/declared-elements/codesnippet/visualbasic/type-promotion_1.vb)]  
+ [!code-vb[VbVbalrDeclaredElements#1](../../../../visual-basic/programming-guide/language-features/declared-elements/codesnippet/VisualBasic/type-promotion_1.vb)]  
   
  `projModule` 内部で、モジュール レベルで宣言されたプログラミング要素は `projNamespace` に上位変換されます。  前の例では、`basicEnum` および `innerClass` は上位変換されますが、`numberSub` はモジュール レベルで宣言されていないため上位変換されません。  
   
 ## 型の上位変換による効果  
  型の上位変換による効果は、修飾文字列にモジュール名を含める必要がなくなるということです。  次の例では、前の例のプロシージャに対して 2 つの呼び出しを行っています。  
   
- [!code-vb[VbVbalrDeclaredElements#2](../../../../visual-basic/programming-guide/language-features/declared-elements/codesnippet/visualbasic/type-promotion_2.vb)]  
+ [!code-vb[VbVbalrDeclaredElements#2](../../../../visual-basic/programming-guide/language-features/declared-elements/codesnippet/VisualBasic/type-promotion_2.vb)]  
   
  前の例では、最初の呼び出しで完全な修飾文字列を使用しています。  しかし、型の上位変換によりこれは必要ありません。  2 番目の呼び出しでもモジュールのメンバーにアクセスしていますが、修飾文字列に `projModule` を含めていません。  
   
 ## 型の上位変換の無効化  
  名前空間に既にモジュール メンバーと同じ名前のメンバーがある場合、そのモジュール メンバーに対する型の上位変換は無効になります。  列挙型のスケルトン定義および同じ名前空間内のモジュールを、次の例に示します。  
   
- [!code-vb[VbVbalrDeclaredElements#3](../../../../visual-basic/programming-guide/language-features/declared-elements/codesnippet/visualbasic/type-promotion_3.vb)]  
+ [!code-vb[VbVbalrDeclaredElements#3](../../../../visual-basic/programming-guide/language-features/declared-elements/codesnippet/VisualBasic/type-promotion_3.vb)]  
   
  この例では、同じ名前の列挙型が名前空間レベルで既に存在するため、[!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] は `abc` クラスを `thisNameSpace` に上位変換できません。  `abcSub` にアクセスするには、完全な修飾文字列 `thisNamespace.thisModule.abc.abcSub` を指定する必要があります。  しかし、クラス `xyz` は上位変換されたままなので、短い修飾文字 `thisNamespace.xyz.xyzSub` を使用して `xyzSub` にアクセスできます。  
   
@@ -54,7 +54,7 @@ caps.handback.revision: 17
   
  **結果。**部分定義の型の上位変換の無効化は、予期しない結果、さらにコンパイル エラーを生じさせる可能性があります。  クラスのスケルトン部分定義、そのうちの 1 つはモジュール内にある場合を、次の例に示します。  
   
- [!code-vb[VbVbalrDeclaredElements#4](../../../../visual-basic/programming-guide/language-features/declared-elements/codesnippet/visualbasic/type-promotion_4.vb)]  
+ [!code-vb[VbVbalrDeclaredElements#4](../../../../visual-basic/programming-guide/language-features/declared-elements/codesnippet/VisualBasic/type-promotion_4.vb)]  
   
  前の例では、開発者は `sampleClass` の 2 つの部分定義がコンパイラによってマージされることを想定しています。  しかし、コンパイラでは `sampleModule` 内の部分定義の上位変換は考慮されません。  その結果、両方とも名前は `sampleClass` ですがパスの修飾が異なる、2 つの独立し、区別されたクラスをコンパイルしようとします。  
   

@@ -26,7 +26,7 @@ caps.handback.revision: 11
 次の例は、XML 名前空間プレフィックス `ns` をインポートし、XML リテラルと XML 軸プロパティの中で使用する方法を示します。  
   
 ## 使用例  
- [!code-vb[VbXMLSamples#8](../../../../visual-basic/language-reference/operators/codesnippet/visualbasic/how-to-declare-and-use-x_1.vb)]  
+ [!code-vb[VbXMLSamples#8](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/how-to-declare-and-use-xml-namespace-prefixes_1.vb)]  
   
 ## コードのコンパイル  
  この例には、次の項目が必要です。  

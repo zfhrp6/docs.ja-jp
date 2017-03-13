@@ -24,7 +24,7 @@ caps.handback.revision: 24
 >  基本クラスで仮想イベントを宣言したり、派生クラスでそれらをオーバーライドしたりしないでください。  C\# コンパイラはこれらを正しく処理できない派生し、イベントに対するサブスクライバーが基本クラスのイベントを実際にサブ スクライブするかどうかは予測できません。  
   
 ## 使用例  
- [!code-cs[csProgGuideEvents#1](../../../csharp/programming-guide/events/codesnippet/csharp/how-to-raise-base-class-_1.cs)]  
+ [!code-cs[csProgGuideEvents#1](../../../csharp/programming-guide/events/codesnippet/CSharp/how-to-raise-base-class-events-in-derived-classes_1.cs)]  
   
 ## 参照  
  [C\# プログラミング ガイド](../../../csharp/programming-guide/index.md)   

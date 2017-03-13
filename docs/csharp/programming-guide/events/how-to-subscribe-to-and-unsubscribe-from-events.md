@@ -30,7 +30,7 @@ caps.handback.revision: 15
   
      [!INCLUDE[csprcs](../../../csharp/includes/csprcs-md.md)] により空のイベント ハンドラー メソッドが作成され、コードに追加されます。  **\[コード\]** ビューを使用して手動でコードを追加することもできます。  たとえば次のコード行では、`Form` クラスが `Load` イベントを発生させたときに呼び出されるイベント ハンドラー メソッドを宣言しています。  
   
-     [!code-cs[csProgGuideEvents#11](../../../csharp/programming-guide/events/codesnippet/csharp/how-to-subscribe-to-and-_1.cs)]  
+     [!code-cs[csProgGuideEvents#11](../../../csharp/programming-guide/events/codesnippet/CSharp/how-to-subscribe-to-and-unsubscribe-from-events_1.cs)]  
   
      プロジェクトの Form1.Designer.cs ファイルの `InitializeComponent` メソッド内に、イベントをサブスクライブする必要があるコード行も自動生成されます。  次のようになります。  
   

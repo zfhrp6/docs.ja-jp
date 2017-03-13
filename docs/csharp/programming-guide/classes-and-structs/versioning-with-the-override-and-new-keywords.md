@@ -37,15 +37,15 @@ C\# 言語は、異なるライブラリの[基本](../../../csharp/language-ref
   
  このことを実際に例を挙げて説明します。`GraphicsClass` という名前のクラスを A 社で作成しており、このクラスを自分のプログラムで使用するとします。  `GraphicsClass` を次に示します。  
   
- [!code-cs[csProgGuideInheritance#27](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/versioning-with-the-over_1.cs)]  
+ [!code-cs[csProgGuideInheritance#27](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/versioning-with-the-override-and-new-keywords_1.cs)]  
   
  会社でこのクラスを使用しているので、このクラスから次のように独自のクラスを派生し、新しいメソッドを追加します。  
   
- [!code-cs[csProgGuideInheritance#28](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/versioning-with-the-over_2.cs)]  
+ [!code-cs[csProgGuideInheritance#28](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/versioning-with-the-override-and-new-keywords_2.cs)]  
   
  作成したアプリケーションは、A 社が次のコードに示すような `GraphicsClass` の新バージョンをリリースするまで、問題なく使用できます。  
   
- [!code-cs[csProgGuideInheritance#29](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/versioning-with-the-over_3.cs)]  
+ [!code-cs[csProgGuideInheritance#29](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/versioning-with-the-override-and-new-keywords_3.cs)]  
   
  `GraphicsClass` の新バージョンには、`DrawRectangle` という名前のメソッドが含まれています。  最初は、何の問題も発生しません。  新しいバージョンは、古いバージョンとバイナリ互換性があります。  新しいクラスがコンピューター システムにインストールされても、配置済みのソフトウェアは引き続き正常に動作します。  `DrawRectangle` メソッドへの既存の呼び出しは、派生クラスのバージョンを参照し続けます。  
   
@@ -53,32 +53,32 @@ C\# 言語は、異なるライブラリの[基本](../../../csharp/language-ref
   
  自分のメソッドで新しい基本クラスのメソッドをオーバーライドする場合は、次のように `override` キーワードを使用します。  
   
- [!code-cs[csProgGuideInheritance#30](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/versioning-with-the-over_4.cs)]  
+ [!code-cs[csProgGuideInheritance#30](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/versioning-with-the-override-and-new-keywords_4.cs)]  
   
  `override` キーワードにより、`YourDerivedGraphicsClass` から派生したオブジェクトは、確実に `DrawRectangle` の派生クラス バージョンを使用します。  `YourDerivedGraphicsClass` から派生したオブジェクトは、次のように base キーワードを使用して、`DrawRectangle` の基本クラス バージョンに引き続きアクセスできます。  
   
- [!code-cs[csProgGuideInheritance#44](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/versioning-with-the-over_5.cs)]  
+ [!code-cs[csProgGuideInheritance#44](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/versioning-with-the-override-and-new-keywords_5.cs)]  
   
  自分のメソッドが新しい基本クラスのメソッドをオーバーライドしないようにする場合は、次の点に注意する必要があります。  2 つのメソッドを混同しないようにするために、自分のメソッドの名前を変更します。  この作業には時間がかかり、エラーが発生しやすいので、場合によっては適切でないことがあります。  プロジェクトが比較的小規模である場合は、Visual Studio のリファクタリング オプションを使用して、メソッドの名前を変更できます。  詳細については、「[Refactoring Classes and Types \(Class Designer\)](/visual-studio/ide/refactoring-classes-and-types-class-designer)」を参照してください。  
   
  または、次のように派生クラスの定義で `new` キーワードを使用して警告を表示させないようにすることもできます。  
   
- [!code-cs[csProgGuideInheritance#31](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/versioning-with-the-over_6.cs)]  
+ [!code-cs[csProgGuideInheritance#31](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/versioning-with-the-override-and-new-keywords_6.cs)]  
   
  `new` キーワードを使用すると、基本クラスに含まれている定義が派生クラスの定義によって隠されることがコンパイラに通知されます。  これが既定の動作です。  
   
 ## オーバーライドとメソッドの選択  
  クラスでメソッドに名前を付けると、名前が同じで、渡されるパラメーターと互換のパラメーターを持つ 2 つのメソッドが存在する場合など、複数のメソッドが呼び出しに対応する場合に、呼び出すのに最適なメソッドを C\# コンパイラが選択します。  次の 2 つのメソッドは互換です。  
   
- [!code-cs[csProgGuideInheritance#32](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/versioning-with-the-over_7.cs)]  
+ [!code-cs[csProgGuideInheritance#32](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/versioning-with-the-override-and-new-keywords_7.cs)]  
   
  `Derived` のインスタンスで `DoWork` が呼び出されると、C\# コンパイラは最初に、`Derived` で当初宣言された `DoWork` のバージョンと互換性のある呼び出しを実行します。  オーバーライド メソッドは、クラスで宣言されたものと見なされません。これらは、基本クラスで宣言されたメソッドの新しい実装です。  C\# コンパイラは、`Derived` の元のメソッドにメソッド呼び出しを一致させることができない場合に限り、名前が同じで互換のパラメーターを持つ、オーバーライドされたメソッドに呼び出しを一致させようとします。  次に例を示します。  
   
- [!code-cs[csProgGuideInheritance#33](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/versioning-with-the-over_8.cs)]  
+ [!code-cs[csProgGuideInheritance#33](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/versioning-with-the-override-and-new-keywords_8.cs)]  
   
  変数 `val` は、暗黙的に double に変換できるので、C\# コンパイラは、`DoWork(int)` の代わりに `DoWork(double)` を呼び出します。  これを回避する方法は 2 つあります。  1 つは、仮想メソッドと同じ名前を付けて新しいメソッドを宣言することを避ける方法です。  もう 1 つは、`Derived` のインスタンスを `Base` にキャストすることにより、C\# コンパイラに対して、基本クラスのメソッド リストを検索して、仮想メソッドを呼び出すように指示する方法です。  メソッドが仮想であるため、`Derived` の `DoWork(int)` の実装が呼び出されます。  次に例を示します。  
   
- [!code-cs[csProgGuideInheritance#34](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/versioning-with-the-over_9.cs)]  
+ [!code-cs[csProgGuideInheritance#34](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/versioning-with-the-override-and-new-keywords_9.cs)]  
   
  `new` と `override`の例については、 " " を参照してください [Override キーワードと New キーワードを使用する場合について](../../../csharp/programming-guide/classes-and-structs/knowing-when-to-use-override-and-new-keywords.md)。  
   

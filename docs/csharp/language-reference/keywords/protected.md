@@ -24,7 +24,7 @@ caps.handback.revision: 20
 ## 使用例  
  基本クラスのプロテクト メンバーに派生クラスでアクセス可能なのは、派生したクラス型を使ってアクセスが行われる場合だけです。  たとえば、次に示すコード セグメントを検討してみます。  
   
- [!code-cs[csrefKeywordsModifiers#11](../../../csharp/language-reference/keywords/codesnippet/csharp/csrefKeywordsModifiers/csrefKeywordsModifiers.cs#11)]  
+ [!code-cs[csrefKeywordsModifiers#11](../../../csharp/language-reference/keywords/codesnippet/CSharp/protected_1.cs)]  
   
  ステートメント `a.x = 10` は、静的メソッド Main 内で作成され、クラス B のインスタンスではないため、エラーが生成されます。  
   
@@ -33,7 +33,7 @@ caps.handback.revision: 20
 ## 使用例  
  この例では、`DerivedPoint` クラスは `Point` の派生クラスです。  このため、基本クラスのプロテクト メンバーに、派生クラスから直接アクセスできます。  
   
- [!code-cs[csrefKeywordsModifiers#12](../../../csharp/language-reference/keywords/codesnippet/csharp/csrefKeywordsModifiers/csrefKeywordsModifiers.cs#12)]  
+ [!code-cs[csrefKeywordsModifiers#12](../../../csharp/language-reference/keywords/codesnippet/CSharp/protected_2.cs)]  
   
  `x` および `y` のアクセス レベルを [private](../../../csharp/language-reference/keywords/private.md) に変更すると、コンパイラがエラー メッセージを発行します。  
   

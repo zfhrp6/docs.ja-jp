@@ -32,7 +32,7 @@ caps.handback.revision: 19
  単項 `+` 演算子と二項 `+` 演算子は、ユーザー定義型でオーバーロードできます。  通常、整数型に対する演算は、列挙に対して適用されます。  詳細については、「[operator](../../../csharp/language-reference/keywords/operator.md)」を参照してください。  
   
 ## 使用例  
- [!code-cs[csRefOperators#28](../../../csharp/language-reference/operators/codesnippet/csharp/csrefOperators/csrefOperators.cs#28)]  
+ [!code-cs[csRefOperators#28](../../../csharp/language-reference/operators/codesnippet/CSharp/addition-operator_1.cs)]  
   
 ## C\# 言語仕様  
  [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec-md.md)]  

@@ -34,8 +34,8 @@ caps.handback.revision: 11
   
 5.  <xref:System.Windows.Forms.Button> コントロールをダブルクリックしてコード エディターを開き、`SearchButton_Click` イベント ハンドラーに次のコードを追加します。  
   
-     [!code-vb[VbPowerPacksDataRepeaterSearch#1](../../../visual-basic/developing-apps/windows-forms/codesnippet/visualbasic/VbPowerPacksDataRepeaterSearch/DataRepeaterSearch.vb#1)]
-     [!code-cs[VbPowerPacksDataRepeaterSearch#1](../../../visual-basic/developing-apps/windows-forms/codesnippet/csharp/DataRepeaterSearchCS/DataRepeaterSearch.cs#1)]  
+     [!code-vb[VbPowerPacksDataRepeaterSearch#1](../../../visual-basic/developing-apps/windows-forms/codesnippet/VisualBasic/how-to-search-data-in-a-datarepeater-control-visual-studio_1.vb)]
+     [!code-cs[VbPowerPacksDataRepeaterSearch#1](../../../visual-basic/developing-apps/windows-forms/codesnippet/CSharp/how-to-search-data-in-a-datarepeater-control-visual-studio_1.cs)]  
   
      *ProductsBindingSource* を <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> の <xref:System.Windows.Forms.BindingSource> の名前で置き換え、*ProductID* を検索するフィールドの名前で置き換えます。  
   

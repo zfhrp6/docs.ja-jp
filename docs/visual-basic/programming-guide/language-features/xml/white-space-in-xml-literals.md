@@ -44,7 +44,7 @@ caps.handback.revision: 14
 ## 例  
  次の例には、2 つの XML 要素 outer と inner が含まれています。  どちらの要素も、テキスト内容に空白文字を含みます。  outer 要素は空白文字と XML 要素のみを含むので、outer 要素内の空白文字は意味がありません。  inner 要素は空白文字とテキストを含むので、inner 要素内の空白文字は意味があります。  
   
- [!code-vb[VbXMLSamples#29](../../../../visual-basic/language-reference/operators/codesnippet/visualbasic/white-space-in-xml-liter_1.vb)]  
+ [!code-vb[VbXMLSamples#29](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/white-space-in-xml-literals_1.vb)]  
   
  このコードを実行すると、次のようなテキストが表示されます。  
   

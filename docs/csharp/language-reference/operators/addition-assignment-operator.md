@@ -41,7 +41,7 @@ x = x + y
  加算代入演算子 `+=` を使用して、イベントに対する応答として呼び出されるメソッドを指定できます。これらのメソッドをイベント ハンドラーと呼びます。  このような `+=` 演算子の使用は、*イベントのサブスクライブ*と呼ばれます。  詳細については、「[方法 : イベント サブスクリプションとサブスクリプションの解除](../../../csharp/programming-guide/events/how-to-subscribe-to-and-unsubscribe-from-events.md)」を参照してください。   および [デリゲート](../../../csharp/programming-guide/delegates/index.md) を参照してください。  
   
 ## 使用例  
- [!code-cs[csRefOperators#35](../../../csharp/language-reference/operators/codesnippet/csharp/csrefOperators/csrefOperators.cs#35)]  
+ [!code-cs[csRefOperators#35](../../../csharp/language-reference/operators/codesnippet/CSharp/addition-assignment-operator_1.cs)]  
   
 ## 参照  
  [C\# リファレンス](../../../csharp/language-reference/index.md)   

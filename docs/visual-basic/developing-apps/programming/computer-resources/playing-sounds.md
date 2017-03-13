@@ -35,20 +35,20 @@ caps.handback.revision: 21
   
  次の例では、 `My.Computer.Audio.Play` のメソッドは、サウンドを再生します。  `AudioPlayMode.WaitToComplete` を指定した場合、`My.Computer.Audio.Play` はサウンドの再生が完了するまで待機した後、呼び出し元のコードに戻ります。  この例を使用する場合は、ファイル名がコンピューターにある .wav サウンド ファイルを参照するようにする必要があります。  
   
- [!code-vb[VbVbalrMyComputer#15](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/visualbasic/VbVbalrMyComputer/Class1.vb#15)]  
+ [!code-vb[VbVbalrMyComputer#15](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/VisualBasic/playing-sounds_1.vb)]  
   
  次の例では、 `My.Computer.Audio.Play` のメソッドは、サウンドを再生します。  この例を使用する場合、アプリケーション リソースが Waterfall という名前の .wav サウンド ファイルが含まれていることを確認する必要があります。  
   
- [!code-vb[VbVbalrMyComputer#16](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/visualbasic/VbVbalrMyComputer/Class1.vb#16)]  
+ [!code-vb[VbVbalrMyComputer#16](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/VisualBasic/playing-sounds_2.vb)]  
   
 ## ループ サウンドを再生できます。  
  次の例では、 `My.Computer.Audio.Play` のメソッドは `PlayMode.BackgroundLoop` を指定すると、指定のサウンドをバックグラウンドで説明します。  この例を使用する場合は、ファイル名がコンピューターにある .wav サウンド ファイルを参照するようにする必要があります。  
   
- [!code-vb[VbVbalrMyComputer#11](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/visualbasic/VbVbalrMyComputer/Class1.vb#11)]  
+ [!code-vb[VbVbalrMyComputer#11](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/VisualBasic/playing-sounds_3.vb)]  
   
  次の例では、 `My.Computer.Audio.Play` のメソッドは `PlayMode.BackgroundLoop` を指定すると、指定のサウンドをバックグラウンドで説明します。  この例を使用する場合、アプリケーション リソースが Waterfall という名前の .wav サウンド ファイルが含まれていることを確認する必要があります。  
   
- [!code-vb[VbVbalrMyComputer#12](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/visualbasic/VbVbalrMyComputer/Class1.vb#12)]  
+ [!code-vb[VbVbalrMyComputer#12](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/VisualBasic/playing-sounds_4.vb)]  
   
  前のコード例では、 IntelliSense コード スニペットとしても使用できます。  コード スニペット ピッカーでは、これは **\[Windows Forms Applications\] の \[Sound\]** にあります。  詳細については、「[コード スニペット](/visual-studio/ide/code-snippets)」を参照してください。  
   
@@ -61,7 +61,7 @@ caps.handback.revision: 21
   
  次の例では、バックグラウンドで再生しているサウンドを停止します。  
   
- [!code-vb[VbVbalrMyComputer#18](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/visualbasic/VbVbalrMyComputer/Class1.vb#18)]  
+ [!code-vb[VbVbalrMyComputer#18](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/VisualBasic/playing-sounds_5.vb)]  
   
  前のコード例では、 IntelliSense コード スニペットとしても使用できます。  コード スニペット ピッカーでは、これは **\[Windows Forms Applications\] の \[Sound\]** にあります。  詳細については、「[コード スニペット](/visual-studio/ide/code-snippets)」を参照してください。  
   
@@ -72,7 +72,7 @@ caps.handback.revision: 21
   
  次の例では、システム サウンドの再生に `My.Computer.Audio.PlaySystemSound` のメソッドを使用します。  
   
- [!code-vb[VbVbalrMyComputer#17](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/visualbasic/VbVbalrMyComputer/Class1.vb#17)]  
+ [!code-vb[VbVbalrMyComputer#17](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/VisualBasic/playing-sounds_6.vb)]  
   
 ## 参照  
  <xref:Microsoft.VisualBasic.Devices.Audio>   

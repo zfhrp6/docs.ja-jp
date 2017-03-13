@@ -49,11 +49,11 @@ From element [ As type ] In collection [ _ ]
   
  1 つのクエリに複数の `From` 句を指定して、結合する複数のコレクションを指定できます。  複数のコレクションを指定した場合、各コレクションは別々に反復処理されます。コレクションに関連性がある場合は、結合することもできます。  コレクションの結合は、`Select` 句を使用して暗黙的に実行するか、`Join` 句または `Group Join` 句を使用して明示的に実行できます。  または、1 つの `From` 句の中に、関連性のある範囲変数とコレクションをコンマで区切ることで、複数の範囲変数とコレクションを指定できます。  次のコード例では、`From` 句の両方の構文のオプションを示しています。  
   
- [!code-vb[VbSimpleQuerySamples#21](../../../visual-basic/language-reference/queries/codesnippet/visualbasic/VbSimpleQuerySamples/QuerySamples1.vb#21)]  
+ [!code-vb[VbSimpleQuerySamples#21](../../../visual-basic/language-reference/queries/codesnippet/VisualBasic/from-clause_1.vb)]  
   
  `From` 句は、クエリのスコープを定義します。これは `For` ループのスコープに似ています。  したがって、クエリのスコープ内の各 `element` 範囲変数は一意の名前を持っている必要があります。  1 つのクエリに複数の `From` 句を指定できるので、後続の `From` 句で `From` 句の範囲変数を参照したり、直前の `From` 句の範囲変数を参照したりできます。  たとえば、次の例は、入れ子になった `From` 句を示しています。ここでは、2 番目の句のコレクションは、最初の句の範囲変数のプロパティに基づいています。  
   
- [!code-vb[VbSimpleQuerySamples#22](../../../visual-basic/language-reference/queries/codesnippet/visualbasic/VbSimpleQuerySamples/QuerySamples1.vb#22)]  
+ [!code-vb[VbSimpleQuerySamples#22](../../../visual-basic/language-reference/queries/codesnippet/VisualBasic/from-clause_2.vb)]  
   
  各 `From` 句の直後に別のクエリ句を任意に組み合わせて追加することで、クエリを絞り込むことができます。  クエリは、次の方法で絞り込むことができます。  
   
@@ -76,7 +76,7 @@ From element [ As type ] In collection [ _ ]
 ## 使用例  
  次のクエリ式では、`From` 句を使用して、`customers` コレクション内の各 `Customer` オブジェクト用の範囲変数 `cust` を宣言します。  `Where` 句は、この範囲変数を使用して、出力を指定された地区の顧客に制限します。  `For Each` ループにより、クエリ結果内の各顧客の会社名が表示されます。  
   
- [!code-vb[VbSimpleQuerySamples#23](../../../visual-basic/language-reference/queries/codesnippet/visualbasic/VbSimpleQuerySamples/QuerySamples1.vb#23)]  
+ [!code-vb[VbSimpleQuerySamples#23](../../../visual-basic/language-reference/queries/codesnippet/VisualBasic/from-clause_3.vb)]  
   
 ## 参照  
  [Queries](../../../visual-basic/language-reference/queries/queries.md)   

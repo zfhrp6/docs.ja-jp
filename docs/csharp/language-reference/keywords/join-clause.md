@@ -33,14 +33,14 @@ caps.handback.revision: 29
 ## 内部結合  
  簡単な内部等結合の例を次に示します。  このクエリでは、"商品名\/カテゴリ" ペアのフラットなシーケンスが生成されます。  同じカテゴリ文字列が、複数の要素に表示されます。  `categories` の要素に一致する要素が `products` 内にない場合、そのカテゴリは結果に表示されません。  
   
- [!code-cs[cscsrefQueryKeywords#24](../../../csharp/language-reference/keywords/codesnippet/csharp/csquerykeywords/Join.cs#24)]  
+ [!code-cs[cscsrefQueryKeywords#24](../../../csharp/language-reference/keywords/codesnippet/CSharp/join-clause_1.cs)]  
   
  詳細については、「[方法 : 内部結合を実行する](../../../csharp/programming-guide/linq-query-expressions/how-to-perform-inner-joins.md)」を参照してください。  
   
 ## グループ化結合  
  `into` 式と組み合わせた `join` 句は、グループ化結合と呼ばれます。  
   
- [!code-cs[cscsrefQueryKeywords#25](../../../csharp/language-reference/keywords/codesnippet/csharp/csquerykeywords/Join.cs#25)]  
+ [!code-cs[cscsrefQueryKeywords#25](../../../csharp/language-reference/keywords/codesnippet/CSharp/join-clause_2.cs)]  
   
  グループ化結合では、階層構造の結果シーケンスが生成され、左側のソース シーケンスの要素が、右側のソース シーケンスに含まれる 1 つ以上の一致する要素に関連付けられます。  グループ化結合は基本的にオブジェクト配列のシーケンスであり、リレーショナル データベースの用語には、これに相当するものがありません。  
   
@@ -50,14 +50,14 @@ caps.handback.revision: 29
   
  グループ化結合の結果を、別のサブクエリのジェネレーターとして使用することもできます。  
   
- [!code-cs[cscsrefQueryKeywords#26](../../../csharp/language-reference/keywords/codesnippet/csharp/csquerykeywords/Join.cs#26)]  
+ [!code-cs[cscsrefQueryKeywords#26](../../../csharp/language-reference/keywords/codesnippet/CSharp/join-clause_3.cs)]  
   
  詳細については、「[方法 : グループ化結合を実行する](../../../csharp/programming-guide/linq-query-expressions/how-to-perform-grouped-joins.md)」を参照してください。  
   
 ## 左外部結合  
  左外部結合では、右側のシーケンスに一致する要素がない場合でも、左側のソース シーケンスに含まれるすべての要素が返されます。  [!INCLUDE[vbteclinq](../../../csharp/includes/vbteclinq-md.md)] で左外部結合を実行するには、`DefaultIfEmpty` メソッドをグループ化結合と組み合わせて使用して、左側の要素に一致する要素がなかった場合に生成する、既定の右側の要素を指定します。  `null` は、任意の参照型の既定値として使用できます。また、ユーザー定義の既定の型を指定することもできます。  次の例では、ユーザー定義の既定の型を示しています。  
   
- [!code-cs[cscsrefQueryKeywords#27](../../../csharp/language-reference/keywords/codesnippet/csharp/csquerykeywords/Join.cs#27)]  
+ [!code-cs[cscsrefQueryKeywords#27](../../../csharp/language-reference/keywords/codesnippet/CSharp/join-clause_4.cs)]  
   
  詳細については、「[方法 : 左外部結合を実行する](../../../csharp/programming-guide/linq-query-expressions/how-to-perform-left-outer-joins.md)」を参照してください。  
   
@@ -78,7 +78,7 @@ caps.handback.revision: 29
 ## 使用例  
  同じデータ ソースに対して同じ一致するキーを使用して内部結合、グループ化結合、および左外部結合を実行した結果の比較を次の例に示します。  これらの例には、コンソールでの表示結果をわかりやすくするために、余分なコードが追加されています。  
   
- [!code-cs[cscsrefQueryKeywords#23](../../../csharp/language-reference/keywords/codesnippet/csharp/csquerykeywords/Join.cs#23)]  
+ [!code-cs[cscsrefQueryKeywords#23](../../../csharp/language-reference/keywords/codesnippet/CSharp/join-clause_5.cs)]  
   
 ## 解説  
  `join` 句の後に `into` がない場合は、<xref:System.Linq.Enumerable.Join%2A> メソッドの呼び出しに変換されます。  `join` 句の後に `into` がある場合は、<xref:System.Linq.Enumerable.GroupJoin%2A> メソッドの呼び出しに変換されます。  

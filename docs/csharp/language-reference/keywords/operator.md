@@ -24,7 +24,7 @@ caps.handback.revision: 19
 ## 使用例  
  小数を処理する非常に簡単なクラスを次に示します。  このクラスは、小数の加算および乗算を実行するために、\+ 演算子および \* 演算子をオーバーロードします。また、小数型を倍精度浮動小数点数型に変換する演算子も提供します。  
   
- [!code-cs[csrefKeywordsConversion#6](../../../csharp/language-reference/keywords/codesnippet/csharp/operator_1.cs)]  
+ [!code-cs[csrefKeywordsConversion#6](../../../csharp/language-reference/keywords/codesnippet/CSharp/operator_1.cs)]  
   
 ## C\# 言語仕様  
  [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec-md.md)]  

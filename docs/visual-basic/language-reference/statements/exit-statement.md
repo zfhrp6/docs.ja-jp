@@ -75,17 +75,17 @@ Exit { Do | For | Function | Property | Select | Sub | Try | Whil
 ## 使用例  
  次の例では、`index` 変数が 100 を上回ったときに、ループ条件によってループが停止されます。  ただし、ループ内の `If` ステートメントにより、index 変数が 10 を上回ったときに、`Exit Do` ステートメントによってループが停止されます。  
   
- [!code-vb[VbVbalrStatements#133](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/exit-statement_1.vb)]  
+ [!code-vb[VbVbalrStatements#133](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/exit-statement_1.vb)]  
   
 ## 使用例  
  戻り値を `myFunction` という名前の関数に割り当てて、`Exit Function` を使って関数から戻すコード例を次に示します。  
   
- [!code-vb[VbVbalrStatements#23](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/exit-statement_2.vb)]  
+ [!code-vb[VbVbalrStatements#23](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/exit-statement_2.vb)]  
   
 ## 使用例  
  [Return Statement](../../../visual-basic/language-reference/statements/return-statement.md) を使用して戻り値を割り当てて、関数を抜けるコード例を次に示します。  
   
- [!code-vb[VbVbalrStatements#24](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/exit-statement_3.vb)]  
+ [!code-vb[VbVbalrStatements#24](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/exit-statement_3.vb)]  
   
 ## 参照  
  [Continue Statement](../../../visual-basic/language-reference/statements/continue-statement.md)   

@@ -30,7 +30,7 @@ XML リテラルを使用して、コード内に XML ドキュメント、XML �
   
 -   XML インラインを XML リテラルの構文で作成します。この構文は、現在の XML 構文と同じです。  
   
-     [!code-vb[VbXMLSamples#5](../../../../visual-basic/language-reference/operators/codesnippet/visualbasic/how-to-create-xml-literals_1.vb)]  
+     [!code-vb[VbXMLSamples#5](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/how-to-create-xml-literals_1.vb)]  
   
      コードを実行します。  このコードの出力は次のようになります。  
   
@@ -48,7 +48,7 @@ XML リテラルを使用して、コード内に XML ドキュメント、XML �
   
 -   XML ドキュメント インラインを作成します。  次のコードは、リテラル構文、XML 宣言、処理命令、コメント、および別の要素を格納する要素がある XML ドキュメントを作成します。  
   
-     [!code-vb[VbXMLSamples#30](../../../../visual-basic/language-reference/operators/codesnippet/visualbasic/how-to-create-xml-literals_2.vb)]  
+     [!code-vb[VbXMLSamples#30](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/how-to-create-xml-literals_2.vb)]  
   
      コードを実行します。  このコードの出力は次のようになります。  
   

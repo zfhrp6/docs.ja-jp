@@ -21,7 +21,7 @@ caps.handback.revision: 14
 ## 参照の等価性  
  参照の等価とは、2 つのオブジェクト参照が同一の基になるオブジェクトを参照していることを意味します。  次の例に示すように、これは簡単な代入によって生じます。  
   
- [!code-cs[csProgGuideStatements#18](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/equality-comparisons_1.cs)]  
+ [!code-cs[csProgGuideStatements#18](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/equality-comparisons_1.cs)]  
   
  このコードでは、2 つのオブジェクトが作成されますが、代入ステートメント以降は、両方の参照が同一のオブジェクトを参照しています。  したがって、参照の等価性があります。  2 つの参照が同じオブジェクトを参照しているかどうかを判断するには、<xref:System.Object.ReferenceEquals%2A> メソッドを使用します。  
   

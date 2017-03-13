@@ -27,7 +27,7 @@ caps.handback.revision: 9
 ## 使用例  
  次の例では、<xref:System.Text.StringBuilder> クラスのインスタンスを作成し、1000 の文字列をそのインスタンスに結合し、最終的な文字列を返します。  
   
- [!code-vb[VbVbalrStrings#70](../../../../visual-basic/language-reference/functions/codesnippet/visualbasic/how-to-create-strings-us_1.vb)]  
+ [!code-vb[VbVbalrStrings#70](../../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/how-to-create-strings-using-a-stringbuilder_1.vb)]  
   
 ## 参照  
  [StringBuilder クラスの使用](../Topic/Using%20the%20StringBuilder%20Class%20in%20the%20.NET%20Framework.md)   

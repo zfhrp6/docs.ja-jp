@@ -55,7 +55,7 @@ variableorproperty /= expression
 ## 使用例  
  次の例では、`/=` 演算子を使って、最初の整数型 \(`Integer`\) の変数を 2 番目の整数型 \(`Integer`\) の変数で除算し、商を最初の変数に代入します。  
   
- [!code-vb[VbVbalrOperators#17](../../../visual-basic/language-reference/operators/codesnippet/visualbasic/floating-point-division-_0_1.vb)]  
+ [!code-vb[VbVbalrOperators#17](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/floating-point-division-assignment-operator_1.vb)]  
   
 ## 参照  
  [\/ Operator](../../../visual-basic/language-reference/operators/floating-point-division-operator.md)   

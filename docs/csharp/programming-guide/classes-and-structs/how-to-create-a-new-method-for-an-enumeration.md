@@ -23,7 +23,7 @@ caps.handback.revision: 7
 ## 使用例  
  次の例では、`Grades` 列挙型により、生徒が授業で受け取る成績評価が表されています。  `Passing` という名前の拡張メソッドが `Grades` 型に追加されており、この型の各インスタンスが、合格点を表しているかどうか自ら "認識" できるようになっています。  
   
- [!code-cs[csProgGuideExtensionMethods#2](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/how-to-create-a-new-meth_1.cs)]  
+ [!code-cs[csProgGuideExtensionMethods#2](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/how-to-create-a-new-method-for-an-enumeration_1.cs)]  
   
  `Extensions` クラスに動的に更新される静的変数が含まれていること、および拡張メソッドの戻り値がその静的変数の現在の値を反映することにも注意してください。  背後では、拡張メソッドがその拡張メソッドが定義されている静的クラスにおいて直接呼び出されることを、この例は示しています。  
   

@@ -27,11 +27,11 @@ caps.handback.revision: 26
   
  クラスのインスタンスは、[new 演算子](../../../csharp/language-reference/keywords/new-operator.md)を使用して作成されます。  次の例では、`Person` が型であり、`person1` と `person 2` がその型のインスタンス \(つまりオブジェクト\) です。  
   
- [!code-cs[csProgGuideStatements#30](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/objects_1.cs)]  
+ [!code-cs[csProgGuideStatements#30](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/objects_1.cs)]  
   
  構造体は値型であるため、構造体オブジェクトの変数は、オブジェクト全体のコピーを保持します。  次の例に示すように、構造体のインスタンスも `new` 演算子を使用して作成できますが、これは必須ではありません。  
   
- [!code-cs[csProgGuideStatements#31](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/objects_2.cs)]  
+ [!code-cs[csProgGuideStatements#31](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/objects_2.cs)]  
   
  `p1` と `p2` のメモリは、スレッド スタックに割り当てられています。  メモリは、それが宣言されている型やメソッドと共に再利用されます。  これは、構造体が代入時にコピーされる 1 つの理由でもあります。  これとは対照的に、クラスのインスタンスに割り当てられるメモリは、オブジェクトへのすべての参照がスコープ外に出ると、共通言語ランタイムによって自動的にクリア \(ガベージ コレクト\) されます。  C\+\+ で行うようにクラス オブジェクトを確定的に破棄することはできません。  [!INCLUDE[dnprdnshort](../../../csharp/getting-started/includes/dnprdnshort-md.md)] のガベージ コレクションの詳細については、「[Garbage Collection](../Topic/Garbage%20Collection.md)」を参照してください。  
   
@@ -45,7 +45,7 @@ caps.handback.revision: 26
   
 -   2 つの構造体のインスタンスのインスタンス フィールドの値が同じかどうかを確認するには、<xref:System.ValueType.Equals%2A?displayProperty=fullName> メソッドを使用します。  すべての構造体は暗黙に <xref:System.ValueType?displayProperty=fullName> を継承するため、次の例に示すように、オブジェクトで直接メソッドを呼び出します。  
   
- [!code-cs[csProgGuideStatements#32](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/objects_3.cs)]  
+ [!code-cs[csProgGuideStatements#32](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/objects_3.cs)]  
   
  `Equals` の <xref:System.ValueType?displayProperty=fullName> 実装では、任意の構造体にどのようなフィールドが含まれているかを判断する必要があるため、リフレクションが使用されます。  独自の構造体を作成する場合は、`Equals` メソッドをオーバーライドして、効率的に等価性を判断する型固有のアルゴリズムを実装してください。  
   

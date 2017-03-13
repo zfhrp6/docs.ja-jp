@@ -31,7 +31,7 @@ select student.ID;
 ## 使用例  
  次の例に、匿名型を使用して、指定した条件に一致する各ソース要素のプロパティのサブセットのみを返す方法を示します。  
   
- [!code-cs[csProgGuideLINQ#31](../../../csharp/programming-guide/arrays/codesnippet/csharp/csLINQProgRef/csRef30LangFeatures_2.cs#31)]  
+ [!code-cs[csProgGuideLINQ#31](../../../csharp/programming-guide/arrays/codesnippet/CSharp/how-to-return-subsets-of-element-properties-in-a-query_1.cs)]  
   
  名前が指定されていない場合、匿名型では、そのプロパティのソース要素の名前が使用されることに注意してください。  匿名型のプロパティに新しい名前を指定するには、次のように `select` ステートメントを記述します。  
   

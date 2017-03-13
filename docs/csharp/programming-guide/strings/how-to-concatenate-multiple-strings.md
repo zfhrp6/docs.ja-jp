@@ -23,12 +23,12 @@ caps.handback.revision: 21
 ## 使用例  
  ソース コードの読みやすさを改善するために、長いリテラル文字列を短い文字列に分割する方法を次の例に示します。  これらの部分は、コンパイル時に単一の文字列に連結されます。  含まれる文字列の数は、実行時のパフォーマンスには影響しません。  
   
- [!code-cs[csProgGuideStrings#30](../../../csharp/programming-guide/strings/codesnippet/csharp/CSRefStrings/Strings.cs#30)]  
+ [!code-cs[csProgGuideStrings#30](../../../csharp/programming-guide/strings/codesnippet/CSharp/how-to-concatenate-multiple-strings_1.cs)]  
   
 ## 使用例  
  文字列変数を連結するには、`+` 演算子、`+=` 演算子、<xref:System.String.Concat%2A?displayProperty=fullName> メソッド、<xref:System.String.Format%2A?displayProperty=fullName> メソッド、または <xref:System.Text.StringBuilder.Append%2A?displayProperty=fullName> メソッドを使用します。  `+` 演算子は使いやすく、直感的なコードの作成に役立ちます。  1 つのステートメントで複数の \+ 演算子を使用する場合でも、文字列の内容は一度しかコピーされません。  ループなどでこの操作を複数回繰り返すと、効率が低下する可能性があります。  たとえば次のようなコードがあるとします。  
   
- [!code-cs[csProgGuideStrings#23](../../../csharp/programming-guide/strings/codesnippet/csharp/CSRefStrings/Strings.cs#23)]  
+ [!code-cs[csProgGuideStrings#23](../../../csharp/programming-guide/strings/codesnippet/CSharp/how-to-concatenate-multiple-strings_2.cs)]  
   
 > [!NOTE]
 >  文字列連結において、C\# コンパイラは null 文字列を空の文字列と同じものとして処理しますが、元の null 文字列値の変換は行いません。  
@@ -37,7 +37,7 @@ caps.handback.revision: 21
   
  ただし、パフォーマンスを重視する場合、常に <xref:System.Text.StringBuilder> クラスを使用して文字列を連結する必要があります。  次のコード例では、`+` 演算子の連結効果を使用せず、<xref:System.Text.StringBuilder> クラスの <xref:System.Text.StringBuilder.Append%2A> メソッドを使用して文字列を連結します。  
   
- [!code-cs[csProgGuideStrings#22](../../../csharp/programming-guide/strings/codesnippet/csharp/CSRefStrings/Strings.cs#22)]  
+ [!code-cs[csProgGuideStrings#22](../../../csharp/programming-guide/strings/codesnippet/CSharp/how-to-concatenate-multiple-strings_3.cs)]  
   
 ## 参照  
  <xref:System.String>   

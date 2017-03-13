@@ -48,28 +48,28 @@ caps.handback.revision: 21
   
 5.  新しいクラス `UserNameInfo.vb` に名前を指定し、**\[追加\]** をクリックして新しいクラスのコードを表示します。  
   
-     [!code-vb[VbVbalrOOP#5](../../../../visual-basic/misc/codesnippet/visualbasic/VbVbalrOOP/OOP.vb#5)]  
+     [!code-vb[VbVbalrOOP#5](../../../../visual-basic/misc/codesnippet/VisualBasic/walkthrough-defining-classes_1.vb)]  
   
     > [!NOTE]
     >  [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] の**コード エディター**を使用して、クラスをスタートアップ フォームに追加できます。クラスを追加するには、`Class` キーワードに続けて新規クラスの名前を入力します。  **コード エディター** によって、対応する `End Class` ステートメントが自動的に入力されます。  
   
 6.  `Class` ステートメントと `End Class` ステートメントの間に次のコードを追加して、クラスのプライベート フィールドを定義します。  
   
-     [!code-vb[VbVbalrOOP#7](../../../../visual-basic/misc/codesnippet/visualbasic/VbVbalrOOP/OOP.vb#7)]  
+     [!code-vb[VbVbalrOOP#7](../../../../visual-basic/misc/codesnippet/VisualBasic/walkthrough-defining-classes_2.vb)]  
   
      フィールドに `Private` を宣言した場合、そのクラスの内部でのみ使用可能になります。  これらのフィールドをクラスの外部からアクセスできるようにするには、`Public` などのより広いアクセス範囲を提供するアクセス修飾子を使用します。  詳細については、「[Access Levels in Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)」を参照してください。  
   
 7.  次のコードを追加してクラスのプロパティを定義します。  
   
-     [!code-vb[VbVbalrOOP#8](../../../../visual-basic/misc/codesnippet/visualbasic/VbVbalrOOP/OOP.vb#8)]  
+     [!code-vb[VbVbalrOOP#8](../../../../visual-basic/misc/codesnippet/VisualBasic/walkthrough-defining-classes_3.vb)]  
   
 8.  次のコードを追加してクラスのメソッドを定義します。  
   
-     [!code-vb[VbVbalrOOP#9](../../../../visual-basic/misc/codesnippet/visualbasic/VbVbalrOOP/OOP.vb#9)]  
+     [!code-vb[VbVbalrOOP#9](../../../../visual-basic/misc/codesnippet/VisualBasic/walkthrough-defining-classes_4.vb)]  
   
 9. `Sub New` というプロシージャを追加して新規クラスのパラメーター化されたコンストラクターを定義します。  
   
-     [!code-vb[VbVbalrOOP#10](../../../../visual-basic/misc/codesnippet/visualbasic/VbVbalrOOP/OOP.vb#10)]  
+     [!code-vb[VbVbalrOOP#10](../../../../visual-basic/misc/codesnippet/VisualBasic/walkthrough-defining-classes_5.vb)]  
   
      `Sub New` コンストラクターは、このクラスからオブジェクトを作成するとき自動的に呼び出されます。  このコンストラクターは、ユーザー名を保持するフィールドの値を設定します。  
   
@@ -79,7 +79,7 @@ caps.handback.revision: 21
   
 2.  メイン フォームにボタンを追加し、それをダブルクリックして、`Button1_Click` イベント ハンドラーのコードを表示します。  テスト プロシージャを呼び出すために次のコードを追加します。  
   
-     [!code-vb[VbVbalrOOP#12](../../../../visual-basic/misc/codesnippet/visualbasic/VbVbalrOOP/OOP.vb#12)]  
+     [!code-vb[VbVbalrOOP#12](../../../../visual-basic/misc/codesnippet/VisualBasic/walkthrough-defining-classes_6.vb)]  
   
 ### アプリケーションを実行するには  
   

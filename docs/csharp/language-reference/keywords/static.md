@@ -24,13 +24,13 @@ caps.handback.revision: 26
 ## 使用例  
  次のクラスは `static` として宣言され、`static` メソッドのみが含まれます。  
   
- [!code-cs[csrefKeywordsModifiers#18](../../../csharp/language-reference/keywords/codesnippet/csharp/csrefKeywordsModifiers/csrefKeywordsModifiers.cs#18)]  
+ [!code-cs[csrefKeywordsModifiers#18](../../../csharp/language-reference/keywords/codesnippet/CSharp/static_1.cs)]  
   
  定数宣言や型宣言は、暗黙に静的メンバーです。  
   
  静的メンバーは、インスタンスを使って参照できません。  代わりに、型の名前を使って参照します。  たとえば、次のクラスを考えます。  
   
- [!code-cs[csrefKeywordsModifiers#19](../../../csharp/language-reference/keywords/codesnippet/csharp/csrefKeywordsModifiers/csrefKeywordsModifiers.cs#19)]  
+ [!code-cs[csrefKeywordsModifiers#19](../../../csharp/language-reference/keywords/codesnippet/CSharp/static_2.cs)]  
   
  静的メンバー `x` を参照するには、同じスコープからその静的メンバーにアクセス可能でない限り、完全修飾名 \(`MyBaseC.MyStruct.x`\) を使用します。  
   
@@ -54,12 +54,12 @@ Console.WriteLine(MyBaseC.MyStruct.x);
 ## 使用例  
  この例では、新しい従業員の名前と ID を読み取り、従業員数のカウンターを 1 インクリメントして、新しい従業員の情報および新しい従業員総数を表示します。  簡略化のために、この例では現在の従業員数をキーボード入力から読み取っています。  実際のアプリケーションでは、ファイルから情報を読み取るようにしてください。  
   
- [!code-cs[csrefKeywordsModifiers#20](../../../csharp/language-reference/keywords/codesnippet/csharp/csrefKeywordsModifiers/csrefKeywordsModifiers.cs#20)]  
+ [!code-cs[csrefKeywordsModifiers#20](../../../csharp/language-reference/keywords/codesnippet/CSharp/static_3.cs)]  
   
 ## 使用例  
  この例では、宣言されていない別の静的フィールドを使用して静的フィールドを初期化することはできても、静的フィールドに値を明示的に割り当てない限り、結果は未定義になることを示します。  
   
- [!code-cs[csrefKeywordsModifiers#21](../../../csharp/language-reference/keywords/codesnippet/csharp/csrefKeywordsModifiers/csrefKeywordsModifiers.cs#21)]  
+ [!code-cs[csrefKeywordsModifiers#21](../../../csharp/language-reference/keywords/codesnippet/CSharp/static_4.cs)]  
   
 ## C\# 言語仕様  
  [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec-md.md)]  

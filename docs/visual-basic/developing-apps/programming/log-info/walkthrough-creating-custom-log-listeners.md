@@ -31,7 +31,7 @@ caps.handback.revision: 19
   
 -   アプリケーションで、`SimpleListener` という名前のクラスを、<xref:System.Diagnostics.TraceListener> を継承して作成します。  
   
-     [!code-vb[VbVbalrMyApplicationLog#16](../../../../visual-basic/developing-apps/programming/log-info/codesnippet/visualbasic/VbVbalrMyApplicationLog/Form1.vb#16)]  
+     [!code-vb[VbVbalrMyApplicationLog#16](../../../../visual-basic/developing-apps/programming/log-info/codesnippet/VisualBasic/walkthrough-creating-custom-log-listeners_1.vb)]  
   
      基本クラスのために必要な <xref:System.Diagnostics.TraceListener.Write%2A> メソッドと <xref:System.Diagnostics.TraceListener.WriteLine%2A> メソッドでは、`MsgBox` を呼び出してその入力を表示します。  
   
@@ -75,7 +75,7 @@ caps.handback.revision: 19
   
 -   次のコードは、厳密な名前を指定された `SimpleListener` の型名を確認する方法を示しています。  
   
-     [!code-vb[VbVbalrMyApplicationLog#17](../../../../visual-basic/developing-apps/programming/log-info/codesnippet/visualbasic/VbVbalrMyApplicationLog/Form1.vb#17)]  
+     [!code-vb[VbVbalrMyApplicationLog#17](../../../../visual-basic/developing-apps/programming/log-info/codesnippet/VisualBasic/walkthrough-creating-custom-log-listeners_2.vb)]  
   
      型の厳密な名前はプロジェクトによって異なります。  
   

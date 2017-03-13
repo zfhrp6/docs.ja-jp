@@ -23,7 +23,7 @@ caps.handback.revision: 29
  使用例を含む詳細については、「[インターフェイス](../../../csharp/programming-guide/interfaces/index.md)」を参照してください。  
   
 ## 使用例  
- [!code-cs[csrefKeywordsTypes#14](../../../csharp/language-reference/keywords/codesnippet/csharp/interface_1.cs)]  
+ [!code-cs[csrefKeywordsTypes#14](../../../csharp/language-reference/keywords/codesnippet/CSharp/interface_1.cs)]  
   
  インターフェイスは、名前空間またはクラスのメンバーであり、次のメンバーのシグネチャを含むことができます。  
   
@@ -46,7 +46,7 @@ caps.handback.revision: 29
 ## 使用例  
  ここでは、インターフェイスの実装例を示します。  この例では、インターフェイスにプロパティ宣言が含まれ、クラスに実装が含まれます。  `IPoint` を実装するクラスのインスタンスには、整数プロパティ `x` および `y` が含まれています。  
   
- [!code-cs[csrefKeywordsTypes#15](../../../csharp/language-reference/keywords/codesnippet/csharp/interface_2.cs)]  
+ [!code-cs[csrefKeywordsTypes#15](../../../csharp/language-reference/keywords/codesnippet/CSharp/interface_2.cs)]  
   
 ## C\# 言語仕様  
  [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec-md.md)]  

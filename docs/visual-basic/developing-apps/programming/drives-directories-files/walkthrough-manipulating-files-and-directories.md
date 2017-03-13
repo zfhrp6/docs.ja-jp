@@ -66,13 +66,13 @@ caps.handback.revision: 49
   
 2.  `Click` イベント ハンドラーに次のコードを追加します。  
   
-     [!code-vb[VbVbcnMyFileSystem#103](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/visualbasic/walkthrough-manipulating_0_1.vb)]  
+     [!code-vb[VbVbcnMyFileSystem#103](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/VisualBasic/walkthrough-manipulating-files-and-directories_1.vb)]  
   
      `FolderBrowserDialog1.ShowDialog` の呼び出しによって、**\[フォルダーの参照\]** ダイアログ ボックスが開きます。  ユーザーが **\[OK\]** をクリックすると、次の手順で追加する `ListFiles` メソッドに <xref:System.Windows.Forms.FolderBrowserDialog.SelectedPath%2A> プロパティが引数として渡されます。  
   
 3.  次の `ListFiles` メソッドを追加します。  
   
-     [!code-vb[VbVbcnMyFileSystem#104](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/visualbasic/walkthrough-manipulating_0_2.vb)]  
+     [!code-vb[VbVbcnMyFileSystem#104](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/VisualBasic/walkthrough-manipulating-files-and-directories_2.vb)]  
   
      このコードでは、まず **ListBox** をクリアします。  
   
@@ -92,7 +92,7 @@ caps.handback.revision: 49
   
 2.  `Click` イベント ハンドラーに次のコードを追加します。  
   
-     [!code-vb[VbVbcnMyFileSystem#105](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/visualbasic/walkthrough-manipulating_0_3.vb)]  
+     [!code-vb[VbVbcnMyFileSystem#105](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/VisualBasic/walkthrough-manipulating-files-and-directories_3.vb)]  
   
      このコードでは、`ListBox` 内の項目が選択されていることを確認します。  次に、`ListBox` からファイル パス エントリを取得します。  <xref:Microsoft.VisualBasic.FileIO.FileSystem.FileExists%2A> メソッドを使用して、ファイルがまだ存在するかどうかを確認します。  
   
@@ -100,7 +100,7 @@ caps.handback.revision: 49
   
 3.  次の `GetTextForOutput` メソッドを追加します。  
   
-     [!code-vb[VbVbcnMyFileSystem#107](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/visualbasic/walkthrough-manipulating_0_4.vb)]  
+     [!code-vb[VbVbcnMyFileSystem#107](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/VisualBasic/walkthrough-manipulating-files-and-directories_4.vb)]  
   
      このコードでは、<xref:Microsoft.VisualBasic.FileIO.FileSystem.GetFileInfo%2A> メソッドを使用してファイル パラメーターを取得します。  ファイル パラメーターは、<xref:System.Text.StringBuilder> に追加されます。  
   
@@ -116,7 +116,7 @@ caps.handback.revision: 49
   
 1.  `examineButton_Click` イベント ハンドラーの末尾に、次のコードを追加します。  
   
-     [!code-vb[VbVbcnMyFileSystem#106](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/visualbasic/walkthrough-manipulating_0_5.vb)]  
+     [!code-vb[VbVbcnMyFileSystem#106](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/VisualBasic/walkthrough-manipulating-files-and-directories_5.vb)]  
   
      このコードでは、選択したファイルと同じディレクトリにログ ファイルを配置するようにログ ファイルのパスを設定します。  ログ エントリのテキストが現在の日付と時刻に設定され、その後にファイル情報が示されます。  
   
@@ -132,7 +132,7 @@ caps.handback.revision: 49
   
 2.  イベント ハンドラーに次のコードを追加します。  
   
-     [!code-vb[VbVbcnMyFileSystem#102](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/visualbasic/walkthrough-manipulating_0_6.vb)]  
+     [!code-vb[VbVbcnMyFileSystem#102](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/VisualBasic/walkthrough-manipulating-files-and-directories_6.vb)]  
   
      このコードでは、フォルダー参照の既定のディレクトリを現在のディレクトリに設定します。  
   
@@ -144,7 +144,7 @@ caps.handback.revision: 49
   
 1.  次の `SetEnabled` メソッドを追加します。  
   
-     [!code-vb[VbVbcnMyFileSystem#108](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/visualbasic/walkthrough-manipulating_0_7.vb)]  
+     [!code-vb[VbVbcnMyFileSystem#108](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/VisualBasic/walkthrough-manipulating-files-and-directories_7.vb)]  
   
      `SetEnabled` メソッドは、`ListBox` で項目が選択されているかどうかに応じて、コントロールを有効または無効にします。  
   
@@ -161,12 +161,12 @@ caps.handback.revision: 49
 ## My.Computer.FileSystem を使用した完全なコード例  
  完成なコード例を次に示します。  
   
- [!code-vb[VbVbcnMyFileSystem#101](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/visualbasic/walkthrough-manipulating_0_8.vb)]  
+ [!code-vb[VbVbcnMyFileSystem#101](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/VisualBasic/walkthrough-manipulating-files-and-directories_8.vb)]  
   
 ## System.IO を使用した完全なコード例  
  `My.Computer.FileSystem` オブジェクトを使用する代わりに、<xref:System.IO> 名前空間のクラスを使用した場合の同等のコード例を次に示します。  
   
- [!code-vb[VbVbcnMyFileSystem#111](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/visualbasic/walkthrough-manipulating_0_9.vb)]  
+ [!code-vb[VbVbcnMyFileSystem#111](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/VisualBasic/walkthrough-manipulating-files-and-directories_9.vb)]  
   
 ## 参照  
  <xref:System.IO>   

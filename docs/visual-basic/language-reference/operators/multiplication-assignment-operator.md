@@ -53,7 +53,7 @@ variableorproperty *= expression
 ## 使用例  
  次の例では、`*=` 演算子を使って、最初の整数型 \(`Integer`\) の変数を 2 番目の整数型 \(`Integer`\) の変数で乗算し、結果を最初の変数に代入します。  
   
- [!code-vb[VbVbalrOperators#5](../../../visual-basic/language-reference/operators/codesnippet/visualbasic/multiplication-assignmen_1_1.vb)]  
+ [!code-vb[VbVbalrOperators#5](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/multiplication-assignment-operator_1.vb)]  
   
 ## 参照  
  [\* Operator](../../../visual-basic/language-reference/operators/multiplication-operator.md)   

@@ -79,7 +79,7 @@ caps.handback.revision: 30
 ## 使用例  
  ここでは、クラスのフィールド、コンストラクター、メソッドの宣言例を示します。  オブジェクト インスタンスの作成、インスタンス データの出力の例も示します。  この例では、2 つのクラスを宣言します。`Child` クラスには、2 つのプライベート フィールド \(`name` および `age`\) と、2 つのパブリック メソッドがあります。  2 番目のクラスである `StringTest` は、`Main` の格納に使用されます。  
   
- [!code-cs[csrefKeywordsTypes#5](../../../csharp/language-reference/keywords/codesnippet/csharp/class_1.cs)]  
+ [!code-cs[csrefKeywordsTypes#5](../../../csharp/language-reference/keywords/codesnippet/CSharp/class_1.cs)]  
   
 ## コメント  
  上記の例で、プライベート フィールド \(`name` および `age`\) にアクセスできるのは、`Child` クラスのパブリック メソッドだけであることに注意してください。  たとえば、次のステートメントを使用して `Main` メソッドから子供の名前を出力できません。  

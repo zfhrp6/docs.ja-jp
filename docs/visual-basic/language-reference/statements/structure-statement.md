@@ -111,7 +111,7 @@ End Structure
 ## 使用例  
  次の例では、`Structure` ステートメントを使って、従業員に関連のある複数のデータを定義しています。  データ項目の機密性に応じて `Public`、`Friend`、`Private` の各メンバーを使用する方法が示されています。  プロシージャ、プロパティ、およびイベント メンバーも示されています。  
   
- [!code-vb[VbVbalrStatements#57](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/structure-statement_1.vb)]  
+ [!code-vb[VbVbalrStatements#57](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/structure-statement_1.vb)]  
   
 ## 参照  
  [Class Statement](../../../visual-basic/language-reference/statements/class-statement.md)   

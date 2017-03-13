@@ -31,7 +31,7 @@ sealed class B : A {}
 ## 使用例  
  次の例では、`Z` は `Y` から継承します。しかし `Z` は仮想関数 `F` をオーバーライドできません。この仮想関数は `X` で宣言されており、`Y` でシールされています。  
   
- [!code-cs[csrefKeywordsModifiers#16](../../../csharp/language-reference/keywords/codesnippet/csharp/csrefKeywordsModifiers/csrefKeywordsModifiers.cs#16)]  
+ [!code-cs[csrefKeywordsModifiers#16](../../../csharp/language-reference/keywords/codesnippet/CSharp/sealed_1.cs)]  
   
  新しいメソッドまたはプロパティをクラスで定義するときに、[virtual](../../../csharp/language-reference/keywords/virtual.md) として宣言しないようにすると、派生クラスによるオーバーライドを防ぐことができます。  
   
@@ -46,7 +46,7 @@ sealed class B : A {}
  その他の例については、「[抽象クラスとシール クラス、およびクラス メンバー](../../../csharp/programming-guide/classes-and-structs/abstract-and-sealed-classes-and-class-members.md)」を参照してください。  
   
 ## 使用例  
- [!code-cs[csrefKeywordsModifiers#17](../../../csharp/language-reference/keywords/codesnippet/csharp/csrefKeywordsModifiers/csrefKeywordsModifiers.cs#17)]  
+ [!code-cs[csrefKeywordsModifiers#17](../../../csharp/language-reference/keywords/codesnippet/CSharp/sealed_2.cs)]  
   
  上記の例で、次のステートメントを使用してシール クラスからの継承を試みたとします。  
   

@@ -30,7 +30,7 @@ caps.handback.revision: 17
   
 -   `CopyFile` メソッドを使用して、ファイルをコピーします。その際、移動するファイルと移動先のディレクトリを指定します。  `overwrite` パラメーターを使用して、既存のファイルを上書きするかどうかを指定できます。  次のコード例は、`CopyFile` の使い方を示しています。  
   
-     [!code-vb[VbFileIOMisc#24](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/visualbasic/how-to-create-a-copy-of-_1_1.vb)]  
+     [!code-vb[VbFileIOMisc#24](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/VisualBasic/how-to-create-a-copy-of-a-file-in-a-different-directory_1.vb)]  
   
 ## 信頼性の高いプログラミング  
  次の条件を満たす場合は、例外がスローされる可能性があります。  

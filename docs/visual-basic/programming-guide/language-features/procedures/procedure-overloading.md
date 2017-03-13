@@ -76,12 +76,12 @@ caps.handback.revision: 24
 ## プロシージャの複数のバージョン  
  たとえば、顧客の残高に対してトランザクションをポストする `Sub` プロシージャを記述する場合に、名前と口座番号のどちらでも顧客を参照できるようにするとします。  これを行うには、次のように、2 つの異なる `Sub` プロシージャを定義する方法があります。  
   
- [!code-vb[VbVbcnProcedures#73](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/procedure-overloading_1.vb)]  
+ [!code-vb[VbVbcnProcedures#73](./codesnippet/VisualBasic/procedure-overloading_1.vb)]  
   
 ### オーバーロードされたバージョン  
  この他に、1 つのプロシージャ名をオーバーロードする方法もあります。  [Overloads](../../../../visual-basic/language-reference/modifiers/overloads.md) キーワードを使って、次のように、各パラメーター リストごとにプロシージャのバージョンを定義します。  
   
- [!code-vb[VbVbcnProcedures#72](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/procedure-overloading_2.vb)]  
+ [!code-vb[VbVbcnProcedures#72](./codesnippet/VisualBasic/procedure-overloading_2.vb)]  
   
 #### 追加のオーバーロード  
  トランザクションの額を `Decimal` と `Single` のどちらで受け取ることもできるようにするには、`post` をさらにオーバーロードします。  上の例のオーバーロードされた各バージョンをさらにオーバーロードすると、名前が同じでシグネチャがそれぞれ異なる `Sub` プロシージャが 4 つできることになります。  
@@ -89,9 +89,9 @@ caps.handback.revision: 24
 ## オーバーロードの利点  
  プロシージャのオーバーロードの利点は、呼び出しの柔軟性にあります。  上の例で宣言した `post` プロシージャを使用する場合、呼び出し元のコードでは、顧客の ID を `String` として取得することも `Integer` として取得することもできます。いずれの場合も、呼び出すプロシージャは同じです。  次に例を示します。  
   
- [!code-vb[VbVbcnProcedures#56](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/procedure-overloading_3.vb)]  
+ [!code-vb[VbVbcnProcedures#56](./codesnippet/VisualBasic/procedure-overloading_3.vb)]  
   
- [!code-vb[VbVbcnProcedures#57](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/procedure-overloading_4.vb)]  
+ [!code-vb[VbVbcnProcedures#57](./codesnippet/VisualBasic/procedure-overloading_4.vb)]  
   
 ## 参照  
  [Procedures](../../../../visual-basic/programming-guide/language-features/procedures/index.md)   

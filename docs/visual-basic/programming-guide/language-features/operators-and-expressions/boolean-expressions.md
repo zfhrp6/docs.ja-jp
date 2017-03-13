@@ -33,12 +33,12 @@ caps.handback.revision: 19
 
 *ブール式*とは、評価結果が [Boolean 型](../../../../visual-basic/language-reference/data-types/boolean-data-type.md)の値 \(`True` または `False`\) になる式です。  `Boolean` 式にはいくつかの形式があります。  最も単純な形式では、次のように、`Boolean` 変数の値を `Boolean` リテラルと直接比較します。  
   
- [!code-vb[VbVbalrOperators#87](../../../../visual-basic/language-reference/operators/codesnippet/visualbasic/boolean-expressions_1.vb)]  
+ [!code-vb[VbVbalrOperators#87](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/boolean-expressions_1.vb)]  
   
 ## \= 演算子の 2 つの意味  
  `newCustomer = True` という代入ステートメントは、前述の例に出てきた式と同じに見えますが、機能も使い方も異なります。  前述の例では、`newCustomer = True` という式は Boolean 値を表しているため、`=` 記号は比較演算子として解釈されます。  スタンドアロンのステートメントでは、`=` 記号は代入演算子として解釈され、右の値が左の変数に代入されます。  次に例を示します。  
   
- [!code-vb[VbVbalrOperators#88](../../../../visual-basic/language-reference/operators/codesnippet/visualbasic/boolean-expressions_2.vb)]  
+ [!code-vb[VbVbalrOperators#88](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/boolean-expressions_2.vb)]  
   
  詳細については、「[Value Comparisons](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/value-comparisons.md)」および「[Statements](../../../../visual-basic/language-reference/statements/index.md)」を参照してください。  
   
@@ -59,7 +59,7 @@ caps.handback.revision: 19
 ## 演算子のショートサーキット  
  `AndAlso` と `OrElse` という論理演算子は、*ショートサーキット*と呼ばれる動作を示します。  ショートサーキット演算子は、左のオペランドを最初に評価します。  左のオペランドによって式全体の値が決まる場合は、右の式が評価されないまま、プログラムの実行が次に進みます。  次に例を示します。  
   
- [!code-vb[VbVbalrOperators#89](../../../../visual-basic/language-reference/operators/codesnippet/visualbasic/boolean-expressions_3.vb)]  
+ [!code-vb[VbVbalrOperators#89](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/boolean-expressions_3.vb)]  
   
  この例では、まず左の式 `45 < 12` が評価されます。  左の式の評価は `False` になるので、この論理式全体の評価は `False` になります。  したがって、右の式 `testFunction(3)` は評価されないまま、`If` ブロック内のコードの実行がスキップされます。  この例では、左の式を評価しただけで式全体が false になることが決まるので、`testFunction()` は呼び出されません。  
   
@@ -68,7 +68,7 @@ caps.handback.revision: 19
 ### 非ショートサーキット演算子との比較  
  これに対して、`And` 演算子または `Or` 演算子を使用した場合は、論理演算子の両側が評価されます。  次に例を示します。  
   
- [!code-vb[VbVbalrOperators#90](../../../../visual-basic/language-reference/operators/codesnippet/visualbasic/boolean-expressions_4.vb)]  
+ [!code-vb[VbVbalrOperators#90](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/boolean-expressions_4.vb)]  
   
  この例では、左の式の評価が `False` になる場合でも、`testFunction()` が呼び出されます。  
   

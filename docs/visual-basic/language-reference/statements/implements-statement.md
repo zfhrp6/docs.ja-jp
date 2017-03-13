@@ -54,14 +54,14 @@ Implements interfacename.interfacemember [, ...]
 ## 使用例  
  `Implements` ステートメントを使って、インターフェイスのメンバーを実装するコード例を次に示します。  イベント、プロパティ、およびプロシージャを含むインターフェイスが、`ICustomerInfo` という名前で定義されています。  `customerInfo` クラスは、インターフェイスに定義されたすべてのメンバーを実装します。  
   
- [!code-vb[VbVbalrStatements#33](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/implements-statement_1.vb)]  
+ [!code-vb[VbVbalrStatements#33](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/implements-statement_1.vb)]  
   
  `customerInfo` クラスでは 1 行のソース コードに `Implements` ステートメントを定義し、そのクラスが `ICustomerInfo` インターフェイスのすべてのメンバーを実装することを示しています。  その後、クラスの各メンバーにおいて、メンバー宣言に `Implements` キーワードを指定し、そのインターフェイスのメンバーが実装されることを示しています。  
   
 ## 使用例  
  実装されたインターフェイスを使用する 2 つのプロシージャを次に示します。  インターフェイスの実装をテストするには、これらのプロシージャをプロジェクトに追加して、`testImplements` プロシージャを呼び出します。  
   
- [!code-vb[VbVbalrStatements#34](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/implements-statement_2.vb)]  
+ [!code-vb[VbVbalrStatements#34](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/implements-statement_2.vb)]  
   
 ## 参照  
  [Implements](../../../visual-basic/language-reference/statements/implements-clause.md)   

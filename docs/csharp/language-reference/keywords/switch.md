@@ -28,7 +28,7 @@ caps.handback.revision: 47
   
  `switch` ステートメントには、1 つ以上の switch セクションが含まれています。  各 switch セクションには、1 つ以上の *case ラベル*と、そのあとに続く 1 つ以上のステートメントのリストが含まれています。  次の例に、3 つの switch セクションを持つ簡単な `switch` ステートメントを示します。  各 switch セクションには、`case 1` のような case ラベルと、2 つのステートメントが含まれます。  
   
- [!code-cs[csrefKeywordsSelection#7](../../../csharp/language-reference/keywords/codesnippet/csharp/switch_1.cs)]  
+ [!code-cs[csrefKeywordsSelection#7](../../../csharp/language-reference/keywords/codesnippet/CSharp/switch_1.cs)]  
   
 ## 解説  
  各 case ラベルでは、定数値を指定します。  switch ステートメントは、*switch 式*の値に一致する case ラベルを持つ switch セクション \(この例では `caseSwitch`\) に制御を移動します。  一致する値が case ラベルにない場合、制御は `default` セクションに移動します \(default セクションがある場合\)。  `default` セクションがない場合は、何の処理も行われないまま、制御は `switch` ステートメントの外部に移動します。  前の例では、`case 1` が `caseSwitch` の値に一致するため、ステートメント内の最初の switch セクションが実行されます。  
@@ -63,12 +63,12 @@ case 4:
 ## 使用例  
  次の例は、`switch` ステートメントの要件と機能について示しています。  
   
- [!code-cs[csrefKeywordsSelection#9](../../../csharp/language-reference/keywords/codesnippet/csharp/switch_2.cs)]  
+ [!code-cs[csrefKeywordsSelection#9](../../../csharp/language-reference/keywords/codesnippet/CSharp/switch_2.cs)]  
   
 ## 使用例  
  最後の例では、文字列変数 `str`と文字列の case ラベルを使用して、実行の流れを制御します。  
   
- [!code-cs[csrefKeywordsSelection#8](../../../csharp/language-reference/keywords/codesnippet/csharp/switch_3.cs)]  
+ [!code-cs[csrefKeywordsSelection#8](../../../csharp/language-reference/keywords/codesnippet/CSharp/switch_3.cs)]  
   
 ## C\# 言語仕様  
  [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec-md.md)]  

@@ -24,17 +24,17 @@ caps.handback.revision: 16
 ## 使用例  
  次の例の `where` 句は、5 未満の数値以外のすべての数値をフィルターで除外します。  `where` 句を削除すると、データ ソースのすべての数値が返されます。  式 `num < 5` が各要素に適用される述語です。  
   
- [!code-cs[cscsrefQueryKeywords#5](../../../csharp/language-reference/keywords/codesnippet/csharp/csquerykeywords/Where.cs#5)]  
+ [!code-cs[cscsrefQueryKeywords#5](../../../csharp/language-reference/keywords/codesnippet/CSharp/where-clause_1.cs)]  
   
 ## 使用例  
  単一の `where` 句の中で、[&&](../../../csharp/language-reference/operators/conditional-and-operator.md) 演算子と [&#124;&#124;](../../../csharp/language-reference/operators/conditional-or-operator.md) 演算子を使用することにより、述語を必要な数だけ指定できます。  次の例のクエリは、5 未満の偶数だけを選択するために 2 つの述語を指定しています。  
   
- [!code-cs[cscsrefQueryKeywords#6](../../../csharp/language-reference/keywords/codesnippet/csharp/csquerykeywords/Where.cs#6)]  
+ [!code-cs[cscsrefQueryKeywords#6](../../../csharp/language-reference/keywords/codesnippet/CSharp/where-clause_2.cs)]  
   
 ## 使用例  
  `where` 句には、ブール値を返すメソッドを 1 つ以上含めることができます。  次の例の `where` 句は、範囲変数の現在の値が偶数であるか奇数であるかを判断するためにメソッドを使用しています。  
   
- [!code-cs[cscsrefQueryKeywords#7](../../../csharp/language-reference/keywords/codesnippet/csharp/csquerykeywords/Where.cs#7)]  
+ [!code-cs[cscsrefQueryKeywords#7](../../../csharp/language-reference/keywords/codesnippet/CSharp/where-clause_3.cs)]  
   
 ## 解説  
  `where` 句はフィルター処理機構です。  クエリ式内の最初の句と最後の句以外のほとんどどこにでも置くことができます。  `where` 句は、[group](../../../csharp/language-reference/keywords/group-clause.md) 句の前にも後ろにも置くことができます。どちらに置くかは、ソース要素のフィルター処理をグループ化の前に行うか後に行うかによります。  

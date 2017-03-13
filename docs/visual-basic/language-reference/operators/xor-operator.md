@@ -87,14 +87,14 @@ result = expression1 Xor expression2
 ## 使用例  
  `Xor` 演算子を使って 2 つの式の排他的論理和を求める例を次に示します。  結果は、2 つの式のどちらか一方が `True` かどうかを表す `Boolean` 値です。  
   
- [!code-vb[VbVbalrOperators#40](../../../visual-basic/language-reference/operators/codesnippet/visualbasic/xor-operator_1.vb)]  
+ [!code-vb[VbVbalrOperators#40](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/xor-operator_1.vb)]  
   
  前の例では、`False`、`True`、`False` の結果を順に生成します。  
   
 ## 使用例  
  `Xor` 演算子を使って 2 つの数式のビットごとの排他的論理和を求める例を次に示します。  オペランド内の、対応するビットのどちらか一方だけが 1 にセットされている場合は、結果パターンにビットがセットされます。  
   
- [!code-vb[VbVbalrOperators#41](../../../visual-basic/language-reference/operators/codesnippet/visualbasic/xor-operator_2.vb)]  
+ [!code-vb[VbVbalrOperators#41](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/xor-operator_2.vb)]  
   
  前の例では、2、12、14 の結果を順に生成します。  
   

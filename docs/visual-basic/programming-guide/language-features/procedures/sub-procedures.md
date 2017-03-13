@@ -75,11 +75,11 @@ caps.handback.revision: 21
 ### 宣言と呼び出しの説明  
  次の `Sub` プロシージャは、アプリケーションが実行しようとしているタスクとタイム スタンプを表示します。  アプリケーションでは、さまざまな場所から  `tellOperator`  を呼び出すことができるため、すべてのタスクの先頭にこのコードを複製する必要はありません。  呼び出し時には、引数  `task`  で文字列が渡されます。この文字列によって、開始されようとしているタスクが確認されます。  
   
- [!code-vb[VbVbcnProcedures#2](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/sub-procedures_1.vb)]  
+ [!code-vb[VbVbcnProcedures#2](./codesnippet/VisualBasic/sub-procedures_1.vb)]  
   
  `tellOperator` を呼び出す一般的な例を次に示します。  
   
- [!code-vb[VbVbcnProcedures#3](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/sub-procedures_2.vb)]  
+ [!code-vb[VbVbcnProcedures#3](./codesnippet/VisualBasic/sub-procedures_2.vb)]  
   
 ## 参照  
  [Procedures](../../../../visual-basic/programming-guide/language-features/procedures/index.md)   

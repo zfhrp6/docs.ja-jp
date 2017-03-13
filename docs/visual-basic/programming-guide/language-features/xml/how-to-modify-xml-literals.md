@@ -32,7 +32,7 @@ caps.handback.revision: 11
   
      次のコード例では、XML ドキュメント内のすべての \<Price\> 要素の値を更新します。  
   
-     [!code-vb[VbXmlSamples2#4](../../../../visual-basic/programming-guide/language-features/xml/codesnippet/visualbasic/VbXmlSamples2/Module2.vb#4)]  
+     [!code-vb[VbXmlSamples2#4](../../../../visual-basic/programming-guide/language-features/xml/codesnippet/VisualBasic/how-to-modify-xml-literals_1.vb)]  
   
      上のコード例を使用する前の元の XML と変更後の XML を次に示します。  
   
@@ -75,7 +75,7 @@ caps.handback.revision: 11
   
 1.  XML リテラルに属性を追加するには、先に XML リテラルへの参照を取得します。  次に、新しい XML 属性軸プロパティを追加することで、属性を追加できます。  XML リテラルへの新しい <xref:System.Xml.Linq.XAttribute> オブジェクトの追加は、<xref:System.Xml.Linq.XContainer.Add%2A> メソッドを使用することでも実行できます。  この 2 つの方法の使用例を次に示します。  
   
-     [!code-vb[VbXmlSamples2#5](../../../../visual-basic/programming-guide/language-features/xml/codesnippet/visualbasic/VbXmlSamples2/Module2.vb#5)]  
+     [!code-vb[VbXmlSamples2#5](../../../../visual-basic/programming-guide/language-features/xml/codesnippet/VisualBasic/how-to-modify-xml-literals_2.vb)]  
   
      上のコード例を使用する前の元の XML と変更後の XML を次に示します。  
   
@@ -121,7 +121,7 @@ caps.handback.revision: 11
   
      これらの方法の使用例を次に示します。  
   
-     [!code-vb[VbXmlSamples2#6](../../../../visual-basic/programming-guide/language-features/xml/codesnippet/visualbasic/VbXmlSamples2/Module2.vb#6)]  
+     [!code-vb[VbXmlSamples2#6](../../../../visual-basic/programming-guide/language-features/xml/codesnippet/VisualBasic/how-to-modify-xml-literals_3.vb)]  
   
      上のコード例を使用する前の元の XML と変更後の XML を次に示します。  
   
@@ -165,7 +165,7 @@ caps.handback.revision: 11
   
 1.  XML リテラルから要素または属性を削除するには、要素または属性への参照を取得し、`Remove` メソッドを呼び出します。次に例を示します。  
   
-     [!code-vb[VbXmlSamples2#7](../../../../visual-basic/programming-guide/language-features/xml/codesnippet/visualbasic/VbXmlSamples2/Module2.vb#7)]  
+     [!code-vb[VbXmlSamples2#7](../../../../visual-basic/programming-guide/language-features/xml/codesnippet/VisualBasic/how-to-modify-xml-literals_4.vb)]  
   
      上のコード例を使用する前の元の XML と変更後の XML を次に示します。  
   
@@ -213,7 +213,7 @@ caps.handback.revision: 11
   
      次のコード例では、すべての \<Description\> 要素を \<Abstract\> 要素に置換します。  \<Description\> 要素の内容は、\<Description\> <xref:System.Xml.Linq.XElement> オブジェクトの <xref:System.Xml.Linq.XContainer.Nodes%2A> プロパティによって、新しい \<Abstract\> 要素の中に保持されます。  
   
-     [!code-vb[VbXmlSamples2#8](../../../../visual-basic/programming-guide/language-features/xml/codesnippet/visualbasic/VbXmlSamples2/Module2.vb#8)]  
+     [!code-vb[VbXmlSamples2#8](../../../../visual-basic/programming-guide/language-features/xml/codesnippet/VisualBasic/how-to-modify-xml-literals_5.vb)]  
   
      上のコード例を使用する前の元の XML と変更後の XML を次に示します。  
   

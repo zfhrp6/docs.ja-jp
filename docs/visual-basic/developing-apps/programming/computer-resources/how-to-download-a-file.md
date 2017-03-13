@@ -46,19 +46,19 @@ caps.handback.revision: 22
   
 -   `DownloadFile` メソッドを使用してファイルをダウンロードします。その際、対象ファイルの場所を表す文字列または URI、およびファイルを格納する場所を指定します。  この例では、`WineList.txt` ファイルを `http://www.cohowinery.com/downloads` からダウンロードし、`C:\Documents and Settings\All Users\Documents` に保存します。  
   
-     [!code-vb[VbResourceTasks#9](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/visualbasic/how-to-download-a-file_1.vb)]  
+     [!code-vb[VbResourceTasks#9](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/VisualBasic/how-to-download-a-file_1.vb)]  
   
 ### タイムアウト間隔を指定してファイルをダウンロードするには  
   
 -   `DownloadFile` メソッドを使用してファイルをダウンロードします。その際、対象ファイルの場所を表す文字列または URI、ファイルを格納する場所、およびミリ秒単位のタイムアウト間隔 \(既定値は 1000\) を指定します。  この例では、タイムアウト間隔に 500 ミリ秒を指定して、`WineList.txt` ファイルを `http://www.cohowinery.com/downloads` からダウンロードし、`C:\Documents and Settings\All Users\Documents` に保存します。  
   
-     [!code-vb[VbResourceTasks#10](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/visualbasic/how-to-download-a-file_2.vb)]  
+     [!code-vb[VbResourceTasks#10](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/VisualBasic/how-to-download-a-file_2.vb)]  
   
 ### ユーザー名とパスワードを指定してファイルをダウンロードするには  
   
 -   `DownLoadFile` メソッドを使用してファイルをダウンロードします。その際、対象ファイルの場所を表す文字列または URI、ファイルを格納する場所、ユーザー名、およびパスワードを指定します。  この例では、ユーザー名に `anonymous` を、パスワードに空白を指定して、`WineList.txt` ファイルを `http://www.cohowinery.com/downloads` からダウンロードし、`C:\Documents and Settings\All Users\Documents` に保存します。  
   
-     [!code-vb[VbResourceTasks#11](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/visualbasic/how-to-download-a-file_3.vb)]  
+     [!code-vb[VbResourceTasks#11](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/VisualBasic/how-to-download-a-file_3.vb)]  
   
     > [!IMPORTANT]
     >  `DownLoadFile` メソッドで使用される FTP プロトコルは、パスワードを含む情報をプレーンテキストで送信するため、重要な情報の送信には使用しないでください。  

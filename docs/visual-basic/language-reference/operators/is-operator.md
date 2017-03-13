@@ -55,7 +55,7 @@ result = object1 Is object2
 ## 使用例  
  次の例では、`Is` 演算子を使用して、1 組のオブジェクト参照を比較します。  結果は、2 つのオブジェクトが同じかどうかを示す `Boolean` 値に割り当てられます。  
   
- [!code-vb[VbVbalrOperators#27](../../../visual-basic/language-reference/operators/codesnippet/visualbasic/is-operator_1.vb)]  
+ [!code-vb[VbVbalrOperators#27](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/is-operator_1.vb)]  
   
  この例で示すように、`Is` 演算子は、事前バインディングされたオブジェクトと遅延バインディングされたオブジェクトの両方をテストするのに使用できます。  
   

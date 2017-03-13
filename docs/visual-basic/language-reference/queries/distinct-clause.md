@@ -38,7 +38,7 @@ Distinct
 ## 使用例  
  次のクエリ式は、顧客の一覧と顧客の注文の一覧を結合します。  一意の顧客名と注文日の一覧を返すために、`Distinct` 句が含まれています。  
   
- [!code-vb[VbSimpleQuerySamples#20](../../../visual-basic/language-reference/queries/codesnippet/visualbasic/VbSimpleQuerySamples/QuerySamples1.vb#20)]  
+ [!code-vb[VbSimpleQuerySamples#20](../../../visual-basic/language-reference/queries/codesnippet/VisualBasic/distinct-clause_1.vb)]  
   
 ## 参照  
  [Introduction to LINQ in Visual Basic](../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)   

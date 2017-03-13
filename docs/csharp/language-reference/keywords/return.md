@@ -27,7 +27,7 @@ caps.handback.revision: 18
 ## 使用例  
  次の例では、メソッド `A()` が変数 `Area` を [double](../../../csharp/language-reference/keywords/double.md) 値として返します。  
   
- [!code-cs[csrefKeywordsJump#6](../../../csharp/language-reference/keywords/codesnippet/csharp/return_1.cs)]  
+ [!code-cs[csrefKeywordsJump#6](../../../csharp/language-reference/keywords/codesnippet/CSharp/return_1.cs)]  
   
 ## C\# 言語仕様  
  [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec-md.md)]  

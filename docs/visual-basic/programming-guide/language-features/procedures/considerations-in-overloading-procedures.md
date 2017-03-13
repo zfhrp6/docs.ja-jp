@@ -94,11 +94,11 @@ caps.handback.revision: 26
 ## 省略可能なパラメーターの暗黙のオーバーロード  
  [Optional](../../../../visual-basic/language-reference/modifiers/optional.md) パラメーターを持つプロシージャは、省略可能なパラメーターを持つバージョンと持たないバージョンの 2 つのオーバーロードされたプロシージャと同じです。  このようなプロシージャは、これらのいずれかに対応するパラメーターのリストではオーバーロードできません。  次の宣言はこのことを示しています。  
   
- [!code-vb[VbVbcnProcedures#58](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/considerations-in-overlo_1.vb)]  
+ [!code-vb[VbVbcnProcedures#58](./codesnippet/VisualBasic/considerations-in-overloading-procedures_1.vb)]  
   
- [!code-vb[VbVbcnProcedures#60](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/considerations-in-overlo_2.vb)]  
+ [!code-vb[VbVbcnProcedures#60](./codesnippet/VisualBasic/considerations-in-overloading-procedures_2.vb)]  
   
- [!code-vb[VbVbcnProcedures#61](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/considerations-in-overlo_3.vb)]  
+ [!code-vb[VbVbcnProcedures#61](./codesnippet/VisualBasic/considerations-in-overloading-procedures_3.vb)]  
   
  省略可能なパラメーターが複数あるプロシージャでは、上の例と同様の理由で、暗黙のオーバーロードがいくつかあることになります。  
   
@@ -113,13 +113,13 @@ caps.handback.revision: 26
   
  次の宣言は、これらの暗黙のオーバーロードを示しています。  
   
- [!code-vb[VbVbcnProcedures#68](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/considerations-in-overlo_4.vb)]  
+ [!code-vb[VbVbcnProcedures#68](./codesnippet/VisualBasic/considerations-in-overloading-procedures_4.vb)]  
   
- [!code-vb[VbVbcnProcedures#70](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/considerations-in-overlo_5.vb)]  
+ [!code-vb[VbVbcnProcedures#70](./codesnippet/VisualBasic/considerations-in-overloading-procedures_5.vb)]  
   
  このようなプロシージャは、パラメーター配列として 1 次元配列を受け取るパラメーター リストではオーバーロードできません。  ただし、他の暗黙のオーバーロードのシグネチャは使用できます。  次の宣言はこのことを示しています。  
   
- [!code-vb[VbVbcnProcedures#71](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/considerations-in-overlo_6.vb)]  
+ [!code-vb[VbVbcnProcedures#71](./codesnippet/VisualBasic/considerations-in-overloading-procedures_6.vb)]  
   
 ## オーバーロードの代わりとしての型宣言を省略したプログラミング  
  呼び出し元のコードがパラメーターに異なるデータ型を渡す場合は、ような方法は、 JScript プログラミングです。  [Option Strict Statement](../../../../visual-basic/language-reference/statements/option-strict-statement.md)または [\/optionstrict](../../../../visual-basic/reference/command-line-compiler/optionstrict.md) のいずれかのコンパイラ オプションを使用すると、型チェックのスイッチを `Off` にできます。  これで、パラメーターのデータ型を宣言する必要がなくなります。  ただし、この方法には、オーバーロードとは違って次のような問題があります。  

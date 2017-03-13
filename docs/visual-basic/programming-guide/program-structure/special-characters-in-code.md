@@ -52,14 +52,14 @@ caps.handback.revision: 21
 ## かっこ  
  `Sub` や `Function` などのプロシージャを定義するときはかっこを使用します。  すべてのプロシージャの引数リストは、かっこで囲む必要があります。  また、かっこは変数や引数を論理グループに含める場合にも使用します。具体的には、複合式の中で演算子の既定の優先順位をオーバーライドする場合にかっこが必要になります。  次に例を示します。  
   
- [!code-vb[VbVbcnConventions#11](../../../visual-basic/programming-guide/language-features/codesnippet/visualbasic/special-characters-in-code_1.vb)]  
+ [!code-vb[VbVbcnConventions#11](../../../visual-basic/programming-guide/language-features/codesnippet/VisualBasic/special-characters-in-code_1.vb)]  
   
  このコードを実行すると、`d` の値は 8.225、`e` の値は 3 になります。  `d` の計算では、`/` の優先順位は既定で `+` よりも高いため、`d = b + (c / a)` を実行しても結果は同じになります。  `e` の計算に使用されているかっこは、既定の優先順位をオーバーライドします。  
   
 ## 区切り記号  
  区切り記号は、その名前が示すとおり、コードのセクションを区切ります。  [!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] では、区切り記号はコロン \(`:`\) です。  複数のステートメントを複数行ではなく単一行に配置する場合に、区切り記号を使用します。  これにより、スペースを節約し、コードを読みやすくすることができます。  コロンで区切られた 3 つのステートメントの例を次に示します。  
   
- [!code-vb[VbVbcnConventions#12](../../../visual-basic/programming-guide/language-features/codesnippet/visualbasic/special-characters-in-code_2.vb)]  
+ [!code-vb[VbVbcnConventions#12](../../../visual-basic/programming-guide/language-features/codesnippet/VisualBasic/special-characters-in-code_2.vb)]  
   
  詳細については、「[方法 : コード内でステートメントを分割および連結する](../../../visual-basic/programming-guide/program-structure/how-to-break-and-combine-statements-in-code.md)」を参照してください。  
   
@@ -68,7 +68,7 @@ caps.handback.revision: 21
 ## 連結  
  `&` 演算子は、*連結* つまり文字列を結びつけるために使用します。  数値を加算する `+` 演算子と混同しないでください。  数値を連結する場合に `+` 演算子を使用して連結すると、誤った結果が生成されることがあります。  次に例を示します。  
   
- [!code-vb[VbVbcnConventions#13](../../../visual-basic/programming-guide/language-features/codesnippet/visualbasic/special-characters-in-code_3.vb)]  
+ [!code-vb[VbVbcnConventions#13](../../../visual-basic/programming-guide/language-features/codesnippet/VisualBasic/special-characters-in-code_3.vb)]  
   
  このコードを実行すると、`resultA` の値は 21.01、`resultB` の値は "10.0111" になります。  
   
@@ -78,12 +78,12 @@ caps.handback.revision: 21
 ### ドット \(.\) \[演算子\]  
  `.` 演算子は、クラス、構造体、インターフェイス、列挙値にメンバー アクセス演算子として使用します。  フィールド、プロパティ、イベント、メソッドなどのメンバーに使用できます。  次に例を示します。  
   
- [!code-vb[VbVbcnConventions#14](../../../visual-basic/programming-guide/language-features/codesnippet/visualbasic/special-characters-in-code_4.vb)]  
+ [!code-vb[VbVbcnConventions#14](../../../visual-basic/programming-guide/language-features/codesnippet/VisualBasic/special-characters-in-code_4.vb)]  
   
 ### 感嘆符 \(\!\) \[演算子\]  
  クラスまたはインターフェイスに限っては、感嘆符 \(`!`\) 演算子をディクショナリ アクセス演算子として使用します。  クラスまたはインターフェイスには、単一の文字列型 \(`String`\) の引数を受け入れる既定のプロパティが必要です。  `!` 演算子のすぐ後に識別子を続けると、既定のプロパティに文字列として渡される引数の値になります。  次に例を示します。  
   
- [!code-vb[VbVbcnConventions#15](../../../visual-basic/programming-guide/language-features/codesnippet/visualbasic/special-characters-in-code_5.vb)]  
+ [!code-vb[VbVbcnConventions#15](../../../visual-basic/programming-guide/language-features/codesnippet/VisualBasic/special-characters-in-code_5.vb)]  
   
  `MsgBox` の 3 つの出力行は、いずれも値 `32856` を表示します。  最初の行では `index` プロパティに通常の方法でアクセスし、2 行目では `index` が `hasDefault` クラスの既定のプロパティであることが利用されています。また、3 行目ではディクショナリ アクセスを使ってクラスにアクセスしています。  
   

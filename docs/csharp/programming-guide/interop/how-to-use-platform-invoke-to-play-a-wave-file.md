@@ -26,9 +26,9 @@ caps.handback.revision: 30
   
  **\[開いているファイル\]** ダイアログ ボックスには、フィルター設定に従って .wav 拡張子を持つファイルだけが表示されます。  
   
- [!code-cs[csProgGuideInterop#5](../../../csharp/programming-guide/interop/codesnippet/csharp/how-to-use-platform-invo_1.cs)]  
+ [!code-cs[csProgGuideInterop#5](../../../csharp/programming-guide/interop/codesnippet/CSharp/how-to-use-platform-invoke-to-play-a-wave-file_1.cs)]  
   
- [!code-cs[csProgGuideInterop#3](../../../csharp/programming-guide/interop/codesnippet/csharp/how-to-use-platform-invo_2.cs)]  
+ [!code-cs[csProgGuideInterop#3](../../../csharp/programming-guide/interop/codesnippet/CSharp/how-to-use-platform-invoke-to-play-a-wave-file_2.cs)]  
   
 ## コードのコンパイル  
   
@@ -40,7 +40,7 @@ caps.handback.revision: 30
   
 3.  下記のコードをコピーし、`Form1.Designer.cs` ファイル内の `InitializeComponent()` メソッドの既存コードより後に貼り付けます。  
   
-     [!code-cs[csProgGuideInterop#4](../../../csharp/programming-guide/interop/codesnippet/csharp/how-to-use-platform-invo_3.cs)]  
+     [!code-cs[csProgGuideInterop#4](../../../csharp/programming-guide/interop/codesnippet/CSharp/how-to-use-platform-invoke-to-play-a-wave-file_3.cs)]  
   
 4.  コードをコンパイルして実行します。  
   

@@ -36,7 +36,7 @@ caps.handback.revision: 32
   
  次の例は、型およびメンバーにアクセス修飾子を指定する方法を示しています。  
   
- [!code-cs[csProgGuideObjects#72](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/access-modifiers_1.cs)]  
+ [!code-cs[csProgGuideObjects#72](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/access-modifiers_1.cs)]  
   
  すべてのコンテキスト内のすべての型またはメンバーで、すべてのアクセス修飾子を使用できるわけではありません。また、型のメンバーのアクセシビリティは、その包含型のアクセシビリティによって制限される場合があります。  以降のセクションでは、アクセシビリティについて詳しく説明します。  
   
@@ -62,7 +62,7 @@ caps.handback.revision: 32
   
  クラス メンバーまたは構造体メンバーのアクセス レベルを設定するには、次の例に示すように、適切なキーワードをメンバー宣言に追加します。  
   
- [!code-cs[csProgGuideObjects#73](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/access-modifiers_2.cs)]  
+ [!code-cs[csProgGuideObjects#73](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/access-modifiers_2.cs)]  
   
 > [!NOTE]
 >  protected internal というアクセシビリティ レベルは、protected または internal であることを意味しており、protected かつ internal という意味ではありません。  つまり、protected internal メンバーには、派生クラスを含めて同じアセンブリ内のどのクラスからもアクセスできます。  アクセシビリティを同じアセンブリ内の派生クラスだけに限定するには、クラス自体を internal と宣言し、そのメンバーを protected と宣言します。  

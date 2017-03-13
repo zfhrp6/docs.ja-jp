@@ -19,7 +19,7 @@ caps.handback.revision: 19
 # プライベート コンストラクター (C# プログラミング ガイド)
 プライベート コンストラクターは、特別なインスタンス コンストラクターです。  通常は、静的メンバーだけを含むクラスで使用されます。  クラスに 1 つ以上のプライベート コンストラクターがあり、パブリック コンストラクターがない場合、他のクラス \(入れ子になったクラスを除く\) はこのクラスのインスタンスを作成できません。  次に例を示します。  
   
- [!code-cs[csProgGuideObjects#11](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/private-constructors_1.cs)]  
+ [!code-cs[csProgGuideObjects#11](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/private-constructors_1.cs)]  
   
  空のコンストラクターを宣言すると、既定コンストラクターの自動生成は行われません。  コンストラクターにアクセス修飾子を指定しない場合でも、コンストラクターは既定でプライベートになります。  しかし、通常は、[private](../../../csharp/language-reference/keywords/private.md) 修飾子を明示的に使って、クラスをインスタンス化できないことを明確に示します。  
   
@@ -28,11 +28,11 @@ caps.handback.revision: 19
 ## 使用例  
  プライベート コンストラクターを使用するクラスの例を次に示します。  
   
- [!code-cs[csProgGuideObjects#12](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/private-constructors_2.cs)]  
+ [!code-cs[csProgGuideObjects#12](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/private-constructors_2.cs)]  
   
  この例で次のステートメントのコメントを解除すると、保護レベルのためにコンストラクターにアクセスできなくなり、エラーが発生します。  
   
- [!code-cs[csProgGuideObjects#13](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/private-constructors_3.cs)]  
+ [!code-cs[csProgGuideObjects#13](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/private-constructors_3.cs)]  
   
 ## C\# 言語仕様  
  [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec-md.md)]  

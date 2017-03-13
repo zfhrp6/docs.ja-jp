@@ -37,7 +37,7 @@ caps.handback.revision: 31
   
 -   `GetValue` メソッドをパスと名前を指定して使用し、レジストリ キーから値を読み取ります。  次の例では、`HKEY_CURRENT_USER\Software\MyApp` から値 `Name` を読み取り、メッセージ ボックスにこの値を表示します。  
   
-     [!code-vb[VbResourceTasks#4](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/visualbasic/how-to-read-a-value-from_1.vb)]  
+     [!code-vb[VbResourceTasks#4](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/VisualBasic/how-to-read-a-value-from-a-registry-key_1.vb)]  
   
  このコードの例は、IntelliSense コード スニペットとしても利用できます。  コード スニペット ピッカーでは、これは **\[Windows オペレーティング システム \> Registry\]** にあります。  詳細については、「[コード スニペット](/visual-studio/ide/code-snippets)」を参照してください。  
   
@@ -45,7 +45,7 @@ caps.handback.revision: 31
   
 -   `GetValue` メソッドを使用して、値を取得します。  値があり、メッセージを返すかどうかを、次のコードをチェックします。  
   
-     [!code-vb[VbResourceTasks#12](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/visualbasic/how-to-read-a-value-from_2.vb)]  
+     [!code-vb[VbResourceTasks#12](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/VisualBasic/how-to-read-a-value-from-a-registry-key_2.vb)]  
   
 ## 信頼性の高いプログラミング  
  レジストリには、データを格納するために使用されるキーが、最上位またはルートに保持されます。  たとえば、HKEY\_LOCAL\_MACHINE ルート キーは、すべてのユーザーに使用されるマシン レベルの設定を格納するために使用されます。HKEY\_CURRENT\_USER は、個々のユーザー固有のデータを格納するために使用されます。  

@@ -71,7 +71,7 @@ End Function
 ## 使用例  
  次の例では、場所を渡された引数と名前で渡された引数のプロシージャをダイヤルする方法を示します。  プロシージャに 2 個の省略可能なパラメーターがあります。  
   
- [!code-vb[VbVbalrKeywords#21](../../../visual-basic/language-reference/codesnippet/visualbasic/optional_1.vb)]  
+ [!code-vb[VbVbalrKeywords#21](../../../visual-basic/language-reference/codesnippet/VisualBasic/optional_1.vb)]  
   
 ## 参照  
  [Parameter List](../../../visual-basic/language-reference/statements/parameter-list.md)   

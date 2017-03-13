@@ -109,7 +109,7 @@ result = string Like pattern
 ## 使用例  
  `Like` 演算子を使って、文字列をさまざまなパターンと比較する例を次に示します。  結果は、各文字列がパターンに一致したかどうかを示す `Boolean` 変数で表されます。  
   
- [!code-vb[VbVbalrOperators#30](../../../visual-basic/language-reference/operators/codesnippet/visualbasic/like-operator_1.vb)]  
+ [!code-vb[VbVbalrOperators#30](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/like-operator_1.vb)]  
   
 ## 参照  
  <xref:Microsoft.VisualBasic.Strings.InStr%2A>   

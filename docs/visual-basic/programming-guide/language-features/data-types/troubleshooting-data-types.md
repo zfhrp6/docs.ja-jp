@@ -50,7 +50,7 @@ caps.handback.revision: 28
   
  次のコード例は、2 つの `Double` 値を比較する誤った方法と正しい方法を示しています。  
   
- [!code-vb[VbVbalrDataTypes#10](../../../../visual-basic/language-reference/data-types/codesnippet/visualbasic/troubleshooting-data-types_1.vb)]  
+ [!code-vb[VbVbalrDataTypes#10](../../../../visual-basic/language-reference/data-types/codesnippet/VisualBasic/troubleshooting-data-types_1.vb)]  
   
  この例では、<xref:System.Double> 構造体の <xref:System.Double.ToString%2A> メソッドを使用しているので、`CStr` キーワードを使用する場合より高い精度が得られます。  既定では 15 桁ですが、"G17" 形式を使うと 17 桁に拡張されます。  
   
@@ -66,7 +66,7 @@ caps.handback.revision: 28
   
  浮動小数点数のオペランドによって誤差が生じる例を次に示します。  
   
- [!code-vb[VbVbalrDataTypes#11](../../../../visual-basic/language-reference/data-types/codesnippet/visualbasic/troubleshooting-data-types_2.vb)]  
+ [!code-vb[VbVbalrDataTypes#11](../../../../visual-basic/language-reference/data-types/codesnippet/VisualBasic/troubleshooting-data-types_2.vb)]  
   
  この例では、<xref:System.Double> 構造体の <xref:System.Double.ToString%2A> メソッドを使用しているので、`CStr` キーワードを使用する場合より高い精度が得られます。  既定では 15 桁ですが、"G17" 形式を使うと 17 桁に拡張されます。  
   
@@ -103,7 +103,7 @@ caps.handback.revision: 28
   
  [!CODE [VbVbalrStatements#49](../CodeSnippet/VS_Snippets_VBCSharp/VbVbalrStatements#49)]  
   
- [!code-vb[VbVbalrDataTypes#12](../../../../visual-basic/language-reference/data-types/codesnippet/visualbasic/troubleshooting-data-types_4.vb)]  
+ [!code-vb[VbVbalrDataTypes#12](../../../../visual-basic/language-reference/data-types/codesnippet/VisualBasic/troubleshooting-data-types_3.vb)]  
   
  縮小変換は実行時にエラーになる可能性があるため、常にリスクを伴います。  たとえば、`String` から `Char` への変換は、`String` 値が 1 文字より多い場合にエラーになります。  したがって、`C` 型文字を使う方が推奨されるプログラミング方法です。  
   

@@ -98,22 +98,22 @@ Loop { While | Until } condition
 ## 使用例  
  次の例では、`index` 変数が 10 を上回るまで、ループ内のステートメントが実行され続けます。  `Until` 句がループの終わりに配置されています。  
   
- [!code-vb[VbVbalrStatements#131](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/do-loop-statement_1.vb)]  
+ [!code-vb[VbVbalrStatements#131](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/do-loop-statement_1.vb)]  
   
 ## 使用例  
  次の例では、`Until` 句の代わりに `While` 句が使用されており、ループの終わりではなく最初に `condition` がテストされています。  
   
- [!code-vb[VbVbalrStatements#132](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/do-loop-statement_2.vb)]  
+ [!code-vb[VbVbalrStatements#132](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/do-loop-statement_2.vb)]  
   
 ## 使用例  
  次の例では、`index` 変数が 100 を上回ったときに、`condition` によってループが停止されます。  ただし、ループ内の `If` ステートメントにより、index 変数が 10 を上回ったときに、`Exit Do` ステートメントによってループが停止されます。  
   
- [!code-vb[VbVbalrStatements#133](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/do-loop-statement_3.vb)]  
+ [!code-vb[VbVbalrStatements#133](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/do-loop-statement_3.vb)]  
   
 ## 使用例  
  次の例では、テキスト ファイルのすべての行が読み取られます。  <xref:System.IO.File.OpenText%2A> メソッドによりファイルが開かれ、文字を読み取る <xref:System.IO.StreamReader> が返されます。  `Do...Loop` 条件で、`StreamReader` の <xref:System.IO.StreamReader.Peek%2A> メソッドにより、その他の文字があるかどうかが判断されます。  
   
- [!code-vb[VbVbalrStatements#134](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/do-loop-statement_4.vb)]  
+ [!code-vb[VbVbalrStatements#134](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/do-loop-statement_4.vb)]  
   
 ## 参照  
  [Loop Structures](../../../visual-basic/programming-guide/language-features/control-flow/loop-structures.md)   

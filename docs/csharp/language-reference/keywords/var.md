@@ -31,7 +31,7 @@ int i = 10; //explicitly typed
 ## 使用例  
  次の例では、2 つのクエリ式を示します。  最初の式では、クエリ結果の型が `IEnumerable<string>` として明示的に宣言できるため、`var` は使用できますが、使用する必要はありません。  しかし、2 番目の例では、結果が匿名型のコレクションで、型名にアクセスできるのがコンパイラだけであるため、`var` を使用する必要があります。  例 2 では、`foreach` の反復変数である `item` も、暗黙的に型指定する必要があります。  
   
- [!code-cs[csrefKeywordsTypes#18](../../../csharp/language-reference/keywords/codesnippet/csharp/var_1.cs)]  
+ [!code-cs[csrefKeywordsTypes#18](../../../csharp/language-reference/keywords/codesnippet/CSharp/var_1.cs)]  
   
 ## 参照  
  [C\# リファレンス](../../../csharp/language-reference/index.md)   

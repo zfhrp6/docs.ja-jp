@@ -24,7 +24,7 @@ caps.handback.revision: 7
 ## 使用例  
  `global` コンテキスト キーワードを使用して、`TestApp` クラスがグローバル名前空間に定義されていることを指定する方法を次の例に示します。  
   
- [!code-cs[csrefKeywordsContextual#13](../../../csharp/language-reference/keywords/codesnippet/csharp/global_1.cs)]  
+ [!code-cs[csrefKeywordsContextual#13](../../../csharp/language-reference/keywords/codesnippet/CSharp/global_1.cs)]  
   
 ## 参照  
  [名前空間](../../../csharp/programming-guide/namespaces/index.md)

@@ -35,21 +35,21 @@ caps.handback.revision: 17
 ## XML の作成  
  [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] で XML ツリーを作成する方法は 2 つあります。  XML リテラルをコード内に直接宣言するか、[!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq-md.md)] API を使用してツリーを作成します。  どちらの処理でも、XML ツリーの最終構造を反映するコードを記述できます。  たとえば、次のコード例では、XML 要素が作成されます。  
   
- [!code-vb[VbXmlSamples#5](../../../../visual-basic/language-reference/operators/codesnippet/visualbasic/overview-of-linq-to-xml_1.vb)]  
+ [!code-vb[VbXmlSamples#5](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/overview-of-linq-to-xml_1.vb)]  
   
  詳細については、「[Creating XML in Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/creating-xml.md)」を参照してください。  
   
 ## XML へのアクセスとナビゲーション  
  [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] には、XML 構造体へのアクセスとナビゲーションを行うための XML 軸プロパティが用意されています。  これらのプロパティを使用して XML 子要素の名前を指定することで、XML の要素と属性にアクセスできます。  または、[!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq-md.md)] メソッドを明示的に呼び出して、要素と属性のナビゲーションおよび検索を実行することもできます。  たとえば、次のコード例では、XML 軸プロパティを使用して XML 要素の属性と子要素を参照します。  このコード例では、[!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq-md.md)] クエリを使用して子要素を取得し、それらを XML 要素として出力することで、変換を効率よく行っています。  
   
- [!code-vb[VbXmlSamples#8](../../../../visual-basic/language-reference/operators/codesnippet/visualbasic/overview-of-linq-to-xml_2.vb)]  
+ [!code-vb[VbXmlSamples#8](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/overview-of-linq-to-xml_2.vb)]  
   
  詳細については、「[Accessing XML in Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/accessing-xml.md)」を参照してください。  
   
 ## XML 名前空間  
  [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] では、`Imports` ステートメントを使用して、グローバル XML 名前空間のエイリアスを指定できます。  次の例は、`Imports` ステートメントを使用して XML 名前空間をインポートする方法を示しています。  
   
- [!code-vb[VbXMLSamples#1](../../../../visual-basic/language-reference/operators/codesnippet/visualbasic/overview-of-linq-to-xml_3.vb)]  
+ [!code-vb[VbXMLSamples#1](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/overview-of-linq-to-xml_3.vb)]  
   
  XML 名前空間のエイリアスは、XML 軸プロパティにアクセスしたり、XML ドキュメントや XML 要素の XML リテラルを宣言したりするときに使用できます。  
   
@@ -60,16 +60,16 @@ caps.handback.revision: 17
 ### XML リテラルでの XML 名前空間の使用  
  次の例は、グローバル名前空間 `ns` を使用する <xref:System.Xml.Linq.XElement> オブジェクトの作成方法を示しています。  
   
- [!code-vb[VbXMLSamples#2](../../../../visual-basic/language-reference/operators/codesnippet/visualbasic/overview-of-linq-to-xml_4.vb)]  
+ [!code-vb[VbXMLSamples#2](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/overview-of-linq-to-xml_4.vb)]  
   
  [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] コンパイラは、XML 名前空間のエイリアスを含む XML リテラルを、XML 表記の XML 名前空間を使用する同等のコードに変換し、`xmlns` 属性を追加します。  前のセクションで示した例のコードをコンパイルすると、次の例と本質的に同一の実行可能コードが生成されます。  
   
- [!code-vb[VbXMLSamples#3](../../../../visual-basic/language-reference/operators/codesnippet/visualbasic/overview-of-linq-to-xml_5.vb)]  
+ [!code-vb[VbXMLSamples#3](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/overview-of-linq-to-xml_5.vb)]  
   
 ### XML 軸プロパティでの XML 名前空間の使用  
  XML リテラル内で宣言された XML 名前空間は、XML 軸プロパティでは使用できません。  ただし、XML 軸プロパティでグローバル名前空間を使用することはできます。  XML 名前空間プレフィックスとローカル要素名を区切るには、コロンを使用します。  例を次に示します。  
   
- [!code-vb[VbXMLSamples#4](../../../../visual-basic/language-reference/operators/codesnippet/visualbasic/overview-of-linq-to-xml_6.vb)]  
+ [!code-vb[VbXMLSamples#4](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/overview-of-linq-to-xml_6.vb)]  
   
 ## 参照  
  [XML](../../../../visual-basic/programming-guide/language-features/xml/index.md)   

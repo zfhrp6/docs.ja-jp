@@ -58,23 +58,23 @@ caps.handback.revision: 34
   
 2.  コード ファイルの先頭に、次の `using` ディレクティブを追加します。  
   
-     [!code-cs[csProgGuideNamedAndOptional#4](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/namedandoptionalsnippets/wordprogram.cs#4)]  
+     [!code-cs[csProgGuideNamedAndOptional#4](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/how-to-use-named-and-optional-arguments-in-office-programming_1.cs)]  
   
 ### Word 文書にテキストを表示するには  
   
 1.  Program.cs の `Program` クラスでは、Word アプリケーションおよび Word 文書を作成する次のメソッドを追加します。  [Add](http://go.microsoft.com/fwlink/?LinkId=145381) メソッドには、4 つの省略可能なパラメーターがあります。  この例では、それらのパラメーターの既定値を使用します。  そのため、呼び出しステートメントには引数を指定する必要がありません。  
   
-     [!code-cs[csProgGuideNamedAndOptional#6](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/namedandoptionalsnippets/wordprogram.cs#6)]  
+     [!code-cs[csProgGuideNamedAndOptional#6](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/how-to-use-named-and-optional-arguments-in-office-programming_2.cs)]  
   
 2.  文書のテキストを表示する場所と表示するテキストの内容を定義するメソッドの末尾に次のコードを追加します。  
   
-     [!code-cs[csProgGuideNamedAndOptional#7](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/namedandoptionalsnippets/wordprogram.cs#7)]  
+     [!code-cs[csProgGuideNamedAndOptional#7](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/how-to-use-named-and-optional-arguments-in-office-programming_3.cs)]  
   
 ### アプリケーションを実行するには  
   
 1.  Main を呼び出すための次のステートメントを追加します。  
   
-     [!code-cs[csProgGuideNamedAndOptional#8](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/namedandoptionalsnippets/wordprogram.cs#8)]  
+     [!code-cs[csProgGuideNamedAndOptional#8](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/how-to-use-named-and-optional-arguments-in-office-programming_4.cs)]  
   
 2.  Ctrl キーを押しながら F5 キーを押してプロジェクトを実行します。  指定したテキストを含む Word 文書が表示されます。  
   
@@ -87,11 +87,11 @@ ConvertToTable のパラメーター
   
      名前付き引数と省略可能な引数を使用すると、変更するパラメーターのみの値を指定できます。  `DisplayInWord` メソッドの末尾に次のコードを追加して、単純な表を作成します。  この引数では、`range` のテキスト文字列内のコンマで、テーブルのセルを区切るように指定します。  
   
-     [!code-cs[csProgGuideNamedAndOptional#9](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/namedandoptionalsnippets/wordprogram.cs#9)]  
+     [!code-cs[csProgGuideNamedAndOptional#9](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/how-to-use-named-and-optional-arguments-in-office-programming_5.cs)]  
   
      旧バージョンの C\# では、次のコードに示すように、`ConvertToTable` の呼び出しに各パラメーターの参照引数が必要です。  
   
-     [!code-cs[csProgGuideNamedAndOptional#14](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/namedandoptionalsnippets/wordprogram.cs#14)]  
+     [!code-cs[csProgGuideNamedAndOptional#14](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/how-to-use-named-and-optional-arguments-in-office-programming_6.cs)]  
   
 2.  Ctrl キーを押しながら F5 キーを押してプロジェクトを実行します。  
   
@@ -99,16 +99,16 @@ ConvertToTable のパラメーター
   
 1.  1 つの列と 3 つの行を含むように表を変更するには、`DisplayInWord` の最後の行を次のステートメントに置き換え、Ctrl キーを押しながら F5 キーを押します。  
   
-     [!code-cs[csProgGuideNamedAndOptional#10](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/namedandoptionalsnippets/wordprogram.cs#10)]  
+     [!code-cs[csProgGuideNamedAndOptional#10](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/how-to-use-named-and-optional-arguments-in-office-programming_7.cs)]  
   
 2.  表の定義済みの形式を指定するには、`DisplayInWord` の最後の行を次のステートメントに置き換え、Ctrl キーを押しながら F5 キーを押します。   形式は [WdTableFormat](http://go.microsoft.com/fwlink/?LinkId=145382) のいずれかの定数とすることができます。  
   
-     [!code-cs[csProgGuideNamedAndOptional#11](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/namedandoptionalsnippets/wordprogram.cs#11)]  
+     [!code-cs[csProgGuideNamedAndOptional#11](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/how-to-use-named-and-optional-arguments-in-office-programming_8.cs)]  
   
 ## 使用例  
  この例のコード全体を次に示します。  
   
- [!code-cs[csProgGuideNamedAndOptional#12](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/namedandoptionalsnippets/wordprogram.cs#12)]  
+ [!code-cs[csProgGuideNamedAndOptional#12](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/how-to-use-named-and-optional-arguments-in-office-programming_9.cs)]  
   
 ## 参照  
  [名前付き引数と省略可能な引数](../../../csharp/programming-guide/classes-and-structs/named-and-optional-arguments.md)

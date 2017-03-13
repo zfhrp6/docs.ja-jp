@@ -52,7 +52,7 @@ variableorproperty = value
 ## 使用例  
  代入演算子の例を次に示します。  右側の値が左側の変数に代入されます。  
   
- [!code-vb[VbVbalrOperators#9](../../../visual-basic/language-reference/operators/codesnippet/visualbasic/assignment-operator_1.vb)]  
+ [!code-vb[VbVbalrOperators#9](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/assignment-operator_1.vb)]  
   
 ## 参照  
  [&\= Operator](../../../visual-basic/language-reference/operators/and-assignment-operator.md)   

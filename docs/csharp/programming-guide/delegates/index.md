@@ -21,7 +21,7 @@ caps.handback.revision: 30
   
  デリゲートは、他のメソッドへの引数としてメソッドを渡すために使用されます。  イベント ハンドラーは、デリゲートを介して呼び出されるメソッドにすぎません。  カスタム メソッドを作成して、特定のイベントの発生時に、作成したメソッドが Windows コントロールなどのクラスから呼び出されるようにできます。  次の例にデリゲート宣言を示します。  
   
- [!code-cs[csProgGuideDelegates#20](../../../csharp/programming-guide/delegates/codesnippet/csharp/csrefDelegates/Delegates.cs#20)]  
+ [!code-cs[csProgGuideDelegates#20](../../../csharp/programming-guide/delegates/codesnippet/CSharp/index_1.cs)]  
   
  デリゲート型と一致するアクセス可能なクラスまたは構造体のメソッドはすべて、デリゲートに代入できます。  メソッドは、静的メソッドとインスタンス メソッドのいずれかにできます。  このため、メソッド呼び出しをプログラムによって変更でき、また新しいコードを既存のクラスに接続することもできます。  
   

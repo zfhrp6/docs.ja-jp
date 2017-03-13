@@ -22,7 +22,7 @@ caps.handback.revision: 28
 # namespace (C# リファレンス)
 `namespace` のキーワードは、関連するオブジェクトを含む範囲を宣言するために使用されます。  コード要素を整理およびグローバルに一意の型を作成するには、名前空間を使用できます。  
   
- [!code-cs[csrefKeywordsNamespace#1](../../../csharp/language-reference/keywords/codesnippet/csharp/namespace_1.cs)]  
+ [!code-cs[csrefKeywordsNamespace#1](../../../csharp/language-reference/keywords/codesnippet/CSharp/namespace_1.cs)]  
   
 ## 解説  
  名前空間内では、以下の型を 1 つ以上宣言できます。  
@@ -45,12 +45,12 @@ caps.handback.revision: 28
   
  名前空間は、2 つ以上の宣言で定義できます。  たとえば、次の例では、`MyCompany` 名前空間の一部として 2 つのクラスを定義しています。  
   
- [!code-cs[csrefKeywordsNamespace#2](../../../csharp/language-reference/keywords/codesnippet/csharp/namespace_2.cs)]  
+ [!code-cs[csrefKeywordsNamespace#2](../../../csharp/language-reference/keywords/codesnippet/CSharp/namespace_2.cs)]  
   
 ## 使用例  
  入れ子になった名前空間で静的なメソッドを呼び出す方法の例を次に示します。  
   
- [!code-cs[csrefKeywordsNamespace#3](../../../csharp/language-reference/keywords/codesnippet/csharp/namespace_3.cs)]  
+ [!code-cs[csrefKeywordsNamespace#3](../../../csharp/language-reference/keywords/codesnippet/CSharp/namespace_3.cs)]  
   
 ## 参照項目  
  名前空間の使用方法の詳細については、次のトピックを参照してください。  

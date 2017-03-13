@@ -62,7 +62,7 @@ caps.handback.revision: 16
 ## 使用例  
  "Can contain literal \<XML\> tags" というテキストを含む CDATA セクションを作成する例を次に示します。  
   
- [!code-vb[VbXMLSamples#23](../../../visual-basic/language-reference/operators/codesnippet/visualbasic/xml-cdata-literal_1.vb)]  
+ [!code-vb[VbXMLSamples#23](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/xml-cdata-literal_1.vb)]  
   
 ## 参照  
  <xref:System.Xml.Linq.XCData>   

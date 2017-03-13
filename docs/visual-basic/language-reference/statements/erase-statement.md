@@ -43,7 +43,7 @@ Erase arraylist
 ## 使用例  
  次に示す例では、`Erase` ステートメントを使って 2 つの配列を消去し、使用していたメモリを解放しています \(それぞれ、記憶要素が 1,000 と 100\)。  その後、`ReDim` ステートメントで 3 次元配列に新しい配列インスタンスを割り当てています。  
   
- [!code-vb[VbVbalrStatements#19](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/erase-statement_1.vb)]  
+ [!code-vb[VbVbalrStatements#19](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/erase-statement_1.vb)]  
   
 ## 参照  
  [Nothing](../../../visual-basic/language-reference/nothing.md)   

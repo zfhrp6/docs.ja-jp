@@ -24,7 +24,7 @@ caps.handback.revision: 6
 ## 使用例  
  [orderby 句](../../../csharp/language-reference/keywords/orderby-clause.md)での `descending` の使用例を次に示します。  
   
- [!code-cs[csrefKeywordsContextual#11](../../../csharp/language-reference/keywords/codesnippet/csharp/descending_1.cs)]  
+ [!code-cs[csrefKeywordsContextual#11](../../../csharp/language-reference/keywords/codesnippet/CSharp/descending_1.cs)]  
   
 ## 参照  
  [C\# リファレンス](../../../csharp/language-reference/index.md)   

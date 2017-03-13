@@ -39,7 +39,7 @@ caps.handback.revision: 16
   
 3.  その他のプロパティ プロシージャではアクセス レベルを指定しません。  `Property` ステートメントで宣言されたアクセス レベルが使用されます。  アクセスを制限できるのは、プロパティ プロシージャのうち 1 つだけです。  
   
-     [!code-vb[VbVbcnProcedures#10](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/how-to-declare-a-propert_1.vb)]  
+     [!code-vb[VbVbcnProcedures#10](./codesnippet/VisualBasic/how-to-declare-a-property-with-mixed-access-levels_1.vb)]  
   
      上の例では、`Get` プロシージャはプロパティと同じ `Protected` アクセスを持ち、`Set` プロシージャは `Private` アクセスを持ちます。  `employee` から派生したクラスは、`salary` の値を読み取ることができますが、この値を設定できるのは `employee` クラスのみです。  
   

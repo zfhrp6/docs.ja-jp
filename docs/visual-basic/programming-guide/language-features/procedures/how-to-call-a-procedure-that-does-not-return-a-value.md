@@ -35,7 +35,7 @@ caps.handback.revision: 17
   
      [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] の <xref:Microsoft.VisualBasic.Interaction.AppActivate%2A> 関数を呼び出して、アプリケーション ウィンドウをアクティブにする例を次に示します。  <xref:Microsoft.VisualBasic.Interaction.AppActivate%2A> は、唯一の引数としてウィンドウ タイトルを受け取ります。  呼び出し元のコードに値は返されません。  メモ帳のプロセスが実行中でない場合、この例は <xref:System.ArgumentException> をスローします。  アプリケーションの実行に `Shell` プロシージャを使用していますが、指定されたパスにアプリケーションの実行プログラムが保存されていない場合は、アプリケーションを実行することはできません。  
   
-     [!code-vb[VbVbalrCatRef#11](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/how-to-call-a-procedure-_1_1.vb)]  
+     [!code-vb[VbVbalrCatRef#11](./codesnippet/VisualBasic/how-to-call-a-procedure-that-does-not-return-a-value_1.vb)]  
   
 ## 参照  
  <xref:Microsoft.VisualBasic.Interaction.Shell%2A>   

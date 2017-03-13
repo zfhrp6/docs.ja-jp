@@ -34,7 +34,7 @@ caps.handback.revision: 18
   
 1.  `Form1` に次のコードを記述します。  
   
-     [!code-vb[VbVbcnWalkthroughDeclaringAndRaisingEvents#4](../../../../visual-basic/programming-guide/language-features/events/codesnippet/visualbasic/VbEventWalkthrough/Form1.vb#4)]  
+     [!code-vb[VbVbcnWalkthroughDeclaringAndRaisingEvents#4](../../../../visual-basic/programming-guide/language-features/events/codesnippet/VisualBasic/walkthrough-handling-events_1.vb)]  
   
      `WithEvents` キーワードは、変数 `mWidget` がオブジェクトのイベントを処理するために使用されることを指定します。  オブジェクトの作成元のクラス名を指定して、オブジェクトの種類を指定します。  
   
@@ -56,13 +56,13 @@ caps.handback.revision: 18
   
 3.  `mWidget_PercentDone` イベント ハンドラーに次のコードを追加します。  
   
-     [!code-vb[VbVbcnWalkthroughDeclaringAndRaisingEvents#5](../../../../visual-basic/programming-guide/language-features/events/codesnippet/visualbasic/VbEventWalkthrough/Form1.vb#5)]  
+     [!code-vb[VbVbcnWalkthroughDeclaringAndRaisingEvents#5](../../../../visual-basic/programming-guide/language-features/events/codesnippet/VisualBasic/walkthrough-handling-events_2.vb)]  
   
      `PercentDone` イベントが発生するたびに、イベント プロシージャは完了したパーセントを `Label` コントロールに表示します。  `DoEvents` メソッドにより、ラベルが再描画され、ユーザーに **\[キャンセル\]** をクリックする機会が与えられます。  
   
 4.  `Button2_Click` イベント ハンドラーに次のコードを追加します。  
   
-     [!code-vb[VbVbcnWalkthroughDeclaringAndRaisingEvents#6](../../../../visual-basic/programming-guide/language-features/events/codesnippet/visualbasic/VbEventWalkthrough/Form1.vb#6)]  
+     [!code-vb[VbVbcnWalkthroughDeclaringAndRaisingEvents#6](../../../../visual-basic/programming-guide/language-features/events/codesnippet/VisualBasic/walkthrough-handling-events_3.vb)]  
   
  `LongTask` の実行中にユーザーが **\[キャンセル\]** をクリックした場合は、`DoEvents` ステートメントによってイベント処理が許可されるとすぐに、`Button2_Click` イベントが実行されます。  クラス レベル変数 `mblnCancel` が `True` に設定され、`mWidget_PercentDone` イベントがこれをテストして、`ByRef Cancel` 引数を `True` に設定します。  
   
@@ -79,7 +79,7 @@ caps.handback.revision: 18
   
 3.  `Form1_Load` イベント プロシージャに次のコードを追加して、`Widget` を作成します。  
   
-     [!code-vb[VbVbcnWalkthroughDeclaringAndRaisingEvents#7](../../../../visual-basic/programming-guide/language-features/events/codesnippet/visualbasic/VbEventWalkthrough/Form1.vb#7)]  
+     [!code-vb[VbVbcnWalkthroughDeclaringAndRaisingEvents#7](../../../../visual-basic/programming-guide/language-features/events/codesnippet/VisualBasic/walkthrough-handling-events_4.vb)]  
   
  このコードが実行されると、[!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] は `Widget` オブジェクトを作成し、そのイベントを `mWidget` に関連付けられたイベント プロシージャに接続します。  これ以後、`Widget` が `PercentDone` イベントを発生させるたびに、`mWidget_PercentDone` イベント プロシージャが実行されます。  
   
@@ -87,7 +87,7 @@ caps.handback.revision: 18
   
 -   `Button1_Click` イベント ハンドラーに次のコードを追加します。  
   
-     [!code-vb[VbVbcnWalkthroughDeclaringAndRaisingEvents#8](../../../../visual-basic/programming-guide/language-features/events/codesnippet/visualbasic/VbEventWalkthrough/Form1.vb#8)]  
+     [!code-vb[VbVbcnWalkthroughDeclaringAndRaisingEvents#8](../../../../visual-basic/programming-guide/language-features/events/codesnippet/VisualBasic/walkthrough-handling-events_5.vb)]  
   
  `LongTask` メソッドを呼び出す前に、完了したパーセントを表示するラベルを初期化する必要があります。また、メソッドをキャンセルするためのクラス レベルの `Boolean` フラグを `False` に設定する必要があります。  
   
@@ -116,7 +116,7 @@ caps.handback.revision: 18
   
 -   `Button1_Click` プロシージャの `mWidget.LongTask(12.2, 0.33)` という行の直前に、次のコードを追加します。  
   
-     [!code-vb[VbVbcnWalkthroughDeclaringAndRaisingEvents#9](../../../../visual-basic/programming-guide/language-features/events/codesnippet/visualbasic/VbEventWalkthrough/Form1.vb#9)]  
+     [!code-vb[VbVbcnWalkthroughDeclaringAndRaisingEvents#9](../../../../visual-basic/programming-guide/language-features/events/codesnippet/VisualBasic/walkthrough-handling-events_6.vb)]  
   
  上記のコードは、ボタンがクリックされるごとに新しい `Widget` を作成します。  `LongTask` メソッドが完了すると、すぐに `Widget` への参照が解放され、`Widget` は破棄されます。  
   

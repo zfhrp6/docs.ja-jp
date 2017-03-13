@@ -65,7 +65,7 @@ result = pattern << amount
 ## 使用例  
  `<<` 演算子を使用して整数値の算術左シフトを実行する例を次に示します。  結果のデータ型は、シフトされる前の式と常に同じ型になります。  
   
- [!code-vb[VbVbalrOperators#12](../../../visual-basic/language-reference/operators/codesnippet/visualbasic/left-shift-operator_1.vb)]  
+ [!code-vb[VbVbalrOperators#12](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/left-shift-operator_1.vb)]  
   
  この例の結果は、次のようになります。  
   

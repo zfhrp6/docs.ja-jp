@@ -30,7 +30,7 @@ caps.handback.revision: 17
  ?? 演算子の結果は、たとえ両方の引数が定数であった場合でも、定数とは見なされません。  
   
 ## 使用例  
- [!code-cs[csRefOperators#53](../../../csharp/language-reference/operators/codesnippet/csharp/csrefOperators/csrefOperators.cs#53)]  
+ [!code-cs[csRefOperators#53](../../../csharp/language-reference/operators/codesnippet/CSharp/null-conditional-operator_1.cs)]  
   
 ## 参照  
  [C\# リファレンス](../../../csharp/language-reference/index.md)   

@@ -24,7 +24,7 @@ caps.handback.revision: 16
 ## 使用例  
  次の例では、`object` 型の変数が任意のデータ型の値を受け取る方法、および `object` 型の変数が .NET Framework からの <xref:System.Object> のメソッドを使用する方法を示しています。  
   
- [!code-cs[csrefKeywordsTypes#16](../../../csharp/language-reference/keywords/codesnippet/csharp/object_1.cs)]  
+ [!code-cs[csrefKeywordsTypes#16](../../../csharp/language-reference/keywords/codesnippet/CSharp/object_1.cs)]  
   
 ## C\# 言語仕様  
  [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec-md.md)]  

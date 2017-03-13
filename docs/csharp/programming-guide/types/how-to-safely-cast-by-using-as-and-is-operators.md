@@ -23,7 +23,7 @@ caps.handback.revision: 10
 ## 使用例  
  `is` 演算子および `as` 演算子を使用して、例外がスローされる危険性を回避しながら、参照型を別の参照型にキャストする方法を次の例に示します。  この例では、null 許容型に対し `as` 演算子を使用する方法も示します。  
   
- [!code-cs[csProgGuideTypes#40](../../../csharp/programming-guide/nullable-types/codesnippet/csharp/how-to-safely-cast-by-us_1.cs)]  
+ [!code-cs[csProgGuideTypes#40](../../../csharp/programming-guide/nullable-types/codesnippet/CSharp/how-to-safely-cast-by-using-as-and-is-operators_1.cs)]  
   
 ## 参照  
  [型](../../../csharp/programming-guide/types/index.md)   

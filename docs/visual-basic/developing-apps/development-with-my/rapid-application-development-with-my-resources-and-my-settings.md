@@ -27,7 +27,7 @@ caps.handback.revision: 6
 ## リソースの取得  
  オーディオ ファイル、アイコン、イメージ、文字列などの多数のリソースを `My.Resources` オブジェクトを介して取得できます。  たとえば、アプリケーションのカルチャ固有のリソース ファイルにアクセスできます。  次の例は、アプリケーションのリソース ファイルに格納された `Form1Icon` という名前のアイコンを、フォームのアイコンに設定します。  
   
- [!code-vb[VbVbcnMy#7](../../../visual-basic/developing-apps/development-with-my/codesnippet/visualbasic/rapid-application-develo_1.vb)]  
+ [!code-vb[VbVbcnMy#7](../../../visual-basic/developing-apps/development-with-my/codesnippet/VisualBasic/rapid-application-development-with-my-resources-and-my-settings_1.vb)]  
   
  `My.Resources` オブジェクトはグローバルなリソースだけを公開します。  フォームに関連付けられたリソース ファイルへのアクセスはできません。  フォームのリソースには、フォームからアクセスする必要があります。  詳細については、「[Walkthrough: Localizing Windows Forms](http://msdn.microsoft.com/ja-jp/9a96220d-a19b-4de0-9f48-01e5d82679e5)」を参照してください。  
   

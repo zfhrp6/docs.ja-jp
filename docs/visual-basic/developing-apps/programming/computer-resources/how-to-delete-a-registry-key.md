@@ -36,7 +36,7 @@ caps.handback.revision: 28
   
 -   `DeleteSubKey` メソッドを使用して、レジストリ キーを削除します。  この例では、CurrentUser ハイブの Software\/TestApp キーを削除します。  これは、コード内で適切な文字列に変更できます。または、ユーザーが指定した情報を使用できます。  
   
-     [!code-vb[VbResourceTasks#19](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/visualbasic/how-to-delete-a-registry_1.vb)]  
+     [!code-vb[VbResourceTasks#19](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/VisualBasic/how-to-delete-a-registry-key_1.vb)]  
   
 ## 信頼性の高いプログラミング  
  キーと値の組み合わせが存在しない場合、`DeleteSubKey` メソッドは空の文字列を返します。  

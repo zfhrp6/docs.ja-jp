@@ -28,11 +28,11 @@ caps.handback.revision: 20
 ## さまざまな種類のテキスト ファイルの解析  
  テキスト ファイルは、コンマやタブ空白などの文字で可変幅のフィールドに区切られている場合があります。  次の例のように、`TextFieldType` および区切り記号を定義します。この例では、`SetDelimiters` メソッドを使用して、タブ区切りのテキスト ファイルを定義しています。  
   
- [!code-vb[VbVbalrTextFieldParser#21](../../../../visual-basic/developing-apps/development-with-my/codesnippet/visualbasic/parsing-text-files-with-_1.vb)]  
+ [!code-vb[VbVbalrTextFieldParser#21](../../../../visual-basic/developing-apps/development-with-my/codesnippet/VisualBasic/parsing-text-files-with-the-textfieldparser-object_1.vb)]  
   
  また、テキスト ファイルによっては、固定幅のフィールドを持つ場合もあります。  その場合には、次の例のように、`TextFieldType` を `FixedWidth` と定義し、各フィールドの幅を定義する必要があります。  この例では、`SetFieldWidths` メソッドを使用して、テキストの列を定義しています。最初は幅が 5 文字、その次は 10、その次は 11、その次は可変幅です。  
   
- [!code-vb[VbVbalrTextFieldParser#22](../../../../visual-basic/developing-apps/development-with-my/codesnippet/visualbasic/parsing-text-files-with-_2.vb)]  
+ [!code-vb[VbVbalrTextFieldParser#22](../../../../visual-basic/developing-apps/development-with-my/codesnippet/VisualBasic/parsing-text-files-with-the-textfieldparser-object_2.vb)]  
   
  書式を定義したら、ファイルをループし、`ReadFields` メソッドを使用して、各行を順番に処理します。  
   

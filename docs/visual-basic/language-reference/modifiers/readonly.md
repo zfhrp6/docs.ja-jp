@@ -60,7 +60,7 @@ caps.handback.revision: 15
 ## 使用例  
  次の例では、従業員が雇用された日付を表す `ReadOnly` プロパティを定義します。  このクラスは、プロパティの値を `Private` 変数として内部に格納し、クラス内のコードだけがこの値を変更できます。  ただし、このプロパティは `Public` であり、このクラスにアクセスできるすべてのコードがこのプロパティを読み取れます。  
   
- [!code-vb[VbVbalrKeywords#4](../../../visual-basic/language-reference/codesnippet/visualbasic/readonly_1.vb)]  
+ [!code-vb[VbVbalrKeywords#4](../../../visual-basic/language-reference/codesnippet/VisualBasic/readonly_1.vb)]  
   
  `ReadOnly` 修飾子は、次の場合に使用できます。  
   

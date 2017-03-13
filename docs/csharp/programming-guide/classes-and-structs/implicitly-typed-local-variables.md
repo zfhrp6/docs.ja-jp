@@ -21,7 +21,7 @@ caps.handback.revision: 23
   
  `var` を使用してローカル変数を宣言するさまざまな方法を次の例に示します。  
   
- [!code-cs[csProgGuideLINQ#43](../../../csharp/programming-guide/arrays/codesnippet/csharp/csLINQProgRef/csRef30LangFeatures_2.cs#43)]  
+ [!code-cs[csProgGuideLINQ#43](../../../csharp/programming-guide/arrays/codesnippet/CSharp/implicitly-typed-local-variables_1.cs)]  
   
  `var` キーワードは "バリアント型" を意味するものではなく、変数の柔軟な型指定や遅延バインディングを示すものでもない点を理解しておくことが重要です。  このキーワードは、最適な型をコンパイラが決定し割り当てることを意味するだけです。  
   
@@ -54,7 +54,7 @@ caps.handback.revision: 23
   
  ソース コードから見た場合、匿名型には名前がありません。  したがって、クエリ変数を `var` で初期化した場合、返されたオブジェクトのシーケンスのプロパティにアクセスする唯一の方法は、`foreach` ステートメント内の反復変数の型として `var` を使用することです。  
   
- [!code-cs[csProgGuideLINQ#44](../../../csharp/programming-guide/arrays/codesnippet/csharp/csLINQProgRef/csRef30LangFeatures_2.cs#44)]  
+ [!code-cs[csProgGuideLINQ#44](../../../csharp/programming-guide/arrays/codesnippet/CSharp/implicitly-typed-local-variables_2.cs)]  
   
 ## 解説  
  暗黙的に型指定された変数の宣言には、次の制約があります。  
@@ -73,7 +73,7 @@ caps.handback.revision: 23
   
  `var` キーワードは、変数の特定の型をキーボードで入力するのが面倒な場合、型が明白な場合、または型によってコードが読みやすくならない場合にも有用です。  このような理由で `var` が有用な例としては、グループ化操作で使用されるような入れ子にされたジェネリック型があります。  次のクエリでは、クエリ変数の型は `IEnumerable<IGrouping<string, Student>>` です。  コードの記述者とそのコードを保守する担当者がこのことを理解している限り、簡略にするために暗黙的な型指定を使用しても問題はありません。  
   
- [!code-cs[cscsrefQueryKeywords#13](../../../csharp/language-reference/keywords/codesnippet/csharp/csquerykeywords/Group.cs#13)]  
+ [!code-cs[cscsrefQueryKeywords#13](../../../csharp/language-reference/keywords/codesnippet/CSharp/implicitly-typed-local-variables_3.cs)]  
   
  ただし、`var` を使用すると、少なくとも他の開発者がコードを理解しづらくなる潜在的な可能性があります。  このため、C\# のドキュメントでは通常、必要なときにのみ `var` を使用しています。  
   

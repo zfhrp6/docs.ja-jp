@@ -38,9 +38,9 @@ caps.handback.revision: 17
 ## 使用例  
  次の例では、`int` へのポインターを `byte` へのポインターに変換しています。  このポインターは、変数のアドレスの最下位バイトを指すことに注意してください。  結果を `int` のサイズ \(4 バイト\) だけ連続してインクリメントすると、変数の残りのバイトを表示できます。  
   
- [!code-cs[csProgGuidePointers#3](../../../csharp/programming-guide/unsafe-code-pointers/codesnippet/csharp/Pointers/Pointers2.cs#3)]  
+ [!code-cs[csProgGuidePointers#3](../../../csharp/programming-guide/unsafe-code-pointers/codesnippet/CSharp/pointer-conversions_1.cs)]  
   
- [!code-cs[csProgGuidePointers#4](../../../csharp/programming-guide/unsafe-code-pointers/codesnippet/csharp/Pointers/Pointers.cs#4)]  
+ [!code-cs[csProgGuidePointers#4](../../../csharp/programming-guide/unsafe-code-pointers/codesnippet/CSharp/pointer-conversions_2.cs)]  
   
 ## 参照  
  [C\# プログラミング ガイド](../../../csharp/programming-guide/index.md)   

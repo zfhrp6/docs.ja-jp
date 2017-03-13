@@ -31,7 +31,7 @@ caps.handback.revision: 16
   
 -   `WriteAllBytes` メソッドを使用し、ファイルのパスと名前、および書き込むバイト数を指定します。  この例では、データ配列 `CustomerData` を、`CollectedData.dat` という名前のファイルに追加します。  
   
-     [!code-vb[VbVbcnMyFileSystem#27](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/visualbasic/how-to-write-to-binary-f_1.vb)]  
+     [!code-vb[VbVbcnMyFileSystem#27](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/VisualBasic/how-to-write-to-binary-files_1.vb)]  
   
 ## 信頼性の高いプログラミング  
  例外を引き起こす可能性のある状態を次に示します。  

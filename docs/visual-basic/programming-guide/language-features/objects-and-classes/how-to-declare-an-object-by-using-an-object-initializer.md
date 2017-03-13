@@ -30,7 +30,7 @@ caps.handback.revision: 20
   
  次の手順では、`Student` クラスのインスタンスを 3 つの異なる方法で作成する方法を示します。  このクラスには、名、姓、学年などのプロパティがあります。  3 つの宣言では、いずれも `Student` の新しいインスタンスを作成し、`First` プロパティを "Michael" に、`Last` プロパティを "Tucker" に、それ以外のすべてのメンバーを既定値に設定します。  この手順のそれぞれの宣言の結果は、オブジェクト初期化子を使用しない次の例と同等になります。  
   
- [!code-vb[VbVbalrObjectInit#20](../../../../visual-basic/programming-guide/language-features/objects-and-classes/codesnippet/visualbasic/how-to-declare-an-object_1.vb)]  
+ [!code-vb[VbVbalrObjectInit#20](../../../../visual-basic/programming-guide/language-features/objects-and-classes/codesnippet/VisualBasic/how-to-declare-an-object-by-using-an-object-initializer_1.vb)]  
   
  `Student` クラスの実装については、「[How to: Create a List of Items](../../../../visual-basic/programming-guide/concepts/linq/how-to-create-a-list-of-items.md)」を参照してください。  このトピックからコードをコピーして、クラスのセットアップおよび `Student` オブジェクトのリストの作成に使用できます。  
   
@@ -46,7 +46,7 @@ caps.handback.revision: 20
   
 3.  初期化リストには、初期化するプロパティと、各プロパティに割り当てる初期値を指定します。  プロパティの名前の前にはピリオドを付けます。  
   
-     [!code-vb[VbVbalrObjectInit#21](../../../../visual-basic/programming-guide/language-features/objects-and-classes/codesnippet/visualbasic/how-to-declare-an-object_2.vb)]  
+     [!code-vb[VbVbalrObjectInit#21](../../../../visual-basic/programming-guide/language-features/objects-and-classes/codesnippet/VisualBasic/how-to-declare-an-object-by-using-an-object-initializer_2.vb)]  
   
      クラスの 1 つ以上のメンバーを初期化できます。  
   
@@ -60,11 +60,11 @@ caps.handback.revision: 20
   
 6.  「`With`」と入力し、その後に新しいインスタンスの 1 つ以上のメンバーを初期化するオブジェクト初期化子を入力します。  
   
-     [!code-vb[VbVbalrObjectInit#22](../../../../visual-basic/programming-guide/language-features/objects-and-classes/codesnippet/visualbasic/how-to-declare-an-object_3.vb)]  
+     [!code-vb[VbVbalrObjectInit#22](../../../../visual-basic/programming-guide/language-features/objects-and-classes/codesnippet/VisualBasic/how-to-declare-an-object-by-using-an-object-initializer_3.vb)]  
   
 7.  上の手順での定義は、`As Student` を省略することで簡略化できます。  この場合、コンパイラはローカル型の推論を使用して、`student3` が `Student` のインスタンスであると判断します。  
   
-     [!code-vb[VbVbalrObjectInit#23](../../../../visual-basic/programming-guide/language-features/objects-and-classes/codesnippet/visualbasic/how-to-declare-an-object_4.vb)]  
+     [!code-vb[VbVbalrObjectInit#23](../../../../visual-basic/programming-guide/language-features/objects-and-classes/codesnippet/VisualBasic/how-to-declare-an-object-by-using-an-object-initializer_4.vb)]  
   
      詳細については、「[Local Type Inference](../../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md)」を参照してください。  
   

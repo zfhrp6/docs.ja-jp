@@ -62,7 +62,7 @@ rootElement
 ## 使用例  
  次の例では、XML 宣言、処理命令、コメント、および別の要素を格納する要素がある XML ドキュメントを作成します。  
   
- [!code-vb[VbXMLSamples#30](../../../visual-basic/language-reference/operators/codesnippet/visualbasic/xml-document-literal_1.vb)]  
+ [!code-vb[VbXMLSamples#30](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/xml-document-literal_1.vb)]  
   
 ## 参照  
  <xref:System.Xml.Linq.XElement>   

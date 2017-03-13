@@ -45,28 +45,28 @@ caps.handback.revision: 13
   
  たとえば、次の `Sub` プロシージャでは 3 つの引数を使用します。  
   
- [!code-vb[VbVbcnProcedures#41](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/passing-arguments-by-pos_1.vb)]  
+ [!code-vb[VbVbcnProcedures#41](./codesnippet/VisualBasic/passing-arguments-by-position-and-by-name_1.vb)]  
   
  このプロシージャを呼び出すときには、引数を位置で指定することも、名前で指定することも、両方を一緒に使って指定することもできます。  
   
 ## 位置による引数渡し  
  引数を位置で渡してプロシージャ  `studentInfo`  を呼び出すには、次のようにコンマで区切って指定します。  
   
- [!code-vb[VbVbcnProcedures#42](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/passing-arguments-by-pos_2.vb)]  
+ [!code-vb[VbVbcnProcedures#42](./codesnippet/VisualBasic/passing-arguments-by-position-and-by-name_2.vb)]  
   
  位置で指定する引数リストで省略可能な引数を省略する場合は、省略する引数の場所にコンマを置く必要があります。   `age`  引数を指定せずに  `studentInfo`  を呼び出す例を次に示します。  
   
- [!code-vb[VbVbcnProcedures#43](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/passing-arguments-by-pos_3.vb)]  
+ [!code-vb[VbVbcnProcedures#43](./codesnippet/VisualBasic/passing-arguments-by-position-and-by-name_3.vb)]  
   
 ## 名前による引数渡し  
  引数を名前で渡してプロシージャ  `studentInfo`  を呼び出すこともできます。この場合も、次のようにコンマで区切って指定します。  
   
- [!code-vb[VbVbcnProcedures#44](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/passing-arguments-by-pos_4.vb)]  
+ [!code-vb[VbVbcnProcedures#44](./codesnippet/VisualBasic/passing-arguments-by-position-and-by-name_4.vb)]  
   
 ## 位置と名前の両方による引数渡し  
  次に示す例のように、1 つのプロシージャ呼び出しで、位置と名前の両方を使って引数を指定することもできます。  
   
- [!code-vb[VbVbcnProcedures#45](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/passing-arguments-by-pos_5.vb)]  
+ [!code-vb[VbVbcnProcedures#45](./codesnippet/VisualBasic/passing-arguments-by-position-and-by-name_5.vb)]  
   
  上の例では、引数 `age` が省略されていますが、 `birth` が名前で指定されているため、 `age` の場所にコンマを置く必要はありません。  
   

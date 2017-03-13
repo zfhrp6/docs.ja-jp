@@ -18,7 +18,7 @@ caps.handback.revision: 28
 # 構造体の使用 (C# プログラミング ガイド)
 `struct` 型は、`Point`、`Rectangle`、`Color` などの軽量のオブジェクトを表すのに適しています。 点を表すには[自動実装プロパティ](../../../csharp/programming-guide/classes-and-structs/auto-implemented-properties.md)がある[クラス](../../../csharp/language-reference/keywords/class.md)を使用するのと同じくらい便利ですが、シナリオによっては[構造体](../../../csharp/language-reference/keywords/struct.md)を使用する方がより効率的です。 たとえば、1,000 個の `Point` オブジェクトから成る配列を宣言する場合は、各オブジェクトの参照用に追加のメモリを割り当てます。この場合、構造体であれば処理上の負荷を抑えることができます。[!INCLUDE[dnprdnshort](../../../csharp/getting-started/includes/dnprdnshort-md.md)] には <xref:System.Drawing.Point> という名前のオブジェクトが含まれているため、この例の構造体には代わりに "CoOrds" という名前が付けられています。  
   
- [!code-cs[csProgGuideObjects#1](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/using-structs_1.cs)]  
+ [!code-cs[csProgGuideObjects#1](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/using-structs_1.cs)]  
   
  構造体に既定の \(パラメーターなしの\) コンストラクターを定義するとエラーになります。 また、構造体の本体のインスタンス フィールドを初期化した場合もエラーになります。 構造体メンバーを初期化するには、パラメーター化されたコンストラクターを使用するか、構造体を宣言した後で個別にメンバーにアクセスする必要があります。 プライベート メンバーや、その他のアクセスできないメンバーは、コンストラクター内でのみ初期化できます。  
   
@@ -38,9 +38,9 @@ caps.handback.revision: 28
  既定のコンストラクターとパラメーター化されたコンストラクターの両方を使用した `struct` の初期化の例を次に示します。  
   
 ### コード  
- [!code-cs[csProgGuideObjects#1](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/using-structs_1.cs)]  
+ [!code-cs[csProgGuideObjects#1](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/using-structs_1.cs)]  
   
- [!code-cs[csProgGuideObjects#2](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/using-structs_2.cs)]  
+ [!code-cs[csProgGuideObjects#2](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/using-structs_2.cs)]  
   
 ## 例 2  
   
@@ -48,9 +48,9 @@ caps.handback.revision: 28
  構造体に固有の機能を次の例に示します。 この例では、`new` 演算子を使用せずに CoOrds オブジェクトを作成しています。`struct` を `class` という単語に置き換えた場合、プログラムはコンパイルされません。  
   
 ### コード  
- [!code-cs[csProgGuideObjects#1](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/using-structs_1.cs)]  
+ [!code-cs[csProgGuideObjects#1](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/using-structs_1.cs)]  
   
- [!code-cs[csProgGuideObjects#3](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/using-structs_3.cs)]  
+ [!code-cs[csProgGuideObjects#3](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/using-structs_3.cs)]  
   
 ## 参照  
  [C\# プログラミング ガイド](../../../csharp/programming-guide/index.md)   

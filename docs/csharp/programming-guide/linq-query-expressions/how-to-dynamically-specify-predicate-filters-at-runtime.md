@@ -15,7 +15,7 @@ caps.handback.revision: 22
   
 4.  `Program` クラスを次のコードで置き換えます。  
   
-     [!code-cs[csProgGuideLINQ#26](../../../csharp/programming-guide/arrays/codesnippet/csharp/csLINQProgRef/csrefLINQHowTos.cs#26)]  
+     [!code-cs[csProgGuideLINQ#26](../../../csharp/programming-guide/arrays/codesnippet/CSharp/how-to-dynamically-specify-predicate-filters-at-runtime_1.cs)]  
   
 5.  `ids` の宣言の下で、`DynamicPredicates` クラスの `Main` メソッドに次のコード行を追加します。  
   
@@ -56,7 +56,7 @@ caps.handback.revision: 22
   
 2.  次のメソッドをコピーし、`DynamicPredicates` クラスに貼り付けます。  
   
-     [!code-cs[csProgGuideLINQ#27](../../../csharp/programming-guide/arrays/codesnippet/csharp/csLINQProgRef/csrefLINQHowTos.cs#27)]  
+     [!code-cs[csProgGuideLINQ#27](../../../csharp/programming-guide/arrays/codesnippet/CSharp/how-to-dynamically-specify-predicate-filters-at-runtime_2.cs)]  
   
 3.  **\[コマンド ライン引数\]** ウィンドウで、前の手順の ID 番号を 1 ～ 4 の整数値に置き換えます。  
   

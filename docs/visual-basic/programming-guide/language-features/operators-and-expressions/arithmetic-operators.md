@@ -35,29 +35,29 @@ caps.handback.revision: 20
 ## 算術演算  
  式の中の 2 つの値を足す場合は [\+ Operator](../../../../visual-basic/language-reference/operators/addition-operator.md) を使い、一方の値からもう一方の値を引く場合は [\- Operator](../../../../visual-basic/language-reference/operators/subtraction-operator.md) を使います。次に例を示します。  
   
- [!code-vb[VbVbalrOperators#57](../../../../visual-basic/language-reference/operators/codesnippet/visualbasic/arithmetic-operators_1.vb)]  
+ [!code-vb[VbVbalrOperators#57](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/arithmetic-operators_1.vb)]  
   
  否定にも [\- Operator](../../../../visual-basic/language-reference/operators/subtraction-operator.md) を使いますが、1 つのオペランドにのみ使います。次に例を使用します。  
   
- [!code-vb[VbVbalrOperators#58](../../../../visual-basic/language-reference/operators/codesnippet/visualbasic/arithmetic-operators_2.vb)]  
+ [!code-vb[VbVbalrOperators#58](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/arithmetic-operators_2.vb)]  
   
  乗算には [\* Operator](../../../../visual-basic/language-reference/operators/multiplication-operator.md) を使い、除算には [\/ Operator](../../../../visual-basic/language-reference/operators/floating-point-division-operator.md) を使います。次に例を示します。  
   
- [!code-vb[VbVbalrOperators#59](../../../../visual-basic/language-reference/operators/codesnippet/visualbasic/arithmetic-operators_3.vb)]  
+ [!code-vb[VbVbalrOperators#59](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/arithmetic-operators_3.vb)]  
   
  指数演算には [^ Operator](../../../../visual-basic/language-reference/operators/exponentiation-operator.md) を使います。次に例を示します。  
   
- [!code-vb[VbVbalrOperators#60](../../../../visual-basic/language-reference/operators/codesnippet/visualbasic/arithmetic-operators_4.vb)]  
+ [!code-vb[VbVbalrOperators#60](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/arithmetic-operators_4.vb)]  
   
  整数の除算には [\\ Operator](../../../../visual-basic/language-reference/operators/integer-division-operator.md) を使用します。  整数の除算は商を返します。商とは、被除数を除数で割った値を、余りを無視して表した整数です。  この演算子の場合、除数と被除数はどちらも整数型 \(`SByte`、`Byte`、`Short`、`UShort`、`Integer`、`UInteger`、`Long`、`ULong`\) であることが必要です。  他のデータ型を使用する場合は、先に整数型に変換する必要があります。  次に整数の除算の例を示します。  
   
- [!code-vb[VbVbalrOperators#61](../../../../visual-basic/language-reference/operators/codesnippet/visualbasic/arithmetic-operators_5.vb)]  
+ [!code-vb[VbVbalrOperators#61](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/arithmetic-operators_5.vb)]  
   
  剰余演算には [Mod 演算子](../../../../visual-basic/language-reference/operators/mod-operator.md) を使います。  この演算子は、被除数を除数で割った余りを返します。  除数と被除数が両方とも整数型の場合、戻り値は整数型になります。  除数と被除数が両方とも浮動小数点型の場合、戻り値は浮動小数点型になります。  次にコード例を示します。  
   
- [!code-vb[VbVbalrOperators#62](../../../../visual-basic/language-reference/operators/codesnippet/visualbasic/arithmetic-operators_6.vb)]  
+ [!code-vb[VbVbalrOperators#62](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/arithmetic-operators_6.vb)]  
   
- [!code-vb[VbVbalrOperators#63](../../../../visual-basic/language-reference/operators/codesnippet/visualbasic/arithmetic-operators_7.vb)]  
+ [!code-vb[VbVbalrOperators#63](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/arithmetic-operators_7.vb)]  
   
 ### 0 による除算  
  0 による除算の結果は、含まれているデータ型によって異なります。  整数の除算 \(`SByte`、`Byte`、`Short`、`UShort`、`Integer`、`UInteger`、`Long`、`ULong`\) では、[!INCLUDE[dnprdnshort](../../../../csharp/getting-started/includes/dnprdnshort-md.md)] は <xref:System.DivideByZeroException> 例外をスローします。  除算演算子を `Decimal` データ型や `Single` データ型に使用した場合も、[!INCLUDE[dnprdnshort](../../../../csharp/getting-started/includes/dnprdnshort-md.md)] は <xref:System.DivideByZeroException> 例外をスローします。  
@@ -90,7 +90,7 @@ caps.handback.revision: 20
   
  次の例は `Integer` 値を左シフトおよび右シフトします。  
   
- [!code-vb[VbVbalrOperators#64](../../../../visual-basic/language-reference/operators/codesnippet/visualbasic/arithmetic-operators_8.vb)]  
+ [!code-vb[VbVbalrOperators#64](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/arithmetic-operators_8.vb)]  
   
  数値のシフトではオーバーフロー例外は発生しません。  
   

@@ -65,7 +65,7 @@ number ^ exponent
 ## 使用例  
  `^` 演算子を使って数値のべき乗を求める例を次に示します。  結果は、最初のオペランドを第 2 のオペランドで累乗した数値です。  
   
- [!code-vb[VbVbalrOperators#20](../../../visual-basic/language-reference/operators/codesnippet/visualbasic/exponentiation-operator_1.vb)]  
+ [!code-vb[VbVbalrOperators#20](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/exponentiation-operator_1.vb)]  
   
  この例の結果は、次のようになります。  
   

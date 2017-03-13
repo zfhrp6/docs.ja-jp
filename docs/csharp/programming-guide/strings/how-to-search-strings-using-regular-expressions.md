@@ -22,12 +22,12 @@ caps.handback.revision: 19
 ## 使用例  
  次のコードは、大文字と小文字を区別せずに配列の文字列を単純に検索するコンソール アプリケーションです。  静的メソッド <xref:System.Text.RegularExpressions.Regex.IsMatch%2A?displayProperty=fullName> では、検索する文字列と、検索パターンを含む文字列を前提として、検索を実行します。  この場合、3 つ目の引数は、大文字と小文字の区別を無視することを示します。  詳細については、「<xref:System.Text.RegularExpressions.RegexOptions?displayProperty=fullName>」を参照してください。  
   
- [!code-cs[csProgGuideStrings#17](../../../csharp/programming-guide/strings/codesnippet/csharp/CSRefStrings/Strings.cs#17)]  
+ [!code-cs[csProgGuideStrings#17](../../../csharp/programming-guide/strings/codesnippet/CSharp/how-to-search-strings-using-regular-expressions_1.cs)]  
   
 ## 使用例  
  次のコードは、正規表現を使用して、配列の各文字列の形式を検証するコンソール アプリケーションです。  各文字列が電話番号の形式であることが検証されます。つまり、3 グループの数値がダッシュで区切られ、最初の 2 グループには 3 桁の数値が含まれ、3 つ目のグループには 4 桁の数値が含まれることが検証されます。  この操作は、正規表現 `^\\d{3}-\\d{3}-\\d{4}$` を使用して実行されます。  詳細については、「[正規表現言語 \- クイック リファレンス](../Topic/Regular%20Expression%20Language%20-%20Quick%20Reference.md)」を参照してください。  
   
- [!code-cs[csProgGuideStrings#18](../../../csharp/programming-guide/strings/codesnippet/csharp/CSRefStrings/Strings.cs#18)]  
+ [!code-cs[csProgGuideStrings#18](../../../csharp/programming-guide/strings/codesnippet/CSharp/how-to-search-strings-using-regular-expressions_2.cs)]  
   
 ## 参照  
  <xref:System.Text.RegularExpressions.Regex?displayProperty=fullName>   

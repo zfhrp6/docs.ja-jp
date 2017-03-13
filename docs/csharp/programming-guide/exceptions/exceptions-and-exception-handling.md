@@ -9,7 +9,7 @@ C\# 言語の例外処理機能は、プログラムの実行中に発生する�
   
  次の例では、メソッドでゼロ除算をテストしてエラーをキャッチします。  例外処理がなければ、このプログラムは、**"DivideByZeroException はハンドルされませんでした。"** エラーによって終了します。  
   
- [!code-cs[csProgGuideExceptions#18](../../../csharp/programming-guide/exceptions/codesnippet/csharp/exceptions-and-exception_1.cs)]  
+ [!code-cs[csProgGuideExceptions#18](../../../csharp/programming-guide/exceptions/codesnippet/CSharp/exceptions-and-exception-handling_1.cs)]  
   
 ## 例外の概要  
  例外には、次のような特徴があります。  

@@ -24,7 +24,7 @@ C\# では、引数が、値または参照でパラメーターに渡されま�
   
  次の例は、値パラメーターと参照パラメーターの違いを示しています。  
   
- [!code-cs[csProgGuideParameters#10](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/passing-parameters_1.cs)]  
+ [!code-cs[csProgGuideParameters#10](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/passing-parameters_1.cs)]  
   
  詳細については、次のトピックを参照してください。  
   

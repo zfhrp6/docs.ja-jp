@@ -22,7 +22,7 @@ caps.handback.revision: 8
 ## 使用例  
  次の例では、<xref:System.String.IndexOf%2A>、<xref:System.String.LastIndexOf%2A>、<xref:System.String.StartsWith%2A>、および <xref:System.String.EndsWith%2A> の各メソッドを使用して文字列を検索します。  
   
- [!code-cs[csProgGuideStrings#21](../../../csharp/programming-guide/strings/codesnippet/csharp/CSRefStrings/Strings.cs#21)]  
+ [!code-cs[csProgGuideStrings#21](../../../csharp/programming-guide/strings/codesnippet/CSharp/how-to-search-strings-using-string-methods_1.cs)]  
   
 ## 参照  
  [C\# プログラミング ガイド](../../../csharp/programming-guide/index.md)   

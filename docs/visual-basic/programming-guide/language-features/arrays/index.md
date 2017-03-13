@@ -66,7 +66,7 @@ caps.handback.revision: 47
 ##  <a name="BKMK_ArrayElements"></a> 単純な配列の配列要素  
  次の例では、学校の各学年の生徒の数を保持するために、配列変数を宣言しています。  
   
- [!code-vb[VbVbalrArrays#2](../../../../visual-basic/programming-guide/language-features/arrays/codesnippet/visualbasic/index_1.vb)]  
+ [!code-vb[VbVbalrArrays#2](../../../../visual-basic/programming-guide/language-features/arrays/codesnippet/VisualBasic/index_1.vb)]  
   
  上の例の `students` 配列には、7 つの要素が含まれています。 要素のインデックスの範囲は 0 から 6 までです。 7 つの変数を宣言するよりも、この配列の方が簡単です。  
   
@@ -81,7 +81,7 @@ caps.handback.revision: 47
   
  次の例は、`students` 配列の先頭の要素、2 番目の要素、および最後の要素を参照する方法を示します。  
   
- [!code-vb[VbVbalrArrays#3](../../../../visual-basic/programming-guide/language-features/arrays/codesnippet/visualbasic/index_2.vb)]  
+ [!code-vb[VbVbalrArrays#3](../../../../visual-basic/programming-guide/language-features/arrays/codesnippet/VisualBasic/index_2.vb)]  
   
  インデックスを持たない配列変数名だけを使用して、配列全体を参照できます。  
   
@@ -90,55 +90,55 @@ caps.handback.revision: 47
 ##  <a name="BKMK_CreatingAnArray"></a> 配列の作成  
  配列のサイズは、さまざまな方法で定義できます。 次の例に示すように、配列を宣言するときにサイズを指定することができます。  
   
- [!code-vb[VbVbalrArrays#12](../../../../visual-basic/programming-guide/language-features/arrays/codesnippet/visualbasic/index_3.vb)]  
+ [!code-vb[VbVbalrArrays#12](../../../../visual-basic/programming-guide/language-features/arrays/codesnippet/VisualBasic/index_3.vb)]  
   
  また、次の例に示すように、`New` 句を使用して配列を作成するときにサイズを指定することもできます。  
   
- [!code-vb[VbVbalrArrays#11](../../../../visual-basic/programming-guide/language-features/arrays/codesnippet/visualbasic/index_4.vb)]  
+ [!code-vb[VbVbalrArrays#11](../../../../visual-basic/programming-guide/language-features/arrays/codesnippet/VisualBasic/index_4.vb)]  
   
  既存の配列がある場合は、`Redim` ステートメントを使用してサイズを再定義できます。`Redim` ステートメントでは、配列に格納されている値を保持するように指定することも、空の配列を作成するように指定することもできます。 次に、`Redim` ステートメントを使用して既存の配列のサイズを変更する例をいくつか示します。  
   
- [!code-vb[VbVbalrArrays#13](../../../../visual-basic/programming-guide/language-features/arrays/codesnippet/visualbasic/index_5.vb)]  
+ [!code-vb[VbVbalrArrays#13](../../../../visual-basic/programming-guide/language-features/arrays/codesnippet/VisualBasic/index_5.vb)]  
   
  詳細については、「[ReDim Statement](../../../../visual-basic/language-reference/statements/redim-statement.md)」を参照してください。  
   
 ##  <a name="BKMK_StoringValues"></a> 配列への値の格納  
  配列のそれぞれの位置には、`Integer` 型のインデックスを使用してアクセスできます。 かっこで囲まれたインデックスを使用して配列のそれぞれの位置を参照することで、配列の値を格納および取得することができます。 多次元配列のインデックスはコンマ \(,\) で区切ります。 配列の次元ごとに 1 つのインデックスが必要です。 配列に値を格納するステートメントの例を示します。  
   
- [!code-vb[VbVbalrArrays#5](../../../../visual-basic/programming-guide/language-features/arrays/codesnippet/visualbasic/index_6.vb)]  
+ [!code-vb[VbVbalrArrays#5](../../../../visual-basic/programming-guide/language-features/arrays/codesnippet/VisualBasic/index_6.vb)]  
   
  配列から値を取得するステートメントの例を示します。  
   
- [!code-vb[VbVbalrArrays#6](../../../../visual-basic/programming-guide/language-features/arrays/codesnippet/visualbasic/index_7.vb)]  
+ [!code-vb[VbVbalrArrays#6](../../../../visual-basic/programming-guide/language-features/arrays/codesnippet/VisualBasic/index_7.vb)]  
   
 ##  <a name="BKMK_Populating"></a> 配列への初期値の取り込み  
  配列リテラルを使用すると、初期値のセットを含む配列を作成できます。 配列リテラルは、中かっこ \(`{}`\) で囲んだ値のコンマ区切りの一覧で構成されます。  
   
  配列リテラルを使用して配列を作成する場合、配列の型を指定するか、型の推定を使用して配列の型を決定することができます。 この 2 つの方法を次のコードに示します。  
   
- [!code-vb[VbVbalrCollectionInitializers#3](../../../../visual-basic/programming-guide/language-features/arrays/codesnippet/visualbasic/index_8.vb)]  
+ [!code-vb[VbVbalrCollectionInitializers#3](../../../../visual-basic/programming-guide/language-features/arrays/codesnippet/VisualBasic/index_8.vb)]  
   
  型の推定を使用する場合、配列の型は、配列リテラルに指定された値の一覧の中で最も優先度の高い型によって決まります。 最も優先度の高い型は、配列リテラル内の他のすべての型から拡大変換できる一意の型です。 この一意の型を特定できない場合、最も優先度の高い型は、配列内の他のすべての型から縮小変換できる一意の型になります。 これらの一意の型をどちらも特定できない場合は、`Object` が最も優先度の高い型になります。 たとえば、配列リテラルに指定された値の一覧に `Integer` 型、`Long` 型、および `Double` 型の値が含まれている場合、結果の配列の型は `Double` です。`Integer` と `Long` は `Double` にのみ拡大変換されます。 そのため、`Double` が最も優先度の高い型になります。 詳細については、「[Widening and Narrowing Conversions](../../../../visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions.md)」を参照してください。 これらの推定規則は、クラス メンバーで定義されたローカル変数である配列についての型の推定に適用されます。 クラス レベルの変数を作成するときに配列リテラルを使用することはできますが、クラス レベルで型の推定を使用することはできません。 そのため、クラス レベルで指定された配列リテラルでは、配列リテラルに指定された値の型は `Object` 型であると推論されます。  
   
  配列リテラルを使用して作成した配列の要素の型を明示的に指定することができます。 この場合、配列リテラル内の値を配列の要素の型に拡大変換する必要があります。 整数の一覧から `Double` 型の配列を作成するコード例を次に示します。  
   
- [!code-vb[VbVbalrCollectionInitializers#4](../../../../visual-basic/programming-guide/language-features/arrays/codesnippet/visualbasic/index_9.vb)]  
+ [!code-vb[VbVbalrCollectionInitializers#4](../../../../visual-basic/programming-guide/language-features/arrays/codesnippet/VisualBasic/index_9.vb)]  
   
 ###  <a name="BKMK_NestedArrayLiterals"></a> 入れ子になった配列リテラル  
  入れ子になった配列リテラルを使用すると、多次元配列を作成できます。 入れ子になった配列リテラルに含める次元および次元数 \(ランク\) は、結果の配列と一致する必要があります。 配列リテラルを使用して整数の 2 次元配列を作成するコード例を次に示します。  
   
- [!code-vb[VbVbalrCollectionInitializers#7](../../../../visual-basic/programming-guide/language-features/arrays/codesnippet/visualbasic/index_10.vb)]  
+ [!code-vb[VbVbalrCollectionInitializers#7](../../../../visual-basic/programming-guide/language-features/arrays/codesnippet/VisualBasic/index_10.vb)]  
   
  上記の例では、入れ子になった配列リテラル内の要素の数が一致しないとエラーが発生します。 また、2 次元以外の配列変数が明示的に宣言された場合もエラーが発生します。  
   
 > [!NOTE]
 >  入れ子になった配列リテラルで異なる次元を指定することによるエラーを回避するには、内側の配列をかっこで囲みます。 次のコードに示すようにかっこで囲むと、配列リテラル式の評価が実行され、そこで得られた値が外側の配列リテラルで使用されます。  
   
- [!code-vb[VbVbalrCollectionInitializers#11](../../../../visual-basic/programming-guide/language-features/arrays/codesnippet/visualbasic/index_11.vb)]  
+ [!code-vb[VbVbalrCollectionInitializers#11](../../../../visual-basic/programming-guide/language-features/arrays/codesnippet/VisualBasic/index_11.vb)]  
   
  入れ子になった配列リテラルを使用して多次元配列を作成する場合、型の推定を使用できます。 型の推定を使用すると、推定される型は、入れ子レベルのすべての配列リテラルに含まれるすべての値の中で最も優先度の高い型になります。`Double` 型と `Integer` 型の値から `Double` 型の 2 次元配列を作成するコード例を次に示します。  
   
- [!code-vb[VbVbalrCollectionInitializers#8](../../../../visual-basic/programming-guide/language-features/arrays/codesnippet/visualbasic/index_12.vb)]  
+ [!code-vb[VbVbalrCollectionInitializers#8](../../../../visual-basic/programming-guide/language-features/arrays/codesnippet/VisualBasic/index_12.vb)]  
   
  その他の例については、「[How to: Initialize an Array Variable in Visual Basic](../../../../visual-basic/programming-guide/language-features/arrays/how-to-initialize-an-array-variable.md)」を参照してください。  
   
@@ -147,19 +147,19 @@ caps.handback.revision: 47
   
  次の例では、[For...Next ステートメント](../../../../visual-basic/language-reference/statements/for-next-statement.md) を使用して 1 次元配列を反復処理します。<xref:System.Array.GetUpperBound%2A> メソッドでは、インデックスが保持できる一番高い値が返されます。 一番低いインデックス値は常に 0 です。  
   
- [!code-vb[VbVbalrArrays#41](../../../../visual-basic/programming-guide/language-features/arrays/codesnippet/visualbasic/index_13.vb)]  
+ [!code-vb[VbVbalrArrays#41](../../../../visual-basic/programming-guide/language-features/arrays/codesnippet/VisualBasic/index_13.vb)]  
   
  次の例では、`For...Next` ステートメントを使用して多次元配列を反復処理します。<xref:System.Array.GetUpperBound%2A> メソッドには、次元を指定するパラメーターがあります。`GetUpperBound(0)` は最初の次元の最も大きいインデックス値を返し、`GetUpperBound(1)` は 2 番目の次元の最も大きいインデックス値を返します。  
   
- [!code-vb[VbVbalrArrays#42](../../../../visual-basic/programming-guide/language-features/arrays/codesnippet/visualbasic/index_14.vb)]  
+ [!code-vb[VbVbalrArrays#42](../../../../visual-basic/programming-guide/language-features/arrays/codesnippet/VisualBasic/index_14.vb)]  
   
  次の例では、[For Each...Next ステートメント](../../../../visual-basic/language-reference/statements/for-each-next-statement.md) を使用して 1 次元配列を反復処理します。  
   
- [!code-vb[VbVbalrArrays#43](../../../../visual-basic/programming-guide/language-features/arrays/codesnippet/visualbasic/index_15.vb)]  
+ [!code-vb[VbVbalrArrays#43](../../../../visual-basic/programming-guide/language-features/arrays/codesnippet/VisualBasic/index_15.vb)]  
   
  次の例では、`For Each...Next` ステートメントを使用して多次元配列を反復処理します。 ただし、`For…Next` ステートメントを使用するより、前の例のように、入れ子になった `For Each…Next` ステートメントを使用した方が、多次元配列の要素をより細かく制御できます。  
   
- [!code-vb[VbVbalrArrays#44](../../../../visual-basic/programming-guide/language-features/arrays/codesnippet/visualbasic/index_16.vb)]  
+ [!code-vb[VbVbalrArrays#44](../../../../visual-basic/programming-guide/language-features/arrays/codesnippet/VisualBasic/index_16.vb)]  
   
 ##  <a name="BKMK_ReturnValues"></a> 戻り値およびパラメーターとしての配列  
  `Function` プロシージャから配列を返すには、[Function Statement](../../../../visual-basic/language-reference/statements/function-statement.md) の戻り値の型として配列のデータ型と次元数を指定します。 関数内で、同じデータ型と次元数を持つローカルの配列変数を宣言します。[Return Statement](../../../../visual-basic/language-reference/statements/return-statement.md) には、かっこを使用せずにローカルの配列変数を含めます。  
@@ -168,23 +168,23 @@ caps.handback.revision: 47
   
  次の例では、`GetNumbers` 関数が `Integer()` を返します。 この配列型は、`Integer` 型の 1 次元配列です。`ShowNumbers` プロシージャは、`Integer()` の引数を受け取ります。  
   
- [!code-vb[VbVbalrArrays#51](../../../../visual-basic/programming-guide/language-features/arrays/codesnippet/visualbasic/index_17.vb)]  
+ [!code-vb[VbVbalrArrays#51](../../../../visual-basic/programming-guide/language-features/arrays/codesnippet/VisualBasic/index_17.vb)]  
   
  次の例では、`GetNumbersMultiDim` 関数が `Integer(,)` を返します。 この配列型は、`Integer` 型の 2 次元配列です。`ShowNumbersMultiDim` プロシージャは、`Integer(,)` の引数を受け取ります。  
   
- [!code-vb[VbVbalrArrays#52](../../../../visual-basic/programming-guide/language-features/arrays/codesnippet/visualbasic/index_18.vb)]  
+ [!code-vb[VbVbalrArrays#52](../../../../visual-basic/programming-guide/language-features/arrays/codesnippet/VisualBasic/index_18.vb)]  
   
 ##  <a name="BKMK_JaggedArrays"></a> ジャグ配列  
  他の配列を要素として保持する配列を、配列の配列またはジャグ配列と呼びます。 ジャグ配列と、ジャグ配列の各要素は、1 次元でも多次元でもかまいません。 アプリケーションのデータ構造は、2 次元の配列であっても四角形の 2 次元配列ではない場合があります。  
   
  次の例には、各要素が日の配列である月の配列が含まれています。 月によって日数が異なるため、月要素は四角形の 2 次元配列を形成しません。 そのため、多次元配列の代わりにジャグ配列が使用されています。  
   
- [!code-vb[VbVbalrArrays#21](../../../../visual-basic/programming-guide/language-features/arrays/codesnippet/visualbasic/index_19.vb)]  
+ [!code-vb[VbVbalrArrays#21](../../../../visual-basic/programming-guide/language-features/arrays/codesnippet/VisualBasic/index_19.vb)]  
   
 ##  <a name="BKMK_ZeroLength"></a> 長さ 0 の配列  
  要素を持たない配列は、長さ 0 の配列と呼ばれます。 長さ 0 の配列を保持する変数の値は、`Nothing` ではありません。 要素を持たない配列を作成するには、次の例のように配列の次元のいずれかを \-1 と宣言します。  
   
- [!code-vb[VbVbalrArrays#14](../../../../visual-basic/programming-guide/language-features/arrays/codesnippet/visualbasic/index_20.vb)]  
+ [!code-vb[VbVbalrArrays#14](../../../../visual-basic/programming-guide/language-features/arrays/codesnippet/VisualBasic/index_20.vb)]  
   
  次のような場合に、長さ 0 の配列を作成する必要があります。  
   
@@ -233,7 +233,7 @@ Dim prices(3, 4, 5) As Long
   
  `TypeName` 関数を呼び出して配列の型と配列の要素の型を確認する例を次に示します。 配列の型は `Integer(,)` で、配列の要素の型は `Integer` です。  
   
- [!code-vb[VbVbalrArrays#15](../../../../visual-basic/programming-guide/language-features/arrays/codesnippet/visualbasic/index_21.vb)]  
+ [!code-vb[VbVbalrArrays#15](../../../../visual-basic/programming-guide/language-features/arrays/codesnippet/VisualBasic/index_21.vb)]  
   
 ##  <a name="BKMK_Collections"></a> 配列の代わりとしてのコレクション  
  配列は、数が固定されている厳密に型指定されたオブジェクトの作成および処理に最も適しています。 コレクションは、オブジェクトのグループをより柔軟に処理できます。 配列の場合とは違って、コレクションで扱うオブジェクトのグループは、アプリケーションのニーズの変化に応じて動的に拡大および縮小できます。  
@@ -249,7 +249,7 @@ Dim prices(3, 4, 5) As Long
 ### 例  
  [!INCLUDE[dnprdnshort](../../../../csharp/getting-started/includes/dnprdnshort-md.md)] のジェネリック クラス <xref:System.Collections.Generic.List%601?displayProperty=fullName> を使用して、`Customer` オブジェクトの一覧コレクションを作成する例を次に示します。  
   
- [!code-vb[VbVbalrArrays#1](../../../../visual-basic/programming-guide/language-features/arrays/codesnippet/visualbasic/index_22.vb)]  
+ [!code-vb[VbVbalrArrays#1](../../../../visual-basic/programming-guide/language-features/arrays/codesnippet/VisualBasic/index_22.vb)]  
   
  `CustomerFile` コレクションの宣言により、`Customer` 型だけの要素を含むことができることを指定します。 また、200 要素分の初期容量も用意されています。`AddNewCustomer` プロシージャにより、新しい要素の有効性がチェックされ、コレクションに追加されます。`PrintCustomers` プロシージャでは、コレクションを走査し、その要素を表示するために、`For Each` ループが使用されます。  
   

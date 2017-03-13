@@ -29,11 +29,11 @@ caps.handback.revision: 25
 ## 使用例  
  次の例では、無効な変換ステートメントによって `System.InvalidCastException` 例外が発生しています。  この例外はハンドルされていません。  
   
- [!code-cs[csrefKeywordsExceptions#4](../../../csharp/language-reference/keywords/codesnippet/csharp/try-finally_1.cs)]  
+ [!code-cs[csrefKeywordsExceptions#4](../../../csharp/language-reference/keywords/codesnippet/CSharp/try-finally_1.cs)]  
   
  次の例では、コール スタックのずっと上の方のメソッド内で `TryCast` メソッドからの例外がキャッチされます。  
   
- [!code-cs[csrefKeywordsExceptions#6](../../../csharp/language-reference/keywords/codesnippet/csharp/try-finally_2.cs)]  
+ [!code-cs[csrefKeywordsExceptions#6](../../../csharp/language-reference/keywords/codesnippet/CSharp/try-finally_2.cs)]  
   
  `finally` の詳細については、「[try\-catch\-finally](../../../csharp/language-reference/keywords/try-catch-finally.md)」を参照してください。  
   

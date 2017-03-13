@@ -29,19 +29,19 @@ caps.handback.revision: 7
 ## My.Application、My.Computer、My.User  
  次の例は、`My` を使用して情報を取得する方法を具体的に示しています。  
   
- [!code-vb[VbVbcnMy#1](../../../visual-basic/developing-apps/development-with-my/codesnippet/visualbasic/performing-tasks-with-my_1.vb)]  
+ [!code-vb[VbVbcnMy#1](../../../visual-basic/developing-apps/development-with-my/codesnippet/VisualBasic/performing-tasks-with-my-application-my-computer-and-my-user_1.vb)]  
   
- [!code-vb[VbVbcnMy#2](../../../visual-basic/developing-apps/development-with-my/codesnippet/visualbasic/performing-tasks-with-my_2.vb)]  
+ [!code-vb[VbVbcnMy#2](../../../visual-basic/developing-apps/development-with-my/codesnippet/VisualBasic/performing-tasks-with-my-application-my-computer-and-my-user_2.vb)]  
   
  情報を取得できるだけでなく、これらの 3 つのオブジェクトを介して公開されるメンバーは、そのオブジェクトに関連するメソッドを実行することもできます。  たとえば、`My.Computer` を利用すると、ファイルの操作やレジストリの更新を行うさまざまなメソッドにアクセスできます。  
   
  `My` には、ファイル、ディレクトリ、およびドライブを操作するさまざまなメソッドとプロパティが含まれており、これを使用するとファイル I\/O が大幅に簡単かつ高速になります。  <xref:Microsoft.VisualBasic.FileIO.TextFieldParser> オブジェクトを使用すると、区切り記号で区切られたフィールドや固定幅のフィールドを持つ大きな構造化ファイルからデータを読み取ることができます。  この例では、`reader` という `TextFieldParser` を開き、それを使用して `C:\TestFolder1\test1.txt` から読み込みを行います。  
   
- [!code-vb[VbVbalrTextFieldParser#23](../../../visual-basic/developing-apps/development-with-my/codesnippet/visualbasic/performing-tasks-with-my_3.vb)]  
+ [!code-vb[VbVbalrTextFieldParser#23](../../../visual-basic/developing-apps/development-with-my/codesnippet/VisualBasic/performing-tasks-with-my-application-my-computer-and-my-user_3.vb)]  
   
  `My.Application` を使用すると、アプリケーションのカルチャを変更できます。  次の例は、このメソッドを呼び出す方法を具体的に示しています。  
   
- [!code-vb[VbVbcnMy#3](../../../visual-basic/developing-apps/development-with-my/codesnippet/visualbasic/performing-tasks-with-my_4.vb)]  
+ [!code-vb[VbVbcnMy#3](../../../visual-basic/developing-apps/development-with-my/codesnippet/VisualBasic/performing-tasks-with-my-application-my-computer-and-my-user_4.vb)]  
   
 ## 参照  
  <xref:Microsoft.VisualBasic.ApplicationServices.ApplicationBase>   

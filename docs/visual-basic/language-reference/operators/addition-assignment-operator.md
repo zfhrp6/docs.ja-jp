@@ -60,9 +60,9 @@ variableorproperty += expression
 ## 使用例  
  次の例では、`+=` 演算子を使って 2 つの変数の値を結合します。  前半では、`+=` を使って最初の数値変数の値を 2 番目の数値変数の値に加算します。  後半では、`+=` を使って最初の `String` 変数の値を 2 番目の `String` 変数の値に連結します。  どちらの場合も、結果は最初の変数に代入されます。  
   
- [!code-vb[VbVbalrOperators#7](../../../visual-basic/language-reference/operators/codesnippet/visualbasic/addition-assignment-oper_1_1.vb)]  
+ [!code-vb[VbVbalrOperators#7](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/addition-assignment-operator_1.vb)]  
   
- [!code-vb[VbVbalrOperators#8](../../../visual-basic/language-reference/operators/codesnippet/visualbasic/addition-assignment-oper_1_2.vb)]  
+ [!code-vb[VbVbalrOperators#8](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/addition-assignment-operator_2.vb)]  
   
  `num1` の値は 13 になり、`str1` の値は "103" になります。  
   

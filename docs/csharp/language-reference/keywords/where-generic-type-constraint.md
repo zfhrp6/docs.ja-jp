@@ -27,17 +27,17 @@ caps.handback.revision: 10
   
  `where` 句には、インターフェイス制約だけでなく基本クラス制約も指定できます。基本クラス制約は、ジェネリック型の型引数として使用する型には、基本クラスとして指定されているクラスまたは基本クラス自体が含まれている必要があることを指定します。  このような制約を使用する場合は、型パラメーターに関する制約よりも前に制約を記述する必要があります。  
   
- [!code-cs[csrefKeywordsContextual#6](../../../csharp/language-reference/keywords/codesnippet/csharp/where-generic-type-const_1.cs)]  
+ [!code-cs[csrefKeywordsContextual#6](../../../csharp/language-reference/keywords/codesnippet/CSharp/where-generic-type-constraint_1.cs)]  
   
  `where` 句には、コンストラクター制約も指定できます。  新しい演算子を使用して型パラメーターのインスタンスを作成できますが、このようにインスタンスを作成するには、コンストラクター制約 `new()` によって型パラメーターに制約を指定する必要があります。  [new\(\) 制約](../../../csharp/language-reference/keywords/new-constraint.md)に基づいて、コンパイラは、指定されている型引数には、アクセス可能なパラメーターなしの \(または既定の\) コンストラクターが必要であることを認識します。  次に例を示します。  
   
- [!code-cs[csrefKeywordsContextual#7](../../../csharp/language-reference/keywords/codesnippet/csharp/where-generic-type-const_2.cs)]  
+ [!code-cs[csrefKeywordsContextual#7](../../../csharp/language-reference/keywords/codesnippet/CSharp/where-generic-type-constraint_2.cs)]  
   
  `new()` 制約は、`where` 句の最後に記述します。  
   
  複数の型パラメーターがある場合には、型パラメーターごとに `where` 句を 1 つずつ使用します。次に例を示します。  
   
- [!code-cs[csrefKeywordsContextual#8](../../../csharp/language-reference/keywords/codesnippet/csharp/where-generic-type-const_3.cs)]  
+ [!code-cs[csrefKeywordsContextual#8](../../../csharp/language-reference/keywords/codesnippet/CSharp/where-generic-type-constraint_3.cs)]  
   
  次に示すように、ジェネリック メソッドの型パラメーターにも制約を適用できます。  
   

@@ -18,7 +18,7 @@ caps.handback.revision: 21
 # C# プログラムの一般構造 (C# プログラミング ガイド)
 C\# プログラムは、1 つ以上のファイルで構成できます。  各ファイルには、0 以上の名前空間を含めることができます。  名前空間には、他の名前空間に加えて、クラス、構造体、インターフェイス、列挙、デリゲートなどの型を含めることができます。  次に示すのは、これらの要素をすべて備えた C\# プログラムのスケルトンです。  
   
- [!code-cs[csProgGuide#34](../../../csharp/programming-guide/inside-a-program/codesnippet/csharp/csProgGuide/class2.cs#34)]  
+ [!code-cs[csProgGuide#34](../../../csharp/programming-guide/inside-a-program/codesnippet/CSharp/general-structure-of-a-csharp-program_1.cs)]  
   
 ## 関連項目  
  詳細情報  

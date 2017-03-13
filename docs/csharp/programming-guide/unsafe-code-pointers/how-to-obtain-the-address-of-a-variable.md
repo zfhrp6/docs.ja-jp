@@ -34,9 +34,9 @@ int* p = &number; //address-of operator &
 ## 使用例  
  次の例では、`int` へのポインター `p` を宣言し、整数の変数 `number` のアドレスを代入します。  \*p に代入することによって変数 `number` が初期化されます。  この代入ステートメントをコメントにすると、変数 `number` の初期化が削除されますが、コンパイル時のエラーは発行されません。  [メンバー アクセス](../../../csharp/programming-guide/unsafe-code-pointers/how-to-access-a-member-with-a-pointer.md)演算子 `->` を使用して、ポインターに格納されているアドレスを取得し、表示することに注意してください。  
   
- [!code-cs[csProgGuidePointers#7](../../../csharp/programming-guide/unsafe-code-pointers/codesnippet/csharp/Pointers/Pointers2.cs#7)]  
+ [!code-cs[csProgGuidePointers#7](../../../csharp/programming-guide/unsafe-code-pointers/codesnippet/CSharp/how-to-obtain-the-address-of-a-variable_1.cs)]  
   
- [!code-cs[csProgGuidePointers#8](../../../csharp/programming-guide/unsafe-code-pointers/codesnippet/csharp/Pointers/Pointers.cs#8)]  
+ [!code-cs[csProgGuidePointers#8](../../../csharp/programming-guide/unsafe-code-pointers/codesnippet/CSharp/how-to-obtain-the-address-of-a-variable_2.cs)]  
   
 ## 参照  
  [C\# プログラミング ガイド](../../../csharp/programming-guide/index.md)   

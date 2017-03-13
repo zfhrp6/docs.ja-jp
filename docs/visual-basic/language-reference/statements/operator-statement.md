@@ -176,7 +176,7 @@ End Operator
 ## 使用例  
  次のコード例は、`Operator` ステートメントを使用して、`And`、`Or`、`IsFalse`、および `IsTrue` の各演算子の演算子プロシージャを持つ構造体の外枠を定義します。  `And` および `Or` は、`abc` 型の 2 つのオペランドと `abc` 型の戻り値を持ちます。  `IsFalse` および `IsTrue` は、`abc` 型の単一オペランドを持ち、`Boolean` 型を返します。  このように定義すると、呼び出し元のコードは、`And`、`AndAlso`、`Or`、および `OrElse` を `abc` 型のオペランドと一緒に使用できます。  
   
- [!code-vb[VbVbalrStatements#44](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/operator-statement_1.vb)]  
+ [!code-vb[VbVbalrStatements#44](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/operator-statement_1.vb)]  
   
 ## 参照  
  [IsFalse Operator](../../../visual-basic/language-reference/operators/isfalse-operator.md)   

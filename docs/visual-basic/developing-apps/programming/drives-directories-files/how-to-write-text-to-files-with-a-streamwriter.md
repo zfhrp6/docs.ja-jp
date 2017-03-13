@@ -26,7 +26,7 @@ caps.handback.revision: 14
 この例では、`My.Computer.FileSystem.OpenTextFileWriter` メソッドを使用して <xref:System.IO.StreamWriter> オブジェクトを開き、<xref:System.IO.StreamWriter> クラスの <xref:System.IO.TextWriter.WriteLine%2A> メソッドを使用して、テキスト ファイルに文字列を書き込みます。  
   
 ## 使用例  
- [!code-vb[VbFileIOWrite#5](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/visualbasic/how-to-write-text-to-fil_0_1.vb)]  
+ [!code-vb[VbFileIOWrite#5](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/VisualBasic/how-to-write-text-to-files-with-a-streamwriter_1.vb)]  
   
 ## 信頼性の高いプログラミング  
  次の条件を満たす場合は、例外が発生する可能性があります。  

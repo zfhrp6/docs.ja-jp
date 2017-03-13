@@ -24,7 +24,7 @@ caps.handback.revision: 40
 ## クラスの宣言  
  クラスは、次の例に示すように、[class](../../../csharp/language-reference/keywords/class.md) キーワードを使用して宣言します。  
   
- [!code-cs[csProgGuideObjects#79](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/classes_1.cs)]  
+ [!code-cs[csProgGuideObjects#79](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/classes_1.cs)]  
   
  `class` キーワードは、アクセス レベルの後に配置します。  この例では、[public](../../../csharp/language-reference/keywords/public.md) が使用されているため、だれもがこのクラスからオブジェクトを作成できます。  `class` キーワードの後にクラス名を記述します。  定義の残りの部分がクラス本体で、そこで動作とデータを定義します。  クラスのフィールド、プロパティ、メソッド、およびイベントは*クラス メンバー*と総称されます。  
   
@@ -33,22 +33,22 @@ caps.handback.revision: 40
   
  オブジェクトを作成するには、次のように、[new](../../../csharp/language-reference/keywords/new.md) キーワードの後にオブジェクトの基になるクラスの名前を指定します。  
   
- [!code-cs[csProgGuideObjects#80](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/classes_2.cs)]  
+ [!code-cs[csProgGuideObjects#80](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/classes_2.cs)]  
   
  クラスのインスタンスを作成すると、そのオブジェクトへの参照が返されます。  前の例の `object1` は、`Customer` に基づくオブジェクトへの参照です。  この参照は、新しいオブジェクトを参照しますが、オブジェクト データ自体を含みません。  実際、オブジェクト参照は、オブジェクトを作成しなくても作成できます。次に例を示します。  
   
- [!code-cs[csProgGuideObjects#81](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/classes_3.cs)]  
+ [!code-cs[csProgGuideObjects#81](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/classes_3.cs)]  
   
  上のような、オブジェクトを参照しないオブジェクト参照を作成するのはお勧めできません。実行時にこのような参照を通じてオブジェクトへのアクセスを試みると失敗するからです。  ただし、新しいオブジェクトを作成するか、既存のオブジェクトに割り当てると、このような参照でオブジェクトを参照できるようになります。次に例を示します。  
   
- [!code-cs[csProgGuideObjects#82](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/classes_4.cs)]  
+ [!code-cs[csProgGuideObjects#82](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/classes_4.cs)]  
   
  上のコードでは、同じオブジェクトを共に参照する 2 つのオブジェクトが作成されます。  そのため、`object3` を通じて行われたオブジェクトの変更は、その後、`object4` を使用する際にも反映されます。  これは、クラスに基づくオブジェクトが参照によって参照されるからです。このためクラスは参照型と呼ばれています。  
   
 ## クラスの継承  
  継承は、*派生*を使用して行われます。派生とは、データと動作の継承元である*基本クラス*を使用してクラスを宣言することを意味します。  基本クラスは、派生クラス名の後に、コロンと基本クラス名を追加して指定します。次に例を示します。  
   
- [!code-cs[csProgGuideObjects#83](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/classes_5.cs)]  
+ [!code-cs[csProgGuideObjects#83](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/classes_5.cs)]  
   
  クラスで基本クラスを宣言している場合、基本クラスのすべてのメンバー \(コンストラクター以外\) が継承されます。  
   
@@ -62,7 +62,7 @@ caps.handback.revision: 40
  次の例では、フィールド、メソッド、およびコンストラクターという特殊なメソッドをそれぞれ 1 つずつ含むパブリック クラスを定義しています。  詳細については、「[コンストラクター](../../../csharp/programming-guide/classes-and-structs/constructors.md)」を参照してください。  このクラスは、`new` キーワードによってインスタンス化されています。  
   
 ## 使用例  
- [!code-cs[csProgGuideObjects#84](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/classes_6.cs)]  
+ [!code-cs[csProgGuideObjects#84](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/classes_6.cs)]  
   
 ## C\# 言語仕様  
  [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec-md.md)]  

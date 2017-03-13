@@ -59,7 +59,7 @@ object(index)
 ## 使用例  
  次の例では、拡張インデクサーを使用して、<xref:System.Xml.Linq.XElement> オブジェクトのコレクションの 2 番目の子ノードにアクセスする方法を示します。  コレクションには、子軸プロパティを使用してアクセスします。子軸プロパティは、`contact` オブジェクト内にある `phone` という名前のすべての子要素を取得します。  
   
- [!code-vb[VbXMLSamples#24](../../../visual-basic/language-reference/operators/codesnippet/visualbasic/extension-indexer-property_1.vb)]  
+ [!code-vb[VbXMLSamples#24](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/extension-indexer-property_1.vb)]  
   
  このコードは、次のテキストを表示します。  
   

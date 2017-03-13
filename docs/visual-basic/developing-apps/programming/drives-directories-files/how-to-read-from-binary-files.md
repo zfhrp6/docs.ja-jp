@@ -30,11 +30,11 @@ caps.handback.revision: 16
   
 -   `ReadAllBytes` メソッドを使用します。このメソッドは、ファイルの内容をバイト配列として返します。  この例では、`C:/Documents and Settings/selfportrait.jpg` ファイルを読み取ります。  
   
-     [!code-vb[VbVbcnMyFileSystem#78](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/visualbasic/how-to-read-from-binary-_1.vb)]  
+     [!code-vb[VbVbcnMyFileSystem#78](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/VisualBasic/how-to-read-from-binary-files_1.vb)]  
   
 -   サイズの大きいバイナリ ファイルの場合は、<xref:System.IO.FileStream> オブジェクトの <xref:System.IO.FileStream.Read%2A> メソッドを使用して、一度に指定の量だけをファイルから読み取ることができます。  その後、各読み取り操作でファイルからメモリに読み込まれる量を制限することができます。  次のコード例では、ファイルをコピーし、各読み取り操作でファイルからメモリに読み込まれる量を呼び出し元が指定できるようにします。  
   
-     [!code-vb[VbVbcnMyFileSystem#91](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/visualbasic/how-to-read-from-binary-_2.vb)]  
+     [!code-vb[VbVbcnMyFileSystem#91](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/VisualBasic/how-to-read-from-binary-files_2.vb)]  
   
 ## 信頼性の高いプログラミング  
  次の条件を満たす場合は、例外がスローされる可能性があります。  

@@ -26,7 +26,7 @@ caps.handback.revision: 28
 ## 使用例  
  次の例では、基になるデリゲート型として <xref:System.EventHandler> を使用するイベントを宣言し、発生させる方法について説明します。  完全なコード例については、「[方法 : .NET Framework ガイドラインに準拠したイベントを発行する](../../../csharp/programming-guide/events/how-to-publish-events-that-conform-to-net-framework-guidelines.md)」を参照してください。完全なコード例では、ジェネリック <xref:System.EventHandler%601> デリゲート型の使用方法、イベント サブスクリプションの実行方法、およびイベント ハンドラー メソッドの作成方法も確認できます。  
   
- [!code-cs[csrefKeywordsModifiers#7](../../../csharp/language-reference/keywords/codesnippet/csharp/csrefKeywordsModifiers/csrefKeywordsModifiers.cs#7)]  
+ [!code-cs[csrefKeywordsModifiers#7](../../../csharp/language-reference/keywords/codesnippet/CSharp/event_1.cs)]  
   
  イベントは、宣言元 \(パブリッシャー クラス\) のクラスまたは構造体内でしか呼び出せない特殊なマルチキャスト デリゲートです。  その他のクラスまたは構造体のイベントをサブスクライブすると、パブリッシャー クラスがイベントを発生させるときにイベント ハンドラー メソッドが呼び出されます。  詳細およびコード例については、「[イベント](../../../csharp/programming-guide/events/index.md)」および「[デリゲート](../../../csharp/programming-guide/delegates/index.md)」を参照してください。  
   

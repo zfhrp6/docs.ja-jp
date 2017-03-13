@@ -54,7 +54,7 @@ int i = 0;
 ## 使用例  
  次の例では、`struct` オブジェクトとクラス オブジェクトは、`new` 演算子で作成および初期化されてから、値が代入されます。  既定値と代入値が表示されます。  
   
- [!code-cs[csrefKeywordsOperator#7](../../../csharp/language-reference/keywords/codesnippet/csharp/csrefKeywordsOperator/csrefKeywordsOperators.cs#7)]  
+ [!code-cs[csrefKeywordsOperator#7](../../../csharp/language-reference/keywords/codesnippet/CSharp/new-operator_1.cs)]  
   
  この例では、文字列の既定値が `null` です。  このため、文字列の既定値は出力されません。  
   

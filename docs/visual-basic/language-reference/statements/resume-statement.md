@@ -63,7 +63,7 @@ Resume [ Next | line ]
 ## 使用例  
  この例では、`Resume` ステートメントを使用して、プロシージャ内のエラー処理を終了させ、エラーが発生したステートメントの実行を再開します。  `Resume` ステートメントの用途を示すために、エラー番号 55 を生成します。  
   
- [!code-vb[VbVbalrErrorHandling#16](../../../visual-basic/language-reference/statements/codesnippet/visualbasic/resume-statement_1.vb)]  
+ [!code-vb[VbVbalrErrorHandling#16](../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/resume-statement_1.vb)]  
   
 ## 必要条件  
  **名前空間**: [Microsoft.VisualBasic](../../../visual-basic/language-reference/runtime-library-members.md)  

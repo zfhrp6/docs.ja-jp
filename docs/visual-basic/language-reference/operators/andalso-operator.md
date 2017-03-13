@@ -66,14 +66,14 @@ result = expression1 AndAlso expression2
 ## 使用例  
  `AndAlso` 演算子を使って 2 つの式の論理積を求める例を次に示します。  結果は、結合された式全体が真かどうかを表すブール値です。  最初の式が `False` の場合、2 番目の式は評価されません。  
   
- [!code-vb[VbVbalrOperators#24](../../../visual-basic/language-reference/operators/codesnippet/visualbasic/andalso-operator_1.vb)]  
+ [!code-vb[VbVbalrOperators#24](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/andalso-operator_1.vb)]  
   
  前の例では、`True`、`False`、`False` の結果を順に生成します。  `secondCheck` の計算では、最初の式が `False` であるため、2 番目の式は評価されません。  しかし、`thirdCheck` の計算では、2 番目の式が評価されます。  
   
 ## 使用例  
  次の例では、配列の要素の中から指定された値を検索する `Function` プロシージャを示します。  配列が空の場合、また、配列の長さが限度を超えている場合、`While` ステートメントは配列の要素を検索値に対してテストしません。  
   
- [!code-vb[VbVbalrOperators#25](../../../visual-basic/language-reference/operators/codesnippet/visualbasic/andalso-operator_2.vb)]  
+ [!code-vb[VbVbalrOperators#25](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/andalso-operator_2.vb)]  
   
 ## 参照  
  [Logical\/Bitwise Operators](../../../visual-basic/language-reference/operators/logical-bitwise-operators.md)   

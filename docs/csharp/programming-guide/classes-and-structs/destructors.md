@@ -34,7 +34,7 @@ caps.handback.revision: 24
   
  次に示すのは、`Car` クラスに対するデストラクターの宣言の例です。  
   
- [!code-cs[csProgGuideObjects#86](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/destructors_1.cs)]  
+ [!code-cs[csProgGuideObjects#86](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/destructors_1.cs)]  
   
  デストラクターは、オブジェクトの基本クラスで <xref:System.Object.Finalize%2A> を暗黙的に呼び出します。  したがって、前のデストラクターのコードは、暗黙的に次のコードに解釈されます。  
   
@@ -78,7 +78,7 @@ protected override void Finalize()
 ## 使用例  
  次の例では、継承のチェインを形成する 3 つのクラスを作成します。  `First` が基本クラスであり、`Second` は `First` から派生し、`Third` は `Second` から派生しています。  3 つのクラスのいずれにもデストラクターがあります。  `Main()` では、最派生クラスのインスタンスが作成されます。  プログラムを実行すると、3 つのクラスのデストラクターが、最派生クラスから最低派生クラスの順に自動的に呼び出されます。  
   
- [!code-cs[csProgGuideObjects#85](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/destructors_2.cs)]  
+ [!code-cs[csProgGuideObjects#85](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/destructors_2.cs)]  
   
 ## C\# 言語仕様  
  [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec-md.md)]  

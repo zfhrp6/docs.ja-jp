@@ -91,12 +91,12 @@ Next
   
  反復子メソッドの戻り値の型は <xref:System.Collections.Generic.IEnumerable%601>の反復子のインターフェイス型です。  反復子のメソッドが呼び出されると、数値の累乗を含む列挙可能なオブジェクトを返します。  
   
- [!code-vb[VbVbalrStatements#98](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/yield-statement_1.vb)]  
+ [!code-vb[VbVbalrStatements#98](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/yield-statement_1.vb)]  
   
 ## 使用例  
  次の例は、反復子である `Get` のアクセサーを示します。  プロパティの申告は `Iterator` 修飾子が含まれます。  
   
- [!code-vb[VbVbalrStatements#99](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/yield-statement_2.vb)]  
+ [!code-vb[VbVbalrStatements#99](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/yield-statement_2.vb)]  
   
  その他の例については、「[反復子](../Topic/Iterators%20\(C%23%20and%20Visual%20Basic\).md)」を参照してください。  
   

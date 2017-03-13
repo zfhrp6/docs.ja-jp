@@ -49,7 +49,7 @@ caps.handback.revision: 21
   
      次の例では、最終行以外の末尾に行連結文字を指定して、1 つのステートメントを 4 行に分割しています。  
   
-     [!code-vb[VbVbcnConventions#20](../../../visual-basic/programming-guide/language-features/codesnippet/visualbasic/how-to-break-and-combine_1.vb)]  
+     [!code-vb[VbVbcnConventions#20](../../../visual-basic/programming-guide/language-features/codesnippet/VisualBasic/how-to-break-and-combine-statements-in-code_1.vb)]  
   
      行連結シーケンスを使用すると、オンラインの場合にも出力した場合にもコードが読みやすくなります。  
   
@@ -65,7 +65,7 @@ caps.handback.revision: 21
   
 -   次の例に示すように、ステートメントをコロン \(`:`\) で区切ります。  
   
-     [!code-vb[VbVbcnConventions#10](../../../visual-basic/programming-guide/language-features/codesnippet/visualbasic/how-to-break-and-combine_2.vb)]  
+     [!code-vb[VbVbcnConventions#10](../../../visual-basic/programming-guide/language-features/codesnippet/VisualBasic/how-to-break-and-combine-statements-in-code_2.vb)]  
   
 ## 参照  
  [プログラム構造とコード規則](../../../visual-basic/programming-guide/program-structure/program-structure-and-code-conventions.md)   

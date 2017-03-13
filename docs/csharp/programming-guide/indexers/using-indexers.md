@@ -56,7 +56,7 @@ public int this [int index]   // Indexer declaration
  `Console.Write` ステートメントなどでインデクサーのアクセスが評価されると、[get](../../../csharp/language-reference/keywords/get.md) アクセサーが呼び出されることに注意してください。  したがって、`get` アクセサーがない場合は、コンパイル エラーが発生します。  
   
 ### コード  
- [!code-cs[csProgGuideIndexers#1](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/using-indexers_1.cs)]  
+ [!code-cs[csProgGuideIndexers#1](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/using-indexers_1.cs)]  
   
 ## 他の値を使用したインデックス作成  
  C\# では、インデックスの型は整数に限定されません。  たとえば、文字列をインデクサーに使用することが有効なこともあります。  このようなインデクサーは、コレクション内の文字列を検索し、適切な値を返す場合に実装されることがあります。  アクセサーをオーバーロードできるため、文字列と整数のバージョンは共存できます。  
@@ -67,7 +67,7 @@ public int this [int index]   // Indexer declaration
  この例では、曜日を格納するクラスが宣言されています。  `get` アクセサーは、曜日の名前を示す文字列を取得すると、対応する整数を返すように宣言されています。  たとえば、Sunday の場合は 0、Monday の場合は 1 などの値を返します。  
   
 ### コード  
- [!code-cs[csProgGuideIndexers#2](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/using-indexers_2.cs)]  
+ [!code-cs[csProgGuideIndexers#2](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/using-indexers_2.cs)]  
   
 ## 信頼性の高いプログラミング  
  インデクサーのセキュリティと信頼性を改善するには、主に 2 つの方法があります。  

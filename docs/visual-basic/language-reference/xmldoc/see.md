@@ -42,7 +42,7 @@ caps.handback.revision: 10
 ## 使用例  
  この例では、`<see>` タグを `UpdateRecord` の解説セクションで使用して、`DoesRecordExist` メソッドを参照します。  
   
- [!code-vb[VbVbcnXmlDocComments#6](../../../visual-basic/language-reference/xmldoc/codesnippet/visualbasic/see_1.vb)]  
+ [!code-vb[VbVbcnXmlDocComments#6](../../../visual-basic/language-reference/xmldoc/codesnippet/VisualBasic/see_1.vb)]  
   
 ## 参照  
  [XML Comment Tags](../../../visual-basic/language-reference/xmldoc/recommended-xml-tags-for-documentation-comments.md)
