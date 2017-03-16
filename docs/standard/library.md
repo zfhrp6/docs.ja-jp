@@ -11,8 +11,9 @@ ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: c044882c-af15-45f2-96d1-534557a5ee9b
 translationtype: Human Translation
-ms.sourcegitcommit: eb98c703946d8be0757288ae9e00aab87b32e407
-ms.openlocfilehash: 939c6dd0621e3b1121aca52915b04bf51af1d1ef
+ms.sourcegitcommit: 519253bd6dc105afb138268c62347c29a6072fbb
+ms.openlocfilehash: f681b1663d1a2e6c2fbbd1cc415290d26bbbe429
+ms.lasthandoff: 03/07/2017
 
 ---
 
@@ -110,7 +111,7 @@ NuGet パッケージは&1; つまたは複数の[フレームワーク](framewo
 
 プロファイルベースの PCL の互換性は、[Microsoft.NETCore.Portable.Compatibility](https://www.nuget.org/packages/Microsoft.NETCore.Portable.Compatibility) NuGet パッケージで提供されています。 プロファイルベースの PCL を含む NuGet パッケージを参照するときに、この依存関係が必要です。
 
-`netstandard` としてパッケージされたプロファイルベースの PCL は、project.json に通常パッケージされるプロファイルベースの PCL より使いやすくなります。 `netstandard` パッケージは、既存のユーザーと互換性があります。
+`netstandard` としてパッケージされたプロファイルベースの PCL は、通常パッケージされるプロファイルベースの PCL より使いやすくなります。 `netstandard` パッケージは、既存のユーザーと互換性があります。
 
 標準 .NET と互換性がある PCL プロファイルのセットを確認できます。 
 
@@ -131,9 +132,4 @@ NuGet パッケージは&1; つまたは複数の[フレームワーク](framewo
 ## <a name="targeting-net-standard-library"></a>.NET Standard Library を対象とする
 
 `netstandard` フレームワークと NETStandard.Library メタパッケージの組み合わせを使用して、[.NET Standard Library をビルド](../core/tutorials/libraries.md)できます。 [.NET Core ツールを使用して .NET Standard Library を対象とする](../core/packages.md)例を参照できます。
-
-
-
-<!--HONumber=Feb17_HO3-->
-
 

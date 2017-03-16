@@ -11,14 +11,15 @@ ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: 155553e4-89a2-418d-be88-4e75f6c3cc69
 translationtype: Human Translation
-ms.sourcegitcommit: 572bec82e08d6b47a188e51964c8c2f440fa471c
-ms.openlocfilehash: e23514daacb34739b26b7a31afea2ccb30296e79
+ms.sourcegitcommit: 053e296db67b9dde23c4d6295dbc7246d2b486ed
+ms.openlocfilehash: 816fb524000eb96ed5a157934cabc51b90f11dc0
+ms.lasthandoff: 02/23/2017
 
 ---
 
 # <a name="choosing-between-net-core-and-net-framework-for-server-apps"></a>サーバー アプリ用 .NET Core と .NET Framework の選択
 
-.NET を使用してサーバー側のアプリケーションをビルドする場合に選択できるサポート対象ランタイムには、.NET Framework と .NET Core の 2 つがあります。 両方で同じ .NET プラットフォーム コンポーネントの多くが共有され、2 つの間でコードを共有することができます。 ただし、2 つには基本的な違いがあり、どちらを選択するかは実行内容によって決まります。  この記事では、それぞれを使用するタイミングに関するガイダンスを提供します。
+.NET を使用してサーバー側のアプリケーションをビルドする場合に選択できるサポート対象ランタイムには、.NET Framework と .NET Core の&2; つがあります。 両方で同じ .NET プラットフォーム コンポーネントの多くが共有され、2 つの間でコードを共有することができます。 ただし、2 つには基本的な違いがあり、どちらを選択するかは実行内容によって決まります。  この記事では、それぞれを使用するタイミングに関するガイダンスを提供します。
 
 次のような場合、サーバー アプリケーションには .NET Core を使用する必要があります。
 
@@ -53,7 +54,7 @@ ms.openlocfilehash: e23514daacb34739b26b7a31afea2ccb30296e79
 
 ### <a name="containers"></a>コンテナー
 
-一般的に、コンテナーはマイクロサービス アーキテクチャと併用されますが、アーキテクチャ パターンに従う Web アプリやサービスをコンテナー化するために使用することもできます。 Windows コンテナーで .NET Framework を使用できますが、モジュール性があり、軽量な .NET Core はコンテナーには最適です。  コンテナーを作成して展開する場合、そのイメージのサイズは .NET Framework より .NET Core の方がはるかに小さくなります。  また、クロスプラットフォームであるため、Linux Docker コンテナーなどにサーバー アプリを展開することができます。
+一般的に、コンテナーはマイクロサービス アーキテクチャと併用されますが、アーキテクチャ パターンに従う Web アプリやサービスをコンテナー化するために使用することもできます。 Windows コンテナーで .NET Framework を使用できますが、モジュール性があり、軽量な .NET Core はコンテナーには最適です。 コンテナーを作成して展開する場合、そのイメージのサイズは .NET Framework より .NET Core の方がはるかに小さくなります。 また、クロスプラットフォームであるため、Linux Docker コンテナーなどにサーバー アプリを展開することができます。
 
 したがって、独自の Linux または Windows インフラストラクチャで Docker コンテナーをホストしたり、クラスターでコンテナー ベースのアプリケーションを管理、オーケストレーションおよびスケーリングできる [Azure Container Service](https://azure.microsoft.com/services/container-service/) などのクラウド サービスを使用したりすることができます。
 
@@ -107,9 +108,4 @@ Microsoft やサードパーティ製のプラットフォームの中には、.
 * [.NET Framework から .NET Core への移植](../core/porting/index.md)
 * [Docker 上の .NET Framework のガイド](../framework/index.md)
 * [.NET コンポーネントの概要](components.md)
-
-
-
-<!--HONumber=Jan17_HO3-->
-
 
