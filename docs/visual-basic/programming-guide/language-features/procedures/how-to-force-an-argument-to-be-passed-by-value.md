@@ -1,74 +1,90 @@
 ---
-title: "How to: Force an Argument to Be Passed by Value (Visual Basic) | Microsoft Docs"
-ms.custom: ""
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "procedures, arguments"
-  - "procedures, parameters"
-  - "procedure arguments"
-  - "Visual Basic code, procedures"
-  - "arguments [Visual Basic], ByVal"
-  - "arguments [Visual Basic], passing by value"
-  - "procedure parameters"
-  - "procedures, calling"
-  - "arguments [Visual Basic], in parentheses"
-  - "procedure arguments, in parentheses"
-  - "arguments [Visual Basic], changing value"
+title: "方法: 引数 (Visual Basic) を値渡しを強制する |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 2015-07-20
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-visual-basic
+ms.topic: article
+dev_langs:
+- VB
+helpviewer_keywords:
+- procedures, arguments
+- procedures, parameters
+- procedure arguments
+- Visual Basic code, procedures
+- arguments [Visual Basic], ByVal
+- arguments [Visual Basic], passing by value
+- procedure parameters
+- procedures, calling
+- arguments [Visual Basic], in parentheses
+- procedure arguments, in parentheses
+- arguments [Visual Basic], changing value
 ms.assetid: 77b4f2d2-1055-4c2f-a521-874d1db86946
 caps.latest.revision: 16
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 16
----
-# How to: Force an Argument to Be Passed by Value (Visual Basic)
-[!INCLUDE[vs2017banner](../../../../visual-basic/developing-apps/includes/vs2017banner.md)]
+author: stevehoag
+ms.author: shoag
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: eea3466534f1797170ae4bc72afbcba899929911
+ms.lasthandoff: 03/13/2017
 
-引数を渡す方法は、プロシージャの宣言によって決まります。  パラメーターが [ByRef](../../../../visual-basic/language-reference/modifiers/byref.md) で宣言されている場合、[!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] は対応する引数が参照渡しで渡されると予測します。  この場合、プロシージャは呼び出し元のコードにある引数の基のプログラミング要素の値を変更できます。  基の要素をこの方法で変更しないように保護する場合は、プロシージャの呼び出し時に引数名をかっこで囲むことによって、`ByRef` の引数渡しの方法をオーバーライドします。  このかっこは、呼び出し時に引数リストを囲むかっこに追加して記述します。  
+---
+# <a name="how-to-force-an-argument-to-be-passed-by-value-visual-basic"></a>方法: 引数の値渡しを強制する (Visual Basic)
+プロシージャの宣言では、引き渡し方法を決定します。 パラメーターが宣言されている場合[ByRef](../../../../visual-basic/language-reference/modifiers/byref.md)、[!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]参照によって、対応する引数を渡すが必要です。 これにより、呼び出し元のコードで引数を基になるプログラミングの要素の値を変更する手順です。 このような変更を基になる要素を保護する場合をオーバーライドできます、`ByRef`引き渡し方法の手順で呼び出す引数の名前をかっこで囲みます。 このかっこは、呼び出しで引数リストを囲むかっこに追加します。  
   
- 呼び出し元のコードで [ByVal](../../../../visual-basic/language-reference/modifiers/byval.md) の引数渡しの方法をオーバーライドすることはできません。  
+ 呼び出し元のコードを上書きできません、 [ByVal](../../../../visual-basic/language-reference/modifiers/byval.md)メカニズムです。  
   
-### 引数の値渡しを強制するには  
+### <a name="to-force-an-argument-to-be-passed-by-value"></a>引数の値渡しを強制するには  
   
--   プロシージャ内で対応するパラメーターが `ByVal` として宣言されている場合は、それ以上何もする必要はありません。  [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] は、引数が値渡しで渡されることを既に予期しています。  
+-   対応するパラメーターが宣言されている場合`ByVal`の手順では、追加の手順を実行する必要はありません。 [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]既に、引数の値渡しを期待しています。  
   
--   プロシージャ内で対応するパラメーターが `ByRef` で宣言されている場合は、プロシージャの呼び出し時に引数をかっこで囲みます。  
+-   対応するパラメーターが宣言されている場合`ByRef`の手順でプロシージャの呼び出しにかっこで囲まれた引数を囲みます。  
   
-## 使用例  
- `ByRef` のパラメーター宣言をオーバーライドする例を次に示します。  `ByVal` を強制している呼び出しの部分で、かっこが二重に記述されている点に注意してください。  
+## <a name="example"></a>例  
+ 次の例では、オーバーライド、`ByRef`パラメーター宣言します。 強制的の呼び出しで`ByVal`かっこの&2; つのレベルに注意してください。  
   
- [!code-vb[VbVbcnProcedures#39](./codesnippet/VisualBasic/how-to-force-an-argument-to-be-passed-by-value_1.vb)]  
+ [!code-vb[VbVbcnProcedures&#39;](./codesnippet/VisualBasic/how-to-force-an-argument-to-be-passed-by-value_1.vb)]  
   
- [!code-vb[VbVbcnProcedures#40](./codesnippet/VisualBasic/how-to-force-an-argument-to-be-passed-by-value_2.vb)]  
+ [!code-vb[VbVbcnProcedures #&40;](./codesnippet/VisualBasic/how-to-force-an-argument-to-be-passed-by-value_2.vb)]  
   
- 引数リストの内部で `str` が二重のかっこに囲まれると、`setNewString` プロシージャは呼び出し元のコードにあるその値を変更できず、`MsgBox` に "Cannot be replaced if passed ByVal" と表示します。  `str` が二重のかっこで囲まれなければ、プロシージャは値を変更でき、`MsgBox` には "This is a new value for the inString argument" と表示されます。  
+ `str`引数リスト内で余分なかっこで囲まれた、`setNewString`プロシージャが呼び出し元のコードにはその値を変更できませんと`MsgBox`ByVal が渡された場合は、「を置き換えることはできません」が表示されます。 `str`囲まれていない余分なかっこで囲まれた、プロシージャを変更できますが、および`MsgBox`「inString 引数の新しい値はこれです。」が表示されます。  
   
-## コードのコンパイル  
- 参照渡しで変数を渡すときには、`ByRef` キーワードを使って明示的に指定する必要があります。  
+## <a name="compiling-the-code"></a>コードのコンパイル  
+ 参照渡しで変数を渡す場合は、使用、`ByRef`キーワードを明示的に指定します。  
   
- [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] の既定の設定では、値渡しで引数が渡されます。  ただし、パラメーターを宣言するときには、[ByVal](../../../../visual-basic/language-reference/modifiers/byval.md) または [ByRef](../../../../visual-basic/language-reference/modifiers/byref.md) のどちらかのキーワードを常に含めるようにすることをお勧めします。  これによって、コードが読みやすくなります。  
+ 既定で[!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]は引数の値渡しします。 いずれかを指定することをお勧めします[ByVal](../../../../visual-basic/language-reference/modifiers/byval.md)または[ByRef](../../../../visual-basic/language-reference/modifiers/byref.md)キーワード パラメーターを宣言します。 これは、コードを読みやすくするためです。  
   
-## 信頼性の高いプログラミング  
- プロシージャにパラメーターが [ByRef](../../../../visual-basic/language-reference/modifiers/byref.md) で宣言されている場合、そのコードを正しく実行できるかどうかは、呼び出し元のコードにある基の要素を変更できるかどうかに左右されます。  呼び出し元のコードで引数をかっこで囲むことによって、この引数渡しの方法がオーバーライドされた場合、または変更不可能な引数が渡された場合は、プロシージャから基の要素を変更できません。  これによって、呼び出し元のコードで予期しない結果になる場合があります。  
+## <a name="robust-programming"></a>信頼性の高いプログラミング  
+ プロシージャ パラメーターを宣言する場合は、 [ByRef](../../../../visual-basic/language-reference/modifiers/byref.md)コードの適切な実行は呼び出し元のコードの基になる要素に変更できることを依存している可能性があります。 呼び出し元のコードは、引数をかっこで囲んででこの呼び出し元のメカニズムをオーバーライドする場合、または変更できない引数を渡す場合は、プロシージャは、基になる要素を変更できません。 これは、呼び出し元のコードで予期しない結果となる可能性があります。  
   
-## .NET Framework セキュリティ  
- 呼び出し元のコードにある引数の基の値をプロシージャから変更できるようにすると、必ず危険が伴います。  変更すべき値が変更されていることを確認し、検証用のコードを作成して値を使用する前にチェックしてください。  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 呼び出し元のコードで引数を基になる値を変更する手順を可能にすることは潜在的なリスクは常にします。 この値を変更し、使用する前に有効性を確認する準備を期待することを確認します。  
   
-## 参照  
- [Procedures](../../../../visual-basic/programming-guide/language-features/procedures/index.md)   
- [Procedure Parameters and Arguments](../../../../visual-basic/programming-guide/language-features/procedures/procedure-parameters-and-arguments.md)   
- [How to: Pass Arguments to a Procedure](../../../../visual-basic/programming-guide/language-features/procedures/how-to-pass-arguments-to-a-procedure.md)   
- [Passing Arguments by Value and by Reference](../../../../visual-basic/programming-guide/language-features/procedures/passing-arguments-by-value-and-by-reference.md)   
- [Differences Between Modifiable and Nonmodifiable Arguments](../../../../visual-basic/programming-guide/language-features/procedures/differences-between-modifiable-and-nonmodifiable-arguments.md)   
- [Differences Between Passing an Argument By Value and By Reference](../../../../visual-basic/programming-guide/language-features/procedures/differences-between-passing-an-argument-by-value-and-by-reference.md)   
- [How to: Change the Value of a Procedure Argument](../../../../visual-basic/programming-guide/language-features/procedures/how-to-change-the-value-of-a-procedure-argument.md)   
- [How to: Protect a Procedure Argument Against Value Changes](../../../../visual-basic/programming-guide/language-features/procedures/how-to-protect-a-procedure-argument-against-value-changes.md)   
- [Passing Arguments by Position and by Name](../../../../visual-basic/programming-guide/language-features/procedures/passing-arguments-by-position-and-by-name.md)   
- [Value Types and Reference Types](../../../../visual-basic/programming-guide/language-features/data-types/value-types-and-reference-types.md)
+## <a name="see-also"></a>関連項目  
+ [手順](./index.md)   
+ [プロシージャのパラメーターと引数](./procedure-parameters-and-arguments.md)   
+ [方法: プロシージャに引数を渡す](./how-to-pass-arguments-to-a-procedure.md)   
+ [値渡しと参照による引数渡し](./passing-arguments-by-value-and-by-reference.md)   
+ [引数と変更できない引数の違い](./differences-between-modifiable-and-nonmodifiable-arguments.md)   
+ [値と参照渡しの引数を渡しの違い](./differences-between-passing-an-argument-by-value-and-by-reference.md)   
+ [方法: プロシージャ引数の値を変更します。](./how-to-change-the-value-of-a-procedure-argument.md)   
+ [方法: プロシージャ引数の値は変更しないように](./how-to-protect-a-procedure-argument-against-value-changes.md)   
+ [位置と名前による引数渡し](./passing-arguments-by-position-and-by-name.md)   
+ [値型と参照型](../../../../visual-basic/programming-guide/language-features/data-types/value-types-and-reference-types.md)

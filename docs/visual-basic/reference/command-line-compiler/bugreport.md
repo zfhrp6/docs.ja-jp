@@ -1,77 +1,92 @@
 ---
-title: "/bugreport | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "-bugreport compiler option [Visual Basic]"
-  - "bugreport compiler option [Visual Basic]"
-  - "/bugreport compiler option [Visual Basic]"
+title: "/bugreport |Microsoft ドキュメント"
+ms.date: 2015-07-20
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-visual-basic
+ms.topic: article
+dev_langs:
+- VB
+helpviewer_keywords:
+- -bugreport compiler option [Visual Basic]
+- bugreport compiler option [Visual Basic]
+- /bugreport compiler option [Visual Basic]
 ms.assetid: e4325406-8dbd-4b48-b311-9ee0799e48bb
 caps.latest.revision: 22
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 22
----
-# /bugreport
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
+author: stevehoag
+ms.author: shoag
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: 9c64ec49d7e6842edbc0fed7407a34132a8f5a88
+ms.lasthandoff: 03/13/2017
 
-バグ レポートの提出時に使用するファイルを作成します。  
+---
+# <a name="bugreport"></a>/bugreport
+バグのレポートをファイルするときに使用できるファイルを作成します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 /bugreport:file  
 ```  
   
-## 引数  
+## <a name="arguments"></a>引数  
   
-|||  
-|-|-|  
-|語句|定義|  
-|`file`|必ず指定します。  バグ レポートを作成するファイルの名前。  ファイル名に空白が含まれている場合は、二重引用符 \(" "\) で囲みます。|  
+|用語|定義|  
+|---|---|  
+|`file`|必須です。 バグのレポートを格納するファイルの名前。 ファイル名を引用符で囲みます ("") 名前にスペースが含まれている場合。|  
   
-## 解説  
- `file` には次の情報が追加されます。  
+## <a name="remarks"></a>コメント  
+ 次の情報が追加`file`:  
   
--   コンパイル時のすべてのソース コード ファイルのコピー。  
+-   コンパイルですべてのソース コード ファイルのコピー。  
   
--   コンパイルで使用されたコンパイラ オプションの一覧。  
+-   コンパイル時に使用するコンパイラ オプションの一覧。  
   
 -   コンパイラ、共通言語ランタイム、およびオペレーティング システムのバージョン情報。  
   
--   コンパイラの出力 \(指定されている場合\)。  
+-   コンパイラが存在する場合に出力します。  
   
--   問題の説明。プロンプトが表示されます。  
+-   対象が表示されたら、問題の説明です。  
   
--   問題の修正方法の説明。プロンプトが表示されます。  
+-   表示されたらどの問題を考えるの説明を修正する必要があります。  
   
- すべてのソース コード ファイルのコピーが `file` に収められるため、問題があると思われるコードをできるだけ小さなプログラムとして再生成できます。  
+ すべてのソース コード ファイルのコピーが含まれているため`file`、できるだけ小さなプログラムに思われるコード障害を再現することもできます。  
   
 > [!IMPORTANT]
->  `/bugreport` オプションにより、機密性の高い情報を格納するファイルが作成されます。  これには、現在時刻、コンパイラのバージョン、[!INCLUDE[dnprdnshort](../../../csharp/getting-started/includes/dnprdnshort-md.md)] のバージョン、オペレーティング システムのバージョン、ユーザー名、コンパイラを起動したコマンド ライン引数、すべてのソース コード、参照されるアセンブリのバイナリ形式が含まれます。  このオプションを設定するには、[!INCLUDE[vstecasp](../../../csharp/language-reference/preprocessor-directives/includes/vstecasp-md.md)] アプリケーションのサーバー側のコンパイルに使用する web.config ファイル内のコマンド ライン オプションを指定します。  これを回避するには、Machine.config ファイルを変更して、ユーザーがサーバーでコンパイルすることを許可しないようにします。  
+>  `/bugreport`オプションには、重要な情報を含むファイルが生成されます。 これにより、現在の時刻、コンパイラのバージョンが含まれます。[!INCLUDE[dnprdnshort](../../../csharp/getting-started/includes/dnprdnshort_md.md)]バージョン、オペレーティング システムのバージョン、ユーザー名、コマンドライン引数をコンパイラが実行されて、すべてのソース コードと参照アセンブリのいずれかのバイナリ形式です。 このオプションは、Web.config ファイルのサーバー側のコンパイルでのコマンド ライン オプションを指定することでアクセスできる、[!INCLUDE[vstecasp](../../../csharp/language-reference/preprocessor-directives/includes/vstecasp_md.md)]アプリケーションです。 これを防ぐためには、ユーザーが、サーバーでのコンパイルが行われないよう、Machine.config ファイルを変更します。  
   
- このオプションを `/errorreport:prompt`、`/errorreport:queue`、または `/errorreport:send` と組み合わせて使用しているときに、アプリケーションで内部コンパイラ エラーが発生すると、`file` 内の情報がマイクロソフトに送信されます。  マイクロソフトのエンジニアは、この情報を基にエラーの原因を特定し、[!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] の次のリリースの改善に役立てます。  既定では、マイクロソフトに情報は送信されません。  ただし、`/errorreport:queue` を使用してアプリケーションをコンパイルする \(既定で有効になっています\) ときに、このアプリケーションはエラー レポートを収集します。  そして、コンピューターの管理者がログインすると、エラー レポート システムが、ログオン以降に発生したエラー レポートをマイクロソフトに送信できるポップアップ ウィンドウを表示します。  
+ このオプションを使用する場合`/errorreport:prompt`、 `/errorreport:queue`、または`/errorreport:send`、アプリケーションでの情報は、内部コンパイラ エラーが発生して`file`はマイクロソフトに送信します。 その情報がマイクロソフトのエンジニアが、エラーの原因の特定に役立つし、の次回のリリースを向上させるための[!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]です。 既定では、マイクロソフトに情報は送信されません。 ただしを使用してアプリケーションをコンパイルするときに`/errorreport:queue`、既定で有効にする、アプリケーションがエラー レポートを収集します。 次に、コンピューターの管理者がログインすると、エラー レポート システム管理者がログオン以降に発生したすべてのエラー レポートをマイクロソフトに転送できるようにするポップアップ ウィンドウが表示されます。  
   
 > [!NOTE]
->  `/bugreport` オプションは Visual Studio の開発環境内からは利用できません。このオプションを利用できるのは、コマンド ラインからコンパイルするときだけです。  
+>  `/bugreport`オプションは、Visual Studio 開発環境内から使用できません。 は、コマンドラインからコンパイルする場合のみです。  
   
-## 使用例  
- `T2.vb` をコンパイルし、すべてのバグ レポート情報を `Problem.txt` ファイルに出力する場合のコード例です。  
+## <a name="example"></a>例  
+ 次の例をコンパイル`T2.vb`ファイルにすべてのバグのレポートの情報を格納`Problem.txt`します。  
   
 ```  
 vbc /bugreport:problem.txt t2.vb  
 ```  
   
-## 参照  
- [Visual Basic Command\-Line Compiler](../../../visual-basic/reference/command-line-compiler/index.md)   
- [\/debug](../../../visual-basic/reference/command-line-compiler/debug.md)   
- [\/errorreport](../../../visual-basic/reference/command-line-compiler/errorreport.md)   
- [コンパイル コマンド ラインのサンプル](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)   
- [securityPolicy の trustLevel 要素 \(ASP.NET 設定スキーマ\)](http://msdn.microsoft.com/ja-jp/729ab04c-03da-4ee5-86b1-be9d08a09369)
+## <a name="see-also"></a>関連項目  
+ [Visual Basic のコマンド ライン コンパイラ](../../../visual-basic/reference/command-line-compiler/index.md)   
+ [/debug (Visual Basic)](../../../visual-basic/reference/command-line-compiler/debug.md)   
+ [/errorreport](../../../visual-basic/reference/command-line-compiler/errorreport.md)   
+ [コンパイル コマンドラインのサンプル](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)   
+ [(ASP.NET 設定スキーマ) securityPolicy の trustLevel 要素](http://msdn.microsoft.com/en-us/729ab04c-03da-4ee5-86b1-be9d08a09369)

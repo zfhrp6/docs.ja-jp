@@ -1,89 +1,105 @@
 ---
-title: "Customizing Which Objects are Available in My (Visual Basic) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "My namespace, customizing"
-  - "My namespace"
+title: "(Visual Basic) で利用可能なオブジェクトのカスタマイズ |Microsoft ドキュメント"
+ms.date: 2015-07-20
+ms.prod: .net
+ms.technology:
+- devlang-visual-basic
+ms.topic: article
+dev_langs:
+- VB
+helpviewer_keywords:
+- My namespace, customizing
+- My namespace
 ms.assetid: 4e8279c2-ed5b-4681-8903-8a6671874000
 caps.latest.revision: 12
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 12
----
-# Customizing Which Objects are Available in My (Visual Basic)
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
+author: stevehoag
+ms.author: shoag
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: 6791398270e4348adf356eb36a385bfbefde873c
+ms.lasthandoff: 03/13/2017
 
-このトピックでは、プロジェクトの `_MYTYPE` 条件付きコンパイル定数を設定することによって、有効にする `My` オブジェクトを制御する方法を説明します。  [!INCLUDE[vsprvs](../../../csharp/includes/vsprvs-md.md)] 統合開発環境 \(IDE: Integrated Development Environment\) では、プロジェクトの `_MYTYPE` 条件付きコンパイル定数とプロジェクトの種類が対応付けられています。  
+---
+# <a name="customizing-which-objects-are-available-in-my-visual-basic"></a>My で利用可能なオブジェクトのカスタマイズ (Visual Basic)
+このトピックでは、これを制御する方法について説明`My`するには、プロジェクトのオブジェクトが有効になっている`_MYTYPE`条件付きコンパイル定数です。 [!INCLUDE[vsprvs](../../../csharp/includes/vsprvs_md.md)]統合開発環境 (IDE) の維持、`_MYTYPE`プロジェクト、プロジェクトの種類との同期の条件付きコンパイル定数です。  
   
-## 定義済みの \_MYTYPE 値  
- `_MYTYPE` 条件付きコンパイル定数を設定するには、`/define` コンパイラ オプションを使用する必要があります。  `_MYTYPE` 定数に独自の値を指定するときには、円記号と引用符のシーケンス \(\\"\) で文字列値を囲む必要があります。  たとえば、次のように指定します。  
+## <a name="predefined-mytype-values"></a>定義済み _MYTYPE 値  
+ 使用する必要があります、`/define`コンパイラ オプションを設定する、`_MYTYPE`条件付きコンパイル定数です。 値を指定するときに、`_MYTYPE`一定で囲む必要があります文字列値にバック スラッシュ/引用符 (\\") のシーケンス。 たとえば、次のように使用する可能性があります。  
   
 ```  
 /define:_MYTYPE=\"WindowsForms\"  
 ```  
   
- 次の表は、いくつかのプロジェクトの種類に対して設定されている `_MYTYPE` 条件付きコンパイル定数です。  
+ 次の表はどのような`_MYTYPE`いくつかのプロジェクトの種類には、条件付きコンパイル定数に設定します。  
   
-|プロジェクトの種類|\_MYTYPE 値|  
-|---------------|----------------|  
+|プロジェクトの種類|_MYTYPE 値|  
+|------------------|--------------------|  
 |クラス ライブラリ|"Windows"|  
-|コンソール アプリケーション|"Console"|  
+|コンソール アプリケーション|「コンソール」|  
 |Web|"Web"|  
 |Web コントロール ライブラリ|"WebControl"|  
 |Windows アプリケーション|"WindowsForms"|  
-|カスタムの `Sub Main` で開始される Windows アプリケーション|"WindowsFormsWithCustomSubMain"|  
+|定義したカスタムの開始時に、Windows アプリケーション`Sub Main`|"WindowsFormsWithCustomSubMain"|  
 |Windows コントロール ライブラリ|"Windows"|  
-|Windows サービス|"Console"|  
-|空|"Empty"|  
+|Windows サービス|「コンソール」|  
+|Empty|"Empty"|  
   
 > [!NOTE]
->  条件付きコンパイル文字列の比較では、`Option Compare` ステートメントの設定にかかわらず、大文字と小文字は常に区別されます。  
+>  すべての条件付きコンパイルの文字列比較は関係なく、大文字小文字が区別`Option Compare`ステートメントを設定します。  
   
-## 値に応じて決まる \_MY 系コンパイル定数  
- 一方、`_MYTYPE` 条件付きコンパイル定数の値に応じて、他のいくつかの `_MY` 系コンパイル定数の値が、次のように決まります。  
+## <a name="dependent-my-compilation-constants"></a>_MY コンパイル定数  
+ `_MYTYPE`条件付きコンパイル定数は、その他のいくつかの値をさらに制御`_MY`コンパイル定数。  
   
-|\_MYTYPE|\_MYAPPLICATIONTYPE|\_MYCOMPUTERTYPE|\_MYFORMS|\_MYUSERTYPE|\_MYWEBSERVICES|  
+|_MYTYPE|_MYAPPLICATIONTYPE|_MYCOMPUTERTYPE|_MYFORMS|_MYUSERTYPE|_MYWEBSERVICES|  
 |--------------|-------------------------|----------------------|---------------|------------------|---------------------|  
-|"Console"|"Console"|"Windows"|未定義|"Windows"|TRUE|  
+|「コンソール」|「コンソール」|"Windows"|未定義|"Windows"|TRUE|  
 |"Custom"|未定義|未定義|未定義|未定義|未定義|  
 |"Empty"|未定義|未定義|未定義|未定義|未定義|  
 |"Web"|未定義|"Web"|FALSE|"Web"|FALSE|  
 |"WebControl"|未定義|"Web"|FALSE|"Web"|TRUE|  
-|"Windows" または ""|"Windows"|"Windows"|未定義|"Windows"|TRUE|  
+|"Windows"または""|"Windows"|"Windows"|未定義|"Windows"|TRUE|  
 |"WindowsForms"|"WindowsForms"|"Windows"|TRUE|"Windows"|TRUE|  
-|"WindowsFormsWithCustomSubMain"|"Console"|"Windows"|TRUE|"Windows"|TRUE|  
+|"WindowsFormsWithCustomSubMain"|「コンソール」|"Windows"|TRUE|"Windows"|TRUE|  
   
- 既定では、未定義の条件付きコンパイル定数は `FALSE` に解決されます。  プロジェクトをコンパイルするときに、既定の動作をオーバーライドするように未定義の定数の値を指定できます。  
+ 既定では、未定義の条件付きコンパイル定数を解決する`FALSE`です。 既定の動作をオーバーライドするようにプロジェクトをコンパイルするときに、未定義の定数の値を指定できます。  
   
 > [!NOTE]
->  `_MYTYPE` を "Custom" に設定すると、プロジェクトに `My` 名前空間が含まれますが、オブジェクトは含まれません。  一方、`_MYTYPE` を "Empty" に設定すると、`My` 名前空間とそのオブジェクトのいずれも含まれません。  
+>  `_MYTYPE`設定されているプロジェクトに含まれる"Custom"に、`My`名前空間が含まれていないオブジェクトにはです。 ただし、設定`_MYTYPE`に「空の」コンパイラが追加できないように、`My`名前空間とそのオブジェクト。  
   
- 次の表は、定義済みの `_MY` 系コンパイル定数の値の効果の説明です。  
+ このテーブルの定義済みの値の効果の説明、`_MY`コンパイル定数です。  
   
 |定数|説明|  
-|--------|--------|  
-|`_MYAPPLICATIONTYPE`|定数が "Console"、"Windows"、または "WindowsForms" の場合、`My.Application` が有効になります。<br /><br /> -   "Console" バージョンは <xref:Microsoft.VisualBasic.ApplicationServices.ConsoleApplicationBase> から派生され、  メンバーは "Windows" バージョンより少なくなります。<br />-   "Windows" バージョンは <xref:Microsoft.VisualBasic.ApplicationServices.ApplicationBase> から派生され、メンバーは "WindowsForms" バージョンより少なくなります。<br />-   `My.Application` の "WindowsForms" バージョンは <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase> から派生されます。  `TARGET` 定数が "winexe" と定義されている場合、クラスには `Sub Main` メソッドが含まれます。|  
-|`_MYCOMPUTERTYPE`|定数が "Web" または "Windows" の場合、`My.Computer` が有効になります。<br /><br /> -   "Web" バージョンは <xref:Microsoft.VisualBasic.Devices.ServerComputer> から派生され、メンバーは "Windows" バージョンより少なくなります。<br />-   `My.Computer` の "Windows" バージョンは <xref:Microsoft.VisualBasic.Devices.Computer> から派生されます。|  
-|`_MYFORMS`|定数が `TRUE` の場合、`My.Forms` が有効になります。|  
-|`_MYUSERTYPE`|定数が "Web" または "Windows" の場合、`My.User` が有効になります。<br /><br /> -   `My.User` の "Web" バージョンは、現在の HTTP 要求のユーザー ID と関連付けられています。<br />-   `My.User` の "Windows" バージョンは、スレッドの現在のプリンシパルと関連付けられています。|  
-|`_MYWEBSERVICES`|定数が `TRUE` の場合、`My.WebServices` が有効になります。|  
-|`_MYTYPE`|定数が "Web" の場合、`My.Log`、`My.Request`、および `My.Response` が有効になります。|  
+|--------------|-------------|  
+|`_MYAPPLICATIONTYPE`|により、`My.Application`定数は、「コンソールで、」Windows"または"WindowsForms"。<br /><br /> -「コンソール」のバージョンが<xref:Microsoft.VisualBasic.ApplicationServices.ConsoleApplicationBase>。</xref:Microsoft.VisualBasic.ApplicationServices.ConsoleApplicationBase>から派生します。 "Windows"バージョンよりも少ないメンバーです。<br />派生して"Windows"バージョン<xref:Microsoft.VisualBasic.ApplicationServices.ApplicationBase>そして"WindowsForms"バージョンよりも少ないメンバーを持つ</xref:Microsoft.VisualBasic.ApplicationServices.ApplicationBase>。<br />-"WindowsForms"バージョンの`My.Application` <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase>.</xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase>から派生 場合、`TARGET`する「ため」定数が定義し、このクラスは、`Sub Main`メソッドです。|  
+|`_MYCOMPUTERTYPE`|により、`My.Computer`定数が"Web"または"Windows"の場合。<br /><br /> -派生した"Web"バージョン<xref:Microsoft.VisualBasic.Devices.ServerComputer>、"Windows"バージョンよりも少ないメンバーを持つとします</xref:Microsoft.VisualBasic.Devices.ServerComputer>。<br />-の"Windows"バージョン`My.Computer` <xref:Microsoft.VisualBasic.Devices.Computer>.</xref:Microsoft.VisualBasic.Devices.Computer>から派生|  
+|`_MYFORMS`|により、`My.Forms`定数の場合、`TRUE`です。|  
+|`_MYUSERTYPE`|により、`My.User`定数が"Web"または"Windows"の場合。<br /><br /> -の"Web"バージョン`My.User`現在の HTTP 要求のユーザー id に関連付けられています。<br />-の"Windows"バージョン`My.User`スレッドの現在のプリンシパルに関連付けられています。|  
+|`_MYWEBSERVICES`|により、`My.WebServices`定数の場合、`TRUE`です。|  
+|`_MYTYPE`|により、 `My.Log`、 `My.Request`、および`My.Response`定数は、"Web"場合は、です。|  
   
-## 参照  
- <xref:Microsoft.VisualBasic.ApplicationServices.ApplicationBase>   
- <xref:Microsoft.VisualBasic.Devices.Computer>   
- <xref:Microsoft.VisualBasic.Logging.Log>   
- <xref:Microsoft.VisualBasic.ApplicationServices.User>   
- [How My Depends on Project Type](../../../visual-basic/developing-apps/development-with-my/how-my-depends-on-project-type.md)   
- [Conditional Compilation](../../../visual-basic/programming-guide/program-structure/conditional-compilation.md)   
- [\/define](../../../visual-basic/reference/command-line-compiler/define.md)   
- [My.Forms Object](../../../visual-basic/language-reference/objects/my-forms-object.md)   
- [My.Request Object](../../../visual-basic/language-reference/objects/my-request-object.md)   
- [My.Response Object](../../../visual-basic/language-reference/objects/my-response-object.md)   
- [My.WebServices Object](../../../visual-basic/language-reference/objects/my-webservices-object.md)
+## <a name="see-also"></a>関連項目  
+ <xref:Microsoft.VisualBasic.ApplicationServices.ApplicationBase></xref:Microsoft.VisualBasic.ApplicationServices.ApplicationBase>   
+ <xref:Microsoft.VisualBasic.Devices.Computer></xref:Microsoft.VisualBasic.Devices.Computer>   
+ <xref:Microsoft.VisualBasic.Logging.Log></xref:Microsoft.VisualBasic.Logging.Log>   
+ <xref:Microsoft.VisualBasic.ApplicationServices.User></xref:Microsoft.VisualBasic.ApplicationServices.User>   
+ [どのように私はプロジェクトの種類に依存します](../../../visual-basic/developing-apps/development-with-my/how-my-depends-on-project-type.md)   
+ [条件付きコンパイル](../../../visual-basic/programming-guide/program-structure/conditional-compilation.md)   
+ [/define (Visual Basic)](../../../visual-basic/reference/command-line-compiler/define.md)   
+ [My.Forms オブジェクト](../../../visual-basic/language-reference/objects/my-forms-object.md)   
+ [My.Request オブジェクト](../../../visual-basic/language-reference/objects/my-request-object.md)   
+ [My.Response オブジェクト](../../../visual-basic/language-reference/objects/my-response-object.md)   
+ [My.WebServices オブジェクト](../../../visual-basic/language-reference/objects/my-webservices-object.md)

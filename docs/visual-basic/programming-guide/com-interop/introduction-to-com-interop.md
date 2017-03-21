@@ -1,72 +1,88 @@
 ---
-title: "Introduction to COM Interop (Visual Basic) | Microsoft Docs"
-ms.custom: ""
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "interop assemblies"
-  - "COM interop, about COM interop"
+title: "COM 相互運用 (Visual Basic) の概要 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 2015-07-20
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-visual-basic
+ms.topic: article
+dev_langs:
+- VB
+helpviewer_keywords:
+- interop assemblies
+- COM interop, about COM interop
 ms.assetid: 8bd62e68-383d-407f-998b-29aa0ce0fd67
 caps.latest.revision: 12
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 12
----
-# Introduction to COM Interop (Visual Basic)
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
+author: stevehoag
+ms.author: shoag
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: 8866dbadca040c57ed2b59540dd2c341eb81758c
+ms.lasthandoff: 03/13/2017
 
-コンポーネント オブジェクト モデル \(COM: Component Object Model\) を使用することによって、オブジェクトはその機能を他のコンポーネントやホスト アプリケーションに公開できます。  COM オブジェクトは長年にわたり Windows プログラミングの基盤として使用されてきましたが、共通言語ランタイム \(CLR: Common Language Runtime\) 用に設計されたアプリケーションには多数の利点があります。  
+---
+# <a name="introduction-to-com-interop-visual-basic"></a>COM 相互運用の概要 (Visual Basic)
+コンポーネント オブジェクト モデル (COM) には、他のコンポーネントやアプリケーションをホストする機能を公開するオブジェクトことができます。 COM オブジェクトは、基本となる Windows 長年にわたってプログラミングされていますが、共通言語ランタイム (CLR) 用に設計されたアプリケーションでは、多くの利点が提供しています。  
   
- COM で開発されたアプリケーションは今後置き換えられ、最終的には [!INCLUDE[dnprdnshort](../../../csharp/getting-started/includes/dnprdnshort-md.md)] アプリケーションが使われるようになると考えられます。  しかし、それまでは [!INCLUDE[vsprvs](../../../csharp/includes/vsprvs-md.md)] で COM オブジェクトを使用または作成することが必要な場合があります。  COM との相互運用性、つまり *COM 相互運用機能*によって、既存の COM オブジェクトを使用しながら、独自のペースで [!INCLUDE[dnprdnshort](../../../csharp/getting-started/includes/dnprdnshort-md.md)] に移行していくことができます。  
+ [!INCLUDE[dnprdnshort](../../../csharp/getting-started/includes/dnprdnshort_md.md)]アプリケーションが最終的に置き換わります com 開発 それまでは、使用またはを使用して COM オブジェクトを作成する必要があります[!INCLUDE[vsprvs](../../../csharp/includes/vsprvs_md.md)]します。 Com 相互運用性または*COM 相互運用機能*への移行中に既存の COM オブジェクトを使用することができます、[!INCLUDE[dnprdnshort](../../../csharp/getting-started/includes/dnprdnshort_md.md)]独自のペースでします。  
   
- [!INCLUDE[dnprdnshort](../../../csharp/getting-started/includes/dnprdnshort-md.md)] を使用して COM コンポーネントを作成すると、登録を必要としない COM 相互運用機能を利用できます。  これによって、複数のバージョンの DLL がコンピューターにインストールされている場合に、どの DLL バージョンを有効にするのかを制御できます。エンド ユーザーは、XCOPY または FTP を使用して、アプリケーションを実行できる自分のコンピューター上の適切なディレクトリにコピーできます。  詳細については、「[登録を必要としない COM 相互運用機能](../Topic/Registration-Free%20COM%20Interop.md)」を参照してください。  
+ 使用して、 [!INCLUDE[dnprdnshort](../../../csharp/getting-started/includes/dnprdnshort_md.md)] COM コンポーネントを作成するには、登録しない COM 相互運用機能を使用することができます。 これによって、どの DLL バージョンを有効にすると、1 つ以上のバージョンが、コンピューターにインストールされて、により、エンドユーザーは XCOPY または FTP を使用のコンピューターに適切なディレクトリにアプリケーションをコピーする実行できる場合を制御できます。 詳細については、次を参照してください。 [Registration-free COM 相互運用機能](http://msdn.microsoft.com/library/90f308b9-82dc-414a-bce1-77e0155e56bd)です。  
   
-## マネージ コードとマネージ データ  
- [!INCLUDE[dnprdnshort](../../../csharp/getting-started/includes/dnprdnshort-md.md)] 用に開発されたコードを*マネージ コード*と呼びます。マネージ コードには、CLR によって使用されるメタデータが含まれます。  [!INCLUDE[dnprdnshort](../../../csharp/getting-started/includes/dnprdnshort-md.md)] アプリケーションによって使用されるデータを*マネージ データ*と呼びます。これは、メモリの割り当ておよび再要求、型チェックの実行などのデータ関連のタスクが、ランタイムによって管理されるためです。  [!INCLUDE[vbprvblong](../../../visual-basic/developing-apps/customizing-extending-my/includes/vbprvblong-md.md)] では既定でマネージ コードとマネージ データが使用されますが、相互運用機能アセンブリ \(このページの後半で説明します\) を使用することによって、COM オブジェクトのアンマネージ コードとアンマネージ データにアクセスできます。  
+## <a name="managed-code-and-data"></a>マネージ コードとデータ  
+ 用に開発されたコード、[!INCLUDE[dnprdnshort](../../../csharp/getting-started/includes/dnprdnshort_md.md)]と呼ばれます*マネージ コード*、CLR によって使用されるメタデータが含まれています。 によって使用されるデータ[!INCLUDE[dnprdnshort](../../../csharp/getting-started/includes/dnprdnshort_md.md)]アプリケーションと呼ばれる*管理データ*型の割り当て、メモリを再利用、および実行のチェックなど、ランタイムがデータに関連するタスクを管理するためです。 既定では、[!INCLUDE[vbprvblong](../../../visual-basic/developing-apps/customizing-extending-my/includes/vbprvblong_md.md)]マネージ コードとデータを使用して、アンマネージ コードと相互運用機能アセンブリを (このページの後半で説明します) を使用して COM オブジェクトのデータにアクセスすることができます。  
   
-## アセンブリ  
- アセンブリとは、[!INCLUDE[dnprdnshort](../../../csharp/getting-started/includes/dnprdnshort-md.md)] アプリケーションの主要なビルド ブロックです。  アセンブリは機能の集合体であり、1 つ以上のファイルで構成される単一の実装ユニットとしてビルド、バージョン管理、および配置されます。  各アセンブリにはアセンブリ マニフェストが含まれます。  
+## <a name="assemblies"></a>アセンブリ  
+ アセンブリの主な構成要素とは、[!INCLUDE[dnprdnshort](../../../csharp/getting-started/includes/dnprdnshort_md.md)]アプリケーションです。 これは、ビルド、バージョン管理、および&1; つまたは複数のファイルを含む単一の実装の単位として配置される機能のコレクションです。 各アセンブリには、アセンブリ マニフェストが含まれています。  
   
-## タイプ ライブラリとアセンブリ マニフェスト  
- タイプ ライブラリは、メンバーの名前やデータ型など、COM オブジェクトの特性を記述します。  アセンブリ マニフェストは、[!INCLUDE[dnprdnshort](../../../csharp/getting-started/includes/dnprdnshort-md.md)] アプリケーションについて同様の機能を果たします。  これらに含まれている情報は次のとおりです。  
+## <a name="type-libraries-and-assembly-manifests"></a>タイプ ライブラリとアセンブリのマニフェスト  
+ タイプ ライブラリでは、メンバー名やデータ型など、COM オブジェクトの特性について説明します。 アセンブリのマニフェストの同じ機能を実行する[!INCLUDE[dnprdnshort](../../../csharp/getting-started/includes/dnprdnshort_md.md)]アプリケーションです。 次の情報を示します。  
   
--   アセンブリの ID、バージョン、カルチャ、およびデジタル署名。  
+-   アセンブリの id、バージョン、カルチャ、およびデジタル署名します。  
   
--   アセンブリ実装を構成するファイル。  
+-   アセンブリの実装を構成するファイルです。  
   
--   アセンブリを構成する型およびリソース。  アセンブリからエクスポートされる型およびリソースも含まれます。  
+-   型と、アセンブリを構成するリソースです。 これには、アセンブリからエクスポートされるものが含まれています。  
   
--   その他のアセンブリへのコンパイル時の依存関係。  
+-   他のアセンブリに依存関係をコンパイルします。  
   
--   アセンブリを正常に実行するために必要なアクセス許可。  
+-   アセンブリを正しく実行するために必要なアクセス許可です。  
   
- アセンブリおよびアセンブリ マニフェストの詳細については、「[アセンブリとグローバル アセンブリ キャッシュ](../Topic/Assemblies%20and%20the%20Global%20Assembly%20Cache%20\(C%23%20and%20Visual%20Basic\).md)」を参照してください。  
+ アセンブリおよびアセンブリのマニフェストの詳細については、次を参照してください。[アセンブリとグローバル アセンブリ キャッシュ](../../../visual-basic/programming-guide/concepts/assemblies-gac/index.md)します。  
   
-### タイプ ライブラリのインポートとエクスポート  
- [!INCLUDE[vsprvs](../../../csharp/includes/vsprvs-md.md)] には Tlbimp ユーティリティがあります。Tlbimp を使用すると、タイプ ライブラリから [!INCLUDE[dnprdnshort](../../../csharp/getting-started/includes/dnprdnshort-md.md)] アプリケーションに情報をインポートできます。  また、Tlbexp ユーティリティを使用して、アセンブリからタイプ ライブラリを生成できます。  
+### <a name="importing-and-exporting-type-libraries"></a>インポートおよびタイプ ライブラリをエクスポートします。  
+ [!INCLUDE[vsprvs](../../../csharp/includes/vsprvs_md.md)]タイプ ライブラリから情報をインポートできる Tlbimp ユーティリティが含まれています、[!INCLUDE[dnprdnshort](../../../csharp/getting-started/includes/dnprdnshort_md.md)]アプリケーションです。 Tlbexp ユーティリティを使用して、アセンブリからタイプ ライブラリを生成できます。  
   
- Tlbimp および Tlbexp の詳細については、「[Tlbimp.exe \(タイプ ライブラリ インポーター\)](../Topic/Tlbimp.exe%20\(Type%20Library%20Importer\).md)」および「[Tlbexp.exe \(タイプ ライブラリ エクスポーター\)](../Topic/Tlbexp.exe%20\(Type%20Library%20Exporter\).md)」を参照してください。  
+ Tlbimp と Tlbexp については、次を参照してください。 [Tlbimp.exe (タイプ ライブラリ インポーター)](http://msdn.microsoft.com/library/ec0a8d63-11b3-4acd-b398-da1e37e97382)と[Tlbexp.exe (タイプ ライブラリ エクスポーター)](http://msdn.microsoft.com/library/a487d61b-d166-467b-a7ca-d8b52fbff42d)します。  
   
-## 相互運用アセンブリ  
- 相互運用機能アセンブリは、マネージ コードとアンマネージ コードを仲介する [!INCLUDE[dnprdnshort](../../../csharp/getting-started/includes/dnprdnshort-md.md)] アセンブリであり、それに対応する [!INCLUDE[dnprdnshort](../../../csharp/getting-started/includes/dnprdnshort-md.md)] マネージ メンバーに COM オブジェクト メンバーを割り当てます。  [!INCLUDE[vbprvblong](../../../visual-basic/developing-apps/customizing-extending-my/includes/vbprvblong-md.md)] によって作成される相互運用機能アセンブリは、相互運用性のマーシャリングなど、COM オブジェクトの操作で発生する詳細な作業の多くを処理します。  
+## <a name="interop-assemblies"></a>相互運用機能アセンブリ  
+ 相互運用機能アセンブリは[!INCLUDE[dnprdnshort](../../../csharp/getting-started/includes/dnprdnshort_md.md)]ブリッジ マネージ リソースとアンマネージ間するアセンブリ コードに、それと等価に COM オブジェクト メンバーのマッピング[!INCLUDE[dnprdnshort](../../../csharp/getting-started/includes/dnprdnshort_md.md)]メンバーを管理します。 によって作成された相互運用機能アセンブリ[!INCLUDE[vbprvblong](../../../visual-basic/developing-apps/customizing-extending-my/includes/vbprvblong_md.md)]の相互運用マーシャ リングなどの COM オブジェクトの使用の詳細を処理します。  
   
-## 相互運用性のマーシャリング  
- すべての [!INCLUDE[dnprdnshort](../../../csharp/getting-started/includes/dnprdnshort-md.md)] アプリケーションは、使用するプログラミング言語の種類に関係なく、オブジェクトを相互運用できるようにするための共通の型セットを共有します。  COM オブジェクトのパラメーターおよび戻り値の型は、マネージ コードで使用されるデータ型とは異なることがあります。  *相互運用性*のマーシャリングとは、COM オブジェクトからマネージ コードへの変換およびマネージ コードから COM オブジェクトへの変換のときに、パラメーターと戻り値を対応するデータ型にパッケージ化する処理です。  詳細については、「[相互運用マーシャリング](../Topic/Interop%20Marshaling.md)」を参照してください。  
+## <a name="interoperability-marshaling"></a>相互運用マーシャ リング  
+ すべて[!INCLUDE[dnprdnshort](../../../csharp/getting-started/includes/dnprdnshort_md.md)]アプリケーションを使用するプログラミング言語に関係なく、オブジェクトの相互運用性を有効にする一般的な種類のセットを共有します。 パラメーターと COM オブジェクトの戻り値もマネージ コードで使用されるものとは異なるデータ型を使用します。 *相互運用マーシャ リング*パッケージ パラメーターと戻り値を等価のデータ型のプロセスは、COM オブジェクトとの間を移動します。 詳細については、次を参照してください。[相互運用マーシャ リング](http://msdn.microsoft.com/library/115f7a2f-d422-4605-ab36-13a8dd28142a)します。  
   
-## 参照  
- [COM Interop](../../../visual-basic/programming-guide/com-interop/index.md)   
- [Walkthrough: Implementing Inheritance with COM Objects](../../../visual-basic/programming-guide/com-interop/walkthrough-implementing-inheritance-with-com-objects.md)   
- [アンマネージ コードとの相互運用](../Topic/Interoperating%20with%20Unmanaged%20Code.md)   
- [Troubleshooting Interoperability](../../../visual-basic/programming-guide/com-interop/troubleshooting-interoperability.md)   
- [アセンブリとグローバル アセンブリ キャッシュ](../Topic/Assemblies%20and%20the%20Global%20Assembly%20Cache%20\(C%23%20and%20Visual%20Basic\).md)   
- [Tlbimp.exe \(タイプ ライブラリ インポーター\)](../Topic/Tlbimp.exe%20\(Type%20Library%20Importer\).md)   
- [Tlbexp.exe \(タイプ ライブラリ エクスポーター\)](../Topic/Tlbexp.exe%20\(Type%20Library%20Exporter\).md)   
- [相互運用マーシャリング](../Topic/Interop%20Marshaling.md)   
- [登録を必要としない COM 相互運用機能](../Topic/Registration-Free%20COM%20Interop.md)
+## <a name="see-also"></a>関連項目  
+ [COM 相互運用機能](../../../visual-basic/programming-guide/com-interop/index.md)   
+ [チュートリアル: COM オブジェクトによる継承の実装](../../../visual-basic/programming-guide/com-interop/walkthrough-implementing-inheritance-with-com-objects.md)   
+ [アンマネージ コードとの相互運用](https://msdn.microsoft.com/library/sd10k43k)   
+ [相互運用性のトラブルシューティング](../../../visual-basic/programming-guide/com-interop/troubleshooting-interoperability.md)   
+ [アセンブリとグローバル アセンブリ キャッシュ](../../../visual-basic/programming-guide/concepts/assemblies-gac/index.md)   
+ [Tlbimp.exe (タイプ ライブラリ インポーター)](http://msdn.microsoft.com/library/ec0a8d63-11b3-4acd-b398-da1e37e97382)   
+ [Tlbexp.exe (タイプ ライブラリ エクスポーター)](http://msdn.microsoft.com/library/a487d61b-d166-467b-a7ca-d8b52fbff42d)   
+ [相互運用マーシャ リング](http://msdn.microsoft.com/library/115f7a2f-d422-4605-ab36-13a8dd28142a)   
+ [登録を必要としない COM 相互運用機能](http://msdn.microsoft.com/library/90f308b9-82dc-414a-bce1-77e0155e56bd)

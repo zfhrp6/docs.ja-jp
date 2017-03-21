@@ -1,75 +1,91 @@
 ---
-title: "XML Processing Instruction Literal (Visual Basic) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vb.XmlLiteralProcessingInstruction"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "XML literals [Visual Basic], processing instruction"
-  - "XML processing instruction literal [Visual Basic]"
-  - "processing instruction literal [Visual Basic]"
+title: "XML 処理命令リテラル (Visual Basic) |Microsoft ドキュメント"
+ms.date: 2015-07-20
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-visual-basic
+ms.topic: article
+f1_keywords:
+- vb.XmlLiteralProcessingInstruction
+dev_langs:
+- VB
+helpviewer_keywords:
+- XML literals [Visual Basic], processing instruction
+- XML processing instruction literal [Visual Basic]
+- processing instruction literal [Visual Basic]
 ms.assetid: cef4f7f8-0011-4f64-8602-795077ad4f15
 caps.latest.revision: 19
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 19
----
-# XML Processing Instruction Literal (Visual Basic)
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
+author: stevehoag
+ms.author: shoag
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: 2903297fa22cd8dc10bc4b12abaa754d4f6284f2
+ms.lasthandoff: 03/13/2017
 
-<xref:System.Xml.Linq.XProcessingInstruction> オブジェクトを表すリテラルです。  
+---
+# <a name="xml-processing-instruction-literal-visual-basic"></a>XML 処理命令リテラル (Visual Basic)
+リテラルを表す、<xref:System.Xml.Linq.XProcessingInstruction>オブジェクト</xref:System.Xml.Linq.XProcessingInstruction>。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 <?piName [ = piData ] ?>  
 ```  
   
-## 指定項目  
+## <a name="parts"></a>指定項目  
  `<?`  
- 必ず指定します。  XML 処理命令リテラルの開始を示します。  
+ 必須です。 XML 処理命令リテラルの開始を示します。  
   
  `piName`  
- 必ず指定します。  処理命令の対象のアプリケーションを示す名前です。  "xml" または "XML" で始めることはできません。  
+ 必須です。 アプリケーションを示す処理命令のターゲットを名前します。 "Xml"または"XML"で始まることはできません。  
   
  `piData`  
- 省略可能です。  `piName` により対象として指定されているアプリケーションが XML ドキュメントを処理する方法を示す文字列です。  
+ 省略可能です。 アプリケーションの対象とする方法を示す文字列`piName`XML ドキュメントを処理する必要があります。  
   
  `?>`  
- 必ず指定します。  処理命令の終了を示します。  
+ 必須です。 処理命令の終了を示します。  
   
-## 戻り値  
- <xref:System.Xml.Linq.XProcessingInstruction> オブジェクト。  
+## <a name="return-value"></a>戻り値  
+ <xref:System.Xml.Linq.XProcessingInstruction>オブジェクト</xref:System.Xml.Linq.XProcessingInstruction>。  
   
-## 解説  
- XML 処理命令リテラルは、アプリケーションが XML ドキュメントを処理する方法を示します。  アプリケーションは、XML ドキュメントを読み込むときに、XML 処理命令をチェックして、ドキュメントの処理方法を決定できます。  アプリケーションは、`piName` と `piData` の意味を解釈します。  
+## <a name="remarks"></a>コメント  
+ XML 処理命令リテラルは、アプリケーションが、XML ドキュメントを処理する方法を示しています。 アプリケーションに XML ドキュメントが読み込まれると、アプリケーションは、ドキュメントを処理する方法を決定する XML 処理命令をチェックできます。 アプリケーションの意味を解釈する`piName`と`piData`です。  
   
- XML ドキュメント リテラルは、XML 処理命令と似た構文を使用します。  詳細については、「[XML Document Literal](../../../visual-basic/language-reference/xml-literals/xml-document-literal.md)」を参照してください。  
-  
-> [!NOTE]
->  `piName` 要素は、"xml" または "XML" という文字列で始まることはできません。これらの識別子は、XML 1.0 仕様で予約されています。  
-  
- XML 処理命令リテラルは、変数に代入したり、XML ドキュメント リテラルに含めたりすることができます。  
+ XML ドキュメント リテラルは、XML 処理命令の次のような構文を使用します。 詳細については、次を参照してください。 [XML ドキュメント リテラル](../../../visual-basic/language-reference/xml-literals/xml-document-literal.md)します。  
   
 > [!NOTE]
->  XML リテラルは、行継続文字なしで複数の行に記述できます。  これにより、XML ドキュメントから内容をコピーし、[!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] プログラムに直接貼り付けることができます。  
+>  `piName`のため、XML 1.0 仕様これらの id を確保するため、要素が文字列"xml"または"XML"で始まることはできません。  
   
- [!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] コンパイラは、XML 処理命令リテラルを、<xref:System.Xml.Linq.XProcessingInstruction.%23ctor%2A> コンストラクターの呼び出しに変換します。  
+ 変数には、XML 処理命令リテラルを代入したり、XML ドキュメント リテラルに含めることができます。  
   
-## 使用例  
- XML ドキュメントのスタイルシートを示す処理命令を作成する例を次に示します。  
+> [!NOTE]
+>  XML リテラルは、行継続文字をしなくても複数行にまたがることができます。 これにより、XML ドキュメントからコンテンツをコピーして貼り付けに直接、[!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]プログラムです。  
   
- [!code-vb[VbXMLSamples#28](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/xml-processing-instruction-literal_1.vb)]  
+ [!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]コンパイラでは、XML 処理命令リテラルを変換への呼び出しに、<xref:System.Xml.Linq.XProcessingInstruction.%23ctor%2A>コンス トラクター</xref:System.Xml.Linq.XProcessingInstruction.%23ctor%2A> 。  
   
-## 参照  
- <xref:System.Xml.Linq.XProcessingInstruction>   
- [XML Document Literal](../../../visual-basic/language-reference/xml-literals/xml-document-literal.md)   
- [XML Literals](../../../visual-basic/language-reference/xml-literals/index.md)   
- [Creating XML in Visual Basic](../../../visual-basic/programming-guide/language-features/xml/creating-xml.md)
+## <a name="example"></a>例  
+ 次の例では、XML ドキュメントのスタイル シートを識別する処理命令を作成します。  
+  
+ [!code-vb[VbXMLSamples #&28;](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/xml-processing-instruction-literal_1.vb)]  
+  
+## <a name="see-also"></a>関連項目  
+ <xref:System.Xml.Linq.XProcessingInstruction></xref:System.Xml.Linq.XProcessingInstruction>   
+ [XML ドキュメント リテラル](../../../visual-basic/language-reference/xml-literals/xml-document-literal.md)   
+ [XML リテラル](../../../visual-basic/language-reference/xml-literals/index.md)   
+ [Visual Basic で XML を作成します。](../../../visual-basic/programming-guide/language-features/xml/creating-xml.md)

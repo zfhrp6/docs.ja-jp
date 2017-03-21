@@ -1,70 +1,86 @@
 ---
-title: "/main | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "main compiler option [Visual Basic]"
-  - "/main compiler option [Visual Basic]"
-  - "-main compiler option [Visual Basic]"
+title: "/main |Microsoft ドキュメント"
+ms.date: 2015-07-20
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-visual-basic
+ms.topic: article
+dev_langs:
+- VB
+helpviewer_keywords:
+- main compiler option [Visual Basic]
+- /main compiler option [Visual Basic]
+- -main compiler option [Visual Basic]
 ms.assetid: 83fc339d-6652-415d-b205-b5133319b5b0
 caps.latest.revision: 19
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 19
----
-# /main
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
+author: stevehoag
+ms.author: shoag
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: dded7621845141896f353d69ab757010c825b975
+ms.lasthandoff: 03/13/2017
 
-`Sub Main` プロシージャを含むクラスまたはモジュールを指定します。  
+---
+# <a name="main"></a>/main
+クラスまたはモジュールを含む指定、`Sub Main`プロシージャです。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 /main:location  
 ```  
   
-## 引数  
+## <a name="arguments"></a>引数  
  `location`  
- 必ず指定します。  プログラムの起動時に呼び出される `Sub Main` プロシージャを含むクラスまたはモジュールの絶対パス名です。  "**\/main:module**" または "**\/main:namespace.module**" の形式で指定します。  
+ 必須です。 クラスまたは含まれているモジュールに完全に修飾、`Sub Main`プログラムの開始時に呼び出されるプロシージャです。 フォームの可能性があります**/main:module**または**/main:namespace.module**します。  
   
-## 解説  
- 実行可能ファイルまたは Windows 実行可能プログラムを作成するときは、このオプションを使用します。  **\/main** オプションを省略すると、コンパイラは、すべてのパブリック クラスおよびモジュールで有効な共有 `Sub Main` を検索します。  
+## <a name="remarks"></a>コメント  
+ 実行可能ファイルまたは Windows 実行可能プログラムを作成するときに、このオプションを使用します。 場合、 **/main**オプションを省略すると、コンパイラは有効な共有検索`Sub Main`のすべてのパブリック クラスおよびモジュールにします。  
   
- `Main` プロシージャのさまざまな形式に関しては、「[Main Procedure in Visual Basic](../../../visual-basic/programming-guide/program-structure/main-procedure.md)」を参照してください。  
+ 参照してください[Visual Basic の Main プロシージャ](../../../visual-basic/programming-guide/program-structure/main-procedure.md)のさまざまな形式の詳細について、`Main`プロシージャです。  
   
- <xref:System.Windows.Forms.Form> を継承するクラスが `location` に指定され、そのクラスに `Main` プロシージャが存在しなかった場合は、アプリケーションを起動する既定の `Main` プロシージャがコンパイラによって提供されます。  これにより、開発環境で作成したコードをコマンド ラインでコンパイルできるようになります。  
+ `location`から継承するクラスは、 <xref:System.Windows.Forms.Form>、コンパイラは、既定値を用意`Main`クラスを持たない場合に、アプリケーションを開始するプロシージャ`Main`プロシージャ</xref:System.Windows.Forms.Form>。 これにより、開発環境で作成されたコマンド ラインでコードをコンパイルできます。  
   
- [!code-vb[VbVbalrCompiler#16](../../../visual-basic/reference/command-line-compiler/codesnippet/VisualBasic/main_1.vb)]  
+ [!code-vb[VbVbalrCompiler&#16;](../../../visual-basic/reference/command-line-compiler/codesnippet/VisualBasic/main_1.vb)]  
   
-### Visual Studio 統合開発環境で \/main を設定するには  
+### <a name="to-set-main-in-the-visual-studio-integrated-development-environment"></a>統合開発環境 Visual Studio で/main を設定するには  
   
-1.  **ソリューション エクスプローラー**でプロジェクトを選択します。  **\[プロジェクト\]** メニューの **\[プロパティ\]** をクリックします。  
+1.  **ソリューション エクスプローラー**でプロジェクトを選択します。 **プロジェクト** メニューのをクリックして**プロパティ**します。  
   
-     詳細については、「[Introduction to the Project Designer](http://msdn.microsoft.com/ja-jp/898dd854-c98d-430c-ba1b-a913ce3c73d7)」を参照してください。  
+     詳細については、「[プロジェクト デザイナーの概要](http://msdn.microsoft.com/en-us/898dd854-c98d-430c-ba1b-a913ce3c73d7)」を参照してください。  
   
-2.  **\[アプリケーション\]** タブをクリックします。  
+2.  **[アプリケーション]** タブをクリックします。  
   
-3.  **\[アプリケーション フレームワークを有効にする\]** チェック ボックスがオンになっていないことを確認してください。  
+3.  確認、**アプリケーション フレームワークを有効にする** チェック ボックスをオフになっています。  
   
-4.  **\[スタートアップ オブジェクト\]** ボックス内の値を変更します。  
+4.  値を変更、**スタートアップ オブジェクト**ボックス。  
   
-## 使用例  
- `T2.vb` および `T3.vb` をコンパイルし、`Sub Main` プロシージャが `Test2` クラスにあることを指定する場合のコード例です。  
+## <a name="example"></a>例  
+ 次のコードのコンパイル`T2.vb`と`T3.vb`を指定している、`Sub Main`手順が記載されて、`Test2`クラスです。  
   
 ```  
 vbc t2.vb t3.vb /main:Test2  
 ```  
   
-## 参照  
- [Visual Basic Command\-Line Compiler](../../../visual-basic/reference/command-line-compiler/index.md)   
- [\/target](../../../visual-basic/reference/command-line-compiler/target.md)   
- [コンパイル コマンド ラインのサンプル](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)   
- [NIB: Visual Basic Version of Hello, World](http://msdn.microsoft.com/ja-jp/9d030b60-e148-4366-a462-69532f02294c)   
- [Main Procedure in Visual Basic](../../../visual-basic/programming-guide/program-structure/main-procedure.md)
+## <a name="see-also"></a>関連項目  
+ [Visual Basic のコマンド ライン コンパイラ](../../../visual-basic/reference/command-line-compiler/index.md)   
+ [/target (Visual Basic)](../../../visual-basic/reference/command-line-compiler/target.md)   
+ [コンパイル コマンドラインのサンプル](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)   
+ [NIB: Visual Basic バージョンこんにちは, World の](http://msdn.microsoft.com/en-us/9d030b60-e148-4366-a462-69532f02294c)   
+ [Visual Basic の main プロシージャ](../../../visual-basic/programming-guide/program-structure/main-procedure.md)

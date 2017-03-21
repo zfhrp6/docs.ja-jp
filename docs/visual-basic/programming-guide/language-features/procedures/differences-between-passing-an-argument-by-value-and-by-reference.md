@@ -1,61 +1,77 @@
 ---
-title: "Differences Between Passing an Argument By Value and By Reference (Visual Basic) | Microsoft Docs"
-ms.custom: ""
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "ByRef keyword, passing arguments by reference"
-  - "Visual Basic code, procedures"
-  - "procedures, passing arguments"
-  - "ByVal keyword, passing arguments by value"
-  - "arguments [Visual Basic], passing by value or by reference"
+title: "引数値渡しと参照渡し (Visual Basic) の相違点 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 2015-07-20
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-visual-basic
+ms.topic: article
+dev_langs:
+- VB
+helpviewer_keywords:
+- ByRef keyword, passing arguments by reference
+- Visual Basic code, procedures
+- procedures, passing arguments
+- ByVal keyword, passing arguments by value
+- arguments [Visual Basic], passing by value or by reference
 ms.assetid: 5f5c38fe-3e2d-494c-8fff-f4025b55ec93
 caps.latest.revision: 14
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 14
----
-# Differences Between Passing an Argument By Value and By Reference (Visual Basic)
-[!INCLUDE[vs2017banner](../../../../visual-basic/developing-apps/includes/vs2017banner.md)]
+author: stevehoag
+ms.author: shoag
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: 93c515dd8524cde85555a27879baee00185f78e3
+ms.lasthandoff: 03/13/2017
 
-プロシージャに 1 つ以上の引数を渡す場合、各引数は呼び出し元のコードにある基のプログラミング要素に対応付けられます。  この基になる要素の値を渡すこともあれば、要素への参照を渡すこともあります。  これを、*値渡しと参照渡し*と呼びます。  
+---
+# <a name="differences-between-passing-an-argument-by-value-and-by-reference-visual-basic"></a>引数の値渡しと参照渡しの違い (Visual Basic)
+プロシージャに&1; つまたは複数の引数を渡すときに、各引数は、呼び出し元のコード内の基になるプログラミング要素に対応します。 この基になる要素の値またはへの参照を渡すことができます。 これと呼ばれますが、*渡し*します。  
   
-## 値渡し  
- 引数を*値渡し*で渡すには、プロシージャ定義内で対応するパラメーターに [ByVal](../../../../visual-basic/language-reference/modifiers/byval.md) キーワードを指定します。  値渡しを使用すると、[!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] は基になるプログラミング要素の値をプロシージャ内のローカル変数にコピーします。  プロシージャ コードから呼び出し元のコードにある基の要素にアクセスすることはできません。  
+## <a name="passing-by-value"></a>値渡し  
+ 引数を渡す*値によって*を指定して、 [ByVal](../../../../visual-basic/language-reference/modifiers/byval.md)プロシージャ定義でパラメーターに対応するキーワードです。 これを使用するメカニズムを渡すときに[!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]の手順でローカル変数に基になるプログラミング要素の値をコピーします。 プロシージャのコードには、呼び出し元のコード内の基になる要素へのアクセスがありません。  
   
-## 参照渡し  
- 引数を*参照渡し*で渡すには、プロシージャ定義内で対応するパラメーターに [ByRef](../../../../visual-basic/language-reference/modifiers/byref.md) キーワードを指定します。  参照渡しを使用すると、[!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] は呼び出し元のコードにある基のプログラミング要素を、プロシージャから直接参照できるようにします。  
+## <a name="passing-by-reference"></a>参照による受け渡し  
+ 引数を渡す*参照によって*を指定して、 [ByRef](../../../../visual-basic/language-reference/modifiers/byref.md)プロシージャ定義でパラメーターに対応するキーワードです。 これを使用するメカニズムを渡すときに[!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]呼び出し元のコードで、手順、基になるプログラミング要素への直接参照を提供します。  
   
-## 引数渡しの方法と要素の型  
- 値渡しと参照渡しのどちらを選ぶかは、基になる要素の型に応じて決めるわけではありません。  値渡しか参照渡しかによって、[!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] がプロシージャ コードに何を提供するかが変わります。  一方、値型か参照型かによって、プログラミング要素がメモリにどのように格納されるかが変わります。  
+## <a name="passing-mechanism-and-element-type"></a>引数渡しの方法および要素の型  
+ 渡す機能の選択は、基になる要素の型の分類と同じではありません。 値渡しまたは参照渡しか参照何[!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]プロシージャ コードに提供します。 値型または参照型は、メモリ内プログラミング要素を格納する方法を参照します。  
   
- しかし、値渡し\/参照渡しと要素の型は無関係ではありません。  参照型の値は、メモリ内の他の場所にあるデータへのポインターです。  つまり、参照型を値渡しで渡すと、プロシージャ コードは基の要素自体にはアクセスできませんが、基の要素のデータをポイントできるようになります。  たとえば、要素が配列変数であった場合、プロシージャ コードは変数そのものにはアクセスできませんが、配列のメンバーにはアクセスできます。  
+ ただし、引き渡し方法および要素の型は相互にします。 参照型の値は、メモリ内の他の場所でのデータへのポインターです。 つまり、基になる要素自体にアクセスできない場合でも値が参照型を渡すときにプロシージャ コードが基になる要素のデータへのポインターを持っています。 など、要素が、配列変数の場合は、プロシージャのコードでは、変数自体にアクセスできないが、配列メンバーにアクセスできます。  
   
-## 要素の変更  
- 不変要素を引数として渡す場合、`ByVal` と `ByRef` のどちらを使用するかに関係なく、プロシージャは呼び出し元のコードにある要素を変更できません。  
+## <a name="ability-to-modify"></a>変更する権限  
+ 引数として、変更不可能な要素を渡すときに、手順変更できません呼び出し元のコードに渡されるかどうか`ByVal`または`ByRef`です。  
   
- 可変要素の場合の要素のデータ型と引数渡しの方法との関係を次の表に示します。  
+ 変更可能な要素には、次の表は、要素の型と渡し間のやり取りを示します。  
   
-|要素の型|`ByVal` で渡す場合|`ByRef` で渡す場合|  
-|----------|-------------------|-------------------|  
-|値型 \(格納されるのは値のみ\)|プロシージャは、変数およびそのメンバーを一切変更できません。|プロシージャは、変数およびそのメンバーを変更できます。|  
-|参照型 \(クラスまたは構造体のインスタンスへのポインターを格納\)|プロシージャは、変数を変更することはできませんが、変数が指すインスタンスのメンバーを変更できます。|プロシージャは、変数および変数が指すインスタンスのメンバーを変更できます。|  
+|要素型|渡されました。`ByVal`|渡されました。`ByRef`|  
+|------------------|--------------------|--------------------|  
+|値型 (値のみを含む)|プロシージャには、変数、またはそのメンバーを変更できません。|プロシージャには、変数とそのメンバーを変更できます。|  
+|参照型 (クラスまたは構造体のインスタンスへのポインターが含まれています)|プロシージャは、変数を変更できませんが、指すインスタンスのメンバーを変更できます。|プロシージャには、変数と、ポイントするインスタンスのメンバーを変更できます。|  
   
-## 参照  
- [Procedures](../../../../visual-basic/programming-guide/language-features/procedures/index.md)   
- [Procedure Parameters and Arguments](../../../../visual-basic/programming-guide/language-features/procedures/procedure-parameters-and-arguments.md)   
- [How to: Pass Arguments to a Procedure](../../../../visual-basic/programming-guide/language-features/procedures/how-to-pass-arguments-to-a-procedure.md)   
- [Passing Arguments by Value and by Reference](../../../../visual-basic/programming-guide/language-features/procedures/passing-arguments-by-value-and-by-reference.md)   
- [Differences Between Modifiable and Nonmodifiable Arguments](../../../../visual-basic/programming-guide/language-features/procedures/differences-between-modifiable-and-nonmodifiable-arguments.md)   
- [How to: Change the Value of a Procedure Argument](../../../../visual-basic/programming-guide/language-features/procedures/how-to-change-the-value-of-a-procedure-argument.md)   
- [How to: Protect a Procedure Argument Against Value Changes](../../../../visual-basic/programming-guide/language-features/procedures/how-to-protect-a-procedure-argument-against-value-changes.md)   
- [How to: Force an Argument to Be Passed by Value](../../../../visual-basic/programming-guide/language-features/procedures/how-to-force-an-argument-to-be-passed-by-value.md)   
- [Passing Arguments by Position and by Name](../../../../visual-basic/programming-guide/language-features/procedures/passing-arguments-by-position-and-by-name.md)   
- [Value Types and Reference Types](../../../../visual-basic/programming-guide/language-features/data-types/value-types-and-reference-types.md)
+## <a name="see-also"></a>関連項目  
+ [手順](./index.md)   
+ [プロシージャのパラメーターと引数](./procedure-parameters-and-arguments.md)   
+ [方法: プロシージャに引数を渡す](./how-to-pass-arguments-to-a-procedure.md)   
+ [値渡しと参照による引数渡し](./passing-arguments-by-value-and-by-reference.md)   
+ [引数と変更できない引数の違い](./differences-between-modifiable-and-nonmodifiable-arguments.md)   
+ [方法: プロシージャ引数の値を変更します。](./how-to-change-the-value-of-a-procedure-argument.md)   
+ [方法: プロシージャ引数の値は変更しないように](./how-to-protect-a-procedure-argument-against-value-changes.md)   
+ [方法: 引数値渡しを強制します。](./how-to-force-an-argument-to-be-passed-by-value.md)   
+ [位置と名前による引数渡し](./passing-arguments-by-position-and-by-name.md)   
+ [値型と参照型](../../../../visual-basic/programming-guide/language-features/data-types/value-types-and-reference-types.md)

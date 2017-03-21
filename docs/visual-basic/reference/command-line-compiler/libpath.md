@@ -1,72 +1,86 @@
 ---
-title: "/libpath | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "libpath compiler option [Visual Basic]"
-  - "/libpath compiler option [Visual Basic]"
-  - "-libpath compiler option [Visual Basic]"
+title: "/libpath |Microsoft ドキュメント"
+ms.date: 2015-07-20
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-visual-basic
+ms.topic: article
+dev_langs:
+- VB
+helpviewer_keywords:
+- libpath compiler option [Visual Basic]
+- /libpath compiler option [Visual Basic]
+- -libpath compiler option [Visual Basic]
 ms.assetid: 5f1c26c9-3455-4e89-bdf3-b12d6c2e655b
 caps.latest.revision: 16
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 16
----
-# /libpath
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
+author: stevehoag
+ms.author: shoag
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: cc534e782cff34f0c4882f3da2af973fed69ff80
+ms.lasthandoff: 03/13/2017
 
+---
+# <a name="libpath"></a>/libpath
 参照先アセンブリの場所を指定します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 /libpath:dirList  
 ```  
   
-## 引数  
+## <a name="arguments"></a>引数  
   
-|||  
-|-|-|  
-|語句|定義|  
-|`dirList`|必ず指定します。  参照先アセンブリが現在の作業ディレクトリ \(コンパイラを起動するディレクトリ\) または共通言語ランライムのシステム ディレクトリにない場合に、コンパイラが探すディレクトリのリストです。ディレクトリはセミコロンで区切って指定します。  ディレクトリ名に空白が含まれる場合は、二重引用符 \(" "\) で囲む必要があります。|  
+|用語|定義|  
+|---|---|  
+|`dirList`|必須です。 コンパイラが参照先アセンブリを探す場合にディレクトリのセミコロン区切りのリストが見つからないいずれかで現在の作業ディレクトリ (コンパイラの起動元ディレクトリ) または共通言語ランタイムのシステム ディレクトリ。 ディレクトリ名にスペースが含まれている場合は、名前を引用符で囲みます ("") です。|  
   
-## 解説  
- `/libpath` オプションでは、[\/reference](../../../visual-basic/reference/command-line-compiler/reference.md) オプションによって参照されるアセンブリの場所を指定します。  
+## <a name="remarks"></a>コメント  
+ `/libpath`オプションによって参照されるアセンブリの場所を指定する、 [/reference](../../../visual-basic/reference/command-line-compiler/reference.md)オプション。  
   
- コンパイラは、完全には修飾されていないアセンブリ参照を次の順序で検索します。  
+ コンパイラは、次の順序で完全に修飾されていないアセンブリ参照を検索します。  
   
-1.  現在の作業ディレクトリ。  これは、コンパイラが起動されるディレクトリです。  
+1.  現在の作業ディレクトリです。 これは、コンパイラが呼び出されているディレクトリです。  
   
 2.  共通言語ランタイムのシステム ディレクトリ。  
   
-3.  `/libpath` で指定したディレクトリ。  
+3.  指定したディレクトリ`/libpath`します。  
   
-4.  LIB 環境変数で指定したディレクトリ。  
+4.  LIB 環境変数で指定したディレクトリです。  
   
- `/libpath` オプションは追加して指定できます。繰り返して指定すると前の値に追加されます。  
+ `/libpath`オプションが加法; を指定するには、前の値に&1; 回追加よりも詳細です。  
   
- アセンブリ参照を指定するには、`/reference` を使用します。  
+ 使用`/reference`アセンブリ参照を指定します。  
   
-||  
-|-|  
-|Visual Studio 統合開発環境で \/libpath を設定するには|  
-|1.  **ソリューション エクスプローラー**でプロジェクトを選択します。  **\[プロジェクト\]** メニューの **\[プロパティ\]** をクリックします。  詳細については、「[Introduction to the Project Designer](http://msdn.microsoft.com/ja-jp/898dd854-c98d-430c-ba1b-a913ce3c73d7)」を参照してください。<br />2.  **\[参照設定\]** タブをクリックします。<br />3.  **\[参照パス...\]** ボタンをクリックします。<br />4.  **\[参照パス\]** ダイアログ ボックスで、**\[フォルダー:\]** ボックスにディレクトリ名を入力します。<br />5.  **\[フォルダーの追加\]** をクリックします。|  
+|統合開発環境 Visual Studio で/libpath を設定するには|  
+|---|  
+|1.**ソリューション エクスプローラー**でプロジェクトを選択します。 **プロジェクト** メニューのをクリックして**プロパティ**します。 詳細については、「[プロジェクト デザイナーの概要](http://msdn.microsoft.com/en-us/898dd854-c98d-430c-ba1b-a913ce3c73d7)」を参照してください。<br />2.クリックして、**参照** タブをクリックします。<br />3.クリックして、**パスを参照しています.**  ボタンをクリックします。<br />4.**参照パス** ダイアログ ボックスで、ディレクトリ名を入力、**フォルダー:**ボックス。<br />5.クリックして**フォルダーを追加する**です。|  
   
-## 使用例  
- `T2.vb` をコンパイルして .exe ファイルを作成する場合のコード例です。  コンパイラはアセンブリを参照するために、まず作業ディレクトリ \(C: ドライブのルートディレクトリ\) を探し、次に C: ドライブの New Assemblies ディレクトリを探します。  
+## <a name="example"></a>例  
+ 次のコードのコンパイル`T2.vb`.exe ファイルを作成します。 コンパイラは、アセンブリ参照の作業ディレクトリで、c: ドライブのルート ディレクトリ、および c: ドライブのアセンブリの新しいディレクトリを検索します。  
   
 ```  
 vbc /libpath:c:\;"c:\New Assemblies" /reference:t2.dll t2.vb  
 ```  
   
-## 参照  
- [アセンブリとグローバル アセンブリ キャッシュ](../Topic/Assemblies%20and%20the%20Global%20Assembly%20Cache%20\(C%23%20and%20Visual%20Basic\).md)   
- [Visual Basic Command\-Line Compiler](../../../visual-basic/reference/command-line-compiler/index.md)   
+## <a name="see-also"></a>関連項目  
+ [アセンブリとグローバル アセンブリ キャッシュ](../../../visual-basic/programming-guide/concepts/assemblies-gac/index.md)   
+ [Visual Basic のコマンド ライン コンパイラ](../../../visual-basic/reference/command-line-compiler/index.md)   
  [コンパイル コマンド ラインのサンプル](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)

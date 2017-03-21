@@ -1,44 +1,60 @@
 ---
-title: "&#39;&lt;typename&gt;&#39; is a delegate type | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "bc32008"
-  - "vbc32008"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "BC32008"
+title: "&quot;&lt;typename&gt;&quot; はデリゲート型です |。Microsoft ドキュメント"
+ms.date: 2015-07-20
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-visual-basic
+ms.topic: article
+f1_keywords:
+- bc32008
+- vbc32008
+dev_langs:
+- VB
+helpviewer_keywords:
+- BC32008
 ms.assetid: dc6abba0-a9ad-450f-8899-87265bc84abc
 caps.latest.revision: 11
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 11
----
-# &#39;&lt;typename&gt;&#39; is a delegate type
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
+author: stevehoag
+ms.author: shoag
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: 3d6cc283f7e9815eb9b723a450731998f14b3424
+ms.lasthandoff: 03/13/2017
 
-'\<typename\>' はデリゲート型です。デリゲート構造では、引数リストとして単一の AddressOf 式しか使用できません。AddressOf 式は、通常、デリゲート構築の代わりに使用できます。  
+---
+# <a name="39lttypenamegt39-is-a-delegate-type"></a>'&lt;typename&gt;' はデリゲート型です。
+'\<typename >' はデリゲート型です。 デリゲートの構築では、引数リストとして単一の AddressOf 式のみを許可します。 多くの場合、デリゲートの構築ではなく、AddressOf 式を使用できます。  
   
- デリゲート クラスのインスタンスを作成する `New` 句で、デリゲート コンストラクターへの無効な引数リストが指定されています。  
+ A`New`デリゲート クラスのインスタンスを作成する句は、デリゲート コンス トラクターに無効な引数リストを提供します。  
   
- デリゲート インスタンスを新規作成するときは、単一の `AddressOf` 式しか指定できません。  
+ 1 つだけを指定する`AddressOf`新しいデリゲート インスタンスを作成するときの式。  
   
- このエラーは、デリゲート コンストラクターに引数を渡していない場合、複数の引数を渡した場合、または有効な `AddressOf` 式ではない 1 つの引数を渡した場合に発生する可能性があります。  
+ 失敗した場合、引数デリゲート コンス トラクターに複数の引数を渡すことも、1 つの引数を渡した場合、無効である場合にこのエラーが発生`AddressOf`式です。  
   
- **Error ID:** BC32008  
+ **エラー ID:** BC32008  
   
-### このエラーを解決するには  
+## <a name="to-correct-this-error"></a>このエラーを解決するには  
   
--   `New` 句で、デリゲート クラスの引数リストに単一の `AddressOf` 式を使用します。  
+-   1 つを使用して`AddressOf`にデリゲート クラスの引数リスト内の式、`New`句。  
   
-## 参照  
- [New Operator](../../../visual-basic/language-reference/operators/new-operator.md)   
- [AddressOf Operator](../../../visual-basic/language-reference/operators/addressof-operator.md)   
- [Delegates](../../../visual-basic/programming-guide/language-features/delegates/delegates.md)   
- [How to: Invoke a Delegate Method](../../../visual-basic/programming-guide/language-features/delegates/how-to-invoke-a-delegate-method.md)
+## <a name="see-also"></a>関連項目  
+ [New 演算子](../../../visual-basic/language-reference/operators/new-operator.md)   
+ [AddressOf 演算子](../../../visual-basic/language-reference/operators/addressof-operator.md)   
+ [デリゲート](../../../visual-basic/programming-guide/language-features/delegates/index.md)   
+ [方法: デリゲート メソッドを呼び出す](../../../visual-basic/programming-guide/language-features/delegates/how-to-invoke-a-delegate-method.md)

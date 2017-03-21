@@ -1,53 +1,69 @@
 ---
-title: "Composite Data Types (Visual Basic) | Microsoft Docs"
-ms.custom: ""
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "classes [Visual Basic], composite data types"
-  - "composite types"
-  - "composite data types"
-  - "data types [Visual Basic], composite"
-  - "arrays [Visual Basic], composite data types"
-  - "structures, composite data types"
-  - "classes [Visual Basic], composite types"
-  - "types [Visual Basic], composite"
+title: "複合データ型 (Visual Basic) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 2015-07-20
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-visual-basic
+ms.topic: article
+dev_langs:
+- VB
+helpviewer_keywords:
+- classes [Visual Basic], composite data types
+- composite types
+- composite data types
+- data types [Visual Basic], composite
+- arrays [Visual Basic], composite data types
+- structures, composite data types
+- classes [Visual Basic], composite types
+- types [Visual Basic], composite
 ms.assetid: 62970f2e-52c0-4369-8963-613820f1f434
 caps.latest.revision: 19
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 19
----
-# Composite Data Types (Visual Basic)
-[!INCLUDE[vs2017banner](../../../../visual-basic/developing-apps/includes/vs2017banner.md)]
+author: stevehoag
+ms.author: shoag
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: d81b2c08155cb16754e780fdfb341b596322302d
+ms.lasthandoff: 03/13/2017
 
-[!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] に用意されている基本データ型以外にも、異なる型のアイテムを組み合わせて、構造体、配列、クラスなどの*複合データ型*を作成できます。  基本型および他の複合型から複合データ型を作成できます。  たとえば、構造体要素の配列や配列メンバーを持つ構造体を定義できます。  
+---
+# <a name="composite-data-types-visual-basic"></a>複合データ型 (Visual Basic)
+基本データ型だけでなく[!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]物資を作成するさまざまな種類の項目も組み合わせてできます*複合データ型*構造体、配列、およびクラスなどです。 基本型およびその他の複合型、複合データ型を構築できます。 たとえば、配列メンバーを持つ、構造体または構造体の要素の配列を定義できます。  
   
-## データ型  
- 複合型は、その構成要素のデータ型とは異なります。  たとえば、整数型 \(`Integer`\) の要素の配列は整数型 \(`Integer`\) ではありません。  
+## <a name="data-types"></a>データ型  
+ 複合型は、そのコンポーネントのいずれかのデータ型と異なります。 たとえば、配列の`Integer`の要素ではありません、`Integer`データ型。  
   
- 配列データ型は通常、要素の型、かっこ、および必要に応じてコンマを使用して表されます。  たとえば、`String` 型の要素を持つ 1 次元配列は、`String()` として表され、`Boolean` 型の要素を持つ 2 次元配列は、`Boolean(,)` として表されます。  
+ 配列のデータ型は、通常、必要に応じて、要素の型、かっこ、およびコンマを使用して表されます。 1 次元の配列など`String`として表される要素`String()`と、2 次元の配列`Boolean`として表される要素`Boolean(,)`します。  
   
-## 構造体型  
- すべての構造体を包括する 1 つのデータ型はありません。  逆に、すべての構造体定義はそれぞれ異なるデータ型を表します。たとえば、まったく同じ要素が同じ順番で定義されている 2 つの構造体があっても、それらは同じデータ型と見なされません。  ただし、同じ構造体の複数のインスタンスを作成した場合、[!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] はそれらを同じデータ型と見なします。  
+## <a name="structure-types"></a>構造体の型  
+ すべての構造を包括する&1; つのデータ型はありません。 代わりに、2 つの構造が同じ順序で同一要素を定義する場合でも、構造体の各定義は、固有のデータ型を表します。 ただし、同じ構造の&2; つ以上のインスタンスを作成する場合[!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]はそれらを同じデータ型と見なします。  
   
-## 配列型  
- すべての配列を包括する 1 つのデータ型はありません。  配列の特定のインスタンスのデータ型は、次の事項によって決まります。  
+## <a name="array-types"></a>配列型  
+ すべての配列を包括する&1; つのデータ型はありません。 配列の特定のインスタンスのデータ型は、次のように決定されます。  
   
--   配列であること。  
+-   配列であること  
   
--   配列のランク \(次元数\)。  
+-   配列のランク (次元数)  
   
--   配列の要素型。  
+-   配列の要素の型  
   
- 特に、次元の長さはインスタンスのデータ型に含まれません。  次に例を示します。  
+ 特に、次元の長さは、インスタンスのデータ型の一部ではありません。 次に例を示します。  
   
 ```  
 Dim arrayA( ) As Byte = New Byte(12) {}  
@@ -57,21 +73,21 @@ Dim arrayD( , ) As Short
 Dim arrayE( , ) As Short = New Short(4, 10) {}  
 ```  
   
- この例では、配列変数 `arrayA` と `arrayB` は異なる長さに初期化されますが、データ型は同じ `Byte()` であると見なされます。  変数 `arrayB` と `arrayC` は、要素型が異なるため同じデータ型ではありません。  変数 `arrayC` と `arrayD` は、ランクが異なるため同じデータ型ではありません。  変数 `arrayD` と変数 `arrayE` は、`arrayD` がまだ初期化されていませんが、ランクも要素型も同じなので、同じ `Short(,)` 型です。  
+ 上記の例では、配列変数`arrayA`と`arrayB`、同じデータ型と見なされます: `Byte()` — 場合でも、異なる長さに初期化されます。 変数`arrayB`と`arrayC`は、同じ型のない、要素型が異なるためです。 変数`arrayC`と`arrayD`は、同じ型のない、ランクが異なるためです。 変数`arrayD`と`arrayE`同じ型を持つ — `Short(,)` -ランクと要素の型が同じなので、たとえ`arrayD`がまだ初期化されていません。  
   
- 配列の詳細については、「[配列](../../../../visual-basic/programming-guide/language-features/arrays/index.md)」を参照してください。  
+ 配列の詳細については、次を参照してください。[配列](../../../../visual-basic/programming-guide/language-features/arrays/index.md)します。  
   
-## クラス型  
- すべてのクラスを包括する 1 つのデータ型はありません。  あるクラスが別のクラスを継承することはできますが、それらは別のデータ型です。  同じクラスの複数のインスタンスは、同じデータ型です。  あるクラス インスタンス変数を別のクラス インスタンス変数に代入すると、それらの変数はデータ型が同じであるだけでなく、メモリ内の同じクラス インスタンスを指すことになります。  
+## <a name="class-types"></a>クラスの種類  
+ すべてのクラスを包括する&1; つのデータ型はありません。 1 つのクラスが別のクラスから継承できる各は個別のデータ型です。 同じクラスの複数のインスタンスでは、同じデータ型です。 クラスのインスタンスの&1; つの変数を割り当てるには別に、同じデータ型を持つ操作を行いますだけでなく、メモリ内の同じクラス インスタンスを指すようにします。  
   
- クラスの詳細については、「[Objects and Classes](../../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md)」を参照してください。  
+ クラスの詳細については、次を参照してください。[オブジェクトおよびクラス](../../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md)します。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [データ型](../../../../visual-basic/programming-guide/language-features/data-types/index.md)   
- [Elementary Data Types](../../../../visual-basic/programming-guide/language-features/data-types/elementary-data-types.md)   
+ [基本データ型](../../../../visual-basic/programming-guide/language-features/data-types/elementary-data-types.md)   
  [Visual Basic におけるジェネリック型](../../../../visual-basic/programming-guide/language-features/data-types/generic-types.md)   
- [Value Types and Reference Types](../../../../visual-basic/programming-guide/language-features/data-types/value-types-and-reference-types.md)   
- [Type Conversions in Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/type-conversions.md)   
- [Structures](../../../../visual-basic/programming-guide/language-features/data-types/structures.md)   
- [Troubleshooting Data Types](../../../../visual-basic/programming-guide/language-features/data-types/troubleshooting-data-types.md)   
- [How to: Hold More Than One Value in a Variable](../../../../visual-basic/programming-guide/language-features/data-types/how-to-hold-more-than-one-value-in-a-variable.md)
+ [値型と参照型](../../../../visual-basic/programming-guide/language-features/data-types/value-types-and-reference-types.md)   
+ [Visual Basic における型変換](../../../../visual-basic/programming-guide/language-features/data-types/type-conversions.md)   
+ [構造体](../../../../visual-basic/programming-guide/language-features/data-types/structures.md)   
+ [データ型のトラブルシューティング](../../../../visual-basic/programming-guide/language-features/data-types/troubleshooting-data-types.md)   
+ [方法 : 変数内で複数の値を保持する](../../../../visual-basic/programming-guide/language-features/data-types/how-to-hold-more-than-one-value-in-a-variable.md)

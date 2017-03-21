@@ -1,66 +1,82 @@
 ---
-title: "/keyfile | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "/keyfile compiler option [Visual Basic]"
-  - "keyfile compiler option [Visual Basic]"
-  - "-keyfile compiler option [Visual Basic]"
+title: "/keyfile |Microsoft ドキュメント"
+ms.date: 2015-07-20
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-visual-basic
+ms.topic: article
+dev_langs:
+- VB
+helpviewer_keywords:
+- /keyfile compiler option [Visual Basic]
+- keyfile compiler option [Visual Basic]
+- -keyfile compiler option [Visual Basic]
 ms.assetid: ffa82a4b-517a-4c6c-9889-5bae7b534bb8
 caps.latest.revision: 17
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 17
----
-# /keyfile
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
+author: stevehoag
+ms.author: shoag
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: c36eac96ac6302db0b567e8249af726c807c2c6c
+ms.lasthandoff: 03/13/2017
 
-アセンブリに厳密な名前を付けるキーおよびキー ペアを含むファイルを指定します。  
+---
+# <a name="keyfile"></a>T:System.Reflection.AssemblyKeyFileAttribute
+アセンブリに厳密な名前を付けるキーまたはキー ペアを含むファイルを指定します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 /keyfile:file  
 ```  
   
-## 引数  
+## <a name="arguments"></a>引数  
  `file`  
- 必ず指定します。  キーを含むファイル。  ファイル名に空白が含まれる場合、ファイル名を引用符 \(" "\) で囲みます。  
+ 必須です。 キーを含むファイルです。 ファイル名にスペースが含まれている場合は、名前を引用符で囲みます ("") です。  
   
-## 解説  
- コンパイラが、アセンブリ マニフェストに公開キーを挿入し、秘密キーを使用して最後のアセンブリに署名します。  キー ファイルを生成するには、コマンド ラインで「`sn -k file`」と入力します。  詳細については、「[Sn.exe \(厳密名ツール\)](../Topic/Sn.exe%20\(Strong%20Name%20Tool\).md)」を参照してください。  
+## <a name="remarks"></a>コメント  
+ コンパイラでは、アセンブリ マニフェストに公開キーを挿入し、秘密キーを含む、最終的なアセンブリを署名します。 キー ファイルを生成する入力`sn -k file`コマンドライン。 詳細については、「[Sn.exe (厳密名ツール)](https://msdn.microsoft.com/library/k5b5tt23)」を参照してください。  
   
- `/target:module` を使用してコンパイルすると、キー ファイル名はモジュールに保持され、[\/addmodule](../../../visual-basic/reference/command-line-compiler/addmodule.md) でアセンブリをコンパイルするときに作成されるアセンブリに組み込まれます。  
+ コンパイルする場合は、 `/target:module`、キー ファイルの名前がモジュールに保持され、使用してアセンブリをコンパイルするときに作成されるアセンブリに組み込む[/addmodule](../../../visual-basic/reference/command-line-compiler/addmodule.md)します。  
   
- [\/keycontainer](../../../visual-basic/reference/command-line-compiler/keycontainer.md) を使用して、暗号に関する情報をコンパイラに渡すこともできます。  部分署名されたアセンブリを作成する場合は、[\/delaysign](../../../visual-basic/reference/command-line-compiler/delaysign.md) を使用します。  
+ コンパイラに暗号化情報を渡すことができます[/keycontainer](../../../visual-basic/reference/command-line-compiler/keycontainer.md)します。 使用[/delaysign](../../../visual-basic/reference/command-line-compiler/delaysign.md)部分署名されているアセンブリを作成する場合。  
   
- このオプションは、任意の Microsoft Intermediate Language \(MSIL\) モジュールのソース コードでカスタム属性 \(<xref:System.Reflection.AssemblyKeyFileAttribute>\) として指定することもできます。  
+ カスタム属性として、このオプションを指定することもできます (<xref:System.Reflection.AssemblyKeyFileAttribute>)、Microsoft 中間言語のモジュールのソース コードにします</xref:System.Reflection.AssemblyKeyFileAttribute>。  
   
- コマンド ライン オプションまたはカスタム属性によって、コンパイル時に `/keyfile` と [\/keycontainer](../../../visual-basic/reference/command-line-compiler/keycontainer.md) の両方が同時に指定されると、コンパイラは先にキー コンテナーを処理します。  コンテナーが検出された場合、アセンブリはキー コンテナーの情報で署名されます。  キー コンテナーを検出できなかった場合、コンパイラは `/keyfile` で指定されたファイルを検索します。  キー ファイルが見つかった場合は、そのファイル内の情報を使用してアセンブリに署名され、次のコンパイル時にキー コンテナーが有効になるように、キー情報がキー コンテナーに組み込まれます \(`sn -i` と同様\)。  
+ 例では両方とも`/keyfile`と[/keycontainer](../../../visual-basic/reference/command-line-compiler/keycontainer.md)がで指定された (コマンド ライン オプションまたはカスタム属性によって)、同じコンパイル時に、コンパイラは、まず、キー コンテナーです。 成功すると、アセンブリがキー コンテナー内の情報で署名します。 指定されたファイルを試みる場合は、コンパイラでは、キー コンテナーが見つからない、`/keyfile`です。 正常に実行する場合、キー ファイルの情報と、アセンブリが署名、キー コンテナーにキーの情報がインストールされている場合 (のような`sn -i`) 次のコンパイル時に、キー コンテナーが有効になるようにします。  
   
- キー ファイルには、公開キーだけが含まれていることがあります。  
+ キー ファイルが公開キーのみを含めることがありますに注意してください。  
   
- アセンブリに対する署名の詳細については、「[厳密な名前付きアセンブリの作成と使用](../Topic/Creating%20and%20Using%20Strong-Named%20Assemblies.md)」を参照してください。  
+ 参照してください[の作成と using strong-named Assemblies](https://msdn.microsoft.com/library/xwb8f617)アセンブリへの署名の詳細についてです。  
   
 > [!NOTE]
->  `/keyfile` オプションは [!INCLUDE[vsprvs](../../../csharp/includes/vsprvs-md.md)] 開発環境内では利用できません。このオプションを利用できるのは、コマンド ラインからコンパイルするときだけです。  
+>  `/keyfile`内から使用可能オプションは、[!INCLUDE[vsprvs](../../../csharp/includes/vsprvs_md.md)]開発環境には、コマンドラインからコンパイルする場合にのみ使用します。  
   
-## 使用例  
- ソース ファイル `Input.vb` をコンパイルし、キー ファイルを指定する場合のコード例です。  
+## <a name="example"></a>例  
+ 次のコードは、ソース ファイルをコンパイル`Input.vb`し、キー ファイルを指定します。  
   
 ```  
 vbc /keyfile:myfile.sn input.vb  
 ```  
   
-## 参照  
- [アセンブリとグローバル アセンブリ キャッシュ](../Topic/Assemblies%20and%20the%20Global%20Assembly%20Cache%20\(C%23%20and%20Visual%20Basic\).md)   
- [Visual Basic Command\-Line Compiler](../../../visual-basic/reference/command-line-compiler/index.md)   
- [\/reference](../../../visual-basic/reference/command-line-compiler/reference.md)   
+## <a name="see-also"></a>関連項目  
+ [アセンブリとグローバル アセンブリ キャッシュ](../../../visual-basic/programming-guide/concepts/assemblies-gac/index.md)   
+ [Visual Basic のコマンド ライン コンパイラ](../../../visual-basic/reference/command-line-compiler/index.md)   
+ [/reference (Visual Basic)](../../../visual-basic/reference/command-line-compiler/reference.md)   
  [コンパイル コマンド ラインのサンプル](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)

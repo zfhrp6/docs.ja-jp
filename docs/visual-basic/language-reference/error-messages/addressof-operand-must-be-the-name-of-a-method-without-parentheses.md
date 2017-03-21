@@ -1,41 +1,57 @@
 ---
-title: "&#39;AddressOf&#39; operand must be the name of a method (without parentheses) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vbc30577"
-  - "bc30577"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "BC30577"
+title: "&quot;AddressOf&quot; オペランドは、(かっこは不要) メソッドの名前を指定する必要があります。Microsoft ドキュメント"
+ms.date: 2015-07-20
+ms.prod: .net
+ms.suite: 
+ms.technology:
+- devlang-visual-basic
+ms.topic: article
+f1_keywords:
+- vbc30577
+- bc30577
+dev_langs:
+- VB
+helpviewer_keywords:
+- BC30577
 ms.assetid: c2c55640-5c61-4e66-97a4-4322020c6001
 caps.latest.revision: 10
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 10
----
-# &#39;AddressOf&#39; operand must be the name of a method (without parentheses)
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
+author: stevehoag
+ms.author: shoag
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: 04103fe23ee55bb751d9604ef74614edeead8886
+ms.lasthandoff: 03/13/2017
 
-`AddressOf` 演算子は、特定のプロシージャを参照するプロシージャ デリゲート インスタンスを作成します。  構文は次のとおりです。  
+---
+# <a name="39addressof39-operand-must-be-the-name-of-a-method-without-parentheses"></a>'AddressOf' オペランドは、(かっこは不要) メソッドの名前を指定する必要があります。
+`AddressOf` 演算子は、特定のプロシージャを参照するプロシージャ デリゲート インスタンスを作成します。 構文は次のとおりです。  
   
  `AddressOf` `procedurename`  
   
- `AddressOf` の後の引数をかっこで囲んでありますが、このかっこは必要ありません。  
+ 引数以下を囲むかっこを挿入した`AddressOf`[なし] が必要とされる、します。  
   
- **Error ID:** BC30577  
+ **エラー ID:** BC30577  
   
-### このエラーを解決するには  
+## <a name="to-correct-this-error"></a>このエラーを解決するには  
   
-1.  `AddressOf` の後の引数を囲んでいるかっこを削除します。  
+1.  引数以下を囲むかっこは削除`AddressOf`します。  
   
-2.  引数がメソッド名であることを確認します。  
+2.  引数がメソッド名を確認します。  
   
-## 参照  
- [AddressOf Operator](../../../visual-basic/language-reference/operators/addressof-operator.md)   
- [Delegates](../../../visual-basic/programming-guide/language-features/delegates/delegates.md)
+## <a name="see-also"></a>関連項目  
+ [AddressOf 演算子](../../../visual-basic/language-reference/operators/addressof-operator.md)   
+ [デリゲート](../../../visual-basic/programming-guide/language-features/delegates/index.md)

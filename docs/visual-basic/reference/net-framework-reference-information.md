@@ -1,42 +1,58 @@
 ---
-title: ".NET Framework Reference Information (Visual Basic) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "language reference, .NET Framework"
-  - ".NET Framework, reference"
-  - ".NET Framework class library, reference information"
+title: ".NET framework の参照情報 (Visual Basic) |Microsoft ドキュメント"
+ms.date: 2015-07-20
+ms.prod: .net
+ms.technology:
+- devlang-visual-basic
+ms.topic: article
+dev_langs:
+- VB
+helpviewer_keywords:
+- language reference, .NET Framework
+- .NET Framework, reference
+- .NET Framework class library, reference information
 ms.assetid: 8b202505-608b-4223-bbd9-2ace3d73e6cd
 caps.latest.revision: 15
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 15
----
-# .NET Framework Reference Information (Visual Basic)
-[!INCLUDE[vs2017banner](../../visual-basic/developing-apps/includes/vs2017banner.md)]
+author: stevehoag
+ms.author: shoag
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: df8355ec3ca2bdedf3d483ee70be7598a5a08e33
+ms.lasthandoff: 03/13/2017
 
-このトピックでは、方法の詳細に [!INCLUDE[dnprdnshort](../../csharp/getting-started/includes/dnprdnshort-md.md)] のクラス ライブラリを使用するリンクを提供します。  
+---
+# <a name="net-framework-reference-information-visual-basic"></a>.NET Framework の参照情報 (Visual Basic)
+このトピックを操作する方法に関する情報へのリンクを提供する、[!INCLUDE[dnprdnshort](../../csharp/getting-started/includes/dnprdnshort_md.md)]クラス ライブラリです。  
   
-## 関連項目  
- [作業の開始](../Topic/Getting%20Started%20with%20the%20.NET%20Framework.md)  
- 追加情報に .NET Framework およびリンクの広範な概要を説明します。  
+## <a name="related-sections"></a>関連項目  
+ [はじめに](http://msdn.microsoft.com/library/c693fd34-88fe-4d90-b332-19eeadf3b7e7)  
+ .NET Framework の包括的な概要と、追加リソースへのリンクを説明します。  
   
- [クラス ライブラリの概要](../Topic/.NET%20Framework%20Class%20Library%20Overview.md)  
- 開発プロセスの迅速化と最適化に役立ち、さらにシステム機能の使用手段を用意するのに役立つ、クラス、インターフェイス、および値型の概要を示します。  
+ [クラス ライブラリの概要](https://msdn.microsoft.com/library/hfa3fa08)  
+ クラス、インターフェイス、および高速化し、開発プロセスを最適化し、システム機能へのアクセスを提供に役立つ値型について説明します。  
   
- [開発ガイド](../Topic/.NET%20Framework%20Development%20Guide.md)  
- アプリケーションの作成、構成、デバッグ、保護し、配置など、アプリケーション開発にすべての主要なテクノロジ領域およびタスクの説明を提供します。  このトピックでは、ダイナミックプログラミング、相互運用性、拡張、メモリ管理、スレッド処理に関する情報を提供します。  
+ [開発ガイド](https://msdn.microsoft.com/library/hh156542)  
+ 作成、構成、デバッグ、セキュリティ、およびアプリケーションの配置を含む、アプリケーション開発のすべての主要な技術領域とタスクのガイドを提供します。 このトピックでは、動的プログラミング、相互運用性、拡張性、メモリ管理、およびスレッド処理に関する情報も提供します。  
   
- [ツール](../Topic/.NET%20Framework%20Tools.md)  
- .NET Framework テクノロジを使用してアプリケーションを開発、構成、配置するために使用できるツールについて説明します。  
+ [ツール](https://msdn.microsoft.com/library/d9kh6s92)  
+ 開発、構成、および .NET Framework のテクノロジを使用してアプリケーションを展開するときに使用できるツールについて説明します。  
   
- [.NET Framework Samples](http://msdn.microsoft.com/ja-jp/177055f8-4a1f-43e7-aee6-995c196079b1)  
- .NET Framework テクノロジを示すサンプル アプリケーションへのリンクを示します。  
+ [.NET Framework のサンプル](http://msdn.microsoft.com/en-us/177055f8-4a1f-43e7-aee6-995c196079b1)  
+ .NET Framework テクノロジを紹介するサンプル アプリケーションへのリンクを提供します。  
   
- [.NET Framework クラス ライブラリ](http://go.microsoft.com/fwlink/?LinkID=227195)  
- .NET Framework の名前空間の各クラスの構文、コード例、および関連情報を提供します。
+ [.NET framework クラス ライブラリ](http://go.microsoft.com/fwlink/?LinkID=227195)  
+ 構文、コード例については、および .NET Framework 名前空間内の各クラスに関連する情報を提供します。

@@ -1,88 +1,104 @@
 ---
-title: "Passing Arguments by Value and by Reference (Visual Basic) | Microsoft Docs"
-ms.custom: ""
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "ByRef keyword, passing arguments by reference"
-  - "Visual Basic code, procedures"
-  - "passing arguments, by value or by reference"
-  - "ByVal keyword, passing arguments by value"
-  - "arguments [Visual Basic], passing by value or by reference"
-  - "argument passing, by value or by reference"
+title: "引数値渡しと参照渡し (Visual Basic) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 2015-07-20
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-visual-basic
+ms.topic: article
+dev_langs:
+- VB
+helpviewer_keywords:
+- ByRef keyword, passing arguments by reference
+- Visual Basic code, procedures
+- passing arguments, by value or by reference
+- ByVal keyword, passing arguments by value
+- arguments [Visual Basic], passing by value or by reference
+- argument passing, by value or by reference
 ms.assetid: fd8a9de6-7178-44d5-a9bf-458d4ad907c2
 caps.latest.revision: 23
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 23
----
-# Passing Arguments by Value and by Reference (Visual Basic)
-[!INCLUDE[vs2017banner](../../../../visual-basic/developing-apps/includes/vs2017banner.md)]
+author: stevehoag
+ms.author: shoag
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: 56d1ceba14020ca7f3dc750c2318efd3e9586af0
+ms.lasthandoff: 03/13/2017
 
-[!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] では、*値渡し*または*参照渡し*で引数をプロシージャに渡すことができます。  これは*引渡し方法*と呼ばれ、引数の基となる、呼び出し元のコードのプログラミング要素をプロシージャが変更できるかどうかが決まります。  プロシージャの宣言では、[ByVal](../../../../visual-basic/language-reference/modifiers/byval.md) または [ByRef](../../../../visual-basic/language-reference/modifiers/byref.md) キーワードを指定することで、各パラメーターの引き渡し方法を決定します。  
+---
+# <a name="passing-arguments-by-value-and-by-reference-visual-basic"></a>引数の値渡しと参照渡し (Visual Basic)
+[!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]、プロシージャに引数を渡すことができます*値によって*または*参照によって*します。 これと呼ばれますが、*渡す機能*、し、プロシージャが呼び出し元のコードで引数を基になるプログラミングの要素を変更するかどうかを決定します。 プロシージャの宣言では、各パラメーターの引き渡し方法を決定を指定して、 [ByVal](../../../../visual-basic/language-reference/modifiers/byval.md)または[ByRef](../../../../visual-basic/language-reference/modifiers/byref.md)キーワードです。  
   
-## 違い  
- 引数をプロシージャに渡す場合、2 つの引き渡し方法の違いに注意してください。  
+## <a name="distinctions"></a>相違点  
+ プロシージャに引数を渡す場合は、相互にやり取りするいくつかの違いに注意してください。  
   
--   基になるプログラミング要素が変更可能か変更不可能か  
+-   基になるプログラミング要素は、変更可能または変更できないかどうか  
   
--   引数自体が変更可能か変更不可能か  
+-   引数自体が変更可能または変更不可能なのかどうか  
   
--   引数が値渡しか参照渡しか  
+-   値渡しまたは参照渡しの引数が渡されるかどうか  
   
--   引数のデータ型が値型か参照型か  
+-   引数のデータ型は、値型または参照型かどうか  
   
- 詳細については、「[Differences Between Modifiable and Nonmodifiable Arguments](../../../../visual-basic/programming-guide/language-features/procedures/differences-between-modifiable-and-nonmodifiable-arguments.md)」および「[Differences Between Passing an Argument By Value and By Reference](../../../../visual-basic/programming-guide/language-features/procedures/differences-between-passing-an-argument-by-value-and-by-reference.md)」を参照してください。  
+ 詳細については、次を参照してください。[変更間の相違点と変更できない引数](./differences-between-modifiable-and-nonmodifiable-arguments.md)と[の相違点の間の値と参照渡しによって引数の渡し](./differences-between-passing-an-argument-by-value-and-by-reference.md)します。  
   
-## 引数渡しの方法の選択  
- 各引数の引き渡し方法は慎重に決定してください。  
+## <a name="choice-of-passing-mechanism"></a>渡す機能の選択  
+ 慎重に各引数の引き渡し方法を選択する必要があります。  
   
--   **保護**。  引数を渡す方法を選択するときに最も重要な基準となるのは、呼び出し元のコードの変数を変更できるようにするかどうかです。  `ByRef` で引数を渡す場合の利点は、プロシージャから呼び出し元のコードに引数を通じて値を返すことができるという点にあります。  一方、`ByVal` を使用する利点は、プロシージャによって変数が変更されるのを防ぐことができるという点にあります。  
+-   **保護**します。 引数を渡す方法を選択すると、最も重要な条件を変更する変数を呼び出すことのリスクです。 引数を渡す場合の利点`ByRef`はプロシージャがその引数を通じて呼び出し元コードに値を返すことができます。 引数を渡す場合の利点`ByVal`からプロシージャによって変更されている変数を防ぐことができます。  
   
--   **パフォーマンス**。  どちらの方法を使用するかによってコードのパフォーマンスが変わってきますが、その差は一般にごくわずかです。  ただし、値型を `ByVal` で渡す場合は例外です。  この場合、[!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] では、引数の内容がすべてコピーされます。  このため、構造体などの大きな値型では、`ByRef` で渡す方が効率的です。  
+-   **パフォーマンス**します。 引数渡しの方法が、コードのパフォーマンスに影響を与えることができますが、違いは一般にごくわずかです。 唯一の例外が渡される値型`ByVal`します。 この場合、[!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]引数のデータ全体の内容をコピーします。 そのため、構造体などの大きな値型場合がこれを渡す方が効率的`ByRef`します。  
   
-     参照型では、データへのポインターだけがコピーされます \(32 ビット プラットフォームでは 4 バイト、64 ビット プラットフォームでは 8 バイト\)。  したがって、パフォーマンスを損なうことなく、`String` 型や `Object` 型の引数を値で渡すことができます。  
+     参照型でデータへのポインターにのみ、コピーした (4 バイト プラットフォームでは 32 ビット、64 ビット プラットフォームでは 8 バイト) です。 そのため、型の引数を渡すことができます`String`または`Object`パフォーマンスを損なわずに値渡しされます。  
   
-## 引数渡しの方法の決定  
- プロシージャの宣言では、各パラメーターの引き渡し方法を指定します。  呼び出し元のコードは `ByVal` 機構をオーバーライドすることはできません。  
+## <a name="determination-of-the-passing-mechanism"></a>引数渡しの方法の決定  
+ プロシージャの宣言では、各パラメーターの引き渡し方法を指定します。 呼び出し元のコードを上書きできません、`ByVal`メカニズムです。  
   
- パラメーターが `ByRef`で宣言されている場合は、呼び出し元のコードは `ByVal` の呼び出しで引数名をかっこで囲むことによって機構ができます。  詳細については、「[How to: Force an Argument to Be Passed by Value](../../../../visual-basic/programming-guide/language-features/procedures/how-to-force-an-argument-to-be-passed-by-value.md)」を参照してください。  
+ パラメーターが宣言されている場合`ByRef`、呼び出し元のコードにするメカニズムを強制できます`ByVal`引数の名前を呼び出しでは、かっこで囲みます。 詳細については、次を参照してください。[方法: 引数を値渡しを強制](./how-to-force-an-argument-to-be-passed-by-value.md)します。  
   
- [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] の既定の設定では、値渡しで引数が渡されます。  
+ 既定で[!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]は引数の値渡しします。  
   
-## 値渡しで引数を渡す場合  
+## <a name="when-to-pass-an-argument-by-value"></a>引数の値渡しする場合  
   
--   引数の基になる呼び出し元のコード要素が変更不可能である場合は、これに対応するパラメーターは [ByVal](../../../../visual-basic/language-reference/modifiers/byval.md) で宣言します。  変更不可能な要素の値は、どのようなコードでも変更できません。  
+-   引数の基になる呼び出し元のコード要素が変更不可能な要素の場合は、対応するパラメーターを宣言[ByVal](../../../../visual-basic/language-reference/modifiers/byval.md)します。 変更不可能な要素の値に変更できるコードはありません。  
   
--   基になる要素が変更可能であっても、プロシージャからはその値を変更できないようにするには、パラメーターを `ByVal` で宣言します。  変更可能な要素が値渡しされた場合、その値を変更できるのは呼び出し元のコードだけです。  
+-   基になる要素が変更可能をその値を変更できるようにする手順をしたくない場合に、パラメーター宣言`ByVal`します。 呼び出し元のコードだけでは、値によって渡される変更可能な要素の値を変更できます。  
   
-## 参照渡しで引数を渡す場合  
+## <a name="when-to-pass-an-argument-by-reference"></a>引数は参照渡しする場合  
   
--   プロシージャが、呼び出し元のコード内にある基になる要素を変更する必要が本当にある場合、対応するパラメーターを [ByRef](../../../../visual-basic/language-reference/modifiers/byref.md) で宣言します。  
+-   プロシージャの呼び出し元のコードで基になる要素を変更する必要が本当の場合は、対応するパラメーターを宣言[ByRef](../../../../visual-basic/language-reference/modifiers/byref.md)します。  
   
--   プロシージャが正しく実行されるかどうかが、呼び出し元のコード内の基になる要素を変更するプロシージャに依存する場合、パラメーターを `ByRef` で宣言します。  これを値渡しした場合、または、呼び出し元のコードが引数をかっこで囲んで `ByRef` の引き渡し方法をオーバーライドした場合、プロシージャは予期しない結果になることがあります。  
+-   コードの適切な実行は、呼び出し元のコード内の基になる要素を変更するプロシージャに依存している場合に、パラメーター宣言`ByRef`します。 値で渡す場合、または呼び出し元のコードをオーバーライドする場合、`ByRef`渡す引数をかっこで囲んで機能プロシージャの呼び出しが予期しない結果を生じる可能性があります。  
   
-## 例  
+## <a name="example"></a>例  
   
-### 説明  
- 値渡しで引数を渡す場合と参照渡しで引数を渡す場合の例を次に示します。  プロシージャ `Calculate` には、`ByVal` パラメーターと `ByRef` パラメーターの両方があります。  このプロシージャのタスクは、指定された利率 \(`rate`\) と総額 \(`debt`\) に基づいて、`debt` の元の値に利率を適用して `debt` の新しい値を計算することです。  `debt` は `ByRef` パラメーターであるため、新しい総額は、`debt` に対応する呼び出し元コードの引数の値に反映されます。  `rate` の値は `Calculate` で変更されないため、このパラメーターは `ByVal` パラメーターです。  
+### <a name="description"></a>説明  
+ 次の例では、引数を値渡しする場合と参照渡しする場合を示します。 プロシージャ`Calculate`が両方とも、`ByVal`と`ByRef`パラメーター。 金利、指定された`rate`、および合計金額、 `debt`、プロシージャの作業は、新しい値を計算する`debt`の元の値を金利を適用した結果は`debt`です。 `debt`は、`ByRef`パラメーター、呼び出し元のコードに対応する引数の値に新しい合計が反映されます`debt`します。 パラメーター`rate`は、`ByVal`パラメーターのため`Calculate`の値を変更しないでください。  
   
-### コード  
- [!code-vb[VbVbcnProcedures#74](./codesnippet/VisualBasic/passing-arguments-by-value-and-by-reference_1.vb)]  
+### <a name="code"></a>コード  
+ [!code-vb[VbVbcnProcedures #&74;](./codesnippet/VisualBasic/passing-arguments-by-value-and-by-reference_1.vb)]  
   
-## 参照  
- [Procedures](../../../../visual-basic/programming-guide/language-features/procedures/index.md)   
- [Procedure Parameters and Arguments](../../../../visual-basic/programming-guide/language-features/procedures/procedure-parameters-and-arguments.md)   
- [How to: Pass Arguments to a Procedure](../../../../visual-basic/programming-guide/language-features/procedures/how-to-pass-arguments-to-a-procedure.md)   
- [How to: Change the Value of a Procedure Argument](../../../../visual-basic/programming-guide/language-features/procedures/how-to-change-the-value-of-a-procedure-argument.md)   
- [How to: Protect a Procedure Argument Against Value Changes](../../../../visual-basic/programming-guide/language-features/procedures/how-to-protect-a-procedure-argument-against-value-changes.md)   
- [How to: Force an Argument to Be Passed by Value](../../../../visual-basic/programming-guide/language-features/procedures/how-to-force-an-argument-to-be-passed-by-value.md)   
- [Passing Arguments by Position and by Name](../../../../visual-basic/programming-guide/language-features/procedures/passing-arguments-by-position-and-by-name.md)   
- [Value Types and Reference Types](../../../../visual-basic/programming-guide/language-features/data-types/value-types-and-reference-types.md)
+## <a name="see-also"></a>関連項目  
+ [手順](./index.md)   
+ [プロシージャのパラメーターと引数](./procedure-parameters-and-arguments.md)   
+ [方法: プロシージャに引数を渡す](./how-to-pass-arguments-to-a-procedure.md)   
+ [方法: プロシージャ引数の値を変更します。](./how-to-change-the-value-of-a-procedure-argument.md)   
+ [方法: プロシージャ引数の値は変更しないように](./how-to-protect-a-procedure-argument-against-value-changes.md)   
+ [方法: 引数値渡しを強制します。](./how-to-force-an-argument-to-be-passed-by-value.md)   
+ [位置と名前による引数渡し](./passing-arguments-by-position-and-by-name.md)   
+ [値型と参照型](../../../../visual-basic/programming-guide/language-features/data-types/value-types-and-reference-types.md)

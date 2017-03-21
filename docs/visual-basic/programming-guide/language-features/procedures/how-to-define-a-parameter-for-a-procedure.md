@@ -1,73 +1,89 @@
 ---
-title: "How to: Define a Parameter for a Procedure (Visual Basic) | Microsoft Docs"
-ms.custom: ""
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "procedure parameters, defining data types for"
-  - "procedures, parameters"
-  - "procedures, defining"
-  - "Visual Basic code, procedures"
-  - "procedure parameters, defining"
+title: "方法: プロシージャ (Visual Basic) のパラメーターを定義する |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 2015-07-20
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-visual-basic
+ms.topic: article
+dev_langs:
+- VB
+helpviewer_keywords:
+- procedure parameters, defining data types for
+- procedures, parameters
+- procedures, defining
+- Visual Basic code, procedures
+- procedure parameters, defining
 ms.assetid: 7962808d-407e-4e84-984e-43e9857c53c9
 caps.latest.revision: 15
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 15
----
-# How to: Define a Parameter for a Procedure (Visual Basic)
-[!INCLUDE[vs2017banner](../../../../visual-basic/developing-apps/includes/vs2017banner.md)]
+author: stevehoag
+ms.author: shoag
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: 9fb9ad244499039c1768ff97f071168e0a0842e4
+ms.lasthandoff: 03/13/2017
 
-*パラメーター* は、呼び出し元のコードが値をプロシージャに渡すために使用します。  プロシージャのパラメーターを宣言する場合には、変数を宣言するときと同じように、パラメーターの名前とデータ型を指定します。  また、渡す方法や、パラメーターを省略できるかどうかも指定できます。  
+---
+# <a name="how-to-define-a-parameter-for-a-procedure-visual-basic"></a>方法: プロシージャに対してパラメーターを定義する (Visual Basic)
+A*パラメーター*呼び出し元コードを呼び出すときに、プロシージャに値を渡すことができます。 手順については、各パラメーター、変数を宣言すると、その名前とデータ型を指定するのと同じ方法を宣言します。 また引き渡し方法を指定するパラメーターは省略可能かどうか。  
   
- 詳細については、「[Procedure Parameters and Arguments](../../../../visual-basic/programming-guide/language-features/procedures/procedure-parameters-and-arguments.md)」を参照してください。  
+ 詳細については、次を参照してください。[プロシージャのパラメーターと引数](./procedure-parameters-and-arguments.md)します。  
   
-### プロシージャのパラメーターを定義するには  
+### <a name="to-define-a-procedure-parameter"></a>プロシージャのパラメーターを定義するには  
   
-1.  プロシージャの宣言中に、プロシージャのパラメーター一覧に、他のパラメーターとの間をコンマで区切ってパラメーター名を追加します。  
+1.  プロシージャの宣言では、プロシージャのパラメーター リストをコンマでの他のパラメーターから分離するパラメーター名を追加します。  
   
 2.  パラメーターのデータ型を決定します。  
   
-3.  パラメーター名の後に `As` 句を入力し、データ型を指定します。  
+3.  パラメーター名に続けて、`As`句データ型を指定します。  
   
-4.  パラメーターの渡し方を決定します。  通常、パラメーターは値によって渡されますが、呼び出し元のコード内の値をプロシージャが変更できるように指定することもできます。  
+4.  パラメーターの引き渡し方法を決定します。 通常を呼び出し元のコードにはその値を変更できるようにする手順をしない場合に、値でパラメーターを渡します。  
   
-5.  パラメーター名の前には [ByVal](../../../../visual-basic/language-reference/modifiers/byval.md) または [ByRef](../../../../visual-basic/language-reference/modifiers/byref.md) を指定して、渡し方を指定します。  詳細については、「[Differences Between Passing an Argument By Value and By Reference](../../../../visual-basic/programming-guide/language-features/procedures/differences-between-passing-an-argument-by-value-and-by-reference.md)」を参照してください。  
+5.  パラメーター名の前に[ByVal](../../../../visual-basic/language-reference/modifiers/byval.md)または[ByRef](../../../../visual-basic/language-reference/modifiers/byref.md)引き渡し方法を指定します。 詳細については、次を参照してください。[の相違点の間の値と参照渡しによって引数の渡し](./differences-between-passing-an-argument-by-value-and-by-reference.md)します。  
   
-6.  パラメーターが省略可能である場合、渡し方の前に [Optional](../../../../visual-basic/language-reference/modifiers/optional.md) を指定して、パラメーターのデータ型の後に等号 \(`=`\) と既定値を指定します。  
+6.  渡しのパラメーターが省略可能な場合は、前に[オプション](../../../../visual-basic/language-reference/modifiers/optional.md)は等号でパラメーターのデータ型に従います (`=`) および既定値です。  
   
-     次の例では、3 つのパラメーターを持つ `Sub` プロシージャの骨組みを定義します。  最初の 2 つのパラメーターは必須で、3 つ目は省略可能です。  パラメーターの一覧の中で、各パラメーターの定義はコンマで区切られます。  
+     次の例のアウトラインを定義する、 `Sub`&3; つのパラメーターを持つプロシージャ。 最初の&2; つは要求され、3 つ目は省略可能。 パラメーターの宣言は、パラメーター リストにコンマで区切られます。  
   
-     [!code-vb[VbVbcnProcedures#33](./codesnippet/VisualBasic/how-to-define-a-parameter-for-a-procedure_1.vb)]  
+     [!code-vb[VbVbcnProcedures #&33;](./codesnippet/VisualBasic/how-to-define-a-parameter-for-a-procedure_1.vb)]  
   
-     最初のパラメーターは  `customer`  オブジェクトを受け入れ、引数は [ByRef](../../../../visual-basic/language-reference/modifiers/byref.md) で渡されているので、`updateCustomer` は `c` に渡された変数を直接更新できます。  最後の 2 つの引数は [ByVal](../../../../visual-basic/language-reference/modifiers/byval.md) で渡されているので、プロシージャはこれらの値を変更することはできません。  
+     最初のパラメーターを受け入れる、`customer`オブジェクト、および`updateCustomer`に渡された変数を直接更新`c`引数が渡されるため[ByRef](../../../../visual-basic/language-reference/modifiers/byref.md)します。 渡されるために、プロシージャが最後の&2; つの引数の値を変更できません[ByVal](../../../../visual-basic/language-reference/modifiers/byval.md)します。  
   
-     呼び出し元のコードに `level` パラメーターの値が指定されていない場合、[!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] はこれを既定値である 0 に設定します。  
+     呼び出し元のコードがの値を指定しないかどうか、`level`パラメーター、[!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]既定値は 0 に設定します。  
   
-     型チェックのスイッチ \([Option Strict Statement](../../../../visual-basic/language-reference/statements/option-strict-statement.md)\) が `Off` の場合、パラメーターの定義時に `As` 句を省略できます。  しかし、いずれかのパラメーターが `As` 句を使用している場合は、すべてのパラメーターがこれを使用する必要があります。  型チェックのスイッチが `On` の場合、`As` 句はすべてのパラメーター定義で必須です。  
+     型チェック スイッチの場合 ([Option Strict ステートメント](../../../../visual-basic/language-reference/statements/option-strict-statement.md)) は`Off`、`As`パラメーターを定義するときに、句は省略可能です。 ただし、1 つのパラメーターを使用している場合、`As`句はすべての使用する必要です。 型チェック スイッチが場合`On`、`As`句はすべてのパラメーターの定義の必須です。  
   
-     すべてのプログラミング要素についてデータ型を指定することは、*厳密な型指定*と呼ばれます。  `Option Strict On` を設定した場合、[!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] は厳密な型指定を強制します。  これは、次の理由で強く推奨されています。  
+     プログラミングのすべての要素のデータ型の指定と呼ばれます*厳密な型指定*します。 設定すると`Option Strict On`、[!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]厳密な型指定が適用されます。 これが強く推奨します、次の理由。  
   
-    -   変数に対する IntelliSense サポートが有効になります。  これにより、コードの入力時に、プロパティや他のメンバーを表示できます。  
+    -   これにより、IntelliSense で変数とパラメーターをサポートできます。 これにより、コードに入力すると、そのプロパティおよびその他のメンバーを参照してください。  
   
-    -   コンパイラで型チェックを実行できます。  これは、実行時にオーバーフローなどのエラーで失敗するステートメントを検出するのに役立ちます。  また、オブジェクトでサポートされていないメソッドの呼び出しも検出されます。  
+    -   これにより、コンパイラが型チェックを実行できます。 これは、実行時のオーバーフローなどのエラーにより失敗するステートメントを検出するのに役立ちます。 サポートしていないオブジェクトに対するメソッドの呼び出しをキャッチします。  
   
-    -   コードの実行速度が速くなります。  この理由の 1 つは、プログラミング要素にデータ型を指定しなかった場合、[!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] コンパイラが `Object` タイプを割り当てるためです。  コンパイル済みのコードが、`Object` および他のデータ型との間で変換を行う必要がある場合、パフォーマンスが低下します。  
+    -   コードの実行を高速になります。 これを&1; つの理由は、プログラミングの要素のデータ型が指定されていない場合、[!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]コンパイラが割り当てる、`Object`型です。 コンパイル済みのコードは、間を変換する必要があります`Object`およびその他のデータ型は、パフォーマンスが低下します。  
   
-## 参照  
- [Procedures](../../../../visual-basic/programming-guide/language-features/procedures/index.md)   
- [Sub Procedures](../../../../visual-basic/programming-guide/language-features/procedures/sub-procedures.md)   
- [Function プロシージャ](../../../../visual-basic/programming-guide/language-features/procedures/function-procedures.md)   
- [How to: Pass Arguments to a Procedure](../../../../visual-basic/programming-guide/language-features/procedures/how-to-pass-arguments-to-a-procedure.md)   
- [Passing Arguments by Value and by Reference](../../../../visual-basic/programming-guide/language-features/procedures/passing-arguments-by-value-and-by-reference.md)   
- [Recursive Procedures](../../../../visual-basic/programming-guide/language-features/procedures/recursive-procedures.md)   
- [Procedure Overloading](../../../../visual-basic/programming-guide/language-features/procedures/procedure-overloading.md)   
- [Objects and Classes](../../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md)   
- [オブジェクト指向プログラミング](../Topic/Object-Oriented%20Programming%20\(C%23%20and%20Visual%20Basic\).md)
+## <a name="see-also"></a>関連項目  
+ [手順](./index.md)   
+ [Sub プロシージャ](./sub-procedures.md)   
+ [Function プロシージャ](./function-procedures.md)   
+ [方法: プロシージャに引数を渡す](./how-to-pass-arguments-to-a-procedure.md)   
+ [値渡しと参照による引数渡し](./passing-arguments-by-value-and-by-reference.md)   
+ [再帰プロシージャ](./recursive-procedures.md)   
+ [プロシージャのオーバー ロード](./procedure-overloading.md)   
+ [クラスとオブジェクト](../../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md)   
+ [オブジェクト指向プログラミング](http://msdn.microsoft.com/library/1cf6e655-3f30-45f1-9a5d-4a88ca24a1c2)

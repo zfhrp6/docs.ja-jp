@@ -1,38 +1,54 @@
 ---
-title: "Zero-based vs. One-based String Access in Visual Basic | Microsoft Docs"
-ms.custom: ""
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "strings [Visual Basic], indexing"
+title: "0 から始まるとします。Visual Basic における文字列の&1; から始まるアクセス |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 2015-07-20
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-visual-basic
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- VB
+helpviewer_keywords:
+- strings [Visual Basic], indexing
 ms.assetid: 0ed39f35-d68e-421d-ae14-460a5c0373b8
 caps.latest.revision: 11
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 11
----
-# Zero-based vs. One-based String Access in Visual Basic
-[!INCLUDE[vs2017banner](../../../../visual-basic/developing-apps/includes/vs2017banner.md)]
+author: stevehoag
+ms.author: shoag
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: 6cd2cab888bf336151ed26968119431f4ffc75f4
+ms.lasthandoff: 03/13/2017
 
-ここでは、[!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] と [!INCLUDE[dnprdnshort](../../../../csharp/getting-started/includes/dnprdnshort-md.md)] における、文字列内の文字へのアクセス方法の違いについて説明します。  [!INCLUDE[dnprdnshort](../../../../csharp/getting-started/includes/dnprdnshort-md.md)] では常に、文字列内の文字へのアクセスに 0 から始まるインデックス番号が使用されます。これに対して [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] では、関数によってインデックス番号が 0 から始まる場合と 1 から始まる場合があります。  
+---
+# <a name="zero-based-vs-one-based-string-access-in-visual-basic"></a>0 から始まるとします。Visual Basic における文字列の&1; から始まるアクセス
+このトピックでは比較方法[!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]と[!INCLUDE[dnprdnshort](../../../../csharp/getting-started/includes/dnprdnshort_md.md)]文字列内の文字へのアクセスを提供します。 [!INCLUDE[dnprdnshort](../../../../csharp/getting-started/includes/dnprdnshort_md.md)]が常に、文字列内の文字への&0; から始まるアクセスを提供[!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]関数によって、0 から始まり、1 つベースのアクセスを提供します。  
   
-## 1 から始まるインデックス番号  
- インデックス番号が 1 から始まる [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] の関数の例に、`Mid` 関数があります。  この関数の引数では、文字列内の部分文字列の開始位置を 1 から始まるインデックス番号で示します。  一方、[!INCLUDE[dnprdnshort](../../../../csharp/getting-started/includes/dnprdnshort-md.md)] の <xref:System.String.Substring%2A?displayProperty=fullName> メソッドの引数では、同じ開始位置を 0 から始まるインデックス番号で示します。  つまり、文字列 "ABCDE" の各文字の番号は、`Mid` 関数では 1、2、3、4、5 になるのに対し、<xref:System.String.Substring%2A?displayProperty=fullName> メソッドでは 0、1、2、3、4 になります。  
+## <a name="one-based"></a>1 から始まる  
+ たとえば&1; から始まるの[!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]機能を検討してください、`Mid`関数です。 部分文字列が開始する、位置 1 から始まる文字位置を示す引数を受け取る。 [!INCLUDE[dnprdnshort](../../../../csharp/getting-started/includes/dnprdnshort_md.md)] <xref:System.String.Substring%2A?displayProperty=fullName>メソッドは、文字のインデックスで部分文字列を開始するには、文字列の位置の 0 から開始します</xref:System.String.Substring%2A?displayProperty=fullName>。 したがって、文字列"ABCDE"がある場合、個々 の文字の番号と 1,2,3,4,5 で使用するため、`Mid`関数が 0,1,2,3,4 で使用するため、<xref:System.String.Substring%2A?displayProperty=fullName>メソッド</xref:System.String.Substring%2A?displayProperty=fullName>。  
   
-## 0 から始まるインデックス番号  
- インデックス番号が 0 から始まる [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] の関数の例に、`Split` 関数があります。  この関数は文字列を分割し、部分文字列を格納した配列を返します。  [!INCLUDE[dnprdnshort](../../../../csharp/getting-started/includes/dnprdnshort-md.md)] の <xref:System.String.Split%2A?displayProperty=fullName> メソッドも文字列を分割し、部分文字列を格納した配列を返します。  `Split` 関数と <xref:System.String.Split%2A> メソッドは [!INCLUDE[dnprdnshort](../../../../csharp/getting-started/includes/dnprdnshort-md.md)] の配列を返すため、インデックス番号はどちらも 0 から始まる必要があります。  
+## <a name="zero-based"></a>0 から始まる  
+ たとえば、0 から始まるの[!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]機能を検討してください、`Split`関数です。 文字列を分割し、これらの部分文字列を含む配列を返します。 [!INCLUDE[dnprdnshort](../../../../csharp/getting-started/includes/dnprdnshort_md.md)] <xref:System.String.Split%2A?displayProperty=fullName>もメソッドは文字列を分割し、部分文字列を含む配列を返します</xref:System.String.Split%2A?displayProperty=fullName>。 `Split`関数と<xref:System.String.Split%2A>メソッドの戻り値[!INCLUDE[dnprdnshort](../../../../csharp/getting-started/includes/dnprdnshort_md.md)]配列、必要がある&0; から始まる</xref:System.String.Split%2A>。  
   
-## 参照  
- <xref:Microsoft.VisualBasic.Strings.Mid%2A>   
- <xref:Microsoft.VisualBasic.Strings.Split%2A>   
- <xref:System.String.Substring%2A>   
- <xref:System.String.Split%2A>   
- [Introduction to Strings in Visual Basic](../../../../visual-basic/programming-guide/language-features/strings/introduction-to-strings.md)
+## <a name="see-also"></a>関連項目  
+ <xref:Microsoft.VisualBasic.Strings.Mid%2A></xref:Microsoft.VisualBasic.Strings.Mid%2A>   
+ <xref:Microsoft.VisualBasic.Strings.Split%2A></xref:Microsoft.VisualBasic.Strings.Split%2A>   
+ <xref:System.String.Substring%2A></xref:System.String.Substring%2A>   
+ <xref:System.String.Split%2A></xref:System.String.Split%2A>   
+ [Visual Basic における文字列の概要](../../../../visual-basic/programming-guide/language-features/strings/introduction-to-strings.md)

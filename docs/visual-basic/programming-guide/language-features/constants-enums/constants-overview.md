@@ -1,60 +1,74 @@
 ---
-title: "Constants Overview (Visual Basic) | Microsoft Docs"
-ms.custom: ""
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "constants"
+title: "定数の概要 (Visual Basic) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 2015-07-20
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-visual-basic
+ms.topic: article
+dev_langs:
+- VB
+helpviewer_keywords:
+- constants
 ms.assetid: 29016fe8-78b3-4dc8-90b8-1cfec2fa8ac9
 caps.latest.revision: 14
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 14
----
-# Constants Overview (Visual Basic)
-[!INCLUDE[vs2017banner](../../../../visual-basic/developing-apps/includes/vs2017banner.md)]
+author: stevehoag
+ms.author: shoag
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: 8004045d233da0db017b26b350743ad9f8d61845
+ms.lasthandoff: 03/13/2017
 
-定数とは、数字または文字列の代わりに使用される名前のことであり、その値は不変です。  定数に格納された値は、その名が示すとおり、アプリケーションの実行中に変わることはありません。  定数を使うとコードが読みやすくなり、保守も簡単になります。  定数は、コード内で、同じ値を繰り返し使用する場合や、覚えにくいか意味が明白でない特定の数値を参照する場合に使用します。  
+---
+# <a name="constants-overview-visual-basic"></a>定数の概要 (Visual Basic)
+定数とは、数値または変更されない文字列の代わりに使用されるわかりやすい名前です。 定数は、同じである、名前が示すように、アプリケーションの実行中の値を格納します。 大幅に、コードの読みやすさを向上し、定数を使用して管理しやすきます。 再表示される値を含むコード内を使用すると、特定の数値を記憶または明確な意味がないしにくいに依存します。  
   
-## 定数の作成および使用方法  
- [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] には多数の定義済み定数があり、主として印刷用および表示用に使用されます。  定数は、変数名を作成するときと同じガイドラインに従って、`Const` ステートメントで宣言します。  `Option Strict` が `On` である場合、定数の型を明示的に宣言する必要があります。  
+## <a name="how-to-create-and-use-constants"></a>作成して、定数を使用する方法  
+ [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]印刷および表示するために主を使用して、定義済みの定数の数が含まれています。 持つ独自の定数を作成することも、`Const`ステートメントの場合と同じガイドラインを使用して、変数名を作成します。 場合`Option Strict`は`On`、定数の型を明示的に宣言する必要があります。  
   
- 定数のスコープ、つまり名前に修飾子を付けずに定数を参照できるコードの範囲は、同じ場所で変数を宣言した場合の変数のスコープと同じです。  特定のプロシージャのスコープ内で存在する定数を作成するには、定数をそのプロシージャ内で宣言します。  アプリケーション全体で使用できる定数の宣言は、クラスの宣言セクションで `Public` キーワードを使って行います。  
+ 一連の名前を修飾せずに参照できるすべてのコードでは、定数のスコープは、同じ場所で宣言された変数と同じです。 特定のプロシージャのスコープ内に存在する定数を作成するには、そのプロシージャ内で宣言します。 アプリケーション全体で使用できる定数を作成するには、宣言を使用して、`Public`クラスの宣言セクションにキーワードです。  
   
 > [!NOTE]
->  定数は変数と似ていますが、変数のように変更することや新しい値を代入することはできません。  
+>  定数には、変数と似ていますに変更したり、変数のように、新しい値を代入することはできません。  
   
- コードで使用する定数には、使用するコントロールやコンポーネントのオブジェクト モデルにあらかじめ用意されている定数と、ユーザー定義の定数 \(つまり、自分で作成する定数\) とがあります。  
+ コントロールやコンポーネントを使用するためのオブジェクト モデルでは、コードで使用する定数を定義できますか、ユーザー定義できます (つまり、自分で作成した)。  
   
-## コンパイル時定数および実行時定数  
- コンパイル時定数は、コードがコンパイルされる時点で計算されます。一方、実行時定数は、アプリケーションの実行時にならないと計算できません。  コンパイル時定数の値はアプリケーションを何回実行しても常に同じですが、実行時定数の値はアプリケーション実行のたびに変わる可能性があります。  コンパイル時定数は、配列の上下限、ケース式、列挙子の初期化子などに必要です。  
+## <a name="compile-time-and-run-time-constants"></a>コンパイル時と実行時定数  
+ コンパイル時定数は、実行時定数は、アプリケーションの実行中にのみ計算するときに、コードのコンパイル時に計算されます。 コンパイル時定数では、実行時定数たびに変わる可能性があります中に、アプリケーションが実行されるたびに同じ値があります。 コンパイル時定数は、配列の範囲、case 式は、列挙子の初期化子などの場合に必要です。  
   
-## このセクションの内容  
+## <a name="in-this-section"></a>このセクションの内容  
   
-|||  
-|-|-|  
-|定義|語句|  
-|[How to: Declare A Constant](../../../../visual-basic/programming-guide/language-features/constants-enums/how-to-declare-a-constant.md)|`Const` ステートメントを使用して定数を宣言し、定数に値を設定する方法を説明します。定数を宣言する際には、値を予想しやすい名前を割り当てます。|  
-|[User\-Defined Constants](../../../../visual-basic/programming-guide/language-features/constants-enums/user-defined-constants.md)|独自の定数を作成する方法について説明します。スコープについて、および循環参照を避ける方法についても説明します。|  
-|[Constant and Literal Data Types](../../../../visual-basic/programming-guide/language-features/constants-enums/constant-and-literal-data-types.md)|`Option Explicit` がオフの場合に、[!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] コンパイラが定数を初期化する方法について説明します。|  
-|[How to: Group Related Constant Values Together](../../../../visual-basic/programming-guide/language-features/constants-enums/how-to-group-related-constant-values-together.md)|関連する定数の値をグループ化する方法を示します。|  
+|定義|用語|  
+|---|---|  
+|[方法 : 定数を宣言する](../../../../visual-basic/programming-guide/language-features/constants-enums/how-to-declare-a-constant.md)|使用する方法について説明、`Const`定数を宣言し、その値を設定するステートメントは定数を宣言すると、値にわかりやすい名前を割り当てます。|  
+|[ユーザー定義定数](../../../../visual-basic/programming-guide/language-features/constants-enums/user-defined-constants.md)|循環参照を回避する方法とスコープの設定に関する情報など、独自の定数を作成する方法について説明します。|  
+|[定数とリテラルのデータ型](../../../../visual-basic/programming-guide/language-features/constants-enums/constant-and-literal-data-types.md)|方法に関する情報を提供[!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]コンパイラ定数の初期化時に`Option Explicit`は無効になっています。|  
+|[方法 : 関連する定数値をまとめてグループ化する](../../../../visual-basic/programming-guide/language-features/constants-enums/how-to-group-related-constant-values-together.md)|関連付けられている定数の値をグループ化する方法を示します。|  
   
-## 参照  
+## <a name="reference"></a>参照  
   
-|||  
-|-|-|  
-|定義|語句|  
-|[Constants and Enumerations](../../../../visual-basic/language-reference/constants-and-enumerations.md)|[!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] に定義済みの定数を一覧で示します。|  
-|[Const Statement](../../../../visual-basic/language-reference/statements/const-statement.md)|`Const` ステートメントとその使用方法について説明します。|  
-|[Option Strict Statement](../../../../visual-basic/language-reference/statements/option-strict-statement.md)|`Option Strict` ステートメントとその使用方法について説明します。|  
+|定義|用語|  
+|---|---|  
+|[定数と列挙体](../../../../visual-basic/language-reference/constants-and-enumerations.md)|定義済み定数[!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]します。|  
+|[Const ステートメント](../../../../visual-basic/language-reference/statements/const-statement.md)|説明、`Const`ステートメントとその使用します。|  
+|[Option Strict ステートメント](../../../../visual-basic/language-reference/statements/option-strict-statement.md)|説明、`Option Strict`ステートメントとその使用します。|  
   
-## 参照  
- [Enumerations Overview](../../../../visual-basic/programming-guide/language-features/constants-enums/enumerations-overview.md)   
- [How to: Initialize an Array Variable in Visual Basic](../../../../visual-basic/programming-guide/language-features/arrays/how-to-initialize-an-array-variable.md)
+## <a name="see-also"></a>関連項目  
+ [列挙型の概要](../../../../visual-basic/programming-guide/language-features/constants-enums/enumerations-overview.md)   
+ [方法: Visual Basic で配列変数を初期化](../../../../visual-basic/programming-guide/language-features/arrays/how-to-initialize-an-array-variable.md)

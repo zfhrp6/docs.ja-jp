@@ -1,54 +1,70 @@
 ---
-title: "How to: Call an Overloaded Procedure (Visual Basic) | Microsoft Docs"
-ms.custom: ""
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "Visual Basic code, procedures"
-  - "procedures, overloading"
-  - "procedures, calling"
-  - "procedures, multiple versions"
-  - "procedure calls, overloaded"
+title: "方法: オーバー ロードされたプロシージャ (Visual Basic) を呼び出す |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 2015-07-20
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-visual-basic
+ms.topic: article
+dev_langs:
+- VB
+helpviewer_keywords:
+- Visual Basic code, procedures
+- procedures, overloading
+- procedures, calling
+- procedures, multiple versions
+- procedure calls, overloaded
 ms.assetid: 3bb331fb-f6bc-406f-9ca0-9609b497014c
 caps.latest.revision: 12
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 12
----
-# How to: Call an Overloaded Procedure (Visual Basic)
-[!INCLUDE[vs2017banner](../../../../visual-basic/developing-apps/includes/vs2017banner.md)]
+author: stevehoag
+ms.author: shoag
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: 0da83aa63bf013d841f2a01a535726f3b03497a1
+ms.lasthandoff: 03/13/2017
 
-プロシージャのオーバーロードの利点は、呼び出しの柔軟性にあります。  呼び出しを行うコードは、どの引数を渡す場合でも、プロシージャに渡すために必要な情報を取得し、単一のプロシージャ名で呼び出すことができます。  
+---
+# <a name="how-to-call-an-overloaded-procedure-visual-basic"></a>方法: オーバーロードされたプロシージャを呼び出す (Visual Basic)
+プロシージャのオーバー ロードの利点は、呼び出しの柔軟性です。 呼び出し元のコードでは、プロシージャに渡すし、どの引数が渡される、単一のプロシージャ名を呼び出して必要な情報を取得できます。  
   
-### 複数の形式が定義されたプロシージャを呼び出すには  
+### <a name="to-call-a-procedure-that-has-more-than-one-version-defined"></a>定義された&1; つ以上のバージョンを持つプロシージャを呼び出す  
   
-1.  呼び出しを行うコードで、プロシージャにどのデータを渡すかを決定します。  
+1.  呼び出し元のコードでは、プロシージャに渡すデータを決定します。  
   
-2.  プロシージャ呼び出しを通常の方法で作成し、引数リストにデータを定義します。  プロシージャに定義されている、いずれかの形式のパラメーター リストと一致するように、引数を指定してください。  
+2.  通常の方法では、引数リストで、データを提供することで、プロシージャの呼び出しを記述します。 引数には、プロシージャに対して定義されたバージョンのいずれかのパラメーター リストが一致することをします。  
   
-3.  どの形式のプロシージャを呼び出すかを判断する必要はありません。  [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] によって、引数リストと一致する形式に制御が渡されます。  
+3.  呼び出すプロシージャのバージョンを決定する必要はありません。 [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]引数リストに一致するバージョンに制御を渡す。  
   
-     [How to: Define Multiple Versions of a Procedure](../../../../visual-basic/programming-guide/language-features/procedures/how-to-define-multiple-versions-of-a-procedure.md) で宣言した `post` プロシージャを呼び出す例を次に示します。  顧客 ID を取得して、それが文字列型 \(`String`\) か整数型 \(`Integer`\) かを判断し、どちらの場合でも同じプロシージャを呼び出します。  
+     次の例では、`post`プロシージャ内で宣言[する方法: 複数のバージョンのプロシージャ定義](./how-to-define-multiple-versions-of-a-procedure.md)します。 顧客 id を取得して、ことがあるかどうかを判定する`String`または`Integer`、し、いずれの場合と同じ手順を呼び出します。  
   
-     [!code-vb[VbVbcnProcedures#56](./codesnippet/VisualBasic/how-to-call-an-overloaded-procedure_1.vb)]  
+     [!code-vb[VbVbcnProcedures #&56;](./codesnippet/VisualBasic/how-to-call-an-overloaded-procedure_1.vb)]  
   
-     [!code-vb[VbVbcnProcedures#57](./codesnippet/VisualBasic/how-to-call-an-overloaded-procedure_2.vb)]  
+     [!code-vb[VbVbcnProcedures #&57;](./codesnippet/VisualBasic/how-to-call-an-overloaded-procedure_2.vb)]  
   
-## 参照  
- [Procedures](../../../../visual-basic/programming-guide/language-features/procedures/index.md)   
- [Procedure Parameters and Arguments](../../../../visual-basic/programming-guide/language-features/procedures/procedure-parameters-and-arguments.md)   
- [Procedure Overloading](../../../../visual-basic/programming-guide/language-features/procedures/procedure-overloading.md)   
- [Troubleshooting Procedures](../../../../visual-basic/programming-guide/language-features/procedures/troubleshooting-procedures.md)   
- [How to: Define Multiple Versions of a Procedure](../../../../visual-basic/programming-guide/language-features/procedures/how-to-define-multiple-versions-of-a-procedure.md)   
- [How to: Overload a Procedure that Takes Optional Parameters](../../../../visual-basic/programming-guide/language-features/procedures/how-to-overload-a-procedure-that-takes-optional-parameters.md)   
- [How to: Overload a Procedure that Takes an Indefinite Number of Parameters](../../../../visual-basic/programming-guide/language-features/procedures/how-to-overload-a-procedure-that-takes-an-indefinite-number-of-parameters.md)   
- [Considerations in Overloading Procedures](../../../../visual-basic/programming-guide/language-features/procedures/considerations-in-overloading-procedures.md)   
- [Overload Resolution](../../../../visual-basic/programming-guide/language-features/procedures/overload-resolution.md)   
- [Overloads](../../../../visual-basic/language-reference/modifiers/overloads.md)
+## <a name="see-also"></a>関連項目  
+ [手順](./index.md)   
+ [プロシージャのパラメーターと引数](./procedure-parameters-and-arguments.md)   
+ [プロシージャのオーバー ロード](./procedure-overloading.md)   
+ [トラブルシューティングの手順](./troubleshooting-procedures.md)   
+ [方法: プロシージャの複数のバージョンを定義します。](./how-to-define-multiple-versions-of-a-procedure.md)   
+ [方法: 省略可能なパラメーターを受け取るプロシージャをオーバー ロード](./how-to-overload-a-procedure-that-takes-optional-parameters.md)   
+ [方法: 不特定数のパラメーターを受け取るプロシージャをオーバー ロード](./how-to-overload-a-procedure-that-takes-an-indefinite-number-of-parameters.md)   
+ [プロシージャのオーバー ロードに関する考慮事項](./considerations-in-overloading-procedures.md)   
+ [オーバー ロードの解決](./overload-resolution.md)   
+ [オーバーロード](../../../../visual-basic/language-reference/modifiers/overloads.md)

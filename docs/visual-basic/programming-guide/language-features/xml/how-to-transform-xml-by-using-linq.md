@@ -1,41 +1,57 @@
 ---
-title: "How to: Transform XML by Using LINQ (Visual Basic) | Microsoft Docs"
-ms.custom: ""
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "XML [Visual Basic], transforming"
-  - "LINQ to XML [Visual Basic], transforming XML"
+title: "方法: LINQ (Visual Basic) を使用して XML を変換 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 2015-07-20
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-visual-basic
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- VB
+helpviewer_keywords:
+- XML [Visual Basic], transforming
+- LINQ to XML [Visual Basic], transforming XML
 ms.assetid: 815687f4-0bc2-4c0b-adc6-d78744aa356f
 caps.latest.revision: 14
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 14
----
-# How to: Transform XML by Using LINQ (Visual Basic)
-[!INCLUDE[vs2017banner](../../../../visual-basic/developing-apps/includes/vs2017banner.md)]
+author: stevehoag
+ms.author: shoag
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: 9f97466727064ea275c051b5916b0fb297e9e23a
+ms.lasthandoff: 03/13/2017
 
-[XML Literals](../../../../visual-basic/language-reference/xml-literals/index.md)を使用すると、ソースからの XML の読み込みと新しい XML 形式への変換を容易に実行できます。  LINQ クエリを利用して変換の内容を取得したり、既存のドキュメントの内容を新しい XML 形式に変換したりできます。  
+---
+# <a name="how-to-transform-xml-by-using-linq-visual-basic"></a>方法 : LINQ を使用して XML を変換する (Visual Basic)
+[XML リテラル](../../../../visual-basic/language-reference/xml-literals/index.md)容易に&1; つのソースから XML を読み取るし、新しい XML 形式に変換します。 変換、コンテンツを取得する LINQ クエリを活用したり、既存のドキュメントの内容を新しい XML 形式に変更できます。  
   
- このトピックの例では、XML ソース ドキュメントの内容を、ブラウザーに表示される HTML に変換します。  
+ このトピックの例では、XML ソース ドキュメントからブラウザーで表示される HTML へのコンテンツを変換します。  
   
- [!INCLUDE[note_settings_general](../../../../csharp/language-reference/compiler-messages/includes/note-settings-general-md.md)]  
+[!INCLUDE[note_settings_general](../../../../csharp/language-reference/compiler-messages/includes/note_settings_general_md.md)]  
   
-### XML ドキュメントを変換するには  
+### <a name="to-transform-an-xml-document"></a>XML ドキュメントを変換するには  
   
-1.  Visual Studio で、新しい Visual Basic プロジェクトを **\[コンソール アプリケーション\]** プロジェクト テンプレートで作成します。  
+1.  Visual Studio で新しい Visual Basic プロジェクトを作成、**コンソール アプリケーション**プロジェクト テンプレートです。  
   
-2.  Visual Basic コードを変更するために、プロジェクト内に作成された Module1.vb ファイルをダブルクリックします。  `Module1` モジュールの `Sub Main` に次のコードを追加します。  このコードは、ソース XML ドキュメントを <xref:System.Xml.Linq.XDocument> オブジェクトとして作成します。  
+2.  Visual Basic コードを変更するプロジェクトで作成した Module1.vb ファイルをダブルクリックします。 次のコードを追加、`Sub Main`の`Module1`モジュールです。 このコードでは、ソース XML ドキュメントとして、<xref:System.Xml.Linq.XDocument>オブジェクト</xref:System.Xml.Linq.XDocument>。  
   
-    ```vb#  
+    ```vb  
     Dim catalog =   
       <?xml version="1.0"?>  
         <Catalog>  
@@ -67,13 +83,13 @@ caps.handback.revision: 14
         </Catalog>  
     ```  
   
-     [How to: Load XML from a File, String, or Stream](../../../../visual-basic/programming-guide/language-features/xml/how-to-load-xml-from-a-file-string-or-stream.md).  
+     [方法: ファイル、文字列またはストリームから XML を読み込む](../../../../visual-basic/programming-guide/language-features/xml/how-to-load-xml-from-a-file-string-or-stream.md)です。  
   
-3.  ソース XML ドキュメントを作成するコードの後ろに、オブジェクトからすべての \<Book\> 要素を取得して HTML ドキュメントに変換する次のコードを追加します。  変換後の HTML を含む <xref:System.Xml.Linq.XElement> オブジェクトのコレクションを返す LINQ クエリを使用して、\<Book\> 要素の一覧を作成します。  埋め込み式を使用して、ソース ドキュメントの値を新しい XML 形式にできます。  
+3.  ソース XML ドキュメントを作成するコードの後に、すべて取得する次のコードを追加、\<帳 > オブジェクトの要素を HTML ドキュメントに変換するとします。 一連の\<帳 > のコレクションを返す LINQ クエリを使用して要素を作成<xref:System.Xml.Linq.XElement>変換後の HTML を含むオブジェクト</xref:System.Xml.Linq.XElement>。 埋め込み式を使用して、新しい XML 形式で、ソース ドキュメントからの値を挿入することができます。  
   
-     <xref:System.Xml.Linq.XElement.Save%2A> メソッドを使用して、結果の HTML ドキュメントをファイルに書き込みます。  
+     使用して結果の HTML ドキュメントがファイルに書き込まれる、<xref:System.Xml.Linq.XElement.Save%2A>メソッド</xref:System.Xml.Linq.XElement.Save%2A>。  
   
-    ```vb#  
+    ```vb  
     Dim htmlOutput =   
       <html>  
         <body>  
@@ -92,13 +108,13 @@ caps.handback.revision: 14
     htmlOutput.Save("BookDescription.html")  
     ```  
   
-4.  `Module1` の `Sub Main` の後ろに、\<Description\> ノードを指定の HTML 形式に変換する新しいメソッド \(`Sub`\) を追加します。  このメソッドは、前の手順のコードによって呼び出され、\<Description\> 要素の書式を保持するために使用されます。  
+4.  後に`Sub Main`の`Module1`、新しいメソッドを追加 (`Sub`) に変換する、\<説明 > ノードを指定した HTML 形式にします。 このメソッドは、前の手順でコードによって呼び出されの形式を保持するために使用される、\<説明 > 要素。  
   
-     このメソッドは、\<Description\> 要素のサブ要素を HTML に置き換えます。  `ReplaceWith` メソッドは、サブ要素の位置を保持するために使用されます。  \<Description\> 要素の変換後の内容は、HTML 段落 \(\<p\>\) 要素に含まれます。  <xref:System.Xml.Linq.XContainer.Nodes%2A> プロパティを使用して、\<Description\> 要素の変換後の内容が取得されます。  これにより、変換後の内容にサブ要素が含まれることが保証されます。  
+     このメソッドは、のサブ要素を置き換えます、\<説明 > HTML を持つ要素。 `ReplaceWith`メソッドは、サブ要素の位置を保持するために使用します。 変換済みのコンテンツ、\<説明 > HTML パラグラフで要素が含まれています (\<p >) 要素です。 <xref:System.Xml.Linq.XContainer.Nodes%2A>の変換済みのコンテンツを取得するプロパティが使用される、\<説明 > 要素</xref:System.Xml.Linq.XContainer.Nodes%2A>。 これにより、変換済みのコンテンツにサブ要素が含まれています。  
   
-     `Module1` の `Sub Main` の後ろに、次のコードを追加します。  
+     後は、次のコードを追加`Sub Main`の`Module1`です。  
   
-    ```vb#  
+    ```vb  
     Public Function TransformDescription(ByVal desc As XElement) As XElement  
   
       ' Replace <technology> elements with <b>.  
@@ -126,7 +142,7 @@ caps.handback.revision: 14
   
 5.  変更内容を保存します。  
   
-6.  F5 キーを押してコードを実行します。  保存されたドキュメントは、次のようになります。  
+6.  F5 キーを押して、コードを実行します。 保存されたドキュメントは以下のようにします。  
   
     ```  
     <?xml version="1.0"?>  
@@ -165,10 +181,11 @@ caps.handback.revision: 14
     </html>  
     ```  
   
-## 参照  
- [XML Literals](../../../../visual-basic/language-reference/xml-literals/index.md)   
- [Manipulating XML in Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/manipulating-xml.md)   
+## <a name="see-also"></a>関連項目  
+ [XML リテラル](../../../../visual-basic/language-reference/xml-literals/index.md)   
+ [Visual Basic で XML を操作します。](../../../../visual-basic/programming-guide/language-features/xml/manipulating-xml.md)   
  [XML](../../../../visual-basic/programming-guide/language-features/xml/index.md)   
- [How to: Load XML from a File, String, or Stream](../../../../visual-basic/programming-guide/language-features/xml/how-to-load-xml-from-a-file-string-or-stream.md)   
+ [方法: ファイル、文字列またはストリームから XML を読み込む](../../../../visual-basic/programming-guide/language-features/xml/how-to-load-xml-from-a-file-string-or-stream.md)   
  [LINQ](../../../../visual-basic/programming-guide/language-features/linq/index.md)   
- [Introduction to LINQ in Visual Basic](../../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)
+ [Visual Basic における LINQ の概要](../../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)
+

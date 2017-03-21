@@ -1,43 +1,59 @@
 ---
-title: "&#39;As Any&#39; is not supported in &#39;Declare&#39; statements | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "bc30828"
-  - "vbc30828"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "BC30828"
+title: "&quot;As Any&quot; はサポートされていません &quot;Declare&quot; ステートメントで |Microsoft ドキュメント"
+ms.date: 2015-07-20
+ms.prod: .net
+ms.suite: 
+ms.technology:
+- devlang-visual-basic
+ms.topic: article
+f1_keywords:
+- bc30828
+- vbc30828
+dev_langs:
+- VB
+helpviewer_keywords:
+- BC30828
 ms.assetid: 7e5cf519-8b64-4ac5-8116-705fe26c846d
 caps.latest.revision: 11
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 11
----
-# &#39;As Any&#39; is not supported in &#39;Declare&#39; statements
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
+author: stevehoag
+ms.author: shoag
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: fb179ae938d4c132f61e2076248729f7ea15a13f
+ms.lasthandoff: 03/13/2017
 
-`Any` 型は、Visual Basic 6.0 以前のバージョンの `Declare` ステートメントで、任意のデータ型を受け取ることができる引数を宣言するために使用されていました。  しかし、[!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] でオーバーロードがサポートされたため、`Any` 型は使用されなくなりました。  
+---
+# <a name="39as-any39-is-not-supported-in-39declare39-statements"></a>'As Any' はサポートされていません 'Declare' ステートメントで
+`Any`データ型と共に使用されました`Declare`あらゆる種類のデータを含む可能性のある引数の使用を許可するには、Visual Basic 6.0 と以前のバージョン ステートメントです。 [!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]ただし、オーバー ロードをサポートし、`Any`古いデータを入力します。  
   
- **Error ID:** BC30828  
+ **エラー ID:** BC30828  
   
-### このエラーを解決するには  
+## <a name="to-correct-this-error"></a>このエラーを解決するには  
   
-1.  使用する特定の型のパラメーターを宣言します。次に例を示します。  
+1.  使用する特定の型のパラメーターを宣言します。例えば。  
   
-     [!code-vb[VbVbalrStatements#95](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/as-any-is-not-supported-in-declare-statements_1.vb)]  
+     [!code-vb[VbVbalrStatements #&95;](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/as-any-is-not-supported-in-declare-statements_1.vb)]  
   
-2.  呼び出しているプロシージャで `Void*` が必要とされている場合は、<xref:System.Runtime.InteropServices.MarshalAsAttribute> 属性を使用して `As Any` を指定します。  
+2.  使用して、<xref:System.Runtime.InteropServices.MarshalAsAttribute>を指定する属性`As Any`と`Void*`呼び出されるプロシージャで想定される</xref:System.Runtime.InteropServices.MarshalAsAttribute>。  
   
-     [!code-vb[VbVbalrStatements#96](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/as-any-is-not-supported-in-declare-statements_2.vb)]  
+     [!code-vb[VbVbalrStatements #&96;](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/as-any-is-not-supported-in-declare-statements_2.vb)]  
   
-## 参照  
- <xref:System.Runtime.InteropServices.MarshalAsAttribute>   
- [Walkthrough: Calling Windows APIs](../../../visual-basic/programming-guide/com-interop/walkthrough-calling-windows-apis.md)   
- [Declare Statement](../../../visual-basic/language-reference/statements/declare-statement.md)   
- [マネージ コードでのプロトタイプの作成](../Topic/Creating%20Prototypes%20in%20Managed%20Code.md)
+## <a name="see-also"></a>関連項目  
+ <xref:System.Runtime.InteropServices.MarshalAsAttribute></xref:System.Runtime.InteropServices.MarshalAsAttribute>   
+ [チュートリアル: Windows Api の呼び出し](../../../visual-basic/programming-guide/com-interop/walkthrough-calling-windows-apis.md)   
+ [Declare ステートメント](../../../visual-basic/language-reference/statements/declare-statement.md)   
+ [マネージ コードでのプロトタイプの作成](http://msdn.microsoft.com/library/ecdcf25d-cae3-4f07-a2b6-8397ac6dc42d)

@@ -1,34 +1,50 @@
 ---
-title: "Troubleshooting Procedures (Visual Basic) | Microsoft Docs"
-ms.custom: ""
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "troubleshooting Visual Basic, procedures"
-  - "procedures, troubleshooting"
-  - "Visual Basic code, procedures"
-  - "troubleshooting procedures"
-  - "procedures, about procedures"
+title: "プロシージャのトラブルシューティング (Visual Basic) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 2015-07-20
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-visual-basic
+ms.topic: article
+dev_langs:
+- VB
+helpviewer_keywords:
+- troubleshooting Visual Basic, procedures
+- procedures, troubleshooting
+- Visual Basic code, procedures
+- troubleshooting procedures
+- procedures, about procedures
 ms.assetid: 525721e8-2e02-4f75-b5d8-6b893462cf2b
 caps.latest.revision: 17
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 17
----
-# Troubleshooting Procedures (Visual Basic)
-[!INCLUDE[vs2017banner](../../../../visual-basic/developing-apps/includes/vs2017banner.md)]
+author: stevehoag
+ms.author: shoag
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: a5445d6da982e4eea5b1047505e4bee3380ed472
+ms.lasthandoff: 03/13/2017
 
-ここでは、プロシージャを使用する際に起きる一般的な問題についていくつか説明します。  
+---
+# <a name="troubleshooting-procedures-visual-basic"></a>プロシージャのトラブルシューティング (Visual Basic)
+ここでは、プロシージャを使用する場合に発生することが一般的な問題についてを説明します。  
   
-## Function プロシージャから配列型を返す  
- `Function` プロシージャが配列型を返す場合は、`Function` 名を使って配列の各要素に値を格納することはできません。  格納しようとすると、コンパイラによって `Function` の呼び出しと解釈されます。  たとえば、次のコードはコンパイル エラーになります。  
+## <a name="returning-an-array-type-from-a-function-procedure"></a>Function プロシージャから、配列型を返す  
+ 場合、`Function`配列のデータ型を返し、使用することはできません、`Function`配列の要素の値を格納する名前。 これを行うしようとすると、コンパイラによって呼び出しとして、`Function`です。 次の例では、コンパイラ エラーを生成します。  
   
  `Function allOnes(ByVal n As Integer) As Integer()`  
   
@@ -46,99 +62,99 @@ caps.handback.revision: 17
   
  `End Function`  
   
- `allOnes(i) = 1` ステートメントは、間違った型の引数 \(`Integer` 配列ではなく単一の `Integer`\) を指定して `allOnes` を呼び出していると解釈されるため、ここでコンパイル エラーが発生します。  `Return allOnes()` ステートメントはコンパイル エラーを発生します。引数を指定せずに `allOnes` を呼び出していると解釈されるからです。  
+ ステートメント`allOnes(i) = 1`を呼び出す可能性があるため、コンパイラ エラーが発生`allOnes`無効なデータ型の引数を持つ (シングルトン`Integer`の代わりに、`Integer`配列)。 ステートメント`Return allOnes()`を呼び出す可能性があるため、コンパイラ エラーが発生`allOnes`引数なしでします。  
   
- **正しい方法:** 返される配列の要素を変更できるようにするには、内部配列をローカル変数として定義します。  次の例はコンパイル エラーが発生しません。  
+ **適切なアプローチ。**が返される配列の要素を変更できるようにするには、ローカル変数として内部の配列を定義します。 次の例では、コンパイル エラーが発生します。  
   
- [!code-vb[VbVbcnProcedures#66](./codesnippet/VisualBasic/troubleshooting-procedures_1.vb)]  
+ [!code-vb[VbVbcnProcedures #&66;](./codesnippet/VisualBasic/troubleshooting-procedures_1.vb)]  
   
-## 引数がプロシージャ呼び出しによって変更されない  
- 呼び出しコードの引数の基になるプログラミング要素を、プロシージャで変更できるようにする場合は、参照渡しで渡す必要があります。  ただし、値渡しで渡した場合でも、プロシージャはその参照型の引数の要素にアクセスできます。  
+## <a name="argument-not-being-modified-by-procedure-call"></a>引数は変更されていないプロシージャ呼び出しで  
+ 呼び出し元のコードで引数を基になるプログラミングの要素を変更する手順を許可する場合は、参照によって渡す必要があります。 値渡しで渡す場合でも、プロシージャが参照型の引数の要素をアクセスできます。  
   
--   **基になる変数** 基になる変数の要素の値そのものをプロシージャで変更できるようにするには、プロシージャのパラメーターを [ByRef](../../../../visual-basic/language-reference/modifiers/byref.md) で宣言する必要があります。  また、呼び出しコードで引数をかっこで囲んで記述しないでください。こうすると、`ByRef` で引数を渡す機能がオーバーライドされるからです。  
+-   **変数を基になる**します。 基になる変数要素自体の値を置き換えるための手順を許可するように、プロシージャには、パラメーターを宣言する必要があります[ByRef](../../../../visual-basic/language-reference/modifiers/byref.md)します。 また、呼び出し元のコードいない引数かっこで囲んでくださいをオーバーライドするため、`ByRef`渡す機能します。  
   
--   **型参照要素** パラメーターを [ByVal](../../../../visual-basic/language-reference/modifiers/byval.md) で宣言すると、基になる変数要素そのものをプロシージャで変更できなくなります。  しかし、引数が参照型であれば、プロシージャは変数の値を置き換えることはできませんが、引数が指すオブジェクトのメンバーを変更できます。  たとえば、引数が配列変数であった場合、プロシージャは新しい配列を代入することはできませんが、その 1 つ以上の要素を変更できます。  変更した要素は、呼び出し元のコードの基の配列変数に反映されます。  
+-   **型の要素を参照する**です。 パラメーターを宣言する場合は、 [ByVal](../../../../visual-basic/language-reference/modifiers/byval.md)プロシージャは、基になる変数要素自体を変更できません。 ただし、引数が参照型の場合、変数の値を置き換えることができない場合でも、プロシージャは、ポイントをするには、オブジェクトのメンバー変更できます。 たとえば、引数が、配列変数の場合は、プロシージャは、新しい配列を割り当てることはできませんが、1 つまたは複数の要素を変更することができます。 変更された要素は、呼び出し元のコードで基になる配列変数に反映されます。  
   
- 次の例には、配列変数を値渡しで受け取ってその要素を操作する 2 つのプロシージャが定義されています。  `increase` プロシージャは、各要素に単純に 1 を加算します。  `replace` プロシージャは、パラメーター `a()` に新しい配列を代入してから各要素に 1 を加算します。  ただし、この新しい配列の代入は、呼び出し元のコードの基の配列変数には反映されません。なぜなら、`a()` が `ByVal` で宣言されているからです。  
+ 次の例では、その要素の値によって、配列変数を実行して、操作を&2; つの手順を定義します。 プロシージャ`increase`単純に各要素に&1; を追加します。 プロシージャ`replace`パラメーターに新しい配列を割り当てます`a()`し、各要素に&1; を追加します。 ただし、再割り当ては変わりません呼び出し元のコードで基になる配列変数のため`a()`が宣言されている`ByVal`します。  
   
- [!code-vb[VbVbcnProcedures#35](./codesnippet/VisualBasic/troubleshooting-procedures_2.vb)]  
+ [!code-vb[VbVbcnProcedures&#35;](./codesnippet/VisualBasic/troubleshooting-procedures_2.vb)]  
   
- [!code-vb[VbVbcnProcedures#38](./codesnippet/VisualBasic/troubleshooting-procedures_3.vb)]  
+ [!code-vb[VbVbcnProcedures #&38;](./codesnippet/VisualBasic/troubleshooting-procedures_3.vb)]  
   
- 次に、`increase` と `replace` を呼び出す例を示します。  
+ に対する呼び出しを次の例`increase`と`replace`です。  
   
- [!code-vb[VbVbcnProcedures#37](./codesnippet/VisualBasic/troubleshooting-procedures_4.vb)]  
+ [!code-vb[VbVbcnProcedures #&37;](./codesnippet/VisualBasic/troubleshooting-procedures_4.vb)]  
   
- 最初の `MsgBox` の呼び出しでは、"After increase\(n\): 11, 21, 31, 41" と表示されます。  `n` が参照型なので、`ByVal` で渡されていても `increase` はそのメンバーを変更できます。  
+ 最初の`MsgBox`表示を呼び出して"increase(n) 後: 11、21、31、41"です。 `n` 、参照型では、`increase`が渡される場合でも、そのメンバーを変更できます`ByVal`します。  
   
- 2 番目の `MsgBox` の呼び出しでは、"After replace\(n\): 11, 21, 31, 41" と表示されます。  `n` が `ByVal` で渡されたため、`replace` は変数 `n` を、新しい配列を代入するという方法で変更できません。  `replace` が新しい配列インスタンス `k` を作成し、そこにローカル変数 `a` を代入すると、呼び出しコードによって渡された `n` への参照が失われます。  `a` のメンバーをインクリメントすると、ローカル変数 `k` だけに反映されます。  
+ 2 番目`MsgBox`表示を呼び出して"目後: 11、21、31、41"です。 `n`は`ByVal`、`replace`変数を変更することはできません`n`を新しい配列を割り当てることで。 ときに`replace`配列の新しいインスタンスを作成`k`し、ローカル変数に代入`a`への参照が失われた`n`して呼び出し元のコードに渡されます。 メンバーをインクリメントして`a`、ローカル配列のみ`k`が影響を受けます。  
   
- **正しい方法:** 基になる変数要素そのものを変更可能にするには、参照渡しで渡します。  `replace` の宣言を変更し、呼び出しコードで配列を別の配列に置き換えることができるようにする例を次に示します。  
+ **適切なアプローチ。**を基になる変数要素自体を変更するには、参照渡しで渡します。 次の例の宣言で、変更を表示する`replace`を呼び出し元のコードの別の&1; つの配列を置き換えるようになります。  
   
- [!code-vb[VbVbcnProcedures#64](./codesnippet/VisualBasic/troubleshooting-procedures_5.vb)]  
+ [!code-vb[VbVbcnProcedures #&64;](./codesnippet/VisualBasic/troubleshooting-procedures_5.vb)]  
   
-## オーバーロードを定義できない  
- プロシージャのオーバーロードを定義する場合は、名前を同じにしてシグネチャを変える必要があります。  シグネチャが同じで、コンパイラがプロシージャ宣言をオーバーロードと区別できない場合は、エラーが発生します。  
+## <a name="unable-to-define-an-overload"></a>オーバー ロードを定義できません。  
+ プロシージャのオーバー ロードされたバージョンを定義する場合は、同じ名前で別の署名を使用する必要があります。 コンパイラは、同じシグネチャを持つオーバー ロードの宣言を区別することはできません、エラーを生成します。  
   
- プロシージャの*シグネチャ*は、プロシージャ名とパラメーター リストによって決まります。  各オーバーロードは名前がすべて同じである必要がありますが、シグネチャのその他のコンポーネントについては、少なくとも 1 つが他のいずれとも同じでないことが必要です。  詳細については、「[Procedure Overloading](../../../../visual-basic/programming-guide/language-features/procedures/procedure-overloading.md)」を参照してください。  
+ *署名*プロシージャのプロシージャ名とパラメーター リストによって決定されます。 各オーバー ロードは、他のすべてのオーバー ロードと同じ名前である必要がありますが、署名の他のコンポーネントの少なくとも&1; つにそれらすべてを異なる必要があります。 詳細については、次を参照してください。[プロシージャのオーバー ロード](./procedure-overloading.md)します。  
   
- 次の項目は、パラメーター リストに記述されますが、プロシージャのシグネチャのコンポーネントには含まれません。  
+ 次の項目場合でも、パラメーター リストには関係ないコンポーネントを示しますプロシージャの署名。  
   
--   `Public`、`Shared`、`Static` などのプロシージャ修飾子キーワード  
+-   プロシージャ修飾子のキーワードなど`Public`、`Shared`と`Static`  
   
 -   パラメーター名  
   
--   `ByRef` や `Optional` などのパラメーター修飾子キーワード  
+-   パラメーター修飾子のキーワードなど`ByRef`と`Optional`  
   
--   戻り値のデータ型 \(変換演算子以外\)  
+-   (変換演算子) を除く、戻り値のデータ型  
   
- これらの項目を変更するだけでは、プロシージャをオーバーロードすることはできません。  
+ プロシージャをオーバー ロードするだけで&1; つ以上前の項目のことはできません。  
   
- **正しい方法:** プロシージャのオーバーロードを定義するには、シグネチャを変える必要があります。  名前は同じでなくてはならないため、パラメーターの数、順序、またはデータ型を変えることが必要です。  ジェネリック プロシージャの場合は、型パラメーターの数を変更できます。  変換演算子 \([CType 関数](../../../../visual-basic/language-reference/functions/ctype-function.md)\) の場合は、戻り値の型を変更できます。  
+ **適切なアプローチ。**プロシージャのオーバー ロードを定義できるようにするには、署名を変更する必要があります。 同じ名前を使用する必要がありますので、数、順序、またはパラメーターのデータ型を変更しなければなりません。 ジェネリック プロシージャでは、型パラメーターの数を変更できます。 変換演算子で ([CType 関数](../../../../visual-basic/language-reference/functions/ctype-function.md))、戻り値の型を変更することができます。  
   
-### 省略可能な引数やパラメーター配列の引数を持つオーバーロードの解決  
- [Optional](../../../../visual-basic/language-reference/modifiers/optional.md) パラメーターまたは [ParamArray](../../../../visual-basic/language-reference/modifiers/paramarray.md) パラメーターを持つプロシージャをオーバーロードする場合は、*暗黙のオーバーロード*を重複させないよう注意する必要があります。  詳細については、「[Considerations in Overloading Procedures](../../../../visual-basic/programming-guide/language-features/procedures/considerations-in-overloading-procedures.md)」を参照してください。  
+### <a name="overload-resolution-with-optional-and-paramarray-arguments"></a>省略可能な解像度と ParamArray 引数をオーバー ロードします。  
+ 1 つまたは複数のプロシージャをオーバー ロードは場合[省略可能](../../../../visual-basic/language-reference/modifiers/optional.md)パラメーターまたは[ParamArray](../../../../visual-basic/language-reference/modifiers/paramarray.md)パラメーターのいずれかの複製避ける必要があります、*暗黙のオーバー ロード*します。 詳細については、次を参照してください。[プロシージャのオーバー ロードでの考慮事項](./considerations-in-overloading-procedures.md)します。  
   
-## オーバーロードされたプロシージャのうち、正しい形式を呼び出すことができない  
- プロシージャが複数の形式でオーバーロードされている場合は、それらすべてのパラメーター リストをよく確認することと、[!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] が複数のオーバーロードの中からどのように呼び出しを解決するかを理解することが必要です。  そうしないと、意図した形式と異なるオーバーロードを呼び出す可能性があります。  
+## <a name="calling-a-wrong-version-of-an-overloaded-procedure"></a>オーバー ロードされたプロシージャの間違ったバージョンの呼び出し  
+ プロシージャにいくつかのオーバー ロードされたバージョンがある場合、すべてのパラメーター リストを理解しておく理解しておいてください方法[!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]オーバー ロード間の呼び出しを解決します。 それ以外の場合、意図したものではないオーバー ロードを呼び出す可能性があります。  
   
- どのオーバーロードを呼び出すか決定したら、次の規則に注意して従ってください。  
+ どのオーバー ロードを呼び出そうとするを決定するには、次の規則に従うように注意します。  
   
--   正しい数の引数を、正しい順序で指定する。  
+-   引数、および正しい順序で、正確な数を指定します。  
   
--   最も望ましいのは、引数の型が対応するパラメーターの型とまったく同じであることです。  そうでない場合でも、各引数のデータ型は対応するパラメーターの型よりも小さいことが必要です。  これは [Option Strict Statement](../../../../visual-basic/language-reference/statements/option-strict-statement.md) に `Off` が設定されている場合でも同じです。  オーバーロードが引数リストによって縮小変換する必要が生じれば、そのオーバーロードは呼び出しの対象から外されます。  
+-   理想的には、引数には、対応するパラメーターとまったく同じデータ型が必要です。 いずれの場合は、各引数のデータ型は、対応するパラメーターに拡大変換する必要があります。 これは、true の場合でも、 [Option Strict ステートメント](../../../../visual-basic/language-reference/statements/option-strict-statement.md)に設定`Off`します。 オーバー ロードをオーバー ロードする引数リストから任意の縮小変換が必要な場合は、呼び出される対象ではありません。  
   
--   拡大変換を必要とする引数を指定する場合は、対応するパラメーターにデータ型をできるだけ近づけるようにしてください。  引数のデータ型を許容するオーバーロードが 2 つ以上ある場合、コンパイラは拡大変換の量が最も少ないオーバーロードに呼び出しを解決します。  
+-   拡大変換で必要な引数を指定する場合は、対応するパラメーターのデータ型にできるだけ近くにそのデータ型を確認します。 2 つまたは複数のオーバー ロードは、引数のデータ型を受け取る、コンパイラは、拡大の最低限の呼び出しのオーバー ロードの呼び出しを解決します。  
   
- 引数を指定するとき、変換キーワード [CType 関数](../../../../visual-basic/language-reference/functions/ctype-function.md) を使用すると、データ型の不一致の可能性を減らすことができます。  
+ データ型の不一致の可能性を低くにを使用して、 [CType 関数](../../../../visual-basic/language-reference/functions/ctype-function.md)引数を指定するとき、変換キーワードです。  
   
-### オーバーロードの解決エラー  
- オーバーロードされたプロシージャを呼び出すと、コンパイラは 1 つを除くすべてのオーバーロードの除外を試みます。  うまく除外できれば、呼び出しをそのオーバーロードに解決します。  すべてのオーバーロードが除外された場合、またはオーバーロードの候補を 1 つに絞ることができない場合は、エラーが発生します。  
+### <a name="overload-resolution-failure"></a>オーバー ロードの解決に失敗しました。  
+ オーバー ロードされたプロシージャを呼び出すときに、コンパイラは、オーバー ロードの&1; つだけを削除しようとします。 成功した場合は、そのオーバー ロードの呼び出しを解決します。 すべてのオーバー ロードを排除または、オーバー ロードの候補を&1; つを減らすことができない場合は、エラーを生成します。  
   
- 次の例は、オーバーロード解決のプロセスを示しています。  
+ 次の例では、オーバー ロードの解決プロセスを示します。  
   
- [!code-vb[VbVbcnProcedures#62](./codesnippet/VisualBasic/troubleshooting-procedures_6.vb)]  
+ [!code-vb[VbVbcnProcedures #&62;](./codesnippet/VisualBasic/troubleshooting-procedures_6.vb)]  
   
- [!code-vb[VbVbcnProcedures#63](./codesnippet/VisualBasic/troubleshooting-procedures_7.vb)]  
+ [!code-vb[VbVbcnProcedures #&63;](./codesnippet/VisualBasic/troubleshooting-procedures_7.vb)]  
   
- 1 回目の呼び出しでは、コンパイラは最初のオーバーロードを除外します。1 つ目の引数の型 \(`Short`\) が、対応するパラメーターの型 \(`Byte`\) よりも大きいからです。  次に、3 番目のオーバーロードを除去します。2 番目のオーバーロードの各引数型 \(`Short` と `Single`\) よりも、3 番目のオーバーロードで対応する引数型 \(`Integer` と `Single`\) の方が大きいからです。  2 番目のオーバーロードの方が拡大変換が少なくて済むため、コンパイラは 2 番目を使用して呼び出します。  
+ 最初の呼び出しで、コンパイラが最初のオーバー ロードを排除の最初の引数の型 (`Short`) に対応するパラメーターの型を変更して (`Byte`)。 次に除去&3; 番目のオーバー ロードは、2 番目のオーバー ロードで各引数の型 (`Short`と`Single`)&3; 番目のオーバー ロードでは、対応する型に拡大変換 (`Integer`と`Single`)。 2 番目のオーバー ロードが必要な拡大が少ないので、コンパイラは、呼び出しの使用します。  
   
- 2 回目の呼び出しでは、コンパイラは引数の型が大きすぎるという理由でオーバーロードを除外できません。  3 番目のオーバーロードは、1 回目の呼び出しのときと同じ理由で除外されます。2 番目のオーバーロードを呼び出した方が引数の型の拡大変換が少なくて済むからです。  しかし、コンパイラは 1 番目と 2 番目のオーバーロードのいずれかに解決できません。  どちらにも、対応する型に拡大変換されるパラメーター型が 1 つ定義されています \(`Byte` から `Short`、そして `Single` から `Double`\)。  このため、オーバーロード解決エラーが生成されます。  
+ 2 番目の呼び出しで、コンパイラは縮小に基づいてオーバー ロードのいずれかを取り除くことはできません。 除外した引数型の&2; 番目のオーバー ロードを呼び出すことがあるため、最初の呼び出しと同様に、同じ理由から&3; 番目のオーバー ロードを除外します。 ただし、コンパイラは、最初と&2; 番目のオーバー ロードの間で解決できません。 もう一方で対応する型を拡張する&1; つの定義済みパラメーターの型を持つ各 (`Byte`に`Short`が`Single`に`Double`)。 そのため、コンパイラは、オーバー ロードの解決エラーを生成します。  
   
- **正しい方法:** オーバーロードされたプロシージャを明確に呼び出すには、[CType 関数](../../../../visual-basic/language-reference/functions/ctype-function.md) を使用して引数のデータ型をパラメーターの型に一致させます。  次の例で呼び出される `z` は、必ず 2 番目のオーバーロードに解決します。  
+ **適切なアプローチ。**あいまいさなしのオーバー ロードされたプロシージャを呼び出すには、次のように使用します。 [CType 関数](../../../../visual-basic/language-reference/functions/ctype-function.md)パラメーターの型への引数のデータ型を一致するようにします。 次の例では、呼び出しを`z`を強制的に&2; 番目のオーバー ロードを解決します。  
   
- [!code-vb[VbVbcnProcedures#65](./codesnippet/VisualBasic/troubleshooting-procedures_8.vb)]  
+ [!code-vb[VbVbcnProcedures #&65;](./codesnippet/VisualBasic/troubleshooting-procedures_8.vb)]  
   
-### 省略可能な引数やパラメーター配列の引数を持つオーバーロードの解決  
- プロシージャの 2 つのオーバーロードのシグネチャが同じで、唯一の違いが最後のパラメーターの宣言 \(一方が [Optional](../../../../visual-basic/language-reference/modifiers/optional.md) で、他方は [ParamArray](../../../../visual-basic/language-reference/modifiers/paramarray.md)\) である場合、コンパイラはそのプロシージャの呼び出しを、より厳密に一致している方に解決します。  詳細については、「[Overload Resolution](../../../../visual-basic/programming-guide/language-features/procedures/overload-resolution.md)」を参照してください。  
+### <a name="overload-resolution-with-optional-and-paramarray-arguments"></a>省略可能な解像度と ParamArray 引数をオーバー ロードします。  
+ 最後のパラメーターを宣言する点を除いて、プロシージャの&2; つのオーバー ロードと同じシグネチャを持つ場合[省略可能](../../../../visual-basic/language-reference/modifiers/optional.md)いずれかでと[ParamArray](../../../../visual-basic/language-reference/modifiers/paramarray.md) 、もう一方で、コンパイラは、最も近いに従ってそのプロシージャを呼び出すを解決します。 詳細については、次を参照してください。[オーバー ロード解決](./overload-resolution.md)します。  
   
-## 参照  
- [Procedures](../../../../visual-basic/programming-guide/language-features/procedures/index.md)   
- [Sub Procedures](../../../../visual-basic/programming-guide/language-features/procedures/sub-procedures.md)   
- [Function プロシージャ](../../../../visual-basic/programming-guide/language-features/procedures/function-procedures.md)   
- [Property プロシージャ](../../../../visual-basic/programming-guide/language-features/procedures/property-procedures.md)   
- [Operator Procedures](../../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md)   
- [Procedure Parameters and Arguments](../../../../visual-basic/programming-guide/language-features/procedures/procedure-parameters-and-arguments.md)   
- [Procedure Overloading](../../../../visual-basic/programming-guide/language-features/procedures/procedure-overloading.md)   
- [Considerations in Overloading Procedures](../../../../visual-basic/programming-guide/language-features/procedures/considerations-in-overloading-procedures.md)   
- [Overload Resolution](../../../../visual-basic/programming-guide/language-features/procedures/overload-resolution.md)
+## <a name="see-also"></a>関連項目  
+ [手順](./index.md)   
+ [Sub プロシージャ](./sub-procedures.md)   
+ [Function プロシージャ](./function-procedures.md)   
+ [プロパティ プロシージャ](./property-procedures.md)   
+ [演算子プロシージャ](./operator-procedures.md)   
+ [プロシージャのパラメーターと引数](./procedure-parameters-and-arguments.md)   
+ [プロシージャのオーバー ロード](./procedure-overloading.md)   
+ [プロシージャのオーバー ロードに関する考慮事項](./considerations-in-overloading-procedures.md)   
+ [オーバーロードの解決](./overload-resolution.md)

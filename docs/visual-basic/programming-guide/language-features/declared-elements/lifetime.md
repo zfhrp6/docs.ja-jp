@@ -1,93 +1,109 @@
 ---
-title: "Lifetime in Visual Basic | Microsoft Docs"
-ms.custom: ""
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "static variables, lifetime"
-  - "static variables, Visual Basic"
-  - "declared elements, lifetime"
-  - "Shared variable lifetime"
-  - "lifetime, declared elements"
-  - "lifetime, Visual Basic"
-  - "lifetime"
+title: "Visual Basic における有効期間 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 2015-07-20
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-visual-basic
+ms.topic: article
+dev_langs:
+- VB
+helpviewer_keywords:
+- static variables, lifetime
+- static variables, Visual Basic
+- declared elements, lifetime
+- Shared variable lifetime
+- lifetime, declared elements
+- lifetime, Visual Basic
+- lifetime
 ms.assetid: bd91e390-690a-469a-9946-8dca70bc14e7
 caps.latest.revision: 14
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 14
----
-# Lifetime in Visual Basic
-[!INCLUDE[vs2017banner](../../../../visual-basic/developing-apps/includes/vs2017banner.md)]
+author: stevehoag
+ms.author: shoag
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: fa0cbdf4a8fe5e8fc41e4e4f373c79451fb7b75f
+ms.lasthandoff: 03/13/2017
 
-宣言された要素の*有効期間*とは、その要素を使用できる期間です。  変数は、有効期間がある唯一の要素です。  このために、コンパイラでは、プロシージャ パラメーターおよび関数の戻り値が、変数の特別な例として扱われます。  変数の有効期間は、変数が値を保持できる期間を表します。  保持されている値は変わっても、有効期間中は常になんらかの値が保持されています。  
+---
+# <a name="lifetime-in-visual-basic"></a>Visual Basic における有効期間
+*有効期間*宣言された要素は、一定時間その中に、使用可能です。 変数は、有効期間がある要素だけです。 この目的では、コンパイラは、プロシージャのパラメーターを処理し、変数の特殊なケースとして関数を返します。 変数の有効期間は、値を保持できる期間を表します。 その値をその有効期間を通じて変更できますが、いくつかの値を常に保持します。  
   
-## さまざまな有効期間  
- \(プロシージャ外部の、モジュール レベルで宣言された\) *メンバー変数*は、通常、宣言された要素と同じ有効期間を持っています。  クラスまたは構造体で宣言された非共有変数は、宣言されたクラスまたは構造体の各インスタンスの別個のコピーとして存在します。  そのような各変数は、インスタンスと同じ有効期間を持っています。  ただし、共有 \(`Shared`\) 変数の有効期間は 1 つだけで、アプリケーションが終了するまで存続します。  
+## <a name="different-lifetimes"></a>別の有効期間  
+ A*メンバー変数*(プロシージャの外側のモジュール レベルで宣言された) が宣言された要素と同じ有効期間は、通常ができます。 クラスまたは構造体で宣言されている非共有変数は、クラスまたは構造体の宣言されているは、各インスタンスの別のコピーとして存在します。 このような各変数には、そのインスタンスと同じ有効期間があります。 ただし、`Shared`変数が有効期間は&1; つだけでは継続時間全体で、アプリケーションが実行されています。  
   
- \(プロシージャの内部で宣言された\) *ローカル変数*は、宣言されたプロシージャが実行されている間だけ存在します。  そのプロシージャのパラメーター、および関数の戻り値についても同様です。  ただし、プロシージャが他のプロシージャを呼び出した場合は、呼び出されたプロシージャの実行中もローカル変数の値は保持されます。  
+ A*ローカル変数*(プロシージャ内で宣言された) が宣言されているプロシージャの実行中にのみ存在します。 関数の戻り値とそのプロシージャのパラメーターにも当てはまります。 ただし、プロシージャが他のプロシージャを呼び出した場合は、呼び出されたプロシージャが実行中にローカル変数の値は保持します。  
   
-## 有効期間の開始  
- ローカル変数の有効期間は、宣言されたプロシージャの制御が開始されるときに始まります。  すべてのローカル変数は、プロシージャの実行が開始されるとすぐに、データ型の既定値に初期化されます。  プロシージャは、初期値を指定する `Dim` ステートメントを検出すると、コードで他の値が既に割り当てられていたとしても、その初期値をローカル変数に設定します。  
+## <a name="beginning-of-lifetime"></a>有効期間の開始  
+ ローカル変数の有効期間は、制御が宣言されている手順を開始するときに開始されます。 プロシージャが開始されるとすぐには、すべてのローカル変数をそのデータ型の既定値に初期化を実行しています。 プロシージャが検出した場合、`Dim`を初期値を指定するステートメントにローカル変数に設定これらの値をコードではその他の値に既に割り当ていた場合でもです。  
   
- 構造体変数の各メンバーは、独立した変数として初期化されます。  同様に、配列変数の各要素も個別に初期化されます。  
+ 構造体変数の各メンバーは、そうでは別々 の変数として初期化されます。 同様に、配列変数の各要素は、個別に初期化されます。  
   
- プロシージャ内部のブロック内で宣言された変数 \(`For` ループなど\) は、そのプロシージャへのエントリ時点で初期化されます。  これらの初期化は、コードによってそのブロックが実行されるかどうかにかかわらず、有効になります。  
+ プロシージャ内のブロック内で宣言された変数 (など、`For`ループ)、プロシージャへのエントリが初期化されています。 このような初期化を有効に、コードがこれまで、ブロックを実行するかどうか。  
   
-## 有効期間の終了  
- プロシージャが終了すると、ローカル変数の値は保持されず、[!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] によってメモリが解放されます。  次にプロシージャを呼び出すときに、すべてのローカル変数が再度作成され、再初期化されます。  
+## <a name="end-of-lifetime"></a>有効期間の終了  
+ プロシージャが終了すると、そのローカル変数の値は保持されず、および[!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]のメモリを解放します。 次に、プロシージャを呼び出すとき、すべてのローカル変数が新しく作成して再初期化します。  
   
- クラスまたは構造体のインスタンスが終了すると、非共有変数はメモリおよび値を失います。  クラスまたは構造体のそれぞれの新しいインスタンスによって、非共有変数が作成および再初期化されます。  しかし、`Shared` 変数はアプリケーションが実行を停止するまで保持されます。  
+ クラスまたは構造体のインスタンスが終了すると、非共有変数には、そのメモリとその値が失われます。 クラスまたは構造体の新しいインスタンスごとでは、作成し、非共有変数を再初期化します。 ただし、`Shared`変数は、アプリケーションの実行が停止されるまで保持されます。  
   
-## 有効期間の延長  
- `Static` キーワードを持つローカル変数を宣言した場合、有効期間はプロシージャの実行時間よりも長くなります。  `Static` 変数が存在する長さが、どのようにプロシージャ宣言によって決定されるのかを、次の表に示します。  
+## <a name="extension-of-lifetime"></a>有効期間の延長  
+ ローカル変数を宣言する場合、`Static`キーワード、その有効期間は、プロシージャの実行時間より長い。 次の表は、プロシージャの宣言が期間を指定する方法を示しています、`Static`変数が存在します。  
   
-|プロシージャの場所および共有|静的変数の有効期間の開始|静的変数の有効期間の終了|  
-|--------------------|------------------|------------------|  
-|モジュール内 \(既定で共有\)|プロシージャが最初に呼び出されたとき|アプリケーションの実行が停止されたとき|  
-|クラスの `Shared` \(プロシージャはインスタンス メンバーではありません\)|特定のインスタンス、またはクラス名や構造体名自体のいずれかで、プロシージャが最初に呼び出されたとき|アプリケーションの実行が停止されたとき|  
-|`Shared` ではなく、クラスのインスタンス \(プロシージャはインスタンス メンバーではありません\)|特定のインスタンスで、プロシージャが最初に呼び出されたとき|ガベージ コレクション \(GC\) に対して、インスタンスが解放されたとき|  
+|プロシージャの場所との共有|静的変数の有効期間を開始します。|静的変数の有効期間の終了|  
+|------------------------------------|-------------------------------------|-----------------------------------|  
+|(既定では共有) モジュールで|初めてのプロシージャが呼び出されたとき|アプリケーションの実行が終了|  
+|クラスでは、 `Shared` (手順は、インスタンスのメンバーではありません)|最初に、特定のインスタンスまたはクラスまたは構造体名自体のいずれかの手順が呼び出されます|アプリケーションの実行が終了|  
+|クラスのインスタンスでない`Shared`(手順では、インスタンス メンバー)|初めてのプロシージャは、特定のインスタンスで呼び出されます|ガベージ コレクション (GC) のインスタンスを解放する場合|  
   
-## 同じ名前の静的変数  
- 複数のプロシージャで、同じ名前の静的変数を宣言できます。  これを実行すると、[!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] のコンパイラは、このような各変数は別々の要素であると見なします。  いずれか 1 つの変数を初期化しても、その他の変数の値には影響しません。  これは、一連のオーバーロードを持つプロシージャを定義し、それぞれのオーバーロードで同じ名前の静的変数を定義した場合も同様です。  
+## <a name="static-variables-of-the-same-name"></a>同じ名前の静的変数  
+ 1 つ以上の手順で同じ名前を持つ静的変数を宣言することができます。 これを行う場合、[!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]コンパイラは、このような各変数は別々 の要素を考慮します。 これらの変数のいずれかの初期化では、他の値は影響しません。 同じには、プロシージャのオーバー ロードのセットを定義およびオーバー ロードごとに同じ名前を持つ静的変数を宣言する場合が適用されます。  
   
-## 静的変数のコンテナー要素  
- 静的ローカル変数は、クラス内 \(つまりクラスのプロシージャの中\) で宣言できます。  ただし、構造体のメンバーまたはその構造体内部のプロシージャのローカル変数のいずれとしてでも、ローカルの静的変数を構造体内部で宣言することはできません。  
+## <a name="containing-elements-for-static-variables"></a>静的変数のコンテナー要素  
+ つまり、そのクラスのプロシージャの中、クラス内で静的ローカル変数を宣言できます。 ただし、構造体のメンバー、またはその構造内のプロシージャのローカル変数として、構造内で静的ローカル変数を宣言できません。  
   
-## 例  
+## <a name="example"></a>例  
   
-### Description  
- [Static](../../../../visual-basic/language-reference/modifiers/static.md) キーワードを使用して変数を宣言する例を、次に示します   \([Dim Statement](../../../../visual-basic/language-reference/statements/dim-statement.md) で、`Static` などの修飾子を使用している場合は、`Dim` キーワードは不要です\)。  
+### <a name="description"></a>説明  
+ 次の例で変数が宣言、[静的](../../../../visual-basic/language-reference/modifiers/static.md)キーワードです。 (必要としないこと、`Dim`キーワードと、 [Dim ステートメント](../../../../visual-basic/language-reference/statements/dim-statement.md)など、修飾子を使用して`Static`)。  
   
-### コード  
- [!code-vb[VbVbalrKeywords#13](../../../../visual-basic/language-reference/codesnippet/VisualBasic/lifetime_1.vb)]  
+### <a name="code"></a>コード  
+ [!code-vb[VbVbalrKeywords&#13;](../../../../visual-basic/language-reference/codesnippet/VisualBasic/lifetime_1.vb)]  
   
-### コメント  
- 前の例では、変数 `applesSold` は、プロシージャ `runningTotal` が呼び出し元のコードに戻された後でも、引き続き存在します。  次に `runningTotal` が呼び出されたとき、`applesSold` は前に計算した値を保持しています。  
+### <a name="comments"></a>コメント  
+ 上記の例では、変数`applesSold`手順の後に存在し続けます`runningTotal`呼び出し元のコードを返します。 次回`runningTotal`が呼び出されると、`applesSold`以前の計算値を保持します。  
   
- `Static` を使用しないで `applesSold` が宣言された場合、は `runningTotal` が呼び出されても事前に蓄積された値は保持されません。  次に `runningTotal` が呼び出されたときに、`applesSold` は再作成され、0 に初期化されます。`runningTotal` は、呼び出されたときと同じ値を返すだけです。  
+ 場合`applesSold`を使用せずに宣言されていた`Static`への呼び出しによる、以前の累積値を保持されませんが`runningTotal`です。 次回`runningTotal`、呼び出された`applesSold`は再作成され、0 に初期化と`runningTotal`あればだけ返さ呼び出されたのと同じ値です。  
   
-### コードのコンパイル  
- 静的ローカル変数の値は、宣言の一部として初期化できます。  配列を `Static` として宣言する場合は、ランク \(次元数\)、各次元の長さ、および各要素の値を初期化できます。  
+### <a name="compiling-the-code"></a>コードのコンパイル  
+ 宣言の一部として静的ローカル変数の値を初期化することができます。 配列を宣言する場合`Static`、そのランク (次元数)、各次元の長さと個々 の要素の値に初期化することができます。  
   
-### セキュリティ  
- 前の例では、`applesSold` をモジュール レベルで宣言して、同じ有効期間にできます。  ただし、この方法で変数のスコープを変更すると、プロシージャが変数に排他的にアクセスできなくなります。  この場合、他のプロシージャが `applesSold` にアクセスして値を変更する可能性があるため、現在の合計を信頼できなくなり、コードの管理が難しくなります。  
+### <a name="security"></a>セキュリティ  
+ 前の例では、宣言することで有効期間は同じを生成できます`applesSold`モジュール レベルです。 こうすると、変数のスコープを変更した場合は、ただし、プロシージャ不要になったに排他的にアクセスします。 他のプロシージャにアクセスできなかったため`applesSold`とその値を変更、集計の途中の信頼性が低いことがおよび、コードを保守が困難でした。 します。  
   
-## 参照  
- [Shared](../../../../visual-basic/language-reference/modifiers/shared.md)   
- [Nothing](../../../../visual-basic/language-reference/nothing.md)   
- [Declared Element Names](../../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md)   
- [References to Declared Elements](../../../../visual-basic/programming-guide/language-features/declared-elements/references-to-declared-elements.md)   
- [Scope in Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/scope.md)   
- [Access Levels in Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)   
- [Variables](../../../../visual-basic/programming-guide/language-features/variables/index.md)   
+## <a name="see-also"></a>関連項目  
+ [共有](../../../../visual-basic/language-reference/modifiers/shared.md)   
+ [何もない](../../../../visual-basic/language-reference/nothing.md)   
+ [宣言された要素名](../../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md)   
+ [宣言された要素への参照](../../../../visual-basic/programming-guide/language-features/declared-elements/references-to-declared-elements.md)   
+ [Visual Basic におけるスコープ](../../../../visual-basic/programming-guide/language-features/declared-elements/scope.md)   
+ [Visual Basic でのアクセス レベル](../../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)   
+ [変数](../../../../visual-basic/programming-guide/language-features/variables/index.md)   
  [変数宣言](../../../../visual-basic/programming-guide/language-features/variables/variable-declaration.md)   
- [Troubleshooting Data Types](../../../../visual-basic/programming-guide/language-features/data-types/troubleshooting-data-types.md)   
+ [データ型のトラブルシューティング](../../../../visual-basic/programming-guide/language-features/data-types/troubleshooting-data-types.md)   
  [Static](../../../../visual-basic/language-reference/modifiers/static.md)

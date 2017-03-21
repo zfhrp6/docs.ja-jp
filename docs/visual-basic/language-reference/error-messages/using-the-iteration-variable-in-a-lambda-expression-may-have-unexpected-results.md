@@ -1,42 +1,58 @@
 ---
-title: "Using the iteration variable in a lambda expression may have unexpected results | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vbc42324"
-  - "bc42324"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "BC42324"
+title: "ラムダ式での反復変数を使用する必要があります予期しない結果 |Microsoft ドキュメント"
+ms.date: 2015-07-20
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-visual-basic
+ms.topic: article
+f1_keywords:
+- vbc42324
+- bc42324
+dev_langs:
+- VB
+helpviewer_keywords:
+- BC42324
 ms.assetid: b5c2c4bd-3b2a-4a73-aaeb-55728eb03b68
 caps.latest.revision: 8
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 8
----
-# Using the iteration variable in a lambda expression may have unexpected results
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
+author: stevehoag
+ms.author: shoag
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: 5b293ec344d816e40d369757fa4d11710b7ecd8d
+ms.lasthandoff: 03/13/2017
 
-ラムダ式内で繰り返し変数を使用すると、予期しない結果が発生する可能性があります。代わりに、ループ内にローカル変数を作成して繰り返し変数の値を割り当ててください。  
+---
+# <a name="using-the-iteration-variable-in-a-lambda-expression-may-have-unexpected-results"></a>ラムダ式内で繰り返し変数を使用すると、予期しない結果が発生する可能性があります。
+ラムダ式内で繰り返し変数を使用すると、予期しない結果が発生する可能性があります。 代わりに、ループ内でローカル変数を作成し、反復変数の値を割り当てます。  
   
- この警告は、ループ内で宣言されたラムダ式内でループ繰り返し変数が使用されている場合に発生します。  たとえば、次の例では警告が発生します。  
+ ループ内で宣言されたラムダ式でループの反復変数を使用する場合、この警告が表示されます。 たとえば、次の例に表示される警告が発生します。  
   
-```vb#  
+```vb  
 For i As Integer = 1 To 10  
     ' The warning is given for the use of i.  
     Dim exampleFunc As Func(Of Integer) = Function() i  
 Next  
 ```  
   
- 次の例では、発生する可能性のある予期しない結果を示します。  
+ 次の例では、予期しない結果が発生する可能性を示します。  
   
-```vb#  
+```vb  
 Module Module1  
     Sub Main()  
         Dim array1 As Func(Of Integer)() = New Func(Of Integer)(4) {}  
@@ -53,7 +69,7 @@ Module Module1
 End Module  
 ```  
   
- `For` ループがラムダ式の配列を作成し、そのそれぞれが、ループ繰り返し変数 `i` の値を返します。  ラムダ式が `For Each` ループで評価されるとき、`For` ループ内の `i` の連続する値として 0、1、2、3、および 4 が表示されるものと思われますが、  `i` の最終値が 5 回表示されています。  
+ `For`ループのループの反復変数の値を返します、ラムダ式の配列を作成する`i`です。 ラムダ式が評価されたとき、`For Each`ループされる予定である 0、1、2、3、および 4 が表示されるの連続する値を参照してください`i`で、`For`ループします。 最終的な値を表示する代わりに、 `i`&5; 回を表示します。  
   
  `5`  
   
@@ -65,31 +81,31 @@ End Module
   
  `5`  
   
- 既定では、このメッセージは警告です。  警告を表示しない方法や、警告をエラーとして扱う方法の詳細については、「[Visual Basic での警告の構成](/visual-studio/ide/configuring-warnings-in-visual-basic)」を参照してください。  
+ 既定では、このメッセージは警告です。 警告を非表示や警告をエラーとして扱う方法の詳細については、次を参照してください。 [Visual Basic での警告の構成](https://docs.microsoft.com/visualstudio/ide/configuring-warnings-in-visual-basic)します。  
   
- **Error ID:** BC42324  
+ **エラー ID:** BC42324  
   
-### このエラーを解決するには  
+## <a name="to-correct-this-error"></a>このエラーを解決するには  
   
--   繰り返し変数の値をローカル変数に割り当てて、そのローカル変数をラムダ式で使用します。  
+-   反復変数の値をローカル変数に代入し、ラムダ式でローカル変数を使用します。  
   
-    ```vb#  
-    Module Module1  
-        Sub Main()  
-            Dim array1 As Func(Of Integer)() = New Func(Of Integer)(4) {}  
+```vb  
+Module Module1  
+    Sub Main()  
+        Dim array1 As Func(Of Integer)() = New Func(Of Integer)(4) {}  
   
-            For i As Integer = 0 To 4  
-                Dim j = i  
-                array1(i) = Function() j  
-            Next  
+        For i As Integer = 0 To 4  
+            Dim j = i  
+            array1(i) = Function() j  
+        Next  
   
-            For Each funcElement In array1  
-                System.Console.WriteLine(funcElement())  
-            Next  
+        For Each funcElement In array1  
+            System.Console.WriteLine(funcElement())  
+        Next  
   
-        End Sub  
-    End Module  
-    ```  
+    End Sub  
+End Module  
+```  
   
-## 参照  
- [Lambda Expressions](../../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md)
+## <a name="see-also"></a>関連項目  
+ [ラムダ式](../../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md)

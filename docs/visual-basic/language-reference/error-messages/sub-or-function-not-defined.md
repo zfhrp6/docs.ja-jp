@@ -1,45 +1,61 @@
 ---
-title: "Sub or Function not defined (Visual Basic) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vbrID35"
-dev_langs: 
-  - "VB"
+title: "Sub または Function (Visual Basic) を定義されていない |Microsoft ドキュメント"
+ms.date: 2015-07-20
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-visual-basic
+ms.topic: article
+f1_keywords:
+- vbrID35
+dev_langs:
+- VB
 ms.assetid: 661fdb90-ee7d-40ce-b30b-5e7267bd957a
 caps.latest.revision: 12
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 12
----
-# Sub or Function not defined (Visual Basic)
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
+author: stevehoag
+ms.author: shoag
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: 7d32bc9c8f13b245e6333c4460cab541f6e9409e
+ms.lasthandoff: 03/13/2017
 
-`Sub` または `Function` を呼び出すには、事前に定義しておく必要があります。  このエラーでは以下の原因が考えられます。  
+---
+# <a name="sub-or-function-not-defined-visual-basic"></a>Sub または Function が定義されていません。(Visual Basic)
+A`Sub`または`Function`呼び出せるために定義する必要があります。 このエラーでは以下の原因が考えられます。  
   
 -   プロシージャ名のスペルが間違っています。  
   
--   **\[参照設定\]** ダイアログ ボックスで参照を明示的に追加していないプロジェクトのプロシージャを呼び出しています。  
+-   別のプロジェクトでそのプロジェクトへの参照を明示的に追加することがなく、プロシージャを呼び出そうとしている、**参照** ダイアログ ボックス。  
   
--   呼び出し元のプロシージャから参照できないプロシージャを指定しました。  
+-   呼び出し元のプロシージャには表示されないプロシージャを指定します。  
   
--   指定されたライブラリまたはコード リソースにない Windows ダイナミック リンク ライブラリ \(DLL: dynamic\-link library\) ルーチンまたは Macintosh コード リソース ルーチンを宣言しました。  
+-   Windows ダイナミック リンク ライブラリ (DLL) のルーチンまたは指定したライブラリまたはコードのリソースに含まれていない Macintosh コード リソース ルーチンを宣言します。  
   
-### このエラーを解決するには  
+## <a name="to-correct-this-error"></a>このエラーを解決するには  
   
 1.  プロシージャ名のスペルが正しいことを確認します。  
   
-2.  **\[参照設定\]** ダイアログ ボックスで、呼び出そうとしているプロシージャを含むプロジェクトの名前を探します。  名前が表示されていない場合は、**\[参照\]** をクリックして探します。  プロジェクト名の左にあるチェック ボックスをオンにして、**\[OK\]** をクリックします。  
+2.  呼び出すには必要な手順を含むプロジェクトの名前を検索、**参照** ダイアログ ボックス。 表示されない場合は、クリックして、**参照**を検索 ボタンをクリックします。 プロジェクト名の左側にチェック ボックスを選択し、クリックして**OK**します。  
   
-3.  ルーチンの名前を確認します。  
+3.  ルーチンの名前を確認してください。  
   
-## 参照  
- [Error Types](../../../visual-basic/programming-guide/language-features/error-types.md)   
- [プロジェクト内の参照の管理](/visual-studio/ide/managing-references-in-a-project)   
- [Sub Statement](../../../visual-basic/language-reference/statements/sub-statement.md)   
- [Function Statement](../../../visual-basic/language-reference/statements/function-statement.md)
+## <a name="see-also"></a>関連項目  
+ [エラーの種類](../../../visual-basic/programming-guide/language-features/error-types.md)   
+ [プロジェクトの参照を管理します。](https://docs.microsoft.com/visualstudio/ide/managing-references-in-a-project)   
+ [Sub ステートメント](../../../visual-basic/language-reference/statements/sub-statement.md)   
+ [Function ステートメント](../../../visual-basic/language-reference/statements/function-statement.md)

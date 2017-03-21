@@ -1,30 +1,46 @@
 ---
-title: "/doc | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "doc compiler option [Visual Basic]"
-  - "-doc compiler option [Visual Basic]"
-  - "/doc compiler option [Visual Basic]"
+title: "/doc |Microsoft ドキュメント"
+ms.date: 2015-07-20
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-visual-basic
+ms.topic: article
+dev_langs:
+- VB
+helpviewer_keywords:
+- doc compiler option [Visual Basic]
+- -doc compiler option [Visual Basic]
+- /doc compiler option [Visual Basic]
 ms.assetid: 5fc32ec9-a149-4648-994c-a8d0cccd0a65
 caps.latest.revision: 18
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 18
----
-# /doc
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
+author: stevehoag
+ms.author: shoag
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: 1054eb256eb7670ee0454b02fc094e0306c1218d
+ms.lasthandoff: 03/13/2017
 
+---
+# <a name="doc"></a>/doc
 ドキュメント コメントを XML ファイルに出力します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 /doc[+ | -]  
@@ -32,37 +48,35 @@ caps.handback.revision: 18
 /doc:file  
 ```  
   
-## 引数  
+## <a name="arguments"></a>引数  
   
-|||  
-|-|-|  
-|語句|定義|  
-|`+`  &#124; `-`|省略可能です。  \+ を指定するか、または `/doc` だけを指定すると、コンパイラがドキュメント情報を生成し、XML ファイルに出します。  `-`  を指定すると、`/doc` を指定しないのと同じ意味になり、ドキュメント情報は作成されません。|  
-|`file`|`/doc:` を使用する場合は、必ず指定します。  コンパイルするソース コード ファイルからコメントを書き込む、XML 形式の出力ファイルを指定します。  ファイル名に空白が含まれる場合は、二重引用符 \(" "\) で囲む必要があります。|  
+|用語|定義|  
+|---|---|  
+|`+` &#124; `-`|省略可能です。 指定する +、または単`/doc`、コンパイラが、ドキュメントの情報が生成され、XML ファイルに配置します。 指定する`-`を指定しないと同じ`/doc`、なり、ドキュメント情報を作成します。|  
+|`file`|`/doc:` を使用する場合に、必ず指定します。 コンパイルのソース コード ファイルからコメントが表示された出力 XML ファイルを指定します。 ファイル名にスペースが含まれている場合、名前を引用符で囲みます ("") です。|  
   
-## 解説  
- `/doc` オプションを使って、コンパイル時にドキュメント コメントを含む XML ファイルを生成するかどうかを制御できます。  `/doc:``file` の構文を使用する場合、`file` パラメーターには XML ファイルの名前を指定します。  `/doc` または `/doc+` を使用する場合、コンパイラは作成している実行可能ファイルまたはライブラリから XML ファイル名を取得します。  `/doc-` を使用するか、または `/doc` オプションを指定しなければ、コンパイラは XML ファイルを作成しません。  
+## <a name="remarks"></a>コメント  
+ `/doc`オプションでは、コンパイラは、ドキュメント コメントを含む XML ファイルを生成するかどうかを制御します。 使用する場合、 `/doc:``file` 、構文、`file`パラメーターは、XML ファイルの名前を指定します。 使用する場合`/doc`または`/doc+`コンパイラは、実行可能ファイルまたはコンパイラを作成しているライブラリから、XML ファイル名を取得します。 使用する場合`/doc-`を指定しないか、`/doc`オプション、コンパイラは XML ファイルを作成しません。  
   
- ソース コード ファイルでは、ドキュメント コメントは次の定義の前に記述できます。  
+ ソース コード ファイルは、ドキュメントのコメントは、次の定義前に記述できます。  
   
--   [クラス](../../../visual-basic/language-reference/statements/class-statement.md)や[インターフェイス](../../../visual-basic/language-reference/statements/interface-statement.md)などのユーザー定義型  
+-   ユーザー定義型など、[クラス](../../../visual-basic/language-reference/statements/class-statement.md)または[インターフェイス](../../../visual-basic/language-reference/statements/interface-statement.md)  
   
--   フィールド、[イベント](../../../visual-basic/language-reference/statements/event-statement.md)、[プロパティ](../../../visual-basic/language-reference/statements/property-statement.md)、[関数](../../../visual-basic/language-reference/statements/function-statement.md)、または[サブルーチン](../../../visual-basic/language-reference/statements/sub-statement.md)などのメンバー  
+-   フィールドなどのメンバー[イベント](../../../visual-basic/language-reference/statements/event-statement.md)、[プロパティ](../../../visual-basic/language-reference/statements/property-statement.md)、[関数](../../../visual-basic/language-reference/statements/function-statement.md)、または[サブルーチン](../../../visual-basic/language-reference/statements/sub-statement.md)します。  
   
- 生成した XML ファイルを [!INCLUDE[vsprvs](../../../csharp/includes/vsprvs-md.md)] の [IntelliSense](/visual-studio/ide/using-intellisense) 機能で使用するには、XML ファイルの名前をサポートするアセンブリの名前と同じにします。  XML ファイルをアセンブリと同じディレクトリに格納して、アセンブリが [!INCLUDE[vsprvs](../../../csharp/includes/vsprvs-md.md)] プロジェクトで参照されるとき、.xml ファイルも同時に見つかるようにしてください。  IntelliSense がプロジェクト内のコード、またはプロジェクトによって参照されるプロジェクト内のコードを処理するために、XML ドキュメント ファイルは必要ありません。  
+ 生成された XML ファイルを使用して、 [!INCLUDE[vsprvs](../../../csharp/includes/vsprvs_md.md)] [IntelliSense](https://docs.microsoft.com/visualstudio/ide/using-intellisense)機能をサポートするアセンブリと同じである XML ファイルのファイル名を使用します。 XML ファイルが設定されて、アセンブリと同じディレクトリ内でアセンブリを参照するときになっていることを確認、[!INCLUDE[vsprvs](../../../csharp/includes/vsprvs_md.md)]プロジェクト、.xml ファイルがあるとします。 XML ドキュメント ファイルは、IntelliSense コード プロジェクトによって参照されるプロジェクトまたはプロジェクト内で動作するために必要ではありません。  
   
- `/target:module` を使ってコンパイルしなければ、XML ファイルにはタグ `<assembly></assembly>` が記述されます。  これらのタグは、コンパイルによる出力ファイルのアセンブリ マニフェストを含むファイル名を指定します。  
+ コンパイルする場合を除き、 `/target:module`、XML ファイルには、タグが含まれています。`<assembly></assembly>`します。 これらのタグは、コンパイルの出力ファイルのアセンブリ マニフェストを含むファイルの名前を指定します。  
   
- コード内のコメントからドキュメントを生成する方法については、「[XML Comment Tags](../../../visual-basic/language-reference/xmldoc/recommended-xml-tags-for-documentation-comments.md)」を参照してください。  
+ 参照してください[XML のコメント用タグ](../../../visual-basic/language-reference/xmldoc/recommended-xml-tags-for-documentation-comments.md)コード内のコメントからドキュメントを生成する方法についてです。  
   
-||  
-|-|  
-|Visual Studio 統合開発環境で \/doc を設定するには|  
-|1.  **ソリューション エクスプローラー**でプロジェクトを選択します。  **\[プロジェクト\]** メニューの **\[プロパティ\]** をクリックします。  詳細については、「[Introduction to the Project Designer](http://msdn.microsoft.com/ja-jp/898dd854-c98d-430c-ba1b-a913ce3c73d7)」を参照してください。<br />2.  **\[コンパイル\]** タブをクリックします。<br />3.  **\[XML ドキュメント ファイルを生成する\]** ボックスに値を設定します。|  
+|統合開発環境 Visual Studio で/doc を設定するには|  
+|---|  
+|1.**ソリューション エクスプローラー**でプロジェクトを選択します。 **プロジェクト** メニューのをクリックして**プロパティ**します。 詳細については、「[プロジェクト デザイナーの概要](http://msdn.microsoft.com/en-us/898dd854-c98d-430c-ba1b-a913ce3c73d7)」を参照してください。<br />2.**[コンパイル]** タブをクリックします。<br />3.値を設定、**生成 XML ドキュメント ファイル**ボックス。|  
   
-## 使用例  
- 具体的な例については、「[Documenting Your Code with XML](../../../visual-basic/programming-guide/program-structure/documenting-your-code-with-xml.md)」を参照してください。  
+## <a name="example"></a>例  
+ 参照してください[コードを XML で文書化](../../../visual-basic/programming-guide/program-structure/documenting-your-code-with-xml.md)サンプルです。  
   
-## 参照  
- [Visual Basic Command\-Line Compiler](../../../visual-basic/reference/command-line-compiler/index.md)   
- [Documenting Your Code with XML](../../../visual-basic/programming-guide/program-structure/documenting-your-code-with-xml.md)
+## <a name="see-also"></a>関連項目  
+ [Visual Basic のコマンド ライン コンパイラ](../../../visual-basic/reference/command-line-compiler/index.md)   
+ [XML の使用によるコードのドキュメントの作成](../../../visual-basic/programming-guide/program-structure/documenting-your-code-with-xml.md)

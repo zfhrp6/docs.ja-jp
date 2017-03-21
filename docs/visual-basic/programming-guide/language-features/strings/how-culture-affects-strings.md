@@ -1,94 +1,109 @@
 ---
-title: "How Culture Affects Strings in Visual Basic | Microsoft Docs"
-ms.custom: ""
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "locale, effect on strings"
-  - "strings [Visual Basic], locale dependence"
+title: "カルチャが Visual Basic における文字列に与える影響 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 2015-07-20
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-visual-basic
+ms.topic: article
+dev_langs:
+- VB
+helpviewer_keywords:
+- locale, effect on strings
+- strings [Visual Basic], locale dependence
 ms.assetid: c4664444-ee0d-47bf-bef1-eaa3c54bdd7f
 caps.latest.revision: 20
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 20
----
-# How Culture Affects Strings in Visual Basic
-[!INCLUDE[vs2017banner](../../../../visual-basic/developing-apps/includes/vs2017banner.md)]
+author: stevehoag
+ms.author: shoag
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: 63228a40897b29d0324be73ca1a17bcb19af2a16
+ms.lasthandoff: 03/13/2017
 
-このヘルプ ページでは、[!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] で文字列の変換と比較を実行するときに、カルチャ情報がどのように使用されるかについて説明します。  
+---
+# <a name="how-culture-affects-strings-in-visual-basic"></a>Visual Basic においてカルチャが文字列に与える影響
+このヘルプ ページの説明方法[!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]カルチャ文字列の変換との比較を実行する情報を使用します。  
   
-## カルチャ固有文字列を使用する状況  
- 通常は、ユーザーとやり取りするデータにはカルチャ固有文字列を使用し、アプリケーションの内部データにはカルチャ不変文字列を使用します。  
+## <a name="when-to-use-culture-specific-strings"></a>カルチャ固有の文字列を使用する場合  
+ 通常は、カルチャに固有の文字列に記載されているすべてのデータを使用する必要があります、ユーザーからの読み取りし、カルチャに依存しない文字列を使用するアプリケーションの内部データおよびします。  
   
- たとえば、日付を文字列として入力するようユーザーに要求する場合、アプリケーションは、ユーザーが自分のカルチャに従った形式で文字列を入力するだろうということを予測し、その文字列を適切に変換する必要があります。  さらに、その日付をユーザー インターフェイス上に表示するときには、ユーザーのカルチャに従った形式で表示する必要があります。  
+ たとえば、文字列として日付を入力するユーザーの質問は、アプリケーション、カルチャに基づく文字列の書式設定のユーザーを想定する必要があり、アプリケーションでは、文字列を適切に変換する必要があります。 アプリケーションがユーザー インターフェイスでは、その日付を表している場合は、ユーザーのカルチャの表示にする必要があります。  
   
- しかし、その日付を中央のサーバーにアップロードする場合には、日付形式の相違による混乱を防ぐために、その文字列を特定のカルチャに従った形式にする必要があります。  
+ ただし、アプリケーションは、日付を中央のサーバーにアップロードする場合、は、可能性のある別の日付形式の間で混乱を避けるため、1 つの特定のカルチャに従って文字列を書式設定する必要があります。  
   
-## カルチャに依存する関数  
- [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] のすべての文字列変換関数 \(`Str` 関数と `Val` 関数を除く\) は、アプリケーションのカルチャ情報に基づいて、アプリケーション ユーザーのカルチャに適した変換および比較を行います。  
+## <a name="culture-sensitive-functions"></a>カルチャに依存する関数  
+ すべての[!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]文字列変換関数 (を除き、`Str`と`Val`関数)、アプリケーションのカルチャ情報を使用して、変換および比較がアプリケーションのユーザーのカルチャに適切であるかどうかを確認します。  
   
- さまざまなカルチャ設定がされたコンピューター上で実行されるアプリケーションを開発するときに、そのアプリケーション内で文字列変換関数を正しく使用するための鍵は、どの関数が特定のカルチャ設定を使用して、どの関数が現在のカルチャ設定を使用するかを理解することです。  アプリケーションのカルチャ設定は、既定ではオペレーティング システムのカルチャ設定を継承するという点に注意してください。  詳細については、「<xref:Microsoft.VisualBasic.Strings.Asc%2A>」、「<xref:Microsoft.VisualBasic.Strings.AscW%2A>」、「<xref:Microsoft.VisualBasic.Strings.Chr%2A>」、「<xref:Microsoft.VisualBasic.Strings.ChrW%2A>」、「<xref:Microsoft.VisualBasic.Strings.Format%2A>」、「<xref:Microsoft.VisualBasic.Conversion.Hex%2A>」、「<xref:Microsoft.VisualBasic.Conversion.Oct%2A>」、および「[Type Conversion Functions](../../../../visual-basic/language-reference/functions/type-conversion-functions.md)」を参照してください。  
+ キーが正常に文字列変換関数を使用して別のカルチャ設定を持つコンピューターで実行されるアプリケーションでは、どの関数が特定のカルチャ設定を使用し、現在のカルチャ設定を使用するを理解します。 アプリケーションのカルチャ設定は、既定では、継承することオペレーティング システムのカルチャ設定からに注意してください。 詳細については、次を参照してください<xref:Microsoft.VisualBasic.Strings.Asc%2A>、 <xref:Microsoft.VisualBasic.Strings.AscW%2A>、 <xref:Microsoft.VisualBasic.Strings.Chr%2A>、 <xref:Microsoft.VisualBasic.Strings.ChrW%2A>、 <xref:Microsoft.VisualBasic.Strings.Format%2A>、 <xref:Microsoft.VisualBasic.Conversion.Hex%2A>、 <xref:Microsoft.VisualBasic.Conversion.Oct%2A>、および[型変換関数](../../../../visual-basic/language-reference/functions/type-conversion-functions.md)。</xref:Microsoft.VisualBasic.Conversion.Oct%2A> </xref:Microsoft.VisualBasic.Conversion.Hex%2A> </xref:Microsoft.VisualBasic.Strings.Format%2A> </xref:Microsoft.VisualBasic.Strings.ChrW%2A> </xref:Microsoft.VisualBasic.Strings.Chr%2A> </xref:Microsoft.VisualBasic.Strings.AscW%2A> </xref:Microsoft.VisualBasic.Strings.Asc%2A> 。  
   
- `Str` 関数 \(数値を文字列に変換\) と `Val` 関数 \(文字列を数値に変換\) は、文字列と数値の間で変換を行うときにアプリケーションのカルチャ情報を使用しません。  代わりに、ピリオド \(.\) だけを有効な桁区切り記号として認識します。  これらの関数と同様の処理を行うカルチャ対応関数には次のものがあります。  
+ `Str` (数値を文字列に変換する) と`Val`文字列や数値の間で変換するときに (文字列数値からに変換) 関数が、アプリケーションのカルチャ情報を使用しないでください。 代わりに、有効な小数点区切り文字としてピリオド (.) のみを認識できるとします。 これらの関数のカルチャに対応して類似のものは次のとおりです。  
   
--   **現在のカルチャを使用する変換。** `CStr` 関数と `Format` 関数は数値を文字列に変換し、`CDbl` 関数と `CInt` 関数は文字列を数値に変換します。  
+-   **現在のカルチャを使用する変換です。** `CStr`と`Format`関数では、数値を文字列に変換され、`CDbl`と`CInt`関数では、文字列を数値に変換します。  
   
--   **特定のカルチャを使用する変換。**それぞれの数値オブジェクトには、数値を文字列に変換する `ToString(IFormatProvider)` メソッドと、文字列を数値に変換する `Parse(String, IFormatProvider)` メソッドがあります。  たとえば `Double` 型には <xref:System.Double.ToString%28System.IFormatProvider%29> メソッドと <xref:System.Double.Parse%28System.String%2CSystem.IFormatProvider%29> メソッドがあります。  
+-   **特定のカルチャを使用する変換です。** 各数値のオブジェクトには、 `ToString(IFormatProvider)` 、文字列に数値を変換するメソッドと`Parse(String, IFormatProvider)`文字列を数値に変換するメソッドです。 たとえば、`Double`種類では、<xref:System.Double.ToString%28System.IFormatProvider%29>と<xref:System.Double.Parse%28System.String%2CSystem.IFormatProvider%29>メソッド</xref:System.Double.Parse%28System.String%2CSystem.IFormatProvider%29></xref:System.Double.ToString%28System.IFormatProvider%29>。  
   
- 詳細については、「<xref:Microsoft.VisualBasic.Conversion.Str%2A>」および「<xref:Microsoft.VisualBasic.Conversion.Val%2A>」を参照してください。  
+ 詳細については、「 <xref:Microsoft.VisualBasic.Conversion.Str%2A> <xref:Microsoft.VisualBasic.Conversion.Val%2A>.</xref:Microsoft.VisualBasic.Conversion.Val%2A></xref:Microsoft.VisualBasic.Conversion.Str%2A>の使用」を参照していますください。  
   
-## 特定のカルチャの使用  
- たとえば、日付を文字列形式にして Web サービスに送信するアプリケーションを開発しているとします。  このアプリケーションでは、文字列変換の際に特定のカルチャを使用する必要があります。  この理由を説明するために、日付の <xref:System.DateTime.ToString> メソッドを使用した場合の結果を考えてみましょう。このメソッドを使用して 20005 年 7 月 4 日という日付を変換した場合、United States English \(en\-US\) のカルチャで実行すると "7\/4\/2005 12:00:00 AM" という結果になりますが、German \(de\-DE\) のカルチャで実行すると "04.07.2005 00:00:00" という結果になります。  
+## <a name="using-a-specific-culture"></a>特定のカルチャを使用します。  
+ (文字列として表した) 日付を Web サービスに送信するアプリケーションを開発することを想像してください。 ここで、アプリケーションでは、文字列の変換の特定のカルチャを使用する必要があります。 理由を示すためには、日付の使用の結果を検討してください<xref:System.DateTime.ToString>メソッド: 場合は、アプリケーションでは、そのメソッドを使用して、2005 年 7 月 4 日の日付の書式設定を返します"2005 年 7 月 4 日 12:00:00 AM"を実行すると、米国英語 (EN-US) カルチャは"04.07.2005 00:00:00"ドイツ (de-de などがあります) のカルチャで実行する場合。</xref:System.DateTime.ToString> 。  
   
- 特定のカルチャの形式で文字列変換を実行する必要があるときは、[!INCLUDE[dnprdnshort](../../../../csharp/getting-started/includes/dnprdnshort-md.md)] に組み込まれている `CultureInfo` クラスを使用します。  特定のカルチャに関する `CultureInfo` オブジェクトを新規作成するには、<xref:System.Globalization.CultureInfo.%23ctor%2A> コンストラクターにカルチャの名前を渡します。  サポートされるカルチャの名前については、<xref:System.Globalization.CultureInfo> クラスのページを参照してください。  
+ 使用する必要がありますで特定のカルチャの書式設定文字列変換を実行する必要がある場合、`CultureInfo`に組み込まれているクラス、[!INCLUDE[dnprdnshort](../../../../csharp/getting-started/includes/dnprdnshort_md.md)]です。 新規に作成することができます`CultureInfo`カルチャの名前を渡すことによって、特定のカルチャのオブジェクト、<xref:System.Globalization.CultureInfo.%23ctor%2A>コンス トラクター</xref:System.Globalization.CultureInfo.%23ctor%2A> 。 サポートされているカルチャの名前にある、<xref:System.Globalization.CultureInfo>クラスのヘルプ ページ</xref:System.Globalization.CultureInfo>。  
   
- 別の方法として、<xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=fullName> プロパティから*インバリアント カルチャ*のインスタンスを取得することもできます。  インバリアント カルチャは English カルチャに基づいていますが、いくつかの相違点があります。  たとえば、インバリアント カルチャでは、12 時間制ではなく 24 時間制が指定されます。  
+ インスタンスを取得する代わりに、*インバリアント カルチャ*から、<xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=fullName>プロパティ</xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=fullName>。 インバリアント カルチャが英語のカルチャに基づきますが、違いがあります。 たとえば、インバリアント カルチャでは、12 時間制ではなく、24 時間制を指定します。  
   
- 日付を特定カルチャの文字列に変換するには、その日付オブジェクトの <xref:System.DateTime.ToString%28System.IFormatProvider%29> メソッドに <xref:System.Globalization.CultureInfo> オブジェクトを渡します。  たとえば次のコードでは、日付はアプリケーションのカルチャ設定に関係なく常に "07\/04\/2005 00:00:00" と表示されます。  
+ 日付をカルチャの文字列に変換するには、渡す、<xref:System.Globalization.CultureInfo>が日付のオブジェクトのオブジェクト<xref:System.DateTime.ToString%28System.IFormatProvider%29>メソッド</xref:System.DateTime.ToString%28System.IFormatProvider%29></xref:System.Globalization.CultureInfo>。 たとえば、次のコードが表示されます"07/04/2005 00時 00分: 00"アプリケーションのカルチャ設定に関係なく、します。  
   
- [!code-vb[VbVbalrConcepts#1](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/codesnippet/VisualBasic/how-culture-affects-strings_1.vb)]  
+ [!code-vb[VbVbalrConcepts&#1;](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/codesnippet/VisualBasic/how-culture-affects-strings_1.vb)]  
   
 > [!NOTE]
->  日付リテラルは常に English カルチャに従って解釈されます。  
+>  日付リテラルは常に英語のカルチャに従って解釈されます。  
   
-## 文字列の比較  
- 文字列の比較が必要な状況としては、主に次の 2 つがあります。  
+## <a name="comparing-strings"></a>文字列の比較  
+ 文字列の比較が必要な&2; つの重要な状況があります。  
   
--   **ユーザーに表示するデータを並べ替える。**現在のカルチャに基づく演算を行い、文字列が適切に並べ替えられるようにします。  
+-   **ユーザーに表示するデータを並べ替えます。** 現在のカルチャに基づく文字列を適切に並べ替えるための操作を使用します。  
   
--   **アプリケーション内部の 2 つの文字列が完全に一致するかどうかを確認する \(通常はセキュリティ目的で使用\)。**現在のカルチャを無視した演算を行います。  
+-   **アプリケーション内部の&2; つの文字列が (通常はセキュリティ上の理由) 正確に一致するかどうかを決定します。** 現在のカルチャは無視して操作を使用します。  
   
- [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] の <xref:Microsoft.VisualBasic.Strings.StrComp%2A> 関数では、両方の種類の比較を実行できます。  比較の種類は、オプションの引数 `Compare` を指定することによって制御できます。通常の入出力では `Text` を使用し、厳密な比較が要求される場合は `Binary` を使用します。  
+ 両方の種類の比較を行うことができます、 [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] <xref:Microsoft.VisualBasic.Strings.StrComp%2A>関数</xref:Microsoft.VisualBasic.Strings.StrComp%2A>。 省略可能な指定`Compare`比較の種類を制御する引数:`Text`ほとんどの入力と出力に`Binary`完全一致を判断するためです。  
   
- `StrComp` 関数は、2 つの文字列を並べ替え順序に基づいて比較した結果を表す整数を返します。  結果が正の場合は、1 番目の文字列の方が 2 番目の文字列より大きいことになります。  結果が負の場合は 1 番目の文字列の方が小さく、0 の場合は 2 つの文字列が等しいことになります。  
+ `StrComp`関数を並べ替え順序に基づいて比較される&2; つの文字列間の関係を示す整数を返します。 結果の正の値は、最初の文字列が&2; 番目の文字列より大きいことを示します。 負の結果は、最初の文字列が小さくを示し、0 の文字列間の等価性を示します。  
   
- [!code-vb[VbVbalrStrings#22](../../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/how-culture-affects-strings_2.vb)]  
+ [!code-vb[VbVbalrStrings #&22;](../../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/how-culture-affects-strings_2.vb)]  
   
- [!INCLUDE[dnprdnshort](../../../../csharp/getting-started/includes/dnprdnshort-md.md)] に用意されている、`StrComp` 関数と同様の機能を持つ <xref:System.String.Compare%2A?displayProperty=fullName> メソッドを使用することもできます。  このメソッドは、基本文字列クラスのオーバーロードされた静的メソッドです。  次のコードは、このメソッドの使用例です。  
+ 使用することも、[!INCLUDE[dnprdnshort](../../../../csharp/getting-started/includes/dnprdnshort_md.md)]のパートナー、 `StrComp` 、関数、<xref:System.String.Compare%2A?displayProperty=fullName>メソッド</xref:System.String.Compare%2A?displayProperty=fullName>。 これは、文字列の基本クラスの静的、オーバー ロードされたメソッドです。 次の例では、このメソッドを使用する方法を示します。  
   
- [!code-vb[VbVbalrStrings#48](../../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/how-culture-affects-strings_3.vb)]  
+ [!code-vb[VbVbalrStrings #&48;](../../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/how-culture-affects-strings_3.vb)]  
   
- 比較の実行方法をより細かく制御するには、<xref:System.String.Compare%2A> メソッドのオーバーロードを使用します。  <xref:System.String.Compare%2A?displayProperty=fullName> メソッドでは、`comparisonType` 引数を使用して比較の種類を指定できます。  
+ 比較の実行方法をより細かく制御するには、追加のオーバー ロードを使用することができます、<xref:System.String.Compare%2A>メソッド</xref:System.String.Compare%2A>。 <xref:System.String.Compare%2A?displayProperty=fullName>使用するメソッド、`comparisonType`引数を使用する比較の種類を指定します</xref:System.String.Compare%2A?displayProperty=fullName>。  
   
-||||  
-|-|-|-|  
-|`comparisonType` 引数の値|比較の種類|使用する状況|  
-|`Ordinal`|文字列のコンポーネント バイトに基づいて比較します。|大文字と小文字を区別する識別子、セキュリティ関連の設定、またはバイトが正確に一致する必要があるその他の非言語的識別子を比較するときに使用します。|  
-|`OrdinalIgnoreCase`|文字列のコンポーネント バイトに基づいて比較します。<br /><br /> `OrdinalIgnoreCase` では、2 つの文字の大文字と小文字だけが違っているときに、インバリアント カルチャ情報を使用して比較結果を判断します。|大文字と小文字を区別する識別子、セキュリティ関連の設定、および Windows に格納されているデータを比較するときに使用します。|  
-|`CurrentCulture` または `CurrentCultureIgnoreCase`|現在のカルチャでの文字列の解釈に基づいて比較します。|ユーザーに表示するデータ、ほとんどのユーザー入力、および言語的解釈を必要とするその他のデータを比較するときに使用します。|  
-|`InvariantCulture` または `InvariantCultureIgnoreCase`|インバリアント カルチャでの文字列の解釈に基づいて比較します。<br /><br /> これは `Ordinal` や `OrdinalIgnoreCase` とは異なります。インバリアント カルチャは、自身の許容範囲外の文字を等価のインバリアント文字として扱うからです。|永続データを比較するときや、固定の並べ替え順序を必要とする言語関連のデータを表示するときにのみ使用します。|  
+|場合は値`comparisonType`引数|比較の種類|使用に適した状況|  
+|---|---|---|  
+|`Ordinal`|文字列のコンポーネントのバイト数に基づく比較。|比較するときに、この値を使用します。 識別子の大文字小文字の区別、セキュリティ関連の設定またはバイト数を正確に満たす必要があるその他の非言語的な識別子です。|  
+|`OrdinalIgnoreCase`|文字列のコンポーネントのバイト数に基づく比較。<br /><br /> `OrdinalIgnoreCase`インバリアント カルチャ情報を使用して、2 つの文字が異なる場合にのみ大文字と小文字を決定します。|比較するときに、この値を使用します。 小文字を区別しない識別子、セキュリティ関連の設定、および Windows に格納されたデータ。|  
+|`CurrentCulture` または `CurrentCultureIgnoreCase`|現在のカルチャでの文字列の解釈に基づく比較。|比較するときに、これらの値を使用します。 ユーザー、ほとんどのユーザー入力、および言語的に解釈を必要とするその他のデータに表示されるデータ。|  
+|`InvariantCulture` または `InvariantCultureIgnoreCase`|インバリアント カルチャの文字列の解釈に基づく比較。<br /><br /> これは、異なる、`Ordinal`と`OrdinalIgnoreCase`、インバリアント カルチャは、等価のインバリアント文字として許容される範囲外の文字を処理するためです。|これらの値は、一定の並べ替え順序が必要なデータを保持するか、言語関連データの表示を比較するときにだけに使用します。|  
   
-### セキュリティの考慮事項  
- 比較処理または大文字\/小文字変換処理の結果に基づいてアプリケーションのセキュリティ関連の決定を下す場合は、その処理を <xref:System.String.Compare%2A?displayProperty=fullName> メソッドで実行し、`comparisonType` 引数に `Ordinal` または `OrdinalIgnoreCase` を渡してください。  
+### <a name="security-considerations"></a>セキュリティの考慮事項  
+ アプリケーションが、比較演算または大文字の演算の結果に基づいてセキュリティ上の決定を行うかどうかは、操作を使用する必要があります、<xref:System.String.Compare%2A?displayProperty=fullName>メソッド、およびパス`Ordinal`または`OrdinalIgnoreCase`の`comparisonType`引数</xref:System.String.Compare%2A?displayProperty=fullName>。  
   
-## 参照  
- <xref:System.Globalization.CultureInfo>   
- [Introduction to Strings in Visual Basic](../../../../visual-basic/programming-guide/language-features/strings/introduction-to-strings.md)   
- [Type Conversion Functions](../../../../visual-basic/language-reference/functions/type-conversion-functions.md)
+## <a name="see-also"></a>関連項目  
+ <xref:System.Globalization.CultureInfo></xref:System.Globalization.CultureInfo>   
+ [Visual Basic における文字列の概要](../../../../visual-basic/programming-guide/language-features/strings/introduction-to-strings.md)   
+ [データ型変換関数](../../../../visual-basic/language-reference/functions/type-conversion-functions.md)

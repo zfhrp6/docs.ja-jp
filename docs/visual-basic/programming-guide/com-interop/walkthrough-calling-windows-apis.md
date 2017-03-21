@@ -1,167 +1,183 @@
 ---
-title: "Walkthrough: Calling Windows APIs (Visual Basic) | Microsoft Docs"
-ms.custom: ""
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "DLLs, calling"
-  - "Windows API, walkthroughs"
-  - "platform invoke, walkthroughs"
-  - "API calls, walkthroughs [Visual Basic]"
-  - "Windows API, calling"
-  - "walkthroughs [Visual Basic], API calls"
-  - "DllImport attribute, calling Windows API"
-  - "Declare statement, declaring DLL functions"
+title: "チュートリアル: Windows Api (Visual Basic) の呼び出し |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 2015-07-20
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-visual-basic
+ms.topic: article
+dev_langs:
+- VB
+helpviewer_keywords:
+- DLLs, calling
+- Windows API, walkthroughs
+- platform invoke, walkthroughs
+- API calls, walkthroughs [Visual Basic]
+- Windows API, calling
+- walkthroughs [Visual Basic], API calls
+- DllImport attribute, calling Windows API
+- Declare statement, declaring DLL functions
 ms.assetid: 9280ca96-7a93-47a3-8d01-6d01be0657cb
 caps.latest.revision: 20
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 20
----
-# Walkthrough: Calling Windows APIs (Visual Basic)
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
+author: stevehoag
+ms.author: shoag
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: 5001ccebb0a5b8cadd4e856342601506cf1d033f
+ms.lasthandoff: 03/13/2017
 
-Windows API は、Windows オペレーティング システムの一部であるダイナミック リンク ライブラリ \(DLL: Dynamic Link Library\) です。  同等のプロシージャを独自に作成するのが困難なときに、Windows API を利用してタスクを実行します。  たとえば、Windows には `FlashWindowEx` という名前の関数があります。この関数を使用すると、アプリケーションのタイトル バーを明るい網かけと暗い網かけに交互に変化させることができます。  
+---
+# <a name="walkthrough-calling-windows-apis-visual-basic"></a>チュートリアル: Windows API の呼び出し (Visual Basic)
+Windows Api は、Windows オペレーティング システムの一部であるダイナミック リンク ライブラリ (Dll) です。 それらを使用して、独自の同等のプロシージャの作成が困難になる場合は、タスクを実行します。 たとえば、という名前の関数は、Windows`FlashWindowEx`により、アプリケーションのタイトル バーを薄いおよび濃い網掛けが交互に行うためです。  
   
- コードで Windows API を使用する利点は、開発時間を短縮できることです。Windows API には、作成済みの、すぐに利用できる便利な関数が数多く用意されているため、開発時間を短縮できます。  Windows API の短所としては、操作が難しい場合があることや、適切に動作しないときに修正できない場合があることが挙げられます。  
+ コード内の Windows Api を使用する利点は、既に書き込まれている便利な関数が多数用意し、使用するには、待機しているが含まれているために、開発時間を節約することです。 欠点は、Windows Api は問題が生じた場合やェロェノェを処理できないことがあります。  
   
- Windows API は、相互運用性の特別なカテゴリを表します。  Windows API ではマネージ コードを使用せず、タイプ ライブラリが組み込まれていません。また、Visual Studio で使用されるデータ型とは異なるデータ型を使用します。  このような相違点、および Windows API は COM オブジェクトではないという理由により、Windows API と [!INCLUDE[dnprdnshort](../../../csharp/getting-started/includes/dnprdnshort-md.md)] の相互運用は、PInvoke \(プラットフォーム呼び出し\) を使用して実行されます。  プラットフォーム呼び出しは、DLL に実装されたアンマネージ関数をマネージ コードが呼び出すことができるサービスです。  詳細については、「[アンマネージ DLL 関数の処理](../Topic/Consuming%20Unmanaged%20DLL%20Functions.md)」を参照してください。  [!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] で PInvoke を使用するには、`Declare` ステートメントを使用するか、または `DllImport` 属性を空のプロシージャに適用します。  
+ Windows Api では、相互運用性の特別なカテゴリを表します。 Windows Api では、マネージ コードを使用しないでください、組み込みライブラリを入力し、Visual Studio で使用されるものとは異なるデータ型を使用する必要はありません。 これらの相違点は、Windows Api が COM オブジェクト、Windows Api との相互運用ではないため、および[!INCLUDE[dnprdnshort](../../../csharp/getting-started/includes/dnprdnshort_md.md)]はプラットフォームを使用して実行呼び出すには、pinvoke です。 プラットフォーム呼び出しはマネージ Dll に実装されているアンマネージ関数を呼び出すコードを有効にするサービスです。 詳細については、次を参照してください。[アンマネージ DLL 関数の処理](http://msdn.microsoft.com/library/eca7606e-ebfb-4f47-b8d9-289903fdc045)します。 PInvoke を使用することができます[!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]を使用して、`Declare`ステートメントまたは適用する、`DllImport`属性を空のプロシージャです。  
   
- 過去において Windows API 呼び出しは [!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] プログラミングの重要な部分を占めていましたが、[!INCLUDE[vbprvblong](../../../visual-basic/developing-apps/customizing-extending-my/includes/vbprvblong-md.md)] ではほとんど必要がなくなりました。  Windows API 呼び出しを使用する代わりに、できる限り [!INCLUDE[dnprdnshort](../../../csharp/getting-started/includes/dnprdnshort-md.md)] からマネージ コードを使用してタスクを実行する必要があります。  このチュートリアルでは、Windows API を使用する必要のある状況についての情報を提供します。  
+ Windows API の呼び出しの重要な部分のされた[!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]、過去のプログラミングしますが、することはまれで必要な[!INCLUDE[vbprvblong](../../../visual-basic/developing-apps/customizing-extending-my/includes/vbprvblong_md.md)]です。 可能であればからマネージ コードを使用する必要があります、 [!INCLUDE[dnprdnshort](../../../csharp/getting-started/includes/dnprdnshort_md.md)] Windows API の呼び出しではなく、タスクを実行します。 このチュートリアルは、使用する必要のある状況についての情報を Windows Api が必要です。  
   
- [!INCLUDE[note_settings_general](../../../csharp/language-reference/compiler-messages/includes/note-settings-general-md.md)]  
+[!INCLUDE[note_settings_general](../../../csharp/language-reference/compiler-messages/includes/note_settings_general_md.md)]  
   
-## Declare による API 呼び出し  
- Windows API を呼び出す最も一般的な方法は、`Declare` ステートメントを使用する方法です。  
+## <a name="api-calls-using-declare"></a>使用して、API 呼び出しを宣言します。  
+ Windows Api を呼び出す最も一般的な方法を使用して、`Declare`ステートメントです。  
   
-#### DLL プロシージャを宣言するには  
+#### <a name="to-declare-a-dll-procedure"></a>DLL のプロシージャを宣言するには  
   
-1.  呼び出しの対象となる関数の名前、引数、引数の型、戻り値、およびその関数を含む DLL の名前と場所を確認します。  
+1.  呼び出すには、必要な関数とその引数、引数の型の名前を特定し、値、だけでなく、名前、およびそれを含んでいる DLL の場所を返します。  
   
     > [!NOTE]
-    >  Windows API の詳細については、プラットフォーム SDK の「Windows API」で、Win32 SDK に関する記述を参照してください。  Windows API で使用される定数の詳細については、プラットフォーム SDK に組み込まれている Windows.h などのヘッダー ファイルを参照してください。  
+    >  Windows Api についての詳細については、プラットフォーム SDK の Windows API で Win32 SDK ドキュメントを参照してください。 Windows Api を使用する定数についての詳細については、Windows.h、Platform SDK に含まれているなどのヘッダー ファイルを調べてください。  
   
-2.  **\[ファイル\]** メニューの **\[新規作成\]** をクリックし、**\[プロジェクト\]** をクリックして、新規の Windows アプリケーション プロジェクトを開きます。  **\[新しいプロジェクト\]** ダイアログ ボックスが表示されます。  
+2.  クリックして新しい Windows アプリケーション プロジェクトを開きます**新規**上、**ファイル**] メニューの [クリックして**プロジェクト**します。 **[新しいプロジェクト]** ダイアログ ボックスが表示されます。  
   
-3.  [!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] プロジェクト テンプレートの一覧の **\[Windows アプリケーション\]** を選択します。  新しいプロジェクトが表示されます。  
+3.  選択**Windows アプリケーション**の一覧から[!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]プロジェクト テンプレートです。 新しいプロジェクトが表示されます。  
   
-4.  次の `Declare` 関数を、DLL を使用するクラスまたはモジュールに追加します。  
+4.  次の追加`Declare`クラスまたは DLL を使用するモジュールのいずれかの機能します。  
   
-     [!code-vb[VbVbalrInterop#9](../../../visual-basic/programming-guide/com-interop/codesnippet/VisualBasic/walkthrough-calling-windows-apis_1.vb)]  
+     [!code-vb[VbVbalrInterop&#9;](../../../visual-basic/programming-guide/com-interop/codesnippet/VisualBasic/walkthrough-calling-windows-apis_1.vb)]  
   
-### Declare ステートメントの構成要素  
- `Declare` ステートメントは次の要素で構成されます。  
+### <a name="parts-of-the-declare-statement"></a>部分、Declare ステートメント  
+ `Declare`ステートメントには、次の要素が含まれています。  
   
-#### Auto 修飾子  
- `Auto` 修飾子は、共通言語ランタイムの実行時規則に従い、メソッド名またはエイリアス名 \(指定されている場合\) に基づいて、文字列を変換するようにランタイムに指示します。  
+#### <a name="auto-modifier"></a>Auto 修飾子  
+ `Auto`修飾子が共通言語ランタイムの規則 (またはエイリアス名を指定する場合) に従って、メソッド名に基づく文字列に変換するようランタイムに指示します。  
   
-#### Lib キーワードと Alias キーワード  
- `Function` キーワードに続く名前は、インポートした関数にアクセスするためにプログラムで使用される名前です。  この名前には、呼び出しの対象となる関数の実際の名前を使用できます。また、任意の有効なプロシージャ名を使用してから、`Alias` キーワードを使用して呼び出しの対象となる関数の実際の名前を指定することもできます。  
+#### <a name="lib-and-alias-keywords"></a>Lib とエイリアスのキーワード  
+ 名前の次の`Function`キーワードは、インポートされた関数にアクセスするプログラムで使用される名前です。 を呼び出す関数の実際の名前と同じことができますか、任意の有効なプロシージャの名前と、採用を使用する、`Alias`キーワードを呼び出している関数の実際の名前を指定します。  
   
- `Lib` キーワードは、呼び出しの対象となる関数を含む DLL の名前と場所の前に指定します。  Windows システム ディレクトリに格納されたファイルのパスを指定する必要はありません。  
+ 指定の`Lib`キーワードを呼び出している関数を含んでいる DLL の場所と名前。 Windows システム ディレクトリ内にあるファイルのパスを指定する必要はありません。  
   
- 呼び出しの対象となる関数の名前が、有効な [!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] プロシージャ名でない場合、またはアプリケーション内の他の項目の名前と競合する場合は、`Alias` キーワードを使用します。  `Alias` は、呼び出される関数の実際の名前を示します。  
+ 使用して、`Alias`を呼び出している関数の名前が有効な場合は、キーワード[!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]プロシージャ名、または、アプリケーションでは、その他の項目の名前と競合します。 `Alias`呼び出される関数の本当の名前を示します。  
   
-#### 引数とデータ型の宣言  
- 引数とそのデータ型を宣言します。  この部分は、Windows が使用するデータ型が Visual Studio のデータ型に対応していないため、難しい部分です。  [!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] では、*マーシャリング*と呼ばれるプロセスで、引数が互換性のあるデータ型に変換されます。  <xref:System.Runtime.InteropServices> 名前空間で定義されている <xref:System.Runtime.InteropServices.MarshalAsAttribute> 属性を使用することによって、引数がマーシャリングされる方法を明示的に制御できます。  
+#### <a name="argument-and-data-type-declarations"></a>引数とデータ型の宣言  
+ 引数とそのデータ型を宣言します。 この部分は、Windows で使用されるデータ型は、Visual Studio のデータ型に対応していないために、困難な場合ことができます。 [!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]この自動化は多くの作業を互換性のあるデータ型と呼ばれるプロセスに引数を変換する*マーシャ リング*します。 使用して引数をマーシャ リングする方法を明示的に制御できる、<xref:System.Runtime.InteropServices.MarshalAsAttribute>属性で定義されている、<xref:System.Runtime.InteropServices>名前空間</xref:System.Runtime.InteropServices></xref:System.Runtime.InteropServices.MarshalAsAttribute>。  
   
 > [!NOTE]
->  [!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] の以前のバージョンでは、どのデータ型のデータでも使用可能にするパラメーター `As Any` を宣言できました。  [!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] では、すべての `Declare` ステートメントに特定のデータ型を使用する必要があります。  
+>  以前のバージョンの[!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]パラメーターを宣言することができる`As Any`、つまり、すべてのデータのデータ型を使用できます。 [!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]すべての特定のデータ型を使用することが必要です。`Declare`ステートメントです。  
   
-#### Windows API の定数  
- 一部の引数は定数の組み合わせです。  たとえば、このチュートリアルで示す `MessageBox` API は、メッセージ ボックスの表示方法を制御する `Typ` と呼ばれる整数の引数を受け取ります。  これらの定数の数値を確認するには、WinUser.h ファイル内の `#define` ステートメントを調べます。  数値は通常 16 進数で示されるため、数値を加算したり 10 進数に変換したりする場合は、電卓を使用することをお勧めします。  たとえば、感嘆符スタイルの定数 `MB_ICONEXCLAMATION` 0x00000030 と Yes\/No スタイルの定数 `MB_YESNO` 0x00000004 を組み合わせる場合は、数値を加算して、0x00000034 \(10 進数では 52\) の結果を得ることができます。  10 進数の結果を直接使用することもできますが、アプリケーション内でこれらの値を定数として宣言し、`Or` 演算子を使用して組み合わせることをお勧めします。  
+#### <a name="windows-api-constants"></a>Windows API の定数  
+ いくつかの引数は、定数の組み合わせです。 たとえば、`MessageBox`このチュートリアルで示すように API と呼ばれる整数の引数を受け取る`Typ`メッセージ ボックスを表示する方法を制御します。 確認するには、これらの定数の数値を指定できます、 `#define` WinUser.h ファイル内のステートメントです。 数値の値は、電卓を使用してそれらを追加し、10 進数に変換するために一般的に&16; 進数で表示されます。 例では、感嘆符スタイルの定数を結合する場合の`MB_ICONEXCLAMATION`0x00000030 し、はい/スタイルなし`MB_YESNO`0x00000004、番号を追加し、10 進数、0x00000034 または 52 の結果を取得します。 これらの値をアプリケーションで定数として宣言し、それらを結合することをお勧め&10; 進数の結果を直接使用できますを使用して、`Or`演算子。  
   
-###### Windows API 呼び出しの定数を宣言するには  
+###### <a name="to-declare-constants-for-windows-api-calls"></a>Windows API の呼び出しの定数を宣言するには  
   
-1.  呼び出す Windows 関数のマニュアルを参照してください。  使用する定数の名前と、これらの定数に対応する数値を含む .h ファイルの名前を決定します。  
+1.  Windows 関数の呼び出しと、ドキュメントを参照してください。 使用されている定数の名前とこれらの定数の数値を含む .h ファイルの名前を決定します。  
   
-2.  メモ帳などのテキスト エディターを使用して、ヘッダー \(.h\) ファイルの内容を表示し、使用する定数に関連付けられた値を探します。  たとえば、`MessageBox` API は、定数 `MB_ICONQUESTION` を使用して、メッセージ ボックスに疑問符を表示します。  `MB_ICONQUESTION` の定義は WinUser.h にあり、次のように表示されます。  
+2.  メモ帳などのテキスト エディターを使用して、ヘッダー (.h) ファイルの内容を表示しを使用している定数に関連付けられている値を検索します。 たとえば、 `MessageBox` API は、定数を使用して`MB_ICONQUESTION`メッセージ ボックスに疑問符 () を表示します。 定義を`MB_ICONQUESTION`WinUser.h にあり、次のように表示されます。  
   
      `#define MB_ICONQUESTION             0x00000020L`  
   
-3.  クラスまたはモジュールに同等の `Const` ステートメントを追加して、これらの定数をアプリケーションで使用できるようにします。  次に例を示します。  
+3.  それと同等の追加`Const`ステートメントをクラスまたはモジュールをこれらの定数をアプリケーションで使用できるようにします。 例:  
   
-     [!code-vb[VbVbalrInterop#11](../../../visual-basic/programming-guide/com-interop/codesnippet/VisualBasic/walkthrough-calling-windows-apis_2.vb)]  
+     [!code-vb[VbVbalrInterop&#11;](../../../visual-basic/programming-guide/com-interop/codesnippet/VisualBasic/walkthrough-calling-windows-apis_2.vb)]  
   
-###### DLL プロシージャを呼び出すには  
+###### <a name="to-call-the-dll-procedure"></a>DLL のプロシージャを呼び出す  
   
-1.  `Button1` という名前のボタンをプロジェクトのスタートアップ フォームに追加し、ボタンをダブルクリックしてコードを表示します。  ボタンのイベント ハンドラーが表示されます。  
+1.  という名前のボタンを追加`Button1`の起動時に、プロジェクトの形式し、すると、そのコードを表示する をダブルクリックします。 ボタンのイベント ハンドラーが表示されます。  
   
-2.  追加したボタンの `Click` イベント ハンドラーにプロシージャを呼び出すためのコードを追加し、適切な引数を指定します。  
+2.  コードを追加して、`Click`プロシージャを呼び出すし、適切な引数を提供する、追加したボタンのイベント ハンドラー。  
   
-     [!code-vb[VbVbalrInterop#12](../../../visual-basic/programming-guide/com-interop/codesnippet/VisualBasic/walkthrough-calling-windows-apis_3.vb)]  
+     [!code-vb[VbVbalrInterop&#12;](../../../visual-basic/programming-guide/com-interop/codesnippet/VisualBasic/walkthrough-calling-windows-apis_3.vb)]  
   
-3.  F5 キーを押してプロジェクトを実行します。  **\[はい\]** 応答ボタンと **\[いいえ\]** 応答ボタンのあるメッセージ ボックスが表示されます。  いずれかのボタンをクリックします。  
+3.  F5 キーを押して、プロジェクトを実行します。 両方で、メッセージ ボックスが表示**はい**と**いいえ**返信ボタン。 いずれかをクリックします。  
   
-#### データのマーシャリング  
- [!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] では、Windows API 呼び出しで使用されるパラメーターと戻り値のデータ型が自動的に変換されますが、`MarshalAs` 属性を使用して、API が受け取るアンマネージ データ型を明示的に指定できます。  相互運用マーシャリングの詳細については、「[相互運用マーシャリング](../Topic/Interop%20Marshaling.md)」を参照してください。  
+#### <a name="data-marshaling"></a>データ マーシャ リング  
+ [!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]自動的に変換パラメーターと Windows API の呼び出しの戻り値のデータ型使える、 `MarshalAs` API のものと想定するアンマネージ データ型を明示的に指定する属性です。 相互運用マーシャ リングの詳細については、次を参照してください。[相互運用マーシャ リング](http://msdn.microsoft.com/library/115f7a2f-d422-4605-ab36-13a8dd28142a)します。  
   
-###### API 呼び出しで Declare および MarshalAs を使用するには  
+###### <a name="to-use-declare-and-marshalas-in-an-api-call"></a>Declare と MarshalAs API 呼び出しで使用するには  
   
-1.  呼び出しの対象となる関数の名前、引数、データ型、および戻り値を確認します。  
+1.  データ型を引数、呼び出そうと関数の名前を特定し、値を返します。  
   
-2.  `MarshalAs` 属性へのアクセスを簡単にするために、クラスまたはモジュールのコードの先頭に `Imports` ステートメントを追加します。次に例を示します。  
+2.  アクセスを簡略化する、`MarshalAs`属性は、追加、`Imports`ステートメントをクラスまたは次の例のように、モジュールに対するコードの上部にします。  
   
-     [!code-vb[VbVbalrInterop#13](../../../visual-basic/programming-guide/com-interop/codesnippet/VisualBasic/walkthrough-calling-windows-apis_4.vb)]  
+     [!code-vb[VbVbalrInterop&#13;](../../../visual-basic/programming-guide/com-interop/codesnippet/VisualBasic/walkthrough-calling-windows-apis_4.vb)]  
   
-3.  インポートした関数の関数プロトタイプを、使用するクラスまたはモジュールに追加します。また、パラメーターまたは戻り値に `MarshalAs` 属性を適用します。  次の例では、`void*` 型を受け取る API 呼び出しを `AsAny` としてマーシャリングしています。  
+3.  クラスまたはモジュールを使用しているし、適用、インポートされた関数に対する関数プロトタイプを追加、`MarshalAs`属性をパラメーターまたは戻り値。 次の例では、型が必要ですが、API 呼び出しで`void*`としてマーシャ リング`AsAny`:  
   
-     [!code-vb[VbVbalrInterop#14](../../../visual-basic/programming-guide/com-interop/codesnippet/VisualBasic/walkthrough-calling-windows-apis_5.vb)]  
+     [!code-vb[VbVbalrInterop&#14;](../../../visual-basic/programming-guide/com-interop/codesnippet/VisualBasic/walkthrough-calling-windows-apis_5.vb)]  
   
-## DllImport による API 呼び出し  
- タイプ ライブラリを持たない DLL 内の関数を呼び出すもう 1 つの方法として、`DllImport` 属性があります。  `DllImport` は、`Declare` ステートメントを使用する場合とほぼ同じ働きをしますが、関数の呼び出し方をより細かく制御できます。  
+## <a name="api-calls-using-dllimport"></a>DllImport を使用する API 呼び出し  
+ `DllImport`属性は、タイプ ライブラリを持たない Dll で関数を呼び出す&2; 番目の方法を提供します。 `DllImport`使用するとほぼ同じですが、`Declare`ステートメントが関数を呼び出す方法より詳細に制御を提供します。  
   
- 呼び出しが共有 \(*static* と呼ばれる場合もあります\) メソッドを参照している限り、ほとんどの Windows API 呼び出しで `DllImport` を使用できます。  クラスのインスタンスが必要なメソッドは使用できません。  `Declare` ステートメントとは異なり、`DllImport` では `MarshalAs` 属性を使用できません。  
+ 使用する`DllImport`ほとんどの Windows API を使用、呼び出しは、共有を参照する限りを呼び出します (とも呼ばれる*静的*) メソッドです。 クラスのインスタンスを必要とするメソッドを使用することはできません。 異なり`Declare`ステートメント、`DllImport`呼び出しを使用できない、`MarshalAs`属性です。  
   
-#### DllImport 属性を使用して Windows API を呼び出すには  
+#### <a name="to-call-a-windows-api-using-the-dllimport-attribute"></a>DllImport 属性を使用して Windows API を呼び出す  
   
-1.  **\[ファイル\]** メニューの **\[新規作成\]** をクリックし、**\[プロジェクト\]** をクリックして、新規の Windows アプリケーション プロジェクトを開きます。  **\[新しいプロジェクト\]** ダイアログ ボックスが表示されます。  
+1.  クリックして新しい Windows アプリケーション プロジェクトを開きます**新規**上、**ファイル**] メニューの [クリックして**プロジェクト**します。 **[新しいプロジェクト]** ダイアログ ボックスが表示されます。  
   
-2.  [!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] プロジェクト テンプレートの一覧の **\[Windows アプリケーション\]** を選択します。  新しいプロジェクトが表示されます。  
+2.  選択**Windows アプリケーション**の一覧から[!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]プロジェクト テンプレートです。 新しいプロジェクトが表示されます。  
   
-3.  `Button2` という名前のボタンをスタートアップ フォームに追加します。  
+3.  という名前のボタンを追加`Button2`スタートアップ フォームにします。  
   
-4.  `Button2` をダブルクリックしてフォームのコードを表示します。  
+4.  ダブルクリックして`Button2`フォームのコード ビューを開きます。  
   
-5.  `DllImport` へのアクセスを簡単にするために、スタートアップ フォーム クラスのコードの先頭に `Imports` ステートメントを追加します。  
+5.  アクセスを簡略化する`DllImport`、追加、`Imports`ステートメントをスタートアップ フォーム クラスのコードの上部にします。  
   
-     [!code-vb[VbVbalrInterop#13](../../../visual-basic/programming-guide/com-interop/codesnippet/VisualBasic/walkthrough-calling-windows-apis_4.vb)]  
+     [!code-vb[VbVbalrInterop&#13;](../../../visual-basic/programming-guide/com-interop/codesnippet/VisualBasic/walkthrough-calling-windows-apis_4.vb)]  
   
-6.  フォームの `End Class` ステートメントの前に空の関数を宣言し、`MoveFile` という名前を付けます。  
+6.  この空の関数を宣言、`End Class`フォーム、および関数の名前に対する`MoveFile`します。  
   
-7.  関数宣言に `Public` 修飾子および `Shared` 修飾子を適用し、Windows API 関数で使用される引数に基づいて `MoveFile` のパラメーターを設定します。  
+7.  適用、`Public`と`Shared`関数宣言とパラメーターを設定する修飾子`MoveFile`Windows API 関数を使用して、引数に基づいた。  
   
-     [!code-vb[VbVbalrInterop#16](../../../visual-basic/programming-guide/com-interop/codesnippet/VisualBasic/walkthrough-calling-windows-apis_6.vb)]  
+     [!code-vb[VbVbalrInterop&#16;](../../../visual-basic/programming-guide/com-interop/codesnippet/VisualBasic/walkthrough-calling-windows-apis_6.vb)]  
   
-     関数は任意の有効なプロシージャ名を持つことができます。`DllImport` 属性によって、この名前が DLL で指定されます。  また、パラメーターと戻り値の相互運用性マーシャリングも処理されるため、API によって使用されるデータ型と同様の Visual Studio データ型を選択できます。  
+     関数は、任意の有効なプロシージャ名前を設定できます。`DllImport`属性は、DLL の名前を指定します。 パラメーターのマーシャ リングの相互運用性も処理やデータに類似する Visual Studio のデータ型を選択できるように、戻り値の型 API によって使用されるあります。  
   
-8.  `DllImport` 属性を空の関数に適用します。  最初のパラメーターは、呼び出しの対象となる関数を含む DLL の名前と場所です。  Windows システム ディレクトリに格納されたファイルのパスを指定する必要はありません。  2 番目のパラメーターは、Windows API 内の関数の名前を指定する名前付き引数です。  この例では、`DllImport` 属性は `MoveFile` の呼び出しを強制的に KERNEL32.DLL 内の `MoveFileW` に転送します。  `MoveFileW` メソッドは、パス `src` からパス `dst` にファイルをコピーします。  
+8.  適用、`DllImport`属性を空の関数にします。 最初のパラメーターは、呼び出し先関数を含んでいる DLL の場所と名前です。 Windows システム ディレクトリ内にあるファイルのパスを指定する必要はありません。 2 番目のパラメーターは、Windows API の関数の名前を指定する名前付き引数です。 この例では、`DllImport`属性への呼び出しを強制する`MoveFile`に転送される`MoveFileW`KERNEL32 にします。DLL です。 `MoveFileW`メソッドは、パスからファイルをコピー`src`パスに`dst`します。  
   
-     [!code-vb[VbVbalrInterop#17](../../../visual-basic/programming-guide/com-interop/codesnippet/VisualBasic/walkthrough-calling-windows-apis_7.vb)]  
+     [!code-vb[VbVbalrInterop&17;](../../../visual-basic/programming-guide/com-interop/codesnippet/VisualBasic/walkthrough-calling-windows-apis_7.vb)]  
   
-9. 関数を呼び出すには、コードを `Button2_Click` イベント ハンドラーに追加します。  
+9. コードを追加して、`Button2_Click`イベント ハンドラー関数を呼び出します。  
   
-     [!code-vb[VbVbalrInterop#18](../../../visual-basic/programming-guide/com-interop/codesnippet/VisualBasic/walkthrough-calling-windows-apis_8.vb)]  
+     [!code-vb[VbVbalrInterop&#18;](../../../visual-basic/programming-guide/com-interop/codesnippet/VisualBasic/walkthrough-calling-windows-apis_8.vb)]  
   
-10. Test.txt という名前のファイルを作成し、ハード ドライブ上の C:\\Tmp ディレクトリに配置します。  必要に応じて Tmp ディレクトリを作成します。  
+10. Test.txt という名前のファイルを作成し、ハード ドライブ上の C:\Tmp ディレクトリに配置します。 必要な場合は、Tmp ディレクトリを作成します。  
   
-11. F5 キーを押してアプリケーションを起動します。  メイン フォームが表示されます。  
+11. F5 キーを押してアプリケーションを起動します。 メイン フォームが表示されます。  
   
-12. **\[Button2\]** をクリックします。  ファイルを移動できる場合は、"The file was moved successfully" というメッセージが表示されます。  
+12. クリックして**Button2**します。 ファイルを移動できる場合は、「ファイルが正常に移動されました」メッセージが表示されます。  
   
-## 参照  
- <xref:System.Runtime.InteropServices.DllImportAttribute>   
- <xref:System.Runtime.InteropServices.MarshalAsAttribute>   
- [Declare Statement](../../../visual-basic/language-reference/statements/declare-statement.md)   
- [Auto](../../../visual-basic/language-reference/modifiers/auto.md)   
- [Alias](../../../visual-basic/language-reference/statements/alias-clause.md)   
- [COM Interop](../../../visual-basic/programming-guide/com-interop/index.md)   
- [マネージ コードでのプロトタイプの作成](../Topic/Creating%20Prototypes%20in%20Managed%20Code.md)   
- [コールバック メソッドとしてのデリゲートのマーシャ リング](../Topic/Marshaling%20a%20Delegate%20as%20a%20Callback%20Method.md)
+## <a name="see-also"></a>関連項目  
+ <xref:System.Runtime.InteropServices.DllImportAttribute></xref:System.Runtime.InteropServices.DllImportAttribute>   
+ <xref:System.Runtime.InteropServices.MarshalAsAttribute></xref:System.Runtime.InteropServices.MarshalAsAttribute>   
+ [Declare ステートメント](../../../visual-basic/language-reference/statements/declare-statement.md)   
+ [自動](../../../visual-basic/language-reference/modifiers/auto.md)   
+ [エイリアス](../../../visual-basic/language-reference/statements/alias-clause.md)   
+ [COM 相互運用機能](../../../visual-basic/programming-guide/com-interop/index.md)   
+ [マネージ コードでのプロトタイプの作成](http://msdn.microsoft.com/library/ecdcf25d-cae3-4f07-a2b6-8397ac6dc42d)   
+ [コールバック メソッドとしてデリゲートのマーシャ リング](http://msdn.microsoft.com/library/6ddd7866-9804-4571-84de-83f5cc017a5a)

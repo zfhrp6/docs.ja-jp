@@ -1,57 +1,73 @@
 ---
-title: "Return type of function &#39;&lt;procedurename&gt;&#39; is not CLS-compliant | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "bc40027"
-  - "vbc40027"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "BC40027"
+title: "関数の型を返す &quot;&lt;procedurename&gt;&quot; CLS 準拠ではありません。Microsoft ドキュメント"
+ms.date: 2015-07-20
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-visual-basic
+ms.topic: article
+f1_keywords:
+- bc40027
+- vbc40027
+dev_langs:
+- VB
+helpviewer_keywords:
+- BC40027
 ms.assetid: 33c088c7-48e7-400c-920e-6d8967e1f3fc
 caps.latest.revision: 13
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 13
----
-# Return type of function &#39;&lt;procedurename&gt;&#39; is not CLS-compliant
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
+author: stevehoag
+ms.author: shoag
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: 99a07393d976dc99998b29d2ba2cd7d554ec1bad
+ms.lasthandoff: 03/13/2017
 
-`Function` プロシージャが `<CLSCompliant(True)>` でマーク付けされていますが、戻り値の型が `<CLSCompliant(False)>` でマーク付けされているか、マークが付けられていないか、または非準拠の型であるため不適切です。  
+---
+# <a name="return-type-of-function-39ltprocedurenamegt39-is-not-cls-compliant"></a>関数の型を返す '&lt;procedurename&gt;' CLS 準拠ではありません
+A`Function`プロシージャとしてマークされている`<CLSCompliant(True)>`としてマークされている型を返しますが、`<CLSCompliant(False)>`がマークされていない、または準拠していない型であるが明確でないです。  
   
- プロシージャを[言語への非依存性、および言語非依存コンポーネント](../Topic/Language%20Independence%20and%20Language-Independent%20Components.md) \(CLS\) 準拠にするためには、CLS 準拠の型のみを使用する必要があります。  このことは、パラメーターの型、戻り値の型、およびすべてのローカル変数の型に当てはまります。  
+ プロシージャを[言語への非依存性および言語非依存コンポーネント](https://msdn.microsoft.com/library/12a7a7h3) (CLS) に準拠させるには、CLS 準拠型のみを使用する必要があります。 これは、パラメーターの型、戻り値の型、およびすべてのローカル変数の型に適用されます。  
   
- 次の [!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] データ型は CLS に準拠していません。  
+ 次の [!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] データ型は CLS に準拠していません。  
   
--   [SByte Data Type](../../../visual-basic/language-reference/data-types/sbyte-data-type.md)  
+-   [SByte データ型](../../../visual-basic/language-reference/data-types/sbyte-data-type.md)  
   
--   [UInteger Data Type](../../../visual-basic/language-reference/data-types/uinteger-data-type.md)  
+-   [UInteger データ型](../../../visual-basic/language-reference/data-types/uinteger-data-type.md)  
   
--   [ULong Data Type](../../../visual-basic/language-reference/data-types/ulong-data-type.md)  
+-   [ULong データ型](../../../visual-basic/language-reference/data-types/ulong-data-type.md)  
   
--   [UShort Data Type](../../../visual-basic/language-reference/data-types/ushort-data-type.md)  
+-   [UShort データ型](../../../visual-basic/language-reference/data-types/ushort-data-type.md)  
   
- <xref:System.CLSCompliantAttribute> をプログラミング要素に適用するときは、属性の `isCompliant` パラメーターを `True` または `False` に設定して準拠または非準拠を示します。  このパラメーターの既定値はありません。値を指定する必要があります。  
+ 適用すると、<xref:System.CLSCompliantAttribute>プログラミング要素に属性を設定する`isCompliant`するか、パラメーター`True`または`False`を対応または非対応を示します</xref:System.CLSCompliantAttribute>。 このパラメーターには既定値がありません。値を指定する必要があります。  
   
- <xref:System.CLSCompliantAttribute> を要素に適用しなかった場合は、非準拠と見なされます。  
+ 適用しない場合、<xref:System.CLSCompliantAttribute>要素に準拠するいないと見なされます</xref:System.CLSCompliantAttribute>。  
   
- 既定では、このメッセージは警告です。  警告を非表示にする方法や、警告をエラーとして扱う方法の詳細については、[Visual Basic での警告の構成](/visual-studio/ide/configuring-warnings-in-visual-basic) を参照してください。  
+ 既定では、このメッセージは警告です。 警告を非表示にする方法や、警告をエラーとして扱う方法の詳細については、「 [Configuring Warnings in Visual Basic](https://docs.microsoft.com/visualstudio/ide/configuring-warnings-in-visual-basic)」を参照してください。  
   
- **Error ID:** BC40027  
+ **エラー ID:** BC40027  
   
-### このエラーを解決するには  
+## <a name="to-correct-this-error"></a>このエラーを解決するには  
   
--   `Function` プロシージャがこの特定の型を返す必要がある場合は、<xref:System.CLSCompliantAttribute> を削除します。  このプロシージャは CLS 準拠になりません。  
+-   場合、`Function`プロシージャがこの特定の型を返す、 <xref:System.CLSCompliantAttribute>.</xref:System.CLSCompliantAttribute>を削除する必要があります プロシージャは CLS 準拠になりません。  
   
--   `Function` プロシージャを CLS に準拠させる必要がある場合は、戻り値の型を CLS に準拠した最も近い型に変更します。  たとえば、2,147,483,647 を超える値の範囲が必要でない場合は、`UInteger` の代わりに `Integer` を使用できます。  範囲を拡張する必要がある場合は、`UInteger` を `Long` に置き換えることができます。  
+-   場合、`Function`プロシージャが CLS に準拠する、最も近い CLS に準拠した型の戻り値の型を変更する必要があります。 たとえば、2,147,483,647 を超える値の範囲が不要な場合は、 `UInteger` の代わりに `Integer` を使用できます。 拡張範囲が必要な場合は、 `UInteger` の代わりに `Long`を使用できます。  
   
--   オートメーションまたは COM オブジェクトとやり取りする場合は、一部の型のデータ幅が [!INCLUDE[dnprdnshort](../../../csharp/getting-started/includes/dnprdnshort-md.md)] とは異なることに注意してください。  たとえば `int` は、他の環境では多くの場合 16 ビットです。  そのようなコンポーネントに 16 ビットの整数を返す場合は、[!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] のマネージ コードで、`Integer` 型ではなく `Short` 型で宣言してください。  
+-   オートメーション オブジェクトや COM オブジェクトとやり取りする場合は、一部の型のデータ幅が [!INCLUDE[dnprdnshort](../../../csharp/getting-started/includes/dnprdnshort_md.md)] とは異なることに注意してください。 たとえば、他の多くの環境では `int` は 16 ビットです。 このようなコンポーネントに 16 ビット整数を返す場合として宣言`Short`の代わりに`Integer`、[!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]コードです。  
   
-## 参照  
- [\<PAVE OVER\> Writing CLS\-Compliant Code](http://msdn.microsoft.com/ja-jp/4c705105-69a2-4e5e-b24e-0633bc32c7f3)
+## <a name="see-also"></a>関連項目  
+ [\<経由で PAVE > CLS 準拠のコードの記述](http://msdn.microsoft.com/en-us/4c705105-69a2-4e5e-b24e-0633bc32c7f3)

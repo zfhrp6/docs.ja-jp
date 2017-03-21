@@ -1,44 +1,60 @@
 ---
-title: "Error Types (Visual Basic) | Microsoft Docs"
-ms.custom: ""
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-helpviewer_keywords: 
-  - "exceptions, types"
-  - "errors [Visual Basic], types"
-  - "errors [Visual Basic], logic"
-  - "errors [Visual Basic], syntax"
-  - "logic errors, Visual Basic"
-  - "run-time errors, types of errors"
-  - "syntax errors, Visual Basic"
+title: "エラーの種類 (Visual Basic) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 2015-07-20
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-visual-basic
+ms.topic: article
+helpviewer_keywords:
+- exceptions, types
+- errors [Visual Basic], types
+- errors [Visual Basic], logic
+- errors [Visual Basic], syntax
+- logic errors, Visual Basic
+- run-time errors, types of errors
+- syntax errors, Visual Basic
 ms.assetid: 3048aabf-8c97-4e13-9150-853769cb5f6f
 caps.latest.revision: 13
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 13
----
-# Error Types (Visual Basic)
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
+author: stevehoag
+ms.author: shoag
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: d48756b74baf757f043e68124d8b65c2f613e595
+ms.lasthandoff: 03/13/2017
 
-[!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] のエラー \(*例外*とも呼ばれます\) は、構文エラー、ランタイム エラー、および論理エラーの 3 つに分類できます。  
+---
+# <a name="error-types-visual-basic"></a>エラーの種類 (Visual Basic)
+[!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]、エラー (とも呼ばれます*例外*) は&3; つのカテゴリに分類します。 構文エラー、実行時エラー、および論理エラーです。  
   
-## 構文エラー  
- *構文エラー*は、コードを記述している間に検出されます。  [!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] では、**コード エディター** ウィンドウでコードを入力しているときにチェックされ、単語のスペルミスした場合や、言語の要素を不正に使用した場合など間違いがあったときに警告が出ます。  構文エラーは最も一般的なエラーです。  エラーが発生したときに、その場で簡単に修正できます。  
+## <a name="syntax-errors"></a>構文エラー  
+ *構文エラー*はコードを記述するときに表示されます。 [!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]入力して、コードを確認、**コード エディター**ウィンドウなど、word のスペルが間違ってまたは言語要素を正しく使用して、操作を誤った場合、アラートが生成されます。 構文エラーは、エラーの最も一般的な種類です。 簡単に修正できますコーディング環境で発生するとすぐにします。  
   
 > [!NOTE]
->  `Option Explicit` ステートメントは、構文エラーを防ぐ方法の 1 つです。  このステートメントを指定した場合、事前に宣言してからでないとアプリケーション内で変数を使用できません。  このため、宣言した変数をコード内で使用するときに入力ミスなどのエラーがあるとすぐに検出され、エラーを修正できます。  
+>  `Option Explicit`ステートメントが構文エラーを回避する&1; つのことを意味します。 アプリケーションで使用するすべての変数を事前に宣言するように強制します。 したがって、コードでそれらの変数を使用している場合、入力ミスがすぐに検出され、修正することができます。  
   
-## ランタイム エラー  
- *ランタイム エラー*は、コードをコンパイルして実行してからでないと発生しないエラーです。  構文エラーがなく、正しいように見えたのに実行できないコードなどがこれに該当します。  たとえば、ファイルを開くコード行を正しく記述したとします。  このとき、そのファイルが破損していると、アプリケーションは `Open` 関数を実行できないため停止します。  ほとんどのランタイム エラーは、問題のあるコードを書き直して再コンパイルおよび再実行することによって修正できます。  
+## <a name="run-time-errors"></a>実行時エラー  
+ *実行時エラー*をコンパイルして、コードを実行するまでは表示されません。 これらには、構文エラーがないのに実行できない点で、正しいように表示されるコードが含まれます。 たとえば、ファイルを開くコード行を正しく記述できます。 ファイルが壊れている場合は、アプリケーションを実行できませんが、`Open`関数、およびその実行を停止します。 問題のあるコードの書き直しを再コンパイルし、再実行することで、ほとんどの実行時エラーを修正できます。  
   
-## 論理エラー  
- *論理エラー*は、アプリケーションが実際に使用されるようになってから発生するエラーです。  これは、通常、ユーザーによる操作の結果として発生する、好ましくないまたは予期しない結果です。  たとえば、キーが間違って入力されるなどの外的要因によって、予測されているパラメーターの範囲内でアプリケーションが機能しなくなったり、アプリケーション全体が停止したりする場合があります。  論理エラーは、原因が必ずしも明らかではないため、一般に最も修正が難しいエラーです。  
+## <a name="logic-errors"></a>論理エラー  
+ *論理エラー*は、アプリケーションが使用すると表示されます。 ユーザー操作に応じてほとんどの多くの場合望ましくないか予期しない結果が表示されます。 たとえば、入力の間違いキーまたはなどの外的要因があります、アプリケーションで予測されるパラメーター内での作業を停止するなったりします。 論理エラーは、通常ではないため常に明確ではないを解決する最も困難な型です。  
   
-## 参照  
- [Try...Catch...Finally Statement](../../../visual-basic/language-reference/statements/try-catch-finally-statement.md)   
- [デバッガーの基本事項](/visual-studio/debugger/debugger-basics)
+## <a name="see-also"></a>関連項目  
+ [Try...Catch...Finally ステートメント](../../../visual-basic/language-reference/statements/try-catch-finally-statement.md)   
+ [デバッガーの基本事項](https://docs.microsoft.com/visualstudio/debugger/debugger-basics)

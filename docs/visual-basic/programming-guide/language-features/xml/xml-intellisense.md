@@ -1,62 +1,77 @@
 ---
-title: "XML IntelliSense in Visual Basic | Microsoft Docs"
-ms.custom: ""
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "Visual Basic code, XML"
-  - "XML IntelliSense [Visual Basic]"
-  - "XML [Visual Basic], IntelliSense"
-  - "IntelliSense [Visual Basic], XML"
+title: "Visual Basic における XML IntelliSense |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 2015-07-20
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-visual-basic
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- VB
+helpviewer_keywords:
+- Visual Basic code, XML
+- XML IntelliSense [Visual Basic]
+- XML [Visual Basic], IntelliSense
+- IntelliSense [Visual Basic], XML
 ms.assetid: 59506ce9-d64e-417e-90fc-e9fe19f0a8fa
 caps.latest.revision: 27
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 27
----
-# XML IntelliSense in Visual Basic
-[!INCLUDE[vs2017banner](../../../../visual-basic/developing-apps/includes/vs2017banner.md)]
+author: stevehoag
+ms.author: shoag
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: 8c43db3d2010e4fa92eebeec8a973c50052b1340
+ms.lasthandoff: 03/13/2017
 
-Visual Basic コード エディターには、XML スキーマで定義されている要素の単語入力を補完する、XML 用の IntelliSense 機能が付属しています。  XML スキーマ定義 \(XSD: XML Schema Definition\) ファイルをプロジェクトに追加し、スキーマの対象名前空間を `Imports` ステートメントを使用してインポートすると、コード エディターによって、XSD スキーマの要素が、<xref:System.Xml.Linq.XElement> オブジェクトと <xref:System.Xml.Linq.XDocument> オブジェクト用の IntelliSense 有効メンバー変数リストに取り込まれます。  <xref:System.Xml.Linq.XElement> オブジェクト用の IntelliSense メンバー リストを次に示します。  
+---
+# <a name="xml-intellisense-in-visual-basic"></a>Visual Basic における XML IntelliSense
+Visual Basic コード エディターには、XML スキーマで定義された要素の単語の入力候補を提供している XML 用の IntelliSense 機能が含まれています。 XML スキーマ定義 (XSD) ファイルをプロジェクトに追加しを使用して、スキーマのターゲット名前空間をインポートするかどうか、`Imports`ステートメント、コード エディターに要素を含める XSD スキーマから有効なメンバー変数の IntelliSense リスト<xref:System.Xml.Linq.XElement>と<xref:System.Xml.Linq.XDocument>オブジェクト</xref:System.Xml.Linq.XDocument></xref:System.Xml.Linq.XElement>。 次の図の IntelliSense のメンバーを一覧表示、<xref:System.Xml.Linq.XElement>オブジェクト</xref:System.Xml.Linq.XElement>。  
   
- ![Visual Basic における XML IntelliSense](../../../../visual-basic/programming-guide/language-features/xml/media/xml-intellisense.png "XML\_Intellisense")  
+ ![Visual Basic における XML IntelliSense](../../../../visual-basic/programming-guide/language-features/xml/media/xml_intellisense.png "XML_Intellisense")  
 XML IntelliSense  
   
-## Visual Basic での XML IntelliSense の有効化  
- Visual Basic で XML IntelliSense を有効にするには、XSD スキーマ ファイルを Visual Basic プロジェクトに追加する必要があります。  また、XSD スキーマの対象名前空間を `Imports` ステートメントを使用してコード ファイルにインポートする必要があります。  また、Visual Basic プロジェクト デザイナーの **\[参照\]** ページを使用して、プロジェクト レベルの名前空間リストにスキーマの名前空間を追加することもできます。  例については、「[How to: Enable XML IntelliSense in Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/how-to-enable-xml-intellisense.md)」を参照してください。  詳細については、「[Imports Statement \(XML Namespace\)](../../../../visual-basic/language-reference/statements/imports-statement-xml-namespace.md)」および「[\[参照設定\] ページ \(プロジェクト デザイナー\) \(Visual Basic\)](/visual-studio/ide/reference/references-page-project-designer-visual-basic)」を参照してください。  
+## <a name="enabling-xml-intellisense-in-visual-basic"></a>Visual Basic における XML IntelliSense を有効にします。  
+ Visual Basic における XML IntelliSense を有効にするのには、Visual Basic プロジェクトで XSD スキーマ ファイルを含める必要があります。 使用して、コード ファイルに XSD スキーマのターゲット名前空間をインポートする必要がありますも、`Imports`ステートメントです。 使用して、プロジェクト レベルの名前空間の一覧にターゲットの名前空間を追加することができます、**参照**Visual Basic プロジェクト デザイナーのページです。 例については、次を参照してください。[方法: Visual Basic における XML IntelliSense を有効にする](../../../../visual-basic/programming-guide/language-features/xml/how-to-enable-xml-intellisense.md)です。 詳細については、次を参照してください。 [Imports ステートメント (XML Namespace)](../../../../visual-basic/language-reference/statements/imports-statement-xml-namespace.md)と[参照設定 ページ、プロジェクト デザイナー) (Visual Basic)](https://docs.microsoft.com/visualstudio/ide/reference/references-page-project-designer-visual-basic)します。  
   
- 既定では、Visual Basic プロジェクトの XSD スキーマ ファイルは表示されません。  プロジェクトに追加する XSD ファイルを選択するには、**\[すべてのファイルを表示\]** ボタンをクリックすることが必要な場合があります。  
+ 既定で、メモは、Visual Basic プロジェクトでの XSD スキーマ ファイルを参照してくださいことはできません。 をクリックする必要があります、 **[すべてのファイル**をプロジェクトに追加する XSD ファイルを選択する] ボタンをクリックします。  
   
-### スキーマ ファイルの生成 \(スキーマの推論\)  
- Visual Studio の XML ツールを使用して XSD スキーマを推論することにより、既存の XML ファイル用の XSD スキーマを作成できます。  
+### <a name="generating-a-schema-file-schema-inference"></a>スキーマ ファイル (スキーマの推論) を生成します。  
+ 既存の XML ファイルの XSD スキーマを作成するには、Visual Studio の XML ツールを使用して、XSD スキーマを推論します。  
   
--   SP1 より、XML to Schema ウィザードを使用して、1 つ以上の XML ドキュメントから推論される XML スキーマ セットを作成し、プロジェクトに追加できるようになりました。  テキスト ファイル形式の XML ドキュメント、HTTP インターネット アドレスからの XML、および XML to Schema ウィザードに入力するか貼り付ける XML を任意に組み合わせて使用できます。  XML to Schema ウィザードにアクセスするには、**\[プロジェクト\]** メニューの **\[新しい項目の追加\]** をクリックし、**\[データ\]** と **\[共通項目\]** のいずれかのテンプレート グループから **XML to Schema** テンプレートを追加します。  XML スキーマ セットを推論する対象の XML ドキュメント ソースをすべて追加したら、**\[OK\]** をクリックして推論されるスキーマ セットを作成します。  詳細については、「[XML to Schema Wizard](../../../../visual-basic/programming-guide/language-features/xml/xml-to-schema-wizard.md)」を参照してください。  
+-   SP1 以降、1 つまたは複数の XML ドキュメントから推論される XML スキーマ セットを作成し、プロジェクトが含まれる XML to Schema ウィザードを使用できます。 HTTP インターネット アドレスからの XML または型指定された、または XML to Schema ウィザードに貼り付ける XML テキスト ファイルの形式で XML ドキュメントの任意の組み合わせを使用することができます。 XML to Schema ウィザードにアクセスする をクリックして**新しい項目の追加**上、**プロジェクト**メニューを追加し、 **XML スキーマを**いずれかのテンプレート、**データ**または**の一般的な項目**テンプレート グループです。 XML スキーマ セットを推論するすべての XML ドキュメントのソースを追加したら、以下の をクリックして**OK**推論されるスキーマを作成するに設定します。 詳細については、次を参照してください。 [XML to Schema ウィザード](../../../../visual-basic/programming-guide/language-features/xml/xml-to-schema-wizard.md)します。  
   
--   Visual Studio XML エディターを使用して XML ファイルから XSD スキーマ セットを推論することもできます。  XML エディターを使用して XML スキーマ セットを作成するには、Visual Studio の XML デザイナーで XML ファイルを開き、**\[XML\]** メニューの **\[スキーマの作成\]** をクリックします。  作成した XSD スキーマ セットは、1 つ以上の XSD ファイルに保存し、プロジェクトに追加できます。  詳細については、「[How to: Enable XML IntelliSense in Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/how-to-enable-xml-intellisense.md)」を参照してください。  
+-   また、セットを XML ファイルから XSD スキーマを推論するのに Visual Studio XML エディターを使用することができます。 XML エディターを使用して設定 XML スキーマを作成するには、Visual Studio XML デザイナーで XML ファイルを開くクリックして**Create Schema**で、 **XML**メニュー。 XSD スキーマのセットを作成した後は、作成されたスキーマ セットを&1; つまたは複数の XSD ファイルに保存し、プロジェクトに追加できます。 詳細については、次を参照してください。[方法: Visual Basic における XML IntelliSense を有効にする](../../../../visual-basic/programming-guide/language-features/xml/how-to-enable-xml-intellisense.md)です。  
   
- スキーマが同じである必要のある複数の XML ドキュメントから、複数の異なる XSD スキーマ セットが推論される場合があることに注意してください。  このようなことは、特定の要素と属性がいずれかの XML だけに存在したり、含まれている要素の順序が異なっていたりする場合に、発生する可能性があります。  XSD スキーマの推論を使用するときは、推論された XSD スキーマ セットが完全で正確であることを確認する必要があります。  
+ 別の XSD スキーマのセットが同じスキーマを使用するためのものでは複数の XML ドキュメントから推論される場合ことに注意してください。 これは、1 つの XML ファイルでは、特定の要素と属性が見つかったときに、または要素が次に例を異なる順序で含まれる場合に発生することができます。 XSD スキーマの推論を使用する場合は、完全性と精度の推定の XSD スキーマのセットを確認してください。  
   
-## メンバー リスト  
- ピリオド \(.\) を入力して <xref:System.Xml.Linq.XElement> オブジェクトまたは <xref:System.Xml.Linq.XDocument> オブジェクトのインスタンスか、`IEnumerable(Of XElement)` または `IEnumerable(Of XDocument)` のインスタンスを区切ると、Visual Basic IntelliSense によって、使用可能なオブジェクト メンバーの一覧が表示されます。  この初期リストには、次に示す XML 軸プロパティを表す 3 つのオプションが含まれます。  
+## <a name="member-list"></a>メンバーの一覧  
+ インスタンスを区切るためにピリオド (.) を入力し終わったら、<xref:System.Xml.Linq.XElement>または<xref:System.Xml.Linq.XDocument>オブジェクト (またはインスタンスの`IEnumerable(Of XElement)`または`IEnumerable(Of XDocument)`)、Visual Basic の IntelliSense が可能なオブジェクトのメンバーの一覧を表示します</xref:System.Xml.Linq.XDocument></xref:System.Xml.Linq.XElement>。 最初のリストには、次の一覧に示すように XML 軸プロパティを表す&3; つのオプションが含まれます。  
   
-|||  
-|-|-|  
-|オプション|Description|  
-|**\< \>**|使用可能な子要素の一覧を表示するには、このオプションを選択します。  詳細については、[XML Element Literal](../../../../visual-basic/language-reference/xml-literals/xml-element-literal.md) メソッドと <xref:System.Xml.Linq.XContainer.Elements%2A> メソッドを参照してください。|  
-|**@**|使用可能な属性の一覧を表示するには、このオプションを選択します。  詳細については、「[XML Axis Properties](../../../../visual-basic/language-reference/xml-axis/xml-axis-properties.md)」を参照してください。このオプションは、<xref:System.Xml.Linq.XElement> 型のオブジェクトに対してのみ使用できます。|  
-|**…\< \>**|使用可能な子孫要素の一覧を表示するには、このオプションを選択します。  詳細については、[How to: Access XML Descendant Elements](../../../../visual-basic/programming-guide/language-features/xml/how-to-access-xml-descendant-elements.md) メソッドと <xref:System.Xml.Linq.XContainer.Elements%2A> メソッドを参照してください。|  
+|オプション|説明|  
+|---|---|  
+|**\< >**|要素の使用可能な子の一覧を表示するには、このオプションを選択します。 詳細については、次を参照してください[XML 要素リテラル](../../../../visual-basic/language-reference/xml-literals/xml-element-literal.md)と<xref:System.Xml.Linq.XContainer.Elements%2A>メソッド。</xref:System.Xml.Linq.XContainer.Elements%2A> 。|  
+|**@**|使用可能な属性の一覧を表示するには、このオプションを選択します。 詳細については、次を参照してください。 [XML 軸プロパティ](../../../../visual-basic/language-reference/xml-axis/xml-axis-properties.md)します。このオプションは<xref:System.Xml.Linq.XElement>。</xref:System.Xml.Linq.XElement>の種類のオブジェクトに対してのみ使用できます。|  
+|**…\< >**|可能性のある子孫要素の一覧を表示するには、このオプションを選択します。 詳細については、次を参照してください[方法: XML 子孫要素にアクセス](../../../../visual-basic/programming-guide/language-features/xml/how-to-access-xml-descendant-elements.md)と<xref:System.Xml.Linq.XContainer.Elements%2A>メソッド。</xref:System.Xml.Linq.XContainer.Elements%2A> 。|  
   
- 一覧から任意の XML オプションを選択するか、入力を開始します。  選択したオプションに固有の XML スキーマのメンバーで、使用可能なメンバーが、メンバー リストに表示されます。  特定の XML 名前空間プレフィックスに関連付けられた XML 名前空間をインポートしている場合は、使用可能な XML 名前空間プレフィックスの一覧もメンバー リストに表示されます。  
+ 選択するか、一覧から XML オプションのいずれかの入力を開始します。 選択したオプションに固有の XML スキーマからの潜在的なメンバー、メンバーの一覧が表示されます。 ある場合は、XML 名前空間をインポート、特定の XML 名前空間プレフィックスに関連付けられている場合は、メンバーの一覧で、潜在的な XML 名前空間プレフィックスのリストが含まれています。  
   
- たとえば、次のような XSD スキーマがあるとします。  
+ たとえば、次の XSD スキーマを検討してください。  
   
 ```  
 <?xml version="1.0" encoding="utf-8"?>  
@@ -84,7 +99,7 @@ XML IntelliSense
 </xs:schema>  
 ```  
   
- この XSD スキーマで有効な XML は次のようになります。  
+ XSD スキーマで有効な XML は、次のようになります。  
   
 ```  
 <?xml version="1.0"?>  
@@ -97,27 +112,27 @@ XML IntelliSense
 </PurchaseOrders>  
 ```  
   
- この XSD スキーマ ファイルをプロジェクトに追加し、スキーマの対象名前空間を XSD スキーマからコード ファイルまたはプロジェクトにインポートすると、Visual Basic コードの入力時に、Visual Basic IntelliSense によって、このスキーマのメンバーが表示されます。  XSD スキーマの対象名前空間を既定の名前空間としてインポートし、次のように入力すると、IntelliSense によって、`PurchaseOrder` XML 要素の使用可能な子要素の一覧が表示されます。  
+ この XSD スキーマ ファイルをプロジェクトに含めるコード ファイルまたはプロジェクトに XSD スキーマからターゲットの名前空間をインポートすると、Visual Basic の IntelliSense は、Visual Basic コードを入力すると、スキーマからのメンバーを表示します。 XSD スキーマのターゲット名前空間が既定の名前空間としてインポートし、次を入力すると、使用可能な子要素の一覧が表示され、 `PurchaseOrder` XML 要素です。  
   
 ```  
 Dim po = <PurchaseOrder />  
 po.<  
 ```  
   
- この一覧は、Address、Comment、および Items の各要素で構成されます。  
+ 一覧は、アドレス、コメント、および項目要素で構成されます。  
   
-### IntelliSense リスト項目の確実性のレベル  
- IntelliSense で使用する XSD 型の判別は厳密ではありません。  その結果として、XML IntelliSense では多くの場合、使用可能なメンバーを示す展開されたリストが表示されます。  IntelliSense メンバー リストから項目を選択しやすくするために、項目は、XML IntelliSense で特定のメンバーに割り当てられている確実性のレベルを示すインジケーターと共に表示されます。  
+### <a name="certainty-levels-for-intellisense-list-items"></a>IntelliSense リスト項目のための確実性レベル  
+ IntelliSense で使用する XSD の種類の決定は正確ではありません。 その結果、XML IntelliSense は多くの場合、可能なメンバーの一覧を展開を表示します。 IntelliSense のメンバーの一覧から項目を選択するために役立つ、項目には XML IntelliSense は、特定のメンバーが含まれる確実性のレベルを示す値が表示されます。  
   
- XML IntelliSense は、XSD スキーマの特定の型を識別できる場合があります。  そのような場合、その XSD 型で使用できる高い確実性がある子要素、属性、または子孫要素が表示されます。  これらの項目は、チェック マークによって識別されます。  
+ 場合によって XML IntelliSense では、XSD スキーマから特定の種類を識別できます。 このような場合は、高度な確実性で使用可能な子要素、属性、またはその XSD 型の子孫要素が表示されます。 これらの項目は、チェック マークが付いた識別されます。  
   
- ただし、XML IntelliSense は、XSD スキーマの特定の型を識別できない場合もあります。  そのような場合、プロジェクトで使用できる確実性の低い XSD スキーマの子要素、属性、または子孫要素を示す展開されたリストが表示されます。  これらの項目は、疑問符によって識別されます。  
+ ただし、場合によって XML IntelliSense は XSD スキーマから特定の種類を識別することではありません。 このような場合は、使用可能な子要素、属性、またはプロジェクトの XSD スキーマからの子孫の要素の一覧を展開確実性の低いレベルで表示されます。 これらの項目は、疑問符 () で識別されます。  
   
-## 参照  
- [How to: Enable XML IntelliSense in Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/how-to-enable-xml-intellisense.md)   
- [XML to Schema Wizard](../../../../visual-basic/programming-guide/language-features/xml/xml-to-schema-wizard.md)   
- [Imports Statement \(XML Namespace\)](../../../../visual-basic/language-reference/statements/imports-statement-xml-namespace.md)   
- [XML Element Literal](../../../../visual-basic/language-reference/xml-literals/xml-element-literal.md)   
- [XML Attribute Axis Property](../../../../visual-basic/language-reference/xml-axis/xml-attribute-axis-property.md)   
- [XML Descendant Axis Property](../../../../visual-basic/language-reference/xml-axis/xml-descendant-axis-property.md)   
- [\[参照設定\] ページ \(プロジェクト デザイナー\) \(Visual Basic\)](/visual-studio/ide/reference/references-page-project-designer-visual-basic)
+## <a name="see-also"></a>関連項目  
+ [方法: Visual Basic における XML IntelliSense を有効にします。](../../../../visual-basic/programming-guide/language-features/xml/how-to-enable-xml-intellisense.md)   
+ [XML to Schema ウィザード](../../../../visual-basic/programming-guide/language-features/xml/xml-to-schema-wizard.md)   
+ [Imports ステートメント (XML Namespace)](../../../../visual-basic/language-reference/statements/imports-statement-xml-namespace.md)   
+ [XML 要素リテラル](../../../../visual-basic/language-reference/xml-literals/xml-element-literal.md)   
+ [XML 属性軸プロパティ](../../../../visual-basic/language-reference/xml-axis/xml-attribute-axis-property.md)   
+ [XML 子孫軸プロパティ](../../../../visual-basic/language-reference/xml-axis/xml-descendant-axis-property.md)   
+ [[参照設定] ページ (プロジェクト デザイナー) (Visual Basic)](https://docs.microsoft.com/visualstudio/ide/reference/references-page-project-designer-visual-basic)

@@ -1,48 +1,64 @@
 ---
-title: "Visual Basic IntelliSense Code Snippets | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "code library, about code library"
-  - "IntelliSense Code Snippets, about IntelliSense Code Snippets"
-  - "snippets"
+title: "Visual Basic IntelliSense コード スニペット |Microsoft ドキュメント"
+ms.date: 2015-07-20
+ms.prod: .net
+ms.suite: 
+ms.technology:
+- devlang-visual-basic
+ms.topic: article
+dev_langs:
+- VB
+helpviewer_keywords:
+- code library, about code library
+- IntelliSense Code Snippets, about IntelliSense Code Snippets
+- snippets
 ms.assetid: ffdde4c9-8141-4906-b09b-15181357a643
 caps.latest.revision: 21
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 21
----
-# Visual Basic IntelliSense Code Snippets
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
+author: stevehoag
+ms.author: shoag
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: aa6439ac639cd94ae2d8af97462f11e8542bcc98
+ms.lasthandoff: 03/13/2017
 
-[!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] には、IntelliSense コード スニペットという、数百種類のコードから成るコード ライブラリが含まれており、作成するアプリケーションに挿入できるようになっています。  各スニペットは、カスタム例外の作成、電子メール メッセージの送信、円の描画など、完全なプログラミング タスクを実行します。  スニペットをソース コードに挿入するには、マウスを数回クリックするだけです。  また、業務上のニーズに合った独自のスニペットを作成し、ライブラリに追加して、必要に応じて使用することもできます。  詳細については、「[コード スニペット](/visual-studio/ide/code-snippets)」を参照してください。  
+---
+# <a name="visual-basic-intellisense-code-snippets"></a>Visual Basic の IntelliSense コード スニペット
+[!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]アプリケーションに挿入する準備ができている IntelliSense コード スニペットと呼ばれる、コードの数百種類から成るコード ライブラリが含まれます。 各スニペットは、カスタム例外の作成、電子メール メッセージの送信や円の描画などの完全なプログラミング タスクを実行します。 数回のマウス クリックでソース コードには、スニペットを挿入できます。 ビジネス ニーズに合わせて、ライブラリに追加するために必要なときにそれを使用して、独自のスニペットを作成することもできます。 詳細については、「[Code Snippets](https://docs.microsoft.com/visualstudio/ide/code-snippets)」を参照してください。  
   
-## Visual Basic ユーザー用の生産性向上ツール  
- これらのスニペットを使用すると、コード サンプルの検索に要する時間の短縮、未知の機能の使い方を身に付けるまでに要する時間の短縮、およびコードの再利用の促進が実現され、生産性が向上します。  
+## <a name="a-productivity-tool-for-visual-basic-users"></a>Visual Basic ユーザー向けの生産性向上ツール  
+ これらのスニペットでは、コード サンプルの検索に要する時間の量を減らす、未知の機能を使用する方法を学習するために必要な時間の短縮、およびコードの再利用をサポートすることにより、生産性が向上します。  
   
- このコード ライブラリは、次の機能をサポートします。  
+ コード ライブラリには、次の機能がサポートされています。  
   
--   いずれか 1 つのスニペットを**コード エディター**に挿入します。  
+-   1 つのスニペットを挿入、**コード エディター**します。  
   
 -   プロジェクトで再利用できる新しいタスクを作成します。  
   
--   新しいタスクを作成し、ワークグループや同僚と共有します。  
+-   ワークグループや同僚と共有する新しいタスクを作成します。  
   
 -   タスクを編集します。  
   
--   サードパーティから追加的なタスクをダウンロードします。  
+-   サード パーティからより多くのタスクをダウンロードします。  
   
- これらのコード ブロックは、[!INCLUDE[vsprvs](../../../csharp/includes/vsprvs-md.md)] 全体で利用できます。  
+ これらのコード ブロックをご利用いただけます[!INCLUDE[vsprvs](../../../csharp/includes/vsprvs_md.md)]:  
   
--   **コード エディター**のショートカット メニューから追加できます。  
+-   それらを追加するにはのショートカット メニューから、**コード エディター**します。  
   
--   からソース・コード ファイルに **\[エクスプローラー\]** から XML コード ファイルをドラッグできます。  
+-   XML コード ファイルをドラッグする**ファイル エクスプ ローラー**ソース コード ファイルにします。  
   
-## 参照  
- [コード スニペット](/visual-studio/ide/code-snippets)
+## <a name="see-also"></a>関連項目  
+ [コード スニペット](https://docs.microsoft.com/visualstudio/ide/code-snippets)

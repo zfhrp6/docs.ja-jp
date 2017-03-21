@@ -1,35 +1,51 @@
 ---
-title: "How to: Invoke a Delegate Method (Visual Basic) | Microsoft Docs"
-ms.custom: ""
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
+title: "方法: デリゲート メソッド (Visual Basic) を呼び出す |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 2015-07-20
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-visual-basic
+ms.topic: article
+dev_langs:
+- VB
 ms.assetid: b56866ae-abf9-4a5a-a855-486359455e9c
 caps.latest.revision: 10
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 10
----
-# How to: Invoke a Delegate Method (Visual Basic)
-[!INCLUDE[vs2017banner](../../../../visual-basic/developing-apps/includes/vs2017banner.md)]
+author: stevehoag
+ms.author: shoag
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: 29b20eb6089886c8111711388472004bbacea312
+ms.lasthandoff: 03/13/2017
 
-この例では、メソッドとデリゲートを関連付け、デリゲートによってメソッドを呼び出す方法について説明します。  
+---
+# <a name="how-to-invoke-a-delegate-method-visual-basic"></a>方法: デリゲート メソッドを呼び出す (Visual Basic)
+この例では、メソッドをデリゲートに関連付け、デリゲートによってメソッドを呼び出す方法を示します。  
   
-### デリゲートおよび一致プロシージャの作成  
+### <a name="create-the-delegate-and-matching-procedures"></a>デリゲートと一致する手順を作成します。  
   
-1.  `MySubDelegate` という名前のデリゲートを作成します。  
+1.  という名前のデリゲートを作成する`MySubDelegate`です。  
   
     ```  
     Delegate Sub MySubDelegate(ByVal x As Integer)  
     ```  
   
-2.  デリゲートと同じシグネチャを持つメソッドが含まれるクラスを宣言します。  
+2.  デリゲートと同じシグネチャを持つメソッドを含むクラスを宣言します。  
   
     ```  
     Class class1  
@@ -39,7 +55,7 @@ caps.handback.revision: 10
     End Class  
     ```  
   
-3.  デリゲートのインスタンスが作成されるメソッドを定義し、組み込みの `Invoke` メソッドを呼び出して、デリゲートに関連付けられたメソッドを呼び出します。  
+3.  デリゲートのインスタンスを作成し、組み込みを呼び出すことによって、デリゲートに関連付けられているメソッドを呼び出し、メソッドを定義`Invoke`メソッドです。  
   
     ```  
     Protected Sub DelegateTest()  
@@ -51,8 +67,8 @@ caps.handback.revision: 10
     End Sub  
     ```  
   
-## 参照  
- [Delegate Statement](../../../../visual-basic/language-reference/statements/delegate-statement.md)   
- [Delegates](../../../../visual-basic/programming-guide/language-features/delegates/delegates.md)   
- [Events](../../../../visual-basic/programming-guide/language-features/events/events.md)   
- [マルチスレッド アプリケーション](../Topic/Multithreaded%20Applications%20\(C%23%20and%20Visual%20Basic\).md)
+## <a name="see-also"></a>関連項目  
+ [Delegate ステートメント](../../../../visual-basic/language-reference/statements/delegate-statement.md)   
+ [デリゲート](../../../../visual-basic/programming-guide/language-features/delegates/index.md)   
+ [イベント](../../../../visual-basic/programming-guide/language-features/events/index.md)   
+ [マルチスレッド アプリケーション](http://msdn.microsoft.com/library/a06a1a56-dd16-44e8-bc01-2c2255511bc6)

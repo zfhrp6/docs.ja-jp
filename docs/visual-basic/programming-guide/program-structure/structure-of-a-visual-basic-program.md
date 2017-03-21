@@ -1,95 +1,111 @@
 ---
-title: "Structure of a Visual Basic Program | Microsoft Docs"
-ms.custom: ""
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "conditional compilation, Visual Basic"
-  - "program structure, Visual Basic"
-  - "procedures, structure"
-  - "Visual Basic code, program structure"
+title: "Visual Basic プログラムの構造 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 2015-07-20
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-visual-basic
+ms.topic: article
+dev_langs:
+- VB
+helpviewer_keywords:
+- conditional compilation, Visual Basic
+- program structure, Visual Basic
+- procedures, structure
+- Visual Basic code, program structure
 ms.assetid: ad0c6531-d762-4c77-a700-de16b07b6119
 caps.latest.revision: 17
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 17
----
-# Structure of a Visual Basic Program
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
+author: stevehoag
+ms.author: shoag
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: 64aab045538461d86946c870fa428bf8ad4ec15e
+ms.lasthandoff: 03/13/2017
 
-[!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] プログラムは、標準ビルド ブロックから構築されます。  *ソリューション*は、1 つ以上のプロジェクトで構成されます。  *プロジェクト*は、1 つ以上のアセンブリで構成されます。  各*アセンブリ*は、1 つ以上のソース ファイルからコンパイルされます。  *ソース ファイル*は、クラス、構造体、モジュール、およびインターフェイスの定義と実装を提供します。すべてのコードがここに含まれます。  
+---
+# <a name="structure-of-a-visual-basic-program"></a>Visual Basic プログラムの構造
+A[!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]プログラムは、標準の構成ブロックから構築します。 A*ソリューション*1 つまたは複数のプロジェクトで構成されます。 A*プロジェクト*さらに、1 つまたは複数のアセンブリを含めることができます。 各*アセンブリ*が&1; つまたは複数のソース ファイルからコンパイルします。 A*ソースファイル*定義とクラス、構造体、モジュール、および最終的には、すべてのコードが含まれているインターフェイスの実装を提供します。  
   
- [!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] プログラムのこれらのビルド ブロックの詳細については、「[ソリューションおよびプロジェクト](/visual-studio/ide/solutions-and-projects-in-visual-studio)」および「[アセンブリとグローバル アセンブリ キャッシュ](../Topic/Assemblies%20and%20the%20Global%20Assembly%20Cache%20\(C%23%20and%20Visual%20Basic\).md)」を参照してください。  
+ これらの構成要素の詳細については、[!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]プログラムを参照してください[ソリューションとプロジェクト](https://docs.microsoft.com/visualstudio/ide/solutions-and-projects-in-visual-studio)と[アセンブリとグローバル アセンブリ キャッシュ](../../../visual-basic/programming-guide/concepts/assemblies-gac/index.md)します。  
   
-## ファイル レベルのプログラミング要素  
- プロジェクトまたはファイルを開始してコード エディターを開くと、一部のコードが既に適切な順序で配置されて表示されます。  作成するコードはすべて以下の順序に従う必要があります。  
+## <a name="file-level-programming-elements"></a>ファイル レベルのプログラミング要素  
+ プロジェクトまたはファイルを起動して、コード エディターを開いた場所に既に存在し、正しい順序でいくつかのコードが表示されます。 作成するすべてのコードは、次の順序に従う必要があります。  
   
-1.  `Option` ステートメント  
+1.  `Option`ステートメント  
   
-2.  `Imports` ステートメント  
+2.  `Imports`ステートメント  
   
-3.  `Namespace` ステートメントおよび名前空間レベルの要素  
+3.  `Namespace`ステートメントと名前空間レベル要素  
   
- ステートメントをこれとは別の順序で入力すると、コンパイル エラーが発生することがあります。  
+ 別の順序でステートメントを入力すると、コンパイル エラーが発生することができます。  
   
- プログラムには、条件付きコンパイル ステートメントを指定することもできます。  このようなステートメントは、ソース ファイル内で上記の順序で記述するステートメントの中に混在できます。  
+ プログラムでは、条件付きコンパイル ステートメントを含めることもできます。 上記の一連のステートメントの間でソース ファイルを挿入することができます。  
   
-### Option ステートメント  
- `Option` ステートメントは後続のコードの基本的な規則を確立し、構文エラーや論理エラーの発生を防ぎます。  [Option Explicit Statement](../../../visual-basic/language-reference/statements/option-explicit-statement.md) は、すべての変数が正しく宣言され、スペルに誤りがないことを保証するので、デバッグ時間が短縮されます。  [Option Strict Statement](../../../visual-basic/language-reference/statements/option-strict-statement.md) ステートメントは、異なる型の変数を使用するときに起こり得るデータの損失や論理エラーを減らすために役立ちます。  [Option Compare Statement](../../../visual-basic/language-reference/statements/option-compare-statement.md) には、`Binary` 値または `Text` 値に基づいて文字列を比較する方法を指定します。  
+### <a name="option-statements"></a>オプション ステートメント  
+ `Option`ステートメントは、後続のコードでは、構文とロジックのエラーを防ぐの基盤となる規則を確立します。 [Option Explicit ステートメント](../../../visual-basic/language-reference/statements/option-explicit-statement.md)により、すべての変数が宣言されのスペルが正しいデバッグ時間が削減されます。 [Option Strict ステートメント](../../../visual-basic/language-reference/statements/option-strict-statement.md)を異なるデータ型の変数を使用するときに発生するロジック エラーやデータ損失を最小限に抑えることができます。 [Option Compare ステートメント](../../../visual-basic/language-reference/statements/option-compare-statement.md)方法文字列は、互いにいずれかに基づく比較を示す、`Binary`または`Text`値。  
   
-### Imports ステートメント  
- プロジェクトの外部で定義された名前をインポートするために、[Imports Statement \(.NET Namespace and Type\)](../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md) を指定できます。  `Imports` ステートメントを使うと、インポートした名前空間に定義されているクラスおよびその他の型を修飾なしで参照できます。  `Imports` ステートメントは必要に応じていくつでも使用できます。  詳細については、「[References and the Imports Statement](../../../visual-basic/programming-guide/program-structure/references-and-the-imports-statement.md)」を参照してください。  
+### <a name="imports-statements"></a>Imports ステートメント  
+ 含めることができます、 [Imports ステートメント (.NET Namespace よぶ型)](../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md)プロジェクトの外部で定義されている名前をインポートします。 `Imports`ステートメントでは、クラスとその他の型を修飾しなくても、インポートされた名前空間内で定義を参照するようにコードを使用できます。 できるだけ使用することができます`Imports`ステートメントに該当します。 詳細については、次を参照してください。[参照と Imports ステートメント](../../../visual-basic/programming-guide/program-structure/references-and-the-imports-statement.md)します。  
   
-### Namespace ステートメント  
- 名前空間は、プログラミング要素を整理および分類してグループ分けやアクセスをしやすくするために役立ちます。  [Namespace Statement](../../../visual-basic/language-reference/statements/namespace-statement.md) を使って、以下に示すステートメントを特定の名前空間に分類できます。  詳細については、「[Visual Basic における名前空間](../../../visual-basic/programming-guide/program-structure/namespaces.md)」を参照してください。  
+### <a name="namespace-statements"></a>Namespace ステートメント  
+ 名前空間のヘルプの編成し、分類、プログラミングの要素をグループ化およびへのアクセスを簡素化できます。 使用する、 [Namespace ステートメント](../../../visual-basic/language-reference/statements/namespace-statement.md)を特定の名前空間内で次のステートメントを分類します。 詳細については、次を参照してください。 [Visual Basic における名前空間](../../../visual-basic/programming-guide/program-structure/namespaces.md)します。  
   
-### 条件付きコンパイル ステートメント  
- 条件付きコンパイル ステートメントは、ソース ファイル内のほとんどの場所で使用できます。  特定の条件に基づいて、コードの一部をコンパイル時に含めることや除外することができます。  条件付きコードはデバッグ モードだけで実行されるため、条件付きコンパイル ステートメントはアプリケーションのデバッグにも使用できます。  詳細については、「[Conditional Compilation](../../../visual-basic/programming-guide/program-structure/conditional-compilation.md)」を参照してください。  
+### <a name="conditional-compilation-statements"></a>条件付きコンパイル ステートメント  
+ 条件付きコンパイル ステートメントは、ソース ファイルにどこに表示できます。 含まれているまたは特定の条件によってコンパイル時に除外するコードの部分と、されます。 行えますに、アプリケーションのデバッグに条件付きコードがデバッグ モードのみで実行されているためです。 詳細については、次を参照してください。[条件付きコンパイル](../../../visual-basic/programming-guide/program-structure/conditional-compilation.md)します。  
   
-## 名前空間レベルのプログラミング要素  
- クラス、構造体、およびモジュールのすべてのコードはソース ファイルに含まれます。  これらは*名前空間レベル*の要素であり、名前空間またはソース ファイルのレベルで指定できます。  これらの要素には、他のすべてのプログラミング要素の宣言が格納されます。  要素のシグネチャを定義するだけで実装を提供しないインターフェイスも、モジュール レベルで指定します。  モジュール レベルの各要素の詳細については、次のトピックを参照してください。  
+## <a name="namespace-level-programming-elements"></a>Namespace レベルのプログラミング要素  
+ クラス、構造体、およびモジュールには、ソース ファイル内のすべてのコードが含まれます。 *名前空間レベル*要素、またはソース ファイル レベルでは、名前空間内で表示することができます。 その他のすべてのプログラミング要素の宣言を保持します。 要素のシグネチャを定義しますが、実装を提供しない、インターフェイスは、モジュール レベルも表示されます。 モジュール レベルの要素の詳細については、次を参照してください。  
   
--   [Class Statement](../../../visual-basic/language-reference/statements/class-statement.md)  
+-   [Class ステートメント](../../../visual-basic/language-reference/statements/class-statement.md)  
   
--   [Structure Statement](../../../visual-basic/language-reference/statements/structure-statement.md)  
+-   [Structure ステートメント](../../../visual-basic/language-reference/statements/structure-statement.md)  
   
--   [Module Statement](../../../visual-basic/language-reference/statements/module-statement.md)  
+-   [Module ステートメント](../../../visual-basic/language-reference/statements/module-statement.md)  
   
--   [Interface Statement](../../../visual-basic/language-reference/statements/interface-statement.md)  
+-   [Interface ステートメント](../../../visual-basic/language-reference/statements/interface-statement.md)  
   
- 名前空間レベルのデータ要素は、列挙およびデリゲートです。  
+ 名前空間レベルでのデータ要素は、列挙体およびデリゲートです。  
   
-## モジュール レベルのプログラミング要素  
- プロシージャ、演算子、プロパティ、およびイベントだけが、実行可能コード \(実行時にアクションを実行するステートメント\) を含むことができるプログラミング要素です。  これらは、プログラムの*モジュール レベル*の要素です。  プロシージャ レベルの各要素の詳細については、次のトピックを参照してください。  
+## <a name="module-level-programming-elements"></a>モジュール レベルのプログラミング要素  
+ プロシージャ、演算子、プロパティ、およびイベントは、実行可能コード (実行時にアクションを実行するステートメント) が保持できる唯一のプログラミング要素です。 *モジュール レベル*プログラムの要素。 プロシージャ レベル要素の詳細については、次を参照してください。  
   
--   [Function Statement](../../../visual-basic/language-reference/statements/function-statement.md)  
+-   [Function ステートメント](../../../visual-basic/language-reference/statements/function-statement.md)  
   
--   [Sub Statement](../../../visual-basic/language-reference/statements/sub-statement.md)  
+-   [Sub ステートメント](../../../visual-basic/language-reference/statements/sub-statement.md)  
   
--   [Declare Statement](../../../visual-basic/language-reference/statements/declare-statement.md)  
+-   [Declare ステートメント](../../../visual-basic/language-reference/statements/declare-statement.md)  
   
--   [Operator Statement](../../../visual-basic/language-reference/statements/operator-statement.md)  
+-   [Operator ステートメント](../../../visual-basic/language-reference/statements/operator-statement.md)  
   
--   [Property Statement](../../../visual-basic/language-reference/statements/property-statement.md)  
+-   [Property ステートメント](../../../visual-basic/language-reference/statements/property-statement.md)  
   
--   [Event Statement](../../../visual-basic/language-reference/statements/event-statement.md)  
+-   [Event ステートメント](../../../visual-basic/language-reference/statements/event-statement.md)  
   
- モジュール レベルのデータ要素は、変数、定数、列挙、およびデリゲートです。  
+ モジュール レベルのデータ要素は、変数、定数、列挙型、およびデリゲート。  
   
-## プロシージャ レベルのプログラミング要素  
- ほとんどの*プロシージャ レベル*要素の内容は、実行可能なステートメントであり、プログラム コードの一部を構成します。  すべての実行可能コードは、プロシージャ \(`Function`、`Sub`、`Operator`、`Get`、`Set`、`AddHandler`、`RemoveHandler`、`RaiseEvent`\) に含める必要があります。  詳細については、「[Statements](../../../visual-basic/programming-guide/language-features/statements.md)」を参照してください。  
+## <a name="procedure-level-programming-elements"></a>プロシージャ レベルのプログラミング要素  
+ 内容のほとんど*プロシージャ レベル*要素は、実行可能ステートメントは、プログラムの実行時のコードを構成します。 すべての実行可能コードがいくつかの手順である必要があります (`Function`、 `Sub`、 `Operator`、 `Get`、 `Set`、 `AddHandler`、 `RemoveHandler`、 `RaiseEvent`)。 詳細については、次を参照してください。[ステートメント](../../../visual-basic/programming-guide/language-features/statements.md)します。  
   
- プロシージャ レベルのデータ要素は、ローカル変数とローカル定数だけです。  
+ プロシージャ レベルでのデータ要素は、ローカル変数および定数に限定されます。  
   
-## Main プロシージャ  
- `Main` プロシージャは、アプリケーションが読み込まれた後で最初に実行されるコードです。  `Main` はアプリケーションの開始点であり、アプリケーション全体を制御します。  `Main` には次の 4 種類があります。  
+## <a name="the-main-procedure"></a>メインのプロシージャ  
+ `Main`プロシージャは、アプリケーションが読み込まれているときに実行する最初のコードです。 `Main`開始点し、アプリケーション全体を制御します。 次の&4; 種類がある`Main`:  
   
 -   `Sub Main()`  
   
@@ -99,10 +115,9 @@ caps.handback.revision: 17
   
 -   `Function Main(ByVal cmdArgs() As String) As Integer`  
   
- 最も一般的に使用されるプロシージャは、`Sub Main()` です。  詳細については、「[Main Procedure in Visual Basic](../../../visual-basic/programming-guide/program-structure/main-procedure.md)」を参照してください。  
+ この手順の最も一般的なさまざまなの`Sub Main()`です。 詳細については、次を参照してください。 [Visual Basic の Main プロシージャ](../../../visual-basic/programming-guide/program-structure/main-procedure.md)します。  
   
-## 参照  
- [NIB: Visual Basic Version of Hello, World](http://msdn.microsoft.com/ja-jp/9d030b60-e148-4366-a462-69532f02294c)   
- [Main Procedure in Visual Basic](../../../visual-basic/programming-guide/program-structure/main-procedure.md)   
- [Visual Basic Naming Conventions](../../../visual-basic/programming-guide/program-structure/naming-conventions.md)   
- [Visual Basic Limitations](../../../visual-basic/programming-guide/program-structure/limitations.md)
+## <a name="see-also"></a>関連項目  
+ [Visual Basic の main プロシージャ](../../../visual-basic/programming-guide/program-structure/main-procedure.md)   
+ [Visual Basic の名前付け規則](../../../visual-basic/programming-guide/program-structure/naming-conventions.md)   
+ [Visual Basic の制限事項](../../../visual-basic/programming-guide/program-structure/limitations.md)

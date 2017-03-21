@@ -1,53 +1,69 @@
 ---
-title: "/nostdlib (Visual Basic) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "nostdlib compiler option [Visual Basic]"
-  - "-nostdlib compiler option [Visual Basic]"
-  - "/nostdlib compiler option [Visual Basic]"
+title: "/nostdlib (Visual Basic) |Microsoft ドキュメント"
+ms.date: 2015-07-20
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-visual-basic
+ms.topic: article
+dev_langs:
+- VB
+helpviewer_keywords:
+- nostdlib compiler option [Visual Basic]
+- -nostdlib compiler option [Visual Basic]
+- /nostdlib compiler option [Visual Basic]
 ms.assetid: 140381b8-dc96-4ad5-ae11-792c9ed0be4d
 caps.latest.revision: 18
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 18
----
-# /nostdlib (Visual Basic)
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
+author: stevehoag
+ms.author: shoag
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: 3bacd7d51d12ec6c48dc11ff4b83d842a9e78a30
+ms.lasthandoff: 03/13/2017
 
-コンパイラが標準のライブラリを自動的に参照しないよう指定します。  
+---
+# <a name="nostdlib-visual-basic"></a>/nostdlib (Visual Basic)
+コンパイラが自動的に標準のライブラリを参照します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 /nostdlib  
 ```  
   
-## 解説  
- `/nostdlib` オプションは、System.dll アセンブリへの自動参照を削除して、コンパイラが Vbc.rsp ファイルを読み取らないようにします。  Vbc.exe ファイルと同じディレクトリにある Vbc.rsp ファイルは、一般に使用される [!INCLUDE[dnprdnshort](../../../csharp/getting-started/includes/dnprdnshort-md.md)] アセンブリを参照し、`System` 名前空間および `Microsoft.VisualBasic` 名前空間をインポートします。  
+## <a name="remarks"></a>コメント  
+ `/nostdlib`  オプションは、System.dll アセンブリへの自動参照を削除され、コンパイラが、Vbc.rsp ファイルの読み取りができなくなります。 Vbc.rsp ファイル-Vbc.exe ファイルと同じディレクトリにある、一般的に使用される参照[!INCLUDE[dnprdnshort](../../../csharp/getting-started/includes/dnprdnshort_md.md)]アセンブリとインポート、`System`と`Microsoft.VisualBasic`名前空間。  
   
 > [!NOTE]
->  Mscorlib.dll アセンブリおよび Microsoft.VisualBasic.dll アセンブリは、常に参照されます。  
+>  Mscorlib.dll および Microsoft.VisualBasic.dll のアセンブリは常に参照します。  
   
 > [!NOTE]
->  `/nostdlib` オプションは Visual Studio の開発環境内からは利用できません。このオプションを利用できるのは、コマンド ラインからコンパイルするときだけです。  
+>  `/nostdlib`オプションは、Visual Studio 開発環境内から使用できません。 コマンドラインからコンパイルする場合だけに利用可能になります。  
   
-## 使用例  
- 次のコードは、標準ライブラリを参照しないで `T2.vb` をコンパイルします。  `_MYTYPE` 条件付きコンパイル定数を文字列 "Empty" に設定して、`My` オブジェクトを削除する必要があります。  
+## <a name="example"></a>例  
+ 次のコードのコンパイル`T2.vb`標準ライブラリを参照しなくてもします。 設定する必要があります、`_MYTYPE`条件付きコンパイル定数文字列を削除するには、「空」を`My`オブジェクトです。  
   
 ```  
 vbc /nostdlib /define:_MYTYPE=\"Empty\" T2.vb  
 ```  
   
-## 参照  
- [\/noconfig](../../../visual-basic/reference/command-line-compiler/noconfig.md)   
- [Visual Basic Command\-Line Compiler](../../../visual-basic/reference/command-line-compiler/index.md)   
- [コンパイル コマンド ラインのサンプル](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)   
- [Customizing Which Objects are Available in My](../../../visual-basic/developing-apps/customizing-extending-my/customizing-which-objects-are-available-in-my.md)
+## <a name="see-also"></a>関連項目  
+ [/noconfig](../../../visual-basic/reference/command-line-compiler/noconfig.md)   
+ [Visual Basic のコマンド ライン コンパイラ](../../../visual-basic/reference/command-line-compiler/index.md)   
+ [コンパイル コマンドラインのサンプル](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)   
+ [My で利用可能なオブジェクトのカスタマイズ](../../../visual-basic/developing-apps/customizing-extending-my/customizing-which-objects-are-available-in-my.md)

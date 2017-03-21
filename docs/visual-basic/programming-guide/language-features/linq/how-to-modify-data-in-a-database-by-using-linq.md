@@ -1,81 +1,97 @@
 ---
-title: "How to: Modify Data in a Database by Using LINQ (Visual Basic) | Microsoft Docs"
-ms.custom: ""
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "inserting rows [LINQ to SQL]"
-  - "deleting rows [LINQ to SQL]"
-  - "updating rows [LINQ to SQL]"
-  - "inserting data [Visual Basic]"
-  - "deleting data"
-  - "data [Visual Basic], updating"
-  - "updating data [LINQ]"
-  - "queries [LINQ in Visual Basic], data changes in database"
-  - "queries [LINQ in Visual Basic], how-to topics"
+title: "方法: LINQ (Visual Basic) を使用して、データベース内のデータの変更 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 2015-07-20
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-visual-basic
+ms.topic: article
+dev_langs:
+- VB
+helpviewer_keywords:
+- inserting rows [LINQ to SQL]
+- deleting rows [LINQ to SQL]
+- updating rows [LINQ to SQL]
+- inserting data [Visual Basic]
+- deleting data
+- data [Visual Basic], updating
+- updating data [LINQ]
+- queries [LINQ in Visual Basic], data changes in database
+- queries [LINQ in Visual Basic], how-to topics
 ms.assetid: cf52635f-0c1b-46c3-aff1-bdf181cf19b1
 caps.latest.revision: 15
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 15
----
-# How to: Modify Data in a Database by Using LINQ (Visual Basic)
-[!INCLUDE[vs2017banner](../../../../visual-basic/developing-apps/includes/vs2017banner.md)]
+author: stevehoag
+ms.author: shoag
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: 44ca3e44d8411a6329d176eb778677bfab2b365c
+ms.lasthandoff: 03/13/2017
 
-統合言語クエリ \(LINQ: Language\-Integrated Query\) のクエリを使用すると、簡単にデータベースの情報にアクセスし、データベースの値を変更できます。  
+---
+# <a name="how-to-modify-data-in-a-database-by-using-linq-visual-basic"></a>方法 : LINQ を使用してデータベースのデータを変更する (Visual Basic)
+統合言語クエリ (LINQ) クエリを行う簡単にデータベース情報にアクセスして、データベース内の値を変更します。  
   
- SQL Server データベースの情報を取得して更新する新しいアプリケーションの作成方法の例を以下に示します。  
+ 次の例では、SQL Server データベースを取得する新しいアプリケーションを作成する方法と更新プログラムの情報を示します。  
   
- このトピックの例では、Northwind サンプル データベースを使用します。  開発用コンピューターに Northwind サンプル データベースがインストールされていない場合は、[Microsoft ダウンロード センター](http://go.microsoft.com/fwlink/?LinkID=98088) の Web サイトからダウンロードできます。  手順については、「[Downloading Sample Databases](../Topic/Downloading%20Sample%20Databases.md)」を参照してください。  
+ このトピックの例では、Northwind サンプル データベースを使用します。 開発用コンピューターに Northwind サンプル データベースがないをからダウンロードできます、 [Microsoft ダウンロード センター](http://go.microsoft.com/fwlink/?LinkID=98088) Web サイトです。 手順については、次を参照してください。[サンプル データベースのダウンロード](https://msdn.microsoft.com/library/bb399411)します。  
   
-### データベースへの接続を作成するには  
+### <a name="to-create-a-connection-to-a-database"></a>データベースへの接続を作成するには  
   
-1.  Visual Studio で、**\[表示\]** メニューの **\[サーバー エクスプローラー\]** または **\[データベース エクスプローラー\]** をクリックして、**サーバー エクスプローラー**または**データベース エクスプローラー**を開きます。  
+1.  Visual Studio で開きます**サーバー エクスプ ローラー**/**データベース エクスプ ローラー**をクリックして、**ビュー** ] メニューの [クリックして**サーバー エクスプ ローラー**/**データベース エクスプ ローラー**します。  
   
-2.  **サーバー エクスプローラー**または**データベース エクスプローラー**で、**\[データ接続\]** を右クリックし、**\[接続の追加\]** をクリックします。  
+2.  右クリック**データ接続**で**サーバー エクスプ ローラー**/**データベース エクスプ ローラー**、 をクリック**接続の追加**します。  
   
-3.  Northwind サンプル データベースへの有効な接続を指定します。  
+3.  Northwind サンプル データベースに有効な接続を指定します。  
   
-### LINQ to SQL ファイルを含むプロジェクトを追加するには  
+### <a name="to-add-a-project-with-a-linq-to-sql-file"></a>SQL ファイルに、LINQ では、プロジェクトを追加するには  
   
-1.  Visual Studio で、**\[ファイル\]** メニューの **\[新規作成\]** をポイントし、**\[プロジェクト\]** をクリックします。  プロジェクトの種類として、Visual Basic の **\[Windows フォーム アプリケーション\]** をクリックします。  
+1.  Visual Studio での**ファイル** メニューをポイント**新規** をクリックし、**プロジェクト**します。 Visual Basic を選択して**Windows フォーム アプリケーション**プロジェクトの種類として。  
   
-2.  **\[プロジェクト\]** メニューの **\[新しい項目の追加\]** をクリックします。  **\[LINQ to SQL クラス\]** 項目テンプレートをクリックします。  
+2.  **[プロジェクト]** メニューの **[新しい項目の追加]**をクリックします。 選択、 **LINQ to SQL クラス**項目テンプレートです。  
   
-3.  ファイルに `northwind.dbml` という名前を付けます。  **\[追加\]** をクリックします。  オブジェクト リレーショナル デザイナー \(O\/R デザイナー\) で `northwind.dbml` ファイルが開かれます。  
+3.  そのファイルに `northwind.dbml` という名前を付けます。 **[追加]**をクリックします。 オブジェクト リレーショナル デザイナー (O/R デザイナー) を開いて、`northwind.dbml`ファイルです。  
   
-### 照会および変更するテーブルをデザイナーに追加するには  
+### <a name="to-add-tables-to-query-and-modify-to-the-designer"></a>クエリを実行し、デザイナーを変更するテーブルを追加するには  
   
-1.  **サーバー エクスプローラー**または**データベース エクスプローラー**で、Northwind データベースへの接続を展開します。  **\[Tables\]** フォルダーを展開します。  
+1.  **サーバー エクスプ ローラー**/**データベース エクスプ ローラー**、Northwind データベースへの接続を展開します。 展開、**テーブル**フォルダーです。  
   
-     O\/R デザイナーを閉じている場合は、前に追加した `northwind.dbml` ファイルをダブルクリックして再度開くことができます。  
+     O/R デザイナーを閉じていた場合をダブルクリックして開くことができます、`northwind.dbml`前に追加したファイルです。  
   
 2.  Customers テーブルをクリックし、デザイナーの左ペインにドラッグします。  
   
-     デザイナーによって、プロジェクト用の新しい Customer オブジェクトが作成されます。  
+     デザイナーでは、プロジェクトの新しい Customer オブジェクトを作成します。  
   
-3.  変更を保存し、デザイナーを閉じます。  
+3.  変更内容を保存してデザイナーを閉じます。  
   
 4.  プロジェクトを保存します。  
   
-### データベースを変更するコードを追加し、結果を表示するには  
+### <a name="to-add-code-to-modify-the-database-and-display-the-results"></a>データベースを変更し、結果を表示するコードを追加するには  
   
-1.  **ツールボックス**から、<xref:System.Windows.Forms.DataGridView> コントロールを、プロジェクトの既定の Windows フォームである Form1 にドラッグします。  
+1.  **ツールボックス**、ドラッグ、<xref:System.Windows.Forms.DataGridView>コントロールをプロジェクトの Form1 の既定の Windows フォームにします</xref:System.Windows.Forms.DataGridView>。  
   
-2.  O\/R デザイナーにテーブルを追加すると、デザイナーによって <xref:System.Data.Linq.DataContext> オブジェクトがプロジェクトに追加されます。  このオブジェクトには、Customers テーブルへのアクセスに使用できるコードが含まれます。  また、テーブルのローカル Customer オブジェクトと Customers コレクションを定義するコードも含まれます。  プロジェクトの <xref:System.Data.Linq.DataContext> オブジェクトには、.dbml ファイルの名前に基づいて名前が付けられます。  このプロジェクトの場合、<xref:System.Data.Linq.DataContext> オブジェクトの名前は `northwindDataContext` になります。  
+2.  O/R デザイナーにテーブルを追加したときに、デザイナーが追加、<xref:System.Data.Linq.DataContext>オブジェクトをプロジェクトにします</xref:System.Data.Linq.DataContext>。 このオブジェクトには、Customers テーブルにアクセスするのに使用できるコードが含まれています。 また、ローカルの Customer オブジェクトと、テーブルの顧客のコレクションを定義するコードも含まれます。 <xref:System.Data.Linq.DataContext>オブジェクトは、プロジェクトの名前に基づいての .dbml ファイルの名前</xref:System.Data.Linq.DataContext>。 このプロジェクトで、<xref:System.Data.Linq.DataContext>オブジェクトの名前は`northwindDataContext`</xref:System.Data.Linq.DataContext>。  
   
-     コード内に <xref:System.Data.Linq.DataContext> オブジェクトのインスタンスを作成し、O\/R デザイナーで指定した Customers コレクションを照会および変更できます。  Customers コレクションに対する変更は、<xref:System.Data.Linq.DataContext> オブジェクトの <xref:System.Data.Linq.DataContext.SubmitChanges%2A> メソッドを呼び出して送信するまで、データベースには反映されません。  
+     インスタンスを作成することができます、<xref:System.Data.Linq.DataContext>コードとクエリ内のオブジェクトおよび O/R デザイナーで指定された顧客のコレクションを変更します</xref:System.Data.Linq.DataContext>。 呼び出して送信するまで、顧客のコレクションに加えた変更はデータベースに反映されませんが、<xref:System.Data.Linq.DataContext.SubmitChanges%2A>のメソッド、<xref:System.Data.Linq.DataContext>オブジェクト</xref:System.Data.Linq.DataContext></xref:System.Data.Linq.DataContext.SubmitChanges%2A>。  
   
-     Windows  フォーム Form1 をダブルクリックし、<xref:System.Data.Linq.DataContext> のプロパティとして公開されている Customers テーブルを照会するためのコードを、<xref:System.Windows.Forms.Form.Load> イベントに追加します。  次のコードを追加します。  
+     <xref:System.Windows.Forms.Form.Load> <xref:System.Data.Linq.DataContext>。</xref:System.Data.Linq.DataContext>のプロパティとして公開される Customers テーブルを照会するイベント</xref:System.Windows.Forms.Form.Load>にコードを追加する Windows フォーム、Form1 をダブルクリックします。 次のコードを追加します。  
   
-    ```vb#  
+    ```vb  
     Private db As northwindDataContext  
   
     Private Sub Form1_Load(ByVal sender As System.Object,   
@@ -95,11 +111,11 @@ caps.handback.revision: 15
     End Sub  
     ```  
   
-3.  **ツールボックス**から 3 つの <xref:System.Windows.Forms.Button> コントロールをフォームにドラッグします。  最初の `Button` コントロールを選択します。  **\[プロパティ\]** ウィンドウで、`Button` コントロールの `Name` を `AddButton` に設定し、`Text` を `Add` に設定します。  2 番目のボタンを選択し、`Name` プロパティを `UpdateButton` に、`Text` プロパティを `Update` にそれぞれ設定します。  3 番目のボタンを選択し、`Name` プロパティを `DeleteButton` に、`Text` プロパティを `Delete` にそれぞれ設定します。  
+3.  **ツールボックス**、3 つをドラッグして<xref:System.Windows.Forms.Button>をフォームにコントロールできます</xref:System.Windows.Forms.Button>。 最初の選択`Button`コントロールです。 **プロパティ**ウィンドウで、設定、`Name`の`Button`に制御を`AddButton`と`Text`に`Add`します。 2 番目のボタンを選択し、設定、`Name`プロパティを`UpdateButton`と`Text`プロパティを`Update`します。 3 番目のボタンを選択し、設定、`Name`プロパティを`DeleteButton`と`Text`プロパティを`Delete`します。  
   
-4.  **\[Add\]** ボタンをダブルクリックし、`Click` イベントにコードを追加します。  次のコードを追加します。  
+4.  ダブルクリックして、**追加**にコードを追加するボタン、`Click`イベントです。 次のコードを追加します。  
   
-    ```vb#  
+    ```vb  
     Private Sub AddButton_Click(ByVal sender As System.Object,   
                                 ByVal e As System.EventArgs  
                                ) Handles AddButton.Click  
@@ -122,9 +138,9 @@ caps.handback.revision: 15
     End Sub  
     ```  
   
-5.  **\[Update\]** ボタンをダブルクリックし、`Click` イベントにコードを追加します。  次のコードを追加します。  
+5.  ダブルクリックして、**更新**にコードを追加するボタン、`Click`イベントです。 次のコードを追加します。  
   
-    ```vb#  
+    ```vb  
     Private Sub UpdateButton_Click(ByVal sender As System.Object, _  
                                    ByVal e As System.EventArgs  
                                   ) Handles UpdateButton.Click  
@@ -143,9 +159,9 @@ caps.handback.revision: 15
     End Sub  
     ```  
   
-6.  **\[Delete\]** ボタンをダブルクリックし、`Click` イベントにコードを追加します。  次のコードを追加します。  
+6.  ダブルクリックして、**削除**にコードを追加するボタン、`Click`イベントです。 次のコードを追加します。  
   
-    ```vb#  
+    ```vb  
     Private Sub DeleteButton_Click(ByVal sender As System.Object, _  
                                    ByVal e As System.EventArgs  
                                   ) Handles DeleteButton.Click  
@@ -164,12 +180,11 @@ caps.handback.revision: 15
     End Sub  
     ```  
   
-7.  F5 キーを押してプロジェクトを実行します。  新しいレコードを追加するには、**\[Add\]** をクリックします。  その新しいレコードを変更するには、**\[Update\]** をクリックします。  その新しいレコードを削除するには、**\[Delete\]** をクリックします。  
+7.  F5 キーを押してプロジェクトを実行します。 クリックして**追加**新しいレコードを追加します。 クリックして**更新**新しいレコードを変更します。 クリックして**削除**新しいレコードを削除します。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [LINQ](../../../../visual-basic/programming-guide/language-features/linq/index.md)   
- [Queries](../../../../visual-basic/language-reference/queries/queries.md)   
- [LINQ to SQL](../Topic/LINQ%20to%20SQL.md)   
- [DataContext Methods \(O\/R Designer\)](/visual-studio/data-tools/datacontext-methods-o-r-designer)   
- [How to: Assign Stored Procedures to Perform Updates, Inserts, and Deletes \(O\/R Designer\)](../Topic/How%20to:%20Assign%20stored%20procedures%20to%20perform%20updates,%20inserts,%20and%20deletes%20\(O-R%20Designer\).md)   
- [Walkthrough: Creating LINQ to SQL Classes \(O\/R Designer\)](../Topic/Walkthrough:%20Creating%20LINQ%20to%20SQL%20Classes%20\(O-R%20Designer\).md)
+ [クエリ](../../../../visual-basic/language-reference/queries/queries.md)   
+ [LINQ to SQL](https://msdn.microsoft.com/library/bb386976)   
+ [DataContext メソッド (O/R デザイナー)](https://docs.microsoft.com/visualstudio/data-tools/datacontext-methods-o-r-designer)   
+ [方法: 更新、挿入、および削除 (O/R デザイナー) を実行するストアド プロシージャを割り当てる](http://msdn.microsoft.com/library/e88224ab-ff61-4a3a-b6b8-6f3694546cac)

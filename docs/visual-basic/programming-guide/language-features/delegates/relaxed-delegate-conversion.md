@@ -1,65 +1,81 @@
 ---
-title: "Relaxed Delegate Conversion (Visual Basic) | Microsoft Docs"
-ms.custom: ""
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "relaxed delegate conversion [Visual Basic]"
-  - "delegates [Visual Basic], relaxed conversion"
-  - "conversions, relaxed delegate"
+title: "デリゲート変換 (Visual Basic)、緩和 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 2015-07-20
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-visual-basic
+ms.topic: article
+dev_langs:
+- VB
+helpviewer_keywords:
+- relaxed delegate conversion [Visual Basic]
+- delegates [Visual Basic], relaxed conversion
+- conversions, relaxed delegate
 ms.assetid: 64f371d0-5416-4f65-b23b-adcbf556e81c
 caps.latest.revision: 19
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 19
----
-# Relaxed Delegate Conversion (Visual Basic)
-[!INCLUDE[vs2017banner](../../../../visual-basic/developing-apps/includes/vs2017banner.md)]
+author: stevehoag
+ms.author: shoag
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: c0160165d3df9755481b89570b4cd135b3a990a2
+ms.lasthandoff: 03/13/2017
 
-厳密でないデリゲート変換という機能を使用することで、シグネチャが同じでない場合も Sub や関数をデリゲートやハンドラーに割り当てることができます。したがって、メソッド呼び出しの中で既に認められているバインディングに合わせて、デリゲートへのバインディングを統一できるようになります。  
+---
+# <a name="relaxed-delegate-conversion-visual-basic"></a>厳密でないデリゲート変換 (Visual Basic)
+厳密でないデリゲート変換を使用すると、そのシグネチャが同一でない場合でも、デリゲートやハンドラーにサブルーチンや関数を割り当てることができます。 そのため、デリゲートへのバインディングは、メソッド呼び出しで既に認められているバインディングと一致になります。  
   
-## パラメーターと戻り値の型  
- 厳密でない変換の場合は、`Option Strict` が `On` に設定されていても、シグネチャの厳密な一致ではなく以下の条件が必要になります。  
+## <a name="parameters-and-return-type"></a>パラメーターと戻り値の型  
+ 正確に一致するシグネチャの代わりに厳密でない変換が必要です、次の条件が満たされているときに`Option Strict`に設定されている`On`:  
   
--   デリゲートの各パラメーターのデータ型から、対応する関数または `Sub` の対応するパラメーターのデータ型への変換が、拡大変換になっている必要があります。  以下の例では、`Del1` デリゲートに `Integer` という 1 つのパラメーターがあります。  対応するラムダ式のパラメーター `m` のデータ型は、`Integer` からの拡大変換に相当するデータ型 \(`Long` や `Double` など\) でなければなりません。  
+-   デリゲートの各パラメーターのデータ型から割り当てられている関数の対応するパラメーターのデータ型への拡大変換が存在する必要がありますか`Sub`します。 次の例では、デリゲート`Del1`1 つのパラメーター、`Integer`です。 パラメーター`m`で割り当てられているラムダ式がありますがから拡大変換が存在するデータ型`Integer`など`Long`または`Double`です。  
   
-     [!code-vb[VbVbalrRelaxedDelegates#1](../../../../visual-basic/programming-guide/language-features/delegates/codesnippet/VisualBasic/relaxed-delegate-conversion_1.vb)]  
+     [!code-vb[VbVbalrRelaxedDelegates&#1;](../../../../visual-basic/programming-guide/language-features/delegates/codesnippet/VisualBasic/relaxed-delegate-conversion_1.vb)]  
   
-     [!code-vb[VbVbalrRelaxedDelegates#2](../../../../visual-basic/programming-guide/language-features/delegates/codesnippet/VisualBasic/relaxed-delegate-conversion_2.vb)]  
+     [!code-vb[VbVbalrRelaxedDelegates&#2;](../../../../visual-basic/programming-guide/language-features/delegates/codesnippet/VisualBasic/relaxed-delegate-conversion_2.vb)]  
   
-     縮小変換は、`Option Strict` が `Off` に設定されている場合のみ許可されます。  
+     縮小変換が許可される場合にのみ`Option Strict`に設定されている`Off`します。  
   
-     [!code-vb[VbVbalrRelaxedDelegates#8](../../../../visual-basic/programming-guide/language-features/delegates/codesnippet/VisualBasic/relaxed-delegate-conversion_3.vb)]  
+     [!code-vb[VbVbalrRelaxedDelegates&#8;](../../../../visual-basic/programming-guide/language-features/delegates/codesnippet/VisualBasic/relaxed-delegate-conversion_3.vb)]  
   
--   対応する関数または `Sub` の戻り値の型からデリゲートの戻り値の型への変換も、拡大変換になっている必要があります。  `del1` の戻り値の型が `Integer` であるため、以下の例では、対応する各ラムダ式の本体が、`Integer` からの拡大変換に相当するデータ型に評価される必要があります。  
+-   割り当てられている関数の戻り値の型から反対方向に拡大変換が存在する必要がありますか`Sub`デリゲートの戻り値の型にします。 次の例については、各割り当てられているラムダ式の本体を拡大変換後のデータ型に評価する必要があります`Integer`戻り値の型のため`del1`は`Integer`です。  
   
-     [!code-vb[VbVbalrRelaxedDelegates#3](../../../../visual-basic/programming-guide/language-features/delegates/codesnippet/VisualBasic/relaxed-delegate-conversion_4.vb)]  
+     [!code-vb[VbVbalrRelaxedDelegates&#3;](../../../../visual-basic/programming-guide/language-features/delegates/codesnippet/VisualBasic/relaxed-delegate-conversion_4.vb)]  
   
- `Option Strict` が `Off` に設定されている場合は、拡大変換は両方向で削除されます。  
+ 場合`Option Strict`に設定されている`Off`、双方向でが削除されて制限を拡大します。  
   
- [!code-vb[VbVbalrRelaxedDelegates#4](../../../../visual-basic/programming-guide/language-features/delegates/codesnippet/VisualBasic/relaxed-delegate-conversion_5.vb)]  
+ [!code-vb[VbVbalrRelaxedDelegates&4;](../../../../visual-basic/programming-guide/language-features/delegates/codesnippet/VisualBasic/relaxed-delegate-conversion_5.vb)]  
   
-## パラメーター指定の省略  
- 厳密でないデリゲートの場合は、対応するメソッドの中でパラメーターの指定を完全に省略することも可能です。  
+## <a name="omitting-parameter-specifications"></a>パラメーターの指定を省略すること  
+ 厳密でないデリゲートを使用して、割り当てられているメソッドのパラメーターの仕様を完全に省略することもします。  
   
- [!code-vb[VbVbalrRelaxedDelegates#5](../../../../visual-basic/programming-guide/language-features/delegates/codesnippet/VisualBasic/relaxed-delegate-conversion_6.vb)]  
+ [!code-vb[VbVbalrRelaxedDelegates&#5;](../../../../visual-basic/programming-guide/language-features/delegates/codesnippet/VisualBasic/relaxed-delegate-conversion_6.vb)]  
   
- [!code-vb[VbVbalrRelaxedDelegates#6](../../../../visual-basic/programming-guide/language-features/delegates/codesnippet/VisualBasic/relaxed-delegate-conversion_7.vb)]  
+ [!code-vb[VbVbalrRelaxedDelegates&6;](../../../../visual-basic/programming-guide/language-features/delegates/codesnippet/VisualBasic/relaxed-delegate-conversion_7.vb)]  
   
- 一部のパラメーターを指定して、その他のパラメーターを省略することはできません。  
+ いくつかのパラメーターを指定し、他のユーザーを省略できないに注意してください。  
   
- [!code-vb[VbVbalrRelaxedDelegates#15](../../../../visual-basic/programming-guide/language-features/delegates/codesnippet/VisualBasic/relaxed-delegate-conversion_8.vb)]  
+ [!code-vb[VbVbalrRelaxedDelegates&#15;](../../../../visual-basic/programming-guide/language-features/delegates/codesnippet/VisualBasic/relaxed-delegate-conversion_8.vb)]  
   
- パラメーターを省略する書き方は、複雑なパラメーターがいくつもかかわっているイベント ハンドラーを定義する場合などに便利です。  イベント ハンドラーは、場合によっては引数を使用しないことがあります。  つまり、イベントが登録されているコントロールの状態に直接アクセスして、引数を無視する、という場合です。  厳密でないデリゲートでは、あいまいさを残さない限り、そのような宣言で引数を省略してもかまいません。  たとえば、パラメーターを完全に指定した以下の `OnClick` メソッドは、`RelaxedOnClick` として書き換えることができます。  
+ パラメーターを省略する機能は、いくつかの複雑なパラメーターが関係している、イベント ハンドラーを定義するような状況で役立ちます。 いくつかのイベント ハンドラーの引数は使用されません。 代わりに、ハンドラーは、イベントが登録されているし、する引数を無視コントロールの状態を直接アクセスします。 厳密でないデリゲートを使用すると、ときに何のあいまいさの結果は、このような宣言の引数を省略することができます。 次の例では、完全に指定したメソッドで`OnClick`として書き直すことが`RelaxedOnClick`です。  
   
-```vb#  
+```vb  
 Sub OnClick(ByVal sender As Object, ByVal e As EventArgs) Handles b.Click  
     MessageBox.Show("Hello World from" + b.Text)  
 End Sub  
@@ -69,32 +85,32 @@ Sub RelaxedOnClick() Handles b.Click
 End Sub  
 ```  
   
-## AddressOf の例  
- 前の例では、ラムダ式を使用して、型の関係を見やすくしていました。  ところが、`AddressOf`、`Handles`、`AddHandler` のいずれかを使用するデリゲートの割り当てでも、同じような厳密でない書き方が可能です。  
+## <a name="addressof-examples"></a>AddressOf 例  
+ ラムダ式は、表示する型の関係を簡単に、前の例で使用されます。 ただし、同じリラクゼーションは許可されますを使用するデリゲートの割り当ての`AddressOf`、 `Handles`、または`AddHandler`です。  
   
- 以下の例では、関数 `f1`、`f2`、`f3`、`f4` をすべて `Del1` に割り当てることができます。  
+ 次の例では、機能`f1`、 `f2`、 `f3`、および`f4`に割り当てられるすべて`Del1`です。  
   
- [!code-vb[VbVbalrRelaxedDelegates#1](../../../../visual-basic/programming-guide/language-features/delegates/codesnippet/VisualBasic/relaxed-delegate-conversion_1.vb)]  
+ [!code-vb[VbVbalrRelaxedDelegates&#1;](../../../../visual-basic/programming-guide/language-features/delegates/codesnippet/VisualBasic/relaxed-delegate-conversion_1.vb)]  
   
- [!code-vb[VbVbalrRelaxedDelegates#7](../../../../visual-basic/programming-guide/language-features/delegates/codesnippet/VisualBasic/relaxed-delegate-conversion_9.vb)]  
+ [!code-vb[VbVbalrRelaxedDelegates&#7;](../../../../visual-basic/programming-guide/language-features/delegates/codesnippet/VisualBasic/relaxed-delegate-conversion_9.vb)]  
   
- [!code-vb[VbVbalrRelaxedDelegates#9](../../../../visual-basic/programming-guide/language-features/delegates/codesnippet/VisualBasic/relaxed-delegate-conversion_10.vb)]  
+ [!code-vb[VbVbalrRelaxedDelegates&#9;](../../../../visual-basic/programming-guide/language-features/delegates/codesnippet/VisualBasic/relaxed-delegate-conversion_10.vb)]  
   
- 次の例は、`Option Strict` が `Off` に設定されている場合のみ有効です。  
+ 次の例は、有効な場合にのみ`Option Strict`に設定されている`Off`します。  
   
- [!code-vb[VbVbalrRelaxedDelegates#14](../../../../visual-basic/programming-guide/language-features/delegates/codesnippet/VisualBasic/relaxed-delegate-conversion_11.vb)]  
+ [!code-vb[VbVbalrRelaxedDelegates&#14;](../../../../visual-basic/programming-guide/language-features/delegates/codesnippet/VisualBasic/relaxed-delegate-conversion_11.vb)]  
   
-## 関数の戻り値の排除  
- 厳密でないデリゲート変換では、関数を `Sub` デリゲートに割り当てることによって、関数の戻り値を事実上無視することも可能です。  一方、`Sub` を関数デリゲートに割り当てることはできません。  以下の例では、関数 `doubler` のアドレスを `Sub` デリゲート `Del3` に割り当てています。  
+## <a name="dropping-function-returns"></a>関数の戻り値を削除します。  
+ 厳密でないデリゲート変換を使用すると、機能を割り当てる、`Sub`デリゲート、事実上、関数の戻り値を無視します。 ただし、割り当てることはできません、`Sub`を関数デリゲート。 次の例では、関数のアドレスで`doubler`に割り当てられている`Sub`委任`Del3`します。  
   
- [!code-vb[VbVbalrRelaxedDelegates#10](../../../../visual-basic/programming-guide/language-features/delegates/codesnippet/VisualBasic/relaxed-delegate-conversion_12.vb)]  
+ [!code-vb[VbVbalrRelaxedDelegates&#10;](../../../../visual-basic/programming-guide/language-features/delegates/codesnippet/VisualBasic/relaxed-delegate-conversion_12.vb)]  
   
- [!code-vb[VbVbalrRelaxedDelegates#11](../../../../visual-basic/programming-guide/language-features/delegates/codesnippet/VisualBasic/relaxed-delegate-conversion_13.vb)]  
+ [!code-vb[VbVbalrRelaxedDelegates&#11;](../../../../visual-basic/programming-guide/language-features/delegates/codesnippet/VisualBasic/relaxed-delegate-conversion_13.vb)]  
   
-## 参照  
- [Lambda Expressions](../../../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md)   
- [Widening and Narrowing Conversions](../../../../visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions.md)   
- [Delegates](../../../../visual-basic/programming-guide/language-features/delegates/delegates.md)   
- [How to: Pass Procedures to Another Procedure in Visual Basic](../../../../visual-basic/programming-guide/language-features/delegates/how-to-pass-procedures-to-another-procedure.md)   
- [Local Type Inference](../../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md)   
- [Option Strict Statement](../../../../visual-basic/language-reference/statements/option-strict-statement.md)
+## <a name="see-also"></a>関連項目  
+ [ラムダ式](../../../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md)   
+ [拡大変換と縮小変換](../../../../visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions.md)   
+ [デリゲート](../../../../visual-basic/programming-guide/language-features/delegates/index.md)   
+ [方法: Visual Basic での別のプロシージャに渡す](../../../../visual-basic/programming-guide/language-features/delegates/how-to-pass-procedures-to-another-procedure.md)   
+ [ローカル型推論](../../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md)   
+ [Option Strict ステートメント](../../../../visual-basic/language-reference/statements/option-strict-statement.md)

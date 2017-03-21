@@ -1,40 +1,56 @@
 ---
-title: "Modules (Visual Basic) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "modules, Visual Basic"
+title: "モジュール (Visual Basic) |Microsoft ドキュメント"
+ms.date: 2015-07-20
+ms.prod: .net
+ms.technology:
+- devlang-visual-basic
+ms.topic: article
+dev_langs:
+- VB
+helpviewer_keywords:
+- modules, Visual Basic
 ms.assetid: 370bfc90-e8f2-4942-bdec-9897ce605d31
 caps.latest.revision: 11
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 11
----
-# Modules (Visual Basic)
-[!INCLUDE[vs2017banner](../../visual-basic/developing-apps/includes/vs2017banner.md)]
+author: stevehoag
+ms.author: shoag
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: e343fed81819ac21b286234547a8f00afb0d5859
+ms.lasthandoff: 03/13/2017
 
-[!INCLUDE[vbprvb](../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] には、コード内で実行する一般的なタスクを簡単にするためのいくつかのモジュールが用意されています。これには、文字列の操作、数値演算の実行、システム情報の取得、ファイル操作やディレクトリ操作の実行などのタスクが含まれます。  [!INCLUDE[vbprvb](../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] で提供されるモジュールの一覧を次の表に示します。  
+---
+# <a name="modules-visual-basic"></a>モジュール (Visual Basic)
+[!INCLUDE[vbprvb](../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]使用して、コードでは、文字列、数学的な計算をシステム情報の取得、ファイルおよびディレクトリの操作を実行する実行の操作などの一般的なタスクを簡単にするいくつかのモジュールを提供します。 次の表に、によって提供されるモジュール[!INCLUDE[vbprvb](../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]します。  
   
 |||  
-|-|-|  
-|<xref:Microsoft.VisualBasic.Constants>|さまざまな定数が含まれます。  この定数は、コード内のどこにでも使用できます。|  
-|<xref:Microsoft.VisualBasic.ControlChars>|テキストを出力および表示するための定数制御文字が含まれます。|  
-|<xref:Microsoft.VisualBasic.Conversion>|10 進数から他の形式への変換、数値から文字列への変換、文字列から数値への変換、あるデータ型から別のデータ型への変換を行うためのメンバーが含まれます。|  
-|<xref:Microsoft.VisualBasic.DateAndTime>|現在の日付または時刻の取得、日付計算の実行、日付または時刻の出力、日付または時刻の設定、処理時間の設定などを行うためのメンバーが含まれます。|  
-|<xref:Microsoft.VisualBasic.ErrObject>|実行時エラーに関する情報やエラーを発生させたりクリアしたりするためのメソッドが含まれます。|  
-|<xref:Microsoft.VisualBasic.FileSystem>|ファイル、ディレクトリまたはフォルダー、およびシステムに対する操作を実行するためのメンバーが含まれます。|  
-|<xref:Microsoft.VisualBasic.Financial>|財務計算の実行に使用されるプロシージャが含まれます。|  
-|<xref:Microsoft.VisualBasic.Globals>|現在のスクリプト エンジンのバージョンに関する情報が含まれます。|  
-|<xref:Microsoft.VisualBasic.Information>|配列サイズや型名などの情報を取得、テスト、または確認するためのメンバーが含まれます。|  
-|<xref:Microsoft.VisualBasic.Interaction>|オブジェクト、アプリケーション、およびシステムと対話するためのメンバーが含まれます。|  
-|<xref:Microsoft.VisualBasic.Strings>|文字列の書式の再設定、文字列の検索、文字列の長さの取得など、文字列操作を実行するためのメンバーが含まれます。|  
-|<xref:Microsoft.VisualBasic.VBMath>|数値演算を実行するためのメンバーが含まれます。|  
+|---|---|  
+|<xref:Microsoft.VisualBasic.Constants></xref:Microsoft.VisualBasic.Constants>|その他の定数が含まれています。 これらの定数は、コード内の任意の場所で使用できます。|  
+|<xref:Microsoft.VisualBasic.ControlChars></xref:Microsoft.VisualBasic.ControlChars>|印刷してテキストを表示するための定数制御文字が含まれています。|  
+|<xref:Microsoft.VisualBasic.Conversion></xref:Microsoft.VisualBasic.Conversion>|文字列、文字列から数値、および&1; つのデータに数値を別に入力を&10; 進数に変換するメンバーが含まれています。|  
+|<xref:Microsoft.VisualBasic.DateAndTime></xref:Microsoft.VisualBasic.DateAndTime>|現在の日付または時刻の取得、日付計算の実行、日付または時刻を返す、日付または時刻の設定など、プロセスの時間メンバーが含まれます。|  
+|<xref:Microsoft.VisualBasic.ErrObject></xref:Microsoft.VisualBasic.ErrObject>|実行時エラーとを発生させる、またはエラーをクリアする方法について説明します。|  
+|<xref:Microsoft.VisualBasic.FileSystem></xref:Microsoft.VisualBasic.FileSystem>|ファイル、ディレクトリまたはフォルダー、およびシステムの操作を実行するメンバーが含まれています。|  
+|<xref:Microsoft.VisualBasic.Financial></xref:Microsoft.VisualBasic.Financial>|財務計算の実行に使用されるプロシージャが含まれています。|  
+|<xref:Microsoft.VisualBasic.Globals></xref:Microsoft.VisualBasic.Globals>|現在のスクリプト エンジンのバージョンについてを説明します。|  
+|<xref:Microsoft.VisualBasic.Information></xref:Microsoft.VisualBasic.Information>|返す、テスト、または配列のサイズや型名などの情報を確認するメンバーが含まれています。|  
+|<xref:Microsoft.VisualBasic.Interaction></xref:Microsoft.VisualBasic.Interaction>|含むメンバーは、オブジェクト、アプリケーション、およびシステムと対話します。|  
+|<xref:Microsoft.VisualBasic.Strings></xref:Microsoft.VisualBasic.Strings>|使用して、文字列、文字列の長さの取得、文字列の検索を再フォーマットなどの文字列操作を実行するメンバーが含まれています。|  
+|<xref:Microsoft.VisualBasic.VBMath></xref:Microsoft.VisualBasic.VBMath>|含むメンバーは、算術演算を実行します。|  
   
-## 参照  
- [Visual Basic Language Reference](../../visual-basic/language-reference/index.md)   
+## <a name="see-also"></a>関連項目  
+ [Visual Basic 言語リファレンス](../../visual-basic/language-reference/index.md)   
  [Visual Basic](../../visual-basic/index.md)

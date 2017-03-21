@@ -1,41 +1,58 @@
 ---
-title: "Function プロシージャ (Visual Basic) | Microsoft Docs"
-ms.custom: ""
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "Function プロシージャ"
-  - "戻り値、Function プロシージャ"
-  - "Visual Basic コード、プロシージャ"
-  - "プロシージャ、呼び出し"
-  - "プロシージャ、Function プロシージャ"
-  - "構文、Function プロシージャ"
+title: "Function プロシージャ (Visual Basic) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 2015-07-20
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-visual-basic
+ms.topic: article
+dev_langs:
+- VB
+helpviewer_keywords:
+- Function procedures
+- return values, function procedures
+- Visual Basic code, procedures
+- procedures, calling
+- procedures, Function procedures
+- syntax, function procedures
 ms.assetid: 1b9f632c-553b-4cb6-920a-ded117ead8c0
 caps.latest.revision: 27
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 27
----
-# Function プロシージャ (Visual Basic)
-[!INCLUDE[vs2017banner](../../../../visual-basic/developing-apps/includes/vs2017banner.md)]
+author: stevehoag
+ms.author: shoag
+translation.priority.ht:
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- ru-ru
+- zh-cn
+- zh-tw
+translation.priority.mt:
+- cs-cz
+- pl-pl
+- pt-br
+- tr-tr
+translationtype: Machine Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: 11baaa6985f0681aa9c67c4f2470fb9917db5b78
+ms.lasthandoff: 03/13/2017
 
-`Function` プロシージャは、`Function` ステートメントと `End Function` ステートメントで囲まれた一連の [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] ステートメントです。  `Function` プロシージャはタスクを実行した後、呼び出し元のコードに制御を戻します。  制御を戻すとき、値も呼び出し元のコードに返します。  
+---
+# <a name="function-procedures-visual-basic"></a>Function プロシージャ (Visual Basic)
+A`Function`プロシージャは、一連の[!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]で囲まれたステートメント、`Function`と`End Function`ステートメントです。 `Function`プロシージャは、タスクを実行し、呼び出し元のコードに制御を戻します。 制御を戻す場合も、呼び出し元のコードに値を返します。  
   
- プロシージャが呼び出されるたびに、`Function` ステートメント後の最初の実行可能なステートメントから、最初の `End Function`、`Exit Function`、または `Return` ステートメントまでの一連のステートメントが実行されます。  
+ プロシージャが呼び出されるたび、そのステートメントの実行後の最初の実行可能ステートメントから始まる、`Function`ステートメントおよび&1; つ目で終了するまで`End Function`、 `Exit Function`、または`Return`ステートメントが発生しました。  
   
- `Function` プロシージャはモジュール、クラス、または構造体に定義できます。  既定で `Public` に設定されます。つまり、プロシージャを定義したモジュール、クラス、または構造体へのアクセスが可能なアプリケーション内のどこからでも呼び出すことができます。  
+ 定義する、`Function`モジュール、クラスまたは構造体のプロシージャです。 `Public`どこからでも呼び出すことができますが意味を既定では、モジュール、クラス、または、定義された構造体へのアクセス権を持つアプリケーションでします。  
   
- また、`Function` プロシージャは、呼び出し元のコードによって渡される定数、変数、式などの引数を受け取ることができます。  
+ A`Function`プロシージャは、定数、変数、または、呼び出し元のコードに渡される式などの引数を渡すことができます。  
   
-## 宣言の構文  
- `Function` プロシージャを宣言する構文は次のとおりです。  
+## <a name="declaration-syntax"></a>宣言の構文  
+ 宣言の構文、`Function`手順は、次のようにします。  
   
 ```vb  
 [Modifiers] Function FunctionName [(ParameterList)] As ReturnType  
@@ -43,12 +60,12 @@ caps.handback.revision: 27
 End Function  
 ```  
   
- *modifiers* には、アクセス レベルのほか、オーバーロード、オーバーライド、共有、およびシャドウに関する情報を指定できます。  詳細については、「[Function Statement](../../../../visual-basic/language-reference/statements/function-statement.md)」を参照してください。  
+ *修飾子*アクセス レベルとオーバー ロード、オーバーライド、共有、およびシャドウに関する情報を指定できます。 詳細については、次を参照してください。 [Function ステートメント](../../../../visual-basic/language-reference/statements/function-statement.md)します。  
   
- 各パラメーターは、[Sub Procedures](../../../../visual-basic/programming-guide/language-features/procedures/sub-procedures.md) の場合と同じ方法で宣言します。  
+ 各パラメーターのと同じ方法を宣言する[Sub プロシージャ](./sub-procedures.md)します。  
   
-### \[データ型\]  
- すべての `Function` プロシージャには、変数と同じようにデータ型があります。  このデータ型は `Function` ステートメント内の `As` 句で指定し、関数が呼び出し元のコードに返す値のデータ型を決定します。  たとえば、次のようになります。  
+### <a name="data-type"></a>データの種類  
+ 各`Function`手順では、データ型、単にすべての変数ではサポートされます。 このデータ型が指定された、`As`句、`Function`ステートメント、およびその呼び出し元のコードに、関数が返す値のデータ型を決定します。 次の宣言の例では、これを示しています。  
   
 ```vb  
 Function yesterday() As Date  
@@ -58,62 +75,62 @@ Function findSqrt(ByVal radicand As Single) As Single
 End Function  
 ```  
   
- 詳細については、「[Function Statement](../../../../visual-basic/language-reference/statements/function-statement.md)」の "指定項目" を参照してください。  
+ 詳細については、「部分」を参照してください[Function ステートメント](../../../../visual-basic/language-reference/statements/function-statement.md)します。  
   
-## 戻り値  
- `Function` のプロシージャから呼び出し元のコードに返される値は、戻り値と呼ばれます。  プロシージャが値を返すには、次の 2 とおりの方法があります。  
+## <a name="returning-values"></a>値を返す  
+ 値、`Function`プロシージャが呼び出し元のコードには、戻り値と呼ばれるを送信します。 プロシージャは、2 つの方法のいずれかでこの値を返します。  
   
--   `Return` ステートメントを使用して戻り値を指定します。この場合は、呼び出し元のプログラムに制御がすぐに戻されます。  次に例を示します。  
+-   使用して、`Return`を返します。 戻り値を指定するステートメントを呼び出し元のプログラムをすぐに制御します。 次に例を示します。  
   
-    ```vb  
-    Function FunctionName [(ParameterList)] As ReturnType  
-        ' The following statement immediately transfers control back  
-        ' to the calling code and returns the value of Expression.  
-        Return Expression  
-    End Function  
-    ```  
+```vb  
+Function FunctionName [(ParameterList)] As ReturnType  
+    ' The following statement immediately transfers control back  
+    ' to the calling code and returns the value of Expression.  
+    Return Expression  
+End Function  
+```  
   
--   プロシージャのステートメントの自身の関数名に値を代入します。  `Exit Function` ステートメントまたは `End Function` ステートメントが実行されるまで、呼び出し元のプログラムに制御が戻されません。  次に例を示します。  
+-   プロシージャの&1; つまたは複数のステートメントで独自の関数名 に値を割り当てます。 まで呼び出し元のプログラムに制御が戻らない、`Exit Function`または`End Function`ステートメントを実行します。 次に例を示します。  
   
-    ```vb  
-    Function FunctionName [(ParameterList)] As ReturnType  
-        ‘ The following statement does not transfer control back to the calling code.  
-        FunctionName = Expression  
-        ' When control returns to the calling code, Expression is the return value.  
-    End Function  
-    ```  
+```vb  
+Function FunctionName [(ParameterList)] As ReturnType  
+    ' The following statement does not transfer control back to the calling code.  
+    FunctionName = Expression  
+    ' When control returns to the calling code, Expression is the return value.  
+End Function  
+```  
   
- 戻り値を関数名に代入する方法の利点は、`Exit Function` ステートメントまたは `End Function` ステートメントが実行されるまで、プロシージャから制御が戻されないという点にあります。  これにより、一時的な値を代入して、後で必要に応じて調整できます。  
+ 関数名 に戻り値を割り当てることの利点は、制御を返さないこと、手順からに到達するまで、`Exit Function`または`End Function`ステートメントです。 これにより、一時的な値を割り当てるし、必要に応じて後で調整することができます。  
   
- 返される値の詳細については、[Function Statement](../../../../visual-basic/language-reference/statements/function-statement.md)を参照してください。  返される配列については、[配列](../../../../visual-basic/programming-guide/language-features/arrays/index.md)を参照してください。  
+ 値を取得する方法の詳細については、次を参照してください。 [Function ステートメント](../../../../visual-basic/language-reference/statements/function-statement.md)します。 配列を取得する方法については、次を参照してください。[配列](../../../../visual-basic/programming-guide/language-features/arrays/index.md)します。  
   
-## 呼び出し構文  
- `Function` プロシージャを呼び出すには、代入ステートメントの右側または式の中に、名前と引数を指定します。  省略できないすべての引数の値を指定し、引数リストをかっこで囲む必要があります。  指定する引数がない場合は、かっこを省略することもできます。  
+## <a name="calling-syntax"></a>呼び出し構文  
+ 呼び出す、`Function`名前と、代入ステートメントまたは式の右側にあるいずれかの引数を含めることによってプロシージャです。 省略可能でないすべての引数の値を指定する必要があり、引数リストをかっこで囲む必要があります。 引数がない場合は、かっこを省略することができます。  
   
- `Function` プロシージャを呼び出す構文は次のとおりです。  
+ 呼び出しの構文、`Function`手順は、次のようにします。  
   
- *左辺値* `=` *functionname* `[(` *argumentlist* `)]`  
+ *左辺値*`=`*functionname* `[(` *argumentlist*    `)]`  
   
- `If ((` *functionname* `[(` *argumentlist* `)] / 3) <=` *式* `) Then`  
+ `If ((`*functionname* `[(` *argumentlist* `)] / 3) <=`*式*  `) Then`  
   
- `Function` プロシージャを呼び出すときには、必ずしも戻り値を使用する必要はありません。  戻り値を使用しない場合も、戻り値が無視されるだけで、プロシージャのアクションはすべて実行されます。  <xref:Microsoft.VisualBasic.Interaction.MsgBox%2A> はたびたびこの方法で呼び出されます。  
+ 呼び出すと、`Function`の手順がありません、戻り値を使用します。 そうしない場合は、関数のすべての動作が実行されますが、戻り値が無視されます。 <xref:Microsoft.VisualBasic.Interaction.MsgBox%2A>多くの場合、この方法で呼び出されます。</xref:Microsoft.VisualBasic.Interaction.MsgBox%2A>  
   
-### 宣言と呼び出しの説明  
- 次の `Function` プロシージャは、直角三角形の最も長い辺 \(斜辺\) を他の 2 つの辺の値を基に計算します。  
+### <a name="illustration-of-declaration-and-call"></a>宣言と呼び出しの図  
+ 次`Function`プロシージャは、最も長い辺または他の&2; つの値を指定された直角三角形の斜辺を計算します。  
   
- [!code-vb[VbVbcnProcedures#1](./codesnippet/VisualBasic/function-procedures_1.vb)]  
+ [!code-vb[VbVbcnProcedures&#1;](./codesnippet/VisualBasic/function-procedures_1.vb)]  
   
- `hypotenuse` を呼び出す一般的な例を次に示します。  
+ 次の例では、一般的な呼び出しを`hypotenuse`します。  
   
- [!code-vb[VbVbcnProcedures#6](./codesnippet/VisualBasic/function-procedures_2.vb)]  
+ [!code-vb[VbVbcnProcedures&6;](./codesnippet/VisualBasic/function-procedures_2.vb)]  
   
-## 参照  
- [Procedures](../../../../visual-basic/programming-guide/language-features/procedures/index.md)   
- [Sub Procedures](../../../../visual-basic/programming-guide/language-features/procedures/sub-procedures.md)   
- [Property プロシージャ](../../../../visual-basic/programming-guide/language-features/procedures/property-procedures.md)   
- [Operator Procedures](../../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md)   
- [Procedure Parameters and Arguments](../../../../visual-basic/programming-guide/language-features/procedures/procedure-parameters-and-arguments.md)   
- [Function Statement](../../../../visual-basic/language-reference/statements/function-statement.md)   
- [How to: Create a Procedure that Returns a Value](../../../../visual-basic/programming-guide/language-features/procedures/how-to-create-a-procedure-that-returns-a-value.md)   
- [How to: Return a Value from a Procedure](../../../../visual-basic/programming-guide/language-features/procedures/how-to-return-a-value-from-a-procedure.md)   
- [How to: Call a Procedure That Returns a Value](../../../../visual-basic/programming-guide/language-features/procedures/how-to-call-a-procedure-that-returns-a-value.md)
+## <a name="see-also"></a>関連項目  
+ [手順](./index.md)   
+ [Sub プロシージャ](./sub-procedures.md)   
+ [プロパティ プロシージャ](./property-procedures.md)   
+ [演算子プロシージャ](./operator-procedures.md)   
+ [プロシージャのパラメーターと引数](./procedure-parameters-and-arguments.md)   
+ [Function ステートメント](../../../../visual-basic/language-reference/statements/function-statement.md)   
+ [方法: 値を返すプロシージャを作成します。](./how-to-create-a-procedure-that-returns-a-value.md)   
+ [方法: プロシージャから値を返す](./how-to-return-a-value-from-a-procedure.md)   
+ [方法: 値を返すプロシージャを呼び出す](./how-to-call-a-procedure-that-returns-a-value.md)

@@ -1,54 +1,70 @@
 ---
-title: "Type of member &#39;&lt;membername&gt;&#39; is not CLS-compliant | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "bc40025"
-  - "vbc40025"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "BC40025"
+title: "メンバーの型 &quot;&lt;membername&gt;&quot; CLS 準拠ではありません。Microsoft ドキュメント"
+ms.date: 2015-07-20
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-visual-basic
+ms.topic: article
+f1_keywords:
+- bc40025
+- vbc40025
+dev_langs:
+- VB
+helpviewer_keywords:
+- BC40025
 ms.assetid: adbd34bb-43d2-4266-90e7-cd1afaf49b4e
 caps.latest.revision: 14
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 14
----
-# Type of member &#39;&lt;membername&gt;&#39; is not CLS-compliant
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
+author: stevehoag
+ms.author: shoag
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: 3ea35f54cf8f0fb5a11148b8017456feb8d3524a
+ms.lasthandoff: 03/13/2017
 
-このメンバーに指定されたデータ型が、[言語への非依存性、および言語非依存コンポーネント](../Topic/Language%20Independence%20and%20Language-Independent%20Components.md) \(CLS\) のデータ型ではありません。  これは、作成中のコンポーネント自体のエラーではありません。このデータ型は、[!INCLUDE[dnprdnshort](../../../csharp/getting-started/includes/dnprdnshort-md.md)] および [!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] ではサポートされています。  ただし、CLS に厳密に準拠するコードで書かれた別のコンポーネントでは、このデータ型がサポートされない可能性があります。  そのようなコンポーネントは、作成中のコンポーネントと正常にやり取りできない場合があります。  
+---
+# <a name="type-of-member-39ltmembernamegt39-is-not-cls-compliant"></a>メンバーの型 '&lt;membername&gt;' CLS 準拠ではありません
+このメンバーに指定されたデータ型の一部では、[言語非依存および言語非依存コンポーネント](https://msdn.microsoft.com/library/12a7a7h3)(CLS に) します。 これはないため、エラー、コンポーネント内で、[!INCLUDE[dnprdnshort](../../../csharp/getting-started/includes/dnprdnshort_md.md)]と[!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]このデータ型をサポートします。 ただし、厳密に CLS 準拠のコードで記述された別のコンポーネントでは、このデータ型がサポートしない可能性があります。 このようなコンポーネントは、コンポーネントと正常にやり取りできません可能性があります。  
   
- 次の [!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] データ型は CLS に準拠していません。  
+ 次の [!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] データ型は CLS に準拠していません。  
   
--   [SByte Data Type](../../../visual-basic/language-reference/data-types/sbyte-data-type.md)  
+-   [SByte データ型](../../../visual-basic/language-reference/data-types/sbyte-data-type.md)  
   
--   [UInteger Data Type](../../../visual-basic/language-reference/data-types/uinteger-data-type.md)  
+-   [UInteger データ型](../../../visual-basic/language-reference/data-types/uinteger-data-type.md)  
   
--   [ULong Data Type](../../../visual-basic/language-reference/data-types/ulong-data-type.md)  
+-   [ULong データ型](../../../visual-basic/language-reference/data-types/ulong-data-type.md)  
   
--   [UShort Data Type](../../../visual-basic/language-reference/data-types/ushort-data-type.md)  
+-   [UShort データ型](../../../visual-basic/language-reference/data-types/ushort-data-type.md)  
   
- 既定では、このメッセージは警告です。  警告を非表示にする方法や、警告をエラーとして扱う方法の詳細については、[Visual Basic での警告の構成](/visual-studio/ide/configuring-warnings-in-visual-basic) を参照してください。  
+ 既定では、このメッセージは警告です。 警告を非表示や警告をエラーとして扱う方法の詳細については、次を参照してください。 [Visual Basic での警告の構成](https://docs.microsoft.com/visualstudio/ide/configuring-warnings-in-visual-basic)します。  
   
- **Error ID:** BC40025  
+ **エラー ID:** BC40025  
   
-### このエラーを解決するには  
+## <a name="to-correct-this-error"></a>このエラーを解決するには  
   
--   このコンポーネントが他の [!INCLUDE[dnprdnshort](../../../csharp/getting-started/includes/dnprdnshort-md.md)] コンポーネントとしかやり取りをしない場合、または他のコンポーネントとのやり取りがない場合は、コードを変更する必要はありません。  
+-   他のコンポーネントの場合[!INCLUDE[dnprdnshort](../../../csharp/getting-started/includes/dnprdnshort_md.md)]コンポーネント、またはその他のコンポーネントとやり取りしない、何も変更する必要はありません。  
   
--   [!INCLUDE[dnprdnshort](../../../csharp/getting-started/includes/dnprdnshort-md.md)] 用に作成されていないコンポーネントとやり取りする場合は、リフレクションを使用するかドキュメントを参照すると、そのコンポーネントでこのデータ型がサポートされているかどうかを確認できる可能性があります。  サポートされている場合は、コードを変更する必要はありません。  
+-   作成されていないコンポーネントとやり取りするかどうか、[!INCLUDE[dnprdnshort](../../../csharp/getting-started/includes/dnprdnshort_md.md)]リフレクションを決定することができます、またはドキュメントを参照するかどうか、このデータ型がサポートされます。 その場合は、何も変更する必要はありません。  
   
--   このデータ型をサポートしないコンポーネントとやり取りする場合は、最も近い CLS 準拠型にデータ型を置き換える必要があります。  たとえば、2,147,483,647 を超える値の範囲が必要でない場合は、`UInteger` の代わりに `Integer` を使用できます。  範囲を拡張する必要がある場合は、`UInteger` を `Long` に置き換えることができます。  
+-   このデータ型をサポートしていないコンポーネントとやり取りする場合は、CLS 準拠で最も近い型を置き換える必要があります。 たとえば、2,147,483,647 を超える値の範囲が不要な場合は、 `UInteger` の代わりに `Integer` を使用できます。 拡張範囲が必要な場合は、 `UInteger` の代わりに `Long`を使用できます。  
   
--   オートメーションまたは COM オブジェクトとやり取りする場合は、一部の型のデータ幅が [!INCLUDE[dnprdnshort](../../../csharp/getting-started/includes/dnprdnshort-md.md)] とは異なることに注意してください。  たとえば `uint` は、他の環境では多くの場合 16 ビットです。  そのようなコンポーネントに 16 ビットの引数を渡す場合は、[!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] のマネージ コードで、`UInteger` 型ではなく `UShort` 型として宣言してください。  
+-   オートメーション オブジェクトや COM オブジェクトとやり取りする場合は、一部の型のデータ幅が [!INCLUDE[dnprdnshort](../../../csharp/getting-started/includes/dnprdnshort_md.md)] とは異なることに注意してください。 たとえば、他の多くの環境では `uint` は 16 ビットです。 このようなコンポーネントに 16 ビットの引数を渡す場合として宣言`UShort`の代わりに`UInteger`、[!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]コードです。  
   
-## 参照  
- [リフレクション](../Topic/Reflection%20in%20the%20.NET%20Framework.md)   
- [\<PAVE OVER\> Writing CLS\-Compliant Code](http://msdn.microsoft.com/ja-jp/4c705105-69a2-4e5e-b24e-0633bc32c7f3)
+## <a name="see-also"></a>関連項目  
+ [リフレクション](http://msdn.microsoft.com/library/d1a58e7f-fb39-4d50-bf84-e3b8f9bf9775)   
+ [\<経由で PAVE > CLS 準拠のコードの記述](http://msdn.microsoft.com/en-us/4c705105-69a2-4e5e-b24e-0633bc32c7f3)

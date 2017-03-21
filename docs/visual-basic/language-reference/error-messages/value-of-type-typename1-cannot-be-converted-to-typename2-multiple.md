@@ -1,45 +1,61 @@
 ---
-title: "Value of type &#39;&lt;typename1&gt;&#39; cannot be converted to &#39;&lt;typename2&gt;&#39; (Multiple file references) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vbc30961"
-  - "bc30961"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "BC30961"
+title: "型の値 &quot;&lt;&quot; typename1 &quot;&gt;&quot;に変換できない&quot;&lt;typename2&gt;&quot; (複数のファイル参照) |Microsoft ドキュメント"
+ms.date: 2015-07-20
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-visual-basic
+ms.topic: article
+f1_keywords:
+- vbc30961
+- bc30961
+dev_langs:
+- VB
+helpviewer_keywords:
+- BC30961
 ms.assetid: 8be5aa0d-d236-4ac3-aa9c-5044f9f6562b
 caps.latest.revision: 9
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 9
----
-# Value of type &#39;&lt;typename1&gt;&#39; cannot be converted to &#39;&lt;typename2&gt;&#39; (Multiple file references)
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
+author: stevehoag
+ms.author: shoag
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: 732291ce9c4b83bb9fc7e83fbbc2a8da9748db59
+ms.lasthandoff: 03/13/2017
 
-型 '\<typename1\>' の値を '\<typename2\>' に変換できません。型の不一致は、プロジェクト '\<projectname1\>' の '\<filepath1\>' へのファイル参照とプロジェクト '\<projectname2\>' の '\<filepath2\>' へのファイル参照との混合によって生じた可能性があります。両方のアセンブリが同一である場合は、同じ場所から参照するようにこれらの参照を置き換えてください。  
+---
+# <a name="value-of-type-39lttypename1gt39-cannot-be-converted-to-39lttypename2gt39-multiple-file-references"></a>型の値 '&lt;' typename1 '&gt;'に変換できない'&lt;typename2&gt;' (複数のファイル参照)
+型の値 '\<' typename1 '>' に変換できません。'\<typename2 >' です。 型の不一致に対するファイル参照の混在が考えられます '\<filepath1 >' プロジェクトで'\<projectname1 >' への参照をファイルに '\<filepath2 >' プロジェクトで'\<projectname2 >' です。 両方のアセンブリが同一である場合は、これらの参照を同じ場所から参照するように置き換えてください。  
   
- プロジェクトで同じアセンブリへの複数のファイル参照が作成される場合、コンパイラは型が別の型に正しく変換されることを保証できません。  
+ プロジェクトはアセンブリへの&1; つ以上のファイル参照を状況の場合、コンパイラは、別に、1 つの型を変換できることを保証できません。  
   
- それぞれのファイル参照は、プロジェクトの出力ファイルのファイル パスおよび名前を指定しています \(通常は DLL ファイル\)。  コンパイラは、出力ファイルが同じソースから得られることも、それらが同じアセンブリの同じバージョンを表していることも保証できません。  したがって、異なる参照内の型が同じ型であることも、ある型を他の型に変換できることも保証できません。  
+ それぞれのファイル参照は、ファイルのパスとプロジェクト (通常は DLL ファイル) の出力ファイルの名前を指定します。 コンパイラは、出力ファイルが同じソースから取得するか、同じアセンブリの同じバージョンを表すことを保証できません。 したがって、種類別の参照では、同じ型か、その他にも、あるを変換できることを保証することはできません。  
   
- 複数の参照アセンブリのアセンブリ ID が同じであることがわかっている場合は、単一のファイル参照を使用できます。  *アセンブリ ID* には、アセンブリの名前、バージョン、公開キー \(公開キーがある場合\)、およびカルチャが含まれます。  この情報により、アセンブリを一意に識別します。  
+ 参照先アセンブリのアセンブリ id が同じであることがわかっている場合は、1 つのファイルの参照を使用できます。 *アセンブリ ID* には、アセンブリの名前、バージョン、公開キー (存在する場合)、およびカルチャが含まれます。 この情報はアセンブリを一意に識別します。  
   
- **Error ID:** BC30961  
+ **エラー ID:** BC30961  
   
-### このエラーを解決するには  
+## <a name="to-correct-this-error"></a>このエラーを解決するには  
   
--   複数の参照アセンブリのアセンブリ ID が同じ場合は、一方のファイル参照を削除するか置き換えて、単一のファイル参照だけにします。  
+-   参照先アセンブリのアセンブリ id が同じ場合は、削除や、置き換えるファイルの参照のいずれか&1; つのファイル参照のみがあります。  
   
--   複数の参照アセンブリのアセンブリ ID が同じではない場合は、コードを変更して、一方のアセンブリの型を他方のアセンブリの型に変換しないようにします。  
+-   参照されたアセンブリは同じアセンブリの id を持っていない場合は、1 つのもう一方の型に型変換を行いませんようにコードを変更します。  
   
-## 参照  
- [Type Conversions in Visual Basic](../../../visual-basic/programming-guide/language-features/data-types/type-conversions.md)   
- [プロジェクト内の参照の管理](/visual-studio/ide/managing-references-in-a-project)   
- [方法: &#91;参照の追加&#93; ダイアログ ボックスを使用して参照を追加または削除する](http://msdn.microsoft.com/ja-jp/3bd75d61-f00c-47c0-86a2-dd1f20e231c9)
+## <a name="see-also"></a>関連項目  
+ [Visual Basic における型変換](../../../visual-basic/programming-guide/language-features/data-types/type-conversions.md)   
+ [プロジェクトの参照を管理します。](https://docs.microsoft.com/visualstudio/ide/managing-references-in-a-project)   
+ [NIB 方法: [参照の追加] ダイアログ ボックスを使用して参照を追加または削除する](http://msdn.microsoft.com/en-us/3bd75d61-f00c-47c0-86a2-dd1f20e231c9)

@@ -1,38 +1,54 @@
 ---
-title: "Default property &#39;&lt;propertyname1&gt;&#39; conflicts with default property &#39;&lt;propertyname2&gt;&#39; in &#39;&lt;classname&gt;&#39; and so should be declared &#39;Shadows&#39; | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vbc40007"
-  - "bc40007"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "BC40007"
+title: "既定のプロパティ &quot;&lt;propertyname1&gt;&quot;既定のプロパティは&quot;&lt;propertyname2&gt;&quot;で&quot;&lt;classname&gt;&quot;、&quot;Shadows&quot; と宣言する必要があります |Microsoft ドキュメント"
+ms.date: 2015-07-20
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-visual-basic
+ms.topic: article
+f1_keywords:
+- vbc40007
+- bc40007
+dev_langs:
+- VB
+helpviewer_keywords:
+- BC40007
 ms.assetid: 692ccf76-5715-4f11-a972-84cf9de30bc1
 caps.latest.revision: 9
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 9
----
-# Default property &#39;&lt;propertyname1&gt;&#39; conflicts with default property &#39;&lt;propertyname2&gt;&#39; in &#39;&lt;classname&gt;&#39; and so should be declared &#39;Shadows&#39;
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
+author: stevehoag
+ms.author: shoag
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: 803b42b7659c16fd97251635e4b6ba49362e0a02
+ms.lasthandoff: 03/13/2017
 
-基本クラスで定義されているプロパティと同じ名前のプロパティが宣言されています。  この場合、このクラスのプロパティは基本クラスのプロパティをシャドウする必要があります。  
+---
+# <a name="default-property-39ltpropertyname1gt39-conflicts-with-default-property-39ltpropertyname2gt39-in-39ltclassnamegt39-and-so-should-be-declared-39shadows39"></a>既定のプロパティ '&lt;propertyname1&gt;'既定のプロパティは'&lt;propertyname2&gt;'で'&lt;classname&gt;'、'Shadows' と宣言する必要があります
+プロパティは、基本クラスで定義されたプロパティと同じ名前の宣言します。 このような状況でこのクラスのプロパティは、基本クラスのプロパティをシャドウする必要があります。  
   
- このメッセージは警告です。  `Shadows` が既定で使用されます。  警告を表示しない方法や、警告をエラーとして扱う方法の詳細については、「[Visual Basic での警告の構成](/visual-studio/ide/configuring-warnings-in-visual-basic)」を参照してください。  
+ このメッセージは警告です。 `Shadows`既定で見なされます。 警告を非表示や警告をエラーとして扱う方法の詳細については、次を参照してください。 [Visual Basic での警告の構成](https://docs.microsoft.com/visualstudio/ide/configuring-warnings-in-visual-basic)します。  
   
- **Error ID:** BC40007  
+ **エラー ID:** BC40007  
   
-### このエラーを解決するには  
+## <a name="to-correct-this-error"></a>このエラーを解決するには  
   
--   `Shadows` キーワードを宣言に追加するか、宣言されているプロパティの名前を変更します。  
+-   追加、`Shadows`プロパティの名前が宣言されるキーワードを宣言、または変更します。  
   
-## 参照  
- [Shadows](../../../visual-basic/language-reference/modifiers/shadows.md)   
- [Shadowing in Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/shadowing.md)
+## <a name="see-also"></a>関連項目  
+ [シャドウ](../../../visual-basic/language-reference/modifiers/shadows.md)   
+ [Visual Basic におけるシャドウ](../../../visual-basic/programming-guide/language-features/declared-elements/shadowing.md)

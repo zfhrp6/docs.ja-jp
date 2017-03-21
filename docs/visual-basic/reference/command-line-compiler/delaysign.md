@@ -1,58 +1,74 @@
 ---
-title: "/delaysign | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "delaysign compiler option [Visual Basic]"
-  - "/delaysign compiler option [Visual Basic]"
-  - "-delaysign compiler option [Visual Basic]"
+title: "/delaysign |Microsoft ドキュメント"
+ms.date: 2015-07-20
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-visual-basic
+ms.topic: article
+dev_langs:
+- VB
+helpviewer_keywords:
+- delaysign compiler option [Visual Basic]
+- /delaysign compiler option [Visual Basic]
+- -delaysign compiler option [Visual Basic]
 ms.assetid: c76e61a4-1884-4252-9fb2-377f99caa690
 caps.latest.revision: 19
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 19
----
-# /delaysign
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
+author: stevehoag
+ms.author: shoag
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: 59d4ec227286c20b2b4ecf749a91f0c4ee8d25ca
+ms.lasthandoff: 03/13/2017
 
+---
+# <a name="delaysign"></a>T:System.Reflection.AssemblyDelaySignAttribute
 アセンブリに完全に署名するか、部分的に署名するかを指定します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 /delaysign[+ | -]  
 ```  
   
-## 引数  
+## <a name="arguments"></a>引数  
  `+` &#124; `-`  
- 省略可能です。  完全署名されたアセンブリを作成する場合は、`/delaysign-` を使用します。  アセンブリ内に公開キーを配置し、署名付きハッシュの領域を確保する場合は、`/delaysign+` を使用します。  既定値は `/delaysign-` です。  
+ 省略可能です。 完全署名されたアセンブリを作成する場合は、`/delaysign-` を使用します。 使用`/delaysign+`かどうかは、署名済みのハッシュのアセンブリと予約のスペースで公開キーを配置します。 既定値は、`/delaysign-` です。  
   
-## 解説  
- `/delaysign` オプションは、[\/keyfile](../../../visual-basic/reference/command-line-compiler/keyfile.md) または [\/keycontainer](../../../visual-basic/reference/command-line-compiler/keycontainer.md) と共に使用しなければ無効になります。  
+## <a name="remarks"></a>コメント  
+ `/delaysign`オプションも何も起こりませんと共に使用しなければ[/keyfile](../../../visual-basic/reference/command-line-compiler/keyfile.md)または[/keycontainer](../../../visual-basic/reference/command-line-compiler/keycontainer.md)します。  
   
- 完全署名されたアセンブリを要求すると、コンパイラはマニフェスト \(アセンブリ メタデータ\) を含むファイルをハッシュし、そのハッシュに秘密キーで署名します。  結果として得られるデジタル署名は、マニフェストを含むファイルに格納されます。  アセンブリを遅延署名に設定すると、コンパイラは署名の計算も格納も行いませんが、後で署名を追加できるようにファイルに領域を確保します。  
+ 完全署名されたアセンブリを要求すると、コンパイラはマニフェスト (アセンブリ メタデータ) を格納し、秘密キーでそのハッシュに署名するファイルをハッシュします。 結果として得られるデジタル署名は、マニフェストを含むファイルに格納されます。 アセンブリに遅延署名がある場合、コンパイラはいないコンピューティングを署名を後で追加できるように、ファイルに署名が予約領域を格納します。  
   
- たとえば `/delaysign+` を使用すると、組織内の開発者が署名のないテスト バージョンのアセンブリを配布し、テスト担当者がそのアセンブリをグローバル アセンブリ キャッシュに登録して使用することができます。  このアセンブリに対する作業が終わったら、組織の秘密キーについて責任を持つ人物が、そのアセンブリに完全署名することができます。  この分離方式を使用すると、すべての開発者がアセンブリに対して作業を行えるようにしつつ、組織の秘密キーを漏洩から保護できます。  
+ たとえばを使用して`/delaysign+`組織内の開発者は、テスト担当者がグローバル アセンブリ キャッシュに登録を使用して、アセンブリの署名のないテスト バージョンを配布できます。 アセンブリに対する作業が完了したら、組織の秘密キーの責任者は、アセンブリを完全署名できます。 この区分は、すべての開発者がアセンブリに作業しながら漏洩から組織の秘密キーを保護します。  
   
- アセンブリに対する署名の詳細については、「[厳密な名前付きアセンブリの作成と使用](../Topic/Creating%20and%20Using%20Strong-Named%20Assemblies.md)」を参照してください。  
+ 参照してください[の作成と using strong-named Assemblies](https://msdn.microsoft.com/library/xwb8f617)アセンブリへの署名の詳細についてです。  
   
-### Visual Studio 統合開発環境で \/delaysign を設定するには  
+### <a name="to-set-delaysign-in-the-visual-studio-integrated-development-environment"></a>統合開発環境 Visual Studio で/delaysign を設定するには  
   
-1.  **ソリューション エクスプローラー**でプロジェクトを選択します。  **\[プロジェクト\]** メニューの **\[プロパティ\]** をクリックします。  詳細については、「[Introduction to the Project Designer](http://msdn.microsoft.com/ja-jp/898dd854-c98d-430c-ba1b-a913ce3c73d7)」を参照してください。  
+1.  **ソリューション エクスプローラー**でプロジェクトを選択します。 **プロジェクト** メニューのをクリックして**プロパティ**します。 詳細については、「[プロジェクト デザイナーの概要](http://msdn.microsoft.com/en-us/898dd854-c98d-430c-ba1b-a913ce3c73d7)」を参照してください。  
   
-2.  **\[署名\]** タブをクリックします。  
+2.  クリックして、**署名** タブをクリックします。  
   
-3.  **\[遅延署名のみ\]** に値を設定します。  
+3.  値を設定、**遅延署名のみ**ボックス。  
   
-## 参照  
- [Visual Basic Command\-Line Compiler](../../../visual-basic/reference/command-line-compiler/index.md)   
- [\/keyfile](../../../visual-basic/reference/command-line-compiler/keyfile.md)   
- [\/keycontainer](../../../visual-basic/reference/command-line-compiler/keycontainer.md)   
+## <a name="see-also"></a>関連項目  
+ [Visual Basic のコマンド ライン コンパイラ](../../../visual-basic/reference/command-line-compiler/index.md)   
+ [/keyfile](../../../visual-basic/reference/command-line-compiler/keyfile.md)   
+ [/keycontainer](../../../visual-basic/reference/command-line-compiler/keycontainer.md)   
  [コンパイル コマンド ラインのサンプル](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)

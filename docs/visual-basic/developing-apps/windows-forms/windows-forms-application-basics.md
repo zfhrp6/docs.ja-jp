@@ -1,114 +1,124 @@
 ---
-title: "Windows Forms Application Basics (Visual Basic) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "Windows applications"
-  - "Windows Forms, Visual Basic"
+title: "Windows フォーム アプリケーションの基礎 (Visual Basic) |Microsoft ドキュメント"
+ms.date: 2015-07-20
+ms.prod: .net
+ms.suite: 
+ms.technology:
+- devlang-visual-basic
+ms.topic: article
+dev_langs:
+- VB
+helpviewer_keywords:
+- Windows applications
+- Windows Forms, Visual Basic
 ms.assetid: 0b919d30-7fd6-42db-85c8-543d15312441
 caps.latest.revision: 20
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 20
----
-# Windows Forms Application Basics (Visual Basic)
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
+author: stevehoag
+ms.author: shoag
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: 8275d3c06ebd89254a07127b4850d32ef0580830
+ms.lasthandoff: 03/13/2017
 
-[!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] の重要な要素に、ユーザーのコンピューター上でローカルに動作する Windows フォーム アプリケーションを作成する機能があります。  Windows フォームを使用するアプリケーションおよびユーザー インターフェイスを作成するために Visual Studio を使用できます。  Windows フォーム アプリケーションは、<xref:System.Windows.Forms> 名前空間のクラスを基に作成します。  
+---
+# <a name="windows-forms-application-basics-visual-basic"></a>Windows フォーム アプリケーションの基礎 (Visual Basic)
+重要な部分[!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]ユーザーのコンピューターでローカルに実行する Windows フォーム アプリケーションを作成する機能です。 Visual Studio を使用して、Windows フォームを使用してアプリケーションおよびユーザー インターフェイスを作成することができます。 クラスの Windows フォーム アプリケーションを構築、<xref:System.Windows.Forms>名前空間</xref:System.Windows.Forms>。  
   
-## Windows フォーム アプリケーションのデザイン  
- [!INCLUDE[vsprvs](../../../csharp/includes/vsprvs-md.md)] では、Windows フォーム アプリケーションと Windows サービス アプリケーションを作成できます。  詳細については、次のトピックを参照してください。  
+## <a name="designing-windows-forms-applications"></a>設計の Windows フォーム アプリケーション  
+ Windows フォームおよび使用して Windows サービス アプリケーションを作成する[!INCLUDE[vsprvs](../../../csharp/includes/vsprvs_md.md)]です。 詳細については、次のトピックを参照してください。  
   
--   [Windows フォームについて](../Topic/Getting%20Started%20with%20Windows%20Forms.md).  Windows フォームを作成およびプログラミングする方法についての情報です。  
+-   [Windows フォームの概要](https://msdn.microsoft.com/library/ms229601.aspx)します。 作成し、Windows フォームをプログラミングする方法についてを説明します。  
+   
+-   [Windows フォーム コントロールの](https://msdn.microsoft.com/library/ettb6e2a.aspx)です。 Windows フォーム コントロールの使用の詳細を示すトピックのコレクションです。  
   
--   [Windows Forms Walkthroughs](http://msdn.microsoft.com/ja-jp/fd44d13d-4733-416f-aefc-32592e59e5d9).  Windows フォームをベースとした、一般的に作成される Windows フォーム アプリケーションについて、詳細な開発手順を提供するトピックの一覧を示します。  
+-   [Windows サービス アプリケーション](https://msdn.microsoft.com/library/y817hyb6.aspx)します。 Windows サービスを作成する方法を説明するトピックを一覧表示します。  
   
--   [Windows フォーム コントロール](../Topic/Windows%20Forms%20Controls.md).  Windows フォーム コントロールの使用について詳細に説明したトピックを集めたものです。  
+## <a name="building-rich-interactive-user-interfaces"></a>リッチで対話型のユーザー インターフェイスの構築  
+ Windows フォームのスマート クライアント コンポーネントは、 [!INCLUDE[dnprdnshort](../../../csharp/getting-started/includes/dnprdnshort_md.md)]、読み取りと書き込みをファイル システムなどの一般的なアプリケーション タスクを実現するマネージ ライブラリのセットです。 などの開発環境を使用して[!INCLUDE[vsprvs](../../../csharp/includes/vsprvs_md.md)]、ネットワーク経由でリモート コンピューターと情報を表示して、ユーザーからの入力を要求し、通信する Windows フォーム アプリケーションを作成することができます。  
   
--   [Windows Service Applications](../Topic/Developing%20Windows%20Service%20Applications.md).  Windows サービスの作成方法を説明するトピックの一覧を示します。  
+ Windows フォームでは、フォームをユーザーに情報を表示するビジュアル サーフェイスです。 通常、Windows フォーム アプリケーションをビルドするには、コントロールをフォームに配置し、マウス クリックやキーの押下などのユーザー アクションに対する応答を開発します。 A*コントロール*データを表示したりデータ入力を受け入れたりする独立したユーザー インターフェイス (UI) 要素です。  
   
-## 充実した対話形式のユーザー インターフェイスの構築  
- Windows フォームは、[!INCLUDE[dnprdnshort](../../../csharp/getting-started/includes/dnprdnshort-md.md)] のスマート クライアント コンポーネントであり、ファイル システムへの読み書きなど、共通のアプリケーション タスクを実現するマネージ ライブラリの集まりです。  [!INCLUDE[vsprvs](../../../csharp/includes/vsprvs-md.md)] などの開発環境を使用して、情報の表示、ユーザーに対する入力要求、ネットワーク経由でのリモート コンピューターとの通信を実行する Windows フォーム アプリケーションを作成できます。  
+### <a name="events"></a>イベント  
+ ユーザーがフォームやそのコントロールに対して、イベントが生成されます。 アプリケーションは、コードを使用してこれらのイベントに反応し、イベントが発生したときにそのイベントを処理します。 詳細については、次を参照してください。 [Windows フォームでのイベント ハンドラーの作成](https://msdn.microsoft.com/library/dacysss4.aspx)します。  
   
- Windows フォームでいうフォームとは、ユーザーに対して情報を表示する外観部分の土台のことです。  Windows フォーム アプリケーションの作成では、フォーム上にコントロールを配置し、ユーザー アクション \(マウスのクリックやキーの押下など\) に対する応答を開発するという方法が一般的です。  *コントロール*とは、データの表示やデータ入力の受け付けを行う、個別のユーザー インターフェイス \(UI\) 要素です。  
+### <a name="controls"></a>コントロール  
+ Windows フォームには、さまざまなフォーム上に配置できるコントロールが含まれています。 テキスト ボックス、ボタン、ドロップダウン ボックス、ラジオ ボタン、および Web ページを表示するコントロール。 フォーム上で使用できるすべてのコントロールの一覧は、次を参照してください。 [Windows フォームで使用するコントロール](https://msdn.microsoft.com/library/3xdhey7w.aspx)します。 既存のコントロールがニーズに合わない場合は、Windows フォームもサポート<xref:System.Windows.Forms.UserControl>クラス</xref:System.Windows.Forms.UserControl>を使用して、独自のカスタム コントロールの作成  
   
-### イベント  
- フォームまたはその上のコントロールに対してユーザーが操作を行うと、イベントが生成されます。  アプリケーションでは、こうしたイベントに応答するためのコードを使用して、イベントの発生時に処理を行います。  詳細については、「[Windows フォーム内でのイベント ハンドラーの作成](../Topic/Creating%20Event%20Handlers%20in%20Windows%20Forms.md)」を参照してください。  
+ Windows フォームには、Microsoft Office のようなハイエンド アプリケーションの機能をエミュレートする豊富な UI コントロールが用意されています。 使用して、<xref:System.Windows.Forms.ToolStrip>と<xref:System.Windows.Forms.MenuStrip>コントロール、ツールバーとメニュー テキストとイメージを含む、サブメニューの表示、テキスト ボックスやコンボ ボックスなどの他のコントロールをホストするを作成できます</xref:System.Windows.Forms.MenuStrip></xref:System.Windows.Forms.ToolStrip>。  
   
-### コントロール  
- Windows フォームにはさまざまなコントロールが用意されており、フォーム上に配置できます。たとえば、テキスト ボックス、ボタン、ドロップダウン ボックス、オプション ボタンを表示するコントロールがあるのに加え、Web ページを表示するコントロールもあります。  フォーム上で使用できるすべてのコントロールの一覧については、「[Windows フォームで使用するコントロール](../Topic/Controls%20to%20Use%20on%20Windows%20Forms.md)」を参照してください。  Windows フォームでは、既存のコントロールでニーズに対応できない場合には、<xref:System.Windows.Forms.UserControl> クラスを使用して独自のカスタム コントロールを作成することもできます。  
+ [!INCLUDE[vsprvs](../../../csharp/includes/vsprvs_md.md)]ドラッグ アンド ドロップ フォーム デザイナーで、Windows フォーム アプリケーションに簡単に作成できます。 だけをカーソルでコントロールを選択して、フォームの希望の位置に配置します。 デザイナーがグリッド線や「スナップ線」などのツールを提供するので、コントロールを配置します。 使用するかどうか[!INCLUDE[vsprvs](../../../csharp/includes/vsprvs_md.md)]またはコンパイル、コマンドラインで使用することができます、 <xref:System.Windows.Forms.FlowLayoutPanel>、<xref:System.Windows.Forms.TableLayoutPanel>と<xref:System.Windows.Forms.SplitContainer>コントロールを作成、高度なフォームを最小限の時間と労力のレイアウト</xref:System.Windows.Forms.SplitContainer></xref:System.Windows.Forms.TableLayoutPanel></xref:System.Windows.Forms.FlowLayoutPanel>。  
   
- Windows フォームには、Microsoft Office のようなハイエンド アプリケーションの機能をエミュレートする、豊富な UI コントロールが用意されています。  <xref:System.Windows.Forms.ToolStrip> コントロールおよび <xref:System.Windows.Forms.MenuStrip> コントロールを使用すると、テキストおよびイメージを含むツール バーやメニューの作成、サブメニューの表示、および他のコントロール \(テキスト ボックスやコンボ ボックスなど\) のホストが可能です。  
+### <a name="custom-ui-elements"></a>カスタム UI 要素  
+ 最後に、独自のカスタム UI 要素を作成する必要がある場合、<xref:System.Drawing>名前空間には、すべての線、円、およびその他の図形をフォーム上に直接表示する必要がありますクラスが含まれています。</xref:System.Drawing> 。  
   
- [!INCLUDE[vsprvs](../../../csharp/includes/vsprvs-md.md)] のドラッグ アンド ドロップ フォーム デザイナーを使用すると、Windows フォーム アプリケーションを簡単に作成できます。コントロールをポインターで選択し、フォーム上の目的の位置に配置するだけです。  このデザイナーには、グリッド線や "スナップ線" などのツールが備わっており、コントロールの配置で苦労する必要がありません。  また、[!INCLUDE[vsprvs](../../../csharp/includes/vsprvs-md.md)] を使用する場合でも、コマンド ラインでコンパイルする場合でも、<xref:System.Windows.Forms.FlowLayoutPanel>、<xref:System.Windows.Forms.TableLayoutPanel>、および <xref:System.Windows.Forms.SplitContainer> の各コントロールを使用して、最小限の時間と労力で高度なフォーム レイアウトを作成できます。  
+ これらの機能を使用する手順については、次のヘルプ トピックを参照してください。  
   
-### カスタムの UI 要素  
- 独自のカスタム UI 要素を作成する必要がある場合には、線、円、およびその他の形状をフォーム上に直接描画するために必要なすべてのクラスが、<xref:System.Drawing> 名前空間に含まれています。  
+|目的|参照トピック|  
+|--------|---------|  
+|新しい Windows フォーム アプリケーションを作成します。[!INCLUDE[vsprvs](../../../csharp/includes/vsprvs_md.md)]|[チュートリアル: 単純な Windows フォームの作成](http://msdn.microsoft.com/en-us/2d9daec0-0543-41d0-acb1-964f685bddbb)|  
+|フォーム上のコントロールを使用します。|[方法: Windows フォームにコントロールを追加](https://msdn.microsoft.com/library/0h5y8567.aspx)|   
+|使用してグラフィックスを作成します。<xref:System.Drawing></xref:System.Drawing>|[グラフィックス プログラミングの概要](https://msdn.microsoft.com/library/da0f23z7.aspx)|  
+|カスタム コントロールを作成します。|[方法: UserControl クラスを継承](https://msdn.microsoft.com/library/00ctb4z0.aspx)|  
   
- これらの機能の使用手順の詳細については、以下のヘルプ トピックを参照してください。  
+## <a name="displaying-and-manipulating-data"></a>データの表示と操作  
+ 多くのアプリケーションは、データベース、XML ファイル、XML Web サービス、またはその他のデータ ソースからデータを表示する必要があります。 Windows フォームは、柔軟なコントロールと呼ばれる、<xref:System.Windows.Forms.DataGridView>のすべてのデータが独自のセルを占有するので、従来の行と列の形式でこのような表形式のデータを表示するためのコントロール</xref:System.Windows.Forms.DataGridView>。 使用して<xref:System.Windows.Forms.DataGridView>個々 のセルの外観をカスタマイズ、任意の行と列のロックおよびその他の機能の&1; つのセルの内部の複雑なコントロールを表示することができます</xref:System.Windows.Forms.DataGridView>。  
   
-|目的|参照項目|  
-|--------|----------|  
-|[!INCLUDE[vsprvs](../../../csharp/includes/vsprvs-md.md)] で Windows フォーム アプリケーションを新規作成する。|[Walkthrough: Creating a Simple Windows Form](http://msdn.microsoft.com/ja-jp/2d9daec0-0543-41d0-acb1-964f685bddbb)|  
-|フォーム上でコントロールを使用する。|[方法 : Windows フォームにコントロールを追加する](../Topic/How%20to:%20Add%20Controls%20to%20Windows%20Forms.md)|  
-|フォームおよびそのコントロールからのイベントを処理する。|[How to: Create Event Handlers Using the Designer](http://msdn.microsoft.com/ja-jp/8461e9b8-14e8-406f-936e-3726732b23d2)|  
-|<xref:System.Windows.Forms.ToolStrip> コントロールを使用する。|[方法 : デザイナーを使用して標準アイテムで基本的な ToolStrip を作成する](../Topic/How%20to:%20Create%20a%20Basic%20Windows%20Forms%20ToolStrip%20with%20Standard%20Items%20Using%20the%20Designer.md)|  
-|<xref:System.Drawing> でグラフィックスを作成する。|[グラフィックス プログラミングについて](../Topic/Getting%20Started%20with%20Graphics%20Programming.md)|  
-|カスタム コントロールを作成する。|[方法 : UserControl クラスを継承する](../Topic/How%20to:%20Inherit%20from%20the%20UserControl%20Class.md)|  
+ ネットワーク経由のデータ ソースへの接続は、Windows フォームのスマート クライアントを使用すればシンプルなタスクです。 <xref:System.Windows.Forms.BindingSource>コンポーネントは、新しい Windows フォームで[!INCLUDE[vsprvslong](../../../csharp/misc/includes/vsprvslong_md.md)]と[!INCLUDE[dnprdnlong](../../../csharp/programming-guide/events/includes/dnprdnlong_md.md)]データ ソースへの接続を表し、前後のレコードへの移動、レコードの編集、および変更を元のソースに保存しているコントロールへのデータ バインディングのメソッドを公開します</xref:System.Windows.Forms.BindingSource>。 <xref:System.Windows.Forms.BindingNavigator>コントロールでは、上の単純なインターフェイスが用意されています、<xref:System.Windows.Forms.BindingSource>コンポーネントに対してユーザーがレコード間を移動します</xref:System.Windows.Forms.BindingSource></xref:System.Windows.Forms.BindingNavigator>。  
   
-## データの表示と操作  
- 多くのアプリケーションでは、データベース、XML ファイル、XML Web サービス、およびその他のデータ ソースのデータを表示する必要があります。  Windows フォームには、<xref:System.Windows.Forms.DataGridView> コントロールという柔軟なコントロールが用意されています。このコントロールでは、行と列から成る従来型の表形式のデータを表示でき、データの各項目を、それぞれ別個のセルに配置できます。  <xref:System.Windows.Forms.DataGridView> にはさまざまな機能があります。個々のセルの表示形式のカスタマイズ、任意の行や列のロック、セル内での複合コントロールの表示などです。  
+### <a name="data-bound-controls"></a>データ バインド コントロール  
+ プロジェクトのデータベース、Web サービス、およびオブジェクトなどのデータ ソースを表示するデータ ソース ウィンドウを使用して簡単にデータ バインド コントロールを作成することができます。 このウィンドウからプロジェクトのフォームに項目をドラッグして、データ バインド コントロールを作成できます。 また、[データ ソース] ウィンドウから既存のコントロールにオブジェクトをドラッグして、データに既存のコントロールをバインドすることもできます。  
   
- Windows フォームのスマート クライアントでは、ネットワーク経由でのデータ ソースへの接続も簡単です。  [!INCLUDE[vsprvslong](../../../csharp/misc/includes/vsprvslong-md.md)] および [!INCLUDE[dnprdnlong](../../../csharp/programming-guide/events/includes/dnprdnlong-md.md)] の Windows フォームの新機能である <xref:System.Windows.Forms.BindingSource> コンポーネントは、データ ソースへの接続を表し、コントロールへのデータのバインド、前のレコードや次のレコードへの移動、レコードの編集、元のソースへの変更の保存などを実行するためのメソッドを公開します。  <xref:System.Windows.Forms.BindingNavigator> コントロールは、<xref:System.Windows.Forms.BindingSource> コンポーネントの簡単なインターフェイスとなるもので、ユーザーがレコード間を移動できます。  
+### <a name="settings"></a>設定  
+ 別の種類のデータ バインド Windows フォームで管理できるは、設定です。 ほとんどのスマート クライアント アプリケーションはフォームの前回のサイズなどの実行時の状態に関する情報を保持する必要があり、保存されたファイルの既定の場所などのユーザー設定データを保持します。 アプリケーション設定機能は、クライアント コンピューターに両方の種類の設定を保存する簡単な方法を提供することにより、これらの要件を対応します。 いずれかを使用して定義した後[!INCLUDE[vsprvs](../../../csharp/includes/vsprvs_md.md)]またはコード エディターでは、これらの設定は XML として永続化され、自動的に実行時にメモリに読み込まします。  
   
-### データ バインド コントロール  
- \[データ ソース\] ウィンドウを使用して、データ バインド コントロールを簡単に作成できます。このウィンドウには、データベース、Web サービス、プロジェクト内のオブジェクトなどのデータ ソースが表示されます。  このウィンドウからプロジェクト内のフォームに項目をドラッグすると、データ バインド コントロールを作成できます。  また、\[データ ソース\] ウィンドウから既存のコントロールにオブジェクトをドラッグするという方法でも、既存のコントロールをデータにバインドできます。  
+ これらの機能を使用する手順については、次のヘルプ トピックを参照してください。  
   
-### 設定  
- Windows フォームでは、設定もデータ バインディングの一種として管理できます。  大半のスマート クライアント アプリケーションでは、実行時の状態 \(前回のフォームのサイズなど\) についての情報や、ユーザー設定のデータ \(保存するファイルの既定の場所など\) を保持しておく必要があります。  アプリケーション設定機能では、両方の種類の設定をクライアント コンピューターに格納するための簡単な方法が用意されており、これらの要件に対応できます。  これらの設定は、[!INCLUDE[vsprvs](../../../csharp/includes/vsprvs-md.md)] またはコード エディターを使用して定義すると、XML として保持され、実行時に自動的にメモリに読み込まれます。  
+|目的|参照トピック|  
+|--------|---------|  
+|<xref:System.Windows.Forms.BindingSource>コンポーネント</xref:System.Windows.Forms.BindingSource>を使用してください。|[方法: Windows フォーム コントロールを BindingSource コンポーネント デザイナーを使用してバインド](https://msdn.microsoft.com/library/801dxw2t.aspx)|  
+|扱う[!INCLUDE[vstecado](../../../csharp/programming-guide/concepts/linq/includes/vstecado_md.md)]データ ソース|[方法: Windows フォーム BindingSource コンポーネントで ADO.NET データをフィルター処理の並べ替えと](https://msdn.microsoft.com/library/ya3sah92.aspx)|  
+|データ ソース ウィンドウを使用します。|[チュートリアル: Windows フォームでのデータの表示](https://docs.microsoft.com/visualstudio/data-tools/accessing-data-in-visual-studio)|  
   
- これらの機能の使用手順の詳細については、以下のヘルプ トピックを参照してください。  
+## <a name="deploying-applications-to-client-computers"></a>クライアント コンピューターにアプリケーションを配置する  
+ アプリケーションを作成するとする必要がありますに送信するユーザーをインストールして、独自のクライアント コンピューターに実行できるようにします。 使用して、[!INCLUDE[ndptecclick](../../../visual-basic/developing-apps/printing/includes/ndptecclick_md.md)]テクノロジ、内からアプリケーションを配置できる[!INCLUDE[vsprvs](../../../csharp/includes/vsprvs_md.md)]で、数回クリックして、Web 上のアプリケーションを指す URL をユーザーに提供します。 [!INCLUDE[ndptecclick](../../../visual-basic/developing-apps/printing/includes/ndptecclick_md.md)]すべての要素と、アプリケーション内の依存関係を管理し、アプリケーションがクライアント コンピューターに正しくインストールされていることを確認します。  
   
-|目的|参照項目|  
-|--------|----------|  
-|<xref:System.Windows.Forms.BindingSource> コンポーネントを使用する。|[方法 : デザイナーを使用して Windows フォーム コントロールを BindingSource コンポーネントにバインドする](../Topic/How%20to:%20Bind%20Windows%20Forms%20Controls%20with%20the%20BindingSource%20Component%20Using%20the%20Designer.md)|  
-|[!INCLUDE[vstecado](../../../csharp/programming-guide/concepts/linq/includes/vstecado-md.md)] データ ソースを操作する。|[方法 : Windows フォーム BindingSource コンポーネントで ADO.NET データを並べ替える\/フィルター処理する](../Topic/How%20to:%20Sort%20and%20Filter%20ADO.NET%20Data%20with%20the%20Windows%20Forms%20BindingSource%20Component.md)|  
-|\[データ ソース\] ウィンドウを使用する。|[チュートリアル: Windows フォームでのデータの表示](../Topic/Walkthrough:%20Displaying%20Data%20on%20a%20Windows%20Form.md)|  
-|アプリケーション設定を使用する。|[How to: Create Application Settings Using the Designer](http://msdn.microsoft.com/ja-jp/53b3af80-1c02-4e35-99c6-787663148945)|  
+ [!INCLUDE[ndptecclick](../../../visual-basic/developing-apps/printing/includes/ndptecclick_md.md)] アプリケーションは、ユーザーがネットワークに接続されている場合にのみ実行するか、オンラインとオフラインの両方で実行するかを構成することができます。 アプリケーションがオフラインの操作をサポートするように指定すると[!INCLUDE[ndptecclick](../../../visual-basic/developing-apps/printing/includes/ndptecclick_md.md)]、ユーザーのアプリケーションへのリンクを追加**開始**] メニューの [できるように、ユーザーを使用すると、URL を使用しても開くことができます。  
   
-## クライアント コンピューターへのアプリケーションの配置  
- アプリケーションを作成したら、ユーザーに送る必要があります。各自のクライアント コンピューターにインストールして実行してもらうためです。  [!INCLUDE[ndptecclick](../../../visual-basic/developing-apps/printing/includes/ndptecclick-md.md)] テクノロジを使用すると、数回のクリック操作だけで、[!INCLUDE[vsprvs](../../../csharp/includes/vsprvs-md.md)] からアプリケーションを配置でき、Web 上でのアプリケーションの場所を示す URL をユーザーに伝えることができます。  [!INCLUDE[ndptecclick](../../../visual-basic/developing-apps/printing/includes/ndptecclick-md.md)] は、アプリケーション内のすべての要素と依存関係を管理し、アプリケーションがクライアント コンピューターに適切にインストールされるようにします。  
+ アプリケーションを更新するときに、新しい配置マニフェストとアプリケーションの新しいコピーを Web サーバーに発行します。 [!INCLUDE[ndptecclick](../../../visual-basic/developing-apps/printing/includes/ndptecclick_md.md)]検出、更新プログラムは、ユーザーのインストールをアップグレード古いアセンブリを更新するは、カスタム プログラミングは必要ありません。  
   
- [!INCLUDE[ndptecclick](../../../visual-basic/developing-apps/printing/includes/ndptecclick-md.md)] アプリケーションは、ユーザーがネットワークに接続しているときにのみ動作するように設定することも、オンラインでもオフラインでも動作するように設定することもできます。  アプリケーションがオフライン操作をサポートするように指定した場合、[!INCLUDE[ndptecclick](../../../visual-basic/developing-apps/printing/includes/ndptecclick-md.md)] は、ユーザーが URL を使用しなくてもアプリケーションを開けるように、ユーザーの **\[スタート\]** メニューに当該アプリケーションへのリンクを追加します。  
+ 完全な概要について[!INCLUDE[ndptecclick](../../../visual-basic/developing-apps/printing/includes/ndptecclick_md.md)]を参照してください[ClickOnce のセキュリティと配置](https://docs.microsoft.com/visualstudio/deployment/clickonce-security-and-deployment)します。 これらの機能を使用する手順については、次のヘルプ トピックを参照してください。  
   
- アプリケーションを更新するときには、新しい配置マニフェストと、アプリケーションの新しいコピーを Web サーバーに対して発行します。  [!INCLUDE[ndptecclick](../../../visual-basic/developing-apps/printing/includes/ndptecclick-md.md)] は、利用可能な更新があることを検出し、ユーザーのインストール内容をアップグレードします。古いアセンブリを更新するためのカスタム プログラミングは不要です。  
+|目的|参照トピック|  
+|--------|---------|  
+|使用したアプリケーションを展開します。[!INCLUDE[ndptecclick](../../../visual-basic/developing-apps/printing/includes/ndptecclick_md.md)]|[方法: 発行ウィザードを使用して ClickOnce アプリケーションを発行する](https://docs.microsoft.com/visualstudio/deployment/how-to-publish-a-clickonce-application-using-the-publish-wizard)<br /><br /> [チュートリアル : ClickOnce アプリケーションを手動で配置する](https://docs.microsoft.com/visualstudio/deployment/walkthrough-manually-deploying-a-clickonce-application)|  
+|更新プログラム、[!INCLUDE[ndptecclick](../../../visual-basic/developing-apps/printing/includes/ndptecclick_md.md)]展開|[方法 : ClickOnce アプリケーションの更新プログラムを管理する](https://docs.microsoft.com/visualstudio/deployment/how-to-manage-updates-for-a-clickonce-application)|  
+|セキュリティと管理します。[!INCLUDE[ndptecclick](../../../visual-basic/developing-apps/printing/includes/ndptecclick_md.md)]|[方法 : ClickOnce のセキュリティ設定を有効にする](https://docs.microsoft.com/visualstudio/deployment/how-to-enable-clickonce-security-settings)|  
   
- [!INCLUDE[ndptecclick](../../../visual-basic/developing-apps/printing/includes/ndptecclick-md.md)] の詳細については、「[ClickOnce のセキュリティと配置](/visual-studio/deployment/clickonce-security-and-deployment)」を参照してください。  これらの機能の使用手順の詳細については、以下のヘルプ トピックを参照してください。  
+## <a name="other-controls-and-features"></a>その他のコントロールおよび機能  
+ Windows フォームには、ダイアログ ボックスの作成、ヘルプやドキュメントの印刷や追加、アプリケーションの複数言語へのローカライズのサポートなど、一般的なタスクを高速で簡単に実装できる機能が他にも多数あります。 さらに、Windows フォームの堅牢なセキュリティ システムに依存している、 [!INCLUDE[dnprdnshort](../../../csharp/getting-started/includes/dnprdnshort_md.md)]、顧客により安全なアプリケーションをリリースすることが可能です。  
   
-|目的|参照項目|  
-|--------|----------|  
-|[!INCLUDE[ndptecclick](../../../visual-basic/developing-apps/printing/includes/ndptecclick-md.md)] でアプリケーションを配置する|[方法: 発行ウィザードを使用して ClickOnce アプリケーションを発行する](../Topic/How%20to:%20Publish%20a%20ClickOnce%20Application%20using%20the%20Publish%20Wizard.md)<br /><br /> [チュートリアル : ClickOnce アプリケーションを手動で配置する](../Topic/Walkthrough:%20Manually%20Deploying%20a%20ClickOnce%20Application.md)|  
-|[!INCLUDE[ndptecclick](../../../visual-basic/developing-apps/printing/includes/ndptecclick-md.md)] 配置を更新する|[方法 : ClickOnce アプリケーションの更新プログラムを管理する](../Topic/How%20to:%20Manage%20Updates%20for%20a%20ClickOnce%20Application.md)|  
-|[!INCLUDE[ndptecclick](../../../visual-basic/developing-apps/printing/includes/ndptecclick-md.md)] でセキュリティを管理する|[方法 : ClickOnce のセキュリティ設定を有効にする](../Topic/How%20to:%20Enable%20ClickOnce%20Security%20Settings.md)|  
+ これらの機能を使用する手順については、次のヘルプ トピックを参照してください。  
   
-## 他のコントロールと機能  
- Windows フォームには、共通のタスクをすばやく簡単に実装するための機能が、他にもたくさんあります。ダイアログ ボックスの作成、印刷、ヘルプおよびドキュメントの追加、複数言語へのアプリケーションのローカライズのサポートなどです。  また、Windows フォームは、[!INCLUDE[dnprdnshort](../../../csharp/getting-started/includes/dnprdnshort-md.md)] の堅牢なセキュリティ システムを基盤としているため、より安全性の高いアプリケーションを顧客にリリースできます。  
+|目的|参照トピック|  
+|--------|---------|  
+|フォームの内容を印刷します。|[方法: Windows フォームでグラフィックスを印刷](https://msdn.microsoft.com/library/741a0ktc.aspx)<br /><br /> [方法: Windows フォームで複数ページのテキスト ファイルを印刷](https://msdn.microsoft.com/library/cwbe712d.aspx)|   
+|Windows フォームのセキュリティについての詳細|[セキュリティの Windows フォームの概要](https://msdn.microsoft.com/library/90k49ccb.aspx)|  
   
- これらの機能の使用手順の詳細については、以下のヘルプ トピックを参照してください。  
-  
-|目的|参照項目|  
-|--------|----------|  
-|フォームの内容を印刷する。|[方法 : Windows フォームでグラフィックスを印刷する](../Topic/How%20to:%20Print%20Graphics%20in%20Windows%20Forms.md)<br /><br /> [方法 : Windows フォームで複数ページのテキスト ファイルを印刷する](../Topic/How%20to:%20Print%20a%20Multi-Page%20Text%20File%20in%20Windows%20Forms.md)|  
-|Windows フォーム アプリケーションをグローバル化する。|[Walkthrough: Localizing Windows Forms](http://msdn.microsoft.com/ja-jp/9a96220d-a19b-4de0-9f48-01e5d82679e5)|  
-|Windows フォームのセキュリティについて理解を深める。|[Windows フォームのセキュリティの概要](../Topic/Security%20in%20Windows%20Forms%20Overview.md)|  
-  
-## 参照  
- <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase>   
- [Windows フォームの概要](../Topic/Windows%20Forms%20Overview.md)   
- [My.Forms Object](../../../visual-basic/language-reference/objects/my-forms-object.md)
+## <a name="see-also"></a>関連項目  
+ <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase></xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase>   
+ [Windows フォームの概要](https://msdn.microsoft.com/library/8bxxy49h.aspx)   
+ [My.Forms オブジェクト](../../../visual-basic/language-reference/objects/my-forms-object.md)

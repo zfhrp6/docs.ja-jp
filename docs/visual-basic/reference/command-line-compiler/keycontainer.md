@@ -1,65 +1,80 @@
 ---
-title: "/keycontainer | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "-keycontainer compiler option [Visual Basic]"
-  - "keycontainer compiler option [Visual Basic]"
-  - "/keycontainer compiler option [Visual Basic]"
+title: "/keycontainer |Microsoft ドキュメント"
+ms.date: 2015-07-20
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-visual-basic
+ms.topic: article
+dev_langs:
+- VB
+helpviewer_keywords:
+- -keycontainer compiler option [Visual Basic]
+- keycontainer compiler option [Visual Basic]
+- /keycontainer compiler option [Visual Basic]
 ms.assetid: 6a9bc861-1752-4db1-9f64-b5252f0482cc
 caps.latest.revision: 16
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 16
----
-# /keycontainer
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
+author: stevehoag
+ms.author: shoag
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: 68fa09edce5c0c9af143197f9379d5a46afab52e
+ms.lasthandoff: 03/13/2017
 
-アセンブリに厳密な名前を付けるために、キー ペアのキー コンテナーの名前を指定します。  
+---
+# <a name="keycontainer"></a>T:System.Reflection.AssemblyKeyNameAttribute
+アセンブリに厳密な名前を付けるキー ペアのキー コンテナー名を指定します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 /keycontainer:container  
 ```  
   
-## 引数  
+## <a name="arguments"></a>引数  
   
-|||  
-|-|-|  
-|語句|定義|  
-|`container`|必ず指定します。  キーを含むコンテナー ファイル。  ファイル名に空白が含まれる場合は、二重引用符 \(" "\) で囲む必要があります。|  
+|用語|定義|  
+|---|---|  
+|`container`|必須です。 キーが含まれるコンテナー ファイルです。 ファイル名を引用符で囲みます ("") 名前にスペースが含まれている場合。|  
   
-## 解説  
- コンパイラでは、アセンブリ マニフェストに公開キーを挿入し、秘密キーを使用して最後のアセンブリに署名することによって、共有可能コンポーネントが作成されます。  キー ファイルを生成するには、コマンド ラインで「`sn -k` `file`」と入力します。  `-i`  オプションを使用すると、キー ペアがコンテナーにインストールされます。  詳細については、「[Sn.exe \(厳密名ツール\)](../Topic/Sn.exe%20\(Strong%20Name%20Tool\).md)」を参照してください。  
+## <a name="remarks"></a>コメント  
+ コンパイラは、アセンブリ マニフェストに公開キーを挿入し、秘密キーを含む、最終的なアセンブリを署名することにより、共有可能なコンポーネントを作成します。 キー ファイルを生成する入力`sn -k``file`コマンドライン。 `-i`  オプションは、コンテナーにキーのペアをインストールします。 詳細については、「[Sn.exe (厳密名ツール)](https://msdn.microsoft.com/library/k5b5tt23)」を参照してください。  
   
- `/target:module` を使用してコンパイルすると、キー ファイル名はモジュールに保持され、[\/addmodule](../../../visual-basic/reference/command-line-compiler/addmodule.md) でアセンブリをコンパイルするときに作成されるアセンブリに組み込まれます。  
+ コンパイルする場合は、 `/target:module`、キー ファイルの名前がモジュールに保持され、使用してアセンブリをコンパイルするときに作成されるアセンブリに組み込む[/addmodule](../../../visual-basic/reference/command-line-compiler/addmodule.md)します。  
   
- このオプションは、任意の Microsoft Intermediate Language \(MSIL\) モジュールのソース コードで、カスタム属性 \(<xref:System.Reflection.AssemblyKeyNameAttribute>\) として指定することもできます。  
+ カスタム属性として、このオプションを指定することもできます (<xref:System.Reflection.AssemblyKeyNameAttribute>)、Microsoft 中間言語 (MSIL) モジュールのソース コードにします</xref:System.Reflection.AssemblyKeyNameAttribute>。  
   
- [\/keyfile](../../../visual-basic/reference/command-line-compiler/keyfile.md) を使用して、暗号に関する情報をコンパイラに渡すこともできます。  部分署名されたアセンブリを作成する場合は、[\/delaysign](../../../visual-basic/reference/command-line-compiler/delaysign.md) を使用します。  
+ コンパイラに暗号化情報を渡すことができます[/keyfile](../../../visual-basic/reference/command-line-compiler/keyfile.md)します。 使用[/delaysign](../../../visual-basic/reference/command-line-compiler/delaysign.md)部分署名されているアセンブリを作成する場合。  
   
- アセンブリに対する署名の詳細については、「[厳密な名前付きアセンブリの作成と使用](../Topic/Creating%20and%20Using%20Strong-Named%20Assemblies.md)」を参照してください。  
+ 参照してください[の作成と using strong-named Assemblies](https://msdn.microsoft.com/library/xwb8f617)アセンブリへの署名の詳細についてです。  
   
 > [!NOTE]
->  `/keycontainer` オプションは Visual Studio の開発環境内からは利用できません。このオプションを利用できるのは、コマンド ラインからコンパイルするときだけです。  
+>  `/keycontainer`オプションは、Visual Studio 開発環境内から使用できません。 コマンドラインからコンパイルする場合だけに利用可能になります。  
   
-## 使用例  
- ソース ファイル `Input.vb` をコンパイルし、キー コンテナーを指定する場合のコード例です。  
+## <a name="example"></a>例  
+ 次のコードは、ソース ファイルをコンパイル`Input.vb`し、キー コンテナーを指定します。  
   
 ```  
 vbc /keycontainer:key1 input.vb  
 ```  
   
-## 参照  
- [アセンブリとグローバル アセンブリ キャッシュ](../Topic/Assemblies%20and%20the%20Global%20Assembly%20Cache%20\(C%23%20and%20Visual%20Basic\).md)   
- [Visual Basic Command\-Line Compiler](../../../visual-basic/reference/command-line-compiler/index.md)   
- [\/keyfile](../../../visual-basic/reference/command-line-compiler/keyfile.md)   
+## <a name="see-also"></a>関連項目  
+ [アセンブリとグローバル アセンブリ キャッシュ](../../../visual-basic/programming-guide/concepts/assemblies-gac/index.md)   
+ [Visual Basic のコマンド ライン コンパイラ](../../../visual-basic/reference/command-line-compiler/index.md)   
+ [/keyfile](../../../visual-basic/reference/command-line-compiler/keyfile.md)   
  [コンパイル コマンド ラインのサンプル](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)

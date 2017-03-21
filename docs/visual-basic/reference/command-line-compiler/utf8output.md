@@ -1,52 +1,68 @@
 ---
-title: "/utf8output (Visual Basic) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "-utf8output compiler option [Visual Basic]"
-  - "utf8output compiler option [Visual Basic]"
-  - "/utf8output compiler option [Visual Basic]"
+title: "/utf8output (Visual Basic) |Microsoft ドキュメント"
+ms.date: 2015-07-20
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-visual-basic
+ms.topic: article
+dev_langs:
+- VB
+helpviewer_keywords:
+- -utf8output compiler option [Visual Basic]
+- utf8output compiler option [Visual Basic]
+- /utf8output compiler option [Visual Basic]
 ms.assetid: 8ab36b1e-027a-49ac-85b4-f48997d9e4d6
 caps.latest.revision: 11
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 11
----
-# /utf8output (Visual Basic)
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
+author: stevehoag
+ms.author: shoag
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: 89f41527703df781f32015f386bf87c1383d9769
+ms.lasthandoff: 03/13/2017
 
-UTF\-8 エンコーディングを使用してコンパイラ出力を表示します。  
+---
+# <a name="utf8output-visual-basic"></a>/utf8output (Visual Basic)
+UTF-8 エンコードを使用してコンパイラ出力を表示します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 /utf8output[+ | -]  
 ```  
   
-## 引数  
+## <a name="arguments"></a>引数  
  `+` &#124; `-`  
- 省略可能です。  このオプションの既定値は `/utf8output-` で、コンパイラの出力では UTF\-8 エンコーディングは使用されません。  `/utf8output` の指定は、`/utf8output+` の指定と同じです。  
+ 省略可能です。 このオプションの既定値は`/utf8output-`、つまり、コンパイラの出力では、utf-8 エンコーディングは使用されません。 指定する`/utf8output`を指定することと同じ`/utf8output+`します。  
   
-## 解説  
- いくつかの国際対応の設定では、コンパイラの出力をコンソールに正しく表示できません。  そのような場合は、`/utf8output` を使用してコンパイラの出力をファイルにリダイレクトできます。  
+## <a name="remarks"></a>コメント  
+ 国際対応の構成によっては、コンパイラの出力は、コンソールで正常に表示できません。 このような状況で使用して`/utf8output`してコンパイラの出力をファイルにリダイレクトします。  
   
 > [!NOTE]
->  `/utf8output` オプションは Visual Studio の開発環境内からは利用できません。このオプションを利用できるのは、コマンド ラインからコンパイルするときだけです。  
+>  `/utf8output`オプションは、Visual Studio 開発環境内から使用できません。 コマンドラインからコンパイルする場合だけに利用可能になります。  
   
-## 使用例  
- `In.vb` をコンパイルし、コンパイラの出力を UTF\-8 エンコードで表示する場合のコード例です。  
+## <a name="example"></a>例  
+ 次のコードのコンパイル`In.vb`を表示するコンパイラを utf-8 エンコードを使用して出力します。  
   
 ```  
 vbc /utf8output in.vb  
 ```  
   
-## 参照  
- [Visual Basic Command\-Line Compiler](../../../visual-basic/reference/command-line-compiler/index.md)   
+## <a name="see-also"></a>関連項目  
+ [Visual Basic のコマンド ライン コンパイラ](../../../visual-basic/reference/command-line-compiler/index.md)   
  [コンパイル コマンド ラインのサンプル](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)

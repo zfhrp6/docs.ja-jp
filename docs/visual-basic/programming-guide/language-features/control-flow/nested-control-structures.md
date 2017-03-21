@@ -1,38 +1,54 @@
 ---
-title: "Nested Control Structures (Visual Basic) | Microsoft Docs"
-ms.custom: ""
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "Visual Basic code, control flow"
-  - "control structures, nested"
-  - "conditional statements, nested"
-  - "statements [Visual Basic], control flow"
-  - "control flow, nested control statements"
-  - "structures, nested control"
-  - "nested control statements"
+title: "制御構造 (Visual Basic) を入れ子になった |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 2015-07-20
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-visual-basic
+ms.topic: article
+dev_langs:
+- VB
+helpviewer_keywords:
+- Visual Basic code, control flow
+- control structures, nested
+- conditional statements, nested
+- statements [Visual Basic], control flow
+- control flow, nested control statements
+- structures, nested control
+- nested control statements
 ms.assetid: cf60b061-65d9-44a8-81f2-b0bdccd23a05
 caps.latest.revision: 20
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 20
----
-# Nested Control Structures (Visual Basic)
-[!INCLUDE[vs2017banner](../../../../visual-basic/developing-apps/includes/vs2017banner.md)]
+author: stevehoag
+ms.author: shoag
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: 4afc0afc2ad63d03f2c4251640d3682b2b184504
+ms.lasthandoff: 03/13/2017
 
-`For...Next` ループの中に `If...Then...Else` ブロックを配置するなど、制御ステートメントの中に別の制御ステートメントを配置できます。  制御ステートメントの中に別の制御ステートメントを配置することを*入れ子にする*と言います。  
+---
+# <a name="nested-control-structures-visual-basic"></a>入れ子になった制御構造 (Visual Basic)
+次に例を他のコントロール ステートメント内の制御ステートメントを配置することができます、`If...Then...Else`ブロック内で、`For...Next`ループします。 制御ステートメントの中に別のコントロール ステートメントの配置はモード*入れ子になった*します。  
   
-## 入れ子のレベル  
- [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] には、制御構造を入れ子にするときのレベルに制限はありません。  構造を入れ子にする場合は、コードを読みやすくするために、レベルごとにインデントして記述するのが一般的です。  これは、統合開発環境 \(IDE: Integrated Development Environment\) エディターによって、自動的に行われます。  
+## <a name="nesting-levels"></a>入れ子のレベル  
+ 制御構造の[!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]複数のレベルに入れ子にすることができます。 入れ子になった構造体を&1; つずつの本体をインデントして読みやすくするための一般的な方法です。 統合開発環境 (IDE) のエディターに自動的に行われます。  
   
- 次の例では、`sumRows` プロシージャによって、行列の各行の正の要素が合計されます。  
+ 次の例では、プロシージャ`sumRows`マトリックスの行ごとの正の要素を一緒に追加します。  
   
 ```  
 Public Sub sumRows(ByVal a(,) As Double, ByRef r() As Double)  
@@ -48,15 +64,15 @@ Public Sub sumRows(ByVal a(,) As Double, ByRef r() As Double)
 End Sub  
 ```  
   
- 上の例では、最初の `Next` ステートメントによって、内部 `For` ループが閉じられ、最後の `Next` ステートメントによって、外部 `For` ループが閉じられます。  
+ 前の例で最初の`Next`文は、内部を閉じます`For`ループし、最後`Next`ステートメントによって、外部クローズ`For`ループします。  
   
- 同様に、入れ子になった `If` ステートメントの `End If` ステートメントは、先行する最も近い `If` ステートメントに対して自動的に適用されます。  入れ子になった `Do` ループの動作も同様であり、最も内側の `Loop` ステートメントが最も内側の `Do` ステートメントに対応します。  
+ 同様に、入れ子になった`If`、ステートメント、`End If`ステートメントは、最も近い前に自動的に適用`If`ステートメントです。 入れ子になった`Do`で同様に、最も内側のループが`Loop`最も内側に一致するステートメント`Do`ステートメントです。  
   
 > [!NOTE]
->  多くの制御構造では、キーワードをクリックすると、その構造体のキーワードがすべて強調表示されます。  たとえば、`If...Then...Else` 構造の `If` をクリックすると、その構造の `If`、`Then`、`ElseIf`、`Else`、および `End If` のすべてのインスタンスが強調表示されます。  強調表示された次のキーワード、または前のキーワードに移動するには、Ctrl キーと Shift キーを押しながら↑キーを押すか、Ctrl キーと Shift キーを押しながら↓キーを押します。  
+>  多くの制御構造のキーワードをクリックすると、すべての構造のキーワードが強調表示されます。 クリックすると、`If`で、`If...Then...Else`構築のすべてのインスタンス`If`、 `Then`、 `ElseIf`、 `Else`、および`End If`構造で強調表示されます。 前または次の強調表示されているキーワードに移動するには、ctrl キーと shift キーを押しながら下方向キーまたは ctrl キーと shift キーを押しながら上方向をキーを押します。  
   
-## 異なる種類の制御構造を入れ子にする  
- 他の種類の制御構造内で、ある種類の制御構造を入れ子にできます。  `For Each` ループ内部で `With` ブロックを使用し、`With` ブロック内部で、入れ子になった `If` ブロックを使用しているコード例を次に示します。  
+## <a name="nesting-different-kinds-of-control-structures"></a>さまざまな種類の制御構造の入れ子  
+ 1 つの種類の他の種類内の制御構造の入れ子にすることができます。 次の例では、`With`ブロック内、`For Each`ループを入れ子になった`If`の内部ブロック、`With`ブロックします。  
   
 ```  
 For Each ctl As System.Windows.Forms.Control In Me.Controls  
@@ -73,16 +89,16 @@ For Each ctl As System.Windows.Forms.Control In Me.Controls
 Next ctl  
 ```  
   
-## 制御構造の重なり  
- 制御構造は重ねることはできません。  つまり、入れ子になった構造体は、次の最も内側の構造体の中に完全に含まれる必要があります。  たとえば、次の配置は、内部の `With` ブロックが終了する前に `For` ループが終了するため、無効です。  
+## <a name="overlapping-control-structures"></a>重複する制御構造  
+ 制御構造を重ねることはできません。 つまり、入れ子になった構造を完全に次の最も内側の構造内に必要です。 たとえば、次の配置は有効なため、`For`内側の前にループが終了した`With`ブロックが終了します。  
   
  ![無効な入れ子のグラフィック ダイアグラム](../../../../visual-basic/programming-guide/language-features/control-flow/media/nestexampleinvalid.gif "NestExampleInvalid")  
-For および With 構造体の無効な入れ子  
+構造体を使用して無効な入れ子  
   
- [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] コンパイラによって、そのような制御構造の重なりが検出され、コンパイル エラーが通知されます。  
+ [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]コンパイラはこのような重複する制御構造体し、コンパイル時エラーが通知を検出します。  
   
-## 参照  
- [Control Flow](../../../../visual-basic/programming-guide/language-features/control-flow/index.md)   
- [Decision Structures](../../../../visual-basic/programming-guide/language-features/control-flow/decision-structures.md)   
- [Loop Structures](../../../../visual-basic/programming-guide/language-features/control-flow/loop-structures.md)   
- [Other Control Structures](../../../../visual-basic/programming-guide/language-features/control-flow/other-control-structures.md)
+## <a name="see-also"></a>関連項目  
+ [制御フロー](../../../../visual-basic/programming-guide/language-features/control-flow/index.md)   
+ [条件判断構造](../../../../visual-basic/programming-guide/language-features/control-flow/decision-structures.md)   
+ [ループ構造](../../../../visual-basic/programming-guide/language-features/control-flow/loop-structures.md)   
+ [その他の制御構造](../../../../visual-basic/programming-guide/language-features/control-flow/other-control-structures.md)

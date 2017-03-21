@@ -1,45 +1,61 @@
 ---
-title: "How to: Collapse and Hide Sections of Code (Visual Basic) | Microsoft Docs"
-ms.custom: ""
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "Visual Basic, code collapsing"
-  - "Visual Basic, code hiding"
-  - "Visual Basic code, collapsing and hiding"
+title: "方法: コード (Visual Basic) のセクションを非表示にしたり、折りたたんだり |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 2015-07-20
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-visual-basic
+ms.topic: article
+dev_langs:
+- VB
+helpviewer_keywords:
+- Visual Basic, code collapsing
+- Visual Basic, code hiding
+- Visual Basic code, collapsing and hiding
 ms.assetid: b770e8f5-e07d-491a-ab4b-a977980f9ba2
 caps.latest.revision: 11
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 11
----
-# How to: Collapse and Hide Sections of Code (Visual Basic)
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
+author: stevehoag
+ms.author: shoag
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: 200a90b6983277d46b6e5c7b27ee4a90ecf88c40
+ms.lasthandoff: 03/13/2017
 
-`#Region` ディレクティブを使用すると、[!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] ファイルのコードをセクションごとに折りたたんで非表示にできます。  `#Region` ディレクティブを使用すると、[!INCLUDE[vsprvs](../../../csharp/includes/vsprvs-md.md)] コード エディターを使用するときに展開したり折りたたんだりできるコードのブロックを指定できます。  コードを選択して非表示にすると、管理しやすく読みやすいファイルになります。  詳細については、「[アウトライン](/visual-studio/ide/outlining)」を参照してください。  
+---
+# <a name="how-to-collapse-and-hide-sections-of-code-visual-basic"></a>方法: コードのセクションを折りたたんで非表示にする (Visual Basic)
+`#Region`ディレクティブを使用すると、内のコードのセクションでは非表示にしたり、折りたたんだり[!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]ファイルです。 `#Region`ディレクティブを使用する場合は、したり折りたたんだり展開可能なコードのブロックを指定できます、[!INCLUDE[vsprvs](../../../csharp/includes/vsprvs_md.md)]コード エディターです。 選択的にコードを非表示にするようにできるため、ファイルは管理性と、読みやすくします。 詳細については、「[アウトライン](https://docs.microsoft.com/visualstudio/ide/outlining)」を参照してください。  
   
- `#Region` ディレクティブは、`#If...#End If` などのコード ブロック セマンティクスをサポートします。  これらは、あるブロックで始まって他のブロックで終わることはできません。始まりと終わりが同じブロック内にあることが必要です。  `#Region` ディレクティブは関数内ではサポートされません。  
+ `#Region`ディレクティブのサポート コード ブロックのセマンティクス`#If...#End If`します。 つまり、1 つのブロックの開始し、は別の終了ことはできません。開始と終了は、同じブロックにする必要があります。 `#Region`ディレクティブは、関数内ではサポートされていません。  
   
-### コードのセクションを折りたたんで非表示にするには  
+### <a name="to-collapse-and-hide-a-section-of-code"></a>折りたたむし、コードのセクションを非表示にするには  
   
--   次の例のように、コードのセクションを `#Region` ステートメントと `#End Region` ステートメントの間に配置します。  
+-   間でコードのセクションに配置、`#Region`と`#End Region`ステートメントの例を次に示します。  
   
-     [!code-vb[VbVbalrConditionalComp#6](../../../visual-basic/language-reference/directives/codesnippet/VisualBasic/how-to-collapse-and-hide-sections-of-code_1.vb)]  
+     [!code-vb[VbVbalrConditionalComp&6;](../../../visual-basic/language-reference/directives/codesnippet/VisualBasic/how-to-collapse-and-hide-sections-of-code_1.vb)]  
   
-     1 つのコード ファイルで複数の `#Region` ブロックを使用できます。したがって、プロシージャやクラスのブロックを各ユーザーが独自に定義でき、それらを折りたたむことができます。  `#Region` ブロックを他の `#Region` ブロック内に入れ子にすることもできます。  
+     `#Region`ブロックは、コード ファイルで複数回使用できる。 したがって、ユーザーが手順およびさらに、折りたたまれていることができます、クラスの独自のブロックを定義できます。 `#Region`その他のブロックをネストすることも`#Region`ブロックします。  
   
     > [!NOTE]
-    >  非表示にしたコードもコンパイルの対象となり、`#If...#End If` ステートメントにも影響しません。  
+    >  コンパイルされないは防止されず、使用しないコードを非表示`#If...#End If`ステートメントです。  
   
-## 参照  
- [Conditional Compilation](../../../visual-basic/programming-guide/program-structure/conditional-compilation.md)   
- [\#Region Directive](../../../visual-basic/language-reference/directives/region-directive.md)   
- [\#If...Then...\#Else Directives](../../../visual-basic/language-reference/directives/if-then-else-directives.md)   
- [アウトライン](/visual-studio/ide/outlining)
+## <a name="see-also"></a>関連項目  
+ [条件付きコンパイル](../../../visual-basic/programming-guide/program-structure/conditional-compilation.md)   
+ [#Region ディレクティブ](../../../visual-basic/language-reference/directives/region-directive.md)   
+ [#If.#Else ディレクティブ。](../../../visual-basic/language-reference/directives/if-then-else-directives.md)   
+ [アウトライン](https://docs.microsoft.com/visualstudio/ide/outlining)

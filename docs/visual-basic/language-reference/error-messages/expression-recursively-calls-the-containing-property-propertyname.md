@@ -1,37 +1,53 @@
 ---
-title: "Expression recursively calls the containing property &#39;&lt;propertyname&gt;&#39; | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vbc42026"
-  - "BC42026"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "BC42026"
+title: "式を再帰的には、包含するプロパティを呼び出して &quot;&lt;propertyname&gt;&quot; |Microsoft ドキュメント"
+ms.date: 2015-07-20
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-visual-basic
+ms.topic: article
+f1_keywords:
+- vbc42026
+- BC42026
+dev_langs:
+- VB
+helpviewer_keywords:
+- BC42026
 ms.assetid: 4fde9db6-3bf3-48dc-8e05-981bf08969da
 caps.latest.revision: 10
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 10
----
-# Expression recursively calls the containing property &#39;&lt;propertyname&gt;&#39;
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
+author: stevehoag
+ms.author: shoag
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: ca20bf1a539f2727a80f8e781c1e9ebc5a4a253d
+ms.lasthandoff: 03/13/2017
 
-プロパティ定義の `Set` プロシージャ内のステートメントが、そのプロパティの名前に値を格納しています。  
+---
+# <a name="expression-recursively-calls-the-containing-property-39ltpropertynamegt39"></a>式を再帰的には、包含するプロパティを呼び出して '&lt;propertyname&gt;'
+内のステートメント、`Set`プロパティ定義のプロシージャは、プロパティの名前に、値を格納します。  
   
- プロパティの値を格納するには、プロパティのコンテナーに `Private` 変数を定義し、それを `Get` プロシージャおよび `Set` プロシージャ内で使用する方法をお勧めします。  この場合は `Set` プロシージャが、この `Private` 変数に受け取った値を格納します。  
+ プロパティの値を保持するための推奨アプローチを定義するのには、`Private`プロパティのコンテナーに変数が両方でそれを使用して、`Get`と`Set`プロシージャです。 `Set`プロシージャは、この受信した値を格納し、必要があります`Private`変数です。  
   
- `Get` プロシージャは `Function` プロシージャと同様の動作をするため、プロパティ名に値を代入したり、`End Get` ステートメントに達したときに制御を戻したりすることが可能です。  しかし、推奨されるのは、[Return Statement](../../../visual-basic/language-reference/statements/return-statement.md) にこの値のための `Private` 変数を定義するという方法です。  
+ `Get`のようにプロシージャの動作、`Function`プロシージャ、プロパティ名に値を代入し、発生して、制御を返すように、`End Get`ステートメントです。 推奨される方法に含める、`Private`変数の値として、 [Return ステートメント](../../../visual-basic/language-reference/statements/return-statement.md)します。  
   
- `Set` プロシージャは `Sub` プロシージャと同様の動作をし、値を返しません。  したがって、プロシージャ名またはプロパティ名は、`Set` プロシージャ内では特別な意味を持たず、この名前に値を格納することはできません。  
+ `Set`のようにプロシージャの動作、`Sub`値を返さないプロシージャです。 したがって、プロシージャまたはプロパティの名前、特別な意味を持ちません内で、`Set`しする手順は、そこに値を格納ことはできません。  
   
- 次の例は、エラーを引き起こす可能性のある方法を示しています。その後に続けて、推奨される方法を示します。  
+ 次の例は、推奨されるアプローチを続けて、このエラーを引き起こす可能性のある方法を示しています。  
   
 ```  
 Public Class illustrateProperties  
@@ -63,15 +79,15 @@ Public Class illustrateProperties
 End Class  
 ```  
   
- 既定では、このメッセージは警告です。  警告を表示しない方法や、警告をエラーとして扱う方法の詳細については、[Visual Basic での警告の構成](/visual-studio/ide/configuring-warnings-in-visual-basic) を参照してください。  
+ 既定では、このメッセージは警告です。 警告を非表示や警告をエラーとして扱う方法の詳細については、次を参照してください[Visual Basic での警告の構成](https://docs.microsoft.com/visualstudio/ide/configuring-warnings-in-visual-basic)します。  
   
- **Error ID:** BC42026  
+ **エラー ID:** BC42026  
   
-### このエラーを解決するには  
+## <a name="to-correct-this-error"></a>このエラーを解決するには  
   
--   上記の例で示した推奨される方法を使用するようにプロパティ定義を変更します。  
+-   前の例に示すように推奨されるアプローチを使用するプロパティの定義を書き直してください。  
   
-## 参照  
- [Property プロシージャ](../../../visual-basic/programming-guide/language-features/procedures/property-procedures.md)   
- [Property Statement](../../../visual-basic/language-reference/statements/property-statement.md)   
- [Set Statement](../../../visual-basic/language-reference/statements/set-statement.md)
+## <a name="see-also"></a>関連項目  
+ [プロパティ プロシージャ](../../../visual-basic/programming-guide/language-features/procedures/property-procedures.md)   
+ [Property ステートメント](../../../visual-basic/language-reference/statements/property-statement.md)   
+ [Set ステートメント](../../../visual-basic/language-reference/statements/set-statement.md)

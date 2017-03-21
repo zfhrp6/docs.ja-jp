@@ -1,106 +1,122 @@
 ---
-title: "Comparison Operators in Visual Basic | Microsoft Docs"
-ms.custom: ""
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "comparison operators, comparing strings"
-  - "comparison operators, comparing objects"
-  - "strings [Visual Basic], comparing"
-  - "comparison operators"
-  - "string comparison [Visual Basic], operators"
-  - "objects [Visual Basic], comparing"
-  - "numbers, comparing"
-  - "Visual Basic code, operators"
-  - "string comparison [Visual Basic]"
-  - "numeric values, comparing"
-  - "comparison operators, comparing numeric values"
-  - "operators [Visual Basic], comparison"
+title: "Visual Basic における比較演算子 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 2015-07-20
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-visual-basic
+ms.topic: article
+dev_langs:
+- VB
+helpviewer_keywords:
+- comparison operators, comparing strings
+- comparison operators, comparing objects
+- strings [Visual Basic], comparing
+- comparison operators
+- string comparison [Visual Basic], operators
+- objects [Visual Basic], comparing
+- numbers, comparing
+- Visual Basic code, operators
+- string comparison [Visual Basic]
+- numeric values, comparing
+- comparison operators, comparing numeric values
+- operators [Visual Basic], comparison
 ms.assetid: 0b570339-5407-474f-8421-e183a8b303ee
 caps.latest.revision: 13
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 13
----
-# Comparison Operators in Visual Basic
-[!INCLUDE[vs2017banner](../../../../visual-basic/developing-apps/includes/vs2017banner.md)]
+author: stevehoag
+ms.author: shoag
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: 6185d1676f2cd160c9c3e855cce4a6d2bbe2ffb4
+ms.lasthandoff: 03/13/2017
 
-比較演算子は 2 つの式を比較し、それらの値の関係を表す `Boolean` 値を返します。  比較演算子には、数値を比較する演算子、文字列を比較する演算子、およびオブジェクトを比較する演算子があります。  ここでは、これら 3 種類の演算子についてそれぞれ説明します。  
+---
+# <a name="comparison-operators-in-visual-basic"></a>Comparison Operators in Visual Basic
+比較演算子は&2; つの式を比較し、`Boolean`これらの値のリレーションシップを表す値。 数値、文字列を比較するための演算子、およびオブジェクトを比較する演算子を比較するための演算子があります。 ここでは、すべての&3; 種類の演算子を説明します。  
   
-## 数値の比較  
- [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] では、6 つの数値比較演算子を使って数値を比較します。  どの演算子も、数値に評価される 2 つの式をオペランドとして受け取ります。  次の表に、これらの演算子とそれぞれの使用例を示します。  
+## <a name="comparing-numeric-values"></a>数値の比較  
+ [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]6 つの数値の比較演算子を使用して、数値を比較します。 各演算子は、オペランドとして数値に評価される&2; つの式を取得します。 次の表は、演算子の一覧し、それぞれの例を示しています。  
   
-|\[演算子\]|テスト条件|例|  
-|-------------|-----------|-------|  
-|`=` \(等しい\)|1 番目の式の値と 2 番目の式の値が等しいかどうか。|`23`   `=`   `33    ' False`<br /><br /> `23`   `=`   `23    ' True`<br /><br /> `23`   `=`   `12    ' False`|  
-|`<>` \(等しくない\)|1 番目の式の値と 2 番目の式の値が等しくないかどうか。|`23`   `<>`   `33    ' True`<br /><br /> `23`   `<>`   `23    ' False`<br /><br /> `23`   `<>`   `12    ' True`|  
-|`<` \(より小さい\)|1 番目の式の値が 2 番目の式の値よりも小さいかどうか。|`23`   `<`   `33    ' True`<br /><br /> `23`   `<`   `23    ' False`<br /><br /> `23`   `<`   `12    ' False`|  
-|`>` \(より大きい\)|1 番目の式の値が 2 番目の式の値よりも大きいかどうか。|`23`   `>`   `33    ' False`<br /><br /> `23`   `>`   `23    ' False`<br /><br /> `23`   `>`   `12    ' True`|  
-|`<=` \(以下\)|1 番目の式の値が 2 番目の式の値よりも小さい、または等しいかどうか。|`23`   `<=`   `33    ' True`<br /><br /> `23`   `<=`   `23    ' True`<br /><br /> `23`   `<=`   `12    ' False`|  
-|`>=` \(以上\)|1 番目の式の値が 2 番目の式の値よりも大きい、または等しいかどうか。|`23`   `>=`   `33    ' False`<br /><br /> `23`   `>=`   `23    ' True`<br /><br /> `23`   `>=`   `12    ' True`|  
+|演算子|テスト条件|例|  
+|--------------|----------------------|--------------|  
+|`=`(等値)|最初の式と等しい値を&2; 番目の値とは|`23`   `=`   `33    ' False`<br /><br /> `23`   `=`   `23    ' True`<br /><br /> `23`   `=`   `12    ' False`|  
+|`<>`(非等値)|値ではない最初の式の&2; つ目の値と等しいか。|`23`   `<>`   `33    ' True`<br /><br /> `23`   `<>`   `23    ' False`<br /><br /> `23`   `<>`   `12    ' True`|  
+|`<`(より小さい)|最初の式の値未満、2 番目の値とは|`23`   `<`   `33    ' True`<br /><br /> `23`   `<`   `23    ' False`<br /><br /> `23`   `<`   `12    ' False`|  
+|`>`(より大きい)|最初の式の値は、2 番目の値よりも大きいですか|`23`   `>`   `33    ' False`<br /><br /> `23`   `>`   `23    ' False`<br /><br /> `23`   `>`   `12    ' True`|  
+|`<=`(より小さいまたは等しい)|最初の式の値を&2; 番目の値以下ですか。|`23`   `<=`   `33    ' True`<br /><br /> `23`   `<=`   `23    ' True`<br /><br /> `23`   `<=`   `12    ' False`|  
+|`>=`(より大きいまたは等しい)|最初の式の値は、2 番目の値以下でしょうか。|`23`   `>=`   `33    ' False`<br /><br /> `23`   `>=`   `23    ' True`<br /><br /> `23`   `>=`   `12    ' True`|  
   
-## 文字列の比較  
- [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] では、数値比較演算子の他に [Like Operator](../../../../visual-basic/language-reference/operators/like-operator.md)を使用して文字列を比較します。  `Like` を使うと、パターンが指定できます。  このパターンと文字列とを比較し、一致した場合に結果が `True` になります。  それ以外の場合、結果は `False` になります。  数値演算子を使うと、次の例のように、並べ替え順序に基づいて文字列型 \(`String`\) の値を比較できます。  
+## <a name="comparing-strings"></a>文字列の比較  
+ [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]使用して文字列を比較し、 [Like 演算子](../../../../visual-basic/language-reference/operators/like-operator.md)だけでなく、数値比較演算子です。 `Like`演算子では、パターンを指定することができます。 文字列は、比較、パターンと一致した場合、結果は`True`です。 それ以外の場合、結果は`False`です。 数値演算子で比較を使用する`String`値は次の例のように、並べ替え順序に基づいています。  
   
  `"73" < "9"`  
   
  `' The result of the preceding comparison is True.`  
   
- この例では、1 番目の文字列の最初の文字の並べ替え順序が 2 番目の文字列の最初の文字より前であるため、結果は `True` になります。  最初の文字が同じ文字であった場合は、両方の文字列の次の文字が比較されます。  また、次の例に示すように、等号演算子を使って文字列が等しいかどうかを調べることもできます。  
+ 前の例では、結果は`True`最初の文字列の最初の文字が&2; 番目の文字列の最初の文字の前になるためです。 最初の文字と等しい場合は、比較を両方の文字列では、次の文字を続行しにします。 次の例のように、等値演算子を使用して文字列の等価性をテストすることもできます。  
   
  `"734" = "734"`  
   
  `' The result of the preceding comparison is True.`  
   
- 一方の文字列全体がもう一方の文字列の先頭部分と一致している場合 \("aa" と "aaa" など\) は、長い方の文字列が短い方の文字列よりも大きいと見なされます。  次に例を示します。  
+ 1 つの文字列が"aa"や"aaa"など、別のプレフィックスである場合より長い文字列は短いほうの文字列よりも大きくすると見なされます。 次に例を示します。  
   
  `"aaa" > "aa"`  
   
  `' The result of the preceding comparison is True.`  
   
- 並べ替え順序は、`Option Compare` の設定により、バイナリ モードの比較またはテキスト モードの比較が基になります。  詳細については、「[Option Compare Statement](../../../../visual-basic/language-reference/statements/option-compare-statement.md)」を参照してください。  
+ 並べ替え順序が、バイナリの比較またはテキストの比較の設定に応じてに基づいて`Option Compare`します。 詳細については、次を参照してください。 [Option Compare ステートメント](../../../../visual-basic/language-reference/statements/option-compare-statement.md)します。  
   
-## オブジェクトの比較  
- [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] では、2 つのオブジェクト参照変数を[Is Operator](../../../../visual-basic/language-reference/operators/is-operator.md)と [IsNot Operator](../../../../visual-basic/language-reference/operators/isnot-operator.md)を使って比較します。  この 2 つの演算子のどちらを使っても、2 つの参照変数が同じオブジェクトのインスタンスを参照しているかどうかを調べることができます。  次に例を示します。  
+## <a name="comparing-objects"></a>オブジェクトを比較します。  
+ [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]2 つの比較はオブジェクト参照変数と、 [Is 演算子](../../../../visual-basic/language-reference/operators/is-operator.md)と[IsNot 演算子](../../../../visual-basic/language-reference/operators/isnot-operator.md)します。 これらの演算子のいずれかを使用して、2 つの参照変数が同じオブジェクト インスタンスを参照している場合を判断します。 次に例を示します。  
   
- [!code-vb[VbVbalrOperators#65](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/comparison-operators_1.vb)]  
+ [!code-vb[VbVbalrOperators #&65;](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/comparison-operators_1.vb)]  
   
- この例では、両方の変数が同じインスタンスを参照しているので、`x Is y` は `True` に評価されます。  この結果を次の例と比べてみてください。  
+ 前の例で`x Is y`に評価`True`、両方の変数が同じインスタンスを参照してください。 次の例では、この結果を比較してください。  
   
- [!code-vb[VbVbalrOperators#66](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/comparison-operators_2.vb)]  
+ [!code-vb[VbVbalrOperators #&66;](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/comparison-operators_2.vb)]  
   
- この例では、`x Is y` は `False` になります。これは、変数は同じ型のオブジェクトを参照していますが、参照しているインスタンスが異なるためです。  
+ 前の例で`x Is y`に評価`False`、その種類の異なるインスタンス変数を同じ型のオブジェクト、参照が表しているためです。  
   
- 2 つのオブジェクトが同じインスタンスをポイントしていないことを調べる場合は、`IsNot` 演算子を使うと `Not` と `Is` を合わせた不恰好な文法を使わずに済みます。  次に例を示します。  
+ 同じインスタンスを指していない&2; つのオブジェクトをテストするときに、`IsNot`演算子の文法的に不器用な組み合わせを回避できます。`Not`と`Is`です。 次に例を示します。  
   
- [!code-vb[VbVbalrOperators#67](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/comparison-operators_3.vb)]  
+ [!code-vb[VbVbalrOperators #&67;](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/comparison-operators_3.vb)]  
   
- この例の `If a IsNot b` は、`If Not a Is b` と同じ意味になります。  
+ 前の例で`If a IsNot b`は`If Not a Is b`です。  
   
-### オブジェクト型の比較  
- オブジェクトが特定の型かどうかを調べるには、`TypeOf`...`Is` の式を使います。  構文は次のとおりです。  
+### <a name="comparing-object-type"></a>オブジェクトの種類を比較します。  
+ オブジェクトが特定の型にするかどうかをテストする、 `TypeOf`.`Is`式です。 構文は次のとおりです。  
   
  `TypeOf <objectexpression> Is <typename>`  
   
- `typename` にインターフェイスの型を指定すると、オブジェクトがそのインターフェイス型を実装している場合に、`TypeOf`...`Is` の式が `True` を返します。  `typename` にクラス型を指定すると、オブジェクトがそのクラスのインスタンスであるか、またはそのクラスの派生クラスのインスタンスである場合に `True` が返されます。  次に例を示します。  
+ `typename`インターフェイスの種類を指定し、 `TypeOf`.`Is`式を返します。`True`オブジェクトは、インターフェイス型を実装している場合。 `typename` 、式から返されるクラス型が`True`場合は、オブジェクトは、指定したクラスのまたは指定したクラスから派生したクラスのインスタンス。 次に例を示します。  
   
- [!code-vb[VbVbalrOperators#68](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/comparison-operators_4.vb)]  
+ [!code-vb[VbVbalrOperators #&68;](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/comparison-operators_4.vb)]  
   
- この例では、`x` の型が `Button` であり、`Control` から継承しているので、`TypeOf x Is Control` の式は `True` になります。  
+ 前の例で、`TypeOf x Is Control`式に評価される`True`ための型`x`は`Button`から継承される`Control`します。  
   
- 詳細については、「[TypeOf Operator](../../../../visual-basic/language-reference/operators/typeof-operator.md)」を参照してください。  
+ 詳細については、次を参照してください。 [TypeOf 演算子](../../../../visual-basic/language-reference/operators/typeof-operator.md)します。  
   
-## 参照  
- [Value Comparisons](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/value-comparisons.md)   
- [Comparison Operators](../../../../visual-basic/language-reference/operators/comparison-operators.md)   
- [Operators](../../../../visual-basic/language-reference/operators/index.md)   
- [Arithmetic Operators in Visual Basic](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/arithmetic-operators.md)   
- [Concatenation Operators in Visual Basic](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/concatenation-operators.md)   
- [Logical and Bitwise Operators in Visual Basic](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/logical-and-bitwise-operators.md)
+## <a name="see-also"></a>関連項目  
+ [値の比較](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/value-comparisons.md)   
+ [比較演算子](../../../../visual-basic/language-reference/operators/comparison-operators.md)   
+ [演算子](../../../../visual-basic/language-reference/operators/index.md)   
+ [Visual Basic における算術演算子](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/arithmetic-operators.md)   
+ [Visual Basic の連結演算子](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/concatenation-operators.md)   
+ [Visual Basic での論理/ビット処理演算子](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/logical-and-bitwise-operators.md)

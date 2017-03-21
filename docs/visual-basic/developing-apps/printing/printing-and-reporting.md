@@ -1,42 +1,58 @@
 ---
-title: "Printing and Reporting (Visual Basic) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
+title: "印刷とレポート (Visual Basic) |Microsoft ドキュメント"
+ms.date: 2015-07-20
+ms.prod: .net
+ms.suite: 
+ms.technology:
+- devlang-visual-basic
+ms.topic: article
+dev_langs:
+- VB
 ms.assetid: 92997b65-0279-4889-8db7-32cb6708be9c
 caps.latest.revision: 6
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 6
----
-# Printing and Reporting (Visual Basic)
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
+author: stevehoag
+ms.author: shoag
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: e4c522f279c097d92d3fe0ffa05dc56c705f50ca
+ms.lasthandoff: 03/13/2017
 
-[!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] には、印刷とレポートのためのいくつかのオプションが用意されています。  以下のトピックでは、印刷とレポートに関連するドキュメントの概要とリンクを示します。  
+---
+# <a name="printing-and-reporting-visual-basic"></a>印刷とレポート (Visual Basic)
+[!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]印刷とレポートのいくつかのオプションが用意されています。 次のトピックでは、概要と印刷とレポートに関連するドキュメントへのリンクを提供します。  
   
-## このセクションの内容  
- [PrintForm Component](../../../visual-basic/developing-apps/printing/printform-component.md)  
- フォームのコンテンツを印刷できるようにする `PrintForm` コンポーネントの概要について説明します。  
+## <a name="in-this-section"></a>このセクションの内容  
+ [PrintForm コンポーネント](../../../visual-basic/developing-apps/printing/printform-component.md)  
+ 概要、`PrintForm`フォームの内容を印刷できるようにするコンポーネントです。  
   
  [方法: スクロール可能フォームを印刷する](../../../visual-basic/developing-apps/printing/how-to-print-a-scrollable-form.md)  
- `PrintForm` コンポーネントを使用してスクロール可能なフォームを印刷する方法について説明します。  
+ 使用してスクロール可能フォームを印刷する方法について説明します`PrintForm`コンポーネントです。  
   
  [方法: フォームのクライアント領域と非クライアント領域を印刷する](../../../visual-basic/developing-apps/printing/how-to-print-client-and-non-client-areas-of-a-form.md)  
- `PrintForm` コンポーネントを使用してフォームのクライアント領域と非クライアント領域の両方を印刷する方法について説明します。  
+ 使用して、フォームのクライアントと非クライアントの両方の領域を印刷する方法について説明します`PrintForm`コンポーネントです。  
   
  [方法: フォームのクライアント領域を印刷する](../../../visual-basic/developing-apps/printing/how-to-print-the-client-area-of-a-form.md)  
- `PrintForm` コンポーネントを使用してフォームのクライアント領域を印刷する方法について説明します。  
+ 使用して、フォームのクライアント領域を印刷する方法について説明します`PrintForm`コンポーネントです。  
   
  [方法: PrintForm コンポーネントを使用してフォームを印刷する](../../../visual-basic/developing-apps/printing/how-to-print-a-form-by-using-the-printform-component.md)  
- `PrintForm` コンポーネントを使用して基本的なフォームを印刷する方法について説明します。  
+ 使用して基本的なフォームを印刷する方法について説明します`PrintForm`コンポーネントです。  
   
- [Deploying Applications That Reference the PrintForm Component](../../../visual-basic/developing-apps/printing/deploying-applications-that-reference-the-printform-component.md)  
- アプリケーションと共に `PrintForm` コンポーネントを配置する方法について説明します。  
+ [PrintForm コンポーネントを参照するアプリケーションの配置](../../../visual-basic/developing-apps/printing/deploying-applications-that-reference-the-printform-component.md)  
+ 展開方法について説明します`PrintForm`アプリケーションと一緒にコンポーネントです。  
   
- [Adding Printable Reports to Visual Studio Applications](../../../visual-basic/developing-apps/printing/adding-printable-reports-to-visual-studio-applications.md)  
- 使用できるレポートの書き込みオプションについて説明します。
+ [Visual Studio アプリケーションへの印刷可能なレポートの追加](../../../visual-basic/developing-apps/printing/adding-printable-reports-to-visual-studio-applications.md)  
+ レポートを作成するために使用できるオプションについて説明します。

@@ -1,75 +1,91 @@
 ---
-title: "How to: Call an Operator Procedure (Visual Basic) | Microsoft Docs"
-ms.custom: ""
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "operator procedures, calling"
-  - "procedures, operator"
-  - "procedure calls, operator overloading"
-  - "syntax, Operator procedures"
-  - "operators [Visual Basic], overloading"
-  - "return values, Operator procedures"
-  - "overloaded operators, calling"
-  - "operator overloading"
+title: "方法: 演算子プロシージャ (Visual Basic) を呼び出す |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 2015-07-20
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-visual-basic
+ms.topic: article
+dev_langs:
+- VB
+helpviewer_keywords:
+- operator procedures, calling
+- procedures, operator
+- procedure calls, operator overloading
+- syntax, Operator procedures
+- operators [Visual Basic], overloading
+- return values, Operator procedures
+- overloaded operators, calling
+- operator overloading
 ms.assetid: 0dce42cc-f0b0-4c14-9f62-018b21f33497
 caps.latest.revision: 16
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 16
----
-# How to: Call an Operator Procedure (Visual Basic)
-[!INCLUDE[vs2017banner](../../../../visual-basic/developing-apps/includes/vs2017banner.md)]
+author: stevehoag
+ms.author: shoag
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: 2403e7a8270c17a8db5417cd8394fd47c373d493
+ms.lasthandoff: 03/13/2017
 
-演算子プロシージャを呼び出すには、式の中で演算子記号を使用します。  変換演算子のプロシージャの場合は、[CType 関数](../../../../visual-basic/language-reference/functions/ctype-function.md)を呼び出して、あるデータ型の値を別のデータ型に変換します。  
+---
+# <a name="how-to-call-an-operator-procedure-visual-basic"></a>方法: 演算子プロシージャを呼び出す (Visual Basic)
+演算子プロシージャを呼び出すには、式で演算子のシンボルを使用します。 場合、変換演算子を呼び出す、 [CType 関数](../../../../visual-basic/language-reference/functions/ctype-function.md)に値を別の&1; つのデータ型に変換します。  
   
- 演算子プロシージャを明示的に呼び出すことはありません。  演算子を通常どおりに使用するのと同じ方法で、演算子や `CType` 関数を代入ステートメントまたは式に定義すると、  [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] によって演算子プロシージャが呼び出されます。  
+ 演算子プロシージャを明示的に呼び出す必要はありません。 同様に、演算子を使用する、または`CType`関数、代入ステートメント、または式、演算子を使用すると、通常は同じようにします。 [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]演算子プロシージャの呼び出しを使用します。  
   
- クラスまたは構造体で演算子を定義することを、演算子を*オーバーロード*するといいます。  
+ クラスまたは構造体で、演算子を定義することと呼ばれる*オーバー ロード*演算子。  
   
-### 演算子プロシージャを呼び出すには  
+### <a name="to-call-an-operator-procedure"></a>演算子プロシージャを呼び出す  
   
-1.  通常の方法で、演算子記号を式の中に記述します。  
+1.  通常の方法で、式の中で演算子のシンボルを使用します。  
   
-2.  演算子のオペランドのデータ型が適切であること、またオペランドの順序が正しいことを確認します。  
+2.  オペランドのデータ型が適切な演算子の場合と、正しい順序であることを確認します。  
   
-3.  演算子によって、式の値が適切に処理されます。  
+3.  演算子は、期待どおりに、式の値に作用します。  
   
-### 変換演算子プロシージャを呼び出す  
+### <a name="to-call-a-conversion-operator-procedure"></a>変換演算子プロシージャを呼び出す  
   
-1.  式の中で `CType` を使用します。  
+1.  使用`CType`式の内部です。  
   
-2.  変換処理のオペランドのデータ型が適切であること、またオペランドの順序が正しいことを確認します。  
+2.  オペランドのデータ型が適切な変換して、正しい順序であることを確認します。  
   
-3.  `CType` が変換演算子プロシージャを呼び出し、変換された値を返します。  
+3.  `CType`変換演算子プロシージャの呼び出しを変換後の値を返します。  
   
-## 使用例  
- 次の例は、2 つの <xref:System.TimeSpan> 構造体を作成し、この 2 つを足し合わせて、結果を 3 つ目の <xref:System.TimeSpan> 構造体に格納します。  <xref:System.TimeSpan> 構造体には演算子プロシージャが定義され、複数の標準演算子をオーバーロードしています。  
+## <a name="example"></a>例  
+ 次の例では、2 つ作成されます<xref:System.TimeSpan>構造体、それらを加算、および&3; つ目の結果を格納<xref:System.TimeSpan>構造体</xref:System.TimeSpan></xref:System.TimeSpan>。 <xref:System.TimeSpan>構造体がいくつかの標準的な演算子をオーバー ロードする演算子プロシージャを定義します</xref:System.TimeSpan>。  
   
- [!code-vb[VbVbcnProcedures#29](./codesnippet/VisualBasic/how-to-call-an-operator-procedure_1.vb)]  
+ [!code-vb[VbVbcnProcedures #&29;](./codesnippet/VisualBasic/how-to-call-an-operator-procedure_1.vb)]  
   
- 上の例では <xref:System.TimeSpan> で標準の `+` 演算子がオーバーロードされているため、`combinedSpan` の値を計算するときに演算子プロシージャが呼び出されます。  
+ <xref:System.TimeSpan>、標準のオーバー ロード`+`演算子で、前の例では演算子プロシージャの値を計算するとき`combinedSpan`</xref:System.TimeSpan>。  
   
- 変換演算子プロシージャを呼び出す例については、「[How to: Use a Class that Defines Operators](../../../../visual-basic/programming-guide/language-features/procedures/how-to-use-a-class-that-defines-operators.md)」を参照してください。  
+ メッセージ交換演算子プロシージャの呼び出しの例は、次を参照してください。[方法: クラスを定義演算子を使用して](./how-to-use-a-class-that-defines-operators.md)します。  
   
-## コードのコンパイル  
- 使用しているクラスまたは構造体が、必要な演算子を定義していることを確認してください。  
+## <a name="compiling-the-code"></a>コードのコンパイル  
+ 使用する演算子を定義、クラスまたは構造体を使用していることを確認します。  
   
-## 参照  
- [Operator Procedures](../../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md)   
- [How to: Define an Operator](../../../../visual-basic/programming-guide/language-features/procedures/how-to-define-an-operator.md)   
- [How to: Define a Conversion Operator](../../../../visual-basic/programming-guide/language-features/procedures/how-to-define-a-conversion-operator.md)   
- [Operator Statement](../../../../visual-basic/language-reference/statements/operator-statement.md)   
- [Widening](../../../../visual-basic/language-reference/modifiers/widening.md)   
- [Narrowing](../../../../visual-basic/language-reference/modifiers/narrowing.md)   
- [Structure Statement](../../../../visual-basic/language-reference/statements/structure-statement.md)   
- [How to: Declare a Structure](../../../../visual-basic/programming-guide/language-features/data-types/how-to-declare-a-structure.md)   
- [Implicit and Explicit Conversions](../../../../visual-basic/programming-guide/language-features/data-types/implicit-and-explicit-conversions.md)   
- [Widening and Narrowing Conversions](../../../../visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions.md)
+## <a name="see-also"></a>関連項目  
+ [演算子プロシージャ](./operator-procedures.md)   
+ [方法: 演算子を定義](./how-to-define-an-operator.md)   
+ [方法: 変換演算子を定義します。](./how-to-define-a-conversion-operator.md)   
+ [Operator ステートメント](../../../../visual-basic/language-reference/statements/operator-statement.md)   
+ [拡大変換](../../../../visual-basic/language-reference/modifiers/widening.md)   
+ [縮小変換](../../../../visual-basic/language-reference/modifiers/narrowing.md)   
+ [Structure ステートメント](../../../../visual-basic/language-reference/statements/structure-statement.md)   
+ [方法: 構造体を宣言](../../../../visual-basic/programming-guide/language-features/data-types/how-to-declare-a-structure.md)   
+ [明示的および暗黙的な変換](../../../../visual-basic/programming-guide/language-features/data-types/implicit-and-explicit-conversions.md)   
+ [拡大変換と縮小変換](../../../../visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions.md)

@@ -1,31 +1,47 @@
 ---
-title: "/debug (Visual Basic) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "debug compiler switches"
-  - "/debug compiler option [Visual Basic]"
-  - "-debug compiler option [Visual Basic]"
-  - "debug compiler option [Visual Basic]"
+title: "/debug (Visual Basic) |Microsoft ドキュメント"
+ms.date: 2015-07-20
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-visual-basic
+ms.topic: article
+dev_langs:
+- VB
+helpviewer_keywords:
+- debug compiler switches
+- /debug compiler option [Visual Basic]
+- -debug compiler option [Visual Basic]
+- debug compiler option [Visual Basic]
 ms.assetid: c2b0bea5-1d5e-499f-9bd5-4f6c6b715ea2
 caps.latest.revision: 18
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 18
----
-# /debug (Visual Basic)
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
+author: stevehoag
+ms.author: shoag
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: 7384e69f066022e861a4277f418df3f4d094c3be
+ms.lasthandoff: 03/13/2017
 
-コンパイラでデバッグ情報を生成し、出力ファイルを作成します。  
+---
+# <a name="debug-visual-basic"></a>/debug (Visual Basic)
+コンパイラでデバッグ情報が生成され、出力ファイルに配置します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 /debug[+ | -]  
@@ -33,34 +49,32 @@ caps.handback.revision: 18
 /debug:[full | pdbonly]  
 ```  
   
-## 引数  
+## <a name="arguments"></a>引数  
   
-|||  
-|-|-|  
-|語句|定義|  
-|`+`  &#124; `-`|省略可能です。  `+` または `/debug` を指定すると、コンパイラによってデバッグ情報が生成され、.pdb ファイルにその情報が出力されます。  `-` を指定するのは、`/debug` を指定しないのと同じです。|  
-|`full`  &#124; `pdbonly`|省略可能です。  コンパイラによって生成されるデバッグ情報の種類を指定します。  `/debug:pdbonly` を指定しなかった場合、既定値は `full` となり、実行中のプログラムにデバッガーをアタッチできます。  `pdbonly` 引数を指定すると、プログラムがデバッガーで開始されたときにはソース コードをデバッグできますが、実行中のプログラムをデバッガーにアタッチしたときはアセンブリ言語のコードしか表示されません。|  
+|用語|定義|  
+|---|---|  
+|`+` &#124; `-`|省略可能です。 指定する`+`または`/debug`コンパイラがデバッグ情報が生成され、.pdb ファイルに配置します。 指定する`-`を指定しないと同じ効果を持ちます`/debug`します。|  
+|`full` &#124; `pdbonly`|省略可能です。 コンパイラによって生成されるデバッグ情報の種類を指定します。 指定しない場合`/debug:pdbonly`、既定値は`full`、実行中のプログラムにデバッガーをアタッチできます。 `pdbonly`引数では、ソース コードのデバッグ、デバッガーでプログラムを開始するが、実行中のプログラムが、デバッガーに接続されている場合にのみ、アセンブリ言語のコードが表示されます。|  
   
-## 解説  
- このオプションを使用してデバッグ ビルドを作成します。  `/debug`、`/debug+`、または `/debug:full` を指定しないと、プログラムの出力ファイルをデバッグできません。  
+## <a name="remarks"></a>コメント  
+ このオプションを使用すると、デバッグ ビルドを作成できます。 指定しない場合`/debug`、 `/debug+`、または`/debug:full`プログラムの出力ファイルをデバッグすることはできません。  
   
- 既定では、デバッグ情報は生成されません \(`/debug-`\)。  デバッグ情報を生成するには、`/debug` または `/debug+` を指定します。  
+ 既定では、デバッグ情報は生成されず (`/debug-`)。 デバッグ情報を出力する次のように指定します。`/debug`または`/debug+`です。  
   
- アプリケーションのデバッグ パフォーマンスを設定する方法については、「[イメージのデバッグの簡略化](../Topic/Making%20an%20Image%20Easier%20to%20Debug.md)」を参照してください。  
+ アプリケーションのデバッグ パフォーマンスを構成する方法については、「[イメージのデバッグの簡略化](http://msdn.microsoft.com/library/7d90ea7a-150f-4f97-98a7-f9c26541b9a3)」を参照してください。  
   
-||  
-|-|  
-|Visual Studio 統合開発環境で \/debug を設定するには|  
-|1.  **ソリューション エクスプローラー**でプロジェクトが選択されている状態で、**\[プロジェクト\]** メニューの **\[プロパティ\]** をクリックします。  詳細については、「[Introduction to the Project Designer](http://msdn.microsoft.com/ja-jp/898dd854-c98d-430c-ba1b-a913ce3c73d7)」を参照してください。<br />2.  **\[コンパイル\]** タブをクリックします。<br />3.  **\[詳細コンパイル オプション\]** をクリックします。<br />4.  **\[デバッグ情報を作成\]** ボックスの値を変更します。|  
+|統合開発環境 Visual Studio で/debug を設定するには|  
+|---|  
+|1.**ソリューション エクスプ ローラー**でプロジェクトを選択し、 **[プロジェクト]** メニューの **[プロパティ]**をクリックします。 詳細については、「[プロジェクト デザイナーの概要](http://msdn.microsoft.com/en-us/898dd854-c98d-430c-ba1b-a913ce3c73d7)」を参照してください。<br />2.**[コンパイル]** タブをクリックします。<br />3.クリックして**詳細コンパイル オプション**します。<br />4.値を変更、**デバッグ情報の生成**ボックス。|  
   
-## 使用例  
- デバッグ情報をファイル `App.exe` に出力する場合のコード例です。  
+## <a name="example"></a>例  
+ 次の例は、デバッグ情報を出力ファイルに入れ`App.exe`します。  
   
 ```  
 vbc /debug /out:app.exe test.vb  
 ```  
   
-## 参照  
- [Visual Basic Command\-Line Compiler](../../../visual-basic/reference/command-line-compiler/index.md)   
- [\/bugreport](../../../visual-basic/reference/command-line-compiler/bugreport.md)   
+## <a name="see-also"></a>関連項目  
+ [Visual Basic のコマンド ライン コンパイラ](../../../visual-basic/reference/command-line-compiler/index.md)   
+ [/bugreport](../../../visual-basic/reference/command-line-compiler/bugreport.md)   
  [コンパイル コマンド ラインのサンプル](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)

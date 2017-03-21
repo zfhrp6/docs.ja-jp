@@ -1,77 +1,93 @@
 ---
-title: "Yield ステートメント (Visual Basic) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vb.Yield"
-helpviewer_keywords: 
-  - "反復子, Yield ステートメント [Visual Basic:"
-  - "反復子 [Visual Basic]"
-  - "Yield ステートメント [Visual Basic]"
+title: "Yield ステートメント (Visual Basic) |Microsoft ドキュメント"
+ms.date: 2015-07-20
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-visual-basic
+ms.topic: article
+f1_keywords:
+- vb.Yield
+helpviewer_keywords:
+- iterators, Yield statement [Visual Basic]
+- iterators [Visual Basic]
+- Yield statement [Visual Basic]
 ms.assetid: f33126c5-d7c4-43e2-8e36-4ae3f0703d97
 caps.latest.revision: 22
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 22
----
-# Yield ステートメント (Visual Basic)
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
+author: stevehoag
+ms.author: shoag
+translation.priority.ht:
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- ru-ru
+- zh-cn
+- zh-tw
+translation.priority.mt:
+- cs-cz
+- pl-pl
+- pt-br
+- tr-tr
+translationtype: Machine Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: 393a9f4de3e801aed5932aef0e2b13d76b003965
+ms.lasthandoff: 03/13/2017
 
-`For Each...Next` のステートメントにコレクションの次の要素を送信します。  
+---
+# <a name="yield-statement-visual-basic"></a>Yield ステートメント (Visual Basic)
+コレクションの次の要素を送信、`For Each...Next`ステートメントです。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 Yield expression  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
   
-|||  
-|-|-|  
-|語句|定義|  
-|`expression`|必須です。  `Yield` のステートメントを含む `Get` の反復子関数またはアクセサーの型に暗黙に変換できる式。|  
+|用語|定義|  
+|---|---|  
+|`expression`|必須です。 反復子関数の型に暗黙的に変換される式または`Get`アクセサーを含む、`Yield`ステートメントです。|  
   
-## 解説  
- `Yield` のステートメントは、コレクションの 1 種類の要素を一度に返します。  `Yield` のステートメントは、コレクションに対するカスタムの反復を実行 `Get` のアクセサー含まれており、または反復子関数で。  
+## <a name="remarks"></a>コメント  
+ `Yield`ステートメントには、一度にコレクションの&1; つの要素が返されます。 `Yield`ステートメントが iterator 関数に含めまたは`Get`アクセサーは、コレクションに対するカスタム イテレーションを実行します。  
   
- [For Each...Next ステートメント](../../../visual-basic/language-reference/statements/for-each-next-statement.md) または LINQ クエリを使用して、反復子の関数を実行します。  `For Each` ループの各反復で反復子の関数を呼び出します。  `Yield` のステートメントが反復子関数に到達すると、`expression` は戻り、コードの現在の位置は保持されます。  実装はその位置から反復子関数が呼び出されると、に再起動されます。  
+ 使用して反復子関数を使用する、[ごとにしています.次のステートメントの](../../../visual-basic/language-reference/statements/for-each-next-statement.md)または LINQ クエリ。 各反復処理、`For Each`ループが反復子関数を呼び出します。 ときに、`Yield`ステートメントが iterator 関数に到達`expression`が返され、コードの現在位置が保持されます。 次回、Iterator 関数が呼び出されると、この位置から実行が再開されます。  
   
- 暗黙の変換は `Yield` のステートメントの `expression` の型から反復子の戻り値の型にする必要があります。  
+ 型から暗黙的な変換が存在する必要があります`expression`で、`Yield`ステートメント、反復子の戻り値の型。  
   
- イテレーションの末尾に `Exit Function` または `Return` のステートメントを使用できます。  
+ 使用することができます、`Exit Function`または`Return`ステートメント、反復を終了します。  
   
- " `Get` の `Iterator` の関数またはアクセサーで使用されている場合にのみ" yield に予約語ではなく、特別な意味を持ちます。  
+ 「メリットをもたらす」予約語ではない、特別な意味で使用されている場合にのみ、`Iterator`関数または`Get`アクセサー。  
   
- 反復子の関数と `Get` のアクセサーの詳細については、[反復子](../Topic/Iterators%20\(C%23%20and%20Visual%20Basic\).md)を参照してください。  
+ 反復子関数の詳細については、`Get`アクセサーを参照してください[反復子](http://msdn.microsoft.com/library/f45331db-d595-46ec-9142-551d3d1eb1a7)します。  
   
-## 反復子の関数は、アクセサーを取得し、  
- `Get` の反復子関数またはアクセサーの申告は、次の条件を満たす必要があります:  
+## <a name="iterator-functions-and-get-accessors"></a>反復子関数と Get アクセサー  
+ 反復子関数の宣言または`Get`アクセサーは、次の要件を満たす必要があります。  
   
--   これは [&#91;反復子&#93;](../../../visual-basic/language-reference/modifiers/iterator.md) 修飾子を含める必要があります。  
+-   含めることは、[反復子](../../../visual-basic/language-reference/modifiers/iterator.md)修飾子です。  
   
--   戻り値の型は <xref:System.Collections.IEnumerable>、<xref:System.Collections.Generic.IEnumerable%601>、<xref:System.Collections.IEnumerator>、または <xref:System.Collections.Generic.IEnumerator%601>である必要があります。  
+-   戻り値の型である必要があります<xref:System.Collections.IEnumerable>、 <xref:System.Collections.Generic.IEnumerable%601>、 <xref:System.Collections.IEnumerator>、または<xref:System.Collections.Generic.IEnumerator%601>.</xref:System.Collections.Generic.IEnumerator%601> </xref:System.Collections.IEnumerator> </xref:System.Collections.Generic.IEnumerable%601> </xref:System.Collections.IEnumerable>  
   
--   これは `ByRef` のパラメーターを持つことはできません。  
+-   いずれかを持つできません`ByRef`パラメーター。  
   
- 反復子の関数は、イベント インスタンス コンストラクター、静的コンストラクター、またはデストラクターで静的含めることはできません。  
+ Iterator 関数は、イベント、コンス トラクター、静的コンス トラクターまたは静的のデストラクターで発生することはできません。  
   
- 反復子の関数は、匿名関数です。  詳細については、「[反復子](../Topic/Iterators%20\(C%23%20and%20Visual%20Basic\).md)」を参照してください。  
+ 反復子関数では、匿名関数を指定できます。 詳細については、「[反復子](http://msdn.microsoft.com/library/f45331db-d595-46ec-9142-551d3d1eb1a7)」をご覧ください。  
   
-## 例外処理  
- `Yield` のステートメントは [Try...Catch...Finally Statement](../../../visual-basic/language-reference/statements/try-catch-finally-statement.md)の `Try` ブロックの中にある場合もあります。  `Yield` のステートメントがある `Try` ブロックは `Catch` ブロックを持ち `Finally` のブロックを指定できます。  
+## <a name="exception-handling"></a>例外処理  
+ A`Yield`ステートメントは、内で使用できます、`Try`のブロック、[しようとしています.キャッチしてください.Finally ステートメント](../../../visual-basic/language-reference/statements/try-catch-finally-statement.md)します。 A`Try`がブロック、`Yield`ステートメントにはできます`Catch`ブロック、およびことができますが、`Finally`ブロックします。  
   
- `Yield` のステートメントは `Catch``Finally` ブロックまたはブロック内に置くことはできません。  
+ A`Yield`ステートメント内で使用できない、`Catch`ブロックまたは`Finally`ブロックします。  
   
- 反復子関数 \(外\) `For Each` の本体で例外をスローする場合、反復子関数の `Catch` ブロックは実行されませんが、反復子関数の `Finally` ブロックが実行されます。  反復子関数のブロック `Catch` は、反復子関数内で発生した例外のみをキャッチします。  
+ 場合、`For Each`本体 (iterator 関数) の外部で、例外がスロー、 `Catch` iterator 関数内のブロックは実行されませんが、`Finally`反復子関数でのブロックを実行します。 A`Catch`反復子関数の内側のブロックは、反復子関数内で発生する例外だけをキャッチします。  
   
-## 技術的な実装  
- 次のコードは、反復子関数から `IEnumerable (Of String)` を返し、をに `IEnumerable (Of String)`の要素に繰り返します。  
+## <a name="technical-implementation"></a>技術的な実装  
+ 次のコードを返します。、 `IEnumerable (Of String)` iterator 関数からの要素を反復処理し、`IEnumerable (Of String)`です。  
   
 ```vb  
 Dim elements As IEnumerable(Of String) = MyIteratorFunction()  
@@ -80,29 +96,29 @@ For Each element As String In elements
 Next  
 ```  
   
- `MyIteratorFunction` の呼び出しは関数の本体は実行されません。  代わり `elements` の呼び出しは、変数に `IEnumerable(Of String)` を返します。  
+ 呼び出し`MyIteratorFunction`関数の本体は実行されません。 この呼び出しでは、`IEnumerable(Of String)` が `elements` 変数に返されます。  
   
- `For Each` のループ反復で、<xref:System.Collections.IEnumerator.MoveNext%2A> のメソッドは `elements`に対して呼び出されます。  この呼び出しは `Yield` の次のステートメントに到達するまで `MyIteratorFunction` の本体を実行します。  `Yield` のステートメントはループ本体で使用するための `element` 変数の値 `IEnumerable (Of String)`である、またはの要素のプロパティを <xref:System.Collections.Generic.IEnumerator%601.Current%2A> だけでなく、決定しますが、式を返します。  
+ 反復処理で、 `For Each` 、ループ、<xref:System.Collections.IEnumerator.MoveNext%2A>メソッドが呼び出される`elements`</xref:System.Collections.IEnumerator.MoveNext%2A>。 この呼び出しでは、次の `MyIteratorFunction` ステートメントに到達するまで、`Yield` の本体が実行されます。 `Yield`ステートメントが返す文字列処理関数の値だけでなくを決定する、`element`ループの本体によって使用するための変数も、 <xref:System.Collections.Generic.IEnumerator%601.Current%2A>、要素のプロパティは、 `IEnumerable (Of String)`</xref:System.Collections.Generic.IEnumerator%601.Current%2A> 。  
   
- `For Each` ループの各反復で、反復子本体の実行は `Yield` ステートメントに到達するときに中断した場所からか続行され、もう一度停止します。  `For Each` ループの反復子は関数または `Return` または `Exit Function` ステートメントの最後に到達すると完了します。  
+ `For Each` ループの以降の各反復処理では、反復子本体の実行が中断した場所から続行し、`Yield` ステートメントに到達したときに再度停止します。 `For Each`ループが完了するときに、反復子関数の末尾、または`Return`または`Exit Function`ステートメントに達するとします。  
   
-## 使用例  
- 次の例に [次に、…](../../../visual-basic/language-reference/statements/for-next-statement.md) のループ内にある `Yield` のステートメントがあります。  `Main` の [&#91;For Each&#93;](../../../visual-basic/language-reference/statements/for-each-next-statement.md) のステートメント本体の各反復で `Power` の反復子の関数への呼び出しを作成します。  反復子の関数に対する各呼び出しは `For…Next` のループの次の反復処理中に発生する `Yield` の次のステートメントの実行に移動します。  
+## <a name="example"></a>例  
+ 次の例は、`Yield`ステートメント内にある、[にしています.次](../../../visual-basic/language-reference/statements/for-next-statement.md)ループします。 各反復処理、[ごと](../../../visual-basic/language-reference/statements/for-each-next-statement.md)ステートメント本体で`Main`への呼び出しを作成、`Power`に反復処理します。 Iterator 関数を呼び出すごとに、`Yield` ステートメントの次の実行に進みます。これは、`For…Next` ループの次の反復処理で行われます。  
   
- 反復子メソッドの戻り値の型は <xref:System.Collections.Generic.IEnumerable%601>の反復子のインターフェイス型です。  反復子のメソッドが呼び出されると、数値の累乗を含む列挙可能なオブジェクトを返します。  
+ Iterator メソッドの戻り値の型は、 <xref:System.Collections.Generic.IEnumerable%601>、反復子インターフェイス型</xref:System.Collections.Generic.IEnumerable%601>。 Iterator メソッドが呼び出されると、数値の累乗を含む列挙可能なオブジェクトが返されます。  
   
- [!code-vb[VbVbalrStatements#98](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/yield-statement_1.vb)]  
+ [!code-vb[VbVbalrStatements #&98;](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/yield-statement_1.vb)]  
   
-## 使用例  
- 次の例は、反復子である `Get` のアクセサーを示します。  プロパティの申告は `Iterator` 修飾子が含まれます。  
+## <a name="example"></a>例  
+ 次の例は、反復子である `Get` アクセサーを示しています。 プロパティ宣言が含まれる、`Iterator`修飾子です。  
   
- [!code-vb[VbVbalrStatements#99](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/yield-statement_2.vb)]  
+ [!code-vb[VbVbalrStatements&#99;](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/yield-statement_2.vb)]  
   
- その他の例については、「[反復子](../Topic/Iterators%20\(C%23%20and%20Visual%20Basic\).md)」を参照してください。  
+ その他の例を参照してください。[反復子](http://msdn.microsoft.com/library/f45331db-d595-46ec-9142-551d3d1eb1a7)します。  
   
-## 必要条件  
- [!INCLUDE[vs_dev11_long](../../../csharp/includes/vs-dev11-long-md.md)]  
+## <a name="requirements"></a>要件  
+ [!INCLUDE[vs_dev11_long](../../../csharp/includes/vs_dev11_long_md.md)]  
   
-## 参照  
- [反復子](../Topic/Iterators%20\(C%23%20and%20Visual%20Basic\).md)   
- [Statements](../../../visual-basic/language-reference/statements/index.md)
+## <a name="see-also"></a>関連項目  
+ [反復子](http://msdn.microsoft.com/library/f45331db-d595-46ec-9142-551d3d1eb1a7)   
+ [ステートメント](../../../visual-basic/language-reference/statements/index.md)

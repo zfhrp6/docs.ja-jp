@@ -1,67 +1,83 @@
 ---
-title: "Declared Element Names (Visual Basic) | Microsoft Docs"
-ms.custom: ""
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "declared elements, case sensitivity"
-  - "names, Visual Basic rules"
-  - "naming conventions"
-  - "element names"
-  - "declared elements, identifiers"
-  - "declarations, elements"
-  - "declared elements, valid names"
-  - "[] escape characters [Visual Basic]"
-  - "names, elements"
-  - "declaration statements, declared elements"
-  - "declaring elements"
-  - "identifiers, declared elements"
-  - "case sensitivity, declared element names"
-  - "escape characters"
-  - "names, declared elements"
-  - "declared elements, about declared elements"
-  - "escaped names"
-  - "declared elements, names"
-  - "names, naming conventions"
-  - "identifiers, elements"
+title: "宣言された要素の名前 (Visual Basic) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 2015-07-20
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-visual-basic
+ms.topic: article
+dev_langs:
+- VB
+helpviewer_keywords:
+- declared elements, case sensitivity
+- names, Visual Basic rules
+- naming conventions
+- element names
+- declared elements, identifiers
+- declarations, elements
+- declared elements, valid names
+- '[] escape characters [Visual Basic]'
+- names, elements
+- declaration statements, declared elements
+- declaring elements
+- identifiers, declared elements
+- case sensitivity, declared element names
+- escape characters
+- names, declared elements
+- declared elements, about declared elements
+- escaped names
+- declared elements, names
+- names, naming conventions
+- identifiers, elements
 ms.assetid: 09d8843b-c0dc-4afe-9dab-87c439a69e66
 caps.latest.revision: 27
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 27
----
-# Declared Element Names (Visual Basic)
-[!INCLUDE[vs2017banner](../../../../visual-basic/developing-apps/includes/vs2017banner.md)]
+author: stevehoag
+ms.author: shoag
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: 56ac0684e5176f33aa6f9600f20d9fe3fcf09416
+ms.lasthandoff: 03/13/2017
 
-すべての宣言された要素には名前があります。この名前は*識別子*とも呼ばれ、宣言された要素をコードで参照するときに使用します。  
+---
+# <a name="declared-element-names-visual-basic"></a>宣言された要素の名前 (Visual Basic)
+どの宣言された要素にも、名前とも呼ばれます、*識別子*、これは、コードを使用してそれを参照してください。  
   
-## 規則  
- [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] での要素名は、次の規則に従う必要があります。  
+## <a name="rules"></a>ルール  
+ 内の要素名[!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]次の規則に従う必要があります。  
   
--   アルファベットまたはアンダースコア \(`_`\) で始まる。  
+-   文字は英字またはアンダー スコアで始まる必要があります (`_`)。  
   
--   アルファベット、10 進数、アンダースコア以外の文字を含まない。  
+-   アルファベット文字、10 進数字およびアンダー スコアのみでなければなりません。  
   
--   アンダースコアで始まる場合は、アルファベットまたは 10 進数を少なくとも 1 文字含む必要がある。  
+-   アンダー スコアで始まる場合、少なくとも&1; つのアルファベット文字または&10; 進数字でなければなりません。  
   
--   長さが 1023 文字を超えない。  
+-   1023 を超える文字はできません。  
   
- 最大 1023 文字の制限は、`outerNamespace.middleNamespace.innerNamespace.thisClass.thisElement` などの完全修飾名の文字列全体にも適用されます。  
+ 1023 文字の長さの制限にも適用されます、完全修飾名の文字列全体など`outerNamespace.middleNamespace.innerNamespace.thisClass.thisElement`します。  
   
- 有効な要素名の例を次に示します。  
+ 次の例では、有効な要素名を示します。  
   
  `aB123__45`  
   
  `_567`  
   
- 無効な要素名の例を次に示します。  1 番目はアンダースコアだけを含み、2 番目は 10 進数で始まり、3 番目には無効な文字 \($\) が含まれています。  
+ 次の例では、無効な要素名を示します。 最初には、アンダー スコアのみが含まれています。、2 つ目が&10; 進数字で始まるおよび&3; つ目には、無効な文字 ($) が含まれています。  
   
  `' Three INVALID element names`  
   
@@ -72,34 +88,34 @@ caps.handback.revision: 27
  `xyz$wv`  
   
 > [!CAUTION]
->  アンダースコア \(`_`\) で始まる要素名は [言語への非依存性、および言語非依存コンポーネント](../Topic/Language%20Independence%20and%20Language-Independent%20Components.md) \(CLS\) になりません。したがって、CLS 準拠のコードはそのような名前を定義したコンポーネントを使用できません。  ただし、先頭以外であれば、要素名のどの位置にアンダースコアを使用しても CLS 準拠になります。  
+>  アンダー スコアで始まる要素名 (`_`) に含まれていませんが、[言語非依存および言語非依存コンポーネント](https://msdn.microsoft.com/library/12a7a7h3)(CLS) には、CLS 準拠のコードはそのような名前を定義するコンポーネントを使用できないようにします。 ただし、要素名の他の任意の位置にアンダー スコアでは、CLS に準拠します。  
   
-### 名前の長さのガイドライン  
- 実際の問題として、名前は、要素の特性を明確に区別しながら可能な限り短いものである必要があります。  これによってコードが読みやすくなり、行の長さとソース ファイルのサイズを小さくできます。  
+### <a name="name-length-guidelines"></a>名前の長さのガイドライン  
+ 実際には、自分の名前は、できるだけ短く要素の特性を明確します。 これにより、コードの読みやすさを向上し、行の長さとソース ファイルのサイズを小さきます。  
   
- 一方で、開発者の名前は、要素が何を表すのか、さらにコードで要素を使用する方法を適切に記述できる長さである必要があります。  これは、コードの読みやすさの点で重要です。  だれかが理解しようとした場合、または開発者自身がこれを作成した後しばらくたってからこれを見たときに、適切な要素名が付いていると時間を節約できます。  
+ これに対して、自分の名前は、いない適切に記述できる要素が表す意味を調べると、コードがこれを使用する方法長さである必要があります。 これは、コードの読みやすさにとって重要です。 使い方も理解しようとする他の人がいる場合、または自分で検索する場合に作成した後、長い時間は、適切な要素名は、かなりの時間を保存できます。  
   
-## エスケープされた名前  
- 通常は、[!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] によって予約されているキーワード \(`Case` や `Friend` など\) と一致する名前を要素名として使用することはできません。  ただし、名前を角かっこ \(`[ ]`\) で囲んで、*エスケープされた名前*として定義できます。  角かっこによってあいまいさがなくなるため、エスケープされた名前では、[!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] のキーワードと一致する名前を使用できます。  定義した名前を後でコード内で使用するときも、同じように角かっこで囲みます。  
+## <a name="escaped-names"></a>エスケープされた名前  
+ 一般に、要素名は、必要がありますと一致しませんによって予約されているキーワードのいずれかの[!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]など`Case`または`Friend`です。 ただし、定義することができます、*エスケープ名前*、角かっこで囲まれている (`[ ]`)。 エスケープされた名前がいずれかに一致[!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]キーワード、角かっこは、任意のあいまいさを排除するためです。 後続のコードで名前を参照する場合は、角かっこを使用します。  
   
- 一般には、エスケープされた名前を使用するのは次の場合だけです。  
+ 一般に、エスケープされた名前を使用する必要がありますされる場合にのみ。  
   
--   コードが、名前として使用されている用語がキーワードとして予約されていない、[!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] の前のバージョンから移行されたものである。  
+-   以前のバージョンから移行済みのコードは[!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]は名として使用されているキーワードが予約されていないか、  
   
--   指定されたキーワードが予約されていない別の言語で作成されたコードを使用している。  
+-   特定のキーワードは予約されていない別の言語で記述されたコードを使用しています。  
   
- それ以外の場合で名前がキーワードと競合した場合は、要素名の変更を検討する必要があります。  統合開発環境 \(IDE: Integrated Development Environment\) には、これを行うための簡単な方法が用意されています。  詳細については、「[リファクタリングと \[名前の変更\] ダイアログ ボックス](../../../../visual-basic/developing-apps/using-ide/refactoring-and-rename-dialog-box.md)」を参照してください。  
+ それ以外の場合、キーワードを使用してその名前が競合している場合、要素名の変更を検討してください。 統合開発環境 (IDE) では、これを行う簡単な方法を提供します。 詳細については、次を参照してください。[リファクタリング](https://docs.microsoft.com/visualstudio/vb-ide/refactoring-vb)します。  
   
-## 名前の大文字と小文字の区別  
- [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] の要素名は、大文字と小文字を区別します。  したがって、大文字と小文字だけで区別される 2 つの名前は、コンパイラによって同じ名前であると解釈されます。  たとえば、`ABC` と `abc` は、宣言された同じ要素を参照していると見なされます。  
+## <a name="case-sensitivity-in-names"></a>名前に大文字小文字の区別  
+ 内の要素名[!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]小文字は区別されません。 これは、コンパイラは、大文字と小文字だけが異なる&2; つの名前を比較し、ときと解釈するに同じ名前を意味します。 たとえば、 `ABC` と `abc` は、宣言された同じ要素を参照していると見なされます。  
   
- しかし、共通言語ランタイム \(CLR: Common Language Runtime\) のバインディングでは大文字と小文字が区別されます。  このため、アセンブリまたは DLL を作成し、他のアセンブリで使用できるようにする場合は、大文字と小文字が区別されるようになります。  たとえば、`ABC` という名前の要素を持つクラスを定義し、他のアセンブリから共通言語ランタイムを通じてこのクラスを使用する場合は、この要素を `ABC` として参照する必要があります。  後でクラスを再コンパイルして要素の名前を `abc` に変更すると、このクラスを使用していた他のアセンブリがこの要素にアクセスできなくなります。  したがって、アセンブリを更新してリリースするときには、パブリックな要素の名前の大文字と小文字を変更しないようにする必要があります。  
+ ただし、共通言語ランタイム (CLR) は、大文字小文字を区別バインディングを使用します。 このため、アセンブリまたは DLL を作成し、他のアセンブリで使用できるようにすると、名前の大文字と小文字が区別されるようになります。 たとえば、 `ABC`という名前の要素を持つクラスを定義し、他のアセンブリから共通言語ランタイムを通じてこのクラスを使用する場合は、この要素を `ABC`として参照する必要があります。 かどうかは後で、クラスを再コンパイルし、要素の名前を変更する`abc`クラスを使用して、他のアセンブリがその要素にアクセスできなくします。 したがって、アセンブリを更新してリリースするときは、パブリックな要素の名前の大文字と小文字を変更しないでください。  
   
-## 名前およびロケール  
- 名前の比較はロケールには依存しません。  1 つのロケール内で 2 つの名前が一致した場合、これはすべてのロケールで一致することになります。  
+## <a name="names-and-locales"></a>名前およびロケール  
+ 名前の比較ではロケールに依存しません。 1 つのロケールで&2; つの名前が同じ場合は、すべてのロケールに一致するように、保証されます。  
   
-## 参照  
- [Declared Elements](../../../../visual-basic/programming-guide/language-features/declared-elements/index.md)   
- [Declared Element Characteristics](../../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-characteristics.md)   
- [References to Declared Elements](../../../../visual-basic/programming-guide/language-features/declared-elements/references-to-declared-elements.md)   
- [Statements](../../../../visual-basic/language-reference/statements/index.md)
+## <a name="see-also"></a>関連項目  
+ [宣言された要素](../../../../visual-basic/programming-guide/language-features/declared-elements/index.md)   
+ [宣言された要素の特性](../../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-characteristics.md)   
+ [宣言された要素への参照](../../../../visual-basic/programming-guide/language-features/declared-elements/references-to-declared-elements.md)   
+ [ステートメント](../../../../visual-basic/language-reference/statements/index.md)

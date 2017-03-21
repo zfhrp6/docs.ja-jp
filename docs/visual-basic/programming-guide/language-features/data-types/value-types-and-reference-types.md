@@ -1,70 +1,86 @@
 ---
-title: "Value Types and Reference Types | Microsoft Docs"
-ms.custom: ""
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "reference data types"
-  - "reference types"
-  - "value types"
-  - "value data types"
-  - "types [Visual Basic]"
-  - "data types [Visual Basic], value types"
-  - "data types [Visual Basic], reference types"
+title: "値型と参照型 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 2015-07-20
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-visual-basic
+ms.topic: article
+dev_langs:
+- VB
+helpviewer_keywords:
+- reference data types
+- reference types
+- value types
+- value data types
+- types [Visual Basic]
+- data types [Visual Basic], value types
+- data types [Visual Basic], reference types
 ms.assetid: fc82ce15-5a40-4c5c-a1e1-a556830e7391
 caps.latest.revision: 14
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 14
----
-# Value Types and Reference Types
-[!INCLUDE[vs2017banner](../../../../visual-basic/developing-apps/includes/vs2017banner.md)]
+author: stevehoag
+ms.author: shoag
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: de8016b4b2a5550b32373a41c89a484fa996c596
+ms.lasthandoff: 03/13/2017
 
-Visual Basic ではデータ型がクラスに基づいて実行されます。  [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] のデータ型は、その型の変数にデータそのものが格納されるのか、それともデータへのポインターが格納されるのかによって分類されます。  データそのものが格納される場合は*値型*、メモリのどこか別の場所にあるデータへのポインターを格納する場合は*参照型*になります。  
+---
+# <a name="value-types-and-reference-types"></a>Value Types and Reference Types
+Visual basic でのデータ型は、分類に基づいて実装されます。 [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]データ型は、特定の型の変数が、独自のデータまたはデータへのポインターを格納するかどうかによって分類できます。 独自のデータを格納する場合、*値の型*別の場所ではメモリ内のデータへのポインターを保持している場合、*型を参照*します。  
   
-## 値型  
- データ型が自身のメモリ内にデータを保持する場合、そのデータ型は*値型*です。  値型には、次のようなものがあります。  
+## <a name="value-types"></a>値型  
+ データ型は、*値の型*独自のメモリ内のデータが保持している場合。 値型を以下に示します。  
   
 -   すべての数値データ型  
   
 -   `Boolean`、`Char`、および `Date`  
   
--   すべての構造体 \(メンバーが参照型の場合でも\)  
+-   そのメンバーが参照型である場合でも、すべての構造  
   
--   列挙型 \(基になる型が常に `SByte`、`Short`、`Integer`、`Long`、`Byte`、`UShort`、`UInteger`、または `ULong` であるため\)  
+-   列挙型、その基になる型は常にため`SByte`、 `Short`、 `Integer`、 `Long`、 `Byte`、 `UShort`、 `UInteger`、または`ULong`  
   
- すべての構造体は参照型のメンバーを持っていても値型です。  したがって`Char` などの値型と `Integer` は.NET Framework の構造体によって実装されます。  
+ 参照型のメンバーが含まれている場合でも、すべての構造体は値の型です。 このため、値などの型`Char`と`Integer`.NET Framework の構造体によって実装されます。  
   
- 値型は、`Decimal` などの予約済みのキーワードを使用して宣言できます。  値型を初期化するときにも `New` キーワードを使用できます。  これは、その型にパラメーターをとるコンストラクターがある場合に特に有効です。  これに関する例は、指定した部分から新しい `Decimal` 値を作成する、<xref:System.Decimal.%23ctor%28System.Int32%2CSystem.Int32%2CSystem.Int32%2CSystem.Boolean%2CSystem.Byte%29> コンストラクターです。  
+ 予約済みキーワードを使用して、値型を宣言できます`Decimal`します。 使用することも、`New`値型を初期化するキーワードです。 これは、型のパラメーターを受け取るコンス トラクターがある場合に特に便利です。 この例は、<xref:System.Decimal.%23ctor%28System.Int32%2CSystem.Int32%2CSystem.Int32%2CSystem.Boolean%2CSystem.Byte%29>コンス トラクターは、新しい`Decimal`指定した部分からの値</xref:System.Decimal.%23ctor%28System.Int32%2CSystem.Int32%2CSystem.Int32%2CSystem.Boolean%2CSystem.Byte%29>。  
   
-## 参照型  
- *参照型*には、データを保持する別のメモリ位置へのポインターが格納されます。  参照型には、次のようなものがあります。  
+## <a name="reference-types"></a>参照型  
+ A*型参照*データを保持する別のメモリ位置へのポインターが含まれています。 参照型を以下に示します。  
   
 -   `String`  
   
--   すべての配列 \(要素が値型の場合でも\)  
+-   その要素が値型の場合でも、すべての配列  
   
--   クラス型 \(<xref:System.Windows.Forms.Form> など\)  
+-   などのクラス型します。<xref:System.Windows.Forms.Form></xref:System.Windows.Forms.Form>  
   
 -   デリゲート  
   
- クラスは*参照型*です。  このため、`Object` や `String` などの参照型は、[!INCLUDE[dnprdnshort](../../../../csharp/getting-started/includes/dnprdnshort-md.md)] クラスによってサポートされます。  メンバーが値型であっても、配列はすべて参照型です。  
+ クラスは、*型参照*します。 参照型など、このため、`Object`と`String`でサポートされている[!INCLUDE[dnprdnshort](../../../../csharp/getting-started/includes/dnprdnshort_md.md)]クラスです。 場合でも、そのメンバーが値型は、すべての配列が参照型である注意してください。  
   
- すべての参照型は基になる .NET Framework のクラスを表すため初期化と [New Operator](../../../../visual-basic/language-reference/operators/new-operator.md) のキーワードを使用する必要があります。  次のステートメントで配列を初期化します。  
+ 使用する必要がありますので、すべての参照型は、基になる .NET Framework クラスを表す、 [New 演算子](../../../../visual-basic/language-reference/operators/new-operator.md)初期化するときのキーワードです。 次のステートメントでは、配列を初期化します。  
   
 ```  
 Dim totals() As Single = New Single(8) {}  
 ```  
   
-## 型ではない要素  
- 次のプログラミング要素は、宣言された要素のデータ型として指定できないため、型として修飾しません。  
+## <a name="elements-that-are-not-types"></a>型ではない要素  
+ これらはいずれも、宣言された要素のデータ型として指定できないため、次のプログラミング要素は型とは見なされません。  
   
 -   名前空間  
   
@@ -72,19 +88,19 @@ Dim totals() As Single = New Single(8) {}
   
 -   イベント  
   
--   プロパティおよびプロシージャ  
+-   プロパティとプロシージャ  
   
--   変数、定数およびフィールド  
+-   変数、定数、およびフィールド  
   
-## オブジェクトのデータ型の操作  
- `オブジェクト型 (Object)` の変数には参照型と値型のどちらでも代入できます。  `オブジェクト型 (Object)` の変数は常にデータそのものではなくデータへのポインターを保持します。  ただし、`オブジェクト型 (Object)` の変数に値型を代入すると、独自のデータを保持しているように動作します。  詳細については、「[Object Data Type](../../../../visual-basic/language-reference/data-types/object-data-type.md)」を参照してください。  
+## <a name="working-with-the-object-data-type"></a>オブジェクトのデータ型の操作  
+ 変数に参照型または値型を割り当てることができます、`Object`データ型。 `Object`変数は常に、データそのものでは決してでデータへのポインターを保持します。 ただし、値の型を割り当てる場合、`Object`変数、動作、独自のデータが保持している場合にします。 詳細については、次を参照してください。 [Object データ型](../../../../visual-basic/language-reference/data-types/object-data-type.md)します。  
   
- `Object` の変数が参照型または値型として <xref:Microsoft.VisualBasic?displayProperty=fullName> の名前空間の <xref:Microsoft.VisualBasic.Information> クラスの <xref:Microsoft.VisualBasic.Information.IsReference%2A> のメソッドに渡して動作しているかを調べることができます。  `Object` 変数の内容が参照型を表している場合、<xref:Microsoft.VisualBasic.Information.IsReference%2A?displayProperty=fullName> は `True` を返します。  
+ かどうか調べることができます、`Object`に渡すことによって変数が参照型または値の型として機能する、<xref:Microsoft.VisualBasic.Information.IsReference%2A>メソッドで、<xref:Microsoft.VisualBasic.Information>のクラス、<xref:Microsoft.VisualBasic?displayProperty=fullName>名前空間</xref:Microsoft.VisualBasic?displayProperty=fullName></xref:Microsoft.VisualBasic.Information></xref:Microsoft.VisualBasic.Information.IsReference%2A>。 <xref:Microsoft.VisualBasic.Information.IsReference%2A?displayProperty=fullName>返します`True`場合の内容、`Object`変数が参照型を表します。</xref:Microsoft.VisualBasic.Information.IsReference%2A?displayProperty=fullName>  
   
-## 参照  
- [Nullable Value Types](../../../../visual-basic/programming-guide/language-features/data-types/nullable-value-types.md)   
- [Type Conversions in Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/type-conversions.md)   
- [Structure Statement](../../../../visual-basic/language-reference/statements/structure-statement.md)   
- [Efficient Use of Data Types](../../../../visual-basic/programming-guide/language-features/data-types/efficient-use-of-data-types.md)   
- [Object Data Type](../../../../visual-basic/language-reference/data-types/object-data-type.md)   
- [データ型](../../../../visual-basic/programming-guide/language-features/data-types/index.md)
+## <a name="see-also"></a>関連項目  
+ [Null 許容値型](../../../../visual-basic/programming-guide/language-features/data-types/nullable-value-types.md)   
+ [Visual Basic における型変換](../../../../visual-basic/programming-guide/language-features/data-types/type-conversions.md)   
+ [Structure ステートメント](../../../../visual-basic/language-reference/statements/structure-statement.md)   
+ [データ型の効率的な使用](../../../../visual-basic/programming-guide/language-features/data-types/efficient-use-of-data-types.md)   
+ [オブジェクトのデータ型](../../../../visual-basic/language-reference/data-types/object-data-type.md)   
+ [データの種類](../../../../visual-basic/programming-guide/language-features/data-types/index.md)

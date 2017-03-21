@@ -1,0 +1,216 @@
+---
+title: "複数の同期タスクし、プロセスの完了 (Visual Basic) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 2015-07-20
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-visual-basic
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- VB
+ms.assetid: 57ffb748-af40-4794-bedd-bdb7fea062de
+caps.latest.revision: 3
+author: stevehoag
+ms.author: shoag
+translation.priority.mt:
+- cs-cz
+- pl-pl
+- pt-br
+- tr-tr
+translationtype: Machine Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: 6fbf4611ecd64abfd016963dff887d82aad333b7
+ms.lasthandoff: 03/13/2017
+
+---
+# <a name="start-multiple-async-tasks-and-process-them-as-they-complete-visual-basic"></a>複数の同期タスクし、プロセスの完了 (Visual Basic)
+使用して<xref:System.Threading.Tasks.Task.WhenAny%2A?displayProperty=fullName>、同時に複数のタスクを開始し、起動している順序で処理するのではなく、完了すると、1 つずつを処理することができます</xref:System.Threading.Tasks.Task.WhenAny%2A?displayProperty=fullName>。  
+  
+ クエリを使用して、タスクのコレクションを作成する例を次に示します。 各タスクは、指定された Web サイトのコンテンツをダウンロードします。 while ループの各反復で、待機されている `WhenAny` への呼び出しは、最初にダウンロードを終了するタスクのコレクションにあるタスクを返します。 タスクはコレクションから削除され、処理されます。 ループは、コレクションのタスクがなくなるまで繰り返されます。  
+  
+> [!NOTE]
+>  例を実行するには、Visual Studio 2012 以降と .NET Framework 4.5 が必要または以降のコンピューターにインストールします。  
+  
+## <a name="downloading-the-example"></a>例をダウンロードする  
+ 完全な Windows Presentation Foundation (WPF) プロジェクトをダウンロードすることができます[Async サンプル: 細かいアプリケーションの調整](http://go.microsoft.com/fwlink/?LinkId=255046)し次の手順に従います。  
+  
+1.  ダウンロードしたファイルを圧縮解除し、Visual Studio を起動します。  
+  
+2.  メニュー バーで **[ファイル]**、 **[開く]**、 **[プロジェクト/ソリューション]**の順に選択します。  
+  
+3.  **プロジェクトを開く** ダイアログ ボックスでは、圧縮解除したサンプル コードが含まれるフォルダーを開き、AsyncFineTuningVB のソリューション (.sln) ファイルを開きます。  
+  
+4.  **ソリューション エクスプ ローラー**、ショートカット メニューを開き、 **ProcessTasksAsTheyFinish**プロジェクトを開いて、**スタートアップ プロジェクトとして設定**します。  
+  
+5.  F5 キーを押してプロジェクトを実行します。  
+  
+     Ctrl + F5 キーを押して、デバッグを行わずにプロジェクトを実行します。  
+  
+6.  ダウンロードの長さが常に同じ順序では表示されないことを確認するために、プロジェクトを複数回実行します。  
+  
+ プロジェクトをダウンロードできない場合は、このトピックの最後の MainWindow.xaml.vb ファイルを確認できます。  
+  
+## <a name="building-the-example"></a>例のビルド  
+ この例で開発されたコードを追加[1 つの完了 (Visual Basic) の後に残りの非同期タスクのキャンセル](../../../../visual-basic/programming-guide/concepts/async/cancel-remaining-async-tasks-after-one-is-complete.md)し、同じ UI を使用します。  
+  
+ 例をビルドする、自分のステップ バイ ステップ「例をダウンロードする」セクション指示従いますが、選択**CancelAfterOneTask**として、**スタートアップ プロジェクト**します。 そのプロジェクトの `AccessTheWebAsync` メソッドに、このトピックでの変更を追加します。 変更部分にはアスタリスクが付いています。  
+  
+ **CancelAfterOneTask**プロジェクトに既にクエリが含まれている、実行すると、タスクのコレクションを作成します。 各呼び出し`ProcessURLAsync`次のコードを返します、 <xref:System.Threading.Tasks.Task%601>、`TResult`整数です。</xref:System.Threading.Tasks.Task%601> 。  
+  
+<CodeContentPlaceHolder>0</CodeContentPlaceHolder>  
+ プロジェクトの MainWindow.xaml.vb ファイルで次の変更を`AccessTheWebAsync`メソッドです。  
+  
+-   <xref:System.Linq.Enumerable.ToList%2A?displayProperty=fullName> <xref:System.Linq.Enumerable.ToArray%2A>。</xref:System.Linq.Enumerable.ToArray%2A>の代わりに</xref:System.Linq.Enumerable.ToList%2A?displayProperty=fullName>適用することで、クエリを実行します。  
+  
+<CodeContentPlaceHolder>1</CodeContentPlaceHolder>  
+-   コレクションの各タスクで次の手順を実行する while ループを追加します。  
+  
+    1.  `WhenAny` への呼び出しを待機し、ダウンロードを終了する、コレクションの最初のタスクを識別します。  
+  
+<CodeContentPlaceHolder>2</CodeContentPlaceHolder>  
+    2.  コレクションからそのタスクを削除します。  
+  
+<CodeContentPlaceHolder>3</CodeContentPlaceHolder>  
+    3.  `firstFinishedTask` への呼び出しから返される、`ProcessURLAsync` を待機します。 `firstFinishedTask`変数は、 <xref:System.Threading.Tasks.Task%601>、`TReturn`整数です</xref:System.Threading.Tasks.Task%601>。 次の例に示すように、タスクは既に完了していますが、ダウンロードした Web サイトの長さの取得を待機します。  
+  
+        ```vb  
+        Dim length = Await firstFinishedTask  
+        resultsTextBox.Text &= String.Format(vbCrLf & "Length of the downloaded website:  {0}" & vbCrLf, length)  
+        ```  
+  
+ ダウンロードの長さが常に同じ順序では表示されないことを確認するために、プロジェクトを複数回実行します。  
+  
+> [!CAUTION]
+>  ループで `WhenAny` を使って、例に示すように、いくつかのタスクを格納する問題を解決できます。 ただし、多数のタスクが処理する場合、他のアプローチがより効率的です。 詳細と例については、次を参照してください。[としてそれらの完全な処理タスク](http://go.microsoft.com/fwlink/?LinkId=260810)します。  
+  
+## <a name="complete-example"></a>コード例全体  
+ 次のコードは、たとえば、MainWindow.xaml.vb ファイルの完全なテキストです。 アスタリスクはこの例のために追加された要素を示しています。  
+  
+ <xref:System.Net.Http>。</xref:System.Net.Http>への参照を追加する必要があることに注意してください。  
+  
+ プロジェクトをダウンロードする[Async サンプル: 細かいアプリケーションの調整](http://go.microsoft.com/fwlink/?LinkId=255046)します。  
+  
+```vb  
+' Add an Imports directive and a reference for System.Net.Http.  
+Imports System.Net.Http  
+  
+' Add the following Imports directive for System.Threading.  
+Imports System.Threading  
+  
+Class MainWindow  
+  
+    ' Declare a System.Threading.CancellationTokenSource.  
+    Dim cts As CancellationTokenSource  
+  
+    Private Async Sub startButton_Click(sender As Object, e As RoutedEventArgs)  
+  
+        ' Instantiate the CancellationTokenSource.  
+        cts = New CancellationTokenSource()  
+  
+        resultsTextBox.Clear()  
+  
+        Try  
+            Await AccessTheWebAsync(cts.Token)  
+            resultsTextBox.Text &= vbCrLf & "Downloads complete."  
+  
+        Catch ex As OperationCanceledException  
+            resultsTextBox.Text &= vbCrLf & "Downloads canceled." & vbCrLf  
+  
+        Catch ex As Exception  
+            resultsTextBox.Text &= vbCrLf & "Downloads failed." & vbCrLf  
+        End Try  
+  
+        ' Set the CancellationTokenSource to Nothing when the download is complete.  
+        cts = Nothing  
+    End Sub  
+  
+    ' You can still include a Cancel button if you want to.  
+    Private Sub cancelButton_Click(sender As Object, e As RoutedEventArgs)  
+  
+        If cts IsNot Nothing Then  
+            cts.Cancel()  
+        End If  
+    End Sub  
+  
+    ' Provide a parameter for the CancellationToken.  
+    ' Change the return type to Task because the method has no return statement.  
+    Async Function AccessTheWebAsync(ct As CancellationToken) As Task  
+  
+        Dim client As HttpClient = New HttpClient()  
+  
+        ' Call SetUpURLList to make a list of web addresses.  
+        Dim urlList As List(Of String) = SetUpURLList()  
+  
+        ' ***Create a query that, when executed, returns a collection of tasks.  
+        Dim downloadTasksQuery As IEnumerable(Of Task(Of Integer)) =  
+            From url In urlList Select ProcessURLAsync(url, client, ct)  
+  
+        ' ***Use ToList to execute the query and start the download tasks.   
+        Dim downloadTasks As List(Of Task(Of Integer)) = downloadTasksQuery.ToList()  
+  
+        ' ***Add a loop to process the tasks one at a time until none remain.  
+        While downloadTasks.Count > 0  
+            ' ***Identify the first task that completes.  
+            Dim firstFinishedTask As Task(Of Integer) = Await Task.WhenAny(downloadTasks)  
+  
+            ' ***Remove the selected task from the list so that you don't  
+            ' process it more than once.  
+            downloadTasks.Remove(firstFinishedTask)  
+  
+            ' ***Await the first completed task and display the results.  
+            Dim length = Await firstFinishedTask  
+            resultsTextBox.Text &= String.Format(vbCrLf & "Length of the downloaded website:  {0}" & vbCrLf, length)  
+        End While  
+  
+    End Function  
+  
+    ' Bundle the processing steps for a website into one async method.  
+    Async Function ProcessURLAsync(url As String, client As HttpClient, ct As CancellationToken) As Task(Of Integer)  
+  
+        ' GetAsync returns a Task(Of HttpResponseMessage).   
+        Dim response As HttpResponseMessage = Await client.GetAsync(url, ct)  
+  
+        ' Retrieve the website contents from the HttpResponseMessage.  
+        Dim urlContents As Byte() = Await response.Content.ReadAsByteArrayAsync()  
+  
+        Return urlContents.Length  
+    End Function  
+  
+    ' Add a method that creates a list of web addresses.  
+    Private Function SetUpURLList() As List(Of String)  
+  
+        Dim urls = New List(Of String) From  
+            {  
+                "http://msdn.microsoft.com",  
+                "http://msdn.microsoft.com/library/hh290138.aspx",  
+                "http://msdn.microsoft.com/library/hh290140.aspx",  
+                "http://msdn.microsoft.com/library/dd470362.aspx",  
+                "http://msdn.microsoft.com/library/aa578028.aspx",  
+                "http://msdn.microsoft.com/library/ms404677.aspx",  
+                "http://msdn.microsoft.com/library/ff730837.aspx"  
+            }  
+        Return urls  
+    End Function  
+  
+End Class  
+  
+' Sample output:  
+  
+' Length of the download:  226093  
+' Length of the download:  412588  
+' Length of the download:  175490  
+' Length of the download:  204890  
+' Length of the download:  158855  
+' Length of the download:  145790  
+' Length of the download:  44908  
+' Downloads complete.  
+```  
+  
+## <a name="see-also"></a>関連項目  
+ <xref:System.Threading.Tasks.Task.WhenAny%2A></xref:System.Threading.Tasks.Task.WhenAny%2A>   
+ [非同期アプリケーション (Visual Basic) の微調整](../../../../visual-basic/programming-guide/concepts/async/fine-tuning-your-async-application.md)   
+ [非同期プログラミングを Async と Await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/index.md)   
+ [アプリケーションの微調整の非同期のサンプル:](http://go.microsoft.com/fwlink/?LinkId=255046)

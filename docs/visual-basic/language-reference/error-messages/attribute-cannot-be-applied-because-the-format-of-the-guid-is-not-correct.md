@@ -1,40 +1,58 @@
 ---
-title: "&#39;&lt;attribute&gt;&#39; cannot be applied because the format of the GUID &#39;&lt;number&gt;&#39; is not correct | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vbc32500"
-  - "bc32500"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "BC32500"
+title: "&quot;&lt;属性&gt;&quot; ために、適用できません GUID の形式 &quot;&lt;数&gt;&quot; が正しくない |Microsoft ドキュメント"
+ms.date: 2015-07-20
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-visual-basic
+ms.topic: article
+f1_keywords:
+- vbc32500
+- bc32500
+dev_langs:
+- VB
+helpviewer_keywords:
+- BC32500
 ms.assetid: 6fa34c55-368e-4d7d-b488-07a3fffe045f
 caps.latest.revision: 10
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 10
----
-# &#39;&lt;attribute&gt;&#39; cannot be applied because the format of the GUID &#39;&lt;number&gt;&#39; is not correct
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
+author: stevehoag
+ms.author: shoag
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: f22f9ecd63582e2a346702919cf9154819b8eb0e
+ms.lasthandoff: 03/13/2017
 
-`COMClassAttribute` 属性ブロックで、グローバル一意識別子 \(GUID: Globally Unique Identifier\) の形式として有効でない GUID が指定されています。  `COMClassAttribute` では、GUID を使用してクラス、インターフェイス、および作成イベントを一意に識別します。  
+---
+# <a name="39ltattributegt39-cannot-be-applied-because-the-format-of-the-guid-39ltnumbergt39-is-not-correct"></a>'&lt;属性&gt;' ために、適用できません GUID の形式 '&lt;数&gt;' が正しくありません
+A`COMClassAttribute`属性ブロックは、GUID を適切な形式に準拠しないグローバル一意識別子 (GUID) を指定します。 `COMClassAttribute`クラス、インターフェイス、および作成イベントを一意に識別するのに Guid を使用します。  
   
- GUID は 16 バイトで構成され、前の 8 バイトは数値、後の 8 バイトはバイナリです。  GUID は uuidgen.exe などの Microsoft ユーティリティで生成され、空間および時間内で一意であることが保証されています。  
+ GUID は、16 バイトで構成されます。前半の 8 バイトは数値、後半の 8 バイトはバイナリです。 Uuidgen.exe などのマイクロソフト ユーティリティによって生成され、領域と時間で一意であることが保証されます。  
   
- **Error ID:** BC32500  
+ **エラー ID:** BC32500  
   
-### このエラーを解決するには  
+## <a name="to-correct-this-error"></a>このエラーを解決するには  
   
-1.  COM オブジェクトを識別するために必要な正しい GUID を決定します。  
+1.  正しい GUID または COM オブジェクトを識別するために必要な Guid を確認します。  
   
-2.  `COMClassAttribute` 属性ブロックに示される GUID 文字列が正しくコピーされていることを確認します。  
+2.  `COMClassAttribute` 属性ブロックに表示される GUID 文字列が正しくコピーされていることを確認します。  
   
-## 参照  
- <xref:System.Guid>   
- [属性](../Topic/Attributes%20\(C%23%20and%20Visual%20Basic\).md)
+## <a name="see-also"></a>関連項目  
+ <xref:System.Guid></xref:System.Guid>   
+[属性の概要](../../../visual-basic/programming-guide/concepts/attributes/index.md)
+
+

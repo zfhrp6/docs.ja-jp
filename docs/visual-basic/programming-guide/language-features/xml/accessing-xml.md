@@ -1,70 +1,86 @@
 ---
-title: "Accessing XML in Visual Basic | Microsoft Docs"
-ms.custom: ""
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "LINQ to XML [Visual Basic], accessing XML"
-  - "Visual Basic code, XML"
-  - "accessing XML [Visual Basic], axis properties"
-  - "XML [Visual Basic], axis properties"
-  - "XML [Visual Basic], accessing"
+title: "Visual Basic における XML にアクセスする |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 2015-07-20
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-visual-basic
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- VB
+helpviewer_keywords:
+- LINQ to XML [Visual Basic], accessing XML
+- Visual Basic code, XML
+- accessing XML [Visual Basic], axis properties
+- XML [Visual Basic], axis properties
+- XML [Visual Basic], accessing
 ms.assetid: c47f88b2-3cbc-4bb1-b4b9-be60f71ffc6a
 caps.latest.revision: 18
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 18
----
-# Accessing XML in Visual Basic
-[!INCLUDE[vs2017banner](../../../../visual-basic/developing-apps/includes/vs2017banner.md)]
+author: stevehoag
+ms.author: shoag
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: 215f057f0b4d884369aad53cbbdbb98f240b56c4
+ms.lasthandoff: 03/13/2017
 
-[!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] には、[!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq-md.md)] 構造体へのアクセスとナビゲーションを行うための XML 軸プロパティが用意されています。  これらのプロパティは、特殊な構文を使用することで、XML の名前を指定して要素と属性にアクセスできるようにします。  
+---
+# <a name="accessing-xml-in-visual-basic"></a>Visual Basic での XML へのアクセス
+[!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]XML 軸プロパティにアクセスして、移動[!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)]構造体。 これらのプロパティは、XML の名前を指定する要素と属性にアクセスするために、特別な構文を使用します。  
   
- 次の表は、[!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] で XML の要素と属性へのアクセスを可能にする言語機能の一覧です。  
+ 次の表に、XML 要素と属性にアクセスするための言語機能[!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]です。  
   
-### XML 軸プロパティ  
+### <a name="xml-axis-properties"></a>XML 軸プロパティ  
   
-|プロパティの説明|例|Description|  
-|--------------|-------|-----------------|  
-|*子軸*|`contact.<phone>`|`contact` 要素の子要素であるすべての `phone` 要素を取得します。|  
-|*属性軸*|`phone.@type`|`phone` 要素のすべての `type` 属性を取得します。|  
-|*子孫軸*|`contacts...<name>`|要素が出現する階層の深さに関係なく、`contacts` 要素のすべての `name` 要素を取得します。|  
-|*拡張インデクサー*|`contacts...<name>(0)`|シーケンスから最初の `name` 要素を取得します。|  
-|*value*|`contacts...<name>.Value`|シーケンスの最初のオブジェクトの文字列表現を取得します。シーケンスが空の場合は `Nothing` です。|  
+|プロパティの説明|例|説明|  
+|--------------------------|-------------|-----------------|  
+|*child 軸*|`contact.<phone>`|すべてを取得します`phone`要素の子要素である、`contact`要素。|  
+|*attribute 軸*|`phone.@type`|すべてを取得します`type`の属性、`phone`要素。|  
+|*子孫軸*|`contacts...<name>`|すべてを取得します`name`の要素、`contacts`に関係なく、発生した階層の深さの要素。|  
+|*拡張機能インデクサー*|`contacts...<name>(0)`|最初の取得`name`シーケンスから要素。|  
+|*value*|`contacts...<name>.Value`|シーケンスの最初のオブジェクトの文字列形式を取得または`Nothing`シーケンスが空の場合。|  
   
-## このセクションの内容  
- [How to: Access XML Descendant Elements](../../../../visual-basic/programming-guide/language-features/xml/how-to-access-xml-descendant-elements.md)  
- 子孫軸プロパティを使用して、指定した名前を持ち、指定した XML 要素に含まれる、すべての XML 要素にアクセスする方法を示します。  
+## <a name="in-this-section"></a>このセクションの内容  
+ [方法: XML 子孫要素にアクセスする](../../../../visual-basic/programming-guide/language-features/xml/how-to-access-xml-descendant-elements.md)  
+ 子孫軸プロパティを使用して、指定の名前を持ち、指定された XML 要素に含まれるすべての XML 要素にアクセスする方法を示します。  
   
- [How to: Access XML Child Elements](../../../../visual-basic/programming-guide/language-features/xml/how-to-access-xml-child-elements.md)  
- 子の軸プロパティを使用して、ある XML 要素内で指定した名前を持つすべての XML 子要素にアクセスする方法を示します。  
+ [方法: XML 子要素にアクセスする](../../../../visual-basic/programming-guide/language-features/xml/how-to-access-xml-child-elements.md)  
+ 軸にアクセスするプロパティを XML 要素で指定した名前を持つすべての XML 子要素の子を使用する方法を示します。  
   
- [How to: Access XML Attributes](../../../../visual-basic/programming-guide/language-features/xml/how-to-access-xml-attributes.md)  
- 属性の軸プロパティを使用して、ある XML 要素内で指定した名前を持つすべての XML 属性にアクセスする方法を示します。  
+ [方法: XML 属性にアクセスする](../../../../visual-basic/programming-guide/language-features/xml/how-to-access-xml-attributes.md)  
+ 属性軸プロパティを使用して XML 要素で指定した名前を持つすべての XML 属性にアクセスする方法を示します。  
   
- [How to: Declare and Use XML Namespace Prefixes](../../../../visual-basic/programming-guide/language-features/xml/how-to-declare-and-use-xml-namespace-prefixes.md)  
- XML 名前空間プレフィックスを宣言し、それを使用して XML 要素を作成し、それにアクセスする方法を示します。  
+ [方法 : XML 名前空間プレフィックスを宣言して使用する](../../../../visual-basic/programming-guide/language-features/xml/how-to-declare-and-use-xml-namespace-prefixes.md)  
+ XML 名前空間プレフィックスを宣言し、これを作成し、XML 要素にアクセスに使用する方法を示します。  
   
-## 関連項目  
- [XML Axis Properties](../../../../visual-basic/language-reference/xml-axis/xml-axis-properties.md)  
- さまざまな XML アクセス プロパティについて説明するセクションへのリンクを示します。  
+## <a name="related-sections"></a>関連項目  
+ [XML 軸プロパティ](../../../../visual-basic/language-reference/xml-axis/xml-axis-properties.md)  
+ さまざまな XML アクセス プロパティを説明するセクションへのリンクを提供します。  
   
- [Overview of LINQ to XML in Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/overview-of-linq-to-xml.md)  
- Visual Basic での [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq-md.md)] の使用の概要について説明します。  
+ [Visual Basic における LINQ to XML の概要](../../../../visual-basic/programming-guide/language-features/xml/overview-of-linq-to-xml.md)  
+ 使用の概要については、 [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)] Visual Basic でします。  
   
- [Creating XML in Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/creating-xml.md)  
- Visual Basic での XML リテラルの使用の概要について説明します。  
+ [Visual Basic で XML を作成します。](../../../../visual-basic/programming-guide/language-features/xml/creating-xml.md)  
+ Visual Basic で XML リテラルを使用するための概要を提供します。  
   
- [Manipulating XML in Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/manipulating-xml.md)  
- Visual Basic での XML の読み込みと変更に関するセクションへのリンクを示します。  
+ [Visual Basic で XML を操作します。](../../../../visual-basic/programming-guide/language-features/xml/manipulating-xml.md)  
+ 読み込みと Visual Basic における XML の修正についてのセクションへのリンクを提供します。  
   
  [XML](../../../../visual-basic/programming-guide/language-features/xml/index.md)  
- Visual Basic での [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq-md.md)] の使用方法について説明するセクションへのリンクを示します。
+ 使用する方法を説明するセクションへのリンクを提供[!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)]Visual Basic でします。
