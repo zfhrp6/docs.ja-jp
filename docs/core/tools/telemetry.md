@@ -39,11 +39,11 @@ ms.lasthandoff: 03/07/2017
 - `dotnet restore`
 - `dotnet run`
 
-##<a name="behavior"></a>動作
+## <a name="behavior"></a>動作
 
 .NET Core ツールの製品利用統計情報機能は既定では有効になっています。 製品利用統計情報機能は選択しないこともできます。その場合、環境変数 DOTNET_CLI_TELEMETRY_OPTOUT (たとえば、macOS/Linux の場合は `export`、Windows の場合は `set`) を true (“true” や 1 など) に設定します。
 
-##<a name="data-points"></a>データ ポイント
+## <a name="data-points"></a>データ ポイント
 
 この機能は次のデータを回収します。
 
@@ -57,7 +57,7 @@ ms.lasthandoff: 03/07/2017
 
 この機能では、ユーザー名や電子メールなど、個人データは回収されません。 コードをスキャンすることはありません。(project.json に設定している場合) 名前、リポジトリ、作成者など、機密と見なされるプロジェクト レベルのデータを抽出することはありません。 ツールで構築しているものではなく、ツールの使われ方を知るためのものです。 機密データが回収された場合、それはバグです。 [問題を提出する](https://github.com/dotnet/cli/issues)と、解決されます。
 
-##<a name="license"></a>ライセンス
+## <a name="license"></a>ライセンス
 
 Microsoft による .NET Core の配信は、[MICROSOFT .NET LIBRARY EULA](https://aka.ms/dotnet-core-eula) でライセンス供与されます。 製品利用統計情報を有効にするために、下のように “DATA” セクションが再プリントされます。
 
@@ -97,3 +97,4 @@ A command is running to initially populate your local package cache, to
 improve restore speed and enable offline access. This command will take up to 
 a minute to complete and will only happen once. 
 ```
+
