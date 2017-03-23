@@ -10,9 +10,9 @@ ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: f6f684b1-1d2c-4105-8376-7c1959e23803
 translationtype: Human Translation
-ms.sourcegitcommit: 90fe68f7f3c4b46502b5d3770b1a2d57c6af748a
-ms.openlocfilehash: 636c86fed9952542a256c075eb9e388b70cff174
-ms.lasthandoff: 03/02/2017
+ms.sourcegitcommit: 519253bd6dc105afb138268c62347c29a6072fbb
+ms.openlocfilehash: 7be49f3ac7a7806e631eacf5004343919654881e
+ms.lasthandoff: 03/07/2017
 
 ---
 
@@ -129,33 +129,28 @@ GitHub の .NET Core リポジトリでは、コミットおよび PR が毎日�
 
 .NET Core v1.0.0 の安定バージョンを配布した後は、新しいシナリオを有効にするために .NET Core ライブラリに新しい API が追加されます。 更新された .NET Core ライブラリ パッケージを参照するように、さまざまなメタパッケージが更新されます。 メタパッケージは、より新しいフレームワーク バージョンと一致するように、修正プログラムの更新 (x.y) としてバージョン管理されます。 新しい API を記述するように、さまざまなフレームワークが更新されます。 新しい .NET Core 配布は、`Microsoft.NETCore.App` メタパッケージと一致するバージョン番号でリリースされます。
 
-次の project.json の例に示すマイナー更新を参照してください。
+次のプロジェクト ファイルの例に示すマイナー更新を参照してください。
 
-```
-{
-  "dependencies": {
-    "Microsoft.NETCore.App": "1.1.0"
-  },
-  "frameworks": {
-    "netcoreapp1.1": {}
-  }
-}
+```xml
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netcoreapp1.1</TargetFramework>
+  </PropertyGroup>
+</Project>
 ```
 
 ### <a name="shipping-a-major-release"></a>メジャー リリースの配布
 
 .NET Core v1.y.z の安定バージョンを配布した後は、新しい主要なシナリオを有効にするために .NET Core ライブラリに新しい API が追加されます。 たとえば、プラットフォームのサポートがドロップされます。 更新された .NET Core ライブラリ パッケージを参照するように、さまざまなメタパッケージが更新されます。 `Microsoft.NETCore.App` メタパッケージと `netcore` フレームワークは、メジャー更新 (x.) としてバージョン管理されます。 `NETStandard.Library` メタパッケージは、複数の .NET 実装に適用されるので、マイナー更新 (x.y) としてバージョン管理される可能性があります。 新しい .NET Core 配布は、`Microsoft.NETCore.App` メタパッケージと一致するバージョン番号でリリースされます。
 
-次の例の project.json メタパッケージ リファレンスに示すメジャー更新を参照してください。
+次のプロジェクト ファイルの例に示すメジャー更新を参照してください  (ただし、`netcoreapp2.0` はリリースされていません)。
 
-```
-{
-  "dependencies": {
-    "Microsoft.NETCore.App": "2.0.0"
-  },
-  "frameworks": {
-    "netcoreapp2.0": {}
-  }
-}
+```xml
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+</Project>
+
 ```
 

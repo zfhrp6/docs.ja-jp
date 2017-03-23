@@ -1,0 +1,144 @@
+---
+title: "方法: XSD (LINQ to XML) を使用して検証 (Visual Basic) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 2015-07-20
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-visual-basic
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- VB
+ms.assetid: a0fe88d4-4e77-49e7-90de-8953feeccc21
+caps.latest.revision: 4
+author: stevehoag
+ms.author: shoag
+translation.priority.mt:
+- cs-cz
+- pl-pl
+- pt-br
+- tr-tr
+translationtype: Machine Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: c6df61013b0007e5943060f8926b21d189a01519
+ms.lasthandoff: 03/13/2017
+
+---
+# <a name="how-to-validate-using-xsd-linq-to-xml-visual-basic"></a>方法: XSD (LINQ to XML) を使用して検証 (Visual Basic)
+<xref:System.Xml.Schema>名前空間には、XML スキーマ定義言語 (XSD) ファイルに対して XML ツリーを検証するが簡単にする拡張メソッドが含まれています</xref:System.Xml.Schema>。 詳細については、次を参照してください、<xref:System.Xml.Schema.Extensions.Validate%2A>メソッドのドキュメント。</xref:System.Xml.Schema.Extensions.Validate%2A> 。  
+  
+## <a name="example"></a>例  
+ 次の例を作成し、 <xref:System.Xml.Schema.XmlSchemaSet>、2 つを検証<xref:System.Xml.Linq.XDocument>スキーマ セットに対してオブジェクト</xref:System.Xml.Linq.XDocument></xref:System.Xml.Schema.XmlSchemaSet>。 ドキュメントの&1; つは有効ですが、その他のドキュメントは無効です。  
+  
+```vb  
+Dim errors As Boolean = False  
+  
+Private Sub XSDErrors(ByVal o As Object, ByVal e As ValidationEventArgs)  
+    Console.WriteLine("{0}", e.Message)  
+    errors = True  
+End Sub  
+  
+Sub Main()  
+    Dim xsdMarkup As XElement = _  
+        <xsd:schema xmlns:xsd='http://www.w3.org/2001/XMLSchema'>  
+            <xsd:element name='Root'>  
+                <xsd:complexType>  
+                    <xsd:sequence>  
+                        <xsd:element name='Child1' minOccurs='1' maxOccurs='1'/>  
+                        <xsd:element name='Child2' minOccurs='1' maxOccurs='1'/>  
+                    </xsd:sequence>  
+                </xsd:complexType>  
+            </xsd:element>  
+        </xsd:schema>  
+    Dim schemas As XmlSchemaSet = New XmlSchemaSet()  
+    schemas.Add("", xsdMarkup.CreateReader)  
+  
+    Dim doc1 As XDocument = _  
+        <?xml version='1.0'?>  
+        <Root>  
+            <Child1>content1</Child1>  
+            <Child2>content1</Child2>  
+        </Root>  
+  
+    Dim doc2 As XDocument = _  
+        <?xml version='1.0'?>  
+        <Root>  
+            <Child1>content1</Child1>  
+            <Child3>content1</Child3>  
+        </Root>  
+  
+    Console.WriteLine("Validating doc1")  
+    errors = False  
+    doc1.Validate(schemas, AddressOf XSDErrors)  
+    Console.WriteLine("doc1 {0}", IIf(errors = True, "did not validate", "validated"))  
+  
+    Console.WriteLine()  
+    Console.WriteLine("Validating doc2")  
+    errors = False  
+    doc2.Validate(schemas, AddressOf XSDErrors)  
+    Console.WriteLine("doc2 {0}", IIf(errors = True, "did not validate", "validated"))  
+End Sub  
+```  
+  
+ この例を実行すると、次の出力が生成されます。  
+  
+```  
+Validating doc1  
+doc1 validated  
+  
+Validating doc2  
+The element 'Root' has invalid child element 'Child3'. List of possible elements expected: 'Child2'.  
+doc2 did not validate  
+```  
+  
+## <a name="example"></a>例  
+ 次の例では、XML ドキュメントからことを検証[サンプル XML ファイル: 顧客と注文 (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml.md)のスキーマに従った有効[サンプル XSD ファイル: 顧客と注文](../../../../visual-basic/programming-guide/concepts/linq/sample-xsd-file-customers-and-orders.md)します。 次に、ソース XML ドキュメントを変更します。 変更するのは最初の顧客の `CustomerID` 属性です。 変更が完了すると、存在しない顧客を注文が参照するようになります。したがって、この XML ドキュメントは有効ではなくなります。  
+  
+ この例は、次の XML ドキュメントを使用して:[サンプル XML ファイル: 顧客と注文 (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml.md)します。  
+  
+ この例は、次の XSD スキーマを使用して:[サンプル XSD ファイル: 顧客と注文](../../../../visual-basic/programming-guide/concepts/linq/sample-xsd-file-customers-and-orders.md)します。  
+  
+```vb  
+Dim errors As Boolean = False  
+  
+Private Sub XSDErrors(ByVal o As Object, ByVal e As ValidationEventArgs)  
+    Console.WriteLine("{0}", e.Message)  
+    errors = True  
+End Sub  
+  
+Sub Main()  
+    Dim schemas As XmlSchemaSet = New XmlSchemaSet()  
+    schemas.Add("", "CustomersOrders.xsd")  
+  
+    Console.WriteLine("Attempting to validate")  
+    Dim custOrdDoc As XDocument = XDocument.Load("CustomersOrders.xml")  
+    errors = False  
+    custOrdDoc.Validate(schemas, AddressOf XSDErrors)  
+    Console.WriteLine("custOrdDoc {0}", IIf(errors, "did not validate", "validated"))  
+  
+    Console.WriteLine()  
+    ' Modify the source document so that it will not validate.  
+    custOrdDoc.<Root>.<Orders>.<Order>.<CustomerID>(0).Value = "AAAAA"  
+    Console.WriteLine("Attempting to validate after modification")  
+    errors = False  
+    custOrdDoc.Validate(schemas, AddressOf XSDErrors)  
+    Console.WriteLine("custOrdDoc {0}", IIf(errors, "did not validate", "validated"))  
+End Sub  
+```  
+  
+ この例を実行すると、次の出力が生成されます。  
+  
+```  
+Attempting to validate  
+custOrdDoc validated  
+  
+Attempting to validate after modification  
+The key sequence 'AAAAA' in Keyref fails to refer to some key.  
+custOrdDoc did not validate  
+```  
+  
+## <a name="see-also"></a>関連項目  
+ <xref:System.Xml.Schema.Extensions.Validate%2A></xref:System.Xml.Schema.Extensions.Validate%2A>   
+ [XML ツリー (Visual Basic) の作成](../../../../visual-basic/programming-guide/concepts/linq/creating-xml-trees.md)

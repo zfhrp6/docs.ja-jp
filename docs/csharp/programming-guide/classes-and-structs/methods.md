@@ -1,0 +1,136 @@
+---
+title: "メソッド (C# プログラミング ガイド) | Microsoft Docs"
+ms.date: "2015-07-20"
+ms.prod: ".net"
+ms.technology: 
+  - "devlang-csharp"
+ms.topic: "article"
+dev_langs: 
+  - "CSharp"
+helpviewer_keywords: 
+  - "C# 言語, メソッド"
+  - "メソッド [C#]"
+ms.assetid: cc738f07-e8cd-4683-9585-9f40c0667c37
+caps.latest.revision: 41
+author: "BillWagner"
+ms.author: "wiwagn"
+caps.handback.revision: 41
+---
+# メソッド (C# プログラミング ガイド)
+メソッドは、一連のステートメントが含まれているコード ブロックです。 必要なメソッド引数を指定してプログラムからメソッドを呼び出すと、メソッド内のステートメントが実行されます。 C\# では、実行されるすべての命令がメソッドのコンテキストで実行されます。 Main メソッドは、すべての C\# アプリケーションのエントリ ポイントです。プログラムが開始されると、このメソッドが共通言語ランタイム \(CLR\) によって呼び出されます。  
+  
+> [!NOTE]
+>  このトピックでは、名前付きメソッドについて説明します。 匿名関数の詳細については、「[匿名関数](../../../csharp/programming-guide/statements-expressions-operators/anonymous-functions.md)」を参照してください。  
+  
+## メソッド シグネチャ  
+ メソッドは、[クラス](../../../csharp/language-reference/keywords/class.md)または[構造体](../../../csharp/language-reference/keywords/struct.md)で、アクセス レベル \(`public` や `private` など\)、オプションの修飾子 \(`abstract` や `sealed` など\)、戻り値、メソッドの名前、およびメソッド パラメーターを指定して宣言します。 これらのまとまりがメソッドのシグネチャとなります。  
+  
+> [!NOTE]
+>  メソッドのオーバーロードを可能にするために、メソッドの戻り値の型はメソッドのシグネチャには含まれません。 ただし、デリゲートとそれが指すメソッドの互換性を決定する場合には、メソッドのシグネチャの一部となります。  
+  
+ メソッド パラメーターはかっこで囲み、各パラメーターをコンマで区切ります。 かっこ内を空にすると、メソッドでパラメーターが不要なことを意味します。 次に 3 つのメソッドを含むクラスの例を示します。  
+  
+ [!code-cs[csProgGuideObjects#40](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/methods_1.cs)]  
+  
+## メソッド アクセス  
+ オブジェクトでメソッドを呼び出すのは、フィールドにアクセスするのと似ています。 オブジェクト名の後に、ピリオド、メソッド名、かっこを追加します。 引数はかっこの中に記述し、コンマで区切ります。`Motorcycle` クラスのメソッドの呼び出し例を次に示します。  
+  
+ [!code-cs[csProgGuideObjects#41](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/methods_2.cs)]  
+  
+## メソッド パラメーターと引数  
+ メソッド定義には、必要なパラメーターの名前と型を指定します。 呼び出し元のコードからメソッドを呼び出すときに、各パラメーターに引数と呼ばれる具体的な値を指定します。 引数にはパラメーター型との互換性が必要ですが、呼び出し元のコードで引数名を使用する場合、引数名がメソッドで定義されるパラメーター名と同じである必要はありません。 例:  
+  
+ [!code-cs[csProgGuideObjects#74](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/methods_3.cs)]  
+  
+## 参照渡しと値渡し  
+ 既定では、値型がメソッドに渡されるときは、オブジェクト自体ではなく、そのコピーが渡されます。 したがって、引数に加えた変更は、呼び出し元のメソッドにある元のコピーには影響しません。 ref キーワードを使用すると、値型を参照によって引き渡すことができます。 詳細については、「[値型のパラメーターの引き渡し](../../../csharp/programming-guide/classes-and-structs/passing-value-type-parameters.md)」を参照してください。 組み込みの値型の一覧については、「[値型の一覧表](../../../csharp/language-reference/keywords/value-types-table.md)」を参照してください。  
+  
+ 参照型のオブジェクトがメソッドに渡されると、オブジェクトへの参照が渡されます。 つまり、メソッドは、オブジェクト自体ではなく、オブジェクトの場所を示す引数を受け取ります。 この参照を使用してオブジェクトのメンバーを変更した場合は、オブジェクトを値で渡しても、呼び出し元のメソッドの引数に変更が反映されます。  
+  
+ `class` キーワードを使用して参照型を作成する例を次に示します。  
+  
+ [!code-cs[csProgGuideObjects#42](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/methods_4.cs)]  
+  
+ この型に基づくオブジェクトをメソッドに渡す場合は、オブジェクトへの参照が渡されます。 次の例では、`SampleRefType` 型のオブジェクトをメソッド `ModifyObject` に渡します。  
+  
+ [!code-cs[csProgGuideObjects#75](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/methods_5.cs)]  
+  
+ この例は、基本的に前の例と同様に、引数を値でメソッドに渡しています。 しかし、参照型を使用しているため、結果は異なります。`ModifyObject` のパラメーター `obj` の `value` フィールドで行われた変更によって、`TestRefType` メソッドの引数 `rt` の `value` フィールドも変更されます。`TestRefType` メソッドは出力として 33 を表示します。  
+  
+ 参照型を参照渡しまたは値渡しで渡す方法の詳細については、「[参照型のパラメーターの引き渡し](../../../csharp/programming-guide/classes-and-structs/passing-reference-type-parameters.md)」および「[参照型](../../../csharp/language-reference/keywords/reference-types.md)」を参照してください。  
+  
+## 戻り値  
+ メソッドは、呼び出し元に値を返すことができます。 戻り値の型 \(メソッド名の前に記述されている型\) が `void` でない場合、メソッドは、`return` キーワードを使用して値を返すことができます。`return` キーワードに続いて戻り値の型に一致する値が記述されたステートメントは、その値をメソッドの呼び出し元に返します。 また、`return` キーワードは、メソッドの実行を中止します。 戻り値の型が `void` の場合、値を持たない `return` ステートメントは、メソッドの実行を中止するときに役立ちます。`return` キーワードを使用しない場合、メソッドは、コード ブロックの最後に到達したときに実行を中止します。 戻り値の型が void 以外のメソッドで値を返すには、`return` キーワードを使用する必要があります。 たとえば、次の 2 つのメソッドは、`return` キーワードを使用して整数を返します。  
+  
+ [!code-cs[csProgGuideObjects#44](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/methods_6.cs)]  
+  
+ メソッドから返された値を使用する場合、呼び出し元のメソッド内で同じ型の値を使用している場所では、メソッド呼び出し自体を値として使用できます。 戻り値は、変数に代入することもできます。 たとえば、次の 2 つのコードでは、同様の結果が得られます。  
+  
+ [!code-cs[csProgGuideObjects#45](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/methods_7.cs)]  
+  
+ [!code-cs[csProgGuideObjects#46](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/methods_8.cs)]  
+  
+ この場合、ローカル変数 `result` を使用して値を格納する手順はオプションです。 このローカル変数によってコードの読みやすさが向上することがあります。また、引数の元の値をメソッドのスコープ全体で保持する場合に必要になることがあります。  
+  
+ 呼び出し元関数から、配列の内容を変更するメソッド M に配列が渡された場合、メソッド M から多次元配列を返す必要はありません。値の適切なスタイルまたは機能フローのために M から結果の配列を返すことはできますが、必須ではありません。  変更された配列を返す必要がないのは、C\# ではすべての参照型が値で渡され、配列参照の値がその配列へのポインターになるためです。 メソッド M では、次の例に示すように、配列の内容に対する変更は、配列への参照を含むコードによって監視できます。  
+  
+```c#  
+static void Main(string[] args) { int[,] matrix = new int[2, 2]; FillMatrix(matrix); // matrix is now full of -1 } public static void FillMatrix(int[,] matrix) { for (int i = 0; i < matrix.GetLength(0); i++) { for (int j = 0; j < matrix.GetLength(1); j++) { matrix[i, j] = -1; } } }  
+  
+```  
+  
+ 詳細については、「[return](../../../csharp/language-reference/keywords/return.md)」を参照してください。  
+  
+## 非同期メソッド  
+ 非同期機能を使用することによって、明示的なコールバックを使用せずに、または複数のメソッドやラムダ式にわたって手動でコードを分割することなく、非同期メソッドを呼び出すことができます。 非同期機能は、[!INCLUDE[vs_dev11_long](../../../csharp/includes/vs-dev11-long-md.md)] で導入されました。  
+  
+ メソッドに [async](../../../csharp/language-reference/keywords/async.md) 修飾子を付けると、そのメソッドで [await](../../../csharp/language-reference/keywords/await.md) 演算子を使用できます。 コントロールが非同期メソッドの await 式に到達すると、コントロールは呼び出し元に戻り、待機中のタスクが完了するまでメソッドの進行状況は中断されます。 タスクが完了すると、メソッドで実行を再開できます。  
+  
+> [!NOTE]
+>  非同期メソッドは、まだ完了していない待機中の最初のオブジェクトに達するか、または非同期メソッドの最後に達すると、呼び出し元に戻ります。  
+  
+ 非同期メソッドの戻り値の型としては、<xref:System.Threading.Tasks.Task%601>、<xref:System.Threading.Tasks.Task>、または void を指定できます。 戻り値の型 void は主として、void の戻り値の型が必要なイベント ハンドラーの定義に使用されます。 void を返す非同期メソッドは待機できません。void を返すメソッドの呼び出し元は、このメソッドがスローする例外をキャッチできません。  
+  
+ 次の例で、`DelayAsync` は戻り値の型が <xref:System.Threading.Tasks.Task%601> である非同期メソッドです。`DelayAsync` には、整数を返す `return` ステートメントがあります。 そのため、メソッド宣言 `DelayAsync` では、戻り値の型を `Task<int>` とする必要があります。 戻り値の型が `Task<int>` であるため、ステートメント `int result = await delayTask` に示すように、`DoSomethingAsync` 内の `await` 式を評価すると整数が生成されます。  
+  
+ `startButton_Click` メソッドは、戻り値の型が void の非同期メソッドの例です。`DoSomethingAsync` が非同期メソッドであるため、`DoSomethingAsync` を呼び出すタスクは、ステートメント `await DoSomethingAsync();` に示すように待機する必要があります。`startButton_Click` メソッドでは `await` 式が使用されているため、`async` 修飾子を使用して定義する必要があります。  
+  
+ [!code-cs[csAsyncMethod#2](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/methods_9.cs)]  
+  
+ 非同期メソッドで [ref](../../../csharp/language-reference/keywords/ref.md) パラメーターまたは [out](../../../csharp/language-reference/keywords/out.md) パラメーターを宣言することはできませんが、これらのパラメーターを持つメソッドを呼び出すことはできます。  
+  
+ 非同期メソッドの詳細については、「[Async および Await を使用した非同期プログラミング](../Topic/Asynchronous%20Programming%20with%20Async%20and%20Await%20\(C%23%20and%20Visual%20Basic\).md)」、「[非同期プログラムにおける制御フロー](../Topic/Control%20Flow%20in%20Async%20Programs%20\(C%23%20and%20Visual%20Basic\).md)」、および「[非同期の戻り値の型](../Topic/Async%20Return%20Types%20\(C%23%20and%20Visual%20Basic\).md)」を参照してください。  
+  
+## 式の本文の定義  
+ メソッドの定義としては、式の結果を即座に返すか、またはメソッドの本文として 1 つのステートメントを含むものが一般的です。`=>` を使用してこのようなメソッドを定義するための構文ショートカットがあります。  
+  
+```c#  
+public Point Move(int dx, int dy) => new Point(x + dx, y + dy); public void Print() => Console.WriteLine(First + " " + Last); // Works with operators, properties, and indexers too. public static Complex operator +(Complex a, Complex b) => a.Add(b); public string Name => First + " " + Last; public Customer this[long id] => store.LookupCustomer(id);  
+```  
+  
+ メソッドが `void` を返すか、非同期メソッドである場合は、メソッドの本文を \(ラムダの場合と同様に\) ステートメント式にする必要があります。  プロパティとインデクサーは読み取り専用にする必要があるため、`get` アクセサー キーワードは使用しないでください。  
+  
+## 反復子  
+ 反復子は、リストや配列など、コレクションに対するカスタム イテレーションを実行します。 反復子は、[yield return](../../../csharp/language-reference/keywords/yield.md) ステートメントを使用して、各要素を 1 回に1 つ返します。[yield return](../../../csharp/language-reference/keywords/yield.md) ステートメントに達すると、コードの現在の場所が記憶されます。 反復子が次回呼び出されたとき、この場所から実行が再開されます。  
+  
+ [foreach](../../../csharp/language-reference/keywords/foreach-in.md) ステートメントを使用して、クライアント コードから反復子を呼び出します。  
+  
+ 反復子の戻り値の型には、<xref:System.Collections.IEnumerable>、<xref:System.Collections.Generic.IEnumerable%601>、<xref:System.Collections.IEnumerator>、または <xref:System.Collections.Generic.IEnumerator%601> を指定できます。  
+  
+ 詳細については、「[反復子](../Topic/Iterators%20\(C%23%20and%20Visual%20Basic\).md)」を参照してください。  
+  
+## C\# 言語仕様  
+ [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec-md.md)]  
+  
+## 参照  
+ [C\# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
+ [クラスと構造体](../../../csharp/programming-guide/classes-and-structs/index.md)   
+ [アクセス修飾子](../../../csharp/programming-guide/classes-and-structs/access-modifiers.md)   
+ [静的クラスと静的クラス メンバー](../../../csharp/programming-guide/classes-and-structs/static-classes-and-static-class-members.md)   
+ [継承](../../../csharp/programming-guide/classes-and-structs/inheritance.md)   
+ [抽象クラスとシール クラス、およびクラス メンバー](../../../csharp/programming-guide/classes-and-structs/abstract-and-sealed-classes-and-class-members.md)   
+ [params](../../../csharp/language-reference/keywords/params.md)   
+ [return](../../../csharp/language-reference/keywords/return.md)   
+ [out](../../../csharp/language-reference/keywords/out.md)   
+ [ref](../../../csharp/language-reference/keywords/ref.md)   
+ [パラメーターの引き渡し](../../../csharp/programming-guide/classes-and-structs/passing-parameters.md)

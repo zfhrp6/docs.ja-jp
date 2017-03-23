@@ -4,117 +4,93 @@ description: "`dotnet test` コマンドは、指定されたプロジェクト�
 keywords: "dotnet-test, CLI, CLI コマンド, .NET Core"
 author: blackdwarf
 ms.author: mairaw
-ms.date: 10/07/2016
+ms.date: 03/06/2017
 ms.topic: article
 ms.prod: .net-core
 ms.technology: dotnet-cli
 ms.devlang: dotnet
-ms.assetid: 3a0fa917-eb0a-4d7e-9217-d06e65455675
+ms.assetid: 4bf0aef4-148a-41c6-bb95-0a9e1af8762e
 translationtype: Human Translation
-ms.sourcegitcommit: 796df1549a7553aa93158598d62338c02d4df73e
-ms.openlocfilehash: 871a6f736272309f6fae74b06f437c7271df2321
+ms.sourcegitcommit: 195664ae6409be02ca132900d9c513a7b412acd4
+ms.openlocfilehash: 21f3850520b922f16c77f831a045ec58bdf1b5c1
+ms.lasthandoff: 03/07/2017
 
 ---
 
 #<a name="dotnet-test"></a>dotnet-test
 
-> [!WARNING]
-> このトピックは .NET Core Tools Preview 2 を対象としています。 .NET Core Tools RC4 バージョンについては、「[dotnet-test (.NET Core Tools RC4)](../preview3/tools/dotnet-test.md)」トピックを参照してください。
-
 ## <a name="name"></a>名前
 
-`dotnet-test` - 構成済みのテスト ランナーを使用して、単体テストを実行します。
+`dotnet-test` - .NET テスト ドライバー
 
 ## <a name="synopsis"></a>構文
 
-`dotnet test [project] [--help] 
-    [--parentProcessId] [--port] [--configuration]   
-    [--output] [--build-base-path] [--framework] [--runtime]
-    [--no-build]`  
+```
+dotnet test [project] [-s|--settings] [-t|--list-tests] [--filter] [-a|--test-adapter-path] [-l|--logger] [-c|--configuration] [-f|--framework] [-o|--output] [-d|--diag] [--no-build] [-v|--verbosity]
+dotnet test [-h|--help]
+```
 
 ## <a name="description"></a>説明
 
 `dotnet test` コマンドは、指定されたプロジェクトで単体テストを実行する場合に使用されます。 単体テストは、単体テスト フレームワーク (NUnit や xUnit など) およびその単体テスト フレームワークの dotnet テスト ランナーに対する依存関係があるクラス ライブラリ プロジェクトです。 これらは NuGet パッケージとしてパッケージ化され、プロジェクトの通常の依存関係として復元されます。
 
-テスト プロジェクトでは、"testRunner" ノードを使用して project.json にテスト ランナー プロパティを指定する必要もあります。 この値には、単体テスト フレームワークの名前を含める必要があります。
+テスト プロジェクトでは、テスト ランナーを指定する必要もあります。 これは、通常の `<PackageReference>` 要素を使用して指定されます。次のサンプル プロジェクト ファイルのようになります。
 
-次のサンプルの project.json では必要なプロパティが示されています。
-
-```json
-{
-  "version": "1.0.0-*",
-  "buildOptions": {
-    "debugType": "portable"
-  },
-  "dependencies": {
-    "System.Runtime.Serialization.Primitives": "4.1.1",
-    "xunit": "2.1.0",
-    "dotnet-test-xunit": "1.0.0-rc2-192208-24"
-  },
-  "testRunner": "xunit",
-  "frameworks": {
-    "netcoreapp1.0": {
-      "dependencies": {
-        "Microsoft.NETCore.App": {
-          "type": "platform",
-          "version": "1.0.0"
-        }
-      },
-      "imports": [
-        "dotnet5.4",
-        "portable-net451+win8"
-      ]
-    }
-  }
-}
-```
-
-`dotnet test`では、以下の&2; つの実行モードがサポートされます。
-
-1. コンソール: コンソール モードでは、`dotnet test` は単に渡されたコマンドを完全に実行し、結果を出力します。 --port を渡さずに `dotnet test` を呼び出すと、常にコンソール モードで実行されるため、ランナーはコンソール モードで実行されます。
-2. デザイン時: エディターや統合開発環境 (IDE) などの他のツールのコンテキストで使用されます。 このモードの詳細については、[dotnet-test プロトコル](test-protocol.md) のドキュメントを参照してください。 
+[!code-xml[XUnit 基本テンプレート](../../../samples/snippets/csharp/xunit-test/xunit-test.csproj)]
 
 ## <a name="options"></a>オプション
 
-`[project]`
+`project`
     
 テスト プロジェクトへのパスを指定します。 省略すると、既定で現在のディレクトリに設定されます。
 
-`-?|-h|--help`
+`-h|--help`
 
 コマンドの短いヘルプを印刷します。
 
-`--parentProcessId`
+`-s|--settings <SETTINGS_FILE>`
 
-IDE でプロセス ID を指定するために使用されます。 親プロセスが終了すると、テストは終了します。
+テストの実行時に使用される設定です。 
 
-`--port`
+`-t|--list-tests`
 
-IDE で接続をリッスンするポートの番号を指定するために使用されます。
+現在のプロジェクトで検出されたすべてのテストを一覧表示します。 
+
+`--filter <EXPRESSION>`
+
+指定された式を使用して、現在のプロジェクト内のテストを除外します。 フィルタリングの詳細については、「[Running selective unit tests in Visual Studio using TestCaseFilter](https://aka.ms/vstest-filtering)」 (TestCaseFilter を利用し、Visual Studio で選択的単体テストを実行する) を参照してください。
+
+`-a|--test-adapter-path <PATH_TO_ADAPTER>`
+
+テスト実行で指定されたパスからカスタムのテスト アダプターを使用します。 
+
+`-l|--logger <LoggerUri/FriendlyName>`
+
+テスト結果のロガーを指定します。 
 
 `-c|--configuration <Debug|Release>`
 
-ビルドに使用する構成です。 既定値は `Release` です。 
+ビルドに使用する構成です。 既定値は `Debug` ですが、プロジェクトの構成がこの既定の SDK 設定に優先する可能性があります。
 
-`-o|--output [OUTPUT_DIRECTORY]`
-
-実行するバイナリを検索するディレクトリです。
-
-`-b|--build-base-path <OUTPUT_DIRECTORY>`
-
-一時出力を配置するディレクトリ。
-
-`-f|--framework [FRAMEWORK]`
+`-f|--framework <FRAMEWORK>`
 
 特定のフレームワークのテスト バイナリを検索します。
 
-`-r|--runtime [RUNTIME_IDENTIFIER]`
+`-o|--output <OUTPUT_DIRECTORY>`
 
-指定されたランタイムのテスト バイナリを検索します。
+実行するバイナリを検索するディレクトリです。
+
+`-d|--diag <PATH_TO_DIAGNOSTICS_FILE>`
+
+テスト プラットフォームの診断モードを有効にし、指定したファイルに診断メッセージを出力します。 
 
 `--no-build` 
 
-実行の前にテスト プロジェクトをビルドしません。 
+実行の前にテスト プロジェクトをビルドしません。
+
+`-v|--verbosity <LEVEL>`
+
+コマンドの詳細レベルを設定します。 指定できる値は、`q[uiet]`、`m[inimal]`、`n[ormal]`、`d[etailed]`、および `diag[nostic]` です。
 
 ## <a name="examples"></a>例
 
@@ -124,17 +100,10 @@ IDE で接続をリッスンするポートの番号を指定するために使�
 
 test1 プロジェクトでテストを実行します。
 
-`dotnet test /projects/test1/project.json` 
+`dotnet test ~/projects/test1/test1.csproj` 
 
 ## <a name="see-also"></a>関連項目
-
-[dotnet-test 通信プロトコル](test-protocol.md)
 
 [フレームワーク](../../standard/frameworks.md)
 
 [ランタイム識別子 (RID) のカタログ](../rid-catalog.md)
-
-
-<!--HONumber=Feb17_HO2-->
-
-

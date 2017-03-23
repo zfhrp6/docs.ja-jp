@@ -1,0 +1,109 @@
+---
+title: "方法: 単一の属性 (LINQ to XML) を取得する (Visual Basic) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 2015-07-20
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-visual-basic
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- VB
+ms.assetid: 11b938d7-c011-4048-900e-8b9183c41c94
+caps.latest.revision: 3
+author: stevehoag
+ms.author: shoag
+translationtype: Machine Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: 35f477ead2bdcfdf78781459f93a755dbc89e5cc
+ms.lasthandoff: 03/13/2017
+
+
+---
+# <a name="how-to-retrieve-a-single-attribute-linq-to-xml-visual-basic"></a>方法: 単一の属性 (LINQ to XML) を取得する (Visual Basic)
+このトピックでは、属性名を指定して要素の単一の属性を取得する方法について説明します。 これは、特定の属性を持つ要素を検索するクエリ式を記述する場合に便利です。  
+  
+ <xref:System.Xml.Linq.XElement.Attribute%2A>のメソッド、<xref:System.Xml.Linq.XElement>クラスを返します、<xref:System.Xml.Linq.XAttribute>指定した名前です。</xref:System.Xml.Linq.XAttribute> </xref:System.Xml.Linq.XElement> </xref:System.Xml.Linq.XElement.Attribute%2A> 。  
+  
+## <a name="example"></a>例  
+ 次の例では、<xref:System.Xml.Linq.XElement.Attribute%2A>メソッド</xref:System.Xml.Linq.XElement.Attribute%2A>。  
+  
+```vb  
+Dim cust As XElement = <PhoneNumbers>  
+                           <Phone type="home">555-555-5555</Phone>  
+                           <Phone type="work">555-555-6666</Phone>  
+                       </PhoneNumbers>  
+Dim elList = From el In cust...<Phone>  
+For Each e As XElement In elList  
+    Console.WriteLine(e.@type)  
+Next  
+```  
+  
+ この例では、`Phone` という名前のツリー内のすべての子孫を検索し、次に `type` という名前の属性を検索します。  
+  
+ このコードを実行すると、次の出力が生成されます。  
+  
+```  
+home  
+work  
+```  
+  
+## <a name="example"></a>例  
+ 属性の値を取得する場合は、キャストできますで場合と同様<xref:System.Xml.Linq.XElement>オブジェクト</xref:System.Xml.Linq.XElement>。 次に例を示します。  
+  
+```vb  
+Dim cust As XElement = <PhoneNumbers>  
+                           <Phone type="home">555-555-5555</Phone>  
+                           <Phone type="work">555-555-6666</Phone>  
+                       </PhoneNumbers>  
+Dim elList As IEnumerable(Of XElement) = _  
+    From el In cust...<Phone> _  
+    Select el  
+For Each el As XElement In elList  
+    Console.WriteLine(el.@type)  
+Next  
+```  
+  
+ このコードを実行すると、次の出力が生成されます。  
+  
+```  
+home  
+work  
+```  
+  
+ [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)]provides explicit cast operators for the <xref:System.Xml.Linq.XAttribute> class to `string`, `bool`, `bool?`, `int`, `int?`, `uint`, `uint?`, `long`, `long?`, `ulong`, `ulong?`, `float`, `float?`, `double`, `double?`, `decimal`, `decimal?`, `DateTime`, `DateTime?`, `TimeSpan`, `TimeSpan?`, `GUID`, and `GUID?`.</xref:System.Xml.Linq.XAttribute>  
+  
+## <a name="example"></a>例  
+ 上記と同じコードを使用して、名前空間内の属性を取得する例を次に示します。 詳細については、次を参照してください。 [XML 名前空間 (Visual Basic) の使用](../../../../visual-basic/programming-guide/concepts/linq/working-with-xml-namespaces.md)します。  
+  
+```vb  
+Imports <xmlns:aw="http://www.adventure-works.com">  
+  
+Module Module1  
+    Sub Main()  
+        Dim cust As XElement = _  
+            <aw:PhoneNumbers>  
+                <aw:Phone aw:type="home">555-555-5555</aw:Phone>  
+                <aw:Phone aw:type="work">555-555-6666</aw:Phone>  
+            </aw:PhoneNumbers>  
+        Dim elList As IEnumerable(Of XElement) = _  
+            From el In cust...<aw:Phone> _  
+            Select el  
+        For Each el As XElement In elList  
+            Console.WriteLine(el.@aw:type)  
+        Next  
+    End Sub  
+End Module  
+```  
+  
+ このコードを実行すると、次の出力が生成されます。  
+  
+```  
+home  
+work  
+```  
+  
+## <a name="see-also"></a>関連項目  
+ [LINQ to XML 軸 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-axes.md)

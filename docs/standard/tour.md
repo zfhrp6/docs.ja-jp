@@ -56,7 +56,7 @@ Microsoft が開発とサポートに力を注いでいる .NET 言語は、C#�
 
 通常、特定のスコープ内の型は、メソッドが完了して、収集が可能になった時点で、スコープ外に移動します。 ただし、`using` ステートメントを使用して、メソッドの終了よりも早く、特定のオブジェクトがスコープ外に移動するように GC に指定することができます。
 
-[!code-csharp[MemoryManagement](../../samples/csharp/snippets/tour/MemoryManagement.csx#L6-L9)]
+[!code-csharp[MemoryManagement](../../samples/csharp/snippets/tour/MemoryManagement.csx#L4-L5)]
 
 `using` ブロックが完了すると、上の例の `stream` オブジェクトを自由に収集でき、メモリが解放できることが GC に伝わります。
 
@@ -68,7 +68,7 @@ Microsoft が開発とサポートに力を注いでいる .NET 言語は、C#�
 
 次の例では、メモリの安全性の結果として、例外がスローされます。
 
-[!code-csharp[MemoryManagement](../../samples/csharp/snippets/tour/MemoryManagement.csx#L11-L12)]
+[!code-csharp[MemoryManagement](../../samples/csharp/snippets/tour/MemoryManagement.csx#L4-L5)]
 
 ## <a name="type-safety"></a>タイプ セーフ
 

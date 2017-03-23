@@ -10,9 +10,9 @@ ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: 609b0845-49e7-4864-957b-21ffe1b93bf2
 translationtype: Human Translation
-ms.sourcegitcommit: 90fe68f7f3c4b46502b5d3770b1a2d57c6af748a
-ms.openlocfilehash: 2396b2794e88673afc1973b5bdd1e82c28fe5a13
-ms.lasthandoff: 03/02/2017
+ms.sourcegitcommit: 519253bd6dc105afb138268c62347c29a6072fbb
+ms.openlocfilehash: 9cb957973e68129194c998c88e398351b48819ec
+ms.lasthandoff: 03/07/2017
 
 ---
 
@@ -44,28 +44,26 @@ ms.lasthandoff: 03/02/2017
 - [System.Linq](https://www.nuget.org/packages/System.Linq) - オブジェクトに対するクエリの種類のセットです。Enumerable や [ILookup&lt;TKey, TElement&gt;](http://docs.microsoft.com/dotnet/core/api/System.Linq.ILookup-2) などがあります。
 - [System.Reflection](https://www.nuget.org/packages/System.Reflection) - 読み込み、検査、およびアクティブ化の種類のセットです。[Assembly](http://docs.microsoft.com/dotnet/core/api/System.Reflection.Assembly)、[TypeInfo](http://docs.microsoft.com/dotnet/core/api/System.Reflection.TypeInfo)、[MethodInfo](http://docs.microsoft.com/dotnet/core/api/System.Reflection.MethodInfo) などがあります。
 
-パッケージは project.json で参照されます。 次の例では、[System.Runtime](https://www.nuget.org/packages/System.Runtime/) パッケージが参照されています。 
+一般的に、パッケージ単位でパッケージをプロジェクトに追加するより、*メタパッケージ*を追加する方がずっと簡単です。メタパッケージとは、よく一緒に使われるパッケージをセットにしたものです。 (メタパッケージの詳細については、次のセクションを参照してください。)ただし、単一のパッケージが必要な場合、下の例のように追加できます。[System.Runtime](https://www.nuget.org/packages/System.Runtime/) パッケージを参照しています。 
 
-```json
-{
-  "dependencies": {
-    "System.Runtime": "4.1.0"
-  },
-  "frameworks": {
-    "netstandard1.6": {}
-  }
-}
+```xml
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard1.6</TargetFramework>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="System.Runtime" Version="4.3.0" />
+  </ItemGroup>
+</Project>
 ```
-
-ほとんどの場合、下位レベルの .NET Core パッケージを直接参照することはありません。最終的に管理対象のパッケージが多くなりすぎるためです。 代わりに、メタパッケージを参照します。
 
 ## <a name="metapackages"></a>メタパッケージ
 
 メタパッケージは、統合して意味をなすパッケージ セットを記述するための NuGet パッケージの規則です。 メタパッケージでは、パッケージ間に依存関係を設定して、パッケージ セットを表現します。 メタパッケージでは必要に応じて、フレームワークを指定して、このパッケージ セットのフレームワークを確立することができます。 
 
-メタパッケージを参照することにより、各依存パッケージへの参照を&1; つのジェスチャとして実際に追加します。 つまり、そのようなパッケージ内のライブラリはすべて、IntelliSense (または同様のエクスペリエンス) で使用することができ (ref または lib)、さらにアプリの公開でも使用できます (lib のみ)。 
+.NET Core ツールの以前のバージョンは (project.json ツールと csproj-based ツールの両方)、既定では、フレームワークとメタパッケージの両方を指定していました。 ただし、現時点では、各メタパッケージがターゲット フレームワークに関連付けられるように、ターゲット フレームワークによってメタパッケージが暗黙的に参照されます。 たとえば、`netstandard1.6` フレームワークは NetStandard.Library バージョン 1.6.0 メタパッケージを参照します。 同様に、`netcoreapp1.1` フレームワークは Microsoft.NETCore.App バージョン 1.1.0 メタパッケージを参照します。 詳細については、「[Implicit metapackage package reference in the .NET Core SDK](https://github.com/dotnet/core/blob/master/release-notes/1.0/sdk/1.0-rc3-implicit-package-refs.md)」 (.NET Core SDK のメタパッケージの暗黙的パッケージ参照) を参照してください。
 
-注: 用語 "lib" と "ref" は、NuGet パッケージ内のフォルダーを示します。 "ref" フォルダーでは、アセンブリ メタデータを使用してパッケージのパブリック API について記述します。 "lib" フォルダーには、特定のフレームワーク用のそのパブリック API の実装が含まれます。 
+フレームワークをターゲットにし、メタパッケージを暗黙的に参照することは、各依存パッケージの参照を&1; つのジェスチャとして追加することを実質的に意味します。 これらのパッケージのライブラリはすべて、IntelliSense (または同様のエクスペリエンス) とアプリの公開で利用できます。  
 
 メタパッケージを使用する利点は次のとおりです。
 
@@ -76,42 +74,14 @@ ms.lasthandoff: 03/02/2017
 
 - [NETStandard.Library](https://www.nuget.org/packages/NETStandard.Library) - ".NET Standard Library" に含まれるライブラリについて記述します。 .NET Standard Library をサポートするすべての .NET 実装 (.NET Framework、.NET Core および Mono など) に適用されます。 "netstandard" フレームワークを確立します。
 
-主な .NET Core メタパッケージを次に示します。
+主な .NET Core メタパッケージ:
 
 - [Microsoft.NETCore.App](https://www.nuget.org/packages/Microsoft.NETCore.App) - .NET Core 配布に含まれるライブラリについて記述します。 [`.NETCoreApp` フレームワーク](https://github.com/dotnet/core-setup/blob/master/pkg/projects/Microsoft.NETCore.App/Microsoft.NETCore.App.pkgproj)を確立します。 よりサイズの小さな `NETStandard.Library` に依存します。
 - [Microsoft.NETCore.Portable.Compatibility](https://www.nuget.org/packages/Microsoft.NETCore.Portable.Compatibility) - mscorlib ベースのポータブル クラス ライブラリ (PCL) を .NET Core で実行できるようにするための互換性ファサードのセットです。
 
-メタパッケージは、ほかの NuGet パッケージと同じように project.json で参照されます。 
-
-次の例では、.NET ランタイム間で移植可能なライブラリの作成に使用される `NETStandard.Library` メタ パッケージが参照されています。
-
-```json
-{
-  "dependencies": {
-    "NETStandard.Library": "1.6.0"
-  },
-  "frameworks": {
-    "netstandard1.6": {}
-  }
-}
-```
-
-次の例では、.NET Core で実行され .NET Core をフル活用することを意図したアプリおよびライブラリを作成する場合に使用される `Microsoft.NETCore.App` メタパッケージが参照されています。 `NETStandard.Library` によって指定されたサイズの大きなライブラリ セットへのアクセスを実現します。
-
-```json
-{
-  "dependencies": {
-    "Microsoft.NETCore.App": "1.0.0"
-  },
-  "frameworks": {
-    "netcoreapp1.0": {}
-  }
-}
-```
-
 ## <a name="frameworks"></a>フレームワーク
 
-各 .NET Core パッケージは、フレームワーク フォルダー (前述した lib フォルダーおよび ref フォルダー内の) で宣言されたフレームワーク セットをサポートします。 フレームワークでは、特定のフレームワークを対象とするときに依存することができる使用可能な API セット (および、場合によってはその他の特性) について記述します。 フレームワークのバージョンは、新しい API が追加されると更新されます。
+.NET Core の各パッケージでは、一連のランタイム フレームワークがサポートされます。 フレームワークでは、特定のフレームワークを対象とするときに依存することができる使用可能な API セット (および、場合によってはその他の特性) について記述します。 フレームワークのバージョンは、新しい API が追加されると更新されます。
 
 たとえば、 [System.IO.FileSystem](https://www.nuget.org/packages/System.IO.FileSystem) では、次のフレームワークをサポートします。
 
@@ -135,8 +105,6 @@ ms.lasthandoff: 03/02/2017
 
 このリレーションシップは上図のようになります。 *API* は、*フレームワーク*を対象とし、定義します。 *フレームワーク*は、*資産の選択*で使用されます。 *資産* は、API を提供します。
 
-パッケージ ベースのフレームワークの定義がどこで終了し、その定義の利用がどこで始まるのかは、興味深い問題です。 フレームワークのビューを特定の project.json ファイルの機能とみなす場合もあるでしょう。 依存関係の発行者とは別に、依存関係はフレームワークのビューを作成します。
-
 .NET Core では、次の&2; つのパッケージ ベースのプライマリ フレームワークが使用されます。
 
 - `netstandard`
@@ -144,39 +112,34 @@ ms.lasthandoff: 03/02/2017
 
 ### <a name="net-standard"></a>.NET Standard
 
-.NET Standard (TFM: `netstandard`) フレームワークは、[.NET Standard Library](../standard/library.md) によって定義され、.NET Standard Library の上に構築された API を表します。 複数のランタイムでの実行を意図したライブラリは、このフレームワークを対象とする必要があります。 それらのライブラリは、.NET Core、.NET Framework、Mono/Xamarin など、.NET Standard 準拠のランタイムでサポートされます。 このようなランタイムはそれぞれが、実装される API に応じて、一連の .NET Standard バージョンをサポートします。 
+.NET Standard (ターゲット フレームワーク モニカー: `netstandard`) フレームワークは、[.NET Standard Library](../standard/library.md) によって定義され、.NET Standard Library の上に構築された API を表します。 複数のランタイムでの実行を意図したライブラリは、このフレームワークを対象とする必要があります。 それらのライブラリは、.NET Core、.NET Framework、Mono/Xamarin など、.NET Standard 準拠のランタイムでサポートされます。 このようなランタイムはそれぞれが、実装される API に応じて、一連の .NET Standard バージョンをサポートします。 
 
-`NETStandard.Library` メタパッケージは、`netstandard` フレームワークを対象とします。 `netstandard` を対象とする最も一般的な方法は、このメタパッケージを参照することです。 それは、.NET Standard Library を定義する約&40; の .NET ライブラリと関連する API について説明しており、それらにアクセスできるようにしています。 `netstandard` を対象とする追加のパッケージを参照することで、追加の API へのアクセス権を取得できます。
+`netstandard` フレームワークは `NETStandard.Library` メタパッケージを暗黙的に参照します。 たとえば、次の MSBuild プロジェクト ファイルは、プロジェクトが `netstandard1.6` をターゲットにすることを示します。これは .NET Standard Library バージョン 1.6 メタパッケージを参照します。 
 
-特定の [NETStandard.Library バージョン](versions/index.md) は、(クロージャを介して) 公開された最上位の `netstandard` バージョンと一致します。 project.json 内のフレームワーク参照は、基になるパッケージから適切な資産を選択するために使用されます。 この場合、`netstandard1.6` 資産は、`netstandard1.4` や `net46` とは対照的に必須となります。 
-
-```json
-{
-  "dependencies": {
-    "NETStandard.Library": "1.6.0"
-  },
-  "frameworks": {
-    "netstandard1.6": {}
-  }
-}
+```xml
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard1.6</TargetFramework>
+  </PropertyGroup>
+</Project>
 ```
 
-project.json 内のフレームワーク参照とメタパッケージ参照は一致する必要はありません。 たとえば、次の project.json が有効です。
+ただし、プロジェクト ファイルのフレームワーク参照とメタパッケージ参照が一致する必要はありません。プロジェクト ファイルの `<NetStandardImplicitPackageVersion>` 要素を利用し、メタパッケージ バージョンより下のフレームワーク バージョンを指定できます。 たとえば、次のプロジェクト ファイルが有効です。
 
-```json
-{
-  "dependencies": {
-    "NETStandard.Library": "1.6.0"
-  },
-  "frameworks": {
-    "netstandard1.3": {}
-  }
-}
+```xml
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard1.3</TargetFramework>
+  </PropertyGroup>
+  <ItemGroup>
+    <NetStandardImplicitPackageVersion Include="NetStandardLibrary" Version="1.6.0" />
+  </ItemGroup>
+</Project>
 ```
 
 `netstandard1.3` を対象とするのに `NETStandard.Library` のバージョン 1.6.0 を使用するのは、奇妙に思えるかもしれません。 これは、メタパッケージでは古い `netstandard` バージョンのサポートが継続されていることから、使用例として有効です。 メタパッケージのバージョン 1.6.0 が標準とされている状況で、これをすべてのライブラリ (`netstandard` の各種バージョンを対象とする) で使用する場合が考えられます。 この方法を使用した場合、`NETStandard.Library` 1.6.0 を復元する必要があるだけで、それより前のバージョンの復元は必要ありません。 
 
-逆は無効になります (`netstandard1.6` を対象とするが、`NETStandard.Library` のバージョン 1.3.0 を使用する)。 上位フレームワークと下位メタパッケージの組み合わせを対象とすることはできません。下位バージョンのメタパッケージはその上位フレームワークに対して資産を公開しないことが理由です。 メタパッケージの [バージョン管理スキーム] は、メタパッケージが、記述したフレームワークの最上位バージョンと一致することをアサートします。 バージョン管理スキームにより、`netstandard1.6` 資産が含まれている場合、`NETStandard.Library` の最初のバージョンは v1.6.0 となります。 上記の例では対称性を考慮して v1.3.0 が使用されていますが、実際には存在しません。
+逆は無効になります (`netstandard1.6` を対象とするが、`NETStandard.Library` のバージョン 1.3.0 を使用する)。 上位フレームワークと下位メタパッケージの組み合わせを対象とすることはできません。下位バージョンのメタパッケージはその上位フレームワークに対して資産を公開しないことが理由です。 メタパッケージのバージョン管理スキームは、メタパッケージが、記述したフレームワークの最上位バージョンと一致することをアサートします。 バージョン管理スキームにより、`netstandard1.6` 資産が含まれている場合、`NETStandard.Library` の最初のバージョンは v1.6.0 となります。 上記の例では対称性を考慮して v1.3.0 が使用されていますが、実際には存在しません。
 
 ### <a name="net-core-application"></a>.NET Core アプリケーション
 
@@ -185,3 +148,4 @@ project.json 内のフレームワーク参照とメタパッケージ参照は�
 `Microsoft.NETCore.App` メタパッケージは、`netcoreapp` フレームワークを対象とします。 これは、約&60; のライブラリにアクセスできるようにします (約&40; 個は `NETStandard.Library` パッケージによって提供され、さらに約&20; 個の追加分)。 `netcoreapp` または互換性を持つフレームワーク (`netstandard` など) を対象とする追加のライブラリを参照することで、追加の API にアクセスできます。 
 
 `Microsoft.NETCore.App` によって提供される追加ライブラリの大部分も、依存関係がほかの `netstandard` ライブラリによって満足されるならば、`netstandard` を対象とします。 つまり、`netstandard` ライブラリは、それらのパッケージを依存関係として参照することもできます。 
+

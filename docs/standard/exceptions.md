@@ -11,8 +11,9 @@ ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: bf116df6-0042-46bf-be13-b69864816210
 translationtype: Human Translation
-ms.sourcegitcommit: 9584699ad7e745ae3cb059b1bb8327301c9a3286
-ms.openlocfilehash: 5271b63a47aa2fcc81cd9c8b1ffd22e618829412
+ms.sourcegitcommit: 90fe68f7f3c4b46502b5d3770b1a2d57c6af748a
+ms.openlocfilehash: 7c9ccd455bf0d14122c0547177cc29ace6ebde42
+ms.lasthandoff: 02/17/2017
 
 ---
 
@@ -57,14 +58,14 @@ Object
 | ------------- | ----------- |
 | @System.Exception.Data | キーと値のペアの任意のデータを保持する @System.Collections.IDictionary です。 |
 | @System.Exception.HelpLink | 例外の原因に関する詳細情報を提供するヘルプ ファイルには、URL (または URN) を保持できます。 |
-| @System.Exception.InnerException | このプロパティを使用すると、例外処理中に一連の例外を作成して保持することができます。 既にキャッチされた例外を含む新しい例外を作成するのにも使用できます。 @System.Exception.InnerException プロパティの 2 つ目の例外によって、元の例外をキャプチャできます。これにより、2 つ目の例外を処理するコードが追加の情報を調べることができます。 たとえば、形式が正しくない引数を受け取るメソッドがあるとします。  コードは、引数の読み取りを試みますが、例外がスローされます。 このメソッドは例外をキャッチし､@System.FormatException. をスローします。例外がスローされた原因を判断するための呼び出し元の機能を向上させるには、ヘルパー ルーチンによってスローされた例外をキャッチし、発生したエラーの内容を示す例外をスローするメソッドが望ましい場合があります。 内部例外の参照を元の例外に設定できる、新しいより意味のある例外を作成できます。 この意味のある例外は、呼び出し元にスローすることができます。 この機能により、最初にスローされた例外で終了する一連のリンクされた例外を作成することができます。 |
+| @System.Exception.InnerException | このプロパティを使用すると、例外処理中に一連の例外を作成して保持することができます。 既にキャッチされた例外を含む新しい例外を作成するのにも使用できます。 @System.Exception.InnerException プロパティの&2; つ目の例外によって、元の例外をキャプチャできます。これにより、2 つ目の例外を処理するコードが追加の情報を調べることができます。 たとえば、形式が正しくない引数を受け取るメソッドがあるとします。  コードは、引数の読み取りを試みますが、例外がスローされます。 メソッドは、例外をキャッチし、@System.FormatException をスローします。 例外がスローされた原因を判断するための呼び出し元の機能を向上させるには、ヘルパー ルーチンによってスローされた例外をキャッチし、発生したエラーの内容を示す例外をスローするメソッドが望ましい場合があります。 内部例外の参照を元の例外に設定できる、新しいより意味のある例外を作成できます。 この意味のある例外は、呼び出し元にスローすることができます。 この機能により、最初にスローされた例外で終了する一連のリンクされた例外を作成することができます。 |
 | @System.Exception.Message | 例外の原因に関する詳細を提供します。
 | @System.Exception.Source | エラーの原因となるアプリケーションまたはオブジェクトの名前を取得または設定します。 |
 | @System.Exception.StackTrace | エラーが発生した場所を判断するために使用できるスタック トレースが含まれています。 デバッグ情報が使用できる場合には、スタック トレースにソース ファイル名とプログラム行番号が記述されます。 |
 
-@System.Exception から継承したクラスのほとんどは追加メンバーを実装したり追加機能を提供したりしません。単に @System.Exception. から継承するのみです。したがって、例外の最も重要な情報は例外クラス、例外の名前と例外に含まれる情報の階層で検出されます。
+@System.Exception から継承するほとんどのクラスは、追加メンバーを実装したり、追加の機能を提供することはありません。これらは、@System.Exception から継承するだけです。 そのため、例外の最も重要な情報は、例外クラスの階層、例外の名前と、例外に含まれる情報で見つけることができます。
 
-@System.Exception, から派生したオブジェクトだけをスローおよびキャッチすることをお勧めしますが、@System.Object クラスから派生したオブジェクトはすべて例外としてスローすることができます。 @System.Exception. から派生していないオブジェクトのスローとキャッチは、すべての言語ではサポートされていないことに注意してください。
+@System.Exception, から派生したオブジェクトだけをスローおよびキャッチすることをお勧めしますが、@System.Object クラスから派生したオブジェクトはすべて例外としてスローすることができます。 @System.Exception から派生していないオブジェクトのスローとキャッチは、すべての言語ではサポートされていないことに注意してください。
 
 ## <a name="common-exceptions"></a>一般的な例外
 
@@ -112,7 +113,7 @@ public class ProcessFile
 共通言語ランタイムは、catch ブロックでキャッチされなかった例外をキャッチします。 ランタイムの構成方法に応じて、デバッグ ダイアログ ボックスが表示されるか、プログラムの実行が停止され、例外情報を含むダイアログ ボックスが表示されるか、または STDERR にエラーが出力されます。
 
 > [!NOTE] 
-> ほぼすべてのコード行で、特に @System.OutOfMemoryException. などのように共通言語ランタイム自体によってスローされるなどの例外が発生することがあります。ほとんどのアプリケーションではこれらの例外に対処する必要はありませんが、他のユーザーが使用するライブラリ書き込むとき、この可能性があることに注意してください。 Try ブロック内でコードを設定するタイミングに関しては、「[例外の推奨事項](#best-practices-for-exceptions)」を参照してください。
+> ほぼすべてのコード行で例外 (特に、@System.OutOfMemoryException などの共通言語ランタイムそのものによってスローされる例外) が発生する可能性があります。 ほとんどのアプリケーションではこれらの例外を処理する必要はありませんが、他のユーザーが使用するライブラリを記述する際には、この可能性に注意する必要があります。 Try ブロック内でコードを設定するタイミングに関しては、「[例外の推奨事項](#best-practices-for-exceptions)」を参照してください。
  
 ## <a name="how-to-use-specific-exceptions-in-a-catch-block"></a>catch ブロックで特定の例外を使用する方法
 
@@ -120,7 +121,7 @@ public class ProcessFile
 
 例外が発生すると、スタックに渡され、各 catch ブロックが処理する機会を与えられます。 catch ステートメントの順序が重要です。 一般的な例外 catch ブロックまたはコンパイラがエラーを発行する前に、特定の例外を対象とした catch ブロックを配置します。 適切な catch ブロックは、例外の種類を catch ブロックで指定された例外の名前に一致させることで決まります。 特定の catch ブロックがない場合は、汎用 catch ブロック (ある場合) によってキャッチされます。
 
-次のコード例では、`try`/`catch` ブロックを使用して @System.InvalidCastException. をキャッチします。このサンプルは単一プロパティ、従業員レベル (`Emlevel`) で `Employee` というクラスを作成します。 メソッド `PromoteEmployee` は、オブジェクトを受け取って、従業員レベルをインクリメントします。 @System.DateTime インスタンスが `PromoteEmployee` メソッドに渡されたとき、@System.InvalidCastException が発生します。
+次のコード例では、`try`/`catch` ブロックを使用して @System.InvalidCastException をキャッチします。 サンプルでは、1 つのプロパティ、従業員レベル (`Emlevel`) を使用して、`Employee` と呼ばれるクラスを作成します。 メソッド `PromoteEmployee` は、オブジェクトを受け取って、従業員レベルをインクリメントします。 @System.DateTime インスタンスが `PromoteEmployee` メソッドに渡されたとき、@System.InvalidCastException が発生します。
 
 C#
 ```
@@ -177,7 +178,7 @@ public class Ex13
 
 例外が発生すると、実行が停止され、コントロールが適切な例外ハンドラーに付与されます。 これは、多くの場合、実行されるはずのコード行がバイパスされることを意味します。 ファイルを閉じるなどのいくつかのリソースのクリーンアップは、例外がスローされた場合でも実行する必要があります。 これを行うために、`finally` ブロックを使用することができます。 `finally` ブロックは、例外がスローされるかどうかに関係なく、常に実行されます。
 
-次のコード例では、`try`/`catch` ブロックを使用して @System.ArgumentOutOfRangeException. をキャッチします。`Main` の方法は 2 つの配列を作成し、　片方をもう一方にコピーしようと試みます。 アクションが、@System.ArgumentOutOfRangeException を生成し、エラーは、コンソールに書き込まれます。 `finally` ブロックは、コピー操作の結果に関係なく実行されます。
+次のコード例では、`try`/`catch` ブロックを使用して @System.ArgumentOutOfRangeException をキャッチします。 `Main` メソッドは&2; つの配列を作成し、一方の配列をもう一方にコピーすることを試みます。 アクションが、@System.ArgumentOutOfRangeException を生成し、エラーは、コンソールに書き込まれます。 `finally` ブロックは、コピー操作の結果に関係なく実行されます。
 
 C#
 ```
@@ -210,7 +211,7 @@ class ArgumentOutOfRangeExample
 
 `throw` ステートメントを使用して、例外を明示的にスローできます。 `throw` ステートメントを使って、キャッチした例外をもう一度スローすることもできます。 再スローされる例外に情報を追加して、デバッグ時により多くの情報を提供するコーディング手法をお勧めします。
 
-次のコード例は `try`/`catch` ブロックを使い、@System.IO.FileNotFoundException. だと思われるものをキャッチします。次の `try` ブロックは、@System.IO.FileNotFoundException をキャッチし、データ ファイルが見つからない場合に、メッセージをコンソールに出力する `catch` ブロックです。 次のステートメントは、新しい @System.IO.FileNotFoundException をスローして、テキスト情報を例外に追加する `throw` ステートメントです。
+次のコード例では、`try`/`catch` ブロックを使用して可能性のある @System.IO.FileNotFoundException をキャッチします。 次の `try` ブロックは、@System.IO.FileNotFoundException をキャッチし、データ ファイルが見つからない場合に、メッセージをコンソールに出力する `catch` ブロックです。 次のステートメントは、新しい @System.IO.FileNotFoundException をスローして、テキスト情報を例外に追加する `throw` ステートメントです。
 
 C#
 ```
@@ -249,9 +250,9 @@ public class ProcessFile
 
 ## <a name="how-to-create-user-defined-exceptions"></a>ユーザー定義の例外を作成する方法
 
-.NET 基本クラス @System.Exception. から最終的に派生した例外クラスの階層構造を提供します。ただし、定義済みの例外のいずれも要件を満たさない場合は、@System.Exception クラスから派生することによって、独自の例外クラスを作成できます。
+.NET では、基底クラス @System.Exception から最終的に派生した例外クラスの階層構造を提供します。 ただし、定義済みの例外のいずれも要件を満たさない場合は、@System.Exception クラスから派生することによって、独自の例外クラスを作成できます。
 
-独自の例外を作成するときに、ユーザー定義の例外のクラス名の末尾に "Exception" という単語を付加し、次の例で示すように、3 つの共通コンストラクターを実装します。 例では、`EmployeeListNotFoundException` という名前の新しい例外クラスを定義します。 このクラスは @System.Exception から派生し、次の 3 つのコンストラクターが含まれています。
+独自の例外を作成するときに、ユーザー定義の例外のクラス名の末尾に "Exception" という単語を付加し、次の例で示すように、3 つの共通コンストラクターを実装します。 例では、`EmployeeListNotFoundException` という名前の新しい例外クラスを定義します。 このクラスは @System.Exception から派生し、次の&3; つのコンストラクターが含まれています。
 
 C#
 ```
@@ -357,7 +358,7 @@ class FileRead
 }
 ```
 
-例外が返されるのを回避するもう 1 つの方法は、非常に一般的なエラーの場合に、例外をスローする代わりに null を返すことです。 非常に一般的なエラーは、通常の制御の流れと見なすことができます。 このような場合は、null を返すことによって、アプリケーションのパフォーマンスへの影響を最小限に抑えることができます。
+例外が返されるのを回避するもう&1; つの方法は、非常に一般的なエラーの場合に、例外をスローする代わりに null を返すことです。 非常に一般的なエラーは、通常の制御の流れと見なすことができます。 このような場合は、null を返すことによって、アプリケーションのパフォーマンスへの影響を最小限に抑えることができます。
 
 ### <a name="throw-exceptions-instead-of-returning-an-error-code"></a>エラー コードを返す代わりに、例外をスローする
 
@@ -369,7 +370,7 @@ class FileRead
 
 - オブジェクトの現在の状態に対して、プロパティの設定またはメソッドの呼び出しが適切でない場合は、@System.InvalidOperationException をスローします。
 
-- @System.ArgumentException 例外または @System.ArgumentException から派生する定義済みのクラスの 1 つをスローします。
+- @System.ArgumentException 例外または @System.ArgumentException から派生する定義済みのクラスの&1; つをスローします。
 
 ### <a name="end-exception-class-names-with-the-word-exception"></a>例外クラス名の末尾に `Exception` という単語を付加する
 
@@ -382,9 +383,9 @@ public class MyFileNotFoundException : Exception
 }
 ```
 
-### <a name="include-three-constructors-in-custom-exception-classes"></a>カスタム例外クラスに 3 つのコンストラクターを含める
+### <a name="include-three-constructors-in-custom-exception-classes"></a>カスタム例外クラスに&3; つのコンストラクターを含める
 
-独自の例外クラスを作成するときに、少なくとも 3 つの共通コンストラクターを使用します。それらは、既定のコンストラクター、文字列メッセージを受け取るコンストラクター、および文字列メッセージと内部例外を受け取るコンストラクターです。
+独自の例外クラスを作成するときに、少なくとも&3; つの共通コンストラクターを使用します。それらは、既定のコンストラクター、文字列メッセージを受け取るコンストラクター、および文字列メッセージと内部例外を受け取るコンストラクターです。
 
 - 既定の値を使用する @System.Exception.%23ctor,。
 
@@ -473,7 +474,7 @@ public void TransferFunds(Account from, Account to, decimal amount)
 }
 ```
 
-この状況に対処する方法の 1 つは、預金トランザクションによってスローされた例外をキャッチし、引き出しをロールバックすることです。
+この状況に対処する方法の&1; つは、預金トランザクションによってスローされた例外をキャッチし、引き出しをロールバックすることです。
 
 C#
 ```
@@ -506,9 +507,4 @@ catch (Exception ex)
 ## <a name="see-also"></a>参照
 
 .NET での例外の動作の詳細については、「[What Every Dev needs to Know About Exceptions in the Runtime](https://github.com/dotnet/coreclr/blob/master/Documentation/botr/exceptions.md)」(ランタイム時の例外についてすべての開発者が知っておくべきこと) を参照してください。
-
-
-
-<!--HONumber=Nov16_HO3-->
-
 

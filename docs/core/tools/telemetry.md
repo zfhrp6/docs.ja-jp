@@ -4,22 +4,20 @@ description: .NET Core
 keywords: .NET, .NET Core
 author: richlander
 ms.author: mairaw
-ms.date: 07/06/2016
+ms.date: 11/16/2016
 ms.topic: article
 ms.prod: .net-core
 ms.technology: dotnet-cli
 ms.devlang: dotnet
-ms.assetid: f2b312bb-f80b-4b0d-9101-93908f06a6fa
+ms.assetid: 480df976-7568-4df4-9d26-9911357b5a31
 translationtype: Human Translation
-ms.sourcegitcommit: 796df1549a7553aa93158598d62338c02d4df73e
-ms.openlocfilehash: f19efabc4330682ebfe6e38384086e2338cd6264
+ms.sourcegitcommit: 195664ae6409be02ca132900d9c513a7b412acd4
+ms.openlocfilehash: c816bf4c93430a009e61ddf2a3673c43f49b8de9
+ms.lasthandoff: 03/07/2017
 
 ---
 
 # <a name="net-core-tools-telemetry"></a>.NET Core ツールの製品利用統計情報
-
-> [!WARNING]
-> このトピックは .NET Core Tools Preview 2 を対象としています。 .NET Core Tools RC4 バージョンについては、「[.NET Core ツールの製品利用統計情報 (.NET Core Tools RC4)](../preview3/tools/telemetry.md)」トピックを参照してください。
 
 .NET Core ツールには、利用情報を回収する[製品利用統計情報機能](https://github.com/dotnet/cli/pull/2145)があります。 .NET Team がこのツールの利用方法を理解しておくことが重要です。それにより、ツールが改善されます。
 
@@ -41,11 +39,11 @@ ms.openlocfilehash: f19efabc4330682ebfe6e38384086e2338cd6264
 - `dotnet restore`
 - `dotnet run`
 
-##<a name="behavior"></a>動作
+## <a name="behavior"></a>動作
 
 .NET Core ツールの製品利用統計情報機能は既定では有効になっています。 製品利用統計情報機能は選択しないこともできます。その場合、環境変数 DOTNET_CLI_TELEMETRY_OPTOUT (たとえば、macOS/Linux の場合は `export`、Windows の場合は `set`) を true (“true” や 1 など) に設定します。
 
-##<a name="data-points"></a>データ ポイント
+## <a name="data-points"></a>データ ポイント
 
 この機能は次のデータを回収します。
 
@@ -59,7 +57,7 @@ ms.openlocfilehash: f19efabc4330682ebfe6e38384086e2338cd6264
 
 この機能では、ユーザー名や電子メールなど、個人データは回収されません。 コードをスキャンすることはありません。(project.json に設定している場合) 名前、リポジトリ、作成者など、機密と見なされるプロジェクト レベルのデータを抽出することはありません。 ツールで構築しているものではなく、ツールの使われ方を知るためのものです。 機密データが回収された場合、それはバグです。 [問題を提出する](https://github.com/dotnet/cli/issues)と、解決されます。
 
-##<a name="license"></a>ライセンス
+## <a name="license"></a>ライセンス
 
 Microsoft による .NET Core の配信は、[MICROSOFT .NET LIBRARY EULA](https://aka.ms/dotnet-core-eula) でライセンス供与されます。 製品利用統計情報を有効にするために、下のように “DATA” セクションが再プリントされます。
 
@@ -81,33 +79,22 @@ operates as your consent to these practices.
 ```text
 Welcome to .NET Core!
 ---------------------
-
-Learn more about .NET Core @ https://aka.ms/dotnet-docs. Use dotnet --help to
+Learn more about .NET Core @ https://aka.ms/dotnet-docs. Use dotnet --help to 
 see available commands or go to https://aka.ms/dotnet-cli-docs.
 
 Telemetry
----------
-
-The .NET Core tools collect usage data in order to improve your experience.
-The data is anonymous and does not include commandline arguments. The data is
+--------------
+The .NET Core tools collect usage data in order to improve your experience. 
+The data is anonymous and does not include command-line arguments. The data is 
 collected by Microsoft and shared with the community.
-
-You can opt out of telemetry by setting a DOTNET_CLI_TELEMETRY_OPTOUT
+You can opt out of telemetry by setting a DOTNET_CLI_TELEMETRY_OPTOUT 
 environment variable to 1 using your favorite shell.
-
-You can read more about .NET Core tools telemetry @ https://aka.ms/dotnet-cli-
-telemetry.
+You can read more about .NET Core tools telemetry @ https://aka.ms/dotnet-cli-telemetry.
 
 Configuring...
---------------
-
-A command is running to initially populate your local package cache, to
-improve restore speed and enable offline access. This command will take up to
+-------------------
+A command is running to initially populate your local package cache, to 
+improve restore speed and enable offline access. This command will take up to 
 a minute to complete and will only happen once. 
 ```
-
-
-
-<!--HONumber=Feb17_HO2-->
-
 
