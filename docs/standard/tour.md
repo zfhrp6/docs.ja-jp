@@ -3,17 +3,17 @@ title: ".NET のツアー"
 description: ".NET プラットフォームのいくつかの優れた機能についてのガイド付きツアーです。"
 keywords: ".NET, .NET Core, ツアー, プログラミング言語, アンセーフ, メモリ管理, タイプ セーフ, 非同期"
 author: cartermp
-manager: wpickett
-ms.author: phcart
-ms.date: 11/16/2016
+ms.author: wiwagn
+ms.date: 02/09/2016
 ms.topic: article
-ms.prod: .net-core
-ms.technology: .net-core-technologies
+ms.prod: .net
+ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: bbfe6465-329d-4982-869d-472e7ef85d93
 translationtype: Human Translation
-ms.sourcegitcommit: 2c57b5cebd63b1d94b127cd269e3b319fb24dd97
-ms.openlocfilehash: 02e2fa22e36fd2f6618527ad3c89cbbd8587dfe2
+ms.sourcegitcommit: 48563be13dc07000ced2e6817b3028e6117abd93
+ms.openlocfilehash: ee6ced104137a453267b409fea05716d781ef83f
+ms.lasthandoff: 03/22/2017
 
 ---
 
@@ -34,9 +34,9 @@ ms.openlocfilehash: 02e2fa22e36fd2f6618527ad3c89cbbd8587dfe2
 
 ## <a name="programming-languages"></a>プログラミング言語
 
-.NET は複数のプログラミング言語をサポートしています。  .NET ランタイムでは、[共通言語基盤 (CLI)](https://www.visualstudio.com/en-us/mt639507) が実装されています。CLI では特に、言語に依存しないランタイムと言語の相互運用性が指定されています。  つまり、任意の .NET 言語を選んで、.NET でアプリとサービスを作成できます。
+.NET は複数のプログラミング言語をサポートしています。  .NET ランタイムでは、[共通言語基盤 (CLI)](https://www.visualstudio.com/license-terms/ecma-c-common-language-infrastructure-standards/) が実装されています。CLI では特に、言語に依存しないランタイムと言語の相互運用性が指定されています。  つまり、任意の .NET 言語を選んで、.NET でアプリとサービスを作成できます。
 
-Microsoft が開発とサポートに力を注いでいる .NET 言語は、C#、F#、Visual Basic .NET の 3 つです。 
+Microsoft が開発とサポートに力を注いでいる .NET 言語は、C#、F#、Visual Basic .NET の&3; つです。 
 
 * C# はシンプル、強力、タイプセーフ、そしてオブジェクト指向でありながらも、C スタイル言語の表現力と簡潔さが維持されています。 C や類似の言語を使い慣れている人であれば、ほとんど問題なく C# に適応できるでしょう。  C# について詳しくは、「[C# Guide](../csharp/index.md)」 (C# ガイド) をご覧ください。
 
@@ -48,27 +48,33 @@ Microsoft が開発とサポートに力を注いでいる .NET 言語は、C#�
 
 .NET は、[ガベージ コレクション](garbagecollection/index.md)を使ってプログラムの自動メモリ管理を行います。  GC はメモリ管理に対する遅延アプローチで動作します。この場合、メモリの即時収集よりもアプリケーションのスループットが優先されます。  .NET GC について詳しくは、「[ガベージ コレクションの基礎](garbagecollection/fundamentals.md)」をご覧ください。
 
-以下の 2 つの行はどちらもメモリを割り当てています。
+以下の&2; つの行はどちらもメモリを割り当てています。
 
 [!code-csharp[MemoryManagement](../../samples/csharp/snippets/tour/MemoryManagement.csx#L1-L2)]
 
 ガベージ コレクターがスケジュールされた実行によってメモリを解放する際に割り当て解除が自動的に行われるため、メモリの割り当てを解除するための類似したキーワードはありません。
 
-通常、特定のスコープ内の型は、メソッドが完了して、収集が可能になった時点で、スコープ外に移動します。 ただし、`using` ステートメントを使用して、メソッドの終了よりも早く、特定のオブジェクトがスコープ外に移動するように GC に指定することができます。
+ガベージ コレクターは、*メモリの安全性*の確保に役立つサービスの&1; つにすぎません。  メモリの安全性の不変性は非常に単純です。プログラムが割り当てられている (そして解放されていない) メモリのみにアクセスする場合、そのプログラムはメモリ セーフです。  たとえば、ランタイムによってプログラムが配列の最後にインデックス処理を行ったり、オブジェクトの最後にある実在しないフィールドにアクセスしたりすることがなくなります。
+
+次の例では、メモリの安全性を確保するため、ランタイムにより `InvalidIndexException` 例外がスローされます。
 
 [!code-csharp[MemoryManagement](../../samples/csharp/snippets/tour/MemoryManagement.csx#L4-L5)]
 
-`using` ブロックが完了すると、上の例の `stream` オブジェクトを自由に収集でき、メモリが解放できることが GC に伝わります。
+## <a name="working-with-unmanaged-resources"></a>アンマネージ リソースの操作
 
-このルールのセマンティクスは、F# では若干異なります。  F# でのリソース管理について詳しくは、「[リソースの管理: `use` キーワード](../fsharp/language-reference/resource-management-the-use-keyword.md)」をご覧ください。
+一部のオブジェクトは、*アンマネージ リソース*を参照します。 アンマネージ リソースは、.NET ランタイムで自動的に維持されないリソースです。  たとえば、ファイル ハンドルは、アンマネージ リソースです。  @System.IO.FileStream オブジェクトはマネージ オブジェクトですが、アンマネージドのファイル ハンドルを参照します。  FileStream の使用が終わったら、ファイル ハンドルを解放する必要があります。
 
-ガベージ コレクターによって可能になる機能のうち、これほど目立たないものの、非常に広範囲に及ぶものの 1 つが、メモリの安全性です。 メモリの安全性の不変性は非常に単純です。プログラムが割り当てられている (そして解放されていない) メモリのみにアクセスする場合、そのプログラムはメモリ セーフです。 付随的なポインターは常にバグになり、多くの場合、これらを見つけ出すことはとても困難です。
+.NET では、アンマネージ リソースを参照するオブジェクトは @System.IDisposable インターフェイスを実装します。  オブジェクトの使用が終わったら、すべてのアンマネージ リソースを解放する、オブジェクトの @System.IDisposable.Dispose メソッドを呼び出します。  そのようなオブジェクトに対し、.NET 言語では次の例のように便利な `using` 構文が提供されています。
 
-.NET ランタイムでは、GC から元々提供されるものではない、メモリの安全性を確保するための追加のサービスを提供しています。 プログラムが配列の最後にインデックス処理を行ったり、オブジェクトの最後にある実在しないフィールドにアクセスしたりすることがなくなります。
+[!code-csharp[UnmanagedResources](../../samples/csharp/snippets/tour/UnmanagedResources.csx#L1-L6)]
 
-次の例では、メモリの安全性の結果として、例外がスローされます。
+`using` ブロックが完了すると、.NET ランタイムがファイル ハンドルを開放する `stream` オブジェクトの @System.IDisposable.Dispose メソッドを自動的に呼び出します。  これは、例外によってコントロールがブロックを離れた場合にも行われます。
 
-[!code-csharp[MemoryManagement](../../samples/csharp/snippets/tour/MemoryManagement.csx#L4-L5)]
+詳細については、次のページを参照してください。
+
+* C# の場合: [using ステートメント](../csharp/language-reference/keywords/using-statement.md)
+* F# の場合: [リソースの管理: `use` キーワード](../fsharp/language-reference/resource-management-the-use-keyword.md)
+* Visual Basic の場合: [Using ステートメント](../visual-basic/language-reference/statements/using-statement.md)
 
 ## <a name="type-safety"></a>タイプ セーフ
 
@@ -82,7 +88,7 @@ Microsoft が開発とサポートに力を注いでいる .NET 言語は、C#�
 
 [!code-csharp[TypeSafety](../../samples/csharp/snippets/tour/TypeSafety.csx#L3-L3)]
 
-C#、Visual Basic、F# は、ローカルな**型推論**をサポートします。 型推論は、コンパイラが右側にある式から左側にある式の型を推論するという意味です。 タイプ セーフの破損、または回避を意味するわけではありません。 結果の型には、推論されるすべてを含む厳密な型が**含まれます**。 前の例の最初の 2 行を、型推論を示すように書き換えてみましょう。 例の残りの部分はまったく同じであることに注意してください。
+C#、Visual Basic、F# は、ローカルな**型推論**をサポートします。 型推論は、コンパイラが右側にある式から左側にある式の型を推論するという意味です。 タイプ セーフの破損、または回避を意味するわけではありません。 結果の型には、推論されるすべてを含む厳密な型が**含まれます**。 前の例の最初の&2; 行を、型推論を示すように書き換えてみましょう。 例の残りの部分はまったく同じであることに注意してください。
 
 [!code-csharp[TypeSafety](../../samples/csharp/snippets/tour/TypeSafety.csx#L28-L34)]
 
@@ -147,8 +153,4 @@ F# の機能については、「[F# のツアー](../fsharp/tour.md)」をご�
 独自のコードの記述を開始する場合は、「[作業の開始](getting-started.md)」をご覧ください。
 
 .NET の重要なコンポーネントについては、「[.NET アーキテクチャ コンポーネント](components.md)」をご覧ください。
-
-
-<!--HONumber=Nov16_HO3-->
-
 

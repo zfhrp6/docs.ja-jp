@@ -11,9 +11,9 @@ ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: c044882c-af15-45f2-96d1-534557a5ee9b
 translationtype: Human Translation
-ms.sourcegitcommit: 519253bd6dc105afb138268c62347c29a6072fbb
-ms.openlocfilehash: f681b1663d1a2e6c2fbbd1cc415290d26bbbe429
-ms.lasthandoff: 03/07/2017
+ms.sourcegitcommit: 633dcc6d966125139cb21c4e70dac4d4794ee9a4
+ms.openlocfilehash: da326fb823c16c7795a6a05ad302c13918b435aa
+ms.lasthandoff: 03/20/2017
 
 ---
 
@@ -68,7 +68,7 @@ ms.lasthandoff: 03/07/2017
 
 正式な仕様は標準に含まれる API を定義する一連の .cs ファイルです。 各[コンポーネント](https://github.com/dotnet/corefx/tree/master/src) の [ref ディレクトリ](https://github.com/dotnet/corefx/tree/master/src/System.Runtime/ref) に.NET Standard Library API が定義されています。 ref 成果物は [CoreFX リポジトリ](https://github.com/dotnet/corefx)内に存在しますが、それらは .NET Core 固有ではありません。
 
-[NETStandard.Library](https://www.nuget.org/packages/NETStandard.Library) メタパッケージ ([ソース](https://github.com/dotnet/corefx/blob/master/pkg/NETStandard.Library/NETStandard.Library.packages.targets)) は、1 つ以上の.NET Standard Library のバージョンを定義する (一部) ライブラリのセットについて説明しています。
+[NETStandard.Library](https://www.nuget.org/packages/NETStandard.Library) メタパッケージ ([ソース](https://github.com/dotnet/standard/blob/master/netstandard/pkg/NETStandard.Library.dependencies.props)) は、1 つ以上の.NET Standard Library のバージョンを定義する (一部) ライブラリのセットについて説明しています。
 
 System.Runtime などの特定のコンポーネントは、次のように説明されています。
 
