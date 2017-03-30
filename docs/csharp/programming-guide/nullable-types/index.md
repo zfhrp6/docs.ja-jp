@@ -1,24 +1,42 @@
 ---
-title: "null 許容型 (C# プログラミング ガイド) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.technology: 
-  - "devlang-csharp"
-ms.topic: "article"
-dev_langs: 
-  - "CSharp"
-helpviewer_keywords: 
-  - "C# 言語, null 許容型"
-  - "null 許容型 [C#]"
-  - "型 [C#], null 許容"
+title: "Null 許容型 (C# プログラミング ガイド) | Microsoft Docs"
+ms.date: 2015-07-20
+ms.prod: .net
+ms.technology:
+- devlang-csharp
+ms.topic: article
+dev_langs:
+- CSharp
+helpviewer_keywords:
+- nullable types [C#]
+- C# language, nullable types
+- types [C#], nullable
 ms.assetid: e473cb01-28ca-42be-9cea-f717055d72c6
 caps.latest.revision: 44
-author: "BillWagner"
-ms.author: "wiwagn"
-caps.handback.revision: 44
+author: BillWagner
+ms.author: wiwagn
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Human Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: 75726b9864abc0c9b556085e5215c6692d80fb12
+ms.lasthandoff: 03/13/2017
+
 ---
-# null 許容型 (C# プログラミング ガイド)
-null 許容型は、<xref:System.Nullable%601?displayProperty=fullName> 構造体のインスタンスです。  null 許容型は、基礎となる値型の正しい範囲の値だけでなく、`null` 値も表すことができます。  たとえば、`Nullable<Int32>` \("Int32 の Nullable" と読みます\) には、\-2147483648 から 2147483647 の任意の値、または `null` 値を割り当てることができます。  `Nullable<bool>` には、[true](../../../csharp/language-reference/keywords/true.md)、[false](../../../csharp/language-reference/keywords/false.md)、または [null](../../../csharp/language-reference/keywords/null.md) の値を割り当てることができます。  数値型と Boolean 型に `null` を割り当てる機能が便利なのは、値を割り当てられていない可能性がある要素を含むデータベースや他のデータ型を処理するときです。  たとえば、データベースの Boolean フィールドには、値 `true` または `false` を格納するか、未定義にすることが可能です。  
+# <a name="nullable-types-c-programming-guide"></a>Null 許容型 (C# プログラミング ガイド)
+Null 許容型は、<xref:System.Nullable%601?displayProperty=fullName> 構造体のインスタンスです。 Null 許容型は、基になる値型の適切な範囲の値だけでなく、`null` 値も表すことができます。 たとえば、`Nullable<Int32>` ("Null 許容の Int32" と読みます) には、-2147483648 ～ 2147483647 の範囲の任意の値または `null` 値を割り当てることができます。 `Nullable<bool>` には、[true](../../../csharp/language-reference/keywords/true.md)、[false](../../../csharp/language-reference/keywords/false.md)、または [null](../../../csharp/language-reference/keywords/null.md) の値を割り当てることができます。 数値型と Boolean 型に `null` を割り当てる機能は、値が割り当てられていない可能性がある要素を含むデータベースとその他のデータ型を処理するときに特に役に立ちます。 たとえば、データベースの Boolean フィールドには、値 `true` または `false` が格納されている可能性がありますが、未定義である可能性もあります。  
   
  [!code-cs[csProgGuideTypes#3](../../../csharp/programming-guide/nullable-types/codesnippet/CSharp/index_1.cs)]  
   
@@ -28,48 +46,49 @@ null 許容型は、<xref:System.Nullable%601?displayProperty=fullName> 構造�
   
  `Nullable object must have a value.`  
   
- その他の例については、「[Null 許容型の使用](../../../csharp/programming-guide/nullable-types/using-nullable-types.md)」を参照してください。  
+ その他の例については、「[Null 許容型の使用](../../../csharp/programming-guide/nullable-types/using-nullable-types.md)」を参照してください  
   
-## null 許容型の概要  
- null 許容型には次の特性があります。  
+## <a name="nullable-types-overview"></a>Null 許容型の概要  
+ Null 許容型には次の特性があります。  
   
--   null 許容型は、`null` の値を割り当てることができる、値型の変数を表します。  参照型に基づいた null 許容型は作成できません   \(参照型では `null` 値が既にサポートされています\)。  
+-   Null 許容型は、`null`値を割り当てることができる、値型の変数を表します。 参照型に基づいた Null 許容型は作成できません  (参照型は既に `null` 値をサポートしています)。  
   
--   構文 `T?` は、<xref:System.Nullable%601> の省略表現です。ここで、`T` は値型です。  この 2 つの形式はどちらでも使用できます。  
+-   構文 `T?`は、<xref:System.Nullable%601> の省略表現です。ここで、`T` は値型です。 この 2 つの形式は同義であり、どちらでも使用できます。  
   
--   null 許容型に値を割り当てる方法は、`int? x = 10;`  や  `double? d = 4.108` など、通常の値型の場合と同様です。  null 許容型には、`int? x = null` のように、`null` 値も割り当てることができます。  
+-   Null 許容型に値を割り当てる方法は、通常の値型の場合と同じです。たとえば、`int? x = 10;` や `double? d = 4.108` と指定します。 Null 許容型には、値 `null` も割り当てることができます。たとえば、`int? x = null.` と指定します。  
   
--   値が `null` である場合、割り当てられた値または基礎となる型の既定値を返すには、<xref:System.Nullable%601.GetValueOrDefault%2A?displayProperty=fullName> メソッドを使用します。たとえば、 `int j = x.GetValueOrDefault();` と指定します。  
+-   割り当てられた値、または値が `null` の場合に基になる型の既定値を返すには、<xref:System.Nullable%601.GetValueOrDefault%2A?displayProperty=fullName> メソッドを使用します。たとえば、`int j = x.GetValueOrDefault();` と指定します。  
   
--   null をテストし値を取得するには、次の例に示すように、<xref:System.Nullable%601.HasValue%2A> と <xref:System.Nullable%601.Value%2A> の読み取り専用プロパティを使用します。たとえば、`if(x.HasValue) j = x.Value;` と指定します。  
+-   null かどうかを確認して値を取得するには、読み取り専用の <xref:System.Nullable%601.HasValue%2A> プロパティと <xref:System.Nullable%601.Value%2A> のプロパティを使用します。たとえば、`if(x.HasValue) j = x.Value;` と指定します。  
   
     -   `HasValue` プロパティは、変数に値が含まれる場合は `true` を返し、`null` の場合は `false` を返します。  
   
-    -   `Value` プロパティは、値が割り当てられている場合はその値を返します。  それ以外の場合は、<xref:System.InvalidOperationException?displayProperty=fullName> がスローされます。  
+    -   `Value` プロパティは、値が割り当てられていれば、その値を返します。 それ以外の場合は、<xref:System.InvalidOperationException?displayProperty=fullName> がスローされます。  
   
-    -   `HasValue` の既定値は `false` です。  `Value` プロパティには既定値がありません。  
+    -   `HasValue` の既定値は `false` です。 `Value`プロパティには既定値はありません。  
   
-    -   null 許容型では、`if (x != null) y = x;` のように、`==` 演算子と `!=` 演算子を使用することもできます。  
+    -   Null 許容型では `==` 演算子と `!=` 演算子も使用できます。たとえば、`if (x != null) y = x;` のように指定します。  
   
--   現在の値が `null` である null 許容型を、null 非許容型に割り当てる場合、適用される既定値を割り当てるには、`??` 演算子を使用します。たとえば、`int? x = null; int y = x ?? -1;` と指定します。  
+-   現在の値が `null` である Null 許容型が Null 許容型以外の型に割り当てられるときに適用される既定値を割り当てるには、`??` 演算子を使用します。たとえば、`int? x = null; int y = x ?? -1;` と指定します。  
   
--   入れ子になった null 許容型は許可されていません。  `Nullable<Nullable<int>> n;` の行はコンパイルされません。  
+-   入れ子になった Null 許容型は許可されません。 次の行はコンパイルされません。`Nullable<Nullable<int>> n;`  
   
-## 関連項目  
+## <a name="related-sections"></a>関連項目  
  詳細情報  
   
 -   [Null 許容型の使用](../../../csharp/programming-guide/nullable-types/using-nullable-types.md)  
   
 -   [Null 許容型のボックス化](../../../csharp/programming-guide/nullable-types/boxing-nullable-types.md)  
   
--   [?? 演算子](../../../csharp/language-reference/operators/null-conditional-operator.md)  
+-   [??演算子](../../../csharp/language-reference/operators/null-conditional-operator.md)  
   
-## C\# 言語仕様  
- [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec-md.md)]  
+## <a name="c-language-specification"></a>C# 言語仕様  
+ [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec_md.md)]  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Nullable>   
- [C\# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
- [C\#](../../../csharp/csharp.md)   
- [C\# リファレンス](../../../csharp/language-reference/index.md)   
- [数が正確に「」持ち上げられた平均か。](http://go.microsoft.com/fwlink/?LinkId=112382)
+ [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
+ [C#](../../../csharp/csharp.md)   
+ [C# リファレンス](../../../csharp/language-reference/index.md)   
+ [What Exactly Does 'Lifted' mean? ('Lifted' の正確な意味)](http://go.microsoft.com/fwlink/?LinkId=112382)
+

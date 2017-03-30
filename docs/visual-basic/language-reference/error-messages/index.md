@@ -1,46 +1,62 @@
 ---
-title: "Error Messages (Visual Basic) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "errors [Visual Basic]"
-  - "error messages"
-  - "trappable errors"
-  - "errors [Visual Basic], trappable"
+title: "エラー メッセージ (Visual Basic) | Microsoft Docs"
+ms.date: 2015-07-20
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-visual-basic
+ms.topic: article
+dev_langs:
+- VB
+helpviewer_keywords:
+- errors [Visual Basic]
+- error messages
+- trappable errors
+- errors [Visual Basic], trappable
 ms.assetid: f2dda05b-baef-41f5-8bb1-598bd7cf239f
 caps.latest.revision: 19
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 19
----
-# Error Messages (Visual Basic)
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
+author: stevehoag
+ms.author: shoag
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Human Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: e22d81efef735f4b6619054cb15f21790efabf5e
+ms.lasthandoff: 03/13/2017
 
-Visual Basic アプリケーションを書き込むとき、コンパイルまたは実行すると、次の種類のエラーが発生することがあります:  
+---
+# <a name="error-messages-visual-basic"></a>エラー メッセージ (Visual Basic)
+Visual Basic アプリケーションを作成、コンパイル、実行する際は、次の種類のエラーが発生する可能性があります。  
   
-1.  Visual Studio のアプリケーションを作成すると生成されるデザイン時エラー。  
+1.  デザイン時エラー: Visual Studio でアプリケーションを作成するときに発生します。  
   
-2.  Visual Studio のコマンド プロンプトまたはアプリケーションをコンパイルすると、コンパイル時のエラー。  
+2.  コンパイル時エラー: Visual Studio またはコマンド プロンプトでアプリケーションをコンパイルするときに発生します。  
   
-3.  Visual Studio のまたはスタンドアロン実行可能ファイルとしてアプリケーションを実行すると、実行時エラー。  
+3.  実行時エラー: Visual Studio でアプリケーションまたはスタンドアロンの実行可能ファイルを実行するときに発生します。  
   
- 特定のエラーをトラブルシューティングする方法の詳細については、[Additional Resources for Visual Basic Programmers](../../../visual-basic/getting-started/additional-resources.md)を参照してください。  
+ 特定のエラーのトラブルシューティング方法については、「[Visual Basic プログラマのための追加リソース](../../../visual-basic/getting-started/additional-resources.md)」を参照してください。  
   
-## ランタイム エラー  
- Visual Basic アプリケーションがシステムで処理できない動作を実行しようとすると、実行時エラーは、[!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] は `Exception` のオブジェクトに発生します。  [!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] では、`Throw` ステートメントを使用することで、`Exception` オブジェクトを含む任意のデータ型のカスタム エラーを生成できます。  アプリケーションはキャッチされた例外の番号とメッセージを表示して、エラーを識別できます。  エラーがキャッチされない場合、アプリケーションは終了します。  
+## <a name="run-time-errors"></a>実行時エラー  
+ Visual Basic アプリケーションがシステムで実行できないアクションを実行しようとすると、実行時エラーが発生し、[!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] によって `Exception` オブジェクトがスローされます。 [!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] では、`Throw` ステートメントを使用することで、`Exception` オブジェクトを含む任意のデータ型のカスタム エラーを生成できます。 アプリケーションは、キャッチされた例外のエラー番号とメッセージを表示して、エラーを識別できます。 エラーがキャッチされない場合、アプリケーションは終了します。  
   
- コードは実行時エラーをトラップして確認できます。  `Try` ブロックのエラーを生成するコードを囲む、`Catch` の対応するブロック内でスローされたエラーを検出できます。  エラーを実行時に引っ掛け、コード内に応答する方法の詳細については、[Try...Catch...Finally Statement](../../../visual-basic/language-reference/statements/try-catch-finally-statement.md)を参照してください。  
+ 実行時エラーはコードでトラップして調べることができます。 エラーが発生するコードを `Try` ブロックで囲むと、スローされたエラーを対応する `Catch` ブロック内でキャッチできます。 実行時にエラーをトラップしてコードで対処する方法については、「[Try...Catch...Finally ステートメント](../../../visual-basic/language-reference/statements/try-catch-finally-statement.md)」を参照してください。  
   
-## コンパイル時のエラー  
- Visual Basic コンパイラがコードの問題を検出すると、コンパイル エラーが発生します。  コード エディターで、波線がそのコード行表示される簡単にどのコード行でも、エラーが発生したかを特定できます。  エラー メッセージは、他のメッセージを示す波線の下線ポイントまたは **\[エラー一覧\]**を開くと表示されます。  
+## <a name="compile-time-errors"></a>コンパイル時エラー  
+ Visual Basic コンパイラがコード内で問題を検出すると、コンパイル時エラーが発生します。 コード エディターでは、エラーの原因となったコード行の下に波線が表示されるため、簡単にその行を特定できます。 波線をポイントするか**エラー一覧**を開くと、エラー メッセージが表示されます。エラー一覧には他のメッセージも表示されます。  
   
- 識別子がの波線を持ち、短い下線が右端の文字の下に表示する場合、クラス、コンストラクター、メソッド、プロパティ、フィールド、または列挙型のスタブを生成できます。  詳細については、「[使用法から生成](/visual-cpp/misc/generate-from-usage)」を参照してください。  
+ 識別子の下に波線があり、右端の文字の下に短い下線が表示されている場合は、クラス、コンストラクター、メソッド、プロパティ、フィールド、または列挙型のスタブを生成できます。 詳細については、「[Generate From Usage](https://docs.microsoft.com/cpp/misc/generate-from-usage)」(使用法から生成) を参照してください。  
   
- Visual Basic コンパイラの警告を解決して、高速に実行に発生するバグがあるコードを書き込むこともできます。  この警告は、アプリケーションの実行時にエラーが発生する可能性のあるコードを識別します。  たとえば、コンパイラは割り当てられていないオブジェクト変数のメンバーを呼び出そうとしたり、関数の戻り値を設定せずに戻るか、または例外をキャッチするロジックにエラーの `Try` のブロックを実行しようとすると、警告します。  警告に関する詳細については、含まれます。これらをオンまたはオフにする方法に [Visual Basic での警告の構成](/visual-studio/ide/configuring-warnings-in-visual-basic)を参照してください。
+ Visual Basic コンパイラからのエラーを解決することにより、高速に実行されるバグの少ないコードを作成できます。 これらの警告では、アプリケーションの実行時にエラーを発生させるコードが示されます。 たとえば、ユーザーが、割り当てが行われていないオブジェクト変数のメンバーを呼び出そうとしたり、戻り値を設定せずに関数から戻ろうとしたり、例外をキャッチするロジックにエラーがある `Try` ブロックを実行しようとしたりすると、コンパイラは警告を表示します。 警告の表示/非表示を切り替える方法など、警告の詳細については、「[Visual Basic での警告の構成](https://docs.microsoft.com/visualstudio/ide/configuring-warnings-in-visual-basic)」を参照してください。
