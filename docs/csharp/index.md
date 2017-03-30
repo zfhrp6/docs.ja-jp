@@ -10,9 +10,9 @@ ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 52db8280-0e53-40cf-858b-e8eef3997dea
 translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: d9efc2b1b8ad38a6444e7362da13ce3838476abd
-ms.lasthandoff: 03/13/2017
+ms.sourcegitcommit: 75908d895017c31e36da6702f1b69816afb91d14
+ms.openlocfilehash: 8721c71bf69210cf73d7e703f19a22e267e36a28
+ms.lasthandoff: 03/28/2017
 
 ---
 
@@ -27,7 +27,7 @@ C# のガイドでは、C# 言語に関するさまざまな情報を提供し�
     - 開発経験はあるものの、C# は初めてという場合は、「[C# 言語のツアー](tour-of-csharp/index.md)」をお読みください。 C# 言語の基本的な構文と構造について学び、使用経験のある他の言語と比較することができます。 「[チュートリアル](tutorials/index.md)」を参照し、基本的な C# プログラムを試してみるのもよいでしょう。 または、「[C# の概念](concepts.md)」を読み、C# 言語の機能を詳しく学ぶこともできます。
 
 * 経験豊富な C# 開発者:
-    - C# の経験がある場合は、最新バージョンの新機能を知ることから始めましょう。 現在のバージョンの新機能は、「[C# 6 の新機能](csharp-6.md)」で確認することができます。 新機能を確認したら、「[C# の概念](concepts.md)」を読んで知識をより深めましょう。
+    - C# の経験がある場合は、最新バージョンの新機能を知ることから始めましょう。 現在のバージョンの新機能は、「[C# の新機能](whats-new/index.md)」で確認することができます。 新機能を確認したら、「[C# の概念](concepts.md)」を読んで知識をより深めましょう。
  
 ## <a name="how-the-c-guide-is-organized"></a>C# ガイドの編成
 
@@ -42,7 +42,7 @@ C# ガイドには 7 つのセクションがあります。 順番に読み進�
 * [C# のツアー](tour-of-csharp/index.md): 
     - ここでは、C# 言語の概要を示します。 C# プログラムの構成要素と C# 言語の機能について学べます。 C# のすべての構文要素を使った小さなサンプルを見て、C# 言語に関する主なトピックについての説明を読むことができます。 
 
-* [最新の機能](whats-new.md):
+* [最新の機能](whats-new/index.md):
     - C# 言語の新機能について説明し、 C# インタラクティブ (C# の REPL) や .NET コンパイラ プラットフォーム SDK などの新しいツールを紹介しています。 C# 言語の進化について学び、 新しいツールを使った C# 言語の活用とタスクの自動化によって生産性を高める方法を知ることができます。 
 
 * [C# インタラクティブ](interactive/index.md):
