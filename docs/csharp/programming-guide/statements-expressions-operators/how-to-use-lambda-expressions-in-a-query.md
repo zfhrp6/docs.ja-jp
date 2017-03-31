@@ -1,38 +1,56 @@
 ---
 title: "方法: クエリでラムダ式を使用する (C# プログラミング ガイド) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.technology: 
-  - "devlang-csharp"
-ms.topic: "article"
-dev_langs: 
-  - "CSharp"
-helpviewer_keywords: 
-  - "ラムダ式 [C#], LINQ で"
+ms.date: 2015-07-20
+ms.prod: .net
+ms.technology:
+- devlang-csharp
+ms.topic: article
+dev_langs:
+- CSharp
+helpviewer_keywords:
+- lambda expressions [C#], in LINQ
 ms.assetid: 3cac4d25-d11f-4abd-9e7c-0f02e97ae06d
 caps.latest.revision: 16
-author: "BillWagner"
-ms.author: "wiwagn"
-caps.handback.revision: 16
+author: BillWagner
+ms.author: wiwagn
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Human Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: 7bfc46015b0d4603c4d63478e804f862c0c65b68
+ms.lasthandoff: 03/13/2017
+
 ---
-# 方法: クエリでラムダ式を使用する (C# プログラミング ガイド)
-クエリ構文でラムダ式を直接使用することはありませんが、メソッド呼び出しでラムダ式を使用し、メソッド呼び出しをクエリ式に含めることができます。  実際、メソッド構文でしか表現できないクエリ操作もあります。  クエリ構文とメソッド構文の違いの詳細については、「[Query Syntax and Method Syntax in LINQ](../../../csharp/programming-guide/concepts/linq/query-syntax-and-method-syntax-in-linq.md)」を参照してください。  
+# <a name="how-to-use-lambda-expressions-in-a-query-c-programming-guide"></a>方法: クエリでラムダ式を使用する (C# プログラミング ガイド)
+クエリ構文でラムダ式を直接使うことはありませんが、メソッドの呼び出しで使い、クエリ式はメソッドの呼び出しを含むことができます。 実際、一部のクエリ操作はメソッド構文でのみ表現できます。 クエリ構文とメソッド構文の違いについて詳しくは、「[LINQ でのクエリ構文とメソッド構文](../../../csharp/programming-guide/concepts/linq/query-syntax-and-method-syntax-in-linq.md)」をご覧ください。  
   
-## 使用例  
- 次の例は、<xref:System.Linq.Enumerable.Where%2A?displayProperty=fullName> 標準クエリ演算子を使用してメソッド ベースのクエリでラムダ式を使用する方法を示しています。  この例の <xref:System.Linq.Enumerable.Where%2A> メソッドはデリゲート型 <xref:System.Func%601> の入力パラメーターを持ち、このデリゲートは整数を入力として受け取ってブール値を返します。  ラムダ式をそのデリゲートに変換することができます。  これが、<xref:System.Linq.Queryable.Where%2A?displayProperty=fullName> メソッドを使用する [!INCLUDE[vbtecdlinq](../../../csharp/includes/vbtecdlinq-md.md)] クエリだった場合、パラメーターの型は `Expression<Func\<int,bool>>` になりますが、ラムダ式はまったく同じに見えます。  式の型の詳細については、「<xref:System.Linq.Expressions.Expression?displayProperty=fullName>」を参照してください。  
+## <a name="example"></a>例  
+ 次の例を見ると、<xref:System.Linq.Enumerable.Where%2A?displayProperty=fullName> 標準クエリ演算子を使うことによりメソッド ベースのクエリでラムダ式を使う方法がわかります。 この例の <xref:System.Linq.Enumerable.Where%2A> メソッドにはデリゲート型 <xref:System.Func%601> の入力パラメーターがあり、そのデリゲートは入力として整数を受け取ってブール値を返すことに注意してください。 ラムダ式は、そのデリゲートに変換できます。 これが <xref:System.Linq.Queryable.Where%2A?displayProperty=fullName> メソッドを使う [!INCLUDE[vbtecdlinq](../../../csharp/includes/vbtecdlinq_md.md)] のクエリであったなら、パラメーターの型は `Expression<Func\<int,bool>>` になりますが、ラムダ式の表現はまったく同じです。 式の型について詳しくは、<xref:System.Linq.Expressions.Expression?displayProperty=fullName> をご覧ください。  
   
  [!code-cs[csProgGuideLINQ#1](../../../csharp/programming-guide/arrays/codesnippet/CSharp/how-to-use-lambda-expressions-in-a-query_1.cs)]  
   
-## 使用例  
- 次の例は、クエリ式のメソッド呼び出しでラムダ式を使用する方法を示しています。  ラムダが必要なのは、クエリ構文を使用して <xref:System.Linq.Enumerable.Sum%2A> 標準クエリ演算子を呼び出すことはできないためです。  
+## <a name="example"></a>例  
+ 次の例では、クエリ式のメソッド呼び出しでラムダ式を使う方法を示します。 <xref:System.Linq.Enumerable.Sum%2A> 標準クエリ演算子はクエリ構文を使って呼び出すことができないため、ラムダが必要です。  
   
- クエリではまず、`GradeLevel` 列挙体での定義に従って、学生を成績レベルに基づいてグループ化します。  次に、グループごとに各学生の合計得点を加算します。  これには、2 つの `Sum` 操作が必要です。  内側の `Sum` は各学生の合計得点を計算し、外側の `Sum` は、グループに含まれる全学生の現在の総計を保持します。  
+ このクエリは最初に、`GradeLevel` 列挙型で定義されている成績レベルに従って、学生をグループ分けします。 その後、各グループについて、各学生の合計点数を追加します。 これには、2 つの `Sum` 演算が必要です。 内側の `Sum` は各学生の合計点数を計算し、外側の `Sum` はグループ内のすべての学生の集計中の合計を保持します。  
   
  [!code-cs[csProgGuideLINQ#2](../../../csharp/programming-guide/arrays/codesnippet/CSharp/how-to-use-lambda-expressions-in-a-query_2.cs)]  
   
-## コードのコンパイル  
- このコードを実行するには、メソッドをコピーして「[方法 : オブジェクトのコレクションを照会する](../../../csharp/programming-guide/linq-query-expressions/how-to-query-a-collection-of-objects.md)」にある `StudentClass` に貼り付け、`Main` メソッドから呼び出します。  
+## <a name="compiling-the-code"></a>コードのコンパイル  
+ このコードを実行するには、メソッドをコピーして「[方法: オブジェクトのコレクションを照会する](../../../csharp/programming-guide/linq-query-expressions/how-to-query-a-collection-of-objects.md)」で提供されている `StudentClass` に貼り付けた後、`Main` メソッドからそれを呼び出します。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [ラムダ式](../../../csharp/programming-guide/statements-expressions-operators/lambda-expressions.md)   
- [式ツリー](../Topic/Expression%20Trees%20\(C%23%20and%20Visual%20Basic\).md)
+ [式ツリー](http://msdn.microsoft.com/library/fb1d3ed8-d5b0-4211-a71f-dd271529294b)

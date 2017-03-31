@@ -1,47 +1,63 @@
 ---
-title: "Troubleshooting: Reading from and Writing to Text Files (Visual Basic) | Microsoft Docs"
-ms.custom: ""
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "troubleshooting file I/O"
-  - "writing text to files, troubleshooting"
-  - "troubleshooting Visual Basic, text files"
-  - "I/O [Visual Basic], troubleshooting text files"
-  - "writing to files, troubleshooting"
-  - "reading text files, troubleshooting"
+title: "トラブルシューティング: テキスト ファイルの読み取りと書き込み (Visual Basic) | Microsoft Docs"
+ms.custom: 
+ms.date: 2015-07-20
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-visual-basic
+ms.topic: article
+dev_langs:
+- VB
+helpviewer_keywords:
+- troubleshooting file I/O
+- writing text to files, troubleshooting
+- troubleshooting Visual Basic, text files
+- I/O [Visual Basic], troubleshooting text files
+- writing to files, troubleshooting
+- reading text files, troubleshooting
 ms.assetid: a8e9b44d-facb-4718-8c0f-466537171182
 caps.latest.revision: 10
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 10
----
-# Troubleshooting: Reading from and Writing to Text Files (Visual Basic)
-[!INCLUDE[vs2017banner](../../../../visual-basic/developing-apps/includes/vs2017banner.md)]
+author: stevehoag
+ms.author: shoag
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Human Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: d4051975bf11bd65aad1535c40e7eb091c791efd
+ms.lasthandoff: 03/13/2017
 
-このトピックでは、テキスト ファイルを扱うときに生じる一般的な問題について説明し、それぞれの対処方法を示します。  
+---
+# <a name="troubleshooting-reading-from-and-writing-to-text-files-visual-basic"></a>トラブルシューティング: テキスト ファイルの読み取りと書き込み (Visual Basic)
+このトピックでは、テキスト ファイルを使用するときに発生する一般的な問題について説明し、それぞれの対処方法を示します。  
   
-## 一般的な問題  
- テキスト ファイルを扱うときに特によくある問題点には、セキュリティ例外、ファイル エンコーディング、および無効なパスがあります。  
+## <a name="common-problems"></a>一般的な問題  
+ テキスト ファイルを使用するときに特によく発生する問題として、セキュリティ例外、ファイル エンコーディング、無効なパスがあります。  
   
-### セキュリティ例外  
- セキュリティ エラーが発生すると <xref:System.Security.SecurityException> がスローされます。  これは、ユーザーに必要なアクセス許可がないことが原因で生じる場合が多く、アクセス許可を追加するか、またはファイルを分離ストレージで扱うことにより解決できることがあります。  詳細については、「[例外のトラブルシューティング : System.Security.SecurityException](../Topic/Troubleshooting%20Exceptions:%20System.Security.SecurityException.md)」を参照してください。  
+### <a name="security-exceptions"></a>セキュリティ例外  
+ セキュリティ エラーが発生すると、<xref:System.Security.SecurityException> がスローされます。 この問題は、多くの場合、ユーザーに必要なアクセス許可がないことが原因で発生するため、アクセス許可を追加するか、分離ストレージでファイルを操作することで解決できます。  
   
-### ファイル エンコーディング  
- ファイル エンコーディングは、文字エンコーディングとも呼ばれ、テキスト処理での文字の表現方法を指定するものです。  テキスト ファイルに予期しない文字が含まれていると、エンコーディングが不正となる場合があります。  大半のファイルでは、どの言語の文字を処理できるか \(またはできないか\) という点から見て、あるエンコーディングが別のエンコーディングより好ましいという場合があります。ただし通常は Unicode が好まれます。  詳細については、「[File Encodings](../../../../visual-basic/developing-apps/programming/drives-directories-files/file-encodings.md)」および「<xref:System.Text.Encoding>」を参照してください。  
+### <a name="file-encodings"></a>ファイル エンコーディング  
+ ファイル エンコーディングは、文字エンコーディングとも呼ばれ、テキストを処理するときの文字の表現方法を指定します。 エンコーディングが誤っていると、テキスト ファイルに予期しない文字が含まれることがあります。 ほとんどのファイルで、言語で処理できる (または処理できない) 文字という観点から、あるエンコードが他のエンコーディングよりも望ましいということがありますが、一般的には Unicode が好まれます。 詳細については、「[ファイル エンコーディング](../../../../visual-basic/developing-apps/programming/drives-directories-files/file-encodings.md)」および「<xref:System.Text.Encoding>」を参照してください。  
   
-### 不正なパス  
- ファイル パス \(特に相対パス\) を解析するときには、間違ったデータを指定しがちです。  多くの問題は、正しいパスを指定しているかどうかを確認することで修正できます。  詳細については、「[方法 : ファイル パスを解析する](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-parse-file-paths.md)」を参照してください。  
+### <a name="incorrect-paths"></a>無効なパス  
+ ファイル パス (特に相対パス) を解析するときに、間違ったデータを指定してしまうことがよくあります。 正しいパスを指定しているかどうかを確認することで、問題の多くを解決できます。 詳細については、「[方法: ファイル パスを解析する](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-parse-file-paths.md)」を参照してください。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  <xref:Microsoft.VisualBasic.FileIO.FileSystem>   
- [Reading from Files](../../../../visual-basic/developing-apps/programming/drives-directories-files/reading-from-files.md)   
- [Writing to Files](../../../../visual-basic/developing-apps/programming/drives-directories-files/writing-to-files.md)   
- [Parsing Text Files with the TextFieldParser Object](../../../../visual-basic/developing-apps/programming/drives-directories-files/parsing-text-files-with-the-textfieldparser-object.md)
+ [ファイルの読み取り](../../../../visual-basic/developing-apps/programming/drives-directories-files/reading-from-files.md)   
+ [ファイルへの書き込み](../../../../visual-basic/developing-apps/programming/drives-directories-files/writing-to-files.md)   
+ [TextFieldParser オブジェクトによるテキスト ファイルの解析](../../../../visual-basic/developing-apps/programming/drives-directories-files/parsing-text-files-with-the-textfieldparser-object.md)

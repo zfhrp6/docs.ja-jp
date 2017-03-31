@@ -1,22 +1,40 @@
 ---
 title: "Null 条件演算子 (C# および Visual Basic) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.technology: 
-  - "devlang-csharp"
-ms.topic: "article"
-dev_langs: 
-  - "CSharp"
+ms.date: 2015-07-20
+ms.prod: .net
+ms.technology:
+- devlang-csharp
+ms.topic: article
+dev_langs:
+- CSharp
 ms.assetid: 9c7b2c8f-a785-44ca-836c-407bfb6d27f5
 caps.latest.revision: 3
-author: "BillWagner"
-ms.author: "wiwagn"
-caps.handback.revision: 3
+author: BillWagner
+ms.author: wiwagn
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Human Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: 0ecdf3c610bb09d1ecdf01e25b75c8f01802e852
+ms.lasthandoff: 03/13/2017
+
 ---
-# Null 条件演算子 (C# および Visual Basic)
-メンバー アクセス \(`?.`\) またはインデックス \(`?[`\) 操作を実行する前に、null をテストするために使用されます。  これらの演算子を使用すると、null チェックの処理のために記述するコードを少なくすることができます \(特に、データ構造を下っていく場合\)。  
+# <a name="null-conditional-operators-c-and-visual-basic"></a>Null 条件演算子 (C# および Visual Basic)
+メンバー アクセス (`?.`) またはインデックス (`?[`) 操作を実行する前に、null をテストするために使用されます。  これらの演算子を使用すると、null チェックの処理のために記述するコードを少なくすることができます (特に、データ構造を下っていく場合)。  
   
-```c#  
+```csharp  
 int? length = customers?.Length; // null if customers is null   
 Customer first = customers?[0];  // null if customers is null  
 int? count = customers?[0]?.Orders?.Count();  // null if customers, the first customer, or Orders is null  
@@ -40,7 +58,7 @@ A?.B?.C?[0] == E
   
  null 条件メンバー アクセスの別の用途は、はるかに少ないコードのスレッド セーフな方法でデリゲートを呼び出すことです。  従来の方法には、次のようなコードが必要です。  
   
-```c#  
+```csharp  
 var handler = this.PropertyChanged;  
 if (handler != null)  
     handler(…)  
@@ -65,13 +83,14 @@ PropertyChanged?.Invoke(e)
   
  null 条件デリゲート呼び出し構文 `PropertyChanged?(e)` がないため、`Invoke` メソッドを明示的に呼び出す必要があります。  それを許可するためのあいまいな解析状況が多すぎました。  
   
-## 言語仕様  
- [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec-md.md)]  
+## <a name="language-specifications"></a>言語仕様  
+ [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec_md.md)]  
   
- 詳細については、「[Visual Basic Language Reference](../../../visual-basic/language-reference/index.md)」を参照してください。  
+ 詳しくは、「[Visual Basic 言語リファレンス](../../../visual-basic/language-reference/index.md)」をご覧ください。  
   
-## 参照  
- [C\# リファレンス](../../../csharp/language-reference/index.md)   
- [C\# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
- [Visual Basic Language Reference](../../../visual-basic/language-reference/index.md)   
- [Visual Basic Programming Guide](../../../visual-basic/programming-guide/index.md)
+## <a name="see-also"></a>関連項目  
+ [?? (Null 合体演算子)](null-conditional-operator.md)   
+ [C# リファレンス](../../../csharp/language-reference/index.md)   
+ [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
+ [Visual Basic の言語リファレンス](../../../visual-basic/language-reference/index.md)   
+ [Visual Basic プログラミング ガイド](../../../visual-basic/programming-guide/index.md)

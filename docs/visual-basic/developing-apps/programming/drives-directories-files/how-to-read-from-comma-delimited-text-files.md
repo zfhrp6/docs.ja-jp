@@ -1,72 +1,87 @@
 ---
-title: "How to: Read From Comma-Delimited Text Files in Visual Basic | Microsoft Docs"
-ms.custom: ""
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "files, parsing"
-  - "text files, tasks"
-  - "reading text files, comma-delimited"
-  - "text files, reading"
+title: "方法: Visual Basic でコンマ区切りのテキスト ファイルを読み取る | Microsoft Docs"
+ms.custom: 
+ms.date: 2015-07-20
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-visual-basic
+ms.topic: article
+dev_langs:
+- VB
+helpviewer_keywords:
+- files, parsing
+- text files, tasks
+- reading text files, comma-delimited
+- text files, reading
 ms.assetid: a8413fe4-0dba-49c8-8692-44fb67a9ec4f
 caps.latest.revision: 19
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 19
----
-# How to: Read From Comma-Delimited Text Files in Visual Basic
-[!INCLUDE[vs2017banner](../../../../visual-basic/developing-apps/includes/vs2017banner.md)]
+author: stevehoag
+ms.author: shoag
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Human Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: f894aa1dce23d5c8da7287275123349739152f04
+ms.lasthandoff: 03/13/2017
 
-`TextFieldParser` オブジェクトを使用すると、ログなどの構造化されたテキスト ファイルを簡単かつ効率的に解析できます。  区切り記号が使用されたファイルと固定幅のテキスト フィールドを持つファイルのどちらであるかは、`TextFieldType` プロパティで定義します。  
+---
+# <a name="how-to-read-from-comma-delimited-text-files-in-visual-basic"></a>方法: Visual Basic でコンマ区切りのテキスト ファイルを読み取る
+`TextFieldParser` オブジェクトには、構造化されたテキスト ファイル (ログなど) を簡単にかつ効率的に解析する方法が備わっています。 区切り形式のファイルか、固定幅フィールドのテキストを使用したファイルかは、`TextFieldType` プロパティで定義します。  
   
-### コンマ区切りのテキスト ファイルを解析するには  
+### <a name="to-parse-a-comma-delimited-text-file"></a>コンマ区切りテキスト ファイルを解析するには  
   
-1.  新しい `TextFieldParser` を作成します。  次のコードは、`MyReader` という名前の `TextFieldParser` を作成し、`test.txt` ファイルを開きます。  
+1.  新規の `TextFieldParser` を作成します。 次のコードは、`MyReader` という名前の `TextFieldParser` を作成し、`test.txt` ファイルを開きます。  
   
      [!code-vb[VbFileIORead#15](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/VisualBasic/how-to-read-from-comma-delimited-text-files_1.vb)]  
   
-2.  `TextField` の型と区切り記号を定義します。  次のコードは、`TextFieldType` プロパティを `Delimited` と定義し、区切り記号を "," と定義します。  
+2.  `TextField` 型と区切り記号を定義します。 次のコードは、`TextFieldType` プロパティを `Delimited`、区切り記号を "," として定義します。  
   
      [!code-vb[VbFileIORead#16](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/VisualBasic/how-to-read-from-comma-delimited-text-files_2.vb)]  
   
-3.  ファイル内の各フィールドをループします。  破損している行がある場合は、エラーを報告し、解析を続けます。  次のコードは、ファイルをループし、各フィールドを順番に表示して、書式に誤りのあるフィールドを報告します。  
+3.  ファイル内のフィールドをループします。 破損している行が見つかった場合は、エラーを報告して解析を続行します。 次のコードは、ファイル内をループし、各フィールド順次表示して、不正にフォーマットされているフィールドをレポートします。  
   
      [!code-vb[VbFileIORead#17](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/VisualBasic/how-to-read-from-comma-delimited-text-files_3.vb)]  
   
-4.  `While` ブロックと `Using` ブロックを `End While` と `End Using` で閉じます。  
+4.  `While` ブロックと `Using` ブロックをそれぞれ `End While` と `End Using` で閉じます。  
   
      [!code-vb[VbFileIORead#18](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/VisualBasic/how-to-read-from-comma-delimited-text-files_4.vb)]  
   
-## 使用例  
- この例では、`test.txt` ファイルを読み取ります。  
+## <a name="example"></a>例  
+ 次のコードは、`test.txt` ファイルから読み取りを行う例です。  
   
  [!code-vb[VbFileIORead#19](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/VisualBasic/how-to-read-from-comma-delimited-text-files_5.vb)]  
   
-## 信頼性の高いプログラミング  
+## <a name="robust-programming"></a>信頼性の高いプログラミング  
  次の条件を満たす場合は、例外が発生する可能性があります。  
   
--   指定の書式を使用して行を解析できない \(<xref:Microsoft.VisualBasic.FileIO.MalformedLineException>\)。  例外メッセージは、例外が発生した行を表し、<xref:Microsoft.VisualBasic.FileIO.TextFieldParser.ErrorLine%2A> プロパティには、行内のテキストが割り当てられる。  
+-   指定した形式で行を解析することができない (<xref:Microsoft.VisualBasic.FileIO.MalformedLineException>)。 例外の原因となった行が例外メッセージで報告され、<xref:Microsoft.VisualBasic.FileIO.TextFieldParser.ErrorLine%2A> プロパティには、その行に含まれているテキストが代入されます。  
   
--   指定のファイルが存在しない \(<xref:System.IO.FileNotFoundException>\)。  
+-   指定されたファイルが存在しない (<xref:System.IO.FileNotFoundException>)。  
   
--   部分信頼の状況で、ファイルにアクセスするための十分なアクセス許可がユーザーにない。  \(<xref:System.Security.SecurityException>\).  
+-   部分信頼の状況下で、ファイルにアクセスするために必要なアクセス許可がユーザーにない。 (<xref:System.Security.SecurityException>)。  
   
--   パスが長すぎる \(<xref:System.IO.PathTooLongException>\)。  
+-   パスが長すぎる (<xref:System.IO.PathTooLongException>)。  
   
--   ユーザーがファイルにアクセスするのに必要なアクセス許可がない \(<xref:System.UnauthorizedAccessException>\)。  
+-   ファイルにアクセスするために必要なアクセス許可がユーザーにない (<xref:System.UnauthorizedAccessException>)。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  <xref:Microsoft.VisualBasic.FileIO.TextFieldParser?displayProperty=fullName>   
- [How to: Read From Fixed\-width Text Files](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-read-from-fixed-width-text-files.md)   
- [How to: Read From Text Files with Multiple Formats](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-read-from-text-files-with-multiple-formats.md)   
- [Parsing Text Files with the TextFieldParser Object](../../../../visual-basic/developing-apps/programming/drives-directories-files/parsing-text-files-with-the-textfieldparser-object.md)   
- [Walkthrough: Manipulating Files and Directories in Visual Basic](../../../../visual-basic/developing-apps/programming/drives-directories-files/walkthrough-manipulating-files-and-directories.md)   
- [Troubleshooting: Reading from and Writing to Text Files](../../../../visual-basic/developing-apps/programming/drives-directories-files/troubleshooting-reading-from-and-writing-to-text-files.md)   
- [例外のトラブルシューティング : Microsoft.VisualBasic.FileIO.TextFieldParser.MalformedLineException](../Topic/Troubleshooting%20Exceptions:%20Microsoft.VisualBasic.FileIO.TextFieldParser.MalformedLineException.md)
+ [方法: 固定幅のテキスト ファイルを読み取る](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-read-from-fixed-width-text-files.md)   
+ [方法: 複数の書式を持つテキスト ファイルを読み取る](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-read-from-text-files-with-multiple-formats.md)   
+ [TextFieldParser オブジェクトによるテキスト ファイルの解析](../../../../visual-basic/developing-apps/programming/drives-directories-files/parsing-text-files-with-the-textfieldparser-object.md)   
+ [チュートリアル : Visual Basic によるファイルとディレクトリの操作](../../../../visual-basic/developing-apps/programming/drives-directories-files/walkthrough-manipulating-files-and-directories.md)   
+ [トラブルシューティング : テキスト ファイルの読み取りと書き込み](../../../../visual-basic/developing-apps/programming/drives-directories-files/troubleshooting-reading-from-and-writing-to-text-files.md)

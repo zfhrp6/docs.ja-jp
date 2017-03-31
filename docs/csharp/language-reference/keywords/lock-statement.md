@@ -1,25 +1,43 @@
 ---
 title: "lock ステートメント (C# リファレンス) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.technology: 
-  - "devlang-csharp"
-ms.topic: "article"
-f1_keywords: 
-  - "lock_CSharpKeyword"
-  - "lock"
-dev_langs: 
-  - "CSharp"
-helpviewer_keywords: 
-  - "lock キーワード [C#]"
+ms.date: 2015-07-20
+ms.prod: .net
+ms.technology:
+- devlang-csharp
+ms.topic: article
+f1_keywords:
+- lock_CSharpKeyword
+- lock
+dev_langs:
+- CSharp
+helpviewer_keywords:
+- lock keyword [C#]
 ms.assetid: 656da1a4-707e-4ef6-9c6e-6d13b646af42
 caps.latest.revision: 43
-author: "BillWagner"
-ms.author: "wiwagn"
-caps.handback.revision: 43
+author: BillWagner
+ms.author: wiwagn
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Human Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: 020be199391789360ae9a25858bef54d8259ae56
+ms.lasthandoff: 03/13/2017
+
 ---
-# lock ステートメント (C# リファレンス)
-`lock` キーワードは、指定のオブジェクトに対する相互排他ロックを取得し、ステートメントを実行し、ロックを解放するステートメント ブロックをクリティカル セクションとしてマークします。  次の例では `lock` のステートメントが含まれています。  
+# <a name="lock-statement-c-reference"></a>lock ステートメント (C# リファレンス)
+`lock` キーワードは、ステートメント ブロックをクリティカル セクションとして指定します。このためには、特定のオブジェクトの相互排他ロックを取得し、ステートメントを実行して、ロックを解放します。 次の例では、`lock` ステートメントが使用されています。  
   
 ```  
   
@@ -43,49 +61,49 @@ class Account
   
 ```  
   
- 詳細については、「[スレッドの同期](../Topic/Thread%20Synchronization%20\(C%23%20and%20Visual%20Basic\).md)」を参照してください。  
+ 詳細については、「[スレッドの同期](http://msdn.microsoft.com/library/413e1f28-a2c5-4eec-8338-aa43e7982ff4)」を参照してください。  
   
-## 解説  
- `lock` キーワードによって、あるスレッドがコードのクリティカル セクションになっているときは、別のスレッドはクリティカル セクションにはなりません。  ロックされたコードを別のスレッドが使おうとすると、オブジェクトが解放されるまで待機 \(ブロック\) します。  
+## <a name="remarks"></a>コメント  
+ `lock` キーワードは、コードのクリティカル セクションに複数のスレッドが同時に進入することを防ぐ働きをします。 これから実行しようとしているコードがロックされている場合、別のスレッドは、そのオブジェクトが解放されるまで待機 (ブロック) 状態になります。  
   
- スレッドについては、「[スレッド](../Topic/Threading%20\(C%23%20and%20Visual%20Basic\).md)」で説明します。  
+ スレッド処理については、「[スレッド処理](http://msdn.microsoft.com/library/552f6c68-dbdb-4327-ae36-32cf9063d88c)」を参照してください。  
   
- `lock` キーワードは、ブロックの最初に <xref:System.Threading.Monitor.Enter%2A> を呼び出し、ブロックの最後に <xref:System.Threading.Monitor.Exit%2A> を呼び出します。  <xref:System.Threading.ThreadInterruptedException> は <xref:System.Threading.Thread.Interrupt%2A> が `lock` のステートメントを入力するまで待機しているスレッドを中断するとがスローされます。  
+ `lock` キーワードは、ブロックの先頭で <xref:System.Threading.Monitor.Enter%2A> を呼び出し、ブロックの末尾で <xref:System.Threading.Monitor.Exit%2A> を呼び出します。 `lock` ステートメントの実行を待っているスレッドを <xref:System.Threading.Thread.Interrupt%2A> で中断すると、<xref:System.Threading.ThreadInterruptedException> がスローされます。  
   
- 一般に、`public` 型またはコードの制御範囲外にあるインスタンスに対してロックしないようにしてください。  `lock (this)`、`lock (typeof (MyType))`、および `lock ("myLock")` などの一般的な構造は、このガイドラインに反しています。  
+ 一般に、`public` 型 (つまり、コードの制御が及ばないインスタンス) をロックすることは避けてください。 `lock (this)`、`lock (typeof (MyType))`、`lock ("myLock")` は、このガイドラインに違反する代表的なコンストラクトです。  
   
--   インスタンスに対してパブリックにアクセスできる場合には、`lock (this)` が問題になります。  
+-   `lock (this)` は、このインスタンスにパブリックにアクセスできる場合に問題となります。  
   
--   `MyType` に対してパブリックにアクセスできる場合には、`lock (typeof (MyType))` が問題になります。  
+-   `lock (typeof (MyType))` は、`MyType` にパブリックにアクセスできる場合に問題となります。  
   
--   プロセス内で同じ文字列を使用する他のコードは同じロックを共有するので、`lock("myLock")` が問題になります。  
+-   `lock("myLock")` が問題となる理由は、同じ文字列を使用するコードがプロセス内に他にも存在した場合、そのコードも同じロックを共有するためです。  
   
- ロックする `private` オブジェクトを定義するか、すべてのインスタンスに共通するデータを保護するために `private static` オブジェクト変数を定義することをお勧めします。  
+ `private` オブジェクトを定義してロックの適用対象を限定するか、`private static` オブジェクト変数を定義して、すべてのインスタンスに共通するデータを保護することをお勧めします。  
   
- `lock` のステートメントの本体で [待機します。](../../../csharp/language-reference/keywords/await.md) のキーワードを使用できません。  
+ `lock` ステートメントの本体で [await](../../../csharp/language-reference/keywords/await.md) キーワードを使用することはできません。  
   
-## 使用例  
- C\# でのロックされていないスレッドの簡単な使用例を次に示します。  
+## <a name="example"></a>例  
+ 次のサンプルでは、C# でロックされていないスレッドの簡単な使用例を示しています。  
   
  [!code-cs[csrefKeywordsFixedLock#5](../../../csharp/language-reference/keywords/codesnippet/CSharp/lock-statement_1.cs)]  
   
-## 使用例  
- 次の例では、スレッドおよび `lock` が使用されています。  `lock` ステートメントが存在する限り、ステートメント ブロックはクリティカル セクションであり、`balance` は負の数にはなりません。  
+## <a name="example"></a>例  
+ 次のサンプルでは、スレッドと `lock` を使用しています。 `lock` ステートメントが存在する限り、このステートメント ブロックはクリティカル セクションとなり、`balance` が負の数になることはありません。  
   
  [!code-cs[csrefKeywordsFixedLock#6](../../../csharp/language-reference/keywords/codesnippet/CSharp/lock-statement_2.cs)]  
   
-## C\# 言語仕様  
- [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec-md.md)]  
+## <a name="c-language-specification"></a>C# 言語仕様  
+ [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec_md.md)]  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Reflection.MethodImplAttributes>   
  <xref:System.Threading.Mutex>   
- [C\# リファレンス](../../../csharp/language-reference/index.md)   
- [C\# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
- [スレッド](../Topic/Threading%20\(C%23%20and%20Visual%20Basic\).md)   
- [C\# のキーワード](../../../csharp/language-reference/keywords/index.md)   
+ [C# リファレンス](../../../csharp/language-reference/index.md)   
+ [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
+ [スレッド処理](http://msdn.microsoft.com/library/552f6c68-dbdb-4327-ae36-32cf9063d88c)   
+ [C# のキーワード](../../../csharp/language-reference/keywords/index.md)   
  [ステートメントのキーワード](../../../csharp/language-reference/keywords/statement-keywords.md)   
- [監視](../Topic/Monitors.md)   
- [Interlocked Operations](../Topic/Interlocked%20Operations.md)   
- [AutoResetEvent](../Topic/AutoResetEvent.md)   
- [スレッドの同期](../Topic/Thread%20Synchronization%20\(C%23%20and%20Visual%20Basic\).md)
+ @System.Threading.Monitor   
+ [インタロックされた操作](http://msdn.microsoft.com/library/cbda7114-c752-4f3e-ada1-b1e8dd262f2b)   
+ [AutoResetEvent](http://msdn.microsoft.com/library/6d39c48d-6b37-4a9b-8631-f2924cfd9c18)   
+ [スレッドの同期](http://msdn.microsoft.com/library/413e1f28-a2c5-4eec-8338-aa43e7982ff4)

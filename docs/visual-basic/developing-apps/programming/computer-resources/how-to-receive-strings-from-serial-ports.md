@@ -1,57 +1,73 @@
 ---
-title: "How to: Receive Strings From Serial Ports in Visual Basic | Microsoft Docs"
-ms.custom: ""
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "serial ports, retrieving strings"
-  - "strings [Visual Basic], retrieving from serial ports"
-  - "My.Resources object"
+title: "方法: Visual Basic でシリアル ポートから文字列を受信する | Microsoft Docs"
+ms.custom: 
+ms.date: 2015-07-20
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-visual-basic
+ms.topic: article
+dev_langs:
+- VB
+helpviewer_keywords:
+- serial ports, retrieving strings
+- strings [Visual Basic], retrieving from serial ports
+- My.Resources object
 ms.assetid: 8371ce2c-e1c7-476b-a86d-9afc2614b6b7
 caps.latest.revision: 21
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 21
----
-# How to: Receive Strings From Serial Ports in Visual Basic
-[!INCLUDE[vs2017banner](../../../../visual-basic/developing-apps/includes/vs2017banner.md)]
+author: stevehoag
+ms.author: shoag
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Human Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: 8e56646b1d8ff3b682a402b4b2fc7442c3338a49
+ms.lasthandoff: 03/13/2017
 
-このトピックでは、`My.Computer.Ports` を使用して、[!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] でコンピューターのシリアル ポートから文字列を受信する方法について説明します。  
+---
+# <a name="how-to-receive-strings-from-serial-ports-in-visual-basic"></a>方法 : Visual Basic でシリアル ポートから文字列を受信する
+このトピックでは、[!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] で `My.Computer.Ports` を使用して、コンピュータのシリアルポートから文字列を受信する方法について説明します。  
   
-### シリアル ポートから文字列を受信するには  
+### <a name="to-receive-strings-from-the-serial-port"></a>シリアル ポートから文字列を受信する  
   
-1.  返す文字列を初期化します。  
+1.  戻り値の文字列を初期化します。  
   
      [!code-vb[VbVbalrMyComputer#38](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/VisualBasic/how-to-receive-strings-from-serial-ports_1.vb)]  
   
-2.  どのシリアル ポートから文字列を取得するかを決定します。  この例では、`COM1` であるものと想定しています。  
+2.  どのシリアル ポートから文字列を取得するのかを決定します。 この例では、`COM1` です。  
   
-3.  `My.Computer.Ports.OpenSerialPort` メソッドを使用して、ポートへの参照を取得します。  詳細については、「<xref:Microsoft.VisualBasic.Devices.Ports.OpenSerialPort%2A>」を参照してください。  
+3.  `My.Computer.Ports.OpenSerialPort` メソッドを使用して、ポートへの参照を取得します。 詳しくは、「<xref:Microsoft.VisualBasic.Devices.Ports.OpenSerialPort%2A>」をご覧ください。  
   
-     `Try...Catch...Finally` ブロックを使用すると、アプリケーションが例外を生成した場合でも、シリアル ポートを閉じることができます。  シリアル ポートを操作するコードは、このブロックに記述する必要があります。  
+     `Try...Catch...Finally` ブロックを使用すると、アプリケーションが例外を生成した場合でも、シリアル ポートを閉じることができます。 シリアル ポートを操作するコードはすべて、このブロック内に記述する必要があります。  
   
      [!code-vb[VbVbalrMyComputer#39](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/VisualBasic/how-to-receive-strings-from-serial-ports_2.vb)]  
   
-4.  `Do` ループを作成します。行がなくなるまでテキストの読み取りを繰り返すためのループです。  
+4.  利用可能な行がなくなるまでテキスト行を読み取るための `Do` ループを作成します。  
   
      [!code-vb[VbVbalrMyComputer#40](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/VisualBasic/how-to-receive-strings-from-serial-ports_3.vb)]  
   
-5.  <xref:System.IO.Ports.SerialPort.ReadLine%2A> メソッドを使用して、シリアル ポートから次の行のテキストを読み取ります。  
+5.  <xref:System.IO.Ports.SerialPort.ReadLine%2A> メソッドを使用して、次に利用可能な行をシリアル ポートから読み取ります。  
   
      [!code-vb[VbVbalrMyComputer#41](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/VisualBasic/how-to-receive-strings-from-serial-ports_4.vb)]  
   
-6.  `If` ステートメントを使用して、<xref:System.IO.Ports.SerialPort.ReadLine%2A> メソッドが `Nothing` を返したかどうか \(つまり、テキストがもうないかどうか\) を判断します。  `Nothing` を返した場合は、`Do` ループを終了します。  
+6.  `If` ステートメントを使用して、<xref:System.IO.Ports.SerialPort.ReadLine%2A> メソッドが `Nothing` を返す (つまり、利用可能なテキストがこれ以上ない) かどうかを確認します。 `Nothing` を返した場合は、`Do` ループを終了します。  
   
      [!code-vb[VbVbalrMyComputer#42](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/VisualBasic/how-to-receive-strings-from-serial-ports_5.vb)]  
   
-7.  文字列をきちんと読み取ることができた場合の処理を実行するための `Else` ブロックを `If` ステートメントに追加します。  ブロックでは、シリアル ポートから取得した文字列を、返す文字列の末尾に追加します。  
+7.  `If` ステートメントに `Else` ブロックを追加して、文字列が実際に読み取られた場合のケースを処理します。 このブロックによって、シリアル ポートからの文字列を戻り値の文字列に追加します。  
   
      [!code-vb[VbVbalrMyComputer#43](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/VisualBasic/how-to-receive-strings-from-serial-ports_6.vb)]  
   
@@ -59,22 +75,22 @@ caps.handback.revision: 21
   
      [!code-vb[VbVbalrMyComputer#44](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/VisualBasic/how-to-receive-strings-from-serial-ports_7.vb)]  
   
-## 使用例  
+## <a name="example"></a>例  
  [!code-vb[VbVbalrMyComputer#37](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/VisualBasic/how-to-receive-strings-from-serial-ports_8.vb)]  
   
- このコードの例は、IntelliSense コード スニペットとしても利用できます。  コード スニペット ピッカーでは、これは **\[接続とネットワーク\]** にあります。  詳細については、「[コード スニペット](/visual-studio/ide/code-snippets)」を参照してください。  
+ このコード例は、IntelliSense コード スニペットとしても利用できます。 コード スニペット ピッカーでは、これは **[接続とネットワーク]** にあります。 詳細については、「[Code Snippets](https://docs.microsoft.com/visualstudio/ide/code-snippets)」を参照してください。  
   
-## コードのコンパイル  
+## <a name="compiling-the-code"></a>コードのコンパイル  
  この例では、コンピューターが `COM1` を使用しているものと想定しています。  
   
-## 信頼性の高いプログラミング  
- この例では、コンピューターが `COM1` を使用しているものと想定しています。  実際に作成するコードでは、柔軟性を高めるために、利用可能なシリアル ポートの一覧から、目的のポートをユーザーが選択できるようにすることをお勧めします。  詳細については、「[How to: Show Available Serial Ports](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-show-available-serial-ports.md)」を参照してください。  
+## <a name="robust-programming"></a>信頼性の高いプログラミング  
+ この例では、コンピューターが `COM1` を使用しているものと想定しています。 柔軟性を高めるためには、利用可能なポートの一覧から目的のシリアル ポートを選択できるようにコードを作成する必要があります。 詳しくは、「[方法: 利用可能なシリアル ポートを表示する](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-show-available-serial-ports.md)」をご覧ください。  
   
- この例では、アプリケーションが確実にポートを閉じるようにするため、およびタイムアウト例外をすべてキャッチできるようにするために、`Try...Catch...Finally` ブロックを使用しています。  詳細については、「[Try...Catch...Finally Statement](../../../../visual-basic/language-reference/statements/try-catch-finally-statement.md)」を参照してください。  
+ この例では、アプリケーションによってポートが閉じられ、タイムアウト例外がキャッチされるようにするために、`Try...Catch...Finally` ブロックを使用しています。 詳しくは、「[Try...Catch...Finally ステートメント](../../../../visual-basic/language-reference/statements/try-catch-finally-statement.md)」をご覧ください。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  <xref:Microsoft.VisualBasic.Devices.Ports>   
  <xref:System.IO.Ports.SerialPort?displayProperty=fullName>   
- [How to: Dial Modems Attached to Serial Ports](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-dial-modems-attached-to-serial-ports.md)   
- [How to: Send Strings to Serial Ports](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-send-strings-to-serial-ports.md)   
- [How to: Show Available Serial Ports](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-show-available-serial-ports.md)
+ [方法: シリアル ポートに接続されているモデムをダイヤルする](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-dial-modems-attached-to-serial-ports.md)   
+ [方法: シリアル ポートに文字列を送信する](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-send-strings-to-serial-ports.md)   
+ [方法 : 利用可能なシリアル ポートを表示する](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-show-available-serial-ports.md)

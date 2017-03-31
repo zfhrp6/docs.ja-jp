@@ -1,52 +1,68 @@
 ---
-title: "Reading from Files in Visual Basic | Microsoft Docs"
-ms.custom: ""
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "data [Visual Basic], reading from files"
-  - "I/O [Visual Basic], reading from files"
-  - "examples [Visual Basic], reading from files"
-  - "files, reading"
-  - "reading files"
+title: "Visual Basic でのファイルの読み取り | Microsoft Docs"
+ms.custom: 
+ms.date: 2015-07-20
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-visual-basic
+ms.topic: article
+dev_langs:
+- VB
+helpviewer_keywords:
+- data [Visual Basic], reading from files
+- I/O [Visual Basic], reading from files
+- examples [Visual Basic], reading from files
+- files, reading
+- reading files
 ms.assetid: ad831a1b-7d01-4f07-a47b-799f3037df19
 caps.latest.revision: 16
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 16
----
-# Reading from Files in Visual Basic
-[!INCLUDE[vs2017banner](../../../../visual-basic/developing-apps/includes/vs2017banner.md)]
+author: stevehoag
+ms.author: shoag
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Human Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: a21629921a04f26aa8cb6d18acdf923888d32ef9
+ms.lasthandoff: 03/13/2017
 
-このセクションではファイルからの読み込みに関連するタスクを実行する方法について説明します。  
+---
+# <a name="reading-from-files-in-visual-basic"></a>Visual Basic でのファイルの読み取り
+このセクションでは、ファイルからの読み取りに関連するタスクを実行する方法について説明します。  
   
-## このセクションの内容  
- [How to: Read from Text Files](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-read-from-text-files.md)  
- テキスト ファイルからの読み取り方法をデモンストレーションします。  
+## <a name="in-this-section"></a>このセクションの内容  
+ [方法: テキスト ファイルからデータを読み取る](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-read-from-text-files.md)  
+ テキスト ファイルからデータを読み取る方法について説明します。  
   
- [How to: Read From Comma\-Delimited Text Files](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-read-from-comma-delimited-text-files.md)  
- 区切り記号が使用されたテキスト ファイルからの読み取り方法をデモンストレーションします。  
+ [方法: コンマ区切りのテキスト ファイルを読み取る](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-read-from-comma-delimited-text-files.md)  
+ コンマ区切りのテキスト ファイルから読み取る方法について説明します。  
   
- [How to: Read From Fixed\-width Text Files](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-read-from-fixed-width-text-files.md)  
- 固定幅のテキスト ファイルからの読み取り方法をデモンストレーションします。  
+ [方法: 固定幅のテキスト ファイルを読み取る](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-read-from-fixed-width-text-files.md)  
+ 固定幅のテキスト ファイルから読み取る方法について説明します。  
   
- [How to: Read From Text Files with Multiple Formats](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-read-from-text-files-with-multiple-formats.md)  
- 複数の書式を持つテキスト ファイルからの読み取り方法をデモンストレーションします。  
+ [方法: 複数の書式を持つテキスト ファイルを読み取る](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-read-from-text-files-with-multiple-formats.md)  
+ 複数の書式を持つテキスト ファイルから読み取る方法について説明します。  
   
- [How to: Read From Binary Files](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-read-from-binary-files.md)  
- バイナリ ファイルからの読み取り方法をデモンストレーションします。  
+ [方法: バイナリ ファイルを読み取る](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-read-from-binary-files.md)  
+ バイナリ ファイルから読み取る方法について説明します。  
   
- [How to: Read Text from Files with a StreamReader](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-read-text-from-files-with-a-streamreader.md)  
- <xref:System.IO.StreamReader> を使用してファイルを読み取る方法をデモンストレーションします。  
+ [方法: StreamReader を使用してファイルからテキストを読み取る](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-read-text-from-files-with-a-streamreader.md)  
+ <xref:System.IO.StreamReader> を使用したファイルから読み取る方法について説明します。  
   
-## 関連項目  
+## <a name="reference"></a>参照  
  <xref:Microsoft.VisualBasic.FileIO.FileSystem>  
  `My.Computer.FileSystem` オブジェクトとそのメンバーについて説明します。  
   
@@ -62,15 +78,15 @@ caps.handback.revision: 16
  <xref:Microsoft.VisualBasic.FileIO.FileSystem.OpenTextFileReader%2A>  
  `OpenTextFileReader` メソッドについて説明します。  
   
-## 関連項目  
- [Storing Data to and Reading from the Clipboard](../../../../visual-basic/developing-apps/programming/computer-resources/storing-data-to-and-reading-from-the-clipboard.md)  
- データの読み取りやクリップボードにデータを書き込むなどの `My.Computer.Clipboard` に関連付けられているタスクを実行する方法について説明します。  
+## <a name="related-sections"></a>関連項目  
+ [クリップボードのデータの格納と読み取り](../../../../visual-basic/developing-apps/programming/computer-resources/storing-data-to-and-reading-from-the-clipboard.md)  
+ クリップボードからのデータの読み取り、クリップボードへのデータの書き込みなど、`My.Computer.Clipboard` に関連付けられたタスクを実行する方法について説明します。  
   
- [Parsing Text Files with the TextFieldParser Object](../../../../visual-basic/developing-apps/programming/drives-directories-files/parsing-text-files-with-the-textfieldparser-object.md)  
- `TextFieldParser` オブジェクトを使用してテキスト ファイルを読み取る方法の概要を示します。  
+ [TextFieldParser オブジェクトによるテキスト ファイルの解析](../../../../visual-basic/developing-apps/programming/drives-directories-files/parsing-text-files-with-the-textfieldparser-object.md)  
+ `TextFieldParser` オブジェクトを使用したテキスト ファイルの読み取りの概要を示します。  
   
- [Walkthrough: Manipulating Files and Directories in Visual Basic](../../../../visual-basic/developing-apps/programming/drives-directories-files/walkthrough-manipulating-files-and-directories.md)  
- ファイルおよびディレクトリに関して `My` 機能を使用する方法をデモンストレーションします。  
+ [チュートリアル: Visual Basic によるファイルとディレクトリの操作](../../../../visual-basic/developing-apps/programming/drives-directories-files/walkthrough-manipulating-files-and-directories.md)  
+ ファイルとディレクトリで `My` 機能を使用する方法について説明します。  
   
- [Walkthrough: Manipulating Files by Using .NET Framework Methods](../../../../visual-basic/developing-apps/programming/drives-directories-files/walkthrough-manipulating-files-by-using-net-framework-methods.md)  
- ファイルおよびディレクトリに関して [!INCLUDE[dnprdnshort](../../../../csharp/getting-started/includes/dnprdnshort-md.md)] のメソッドを使用する方法をデモンストレーションします。
+ [チュートリアル : .NET Framework のメソッドによるファイル操作](../../../../visual-basic/developing-apps/programming/drives-directories-files/walkthrough-manipulating-files-by-using-net-framework-methods.md)  
+ ファイルとディレクトリで [!INCLUDE[dnprdnshort](../../../../csharp/getting-started/includes/dnprdnshort_md.md)] メソッドを使用する方法について説明します。

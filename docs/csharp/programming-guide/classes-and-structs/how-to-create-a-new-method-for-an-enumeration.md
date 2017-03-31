@@ -1,35 +1,53 @@
 ---
-title: "方法 : 列挙型対応の新しいメソッドを作成する (C# プログラミング ガイド) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.technology: 
-  - "devlang-csharp"
-ms.topic: "article"
-dev_langs: 
-  - "CSharp"
-helpviewer_keywords: 
-  - "enum 機能拡張 [C#]"
-  - "列挙型 [C#]"
-  - "拡張メソッド [C#], 列挙型"
+title: "方法: 列挙型対応の新しいメソッドを作成する (C# プログラミング ガイド) | Microsoft Docs"
+ms.date: 2015-07-20
+ms.prod: .net
+ms.technology:
+- devlang-csharp
+ms.topic: article
+dev_langs:
+- CSharp
+helpviewer_keywords:
+- enumerations [C#]
+- extension methods [C#], for enums
+- enum extensibility [C#]
 ms.assetid: 100106f9-1e54-462c-8ebe-3892fe23b6eb
 caps.latest.revision: 7
-author: "BillWagner"
-ms.author: "wiwagn"
-caps.handback.revision: 7
+author: BillWagner
+ms.author: wiwagn
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Human Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: 3d15cbcdd81584ea5c6ab40d231183f883a7a805
+ms.lasthandoff: 03/13/2017
+
 ---
-# 方法 : 列挙型対応の新しいメソッドを作成する (C# プログラミング ガイド)
-拡張メソッドを使用して、特定の列挙型に対応した機能を追加できます。  
+# <a name="how-to-create-a-new-method-for-an-enumeration-c-programming-guide"></a>方法 : 列挙型対応の新しいメソッドを作成する (C# プログラミング ガイド)
+拡張メソッドを使用して、特定の列挙型に固有の機能を追加することができます。  
   
-## 使用例  
- 次の例では、`Grades` 列挙型により、生徒が授業で受け取る成績評価が表されています。  `Passing` という名前の拡張メソッドが `Grades` 型に追加されており、この型の各インスタンスが、合格点を表しているかどうか自ら "認識" できるようになっています。  
+## <a name="example"></a>例  
+ 次の例では、`Grades` 列挙型は学生が授業で受け取る成績評価を表わしています。 `Passing` という名前の拡張機能メソッドが `Grades` 型に追加されていて、この型の各インスタンスが合格点を表しているかどうかを自ら "認識" できるようになっています。  
   
  [!code-cs[csProgGuideExtensionMethods#2](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/how-to-create-a-new-method-for-an-enumeration_1.cs)]  
   
- `Extensions` クラスに動的に更新される静的変数が含まれていること、および拡張メソッドの戻り値がその静的変数の現在の値を反映することにも注意してください。  背後では、拡張メソッドがその拡張メソッドが定義されている静的クラスにおいて直接呼び出されることを、この例は示しています。  
+ `Extensions` クラスには動的に更新される静的変数も含まれていて、拡張メソッドの戻り値はその変数の現在の値を反映していることに注意してください。 背後では、拡張メソッドが自分が定義されている静的クラスに直接呼び出されることを、この例は示しています。  
   
-## コードのコンパイル  
- このコードを実行するには、[!INCLUDE[vs_current_short](../../../csharp/programming-guide/classes-and-structs/includes/vs-current-short-md.md)] で作成した Visual C\# コンソール アプリケーション プロジェクトに、コードをコピーして貼り付けます。  既定では、このプロジェクトは、[!INCLUDE[dnprdnshort](../../../csharp/getting-started/includes/dnprdnshort-md.md)] Version 3.5 を対象としており、System.Core.dll への参照と System.Linq の `using` ディレクティブが含まれます。  これらの要件が 1 つ以上プロジェクトから欠落していても、手動で追加できます。  詳細については、「[How to: Create a LINQ Project](../Topic/How%20to:%20Create%20a%20LINQ%20Project.md)」を参照してください。  
+## <a name="compiling-the-code"></a>コードのコンパイル  
+ このコードを実行するには、コードをコピーして、[!INCLUDE[vs_current_short](../../../csharp/programming-guide/classes-and-structs/includes/vs_current_short_md.md)] で作成した Visual C# コンソール アプリケーション プロジェクトに貼り付けます。 既定で、このプロジェクトは [!INCLUDE[dnprdnshort](../../../csharp/getting-started/includes/dnprdnshort_md.md)] バージョン 3.5 をターゲットにしており、System.Core.dll への参照と System.Linq の `using` ディレクティブが含まれます。 これらの要件のうち、1 つ以上がプロジェクトから欠落している場合、手動で追加できます。   
   
-## 参照  
- [C\# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
+## <a name="see-also"></a>関連項目  
+ [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
  [拡張メソッド](../../../csharp/programming-guide/classes-and-structs/extension-methods.md)

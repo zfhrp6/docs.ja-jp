@@ -1,48 +1,65 @@
 ---
-title: "チュートリアル: My.Application.Log の出力のフィルター処理 (Visual Basic) | Microsoft Docs"
-ms.custom: ""
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "My.Log オブジェクト、出力をフィルター処理"
-  - "My.Application.Log オブジェクト、出力をフィルター処理"
-  - "アプリケーション イベント ログの出力フィルター"
+title: "My.Application.Log の出力のフィルター処理 (Visual Basic) | Microsoft Docs"
+ms.custom: 
+ms.date: 2015-07-20
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-visual-basic
+ms.topic: article
+dev_langs:
+- VB
+helpviewer_keywords:
+- My.Log object, filtering output
+- My.Application.Log object, filtering output
+- application event logs, output filtering
 ms.assetid: 2c0a457a-38a4-49e1-934d-a51320b7b4ca
 caps.latest.revision: 22
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 22
----
-# チュートリアル: My.Application.Log の出力のフィルター処理 (Visual Basic)
-[!INCLUDE[vs2017banner](../../../../visual-basic/developing-apps/includes/vs2017banner.md)]
+author: stevehoag
+ms.author: shoag
+translation.priority.ht:
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- ru-ru
+- zh-cn
+- zh-tw
+translation.priority.mt:
+- cs-cz
+- pl-pl
+- pt-br
+- tr-tr
+translationtype: Human Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: caa4b8be16e5000d02d82a83199a25d13ad07bba
+ms.lasthandoff: 03/13/2017
 
-既定のログのフィルター選択を変更する方法についても説明、 `My.Application.Log` からどのような情報が渡されたを制御するため、オブジェクト、 `Log` リスナーおよびリスナーによってどのような情報を記述するオブジェクト。 構成情報は、アプリケーションの構成ファイルに保存されるため、アプリケーションをビルドした後でも、ログ記録の動作を変更します。  
+---
+# <a name="walkthrough-filtering-myapplicationlog-output-visual-basic"></a>チュートリアル: My.Application.Log の出力のフィルター処理 (Visual Basic)
+このチュートリアルでは、`My.Application.Log` オブジェクトの既定のログ フィルター処理を変更して、`Log` オブジェクトからリスナーに渡される情報や、リスナーによって記述される情報を制御する方法について説明します。 構成情報はアプリケーションの構成ファイルに保存されるため、ロギングの動作はアプリケーションをビルドした後でも変更できます。  
   
 ## <a name="getting-started"></a>作業の開始  
- 各メッセージが `My.Application.Log` 書き込みがログ出力を制御するフィルター機能を使用して、関連付けられている重要度レベル。 このサンプル アプリケーションを使用して `My.Application.Log` いくつかを記述する方法は、さまざまな重大度レベルのメッセージを記録します。  
+ `My.Application.Log` が書き込む各メッセージには、重大度レベルが関連付けられます。この情報は、ログ出力を制御するためにフィルター処理メカニズムによって使用されます。 このサンプル アプリケーションでは、`My.Application.Log` メソッドを使用して、重大度レベルの異なる複数のログ メッセージを書き込みます。  
   
 #### <a name="to-build-the-sample-application"></a>サンプル アプリケーションをビルドするには  
   
-1.  新しい [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] Windows アプリケーション プロジェクト。  
+1.  新しい [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] Windows アプリケーション プロジェクトを開きます。  
   
 2.  Form1 に Button1 という名前のボタンを追加します。  
   
-3.   <xref:System.Windows.Forms.Control.Click> 、Button1 のイベント ハンドラーは、次のコードを追加します。  
+3.  Button1 の <xref:System.Windows.Forms.Control.Click> イベント ハンドラーに、次のコードを追加します。  
   
      [!code-vb[VbVbcnMyApplicationLogFiltering#1](../../../../visual-basic/developing-apps/programming/log-info/codesnippet/VisualBasic/walkthrough-filtering-my-application-log-output_1.vb)]  
   
 4.  デバッガーでアプリケーションを実行します。  
   
-5.  キーを押して **Button1**します。  
+5.  **[Button1]** を押します。  
   
-     アプリケーションは、次の情報をアプリケーションのデバッグ出力およびログ ファイルに書き込みます。  
+     アプリケーションは、アプリケーションのデバッグ出力とログ ファイルに次の情報を書き込みます。  
   
      `DefaultSource Information: 0 : In Button1_Click`  
   
@@ -50,21 +67,20 @@ caps.handback.revision: 22
   
 6.  アプリケーションを終了します。  
   
-     アプリケーションのデバッグ出力ウィンドウを表示する方法の詳細については、次を参照してください。 [出力ウィンドウ](/visual-studio/ide/reference/output-window)です。 アプリケーションのログ ファイルの場所については、次を参照してください。 [チュートリアル: を決定する、My.Application.Log 書き込みます情報](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-determining-where-my-application-log-writes-information.md)します。  
+     アプリケーションのデバッグ出力ウィンドウを表示する方法について詳しくは、「[出力ウィンドウ](https://docs.microsoft.com/visualstudio/ide/reference/output-window)」をご覧ください。 アプリケーションのログ ファイルの場所について詳しくは、「[チュートリアル: My.Application.Log による情報の書き込み先の確認](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-determining-where-my-application-log-writes-information.md)」をご覧ください。  
   
     > [!NOTE]
-    >  既定では、アプリケーションは、アプリケーションの終了時にログ ファイルの出力をフラッシュします。  
+    >  既定では、アプリケーションはアプリケーションの終了時にログ ファイルの出力をフラッシュします。  
   
-     2 番目の呼び出し前の例で、 <xref:Microsoft.VisualBasic.Logging.Log.WriteEntry%2A> メソッドを呼び出すまで、 <xref:Microsoft.VisualBasic.Logging.Log.WriteException%2A> メソッドには、最初と最後の呼び出し中に、ログ出力が生成されます。、 `WriteEntry` メソッドがないです。 これは、ための重大度レベル `WriteEntry` と `WriteException` は「情報」および「エラー」でどちらも許可されて、 `My.Application.Log` オブジェクトの既定のログのフィルター処理します。 ただし、"Start"、"Stop"の重大度レベルのイベントはログの出力を生成できません。  
+     上記の例では、<xref:Microsoft.VisualBasic.Logging.Log.WriteEntry%2A> メソッドに対する 2 番目の呼び出しと、<xref:Microsoft.VisualBasic.Logging.Log.WriteException%2A> メソッドに対する呼び出しでログ出力が生成されているのに対し、`WriteEntry` メソッドに対する最初と最後の呼び出しではログ出力が生成されていません。 これは、`WriteEntry` と `WriteException` の重大度レベルが "Information" と "Error" であるためです。これらはどちらも、`My.Application.Log` オブジェクトの既定のログ フィルター処理で許可されます。 これに対し、重大度レベルが "Start" および "Stop" のイベントについては、ログ出力が生成されません。  
   
-## <a name="filtering-for-all-myapplicationlog-listeners"></a>My.Application.Log のすべてのリスナーのフィルター処理  
-  `My.Application.Log` オブジェクトが使用、 <xref:System.Diagnostics.SourceSwitch> という名前 `DefaultSwitch` からパスをメッセージの種類を制御する、 `WriteEntry` と `WriteException` ログ リスナーのメソッドです。 構成する `DefaultSwitch` のいずれかにその値を設定して、アプリケーションの構成ファイルで、 <xref:System.Diagnostics.SourceLevels> 列挙値。 既定では、その値は、「情報」です。  
+## <a name="filtering-for-all-myapplicationlog-listeners"></a>すべての My.Application.Log リスナーのフィルター処理  
+ `My.Application.Log` オブジェクトは、`DefaultSwitch` という <xref:System.Diagnostics.SourceSwitch> を使用して、`WriteEntry` および `WriteException` メソッドからログ リスナーに渡すメッセージを制御します。 アプリケーションの構成ファイル内にある `DefaultSwitch` は、その値を <xref:System.Diagnostics.SourceLevels> 列挙値のいずれかに設定することで構成できます。 既定では、この値は "Information" です。  
   
- 次の表は、特定の指定、リスナーにメッセージを書き込むログに必要な重要度レベル `DefaultSwitch` 設定します。  
+ 次の表は、Log がリスナーにメッセージを書き込むために必要な重大度レベルを、`DefaultSwitch` の設定ごとに示したものです。  
   
-|||  
-|-|-|  
-|DefaultSwitch 値|出力に必要なメッセージの重要度|  
+|DefaultSwitch の値|出力に必要なメッセージの重大度|  
+|---|---| 
 |`Critical`|`Critical`|  
 |`Error`|`Critical` または `Error`|  
 |`Warning`|`Critical`、`Error`、または `Warning`|  
@@ -75,15 +91,15 @@ caps.handback.revision: 22
 |`Off`|すべてのメッセージがブロックされます。|  
   
 > [!NOTE]
->   `WriteEntry` と `WriteException` の各メソッドは、重大度レベルが指定されていないオーバー ロードがあります。 暗黙的な重大度レベル、 `WriteEntry` オーバー ロードは、「情報」との暗黙の重大度レベル、 `WriteException` オーバー ロードは、「エラー」です。  
+>  `WriteEntry` メソッドと `WriteException` メソッドにはそれぞれ、重大度レベルを指定しないオーバー ロードがあります。 `WriteEntry` オーバー ロードの暗黙的な重大度レベルは "Information" で、`WriteException` オーバー ロードの暗黙的な重大度レベルは "Error" です。  
   
- この表に、前の例に示すようにログ出力: 既定の `DefaultSwitch` 「情報」の設定を 2 番目の呼び出し、 `WriteEntry` メソッドを呼び出すまで、 `WriteException` メソッドの生成ログ出力します。  
+ 次の表は、前の例に示したログ出力について説明したものです。 既定の `DefaultSwitch` 設定 (Information) では、`WriteEntry` メソッドに対する 2 番目の呼び出しと、`WriteException` メソッドに対する呼び出しでのみ、ログ出力が生成されます。  
   
-#### <a name="to-log-only-activity-tracing-events"></a>唯一のアクティビティ トレース イベントを記録するには  
+#### <a name="to-log-only-activity-tracing-events"></a>アクティビティ トレース イベントだけを記録するには  
   
-1.  App.config 内を右クリックし、 **ソリューション エクスプ ローラー** 選択 **開いている**します。  
+1.  **ソリューション エクスプローラー**で app.config を右クリックし、**[開く]**を選択します。  
   
-     -または-  
+     または  
   
      app.config ファイルがない場合は、次の操作を行います。  
   
@@ -93,13 +109,13 @@ caps.handback.revision: 22
   
     3.  **[追加]**をクリックします。  
   
-2.  検索、 `<switches>` セクションでは、 `<system.diagnostics>` ] セクションで、最上位レベルにある `<configuration>` セクションです。  
+2.  最上位の `<configuration>` セクション内の `<system.diagnostics>` セクションで、`<switches>` セクションを見つけます。  
   
-3.  追加する要素を見つけます `DefaultSwitch` スイッチのコレクションにします。 この要素にように表示する必要があります。  
+3.  スイッチのコレクションに `DefaultSwitch` を追加する要素を見つけます。 これは次のような要素です。  
   
      `<add name="DefaultSwitch" value="Information" />`  
   
-4.  値を変更、 `value` 属性を"ActivityTracing"にします。  
+4.  `value` 属性の値を "ActivityTracing" に変更します。  
   
 5.  app.config ファイルの内容は次の XML のようになります。  
   
@@ -132,9 +148,9 @@ caps.handback.revision: 22
   
 6.  デバッガーでアプリケーションを実行します。  
   
-7.  キーを押して **Button1**します。  
+7.  **[Button1]** を押します。  
   
-     アプリケーションでは、次の情報をアプリケーションのデバッグ出力およびログ ファイルに書き込みます。  
+     アプリケーションは、アプリケーションのデバッグ出力とログ ファイルに次の情報を書き込みます。  
   
      `DefaultSource Start: 4 : Entering Button1_Click`  
   
@@ -142,21 +158,21 @@ caps.handback.revision: 22
   
 8.  アプリケーションを終了します。  
   
-9. 値を変更、 `value` 属性「情報」をバックアップします。  
+9. `value` 属性の値を "Information" に戻します。  
   
     > [!NOTE]
-    >   `DefaultSwitch` スイッチは、設定の制御のみ `My.Application.Log`します。 変更されませんが、どのように [!INCLUDE[dnprdnshort](../../../../csharp/getting-started/includes/dnprdnshort-md.md)] <xref:System.Diagnostics.Trace?displayProperty=fullName> と <xref:System.Diagnostics.Debug?displayProperty=fullName> クラスの動作です。  
+    >  `DefaultSwitch` スイッチの設定では、`My.Application.Log` のみが制御されます。 [!INCLUDE[dnprdnshort](../../../../csharp/getting-started/includes/dnprdnshort_md.md)] の <xref:System.Diagnostics.Trace?displayProperty=fullName> クラスと <xref:System.Diagnostics.Debug?displayProperty=fullName> クラスの動作は変更されません。  
   
-## <a name="individual-filtering-for-myapplicationlog-listeners"></a>個人 My.Application.Log のリスナーに対してフィルター処理  
- 前の例は、すべてのフィルター選択を変更する方法を示しています。 `My.Application.Log` 出力します。 この例では、それぞれ個別にログ リスナーをフィルター処理する方法を示します。 既定では、アプリケーションは、アプリケーションのデバッグ出力およびログ ファイルへの書き込みの 2 つのリスナーを持ちます。  
+## <a name="individual-filtering-for-myapplicationlog-listeners"></a>My.Application.Log リスナーの個別のフィルター処理  
+ 前の例では、すべての `My.Application.Log` 出力のフィルター処理を変更する方法について説明しました。 この例では、個別のログ リスナーをフィルター処理する方法について説明します。 既定では、アプリケーションには、アプリケーションのデバッグ出力とログ ファイルに情報を書き込む 2 つのリスナーがあります。  
   
- 構成ファイルは、それぞれ 1 つのスイッチに似ていますが、フィルターを許可することでログ リスナーの動作を制御 `My.Application.Log`します。 ログ リスナーによってログの両方のメッセージの重大度レベルが許可された場合にのみ、メッセージの出力は `DefaultSwitch` とログ リスナーのフィルター処理します。  
+ 構成ファイルは、`My.Application.Log` のスイッチのように、各リスナーにフィルターを適用することで、ログ リスナーの動作を制御します。 ログ リスナーは、メッセージの重大度がログの `DefaultSwitch` とログ リスナーのフィルターの両方によって許可された場合にのみ、メッセージを出力します。  
   
- この例のフィルタ リング、新しいデバッグ リスナーを構成しに追加する方法、 `Log` オブジェクトです。 既定のデバッグ リスナーを削除するか、 `Log` オブジェクトのため、新しいデバッグ リスナーからデバッグ メッセージを受け取ることは明らかです。  
+ この例では、新しいデバッグ リスナーのフィルター処理を構成し、それを `Log` オブジェクトに追加する方法について説明します。 デバッグ メッセージが新しいデバッグ リスナーから送られるようにするには、既定のデバッグ リスナーを `Log` オブジェクトから削除する必要があります。  
   
-#### <a name="to-log-only-activity-tracing-events"></a>アクティビティ トレース イベントのみを記録するには  
+#### <a name="to-log-only-activity-tracing-events"></a>アクティビティ トレース イベントだけを記録するには  
   
-1.  App.config 内を右クリックし、 **ソリューション エクスプ ローラー** 選択 **開いている**します。  
+1.  **ソリューション エクスプローラー**で app.config を右クリックし、**[開く]**を選択します。  
   
      または  
   
@@ -168,11 +184,11 @@ caps.handback.revision: 22
   
     3.  **[追加]**をクリックします。  
   
-2.  App.config 内を右クリックして **ソリューション エクスプ ローラー**します。 選択 **開く**します。  
+2.  **ソリューション エクスプローラー**で app.config を右クリックします。 **[開く]** をクリックします。  
   
-3.  検索、 `<listeners>` セクションで、 `<source>` のセクション、 `name` 属性の「ここをクリック」、下にある、 `<sources>` セクションです。  `<sources>` セクションは中、 `<system.diagnostics>` ] セクションの最上位レベル [ `<configuration>` セクションです。  
+3.  `<sources>` セクション内にある、`name` 属性が "DefaultSource" の `<source>` セクションで、`<listeners>` セクションを見つけます。 `<sources>` セクションは、最上位の `<configuration>` セクション内の `<system.diagnostics>` セクションにあります。  
   
-4.  この要素を追加、 `<listeners>` セクション。  
+4.  `<listeners>` セクションに次の要素を追加します。  
   
     ```xml  
     <!-- Remove the default debug listener. -->  
@@ -196,7 +212,7 @@ caps.handback.revision: 22
     </add>  
     ```  
   
-      <xref:System.Diagnostics.EventTypeFilter> フィルターでは、 <xref:System.Diagnostics.SourceLevels> 列挙の値としてその `initializeData` 属性です。  
+     <xref:System.Diagnostics.EventTypeFilter> フィルターは、<xref:System.Diagnostics.SourceLevels> 列挙値のいずれかを `initializeData` 属性として取ります。  
   
 7.  app.config ファイルの内容は次の XML のようになります。  
   
@@ -241,26 +257,26 @@ caps.handback.revision: 22
   
 8.  デバッガーでアプリケーションを実行します。  
   
-9. キーを押して **Button1**します。  
+9. **[Button1]** を押します。  
   
-     アプリケーションでは、次の情報をアプリケーションのログ ファイルに書き込みます。  
+     アプリケーションは、アプリケーションのログ ファイルに次の情報を書き込みます。  
   
      `Default Information: 0 : In Button1_Click`  
   
      `Default Error: 2 : Error in the application.`  
   
-     アプリケーションより制限の厳しいフィルター処理のため、少ない情報をアプリケーションのデバッグ出力に書き込みます。  
+     フィルター処理の基準がより厳しくなったので、アプリケーションのデバッグ出力に書き込まれる情報は少なくなります。  
   
      `Default Error   2   Error`  
   
 10. アプリケーションを終了します。  
   
- 配置後にログの設定を変更する方法の詳細については、次を参照してください。 [アプリケーション ログの使用](../../../../visual-basic/developing-apps/programming/log-info/working-with-application-logs.md)します。  
+ 配置後にログの設定を変更する方法については、「[アプリケーション ログの使用](../../../../visual-basic/developing-apps/programming/log-info/working-with-application-logs.md)」をご覧ください。  
   
 ## <a name="see-also"></a>関連項目  
- [チュートリアル: My.Application.Log による情報の書き込み先の確認](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-determining-where-my-application-log-writes-information.md)   
- [チュートリアル: My.Application.Log による情報の書き込み先の変更](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-changing-where-my-application-log-writes-information.md)   
- [チュートリアル: カスタム ログ リスナーの作成](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-creating-custom-log-listeners.md)   
+ [チュートリアル : My.Application.Log による情報の書き込み先の確認](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-determining-where-my-application-log-writes-information.md)   
+ [チュートリアル : My.Application.Log による情報の書き込み先の変更](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-changing-where-my-application-log-writes-information.md)   
+ [チュートリアル : カスタム ログ リスナーの作成](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-creating-custom-log-listeners.md)   
  [方法: ログ メッセージを書き込む](../../../../visual-basic/developing-apps/programming/log-info/how-to-write-log-messages.md)   
- [トレース スイッチ](../Topic/Trace%20Switches.md)   
- [アプリケーションからのログ情報](../../../../visual-basic/developing-apps/programming/log-info/logging-information-from-the-application.md)
+ [トレース スイッチ](http://msdn.microsoft.com/library/8ab913aa-f400-4406-9436-f45bc6e54fbe)   
+ [アプリケーションからの情報のログ記録](../../../../visual-basic/developing-apps/programming/log-info/logging-information-from-the-application.md)

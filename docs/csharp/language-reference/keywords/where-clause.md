@@ -1,52 +1,70 @@
 ---
 title: "where 句 (C# リファレンス) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.technology: 
-  - "devlang-csharp"
-ms.topic: "article"
-f1_keywords: 
-  - "whereclause_CSharpKeyword"
-dev_langs: 
-  - "CSharp"
-helpviewer_keywords: 
-  - "where 句 [C#]"
-  - "where キーワード [C#]"
+ms.date: 2015-07-20
+ms.prod: .net
+ms.technology:
+- devlang-csharp
+ms.topic: article
+f1_keywords:
+- whereclause_CSharpKeyword
+dev_langs:
+- CSharp
+helpviewer_keywords:
+- where keyword [C#]
+- where clause [C#]
 ms.assetid: 7f9bf952-7744-4f91-b676-cddb55d107c3
 caps.latest.revision: 16
-author: "BillWagner"
-ms.author: "wiwagn"
-caps.handback.revision: 16
+author: BillWagner
+ms.author: wiwagn
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Human Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: 1094f68293dd05fdfe69a39016689cbaa3fd6290
+ms.lasthandoff: 03/13/2017
+
 ---
-# where 句 (C# リファレンス)
-`where` 句はクエリ式で使用され、クエリ式でデータ ソースのどの要素が返されるようにするかを指定します。  各ソース要素 \(範囲変数で参照される\) にブール条件 \(*述語*\) を適用し、指定した条件に該当するものを返します。  単一のクエリ式に複数の `where` 句を含めることができ、単一の句に複数の述語部分式を含めることができます。  
+# <a name="where-clause-c-reference"></a>where 句 (C# リファレンス)
+`where` 句をクエリ式で使用して、クエリ式で返されるデータ ソースの要素を指定します。 ブール条件 (*述語*) を (範囲変数で参照される) 各ソース要素に適用し、指定した条件に該当するものを返します。 単一のクエリ式に複数の `where` 句を含めることができ、単一の句に複数の述語部分式を含めることができます。  
   
-## 使用例  
- 次の例の `where` 句は、5 未満の数値以外のすべての数値をフィルターで除外します。  `where` 句を削除すると、データ ソースのすべての数値が返されます。  式 `num < 5` が各要素に適用される述語です。  
+## <a name="example"></a>例  
+ 次の例では、`where` 句で、5 未満の数値を除くすべての数値を除外します。 `where` 句を削除すると、データ ソースのすべての数値が返されます。 式 `num < 5` は、各要素に適用される述語です。  
   
  [!code-cs[cscsrefQueryKeywords#5](../../../csharp/language-reference/keywords/codesnippet/CSharp/where-clause_1.cs)]  
   
-## 使用例  
- 単一の `where` 句の中で、[&&](../../../csharp/language-reference/operators/conditional-and-operator.md) 演算子と [&#124;&#124;](../../../csharp/language-reference/operators/conditional-or-operator.md) 演算子を使用することにより、述語を必要な数だけ指定できます。  次の例のクエリは、5 未満の偶数だけを選択するために 2 つの述語を指定しています。  
+## <a name="example"></a>例  
+ 単一の `where` 句内には、[&&](../../../csharp/language-reference/operators/conditional-and-operator.md) および [&#124;&#124;](../../../csharp/language-reference/operators/conditional-or-operator.md) 演算子を使用して、必要な数の述語を指定できます。 次の例のクエリでは、5 未満の偶数のみを選択するために 2 つの述語を指定します。  
   
  [!code-cs[cscsrefQueryKeywords#6](../../../csharp/language-reference/keywords/codesnippet/CSharp/where-clause_2.cs)]  
   
-## 使用例  
- `where` 句には、ブール値を返すメソッドを 1 つ以上含めることができます。  次の例の `where` 句は、範囲変数の現在の値が偶数であるか奇数であるかを判断するためにメソッドを使用しています。  
+## <a name="example"></a>例  
+ `where` 句には、ブール値を返す 1 つ以上のメソッドを含めることができます。 次の例の `where` 句では、範囲変数の現在の値が偶数であるか、奇数であるかを判断するためのメソッドを使用します。  
   
  [!code-cs[cscsrefQueryKeywords#7](../../../csharp/language-reference/keywords/codesnippet/CSharp/where-clause_3.cs)]  
   
-## 解説  
- `where` 句はフィルター処理機構です。  クエリ式内の最初の句と最後の句以外のほとんどどこにでも置くことができます。  `where` 句は、[group](../../../csharp/language-reference/keywords/group-clause.md) 句の前にも後ろにも置くことができます。どちらに置くかは、ソース要素のフィルター処理をグループ化の前に行うか後に行うかによります。  
+## <a name="remarks"></a>コメント  
+ `where` 句はフィルター メカニズムです。 クエリ式のほぼどこにでも指定できますが、最初の句や最後の句にすることはできません。 `where` 句は、ソース要素のフィルター処理をグループ化の前に行うか後に行うかによって、[group](../../../csharp/language-reference/keywords/group-clause.md) 句の前または後に指定できます。  
   
- 指定した述語がデータ ソースの要素に対して無効だった場合、コンパイル時にエラーになります。  これは、[!INCLUDE[vbteclinq](../../../csharp/includes/vbteclinq-md.md)] が備えている厳密な型チェックの 1 つの利点です。  
+ 指定した述語がデータ ソース内の要素に対して有効でない場合は、コンパイル時エラーが発生します。 これは、[!INCLUDE[vbteclinq](../../../csharp/includes/vbteclinq_md.md)] で提供される厳密な型チェックの 1 つの利点です。  
   
- `where` キーワードは、コンパイル時に <xref:System.Linq.Enumerable.Where%2A> 標準クエリ演算子メソッドの呼び出しに変換されます。  
+ コンパイル時に、`where` キーワードは <xref:System.Linq.Enumerable.Where%2A> 標準クエリ演算子メソッドの呼び出しに変換されます。  
   
-## 参照  
- [クエリ キーワード \(LINQ\)](../../../csharp/language-reference/keywords/query-keywords.md)   
+## <a name="see-also"></a>関連項目  
+ [クエリ キーワード (LINQ)](../../../csharp/language-reference/keywords/query-keywords.md)   
  [from 句](../../../csharp/language-reference/keywords/from-clause.md)   
  [select 句](../../../csharp/language-reference/keywords/select-clause.md)   
- [Filtering Data](../../../visual-basic/programming-guide/concepts/linq/filtering-data.md)   
+ [データのフィルター処理](http://msdn.microsoft.com/library/cee88d0f-31aa-4c60-9452-cc122ed0057d)   
  [LINQ クエリ式](../../../csharp/programming-guide/linq-query-expressions/index.md)   
- [Getting Started with LINQ in C\#](../../../csharp/programming-guide/concepts/linq/getting-started-with-linq.md)
+ [C# の LINQ の概要](../../../csharp/programming-guide/concepts/linq/getting-started-with-linq.md)

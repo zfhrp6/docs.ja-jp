@@ -1,25 +1,43 @@
 ---
 title: "public (C# リファレンス) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.technology: 
-  - "devlang-csharp"
-ms.topic: "article"
-f1_keywords: 
-  - "public"
-  - "public_CSharpKeyword"
-dev_langs: 
-  - "CSharp"
-helpviewer_keywords: 
-  - "public キーワード [C#]"
+ms.date: 2015-07-20
+ms.prod: .net
+ms.technology:
+- devlang-csharp
+ms.topic: article
+f1_keywords:
+- public
+- public_CSharpKeyword
+dev_langs:
+- CSharp
+helpviewer_keywords:
+- public keyword [C#]
 ms.assetid: 0ae45d16-a551-4b74-9845-57208de1328e
 caps.latest.revision: 21
-author: "BillWagner"
-ms.author: "wiwagn"
-caps.handback.revision: 21
+author: BillWagner
+ms.author: wiwagn
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Human Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: e2d6350b6c7c2490d42d08ebd169a35b40d20900
+ms.lasthandoff: 03/13/2017
+
 ---
-# public (C# リファレンス)
-`public` キーワードは、型および型メンバーのためのアクセス修飾子です。  パブリックなアクセスは、許容度が最も高いアクセス レベルです。  この例に示すように、パブリック メンバーへのアクセスに関する制限はありません。  
+# <a name="public-c-reference"></a>public (C# リファレンス)
+`public` キーワードは、型と型のメンバーを示すアクセス修飾子です。 パブリック アクセスは、最も制限の少ないアクセス レベルです。 次の例のように、パブリック メンバーへのアクセスには制限がありません。  
   
 ```  
 class SampleClass  
@@ -28,25 +46,25 @@ class SampleClass
 }  
 ```  
   
- 詳細については、「[アクセス修飾子](../../../csharp/programming-guide/classes-and-structs/access-modifiers.md)」および「[アクセシビリティ レベル](../../../csharp/language-reference/keywords/accessibility-levels.md)」を参照してください。  
+ 詳しくは、「[アクセス修飾子](../../../csharp/programming-guide/classes-and-structs/access-modifiers.md)」および「[アクセシビリティ レベル](../../../csharp/language-reference/keywords/accessibility-levels.md)」をご覧ください。  
   
-## 使用例  
- 次の例では、`PointTest` および `MainClass` という 2 つのクラスが宣言されています。  `PointTest` のパブリック メンバー `x` と `y` は、`MainClass` から直接アクセスされます。  
+## <a name="example"></a>例  
+ 次の例では、2 つのクラス (`PointTest` と `MainClass`) が宣言されています。 `PointTest` のパブリック メンバー `x` および `y` は、`MainClass` から直接アクセスされます。  
   
  [!code-cs[csrefKeywordsModifiers#13](../../../csharp/language-reference/keywords/codesnippet/CSharp/public_1.cs)]  
   
- `public` アクセス レベルを [private](../../../csharp/language-reference/keywords/private.md) または [protected](../../../csharp/language-reference/keywords/protected.md) に変更すると、次のエラー メッセージが表示されることになります。  
+ `public` アクセス レベルを [private](../../../csharp/language-reference/keywords/private.md) または [protected](../../../csharp/language-reference/keywords/protected.md) に変更すると、次のエラー メッセージが表示されます。  
   
- "'PointTest.y' はアクセスできない保護レベルになっています。"  
+ 'PointTest.y' はアクセスできない保護レベルになっています。  
   
-## C\# 言語仕様  
- [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec-md.md)]  
+## <a name="c-language-specification"></a>C# 言語仕様  
+ [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec_md.md)]  
   
-## 参照  
- [C\# リファレンス](../../../csharp/language-reference/index.md)   
- [C\# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
+## <a name="see-also"></a>関連項目  
+ [C# リファレンス](../../../csharp/language-reference/index.md)   
+ [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
  [アクセス修飾子](../../../csharp/programming-guide/classes-and-structs/access-modifiers.md)   
- [C\# のキーワード](../../../csharp/language-reference/keywords/index.md)   
+ [C# のキーワード](../../../csharp/language-reference/keywords/index.md)   
  [アクセス修飾子](../../../csharp/language-reference/keywords/access-modifiers.md)   
  [アクセシビリティ レベル](../../../csharp/language-reference/keywords/accessibility-levels.md)   
  [修飾子](../../../csharp/language-reference/keywords/modifiers.md)   

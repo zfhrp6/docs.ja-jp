@@ -1,37 +1,56 @@
 ---
 title: "演算子 (C# プログラミング ガイド) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.technology: 
-  - "devlang-csharp"
-ms.topic: "article"
-dev_langs: 
-  - "CSharp"
-helpviewer_keywords: 
-  - "C# 言語, 演算子"
-  - "演算子 [C#]"
-  - "演算子 [C#], 演算子の概要"
+ms.date: 2015-07-20
+ms.prod: .net
+ms.technology:
+- devlang-csharp
+ms.topic: article
+dev_langs:
+- CSharp
+helpviewer_keywords:
+- operators [C#]
+- C# language, operators
+- operators [C#], about operators
 ms.assetid: 214e7b83-1a41-4f7c-9867-64e9c0bab39f
 caps.latest.revision: 42
-author: "BillWagner"
-ms.author: "wiwagn"
-caps.handback.revision: 42
+author: BillWagner
+ms.author: wiwagn
+translation.priority.ht:
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- ru-ru
+- zh-cn
+- zh-tw
+translation.priority.mt:
+- cs-cz
+- pl-pl
+- pt-br
+- tr-tr
+translationtype: Human Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: bb97ce3d794c092473f9496ee052c6f790c77fa4
+ms.lasthandoff: 03/13/2017
+
 ---
-# 演算子 (C# プログラミング ガイド)
-C\# では、*演算子*は式またはステートメントの中で 1 つ以上の*オペランド*に適用されるプログラム要素です。 インクリメント演算子 \(`++`\) や `new` など、1 つのオペランドを受け取る演算子を*単項*演算子と言います。 算術演算子 \(`+`、`-`、`*`、`/`\) など、2 つのオペランドを受け取る演算子を*二項*演算子と言います。 条件演算子 \(`?:`\) は、3 つのオペランドを受け取る、C\# でただ 1 つの三項演算子です。  
+# <a name="operators-c-programming-guide"></a>演算子 (C# プログラミング ガイド)
+C# では、 *演算子* は式またはステートメントの中で 1 つ以上の *オペランド* に適用されるプログラム要素です。 インクリメント演算子 (`++`) や `new`など、1 つのオペランドを受け取る演算子を *単項* 演算子と言います。 算術演算子 (`+`、`-`、`*`、`/`) など、2 つのオペランドを受け取る演算子を *二項* 演算子と言います。 条件演算子 (`?:`) は、3 つのオペランドを受け取る、C# でただ 1 つの三項演算子です。  
   
- 次の C\# ステートメントには、1 つの単項演算子と 1 つのオペランドがあります。 インクリメント演算子 `++` は、オペランド `y` の値を変更します。  
+ 次の C# ステートメントには、1 つの単項演算子と 1 つのオペランドがあります。 インクリメント演算子 `++`は、オペランド `y`の値を変更します。  
   
  [!code-cs[csProgGuideStatements#5](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/operators_1.cs)]  
   
- 次の C\# ステートメントには、それぞれ 2 つのオペランドを持つ 2 つの二項演算子があります。 代入演算子 `=` には、オペランドとして整数の変数 `y` と式 `2 + 3` が含まれています。 式 `2 + 3` 自体も、加算演算子と、2 つのオペランド \(`2` と `3`\) で構成されています。  
+ 次の C# ステートメントには、それぞれ 2 つのオペランドを持つ 2 つの二項演算子があります。 代入演算子 `=`には、オペランドとして整数の変数 `y` と式 `2 + 3` が含まれています。 式 `2 + 3` 自体も、加算演算子と、2 つのオペランド ( `2` と `3`) で構成されています。  
   
  [!code-cs[csProgGuideStatements#6](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/operators_2.cs)]  
   
-## 演算子、評価、演算子の優先順位  
- オペランドは、任意の長さのコードで構成される有効な式で、任意の数の副次式を含むことができます。 複数の演算子を含む式の場合、演算子が適用される順序は*演算子の優先順位*、*結合規則*、およびかっこによって決定されます。  
+## <a name="operators-evaluation-and-operator-precedence"></a>演算子、評価、演算子の優先順位  
+ オペランドは、任意の長さのコードで構成される有効な式で、任意の数の副次式を含むことができます。 複数の演算子を含む式の場合、演算子が適用される順序は *演算子の優先順位*、 *結合規則*、およびかっこによって決定されます。  
   
- 各演算子には優先順位が定義されています。 優先順位のレベルが異なる複数の演算子を含む式の場合、演算子の優先順位によって演算子が評価される順序が決定されます。 たとえば、次のステートメントでは `n1` に 3 が代入されます。  
+ 各演算子には優先順位が定義されています。 優先順位のレベルが異なる複数の演算子を含む式の場合、演算子の優先順位によって演算子が評価される順序が決定されます。 たとえば、次のステートメントでは `n1`に 3 が代入されます。  
   
  `n1 = 11 - 2 * 4;`  
   
@@ -42,129 +61,137 @@ C\# では、*演算子*は式またはステートメントの中で 1 つ以�
  **主な演算子**  
   
 |式|説明|  
-|-------|--------|  
+|----------------|-----------------|  
 |x[.](../../../csharp/language-reference/operators/member-access-operator.md)y<br /><br /> x?.y|メンバー アクセス。<br /><br /> 条件付きのメンバー アクセス。|  
-|f[\(x\)](../../../csharp/language-reference/operators/invocation-operator.md)|メソッドおよびデリゲートの呼び出し。|  
-|a[&#91;x&#93;](../../../csharp/language-reference/operators/index-operator.md)<br /><br /> a?\[x\]|配列アクセスおよびインデクサー アクセス。<br /><br /> 条件付きの配列アクセスおよびインデクサー アクセス。|  
-|x[\+\+](../../../csharp/language-reference/operators/increment-operator.md)|後置インクリメント。|  
-|x[\-\-](../../../csharp/language-reference/operators/decrement-operator.md)|後置デクリメント。|  
-|[new](../../../csharp/language-reference/keywords/new-operator.md) T\(...\)|オブジェクトおよびデリゲートの作成。|  
-|`new` T\(...\){...}|初期化子を使用したオブジェクトの作成。 「[オブジェクト初期化子とコレクション初期化子](../../../csharp/programming-guide/classes-and-structs/object-and-collection-initializers.md)」を参照してください。|  
+|f[(x)](../../../csharp/language-reference/operators/invocation-operator.md)|メソッドおよびデリゲートの呼び出し。|  
+|a[&#91;x&#93;](../../../csharp/language-reference/operators/index-operator.md)<br /><br /> a?[x]|配列アクセスおよびインデクサー アクセス。<br /><br /> 条件付きの配列アクセスおよびインデクサー アクセス。|  
+|x[++](../../../csharp/language-reference/operators/increment-operator.md)|後置インクリメント。|  
+|x[--](../../../csharp/language-reference/operators/decrement-operator.md)|後置デクリメント。|  
+|[new](../../../csharp/language-reference/keywords/new-operator.md) T(...)|オブジェクトおよびデリゲートの作成。|  
+|`new` T(...){...}|初期化子を使用したオブジェクトの作成。 「[オブジェクト初期化子とコレクション初期化子](../../../csharp/programming-guide/classes-and-structs/object-and-collection-initializers.md)」を参照してください。|  
 |`new` {...}|匿名オブジェクト初期化子。 「[匿名型](../../../csharp/programming-guide/classes-and-structs/anonymous-types.md)」を参照してください。|  
-|`new` T\[...\]|配列の作成。 「[配列](../../../csharp/programming-guide/arrays/index.md)」を参照してください。|  
-|[typeof](../../../csharp/language-reference/keywords/typeof.md)\(T\)|T 型の System.Type オブジェクトを取得します。|  
-|[checked](../../../csharp/language-reference/keywords/checked.md)\(x\)|checked コンテキストで式を評価します。|  
-|[unchecked](../../../csharp/language-reference/keywords/unchecked.md)\(x\)|unchecked コンテキストで式を評価します。|  
-|[default](../../../csharp/language-reference/keywords/default.md) \(T\)|T 型の既定値を取得します。|  
-|[delegate](../../../csharp/language-reference/keywords/delegate.md) {}|匿名関数 \(匿名メソッド\)。|  
+|`new` T[...]|配列の作成。 「[配列](../../../csharp/programming-guide/arrays/index.md)」を参照してください。|  
+|[typeof](../../../csharp/language-reference/keywords/typeof.md)(T)|T 型の System.Type オブジェクトを取得します。|  
+|[checked](../../../csharp/language-reference/keywords/checked.md)(x)|checked コンテキストで式を評価します。|  
+|[unchecked](../../../csharp/language-reference/keywords/unchecked.md)(x)|unchecked コンテキストで式を評価します。|  
+|[default](../../../csharp/language-reference/keywords/default.md) (T)|T 型の既定値を取得します。|  
+|[delegate](../../../csharp/language-reference/keywords/delegate.md) {}|匿名関数 (匿名メソッド)。|  
   
  **単項演算子**  
   
 |式|説明|  
-|-------|--------|  
-|[\+](../../../csharp/language-reference/operators/addition-operator.md)x|同一。|  
-|[\-](../../../csharp/language-reference/operators/subtraction-operator.md)x|否定。|  
-|[\!](../../../csharp/language-reference/operators/logical-negation-operator.md)x|論理否定。|  
+|----------------|-----------------|  
+|[+](../../../csharp/language-reference/operators/addition-operator.md)x|同一。|  
+|[-](../../../csharp/language-reference/operators/subtraction-operator.md)x|否定。|  
+|[!](../../../csharp/language-reference/operators/logical-negation-operator.md)x|論理否定。|  
 |[~](../../../csharp/language-reference/operators/bitwise-complement-operator.md)x|ビットごとの否定。|  
-|[\+\+](../../../csharp/language-reference/operators/increment-operator.md)x|前置インクリメント。|  
-|[\-\-](../../../csharp/language-reference/operators/decrement-operator.md)x|前置デクリメント。|  
-|[\(T\)](../../../csharp/language-reference/operators/invocation-operator.md)x|x を明示的に T 型に変換します。|  
+|[++](../../../csharp/language-reference/operators/increment-operator.md)x|前置インクリメント。|  
+|[--](../../../csharp/language-reference/operators/decrement-operator.md)x|前置デクリメント。|  
+|[(T)](../../../csharp/language-reference/operators/invocation-operator.md)x|x を明示的に T 型に変換します。|  
   
  **乗算演算子**  
   
 |式|説明|  
-|-------|--------|  
-|[\*](../../../csharp/language-reference/operators/multiplication-operator.md)|乗算|  
-|[\/](../../../csharp/language-reference/operators/division-operator.md)|除算記号|  
+|----------------|-----------------|  
+|[*](../../../csharp/language-reference/operators/multiplication-operator.md)|乗算|  
+|[/](../../../csharp/language-reference/operators/division-operator.md)|除算記号|  
 |[%](../../../csharp/language-reference/operators/modulus-operator.md)|剰余。|  
   
- **加法演算子**  
+ **加算演算子**  
   
 |式|説明|  
-|-------|--------|  
-|x [\+](../../../csharp/language-reference/operators/addition-operator.md) y|加算、文字列の連結、デリゲートの組み合わせ。|  
-|x [\-](../../../csharp/language-reference/operators/subtraction-operator.md) y|減算、デリゲートの削除。|  
+|----------------|-----------------|  
+|x [+](../../../csharp/language-reference/operators/addition-operator.md) y|加算、文字列の連結、デリゲートの組み合わせ。|  
+|x [-](../../../csharp/language-reference/operators/subtraction-operator.md) y|減算、デリゲートの削除。|  
   
  **シフト演算子**  
   
 |式|説明|  
-|-------|--------|  
-|x [\<\<](../../../csharp/language-reference/operators/left-shift-operator.md) y|左シフト。|  
-|x [\>\>](../../../csharp/language-reference/operators/right-shift-operator.md) y|右シフト。|  
+|----------------|-----------------|  
+|x [<\<](../../../csharp/language-reference/operators/left-shift-operator.md) y|左シフト。|  
+|x [>>](../../../csharp/language-reference/operators/right-shift-operator.md) y|右シフト。|  
   
  **関係演算子と型演算子**  
   
 |式|説明|  
-|-------|--------|  
+|----------------|-----------------|  
 |x [\<](../../../csharp/language-reference/operators/less-than-operator.md) y|より小さい|  
-|x [\>](../../../csharp/language-reference/operators/greater-than-operator.md) y|より大きい|  
-|x [\<\=](../../../csharp/language-reference/operators/less-than-equal-operator.md) y|以下|  
-|x [\>\=](../../../csharp/language-reference/operators/greater-than-equal-operator.md) y|以上|  
+|x [>](../../../csharp/language-reference/operators/greater-than-operator.md) y|次の値より大きい|  
+|x [\<=](../../../csharp/language-reference/operators/less-than-equal-operator.md) y|以下|  
+|x [>=](../../../csharp/language-reference/operators/greater-than-equal-operator.md) y|以上|  
 |x [is](../../../csharp/language-reference/keywords/is.md) T|x が T の場合は true を返します。それ以外の場合は false を返します。|  
 |x [as](../../../csharp/language-reference/keywords/as.md) T|T として型指定された x を返します。x が T でない場合は null を返します。|  
   
  **等値演算子**  
   
 |式|説明|  
-|-------|--------|  
-|x [\=\=](../../../csharp/language-reference/operators/equality-comparison-operator.md) y|等しい|  
-|x [\!\=](../../../csharp/language-reference/operators/not-equal-operator.md) y|等しくない|  
+|----------------|-----------------|  
+|x [==](../../../csharp/language-reference/operators/equality-comparison-operator.md) y|等しい|  
+|x [!=](../../../csharp/language-reference/operators/not-equal-operator.md) y|等しくない|  
   
  **論理演算子、条件演算子、Null 演算子**  
   
 |カテゴリ|式|説明|  
-|----------|-------|--------|  
+|--------------|----------------|-----------------|  
 |論理 AND|x [&](../../../csharp/language-reference/operators/and-operator.md) y|整数のビットごとの AND、ブール型の論理 AND。|  
 |論理 XOR|x [^](../../../csharp/language-reference/operators/xor-operator.md) y|整数のビットごとの XOR、ブール型の論理 XOR。|  
 |論理 OR|x [&#124;](../../../csharp/language-reference/operators/or-operator.md) y|整数のビットごとの OR、ブール型の論理 OR。|  
 |条件 AND|x [&&](../../../csharp/language-reference/operators/conditional-and-operator.md) y|x が true の場合にのみ y を評価します。|  
 |条件 OR|x [&#124;&#124;](../../../csharp/language-reference/operators/conditional-or-operator.md) y|x が false の場合にのみ y を評価します。|  
-|Null 合体演算子|x [??](../../../csharp/language-reference/operators/null-conditional-operator.md) y|x が null の場合は y と評価され、それ以外の場合は x と評価されます。|  
+|Null 合体演算子|x [??](../../../csharp/language-reference/operators/null-conditional-operator.md) Y|x が null の場合は y と評価され、それ以外の場合は x と評価されます。|  
 |条件|x [?](../../../csharp/language-reference/operators/conditional-operator.md) y : z|x が true の場合は y と評価され、x が false の場合は z と評価されます。|  
   
- **代入演算子と匿名関数**  
+ **代入演算子と匿名演算子**  
   
 |式|説明|  
-|-------|--------|  
-|[\=](../../../csharp/language-reference/operators/assignment-operator.md)|代入|  
-|x op\= y|複合代入。 サポートされる演算子: [\+\=](../../../csharp/language-reference/operators/addition-assignment-operator.md)、[\-\=](../../../csharp/language-reference/operators/subtraction-assignment-operator-1.md)、[\*\=](../../../csharp/language-reference/operators/multiplication-assignment-operator.md)、[\/\=](../../../csharp/language-reference/operators/subtraction-assignment-operator.md)、[%\=](../../../csharp/language-reference/operators/modulus-assignment-operator.md)、[&\=](../../../csharp/language-reference/operators/and-assignment-operator.md)、[&#124;\=](../../../csharp/language-reference/operators/or-assignment-operator.md)、[\!\=](../../../csharp/language-reference/operators/not-equal-operator.md)、[\<\<\=](../../../csharp/language-reference/operators/left-shift-assignment-operator.md)、[\>\>\=](../../../csharp/language-reference/operators/right-shift-assignment-operator.md)|  
-|\(T x\) [\=\>](../../../csharp/language-reference/operators/lambda-operator.md) y|匿名関数 \(ラムダ式\)|  
+|----------------|-----------------|  
+|[=](../../../csharp/language-reference/operators/assignment-operator.md)|代入|  
+|x op= y|複合代入。 サポートされる演算子: [+=](../../../csharp/language-reference/operators/addition-assignment-operator.md)、[-=](../../../csharp/language-reference/operators/subtraction-assignment-operator.md)、[*=](../../../csharp/language-reference/operators/multiplication-assignment-operator.md)、[/=](../../../csharp/language-reference/operators/division-assignment-operator.md)、[%=](../../../csharp/language-reference/operators/modulus-assignment-operator.md)、[&=](../../../csharp/language-reference/operators/and-assignment-operator.md)、[&#124;=](../../../csharp/language-reference/operators/or-assignment-operator.md)、[!=](../../../csharp/language-reference/operators/not-equal-operator.md)、[<\<=](../../../csharp/language-reference/operators/left-shift-assignment-operator.md)、[>>=](../../../csharp/language-reference/operators/right-shift-assignment-operator.md)|  
+|(T x) [=>](../../../csharp/language-reference/operators/lambda-operator.md) y|匿名関数 (ラムダ式)|  
   
-## 結合規則  
- 1 つの式に同じ優先順位の演算子が複数個含まれている場合、それらの演算子は結合規則に基づいて評価されます。 結合規則が左から右の演算子は、左から右に評価されます。 たとえば、`x * y / z` は `(x * y) / z` と評価されます。 結合規則が右から左の演算子は、右から左に評価されます。 たとえば、代入演算子は結合規則が右から左です。 そうでない場合、次のコードはエラーになります。  
+## <a name="associativity"></a>結合規則  
+ 1 つの式に同じ優先順位の演算子が複数個含まれている場合、それらの演算子は結合規則に基づいて評価されます。 結合規則が左から右の演算子は、左から右に評価されます。 たとえば、 `x * y / z` は `(x * y) / z`と評価されます。 結合規則が右から左の演算子は、右から左に評価されます。 たとえば、代入演算子は結合規則が右から左です。 そうでない場合、次のコードはエラーになります。  
   
-```c#  
-int a, b, c; c = 1; // The following two lines are equivalent. a = b = c; a = (b = c); // The following line, which forces left associativity, causes an error. //(a = b) = c;  
+```csharp  
+int a, b, c;  
+c = 1;  
+// The following two lines are equivalent.  
+a = b = c;  
+a = (b = c);  
+  
+// The following line, which forces left associativity, causes an error.  
+//(a = b) = c;  
 ```  
   
- 別の例として、三項演算子 \([?:](../../../csharp/language-reference/operators/conditional-operator.md)\) は,結合関係が右から左です。 ほとんどの二項演算子は結合関係が左から右です。  
+ 別の例として、三項演算子 ([?:](../../../csharp/language-reference/operators/conditional-operator.md)) は、結合規則が右から左です。 ほとんどの二項演算子は結合関係が左から右です。  
   
  式に含まれる演算子の結合規則が左から右であっても、右から左であっても、各式のオペランドは初めに左から右に評価されます。 次の例では、演算子とオペランドの評価の順序について示します。  
   
 |ステートメント|評価の順序|  
-|-------------|-----------|  
-|`a = b`|a、b、\=|  
-|`a = b + c`|a、b、c、\+、\=|  
-|`a = b + c * d`|a、b、c、d、\*、\+、\=|  
-|`a = b * c + d`|a、b、c、\*、d、\+、\=|  
-|`a = b - c + d`|a、b、c、\-、d、\+、\=|  
-|`a += b -= c`|a、b、c、\-\=、\+\=|  
+|---------------|-------------------------|  
+|`a = b`|a、b、=|  
+|`a = b + c`|a、b、c、+、=|  
+|`a = b + c * d`|a、b、c、d、*、+、=|  
+|`a = b * c + d`|a、b、c、*、d、+、=|  
+|`a = b - c + d`|a、b、c、-、d、+、=|  
+|`a += b -= c`|a、b、c、-=、+=|  
   
-## かっこの追加  
- かっこを使用すると、演算子の優先順位と結合規則によって定められた順序を変更できます。 たとえば、`2 + 3 * 2` は通常、8 と評価されます。乗算演算子の方が加法演算子よりも優先順位が高いからです。 しかし、この式を `(2 + 3) * 2` と記述すると、加算の方が乗算よりも先に評価され、結果は 10 になります。 次の例では、かっこを使用した式での評価の順序について示します。 前の例では、演算子が適用される前にオペランドが評価されていました。  
+## <a name="adding-parentheses"></a>かっこの追加  
+ かっこを使用すると、演算子の優先順位と結合規則によって定められた順序を変更できます。 たとえば、 `2 + 3 * 2` は通常、8 と評価されます。乗算演算子の方が加法演算子よりも優先順位が高いからです。 しかし、この式を `(2 + 3) * 2`と記述すると、加算の方が乗算よりも先に評価され、結果は 10 になります。 次の例では、かっこを使用した式での評価の順序について示します。 前の例では、演算子が適用される前にオペランドが評価されていました。  
   
 |ステートメント|評価の順序|  
-|-------------|-----------|  
-|`a = (b + c) * d`|a、b、c、\+、d、\*、\=|  
-|`a = b - (c + d)`|a、b、c、d、\+、\-、\=|  
-|`a = (b + c) * (d - e)`|a、b、c、\+、d、e、\-、\*、\=|  
+|---------------|-------------------------|  
+|`a = (b + c) * d`|a、b、c、+、d、*、=|  
+|`a = b - (c + d)`|a、b、c、d、+、-、=|  
+|`a = (b + c) * (d - e)`|a、b、c、+、d、e、-、*、=|  
   
-## 演算子のオーバーロード  
- カスタム クラスやカスタム構造体では、演算子の動作を変更できます。 このプロセスは*演算子のオーバーロード*と呼ばれます。 詳細については、「[オーバーロードされた演算子](../../../csharp/programming-guide/statements-expressions-operators/overloadable-operators.md)」を参照してください。  
+## <a name="operator-overloading"></a>演算子のオーバーロード  
+ カスタム クラスやカスタム構造体では、演算子の動作を変更できます。 このプロセスは *演算子のオーバーロード*と呼ばれます。 詳細については、「[オーバーロードされた演算子](../../../csharp/programming-guide/statements-expressions-operators/overloadable-operators.md)」を参照してください。  
   
-## 関連項目  
- 詳細については、次のトピックを参照してください。[演算子のキーワード](../../../csharp/language-reference/keywords/operator-keywords.md) および[C\# 演算子](../../../csharp/language-reference/operators/index.md).  
+## <a name="related-sections"></a>関連項目  
+ 詳細については、「[演算子のキーワード](../../../csharp/language-reference/keywords/operator-keywords.md)」および「[C# 演算子](../../../csharp/language-reference/operators/index.md)」を参照してください。  
   
-## 参照  
- [C\# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
+## <a name="see-also"></a>関連項目  
+ [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
  [ステートメント、式、および演算子](../../../csharp/programming-guide/statements-expressions-operators/index.md)
+

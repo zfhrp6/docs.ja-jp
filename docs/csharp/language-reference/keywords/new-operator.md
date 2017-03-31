@@ -1,41 +1,59 @@
 ---
 title: "new 演算子 (C# リファレンス) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.technology: 
-  - "devlang-csharp"
-ms.topic: "article"
-dev_langs: 
-  - "CSharp"
-helpviewer_keywords: 
-  - "new 演算子キーワード [C#]"
+ms.date: 2015-07-20
+ms.prod: .net
+ms.technology:
+- devlang-csharp
+ms.topic: article
+dev_langs:
+- CSharp
+helpviewer_keywords:
+- new operator keyword [C#]
 ms.assetid: a212b697-a79b-4105-9923-1f7b108036e8
 caps.latest.revision: 22
-author: "BillWagner"
-ms.author: "wiwagn"
-caps.handback.revision: 22
+author: BillWagner
+ms.author: wiwagn
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Human Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: f0831bbbaf68c8c9e1e0e2d77ccf18e7c8b42e4a
+ms.lasthandoff: 03/13/2017
+
 ---
-# new 演算子 (C# リファレンス)
-オブジェクトを作成し、コンストラクターを呼び出します。  次に例を示します。  
+# <a name="new-operator-c-reference"></a>new 演算子 (C# リファレンス)
+オブジェクトを作成し、コンストラクターを呼び出すために使用します。 例:  
   
 ```  
 Class1 obj  = new Class1();  
 ```  
   
- 匿名型のインスタンスの作成にも使用できます。  
+ 匿名型のインスタンスの作成にも使用します。  
   
 ```  
 var query = from cust in customers  
             select new {Name = cust.Name, Address = cust.PrimaryAddress};  
 ```  
   
- `new` 演算子を使用して、値型の既定コンストラクターを呼び出すこともできます。  次に例を示します。  
+ `new` 演算子は値型の既定コンストラクターの呼び出しにも使用します。 例:  
   
 ```  
 int i = new int();  
 ```  
   
- このステートメントでは、`i` は `int` 型の既定値 `0` に初期化されます。  このステートメントは次のステートメントと同じ効果があります。  
+ 上記のステートメントでは、`i` は `int` 型の既定値 `0` に初期化されます。 このステートメントは次のステートメントと同じ効果があります。  
   
 ```  
 int i = 0;  
@@ -43,28 +61,28 @@ int i = 0;
   
  既定値の一覧については、「[既定値の一覧表](../../../csharp/language-reference/keywords/default-values-table.md)」を参照してください。  
   
- [構造体](../../../csharp/language-reference/keywords/struct.md)の既定のコンストラクターを宣言すると、エラーが発生します。これは、すべての値型には、暗黙的にパブリックな既定のコンストラクターがあるためです。  パラメーター付きのコンストラクターを struct 型で宣言してその初期値を設定することは可能ですが、この手順が必要になるのは、既定以外の値が必要な場合のみです。  
+ すべての値型には暗黙的に既定のパブリック コンストラクターがあるため、[構造体](../../../csharp/language-reference/keywords/struct.md) に対して既定のコンストラクターを宣言するとエラーになります。 パラメーター付きのコンストラクターを構造体型で宣言し、その初期値を設定することは可能ですが、これが必要になるのは、既定値以外の値が必要な場合のみです。  
   
- 構造体のような値型オブジェクトはスタック領域に作成され、クラスのような参照型オブジェクトはヒープ領域に作成されます。  どちらの型のオブジェクトも自動的に破棄されますが、値型に基づくオブジェクトは、スコープの適用範囲の外になると破棄され、参照型に基づくオブジェクトは、そのオブジェクトへの最後の参照が削除された後に随時破棄されます。  大量のメモリ、ファイル ハンドル、ネットワーク接続などの固定リソースを消費する参照型では、オブジェクトができるだけすぐに破棄されるように、確定的な終了処理を採用することが望ましい場合があります。  詳細については、「[using ステートメント](../../../csharp/language-reference/keywords/using-statement.md)」を参照してください。  
+ 構造体などの値型オブジェクトはスタック領域に作成され、クラスなどの参照型オブジェクトはヒープ領域に作成されます。 どちらの型のオブジェクトも自動的に破棄されますが、値型に基づくオブジェクトがスコープの適用外になると破棄されるのに対し、参照型に基づくオブジェクトは、そのオブジェクトへの最後の参照が削除されたあと、随時破棄されます。 大量のメモリ、ファイル ハンドル、ネットワーク接続などの固定のリソースを消費する参照型の場合、確定的な最終処理を行い、オブジェクトが破棄されたことをできるだけ早く確認することが望ましい場合があります。 詳細については、「[using ステートメント](../../../csharp/language-reference/keywords/using-statement.md)」を参照してください。  
   
  `new` 演算子はオーバーロードできません。  
   
- `new` 演算子によるメモリ割り当てが失敗した場合は、<xref:System.OutOfMemoryException> 例外がスローされます。  
+ `new` 演算子によるメモリの割り当てが失敗した場合、<xref:System.OutOfMemoryException> 例外がスローされます。  
   
-## 使用例  
- 次の例では、`struct` オブジェクトとクラス オブジェクトは、`new` 演算子で作成および初期化されてから、値が代入されます。  既定値と代入値が表示されます。  
+## <a name="example"></a>例  
+ 次の例では、`struct` オブジェクトおよびクラス オブジェクトは、`new` 演算子を使用して作成、初期化され、そのあと値が代入されます。 既定値と代入値が表示されます。  
   
  [!code-cs[csrefKeywordsOperator#7](../../../csharp/language-reference/keywords/codesnippet/CSharp/new-operator_1.cs)]  
   
- この例では、文字列の既定値が `null` です。  このため、文字列の既定値は出力されません。  
+ この例では、文字列の既定値は `null` です。 このため、文字列の既定値は表示されません。  
   
-## C\# 言語仕様  
- [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec-md.md)]  
+## <a name="c-language-specification"></a>C# 言語仕様  
+ [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec_md.md)]  
   
-## 参照  
- [C\# リファレンス](../../../csharp/language-reference/index.md)   
- [C\# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
- [C\# のキーワード](../../../csharp/language-reference/keywords/index.md)   
+## <a name="see-also"></a>関連項目  
+ [C# リファレンス](../../../csharp/language-reference/index.md)   
+ [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
+ [C# のキーワード](../../../csharp/language-reference/keywords/index.md)   
  [演算子のキーワード](../../../csharp/language-reference/keywords/operator-keywords.md)   
  [new](../../../csharp/language-reference/keywords/new.md)   
  [匿名型](../../../csharp/programming-guide/classes-and-structs/anonymous-types.md)

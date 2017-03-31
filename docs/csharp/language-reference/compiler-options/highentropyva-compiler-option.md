@@ -1,40 +1,56 @@
 ---
-title: "/highentropyva (C# Compiler Options) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.technology: 
-  - "devlang-csharp"
-ms.topic: "article"
-f1_keywords: 
-  - "/highentropyva"
-dev_langs: 
-  - "CSharp"
-helpviewer_keywords: 
-  - "/highentropyva compiler option [C#]"
-  - "-highentropyva compiler option [C#]"
-  - "highentropyva compiler option [C#]"
+title: "-highentropyva (C# コンパイラ オプション) | Microsoft Docs"
+ms.date: 2015-07-20
+ms.prod: .net
+ms.technology:
+- devlang-csharp
+ms.topic: article
+f1_keywords:
+- /highentropyva
+dev_langs:
+- CSharp
+helpviewer_keywords:
+- /highentropyva compiler option [C#]
+- -highentropyva compiler option [C#]
+- highentropyva compiler option [C#]
 ms.assetid: eaf409b3-384e-49dd-9417-62453658f421
 caps.latest.revision: 8
-author: "BillWagner"
-ms.author: "wiwagn"
-caps.handback.revision: 8
+author: BillWagner
+ms.author: wiwagn
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Human Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: c1b49faa2fb388b330c24bdff28d00872828b110
+ms.lasthandoff: 03/13/2017
+
 ---
-# /highentropyva (C# Compiler Options)
-**\/highentropyva** のコンパイラ オプションは、Windows のカーネルに起因しているのかを特定の実行可能ファイル サポートの高いエントロピ ASLR \(ASLR\) を使用します。  
+# <a name="highentropyva-c-compiler-options"></a>/highentropyva (C# コンパイラ オプション)
+**/highentropyva** コンパイラ オプションは、特定の実行可能ファイルで高エントロピ ASLR (Address Space Layout Randomization) をサポートするかどうかを Windows カーネルに示します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 /highentropyva[+ | -]  
 ```  
   
-## Arguments  
+## <a name="arguments"></a>引数  
  `+` &#124; `-`  
- 高いエントロピの仮想アドレス空間をサポートする [\/platform: anycpu](../../../csharp/language-reference/compiler-options/platform-compiler-option.md) コンパイラ オプションによって示されるこのオプションは 64 ビットの実行可能ファイルまたは実行可能ファイルことを指定します。  このオプションは既定で無効になります。  このオプションを有効にするために **\/highentropyva\+** または **\/highentropyva** を使用します。  
+ このオプションは、64 ビットの実行可能ファイルまたは [/platform:anycpu](../../../csharp/language-reference/compiler-options/platform-compiler-option.md) コンパイラ オプションによって示される実行可能ファイルで、高エントロピ仮想アドレス空間をサポートすることを指定します。 既定では、このオプションが無効になっています。 有効にするには、**/highentropyva+** または **/highentropyva** を使用してください。  
   
-## 解説  
- **\/highentropyva** オプションは、プロセスのアドレス空間レイアウトを ASLR 機能の一部としてそれぞれ時に Windows のカーネル互換バージョンがエントロピの詳細を使用できるようになります。  エントロピの詳細を使用して、アドレスの数がスタックとヒープなどのメモリ領域に割り当てることができることを意味します。  したがって、特定のメモリ領域の場所を推測することは困難です。  
+## <a name="remarks"></a>コメント  
+ **/highentropyva** オプションを指定すると、適合するバージョンの Windows カーネルで、ASLR の一環としてプロセスのアドレス空間レイアウトをランダム化する際、より高いエントロピを使用できるようになります。 より高いエントロピを使うということは、スタックやヒープといったメモリ領域に割り当てることのできるアドレス数が増えることを意味します。 これによって特定のメモリ領域の位置を推測しづらくなる効果が得られます。  
   
- **\/highentropyva** のコンパイラ オプションを指定すると、64 ビット プロセスとして実行されている場合に、実行可能ファイルと、ターゲットに依存するモジュールは 4 GB のより大きなポインター値を \(GB\) 処理必要があります。  
-  
- ASLR 機能に関する詳細については、参照します [軽減のソフトウェアの脆弱性](http://go.microsoft.com/fwlink/?LinkId=226234)。
+ **/highentropyva** コンパイラ オプションが指定された場合、対象となる実行可能ファイルとその依存モジュールは、64 ビット プロセスとして動作する際に 4 ギガバイト (GB) を超えるポインター値を処理できることが必要です。

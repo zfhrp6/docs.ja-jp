@@ -1,74 +1,92 @@
 ---
 title: "sizeof (C# リファレンス) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.technology: 
-  - "devlang-csharp"
-ms.topic: "article"
-f1_keywords: 
-  - "sizeof_CSharpKeyword"
-  - "sizeof"
-dev_langs: 
-  - "CSharp"
-helpviewer_keywords: 
-  - "sizeof キーワード [C#]"
+ms.date: 2015-07-20
+ms.prod: .net
+ms.technology:
+- devlang-csharp
+ms.topic: article
+f1_keywords:
+- sizeof_CSharpKeyword
+- sizeof
+dev_langs:
+- CSharp
+helpviewer_keywords:
+- sizeof keyword [C#]
 ms.assetid: c548592c-677c-4f40-a4ce-e613f7529141
 caps.latest.revision: 20
-author: "BillWagner"
-ms.author: "wiwagn"
-caps.handback.revision: 20
+author: BillWagner
+ms.author: wiwagn
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Human Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: 7a1944caceaba3ffb8d83a8f67e5ef2975bf9644
+ms.lasthandoff: 03/13/2017
+
 ---
-# sizeof (C# リファレンス)
-アンマネージ型のサイズ \(バイト単位\) を取得します。  アンマネージ型には、後の表に示す組み込み型と、次の型とが含まれます。  
+# <a name="sizeof-c-reference"></a>sizeof (C# リファレンス)
+アンマネージ型のサイズ (バイト単位) を取得するときに使用します。 アンマネージ型には、以下の表に示す組み込み型のほか、次の型も含まれます。  
   
 -   列挙型  
   
 -   ポインター型  
   
--   参照型のフィールドやプロパティを含まないユーザー定義の構造体  
+-   参照型のフィールドやプロパティが含まれないユーザー定義の構造体  
   
- `int` のサイズを取得する方法を次の例に示します。  
+ 次の例は、`int` のサイズを取得する方法を示しています。  
   
-```c#  
+```csharp  
 // Constant value 4:  
 int intSize = sizeof(int);   
 ```  
   
-## 解説  
- C\# バージョン 2.0 以降、組み込み型に `sizeof` を適用する場合に、[unsafe](../../../csharp/language-reference/keywords/unsafe.md) モードを使用する必要はありません。  
+## <a name="remarks"></a>コメント  
+ C# バージョン 2.0 以降、組み込み型に `sizeof` を適用するときに、[unsafe](../../../csharp/language-reference/keywords/unsafe.md) モードを使用する必要がなくなりました。  
   
- `sizeof` 演算子はオーバーロードできません。  `sizeof` 演算子により返される値の型は `int` です。  次の表に、特定の組み込み型をオペランドとする `sizeof` 式と、代用される定数値を示します。  
+ `sizeof` 演算子はオーバーロードできません。 `sizeof` 演算子により返される値の型は `int` です。 次の表に、特定の組み込み型をオペランドとする `sizeof` 式と、代用される定数値を示します。  
   
 |式|定数値|  
-|-------|---------|  
+|----------------|--------------------|  
 |`sizeof(sbyte)`|1|  
 |`sizeof(byte)`|1|  
 |`sizeof(short)`|2|  
 |`sizeof(ushort)`|2|  
 |`sizeof(int)`|4|  
 |`sizeof(uint)`|4|  
-|`sizeof(long)`|8|  
+|`sizeof(long)`|9|  
 |`sizeof(ulong)`|8|  
-|`sizeof(char)`|2 \(Unicode\)|  
+|`sizeof(char)`|2 (Unicode)|  
 |`sizeof(float)`|4|  
 |`sizeof(double)`|8|  
 |`sizeof(decimal)`|16|  
 |`sizeof(bool)`|1|  
   
- struct などその他のすべての型については、`sizeof` 演算子はアンセーフ コード ブロックでのみ使用できます。  <xref:System.Runtime.InteropServices.Marshal.SizeOf%2A?displayProperty=fullName> メソッドは使用できますが、このメソッドの戻り値が `sizeof` の戻り値と等しいとは限りません。  <xref:System.Runtime.InteropServices.Marshal.SizeOf%2A?displayProperty=fullName> は値のマーシャリング後にサイズを返します。一方、`sizeof` は、共通言語ランタイムによる割り当ての後に埋め込みを含めたサイズを返します。  
+ struct など、その他の型については、`sizeof` 演算子はアンセーフ コード ブロックでのみ使用できます。 <xref:System.Runtime.InteropServices.Marshal.SizeOf%2A?displayProperty=fullName> メソッドは使用できますが、このメソッドの戻り値が `sizeof` の戻り値と等しいとは限りません。 <xref:System.Runtime.InteropServices.Marshal.SizeOf%2A?displayProperty=fullName> は、型のマーシャリング後にサイズを返します。一方、`sizeof` は、共通言語ランタイムによって割り当てられたサイズ (埋め込みを含む) を返します。  
   
-## 使用例  
+## <a name="example"></a>例  
  [!code-cs[csrefKeywordsOperator#11](../../../csharp/language-reference/keywords/codesnippet/CSharp/sizeof_1.cs)]  
   
-## C\# 言語仕様  
- [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec-md.md)]  
+## <a name="c-language-specification"></a>C# 言語仕様  
+ [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec_md.md)]  
   
-## 参照  
- [C\# リファレンス](../../../csharp/language-reference/index.md)   
- [C\# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
- [C\# のキーワード](../../../csharp/language-reference/keywords/index.md)   
+## <a name="see-also"></a>関連項目  
+ [C# リファレンス](../../../csharp/language-reference/index.md)   
+ [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
+ [C# のキーワード](../../../csharp/language-reference/keywords/index.md)   
  [演算子のキーワード](../../../csharp/language-reference/keywords/operator-keywords.md)   
  [enum](../../../csharp/language-reference/keywords/enum.md)   
- [unsafe コードとポインター](../../../csharp/programming-guide/unsafe-code-pointers/index.md)   
+ [アンセーフ コードとポインター](../../../csharp/programming-guide/unsafe-code-pointers/index.md)   
  [構造体](../../../csharp/programming-guide/classes-and-structs/structs.md)   
  [定数](../../../csharp/programming-guide/classes-and-structs/constants.md)

@@ -1,40 +1,58 @@
 ---
 title: "ジェネリックの概要 (C# プログラミング ガイド) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.technology: 
-  - "devlang-csharp"
-ms.topic: "article"
-dev_langs: 
-  - "CSharp"
-helpviewer_keywords: 
-  - "ジェネリック [C#], ジェネリックの概要"
+ms.date: 2015-07-20
+ms.prod: .net
+ms.technology:
+- devlang-csharp
+ms.topic: article
+dev_langs:
+- CSharp
+helpviewer_keywords:
+- generics [C#], about generics
 ms.assetid: a1ad761e-42f7-41dd-a62f-452a2de26b9d
 caps.latest.revision: 32
-author: "BillWagner"
-ms.author: "wiwagn"
-caps.handback.revision: 32
+author: BillWagner
+ms.author: wiwagn
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Human Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: f3092eb1e5435bbced565b02d989a57abf2d52e0
+ms.lasthandoff: 03/13/2017
+
 ---
-# ジェネリックの概要 (C# プログラミング ガイド)
-ジェネリック クラスとジェネリック メソッドは、それぞれの非ジェネリック バージョンでは実現できない形で再利用性、タイプ セーフ、および効率性を兼ね備えています。  通常、ジェネリックは、コレクションおよびコレクションに対して動作するメソッドと共に使用されます。  Version 2.0 の .NET Framework クラス ライブラリには、<xref:System.Collections.Generic> という新しい名前空間が用意されています。この名前空間には、ジェネリックベースの新しいコレクション クラスがあります。  [!INCLUDE[dnprdnshort](../../../csharp/getting-started/includes/dnprdnshort-md.md)] 2.0 以降を対象にするすべてのアプリケーションでは、<xref:System.Collections.ArrayList> などの以前の非ジェネリック クラスの代わりに、新しいジェネリック コレクション クラスを使用することをお勧めします。  詳細については、「[.NET Framework クラス ライブラリのジェネリック](../../../csharp/programming-guide/generics/generics-in-the-net-framework-class-library.md)」を参照してください。  
+# <a name="introduction-to-generics-c-programming-guide"></a>ジェネリックの概要 (C# プログラミング ガイド)
+ジェネリックのクラスとメソッドは、非ジェネリックでは不可能な方法で、再利用性、タイプ セーフ、効率性を同時に実現しています。 ジェネリックは、コレクションとそれを操作するメソッドとともに使用されるのが通常です。 .NET Framework クラス ライブラリのバージョン 2.0 には、いくつかの新しいジェネリック ベースのコレクション クラスを含む新しい名前空間、<xref:System.Collections.Generic> が用意されています。 [!INCLUDE[dnprdnshort](../../../csharp/getting-started/includes/dnprdnshort_md.md)] 2.0 以降を対象とするすべてのアプリケーションでは、<xref:System.Collections.ArrayList> などの以前の非ジェネリック コレクション クラスの代わりに、新しいジェネリック コレクション クラスを使用することをお勧めします。 詳細については、「[.NET Framework クラス ライブラリのジェネリック](../../../csharp/programming-guide/generics/generics-in-the-net-framework-class-library.md)」を参照してください。  
   
- また、カスタム ジェネリック型やカスタム ジェネリック メソッドを作成して、独自の汎用ソリューションを提供したり、タイプ セーフで効率的なパターンを設計したりすることもできます。  以下のコード例は、簡単な汎用リンク リスト クラスを示しています。  通常は、独自のクラスを作成するよりも、.NET Framework クラス ライブラリに用意されている <xref:System.Collections.Generic.List%601> クラスを使用してください。この例では、通常、具体的な型を使用して、リストに格納する項目の型を示すところで、型パラメーター `T` を使用しています。  このパラメーターは、次のように使用されています。  
+ もちろん、カスタムのジェネリック型やジェネリック メソッドを作成して、タイプ セーフで効率的な独自の汎用ソリューションや設計パターンを実現することもできます。 次のコード例では、デモンストレーション用の簡単なジェネリックのリンク リスト クラスを示します。 (通常は、独自のクラスを作成するのではなく、.NET Framework クラス ライブラリに用意されている <xref:System.Collections.Generic.List%601> クラスを使用してください。)この例では、通常、具体的な型を使用して、リストに格納する項目の型を示す場面で、型パラメーター `T` を使用しています。 このパラメーターは、次のように使用されています。  
   
--   `AddHead` メソッドのメソッド パラメーターの型として使用されています。  
+-   `AddHead` メソッドのメソッド パラメーターの型として使用。  
   
--   `GetNext` パブリック メソッドの戻り値の型、および入れ子にされた `Node` クラスの `Data` プロパティとして使用されています。  
+-   `GetNext` パブリック メソッドの戻り値の型、および入れ子になった `Node` クラスの `Data` プロパティの戻り値の型として使用。  
   
--   入れ子になったクラスのプライベート メンバー データの型として使用されています。  
+-   入れ子になったクラスのプライベート メンバー データの型として使用。  
   
- T は、入れ子になった `Node` クラスで使用できることに注意してください。  `GenericList<T>` を、たとえば、`GenericList<int>` のように具体的な型でインスタンス化すると、`T` の各出現箇所は、`int` に置き換えられます。  
+ T は、入れ子になった `Node` クラスで使用できることに注意してください。 `GenericList<T>` が `GenericList<int>` のような具象型でインスタンス化されると、`T` の部分はそれぞれ `int` に置き換えられます。  
   
  [!code-cs[csProgGuideGenerics#2](../../../csharp/programming-guide/generics/codesnippet/CSharp/introduction-to-generics_1.cs)]  
   
- 次のコード例は、クライアント コードで `GenericList<T>` ジェネリック クラスを使用して整数のリストを作成する方法を示しています。  このコードの型引数を変更するだけで、文字列や他の任意のカスタム型のリストを生成するように簡単に修正できます。  
+ 次のコード例では、クライアント コードでジェネリックの `GenericList<T>` クラスを使用して、整数のリストを作成する方法を示しています。 このコードの型引数を変更するだけで、文字列やその他の任意のカスタム型のリストを作成するように簡単に修正できます。  
   
  [!code-cs[csProgGuideGenerics#3](../../../csharp/programming-guide/generics/codesnippet/CSharp/introduction-to-generics_2.cs)]  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Collections.Generic>   
- [C\# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
+ [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
  [ジェネリック](../../../csharp/programming-guide/generics/index.md)

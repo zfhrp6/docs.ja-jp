@@ -1,0 +1,108 @@
+---
+title: "C#1 での既定の名前空間のスコープ | Microsoft Docs"
+ms.custom: 
+ms.date: 2015-07-20
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-csharp
+ms.topic: article
+dev_langs:
+- CSharp
+ms.assetid: fe826236-830f-457a-9027-7ad62c909fae
+caps.latest.revision: 3
+author: BillWagner
+ms.author: wiwagn
+translation.priority.mt:
+- cs-cz
+- pl-pl
+- pt-br
+- tr-tr
+translationtype: Human Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: 760716dc81f5cd946ae014ed22b6c5a7df64a5dd
+ms.lasthandoff: 03/13/2017
+
+---
+# <a name="scope-of-default-namespaces-in-c"></a>C での既定の名前空間のスコープ#
+XML ツリーで表される既定の名前空間は、クエリのスコープ内にありません。 既定の名前空間に含まれる XML が存在する場合は、引き続き、<xref:System.Xml.Linq.XNamespace> 変数を宣言し、この変数をローカル名と組み合わせて作成した修飾名をクエリで使用する必要があります。  
+  
+ XML ツリーのクエリにおける最も一般的な問題の 1 つは、XML ツリーに既定の名前空間がある場合に、XML が名前空間に含まれていないものとして開発者がクエリを記述してしまうことです。  
+  
+ このトピックの最初に示す一連の例では、既定の名前空間内の XML が読み込まれても、クエリが不適切に実行される典型的な例を示しています。  
+  
+ 2 番目に示す一連の例では、名前空間内の XML に対してクエリを実行できるようにするために必要な修正を示しています。  
+  
+## <a name="example"></a>例  
+ この例では、名前空間内にある XML の作成、および空の結果セットを返すクエリを示します。  
+  
+### <a name="code"></a>コード  
+  
+```csharp  
+XElement root = XElement.Parse(  
+@"<Root xmlns='http://www.adventure-works.com'>  
+    <Child>1</Child>  
+    <Child>2</Child>  
+    <Child>3</Child>  
+    <AnotherChild>4</AnotherChild>  
+    <AnotherChild>5</AnotherChild>  
+    <AnotherChild>6</AnotherChild>  
+</Root>");  
+IEnumerable<XElement> c1 =  
+    from el in root.Elements("Child")  
+    select el;  
+Console.WriteLine("Result set follows:");  
+foreach (XElement el in c1)  
+    Console.WriteLine((int)el);  
+Console.WriteLine("End of result set");  
+```  
+  
+### <a name="comments"></a>コメント  
+ この例を実行すると、次の結果が得られます。  
+  
+```  
+Result set follows:  
+End of result set  
+```  
+  
+## <a name="example"></a>例  
+ この例では、名前空間内にある XML の作成と、適切に記述されたクエリを示します。  
+  
+ 上記の不適切に記述された例に対して、C# を使用する場合は、<xref:System.Xml.Linq.XNamespace> オブジェクトを宣言して初期化し、そのオブジェクトを <xref:System.Xml.Linq.XName> オブジェクトの指定時に使用するのが正しい方法です。 この場合、<xref:System.Xml.Linq.XElement.Elements%2A> メソッドに対する引数は <xref:System.Xml.Linq.XName> オブジェクトです。  
+  
+### <a name="code"></a>コード  
+  
+```csharp  
+XElement root = XElement.Parse(  
+@"<Root xmlns='http://www.adventure-works.com'>  
+    <Child>1</Child>  
+    <Child>2</Child>  
+    <Child>3</Child>  
+    <AnotherChild>4</AnotherChild>  
+    <AnotherChild>5</AnotherChild>  
+    <AnotherChild>6</AnotherChild>  
+</Root>");  
+XNamespace aw = "http://www.adventure-works.com";  
+IEnumerable<XElement> c1 =  
+    from el in root.Elements(aw + "Child")  
+    select el;  
+Console.WriteLine("Result set follows:");  
+foreach (XElement el in c1)  
+    Console.WriteLine((int)el);  
+Console.WriteLine("End of result set");  
+```  
+  
+### <a name="comments"></a>コメント  
+ この例を実行すると、次の結果が得られます。  
+  
+```  
+Result set follows:  
+1  
+2  
+3  
+End of result set  
+```  
+  
+## <a name="see-also"></a>関連項目  
+ [XML 名前空間の使用 (C#)](../../../../csharp/programming-guide/concepts/linq/working-with-xml-namespaces.md)

@@ -1,119 +1,137 @@
 ---
 title: "for (C# リファレンス) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.technology: 
-  - "devlang-csharp"
-ms.topic: "article"
-f1_keywords: 
-  - "for"
-  - "for_CSharpKeyword"
-dev_langs: 
-  - "CSharp"
-helpviewer_keywords: 
-  - "for キーワード [C#]"
+ms.date: 2015-07-20
+ms.prod: .net
+ms.technology:
+- devlang-csharp
+ms.topic: article
+f1_keywords:
+- for
+- for_CSharpKeyword
+dev_langs:
+- CSharp
+helpviewer_keywords:
+- for keyword [C#]
 ms.assetid: 34041a40-2c87-467a-9ffb-a0417d8f67a8
 caps.latest.revision: 39
-author: "BillWagner"
-ms.author: "wiwagn"
-caps.handback.revision: 39
+author: BillWagner
+ms.author: wiwagn
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Human Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: f2f32dd4bde376dd241cf168a4f034ba8f6e9b50
+ms.lasthandoff: 03/13/2017
+
 ---
-# for (C# リファレンス)
-`for` のループを使用して、`false`指定した式がになるまでステートメントまたはステートメントのブロックを繰り返し実行できます。  この種類のループが配列の反復処理に何時間を反復処理してループにするか、先立ってがわかっている他のアプリケーションに便利です。  
+# <a name="for-c-reference"></a>for (C# リファレンス)
+`for` ループを使うと、指定した式が `false` と評価されるまで、ステートメントまたはステートメント ブロックを繰り返し実行することができます。 この種類のループは、配列の反復処理などループの反復回数が事前にわかっている用途に使用します。  
   
-## 使用例  
- 次の例では、`i` の値がコンソールに出力され、1でループの各反復処理の間にインクリメントされます。  
+## <a name="example"></a>例  
+ 次の例では、`i` の値をコンソールに出力し、ループの反復ごとにその値を 1 ずつインクリメントします。  
   
  [!code-cs[csrefKeywordsIteration#2](../../../csharp/language-reference/keywords/codesnippet/CSharp/for_1.cs)]  
   
- 前の例の `for` のステートメントは次のアクションを実行します。  
+ 前の例で `for` ステートメントによって実行されている処理は次のとおりです。  
   
-1.  最初に、可変 `i` の初期値はに設定されます。  この手順は一度だけに関係なく、数時間をループの繰り返し回数発生します。  イベントの外側として初期化するプロセスをループについて考えることができます。  
+1.  まず、変数 `i` の初期値が確立されます。 ループの反復回数に関係なく、このステップが実行されるのは 1 回だけです。 この初期化は、ループ処理プロセスの外で実行されると考えることができます。  
   
-2.  要件 \(`i <= 5`\) を評価するには、`i` の値は5.と比較されます。  
+2.  条件 (`i <= 5`) を評価するために、`i` の値が 5 と比較されます。  
   
-    -   `i` が5以下の場合、条件が `true`に評価され、次のアクションが発生します。  
+    -   `i` が 5 以下である場合、条件が `true` に評価され、次の処理が実行されます。  
   
-        1.  ループ本体の `Console.WriteLine` のステートメントは `i`の値を表示します。  
+        1.  ループ本体にある `Console.WriteLine` ステートメントによって `i` の値が表示されます。  
   
-        2.  `i` の値は1.でインクリメントされます。  
+        2.  `i` の値が 1 ずつインクリメントされます。  
   
-        3.  ループは、手順2の先頭に条件を再評価するに返されます。  
+        3.  ループがステップ 2 の最初に戻り、再度条件が評価されます。  
   
-    -   `i` が5より大きい場合、条件はと評価 `false`し、ループを終了します。  
+    -   `i` が 5 より大きい場合、条件が `false` に評価され、ループが終了します。  
   
- `i` の初期値が5よりも大きい場合は、ループの本体が一度実行されないことに注意してください。  
+ `i` の初期値が 5 より大きい場合、ループの本体は一度も実行されないことに注意してください。  
   
- `for` のステートメントで初期化子、要件、および反復子のセクションを定義します。  これらのセクションでは、通常、数時間をループが反復処理するかを判定します。  
+ すべての `for` ステートメントには、初期化子、条件、反復子のセクションが定義されています。 通常、ループの反復回数は、これらのセクションによって決まります。  
   
-```c#  
+```csharp  
 for (initializer; condition; iterator)  
     body  
 ```  
   
- セクションには、次の目的に使用されます。  
+ 各セクションには次の目的があります。  
   
--   初期化子のセクションでは、最初の条件を設定します。  こののステートメントは一度だけループに入る前に、実行をバッチ処理されます。  セクションには、次の2種類の選択項目の1つがだけ指定できます。  
+-   初期化子セクションによって初期条件が設定されます。 ループに入る前に、このセクションのステートメントが 1 回だけ実行されます。 このセクションには、次の 2 つの項目のうち、いずれか一方のみを記述することができます。  
   
-    -   最初の例として、ローカル ループ変数の宣言と初期化は、示します \(`int i = 1`\)。  変数はループにローカルで、ループの外部からアクセスできません。  
+    -   ローカル ループ変数の宣言と初期化。冒頭の例 (`int i = 1`) を参照してください。 この変数はループに対してローカルであり、ループ外からアクセスすることはできません。  
   
-    -   コンマで区切られた次の一覧からのゼロ以上のステートメントのexpressons。  
+    -   次に列挙した 0 個以上のステートメント式 (コンマ区切り)。  
   
-        -   [割り当て](../../../csharp/language-reference/operators/assignment-operator.md) のステートメント  
+        -   [代入](../../../csharp/language-reference/operators/assignment-operator.md)ステートメント  
   
         -   メソッドの呼び出し  
   
-        -   `++i` または `i++`などの [インクリメント](../../../csharp/language-reference/operators/increment-operator.md) の式のプレフィックスまたは後に追加します。  
+        -   前置または後置の[インクリメント](../../../csharp/language-reference/operators/increment-operator.md)式 (`++i`、`i++` など)  
   
-        -   `--i` または `i--`などの [デクリメント](../../../csharp/language-reference/operators/decrement-operator.md) の式のプレフィックスまたは後に追加します。  
+        -   前置または後置の[デクリメント](../../../csharp/language-reference/operators/decrement-operator.md)式 (`--i`、`i--` など)  
   
-        -   [&#91;new&#93;](../../../csharp/language-reference/keywords/new-operator.md)を使用してオブジェクトの作成  
+        -   [new](../../../csharp/language-reference/keywords/new-operator.md) を使用したオブジェクト作成  
   
-        -   [&#91;await&#93;](../../../csharp/language-reference/keywords/await.md) の式  
+        -   [await](../../../csharp/language-reference/keywords/await.md) 式  
   
--   要件のセクションでは、ループが終了するか、または再度実行する必要があるかどうかの決定を評価するブール式が含まれます。  
+-   条件セクションには、ループを終了するか再度実行するかを判断する際に評価されるブール式を記述します。  
   
--   反復子のセクションが発生して、ループ本体の各反復後に定義します。  反復子のセクションでは、次のステートメントの式のゼロ以上を、コンマで区切って含まれています:  
+-   ループ本体の反復処理が終わるたびに実行される処理を反復子セクションで定義します。 反復子セクションには、次のステートメント式を 0 個以上、コンマで区切って記述します。  
   
-    -   [割り当て](../../../csharp/language-reference/operators/assignment-operator.md) のステートメント  
+    -   [代入](../../../csharp/language-reference/operators/assignment-operator.md)ステートメント  
   
     -   メソッドの呼び出し  
   
-    -   `++i` または `i++`などの [インクリメント](../../../csharp/language-reference/operators/increment-operator.md) の式のプレフィックスまたは後に追加します。  
+    -   前置または後置の[インクリメント](../../../csharp/language-reference/operators/increment-operator.md)式 (`++i`、`i++` など)  
   
-    -   `--i` または `i--`などの [デクリメント](../../../csharp/language-reference/operators/decrement-operator.md) の式のプレフィックスまたは後に追加します。  
+    -   前置または後置の[デクリメント](../../../csharp/language-reference/operators/decrement-operator.md)式 (`--i`、`i--` など)  
   
-    -   [&#91;new&#93;](../../../csharp/language-reference/keywords/new-operator.md)を使用してオブジェクトの作成  
+    -   [new](../../../csharp/language-reference/keywords/new-operator.md) を使用したオブジェクト作成  
   
-    -   [&#91;await&#93;](../../../csharp/language-reference/keywords/await.md) の式  
+    -   [await](../../../csharp/language-reference/keywords/await.md) 式  
   
--   ループの本体は、ステートメントで、空のステートメントも、独自に作成する中かっこのゼロ以上のステートメントを囲むことで、ステートメント ブロック構成されます。  
+-   ループの本体は、単一のステートメント、空のステートメント、またはステートメント ブロックで構成され、0 個以上のステートメントを中かっこで囲んで記述します。  
   
-     `for` のループの [&#91;break&#93;](../../../csharp/language-reference/keywords/break.md) のキーワードを使用して生成したり、次のイテレーションに [&#91;continue&#93;](../../../csharp/language-reference/keywords/continue.md) のキーワードを使用してステップ インできます。  また [Goto](../../../csharp/language-reference/keywords/goto.md)、[返します。](../../../csharp/language-reference/keywords/return.md)、または [スローされます。](../../../csharp/language-reference/keywords/throw.md) のステートメントを使用してループを抜けることができます。  
+     [break](../../../csharp/language-reference/keywords/break.md) キーワードを使って `for` ループを抜けたり、[continue](../../../csharp/language-reference/keywords/continue.md) キーワードを使って次の反復処理にステップ実行したりできます。 また、[goto](../../../csharp/language-reference/keywords/goto.md)、[return](../../../csharp/language-reference/keywords/return.md)、[throw](../../../csharp/language-reference/keywords/throw.md) のいずれかのステートメントを使ってループを終了することもできます。  
   
- このトピックの最初の例は、セクションの次のオプションをする最も一般的な種類の `for` のループを示します。  
+ このトピックの冒頭の例は、きわめて標準的な `for` ループで、各セクションには次の内容が記述されています。  
   
--   初期化子はループの反復カウントを保持するローカル `i`、ループ変数の宣言と初期化します。  
+-   初期化子では、ループの反復回数を保持するローカル ループ変数 `i` を宣言して初期化しています。  
   
--   状態チェック既知の最終的な値である5.に対するループ変数の値。  
+-   条件では、既知の最終値 (5) と照らし合わせてループ変数の値をチェックしています。  
   
--   反復子のセクションでは、ループの各反復を集計するには、後置インクリメントのステートメント、`i++`を使用します。  
+-   反復子セクションでは、後置インクリメント ステートメント (`i++`) を使って、ループの反復回数をカウントしています。  
   
- 次の例では、複数のあまり一般的なオプションを示します。: 値を初期化子、および反復子のセクションの両方の `Console.WriteLine` のメソッド、および反復子のセクションの2種類の変数の値の変更を開始する初期化子のセクションの外部ループ変数に割り当てます。  
+ 次のコードはやや特殊な例です。初期化子セクションで外部ループ変数に値を代入し、初期化子セクションと反復子セクションの両方で `Console.WriteLine` メソッドを呼び出しています。さらに、反復子セクションで 2 つの変数の値を変更しています。  
   
  [!code-cs[csrefKeywordsIteration#8](../../../csharp/language-reference/keywords/codesnippet/CSharp/for_2.cs)]  
   
- `for` のステートメントを定義する式はすべて省略可能です。  たとえば、次のステートメントでは、無限ループを作成します。  
+ `for` ステートメントを定義する式はすべて省略可能です。 たとえば次のステートメントは無限ループを作成します。  
   
  [!code-cs[csrefKeywordsIteration#3](../../../csharp/language-reference/keywords/codesnippet/CSharp/for_3.cs)]  
   
-## C\# 言語仕様  
- [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec-md.md)]  
+## <a name="c-language-specification"></a>C# 言語仕様  
+ [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec_md.md)]  
   
-## 参照  
- [C\# リファレンス](../../../csharp/language-reference/index.md)   
- [C\# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
- [C\# のキーワード](../../../csharp/language-reference/keywords/index.md)   
+## <a name="see-also"></a>関連項目  
+ [C# リファレンス](../../../csharp/language-reference/index.md)   
+ [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
+ [C# のキーワード](../../../csharp/language-reference/keywords/index.md)   
  [foreach、in](../../../csharp/language-reference/keywords/foreach-in.md)   
- [for ステートメント \(C\+\+\)](/visual-cpp/cpp/for-statement-cpp)   
+ [for ステートメント (C++)](https://docs.microsoft.com/cpp/cpp/for-statement-cpp)   
  [繰り返しステートメント](../../../csharp/language-reference/keywords/iteration-statements.md)

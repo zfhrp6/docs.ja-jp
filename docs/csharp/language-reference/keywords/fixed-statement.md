@@ -1,60 +1,78 @@
 ---
 title: "fixed ステートメント (C# リファレンス) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.technology: 
-  - "devlang-csharp"
-ms.topic: "article"
-f1_keywords: 
-  - "fixed_CSharpKeyword"
-  - "fixed"
-dev_langs: 
-  - "CSharp"
-helpviewer_keywords: 
-  - "fixed キーワード [C#]"
+ms.date: 2015-07-20
+ms.prod: .net
+ms.technology:
+- devlang-csharp
+ms.topic: article
+f1_keywords:
+- fixed_CSharpKeyword
+- fixed
+dev_langs:
+- CSharp
+helpviewer_keywords:
+- fixed keyword [C#]
 ms.assetid: 7ea6db08-ad49-4a7a-b934-d8c4acad1c3a
 caps.latest.revision: 24
-author: "BillWagner"
-ms.author: "wiwagn"
-caps.handback.revision: 24
+author: BillWagner
+ms.author: wiwagn
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Human Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: ba0099b812de1dbcfebe4943c0fe36598f102169
+ms.lasthandoff: 03/13/2017
+
 ---
-# fixed ステートメント (C# リファレンス)
-`fixed` ステートメントは、移動可能な変数がガベージ コレクターにより再配置されることを防ぎます。  `fixed` ステートメントは、[unsafe](../../../csharp/language-reference/keywords/unsafe.md) コンテキストでのみ使用できます。  `Fixed` を使用して、[固定サイズ バッファー](../../../csharp/programming-guide/unsafe-code-pointers/fixed-size-buffers.md)を作成することもできます。  
+# <a name="fixed-statement-c-reference"></a>fixed ステートメント (C# リファレンス)
+`fixed` ステートメントは、移動可能な変数がガベージ コレクターにより再配置されることを防ぎます。 `fixed` ステートメントは、[unsafe](../../../csharp/language-reference/keywords/unsafe.md) コンテキストでのみ許可されます。 `Fixed` は、[固定サイズ バッファー](../../../csharp/programming-guide/unsafe-code-pointers/fixed-size-buffers.md)の作成にも使うことができます。  
   
- `fixed` ステートメントは、マネージ変数へのポインターを設定し、ステートメントの実行時にマネージ変数を "固定" します。  `fixed` がない場合、ガベージ コレクションが予期できないかたちで移動可能なマネージ変数を再配置するため、マネージ変数へのポインターはほとんど役に立ちません。  C\# コンパイラの場合、`fixed` ステートメントでは、マネージ変数にポインターを割り当てることだけができます。  
+ `fixed` ステートメントは、マネージ変数へのポインターを設定し、ステートメントの実行中にその変数を "固定" します。 `fixed` を指定しないと、ガベージ コレクションが変数を予期せず再配置するため、移動可能なマネージ変数へのポインターはほとんど役に立ちません。 C# コンパイラでは、`fixed` ステートメントでマネージ変数へのポインターを割り当てることだけができます。  
   
  [!code-cs[csrefKeywordsFixedLock#1](../../../csharp/language-reference/keywords/codesnippet/CSharp/fixed-statement_1.cs)]  
   
- ポインターは、配列、文字列、固定サイズ バッファー、または変数のアドレスを使用して初期化できます。  次の例は、変数のアドレス、配列、および文字列を使用方法を示しています。  固定サイズ バッファーの詳細については、「[固定サイズ バッファー](../../../csharp/programming-guide/unsafe-code-pointers/fixed-size-buffers.md)」を参照してください。  
+ 配列、文字列、固定サイズ バッファー、または変数のアドレスを使って、ポインターを初期化できます。 次の例では、変数のアドレス、配列、および文字列の使い方を示します。 固定サイズ バッファーについて詳しくは、「[固定サイズ バッファー](../../../csharp/programming-guide/unsafe-code-pointers/fixed-size-buffers.md)」をご覧ください。  
   
  [!code-cs[csrefKeywordsFixedLock#2](../../../csharp/language-reference/keywords/codesnippet/CSharp/fixed-statement_2.cs)]  
   
- 同じ型の場合は、複数のポインターを初期化できます。  
+ すべてが同じ型であれば、複数のポインターをまとめて初期化できます。  
   
-```  
+```csharp
 fixed (byte* ps = srcarray, pd = dstarray) {...}  
-```  
+```
   
- 型の異なるポインターを初期化するには、次の例のように、`fixed` ステートメントを単純に入れ子にします。  
+ 異なる型のポインターを初期化するには、次の例で示すように、`fixed` ステートメントを入れ子にします。  
   
  [!code-cs[csrefKeywordsFixedLock#3](../../../csharp/language-reference/keywords/codesnippet/CSharp/fixed-statement_3.cs)]  
   
- ステートメントのコードを実行すると、固定された変数の固定が解除され、ガベージ コレクションの対象になります。  そのため、`fixed` ステートメントの外部にある変数へのポインターは指定しないでください。  
+ ステートメント内のコードの実行が済むと、固定された変数は固定を解除されて、ガベージ コレクションの対象になります。 そのため、`fixed` ステートメントの外側ではこれらの変数を参照しないでください。  
   
 > [!NOTE]
 >  fixed ステートメントで初期化されたポインターは変更できません。  
   
- unsafe モードでは、スタックにメモリを割り当てることができます。スタックは、ガベージ コレクションの対象にはならないので、固定は必要ありません。  詳細については、「[stackalloc \(C\# リファレンス\)](../../../csharp/language-reference/keywords/stackalloc.md)」を参照してください。  
+ unsafe モードでは、スタック上のメモリを割り当てることができ、スタックはガベージ コレクションの対象にならないので、固定する必要はありません。 詳しくは、「[stackalloc](../../../csharp/language-reference/keywords/stackalloc.md)」をご覧ください。  
   
-## 使用例  
+## <a name="example"></a>例  
  [!code-cs[csrefKeywordsFixedLock#4](../../../csharp/language-reference/keywords/codesnippet/CSharp/fixed-statement_4.cs)]  
   
-## C\# 言語仕様  
- [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec-md.md)]  
+## <a name="c-language-specification"></a>C# 言語仕様  
+ [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec_md.md)]  
   
-## 参照  
- [C\# リファレンス](../../../csharp/language-reference/index.md)   
- [C\# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
- [C\# のキーワード](../../../csharp/language-reference/keywords/index.md)   
- [安全でない](../../../csharp/language-reference/keywords/unsafe.md)   
+## <a name="see-also"></a>関連項目  
+ [C# リファレンス](../../../csharp/language-reference/index.md)   
+ [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
+ [C# のキーワード](../../../csharp/language-reference/keywords/index.md)   
+ [unsafe](../../../csharp/language-reference/keywords/unsafe.md)   
  [固定サイズ バッファー](../../../csharp/programming-guide/unsafe-code-pointers/fixed-size-buffers.md)

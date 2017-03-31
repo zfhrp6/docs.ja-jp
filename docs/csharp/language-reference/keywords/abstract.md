@@ -1,93 +1,111 @@
 ---
 title: "abstract (C# リファレンス) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.technology: 
-  - "devlang-csharp"
-ms.topic: "article"
-f1_keywords: 
-  - "abstract"
-  - "abstract_CSharpKeyword"
-dev_langs: 
-  - "CSharp"
-helpviewer_keywords: 
-  - "abstract キーワード [C#]"
+ms.date: 2015-07-20
+ms.prod: .net
+ms.technology:
+- devlang-csharp
+ms.topic: article
+f1_keywords:
+- abstract
+- abstract_CSharpKeyword
+dev_langs:
+- CSharp
+helpviewer_keywords:
+- abstract keyword [C#]
 ms.assetid: b0797770-c1f3-4b4d-9441-b9122602a6bb
 caps.latest.revision: 24
-author: "BillWagner"
-ms.author: "wiwagn"
-caps.handback.revision: 24
+author: BillWagner
+ms.author: wiwagn
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Human Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: acb9c5748addd75f741e97688fca707910b042a0
+ms.lasthandoff: 03/13/2017
+
 ---
-# abstract (C# リファレンス)
-`abstract` 修飾子は、修飾対象に実装が不足しているか、不完全な実装があることを示します。  abstract 修飾子は、クラス、メソッド、プロパティ、インデクサー、およびイベントで使用できます。  クラスの宣言に `abstract` 修飾子を使用した場合、クラスは他のクラスの基本クラスとなることだけを目的とします。  抽象としてマークされているメンバー、または抽象クラスのメンバーは、抽象クラスから派生したクラスを使用して実装する必要があります。  
+# <a name="abstract-c-reference"></a>abstract (C# リファレンス)
+`abstract` 修飾子は、その修飾対象の実装が不足しているか、不完全であることを示します。 クラスやメソッド、プロパティ、インデクサー、イベントと組み合わせて abstract 修飾子を使用することができます。 クラスの宣言では、他のクラスの基底クラスとしての使用のみを意図したクラスであることを示すために `abstract` 修飾子を使います。 abstract としてマークされた (つまり抽象クラスに含まれている) メンバーは、その抽象クラスから派生したクラスで実装する必要があります。  
   
-## 使用例  
- この例では、`Square` クラスは `ShapesClass` から派生したクラスであるので、このクラスにより `Area` が実装されます。  
+## <a name="example"></a>例  
+ この例で、`Area` の機能は、`ShapesClass` から派生している `Square` クラスで実装する必要があります。  
   
  [!code-cs[csrefKeywordsModifiers#1](../../../csharp/language-reference/keywords/codesnippet/CSharp/abstract_1.cs)]  
   
- 抽象クラスには、以下に示す特徴があります。  
+ 抽象クラスには次の特徴があります。  
   
 -   抽象クラスはインスタンス化できません。  
   
--   抽象クラスは、抽象メソッドおよび抽象アクセサーを含む可能性があります。  
+-   抽象クラスには抽象メソッドとアクセサーを記述することができます。  
   
--   抽象クラスを [sealed](../../../csharp/language-reference/keywords/sealed.md) 修飾子で修飾することはできません。これは、2 つの修飾子が正反対の意味を持つためです。  `sealed` 修飾子はクラスの継承を禁止し、`abstract` 修飾子はクラスの継承を要求します。  
+-   抽象クラスに [sealed](../../../csharp/language-reference/keywords/sealed.md) 修飾子を使った変更を加えることはできません。これは、その 2 つの修飾子がまったく逆の意味を持つためです。 `sealed` 修飾子を指定したクラスは継承が禁止されるのに対し、`abstract` 修飾子を指定したクラスは継承による使用が強制されます。  
   
--   抽象クラスから派生される非抽象クラスは、継承される抽象メソッドおよび抽象アクセサーの実際の実装をすべて含んでいる必要があります。  
+-   抽象クラスから派生した具象クラスには、継承されたすべての抽象メソッドとアクセサーの実際の機能を実装する必要があります。  
   
- `abstract` 修飾子をメソッド宣言またはプロパティ宣言に使用すると、メソッドまたはプロパティに実装を含まないことを示します。  
+ メソッドまたはプロパティに機能が実装されていないことを示すには、そのメソッドまたはプロパティの宣言で `abstract` 修飾子を使います。  
   
- 抽象メソッドには、以下に示す特徴があります。  
+ 抽象メソッドには次の特徴があります。  
   
--   抽象メソッドは、暗黙的に virtual なメソッド \(仮想メソッド\) です。  
+-   抽象メソッドは、仮想メソッドの性質を暗に含んでいます。  
   
--   抽象メソッドの宣言は、抽象クラス内でだけ許可されます。  
+-   抽象メソッドの宣言は、抽象クラスでしか認められません。  
   
--   抽象メソッドの宣言では実際の実装は用意されないので、メソッドの本体はなく、メソッドの宣言は単にセミコロンで終わり、シグネチャに続く中かっこ \({ }\) はありません。  次に例を示します。  
+-   抽象メソッドの宣言には実際の機能が実装されないため、メソッドの本体はありません。つまり、メソッドの宣言は、末尾のセミコロンがあるだけで、シグネチャの後ろに中かっこ ({ }) は存在しません。 例:  
   
     ```  
     public abstract void MyMethod();  
     ```  
   
-     メソッドの実装は、非抽象クラスのメンバーとしてオーバーライドされたメソッド \([オーバーライド](../../../csharp/language-reference/keywords/override.md)\) によって提供されます。  
+     実際の機能は、オーバーライドする側のメソッド (具象クラスのメンバー) に [override](../../../csharp/language-reference/keywords/override.md) を指定して実装します。  
   
--   抽象メソッドの宣言で [static](../../../csharp/language-reference/keywords/static.md) 修飾子または [virtual](../../../csharp/language-reference/keywords/virtual.md) 修飾子を使用するとエラーになります。  
+-   抽象メソッドの宣言に [static](../../../csharp/language-reference/keywords/static.md) 修飾子や [virtual](../../../csharp/language-reference/keywords/virtual.md) 修飾子を使うのは誤りです。  
   
- 抽象プロパティは抽象メソッドと同様に動作しますが、宣言の構文および呼び出しの構文に相違があります。  
+ 抽象プロパティは、宣言と呼び出しの構文の違いを除けば、抽象メソッドと似た働きを持ちます。  
   
--   静的プロパティで `abstract` 修飾子を使用するのはエラーです。  
+-   `abstract` 修飾子を静的プロパティに対して使うのは誤りです。  
   
--   継承された抽象プロパティを派生クラス内でオーバーライドできます。オーバーライドするには、[override](../../../csharp/language-reference/keywords/override.md) 修飾子を使用するプロパティ宣言を含めます。  
+-   継承する抽象プロパティは、派生クラス内で [override](../../../csharp/language-reference/keywords/override.md) 修飾子を使ったプロパティ宣言を記述することでオーバーライドすることができます。  
   
  抽象クラスの詳細については、「[抽象クラスとシール クラス、およびクラス メンバー](../../../csharp/programming-guide/classes-and-structs/abstract-and-sealed-classes-and-class-members.md)」を参照してください。  
   
- 抽象クラスは、すべてのインターフェイス メンバーの実装を用意する必要があります。  
+ すべてのインターフェイス メンバーの機能は、抽象クラスで実装する必要があります。  
   
- インターフェイスを実装する抽象クラスは、抽象メソッドにインターフェイス メソッドを割り当てることもあります。  次に例を示します。  
+ インターフェイスを実装する抽象クラスで、インターフェイス メソッドを抽象メソッドにマップすることもできます。 例:  
   
  [!code-cs[csrefKeywordsModifiers#2](../../../csharp/language-reference/keywords/codesnippet/CSharp/abstract_2.cs)]  
   
-## 使用例  
- この例では、`DerivedClass` クラスは抽象クラス `BaseClass` の派生クラスです。  この抽象クラスには `AbstractMethod` という抽象メソッドと、`X` および `Y` という 2 つの抽象プロパティがあります。  
+## <a name="example"></a>例  
+ この例の `DerivedClass` クラスは、抽象クラス `BaseClass` から派生しています。 この抽象クラスには、`AbstractMethod` という抽象メソッドのほか、`X` と `Y` の 2 つの抽象プロパティが存在します。  
   
  [!code-cs[csrefKeywordsModifiers#3](../../../csharp/language-reference/keywords/codesnippet/CSharp/abstract_3.cs)]  
   
- 上の例で、次に示すようなステートメントを使用して抽象クラスのインスタンスの作成を試みるとします。  
+ この例の抽象クラスを次のようなステートメントでインスタンス化しようとするとどうなるかを次に示します。  
   
 ```  
 BaseClass bc = new BaseClass();   // Error  
 ```  
   
- コンパイラが 'BaseClass' 抽象クラスのインスタンスを作成できないことを知らせるエラーが表示されます。  
+ このように、抽象クラス 'BaseClass' のインスタンスをコンパイラが作成できないことを伝えるエラーが発生します。  
   
-## C\# 言語仕様  
- [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec-md.md)]  
+## <a name="c-language-specification"></a>C# 言語仕様  
+ [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec_md.md)]  
   
-## 参照  
- [C\# リファレンス](../../../csharp/language-reference/index.md)   
- [C\# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
+## <a name="see-also"></a>関連項目  
+ [C# リファレンス](../../../csharp/language-reference/index.md)   
+ [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
  [修飾子](../../../csharp/language-reference/keywords/modifiers.md)   
  [virtual](../../../csharp/language-reference/keywords/virtual.md)   
- [オーバーライド](../../../csharp/language-reference/keywords/override.md)   
- [C\# のキーワード](../../../csharp/language-reference/keywords/index.md)
+ [override](../../../csharp/language-reference/keywords/override.md)   
+ [C# のキーワード](../../../csharp/language-reference/keywords/index.md)

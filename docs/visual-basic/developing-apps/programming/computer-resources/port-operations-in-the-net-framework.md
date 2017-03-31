@@ -1,46 +1,61 @@
 ---
-title: "Port Operations in the .NET Framework with Visual Basic | Microsoft Docs"
-ms.custom: ""
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "ports, Visual Basic"
+title: "Visual Basic による .NET Framework でのポート操作 | Microsoft Docs"
+ms.custom: 
+ms.date: 2015-07-20
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-visual-basic
+ms.topic: article
+dev_langs:
+- VB
+helpviewer_keywords:
+- ports, Visual Basic
 ms.assetid: 1eba223b-7bd3-401a-b097-982bce96df1b
 caps.latest.revision: 16
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 16
----
-# Port Operations in the .NET Framework with Visual Basic
-[!INCLUDE[vs2017banner](../../../../visual-basic/developing-apps/includes/vs2017banner.md)]
+author: stevehoag
+ms.author: shoag
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Human Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: 61b91fe5f3bb016bace838b9eeabb1a59190bfe9
+ms.lasthandoff: 03/13/2017
 
-<xref:System.IO.Ports?displayProperty=fullName> 名前空間の [!INCLUDE[dnprdnshort](../../../../csharp/getting-started/includes/dnprdnshort-md.md)] クラスを使用して、コンピューターのシリアル ポートにアクセスできます。  最も重要な役割を持つのが <xref:System.IO.Ports.SerialPort> クラスです。このクラスは、同期 I\/O とイベント ドリブン I\/O、ピンの状態とブレーク状態へのアクセス、およびシリアル ドライバーのプロパティへのアクセスを提供します。  これは <xref:System.IO.Stream> オブジェクトでラップでき、<xref:System.IO.Ports.SerialPort.BaseStream%2A> プロパティを通じてアクセスできます。  <xref:System.IO.Ports.SerialPort> を <xref:System.IO.Stream> オブジェクトでラップすると、ストリームを使用するクラスでシリアル ポートにアクセスできます。  この名前空間には、シリアル ポートの制御を簡素化する列挙体が含まれています。  
+---
+# <a name="port-operations-in-the-net-framework-with-visual-basic"></a>Visual Basic による .NET Framework でのポート操作
+<xref:System.IO.Ports?displayProperty=fullName> 名前空間の [!INCLUDE[dnprdnshort](../../../../csharp/getting-started/includes/dnprdnshort_md.md)] クラスを介して、コンピューターのシリアル ポートにアクセスできます。 最も重要な役割を持つのが <xref:System.IO.Ports.SerialPort> クラスです。このクラスでは、同期 I/O とイベント ドリブン I/O のフレームワーク、ピンの状態とブレーク状態へのアクセス、およびシリアル ドライバーのプロパティへのアクセスが提供されます。 このクラスは <xref:System.IO.Stream> オブジェクト内にラップして <xref:System.IO.Ports.SerialPort.BaseStream%2A> プロパティを通じてアクセスできます。 <xref:System.IO.Ports.SerialPort> を <xref:System.IO.Stream> オブジェクト内にラップすることにより、ストリームを使用するクラスからシリアル ポートにアクセスできます。 名前空間には、シリアル ポートの制御を容易にする列挙型が含まれています。  
   
- <xref:System.IO.Ports.SerialPort> オブジェクトを作成するには、<xref:Microsoft.VisualBasic.Devices.Ports.OpenSerialPort%2A> メソッドを使用する方法が最も簡単です。  
+ <xref:System.IO.Ports.SerialPort> オブジェクトを作成する最も簡単な方法は、<xref:Microsoft.VisualBasic.Devices.Ports.OpenSerialPort%2A> メソッドを使用する方法です。  
   
 > [!NOTE]
->  [!INCLUDE[dnprdnshort](../../../../csharp/getting-started/includes/dnprdnshort-md.md)] のクラスを使用して、他の種類のポート \(パラレル ポートや USB ポートなど\) に直接アクセスすることはできません。  
+>  [!INCLUDE[dnprdnshort](../../../../csharp/getting-started/includes/dnprdnshort_md.md)] クラスを使用してパラレル ポートや USB ポートなどの他の種類のポートに直接アクセスすることはできません。  
   
-## 列挙型  
- この表は、シリアル ポートへのアクセスで使用する主要な列挙体の一覧とその説明です。  
+## <a name="enumerations"></a>列挙  
+ 次の表は、シリアル ポートへのアクセスに使用される主な列挙型を一覧にまとめ、説明を加えたものです。  
   
-|||  
-|-|-|  
-|列挙型|Description|  
-|<xref:System.IO.Ports.Handshake>|<xref:System.IO.Ports.SerialPort> オブジェクトでシリアル ポート通信の確立に使用する制御プロトコルが定められています。|  
-|<xref:System.IO.Ports.Parity>|<xref:System.IO.Ports.SerialPort> オブジェクトのパリティ ビットが定められています。|  
-|<xref:System.IO.Ports.SerialData>|<xref:System.IO.Ports.SerialPort> オブジェクトのシリアル ポートで受信した文字の種類が定められています。|  
-|<xref:System.IO.Ports.SerialError>|<xref:System.IO.Ports.SerialPort> オブジェクトで発生するエラーが定められています。|  
-|<xref:System.IO.Ports.SerialPinChange>|<xref:System.IO.Ports.SerialPort> オブジェクトで発生した変更の種類が定められています。|  
-|<xref:System.IO.Ports.StopBits>|<xref:System.IO.Ports.SerialPort> オブジェクトで使用されているストップ ビットの数が定められています。|  
+|列挙|説明|  
+|---|---|   
+|<xref:System.IO.Ports.Handshake>|<xref:System.IO.Ports.SerialPort> オブジェクトでシリアル ポート通信を確立するために使用される制御プロトコルを指定します。|  
+|<xref:System.IO.Ports.Parity>|<xref:System.IO.Ports.SerialPort> オブジェクトのパリティ ビットを指定します。|  
+|<xref:System.IO.Ports.SerialData>|<xref:System.IO.Ports.SerialPort> オブジェクトのシリアル ポートで受信した文字の型を指定します。|  
+|<xref:System.IO.Ports.SerialError>|<xref:System.IO.Ports.SerialPort> オブジェクトで発生するエラーを指定します。|  
+|<xref:System.IO.Ports.SerialPinChange>|<xref:System.IO.Ports.SerialPort> オブジェクトで発生した変更の種類を指定します。|  
+|<xref:System.IO.Ports.StopBits>|<xref:System.IO.Ports.SerialPort> オブジェクトで使用されたストップ ビットの数を指定します。|  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  <xref:Microsoft.VisualBasic.Devices.Ports>   
- [Accessing the Computer's Ports](../../../../visual-basic/developing-apps/programming/computer-resources/accessing-the-computer-s-ports.md)
+ [コンピューターのポートへのアクセス](../../../../visual-basic/developing-apps/programming/computer-resources/accessing-the-computer-s-ports.md)

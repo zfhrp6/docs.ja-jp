@@ -1,78 +1,100 @@
 ---
-title: "補間文字列 (C# および Visual Basic リファレンス) | Microsoft Docs"
-ms.date: "2017-02-03"
-ms.prod: ".net"
-ms.technology: 
-  - "devlang-csharp"
-ms.topic: "article"
-dev_langs: 
-  - "CSharp"
+title: "挿入文字列 (C#) | Microsoft Docs"
+ms.date: 2017-02-03
+ms.prod: .net
+ms.technology:
+- devlang-csharp
+ms.topic: article
+dev_langs:
+- CSharp
 ms.assetid: 324f267e-1c61-431a-97ed-852c1530742d
 caps.latest.revision: 9
-author: "BillWagner"
-ms.author: "wiwagn"
-caps.handback.revision: 9
+author: BillWagner
+ms.author: wiwagn
+translation.priority.ht:
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- ru-ru
+- zh-cn
+- zh-tw
+translation.priority.mt:
+- cs-cz
+- pl-pl
+- pt-br
+- tr-tr
+translationtype: Human Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: a3e2641e5c7cd3ce98ca869889848e8cdf4eed62
+ms.lasthandoff: 03/13/2017
+
 ---
-# 補間文字列 (C# および Visual Basic リファレンス)
-文字列の作成に使用されます。  補間文字列式は、式が含まれているテンプレート文字列のように見えます。  補間文字列式は、含まれる式を式の結果の ToString 表現に置き換えることで文字列を作成します。  引数に関しては、補間文字列は[複合書式指定](../Topic/Composite%20Formatting.md)より理解しやすいです。  補間文字列の例を次に示します。  
+# <a name="interpolated-strings-c-reference"></a>挿入文字列 (C# リファレンス)
+
+文字列の作成に使用されます。  挿入文字列は、*挿入式*が含まれているテンプレート文字列のように見えます。  挿入文字列は、含まれる挿入式をその文字列表現に置き換えた文字列を返します。  
+
+挿入文字列の引数は、[複合書式指定文字列](../../../standard/base-types/composite-format.md#composite-format-string)よりもわかりやすいものです。  たとえば、挿入文字列には、  
   
-```c#  
-Console.WriteLine($"Name = {name}, hours = {hours:hh}")  
+```csharp  
+Console.WriteLine($"Name = {name}, hours = {hours:hh}"); 
 ```  
-  
- 補間文字列の構造は、次のとおりです。  
-  
+2 つの挿入式、"{name}" と "{hours:hh}" が含まれています。 同等の複合書式指定文字列は次のとおりです。
+
+```csharp
+Console.WriteLine("Name = {0}, hours = {1:hh}", name, hours);  
 ```  
-$ " <text> { <interpolation-expression> <optional-comma-field-width> <optional-colon-format> } <text> ... } "  
-```  
-  
- 文字列リテラルを使用できる場所であればどこでも補間文字列を使用できます。  プログラムを実行すると、補間文字列リテラルを含むコードが実行されることになる場合、コードは補間式を評価することによって新しい文字列リテラルを算出します。  この計算は、補間文字列を含むコードが実行されるたびに発生します。  
-  
- 補間文字列に中かっこ "{" または "}" を含めるには、2 つの中かっこ "{{" または "}}" を使用します。  詳細については、「暗黙の型変換」を参照してください。  
-  
-## 暗黙の型変換  
- 補間文字列からの暗黙的な型変換があります。  
-  
-```c#  
-var s = $"hello, {name}" System.IFormattable s = $"Hello, {name}" System.FormattableString s = $"Hello, {name}"  
+
+挿入文字列の構造は次のとおりです。  
   
 ```  
-  
- 最初の例では、`string` 値を生成します。すべての文字列の補間値は既に計算されています。  この値は、最終的な結果であり、文字列型が含まれています。  二重中かっこ “{{“ および “}}” のすべての発生箇所は、単一の中かっこに変換されます。  
-  
- 2 番目の例では、インバリアント コンテキストを含む文字列に変換できる <xref:System.IFormattable> 変数を生成します。  これは、異なる言語で正しい数値形式とデータ形式を取得するのに役立ちます。  二重中かっこ “{{“ および “}}” のすべての出現箇所は、ToString を使って文字列を書式指定するまで、二重中かっこのままです。  含まれるすべての補間式は、{0}、\\{1\\} などに変換されます。  
-  
-```c#  
-s.ToString(null, System.Globalization.CultureInfo.InvariantCulture);  
+$"<text> {<interpolated-expression> [,<field-width>] [<:format-string>] } <text> ..."  
 ```  
+
+ここで、 
+
+- *field-width* はフィールドの文字数を示す符号付き整数です。 これが正である場合、フィールドは右揃えとなり、負である場合は左揃えとなります。 
+
+- *format-string* は、書式設定されるオブジェクトの種類に適した書式指定文字列です。 たとえば、@System.DateTime の値の場合、"D" または "d" などの、標準の日付と時刻の書式指定文字列になる可能性があります。
+
+ 文字列リテラルを使用できる場所であればどこでも補間文字列を使用できます。  この挿入文字列は、挿入文字列を含むコードが実行されるたびに評価されます。 これにより、挿入文字列の定義と評価を分離することができます。  
   
- 3 番目の例では、補間の計算によって作成されるオブジェクトを検査できるようにする <xref:System.FormattableString> を生成します。  たとえば、オブジェクトを検査し、それらが文字列としてどのように表示されるかを検査することにより、クエリを構築する場合に、インジェクション攻撃から保護されます。<xref:System.FormattableString> を使用することによって、InvariantCulture および CurrentCulture の文字列の結果の生成を簡単に操作できます。  二重中かっこ “{{“ および “}}” のすべての出現箇所は、書式指定するまで二重中かっこのままです。  含まれるすべての補間式は、{0}、\\{1\\} などに変換されます。  
+ 挿入文字列に中かっこ "{" または "}" を含めるには、2 つの中かっこ "{{" または "}}" を使用します。  詳細については、「暗黙の型変換」を参照してください。  
+
+挿入文字列には、引用符 (")、コロン (:)、コンマ (,) など、特別な意味を持つその他の文字が含まれることがあります。これらの文字がリテラル テキストに出現する場合は、エスケープする必要があります。また、これらの文字が言語要素として挿入式に含まれる場合は、かっこで区切られた式に含める必要があります。 次の例では、引用符をエスケープして、結果文字列に引用符を含めています。さらに、かっこを使用して式 `(age == 1 ? "" : "s")` を区切り、コロンが書式指定文字列の先頭として解釈されないようにしています。
+
+[!code-cs[interpolated-strings4](../../../../samples/snippets/csharp/language-reference/keywords/interpolated-strings4.cs#1)]  
+
+## <a name="implicit-conversions"></a>暗黙の型変換  
+
+挿入文字列から暗黙の型変換を行う方法は 3 種類あります。  
+
+1. 挿入文字列から @System.String への変換。 次の例では、挿入文字列式を文字列表現で置き換えた文字列が返されます。 例:
+
+   [!code-cs[interpolated-strings1](../../../../samples/snippets/csharp/language-reference/keywords/interpolated-strings1.cs#1)]  
+
+   これが、文字列解釈の最終的な結果です。 二重中かっこ “{{“ および “}}” のすべての発生箇所は、単一の中かっこに変換されます。 
+
+2. 挿入文字列から <xref:System.IFormattable> 変数への変換。これは、単一の <xref:System.IFormattable> インスタンスから、カルチャ固有のコンテンツを持った複数の結果文字列の作成を可能にするものです。 これは、個々のカルチャに適切な数値書式や日付形式などの情報を含めるのに便利です。  二重中かっこ "{{" および "}}" のすべての出現箇所は、明示的または暗黙的に @System.Object.ToString メソッドを呼び出して文字列を書式指定するまで、二重中かっこのままです。  含まれるすべての補間式は、{0}、\{1\} などに変換されます。  
+
+   次の例では、リフレクションを使用することで、挿入文字列から作成された <xref:System.IFormattable> 変数のフィールドおよびプロパティ値だけでなく、メンバーも表示しています。 さらに、<xref:System.IFormattable> 変数を @System.Console(System.String) メソッドに渡しています。
+
+   [!code-cs[interpolated-strings2](../../../../samples/snippets/csharp/language-reference/keywords/interpolated-strings2.cs#1)]  
+
+   挿入文字列の検査には、リフレクションを使用する必要があることに注意してください。 挿入文字列が @System.Console.WriteLine(System.String) などの文字列書式指定メソッドに渡されると、書式指定項目が解決され、結果文字列が返されます。 
+
+3. 挿入文字列から複合書式指定文字列を表す <xref:System.FormattableString> 変数への変換。 たとえば、複合書式指定文字列を検査し、それが結果文字列としてどのように表示されるかを検査すると、クエリを構築する場合にインジェクション攻撃を防ぐことができます。  <xref:System.FormattableString> には、@System.Globalization.InvariantCulture と @System.Globalization.CurrentCulture の結果文字列の生成に役立つ <xref:System.FormattableString.ToString> オーバーロードも含まれています。  二重中かっこ “{{“ および “}}” のすべての出現箇所は、書式指定するまで二重中かっこのままです。  含まれるすべての補間式は、{0}、\{1\} などに変換されます。  
+
+   [!code-cs[interpolated-strings3](../../../../samples/snippets/csharp/language-reference/keywords/interpolated-strings3.cs#1)]  
+
+## <a name="language-specification"></a>言語仕様  
+ [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec_md.md)]  
   
-## 例  
-  
-```c#  
-$"Name = {name}, hours = {hours:hh}" var s = $"hello, {name}" System.IFormattable s = $"Hello, {name}" System.FormattableString s = $"Hello, {name}" $"{person.Name, 20} is {person.Age:D3} year {(p.Age == 1 ? "" : "s")} old."  
-  
-```  
-  
- 補間文字列式が $ で始まり、コンマ、コロン、または閉じ中かっこを検出するまで、コンパイラがそれに含まれる補間式をバランスの取れたテキストとしてスキャンするので、含まれる補間式内の引用符を引用する必要はありません。同じ理由から、最後の例では、書式指定をコロンで開始せずに、かっこを使用して条件式 \(`p.Age == 1 ? "" : "s"`\) を補間式に含めることができるようにします。含まれる補完式の外部 \(ただし、補間文字列式の内部\) では、通常通り、引用符をエスケープします。  
-  
-## 構文  
-  
-```  
-expression: interpolated-string-expression interpolated-string-expression: interpolated-string-start interpolations interpolated-string-end interpolations: single-interpolation single-interpolation interpolated-string-mid interpolations single-interpolation: interpolation-start interpolation-start : regular-string-literal interpolation-start: expression expression , expression  
-  
-```  
-  
-## 言語仕様  
- [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec-md.md)]  
-  
- 詳細については、「[Visual Basic Language Reference](../../../visual-basic/language-reference/index.md)」を参照してください。  
-  
-## 参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.IFormattable?displayProperty=fullName>   
  <xref:System.FormattableString?displayProperty=fullName>   
- [C\# リファレンス](../../../csharp/language-reference/index.md)   
- [C\# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
- [Visual Basic Language Reference](../../../visual-basic/language-reference/index.md)   
- [Visual Basic Programming Guide](../../../visual-basic/programming-guide/index.md)
+ [C# リファレンス](../../../csharp/language-reference/index.md)   
+ [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)
+

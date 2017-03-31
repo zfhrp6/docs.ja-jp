@@ -1,33 +1,51 @@
 ---
 title: "列挙型 (C# プログラミング ガイド) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.technology: 
-  - "devlang-csharp"
-ms.topic: "article"
-dev_langs: 
-  - "CSharp"
-helpviewer_keywords: 
-  - "ビット フラグ [C#]"
-  - "C# 言語, 列挙型"
-  - "列挙型 [C#]"
-  - "列挙型 [C#]"
+ms.date: 2015-07-20
+ms.prod: .net
+ms.technology:
+- devlang-csharp
+ms.topic: article
+dev_langs:
+- CSharp
+helpviewer_keywords:
+- enumerations [C#]
+- enums [C#]
+- C# Language, enums
+- bit flags [C#]
 ms.assetid: 64a9b731-9e3c-4336-8a09-018db2aa10b7
 caps.latest.revision: 17
-author: "BillWagner"
-ms.author: "wiwagn"
-caps.handback.revision: 17
+author: BillWagner
+ms.author: wiwagn
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Human Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: 8c23c17967474af0f91c0dda6d071073234736c6
+ms.lasthandoff: 03/13/2017
+
 ---
-# 列挙型 (C# プログラミング ガイド)
-列挙型 \(列挙値または Enum と呼ばれることもあります\) により、変数に割り当てられる一連の名前付きの整数定数を効率的に定義できます。  たとえば、値が曜日を表す変数を定義する必要があるとします。  その変数が格納する有意な値は 7 つのみです。  列挙型を使用してそれらの値を定義できます。列挙型は [enum](../../csharp/language-reference/keywords/enum.md) キーワードを使用して定義されます。  
+# <a name="enumeration-types-c-programming-guide"></a>列挙型 (C# プログラミング ガイド)
+列挙型 (列挙値または Enum とも呼ばれます) を利用すると、変数に割り当てる一連の名前付き整数定数を効率的に定義できます。 たとえば、値が週の曜日を表す変数を定義するとします。 その変数が格納するのは 7 つの意味のある値だけです。 これらの値を定義するために、列挙型を利用できます。列挙型は [enum](../../csharp/language-reference/keywords/enum.md) キーワードで宣言されます。  
   
  [!code-cs[csProgGuideEnums#1](../../csharp/programming-guide/codesnippet/CSharp/enumeration-types_1.cs)]  
   
- 既定では、列挙型の各要素の基になる型は [int](../../csharp/language-reference/keywords/int.md) です。  前の例に示したように、コロンを使用することで、別の整数型を指定できます。  使用可能なすべての型の一覧については、「[enum \(C\# リファレンス\)](../../csharp/language-reference/keywords/enum.md)」を参照してください。  
+ 既定では、列挙の各要素の基になる型は [int](../../csharp/language-reference/keywords/int.md) です。 前の例のように、コロンを使用し、別の整数型を指定できます。 使用可能な型の一覧については、「[enum (C# リファレンス)](../../csharp/language-reference/keywords/enum.md)」を参照してください。  
   
- 基になる型にキャストして、基になる数値を確認するには、次の例に示すよう。  
+ 次の例のように、基になる型に型変換することで、基になる数値を確認できます。  
   
-```c#  
+```csharp  
 Days today = Days.Monday;  
 int dayNumber =(int)today;  
 Console.WriteLine("{0} is day number #{1}.", today, dayNumber);  
@@ -41,57 +59,57 @@ Console.WriteLine("{0} is month number #{1}.", thisMonth, monthNumber);
 // Dec is month number #11.  
 ```  
   
- 数値型ではなく列挙型を使用する利点は次のとおりです。  
+ 数値型ではなく列挙型を使用する利点を次に示します。  
   
--   変数に対して有効な値をクライアント コードとして明確に指定します。  
+-   変数に対して有効な値をクライアント コードのために明確に指定します。  
   
--   [!INCLUDE[vsprvs](../../csharp/includes/vsprvs-md.md)] では、IntelliSense によって定義済みの値が一覧表示されます。  
+-   [!INCLUDE[vsprvs](../../csharp/includes/vsprvs_md.md)] の IntelliSense で、定義済みの値が一覧表示されます。  
   
- 列挙子リストで要素の値を指定しない場合、値は自動的に 1 ずつインクリメントされます。  前の例では、`Days.Sunday` の値は 0、`Days.Monday` の値は 1 のようになります。  新しい `Days` オブジェクトを作成し、値を明示的に割り当てない場合、既定値は `Days.Sunday` \(0\) になります。  列挙型を作成するときに、最も論理的な既定値を選択し、値 0 を割り当てます。  これにより、作成時に値が明示的に割り当てられない場合でも、すべての列挙型にその既定値が設定されます。  
+ 列挙子一覧に要素の値を指定しないとき、値は自動的に 1 ずつ増えます。 前の例では、`Days.Sunday` の値が 0 で、`Days.Monday` の値が 1 です。その後も同様に 1 ずつ増えます。 新しい `Days` オブジェクトを作成するとき、明示的に値を割り当てない場合、`Days.Sunday` の既定値 (0) が与えられます。 列挙を作成するときは、最も論理的な既定値を選択し、それにゼロの値を与えます。 それにより、列挙を作成したときに明示的に値を割り当てない場合、すべての列挙にその既定値が与えられます。  
   
- 変数 `meetingDay` が `Days` 型の場合、\(明示的なキャストを使用せずに\) 割り当てることができるのは、`Days` で定義されている値の 1 つのみです。  ミーティングの日が変更された場合は、`Days` から `meetingDay` に新しい値を割り当てることができます。  
+ 変数 `meetingDay` の型が `Days` の場合、(明示的な型変換なしで) `Days` により定義される値の 1 つのみを割り当てることができます。 会議の日が変更されたら、`Days` から `meetingDay` に新しい値を割り当てることができます。  
   
  [!code-cs[csProgGuideEnums#4](../../csharp/programming-guide/codesnippet/CSharp/enumeration-types_2.cs)]  
   
 > [!NOTE]
->  `meetingDay` には任意の整数値を割り当てることができます。  たとえば、コード行 `meetingDay = (Days) 42` ではエラーは発生しません。  ただし、列挙型変数は列挙型で定義されている値の 1 つのみを保持すると暗黙的に予想されるため、これは実行しないでください。  列挙型の変数に任意の値を割り当てると、エラーが発生する可能性が高くなります。  
+>  任意の整数値を `meetingDay` に割り当てることができます。 たとえば、`meetingDay = (Days) 42` というコード行はエラーを生成しません。 ただし、これは行わないでください。列挙変数は列挙により定義される値の 1 つのみを保持すると暗黙的に予想されるためです。 列挙型の変数に任意の値を割り当てると、エラーが発生する可能性が高くなります。  
   
- 列挙型の列挙子リストの要素に任意の値を割り当て、計算値として使用することもできます。  
+ ある列挙型の列挙子一覧の要素に任意の値を割り当てることができます。また、計算された値を利用することもできます。  
   
  [!code-cs[csProgGuideEnums#3](../../csharp/programming-guide/codesnippet/CSharp/enumeration-types_3.cs)]  
   
-## ビット フラグとしての列挙型  
- 列挙型を使用してビット フラグを定義できます。これにより、列挙型のインスタンスは、列挙子リストで定義されている値の任意の組み合わせを格納できます   \(ただし、プログラム コードで意味を持たない、または許可されない組み合わせも存在します\)。  
+## <a name="enumeration-types-as-bit-flags"></a>ビット フラグとしての列挙型  
+ 列挙型を利用してビット フラグを定義できます。ビット フラグを定義すると、列挙型のインスタンスは列挙子一覧で定義されている値のあらゆる組み合わせを格納できます。 (もちろん、意味のない組み合わせやプログラム コードで許可されない組み合わせもあります。)  
   
- <xref:System.FlagsAttribute?displayProperty=fullName> 属性を適用し、`AND`、`OR`、`NOT`、および `XOR` の各ビット処理演算子が実行されるように値を適切に定義することで、ビット フラグ列挙体を作成できます。  ビット フラグ列挙体に、値が 0 \("フラグが設定されていない" ことを意味します\) の名前付き定数を含めます。"フラグが設定されていない" ことを意味しない場合は、フラグに値 0 を指定しないでください。  
+ ビット フラグ列挙を作成するには、<xref:System.FlagsAttribute?displayProperty=fullName> 属性を適用し、ビット処理演算の `AND`、`OR`、`NOT`、`XOR` を実行できるように値を定義します。 ビット フラグ列挙に、"フラグが設定されていない" という意味のゼロの値を持つ名前付き定数を追加します。 "フラグが設定されていない" という意味ではない場合、ゼロの値をフラグに指定しないでください。  
   
- 次の例では、`Days2` という名前の別のバージョンの `Days` 列挙型を定義しています。  `Days2` は `Flags` 属性を持ち、それぞれの値には次に大きい 2 の累乗が割り当てられます。  これにより、値が `Days2` および `Days2.Tuesday` である `Days2.Thursday` 変数を作成できます。  
+ 次の例では、`Days` 列挙の別のバージョンが定義されています。`Days2` という名前が付いています。 `Days2` に `Flags` 属性が与えられており、各値に次の大きい 2 の累乗が割り当てられています。 これにより、値が `Days2.Tuesday` と `Days2.Thursday` になる `Days2` 変数を作成できます。  
   
  [!code-cs[csProgGuideEnums#2](../../csharp/programming-guide/codesnippet/CSharp/enumeration-types_4.cs)]  
   
- 列挙型でフラグを設定するには、次の例に示すように、ビットごとの `OR` 演算子を使用します。  
+ 列挙にフラグを設定するには、次の例のように、ビット処理演算子 `OR` を利用します。  
   
  [!code-cs[csProgGuideEnums#6](../../csharp/programming-guide/codesnippet/CSharp/enumeration-types_5.cs)]  
   
- 特定のフラグが設定されているかどうかを確認するには、次の例に示すように、ビットごとの `AND` 演算子を使用します。  
+ 特定のフラグが設定されているかどうかを判断するには、次の例のように、ビット処理演算 `AND` を利用します。  
   
  [!code-cs[csProgGuideEnums#7](../../csharp/programming-guide/codesnippet/CSharp/enumeration-types_6.cs)]  
   
- <xref:System.FlagsAttribute?displayProperty=fullName> 属性を使用して列挙型を定義するときに考慮する内容の詳細については、「<xref:System.Enum?displayProperty=fullName>」を参照してください。  
+ <xref:System.FlagsAttribute?displayProperty=fullName> 属性で列挙型を定義するときに考慮する項目に関する詳細については、「<xref:System.Enum?displayProperty=fullName>」を参照してください。  
   
-## System.Enum メソッドを使用した列挙値の検出と操作  
- 列挙値はすべて <xref:System.Enum?displayProperty=fullName> 型のインスタンスです。  <xref:System.Enum?displayProperty=fullName> から新しいクラスを派生させることはできませんが、そのメソッドを使用して、列挙定数インスタンスの値に関する情報を検出し、その値を操作できます。  
+## <a name="using-the-systemenum-methods-to-discover-and-manipulate-enum-values"></a>System.Enum メソッドを利用して列挙値を検出し、操作する  
+ すべての列挙は、<xref:System.Enum?displayProperty=fullName> 型のインスタンスです。 <xref:System.Enum?displayProperty=fullName> から新しいクラスを派生させることはできませんが、そのメソッドを利用し、列挙インスタンスの値に関する情報を検出し、操作できます。  
   
  [!code-cs[csProgGuideEnums#5](../../csharp/programming-guide/codesnippet/CSharp/enumeration-types_7.cs)]  
   
  詳細については、「<xref:System.Enum?displayProperty=fullName>」を参照してください。  
   
- 拡張メソッドを使用して、列挙型の新しいメソッドを作成することもできます。  詳細については、「[方法 : 列挙型対応の新しいメソッドを作成する](../../csharp/programming-guide/classes-and-structs/how-to-create-a-new-method-for-an-enumeration.md)」を参照してください。  
+ 拡張メソッドを利用して列挙に新しいメソッドを作成することもできます。 詳細については、「[方法 : 列挙型対応の新しいメソッドを作成する](../../csharp/programming-guide/classes-and-structs/how-to-create-a-new-method-for-an-enumeration.md)」を参照してください。  
   
-## 参考書籍の該当する章  
- [変数に関する詳細](http://go.microsoft.com/fwlink/?LinkId=221230) [先頭 Visual C\# 2010](http://go.microsoft.com/fwlink/?LinkId=221214)  
+## <a name="featured-book-chapter"></a>参考書籍の該当する章  
+ 『[Beginning Visual C# 2010](http://go.microsoft.com/fwlink/?LinkId=221214)』 (Visual C# 2010 の開始) の「[More About Variables](http://go.microsoft.com/fwlink/?LinkId=221230)」 (変数の詳細)  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Enum?displayProperty=fullName>   
- [C\# プログラミング ガイド](../../csharp/programming-guide/index.md)   
+ [C# プログラミング ガイド](../../csharp/programming-guide/index.md)   
  [enum](../../csharp/language-reference/keywords/enum.md)
