@@ -36,7 +36,7 @@ ms.lasthandoff: 03/13/2017
 
 ---
 # <a name="walkthrough-office-programming-c-and-visual-basic"></a>チュートリアル: Office のプログラミング (C# および Visual Basic)
-[!INCLUDE[vs_dev10_long](../../../csharp/programming-guide/interop/includes/vs_dev10_long_md.md)] には、Microsoft Office のプログラミングを改善する C# および Visual Basic の新機能が導入されています。 各言語に、他の言語では既に存在する機能が追加されています。  
+Visual Studio には、Microsoft Office のプログラミングを改善する C# および Visual Basic の新機能が導入されています。 各言語に、他の言語では既に存在する機能が追加されています。  
   
  C# の新機能には、名前付き引数と省略可能な引数、型が `dynamic` の戻り値、COM プログラミングでの `ref` キーワードを省略し、インデックス付きプロパティにアクセスする機能などがあります。 Visual Basic の新機能には、自動実装プロパティ、ラムダ式内のステートメント、コレクション初期化子などがあります。  
   

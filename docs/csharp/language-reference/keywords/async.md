@@ -61,7 +61,7 @@ string contents = await contentsTask;
  `async` は、メソッド、ラムダ式、または匿名メソッドを修飾する場合にのみキーワードとなるため、コンテキスト キーワードです。 それ以外の場合は、識別子として解釈されます。  
   
 ## <a name="example"></a>例  
- 次の例は、非同期のイベント ハンドラー `StartButton_Click` と非同期メソッド `ExampleMethodAsync` との間の制御構造および制御フローを示しています。 非同期メソッドの結果は、ダウンロードされた web サイトの長さです。 このコードは、[!INCLUDE[vs_dev12](../../../csharp/getting-started/includes/vs_dev12_md.md)] で Windows Presentation Foundation (WPF) アプリまたは Windows ストア アプリを作成する場合に適しています。アプリの設定に関するコード内のコメントを参照してください。  
+ 次の例は、非同期のイベント ハンドラー `StartButton_Click` と非同期メソッド `ExampleMethodAsync` との間の制御構造および制御フローを示しています。 非同期メソッドの結果は、ダウンロードされた web サイトの長さです。 このコードは、Visual Studio で Windows Presentation Foundation (WPF) アプリまたは Windows ストア アプリを作成する場合に適しています。アプリの設定に関するコード内のコメントを参照してください。  
   
 ```csharp  
 // You can run this code in Visual Studio 2013 as a WPF app or a Windows Store app.  
