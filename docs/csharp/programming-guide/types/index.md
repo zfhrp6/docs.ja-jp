@@ -36,9 +36,9 @@ translation.priority.mt:
 - pt-br
 - tr-tr
 translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 5fbd7c5e08d862f079e0596cbe394afd0538bccc
-ms.lasthandoff: 03/13/2017
+ms.sourcegitcommit: 7e33ed084c560470a486ebbb25035a59ddc18565
+ms.openlocfilehash: 61f23020b8a5dd0136d54e0a2ceb925bebca88cc
+ms.lasthandoff: 03/31/2017
 
 ---
 # <a name="types-c-programming-guide"></a>型 (C# プログラミング ガイド)
@@ -202,9 +202,7 @@ stringList.Add(4);
 -   [匿名型](../../../csharp/programming-guide/classes-and-structs/anonymous-types.md)  
   
 -   [ジェネリック](../../../csharp/programming-guide/generics/index.md)  
-  
--   『[Beginning Visual C# 2010 (Visual C# 2010 の開始)](http://go.microsoft.com/fwlink/?LinkId=221214)』の「[Variables and Expressions (変数と式)](http://go.microsoft.com/fwlink/?LinkId=221228)」  
-  
+
 ## <a name="c-language-specification"></a>C# 言語仕様  
  [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec_md.md)]  
   
