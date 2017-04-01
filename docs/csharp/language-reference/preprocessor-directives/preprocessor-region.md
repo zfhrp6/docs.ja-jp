@@ -39,8 +39,7 @@ ms.lasthandoff: 03/13/2017
 `#region` を使用すると、コード ブロックを指定できます。このブロックは、Visual Studio コード エディターの[アウトライン](https://docs.microsoft.com/visualstudio/ide/outlining)機能を使用して展開や折りたたみを行うことができます。 コード ファイルが長い場合は、現在操作している部分に集中できるように 1 つ以上の領域を折りたたむ (非表示にする) ことができると便利です。 次の例では、領域を定義する方法を示します。  
   
 ```  
-  
-      #region MyClass definition  
+#region MyClass definition  
 public class MyClass   
 {  
     static void Main()   
@@ -59,3 +58,4 @@ public class MyClass
  [C# リファレンス](../../../csharp/language-reference/index.md)   
  [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
  [C# プリプロセッサ ディレクティブ](../../../csharp/language-reference/preprocessor-directives/index.md)
+
