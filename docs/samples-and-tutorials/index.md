@@ -10,8 +10,9 @@ ms.prod: .net
 ms.devlang: dotnet
 ms.assetid: 617310e7-336b-4864-8dab-7e2021512929
 translationtype: Human Translation
-ms.sourcegitcommit: 2ad428dcda9ef213a8487c35a48b33929259abba
-ms.openlocfilehash: f44193d8f7bc9f67acb8b04966e02beca18a0653
+ms.sourcegitcommit: ff143583ba62fc1d82561e739a75107e50ebee88
+ms.openlocfilehash: c10736e81d4f43d6ba70b71c25878dc4068a4a10
+ms.lasthandoff: 03/20/2017
 
 ---
 
@@ -58,7 +59,7 @@ ASP.NET Core の学習に最適なリソースは、[ASP.NET のサイト](https
 
 **[デリゲートとイベント](../csharp/delegates-events.md)**
 
-このサンプルは、C# デリゲートとイベントの構文および機能を示しています。 作成するコードの完成版は、[GitHub の core-docs リポジトリ](https://github.com/dotnet/docs/tree/master/samples/csharp/delegates-and-events)にあります。 イベントに重点を置いた&2; つ目のサンプルも、[同じリポジトリ](https://github.com/dotnet/docs/tree/master/samples/csharp/events)にあります。
+このサンプルは、C# デリゲートとイベントの構文および機能を示しています。 作成するコードの完成版は、[GitHub の core-docs リポジトリ](https://github.com/dotnet/docs/tree/master/samples/csharp/delegates-and-events)にあります。 イベントに重点を置いた 2 つ目のサンプルも、[同じリポジトリ](https://github.com/dotnet/docs/tree/master/samples/csharp/events)にあります。
 
 **[式ツリー](../csharp/expression-trees.md)**
 
@@ -86,6 +87,14 @@ ASP.NET Core の学習に最適なリソースは、[ASP.NET のサイト](https
 
 このチュートリアルでは、ASP.NET Core のマイクロ サービスの構築と、これを Docker でホストする方法について説明します。 作成するコードの完成版は、[GitHub の core-docs リポジトリ](https://github.com/dotnet/docs/tree/master/samples/csharp/getting-started/WeatherMicroservice)にあります。
 
+**[Visual Studio for Mac を使用した macOS での .NET Core の概要](../core/tutorials/using-on-mac-vs.md)**
+
+このチュートリアルでは、Visual Studio for Mac を使用した、単純な .NET Core コンソール アプリケーションを構築する方法を示します。
+
+**[Visual Studio for Mac を使用した macOS での完全な .NET Core ソリューションの構築](../core/tutorials/using-on-mac-vs-full-solution.md)**
+
+このチュートリアルでは、再利用可能なライブラリと単体テストを含む完全な .NET Core ソリューションを構築する方法を示します。
+
 ## <a name="deploying-to-containers"></a>コンテナーへの展開
 
 **[Windows Docker コンテナーでの ASP.NET MVC アプリケーションの実行](../framework/docker/aspnetmvc.md)**
@@ -96,8 +105,3 @@ ASP.NET Core の学習に最適なリソースは、[ASP.NET のサイト](https
 **[Windows コンテナーでの .NET Framework コンソール アプリケーションの実行](../framework/docker/console.md)**
 
 このチュートリアルでは、Windows コンテナーで既存のコンソール アプリケーションを展開する方法について説明します。 作成するコードの完成版は、[GitHub の core-docs リポジトリ](https://github.com/dotnet/docs/tree/master/samples/framework/docker/ConsoleRandomAnswerGenerator)にあります。
-
-
-<!--HONumber=Jan17_HO3-->
-
-

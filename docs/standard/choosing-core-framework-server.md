@@ -11,15 +11,15 @@ ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: 155553e4-89a2-418d-be88-4e75f6c3cc69
 translationtype: Human Translation
-ms.sourcegitcommit: 053e296db67b9dde23c4d6295dbc7246d2b486ed
-ms.openlocfilehash: 816fb524000eb96ed5a157934cabc51b90f11dc0
-ms.lasthandoff: 02/23/2017
+ms.sourcegitcommit: 405bac1faa446687a4acdcf2d5536ee31f31f246
+ms.openlocfilehash: 7151c87d373afce88c83239499ba33980383ab98
+ms.lasthandoff: 03/15/2017
 
 ---
 
 # <a name="choosing-between-net-core-and-net-framework-for-server-apps"></a>サーバー アプリ用 .NET Core と .NET Framework の選択
 
-.NET を使用してサーバー側のアプリケーションをビルドする場合に選択できるサポート対象ランタイムには、.NET Framework と .NET Core の&2; つがあります。 両方で同じ .NET プラットフォーム コンポーネントの多くが共有され、2 つの間でコードを共有することができます。 ただし、2 つには基本的な違いがあり、どちらを選択するかは実行内容によって決まります。  この記事では、それぞれを使用するタイミングに関するガイダンスを提供します。
+.NET を使用してサーバー側のアプリケーションをビルドする場合に選択できるサポート対象ランタイムには、.NET Framework と .NET Core の 2 つがあります。 両方で同じ .NET プラットフォーム コンポーネントの多くが共有され、2 つの間でコードを共有することができます。 ただし、2 つには基本的な違いがあり、どちらを選択するかは実行内容によって決まります。  この記事では、それぞれを使用するタイミングに関するガイダンスを提供します。
 
 次のような場合、サーバー アプリケーションには .NET Core を使用する必要があります。
 
@@ -93,6 +93,8 @@ ms.lasthandoff: 02/23/2017
 * WCF サービスの実装。 .NET Core から WCF サービスを利用する [WCF クライアント ライブラリ](https://github.com/dotnet/wcf)がある場合でも、2016 年 6 月の時点では、WCF サーバーの実装は .NET Framework でのみ可能です。 このシナリオは .NET Core の現在の計画に含まれていませんが、将来に向けて検討中です。
 
 * ワークフローに関連するサービス: .Windows Workflow Foundation (WF)、ワークフロー サービス (1 つのサービスに WCF と WF) および WCF Data Services (旧称: "ADO.NET Data Services") は、NET Framework でのみ使用できます。.NET Core で使用できるようにする予定はありません。
+
+* Windows Presentation Foundation (WPF) と Windows フォーム: WPF アプリケーションと Windows フォーム アプリケーションは、.NET Framework でのみ使うことができます。 .NET Core に移植する計画はありません。 
 
 * 言語サポート: 現在、Visual Basic と F# は .NET Core でサポートされていませんが、Visual Studio 2017 以降のバージョンの Visual Studio ではどちらもサポートされる予定です。
 

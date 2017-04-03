@@ -1,103 +1,108 @@
 ---
 title: ".NET Core コマンド ライン インターフェイス (CLI) ツール | Microsoft Docs"
-description: "コマンドライン インターフェイス (CLI) とその主要な機能の概要"
+description: "コマンドライン インターフェイス (CLI) ツールとその機能の概要です。"
 keywords: "CLI, CLI ツール, .NET, .NET Core"
 author: blackdwarf
 ms.author: mairaw
-ms.date: 03/06/2017
+ms.date: 03/20/2017
 ms.topic: article
 ms.prod: .net-core
 ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: 7c5eee9f-d873-4224-8f5f-ed83df329a59
 translationtype: Human Translation
-ms.sourcegitcommit: 195664ae6409be02ca132900d9c513a7b412acd4
-ms.openlocfilehash: 4e3137d8506342662d145481d5e9fde1d53b9ba3
-ms.lasthandoff: 03/07/2017
+ms.sourcegitcommit: 4a1f0c88fb1ccd6694f8d4f5687431646adbe000
+ms.openlocfilehash: d00277ceb7fd1c8a7186da330ab2bc4ad40c59a7
+ms.lasthandoff: 03/22/2017
 
 ---
 
-# <a name="net-core-command-line-interface-tools-net-core-sdk-10-tools"></a>.NET Core コマンドライン インターフェイス ツール (.NET Core SDK 1.0 ツール)
+# <a name="net-core-command-line-interface-cli-tools"></a>.NET Core コマンドライン インターフェイス (CLI) ツール
 
-.NET Core コマンドライン インターフェイス (CLI) は、.NET Core アプリケーションを開発するための新しい基本クロスプラットフォーム ツールチェーンです。 これは、統合開発環境 (IDE)、エディター、ビルド オーケストレーターなど、他の上位レベルのツールがビルド時に基にする主要なレイヤーなので、"基本" です。 
-
-既定ではクロスプラットフォームでもあり、サポートされている各プラットフォーム上に同じアクセス領域を持ちます。 つまり、ツールの使用方法を学習するとき、サポートされているいずれのプラットフォームからも同じ方法でツールを使用できます。 
+.NET Core コマンドライン インターフェイス (CLI) は、.NET アプリケーションを開発するための新しいクロスプラットフォーム ツールチェーンです。 CLI は、統合開発環境 (IDE)、エディター、ビルド オーケストレーターなど、上位レベル ツールの基になるものです。
 
 ## <a name="installation"></a>インストール
-他のツールと同様に、最初にコンピューターにツールをインストールする必要があります。 シナリオにもよりますが、ネイティブ インストーラーで CLI をインストールしたり、インストール シェル スクリプトを利用したりできます。
 
-開発者のコンピューターでは、ネイティブ インストーラーが利用されることが多いです。 CLI はサポートされるプラットフォームのネイティブ インストール メカニズムにより配信されます。たとえば、Ubuntu の場合は DEB パッケージ、Windows の場合は MSI バンドルです。 これらのインストーラーは、インストール直後、ユーザーが CLI を使用するために必要とする環境をインストールし、設定します。 ただし、コンピューター上で管理者特権も必要になります。 [.NET Core の概要ページ](https://aka.ms/dotnetcoregs)にインストール指示があります。
+ネイティブ インストーラーを使用するか、インストール シェル スクリプトを使用します。
 
-一方で、インストール スクリプトの場合、管理者特権は必要ありません。 ただし、いかなる前提条件もコンピューターにインストールされません。前提条件はすべてユーザーが手動でインストールする必要があります。 スクリプトは、通常、管理者特権なしでツールをインストールするとき、ビルド サーバーを設定するために利用されます (上の前提条件警告に注意してください)。 詳細については、[インストール スクリプト参照](dotnet-install-script.md)に関するトピックを参照してください。 継続的インテグレーション (CI) ビルド サーバーで CLI を設定する方法については、[CLI および CI サーバー](using-ci-with-cli.md)に関するトピックを参照してください。 
+* ネイティブ インストーラーは主に開発者のコンピューター上で使用され、それぞれサポートされるプラットフォームのネイティブ インストール メカニズムを使用します。たとえば、Ubuntu の場合は DEB パッケージ、Windows の場合は MSI バンドルを使用します。 これらのインストーラーでは、開発者がすぐに使用できる環境をインストールして構成します。ただし、コンピューターに対する管理者特権が必要になります。 インストール手順は、[.NET Core のインストール ガイド](https://aka.ms/dotnetcoregs)で確認できます。
+* シェル スクリプトは主に管理者特権なしでツールをインストールするときや、ビルド サーバーを設定するために使用されます。 インストール スクリプトの場合、前提条件はインストールされないため、手動でインストールする必要があります。 詳細については、[インストール スクリプト参照](dotnet-install-script.md)に関するトピックを参照してください。 継続的インテグレーション (CI) ビルド サーバーで CLI を設定する方法については、「[継続的インテグレーション (CI) で .NET Core SDK とツールを使用する](using-ci-with-cli.md)」を参照してください。
 
-既定では、CLI は SxS (side-by-side/横並び) 方式でインストールを実行します。 つまり、1 台のコンピューター上で複数のバージョンの CLI ツールが共存できます。 正しいバージョンを使用する方法の詳細については、[ドライバーに関するセクション](#driver)を参照してください。 
+既定では、CLI は SxS (side-by-side) 方式でインストールを実行するため、複数のバージョンの CLI ツールが 1 台のコンピューターで共存できます。 複数のバージョンがインストールされたコンピューターで使用するバージョンの決定方法について詳しくは、「[ドライバー](#driver)」セクションを参照してください。
 
-### <a name="what-commands-come-in-the-box"></a>既定で含まれるコマンド
+## <a name="cli-commands"></a>CLI コマンド
+
 既定では、次のコマンドがインストールされます。
 
+### <a name="basic-commands"></a>基本的なコマンド
+
 * [new](dotnet-new.md)
-* [migrate](dotnet-migrate.md)
 * [restore](dotnet-restore.md)
-* [run](dotnet-run.md)
 * [build](dotnet-build.md)
-* [test](dotnet-test.md)
 * [publish](dotnet-publish.md)
+* [run](dotnet-run.md)
+* [test](dotnet-test.md)
+* [vstest](dotnet-vstest.md)
 * [pack](dotnet-pack.md)
+* [migrate](dotnet-migrate.md)
+* [clean](dotnet-clean.md)
+* [sln](dotnet-sln.md)
 
-また、プロジェクトごとに追加のコマンドをインポートしたり、独自のコマンドを追加することもできます。 さらなる詳細については、[機能拡張に関するセクション](#extensibility)を参照してください。 
+### <a name="project-modification-commands"></a>プロジェクトの変更コマンド
 
-## <a name="working-with-the-cli"></a>CLI の操作
+* [add package](dotnet-add-package.md)
+* [add reference](dotnet-add-reference.md)
+* [remove package](dotnet-remove-package.md)
+* [remove reference](dotnet-remove-reference.md)
+* [list reference](dotnet-list-reference.md)
 
-さらなる詳細に進む前に、10,000 フィート ビューから CLI の操作がどのように見えるか確認しましょう。 次の例では、CLI 標準インストールから複数のコマンドを使用して、新しい単純なコンソール アプリケーションを初期化し、依存関係を復元して、アプリケーションをビルドしてから実行します。 
+### <a name="advanced-commands"></a>高度なコマンド
+
+* [nuget delete](dotnet-nuget-delete.md)
+* [nuget locals](dotnet-nuget-locals.md)
+* [nuget push](dotnet-nuget-push.md)
+* [msbuild](dotnet-msbuild.md)
+* [dotnet install script](dotnet-install-script.md)
+
+CLI では、プロジェクトに追加のツールを指定できるようにする拡張モデルが適用されます。 詳細については、「[.NET Core CLI の拡張モデル](extensibility.md)」を参照してください。
+
+## <a name="command-structure"></a>コマンド構造
+
+CLI コマンド構造は、[ドライバー ("dotnet")](#driver) と[コマンド (または "動詞")](#command-verb)、また場合によってはコマンドの[引数](#arguments)と[オプション](#options)で構成されます。 *my_app* という名前のディレクトリから実行する場合、次のコマンドで示されているように、新しいコンソール アプリの作成やコマンド ラインからの実行など、ほとんどの CLI 操作でこのパターンが見られます。
 
 ```console
 dotnet new console
 dotnet restore
-dotnet build --output /stuff
-dotnet /stuff/new.dll
+dotnet build --output /build_output
+dotnet /build_output/my_app.dll
 ```
 
-前の例に示されるように、CLI ツールの使用方法にはパターンがあります。 そのパターン内で、各コマンドの次の&3; つの主要部分を特定できます。
-
-1. [ドライバー ("dotnet")](#driver)
-2. [コマンド ("動詞")](#the-verb)
-3. [コマンド引数](#the-arguments)
-
 ### <a name="driver"></a>ドライバー
-ドライバーの名前は [dotnet](dotnet.md) です。 これは最初に呼び出す部分です。 ドライバーには、次の&2; つの役割があります。
 
-1. ポータブル アプリの実行
-2. 動詞の実行
+ドライバーは [dotnet](dotnet.md) という名前で、2 つの役割 ([フレームワークに依存するアプリ](../app-types.md)の実行と、コマンドの実行) があります。 `dotnet` がコマンドなしで使用されるのは、アプリケーションの起動に使用される場合のみです。
 
-その役割は、コマンドラインで指定されている内容によって異なります。 最初のケースでは、`dotnet /path/to/your.dll` のように、`dotnet` が実行するポータブル アプリ DLL を指定します。 
+フレームワークに依存するアプリを実行するには、`dotnet /path/to/my_app.dll` など、ドライバーの後にアプリを指定します。 アプリの DLL が存在するフォルダーからコマンドを実行する場合は、`dotnet my_app.dll` を実行するだけです。
 
-2 つ目のケースでは、ドライバーは指定されたコマンドを呼び出そうとします。 これにより、CLI コマンド実行プロセスが起動します。 最初に、ドライバーは必要なツールのバージョンを決定します。 `version` プロパティを使用すると、[global.json](global-json.md) ファイルでバージョンを指定できます。 このプロパティを使用できない場合、ドライバーはディスク上にインストールされた最新バージョンを見つけ、そのバージョンを使用します。 バージョンが決定されたら、コマンドを実行します。 
+ドライバーにコマンドを指定すると、`dotnet.exe` は CLI コマンドの実行プロセスを開始します。 最初に、ドライバーは使用するツールのバージョンを決定します。 コマンド オプションでバージョンが指定されていない場合、ドライバーは使用可能な最新バージョンを使用します。 インストール済みの最新バージョン以外のバージョンを指定するには、`--fx-version <VERSION>` オプションを使用します (「[dotnet コマンド](dotnet.md)」を参照)。 SDK のバージョンが決定されたら、ドライバーはコマンドを実行します。
 
-### <a name="the-verb"></a>"動詞"
-動詞は、単にアクションを実行するコマンドです。 `dotnet build` はコードをビルドします。 `dotnet publish` はコードを発行します。 動詞は、規則 `dotnet-{verb}` に従って名前付けされるコンソール アプリケーションとして実装されます。 すべてのロジックは、動詞を表すコンソール アプリケーションで実装されます。 
+### <a name="command-verb"></a>コマンド ("動詞")
 
-### <a name="the-arguments"></a>引数
-コマンドラインで渡す引数は、呼び出される実際の動詞/コマンドへの引数です。 たとえば、`dotnet publish --output publishedapp` と入力すると、`--output` 引数が `publish` コマンドに渡されます。 
+コマンド (または "動詞") は、単にアクションを実行するコマンドです。 たとえば、`dotnet build` はコードをビルドします。 `dotnet publish` はコードを発行します。 コマンドは、`dotnet-{verb}` 規則を使用してコンソール アプリケーションとして実装されます。 
 
-## <a name="types-of-application-portability"></a>アプリケーションの移植性の種類
-CLI は、次の&2; つの主な方法でアプリケーションを移植できるようにします。
+### <a name="arguments"></a>引数
 
-1. .NET Core がインストールされている任意の場所で実行される、完全に移植可能なアプリケーション
-2. 自己完結型の展開
+コマンド ラインで渡す引数は、呼び出されたコマンドへの引数です。 たとえば、`dotnet publish my_app.csproj` を実行した場合、`my_app.csproj` 引数は、発行するプロジェクトを示し、`publish` コマンドに渡されます。
 
-これらの両方の方法の詳細については、[.NET Core アプリケーション展開](../deploying/index.md)に関するトピックを参照してください。 
+### <a name="options"></a>オプション
+
+コマンド ラインで渡すオプションは、呼び出されたコマンドへのオプションです。 たとえば、`dotnet publish --output /build_output` を実行した場合、`--output` オプションとその値は `publish` コマンドに渡されます。 
 
 ## <a name="migration-from-projectjson"></a>project.json からの移行
-Preview 2 ツールおよび *project.json* プロジェクトを使用していた場合、コマンドの詳細およびプロジェクトの移行方法については、[dotnet migrate](dotnet-migrate.md) コマンドのドキュメントを参照してください。 
 
-> [!NOTE]
-> 現在、`dotnet migrate` コマンドでは、Preview 2 以前の *project.json* ファイルは移行されません。 
+Preview 2 ツールを使用して *project.json* ベースのプロジェクトを生成した場合は、リリース ツールで使用するための MSBuild/*.csproj* へのプロジェクトの移行について、「[dotnet-migrate](dotnet-migrate.md)」トピックを参照してください。 Preview 2 ツールのリリースの前に作成された .NET Core プロジェクトの場合は、「[DNX から .NET Core CLI への移行 (project.json)](../migration/from-dnx.md)」のガイダンスに従って手動でプロジェクトを更新してから `dotnet migrate` を使用するか、プロジェクトを直接アップグレードします。
 
-## <a name="extensibility"></a>機能拡張
-もちろん、ワークフローで使用できるすべてのツールが Core CLI ツールに含まれるわけではありません。 ただし、.NET Core CLI には、プロジェクトに追加のツールを指定できるようにする機能拡張モデルがあります。 詳細については、[.NET Core CLI 機能拡張モデル](extensibility.md)に関するトピックを参照してください。
+## <a name="additional-resources"></a>その他の技術情報
 
-## <a name="summary"></a>まとめ
-ここでは、CLI の最も重要な機能の簡潔な概要を示しました。 詳細については、このサイトのリファレンスおよび概念説明のトピックを参照してください。 使用できるその他のリソースもあります。
-* [dotnet/CLI](https://github.com/dotnet/cli/) GitHub リポジトリ
-* [作業開始手順](https://aka.ms/dotnetcoregs/)
+* [dotnet/CLI GitHub リポジトリ](https://github.com/dotnet/cli/)
+* [.NET Core のインストール ガイド](https://aka.ms/dotnetcoregs/)
 

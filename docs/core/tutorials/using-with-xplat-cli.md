@@ -4,16 +4,16 @@ description: "Windows、Linux、または macOS の .NET Core での、.NET Core
 keywords: .NET Core, CLI
 author: cartermp
 ms.author: mairaw
-ms.date: 02/08/2017
+ms.date: 03/08/2017
 ms.topic: article
 ms.prod: .net-core
 ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: 41632e63-d5c6-4427-a09e-51dc1116d45f
 translationtype: Human Translation
-ms.sourcegitcommit: 195664ae6409be02ca132900d9c513a7b412acd4
-ms.openlocfilehash: 240061d2515c14ba7ab733f4cc9e7e38fb2a5c7c
-ms.lasthandoff: 03/07/2017
+ms.sourcegitcommit: e30414ac3dd48bbb060ad6f2a33a0a124cba0fa3
+ms.openlocfilehash: 6ffca900d5649823e6aa2e28486a64a2f7844efc
+ms.lasthandoff: 03/22/2017
 
 ---
 
@@ -25,7 +25,7 @@ ms.lasthandoff: 03/07/2017
 
 ## <a name="prerequisites"></a>必須コンポーネント
 
-- [.NET Core SDK 1.0.0](https://www.microsoft.com/net/download/core)。
+- [.NET Core SDK 1.0](https://www.microsoft.com/net/download/core)。
 - ユーザーが選んだテキスト エディターまたはコード エディター。
 
 ## <a name="hello-console-app"></a>Hello コンソール アプリ
@@ -124,7 +124,7 @@ Fibonacci Numbers 1-15:
 
 ## <a name="working-with-multiple-files"></a>複数のファイルの操作
 
-単純な&1; 回だけのプログラムには&1; つのファイルで十分ですが、より複雑なアプリを開発する場合、プロジェクトに複数のソース ファイルを用意する必要があるでしょう。先のフィボナッチのサンプルから作成してみましょう。いくつかのフィボナッチ値をキャッシュしてから、再帰機能を追加します。 
+単純な 1 回だけのプログラムには 1 つのファイルで十分ですが、より複雑なアプリを開発する場合、プロジェクトに複数のソース ファイルを用意する必要があるでしょう。先のフィボナッチのサンプルから作成してみましょう。いくつかのフィボナッチ値をキャッシュしてから、再帰機能を追加します。 
 
 1. 次のコードを利用し、*FibonacciGenerator.cs* という名前の *Hello* ディレクトリ内に新しいファイルを追加します。
 
@@ -163,3 +163,4 @@ Fibonacci Numbers 1-15:
 ## <a name="see-also"></a>関連項目
 
 [.NET Core CLI ツールを使用したプロジェクトの整理およびテスト](testing-with-cli.md)
+

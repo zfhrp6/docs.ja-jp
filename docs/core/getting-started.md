@@ -4,15 +4,15 @@ description: "Windows、Linux、macOS で .NET Core アプリケーションを�
 keywords: .NET, .NET Core
 author: mairaw
 ms.author: mairaw
-ms.date: 03/02/2017
+ms.date: 03/22/2017
 ms.topic: article
 ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: d1453a0d-317c-4da6-b68e-422a2c0bfe49
 translationtype: Human Translation
-ms.sourcegitcommit: e374b924bf78d62227cb9607641130dfd9128186
-ms.openlocfilehash: 2a1884a3aa12fc32f757e5ec9e75fce3ba796755
-ms.lasthandoff: 03/06/2017
+ms.sourcegitcommit: 43c0fe740cbb593cfdb51cce864b86a70362570e
+ms.openlocfilehash: 75109a2afaf9c5685a2864360169d52e09366861
+ms.lasthandoff: 03/23/2017
 
 ---
 
@@ -26,9 +26,10 @@ ms.lasthandoff: 03/06/2017
 
 次のステップ バイ ステップのチュートリアルに従って、.NET Core アプリの開発を開始できます。
 
-* [Visual Studio 2017 での .NET Core を使用した C# Hello World アプリケーションの構築](../csharp/getting-started/with-visual-studio-2017.md) - Visual Studio 2017 を使用し、単純な .NET Core コンソール アプリケーションをビルド、デバッグ、公開する方法について説明します。
+* [Visual Studio 2017 での .NET Core を使用した C# Hello World アプリケーションの構築](../csharp/getting-started/with-visual-studio.md) - Visual Studio 2017 を使用し、単純な .NET Core コンソール アプリケーションをビルド、デバッグ、公開する方法について説明します。
 * [C# および Visual Studio 2017 の .NET Core を使用したクラス ライブラリの構築](../csharp/getting-started/library-with-visual-studio-2017.md) - Visual Studio 2017 を利用し、C# で記述されたクラス ライブラリをビルドする方法について説明します。
-* [Windows で C# および .NET Core を使用した Visual Studio Code の概要](https://channel9.msdn.com/Blogs/dotnet/Get-started-with-VS-Code-using-CSharp-and-NET-Core) - この [Channel9](https://channel9.msdn.com) ビデオでは、.NET Core で最初のコンソール アプリケーションを作成するために、Microsoft の簡易クロスプラットフォーム コード エディターである [Visual Studio Code](https://www.visualstudio.com/products/code-vs) をインストールして使用する方法を示します。
+* [Windows で C# および .NET Core を使用した Visual Studio Code の概要](https://channel9.msdn.com/Blogs/dotnet/Get-started-VSCode-Csharp-NET-Core-Windows) - この [Channel9](https://channel9.msdn.com) ビデオでは、.NET Core で最初のコンソール アプリケーションを作成するために、Microsoft の簡易クロスプラットフォーム コード エディターである [Visual Studio Code](https://code.visualstudio.com/) をインストールして使用する方法を示します。
+* [Get Started with .NET Core and Visual Studio 2017](https://channel9.msdn.com/Blogs/dotnet/Get-Started-NET-Core-Visual-Studio-2017) (.NET Core および Visual Studio 2017 の概要) - この [Channel9](https://channel9.msdn.com) ビデオでは、.NET Core で最初のクロスプラットフォーム コンソール アプリケーションを作成するために、Microsoft のフル機能の IDE である [Visual Studio 2017](https://www.visualstudio.com/) をインストールして使用する方法を示します。
 * [コマンドラインを使用した .NET Core の概要](tutorials/using-with-xplat-cli.md) - [.NET Core クロスプラットフォーム コマンドライン インターフェイス (CLI)](tools/index.md) で任意のコード エディターを使用します。
 
 サポートされている Windows のバージョンの一覧については、[Windows 開発の前提条件](windows-prerequisites.md)に関するページをご覧ください。 
@@ -47,7 +48,7 @@ ms.lasthandoff: 03/06/2017
 次のステップ バイ ステップのチュートリアルに従って、.NET Core アプリの開発を開始できます。
 
 * [コマンドラインを使用した .NET Core の概要](tutorials/using-with-xplat-cli.md) - [.NET Core クロスプラットフォーム コマンドライン インターフェイス (CLI)](tools/index.md) で任意のコード エディターを使用します。
-* [Ubuntu で C# および .NET Core を使用した Visual Studio Code の概要](https://channel9.msdn.com/Blogs/dotnet/Get-started-with-VS-Code-Csharp-dotnet-Core-Ubuntu) - この [Channel9](https://channel9.msdn.com) ビデオでは、Ubuntu 14.04 上の .NET Core で最初のコンソール アプリケーションを作成するために、Microsoft の簡易クロスプラットフォーム コード エディターである [Visual Studio Code](https://www.visualstudio.com/products/code-vs) をインストールして使用する方法を示します。
+* [Ubuntu で C# および .NET Core を使用した Visual Studio Code の概要](https://channel9.msdn.com/Blogs/dotnet/Get-started-with-VS-Code-Csharp-dotnet-Core-Ubuntu) - この [Channel9](https://channel9.msdn.com) ビデオでは、Ubuntu 14.04 上の .NET Core で最初のコンソール アプリケーションを作成するために、Microsoft の簡易クロスプラットフォーム コード エディターである [Visual Studio Code](https://code.visualstudio.com/) をインストールして使用する方法を示します。
 
 .NET Core は、インストールのリンクで上述されている Linux 配布とバージョンでサポートされています。
 
@@ -57,7 +58,9 @@ ms.lasthandoff: 03/06/2017
 
 次のステップ バイ ステップのチュートリアルに従って、.NET Core アプリの開発を開始できます。
 
-* [macOS で C# および .NET Core を使用した Visual Studio Code の概要](https://channel9.msdn.com/Blogs/dotnet/Get-started-with-VS-Code-using-CSharp-and-NET-Core-on-MacOS) - この [Channel9](https://channel9.msdn.com) ビデオでは、.NET Core で最初のコンソール アプリケーションを作成するために、Microsoft の簡易クロスプラットフォーム コード エディターである [Visual Studio Code](https://www.visualstudio.com/products/code-vs) をインストールして使用する方法を示します。 
+* [macOS で C# および .NET Core を使用した Visual Studio Code の概要](https://channel9.msdn.com/Blogs/dotnet/Get-started-VSCode-NET-Core-Mac) - この [Channel9](https://channel9.msdn.com) ビデオでは、.NET Core で最初のコンソール アプリケーションを作成するために、Microsoft の簡易クロスプラットフォーム コード エディターである [Visual Studio Code](https://code.visualstudio.com/) をインストールして使用する方法を示します。 
 * [Visual Studio Code を使用した macOS での .NET Core の概要](tutorials/using-on-macos.md) - 単体テスト、サードパーティ製のライブラリ、デバッグ ツールの使用方法を含む、VS コードを使用した .NET Core ソリューションを作成するための手順やワークフローのツアーです。
 * [コマンドラインを使用した .NET Core の概要](tutorials/using-with-xplat-cli.md) - [.NET Core クロスプラットフォーム コマンドライン インターフェイス (CLI)](tools/index.md) で任意のコード エディターを使用します。
+* [Visual Studio for Mac を使用した macOS での .NET Core の概要](tutorials/using-on-mac-vs.md) - このチュートリアルでは、Visual Studio for Mac を使用して単純な .NET Core コンソール アプリケーションを構築する方法を示します。
+* [Visual Studio for Mac を使用した macOS での完全な .NET Core ソリューションの構築](tutorials/using-on-mac-vs-full-solution.md) - このチュートリアルでは、再利用可能なライブラリと単体テストを含む完全な .NET Core ソリューションを構築する方法を示します。
 

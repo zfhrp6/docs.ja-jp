@@ -1,23 +1,23 @@
 ---
-title: "dotnet-pack コマンド | Microsoft Docs"
+title: "dotnet-pack コマンド - .NET Core CLI | Microsoft Docs"
 description: "dotnet-pack コマンドでは、.NET Core プロジェクトの NuGet パッケージを作成します。"
 keywords: "dotnet-pack, CLI, CLI コマンド, .NET Core"
 author: blackdwarf
 ms.author: mairaw
-ms.date: 03/06/2017
+ms.date: 03/15/2017
 ms.topic: article
 ms.prod: .net-core
 ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: 8dbbb3f7-b817-4161-a6c8-a3489d05e051
 translationtype: Human Translation
-ms.sourcegitcommit: 195664ae6409be02ca132900d9c513a7b412acd4
-ms.openlocfilehash: 88289a09a22bf20ec9089ec6a74269cd682a305b
-ms.lasthandoff: 03/07/2017
+ms.sourcegitcommit: dff752a9d31ec92b113dae9eed20cd72faf57c84
+ms.openlocfilehash: 6bb8d618cc092131bd6a904fb66f02c4f3a9ecca
+ms.lasthandoff: 03/22/2017
 
 ---
 
-#<a name="dotnet-pack"></a>dotnet-pack
+# <a name="dotnet-pack"></a>dotnet-pack
 
 ## <a name="name"></a>名前
 
@@ -25,24 +25,21 @@ ms.lasthandoff: 03/07/2017
 
 ## <a name="synopsis"></a>構文
 
-```
-dotnet pack [project] [-o|--output] [--no-build] [--include-symbols] [--include-source] [-c|--configuration] [--version-suffix] [-s|--serviceable] [-v|--verbosity]
-dotnet pack [-h|--help]
-```
+`dotnet pack [<PROJECT>] [-o|--output] [--no-build] [--include-symbols] [--include-source] [-c|--configuration] [--version-suffix <VERSION_SUFFIX>] [-s|--serviceable] [-v|--verbosity] [-h|--help]`
 
 ## <a name="description"></a>説明
 
 `dotnet pack` コマンドはプロジェクトをビルドし、NuGet パッケージを作成します。 このコマンドの結果が NuGet パッケージです。 `--include-symbols` オプションが存在する場合、デバッグ シンボルを含む別のパッケージが作成されます。 
 
-パックされるプロジェクトの NuGet 依存関係が `nuspec` ファイルに追加されるため、パッケージのインストール時に解決できます。 プロジェクト間参照はプロジェクト内にはパッケージ化されません。 現時点では、プロジェクト間の依存関係がある場合は、プロジェクトごとにパッケージが必要になります。
+パックされるプロジェクトの NuGet 依存関係が *.nuspec* ファイルに追加されるため、パッケージのインストール時に適切に解決されます。 プロジェクト間参照はプロジェクト内にはパッケージ化されません。 現時点では、プロジェクト間の依存関係がある場合は、プロジェクトごとにパッケージが必要になります。
 
-`dotnet pack`では、既定で最初にプロジェクトがビルドされます。 これを避けたい場合は、`--no-build` オプションを渡します。 これは、コードが既にビルドされていることがわかっている場合などの継続的インテグレーション (CI) ビルド シナリオで役立ちます。 
+既定では、`dotnet pack` は最初にプロジェクトをビルドします。 この動作を避けたい場合は、`--no-build` オプションを渡します。 これは、コードが既にビルドされていることがわかっている場合の継続的インテグレーション (CI) ビルド シナリオで役立つことがよくあります。 
 
 ## <a name="arguments"></a>引数
 
-`project` 
+`PROJECT` 
     
-パックするプロジェクトです。 [csproj ファイル](csproj.md)またはディレクトリのいずれかへのパスを指定できます。 省略すると、既定で現在のディレクトリに設定されます。 
+パックするプロジェクトです。 [csproj ファイル](csproj.md)またはディレクトリのいずれかへのパスです。 省略すると、既定で現在のディレクトリに設定されます。 
 
 ## <a name="options"></a>オプション
 
@@ -60,23 +57,23 @@ dotnet pack [-h|--help]
 
 `--include-symbols`
 
-シンボルの nupkg を生成します。 
+シンボルの `nupkg` を生成します。 
 
 `--include-source`
 
 NuGet パッケージにソース ファイルを含めます。 ソース ファイルは、`nupkg` 内の `src` フォルダーに含まれます。 
 
-`-c|--configuration <Debug|Release>`
+`-c|--configuration <CONFIGURATION>`
 
-プロジェクトのビルド時に使用する構成です。 指定しない場合、既定で `Debug` に設定されます。
+プロジェクトのビルド時に使用する構成です。 指定しないと、構成は既定で `Debug` になります。
 
 `--version-suffix <VERSION_SUFFIX>`
 
-プロジェクトの $(VersionSuffix) MSBuild プロパティの値を定義します。
+プロジェクトの `$(VersionSuffix)` MSBuild プロパティの値を定義します。
 
 `-s|--serviceable`
 
-パッケージに処理可能フラグを設定します。 詳細については、https://aka.ms/nupkgservicing を参照してください。
+パッケージに処理可能フラグを設定します。 詳しくは、「[.NET Blog: .NET 4.5.1 Supports Microsoft Security Updates for .NET NuGet Libraries](https://aka.ms/nupkgservicing)」(.NET ブログ: .NET 4.5.1 は .NET NuGet ライブラリに対する Microsoft セキュリティ更新プログラムをサポートする) をご覧ください。
 
 `--verbosity <LEVEL>`
 
@@ -88,18 +85,18 @@ NuGet パッケージにソース ファイルを含めます。 ソース フ�
 
 `dotnet pack`
 
-app1 プロジェクトをパックします。
+`app1` プロジェクトをパックします。
 
 `dotnet pack ~/projects/app1/project.csproj`
     
-プロジェクトを現在のディレクトリにパックし、指定したフォルダーに生成されたパッケージを配置します。
+プロジェクトを現在のディレクトリにパックし、`nupkgs` フォルダーに生成されたパッケージを配置します。
 
 `dotnet pack --output nupkgs`
 
-現在のディレクトリのプロジェクトを指定したフォルダーにパックし、ビルド ステップをスキップします。
+現在のディレクトリのプロジェクトを `nupkgs` フォルダーにパックし、ビルド ステップをスキップします。
 
 `dotnet pack --no-build --output nupkgs`
 
-現在のプロジェクトをパックし、結果のパッケージ バージョンを指定されたサフィックスで更新します。 プロジェクト バージョンのサフィックスは、*.csproj* ファイルの `<VersionSuffix>$(VersionSuffix)</VersionSuffix>` として構成されます。
+*.csproj* ファイルで `<VersionSuffix>$(VersionSuffix)</VersionSuffix>` として構成されているプロジェクトのバージョン サフィックスで、現在のプロジェクトをパックし、結果のパッケージ バージョンを指定されたサフィックスで更新します。
 
 `dotnet pack --version-suffix "ci-1234"`

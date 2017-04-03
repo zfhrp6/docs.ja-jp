@@ -1,33 +1,31 @@
 ---
-title: "dotnet-remove 参照コマンド | Microsoft Docs"
+title: "dotnet-remove 参照コマンド - .NET Core CLI | Microsoft Docs"
 description: "dotnet-remove 参照コマンドは、プロジェクト間参照を削除する便利なオプションを提供します。"
 keywords: "dotnet-remove, CLI, CLI コマンド, .NET Core"
 author: spboyer
 ms.author: mairaw
-ms.date: 03/06/2017
+ms.date: 03/15/2017
 ms.topic: article
 ms.prod: .net-core
 ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: 889c6b7e-a313-40b1-9fd3-6a6f4c52f1d0
 translationtype: Human Translation
-ms.sourcegitcommit: 195664ae6409be02ca132900d9c513a7b412acd4
-ms.openlocfilehash: 1f1a364b703c6b83a9b21ee420d62411bf9cd3ec
-ms.lasthandoff: 03/07/2017
+ms.sourcegitcommit: dff752a9d31ec92b113dae9eed20cd72faf57c84
+ms.openlocfilehash: 22db4037195afa2c49ef038832e09a99c6a0d54e
+ms.lasthandoff: 03/22/2017
 
 ---
+
 # <a name="dotnet-remove-reference"></a>dotnet-remove 参照
 
 ## <a name="name"></a>名前
 
-`dotnet-remove reference` - プロジェクト間参照を参照します。
+`dotnet-remove reference` - プロジェクト間参照を削除します。
 
 ## <a name="synopsis"></a>構文
 
-```
-dotnet remove [project] reference [-f|--framework] <project_references>
-dotnet remove reference [-h|--help]
-```
+`dotnet remove [<PROJECT>] reference [-f|--framework] <PROJECT_REFERENCES> [-h|--help]`
 
 ## <a name="description"></a>説明
 
@@ -35,13 +33,13 @@ dotnet remove reference [-h|--help]
 
 ## <a name="arguments"></a>引数
 
-`project`
+`PROJECT`
 
-操作するプロジェクト ファイル。 指定されていない場合、現在のディレクトリで検索されます。
+ターゲット プロジェクト ファイル。 指定されていない場合、現在のディレクトリで検索されます。
 
-`project_references`
+`PROJECT_REFERENCES`
 
-削除するプロジェクト間参照。 1 つまたは複数のプロジェクトを指定できます。 グロビング パターンは Unix/Linux ベースの端末で利用できます。
+削除するプロジェクト間 (P2P) 参照。 1 つまたは複数のプロジェクトを指定できます。 [glob パターン](https://en.wikipedia.org/wiki/Glob_(programming))は Unix/Linux ベースの端末でサポートされています。
 
 ## <a name="options"></a>オプション
 
@@ -51,7 +49,7 @@ dotnet remove reference [-h|--help]
 
 `-f|--framework <FRAMEWORK>`
 
-特定のフレームワークを対象にしている場合にのみ、参照を削除します。
+特定の[フレームワーク](../../standard/frameworks.md)を対象にしている場合にのみ、参照を削除します。
 
 ## <a name="examples"></a>例
 
@@ -63,6 +61,7 @@ dotnet remove reference [-h|--help]
 
 `dotnet remove reference lib1/lib1.csproj lib2/lib2.csproj`
 
-グロビング パターンを使用して複数のプロジェクト参照を削除する:
+Unix/Linux で glob パターンを使用して複数のプロジェクト参照を削除する:
 
 `dotnet remove app/app.csproj reference **/*.csproj`
+

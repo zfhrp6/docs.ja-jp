@@ -11,9 +11,9 @@ ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: cf497639-9f91-45cb-836f-998d1cea2f43
 translationtype: Human Translation
-ms.sourcegitcommit: 90fe68f7f3c4b46502b5d3770b1a2d57c6af748a
-ms.openlocfilehash: dc0693c2e2c034c4c71b4270ef2812be4af72e72
-ms.lasthandoff: 03/02/2017
+ms.sourcegitcommit: b967d8e55347f44a012e4ad8e916440ae228c8ec
+ms.openlocfilehash: e9b8ad13a48dd43236769b130d6f8a75b7b023ca
+ms.lasthandoff: 03/10/2017
 
 ---
 
@@ -25,7 +25,7 @@ ms.lasthandoff: 03/02/2017
 
 * オブジェクトから文字列形式への変換が直観的に理解しづらい場合がある。 たとえば、**Temperature** オブジェクトや **Person** オブジェクトの文字列形式がどのようになるのか、明確ではありません。 **Temperature** オブジェクトをさまざまな方法で書式指定する例については、「[標準書式指定文字列](#standard-format-strings)」を参照してください。
 
-* 通常、カルチャ依存の書式指定が必要になる。 たとえば、通貨値を数字で表すアプリケーションでは、数値文字列にカルチャ別の通貨記号、桁区切り記号 (ほとんどのカルチャでは&1000; 単位)、および小数点を含める必要があります。 例については、「[書式プロバイダーと IFormatProvider インターフェイスによるカルチャに依存した書式指定](#culture-sensitive-formatting-with-format-providers-and-the-iformatprovider-interface)」を参照してください。 
+* 通常、カルチャ依存の書式指定が必要になる。 たとえば、通貨値を数字で表すアプリケーションでは、数値文字列にカルチャ別の通貨記号、桁区切り記号 (ほとんどのカルチャでは 1000 単位)、および小数点を含める必要があります。 例については、「[書式プロバイダーと IFormatProvider インターフェイスによるカルチャに依存した書式指定](#culture-sensitive-formatting-with-format-providers-and-the-iformatprovider-interface)」を参照してください。 
 
 * アプリケーションによっては、同じ値をさまざまな方法で表示する必要がある。 たとえば、列挙型のメンバーを表すために、その名前の文字列形式を表示する場合や、基になる値を表示する場合が考えられます。 [DayOfWeek](xref:System.DayOfWeek) 列挙体のメンバーをさまざまな方法で書式指定する例については、「[標準書式指定文字列](#standard-format-strings)」を参照してください。
 
@@ -72,7 +72,7 @@ ms.lasthandoff: 03/02/2017
 
 * [Object.ToString](xref:System.Object.ToString) メソッドをオーバーライドして、オブジェクトの値のカスタム文字列形式を定義する方法。 詳細については、このトピックの「[ToString メソッドのオーバーライド](#overriding-the-tostring-method)」のセクションを参照してください。
 
-* オブジェクトの値の文字列形式に複数の形式を持たせる書式指定子を定義する方法。 たとえば、次のステートメントでは "X" 書式指定子を使用して整数を&16; 進値の文字列形式に変換します。
+* オブジェクトの値の文字列形式に複数の形式を持たせる書式指定子を定義する方法。 たとえば、次のステートメントでは "X" 書式指定子を使用して整数を 16 進値の文字列形式に変換します。
 
   ```csharp
   int integerValue = 60312;
@@ -237,9 +237,9 @@ End Module
 
 ## <a name="the-tostring-method-and-format-strings"></a>ToString メソッドと書式指定文字列
 
-既定の [ToString](xref:System.Object.ToString) メソッドや [ToString](xref:System.Object.ToString) のオーバーライドの使用は、オブジェクトの文字列形式が&1; つの場合に適しています。 しかし、多くの場合オブジェクトの値には複数の形式があります。 たとえば、温度は華氏、摂氏、またはケルビンで表現できます。 また、整数値 10 は 10、10.0、1.0e01、$10.00 などの多くの方法で表すことができます。
+既定の [ToString](xref:System.Object.ToString) メソッドや [ToString](xref:System.Object.ToString) のオーバーライドの使用は、オブジェクトの文字列形式が 1 つの場合に適しています。 しかし、多くの場合オブジェクトの値には複数の形式があります。 たとえば、温度は華氏、摂氏、またはケルビンで表現できます。 また、整数値 10 は 10、10.0、1.0e01、$10.00 などの多くの方法で表すことができます。
 
-.NET では、書式指定文字列を使用することで、1 つの値に複数の文字列形式を持たせることができます。 書式指定文字列とは定義済みの書式指定子を&1; つ以上含む文字列です。書式指定子とは、[ToString](xref:System.Object.ToString) メソッドによるその出力の書式設定方法を定義する&1; 文字または文字グループです。 書式指定文字列はパラメーターとしてオブジェクトの [ToString](xref:System.Object.ToString) メソッドに渡され、オブジェクトの値の文字列形式の表示方法を決定します。
+.NET では、書式指定文字列を使用することで、1 つの値に複数の文字列形式を持たせることができます。 書式指定文字列とは定義済みの書式指定子を 1 つ以上含む文字列です。書式指定子とは、[ToString](xref:System.Object.ToString) メソッドによるその出力の書式設定方法を定義する 1 文字または文字グループです。 書式指定文字列はパラメーターとしてオブジェクトの [ToString](xref:System.Object.ToString) メソッドに渡され、オブジェクトの値の文字列形式の表示方法を決定します。
 
 .NET では、すべての数値型、日付/時刻型、および列挙型で、定義済みの一連の書式指定子をサポートしています。 書式指定文字列を使用して、アプリケーションで定義されたデータ型の文字列形式を複数定義することもできます。
 
@@ -249,7 +249,7 @@ End Module
 
 .NET では、すべての数値型、すべての日付/時刻型、およびすべての列挙型に対して一連の標準書式指定子が定義されています。 たとえば、それらのカテゴリごとに、対応する型の値の一般的な文字列形式を定義する "G" 標準書式指定子がサポートされています。
 
-列挙型の標準書式指定文字列は、値の文字列形式を直接制御します。 列挙値の [ToString](xref:System.Object.ToString) メソッドに渡された書式指定文字列によって、文字列名 ("G" 書式指定子および "F" 書式指定子)、基になる整数値 ("D" 書式指定子)、または&16; 進値 ("X" 書式指定子) のどの形式で値を表示するかが決定します。 次のコード例では、標準書式指定文字列を使用して、[DayOfWeek](xref:System.DayOfWeek) 列挙値の書式を設定する方法を示しています。 
+列挙型の標準書式指定文字列は、値の文字列形式を直接制御します。 列挙値の [ToString](xref:System.Object.ToString) メソッドに渡された書式指定文字列によって、文字列名 ("G" 書式指定子および "F" 書式指定子)、基になる整数値 ("D" 書式指定子)、または 16 進値 ("X" 書式指定子) のどの形式で値を表示するかが決定します。 次のコード例では、標準書式指定文字列を使用して、[DayOfWeek](xref:System.DayOfWeek) 列挙値の書式を設定する方法を示しています。 
 
 ```csharp
 DayOfWeek thisDay = DayOfWeek.Monday;
@@ -280,7 +280,7 @@ Next
 
 列挙型書式指定文字列については、「[列挙型書式指定文字列](enumeration-format.md)」を参照してください。
 
-数値型の標準書式指定文字列は、通常、表示される桁数が&1; つ以上のプロパティ値によって制御される結果文字列を定義します。 たとえば、"C" 書式指定子は数字を通貨値として書式設定します。 唯一のパラメーターとして "C" 書式指定子を渡して [ToString](xref:System.Object.ToString) メソッドを呼び出した場合、現在のカルチャの [NumberFormatInfo](xref:System.Globalization.NumberFormatInfo) オブジェクトの次のプロパティ値を使用して数値の文字列形式を定義します。
+数値型の標準書式指定文字列は、通常、表示される桁数が 1 つ以上のプロパティ値によって制御される結果文字列を定義します。 たとえば、"C" 書式指定子は数字を通貨値として書式設定します。 唯一のパラメーターとして "C" 書式指定子を渡して [ToString](xref:System.Object.ToString) メソッドを呼び出した場合、現在のカルチャの [NumberFormatInfo](xref:System.Globalization.NumberFormatInfo) オブジェクトの次のプロパティ値を使用して数値の文字列形式を定義します。
 
 * [CurrencySymbol](xref:System.Globalization.NumberFormatInfo.CurrencySymbol) プロパティ。現在のカルチャの通貨記号を指定します。
 
@@ -302,7 +302,7 @@ Next
 
 * [NegativeSign](xref:System.Globalization.NumberFormatInfo.NegativeSign) プロパティ。かっこを使用せずに負の値を表す場合に結果文字列で使用する負の符号を決定します。
 
-さらに、数値書式指定文字列には、精度指定子が含まれる場合があります。 この指定子の意味は一緒に使用される書式指定文字列によって異なりますが、通常は、結果文字列に表示される合計桁数か小数点以下の桁数を示します。 たとえば、次の例では、"X4" の標準数値文字列と精度指定子を使用して、4 桁の&16; 進数から成る文字列値を作成します。
+さらに、数値書式指定文字列には、精度指定子が含まれる場合があります。 この指定子の意味は一緒に使用される書式指定文字列によって異なりますが、通常は、結果文字列に表示される合計桁数か小数点以下の桁数を示します。 たとえば、次の例では、"X4" の標準数値文字列と精度指定子を使用して、4 桁の 16 進数から成る文字列値を作成します。
 
 ```csharp
 byte[] byteValues = { 12, 163, 255 };
@@ -582,9 +582,9 @@ End Module
 
 ### <a name="custom-format-strings"></a>カスタム書式指定文字列
 
-.NET では、標準書式指定文字列のほかに、数値および日付と時刻の値の両方のカスタム書式指定文字列が定義されています。 カスタム書式指定文字列は、値の文字列形式を定義する&1; つ以上のカスタム書式指定子で構成されます。 たとえば、"yyyy/mm/dd hh:mm:ss.ffff t zzz" というカスタム日時書式指定文字列の場合、en-US カルチャでは日付が "2008/11/15 07:45:00.0000 P -08:00" という文字列形式に変換されます。 また、"0000" というカスタム書式指定文字列の場合、整数値 12 は "0012" に変換されます。 カスタム書式指定文字列の一覧については、「[カスタム日時書式指定文字列](custom-datetime.md)」および「[カスタム数値書式指定文字列](custom-numeric.md)」を参照してください。
+.NET では、標準書式指定文字列のほかに、数値および日付と時刻の値の両方のカスタム書式指定文字列が定義されています。 カスタム書式指定文字列は、値の文字列形式を定義する 1 つ以上のカスタム書式指定子で構成されます。 たとえば、"yyyy/mm/dd hh:mm:ss.ffff t zzz" というカスタム日時書式指定文字列の場合、en-US カルチャでは日付が "2008/11/15 07:45:00.0000 P -08:00" という文字列形式に変換されます。 また、"0000" というカスタム書式指定文字列の場合、整数値 12 は "0012" に変換されます。 カスタム書式指定文字列の一覧については、「[カスタム日時書式指定文字列](custom-datetime.md)」および「[カスタム数値書式指定文字列](custom-numeric.md)」を参照してください。
 
-書式指定文字列が単一のカスタム書式指定子で構成される場合は、標準書式指定子と混同しないように、書式指定子の前にパーセント (%) 記号を付ける必要があります。 次の例では、"M" カスタム書式指定子を使用して、特定の日付の月を表す&1; 桁または&2; 桁の数値を表示します。
+書式指定文字列が単一のカスタム書式指定子で構成される場合は、標準書式指定子と混同しないように、書式指定子の前にパーセント (%) 記号を付ける必要があります。 次の例では、"M" カスタム書式指定子を使用して、特定の日付の月を表す 1 桁または 2 桁の数値を表示します。
 
 ```csharp
 DateTime date1 = new DateTime(2009, 9, 8);
@@ -597,7 +597,7 @@ Dim date1 As Date = #09/08/2009#
 Console.WriteLine(date1.ToString("%M"))      ' Displays 9
 ```
 
-日付および時刻の値の標準書式指定文字列の多くは、[DateTimeFormatInfo](xref:System.Globalization.DateTimeFormatInfo) オブジェクトのプロパティによって定義されているカスタム書式指定文字列のエイリアスです。 また、カスタム書式指定文字列を使用することで、数値または日付と時刻の値に対して、柔軟にアプリケーション定義の書式を指定できます。 複数のカスタム書式指定子を&1; つのカスタム書式指定文字列に結合することによって、数値および日付と時刻の値の両方に対するカスタムの結果文字列を独自に定義することができます。 次の例では、月の名前、日付、および年の後に、かっこで囲んで曜日を表示するカスタム書式指定文字列を定義しています。
+日付および時刻の値の標準書式指定文字列の多くは、[DateTimeFormatInfo](xref:System.Globalization.DateTimeFormatInfo) オブジェクトのプロパティによって定義されているカスタム書式指定文字列のエイリアスです。 また、カスタム書式指定文字列を使用することで、数値または日付と時刻の値に対して、柔軟にアプリケーション定義の書式を指定できます。 複数のカスタム書式指定子を 1 つのカスタム書式指定文字列に結合することによって、数値および日付と時刻の値の両方に対するカスタムの結果文字列を独自に定義することができます。 次の例では、月の名前、日付、および年の後に、かっこで囲んで曜日を表示するカスタム書式指定文字列を定義しています。
 
 ```csharp
 string customFormat = "MMMM dd, yyyy (dddd)";
@@ -617,7 +617,7 @@ Console.WriteLine(date1.ToString(customFormat))
 '       August 28, 2009 (Friday) 
 ```
 
-次の例では、[Int64](xref:System.Int64) 値を米国で標準的な&7; 桁の電話番号を市外局番と共に表示するカスタム書式指定文字列を定義します。 
+次の例では、[Int64](xref:System.Int64) 値を米国で標準的な 7 桁の電話番号を市外局番と共に表示するカスタム書式指定文字列を定義します。 
 
 ```csharp
 using System;
@@ -668,7 +668,7 @@ End Module
 
 ## <a name="culture-sensitive-formatting-with-format-providers-and-the-iformatprovider-interface"></a>書式プロバイダーと IFormatProvider インターフェイスによるカルチャに依存した書式指定
 
-書式指定子を利用することでオブジェクトの書式をカスタマイズできますが、多くの場合、意味のあるオブジェクトの文字列形式を生成するには追加の書式設定情報が必要です。 たとえば、"C" 標準書式指定文字列または "$ #,#.00" などのカスタム書式指定文字列を使用して数字を通貨値として書式設定する場合、少なくとも、正しい通貨記号、桁区切り記号、および小数点記号についての情報を書式設定された文字列に含めることができる必要があります。 .NET では、[IFormatProvider](xref:System.IFormatProvider) インターフェイスによって、この追加の書式設定情報を利用できるようにします。このインターフェイスは、数値型および日付/時刻型の `ToString` メソッドの&1; つ以上のオーバーロードに対するパラメーターとして提供されます。 [IFormatProvider](xref:System.IFormatProvider) の実装は .NET で使用され、カルチャ固有の書式指定をサポートします。 それぞれ異なるカルチャを示す&3; つの [IFormatProvider](xref:System.IFormatProvider) オブジェクトを使用してオブジェクトの書式を設定した場合に、その文字列形式がどのように変化するかを次の例に示します。
+書式指定子を利用することでオブジェクトの書式をカスタマイズできますが、多くの場合、意味のあるオブジェクトの文字列形式を生成するには追加の書式設定情報が必要です。 たとえば、"C" 標準書式指定文字列または "$ #,#.00" などのカスタム書式指定文字列を使用して数字を通貨値として書式設定する場合、少なくとも、正しい通貨記号、桁区切り記号、および小数点記号についての情報を書式設定された文字列に含めることができる必要があります。 .NET では、[IFormatProvider](xref:System.IFormatProvider) インターフェイスによって、この追加の書式設定情報を利用できるようにします。このインターフェイスは、数値型および日付/時刻型の `ToString` メソッドの 1 つ以上のオーバーロードに対するパラメーターとして提供されます。 [IFormatProvider](xref:System.IFormatProvider) の実装は .NET で使用され、カルチャ固有の書式指定をサポートします。 それぞれ異なるカルチャを示す 3 つの [IFormatProvider](xref:System.IFormatProvider) オブジェクトを使用してオブジェクトの書式を設定した場合に、その文字列形式がどのように変化するかを次の例に示します。
 
 ```csharp
 using System;
@@ -707,7 +707,7 @@ End Module
 '       1.603,420 €
 ```
 
-[IFormatProvider](xref:System.IFormatProvider) インターフェイスには、[GetFormat(Type)](xref:System.IFormatProvider.GetFormat(System.Type)) という&1; つのメソッドが含まれています。このメソッドには、書式設定情報を提供するオブジェクトの型を指定する&1; つのパラメーターがあります。 このメソッドがその型のオブジェクトを提供できる場合は、それが返されます。 それ以外の場合は、null 参照を返します。
+[IFormatProvider](xref:System.IFormatProvider) インターフェイスには、[GetFormat(Type)](xref:System.IFormatProvider.GetFormat(System.Type)) という 1 つのメソッドが含まれています。このメソッドには、書式設定情報を提供するオブジェクトの型を指定する 1 つのパラメーターがあります。 このメソッドがその型のオブジェクトを提供できる場合は、それが返されます。 それ以外の場合は、null 参照を返します。
 
 [IFormatProvider.GetFormat](xref:System.IFormatProvider.GetFormat(System.Type)) はコールバック メソッドです。 [IFormatProvider](xref:System.IFormatProvider) パラメーターを含む `ToString` メソッド オーバーロードを呼び出すと、その [IFormatProvider](xref:System.IFormatProvider) オブジェクトの [GetFormat](xref:System.IFormatProvider.GetFormat(System.Type)) メソッドが呼び出されます。 [GetFormat](xref:System.IFormatProvider.GetFormat(System.Type)) メソッドは、*formatType* パラメーターで指定された、必要な書式設定情報を提供するオブジェクトを `ToString` メソッドに返します。 
 
@@ -720,7 +720,7 @@ End Module
 [String.Format](xref:System.String.Format(System.IFormatProvider,System.String,System.Object)) | [System.ICustomFormatter](xref:System.ICustomFormatter)
 [StringBuilder.AppendFormat](xref:System.Text.StringBuilder.AppendFormat(System.IFormatProvider,System.String,System.Object)) | [System.ICustomFormatter](xref:System.ICustomFormatter)
 
-.NET には、[IFormatProvider](xref:System.IFormatProvider) を実装する次の&3; つのクラスが用意されています。 
+.NET には、[IFormatProvider](xref:System.IFormatProvider) を実装する次の 3 つのクラスが用意されています。 
 
 * [DateTimeFormatInfo](xref:System.Globalization.DateTimeFormatInfo)。このクラスは、特定のカルチャの日付と時刻の値に対する書式設定情報を提供します。 対応する [IFormatProvider.GetFormat](xref:System.IFormatProvider.GetFormat(System.Type)) の実装では、それ自身のインスタンスが返されます。
 
@@ -732,7 +732,7 @@ End Module
 
 ### <a name="culture-sensitive-formatting-of-numeric-values"></a>数値のカルチャに依存した書式設定
 
-既定では、数値の書式指定はカルチャに依存します。 書式指定メソッドを呼び出すときにカルチャを指定しない場合は、現在のスレッド カルチャの書式指定規則が使用されます。 次に示す例では、現在のスレッド カルチャを&4; 回変更した後に、[Decimal.ToString(String)](xref:System.Decimal.ToString(System.String)) メソッドを呼び出します。 各ケースでは、結果の文字列は、現在のカルチャの書式指定規則を反映します。 これは、各数値型の `ToString` メソッドへの呼び出しを、`ToString(String)` メソッドと `ToString(String, IFormatProvider)` メソッドがラップするためです。 
+既定では、数値の書式指定はカルチャに依存します。 書式指定メソッドを呼び出すときにカルチャを指定しない場合は、現在のスレッド カルチャの書式指定規則が使用されます。 次に示す例では、現在のスレッド カルチャを 4 回変更した後に、[Decimal.ToString(String)](xref:System.Decimal.ToString(System.String)) メソッドを呼び出します。 各ケースでは、結果の文字列は、現在のカルチャの書式指定規則を反映します。 これは、各数値型の `ToString` メソッドへの呼び出しを、`ToString(String)` メソッドと `ToString(String, IFormatProvider)` メソッドがラップするためです。 
 
 ```csharp
 using System;
@@ -858,7 +858,7 @@ End Module
 
 ### <a name="culture-sensitive-formatting-of-date-and-time-values"></a>日付と時刻の値のカルチャに依存した書式設定
 
-既定では、日時の値の書式指定はカルチャに依存します。 書式指定メソッドを呼び出すときにカルチャを指定しない場合は、現在のスレッド カルチャの書式指定規則が使用されます。 次に示す例では、現在のスレッド カルチャを&4; 回変更した後に、[DateTime.ToString(String)](xref:System.DateTime.ToString(System.String)) メソッドを呼び出します。 各ケースでは、結果の文字列は、現在のカルチャの書式指定規則を反映します。 これは、[DateTime.ToString()](xref:System.DateTime.ToString)、[DateTime.ToString(String)](xref:System.DateTime.ToString(System.String))、[DateTimeOffset.ToString()](xref:System.DateTimeOffset.ToString(System.String))、[DateTimeOffset.ToString(String)](xref:System.DateTimeOffset.ToString(System.String)) の各メソッドが、[DateTime.ToString(String, IFormatProvider)](xref:System.DateTime.ToString(System.String,System.IFormatProvider)) メソッドおよび [DateTimeOffset.ToString(String, IFormatProvider)](xref:System.DateTimeOffset.ToString(System.String,System.IFormatProvider)) メソッドへの呼び出しをラップするためです。
+既定では、日時の値の書式指定はカルチャに依存します。 書式指定メソッドを呼び出すときにカルチャを指定しない場合は、現在のスレッド カルチャの書式指定規則が使用されます。 次に示す例では、現在のスレッド カルチャを 4 回変更した後に、[DateTime.ToString(String)](xref:System.DateTime.ToString(System.String)) メソッドを呼び出します。 各ケースでは、結果の文字列は、現在のカルチャの書式指定規則を反映します。 これは、[DateTime.ToString()](xref:System.DateTime.ToString)、[DateTime.ToString(String)](xref:System.DateTime.ToString(System.String))、[DateTimeOffset.ToString()](xref:System.DateTimeOffset.ToString(System.String))、[DateTimeOffset.ToString(String)](xref:System.DateTimeOffset.ToString(System.String)) の各メソッドが、[DateTime.ToString(String, IFormatProvider)](xref:System.DateTime.ToString(System.String,System.IFormatProvider)) メソッドおよび [DateTimeOffset.ToString(String, IFormatProvider)](xref:System.DateTimeOffset.ToString(System.String,System.IFormatProvider)) メソッドへの呼び出しをラップするためです。
 
 ```csharp
 using System;
@@ -1163,7 +1163,7 @@ End Module
 
 ## <a name="composite-formatting"></a>複合書式指定
 
-`String.Format` や `StringBuilder.AppendFormat` などの一部のメソッドでは、複合書式指定がサポートされます。 複合書式指定文字列は一種のテンプレートで、0 個以上のオブジェクトの文字列形式が組み込まれた単一の文字列を返します。 各オブジェクトは、インデックス付きの書式指定項目によって、複合書式指定文字列で表現されます。 書式指定項目のインデックスは、それが表すオブジェクトのメソッドのパラメーター リスト内の位置と対応しています。 インデックスは&0; から始まります。 たとえば、`String.Format` メソッドの次のメソッド呼び出しでは、最初の書式指定項目 `{0:D}` は `thatDate` の文字列形式に、2 番目の書式指定項目 `{1}` は `item1` の文字列形式に、3 番目の書式指定項目 `{2:C2}` は `item1.Value` の文字列形式に置き換えられます。
+`String.Format` や `StringBuilder.AppendFormat` などの一部のメソッドでは、複合書式指定がサポートされます。 複合書式指定文字列は一種のテンプレートで、0 個以上のオブジェクトの文字列形式が組み込まれた単一の文字列を返します。 各オブジェクトは、インデックス付きの書式指定項目によって、複合書式指定文字列で表現されます。 書式指定項目のインデックスは、それが表すオブジェクトのメソッドのパラメーター リスト内の位置と対応しています。 インデックスは 0 から始まります。 たとえば、`String.Format` メソッドの次のメソッド呼び出しでは、最初の書式指定項目 `{0:D}` は `thatDate` の文字列形式に、2 番目の書式指定項目 `{1}` は `item1` の文字列形式に、3 番目の書式指定項目 `{2:C2}` は `item1.Value` の文字列形式に置き換えられます。
 
 ```csharp
 result = String.Format("On {0:d}, the inventory of {1} was worth {2:C2}.", 
@@ -1185,7 +1185,7 @@ Console.WriteLine(result)
 
 書式項目をそれに対応するオブジェクトの文字列形式に置換することに加えて、書式項目は以下を制御することもできます。 
 
-* オブジェクトを文字列として表現する特定の方法 (オブジェクトが [IFormattable](xref:System.IFormattable) インターフェイスを実装し、書式文字列をサポートする場合)。 これは、: (コロン) 付きの書式項目のインデックスに、有効な書式文字列を続けることによります。 前の例では、日付の値を "d" (短い日付のパターン) 書式文字列 (`{0:d}` など) を書式設定し、数値を "C2" 書式文字列 (`{2:C2}` など) で書式設定して数値を&2; 桁の小数部を含む&10; 進数を持つ通貨値で表していました。 
+* オブジェクトを文字列として表現する特定の方法 (オブジェクトが [IFormattable](xref:System.IFormattable) インターフェイスを実装し、書式文字列をサポートする場合)。 これは、: (コロン) 付きの書式項目のインデックスに、有効な書式文字列を続けることによります。 前の例では、日付の値を "d" (短い日付のパターン) 書式文字列 (`{0:d}` など) を書式設定し、数値を "C2" 書式文字列 (`{2:C2}` など) で書式設定して数値を 2 桁の小数部を含む 10 進数を持つ通貨値で表していました。 
 
 * オブジェクトの文字列形式を含むフィールドの幅、およびそのフィールドの文字列形式の配置。 これは、, (コンマ) 付きの書式項目のインデックスに、フィールドの幅を続けることによります。 フィールドの幅が正の値の場合、文字列はフィールドで右揃えにし、フィールドの幅が負の値の場合、左揃えにします。 次の例では、20 文字のフィールドで日付の値を左揃えにし、11 文字のフィールドで、1 桁の小数部を含む 10 進数値を右揃えにします。 
 
@@ -1236,11 +1236,11 @@ Next
 
 ## <a name="custom-formatting-with-icustomformatter"></a>ICustomFormatter を使用したカスタム書式設定
 
-[String.Format(IFormatProvider, String, Object[])](xref:System.String.Format(System.IFormatProvider,System.String,System.Object[])) および [StringBuilder.AppendFormat(IFormatProvider, String, Object[])](xref:System.Text.StringBuilder.AppendFormat(System.IFormatProvider,System.String,System.Object)) の&2; つの複合書式指定メソッドには、カスタム書式設定をサポートしている書式プロバイダー パラメーターが含まれています。 これらの書式指定メソッドのいずれかを呼び出すと、書式プロバイダーの `GetFormat` メソッドに [ICustomFormatter](xref:System.ICustomFormatter) インターフェイスを表す [Type](xref:System.Type) オブジェクトが渡されます。 次に、`GetFormat` メソッドによって、カスタム書式設定を提供する [ICustomFormatter](xref:System.ICustomFormatter) の実装が返されます。
+[String.Format(IFormatProvider, String, Object[])](xref:System.String.Format(System.IFormatProvider,System.String,System.Object[])) および [StringBuilder.AppendFormat(IFormatProvider, String, Object[])](xref:System.Text.StringBuilder.AppendFormat(System.IFormatProvider,System.String,System.Object)) の 2 つの複合書式指定メソッドには、カスタム書式設定をサポートしている書式プロバイダー パラメーターが含まれています。 これらの書式指定メソッドのいずれかを呼び出すと、書式プロバイダーの `GetFormat` メソッドに [ICustomFormatter](xref:System.ICustomFormatter) インターフェイスを表す [Type](xref:System.Type) オブジェクトが渡されます。 次に、`GetFormat` メソッドによって、カスタム書式設定を提供する [ICustomFormatter](xref:System.ICustomFormatter) の実装が返されます。
 
-[ICustomFormatter](xref:System.ICustomFormatter) インターフェイスには、[Format(String, Object, IFormatProvider)](xref:System.ICustomFormatter.Format(System.String,System.Object,System.IFormatProvider)) という単一のメソッドがあります。このメソッドは、複合書式指定文字列の書式指定項目ごとに&1; 回、複合書式指定メソッドによって自動的に呼び出されます。 [Format(String, Object, IFormatProvider)](xref:System.ICustomFormatter.Format(System.String,System.Object,System.IFormatProvider)) メソッドには、3 つのパラメーターがあります。書式指定項目の *formatString* 引数を表す書式指定文字列、書式を設定するオブジェクト、および書式指定サービスを提供する [IFormatProvider](xref:System.IFormatProvider) オブジェクトの&3; つです。 通常は、[ICustomFormatter](xref:System.ICustomFormatter) を実装するクラスでは [IFormatProvider](xref:System.IFormatProvider) も実装するため、この最後のパラメーターはカスタム書式指定クラス自体への参照になります。 このメソッドは、書式を設定するオブジェクトのカスタム書式の文字列形式を返します。 オブジェクトの書式を設定できない場合は、null 参照を返します。
+[ICustomFormatter](xref:System.ICustomFormatter) インターフェイスには、[Format(String, Object, IFormatProvider)](xref:System.ICustomFormatter.Format(System.String,System.Object,System.IFormatProvider)) という単一のメソッドがあります。このメソッドは、複合書式指定文字列の書式指定項目ごとに 1 回、複合書式指定メソッドによって自動的に呼び出されます。 [Format(String, Object, IFormatProvider)](xref:System.ICustomFormatter.Format(System.String,System.Object,System.IFormatProvider)) メソッドには、3 つのパラメーターがあります。書式指定項目の *formatString* 引数を表す書式指定文字列、書式を設定するオブジェクト、および書式指定サービスを提供する [IFormatProvider](xref:System.IFormatProvider) オブジェクトの 3 つです。 通常は、[ICustomFormatter](xref:System.ICustomFormatter) を実装するクラスでは [IFormatProvider](xref:System.IFormatProvider) も実装するため、この最後のパラメーターはカスタム書式指定クラス自体への参照になります。 このメソッドは、書式を設定するオブジェクトのカスタム書式の文字列形式を返します。 オブジェクトの書式を設定できない場合は、null 参照を返します。
 
-整数値を&2; 桁の&16; 進値とそれに続く&1; つの空白のシーケンスとして表示する、`ByteByByteFormatter` という名前の [ICustomFormatter](xref:System.ICustomFormatter) の実装の例を次に示します。
+整数値を 2 桁の 16 進値とそれに続く 1 つの空白のシーケンスとして表示する、`ByteByByteFormatter` という名前の [ICustomFormatter](xref:System.ICustomFormatter) の実装の例を次に示します。
 
 ```csharp
 public class ByteByByteFormatter : IFormatProvider, ICustomFormatter
@@ -1337,7 +1337,7 @@ Public Class ByteByByteFormatter : Implements IFormatProvider, ICustomFormatter
 End Class
 ```
 
-`ByteByByteFormatter` クラスを使用して整数値の書式を設定する例を次に示します。 [ICustomFormatter.Format](xref:System.ICustomFormatter.Format(System.String,System.Object,System.IFormatProvider)) メソッドが&2; 回目の [String.Format(IFormatProvider, String, Object[])](xref:System.ICustomFormatter.Format(System.String,System.Object,System.IFormatProvider)) メソッド呼び出しで複数回呼び出されることに注意してください。また、`.ByteByByteFormatter.Format` メソッドが "N0" 書式指定文字列を認識せず、null 参照を返すため、3 回目のメソッド呼び出しでは既定の [NumberFormatInfo](xref:System.Globalization.NumberFormatInfo) プロバイダーが使用されていることに注意してください。
+`ByteByByteFormatter` クラスを使用して整数値の書式を設定する例を次に示します。 [ICustomFormatter.Format](xref:System.ICustomFormatter.Format(System.String,System.Object,System.IFormatProvider)) メソッドが 2 回目の [String.Format(IFormatProvider, String, Object[])](xref:System.ICustomFormatter.Format(System.String,System.Object,System.IFormatProvider)) メソッド呼び出しで複数回呼び出されることに注意してください。また、`.ByteByByteFormatter.Format` メソッドが "N0" 書式指定文字列を認識せず、null 参照を返すため、3 回目のメソッド呼び出しでは既定の [NumberFormatInfo](xref:System.Globalization.NumberFormatInfo) プロバイダーが使用されていることに注意してください。
 
 ```csharp
 public class Example
@@ -1390,7 +1390,7 @@ End Module
 [標準 TimeSpan 書式指定文字列](standard-timespan.md) | 時間間隔に対して一般的に使用される文字列形式を作成する標準書式指定文字列について説明します。
 [カスタム TimeSpan 書式指定文字列](custom-timespan.md) | 時間間隔に対するアプリケーション固有の文字列形式を作成するカスタム書式指定文字列について説明します。
 [列挙型書式指定文字列](enumeration-format.md) | 列挙型の文字列形式を作成するために使用される標準書式指定文字列について説明します。
-[複合書式指定](composite-format.md) | 文字列に&1; つ以上の書式指定された値を埋め込む方法について説明します。 この文字列は、コンソールに表示したり、ストリームに書き込んだりできます。
+[複合書式指定](composite-format.md) | 文字列に 1 つ以上の書式指定された値を埋め込む方法について説明します。 この文字列は、コンソールに表示したり、ストリームに書き込んだりできます。
 [書式設定操作の実行](performing-formatting-operations.md) | 特定の書式設定操作を行うための手順を説明するトピックの一覧を示します。
 [文字列の解析](parsing-strings.md) | オブジェクトの文字列表現によって指定された値にオブジェクトを初期化する方法について説明します。 解析は書式設定の逆の操作です。
 

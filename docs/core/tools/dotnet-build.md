@@ -1,22 +1,23 @@
 ---
-title: "dotnet-build コマンド | Microsoft Docs"
+title: "dotnet-build コマンド - .NET Core CLI | Microsoft Docs"
 description: "dotnet-build コマンドは、プロジェクトとそのすべての依存関係をします。"
 keywords: "dotnet-build, CLI, CLI コマンド, .NET Core"
 author: blackdwarf
 ms.author: mairaw
-ms.date: 03/06/2017
+ms.date: 03/15/2017
 ms.topic: article
 ms.prod: .net-core
 ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: 5e1a2bc4-a919-4a86-8f33-a9b218b1fcb3
 translationtype: Human Translation
-ms.sourcegitcommit: 195664ae6409be02ca132900d9c513a7b412acd4
-ms.openlocfilehash: 17c2db54f871795c370a6475c21e36736a6b46c3
-ms.lasthandoff: 03/07/2017
+ms.sourcegitcommit: dff752a9d31ec92b113dae9eed20cd72faf57c84
+ms.openlocfilehash: e5deac8a7b8faac97ccf8b801f274a2c03268d64
+ms.lasthandoff: 03/22/2017
 
 ---
-#<a name="dotnet-build"></a>dotnet-build
+
+# <a name="dotnet-build"></a>dotnet-build
 
 ## <a name="name"></a>名前
 
@@ -24,24 +25,21 @@ ms.lasthandoff: 03/07/2017
 
 ## <a name="synopsis"></a>構文
 
-```
-dotnet build [project] [-o|--output] [-f|--framework] [-c|--configuration] [-r|--runtime] [--version-suffix] [--no-incremental] [--no-dependencies] [-v|--verbosity]
-dotnet build [--help]
-```
+`dotnet build [<PROJECT>] [-o|--output] [-f|--framework] [-c|--configuration] [-r|--runtime] [--version-suffix] [--no-incremental] [--no-dependencies] [-v|--verbosity] [-h|--help]`
 
 ## <a name="description"></a>説明
-`dotnet build` コマンドは、プロジェクトとその依存関係をバイナリ セットにビルドします。 バイナリは、デバッグに使用するシンボル ファイル (拡張子が `*.pdb`) と中間言語 (IL) のプロジェクトのコード (拡張子が `*.dll`) です。 また、アプリケーションの依存関係を列挙する JSON ファイル (拡張子が `*.deps.json`) が生成されます。 最後に、`runtime.config.json` ファイルも生成されます。 このファイルで、ビルドされるコードを実行する共有ランタイムとバージョンを指定します。 
 
-サードパーティ (NuGet のライブラリなど) との依存関係があるプロジェクトの場合、NuGet キャッシュから解決され、プロジェクトのビルドの出力では使用できません。 この点を考慮すると、`dotnet build` の生成物は別のコンピューターに転送して実行することはできません。 これは .NET Framework の動作とは対照的です。.NET Framework の場合、実行可能なプロジェクト (アプリケーション) をビルドすると、.NET Framework がインストールされている任意のコンピューター上で実行できる出力が生成されます。 .NET Core でも同様の動作にするには、[dotnet publish](dotnet-publish.md) コマンドを使用する必要があります。 詳細については、「[.NET Core アプリケーション展開](../deploying/index.md)」を参照してください。 
+`dotnet build` コマンドは、プロジェクトとその依存関係をバイナリ セットにビルドします。 バイナリには、拡張子が *.dll* である中間言語 (IL) ファイルのプロジェクトのコードと、拡張子が *.pdb* でありデバッグに使われるシンボル ファイルが含まれます。 アプリケーションの依存関係を一覧表示する依存関係 JSON ファイル (*\*.deps.json*) が生成されます。 共有ランタイムと、そのアプリケーションのバージョンを指定する、*\*.runtimeconfig.json* ファイルが生成されます。
 
-ビルドには、*assets.json* ファイル (アプリケーションのすべての依存関係を一覧するファイル) が存在している必要があります。つまり、プロジェクトをビルドする前に [`dotnet restore`](dotnet-restore.md) を実行する必要があるということです。 ツールのエラーによりアセット ファイル マニフェストがないと、参照アセンブリを解決できないため、エラーになります。 
+サードパーティ (NuGet のライブラリなど) との依存関係があるプロジェクトの場合、NuGet キャッシュから解決され、プロジェクトのビルドの出力では使うことができません。 この点を考慮すると、`dotnet build` の生成物は別のコンピューターに転送して実行することはできません。 これは .NET Framework の動作とは対照的です。.NET Framework の場合、実行可能なプロジェクト (アプリケーション) をビルドすると、.NET Framework がインストールされている任意のコンピューター上で実行できる出力が生成されます。 .NET Core でも同様の動作にするには、[dotnet publish](dotnet-publish.md) コマンドを使います。 詳しくは、「[.NET Core アプリケーション展開](../deploying/index.md)」をご覧ください。 
 
-`dotnet build` は MSBuild を使用してプロジェクトをビルドするので、並行ビルドとインクリメンタル ビルドの両方をサポートしています。 これらのトピックの詳細については、[MSBuild のドキュメント](https://docs.microsoft.com/visualstudio/msbuild/msbuild)を参照してください。 
+ビルドには *project.assets.json* ファイルが必要です。このファイルには、アプリケーションの依存関係が一覧表示されています。 このファイルは、プロジェクトをビルドする前に [`dotnet restore`](dotnet-restore.md) を実行すると作成されます。 アセット ファイルがないと、ツールは参照アセンブリを解決できないため、エラーになります。
 
-このオプションに加え、`dotnet build` コマンドは、プロパティを設定する `/p` やロガーを定義する `/l` などの MSBuild オプションも受け入れます。 これらのオプションを使用する場合の詳細については、[`dotnet msbuild`](dotnet-msbuild.md) コマンドのドキュメントを参照してください。 参照してください 
+`dotnet build` は MSBuild を使ってプロジェクトをビルドするので、並行ビルドとインクリメンタル ビルドの両方をサポートしています。 詳しくは、「[インクリメンタル ビルド](https://docs.microsoft.com/visualstudio/msbuild/incremental-builds)」をご覧ください。 
 
-プロジェクトを実行できるかどうかは、プロジェクト ファイルの `<OutputType>` プロパティで決まります。 次の例は、実行可能なコードを生成するプロジェクトを示しています。 
+このオプションに加え、`dotnet build` コマンドは、プロパティを設定する `/p` やロガーを定義する `/l` などの MSBuild オプションも受け入れます。 これらのオプションについて詳しくは、「[MSBuild コマンド ライン リファレンス](https://docs.microsoft.com/visualstudio/msbuild/msbuild-command-line-reference)」をご覧ください。 
 
+プロジェクトを実行できるかどうかは、プロジェクト ファイルの `<OutputType>` プロパティで決まります。 次の例は、実行可能なコードを生成するプロジェクトを示しています。
 
 ```xml
 <PropertyGroup>
@@ -49,14 +47,13 @@ dotnet build [--help]
 </PropertyGroup>
 ```
 
-ライブラリを生成するには、このプロパティを省略してください。 出力の主な違いは、ライブラリの IL DLL には、エントリ ポイントが含まれず、実行できないということです。 
+ライブラリを生成するには、`<OutputType>` プロパティを省略してください。 ビルドされる出力の主な違いは、ライブラリの IL DLL にはエントリ ポイントが含まれず、実行できないことです。 
 
 ## <a name="arguments"></a>引数
 
-`project`
+`PROJECT`
 
-ビルドするプロジェクト ファイル。
-プロジェクト ファイルを指定しない場合、MSBuild は、現在の作業ディレクトリからファイル名拡張子 `proj` を検索し、そのファイルを使用します。
+ビルドするプロジェクト ファイル。 プロジェクト ファイルを指定しない場合、MSBuild は、現在の作業ディレクトリから *proj* で終わるファイル名拡張子を検索し、そのファイルを使います。
 
 ## <a name="options"></a>オプション
 
@@ -70,19 +67,19 @@ dotnet build [--help]
 
 `-f|--framework <FRAMEWORK>`
 
-特定のフレームワーク用にコンパイルします。 フレームワークは、[project file](csproj.md) に定義する必要があります。
+特定の[フレームワーク](../../standard/frameworks.md)用にコンパイルします。 フレームワークは、[プロジェクト ファイル](csproj.md)で定義する必要があります。
 
-`-c|--configuration [Debug|Release]`
+`-c|--configuration <CONFIGURATION>`
 
-ビルドに使用する構成を定義します。 省略した場合は、既定で `Debug` に設定されます。
+ビルド構成を定義します。 省略すると、ビルド構成は既定で `Debug` になります。 リリース構成をビルドするには `Release` を使います。
 
-`-r|--runtime [RUNTIME_IDENTIFIER]`
+`-r|--runtime <RUNTIME_IDENTIFIER>`
 
-ビルドのターゲット ランタイムです。 使用できるランタイム ID (RID) については、[RID カタログ](../rid-catalog.md)に関するページを参照してください。
+ターゲットのランタイムを指定します。 ランタイム ID (RID) の一覧については、[RID カタログ](../rid-catalog.md)に関するページをご覧ください。
 
-`--version-suffix [VERSION_SUFFIX]`
+`--version-suffix <VERSION_SUFFIX>`
 
-プロジェクト ファイルのバージョン フィールドで `*` を置き換える必要がある値を定義します。 形式は NuGet のバージョン ガイドラインに従います。
+プロジェクト ファイルのバージョン フィールドでアスタリスク (`*`) のバージョン サフィックスを定義します。 形式は NuGet のバージョン ガイドラインに従います。
 
 `--no-incremental`
 
@@ -90,9 +87,9 @@ dotnet build [--help]
 
 `--no-dependencies`
 
-プロジェクト間参照を無視し、ビルド対象として指定されたルート プロジェクトのみをビルドします。
+プロジェクト間 (P2P) 参照を無視し、ビルド対象として指定されたルート プロジェクトのみをビルドします。
 
-`-v|--verbosity`
+`-v|--verbosity <LEVEL>`
 
 コマンドの詳細レベルを設定します。 指定できる値は、`q[uiet]`、`m[inimal]`、`n[ormal]`、`d[etailed]`、および `diag[nostic]` です。
 
@@ -109,3 +106,4 @@ dotnet build [--help]
 特定のランタイム (この例では、Ubuntu 16.04) 用にプロジェクトとその依存関係をビルドします。
 
 `dotnet build --runtime ubuntu.16.04-x64`
+

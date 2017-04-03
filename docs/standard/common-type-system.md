@@ -11,15 +11,15 @@ ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: 3b1f5725-ac94-4f17-8e5f-244442438a4d
 translationtype: Human Translation
-ms.sourcegitcommit: 90fe68f7f3c4b46502b5d3770b1a2d57c6af748a
-ms.openlocfilehash: 58c0d68b6840a07c9e5eb1848b3531181f14e973
-ms.lasthandoff: 03/02/2017
+ms.sourcegitcommit: b967d8e55347f44a012e4ad8e916440ae228c8ec
+ms.openlocfilehash: 1680934b40c3055d2c33ed7457d8734dccbd0a8c
+ms.lasthandoff: 03/10/2017
 
 ---
 
 # <a name="common-type-system--common-language-specification"></a>共通型システムと共通言語仕様
 
-これらの&2; つの用語は、.NET の世界で自由に使用されます。これらは実際には、.NET プラットフォームで多言語開発を可能にし、そのしくみを理解するために重要です。
+これらの 2 つの用語は、.NET の世界で自由に使用されます。これらは実際には、.NET プラットフォームで多言語開発を可能にし、そのしくみを理解するために重要です。
 
 ## <a name="common-type-system"></a>共通型システム
 
@@ -32,7 +32,7 @@ ms.lasthandoff: 03/02/2017
 *   型を扱うときにすべての言語が従う必要がある規則のセットを定義する。
 *   アプリケーション開発に使用される基本的なプリミティブ データ型 (`Boolean`、`Byte`、`Char` など) を含んだライブラリを提供します。
 
-CTS が定義する、参照型と値型という&2; つの主要な型をサポートする必要があります。 それらの名前が空の定義を示します。
+CTS が定義する、参照型と値型という 2 つの主要な型をサポートする必要があります。 それらの名前が空の定義を示します。
 
 参照型のオブジェクトは、オブジェクトの実際の値を指す参照によって表されます。ここでの参照は、 C/C++ のポインターに似ています。 これは、単純にオブジェクトの値が存在しているメモリの場所を参照します。 このことはこれらの型の使用方法に深く影響します。 変数に参照型割り当ててその変数をメソッドに渡す場合、たとえば、オブジェクトの変更はメイン オブジェクトに反映されます。コピーはありません。
 
