@@ -1,39 +1,57 @@
 ---
-title: "方法 : CLS 準拠でない例外をキャッチする | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.technology: 
-  - "devlang-csharp"
-ms.topic: "article"
-dev_langs: 
-  - "CSharp"
-helpviewer_keywords: 
-  - "例外 [C#], 非 CLS"
+title: "方法: CLS 準拠でない例外をキャッチする | Microsoft Docs"
+ms.date: 2015-07-20
+ms.prod: .net
+ms.technology:
+- devlang-csharp
+ms.topic: article
+dev_langs:
+- CSharp
+helpviewer_keywords:
+- exceptions [C#], non-CLS
 ms.assetid: db4630b3-5240-471a-b3a7-c7ff6ab31e8d
 caps.latest.revision: 8
-author: "BillWagner"
-ms.author: "wiwagn"
-caps.handback.revision: 8
+author: BillWagner
+ms.author: wiwagn
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Human Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: 3515ecab379a0e910cdd5ba82a4a39b085cc816f
+ms.lasthandoff: 03/13/2017
+
 ---
-# 方法 : CLS 準拠でない例外をキャッチする
-C\+\+、CLI を含む一部の .NET 言語では、オブジェクトは、<xref:System.Exception> から派生していない例外をスローできます。  このような例外を*CLS 準拠でない例外*、または *Exception クラスから派生していない例外*と呼びます。  [!INCLUDE[csprcs](../../../csharp/includes/csprcs-md.md)] では、CLS 準拠でない例外をスローすることはできませんが、これらの例外を次の 2 とおりの方法でキャッチできます。  
+# <a name="how-to-catch-a-non-cls-exception"></a>方法 : CLS 準拠でない例外をキャッチする
+C++/CLI をはじめとする一部の .NET 言語では、<xref:System.Exception> から派生していない例外をオブジェクトでスローすることができます。 このような例外は "*CLS 準拠でない例外*" や "*非例外*" と呼ばれています。 [!INCLUDE[csprcs](../../../csharp/includes/csprcs_md.md)] では、CLS 準拠でない例外をスローすることはできませんが、それらをキャッチすることはできます。次の 2 とおりの方法があります。  
   
--   `catch (Exception e)` ブロック内で <xref:System.Runtime.CompilerServices.RuntimeWrappedException> としてキャッチ。  
+-   `catch (Exception e)` ブロック内で <xref:System.Runtime.CompilerServices.RuntimeWrappedException> としてキャッチする。  
   
-     既定では、[!INCLUDE[csprcs](../../../csharp/includes/csprcs-md.md)] アセンブリは CLS 準拠でない例外をラップされた例外としてキャッチします。  <xref:System.Runtime.CompilerServices.RuntimeWrappedException.WrappedException%2A> プロパティからアクセスできる元の例外にアクセスする必要がある場合は、この方法を使用します。  この方法で例外をキャッチする方法については、このトピックで後述する手順で説明します。  
+     [!INCLUDE[csprcs](../../../csharp/includes/csprcs_md.md)] アセンブリの既定の動作上、CLS 準拠でない例外はラップされた例外としてキャッチされます。 この方法は、元の例外にアクセスする必要がある場合に使用します。<xref:System.Runtime.CompilerServices.RuntimeWrappedException.WrappedException%2A> プロパティから元の例外にアクセスすることができます。 この方法で例外をキャッチする方法については、このトピックで後述します。  
   
--   `catch (Exception)` ブロックか `catch (Exception e)` ブロックの後ろに置かれた汎用の catch ブロック \(例外の型が指定されていない catch ブロック\) 内でキャッチ。  
+-   `catch (Exception)` ブロックまたは `catch (Exception e)` ブロックの後に置いた汎用的な catch ブロック (例外の型が指定されていない catch ブロック) 内でキャッチする。  
   
-     CLS 準拠でない例外に対して何らかのアクションを実行する必要があり、例外情報にアクセスする必要がない場合は、この方法を使用します。  既定では、共通言語ランタイムはすべての例外をラップします。  この動作を無効にするには、アセンブリレベルの属性 `[assembly: RuntimeCompatibilityAttribute(WrapNonExceptionThrows = false)]` をコード ファイル \(厳密には AssemblyInfo.cs ファイル\) に追加します。  
+     この方法は、CLS 準拠でない例外への応答として何らかのアクション (ログ ファイルへの書き込みなど) を実行したい場合で、なおかつ例外情報にアクセスする必要がない場合に使用します。 既定では、すべての例外が共通言語ランタイムによってラップされます。 この動作を無効にするには、`[assembly: RuntimeCompatibilityAttribute(WrapNonExceptionThrows = false)]` というアセンブリ レベルの属性を (通常、AssemblyInfo.cs ファイル内の) コードに追加します。  
   
-### CLS 準拠でない例外をキャッチするには  
+### <a name="to-catch-a-non-cls-exception"></a>CLS 準拠でない例外をキャッチするには  
   
-1.  `catch(Exception e) block`内で `as` キーワードを使用して、`e` を <xref:System.Runtime.CompilerServices.RuntimeWrappedException> にキャストできるかどうかをテストします。  
+1.  `catch(Exception e) block` 内で、`as` キーワードを使用するか、または `e` を <xref:System.Runtime.CompilerServices.RuntimeWrappedException> にキャストできるかどうかを調べます。  
   
 2.  <xref:System.Runtime.CompilerServices.RuntimeWrappedException.WrappedException%2A> プロパティから元の例外にアクセスします。  
   
-## 使用例  
- 次の例では、C\+\+ または CLR で記述されたクラス ライブラリからスローされた CLS 準拠でない例外をキャッチする方法を示します。  この例では、[!INCLUDE[csprcs](../../../csharp/includes/csprcs-md.md)] クライアント コードは、スローされる例外の型が <xref:System.String?displayProperty=fullName> であることを事前に認識しています。  コードからこの型にアクセスできる場合は、<xref:System.Runtime.CompilerServices.RuntimeWrappedException.WrappedException%2A> プロパティを元の型にキャストできます。  
+## <a name="example"></a>例  
+ 次の例は、C++/CLR のクラス ライブラリからスローされた、CLS 準拠でない例外をキャッチする方法を示しています。 この例で、[!INCLUDE[csprcs](../../../csharp/includes/csprcs_md.md)] クライアント コードは、スローされる例外の型が <xref:System.String?displayProperty=fullName> であることを事前に把握しています。 <xref:System.Runtime.CompilerServices.RuntimeWrappedException.WrappedException%2A> プロパティの本来の型が自分のコードからアクセスできる型であれば、プロパティを元の型にキャストすることができます。  
   
 ```  
 // Class library written in C++/CLR.  
@@ -64,6 +82,6 @@ C\+\+、CLI を含む一部の .NET 言語では、オブジェクトは、<xref
    }             
 ```  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Runtime.CompilerServices.RuntimeWrappedException>   
- [例外と例外処理](../../../csharp/programming-guide/exceptions/exceptions-and-exception-handling.md)
+ [例外と例外処理](../../../csharp/programming-guide/exceptions/index.md)

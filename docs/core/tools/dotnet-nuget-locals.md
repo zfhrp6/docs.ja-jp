@@ -1,41 +1,41 @@
 ---
-title: "dotnet-nuget-locals コマンド | Microsoft Docs"
+title: "dotnet-nuget-locals コマンド - .NET Core CLI | Microsoft Docs"
 description: "dotnet-nuget-locals コマンドは、HTTP 要求キャッシュ、一時的なキャッシュ、コンピューター全体のグローバル パッケージ フォルダーなどのローカルの NuGet リソースをクリアまたは一覧表示します。"
 keywords: "dotnet-nuget-locals, CLI, CLI コマンド, .NET Core"
 author: karann-msft
 ms.author: mairaw
-ms.date: 03/06/2017
+ms.date: 03/15/2017
 ms.topic: article
 ms.prod: .net-core
 ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: 8440229e-317e-4dc1-9463-cba5fdb12c3b
 translationtype: Human Translation
-ms.sourcegitcommit: 195664ae6409be02ca132900d9c513a7b412acd4
-ms.openlocfilehash: 3d8ca57c3c9c25a59b98552784b057182c9100a3
-ms.lasthandoff: 03/07/2017
+ms.sourcegitcommit: dff752a9d31ec92b113dae9eed20cd72faf57c84
+ms.openlocfilehash: d0acfaa6ff1a11f49a0d3751b675ea94bd6ae3a3
+ms.lasthandoff: 03/22/2017
 
 ---
-#<a name="dotnet-nuget-locals"></a>dotnet-nuget-locals
+
+# <a name="dotnet-nuget-locals"></a>dotnet-nuget locals
 
 ## <a name="name"></a>名前
 
-`dotnet-nuget-locals` - HTTP 要求キャッシュ、一時的なキャッシュ、コンピューター全体のグローバル パッケージ フォルダーなどのローカルの NuGet リソースをクリアまたは一覧表示します。 
+`dotnet-nuget locals` - ローカル NuGet リソースをクリアまたはリストします。 
 
 ## <a name="synopsis"></a>構文
 
-```
-dotnet nuget locals <cache_location> [(-c|--clear)|(-l|--list)] [--force-english-output]
-dotnet nuget locals [-h|--help]
-```
-
-`<cache_location>` が次のいずれかの値の場合: `all`、`http-cache`、`packages-cache`、`global-packages`、または `temp`。
+`dotnet nuget locals <CACHE_LOCATION> [(-c|--clear)|(-l|--list)] [--force-english-output] [-h|--help]`
 
 ## <a name="description"></a>説明
 
-`dotnet nuget locals` コマンドは、HTTP 要求キャッシュ、一時的なキャッシュ、コンピューター全体のグローバル パッケージ フォルダーなどのローカルの NuGet リソースをクリアまたは一覧表示します。
+`dotnet nuget locals` コマンドは、HTTP 要求キャッシュ、一時的なキャッシュ、コンピューター全体のグローバル パッケージ フォルダーのローカルの NuGet リソースをクリアまたは一覧表示します。
 
 ## <a name="arguments"></a>引数
+
+`CACHE_LOCATION`
+
+次のいずれかの値です。
 
 `all`
 
@@ -51,7 +51,7 @@ dotnet nuget locals [-h|--help]
 
 `temp`
 
-指定した操作を一時的なキャッシュのみに適用することを指定します。 その他のキャッシュの場所には影響しません。
+指定した操作を一時キャッシュのみに適用することを指定します。 その他のキャッシュの場所には影響しません。
 
 ## <a name="options"></a>オプション
 
@@ -61,7 +61,7 @@ dotnet nuget locals [-h|--help]
 
 `-c|--clear`
 
-クリア オプションは、指定されたキャッシュの種類でクリア操作を実行するために使用されます。 キャッシュ ディレクトリの内容は、再帰的に削除されます。 実行中のユーザー/グループには、操作を成功させるために、キャッシュ ディレクトリ内のファイルへのアクセス許可がある必要があります。 アクセス許可がない場合は、ファイル/フォルダーがクリアされなかったことを示すエラーが表示されます。
+クリア オプションは、指定されたキャッシュの種類でクリア操作を実行します。 キャッシュ ディレクトリの内容は、再帰的に削除されます。 実行中のユーザー/グループには、キャッシュ ディレクトリ内のファイルへのアクセス許可が必要です。 アクセス許可がない場合は、ファイル/フォルダーがクリアされなかったことを示すエラーが表示されます。
 
 `-l|--list`
 
@@ -81,7 +81,7 @@ dotnet nuget locals [-h|--help]
 
 `dotnet nuget locals --list http-cache`
 
-すべてのローカルのキャッシュ ディレクトリ (HTTP キャッシュ ディレクトリ、グローバル パッケージ キャッシュ ディレクトリ、および一時的なキャッシュ ディレクトリ) のファイルをクリアします。
+すべてのローカルのキャッシュ ディレクトリ (HTTP キャッシュ ディレクトリ、グローバル パッケージ キャッシュ ディレクトリ、および一時的なキャッシュ ディレクトリ) からすべてのファイルをクリアします。
 
 `dotnet nuget locals --clear all`
 
@@ -95,5 +95,5 @@ dotnet nuget locals [-h|--help]
 
 ## <a name="troubleshooting"></a>トラブルシューティング
 
-`dotnet-nuget-locals` コマンドを使用しているときに発生する一般的な問題やエラーについては、「[Managing the NuGet cache](https://docs.microsoft.com/nuget/consume-packages/managing-the-nuget-cache)」 (NuGet キャッシュを管理する) をご覧ください。
+`dotnet nuget locals` コマンドを使うときの一般的な問題やエラーについては、「[Managing the NuGet cache](https://docs.microsoft.com/nuget/consume-packages/managing-the-nuget-cache)」 (NuGet キャッシュを管理する) をご覧ください。
 

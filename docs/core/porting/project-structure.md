@@ -10,12 +10,16 @@ ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: 3af62252-1dfa-4336-8d2f-5cfdb57d7724
 translationtype: Human Translation
-ms.sourcegitcommit: 90fe68f7f3c4b46502b5d3770b1a2d57c6af748a
-ms.openlocfilehash: ed2fdad2a784f4e4ce1f8a660b5bb151935fd2d4
+ms.sourcegitcommit: 405bac1faa446687a4acdcf2d5536ee31f31f246
+ms.openlocfilehash: b86693b1d6eed0ff5b8d1831e324354241f29806
+ms.lasthandoff: 03/15/2017
 
 ---
 
 # <a name="organizing-your-project-to-support-net-framework-and-net-core"></a>プロジェクトを整理し、.NET Framework と .NET Core をサポートする
+
+> [!WARNING]
+> このトピックはまだ更新されておらず、最新版のツールが反映されていません。
 
 この記事は、プロジェクト所有者が横並びの .NET Framework と .NET Core に対してソリューションをコンパイルするときに役立ちます。  プロジェクトを整理するためのオプションを提供し、開発者を支援します。  ここでは、.NET Core でプロジェクト レイアウトを設定する方法について決定するときに考慮する典型的なシナリオを紹介します。  プロジェクトのニーズに基づいて選択されており、すべてを網羅していないかもしれません。
 
@@ -121,9 +125,4 @@ project.json と xproj に移行する方法に関する詳細については、
 [option-xproj-folder]: #keep-existing-projects-and-create-a-net-core-project
 
 [how-to-multitarget]: ../tutorials/libraries.md#how-to-multitarget
-
-
-
-<!--HONumber=Jan17_HO3-->
-
 

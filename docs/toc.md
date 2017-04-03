@@ -129,9 +129,12 @@
 # [.NET Core のガイド](core/index.md)
 ## [はじめに](core/getting-started.md)
 ## [Windows の前提条件](core/windows-prerequisites.md)
+## [macOS の前提条件](core/macos-prerequisites.md)
 ## [チュートリアル](core/tutorials/index.md)
 ### [Visual Studio 2017 を使用した Windows での完全な .NET Core ソリューションの構築](core/tutorials/using-on-windows-full-solution.md)
 ### [macOS での .NET Core の概要](core/tutorials/using-on-macos.md)
+### [Visual Studio for Mac を使用した macOS での .NET Core の概要](core/tutorials/using-on-mac-vs.md)
+### [Visual Studio for Mac を使用した macOS での完全な .NET Core ソリューションの構築](core/tutorials/using-on-mac-vs-full-solution.md)
 ### [CLI ツールを使用しての .NET Core に関する概要](core/tutorials/using-with-xplat-cli.md)
 #### [.NET Core コマンド ラインを使用したプロジェクトの整理およびテスト](core/tutorials/testing-with-cli.md)
 ### [クロス プラットフォーム ツールによるライブラリの開発](core/tutorials/libraries.md)
@@ -139,8 +142,12 @@
 ### [.NET Core 1.0 のパッケージ依存関係バージョンを管理する方法](core/tutorials/managing-package-dependency-versions.md)
 ### [ネイティブ コードからの .NET Core のホスト](core/tutorials/netcore-hosting.md)
 ## [パッケージ、メタパッケージ、フレームワーク](core/packages.md)
+## [CLI の変更概要](core/tools/cli-msbuild-architecture.md)
+### [依存関係管理](core/tools/dependencies.md)
+### [csproj 形式に追加されたもの](core/tools/csproj.md)
 ## 移行
 ### [csproj 形式への移行](core/migration/index.md)
+### [project.json と csproj 間のマッピング](core/tools/project-json-to-csproj.md)
 ### [DNX からの移行](core/migration/from-dnx.md)
 ## [アプリケーションの展開](core/deploying/index.md)
 ### [クロス プラットフォーム ツールによる NuGet パッケージの作成](core/deploying/creating-nuget-packages.md)
@@ -154,12 +161,7 @@
 ### [.NET Core サポート](core/versions/lts-current.md)
 ### [🔧 サービス](core/versions/servicing.md)
 ## [ランタイム識別子のカタログ](core/rid-catalog.md)
-## [.NET Core のツール](core/tools/index.md)
-### [CLI の変更概要](core/tools/cli-msbuild-architecture.md)
-### [依存関係管理](core/tools/dependencies.md)
-### [アプリケーションの配置](core/deploying/index.md)
-### [csproj 形式に追加されたもの](core/tools/csproj.md)
-### [project.json と csproj 間のマッピング](core/tools/project-json-to-csproj.md)
+## [.NET Core CLI ツール](core/tools/index.md)
 ### [製品利用統計情報](core/tools/telemetry.md)
 ### [機能拡張モデル](core/tools/extensibility.md)
 ### [継続的インテグレーション](core/tools/using-ci-with-cli.md)
@@ -179,6 +181,7 @@
 ### [dotnet-run](core/tools/dotnet-run.md)
 ### [dotnet-sln](core/tools/dotnet-sln.md)
 ### [dotnet-test](core/tools/dotnet-test.md)
+### [dotnet-vstest](core/tools/dotnet-vstest.md)
 ### プロジェクトの変更コマンド
 #### 参照
 ##### [dotnet-add-reference](core/tools/dotnet-add-reference.md)
@@ -193,13 +196,13 @@
 ### [サードパーティの依存関係の分析](core/porting/third-party-deps.md)
 ### [ライブラリの移植](core/porting/libraries.md)
 ### [🔧 NuGet パッケージ](core/porting/nuget-packages.md)
+## [VS 2015/project.json ドキュメント](project-json.md)
 <!-- End .NET Core Content -->
 
 <!-- .NET Framework Content -->
 # [Docker 上の .NET Framework のガイド](framework/index.md)
 ## [Docker](framework/docker/index.md)
 ### [コンテナーで実行中のコンソール アプリケーション](framework/docker/console.md)
-### [コンテナーで実行中の ASP.NET MVC アプリケーション](framework/docker/aspnetmvc.md)
 <!-- End .NET Framework Content -->
 
 <!-- Start of C# Content -->
@@ -408,14 +411,6 @@
 
 ## [開発 (アプリケーションを)](visual-basic/developing-apps/index.md)
 
-### [Visual Basic の開発環境の使用](visual-basic/developing-apps/using-ide/using-the-visual-basic-development-environment.md)
-#### [Visual Basic の設定](visual-basic/developing-apps/using-ide/settings.md)
-#### [Visual Basic の IntelliSense コード スニペット](visual-basic/developing-apps/using-ide/intellisense-code-snippets.md)
-#### [リファクタリング](https://docs.microsoft.com/en-us/visualstudio/vb-ide/refactoring-vb)
-#### [コード生成](https://docs.microsoft.com/en-us/visualstudio/vb-ide/code-generation-vb)
-#### [Visual Basic コードのイベント ハンドラーのヘルプ](visual-basic/developing-apps/using-ide/help-for-event-handlers.md)
-#### [方法 : Visual Basic でプロジェクトをコンパイルして実行する](visual-basic/developing-apps/using-ide/how-to-compile-and-run-a-project.md)
-
 ### [Visual Basic でのプログラミング](visual-basic/developing-apps/programming/index.md)
 #### [コンピューター リソースへのアクセス](visual-basic/developing-apps/programming/computer-resources/computer-resources.md)
 #### [アプリケーションからの情報のログ記録](visual-basic/developing-apps/programming/log-info/logging-information-from-the-application.md)
@@ -434,7 +429,6 @@
 #### [プロジェクトの種類に応じた My の機能](visual-basic/developing-apps/development-with-my/how-my-depends-on-project-type.md)
 
 ### [データへのアクセス](visual-basic/developing-apps/accessing-data.md)
-### [デバッグ](visual-basic/developing-apps/debugging.md)
 ### [コンポーネントの作成および使用](visual-basic/developing-apps/creating-and-using-components.md)
 
 ### [印刷とレポート](visual-basic/developing-apps/printing/printing-and-reporting.md)
@@ -458,7 +452,7 @@
 #### [方法: DataRepeater コントロールに項目ヘッダーを表示する](visual-basic/developing-apps/windows-forms/how-to-display-item-headers-in-a-datarepeater-control-visual-studio.md)
 #### [方法: DataRepeater の項目の追加と削除を無効にする](visual-basic/developing-apps/windows-forms/how-to-disable-adding-and-deleting-datarepeater-items-visual-studio.md)
 #### [方法: DataRepeater コントロールでデータを検索する](visual-basic/developing-apps/windows-forms/how-to-search-data-in-a-datarepeater-control-visual-studio.md)
-#### [方法:&2; つの DataRepeater コントロールを使用してマスター/詳細形式のフォームを作成する](visual-basic/developing-apps/windows-forms/how-to-create-a-master-detail-form-by-using-two-datarepeater-controls.md)
+#### [方法: 2 つの DataRepeater コントロールを使用してマスター/詳細形式のフォームを作成する](visual-basic/developing-apps/windows-forms/how-to-create-a-master-detail-form-by-using-two-datarepeater-controls.md)
 #### [チュートリアル: DataRepeater コントロールでのデータの表示](visual-basic/developing-apps/windows-forms/walkthrough-displaying-data-in-a-datarepeater-control-visual-studio.md)
 #### [DataRepeater コントロールのトラブルシューティング](visual-basic/developing-apps/windows-forms/troubleshooting-the-datarepeater-control-visual-studio.md)
 ### [ライン コントロールとシェイプ コントロール](visual-basic/developing-apps/windows-forms/line-and-shape-controls-visual-studio.md)
@@ -870,7 +864,7 @@
 #### ['As Any' は、'Declare' ステートメントではサポートされていません。](visual-basic/language-reference/error-messages/as-any-is-not-supported-in-declare-statements.md)
 #### [属性 '<attributename>' を複数回適用することはできません。](visual-basic/language-reference/error-messages/attribute-attributename-cannot-be-applied-multiple-times.md)
 #### [オートメーション エラーです。](visual-basic/language-reference/error-messages/automation-error.md)
-#### [不適切なチェックサム値です。16 進数ではないか、または奇数の&16; 進数です。](visual-basic/language-reference/error-messages/bad-checksum-value-non-hex-digits-or-odd-number-of-hex-digits.md)
+#### [不適切なチェックサム値です。16 進数ではないか、または奇数の 16 進数です。](visual-basic/language-reference/error-messages/bad-checksum-value-non-hex-digits-or-odd-number-of-hex-digits.md)
 #### [DLL を正しく呼び出せません。](visual-basic/language-reference/error-messages/bad-dll-calling-convention.md)
 #### [ファイル モードが正しくありません。](visual-basic/language-reference/error-messages/bad-file-mode.md)
 #### [ファイル名または番号が正しくありません。](visual-basic/language-reference/error-messages/bad-file-name-or-number.md)
@@ -929,7 +923,7 @@
 #### [前の関数の評価がタイムアウトしたため、関数の評価は無効になりました。](visual-basic/language-reference/error-messages/function-evaluation-is-disabled.md)
 #### [省略可能なパラメーター型として使用されるジェネリック パラメーターは、クラスの制約がある型でなければなりません。](visual-basic/language-reference/error-messages/generic-parameters-used-as-optional-parameter-types-must-be-class-constrained.md)
 #### [プロパティ '<propertyname>' の 'Get' アクセサーにアクセスできません。](visual-basic/language-reference/error-messages/get-accessor-of-property-propertyname-is-not-accessible.md)
-#### [Handles 句には、含んでいる型またはその基本型の&1; つで定義した WithEvents 変数が必要です。](visual-basic/language-reference/error-messages/handles-clause-requires-a-withevents-variable-defined.md)
+#### [Handles 句には、含んでいる型またはその基本型の 1 つで定義した WithEvents 変数が必要です。](visual-basic/language-reference/error-messages/handles-clause-requires-a-withevents-variable-defined.md)
 #### [識別子が必要です。](visual-basic/language-reference/error-messages/identifier-expected.md)
 #### [識別子が長すぎます。](visual-basic/language-reference/error-messages/identifier-is-too-long.md)
 #### [初期化子が必要です。](visual-basic/language-reference/error-messages/initializer-expected.md)
@@ -993,7 +987,7 @@
 #### [名前空間のステートメントが無効です。](visual-basic/language-reference/error-messages/statement-is-not-valid-in-a-namespace.md)
 #### [メソッドや複数行のラムダの内部では有効でないステートメントです。](visual-basic/language-reference/error-messages/statement-is-not-valid-inside-a-method-multiline-lambda.md)
 #### [文字列定数の終わりには、二重引用符を指定しなければなりません。](visual-basic/language-reference/error-messages/string-constants-must-end-with-a-double-quote.md)
-#### [構造体 '<structurename>' は少なくとも&1; つのインスタンス メンバー変数、または 'Custom' に設定されていない少なくとも&1; つのインスタンス イベント宣言を含まなければなりません。](visual-basic/language-reference/error-messages/structure-structurename-must-contain.md)
+#### [構造体 '<structurename>' は少なくとも 1 つのインスタンス メンバー変数、または 'Custom' に設定されていない少なくとも 1 つのインスタンス イベント宣言を含まなければなりません。](visual-basic/language-reference/error-messages/structure-structurename-must-contain.md)
 #### ['Sub Main' が、'<name>' に見つかりませんでした。](visual-basic/language-reference/error-messages/sub-main-was-not-found-in-name.md)
 #### [Sub または Function が定義されていません。](visual-basic/language-reference/error-messages/sub-or-function-not-defined.md)
 #### [インデックスが有効範囲にありません。](visual-basic/language-reference/error-messages/subscript-out-of-range.md)

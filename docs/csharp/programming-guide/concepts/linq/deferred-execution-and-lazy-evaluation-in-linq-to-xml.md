@@ -1,0 +1,52 @@
+---
+title: "LINQ to XML における遅延実行とレイジー評価 (C#) | Microsoft Docs"
+ms.custom: 
+ms.date: 2015-07-20
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-csharp
+ms.topic: article
+dev_langs:
+- CSharp
+ms.assetid: 8683d1b4-b7ec-407b-be12-906ebe958a09
+caps.latest.revision: 3
+author: BillWagner
+ms.author: wiwagn
+translationtype: Human Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: 1f9d60242c75b996d25997b2adc83ccafcc538de
+ms.lasthandoff: 03/13/2017
+
+
+---
+# <a name="deferred-execution-and-lazy-evaluation-in-linq-to-xml-c"></a>LINQ to XML における遅延実行とレイジー評価 (C#)
+クエリと軸の操作は、多くの場合、遅延実行を使用するように実装されています。 このトピックでは、遅延実行の要件と利点、および実装に関する注意点について説明します。  
+  
+## <a name="deferred-execution"></a>遅延実行  
+ 遅延実行とは、"*具体*" 値が実際に必要となるまで、式の評価を遅らせることを意味します。 大きなデータ コレクションの操作が必要な場合、特に連結されたクエリや操作が含まれているプログラムでは、遅延実行によってパフォーマンスが大幅に向上することがあります。 最も効果的なケースでは、遅延実行を使用することによって、ソース コレクションの繰り返し処理を 1 度行うだけで済むようになります。  
+  
+ LINQ テクノロジでは、コア <xref:System.Linq?displayProperty=fullName> クラスのメンバーにおいても、<xref:System.Xml.Linq.Extensions?displayProperty=fullName> などのさまざまな LINQ 名前空間の拡張メソッドにおいても、遅延実行が広く利用されています。  
+  
+ C# 言語では、反復子ブロック内で [yield](../../../../csharp/language-reference/keywords/yield.md) キーワード (`yield-return` ステートメントの形式) を使用することにより、遅延実行が直接サポートされます。 このような反復子は、<xref:System.Collections.IEnumerator> 型または <xref:System.Collections.Generic.IEnumerator%601> 型 (または派生型) のコレクションを返す必要があります。  
+  
+## <a name="eager-vs-lazy-evaluation"></a>集中評価とレイジー評価  
+ 遅延実行を実装するメソッドを記述するときは、レイジー評価と集中評価のどちらを使用してメソッドを実装するかについても決定する必要があります。  
+  
+-   "*レイジー評価*" では、反復子を呼び出すたびに、ソース コレクションの 1 つの要素が処理されます。 これが、一般的な反復子の実装方法です。  
+  
+-   "*集中評価*" では、反復子への最初の呼び出しの結果として、コレクション全体が処理されます。 ソース コレクションの一時的なコピーが必要になる場合もあります。 たとえば、<xref:System.Linq.Enumerable.OrderBy%2A> メソッドでは、最初の要素を返す前に、コレクション全体を並べ替える必要があります。  
+  
+ 通常は、レイジー評価を使用するとパフォーマンスが向上します。コレクション評価時のオーバーヘッド処理が均等に分散され、一時データの使用が最小限に抑えられるためです。 もちろん、操作によっては、中間結果を具体化するより他に方法がない場合もあります。  
+  
+## <a name="next-steps"></a>次の手順  
+ このチュートリアルの次のトピックでは、遅延実行について説明します。  
+  
+-   [遅延実行の例 (C#)](../../../../csharp/programming-guide/concepts/linq/deferred-execution-example.md)  
+  
+## <a name="see-also"></a>関連項目  
+ [チュートリアル: クエリの連結 (C#)](../../../../csharp/programming-guide/concepts/linq/tutorial-chaining-queries-together.md)   
+ [概念と用語 (関数型変換) (C#)](../../../../csharp/programming-guide/concepts/linq/concepts-and-terminology-functional-transformation.md)   
+ [集計操作 (C#)](../../../../csharp/programming-guide/concepts/linq/aggregation-operations.md)   
+ [yield](../../../../csharp/language-reference/keywords/yield.md)

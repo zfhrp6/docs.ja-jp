@@ -1,57 +1,73 @@
 ---
-title: "Development with My (Visual Basic) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "My.MyWpfExtension.Windows"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "My object"
-  - "My namespace"
-  - "My feature"
-  - "Visual Basic, programming in"
+title: "My による開発 (Visual Basic) | Microsoft Docs"
+ms.date: 2015-07-20
+ms.prod: .net
+ms.suite: 
+ms.technology:
+- devlang-visual-basic
+ms.topic: article
+f1_keywords:
+- My.MyWpfExtension.Windows
+dev_langs:
+- VB
+helpviewer_keywords:
+- My object
+- My namespace
+- My feature
+- Visual Basic, programming in
 ms.assetid: f1d04509-5e46-4551-9f9f-94334a121fca
 caps.latest.revision: 26
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 26
----
-# Development with My (Visual Basic)
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
+author: stevehoag
+ms.author: shoag
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Human Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: 815f459a651adf98dfb78a8444f4b873dece8283
+ms.lasthandoff: 03/13/2017
 
-Visual Basic には、RAD \(Rapid Application Development\) のための強力な新機能が用意されており、生産性と使いやすさを向上できます。  そうした機能の 1 つが `My` です。アプリケーションおよびその実行時環境に関連する情報や、既定のオブジェクトのインスタンスへのアクセスを実現します。  この情報は、IntelliSense を介して検出できる形式で構成されており、用途に応じて論理的に記述されます。  
+---
+# <a name="development-with-my-visual-basic"></a>My による開発 (Visual Basic)
+Visual Basic には、多彩な機能を提供する一方で生産性や使いやすさを向上させる、迅速なアプリケーション開発用の新しい機能が用意されています。 こうした機能の 1 つである `My` という機能は、情報へのアクセス、およびアプリケーションやそのランタイム環境に関連する既定のオブジェクト インスタンスを提供します。 この情報は、IntelliSense によって検出可能な形式で編成され、用途に応じて論理的に区別されます。  
   
- `My` のトップレベルのメンバーはオブジェクトとして公開されています。  各オブジェクトは、名前空間や `Shared` メンバーを持つクラスに対して同様に動作し、関連するメンバーを公開します。  
+ `My` の最上位メンバーは、オブジェクトとして公開されます。 各オブジェクトは、名前空間でも `Shared` メンバーがあるクラスでも同じように動作し、関連するメンバーのセットを公開します。  
   
- この表は、`My` のトップレベルのオブジェクトと、それぞれの間の関係を示します。  
+ 次の表は、最上位の `My` オブジェクトと各オブジェクトの相互関係を示しています。  
   
- ![My のオブジェクト モデル](../../../visual-basic/developing-apps/development-with-my/media/myobjmodel.png "MyObjModel")  
+ ![My のオブジェクト モデル](../../../visual-basic/developing-apps/development-with-my/media/myobjmodel.gif "MyObjModel")  
   
-## このセクションの内容  
- [Performing Tasks with My.Application, My.Computer, and My.User](../../../visual-basic/developing-apps/development-with-my/performing-tasks-with-my-application-my-computer-and-my-user.md)  
- `My` の中心となる、`My.Application`、`My.Computer`、および `My.User` の 3 つのオブジェクトについて説明します。情報および機能へのアクセスを提供するオブジェクトです。  
+## <a name="in-this-section"></a>このセクションの内容  
+ [My.Application、My.Computer、および My.User でのタスクの実行](../../../visual-basic/developing-apps/development-with-my/performing-tasks-with-my-application-my-computer-and-my-user.md)  
+ `My` の中心となる 3 つのオブジェクト (`My.Application`、`My.Computer`、および `My.User`) について説明します。これらのオブジェクトは、情報と機能へのアクセスを提供します。  
   
- [Default Object Instances Provided by My.Forms and My.WebServices](../../../visual-basic/developing-apps/development-with-my/default-object-instances-provided-by-my-forms-and-my-webservices.md)  
- `My.Forms` オブジェクトおよび `My.WebServices` オブジェクトについて説明します。アプリケーションで使用するフォーム、データ ソース、および XML Web サービスへのアクセスを提供するオブジェクトです。  
+ [My.Forms と My.WebServices が提供する既定のオブジェクト インスタンス](../../../visual-basic/developing-apps/development-with-my/default-object-instances-provided-by-my-forms-and-my-webservices.md)  
+ `My.Forms` オブジェクトと `My.WebServices` オブジェクトについて説明します。これらのオブジェクトは、アプリケーションで使用されるフォーム、データ ソース、および XML Web サービスへのアクセスを提供します。  
   
- [Rapid Application Development with My.Resources and My.Settings](../../../visual-basic/developing-apps/development-with-my/rapid-application-development-with-my-resources-and-my-settings.md)  
- `My.Resources` オブジェクトおよび `My.Settings` オブジェクトについて説明します。アプリケーションのリソースおよび設定へのアクセスを提供するオブジェクトです。  
+ [My.Resources と My.Settings による Rapid Application Development](../../../visual-basic/developing-apps/development-with-my/rapid-application-development-with-my-resources-and-my-settings.md)  
+ `My.Resources` オブジェクトと `My.Settings` オブジェクトについて説明します。これらのオブジェクトは、アプリケーションのリソースと設定へのアクセスを提供します。  
   
- [Overview of the Visual Basic Application Model](../../../visual-basic/developing-apps/development-with-my/overview-of-the-visual-basic-application-model.md)  
- [!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] アプリケーションの起動\/終了モデルについて説明します。  
+ [Visual Basic アプリケーション モデルの概要](../../../visual-basic/developing-apps/development-with-my/overview-of-the-visual-basic-application-model.md)  
+ [!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] のアプリケーションのスタートアップ/シャットダウン モデルについて説明します。  
   
- [How My Depends on Project Type](../../../visual-basic/developing-apps/development-with-my/how-my-depends-on-project-type.md)  
- プロジェクトの各種類でどの `My` 機能を利用できるかについて詳細を示します。  
+ [プロジェクトの種類に応じた My の機能](../../../visual-basic/developing-apps/development-with-my/how-my-depends-on-project-type.md)  
+ 異なる種類のプロジェクトで使用できる `My` 機能の詳細を説明します。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  <xref:Microsoft.VisualBasic.ApplicationServices.ApplicationBase>   
  <xref:Microsoft.VisualBasic.Devices.Computer>   
  <xref:Microsoft.VisualBasic.ApplicationServices.User>   
- [My.Forms Object](../../../visual-basic/language-reference/objects/my-forms-object.md)   
- [My.WebServices Object](../../../visual-basic/language-reference/objects/my-webservices-object.md)   
- [How My Depends on Project Type](../../../visual-basic/developing-apps/development-with-my/how-my-depends-on-project-type.md)
+ [My.Forms オブジェクト](../../../visual-basic/language-reference/objects/my-forms-object.md)   
+ [My.WebServices オブジェクト](../../../visual-basic/language-reference/objects/my-webservices-object.md)   
+ [プロジェクトの種類に応じた My の機能](../../../visual-basic/developing-apps/development-with-my/how-my-depends-on-project-type.md)

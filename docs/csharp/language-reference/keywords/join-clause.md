@@ -1,96 +1,114 @@
 ---
 title: "join 句 (C# リファレンス) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.technology: 
-  - "devlang-csharp"
-ms.topic: "article"
-f1_keywords: 
-  - "join"
-  - "join_CSharpKeyword"
-dev_langs: 
-  - "CSharp"
-helpviewer_keywords: 
-  - "join 句 [C#]"
-  - "join キーワード [C#]"
+ms.date: 2015-07-20
+ms.prod: .net
+ms.technology:
+- devlang-csharp
+ms.topic: article
+f1_keywords:
+- join
+- join_CSharpKeyword
+dev_langs:
+- CSharp
+helpviewer_keywords:
+- join clause [C#]
+- join keyword [C#]
 ms.assetid: 76e9df84-092c-41a6-9537-c3f1cbd7f0fb
 caps.latest.revision: 29
-author: "BillWagner"
-ms.author: "wiwagn"
-caps.handback.revision: 29
+author: BillWagner
+ms.author: wiwagn
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Human Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: c80cce6cbb29946dfc2d0407781cd4ba698a2ea2
+ms.lasthandoff: 03/13/2017
+
 ---
-# join 句 (C# リファレンス)
-オブジェクト モデル内で直接的な関係を持たない、異なるソース シーケンスの要素どうしを関連付けるには、`join` 句を使用すると便利です。  唯一の要件は、各ソースの要素が、等価比較できるような値を共有していることです。  たとえば、食品販売業者が、特定の商品についての仕入先一覧とバイヤー一覧を持っているとします。  `join` 句を使用すると、その商品に関して、指定した同じ地域の仕入先とバイヤーの一覧を作成できます。  
+# <a name="join-clause-c-reference"></a>join 句 (C# リファレンス)
+`join` 句は、オブジェクト モデル内での直接リレーションシップがない、さまざまなソース シーケンスの要素を関連付ける際に役立ちます。 唯一の要件は、等価性を比較できるいくつかの値が各ソース内の要素間で共有されていることです。 たとえば、食品販売会社には特定の商品についての供給元のリストと購入者のリストがあります。 `join` 句は、たとえば指定された地域のすべての供給元および購入者のリストを作成するために使用できます。  
   
- `join` 句は、入力として 2 つのソース シーケンスを受け取ります。  各シーケンス内の要素は、対応するもう一方のシーケンスのプロパティと比較できるプロパティであるか、このプロパティを含んでいる必要があります。  `join` 句は、特別な `equals` キーワードを使用して、指定したキーが等しいかどうかを比較します。  `join` 句によって実行される結合は、すべて等結合です。  `join` 句の出力結果は、実行する結合の種類によって異なります。  最も一般的な結合の種類は、次の 3 つです。  
+ `join` 句では、2 つのソース シーケンスを入力として受け取ります。 各シーケンスの要素は、もう一方のシーケンスの対応するプロパティと比較できるプロパティであるか、そのプロパティを含む要素であることが必要です。 `join` 句では、特殊な `equals` キーワードを使用して、指定されたキーの等価性が比較されます。 `join` 句によって実行される結合はすべてが等結合です。 `join` 句の出力形式は、実行する結合の種類によって異なります。 最も一般的な 3 種類の結合を以下に示します。  
   
 -   内部結合  
   
--   グループ化結合  
+-   グループ結合  
   
 -   左外部結合  
   
-## 内部結合  
- 簡単な内部等結合の例を次に示します。  このクエリでは、"商品名\/カテゴリ" ペアのフラットなシーケンスが生成されます。  同じカテゴリ文字列が、複数の要素に表示されます。  `categories` の要素に一致する要素が `products` 内にない場合、そのカテゴリは結果に表示されません。  
+## <a name="inner-join"></a>内部結合  
+ 次の例は、単純な内部等結合を示しています。 このクエリによって "商品名/カテゴリ" のペアからなるフラットなシーケンスが生成されます。 複数の要素に同じカテゴリ文字列が含まれます。 `categories` の要素に一致する `products` がない場合、そのカテゴリは結果に含まれません。  
   
  [!code-cs[cscsrefQueryKeywords#24](../../../csharp/language-reference/keywords/codesnippet/CSharp/join-clause_1.cs)]  
   
- 詳細については、「[方法 : 内部結合を実行する](../../../csharp/programming-guide/linq-query-expressions/how-to-perform-inner-joins.md)」を参照してください。  
+ 詳細については、「[方法: 内部結合を実行する](../../../csharp/programming-guide/linq-query-expressions/how-to-perform-inner-joins.md)」を参照してください。  
   
-## グループ化結合  
- `into` 式と組み合わせた `join` 句は、グループ化結合と呼ばれます。  
+## <a name="group-join"></a>Group Join  
+ `into` 式を使用した `join` 句はグループ結合と呼ばれます。  
   
  [!code-cs[cscsrefQueryKeywords#25](../../../csharp/language-reference/keywords/codesnippet/CSharp/join-clause_2.cs)]  
   
- グループ化結合では、階層構造の結果シーケンスが生成され、左側のソース シーケンスの要素が、右側のソース シーケンスに含まれる 1 つ以上の一致する要素に関連付けられます。  グループ化結合は基本的にオブジェクト配列のシーケンスであり、リレーショナル データベースの用語には、これに相当するものがありません。  
+ グループ結合によって生成される階層形式の結果シーケンスでは、左側のソース シーケンスの要素と一致する右側のソース シーケンスの 1 つ以上の要素が関連付けられています。 リレーショナル データベースにおいてグループ結合に相当する用語はありません。グループ結合とは、本質的にはオブジェクト配列のシーケンスです。  
   
- 右側のソース シーケンスに左側のソースの要素と一致する要素がない場合、`join` 句はその項目について空の配列を生成します。  このため、結果のシーケンスがグループ別に編成される点を除き、グループ化結合は基本的に内部等結合です。  
+ 右側のソース シーケンスの要素に左側のソースの要素と一致するものが見つからない場合は、その項目に対して `join` 句によって空の配列が生成されます。 つまりグループ結合は、結果シーケンスがグループに整理されることを除けば、基本的には内部等結合です。  
   
- グループ化結合の結果を単に選択した場合、項目にアクセスすることはできますが、一致の基準となるキーを特定することはできません。  したがって、一般に、前の例に示すように、グループ化結合の結果を選択し、キー名を持つ新しい型に格納した方が便利です。  
+ グループ結合の結果を選択しただけでは、項目にアクセスすることはできでも、その照合に使用するキーを特定することはできません。 そのため、通常はグループ結合の結果を選択し、前の例に示したようなキー名を含む新しい型にするとさらに便利になります。  
   
- グループ化結合の結果を、別のサブクエリのジェネレーターとして使用することもできます。  
+ また、当然ながらグループ結合の結果を別のサブクエリのジェネレーターとして使用することもできます。  
   
  [!code-cs[cscsrefQueryKeywords#26](../../../csharp/language-reference/keywords/codesnippet/CSharp/join-clause_3.cs)]  
   
- 詳細については、「[方法 : グループ化結合を実行する](../../../csharp/programming-guide/linq-query-expressions/how-to-perform-grouped-joins.md)」を参照してください。  
+ 詳細については、「[方法: グループ化結合を実行する](../../../csharp/programming-guide/linq-query-expressions/how-to-perform-grouped-joins.md)」を参照してください。  
   
-## 左外部結合  
- 左外部結合では、右側のシーケンスに一致する要素がない場合でも、左側のソース シーケンスに含まれるすべての要素が返されます。  [!INCLUDE[vbteclinq](../../../csharp/includes/vbteclinq-md.md)] で左外部結合を実行するには、`DefaultIfEmpty` メソッドをグループ化結合と組み合わせて使用して、左側の要素に一致する要素がなかった場合に生成する、既定の右側の要素を指定します。  `null` は、任意の参照型の既定値として使用できます。また、ユーザー定義の既定の型を指定することもできます。  次の例では、ユーザー定義の既定の型を示しています。  
+## <a name="left-outer-join"></a>左外部結合  
+ 左外部結合では、右側のシーケンスに一致する要素がなくても、左側のソース シーケンスのすべての要素が返されます。 [!INCLUDE[vbteclinq](../../../csharp/includes/vbteclinq_md.md)] で左外部結合を実行するには、`DefaultIfEmpty` メソッドとグループ結合を組み合わせて使用し、左側の要素に一致するものがない場合に既定の右側の要素を生成するように指定します。 参照型用の既定値として `null` を使用するか、ユーザー定義の既定の型を指定できます。 次の例では、ユーザー定義の既定の型を示しています。  
   
  [!code-cs[cscsrefQueryKeywords#27](../../../csharp/language-reference/keywords/codesnippet/CSharp/join-clause_4.cs)]  
   
- 詳細については、「[方法 : 左外部結合を実行する](../../../csharp/programming-guide/linq-query-expressions/how-to-perform-left-outer-joins.md)」を参照してください。  
+ 詳細については、「[方法: 左外部結合を実行する](../../../csharp/programming-guide/linq-query-expressions/how-to-perform-left-outer-joins.md)」を参照してください。  
   
-## 等値演算子  
- `join` 句は、等結合を実行します。  つまり、2 つのキーが等しい場合のみ、一致が結合されます。  他の種類の比較 \("より大きい"、"等しくない" など\) はサポートされません。  すべての結合が等結合であることを明確にするため、`join` 句では、`==` 演算子の代わりに `equals` キーワードが使用されます。  `join` 句では `equals` キーワードのみ使用できます。このキーワードと `==` 演算子には、重要な違いが 1 つあります。  `equals` の場合、左辺のキーは外部のソース シーケンスを使用し、右辺のキーは内部のソースを使用します。  外部のソースは `equals` の左辺のスコープにしかなく、内部のソース シーケンスは右辺のスコープにしかありません。  
+## <a name="the-equals-operator"></a>等値演算子  
+ `join` 句は等結合を実行します。 つまり、基準にできるのは 2 つのキーの等価性に関する照合のみです。 "～より大きい" や "等しくない" など、他の種類の比較はサポートされていません。 すべての結合が等結合であることを明確化するために、`join` 句では `==` 演算子ではなく `equals` キーワードを使用します。 `equals` キーワードは `join` 句でしか使用できず、また `==` 演算子とは 1 つの重要な点で異なります。 `equals` を指定すると、左側のキーでは外部のソース シーケンス、右側のキーでは内部のソースが使用されます。 外部のソースは `equals` の左側のスコープ内、内部のソース シーケンスは右側のスコープ内でのみ使用できます。  
   
-## 非等結合  
- 複数の `from` 句を使用して新しいシーケンスをクエリに個別に導入すると、非等結合、クロス結合、および他のカスタム結合操作を実行できます。  詳細については、「[方法 : カスタム結合操作を実行する](../../../csharp/programming-guide/linq-query-expressions/how-to-perform-custom-join-operations.md)」を参照してください。  
+## <a name="non-equijoins"></a>非等結合  
+ 複数の `from` 句を使用して新しいシーケンスをクエリに個別に導入することで、非等結合、クロス結合、およびその他のカスタム結合操作を実行できます。 詳細については、「[方法: カスタム結合操作を実行する](../../../csharp/programming-guide/linq-query-expressions/how-to-perform-custom-join-operations.md)」を参照してください。  
   
-## オブジェクト コレクションの結合とリレーショナル テーブルの結合  
- [!INCLUDE[vbteclinq](../../../csharp/includes/vbteclinq-md.md)] クエリ式では、結合操作はオブジェクト コレクションに対して実行されます。  オブジェクト コレクションは、2 つのリレーショナル テーブルを結合するのとまったく同じ方法で "結合" することはできません。  [!INCLUDE[vbteclinq](../../../csharp/includes/vbteclinq-md.md)] では、2 つのソース シーケンスの間に何の関連付けもない場合のみ、明示的な `join` 句が必要です。  [!INCLUDE[vbtecdlinq](../../../csharp/includes/vbtecdlinq-md.md)] を使用する場合、オブジェクト モデルの外部キー テーブルは、主テーブルのプロパティとして表されます。  たとえば、Northwind データベースの Customer テーブルと Orders テーブルとの間には、外部キー リレーションシップがあります。  この 2 つのテーブルをオブジェクト モデルにマップすると、Customer クラスは Orders プロパティを持っていて、Orders プロパティにはその Customer に関連付けられた Orders のコレクションが格納されていることになります。  つまり、結合は既に自動的に行われています。  
+## <a name="joins-on-object-collections-vs-relational-tables"></a>オブジェクト コレクションとリレーショナル テーブルでの結合の比較  
+ [!INCLUDE[vbteclinq](../../../csharp/includes/vbteclinq_md.md)] クエリ式での結合操作は、オブジェクト コレクションに対して実行されます。 2 つのリレーショナル テーブルの "結合" とまったく同じ方法でオブジェクト コレクションを結合することはできません。 [!INCLUDE[vbteclinq](../../../csharp/includes/vbteclinq_md.md)] では、2 つのソース シーケンスがリレーションシップによって関連付けられていない場合にのみ明示的な `join` 句が必要になります。 [!INCLUDE[vbtecdlinq](../../../csharp/includes/vbtecdlinq_md.md)] を使用する場合、外部キー テーブルはオブジェクト モデル内でプライマリ テーブルのプロパティとして表されます。 たとえば Northwind データベースでは、Customer テーブルに Orders テーブルとの外部キー リレーションシップがあります。 テーブルをオブジェクト モデルに割り当てると、Customer クラスには、その Customer に関連付けられた Orders のコレクションを含む Orders プロパティが含まれます。 実質的には、既に結合が実行されていることになります。  
   
- [!INCLUDE[vbtecdlinq](../../../csharp/includes/vbtecdlinq-md.md)] のコンテキストで複数の関連テーブルを照会する方法の詳細については、「[How to: Map Database Relationships](../Topic/How%20to:%20Map%20Database%20Relationships.md)」を参照してください。  
+ [!INCLUDE[vbtecdlinq](../../../csharp/includes/vbtecdlinq_md.md)] を使用した関連テーブル間でのクエリの詳細については、「[方法: データベース リレーションシップを割り当てる](http://msdn.microsoft.com/library/538def39-8399-46fb-b02d-60ede4e050af)」を参照してください。  
   
-## 複合キー  
- 複合キーを使用すると、複数の値が等しいかどうかをテストできます。  詳細については、「[方法 : 複合キーを使用して結合する](../../../csharp/programming-guide/linq-query-expressions/how-to-join-by-using-composite-keys.md)」を参照してください。  複合キーは、`group` 句でも使用できます。  
+## <a name="composite-keys"></a>複合キー  
+ 複合キーを使用すると、複数の値の等価性をテストできます。 詳細については、「[方法: 複合キーを使用して結合する](../../../csharp/programming-guide/linq-query-expressions/how-to-join-by-using-composite-keys.md)」を参照してください。 複合キーは、`group` 句でも使用できます。  
   
-## 使用例  
- 同じデータ ソースに対して同じ一致するキーを使用して内部結合、グループ化結合、および左外部結合を実行した結果の比較を次の例に示します。  これらの例には、コンソールでの表示結果をわかりやすくするために、余分なコードが追加されています。  
+## <a name="example"></a>例  
+ 次の例では、同じ照合キーを使用し、同じデータ ソースでの内部結合、グループ結合、左外部結合の結果を比較しています。 これらの例には、結果をコンソールにわかりやすく表示するためのコードがいくつか追加されています。  
   
  [!code-cs[cscsrefQueryKeywords#23](../../../csharp/language-reference/keywords/codesnippet/CSharp/join-clause_5.cs)]  
   
-## 解説  
- `join` 句の後に `into` がない場合は、<xref:System.Linq.Enumerable.Join%2A> メソッドの呼び出しに変換されます。  `join` 句の後に `into` がある場合は、<xref:System.Linq.Enumerable.GroupJoin%2A> メソッドの呼び出しに変換されます。  
+## <a name="remarks"></a>コメント  
+ `join` 句の後に `into` がない場合は、<xref:System.Linq.Enumerable.Join%2A> メソッド呼び出しに変換されます。 `join` 句の後に `into` がある場合は、<xref:System.Linq.Enumerable.GroupJoin%2A> メソッド呼び出しに変換されます。  
   
-## 参照  
- [クエリ キーワード \(LINQ\)](../../../csharp/language-reference/keywords/query-keywords.md)   
+## <a name="see-also"></a>関連項目  
+ [クエリ キーワード (LINQ)](../../../csharp/language-reference/keywords/query-keywords.md)   
  [LINQ クエリ式](../../../csharp/programming-guide/linq-query-expressions/index.md)   
- [Join Operations](../../../visual-basic/programming-guide/concepts/linq/join-operations.md)   
+ [結合操作](http://msdn.microsoft.com/library/442d176d-028c-4beb-8d22-407d4ef89107)   
  [group 句](../../../csharp/language-reference/keywords/group-clause.md)   
- [方法 : 左外部結合を実行する](../../../csharp/programming-guide/linq-query-expressions/how-to-perform-left-outer-joins.md)   
- [方法 : 内部結合を実行する](../../../csharp/programming-guide/linq-query-expressions/how-to-perform-inner-joins.md)   
- [方法 : グループ化結合を実行する](../../../csharp/programming-guide/linq-query-expressions/how-to-perform-grouped-joins.md)   
- [方法 : join 句の結果の順序を指定する](../../../csharp/programming-guide/linq-query-expressions/how-to-order-the-results-of-a-join-clause.md)   
- [方法 : 複合キーを使用して結合する](../../../csharp/programming-guide/linq-query-expressions/how-to-join-by-using-composite-keys.md)   
- [方法 : サンプル データベースをインストールする](../Topic/How%20to:%20Install%20Sample%20Databases.md)
+ [方法: 左外部結合を実行する](../../../csharp/programming-guide/linq-query-expressions/how-to-perform-left-outer-joins.md)   
+ [方法: 内部結合を実行する](../../../csharp/programming-guide/linq-query-expressions/how-to-perform-inner-joins.md)   
+ [方法: グループ化結合を実行する](../../../csharp/programming-guide/linq-query-expressions/how-to-perform-grouped-joins.md)   
+ [方法: join 句の結果の順序を指定する](../../../csharp/programming-guide/linq-query-expressions/how-to-order-the-results-of-a-join-clause.md)   
+ [方法: 複合キーを使用して結合する](../../../csharp/programming-guide/linq-query-expressions/how-to-join-by-using-composite-keys.md)   
+ [方法 : サンプル データベースをインストールする](http://msdn.microsoft.com/library/ed1291f6-604c-4972-ae22-0345c6dea12e)

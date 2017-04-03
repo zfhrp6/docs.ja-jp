@@ -29,7 +29,7 @@ ms.lasthandoff: 03/02/2017
 
 次に示すのは、実行時にデータ構造の型がわかるといかに効率的かということを示す小さなプログラムです。
 
-```cs
+```csharp
   using System;
   using System.Collections;
   using System.Collections.Generic;

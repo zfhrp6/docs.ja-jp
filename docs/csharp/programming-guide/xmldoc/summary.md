@@ -1,46 +1,65 @@
 ---
 title: "&lt;summary&gt; (C# プログラミング ガイド) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.technology: 
-  - "devlang-csharp"
-ms.topic: "article"
-f1_keywords: 
-  - "<summary>"
-  - "summary"
-dev_langs: 
-  - "CSharp"
-helpviewer_keywords: 
-  - "<summary> C# XML タグ"
-  - "summary C# XML タグ"
+ms.date: 2015-07-20
+ms.prod: .net
+ms.technology:
+- devlang-csharp
+ms.topic: article
+f1_keywords:
+- <summary>
+- summary
+dev_langs:
+- CSharp
+helpviewer_keywords:
+- <summary> C# XML tag
+- summary C# XML tag
 ms.assetid: b4c43d92-2067-4eac-a59a-d32f5248c08b
 caps.latest.revision: 17
-author: "BillWagner"
-ms.author: "wiwagn"
-caps.handback.revision: 15
+author: BillWagner
+ms.author: wiwagn
+translation.priority.ht:
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- ru-ru
+- zh-cn
+- zh-tw
+translation.priority.mt:
+- cs-cz
+- pl-pl
+- pt-br
+- tr-tr
+translationtype: Human Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: b74e5bf964ff82f88fe2822257a64eccb5697535
+ms.lasthandoff: 03/13/2017
+
 ---
-# &lt;summary&gt; (C# プログラミング ガイド)
-## 構文  
+# <a name="ltsummarygt-c-programming-guide"></a>&lt;summary&gt; (C# プログラミング ガイド)
+## <a name="syntax"></a>構文  
   
 ```  
 <summary>description</summary>  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `description`  
- オブジェクトの要約。  
+ オブジェクトの概要。  
   
-## 解説  
- \<summary\> タグは、型または型のメンバーの説明に使用します。  型の説明に補足情報を追加するには、[\<remarks\>](../../../csharp/programming-guide/xmldoc/remarks.md) タグを使用します。  [Sandcastle](http://go.microsoft.com/fwlink/?LinkId=124061) などのドキュメント ツールを有効にして、コード要素のドキュメント ページへの内部ハイパーリンクを作成するには、[cref 属性](../../../csharp/programming-guide/xmldoc/cref-attribute.md)を使用します。  
+## <a name="remarks"></a>コメント  
+ \<summary> タグは、型または型のメンバーの説明に使用します。 型の説明に補足情報を追加するには、[\<remarks>](../../../csharp/programming-guide/xmldoc/remarks.md) タグを使用します。 [Sandcastle](http://go.microsoft.com/fwlink/?LinkId=124061) などのドキュメント ツールでコード要素のドキュメント ページへの内部ハイパーリンクを作成できるようにするには、[cref 属性](../../../csharp/programming-guide/xmldoc/cref-attribute.md)を使用します。  
   
- \<summary\> タグのテキストは、IntelliSense で、型に関する唯一の情報源になり、[Object Browser Window](http://msdn.microsoft.com/ja-jp/3c7f1673-1f0d-41b1-94ca-a3dcfcb82cda) にも表示されます。  
+ \<summary> タグのテキストは、IntelliSense の型に関する唯一のソースで、オブジェクト ブラウザー ウィンドウにも表示されます。  
   
- コンパイル時に [\/doc](../../../csharp/language-reference/compiler-options/doc-compiler-option.md) を指定してドキュメント コメントをファイルに出力します。  コンパイラによって生成されたファイルに基づいて最終的なドキュメントを作成するには、カスタム ツールを作成するか、[Sandcastle](http://go.microsoft.com/fwlink/?LinkId=124061) などのツールを使用します。  
+ コンパイル時に [/doc](../../../csharp/language-reference/compiler-options/doc-compiler-option.md) を指定して、ドキュメント コメントをファイルに出力します。 コンパイラによって生成されたファイルに基づいて最終的なドキュメントを作成するには、カスタム ツールを作成するか、[Sandcastle](http://go.microsoft.com/fwlink/?LinkId=124061) などのツールを使用します。  
   
-## 使用例  
+## <a name="example"></a>例  
  [!code-cs[csProgGuideDocComments#12](../../../csharp/programming-guide/xmldoc/codesnippet/CSharp/summary_1.cs)]  
   
- 前の例では、次の XML ファイルを生成します。  
+ 前の例では、次の XML ファイルが生成されます。  
   
 ```  
 <?xml version="1.0"?>  
@@ -65,12 +84,12 @@ caps.handback.revision: 15
 </doc>  
 ```  
   
-## 使用例  
+## <a name="example"></a>例  
  ジェネリック型への `cref` 参照を作成する方法を次の例に示します。  
   
  [!code-cs[csProgGuideDocComments#11](../../../csharp/programming-guide/xmldoc/codesnippet/CSharp/summary_2.cs)]  
   
- 前の例では、次の XML ファイルを生成します。  
+ 前の例では、次の XML ファイルが生成されます。  
   
 ```  
 <?xml version="1.0"?>  
@@ -97,6 +116,6 @@ caps.handback.revision: 15
   
 ```  
   
-## 参照  
- [C\# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
+## <a name="see-also"></a>関連項目  
+ [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
  [ドキュメント コメントとして推奨されるタグ](../../../csharp/programming-guide/xmldoc/recommended-tags-for-documentation-comments.md)

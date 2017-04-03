@@ -10,9 +10,9 @@ ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: 13edec8b-614d-47ed-9e95-ed6d3b94ec0c
 translationtype: Human Translation
-ms.sourcegitcommit: 0a9d42f59e48a790e83a5a46b1559b613340136a
-ms.openlocfilehash: 01b3b0e7a0e2d2a330b10b2f3482ddd1ed3d51bf
-ms.lasthandoff: 03/03/2017
+ms.sourcegitcommit: 9d770d008ff1223499de36b2b7b731d8ff6f0f2b
+ms.openlocfilehash: 7618af5bed33d2e1801b1a9c1351a1d09d49b86e
+ms.lasthandoff: 03/08/2017
 
 ---
 
@@ -28,7 +28,7 @@ ms.lasthandoff: 03/03/2017
 
 ホストはネイティブ アプリケーションであるため、このチュートリアルでは、C++ アプリケーションを構築して .NET Core をホスティングする方法について説明します。 C++ 開発環境が必要になります ([Visual Studio](https://www.visualstudio.com/downloads/) に付属のものなど)。
 
-ホストをテストするための単純な .NET Core アプリケーションも必要です。そのため、[.NET Core SDK](https://www.microsoft.com/net/core) をインストールし、[小さい .NET Core テスト アプリを作成](https://github.com/dotnet/docs/blob/master/docs/csharp/getting-started/with-visual-studio.md)してください ('Hello World' アプリなど)。 新しい .NET Core コンソール プロジェクト テンプレートで作成される 'Hello World' アプリで十分です。
+ホストをテストするための単純な .NET Core アプリケーションも必要です。そのため、[.NET Core SDK](https://www.microsoft.com/net/core) をインストールし、[小さい .NET Core テスト アプリを作成](../../csharp/getting-started/with-visual-studio.md)してください ('Hello World' アプリなど)。 新しい .NET Core コンソール プロジェクト テンプレートで作成される 'Hello World' アプリで十分です。
 
 このチュートリアルとその[関連サンプル](https://github.com/dotnet/docs/tree/master/samples/core/hosting)では Windows ホストを作成します。Unix のホスティングについては、この記事の終わりにある注記を参照してください。
 

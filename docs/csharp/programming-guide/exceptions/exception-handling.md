@@ -1,25 +1,43 @@
 ---
 title: "例外処理 (C# プログラミング ガイド) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.technology: 
-  - "devlang-csharp"
-ms.topic: "article"
-dev_langs: 
-  - "CSharp"
-helpviewer_keywords: 
-  - "例外処理 [C#], 例外処理の概要"
-  - "例外 [C#], 処理"
+ms.date: 2015-07-20
+ms.prod: .net
+ms.technology:
+- devlang-csharp
+ms.topic: article
+dev_langs:
+- CSharp
+helpviewer_keywords:
+- exception handling [C#], about exception handling
+- exceptions [C#], handling
 ms.assetid: b4e4ecf2-b907-4e58-891f-2563762258e9
 caps.latest.revision: 24
-author: "BillWagner"
-ms.author: "wiwagn"
-caps.handback.revision: 24
+author: BillWagner
+ms.author: wiwagn
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Human Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: 481621ab8c3d6e1c98c9ad38590ac030827c26c5
+ms.lasthandoff: 03/13/2017
+
 ---
-# 例外処理 (C# プログラミング ガイド)
-C\# では、例外による影響を受けることがあるコードを分割するために [try](../../../csharp/language-reference/keywords/try-catch.md) ブロックを使用します。  その結果発生する例外を処理するためには、これに関連付けられた [catch](../../../csharp/language-reference/keywords/try-catch.md) ブロックを使用します。  また、[finally](../../../csharp/language-reference/keywords/try-finally.md) ブロックには、`try` ブロックで例外がスローされたかどうかに関係なく実行されるコード \(`try` ブロックで割り当てたリリースの解放など\) が置かれます。  `try` ブロックには、関連付けられた `catch` ブロックと `finally` ブロックの少なくとも 1 つ、またはその両方が必要です。  
+# <a name="exception-handling-c-programming-guide"></a>例外処理 (C# プログラミング ガイド)
+[try](../../../csharp/language-reference/keywords/try-catch.md) ブロックは、例外の影響を受ける可能性があるコードを区分化するために、 C# プログラマによって使用されます。 関連付けられた [catch](../../../csharp/language-reference/keywords/try-catch.md) ブロックは、スローされた例外を処理するために使用されます。 [finally](../../../csharp/language-reference/keywords/try-finally.md) ブロックには、`try` ブロックで例外がスローされたかどうかにかかわらず実行されるコードが記述されます (`try` ブロックに割り当てられたリソースの解放など)。 `try` ブロックには、1 つ以上の `catch` ブロック、`finally` ブロック、またはその両方が関連付けられる必要があります。  
   
- 次の例では、`try-catch` ステートメント、`try-finally` ステートメント、および `try-catch-finally` ステートメントについて示します。  
+ 次のコードは、`try-catch` ステートメント、`try-finally` ステートメント、および `try-catch-finally` ステートメントの例です。  
   
  [!code-cs[csProgGuideExceptions#6](../../../csharp/programming-guide/exceptions/codesnippet/CSharp/exception-handling_1.cs)]  
   
@@ -27,42 +45,42 @@ C\# では、例外による影響を受けることがあるコードを分割�
   
  [!code-cs[csProgGuideExceptions#8](../../../csharp/programming-guide/exceptions/codesnippet/CSharp/exception-handling_3.cs)]  
   
- `catch` ブロックも `finally` ブロックも存在しない `try` ブロックは、コンパイラ エラーになります。  
+ `try` ブロックに `catch` または `finally` ブロックがない場合は、コンパイル エラーが発生します。  
   
-## catch ブロック  
- `catch` ブロックでは、キャッチする例外の種類を指定できます。  種類の指定は、*例外フィルター*と呼ばれます。  例外の種類は、<xref:System.Exception> から派生する必要があります。  通常、例外フィルターとして <xref:System.Exception> は指定しません。ただし、`try` ブロックでスローされる例外の処理方法が判明している場合、または `catch` ブロックの末尾に [throw](../../../csharp/language-reference/keywords/throw.md) ステートメントを挿入している場合を除きます。  
+## <a name="catch-blocks"></a>catch ブロック  
+ `catch` ブロックでは、キャッチする例外の種類を指定できます。 この型指定は、*例外フィルター*と呼ばれます。 例外の種類は、 <xref:System.Exception> から派生している必要があります。 一般に、`try` ブロックでスローされる可能性があるすべての例外の処理方法を把握してる場合や、`catch` ブロックの末尾に [throw](../../../csharp/language-reference/keywords/throw.md) ステートメントを記述している場合を除いては、例外フィルタとして <xref:System.Exception> を指定することは避けてください。  
   
- 異なる例外フィルターを持つ複数の `catch` ブロックを使用できます。  例外がスローされるたびに、コード内の `catch` ブロックが上から下に評価されますが、実行される `catch` ブロックは 1 つだけです。  実行されるのは、スローされた例外の種類または基本クラスを正確に指定している最初の `catch` ブロックです。  一致する例外フィルターを指定する `catch` ブロックがない場合は、フィルターを持たない `catch` ブロックが選択されます \(そのようなブロックがステートメント内に存在する場合\)。  最も限定的な \(つまり、最派生の\) 例外の種類を持つ `catch` ブロックを最初に配置することが重要です。  
+ 複数の `catch` ブロックに異なる例外フィルターが含まれている場合は、それらを連結することができます。 `catch` ブロックはコード内で上から下に評価されますが、スローされた各例外に対して実行される `catch` ブロックは 1 つだけです。 スローされた例外の厳密な型か、その基底クラスを指定する最初の `catch` ブロックが実行されます。 一致する例外フィルターを指定した `catch` ブロックがない場合は、フィルターのない `catch` ブロックが選択されます (それがステートメント内に存在する場合)。 最初に配置する `catch` ブロックでは、最も具体的な (つまり、最終派生の) 例外の種類を指定することが重要です。  
   
- 次の条件に当てはまる場合は、例外をキャッチする必要があります。  
+ 次の条件に該当する場合は、例外をキャッチする必要があります。  
   
--   例外がスローされた原因を明確に把握しており、<xref:System.IO.FileNotFoundException> オブジェクトをキャッチしたときにユーザーに新しいファイル名の入力を求めるなど、特定の回復措置を実装できる場合。  
+-   例外がスローされる理由を十分に理解していて、かつ特定の回復手段を実装できる (<xref:System.IO.FileNotFoundException> オブジェクトをキャッチした場合に、ユーザーに新しいファイル名を入力するよう求めるなど)。  
   
--   より限定的な新しい例外を生成し、スローできる場合。  
+-   より具体的な例外を新規に作成し、スローできる。  
   
      [!code-cs[csProgGuideExceptions#9](../../../csharp/programming-guide/exceptions/codesnippet/CSharp/exception-handling_4.cs)]  
   
--   例外を部分的に処理してから、他の処理に例外を渡すことがあります。  次の例では、例外を再スローする前にエラー ログにエントリを追加するために `catch` ブロックが使用されています。  
+-   例外を追加処理に渡す前に、その例外を部分的に処理する必要がある。 次の例では、例外を再スローする前に、エラー ログにエントリを追加する目的で `catch` ブロックが使用されています。  
   
      [!code-cs[csProgGuideExceptions#10](../../../csharp/programming-guide/exceptions/codesnippet/CSharp/exception-handling_5.cs)]  
   
-## finally ブロック  
- `finally` ブロックでは、`try` ブロックで実行されるアクションをクリーンアップできます。  `finally` ブロックが存在する場合、このブロックは、`try` ブロックと、一致した `catch` ブロックの後で最後に実行されます。  `finally` ブロックは、例外がスローされたかどうか、または例外の種類に一致する `catch` ブロックが見つかったかどうかとは無関係に常に実行されます。  
+## <a name="finally-blocks"></a>Finally ブロック  
+ `finally` ブロックでは、`try` ブロックで実行されるアクションをクリーンアップすることができます。 `finally` ブロック (存在する場合) は、最後 (`try` ブロックおよび一致する `catch` ブロックの後) に実行されます。 `finally` ブロックは、例外がスローされたかどうかや、例外の種類に一致する `catch` ブロックが見つかったかどうかにかかわらず、常に実行されます。  
   
- `finally` ブロックを使用すると、ガベージ コレクターが実行時にオブジェクトを終了するのを待たずに、ファイル ストリーム、データベース接続、グラフィックス ハンドルなどのリソースを解放できます。  詳細については、「[using ステートメント](../../../csharp/language-reference/keywords/using-statement.md)」を参照してください。  
+ `finally` ブロックは、ランタイム内のガベージ コレクターによってオブジェクトがファイナライズされるのを待つことなく、ファイル ストリーム、データベース接続、グラフィックス ハンドルなどのリソースを解放するために使用できます。 詳しくは、「[using ステートメント](../../../csharp/language-reference/keywords/using-statement.md)」をご覧ください。  
   
- 次の例では、`finally` ブロックを使用して、`try` ブロックで開かれたファイルを閉じます。  ファイルを閉じる前に、ファイル ハンドルの状態がチェックされることに注意してください。  `try` ブロックでファイルを開くことができない場合でも、ファイル ハンドルの値は `null` のままであるため、`finally` ブロックでファイルを閉じようとすることはありません。  また、`try` ブロックで正常にファイルが開かれている場合は、`finally` ブロックでファイルが閉じられます。  
+ 次の例では、`try` ブロックで開かれたファイルを閉じるために `finally` ブロックが使用されています。 ファイルを閉じる前に、ファイル ハンドルの状態が確認されています。 `try` ブロックがファイルを開けなかった場合は、ファイル ハンドルの値が `null` のままになり、`finally` ブロックはファイルを閉じようとしません。 `try` ブロックでファイルが正常に開かれた場合は、開かれたファイルを `finally` ブロックが閉じます。  
   
  [!code-cs[csProgGuideExceptions#11](../../../csharp/programming-guide/exceptions/codesnippet/CSharp/exception-handling_6.cs)]  
   
-## C\# 言語仕様  
- [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec-md.md)]  
+## <a name="c-language-specification"></a>C# 言語仕様  
+ [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec_md.md)]  
   
-## 参照  
- [C\# リファレンス](../../../csharp/language-reference/index.md)   
- [C\# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
- [例外と例外処理](../../../csharp/programming-guide/exceptions/exceptions-and-exception-handling.md)   
- [try\-catch](../../../csharp/language-reference/keywords/try-catch.md)   
- [try\-finally](../../../csharp/language-reference/keywords/try-finally.md)   
- [try\-catch\-finally](../../../csharp/language-reference/keywords/try-catch-finally.md)   
+## <a name="see-also"></a>関連項目  
+ [C# リファレンス](../../../csharp/language-reference/index.md)   
+ [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
+ [例外と例外処理](../../../csharp/programming-guide/exceptions/index.md)   
+ [try-catch](../../../csharp/language-reference/keywords/try-catch.md)   
+ [try-finally](../../../csharp/language-reference/keywords/try-finally.md)   
+ [try-catch-finally](../../../csharp/language-reference/keywords/try-catch-finally.md)   
  [using ステートメント](../../../csharp/language-reference/keywords/using-statement.md)

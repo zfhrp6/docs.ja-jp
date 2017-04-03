@@ -1,25 +1,43 @@
 ---
 title: "internal (C# リファレンス) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.technology: 
-  - "devlang-csharp"
-ms.topic: "article"
-f1_keywords: 
-  - "internal_CSharpKeyword"
-  - "internal"
-dev_langs: 
-  - "CSharp"
-helpviewer_keywords: 
-  - "internal キーワード [C#]"
+ms.date: 2015-07-20
+ms.prod: .net
+ms.technology:
+- devlang-csharp
+ms.topic: article
+f1_keywords:
+- internal_CSharpKeyword
+- internal
+dev_langs:
+- CSharp
+helpviewer_keywords:
+- internal keyword [C#]
 ms.assetid: 6ee0785c-d7c8-49b8-bb72-0a4dfbcb6461
 caps.latest.revision: 23
-author: "BillWagner"
-ms.author: "wiwagn"
-caps.handback.revision: 23
+author: BillWagner
+ms.author: wiwagn
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Human Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: 6b50c4c2a6e545e0313beb0450d9ca5ff170ad05
+ms.lasthandoff: 03/13/2017
+
 ---
-# internal (C# リファレンス)
-`internal` のキーワードは、型および型メンバーのための [アクセス修飾子](../../../csharp/language-reference/keywords/access-modifiers.md) です。  internal 型またはメンバーは、この例に示すように同じアセンブリのファイル内でのみアクセスできます。  
+# <a name="internal-c-reference"></a>internal (C# リファレンス)
+`internal` キーワードは、型と型のメンバーを示す[アクセス修飾子](../../../csharp/language-reference/keywords/access-modifiers.md)です。 internal 型またはメンバーは、次の例のように、同じアセンブリ内のファイルでのみアクセスできます。  
   
 ```  
 public class BaseClass   
@@ -29,18 +47,18 @@ public class BaseClass
 }  
 ```  
   
- `protected internal` アクセス修飾子を持つ型やメンバーは、現在のアセンブリ、または包含クラスから派生した型からアクセスできます。  
+ `protected internal` アクセス修飾子を持つ型またはメンバーには、現在のアセンブリから、または外側のクラスから派生した型からアクセスできます。  
   
- `internal` と他のアクセス修飾子の比較については、「[アクセシビリティ レベル](../../../csharp/language-reference/keywords/accessibility-levels.md)」および「[アクセス修飾子](../../../csharp/programming-guide/classes-and-structs/access-modifiers.md)」を参照してください。  
+ `internal` とその他のアクセス修飾子の比較については、「[アクセシビリティ レベル](../../../csharp/language-reference/keywords/accessibility-levels.md)」と「[アクセス修飾子](../../../csharp/programming-guide/classes-and-structs/access-modifiers.md)」を参照してください。  
   
- アセンブリの詳細については、「[アセンブリとグローバル アセンブリ キャッシュ](../Topic/Assemblies%20and%20the%20Global%20Assembly%20Cache%20\(C%23%20and%20Visual%20Basic\).md)」を参照してください。  
+ アセンブリの詳細については、「[アセンブリとグローバル アセンブリ キャッシュ](../../../csharp/programming-guide/concepts/assemblies-gac/index.md)」を参照してください。  
   
- 内部アクセスは、コンポーネントのグループがアプリケーション コードの残りの部分には公開されないプライベートな手法で協調動作できるので、一般的にはコンポーネント ベースの開発に使用されます。  たとえば、グラフィカル ユーザー インターフェイスを構築するためのフレームワークでは、内部アクセスでメンバーを使用して協調動作する `Control` クラスと `Form` クラスを提供できます。  これらのメンバーは内部メンバーなので、フレームワークを使用するコードに対しては公開されません。  
+ 一般的に、内部アクセスはコンポーネント ベースの開発で使用されます。これは、コンポーネントのグループを、アプリケーション コードの他の部分に公開することなくプライベートに連携させることができるためです。 たとえば、グラフィカル ユーザー インターフェイスを構築するためのフレームワークでは、内部アクセスによってメンバーを使用することで連携する `Control` クラスと `Form` クラスを提供できます。 これらは内部のメンバーなので、フレームワークを使用しているコードには公開されません。  
   
- 内部アクセスのメンバーまたは型を、メンバーまたは型が定義されているアセンブリの外側で参照するとエラーになります。  
+ 型またはメンバーが定義されているアセンブリの外側で、型またはメンバーを内部アクセスで参照するとエラーになります。  
   
-## 使用例  
- この例には、`Assembly1.cs` および `Assembly1`\_`a.cs` という 2 つのファイルがあります。  1 つ目のファイルには、内部基本クラス `BaseClass` があります。  2 つ目のファイルでは、`BaseClass` のインスタンス化が試行されますがエラーになります。  
+## <a name="example"></a>例  
+ この例には、2 つのファイル (`Assembly1.cs` と `Assembly1`_`a.cs`) が含まれています。 最初のファイルには、内部の基底クラス `BaseClass` が含まれています。 2 番目のファイルでは、`BaseClass` のインスタンス化を試行するとエラーが発生します。  
   
 ```  
 // Assembly1.cs  
@@ -63,8 +81,8 @@ class TestAccess
 }  
 ```  
   
-## 使用例  
- この例では、例 1 で使用したのと同じファイルを使用します。ただし、`BaseClass` のアクセシビリティ レベルを `public` に変更します。  また、`IntM` メンバーのアクセシビリティ レベルを `internal` に変更します。  この場合、クラスをインスタンス化できますが、internal メンバーにはアクセスできません。  
+## <a name="example"></a>例  
+ この例では、例 1 で使用したのと同じファイルを使用し、`BaseClass` のアクセシビリティ レベルを `public` に変更します。 また、メンバー `IntM` のアクセシビリティ レベルを `internal` に変更します。 この場合、クラスのインスタンス化は可能ですが、内部メンバーへのアクセスはできません。  
   
 ```  
 // Assembly2.cs  
@@ -88,13 +106,13 @@ public class TestAccess
 }  
 ```  
   
-## C\# 言語仕様  
- [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec-md.md)]  
+## <a name="c-language-specification"></a>C# 言語仕様  
+ [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec_md.md)]  
   
-## 参照  
- [C\# リファレンス](../../../csharp/language-reference/index.md)   
- [C\# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
- [C\# のキーワード](../../../csharp/language-reference/keywords/index.md)   
+## <a name="see-also"></a>関連項目  
+ [C# リファレンス](../../../csharp/language-reference/index.md)   
+ [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
+ [C# のキーワード](../../../csharp/language-reference/keywords/index.md)   
  [アクセス修飾子](../../../csharp/language-reference/keywords/access-modifiers.md)   
  [アクセシビリティ レベル](../../../csharp/language-reference/keywords/accessibility-levels.md)   
  [修飾子](../../../csharp/language-reference/keywords/modifiers.md)   

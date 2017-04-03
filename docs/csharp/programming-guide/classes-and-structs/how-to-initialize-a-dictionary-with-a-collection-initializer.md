@@ -1,33 +1,52 @@
 ---
-title: "方法 : コレクション初期化子を使用してディクショナリを初期化する (C# プログラミング ガイド) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.technology: 
-  - "devlang-csharp"
-ms.topic: "article"
-dev_langs: 
-  - "CSharp"
-helpviewer_keywords: 
-  - "コレクション初期化子 [C#]、ディクショナリ"
+title: "方法: コレクション初期化子を使用してディクショナリを初期化する (C# プログラミング ガイド) | Microsoft Docs"
+ms.date: 2015-07-20
+ms.prod: .net
+ms.technology:
+- devlang-csharp
+ms.topic: article
+dev_langs:
+- CSharp
+helpviewer_keywords:
+- collection initializers [C#], with Dictionary
 ms.assetid: 25283922-f8ee-40dc-a639-fac30804ec71
 caps.latest.revision: 10
-author: "BillWagner"
-ms.author: "wiwagn"
-caps.handback.revision: 10
+author: BillWagner
+ms.author: wiwagn
+translation.priority.ht:
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- ru-ru
+- zh-cn
+- zh-tw
+translation.priority.mt:
+- cs-cz
+- pl-pl
+- pt-br
+- tr-tr
+translationtype: Human Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: 60443456be4b4fbb13dad6cb9c372a1af332c2fd
+ms.lasthandoff: 03/13/2017
+
 ---
-# 方法 : コレクション初期化子を使用してディクショナリを初期化する (C# プログラミング ガイド)
-<xref:System.Collections.Generic.Dictionary%602> には、キーと値のペアのコレクションが含まれます。  <xref:System.Collections.Generic.Dictionary%602.Add%2A> メソッドは、キー用と値用の 2 つのパラメーターを受け取ります。  <xref:System.Collections.Generic.Dictionary%602> または `Add` メソッドが複数のパラメーターを受け取るコレクションを初期化するには、次の例に示すように、各パラメーターのセットを中かっこで囲みます。  
+# <a name="how-to-initialize-a-dictionary-with-a-collection-initializer-c-programming-guide"></a>方法: コレクション初期化子を使用してディクショナリを初期化する (C# プログラミング ガイド)
+<xref:System.Collections.Generic.Dictionary`2> contains a collection of key/value pairs. Its <xref:System.Collections.Generic.Dictionary`2.Add*> メソッドは、キー用と値用の 2 つのパラメーターを受け取ります。 複数のパラメーターを受け取る <xref:System.Collections.Generic.Dictionary`2>, or any collection whose `Add` メソッドを初期化するには、次の例に示すように、各パラメーターのセットを中かっこで囲みます。  
   
-## 使用例  
- 次のコード例では、<xref:System.Collections.Generic.Dictionary%602> が `StudentName` 型のインスタンスで初期化されます。  
+## <a name="example"></a>例  
+ 次のコード例では、<xref:System.Collections.Generic.Dictionary`2> is initialized with instances of type `StudentName`。  
   
  [!code-cs[csProgGuideLINQ#34](../../../csharp/programming-guide/arrays/codesnippet/CSharp/how-to-initialize-a-dictionary-with-a-collection-initializer_1.cs)]  
   
- コレクションの各要素の中かっこの 2 つのペアに注目してください。  最も内側の中かっこは `StudentName` のオブジェクト初期化子を囲み、最も外側の中かっこは、`students` <xref:System.Collections.Generic.Dictionary%602> に追加されるキーと値のペアの初期化子を囲んでいます。  最後に、ディクショナリのコレクション初期化子全体が中かっこで囲まれています。  
+ コレクションの各要素の中かっこの 2 つのペアに注目してください。 最も内側の中かっこは `StudentName` のオブジェクト初期化子を囲み、最も外側の中かっこは、`students`<xref:System.Collections.Generic.Dictionary`2> に追加されるキーと値のペアの初期化子を囲んでいます。 最後に、ディクショナリのコレクション初期化子全体が中かっこで囲まれています。  
   
-## コードのコンパイル  
- このコードを実行するには、[!INCLUDE[vs_current_short](../../../csharp/programming-guide/classes-and-structs/includes/vs-current-short-md.md)] で作成した Visual C\# コンソール アプリケーション プロジェクトに、クラスをコピーして貼り付けます。  既定では、このプロジェクトは [!INCLUDE[dnprdnshort](../../../csharp/getting-started/includes/dnprdnshort-md.md)] Version 3.5 を対象としており、System.Core.dll への参照と System.Linq のディレクティブの使用が含まれます。  これらの要件が 1 つ以上プロジェクトから欠落していても、手動で追加できます。  詳細については、「[How to: Create a LINQ Project](../Topic/How%20to:%20Create%20a%20LINQ%20Project.md)」を参照してください。  
+## <a name="compiling-the-code"></a>コードのコンパイル  
+ このコードを実行するには、クラスをコピーし、[!INCLUDE[vs_current_short](../../../csharp/programming-guide/classes-and-structs/includes/vs_current_short_md.md)] で作成した Visual C# コンソール アプリケーション プロジェクトに貼り付けます。 既定では、このプロジェクトは、[!INCLUDE[dnprdnshort](../../../csharp/getting-started/includes/dnprdnshort_md.md)] のバージョン 3.5 を対象としており、System.Core.dll への参照と System.Linq の using ディレクティブが含まれます。 これらの要件のうち 1 つまたは複数がプロジェクトから欠落している場合は、手動で追加することができます。   
   
-## 参照  
- [C\# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
+## <a name="see-also"></a>関連項目  
+ [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
  [オブジェクト初期化子とコレクション初期化子](../../../csharp/programming-guide/classes-and-structs/object-and-collection-initializers.md)

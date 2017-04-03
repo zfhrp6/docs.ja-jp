@@ -1,40 +1,58 @@
 ---
-title: "/nowin32manifest (C# Compiler Options) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.technology: 
-  - "devlang-csharp"
-ms.topic: "article"
-f1_keywords: 
-  - "/nowin32manifest"
-dev_langs: 
-  - "CSharp"
-helpviewer_keywords: 
-  - "nowin32manifest compiler option [C#]"
-  - "-nowin32manifest compiler option [C#]"
-  - "/nowin32manifest compiler option [C#]"
+title: "-nowin32manifest (C# コンパイラ オプション) | Microsoft Docs"
+ms.date: 2015-07-20
+ms.prod: .net
+ms.technology:
+- devlang-csharp
+ms.topic: article
+f1_keywords:
+- /nowin32manifest
+dev_langs:
+- CSharp
+helpviewer_keywords:
+- nowin32manifest compiler option [C#]
+- -nowin32manifest compiler option [C#]
+- /nowin32manifest compiler option [C#]
 ms.assetid: 6f06365b-b87b-46a2-b187-b3bfeaf4862d
 caps.latest.revision: 15
-author: "BillWagner"
-ms.author: "wiwagn"
-caps.handback.revision: 13
+author: BillWagner
+ms.author: wiwagn
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Human Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: ce96938ee00df7bfae742369673f75f8d39abd12
+ms.lasthandoff: 03/13/2017
+
 ---
-# /nowin32manifest (C# Compiler Options)
-**\/nowin32manifest** オプションを使用すると、実行可能ファイルへのアプリケーション マニフェストの埋め込みを行わないようコンパイラに対して指示できます。  
+# <a name="nowin32manifest-c-compiler-options"></a>/nowin32manifest (C# コンパイラ オプション)
+**/nowin32manifest** オプションを利用し、アプリケーション マニフェストを実行可能ファイルに埋め込まないようコンパイラに指示します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 /nowin32manifest  
 ```  
   
-## 解説  
- このオプションを使用すると、アプリケーションは Windows Vista の仮想化に従います。ただし、Win32 リソース ファイルで、または後のビルド手順で、アプリケーション マニフェストを指定した場合を除きます。  仮想化の詳細については、「[New UAC Technologies for Windows Vista](http://msdn.microsoft.com/ja-jp/80efa4c7-3904-45c5-82e8-2d558fe67db9)」を参照してください。  
+## <a name="remarks"></a>コメント  
+ このオプションを使用すると、Win32 リソース ファイルに、あるいは後のビルド ステップでアプリケーション マニフェストを指定しない限り、 Windows Vista で仮想化に従います。  
   
- Visual Studio の**アプリケーションのプロパティ** ページで、**\[マニフェスト\]** ドロップダウン リストの **\[マニフェストなしでアプリケーションを作成します\]** をクリックしてこのオプションを設定します。  詳細については、「[\[アプリケーション\] ページ \(プロジェクト デザイナー\) \(C\#\)](/visual-studio/ide/reference/application-page-project-designer-csharp)」を参照してください。  
+ Visual Studio では、このオプションを **[アプリケーション プロパティ]** ページで設定します。**[マニフェスト]** ドロップダウン リストの **[マニフェストなしでアプリケーションを作成します]** を選択します。 詳細については、「[[アプリケーション] ページ (プロジェクト デザイナー) (C#)](https://docs.microsoft.com/visualstudio/ide/reference/application-page-project-designer-csharp)」を参照してください。  
   
- マニフェストの作成の詳細については、「[\/win32manifest \(Import a Custom Win32 Manifest File\)](../../../csharp/language-reference/compiler-options/win32manifest-compiler-option.md)」を参照してください。  
+ マニフェスト作成の詳細については、「[/win32manifest (C# コンパイラ オプション)](../../../csharp/language-reference/compiler-options/win32manifest-compiler-option.md)」を参照してください。  
   
-## 参照  
- [C\# Compiler Options](../../../csharp/language-reference/compiler-options/index.md)   
- [方法 : プロジェクト プロパティおよび構成設定を変更する](http://msdn.microsoft.com/ja-jp/e7184bc5-2f2b-4b4f-aa9a-3ecfcbc48b67)
+## <a name="see-also"></a>関連項目  
+ [C# コンパイラのオプション](../../../csharp/language-reference/compiler-options/index.md)   
+ [NIB 方法: プロジェクト プロパティと構成設定を変更する](http://msdn.microsoft.com/en-us/e7184bc5-2f2b-4b4f-aa9a-3ecfcbc48b67)

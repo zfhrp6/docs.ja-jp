@@ -1,25 +1,43 @@
 ---
 title: "virtual (C# リファレンス) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.technology: 
-  - "devlang-csharp"
-ms.topic: "article"
-f1_keywords: 
-  - "virtual_CSharpKeyword"
-  - "virtual"
-dev_langs: 
-  - "CSharp"
-helpviewer_keywords: 
-  - "virtual キーワード [C#]"
+ms.date: 2015-07-20
+ms.prod: .net
+ms.technology:
+- devlang-csharp
+ms.topic: article
+f1_keywords:
+- virtual_CSharpKeyword
+- virtual
+dev_langs:
+- CSharp
+helpviewer_keywords:
+- virtual keyword [C#]
 ms.assetid: 5da9abae-bc1e-434f-8bea-3601b8dcb3b2
 caps.latest.revision: 26
-author: "BillWagner"
-ms.author: "wiwagn"
-caps.handback.revision: 26
+author: BillWagner
+ms.author: wiwagn
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Human Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: e2268fcc3888bf4b3a30f5855a31bfafcbd3ca49
+ms.lasthandoff: 03/13/2017
+
 ---
-# virtual (C# リファレンス)
-`virtual` キーワードは、メソッド、プロパティ、インデクサー、またはイベントの宣言を修飾し、派生クラスでオーバーライドできるようにするために使用します。  たとえば、このメソッドは、このメソッドを継承するクラスでオーバーライドできます。  
+# <a name="virtual-c-reference"></a>virtual (C# リファレンス)
+`virtual` キーワードは、メソッド、プロパティ、インデクサー、またはイベント宣言を変更し、それを派生クラスでオーバーライドできるようにするために使用されます。 たとえば、次のメソッドはそれを継承する任意のクラスでオーバーライドできます。  
   
 ```  
 public virtual double Area()   
@@ -28,45 +46,45 @@ public virtual double Area()
 }  
 ```  
   
- 仮想メンバーの実装は、[オーバーライドするメンバー](../../../csharp/language-reference/keywords/override.md)によって派生クラスで変更できます。  `virtual` キーワードを使用する方法の詳細については、「[Override キーワードと New キーワードによるバージョン管理](../../../csharp/programming-guide/classes-and-structs/versioning-with-the-override-and-new-keywords.md)」および「[Override キーワードと New キーワードを使用する場合について](../../../csharp/programming-guide/classes-and-structs/knowing-when-to-use-override-and-new-keywords.md)」を参照してください。  
+ 仮想メンバーの実装は、派生クラスの[オーバーライド メンバー](../../../csharp/language-reference/keywords/override.md)によって変更できます。 `virtual` キーワードの使い方について詳しくは、「[Override キーワードと New キーワードによるバージョン管理](../../../csharp/programming-guide/classes-and-structs/versioning-with-the-override-and-new-keywords.md)」および「[Override キーワードと New キーワードを使用する場合について](../../../csharp/programming-guide/classes-and-structs/knowing-when-to-use-override-and-new-keywords.md)」をご覧ください。  
   
-## 解説  
- 仮想メンバーが呼び出されるときには、オブジェクトの実行時の型が、オーバーライドするメンバーで確認されます。  メンバーをオーバーライドしている派生クラスがない場合には、おそらくはオリジナルのメンバーである、最派生クラスでオーバーライドするメンバーが呼び出されます。  
+## <a name="remarks"></a>コメント  
+ 仮想メソッドが呼び出されると、オブジェクトの実行時の型が、オーバーライドするメンバーに対してチェックされます。 いずれの派生クラスもメンバーをオーバーライドしなかった場合は、最派生クラスのオーバーライド メンバー (元のメンバーである可能性があります) が呼び出されます。  
   
- 既定では、これらのメソッドは非仮想です。  非仮想メソッドのオーバーライドはできません。  
+ 既定では、メソッドは仮想ではありません。 非仮想メソッドをオーバーライドすることはできません。  
   
- `virtual` 修飾子は、`static`、`abstract, private`、または `override` の各修飾子と一緒には使用できません。  仮想プロパティの例を次に示します。  
+ `virtual` 修飾子を、`static`、`abstract, private`、または `override` 修飾子と共に使用することはできません。 次のコードは、仮想のプロパティの例です。  
   
  [!code-cs[csrefKeywordsModifiers#26](../../../csharp/language-reference/keywords/codesnippet/CSharp/virtual_1.cs)]  
   
- 仮想プロパティは抽象メソッドと同様に動作しますが、宣言の構文および呼び出しの構文に相違があります。  
+ 仮想プロパティは、宣言と呼び出しの構文の違いを除けば、抽象メソッドと似た働きを持ちます。  
   
--   静的プロパティで `virtual` 修飾子を使用するのはエラーです。  
+-   `virtual` 修飾子を静的プロパティに対して使うのは誤りです。  
   
--   継承された仮想プロパティを派生クラス内でオーバーライドできます。オーバーライドするには、`override` 修飾子を使用しているプロパティ宣言をインクルードします。  
+-   継承する仮想プロパティは、派生クラス内で `override` 修飾子を使ったプロパティ宣言を記述することでオーバーライドすることができます。  
   
-## 使用例  
- この例では`Shape` のクラスに 2 本の座標 `x``y` と `Area()` の仮想メソッドがあります。  図形のクラス、たとえば `Circle`、`Cylinder`、および `Sphere` が `Shape` クラスを継承し、各図形について、表面積が計算されます。  各派生クラスには、`Area()` の独自のオーバーライド実装があります。  
+## <a name="example"></a>例  
+ この例では、`Shape` クラスに 2 つの座標 (`x` と `y`) と仮想メソッド `Area()` が含まれています。 他の図形クラス (`Circle`、 `Cylinder`、`Sphere` など) は `Shape` クラスを継承しており、各図の表面積が計算されています。 各派生クラスは、`Area()` のオーバーライド実装を独自に持っています。  
   
- 次の宣言に示すように継承クラス `Circle``Sphere` と `Cylinder` 基本クラスを初期化するすべてのコンストラクターを使用してください。  
+ 次の宣言に示すように、継承されたクラス (`Circle`、 `Sphere`、および `Cylinder`) はいずれも、基底クラスを初期化するコンス トラクターを使用します。  
   
 ```  
 public Cylinder(double r, double h): base(r, h) {}  
 ```  
   
- 次のプログラムはメソッドに関連付けられたオブジェクトへ `Area()` ためのメソッドの適切な実装を呼び出すことによって各図形の適切な領域を計算して表示します。  
+ 次のプログラムは、メソッドに関連付けられたオブジェクトに従って `Area()` メソッドの適切な実装を呼び出すことにより、各図形の面積を計算し、表示します。  
   
  [!code-cs[csrefKeywordsModifiers#23](../../../csharp/language-reference/keywords/codesnippet/CSharp/virtual_2.cs)]  
   
-## C\# 言語仕様  
- [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec-md.md)]  
+## <a name="c-language-specification"></a>C# 言語仕様  
+ [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec_md.md)]  
   
-## 参照  
- [C\# リファレンス](../../../csharp/language-reference/index.md)   
- [C\# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
+## <a name="see-also"></a>関連項目  
+ [C# リファレンス](../../../csharp/language-reference/index.md)   
+ [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
  [修飾子](../../../csharp/language-reference/keywords/modifiers.md)   
- [C\# のキーワード](../../../csharp/language-reference/keywords/index.md)   
+ [C# のキーワード](../../../csharp/language-reference/keywords/index.md)   
  [ポリモーフィズム](../../../csharp/programming-guide/classes-and-structs/polymorphism.md)   
  [abstract](../../../csharp/language-reference/keywords/abstract.md)   
- [オーバーライド](../../../csharp/language-reference/keywords/override.md)   
+ [override](../../../csharp/language-reference/keywords/override.md)   
  [new](../../../csharp/language-reference/keywords/new.md)

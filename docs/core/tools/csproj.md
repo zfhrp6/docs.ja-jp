@@ -10,9 +10,9 @@ ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: bdc29497-64f2-4d11-a21b-4097e0bdf5c9
 translationtype: Human Translation
-ms.sourcegitcommit: 195664ae6409be02ca132900d9c513a7b412acd4
-ms.openlocfilehash: e67270cf713857a5fea16ebdd0abab774f555808
-ms.lasthandoff: 03/07/2017
+ms.sourcegitcommit: b4fb772973607b94e120377879a5dbdde2a25271
+ms.openlocfilehash: cd0b59b4a91dc4a83d73db55d8d0e611f73f63a6
+ms.lasthandoff: 03/15/2017
 
 ---
 
@@ -38,7 +38,7 @@ ms.lasthandoff: 03/07/2017
 
 これを行う主な理由は、プロジェクト ファイルを見やすくするためです。 SDK の既定値は、最も一般的な使用例に対応しているので、作成するプロジェクトごとに繰り返す必要はありません。 その結果、プロジェクト ファイルが小さくなり、わかりやすく、編集が必要な場合に編集しやすくなります。 
 
-次の表は、SDK に含まれる、および除外される要素と glob の一覧です。 
+次の表は、SDK に含まれる、および除外される要素と [glob](https://en.wikipedia.org/wiki/Glob_(programming)) の一覧です。 
 
 | 要素              | 含まれる glob                               | 除外される glob                                                     | glob の削除                  |
 |-------------------|-------------------------------------------|---------------------------------------------------------------|----------------------------|
@@ -62,13 +62,13 @@ ms.lasthandoff: 03/07/2017
 この変更で、他の include の主なしくみは変わりません。 ただし、たとえばアプリで発行する一部のファイルを指定する場合は、*csproj* で既知のしくみ (たとえば `<Content>` 要素) を使用することができます。
 
 ### <a name="recommendation"></a>推奨事項
-csproj では、プロジェクトから既定の glob を削除し、多様なシナリオ (ランタイム、NuGet パッケージなど) でアプリまたはライブラリが必要とする成果物の glob ファイルのパスのみを追加することをお勧めします。
+csproj では、プロジェクトから既定の glob を削除し、多様なシナリオ (ランタイム、NuGet パッケージなど) でアプリまたはライブラリが必要とする成果物の glob のファイル パスのみを追加することをお勧めします。
 
 
 ## <a name="additions"></a>追加
 
 ### <a name="sdk-attribute"></a>SDK 属性 
-*.csproj* ファイルの `<Project>` 要素には、`Sdk` という新しい属性があります。 `Sdk` は、プロジェクトで使用される SDK を指定します。 [レイヤー化のドキュメント](cli-msbuild-architecture.md)で説明されているように、SDK は、.NET Core コードをビルドできる MSBuild [タスク](https://docs.microsoft.com/visualstudio/msbuild/msbuild-tasks)および[ターゲット](https://docs.microsoft.com/visualstudio/msbuild/msbuild-targets)のセットです。 .NET Core ツールには主に&2; つの SDK が付属しています。
+*.csproj* ファイルの `<Project>` 要素には、`Sdk` という新しい属性があります。 `Sdk` は、プロジェクトで使用される SDK を指定します。 [レイヤー化のドキュメント](cli-msbuild-architecture.md)で説明されているように、SDK は、.NET Core コードをビルドできる MSBuild [タスク](https://docs.microsoft.com/visualstudio/msbuild/msbuild-tasks)および[ターゲット](https://docs.microsoft.com/visualstudio/msbuild/msbuild-targets)のセットです。 .NET Core ツールには主に 2 つの SDK が付属しています。
 
 1. ID が `Microsoft.NET.Sdk` の .NET Core SDK
 2. ID が `Microsoft.NET.Sdk.Web` の .NET Core Web SDK
@@ -95,7 +95,7 @@ csproj では、プロジェクトから既定の glob を削除し、多様な�
 > [!NOTE]
 > `PrivateAssets` は *project.json*/*xproj* `SuppressParent` 要素と同等です。
 
-これらの属性には、次の項目を&1; つまたは複数含めることができます。
+これらの属性には、次の項目を 1 つまたは複数含めることができます。
 
 * `Compile` - コンパイルで使用できる lib フォルダーの内容です。
 * `Runtime` - 配布する runtime フォルダーの内容です。
@@ -109,11 +109,11 @@ csproj では、プロジェクトから既定の glob を削除し、多様な�
 * `None` - いずれのアセットも使用されません。
 * `All` - すべてのアセットが使用されます。
 
-### <a name="dotnetclitoolreference"></a>DotnetCliToolReference
-`<DotnetCliToolReference>` 項目要素は、プロジェクトのコンテキストでユーザーが復元を望む CLI ツールを指定します。 *project.json* の `tools` ノードに代わるものです。 
+### <a name="dotnetclitoolreference"></a>DotNetCliToolReference
+`<DotNetCliToolReference>` 項目要素は、プロジェクトのコンテキストでユーザーが復元を望む CLI ツールを指定します。 *project.json* の `tools` ノードに代わるものです。 
 
 ```xml
-<DotnetCliToolReference Include="<package-id>" Version="" />
+<DotNetCliToolReference Include="<package-id>" Version="" />
 ```
 
 #### <a name="version"></a>バージョン
@@ -128,7 +128,7 @@ csproj では、プロジェクトから既定の glob を削除し、多様な�
 
 
 ### <a name="runtimeidentifier"></a>RuntimeIdentifier
-`<RuntimeIdentifier>` 要素では、プロジェクトの[ランタイム識別子 (RID)](../rid-catalog.md) を&1; つだけ指定できます。 RID により、自己完結型の展開を発行できます。 
+`<RuntimeIdentifier>` 要素では、プロジェクトの[ランタイム識別子 (RID)](../rid-catalog.md) を 1 つだけ指定できます。 RID により、自己完結型の展開を発行できます。 
 
 ```xml
 <RuntimeIdentifier>ubuntu.16.04-x64</RuntimeIdentifier>
@@ -243,3 +243,4 @@ nuget.exe および Visual Studio パッケージ マネージャーで強制す
 
 ### <a name="nuspecproperties"></a>NuspecProperties
 キー=値ペアのセミコロン区切りの一覧。
+

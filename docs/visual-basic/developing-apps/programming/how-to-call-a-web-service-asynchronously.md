@@ -1,37 +1,53 @@
 ---
-title: "How to: Call a Web Service Asynchronously (Visual Basic) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "asynchronous calls"
-  - "Web services, accessing"
+title: "方法: Web サービスを非同期で呼び出す (Visual Basic) | Microsoft Docs"
+ms.date: 2015-07-20
+ms.prod: .net
+ms.suite: 
+ms.technology:
+- devlang-visual-basic
+ms.topic: article
+dev_langs:
+- VB
+helpviewer_keywords:
+- asynchronous calls
+- Web services, accessing
 ms.assetid: ff8046f4-f1f2-4d8b-90b7-95e3f7415418
 caps.latest.revision: 14
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 14
----
-# How to: Call a Web Service Asynchronously (Visual Basic)
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
+author: stevehoag
+ms.author: shoag
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Human Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: a88c7250ba844603bcbc33d0768a45c40f18f53e
+ms.lasthandoff: 03/13/2017
 
-この例では、Web サービスの非同期ハンドラー イベントにハンドラーをアタッチして、非同期メソッド呼び出しの結果を取得できるようにします。  この例では、DemoTemperatureService Web サービスを使用しています \(http:\/\/www.xmethods.  net\)。  
+---
+# <a name="how-to-call-a-web-service-asynchronously-visual-basic"></a>方法: Web サービスを非同期で呼び出す (Visual Basic)
+この例では、Web サービスの非同期ハンドラー イベントにハンドラーをアタッチして、非同期メソッド呼び出しの結果を取得できるようにします。 この例で使用した Web サービスは、http://www.xmethods.net にある DemoTemperatureService です。  
   
- [!INCLUDE[vsprvs](../../../csharp/includes/vsprvs-md.md)] 統合開発環境 \(IDE\) でプロジェクトの Web サービスを参照すると、この Web サービスが `My.WebServices` オブジェクトに追加され、指定された Web サービスにアクセスするためのクライアント プロキシ クラスが IDE によって生成されます。  
+ [!INCLUDE[vsprvs](../../../csharp/includes/vsprvs_md.md)] 統合開発環境 (IDE) でプロジェクトの Web サービスを参照すると、この Web サービスが `My.WebServices` オブジェクトに追加され、指定された Web サービスにアクセスするためのクライアント プロキシ クラスが IDE によって生成されます。  
   
- プロキシ クラスを使用すると、Web サービス メソッドを同期的に呼び出すことができ、この場合、アプリケーションは関数が完了するまで待機します。  また、プロキシはメソッドを非同期的に呼び出すために使用できる追加のメンバーを作成します。  Web サービス関数 *NameOfWebServiceFunction* ごとに、プロキシは *NameOfWebServiceFunction*`Async` サブルーチン、*NameOfWebServiceFunction*`Completed` イベント、および *NameOfWebServiceFunction*`CompletedEventArgs` クラスを作成します。  この例では、DemoTemperatureService Web サービスの `getTemp` 関数にアクセスする非同期メンバーの使用方法を示します。  
+ プロキシ クラスを使用すると、Web サービス メソッドを同期的に呼び出すことができ、この場合、アプリケーションは関数が完了するまで待機します。 また、プロキシはメソッドを非同期的に呼び出すために使用できる追加のメンバーを作成します。 Web サービス関数 *NameOfWebServiceFunction* ごとに、プロキシは *NameOfWebServiceFunction*`Async` サブルーチン、*NameOfWebServiceFunction*`Completed` イベント、および *NameOfWebServiceFunction*`CompletedEventArgs` クラスを作成します。 この例では、DemoTemperatureService Web サービスの `getTemp` 関数にアクセスする非同期メンバーの使用方法を示します。  
   
 > [!NOTE]
 >  ASP.NET では `My.WebServices` オブジェクトがサポートされていないため、このコードは Web アプリケーションでは動作しません。  
   
-### Web サービスを非同期的に呼び出すには  
+### <a name="to-call-a-web-service-asynchronously"></a>Web サービスを非同期的に呼び出すには  
   
-1.  DemoTemperatureService Web サービス \(http:\/\/www.xmethods.  net\) を参照します。  アドレスは次のとおりです。  
+1.  http://www.xmethods.net にある DemoTemperatureService Web サービスを参照します。 アドレスは次のとおりです。  
   
     ```  
     http://www.xmethods.net/sd/2001/DemoTemperatureService.wsdl  
@@ -70,8 +86,8 @@ caps.handback.revision: 14
     End Sub  
     ```  
   
-     `getTemp` Web メソッドを非同期的に呼び出すには、`CallGetTempAsync` メソッドを呼び出します。  Web メソッドが終了すると、その戻り値が `getTempCompletedHandler` イベント ハンドラーに渡されます。  
+     `getTemp` Web メソッドを非同期的に呼び出すには、`CallGetTempAsync` メソッドを呼び出します。 Web メソッドが終了すると、その戻り値が `getTempCompletedHandler` イベント ハンドラーに渡されます。  
   
-## 参照  
- [Accessing Application Web Services](../../../visual-basic/developing-apps/programming/accessing-application-web-services.md)   
- [My.WebServices Object](../../../visual-basic/language-reference/objects/my-webservices-object.md)
+## <a name="see-also"></a>関連項目  
+ [アプリケーションの Web サービスへのアクセス](../../../visual-basic/developing-apps/programming/accessing-application-web-services.md)   
+ [My.WebServices オブジェクト](../../../visual-basic/language-reference/objects/my-webservices-object.md)

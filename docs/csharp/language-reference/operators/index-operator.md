@@ -1,63 +1,82 @@
 ---
-title: "演算子 (C# リファレンス) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.technology: 
-  - "devlang-csharp"
-ms.topic: "article"
-f1_keywords: 
-  - "[]_CSharpKeyword"
-dev_langs: 
-  - "CSharp"
-helpviewer_keywords: 
-  - "添字演算子 [C#]"
-  - "角かっこ [ ] 演算子 [C#]"
-  - "[] 演算子 [C#]"
-  - "添字演算子 [C#]"
+title: "[] 演算子 (C# リファレンス) | Microsoft Docs"
+ms.date: 2015-07-20
+ms.prod: .net
+ms.technology:
+- devlang-csharp
+ms.topic: article
+f1_keywords:
+- '[]_CSharpKeyword'
+dev_langs:
+- CSharp
+helpviewer_keywords:
+- subscript operator [C#]
+- square brackets [ ] operator [C#]
+- '[] operator [C#]'
+- indexing operator [C#]
 ms.assetid: 5c16bb45-88f7-45ff-b42c-1af1972b042c
 caps.latest.revision: 20
-author: "BillWagner"
-ms.author: "wiwagn"
-caps.handback.revision: 20
+author: BillWagner
+ms.author: wiwagn
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Human Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: 4eaecd5cd70c396a62856087a7b37f38e02d2383
+ms.lasthandoff: 03/13/2017
+
 ---
-# 演算子 (C# リファレンス)
-角かっこ \(`[]`\) は、配列、インデクサー、および属性で使用します。  角かっこは、ポインターでも使用できます。  
+# <a name="-operator-c-reference"></a>[] 演算子 (C# リファレンス)
+角かっこ (`[]`) は、配列、インデクサー、属性に使用されます。 また、ポインターと共に使用することもできます。  
   
-## 解説  
- 配列型は、型名の後に `[]` が続きます。  
+## <a name="remarks"></a>コメント  
+ 配列型は、型の後に `[]` が続きます。  
   
  [!code-cs[csRefOperators#43](../../../csharp/language-reference/operators/codesnippet/CSharp/index-operator_1.cs)]  
   
- 配列の要素にアクセスするには、目的の要素の添字を角かっこで囲みます。  
+ 配列の要素にアクセスするには、次のように、目的の要素のインデックスを角かっこで囲みます。  
   
  [!code-cs[csRefOperators#44](../../../csharp/language-reference/operators/codesnippet/CSharp/index-operator_2.cs)]  
   
- 配列の添字が範囲外の場合は、例外がスローされます。  
+ 配列のインデックスが範囲外の場合は、例外がスローされます。  
   
- 配列の添字演算子は、オーバーロードできません。ただし、型ではインデクサーおよび 1 つ以上のパラメーターをとるプロパティを定義できます。  インデクサーのパラメーターは配列の添字と同じように角かっこで囲みますが、整数でなければならない配列の添字とは異なり、インデクサーのパラメーターは任意の型として宣言できます。  
+ 配列インデックス演算子は、オーバーロードできません。ただし、型はインデクサーと、1 つ以上のパラメーターを受け取るプロパティを定義できます。 インデクサーのパラメーターは配列のインデックスと同じように角かっこで囲みますが、整数でなければならない配列のインデックスとは異なり、インデクサーのパラメーターは任意の型として宣言することができます。  
   
- たとえば、.NET Framework では任意の型のキーと値を関連付ける `Hashtable` 型を定義しています。  
+ たとえば、.NET Framework では、任意の型のキーと値を関連付ける `Hashtable` 型を定義しています。  
   
  [!code-cs[csRefOperators#45](../../../csharp/language-reference/operators/codesnippet/CSharp/index-operator_3.cs)]  
   
- 角かっこは、[属性](../Topic/Attributes%20\(C%23%20and%20Visual%20Basic\).md)を指定するためにも使用します。  
+ 角かっこは、[属性](../../../csharp/programming-guide/concepts/attributes/index.md)を指定するためにも使用されます。  
   
  [!code-cs[csRefOperators#46](../../../csharp/language-reference/operators/codesnippet/CSharp/index-operator_4.cs)]  
   
- 角かっこを使用して、ポインターにインデックスを作成できます。  
+ 角かっこを使用して、ポインターにインデックスを作成することができます。  
   
  [!code-cs[csRefOperators#47](../../../csharp/language-reference/operators/codesnippet/CSharp/index-operator_5.cs)]  
   
- 添字の範囲チェックは行われません。  
+ 境界のチェックは行われません。  
   
-## C\# 言語仕様  
- [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec-md.md)]  
+## <a name="c-language-specification"></a>C# 言語仕様  
+ [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec_md.md)]  
   
-## 参照  
- [C\# リファレンス](../../../csharp/language-reference/index.md)   
- [C\# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
- [C\# 演算子](../../../csharp/language-reference/operators/index.md)   
+## <a name="see-also"></a>関連項目  
+ [C# リファレンス](../../../csharp/language-reference/index.md)   
+ [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
+ [C# 演算子](../../../csharp/language-reference/operators/index.md)   
  [配列](../../../csharp/programming-guide/arrays/index.md)   
  [インデクサー](../../../csharp/programming-guide/indexers/index.md)   
- [安全でない](../../../csharp/language-reference/keywords/unsafe.md)   
+ [unsafe](../../../csharp/language-reference/keywords/unsafe.md)   
  [fixed ステートメント](../../../csharp/language-reference/keywords/fixed-statement.md)
+

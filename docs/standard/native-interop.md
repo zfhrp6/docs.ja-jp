@@ -38,7 +38,7 @@ P/invoke は、アンマネージ ライブラリ内の構造体、コールバ�
 
 最も一般的な例から始めましょう。これはマネージ コードでアンマネージ関数を呼び出します。 コマンドライン アプリケーションからメッセージ ボックスを表示してみましょう。
 
-```cs
+```csharp
 using System.Runtime.InteropServices;
 
 public class Program {
@@ -66,7 +66,7 @@ public class Program {
 
 サンプルは、macOS の場合も似ています。 変更する必要がある唯一の点が、当然ながら、`DllImport` 属性内のライブラリの名前です。macOS のダイナミック ライブラリの名前付けのスキームが異なるからです。 下のサンプルでは、`getpid(2)` 関数を使用して、アプリケーションのプロセス ID を取得し、それをコンソールに出力しています。
 
-```cs
+```csharp
 using System;
 using System.Runtime.InteropServices;
 
@@ -89,7 +89,7 @@ namespace PInvokeSamples {
 
 これはもちろん Linux でも似ています。 `getpid(2)` は [POSIX](https://en.wikipedia.org/wiki/POSIX) システム コールであるため、関数名が同じです。
 
-```cs
+```csharp
 using System;
 using System.Runtime.InteropServices;
 
@@ -116,7 +116,7 @@ namespace PInvokeSamples {
 
 この機能を使用する方法は、先述のマネージからネイティブへのプロセスに似ています。 指定されたコールバックに対し、ユーザーがシグネチャと一致するデリゲートを定義し、それを外部メソッドに渡します。 ランタイムは、他のすべてのことを処理します。
 
-```cs
+```csharp
 using System;
 using System.Runtime.InteropServices;
 
@@ -160,7 +160,7 @@ namespace ConsoleApplication1 {
 
 Linux と macOS の例を、以下に示します。 それらの場合、`libc` C ライブラリに見つかる `ftw` 関数を使用します。 この関数は、ディレクトリ階層をスキャンするために使用し、そのパラメーターの&1; つとして、関数へのポインターを受け取ります。 上記のメソッドのシグネチャは次のとおりです。`int (*fn) (const char *fpath, const struct stat *sb, int typeflag)`
 
-```cs
+```csharp
 using System;
 using System.Runtime.InteropServices;
 
@@ -213,7 +213,7 @@ namespace PInvokeSamples {
 
 macOS の例では、同じ関数を使用していますが、唯一の違いは `DllImport` 属性への引数です。macOS は `libc` を別の場所で保持しているためです。
 
-```cs
+```csharp
 using System;
 using System.Runtime.InteropServices;
 
@@ -272,7 +272,7 @@ namespace PInvokeSamples {
 
 マーシャリングが必要な理由は、マネージ コードとアンマネージ コード内の型が異なるためです。 マネージ コードで、たとえば、`String` があるとします。アンマネージ環境では、文字列は Unicode ("ワイド")、Unicode 以外、Null 終了、ASCII などです。既定で、P/Invoke サブシステムは既定の動作に基づいて "正しいこと" をしようと試みますが、それらについては [MSDN](https://msdn.microsoft.com/library/zah6xy75.aspx) で確認できます。 ただし、特別な制御が必要な場合、`MarshalAs` 属性を採用して、アンマネージ側で期待する型を指定します。 たとえば、文字列を NULL で終わる ANSI 文字列として送信させる場合は、次のように指定できます。
 
-```cs
+```csharp
 [DllImport("somenativelibrary.dll"]
 static extern int MethodA([MarshalAs(UnmanagedType.LPStr)] string parameter);
 
@@ -282,7 +282,7 @@ static extern int MethodA([MarshalAs(UnmanagedType.LPStr)] string parameter);
 
 型のマーシャリングの別の側面は、構造体をアンマネージ メソッドに渡す方法です。 たとえば、一部のアンマネージ メソッドでは、パラメーターとして構造体が必要です。 このような場合、環境のマネージ部分に対応する構造体またはクラスを作成し、それをパラメーターとして使用する必要があります。 ただし、クラスを定義するだけでは不十分で、マーシャラーに、クラス内のフィールドをアンマネージ構造体にマップする方法を指示する必要もあります。 これは、`StructLayout` 属性が関与する箇所です。
 
-```cs
+```csharp
 [DllImport("kernel32.dll")]
 static extern void GetSystemTime(SystemTime systemTime);
 
@@ -324,7 +324,7 @@ typedef struct _SYSTEMTIME {
 
 前の例で、これの Linux と macOS の例について既に説明しました。 下にもう一度示します。
 
-```cs
+```csharp
 [StructLayout(LayoutKind.Sequential)]
 public class StatClass {
         public uint DeviceID;

@@ -1,51 +1,67 @@
 ---
-title: "Programming in Visual Basic | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "programming, Visual Basic"
-  - "programming"
+title: "Visual Basic でのプログラミング | Microsoft Docs"
+ms.date: 2015-07-20
+ms.prod: .net
+ms.suite: 
+ms.technology:
+- devlang-visual-basic
+ms.topic: article
+dev_langs:
+- VB
+helpviewer_keywords:
+- programming, Visual Basic
+- programming
 ms.assetid: bc45a3de-ea36-46e6-a106-309a413d7804
 caps.latest.revision: 11
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 11
----
-# Programming in Visual Basic
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
+author: stevehoag
+ms.author: shoag
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Human Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: 1aed5aa95d9c7177ea52c28b2a169fdde8dc5ec4
+ms.lasthandoff: 03/13/2017
 
-このセクションでは、Visual Basic アプリケーションを作成するときに詳しく理解しておくと役立つプログラミング タスクについて説明します。  
+---
+# <a name="programming-in-visual-basic"></a>Visual Basic でのプログラミング
+このセクションでは、Visual Basic アプリケーションを作成するときに知っておきたいプログラミング タスクについて説明します。  
   
-## このセクションの内容  
- [Accessing Computer Resources](../../../visual-basic/developing-apps/programming/computer-resources/index.md)  
- `My.Computer` オブジェクトを使用して、アプリケーションを実行中のコンピューターについての情報にアクセスする方法、およびコンピューターを制御する方法についてのドキュメントが含まれています。  
+## <a name="in-this-section"></a>このセクションの内容  
+ [コンピューター リソースへのアクセス](../../../visual-basic/developing-apps/programming/computer-resources/computer-resources.md)  
+ `My.Computer` オブジェクトを使用して、アプリケーションを実行するコンピューターについての情報にアクセスし、そのコンピューターを制御する方法に関するドキュメントです。  
   
- [Logging Information from the Application](../../../visual-basic/developing-apps/programming/log-info/logging-information-from-the-application.md)  
- `My.Application.Log` オブジェクトおよび `My.Log` オブジェクトを使用してアプリケーションから情報をログに記録する方法と、アプリケーションのログ機能を拡張する方法についてのドキュメントが含まれています。  
+ [アプリケーションからの情報のログ記録](../../../visual-basic/developing-apps/programming/log-info/logging-information-from-the-application.md)  
+ `My.Application.Log` オブジェクトと `My.Log` オブジェクトを使用してアプリケーションの情報を記録する方法と、アプリケーションのログ機能を拡張する方法に関するドキュメントです。  
   
- [Accessing User Data](../../../visual-basic/developing-apps/programming/accessing-user-data.md)  
- `My.User` オブジェクトを使用して実行できるタスクについてのドキュメントが含まれています。  
+ [アクセス (ユーザー データに)](../../../visual-basic/developing-apps/programming/accessing-user-data.md)  
+ `My.User` オブジェクトを使用して実行できるタスクに関するドキュメントです。  
   
- [Accessing Application Forms](../../../visual-basic/developing-apps/programming/accessing-application-forms.md)  
- `My.Forms` オブジェクトおよび `My.Application` オブジェクトを使用してアプリケーションのフォームにアクセスする方法についてのドキュメントが含まれています。  
+ [アプリケーション フォームへのアクセス](../../../visual-basic/developing-apps/programming/accessing-application-forms.md)  
+ `My.Forms` オブジェクトと `My.Application` オブジェクトを使用して、アプリケーションのフォームにアクセスする方法に関するドキュメントです。  
   
- [Accessing Application Web Services](../../../visual-basic/developing-apps/programming/accessing-application-web-services.md)  
- `My.WebServices` オブジェクトを使用して、アプリケーションが参照している Web サービスにアクセスする方法についてのドキュメントが含まれています。  
+ [アプリケーションの Web サービスへのアクセス](../../../visual-basic/developing-apps/programming/accessing-application-web-services.md)  
+ アプリケーションによって参照される Web サービスに `My.WebServices` オブジェクトを使用してアクセスする方法に関するドキュメントです。  
   
- [Accessing Application Settings](../../../visual-basic/developing-apps/programming/app-settings/accessing-application-settings.md)  
- `My.Settings` オブジェクトを使用してアプリケーションの設定にアクセスする方法についてのドキュメントが含まれています。  
+ [アプリケーション設定へのアクセス](../../../visual-basic/developing-apps/programming/app-settings/accessing-application-settings.md)  
+ `My.Settings` オブジェクトを使用して、アプリケーションの設定にアクセスする方法に関するドキュメントです。  
   
- [Processing Drives, Directories, and Files](../../../visual-basic/developing-apps/programming/drives-directories-files/index.md)  
- `My.Computer.FileSystem` オブジェクトを使用してファイル システムにアクセスする方法についてのドキュメントが含まれています。  
+ [ドライブ、ディレクトリ、およびファイルの処理](../../../visual-basic/developing-apps/programming/drives-directories-files/processing.md)  
+ `My.Computer.FileSystem` オブジェクトを使用してファイル システムにアクセスする方法に関するドキュメントです。  
   
-## 参照  
- [Visual Basic Language Features](../../../visual-basic/programming-guide/language-features/index.md)   
- [プログラミングの概念](../Topic/Programming%20Concepts.md)   
- [コレクション](../Topic/Collections%20\(C%23%20and%20Visual%20Basic\).md)   
+## <a name="see-also"></a>関連項目  
+ [Visual Basic 言語の機能](../../../visual-basic/programming-guide/language-features/index.md)   
+ [プログラミングの概念](../../../visual-basic/programming-guide/concepts/index.md)   
+ [コレクション](../../../visual-basic/programming-guide/concepts/collections.md)   
  [Visual Basic でのアプリケーションの開発](../../../visual-basic/developing-apps/index.md)

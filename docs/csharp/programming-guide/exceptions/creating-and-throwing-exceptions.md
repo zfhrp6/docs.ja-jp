@@ -1,75 +1,93 @@
 ---
 title: "例外の作成とスロー (C# プログラミング ガイド) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.technology: 
-  - "devlang-csharp"
-ms.topic: "article"
-dev_langs: 
-  - "CSharp"
-helpviewer_keywords: 
-  - "キャッチ (例外を) [C#]"
-  - "例外 [C#], 作成"
-  - "例外 [C#], スロー"
-  - "スロー (例外を) [C#]"
+ms.date: 2015-07-20
+ms.prod: .net
+ms.technology:
+- devlang-csharp
+ms.topic: article
+dev_langs:
+- CSharp
+helpviewer_keywords:
+- catching exceptions [C#]
+- throwing exceptions [C#]
+- exceptions [C#], creating
+- exceptions [C#], throwing
 ms.assetid: 6bbba495-a115-4c6d-90cc-1f4d7b5f39e2
 caps.latest.revision: 28
-author: "BillWagner"
-ms.author: "wiwagn"
-caps.handback.revision: 28
+author: BillWagner
+ms.author: wiwagn
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Human Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: c3eab50a6a785676dd397498fbe95348187e2b7e
+ms.lasthandoff: 03/13/2017
+
 ---
-# 例外の作成とスロー (C# プログラミング ガイド)
-例外は、プログラムの実行中にエラーが発生したことを示すために使用されます。  エラーを説明する例外オブジェクトは、作成後、[throw](../../../csharp/language-reference/keywords/throw.md) キーワードにより*スロー*されます。  ランタイムは、対応する最も近い例外ハンドラーを検索します。  
+# <a name="creating-and-throwing-exceptions-c-programming-guide"></a>例外の作成とスロー (C# プログラミング ガイド)
+例外は、プログラムの実行中にエラーが発生したことを示すために使われます。 エラーを説明する例外オブジェクトが作成された後、[throw](../../../csharp/language-reference/keywords/throw.md) キーワードで "*スロー*" されます。 そのとき、ランタイムは最も互換性のある例外ハンドラーを検索します。  
   
- 次の条件の 1 つ以上が該当する場合、プログラマは例外をスローする必要があります。  
+ プログラマは、以下の条件が 1 つでも該当するときは、例外をスローする必要があります。  
   
--   メソッドが、定義されている機能を完了できない場合。  
+-   メソッドは、定義されている機能を完了できません。  
   
-     たとえば、メソッドのパラメーターの値が無効な場合は、次のような例外をスローします。  
+     たとえば、メソッドへのパラメーターに無効な値が設定されている場合などです。  
   
      [!code-cs[csProgGuideExceptions#12](../../../csharp/programming-guide/exceptions/codesnippet/CSharp/creating-and-throwing-exceptions_1.cs)]  
   
--   オブジェクトの状態に照らして不適切な呼び出しがオブジェクトに対して行われた場合。  
+-   オブジェクトの状態に基づくと、オブジェクトに対して行われた呼び出しが不適切です。  
   
-     1 例として、読み取り専用ファイルに書き込もうとした場合が挙げられます。  オブジェクトの状態により操作が許可されない場合、<xref:System.InvalidOperationException> のインスタンスまたはこのクラスの派生に基づくオブジェクトがスローされます。  <xref:System.InvalidOperationException> オブジェクトをスローするメソッドの例を次に示します。  
+     たとえば、読み取り専用ファイルに書き込もうとしたような場合です。 オブジェクトの状態により操作が許可されない場合は、<xref:System.InvalidOperationException> のインスタンスまたはこのクラスの派生に基づくオブジェクトをスローします。 次に示すのは、<xref:System.InvalidOperationException> オブジェクトをスローするメソッドの例です。  
   
      [!code-cs[csProgGuideExceptions#13](../../../csharp/programming-guide/exceptions/codesnippet/CSharp/creating-and-throwing-exceptions_2.cs)]  
   
--   メソッドの引数が原因で例外が発生した場合。  
+-   メソッドへの引数が原因で例外が発生しました。  
   
-     この場合、元の例外をキャッチして、<xref:System.ArgumentException> インスタンスを作成する必要があります。  元の例外は、<xref:System.Exception.InnerException%2A> パラメーターとして <xref:System.ArgumentException> のコンストラクターに渡す必要があります。  
+     この場合は、元の例外をキャッチして、<xref:System.ArgumentException> のインスタンスを作成する必要があります。 元の例外は、<xref:System.ArgumentException> のコンストラクターに <xref:System.Exception.InnerException%2A> パラメーターとして渡す必要があります。  
   
      [!code-cs[csProgGuideExceptions#14](../../../csharp/programming-guide/exceptions/codesnippet/CSharp/creating-and-throwing-exceptions_3.cs)]  
   
- 例外には、<xref:System.Exception.StackTrace%2A> というプロパティがあります。  この文字列には、現在の呼び出し履歴にあるメソッドの名前と、各メソッドについて例外がスローされたファイル名と行番号が含まれます。  <xref:System.Exception.StackTrace%2A> オブジェクトは、`throw` ステートメントの位置で共通言語ランタイム \(CLR: Common Language Runtime\) によって自動的に作成されるため、例外は、スタック トレースが開始される位置からスローする必要があります。  
+ 例外には、<xref:System.Exception.StackTrace%2A> という名前のプロパティが含まれています。 この文字列には、現在の呼び出し履歴でのメソッドの名前と、各メソッドの例外がスローされたファイル名と行番号が含まれます。 スタック トレースを開始するポイントから例外をスローする必要があるため、共通言語ランタイム (CLR) によって `throw` ステートメントのポイントから <xref:System.Exception.StackTrace%2A> オブジェクトが自動的に作成されます。  
   
- 例外にはいずれも <xref:System.Exception.Message%2A> というプロパティがあります。  この文字列は、例外の原因を説明するように設定する必要があります  セキュリティ上重要な情報をメッセージ テキストに含めないように注意してください。  <xref:System.Exception.Message%2A> に加え、<xref:System.ArgumentException> には <xref:System.ArgumentException.ParamName%2A> というプロパティがあります。このプロパティは、例外がスローされる原因になった引数の名前に設定する必要があります。  プロパティ Set アクセス操作子の場合は、<xref:System.ArgumentException.ParamName%2A> を `value` に設定する必要があります。  
+ すべての例外には、<xref:System.Exception.Message%2A> という名前のプロパティが含まれます。 例外の原因を説明するには、この文字列を設定する必要があります。 機密性の高い情報はメッセージ テキストに入れないようにする必要があることに注意してください。 <xref:System.Exception.Message%2A> に加えて、<xref:System.ArgumentException> には <xref:System.ArgumentException.ParamName%2A> という名前のプロパティが含まれ、これには例外がスローされる原因になった引数の名前を設定する必要があります。 プロパティ セッターの場合、<xref:System.ArgumentException.ParamName%2A> には `value` を設定する必要があります。  
   
- パブリック メソッドとプロテクト メソッドのメンバーは、意図された機能を完了できない場合に例外をスローする必要があります。  スローされる例外クラスは、エラー状態に最も明確に適合する例外である必要があります。  これらの例外は、クラス機能の一部として記述する必要があり、派生クラスや元のクラスの更新では、下位互換性を確保するために同じ動作を保持する必要があります。  
+ パブリックのプロテクト メソッド メンバーは、意図された機能を完了できない場合は常に例外をスローする必要があります。 スローされる例外クラスは、エラー状態に適合する使用可能な例外の中で最も具体的なものである必要があります。 これらの例外はクラスの機能の一部として文書化する必要があり、派生クラスまたは元のクラスの更新では、旧バージョンとの互換性のために同じ動作を維持する必要があります。  
   
-## 例外をスローする場合に避けなければならないこと  
- 例外をスローする場合に避けなければならないことを以下に示します。  
+## <a name="things-to-avoid-when-throwing-exceptions"></a>例外をスローするときに避ける必要があること  
+ 次の一覧は、例外をスローするときに避ける必要があることです。  
   
--   例外を通常の実行の一部として使用してプログラムのフローを変えることをしないようにしてください。  例外は、エラー状態の報告と処理のためだけに使用してください。  
+-   通常の実行の一部として、例外を使ってプログラムのフローを変更しないでください。 例外は、エラー状態の報告と処理のためだけに使う必要があります。  
   
--   そして、戻り値またはパラメーターとして返されるのではなく、スローされるようにしてください。  
+-   スローする代わりに、戻り値またはパラメーターとして例外を返さないでください。  
   
--   独自のソース コードから <xref:System.Exception?displayProperty=fullName>、<xref:System.SystemException?displayProperty=fullName>、<xref:System.NullReferenceException?displayProperty=fullName>、または <xref:System.IndexOutOfRangeException?displayProperty=fullName> を意図的にスローしないでください。  
+-   ユーザー作成のソース コードからは、<xref:System.Exception?displayProperty=fullName>、<xref:System.SystemException?displayProperty=fullName>、<xref:System.NullReferenceException?displayProperty=fullName>、または <xref:System.IndexOutOfRangeException?displayProperty=fullName> を意図的にスローしないでください。  
   
--   デバッグ モードでスローできるがリリース モードでスローできない例外を作成しないでください。  開発フェーズで実行時エラーを識別するには、代わりに Debug Assert を使用します。  
+-   デバッグ モードではスローでき、リリース モードではスローできない例外は、作成しないでください。 開発フェーズ中に実行時エラーを識別するには、代わりにデバッグ アサートを使ってください。  
   
-## 例外クラスの定義  
- プログラムでは、<xref:System> 名前空間で定義済みの、上記以外の例外クラスをスローできます。また、<xref:System.Exception> から派生させて固有の例外クラスを作成することもできます。  派生クラスでは、少なくとも 4 つのコンストラクターを定義する必要があります。1 つ目は既定のコンストラクター、2 つ目はメッセージ プロパティを設定するコンストラクター、3 つ目は <xref:System.Exception.Message%2A> と <xref:System.Exception.InnerException%2A> の両方のプロパティを設定するコンストラクターです。  そして 4 つ目のコンストラクターは、例外をシリアル化するのに使用します。  新しい例外クラスは、シリアル化できるクラスにする必要があります。  次に例を示します。  
+## <a name="defining-exception-classes"></a>例外クラスの定義  
+ プログラムでは、<xref:System> 名前空間で事前定義された例外クラスをスローするか (上記の場合を除きます)、<xref:System.Exception> から派生することで独自の例外クラスを作成することができます。 派生クラスでは、少なくとも 4 つのコンストラクターを定義する必要があります。既定のコンストラクター、メッセージ プロパティを設定するコンストラクター、<xref:System.Exception.Message%2A> プロパティと <xref:System.Exception.InnerException%2A> プロパティの両方を設定するコンストラクター、 そして 4 番目は例外のシリアル化に使われるコンストラクターです。 新しい例外クラスは、シリアル化可能にする必要があります。 例:  
   
  [!code-cs[csProgGuideExceptions#15](../../../csharp/programming-guide/exceptions/codesnippet/CSharp/creating-and-throwing-exceptions_4.cs)]  
   
- 新しいプロパティを例外クラスに追加するのは、それらが提供するデータが例外を解決する上で有効な場合に限定する必要があります。  新しいプロパティを派生例外クラスに追加した場合は、`ToString()` をオーバーライドして追加情報を返す必要があります。  
+ 例外クラスへの新しいプロパティの追加は、プロパティによって提供されるデータが例外の解決に役立つ場合にのみ行う必要があります。 派生例外クラスに新しいプロパティを追加する場合は、`ToString()` をオーバーライドして追加情報を返す必要があります。  
   
-## C\# 言語仕様  
- [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec-md.md)]  
+## <a name="c-language-specification"></a>C# 言語仕様  
+ [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec_md.md)]  
   
-## 参照  
- [C\# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
- [例外と例外処理](../../../csharp/programming-guide/exceptions/exceptions-and-exception-handling.md)   
- [例外階層](../Topic/Exception%20Hierarchy.md)   
+## <a name="see-also"></a>関連項目  
+ [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
+ [例外と例外処理](../../../csharp/programming-guide/exceptions/index.md)   
+ [例外階層](http://msdn.microsoft.com/library/f7d68675-be06-40fb-a555-05f0c5a6f66b)   
  [例外処理](../../../csharp/programming-guide/exceptions/exception-handling.md)

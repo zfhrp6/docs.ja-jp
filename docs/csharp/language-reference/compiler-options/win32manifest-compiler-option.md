@@ -1,60 +1,78 @@
 ---
-title: "/win32manifest (C# Compiler Options) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.technology: 
-  - "devlang-csharp"
-ms.topic: "article"
-f1_keywords: 
-  - "/win32manifest"
-dev_langs: 
-  - "CSharp"
-helpviewer_keywords: 
-  - "/win32manifest compiler option [C#]"
-  - "win32manifest compiler option [C#]"
-  - "-win32manifest compiler option [C#]"
+title: "-win32manifest (C# コンパイラ オプション) | Microsoft Docs"
+ms.date: 2015-07-20
+ms.prod: .net
+ms.technology:
+- devlang-csharp
+ms.topic: article
+f1_keywords:
+- /win32manifest
+dev_langs:
+- CSharp
+helpviewer_keywords:
+- /win32manifest compiler option [C#]
+- win32manifest compiler option [C#]
+- -win32manifest compiler option [C#]
 ms.assetid: 9460ea1b-6c9f-44b8-8f73-301b30a01de1
 caps.latest.revision: 13
-author: "BillWagner"
-ms.author: "wiwagn"
-caps.handback.revision: 13
+author: BillWagner
+ms.author: wiwagn
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Human Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: b9a5c7c994644d512d4049dbc5aab3fbea70d6ae
+ms.lasthandoff: 03/13/2017
+
 ---
-# /win32manifest (C# Compiler Options)
-**\/win32manifest** オプションを使用して、プロジェクトの移植可能な実行可能 \(PE: Portable Executable\) ファイルに埋め込むユーザー定義の Win32 アプリケーション マニフェスト ファイルを指定します。  
+# <a name="win32manifest-c-compiler-options"></a>/win32manifest (C# コンパイラ オプション)
+**/win32manifest** オプションは、プロジェクトのポータブル実行可能 (PE) ファイルに埋め込まれる、ユーザー定義の Win32 アプリケーション マニフェスト ファイルを指定するために使用します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 /win32manifest: filename  
 ```  
   
-## Arguments  
+## <a name="arguments"></a>引数  
  `filename`  
  カスタム マニフェスト ファイルの名前と場所。  
   
-## 解説  
- 既定では、"asInvoker" 要求実行レベルを指定するアプリケーション マニフェストが、[!INCLUDE[csharp_current_short](../../../csharp/language-reference/compiler-options/includes/csharp-current-short-md.md)] コンパイラによって埋め込まれます。Visual Studio を使用すると、アプリケーション マニフェストは、通常 bin\\Debug または bin\\Release フォルダーは、実行可能ファイルをビルドするフォルダー内に作成します。  カスタム マニフェストを指定する場合は、「highestAvailable」または「requireAdministrator の要求実行レベルを指定するには」、ファイルの名前を指定するには、このオプションを使用します。  
+## <a name="remarks"></a>コメント  
+ 既定では、 [!INCLUDE[csharp_current_short](../../../csharp/language-reference/compiler-options/includes/csharp_current_short_md.md)] コンパイラは "asInvoker" の要求実行レベルを指定するアプリケーション マニフェストを埋め込みます。 マニフェストは、実行可能ファイルがビルドされたフォルダーと同じフォルダーに作成されます (Visual Studio を使用している場合、通常は bin\Debug または bin\Release フォルダー)。 カスタム マニフェストを指定する場合 (たとえば、"highestAvailable" または "requireAdministrator" の要求実行レベルを指定する場合) は、このオプションを使用してファイルの名前を指定します。  
   
 > [!NOTE]
->  このオプションと [\/win32res \(Import a Win32 Resource File\)](../../../csharp/language-reference/compiler-options/win32res-compiler-option.md) オプションは相互に排他的です。  同じコマンド ライン内で両方のオプションを使用すると、ビルド エラーが発生します。  
+>  このオプションと [/win32res (C# コンパイラ オプション)](../../../csharp/language-reference/compiler-options/win32res-compiler-option.md) オプションは、相互に排他的です。 同じコマンド行で両方のオプションを使おうすると、ビルド エラーが返されます。  
   
- 要求実行レベルを指定するアプリケーション マニフェストのないアプリケーションは、Windows Vista のユーザー アカウント制御機能によってファイルとレジストリが仮想化されます。  仮想化の詳細については、参照します [Windows Vista の Developer Story: User Account Control \(UAC\) の Windows Vista Application Development Requirements](http://go.microsoft.com/fwlink/?LinkId=95452)。  
+ アプリケーション マニフェストを持たないアプリケーションは、要求実行レベルを指定した場合、Windows Vista のユーザー アカウント制御機能によって、ファイルまたはレジストリの仮想化の対象となります。 仮想化について詳しくは、「[The Windows Vista Developer Story: Windows Vista Application Development Requirements for User Account Control (UAC)](http://go.microsoft.com/fwlink/?LinkId=95452)」(Windows Vista 開発者ストーリー: ユーザー アカウント制御 (UAC) に関する Windows Vista アプリケーション開発要件) をご覧ください。  
   
- アプリケーションが次のいずれかの条件を満たす場合、アプリケーションは仮想化されます。  
+ 次の条件のいずれかに該当する場合、アプリケーションは仮想化の対象となります。  
   
--   **\/nowin32manifest** オプションを使用し、それ以降のビルド ステップでマニフェストを指定していないか、**\/win32res** オプションを使用して Windows リソース \(.res\) ファイルの一部としてマニフェストを指定していない。  
+-   **/nowin32manifest** オプションを使用していて、後のビルド手順でマニフェストを提供していないか、**/win32res** オプションを使用して Windows リソース (.res) ファイルの一部としていない。  
   
--   要求実行レベルを指定しないカスタム マニフェストを指定している。  
+-   要求実行レベルが指定されていないカスタム マニフェストを提供している。  
   
- [!INCLUDE[vsprvs](../../../csharp/includes/vsprvs-md.md)] は既定の .manifest ファイルを作成し、実行可能ファイルと共に debug ディレクトリおよび release ディレクトリに格納します。  カスタム マニフェストは、任意のテキスト エディターで作成してプロジェクトに追加できます。  または、**ソリューション エクスプローラー**で **\[プロジェクト\]** アイコンを右クリックし、**\[新しい項目の追加\]** をクリックして、**\[アプリケーション一覧ファイル\]** をクリックします。  新しいマニフェスト ファイルまたは既存のマニフェスト ファイルを追加すると、**\[マニフェスト\]** ボックスの一覧にそのファイルが表示されます。  詳細については、「[\[アプリケーション\] ページ \(プロジェクト デザイナー\) \(C\#\)](/visual-studio/ide/reference/application-page-project-designer-csharp)」を参照してください。  
+ [!INCLUDE[vsprvs](../../../csharp/includes/vsprvs_md.md)] は、既定の .manifest ファイルを作成し、それを実行可能ファイルと一緒にデバッグ ディレクトリとリリースディレクトリに保存します。 カスタム マニフェストを追加するには、任意のテキスト エディターでカスタム マニフェストを作成し、そのファイルをプロジェクトに追加します。 または、**ソリューション エクスプ ローラー**で **[プロジェクト]** アイコンを右クリックし、**[新しい項目の追加]** をクリックして、**[アプリケーション マニフェスト ファイル]** をクリックします。 新規または既存のマニフェスト ファイルを追加すると、そのマニフェストは **[マニフェスト]** ドロップダウン リストに表示されます。 詳しくは、「[[アプリケーション] ページ (プロジェクト デザイナー) (C#)](https://docs.microsoft.com/visualstudio/ide/reference/application-page-project-designer-csharp)」をご覧ください。  
   
- アプリケーション マニフェストは、カスタムのビルド後のステップで指定するか、[\/nowin32manifest \(No Win32 Manifest\)](../../../csharp/language-reference/compiler-options/nowin32manifest-compiler-option.md) オプションを使用して Win32 リソース ファイルの一部として指定できます。  Windows Vista でアプリケーションのファイルとレジストリを仮想化する場合にも同じオプションを使用します。  これにより、コンパイラで既定のマニフェストが作成され、移植可能な実行可能 \(PE\) ファイルに埋め込まれるのを防ぐことができます。  
+ アプリケーション マニフェストは、カスタムのビルド後手順として提供するか、または [/nowin32manifest (C# コンパイラ オプション)](../../../csharp/language-reference/compiler-options/nowin32manifest-compiler-option.md) オプションを使用して、Win32 リソース ファイルの一部として提供できます。 アプリケーションを Windows Vista でファイルまたはレジストリの仮想化の対象にする場合は、これと同じオプションを使用します。 これにより、コンパイラがポータブル実行可能 (PE) ファイル内に既定のマニフェストを作成し、埋め込むことを回避できます。  
   
-## 使用例  
- Visual C\# コンパイラによって PE に挿入される既定のマニフェストの例を次に示します。  
+## <a name="example"></a>例  
+ 次の例は、Visual C# コンパイラが PE に挿入する既定のマニフェストを示したものです。  
   
 > [!NOTE]
->  コンパイラは、"MyApplication.app" という名前の通常のアプリケーションを xml に挿入します。  これは、アプリケーションを Windows Server 2003 Service Pack 3 上で実行するための代替手段になります。  
+>  コンパイラは、標準のアプリケーション名 "MyApplication.app" を xml に挿入します。 これは、アプリケーションを Windows Server 2003 Service Pack 3 で実行できるようにするための回避策です。  
   
 ```  
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>  
@@ -70,7 +88,7 @@ caps.handback.revision: 13
 </assembly>  
 ```  
   
-## 参照  
- [C\# Compiler Options](../../../csharp/language-reference/compiler-options/index.md)   
- [\/nowin32manifest \(No Win32 Manifest\)](../../../csharp/language-reference/compiler-options/nowin32manifest-compiler-option.md)   
- [方法 : プロジェクト プロパティおよび構成設定を変更する](http://msdn.microsoft.com/ja-jp/e7184bc5-2f2b-4b4f-aa9a-3ecfcbc48b67)
+## <a name="see-also"></a>関連項目  
+ [C# コンパイラのオプション](../../../csharp/language-reference/compiler-options/index.md)   
+ [/nowin32manifest (C# コンパイラ オプション)](../../../csharp/language-reference/compiler-options/nowin32manifest-compiler-option.md)   
+ [NIB 方法: プロジェクト プロパティと構成設定を変更する](http://msdn.microsoft.com/en-us/e7184bc5-2f2b-4b4f-aa9a-3ecfcbc48b67)

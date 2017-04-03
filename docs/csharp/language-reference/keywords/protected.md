@@ -1,53 +1,71 @@
 ---
 title: "protected (C# リファレンス) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.technology: 
-  - "devlang-csharp"
-ms.topic: "article"
-f1_keywords: 
-  - "protected"
-  - "protected_CSharpKeyword"
-dev_langs: 
-  - "CSharp"
-helpviewer_keywords: 
-  - "protected キーワード [C#]"
+ms.date: 2015-07-20
+ms.prod: .net
+ms.technology:
+- devlang-csharp
+ms.topic: article
+f1_keywords:
+- protected
+- protected_CSharpKeyword
+dev_langs:
+- CSharp
+helpviewer_keywords:
+- protected keyword [C#]
 ms.assetid: 05ce3794-6675-4025-bddb-eaaa0ec22892
 caps.latest.revision: 20
-author: "BillWagner"
-ms.author: "wiwagn"
-caps.handback.revision: 20
+author: BillWagner
+ms.author: wiwagn
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Human Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: 81791f38f277a4b61cc8eb96f1ee3b509a808f6a
+ms.lasthandoff: 03/13/2017
+
 ---
-# protected (C# リファレンス)
-`protected` キーワードは、メンバー アクセス修飾子です。  protected メンバーには、そのクラス内で派生クラス インスタンスからアクセスできます。  `protected` と他のアクセス修飾子の比較については、「[アクセシビリティ レベル](../../../csharp/language-reference/keywords/accessibility-levels.md)」を参照してください。  
+# <a name="protected-c-reference"></a>protected (C# リファレンス)
+`protected` キーワードはメンバー アクセス修飾子です。 protected メンバーは、そのクラス内部と、派生クラスのインスタンスからアクセスできます。 `protected` と他のアクセス修飾子の比較については、「[アクセシビリティ レベル](../../../csharp/language-reference/keywords/accessibility-levels.md)」を参照してください。  
   
-## 使用例  
- 基本クラスのプロテクト メンバーに派生クラスでアクセス可能なのは、派生したクラス型を使ってアクセスが行われる場合だけです。  たとえば、次に示すコード セグメントを検討してみます。  
+## <a name="example"></a>例  
+ 派生クラス内で基底クラスの protected メンバーにアクセスできるのは、派生クラスの型を通してアクセスした場合のみです。 たとえば、次のコード セグメントを考えてみます。  
   
  [!code-cs[csrefKeywordsModifiers#11](../../../csharp/language-reference/keywords/codesnippet/CSharp/protected_1.cs)]  
   
- ステートメント `a.x = 10` は、静的メソッド Main 内で作成され、クラス B のインスタンスではないため、エラーが生成されます。  
+ ステートメント `a.x = 10` でエラーが発生します。これは、クラス B のインスタンスではなく、静的メソッド Main 内にあるためです。  
   
- 構造体のメンバーは保護されませんが、これは構造体の継承ができないためです。  
+ 構造体は継承できないため、構造体のメンバーを protected にすることはできません。  
   
-## 使用例  
- この例では、`DerivedPoint` クラスは `Point` の派生クラスです。  このため、基本クラスのプロテクト メンバーに、派生クラスから直接アクセスできます。  
+## <a name="example"></a>例  
+ この例では、`DerivedPoint` クラスは `Point` から派生しています。 そのため、基底クラスの protected メンバーに、派生クラスから直接アクセスできます。  
   
  [!code-cs[csrefKeywordsModifiers#12](../../../csharp/language-reference/keywords/codesnippet/CSharp/protected_2.cs)]  
   
- `x` および `y` のアクセス レベルを [private](../../../csharp/language-reference/keywords/private.md) に変更すると、コンパイラがエラー メッセージを発行します。  
+ `x` と `y` のアクセス レベルを [private](../../../csharp/language-reference/keywords/private.md) に変更すると、コンパイラによってエラー メッセージが生成されます。  
   
  `'Point.y' is inaccessible due to its protection level.`  
   
  `'Point.x' is inaccessible due to its protection level.`  
   
-## C\# 言語仕様  
- [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec-md.md)]  
+## <a name="c-language-specification"></a>C# 言語仕様  
+ [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec_md.md)]  
   
-## 参照  
- [C\# リファレンス](../../../csharp/language-reference/index.md)   
- [C\# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
- [C\# のキーワード](../../../csharp/language-reference/keywords/index.md)   
+## <a name="see-also"></a>関連項目  
+ [C# リファレンス](../../../csharp/language-reference/index.md)   
+ [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
+ [C# のキーワード](../../../csharp/language-reference/keywords/index.md)   
  [アクセス修飾子](../../../csharp/language-reference/keywords/access-modifiers.md)   
  [アクセシビリティ レベル](../../../csharp/language-reference/keywords/accessibility-levels.md)   
  [修飾子](../../../csharp/language-reference/keywords/modifiers.md)   

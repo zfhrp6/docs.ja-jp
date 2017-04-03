@@ -1,54 +1,72 @@
 ---
 title: "delegate (C# リファレンス) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.technology: 
-  - "devlang-csharp"
-ms.topic: "article"
-f1_keywords: 
-  - "delegate_CSharpKeyword"
-  - "delegate"
-  - "CS0123"
-dev_langs: 
-  - "CSharp"
-helpviewer_keywords: 
-  - "delegate キーワード [C#]"
-  - "関数ポインター [C#]"
+ms.date: 2015-07-20
+ms.prod: .net
+ms.technology:
+- devlang-csharp
+ms.topic: article
+f1_keywords:
+- delegate_CSharpKeyword
+- delegate
+- CS0123
+dev_langs:
+- CSharp
+helpviewer_keywords:
+- delegate keyword [C#]
+- function pointers [C#]
 ms.assetid: 0bb8cb6d-2f87-47c7-9d1f-d65c1cd01e9f
 caps.latest.revision: 24
-author: "BillWagner"
-ms.author: "wiwagn"
-caps.handback.revision: 24
+author: BillWagner
+ms.author: wiwagn
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Human Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: cf100a5ad3adf001d5435ef6f67e2aa670456649
+ms.lasthandoff: 03/13/2017
+
 ---
-# delegate (C# リファレンス)
-デリゲート型の宣言は、メソッド シグネチャに似ています。  戻り値と任意の数のパラメーター \(任意の型\) を持ちます。  
+# <a name="delegate-c-reference"></a>delegate (C# リファレンス)
+デリゲート型の宣言は、メソッド シグネチャに似ています。 戻り値 1 つのほか、任意の型のパラメーターをいくつでも指定することができます。  
   
 ```  
 public delegate void TestDelegate(string message);  
 public delegate int TestDelegate(MyType m, long num);  
 ```  
   
- `delegate` は、指定されたメソッドまたは匿名メソッドをカプセル化するために使用される参照型です。  デリゲートは C\+\+ の関数ポインターに類似していますが、タイプ セーフであり、安全です。  デリゲートの適用については、「[デリゲート \(C\# プログラミング ガイド\)](../../../csharp/programming-guide/delegates/index.md)」および「[汎用デリゲート \(C\# プログラミング ガイド\)](../../../csharp/programming-guide/generics/generic-delegates.md)」を参照してください。  
+ `delegate` は、名前付きメソッドまたは匿名メソッドをカプセル化することができる参照型です。 デリゲートは C++ の関数ポインターに似ていますが、タイプ セーフであり安全です。 デリゲートの使い方については、[デリゲート](../../../csharp/programming-guide/delegates/index.md)と[汎用デリゲート](../../../csharp/programming-guide/generics/generic-delegates.md)に関するページを参照してください。  
   
-## 解説  
- デリゲートは、[イベント](../../../csharp/programming-guide/events/index.md)の基礎になります。  
+## <a name="remarks"></a>コメント  
+ デリゲートは[イベント](../../../csharp/programming-guide/events/index.md)の土台となる働きをします。  
   
- デリゲートをインスタンス化するには、デリゲートに指定されたメソッドまたは匿名メソッドを関連付けます。  詳細については、「[名前付きメソッド \(C\# プログラミング ガイド\)](../../../csharp/programming-guide/delegates/delegates-with-named-vs-anonymous-methods.md)」および「[匿名メソッド \(C\# プログラミング ガイド\)](../../../csharp/programming-guide/statements-expressions-operators/anonymous-methods.md)」を参照してください。  
+ デリゲートは名前付きメソッドまたは匿名メソッドに関連付けることによって、インスタンス化することができます。 詳細については、[名前付きメソッド](../../../csharp/programming-guide/delegates/delegates-with-named-vs-anonymous-methods.md)と[匿名メソッド](../../../csharp/programming-guide/statements-expressions-operators/anonymous-methods.md)に関するページを参照してください。  
   
- デリゲートは、互換性のある戻り値の型と入力パラメーターを持つメソッドまたはラムダ式でインスタンス化する必要があります。  メソッド シグネチャで許容される範囲の詳細については、「[デリゲートの分散](../Topic/Variance%20in%20Delegates%20\(C%23%20and%20Visual%20Basic\).md)」を参照してください。  匿名メソッドで使用する場合、デリゲートおよびデリゲートと関連付けるコードを共に宣言します。  デリゲートをインスタンス化するこの 2 つの方法について説明します。  
+ デリゲートは、適合する入力パラメーターと戻り値の型を持ったメソッドまたはラムダ式でインスタンス化する必要があります。 メソッドのシグネチャでどの程度の変性が許容されるかについて詳しくは、[デリゲートの変性](http://msdn.microsoft.com/library/e3b98197-6c5b-4e55-9c6e-9739b60645ca)に関するページを参照してください。 匿名メソッドで使用する場合は、デリゲートとそれに関連付けるコードとを一緒に宣言します。 このセクションでは、その両方の方法でデリゲートをインスタンス化しています。  
   
-## 使用例  
+## <a name="example"></a>例  
  [!code-cs[csrefKeywordsTypes#8](../../../csharp/language-reference/keywords/codesnippet/CSharp/delegate_1.cs)]  
   
-## C\# 言語仕様  
- [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec-md.md)]  
+## <a name="c-language-specification"></a>C# 言語仕様  
+ [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec_md.md)]  
   
-## 参照  
- [C\# リファレンス](../../../csharp/language-reference/index.md)   
- [C\# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
- [C\# のキーワード](../../../csharp/language-reference/keywords/index.md)   
+## <a name="see-also"></a>関連項目  
+ [C# リファレンス](../../../csharp/language-reference/index.md)   
+ [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
+ [C# のキーワード](../../../csharp/language-reference/keywords/index.md)   
  [参照型](../../../csharp/language-reference/keywords/reference-types.md)   
  [デリゲート](../../../csharp/programming-guide/delegates/index.md)   
  [イベント](../../../csharp/programming-guide/events/index.md)   
- [名前付きメソッドを使用したデリゲートと匿名メソッドを使用したデリゲート](../../../csharp/programming-guide/delegates/delegates-with-named-vs-anonymous-methods.md)   
+ [名前付きメソッドを使用したデリゲートと匿名メソッド](../../../csharp/programming-guide/delegates/delegates-with-named-vs-anonymous-methods.md)   
  [匿名メソッド](../../../csharp/programming-guide/statements-expressions-operators/anonymous-methods.md)

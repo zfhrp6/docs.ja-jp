@@ -1,52 +1,70 @@
 ---
 title: "using ステートメント (C# リファレンス) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.technology: 
-  - "devlang-csharp"
-ms.topic: "article"
-dev_langs: 
-  - "CSharp"
-helpviewer_keywords: 
-  - "using ステートメント [C#]"
+ms.date: 2015-07-20
+ms.prod: .net
+ms.technology:
+- devlang-csharp
+ms.topic: article
+dev_langs:
+- CSharp
+helpviewer_keywords:
+- using statement [C#]
 ms.assetid: afc355e6-f0b9-4240-94dd-0d93f17d9fc3
 caps.latest.revision: 31
-author: "BillWagner"
-ms.author: "wiwagn"
-caps.handback.revision: 31
+author: BillWagner
+ms.author: wiwagn
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Human Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: 587e50d5c81c19d75e9d8bf4779064947a373b71
+ms.lasthandoff: 03/13/2017
+
 ---
-# using ステートメント (C# リファレンス)
+# <a name="using-statement-c-reference"></a>using ステートメント (C# リファレンス)
 <xref:System.IDisposable> オブジェクトの正しい使用を保証する簡易構文を提供します。  
   
-## 使用例  
- using ステートメントの使用方法を次の例に示します。  
+## <a name="example"></a>例  
+ using ステートメントを使用する方法を次の例に示します。  
   
  [!code-cs[csrefKeywordsNamespace#4](../../../csharp/language-reference/keywords/codesnippet/CSharp/using-statement_1.cs)]  
   
-## 解説  
- <xref:System.IO.File> および <xref:System.Drawing.Font> は、アンマネージ リソース \(この場合はファイル ハンドルとデバイス コンテキスト\) にアクセスするマネージ型の例です。  アンマネージ リソースや、それをカプセル化するクラス ライブラリ型は他にもたくさんあります。  そのような型はすべて、<xref:System.IDisposable> インターフェイスを実装する必要があります。  
+## <a name="remarks"></a>コメント  
+ <xref:System.IO.File> と <xref:System.Drawing.Font> は、アンマネージ リソース (この場合はファイル ハンドルとデバイス コンテキスト) にアクセスするマネージ型の例です。 アンマネージ リソースや、それをカプセル化するクラス ライブラリ型は他にもたくさんあります。 そのような型はすべて、<xref:System.IDisposable> インターフェイスを実装する必要があります。  
   
- 一般に、`IDisposable` オブジェクトを使用するときは、それを `using` ステートメントで宣言して、インスタンス化する必要があります。  `using` ステートメントは、オブジェクトで正しく <xref:System.IDisposable.Dispose%2A> メソッドを呼び出します。\(前述のようにこのステートメントを使用する場合\) <xref:System.IDisposable.Dispose%2A> が呼び出されるとすぐに、オブジェクト自体がスコープの外側に出されます。  オブジェクトは、`using` ブロック内では読み取り専用です。変更したり再割り当てしたりすることはできません。  
+ 一般に、`IDisposable` オブジェクトを使用するときは、それを `using` ステートメントで宣言して、インスタンス化する必要があります。 `using` ステートメントは、オブジェクトで正しく <xref:System.IDisposable.Dispose%2A> メソッドを呼び出します。(前述のようにこのステートメントを使用する場合) <xref:System.IDisposable.Dispose%2A> が呼び出されるとすぐに、オブジェクト自体がスコープの外側に出されます。 オブジェクトは、`using` ブロック内では読み取り専用です。変更したり再割り当てしたりすることはできません。  
   
- `using` ステートメントを使うと、オブジェクトでのメソッドの呼び出し中に例外が発生した場合でも <xref:System.IDisposable.Dispose%2A> が必ず呼び出されます。  オブジェクトを try ブロックに配置し、finally ブロックで <xref:System.IDisposable.Dispose%2A> を呼び出しても、同じ結果が得られます。実際には、コンパイラは `using` ステートメントをこのように変換します。  前のコード例は、コンパイル時に次のコードに展開されます \(オブジェクトのスコープの範囲を定義する中かっこが加えられています\)。  
+ `using` ステートメントを使用すると、オブジェクトでのメソッドの呼び出し中に例外が発生した場合でも <xref:System.IDisposable.Dispose%2A> が必ず呼び出されます。 オブジェクトを try ブロックに配置し、finally ブロックで <xref:System.IDisposable.Dispose%2A> を呼び出しても、同じ結果が得られます。実際には、コンパイラは `using` ステートメントをこのように変換します。 前のコード例は、コンパイル時に次のコードに展開されます (オブジェクトのスコープ制限を定義する中かっこが加えられていることに注意してください)。  
   
  [!code-cs[csrefKeywordsNamespace#5](../../../csharp/language-reference/keywords/codesnippet/CSharp/using-statement_2.cs)]  
   
- `using` ステートメントでは、次の例に示すように、型のインスタンスを複数宣言できます。  
+ 次の例のように、`using` ステートメントでは型の複数のインスタンスを宣言できます。  
   
  [!code-cs[csrefKeywordsNamespace#6](../../../csharp/language-reference/keywords/codesnippet/CSharp/using-statement_3.cs)]  
   
- リソース オブジェクトをインスタンス化して、変数を `using` ステートメントに渡すことは可能ですが、これはベスト プラクティスではありません。  この場合、アンマネージ リソースへのアクセスはおそらくできなくなっているのにもかかわらず、制御が `using` ブロックを離れた後もオブジェクトはスコープ内に残ります。  つまり、完全に初期化されることはありません。  `using` ブロックの外側でオブジェクトを使おうとすると、例外がスローされる可能性があります。  このため、通常は、オブジェクトを `using` でインスタンス化して、そのスコープを `using` ブロックに制限することをお勧めします。  
+ リソース オブジェクトをインスタンス化してから、変数を `using` ステートメントに渡すことはできますが、これはベスト プラクティスではありません。 この場合、アンマネージ リソースへのアクセスがなくなっている可能性が高いのにもかかわらず、制御が `using` ブロックを離れた後もオブジェクトはスコープ内に残ります。 つまり、完全に初期化されることはありません。 `using` ブロックの外側でオブジェクトを使用しようとすると、例外がスローされる可能性があります。 このため、通常は、オブジェクトを `using` ステートメントでインスタンス化して、そのスコープを `using` ブロックに制限することをお勧めします。  
   
  [!code-cs[csrefKeywordsNamespace#7](../../../csharp/language-reference/keywords/codesnippet/CSharp/using-statement_4.cs)]  
   
-## C\# 言語仕様  
- [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec-md.md)]  
+## <a name="c-language-specification"></a>C# 言語仕様  
+ [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec_md.md)]  
   
-## 参照  
- [C\# リファレンス](../../../csharp/language-reference/index.md)   
- [C\# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
- [C\# のキーワード](../../../csharp/language-reference/keywords/index.md)   
+## <a name="see-also"></a>関連項目  
+ [C# リファレンス](../../../csharp/language-reference/index.md)   
+ [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
+ [C# のキーワード](../../../csharp/language-reference/keywords/index.md)   
  [using ディレクティブ](../../../csharp/language-reference/keywords/using-directive.md)   
- [Garbage Collection](../Topic/Garbage%20Collection.md)   
- [Implementing a Dispose Method](../Topic/Implementing%20a%20Dispose%20Method.md)
+ [ガベージ コレクション](../../../standard/garbagecollection/index.md)   
+ [Dispose メソッドの実装](http://msdn.microsoft.com/library/eb4e1af0-3b48-4fbc-ad4e-fc2f64138bf9)

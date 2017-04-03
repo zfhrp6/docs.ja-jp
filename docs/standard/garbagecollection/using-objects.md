@@ -31,7 +31,7 @@ C# の `using` ステートメントおよび Visual Basic の `Using` ステー
 
 次の例では、`using` ステートメントを使用して [System.IO.StreamReader](xref:System.IO.StreamReader) オブジェクトを作成し解放します。
 
-```cs
+```csharp
 using System;
 using System.IO;
 
@@ -77,7 +77,7 @@ End Module
 
 [StreamReader](xref:System.IO.StreamReader) クラスは [IDisposable](xref:System.IDisposable) インターフェイスを実装し、これはアンマネージ リソースを使用することを示していますが、例では [StreamReader.Dispose](xref:System.IO.StreamReader.Dispose(System.Boolean)) メソッドを明示的に呼び出していないことに注意してください。 C# または Visual Basic コンパイラが `using` ステートメントを見つけると、明示的に `try/finally` ブロックを含む次のコードと同等の中間言語 (IL) を生成します。 
 
-```cs
+```csharp
 using System;
 using System.IO;
 
@@ -134,7 +134,7 @@ End Module
 
 また、C# の `using` ステートメントでは、単一のステートメントで複数のリソースを取得できます。そのようなステートメントは、内部的には複数の using ステートメントを入れ子にした場合と同等です。 次の例では、2 つの異なるファイルの内容を読み取るために、[StreamReader](xref:System.IO.StreamReader) の&2; つのオブジェクトをインスタンス化します。 
 
-```cs
+```csharp
 using System;
 using System.IO;
 
@@ -171,7 +171,7 @@ public class Example
 
 次の例は前の例に似ていますが、`try/catch/finally` ブロックを使用して、[StreamReader](xref:System.IO.StreamReader) オブジェクトのインスタンス化、使用、破棄を実行し、[StreamReader](xref:System.IO.StreamReader) コンストラクターと [ReadToEnd](xref:System.IO.StreamReader.ReadToEnd) メソッドによってスローされた例外を処理しています。 [Dispose](xref:System.IDisposable.Dispose) メソッドを呼び出す前に [IDisposable](xref:System.IDisposable) を実装するオブジェクトが `null` でないことを `finally` ブロックのコードがチェックしていることに注意してください。 これを行わない場合、実行時に [NullReferenceException](xref:System.NullReferenceException) 例外が発生する可能性があります。 
 
-```cs
+```csharp
 using System;
 using System.Globalization;
 using System.IO;

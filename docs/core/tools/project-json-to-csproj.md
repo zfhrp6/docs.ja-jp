@@ -4,16 +4,16 @@ description: "「project.json 要素と csproj 要素の間のマッピング」
 keywords: project.json, csproj, .NET Core, MSBuild
 author: natemcmaster
 ms.author: mairaw
-ms.date: 03/02/2017
+ms.date: 03/13/2017
 ms.topic: article
 ms.prod: .net-core
 ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: 79c50621-a24a-4e64-bbb9-b953113e841c
 translationtype: Human Translation
-ms.sourcegitcommit: 195664ae6409be02ca132900d9c513a7b412acd4
-ms.openlocfilehash: beaae03add6f90692189325c0e1cff5ab761abb5
-ms.lasthandoff: 03/07/2017
+ms.sourcegitcommit: b4fb772973607b94e120377879a5dbdde2a25271
+ms.openlocfilehash: 9d0af9769264b7f22c90ffb6a831b42f06c6bb94
+ms.lasthandoff: 03/15/2017
 
 ---
 
@@ -400,7 +400,7 @@ MSBuild では、ビルド中、すべてのプロジェクトが*移植可能*�
 }
 ```
 
-`keyFile` 要素は、MSBuild で&3; つのプロパティになりました。
+`keyFile` 要素は、MSBuild で 3 つのプロパティになりました。
 
 ```xml
 <PropertyGroup>
@@ -612,7 +612,7 @@ MSBuild では、これは[項目](https://docs.microsoft.com/visualstudio/msbui
 ```
 
 > [!NOTE]
-> 既定のグロビング パターンの多くは .NET Core SDK により自動的に追加されます。
+> 既定の [Glob パターン](https://en.wikipedia.org/wiki/Glob_(programming))の多くは .NET Core SDK により自動的に追加されます。
 > 詳細については、「[Default Compile Item Values](https://aka.ms/sdkimplicititems)」 (既定のコンパイル項目値) を参照してください。
 
 すべての MSBuild `ItemGroup` 要素で `Include`、`Exclude`、`Remove` がサポートされています。

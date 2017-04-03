@@ -4,15 +4,15 @@ description: "Windows コンピューターで .NET Core アプリケーショ�
 keywords: ".NET Core, Windows, 前提条件, 依存関係, Visual Studio"
 author: mairaw
 ms.author: mairaw
-ms.date: 01/05/2017
+ms.date: 03/07/2017
 ms.topic: article
 ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: c33b1241-ab66-4583-9eba-52cf51146f5a
 translationtype: Human Translation
-ms.sourcegitcommit: e374b924bf78d62227cb9607641130dfd9128186
-ms.openlocfilehash: 6383a0ce253f6f7000ed8a81b29b9e1d58914acc
-ms.lasthandoff: 03/06/2017
+ms.sourcegitcommit: ff143583ba62fc1d82561e739a75107e50ebee88
+ms.openlocfilehash: 13947fd81940c1ccb606cb4cd765dc230fe95c0f
+ms.lasthandoff: 03/20/2017
 
 ---
 
@@ -32,7 +32,7 @@ ms.lasthandoff: 03/06/2017
 * Windows Server 2012 R2 SP1 (フル サーバーまたは Server Core)
 * Windows Server 2016 (フル サーバー、Server Core または Nano Server)
 
-[サポートされるすべてのオペレーティング システム](https://github.com/dotnet/core/blob/master/release-notes/1.0/1.0.0.md#rtm-platform-support)については、[.NET Core 1.0.0 のリリース ノート](https://github.com/dotnet/core/blob/master/release-notes/1.0/1.0.0.md)でご確認ください。
+サポートされるすべてのオペレーティング システムは、[.NET Core のリリース ノート](https://github.com/dotnet/core/blob/master/release-notes/1.1/1.1.md)で確認してください。
 
 ## <a name="net-core-dependencies"></a>.NET Core の依存関係
 
@@ -46,9 +46,17 @@ ms.lasthandoff: 03/06/2017
 
 .NET Core SDK を使用して .NET Core アプリケーションを開発する場合は、好きなエディターを使用できます。 一方、統合開発環境の Windows 上で .NET Core アプリケーションを開発する場合、[Visual Studio 2017](#visual-studio-2017) を使用できます。
 
-Visual Studio 2017 を使用して .NET Core アプリを開発する場合は、最新版の Visual Studio をインストールする必要があります。その際、(**[他のツールセット]** セクションで) **プラットフォームに依存しない .NET Core **開発ツールセットを選択します。
+> [!IMPORTANT]
+> プレビュー バージョンの .NET Core ツールで Visual Studio 2015 を使用できる場合でも、これらのプロジェクトは *project.json* ベースであるため、推奨されなくなりました。 Visual Studio 2017 では、MSBuild に基づくプロジェクト ファイルが使用されます。 この形式変更の詳細については、[変更点の大まかな概要](./tools/cli-msbuild-architecture.md)に関するページをご覧ください。
 
-Visual Studio 2017 には複数のエディションがあります。 [Visual Studio Community 2017](https://www.visualstudio.com/vs/visual-studio-2017/#downloadvs) を無料でダウンロードして始められます。  Visual Studio のインストール プロセスの詳細については、「[Install Visual Studio 2017](https://docs.microsoft.com/en-us/visualstudio/install/install-visual-studio)」(Visual Studio のインストール) を参照してください。
+Visual Studio 2017 を使用して .NET Core アプリを開発する場合は、最新版の Visual Studio をインストールする必要があります。その際、(**[他のツールセット]** セクションで) **プラットフォームに依存しない .NET Core**開発ツールセットを選択します。
+![".NET Core クロスプラットフォームの開発" ワークロードが選択された状態の Visual Studio 2017 インストールのスクリーン ショット](./media/windows-prerequisites/vs_workloads.jpg)
+
+Visual Studio 2017 には複数のエディションがあります。 [Visual Studio Community 2017](https://www.visualstudio.com/downloads/) を無料でダウンロードして始められます。  Visual Studio のインストール プロセスの詳細については、「[Install Visual Studio 2017](https://docs.microsoft.com/en-us/visualstudio/install/install-visual-studio)」(Visual Studio のインストール) を参照してください。
+
++Visual Studio 2017 の最新バージョンを実行していることを確認するには、次の操作を行います。
+ +
+ +***[ヘルプ]**メニューの**[Microsoft Visual Studio のバージョン情報]**を選択します。+* **[Microsoft Visual Studio のバージョン情報]** ダイアログのバージョン番号は 15.0.26228.4 以上である必要があります。
 
 Visual Studio 2017 での変更の詳細については、[リリース ノート](https://www.visualstudio.com/en-us/news/releasenotes/vs2017-relnotes)を参照してください。
 

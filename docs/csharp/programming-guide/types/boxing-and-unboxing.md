@@ -1,45 +1,64 @@
 ---
 title: "ボックス化とボックス化解除 (C# プログラミング ガイド) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.technology: 
-  - "devlang-csharp"
-ms.topic: "article"
-f1_keywords: 
-  - "cs.boxing"
-dev_langs: 
-  - "CSharp"
-helpviewer_keywords: 
-  - "C# 言語、ボックス化"
-  - "C# 言語、ボックス化解除"
-  - "ボックス化解除 [C#]"
-  - "ボックス化 [C#]"
+ms.date: 2015-07-20
+ms.prod: .net
+ms.technology:
+- devlang-csharp
+ms.topic: article
+f1_keywords:
+- cs.boxing
+dev_langs:
+- CSharp
+helpviewer_keywords:
+- C# language, boxing
+- C# language, unboxing
+- unboxing [C#]
+- boxing [C#]
 ms.assetid: 8da9bbf4-bce9-4b08-b2e5-f64c11c56514
 caps.latest.revision: 34
-author: "BillWagner"
-ms.author: "wiwagn"
-caps.handback.revision: 34
+author: BillWagner
+ms.author: wiwagn
+translation.priority.ht:
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- ru-ru
+- zh-cn
+- zh-tw
+translation.priority.mt:
+- cs-cz
+- pl-pl
+- pt-br
+- tr-tr
+translationtype: Human Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: e6e0a70abd0f3311324f30eb5155000c09fc29cd
+ms.lasthandoff: 03/13/2017
+
 ---
-# ボックス化とボックス化解除 (C# プログラミング ガイド)
-ボックス化とは、[値型](../../../csharp/language-reference/keywords/value-types.md)から `object` 型、またはその値型によって実装されている任意のインターフェイス型へ変換するプロセスのことです。  CLR により値型がボックス化されるとき、値は System.Object 内部にラップされ、マネージ ヒープに格納されます。  ボックス化解除すると、値型がオブジェクトから抽出されます。  ボックス化は暗黙的であり、ボックス化解除すると明示的になります。  ボックス化とボックス化解除の概念は、任意の型の値をオブジェクトとして扱うという C\# の型システムの統一されたビューに基づいています。  
+# <a name="boxing-and-unboxing-c-programming-guide"></a>ボックス化とボックス化解除 (C# プログラミング ガイド)
+ボックス化とは、[値型](../../../csharp/language-reference/keywords/value-types.md)から `object` 型、またはその値型によって実装されている任意のインターフェイス型へ変換するプロセスのことです。 CLR により値型がボックス化されるとき、値は System.Object 内部にラップされ、マネージ ヒープに格納されます。 ボックス化解除すると、値型がオブジェクトから抽出されます。 ボックス化は暗黙的であり、ボックス化解除すると明示的になります。 ボックス化とボックス化解除の概念は、任意の型の値をオブジェクトとして扱うという C# の型システムの統一されたビューに基づいています。  
   
- 次の例では、整数の変数 `i` を*ボックス化*し、オブジェクト `o` に代入しています。  
+ 次の例では、整数の変数 `i` を "*ボックス化*" し、オブジェクト `o` に代入しています。  
   
  [!code-cs[csProgGuideTypes#14](../../../csharp/programming-guide/nullable-types/codesnippet/CSharp/boxing-and-unboxing_1.cs)]  
   
- 次に、オブジェクト `o`  は、次のようにボックス化解除し、整数の変数 `i` に代入できます。  
+ 次に、オブジェクト `o` は、次のようにボックス化解除し、整数の変数 `i` に代入できます。  
   
  [!code-cs[csProgGuideTypes#15](../../../csharp/programming-guide/nullable-types/codesnippet/CSharp/boxing-and-unboxing_2.cs)]  
   
- 次のコードは、C\# でのボックス化の使用例です。  
+ 次のコードは、C# でのボックス化の使用例です。  
   
  [!code-cs[csProgGuideTypes#47](../../../csharp/programming-guide/nullable-types/codesnippet/CSharp/boxing-and-unboxing_3.cs)]  
   
-## パフォーマンス  
- 簡単な代入と比べて、ボックス化およびボックス化解除は負荷の大きいプロセスです。  値型をボックス化するときは、新しいオブジェクトを割り当てて構築する必要があります。  ボックス化ほどではありませんが、ボックス化解除に必要なキャストも大きな負荷がかかります。  詳細については、「[パフォーマンス \(C\# プログラミング ガイド\)](../Topic/.NET%20Performance%20Tips.md)」を参照してください。  
+## <a name="performance"></a>パフォーマンス  
+ 簡単な代入と比べて、ボックス化およびボックス化解除は負荷の大きいプロセスです。 値型をボックス化するときは、新しいオブジェクトを割り当てて構築する必要があります。 ボックス化ほどではありませんが、ボックス化解除に必要なキャストも大きな負荷がかかります。 詳しくは、「[パフォーマンス](https://msdn.microsoft.com/library/ms173196(VS.110).aspx)」をご覧ください。  
   
-## ボックス化とボックス化解除  
- ボックス化は、値型をガベージ コレクション ヒープに格納するために使用します。  ボックス化とは、[値型](../../../csharp/language-reference/keywords/value-types.md)から `object` 型、またはその値型によって実装されている任意のインターフェイス型への暗黙の変換のことです。  値型をボックス化すると、オブジェクト インスタンスがヒープに割り当てられ、値が新しいオブジェクトにコピーされます。  
+## <a name="boxing"></a>ボックス化  
+ ボックス化は、値型をガベージ コレクション ヒープに格納するために使用します。 ボックス化とは、[値型](../../../csharp/language-reference/keywords/value-types.md)から `object` 型、またはその値型によって実装されている任意のインターフェイス型への暗黙の変換のことです。 値型をボックス化すると、オブジェクト インスタンスがヒープに割り当てられ、値が新しいオブジェクトにコピーされます。  
   
  値型の変数の宣言例を次に示します。  
   
@@ -49,7 +68,7 @@ caps.handback.revision: 34
   
  [!code-cs[csProgGuideTypes#18](../../../csharp/programming-guide/nullable-types/codesnippet/CSharp/boxing-and-unboxing_5.cs)]  
   
- このステートメントによって、ヒープ上にある `int` 型の値を参照するオブジェクト参照 `o` がスタック上に作成されます。  この値は、変数 `i` に割り当てられた値型の値のコピーです。  2 つの変数 `i` と `o` の違いを次の図に示します。  
+ このステートメントによって、ヒープ上にある `o` 型の値を参照するオブジェクト参照 `int` がスタック上に作成されます。 この値は、変数 `i` に割り当てられた値型の値のコピーです。 2 つの変数 `i` と `o` の違いを次の図に示します。  
   
  ![BoxingConversion グラフィック](../../../csharp/programming-guide/types/media/vcboxingconversion.gif "vcBoxingConversion")  
 ボックス化  
@@ -58,14 +77,14 @@ caps.handback.revision: 34
   
  [!code-cs[csProgGuideTypes#19](../../../csharp/programming-guide/nullable-types/codesnippet/CSharp/boxing-and-unboxing_6.cs)]  
   
-## 説明  
- ここでは、ボックス化を使用して整数の変数 `i` をオブジェクト `o` に変換する例を示します。  変換後に、変数 `i` の値を `123` から `456` に変更します。  この例は、元の値型とボックス化されたオブジェクトが別個のメモリ位置を使用するため、それぞれ別々の値を格納できることを示しています。  
+## <a name="description"></a>説明  
+ ここでは、ボックス化を使用して整数の変数 `i` をオブジェクト `o` に変換する例を示します。 変換後に、変数 `i` の値を `123` から `456` に変更します。 この例は、元の値型とボックス化されたオブジェクトが別個のメモリ位置を使用するため、それぞれ別々の値を格納できることを示しています。  
   
-## 使用例  
+## <a name="example"></a>例  
  [!code-cs[csProgGuideTypes#16](../../../csharp/programming-guide/nullable-types/codesnippet/CSharp/boxing-and-unboxing_7.cs)]  
   
-## ボックス化解除  
- ボックス化解除とは、`object` 型から[値型](../../../csharp/language-reference/keywords/value-types.md)へ、またはインターフェイス型からそのインターフェイスを実装している値型への明示的な変換のことです。  ボックス化解除では、次の処理が行われます。  
+## <a name="unboxing"></a>ボックス化解除  
+ ボックス化解除とは、`object` 型から[値型](../../../csharp/language-reference/keywords/value-types.md)へ、またはインターフェイス型からそのインターフェイスを実装している値型への明示的な変換のことです。 ボックス化解除では、次の処理が行われます。  
   
 -   オブジェクト インスタンスが、指定された値型のボックス化された値であることを確認します。  
   
@@ -80,16 +99,16 @@ caps.handback.revision: 34
  ![ボックス化解除変換グラフィック](../../../csharp/programming-guide/types/media/vcunboxingconversion.gif "vcUnBoxingConversion")  
 ボックス化解除  
   
- 実行時に値型のボックス化解除を成功させるには、ボックス化解除の対象項目が、同じ値型のインスタンスのボックス化によって既に作成済みのオブジェクトへの参照である必要があります。  `null` をボックス化解除しようとすると <xref:System.NullReferenceException> が発生します。  互換性のない値型への参照をボックス化解除しようとすると、<xref:System.InvalidCastException> が発生します。  
+ 実行時に値型のボックス化解除を成功させるには、ボックス化解除の対象項目が、同じ値型のインスタンスのボックス化によって既に作成済みのオブジェクトへの参照である必要があります。 `null` をボックス化解除しようとすると <xref:System.NullReferenceException> が発生します。 互換性のない値型への参照をボックス化解除しようとすると、<xref:System.InvalidCastException> が発生します。  
   
-## 使用例  
- 次の例は、無効なボックス化解除の結果、`InvalidCastException` が発生する場合を示しています。  `try` と `catch` を使用すると、エラーの発生時にエラー メッセージが表示されます。  
+## <a name="example"></a>例  
+ 次の例は、無効なボックス化解除の結果、`InvalidCastException` が発生する場合を示しています。 `try` と `catch` を使用すると、エラーの発生時にエラー メッセージが表示されます。  
   
  [!code-cs[csProgGuideTypes#20](../../../csharp/programming-guide/nullable-types/codesnippet/CSharp/boxing-and-unboxing_9.cs)]  
   
  このプログラムの出力を以下に示します。  
   
- `Specified cast is not valid.  Error: Incorrect unboxing.`  
+ `Specified cast is not valid. Error: Incorrect unboxing.`  
   
  エラーを修正するには、次のステートメントを変更します。  
   
@@ -107,18 +126,18 @@ int j = (int) o;
   
  `Unboxing OK.`  
   
-## C\# 言語仕様  
- [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec-md.md)]  
+## <a name="c-language-specification"></a>C# 言語仕様  
+ [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec_md.md)]  
   
-## 関連項目  
+## <a name="related-sections"></a>関連項目  
  詳細情報  
   
 -   [参照型](../../../csharp/language-reference/keywords/reference-types.md)  
   
 -   [値型](../../../csharp/language-reference/keywords/value-types.md)  
   
-## C\# 言語仕様  
- [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec-md.md)]  
+## <a name="c-language-specification"></a>C# 言語仕様  
+ [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec_md.md)]  
   
-## 参照  
- [C\# プログラミング ガイド](../../../csharp/programming-guide/index.md)
+## <a name="see-also"></a>関連項目  
+ [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)
