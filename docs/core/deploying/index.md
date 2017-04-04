@@ -4,21 +4,21 @@ description: ".NET Core アプリケーション展開"
 keywords: ".NET, .NET Core, .NET Core 展開"
 author: rpetrusha
 ms.author: ronpet
-ms.date: 03/06/2017
+ms.date: 03/14/2017
 ms.topic: article
 ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: da7a31a0-8072-4f23-82aa-8a19184cb701
 translationtype: Human Translation
-ms.sourcegitcommit: 195664ae6409be02ca132900d9c513a7b412acd4
-ms.openlocfilehash: 0e186665619bd76c5ba3d1e605b885a12aa15c66
-ms.lasthandoff: 03/07/2017
+ms.sourcegitcommit: 24bca179bc153a6bb469e38067e457fa61a9d2b3
+ms.openlocfilehash: ef742b932a3a76359e3f06129dce0bf127a1977e
+ms.lasthandoff: 03/14/2017
 
 ---
 
 # <a name="net-core-application-deployment"></a>.NET Core アプリケーション展開
 
-.NET Core アプリケーションに対して、次の&2; 種類の展開を作成できます。 
+.NET Core アプリケーションに対して、次の 2 種類の展開を作成できます。 
 
 - フレームワークに依存する展開。 名前が示すように、フレームワークに依存する展開 (FDD) は、ターゲット システムに存在する .NET Core のシステム全体の共有バージョンに依存します。 .NET Core は既に存在するので、アプリは .NET Core のインストール間で移植することもできます。 アプリには、それ自体のコード、および .NET Core ライブラリの外部にあるサードパーティの依存関係のみが含まれています。 FDD には、コマンドラインから [dotnet ユーティリティ](../tools/dotnet.md)を使用して起動できる .dll ファイルが含まれています。 たとえば、`dotnet app.dll` は `app` という名前のアプリケーションを実行します。
 
@@ -48,11 +48,11 @@ FDD の展開には、次のいくつかの利点があります。
 
 サードパーティの依存関係を含まない、フレームワークに依存する展開を展開するプロセスには、アプリのビルド、テスト、および発行が含まれます。 C# で記述された次の単純な例は、このプロセスを示しています。 この例では、コマンドラインの [dotnet ユーティリティ](../tools/dotnet.md)を使用しますが、Visual Studio や Visual Studio Code などの開発環境を使用して、この例をコンパイル、テスト、および発行することもできます。
 
-1. プロジェクトのディレクトリを作成し、コマンドラインから `[dotnet new console](../tools/dotnet-new.md)` と入力して、新しい C# コンソール プロジェクトを作成します。
+1. プロジェクトのディレクトリを作成し、コマンドラインから [`dotnet new console`](../tools/dotnet-new.md) と入力して、新しい C# コンソール プロジェクトを作成します。
 
 2. エディターで `Program.cs` ファイルを開き、自動生成されたコードを次のコードに置き換えます。 テキストの入力を求めるプロンプトが表示されてから、ユーザーが入力した個々の単語が表示されます。 正規表現 `\w+` を使用して、入力テキストの単語を分離します。
 
-    ```cs
+    ```csharp
     using System;
     using System.Text.RegularExpressions;
 
@@ -91,9 +91,9 @@ FDD の展開には、次のいくつかの利点があります。
 
 4. [dotnet build](../tools/dotnet-build.md) コマンドを使用して、アプリのデバッグ ビルドを作成します。
 
-5. プログラムをデバッグしてテストしたら、`dotnet publish -f netcoreapp1.1 -c release` コマンドを使用して、アプリで展開するファイルを作成できます。 これにより、リリース (デバッグではなく) バージョンのアプリが作成されます。
+5. プログラムをデバッグしてテストしたら、`dotnet publish -f netcoreapp1.1 -c Release` コマンドを使用して、アプリで展開するファイルを作成できます。 これにより、リリース (デバッグではなく) バージョンのアプリが作成されます。
 
-   作成されたファイルは、プロジェクトの `.\bin\release\netcoreapp1.1` サブディレクトリのサブディレクトリ内にある、`publish` という名前のディレクトリに配置されます。
+   作成されたファイルは、プロジェクトの `.\bin\Release\netcoreapp1.1` サブディレクトリのサブディレクトリ内にある、`publish` という名前のディレクトリに配置されます。
 
 6. アプリケーションのファイルと共に、発行プロセスは、アプリに関するデバッグ情報を含むプログラム データベース (.pdb) ファイルを出力します。 このファイルは、主に例外のデバッグに役立ちます。アプリケーションのファイルと共にパッケージ化しないように選択することもできます。
 
@@ -103,7 +103,7 @@ FDD の展開には、次のいくつかの利点があります。
 
 ### <a name="deploying-a-framework-dependent-deployment-with-third-party-dependencies"></a>サードパーティの依存関係を含む、フレームワークに依存する展開を展開する ###
 
-1 つまたは複数のサードパーティの依存関係を含む、フレームワークに依存する展開を展開するプロセスでは、`dotnet restore` コマンドを実行できるようにするために、次の&3; つの追加手順を実行します。
+1 つまたは複数のサードパーティの依存関係を含む、フレームワークに依存する展開を展開するプロセスでは、`dotnet restore` コマンドを実行できるようにするために、次の 2 つの追加手順を実行します。
 
 1. 任意のサードパーティ ライブラリへの参照を `csproj` ファイルの `<ItemGroup>` セクションに追加します。 次の `<ItemGroup>` のセクションでは、既定のプロジェクトに依存関係を含む、Json.NET をサード パーティ製のライブラリとする、`<ItemGroup>` を示します。
 
@@ -125,7 +125,7 @@ FDD の展開には、次のいくつかの利点があります。
 
 ### <a name="why-deploy-a-self-contained-deployment"></a>自己完結型の展開を展開する理由 ###
 
-自己完結型の展開を展開するのには、次の&2; つの主な利点があります。
+自己完結型の展開を展開するのには、次の 2 つの主な利点があります。
 
 - アプリで展開されている .NET Core のバージョンは、あなただけがコントロールできます。 .NET Core を操作できるのはあなただけです。
 
@@ -147,7 +147,7 @@ FDD の展開には、次のいくつかの利点があります。
 
 2. エディターで `Program.cs` ファイルを開き、自動生成されたコードを次のコードに置き換えます。 テキストの入力を求めるプロンプトが表示されてから、ユーザーが入力した個々の単語が表示されます。 正規表現 `\w+` を使用して、入力テキストの単語を分離します。
 
-    ```cs
+    ```csharp
     using System;
     using System.Text.RegularExpressions;
 
@@ -195,10 +195,10 @@ FDD の展開には、次のいくつかの利点があります。
 5. プログラムをテストしてデバッグしたら、次のように両方のターゲット プラットフォームに対して `dotnet publish` コマンドを使用して、ターゲット プラットフォームごとにアプリで展開するファイルを作成できます。
 
    ```console
-   dotnet publish -c release -r win10-x64
-   dotnet publish -c release -r osx.10.11-x64
+   dotnet publish -c Release -r win10-x64
+   dotnet publish -c Release -r osx.10.11-x64
    ```
-これにより、各ターゲット プラットフォームに対してアプリのリリース (デバッグではなく) バージョンが作成されます。 作成されたファイルは、プロジェクトの `.\bin\release\netcoreapp1.1\<runtime_identifier>` サブディレクトリのサブディレクトリ内にある、`publish` という名前のサブディレクトリに配置されます。 各サブディレクトリには、アプリの起動に必要なファイルの完全なセット (アプリ ファイルとすべての .NET Core ファイルの両方) が含まれています。
+これにより、各ターゲット プラットフォームに対してアプリのリリース (デバッグではなく) バージョンが作成されます。 作成されたファイルは、プロジェクトの `.\bin\Release\netcoreapp1.1\<runtime_identifier>` サブディレクトリのサブディレクトリ内にある、`publish` という名前のサブディレクトリに配置されます。 各サブディレクトリには、アプリの起動に必要なファイルの完全なセット (アプリ ファイルとすべての .NET Core ファイルの両方) が含まれています。
 
 6. アプリケーションのファイルと共に、発行プロセスは、アプリに関するデバッグ情報を含むプログラム データベース (.pdb) ファイルを出力します。 このファイルは、主に例外のデバッグに役立ちます。アプリケーションのファイルと共にパッケージ化しないように選択することもできます。
 
@@ -211,8 +211,6 @@ FDD の展開には、次のいくつかの利点があります。
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp1.1</TargetFramework>
-    <VersionPrefix>1.0.0</VersionPrefix>
-    <DebugType>Portable</DebugType>
     <RuntimeIdentifiers>win10-x64;osx.10.11-x64</RuntimeIdentifiers>
   </PropertyGroup>
 </Project>
@@ -239,8 +237,6 @@ FDD の展開には、次のいくつかの利点があります。
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp1.1</TargetFramework>
-    <VersionPrefix>1.0.0</VersionPrefix>
-    <DebugType>Portable</DebugType>
     <RuntimeIdentifiers>win10-x64;osx.10.11-x64</RuntimeIdentifiers>
   </PropertyGroup>
   <ItemGroup>
@@ -257,7 +253,7 @@ FDD の展開には、次のいくつかの利点があります。
 
 ターゲット システムで十分な記憶域の可用性が問題になる可能性がある場合は、一部のシステム コンポーネントを除外することで、アプリの全体的なフットプリントを削減できます。 このためには、アプリによって csproj ファイルに含まれる .NET Core コンポーネントを明示的に定義します。
 
-フットプリントがより小さい自己完結型の展開を作成するには、まず次の&2; つの手順に従って自己完結型の展開を作成します。 `dotnet new console` コマンドを実行し、C# ソース コードをアプリに追加したら、次の手順を実行します。
+フットプリントがより小さい自己完結型の展開を作成するには、まず次の 2 つの手順に従って自己完結型の展開を作成します。 `dotnet new console` コマンドを実行し、C# ソース コードをアプリに追加したら、次の手順を実行します。
 
 1. `csproj` ファイルを開き、`<TargetFramework>` 要素を次のものと置き換えます。
 
@@ -292,10 +288,10 @@ FDD の展開には、次のいくつかの利点があります。
 5. プログラムをテストしてデバッグしたら、次のように両方のターゲット プラットフォームに対して `dotnet publish` コマンドを使用して、ターゲット プラットフォームごとにアプリで展開するファイルを作成できます。
 
    ```console
-   dotnet publish -c release -r win10-x64
-   dotnet publish -c release -r osx.10.11-x64
+   dotnet publish -c Release -r win10-x64
+   dotnet publish -c Release -r osx.10.11-x64
    ```
-これにより、各ターゲット プラットフォームに対してアプリのリリース (デバッグではなく) バージョンが作成されます。 作成されたファイルは、プロジェクトの `.\bin\release\netstandard1.6\<runtime_identifier>` サブディレクトリのサブディレクトリ内にある、`publish` という名前のサブディレクトリに配置されます。 各サブディレクトリには、アプリの起動に必要なファイルの完全なセット (アプリ ファイルとすべての .NET Core ファイルの両方) が含まれています。
+これにより、各ターゲット プラットフォームに対してアプリのリリース (デバッグではなく) バージョンが作成されます。 作成されたファイルは、プロジェクトの `.\bin\Release\netstandard1.6\<runtime_identifier>` サブディレクトリのサブディレクトリ内にある、`publish` という名前のサブディレクトリに配置されます。 各サブディレクトリには、アプリの起動に必要なファイルの完全なセット (アプリ ファイルとすべての .NET Core ファイルの両方) が含まれています。
 
 6. アプリケーションのファイルと共に、発行プロセスは、アプリに関するデバッグ情報を含むプログラム データベース (.pdb) ファイルを出力します。 このファイルは、主に例外のデバッグに役立ちます。アプリケーションのファイルと共にパッケージ化しないように選択することもできます。
 
@@ -308,8 +304,6 @@ FDD の展開には、次のいくつかの利点があります。
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netstandard1.6</TargetFramework>
-    <VersionPrefix>1.0.0</VersionPrefix>
-    <DebugType>Portable</DebugType>
     <RuntimeIdentifiers>win10-x64;osx.10.11-x64</RuntimeIdentifiers>
   </PropertyGroup>
   <ItemGroup>

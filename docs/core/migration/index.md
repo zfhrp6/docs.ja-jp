@@ -4,21 +4,21 @@ description: ".NET Core project.json から csproj への移行"
 keywords: ".NET、.NET Core、.NET Core の移行"
 author: blackdwarf
 ms.author: mairaw
-ms.date: 03/04/2017
+ms.date: 03/13/2017
 ms.topic: article
 ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: 1feadf3d-3cfc-41dd-abb5-a4fc303a7b53
 translationtype: Human Translation
-ms.sourcegitcommit: f829714f545314daaa218b241008b5a2955ec589
-ms.openlocfilehash: 5872201f705c07bf692d0dc7f962068632f6b540
-ms.lasthandoff: 03/07/2017
+ms.sourcegitcommit: fae5eabac7d1aac577c5c7a27e306c8c7ea8b418
+ms.openlocfilehash: 73ab5a9bdd957e6d9394a3be0aa55f554ee7a86a
+ms.lasthandoff: 03/16/2017
 
 ---
 
 # <a name="migrating-net-core-projects-to-the-csproj-format"></a>.NET Core プロジェクトから .csproj 形式への移行
 
-このドキュメントでは、.NET Core プロジェクトの移行シナリオについて説明します。次の&3; つの移行シナリオを取り上げます。
+このドキュメントでは、.NET Core プロジェクトの移行シナリオについて説明します。次の 3 つの移行シナリオを取り上げます。
 
 1. [有効な最新スキーマの *project.json* から *csproj* への移行](#migration-from-projectjson-to-csproj)
 2. [DNX から csproj への移行](#migration-from-dnx-to-csproj)
@@ -54,6 +54,8 @@ Visual Studio では、選択したプロジェクトが自動的に移行され
 > [!NOTE]
 > VS コードを使用している場合、`dotnet migrate` コマンドを実行しても、`tasks.json` などの VS コード固有のファイルは変更されません。 これらのファイルは手動で変更する必要があります。 これは、Project Ryder などのエディターや、Visual Studio ではない統合開発環境 (IDE) を使用している場合にも該当します。 
 
+project.json および csproj 形式の比較については、「[project.json プロパティと csproj プロパティの間のマッピング](../tools/project-json-to-csproj.md)」を参照してください。
+
 ### <a name="common-issues"></a>一般的な問題
 
 - "No executable found matching command dotnet-migrate" (コマンド dotnet-migrate と一致する実行ファイルが見つかりません) というエラーが発生する場合:
@@ -62,7 +64,7 @@ Visual Studio では、選択したプロジェクトが自動的に移行され
 カレント ディレクトリまたは親ディレクトリに *global.json* ファイルがあり、`sdk` バージョンが古いバージョンに設定されている場合にこのエラーが発生します。
 
 ## <a name="migration-from-dnx-to-csproj"></a>DNX から csproj への移行
-.NET Core 開発にまだ DNX を使用している場合、移行プロセスは次の&2; 段階で実行する必要があります。
+.NET Core 開発にまだ DNX を使用している場合、移行プロセスは次の 2 段階で実行する必要があります。
 
 1. [既存の DNX 移行ガイダンス](from-dnx.md)を使用して DNX から project-json 対応の CLI に移行します。
 2. 前のセクションの手順に従って、*project.json* から *.csproj* に移行します。  
@@ -79,7 +81,7 @@ Visual Studio では、選択したプロジェクトが自動的に移行され
 * プロジェクトの一番上と一番下から `<Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" />` および `<Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />` ステートメントを削除します。 これらの import ステートメントは SDK で暗黙的に指定されているので、プロジェクトに含める必要はありません。 
 * プロジェクトに `Microsoft.NETCore.App` または `NETStandard.Library` `<PackageReference>` アイテムがある場合は削除することをお勧めします。 これらのパッケージ参照は、[SDK で暗黙的に指定されています](https://aka.ms/sdkimplicitrefs)。 
 * `Microsoft.NET.Sdk` `<PackageReference>` 要素がある場合は削除します。 SDK の参照は、`<Project>` 要素の `Sdk` 属性によって行われます。 
-* [SDK で暗黙的に指定されている](https://aka.ms/sdkimplicititems) glob を削除します。 プロジェクトにこれらの glob を残すと、コンパイル アイテムが重複するため、ビルド時にエラーが発生します。 
+* [SDK で暗黙的に指定](../tools/csproj.md#default-compilation-includes-in-net-core-projects)されている [glob](https://en.wikipedia.org/wiki/Glob_(programming)) を削除します。 プロジェクトにこれらの glob を残すと、コンパイル アイテムが重複するため、ビルド時にエラーが発生します。 
 
 これらの手順を実行すると、RTM .NET Core csproj 形式と完全に互換性のあるプロジェクトになります。 
 
