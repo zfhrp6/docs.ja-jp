@@ -1,19 +1,19 @@
 ---
-title: "dotnet-test コマンド | Microsoft Docs"
+title: "dotnet-test コマンド - .NET Core CLI | Microsoft Docs"
 description: "`dotnet test` コマンドは、指定されたプロジェクトで単体テストを実行する場合に使用されます。"
 keywords: "dotnet-test, CLI, CLI コマンド, .NET Core"
 author: blackdwarf
 ms.author: mairaw
-ms.date: 03/06/2017
+ms.date: 03/15/2017
 ms.topic: article
 ms.prod: .net-core
 ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: 4bf0aef4-148a-41c6-bb95-0a9e1af8762e
 translationtype: Human Translation
-ms.sourcegitcommit: 195664ae6409be02ca132900d9c513a7b412acd4
-ms.openlocfilehash: 21f3850520b922f16c77f831a045ec58bdf1b5c1
-ms.lasthandoff: 03/07/2017
+ms.sourcegitcommit: dff752a9d31ec92b113dae9eed20cd72faf57c84
+ms.openlocfilehash: 26b5834135db8041995a137f5008d00cdf14d820
+ms.lasthandoff: 03/22/2017
 
 ---
 
@@ -21,18 +21,15 @@ ms.lasthandoff: 03/07/2017
 
 ## <a name="name"></a>名前
 
-`dotnet-test` - .NET テスト ドライバー
+`dotnet-test` - 単体テストを実行するために使用される .NET テスト ドライバー。
 
 ## <a name="synopsis"></a>構文
 
-```
-dotnet test [project] [-s|--settings] [-t|--list-tests] [--filter] [-a|--test-adapter-path] [-l|--logger] [-c|--configuration] [-f|--framework] [-o|--output] [-d|--diag] [--no-build] [-v|--verbosity]
-dotnet test [-h|--help]
-```
+`dotnet test [<PROJECT>] [-s|--settings] [-t|--list-tests] [--filter] [-a|--test-adapter-path] [-l|--logger] [-c|--configuration] [-f|--framework] [-o|--output] [-d|--diag] [--no-build] [-v|--verbosity] [-h|--help]`
 
 ## <a name="description"></a>説明
 
-`dotnet test` コマンドは、指定されたプロジェクトで単体テストを実行する場合に使用されます。 単体テストは、単体テスト フレームワーク (NUnit や xUnit など) およびその単体テスト フレームワークの dotnet テスト ランナーに対する依存関係があるクラス ライブラリ プロジェクトです。 これらは NuGet パッケージとしてパッケージ化され、プロジェクトの通常の依存関係として復元されます。
+`dotnet test` コマンドは、指定されたプロジェクトで単体テストを実行する場合に使用されます。 単体テストは、単体テスト フレームワーク (MSText、NUnit、xUnit など) および単体テスト フレームワークの dotnet テスト ランナーに対する依存関係があるクラス ライブラリ プロジェクトです。 これらは NuGet パッケージとしてパッケージ化され、プロジェクトの通常の依存関係として復元されます。
 
 テスト プロジェクトでは、テスト ランナーを指定する必要もあります。 これは、通常の `<PackageReference>` 要素を使用して指定されます。次のサンプル プロジェクト ファイルのようになります。
 
@@ -40,7 +37,7 @@ dotnet test [-h|--help]
 
 ## <a name="options"></a>オプション
 
-`project`
+`PROJECT`
     
 テスト プロジェクトへのパスを指定します。 省略すると、既定で現在のディレクトリに設定されます。
 
@@ -68,13 +65,13 @@ dotnet test [-h|--help]
 
 テスト結果のロガーを指定します。 
 
-`-c|--configuration <Debug|Release>`
+`-c|--configuration <CONFIGURATION>`
 
 ビルドに使用する構成です。 既定値は `Debug` ですが、プロジェクトの構成がこの既定の SDK 設定に優先する可能性があります。
 
 `-f|--framework <FRAMEWORK>`
 
-特定のフレームワークのテスト バイナリを検索します。
+特定の[フレームワーク](../../standard/frameworks.md)のテスト バイナリを検索します。
 
 `-o|--output <OUTPUT_DIRECTORY>`
 
@@ -98,12 +95,11 @@ dotnet test [-h|--help]
 
 `dotnet test` 
 
-test1 プロジェクトでテストを実行します。
+`test1` プロジェクトでテストを実行します。
 
 `dotnet test ~/projects/test1/test1.csproj` 
 
 ## <a name="see-also"></a>関連項目
 
-[フレームワーク](../../standard/frameworks.md)
-
-[ランタイム識別子 (RID) のカタログ](../rid-catalog.md)
+* [ターゲット フレームワーク](../../standard/frameworks.md)
+* [ランタイム識別子 (RID) のカタログ](../rid-catalog.md)
