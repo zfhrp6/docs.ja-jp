@@ -12,3 +12,4 @@ ms.lasthandoff: 03/08/2017
 ## <a name="content-retired"></a>コンテンツ提供終了
 
 .NET Core と Visual Studio 2017 の入門チュートリアルについては、「[Building a C# Hello World application with .NET Core in Visual Studio 2017](../../csharp/getting-started/with-visual-studio.md)」 (Visual Studio 2017 RC での .NET Core を使用した C# Hello World アプリケーションの構築) を参照してください。
+
