@@ -11,9 +11,9 @@ ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: 7c5eee9f-d873-4224-8f5f-ed83df329a59
 translationtype: Human Translation
-ms.sourcegitcommit: 4a1f0c88fb1ccd6694f8d4f5687431646adbe000
-ms.openlocfilehash: d00277ceb7fd1c8a7186da330ab2bc4ad40c59a7
-ms.lasthandoff: 04/05/2017
+ms.sourcegitcommit: d97a1501ad25b683cbb5d7fbd8bd1b137f7f4046
+ms.openlocfilehash: 978dd62d655d0168b5a9c1c9732bc69ca9b256eb
+ms.lasthandoff: 04/10/2017
 
 ---
 
@@ -79,7 +79,7 @@ dotnet /build_output/my_app.dll
 
 ### <a name="driver"></a>ドライバー
 
-ドライバーは [dotnet](dotnet.md) という名前で、2 つの役割 ([フレームワークに依存するアプリ](../app-types.md)の実行と、コマンドの実行) があります。 `dotnet` がコマンドなしで使用されるのは、アプリケーションの起動に使用される場合のみです。
+ドライバーは [dotnet](dotnet.md) という名前で、2 つの役割 ([フレームワークに依存するアプリ](../deploying/index.md)の実行と、コマンドの実行) があります。 `dotnet` がコマンドなしで使用されるのは、アプリケーションの起動に使用される場合のみです。
 
 フレームワークに依存するアプリを実行するには、`dotnet /path/to/my_app.dll` など、ドライバーの後にアプリを指定します。 アプリの DLL が存在するフォルダーからコマンドを実行する場合は、`dotnet my_app.dll` を実行するだけです。
 
@@ -104,5 +104,5 @@ Preview 2 ツールを使用して *project.json* ベースのプロジェクト
 ## <a name="additional-resources"></a>その他の技術情報
 
 * [dotnet/CLI GitHub リポジトリ](https://github.com/dotnet/cli/)
-* [.NET Core のインストール ガイド](https://aka.ms/dotnetcoregs/)
+* [.NET Core のインストール ガイド](https://aka.ms/dotnetcoregs)
 
