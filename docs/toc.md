@@ -212,9 +212,9 @@
 ## [C# のツアー](csharp/tour-of-csharp/)
 <!-- The "What's New" section is short, and one level
     deep, so leave it in the main TOC -->
-## [C# の新機能](csharp/whats-new.md) 
-### [C# 7 の新機能](csharp/csharp-7.md)
-### [C# 6 の新機能](csharp/csharp-6.md)
+## [C# の新機能](csharp/whats-new/index.md) 
+### [C# 7 の新機能](csharp/whats-new/csharp-7.md)
+### [C# 6 の新機能](csharp/whats-new/csharp-6.md)
 <!-- End What's New -->
 ## [🔧 C# インタラクティブ](csharp/interactive/)
 <!-- Do this section later, once master redirects are in place -->

@@ -11,17 +11,15 @@ ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: bbfe6465-329d-4982-869d-472e7ef85d93
 translationtype: Human Translation
-ms.sourcegitcommit: 90fe68f7f3c4b46502b5d3770b1a2d57c6af748a
-ms.openlocfilehash: be44dce8181be45f6d73fcf498a873fb94aa56a6
-ms.lasthandoff: 03/02/2017
+ms.sourcegitcommit: 7bbd8f5d94127b35697ad267b2661da2c757aa20
+ms.openlocfilehash: 0fbe1dda72ad666304f5c817f4bfd477c3e81d83
+ms.lasthandoff: 04/06/2017
 
 ---
 
 # <a name="net-platform-guide"></a>.NET プラットフォーム ガイド
 
 > [!NOTE]
-この記事は書き直される予定です。
-
 > 「[Getting Started with .NET Core](../core/getting-started.md)」 (.NET Core の概要) では、単純な .NET Core アプリケーションを作成する方法を学習できます。 最初のアプリを、ほんの数分で起動および実行できます。
 
 .NET は、汎用的な開発プラットフォームです。 汎用的なソリューションが使用される、あらゆる種類のアプリまたはワークロードに使用できます。 自動メモリ管理や、高品質なアプリケーションの効率的な構築が簡単になる最新のプログラミング言語など、多くの開発者にとって魅力的な主要機能が含まれています。 .NET では、多くの便利な機能によって高度なプログラミング環境が有効になり、同時にネイティブ メモリおよび API へのローレベル アクセスも提供されます。

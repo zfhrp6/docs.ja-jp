@@ -31,9 +31,9 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: d4fb156e095d4cec9a0e690a516414282359356a
-ms.lasthandoff: 03/13/2017
+ms.sourcegitcommit: 7e33ed084c560470a486ebbb25035a59ddc18565
+ms.openlocfilehash: c29504e18aa716cbe106dbbe00c608fd465d9ac2
+ms.lasthandoff: 03/31/2017
 
 ---
 # <a name="interoperability-c-programming-guide"></a>相互運用性 (C# プログラミング ガイド)
@@ -46,7 +46,7 @@ ms.lasthandoff: 03/13/2017
  C# のマネージ コードとアンマネージ コードの間で相互運用する方法について説明します。  
   
  [方法: Visual C# の機能を使用して Office 相互運用オブジェクトにアクセスする](../../../csharp/programming-guide/interop/how-to-access-office-onterop-objects.md)  
- Office のプログラミングを容易にするために Visual C# 2010 に導入されている機能について説明します。  
+ Office のプログラミングを容易にするために Visual C# に導入されている機能について説明します。  
   
  [方法: COM 相互運用機能を使用したプログラミングでインデックス付きプロパティを使用する](../../../csharp/programming-guide/interop/how-to-use-indexed-properties-in-com-interop-rogramming.md)  
  インデックス付きプロパティを使用して、パラメーターを持つ COM プロパティにアクセスする方法について説明します。  

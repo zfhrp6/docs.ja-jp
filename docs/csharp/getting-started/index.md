@@ -11,9 +11,9 @@ ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: b77c7263-7cbf-4729-9626-8fbc3f5f14d9
 translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 2e2ad151a91e5aabb36f18a7478e39d972573eb1
-ms.lasthandoff: 03/13/2017
+ms.sourcegitcommit: 0a01ec92a90d99fafaacbd3f71f5177e5cf94a68
+ms.openlocfilehash: ca0acaaf61d87a9a55204d1ff44e3572c64d54d0
+ms.lasthandoff: 04/04/2017
 
 ---
 
@@ -35,6 +35,7 @@ ms.lasthandoff: 03/13/2017
 
 - [Visual Studio Code の概要](with-visual-studio-code.md)
 
-   Visual Studio Code は、IntelliSense (コード補完機能) とデバッグをサポートしている Windows、Linux、および macOS 向けのプログラミング エディターです。
+   Visual Studio Code は、最新の Web アプリケーションやクラウド アプリケーションのビルドとデバッグ向けに最適化された無料コード エディターです。 IntelliSense をサポートしており、Linux、macOS、Windows で使用できます。
 
    このトピックでは、Visual Studio Code と .NET Core を使用して、単純な Hello World アプリケーションを作成して実行する方法を説明します。
+
