@@ -157,7 +157,6 @@ Visual Studio には、Microsoft Office のプログラミングを改善する 
   
      このコードは、COM プログラミングで `ref` キーワードを省略する機能、名前付き引数、省略可能な引数など、C# の新機能のいくつかを示します。 Visual Basic でこれらの機能は既に存在します。 [PasteSpecial](http://go.microsoft.com/fwlink/?LinkId=147099) メソッドには 7 つのパラメーターがあります。これらはすべて省略可能な参照パラメーターとして定義されます。 Visual C# 2010 より前では、意味のある値を渡すことができない場合でも、7 つのパラメーターの引数として使用するオブジェクト変数を定義する必要がありました。 名前付き引数と省略可能な引数を使用すると、アクセスするパラメーターを名前で指定し、これらのパラメーターにのみ引数を渡すことができます。 この例では、引数は、クリップボードのブックへのリンクを作成する必要があること (`Link` パラメーター)、およびリンクがアイコンとして Word 文書に表示されること (`DisplayAsIcon` パラメーター) を示すために渡されます。 Visual C# 2010 では、これらの引数の `ref` キーワードを省略することもできます。 Visual C# 2008 の以下のコード セグメントを Visual C# 2010 で必要な単一の行と比較します。  
   
-     [!code-cs[csOfficeWalkthrough#11](../../../csharp/programming-guide/interop/codesnippet/CSharp/walkthrough-office-programming_11.cs)]  
   
 ### <a name="to-run-the-application"></a>アプリケーションを実行するには  
   
