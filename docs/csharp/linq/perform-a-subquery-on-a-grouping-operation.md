@@ -2,7 +2,7 @@
 title: "グループ化操作でのサブクエリの実行"
 description: "グループ化操作でサブクエリを実行する方法。"
 keywords: .NET, .NET Core, C#
-author: stevehoag
+author: BillWagner
 manager: wpickett
 ms.author: wiwagn
 ms.date: 12/1/2016

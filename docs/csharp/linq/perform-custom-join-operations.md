@@ -2,7 +2,7 @@
 title: "カスタム結合操作の実行"
 description: "カスタム結合操作を実行する方法。"
 keywords: .NET, .NET Core, C#
-author: stevehoag
+author: BillWagner
 manager: wpickett
 ms.author: wiwagn
 ms.date: 12/1/2016

@@ -2,7 +2,7 @@
 title: "オブジェクトのコレクションの照会"
 description: "コレクションをクエリする方法。"
 keywords: .NET, .NET Core, C#
-author: stevehoag
+author: BillWagner
 manager: wpickett
 ms.author: wiwagn
 ms.date: 11/30/2016

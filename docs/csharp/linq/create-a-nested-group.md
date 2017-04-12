@@ -2,7 +2,7 @@
 title: "入れ子になったグループの作成"
 description: "入れ子になったグループを作成する方法。"
 keywords: .NET, .NET Core, C#
-author: stevehoag
+author: BillWagner
 manager: wpickett
 ms.author: wiwagn
 ms.date: 12/1/2016

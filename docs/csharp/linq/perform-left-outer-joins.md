@@ -2,7 +2,7 @@
 title: "左外部結合の実行"
 description: "方法: 左外部結合を実行する。"
 keywords: .NET, .NET Core, C#
-author: stevehoag
+author: BillWagner
 manager: wpickett
 ms.author: wiwagn
 ms.date: 12/1/2016

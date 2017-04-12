@@ -2,7 +2,7 @@
 title: "複合キーを使用した結合"
 description: "複合キーを使用して結合する方法。"
 keywords: .NET, .NET Core, C#
-author: stevehoag
+author: BillWagner
 manager: wpickett
 ms.author: wiwagn
 ms.date: 12/1/2016

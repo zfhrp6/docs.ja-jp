@@ -2,7 +2,7 @@
 title: "連続するキーで結果をグループ化する"
 description: "連続するキーで結果をグループ化する方法。"
 keywords: ".NET、.NET Core、C#"
-author: stevehoag
+author: BillWagner
 manager: wpickett
 ms.author: wiwagn
 ms.date: 12/1/2016

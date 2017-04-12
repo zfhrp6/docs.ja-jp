@@ -2,7 +2,7 @@
 title: "クエリ結果をメモリに格納する"
 description: "結果の格納方法。"
 keywords: .NET, .NET Core, C#
-author: stevehoag
+author: BillWagner
 manager: wpickett
 ms.author: wiwagn
 ms.date: 11/30/2016

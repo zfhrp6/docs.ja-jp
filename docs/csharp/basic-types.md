@@ -2,8 +2,8 @@
 title: "基本型 | C# ガイド"
 description: "すべての C# プログラムの中核となる型 (数値、文字列、オブジェクト) について説明します"
 keywords: ".NET、.NET Core、C#"
-author: stevehoag
-ms.author: shoag
+author: BillWagner
+ms.author: wiwagn
 ms.date: 10/10/2016
 ms.topic: article
 ms.prod: .net

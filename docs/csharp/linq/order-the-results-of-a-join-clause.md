@@ -2,7 +2,7 @@
 title: "join 句の結果の順序指定"
 description: "join 句の結果の順序を指定する方法。"
 keywords: .NET, .NET Core, C#
-author: stevehoag
+author: BillWagner
 manager: wpickett
 ms.author: wiwagn
 ms.date: 12/1/2016

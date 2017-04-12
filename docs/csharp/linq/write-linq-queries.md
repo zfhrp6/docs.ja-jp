@@ -2,7 +2,7 @@
 title: "C# での LINQ クエリの作成#"
 description: "クエリの記述方法について説明します。"
 keywords: .NET, .NET Core, C#
-author: stevehoag
+author: BillWagner
 manager: wpickett
 ms.author: wiwagn
 ms.date: 12/1/2016

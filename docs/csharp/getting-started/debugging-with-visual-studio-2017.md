@@ -2,8 +2,8 @@
 title: "Visual Studio 2017 で C# Hello World Application をデバッグする"
 description: "Visual Studio 2017 を使用して C# で記述された Hello World アプリをデバッグする方法の説明"
 keywords: ".NET Core, .NET Core コンソール アプリケーション, .NET Core デバッグ"
-author: stevehoag
-ms.author: shoag
+author: BillWagner
+ms.author: wiwagn
 ms.date: 10/24/2016
 ms.topic: article
 ms.prod: .net-core
