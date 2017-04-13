@@ -11,7 +11,6 @@
 ## [インデクサー](indexers/)
 ## [インターフェイス](interfaces/)
 ## [相互運用性](interop/)
-## [LINQ クエリ式](linq-query-expressions/)
 ## [Main() とコマンド ライン引数](main-and-command-args/)
 ## [名前空間](namespaces/)
 ## [Null 許容型](nullable-types/)
