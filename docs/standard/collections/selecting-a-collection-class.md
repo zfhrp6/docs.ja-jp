@@ -1,85 +1,90 @@
 ---
-title: "コレクション クラスの選択"
-description: "コレクション クラスの選択"
-keywords: .NET, .NET Core
-author: mairaw
-ms.author: mairaw
-ms.date: 06/20/2016
-ms.topic: article
-ms.prod: .net
-ms.technology: dotnet-standard
-ms.devlang: dotnet
-ms.assetid: 0a60fca7-e082-48d4-9dda-30b0d3e67ec7
-translationtype: Human Translation
-ms.sourcegitcommit: 763433b00ae7d01cfa0c7fa250f51d23a95f6f15
-ms.openlocfilehash: d174d0cb910035340fb317521f3ad930d16853c2
-ms.lasthandoff: 01/18/2017
-
+title: "コレクション クラスの選択 | Microsoft Docs"
+ms.custom: ""
+ms.date: "03/30/2017"
+ms.prod: ".net"
+ms.reviewer: ""
+ms.suite: ""
+ms.technology: 
+  - "dotnet-standard"
+ms.tgt_pltfrm: ""
+ms.topic: "article"
+helpviewer_keywords: 
+  - "コレクション [.NET Framework], コレクション クラスの選択"
+  - "Collections クラス"
+  - "先入れ先出しのコレクション"
+  - "グループ化 (コレクションによるデータの), コレクション クラスの選択"
+  - "インデックス付きコレクション"
+  - "後入れ先出しのコレクション"
+ms.assetid: ba049f9a-ce87-4cc4-b319-3f75c8ddac8a
+caps.latest.revision: 20
+author: "mairaw"
+ms.author: "mairaw"
+manager: "wpickett"
+caps.handback.revision: 20
 ---
-
-# <a name="selecting-a-collection-class"></a>コレクション クラスの選択
-
-コレクション クラスは慎重に選択してください。 間違った型を使用すると、コレクションの使用が制限されることがあります。 タイプ セーフの強化や他の改善があるため、コレクションの汎用および同時実行バージョンをお勧めします。 一般に、.NET Framework バージョン 1.1 を特に対象としている場合を除いて、System.Collections 名前空間にある型は使用しないでください。 
-
-以下の質問を検討します。
-
-* 値が取得された後に要素が通常は破棄されるシーケンシャル リストが必要ですか。 
-
-    * 「はい」の場合、先入れ先出し (FIFO) の動作が必要であれば、[System.Collections.Generic.Queue&lt;T&gt;](https://docs.microsoft.com/dotnet/core/api/System.Collections.Generic.Queue-1) ジェネリック クラスの使用を検討してください。 後入れ先出し (LIFO) の動作が必要であれば、[System.Collections.Generic.Stack&lt;T&gt;](https://docs.microsoft.com/dotnet/core/api/System.Collections.Generic.Stack-1) ジェネリック クラスの使用を検討します。 複数のスレッドから安全にアクセスできるように、同時実行バージョンの [System.Collections.Concurrent.ConcurrentQueue&lt;T&gt;](https://docs.microsoft.com/dotnet/core/api/System.Collections.Concurrent.ConcurrentQueue-1) と [System.Collections.Concurrent.ConcurrentStack&lt;T&gt;](https://docs.microsoft.com/dotnet/core/api/System.Collections.Concurrent.ConcurrentStack-1) を使用します。
-    
-    * それ以外の場合は、その他のコレクションの使用を検討してください。
-    
-* FIFO や LIFO など特定の順序で要素にアクセスする必要がありますか。またはランダムにアクセスできますか。
-
-    * [System.Collections.Generic.Queue&lt;T&gt;](https://docs.microsoft.com/dotnet/core/api/System.Collections.Generic.Queue-1) または [System.Collections.Concurrent.ConcurrentQueue&lt;T&gt;](https://docs.microsoft.com/dotnet/core/api/System.Collections.Concurrent.ConcurrentQueue-1) ジェネリック クラスは、FIFO アクセスを提供します。 詳細については、「[スレッド セーフなコレクションを使用する状況](threadsafe/when-to-use-a-thread-safe-collection.md)」をご覧ください。
-    
-    * [System.Collections.Generic.Stack&lt;T&gt;](https://docs.microsoft.com/dotnet/core/api/System.Collections.Generic.Stack-1) または [System.Collections.Concurrent.ConcurrentStack&lt;T&gt;](https://docs.microsoft.com/dotnet/core/api/System.Collections.Concurrent.ConcurrentStack-1) ジェネリック クラスは、LIFO アクセスを提供します。 詳細については、「[スレッド セーフなコレクションを使用する状況](threadsafe/when-to-use-a-thread-safe-collection.md)」をご覧ください。
-    
-    * [System.Collections.Generic.LinkedList&lt;T&gt;](https://docs.microsoft.com/dotnet/core/api/System.Collections.Generic.LinkedList-1) ジェネリック クラスは、先頭から末尾または末尾から先頭へのシーケンシャル アクセスを可能にします。
-    
-* インデックスで各要素にアクセスする必要があるでしょうか。 
-
-    * [System.Collections.Specialized.StringCollection](https://docs.microsoft.com/dotnet/core/api/System.Collections.Specialized.StringCollection) クラス、および [System.Collections.Generic.List&lt;T&gt;](https://docs.microsoft.com/dotnet/core/api/System.Collections.Generic.List-1) ジェネリック クラスは、要素の 0 から始まるインデックスによってその要素へのアクセスを提供します。 
-    
-    * [System.Collections.Specialized.ListDictionary](https://docs.microsoft.com/dotnet/core/api/System.Collections.Specialized.ListDictionary) および [System.Collections.Specialized.StringDictionary](https://docs.microsoft.com/dotnet/core/api/System.Collections.Specialized.StringDictionary) クラス、さらに [System.Collections.Generic.Dictionary&lt;TKey, TValue&gt;](https://docs.microsoft.com/dotnet/core/api/System.Collections.Generic.Dictionary-2) および [System.Collections.Generic.SortedDictionary&lt;TKey, TValue&gt;](https://docs.microsoft.com/dotnet/core/api/System.Collections.Generic.SortedDictionary-2) ジェネリック クラスは、要素のキーによってその要素へのアクセスを提供します。
-    
-    * [System.Collections.Specialized.NameObjectCollectionBase](https://docs.microsoft.com/dotnet/core/api/System.Collections.Specialized.NameObjectCollectionBase) および [System.Collections.Specialized.NameValueCollection](https://docs.microsoft.com/dotnet/core/api/System.Collections.Specialized.NameValueCollection) クラス、さらに [System.Collections.ObjectModel.KeyedCollection&lt;TKey, TValue&gt;](https://docs.microsoft.com/dotnet/core/api/System.Collections.ObjectModel.KeyedCollection-2) および [System.Collections.Generic.SortedList&lt;TKey, TValue&gt;](https://docs.microsoft.com/dotnet/core/api/System.Collections.Generic.SortedList-2) ジェネリック クラスは、要素の 0 から始まるインデックスまたは要素のキーのいずれかによって、その要素へのアクセスを提供します。
-    
-* 各要素に含まれることになるのは、1 つの値、1 つのキーと 1 つの値の組み合わせ、または 1 つのキーと複数の値の組み合わせのどれですか。 
-
-    * 1 つの値: [System.Collections.Generic.IList&lt;T&gt;](https://docs.microsoft.com/dotnet/core/api/System.Collections.Generic.IList-1) ジェネリック インターフェイスに基づくいずれかのコレクションを使用します。
-    
-    * 1 つのキーと 1 つの値: [System.Collections.Generic.IDictionary&lt;TKey, TValue&gt;](https://docs.microsoft.com/dotnet/core/api/System.Collections.Generic.IDictionary-2) ジェネリック インターフェイスに基づくいずれかのコレクションを使用します。
-    
-    * 埋め込みのキーを持つ 1 つの値: [System.Collections.ObjectModel.KeyedCollection&lt;TKey, TValue&gt;](https://docs.microsoft.com/dotnet/core/api/System.Collections.ObjectModel.KeyedCollection-2) ジェネリック クラスを使用します。
-    
-    * 複数の値を持つ 1 つのキー: [System.Collections.Specialized.NameValueCollection](https://docs.microsoft.com/dotnet/core/api/System.Collections.Specialized.NameValueCollection) クラスを使用します。
-    
-* 要素を入力されたときとは異なる方法で並べ替える必要がありますか。 
-
-    * [System.Collections.Hashtable](https://docs.microsoft.com/dotnet/core/api/System.Collections.Hashtable) クラスは、ハッシュ コードによってその要素を並べ替えます。
-    
-    * [System.Collections.Generic.SortedDictionary&lt;TKey, TValue&gt;](https://docs.microsoft.com/dotnet/core/api/System.Collections.Generic.SortedDictionary-2) および [System.Collections.Generic.SortedList&lt;TKey, TValue&gt;](https://docs.microsoft.com/dotnet/core/api/System.Collections.Generic.SortedList-2) ジェネリック クラスは、[System.Collections.IComparer](https://docs.microsoft.com/dotnet/core/api/System.Collections.IComparer) インターフェイスと [System.Collections.Generic.IComparer&lt;T&gt;](https://docs.microsoft.com/dotnet/core/api/System.Collections.Generic.IComparer-1) ジェネリック インターフェイスの実装に基づき、キーによってその要素を並べ替えます。
-    
-    * [System.Collections.Generic.List&lt;T&gt;](https://docs.microsoft.com/dotnet/core/api/System.Collections.Generic.List-1) ジェネリック クラスは、`IComparer<T>` ジェネリック インターフェイスの実装をパラメーターとして受け取る `Sort` メソッドを提供します。
-    
-* 文字列だけを受け入れるコレクションは必要ですか。 
-
-    * [StringCollection](https://docs.microsoft.com/dotnet/core/api/System.Collections.Specialized.StringCollection) ([System.Collections.IList](https://docs.microsoft.com/dotnet/core/api/System.Collections.IList) に基づく) および [StringDictionary](https://docs.microsoft.com/dotnet/core/api/System.Collections.Specialized.StringDictionary) ([System.Collections.IDictionary](https://docs.microsoft.com/dotnet/core/api/System.Collections.IDictionary) に基づく) は、[System.Collections.Specialized](https://docs.microsoft.com/dotnet/core/api/System.Collections.Specialized) 名前空間にあります。 
-    
-    * さらに、ジェネリック型の引数に `String` クラスを指定して、[System.Collections.Generic](https://docs.microsoft.com/dotnet/core/api/System.Collections.Generic) 名前空間にある任意のジェネリック コレクション クラスを厳密に型指定された文字列コレクションとして使用できます。
-    
-## <a name="linq-to-objects"></a>LINQ to Objects
-
-LINQ to Objects を使用すると、開発者は、オブジェクト型で [System.Collections.IEnumerable](https://docs.microsoft.com/dotnet/core/api/System.Collections.IEnumerable) または [System.Collections.Generic.IEnumerable&lt;T&gt;](https://docs.microsoft.com/dotnet/core/api/System.Collections.Generic.IEnumerable-1) を実装している場合に、LINQ クエリを使用してインメモリ オブジェクトにアクセスできます。 LINQ クエリはデータ アクセス用の一般的なパターンです。通常、これは標準の foreach ループよりも簡潔で読みやすく、フィルター処理、並べ替え、およびグループ化の機能を備えています。 詳細については、「[統合言語クエリ (LINQ)](../../csharp/linq/index.md)」をご覧ください。
-
-## <a name="see-also"></a>関連項目
-
-[System.Collections](https://docs.microsoft.com/dotnet/core/api/System.Collections)
-
-[System.Collections.Specialized](https://docs.microsoft.com/dotnet/core/api/System.Collections.Specialized)
-
-[System.Collections.Generic](https://docs.microsoft.com/dotnet/core/api/System.Collections.Generic)
-
-[スレッドセーフなコレクション](threadsafe/index.md)
-
+# コレクション クラスの選択
+コレクション クラスは慎重に選択してください。  間違った型を使用すると、コレクションの使用が制限されることがあります。  一般に、.NET Framework バージョン 1.1 を特に対象としている場合を除いて、<xref:System.Collections> 名前空間にある型は使用しないでください。  タイプ セーフの強化や他の改善があるため、コレクションの汎用および同時実行バージョンをお勧めします。  
+  
+ 以下の質問を検討します。  
+  
+-   値が取得された後に要素が通常は破棄されるシーケンシャル リストが必要ですか。  
+  
+    -   そうである場合は、先入れ先出し \(FIFO\) の動作が必要であれば、<xref:System.Collections.Queue> クラスまたは <xref:System.Collections.Generic.Queue%601> ジェネリック クラスの使用を検討してください。  後入れ先出し \(LIFO\) の動作が必要であれば、<xref:System.Collections.Stack> クラスまたは <xref:System.Collections.Generic.Stack%601> ジェネリック クラスの使用を検討します。  複数のスレッドから安全にアクセスできるように、同時実行バージョンの <xref:System.Collections.Concurrent.ConcurrentQueue%601> と <xref:System.Collections.Concurrent.ConcurrentStack%601> を使用します。  
+  
+    -   それ以外の場合は、その他のコレクションの使用を検討してください。  
+  
+-   FIFO や LIFO など特定の順序で要素にアクセスする必要がありますか。またはランダムにアクセスできますか。  
+  
+    -   <xref:System.Collections.Queue> クラスおよび <xref:System.Collections.Generic.Queue%601> または <xref:System.Collections.Concurrent.ConcurrentQueue%601> ジェネリック クラスは、FIFO アクセスを提供します。  詳しくは、「[スレッド セーフなコレクションを使用する状況](../../../docs/standard/collections/thread-safe/when-to-use-a-thread-safe-collection.md)」を参照してください。  
+  
+    -   <xref:System.Collections.Stack> クラスおよび <xref:System.Collections.Generic.Stack%601> または <xref:System.Collections.Concurrent.ConcurrentStack%601> ジェネリック クラスは、LIFO アクセスを提供します。  詳しくは、「[スレッド セーフなコレクションを使用する状況](../../../docs/standard/collections/thread-safe/when-to-use-a-thread-safe-collection.md)」を参照してください。  
+  
+    -   <xref:System.Collections.Generic.LinkedList%601> ジェネリック クラスは、先頭から末尾または末尾から先頭への順次アクセスを可能にします。  
+  
+-   インデックスで各要素にアクセスする必要があるでしょうか。  
+  
+    -   <xref:System.Collections.ArrayList> と <xref:System.Collections.Specialized.StringCollection> クラス、および <xref:System.Collections.Generic.List%601> ジェネリック クラスは、要素の 0 から始まるインデックスによってその要素へのアクセスを提供します。  
+  
+    -   <xref:System.Collections.Hashtable>、<xref:System.Collections.SortedList>、<xref:System.Collections.Specialized.ListDictionary>、<xref:System.Collections.Specialized.StringDictionary> クラス、および <xref:System.Collections.Generic.Dictionary%602>、<xref:System.Collections.Generic.SortedDictionary%602> ジェネリック クラスは、要素のキーによってその要素へのアクセスを提供します。  
+  
+    -   <xref:System.Collections.Specialized.NameObjectCollectionBase> と <xref:System.Collections.Specialized.NameValueCollection> クラス、および <xref:System.Collections.ObjectModel.KeyedCollection%602> と <xref:System.Collections.Generic.SortedList%602> ジェネリック クラスは、要素の 0 から始まるインデックスまたはキーのいずれかによって、その要素へのアクセスを提供します。  
+  
+-   各要素に含まれることになるのは、1 つの値、1 つのキーと 1 つの値の組み合わせ、または 1 つのキーと複数の値の組み合わせのどれですか。  
+  
+    -   1 つの値: <xref:System.Collections.IList> インターフェイスまたは <xref:System.Collections.Generic.IList%601> ジェネリック インターフェイスに基づくいずれかのコレクションを使用します。  
+  
+    -   1 つのキーと 1 つの値: <xref:System.Collections.IDictionary> インターフェイスまたは <xref:System.Collections.Generic.IDictionary%602> ジェネリック インターフェイスに基づくいずれかのコレクションを使用します。  
+  
+    -   埋め込みのキーを持つ 1 つの値: <xref:System.Collections.ObjectModel.KeyedCollection%602> ジェネリック クラスを使用します。  
+  
+    -   複数の値を持つ 1 つのキー: <xref:System.Collections.Specialized.NameValueCollection> クラスを使用します。  
+  
+-   要素を入力されたときとは異なる方法で並べ替える必要がありますか。  
+  
+    -   <xref:System.Collections.Hashtable> クラスは、ハッシュ コードによってその要素を並べ替えます。  
+  
+    -   <xref:System.Collections.SortedList> クラスおよび <xref:System.Collections.Generic.SortedDictionary%602> と <xref:System.Collections.Generic.SortedList%602> ジェネリック クラスは、<xref:System.Collections.IComparer> インターフェイスおよび <xref:System.Collections.Generic.IComparer%601> ジェネリック インターフェイスの実装に基づいて、キーによってその要素を並べ替えます。  
+  
+    -   <xref:System.Collections.ArrayList> は、<xref:System.Collections.IComparer> 実装をパラメーターとして受け取る、<xref:System.Collections.ArrayList.Sort%2A> メソッドを提供します。  それに対応するジェネリックである <xref:System.Collections.Generic.List%601> ジェネリック クラスは、<xref:System.Collections.Generic.IComparer%601> ジェネリック インターフェイスの実装をパラメーターとして受け取る、<xref:System.Collections.Generic.List%601.Sort%2A> メソッドを提供します。  
+  
+-   高速な検索と情報の取得が必要ですか。  
+  
+    -   <xref:System.Collections.Specialized.ListDictionary> は、小規模なコレクション \(10 個以下のアイテム\) では <xref:System.Collections.Hashtable> より高速です。  <xref:System.Collections.Generic.Dictionary%602> ジェネリック クラスは、<xref:System.Collections.Generic.SortedDictionary%602> ジェネリック クラスよりも高速の参照を提供します。  マルチスレッドの実装は <xref:System.Collections.Concurrent.ConcurrentDictionary%602> です。  <xref:System.Collections.Concurrent.ConcurrentBag%601> は、順序指定されていないデータのために、高速なマルチスレッドの挿入を提供します。  両方の種類のマルチスレッドについて詳しくは、「[スレッド セーフなコレクションを使用する状況](../../../docs/standard/collections/thread-safe/when-to-use-a-thread-safe-collection.md)」を参照してください。  
+  
+-   文字列だけを受け入れるコレクションは必要ですか。  
+  
+    -   <xref:System.Collections.Specialized.StringCollection> \(<xref:System.Collections.IList> に基づく\) および <xref:System.Collections.Specialized.StringDictionary> \(<xref:System.Collections.IDictionary> に基づく\) は、<xref:System.Collections.Specialized> 名前空間にあります。  
+  
+    -   さらに、ジェネリック型の引数として <xref:System.String> クラスを指定することにより、<xref:System.Collections.Generic> 名前空間にある任意のジェネリック コレクション クラスを厳密に型指定された文字列コレクションとして使用できます。  
+  
+## LINQ to Objects および PLINQ  
+ LINQ to Objects により、開発者は、オブジェクト型で <xref:System.Collections.IEnumerable> または <xref:System.Collections.Generic.IEnumerable%601> を実装している限り、LINQ クエリを使用してインメモリ オブジェクトにアクセスできます。  LINQ クエリはデータ アクセス用の一般的なパターンです。通常、これは標準の `foreach` ループよりも簡潔で読みやすく、フィルター処理、並べ替え、およびグループ化機能を備えています。  詳細については、「[LINQ to Objects](../../../ocs/visual-basic/programming-guide/concepts/linq/linq-to-objects.md)」を参照してください。  
+  
+ PLINQ は、マルチコア コンピューターをより効率的に使用することにより、多くのシナリオでより高速にクエリを実行できる LINQ to Objects の並列実装を提供します。  詳細については、「[Parallel LINQ \(PLINQ\)](../../../docs/standard/parallel-programming/parallel-linq-plinq.md)」を参照してください。  
+  
+## 参照  
+ <xref:System.Collections>   
+ <xref:System.Collections.Specialized>   
+ <xref:System.Collections.Generic>   
+ [スレッド セーフなコレクション](../../../docs/standard/collections/thread-safe/index.md)

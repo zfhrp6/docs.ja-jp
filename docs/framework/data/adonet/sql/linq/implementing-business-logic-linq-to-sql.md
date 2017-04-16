@@ -1,0 +1,194 @@
+---
+title: "Implementing Business Logic (LINQ to SQL) | Microsoft Docs"
+ms.custom: ""
+ms.date: "03/30/2017"
+ms.prod: ".net-framework-4.6"
+ms.reviewer: ""
+ms.suite: ""
+ms.technology: 
+  - "dotnet-ado"
+ms.tgt_pltfrm: ""
+ms.topic: "article"
+ms.assetid: c4577590-7b12-42e1-84a6-95aa2562727e
+caps.latest.revision: 4
+author: "JennieHubbard"
+ms.author: "jhubbard"
+manager: "jhubbard"
+caps.handback.revision: 4
+---
+# Implementing Business Logic (LINQ to SQL)
+このトピックの「ビジネス ロジック」とは、データベースでデータを挿入、更新、または削除される前にデータに適用されるカスタム規則または検証テストのことです。  ビジネス ロジックは、「ビジネス ルール」または「ドメイン ロジック」とも呼ばれます。 n 層アプリケーションでは、通常、論理層として設計されるため、プレゼンテーション層やデータ アクセス層から独立して変更できます。  データベースのデータを更新、挿入、または削除する前または後に、データ アクセス層によってビジネス ロジックを呼び出すことができます。  
+  
+ ビジネス ロジックは、フィールドの型がテーブル列の型と互換性を持つかどうか確認するスキーマ検証のような簡単なものにすることもできます。  または、任意の複雑な方法で相互に影響するオブジェクトのセットから成るビジネス ロジックも可能です。  規則は、データベース上のストアド プロシージャとして、またはメモリ内のオブジェクトとして実装可能です。  ビジネス ロジックの実装方法とは無関係に、[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] では、部分クラスと部分メソッドを使ってビジネス ロジックをデータ アクセス コードから分離することができます。  
+  
+## LINQ to SQL でビジネス ロジックを呼び出す方法  
+ 手動で、または[!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)]か SQLMetal を使用してデザイン時にエンティティ クラスを生成すると、部分クラスとして定義されます。  つまり、別個のコード ファイル内で、カスタム ビジネス ロジックを格納するエンティティ クラスの別の部分を定義できます。  コンパイル時に 2 つの部分が 1 つのクラスに結合されます。 ただし、[!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)]または SQLMetal を使ってエンティティ クラスを再生成する必要がある場合には、そうしてもかまいません。その場合、開発者が作成したクラスの部分は変更されません。  
+  
+ エンティティと <xref:System.Data.Linq.DataContext> を定義する部分クラスには、部分メソッドが含まれます。  これらは機能拡張ポイントであり、これらを使用して、エンティティまたはエンティティ プロパティを更新、挿入、削除する前および後にビジネス ロジックを適用できます。  部分メソッドはコンパイル時のイベントのようなものです。  コード ジェネレーターはメソッド シグネチャを定義して、get および set プロパティ アクセサー内、`DataContext` コンストラクター内、および、場合によっては <xref:System.Data.Linq.DataContext.SubmitChanges%2A> 呼び出し時に背後でメソッドを呼び出します。  ただし、特定の部分メソッドを実装しない場合には、そのメソッドのすべての参照と定義はコンパイル時に削除されます。  
+  
+ 別個のコード ファイル内に作成する実装定義では、必要な任意のカスタム ロジックを実行できます。  部分クラス自体をドメイン層として使用できます。または、部分メソッドの実装定義から別個の 1 つ以上のオブジェクトに呼び出すこともできます。  どちらの場合も、ビジネス ロジックはデータ アクセス コードとプレゼンテーション層コードから明確に分離されています。  
+  
+## 機能拡張ポイントの詳細  
+ 次の例は、[!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)] と `DataContext` の 2 つのテーブルを持つ `Customers` クラス用に`Orders`によって生成されるコードの一部分です。  このクラスで Insert、Update、および Delete メソッドがテーブルごとに定義されていることに注意してください。  
+  
+```vb  
+Partial Public Class Northwnd  
+    Inherits System.Data.Linq.DataContext  
+  
+    Private Shared mappingSource As _  
+        System.Data.Linq.Mapping.MappingSource = New _  
+        AttributeMappingSource  
+  
+    #Region "Extensibility Method Definitions"  
+    Partial Private Sub OnCreated()  
+    End Sub  
+    Partial Private Sub InsertCustomer(instance As Customer)  
+    End Sub  
+    Partial Private Sub UpdateCustomer(instance As Customer)  
+    End Sub  
+    Partial Private Sub DeleteCustomer(instance As Customer)  
+    End Sub  
+    Partial Private Sub InsertOrder(instance As [Order])  
+    End Sub  
+    Partial Private Sub UpdateOrder(instance As [Order])  
+    End Sub  
+    Partial Private Sub DeleteOrder(instance As [Order])  
+    End Sub  
+    #End Region  
+```  
+  
+```csharp  
+public partial class MyNorthWindDataContext : System.Data.Linq.DataContext  
+    {  
+        private static System.Data.Linq.Mapping.MappingSource mappingSource = new AttributeMappingSource();  
+  
+        #region Extensibility Method Definitions  
+        partial void OnCreated();  
+        partial void InsertCustomer(Customer instance);  
+        partial void UpdateCustomer(Customer instance);  
+        partial void DeleteCustomer(Customer instance);  
+        partial void InsertOrder(Order instance);  
+        partial void UpdateOrder(Order instance);  
+        partial void DeleteOrder(Order instance);  
+        #endregion  
+```  
+  
+ 部分クラス内で Insert、Update、および Delete メソッドを実装すると、[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] ランタイムは <xref:System.Data.Linq.DataContext.SubmitChanges%2A> の呼び出し時に、既定のメソッドの代わりにこれらのメソッドを呼び出します。  こうすることで、作成、読み取り、更新、削除操作の既定の動作をオーバーライドできます。  詳細については、「[Walkthrough: Customizing the Insert, Update, and Delete Behavior of Entity Classes](../Topic/Walkthrough:%20Customizing%20the%20insert,%20update,%20and%20delete%20behavior%20of%20entity%20classes.md)」を参照してください。  
+  
+ `OnCreated` メソッドはクラス コンストラクター内で呼び出されます。  
+  
+```vb  
+Public Sub New(ByVal connection As String)  
+    MyBase.New(connection, mappingSource)  
+    OnCreated()  
+End Sub  
+```  
+  
+```csharp  
+public MyNorthWindDataContext(string connection) :  
+            base(connection, mappingSource)  
+        {  
+            OnCreated();  
+        }  
+```  
+  
+ エンティティの作成時、読み込み時、および検証時 \([!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] の呼び出し時\) に `SubmitChanges` ランタイムによって呼び出される 3 つのメソッドが、エンティティ クラスに含まれています。  さらに、エンティティ クラスには、各プロパティごとの 2 つの部分メソッドも含まれています。このうち 1 つはプロパティの設定前に、もう 1 つは設定後に呼び出されます。  次のコード例は、`Customer` クラス用に生成されるいくつかのメソッドを示しています。  
+  
+```vb  
+#Region "Extensibility Method Definitions"  
+    Partial Private Sub OnLoaded()  
+    End Sub  
+    Partial Private Sub OnValidate(action As _  
+        System.Data.Linq.ChangeAction)  
+    End Sub  
+    Partial Private Sub OnCreated()  
+    End Sub  
+    Partial Private Sub OnCustomerIDChanging(value As String)  
+    End Sub  
+    Partial Private Sub OnCustomerIDChanged()  
+    End Sub  
+    Partial Private Sub OnCompanyNameChanging(value As String)  
+    End Sub  
+    Partial Private Sub OnCompanyNameChanged()  
+    End Sub  
+' ...Additional Changing/Changed methods for each property.  
+```  
+  
+```csharp  
+#region Extensibility Method Definitions  
+    partial void OnLoaded();  
+    partial void OnValidate();  
+    partial void OnCreated();  
+    partial void OnCustomerIDChanging(string value);  
+    partial void OnCustomerIDChanged();  
+    partial void OnCompanyNameChanging(string value);  
+    partial void OnCompanyNameChanged();  
+// ...additional Changing/Changed methods for each property  
+```  
+  
+ 以下の `CustomerID` プロパティの例に示されるように、メソッドはプロパティの set アクセサー内で呼び出されます。  
+  
+```vb  
+Public Property CustomerID() As String  
+    Set  
+        If (String.Equals(Me._CustomerID, value) = False) Then  
+            Me.OnCustomerIDChanging(value)  
+            Me.SendPropertyChanging()  
+            Me._CustomerID = value  
+            Me.SendPropertyChanged("CustomerID")  
+            Me.OnCustomerIDChanged()  
+        End If  
+    End Set  
+End Property  
+```  
+  
+```csharp  
+public string CustomerID  
+{  
+    set  
+    {  
+        if ((this._CustomerID != value))  
+        {  
+            this.OnCustomerIDChanging(value);  
+            this.SendPropertyChanging();  
+            this._CustomerID = value;  
+            this.SendPropertyChanged("CustomerID");  
+            this.OnCustomerIDChanged();  
+        }  
+     }  
+}  
+```  
+  
+ クラスの開発者が作成する部分で、メソッドの実装定義を記述します。  [!INCLUDE[vsprvs](../../../../../../includes/vsprvs-md.md)] では、`partial` と入力した後、クラスの別の部分にメソッド定義用の IntelliSense が表示されます。  
+  
+```vb  
+Partial Public Class Customer  
+    Private Sub OnCustomerIDChanging(value As String)  
+        ' Perform custom validation logic here.  
+    End Sub  
+End Class  
+```  
+  
+```csharp  
+partial class Customer   
+    {  
+        partial void OnCustomerIDChanging(string value)  
+        {  
+            //Perform custom validation logic here.  
+        }  
+    }  
+```  
+  
+ 部分メソッドを使ってビジネス ロジックをアプリケーションに追加する方法の詳細については、以下のトピックを参照してください。  
+  
+ [How to: Add Validation to Entity Classes](../Topic/How%20to:%20Add%20validation%20to%20entity%20classes.md)  
+  
+ [Walkthrough: Customizing the Insert, Update, and Delete Behavior of Entity Classes](../Topic/Walkthrough:%20Customizing%20the%20insert,%20update,%20and%20delete%20behavior%20of%20entity%20classes.md)  
+  
+ [Walkthrough: Adding Validation to Entity Classes](../Topic/Walkthrough:%20Adding%20Validation%20to%20Entity%20Classes.md)  
+  
+## 参照  
+ [部分クラスと部分メソッド](../Topic/Partial%20Classes%20and%20Methods%20\(C%23%20Programming%20Guide\).md)   
+ [Partial Methods](../Topic/Partial%20Methods%20\(Visual%20Basic\).md)   
+ [LINQ to Visual Studio での SQL ツール](../Topic/LINQ%20to%20SQL%20Tools%20in%20Visual%20Studio2.md)   
+ [SqlMetal.exe \(コード生成ツール\)](../../../../../../docs/framework/tools/sqlmetal-exe-code-generation-tool.md)

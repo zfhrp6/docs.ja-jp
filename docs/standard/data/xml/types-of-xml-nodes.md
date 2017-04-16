@@ -1,0 +1,59 @@
+---
+title: "XML ノードの種類 | Microsoft Docs"
+ms.custom: ""
+ms.date: "03/30/2017"
+ms.prod: ".net"
+ms.reviewer: ""
+ms.suite: ""
+ms.technology: 
+  - "dotnet-standard"
+ms.tgt_pltfrm: ""
+ms.topic: "article"
+dev_langs: 
+  - "VB"
+  - "CSharp"
+  - "C++"
+  - "jsharp"
+ms.assetid: 71d03b78-6898-4ce7-b0fc-1282573f31f7
+caps.latest.revision: 4
+author: "mairaw"
+ms.author: "mairaw"
+manager: "wpickett"
+caps.handback.revision: 3
+---
+# XML ノードの種類
+XML ドキュメントがノードのツリーとしてメモリに読み込まれると、ノードの作成時にノード型が決まります。  XML ドキュメント オブジェクト モデル \(DOM\) では複数のノード型が定義されています。これらのノード型は W3C \(World Wide Web Consortium\) で規定されているもので、セクション 1.1.1「The DOM Structure Model」に記載されています。  ノード型、ノード型に割り当てられるオブジェクト、およびそれぞれの簡単な説明を次の表に示します。  
+  
+|DOM ノード型|Object|説明|  
+|--------------|------------|--------|  
+|Document|[XmlDocument クラス](frlrfSystemXmlXmlDocumentClassTopic)|ツリー内のすべてのノードのコンテナーです。  ドキュメントのルートとも呼ばれますが、常にルート要素と一致するとは限りません。|  
+|DocumentFragment|[XmlDocumentFragment クラス](frlrfSystemXmlXmlDocumentFragmentClassTopic)|1 つ以上のノードを非ツリー構造で格納する一時的なバッグです。|  
+|DocumentType|[XmlDocumentType クラス](frlrfSystemXmlXmlDocumentTypeClassTopic)|`<!DOCTYPE >` ノードを表します。|  
+|EntityReference|[XmlEntityReference クラス](frlrfSystemXmlXmlEntityReferenceClassTopic)|展開されていないエンティティ参照テキストを表します。|  
+|要素|[XmlElement クラス](frlrfSystemXmlXmlElementClassTopic)|要素ノードを表します。|  
+|Attr|[XmlAttribute クラス](frlrfSystemXmlXmlAttributeClassTopic)|要素の属性です。|  
+|ProcessingInstruction|[XmlProcessingInstruction クラス](frlrfSystemXmlXmlProcessingInstructionClassTopic)|処理命令ノードです。|  
+|コメント|[XmlComment クラス](frlrfSystemXmlXmlCommentClassTopic)|コメント ノードです。|  
+|Text|[XmlText クラス](frlrfSystemXmlXmlTextClassTopic)|要素または属性に含まれるテキストです。|  
+|CDATASection|[XmlCDataSection クラス](frlrfSystemXmlXmlCDataSectionClassTopic)|CDATA を表します。|  
+|Entity|[XmlEntity クラス](frlrfSystemXmlXmlEntityClassTopic)|内部ドキュメント型定義 \(DTD\) のサブセットまたは外部 DTD とパラメーター エンティティから取得され、XML ドキュメントに含まれている `<!ENTITY >` 宣言を表します。|  
+|Notation|[XmlNotation クラス](frlrfSystemXmlXmlNotationClassTopic)|DTD で宣言された記法を表します。|  
+  
+ 属性 \(*attr*\) は、W3C DOM Level 1 のセクション 1.2「Fundamental Interfaces」ではノードとして記載されていますが、どの要素ノードの子とも見なされません。  
+  
+ W3C では定義されていない追加のノード型を次の表に示します。ただし、これらのノード型は **XmlNodeType** 列挙値としてのみ Microsoft .NET Framework オブジェクト モデルで使用できます。  そのため、これらのノード型に対応する DOM ノード型の列はありません。  
+  
+|ノード型|説明|  
+|----------|--------|  
+|<xref:System.Xml.XmlDeclaration>|宣言ノード `<?xml version="1.0" >` を表します。|  
+|<xref:System.Xml.XmlSignificantWhitespace>|有意の空白を表します。これは混合コンテンツの空白です。|  
+|<xref:System.Xml.XmlWhitespace>|要素コンテンツ内の空白を表します。|  
+|EndElement|**XmlReader** が要素の末尾に達したときに返されます。<br /><br /> XML サンプル: **\<\/item\>**<br /><br /> 詳細については、「[XmlNodeType 列挙体](frlrfSystemXmlXmlNodeTypeClassTopic)」を参照してください。|  
+|EndEntity|<xref:System.Xml.XmlReader.ResolveEntity%2A> を呼び出した後、置換するエンティティの末尾に **XmlReader** が達したときに返されます。  詳細については、「[XmlNodeType 列挙体](frlrfSystemXmlXmlNodeTypeClassTopic)」を参照してください。|  
+  
+ XML を読み込み、case 構成体を使用してノード型を判定し、ノードとその内容についての情報を出力するコード サンプルについては、「[NodeType プロパティ](frlrfSystemXmlXmlSignificantWhitespaceClassNodeTypeTopic)」を参照してください。  
+  
+ ノード型のオブジェクト階層構造とそれぞれに対応するオブジェクト名の詳細については、「[XML ドキュメント オブジェクト モデル \(DOM\) の階層構造](../../../../docs/standard/data/xml/xml-document-object-model-dom-hierarchy.md)」を参照してください。  ノード ツリーで作成したオブジェクトの詳細については、「[オブジェクト階層の XML データへのマップ](../../../../docs/standard/data/xml/mapping-the-object-hierarchy-to-xml-data.md)」を参照してください。  
+  
+## 参照  
+ [XML ドキュメント オブジェクト モデル \(DOM\)](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)
