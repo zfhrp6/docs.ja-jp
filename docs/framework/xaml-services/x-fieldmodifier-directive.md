@@ -58,8 +58,8 @@ caps.handback.revision: 14
  ルート要素の部分クラスは既定で Public になっていますが、[x:ClassModifier Directive](../../../docs/framework/xaml-services/x-classmodifier-directive.md)を使用して NonPublic にすることができます。  [x:ClassModifier Directive](../../../docs/framework/xaml-services/x-classmodifier-directive.md)は、ルート要素クラスのインスタンスのアクセス レベルにも影響を与えます。  ルート要素には `x:Name` と `x:FieldModifier` の両方を配置できますが、これはルート要素のパブリック フィールドのコピーを作成するだけであり、実際のルート要素クラスのアクセス レベルは引き続き [x:ClassModifier Directive](../../../docs/framework/xaml-services/x-classmodifier-directive.md)によって制御されます。  
   
 ## 参照  
- [WPF における XAML とカスタム クラス](../../../docs/framework/wpf/advanced/xaml-and-custom-classes-for-wpf.md)   
- [WPF における分離コードと XAML](../../../docs/framework/wpf/advanced/code-behind-and-xaml-in-wpf.md)   
+ [WPF における XAML とカスタム クラス](../../../ocs/framework/wpf/advanced/xaml-and-custom-classes-for-wpf.md)   
+ [WPF における分離コードと XAML](../../../ocs/framework/wpf/advanced/code-behind-and-xaml-in-wpf.md)   
  [x:Name Directive](../../../docs/framework/xaml-services/x-name-directive.md)   
- [WPF アプリケーション \(WPF\) のビルド](../../../docs/framework/wpf/app-development/building-a-wpf-application-wpf.md)   
+ [WPF アプリケーション \(WPF\) のビルド](../../../ocs/framework/wpf/app-development/building-a-wpf-application-wpf.md)   
  [x:ClassModifier Directive](../../../docs/framework/xaml-services/x-classmodifier-directive.md)

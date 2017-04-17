@@ -57,5 +57,5 @@ XAML 稼動環境内にコードを配置できます。  このようなコー�
   
 ## 参照  
  [x:Class Directive](../../../docs/framework/xaml-services/x-class-directive.md)   
- [WPF における分離コードと XAML](../../../docs/framework/wpf/advanced/code-behind-and-xaml-in-wpf.md)   
- [XAML の概要 \(WPF\)](../../../docs/framework/wpf/advanced/xaml-overview-wpf.md)
+ [WPF における分離コードと XAML](../../../ocs/framework/wpf/advanced/code-behind-and-xaml-in-wpf.md)   
+ [XAML の概要 \(WPF\)](../../../ocs/framework/wpf/advanced/xaml-overview-wpf.md)

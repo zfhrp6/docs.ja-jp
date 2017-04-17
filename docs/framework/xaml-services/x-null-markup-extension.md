@@ -44,14 +44,14 @@ XAML メンバーの値として `null` を指定します。
   
  XAML のあらゆるマークアップ拡張機能と同様、`x:Null` マークアップ拡張機能は、属性値の処理をリテラルやイベント ハンドラー参照以外にエスケープする場合、中かっこ \(`{,}`\) を使用します。  属性構文は、このマークアップ拡張機能で最も多く使用される構文です。  `x:Null` マークアップ拡張機能では位置指定パラメーターや構築引数は使用されないので、オブジェクト要素構文 `<x:Null />` は技術的には使用できますが、使用されることはまれです。  
   
- マークアップ拡張機能については、「[マークアップ拡張機能と WPF XAML](../../../docs/framework/wpf/advanced/markup-extensions-and-wpf-xaml.md)」を参照してください。  
+ マークアップ拡張機能については、「[マークアップ拡張機能と WPF XAML](../../../ocs/framework/wpf/advanced/markup-extensions-and-wpf-xaml.md)」を参照してください。  
   
  .NET Framework XAML サービスでは、このマークアップ拡張機能の処理は、<xref:System.Windows.Markup.NullExtension> クラスによって定義されます。  
   
 ## WPF の使用上の注意  
- `null` は、参照型の依存関係プロパティの初期未設定値であるとは限らないことに注意してください。  初期既定値は、依存関係プロパティごとに異なることがあります。また、プロパティ固有のメタデータに基づいていることがあります。  依存関係プロパティの多くは、その検証コールバックの実装により、マークアップまたはコードのいずれによる場合でも、`null` を値として許容しません。  依存関係プロパティの詳細については、「[依存関係プロパティの概要](../../../docs/framework/wpf/advanced/dependency-properties-overview.md)」を参照してください。  
+ `null` は、参照型の依存関係プロパティの初期未設定値であるとは限らないことに注意してください。  初期既定値は、依存関係プロパティごとに異なることがあります。また、プロパティ固有のメタデータに基づいていることがあります。  依存関係プロパティの多くは、その検証コールバックの実装により、マークアップまたはコードのいずれによる場合でも、`null` を値として許容しません。  依存関係プロパティの詳細については、「[依存関係プロパティの概要](../../../ocs/framework/wpf/advanced/dependency-properties-overview.md)」を参照してください。  
   
 ## 参照  
  <xref:System.Windows.DependencyProperty.UnsetValue>   
- [XAML の概要 \(WPF\)](../../../docs/framework/wpf/advanced/xaml-overview-wpf.md)   
- [マークアップ拡張機能と WPF XAML](../../../docs/framework/wpf/advanced/markup-extensions-and-wpf-xaml.md)
+ [XAML の概要 \(WPF\)](../../../ocs/framework/wpf/advanced/xaml-overview-wpf.md)   
+ [マークアップ拡張機能と WPF XAML](../../../ocs/framework/wpf/advanced/markup-extensions-and-wpf-xaml.md)

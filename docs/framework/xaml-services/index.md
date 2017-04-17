@@ -40,7 +40,7 @@ caps.handback.revision: 13
   
 -   XAML 型システムや型バッキングの評価方法に影響を与える `Lookup` 手法または `Invoker` 手法の使用。  
   
- 言語としての XAML の入門資料が必要な場合は、「[XAML の概要 \(WPF\)](../../../docs/framework/wpf/advanced/xaml-overview-wpf.md)」を参照してください。  このトピックでは、[!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)] と XAML マークアップおよび XAML 言語機能を初めて使用するユーザー向けに、XAML を解説します。  「[XAML language specification \(XAML 言語仕様\)](http://go.microsoft.com/fwlink/?LinkId=114525)」の入門資料も有用です。  
+ 言語としての XAML の入門資料が必要な場合は、「[XAML の概要 \(WPF\)](../../../ocs/framework/wpf/advanced/xaml-overview-wpf.md)」を参照してください。  このトピックでは、[!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)] と XAML マークアップおよび XAML 言語機能を初めて使用するユーザー向けに、XAML を解説します。  「[XAML language specification \(XAML 言語仕様\)](http://go.microsoft.com/fwlink/?LinkId=114525)」の入門資料も有用です。  
   
 ## .NET アーキテクチャの .NET Framework XAML サービスおよび System.Xaml  
  以前のバージョンの [!INCLUDE[TLA#tla_netframewk](../../../includes/tlasharptla-netframewk-md.md)] では、XAML 言語機能のサポートは [!INCLUDE[TLA#tla_netframewk](../../../includes/tlasharptla-netframewk-md.md)] \([!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)]、[!INCLUDE[TLA#tla_workflow](../../../includes/tlasharptla-workflow-md.md)]、および [!INCLUDE[vsindigo](../../../includes/vsindigo-md.md)]\) に構築されたフレームワークによって実装されていたので、使用されるフレームワークによって、それぞれの動作と API が異なっていました。  これには、XAML のパーサーとそのオブジェクト グラフの作成機構、組み込み XAML 言語、シリアル化のサポートなどが含まれます。  

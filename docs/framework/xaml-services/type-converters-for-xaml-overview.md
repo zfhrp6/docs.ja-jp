@@ -67,7 +67,7 @@ caps.handback.revision: 14
  <xref:System.ComponentModel.TypeConverter.CanConvertTo%2A> と <xref:System.ComponentModel.TypeConverter.CanConvertFrom%2A> は、サービスが <xref:System.ComponentModel.TypeConverter> の実装の機能を照会する時に使用されるサポート メソッドです。 これらのメソッドは、その型について、相当する変換メソッドをコンバーターがサポートしている場合に `true` を返すように実装する必要があります。 XAML の目的では、通常、<xref:System.String> 型であることを意味します。  
   
 ### カルチャ情報と XAML の型コンバーター  
- 各 <xref:System.ComponentModel.TypeConverter> 実装では、変換に対して有効な文字列を独自に解釈できます。また、パラメーターとして渡される型の説明を使用することも無視することもできます。 カルチャと XAML の型変換については、重要な考慮事項があります。ローカライズ可能な文字列を属性値として使用することは XAML でサポートされていますが、それらのローカライズ可能な文字列を、特定のカルチャ要件を指定して型コンバーターの入力として使用することはできません。 この制限の理由は、XAML 属性値の型コンバーターには、特定の言語に固定して \(`en-US` カルチャを使用して\) 実行しなければならない XAML 処理の動作がどうしても含まれるためです。 この制限の設計上の理由について詳しくは、XAML 言語仕様 \([\[MS\-XAML\]](http://go.microsoft.com/fwlink/?LinkId=114525)\) または「[WPF のグローバリゼーションおよびローカリゼーションの概要](../../../docs/framework/wpf/advanced/wpf-globalization-and-localization-overview.md)」をご覧ください。  
+ 各 <xref:System.ComponentModel.TypeConverter> 実装では、変換に対して有効な文字列を独自に解釈できます。また、パラメーターとして渡される型の説明を使用することも無視することもできます。 カルチャと XAML の型変換については、重要な考慮事項があります。ローカライズ可能な文字列を属性値として使用することは XAML でサポートされていますが、それらのローカライズ可能な文字列を、特定のカルチャ要件を指定して型コンバーターの入力として使用することはできません。 この制限の理由は、XAML 属性値の型コンバーターには、特定の言語に固定して \(`en-US` カルチャを使用して\) 実行しなければならない XAML 処理の動作がどうしても含まれるためです。 この制限の設計上の理由について詳しくは、XAML 言語仕様 \([\[MS\-XAML\]](http://go.microsoft.com/fwlink/?LinkId=114525)\) または「[WPF のグローバリゼーションおよびローカリゼーションの概要](../../../ocs/framework/wpf/advanced/wpf-globalization-and-localization-overview.md)」をご覧ください。  
   
  カルチャが問題となる例として、一部のカルチャで文字列形式の数値の小数点記号にピリオドではなくコンマが使用されることが挙げられます。 そのように使用した場合、区切り記号としてコンマを使用する多くの既存の型コンバーターで、動作が競合します。 周囲の XAML で `xml:lang` を使用してカルチャを指定しても、この問題は解決しません。  
   
@@ -117,4 +117,4 @@ caps.handback.revision: 14
 ## 参照  
  <xref:System.ComponentModel.TypeConverterAttribute>   
  [Type Converters and Markup Extensions for XAML](../../../docs/framework/xaml-services/type-converters-and-markup-extensions-for-xaml.md)   
- [XAML の概要 \(WPF\)](../../../docs/framework/wpf/advanced/xaml-overview-wpf.md)
+ [XAML の概要 \(WPF\)](../../../ocs/framework/wpf/advanced/xaml-overview-wpf.md)

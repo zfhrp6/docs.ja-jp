@@ -46,7 +46,7 @@ caps.handback.revision: 11
 ## 列挙型  
  列挙型には、XAML のネイティブ型変換の動作が設定されています。  XAML で指定した列挙定数の名前は、基になる列挙型に対して解決され、列挙値が XAML オブジェクト ライターに返されます。  
   
- XAML では、<xref:System.FlagsAttribute> を適用した列挙型のフラグ スタイルの使用方法をサポートしています。  詳細については、「[XAML 構文の詳細](../../../docs/framework/wpf/advanced/xaml-syntax-in-detail.md)」を参照してください   \(「[XAML 構文の詳細](../../../docs/framework/wpf/advanced/xaml-syntax-in-detail.md)」は WPF のユーザー向けに記述されていますが、このトピックの情報のほとんどは XAML に関連しており、特定の実装フレームワークには依存していません\)。  
+ XAML では、<xref:System.FlagsAttribute> を適用した列挙型のフラグ スタイルの使用方法をサポートしています。  詳細については、「[XAML 構文の詳細](../../../ocs/framework/wpf/advanced/xaml-syntax-in-detail.md)」を参照してください   \(「[XAML 構文の詳細](../../../ocs/framework/wpf/advanced/xaml-syntax-in-detail.md)」は WPF のユーザー向けに記述されていますが、このトピックの情報のほとんどは XAML に関連しており、特定の実装フレームワークには依存していません\)。  
   
 ## メンバー定義  
  型では、XAML の使用方法のメンバーを定義できます。  特定の型が XAML 対応でない場合でも、型で XAML 対応のメンバーを定義できます。  これは、CLR の継承によって可能になります。  メンバーを継承する一部の型で型としての XAML の使用方法をサポートし、基になる型の XAML の使用方法をそのメンバーがサポートしているか、そのメンバーでネイティブな XAML 構文を使用できる限り、そのメンバーは XAML 対応のメンバーです。  

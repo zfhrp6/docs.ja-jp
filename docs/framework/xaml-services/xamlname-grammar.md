@@ -64,7 +64,7 @@ Nl
 Number, Letter  
 ```  
   
- XAML では、プロパティとイベントで修飾される参照、およびアタッチされたメンバーで使用される、第 2 の文法 DottedXamlName が定義されています。  詳細については、「<xref:System.Windows.DependencyProperty>」および「[XAML の概要 \(WPF\)](../../../docs/framework/wpf/advanced/xaml-overview-wpf.md)」を参照してください。  
+ XAML では、プロパティとイベントで修飾される参照、およびアタッチされたメンバーで使用される、第 2 の文法 DottedXamlName が定義されています。  詳細については、「<xref:System.Windows.DependencyProperty>」および「[XAML の概要 \(WPF\)](../../../ocs/framework/wpf/advanced/xaml-overview-wpf.md)」を参照してください。  
   
  DottedXamlName 型の文字列値は、次の文法に準拠している必要があります。  
   

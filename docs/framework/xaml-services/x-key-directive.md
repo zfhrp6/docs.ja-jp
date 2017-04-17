@@ -55,7 +55,7 @@ XAML で定義されたディクショナリで作成および参照される要
 |`markupExtensionUsage`|マークアップ拡張機能の区切り記号 {} 内では、キーとして使用するオブジェクトを提供するマークアップ拡張機能の使用方法です。  「解説」を参照してください。|  
   
 ## 解説  
- `x:Key` は XAML のリソース ディクショナリの概念をサポートしています。  言語としての XAML ではリソース ディクショナリの実装は定義されていません。特定の UI フレーム ワークによって定義されています。  WPF での XAML リソース ディクショナリの実装方法の詳細については、「[XAML リソース](../../../docs/framework/wpf/advanced/xaml-resources.md)」を参照してください。  
+ `x:Key` は XAML のリソース ディクショナリの概念をサポートしています。  言語としての XAML ではリソース ディクショナリの実装は定義されていません。特定の UI フレーム ワークによって定義されています。  WPF での XAML リソース ディクショナリの実装方法の詳細については、「[XAML リソース](../../../ocs/framework/wpf/advanced/xaml-resources.md)」を参照してください。  
   
  XAML 2006 および WPF では、`x:Key` は属性として示す必要があります。  文字列ではないキーも使用できますが、文字列ではない値を属性形式で提供するためには、マークアップ拡張機能を使用する必要があります。  XAML 2009 を使用する場合は、`x:Key` を要素として指定し、マークアップ拡張機能の仲介を必要とすることなく、文字列以外のオブジェクトの種類をキーとするディクショナリを明示的にサポートすることができます。  このトピックの「XAML 2009」のセクションを参照してください。  解説セクションの残りの部分では、XAML 2006 の実装について説明します。  
   
@@ -70,19 +70,19 @@ XAML で定義されたディクショナリで作成および参照される要
   
 -   一部の WPF 型は、ディクショナリの使用に対して暗黙のキーを宣言します。  たとえば、<xref:System.Windows.Style.TargetType%2A> が設定された <xref:System.Windows.Style> や、<xref:System.Windows.DataTemplate.DataType%2A> が設定された <xref:System.Windows.DataTemplate> は、<xref:System.Windows.ResourceDictionary> に格納して、暗黙のキーを使用できます。  
   
--   WPF は、マージされたリソース ディクショナリの概念をサポートしています。  キーは、マージされたディクショナリ間で共有できます。また、共有されたキーの動作には、<xref:System.Windows.FrameworkContentElement.FindResource%2A> を使用してアクセスできます。  詳細については、「[マージされたリソース ディクショナリ](../../../docs/framework/wpf/advanced/merged-resource-dictionaries.md)」を参照してください。  
+-   WPF は、マージされたリソース ディクショナリの概念をサポートしています。  キーは、マージされたディクショナリ間で共有できます。また、共有されたキーの動作には、<xref:System.Windows.FrameworkContentElement.FindResource%2A> を使用してアクセスできます。  詳細については、「[マージされたリソース ディクショナリ](../../../ocs/framework/wpf/advanced/merged-resource-dictionaries.md)」を参照してください。  
   
  通常、WPF XAML の実装およびアプリケーション モデルでは、キーの一意性が XAML マークアップ コンパイラによってチェックされることはありません。  その代わり、`x:Key` 値が指定されていない場合や一意でない場合は、読み込み時に XAML パーサー エラーが発生します。  ただし、WPF のディクショナリに対する [!INCLUDE[vs_current_short](../../../includes/vs-current-short-md.md)] 処理によって、このようなエラーの多くは、デザイン フェーズで指摘されます。  
   
- ここに示す構文において、<xref:System.Windows.ResourceDictionary> オブジェクトは WPF XAML プロセッサが <xref:System.Windows.FrameworkElement.Resources%2A> コレクションを取得するためのコレクションを生成する方法を暗黙的に決定することに注意してください。  <xref:System.Windows.ResourceDictionary> は、通常はマークアップで要素として明示的に指定されませんが、わかりやすくするために必要に応じて明示的に指定することもできます \(その場合、このオブジェクトは、<xref:System.Windows.FrameworkElement.Resources%2A> プロパティ要素とディクショナリに設定される項目間のコレクション オブジェクト要素になります\)。  コレクション オブジェクトがマークアップでほぼ必ず暗黙の要素になる理由の詳細については、「[XAML 構文の詳細](../../../docs/framework/wpf/advanced/xaml-syntax-in-detail.md)」を参照してください。  
+ ここに示す構文において、<xref:System.Windows.ResourceDictionary> オブジェクトは WPF XAML プロセッサが <xref:System.Windows.FrameworkElement.Resources%2A> コレクションを取得するためのコレクションを生成する方法を暗黙的に決定することに注意してください。  <xref:System.Windows.ResourceDictionary> は、通常はマークアップで要素として明示的に指定されませんが、わかりやすくするために必要に応じて明示的に指定することもできます \(その場合、このオブジェクトは、<xref:System.Windows.FrameworkElement.Resources%2A> プロパティ要素とディクショナリに設定される項目間のコレクション オブジェクト要素になります\)。  コレクション オブジェクトがマークアップでほぼ必ず暗黙の要素になる理由の詳細については、「[XAML 構文の詳細](../../../ocs/framework/wpf/advanced/xaml-syntax-in-detail.md)」を参照してください。  
   
  WPF XAML 実装では、リソース ディクショナリ キーの処理は、<xref:System.Windows.ResourceKey> 抽象クラスによって定義されます。  ただし、WPF XAML プロセッサは、使用方法に基づいてキーごとに別の基になる拡張型を生成します。  たとえば、<xref:System.Windows.DataTemplate> または任意の派生クラスのキーは個別に処理され、異なる <xref:System.Windows.DataTemplateKey> オブジェクトを生成します。  
   
- 基本的な XAML 定義では、キーと名前で異なるディレクティブと言語要素 \(`x:Key` と `x:Name`\) が使用されます。  また、キーと名前は、それらの概念の WPF 定義およびアプリケーションにより異なる状況において使用されます。  詳細については、「[WPF XAML 名前スコープ](../../../docs/framework/wpf/advanced/wpf-xaml-namescopes.md)」を参照してください。  
+ 基本的な XAML 定義では、キーと名前で異なるディレクティブと言語要素 \(`x:Key` と `x:Name`\) が使用されます。  また、キーと名前は、それらの概念の WPF 定義およびアプリケーションにより異なる状況において使用されます。  詳細については、「[WPF XAML 名前スコープ](../../../ocs/framework/wpf/advanced/wpf-xaml-namescopes.md)」を参照してください。  
   
- 既に説明したように、キー値はマークアップ拡張機能によって指定され、文字列値以外になる場合があります。  WPF シナリオの例としては、`x:Key` の値が [ComponentResourceKey](../../../docs/framework/wpf/advanced/componentresourcekey-markup-extension.md) になる場合が挙げられます。  特定のコントロールでは、スタイルを完全に置き換えることなく、そのコントロールの外観と動作の一部に影響を与えるカスタム スタイル リソースの型に対応するスタイル キーが公開されます。  このようなキーの例として、<xref:System.Windows.Controls.ToolBar.ButtonStyleKey%2A> が挙げられます。  
+ 既に説明したように、キー値はマークアップ拡張機能によって指定され、文字列値以外になる場合があります。  WPF シナリオの例としては、`x:Key` の値が [ComponentResourceKey](../../../ocs/framework/wpf/advanced/componentresourcekey-markup-extension.md) になる場合が挙げられます。  特定のコントロールでは、スタイルを完全に置き換えることなく、そのコントロールの外観と動作の一部に影響を与えるカスタム スタイル リソースの型に対応するスタイル キーが公開されます。  このようなキーの例として、<xref:System.Windows.Controls.ToolBar.ButtonStyleKey%2A> が挙げられます。  
   
- WPF のマージされたディクショナリ機能では、キーの一意性およびキーの検索動作について考慮を要する点があります。  詳細については、「[マージされたリソース ディクショナリ](../../../docs/framework/wpf/advanced/merged-resource-dictionaries.md)」を参照してください。  
+ WPF のマージされたディクショナリ機能では、キーの一意性およびキーの検索動作について考慮を要する点があります。  詳細については、「[マージされたリソース ディクショナリ](../../../ocs/framework/wpf/advanced/merged-resource-dictionaries.md)」を参照してください。  
   
 ## XAML 2009  
  XAML 2009 は、`x:Key` を常に属性形式で提供するという制限を緩和します。  
@@ -118,6 +118,6 @@ XAML で定義されたディクショナリで作成および参照される要
  Silverlight 用の `x:Key` に関しては、別途ドキュメントが用意されています。  詳細については、「[XAML 名前空間 \(X:\) 言語機能 \(Silverlight\)](http://go.microsoft.com/fwlink/?LinkId=199081)」を参照してください。  
   
 ## 参照  
- [XAML リソース](../../../docs/framework/wpf/advanced/xaml-resources.md)   
- [リソースとコード](../../../docs/framework/wpf/advanced/resources-and-code.md)   
- [StaticResource のマークアップ拡張機能](../../../docs/framework/wpf/advanced/staticresource-markup-extension.md)
+ [XAML リソース](../../../ocs/framework/wpf/advanced/xaml-resources.md)   
+ [リソースとコード](../../../ocs/framework/wpf/advanced/resources-and-code.md)   
+ [StaticResource のマークアップ拡張機能](../../../ocs/framework/wpf/advanced/staticresource-markup-extension.md)

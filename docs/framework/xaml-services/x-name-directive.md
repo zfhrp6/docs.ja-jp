@@ -42,7 +42,7 @@ XAML で定義された XAML 名前スコープ内の要素を一意に識別し
 ## 解説  
  フレームワークの基になるプログラミング モデルに適用後の `x:Name` は、コンストラクターによって返されるオブジェクト参照またはインスタンスを保持する変数と等価と見なすことができます。  
   
- `x:Name` ディレクティブの使用上、その値は、XAML 名前スコープ内で一意である必要があります。  既定では、.NET Framework XAML サービス API によって使用された場合、プライマリ XAML 名前スコープは、単一の XAML 稼動環境の XAML ルート要素で定義され、その XAML 稼動環境内の要素を含みます。  特定のシナリオに対応するために、フレームワークによって追加の個別の \(単一の XAML 稼動環境内に出現する\) XAML 名前スコープを定義できます。  たとえば、WPF では、新しい XAML 名前スコープも、その XAML 稼動環境で定義される任意のテンプレートによって定義および作成されます。  XAML 名前スコープの詳細 \(WPF に関して記述されていますが、多くの XAML 名前スコープの概念にも関連しています\) については、「[WPF XAML 名前スコープ](../../../docs/framework/wpf/advanced/wpf-xaml-namescopes.md)」を参照してください。  
+ `x:Name` ディレクティブの使用上、その値は、XAML 名前スコープ内で一意である必要があります。  既定では、.NET Framework XAML サービス API によって使用された場合、プライマリ XAML 名前スコープは、単一の XAML 稼動環境の XAML ルート要素で定義され、その XAML 稼動環境内の要素を含みます。  特定のシナリオに対応するために、フレームワークによって追加の個別の \(単一の XAML 稼動環境内に出現する\) XAML 名前スコープを定義できます。  たとえば、WPF では、新しい XAML 名前スコープも、その XAML 稼動環境で定義される任意のテンプレートによって定義および作成されます。  XAML 名前スコープの詳細 \(WPF に関して記述されていますが、多くの XAML 名前スコープの概念にも関連しています\) については、「[WPF XAML 名前スコープ](../../../ocs/framework/wpf/advanced/wpf-xaml-namescopes.md)」を参照してください。  
   
  通常、`x:Name` は、`x:Key` も使用する状況には適用しないでください。  特定の既存フレームワークによる XAML 実装では、`x:Key` と `x:Name` の間に代替の概念を導入していますが、それは推奨されるプラクティスではありません。  .NET Framework XAML サービスでは、<xref:System.Windows.Markup.INameScope> や <xref:System.Windows.Markup.DictionaryKeyPropertyAttribute> などの名前\/キー情報を処理するときに、このような代替概念はサポートしていません。  
   
@@ -55,9 +55,9 @@ XAML で定義された XAML 名前スコープ内の要素を一意に識別し
 ## WPF の使用上の注意  
  [!INCLUDE[TLA2#tla_winclient](../../../includes/tla2sharptla-winclient-md.md)] アプリケーションの標準のビルド構成では、XAML、部分クラス、および分離コードを使用します。ここで指定した `x:Name` は、[!INCLUDE[TLA2#tla_xaml](../../../includes/tla2sharptla-xaml-md.md)] がマークアップ コンパイル ビルド タスクによって処理されるときに、基になるコードで生成されるフィールドの名前となり、そのフィールドはオブジェクトへの参照を保持します。作成されるフィールドは、既定では内部型です。  [x:FieldModifier 属性](../../../docs/framework/xaml-services/x-fieldmodifier-directive.md)を指定することによって、フィールド アクセスを変更できます。  WPF および Silverlight では、マークアップ コンパイルによって、まず部分クラスにフィールドが定義され、名前が付けられます。ただし、初期状態では値は空です。  次に、`InitializeComponent` という名前で生成されたメソッドがクラスのコンストラクター内から呼び出されます。  `InitializeComponent` は、一連の `FindName` 呼び出しで構成されます。このとき、部分クラスの XAML 定義部に存在する `x:Name` の値が、それぞれの呼び出しの入力文字列として使用されます。  その戻り値が同名のフィールド参照に代入され、XAML の解析に基づいて作成されたオブジェクトがフィールドの値として設定されます。  `InitializeComponent` が実行されることで、XAML で定義されたオブジェクトの参照が必要になったときに、`FindName` を明示的に呼び出さなくても、いつでも `x:Name`\/フィールド名を直接使用して、ランタイム オブジェクト グラフを参照できるようになります。  
   
- [!INCLUDE[TLA#tla_visualb](../../../includes/tlasharptla-visualb-md.md)] のターゲットを使用し `Page` ビルド アクションを持つ XAML ファイルを含む WPF アプリケーションでは、個別の参照プロパティはコンパイル時に作成されます。このコンパイルでは、`x:Name` を持つすべての要素に `WithEvents` キーワードが追加され、イベント ハンドラー デリゲートの `Handles` 構文をサポートします。  このプロパティは常にパブリックです。  詳細については、「[Visual Basic と WPF のイベント処理](../../../docs/framework/wpf/advanced/visual-basic-and-wpf-event-handling.md)」を参照してください。  
+ [!INCLUDE[TLA#tla_visualb](../../../includes/tlasharptla-visualb-md.md)] のターゲットを使用し `Page` ビルド アクションを持つ XAML ファイルを含む WPF アプリケーションでは、個別の参照プロパティはコンパイル時に作成されます。このコンパイルでは、`x:Name` を持つすべての要素に `WithEvents` キーワードが追加され、イベント ハンドラー デリゲートの `Handles` 構文をサポートします。  このプロパティは常にパブリックです。  詳細については、「[Visual Basic と WPF のイベント処理](../../../ocs/framework/wpf/advanced/visual-basic-and-wpf-event-handling.md)」を参照してください。  
   
- WPF XAML プロセッサは、`x:Name` を使用して、読み込み時に XAML 名前スコープに名前を登録します。これは、そのページが、ビルド アクションによってマークアップ コンパイルされない場合 \(たとえば、リソース ディクショナリの Loose XAML\) にも当てはまります。  このような動作になっているのは、<xref:System.Windows.Data.Binding.ElementName%2A> バインディングに `x:Name` が必要になる場合があるためです。  詳細については、「[データ バインドの概要](../../../docs/framework/wpf/data/data-binding-overview.md)」を参照してください。  
+ WPF XAML プロセッサは、`x:Name` を使用して、読み込み時に XAML 名前スコープに名前を登録します。これは、そのページが、ビルド アクションによってマークアップ コンパイルされない場合 \(たとえば、リソース ディクショナリの Loose XAML\) にも当てはまります。  このような動作になっているのは、<xref:System.Windows.Data.Binding.ElementName%2A> バインディングに `x:Name` が必要になる場合があるためです。  詳細については、「[データ バインドの概要](../../../ocs/framework/wpf/data/data-binding-overview.md)」を参照してください。  
   
  前述のとおり、`x:Name` \(または `Name`\) は、`x:Key` も使用する状況では適用しないでください。  [!INCLUDE[TLA2#tla_winclient](../../../includes/tla2sharptla-winclient-md.md)] <xref:System.Windows.ResourceDictionary> は、この動作を適用する方法として、自らを XAML 名前スコープとして定義するにもかかわらず、<xref:System.Windows.Markup.INameScope> API については Not Implemented または null 値を返すという特殊な動作をするためです。  XAML で定義された <xref:System.Windows.ResourceDictionary> 内に WPF XAML パーサーが `Name` または `x:Name` を検出した場合、いずれの XAML 名前スコープにも名前は追加されません。  その名前を XAML 名前スコープから見つけようとしても、`FindName` メソッドからは有効な結果は返されません。  
   
@@ -76,4 +76,4 @@ XAML で定義された XAML 名前スコープ内の要素を一意に識別し
 ## 参照  
  <xref:System.Windows.FrameworkElement.Name%2A?displayProperty=fullName>   
  <xref:System.Windows.FrameworkContentElement.Name%2A?displayProperty=fullName>   
- [WPF のツリー](../../../docs/framework/wpf/advanced/trees-in-wpf.md)
+ [WPF のツリー](../../../ocs/framework/wpf/advanced/trees-in-wpf.md)

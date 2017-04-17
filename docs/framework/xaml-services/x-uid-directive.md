@@ -46,9 +46,9 @@ caps.handback.revision: 12
  フレームワークでは、属性 <xref:System.Windows.Markup.UidPropertyAttribute> を定義元の型に適用することで、オブジェクト モデルに含まれる特定のプロパティを `x:Uid` のエイリアスとして指定できます。  フレームワークで特定のプロパティを指定する場合、同じオブジェクトで `x:Uid` とエイリアス化したメンバーの両方を指定することは無効です。  `x:Uid` とエイリアス化したメンバーの両方を指定した場合、.NET Framework XAML サービス API によって通常、このケースでは <xref:System.Xaml.XamlDuplicateMemberException> がスローされます。  
   
 ## WPF の使用上の注意  
- WPF ローカリゼーションのプロセスおよび XAML の BAML 形式における `x:Uid` の役割の詳細については、「[WPF のグローバリゼーション](../../../docs/framework/wpf/advanced/globalization-for-wpf.md)」または「<xref:System.Windows.Markup.Localizer.BamlLocalizableResourceKey.Uid%2A>」を参照してください。  
+ WPF ローカリゼーションのプロセスおよび XAML の BAML 形式における `x:Uid` の役割の詳細については、「[WPF のグローバリゼーション](../../../ocs/framework/wpf/advanced/globalization-for-wpf.md)」または「<xref:System.Windows.Markup.Localizer.BamlLocalizableResourceKey.Uid%2A>」を参照してください。  
   
 ## 参照  
  <xref:System.Windows.Markup.Localizer.BamlLocalizableResourceKey.Uid%2A>   
  <xref:Microsoft.Build.Tasks.Windows.UidManager>   
- [WPF のグローバリゼーション](../../../docs/framework/wpf/advanced/globalization-for-wpf.md)
+ [WPF のグローバリゼーション](../../../ocs/framework/wpf/advanced/globalization-for-wpf.md)

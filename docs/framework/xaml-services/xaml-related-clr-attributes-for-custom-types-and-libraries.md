@@ -134,7 +134,7 @@ caps.handback.revision: 8
   
  型コンバーターの実装を参照し、<xref:System.ComponentModel.TypeConverterAttribute> 属性を型に適用します。  クラス、構造体、およびインターフェイスに対して、XAML の型コンバーターを定義できます。  列挙体に対しては、型変換がネイティブで有効になっているため、型変換を提供する必要はありません。  
   
- 型コンバーターは、マークアップで属性または初期化テキストに使用される文字列を目的の型に変換できる必要があります。  詳細については、「[TypeConverters および XAML](../../../docs/framework/wpf/advanced/typeconverters-and-xaml.md)」を参照してください。  
+ 型コンバーターは、マークアップで属性または初期化テキストに使用される文字列を目的の型に変換できる必要があります。  詳細については、「[TypeConverters および XAML](../../../ocs/framework/wpf/advanced/typeconverters-and-xaml.md)」を参照してください。  
   
  XAML の型コンバーターの動作は、型のすべての値を適用する代わりに、特定のプロパティを対象にすることもできます。  このケースでは、<xref:System.ComponentModel.TypeConverterAttribute> をプロパティ定義 \(特定の `get` および `set` 定義以外の定義\) に適用します。  
   

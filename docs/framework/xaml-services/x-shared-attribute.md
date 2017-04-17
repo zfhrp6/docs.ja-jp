@@ -40,7 +40,7 @@ caps.handback.revision: 16
   
  <xref:System.Windows.FrameworkElement.FindResource%2A> などのリソース API をとおして返されるオブジェクトを変更するか、または <xref:System.Windows.ResourceDictionary> 内で直接オブジェクトを変更すると、元のリソースが変更されます。  そのリソースへの参照が動的リソース参照であった場合、そのリソースのコンシューマーは変更されたリソースを取得するようになります。  
   
- リソースへの参照が静的リソース参照であった場合は、[!INCLUDE[TLA2#tla_xaml](../../../includes/tla2sharptla-xaml-md.md)] 処理後にリソースを変更しても無意味です。  静的リソース参照と動的リソース参照の詳細については、「[XAML リソース](../../../docs/framework/wpf/advanced/xaml-resources.md)」を参照してください。  
+ リソースへの参照が静的リソース参照であった場合は、[!INCLUDE[TLA2#tla_xaml](../../../includes/tla2sharptla-xaml-md.md)] 処理後にリソースを変更しても無意味です。  静的リソース参照と動的リソース参照の詳細については、「[XAML リソース](../../../ocs/framework/wpf/advanced/xaml-resources.md)」を参照してください。  
   
  `x:Shared="true"` は既定の設定であるため、これを明示的に指定することはあまりありません。  WPF オブジェクト モデルには `x:Shared` と同等の直接的なコードはありません。そのようなコードは、XAML の使用方法でのみ指定でき、既定の WPF 動作によって、または .NET Framework XAML サービスとその XAML リーダーを使用して処理される場合は読み込みパス上の中間 XAML ノード ストリーム内で処理されることが必要です。  
   
@@ -58,5 +58,5 @@ caps.handback.revision: 16
   
 ## 参照  
  <xref:System.Windows.ResourceDictionary>   
- [XAML リソース](../../../docs/framework/wpf/advanced/xaml-resources.md)   
- [基本要素](../../../docs/framework/wpf/advanced/base-elements.md)
+ [XAML リソース](../../../ocs/framework/wpf/advanced/xaml-resources.md)   
+ [基本要素](../../../ocs/framework/wpf/advanced/base-elements.md)

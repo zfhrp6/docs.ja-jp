@@ -68,7 +68,7 @@ caps.handback.revision: 27
 ## WPF の使用上の注意  
   
 ### 既定の XAML 名前空間および型の割り当て  
- WPF プログラミングの既定の XAML 名前空間には、通常の XAML シナリオで必要なほとんどの XAML 型が含まれるため、通常は、XAML 型値を参照するときにプレフィックスを回避できます。  カスタム アセンブリ内の型を参照している場合、または WPF アセンブリ内に存在する型ではあるが、その型がある CLR 名前空間が既定の XAML 名前空間に割り当てられていない場合は、プレフィックスの割り当てが必要になることがあります。  プレフィックス、XML 名前空間、および CLR 名前空間の割り当ての詳細については、「[XAML 名前空間および WPF XAML の名前空間の割り当て](../../../docs/framework/wpf/advanced/xaml-namespaces-and-namespace-mapping-for-wpf-xaml.md)」を参照してください。  
+ WPF プログラミングの既定の XAML 名前空間には、通常の XAML シナリオで必要なほとんどの XAML 型が含まれるため、通常は、XAML 型値を参照するときにプレフィックスを回避できます。  カスタム アセンブリ内の型を参照している場合、または WPF アセンブリ内に存在する型ではあるが、その型がある CLR 名前空間が既定の XAML 名前空間に割り当てられていない場合は、プレフィックスの割り当てが必要になることがあります。  プレフィックス、XML 名前空間、および CLR 名前空間の割り当ての詳細については、「[XAML 名前空間および WPF XAML の名前空間の割り当て](../../../ocs/framework/wpf/advanced/xaml-namespaces-and-namespace-mapping-for-wpf-xaml.md)」を参照してください。  
   
 ### 文字列としての型名をサポートする型プロパティ  
  WPF は、`x:Type` マークアップ拡張機能を使用する必要なく、型 <xref:System.Type> の一部のプロパティの値を指定できる技術をサポートしています。  代わりに、型に名前を付ける文字列として値を指定できます。  この例としては、<xref:System.Windows.Controls.ControlTemplate.TargetType%2A?displayProperty=fullName> および <xref:System.Windows.Style.TargetType%2A?displayProperty=fullName> があります。  型コンバーターとマークアップ拡張機能は、どちらもこの動作をサポートしていません。  これは、<xref:System.Windows.FrameworkElementFactory> を通じて実装される遅延動作です。  
@@ -88,6 +88,6 @@ caps.handback.revision: 27
   
 ## 参照  
  <xref:System.Windows.Style>   
- [スタイルとテンプレート](../../../docs/framework/wpf/controls/styling-and-templating.md)   
- [XAML の概要 \(WPF\)](../../../docs/framework/wpf/advanced/xaml-overview-wpf.md)   
- [マークアップ拡張機能と WPF XAML](../../../docs/framework/wpf/advanced/markup-extensions-and-wpf-xaml.md)
+ [スタイルとテンプレート](../../../ocs/framework/wpf/controls/styling-and-templating.md)   
+ [XAML の概要 \(WPF\)](../../../ocs/framework/wpf/advanced/xaml-overview-wpf.md)   
+ [マークアップ拡張機能と WPF XAML](../../../ocs/framework/wpf/advanced/markup-extensions-and-wpf-xaml.md)

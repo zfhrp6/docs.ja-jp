@@ -52,11 +52,11 @@ XML データ アイランドを XAML 稼動環境内に配置できるように
 ## WPF の使用上の注意  
  The `x:XData` オブジェクトは主に、<xref:System.Windows.Data.XmlDataProvider> の子オブジェクトとして使用されるか、<xref:System.Windows.Data.XmlDataProvider.XmlSerializer%2A?displayProperty=fullName> プロパティ \(XAML では、通常、プロパティ要素構文で表される\) の子オブジェクトとして使用されます。  
   
- 一般に、データ アイランド内では、基本 XML 名前空間を新しい既定の XML 名前空間として再定義する必要があります \(空の文字列に設定\)。  この方法は、単純なデータ アイランドの場合には最も簡単です。データを参照やバインドに <xref:System.Windows.Data.Binding.XPath%2A> 式を使用することでプレフィックスが不要になるからです。  より複雑なデータ アイランドでは、データのプレフィックスを複数定義し、ルートにある XML 名前空間に特定のプレフィックスを使用するという方法を選択できます。  この場合は、すべての <xref:System.Windows.Data.Binding.XPath%2A> 式参照において、名前空間にマップされた適切なプレフィックスを付ける必要があります。  詳細については、「[データ バインドの概要](../../../docs/framework/wpf/data/data-binding-overview.md)」を参照してください。  
+ 一般に、データ アイランド内では、基本 XML 名前空間を新しい既定の XML 名前空間として再定義する必要があります \(空の文字列に設定\)。  この方法は、単純なデータ アイランドの場合には最も簡単です。データを参照やバインドに <xref:System.Windows.Data.Binding.XPath%2A> 式を使用することでプレフィックスが不要になるからです。  より複雑なデータ アイランドでは、データのプレフィックスを複数定義し、ルートにある XML 名前空間に特定のプレフィックスを使用するという方法を選択できます。  この場合は、すべての <xref:System.Windows.Data.Binding.XPath%2A> 式参照において、名前空間にマップされた適切なプレフィックスを付ける必要があります。  詳細については、「[データ バインドの概要](../../../ocs/framework/wpf/data/data-binding-overview.md)」を参照してください。  
   
  技術的には、`x:XData` は <xref:System.Xml.Serialization.IXmlSerializable> 型の任意のプロパティのコンテンツとして使用できます。  ただし、よく使用されているのは <xref:System.Windows.Data.XmlDataProvider.XmlSerializer%2A?displayProperty=fullName> の実装のみです。  
   
 ## 参照  
  <xref:System.Windows.Data.XmlDataProvider>   
- [データ バインドの概要](../../../docs/framework/wpf/data/data-binding-overview.md)   
- [バインドのマークアップ拡張機能](../../../docs/framework/wpf/advanced/binding-markup-extension.md)
+ [データ バインドの概要](../../../ocs/framework/wpf/data/data-binding-overview.md)   
+ [バインドのマークアップ拡張機能](../../../ocs/framework/wpf/advanced/binding-markup-extension.md)

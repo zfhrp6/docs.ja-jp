@@ -51,4 +51,4 @@ caps.handback.revision: 15
  要素が <xref:System.Windows.FrameworkElement> または <xref:System.Windows.FrameworkContentElement> の派生クラスの場合は、`xml:lang` 属性の代わりに、同等の <xref:System.Windows.FrameworkElement.Language%2A> 依存関係プロパティを使用できます。 別途設定されない限り、<xref:System.Windows.FrameworkElement.Language%2A> プロパティの値は既定で "en\-US" となります。このプロパティの値は、このプロパティを通して、または `xml:lang` 属性を処理することによって設定されます。  
   
 ## 参照  
- [WPF のグローバリゼーション](../../../docs/framework/wpf/advanced/globalization-for-wpf.md)
+ [WPF のグローバリゼーション](../../../ocs/framework/wpf/advanced/globalization-for-wpf.md)

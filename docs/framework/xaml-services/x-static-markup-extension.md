@@ -79,9 +79,9 @@ caps.handback.revision: 25
   
 -   カスタム アセンブリの型を参照している場合。  
   
--   WPF アセンブリ内に存在する型を参照しているが、その型が WPF の既定の XAML 名前空間の一部になるように割り当てられた名前空間以外の CLR 名前空間内にある場合。  WPF の既定の XAML 名前空間への CLR 名前空間の割り当ては、各種 WPF アセンブリ \(この概念の詳細については、「[XAML 名前空間および WPF XAML の名前空間の割り当て](../../../docs/framework/wpf/advanced/xaml-namespaces-and-namespace-mapping-for-wpf-xaml.md)」を参照\) の定義に基づいて実行されます。  未割り当ての CLR 名前空間は、その CLR 名前空間の大部分が、<xref:System.Windows.Threading> など、通常、XAML では使用されないクラス定義で構成される場合に存在できます。  
+-   WPF アセンブリ内に存在する型を参照しているが、その型が WPF の既定の XAML 名前空間の一部になるように割り当てられた名前空間以外の CLR 名前空間内にある場合。  WPF の既定の XAML 名前空間への CLR 名前空間の割り当ては、各種 WPF アセンブリ \(この概念の詳細については、「[XAML 名前空間および WPF XAML の名前空間の割り当て](../../../ocs/framework/wpf/advanced/xaml-namespaces-and-namespace-mapping-for-wpf-xaml.md)」を参照\) の定義に基づいて実行されます。  未割り当ての CLR 名前空間は、その CLR 名前空間の大部分が、<xref:System.Windows.Threading> など、通常、XAML では使用されないクラス定義で構成される場合に存在できます。  
   
- WPF でのプレフィックスおよび XAML 名前空間の使用方法の詳細については、「[XAML 名前空間および WPF XAML の名前空間の割り当て](../../../docs/framework/wpf/advanced/xaml-namespaces-and-namespace-mapping-for-wpf-xaml.md)」を参照してください。  
+ WPF でのプレフィックスおよび XAML 名前空間の使用方法の詳細については、「[XAML 名前空間および WPF XAML の名前空間の割り当て](../../../ocs/framework/wpf/advanced/xaml-namespaces-and-namespace-mapping-for-wpf-xaml.md)」を参照してください。  
   
 ## 参照  
  [x:Type Markup Extension](../../../docs/framework/xaml-services/x-type-markup-extension.md)   

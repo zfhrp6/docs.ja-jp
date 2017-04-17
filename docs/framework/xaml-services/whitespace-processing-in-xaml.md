@@ -82,6 +82,6 @@ XAML の言語規則では、空白の意味は [!INCLUDE[TLA2#tla_xaml](../../.
  また、フロー ドキュメント モデルで改行を意味する特定のインライン要素では、空白が意味を持つコレクションでも、余分なスペースを挿入しないように注意する必要があります。 たとえば、<xref:System.Windows.Documents.LineBreak> 要素の用途は [!INCLUDE[TLA2#tla_html](../../../includes/tla2sharptla-html-md.md)] の \<BR\/\> タグと同じですが、マークアップの読みやすさのために、<xref:System.Windows.Documents.LineBreak> は通常、改行を入れて後続のテキストから区切られます。 その改行は、正規化されて後続の行の先頭のスペースになってはなりません。 その動作を有効にするために、<xref:System.Windows.Documents.LineBreak> 要素のクラス定義は <xref:System.Windows.Markup.TrimSurroundingWhitespaceAttribute> を適用します。これは、<xref:System.Windows.Documents.LineBreak> を囲む空白を常にトリミングするという意味に [!INCLUDE[TLA2#tla_xaml](../../../includes/tla2sharptla-xaml-md.md)] プロセッサによって解釈されます。  
   
 ## 参照  
- [XAML の概要 \(WPF\)](../../../docs/framework/wpf/advanced/xaml-overview-wpf.md)   
+ [XAML の概要 \(WPF\)](../../../ocs/framework/wpf/advanced/xaml-overview-wpf.md)   
  [XML Character Entities and XAML](../../../docs/framework/xaml-services/xml-character-entities-and-xaml.md)   
  [xml:space Handling in XAML](../../../docs/framework/xaml-services/xml-space-handling-in-xaml.md)

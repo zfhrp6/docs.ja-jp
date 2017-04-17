@@ -62,7 +62,7 @@ caps.handback.revision: 21
   
 ## 参照  
  [x:Class Directive](../../../docs/framework/xaml-services/x-class-directive.md)   
- [WPF における分離コードと XAML](../../../docs/framework/wpf/advanced/code-behind-and-xaml-in-wpf.md)   
+ [WPF における分離コードと XAML](../../../ocs/framework/wpf/advanced/code-behind-and-xaml-in-wpf.md)   
  [x:FieldModifier Directive](../../../docs/framework/xaml-services/x-fieldmodifier-directive.md)   
- [セキュリティ \(WPF\)](../../../docs/framework/wpf/security-wpf.md)   
+ [セキュリティ \(WPF\)](../../../ocs/framework/wpf/security-wpf.md)   
  [Types Migrated from WPF to System.Xaml](../../../docs/framework/xaml-services/types-migrated-from-wpf-to-system-xaml.md)

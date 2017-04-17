@@ -74,8 +74,8 @@ caps.handback.revision: 20
   
  `</x:Array>`  
   
- 配列の要素として使用されるカスタム型については、クラスは XAML でオブジェクト要素としてインスタンス化できるという要件もサポートする必要があります。  詳細については、「[WPF における XAML とカスタム クラス](../../../docs/framework/wpf/advanced/xaml-and-custom-classes-for-wpf.md)」を参照してください。  
+ 配列の要素として使用されるカスタム型については、クラスは XAML でオブジェクト要素としてインスタンス化できるという要件もサポートする必要があります。  詳細については、「[WPF における XAML とカスタム クラス](../../../ocs/framework/wpf/advanced/xaml-and-custom-classes-for-wpf.md)」を参照してください。  
   
 ## 参照  
- [マークアップ拡張機能と WPF XAML](../../../docs/framework/wpf/advanced/markup-extensions-and-wpf-xaml.md)   
+ [マークアップ拡張機能と WPF XAML](../../../ocs/framework/wpf/advanced/markup-extensions-and-wpf-xaml.md)   
  [Types Migrated from WPF to System.Xaml](../../../docs/framework/xaml-services/types-migrated-from-wpf-to-system-xaml.md)
