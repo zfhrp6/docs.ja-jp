@@ -282,7 +282,7 @@ caps.handback.revision: 24
   
 <a name="Events"></a>   
 ### イベント  
- イベントは、応答可能な事象 \(イベント\) を定義し、イベントへのサブスクライブ、イベントからのサブスクライブ解除、およびイベントの発生用のメソッドを定義します。  多くの場合、イベントは、他の型に対して状態の変更を通知するために使用されます。  詳細については、「[イベント](../../../docs/standard/events/index.md)」を参照してください。  
+ イベントは、応答可能な事象 \(イベント\) を定義し、イベントへのサブスクライブ、イベントからのサブスクライブ解除、およびイベントの発生用のメソッドを定義します。  多くの場合、イベントは、他の型に対して状態の変更を通知するために使用されます。  詳細については、「[イベント](../../../ml/index.xml)」を参照してください。  
   
 <a name="NestedTypes"></a>   
 ### 入れ子にされた型  
@@ -323,5 +323,5 @@ caps.handback.revision: 24
   
 ## 参照  
  [.NET Framework クラス ライブラリ](http://go.microsoft.com/fwlink/?LinkID=217856)   
- [共通言語ランタイム](../../../docs/standard/clr.md)   
+ [共通言語ランタイム](../../../ocs/standard/clr.md)   
  [.NET Framework における型変換](../../../docs/standard/base-types/type-conversion.md)

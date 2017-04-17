@@ -102,5 +102,5 @@ caps.handback.revision: 12
   
 ## 参照  
  [書式設定操作の実行](../../../docs/standard/base-types/performing-formatting-operations.md)   
- [DateTime、DateTimeOffset、TimeSpan、および TimeZoneInfo の使い分け](../../../docs/standard/datetime/choosing-between-datetime.md)   
+ [DateTime、DateTimeOffset、TimeSpan、および TimeZoneInfo の使い分け](../../../ocs/standard/datetime/choosing-between-datetime.md)   
  [標準の日時書式指定文字列](../../../docs/standard/base-types/standard-date-and-time-format-strings.md)

@@ -61,7 +61,7 @@ caps.handback.revision: 15
   
  この例は、コンソールに `-1` と出力します。  
   
- 既定では、上の例はカルチャによって異なります。 カルチャに依存しない文字列操作を実行するには、*culture* パラメーターを指定することによって使用するカルチャを指定することを可能にする <xref:System.String.Compare%2A?displayProperty=fullName> メソッドのオーバーロードを使用します。<xref:System.String.Compare%2A?displayProperty=fullName> メソッドを使用してカルチャに依存しない比較を実行する例については、「[カルチャを認識しない文字列比較の実行](../../../docs/standard/globalization-localization/performing-culture-insensitive-string-comparisons.md)」を参照してください。  
+ 既定では、上の例はカルチャによって異なります。 カルチャに依存しない文字列操作を実行するには、*culture* パラメーターを指定することによって使用するカルチャを指定することを可能にする <xref:System.String.Compare%2A?displayProperty=fullName> メソッドのオーバーロードを使用します。<xref:System.String.Compare%2A?displayProperty=fullName> メソッドを使用してカルチャに依存しない比較を実行する例については、「[カルチャを認識しない文字列比較の実行](../../../ocs/standard/globalization-localization/performing-culture-insensitive-string-comparisons.md)」を参照してください。  
   
 ## CompareOrdinal  
  <xref:System.String.CompareOrdinal%2A?displayProperty=fullName> メソッドは、ローカル カルチャを考慮せずに 2 つの文字列オブジェクトを比較します。 このメソッドの戻り値は、上の表で示した **Compare** メソッドによって返される値と同じです。  
@@ -91,7 +91,7 @@ caps.handback.revision: 15
   
  この例は、コンソールに `-1` と出力します。  
   
- <xref:System.String.CompareTo%2A?displayProperty=fullName> メソッドのすべてのオーバーロードは、既定で、カルチャに依存して大文字小文字を区別する比較を実行します。 このメソッドのオーバーロードで、カルチャに依存しない比較を実行できるものはありません。 コードを理解しやすくするために、**String.Compare** メソッドを使用することをお勧めします。その際、カルチャに依存する操作には <xref:System.Globalization.CultureInfo.CurrentCulture%2A?displayProperty=fullName> を指定し、カルチャに依存しない操作には <xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=fullName> を指定します。**String.Compare** メソッドを使用してカルチャに依存する比較とカルチャに依存しない比較の両方を実行する例については、「[カルチャを認識しない文字列比較の実行](../../../docs/standard/globalization-localization/performing-culture-insensitive-string-comparisons.md)」を参照してください。  
+ <xref:System.String.CompareTo%2A?displayProperty=fullName> メソッドのすべてのオーバーロードは、既定で、カルチャに依存して大文字小文字を区別する比較を実行します。 このメソッドのオーバーロードで、カルチャに依存しない比較を実行できるものはありません。 コードを理解しやすくするために、**String.Compare** メソッドを使用することをお勧めします。その際、カルチャに依存する操作には <xref:System.Globalization.CultureInfo.CurrentCulture%2A?displayProperty=fullName> を指定し、カルチャに依存しない操作には <xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=fullName> を指定します。**String.Compare** メソッドを使用してカルチャに依存する比較とカルチャに依存しない比較の両方を実行する例については、「[カルチャを認識しない文字列比較の実行](../../../ocs/standard/globalization-localization/performing-culture-insensitive-string-comparisons.md)」を参照してください。  
   
 ## 次の値に等しい  
  **String.Equals** メソッドを使用すると、2 つの文字列が等しいかどうかを簡単に確認できます。 このメソッドは大文字と小文字を区別し、**True** または **False** の Boolean 値を返します。 このメソッドは、次の例に示すように、既存のクラスで使用できます。**Equals** メソッドを使用して、文字列オブジェクトに "Hello World" という語句が含まれているかどうかを確認する例を次に示します。  
@@ -152,4 +152,4 @@ caps.handback.revision: 15
   
 ## 参照  
  [基本的な文字列操作](../../../docs/standard/base-types/basic-string-operations.md)   
- [カルチャを認識しない文字列操作の実行](../../../docs/standard/globalization-localization/performing-culture-insensitive-string-operations.md)
+ [カルチャを認識しない文字列操作の実行](../../../ocs/standard/globalization-localization/performing-culture-insensitive-string-operations.md)

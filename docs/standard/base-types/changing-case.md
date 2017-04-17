@@ -49,7 +49,7 @@ caps.handback.revision: 15
  [!code-csharp[Strings.ChangingCase#1](../../../samples/snippets/csharp/VS_Snippets_CLR/Strings.ChangingCase/cs/Example.cs#1)]
  [!code-vb[Strings.ChangingCase#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Strings.ChangingCase/vb/Example.vb#1)]  
   
- 前の例は、既定でカルチャに依存しています。これには、現在のカルチャのケース表記規則が適用されます。  カルチャに依存しないケース変更を実行したり、特定のカルチャのケース表記規則を適用したりするには、<xref:System.String.ToUpper%28System.Globalization.CultureInfo%29?displayProperty=fullName> メソッドのオーバーロードを使用して、*culture* パラメーターに指定のカルチャを表す <xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=fullName> または <xref:System.Globalization.CultureInfo?displayProperty=fullName> オブジェクトの値を提供します。  <xref:System.String.ToUpper%2A> メソッドを使用してカルチャに依存しないケース変更を実行する方法を示す例については、「[カルチャを認識しない大文字と小文字の変更の実行](../../../docs/standard/globalization-localization/performing-culture-insensitive-case-changes.md)」を参照してください。  
+ 前の例は、既定でカルチャに依存しています。これには、現在のカルチャのケース表記規則が適用されます。  カルチャに依存しないケース変更を実行したり、特定のカルチャのケース表記規則を適用したりするには、<xref:System.String.ToUpper%28System.Globalization.CultureInfo%29?displayProperty=fullName> メソッドのオーバーロードを使用して、*culture* パラメーターに指定のカルチャを表す <xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=fullName> または <xref:System.Globalization.CultureInfo?displayProperty=fullName> オブジェクトの値を提供します。  <xref:System.String.ToUpper%2A> メソッドを使用してカルチャに依存しないケース変更を実行する方法を示す例については、「[カルチャを認識しない大文字と小文字の変更の実行](../../../ocs/standard/globalization-localization/performing-culture-insensitive-case-changes.md)」を参照してください。  
   
 ## ToLower  
  <xref:System.String.ToLower%2A?displayProperty=fullName> メソッドは、前のメソッドと似ていますが、代わりに文字列内のすべての文字を小文字に変換します。  次の例では、文字列 "Hello World\!" を小文字に変換します。  
@@ -57,7 +57,7 @@ caps.handback.revision: 15
  [!code-csharp[Strings.ChangingCase#2](../../../samples/snippets/csharp/VS_Snippets_CLR/Strings.ChangingCase/cs/Example.cs#2)]
  [!code-vb[Strings.ChangingCase#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Strings.ChangingCase/vb/Example.vb#2)]  
   
- 前の例は、既定でカルチャに依存しています。これには、現在のカルチャのケース表記規則が適用されます。  カルチャに依存しないケース変更を実行したり、特定のカルチャのケース表記規則を適用したりするには、<xref:System.String.ToLower%28System.Globalization.CultureInfo%29?displayProperty=fullName> メソッドのオーバーロードを使用して、*culture* パラメーターに指定のカルチャを表す <xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=fullName> または <xref:System.Globalization.CultureInfo?displayProperty=fullName> オブジェクトの値を提供します。  <xref:System.String.ToLower%28System.Globalization.CultureInfo%29> メソッドを使用してカルチャに依存しないケース変更を実行する方法を示す例については、「[カルチャを認識しない大文字と小文字の変更の実行](../../../docs/standard/globalization-localization/performing-culture-insensitive-case-changes.md)」を参照してください。  
+ 前の例は、既定でカルチャに依存しています。これには、現在のカルチャのケース表記規則が適用されます。  カルチャに依存しないケース変更を実行したり、特定のカルチャのケース表記規則を適用したりするには、<xref:System.String.ToLower%28System.Globalization.CultureInfo%29?displayProperty=fullName> メソッドのオーバーロードを使用して、*culture* パラメーターに指定のカルチャを表す <xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=fullName> または <xref:System.Globalization.CultureInfo?displayProperty=fullName> オブジェクトの値を提供します。  <xref:System.String.ToLower%28System.Globalization.CultureInfo%29> メソッドを使用してカルチャに依存しないケース変更を実行する方法を示す例については、「[カルチャを認識しない大文字と小文字の変更の実行](../../../ocs/standard/globalization-localization/performing-culture-insensitive-case-changes.md)」を参照してください。  
   
 ## ToTitleCase  
  <xref:System.Globalization.TextInfo.ToTitleCase%2A?displayProperty=fullName> は、各単語の最初の文字を大文字に変換し、残りの文字を小文字に変換します。  ただし、すべて大文字である単語は頭字語であると想定されて、変換されません。  
@@ -73,4 +73,4 @@ caps.handback.revision: 15
   
 ## 参照  
  [基本的な文字列操作](../../../docs/standard/base-types/basic-string-operations.md)   
- [カルチャを認識しない文字列操作の実行](../../../docs/standard/globalization-localization/performing-culture-insensitive-string-operations.md)
+ [カルチャを認識しない文字列操作の実行](../../../ocs/standard/globalization-localization/performing-culture-insensitive-string-operations.md)

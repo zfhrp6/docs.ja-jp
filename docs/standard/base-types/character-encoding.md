@@ -267,4 +267,4 @@ caps.handback.revision: 33
  <xref:System.Text.DecoderFallback>   
  <xref:System.Text.Encoding>   
  <xref:System.Text.EncoderFallback>   
- [グローバライズとローカライズ](../../../docs/standard/globalization-localization/index.md)
+ [グローバライズとローカライズ](../../../ml/index.xml)

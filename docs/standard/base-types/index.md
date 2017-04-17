@@ -40,5 +40,5 @@ caps.handback.revision: 14
  [共通型システム](../../../docs/standard/base-types/common-type-system.md)  
  .NET Framework で使用される型について説明します。  
   
- [日付、時刻、およびタイム ゾーン](../../../docs/standard/datetime/index.md)  
+ [日付、時刻、およびタイム ゾーン](../../../ml/index.xml)  
  タイム ゾーン対応のアプリケーションでのタイム ゾーンの処理方法とタイム ゾーンの変換について説明します。
