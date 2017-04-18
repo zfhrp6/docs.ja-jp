@@ -2,7 +2,7 @@
 title: "統合言語クエリ (LINQ)"
 description: "C における統合言語クエリ (LINQ) の概要#"
 keywords: .NET, .NET Core, LINQ, C#
-author: stevehoag
+author: BillWagner
 ms.author: wiwagn
 ms.date: 11/30/2016
 ms.topic: article

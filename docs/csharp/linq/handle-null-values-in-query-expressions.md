@@ -2,7 +2,7 @@
 title: "クエリ式の null 値の処理"
 description: "クエリ式の null 値を処理する方法。"
 keywords: ".NET、.NET Core、C#"
-author: stevehoag
+author: BillWagner
 manager: wpickett
 ms.author: wiwagn
 ms.date: 12/1/2016

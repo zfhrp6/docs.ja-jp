@@ -2,8 +2,8 @@
 title: "Visual Studio 2017 を使用した Hello World アプリケーションの発行"
 description: "Visual Studio 2017 を使用した Hello World アプリケーションの発行"
 keywords: ".NET、.NET Core、.NET Core コンソール アプリケーション、発行 (.NET Core)、展開 (.NET Core)"
-author: stevehoag
-ms.author: shoag
+author: BillWagner
+ms.author: wiwagn
 ms.date: 10/24/2016
 ms.topic: article
 ms.prod: .net-core

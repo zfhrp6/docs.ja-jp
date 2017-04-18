@@ -2,7 +2,7 @@
 title: "クエリ式の例外の処理"
 description: "クエリ式の例外を処理する方法。"
 keywords: ".NET、.NET Core、C#"
-author: stevehoag
+author: BillWagner
 manager: wpickett
 ms.author: wiwagn
 ms.date: 12/1/2016

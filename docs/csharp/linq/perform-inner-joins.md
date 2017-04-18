@@ -2,7 +2,7 @@
 title: "内部結合の実行"
 description: "内部結合を実行する方法。"
 keywords: .NET, .NET Core, C#
-author: stevehoag
+author: BillWagner
 manager: wpickett
 ms.author: wiwagn
 ms.date: 12/1/2016

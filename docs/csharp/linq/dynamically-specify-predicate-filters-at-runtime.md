@@ -2,7 +2,7 @@
 title: "実行時における述語フィルターの動的指定"
 description: "実行時に述語フィルターを動的に指定する方法"
 keywords: ".NET、.NET Core、C#"
-author: stevehoag
+author: BillWagner
 manager: wpickett
 ms.author: wiwagn
 ms.date: 12/1/2016

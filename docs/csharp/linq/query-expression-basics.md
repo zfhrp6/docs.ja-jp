@@ -2,7 +2,7 @@
 title: "クエリ式の基本"
 description: "クエリ式に関連する概念について説明します"
 keywords: .NET, .NET Core, C#
-author: stevehoag
+author: BillWagner
 manager: wpickett
 ms.author: wiwagn
 ms.date: 11/30/2016

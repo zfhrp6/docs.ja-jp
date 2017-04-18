@@ -2,7 +2,7 @@
 title: "クエリ結果のグループ化"
 description: "結果をグループ化する方法です。"
 keywords: ".NET、.NET Core、C#"
-author: stevehoag
+author: BillWagner
 manager: wpickett
 ms.author: wiwagn
 ms.date: 12/1/2016
