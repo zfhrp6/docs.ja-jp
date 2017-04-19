@@ -1,59 +1,66 @@
 ---
-title: "一般的に使用されるコレクション型"
-description: "一般的に使用されるコレクション型"
-keywords: .NET, .NET Core
+title: "一般的に使用されるコレクション型 | Microsoft Docs"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- collections [.NET Framework], generic
+- objects [.NET Framework], grouping in collections
+- generics [.NET Framework], collections
+- IList interface, grouping data in collections
+- IDictionary interface, grouping data in collections
+- grouping data in collections, generic collection types
+- Collections classes
+- generic collections
+ms.assetid: f5d4c6a4-0d7b-4944-a9fb-3b12d9ebfd55
+caps.latest.revision: 29
 author: mairaw
 ms.author: mairaw
-ms.date: 06/20/2016
-ms.topic: article
-ms.prod: .net
-ms.technology: dotnet-standard
-ms.devlang: dotnet
-ms.assetid: 55861611-1e40-4cc2-9ec5-0b2df4ba6c0c
+manager: wpickett
 translationtype: Human Translation
-ms.sourcegitcommit: 90fe68f7f3c4b46502b5d3770b1a2d57c6af748a
-ms.openlocfilehash: f44b8a87bf263032b991fc1bbc70712136910106
-ms.lasthandoff: 03/02/2017
+ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
+ms.openlocfilehash: 1f8d938d61492b4da4b35a56fba169a12ed4787e
+ms.lasthandoff: 04/18/2017
 
 ---
-
 # <a name="commonly-used-collection-types"></a>一般的に使用されるコレクション型
-
-コレクション型は、ハッシュ テーブル、キュー、スタック、バッグ、ディクショナリ、リストなど、一般的な種類のデータ コレクションです。
-
-コレクションは、[`ICollection`](https://docs.microsoft.com/dotnet/core/api/System.Collections.ICollection) インターフェイス、[`IList`](https://docs.microsoft.com/dotnet/core/api/System.Collections.IList) インターフェイス、[`IDictionary`](https://docs.microsoft.com/dotnet/core/api/System.Collections.IDictionary) インターフェイス、または対応するジェネリックに基づきます。 `IList` インターフェイスと `IDictionary` インターフェイスはどちらも `ICollection` インターフェイスから派生したインターフェイスです。したがって、すべてのコレクションが直接または間接的に `ICollection` インターフェイスに基づきます。 `IList` インターフェイスに基づくコレクション ([`Array`](https://docs.microsoft.com/dotnet/core/api/System.Array)、[`ArrayList`](https://docs.microsoft.com/dotnet/core/api/System.Collections.ArrayList), or [`List<T>)`](https://docs.microsoft.com/dotnet/core/api/System.Collections.Generic.List-1) など) または `ICollection` インターフェイスに直接基づくコレクション ([`Queue`](https://docs.microsoft.com/dotnet/core/api/System.Collections.Queue)、[`ConcurrentQueue<T>`](https://docs.microsoft.com/dotnet/core/api/System.Collections.Concurrent.ConcurrentQueue-1)、[`Stack`](https://docs.microsoft.com/dotnet/core/api/System.Collections.Stack)、[`ConcurrentStack<T>`](https://docs.microsoft.com/dotnet/core/api/System.Collections.Concurrent.ConcurrentStack-1)、[`LinkedList<T>`](https://docs.microsoft.com/dotnet/core/api/System.Collections.Generic.LinkedList-1) など) では、すべての要素に値のみが含まれます。 `IDictionary` インターフェイスに基づくコレクション ([`Hashtable`](https://docs.microsoft.com/dotnet/core/api/System.Collections.Hashtable) クラスと [`SortedList`](https://docs.microsoft.com/dotnet/core/api/System.Collections.SortedList) クラス、[`Dictionary<TKey, TValue>`](https://docs.microsoft.com/dotnet/core/api/System.Collections.Generic.Dictionary-2) ジェネリック クラスと [`SortedList<TKey, TValue>`](https://docs.microsoft.com/dotnet/core/api/System.Collections.Generic.SortedList-2) ジェネリック クラスなど)、または [`ConcurrentDictionary<TKey, TValue>`](https://docs.microsoft.com/dotnet/core/api/System.Collections.Concurrent.ConcurrentDictionary-2) クラスでは、すべての要素にキーと値の両方が含まれます。 [`KeyedCollection<TKey, TItem>`](https://docs.microsoft.com/dotnet/core/api/System.Collections.ObjectModel.KeyedCollection-2) クラスは、キーが値に埋め込まれている値リストであるために独特で、そのために、リストのようにもディクショナリのようにも動作します。
-
-ジェネリック コレクションは、厳密な型指定に対する最適なソリューションです。 ただし、使用する言語でジェネリックがサポートされていない場合、[`System.Collections`](https://docs.microsoft.com/dotnet/core/api/System.Collections) 名前空間には [`CollectionBase`](https://docs.microsoft.com/dotnet/core/api/System.Collections.CollectionBase)、[`ReadOnlyCollectionBase`](https://docs.microsoft.com/dotnet/core/api/System.Collections.ReadOnlyCollectionBase)、[`DictionaryBase`](https://docs.microsoft.com/dotnet/core/api/System.Collections.DictionaryBase) などの基本コレクションが含まれており、これらは抽象基本クラスで、厳密に型指定されたコレクション クラスを作成するために拡張できます。 効率的なマルチスレッド コレクション アクセスが必要な場合は、[`System.Collections.Concurrent`](https://docs.microsoft.com/dotnet/core/api/System.Collections.Concurrent) 名前空間のジェネリック コレクションを使用します。
-
-コレクションは、要素の格納方法、要素の並べ替え方法、検索の実行方法、および比較の実行方法によって異なります。 [`Queue`](https://docs.microsoft.com/dotnet/core/api/System.Collections.Queue) クラスと [`Queue<T>`](https://docs.microsoft.com/dotnet/core/api/System.Collections.Generic.Queue-1) ジェネリック クラスは先入れ先出しのリストを提供しますが、[`Stack`](https://docs.microsoft.com/dotnet/core/api/System.Collections.Stack) クラスと [`Stack<T>`](https://docs.microsoft.com/dotnet/core/api/System.Collections.Generic.Stack-1) ジェネリック クラスは後入れ先出しのリストを提供します。 [`SortedList`](https://docs.microsoft.com/dotnet/core/api/System.Collections.SortedList) クラスと [`SortedList<TKey, TValue>`](https://docs.microsoft.com/dotnet/core/api/System.Collections.Generic.SortedList-2) ジェネリック クラスは、[`Hashtable`](https://docs.microsoft.com/dotnet/core/api/System.Collections.Hashtable) クラスと [`Dictionary<TKey, TValue>`](https://docs.microsoft.com/dotnet/core/api/System.Collections.Generic.Dictionary-2) ジェネリック クラスの並べ替えバージョンを提供します。 `Hashtable` または `Dictionary<TKey, TValue>` の要素は、要素のキーによってのみアクセスできますが、`SortedList` または [`KeyedCollection<TKey, TItem>`](https://docs.microsoft.com/dotnet/core/api/System.Collections.ObjectModel.KeyedCollection-2) の要素は、キーまたは要素のインデックスによってアクセスできます。 すべてのコレクションのインデックスがゼロから始まりますが、[`Array`](https://docs.microsoft.com/dotnet/core/api/System.Array) は例外で、ゼロから始まらない配列を使用できます。
-
-LINQ to Objects 機能では、オブジェクト型で [`IEnumerable`](https://docs.microsoft.com/dotnet/core/api/System.Collections.IEnumerable) または [`IEnumerable<T>`](https://docs.microsoft.com/dotnet/core/api/System.Collections.Generic.IEnumerable-1) を実装している限り、LINQ クエリを使用してメモリ内オブジェクトにアクセスできます。 LINQ クエリはデータ アクセス用の一般的なパターンです。通常、これは標準の foreach ループよりも簡潔で読みやすく、フィルター処理、並べ替え、およびグループ化の機能を備えています。 さらに、LINQ クエリによってパフォーマンスを向上させることができます。
-
-## <a name="related-topics"></a>関連トピック
-
-タイトル | 説明
------ | -----------
-[`Collections and Data Structures`](index.md) | .NET Framework で利用できるスタック、キュー、リスト、配列、ディクショナリなどのさまざまなコレクション型について説明します。
-[`Hashtable and Dictionary Collection Types`](hashtable-and-dictionary-collection-types.md) | ジェネリックと非ジェネリックのハッシュをベースにしたディクショナリ型の機能について説明します。
-[`Sorted Collection Types`](sorted-collection-types.md) | 並べ替えられたコレクションのパフォーマンスと特性について説明します。
-
-## <a name="reference"></a>参照
-
-[`System.Collections`](https://docs.microsoft.com/dotnet/core/api/System.Collections)
-
-[`System.Collections.Generic`](https://docs.microsoft.com/dotnet/core/api/System.Collections.Generic)
-
-[`System.Collections.ICollection`](https://docs.microsoft.com/dotnet/core/api/System.Collections.ICollection)
-
-[`System.Collections.Generic.ICollection<T>`](https://docs.microsoft.com/dotnet/core/api/System.Collections.Generic.ICollection-1)
-
-[`System.Collections.IList`](https://docs.microsoft.com/dotnet/core/api/System.Collections.IList)
-
-[`System.Collections.Generic.IList<T>`](https://docs.microsoft.com/dotnet/core/api/System.Collections.Generic.IList-1)
-
-[`System.Collections.IDictionary`](https://docs.microsoft.com/dotnet/core/api/System.Collections.IDictionary)
-
-[`System.Collections.Generic.IDictionary<TKey, TValue>`](https://docs.microsoft.com/dotnet/core/api/System.Collections.Generic.IDictionary-2)
-
-[`System.Linq`](https://docs.microsoft.com/dotnet/core/api/System.Linq)
-
+コレクション型は、ハッシュ テーブル、キュー、スタック、バッグ、ディクショナリ、リストなど、一般的な種類のデータ コレクションです。  
+  
+ コレクションは、<xref:System.Collections.ICollection> インターフェイス、<xref:System.Collections.IList> インターフェイス、<xref:System.Collections.IDictionary> インターフェイス、または対応するジェネリックに基づきます。 <xref:System.Collections.IList> インターフェイスと <xref:System.Collections.IDictionary> インターフェイスは両方とも <xref:System.Collections.ICollection> インターフェイスから派生されるため、すべてのコレクションは直接的または間接的に <xref:System.Collections.ICollection> インターフェイスに基づきます。 <xref:System.Collections.IList> インターフェイスに基づいているコレクション (<xref:System.Array>、<xref:System.Collections.ArrayList>、<xref:System.Collections.Generic.List%601> など)、または <xref:System.Collections.ICollection> インターフェイスに直接基づいているコレクション (<xref:System.Collections.Queue>、<xref:System.Collections.Concurrent.ConcurrentQueue%601>、<xref:System.Collections.Stack>、<xref:System.Collections.Concurrent.ConcurrentStack%601>、<xref:System.Collections.Generic.LinkedList%601> など) では、すべての要素に値のみが含まれます。 <xref:System.Collections.IDictionary> インターフェイス (<xref:System.Collections.Hashtable> および <xref:System.Collections.SortedList> クラス、<xref:System.Collections.Generic.Dictionary%602> および <xref:System.Collections.Generic.SortedList%602> ジェネリック クラスなど)、または <xref:System.Collections.Concurrent.ConcurrentDictionary%602> クラスに基づくコレクションでは、各要素にキーと値の両方が含まれます。  <xref:System.Collections.ObjectModel.KeyedCollection%602> クラスは、キーが値に埋め込まれている値リストであるために独特で、そのために、リストのようにもディクショナリのようにも動作します。 クラスは、キーが値に埋め込まれている値リストであるため一意であり、リストやディクショナリのように動作します。  
+  
+ ジェネリック コレクションは、厳密な型指定に対する最適なソリューションです。 ただし、言語でジェネリックがサポートされていない場合、<xref:System.Collections> 名前空間には <xref:System.Collections.CollectionBase>、<xref:System.Collections.ReadOnlyCollectionBase>、<xref:System.Collections.DictionaryBase> などの基本コレクションが含まれており、これらは抽象基本クラスで、厳密に型指定されたコレクション クラスを作成するために拡張できます。 効率的なマルチスレッド コレクション アクセスが必要な場合は、<xref:System.Collections.Concurrent> 名前空間のジェネリック コレクションを使用します。  
+  
+ コレクションは、要素の格納方法、要素の並べ替え方法、検索の実行方法、および比較の実行方法によって異なります。 <xref:System.Collections.Queue> クラスと <xref:System.Collections.Generic.Queue%601> ジェネリック クラスでは先出し先入れのリストが提供されますが、<xref:System.Collections.Stack> クラスと <xref:System.Collections.Generic.Stack%601> ジェネリック クラスでは後入れ先出しのリストが提供されます。 <xref:System.Collections.SortedList> クラスと <xref:System.Collections.Generic.SortedList%602> ジェネリック クラスでは、<xref:System.Collections.Hashtable> クラスと <xref:System.Collections.Generic.Dictionary%602> ジェネリック クラスの並べ替えバージョンが提供されます。 <xref:System.Collections.Hashtable> または <xref:System.Collections.Generic.Dictionary%602> の要素は要素のキーによってのみアクセスできますが、<xref:System.Collections.SortedList> または <xref:System.Collections.ObjectModel.KeyedCollection%602> の要素は、キーまたは要素のインデックスによってアクセスできます。 すべてのコレクションのインデックスはゼロから始まりますが、<xref:System.Array> は例外であり、ゼロから始まらない配列を使用できます。  
+  
+ LINQ to Objects 機能では、オブジェクト型で <xref:System.Collections.IEnumerable> または <xref:System.Collections.Generic.IEnumerable%601> が実装されていれば、LINQ クエリを使用してメモリ内オブジェクトにアクセスできます。 LINQ クエリはデータ アクセス用の一般的なパターンです。通常、これは標準の `foreach` ループよりも簡潔で読みやすく、フィルター処理、並べ替え、およびグループ化機能を備えています。 さらに、LINQ クエリによってパフォーマンスを向上させることができます。 詳細については、「[LINQ to Objects](http://msdn.microsoft.com/library/73cafe73-37cf-46e7-bfa7-97c7eea7ced9)」および「[Parallel LINQ (PLINQ)](../../../docs/standard/parallel-programming/parallel-linq-plinq.md)」を参照してください。  
+  
+## <a name="related-topics"></a>関連トピック  
+  
+|タイトル|説明|  
+|-----------|-----------------|  
+|[コレクションとデータ構造体](../../../docs/standard/collections/index.md)|スタック、キュー、リスト、配列、ディクショナリなど、[!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] で利用できるさまざまなコレクション型について説明します。|  
+|[Hashtable コレクション型と Dictionary コレクション型](../../../docs/standard/collections/hashtable-and-dictionary-collection-types.md)|ジェネリックと非ジェネリックのハッシュ ベースのディクショナリ型の機能について説明します。|  
+|[Sorted コレクション型](../../../docs/standard/collections/sorted-collection-types.md)|リストとセットの並べ替え機能を提供するクラスについて説明します。|  
+|[ジェネリック](../../../docs/standard/generics/index.md)|ジェネリック コレクション、汎用デリゲート、ジェネリック インターフェイスなど、[!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] に用意されているジェネリック機能について説明します。 C#、Visual Basic、および Visual C++ の機能についてのドキュメント、およびリフレクションなどのサポート テクノロジへのリンクを示します。|  
+  
+## <a name="reference"></a>参照  
+ <xref:System.Collections?displayProperty=fullName>  
+  
+ <xref:System.Collections.Generic?displayProperty=fullName>  
+  
+ <xref:System.Collections.ICollection?displayProperty=fullName>  
+  
+ <xref:System.Collections.Generic.ICollection%601?displayProperty=fullName>  
+  
+ <xref:System.Collections.IList?displayProperty=fullName>  
+  
+ <xref:System.Collections.Generic.IList%601?displayProperty=fullName>  
+  
+ <xref:System.Collections.IDictionary?displayProperty=fullName>  
+  
+ <xref:System.Collections.Generic.IDictionary%602?displayProperty=fullName>
