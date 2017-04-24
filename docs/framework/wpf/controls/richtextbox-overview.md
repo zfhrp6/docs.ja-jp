@@ -22,7 +22,7 @@ caps.handback.revision: 10
 # RichTextBox の概要
 <xref:System.Windows.Controls.RichTextBox> コントロールを使用すると、段落、イメージ、テーブルなどのフロー コンテンツを表示または編集できます。  このトピックでは、<xref:System.Windows.Controls.TextBox> クラスについて説明し、[!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] と [!INCLUDE[TLA#tla_lhcshrp](../../../../includes/tlasharptla-lhcshrp-md.md)] の両方で使用する例を示します。  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="textbox_or_richtextbox"></a>   
 ## TextBox と RichTextBox  

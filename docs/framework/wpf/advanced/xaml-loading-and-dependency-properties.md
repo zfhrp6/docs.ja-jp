@@ -23,7 +23,7 @@ caps.handback.revision: 7
 # XAML 読み込みと依存関係プロパティ
 現在の [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] 実装の [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] プロセッサは、依存関係プロパティに最初から対応しています。  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] プロセッサは、バイナリ [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] を読み込むとき、および依存関係プロパティである属性を処理するときに、依存関係プロパティ用のプロパティ システム メソッドを使用します。  この結果、プロパティ ラッパーは実質的に省略されます。  カスタムの依存関係プロパティを実装するときには、この動作を考慮に入れて、プロパティ システム メソッド <xref:System.Windows.DependencyObject.GetValue%2A> および <xref:System.Windows.DependencyObject.SetValue%2A> 以外のコードをプロパティ ラッパーに記述することは避ける必要があります。  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="prerequisites"></a>   
 ## 必要条件  

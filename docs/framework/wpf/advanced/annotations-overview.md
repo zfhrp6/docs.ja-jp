@@ -25,7 +25,7 @@ caps.handback.revision: 16
   
  ここでは、いくつかの一般的な種類の注釈、特に付箋と強調表示について説明し、[!INCLUDE[TLA#tla_caf](../../../../includes/tlasharptla-caf-md.md)] で [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] ドキュメント表示コントロールを使用することにより、アプリケーションでこれらの種類の注釈を使用できるようにする方法を示します。  注釈をサポートする [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] ドキュメント表示コントロールには、<xref:System.Windows.Controls.FlowDocumentReader> や <xref:System.Windows.Controls.FlowDocumentScrollViewer> などがあり、また、<xref:System.Windows.Controls.Primitives.DocumentViewerBase> から派生した <xref:System.Windows.Controls.DocumentViewer> や <xref:System.Windows.Controls.FlowDocumentPageViewer> などのコントロールも含まれます。  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="caf1_type_stickynotes"></a>   
 ## 付箋  

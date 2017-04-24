@@ -28,7 +28,7 @@ caps.handback.revision: 22
 # ジオメトリの概要
 ここでは、[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] の <xref:System.Windows.Media.Geometry> クラスを使用して図形を記述する方法を説明します。  また、<xref:System.Windows.Media.Geometry> オブジェクトと <xref:System.Windows.Shapes.Shape> 要素の違いも示します。  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="wcpsdk_graphics_geometry_introduction"></a>   
 ## ジオメトリとは  

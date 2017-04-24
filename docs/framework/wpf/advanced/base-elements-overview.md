@@ -21,7 +21,7 @@ caps.handback.revision: 18
 # 基本要素の概要
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] のクラスの大部分は、[!INCLUDE[TLA2#tla_sdk](../../../../includes/tla2sharptla-sdk-md.md)] のドキュメントで一般に基本要素クラスと呼ばれている 4 つのクラスから派生しています。  このようなクラスとしては、<xref:System.Windows.UIElement>、<xref:System.Windows.FrameworkElement>、<xref:System.Windows.ContentElement>、および <xref:System.Windows.FrameworkContentElement> があります。  <xref:System.Windows.DependencyObject> クラスも関連がありますが、これは <xref:System.Windows.UIElement> と <xref:System.Windows.ContentElement> の両方に共通する基本クラスであるためです。  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="base_apis"></a>   
 ## WPF クラスの基本要素 API  

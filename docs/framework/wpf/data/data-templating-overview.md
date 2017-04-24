@@ -24,7 +24,7 @@ caps.handback.revision: 24
 # データ テンプレートの概要
 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]データ テンプレート モデルは、非常に柔軟に、データの表示を定義します。 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]コントロールには、データの表示のカスタマイズをサポートする組み込みの機能があります。 このトピックは、まずを定義する方法を示します、 <xref:System.Windows.DataTemplate>し、カスタム ロジックと階層データを表示するためのサポートに基づくテンプレートの選択などその他のデータ転送の各機能を紹介します。  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="Prerequisites"></a>   
 ## <a name="prerequisites"></a>必須コンポーネント  
@@ -36,7 +36,7 @@ caps.handback.revision: 24
   
 <a name="DataTemplating_Basic"></a>   
 ## <a name="data-templating-basics"></a>データ テンプレートの基本  
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
  その理由を示すために<xref:System.Windows.DataTemplate>が重要では、データ バインディングの例をしていきます。 私たちがこの例では、 <xref:System.Windows.Controls.ListBox>の一覧にバインドされた`Task`オブジェクトです。 各`Task`オブジェクトには、 `TaskName` (文字列)、 `Description` (文字列)、 `Priority` (int) と型のプロパティ`TaskType`、これは、`Enum`値を持つ`Home`と`Work`です。  
   

@@ -35,7 +35,7 @@ caps.handback.revision: 33
   
  また、スタイルとテンプレートの再利用を使用できるように、リソースを理解する必要もあります。 リソースの詳細については、次を参照してください。 [XAML リソース](../../../../docs/framework/wpf/advanced/xaml-resources.md)します。  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="styling_and_templating_sample"></a>   
 ## <a name="styling-and-templating-sample"></a>スタイルとテンプレート サンプル  

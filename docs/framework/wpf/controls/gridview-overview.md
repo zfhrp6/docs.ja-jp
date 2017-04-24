@@ -23,7 +23,7 @@ caps.handback.revision: 25
 # GridView の概要
 <xref:System.Windows.Controls.GridView> 表示モードは、<xref:System.Windows.Controls.ListView> コントロールの表示モードの 1 つです。  <xref:System.Windows.Controls.GridView> クラスおよびそのサポート クラスを使用すると、一般的にボタンを対話型列ヘッダーとして使用するテーブルに項目コレクションを表示することができます。  ここでは、<xref:System.Windows.Controls.GridView> クラスについて説明し、その使用方法を示します。  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="DefiningaListViewthatusesGridViewView"></a>   
 ## GridView ビューとは  

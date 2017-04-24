@@ -35,7 +35,7 @@ caps.handback.revision: 20
   
  このような一連のアプリケーションをビルドするために、[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] は多数のサービスを実装しています。  このトピックでは、これらのサービスの概要を説明し、詳細情報へのリンクを示します。  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="Application_Management"></a>   
 ## アプリケーション管理  

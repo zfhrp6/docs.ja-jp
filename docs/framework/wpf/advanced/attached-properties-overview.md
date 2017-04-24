@@ -21,7 +21,7 @@ caps.handback.revision: 27
 # 添付プロパティの概要
 添付プロパティはXAML で定義されている概念です。  添付プロパティの目的は、任意のオブジェクトに対して設定可能な一種のグローバル プロパティとして使用することです。  [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] では添付プロパティは従来のプロパティ 「ラッパー」を持たない依存関係プロパティの特殊な形式で一般に定義されます。  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="prerequisites"></a>   
 ## 必要条件  

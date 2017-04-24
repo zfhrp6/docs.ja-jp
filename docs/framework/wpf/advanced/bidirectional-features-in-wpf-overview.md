@@ -26,7 +26,7 @@ caps.handback.revision: 18
   
  以降のセクションでは、多数の双方向機能と双方向コンテンツを最適に表示した例について説明します。  この概念は [!INCLUDE[TLA#tla_cshrp](../../../../includes/tlasharptla-cshrp-md.md)] コードまたは [!INCLUDE[TLA#tla_visualb](../../../../includes/tlasharptla-visualb-md.md)] コードに容易に適用できますが、ほとんどのサンプルでは [!INCLUDE[TLA#tla_titlexaml](../../../../includes/tlasharptla-titlexaml-md.md)] を使用します。  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="FlowDirection"></a>   
 ## FlowDirection  

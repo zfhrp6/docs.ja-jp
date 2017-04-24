@@ -26,7 +26,7 @@ caps.handback.revision: 18
 # 純色およびグラデーションによる塗りつぶしの概要
 ここでは、<xref:System.Windows.Media.SolidColorBrush>、<xref:System.Windows.Media.LinearGradientBrush>、および <xref:System.Windows.Media.RadialGradientBrush> オブジェクトを使用して、純色、線形グラデーション、および放射状グラデーションで塗りつぶす方法について説明します。  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="solidcolor"></a>   
 ## 純色による領域の塗りつぶし  

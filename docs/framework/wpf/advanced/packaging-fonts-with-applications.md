@@ -27,7 +27,7 @@ caps.handback.revision: 25
 > [!NOTE]
 >  多くの種類のソフトウェアと同様に、フォント ファイルは、販売されるのではなくライセンスされます。  フォントの使用を管理するライセンスはベンダーによって異なりますが、[!INCLUDE[TLA#tla_ms#initcap](../../../../includes/tlasharptla-mssharpinitcap-md.md)] がアプリケーションや [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] で提供しているフォントをカバーするライセンスも含めて、通常、ほとんどのライセンスは、フォントをアプリケーションに埋め込んだり、別の方法で再頒布したりすることを許可していません。  したがって、アプリケーションに埋め込む、または別の方法で再頒布するフォントについて、必要なライセンス権限を取得することは、開発者であるユーザーの責任で行ってください。  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="introduction_to_packaging_fonts"></a>   
 ## フォントのパッケージングの概要  

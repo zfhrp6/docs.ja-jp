@@ -27,7 +27,7 @@ caps.handback.revision: 7
 # 依存関係プロパティのセキュリティ
 依存関係プロパティは一般に、パブリック プロパティと見なす必要があります。  [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] プロパティ システムの性質上、依存関係プロパティ値については、セキュリティは保証されません。  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="AccessSecurity"></a>   
 ## ラッパーと依存関係プロパティのアクセスとセキュリティ  

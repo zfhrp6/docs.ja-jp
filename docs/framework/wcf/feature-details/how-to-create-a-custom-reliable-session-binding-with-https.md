@@ -35,7 +35,7 @@ caps.handback.revision: 9
   
 3.  Web.config ファイルを作成し、信頼できるセッションと HTTPS トランスポートを使用する "reliableSessionOverHttps" というカスタムバインディングを使用して、`CalculatorService` のエンドポイントを構成します。  
   
-     [!code[c_HowTo_CreateReliableSessionHTTPS#2111](../../../../samples/snippets/common/VS_Snippets_CFX/c_howto_createreliablesessionhttps/common/web.config#2111)]  
+     <!-- TODO: review snippet reference [!code[c_HowTo_CreateReliableSessionHTTPS#2111](../../../../samples/snippets/common/VS_Snippets_CFX/c_howto_createreliablesessionhttps/common/web.config#2111)]  -->  
   
 4.  次の行を含む Service.svc ファイルを作成します。  
   
@@ -63,7 +63,7 @@ caps.handback.revision: 9
   
 4.  HTTPS トランスポートと信頼できるセッションを使用する "reliableSessionOverHttps" という名前のカスタム バインディングを構成します。  
   
-     [!code[C_HowTo_CreateReliableSessionHTTPS#2211](../../../../samples/snippets/common/VS_Snippets_CFX/c_howto_createreliablesessionhttps/common/app.config#2211)]  
+     <!-- TODO: review snippet reference [!code[C_HowTo_CreateReliableSessionHTTPS#2211](../../../../samples/snippets/common/VS_Snippets_CFX/c_howto_createreliablesessionhttps/common/app.config#2211)]  -->  
   
 5.  アプリケーションで `ClientCalculator` のインスタンスを作成し、サービス操作を呼び出します。  
   

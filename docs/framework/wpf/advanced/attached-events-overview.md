@@ -26,7 +26,7 @@ caps.handback.revision: 10
 # 添付イベントの概要
 [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] は、言語コンポーネントと、*添付イベント*と呼ばれる種類のイベントも定義します。  添付イベントの概念によって、特定のイベントのハンドラーを、実際にそのイベントを定義または継承する要素ではなく任意の要素に追加することができます。  この場合、イベントを発生させる可能性のあるオブジェクトでも、インスタンスを処理する添付先でも、そのイベントを定義したり "所有" したりしません。  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="prerequisites"></a>   
 ## 必要条件  

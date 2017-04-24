@@ -26,7 +26,7 @@ caps.handback.revision: 27
 # イメージ、描画、およびビジュアルによる塗りつぶし
 ここでは、<xref:System.Windows.Media.ImageBrush> オブジェクト、<xref:System.Windows.Media.DrawingBrush> オブジェクト、および <xref:System.Windows.Media.VisualBrush> オブジェクトを使用して領域をイメージ、<xref:System.Windows.Media.Drawing>、または <xref:System.Windows.Media.Visual> で塗りつぶす方法について説明します。  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="prereqs"></a>   
 ## 必要条件  

@@ -24,7 +24,7 @@ caps.handback.revision: 13
 # 書式設定されたテキストの描画
 ここでは、<xref:System.Windows.Media.FormattedText> オブジェクトの機能の概要について説明します。  このオブジェクトは、[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] アプリケーションでのテキストの描画に対する低レベルの制御を提供します。  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="technology_overview"></a>   
 ## テクノロジの概要  

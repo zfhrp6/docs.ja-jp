@@ -28,7 +28,7 @@ caps.handback.revision: 22
 > [!NOTE]
 >  *ハイブリッド コントロール* シナリオには特に注意する必要があります。  ハイブリッド コントロールは、あるテクノロジのコントロールの入れ子になっている別のテクノロジのコントロールです。  これは、*入れ子になった相互運用*とも呼ばれます。  *複数レベルのハイブリッド コントロール*には、複数のレベルで入れ子になっているハイブリッド コントロールが含まれます。  複数レベルの入れ子になった相互運用の例として、ある [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] コントロールに [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] コントロールが含まれ、さらにそのコントロールに [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] コントロールが含まれている場合があります。  複数レベルのハイブリッド コントロールはサポートされていません。  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="Windows_Presentation_Foundation_Application_Hosting"></a>   
 ## WPF での Windows フォーム コントロールのホスト  

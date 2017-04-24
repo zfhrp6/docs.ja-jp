@@ -22,7 +22,7 @@ caps.handback.revision: 22
 # PropertyPath の XAML 構文
 <xref:System.Windows.PropertyPath> オブジェクトは、<xref:System.Windows.PropertyPath> 型を値として使用する各種プロパティを設定するうえで、複雑な [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] インライン構文をサポートします。  このトピックでは、バインディング構文とアニメーション構文に適用される <xref:System.Windows.PropertyPath> 構文について説明します。  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="where"></a>   
 ## PropertyPath を使用する場所  

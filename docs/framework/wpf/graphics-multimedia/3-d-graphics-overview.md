@@ -22,7 +22,7 @@ caps.handback.revision: 20
 # 3-D グラフィックスの概要
 <a name="introduction"></a> [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] の [!INCLUDE[TLA2#tla_3d](../../../../includes/tla2sharptla-3d-md.md)] 機能により、マークアップ コードおよび手順コードの両方で、開発者は 3\-D グラフィックスを描画、変換、およびアニメーション化できます。  開発者は、[!INCLUDE[TLA#tla_2d](../../../../includes/tlasharptla-2d-md.md)] グラフィックスと [!INCLUDE[TLA2#tla_3d](../../../../includes/tla2sharptla-3d-md.md)] グラフィックスを組み合わせることで、多彩なコントロールを作成したり、複雑なイラストレーションのデータを提供したり、アプリケーション インターフェイスのユーザー エクスペリエンスを向上させることができます。[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] での [!INCLUDE[TLA2#tla_3d](../../../../includes/tla2sharptla-3d-md.md)] サポートは、多機能なゲーム開発プラットフォームを提供するために設計されたものではありません。このトピックでは、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] グラフィックス システムの [!INCLUDE[TLA#tla_3d](../../../../includes/tlasharptla-3d-md.md)] 機能の概要について説明します。  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="threed_in_2d"></a>   
 ## 2\-D コンテナー内の 3\-D グラフィックス  

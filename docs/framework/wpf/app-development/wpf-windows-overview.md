@@ -46,7 +46,7 @@ caps.handback.revision: 60
 > [!NOTE]
 >  [!INCLUDE[TLA#tla_xbap#plural](../../../../includes/tlasharptla-xbapsharpplural-md.md)] や Loose [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] のページなど、ブラウザーによってホストされる [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] アプリケーションには、独自のウィンドウはありません。  その代わり、[!INCLUDE[TLA#tla_iegeneric](../../../../includes/tlasharptla-iegeneric-md.md)] で提供されるウィンドウでホストされます。  「[WPF XAML ブラウザー アプリケーションの概要](../../../../docs/framework/wpf/app-development/wpf-xaml-browser-applications-overview.md)」を参照してください。  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="TheWindowClass"></a>   
 ## ウィンドウ クラス  
@@ -136,7 +136,7 @@ caps.handback.revision: 60
 ## ウィンドウの有効期間  
  クラスと同様に、ウィンドウにも有効期間があります。有効期間は、ウィンドウが開いてインスタンス化されたときに開始し、アクティブ化と非アクティブ化を経て、最後に閉じられるまで継続します。  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="Opening_a_Window"></a>   
 ### ウィンドウを開く  
@@ -414,7 +414,7 @@ caps.handback.revision: 60
   
  また、ウィンドウのサイズ変更モード、ウィンドウ スタイル、デスクトップのタスク バーにボタンとして表示するかどうかを設定して、非クライアント領域の境界線の外観と動作も変更できます。  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="Resize_Mode"></a>   
 ### サイズ変更モード  

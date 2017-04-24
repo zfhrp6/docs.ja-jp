@@ -48,13 +48,13 @@ caps.handback.revision: 41
 ## <a name="defining-endpoint-addresses-in-configuration"></a>構成によるエンドポイント アドレスの定義  
  構成ファイルでエンドポイントを定義するには、使用、 [ <> \> ](http://msdn.microsoft.com/ja-jp/13aa23b7-2f08-4add-8dbf-a99f8127c017)要素。  
   
- [!code[S_UEHelloWorld#5](../../../samples/snippets/common/VS_Snippets_CFX/s_uehelloworld/common/serviceapp2.config#5)]  
+ <!-- TODO: review snippet reference [!code[S_UEHelloWorld#5](../../../samples/snippets/common/VS_Snippets_CFX/s_uehelloworld/common/serviceapp2.config#5)]  -->  
   
  ときに、<xref:System.ServiceModel.Channels.CommunicationObject.Open%2A>メソッドが呼び出されます (つまり、ホスト アプリケーションでは、サービスを開始しようとして)、システムは、 [ <> \> ](../../../docs/framework/configure-apps/file-schema/wcf/service.md) "UE を指定する name 属性を持つ要素。Samples.HelloService"です。 場合、 [ <> \> ](../../../docs/framework/configure-apps/file-schema/wcf/service.md)要素が見つかると、システムが、指定したクラスに読み込んで、構成ファイルで提供されるエンドポイントの定義を使用してエンドポイントを作成します。 このしくみによって、2 行のコードでサービスを読み込んで開始でき、バインディングとアドレス指定情報をコード外に維持することができます。 この方法の利点は、アプリケーションを再度コンパイルしたり、展開したりすることなく、この&2; つの情報を変更できる点です。  
   
  省略可能なヘッダーがで宣言されている、 [ <> \</> \>](../../../docs/framework/configure-apps/file-schema/wcf/headers-element.md)します。 次に示す例では、構成ファイルでサービスのエンドポイントを指定するための要素で、2 つのヘッダー (http://tempuri1.org/ からの "Gold" クライアントと http://tempuri2.org/ からの "Standard" クライアント) を識別しています。 このサービスを呼び出すクライアントが、適切な必要[ <> \> ](../../../docs/framework/configure-apps/file-schema/wcf/headers-element.md)構成ファイルにします。  
   
- [!code[S_UEHelloWorld#1](../../../samples/snippets/common/VS_Snippets_CFX/s_uehelloworld/common/serviceapp.config#1)]  
+ <!-- TODO: review snippet reference [!code[S_UEHelloWorld#1](../../../samples/snippets/common/VS_Snippets_CFX/s_uehelloworld/common/serviceapp.config#1)]  -->  
   
  ヘッダーは、(上記のように) エンドポイントのすべてのメッセージに対してではなく、個別のメッセージに設定できます。 使用してこれは、 <xref:System.ServiceModel.OperationContextScope>を次の例で示すように、送信メッセージにカスタム ヘッダーを追加するクライアント アプリケーションで新しいコンテキストを作成します。  
   

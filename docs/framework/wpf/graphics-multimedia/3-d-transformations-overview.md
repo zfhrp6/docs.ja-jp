@@ -22,7 +22,7 @@ caps.handback.revision: 17
 # 3-D 変換の概要
 ここでは、[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] のグラフィックス システムで 3\-D モデルに変換を適用する方法について説明します。  変換を使用すると、開発者は、モデルを定義する基本値を変更せずに、モデルの位置、サイズ、および向きを変更することができます。  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 ## 3\-D 座標空間  
  [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] の 3\-D グラフィックス コンテンツは、2 次元要素の構造内に追加できる要素 <xref:System.Windows.Controls.Viewport3D> 内にカプセル化されます。  グラフィックス システムでは Viewport3D を他の多くの [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] と同様に 2 次元のビジュアル要素として扱います。  Viewport3D は 3 次元シーンへのウィンドウ \(ビューポート\) として機能します。  正確には、3\-D シーンが投影されるサーフェイスです。  同じシーン グラフ内で Viewport3D を他の 2\-D 描画オブジェクトと共に使用できますが、Viewport3D 内で 2\-D オブジェクトと 3\-D オブジェクトを相互に貫入させることはできません。  以下の説明では、示される座標空間は Viewport3D 要素に含まれています。  

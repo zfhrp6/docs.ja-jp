@@ -27,7 +27,7 @@ caps.handback.revision: 14
   
  [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] には、グラフィックス サービスやレンダリング サービスへのアクセスのレイヤーがいくつか用意されています。  最上位レイヤーにある <xref:System.Windows.Shapes.Shape> オブジェクトは使いやすく、[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] イベント システムでのレイアウトや参加などのさまざまな役立つ機能を提供します。  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="shapes"></a>   
 ## 図形オブジェクト  

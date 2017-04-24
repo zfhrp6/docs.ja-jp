@@ -83,8 +83,8 @@ Web ページは世界中どこでも表示可能なため、日付\/時刻値�
 ## 使用例  
  次の例は、日付\/時刻値の入力をユーザーに求める ASP.NET Web フォームの HTML ソースとコードの両方を含んでいます。  また、クライアント側スクリプトは、ユーザー側のローカル日付\/時刻に関する情報、およびユーザーのタイム ゾーンと UTC とのオフセットに関する情報を隠しフィールドに書き込みます。  その後、この情報はサーバーによって解析され、ユーザー入力を表示する Web ページが返されます。  さらに、ユーザーのローカル時間、サーバーの時間、および UTC を使用して、ユーザー側の日付\/時刻も表示されます。  
   
- [!code-csharp[Formatting.HowTo.ParseDateInput#1](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.HowTo.ParseDateInput/cs/GetDateInfo.aspx#1)]
- [!code-vb[Formatting.HowTo.ParseDateInput#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.HowTo.ParseDateInput/vb/GetDateInfo.aspx#1)]  
+ <!-- TODO: review snippet reference [!code-csharp[Formatting.HowTo.ParseDateInput#1](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.HowTo.ParseDateInput/cs/GetDateInfo.aspx#1)]  -->
+ <!-- TODO: review snippet reference [!code-vb[Formatting.HowTo.ParseDateInput#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.HowTo.ParseDateInput/vb/GetDateInfo.aspx#1)]  -->  
   
  クライアント側スクリプトは、JavaScript `toLocaleString` メソッドを呼び出します。  これにより、サーバー上で正常に解析される可能性がより高い、ユーザー ロケールの書式指定規則に従う文字列が生成されます。  
   

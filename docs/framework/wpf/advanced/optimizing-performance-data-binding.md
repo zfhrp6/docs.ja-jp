@@ -24,7 +24,7 @@ caps.handback.revision: 7
   
  このトピックでは、データ バインディングのパフォーマンスに関する推奨事項について説明します。  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="HowDataBindingReferencesAreResolved"></a>   
 ## データ バインディングの参照が解決されるしくみ  

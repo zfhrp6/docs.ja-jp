@@ -84,7 +84,7 @@ caps.handback.revision: 9
   
  次の例では、<xref:System.Activities.NativeActivity> ベースのカスタム `ParallelForEach` アクティビティの <xref:System.Activities.NativeActivity.Cancel%2A> オーバーライドが定義されます。アクティビティが取り消されると、このオーバーライドによってアクティビティの取り消しロジックが処理されます。この例は、「[非ジェネリックの ParallelForEach](../../../docs/framework/windows-workflow-foundation/samples/non-generic-parallelforeach.md)」のサンプルの一部です。  
   
- [!code-csharp[CFX_WorkflowApplicationExample#1010](../../../samples/snippets/csharp/VS_Snippets_CFX/cfx_workflowapplicationexample/cs/program.cs#1010)]  
+ <!-- TODO: review snippet reference [!code-csharp[CFX_WorkflowApplicationExample#1010](../../../samples/snippets/csharp/VS_Snippets_CFX/cfx_workflowapplicationexample/cs/program.cs#1010)]  -->  
   
  <xref:System.Activities.NativeActivity> 派生アクティビティでは、<xref:System.Activities.NativeActivityContext.IsCancellationRequested%2A> プロパティを調べることによって取り消しが要求されたかどうかを確認し、<xref:System.Activities.NativeActivityContext.MarkCanceled%2A> メソッドを呼び出して取り消し対象としてマークできます。<xref:System.Activities.NativeActivityContext.MarkCanceled%2A> を呼び出した後、すぐにアクティビティが完了するわけではありません。ランタイムは通常どおり、未処理の処理がなくなってからアクティビティを完了します。ただし、<xref:System.Activities.NativeActivityContext.MarkCanceled%2A> が呼び出された場合は、最終的な状態が <xref:System.Activities.ActivityInstanceState> ではなく <xref:System.Activities.ActivityInstanceState> になります。  
   

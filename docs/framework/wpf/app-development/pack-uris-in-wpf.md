@@ -46,7 +46,7 @@ caps.handback.revision: 31
   
  こうした場所にある各種ファイルを指定して読み込むため、一貫性のある仕組みの提供を目的として、[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] では*パッケージの URI スキーム*を採用しています。  このトピックでは、このスキームの概要、さまざまなシナリオでのパッケージの [!INCLUDE[TLA2#tla_uri#plural](../../../../includes/tla2sharptla-urisharpplural-md.md)] の作成方法、絶対および相対 [!INCLUDE[TLA2#tla_uri#plural](../../../../includes/tla2sharptla-urisharpplural-md.md)] と [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] の解決について説明した後、マークアップやコードでパッケージの [!INCLUDE[TLA2#tla_uri#plural](../../../../includes/tla2sharptla-urisharpplural-md.md)] を使用する方法について説明します。  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="The_Pack_URI_Scheme"></a>   
 ## パッケージの URI スキーム  

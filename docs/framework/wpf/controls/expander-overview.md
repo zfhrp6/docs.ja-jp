@@ -22,7 +22,7 @@ caps.handback.revision: 19
 # エキスパンダーの概要
 <xref:System.Windows.Controls.Expander> コントロールとは、ウィンドウに似た、ヘッダーを持つ展開可能な領域内にコンテンツを表示するための手段です。  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="CreatinganExpanderinXAML"></a>   
 ## 単純なエキスパンダーの作成  

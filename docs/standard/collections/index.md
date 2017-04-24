@@ -30,7 +30,7 @@ caps.handback.revision: 35
   
  以降で、 [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)]、内のコレクション、 <xref:System.Collections.Concurrent>名前空間は、複数のスレッドからコレクション項目にアクセスするための効率的なスレッド セーフな操作を提供します。 System.Collections.Immutable 名前空間の変更できないコレクション クラス ([NuGet パッケージ](https://www.nuget.org/packages/System.Collections.Immutable)) は、元のコレクションのコピーで操作が実行され、元のコレクションを変更できないために、本質的にスレッド セーフです。  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="BKMK_Commoncollectionfeatures"></a>   
 ## <a name="common-collection-features"></a>一般的なコレクションの機能  

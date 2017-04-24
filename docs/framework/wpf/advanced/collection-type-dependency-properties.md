@@ -24,7 +24,7 @@ caps.handback.revision: 7
 # コレクション型依存関係プロパティ
 ここでは、プロパティの型がコレクション型である場合に[依存関係プロパティ](GTMT)を実装する方法についての、ガイダンスと推奨されるパターンを示します。  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="implementing"></a>   
 ## コレクション型依存関係プロパティの実装  
@@ -36,7 +36,7 @@ caps.handback.revision: 7
   
  例を次に示します。  この例は、`Aquarium` クラスの定義を示しています。  このクラスで定義されているコレクション型依存関係プロパティ `AquariumObjects` は、<xref:System.Windows.FrameworkElement> 型の制約でジェネリック <xref:System.Collections.Generic.List%601> 型を使用します。  依存関係プロパティに対する <xref:System.Windows.DependencyProperty.Register%28System.String%2CSystem.Type%2CSystem.Type%2CSystem.Windows.PropertyMetadata%29> の呼び出しでは、メタデータが、既定値を新しいジェネリック <xref:System.Collections.Generic.List%601> に設定します。  
   
- [!code-csharp[PropertiesOvwSupport#CollectionProblemDefinition](../../../../samples/snippets/csharp/VS_Snippets_Wpf/PropertiesOvwSupport/CSharp/page4.xaml.cs#collectionproblemdefinition)]
+ <!-- TODO: review snippet reference [!code-csharp[PropertiesOvwSupport#CollectionProblemDefinition](../../../../samples/snippets/csharp/VS_Snippets_Wpf/PropertiesOvwSupport/CSharp/page4.xaml.cs#collectionproblemdefinition)]  -->
  [!code-vb[PropertiesOvwSupport#CollectionProblemDefinition](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/PropertiesOvwSupport/visualbasic/page4.xaml.vb#collectionproblemdefinition)]  
 [!code-csharp[PropertiesOvwSupport#CollectionProblemEndB](../../../../samples/snippets/csharp/VS_Snippets_Wpf/PropertiesOvwSupport/CSharp/page4.xaml.cs#collectionproblemendb)]
 [!code-vb[PropertiesOvwSupport#CollectionProblemEndB](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/PropertiesOvwSupport/visualbasic/page4.xaml.vb#collectionproblemendb)]  

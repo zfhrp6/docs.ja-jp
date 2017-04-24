@@ -29,7 +29,7 @@ caps.handback.revision: 28
 # ルーティング イベントの概要
 このトピックでは、[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] でのルーティング イベントの概念について説明します。  ここでは、ルーティング イベントの用語を定義し、要素ツリーを通じたイベントのルーティング方法、ルーティング イベントの処理方法、およびカスタム ルーティング イベントの作成方法について説明します。  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="prerequisites"></a>   
 ## 必要条件  

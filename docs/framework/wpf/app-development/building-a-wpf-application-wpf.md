@@ -21,7 +21,7 @@ caps.handback.revision: 42
 # WPF アプリケーション (WPF) のビルド
 [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] アプリケーションは、[!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] の実行可能ファイル \(.exe\)、ライブラリ \(.dll\)、またはこれらの両方のタイプのアセンブリの組み合わせとしてビルドできます。  このトピックでは、[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] アプリケーションをビルドする方法を紹介し、ビルド処理の主要な手順について説明します。  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="Building_a_WPF_Application_using_Command_Line"></a>   
 ## WPF アプリケーションのビルド  

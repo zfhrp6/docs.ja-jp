@@ -26,7 +26,7 @@ caps.handback.revision: 34
   
  ローカリゼーションとは、アプリケーションでサポートする特定のカルチャ用のローカライズ バージョンに、アプリケーション リソースを変換することです。  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] でローカライズする場合には、<xref:System.Windows.Markup.Localizer> 名前空間の API を使用します。これらの API により、[LocBaml ツールのサンプル](http://go.microsoft.com/fwlink/?LinkID=160016)のコマンド ライン ツールが機能します。  LocBaml を構築して使用する方法については、「[アプリケーションをローカライズする](../../../../docs/framework/wpf/advanced/how-to-localize-an-application.md)」を参照してください。  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 ## WPF のグローバリゼーションとローカリゼーションのベスト プラクティス  
  ここに示す UI 設計とローカリゼーションに関するヒントに従うと、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] に組み込まれたグローバリゼーション機能とローカリゼーション機能を最大限に活用できます。  

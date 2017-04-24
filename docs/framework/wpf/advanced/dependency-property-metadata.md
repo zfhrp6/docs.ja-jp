@@ -24,7 +24,7 @@ caps.handback.revision: 23
 # 依存関係プロパティのメタデータ
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] プロパティ システムには、リフレクションや一般的な [!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] 特性から得られる以上の詳細なプロパティ情報を提供するメタデータ報告システムが含まれています。  [依存関係プロパティ](GTMT)のメタデータは、[依存関係プロパティ](GTMT)を定義するクラスで個別に割り当てることも、[依存関係プロパティ](GTMT)を別のクラスに追加する際に変更することもできます。また、[依存関係プロパティ](GTMT)をその定義元の基本クラスから継承するすべての派生クラスで明確にオーバーライドすることもできます。  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="prerequisites"></a>   
 ## 必要条件  

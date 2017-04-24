@@ -31,7 +31,7 @@ caps.handback.revision: 29
 > [!NOTE]
 >  Windows サービスで WPF 型を使用することは避けることを強くお勧めします。  Windows サービスで WPF 型を使用しようとした場合、サービスが期待どおりに動作しないことがあります。  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="whats_new_with_graphics_and_multimedia_in_wpf_4"></a>   
 ## WPF 4 のグラフィックスとマルチメディアの新機能  

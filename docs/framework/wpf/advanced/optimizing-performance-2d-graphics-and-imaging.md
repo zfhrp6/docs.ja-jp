@@ -26,7 +26,7 @@ caps.handback.revision: 7
 # パフォーマンスの最適化 : 2D グラフィックスとイメージング
 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] には、アプリケーションの要件に合わせて最適化できる広範な 2D グラフィックス機能とイメージング機能が用意されています。  このトピックでは、この領域でのパフォーマンスの最適化に関する情報を提供します。  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="Drawing_and_Shapes"></a>   
 ## 描画と図形  

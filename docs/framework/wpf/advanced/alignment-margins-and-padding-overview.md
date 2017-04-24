@@ -25,7 +25,7 @@ caps.handback.revision: 19
 # 配置、余白、パディングの概要
 <xref:System.Windows.FrameworkElement> クラスは、子要素を正確に配置するために使用する複数のプロパティを公開します。  ここでは、最も重要な 4 つのプロパティ、<xref:System.Windows.FrameworkElement.HorizontalAlignment%2A>、<xref:System.Windows.FrameworkElement.Margin%2A>、<xref:System.Windows.Controls.Border.Padding%2A>、および <xref:System.Windows.FrameworkElement.VerticalAlignment%2A> について説明します。  これらのプロパティは、[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] アプリケーション内での要素の位置を制御するための基本機能を提供するため、その効果について理解しておくことが重要です。  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="wcpsdk_layout_amp_introduction"></a>   
 ## 要素の配置の概要  

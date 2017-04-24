@@ -21,7 +21,7 @@ caps.handback.revision: 26
 # WPF のタイポグラフィ
 ここでは、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] の主要な文字体裁の機能について説明します。  これらの機能には、テキスト レンダリングの品質とパフォーマンスの向上、[!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] フォントのサポート、各国対応テキストの強化、フォントのサポートの強化、新しいテキスト API \(アプリケーション プログラミング インターフェイス\) が含まれます。  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="Improved_Quality_and_Performance_of_Text"></a>   
 ## テキストの品質およびパフォーマンスの向上  

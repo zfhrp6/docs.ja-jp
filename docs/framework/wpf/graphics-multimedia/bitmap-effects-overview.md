@@ -24,7 +24,7 @@ caps.handback.revision: 31
 > [!IMPORTANT]
 >  [!INCLUDE[net_v40_short](../../../../includes/net-v40-short-md.md)] 以降では、<xref:System.Windows.Media.Effects.BitmapEffect> クラスは使用されなくなりました。  <xref:System.Windows.Media.Effects.BitmapEffect> クラスを使用すると、廃止されていることを示す例外が返されます。  <xref:System.Windows.Media.Effects.BitmapEffect> クラスの代替としては <xref:System.Windows.Media.Effects.Effect> クラスを使用できます。  ほとんどの場合は、<xref:System.Windows.Media.Effects.Effect> クラスを使用した方が高速に処理できます。  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="wpf_effects"></a>   
 ## WPF ビットマップ効果  

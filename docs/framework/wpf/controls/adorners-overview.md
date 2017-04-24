@@ -21,7 +21,7 @@ caps.handback.revision: 34
 # 装飾の概要
 装飾は、ユーザーにビジュアル キューを提供するために使用する、特別な種類の <xref:System.Windows.FrameworkElement> です。  装飾にはさまざまな使用法があり、要素に機能ハンドルを追加したり、コントロールに関する状態情報を提供するためなどに使用できます。  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="about_Adorners"></a>   
 ## 装飾について  

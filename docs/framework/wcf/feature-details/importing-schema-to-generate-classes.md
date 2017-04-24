@@ -68,7 +68,7 @@ caps.handback.revision: 15
   
  たとえば、次のスキーマを考えます。  
   
- [!code[c_SchemaImportExport#10](../../../../samples/snippets/common/VS_Snippets_CFX/c_schemaimportexport/common/source.config#10)]  
+ <!-- TODO: review snippet reference [!code[c_SchemaImportExport#10](../../../../samples/snippets/common/VS_Snippets_CFX/c_schemaimportexport/common/source.config#10)]  -->  
   
  
           `Namespaces` プロパティを使って、"http://schemas.contoso.com/carSchema" という名前空間を "Contoso.Cars" に対応付ける例を示します。  
@@ -100,18 +100,18 @@ caps.handback.revision: 15
 ### <a name="import-options-choosing-collection-types"></a>インポート オプション: コレクション型の選択  
  XML でアイテムのコレクションを表すパターンには、アイテムのリストと、アイテム間の関連付けの&2; 種類があります。 文字列のリストの例を次に示します。  
   
- [!code[C_SchemaImportExport#11](../../../../samples/snippets/common/VS_Snippets_CFX/c_schemaimportexport/common/source.config#11)]  
+ <!-- TODO: review snippet reference [!code[C_SchemaImportExport#11](../../../../samples/snippets/common/VS_Snippets_CFX/c_schemaimportexport/common/source.config#11)]  -->  
   
  文字列と整数 (`city name` と `population`) を関連付ける例を次に示します。  
   
- [!code[C_SchemaImportExport#12](../../../../samples/snippets/common/VS_Snippets_CFX/c_schemaimportexport/common/source.config#12)]  
+ <!-- TODO: review snippet reference [!code[C_SchemaImportExport#12](../../../../samples/snippets/common/VS_Snippets_CFX/c_schemaimportexport/common/source.config#12)]  -->  
   
 > [!NOTE]
 >  関連付けもリストと見なすことができます。 たとえば、上記の関連付けは、文字列と整数の&2; つのフィールドから成る複雑な `city` オブジェクトのリストと考えることも可能です。 どちらの方法であっても、XSD スキーマで表現できます。 この&2; つを区別する手段はないので、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] に特有の特別な注釈がスキーマ内になければ、このようなパターンは常にリストとして扱われます。 注釈がある場合は、関連付けを表すものとして扱われます。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][データ コントラクト スキーマ リファレンス](../../../../docs/framework/wcf/feature-details/data-contract-schema-reference.md)します。  
   
  リストは通常、ジェネリック リストから派生したコレクション データ コントラクト、または [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] の配列としてインポートされます。スキーマがコレクションの標準的な名前付けパターンに従っているかどうかによって切り分けます。 これについては説明について詳しく[データ コントラクトのコレクション型](../../../../docs/framework/wcf/feature-details/collection-types-in-data-contracts.md)します。 関連付けは通常、いずれかとしてインポート、<xref:System.Collections.Generic.Dictionary%602>または辞書オブジェクトから派生したコレクション データ コントラクト\</TKey, TValue>。 たとえば、次のスキーマを考えます。  
   
- [!code[c_SchemaImportExport#13](../../../../samples/snippets/common/VS_Snippets_CFX/c_schemaimportexport/common/source.config#13)]  
+ <!-- TODO: review snippet reference [!code[c_SchemaImportExport#13](../../../../samples/snippets/common/VS_Snippets_CFX/c_schemaimportexport/common/source.config#13)]  -->  
   
  これをインポートすると次のようになります (読みやすいようプロパティの代わりにフィールドを記載)。  
   

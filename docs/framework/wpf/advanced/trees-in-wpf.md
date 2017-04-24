@@ -23,7 +23,7 @@ caps.handback.revision: 19
 # WPF のツリー
 多くのテクノロジでは、要素およびコンポーネントはツリー構造で編成され、開発者はこのツリー内のオブジェクト ノードを直接操作してアプリケーションのレンダリングまたは動作に影響を与えます。  [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] でも各種のツリー構造というメタファを使用してプログラム要素間のリレーションシップを定義します。  ほとんどの場合、WPF 開発者は、オブジェクト ツリー メタファについて概念的に考えながらアプリケーションをコードで作成したりアプリケーションの一部を XAML で定義したりすることができますが、そのためには、XML DOM で使用するような一般的なオブジェクト ツリー操作 API ではなく特定の API を呼び出したり特定のマークアップを使用したりします。  WPF では、ツリー メタファ ビューを提供する <xref:System.Windows.LogicalTreeHelper> と <xref:System.Windows.Media.VisualTreeHelper> の 2 つのヘルパー クラスを公開しています。  ビジュアル ツリーおよび論理ツリーという用語も WPF のドキュメントで使用されます。これらの同じツリーは、特定の主要な WPF 機能の動作を理解するうえで役立つためです。  ここでは、ビジュアル ツリーおよび論理ツリーが表す項目を定義し、これらのツリーがオブジェクト ツリーの全体的な概念とどのように関連するかについて説明し、<xref:System.Windows.LogicalTreeHelper> および <xref:System.Windows.Media.VisualTreeHelper> について説明します。  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="element_tree"></a>   
 ## WPF のツリー  

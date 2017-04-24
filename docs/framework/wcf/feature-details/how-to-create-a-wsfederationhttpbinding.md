@@ -106,7 +106,7 @@ caps.handback.revision: 16
  強制的に `WSFederationHttpBinding` を設定するコード例を以下に示します。  
   
  [!code-csharp[c_FederationBinding#2](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_federationbinding/cs/source.cs#2)]
- [!code-vb[c_FederationBinding#2](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_federationbinding/vb/source.vb#2)]  
+ <!-- TODO: review snippet reference [!code-vb[c_FederationBinding#2](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_federationbinding/vb/source.vb#2)]  -->  
   
 ## 参照  
  [フェデレーション](../../../../docs/framework/wcf/feature-details/federation.md)   

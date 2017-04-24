@@ -35,7 +35,7 @@ caps.handback.revision: 9
   
 3.  Web.config ファイルを作成し、信頼できるセッションが有効で、メッセージの順序付き配信を要求する <xref:System.ServiceModel.WSHttpBinding> を使用する `CalculatorService` のエンドポイントを構成します。  
   
-     [!code[c_HowTo_UseReliableSession#2111](../../../../samples/snippets/common/VS_Snippets_CFX/c_howto_usereliablesession/common/web.config#2111)]  
+     <!-- TODO: review snippet reference [!code[c_HowTo_UseReliableSession#2111](../../../../samples/snippets/common/VS_Snippets_CFX/c_howto_usereliablesession/common/web.config#2111)]  -->  
   
 4.  次の行を含む Service.svc ファイルを作成します。  
   
@@ -63,7 +63,7 @@ caps.handback.revision: 9
   
 4.  <xref:System.ServiceModel.WSHttpBinding> クラスを使用するクライアントの構成も、Svcutil.exe により生成されます。[!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)] を使用する場合、このファイルには App.config という名前を付ける必要があります。  
   
-     [!code[C_HowTo_UseReliableSession#2211](../../../../samples/snippets/common/VS_Snippets_CFX/c_howto_usereliablesession/common/app.config#2211)]  
+     <!-- TODO: review snippet reference [!code[C_HowTo_UseReliableSession#2211](../../../../samples/snippets/common/VS_Snippets_CFX/c_howto_usereliablesession/common/app.config#2211)]  -->  
   
 5.  アプリケーションで `ClientCalculator` のインスタンスを作成し、サービス操作を呼び出します。  
   

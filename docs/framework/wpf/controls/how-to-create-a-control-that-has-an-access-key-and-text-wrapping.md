@@ -31,8 +31,8 @@ caps.handback.revision: 19
   
  <xref:System.Windows.Controls.Label> コントロールは、テキストの折り返しをサポートしません。  複数行にわたって折り返すラベルが必要な場合は、テキストの折り返しをサポートする別の要素を入れ子にして、その要素をラベルの内部に配置します。  複数のテキスト行にわたって折り返すラベルを <xref:System.Windows.Controls.TextBlock> を使用して作成する方法を次の例に示します。  
   
- [!code-xml[Label#5](../../../../samples/snippets/xaml/VS_Snippets_Wpf/Label/XAML/Pane1.xaml#5)]
- [!code-xml[Label#5](../../../../samples/snippets/csharp/VS_Snippets_Wpf/Label/CS/Pane1.xaml#5)]  
+ <!-- TODO: review snippet reference [!code-xml[Label#5](../../../../samples/snippets/xaml/VS_Snippets_Wpf/Label/XAML/Pane1.xaml#5)]  -->
+ <!-- TODO: review snippet reference [!code-xml[Label#5](../../../../samples/snippets/csharp/VS_Snippets_Wpf/Label/CS/Pane1.xaml#5)]  -->  
   
  **アクセス キーとテキストの折り返しをラベルに追加する**  
   
@@ -42,8 +42,8 @@ caps.handback.revision: 19
   
  アクセス キーを持ち、テキストの折り返しをサポートする <xref:System.Windows.Controls.Label> を作成する方法を次の例に示します。  この例では、テキストの折り返しを有効にするために <xref:System.Windows.Controls.AccessText.TextWrapping%2A> プロパティを設定し、下線文字を使用してアクセス キーを示しています。  下線文字のすぐ後にある文字がアクセス キーです。  
   
- [!code-xml[Label#4](../../../../samples/snippets/xaml/VS_Snippets_Wpf/Label/XAML/Pane1.xaml#4)]
- [!code-xml[Label#4](../../../../samples/snippets/csharp/VS_Snippets_Wpf/Label/CS/Pane1.xaml#4)]  
+ <!-- TODO: review snippet reference [!code-xml[Label#4](../../../../samples/snippets/xaml/VS_Snippets_Wpf/Label/XAML/Pane1.xaml#4)]  -->
+ <!-- TODO: review snippet reference [!code-xml[Label#4](../../../../samples/snippets/csharp/VS_Snippets_Wpf/Label/CS/Pane1.xaml#4)]  -->  
   
 ## 参照  
  [How to: Set the Target Property of a Label](http://msdn.microsoft.com/ja-jp/b24c6977-ebcb-4855-a9bb-3fd4435af8f8)

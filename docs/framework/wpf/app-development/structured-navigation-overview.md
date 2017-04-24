@@ -25,7 +25,7 @@ caps.handback.revision: 36
   
  <xref:System.Windows.Controls.Page> クラスは、構造化ナビゲーションのサポートを実装していません。  代わりに、<xref:System.Windows.Controls.Page> から <xref:System.Windows.Navigation.PageFunction%601> クラスが派生し、構造化ナビゲーションで必要な基本コンストラクトで拡張されています。  このトピックでは、<xref:System.Windows.Navigation.PageFunction%601> を使用して構造化ナビゲーションを確立する方法について説明します。  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="Structured_Navigation"></a>   
 ## 構造化ナビゲーション  

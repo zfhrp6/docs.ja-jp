@@ -33,7 +33,7 @@ caps.handback.revision: 3
  次の概念モデル関数は、あるインストラクターが雇用されてから経過した年数を返します。  関数を概念モデルに追加する方法については、「[How to: Define Custom Functions in the Conceptual Model](http://msdn.microsoft.com/ja-jp/0dad7b8b-58f6-4271-b238-f34810d68e5f)」を参照してください\)。  
   
  [!code-xml[DP ConceptualModelFunctions#1](../../../../../../samples/snippets/xml/VS_Snippets_Data/dp conceptualmodelfunctions/xml/school.edmx#1)]
- [!code-xml[DP ConceptualModelFunctions#1](../../../../../../samples/snippets/csharp/VS_Snippets_Data/dp conceptualmodelfunctions/cs/obj/debug/edmxresourcestoembed/school.csdl#1)]  
+ <!-- TODO: review snippet reference [!code-xml[DP ConceptualModelFunctions#1](../../../../../../samples/snippets/csharp/VS_Snippets_Data/dp conceptualmodelfunctions/cs/obj/debug/edmxresourcestoembed/school.csdl#1)]  -->  
   
 ## 使用例  
  次に、次のメソッドをアプリケーションに追加し、<xref:System.Data.Objects.DataClasses.EdmFunctionAttribute> を使用して概念モデル関数にマップします。  

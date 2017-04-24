@@ -34,7 +34,7 @@ caps.handback.revision: 29
 # イメージングの概要
 ここでは、[!INCLUDE[TLA#tla_wic](../../../../includes/tlasharptla-wic-md.md)]の概要を説明します。  [!INCLUDE[TLA2#tla_wic](../../../../includes/tla2sharptla-wic-md.md)]を使用すると、イメージの表示、変換、および書式設定を行うことができます。  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="_wpfImaging"></a>   
 ## WPF イメージング コンポーネント  

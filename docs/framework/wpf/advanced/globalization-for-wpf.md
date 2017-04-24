@@ -24,7 +24,7 @@ caps.handback.revision: 31
 # WPF のグローバリゼーション
 ここでは、[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] アプリケーションをグローバル市場向けに作成する際の注意点について説明します。  グローバリゼーションのプログラミング要素は、[!INCLUDE[TLA#tla_net](../../../../includes/tlasharptla-net-md.md)] の `System.Globalization` に定義されています。  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="xaml_globalization"></a>   
 ## XAML のグローバリゼーション  

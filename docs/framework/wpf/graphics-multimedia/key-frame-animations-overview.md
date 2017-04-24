@@ -52,8 +52,8 @@ caps.handback.revision: 24
   
  次の例では、<xref:System.Windows.Media.Animation.DoubleAnimationUsingKeyFrames> を使用して、<xref:System.Windows.Shapes.Rectangle> 要素を 4 つの異なる場所にアニメーション化します。  
   
- [!code-xml[keyframes_ovw_snip#BasicKeyFrameExampleWholePage](../../../../samples/snippets/csharp/VS_Snippets_Wpf/keyframes_ovw_snip/CS/KeyFramesIntroduction.xaml#basickeyframeexamplewholepage)]
- [!code-xml[keyframes_ovw_snip#BasicKeyFrameExampleWholePage](../../../../samples/snippets/xaml/VS_Snippets_Wpf/keyframes_ovw_snip/XAML/KeyFramesIntroduction.xaml#basickeyframeexamplewholepage)]  
+ <!-- TODO: review snippet reference [!code-xml[keyframes_ovw_snip#BasicKeyFrameExampleWholePage](../../../../samples/snippets/csharp/VS_Snippets_Wpf/keyframes_ovw_snip/CS/KeyFramesIntroduction.xaml#basickeyframeexamplewholepage)]  -->
+ <!-- TODO: review snippet reference [!code-xml[keyframes_ovw_snip#BasicKeyFrameExampleWholePage](../../../../samples/snippets/xaml/VS_Snippets_Wpf/keyframes_ovw_snip/XAML/KeyFramesIntroduction.xaml#basickeyframeexamplewholepage)]  -->  
   
  From\/To\/By アニメーションと同様に、キー フレーム アニメーションも、マークアップおよびコードで <xref:System.Windows.Media.Animation.Storyboard> を使用するかコードで <xref:System.Windows.Media.Animation.Animatable.BeginAnimation%2A> メソッドを使用して、プロパティに適用することができます。  また、キー フレーム アニメーションを使用して <xref:System.Windows.Media.Animation.AnimationClock> を作成し、1 つ以上のプロパティに適用することもできます。  アニメーションを適用するさまざまな方法の詳細については、「[プロパティ アニメーションの手法の概要](../../../../docs/framework/wpf/graphics-multimedia/property-animation-techniques-overview.md)」を参照してください。  
   
@@ -130,8 +130,8 @@ caps.handback.revision: 24
   
 -   アニメーションの <xref:System.Windows.Media.Animation.Timeline.Duration%2A> プロパティが 10 秒に設定されているため、アニメーションは、0:0:10 の時点で終了するまでの 2 秒間その最終的な値を保持します。  
   
- [!code-xml[keyframes_ovw_snip#BasicKeyFrameExampleWholePage](../../../../samples/snippets/csharp/VS_Snippets_Wpf/keyframes_ovw_snip/CS/KeyFramesIntroduction.xaml#basickeyframeexamplewholepage)]
- [!code-xml[keyframes_ovw_snip#BasicKeyFrameExampleWholePage](../../../../samples/snippets/xaml/VS_Snippets_Wpf/keyframes_ovw_snip/XAML/KeyFramesIntroduction.xaml#basickeyframeexamplewholepage)]  
+ <!-- TODO: review snippet reference [!code-xml[keyframes_ovw_snip#BasicKeyFrameExampleWholePage](../../../../samples/snippets/csharp/VS_Snippets_Wpf/keyframes_ovw_snip/CS/KeyFramesIntroduction.xaml#basickeyframeexamplewholepage)]  -->
+ <!-- TODO: review snippet reference [!code-xml[keyframes_ovw_snip#BasicKeyFrameExampleWholePage](../../../../samples/snippets/xaml/VS_Snippets_Wpf/keyframes_ovw_snip/XAML/KeyFramesIntroduction.xaml#basickeyframeexamplewholepage)]  -->  
   
 <a name="interpolationmethods"></a>   
 ## 補間方式  
@@ -173,8 +173,8 @@ caps.handback.revision: 24
 ### スプライン補間  
  スプライン補間を使用すると、よりリアルなタイミング効果を実現できます。  アニメーションは現実に発生する効果を模倣するために使用されることが多いため、開発者は、オブジェクトの加速と減速を細かく制御し、タイミング セグメントを緻密に操作することが必要になる場合もあります。  スプライン キー フレームを使用すると、スプライン補間でアニメーション化することができます。  他のキー フレームでは、<xref:System.Windows.Media.Animation.IKeyFrame.Value%2A> および <xref:System.Windows.Media.Animation.IKeyFrame.KeyTime%2A> を指定しますが、  スプライン キー フレームでは、<xref:System.Windows.Media.Animation.SplineDoubleKeyFrame.KeySpline%2A> も指定します。  <xref:System.Windows.Media.Animation.DoubleAnimationUsingKeyFrames> の単一のスプライン キー フレームの例を次に示します。  <xref:System.Windows.Media.Animation.KeySpline> プロパティに注目してください。このプロパティが、スプライン キー フレームと他の種類のキー フレームの違いです。  
   
- [!code-xml[keyframes_ovw_snip#SingleSplineKeyFrameExample](../../../../samples/snippets/csharp/VS_Snippets_Wpf/keyframes_ovw_snip/CS/InterpolationMethodsExample.xaml#singlesplinekeyframeexample)]
- [!code-xml[keyframes_ovw_snip#SingleSplineKeyFrameExample](../../../../samples/snippets/xaml/VS_Snippets_Wpf/keyframes_ovw_snip/XAML/InterpolationMethodsExample.xaml#singlesplinekeyframeexample)]  
+ <!-- TODO: review snippet reference [!code-xml[keyframes_ovw_snip#SingleSplineKeyFrameExample](../../../../samples/snippets/csharp/VS_Snippets_Wpf/keyframes_ovw_snip/CS/InterpolationMethodsExample.xaml#singlesplinekeyframeexample)]  -->
+ <!-- TODO: review snippet reference [!code-xml[keyframes_ovw_snip#SingleSplineKeyFrameExample](../../../../samples/snippets/xaml/VS_Snippets_Wpf/keyframes_ovw_snip/XAML/InterpolationMethodsExample.xaml#singlesplinekeyframeexample)]  -->  
   
  [3 次ベジエ曲線](GTMT)は、始点、終点、および 2 つの制御点によって定義されます。  スプライン キー フレームの <xref:System.Windows.Media.Animation.KeySpline> プロパティは、\(0,0\) から \(1,1\) に伸びるベジエ曲線の 2 つの制御点を定義します。  1 つ目の制御点はベジエ曲線の前半分の曲率を制御し、2 つ目の制御点はベジエ セグメントの残り半分の曲率を制御します。  作成された曲線は、そのスプライン キー フレームの変更率を示します。  曲線が急になるほどキー フレームの値の変更が速くなります。  曲線が平坦になるほどキー フレームの値の変更が遅くなります。  
   
@@ -185,8 +185,8 @@ caps.handback.revision: 24
  ![ベジエ曲線](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-keyspline-0-1-1-0.png "graphicsmm\_keyspline\_0\_1\_1\_0")  
 制御点が \(0.0, 1.0\) および \(1.0, 0.0\) のキー スプライン  
   
- [!code-xml[keyframes_ovw_snip#SingleSplineKeyFrameExample](../../../../samples/snippets/csharp/VS_Snippets_Wpf/keyframes_ovw_snip/CS/InterpolationMethodsExample.xaml#singlesplinekeyframeexample)]
- [!code-xml[keyframes_ovw_snip#SingleSplineKeyFrameExample](../../../../samples/snippets/xaml/VS_Snippets_Wpf/keyframes_ovw_snip/XAML/InterpolationMethodsExample.xaml#singlesplinekeyframeexample)]  
+ <!-- TODO: review snippet reference [!code-xml[keyframes_ovw_snip#SingleSplineKeyFrameExample](../../../../samples/snippets/csharp/VS_Snippets_Wpf/keyframes_ovw_snip/CS/InterpolationMethodsExample.xaml#singlesplinekeyframeexample)]  -->
+ <!-- TODO: review snippet reference [!code-xml[keyframes_ovw_snip#SingleSplineKeyFrameExample](../../../../samples/snippets/xaml/VS_Snippets_Wpf/keyframes_ovw_snip/XAML/InterpolationMethodsExample.xaml#singlesplinekeyframeexample)]  -->  
   
  このキー フレームは、開始時にすばやくアニメーション化し、減速して再度加速し、終了します。  
   
@@ -195,15 +195,15 @@ caps.handback.revision: 24
  ![ベジエ曲線](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-keyspline-025-050-075-10.png "graphicsmm\_keyspline\_025\_050\_075\_10")  
 制御点が \(0.25, 0.5\) および \(0.75, 1.0\) のキー スプライン  
   
- [!code-xml[keyframes_ovw_snip#SingleSplineKeyFrameExampleInline3](../../../../samples/snippets/csharp/VS_Snippets_Wpf/keyframes_ovw_snip/CS/InterpolationMethodsExample.xaml#singlesplinekeyframeexampleinline3)]
- [!code-xml[keyframes_ovw_snip#SingleSplineKeyFrameExampleInline3](../../../../samples/snippets/xaml/VS_Snippets_Wpf/keyframes_ovw_snip/XAML/InterpolationMethodsExample.xaml#singlesplinekeyframeexampleinline3)]  
+ <!-- TODO: review snippet reference [!code-xml[keyframes_ovw_snip#SingleSplineKeyFrameExampleInline3](../../../../samples/snippets/csharp/VS_Snippets_Wpf/keyframes_ovw_snip/CS/InterpolationMethodsExample.xaml#singlesplinekeyframeexampleinline3)]  -->
+ <!-- TODO: review snippet reference [!code-xml[keyframes_ovw_snip#SingleSplineKeyFrameExampleInline3](../../../../samples/snippets/xaml/VS_Snippets_Wpf/keyframes_ovw_snip/XAML/InterpolationMethodsExample.xaml#singlesplinekeyframeexampleinline3)]  -->  
   
  ベジエ曲線の曲率がほとんど変化しないため、このキー フレームはほぼ定率でアニメーション化されます。終了が近づくと少し減速します。  
   
  <xref:System.Windows.Media.Animation.DoubleAnimationUsingKeyFrames> を使用して四角形の位置をアニメーション化する例を次に示します。  <xref:System.Windows.Media.Animation.DoubleAnimationUsingKeyFrames> で <xref:System.Windows.Media.Animation.SplineDoubleKeyFrame> オブジェクトが使用されるため、キー フレームの各値の間の遷移でスプライン補間が使用されます。  
   
- [!code-xml[keyframes_ovw_snip#SplinedInterpolationExample](../../../../samples/snippets/csharp/VS_Snippets_Wpf/keyframes_ovw_snip/CS/InterpolationMethodsExample.xaml#splinedinterpolationexample)]
- [!code-xml[keyframes_ovw_snip#SplinedInterpolationExample](../../../../samples/snippets/xaml/VS_Snippets_Wpf/keyframes_ovw_snip/XAML/InterpolationMethodsExample.xaml#splinedinterpolationexample)]  
+ <!-- TODO: review snippet reference [!code-xml[keyframes_ovw_snip#SplinedInterpolationExample](../../../../samples/snippets/csharp/VS_Snippets_Wpf/keyframes_ovw_snip/CS/InterpolationMethodsExample.xaml#splinedinterpolationexample)]  -->
+ <!-- TODO: review snippet reference [!code-xml[keyframes_ovw_snip#SplinedInterpolationExample](../../../../samples/snippets/xaml/VS_Snippets_Wpf/keyframes_ovw_snip/XAML/InterpolationMethodsExample.xaml#splinedinterpolationexample)]  -->  
   
  スプライン補間は理解しにくいため、さまざまな設定を試してみることをお勧めします。  [キー スプライン アニメーションのサンプル](http://go.microsoft.com/fwlink/?LinkID=160011)を使用すると、キー スプラインの値を変更して、アニメーションに表れる結果を確認することができます。  
   
@@ -213,8 +213,8 @@ caps.handback.revision: 24
   
  次の例では、線形、スプライン、および離散補間を使用する <xref:System.Windows.Media.Animation.DoubleAnimationUsingKeyFrames> が作成されます。  
   
- [!code-xml[keyframes_ovw_snip#ComboInterpolationExample](../../../../samples/snippets/csharp/VS_Snippets_Wpf/keyframes_ovw_snip/CS/InterpolationMethodsExample.xaml#combointerpolationexample)]
- [!code-xml[keyframes_ovw_snip#ComboInterpolationExample](../../../../samples/snippets/xaml/VS_Snippets_Wpf/keyframes_ovw_snip/XAML/InterpolationMethodsExample.xaml#combointerpolationexample)]  
+ <!-- TODO: review snippet reference [!code-xml[keyframes_ovw_snip#ComboInterpolationExample](../../../../samples/snippets/csharp/VS_Snippets_Wpf/keyframes_ovw_snip/CS/InterpolationMethodsExample.xaml#combointerpolationexample)]  -->
+ <!-- TODO: review snippet reference [!code-xml[keyframes_ovw_snip#ComboInterpolationExample](../../../../samples/snippets/xaml/VS_Snippets_Wpf/keyframes_ovw_snip/XAML/InterpolationMethodsExample.xaml#combointerpolationexample)]  -->  
   
 <a name="keytimes"></a>   
 ## 継続時間およびキー時刻の詳細  
@@ -235,8 +235,8 @@ caps.handback.revision: 24
   
 -   4 番目のキー フレームは、500 から 600 までアニメーション化します。  3 番目のキー フレームの終了時 \(9 秒の時点\) に開始され、1 秒間再生されて 0:0:10 の時点で終了します。  
   
- [!code-xml[keyframes_ovw_snip#TimeSpanKeyTimeExample](../../../../samples/snippets/csharp/VS_Snippets_Wpf/keyframes_ovw_snip/CS/KeyTimesExample.xaml#timespankeytimeexample)]
- [!code-xml[keyframes_ovw_snip#TimeSpanKeyTimeExample](../../../../samples/snippets/xaml/VS_Snippets_Wpf/keyframes_ovw_snip/XAML/KeyTimesExample.xaml#timespankeytimeexample)]  
+ <!-- TODO: review snippet reference [!code-xml[keyframes_ovw_snip#TimeSpanKeyTimeExample](../../../../samples/snippets/csharp/VS_Snippets_Wpf/keyframes_ovw_snip/CS/KeyTimesExample.xaml#timespankeytimeexample)]  -->
+ <!-- TODO: review snippet reference [!code-xml[keyframes_ovw_snip#TimeSpanKeyTimeExample](../../../../samples/snippets/xaml/VS_Snippets_Wpf/keyframes_ovw_snip/XAML/KeyTimesExample.xaml#timespankeytimeexample)]  -->  
   
 ### 割合の値  
  割合の値は、キー フレームがアニメーションの <xref:System.Windows.Media.Animation.Timeline.Duration%2A> に対する特定の割合の時点で終了するように指定します。  [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] では、数値の後に `%` 記号が続く形式で割合を指定します。  コードでは、<xref:System.Windows.Media.Animation.KeyTime.FromPercent%2A> メソッドを使用して、割合を示す <xref:System.Double> を渡します。  この値は 0 以上、100% 以下でなければなりません。  継続時間が 10 秒のアニメーションとキー時刻が割合として指定される 4 つのキー フレームの例を次に示します。  
@@ -249,8 +249,8 @@ caps.handback.revision: 24
   
 -   4 番目のキー フレームは、500 から 600 までアニメーション化します。  3 番目のキー フレームの終了時 \(9 秒の時点\) に開始され、1 秒間再生されて 0:0:10 \(1 × 10 \= 10\) の時点で終了します。  
   
- [!code-xml[keyframes_ovw_snip#PercentageKeyTimeExample](../../../../samples/snippets/csharp/VS_Snippets_Wpf/keyframes_ovw_snip/CS/KeyTimesExample.xaml#percentagekeytimeexample)]
- [!code-xml[keyframes_ovw_snip#PercentageKeyTimeExample](../../../../samples/snippets/xaml/VS_Snippets_Wpf/keyframes_ovw_snip/XAML/KeyTimesExample.xaml#percentagekeytimeexample)]  
+ <!-- TODO: review snippet reference [!code-xml[keyframes_ovw_snip#PercentageKeyTimeExample](../../../../samples/snippets/csharp/VS_Snippets_Wpf/keyframes_ovw_snip/CS/KeyTimesExample.xaml#percentagekeytimeexample)]  -->
+ <!-- TODO: review snippet reference [!code-xml[keyframes_ovw_snip#PercentageKeyTimeExample](../../../../samples/snippets/xaml/VS_Snippets_Wpf/keyframes_ovw_snip/XAML/KeyTimesExample.xaml#percentagekeytimeexample)]  -->  
   
 ### 特殊な値 Uniform  
  各キー フレームの時間が同じになるようにするには、<xref:System.Windows.Media.Animation.KeyTime.Uniform%2A> タイミングを使用します。  
@@ -265,16 +265,16 @@ caps.handback.revision: 24
   
 -   4 番目のキー フレームは、500 から 600 までアニメーション化します。  2 番目のキー フレームの終了時 \(7.5 秒の時点\) に開始され、2.5 秒間再生されて 0:0:1 の時点で終了します。  
   
- [!code-xml[keyframes_ovw_snip#UniformKeyTimeExample](../../../../samples/snippets/csharp/VS_Snippets_Wpf/keyframes_ovw_snip/CS/KeyTimesExample.xaml#uniformkeytimeexample)]
- [!code-xml[keyframes_ovw_snip#UniformKeyTimeExample](../../../../samples/snippets/xaml/VS_Snippets_Wpf/keyframes_ovw_snip/XAML/KeyTimesExample.xaml#uniformkeytimeexample)]  
+ <!-- TODO: review snippet reference [!code-xml[keyframes_ovw_snip#UniformKeyTimeExample](../../../../samples/snippets/csharp/VS_Snippets_Wpf/keyframes_ovw_snip/CS/KeyTimesExample.xaml#uniformkeytimeexample)]  -->
+ <!-- TODO: review snippet reference [!code-xml[keyframes_ovw_snip#UniformKeyTimeExample](../../../../samples/snippets/xaml/VS_Snippets_Wpf/keyframes_ovw_snip/XAML/KeyTimesExample.xaml#uniformkeytimeexample)]  -->  
   
 ### 特殊な値 Paced  
  定率でアニメーション化するには、<xref:System.Windows.Media.Animation.KeyTime.Paced%2A> タイミングを使用します。  
   
  <xref:System.Windows.Media.Animation.KeyTime.Paced%2A> キー時刻では、各キー フレームの長さに基づいて時間が割り当てられ、各フレームの継続時間が決まります。  これにより、アニメーションの速度 \(ペース\) が一定になります。  継続時間が 10 秒のアニメーションとキー時刻が <xref:System.Windows.Media.Animation.KeyTime.Paced%2A> として指定される 3 つのキー フレームの例を次に示します。  
   
- [!code-xml[keyframes_ovw_snip#PacedKeyTimeExample](../../../../samples/snippets/csharp/VS_Snippets_Wpf/keyframes_ovw_snip/CS/KeyTimesExample.xaml#pacedkeytimeexample)]
- [!code-xml[keyframes_ovw_snip#PacedKeyTimeExample](../../../../samples/snippets/xaml/VS_Snippets_Wpf/keyframes_ovw_snip/XAML/KeyTimesExample.xaml#pacedkeytimeexample)]  
+ <!-- TODO: review snippet reference [!code-xml[keyframes_ovw_snip#PacedKeyTimeExample](../../../../samples/snippets/csharp/VS_Snippets_Wpf/keyframes_ovw_snip/CS/KeyTimesExample.xaml#pacedkeytimeexample)]  -->
+ <!-- TODO: review snippet reference [!code-xml[keyframes_ovw_snip#PacedKeyTimeExample](../../../../samples/snippets/xaml/VS_Snippets_Wpf/keyframes_ovw_snip/XAML/KeyTimesExample.xaml#pacedkeytimeexample)]  -->  
   
  最後のキー フレームのキー時刻が <xref:System.Windows.Media.Animation.KeyTime.Paced%2A> または <xref:System.Windows.Media.Animation.KeyTime.Uniform%2A> の場合、解決されたキー時刻は 100% に設定されます。  マルチフレーム アニメーションの最初のキー フレームが Paced の場合、解決されたキー時刻は 0 に設定されます。  キー フレーム コレクションに含まれるキー フレームが 1 つだけで、Paced キー フレームである場合、解決されたキー時刻は 100% に設定されます。  
   

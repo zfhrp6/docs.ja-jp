@@ -27,7 +27,7 @@ A<xref:System.Windows.Controls.Primitives.Popup>コントロールは、アプ�
 > [!NOTE]
 >  <xref:System.Windows.Controls.ToolTip>と<xref:System.Windows.Controls.ContextMenu>クラスは、またこれら&5; つのプロパティを定義して、同様に動作します。  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="Positioning"></a>   
 ## <a name="positioning-the-popup"></a>ポップアップの配置  

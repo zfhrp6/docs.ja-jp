@@ -49,7 +49,7 @@ caps.handback.revision: 13
   
  `LibraryPatron` 型のコレクションを含む `LibraryItem` クラスの例を次に示します。 2 番目のクラスでは、`LibraryItem` 型を定義しています。 3 番目と 4 番目のクラス \(`Book` と `Newspaper`\) は、`LibraryItem` クラスを継承しています。  
   
- [!code-csharp[c_StandaloneDataContractSerializer#3](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_standalonedatacontractserializer/cs/source.cs#3)]
+ <!-- TODO: review snippet reference [!code-csharp[c_StandaloneDataContractSerializer#3](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_standalonedatacontractserializer/cs/source.cs#3)]  -->
  [!code-vb[c_StandaloneDataContractSerializer#3](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_standalonedatacontractserializer/vb/source.vb#3)]  
   
  `knownTypes` パラメーターを使用して、シリアライザーのインスタンスを作成するコードを次に示します。  

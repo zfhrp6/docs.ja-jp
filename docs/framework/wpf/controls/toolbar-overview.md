@@ -22,7 +22,7 @@ caps.handback.revision: 27
 # ToolBar の概要
 <xref:System.Windows.Controls.ToolBar> コントロールは、通常は関連性のある機能を持つコマンドまたはコントロールのグループのコンテナーです。  <xref:System.Windows.Controls.ToolBar> には、通常はコマンドを呼び出すボタンが格納されています。  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="ToolBarControl"></a>   
 ## ToolBar コントロール  

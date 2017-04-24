@@ -22,7 +22,7 @@ caps.handback.revision: 18
 # メニューの概要
 <xref:System.Windows.Controls.Menu>クラスでは、コマンドおよび階層の順序でイベント ハンドラーに関連付けられている要素を整理することができます。 各<xref:System.Windows.Controls.Menu>要素のコレクションを格納する<xref:System.Windows.Controls.MenuItem>要素。  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="menu_control"></a>   
 ## <a name="menu-control"></a>メニュー コントロール  

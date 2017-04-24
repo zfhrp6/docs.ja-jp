@@ -54,7 +54,7 @@ caps.handback.revision: 16
 # WPF アーキテクチャ
 ここでは、[!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] のクラス階層について順を追って説明します。  [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] の主要なサブシステムをほぼ網羅し、その相互作用を示すと共に、  [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] の設計者が下した選択事項についても説明します。  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="System_Object"></a>   
 ## System.Object  

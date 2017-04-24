@@ -26,7 +26,7 @@ caps.handback.revision: 33
 # バインディング宣言の概要
 ここでは、バインディングを宣言するさまざまな方法について説明します。  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="Prereq"></a>   
 ## 必要条件  

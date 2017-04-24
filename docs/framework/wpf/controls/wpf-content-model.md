@@ -30,7 +30,7 @@ caps.handback.revision: 16
   
  このトピックでは、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] コントロール型とコントロールに似た型のコンテンツ モデルについて説明します。  コンテンツ モデルでは、コントロールで使用できるコンテンツが表されます。また、各コンテンツ モデルのコンテンツ プロパティについても示します。  コンテンツ プロパティは、オブジェクトのコンテンツの格納に使用されるプロパティです。  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="classes_that_contain_arbitrary_content"></a>   
 ## 任意のコンテンツを格納するクラス  

@@ -25,7 +25,7 @@ caps.handback.revision: 43
 # グラフィックスの描画層
 描画層は、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] アプリケーションを実行するデバイスのグラフィックス ハードウェアの機能およびパフォーマンスのレベルを定義します。  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="graphics_hardware"></a>   
 ## グラフィックス ハードウェア  

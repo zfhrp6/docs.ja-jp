@@ -22,7 +22,7 @@ caps.handback.revision: 7
 # 読み取り専用の依存関係プロパティ
 ここでは、既存の読み取り専用依存関係プロパティ、カスタムの読み取り専用依存関係プロパティを作成するシナリオと手法など、読み取り専用依存関係プロパティについて説明します。  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="prerequisites"></a>   
 ## 必要条件  

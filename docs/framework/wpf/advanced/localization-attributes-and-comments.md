@@ -22,7 +22,7 @@ caps.handback.revision: 14
 # ローカリゼーション属性とコメント
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] ローカリゼーション コメントは、ローカライズの規則やヒントを示すために、開発者が [!INCLUDE[TLA#tla_titlexaml](../../../../includes/tlasharptla-titlexaml-md.md)] ソース コード内に記述するプロパティです。  [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] ローカリゼーション コメントには、ローカライズ属性と自由な書式のローカリゼーション コメントの 2 組の情報が含まれます。  localizability 属性は、どのリソースがローカライズ対象かを示すために、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] ローカリゼーション API により使用されます。  自由な書式のコメントには、アプリケーション作成者が必要に応じて任意の情報を記述できます。  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="Localizer_Comments_"></a>   
 ## ローカリゼーション コメント  

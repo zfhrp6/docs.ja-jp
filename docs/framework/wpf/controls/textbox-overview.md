@@ -22,7 +22,7 @@ caps.handback.revision: 9
 # TextBox の概要
 <xref:System.Windows.Controls.TextBox> クラスを使用すると、書式なしテキストを表示または編集できます。  <xref:System.Windows.Controls.TextBox> は一般的に、フォームで書式なしテキストを編集するために使用されます。  たとえば、ユーザーの氏名や電話番号などの入力を求めるフォームで、テキスト入力のために <xref:System.Windows.Controls.TextBox> コントロールを使用します。  このトピックでは、<xref:System.Windows.Controls.TextBox> クラスについて説明し、[!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] と [!INCLUDE[TLA#tla_lhcshrp](../../../../includes/tlasharptla-lhcshrp-md.md)] の両方で使用する例を示します。  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="textbox_or_richtextbox"></a>   
 ## TextBox と RichTextBox  

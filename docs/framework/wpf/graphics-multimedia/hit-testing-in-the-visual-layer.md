@@ -22,7 +22,7 @@ caps.handback.revision: 41
 # ビジュアル層でのヒット テスト
 ここでは、ビジュアル層で提供されるヒット テスト機能の概要について説明します。  ヒット テストのサポートにより、ジオメトリまたはポイント値が <xref:System.Windows.Media.Visual> のレンダリングされるコンテンツ内にあるかどうかを判断でき、複数のオブジェクトを選択するための選択四角形などのユーザー インターフェイスの動作を実装できます。  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="hit_testing_scenarios"></a>   
 ## ヒット テストのシナリオ  

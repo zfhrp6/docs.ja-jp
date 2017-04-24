@@ -22,7 +22,7 @@ caps.handback.revision: 33
 # ポップアップの概要
 <xref:System.Windows.Controls.Primitives.Popup> コントロールは、現在のアプリケーション ウィンドウの上の別のウィンドウにコンテンツを表示するための手段です。ウィンドウの表示位置は、特定の要素を基準として、または画面座標として指定されます。  ここでは、<xref:System.Windows.Controls.Primitives.Popup> コントロールの概要と、使用方法に関する情報を示します。  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="What_Is_a_Popup_"></a>   
 ## ポップアップとは  

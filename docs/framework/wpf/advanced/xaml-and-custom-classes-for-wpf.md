@@ -23,7 +23,7 @@ caps.handback.revision: 21
 # WPF における XAML とカスタム クラス
 [!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] のフレームワークで実装される XAML は [!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] の言語のカスタム クラスまたは構造体を定義してXAML マークアップを使用してアクセスすることができます。  [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] で定義されている型とカスタム型は、通常はカスタム型を XAML 名前空間プレフィックスにマップすることで、同じマークアップ ファイルで使用することができます。  このトピックでは満たすカスタム クラスが XAML 要素として使用する必要があるという要件について説明します。  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="Custom_Classes_in_Applications_vs__in_Assemblies"></a>   
 ## アプリケーション内のカスタム クラスとアセンブリ内のカスタム クラス  

@@ -36,7 +36,7 @@ caps.handback.revision: 11
  ![赤い境界線付きのボタン](../../../../docs/framework/wpf/controls/media/ndp-buttonmouseover.png "NDP\_ButtonMouseOver")  
 カスタム コントロール テンプレートを使用したボタンにマウス ポインターを置いた図  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="prerequisites"></a>   
 ## 必要条件  

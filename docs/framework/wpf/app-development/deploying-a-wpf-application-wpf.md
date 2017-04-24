@@ -22,7 +22,7 @@ caps.handback.revision: 26
 # WPF アプリケーションの配置 (WPF)
 ビルドが終了した [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] アプリケーションは配置する必要があります。  [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] および [!INCLUDE[TLA2#tla_winfx](../../../../includes/tla2sharptla-winfx-md.md)] には、いくつかの配置テクノロジがあります。  [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] アプリケーションの配置に使用する配置テクノロジは、アプリケーションの種類によって決まります。  このトピックでは、配置テクノロジの概要と [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] アプリケーションで必要とされる配置の要件に関連して配置テクノロジがどのように使用されるかについて説明します。  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="Deployment_Technologies"></a>   
 ## 配置テクノロジ  

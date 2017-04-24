@@ -21,7 +21,7 @@ caps.handback.revision: 9
 # コントロール
 <a name="introduction"></a> [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] には、<xref:System.Windows.Controls.Button>、<xref:System.Windows.Controls.Label>、<xref:System.Windows.Controls.TextBox>、<xref:System.Windows.Controls.Menu>、<xref:System.Windows.Controls.ListBox> など、ほとんどの Windows アプリケーションで使用される共通の UI コンポーネントが多数用意されています。  これまで、こうしたオブジェクトはコントロールと呼ばれてきました。  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] SDK では、アプリケーションで表示可能なオブジェクトを表すクラスを広義に意味する用語として "コントロール" を引き続き使用しますが、クラスは、表示可能な部分を持つために <xref:System.Windows.Controls.Control> クラスを継承する必要がないことに注意してください。  <xref:System.Windows.Controls.Control> クラスを継承するクラスには <xref:System.Windows.Controls.ControlTemplate> があります。これを使用すると、コントロールのコンシューマーは、新しいサブクラスを作成することなく、そのコントロールの外観を大幅に変更できます。  このトピックでは、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] におけるコントロール \(<xref:System.Windows.Controls.Control> クラスを継承するものとそうでないものの両方\) の一般的な使用方法について説明します。  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="creating_an_instance_of_a_control"></a>   
 ## コントロールのインスタンスの作成  

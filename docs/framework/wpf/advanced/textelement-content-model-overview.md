@@ -24,7 +24,7 @@ caps.handback.revision: 7
 # TextElement コンテンツ モデルの概要
 このコンテンツ モデルの概要では、<xref:System.Windows.Documents.TextElement> でサポートされるコンテンツについて説明します。  <xref:System.Windows.Documents.Paragraph> クラスは、<xref:System.Windows.Documents.TextElement> の一種です。  コンテンツ モデルは、他のオブジェクトや要素に含めることのできるオブジェクトや要素を記述します。  ここでは、<xref:System.Windows.Documents.TextElement> から派生したオブジェクトに対して使用するコンテンツ モデルの概要を示します。  詳細については、「[フロー ドキュメントの概要](../../../../docs/framework/wpf/advanced/flow-document-overview.md)」を参照してください。  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="text_element_classes"></a>   
 ## コンテンツ モデルの図  

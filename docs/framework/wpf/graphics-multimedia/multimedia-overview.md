@@ -22,7 +22,7 @@ caps.handback.revision: 18
 # マルチメディアの概要
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] のマルチメディア機能を使用すると、オーディオおよびビデオをアプリケーションに統合し、ユーザー エクスペリエンスを向上させることができます。ここでは、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] のマルチメディア機能について説明します。  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="mediaapi"></a>   
 ## メディア API  

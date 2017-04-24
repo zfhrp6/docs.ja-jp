@@ -49,7 +49,7 @@ caps.handback.revision: 11
   
 4.  Svcutil.exe を使用するクライアントの構成を生成も、 <xref:System.ServiceModel.BasicHttpBinding>クラスです。 [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] を使用する場合、このファイルに App.config という名前を付けます。 このサービスの実装では、アドレス情報とバインディング情報が指定されないことに注意してください。 同様に、コードは構成ファイルから情報を取得する必要はありません。  
   
-     [!code[C_HowTo_ConfigureClientBinding#100](../../../samples/snippets/common/VS_Snippets_CFX/c_howto_configureclientbinding/common/client.exe.config#100)]  
+     <!-- TODO: review snippet reference [!code[C_HowTo_ConfigureClientBinding#100](../../../samples/snippets/common/VS_Snippets_CFX/c_howto_configureclientbinding/common/client.exe.config#100)]  -->  
   
 5.  アプリケーションで `ClientCalculator` のインスタンスを作成し、サービス操作を呼び出します。  
   

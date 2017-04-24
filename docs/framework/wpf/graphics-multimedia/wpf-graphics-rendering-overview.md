@@ -22,7 +22,7 @@ caps.handback.revision: 48
 # WPF グラフィックス レンダリングの概要
 ここでは、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] のビジュアル層の概要について説明します。  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] モデルのレンダリング サポートに関する <xref:System.Windows.Media.Visual> クラスの役割に重点を置いて説明します。  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="role_of_visual_object"></a>   
 ## ビジュアル オブジェクトの役割  

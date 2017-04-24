@@ -26,7 +26,7 @@ caps.handback.revision: 33
 > [!NOTE]
 >  LocBaml ツールは、実稼働可能なアプリケーションではありません。  それはローカリゼーション API の一部を使用するサンプルとして提供されており、ローカリゼーション ツールを記述する方法を例示します。  
 >   
->  [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+>    
   
 <a name="Introduction"></a>   
 ## 概要  

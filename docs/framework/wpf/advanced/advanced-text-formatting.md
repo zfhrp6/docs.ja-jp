@@ -28,7 +28,7 @@ caps.handback.revision: 12
 > [!NOTE]
 >  このドキュメント内のすべてのコード例は、[テキストの高度な書式設定のサンプル](http://go.microsoft.com/fwlink/?LinkID=159965)にあります。  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="prereq"></a>   
 ## 必要条件  

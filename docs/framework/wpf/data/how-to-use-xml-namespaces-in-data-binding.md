@@ -30,8 +30,8 @@ caps.handback.revision: 12
   
  この場合は、次の例のように、<xref:System.Windows.Data.XmlNamespaceMapping> 要素を使用して名前空間を <xref:System.Windows.Data.XmlNamespaceMapping.Prefix%2A> にマッピングします。  これで、<xref:System.Windows.Data.XmlNamespaceMapping.Prefix%2A> を使用して [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] 名前空間を参照できます。  この例の <xref:System.Windows.Controls.ListBox> では、各 *item* の *title* および *dc:date* が表示されます。  
   
- [!code-xml[XmlnsBind#XmlNamespaceMapping](../../../../samples/snippets/xaml/VS_Snippets_Wpf/XmlnsBind/XAML/Window1.xaml#xmlnamespacemapping)]
- [!code-xml[XmlnsBind#XmlNamespaceMapping](../../../../samples/snippets/csharp/VS_Snippets_Wpf/XmlnsBind/CS/Window1.xaml#xmlnamespacemapping)]  
+ <!-- TODO: review snippet reference [!code-xml[XmlnsBind#XmlNamespaceMapping](../../../../samples/snippets/xaml/VS_Snippets_Wpf/XmlnsBind/XAML/Window1.xaml#xmlnamespacemapping)]  -->
+ <!-- TODO: review snippet reference [!code-xml[XmlnsBind#XmlNamespaceMapping](../../../../samples/snippets/csharp/VS_Snippets_Wpf/XmlnsBind/CS/Window1.xaml#xmlnamespacemapping)]  -->  
   
  指定した <xref:System.Windows.Data.XmlNamespaceMapping.Prefix%2A> は、[!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] ソースで使用されているものと一致する必要はありません。[!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] ソースでプレフィックスが変更されても、マッピングは機能します。  
   

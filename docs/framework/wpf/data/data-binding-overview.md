@@ -28,7 +28,7 @@ caps.handback.revision: 75
   
  このトピックでは、最初に [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] データ バインディングの基本的な概念について説明し、次に <xref:System.Windows.Data.Binding> クラスの使用方法とデータ バインディングのその他の機能について説明します。  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="what_is_data_binding"></a>   
 ## データ バインディングとは  
@@ -64,7 +64,7 @@ caps.handback.revision: 75
   
 <a name="basic_data_binding_concepts"></a>   
 ## 基本的なデータ バインディングの概念  
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
  バインドする要素の種類やデータ ソースの性質に関係なく、各バインディングは常に、次の図に示されているモデルに従って行われます。  
   
@@ -128,7 +128,7 @@ caps.handback.revision: 75
   
 <a name="creating_a_binding"></a>   
 ## バインディングの作成  
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
  前のセクションで説明したいくつかの概念を要約するために、<xref:System.Windows.Data.Binding> を使用してバインディングを設定します。通常、各バインディングには、バインディング ターゲット、ターゲット プロパティ、バインディング ソース、および使用するソース値へのパスの 4 つのコンポーネントがあります。  このセクションでは、バインディングの設定方法について説明します。  
   
@@ -220,7 +220,7 @@ caps.handback.revision: 75
   
 <a name="binding_to_collections"></a>   
 ## コレクションへのバインド  
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
  バインディング ソース オブジェクトは、プロパティにデータが含まれる単一のオブジェクト、または \(データベースへのクエリの結果など\) 通常はグループ化されるポリモーフィック オブジェクトのデータ コレクションのいずれかとして処理することができます。  これまでは単一オブジェクトへのバインディングについてのみ説明してきましたが、データ コレクションへのバインディングも一般的なシナリオです。  たとえば、一般的なシナリオでは、「[データ バインディングとは](#what_is_data_binding)」セクションで示したアプリケーションのように、<xref:System.Windows.Controls.ListBox>、<xref:System.Windows.Controls.ListView>、<xref:System.Windows.Controls.TreeView> などの <xref:System.Windows.Controls.ItemsControl> を使用してデータ コレクションを表示します。  
   
@@ -242,7 +242,7 @@ caps.handback.revision: 75
 ### コレクション ビュー  
  <xref:System.Windows.Controls.ItemsControl> をデータ コレクションにバインドすると、データの並べ替え、フィルター処理、またはグループ化が必要になる場合があります。  これらの処理を実行するには、<xref:System.ComponentModel.ICollectionView> インターフェイスを実装したクラスであるコレクション ビューを使用します。  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="what_are_collection_views"></a>   
 #### コレクション ビューとは  
@@ -369,7 +369,7 @@ caps.handback.revision: 75
   
 <a name="data_validation"></a>   
 ## データの検証  
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
  ユーザー入力を受け取るほとんどのアプリケーションでは、ユーザーが必要な情報を入力したことを確認するための検証ロジックが必要になります。  型、範囲、形式、またはその他のアプリケーション固有の要件に基づいて、検証チェックを実行することができます。  ここでは、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] におけるデータ検証のしくみについて説明します。  
   

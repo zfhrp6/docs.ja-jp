@@ -25,7 +25,7 @@ caps.handback.revision: 11
 # パフォーマンスの最適化 : オブジェクトの動作
 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] オブジェクトに固有の動作を理解することは、機能とパフォーマンスのバランスを見極めるうえで役に立ちます。  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="Not_Removing_Event_Handlers"></a>   
 ## オブジェクトのイベント ハンドラーを削除しないとオブジェクトが維持される可能性がある  

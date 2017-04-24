@@ -81,7 +81,7 @@ svcutil /language:vb /out:ClientCode.vb /config:app.config http://computerName/M
   
  たとえば、上記の例で使用した `ISampleService` 用に生成された構成ファイルには、次のエンドポイント情報が含まれます。  
   
- [!code[C_GeneratedCodeFiles#19](../../../samples/snippets/common/VS_Snippets_CFX/c_generatedcodefiles/common/client.exe.config#19)]  
+ <!-- TODO: review snippet reference [!code[C_GeneratedCodeFiles#19](../../../samples/snippets/common/VS_Snippets_CFX/c_generatedcodefiles/common/client.exe.config#19)]  -->  
   
  この構成ファイルの `<client>` 要素には、ターゲット エンドポイントが指定されます。 [!INCLUDE[crabout](../../../includes/crabout-md.md)]複数のターゲット エンドポイントを使用して表示、 <xref:System.ServiceModel.ClientBase%601.%23ctor%2A?displayProperty=fullName>または<xref:System.ServiceModel.ChannelFactory%601.%23ctor%2A?displayProperty=fullName>コンス トラクターです。  
   

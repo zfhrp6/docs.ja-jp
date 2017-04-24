@@ -28,7 +28,7 @@ caps.handback.revision: 24
 # カスタム依存関係プロパティ
 ここでは、[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] アプリケーションの開発者とコンポーネント作成者に対して、カスタム[依存関係](GTMT)の作成を推奨する理由を説明し、その実装手順と共に、プロパティのパフォーマンス、操作性、または汎用性の向上につながるいくつかの実装オプションを示します。  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="prerequisites"></a>   
 ## 必要条件  

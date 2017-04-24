@@ -23,7 +23,7 @@ caps.handback.revision: 20
   
  このチュートリアルでは、[!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] ウィンドウで [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] コンテンツをホストするサンプル アプリケーション \(「[Win32 ウィンドウのサンプルで WPF コンテンツをホストする](http://go.microsoft.com/fwlink/?LinkID=160004)」\) の記述方法について説明します。  このサンプルを拡張すると、いずれの [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] ウィンドウでもホストできます。  マネージ コードとアンマネージ コードの混在が関係しているため、このアプリケーションは [!INCLUDE[TLA#tla_cppcli](../../../../includes/tlasharptla-cppcli-md.md)] で記述されます。  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="requirements"></a>   
 ## 必要条件  

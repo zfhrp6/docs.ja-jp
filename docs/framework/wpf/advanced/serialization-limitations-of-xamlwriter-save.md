@@ -23,7 +23,7 @@ caps.handback.revision: 9
 # XamlWriter.Save のシリアル化の制限
 [!INCLUDE[TLA#tla_api](../../../../includes/tlasharptla-api-md.md)] <xref:System.Windows.Markup.XamlWriter.Save%2A> を使用して、[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] アプリケーションの内容を [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] ファイルとしてシリアル化できます。  ただし、シリアル化される対象には注意すべき制限がいくつかあります。  このトピックでは、これらの制限と全般的な考慮事項をいくつか説明します。  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="Run_Time__Not_Design_Time_Representation"></a>   
 ## ランタイム \(非デザイン タイム\) 表現  

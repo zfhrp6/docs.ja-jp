@@ -21,7 +21,7 @@ caps.handback.revision: 52
 # アプリケーション管理の概要
 すべてのアプリケーションは実装と管理に適用する機能を共有されることがよくあります。  このトピックでは作成および管理アプリケーションに <xref:System.Windows.Application> クラスの機能の概要について説明します。  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 ## Application クラス  
  [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] では共通のアプリケーション スコープの機能は <xref:System.Windows.Application> のクラスにカプセル化されます。  <xref:System.Windows.Application> のクラスは次の機能が含まれています :  
@@ -133,7 +133,7 @@ caps.handback.revision: 52
 ## アプリケーションの有効期間  
  [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] アプリケーションの有効期間は、アプリケーションが起動されたこと、アプリケーションがアクティブ、および非アクティブになったこと、シャットダウンされたことなどを通知するために <xref:System.Windows.Application> で発生するいくつかのイベントによって規定されます。  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="Splash_Screen"></a>   
 ### スプラッシュ スクリーン  

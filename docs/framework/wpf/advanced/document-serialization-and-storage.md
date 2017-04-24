@@ -24,7 +24,7 @@ caps.handback.revision: 23
 # ドキュメントのシリアル化および保存
 [!INCLUDE[TLA#tla_winfx](../../../../includes/tlasharptla-winfx-md.md)] は、高品質なドキュメントを作成および表示するための強力な環境を提供します。  固定ドキュメントとフロー ドキュメントの両方をサポートする拡張機能、高度な表示コントロール、および 2D や 3D の強力なグラフィックス機能を組み合わせることにより、[!INCLUDE[TLA2#tla_winfx](../../../../includes/tla2sharptla-winfx-md.md)] アプリケーションの品質とユーザー エクスペリエンスをさらに向上させることができます。  ドキュメントのメモリ内表現を柔軟に管理するための機能は [!INCLUDE[TLA2#tla_winfx](../../../../includes/tla2sharptla-winfx-md.md)] の重要な機能の 1 つであり、データ ストアからドキュメントを効率的に保存して読み込むための機能はほとんどのアプリケーションで必要になります。  内部のメモリ内表現から外部のデータ ストアにドキュメントを変換するプロセスは、[シリアル化](GTMT)と呼ばれます。  データ ストアを読み込んで元のメモリ内インスタンスを再作成する逆のプロセスは、逆シリアル化と呼ばれます。  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="AboutSerialization"></a>   
 ## ドキュメントのシリアル化について  

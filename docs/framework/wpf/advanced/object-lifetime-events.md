@@ -45,7 +45,7 @@ caps.handback.revision: 18
 # オブジェクトの有効期間イベント
 ここでは、オブジェクトの作成、使用、および破棄の有効期間におけるステージを示す特定の [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] イベントについて説明します。  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="prerequisites"></a>   
 ## 必要条件  

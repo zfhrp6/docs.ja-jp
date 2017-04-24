@@ -23,7 +23,7 @@ caps.handback.revision: 32
 # TreeView の概要
 <xref:System.Windows.Controls.TreeView> コントロールは、折りたたみ可能なノードを使用して、階層構造で情報を表示する手段を提供します。  ここでは、<xref:System.Windows.Controls.TreeView> および <xref:System.Windows.Controls.TreeViewItem> コントロールについて説明し、簡単な使用例を示します。  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="Simple_TreeView_Control"></a>   
 ## TreeView とは  

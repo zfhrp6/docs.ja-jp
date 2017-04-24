@@ -26,7 +26,7 @@ caps.handback.revision: 24
 # Drawing オブジェクトの概要
 ここでは、<xref:System.Windows.Media.Drawing> オブジェクトについて、およびこのオブジェクトを使用して図形、ビットマップ、テキスト、およびメディアを効率的に描画する方法について説明します。  クリップ アートを作成したり、<xref:System.Windows.Media.DrawingBrush> で塗りつぶしたり、<xref:System.Windows.Media.Visual> オブジェクトを使用したりする場合に、<xref:System.Windows.Media.Drawing> オブジェクトを使用します。  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="whatisadrawingsection"></a>   
 ## 描画オブジェクトとは  

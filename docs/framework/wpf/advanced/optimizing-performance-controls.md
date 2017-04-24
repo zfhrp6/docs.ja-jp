@@ -23,7 +23,7 @@ caps.handback.revision: 21
 # パフォーマンスの最適化 : コントロール
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] には、大半の Windows アプリケーションで使用される一般的なユーザー インターフェイス \(UI: User Interface\) コンポーネントが多数含まれています。  このトピックでは、UI のパフォーマンスを向上させる方法について説明します。  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="Displaying"></a>   
 ## 大容量のデータ セットの表示  

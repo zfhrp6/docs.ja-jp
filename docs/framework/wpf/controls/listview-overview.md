@@ -22,7 +22,7 @@ caps.handback.revision: 24
 # ListView の概要
 <xref:System.Windows.Controls.ListView> コントロールは、一連のデータ項目を異なるレイアウトまたはビューで表示するためのインフラストラクチャを提供します。  たとえば、データ項目をテーブルで表示し、さらに列の並べ替えも行う場合です。  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="WhatisaListView"></a>   
 ## ListView とは  

@@ -43,7 +43,7 @@ caps.handback.revision: 21
   
  ここでは、アプリケーション データ ファイルを設定および使用する方法について説明します。  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="Resource_Files"></a>   
 ## リソース ファイル  

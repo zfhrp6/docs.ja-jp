@@ -50,9 +50,9 @@ caps.handback.revision: 8
   
 1.  インポーター型を追加、`<extensions>`内の要素、 [ <> \> ](../../../../docs/framework/configure-apps/file-schema/wcf/policyimporters.md)クライアント構成ファイル内の要素。  
   
-     [!code[CustomPolicySample#7](../../../../samples/snippets/common/VS_Snippets_CFX/custompolicysample/common/client.exe.config#7)]
-     [!code-csharp[CustomPolicySample#7](../../../../samples/snippets/csharp/VS_Snippets_CFX/custompolicysample/cs/client.exe.config#7)]
-     [!code-vb[CustomPolicySample#7](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/custompolicysample/vb/client.exe.config#7)]  
+     <!-- TODO: review snippet reference [!code[CustomPolicySample#7](../../../../samples/snippets/common/VS_Snippets_CFX/custompolicysample/common/client.exe.config#7)]  -->
+     <!-- TODO: review snippet reference [!code-csharp[CustomPolicySample#7](../../../../samples/snippets/csharp/VS_Snippets_CFX/custompolicysample/cs/client.exe.config#7)]  -->
+     <!-- TODO: review snippet reference [!code-vb[CustomPolicySample#7](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/custompolicysample/vb/client.exe.config#7)]  -->  
   
 2.  クライアント アプリケーションで使用して、 <xref:System.ServiceModel.Description.MetadataResolver?displayProperty=fullName>または<xref:System.ServiceModel.Description.WsdlImporter?displayProperty=fullName>を解決するには、メタデータと、インポーターが自動的に呼び出されます。  
   

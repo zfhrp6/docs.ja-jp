@@ -33,7 +33,7 @@ caps.handback.revision: 50
 # XAML の概要 (WPF)
 ここでは、XAML 言語の機能と、XAML を使用して実際に [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] アプリケーションを記述する方法について説明します。  ここで説明する XAML は、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] によって実装されている XAML です。  XAML 自体は、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] よりも大きい言語概念です。  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="what_is_xaml"></a>   
 ## XAML とは  

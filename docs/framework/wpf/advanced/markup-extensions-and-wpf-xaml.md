@@ -35,7 +35,7 @@ caps.handback.revision: 23
 # マークアップ拡張機能と WPF XAML
 ここでは、構文規則、目的、およびその基になるクラス オブジェクト モデルを含む XAML のマークアップ拡張機能の概念について説明します。  マークアップ拡張機能は、XAML 言語、および XAML サービスの .NET 実装の一般的な機能です。  ここでは、WPF XAML で使用するマークアップ拡張機能について特に詳しく説明します。  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="XAML_Processors_and_Markup_Extensions"></a>   
 ## XAML プロセッサとマークアップ拡張機能  

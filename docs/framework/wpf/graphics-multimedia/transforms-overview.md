@@ -29,7 +29,7 @@ caps.handback.revision: 20
 # 変換の概要
 ここでは、[!INCLUDE[TLA#tla_2d](../../../../includes/tlasharptla-2d-md.md)] <xref:System.Windows.Media.Transform> クラスを使用して <xref:System.Windows.FrameworkElement> オブジェクトの回転、拡大縮小、移動 \(平行移動\)、および傾斜を行う方法について説明します。  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="whatIsATransformSection"></a>   
 ## 変換とは  

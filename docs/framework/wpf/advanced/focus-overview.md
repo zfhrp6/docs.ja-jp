@@ -26,7 +26,7 @@ caps.handback.revision: 18
   
  <xref:System.Windows.Input.Keyboard> クラスは主にキーボード フォーカスに関連し、<xref:System.Windows.Input.FocusManager> は主に論理フォーカスに関連しますが、これは絶対的な区別ではありません。  キーボード フォーカスを持つ要素は論理フォーカスも持ちますが、論理フォーカスを持つ要素は必ずしもキーボード フォーカスを持ちません。  <xref:System.Windows.Input.Keyboard> クラスを使用してキーボード フォーカスを持つ要素を設定したときには、要素に論理フォーカスも設定されるので、この違いがよくわかります。  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="Keyboard_Focus"></a>   
 ## キーボード フォーカス  

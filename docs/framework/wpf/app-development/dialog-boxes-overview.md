@@ -38,7 +38,7 @@ caps.handback.revision: 24
   
  [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)]ダイアログ ボックス、メッセージ ボックス、コモン ダイアログ ボックスでは、カスタム ダイアログ ボックスなどの複数の種類を作成できます。 このトピックでは、それぞれ、[ダイアログ ボックスのサンプル](http://go.microsoft.com/fwlink/?LinkID=159984)一致する例を示します。  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="Message_Boxes"></a>   
 ## <a name="message-boxes"></a>メッセージ ボックス  

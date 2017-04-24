@@ -23,7 +23,7 @@ caps.handback.revision: 37
 # OpenType フォントの機能
 このトピックのいくつかの主な機能の概要を示します[!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)]でフォント技術[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]します。  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="overview"></a>   
 ## <a name="opentype-font-format"></a>OpenType フォントの書式  

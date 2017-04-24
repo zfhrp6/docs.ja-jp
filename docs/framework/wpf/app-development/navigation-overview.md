@@ -43,7 +43,7 @@ caps.handback.revision: 65
 > [!NOTE]
 >  このトピックでは、"ブラウザー" という用語は、[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] のアプリケーションをホスト可能なブラウザーのみを指しています。現在のところ、これには [!INCLUDE[TLA#tla_ie](../../../../includes/tlasharptla-ie-md.md)] と Firefox が含まれます。  特定の [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] 機能が特定のブラウザーでのみサポートされる場合は、ブラウザー バージョンを示します。  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="XAMLBrowserApplications"></a>   
 ## WPF アプリケーションでのナビゲーション  

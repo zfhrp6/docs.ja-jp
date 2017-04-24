@@ -23,7 +23,7 @@ caps.handback.revision: 24
 # バインディング ソースの概要
 データ バインディングでは、データの取得元のオブジェクトを[バインディング ソース](GTMT) オブジェクトと呼びます。  ここでは、バインディング ソースとして使用できるオブジェクトの種類について説明します。  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="binding_sources"></a>   
 ## バインディング ソースの種類  

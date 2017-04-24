@@ -110,7 +110,7 @@ caps.handback.revision: 73
   
 1.  作成、<xref:System.Windows.Media.Animation.Storyboard>し、その子として、アニメーションを追加します。 作成する方法を次に示します、<xref:System.Windows.Media.Animation.Storyboard>XAML でします。  
   
-     [!code-xml[animation_ovws2#RectangleOpacityFadeExampleXaml_5](../../../../samples/snippets/csharp/VS_Snippets_Wpf/animation_ovws2/CSharp/Window1.xaml#rectangleopacityfadeexamplexaml_5)]  
+     <!-- TODO: review snippet reference [!code-xml[animation_ovws2#RectangleOpacityFadeExampleXaml_5](../../../../samples/snippets/csharp/VS_Snippets_Wpf/animation_ovws2/CSharp/Window1.xaml#rectangleopacityfadeexamplexaml_5)]  -->  
   
      作成する、<xref:System.Windows.Media.Animation.Storyboard>コードでは、宣言、<xref:System.Windows.Media.Animation.Storyboard>クラス レベルの変数です。  
   

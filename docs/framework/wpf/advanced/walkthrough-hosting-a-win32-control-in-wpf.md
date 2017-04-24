@@ -24,7 +24,7 @@ caps.handback.revision: 17
   
  このトピックでは、[WPF での Win32 ListBox コントロールのホストのサンプル](http://go.microsoft.com/fwlink/?LinkID=159998)に示されている、[!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] リスト ボックス コントロールをホストするアプリケーションについて説明します。  この一般的な手順を拡張することにより、どの [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] ウィンドウでもホストできます。  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="requirements"></a>   
 ## 要件  

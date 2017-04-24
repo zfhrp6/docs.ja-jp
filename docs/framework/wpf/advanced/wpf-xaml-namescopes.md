@@ -32,7 +32,7 @@ caps.handback.revision: 18
 # WPF XAML 名前スコープ
 XAML 名前スコープは、XAML で定義されるオブジェクトを識別する概念です。  XAML 名前スコープの名前を使用すると、XAML で定義されたオブジェクトの名前とそれに対応するインスタンスとの関係をオブジェクト ツリーとして確立できます。  通常、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] マネージ コードの XAML 名前スコープは、XAML アプリケーションの個々の XAML ページ ルートの読み込み時に作成されます。  プログラミング オブジェクトとしての XAML 名前スコープは、<xref:System.Windows.Markup.INameScope> インターフェイスによって定義され、実際的な <xref:System.Windows.NameScope> クラスによって実装されます。  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="Namescopes_in_Loaded_XAML_Applications"></a>   
 ## 読み込まれた XAML アプリケーションにおける名前スコープ  

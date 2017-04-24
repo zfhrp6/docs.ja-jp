@@ -22,7 +22,7 @@ caps.handback.revision: 21
 # ToolTip の概要
 ツールヒントは、<xref:System.Windows.Controls.Button> などの要素の上にマウス ポインターを置いたときに表示される小さいポップアップ ウィンドウです。  ここでは、ツールヒントについて、およびツールヒントのコンテンツを作成およびカスタマイズする方法について説明します。  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="what_is_a_tooltip"></a>   
 ## ツールヒントとは  

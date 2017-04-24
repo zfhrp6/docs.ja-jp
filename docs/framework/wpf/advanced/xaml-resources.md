@@ -27,7 +27,7 @@ caps.handback.revision: 32
 > [!NOTE]
 >  このトピックで説明されているリソース ファイルとリソース ファイルに記載するものと異なる場合は[WPF アプリケーションのリソース、コンテンツ、およびデータ ファイル](../../../../docs/framework/wpf/app-development/wpf-application-resource-content-and-data-files.md)で記述されている埋め込みまたはリンクされたリソースとは異なると[を管理するアプリケーションのリソース (.NET)](../Topic/Managing%20Application%20Resources%20\(.NET\).md)します。  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="usingresources"></a>   
 ## <a name="using-resources-in-xaml"></a>XAML でリソースを使用します。  

@@ -28,7 +28,7 @@ caps.handback.revision: 8
   
  次のコード例の使用を示しています、 <xref:System.ServiceModel.Description.ServiceThrottlingBehavior>を設定するアプリケーション構成ファイルからクラスを<xref:System.ServiceModel.Description.ServiceThrottlingBehavior.MaxConcurrentSessions%2A>、 <xref:System.ServiceModel.Description.ServiceThrottlingBehavior.MaxConcurrentCalls%2A>、および<xref:System.ServiceModel.Description.ServiceThrottlingBehavior.MaxConcurrentInstances%2A>プロパティを 1 に簡単な例として。 特定のアプリケーションでの最適な設定については、実際の動作から判断します。  
   
- [!code-csharp[ServiceThrottlingBehavior#3](../../../../samples/snippets/csharp/VS_Snippets_CFX/servicethrottlingbehavior/cs/hostapplication.exe.config#3)]  
+ <!-- TODO: review snippet reference [!code-csharp[ServiceThrottlingBehavior#3](../../../../samples/snippets/csharp/VS_Snippets_CFX/servicethrottlingbehavior/cs/hostapplication.exe.config#3)]  -->  
   
  値によって、実際の実行時動作、 <xref:System.ServiceModel.ServiceBehaviorAttribute.ConcurrencyMode%2A>と<xref:System.ServiceModel.ServiceBehaviorAttribute.InstanceContextMode%2A>プロパティは、メッセージの数が、操作内実行できる同時やサービスの有効期間<xref:System.ServiceModel.InstanceContext>受信チャネル セッションに関連、それぞれします。  
   

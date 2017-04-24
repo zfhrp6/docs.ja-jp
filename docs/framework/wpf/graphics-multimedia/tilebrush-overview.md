@@ -22,7 +22,7 @@ caps.handback.revision: 11
 # TileBrush の概要
 <xref:System.Windows.Media.TileBrush> オブジェクトを使用すると、イメージ、<xref:System.Windows.Media.Drawing>、または <xref:System.Windows.Media.Visual> で領域を塗りつぶす方法を細かく制御できます。  ここでは、<xref:System.Windows.Media.TileBrush> 機能を使用して、<xref:System.Windows.Media.ImageBrush>、<xref:System.Windows.Media.DrawingBrush>、または <xref:System.Windows.Media.VisualBrush> で領域を塗りつぶす方法を詳細に制御する方法について説明します。  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="prerequisite"></a>   
 ## 必要条件  
