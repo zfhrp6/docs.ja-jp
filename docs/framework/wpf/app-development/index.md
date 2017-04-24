@@ -39,7 +39,11 @@ ms.lasthandoff: 04/08/2017
   
  このような一連のアプリケーションをビルドするために、[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] は多数のサービスを実装しています。 このトピックでは、これらのサービスの概要を説明し、詳細情報へのリンクを示します。  
   
+<<<<<<< HEAD
 
+=======
+   
+>>>>>>> 88a54c2... fix build errors
   
 <a name="Application_Management"></a>   
 ## <a name="application-management"></a>アプリケーション構成の管理  

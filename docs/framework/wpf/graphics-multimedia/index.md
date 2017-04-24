@@ -33,7 +33,13 @@ ms.lasthandoff: 04/08/2017
  このトピックでは、アプリケーションにグラフィックス、画面切り替え効果、サウンド、ビデオを追加できるようにする [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] のグラフィックス、アニメーション、メディア機能を紹介します。  
   
 > [!NOTE]
+<<<<<<< HEAD
 >  Windows サービスで WPF 型を使用するのは避けることを強くお勧めします。 Windows サービスで WPF 型を使用しようとした場合、サービスが期待どおりに動作しないことがあります。   
+=======
+>  Windows サービスで WPF 型を使用することは避けることを強くお勧めします。  Windows サービスで WPF 型を使用しようとした場合、サービスが期待どおりに動作しないことがあります。  
+  
+   
+>>>>>>> 88a54c2... fix build errors
   
 <a name="whats_new_with_graphics_and_multimedia_in_wpf_4"></a>   
 ## <a name="whats-new-with-graphics-and-multimedia-in-wpf-4"></a>WPF 4 のグラフィックスとマルチメディアの新機能  
