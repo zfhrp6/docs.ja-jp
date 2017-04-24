@@ -48,7 +48,7 @@ caps.handback.revision: 19
  MSMQ [!INCLUDE[crabout](../../../../includes/crabout-md.md)]、「[Message Queuing \(MSMQ\)](http://msdn.microsoft.com/ja-jp/ff917e87-05d5-478f-9430-0f560675ece1)」を参照してください。  
   
 ### NetMsmqBinding  
- [\<netMsmqBinding\>](../../../../docs/framework/configure-apps/file-schema/wcf/netmsmqbinding.md) [!INCLUDE[indigo2 は、]()] [!INCLUDE[indigo2 に用意されているキューに置かれたバインディングで、2 つの]()] エンドポイントが MSMQ を使用して通信するために使用します。  したがって、このバインディングは、MSMQ 固有のプロパティを公開します。  ただし、すべての MSMQ 機能とプロパティが `NetMsmqBinding` で公開されるわけではありません。  コンパクトな `NetMsmqBinding` は、大部分のユーザーが満足できる最適な機能セットを考慮して設計されています。  
+ [\<netMsmqBinding\>](../../../../docs/framework/configure-apps/file-schema/wcf/netmsmqbinding.md) <!-- TODO: review token in CAPS to fix the content [!INCLUDE[indigo2 は、]()] [!INCLUDE[indigo2 に用意されているキューに置かれたバインディングで、2 つの]()]  -->  エンドポイントが MSMQ を使用して通信するために使用します。  したがって、このバインディングは、MSMQ 固有のプロパティを公開します。  ただし、すべての MSMQ 機能とプロパティが `NetMsmqBinding` で公開されるわけではありません。  コンパクトな `NetMsmqBinding` は、大部分のユーザーが満足できる最適な機能セットを考慮して設計されています。  
   
  `NetMsmqBinding` は、これまでに説明した基本的なキューの概念をバインディングのプロパティという形で明確に示しています。  このプロパティは、メッセージの転送方法と配信方法を MSMQ に伝達します。  プロパティのカテゴリの詳細については、後のセクションを参照してください。  [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)]、特定のプロパティについて詳しく説明している概念に関するトピックを参照してください。  
   
