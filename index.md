@@ -22,7 +22,7 @@ ms.lasthandoff: 04/08/2017
                                     </div>
                                 </div>
                                 <div class="cardText">
-                                    <h3>C# の使用を開始する#</h3>
+                                    <h3>C# の使用を開始する</h3>
                                 </div>
                             </div>
                         </div>
