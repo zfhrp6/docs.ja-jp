@@ -21,9 +21,9 @@ author: mairaw
 ms.author: mairaw
 manager: wpickett
 translationtype: Human Translation
-ms.sourcegitcommit: c50b3e328998b65ec47efe6d7457b36116813c77
-ms.openlocfilehash: 887ddf85b1da556feee211c4b29f0a08550c84ad
-ms.lasthandoff: 04/08/2017
+ms.sourcegitcommit: 1fabc43044b6e0fa765a7c2f225add8b7eb923f5
+ms.openlocfilehash: 1d0c203313b33aeba26aded268467b1a1b181118
+ms.lasthandoff: 04/13/2017
 
 ---
 # <a name="file-and-stream-io"></a>ファイルおよびストリーム入出力
@@ -150,7 +150,7 @@ ms.lasthandoff: 04/08/2017
   
 -   パス ベース圧縮の型 <xref:System.IO.Compression.ZipFile> と <xref:System.IO.Compression.ZipFileExtensions> は使用できません。 代わりに、[Windows.Storage.Compression](http://msdn.microsoft.com/library/windows/apps/windows.storage.compression.aspx) 名前空間の型を使用します。  
   
- 必要に応じて、.NET Framework ストリームと Windows ランタイム ストリームを変換できます。 詳細については、「[方法: .NET Framework ストリームと Windows ランタイム ストリームの間で変換を行う](../../../docs/standard/io/how-to-convert-between-dotnet-streams-and-winrt-streams.md)」または「<xref:System.IO.WindowsRuntimeStreamExtensions>」を参照してください。  
+ 必要に応じて、.NET Framework ストリームと Windows ランタイム ストリームを変換できます。 詳細については、「[方法: .NET Framework ストリームと Windows ランタイム ストリームの間で変換を行う](../../../docs/standard/io/how-to-convert-between-dotnet-streams-and-winrt-streams.md)」または「[System.IO.WindowsRuntimeStreamExtensions](https://msdn.microsoft.com/library/system.io.windowsruntimestreamextensions.aspx)」を参照してください。 <!--zz TODO: <xref:System.IO.WindowsRuntimeStreamExtensions>--> 
   
  [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] アプリでの I/O 操作の詳細については、Windows デベロッパー センターの「[クイック スタート: ファイルの読み取りと書き込み](http://go.microsoft.com/fwlink/p/?LinkId=243072)」を参照してください。  
   
@@ -182,3 +182,4 @@ ms.lasthandoff: 04/08/2017
 -   [メモリ マップト ファイル](../../../docs/standard/io/memory-mapped-files.md)  
   
  ディスク上のファイルの内容を仮想メモリ内に格納するメモリ マップト ファイルについて説明します。 メモリ マップト ファイルは、非常に大きなファイルを編集したり、プロセス間通信用の共有メモリを作成したりするために使用できます。
+
