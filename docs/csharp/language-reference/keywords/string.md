@@ -46,8 +46,7 @@ ms.lasthandoff: 03/13/2017
  `string` は参照型ですが、等値演算子 (`==` および `!=`) は、`string` オブジェクトの参照ではなく、値を比較するように定義されています。 これにより、文字列が等しいかを直感的にテストできます。 例:  
   
 ```csharp  
-  
-      string a = "hello";  
+string a = "hello";  
 string b = "h";  
 // Append to contents of 'b'  
 b += "ello";  
@@ -60,7 +59,6 @@ Console.WriteLine((object)a == (object)b);
  + 演算子は、文字列を連結します。  
   
 ```csharp  
-  
 string a = "good " + "morning";  
 ```  
   
@@ -68,17 +66,15 @@ string a = "good " + "morning";
   
  文字列は "*変更不可*" です。文字列オブジェクトの作成後、そのコンテンツを変更することはできません。構文では変更可能に見えても、変更不可です。 たとえば、このコードを作成すると、コンパイラによって新しい文字列オブジェクトを格納する新しいシーケンス オブジェクトが生成され、その新しいオブジェクトが b に割り当てられます。 そして、文字列 "h" がガベージ コレクションの対象になります。  
   
-```csharp  
-  
-      string b = "h";  
+```csharp
+string b = "h";  
 b += "ello";  
 ```  
   
  [] 演算子は、`string` の各文字への読み取り専用アクセスに使用できます。  
   
 ```csharp  
-  
-      string str = "test";  
+string str = "test";  
 char x = str[2];  // x = 's';  
 ```  
   
@@ -91,8 +87,7 @@ char x = str[2];  // x = 's';
  リテラル文字列には、任意の文字リテラルを含めることができます。 これにはエスケープ シーケンスが含まれます。 次の例では、円記号にエスケープ シーケンス `\\`、文字 f に `\u0066`、改行に `\n` を使用しています。  
   
 ```  
-  
-      string a = "\\\u0066\n";  
+string a = "\\\u0066\n";  
 Console.WriteLine(a);  
 ```  
   
@@ -138,3 +133,4 @@ Console.WriteLine(a);
  [基本的な文字列操作](http://msdn.microsoft.com/library/8133d357-90b5-4b62-9927-43323d99b6b6)   
  [新しい文字列の作成](http://msdn.microsoft.com/library/06fdf123-2fac-4459-8904-eb48ab908a30)   
  [数値結果テーブルの書式設定](../../../csharp/language-reference/keywords/formatting-numeric-results-table.md)
+
