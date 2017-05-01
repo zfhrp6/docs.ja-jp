@@ -32,7 +32,7 @@ ms.lasthandoff: 03/02/2017
 
 `$ cd src/SuperAwesomeLibrary`
 
-その後、コマンド ラインから以下の&1; つのコマンドのみを実行します。
+その後、コマンド ラインから以下の 1 つのコマンドのみを実行します。
     
 `$ dotnet pack`
 
