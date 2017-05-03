@@ -11,9 +11,9 @@ ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 77deec51-a14d-46d4-9bb3-faf449477149
 translationtype: Human Translation
-ms.sourcegitcommit: 75908d895017c31e36da6702f1b69816afb91d14
-ms.openlocfilehash: 1285ea5dca29025408f7e164e425fde64323671a
-ms.lasthandoff: 03/28/2017
+ms.sourcegitcommit: 0184e07012ffe1a1300dc5af7e99e0d5a3517d6b
+ms.openlocfilehash: a5abc801decbcedb4980b8b4992d128aa1e1bb2e
+ms.lasthandoff: 05/02/2017
 
 ---
 
@@ -26,22 +26,21 @@ ms.lasthandoff: 03/28/2017
 * [C# 6](csharp-6.md):
     - このページでは、C# 6 で追加された機能について説明します。 これらの機能は、Windows 開発者は Visual Studio 2015 で利用でき、macOS および Linux で C# を使用する開発者は .NET Core 1.0 で利用できます。
 
-* [C# インタラクティブ](../interactive/index.md): 
-    - このページでは、C# 言語の探索に使用できる対話型 Read Eval Print Loop (REPL) の C# インタラクティブについて説明します。 C# インタラクティブを使用すると、コンパイルやビルド ステップなしにコードを対話的に記述し、ただちに実行することができます。
-
+<!--* [C# Interactive](../interactive/index.md): 
+    - This page describes C# Interactive, an interactive Read Eval Print Loop (REPL) that you can use to explore the C# language. You can use it to write code interactively and see it execute immediately, without any compile or build step.
+-->
 * [クロス プラットフォーム サポート](../../core/index.md):
     - C# は .NET Core のサポートにより、複数のプラットフォームで実行できます。 macOS や、Linux をサポートする多くのディストリビューションのうち 1 つで C# を使用する場合は、.NET Core の詳細を確認してください。
-
-- [.NET コンパイラ プラットフォーム SDK](../roslyn/index.md):
-    - .NET コンパイラ プラットフォーム SDK を使用すると、C# コードのスタティック分析を実行するコードを記述できます。 これらの API を使用すると、潜在的なエラーやバッド プラクティスを検索し、修正を提案して、さらにその修正プログラムを実装することができます。
-
-
+<!--
+- [.NET Compiler Platform SDK](../roslyn/index.md):
+    - The .NET Compiler Platform SDK enables you to write code that performs static analysis on C# code. You can use these APIs to find potential errors, or bad practices, suggest fixes, and even implement those fixes.
+-->
   
 ## <a name="previous-versions"></a>以前のバージョン
 次の一覧は、C# 言語と Visual Studio .NET の以前のバージョンで導入された主な機能を示しています。  
   
  * Visual Studio .NET 2013: 
-     - このバージョンの Visual Studio には、バグの修正、パフォーマンスの向上、.NET コンパイラ プラットフォーム (“Roslyn”) の Technology Preview (後の [.NET コンパイラ プラットフォーム SDK](../roslyn/index.md)) が含まれています。
+     - このバージョンの Visual Studio には、バグの修正、パフォーマンスの向上、.NET コンパイラ プラットフォーム (“Roslyn”) の Technology Preview (後の <!--Link to ../roslyn/index.md-->.NET コンパイラ プラットフォーム SDK) が含まれています。
 
  * C# 5、Visual Studio .NET 2012: 
      - `Async` / `await`、および[呼び出し元情報](../programming-guide/concepts/caller-information.md)属性。
