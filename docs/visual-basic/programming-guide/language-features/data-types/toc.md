@@ -23,5 +23,6 @@
 ### [構造体変数](structure-variables.md)
 ### [構造体とその他のプログラミング要素](structures-and-other-programming-elements.md)
 ### [構造体とクラス](structures-and-classes.md)
+## [タプル](tuples.md)
 ## [データ型の有効な使用方法](efficient-use-of-data-types.md)
 ## [トラブルシューティング (データ型)](troubleshooting-data-types.md)
