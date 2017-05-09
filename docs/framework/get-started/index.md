@@ -2,7 +2,7 @@
 title: ".NET Framework の概要 | Microsoft Docs"
 ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
+ms.prod: .net-framework-4.6
 ms.reviewer: 
 ms.suite: 
 ms.technology:
@@ -17,10 +17,11 @@ caps.latest.revision: 35
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-translationtype: Human Translation
-ms.sourcegitcommit: 8571258a2fa4e7bd5180301e30e0fea8117eede6
-ms.openlocfilehash: 83ffd29d4301ae8848cc01de8e7def045b24a0ca
-ms.lasthandoff: 04/15/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: adb9c30b6dc52ea17410423fd76c938e258549eb
+ms.openlocfilehash: 6c069db2e6138f73935a4bdd458fbe94ef57d968
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/02/2017
 
 ---
 # <a name="getting-started-with-the-net-framework"></a>.NET Framework の概要
@@ -68,7 +69,7 @@ ms.lasthandoff: 04/15/2017
   
  .NET Framework アプリケーションまたはコンポーネントを開発するには、次の操作を行います。  
   
-1.  オペレーティング システムにプレインストールされていない場合は、アプリケーションが対象とする .NET Framework のバージョンをインストールします。 最新の製品バージョンは、Windows 10 Creators Update にプレインストールされている .NET Framework 4.7 ですが、以前のバージョンの Windows オペレーティング システムでは使用できません。 .NET Framework システム要件については、「[.NET Framework システム要件](../../../docs/framework/get-started/system-requirements.md)」を参照してください。 その他のバージョンの .NET Framework のインストールの詳細については、[インストール ガイド](../../../docs/framework/install/guide-for-developers.md)に関するページを参照してください。 アウトオブバンドでリリースされる追加の .NET Framework パッケージもあります。 これらのパッケージの詳細については、「[.NET Framework および特別なリリース](../../../docs/framework/get-started/the-net-framework-and-out-of-band-releases.md)」を参照してください。  
+1.  オペレーティング システムにプレインストールされていない場合は、アプリケーションが対象とする .NET Framework のバージョンをインストールします。 最新の製品バージョンである .NET Framework 4.7 は Windows 10 Creative Update にプレインストールされていますが、以前のバージョンの Windows オペレーティング システムでも使用できます。 .NET Framework システム要件については、「[.NET Framework システム要件](../../../docs/framework/get-started/system-requirements.md)」を参照してください。 その他のバージョンの .NET Framework のインストールの詳細については、[インストール ガイド](../../../docs/framework/install/guide-for-developers.md)に関するページを参照してください。 アウトオブバンドでリリースされる追加の .NET Framework パッケージもあります。 これらのパッケージの詳細については、「[.NET Framework および特別なリリース](../../../docs/framework/get-started/the-net-framework-and-out-of-band-releases.md)」を参照してください。  
   
 2.  アプリケーションの開発に使用する .NET Framework の言語を選択します。 Microsoft の Visual Basic、C#、Visual F#、および C++ を含む多くの言語から選択できます  (.NET Framework のアプリケーションを開発できるプログラミング言語は、[共通言語基盤 (CLI) 仕様](http://go.microsoft.com/fwlink/?LinkId=199862)に準拠します)。  
   
@@ -92,4 +93,3 @@ ms.lasthandoff: 04/15/2017
  [新機能](../../../docs/framework/whats-new/index.md)   
  [.NET Framework クラス ライブラリ](http://go.microsoft.com/fwlink/?LinkId=227195)   
  [開発ガイド](../../../docs/framework/development-guide.md)
-
