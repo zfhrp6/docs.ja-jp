@@ -19,10 +19,11 @@ caps.latest.revision: 75
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-translationtype: Human Translation
-ms.sourcegitcommit: c50b3e328998b65ec47efe6d7457b36116813c77
-ms.openlocfilehash: b6874fe1d3730d2d05a862ee60417a7ce90f226c
-ms.lasthandoff: 04/08/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 22822d80170e33be59253ecb0d74ec5eb2344751
+ms.openlocfilehash: 933d5f6a864820f5e694c0a9c7eab7b4fe5f790f
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/04/2017
 
 ---
 
@@ -56,7 +57,8 @@ ms.lasthandoff: 04/08/2017
 [はじめに](../../docs/framework/get-started/index.md)  
 .NET Framework の包括的な概要と、追加リソースへのリンクを説明します。  
   
-[移行ガイド](../../docs/framework/migration-guide/index.md) アプリケーションを新しいバージョンの .NET Framework に移行する場合に検討する必要のあるリソースと変更の一覧を示します。  
+[移行ガイド](../../docs/framework/migration-guide/index.md)   
+アプリケーションを新しいバージョンの .NET Framework に移行する場合に検討する必要のあるリソースと変更の一覧を示します。  
   
 [開発ガイド](../../docs/framework/development-guide.md)  
 アプリケーションの作成、構成、デバッグ、セキュリティ、配置、および動的プログラミング、相互運用性、拡張性、メモリ管理、スレッド処理に関する情報を含む、アプリケーション開発用の主要な技術領域とタスクのすべてについての手引書です。  
@@ -64,7 +66,8 @@ ms.lasthandoff: 04/08/2017
 [ツール](../../docs/framework/tools/index.md)  
 .NET Framework テクノロジを使ってアプリケーションを開発、構成、配置するのに役立つツールについて説明します。  
   
-[.NET Framework クラス ライブラリ](/dotnet/api/?view=netframework-4.7) .NET Framework の名前空間に含まれる各クラスの構文、コード例、および関連情報を記載しています。  
+[.NET Framework クラス ライブラリ](/dotnet/api/?view=netframework-4.7)   
+.NET Framework の名前空間に含まれる各クラスの構文、コード例、および関連情報を記載しています。  
   
-[追加のクラス ライブラリと API](../../docs/framework/additional-apis/index.md)  
+[追加のクラス ライブラリおよび API](../../docs/framework/additional-apis/index.md)  
 アウト オブ バンド (OOB) のリリースに含まれるクラスと、特定のプラットフォームまたは .NET Framework の実装を対象としたクラスに関するドキュメントです。
