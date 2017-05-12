@@ -30,9 +30,10 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
 ms.openlocfilehash: 0b5ca4707903f03b6ab7138137fb3107cfb0cce2
+ms.contentlocale: ja-jp
 ms.lasthandoff: 03/13/2017
 
 ---
@@ -75,7 +76,7 @@ C# 7 以降、get アクセサーと set アクセサーのどちらも、式の
   
 -   インデクサーには、2 次元配列にアクセスする場合など、複数の仮パラメーターを指定できます。  
   
-##  <a name="BKMK_RelatedSections">関連セクション</a>  
+##  <a name="BKMK_RelatedSections"></a> 関連セクション  
   
 -   [インデクサーの使用](../../../csharp/programming-guide/indexers/using-indexers.md)  
   
