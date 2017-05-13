@@ -10,9 +10,10 @@ ms.prod: .net
 ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: c044882c-af15-45f2-96d1-534557a5ee9b
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: 633dcc6d966125139cb21c4e70dac4d4794ee9a4
 ms.openlocfilehash: da326fb823c16c7795a6a05ad302c13918b435aa
+ms.contentlocale: ja-jp
 ms.lasthandoff: 03/20/2017
 
 ---
@@ -84,13 +85,13 @@ System.Runtime などの特定のコンポーネントは、次のように説�
 
 .NET Standard Library 参照アセンブリの主要な配布手段は [NuGet パッケージ](../core/packages.md)です。 実装は、各 .NET ランタイムに適切なさまざまな方法で配布されます。
 
-NuGet パッケージは&1; つまたは複数の[フレームワーク](frameworks.md)を対象にしています。 .NET Standard Library パッケージは、".NET Standard" フレームワークを対象にしています。 `netstandard` [compact TFM](frameworks.md) (`netstandard1.4` など) を使用して、.NET Standard Framework を対象にすることができます。 複数のランタイムでの実行を意図したライブラリは、このフレームワークを対象とする必要があります。 
+NuGet パッケージは 1 つまたは複数の[フレームワーク](frameworks.md)を対象にしています。 .NET Standard Library パッケージは、".NET Standard" フレームワークを対象にしています。 `netstandard` [compact TFM](frameworks.md) (`netstandard1.4` など) を使用して、.NET Standard Framework を対象にすることができます。 複数のランタイムでの実行を意図したライブラリは、このフレームワークを対象とする必要があります。 
 
-`NETStandard.Library` メタパッケージは .NET Standard Library を定義する NuGet パッケージの完全なセットを参照しています。  `netstandard` を対象とする最も一般的な方法は、このメタパッケージを参照することです。 それは、.NET Standard Library を定義する約&40; の .NET ライブラリと関連する API について説明しており、それらにアクセスできるようにしています。 `netstandard` を対象とする追加のパッケージを参照して、追加の API にアクセスできます。 
+`NETStandard.Library` メタパッケージは .NET Standard Library を定義する NuGet パッケージの完全なセットを参照しています。  `netstandard` を対象とする最も一般的な方法は、このメタパッケージを参照することです。 それは、.NET Standard Library を定義する約 40 の .NET ライブラリと関連する API について説明しており、それらにアクセスできるようにしています。 `netstandard` を対象とする追加のパッケージを参照して、追加の API にアクセスできます。 
 
 ### <a name="versioning"></a>バージョン管理
 
-仕様は&1; つだけではありませんが、段階的に拡張され、直線的にバージョン管理された API のセットです。 標準の最初のバージョンは、API のベースライン セットを構築しています。 それ以降のバージョンでは、API が追加され、以前のバージョンによって定義された API を継承しています。 標準から API を削除するために確立された取り決めはありません。
+仕様は 1 つだけではありませんが、段階的に拡張され、直線的にバージョン管理された API のセットです。 標準の最初のバージョンは、API のベースライン セットを構築しています。 それ以降のバージョンでは、API が追加され、以前のバージョンによって定義された API を継承しています。 標準から API を削除するために確立された取り決めはありません。
 
 .NET Standard Library は、1 つの .NET ランタイムに固有ではなく、それらのランタイムのいずれかのバージョン管理スキームに一致することもありません。
 
@@ -104,7 +105,7 @@ NuGet パッケージは&1; つまたは複数の[フレームワーク](framewo
 
 ### <a name="pcl-compatibility"></a>PCL 互換性
 
-.NET Standard Library は、PCL プロファイルのサブセットと互換性があります。 .NET Standard Library 1.0、1.1、1.2 はそれぞれ PCL プロファイルのセットと重複します。 この重複は&2; つの理由で作成されました。
+.NET Standard Library は、PCL プロファイルのサブセットと互換性があります。 .NET Standard Library 1.0、1.1、1.2 はそれぞれ PCL プロファイルのセットと重複します。 この重複は 2 つの理由で作成されました。
 
 - .NET Standard ベースの PCL がプロファイルベースの PCL を参照できるようにする。
 - プロファイルベースの PCL を .NET Standard ベースの PCL としてパッケージできるようにする。
