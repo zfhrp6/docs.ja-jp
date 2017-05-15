@@ -88,7 +88,7 @@ catch (IOException e)
 {  
     // Extract some information from this exception, and then   
     // throw it to the parent method.  
-    whenDo not initialize (e.Source != null)  
+    if (e.Source != null)  
         Console.WriteLine("IOException source: {0}", e.Source);  
     throw;  
 }  
@@ -107,7 +107,6 @@ catch (InvalidCastException e)
  次の例に示すように、指定した条件が true の場合に例外を再スローすることもできます。  
   
 ```csharp  
-  
 catch (InvalidCastException e)  
 {  
     if (e.Data == null)  
