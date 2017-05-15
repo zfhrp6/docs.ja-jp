@@ -195,3 +195,4 @@ static void Main()
  [throw](../../../csharp/language-reference/keywords/throw.md)   
  [try-finally](../../../csharp/language-reference/keywords/try-finally.md)   
  [方法: 例外を明示的にスローする](https://msdn.microsoft.com/library/xhcbs8fz)
+
