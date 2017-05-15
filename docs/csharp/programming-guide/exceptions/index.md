@@ -29,10 +29,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 95563b84f633789fb35eed64c510a11c44b3492b
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: fe32676f0e39ed109a68f39584cf41aec5f5ce90
+ms.openlocfilehash: 561113241f7433d8e0f7f1f1f96f0338ebe81ae3
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/10/2017
 
 ---
 # <a name="exceptions-and-exception-handling-c-programming-guide"></a>例外と例外処理 (C# プログラミング ガイド)
@@ -93,7 +94,7 @@ C# 言語の例外処理機能は、プログラムの実行時に発生する�
  [try-catch](../../../csharp/language-reference/keywords/try-catch.md)   
  [try-finally](../../../csharp/language-reference/keywords/try-finally.md)   
  [try-catch-finally](../../../csharp/language-reference/keywords/try-catch-finally.md)   
- [例外](http://msdn.microsoft.com/library/f99a1d29-a2a8-47af-9707-9909f9010735)   
+ [例外](../../../standard/exceptions/index.md)   
  [例外階層](http://msdn.microsoft.com/library/f7d68675-be06-40fb-a555-05f0c5a6f66b)   
  [信頼できる .NET コードを記述する](http://go.microsoft.com/fwlink/?LinkId=112400)   
  [特定の例外のミニダンプ](http://go.microsoft.com/fwlink/?LinkId=112408)
