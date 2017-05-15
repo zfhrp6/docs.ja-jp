@@ -14,9 +14,10 @@ caps.latest.revision: 5
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
 ms.openlocfilehash: f22ffc11ba3bce4c568c67459995842c3c103b6b
+ms.contentlocale: ja-jp
 ms.lasthandoff: 04/18/2017
 
 ---
