@@ -10,14 +10,15 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 77deec51-a14d-46d4-9bb3-faf449477149
-translationtype: Human Translation
-ms.sourcegitcommit: 0184e07012ffe1a1300dc5af7e99e0d5a3517d6b
-ms.openlocfilehash: a5abc801decbcedb4980b8b4992d128aa1e1bb2e
-ms.lasthandoff: 05/02/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: be7974018ce3195dc7344192d647fe64fb2ebcc4
+ms.openlocfilehash: 4ff34455c7cc6135f7324b18d3aebca576d70edf
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/14/2017
 
 ---
 
-# <a name="whats-new-in-c"></a>C の新機能# #
+# <a name="whats-new-in-c"></a>C# の新機能 #
 
 
 * [C# 7](csharp-7.md):
@@ -40,7 +41,7 @@ ms.lasthandoff: 05/02/2017
 次の一覧は、C# 言語と Visual Studio .NET の以前のバージョンで導入された主な機能を示しています。  
   
  * Visual Studio .NET 2013: 
-     - このバージョンの Visual Studio には、バグの修正、パフォーマンスの向上、.NET コンパイラ プラットフォーム (“Roslyn”) の Technology Preview (後の <!--Link to ../roslyn/index.md-->.NET コンパイラ プラットフォーム SDK) が含まれています。
+     - このバージョンの Visual Studio には、バグの修正、パフォーマンスの向上、.NET コンパイラ プラットフォーム ("Roslyn") の Technology Preview (後の <!--Link to ../roslyn/index.md-->.NET コンパイラ プラットフォーム SDK) が含まれています。
 
  * C# 5、Visual Studio .NET 2012: 
      - `Async` / `await`、および[呼び出し元情報](../programming-guide/concepts/caller-information.md)属性。
