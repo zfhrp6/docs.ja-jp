@@ -10,10 +10,11 @@ ms.prod: .net-core
 ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: fcc3ed2e-9265-4d50-b59e-dc2e5c190b34
-translationtype: Human Translation
-ms.sourcegitcommit: dff752a9d31ec92b113dae9eed20cd72faf57c84
-ms.openlocfilehash: 14e6b4a2ffe5145a6d5d856c2149569b9ae39ff9
-ms.lasthandoff: 03/22/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 68fbe2e9895825bbbb41cfe025bfdf1d4f9d3d04
+ms.openlocfilehash: 14279ea6fdf4af52c0492f2dad1171d8150ac95b
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/05/2017
 
 ---
 
@@ -97,7 +98,7 @@ dotnet new [-h|--help]
 
 `-f|--framework` - ターゲットにする[フレームワーク](../../standard/frameworks.md)を指定します。 値: `netcoreapp1.0` または `netcoreapp1.1` (`Default: netcoreapp1.0`)
 
-`-au|--authentication` - 使う認証の種類。 値: `None` または `Individual` (既定値: `None`)
+`-au|--auth` - 使う認証の種類。 値: `None` または `Individual` (既定値: `None`)
 
 `-uld|--use-local-db` - SQLite の代わりに LocalDB を使うかどうかを指定します。 値: `true` または `false` (既定値: `false`)
 
