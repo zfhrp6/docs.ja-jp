@@ -32,6 +32,7 @@ ms.lasthandoff: 05/14/2017
 -->
 * [クロス プラットフォーム サポート](../../core/index.md):
     - C# は .NET Core のサポートにより、複数のプラットフォームで実行できます。 macOS や、Linux をサポートする多くのディストリビューションのうち 1 つで C# を使用する場合は、.NET Core の詳細を確認してください。
+
 <!--
 - [.NET Compiler Platform SDK](../roslyn/index.md):
     - The .NET Compiler Platform SDK enables you to write code that performs static analysis on C# code. You can use these APIs to find potential errors, or bad practices, suggest fixes, and even implement those fixes.
