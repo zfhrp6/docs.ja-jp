@@ -1,24 +1,24 @@
 ---
+
 title: "概要 | C# ガイド"
-description: "C# と .NET Core を使用して、短時間でアプリケーションを構築する簡単なチュートリアルです。"
+description: "C# の使用を開始する"
 keywords: "C#, 概要, 取得,インストール"
 author: rpetrusha
 ms.author: ronpet
-ms.date: 04/17/2017
+ms.date: 05/02/2017
 ms.topic: article
 ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: b77c7263-7cbf-4729-9626-8fbc3f5f14d9
 ms.translationtype: Human Translation
-ms.sourcegitcommit: 39e8e757a446b30ab18914465853138e1c239e40
-ms.openlocfilehash: 9728e449abbac2530faba84516b8591b178180ee
+ms.sourcegitcommit: d00f2096e0799107a8a2ff1d12274c6026d4c27a
+ms.openlocfilehash: 0e3341434ef8ac354e8bc47a4c2a72cf019bd2ab
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/03/2017
+ms.lasthandoff: 05/14/2017
 
 ---
-
-# <a name="getting-started-with-c"></a>C の概要#
+# <a name="get-started-with-c"></a>C# の使用を開始する #
 
 このセクションでは、C# と .NET Core を使用して短時間でアプリケーションを構築できる、短いシンプルなチュートリアルについて説明します。 Visual Studio 2017 と Visual Studio Code については、その概要を説明しているトピックがあります。 単純な Hello World アプリケーションをビルドするか、Visual Studio 2017 を持っている場合は、他のアプリケーションで使用できる単純なクラス ライブラリをビルドできます。
 
@@ -34,7 +34,7 @@ ms.lasthandoff: 05/03/2017
 
    クラス ライブラリを使用して、別のアプリケーションから呼び出すことができる型と型のメンバーを定義できます。 このトピックでは、文字列が大文字で始まるかどうかを決定する単一のメソッドがあるクラス ライブラリを作成できます。 ライブラリの構築が完了したら、[単体テスト](testing-library-with-visual-studio.md)を開発して、それが期待どおりに動作することを確認した後、[そのライブラリを使用したいアプリケーション](consuming-library-with-visual-studio.md)で使用できるようにします。
 
-* [Visual Studio Code の概要](with-visual-studio-code.md)
+- [Visual Studio Code の使用を開始する](with-visual-studio-code.md)
 
    Visual Studio Code は、最新の Web アプリケーションやクラウド アプリケーションのビルドとデバッグ向けに最適化された無料コード エディターです。 IntelliSense をサポートしており、Linux、macOS、Windows で使用できます。
 

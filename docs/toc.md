@@ -6,7 +6,7 @@
 
 <!-- .NET Core Content -->
 # [.NET Core のガイド](core/index.md)
-## [はじめに](core/getting-started.md)
+## [開始するには](core/get-started.md)
 ## [Windows の前提条件](core/windows-prerequisites.md)
 ## [macOS の前提条件](core/macos-prerequisites.md)
 ## [チュートリアル](core/tutorials/index.md)
@@ -83,7 +83,7 @@
 <!-- .NET Framework Content -->
 # [.NET Framework ガイド](framework/index.md)
 ## [新機能](framework/whats-new/)
-## [はじめに](framework/get-started/)
+## [開始するには](framework/get-started/)
 ## [移行ガイド](framework/migration-guide/)
 ## [Docker 上の .NET Framework のガイド](framework/docker/index.md)
 ### [コンテナーで実行中のコンソール アプリケーション](framework//docker/console.md)
@@ -121,7 +121,7 @@
 
 <!-- Start of C# Content -->
 # [C# のガイド](csharp/index.md)
-## [はじめに](csharp/getting-started/)
+## [開始するには](csharp/getting-started/)
 ## [チュートリアル](csharp/tutorials/)
 ## [C# のツアー](csharp/tour-of-csharp/)
 <!-- The "What's New" section is short, and one level
@@ -187,8 +187,8 @@
 ### [ファーストクラスの値としての関数](fsharp/introduction-to-functional-programming/functions-as-first-class-values.md)
 
 <!--## [Tutorials](fsharp/tutorials/index.md)-->
-### [はじめに](fsharp/tutorials/getting-started/index.md)
-#### [Visual Studio の概要](fsharp/tutorials/getting-started/getting-started-visual-studio.md)
+### [開始するには](fsharp/tutorials/getting-started/index.md)
+#### [Visual Studio 入門](fsharp/tutorials/getting-started/getting-started-visual-studio.md)
 #### [Visual Studio Code および Ionide の概要](fsharp/tutorials/getting-started/getting-started-vscode.md)
 #### [コマンド ライン ツールの概要](fsharp/tutorials/getting-started/getting-started-command-line.md)
 ### [F# Interactive](fsharp/tutorials/fsharp-interactive/index.md)

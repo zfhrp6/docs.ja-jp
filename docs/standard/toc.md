@@ -1,4 +1,4 @@
-# [.NET の使用を開始する](getting-started.md)
+# [.NET の使用を開始する](get-started.md)
 # [.NET のツアー](tour.md)
 # [.NET アーキテクチャ コンポーネント](components.md)
 # [.NET 標準ライブラリ](library.md)
