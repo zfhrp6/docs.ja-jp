@@ -1,81 +1,100 @@
 ---
-title: "Procedures in Visual Basic | Microsoft Docs"
-ms.custom: ""
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "procedures, structured code"
-  - "Visual Basic code, procedures"
-  - "procedures, types of"
-  - "structured code, procedures"
-  - "procedures"
+title: "Visual Basic におけるプロシージャ | Microsoft Docs"
+ms.custom: 
+ms.date: 2017-04-28
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-visual-basic
+ms.topic: article
+dev_langs:
+- VB
+helpviewer_keywords:
+- procedures, structured code
+- Visual Basic code, procedures
+- procedures, types of
+- structured code, procedures
+- procedures
 ms.assetid: 9effbcf0-80a0-4d1a-98f4-2c6920592766
 caps.latest.revision: 16
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 16
----
-# Procedures in Visual Basic
-[!INCLUDE[vs2017banner](../../../../visual-basic/developing-apps/includes/vs2017banner.md)]
+author: dotnet-bot
+ms.author: dotnetcontent
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: Human Translation
+ms.sourcegitcommit: d3f21e32c162133e70a124da125c30afc7303738
+ms.openlocfilehash: 56f39e82e9295a9c1d9f862e3486373590a32e7f
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/15/2017
 
-*プロシージャ*は、宣言ステートメント \(`Function`、`Sub`、`Operator`、`Get`、`Set`\) とそれに対応する `End` 宣言に囲まれた [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] ステートメントのブロックです。  [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] では、すべての実行可能なステートメントはプロシージャ内部に収める必要があります。  
+---
+# <a name="procedures-in-visual-basic"></a>Visual Basic におけるプロシージャ
+*プロシージャ*は、宣言ステートメント (`Function`、`Sub`、`Operator`、`Get`、`Set`) とこれに一致する `End` 宣言で囲まれた、[!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] ステートメントのブロックです。 [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] のすべての実行可能なステートメントは何らかのプロシージャに含まれている必要があります。  
   
-## プロシージャの呼び出し  
- プロシージャは、コード内の他の場所で呼び出します。  これを*プロシージャ呼び出し*と呼びます。  実行が完了すると、そのプロシージャを呼び出したコードに制御を返します。このコードは、*呼び出し元のコード*と呼ばれます。  呼び出し元のコードは、ステートメント、またはステートメント内の式であり、プロシージャを名前で指定して制御を渡します。  
+## <a name="calling-a-procedure"></a>プロシージャの呼び出し  
+ コード内の他の場所からプロシージャを呼び出します。 これは、*プロシージャ コール*と呼ばれています。 プロシージャの実行が終了すると、それを呼び出したコード (*呼び出しコード*と呼ばれます) に制御が戻ります。 呼び出しコードは、名前でプロシージャを指定して、これに制御を転送するステートメント、またはステートメント内の式です。  
   
-## プロシージャからの復帰  
- プロシージャは、実行の終了時に制御を呼び出し元のコードに返します。  これを行うには、[Return Statement](../../../../visual-basic/language-reference/statements/return-statement.md)、プロシージャの適切な [Exit Statement](../../../../visual-basic/language-reference/statements/exit-statement.md) ステートメント、またはプロシージャの [End \<keyword\> Statement](../../../../visual-basic/language-reference/statements/end-keyword-statement.md) ステートメントを使用します。  呼び出し元のコードのプロシージャ呼び出しの直後に制御が返されます。  
+## <a name="returning-from-a-procedure"></a>プロシージャからの復帰  
+ プロシージャは、実行が終了すると、呼び出しコードに制御を戻します。 これを行うには、[Return ステートメント](../../../../visual-basic/language-reference/statements/return-statement.md)、プロシージャに適した [Exit ステートメント](../../../../visual-basic/language-reference/statements/exit-statement.md)、またはプロシージャの [End \<キーワード> ステートメント](../../../../visual-basic/language-reference/statements/end-keyword-statement.md)を使用することができます。 これで、プロシージャ コールの次の時点で、制御が呼び出しコードに渡されます。  
   
--   `Return` ステートメントを使うと、制御はすぐに呼び出し元のコードに返されます。  `Return` ステートメントの後にあるステートメントは実行されません。  同じプロシージャ内に、複数の `Return` ステートメントを定義できます。  
+-   `Return` ステートメントでは、ただちに呼び出しコードに制御が戻ります。 `Return` ステートメントより後のステートメントは実行されません。 同じプロシージャ内に複数の `Return` ステートメントを含めることができます。  
   
--   `Exit Sub` ステートメントまたは `Exit Function` を使うと、制御はすぐに呼び出し元のコードに返されます。  `Exit` ステートメントの後にあるステートメントは実行されません。  同じプロシージャに複数の `Exit` ステートメントを定義できます。また、`Return` ステートメントと `Exit` ステートメントを同じプロシージャに混在させることもできます。  
+-   `Exit Sub` または `Exit Function` ステートメントでは、ただちに呼び出しコードに制御が戻ります。 `Exit` ステートメントより後のステートメントは実行されません。 同じプロシージャ内に複数の `Exit` ステートメントを含めることができ、さらに同じプロシージャ内に `Return` ステートメントと `Exit` ステートメントを混在させることができます。  
   
--   プロシージャに `Return` ステートメントまたは `Exit` ステートメントがない場合、プロシージャ本体にある最後のステートメントの後に `End Sub` または `End Function`、`End Get`、または `End Set` が追加されます。  `End` ステートメントは、すぐに制御を呼び出し元のコードに返します。  プロシージャ内には `End` ステートメントを 1 つだけ指定できます。  
+-   プロシージャに `Return` または `Exit` のステートメントが含まれていない場合、プロシージャ本体の最後のステートメントの後の `End Sub` または `End Function`、`End Get` または `End Set` で終了します。 `End` ステートメントはただちに呼び出しコードに制御を戻します。 `End` ステートメントは、プロシージャ内に 1 つだけ含めることができます。  
   
-## パラメーターと引数  
- ほとんどの場合、プロシージャは、呼び出されるたびに異なるデータを操作する必要があります。  この情報は、プロシージャ呼び出しの一部としてプロシージャに渡します。  プロシージャには 0 個以上の*パラメーター*を定義します。各パラメーターは、プロシージャに渡す値を表します。  プロシージャ定義における各パラメーターに対応するのが、プロシージャ呼び出しにおける*引数*です。  引数は、プロシージャ呼び出しでそれに対応するパラメーターに渡す値を表します。  
+## <a name="parameters-and-arguments"></a>パラメーターと引数  
+ プロシージャは、ほとんどの場合、呼び出すたびにデータごとに動作する必要があります。 この情報は、プロシージャ コールの一部としてプロシージャに渡すことができます。 プロシージャは、*パラメーター*を 0 個、またはそれ以上でも定義することができ、それぞれが渡す必要がある値を表しています。 プロシージャ定義の各パラメーターに相当するのが、プロシージャ コールの*引数*です。 引数は、指定したプロシージャ コールの対応するパラメーターに渡される値を表しています。  
   
-## プロシージャの種類  
- [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] で使用されるプロシージャには、次の種類があります。  
+## <a name="types-of-procedures"></a>プロシージャの種類  
+ [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] では、次のような種類のプロシージャを使用します。  
   
--   [Sub Procedures](../../../../visual-basic/programming-guide/language-features/procedures/sub-procedures.md) は、アクションを実行しますが、呼び出し元のコードに値を返すことはありません。  
+-   [Sub プロシージャ](./sub-procedures.md)はアクションを実行しますが、呼び出しコードに値を返しません。  
   
--   イベント処理プロシージャは、`Sub` プロシージャの一種であり、ユーザーによる操作やプログラムの動作によって発生したイベントに応答して実行されます。  
+-   イベント処理プロシージャは、ユーザーの操作またはプログラムの起動によって発生したイベントに応答して実行される `Sub` プロシージャです。  
   
--   [Function プロシージャ](../../../../visual-basic/programming-guide/language-features/procedures/function-procedures.md) は、呼び出し元のコードに値を返します。  呼び出し元に戻る前に、他のアクションを実行できます。  
+-   [Function プロシージャ](./function-procedures.md)は、呼び出しコードに値を返します。 返す前に他の操作を実行することができます。
+
+    C# で書かれた一部の関数は、*参照戻り値*を返します。 関数の呼び出し元は、戻り値を変更することができ、この変更は呼び出されたオブジェクトの状態に反映されます。 Visual Basic は参照によって値を返すことはできませんが、Visual Basic 2017 から、Visual Basic のコードで参照戻り値を使用できるようになりました。 詳細については、[参照戻り値](ref-return-values.md)に関するページを参照してください。
   
--   [Property プロシージャ](../../../../visual-basic/programming-guide/language-features/procedures/property-procedures.md) は、オブジェクトまたはモジュールのプロパティの値を取得および設定します。  
+-   [プロパティ プロシージャ](./property-procedures.md)は、オブジェクトまたはモジュールのプロパティの値を返し、割り当てます。  
   
--   [Operator Procedures](../../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md) は、オペランドの 1 つまたは両方が新しく定義されたクラスまたは構造体である場合に、標準の動作を定義します。  
+-   [演算子プロシージャ](./operator-procedures.md)は、オペランドの一方または両方が新しく定義されたクラスまたは構造体である場合に、標準の演算子の動作を定義します。  
   
--   [Generic Procedures in Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/generic-procedures.md) では、通常のパラメーターに加え、1 つ以上の*型パラメーター*が定義されるため、呼び出し元のコードでは呼び出しのたびに特定のデータ型を渡すことができます。  
+-   [Visual Basic におけるジェネリック プロシージャ](../../../../visual-basic/programming-guide/language-features/data-types/generic-procedures.md)は、標準のパラメーターだけでなく 1 つまたは複数の*型パラメーター*も定義するため、呼び出しコードが呼び出しのたびに特定のデータ型を渡すことができます。  
   
-## プロシージャと構造化コード  
- アプリケーションの実行可能コードのすべての行は、なんらかのプロシージャ \(`Main`、`calculate`、`Button1_Click` など\) の中に記述する必要があります。  大きなプロシージャがある場合は、いくつかに分割すると、アプリケーションのコードが読みやすくなります。  
+## <a name="procedures-and-structured-code"></a>プロシージャと構造化されたコード  
+ アプリケーションの実行可能コードのすべての行が、`Main`、 `calculate`、`Button1_Click` などの何らかのプロシージャの内部にある必要があります。 大きなプロシージャを小さなプロシージャに分割すると、アプリケーションが読みやすくなります。  
   
- プロシージャは、頻繁に使用される計算、テキストやコントロールの操作、データベースの操作など、繰り返し実行されるタスクや共有されているタスクを実行するのに便利です。  プロシージャは、コード内のさまざまな場所から呼び出すことができるため、アプリケーションの基本的な構成要素として使用できます。  
+ プロシージャは、頻繁に使用する計算、テキストやコントロールの操作、データベースの操作など、繰り返される、または共有されるタスクを実行する場合に便利です。 プロシージャはコード内のさまざまな場所から呼び出すことができるため、プロシージャをアプリケーションの文書パーツとして使用することができます。  
   
- プロシージャでコードを構成すると、次の利点があります。  
+ プロシージャでコードを構成すると、次のような利点があります。  
   
--   プロシージャを使うと、プログラムを個別の論理単位に分割できます。  プロシージャごとにデバッグする方が、プロシージャに分割されていないプログラム全体をデバッグするよりも簡単です。  
+-   プロシージャを使用して、プログラムを個々の論理単位に分割できます。 プロシージャを使用せずにプログラム全体をデバッグするよりも、個別の単位の方が簡単にデバッグできます。  
   
--   あるプログラム用に開発したプロシージャは、多くの場合、ほとんど変更せずに他のプログラムで使用できます。  同じコードを何度も書かなくて済みます。  
+-   1 つのプログラムで使用するために開発したプロシージャを、他のプログラムでも使用できます。多くの場合、プログラムをほとんどまたはまったく変更せずに使用できます。 これにより、コードの重複を避けることができます。  
   
-## 参照  
- [How to: Create a Procedure](../../../../visual-basic/programming-guide/language-features/procedures/how-to-create-a-procedure.md)   
- [Sub Procedures](../../../../visual-basic/programming-guide/language-features/procedures/sub-procedures.md)   
- [Function プロシージャ](../../../../visual-basic/programming-guide/language-features/procedures/function-procedures.md)   
- [Property プロシージャ](../../../../visual-basic/programming-guide/language-features/procedures/property-procedures.md)   
- [Operator Procedures](../../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md)   
- [Procedure Parameters and Arguments](../../../../visual-basic/programming-guide/language-features/procedures/procedure-parameters-and-arguments.md)   
- [Recursive Procedures](../../../../visual-basic/programming-guide/language-features/procedures/recursive-procedures.md)   
- [Procedure Overloading](../../../../visual-basic/programming-guide/language-features/procedures/procedure-overloading.md)   
- [Generic Procedures in Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/generic-procedures.md)   
- [Objects and Classes](../../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md)
+## <a name="see-also"></a>関連項目  
+ [方法: プロシージャを作成する](./how-to-create-a-procedure.md)   
+ [Sub プロシージャ](./sub-procedures.md)   
+ [Function プロシージャ](./function-procedures.md)   
+ [プロパティ プロシージャ](./property-procedures.md)   
+ [演算子プロシージャ](./operator-procedures.md)   
+ [プロシージャのパラメーターと引数](./procedure-parameters-and-arguments.md)   
+ [再帰プロシージャ](./recursive-procedures.md)   
+ [プロシージャのオーバーロード](./procedure-overloading.md)   
+ [Visual Basic におけるジェネリック プロシージャ](../../../../visual-basic/programming-guide/language-features/data-types/generic-procedures.md)   
+ [クラスとオブジェクト](../../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md)
