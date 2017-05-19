@@ -29,19 +29,17 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 1f84c40950d2a23681094e06118ae2e1bdbd5a71
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 0832ee88bba58579eea001335be9cb8c2130834d
+ms.openlocfilehash: 3fc7bb7cb54cb83fbb1c008283302c816f4d6fa4
+ms.contentlocale: ja-jp
+ms.lasthandoff: 03/28/2017
 
 ---
 # <a name="getting-started-with-c"></a>C の概要#
 以下のトピックでは、C# を使用したアプリケーション開発を始めるのに役立つ情報を紹介します。 また、Visual Studio に組み込まれているさまざまな新機能や、C# 言語についても説明します。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
- [Visual Studio 2013 での Visual C# の互換性に影響する変更点](../../csharp/getting-started/breaking-changes-in-visual-studio-2013.md)  
- C# コンパイラについて、以前のバージョンからの重大な変更の一覧を示します。  
-  
  [C# 言語と .NET Framework の概要](../../csharp/getting-started/introduction-to-the-csharp-language-and-the-net-framework.md)  
  C# 言語および .NET プラットフォームの概要を示します。  
   
