@@ -114,7 +114,7 @@
 ## [変換キーワード](conversion-keywords.md)
 ### [explicit](explicit.md)
 ### [implicit](implicit.md)
-### [operator2](operator.md)
+### [operator](operator.md)
 ## [アクセス キーワード](access-keywords.md)
 ### [base](base.md)
 ### [this](this.md)

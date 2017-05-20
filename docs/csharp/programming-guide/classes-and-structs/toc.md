@@ -41,7 +41,7 @@
 ### [プライベート コンストラクター](private-constructors.md)
 ### [静的コンストラクター](static-constructors.md)
 ### [方法: コピー コンストラクターを記述する](how-to-write-a-copy-constructor.md)
-## [デストラクター](destructors.md)
+## [ファイナライザー](destructors.md)
 ## [オブジェクト初期化子とコレクション初期化子](object-and-collection-initializers.md)
 ### [方法: オブジェクト初期化子を使用してオブジェクトを初期化する](how-to-initialize-objects-by-using-an-object-initializer.md)
 ### [方法: コレクション初期化子を使用してディクショナリを初期化する](how-to-initialize-a-dictionary-with-a-collection-initializer.md)
