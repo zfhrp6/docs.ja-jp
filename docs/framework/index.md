@@ -20,23 +20,21 @@ author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.translationtype: Human Translation
-ms.sourcegitcommit: 22822d80170e33be59253ecb0d74ec5eb2344751
-ms.openlocfilehash: 933d5f6a864820f5e694c0a9c7eab7b4fe5f790f
+ms.sourcegitcommit: 01c66e2c291766ba00376261740906934f065855
+ms.openlocfilehash: 50f027408357a5d98ef1bfe305ab675fc97abba8
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/04/2017
+ms.lasthandoff: 05/17/2017
 
 ---
 
 # <a name="net-framework-guide"></a>.NET Framework ガイド
 
 > [!NOTE]
->  この .NET Framework コンテンツ セットには .NET Framework バージョン 4.5、4.5.1、4.5.2、4.6、4.6.1、4.6.2、および 4.7 に関する情報が含まれています。 .NET Framework をダウンロードするには、「[.NET Framework のインストール](../../docs/framework/install/guide-for-developers.md)」を参照してください。 NET Framework 4.5、[!INCLUDE[net_v46](../../includes/net-v46-md.md)]、これらのポイント リリース、および .NET Framework 4.7 の新機能と変更点については、「[.NET Framework の新機能](../../docs/framework/whats-new/index.md)」をご覧ください。 サポートされているプラットフォームについては、「[.NET Framework のシステム要件](../../docs/framework/get-started/system-requirements.md)」を参照してください。  
+>  この .NET Framework コンテンツ セットには .NET Framework バージョン 4.5、4.5.1、4.5.2、4.6、4.6.1、4.6.2、および 4.7 に関する情報が含まれています。 .NET Framework をダウンロードするには、「[.NET Framework のインストール](../../docs/framework/install/guide-for-developers.md)」を参照してください。 NET Framework 4.5、[!INCLUDE[net_v46](../../includes/net-v46-md.md)]、これらのポイント リリース、および .NET Framework 4.7 の新機能と変更点については、「[.NET Framework の新機能](../../docs/framework/whats-new/index.md)」をご覧ください。 サポートされているプラットフォームについては、「[.NET Framework のシステム要件](../../docs/framework/get-started/system-requirements.md)」を参照してください。 
 
-.NET Framework は、メモリ管理、型とメモリの安全性、セキュリティ機能、ネットワーク、およびアプリケーションの展開など、多くのサービスを提供します。 使いやすいデータ構造と下位レベルの Windows オペレーティング システムを抽象化する API を提供します。 .NET Framework では、C#、F#、Visual Basic を含む、さまざまなプログラミング言語を使用できます。
+ .NET Framework は、Web、Windows、Windows Phone、Windows Server、および Microsoft Azure 用のアプリを作成するための開発プラットフォームです。 共通言語ランタイム (CLR) と .NET Framework クラス ライブラリで構成され、さまざまな機能を含み、さまざまな業界標準をサポートしています。
 
- .NET Framework は、Windows、Windows Phone、Windows Server、および Microsoft Azure 用のアプリを作成するための開発プラットフォームです。 共通言語ランタイム (CLR) と .NET Framework クラス ライブラリで構成され、さまざまな機能を含み、さまざまな業界標準をサポートしています。  
-
-.NET Framework は、メモリ管理、型とメモリの安全性、セキュリティ機能、ネットワーク、およびアプリケーションの展開など、多くのサービスを提供します。 使いやすいデータ構造と下位レベルの Windows オペレーティング システムを抽象化する API を提供します。 .NET Framework では、C#、F#、Visual Basic を含む、さまざまなプログラミング言語を使用できます。
+.NET Framework は、メモリ管理、型とメモリの安全性、セキュリティ、ネットワーク、およびアプリケーションの展開など、多くのサービスを提供します。 使いやすいデータ構造と下位レベルの Windows オペレーティング システムを抽象化する API を提供します。 .NET Framework では、C#、F#、Visual Basic を含む、さまざまなプログラミング言語を使用できます。  
 
 ユーザーと開発者のための .NET Framework の概要については、「[.NET Framework の概要](../../docs/framework/get-started/index.md)」を参照してください。 .NET Framework のアーキテクチャおよび主要機能の概要については、[「.NET Framework overview の概要」](../../docs/framework/get-started/overview.md) を参照してください。  
 
@@ -71,3 +69,4 @@ ms.lasthandoff: 05/04/2017
   
 [追加のクラス ライブラリおよび API](../../docs/framework/additional-apis/index.md)  
 アウト オブ バンド (OOB) のリリースに含まれるクラスと、特定のプラットフォームまたは .NET Framework の実装を対象としたクラスに関するドキュメントです。
+
