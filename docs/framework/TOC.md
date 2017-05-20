@@ -1,4 +1,4 @@
-# [.NET Framework の開発ガイド](development-guide.md)
+# [開発ガイド](development-guide.md)
 ## [アプリケーションの基本事項](../standard/application-essentials.md)
 ## [データとモデリング](data/index.md)
 ## [クライアント アプリケーション](develop-client-apps.md)
@@ -15,4 +15,3 @@
 ## [複数のプラットフォームの開発](../standard/cross-platform/index.md)
 ## [配置](deployment/index.md)
 ## [パフォーマンス](performance/index.md)
-
