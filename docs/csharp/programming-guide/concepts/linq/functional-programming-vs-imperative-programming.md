@@ -14,10 +14,11 @@ ms.assetid: 5e35c5a0-c949-422a-873b-fca6b2254f57
 caps.latest.revision: 3
 author: BillWagner
 ms.author: wiwagn
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: f15f1b6b55a4cb7d036a89d1636aab166740037d
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: fe32676f0e39ed109a68f39584cf41aec5f5ce90
+ms.openlocfilehash: 9e16daec1c830f4541229beaa10b079e683914fe
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/10/2017
 
 
 ---
@@ -40,7 +41,7 @@ ms.lasthandoff: 03/13/2017
  ほとんどの言語は特定のプログラミング パラダイムをサポートするために作成されていますが、汎用言語の多くは、複数のパラダイムをサポートできる柔軟性を備えています。 たとえば、関数ポインターを含むほとんどの言語で関数型プログラミングがサポートされます。 さらに、C# には、ラムダ式や型推論など、関数型プログラミングをサポートするための明確な言語拡張が含まれます。 LINQ テクノロジは、宣言型 (関数型) プログラミングの一種です。  
   
 ## <a name="functional-programming-using-xslt"></a>XSLT による関数型プログラミング  
- 純粋関数型の方法については、多くの XSLT 開発者が精通しています。 XSLT スタイル シートを開発するための最も効果的な方法では、各テンプレートが、分離された構成可能な変換として扱われ、 実行の順序はまったく重要ではなくなります。 また、XSLT では副作用も許可されません (例外として、手続き型のコードを実行するためのエスケープ メカニズムによって副作用が導入されることがあります。このため、純粋関数型ではなくなる場合があります)。 XSLT は有効なツールですが、その一方で、最適とは言えない特性もあります。 たとえば、プログラミング構成要素が XML で表現されるため、コードが比較的冗長になり、保守が困難になります。 また、フロー制御のために再帰に大きく依存しているため、コードが読みにくくなることがあります。 XSLT について詳しくは、「[XSLT 変換](http://msdn.microsoft.com/library/202f8820-224c-494f-b61e-cd127eac6e03)」をご覧ください。  
+ 純粋関数型の方法については、多くの XSLT 開発者が精通しています。 XSLT スタイル シートを開発するための最も効果的な方法では、各テンプレートが、分離された構成可能な変換として扱われ、 実行の順序はまったく重要ではなくなります。 また、XSLT では副作用も許可されません (例外として、手続き型のコードを実行するためのエスケープ メカニズムによって副作用が導入されることがあります。このため、純粋関数型ではなくなる場合があります)。 XSLT は有効なツールですが、その一方で、最適とは言えない特性もあります。 たとえば、プログラミング構成要素が XML で表現されるため、コードが比較的冗長になり、保守が困難になります。 また、フロー制御のために再帰に大きく依存しているため、コードが読みにくくなることがあります。 XSLT について詳しくは、「[XSLT 変換](../../../../standard/data/xml/xslt-transformations.md)」をご覧ください。  
   
  ただし、XML の形式を変換する場合に純粋関数型の方法を使用する意味は、XSLT によって証明されます。 LINQ to XML による純粋関数型プログラミングは多くの点で XSLT に似ていますが、 LINQ to XML と C# によって導入されるプログラミング構成要素を使用すると、XSLT より読みやすく、保守も容易な、純粋関数型変換を記述することができます。  
   
@@ -64,5 +65,5 @@ ms.lasthandoff: 03/13/2017
   
 ## <a name="see-also"></a>関連項目  
  [純粋関数型変換の概要 (C#)](../../../../csharp/programming-guide/concepts/linq/introduction-to-pure-functional-transformations.md)   
- [XSLT 変換](http://msdn.microsoft.com/library/202f8820-224c-494f-b61e-cd127eac6e03)   
+ [XSLT 変換](../../../../standard/data/xml/xslt-transformations.md)   
  [純粋関数へのリファクタリング (C#)](../../../../csharp/programming-guide/concepts/linq/refactoring-into-pure-functions.md)

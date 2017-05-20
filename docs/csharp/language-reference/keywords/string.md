@@ -34,10 +34,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: a616808a8e6ff5e259c503c0143db4b8f73bdef2
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: fe32676f0e39ed109a68f39584cf41aec5f5ce90
+ms.openlocfilehash: 737a0902a0cb010a74b59560abe43f5cfb6550db
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/10/2017
 
 ---
 # <a name="string-c-reference"></a>string (C# リファレンス)
@@ -125,12 +126,12 @@ Console.WriteLine(a);
 ## <a name="see-also"></a>関連項目  
  [C# リファレンス](../../../csharp/language-reference/index.md)   
  [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
- [文字列を使用するためのベスト プラクティス](http://msdn.microsoft.com/library/b9f0bf53-e2de-4116-8ce9-d4f91a1df4f7)   
+ [文字列を使用するためのベスト プラクティス](../../../standard/base-types/best-practices-strings.md)   
  [C# のキーワード](../../../csharp/language-reference/keywords/index.md)   
  [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
  [参照型](../../../csharp/language-reference/keywords/reference-types.md)   
  [値型](../../../csharp/language-reference/keywords/value-types.md)   
- [基本的な文字列操作](http://msdn.microsoft.com/library/8133d357-90b5-4b62-9927-43323d99b6b6)   
- [新しい文字列の作成](http://msdn.microsoft.com/library/06fdf123-2fac-4459-8904-eb48ab908a30)   
+ [基本的な文字列操作](../../../standard/base-types/basic-string-operations.md)   
+ [新しい文字列の作成](../../../standard/base-types/creating-new.md)   
  [数値結果テーブルの書式設定](../../../csharp/language-reference/keywords/formatting-numeric-results-table.md)
 
