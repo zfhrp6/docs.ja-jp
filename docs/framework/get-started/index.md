@@ -18,10 +18,10 @@ author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.translationtype: Human Translation
-ms.sourcegitcommit: ddcefb2b35f8cbf06a3abcc16158eee850f799ff
-ms.openlocfilehash: 5713faed77786a87dc349a1c7e02ec9703b3700d
+ms.sourcegitcommit: fe9ab371ab8d3eee3778412e446b7aa30b42476b
+ms.openlocfilehash: 42d0ddd649ffaaaf375c3396e4a82b066c9719e9
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/03/2017
+ms.lasthandoff: 05/19/2017
 
 ---
 # <a name="get-started-with-the-net-framework"></a>.NET Framework の概要
@@ -82,11 +82,11 @@ ms.lasthandoff: 05/03/2017
 |タイトル|説明|
 |-----------|-----------------|
 |[概要](../../../docs/framework/get-started/overview.md)|.NET Framework を対象としたアプリケーションをビルドする開発者向けの詳細情報を提供します。|
+|[インストール ガイド](../../../docs/framework/install/index.md)|.NET Framework のインストールに関する情報を提供します。|  
 |[NET Framework および特別なリリース](../../../docs/framework/get-started/the-net-framework-and-out-of-band-releases.md)|.NET Framework のアウトオブバンド リリースと、これらをアプリ内で使用する方法について説明します。|
 |[システム要件](../../../docs/framework/get-started/system-requirements.md)|.NET Framework を実行するためのハードウェアおよびソフトウェアの要件を示します。|
 |[.NET Core とオープン ソース](../../../docs/framework/get-started/net-core-and-open-source.md)|.NET Core と .NET Framework の関係性、およびオープン ソースの .NET Core プロジェクトにアクセスする方法について説明します。|
 |[.NET Core ドキュメント](https://docs.microsoft.com/dotnet/)|.NET Core の概念と API リファレンス ドキュメントです。|
-|[インストール ガイド](../../../docs/framework/install/guide-for-developers.md)|.NET Framework のインストールに関する情報を提供します。|
 
 ## <a name="see-also"></a>関連項目
  [.NET Framework ガイド](../../../docs/framework/index.md)   
