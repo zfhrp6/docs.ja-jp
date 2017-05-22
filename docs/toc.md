@@ -38,6 +38,7 @@
 ## [単体テスト](core/testing/index.md)
 ### [dotnet テストおよび xUnit を使用した単体テスト](core/testing/unit-testing-with-dotnet-test.md)
 ### [dotnet テストおよび MSTest を使用した単体テスト](core/testing/unit-testing-with-mstest.md)
+### [選択的単体テストの実行](core/testing/selective-unit-tests.md)
 ## [バージョン管理](core/versions/index.md)
 ### [.NET Core サポート](core/versions/lts-current.md)
 <!--### [🔧 Servicing](core/versions/servicing.md)-->
@@ -84,6 +85,7 @@
 # [.NET Framework ガイド](framework/index.md)
 ## [新機能](framework/whats-new/)
 ## [開始するには](framework/get-started/)
+## [インストール ガイド](framework/install/)
 ## [移行ガイド](framework/migration-guide/)
 ## [Docker 上の .NET Framework のガイド](framework/docker/index.md)
 ### [コンテナーで実行中のコンソール アプリケーション](framework//docker/console.md)
@@ -132,6 +134,7 @@
 <!-- End What's New -->
 <!--## [🔧 C# Interactive](csharp/interactive/)-->
 <!-- Do this section later, once master redirects are in place -->
+## C# の概念
 ### [C# の型システム](csharp/programming-guide/types/index.md)
 ### [名前空間](csharp/programming-guide/namespaces/index.md)
 ### [基本型](csharp/basic-types.md)
@@ -183,12 +186,11 @@
 
 ## [F# のツアー](fsharp/tour.md)
 
-<!--## [Introduction to Functional Programming](fsharp/introduction-to-functional-programming/index.md)-->
-### [ファーストクラスの値としての関数](fsharp/introduction-to-functional-programming/functions-as-first-class-values.md)
-
 <!--## [Tutorials](fsharp/tutorials/index.md)-->
+## チュートリアル
 ### [開始するには](fsharp/tutorials/getting-started/index.md)
 #### [Visual Studio 入門](fsharp/tutorials/getting-started/getting-started-visual-studio.md)
+#### [Visual Studio for Mac の使用を開始する](fsharp/tutorials/getting-started/getting-started-with-visual-studio-for-mac.md)
 #### [Visual Studio Code および Ionide の概要](fsharp/tutorials/getting-started/getting-started-vscode.md)
 #### [コマンド ライン ツールの概要](fsharp/tutorials/getting-started/getting-started-command-line.md)
 ### [F# Interactive](fsharp/tutorials/fsharp-interactive/index.md)
@@ -203,7 +205,13 @@
 #### [型プロバイダーの作成](fsharp/tutorials/type-providers/creating-a-type-provider.md)
 #### [型プロバイダーのセキュリティ](fsharp/tutorials/type-providers/type-provider-security.md)
 #### [型プロバイダーのトラブルシューティング](fsharp/tutorials/type-providers/troubleshooting-type-providers.md)
+
+<!--## [Introduction to Functional Programming](fsharp/introduction-to-functional-programming/index.md)-->
+## 関数型プログラミングの概要
+### [ファーストクラスの値としての関数](fsharp/introduction-to-functional-programming/functions-as-first-class-values.md)
+
 <!--### [Asynchronous and Concurrent Programming](fsharp/tutorials/asynchronous-and-concurrent-programming/index.md)-->
+### 非同期と同時実行プログラミング
 #### [非同期プログラミング](fsharp/tutorials/asynchronous-and-concurrent-programming/async.md)
 
 <!--## [Using F# in Visual Studio](fsharp/using-fsharp-in-visual-studio/index.md)-->
