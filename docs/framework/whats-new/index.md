@@ -17,31 +17,33 @@ author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.translationtype: Human Translation
-ms.sourcegitcommit: be7974018ce3195dc7344192d647fe64fb2ebcc4
-ms.openlocfilehash: e36d3523a52def454e7ed0233f2179ab88ab3bcb
+ms.sourcegitcommit: fe9ab371ab8d3eee3778412e446b7aa30b42476b
+ms.openlocfilehash: 416e97cd7f59b0fc63052673acee8b55a3c11c1f
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/14/2017
+ms.lasthandoff: 05/19/2017
 
 ---
+
 # <a name="whats-new-in-the-net-framework"></a>.NET Framework の新機能
-<a name="introduction"></a> この記事では、.NET Framework の次のバージョンにおける主な新機能と機能強化の概要を示します。
+<a name="introduction"></a> この記事では、.NET Framework の次のバージョンにおける主な新機能と機能強化の概要を示します。  
+ 
+[.NET Framework 4.7](#v47)   
+[.NET Framework 4.6.2](#v462)   
+[.NET Framework 4.6.1](#v461)   
+[.NET 2015 と .NET Framework 4.6](#v46)   
+[.NET Framework 4.5.2](#v452)   
+[.NET Framework 4.5.1](#v451)   
+[.NET Framework 4.5](#core)   
 
- [.NET Framework 4.7](#v47)   
- [.NET Framework 4.6.2](#v462)   
- [.NET Framework 4.6.1](#v461)   
- [.NET 2015 と .NET Framework 4.6](#v46)   
- [.NET Framework 4.5.2](#v452)   
- [.NET Framework 4.5.1](#v451)   
- [.NET Framework 4.5](#core)   
-
- この記事は、各新機能の包括的な情報を説明するものではありません。また、この内容は変更される可能性があります。 .NET Framework の概要については、「[.NET Framework の概要](../../../docs/framework/get-started/index.md)」をご覧ください。 サポートされているプラットフォームについては、「[.NET Framework システム要件](~/docs/framework/get-started/system-requirements.md)」を参照してください。 ダウンロード リンクとインストール手順については、「[.NET Framework のインストール](../../../docs/framework/install/guide-for-developers.md)」を参照してください。
+この記事は、各新機能の包括的な情報を説明するものではありません。また、この内容は変更される可能性があります。 .NET Framework の概要については、「[.NET Framework の概要](../../../docs/framework/get-started/index.md)」をご覧ください。 サポートされているプラットフォームについては、「[.NET Framework システム要件](~/docs/framework/get-started/system-requirements.md)」を参照してください。 ダウンロード リンクとインストール手順については、「[.NET Framework のインストール](../../../docs/framework/install/guide-for-developers.md)」を参照してください。
 
 > [!NOTE]
->  また .NET Framework チームは、NuGet により OOB 機能をリリースすることによって、プラットフォーム サポートを拡張し、新しい機能 (変更できないコレクションや SIMD 対応ベクター型など) を提供しています。 詳細については、「[その他のクラス ライブラリと API](../additional-apis/index.md)」および[.NET Framework と OOB リリース](~/docs/framework/get-started/the-net-framework-and-out-of-band-releases.md)に関するページを参照してください。 .NET Framework 用の [NuGet パッケージの完全な一覧](https://blogs.msdn.microsoft.com/dotnet/p/nugetpackages/)をご確認いただくか、[Microsoft のフィード](https://nuget.org/api/v2/curated-feeds/dotnetframework/Packages/)をサブスクライブしてください。
+> また .NET Framework チームは、NuGet により OOB 機能をリリースすることによって、プラットフォーム サポートを拡張し、新しい機能 (変更できないコレクションや SIMD 対応ベクター型など) を提供しています。 詳細については、「[その他のクラス ライブラリと API](../additional-apis/index.md)」および[.NET Framework と OOB リリース](~/docs/framework/get-started/the-net-framework-and-out-of-band-releases.md)に関するページを参照してください。 .NET Framework 用の [NuGet パッケージの完全な一覧](https://blogs.msdn.microsoft.com/dotnet/p/nugetpackages/)をご確認いただくか、[Microsoft のフィード](https://nuget.org/api/v2/curated-feeds/dotnetframework/Packages/)をサブスクライブしてください。
 
 <a name="v47"></a> 
 ## <a name="introducing-the-net-framework-47"></a>.NET Framework 4.7 の概要
- .NET Framework 4.7 は、.NET Framework 4.6、4.6.1、4.6.2 を基に、多数の新しい修正といくつかの新機能を追加したものであり、これまでと同様に非常に安定した製品です。
+
+.NET Framework 4.7 は、.NET Framework 4.6、4.6.1、4.6.2 を基に、多数の新しい修正といくつかの新機能を追加したものであり、これまでと同様に非常に安定した製品です。
 
 ### <a name="downloading-and-installing-the-net-framework-47"></a>.NET Framework 4.7 のダウンロードとインストール
  
@@ -159,7 +161,8 @@ Windows Ink Services Platform (WISP) の代わりに [WM_POINTER メッセージ
 
 <a name="v462"></a> 
 ## <a name="whats-new-in-the-net-framework-462"></a>.NET Framework 4.6.2 の新機能
- [!INCLUDE[net_v462](../../../includes/net-v462-md.md)] には、次の領域における新機能が含まれています。
+
+[!INCLUDE[net_v462](../../../includes/net-v462-md.md)] には、次の領域における新機能が含まれています。
 
 - [ASP.NET](#ASPNET462)
 
@@ -219,9 +222,9 @@ End Class
 
  キーがエラー メッセージ文字列であり、その値がローカライズされたエラー メッセージであるようにリソース ファイル DataAnnotation.Localization.fr.resx を作成します。 ファイルは `App.LocalResources` フォルダーになければいけません。 たとえば下記は、キーとその値で、値はローカライズされたフランス語 (fr) のエラー メッセージです。
 
-|名前|値|
-|----------|-----------|
-|The rating must be between 1 and 10.|La note doit être comprise entre 1 et 10.|
+| 名前                                 | 値                                     |
+| ------------------------------------ | ----------------------------------------- |
+| The rating must be between 1 and 10. | La note doit être comprise entre 1 et 10. |
 
  This file can then
 
@@ -231,12 +234,10 @@ End Class
  ASP.NET では、セッション状態ストア プロバイダーでタスクを返すメソッドを使用できるようになりました。これにより、ASP.NET アプリで非同期のスケーラビリティのメリットが得られます。 セッション状態ストア プロバイダーでの非同期操作をサポートするために、ASP.NET には新しいインターフェイスである <xref:System.Web.SessionState.ISessionStateModule?displayProperty=fullName> が含まれています。これは <xref:System.Web.IHttpModule> から継承され、開発者はこれを使用して独自のセッション状態モジュールと非同期セッション ストア プロバイダーを実装することができます。 このインターフェイスは次のように定義されます。
 
 ```csharp
-
 public interface ISessionStateModule : IHttpModule {
     void ReleaseSessionState(HttpContext context);
     Task ReleaseSessionStateAsync(HttpContext context);
 }
-
 ```
 
  また、<xref:System.Web.SessionState.SessionStateUtility> クラスには <xref:System.Web.SessionState.SessionStateUtility.IsSessionStateReadOnly%2A> および <xref:System.Web.SessionState.SessionStateUtility.IsSessionStateRequired%2A> という 2 つの新しいメソッドが含まれています。これらを使用して、非同期操作をサポートできます。
@@ -633,13 +634,11 @@ Dim utc As New Date(2016, 11, 07, 3, 0, 0, DateTimeKind.Utc)
 
  次のサンプル コードでは、[!INCLUDE[net_v461](../../../includes/net-v461-md.md)] での新しい ECDSA X509 証明書のサポートを使用してバイト ストリームの署名が簡単に生成できることを示しています。
 
- [!code-csharp[whatsnew.461.crypto#1](../../../samples/snippets/csharp/VS_Snippets_CLR/whatsnew.461.crypto/cs/Code46.cs#1)]
- [!code-vb[whatsnew.461.crypto#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/whatsnew.461.crypto/vb/Code461.vb#1)]
+ [!code-csharp[whatsnew.461.crypto#1](../../../samples/snippets/csharp/VS_Snippets_CLR/whatsnew.461.crypto/cs/Code46.cs#1)] [!code-vb[whatsnew.461.crypto#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/whatsnew.461.crypto/vb/Code461.vb#1)]
 
  このコードは、.NET Framework 4.6 での署名の生成に必要な次のコードとは大きく異なっています。
 
- [!code-csharp[whatsnew.461.crypto#2](../../../samples/snippets/csharp/VS_Snippets_CLR/whatsnew.461.crypto/cs/Code46.cs#2)]
- [!code-vb[whatsnew.461.crypto#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/whatsnew.461.crypto/vb/Code46.vb#2)]
+ [!code-csharp[whatsnew.461.crypto#2](../../../samples/snippets/csharp/VS_Snippets_CLR/whatsnew.461.crypto/cs/Code46.cs#2)] [!code-vb[whatsnew.461.crypto#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/whatsnew.461.crypto/vb/Code46.vb#2)]
 
 <a name="ADO.NET461"></a> 
 ### <a name="adonet"></a>ADO.NET
@@ -831,13 +830,11 @@ Dim utc As New Date(2016, 11, 07, 3, 0, 0, DateTimeKind.Utc)
 
         - 一般的な操作でキャストを不要にする RSA API の機能強化。 たとえば、以前のバージョンの .NET Framework で <xref:System.Security.Cryptography.X509Certificates.X509Certificate2> オブジェクトを使用してデータを暗号化するには、次のようなコードが必要です。
 
-             [!code-csharp[WhatsNew.Casting#1](../../../samples/snippets/csharp/VS_Snippets_CLR/whatsnew.casting/cs/program.cs#1)]
-             [!code-vb[WhatsNew.Casting#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/whatsnew.casting/vb/module1.vb#1)]
+             [!code-csharp[WhatsNew.Casting#1](../../../samples/snippets/csharp/VS_Snippets_CLR/whatsnew.casting/cs/program.cs#1)]    [!code-vb[WhatsNew.Casting#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/whatsnew.casting/vb/module1.vb#1)]
 
              .NET Framework 4.6 で新しい暗号化を使用するコードは、次のように書き換えてキャストを回避することができます。
 
-             [!code-csharp[WhatsNew.Casting#2](../../../samples/snippets/csharp/VS_Snippets_CLR/whatsnew.casting/cs/program.cs#2)]
-             [!code-vb[WhatsNew.Casting#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/whatsnew.casting/vb/module1.vb#2)]
+             [!code-csharp[WhatsNew.Casting#2](../../../samples/snippets/csharp/VS_Snippets_CLR/whatsnew.casting/cs/program.cs#2)]    [!code-vb[WhatsNew.Casting#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/whatsnew.casting/vb/module1.vb#2)]
 
     - **日付および時間と UNIX 時間の変換のサポート**
 
