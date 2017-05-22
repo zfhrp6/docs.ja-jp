@@ -9,19 +9,17 @@ ms.topic: article
 ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: 815ac74c-4bd9-4a94-a87c-78288b27c0e2
-translationtype: Human Translation
-ms.sourcegitcommit: 095ebad90e3f0b188d208d22f6f16b9552f8ea86
-ms.openlocfilehash: ca9d57a3ef3382c4957de5edb55959f1a3f13ee0
-ms.lasthandoff: 04/05/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: ae036cfcad341ffc859336a7ab2a49feec145715
+ms.openlocfilehash: 1bef3c8b36218d0cb228e85ef2ccdffd9a2a1bd7
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/18/2017
 
 ---
 
 # <a name="unit-testing-in-net-core"></a>.NET Core での単体テスト
 
-執筆: [Steve Smith](http://ardalis.com) / [Bill Wagner](https://github.com/BillWagner)
-
-.NET Core は、アプリケーションの単体テストを従来よりも簡単に作成できるように、テストの容易性を考慮して設計されています。 この記事では、単体テスト (およびその他の種類のテストとの違い) について簡単に紹介します。
-リンクされたリソースは、テスト プロジェクトをソリューションに追加してから、コマンドラインまたは Visual Studio を使用して単体テストを実行する方法を示します。
+.NET Core は、アプリケーションの単体テストを従来よりも簡単に作成できるように、テストの容易性を考慮して設計されています。 この記事では、単体テスト (およびその他の種類のテストとの違い) について簡単に紹介します。 リンクされたリソースは、テスト プロジェクトをソリューションに追加してから、コマンドラインまたは Visual Studio を使用して単体テストを実行する方法を示します。
 
 ## <a name="getting-started-with-testing"></a>テストの概要
  
@@ -34,9 +32,8 @@ ms.lasthandoff: 04/05/2017
 
 .NET Core プロジェクトでの単体テストの詳細については、次を参照してください。
 
-この [xUnit と .NET CLI による単体テストの作成チュートリアル](unit-testing-with-dotnet-test.md)を試してみてください。 
-
-XUnit チームは、書き込みが [.NET Core および Visual Studio で xUnit を使用する方法](http://xunit.github.io/docs/getting-started-dotnet-core.html)を示すチュートリアルを作成しました。
-
-MSTest を使用する場合は、[MSTest と .NET CLI を使用して単体テストを作成する方法のチュートリアル](unit-testing-with-mstest.md)を試してください。
+* この [xUnit と .NET CLI による単体テストの作成チュートリアル](unit-testing-with-dotnet-test.md)を試してみてください。 
+* XUnit チームは、書き込みが [.NET Core および Visual Studio で xUnit を使用する方法](http://xunit.github.io/docs/getting-started-dotnet-core.html)を示すチュートリアルを作成しました。
+* MSTest を使用する場合は、[MSTest と .NET CLI を使用して単体テストを作成する方法のチュートリアル](unit-testing-with-mstest.md)を試してください。
+* 選択的単体テストのフィルター処理の使用方法に関する詳細と例については、「[Running selective unit tests (選択的単体テストの実行)](../testing/selective-unit-tests.md)」をご覧ください。
 
