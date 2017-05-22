@@ -1,41 +1,60 @@
 ---
 title: "* 演算子 (C# リファレンス) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.technology: 
-  - "devlang-csharp"
-ms.topic: "article"
-f1_keywords: 
-  - "*_CSharpKeyword"
-dev_langs: 
-  - "CSharp"
-helpviewer_keywords: 
-  - "* 演算子 [C#]"
-  - "乗算演算子 (*) [C#]"
+ms.date: 2015-07-20
+ms.prod: .net
+ms.technology:
+- devlang-csharp
+ms.topic: article
+f1_keywords:
+- '*_CSharpKeyword'
+dev_langs:
+- CSharp
+helpviewer_keywords:
+- multiplication operator (*) [C#]
+- '* operator [C#]'
 ms.assetid: abd9a5f0-9b24-431e-971a-09ee1c45c50e
 caps.latest.revision: 14
-author: "BillWagner"
-ms.author: "wiwagn"
-caps.handback.revision: 14
+author: BillWagner
+ms.author: wiwagn
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: Human Translation
+ms.sourcegitcommit: a780a11d8dd238187eb82933359bbb151bb3c333
+ms.openlocfilehash: 7b25091b422de68391b925b492ca1e4cef720467
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/22/2017
+
 ---
-# * 演算子 (C# リファレンス)
-乗算演算子 \(`*`\) です。オペランドの積を計算します。  また、ポインターの読み取りと書き込みを有効にする逆参照演算子でもあります。  
+# <a name="-operator-c-reference"></a>* 演算子 (C# リファレンス)
+そのオペランドの積を計算する乗算演算子 (`*`)。  また、ポインターへの読み書きを可能にする逆参照演算子。  
   
-## 解説  
+## <a name="remarks"></a>コメント  
  すべての数値型には定義済みの乗算演算子があります。  
   
- `*` 演算子は、ポインター型の宣言やポインターの逆参照にも使用します。  この演算子は、[unsafe \(C\# リファレンス\)](../../../csharp/language-reference/keywords/unsafe.md) キーワードにより示される unsafe コンテキストでのみ使用できます。この場合、[\/unsafe \(unsafe モードの有効化\) \(C\# コンパイラ オプション\)](../../../csharp/language-reference/compiler-options/unsafe-compiler-option.md) コンパイラ オプションが必要です。  逆参照演算子は、間接演算子とも呼ばれます。  
+ `*` 演算子は、ポインターの種類の宣言、およびポインターの逆参照にも使用されます。 この演算子は、[unsafe](../../../csharp/language-reference/keywords/unsafe.md) キーワードの使用によって示され、[/unsafe](../../../csharp/language-reference/compiler-options/unsafe-compiler-option.md) コンパイラ オプションを必要とする、unsafe コンテキストでのみ使用できます。  逆参照演算子は、間接演算子とも呼ばれます。  
   
- `*` 二項演算子はユーザー定義型でオーバーロードできます。詳細については、「[operator](../../../csharp/language-reference/keywords/operator.md)」を参照してください。  二項演算子をオーバーロードすると、対応する代入演算子がある場合には、この演算子も暗黙でオーバーロードされます。  
+ ユーザー定義型は二項 `*` 演算子をオーバーロードできます (「[演算子](../../../csharp/language-reference/keywords/operator.md)」を参照)。 二項演算子をオーバーロードすると、対応する代入演算子がある場合、これも暗黙的にオーバーロードされます。  
   
-## 使用例  
+## <a name="example"></a>例  
  [!code-cs[csRefOperators#50](../../../csharp/language-reference/operators/codesnippet/CSharp/multiplication-operator_1.cs)]  
   
-## 使用例  
+## <a name="example"></a>例  
  [!code-cs[csRefOperators#51](../../../csharp/language-reference/operators/codesnippet/CSharp/multiplication-operator_2.cs)]  
   
-## 参照  
- [C\# リファレンス](../../../csharp/language-reference/index.md)   
- [C\# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
- [unsafe コードとポインター](../../../csharp/programming-guide/unsafe-code-pointers/index.md)   
- [C\# 演算子](../../../csharp/language-reference/operators/index.md)
+## <a name="see-also"></a>関連項目  
+ [C# リファレンス](../../../csharp/language-reference/index.md)   
+ [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
+ [アンセーフ コードとポインター](../../../csharp/programming-guide/unsafe-code-pointers/index.md)   
+ [C# 演算子](../../../csharp/language-reference/operators/index.md)

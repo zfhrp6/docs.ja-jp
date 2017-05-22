@@ -10,11 +10,11 @@ ms.prod: .net
 ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: bbfe6465-329d-4982-869d-472e7ef85d93
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 48563be13dc07000ced2e6817b3028e6117abd93
-ms.openlocfilehash: ee6ced104137a453267b409fea05716d781ef83f
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: d00f2096e0799107a8a2ff1d12274c6026d4c27a
+ms.openlocfilehash: 50e5b333f892cf469e9f3fe57a0325ac6d8e641f
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/18/2017
+ms.lasthandoff: 05/22/2017
 
 ---
 
@@ -28,7 +28,7 @@ ms.lasthandoff: 04/18/2017
 
 ## <a name="how-to-run-the-code-samples"></a>コード サンプルの実行方法
 
-コード サンプルを実行できるように開発環境を設定する方法については、「[Getting Started](getting-started.md)」 (概要) をご覧ください。  このページのコード サンプルをコピーして環境に貼り付け、実行することができます。 
+コード サンプルを実行できるように開発環境を設定する方法については、「[Getting Started](get-started.md)」 (概要) をご覧ください。  このページのコード サンプルをコピーして環境に貼り付け、実行することができます。 
 
 > [!NOTE]
 将来的には、このドキュメント サイトからブラウザーでコード サンプルを実行できるようにします。
@@ -151,7 +151,7 @@ C# の機能については、「[C# のツアー](../csharp/tour-of-csharp/inde
 
 F# の機能については、「[F# のツアー](../fsharp/tour.md)」をご覧ください。
 
-独自のコードの記述を開始する場合は、「[作業の開始](getting-started.md)」をご覧ください。
+独自のコードの記述を開始する場合は、「[作業の開始](get-started.md)」をご覧ください。
 
 .NET の重要なコンポーネントについては、「[.NET アーキテクチャ コンポーネント](components.md)」をご覧ください。
 

@@ -19,10 +19,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 02919c2e1e76991a3b37533da57b5c3ce4ded3c6
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 400dfda51d978f35c3995f90840643aaff1b9c13
+ms.openlocfilehash: fc8716c2190ac42b66ba8d76ccfec152ea804c4a
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/22/2017
 
 ---
 # <a name="how-to-perform-streaming-transform-of-large-xml-documents-c"></a>方法: 大きな XML ドキュメントのストリーミング変換を実行する (C#)
@@ -32,12 +33,12 @@ ms.lasthandoff: 03/13/2017
   
  「[方法: ヘッダー情報にアクセスして XML フラグメントをストリーム出力する (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-stream-xml-fragments-with-access-to-header-information.md)」の手法を使用しても、変換されたドキュメントが含まれた XML ツリーをアセンブルしようとすると、メモリが過剰に使用されます。  
   
- 主な方法は 2 つあります。 1 つは、<xref:System.Xml.Linq.XStreamingElement> の遅延処理の特性を使用する方法です。 もう 1 つは、<xref:System.Xml.XmlWriter> を作成し、[!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)] の機能を使用して、要素を <xref:System.Xml.XmlWriter> に書き込む方法です。 このトピックでは、両方の方法について説明します。  
+ 主な方法は 2 つあります。 1 つは、<xref:System.Xml.Linq.XStreamingElement> の遅延処理の特性を使用する方法です。 もう 1 つは、<xref:System.Xml.XmlWriter> を作成し、[!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)] の機能を使用して <xref:System.Xml.XmlWriter> に要素を書き込む方法です。 このトピックでは、両方の方法について説明します。  
   
 ## <a name="example"></a>例  
  「[方法: ヘッダー情報にアクセスして XML フラグメントをストリーム出力する (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-stream-xml-fragments-with-access-to-header-information.md)」の例を基に構築した例を次に示します。  
   
- この例では、<xref:System.Xml.Linq.XStreamingElement> の遅延実行機能を使用して、ストリームを出力しています。 この例を使用すると、メモリ使用量を低く抑えながら、非常に大きなドキュメントを変換することができます。  
+ この例では、<xref:System.Xml.Linq.XStreamingElement> の遅延実行機能を使用してストリーム出力しています。 この例を使用すると、メモリ使用量を低く抑えながら、非常に大きなドキュメントを変換することができます。  
   
  カスタム軸 (`StreamCustomerItem`) は、`Customer`、`Name`、`Item` の各要素を含んだドキュメントを前提として記述されています。また、それらの要素は、次に示す Source.xml ドキュメントと同じように配置されます。 ただし、より堅牢に実装する場合は、無効なドキュメントの解析にも対応するようにします。  
   
@@ -213,7 +214,7 @@ static void Main(string[] args)
   
  この例でも、このトピックの前の例と同じソース ドキュメント Source.xml を使用します。 生成される出力も同じになります。  
   
- <xref:System.Xml.XmlWriter> に書き込むよりも、<xref:System.Xml.Linq.XStreamingElement> を使用して出力 XML をストリーミングすることをお勧めします。  
+ <xref:System.Xml.Linq.XStreamingElement> に書き込むよりも、<xref:System.Xml.XmlWriter> を使用して出力 XML をストリーミングすることをお勧めします。  
   
 ```csharp  
 static IEnumerable<XElement> StreamCustomerItem(string uri)  

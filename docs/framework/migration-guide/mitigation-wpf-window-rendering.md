@@ -18,7 +18,7 @@ ms.translationtype: Human Translation
 ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
 ms.openlocfilehash: c911513551e9629a4a6975762c1952c73c50f733
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/18/2017
+ms.lasthandoff: 05/22/2017
 
 ---
 # <a name="mitigation-wpf-window-rendering"></a>軽減策: WPF ウィンドウのレンダリング
@@ -48,7 +48,7 @@ Windows 8 以上で実行している [!INCLUDE[net_v46](../../../includes/net-v
   
     -   `false` を指定すると、レンダリングの際にウィンドウをモニターの境界でクリッピングすることを無効にします。  
   
--   アプリの起動時に <xref:System.Windows.CoreCompatibilityPreferences.EnableMultiMonitorDisplayClipping%2A> プロパティを `true` に設定します。  
+-   これを行うには、アプリの起動時に <xref:System.Windows.CoreCompatibilityPreferences.EnableMultiMonitorDisplayClipping%2A> プロパティを `true` に設定します。  
   
 ## <a name="see-also"></a>関連項目  
  [ランタイムの変更点](../../../docs/framework/migration-guide/runtime-changes-in-the-net-framework-4-6.md)
