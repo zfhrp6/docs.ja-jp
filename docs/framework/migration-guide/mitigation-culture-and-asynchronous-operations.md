@@ -15,9 +15,10 @@ caps.latest.revision: 4
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
 ms.openlocfilehash: c2dbf60cacf47be3c448b5683b771840ef85ddaf
+ms.contentlocale: ja-jp
 ms.lasthandoff: 04/18/2017
 
 ---
@@ -35,13 +36,11 @@ ms.lasthandoff: 04/18/2017
 -   次の `AppContextSwitchOverrides` 要素をアプリケーションの構成ファイルに追加することで、フローしない <xref:System.Globalization.CultureInfo.CurrentCulture%2A?displayProperty=fullName> および <xref:System.Globalization.CultureInfo.CurrentUICulture%2A?displayProperty=fullName> の旧バージョンの動作を選択する。  
   
     ```xml  
-  
     <configuration>  
         <runtime>  
             <AppContextSwitchOverrides value="Switch.System.Globalization.NoAsyncCurrentCulture=true" />  
         </runtime>  
     </configuration>  
-  
     ```  
   
 -   次の互換性スイッチをプログラムで設定することで、フローしない <xref:System.Globalization.CultureInfo.CurrentCulture%2A?displayProperty=fullName> および <xref:System.Globalization.CultureInfo.CurrentUICulture%2A?displayProperty=fullName> の旧バージョンの動作を選択する。  
@@ -56,3 +55,4 @@ ms.lasthandoff: 04/18/2017
   
 ## <a name="see-also"></a>関連項目  
  [変更の再ターゲット](../../../docs/framework/migration-guide/retargeting-changes-in-the-net-framework-4-6.md)
+

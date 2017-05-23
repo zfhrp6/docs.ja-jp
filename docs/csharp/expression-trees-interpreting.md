@@ -456,7 +456,6 @@ public class MethodCallVisitor : Visitor
         }
     }
 }
-
 ```
 
 式ツリーの出力は、次のようになります。

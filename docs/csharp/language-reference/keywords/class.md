@@ -42,7 +42,6 @@ ms.lasthandoff: 05/15/2017
 クラスは、次の例に示すように、キーワード `class` を使用して宣言します。  
   
 ```  
-  
       class TestClass  
 {  
     // Methods, properties, fields, events, delegates   
@@ -122,3 +121,4 @@ Console.Write(child1.name);   // Error
  [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
  [C# のキーワード](../../../csharp/language-reference/keywords/index.md)   
  [参照型](../../../csharp/language-reference/keywords/reference-types.md)
+

@@ -36,17 +36,14 @@ ms.lasthandoff: 04/18/2017
 -   app.config ファイルの [\<runtime>](../../../docs/framework/configure-apps/file-schema/runtime/runtime-element.md) セクションに次の行を追加することで、ソース コードを変更せずにこの変更を無効にすることができます。  
   
     ```xml  
-  
     <runtime>  
         <AppContextSwitchOverrides value = "Switch.System.MemberDescriptorEqualsReturnsFalseIfEquivalent=true" />  
      </runtime>  
-  
     ```  
   
 -   次のコード フラグメントのように、ソース コードを変更し、<xref:System.ComponentModel.MemberDescriptor.Equals%2A?displayProperty=fullName> メソッドを呼び出した後で <xref:System.ComponentModel.MemberDescriptor.Category%2A?displayProperty=fullName> プロパティと <xref:System.ComponentModel.MemberDescriptor.Description%2A?displayProperty=fullName> プロパティを手動で比較して以前の動作を復元することができます。  
   
     ```csharp  
-  
     if (memberDescriptor1.Equals(memberDescriptor2) &   
         memberDescriptor1.Description.Equals(memberDescriptor2.Category)) {  
           // Code to execute if true.  
@@ -54,28 +51,23 @@ ms.lasthandoff: 04/18/2017
     else {  
           // Code to execute if false.     
     }  
-  
     ```  
   
     ```  
-  
     If memberDescriptor1.Equals(memberDescriptor2) And   
         memberDescriptor1.Description.Equals(memberDescriptor2.Category)  
           // Code to execute if True.  
     Else  
           // Code to execute if False.     
     End If  
-  
     ```  
   
  [!INCLUDE[net_v461](../../../includes/net-v461-md.md)] 以前のバージョンを対象とするアプリでは、app.config ファイルに次の値を追加することで、この変更を有効にできます。  
   
 ```xml  
-  
 <runtime>  
     <AppContextSwitchOverrides value="Switch.System.MemberDescriptorEqualsReturnsFalseIfEquivalent=true />  
 </runtime>  
-  
 ```  
   
 ## <a name="see-also"></a>関連項目  

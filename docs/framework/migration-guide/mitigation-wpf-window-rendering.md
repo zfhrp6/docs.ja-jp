@@ -35,11 +35,9 @@ Windows 8 以上で実行している [!INCLUDE[net_v46](../../../includes/net-v
 -   `<EnableMultiMonitorDisplayClipping>` 要素をアプリケーションの構成ファイルの `<appSettings>` セクションに追加することにより、Windows 8 以降で実行中のアプリケーションでこの動作を無効にしたり有効にしたりすることができます。 たとえば、次の構成セクションにより、クリッピングなしのレンダリングが無効になります。  
   
     ```  
-  
     <appSettings>  
         <add key="EnableMultiMonitorDisplayClipping" value="true"/>  
       </appSettings>  
-  
     ```  
   
      `<EnableMultiMonitorDisplayClipping>` 構成設定には、次の 2 つの値のいずれかを指定できます。  
@@ -52,3 +50,4 @@ Windows 8 以上で実行している [!INCLUDE[net_v46](../../../includes/net-v
   
 ## <a name="see-also"></a>関連項目  
  [ランタイムの変更点](../../../docs/framework/migration-guide/runtime-changes-in-the-net-framework-4-6.md)
+

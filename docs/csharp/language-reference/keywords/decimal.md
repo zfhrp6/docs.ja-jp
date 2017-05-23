@@ -48,7 +48,6 @@ ms.lasthandoff: 05/10/2017
  実数値リテラルを `decimal` として扱うには、サフィックス m または M を使用します。次に例を示します。  
   
 ```  
-  
 decimal myMoney = 300.5m;  
 ```  
   
@@ -58,14 +57,12 @@ decimal myMoney = 300.5m;
  整数型は、暗黙的に `decimal` に変換され、結果は `decimal` になります。 したがって、サフィックスなしで整数リテラルを使用して 10 進変数を初期化できます。次に例を示します。  
   
 ```  
-  
 decimal myMoney = 300;  
 ```  
   
  浮動小数点型と `decimal` 型の間に暗黙の型変換はありません。2 つの型の間で変換を実行するには、キャストを使用する必要があります。 例:  
   
 ```  
-  
       decimal myMoney = 99.9m;  
 double x = (double)myMoney;  
 myMoney = (decimal)x;  
@@ -92,7 +89,6 @@ Console.WriteLine(dec + dub);
 // You can fix the error by using explicit casting of either operand.  
 Console.WriteLine(dec + (decimal)dub);  
 Console.WriteLine((double)dec + dub);  
-  
 ```  
   
  実行の結果、次のエラーが生成されます。  
@@ -121,3 +117,4 @@ Console.WriteLine((double)dec + dub);
  [暗黙的な数値変換の一覧表](../../../csharp/language-reference/keywords/implicit-numeric-conversions-table.md)   
  [明示的な数値変換の一覧表](../../../csharp/language-reference/keywords/explicit-numeric-conversions-table.md)   
  [標準の数値書式指定文字列](../../../standard/base-types/standard-numeric-format-strings.md)
+

@@ -14,9 +14,10 @@ caps.latest.revision: 4
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
 ms.openlocfilehash: 783dd4fb28f1590722833ce9a456b9c2c76ecd80
+ms.contentlocale: ja-jp
 ms.lasthandoff: 04/18/2017
 
 ---
@@ -36,15 +37,14 @@ Memory gates checking failed because the free memory (nnnn bytes) is less than n
  [minFreeMemoryPercentageToActivateService](../../../docs/framework/configure-apps/file-schema/wcf/servicehostingenvironment.md) 設定が無視された、前の動作に戻すには、次に示すように web.config ファイルを変更します。  
   
 ```  
-  
 <serviceHostingEnvironment multipleSiteBindingsEnabled="true"   
                            minFreeMemoryPercentageToActivateService="0">  
    <serviceActivations>  
    ...  
    </serviceActivations>  
 </serviceHostingEnvironment>  
-  
 ```  
   
 ## <a name="see-also"></a>関連項目  
  [ランタイムの変更点](../../../docs/framework/migration-guide/runtime-changes-in-the-net-framework-4-5-1.md)
+

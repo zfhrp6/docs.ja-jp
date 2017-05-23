@@ -30,9 +30,10 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
 ms.openlocfilehash: afedd3d99aea9f73d175fd2957a7d586ebce6d72
+ms.contentlocale: ja-jp
 ms.lasthandoff: 03/13/2017
 
 ---
@@ -42,7 +43,6 @@ ms.lasthandoff: 03/13/2017
  `unsafe` 修飾子は、型またはメンバーの宣言で使用できます。 そのため、型やメンバーの全体的なテキスト範囲が unsafe コンテキストと見なされます。 たとえば、次に示すのは、`unsafe` 修飾子を使用して宣言されたメソッドです。  
   
 ```  
-  
       unsafe static void FastCopy(byte[] src, byte[] dst, int count)  
 {  
     // Unsafe context: can use pointers here.  
@@ -52,14 +52,12 @@ ms.lasthandoff: 03/13/2017
  unsafe コンテキストのスコープはパラメーター リストからメソッドの末尾までなので、ポインターはパラメーター リストでも使用できます。  
   
 ```  
-  
 unsafe static void FastCopy ( byte* ps, byte* pd, int count ) {...}  
 ```  
   
  また、unsafe ブロックを使用して、そのブロック内で unsafe コードを使用できるようにすることもできます。 例:  
   
 ```  
-  
       unsafe  
 {  
     // Unsafe context: can use pointers here.  
@@ -81,3 +79,4 @@ unsafe static void FastCopy ( byte* ps, byte* pd, int count ) {...}
  [fixed ステートメント](../../../csharp/language-reference/keywords/fixed-statement.md)   
  [アンセーフ コードとポインター](../../../csharp/programming-guide/unsafe-code-pointers/index.md)   
  [固定サイズ バッファー](../../../csharp/programming-guide/unsafe-code-pointers/fixed-size-buffers.md)
+

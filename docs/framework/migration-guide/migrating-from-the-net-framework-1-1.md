@@ -17,9 +17,10 @@ caps.latest.revision: 12
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
 ms.openlocfilehash: 6a9df183b13a84f8ded047892c0e4b7f7d5f0d60
+ms.contentlocale: ja-jp
 ms.lasthandoff: 04/18/2017
 
 ---
@@ -37,7 +38,6 @@ ms.lasthandoff: 04/18/2017
           <supportedRuntime version="v4.0"/>  
        </startup>  
     </configuration>  
-  
     ```  
   
 -   [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] をターゲットとするコンパイラでアプリケーションを再コンパイルできます。 最初に Visual Studio 2003 を使用してソリューションを開発およびコンパイルした場合は、ソリューションを [!INCLUDE[vs_dev10_long](../../../includes/vs-dev10-long-md.md)] で開きます。これにより、**[Project Compatibility]** (プロジェクト互換性) ダイアログ ボックスによってソリューションおよびプロジェクト ファイルが Visual Studio 2003 で使用される形式から [!INCLUDE[vs_dev10_long](../../../includes/vs-dev10-long-md.md)]で使用される Microsoft Build Engine (MSBuild) 形式に変換されます。  
@@ -59,7 +59,6 @@ ms.lasthandoff: 04/18/2017
       <CompatSortNLSVersion enabled="4096"/>  
    </runtime>  
 </configuration>  
-  
 ```  
   
  ただし、ソース コードの変更とアプリケーションの再コンパイルが必要になる場合があります。  
@@ -76,3 +75,4 @@ ms.lasthandoff: 04/18/2017
  旧式の型およびメンバーの影響は、アプリケーションを再ターゲットする場合と再コンパイルする場合とでは若干異なります。 旧式の型およびメンバーを使用しても、その型およびメンバーをアセンブリから物理的に削除しない限り、再ターゲットしたアプリケーションには影響しません。 旧式の型およびメンバーを使用してアプリケーションを再コンパイルすると、通常はコンパイラ エラーではなく、コンパイラの警告が発生します。 ただし、場合によってはコンパイラ エラーが発生し、旧式の型またはメンバーを使用したコードをコンパイルできないことがあります。 その場合は、旧式の型またはメンバーを呼び出すソース コードを変更してからアプリケーションを再コンパイルする必要があります。 旧式の型およびメンバーの詳細については、「[.NET Framework クラス ライブラリの互換性のために残されている機能](../../../docs/framework/whats-new/whats-obsolete.md)」を参照してください。  
   
  [!INCLUDE[net_v20SP1_short](../../../includes/net-v20sp1-short-md.md)] のリリース以後に非推奨になった型およびメンバーの影響を評価するには、「[.NET Framework クラス ライブラリの互換性のために残されている機能](../../../docs/framework/whats-new/whats-obsolete.md)」を参照してください。 [!INCLUDE[net_v20SP1_short](../../../includes/net-v20sp1-short-md.md)]、[!INCLUDE[net_v35_short](../../../includes/net-v35-short-md.md)]、および [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] について、旧式の型およびメンバーの一覧を確認してください。
+

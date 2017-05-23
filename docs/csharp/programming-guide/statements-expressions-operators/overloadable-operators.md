@@ -59,7 +59,6 @@ public static Complex operator +(Complex c1, Complex c2)
     {  
         Return new Complex(c1.real + c2.real, c1.imaginary + c2.imaginary);  
     }  
-  
 ```  
   
  定義では、単純に式の結果をすぐに返すのが一般的です。  これらの状況に対しては、`=>` を使用する構文ショートカットがあります。  
@@ -71,7 +70,6 @@ public static Complex operator +(Complex c1, Complex c2) =>
     // Override ToString() to display a complex number   
     // in the traditional format:  
     public override string ToString() => $"{this.real} + {this.imaginary}";  
-  
 ```  
   
  詳細については、「[方法: 演算子のオーバーロードを使用して複素数クラスを作成する](../../../csharp/programming-guide/statements-expressions-operators/how-to-use-operator-overloading-to-create-a-complex-number-class.md)」を参照してください。  

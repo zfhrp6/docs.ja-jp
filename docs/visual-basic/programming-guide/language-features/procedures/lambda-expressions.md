@@ -35,9 +35,10 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
+ms.translationtype: Machine Translation
 ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
 ms.openlocfilehash: e50593e76afecfe8807c3cb5bac479245d2feaef
+ms.contentlocale: ja-jp
 ms.lasthandoff: 03/13/2017
 
 ---
@@ -108,7 +109,6 @@ Public Class Form1
     End Function  
   
 End Class  
-  
 ```  
   
  非同期ラムダを使用して、同じイベント ハンドラーを追加することができます、 [AddHandler ステートメント](../../../../visual-basic/language-reference/statements/addhandler-statement.md)します。 次の例に示すように、このハンドラーを追加するには、ラムダ パラメーター リストの前に `Async` 修飾子を追加します。  
@@ -131,7 +131,6 @@ Public Class Form1
     End Function  
   
 End Class  
-  
 ```  
   
  作成して、非同期のメソッドを使用する方法の詳細については、次を参照してください。 [Async および Await を使用した非同期プログラミング](../../../../visual-basic/programming-guide/concepts/async/index.md)します。  
@@ -188,3 +187,4 @@ End Class
  [方法: Visual Basic での別のプロシージャに渡す](../../../../visual-basic/programming-guide/language-features/delegates/how-to-pass-procedures-to-another-procedure.md)   
  [方法: ラムダ式を作成します。](./how-to-create-a-lambda-expression.md)   
  [厳密でないデリゲート変換](../../../../visual-basic/programming-guide/language-features/delegates/relaxed-delegate-conversion.md)
+

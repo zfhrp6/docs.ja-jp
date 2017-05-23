@@ -15,10 +15,11 @@ caps.latest.revision: 5
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
 ms.openlocfilehash: 40b4b94ac3058dda88b44c82110d4c749566e2b2
-ms.lasthandoff: 04/18/2017
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/22/2017
 
 ---
 # <a name="mitigation-long-path-support"></a>軽減策: 長いパスのサポート
@@ -37,22 +38,19 @@ ms.lasthandoff: 04/18/2017
  [!INCLUDE[net_v462](../../../includes/net-v462-md.md)] を対象とするアプリでは、長いパスのサポートが望ましくない場合、app.config ファイルの [\<runtime>](../../../docs/framework/configure-apps/file-schema/runtime/runtime-element.md) セクションに次の行を追加することでサポートを無効にできます。  
   
 ```xml  
-  
 <runtime>   
    <AppContextSwitchOverrides value="Switch.System.IO.BlockLongPaths=true" />   
 </runtime>  
-  
 ```  
   
  以前のバージョンの .NET Framework を対象とするものの、[!INCLUDE[net_v462](../../../includes/net-v462-md.md)] 以降で実行されているアプリでは、app.config ファイルの [\<runtime>](../../../docs/framework/configure-apps/file-schema/runtime/runtime-element.md) セクションに次の行を追加することで、長いパスのサポートを有効にできます。  
   
 ```xml  
-  
 <runtime>   
    <AppContextSwitchOverrides value="Switch.System.IO.BlockLongPaths=false" />   
 </runtime>  
-  
 ```  
   
 ## <a name="see-also"></a>関連項目  
  [変更の再ターゲット](../../../docs/framework/migration-guide/retargeting-changes-in-the-net-framework-4-6-2.md)
+

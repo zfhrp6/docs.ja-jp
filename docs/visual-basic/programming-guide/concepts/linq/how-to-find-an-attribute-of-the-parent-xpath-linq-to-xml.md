@@ -15,9 +15,10 @@ ms.assetid: 9d2572fd-27d4-426c-b079-16854cb9ec7d
 caps.latest.revision: 3
 author: dotnet-bot
 ms.author: dotnetcontent
-translationtype: Machine Translation
+ms.translationtype: Machine Translation
 ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
 ms.openlocfilehash: adaece829b167e432963980f7fb4cbc326b0cfda
+ms.contentlocale: ja-jp
 ms.lasthandoff: 03/13/2017
 
 
@@ -51,7 +52,6 @@ Else
     Console.WriteLine("Results differ")  
 End If  
 Console.WriteLine(att1)  
-  
 ```  
   
  この例を実行すると、次の出力が生成されます。  
@@ -63,3 +63,4 @@ id="bk101"
   
 ## <a name="see-also"></a>関連項目  
  [LINQ to XML の XPath ユーザー (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)
+

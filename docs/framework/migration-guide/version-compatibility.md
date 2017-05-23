@@ -35,14 +35,12 @@ ms.lasthandoff: 05/22/2017
  アプリを実行する特定のバージョンを定義するには、1 つ以上の [\<supportedRuntime>](../../../docs/framework/configure-apps/file-schema/startup/supportedruntime-element.md) 要素をアプリの構成ファイルに追加します。 各 `<supportedRuntime>` 要素は、サポートされるランタイムのバージョンを示します。最初の要素で最も優先度の高いバージョンを、最後の要素で最も優先度の低いバージョンを指定します。  
   
 ```xml  
-  
 <configuration>  
    <startup>  
       <supportedRuntime version="v2.0.50727" />  
       <supportedRuntime version="v4.0" />  
    </startup>  
 </configuration>  
-  
 ```  
   
  詳しくは、[.NET Framework 4 または 4.x をサポートするアプリの構成方法](../../../docs/framework/migration-guide/how-to-configure-an-app-to-support-net-framework-4-or-4-5.md)に関するページをご覧ください。  
@@ -98,3 +96,4 @@ ms.lasthandoff: 05/22/2017
  [アプリケーションの互換性](../../../docs/framework/migration-guide/application-compatibility.md)   
  [Microsoft .NET Framework のサポート ライフサイクル ポリシー](http://go.microsoft.com/fwlink/p/?LinkId=248212)   
  [.NET framework 4 への移行に関する問題](http://go.microsoft.com/fwlink/p/?LinkId=248212)
+

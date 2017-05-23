@@ -15,9 +15,10 @@ caps.latest.revision: 5
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
 ms.openlocfilehash: b5e2426fc81c8fd38994a4124cf71af8ec445bfb
+ms.contentlocale: ja-jp
 ms.lasthandoff: 04/18/2017
 
 ---
@@ -37,12 +38,11 @@ ms.lasthandoff: 04/18/2017
 -   `Switch.System.IO.UseLegacyPathHandling`<xref:System.AppContext> を `true` に切り替えて、新しいパスの正規化を無効にします。  
   
     ```xml  
-  
     <runtime>  
         <AppContextSwitchOverrides value="Switch.System.IO.UseLegacyPathHandling=true" />    
     </runtime>  
-  
     ```  
   
 ## <a name="see-also"></a>関連項目  
  [変更の再ターゲット](../../../docs/framework/migration-guide/retargeting-changes-in-the-net-framework-4-6-2.md)
+
