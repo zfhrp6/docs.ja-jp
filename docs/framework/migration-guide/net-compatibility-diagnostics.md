@@ -479,7 +479,7 @@ ms.lasthandoff: 05/22/2017
 |スコープ|エッジ|  
 |バージョン|4.5|  
 |型|ランタイム|  
-|影響を受ける API|<xref:System.Web.HttpRequest.ContentEncoding?displayProperty=fullName>|  
+|影響を受ける API|<xref:System.Web.HttpRequest.ContentEncoding%2A?displayProperty=fullName>|  
 |アナライザー|CD0043|  
   
 <a name="diagnostic44"></a>   
