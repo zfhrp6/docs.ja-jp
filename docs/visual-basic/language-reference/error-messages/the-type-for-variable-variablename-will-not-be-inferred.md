@@ -33,9 +33,10 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Machine Translation
+ms.translationtype: Machine Translation
 ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
 ms.openlocfilehash: ab7d69c34a58dc898553868258c4fdf6b81db343
+ms.contentlocale: ja-jp
 ms.lasthandoff: 03/13/2017
 
 ---
@@ -61,7 +62,6 @@ Class Customer
   
     End Sub  
 End Class  
-  
 ```  
   
  既定では、このメッセージは警告です。 警告を非表示にする方法または警告をエラーとして処理する方法については、次を参照してください。 [Visual Basic での警告の構成](https://docs.microsoft.com/visualstudio/ide/configuring-warnings-in-visual-basic)します。  
@@ -114,3 +114,4 @@ End Class
  [方法: オブジェクトの現在のインスタンスを参照してください](../../../visual-basic/programming-guide/language-features/variables/how-to-refer-to-the-current-instance-of-an-object.md)   
  [ローカル型推論](../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md)   
  [Me、My、MyBase、および MyClass](../../../visual-basic/programming-guide/program-structure/me-my-mybase-and-myclass.md)
+

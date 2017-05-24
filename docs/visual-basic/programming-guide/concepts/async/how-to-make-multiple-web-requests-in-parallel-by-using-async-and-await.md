@@ -20,9 +20,10 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Machine Translation
+ms.translationtype: Machine Translation
 ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
 ms.openlocfilehash: e4c41cc3813a9f96d944d115c6aaa5c5842a629b
+ms.contentlocale: ja-jp
 ms.lasthandoff: 03/13/2017
 
 ---
@@ -46,7 +47,6 @@ Dim myTask = someWebAccessMethodAsync(url)
 ' The application of Await suspends the rest of this method until the task is   
 ' complete.  
 Dim result = Await myTask  
-  
 ```  
   
  タスクを開始して待機する間に、他のタスクを開始できます。 追加のタスクは暗黙的に並列で実行されますが、追加のスレッドは作成されません。  
@@ -225,3 +225,4 @@ End Class
  [チュートリアル: Async を使用して Web へのアクセスと Await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md)   
  [非同期プログラミングを Async と Await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/index.md)   
  [方法: Task.WhenAll (Visual Basic) を使用して Asyncwalkthrough を拡張](../../../../visual-basic/programming-guide/concepts/async/how-to-extend-the-async-walkthrough-by-using-task-whenall.md)
+

@@ -41,10 +41,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: fd70919f68c7c48894e7c944aeb1a74c73513e8e
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: fe32676f0e39ed109a68f39584cf41aec5f5ce90
+ms.openlocfilehash: c4e018ec0073086a82d52ccd37463c070e9fb6e6
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/10/2017
 
 ---
 # <a name="c-operators"></a>C# 演算子
@@ -66,9 +67,7 @@ C# には、多くの演算子が用意されています。演算子とは、�
  [f(x)](../../../csharp/language-reference/operators/invocation-operator.md) – 関数の呼び出し。  
   
  [a&#91;x&#93;](../../../csharp/language-reference/operators/index-operator.md) – 集約オブジェクトのインデックス作成。  
-  
- [a?&#91;x&#93;](../../../csharp/language-reference/operators/null-conditional-operators.md) – null 条件付きのインデックス作成。  左側のオペランドが `null` の場合に `null` を返します。  
-  
+   
  [x++](../../../csharp/language-reference/operators/increment-operator.md) – 後置インクリメント。  x の値を返した後、1 大きくなった (通常は整数 1 が加算された) x の値で格納場所を更新します。  
   
  [x--](../../../csharp/language-reference/operators/decrement-operator.md) – 後置デクリメント。  x の値を返した後、1 小さくなった (通常は整数 1 が減算された) x の値で格納場所を更新します。  
@@ -230,7 +229,7 @@ C# には、多くの演算子が用意されています。演算子とは、�
    
 -   浮動小数点数の算術オーバーフローまたは 0 による浮動小数点除算では、例外はスローされません。これは、浮動小数点型が IEEE 754 に基づいており、無限大および NaN (Not a Number) を表現できるためです。  
   
--   [小数](../../../csharp/language-reference/keywords/decimal.md)の算術オーバーフローでは、常に <xref:System.OverflowException> がスローされます。 ゼロによる小数除算では、常に <xref:System.DivideByZeroException> がスローされます。  
+-   [小数](../../../csharp/language-reference/keywords/decimal.md)の算術オーバーフローでは、常に <xref:System.OverflowException> がスローされます。 0 による小数除算では、常に <xref:System.DivideByZeroException> がスローされます。  
   
   
 ## <a name="see-also"></a>関連項目  

@@ -10,10 +10,11 @@ ms.prod: .net
 ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: bbfe6465-329d-4982-869d-472e7ef85d93
-translationtype: Human Translation
-ms.sourcegitcommit: 48563be13dc07000ced2e6817b3028e6117abd93
-ms.openlocfilehash: ee6ced104137a453267b409fea05716d781ef83f
-ms.lasthandoff: 03/22/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: d00f2096e0799107a8a2ff1d12274c6026d4c27a
+ms.openlocfilehash: 50e5b333f892cf469e9f3fe57a0325ac6d8e641f
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/22/2017
 
 ---
 
@@ -27,7 +28,7 @@ ms.lasthandoff: 03/22/2017
 
 ## <a name="how-to-run-the-code-samples"></a>コード サンプルの実行方法
 
-コード サンプルを実行できるように開発環境を設定する方法については、「[Getting Started](getting-started.md)」 (概要) をご覧ください。  このページのコード サンプルをコピーして環境に貼り付け、実行することができます。 
+コード サンプルを実行できるように開発環境を設定する方法については、「[Getting Started](get-started.md)」 (概要) をご覧ください。  このページのコード サンプルをコピーして環境に貼り付け、実行することができます。 
 
 > [!NOTE]
 将来的には、このドキュメント サイトからブラウザーでコード サンプルを実行できるようにします。
@@ -36,7 +37,7 @@ ms.lasthandoff: 03/22/2017
 
 .NET は複数のプログラミング言語をサポートしています。  .NET ランタイムでは、[共通言語基盤 (CLI)](https://www.visualstudio.com/license-terms/ecma-c-common-language-infrastructure-standards/) が実装されています。CLI では特に、言語に依存しないランタイムと言語の相互運用性が指定されています。  つまり、任意の .NET 言語を選んで、.NET でアプリとサービスを作成できます。
 
-Microsoft が開発とサポートに力を注いでいる .NET 言語は、C#、F#、Visual Basic .NET の&3; つです。 
+Microsoft が開発とサポートに力を注いでいる .NET 言語は、C#、F#、Visual Basic .NET の 3 つです。 
 
 * C# はシンプル、強力、タイプセーフ、そしてオブジェクト指向でありながらも、C スタイル言語の表現力と簡潔さが維持されています。 C や類似の言語を使い慣れている人であれば、ほとんど問題なく C# に適応できるでしょう。  C# について詳しくは、「[C# Guide](../csharp/index.md)」 (C# ガイド) をご覧ください。
 
@@ -48,13 +49,13 @@ Microsoft が開発とサポートに力を注いでいる .NET 言語は、C#�
 
 .NET は、[ガベージ コレクション](garbagecollection/index.md)を使ってプログラムの自動メモリ管理を行います。  GC はメモリ管理に対する遅延アプローチで動作します。この場合、メモリの即時収集よりもアプリケーションのスループットが優先されます。  .NET GC について詳しくは、「[ガベージ コレクションの基礎](garbagecollection/fundamentals.md)」をご覧ください。
 
-以下の&2; つの行はどちらもメモリを割り当てています。
+以下の 2 つの行はどちらもメモリを割り当てています。
 
 [!code-csharp[MemoryManagement](../../samples/csharp/snippets/tour/MemoryManagement.csx#L1-L2)]
 
 ガベージ コレクターがスケジュールされた実行によってメモリを解放する際に割り当て解除が自動的に行われるため、メモリの割り当てを解除するための類似したキーワードはありません。
 
-ガベージ コレクターは、*メモリの安全性*の確保に役立つサービスの&1; つにすぎません。  メモリの安全性の不変性は非常に単純です。プログラムが割り当てられている (そして解放されていない) メモリのみにアクセスする場合、そのプログラムはメモリ セーフです。  たとえば、ランタイムによってプログラムが配列の最後にインデックス処理を行ったり、オブジェクトの最後にある実在しないフィールドにアクセスしたりすることがなくなります。
+ガベージ コレクターは、*メモリの安全性*の確保に役立つサービスの 1 つにすぎません。  メモリの安全性の不変性は非常に単純です。プログラムが割り当てられている (そして解放されていない) メモリのみにアクセスする場合、そのプログラムはメモリ セーフです。  たとえば、ランタイムによってプログラムが配列の最後にインデックス処理を行ったり、オブジェクトの最後にある実在しないフィールドにアクセスしたりすることがなくなります。
 
 次の例では、メモリの安全性を確保するため、ランタイムにより `InvalidIndexException` 例外がスローされます。
 
@@ -88,7 +89,7 @@ Microsoft が開発とサポートに力を注いでいる .NET 言語は、C#�
 
 [!code-csharp[TypeSafety](../../samples/csharp/snippets/tour/TypeSafety.csx#L3-L3)]
 
-C#、Visual Basic、F# は、ローカルな**型推論**をサポートします。 型推論は、コンパイラが右側にある式から左側にある式の型を推論するという意味です。 タイプ セーフの破損、または回避を意味するわけではありません。 結果の型には、推論されるすべてを含む厳密な型が**含まれます**。 前の例の最初の&2; 行を、型推論を示すように書き換えてみましょう。 例の残りの部分はまったく同じであることに注意してください。
+C#、Visual Basic、F# は、ローカルな**型推論**をサポートします。 型推論は、コンパイラが右側にある式から左側にある式の型を推論するという意味です。 タイプ セーフの破損、または回避を意味するわけではありません。 結果の型には、推論されるすべてを含む厳密な型が**含まれます**。 前の例の最初の 2 行を、型推論を示すように書き換えてみましょう。 例の残りの部分はまったく同じであることに注意してください。
 
 [!code-csharp[TypeSafety](../../samples/csharp/snippets/tour/TypeSafety.csx#L28-L34)]
 
@@ -150,7 +151,7 @@ C# の機能については、「[C# のツアー](../csharp/tour-of-csharp/inde
 
 F# の機能については、「[F# のツアー](../fsharp/tour.md)」をご覧ください。
 
-独自のコードの記述を開始する場合は、「[作業の開始](getting-started.md)」をご覧ください。
+独自のコードの記述を開始する場合は、「[作業の開始](get-started.md)」をご覧ください。
 
 .NET の重要なコンポーネントについては、「[.NET アーキテクチャ コンポーネント](components.md)」をご覧ください。
 

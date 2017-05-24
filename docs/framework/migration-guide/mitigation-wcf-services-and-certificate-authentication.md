@@ -15,9 +15,10 @@ caps.latest.revision: 3
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
 ms.openlocfilehash: 4c2156087ca168bafb1b7333310066cef73f3334
+ms.contentlocale: ja-jp
 ms.lasthandoff: 04/18/2017
 
 ---
@@ -40,7 +41,6 @@ ms.lasthandoff: 04/18/2017
      次の構成ファイルでこれを行います。  
   
     ```xml  
-  
     <configuration>  
         <system.serviceModel>  
             <bindings>  
@@ -57,7 +57,6 @@ ms.lasthandoff: 04/18/2017
             </bindings>  
         </system.ServiceModel>  
     </configuration>  
-  
     ```  
   
 -   バインドがソース コードで動的に構成されている場合は、ソース コードで TLS 1.1 (<xref:System.Security.Authentication.SslProtocols?displayProperty=fullName>) または以前のバージョンのプロトコルを使用するように <xref:System.ServiceModel.TcpTransportSecurity.SslProtocols%2A?displayProperty=fullName> プロパティを更新します。  
@@ -67,3 +66,4 @@ ms.lasthandoff: 04/18/2017
   
 ## <a name="see-also"></a>関連項目  
  [ランタイムの変更点](../../../docs/framework/migration-guide/runtime-changes-in-the-net-framework-4-6.md)
+

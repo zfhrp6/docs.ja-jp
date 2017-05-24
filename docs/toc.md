@@ -6,7 +6,7 @@
 
 <!-- .NET Core Content -->
 # [.NET Core のガイド](core/index.md)
-## [はじめに](core/getting-started.md)
+## [開始するには](core/get-started.md)
 ## [Windows の前提条件](core/windows-prerequisites.md)
 ## [macOS の前提条件](core/macos-prerequisites.md)
 ## [チュートリアル](core/tutorials/index.md)
@@ -29,6 +29,8 @@
 ### [project.json と csproj 間のマッピング](core/tools/project-json-to-csproj.md)
 ### [DNX からの移行](core/migration/from-dnx.md)
 ## [アプリケーションの展開](core/deploying/index.md)
+### [CLI ツールを使用したアプリの展開](core/deploying/deploy-with-cli.md)
+### [Visual Studio からのアプリの展開](core/deploying/deploy-with-vs.md)
 ### [クロス プラットフォーム ツールによる NuGet パッケージの作成](core/deploying/creating-nuget-packages.md)
 ## [Docker](core/docker/index.md)
 ### [.NET Core アプリケーションの Docker イメージのビルド](core/docker/building-net-docker-images.md)
@@ -36,9 +38,10 @@
 ## [単体テスト](core/testing/index.md)
 ### [dotnet テストおよび xUnit を使用した単体テスト](core/testing/unit-testing-with-dotnet-test.md)
 ### [dotnet テストおよび MSTest を使用した単体テスト](core/testing/unit-testing-with-mstest.md)
+### [選択的単体テストの実行](core/testing/selective-unit-tests.md)
 ## [バージョン管理](core/versions/index.md)
 ### [.NET Core サポート](core/versions/lts-current.md)
-### [🔧 サービス](core/versions/servicing.md)
+<!--### [🔧 Servicing](core/versions/servicing.md)-->
 ## [ランタイム識別子のカタログ](core/rid-catalog.md)
 ## [.NET Core CLI ツール](core/tools/index.md)
 ### [製品利用統計情報](core/tools/telemetry.md)
@@ -74,14 +77,15 @@
 ### [.NET Core のプロジェクトの整理](core/porting/project-structure.md)
 ### [サードパーティの依存関係の分析](core/porting/third-party-deps.md)
 ### [ライブラリの移植](core/porting/libraries.md)
-### [🔧 NuGet パッケージ](core/porting/nuget-packages.md)
+<!--### [🔧 NuGet packages](core/porting/nuget-packages.md)-->
 ## [VS 2015/project.json ドキュメント](project-json.md)
 <!-- End .NET Core Content -->
 
 <!-- .NET Framework Content -->
 # [.NET Framework ガイド](framework/index.md)
 ## [新機能](framework/whats-new/)
-## [はじめに](framework/get-started/)
+## [開始するには](framework/get-started/)
+## [インストール ガイド](framework/install/)
 ## [移行ガイド](framework/migration-guide/)
 ## [Docker 上の .NET Framework のガイド](framework/docker/index.md)
 ### [コンテナーで実行中のコンソール アプリケーション](framework//docker/console.md)
@@ -90,7 +94,7 @@
 ### [デスクトップ アプリケーションのリソース](framework/resources/)
 ### [ユーザー補助](framework/ui-automation/)
 ### [データとモデリング](framework/data/)
-### [クライアント アプリケーション](framework/develop-client-applications.md)
+### [クライアント アプリケーション](framework/develop-client-apps.md)
 #### [共通クライアント技術](framework/common-client-technologies/)
 #### [Windows Presentation Foundation](framework/wpf/)
 #### [Windows フォーム](framework/winforms/)
@@ -119,7 +123,7 @@
 
 <!-- Start of C# Content -->
 # [C# のガイド](csharp/index.md)
-## [はじめに](csharp/getting-started/)
+## [開始するには](csharp/getting-started/)
 ## [チュートリアル](csharp/tutorials/)
 ## [C# のツアー](csharp/tour-of-csharp/)
 <!-- The "What's New" section is short, and one level
@@ -128,9 +132,9 @@
 ### [C# 7 の新機能](csharp/whats-new/csharp-7.md)
 ### [C# 6 の新機能](csharp/whats-new/csharp-6.md)
 <!-- End What's New -->
-## [🔧 C# インタラクティブ](csharp/interactive/)
+<!--## [🔧 C# Interactive](csharp/interactive/)-->
 <!-- Do this section later, once master redirects are in place -->
-## [C# の概念](csharp/concepts.md)
+## C# の概念
 ### [C# の型システム](csharp/programming-guide/types/index.md)
 ### [名前空間](csharp/programming-guide/namespaces/index.md)
 ### [基本型](csharp/basic-types.md)
@@ -138,7 +142,7 @@
 ### [構造体](csharp/structs.md)
 ### [タプル](csharp/tuples.md)
 ### [インターフェイス](csharp/programming-guide/interfaces/index.md)
-### [メソッドとラムダ式](csharp/methods-lambda-expressions.md)
+<!--### [🔧 Methods and Lambda Expressions](csharp/methods-lambda-expressions.md)-->
 #### [メソッド](csharp/methods.md)
 #### [ラムダ式](csharp/lambda-expressions.md)
 ### [プロパティ](csharp/properties.md)
@@ -156,7 +160,7 @@
 #### [デリゲートとイベントの識別](csharp/distinguish-delegates-events.md)
 ### [統合言語クエリ (LINQ)](csharp/linq/)
 ### [非同期プログラミング](csharp/async.md)
-### [🔧 並列プログラミング](csharp/parallel.md)
+<!--### [🔧 Parallel programming](csharp/parallel.md)-->
 ### [パターン一致](csharp/pattern-matching.md)
 ### [式ツリー](csharp/expression-trees.md)
 #### [式ツリーの説明](csharp/expression-trees-explained.md)
@@ -167,11 +171,11 @@
 #### [式の変換](csharp/expression-trees-translating.md)
 #### [まとめ](csharp/expression-trees-summary.md)
 ### [ネイティブ相互運用性](csharp/programming-guide/interop/index.md)
-### [🔧 リフレクションとコードの生成](csharp/reflection.md)
+<!--### [🔧 Reflection & code generation](csharp/reflection.md)-->
 ### [コードのドキュメントの作成](csharp/codedoc.md)
 ### [バージョン管理](csharp/versioning.md)
 <!-- End of C# Concepts section -->
-## [🔧 .NET コンパイラ プラットフォームの使用](csharp/roslyn/index.md)
+<!--## [🔧 Using the .NET Compiler Platform](csharp/roslyn/index.md)-->
 ## [C# プログラミング ガイド](csharp/programming-guide/)
 ## [言語リファレンス](csharp/language-reference/)
 ## [チュートリアル](csharp/walkthroughs.md)
@@ -182,12 +186,11 @@
 
 ## [F# のツアー](fsharp/tour.md)
 
-## [関数型プログラミングの概要](fsharp/introduction-to-functional-programming/index.md)
-### [ファーストクラスの値としての関数](fsharp/introduction-to-functional-programming/functions-as-first-class-values.md)
-
-## [チュートリアル](fsharp/tutorials/index.md)
-### [はじめに](fsharp/tutorials/getting-started/index.md)
-#### [Visual Studio の概要](fsharp/tutorials/getting-started/getting-started-visual-studio.md)
+<!--## [Tutorials](fsharp/tutorials/index.md)-->
+## チュートリアル
+### [開始するには](fsharp/tutorials/getting-started/index.md)
+#### [Visual Studio 入門](fsharp/tutorials/getting-started/getting-started-visual-studio.md)
+#### [Visual Studio for Mac の使用を開始する](fsharp/tutorials/getting-started/getting-started-with-visual-studio-for-mac.md)
 #### [Visual Studio Code および Ionide の概要](fsharp/tutorials/getting-started/getting-started-vscode.md)
 #### [コマンド ライン ツールの概要](fsharp/tutorials/getting-started/getting-started-command-line.md)
 ### [F# Interactive](fsharp/tutorials/fsharp-interactive/index.md)
@@ -202,10 +205,16 @@
 #### [型プロバイダーの作成](fsharp/tutorials/type-providers/creating-a-type-provider.md)
 #### [型プロバイダーのセキュリティ](fsharp/tutorials/type-providers/type-provider-security.md)
 #### [型プロバイダーのトラブルシューティング](fsharp/tutorials/type-providers/troubleshooting-type-providers.md)
-### [非同期と同時実行プログラミング](fsharp/tutorials/asynchronous-and-concurrent-programming/index.md)
+
+<!--## [Introduction to Functional Programming](fsharp/introduction-to-functional-programming/index.md)-->
+## 関数型プログラミングの概要
+### [ファーストクラスの値としての関数](fsharp/introduction-to-functional-programming/functions-as-first-class-values.md)
+
+<!--### [Asynchronous and Concurrent Programming](fsharp/tutorials/asynchronous-and-concurrent-programming/index.md)-->
+### 非同期と同時実行プログラミング
 #### [非同期プログラミング](fsharp/tutorials/asynchronous-and-concurrent-programming/async.md)
 
-## [Visual Studio での F# の使用](fsharp/using-fsharp-in-visual-studio/index.md)
+<!--## [Using F# in Visual Studio](fsharp/using-fsharp-in-visual-studio/index.md)-->
 ### [Visual F# の開発環境の機能](fsharp/using-fsharp-in-visual-studio/visual-fsharp-development-environment-features.md)
 ### [プロジェクトの構成](fsharp/using-fsharp-in-visual-studio/configuring-projects.md)
 ### [以前のバージョンの .NET の対象化](fsharp/using-fsharp-in-visual-studio/targeting-older-versions-of-net.md)
@@ -215,7 +224,7 @@
 ### [F# を使用した Azure File Storage の概要](fsharp/using-fsharp-on-azure/file-storage.md)
 ### [F# を使用した Azure Queue Storage の概要](fsharp/using-fsharp-on-azure/queue-storage.md)
 ### [F# を使用した Azure Table Storage の概要](fsharp/using-fsharp-on-azure/table-storage.md)
-### [Azure Service Fabric での F# の使用](fsharp/using-fsharp-on-azure/using-fsharp-on-azure-service-fabric.md)
+<!--### [Using F# on Azure Service Fabric](fsharp/using-fsharp-on-azure/using-fsharp-on-azure-service-fabric.md)-->
 ### [F# の Azure の依存関係のためのパッケージ管理](fsharp/using-fsharp-on-azure/package-management.md)
 
 ## [F# 言語リファレンス](fsharp/language-reference/index.md)

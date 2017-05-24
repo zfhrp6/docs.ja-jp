@@ -1,6 +1,6 @@
 ---
 title: "Visual Basic の概要 | Microsoft Docs"
-ms.date: 2015-07-20
+ms.date: 2017-05-01
 ms.prod: .net
 ms.technology:
 - devlang-visual-basic
@@ -29,26 +29,31 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 2d94b01f24ea1c45ecbf6b14ecfdf164d8b8b10c
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: d3f21e32c162133e70a124da125c30afc7303738
+ms.openlocfilehash: ada42b9a033b548f5e2967040c44f7c790014211
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/15/2017
 
 ---
 # <a name="getting-started-with-visual-basic"></a>Visual Basic の概要
 このセクションでは、Visual Basic によるアプリケーション開発を開始するための情報を提供します。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
- [Visual Studio 2015 における Visual Basic の互換性に影響する変更点](../../visual-basic/getting-started/breaking-changes-in-visual-studio-2015.md)  
+
+[Visual Basic の新機能](whats-new.md)   
+Visual Basic .NET の各バージョンの新機能を一覧表示します。
+
+[Visual Studio における Visual Basic の互換性に影響する変更点](breaking-changes-in-visual-studio.md)  
  アプリケーションをコンパイルできなくなる可能性や、実行時の動作が変わる可能性のある、このリリースでの変更点を示します。  
   
  [Visual Basic プログラマのための追加リソース](../../visual-basic/getting-started/additional-resources.md)  
  一般的な問題を解決するのに役立つ Web サイトおよびニュースグループの一覧を示します。  
   
- [Visual Basic の学習](http://msdn.microsoft.com/vstudio/hh388573.aspx)  
+ [Visual Basic に関する詳細情報](http://msdn.microsoft.com/vstudio/hh388573.aspx)  
  Visual Basic でのプログラミング方法を学習するためのリソースへのリンクを示します。  
   
- [Visual Basic を入手する](https://www.visualstudio.com/en-us/downloads/download-visual-studio-vs.aspx)  
+ [Visual Basic を入手する](https://www.visualstudio.com/downloads/)  
  Visual Basic のサポートを含む Visual Studio のバージョン (無料版など) のダウンロード リンクを提供します。  
   
 ## <a name="related-sections"></a>関連項目  
@@ -66,7 +71,7 @@ ms.lasthandoff: 03/13/2017
  [ご意見](https://docs.microsoft.com/visualstudio/ide/talk-to-us)  
  サポートの利用方法、およびフィードバックの送付方法について説明します。  
   
- [Visual Studio](http://msdn.microsoft.com/en-us/06ddebea-2c83-4a45-bb48-6264c797ed93)  
+ [Visual Studio](https://docs.microsoft.com/en-us/visualstudio/)  
  
           [!INCLUDE[vsprvs](../../csharp/includes/vsprvs_md.md)] のドキュメントへのリンクを示します。  
   

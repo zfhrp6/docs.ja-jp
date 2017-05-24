@@ -18,10 +18,11 @@ caps.latest.revision: 35
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
 ms.openlocfilehash: 09f682d9c3a1cf5d42bba878676d84b9328a1a81
-ms.lasthandoff: 04/18/2017
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/22/2017
 
 ---
 # <a name="version-compatibility-in-the-net-framework"></a>.NET Framework のバージョンの互換性
@@ -34,14 +35,12 @@ ms.lasthandoff: 04/18/2017
  アプリを実行する特定のバージョンを定義するには、1 つ以上の [\<supportedRuntime>](../../../docs/framework/configure-apps/file-schema/startup/supportedruntime-element.md) 要素をアプリの構成ファイルに追加します。 各 `<supportedRuntime>` 要素は、サポートされるランタイムのバージョンを示します。最初の要素で最も優先度の高いバージョンを、最後の要素で最も優先度の低いバージョンを指定します。  
   
 ```xml  
-  
 <configuration>  
    <startup>  
       <supportedRuntime version="v2.0.50727" />  
       <supportedRuntime version="v4.0" />  
    </startup>  
 </configuration>  
-  
 ```  
   
  詳しくは、[.NET Framework 4 または 4.x をサポートするアプリの構成方法](../../../docs/framework/migration-guide/how-to-configure-an-app-to-support-net-framework-4-or-4-5.md)に関するページをご覧ください。  
@@ -49,7 +48,7 @@ ms.lasthandoff: 04/18/2017
 ## <a name="version-compatibility-for-components"></a>コンポーネントのバージョンの互換性  
  アプリは、それが実行される .NET Framework を制御できますが、コンポーネントは制御できません。 コンポーネントとクラス ライブラリは特定のアプリのコンテキストで読み込まれるので、アプリが実行されるバージョンの .NET Framework で自動的に実行されます。  
   
- この制限のため、互換性の保証は、コンポーネントにとって特に重要です。 .NET Framework 4 以降では、コンポーネントに <xref:System.Runtime.Versioning.ComponentGuaranteesAttribute?displayProperty=fullName> 属性を適用することにより、複数のバージョン間で許可されるコンポーネントの互換性を指定できるようになりました。 ツールは、この属性を使用して、コンポーネントの将来のバージョンでの互換性保証の潜在的な違反を検出できます。  
+ この制限のため、互換性の保証は、コンポーネントにとって特に重要です。 .NET Framework 4 以降、コンポーネントに <xref:System.Runtime.Versioning.ComponentGuaranteesAttribute?displayProperty=fullName> 属性を適用することにより、複数のバージョンで想定されるコンポーネントの互換性の程度を指定できるようになりました。 ツールは、この属性を使用して、コンポーネントの将来のバージョンでの互換性保証の潜在的な違反を検出できます。  
   
 ## <a name="backward-compatibility-and-the-net-framework-45"></a>下位互換性と .NET Framework 4.5  
  .NET Framework 4.5 およびそのポイント リリース (4.5.1、4.5.2、4.6、4.6.1、4.6.2、4.7) には、以前のバージョンの .NET Framework でビルドされたアプリと下位互換性があります。 つまり、旧バージョンの .NET Framework でビルドしたアプリとコンポーネントは、.NET Framework 4.5 で変更を行わずに動作します。 ただし、既定では、アプリは、開発された共通言語ランタイムのバージョンで動作するため、アプリを .NET Framework 4.5 で実行するには構成ファイルを提供する必要がある場合があります。 詳細については、この記事の前半に記載した「[アプリのバージョンの互換性](#Apps)」を参照してください。  
@@ -97,3 +96,4 @@ ms.lasthandoff: 04/18/2017
  [アプリケーションの互換性](../../../docs/framework/migration-guide/application-compatibility.md)   
  [Microsoft .NET Framework のサポート ライフサイクル ポリシー](http://go.microsoft.com/fwlink/p/?LinkId=248212)   
  [.NET framework 4 への移行に関する問題](http://go.microsoft.com/fwlink/p/?LinkId=248212)
+

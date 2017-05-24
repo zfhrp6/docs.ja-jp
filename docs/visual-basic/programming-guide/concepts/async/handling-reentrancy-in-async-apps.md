@@ -20,9 +20,10 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Machine Translation
+ms.translationtype: Machine Translation
 ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
 ms.openlocfilehash: 64a708e3b88f48ad30d3f3ad25141a31f3d8f73d
+ms.contentlocale: ja-jp
 ms.lasthandoff: 03/13/2017
 
 ---
@@ -124,7 +125,6 @@ TOTAL bytes returned:  890591
  次のコードはこの変更を示しています。変更の部分にはアスタリスクが付いています。 変更内容を追加するには、このトピックの最後のコードにかから完成したアプリをダウンロードする[Async のサンプル: .NET デスクトップ アプリにおける再入](http://go.microsoft.com/fwlink/?LinkId=266571)します。 プロジェクト名は DisableStartButton です。  
   
 ```vb  
-  
 Private Async Sub StartButton_Click(sender As Object, e As RoutedEventArgs)  
     ' This line is commented out to make the results clearer in the output.  
     'ResultsTextBox.Text = ""  
@@ -161,7 +161,6 @@ End Sub
   
         ' *** Declare a System.Threading.CancellationTokenSource.  
         Dim cts As CancellationTokenSource  
-  
     ```  
   
 2.  `StartButton_Click` で、処理が既に実行されているかどうかを確認します。 場合の値`cts`は`Nothing`操作は既にアクティブです。 値がない場合`Nothing`、既に実行されている操作が取り消されました。  
@@ -171,7 +170,6 @@ End Sub
     If cts IsNot Nothing Then  
         cts.Cancel()  
     End If  
-  
     ```  
   
 3.  `cts` に、現在のプロセスを表す別の値を設定します。  
@@ -180,7 +178,6 @@ End Sub
     ' *** Now set cts to cancel the current process if the button is chosen again.  
     Dim newCTS As CancellationTokenSource = New CancellationTokenSource()  
     cts = newCTS  
-  
     ```  
   
 4.  末尾に`StartButton_Click`、現在のプロセスが完了したら、そのための値を設定`cts`に`Nothing`します。  
@@ -190,7 +187,6 @@ End Sub
     If cts Is newCTS Then  
         cts = Nothing  
     End If  
-  
     ```  
   
  次のコードは、`StartButton_Click` のすべての変更を示しています。 追加部分はアスタリスクが付いています。  
@@ -226,7 +222,6 @@ Private Async Sub StartButton_Click(sender As Object, e As RoutedEventArgs)
         cts = Nothing  
     End If  
 End Sub  
-  
 ```  
   
  `AccessTheWebAsync` で、次の変更を行います。  
@@ -275,7 +270,6 @@ Private Async Function AccessTheWebAsync(ct As CancellationToken) As Task
     ResultsTextBox.Text &=  
         String.Format(vbCrLf & vbCrLf & "TOTAL bytes returned:  " & total & vbCrLf)  
 End Function  
-  
 ```  
   
  選択した場合、**開始**を複数回クリックしてこのアプリの実行中には、次の出力のような結果が生成されます。  
@@ -318,7 +312,6 @@ TOTAL bytes returned:  890591
  次の出力は、ユーザーが選択したかどうか、結果を示します、**開始**一度だけ ボタンをクリックします。 文字ラベル A は、初めてから結果であることを示します、**開始**ボタンを選択します。 数字は、ダウンロード対象の一覧における URL の順序を示しています。  
   
 ```  
-  
 #Starting group A.  
 #Task assigned for group A.  
   
@@ -390,7 +383,6 @@ C-8. msdn.microsoft.com/library/ff730837.aspx               148010
 TOTAL bytes returned:  920526  
   
 #Group C is complete.  
-  
 ```  
   
  グループ B とグループ C は、グループ A が終了する前に開始します。ただし、各グループの出力は個別に表示されます。 グループ A のすべての出力は表示グループ B のすべての出力とすべての出力グループ C. に続く&1; つは、アプリケーションは必ずの順序でグループを表示され、グループごとに、Url は、Url の一覧に表示される順序で常に個別の web サイトに関する情報を表示します。  
@@ -705,3 +697,4 @@ End Function
 ## <a name="see-also"></a>関連項目  
  [チュートリアル: Async を使用して Web へのアクセスと Await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md)   
  [非同期プログラミングを Async と Await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/index.md)
+

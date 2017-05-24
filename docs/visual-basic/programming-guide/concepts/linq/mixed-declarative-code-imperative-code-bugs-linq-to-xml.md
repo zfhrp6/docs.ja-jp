@@ -20,9 +20,10 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Machine Translation
+ms.translationtype: Machine Translation
 ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
 ms.openlocfilehash: 08edcabc3f0238c499f87c713f205ee5a517a1ea
+ms.contentlocale: ja-jp
 ms.lasthandoff: 03/13/2017
 
 ---
@@ -61,7 +62,6 @@ Dim root As XElement = _
 For Each e As XElement In root.Elements()  
     root.Add(New XElement(e.Name, e.Value))  
 Next  
-  
 ```  
   
  このコードは、無限ループに入ります。 `foreach` ステートメントは、`Elements()` 軸を反復処理して `doc` 要素に新しい要素を追加しますが、 追加した要素も反復処理されることになります。 ループが繰り返されるたびに新しいオブジェクトが割り当てられるため、最後には使用可能なメモリがすべて消費されてしまいます。  
@@ -79,7 +79,6 @@ For Each e As XElement In root.Elements().ToList()
     root.Add(New XElement(e.Name, e.Value))  
 Next  
 Console.WriteLine(root)  
-  
 ```  
   
  これで、コードが機能するようになります。 結果の XML ツリーは次のようになります。  
@@ -109,7 +108,6 @@ For Each e As XElement In root.Elements()
     e.Remove()  
 Next  
 Console.WriteLine(root)  
-  
 ```  
   
  しかし、これでは目的の操作は行われません。 最初の要素 A を削除すると、ルートに含まれる XML ツリーから A が削除されるため、反復処理を行っている Elements メソッド内のコードが次の要素を見つけられなくなります。  
@@ -136,7 +134,6 @@ For Each e As XElement In root.Elements().ToList()
     e.Remove()  
 Next  
 Console.WriteLine(root)  
-  
 ```  
   
  このコードを実行すると、次の出力が生成されます。  
@@ -156,7 +153,6 @@ Dim root As XElement = _
     </Root>  
 root.RemoveAll()  
 Console.WriteLine(root)  
-  
 ```  
   
 ## <a name="why-cant-linq-automatically-handle-this"></a>この問題が LINQ で自動的に処理されない理由  
@@ -169,7 +165,6 @@ Dim z = _
     From e In root.Elements() _  
     Where (TestSomeCondition(e)) _  
     Select DoMyProjection(e)  
-  
 ```  
   
  このような分析コードで副作用のあるコードの有無を特定するには、TestSomeCondition および DoMyProjection の&2; つのメソッドと、これらが呼び出すすべてのメソッドを分析する必要があります。 しかし、その分析コードでは、ただ副作用のあるコードを探すだけでなく、 この状況では、`root` の子要素に対して副作用があるコードのみを選択する必要があります。  
@@ -197,8 +192,8 @@ Dim root As XElement = _
 Dim newRoot As XElement = New XElement("Root", _  
     root.Elements(), root.Elements())  
 Console.WriteLine(newRoot)  
-  
 ```  
   
 ## <a name="see-also"></a>関連項目  
  [高度な LINQ to XML のプログラミング (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/advanced-linq-to-xml-programming.md)
+

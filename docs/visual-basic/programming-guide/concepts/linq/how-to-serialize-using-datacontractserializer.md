@@ -20,9 +20,10 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Machine Translation
+ms.translationtype: Machine Translation
 ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
 ms.openlocfilehash: b6701834f1a99536abda37f3fbc2450bd795dcb5
+ms.contentlocale: ja-jp
 ms.lasthandoff: 03/13/2017
 
 ---
@@ -87,7 +88,6 @@ Public Class XElementNullContainer
         member = Nothing  
     End Sub  
 End Class  
-  
 ```  
   
  この例を実行すると、次の出力が生成されます。  
@@ -103,3 +103,4 @@ Testing for type: XElementNullContainer
   
 ## <a name="see-also"></a>関連項目  
  [XElement オブジェクト (Visual Basic) を含むオブジェクト グラフをシリアル化します。](../../../../visual-basic/programming-guide/concepts/linq/serializing-object-graphs-that-contain-xelement-objects.md)
+

@@ -30,10 +30,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: f104657c66e067ffe657f8387fef2178e3b2e62b
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: fe32676f0e39ed109a68f39584cf41aec5f5ce90
+ms.openlocfilehash: 336a4a7bb485a48282dd740bafb81421e0cba693
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/10/2017
 
 ---
 # <a name="decimal-c-reference"></a>decimal (C# リファレンス)
@@ -47,7 +48,6 @@ ms.lasthandoff: 03/13/2017
  実数値リテラルを `decimal` として扱うには、サフィックス m または M を使用します。次に例を示します。  
   
 ```  
-  
 decimal myMoney = 300.5m;  
 ```  
   
@@ -57,14 +57,12 @@ decimal myMoney = 300.5m;
  整数型は、暗黙的に `decimal` に変換され、結果は `decimal` になります。 したがって、サフィックスなしで整数リテラルを使用して 10 進変数を初期化できます。次に例を示します。  
   
 ```  
-  
 decimal myMoney = 300;  
 ```  
   
  浮動小数点型と `decimal` 型の間に暗黙の型変換はありません。2 つの型の間で変換を実行するには、キャストを使用する必要があります。 例:  
   
 ```  
-  
       decimal myMoney = 99.9m;  
 double x = (double)myMoney;  
 myMoney = (decimal)x;  
@@ -77,7 +75,7 @@ myMoney = (decimal)x;
  明示的な数値変換の詳細については、「[明示的な数値変換の一覧表](../../../csharp/language-reference/keywords/explicit-numeric-conversions-table.md)」を参照してください。  
   
 ## <a name="formatting-decimal-output"></a>10 進出力の書式指定  
- 結果の書式を指定するには、`String.Format` メソッドを使用するか、`String.Format()` を呼び出す <xref:System.Console.Write%2A?displayProperty=fullName>メソッドを使用します。 通貨書式を指定するには、この記事の 2 番目の例に示されているように、標準の通貨の書式指定文字列である "C" または "c" を使用します。 `String.Format` メソッドの詳細については、<xref:System.String.Format%2A?displayProperty=fullName> に関するセクションを参照してください。  
+ 結果の書式を指定するには、`String.Format` メソッドを使用するか、<xref:System.Console.Write%2A?displayProperty=fullName> を呼び出す `String.Format()` メソッドを使用します。 通貨書式を指定するには、この記事の 2 番目の例に示されているように、標準の通貨の書式指定文字列である "C" または "c" を使用します。 `String.Format` メソッドの詳細については、<xref:System.String.Format%2A?displayProperty=fullName> を参照してください。  
   
 ## <a name="example"></a>例  
  次の例では、[double](../../../csharp/language-reference/keywords/double.md) の変数と `decimal` の変数を加算しようとして、コンパイラ エラーが発生します。  
@@ -91,7 +89,6 @@ Console.WriteLine(dec + dub);
 // You can fix the error by using explicit casting of either operand.  
 Console.WriteLine(dec + (decimal)dub);  
 Console.WriteLine((double)dec + dub);  
-  
 ```  
   
  実行の結果、次のエラーが生成されます。  
@@ -119,4 +116,5 @@ Console.WriteLine((double)dec + dub);
  [組み込み型の一覧表](../../../csharp/language-reference/keywords/built-in-types-table.md)   
  [暗黙的な数値変換の一覧表](../../../csharp/language-reference/keywords/implicit-numeric-conversions-table.md)   
  [明示的な数値変換の一覧表](../../../csharp/language-reference/keywords/explicit-numeric-conversions-table.md)   
- [標準の数値書式指定文字列](http://msdn.microsoft.com/library/580e57eb-ac47-4ffd-bccd-3a1637c2f467)
+ [標準の数値書式指定文字列](../../../standard/base-types/standard-numeric-format-strings.md)
+

@@ -10,16 +10,17 @@ ms.prod: .net-core
 ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: 79c50621-a24a-4e64-bbb9-b953113e841c
-translationtype: Human Translation
-ms.sourcegitcommit: b4fb772973607b94e120377879a5dbdde2a25271
-ms.openlocfilehash: 9d0af9769264b7f22c90ffb6a831b42f06c6bb94
-ms.lasthandoff: 03/15/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: deb760878391856cf07bab04563d0ec19a1511e7
+ms.openlocfilehash: 7062102ff17c13b7cf25a1cfbb266c696221151b
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/30/2017
 
 ---
 
 # <a name="a-mapping-between-projectjson-and-csproj-properties"></a>project.json プロパティと csproj プロパティの間のマッピング
 
-作成者: [Nate McMaster](http://github.com/natemcmaster)
+作成者: [Nate McMaster](https://github.com/natemcmaster)
 
 .NET Core ツールの開発中、重要なデザイン変更が行われました。*project.json* ファイルのサポートが終了となり、代わりに.NET Core プロジェクトが MSBuild/csproj 形式に移行されました。
 
@@ -323,7 +324,7 @@ csproj には同等のものがありません。
 
 ```xml
 <PropertyGroup>
-  <RuntimeIdentifiers>win7-x64;osx.10-11-x64;ubuntu.16.04-x64</RuntimeIdentifiers>
+  <RuntimeIdentifiers>win7-x64;osx.10.11-x64;ubuntu.16.04-x64</RuntimeIdentifiers>
 </PropertyGroup>
 ```
 
@@ -664,7 +665,6 @@ MSBuild では、これは[項目](https://docs.microsoft.com/visualstudio/msbui
 ```
 
 ## <a name="see-also"></a>関連項目
-[project.json 参照](project-json.md)
 
 [CLI の変更の概要](../tools/cli-msbuild-architecture.md)
 

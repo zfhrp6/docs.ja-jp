@@ -20,9 +20,10 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Machine Translation
+ms.translationtype: Machine Translation
 ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
 ms.openlocfilehash: 52fb60b95b869a79900f84c2a1a7a6151bb5b58f
+ms.contentlocale: ja-jp
 ms.lasthandoff: 03/13/2017
 
 ---
@@ -41,7 +42,6 @@ XML エディター、変換システム、レポート作成プログラムな�
 Dim doc As XDocument = XDocument.Parse("<!-- a comment --><Root/>")  
 Console.WriteLine(doc.Nodes().OfType(Of XComment).First().Parent Is Nothing)  
 Console.WriteLine(doc.Root.Parent Is Nothing)  
-  
 ```  
   
  この例を実行すると、次の出力が生成されます。  
@@ -67,7 +67,6 @@ Console.WriteLine(xmlTree.Nodes().OfType(Of XText)().Count())
 '// This does add a new, adjacent text node.  
 xmlTree.Add(New XText("more text"))  
 Console.WriteLine(xmlTree.Nodes().OfType(Of XText)().Count())  
-  
 ```  
   
  この例を実行すると、次の出力が生成されます。  
@@ -90,7 +89,6 @@ textNode.Value = ""
   
 Dim textNode2 As XText = xmlTree.Nodes().OfType(Of XText)().First()  
 Console.WriteLine(">>{0}<<", textNode2)  
-  
 ```  
   
  この例を実行すると、次の出力が生成されます。  
@@ -109,7 +107,6 @@ Dim child1 As XElement = New XElement("Child1", _
 Dim child2 As XElement = New XElement("Child2")  
 Console.WriteLine(child1)  
 Console.WriteLine(child2)  
-  
 ```  
   
  この例を実行すると、次の出力が生成されます。  
@@ -134,7 +131,6 @@ For Each att As XAttribute In root.Attributes()
     Console.WriteLine("{0}  IsNamespaceDeclaration:{1}", att, _  
                       att.IsNamespaceDeclaration)  
 Next  
-  
 ```  
   
  この例を実行すると、次の出力が生成されます。  
@@ -161,7 +157,6 @@ Console.WriteLine(root.Nodes().OfType(Of XText)().Count())
 ' Count the white space child nodes using XPathEvaluate.  
 Dim nodes As IEnumerable = CType(root.XPathEvaluate("text()"), IEnumerable)  
 Console.WriteLine(nodes.OfType(Of XText)().Count())  
-  
 ```  
   
  この例を実行すると、次の出力が生成されます。  
@@ -184,7 +179,6 @@ Console.WriteLine(File.ReadAllText("Temp.xml"))
   
 ' This shows that there is only one child node of the document.  
 Console.WriteLine(doc.Nodes().Count())  
-  
 ```  
   
  この例を実行すると、次の出力が生成されます。  
@@ -197,3 +191,4 @@ Console.WriteLine(doc.Nodes().Count())
   
 ## <a name="see-also"></a>関連項目  
  [高度な LINQ to XML のプログラミング (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/advanced-linq-to-xml-programming.md)
+

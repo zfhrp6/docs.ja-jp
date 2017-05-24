@@ -56,19 +56,19 @@ ms.lasthandoff: 03/02/2017
 
 .NET Core 1.0 でリリースされたすべてのパッケージとそのバージョンを掲載した一覧が長くても、コードが特定のシナリオに分類されている場合は、一覧を調べなくてもよい場合があります。
 
-** **`NETStandard.Library`** のみに依存しますか?**
+****`NETStandard.Library`**のみに依存しますか?**
 
 そのようにする場合は、`NETStandard.Library` パッケージをバージョン `1.6` に固定する必要があります。  これは選別されたメタパッケージであるため、そのパッケージ クロージャも 1.0 に固定されます。
 
-** **`Microsoft.NETCore.App`** のみに依存しますか?**
+****`Microsoft.NETCore.App`**のみに依存しますか?**
 
 そのようにする場合は、`Microsoft.NETCore.App` パッケージをバージョン `1.0.0` に固定する必要があります。  これは選別されたメタパッケージであるため、そのパッケージ クロージャも 1.0 に固定されます。
 
-** **`NETStandard.Library` **または** `Microsoft.NETCore.App` **メタパッケージ依存関係を[トリミング](../deploying/reducing-dependencies.md)する必要がありますか?**
+****`NETStandard.Library` **または** `Microsoft.NETCore.App` **メタパッケージ依存関係を[トリミング](../deploying/reducing-dependencies.md)する必要がありますか?**
 
 そのようにする場合は、作業を開始するメタパッケージが 1.0 に固定されていることを確認する必要があります。  トリミングした後に依存する個々のパッケージも 1.0 に固定されます。
 
-** **`NETStandard.Library` **または** `Microsoft.NETCore.App` **メタパッケージの外のパッケージに依存しますか?**
+****`NETStandard.Library` **または** `Microsoft.NETCore.App` **メタパッケージの外のパッケージに依存しますか?**
 
 そのようにする場合は、ほかの依存関係を 1.0 に固定する必要があります。  この記事の最後で、適切なパッケージ バージョンを確認し、数値をビルドします。
 

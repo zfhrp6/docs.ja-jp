@@ -2,6 +2,7 @@
 title: "軽減策: グリッド コントロールの *-column へのディスク領域の割り当て | Microsoft Docs"
 ms.custom: 
 ms.date: 04/07/2017
+ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
 ms.tgt_pltfrm: 
@@ -16,9 +17,10 @@ caps.latest.revision: 4
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: 9460c8b6ca8db927af4064e3567eca34c1bf5c91
 ms.openlocfilehash: c7acce9d41af7e72b04b89751a7b186c9581dfea
+ms.contentlocale: ja-jp
 ms.lasthandoff: 04/18/2017
 
 ---

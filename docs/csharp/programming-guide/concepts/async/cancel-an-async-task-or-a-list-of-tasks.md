@@ -19,10 +19,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 61f1ac22923ad637ba145b448f75e0f1a7e142b6
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 400dfda51d978f35c3995f90840643aaff1b9c13
+ms.openlocfilehash: 9fbfa3602766b51c4be5078b793139501802a90c
+ms.contentlocale: ja-jp
+ms.lasthandoff: 03/24/2017
 
 ---
 # <a name="cancel-an-async-task-or-a-list-of-tasks-c"></a>非同期タスクまたはタスクの一覧のキャンセル (C#)
@@ -62,7 +63,7 @@ ms.lasthandoff: 03/13/2017
   
 1.  アクセスするすべてのメソッドのスコープである `CancellationTokenSource` 変数、`cts` を宣言します。  
   
-    ```cs  
+    ```csharp  
     public partial class MainWindow : Window  
     {  
         // ***Declare a System.Threading.CancellationTokenSource.  
@@ -71,7 +72,7 @@ ms.lasthandoff: 03/13/2017
   
 2.  次のような**キャンセル** ボタンのイベント ハンドラーのコードを追加します。 ユーザーからキャンセルの要求があると、イベント ハンドラーは <xref:System.Threading.CancellationTokenSource.Cancel%2A?displayProperty=fullName> メソッドを使用して `cts` に通知します。  
   
-    ```cs  
+    ```csharp  
     // ***Add an event handler for the Cancel button.  
     private void cancelButton_Click(object sender, RoutedEventArgs e)  
     {  
@@ -86,14 +87,14 @@ ms.lasthandoff: 03/13/2017
   
     -   `CancellationTokenSource`、`cts` をインスタンス化します。  
   
-        ```cs  
+        ```csharp  
         // ***Instantiate the CancellationTokenSource.  
         cts = new CancellationTokenSource();  
         ```  
   
     -   指定した Web サイトのコンテンツをダウンロードする `AccessTheWebAsync` への呼び出しで、`cts` の <xref:System.Threading.CancellationTokenSource.Token%2A?displayProperty=fullName> プロパティを引数として送信します。 取り消しが要求されると、`Token` プロパティがメッセージを伝達します。 ユーザーがダウンロード操作の取り消しを選択するとメッセージを表示する catch ブロックを追加します。 次のコードは変更点を示しています。  
   
-        ```cs  
+        ```csharp  
         try  
         {  
             // ***Send a token to carry the message if cancellation is requested.  
@@ -116,7 +117,7 @@ ms.lasthandoff: 03/13/2017
   
      次のコードは、`AccessTheWebAsync` の変更点を示しています。  
   
-    ```cs  
+    ```csharp  
     // ***Provide a parameter for the CancellationToken.  
     async Task<int> AccessTheWebAsync(CancellationToken ct)  
     {  
@@ -179,7 +180,7 @@ ms.lasthandoff: 03/13/2017
   
 1.  Web アドレスのリストを作成するメソッドを追加します。  
   
-    ```cs  
+    ```csharp  
     // ***Add a method that creates a list of web addresses.  
     private List<string> SetUpURLList()  
     {  
@@ -199,14 +200,14 @@ ms.lasthandoff: 03/13/2017
   
 2.  `AccessTheWebAsync` のメソッドを呼び出します。  
   
-    ```cs  
+    ```csharp  
     // ***Call SetUpURLList to make a list of web addresses.  
     List<string> urlList = SetUpURLList();  
     ```  
   
 3.  次のループを `AccessTheWebAsync` に追加して、リストの各 Web アドレスを処理します。  
   
-    ```cs  
+    ```csharp  
     // ***Add a loop to process the list of web addresses.  
     foreach (var url in urlList)  
     {  
@@ -225,10 +226,13 @@ ms.lasthandoff: 03/13/2017
   
 4.  `AccessTheWebAsync` は長さを表示するため、メソッドは何も返す必要はありません。 return ステートメントを削除し、メソッドの戻り値の型を <xref:System.Threading.Tasks.Task%601> ではなく <xref:System.Threading.Tasks.Task> に変更します。  
   
-<CodeContentPlaceHolder>10</CodeContentPlaceHolder>  
+    ```csharp  
+    async Task AccessTheWebAsync(CancellationToken ct)  
+    ```  
+  
      式の代わりにステートメントを使って、`startButton_Click` からメソッドを呼び出します。  
   
-    ```cs  
+    ```csharp  
     await AccessTheWebAsync(cts.Token);  
     ```  
   
@@ -275,7 +279,7 @@ ms.lasthandoff: 03/13/2017
 ### <a name="cancel-a-task-example"></a>タスクを取り消す例  
  次のコードは、単一のタスクを取り消す例での MainWindow.xaml.cs ファイルの全体です。  
   
-```cs  
+```csharp  
 using System;  
 using System.Collections.Generic;  
 using System.Linq;  
@@ -386,7 +390,7 @@ namespace CancelATask
 ### <a name="cancel-a-list-of-tasks-example"></a>タスクの一覧を取り消す例  
  次のコードは、タスクの一覧を取り消す例での MainWindow.xaml.cs ファイルの全体です。  
   
-```cs  
+```csharp  
 using System;  
 using System.Collections.Generic;  
 using System.Linq;  

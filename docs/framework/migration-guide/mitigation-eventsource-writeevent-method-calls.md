@@ -14,9 +14,10 @@ caps.latest.revision: 6
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
 ms.openlocfilehash: cde809989d89c10caeb97ec853c8649a108cd72d
+ms.contentlocale: ja-jp
 ms.lasthandoff: 04/18/2017
 
 ---
@@ -27,13 +28,11 @@ ms.lasthandoff: 04/18/2017
  次の方法で定義される ETW イベント メソッドはコントラクトを中断します。  
   
 ```  
-  
 [Event(2, Level = EventLevel.Informational)]  
 public void Info2(string message)  
 {  
    base.WriteEvent(2, message, "-");  
 }  
-  
 ```  
   
  このコントラクトに違反している場合、<xref:System.Diagnostics.Tracing.EventListener> オブジェクトが進行中の <xref:System.Diagnostics.Tracing.EventSource> データを読み取ると <xref:System.IndexOutOfRangeException> 例外が実行時にスローされます。  
@@ -41,13 +40,11 @@ public void Info2(string message)
  この ETW イベント メソッドの定義は、次のパターンに従う必要があります。  
   
 ```  
-  
 [Event(2, Level = EventLevel.Informational)]  
 public void Info2(string message)  
 {  
    base.WriteEvent(2, message);  
 }  
-  
 ```  
   
 ## <a name="mitigation"></a>軽減策  
@@ -56,7 +53,6 @@ public void Info2(string message)
  次のように、<xref:System.Diagnostics.Tracing.EventSource.WriteEvent%2A> メソッドを呼び出すための 2 つのメソッドを定義して変更する必要があるコードの量を次のように最小限にできます。  
   
 ```  
-  
 [NonEvent]  
 public void Info2(string message)  
 {  
@@ -67,8 +63,8 @@ public void Info2Internal(string message, string prefix)
 {  
    WriteEvent(2, message, prefix);  
 }  
-  
 ```  
   
 ## <a name="see-also"></a>関連項目  
  [ランタイムの変更点](../../../docs/framework/migration-guide/runtime-changes-in-the-net-framework-4-5-1.md)
+

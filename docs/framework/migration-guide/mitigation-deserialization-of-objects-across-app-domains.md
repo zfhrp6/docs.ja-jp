@@ -14,10 +14,11 @@ caps.latest.revision: 5
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
 ms.openlocfilehash: f22ffc11ba3bce4c568c67459995842c3c103b6b
-ms.lasthandoff: 04/18/2017
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/22/2017
 
 ---
 # <a name="mitigation-deserialization-of-objects-across-app-domains"></a>軽減策: アプリ ドメイン全体でのオブジェクトの逆シリアル化
@@ -28,7 +29,7 @@ ms.lasthandoff: 04/18/2017
   
 1.  アプリケーションが異なるアプリケーション ベースを持つ複数のアプリ ドメインを使用します。  
   
-2.  一部の型を <xref:System.Runtime.Remoting.Messaging.LogicalCallContext> に明示的に追加するには、<xref:System.Runtime.Remoting.Messaging.LogicalCallContext.SetData%2A?displayProperty=fullName>、<xref:System.Runtime.Remoting.Messaging.CallContext.LogicalSetData%2A?displayProperty=fullName> などのメソッドを呼び出します。 これらの型は、シリアル化可能としてマークされず、グローバル アセンブリ キャッシュに格納されません。  
+2.  一部の型は、<xref:System.Runtime.Remoting.Messaging.LogicalCallContext> や <xref:System.Runtime.Remoting.Messaging.LogicalCallContext.SetData%2A?displayProperty=fullName> などのメソッドを呼び出して <xref:System.Runtime.Remoting.Messaging.CallContext.LogicalSetData%2A?displayProperty=fullName> に明示的に追加されます。 これらの型は、シリアル化可能としてマークされず、グローバル アセンブリ キャッシュに格納されません。  
   
 3.  後で、既定以外のアプリ ドメインで実行されているコードは、構成ファイルから値を読み取るか、XML を使用してオブジェクトを逆シリアル化しようとします。  
   
@@ -49,7 +50,7 @@ ms.lasthandoff: 04/18/2017
 ## <a name="mitigation"></a>軽減策  
  この問題を回避するには、次を実行します  
   
-1.  例外がスローされたときにコール スタックで `get_Evidence` の呼び出しを検索します。 この例外は、<xref:System.IO.FileNotFoundException>、<xref:System.Runtime.Serialization.SerializationException> などの例外の大きなサブセットであることもあります。  
+1.  例外がスローされたときにコール スタックで `get_Evidence` の呼び出しを検索します。 この例外は、<xref:System.IO.FileNotFoundException> や <xref:System.Runtime.Serialization.SerializationException> などの例外の大きなサブセットであることもあります。  
   
 2.  オブジェクトが論理呼び出しコンテキストに追加されないアプリ内の場所を特定して、次のコードを追加します。  
   

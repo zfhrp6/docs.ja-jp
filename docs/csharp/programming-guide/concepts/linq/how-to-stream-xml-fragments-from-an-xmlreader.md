@@ -19,10 +19,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 4bb11e120a123b701e45916b983032797c0ea8b6
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 400dfda51d978f35c3995f90840643aaff1b9c13
+ms.openlocfilehash: 06e2cf4b350fecf8e8310519c573ac140f05267a
+ms.contentlocale: ja-jp
+ms.lasthandoff: 03/24/2017
 
 ---
 # <a name="how-to-stream-xml-fragments-from-an-xmlreader-c"></a>方法: XmlReader から XML フラグメントをストリーム出力する (C#)
@@ -41,10 +42,61 @@ ms.lasthandoff: 03/13/2017
 ## <a name="example"></a>例  
  次の例では、カスタムの軸メソッドを作成します。 このメソッドに対してクエリを実行するには、[!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq_md.md)] クエリを使用します。 カスタムの軸メソッド `StreamRootChildDoc` は、`Child` 要素が繰り返し出現するドキュメントを読み取るために特に設計されたメソッドです。  
   
-<CodeContentPlaceHolder>0</CodeContentPlaceHolder>  
+```csharp  
+static IEnumerable<XElement> StreamRootChildDoc(StringReader stringReader)  
+{  
+    using (XmlReader reader = XmlReader.Create(stringReader))  
+    {  
+        reader.MoveToContent();  
+        // Parse the file and display each of the nodes.  
+        while (reader.Read())  
+        {  
+            switch (reader.NodeType)  
+            {  
+                case XmlNodeType.Element:  
+                    if (reader.Name == "Child") {  
+                        XElement el = XElement.ReadFrom(reader) as XElement;  
+                        if (el != null)  
+                            yield return el;  
+                    }  
+                    break;  
+            }  
+        }  
+    }  
+}  
+  
+static void Main(string[] args)  
+{  
+    string markup = @"<Root>  
+      <Child Key=""01"">  
+        <GrandChild>aaa</GrandChild>  
+      </Child>  
+      <Child Key=""02"">  
+        <GrandChild>bbb</GrandChild>  
+      </Child>  
+      <Child Key=""03"">  
+        <GrandChild>ccc</GrandChild>  
+      </Child>  
+    </Root>";  
+  
+    IEnumerable<string> grandChildData =  
+        from el in StreamRootChildDoc(new StringReader(markup))  
+        where (int)el.Attribute("Key") > 1  
+        select (string)el.Element("GrandChild");  
+  
+    foreach (string str in grandChildData) {  
+        Console.WriteLine(str);  
+    }  
+}  
+```  
+  
  この例を実行すると、次の出力が生成されます。  
   
-<CodeContentPlaceHolder>1</CodeContentPlaceHolder>  
+```  
+bbb  
+ccc  
+```  
+  
  この例のソース ドキュメントは、非常に小さなドキュメントです。 ただし、何百万の `Child` 要素があっても、この例で使用されるメモリは非常に少量です。  
   
 ## <a name="see-also"></a>関連項目  

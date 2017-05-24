@@ -1,12 +1,11 @@
 ---
-title: ".NET Framework における基本型の作業 | Microsoft Docs"
+title: ".NET における基本型の操作 | Microsoft Docs"
 ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework-4.6
+ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-bcl
+ms.technology: dotnet-standard
 ms.tgt_pltfrm: 
 ms.topic: article
 helpviewer_keywords:
@@ -18,14 +17,15 @@ caps.latest.revision: 14
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-translationtype: Human Translation
-ms.sourcegitcommit: c50b3e328998b65ec47efe6d7457b36116813c77
-ms.openlocfilehash: 57d672e45e5b316f155f4bdb05320a4a6c4129db
-ms.lasthandoff: 04/08/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
+ms.openlocfilehash: e1451f41b463e28a5fa305f23f3790bcfc066c30
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/22/2017
 
 ---
-# <a name="working-with-base-types-in-the-net-framework"></a>.NET Framework における基本型の作業
-このセクションでは、書式設定、変換、一般的など、.NET Framework 基本型の操作について説明します。  
+# <a name="working-with-base-types-in-net"></a>.NET における基本型の操作
+このセクションでは、書式設定、変換、および一般的な操作を含む、.NET 基本型の操作について説明します。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
  [.NET Framework における型変換](../../../docs/standard/base-types/type-conversion.md)  
