@@ -35,13 +35,13 @@ F# は、.NET 用のクロス プラットフォームのオープン ソース 
 
 [チュートリアル](tutorials/index.md)には、さまざまなスキル レベルと言語の機能のステップ バイ ステップ ガイドもあります。
 
-## <a name="if-youre-experienced-with-f"></a>F の経験が豊富な場合# #
+## <a name="if-youre-experienced-with-f"></a>F#の経験が豊富な場合
 
 F# の使用方法がわかっている場合、[言語リファレンス](language-reference/index.md)で多くの使用方法を知ることができます。多数のコード サンプルで補足された言語のあらゆる側面を徹底的に解説しています。  「[F# Core Library Reference](https://msdn.microsoft.com/visualfsharpdocs/conceptual/fsharp-core-library-reference)」 (F# コア ライブラリ リファレンス) にも多くの使用方法が記載されています。
 
-## <a name="the-f-software-foundation"></a>F# ソフトウェアの基礎
+## <a name="the-f-software-foundation"></a>F# Software Foundationについて
 
-マイクロソフトでは、F# 言語および Visual F# ツールの主な開発者ですが、F# は、F# Software Foundation (FSSF) という独立した団体によってもサポートされています。
+マイクロソフトは、F# 言語および Visual F# ツールの主な開発者ですが、F# は、F# Software Foundation (FSSF) という独立した団体によってもサポートされています。
 
 F# Software Foundation の使命は、F# プログラミング言語の促進、保護、進歩であり、F# プログラマーの多様なインターナショナル コミュニティをサポートし、成長を促進しています。
 
@@ -61,8 +61,8 @@ F# Software Foundation の使命は、F# プログラミング言語の促進、
 
 ## <a name="video-learning-resources"></a>ビデオ学習リソース
 
-* [YouTube の F# でのプログラミングの概要シリーズ](https://www.youtube.com/watch?v=Teak30_pXHk&list=PLEoMzSkcN8oNiJ67Hd7oRGgD1d4YBxYGC)
-* [FSharpTV の F# の概要シリーズ](https://fsharp.tv/courses/fsharp-programming-intro/)
+* [YouTube : F# でのプログラミングの概要シリーズ](https://www.youtube.com/watch?v=Teak30_pXHk&list=PLEoMzSkcN8oNiJ67Hd7oRGgD1d4YBxYGC)
+* [FSharpTV : F# の概要シリーズ](https://fsharp.tv/courses/fsharp-programming-intro/)
 
 ## <a name="further-resources"></a>他のリソース
 
