@@ -42,7 +42,7 @@ ms.lasthandoff: 03/02/2017
 
 上記の目標を達成するために、[microsoft/dotnet](https://hub.docker.com/r/microsoft/dotnet/) にはイメージ バリアントが用意されています。
 
-- `microsoft/dotnet:<version>-sdk`: **microsoft/dotnet:1.0.0-preview2-sdk** です。このイメージには、.NET Core とコマンド ライン ツール (CLI) を含む .NET Core SDK が含まれています。 このイメージは **development scenario** にマップされます。 このイメージは、ローカル開発、デバッグおよび単体テストに使用します。 たとえば、コードをチェックインする前に、すべての開発を行います。 このイメージは、**ビルド** シナリオでも使用できます。
+- `microsoft/dotnet:<version>-sdk`: **microsoft/dotnet:1.0.0-preview2-sdk** です。このイメージには、.NET Core とコマンド ライン ツール (CLI) を含む .NET Core SDK が含まれています。 このイメージは **開発** シナリオにマップされます。 このイメージは、ローカル開発、デバッグおよび単体テストに使用します。 たとえば、コードをチェックインする前に、すべての開発を行います。 このイメージは、**ビルド** シナリオでも使用できます。
 
 - `microsoft/dotnet:<version>-core`: **microsoft/dotnet:1.0.0-core** です。このイメージは[ポータブル .NET Core アプリケーション](../deploying/index.md)を実行します。**実稼働**でアプリケーションを実行するために最適化されます。 これには SDK が含まれていません。`dotnet publish` の最適化された出力を取得するためのものです。 ポータブル ランタイムは、共有イメージ レイヤーによる利点が得られるため、複数のコンテナーを実行する Docker コンテナー シナリオに最適です。  
 
