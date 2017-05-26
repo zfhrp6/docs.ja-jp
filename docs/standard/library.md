@@ -34,7 +34,7 @@ ms.lasthandoff: 05/11/2017
 
 次の表は、.NET Standard のすべてのバージョンとサポートされているプラットフォームの一覧です。
 
-[!INCLUDE [net-standard-table](../includes/net-standard-table.md)]
+[!INCLUDE [net-standard-table](~/includes/net-standard-table.md)]
 
 対象にすることができる最高バージョンの .NET Standard を確認するには、次の手順を実行します。
 1. 実行する .NET プラットフォームを示す行を探します。
