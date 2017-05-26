@@ -30,10 +30,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 5c2db2c58449cadcc33904f31cca215fb78405d2
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 400dfda51d978f35c3995f90840643aaff1b9c13
+ms.openlocfilehash: 3656141c32a04e3a32a2992185f4c418c6915482
+ms.contentlocale: ja-jp
+ms.lasthandoff: 03/24/2017
 
 ---
 # <a name="await-c-reference"></a>await (C# リファレンス)
@@ -48,13 +49,35 @@ ms.lasthandoff: 03/13/2017
   
  次のコードで、<xref:System.Net.Http.HttpClient> クラスの <xref:System.Net.Http.HttpClient.GetByteArrayAsync%2A> メソッドは、`Task\<byte[]>` 型の `getContentsTask` を返します。 これにより、タスクが完了したときに実際のバイト配列が生成されることが保証されます。 `await` 演算子が `getContentsTask` に適用されているため、`SumPageSizesAsync` が完了するまで `getContentsTask` の実行が中断されます。 その間、コントロールは `SumPageSizesAsync` の呼び出し元に戻されます。 `getContentsTask` が終了すると、`await` 式がバイト配列に評価されます。  
   
-<CodeContentPlaceHolder>0</CodeContentPlaceHolder>  
+```csharp  
+private async Task SumPageSizesAsync()  
+{  
+    // To use the HttpClient type in desktop apps, you must include a using directive and add a   
+    // reference for the System.Net.Http namespace.  
+    HttpClient client = new HttpClient();  
+    // . . .  
+    Task<byte[]> getContentsTask = client.GetByteArrayAsync(url);  
+    byte[] urlContents = await getContentsTask;  
+  
+    // Equivalently, now that you see how it works, you can write the same thing in a single line.  
+    //byte[] urlContents = await client.GetByteArrayAsync(url);  
+    // . . .  
+}  
+```  
+  
 > [!IMPORTANT]
 >  完全な例については、「[チュートリアル: Async と Await を使用した Web へのアクセス](../../../csharp/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md)」をご覧ください。 Microsoft Web サイトの[開発者コード サンプル](http://go.microsoft.com/fwlink/?LinkID=255191&clcid=0x409)からサンプルをダウンロードできます。 この例は AsyncWalkthrough_HttpClient プロジェクトにあります。  
   
  前の例で示したように、`await` を返すメソッド呼び出しの結果に `Task<TResult>` を適用する場合、`await` 式の型は TResult です。 `await` を返すメソッド呼び出しの結果に `Task` が適用されている場合、`await` 式の型は void になります。 この違いを次の例に示します。  
   
-<CodeContentPlaceHolder>1</CodeContentPlaceHolder>  
+```csharp  
+// Keyword await used with a method that returns a Task<TResult>.  
+TResult result = await AsyncMethodThatReturnsTaskTResult();  
+  
+// Keyword await used with a method that returns a Task.  
+await AsyncMethodThatReturnsTask();  
+```  
+  
  `await` 式は、自身が実行されているスレッドをブロックするのではなく、 非同期メソッドの残りの部分が待機中のタスクの継続として登録されるようにします。 これによって、コントロールは非同期のメソッドの呼び出し元に戻されます。 タスクが完了すると、継続が呼び出され、中断したところから非同期メソッドの実行が再開されます。  
   
  `await` 式は、`async` 修飾子で修飾されたすぐ外側のメソッド、ラムダ式、または匿名メソッドの本体でのみ使用できます。 *await* という用語がキーワードとして機能するのはこのコンテキストだけです。 他の場所では、識別子として解釈されます。 メソッド、ラムダ式、または匿名メソッド内では、`await` 式は、同期関数、クエリ式、[lock ステートメント](../../../csharp/language-reference/keywords/lock-statement.md)のブロック、または [unsafe](../../../csharp/language-reference/keywords/unsafe.md) コンテキストの本体では使用できません。  
@@ -73,8 +96,7 @@ ms.lasthandoff: 03/13/2017
 ## <a name="example"></a>例  
  次に示す Windows フォームの例では、`await` という非同期メソッドで `WaitAsynchronouslyAsync` が使用されています。 このメソッドの動作と `WaitSynchronously` の動作の違いを確認します。 `await` 演算子を適用しないと、`WaitSynchronously` は、定義で `async` 修飾子が使われていて、本体で <xref:System.Threading.Thread.Sleep%2A?displayProperty=fullName> が呼び出されていても、同期的に実行されます。  
   
-```cs  
-  
+```csharp  
 private async void button1_Click(object sender, EventArgs e)  
 {  
     // Call the method that runs asynchronously.  
@@ -111,3 +133,4 @@ public async Task<string> WaitSynchronously()
  [Async および Await を使用した非同期プログラミング](../../../csharp/programming-guide/concepts/async/index.md)   
  [チュートリアル: Async と Await を使用した Web へのアクセス](../../../csharp/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md)   
  [async](../../../csharp/language-reference/keywords/async.md)
+

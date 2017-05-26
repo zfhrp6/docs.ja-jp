@@ -28,10 +28,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: f9ee1f0cae90120692fa4f41d2f432551281ab6d
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: fe32676f0e39ed109a68f39584cf41aec5f5ce90
+ms.openlocfilehash: 7e2310df174a7c38fafba3fed4e4bd3de4fa377a
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/10/2017
 
 ---
 # <a name="using-type-dynamic-c-programming-guide"></a>dynamic 型の使用 (C# プログラミング ガイド)
@@ -72,7 +73,7 @@ ms.lasthandoff: 03/13/2017
  [!code-cs[CsProgGuideTypes#55](../../../csharp/programming-guide/nullable-types/codesnippet/CSharp/using-type-dynamic_7.cs)]  
   
 ## <a name="dynamic-language-runtime"></a>動的言語ランタイム  
- 動的言語ランタイム (DLR) は、[!INCLUDE[net_v40_short](../../../csharp/programming-guide/types/includes/net_v40_short_md.md)] の新しい API です。 DLR は、C# の `dynamic` 型だけでなく、IronPython や IronRuby などの動的プログラミング言語の実装もサポートするインフラストラクチャを提供します。 DLR の詳細については、「[動的言語ランタイムの概要](http://msdn.microsoft.com/library/f769a271-8aff-4bea-bfab-6160217ce23d)」を参照してください。  
+ 動的言語ランタイム (DLR) は、[!INCLUDE[net_v40_short](../../../csharp/programming-guide/types/includes/net_v40_short_md.md)] の新しい API です。 DLR は、C# の `dynamic` 型だけでなく、IronPython や IronRuby などの動的プログラミング言語の実装もサポートするインフラストラクチャを提供します。 DLR の詳細については、「[動的言語ランタイムの概要](../../../framework/reflection-and-codedom/dynamic-language-runtime-overview.md)」を参照してください。  
   
 ## <a name="com-interop"></a>COM 相互運用  
  [!INCLUDE[csharp_dev10_long](../../../csharp/programming-guide/classes-and-structs/includes/csharp_dev10_long_md.md)] には、Office オートメーション API などの COM API との相互運用エクスペリエンスを強化する複数の機能があります。 この機能強化には、`dynamic` 型の使用、および[名前付き引数と省略可能な引数](../../../csharp/programming-guide/classes-and-structs/named-and-optional-arguments.md)の使用が含まれます。  
@@ -88,6 +89,6 @@ ms.lasthandoff: 03/13/2017
 |タイトル|説明|  
 |-----------|-----------------|  
 |[dynamic](../../../csharp/language-reference/keywords/dynamic.md)|`dynamic` キーワードの使用法について説明します。|  
-|[動的言語ランタイムの概要](http://msdn.microsoft.com/library/f769a271-8aff-4bea-bfab-6160217ce23d)|DLR の概要について説明します。DLR は動的言語の一連のサービスを共通言語ランタイム (CLR) に追加するランタイム環境です。|  
+|[動的言語ランタイムの概要](../../../framework/reflection-and-codedom/dynamic-language-runtime-overview.md)|DLR の概要について説明します。DLR は動的言語の一連のサービスを共通言語ランタイム (CLR) に追加するランタイム環境です。|  
 |[チュートリアル: 動的オブジェクトの作成と使用](../../../csharp/programming-guide/types/walkthrough-creating-and-using-dynamic-objects.md)|動的なカスタム オブジェクト、および `IronPython` ライブラリにアクセスするプロジェクトを作成するための詳細な手順について説明します。|  
 |[方法: Visual C# の機能を使用して Office 相互運用オブジェクトにアクセスする](../../../csharp/programming-guide/interop/how-to-access-office-onterop-objects.md)|名前付き引数と省略可能な引数、`dynamic` 型、および Office API オブジェクトへのアクセスを簡単にするその他の強化機能を使用するプロジェクトを作成する方法について説明します。|

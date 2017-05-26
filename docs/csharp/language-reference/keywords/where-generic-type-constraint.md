@@ -30,16 +30,20 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: d5c0b9fff370893d890518c6a95a74889b3f2295
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 400dfda51d978f35c3995f90840643aaff1b9c13
+ms.openlocfilehash: e5baa75c55d58a4d975fc42472f90ff4125cbb5c
+ms.contentlocale: ja-jp
+ms.lasthandoff: 03/24/2017
 
 ---
 # <a name="where-generic-type-constraint-c-reference"></a>where (ジェネリック型制約) (C# リファレンス)
 ジェネリック型定義では、ジェネリック宣言で定義されている型パラメーターの引数として使用できる型に対する制約を指定する場合に `where` 句を使用します。 たとえば、型パラメーター `T` が <xref:System.IComparable%601> インターフェイスを実装するように、次のように `MyGenericClass` ジェネリック クラスを宣言できます。  
   
-<CodeContentPlaceHolder>0</CodeContentPlaceHolder>  
+```csharp  
+public class MyGenericClass<T> where T:IComparable { }  
+```  
+  
 > [!NOTE]
 >  クエリ式での where 句の詳細については、「[where 句](../../../csharp/language-reference/keywords/where-clause.md)」を参照してください。  
   
@@ -59,13 +63,13 @@ ms.lasthandoff: 03/13/2017
   
  次に示すように、ジェネリック メソッドの型パラメーターにも制約を適用できます。  
   
-```  
+```csharp  
 public bool MyMethod<T>(T t) where T : IMyInterface { }  
 ```  
   
  デリゲートに対する型パラメーター制約を記述する構文は、メソッドの構文と同じである点に注意してください。  
   
-```  
+```csharp  
 delegate T MyDelegate<T>() where T : new()  
 ```  
   
