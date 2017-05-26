@@ -19,10 +19,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 413b8c3bfbfd70c91edeebece07833874db06334
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 400dfda51d978f35c3995f90840643aaff1b9c13
+ms.openlocfilehash: cd1b765faa734973bf5e184cee2ac934ebdf9241
+ms.contentlocale: ja-jp
+ms.lasthandoff: 03/24/2017
 
 ---
 # <a name="variance-in-delegates-c"></a>デリゲートの分散 (C#)
@@ -30,7 +31,7 @@ ms.lasthandoff: 03/13/2017
   
  たとえば、次のコードについて考えます。このコードには、2 つのクラスと、汎用と非汎用の 2 つのデリゲートが含まれています。  
   
-```cs  
+```csharp  
 public class First { }  
 public class Second : First { }  
 public delegate First SampleDelegate(Second a);  
@@ -39,7 +40,7 @@ public delegate R SampleGenericDelegate<A, R>(A a);
   
  `SampleDelegate` 型または `SampleGenericDelegate<A, R>` 型のデリゲートを作成する場合、そのデリゲートには、次のいずれかのメソッドを割り当てることができます。  
   
-```cs  
+```csharp  
 // Matching signature.  
 public static First ASecondRFirst(Second first)  
 { return new First(); }  
@@ -60,7 +61,7 @@ public static Second AFirstRSecond(First first)
   
  次のコード例は、メソッド シグネチャとデリゲート型の間の暗黙的な変換を示しています。  
   
-```cs  
+```csharp  
 // Assigning a method with a matching signature   
 // to a non-generic delegate. No conversion is necessary.  
 SampleDelegate dNonGeneric = ASecondRFirst;  
@@ -87,7 +88,7 @@ SampleGenericDelegate<Second, First> dGenericConversion = AFirstRSecond;
   
  次のコード例は、共変のジェネリック型パラメーターが指定されたデリゲートを作成する方法を示しています。  
   
-```cs  
+```csharp  
 // Type T is declared covariant by using the out keyword.  
 public delegate T SampleGenericDelegate <out T>();  
   
@@ -105,7 +106,7 @@ public static void Test()
   
  次のコード例では、`String` が `Object` を継承していますが、`SampleGenericDelegate<String>` を `SampleGenericDelegate<Object>` に明示的に変換することはできません。 この問題を修正するには、ジェネリック パラメーター `T` を `out` キーワードでマークします。  
   
-```cs  
+```csharp  
 public delegate T SampleGenericDelegate<T>();  
   
 public static void Test()  
@@ -145,30 +146,51 @@ public static void Test()
   
  汎用デリゲートのジェネリック型パラメーターを共変として宣言するには、`out` キーワードを使用します。 共変の型は、メソッドの戻り値の型としてのみ使用できます。メソッド引数の型として使用することはできません。 共変の汎用デリゲートを宣言する方法を次のコード例に示します。  
   
-<CodeContentPlaceHolder>5</CodeContentPlaceHolder>  
+```csharp  
+public delegate R DCovariant<out R>();  
+```  
+  
  汎用デリゲートのジェネリック型パラメーターを反変として宣言するには、`in` キーワードを使用します。 反変の型は、メソッド引数の型としてのみ使用できます。メソッドの戻り値の型として使用することはできません。 反変の汎用デリゲートを宣言する方法を次のコード例に示します。  
   
-<CodeContentPlaceHolder>6</CodeContentPlaceHolder>  
+```csharp  
+public delegate void DContravariant<in A>(A a);  
+```  
+  
 > [!IMPORTANT]
 > C# の  `ref` パラメーターと `out` パラメーターを、バリアントとしてマークすることはできません。  
   
  同じデリゲートで、型パラメーターが異なる場合は、分散と共変性の両方をサポートすることもできます。 これを次の例に示します。  
   
-<CodeContentPlaceHolder>7</CodeContentPlaceHolder>  
+```csharp  
+public delegate R DVariant<in A, out R>(A a);  
+```  
+  
 ### <a name="instantiating-and-invoking-variant-generic-delegates"></a>バリアント汎用デリゲートのインスタンス化と呼び出し  
  バリアント デリゲートのインスタンス化および呼び出しは、インバリアント デリゲートのインスタンス化および呼び出しと同様に行うことができます。 次の例では、ラムダ式によってデリゲートをインスタンス化します。  
   
-<CodeContentPlaceHolder>8</CodeContentPlaceHolder>  
+```csharp  
+DVariant<String, String> dvariant = (String str) => str + " ";  
+dvariant("test");  
+```  
+  
 ### <a name="combining-variant-generic-delegates"></a>バリアント汎用デリゲートの結合  
  バリアント デリゲートの結合はお勧めしません。 <xref:System.Delegate.Combine%2A> メソッドはバリアント デリゲートの変換をサポートしていないため、デリゲートが厳密に同じ型である必要があります。 そのため、次のコード例に示すように、<xref:System.Delegate.Combine%2A> メソッドまたは `+` 演算子を使用してデリゲートを結合すると、実行時例外が発生する可能性があります。  
   
-<CodeContentPlaceHolder>9</CodeContentPlaceHolder>  
+```csharp  
+Action<object> actObj = x => Console.WriteLine("object: {0}", x);  
+Action<string> actStr = x => Console.WriteLine("string: {0}", x);  
+// All of the following statements throw exceptions at run time.  
+// Action<string> actCombine = actStr + actObj;  
+// actStr += actObj;  
+// Delegate.Combine(actStr, actObj);  
+```  
+  
 ## <a name="variance-in-generic-type-parameters-for-value-and-reference-types"></a>値型と参照型でのジェネリック型パラメーターの分散  
  ジェネリック型パラメーターの分散がサポートされるのは参照型だけです。 たとえば、整数は値型であるため、`DVariant<int>` を `DVariant<Object>` または `DVariant<long>` に暗黙的に変換することはできません。  
   
  次の例は、値型ではジェネリック型パラメーターの分散がサポートされないことを示しています。  
   
-```cs  
+```csharp  
 // The type T is covariant.  
 public delegate T DVariant<out T>();  
   

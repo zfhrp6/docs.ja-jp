@@ -19,10 +19,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 4c1bab99fc1139f03e5f754cfecaee392b947171
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 400dfda51d978f35c3995f90840643aaff1b9c13
+ms.openlocfilehash: d974e93c3c50a61889a9ed37ad5f68f7a131a538
+ms.contentlocale: ja-jp
+ms.lasthandoff: 03/24/2017
 
 ---
 # <a name="async-return-types-c"></a>非同期の戻り値の型 (C#)
@@ -38,7 +39,7 @@ ms.lasthandoff: 03/13/2017
   
  次の例では、`TaskOfT_MethodAsync` 非同期メソッドには整数を返す return ステートメントが含まれます。 そのため、メソッド宣言では、戻り値の型を `Task<int>` と指定する必要があります。  
   
-```cs  
+```csharp  
 // TASK<T> EXAMPLE  
 async Task<int> TaskOfT_MethodAsync()  
 {  
@@ -64,7 +65,7 @@ async Task<int> TaskOfT_MethodAsync()
   
  次のコードは、`TaskOfT_MethodAsync` メソッドを呼び出して待機します。 結果は `result1` 変数に割り当てられます。  
   
-```cs  
+```csharp  
 // Call and await the Task<T>-returning async method in the same statement.  
 int result1 = await TaskOfT_MethodAsync();  
 ```  
@@ -74,7 +75,7 @@ int result1 = await TaskOfT_MethodAsync();
 > [!WARNING]
 >  <xref:System.Threading.Tasks.Task%601.Result%2A> プロパティは Blocking プロパティです。 タスクが終了する前にアクセスしようとすると、現在アクティブなスレッドは、タスクが完了して値が使用可能になるまで、ブロックされます。 多くの場合、プロパティに直接アクセスする代わりに、`await` を使用して値にアクセスする必要があります。  
   
-```cs  
+```csharp  
 // Call and await in separate statements.  
 Task<int> integerTask = TaskOfT_MethodAsync();  
   
@@ -86,7 +87,7 @@ int result2 = await integerTask;
   
  次のコードの表示ステートメントは、`result1` 変数、`result2` 変数、および `Result` プロパティの値が同じであることを確認します。 `Result` プロパティは Blocking プロパティであり、タスクが待機される前にアクセスしないように注意してください。  
   
-```cs  
+```csharp  
 // Display the values of the result1 variable, the result2 variable, and  
 // the integerTask.Result property.  
 textBox1.Text += String.Format("\r\nValue of result1 variable:   {0}\r\n", result1);  
@@ -99,7 +100,7 @@ textBox1.Text += String.Format("Value of integerTask.Result: {0}\r\n", integerTa
   
  次の例では、非同期メソッド `Task_MethodAsync` には、return ステートメントが含まれていません。 したがって、`Task` を待機させるメソッドに、戻り値の型 `Task_MethodAsync` を指定します。 `Task` 型の定義は、戻り値を格納する `Result` プロパティを含みません。  
   
-```cs  
+```csharp  
 // TASK EXAMPLE  
 async Task Task_MethodAsync()  
 {  
@@ -118,7 +119,7 @@ async Task Task_MethodAsync()
   
  次のコードは、`Task_MethodAsync` メソッドを呼び出して待機します。  
   
-```cs  
+```csharp  
 // Call and await the Task-returning async method in the same statement.  
 await Task_MethodAsync();  
 ```  
@@ -127,7 +128,16 @@ await Task_MethodAsync();
   
  次のコードは `Task_MethodAsync` の呼び出しを `Task_MethodAsync` が返すタスクの待機から分離します。  
   
-<CodeContentPlaceHolder>6</CodeContentPlaceHolder>  
+```csharp  
+// Call and await in separate statements.  
+Task simpleTask = Task_MethodAsync();  
+  
+// You can do other work that does not rely on simpleTask before awaiting.  
+textBox1.Text += String.Format("\r\nApplication can continue working while the Task runs. . . .\r\n");  
+  
+await simpleTask;  
+```  
+  
 ##  <a name="BKMK_VoidReturnType"></a> Void 型  
  戻り値の型に void を主に使用するのは、void 型の戻り値を必要とするイベント ハンドラーです。 void である戻り値は、void を返すメソッドを上書きするためにも使われます。または「ファイア アンド フォーゲット (撃ち放し)」と分類されるアクティビティを実行するメソッドに対して使われます。 ただし、void を返す非同期メソッドを待機することはできないため、できる限り `Task` を返す必要があります。 このようなメソッドの呼び出し元は、呼び出した非同期メソッドが完了するのを待たずに、完了まで継続できる必要があります。また呼び出し元は、非同期メソッドが生成する値または例外とは無関係である必要があります。  
   
@@ -137,7 +147,21 @@ await Task_MethodAsync();
   
  次のコードは非同期のイベント ハンドラーを定義します。  
   
-<CodeContentPlaceHolder>7</CodeContentPlaceHolder>  
+```csharp  
+// VOID EXAMPLE  
+private async void button1_Click(object sender, RoutedEventArgs e)  
+{  
+    textBox1.Clear();  
+  
+    // Start the process and await its completion. DriverAsync is a   
+    // Task-returning async method.  
+    await DriverAsync();  
+  
+    // Say goodbye.  
+    textBox1.Text += "\r\nAll done, exiting button-click event handler.";  
+}  
+```  
+  
 ##  <a name="BKMK_Example"></a>コード例全体  
  次の Windows Presentation Foundation (WPF) プロジェクトには、このトピックのコード例が含まれています。  
   
@@ -161,7 +185,7 @@ await Task_MethodAsync();
   
 6.  MainWindow.xaml の **[XAML]** ウィンドウで、コードを次のコードに置き換えます。  
   
-    ```cs  
+    ```csharp  
     <Window x:Class="AsyncReturnTypes.MainWindow"  
             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"  
             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"  
@@ -181,7 +205,7 @@ await Task_MethodAsync();
   
 8.  MainWindow.xaml.cs のコードを次のコードに置き換えます。  
   
-    ```cs  
+    ```csharp  
     using System;  
     using System.Collections.Generic;  
     using System.Linq;  
