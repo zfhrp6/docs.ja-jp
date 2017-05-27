@@ -14,10 +14,11 @@ ms.assetid: d333bb7d-20c1-448a-95b7-e5ba07915744
 caps.latest.revision: 3
 author: BillWagner
 ms.author: wiwagn
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
 ms.openlocfilehash: e3879dfe92f158c545a1f4a42c6bfc35aae06f3c
-ms.lasthandoff: 03/13/2017
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/24/2017
 
 
 ---
@@ -31,8 +32,8 @@ ms.lasthandoff: 03/13/2017
 |[方法: 特定の属性を持つ要素を検索する (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-find-an-element-with-a-specific-attribute.md)|特定の値を含む属性を持つ特定の要素を検索する方法について説明します。|  
 |[方法: 特定の子要素を持つ要素を検索する (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-find-an-element-with-a-specific-child-element.md)|特定の値を含む子要素を持つ特定の要素を検索する方法について説明します。|  
 |[XDocument のクエリと XElement のクエリ (C#)](../../../../csharp/programming-guide/concepts/linq/querying-an-xdocument-vs-querying-an-xelement.md)|<xref:System.Xml.Linq.XElement> をルートとする XML ツリーに対するクエリの記述と、<xref:System.Xml.Linq.XDocument> をルートとする XML ツリーに対するクエリの記述の違いについて説明します。|  
-|[方法: 特定の要素名を持つ子孫を検索する (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-find-descendants-with-a-specific-element-name.md)|特定の名前を持つ要素のすべての子孫を検索する方法について説明します。 この例では、<xref:System.Xml.Linq.XContainer.Descendants%2A> 軸を使います。|  
-|[方法: Descendants メソッドを使用して単一の子孫を検索する (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-find-a-single-descendant-using-the-descendants-method.md)|<xref:System.Xml.Linq.XContainer.Descendants%2A> 軸メソッドを使って一意の名前を持つ単一の要素を検索する方法について説明します。|  
+|[方法: 特定の要素名を持つ子孫を検索する (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-find-descendants-with-a-specific-element-name.md)|特定の名前を持つ要素のすべての子孫を検索する方法について説明します。 この例では、<xref:System.Xml.Linq.XContainer.Descendants%2A> 軸を使用します。|  
+|[方法: Descendants メソッドを使用して単一の子孫を検索する (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-find-a-single-descendant-using-the-descendants-method.md)|<xref:System.Xml.Linq.XContainer.Descendants%2A> 軸メソッドを使用して一意の名前を持つ単一の要素を検索する方法について説明します。|  
 |[方法: 複雑なフィルターを使用してクエリを記述する (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-write-queries-with-complex-filtering.md)|複雑なフィルターを使用してクエリを記述する方法について説明します。|  
 |[方法: 省略可能な要素をフィルター処理する (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-filter-on-an-optional-element.md)|不規則な形のツリーでノードを検索する方法について説明します。|  
 |[方法: 名前空間内のすべてのノードを検索する (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-find-all-nodes-in-a-namespace.md)|特定の名前空間内のすべてのノードを検索する方法について説明します。|  

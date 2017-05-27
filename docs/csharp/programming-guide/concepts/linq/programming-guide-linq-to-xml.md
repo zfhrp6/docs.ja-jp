@@ -19,10 +19,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
 ms.openlocfilehash: 5e1e95d92123b2874aace0c36005a8a07a6203fc
-ms.lasthandoff: 03/13/2017
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/24/2017
 
 ---
 # <a name="programming-guide-linq-to-xml-c"></a>プログラミング ガイド (LINQ to XML) (C#)
@@ -41,7 +42,7 @@ ms.lasthandoff: 03/13/2017
 |トピック|説明|  
 |-----------|-----------------|  
 |[LINQ to XML プログラミングの概要 (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-xml-programming-overview.md)|[!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)] クラスの概要と、最も重要な 3 つのクラス (<xref:System.Xml.Linq.XElement>、<xref:System.Xml.Linq.XAttribute>、<xref:System.Xml.Linq.XDocument>) に関する詳細情報について説明します。|  
-|[XML ツリーの作成 (C#)](../../../../csharp/programming-guide/concepts/linq/creating-xml-trees.md)|XML ツリーの作成に関する概念とタスク ベースの情報について説明します。 XML ツリーを作成するには、関数型構築を使用するか、文字列またはファイルから XML テキストを解析します。 <xref:System.Xml.XmlReader> を使用して XML ツリーを設定することもできます。|  
+|[XML ツリーの作成 (C#)](../../../../csharp/programming-guide/concepts/linq/creating-xml-trees.md)|XML ツリーの作成に関する概念とタスク ベースの情報について説明します。 XML ツリーを作成するには、関数型構築を使用するか、文字列またはファイルから XML テキストを解析します。 <xref:System.Xml.XmlReader> を使用してツリーを設定することもできます。|  
 |[XML 名前空間の使用 (C#)](../../../../csharp/programming-guide/concepts/linq/working-with-xml-namespaces.md)|名前空間を使用する XML ツリーの作成に関する詳細情報について説明します。|  
 |[XML ツリーのシリアル化 (C#)](../../../../csharp/programming-guide/concepts/linq/serializing-xml-trees.md)|XML ツリーをシリアル化する複数の方法について説明し、どの方法を使用するかについてのガイダンスを紹介します。|  
 |[LINQ to XML 軸 (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-xml-axes.md)|[!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)] 軸メソッドを列挙して説明します。[!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)] クエリを記述する場合は、あらかじめこれらの軸メソッドについて理解しておく必要があります。|  
