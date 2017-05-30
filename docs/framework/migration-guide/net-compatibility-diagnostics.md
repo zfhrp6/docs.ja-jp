@@ -200,7 +200,7 @@ ms.lasthandoff: 05/22/2017
 |スコープ|エッジ|  
 |バージョン|4.5|  
 |型|ランタイム|  
-|影響を受ける API|<xref:System.Xml.Linq.LoadOptions?displayProperty=fullName>|  
+|影響を受ける API|<xref:System.Xml.Linq.LoadOptions.SetLineInfo?displayProperty=fullName>|  
 |アナライザー|CD0019|  
   
 <a name="diagnostic20"></a>   
