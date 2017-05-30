@@ -16,17 +16,18 @@ caps.latest.revision: 19
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-translationtype: Human Translation
-ms.sourcegitcommit: c50b3e328998b65ec47efe6d7457b36116813c77
-ms.openlocfilehash: a8fd9da79e8b8e44d4f4f67c1bbba77b785c22be
-ms.lasthandoff: 04/08/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
+ms.openlocfilehash: 3d6aa14f94b4a1537b49cda17229cd073b5d8486
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/22/2017
 
 ---
 # <a name="managed-threading"></a>マネージ スレッド処理
 アプリケーションを開発する場合、対象のコンピューターがプロセッサがシングルまたはマルチのいずれの場合でも、アプリケーションにユーザーとの迅速な対話を提供する必要があります。これはアプリケーションがほかの処理の実行中であっても同じことです。 アプリケーションによるユーザーへの迅速な応答を維持すると同時に、ユーザー イベントの合間やその処理中にプロセッサを使用する最も強力な方法は、複数の実行スレッドを使用することです。 ここでは、スレッド処理の基本概念について、マネージ スレッド処理の概念と使用方法を中心に説明します。  
   
 > [!NOTE]
->  [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)] 以降では、<xref:System.Threading.Tasks.Parallel?displayProperty=fullName> クラス、<xref:System.Threading.Tasks.Task?displayProperty=fullName> クラス、[Parallel LINQ (PLINQ)](../../../docs/standard/parallel-programming/parallel-linq-plinq.md)、<xref:System.Collections.Concurrent?displayProperty=fullName> 名前空間の新しい同時実行コレクション クラス、およびスレッドではなくタスクの概念に基づく新しいプログラミング モデルによって、マルチスレッド プログラミングが大幅に簡略化されます。 詳細については、[並列プログラミング](../../../docs/standard/parallel-programming/index.md)に関するページをご覧ください。  
+>  [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)] 以降では、<xref:System.Threading.Tasks.Parallel?displayProperty=fullName> クラスおよび <xref:System.Threading.Tasks.Task?displayProperty=fullName> クラス、[Parallel LINQ (PLINQ)](../../../docs/standard/parallel-programming/parallel-linq-plinq.md)、<xref:System.Collections.Concurrent?displayProperty=fullName> 名前空間の新しい同時実行コレクション クラス、スレッドではなくタスクの概念をベースにした新しいプログラミング モデルにより、マルチスレッド プログラミングが大幅に簡略化されています。 詳細については、[並列プログラミング](../../../docs/standard/parallel-programming/index.md)に関するページをご覧ください。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
  [マネージ スレッド処理の基本](../../../docs/standard/threading/managed-threading-basics.md)  

@@ -33,16 +33,17 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 0b2d59f347df075e3f8c4f952b62e8ad7fa1643f
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
+ms.openlocfilehash: 59efea23743d126e9b1d5a842fc7655ad3350acd
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/22/2017
 
 ---
 # <a name="how-to-copy-a-directory-to-another-directory-in-visual-basic"></a>方法 : Visual Basic でディレクトリを別のディレクトリにコピーする
-<xref:Microsoft.VisualBasic.FileIO.FileSystem.CopyDirectory%2A> メソッドを使用すると、ディレクトリを別のディレクトリにコピーできます。 このメソッドでは、ディレクトリ自体とその内容がコピーされます。 コピー先のディレクトリが存在しない場合は作成されます。 コピー先の場所に同じ名前のディレクトリが存在し、`overwrite` が `False` に設定されている場合は、2 つのディレクトリの内容がマージされます。 操作中に、ディレクトリに新しい名前を指定できます。  
+ディレクトリを別のディレクトリにコピーするには、<xref:Microsoft.VisualBasic.FileIO.FileSystem.CopyDirectory%2A> メソッドを使用します。 このメソッドでは、ディレクトリ自体とその内容がコピーされます。 コピー先のディレクトリが存在しない場合は作成されます。 コピー先の場所に同じ名前のディレクトリが存在し、`overwrite` が `False` に設定されている場合は、2 つのディレクトリの内容がマージされます。 操作中に、ディレクトリに新しい名前を指定できます。  
   
- ディレクトリ内でファイルをコピーするとき、特定のファイルが原因で例外がスローされることがあります。たとえば、`overwrite` が `False` に設定されていて、マージ中に、既にファイルが存在する場合などです。 こうしてスローされた例外は、単一の例外に統合され、その `Data` プロパティにエントリーが保持されます。それらのエントリーでは、ファイルまたはディレクトリ パスがキーとなり、固有の例外メッセージがそれに対応した値に格納されます。  
+ ディレクトリ内でファイルをコピーするとき、特定のファイルが原因で例外がスローされることがあります。たとえば、`overwrite` が `False` に設定されていて、マージ中に、既にファイルが存在する場合などです。 こうしてスローされた例外は、単一の例外に統合され、その `Data` プロパティにエントリが保持されます。それらのエントリでは、ファイルまたはディレクトリ パスがキーとなり、固有の例外メッセージがそれに対応した値に格納されます。  
   
 ### <a name="to-copy-a-directory-to-another-directory"></a>ディレクトリを別のディレクトリにコピーするには  
   
@@ -55,35 +56,35 @@ ms.lasthandoff: 03/13/2017
 ## <a name="robust-programming"></a>信頼性の高いプログラミング  
  次の条件を満たす場合は、例外が発生する可能性があります。  
   
--   ディレクトリに指定された新しい名前にコロン (:) またはスラッシュ (\ または/) が含まれている (<xref:System.ArgumentException>)。  
+-   ディレクトリに指定された新しい名前にコロン (:) またはスラッシュ (\ または /) が含まれている (<xref:System.ArgumentException>)。  
   
--   パスが無効である。これには、1) 長さが 0 の文字列である、2) 空白だけが含まれている、3) 無効な文字が含まれている、4) デバイス パスである (先頭が \\\\.\\)、のいずれかの理由が考えられます (<xref:System.ArgumentException>)。  
+-   次のいずれかの理由で、パスが正しくない。長さが 0 の文字列である、空白だけが含まれている、使用できない文字が含まれている、デバイス パスである (先頭が \\\\.\\) (<xref:System.ArgumentException>)。  
   
--   パスが `Nothing` であるため、有効でない (<xref:System.ArgumentNullException>)。  
+-   パスが `Nothing` であるため、有効でない (<xref:System.ArgumentNullException>)  
   
 -   `destinationDirectoryName` が `Nothing` または空の文字列である (<xref:System.ArgumentNullException>)。  
   
--   コピー元のディレクトリが存在しない (<xref:System.IO.DirectoryNotFoundException>)。  
+-   ソース ディレクトリが存在しない (<xref:System.IO.DirectoryNotFoundException>)。  
   
--   コピー元のディレクトリがルート ディレクトリである (<xref:System.IO.IOException>)。  
+-   ソース ディレクトリがルート ディレクトリである (<xref:System.IO.IOException>)。  
   
 -   パスを組み合わせると、既存のファイルと同じになる (<xref:System.IO.IOException>)。  
   
 -   コピー元のパスとコピー先のパスが同じである (<xref:System.IO.IOException>)。  
   
--   `ShowUI` が `UIOption.AllDialogs` に設定されており、ユーザーが操作をキャンセルしたか、またはディレクトリ内の 1 つ以上のファイルをコピーできなかった (<xref:System.OperationCanceledException>)。  
+-   `ShowUI` が `UIOption.AllDialogs` に設定されており、ユーザーが操作をキャンセルした、またはディレクトリ内の 1 つ以上のファイルをコピーできなかった (<xref:System.OperationCanceledException>)。  
   
 -   操作が循環している (<xref:System.InvalidOperationException>)。  
   
 -   パスにコロン (:) が含まれている (<xref:System.NotSupportedException>)。  
   
--   パスがシステムで定義された最大長を超えている (<xref:System.IO.PathTooLongException>)。  
+-   パスがシステムで定義されている最大長を超えている (<xref:System.IO.PathTooLongException>)。  
   
--   パス内のファイル名またはフォルダー名にコロン (:) が含まれているか、または形式が無効である (<xref:System.NotSupportedException>)。  
+-   パス内のファイル名またはフォルダー名にコロン (:) が含まれている、または形式が無効である (<xref:System.NotSupportedException>)。  
   
--   ユーザーがパスを表示するために必要なアクセス許可がない (<xref:System.Security.SecurityException>)。  
+-   ユーザーがパスを参照するのに必要なアクセス許可がない (<xref:System.Security.SecurityException>)  
   
--   コピー先ファイルは存在するが、アクセスできない (<xref:System.UnauthorizedAccessException>)。  
+-   コピー先のファイルは存在するが、アクセスできない (<xref:System.UnauthorizedAccessException>)。  
   
 ## <a name="see-also"></a>関連項目  
  <xref:Microsoft.VisualBasic.FileIO.FileSystem.CopyDirectory%2A>   

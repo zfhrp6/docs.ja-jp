@@ -35,10 +35,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: a8580acf6fd23f9de264d3fed47d268898d498a6
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
+ms.openlocfilehash: 06a97ffe88fdae344b07d04b6ce560d4c163d431
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/22/2017
 
 ---
 # <a name="storing-data-to-and-reading-from-the-clipboard-visual-basic"></a>クリップボードのデータの格納と読み取り (Visual Basic)
@@ -60,7 +61,7 @@ ms.lasthandoff: 03/13/2017
  クリップボード内のアイテムは、アプリケーションの終了後も保持されます。  
   
 ## <a name="determining-the-type-of-file-stored-in-the-clipboard"></a>クリップボードに格納されているファイルの種類の確認  
- クリップボードには、テキスト、オーディオ ファイル、イメージなど、さまざまな形式のデータを格納できます。 クリップボード内のファイルの種類を確認するには、<xref:Microsoft.VisualBasic.MyServices.ClipboardProxy.ContainsAudio%2A>、<xref:Microsoft.VisualBasic.MyServices.ClipboardProxy.ContainsFileDropList%2A>、<xref:Microsoft.VisualBasic.MyServices.ClipboardProxy.ContainsImage%2A>、<xref:Microsoft.VisualBasic.MyServices.ClipboardProxy.ContainsText%2A> などのメソッドを使用します。 確認対象にカスタム書式が含まれる場合は、<xref:Microsoft.VisualBasic.MyServices.ClipboardProxy.ContainsData%2A> メソッドを使用できます。  
+ クリップボードには、テキスト、オーディオ ファイル、イメージなど、さまざまな形式のデータを格納できます。 クリップボード内のファイルの種類を確認するには、<xref:Microsoft.VisualBasic.MyServices.ClipboardProxy.ContainsAudio%2A>、<xref:Microsoft.VisualBasic.MyServices.ClipboardProxy.ContainsFileDropList%2A>、<xref:Microsoft.VisualBasic.MyServices.ClipboardProxy.ContainsImage%2A>、<xref:Microsoft.VisualBasic.MyServices.ClipboardProxy.ContainsText%2A> などのメソッドを使用します。 確認対象にカスタム形式が含まれる場合は、<xref:Microsoft.VisualBasic.MyServices.ClipboardProxy.ContainsData%2A> メソッドを使用できます。  
   
  `ContainsImage` 関数を使用すると、クリップボードに含まれるデータがイメージかどうかを確認できます。 次のコードでは、データがイメージかどうかを確認し、それに応じて報告します。  
   
@@ -74,7 +75,7 @@ ms.lasthandoff: 03/13/2017
  [!code-vb[VbVbcnMyClipboard#3](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/VisualBasic/storing-data-to-and-reading-from-the-clipboard_4.vb)]  
   
 ## <a name="writing-to-the-clipboard"></a>クリップボードへの書き込み  
- <xref:Microsoft.VisualBasic.MyServices.ClipboardProxy.SetText%2A> メソッドを使用すると、テキストをクリップボードに書き込むことができます。 次のコードでは、"This is a test string" という文字列をクリップボードに書き込みます。  
+ <xref:Microsoft.VisualBasic.MyServices.ClipboardProxy.SetText%2A> メソッドを使用して、クリップボードにテキストを書き込みます。 次のコードでは、"This is a test string" という文字列をクリップボードに書き込みます。  
   
  [!code-vb[VbVbcnMyClipboard#1](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/VisualBasic/storing-data-to-and-reading-from-the-clipboard_5.vb)]  
   
@@ -82,11 +83,11 @@ ms.lasthandoff: 03/13/2017
   
  [!code-vb[VbVbcnMyClipboard#2](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/VisualBasic/storing-data-to-and-reading-from-the-clipboard_6.vb)]  
   
- <xref:Microsoft.VisualBasic.MyServices.ClipboardProxy.SetData%2A> メソッドを使用すると、データをクリップボードに書き込むことができます。 この例では、`DataObject``dataChunk` をカスタム書式 `specialFormat` でクリップボードに書き込みます。  
+ <xref:Microsoft.VisualBasic.MyServices.ClipboardProxy.SetData%2A> メソッドを使用して、クリップボードにデータを書き込みます。 この例では、`DataObject``dataChunk` をカスタム書式 `specialFormat` でクリップボードに書き込みます。  
   
  [!code-vb[VbVbcnMyClipboard#7](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/VisualBasic/storing-data-to-and-reading-from-the-clipboard_7.vb)]  
   
- <xref:Microsoft.VisualBasic.MyServices.ClipboardProxy.SetAudio%2A> メソッドを使用すると、オーディオ データをクリップボードに書き込むことができます。 この例では、バイト配列 `musicReader` を作成し、`cool.wav` ファイルを読み込んでから、それをクリップボードに書き込みます。  
+ <xref:Microsoft.VisualBasic.MyServices.ClipboardProxy.SetAudio%2A> メソッドを使用して、クリップボードにオーディオ データを書き込みます。 この例では、バイト配列 `musicReader` を作成し、`cool.wav` ファイルを読み込んでから、それをクリップボードに書き込みます。  
   
  [!code-vb[VbResourceTasks#5](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/VisualBasic/storing-data-to-and-reading-from-the-clipboard_8.vb)]  
   

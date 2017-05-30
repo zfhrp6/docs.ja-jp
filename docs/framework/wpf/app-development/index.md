@@ -17,10 +17,11 @@ caps.latest.revision: 21
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-translationtype: Human Translation
-ms.sourcegitcommit: c50b3e328998b65ec47efe6d7457b36116813c77
-ms.openlocfilehash: aa6ebe6c4ddc9b5cdec267cb2fc114440c189f0c
-ms.lasthandoff: 04/08/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
+ms.openlocfilehash: 09b1e6559b7edba2ee7dced1df4f6f6414f87aa9
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/22/2017
 
 ---
 # <a name="application-development"></a>アプリケーション開発
@@ -61,7 +62,7 @@ ms.lasthandoff: 04/08/2017
   
 -   [!INCLUDE[TLA#tla_xbap#plural](../../../../includes/tlasharptla-xbapsharpplural-md.md)] や、ナビゲーション ウィンドウとフレームを持つスタンドアロン アプリケーションで、ナビゲーションを追跡する。  
   
- これらの機能は、<xref:System.Windows.Application> クラスによって実装されます。このクラスをアプリケーションに追加するには、*アプリケーション定義* を使用します。  
+ これらの機能は <xref:System.Windows.Application> クラスで実装します。このクラスをアプリケーションに追加するには、*アプリケーション定義*を使用します。  
   
  詳細については、「[アプリケーション管理の概要](../../../../docs/framework/wpf/app-development/application-management-overview.md)」を参照してください。  
   
@@ -85,17 +86,17 @@ ms.lasthandoff: 04/08/2017
   
  詳細については、「[WPF ウィンドウの概要](../../../../docs/framework/wpf/app-development/wpf-windows-overview.md)」を参照してください。  
   
- <xref:System.Windows.Window> は、ダイアログ ボックスと呼ばれる特別な種類のウィンドウを作成できます。 モーダル ダイアログ ボックスとモードレス ダイアログ ボックスの両方の種類のダイアログ ボックスを作成できます。  
+ <xref:System.Windows.Window> では、ダイアログ ボックスと呼ばれる特別な種類のウィンドウを作成できます。 モーダル ダイアログ ボックスとモードレス ダイアログ ボックスの両方の種類のダイアログ ボックスを作成できます。  
   
- 使いやすさ、再利用性の利点、およびアプリケーション全体の操作性の統一のために、[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] では、[!INCLUDE[TLA2#tla_mswin](../../../../includes/tla2sharptla-mswin-md.md)] のコモン ダイアログ ボックスから、<xref:Microsoft.Win32.OpenFileDialog>、<xref:Microsoft.Win32.SaveFileDialog>、および <xref:System.Windows.Controls.PrintDialog> の 3 つを公開しています。  
+ 使いやすさと、アプリケーション間での再利用性およびユーザー エクスペリエンスの整合性というメリットを実現するために、[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] では、<xref:Microsoft.Win32.OpenFileDialog>、<xref:Microsoft.Win32.SaveFileDialog>、<xref:System.Windows.Controls.PrintDialog> という 3 つの一般的な [!INCLUDE[TLA2#tla_mswin](../../../../includes/tla2sharptla-mswin-md.md)] ダイアログ ボックスを公開しています。  
   
- メッセージ ボックスは、重要な情報をテキストでユーザーに表示し、単純な [はい]、[いいえ]、[OK]、[キャンセル] の応答を求めるために使用する特別なダイアログ ボックスです。 メッセージ ボックスを作成して表示するには、<xref:System.Windows.MessageBox> クラスを使用します。  
+ メッセージ ボックスは、重要な情報をテキストでユーザーに表示し、単純な [はい]、[いいえ]、[OK]、[キャンセル] の応答を求めるために使用する特別なダイアログ ボックスです。 メッセージ ボックスを作成および表示するには <xref:System.Windows.MessageBox> クラスを使用します。  
   
  詳細については、「[ダイアログ ボックスの概要](../../../../docs/framework/wpf/app-development/dialog-boxes-overview.md)」を参照してください。  
   
 <a name="Navigation"></a>   
 ## <a name="navigation"></a>ナビゲーション  
- [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] は、ページ (<xref:System.Windows.Controls.Page>) とハイパーリンク (<xref:System.Windows.Documents.Hyperlink>) を使用する Web スタイルのナビゲーションをサポートしています。 ナビゲーションは、次のようなさまざまな方法で実装できます。  
+ [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] では、ページ (<xref:System.Windows.Controls.Page>) およびハイパーリンク (<xref:System.Windows.Documents.Hyperlink>) を使用した Web スタイルのナビゲーションがサポートされます。 ナビゲーションは、次のようなさまざまな方法で実装できます。  
   
 -   Web ブラウザーでホストされるスタンドアロンのページ。  
   
@@ -107,7 +108,7 @@ ms.lasthandoff: 04/08/2017
   
  ナビゲーションに役立つように、次の機能が [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] に実装されます。  
   
--   アプリケーション内ナビゲーションをサポートするために<xref:System.Windows.Controls.Frame>、<xref:System.Windows.Navigation.NavigationWindow>、および [!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)] で使用される、ナビゲーション要求書利用の共有ナビゲーション エンジンである <xref:System.Windows.Navigation.NavigationService>。  
+-   ナビゲーション要求を処理する共有ナビゲーション エンジンである <xref:System.Windows.Navigation.NavigationService>。このエンジンは <xref:System.Windows.Controls.Frame>、<xref:System.Windows.Navigation.NavigationWindow>、[!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)] で使用され、アプリケーション内ナビゲーションをサポートします。  
   
 -   ナビゲーションを開始するためのナビゲーション メソッド。  
   
@@ -117,10 +118,10 @@ ms.lasthandoff: 04/08/2017
   
  詳細については、「[ナビゲーションの概要](../../../../docs/framework/wpf/app-development/navigation-overview.md)」を参照してください。  
   
- [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] は、構造化ナビゲーションと呼ばれる特別な種類のナビゲーションもサポートしています。 構造化ナビゲーションを使用すると、呼び出し元関数との一貫性が保たれた、構造化されて予測可能な形式でデータを返す 1 つ以上のページを呼び出す事ができます。 この機能は <xref:System.Windows.Navigation.PageFunction%601> クラスに依存します。このクラスの詳細については、「[構造化ナビゲーションの概要](../../../../docs/framework/wpf/app-development/structured-navigation-overview.md)」を参照してください。 また、<xref:System.Windows.Navigation.PageFunction%601> は、複雑なナビゲーション トポロジの作成を簡略化するためにも役立ちます。詳細については、「[ナビゲーション トポロジの概要](../../../../docs/framework/wpf/app-development/navigation-topologies-overview.md)」を参照してください。  
+ [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] は、構造化ナビゲーションと呼ばれる特別な種類のナビゲーションもサポートしています。 構造化ナビゲーションを使用すると、呼び出し元関数との一貫性が保たれた、構造化されて予測可能な形式でデータを返す 1 つ以上のページを呼び出す事ができます。 この機能は <xref:System.Windows.Navigation.PageFunction%601> クラスに依存します。このクラスの詳細については、「[構造化ナビゲーションの概要](../../../../docs/framework/wpf/app-development/structured-navigation-overview.md)」を参照してください。 また、<xref:System.Windows.Navigation.PageFunction%601> を使用すると、複雑なナビゲーション トポロジを簡単に作成することもできます。詳細については、「[ナビゲーション トポロジの概要](../../../../docs/framework/wpf/app-development/navigation-topologies-overview.md)」を参照してください。  
   
 <a name="Hosting"></a>   
-## <a name="hosting"></a>ホスティング  
+## <a name="hosting"></a>ホスト  
  [!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)] は、[!INCLUDE[TLA#tla_ie](../../../../includes/tlasharptla-ie-md.md)] または Firefox でホストできます。 ホストのモデルによって考慮事項や制約が異なります。詳細については、「[ホスティング](../../../../docs/framework/wpf/app-development/hosting-wpf-applications.md)」を参照してください。  
   
 <a name="Build_and_Deploy"></a>   
@@ -135,7 +136,7 @@ ms.lasthandoff: 04/08/2017
 |タイトル|説明|  
 |-----------|-----------------|  
 |[アプリケーション管理の概要](../../../../docs/framework/wpf/app-development/application-management-overview.md)|アプリケーションの有効期間、ウィンドウ、アプリケーション リソース、ナビゲーションの管理など、<xref:System.Windows.Application> クラスの概要について説明します。|  
-|[WPF のウィンドウ](../../../../docs/framework/wpf/app-development/windows-in-wpf-applications.md)|<xref:System.Windows.Window>クラスおよびダイアログ ボックスの使い方など、アプリケーション内のウィンドウ管理の詳細について説明します。|  
+|[WPF のウィンドウ](../../../../docs/framework/wpf/app-development/windows-in-wpf-applications.md)|<xref:System.Windows.Window> クラスおよびダイアログ ボックスの使い方など、アプリケーション内のウィンドウ管理の詳細について説明します。|  
 |[ナビゲーションの概要](../../../../docs/framework/wpf/app-development/navigation-overview.md)|アプリケーション内のページ間でのナビゲーション管理の概要について説明します。|  
 |[ホスティング](../../../../docs/framework/wpf/app-development/hosting-wpf-applications.md)|
           [!INCLUDE[TLA#tla_xbap#plural](../../../../includes/tlasharptla-xbapsharpplural-md.md)] の概要を提供します。|  

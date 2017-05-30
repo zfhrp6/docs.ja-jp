@@ -39,10 +39,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
 ms.openlocfilehash: 83569fa264ba3ed6e271281885940a70a5354840
-ms.lasthandoff: 03/13/2017
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/22/2017
 
 ---
 # <a name="filealign-c-compiler-options"></a>/filealign (C# コンパイラ オプション)
@@ -71,11 +72,11 @@ ms.lasthandoff: 03/13/2017
   
 2.  **[ビルド]** プロパティ ページをクリックします。  
   
-3.  [詳細設定 **** ] ボタンをクリックします。  
+3.  **[詳細設定]** ボタンをクリックします。  
   
 4.  **[ファイルの配置]** プロパティを変更します。  
   
- このコンパイラ オプションをプログラムで設定する方法については、「<xref:VSLangProj80.CSharpProjectConfigurationProperties3.FileAlignment%2A>」を参照してください。  
+ このコンパイラ オプションをプログラムで設定する方法については、「<xref:VSLangProj80.CSharpProjectConfigurationProperties3.FileAlignment%2A>」をご覧ください。  
   
 ## <a name="see-also"></a>関連項目  
  [C# コンパイラのオプション](../../../csharp/language-reference/compiler-options/index.md)   

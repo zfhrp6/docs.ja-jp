@@ -33,10 +33,10 @@ ms.translationtype: Human Translation
 ms.sourcegitcommit: 0832ee88bba58579eea001335be9cb8c2130834d
 ms.openlocfilehash: 3fc7bb7cb54cb83fbb1c008283302c816f4d6fa4
 ms.contentlocale: ja-jp
-ms.lasthandoff: 03/28/2017
+ms.lasthandoff: 05/22/2017
 
 ---
-# <a name="getting-started-with-c"></a>C の概要#
+# <a name="getting-started-with-c"></a>C# の概要
 以下のトピックでは、C# を使用したアプリケーション開発を始めるのに役立つ情報を紹介します。 また、Visual Studio に組み込まれているさまざまな新機能や、C# 言語についても説明します。  
   
 ## <a name="in-this-section"></a>このセクションの内容  

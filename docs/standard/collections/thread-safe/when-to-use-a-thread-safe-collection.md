@@ -15,10 +15,11 @@ caps.latest.revision: 9
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
 ms.openlocfilehash: 87898a4a6ba3d3ef4c53fd1c6b8f94ff353f10e4
-ms.lasthandoff: 04/18/2017
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/22/2017
 
 ---
 # <a name="when-to-use-a-thread-safe-collection"></a>スレッド セーフなコレクションを使用する状況
@@ -41,30 +42,30 @@ ms.lasthandoff: 04/18/2017
  コンピューターのコア数に比例したパフォーマンスの向上。 スケーリングするアルゴリズムのパフォーマンスは、コア数が 2 の場合よりも 8 の場合の方が向上します。  
   
 ## <a name="concurrentqueuet-vs-queuet"></a>ConcurrentQueue(T) 対 Queue(T)  
- 純粋プロデューサー/コンシューマー シナリオでは、各要素の処理時間がとても短い (命令が少ない) 場合、<xref:System.Collections.Concurrent.ConcurrentQueue%601?displayProperty=fullName> は、外部ロックを使用する <xref:System.Collections.Generic.Queue%601?displayProperty=fullName> よりも若干優れたパフォーマンスを提供します。 このシナリオでは、キューへの配置とキューからの取り出しをそれぞれ専用のスレッドが実行している場合に、<xref:System.Collections.Concurrent.ConcurrentQueue%601> のパフォーマンスが最大限に引き出されます。 この規則を適用しない場合でも、<xref:System.Collections.Generic.Queue%601> は複数コアを含むコンピューターの <xref:System.Collections.Concurrent.ConcurrentQueue%601> よりもわずかに優れたパフォーマンスを提供します。  
+ 純粋プロデューサー/コンシューマー シナリオで、各要素の処理時間がとても短い (命令が少ない) 場合には、外部ロックを使用する <xref:System.Collections.Concurrent.ConcurrentQueue%601?displayProperty=fullName> よりも <xref:System.Collections.Generic.Queue%601?displayProperty=fullName> の方が若干優れたパフォーマンスを得られます。 このシナリオでは、キューへの配置とキューからの取り出しをそれぞれ専用のスレッドが実行している場合に、<xref:System.Collections.Concurrent.ConcurrentQueue%601> のパフォーマンスが最大限に引き出されます。 この規則を強制していない場合、<xref:System.Collections.Generic.Queue%601> は、複数のコアを持つコンピューター上の <xref:System.Collections.Concurrent.ConcurrentQueue%601> よりも若干向上する場合があります。  
   
  処理時間が 500 FLOPS (浮動小数点演算) 以上の場合、2 つのスレッドを使用する規則は <xref:System.Collections.Concurrent.ConcurrentQueue%601> に適用されません。この型でとても優れたスケーラビリティが実現します。 <xref:System.Collections.Generic.Queue%601> は、このシナリオではスケーラビリティの点で劣ります。  
   
- 混合プロデューサー/コンシューマー シナリオでは、処理時間がとても短い場合、外部ロックを使用する <xref:System.Collections.Generic.Queue%601> の方が <xref:System.Collections.Concurrent.ConcurrentQueue%601> よりもスケーラビリティに優れています。 ただし、処理時間が約 500 FLOPS 以上の場合、<xref:System.Collections.Concurrent.ConcurrentQueue%601> の方がスケーラビリティに優れています。  
+ 混合プロデューサー/コンシューマー シナリオでは、処理時間がとても短い場合、外部ロックを使用する <xref:System.Collections.Generic.Queue%601> のスケーラビリティは <xref:System.Collections.Concurrent.ConcurrentQueue%601> よりも優れています。 ただし、処理時間が約 500 FLOPS 以上の場合、<xref:System.Collections.Concurrent.ConcurrentQueue%601> の方がスケーラビリティに優れます。  
   
 ## <a name="concurrentstack-vs-stack"></a>ConcurrentStack 対 Stack  
- 純粋プロデューサー/コンシューマー シナリオでは、処理時間が非常に短い場合、プッシュとポップをそれぞれ専用のスレッドが実行しているときは、<xref:System.Collections.Concurrent.ConcurrentStack%601?displayProperty=fullName> および外部ロックを使用する <xref:System.Collections.Generic.Stack%601?displayProperty=fullName> のパフォーマンスはほぼ同じであると考えられます。 ただし、スレッドが増えるほど競合の数が増えるため、両方の型で速度が落ちていき、<xref:System.Collections.Concurrent.ConcurrentStack%601> よりも <xref:System.Collections.Generic.Stack%601> の方がパフォーマンスが良くなります。 処理時間が約 500 FLOPS 以上の場合は、両方の型がほぼ同じスケーラビリティを示します。  
+ 純粋プロデューサー/コンシューマー シナリオで処理時間が非常に短い場合には、プッシュとポップをそれぞれ専用のスレッドで実行しているのであれば、<xref:System.Collections.Concurrent.ConcurrentStack%601?displayProperty=fullName> と外部ロックを使用する <xref:System.Collections.Generic.Stack%601?displayProperty=fullName> のパフォーマンスはほぼ同じになると考えられます。 ただし、スレッド数が増えると、競合が増えることで両方の型のパフォーマンスが低下し、<xref:System.Collections.Generic.Stack%601> の方が <xref:System.Collections.Concurrent.ConcurrentStack%601> よりも優れたパフォーマンスを示すことがあります。 処理時間が約 500 FLOPS 以上の場合は、両方の型がほぼ同じスケーラビリティを示します。  
   
  混合プロデューサー/コンシューマー シナリオでは、ワークロードの大小にかかわらず、<xref:System.Collections.Concurrent.ConcurrentStack%601> の方が高速です。  
   
- <xref:System.Collections.Concurrent.ConcurrentStack%601.PushRange%2A> および <xref:System.Collections.Concurrent.ConcurrentStack%601.TryPopRange%2A> を使用することで、アクセス時間が大幅に短縮する場合があります。  
+ <xref:System.Collections.Concurrent.ConcurrentStack%601.PushRange%2A> と <xref:System.Collections.Concurrent.ConcurrentStack%601.TryPopRange%2A> を使用すると、アクセス時間が大幅に短縮される可能性があります。  
   
 ## <a name="concurrentdictionary-vs-dictionary"></a>ConcurrentDictionary 対 Dictionary  
- 一般に、複数のスレッドから同時にキーまたは値を追加および更新しているシナリオでは、<xref:System.Collections.Concurrent.ConcurrentDictionary%602?displayProperty=fullName> を使用します。 更新を頻繁に行い、読み取りは比較的少ないシナリオでは、通常、<xref:System.Collections.Concurrent.ConcurrentDictionary%602> には大きな利点はありません。 読み取りも更新も多いシナリオでは、通常、コンピューターに任意の数のコアを備えられる場合は <xref:System.Collections.Concurrent.ConcurrentDictionary%602> の方が大幅に高速です。  
+ 一般に、複数のスレッドから同時にキーまたは値を追加および更新するシナリオであれば、<xref:System.Collections.Concurrent.ConcurrentDictionary%602?displayProperty=fullName> を使用します。 更新を頻繁に行い、読み取りは比較的少ないシナリオでは、通常、<xref:System.Collections.Concurrent.ConcurrentDictionary%602> には大きな利点はありません。 読み取りも更新も多いシナリオでは、通常、コンピューターに任意の数のコアを備えられる場合は <xref:System.Collections.Concurrent.ConcurrentDictionary%602> の方が大幅に高速です。  
   
  更新を頻繁に行うシナリオでは、<xref:System.Collections.Concurrent.ConcurrentDictionary%602> で同時実行の程度を上げて、コンピューターのコア数が多いほどパフォーマンスが向上するかどうかを計測できます。 同時実行レベルを変更する場合、グローバル操作はできるだけ避けてください。  
   
- キーまたは値の読み取りのみを行う場合、ディクショナリがスレッドによって変更されないときは同期が不要なため、<xref:System.Collections.Generic.Dictionary%602> の方が高速です。  
+ キーまたは値の読み取りのみを行う場合、ディクショナリがスレッドによって変更されないのであれば同期は不要なため、<xref:System.Collections.Generic.Dictionary%602> の方が高速です。  
   
 ## <a name="concurrentbag"></a>ConcurrentBag  
  純粋プロデューサー/コンシューマー シナリオでは、<xref:System.Collections.Concurrent.ConcurrentBag%601?displayProperty=fullName> は、その他の同時実行コレクション型よりもパフォーマンスの点で劣ると考えられます。  
   
- 混合プロデューサー/コンシューマー シナリオでは、通常、ワークロードの大小にかかわらず、<xref:System.Collections.Concurrent.ConcurrentBag%601> は他の同時実行コレクション型よりもはるかに高速でスケーラブルです。  
+ 混合プロデューサー/コンシューマー シナリオでは、通常、ワークロードの大小にかかわらず、<xref:System.Collections.Concurrent.ConcurrentBag%601> は他の同時実行コレクション型よりもはるかに高速でスケーラビリティに優れます。  
   
 ## <a name="blockingcollection"></a>BlockingCollection  
  境界ブロッキング セマンティクスが必要な場合は、<xref:System.Collections.Concurrent.BlockingCollection%601?displayProperty=fullName> の方がカスタム実装よりもパフォーマンスの点で優れると考えられます。 この型では、高度なキャンセル、列挙、および例外処理もサポートされます。  

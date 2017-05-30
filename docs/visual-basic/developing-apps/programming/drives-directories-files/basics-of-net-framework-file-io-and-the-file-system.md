@@ -36,16 +36,17 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 9623d1c3076d622d69a0f7c4e711274f6e244023
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
+ms.openlocfilehash: f471bac04a853e5876b9da52b7b858e1e1766e28
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/22/2017
 
 ---
 # <a name="basics-of-net-framework-file-io-and-the-file-system-visual-basic"></a>.NET Framework のファイル I/O とファイル システムの基礎 (Visual Basic)
 <xref:System.IO> 名前空間のクラスは、ドライブ、ファイル、ディレクトリの操作に使用されます。  
   
- <xref:System.IO> 名前空間には、<xref:System.IO.File> クラスと <xref:System.IO.Directory> クラスが含まれています。これらのクラスを使用すると、[!INCLUDE[dnprdnshort](../../../../csharp/getting-started/includes/dnprdnshort_md.md)] でファイルとディレクトリを操作できます。 これらのオブジェクトのメソッドは静的メンバーまたは共有メンバーなので、あらかじめクラスのインスタンスを作成しなくてもメンバーを直接使用できます。 これらのクラスに関連するクラスとして、<xref:System.IO.FileInfo> クラスと <xref:System.IO.DirectoryInfo> クラスがあります。`My` 機能を使用しているユーザーには使い慣れたクラスです。 これらのクラスを使用するには、名前を完全修飾するか、または、関係するコードの先頭に `Imports` ステートメントを記述して、適切な名前空間をインポートする必要があります。 詳細については、「[Imports ステートメント (.NET 名前空間および型)](../../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md)」を参照してください。  
+ <xref:System.IO> 名前空間には <xref:System.IO.File> クラスと <xref:System.IO.Directory> クラスが含まれています。これらのクラスを使用すると、[!INCLUDE[dnprdnshort](../../../../csharp/getting-started/includes/dnprdnshort_md.md)] でファイルとディレクトリを操作できます。 これらのオブジェクトのメソッドは静的メンバーまたは共有メンバーなので、あらかじめクラスのインスタンスを作成しなくてもメンバーを直接使用できます。 これらのクラスに関連するクラスとして、<xref:System.IO.FileInfo> クラスと <xref:System.IO.DirectoryInfo> クラスがあります。`My` 機能を使用しているユーザーには使い慣れたクラスです。 これらのクラスを使用するには、名前を完全修飾するか、または、関係するコードの先頭に `Imports` ステートメントを記述して、適切な名前空間をインポートする必要があります。 詳細については、「[Imports ステートメント (.NET 名前空間および型)](../../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md)」を参照してください。  
   
 > [!NOTE]
 >  このセクションのそのほかのトピックでは `My.Computer.FileSystem` のクラスではなく、 `System.IO` オブジェクトを使用して、ドライブ、ファイル、およびディレクトリを操作します。 `My.Computer.FileSystem` オブジェクトは [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] のプログラムで使用する主な目的としています。 `System.IO` のクラスは [!INCLUDE[dnprdnshort](../../../../csharp/getting-started/includes/dnprdnshort_md.md)] をサポートする [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] などの言語で使用するためのものです。  
@@ -69,7 +70,7 @@ ms.lasthandoff: 03/13/2017
 ## <a name="types-of-streams"></a>ストリームの種類  
  [!INCLUDE[dnprdnshort](../../../../csharp/getting-started/includes/dnprdnshort_md.md)] では、ストリームは <xref:System.IO.Stream> クラスで表されます。これは、その他のすべてのストリームのための抽象クラスです。 <xref:System.IO.Stream> クラスのインスタンスを直接作成することはできません。これを実装するいずれかのクラスを使用する必要があります。  
   
- ストリームにはさまざまな種類がありますが、ファイルの入出力 (I/O) を処理するという目的のために最も重要なのは、ファイルに対する読み取りと書き込みを行う <xref:System.IO.FileStream> クラスと、分離ストレージでファイルやディレクトリを作成する <xref:System.IO.IsolatedStorage.IsolatedStorageFileStream> クラスです。 この他、ファイル I/O を処理する場合、以下のようなストリームを使用できます。  
+ ストリームにはさまざまな種類がありますが、ファイルの入出力 (I/O) を処理するという目的のために最も重要なのは、ファイルに対する読み取りと書き込みを実現する <xref:System.IO.FileStream> クラスと、分離ストレージに対するファイルやディレクトリの作成を実現する <xref:System.IO.IsolatedStorage.IsolatedStorageFileStream> クラスです。 この他、ファイル I/O を処理する場合、以下のようなストリームを使用できます。  
   
 -   <xref:System.IO.BufferedStream>  
   
@@ -77,7 +78,7 @@ ms.lasthandoff: 03/13/2017
   
 -   <xref:System.IO.MemoryStream>  
   
--   <xref:System.Net.Sockets.NetworkStream>.  
+-   <xref:System.Net.Sockets.NetworkStream>。  
   
  次の表は、ストリームで一般的に実行するタスクの一覧です。  
   
@@ -92,9 +93,9 @@ ms.lasthandoff: 03/13/2017
 |データの復号化|[データの復号化](https://msdn.microsoft.com/library/te15te69.aspx)|  
   
 ## <a name="file-access-and-attributes"></a>ファイル アクセスと属性  
- ファイルの作成、オープン、共有の方法は、<xref:System.IO.FileAccess>、<xref:System.IO.FileMode>、<xref:System.IO.FileShare> の各列挙型で制御できます。これらの列挙型には、<xref:System.IO.FileStream> クラスのコンストラクターで使用するフラグが含まれています。 たとえば、<xref:System.IO.FileStream> を開くかまたは新規作成するときに、ファイルを追加書き込み用に開くかどうか、指定のファイルが存在しない場合にファイルを新規作成するかどうか、ファイルを上書きするかどうかなどを、<xref:System.IO.FileMode> 列挙型で指定できます。  
+ ファイルの作成、オープン、および共有の方法は、<xref:System.IO.FileAccess>、<xref:System.IO.FileMode>、および <xref:System.IO.FileShare> の各列挙体で制御できます。これらの列挙体には、<xref:System.IO.FileStream> クラスのコンストラクターで使用するフラグが含まれています。 たとえば、<xref:System.IO.FileStream> を開くかまたは新規作成するときに、ファイルを追加書き込み用に開くかどうか、指定のファイルが存在しない場合にファイルを新規作成するかどうか、ファイルを上書きするかどうか、などを <xref:System.IO.FileMode> 列挙体で指定できます。  
   
- <xref:System.IO.FileAttributes> 列挙型を使用すると、ファイル固有の情報を収集できます。 <xref:System.IO.FileAttributes> 列挙型は、格納されているファイルの属性を返します。これらの属性によって、圧縮ファイル、暗号化されたファイル、隠しファイル、読み取り専用ファイル、アーカイブ、ディレクトリ、システム ファイル、一時ファイルであるかどうかがわかります。  
+ <xref:System.IO.FileAttributes> 列挙体を使用すると、ファイル固有の情報を収集できます。 <xref:System.IO.FileAttributes> 列挙体は、格納されているファイルの属性を返します。これらの属性によって、圧縮ファイル、暗号化されたファイル、隠しファイル、読み取り専用ファイル、アーカイブ、ディレクトリ、システム ファイル、一時ファイルであるかどうかがわかります。  
   
  次の表は、ファイル アクセスとファイル属性に関連するタスクの一覧です。  
   
@@ -104,7 +105,7 @@ ms.lasthandoff: 03/13/2017
 |ファイルの属性の判断|<xref:System.IO.FileAttributes>|  
   
 ## <a name="file-permissions"></a>ファイルのアクセス許可  
- <xref:System.Security.Permissions.FileIOPermission> クラスを使用すれば、ファイルおよびディレクトリに対するアクセスを制御できます。 これは、Web フォームの開発者には特に重要な場合があります。既定では、Web フォームは、ASPNET という名前の特別なローカル ユーザー アカウントのコンテキストで実行されます。ASPNET は、 [!INCLUDE[vstecasp](../../../../csharp/language-reference/preprocessor-directives/includes/vstecasp_md.md)] および [!INCLUDE[dnprdnshort](../../../../csharp/getting-started/includes/dnprdnshort_md.md)] のインストール時に作成されます。 ASPNET ユーザー アカウントはアクセス許可が制限されているため、アプリケーションがリソースへのアクセスを要求したときに、ユーザーが処理を実行できない場合があります (たとえば、Web アプリケーションからファイルへの書き込みなど)。 詳細については、「[Security Permissions](http://msdn.microsoft.com/en-us/b03757b4-e926-4196-b738-3733ced2bda0)」(セキュリティのアクセス許可) と <xref:System.Security.Permissions.FileIOPermission> に関するページを参照してください。  
+ ファイルおよびディレクトリに対するアクセスの制御は、<xref:System.Security.Permissions.FileIOPermission> クラスで行うことができます。 これは、Web フォームの開発者には特に重要な場合があります。既定では、Web フォームは、ASPNET という名前の特別なローカル ユーザー アカウントのコンテキストで実行されます。ASPNET は、[!INCLUDE[vstecasp](../../../../csharp/language-reference/preprocessor-directives/includes/vstecasp_md.md)] および [!INCLUDE[dnprdnshort](../../../../csharp/getting-started/includes/dnprdnshort_md.md)] のインストール時に作成されます。 ASPNET ユーザー アカウントはアクセス許可が制限されているため、アプリケーションがリソースへのアクセスを要求したときに、ユーザーが処理を実行できない場合があります (たとえば、Web アプリケーションからファイルへの書き込みなど)。 詳細については、[セキュリティのアクセス許可](http://msdn.microsoft.com/en-us/b03757b4-e926-4196-b738-3733ced2bda0)に関するページと <xref:System.Security.Permissions.FileIOPermission> に関するページを参照してください。  
   
 ## <a name="isolated-file-storage"></a>分離ファイル ストレージ  
  分離ストレージとは、ファイルを扱うときに、必要なアクセス許可をユーザーまたはコードが持っていないために生じる問題を解決するためのものです。 分離ストレージでは、各ユーザーにデータ コンパートメントが割り当てられます。このデータ コンパートメントには、1 つまたは複数のストアを保持できます。 ストア間は、ユーザーおよびアセンブリごとに分離できます。 ストアにアクセスできるのは、それを作成したユーザーおよびアセンブリのみです。 ストアは、完全な仮想ファイル システムとして機能します。つまり、ストア内でディレクトリやファイルを作成および操作できます。  
@@ -122,7 +123,7 @@ ms.lasthandoff: 03/13/2017
 |分離ストレージのファイルまたはディレクトリの削除|[方法: 分離ストレージでファイルおよびディレクトリを削除する](https://msdn.microsoft.com/library/kx3852wf.aspx)|  
   
 ## <a name="file-events"></a>ファイルのイベント  
- <xref:System.IO.FileSystemWatcher> コンポーネントを使用すると、自システムまたはネットワークでアクセスできる任意のコンピューター上のファイルとディレクトリの変更を監視できます。 たとえば、ファイルが変更されたときに、その旨をユーザーに警告することが必要な場合があります。 変更が行われると、1 つ以上のイベントが発生し、バッファーに格納され、<xref:System.IO.FileSystemWatcher> コンポーネントに渡されて処理されます。  
+ <xref:System.IO.FileSystemWatcher> コンポーネントを使用すると、自システム上のファイルとディレクトリ、またはネットワークでアクセスできる任意のコンピューター上のファイルとディレクトリの変更を監視できます。 たとえば、ファイルが変更されたときに、その旨をユーザーに警告することが必要な場合があります。 変更が行われると、1 つまたは複数のイベントが発生し、バッファーに格納され、<xref:System.IO.FileSystemWatcher> コンポーネントに渡されて処理されます。  
   
 ## <a name="see-also"></a>関連項目  
  [ストリームの構成](https://msdn.microsoft.com/library/e4y2dch9)   

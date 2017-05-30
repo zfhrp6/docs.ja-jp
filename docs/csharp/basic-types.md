@@ -1,7 +1,7 @@
 ---
 title: "基本型 | C# ガイド"
 description: "すべての C# プログラムの中核となる型 (数値、文字列、オブジェクト) について説明します"
-keywords: ".NET、.NET Core、C#"
+keywords: .NET, .NET Core, C#
 author: BillWagner
 ms.author: wiwagn
 ms.date: 10/10/2016
@@ -10,10 +10,11 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 95c686ba-ae4f-440e-8e94-0dbd6e04d11f
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 57c5524a18535778db337500b0a7e9013ce93519
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
+ms.openlocfilehash: 4762266380b3defab17951fdc4dd5c99d59935c6
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/22/2017
 
 ---
 
@@ -34,7 +35,7 @@ C# は、厳密に型指定された言語です。 すべての変数および�
   
 -   許可される演算の種類。  
   
-コンパイラは型情報を使用して、コード内で実行されるすべての演算が*タイプ セーフ*であることを確認します。 たとえば、[int](https://msdn.microsoft.com/library/5kzh1b5w.aspx) 型の変数を宣言すると、その変数を加算と減算の演算に使用できます。 同じ演算を [bool](https://msdn.microsoft.com/library/c8f5xwh7.aspx) 型の変数に対して実行しようとすると、コンパイラで次の例のようなエラーが発生します。  
+コンパイラは型情報を使用して、コード内で実行されるすべての演算が "*タイプ セーフ*" であることを確認します。 たとえば、[int](https://msdn.microsoft.com/library/5kzh1b5w.aspx) 型の変数を宣言すると、その変数は加算演算と減算演算で使用できます。 同じ演算を [bool](https://msdn.microsoft.com/library/c8f5xwh7.aspx) 型の変数に対して実行しようとすると、コンパイラで次の例のようなエラーが発生します。  
   
 [!code-csharp[タイプ セーフ](../../samples/snippets/csharp/concepts/basic-types/type-safety.cs)]  
   
@@ -52,7 +53,7 @@ C# は、厳密に型指定された言語です。 すべての変数および�
   
 [!code-csharp[メソッド シグネチャ](../../samples/snippets/csharp/concepts/basic-types/method-signature.cs)]  
   
-変数を宣言すると、新しい型を使用してその変数を再度宣言することはできず、宣言された型と互換性のない値をその変数に代入することはできません。 たとえば、[int](https://msdn.microsoft.com/library/5kzh1b5w.aspx) を宣言してから、それに [true](https://msdn.microsoft.com/library/06d3w013.aspx) のブール値を代入することはできません。 ただし、たとえば新しい変数に代入するときや、メソッドの引数として渡すときに、値を他の型に変換することは可能です。 データの損失を伴わない*型変換*は、コンパイラによって自動的に実行されます。 データの損失を伴う可能性のある変換には、ソース コードに *cast* を記述する必要があります。 
+変数を宣言すると、新しい型を使用してその変数を再度宣言することはできず、宣言された型と互換性のない値をその変数に代入することはできません。 たとえば、[int](https://msdn.microsoft.com/library/5kzh1b5w.aspx) を宣言してから、それに [true](https://msdn.microsoft.com/library/06d3w013.aspx) のブール値を代入することはできません。 ただし、たとえば新しい変数に代入するときや、メソッドの引数として渡すときに、値を他の型に変換することは可能です。 データの損失を伴わない "*型変換*" は、コンパイラによって自動的に実行されます。 データの損失を伴う可能性のある変換には、ソース コードに *cast* を記述する必要があります。 
 
 詳細については、「[キャストと型変換](https://msdn.microsoft.com/library/ms173105.aspx)」を参照してください。
  
@@ -67,7 +68,7 @@ C# には、整数、浮動小数点値、ブール式、テキスト文字、10
   
 [!code-csharp[ジェネリック型](../../samples/snippets/csharp/concepts/basic-types/generic-type.cs)] 
   
-型パラメーターを使用すると、各要素を[オブジェクト](https://msdn.microsoft.com/library/9kkx3h3c.aspx)に変換しなくても、同じクラスを再利用して、任意の型の要素を保持できます。 ジェネリック コレクション クラスが*厳密に型指定されたコレクション*と呼ばれるのは、コレクションの要素の固有の型をコンパイラが認識しているためで、たとえば、前の例の `strings` オブジェクトに整数を追加しようとすると、コンパイル時にエラーが発生します。 詳細については、「[ジェネリック](programming-guide/generics/index.md)」を参照してください。 
+型パラメーターを使用すると、各要素を[オブジェクト](https://msdn.microsoft.com/library/9kkx3h3c.aspx)に変換しなくても、同じクラスを再利用して、任意の型の要素を保持できます。 ジェネリック コレクション クラスが "*厳密に型指定されたコレクション*" と呼ばれるのは、コレクションの要素の固有の型をコンパイラが認識しているためで、たとえば、前の例の `strings` オブジェクトに整数を追加しようとすると、コンパイル時にエラーが発生します。 詳細については、「[ジェネリック](programming-guide/generics/index.md)」を参照してください。 
 
 ## <a name="implicit-types-anonymous-types-and-tuple-types"></a>暗黙の型、匿名型、および Null 許容型  
 前に説明したように、[var](https://msdn.microsoft.com/library/bb383973.aspx) キーワードを使用すると、ローカル変数 (クラスのメンバーではない) の型を暗黙的に指定できます。 変数の型はコンパイル時に決定されますが、その型はコンパイラによって指定されます。 詳細については、「[暗黙的に型指定されたローカル変数](https://msdn.microsoft.com/library/bb384061.aspx)」を参照してください。  
@@ -79,9 +80,9 @@ C# には、整数、浮動小数点値、ブール式、テキスト文字、10
 ## <a name="the-common-type-system"></a>共通型システム  
 .NET Framework で型システムを使用する場合は、次の 2 つの基本事項を理解しておく必要があります。  
   
--   継承の原則がサポートされています。 型を*基本型*と呼ばれる他の型から派生させることができます。 派生した型は、基本型のメソッド、プロパティ、およびその他のメンバーを (若干の制限付きで) 継承します。 基本型もなんらかの他の型から派生できます。この場合、派生した型はその継承階層内の両方の基本型のメンバーを継承します。 @System.Int32 (C# のキーワード: `int`) などの組み込み数値型を含むすべての型は、最終的に @System.Object (C# のキーワード: `object`) という単一の基本型から派生します。 この一元化された型階層は、[共通型システム](../standard/common-type-system.md) (CTS) と呼ばれます。 C# での継承の詳細については、「[継承](https://msdn.microsoft.com/library/ms173149.aspx)」を参照してください。  
+-   継承の原則がサポートされています。 他の型から型を派生させることができます。派生元の型は "*基本型*" と呼ばれます。 派生した型は、基本型のメソッド、プロパティ、およびその他のメンバーを (若干の制限付きで) 継承します。 基本型もなんらかの他の型から派生できます。この場合、派生した型はその継承階層内の両方の基本型のメンバーを継承します。 @System.Int32 (C# のキーワード: `int`) などの組み込み数値型を含むすべての型は、最終的に @System.Object (C# のキーワード: `object`) という単一の基本型から派生します。 この一元化された型階層は、[共通型システム](../standard/common-type-system.md) (CTS) と呼ばれます。 C# での継承の詳細については、「[継承](https://msdn.microsoft.com/library/ms173149.aspx)」を参照してください。  
   
--   CTS の各型は、*値型*または*参照型*として定義されます。 これは、.NET Framework クラス ライブラリのすべてのカスタムの型や、ユーザーが独自に定義した型にも当てはまります。 [struct](https://msdn.microsoft.com/library/ah19swz4.aspx) キーワードを使用して定義した型は値型であり、すべての組み込み数値型が **structs** です。 値型の詳細については、「[Structs](structs.md)」を参照してください。 [class](https://msdn.microsoft.com/library/0b0thckt.aspx) キーワードを使用して定義した型は参照型です。 参照型の詳細については、「[Classes](classes.md)」を参照してください。 参照型と値型では、コンパイル時の規則や実行時の動作が異なります。
+-   CTS の各型は、"*値型*" または "*参照型*" として定義されます。 これは、.NET Framework クラス ライブラリのすべてのカスタムの型や、ユーザーが独自に定義した型にも当てはまります。 [struct](https://msdn.microsoft.com/library/ah19swz4.aspx) キーワードを使用して定義した型は値型であり、すべての組み込み数値型が **structs** です。 値型の詳細については、「[Structs](structs.md)」を参照してください。 [class](https://msdn.microsoft.com/library/0b0thckt.aspx) キーワードを使用して定義した型は参照型です。 参照型の詳細については、「[Classes](classes.md)」を参照してください。 参照型と値型では、コンパイル時の規則や実行時の動作が異なります。
  
   
 ## <a name="see-also"></a>関連項目

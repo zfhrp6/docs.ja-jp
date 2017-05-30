@@ -41,16 +41,17 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 89137b3c927a7ac8ed126f2be3695c4aa72a85fb
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
+ms.openlocfilehash: a5ae7f4a720c04639191edf36425426dfc339a37
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/22/2017
 
 ---
 # <a name="walkthrough-manipulating-files-and-directories-in-visual-basic"></a>チュートリアル : Visual Basic によるファイルとディレクトリの操作
 このチュートリアルでは、[!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] でのファイル I/O の基礎について概説します。 具体的には、ディレクトリ内のテキスト ファイルをリストして調査する小さなアプリケーションを作成する方法について説明します。 このアプリケーションは、選択された各テキスト ファイルについて、ファイルの属性とコンテンツの最初の行を取得します。 ログ ファイルに情報を書き込むオプションもあります。  
   
- このチュートリアルでは、[!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] で利用可能な、`My.Computer.FileSystem Object` のメンバーを使用します。 詳しくは、「<xref:Microsoft.VisualBasic.FileIO.FileSystem>」をご覧ください。 チュートリアルの最後では、<xref:System.IO> 名前空間のクラスを使用する同等の例を示します。  
+ このチュートリアルでは、[!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] で利用可能な、`My.Computer.FileSystem Object` のメンバーを使用します。 詳細については、「<xref:Microsoft.VisualBasic.FileIO.FileSystem>」を参照してください。 チュートリアルの最後では、<xref:System.IO> 名前空間のクラスを使用する同等の例を示します。  
   
 [!INCLUDE[note_settings_general](../../../../csharp/language-reference/compiler-messages/includes/note_settings_general_md.md)]  
   
@@ -84,7 +85,7 @@ ms.lasthandoff: 03/13/2017
   
      [!code-vb[VbVbcnMyFileSystem#103](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/VisualBasic/walkthrough-manipulating-files-and-directories_1.vb)]  
   
-     `FolderBrowserDialog1.ShowDialog` 呼び出しにより、**[フォルダーの参照]** ダイアログ ボックスが開きます。 ユーザーが **[OK]** をクリックすると、<xref:System.Windows.Forms.FolderBrowserDialog.SelectedPath%2A> プロパティが引数として `ListFiles` メソッドに送られます (このメソッドは次の手順で追加します)。  
+     `FolderBrowserDialog1.ShowDialog` 呼び出しにより、**[フォルダーの参照]** ダイアログ ボックスが開きます。 ユーザーが **[OK]** をクリックすると、次の手順で追加する `ListFiles` メソッドに <xref:System.Windows.Forms.FolderBrowserDialog.SelectedPath%2A> プロパティが引数として渡されます。  
   
 3.  次の `ListFiles` メソッドを追加します。  
   
@@ -92,7 +93,7 @@ ms.lasthandoff: 03/13/2017
   
      このコードでは、まず最初に **ListBox** をクリアします。  
   
-     その後、<xref:Microsoft.VisualBasic.FileIO.FileSystem.GetFiles%2A> メソッドが、ディレクトリ内のファイルごとに 1 つずつ、文字列のコレクションを取得します。 `GetFiles` メソッドは、検索パターンの引数を受け取り、特定のパターンに一致するファイルを取得します。 この例では、拡張子 .txt が付いているファイルのみが返されます。  
+     次に、<xref:Microsoft.VisualBasic.FileIO.FileSystem.GetFiles%2A> メソッドによって、ディレクトリ内の各ファイルを表す文字列のコレクションを取得します。 `GetFiles` メソッドは、検索パターンの引数を受け取り、特定のパターンに一致するファイルを取得します。 この例では、拡張子 .txt が付いているファイルのみが返されます。  
   
      その後、`GetFiles` メソッドによって返された文字列が、**ListBox** に追加されます。  
   
@@ -110,7 +111,7 @@ ms.lasthandoff: 03/13/2017
   
      [!code-vb[VbVbcnMyFileSystem#105](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/VisualBasic/walkthrough-manipulating-files-and-directories_3.vb)]  
   
-     このコードは、`ListBox` で選択された項目を検証します。 その後、`ListBox` からファイル パスのエントリを取得します。 <xref:Microsoft.VisualBasic.FileIO.FileSystem.FileExists%2A> メソッドは、ファイルが現在も存在するかどうかをチェックするために使用されます。  
+     このコードは、`ListBox` で選択された項目を検証します。 その後、`ListBox` からファイル パスのエントリを取得します。 <xref:Microsoft.VisualBasic.FileIO.FileSystem.FileExists%2A> メソッドを使用して、ファイルがまだ存在するかどうかを確認します。  
   
      ファイル パスは引数として `GetTextForOutput` メソッドに送られます (このメソッドは次の手順で追加します)。 このメソッドは、ファイル情報を含んだ文字列を返します。 ファイル情報は、**MessageBox** に表示されます。  
   
@@ -118,9 +119,9 @@ ms.lasthandoff: 03/13/2017
   
      [!code-vb[VbVbcnMyFileSystem#107](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/VisualBasic/walkthrough-manipulating-files-and-directories_4.vb)]  
   
-     このコードは、<xref:Microsoft.VisualBasic.FileIO.FileSystem.GetFileInfo%2A> メソッドを使用してファイルのパラメーターを取得します。 ファイル パラメーターは、<xref:System.Text.StringBuilder> に追加されます。  
+     このコードでは、<xref:Microsoft.VisualBasic.FileIO.FileSystem.GetFileInfo%2A> メソッドを使用してファイル パラメーターを取得します。 ファイル パラメーターは、<xref:System.Text.StringBuilder> に追加されます。  
   
-     <xref:Microsoft.VisualBasic.FileIO.FileSystem.OpenTextFileReader%2A> メソッドは、ファイルのコンテンツを <xref:System.IO.StreamReader> 内に読み込みます。 コンテンツの最初の行が `StreamReader` から取得され、`StringBuilder` に追加されます。  
+     <xref:Microsoft.VisualBasic.FileIO.FileSystem.OpenTextFileReader%2A> メソッドは、ファイルの内容を <xref:System.IO.StreamReader> に読み込みます。 コンテンツの最初の行が `StreamReader` から取得され、`StringBuilder` に追加されます。  
   
 4.  アプリケーションを実行します。 **[参照]** をクリックし、.txt ファイルが含まれているフォルダーを参照します。 **[OK]** をクリックします。  
   
@@ -136,7 +137,7 @@ ms.lasthandoff: 03/13/2017
   
      このコードは、ログ ファイルのパスを設定して、選択したファイルと同じディレクトリにログ ファイルを配置します。 ログ エントリのテキストは現在の日付と時刻に設定され、その後にファイル情報が記録されます。  
   
-     `append` 引数が `True` に設定された <xref:Microsoft.VisualBasic.FileIO.FileSystem.WriteAllText%2A> メソッドは、ログ エントリを作成するために使用されます。  
+     `append` 引数を `True` に設定した <xref:Microsoft.VisualBasic.FileIO.FileSystem.WriteAllText%2A> メソッドを使用して、ログ エントリを作成します。  
   
 2.  アプリケーションを実行します。 テキスト ファイルを参照し、`ListBox` でファイルを選択して、**[結果の保存]** チェック ボックスをオンにした後、**[調査]** をクリックします。 ログ エントリが `log.txt` ファイルに書き込まれていることを確認します。  
   

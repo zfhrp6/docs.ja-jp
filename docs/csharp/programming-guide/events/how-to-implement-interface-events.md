@@ -1,27 +1,46 @@
 ---
 title: "方法 : インターフェイス イベントを実装する (C# プログラミング ガイド) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.technology: 
-  - "devlang-csharp"
-ms.topic: "article"
-dev_langs: 
-  - "CSharp"
-helpviewer_keywords: 
-  - "イベント [C#], インターフェイス"
-  - "インターフェイス [C#], イベントの実装 (クラスへの)"
+ms.date: 2015-07-20
+ms.prod: .net
+ms.technology:
+- devlang-csharp
+ms.topic: article
+dev_langs:
+- CSharp
+helpviewer_keywords:
+- interfaces [C#], event implementation in classes
+- events [C#], in interfaces
 ms.assetid: 63527447-9535-4880-8e95-35e2075827df
 caps.latest.revision: 21
-author: "BillWagner"
-ms.author: "wiwagn"
-caps.handback.revision: 21
+author: BillWagner
+ms.author: wiwagn
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: Human Translation
+ms.sourcegitcommit: a780a11d8dd238187eb82933359bbb151bb3c333
+ms.openlocfilehash: 4a5b5b862a88d7008049e411e6dc0f020952cc5c
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/22/2017
+
 ---
-# 方法 : インターフェイス イベントを実装する (C# プログラミング ガイド)
-[インターフェイス](../../../csharp/language-reference/keywords/interface.md)は[イベント](../../../csharp/language-reference/keywords/event.md)を宣言できます。  次の例は、クラスにインターフェイス イベントを実装する方法を示しています。  基本的な方法は、インターフェイスのメソッドやプロパティを実装する方法と同じです。  
+# <a name="how-to-implement-interface-events-c-programming-guide"></a>方法 : インターフェイス イベントを実装する (C# プログラミング ガイド)
+[インターフェイス](../../../csharp/language-reference/keywords/interface.md)では[イベント](../../../csharp/language-reference/keywords/event.md)を宣言できます。 次の例では、クラス内にインターフェイス イベントを実装する方法について説明します。 基本的な原則は、インターフェイスのメソッドやプロパティを実装する場合と同じです。  
   
-### クラスにインターフェイス イベントを実装するには  
+### <a name="to-implement-interface-events-in-a-class"></a>クラス内でインターフェイス イベントを実装するには  
   
--   クラス内にイベントを宣言し、適切な領域で呼び出します。  
+-   クラス内でイベントを宣言してから、適切な領域でそのイベントを呼び出します。  
   
     ```  
     namespace ImplementInterfaceEvents  
@@ -57,16 +76,16 @@ caps.handback.revision: 21
     }  
     ```  
   
-## 使用例  
- 次の例では、クラスが複数のインターフェイスを継承し、各インターフェイスが同じ名前のイベントを持っているという、あまり一般的ではない状態の処理方法を示します。  この例では、1 つ以上のイベントに対する明示的なインターフェイス実装が必要です。  イベントの明示的なインターフェイス実装を記述するときは、イベント アクセサー `add` および `remove` も記述する必要があります。  通常、これらのイベント アクセサーはコンパイラによって提供されますが、この例では提供されません。  
+## <a name="example"></a>例  
+ 次の例では、同じ名前のイベント名がある 2 つ以上のインターフェイスからクラスを継承するという、あまり一般的でない状況の対処方法を示します。 このような場合は、1 つ以上のイベントに対して明示的なインターフェイスの実装を指定する必要があります。 イベントに対する明示的なインターフェイスの実装を記述する場合、`add` および `remove` の各イベント アクセサーも記述する必要があります。 通常ではこれらのアクセサーはコンパイラで指定しますが、この例ではコンパイラで指定することはできません。  
   
- ユーザー固有のアクセサーを指定して、2 つのイベントをクラス内の単一のイベントで表すか、別々のイベントで表すかを指定できます。  たとえば、インターフェイスの仕様により、イベントを複数回発生させる必要がある場合、各イベントをクラス内の別々の実装に関連付けることができます。  次の例では、サブスクライバーで `IShape` または `IDrawingObject` の図形参照をキャストすることにより、受信する `OnDraw` イベントを確認します。  
+ 独自のアクセサーを指定することで、2 つのイベントがクラス内の同一イベントと別々のイベントのどちらによって表されるかを指定できます。 たとえば、インターフェイスの仕様上、イベントを複数回発生させる必要がある場合は、各イベントをクラス内の別々の実装に関連付けます。 次の例では、サブスクライバーで `IShape` または `IDrawingObject` のいずれかに図形参照をキャストして、どちらの `OnDraw` イベントを受信するかを決定しています。  
   
  [!code-cs[csProgGuideEvents#10](../../../csharp/programming-guide/events/codesnippet/CSharp/how-to-implement-interface-events_1.cs)]  
   
-## 参照  
- [C\# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
+## <a name="see-also"></a>関連項目  
+ [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
  [イベント](../../../csharp/programming-guide/events/index.md)   
  [デリゲート](../../../csharp/programming-guide/delegates/index.md)   
  [明示的なインターフェイスの実装](../../../csharp/programming-guide/interfaces/explicit-interface-implementation.md)   
- [方法 : 派生クラスから基本クラス イベントを発生させる](../../../csharp/programming-guide/events/how-to-raise-base-class-events-in-derived-classes.md)
+ [方法: 派生クラスから基本クラス イベントを発生させる](../../../csharp/programming-guide/events/how-to-raise-base-class-events-in-derived-classes.md)
