@@ -2,6 +2,7 @@
 title: "軽減策: CspParameters.ParentWindowHandle で HWND を受け取る | Microsoft Docs"
 ms.custom: 
 ms.date: 04/07/2017
+ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
 ms.tgt_pltfrm: 
@@ -16,10 +17,11 @@ caps.latest.revision: 5
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-translationtype: Human Translation
-ms.sourcegitcommit: 9460c8b6ca8db927af4064e3567eca34c1bf5c91
-ms.openlocfilehash: 22c258b06a5cc8fa3fec72665d7e413b0cdd11ee
-ms.lasthandoff: 04/18/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 39e8e757a446b30ab18914465853138e1c239e40
+ms.openlocfilehash: 31898c86adc687b63a1b7f02eee98aae9b16c5f7
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/22/2017
 
 ---
 # <a name="mitigation-cspparametersparentwindowhandle-expects-an-hwnd"></a>軽減策: CspParameters.ParentWindowHandle で HWND を受け取る
@@ -46,9 +48,9 @@ cspParameters.ParentWindowHandle = form.Handle;
 
 正しい値が `form.Handle` 値を保持するメモリ位置のアドレスであると特定した場合、次のように <xref:System.Security.AppContext> スイッチ `Switch.System.Security.Cryptography.DoNotAddrOfCspParentWindowHandle` を `true` に変更することでこの動作の変更を解除することができます。
 
-- プログラムで、[AppContext](assetID:///T:System.Security.AppContext) インスタンスの互換性スイッチを設定する
+- プログラムで、<xref:System.Security.AppContext> インスタンスの互換性スイッチを設定する
 
-- app.config ファイルの `<runtime>` セクションに以下の行を追加する。
+- app.config ファイルの `<runtime>` セクションに以下の行を追加する:
    
    ```xml
    <runtime>

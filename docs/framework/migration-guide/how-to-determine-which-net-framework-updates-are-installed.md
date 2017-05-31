@@ -17,10 +17,11 @@ caps.latest.revision: 6
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-translationtype: Human Translation
-ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
-ms.openlocfilehash: e94e4e1036aa474ff011a50daa4a683fbe0ab47d
-ms.lasthandoff: 04/18/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: dc1c456c71efb3cc6e60a8fdc77384e65975f110
+ms.openlocfilehash: 6237bdaf1d12743bee71633acf8cef69c21b414e
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/15/2017
 
 ---
 # <a name="how-to-determine-which-net-framework-updates-are-installed"></a>方法 : インストールされている .NET Framework の更新プログラムを確認する
@@ -43,8 +44,7 @@ ms.lasthandoff: 04/18/2017
 ## <a name="example"></a>例  
  次のコードは、プログラミングによってコンピューターにインストールされている .NET Framework の更新プログラムを判断します。 この例を実行するには、管理特権が必要です。  
   
- [!code-csharp[ListUpdates#1](../../../samples/snippets/csharp/VS_Snippets_CLR/listupdates/cs/program.cs#1)]
- [!code-vb[ListUpdates#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/listupdates/vb/program.vb#1)]  
+ [!code-csharp[ListUpdates#1](../../../samples/snippets/csharp/VS_Snippets_CLR/listupdates/cs/program.cs#1)] [!code-vb[ListUpdates#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/listupdates/vb/program.vb#1)]  
   
  この例では次のような出力が生成されます。  
   
@@ -80,3 +80,4 @@ Microsoft .NET Framework 4 Extended
  [方法 : インストールされている .NET Framework バージョンを確認する](../../../docs/framework/migration-guide/how-to-determine-which-versions-are-installed.md)   
  [インストール ガイド](../../../docs/framework/install/guide-for-developers.md)   
  [バージョンおよび依存関係](../../../docs/framework/migration-guide/versions-and-dependencies.md)
+
