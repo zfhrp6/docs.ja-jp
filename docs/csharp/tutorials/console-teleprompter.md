@@ -10,10 +10,11 @@ ms.prod: .net-core
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 883cd93d-50ce-4144-b7c9-2df28d9c11a0
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 41e8976e7b133380687a65265fd5ebe9a810a4ff
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: be7974018ce3195dc7344192d647fe64fb2ebcc4
+ms.openlocfilehash: 360e93af03e00547116d1af1816c2b9b29524881
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/22/2017
 
 ---
 
@@ -31,9 +32,9 @@ ms.lasthandoff: 03/13/2017
 
 このチュートリアルには、多くの機能が含まれています。 それらを 1 つずつビルドしてみましょう。 
 ## <a name="prerequisites"></a>必須コンポーネント
-お使いのコンピューターを、.NET Core が実行するように設定する必要があります。 インストールの指示については、[.NET Core](https://www.microsoft.com/net/core) のページを参照してください。 このアプリケーションは、Windows、Linux、macOS または Docker コンテナーで実行できます。 お好みのコード エディターをインストールしてください。 
+お使いのコンピューターを、.NET Core が実行されるように設定する必要があります。 インストールの指示については、[.NET Core](https://www.microsoft.com/net/core) のページを参照してください。 このアプリケーションは、Windows、Linux、macOS または Docker コンテナーで実行できます。 お好みのコード エディターをインストールしてください。 
 ## <a name="create-the-application"></a>アプリケーションを作成する
-まず最初に新しいアプリケーションを作成します。 コマンド プロンプトを開き、アプリケーション用の新しいディレクトリを作成します。 それを、現在のディレクトリとしてください。 コマンド プロンプトで `dotnet new console` のコマンドを入力します。 これで、基本的な "Hello World" アプリケーションのスターター ファイルが作成されます。
+最初に新しいアプリケーションを作成します。 コマンド プロンプトを開き、アプリケーション用の新しいディレクトリを作成します。 それを、現在のディレクトリとしてください。 コマンド プロンプトで `dotnet new console` のコマンドを入力します。 これで、基本的な "Hello World" アプリケーションのスターター ファイルが作成されます。
 
 変更を加える前に、このシンプルな Hello World アプリケーションを実行する手順を見ていきましょう。 アプリケーション作成後、コマンド プロンプトで `dotnet restore` と入力します。 このコマンドにより、NuGet パッケージの復元処理が実行されます。 NuGet は .NET パッケージ マネージャーです。 このコマンドにより、プロジェクトの依存関係のうち欠落しているものがすべてダウンロードされます。 これは新しいプロジェクトなので、依存関係は何もなく、最初の実行で .NET Core フレームワークがダウンロードされます。 最初のこの手順の後は、新しい依存パッケージを追加するときに `dotnet restore` を実行するか、依存関係のいずれかのバージョンを更新する必要しかありません。 このプロセスでは、プロジェクト ディレクトリ内にプロジェクト ロック ファイル (project.lock.json) も作成されます。 このファイルは、プロジェクトの依存関係を管理するのに役立ちます。 ファイルには、プロジェクトの依存関係すべてのローカルの場所が含まれています。 このファイルはソース コントロールに配置する必要はありません。`dotnet restore` を実行するときに生成されるためです。 
 
@@ -53,9 +54,9 @@ namespace TeleprompterConsole
 ```
 
 ## <a name="reading-and-echoing-the-file"></a>ファイルの読み取りとエコー
-最初に追加する機能は、テキスト ファイルを読み取り、そのテキストすべてをコンソールに表示するものです。 まず、テキスト ファイルを追加しましょう。 この[サンプル](https://github.com/dotnet/docs/tree/master/samples/csharp/getting-started/console-teleprompter)の GitHub リポジトリから、[sampleQuotes.txt](https://raw.githubusercontent.com/dotnet/docs/master/samples/csharp/getting-started/console-teleprompter/sampleQuotes.txt) ファイルをプロジェクト ディレクトリにコピーします。 これがアプリケーションのスクリプトとして機能します。
+最初に追加する機能は、テキスト ファイルを読み取り、そのテキストすべてをコンソールに表示する機能です。 まず、テキスト ファイルを追加しましょう。 この[サンプル](https://github.com/dotnet/docs/tree/master/samples/csharp/getting-started/console-teleprompter)の GitHub リポジトリから、[sampleQuotes.txt](https://raw.githubusercontent.com/dotnet/docs/master/samples/csharp/getting-started/console-teleprompter/sampleQuotes.txt) ファイルをプロジェクト ディレクトリにコピーします。 これがアプリケーションのスクリプトとして機能します。 このトピックのサンプル アプリをダウンロードする方法については、「[サンプルおよびチュートリアル](../../samples-and-tutorials/index.md#viewing-and-downloading-samples)」をご覧ください。
 
-次に、以下のメソッドを Program クラス (`Main` メソッドの真下) に追加します。
+次に、以下のメソッドを Program クラス (`Main` メソッドのすぐ下) に追加します。
 
 ```csharp
 static IEnumerable<string> ReadFrom(string file)

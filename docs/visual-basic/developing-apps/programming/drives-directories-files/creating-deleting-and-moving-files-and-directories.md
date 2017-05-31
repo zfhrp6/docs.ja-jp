@@ -1,90 +1,107 @@
 ---
-title: "Creating, Deleting, and Moving Files and Directories in Visual Basic | Microsoft Docs"
-ms.custom: ""
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "examples [Visual Basic], moving files and directories"
-  - "I/O [Visual Basic], deleting folders"
-  - "I/O [Visual Basic], moving directories"
-  - "I/O [Visual Basic], copying directories"
-  - "examples [Visual Basic], creating files and directories"
-  - "I/O [Visual Basic], copying folders"
-  - "I/O [Visual Basic], moving folders"
-  - "examples [Visual Basic], copying files and directories"
-  - "I/O [Visual Basic], deleting directories"
-  - "I/O [Visual Basic], copying files"
-  - "examples [Visual Basic], renaming files and directories"
-  - "I/O [Visual Basic], creating folders"
-  - "I/O [Visual Basic], renaming files"
-  - "I/O [Visual Basic], deleting files"
-  - "I/O [Visual Basic], creating directories"
-  - "I/O [Visual Basic], creating files"
-  - "I/O [Visual Basic], renaming directories"
-  - "I/O [Visual Basic], renaming folders"
-  - "I/O [Visual Basic], moving files"
+title: "Visual Basic でのファイルおよびディレクトリの作成、削除、および移動 | Microsoft Docs"
+ms.custom: 
+ms.date: 2015-07-20
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-visual-basic
+ms.topic: article
+dev_langs:
+- VB
+helpviewer_keywords:
+- examples [Visual Basic], moving files and directories
+- I/O [Visual Basic], deleting folders
+- I/O [Visual Basic], moving directories
+- I/O [Visual Basic], copying directories
+- examples [Visual Basic], creating files and directories
+- I/O [Visual Basic], copying folders
+- I/O [Visual Basic], moving folders
+- examples [Visual Basic], copying files and directories
+- I/O [Visual Basic], deleting directories
+- I/O [Visual Basic], copying files
+- examples [Visual Basic], renaming files and directories
+- I/O [Visual Basic], creating folders
+- I/O [Visual Basic], renaming files
+- I/O [Visual Basic], deleting files
+- I/O [Visual Basic], creating directories
+- I/O [Visual Basic], creating files
+- I/O [Visual Basic], renaming directories
+- I/O [Visual Basic], renaming folders
+- I/O [Visual Basic], moving files
 ms.assetid: 8f814fcc-4c42-4dbb-a131-005ec445ac9e
 caps.latest.revision: 14
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 14
----
-# Creating, Deleting, and Moving Files and Directories in Visual Basic
-[!INCLUDE[vs2017banner](../../../../visual-basic/developing-apps/includes/vs2017banner.md)]
+author: dotnet-bot
+ms.author: dotnetcontent
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
+ms.openlocfilehash: 6484c8233c2834732aefb270323723b6c9757f05
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/22/2017
 
-このセクションでは、Visual Basic でのファイルおよびディレクトリの作成、削除、移動、および名前の変更に関連するタスクの一覧を示します。  
+---
+# <a name="creating-deleting-and-moving-files-and-directories-in-visual-basic"></a>Visual Basic でのファイルおよびディレクトリの作成、削除、および移動
+このセクションでは、Visual Basic でのファイルとディレクトリの作成、削除、移動、名前変更に関連するタスクを列挙します。  
   
-## このセクションの内容  
- [方法 : 特定のパターンを持つファイルをディレクトリにコピーする](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-copy-files-with-a-specific-pattern-to-a-directory.md)  
- 名前が特定のパターンに合致するファイル \(たとえば .txt ファイルのみ\) をディレクトリにコピーする方法を説明します。  
+## <a name="in-this-section"></a>このセクションの内容  
+ [方法: 特定のパターンを持つファイルをディレクトリにコピーする](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-copy-files-with-a-specific-pattern-to-a-directory.md)  
+ 特定のファイル名パターンを持つファイルをディレクトリにコピーする方法を示します。たとえば、.txt ファイルのみをコピーします。  
   
- [How to: Create a Copy of a File in the Same Directory](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-create-a-copy-of-a-file-in-the-same-directory.md)  
- ファイルのコピーを同じディレクトリに作成する方法を説明します。  
+ [方法: ファイルのコピーを同じディレクトリに作成する](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-create-a-copy-of-a-file-in-the-same-directory.md)  
+ ファイルのコピーを同じディレクトリに作成する方法を示します。  
   
- [How to: Create a Copy of a File in a Different Directory](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-create-a-copy-of-a-file-in-a-different-directory.md)  
- ファイルを別のディレクトリにコピーする方法を説明します。  
+ [方法: ファイルのコピーを別のディレクトリに作成する](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-create-a-copy-of-a-file-in-a-different-directory.md)  
+ 別のディレクトリにファイルをコピーする方法を示します。  
   
- [How to: Create a File](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-create-a-file.md)  
- ファイルを作成する方法を説明します。  
+ [方法: ファイルを作成する](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-create-a-file.md)  
+ ファイルの作成方法を示します。  
   
- [How to: Delete a File](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-delete-a-file.md)  
- ファイルを削除する方法を説明します。  
+ [方法: ファイルを削除する](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-delete-a-file.md)  
+ ファイルの削除方法を示します。  
   
- [How to: Find Files with a Specific Pattern](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-find-files-with-a-specific-pattern.md)  
- ディレクトリ内のファイルのうちで、名前が特定のパターンに合致するものだけを一覧表示する方法を説明します。  
+ [方法: 特定のパターンに一致するファイルを検索する](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-find-files-with-a-specific-pattern.md)  
+ あるディレクトリにある、特定のファイル名パターンを持つファイルのみを一覧表示する方法を示します。  
   
  [方法: ファイルを移動する](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-move-a-file.md)  
- ファイルを別のディレクトリに移動する方法を説明します。  
+ 別のディレクトリにファイルを移動する方法を示します。  
   
- [How to: Rename a File](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-rename-a-file.md)  
- ファイルの名前を変更する方法を説明します。  
+ [方法: ファイルの名前を変更する](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-rename-a-file.md)  
+ ファイルの名前変更方法を示します。  
   
- [How to: Copy a Directory to Another Directory](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-copy-a-directory-to-another-directory.md)  
- ディレクトリを別の場所にコピーする方法を説明します。  
+ [方法: ディレクトリを別のディレクトリにコピーする](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-copy-a-directory-to-another-directory.md)  
+ 別の場所にディレクトリをコピーする方法を示します。  
   
- [How to: Create a Directory](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-create-a-directory.md)  
- ディレクトリを作成する方法を説明します。  
+ [方法: ディレクトリを作成する](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-create-a-directory.md)  
+ ディレクトリの作成方法を示します。  
   
- [How to: Find Subdirectories with a Specific Pattern](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-find-subdirectories-with-a-specific-pattern.md)  
- 名前が特定のパターンに合致するディレクトリを一覧表示する方法を説明します。  
+ [方法: 特定のパターンに一致するサブディレクトリを検索する](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-find-subdirectories-with-a-specific-pattern.md)  
+ 名前に特定のパターンを持つディレクトリを一覧表示する方法を示します。  
   
- [How to: Get the Collection of Files in a Directory](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-get-the-collection-of-files-in-a-directory.md)  
- ディレクトリ内のファイルを一覧表示する方法を説明します。  
+ [方法: ディレクトリにあるファイルのコレクションを取得する](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-get-the-collection-of-files-in-a-directory.md)  
+ ディレクトリのファイルを一覧表示する方法を示します。  
   
- [How to: Retrieve the Contents of the My Documents Directory](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-retrieve-the-contents-of-the-my-documents-directory.md)  
- 特別なディレクトリを読み取る方法を説明します。  
+ [方法: My Documents ディレクトリの内容を取得する](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-retrieve-the-contents-of-the-my-documents-directory.md)  
+ 特定のディレクトリから読み取る方法について説明します。  
   
- [方法 : ファイル パスを解析する](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-parse-file-paths.md)  
- `My` メソッドを使用してファイル パスを結合する方法を説明します。  
+ [方法: ファイル パスを解析する](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-parse-file-paths.md)  
+ `My` メソッドを使用し、ファイル パスを結合する方法を示します。  
   
-## 関連項目  
+## <a name="reference"></a>参照  
  <xref:Microsoft.VisualBasic.FileIO.FileSystem>  
  `My.Computer.FileSystem` オブジェクトとそのメンバーについて説明します。  
   
@@ -124,9 +141,9 @@ caps.handback.revision: 14
  <xref:Microsoft.VisualBasic.FileIO.SpecialDirectories>  
  `SpecialDirectories` オブジェクトについて説明します。  
   
-## 関連項目  
- [Reading from Files](../../../../visual-basic/developing-apps/programming/drives-directories-files/reading-from-files.md)  
- ファイルからの読み込みに関連するタスクの一覧を示します。  
+## <a name="related-sections"></a>関連項目  
+ [ファイルの読み取り](../../../../visual-basic/developing-apps/programming/drives-directories-files/reading-from-files.md)  
+ ファイルの読み取りに関連するタスクを一覧表示します。  
   
- [Writing to Files](../../../../visual-basic/developing-apps/programming/drives-directories-files/writing-to-files.md)  
- ファイルへの書き込みに関連するタスクの一覧を示します。
+ [ファイルへの書き込み](../../../../visual-basic/developing-apps/programming/drives-directories-files/writing-to-files.md)  
+ ファイルへの書き込みに関連するタスクを一覧表示します。
