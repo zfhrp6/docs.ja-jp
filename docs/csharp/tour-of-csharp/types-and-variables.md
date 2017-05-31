@@ -1,6 +1,6 @@
 ---
 title: "C# の型と変数 | C# 言語のツアー"
-description: "C における型の定義と変数の宣言について説明します#"
+description: "C# における型の定義と変数の宣言について説明します"
 keywords: ".NET, C#, 型, 参照型, 値型"
 author: BillWagner
 ms.author: wiwagn
@@ -10,10 +10,11 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: f8a8051e-0049-43f1-b594-9c84cc7b1224
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 93d09003ea4c54e6851ce00bbc4edecf039d0324
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: be7974018ce3195dc7344192d647fe64fb2ebcc4
+ms.openlocfilehash: 24d405ad33cb4f11dd9e7ba7edb39f10db8041a1
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/14/2017
 
 ---
 
@@ -89,7 +90,7 @@ C# プログラムでは*型宣言*を使用して新しい型を作成します
 
 `delegate` 型は、特定のパラメーター リストおよび戻り値を使用してメソッドへの参照を表します。 デリゲートを使用すると、変数に割り当ててパラメーターとして渡すことのできるエンティティとして、メソッドを処理できます。 デリゲートは、関数型言語で提供される関数の型に似ています。 さらに、他のいくつかの言語にみられる関数ポインターの概念に似ていますが、関数ポインターと異なり、デリゲートはオブジェクト指向でタイプ セーフです。
 
-クラス、`struct`、`interface`、および `delegate` の型はすべてジェネリックをサポートし、他の型とともにパラメーター化できます。
+`class`、`struct`、`interface` および `delegate`の型はすべてジェネリックをサポートし、他の型と共にパラメーター化できます。
 
 `enum` 型は、名前付き定数を持つ固有の型です。 `enum` 型にはそれぞれ基になる型があり、これは 8 つの整数型のいずれかでなければいけません。 `enum` 型の値のセットは、その基になる型の値のセットと同じです。
 

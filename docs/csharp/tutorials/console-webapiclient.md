@@ -10,10 +10,11 @@ ms.prod: .net-core
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 51033ce2-7a53-4cdd-966d-9da15c8204d2
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: dc931fe2c87620ddb073f53f7e8edccaa1e3b987
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: be7974018ce3195dc7344192d647fe64fb2ebcc4
+ms.openlocfilehash: 3dcf0204d57861543743fee4de9523231465d24c
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/14/2017
 
 ---
 
@@ -30,13 +31,16 @@ ms.lasthandoff: 03/13/2017
 
 GitHub 上の REST サービスに対して HTTP 要求を発行するアプリケーションをビルドします。 JSON 形式で情報を読み取り、その JSON パケットを C# オブジェクトに変換します。 最後に、C# オブジェクトを操作する方法について説明します。
 
-このチュートリアルには、多くの機能が含まれています。 それらを 1 つずつビルドしてみましょう。 
-## <a name="prerequisites"></a>必須コンポーネント
+このチュートリアルには、多くの機能が含まれています。 それらを 1 つずつビルドしてみましょう。
+
+このトピックの[最終的なサンプル](https://github.com/dotnet/docs/tree/master/samples/csharp/getting-started/console-webapiclient)も参照したい方は、ダウンロードできます。 ダウンロード方法については、「[サンプルおよびチュートリアル](../../samples-and-tutorials/index.md#viewing-and-downloading-samples)」を参照してください。
+
+## <a name="prerequisites"></a>必要条件
 お使いのコンピューターを、.NET Core が実行されるように設定する必要があります。 インストールの手順については、[.NET Core](https://www.microsoft.com/net/core) のページを参照してください。 このアプリケーションは、Windows、Linux、macOS または Docker コンテナーで実行できます。 お好みのコード エディターをインストールしてください。 次の説明では、オープン ソースのクロス プラットフォーム エディターである [Visual Studio Code](https://code.visualstudio.com/) を使用しています。 しかし、他の使い慣れたツールを使用しても構いません。
 ## <a name="create-the-application"></a>アプリケーションを作成する
-最初に新しいアプリケーションを作成します。 コマンド プロンプトを開き、アプリケーション用の新しいディレクトリを作成します。 それを、現在のディレクトリとしてください。 コマンド プロンプトで `dotnet new console` コマンドを入力します。 これで、基本的な "Hello World" アプリケーションのスターター ファイルが作成されます。
+最初に新しいアプリケーションを作成します。 コマンド プロンプトを開き、アプリケーション用の新しいディレクトリを作成します。 それを、現在のディレクトリとしてください。 コマンド プロンプトで `dotnet new console` のコマンドを入力します。 これで、基本的な "Hello World" アプリケーションのスターター ファイルが作成されます。
 
-変更を加える前に、このシンプルな Hello World アプリケーションを実行する手順を見ていきましょう。 アプリケーション作成後、コマンド プロンプトで `dotnet restore` と入力します。 このコマンドは、NuGet パッケージの復元処理を実行します。 NuGet は .NET パッケージ マネージャーです。 このコマンドは、プロジェクトの依存関係のうち欠落しているものをダウンロードします。 これは新しいプロジェクトなので、依存関係は何もなく、最初の実行で .NET Core フレームワークをダウンロードします。 この初期手順の後に必要なのは、新しい依存パッケージを追加するときに `dotnet restore` を実行するか、いずれかの依存関係のバージョンを更新するだけです。  
+変更を加える前に、このシンプルな Hello World アプリケーションを実行する手順を見ていきましょう。 アプリケーション作成後、コマンド プロンプトで `dotnet restore` と入力します。 このコマンドにより、NuGet パッケージの復元処理が実行されます。 NuGet は .NET パッケージ マネージャーです。 このコマンドにより、プロジェクトの依存関係のうち欠落しているものがすべてダウンロードされます。 これは新しいプロジェクトなので、依存関係は何もなく、最初の実行で .NET Core フレームワークがダウンロードされます。 この初期手順の後に必要なのは、新しい依存パッケージを追加するときに `dotnet restore` を実行するか、いずれかの依存関係のバージョンを更新するだけです。  
 
 パッケージを復元したら、`dotnet build` を実行します。 これにより、ビルド エンジンが実行され、アプリケーションが作成されます。 最後に、`dotnet run` を実行してアプリケーションを実行します。
 
@@ -121,7 +125,7 @@ using System.Net.Http.Headers;
 この最初のバージョンでは、.NET Foundation にあるすべてのリポジトリのリストを読み取る Web 要求を作成します  (.NET Foundation の gitHub ID は "dotnet" です)。 最初に、新しい @System.Net.Http.HttpClient を作成します。 このオブジェクトは要求と応答を処理します。 次の数行では、この要求の @System.Net.Http.HttpClient を設定します。 最初は、GitHub の JSON 応答を受け入れるように構成されます。
 この形式は単なる JSON です。 次の行では、このオブジェクトからのすべての要求にユーザー エージェント ヘッダーを追加します。 これらの 2 つのヘッダーは、GitHub サーバー コードによってチェックされ、GitHub から情報を取得するために必要です。
 
-@System.Net.Http.HttpClient を構成したら、Web 要求を作成して応答を取得します。 この最初のバージョンでは、<xref:System.Net.Http.HttpClient.GetStringAsync(System.String)?displayProperty=fullname> という簡易メソッドを使用します。 この簡易メソッドは、Web 要求を作成するタスクを開始し、要求が返されると応答ストリームを読み取って、ストリームからコンテンツを抽出します。 応答の本文は @System.String として返されます。 この文字列は、タスクが完了すると使用できます。 
+@System.Net.Http.HttpClient を構成したら、Web 要求を作成して応答を取得します。 この最初のバージョンでは、<xref:System.Net.Http.HttpClient.GetStringAsync(System.String)?displayProperty=fullname> 簡易メソッドを使います。 この簡易メソッドは、Web 要求を作成するタスクを開始し、要求が返されると応答ストリームを読み取って、ストリームからコンテンツを抽出します。 応答の本文は @System.String として返されます。 この文字列は、タスクが完了すると使用できます。 
 
 このメソッドの最後の 2 行は、そのタスクを待機し、コンソールに応答を出力します。
 アプリケーションをビルドして実行してください。 `ProcessRepositories` に `await` 演算子が含まれているため、ビルドの警告が表示されなくなりました。 JSON 形式の長いテキストが表示されます。   
@@ -360,7 +364,7 @@ using System.Globalization;
 Console.WriteLine(repo.LastPush);
 ```
 
-これで、作成したバージョンが[こちら](https://github.com/dotnet/docs/tree/master/samples/csharp/getting-started/console-webapiclient)にある完成バージョンと同じになるはずです。
+以上で、作成してきたバージョンは[最終的なサンプル](https://github.com/dotnet/docs/tree/master/samples/csharp/getting-started/console-webapiclient)と同じになるはずです。
  
 ## <a name="conclusion"></a>まとめ
 
