@@ -1,49 +1,68 @@
 ---
-title: "/appconfig (C# Compiler Options) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.technology: 
-  - "devlang-csharp"
-ms.topic: "article"
-f1_keywords: 
-  - "/appconfig"
-dev_langs: 
-  - "CSharp"
-helpviewer_keywords: 
-  - "/appconfig compiler option [C#]"
+title: "-appconfig (C# コンパイラ オプション) | Microsoft Docs"
+ms.date: 2015-07-20
+ms.prod: .net
+ms.technology:
+- devlang-csharp
+ms.topic: article
+f1_keywords:
+- /appconfig
+dev_langs:
+- CSharp
+helpviewer_keywords:
+- /appconfig compiler option [C#]
 ms.assetid: 1cdbcbcc-7813-4010-b5b8-e67c107c5a98
 caps.latest.revision: 26
-author: "BillWagner"
-ms.author: "wiwagn"
-caps.handback.revision: 26
+author: BillWagner
+ms.author: wiwagn
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: Human Translation
+ms.sourcegitcommit: fe32676f0e39ed109a68f39584cf41aec5f5ce90
+ms.openlocfilehash: ced4927526d86d29c502a898c60c528df497bb56
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/10/2017
+
 ---
-# /appconfig (C# Compiler Options)
-**\/appconfig** コンパイラ オプションは、アセンブリのバインド時に、共通言語ランタイム \(CLR: Common Language Runtime\) に対して C\# アプリケーションがアセンブリのアプリケーション構成 \(app.config\) ファイルの場所を指定できるようにします。  
+# <a name="appconfig-c-compiler-options"></a>/appconfig (C# コンパイラ オプション)
+**/appconfig** コンパイラ オプションを利用すると、C# アプリケーションで、アセンブリのバインド時に共通言語ランタイム (CLR) にアセンブリのアプリケーション構成 (app.config) ファイルの場所を指定できます。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 /appconfig:file  
 ```  
   
-## Arguments  
+## <a name="arguments"></a>引数  
  `file`  
- 必須。  アセンブリのバインド設定を含むアプリケーション構成ファイルです。  
+ 必須です。 アセンブリ バインド設定を含むアプリケーション構成ファイル。  
   
-## 解説  
- **\/appconfig** の 1 種類を使用すると、アセンブリが特定の参照アセンブリの Silverlight バージョンの .NET Framework version と .NET Framework の両方を同時に参照しなければならない高度なシナリオです。  たとえば、WPF \(Windows Presentation Foundation\) で作成された XAML デザイナーにおいて、デザイナーのユーザー インターフェイスとして WPF デスクトップを参照すると共に、Silverlight に組み込まれている WPF のサブセットも参照することが必要な場合があります。  このデザイナー アセンブリは両方のアセンブリにアクセスする必要があります。  既定では、この 2 つのアセンブリはアセンブリ バインディングで同等と見なされるため、別々に参照するとコンパイラ エラーが発生します。  
+## <a name="remarks"></a>コメント  
+ **/appconfig** の用途の 1 つは、1 つのアセンブリが特定の参照アセンブリの .NET Framework バージョンと .NET Framework for Silverlight バージョンの両方を同時に参照する必要がある高度なシナリオです。 たとえば、WPF (Windows Presentation Foundation) で作成された XAML デザイナーにおいて、デザイナーのユーザー インターフェイスとして WPF デスクトップを参照すると共に、Silverlight に組み込まれている WPF のサブセットも参照する必要がある場合があります。 同じデザイナー アセンブリで両方のアセンブリにアクセスする必要があります。 既定では、この 2 つのアセンブリはアセンブリ バインディングで同等と見なされるため、別々に参照するとコンパイラ エラーが発生します。  
   
- **\/appconfig** コンパイラ オプションを使用すると、`<supportPortability>` タグを使用して既定の動作を無効にする app.config ファイルの場所を指定できます。次に例を示します。  
+ **/appconfig** コンパイラ オプションを利用すると、`<supportPortability>` タグを利用して既定の動作を無効にする app.config ファイルの場所を指定できます。次の例をご覧ください。  
   
  `<supportPortability PKT="7cec85d7bea7798e" enable="false"/>`  
   
- コンパイラは、ファイルの場所を CLR のアセンブリ バインディング ロジックに渡します。  
+ このコンパイラは、CLR のアセンブリ バインド ロジックにファイルの場所を渡します。  
   
 > [!NOTE]
->  Microsoft Build Engine \(MSBuild\) を使用してアプリケーションをビルドする場合は、プロパティ タグを .csproj ファイルに追加して **\/appconfig** コンパイラ オプションを設定できます。  プロジェクトで既に設定されている app.config ファイルを使用するには、プロパティ タグ `<UseAppConfigForCompiler>` を .csproj ファイルに追加し、その値を `true` に設定します。  別の app.config ファイルを指定するには、プロパティ タグ `<AppConfigForCompiler>` を追加し、その値をファイルの場所に設定します。  
+>  Microsoft Build Engine (MSBuild) を利用してアプリケーションを構築する場合、プロパティ タグを .csproj ファイルに追加し、**/appconfig** コンパイラ オプションを設定できます。 プロジェクトに既に設定されている app.config ファイルを使用するには、プロパティ タグ `<UseAppConfigForCompiler>` を .csproj ファイルに追加し、その値を `true` に設定します。 異なる app.config ファイルを指定するには、プロパティ タグ `<AppConfigForCompiler>` を追加し、その値をファイルの場所に設定します。  
   
-## 使用例  
- 次の例は、.NET Framework と .NET Framework for Silverlight の両方の実装に存在する .NET Framework アセンブリに対して、アプリケーションが .NET Framework の実装と .NET Framework for Silverlight の実装の両方を参照できるようにする app.config ファイルを示しています。  **\/appconfig** コンパイラ オプションは、この app.config ファイルの場所を指定します。  
+## <a name="example"></a>例  
+ .NET Framework と .NET Framework for Silverlight の両方の実装に存在する .NET Framework アセンブリについて、その両方の実装をアプリケーションで参照できるようにする app.config ファイルの例を次に示します。 **/appconfig** コンパイラ オプションにより、この app.config ファイルの場所が指定されます。  
   
 ```  
 <configuration>  
@@ -56,7 +75,7 @@ caps.handback.revision: 26
 </configuration>  
 ```  
   
-## 参照  
- [.NET Framework Assembly Unification Overview](http://msdn.microsoft.com/ja-jp/8d8cc65e-031d-463b-bde3-2c6dc2e3bc48)   
- [\<supportPortability\> 要素](../Topic/%3CsupportPortability%3E%20Element.md)   
- [C\# Compiler Options Listed Alphabetically](../../../csharp/language-reference/compiler-options/listed-alphabetically.md)
+## <a name="see-also"></a>関連項目  
+ [.NET Framework アセンブリ統合の概要](http://msdn.microsoft.com/en-us/8d8cc65e-031d-463b-bde3-2c6dc2e3bc48)   
+ [\<supportPortability> 要素](../../../framework/configure-apps/file-schema/runtime/supportportability-element.md)   
+ [アルファベット順の C# コンパイラ オプションの一覧](../../../csharp/language-reference/compiler-options/listed-alphabetically.md)

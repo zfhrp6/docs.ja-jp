@@ -19,10 +19,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: c821afbbe8571d9573321b9d11b069aa0f7cd342
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: fe32676f0e39ed109a68f39584cf41aec5f5ce90
+ms.openlocfilehash: 3bb7e2c9665cf98fe48e1445dfcf8009b329a39a
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/10/2017
 
 ---
 # <a name="walkthrough-embedding-types-from-managed-assemblies-in-visual-studio-c"></a>チュートリアル: Visual Studio でマネージ アセンブリからの型を埋め込む (C#)
@@ -48,7 +49,7 @@ ms.lasthandoff: 03/13/2017
   
 -   定数は埋め込まれません。  
   
--   <xref:System.Collections.Generic.Dictionary%602?displayProperty=fullName> クラスは、埋め込み型をキーとしてサポートしていません。 埋め込み型をキーとしてサポートするために、独自のディクショナリ型を実装することは可能です。  
+-   <xref:System.Collections.Generic.Dictionary%602?displayProperty=fullName> クラスでは、埋め込み型をキーとして利用できません。 埋め込み型をキーとしてサポートするために、独自のディクショナリ型を実装することは可能です。  
   
  このチュートリアルでは、次のタスクを行います。  
   
@@ -62,7 +63,7 @@ ms.lasthandoff: 03/13/2017
   
 -   クライアント プログラムを実行して、新バージョンのランタイム アセンブリが、クライアント プログラムを再コンパイルしなくても使用されていることを確認する。  
   
-[!INCLUDE[note_settings_general](../../../../csharp/language-reference/compiler-messages/includes/note_settings_general_md.md)]  
+[!INCLUDE[note_settings_general](~/includes/note-settings-general-md.md)]  
   
 ## <a name="creating-an-interface"></a>インターフェイスの作成  
   
@@ -80,14 +81,32 @@ ms.lasthandoff: 03/13/2017
   
 6.  ISampleInterface.cs ファイルを開きます。 ISampleInterface クラス ファイルに、ISampleInterface インターフェイスを作成するための次のコードを追加します。  
   
-<CodeContentPlaceHolder>0</CodeContentPlaceHolder>  
+    ```csharp  
+    using System;  
+    using System.Runtime.InteropServices;  
+  
+    namespace TypeEquivalenceInterface  
+    {  
+        [ComImport]  
+        [Guid("8DA56996-A151-4136-B474-32784559F6DF")]  
+        public interface ISampleInterface  
+        {  
+            void GetUserInput();  
+            string UserInput { get; }  
+        }  
+    }  
+    ```  
+  
 7.  **[ツール]** メニューの **[GUID の作成]**をクリックします。 **[GUID の作成]**ダイアログ ボックスで、**[レジストリ形式]** をクリックし、**[コピー]** をクリックします。 [ **終了**] をクリックします。  
   
 8.  `Guid` 属性で、サンプルの GUID を削除し、**[GUID の作成]** ダイアログ ボックスからコピーした GUID を貼り付けます。 コピーした GUID から中かっこ ({}) を削除します。  
   
 9. **ソリューション エクスプローラー**で、**[プロパティ]** フォルダーを展開します。 AssemblyInfo.cs ファイルをダブルクリックします。 ファイルに次の属性を追加します。  
   
-<CodeContentPlaceHolder>1</CodeContentPlaceHolder>  
+    ```csharp  
+    [assembly: ImportedFromTypeLib("")]  
+    ```  
+  
      ファイルを保存します。  
   
 10. プロジェクトを保存します。  
@@ -114,7 +133,29 @@ ms.lasthandoff: 03/13/2017
   
 8.  SampleClass クラス ファイルに、SampleClass クラスを作成するための次のコードを追加します。  
   
-<CodeContentPlaceHolder>2</CodeContentPlaceHolder>  
+    ```csharp  
+    using System;  
+    using System.Collections.Generic;  
+    using System.Linq;  
+    using System.Text;  
+    using TypeEquivalenceInterface;  
+  
+    namespace TypeEquivalenceRuntime  
+    {  
+        public class SampleClass : ISampleInterface  
+        {  
+            private string p_UserInput;  
+            public string UserInput { get { return p_UserInput; } }  
+  
+            public void GetUserInput()  
+            {  
+                Console.WriteLine("Please enter a value:");  
+                p_UserInput = Console.ReadLine();  
+            }  
+        }  
+    )  
+    ```  
+  
 9. プロジェクトを保存します。  
   
 10. TypeEquivalenceRuntime プロジェクトを右クリックし、**[ビルド]** をクリックします。 クラス ライブラリの .dll ファイルがコンパイルされ、指定したビルド出力パス (たとえば、C:\TypeEquivalenceSample) に保存されます。  
@@ -135,7 +176,32 @@ ms.lasthandoff: 03/13/2017
   
 6.  Program.cs ファイルに、クライアント プログラムを作成するための次のコードを追加します。  
   
-<CodeContentPlaceHolder>3</CodeContentPlaceHolder>  
+    ```csharp  
+    using System;  
+    using System.Collections.Generic;  
+    using System.Linq;  
+    using System.Text;  
+    using TypeEquivalenceInterface;  
+    using System.Reflection;  
+  
+    namespace TypeEquivalenceClient  
+    {  
+        class Program  
+        {  
+            static void Main(string[] args)  
+            {  
+                Assembly sampleAssembly = Assembly.Load("TypeEquivalenceRuntime");  
+                ISampleInterface sampleClass =   
+                    (ISampleInterface)sampleAssembly.CreateInstance("TypeEquivalenceRuntime.SampleClass");  
+                sampleClass.GetUserInput();  
+                Console.WriteLine(sampleClass.UserInput);  
+                Console.WriteLine(sampleAssembly.GetName().Version.ToString());  
+                Console.ReadLine();  
+            }  
+        }  
+    }  
+    ```  
+  
 7.  Ctrl キーを押しながら F5 キーを押して、プログラムをビルドおよび実行します。  
   
 ## <a name="modifying-the-interface"></a>インターフェイスの変更  
@@ -148,7 +214,10 @@ ms.lasthandoff: 03/13/2017
   
 3.  SampleInterface.cs ファイルを開きます。 ISampleInterface インターフェイスに、次のコード行を追加します。  
   
-<CodeContentPlaceHolder>4</CodeContentPlaceHolder>  
+    ```csharp  
+    DateTime GetDate();  
+    ```  
+  
      ファイルを保存します。  
   
 4.  プロジェクトを保存します。  
@@ -165,7 +234,7 @@ ms.lasthandoff: 03/13/2017
   
 3.  SampleClass.cs ファイルを開きます。 SampleClass クラスに次のコード行を追加します。  
   
-    ```cs  
+    ```csharp  
     public DateTime GetDate()  
     {  
         return DateTime.Now;  
@@ -183,6 +252,6 @@ ms.lasthandoff: 03/13/2017
 ## <a name="see-also"></a>関連項目  
  [-link (C# コンパイラ オプション)](../../../../csharp/language-reference/compiler-options/link-compiler-option.md)   
  [C# プログラミング ガイド](../../../../csharp/programming-guide/index.md)   
- [アセンブリを使用したプログラミング](http://msdn.microsoft.com/library/25918b15-701d-42c7-95fc-c290d08648d6)   
+ [アセンブリを使用したプログラミング](../../../../framework/app-domains/programming-with-assemblies.md)   
  [アセンブリとグローバル アセンブリ キャッシュ (C#)](../../../../csharp/programming-guide/concepts/assemblies-gac/index.md)
 

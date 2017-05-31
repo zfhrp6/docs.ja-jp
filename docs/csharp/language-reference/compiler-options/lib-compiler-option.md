@@ -1,76 +1,95 @@
 ---
-title: "/lib (C# Compiler Options) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.technology: 
-  - "devlang-csharp"
-ms.topic: "article"
-f1_keywords: 
-  - "/lib"
-dev_langs: 
-  - "CSharp"
-helpviewer_keywords: 
-  - "lib compiler option [C#]"
-  - "-lib compiler option [C#]"
-  - "/lib compiler option [C#]"
+title: "-lib (C# コンパイラ オプション) | Microsoft Docs"
+ms.date: 2015-07-20
+ms.prod: .net
+ms.technology:
+- devlang-csharp
+ms.topic: article
+f1_keywords:
+- /lib
+dev_langs:
+- CSharp
+helpviewer_keywords:
+- lib compiler option [C#]
+- -lib compiler option [C#]
+- /lib compiler option [C#]
 ms.assetid: b0efcc88-e8aa-4df4-a00b-8bdef70b7673
 caps.latest.revision: 16
-author: "BillWagner"
-ms.author: "wiwagn"
-caps.handback.revision: 16
+author: BillWagner
+ms.author: wiwagn
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: Human Translation
+ms.sourcegitcommit: fe32676f0e39ed109a68f39584cf41aec5f5ce90
+ms.openlocfilehash: 27bcca456a7a5c884c33de6429e06c94afc9536a
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/10/2017
+
 ---
-# /lib (C# Compiler Options)
-**\/lib** オプションでは、[\/reference \(Import Metadata\)](../../../csharp/language-reference/compiler-options/reference-compiler-option.md) オプションによって参照されるアセンブリの場所を指定します。  
+# <a name="lib-c-compiler-options"></a>/lib (C# コンパイラ オプション)
+**/lib** オプションは、[/reference (C# コンパイラ オプション)](../../../csharp/language-reference/compiler-options/reference-compiler-option.md) オプションによって参照されるアセンブリの場所を指定します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 /lib:dir1[,dir2]  
 ```  
   
-## Arguments  
+## <a name="arguments"></a>引数  
  `dir1`  
- 参照先アセンブリが現在の作業ディレクトリ \(コンパイラを起動したディレクトリ\) または共通言語ランタイムのシステム ディレクトリに存在しない場合に、コンパイラが探すディレクトリ。  
+ 参照されているアセンブリが現在の作業ディレクトリ (コンパイラを起動したディレクトリ) または共通言語ランタイムのシステム ディレクトリに見つからない場合にコンパイラが検索するディレクトリです。  
   
  `dir2`  
- アセンブリ参照を検索するための 1 つ以上の別のディレクトリ。  ディレクトリ名を複数追加する場合は、空白ではなくコンマで区切って指定します。  
+ アセンブリ参照を検索する 1 つまたは複数の追加ディレクトリです。 複数のディレクトリはコンマで区切り、それらの間に空白文字は入れません。  
   
-## 解説  
- コンパイラは、完全には修飾されていないアセンブリ参照を次の順序で検索します。  
+## <a name="remarks"></a>コメント  
+ コンパイラは、完全に修飾されていないアセンブリ参照を次の順序で検索します。  
   
-1.  現在の作業ディレクトリ。  これは、コンパイラが起動されるディレクトリです。  
+1.  現在の作業ディレクトリ。 これは、コンパイラを起動したディレクトリです。  
   
 2.  共通言語ランタイムのシステム ディレクトリ。  
   
-3.  **\/lib** で指定したディレクトリ。  
+3.  **/lib** によって指定されているディレクトリ。  
   
-4.  LIB 環境変数で指定したディレクトリ。  
+4.  LIB 環境変数によって指定されているディレクトリ。  
   
- アセンブリ参照を指定するには、**\/reference** を使用します。  
+ アセンブリ参照を指定するには **/reference** を使います。  
   
- **\/lib** は追加して指定できます。繰り返して指定すると前の値に追加されます。  
+ **/lib** は追加です。複数回指定すると、前の値に追加されます。  
   
- **\/lib** を使用する代わりに、必須のアセンブリをすべて作業ディレクトリにコピーすることもできます。この場合は、アセンブリ名を **\/reference** に渡すだけです。  その後、作業ディレクトリからアセンブリを削除できます。  依存アセンブリのパスはアセンブリ マニフェストで指定されていないため、アプリケーションをターゲット コンピューターで開始でき、グローバル アセンブリ キャッシュ内のアセンブリを検索および使用できます。  
+ **/lib** を使う代わりに、必要なアセンブリを作業ディレクトリにコピーしてもかまいません。このようにすると、アセンブリ名を **/reference** に渡すだけで済みます。 後で、作業ディレクトリからアセンブリを削除できます。 依存アセンブリへのパスはアセンブリ マニフェストで指定されていないため、ターゲット コンピューターで開始されたアプリケーションは、グローバル アセンブリ キャッシュでアセンブリを探して使います。  
   
- コンパイラがアセンブリを参照できる場合でも、共通言語ランタイムが実行時にアセンブリを検索して読み込むことができるとは限りません。  実行時に参照アセンブリがどのように検索されるかについては、「[ランタイムがアセンブリを検索する方法](../Topic/How%20the%20Runtime%20Locates%20Assemblies.md)」を参照してください。  
+ コンパイラがアセンブリを参照できるということは、共通言語ランタイムが実行時にアセンブリを検索して読み込むことができるという意味ではありません。 ランタイムが参照されているアセンブリを検索する方法について詳しくは、「[ランタイムがアセンブリを検索する方法](../../../framework/deployment/how-the-runtime-locates-assemblies.md)」をご覧ください。  
   
-### Visual Studio 開発環境でこのコンパイラ オプションを設定するには  
+### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>Visual Studio 開発環境でこのコンパイラ オプションを設定するには  
   
-1.  プロジェクトの **\[プロパティ ページ\]** ダイアログ ボックスを開きます。  
+1.  プロジェクトの **[プロパティ ページ]** ダイアログ ボックスを開きます。  
   
-2.  **\[参照パス\]** プロパティ ページをクリックします。  
+2.  **[参照パス]** プロパティ ページをクリックします。  
   
 3.  リスト ボックスの内容を変更します。  
   
- このコンパイラ オプションをプログラムで設定する方法については、「<xref:VSLangProj80.ProjectProperties3.ReferencePath%2A>」を参照してください。  
+ このコンパイラ オプションをプログラムで設定する方法については、「<xref:VSLangProj80.ProjectProperties3.ReferencePath%2A>」をご覧ください。  
   
-## 使用例  
- t2.cs をコンパイルして .exe ファイルを作成するには、次のコードを使用します。  コンパイラは、作業ディレクトリと C ドライブのルート ディレクトリでアセンブリ参照を探します。  
+## <a name="example"></a>例  
+ t2.cs をコンパイルして .exe ファイルを作成します。 コンパイラは、作業ディレクトリと C ドライブのルート ディレクトリで、アセンブリ参照を探します。  
   
 ```  
 csc /lib:c:\ /reference:t2.dll t2.cs  
 ```  
   
-## 参照  
- [C\# Compiler Options](../../../csharp/language-reference/compiler-options/index.md)   
- [方法 : プロジェクト プロパティおよび構成設定を変更する](http://msdn.microsoft.com/ja-jp/e7184bc5-2f2b-4b4f-aa9a-3ecfcbc48b67)
+## <a name="see-also"></a>関連項目  
+ [C# コンパイラのオプション](../../../csharp/language-reference/compiler-options/index.md)   
+ [NIB 方法: プロジェクト プロパティと構成設定を変更する](http://msdn.microsoft.com/en-us/e7184bc5-2f2b-4b4f-aa9a-3ecfcbc48b67)

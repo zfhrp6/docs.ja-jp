@@ -30,10 +30,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 5852e79f551ce88e0ca54de159abbc222d769234
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: fe32676f0e39ed109a68f39584cf41aec5f5ce90
+ms.openlocfilehash: bbc5a3aebfd0086388a4a5b020ad8679395cb74b
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/10/2017
 
 ---
 # <a name="how-to-convert-between-hexadecimal-strings-and-numeric-types-c-programming-guide"></a>方法: 16 進文字列と数値型の間で変換する (C# プログラミング ガイド)
@@ -50,32 +51,32 @@ ms.lasthandoff: 03/13/2017
 -   [バイト](../../../csharp/language-reference/keywords/byte.md)配列を 16 進 `string` に変換する。  
   
 ## <a name="example"></a>例  
- この例では、`string` の各文字の 16 進値を出力しています。 まず `string` を解析し、文字配列に変換します。 次に、各文字で <xref:System.Convert.ToInt32%28System.Char%29> を呼び出し、その数値を取得します。 最後に、その数を 16 進表現で `string` に書式設定します。  
+ この例では、`string` の各文字の 16 進値を出力しています。 まず `string` を解析し、文字配列に変換します。 次いで、その数値を取得するために、各文字で <xref:System.Convert.ToInt32%28System.Char%29> を呼び出します。 最後に、その数を 16 進表現で `string` に書式設定します。  
   
  [!code-cs[csProgGuideTypes#30](../../../csharp/programming-guide/nullable-types/codesnippet/CSharp/how-to-convert-between-hexadecimal-strings-and-numeric-types_1.cs)]  
   
 ## <a name="example"></a>例  
- この例は、16 進値の `string` を解析し、各 16 進値に対応する文字を出力しています。 まず、[Split(Char\[\])](xref:System.String.Split(System.Char[])) メソッドを呼び出して、各 16 進値を配列内の個別の `string` として取得します。 次に、<xref:System.Convert.ToInt32%28System.String%2CSystem.Int32%29> を呼び出して、16 進値を [int](../../../csharp/language-reference/keywords/int.md) で表される 10 進値に変換します。 ここでは、その文字コードに対応する文字を取得するための 2 つの方法を示しています。 1 つは、<xref:System.Char.ConvertFromUtf32%28System.Int32%29> を使用する方法です。これは、整数引数に対応する文字を `string` として返します。 もう 1 つは、`int` を明示的に [char](../../../csharp/language-reference/keywords/char.md) にキャストする方法です。  
+ この例は、16 進値の `string` を解析し、各 16 進値に対応する文字を出力しています。 まず、[Split(Char\[\])](xref:System.String.Split(System.Char[])) メソッドを呼び出して、各 16 進値を配列内の個別の `string` として取得します。 次いで <xref:System.Convert.ToInt32%28System.String%2CSystem.Int32%29> を呼び出し、16 進数値を [int](../../../csharp/language-reference/keywords/int.md) の 10 進数値に変換します。 ここでは、その文字コードに対応する文字を取得するための 2 つの方法を示しています。 1 つは、<xref:System.Char.ConvertFromUtf32%28System.Int32%29> を使用する方法です。これは、整数引数に対応する文字を `string` として返します。 もう 1 つは、`int` を明示的に [char](../../../csharp/language-reference/keywords/char.md) にキャストする方法です。  
   
  [!code-cs[csProgGuideTypes#31](../../../csharp/programming-guide/nullable-types/codesnippet/CSharp/how-to-convert-between-hexadecimal-strings-and-numeric-types_2.cs)]  
   
 ## <a name="example"></a>例  
- 次の例は、<xref:System.Int32.Parse%28System.String%2CSystem.Globalization.NumberStyles%29> メソッドを呼び出すことにより 16 進 `string` を整数に変換する方法を示しています。  
+ この例では、<xref:System.Int32.Parse%28System.String%2CSystem.Globalization.NumberStyles%29> メソッドを呼び出し、16 進数 `string` を整数に変換する、別の方法を示します。  
   
  [!code-cs[csProgGuideTypes#32](../../../csharp/programming-guide/nullable-types/codesnippet/CSharp/how-to-convert-between-hexadecimal-strings-and-numeric-types_3.cs)]  
   
 ## <a name="example"></a>例  
- 次の例は、<xref:System.BitConverter?displayProperty=fullName> クラスと <xref:System.Int32.Parse%2A?displayProperty=fullName> メソッドを使用して、16 進 `string` を [float](../../../csharp/language-reference/keywords/float.md) に変換する方法を示しています。  
+ 次の例では、<xref:System.BitConverter?displayProperty=fullName> クラスおよび <xref:System.Int32.Parse%2A?displayProperty=fullName> メソッドを使用して、16 進数の `string` を [float](../../../csharp/language-reference/keywords/float.md) に変換する方法を示します。  
   
  [!code-cs[csProgGuideTypes#39](../../../csharp/programming-guide/nullable-types/codesnippet/CSharp/how-to-convert-between-hexadecimal-strings-and-numeric-types_4.cs)]  
   
 ## <a name="example"></a>例  
- 次の例は、<xref:System.BitConverter?displayProperty=fullName> クラスを使用して[バイト](../../../csharp/language-reference/keywords/byte.md)配列を 16 進文字列に変換する方法を示しています。  
+ 次の例は、<xref:System.BitConverter?displayProperty=fullName> クラスを使用して [byte](../../../csharp/language-reference/keywords/byte.md) 配列を 16 進文字列に変換する方法を示します。  
   
  [!code-cs[csProgGuideTypes#38](../../../csharp/programming-guide/nullable-types/codesnippet/CSharp/how-to-convert-between-hexadecimal-strings-and-numeric-types_5.cs)]  
   
 ## <a name="see-also"></a>関連項目  
- [標準の数値書式指定文字列](http://msdn.microsoft.com/library/580e57eb-ac47-4ffd-bccd-3a1637c2f467)   
+ [標準の数値書式指定文字列](../../../standard/base-types/standard-numeric-format-strings.md)   
  [型](../../../csharp/programming-guide/types/index.md)   
  [方法: 文字列が数値を表しているかどうかを確認する](../../../csharp/programming-guide/strings/how-to-determine-whether-a-string-represents-a-numeric-value.md)
 

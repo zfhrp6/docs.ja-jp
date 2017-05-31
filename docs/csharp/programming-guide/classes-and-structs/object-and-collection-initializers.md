@@ -28,10 +28,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 34c0c1ff1c00eecc27edaff30f119e2f3dac8c1d
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 66045a6902e64db394a1f5812658e25a11692027
+ms.openlocfilehash: a4d0e8f348afdf1793804a4062be45d2fb4e7e2b
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/21/2017
 
 ---
 # <a name="object-and-collection-initializers-c-programming-guide"></a>オブジェクト初期化子とコレクション初期化子 (C# プログラミング ガイド)
@@ -44,7 +45,7 @@ ms.lasthandoff: 03/13/2017
 ## <a name="object-initializers-with-anonymous-types"></a>オブジェクト初期化子と匿名型  
  オブジェクト初期化子は、どのような場合にも使うことができますが、[!INCLUDE[vbteclinq](../../../csharp/includes/vbteclinq_md.md)] クエリ式で使うと特に有用です。 クエリ式では、次の宣言に示すように、オブジェクト初期化子を使うことによってのみ初期化できる[匿名型](../../../csharp/programming-guide/classes-and-structs/anonymous-types.md)が頻繁に使われます。  
   
-```  
+```csharp
 var pet = new { Age = 10, Name = "Fluffy" };  
 ```  
   
@@ -54,13 +55,13 @@ var pet = new { Age = 10, Name = "Fluffy" };
   
  このクエリが実行されると、`productInfos` 変数には、次の例に示す `foreach` ステートメントでアクセスできるオブジェクトのシーケンスが格納されます。  
   
-```  
+```csharp
 foreach(var p in productInfos){...}  
 ```  
   
  作成される匿名型内の各オブジェクトには、2 つのパブリック プロパティがあります。これらのプロパティには、元のオブジェクトのプロパティまたはフィールドと同じ名前が付けられます。 匿名型を作成するときにフィールドの名前を変更することもできます。次の例では、フィールド `UnitPrice` の名前が `Price` に変更されます。  
   
-```  
+```csharp
 select new {p.ProductName, Price = p.UnitPrice};  
 ```  
   
@@ -68,11 +69,11 @@ select new {p.ProductName, Price = p.UnitPrice};
  オブジェクト初期化子を null 許容構造体と共に使用すると、コンパイル時にエラーになります。  
   
 ## <a name="collection-initializers"></a>コレクション初期化子  
- コレクション初期化子を使うと、<xref:System.Collections.IEnumerable> を実装するコレクション クラスまたは `Add` 拡張メソッドが含まれるクラスを初期化するときに、1 つ以上の要素の初期化子を指定できます。 要素の初期化子は、単純な値、式またはオブジェクト初期化子です。 コレクション初期化子を使用すると、ソース コード内でクラスの `Add` メソッドの呼び出しを複数回指定する必要がなくなります。コンパイラによって呼び出しが追加されるためです。  
+ コレクション初期化子を使うと、<xref:System.Collections.IEnumerable> を実装するコレクション型を初期化するときに 1 つ以上の要素の初期化子を指定でき、適切なシグネチャの `Add` をインスタンス メソッドまたは拡張メソッドとして使用できます。 要素の初期化子は、単純な値、式またはオブジェクト初期化子です。 コレクション初期化子を使用すると、ソース コード内でクラスの `Add` メソッドの呼び出しを複数回指定する必要がなくなります。コンパイラによって呼び出しが追加されるためです。  
   
  2 つの単純なコレクション初期化子を次の例に示します。  
   
-```  
+```csharp
 List<int> digits = new List<int> { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };  
 List<int> digits2 = new List<int> { 0 + 1, 12 % 3, MakeInt() };  
 ```  
@@ -87,7 +88,7 @@ List<int> digits2 = new List<int> { 0 + 1, 12 % 3, MakeInt() };
   
  コレクションがインデックス作成をサポートしている場合は、インデックス付きの要素を指定することができます。  
   
-```  
+```csharp
 var numbers = new Dictionary<int, string> {   
     [7] = "seven",   
     [9] = "nine",   
@@ -102,3 +103,4 @@ var numbers = new Dictionary<int, string> {
  [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
  [LINQ クエリ式](../../../csharp/programming-guide/linq-query-expressions/index.md)   
  [匿名型](../../../csharp/programming-guide/classes-and-structs/anonymous-types.md)
+

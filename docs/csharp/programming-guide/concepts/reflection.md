@@ -16,10 +16,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: ab40ab2258703670576084eccf7fd7e1b113d08d
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: fe32676f0e39ed109a68f39584cf41aec5f5ce90
+ms.openlocfilehash: ceba1f9e17e6adc94ec25401bc2ddd4ea7c610ba
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/10/2017
 
 ---
 # <a name="reflection-c"></a>リフレクション (C#)
@@ -56,26 +57,26 @@ System.Console.WriteLine(info);
 ## <a name="reflection-overview"></a>リフレクションの概要  
  リフレクションは、次の場合に役立ちます。  
   
--   プログラムのメタデータ内の属性にアクセスする必要がある。 詳細については、「[属性に格納されている情報の取得](http://msdn.microsoft.com/library/37dfe4e3-7da0-48b6-a3d9-398981524e1c)」を参照してください。  
+-   プログラムのメタデータ内の属性にアクセスする必要がある。 詳細については、「[属性に格納されている情報の取得](../../../standard/attributes/retrieving-information-stored-in-attributes.md)」を参照してください。  
   
 -   アセンブリの型をチェックし、インスタンス化する。  
   
--   実行時に新しい型を作成する。 <xref:System.Reflection.Emit> でクラスを使用します。  
+-   実行時に新しい型を作成する。 <xref:System.Reflection.Emit> でクラスを使います。  
   
--   遅延バインディングを実行するために、実行時に作成された型でメソッドにアクセスする。 「[型の動的な読み込みおよび使用](http://msdn.microsoft.com/library/db985bec-5942-40ec-b13a-771ae98623dc)」を参照してください。  
+-   遅延バインディングを実行するために、実行時に作成された型でメソッドにアクセスする。 「[型の動的な読み込みおよび使用](../../../framework/reflection-and-codedom/dynamically-loading-and-using-types.md)」を参照してください。  
   
 ## <a name="related-sections"></a>関連項目  
  詳細情報  
   
--   [リフレクション](http://msdn.microsoft.com/library/d1a58e7f-fb39-4d50-bf84-e3b8f9bf9775)  
+-   [リフレクション](../../../framework/reflection-and-codedom/reflection.md)  
   
--   [型情報の表示](http://msdn.microsoft.com/library/7e7303a9-4064-4738-b4e7-b75974ed70d2)  
+-   [型情報の表示](../../../framework/reflection-and-codedom/viewing-type-information.md)  
   
--   [リフレクションとジェネリック型](http://msdn.microsoft.com/library/f7180fc5-dd41-42d4-8a8e-1b34288e06de)  
+-   [リフレクションとジェネリック型](../../../framework/reflection-and-codedom/reflection-and-generic-types.md)  
   
 -   <xref:System.Reflection.Emit>  
   
--   [属性に格納されている情報の取得](http://msdn.microsoft.com/library/37dfe4e3-7da0-48b6-a3d9-398981524e1c)  
+-   [属性に格納されている情報の取得](../../../standard/attributes/retrieving-information-stored-in-attributes.md)  
   
 ## <a name="see-also"></a>関連項目  
  [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   

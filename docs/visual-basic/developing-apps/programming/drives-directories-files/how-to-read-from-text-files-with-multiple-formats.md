@@ -1,38 +1,55 @@
 ---
-title: "How to: Read From Text Files with Multiple Formats in Visual Basic | Microsoft Docs"
-ms.custom: ""
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "TextFieldParser object, reading from a file"
-  - "TextFieldType enumeration"
-  - "My.Computer.FileSystem.WriteAllText method, parsing structured text files"
-  - "WriteAllText method, parsing structured text files"
-  - "PeekChars method, determining format of text"
-  - "reading text files, multiple formats"
-  - "I/O [Visual Basic], reading text files"
-  - "text files, reading"
+title: "方法: Visual Basic で複数の書式を持つテキスト ファイルを読み取る | Microsoft Docs"
+ms.custom: 
+ms.date: 2015-07-20
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-visual-basic
+ms.topic: article
+dev_langs:
+- VB
+helpviewer_keywords:
+- TextFieldParser object, reading from a file
+- TextFieldType enumeration
+- My.Computer.FileSystem.WriteAllText method, parsing structured text files
+- WriteAllText method, parsing structured text files
+- PeekChars method, determining format of text
+- reading text files, multiple formats
+- I/O [Visual Basic], reading text files
+- text files, reading
 ms.assetid: 8d185eb2-79ca-42cd-95a7-d3ff44a5a0f8
 caps.latest.revision: 17
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 17
----
-# How to: Read From Text Files with Multiple Formats in Visual Basic
-[!INCLUDE[vs2017banner](../../../../visual-basic/developing-apps/includes/vs2017banner.md)]
+author: dotnet-bot
+ms.author: dotnetcontent
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
+ms.openlocfilehash: 6df284f7204b0731063db10cf026aed863f99fa9
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/22/2017
 
-<xref:Microsoft.VisualBasic.FileIO.TextFieldParser> オブジェクトを使用すると、ログなどの構造化されたテキスト ファイルを簡単かつ効率的に解析できます。  `PeekChars` メソッドを使用して、ファイルを解析するときに各行の書式を判断することにより、複数の書式を持つファイルを処理できます。  
+---
+# <a name="how-to-read-from-text-files-with-multiple-formats-in-visual-basic"></a>方法: Visual Basic で複数の書式を持つテキスト ファイルを読み取る
+<xref:Microsoft.VisualBasic.FileIO.TextFieldParser> オブジェクトには、ログなどの構造化されたテキスト ファイルを簡単かつ効率的に解析する方法が備わっています。 `PeekChars` メソッドを使用して、ファイルを解析するときに各行の書式を判断すると、複数の書式を持つファイルを処理できます。  
   
-### 複数の書式を持つテキスト ファイルを解析するには  
+### <a name="to-parse-a-text-file-with-multiple-formats"></a>複数の書式を持つテキスト ファイルを解析するには  
   
-1.  testfile.txt という名前のテキスト ファイルをプロジェクトに追加します。  次の内容をそのテキスト ファイルに追加します。  
+1.  testfile.txt という名前のテキスト ファイルをプロジェクトに追加します。 次の内容をテキスト ファイルに追加します。  
   
     ```  
     Err  1001 Cannot access resource.  
@@ -43,11 +60,11 @@ caps.handback.revision: 17
     Acc  10/04/2009User2      Standard user.  
     ```  
   
-2.  目的の書式と、エラーが報告されるときに使用する書式を定義します。  各配列の最後のエントリが \-1 なので、最後のフィールドは可変幅と見なされます。  これは、配列の最後のエントリが 0 以下の場合に発生します。  
+2.  予期される形式と、エラーが報告されたときに使用される形式を定義します。 各配列の最後のエントリは -1 です。そのため、最後のフィールドは可変幅であると見なされます。 これは、配列の最後のエントリが 0 以下の場合に発生します。  
   
      [!code-vb[VbFileIORead#4](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/VisualBasic/how-to-read-from-text-files-with-multiple-formats_1.vb)]  
   
-3.  幅と書式を指定して、新しい <xref:Microsoft.VisualBasic.FileIO.TextFieldParser> オブジェクトを作成します。  
+3.  幅と形式を定義して、新しい <xref:Microsoft.VisualBasic.FileIO.TextFieldParser> オブジェクトを作成します。  
   
      [!code-vb[VbFileIORead#5](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/VisualBasic/how-to-read-from-text-files-with-multiple-formats_2.vb)]  
   
@@ -59,31 +76,31 @@ caps.handback.revision: 17
   
      [!code-vb[VbFileIORead#7](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/VisualBasic/how-to-read-from-text-files-with-multiple-formats_4.vb)]  
   
-## 使用例  
- `testfile.txt` ファイルから読み込まれた完全な例を次に示します。  
+## <a name="example"></a>例  
+ この例では、`testfile.txt` ファイルを読み取ります。  
   
  [!code-vb[VbFileIORead#8](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/VisualBasic/how-to-read-from-text-files-with-multiple-formats_5.vb)]  
   
-## 信頼性の高いプログラミング  
+## <a name="robust-programming"></a>信頼性の高いプログラミング  
  次の条件を満たす場合は、例外が発生する可能性があります。  
   
--   指定の書式を使用して行を解析できない \(<xref:Microsoft.VisualBasic.FileIO.MalformedLineException>\)。  例外メッセージは、例外が発生した行を表し、<xref:Microsoft.VisualBasic.FileIO.TextFieldParser.ErrorLine%2A> プロパティには、行内のテキストが割り当てられる。  
+-   指定した形式で行を解析することができない (<xref:Microsoft.VisualBasic.FileIO.MalformedLineException>)。 例外の原因となった行が例外メッセージで報告され、<xref:Microsoft.VisualBasic.FileIO.TextFieldParser.ErrorLine%2A> プロパティには、その行に含まれているテキストが代入されます。  
   
--   指定のファイルが存在しない \(<xref:System.IO.FileNotFoundException>\)。  
+-   指定されたファイルが存在しない (<xref:System.IO.FileNotFoundException>)。  
   
--   部分信頼の状況で、ファイルにアクセスするための十分なアクセス許可がユーザーにない。  \(<xref:System.Security.SecurityException>\).  
+-   部分信頼の状況下で、ファイルにアクセスするために必要なアクセス許可がユーザーにない。 (<xref:System.Security.SecurityException>)。  
   
--   パスが長すぎる \(<xref:System.IO.PathTooLongException>\)。  
+-   パスが長すぎる (<xref:System.IO.PathTooLongException>)。  
   
--   ユーザーがファイルにアクセスするのに必要なアクセス許可がない \(<xref:System.UnauthorizedAccessException>\)。  
+-   ファイルにアクセスするために必要なアクセス許可がユーザーにない (<xref:System.UnauthorizedAccessException>)。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  <xref:Microsoft.VisualBasic.FileIO.TextFieldParser?displayProperty=fullName>   
  <xref:Microsoft.VisualBasic.FileIO.TextFieldParser.PeekChars%2A>   
  <xref:Microsoft.VisualBasic.FileIO.MalformedLineException>   
  <xref:Microsoft.VisualBasic.FileIO.FileSystem.WriteAllText%2A>   
  <xref:Microsoft.VisualBasic.FileIO.TextFieldParser.EndOfData%2A>   
  <xref:Microsoft.VisualBasic.FileIO.TextFieldParser.TextFieldType%2A>   
- [How to: Read From Comma\-Delimited Text Files](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-read-from-comma-delimited-text-files.md)   
- [How to: Read From Fixed\-width Text Files](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-read-from-fixed-width-text-files.md)   
- [Parsing Text Files with the TextFieldParser Object](../../../../visual-basic/developing-apps/programming/drives-directories-files/parsing-text-files-with-the-textfieldparser-object.md)
+ [方法: コンマ区切りのテキスト ファイルを読み取る](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-read-from-comma-delimited-text-files.md)   
+ [方法: 固定幅のテキスト ファイルを読み取る](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-read-from-fixed-width-text-files.md)   
+ [TextFieldParser オブジェクトによるテキスト ファイルの解析](../../../../visual-basic/developing-apps/programming/drives-directories-files/parsing-text-files-with-the-textfieldparser-object.md)

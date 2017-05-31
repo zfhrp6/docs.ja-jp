@@ -19,10 +19,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 31b206eb01d778b67acc1a25d3c69e2e1dfd553d
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: fe32676f0e39ed109a68f39584cf41aec5f5ce90
+ms.openlocfilehash: f8d51aa1c50c097577a575be9b5da4b9e0effc55
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/10/2017
 
 ---
 # <a name="thread-synchronization-c"></a>スレッドの同期 (C#)
@@ -36,11 +37,11 @@ ms.lasthandoff: 03/13/2017
   
  マルチスレッド プログラミングの背景情報については、以下を参照してください。  
   
--   [マネージ スレッド処理の基本](http://msdn.microsoft.com/library/b2944911-0e8f-427d-a8bb-077550618935)  
+-   [マネージ スレッド処理の基本](../../../../standard/threading/managed-threading-basics.md)  
   
--   [スレッドの使用とスレッド処理](http://msdn.microsoft.com/library/9b5ec2cd-121b-4d49-b075-222cf26f2344)  
+-   [スレッドの使用とスレッド処理](../../../../standard/threading/using-threads-and-threading.md)  
   
--   [マネージ スレッド処理の実施](http://msdn.microsoft.com/library/e51988e7-7f4b-4646-a06d-1416cee8d557)  
+-   [マネージ スレッド処理の実施](../../../../standard/threading/managed-threading-best-practices.md)  
   
 ## <a name="the-lock-keyword"></a>lock キーワード  
  C# `lock` ステートメントを使用すると、他のスレッドからの割り込みを受けることなくコード ブロックを確実に最後まで実行できます。 これは、コード ブロックの実行中に、特定のオブジェクトに対して同時に使用できないロックを取得することで実現されます。  
@@ -108,7 +109,7 @@ finally
   
  <xref:System.Threading.WaitHandle.WaitOne%2A>、<xref:System.Threading.WaitHandle.WaitAny%2A>、<xref:System.Threading.WaitHandle.WaitAll%2A> などの待機メソッドのいずれかを呼び出すことによって、スレッドにイベントを待機させることができます。 <xref:System.Threading.WaitHandle.WaitOne%2A?displayProperty=fullName> は、単一のイベントがシグナル状態になるまでスレッドを待機させます。<xref:System.Threading.WaitHandle.WaitAny%2A?displayProperty=fullName> は、指定した 1 つ以上のイベントがシグナル状態になるまでスレッドをブロックします。<xref:System.Threading.WaitHandle.WaitAll%2A?displayProperty=fullName> は、指定したすべてのイベントがシグナル状態になるまでスレッドをブロックします。 イベントは、その <xref:System.Threading.EventWaitHandle.Set%2A> メソッドが呼び出されると、シグナル状態になります。  
   
- 次の例では、`Main` 関数によってスレッドが作成され開始されます。 新しいスレッドは <xref:System.Threading.WaitHandle.WaitOne%2A> メソッドを使用してイベントを待機します。 このスレッドは、`Main` 関数を実行しているプライマリ スレッドによってイベントがシグナル状態になるまで中断されます。 イベントがシグナル状態になると、この補助スレッドに制御が戻ります。 この場合は 1 つのスレッドだけをアクティブにするためにイベントを使用しているので、<xref:System.Threading.AutoResetEvent> クラスと <xref:System.Threading.ManualResetEvent> クラスのいずれも使用できます。  
+ 次の例では、`Main` 関数によってスレッドが作成され開始されます。 新しいスレッドは <xref:System.Threading.WaitHandle.WaitOne%2A> メソッドを使用してイベントを待機します。 このスレッドは、`Main` 関数を実行しているプライマリ スレッドによってイベントがシグナル状態になるまで中断されます。 イベントがシグナル状態になると、この補助スレッドに制御が戻ります。 この場合は 1 つのスレッドだけをアクティブにするためにイベントを使用しているので、<xref:System.Threading.AutoResetEvent> クラスまたは <xref:System.Threading.ManualResetEvent> クラスのいずれも使用できます。  
   
 ```csharp  
 using System;  
@@ -147,7 +148,7 @@ class ThreadingExample
   
  プロセス間の同期に使用されるミューテックスは、*名前付きミューテックス*と呼ばれます。このようなミューテックスは別のアプリケーションで使用される可能性があるため、グローバル変数や静的変数を使用して共有できないからです。 したがって、両方のアプリケーションから同じミューテックス オブジェクトにアクセスできるように、名前を付ける必要があります。  
   
- ミューテックスを使用するとプロセス間でスレッドを同期できますが、通常は <xref:System.Threading.Monitor> の使用をお勧めします。その理由は、モニターが .NET Framework 専用にデザインされているため、より適切にリソースを利用できる点にあります。 一方、<xref:System.Threading.Mutex> クラスは Win32 の構成要素のラッパーです。 ミューテックスはモニターよりも強力ですが、<xref:System.Threading.Monitor> クラスよりも相互運用機能の遷移に必要な計算上の負荷が大きくなってしまいます。 ミューテックスの使用例については、「[ミューテックス](http://msdn.microsoft.com/library/9dd06e25-12c0-4a9e-855a-452dc83803e2)」を参照してください。  
+ ミューテックスを使用するとプロセス間でスレッドを同期できますが、通常は <xref:System.Threading.Monitor> の使用をお勧めします。その理由は、モニターが .NET Framework 専用にデザインされているため、より適切にリソースを利用できる点にあります。 一方、<xref:System.Threading.Mutex> クラスは Win32 の構成要素のラッパーです。 ミューテックスはモニターよりも強力ですが、<xref:System.Threading.Monitor> クラスよりも相互運用機能の遷移に必要な計算上の負荷が大きくなってしまいます。 ミューテックスの使用例については、「[ミューテックス](../../../../standard/threading/mutexes.md)」を参照してください。  
   
 ## <a name="interlocked-class"></a>Interlocked クラス  
  <xref:System.Threading.Interlocked> クラスのメソッドを使用すると、複数のスレッドが同じ値を同時に更新または比較しようとしたときに発生する可能性のある問題を回避できます。 このクラスのメソッドによって、どのスレッドの値も安全にインクリメント、デクリメント、交換、比較することができます。  
@@ -177,8 +178,8 @@ class ThreadingExample
  <xref:System.Threading.EventWaitHandle.Set%2A>   
  [マルチスレッド アプリケーション (C#)](../../../../csharp/programming-guide/concepts/threading/multithreaded-applications.md)   
  [lock ステートメント](../../../../csharp/language-reference/keywords/lock-statement.md)   
- [ミューテックス](http://msdn.microsoft.com/library/9dd06e25-12c0-4a9e-855a-452dc83803e2)   
+ [ミューテックス](../../../../standard/threading/mutexes.md)   
  @System.Threading.Monitor   
- [インタロックされた操作](http://msdn.microsoft.com/library/cbda7114-c752-4f3e-ada1-b1e8dd262f2b)   
- [AutoResetEvent](http://msdn.microsoft.com/library/6d39c48d-6b37-4a9b-8631-f2924cfd9c18)   
- [マルチスレッド処理のためのデータの同期](http://msdn.microsoft.com/library/b980eb4c-71d5-4860-864a-6dfe3692430a)
+ [インタロックされた操作](../../../../standard/threading/interlocked-operations.md)   
+ [AutoResetEvent](../../../../standard/threading/autoresetevent.md)   
+ [マルチスレッド処理のためのデータの同期](../../../../standard/threading/synchronizing-data-for-multithreading.md)

@@ -28,18 +28,19 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: cea1f48f336e4c73fa317d1cbbab3d06ceb6045f
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: fe32676f0e39ed109a68f39584cf41aec5f5ce90
+ms.openlocfilehash: 2eeb2f0b833d3b5cc658ec96570d95c2d167b40b
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/10/2017
 
 ---
 # <a name="generics-and-reflection-c-programming-guide"></a>ジェネリックとリフレクション (C# プログラミング ガイド)
 共通言語ランタイム (CLR) は実行時にジェネリック型の情報にアクセスできるため、非ジェネリック型の場合と同じように、リフレクションを使用してジェネリック型の情報を取得できます。 詳細については、「[ランタイムのジェネリック](../../../csharp/programming-guide/generics/generics-in-the-run-time.md)」を参照してください。  
   
- [!INCLUDE[dnprdnlong](../../../csharp/programming-guide/events/includes/dnprdnlong_md.md)] には、ジェネリック型の実行時の情報を有効にする新しいメンバーがいくつか <xref:System.Type> クラスに追加されています。 それらのメソッドとプロパティの使用方法の詳細については、そのクラスのドキュメントを参照してください。 <xref:System.Reflection.Emit> 名前空間にも、ジェネリックをサポートする新しいメンバーが追加されています。 「[方法: リフレクション出力を使用してジェネリック型を定義する](http://msdn.microsoft.com/library/07d5f01a-7b5b-40ea-9b15-f21561098fe4)」を参照してください。  
+ [!INCLUDE[dnprdnlong](../../../csharp/programming-guide/events/includes/dnprdnlong_md.md)] には、ジェネリック型の実行時の情報を有効にする新しいメンバーがいくつか <xref:System.Type> クラスに追加されています。 それらのメソッドとプロパティの使用方法の詳細については、そのクラスのドキュメントを参照してください。 <xref:System.Reflection.Emit> 名前空間にも、ジェネリックをサポートする新しいメンバーが追加されています。 「[方法: リフレクション出力を使用してジェネリック型を定義する](../../../framework/reflection-and-codedom/how-to-define-a-generic-type-with-reflection-emit.md)」を参照してください。  
   
- ジェネリック リフレクションで使用される用語に関する一定条件の一覧については、<xref:System.Type.IsGenericType%2A> プロパティの解説を参照してください。  
+ ジェネリック リフレクションで使用する用語に関する一定の条件の一覧については、<xref:System.Type.IsGenericType%2A> プロパティの解説を参照してください。  
   
 |System.Type メンバー名|説明|  
 |-----------------------------|-----------------|  
@@ -55,7 +56,7 @@ ms.lasthandoff: 03/13/2017
 |<xref:System.Type.DeclaringMethod%2A>|現在のジェネリック型パラメーターを定義したジェネリック メソッドを返します。その型パラメーターがジェネリック メソッドによって定義されたものではない場合は null を返します。|  
 |<xref:System.Type.MakeGenericType%2A>|型の配列の要素を現在のジェネリック型定義の型パラメーターで置き換え、結果の構築型を表す <xref:System.Type> オブジェクトを返します。|  
   
- さらに、ジェネリック メソッドの実行時の情報を有効にする新しいメンバーが <xref:System.Reflection.MethodInfo> クラスに追加されています。 ジェネリック メソッドのリフレクションで使用される用語の一定条件の一覧については、<xref:System.Reflection.MethodInfo.IsGenericMethod%2A> プロパティの解説を参照してください。  
+ ジェネリック メソッドの実行時の情報を有効にする新しいメンバーがいくつか <xref:System.Reflection.MethodInfo> クラスに追加されています。 ジェネリック メソッドのリフレクションで使用する用語に関する一定の条件の一覧については、<xref:System.Reflection.MethodInfo.IsGenericMethod%2A> プロパティの解説を参照してください。  
   
 |System.Reflection.MemberInfo メンバー名|説明|  
 |----------------------------------------------|-----------------|  
@@ -69,5 +70,5 @@ ms.lasthandoff: 03/13/2017
 ## <a name="see-also"></a>関連項目  
  [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
  [ジェネリック](../../../csharp/programming-guide/generics/index.md)   
- [リフレクションとジェネリック型](http://msdn.microsoft.com/library/f7180fc5-dd41-42d4-8a8e-1b34288e06de)   
+ [リフレクションとジェネリック型](../../../framework/reflection-and-codedom/reflection-and-generic-types.md)   
  [ジェネリック](https://msdn.microsoft.com/library/ms172192)

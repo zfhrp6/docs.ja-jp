@@ -10,10 +10,11 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 542754a9-7f40-4293-b299-b9f80241902c
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 4673690c95d1a1fcea950db272cf0685a9d4c888
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 890c058bd09893c2adb185e1d8107246eef2e20a
+ms.openlocfilehash: 5cce6b538e27f654c1f4fec732a9c69372f8c9ad
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/12/2017
 
 ---
 
@@ -170,8 +171,7 @@ BlockExpression body = Expression.Block(
 
 階乗関数の式ツリーを構築するコードは、かなり長く複雑になります。また、通常のコーディング作業では避けたいラベルや break ステートメントなどの要素が多くなってしまいます。 
 
-このセクションでは、この式ツリーのすべてのノードにアクセスするビジター コードも更新し、このサンプルで作成したノードに関する情報を書き出しました。 コードについては、[サンプル セクション](https://github.com/dotnet/docs/tree/master/samples/csharp/expression-trees)を参照してください。
-自分でサンプルをビルドし、実行してみてください。
+このセクションでは、この式ツリーのすべてのノードにアクセスするビジター コードも更新し、このサンプルで作成したノードに関する情報を書き出しました。 GitHub の dotnet/docs レポジトリで、[サンプル コードを表示またはダウンロード](https://github.com/dotnet/docs/tree/master/samples/csharp/expression-trees)することができます。 自分でサンプルをビルドし、実行してみてください。 ダウンロード方法については、「[サンプルおよびチュートリアル](../samples-and-tutorials/index.md#viewing-and-downloading-samples)」を参照してください。
 
 ## <a name="examining-the-apis"></a>API の確認
 

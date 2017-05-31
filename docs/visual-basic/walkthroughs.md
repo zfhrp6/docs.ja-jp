@@ -14,8 +14,8 @@ helpviewer_keywords:
 - walkthroughs [Visual Basic]
 ms.assetid: e4e1f849-e1ce-4cf7-8483-d9b4c4887a8e
 caps.latest.revision: 18
-author: stevehoag
-ms.author: shoag
+author: dotnet-bot
+ms.author: dotnetcontent
 translation.priority.ht:
 - cs-cz
 - de-de
@@ -30,17 +30,18 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 07743cabc00f65b1369c2733e5119cf1eaf47e0a
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
+ms.openlocfilehash: f88f7dcc7880621cf0f482b32ad7c1e5f1b51257
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/22/2017
 
 ---
 # <a name="visual-basic-language-walkthroughs"></a>Visual Basic 言語のチュートリアル
 チュートリアルでは、製品や特定の機能領域について学習を開始するのに適した一般的なシナリオについて詳細な手順を示します。  
   
  [非同期プログラムの作成](./programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md)  
- [!INCLUDE[vs_dev11_long](../csharp/includes/vs_dev11_long_md.md)] で導入された [Async](../visual-basic/language-reference/modifiers/async.md) および [Await](../visual-basic/language-reference/operators/await-operator.md) を使用して非同期ソリューションを作成する方法について説明します。  
+ [Async](../visual-basic/language-reference/modifiers/async.md) と [Await](../visual-basic/language-reference/operators/await-operator.md) を使用して非同期ソリューションを作成する方法を示します。  
   
  [イベントの宣言と発生](../visual-basic/programming-guide/language-features/events/walkthrough-declaring-and-raising-events.md)  
  [!INCLUDE[vbprvb](../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] でイベントを宣言する方法と発生させる方法について説明します。  

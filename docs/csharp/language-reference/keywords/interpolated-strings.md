@@ -26,17 +26,18 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: a3e2641e5c7cd3ce98ca869889848e8cdf4eed62
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: be7974018ce3195dc7344192d647fe64fb2ebcc4
+ms.openlocfilehash: ee9d0f9803c6de056644587578792568ab25b4da
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/14/2017
 
 ---
 # <a name="interpolated-strings-c-reference"></a>挿入文字列 (C# リファレンス)
 
 文字列の作成に使用されます。  挿入文字列は、*挿入式*が含まれているテンプレート文字列のように見えます。  挿入文字列は、含まれる挿入式をその文字列表現に置き換えた文字列を返します。  
 
-挿入文字列の引数は、[複合書式指定文字列](../../../standard/base-types/composite-format.md#composite-format-string)よりもわかりやすいものです。  たとえば、挿入文字列には、  
+挿入文字列の引数は、[複合書式指定文字列](../../../standard/base-types/composite-formatting.md#composite-format-string)よりもわかりやすいものです。  たとえば、挿入文字列には、  
   
 ```csharp  
 Console.WriteLine($"Name = {name}, hours = {hours:hh}"); 
@@ -75,9 +76,9 @@ $"<text> {<interpolated-expression> [,<field-width>] [<:format-string>] } <text>
 
    [!code-cs[interpolated-strings1](../../../../samples/snippets/csharp/language-reference/keywords/interpolated-strings1.cs#1)]  
 
-   これが、文字列解釈の最終的な結果です。 二重中かっこ “{{“ および “}}” のすべての発生箇所は、単一の中かっこに変換されます。 
+   これが、文字列解釈の最終的な結果です。 二重中かっこ ("{{" および "}}") のすべての発生箇所は、単一の中かっこに変換されます。 
 
-2. 挿入文字列から <xref:System.IFormattable> 変数への変換。これは、単一の <xref:System.IFormattable> インスタンスから、カルチャ固有のコンテンツを持った複数の結果文字列の作成を可能にするものです。 これは、個々のカルチャに適切な数値書式や日付形式などの情報を含めるのに便利です。  二重中かっこ "{{" および "}}" のすべての出現箇所は、明示的または暗黙的に @System.Object.ToString メソッドを呼び出して文字列を書式指定するまで、二重中かっこのままです。  含まれるすべての補間式は、{0}、\{1\} などに変換されます。  
+2. 挿入文字列から <xref:System.IFormattable> 変数への変換。これは、単一の <xref:System.IFormattable> インスタンスから、カルチャ固有のコンテンツを持った複数の結果文字列の作成を可能にするものです。 これは、個々のカルチャに適切な数値書式や日付形式などの情報を含めるのに便利です。  二重中かっこ ("{{" および "}}") のすべての出現箇所は、明示的または暗黙的に @System.Object.ToString メソッドを呼び出して文字列を書式指定するまで、二重中かっこのままです。  含まれるすべての補間式は、{0}、\{1\} などに変換されます。  
 
    次の例では、リフレクションを使用することで、挿入文字列から作成された <xref:System.IFormattable> 変数のフィールドおよびプロパティ値だけでなく、メンバーも表示しています。 さらに、<xref:System.IFormattable> 変数を @System.Console(System.String) メソッドに渡しています。
 
@@ -85,7 +86,7 @@ $"<text> {<interpolated-expression> [,<field-width>] [<:format-string>] } <text>
 
    挿入文字列の検査には、リフレクションを使用する必要があることに注意してください。 挿入文字列が @System.Console.WriteLine(System.String) などの文字列書式指定メソッドに渡されると、書式指定項目が解決され、結果文字列が返されます。 
 
-3. 挿入文字列から複合書式指定文字列を表す <xref:System.FormattableString> 変数への変換。 たとえば、複合書式指定文字列を検査し、それが結果文字列としてどのように表示されるかを検査すると、クエリを構築する場合にインジェクション攻撃を防ぐことができます。  <xref:System.FormattableString> には、@System.Globalization.InvariantCulture と @System.Globalization.CurrentCulture の結果文字列の生成に役立つ <xref:System.FormattableString.ToString> オーバーロードも含まれています。  二重中かっこ “{{“ および “}}” のすべての出現箇所は、書式指定するまで二重中かっこのままです。  含まれるすべての補間式は、{0}、\{1\} などに変換されます。  
+3. 挿入文字列から複合書式指定文字列を表す <xref:System.FormattableString> 変数への変換。 たとえば、複合書式指定文字列を検査し、それが結果文字列としてどのように表示されるかを検査すると、クエリを構築する場合にインジェクション攻撃を防ぐことができます。  <xref:System.FormattableString> には、@System.Globalization.InvariantCulture と @System.Globalization.CurrentCulture の結果文字列を生成できる <xref:System.FormattableString.ToString> オーバーロードも含まれています。  二重中かっこ ("{{" および "}}") のすべての出現箇所は、書式指定するまで二重中かっこのままです。  含まれるすべての補間式は、{0}、\{1\} などに変換されます。  
 
    [!code-cs[interpolated-strings3](../../../../samples/snippets/csharp/language-reference/keywords/interpolated-strings3.cs#1)]  
 

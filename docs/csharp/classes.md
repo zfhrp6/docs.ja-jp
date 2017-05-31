@@ -1,19 +1,20 @@
 ---
 title: "クラス | C# ガイド"
 description: "クラスの型と、クラスを作成する方法について説明します"
-keywords: ".NET、.NET Core、C#"
-author: stevehoag
-ms.author: shoag
+keywords: .NET, .NET Core, C#
+author: BillWagner
+ms.author: wiwagn
 ms.date: 10/10/2016
 ms.topic: article
 ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 95c686ba-ae4f-440e-8e94-0dbd6e04d11f
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 4b5614123d38ae00cb471ef85d0eb92c03c68bba
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: a5ed524a1b17f7be8903f998cbd732594faab831
+ms.openlocfilehash: f2cfeac321860a609c21046818c36fbc6aa3c636
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/15/2017
 
 ---
 
@@ -25,7 +26,7 @@ ms.lasthandoff: 03/13/2017
 
 [!code-csharp[参照型](../../samples/snippets/csharp/concepts/classes/reference-type.cs)]
   
-オブジェクトが作成されると、マネージ ヒープ上でメモリが割り当てられ、変数にはそのオブジェクトの場所への参照のみが格納されます。 マネージ ヒープを使用する型では、メモリの割り当て時と、CLR の自動メモリ管理機能 (*ガベージ コレクション*) による再要求時の両方についてオーバーヘッドが発生します。 しかし、ガベージ コレクションも高度に最適化されるため、ほとんどのシナリオでは、パフォーマンス上の問題が発生することはありません。 ガベージ コレクションの詳細については、「[自動メモリ管理とガベージ コレクション](../standard/garbagecollection/gc.md)」を参照してください。  
+オブジェクトが作成されると、マネージ ヒープ上でメモリが割り当てられ、変数にはそのオブジェクトの場所への参照のみが格納されます。 マネージ ヒープを使用する型では、メモリの割り当て時と、CLR の自動メモリ管理機能 (*ガベージ コレクション*) による再要求時の両方についてオーバーヘッドが発生します。 しかし、ガベージ コレクションも高度に最適化されるため、ほとんどのシナリオでは、パフォーマンス上の問題が発生することはありません。 ガベージ コレクションの詳細については、「[自動メモリ管理とガベージ コレクション](../standard/garbage-collection/gc.md)」を参照してください。  
   
 参照型は、オブジェクト指向プログラミングの基本的な特性である*継承*を完全にサポートします。 クラスの作成時には、[シール](https://msdn.microsoft.com/library/88c54tsw.aspx) クラスとして定義されているものを除く、他のすべてのインターフェイスまたはクラスから継承できます。また、作成したクラスから他のクラスを継承し、仮想メソッドをオーバーライドすることもできます。 詳細については、「[継承](https://msdn.microsoft.com/library/ms173149.aspx)」を参照してください。
 
@@ -81,7 +82,7 @@ C++ と異なり、C# のクラスは 1 つの基底クラスから直接継承�
 [クラスと構造体のメンバー](https://msdn.microsoft.com/library/ms173113.aspx)   
 [クラスと構造体のメソッド](https://msdn.microsoft.com/library/ms173114.aspx)   
 [コンストラクター](https://msdn.microsoft.com/library/ace5hbzh.aspx)   
-[デストラクター](https://msdn.microsoft.com/library/66x5fx1b.aspx)   
+[ファイナライザー](https://msdn.microsoft.com/library/66x5fx1b.aspx)   
 [オブジェクト](https://msdn.microsoft.com/library/ms173110.aspx)
 
 

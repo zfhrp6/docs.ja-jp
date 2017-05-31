@@ -10,10 +10,11 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 0e9496da-e766-45a9-b92b-91820d4a350e
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 3dc9347aa3c4090b71d473d13b5c7ad68f1fbc76
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 890c058bd09893c2adb185e1d8107246eef2e20a
+ms.openlocfilehash: a3ee06e9e177fe3c0a41e99361ba9289943c1cf5
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/12/2017
 
 ---
 
@@ -52,8 +53,7 @@ public int this[string key]
 型の API がコレクションをモデル化していて、そのコレクションへの引数が定義されている場合に、型に "*インデクサー*" を定義します。 インデクサーは、.NET Core Framework に含まれているコレクション型に直接マップされることもあれば、されないこともあります。 型は、コレクションのモデル化だけでなく、他の役割がある場合もあります。
 インデクサーを使用すると、型の抽象化に適した API を提供することができ、抽象化された値の格納や計算の方法の内部の詳細を公開しなくて済みます。
 
-"*インデクサー*" を使用する一般的なシナリオをいくつか見ていきましょう。
-すべてのサンプルのコードは、core-docs [GitHub リポジトリ](https://github.com/dotnet/core-docs)で入手できます。 または、直接[サンプル フォルダー](https://github.com/dotnet/docs/tree/master/samples/csharp/indexers)にアクセスすることもできます。
+"*インデクサー*" を使用する一般的なシナリオをいくつか見ていきましょう。 [インデクサーのサンプル フォルダー](https://github.com/dotnet/docs/tree/master/samples/csharp/indexers)にアクセスできます。 ダウンロード方法については、「[サンプルおよびチュートリアル](../samples-and-tutorials/index.md#viewing-and-downloading-samples)」を参照してください。
 
 ### <a name="arrays-and-vectors"></a>配列とベクター
 
