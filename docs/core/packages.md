@@ -9,10 +9,11 @@ ms.topic: article
 ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: 609b0845-49e7-4864-957b-21ffe1b93bf2
-translationtype: Human Translation
-ms.sourcegitcommit: 519253bd6dc105afb138268c62347c29a6072fbb
-ms.openlocfilehash: 9cb957973e68129194c998c88e398351b48819ec
-ms.lasthandoff: 03/07/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: d97a1501ad25b683cbb5d7fbd8bd1b137f7f4046
+ms.openlocfilehash: e0ba4886bd954c8e772a85a677775167e7c4bc53
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/10/2017
 
 ---
 
@@ -37,12 +38,12 @@ ms.lasthandoff: 03/07/2017
 
 .NET Core 用の主な NuGet パッケージを次に一覧します。
 
-- [System.Runtime](https://www.nuget.org/packages/System.Runtime) - 最も基本的な .NET Core パッケージです。[Object](http://docs.microsoft.com/dotnet/core/api/System.Object)、[String](http://docs.microsoft.com/dotnet/core/api/System.String)、[Array](http://docs.microsoft.com/dotnet/core/api/System.Array)、[Action](http://docs.microsoft.com/dotnet/core/api/System.Action)、[IList&lt;T&gt;](http://docs.microsoft.com/dotnet/core/api/System.Collections.Generic.IList-1) などがあります。
-- [System.Collections](https://www.nuget.org/packages/System.Collections) - (主な) ジェネリック コレクションのセットです。[List&lt;T&gt;](http://docs.microsoft.com/dotnet/core/api/System.Collections.Generic.List-1) や [Dictionary&lt;K,V&gt;](http://docs.microsoft.com/dotnet/core/api/System.Collections.Generic.Dictionary-2) などがあります。
-- [System.Net.Http](https://www.nuget.org/packages/System.Net.Http) - HTTP ネットワーク通信の種類のセットです。[HttpClient](http://docs.microsoft.com/dotnet/core/api/System.Net.Http.HttpClient) や [HttpResponseMessage](http://docs.microsoft.com/dotnet/core/api/System.Net.Http.HttpResponseMessage) などがあります。
-- [System.IO.FileSystem](https://www.nuget.org/packages/System.IO.FileSystem) - ローカルまたはネットワークに接続されたディスク ベースの記憶域に対する読み取りおよび書き込みの種類のセットです。[File](http://docs.microsoft.com/dotnet/core/api/System.IO.File) や [Directory](http://docs.microsoft.com/dotnet/core/api/System.IO.Directory) などがあります。
-- [System.Linq](https://www.nuget.org/packages/System.Linq) - オブジェクトに対するクエリの種類のセットです。Enumerable や [ILookup&lt;TKey, TElement&gt;](http://docs.microsoft.com/dotnet/core/api/System.Linq.ILookup-2) などがあります。
-- [System.Reflection](https://www.nuget.org/packages/System.Reflection) - 読み込み、検査、およびアクティブ化の種類のセットです。[Assembly](http://docs.microsoft.com/dotnet/core/api/System.Reflection.Assembly)、[TypeInfo](http://docs.microsoft.com/dotnet/core/api/System.Reflection.TypeInfo)、[MethodInfo](http://docs.microsoft.com/dotnet/core/api/System.Reflection.MethodInfo) などがあります。
+- [System.Runtime](https://www.nuget.org/packages/System.Runtime) - 最も基本的な .NET Core パッケージ。<xref:System.Object>、<xref:System.String>、<xref:System.Array>、<xref:System.Action>、 <xref:System.Collections.Generic.IList%601> などがあります。
+- [System.Collections](https://www.nuget.org/packages/System.Collections) - (主に) ジェネリック コレクションのセットです。<xref:System.Collections.Generic.List%601>、<xref:System.Collections.Generic.Dictionary%602> などがあります。
+- [System.Net.Http](https://www.nuget.org/packages/System.Net.Http) - HTTP ネットワーク通信の種類のセットです。<xref:System.Net.Http.HttpClient>、<xref:System.Net.Http.HttpResponseMessage> などがあります。
+- [System.IO.FileSystem](https://www.nuget.org/packages/System.IO.FileSystem) - ローカルまたはネットワークに接続されたディスク ベースの記憶域に対する読み取りおよび書き込みの種類のセットです。<xref:System.IO.File>、<xref:System.IO.Directory> などがあります。
+- [System.Linq](https://www.nuget.org/packages/System.Linq) - オブジェクトに対するクエリの種類のセットです。`Enumerable`、<xref:System.Linq.ILookup%602> などがあります。
+- [System.Reflection](https://www.nuget.org/packages/System.Reflection) - 読み込み、検査、アクティブ化の種類のセットです。<xref:System.Reflection.Assembly>、<xref:System.Reflection.TypeInfo>、<xref:System.Reflection.MethodInfo> などがあります。
 
 一般的に、パッケージ単位でパッケージをプロジェクトに追加するより、*メタパッケージ*を追加する方がずっと簡単です。メタパッケージとは、よく一緒に使われるパッケージをセットにしたものです。 (メタパッケージの詳細については、次のセクションを参照してください。)ただし、単一のパッケージが必要な場合、下の例のように追加できます。[System.Runtime](https://www.nuget.org/packages/System.Runtime/) パッケージを参照しています。 
 

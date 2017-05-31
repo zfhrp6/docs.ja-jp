@@ -4,16 +4,17 @@ description: "dotnet-sln コマンドは、ソリューション ファイルで
 keywords: "dotnet-sln, CLI, CLI コマンド, .NET Core"
 author: spboyer
 ms.author: mairaw
-ms.date: 03/15/2017
+ms.date: 04/11/2017
 ms.topic: article
 ms.prod: .net-core
 ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: e5a72d3e-c14b-4b0a-a978-c5e54a0988c6
-translationtype: Human Translation
-ms.sourcegitcommit: dff752a9d31ec92b113dae9eed20cd72faf57c84
-ms.openlocfilehash: 2cdfd02f7735b106fde910b8906ba4dfae860952
-ms.lasthandoff: 03/22/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 7d7f0864ee1641627c4a55192d81ed76f2f44450
+ms.openlocfilehash: 0a832765d01609aebd10b13387a4317a6a246c30
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/11/2017
 
 ---
 
@@ -27,9 +28,9 @@ ms.lasthandoff: 03/22/2017
 
 ```
 dotnet sln [<SOLUTION_NAME>] add <PROJECT> <PROJECT> ...
-dotnet sln [<SOLUTION_NAME>] add **/**
+dotnet sln [<SOLUTION_NAME>] add <GLOBBING_PATTERN>
 dotnet sln [<SOLUTION_NAME>] remove <PROJECT> <PROJECT> ...
-dotnet sln [<SOLUTION_NAME>] remove **/**
+dotnet sln [<SOLUTION_NAME>] remove <GLOBBING_PATTERN>
 dotnet sln [<SOLUTION_NAME>] list
 dotnet sln [-h|--help]
 ```
@@ -42,13 +43,13 @@ dotnet sln [-h|--help]
 
 `add <PROJECT> ...`
 
-`add **/*`
+`add <GLOBBING_PATTERN>`
 
 ソリューション ファイルに 1 つまたは複数のプロジェクトを追加します。 [Glob パターン](https://en.wikipedia.org/wiki/Glob_(programming))は Unix/Linux ベースの端末でサポートされています。
 
 `remove <PROJECT> ...`
 
-`remove **/*`
+`remove <GLOBBING_PATTERN>`
 
 ソリューション ファイルから 1 つまたは複数のプロジェクトを削除します。 [Glob パターン](https://en.wikipedia.org/wiki/Glob_(programming))は Unix/Linux ベースの端末でサポートされています。
 
@@ -70,19 +71,27 @@ dotnet sln [-h|--help]
 
 ## <a name="examples"></a>例
 
-ソリューションにプロジェクトを追加する:
+ソリューションに 1 つの C# プロジェクトを追加する:
 
 `dotnet sln todo.sln add todo-app/todo-app.csproj`
 
-現在のディレクトリのソリューションにプロジェクトを追加する:
-
-`dotnet sln add todo-app.csproj`
-
-ソリューションからプロジェクトを削除する:
+ソリューションから 1 つの C# プロジェクトを削除する:
 
 `dotnet sln todo.sln remove todo-app/todo-app.csproj`
 
-glob パターンを使用して、ソリューションに複数のプロジェクトを追加する:
+ソリューションに複数の C# プロジェクトを追加する:
 
-`dotnet sln add **/**/*.fsproj`
+`dotnet sln todo.sln add todo-app/todo-app.csproj back-end/back-end.csproj`
+
+ソリューションから複数の C# プロジェクトを削除する:
+
+`dotnet sln todo.sln remove todo-app/todo-app.csproj back-end/back-end.csproj`
+
+glob パターンを使用して、C# ソリューションに複数のプロジェクトを追加する:
+
+`dotnet sln todo.sln add **/*.csproj`
+
+glob パターンを使用して、C# ソリューションから複数のプロジェクトを削除する:
+
+`dotnet sln todo.sln remove **/*.csproj`
 

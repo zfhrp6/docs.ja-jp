@@ -10,10 +10,11 @@ ms.prod: .net-core
 ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: 0d6e1e34-277c-4aaf-9880-3ebf81023857
-translationtype: Human Translation
-ms.sourcegitcommit: 195664ae6409be02ca132900d9c513a7b412acd4
-ms.openlocfilehash: 0579d59e8da24428d9e174baf0cc865d62c08195
-ms.lasthandoff: 03/07/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 50e128137fde445f64e10cf7c2a1ee5fdecb34e6
+ms.openlocfilehash: 7ef4ce7a953265816cd36a0ad08b77c227280bde
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/01/2017
 
 ---
 
@@ -22,18 +23,18 @@ ms.lasthandoff: 03/07/2017
 ## <a name="overview"></a>概要
 このドキュメントでは、ビルド サーバーでの .NET Core SDK とそのツールの使用方法について説明します。 一般に、CI ビルド サーバーでは、何らかの方法でインストールを自動化することが望まれます。 可能な限り自動化に管理者特権を必要としないことが理想的です。 
 
-SaaS CI ソリューションの場合、いくつかのオプションがあります。 このドキュメントでは、非常に一般的な&2; つのオプションである [TravisCI](https://travis-ci.org/) と [AppVeyor](https://www.appveyor.com/) について説明します。 もちろん、他にも多くのサービスがありますが、インストールと使用のメカニズムはどれも似ています。
+SaaS CI ソリューションの場合、いくつかのオプションがあります。 このドキュメントでは、非常に一般的な 2 つのオプションである [TravisCI](https://travis-ci.org/) と [AppVeyor](https://www.appveyor.com/) について説明します。 もちろん、他にも多くのサービスがありますが、インストールと使用のメカニズムはどれも似ています。
 
 ## <a name="installation-options-for-ci-build-servers"></a>CI ビルド サーバーのインストール オプション
 
 ## <a name="using-the-native-installers"></a>ネイティブ インストーラーの使用
-管理者特権が必要なインストーラーを使用しても問題がない場合は、各プラットフォーム用のネイティブ インストーラーをビルド サーバーの設定に使用できます。 この方法には (特に Linux ビルド サーバーの場合)、SDK の実行に必要な依存関係が自動的にインストールされるという&1; つの利点があります。 ネイティブ インストーラーはシステム全体バージョンの SDK もインストールし、これは望ましい場合があります。そうでない場合は、以下で説明する[インストーラー スクリプトの使用](#using-the-installer-script)を検討する必要があります。 
+管理者特権が必要なインストーラーを使用しても問題がない場合は、各プラットフォーム用のネイティブ インストーラーをビルド サーバーの設定に使用できます。 この方法には (特に Linux ビルド サーバーの場合)、SDK の実行に必要な依存関係が自動的にインストールされるという 1 つの利点があります。 ネイティブ インストーラーはシステム全体バージョンの SDK もインストールし、これは望ましい場合があります。そうでない場合は、以下で説明する[インストーラー スクリプトの使用](#using-the-installer-script)を検討する必要があります。 
 
 このアプローチは簡単に使用できます。 Linux では、フィードに基づくパッケージ マネージャー (Ubuntu の `apt-get` または CentOS の `yum`) を使用するか、パッケージ自体 (DEB または RPM) を使用します。 前者の場合は、パッケージを含むフィードの設定が必要です。
 
 Windows プラットフォームの場合は、MSI を使用できます。 
 
-すべてのバイナリは、最新の安定したリリースを集めた [.NET Core の概要ページ](https://aka.ms/dotnetcoregs)で見つかります。 さらに新しい (安定していない可能性がある) リリースまたは最新版を使用する場合は、[CLI リポジトリ](https://github.com/dotnet/cli)からのリンクを使用できます。 
+すべてのバイナリは、最新の安定したリリースを集めた [.NET Core のインストール ガイド](https://aka.ms/dotnetcoregs)で見つかります。 さらに新しい (安定していない可能性がある) リリースまたは最新版を使用する場合は、[CLI リポジトリ](https://github.com/dotnet/cli)からのリンクを使用できます。 
 
 ## <a name="using-the-installer-script"></a>インストーラー スクリプトの使用
 インストーラー スクリプトを使用すると、管理者特権を必要としないインストールをビルド サーバーで実行できます。 また、非常に簡単に自動化できます。 スクリプト自体が、必要な ZIP/tarball ファイルをダウンロードして展開します。また、ローカル コンピューター上のインストール場所を PATH に追加して、インストール後すぐにツールを使用できるようにします。 
@@ -62,12 +63,12 @@ Travis は、ビルド マトリックスの `osx` (OS X 10.11) と `linux` (Ubu
 
 ### <a name="appveyor"></a>AppVeyor
 
-[appveyor.com ci](https://www.appveyor.com/) では、.NET Core SDK preview2 がビルド ワーカー イメージ `Visual Studio 2015` に既にインストールされています。
+[appveyor.com ci](https://www.appveyor.com/) では、.NET Core SDK 1.0.1 がビルド ワーカー イメージ `Visual Studio 2017` に既にインストールされています。
 
 次のものだけを使用します。
 
 ```yaml
-os: Visual Studio 2015
+os: Visual Studio 2017
 ```
 
 特定のバージョンの .NET Core SDK をインストールできます。詳細については、[appveyor.yml の例](https://github.com/dotnet/docs/blob/master/appveyor.yml)をご覧ください。 

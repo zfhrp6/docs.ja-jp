@@ -4,16 +4,17 @@ description: "dotnet restore コマンドを使用して、依存関係とプロ
 keywords: "dotnet-restore, CLI, CLI コマンド, .NET Core"
 author: blackdwarf
 ms.author: mairaw
-ms.date: 03/15/2017
+ms.date: 03/24/2017
 ms.topic: article
 ms.prod: .net-core
 ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: fd7a5769-afbe-4838-bbaf-3ae0cfcbb914
-translationtype: Human Translation
-ms.sourcegitcommit: dff752a9d31ec92b113dae9eed20cd72faf57c84
-ms.openlocfilehash: 92da0806eb6c365a4622668242edc28d9966ed26
-ms.lasthandoff: 03/22/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 602c173ff8d114a76c5598cd0826485ac32a2e72
+ms.openlocfilehash: fd4fd6ef2e8482a2b961ccbca1f5227d80c8be53
+ms.contentlocale: ja-jp
+ms.lasthandoff: 03/29/2017
 
 ---
 
@@ -37,6 +38,8 @@ ms.lasthandoff: 03/22/2017
 
 プロジェクト固有のツールについては、`dotnet restore` はまず、ツールがパックされているパッケージを復元し、プロジェクト ファイルに指定されているツールの依存関係の復元に進みます。
 
+*Nuget.Config* がある場合、`dotnet restore` コマンドの動作はその設定の一部に影響を受けます。 たとえば、*NuGet.Config* に `globalPackagesFolder` を設定すると、指定されたフォルダーに NuGet パッケージが復元されます。 これは `dotnet restore` コマンドで `--packages` オプションを指定する操作の代替方法です。 詳細については、「[NuGet.Config reference](https://docs.microsoft.com/nuget/schema/nuget-config-file)」(NuGet.Config リファレンス) を参照してください。
+
 ## <a name="arguments"></a>引数
 
 `ROOT` 
@@ -57,7 +60,7 @@ ms.lasthandoff: 03/22/2017
 
 パッケージの復元用のランタイムを指定します。 これは、*.csproj* ファイルの `<RuntimeIdentifiers>` タグに明示的にリストされていないランタイムのパッケージを復元するために使用されます。 ランタイム ID (RID) の一覧については、[RID カタログ](../rid-catalog.md)に関するページをご覧ください。 このオプションを複数回指定して、複数の RID を指定します。
 
-`--packages <PACKAGES_DIRECTORY]`
+`--packages <PACKAGES_DIRECTORY>`
 
 復元されるパッケージのディレクトリを指定します。 
 
@@ -103,7 +106,7 @@ ms.lasthandoff: 03/22/2017
 
 `dotnet restore -s c:\packages\mypackages -s c:\packages\myotherpackages` 
 
-現在のディレクトリでプロジェクトの依存関係とツールを復元し、出力にエラーのみを表示します。
+現在のディレクトリでプロジェクトの依存関係とツールを復元し、最小限の出力のみを表示します。
 
-`dotnet restore --verbosity Error`
+`dotnet restore --verbosity minimal`
 

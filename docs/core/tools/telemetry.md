@@ -10,10 +10,11 @@ ms.prod: .net-core
 ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: 480df976-7568-4df4-9d26-9911357b5a31
-translationtype: Human Translation
-ms.sourcegitcommit: 195664ae6409be02ca132900d9c513a7b412acd4
-ms.openlocfilehash: c816bf4c93430a009e61ddf2a3673c43f49b8de9
-ms.lasthandoff: 03/07/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: be7974018ce3195dc7344192d647fe64fb2ebcc4
+ms.openlocfilehash: eda9e6f30defb93737aa67563aa6e606a8a2fb91
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/14/2017
 
 ---
 
@@ -41,25 +42,25 @@ ms.lasthandoff: 03/07/2017
 
 ## <a name="behavior"></a>動作
 
-.NET Core ツールの製品利用統計情報機能は既定では有効になっています。 製品利用統計情報機能は選択しないこともできます。その場合、環境変数 DOTNET_CLI_TELEMETRY_OPTOUT (たとえば、macOS/Linux の場合は `export`、Windows の場合は `set`) を true (“true” や 1 など) に設定します。
+.NET Core ツールの製品利用統計情報機能は既定では有効になっています。 製品利用統計情報機能は選択しないこともできます。その場合、環境変数 DOTNET_CLI_TELEMETRY_OPTOUT (たとえば、macOS/Linux の場合は `export`、Windows の場合は `set`) を true ("true" や 1 など) に設定します。
 
 ## <a name="data-points"></a>データ ポイント
 
 この機能は次のデータを回収します。
 
-- 使用されているコマンド (“build” や “restore” など)
+- 使用されているコマンド ("build" や "restore" など)
 - コマンドの ExitCode
 - テスト プロジェクトの場合、使用されているテスト ランナー
 - 呼び出しのタイムスタンプ
 - 使用されているフレームワーク
-- “ランタイム” ノードにランタイム ID が存在するかどうか
+- "ランタイム" ノードにランタイム ID が存在するかどうか
 - 使用されている CLI バージョン
 
 この機能では、ユーザー名や電子メールなど、個人データは回収されません。 コードをスキャンすることはありません。(project.json に設定している場合) 名前、リポジトリ、作成者など、機密と見なされるプロジェクト レベルのデータを抽出することはありません。 ツールで構築しているものではなく、ツールの使われ方を知るためのものです。 機密データが回収された場合、それはバグです。 [問題を提出する](https://github.com/dotnet/cli/issues)と、解決されます。
 
 ## <a name="license"></a>ライセンス
 
-Microsoft による .NET Core の配信は、[MICROSOFT .NET LIBRARY EULA](https://aka.ms/dotnet-core-eula) でライセンス供与されます。 製品利用統計情報を有効にするために、下のように “DATA” セクションが再プリントされます。
+Microsoft による .NET Core の配信は、[MICROSOFT .NET LIBRARY EULA](https://aka.ms/dotnet-core-eula) でライセンス供与されます。 製品利用統計情報を有効にするために、下のように "DATA" セクションが再プリントされます。
 
 [.NET NuGet パッケージ](https://www.nuget.org/profiles/dotnetframework)はこの同じライセンスを使用しますが、製品利用統計情報を有効にしません (上の「[範囲](#scope)」を参照)。
 

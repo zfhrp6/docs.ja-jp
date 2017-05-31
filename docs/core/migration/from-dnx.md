@@ -9,10 +9,11 @@ ms.topic: article
 ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: c0d70120-78c8-4d26-bb3c-801f42fc2366
-translationtype: Human Translation
-ms.sourcegitcommit: 4a1f0c88fb1ccd6694f8d4f5687431646adbe000
-ms.openlocfilehash: d32c73ac3a724d4701b7f6c1d548aedb3fb00c56
-ms.lasthandoff: 03/22/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: d97a1501ad25b683cbb5d7fbd8bd1b137f7f4046
+ms.openlocfilehash: e30573a60e27314466822935249e2b1b119a9259
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/10/2017
 
 ---
 
@@ -105,7 +106,7 @@ DNX から移行する際には、コードの操作時に新しいコマンド�
 ```
 
 ### <a name="migrating-the-project-file"></a>プロジェクト ファイルの移行
-CLI と DNX は両方とも、`project.json` ファイルに基づいた同じ基本プロジェクト システムを使用しています。 プロジェクト ファイルの構文とセマンティクスはほぼ同じですが、シナリオに基づく多少の違いがあります。 スキーマ対する変更点もいくつかあります。これらは、[スキーマ ファイル](http://json.schemastore.org/project) か、よりわかりやすい [project.json 参照](../tools/project-json.md)で確認できます。 
+CLI と DNX は両方とも、`project.json` ファイルに基づいた同じ基本プロジェクト システムを使用しています。 プロジェクト ファイルの構文とセマンティクスはほぼ同じですが、シナリオに基づく多少の違いがあります。 スキーマの変更もあります。内容は[スキーマ ファイル](http://json.schemastore.org/project)を参照してください。
 
 コンソール アプリケーションを作成する場合は、プロジェクト ファイルに次のスニペットを追加する必要があります。
 

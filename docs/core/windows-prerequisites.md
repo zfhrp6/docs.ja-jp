@@ -9,10 +9,11 @@ ms.topic: article
 ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: c33b1241-ab66-4583-9eba-52cf51146f5a
-translationtype: Human Translation
-ms.sourcegitcommit: ff143583ba62fc1d82561e739a75107e50ebee88
-ms.openlocfilehash: 13947fd81940c1ccb606cb4cd765dc230fe95c0f
-ms.lasthandoff: 03/20/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: d97a1501ad25b683cbb5d7fbd8bd1b137f7f4046
+ms.openlocfilehash: 582b7d7f00b939493cea6d8cb4055b6779118c14
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/10/2017
 
 ---
 
@@ -36,11 +37,11 @@ ms.lasthandoff: 03/20/2017
 
 ## <a name="net-core-dependencies"></a>.NET Core の依存関係
 
-.NET Core を Windows 10 および Windows Server 2016 よりも前の Windows バージョンで実行する場合、Visual C++ 再頒布可能パッケージが必要です。 この依存関係は、.NET Core インストーラーを使用する場合は自動でインストールされます。 ただし、.NET Core を[インストーラー スクリプト](https://docs.microsoft.com/en-us/dotnet/articles/core/tools/dotnet-install-script)でインストールしたか、自己完結型の .NET Core アプリケーションをデプロイする場合は、[Visual Studio 2015 の Visual C++ 再頒布可能パッケージ](https://www.microsoft.com/en-us/download/details.aspx?id=48145)を手動でインストールする必要があります。
+.NET Core を Windows 10 および Windows Server 2016 よりも前の Windows バージョンで実行する場合、Visual C++ 再頒布可能パッケージが必要です。 この依存関係は、.NET Core インストーラーを使用する場合は自動でインストールされます。 ただし、.NET Core を[インストーラー スクリプト](./tools/dotnet-install-script.md)でインストールしたか、自己完結型の .NET Core アプリケーションを配置する場合は、[Microsoft Visual C++ 2015 再頒布可能パッケージ Update 3](https://www.microsoft.com/download/details.aspx?id=53840) を手動でインストールする必要があります。
 
 > [!NOTE]
 > <em>Windows 7 および Windows Server 2008 コンピューターのみ:</em><br>
-> Windows のインストールが最新であり、Windows Update から修正プログラム [KB2533623](https://support.microsoft.com/en-us/kb/2533623) をインストールしていることを確認してください。
+> Windows のインストールが最新であり、Windows Update から修正プログラム [KB2533623](https://support.microsoft.com/help/2533623) をインストールしていることを確認してください。
 
 ## <a name="prerequisites-with-visual-studio-2017"></a>Visual Studio 2017 の前提条件
 
@@ -49,15 +50,14 @@ ms.lasthandoff: 03/20/2017
 > [!IMPORTANT]
 > プレビュー バージョンの .NET Core ツールで Visual Studio 2015 を使用できる場合でも、これらのプロジェクトは *project.json* ベースであるため、推奨されなくなりました。 Visual Studio 2017 では、MSBuild に基づくプロジェクト ファイルが使用されます。 この形式変更の詳細については、[変更点の大まかな概要](./tools/cli-msbuild-architecture.md)に関するページをご覧ください。
 
-Visual Studio 2017 を使用して .NET Core アプリを開発する場合は、最新版の Visual Studio をインストールする必要があります。その際、(**[他のツールセット]** セクションで) **プラットフォームに依存しない .NET Core**開発ツールセットを選択します。
+Visual Studio 2017 を使用して .NET Core アプリを開発する場合は、最新版の Visual Studio をインストールする必要があります。その際、(**[他のツールセット]** セクションで) **プラットフォームに依存しない .NET Core** 開発ツールセットを選択します。
 ![".NET Core クロスプラットフォームの開発" ワークロードが選択された状態の Visual Studio 2017 インストールのスクリーン ショット](./media/windows-prerequisites/vs_workloads.jpg)
 
-Visual Studio 2017 には複数のエディションがあります。 [Visual Studio Community 2017](https://www.visualstudio.com/downloads/) を無料でダウンロードして始められます。  Visual Studio のインストール プロセスの詳細については、「[Install Visual Studio 2017](https://docs.microsoft.com/en-us/visualstudio/install/install-visual-studio)」(Visual Studio のインストール) を参照してください。
+Visual Studio 2017 には複数のエディションがあります。 [Visual Studio Community 2017](https://www.visualstudio.com/downloads/) を無料でダウンロードして始められます。  Visual Studio のインストール プロセスの詳細については、「[Install Visual Studio 2017](https://docs.microsoft.com/visualstudio/install/install-visual-studio)」(Visual Studio のインストール) を参照してください。
 
-+Visual Studio 2017 の最新バージョンを実行していることを確認するには、次の操作を行います。
- +
- +***[ヘルプ]**メニューの**[Microsoft Visual Studio のバージョン情報]**を選択します。+* **[Microsoft Visual Studio のバージョン情報]** ダイアログのバージョン番号は 15.0.26228.4 以上である必要があります。
+Visual Studio 2017 の最新バージョンを実行していることを確認するには、次の操作を行います。
 
-Visual Studio 2017 での変更の詳細については、[リリース ノート](https://www.visualstudio.com/en-us/news/releasenotes/vs2017-relnotes)を参照してください。
+ * [**ヘルプ**] メニューの [**About Microsoft Visual Studio**] (Microsoft Visual Studio のバージョン情報) を選択します。
+ * [**Microsoft Visual Studio のバージョン情報**] ダイアログのバージョン番号は、15.0.26228.4 以上である必要があります。
 
-[sdk]: https://go.microsoft.com/fwlink/?LinkID=827546
+Visual Studio 2017 での変更の詳細については、[リリース ノート](https://www.visualstudio.com/news/releasenotes/vs2017-relnotes)を参照してください。
