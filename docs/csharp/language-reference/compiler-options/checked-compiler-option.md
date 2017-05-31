@@ -43,7 +43,7 @@ ms.lasthandoff: 05/22/2017
   
 ## <a name="syntax"></a>構文  
   
-```  
+```console  
 /checked[+ | -]  
 ```  
   
@@ -69,7 +69,7 @@ ms.lasthandoff: 05/22/2017
 ## <a name="example"></a>例  
  次のコマンドは `t2.cs` をコンパイルします。 コマンドで使用されている `/checked` は、ファイル内の整数の算術ステートメントのうち、`checked` または `unchecked` キーワードのスコープ内に含まれず、データ型の範囲外の値になるステートメントで、ランタイム例外が発生することを指定します。  
   
-```  
+```console  
 csc t2.cs /checked  
 ```  
   

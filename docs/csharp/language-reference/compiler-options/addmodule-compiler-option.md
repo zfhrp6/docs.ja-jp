@@ -43,7 +43,7 @@ ms.lasthandoff: 05/10/2017
   
 ## <a name="syntax"></a>構文  
   
-```  
+```console  
 /addmodule:file[;file2]  
 ```  
   
@@ -63,7 +63,7 @@ ms.lasthandoff: 05/10/2017
 ## <a name="example"></a>例  
  ソース ファイル `input.cs` をコンパイルし、`metad1.netmodule` と `metad2.netmodule` からメタデータを追加し、`out.exe` を生成します。  
   
-```  
+```console  
 csc /addmodule:metad1.netmodule;metad2.netmodule /out:out.exe input.cs  
 ```  
   

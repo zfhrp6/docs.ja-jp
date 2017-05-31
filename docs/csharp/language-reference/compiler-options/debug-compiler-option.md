@@ -43,7 +43,7 @@ ms.lasthandoff: 05/10/2017
   
 ## <a name="syntax"></a>構文  
   
-```  
+```console  
 /debug[+ | -]  
 /debug:{full | pdbonly}  
 ```  
@@ -82,7 +82,7 @@ ms.lasthandoff: 05/10/2017
 ## <a name="example"></a>例  
  デバッグ情報を出力ファイル `app.pdb` に出力します。  
   
-```  
+```console  
 csc /debug /pdb:app.pdb test.cs  
 ```  
   

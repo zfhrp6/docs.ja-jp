@@ -43,7 +43,7 @@ ms.lasthandoff: 05/10/2017
   
 ## <a name="syntax"></a>構文  
   
-```  
+```console  
 /lib:dir1[,dir2]  
 ```  
   
@@ -86,7 +86,7 @@ ms.lasthandoff: 05/10/2017
 ## <a name="example"></a>例  
  t2.cs をコンパイルして .exe ファイルを作成します。 コンパイラは、作業ディレクトリと C ドライブのルート ディレクトリで、アセンブリ参照を探します。  
   
-```  
+```console  
 csc /lib:c:\ /reference:t2.dll t2.cs  
 ```  
   

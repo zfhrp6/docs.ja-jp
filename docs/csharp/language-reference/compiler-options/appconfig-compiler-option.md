@@ -41,7 +41,7 @@ ms.lasthandoff: 05/10/2017
   
 ## <a name="syntax"></a>構文  
   
-```  
+```console  
 /appconfig:file  
 ```  
   
@@ -64,7 +64,7 @@ ms.lasthandoff: 05/10/2017
 ## <a name="example"></a>例  
  .NET Framework と .NET Framework for Silverlight の両方の実装に存在する .NET Framework アセンブリについて、その両方の実装をアプリケーションで参照できるようにする app.config ファイルの例を次に示します。 **/appconfig** コンパイラ オプションにより、この app.config ファイルの場所が指定されます。  
   
-```  
+```xml  
 <configuration>  
       <runtime>  
       <assemblyBinding>  

@@ -48,7 +48,7 @@ ms.lasthandoff: 03/31/2017
   
 ## <a name="syntax"></a>構文  
   
-```  
+```console  
 /reference:[alias=]filename  
 /reference:filename  
 ```  
@@ -95,7 +95,7 @@ ms.lasthandoff: 03/31/2017
   
  これは、外部別名 "GridV1" と "GridV2" を設定します。プログラムではこれらを extern ステートメントで使います。  
   
-```  
+```csharp  
 extern alias GridV1;  
 extern alias GridV2;  
 // Using statements go here.  
@@ -103,13 +103,13 @@ extern alias GridV2;
   
  このようにすると、コントロール名にプレフィックス GridV1 を付けることで、grid.dll のグリッド コントロールを参照できます。次に示すのはその例です。  
   
-```  
+```csharp  
 GridV1::Grid  
 ```  
   
  さらに、コントロール名にプレフィックス GridV2 を付けると、grid20.dll のグリッド コントロールを参照できます。次に示すのはその例です。  
   
-```  
+```csharp  
 GridV2::Grid   
 ```  
   

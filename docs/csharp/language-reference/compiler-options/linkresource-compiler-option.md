@@ -46,7 +46,7 @@ ms.lasthandoff: 05/10/2017
   
 ## <a name="syntax"></a>構文  
   
-```  
+```console  
 /linkresource:filename[,identifier[,accessibility-modifier]]  
 ```  
   
@@ -76,14 +76,14 @@ ms.lasthandoff: 05/10/2017
 ## <a name="example"></a>例  
  `in.cs` をコンパイルして、リソース ファイル `rf.resource` にリンクします。  
   
-```  
+```console  
 csc /linkresource:rf.resource in.cs  
 ```  
   
 ## <a name="example"></a>例  
  `A.cs` をコンパイルして DLL を作成し、ネイティブ DLL N.dll にリンクして、出力をグローバル アセンブリ キャッシュ (GAC) に配置します。 この例では、A.dll と N.dll の両方を GAC に置きます。  
   
-```  
+```console  
 csc /linkresource:N.dll /t:library A.cs  
 gacutil -i A.dll  
 ```  
@@ -91,7 +91,7 @@ gacutil -i A.dll
 ## <a name="example"></a>例  
  この例では、前の例と同じことを行いますが、アセンブリ リンカー オプションを使います。  
   
-```  
+```console  
 csc /t:module A.cs  
 al /out:A.dll A.netmodule /link:N.dll   
 gacutil -i A.dll  

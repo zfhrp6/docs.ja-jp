@@ -51,7 +51,7 @@ ms.lasthandoff: 05/22/2017
   
 ## <a name="syntax"></a>構文  
   
-```  
+```console  
 /filealign:number  
 ```  
   

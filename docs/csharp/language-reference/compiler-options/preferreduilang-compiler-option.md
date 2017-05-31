@@ -43,7 +43,7 @@ ms.lasthandoff: 03/24/2017
   
 ## <a name="syntax"></a>構文  
   
-```  
+```console  
 /preferreduilang: language  
 ```  
   
