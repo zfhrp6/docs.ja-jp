@@ -32,14 +32,14 @@ ms.lasthandoff: 05/22/2017
 ### <a name="mitigation"></a>軽減策  
  この動作に不都合がある場合は、次に示す要素を app.config ファイルの [\<runtime>](../../../docs/framework/configure-apps/file-schema/runtime/runtime-element.md) セクションに追加することで、以前の動作を維持できます。  
   
-```  
+```xml  
 <AppContextSwitchOverrides   
       value="Switch.System.Drawing.DontSupportPngFramesInIcons=true" />  
 ```  
   
  app.config ファイルに既に `AppContextSwitchOverrides` 要素が含まれている場合は、次に示すように新しい値を `value` 属性にマージする必要があります。  
   
-```  
+```xml  
 <AppContextSwitchOverrides   
       value="Switch.System.Drawing.DontSupportPngFramesInIcons=true;<previous key>=<previous value>" />  
 ```  

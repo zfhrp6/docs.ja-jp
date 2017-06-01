@@ -634,13 +634,11 @@ Dim utc As New Date(2016, 11, 07, 3, 0, 0, DateTimeKind.Utc)
 
  次のサンプル コードでは、[!INCLUDE[net_v461](../../../includes/net-v461-md.md)] での新しい ECDSA X509 証明書のサポートを使用してバイト ストリームの署名が簡単に生成できることを示しています。
 
- [!code-csharp[whatsnew.461.crypto#1](../../../samples/snippets/csharp/VS_Snippets_CLR/whatsnew.461.crypto/cs/Code46.cs#1)]
- [!code-vb[whatsnew.461.crypto#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/whatsnew.461.crypto/vb/Code461.vb#1)]
+ [!code-csharp[whatsnew.461.crypto#1](../../../samples/snippets/csharp/VS_Snippets_CLR/whatsnew.461.crypto/cs/Code46.cs#1)] [!code-vb[whatsnew.461.crypto#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/whatsnew.461.crypto/vb/Code461.vb#1)]
 
  このコードは、.NET Framework 4.6 での署名の生成に必要な次のコードとは大きく異なっています。
 
- [!code-csharp[whatsnew.461.crypto#2](../../../samples/snippets/csharp/VS_Snippets_CLR/whatsnew.461.crypto/cs/Code46.cs#2)]
- [!code-vb[whatsnew.461.crypto#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/whatsnew.461.crypto/vb/Code46.vb#2)]
+ [!code-csharp[whatsnew.461.crypto#2](../../../samples/snippets/csharp/VS_Snippets_CLR/whatsnew.461.crypto/cs/Code46.cs#2)] [!code-vb[whatsnew.461.crypto#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/whatsnew.461.crypto/vb/Code46.vb#2)]
 
 <a name="ADO.NET461"></a> 
 ### <a name="adonet"></a>ADO.NET
@@ -743,7 +741,7 @@ Dim utc As New Date(2016, 11, 07, 3, 0, 0, DateTimeKind.Utc)
 
          非同期モデル バインドは、`aspnet:EnableAsyncModelBinding` 構成設定によって制御されます。
 
-        ```
+        ```xml
         <appSettings>
            <add key=" aspnet:EnableAsyncModelBinding" value="true|false" />
         </appSettings>
@@ -776,7 +774,7 @@ Dim utc As New Date(2016, 11, 07, 3, 0, 0, DateTimeKind.Utc)
 
          .NET Framework 4.5 で、[ランダム化された文字列のハッシュ アルゴリズム](../configure-apps/file-schema/runtime/userandomizedstringhashalgorithm-element.md)が導入されました。 しかし、ASP.NET の一部の機能は安定したハッシュ コードに依存していたため、この機能は ASP.NET ではサポートされませんでした。 [!INCLUDE[net_v46](../../../includes/net-v46-md.md)] では、ランダムな文字列のハッシュ アルゴリズムがサポートされるようになりました。 この機能を有効にするには、`aspnet:UseRandomizedStringHashAlgorithm` 構成設定を使用します。
 
-        ```
+        ```xml
         <appSettings>
            <add key="aspnet:UseRandomizedStringHashAlgorithm" value="true|false" />
         </appSettings>
@@ -832,13 +830,11 @@ Dim utc As New Date(2016, 11, 07, 3, 0, 0, DateTimeKind.Utc)
 
         - 一般的な操作でキャストを不要にする RSA API の機能強化。 たとえば、以前のバージョンの .NET Framework で <xref:System.Security.Cryptography.X509Certificates.X509Certificate2> オブジェクトを使用してデータを暗号化するには、次のようなコードが必要です。
 
-             [!code-csharp[WhatsNew.Casting#1](../../../samples/snippets/csharp/VS_Snippets_CLR/whatsnew.casting/cs/program.cs#1)]
-             [!code-vb[WhatsNew.Casting#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/whatsnew.casting/vb/module1.vb#1)]
+             [!code-csharp[WhatsNew.Casting#1](../../../samples/snippets/csharp/VS_Snippets_CLR/whatsnew.casting/cs/program.cs#1)]    [!code-vb[WhatsNew.Casting#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/whatsnew.casting/vb/module1.vb#1)]
 
              .NET Framework 4.6 で新しい暗号化を使用するコードは、次のように書き換えてキャストを回避することができます。
 
-             [!code-csharp[WhatsNew.Casting#2](../../../samples/snippets/csharp/VS_Snippets_CLR/whatsnew.casting/cs/program.cs#2)]
-             [!code-vb[WhatsNew.Casting#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/whatsnew.casting/vb/module1.vb#2)]
+             [!code-csharp[WhatsNew.Casting#2](../../../samples/snippets/csharp/VS_Snippets_CLR/whatsnew.casting/cs/program.cs#2)]    [!code-vb[WhatsNew.Casting#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/whatsnew.casting/vb/module1.vb#2)]
 
     - **日付および時間と UNIX 時間の変換のサポート**
 
@@ -928,7 +924,7 @@ Dim utc As New Date(2016, 11, 07, 3, 0, 0, DateTimeKind.Utc)
 
          [!INCLUDE[net_v46](../../../includes/net-v46-md.md)] では、WPF での HDPI サポートが強化されました。 境界があるコントロールでのクリッピングの発生を減らすため、レイアウトの丸め処理が変更されました。 既定では、<xref:System.Runtime.Versioning.TargetFrameworkAttribute> が .NET 4.6 に設定されている場合にのみ、この機能が有効になります。  以前のバージョンの Framework を対象とするアプリケーションが [!INCLUDE[net_v46](../../../includes/net-v46-md.md)] で実行される場合は、app.config ファイルの [\<runtime>](../../../docs/framework/configure-apps/file-schema/runtime/runtime-element.md) セクションに次の行を追加することで、新しい動作を選択できます。
 
-        ```
+        ```xml
         <AppContextSwitchOverrides
         value="Switch.MS.Internal.DoNotApplyLayoutRoundingToMarginsAndBorderThickness=false"
         />
@@ -936,7 +932,7 @@ Dim utc As New Date(2016, 11, 07, 3, 0, 0, DateTimeKind.Utc)
 
          異なる DPI 設定を持つ (マルチ DPI セットアップの) 複数のモニターにまたがる WPF ウィンドウは、ブラック アウト領域なしで完全にレンダリングされるようになりました。 この動作の選択を解除するには、app.config ファイルの `<appSettings>` セクションに次の行を追加して、この新しい動作を無効にします。
 
-        ```
+        ```xml
         <add key="EnableMultiMonitorDisplayClipping" value="true"/>
         ```
 
@@ -956,7 +952,7 @@ Dim utc As New Date(2016, 11, 07, 3, 0, 0, DateTimeKind.Utc)
 
          WCF で、NetTcp をトランスポート セキュリティおよびクライアント認証と共に使用する場合に、SSL のバージョンとして SSL 3.0 および TLS 1.0 に加えて TLS 1.1 および TLS 1.2 がサポートされるようになりました。 使用するプロトコルを選択することも、安全性の低い古いプロトコルを無効化することもできるようになりました。 これを行うには、<xref:System.ServiceModel.TcpTransportSecurity.SslProtocols%2A> プロパティを設定するか、または構成ファイルに以下を追加します。
 
-        ```
+        ```xml
         <netTcpBinding>
            <binding>
               <security mode= "None|Transport|Message|TransportWithMessageCredential" >
@@ -981,7 +977,7 @@ Dim utc As New Date(2016, 11, 07, 3, 0, 0, DateTimeKind.Utc)
 
              ユーザーは、異なるチャネル ファクトリによって作成されたチャネルを使用して送信されるメッセージで別の基になる HTTP 接続を使用する機能を有効にすることもできます。 この機能を有効にするには、ユーザーが次の `appSetting` を `true` に設定する必要があります。
 
-            ```
+            ```xml
             <appSettings>
                <add key="wcf:httpTransportBinding:useUniqueConnectionPoolPerFactory" value="true" />
             </appSettings>
@@ -991,7 +987,7 @@ Dim utc As New Date(2016, 11, 07, 3, 0, 0, DateTimeKind.Utc)
 
      順序不定の操作要求がタイムアウトする前に未処理の "非プロトコル" ブックマークが存在する場合に、ワークフロー サービスが要求を保持する秒数を指定できるようになりました。 "非プロトコル" ブックマークとは、未処理の Receive アクティビティに関連付けられていないブックマークです。 一部のアクティビティはその実装内で非プロトコル ブックマークを作成するため、必ずしも非プロトコル ブックマークの存在が明らかにわかるとは限りません。 例として State や Pick などがあります。 ステート マシンを使用して実装されたワークフロー サービスや、Pick アクティビティを含むワークフロー サービスがある場合は、非プロトコル ブックマークが存在する可能性が高くなります。 この間隔を指定するには、app.config ファイルの `appSettings` セクションに次のような行を追加します。
 
-    ```
+    ```xml
     <add key="microsoft:WorkflowServices:FilterResumeTimeoutInSeconds" value="60"/>
     ```
 
@@ -1009,7 +1005,7 @@ Dim utc As New Date(2016, 11, 07, 3, 0, 0, DateTimeKind.Utc)
 
      <xref:System.Transactions.TransactionException> から派生した例外がスローされる原因となったトランザクションに、分散トランザクション識別子を含めることができるようになりました。 これを行うには、次のキーを app.config ファイルの `appSettings` セクションに追加します。
 
-    ```
+    ```xml
     <add key="Transactions:IncludeDistributedTransactionIdInExceptionMessage" value="true"/> 
     ```
 
@@ -1041,7 +1037,7 @@ Dim utc As New Date(2016, 11, 07, 3, 0, 0, DateTimeKind.Utc)
 
      これはオプトイン機能です。 この機能を有効にするには、アプリケーション構成 (app.config) ファイルで `EnableWindowsFormsHighDpiAutoResizing` 要素を `true` に設定します。
 
-    ```
+    ```xml
     <appSettings>
        <add key="EnableWindowsFormsHighDpiAutoResizing" value="true" />
     </appSettings>
@@ -1080,7 +1076,7 @@ Dim utc As New Date(2016, 11, 07, 3, 0, 0, DateTimeKind.Utc)
 
      これはオプトイン機能です。 この機能を有効にするには、アプリケーション構成 (app.config) ファイルで `EnableWindowsFormsHighDpiAutoResizing` 要素を `true` に設定します。
 
-    ```
+    ```xml
     <appSettings>
        <add key="EnableWindowsFormsHighDpiAutoResizing" value="true" />
     </appSettings>
@@ -1170,7 +1166,7 @@ Dim utc As New Date(2016, 11, 07, 3, 0, 0, DateTimeKind.Utc)
 
      この機能を有効にするには、構成ファイル (app.config) に新しい \<appSettings> 要素を追加し、`EnableWindowsFormsHighDpiAutoResizing` 要素を `true` に設定します。
 
-    ```
+    ```xml
     <appSettings>
        <add key="EnableWindowsFormsHighDpiAutoResizing" value="true" />
     </appSettings>

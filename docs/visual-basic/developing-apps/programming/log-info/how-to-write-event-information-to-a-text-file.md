@@ -62,7 +62,7 @@ ms.lasthandoff: 05/22/2017
   
 3.  その `<listeners>` セクションに次の要素を追加します。  
   
-    ```  
+    ```xml  
     <add name="FileLogListener" />  
     ```  
   
@@ -70,7 +70,7 @@ ms.lasthandoff: 05/22/2017
   
 5.  その `<sharedListeners>` セクションに次の要素を追加します。  
   
-    ```  
+    ```xml  
     <add name="FileLogListener"   
         type="Microsoft.VisualBasic.Logging.FileLogTraceListener,   
               Microsoft.VisualBasic, Version=8.0.0.0, Culture=neutral,   

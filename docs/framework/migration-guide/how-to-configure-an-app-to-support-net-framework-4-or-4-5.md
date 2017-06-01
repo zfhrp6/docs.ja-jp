@@ -59,7 +59,7 @@ ms.lasthandoff: 04/18/2017
   
 2.  次のように、アプリケーション構成ファイルに [\<supportedRuntime>](../../../docs/framework/configure-apps/file-schema/startup/supportedruntime-element.md) 要素を追加します。  
   
-    ```  
+    ```xml  
     <configuration>  
       <startup>  
         <supportedRuntime version="<version>"/>  

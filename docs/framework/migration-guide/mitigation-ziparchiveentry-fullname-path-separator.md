@@ -41,7 +41,7 @@ ms.lasthandoff: 05/22/2017
 ## <a name="mitigation"></a>軽減策  
  この動作が望ましくない場合は、アプリケーション構成ファイルの [\<runtime>](../../../docs/framework/configure-apps/file-schema/runtime/runtime-element.md) セクションに構成設定を追加して、無効にすることができます。 以下は、`<runtime>` セクションと無効への切り替えの両方を示しています。  
   
-```  
+```xml  
 <runtime>  
    <AppContextSwitchOverrides value="Switch.System.IO.Compression.ZipFile.UseBackslash=true" />  
 </runtime>  
@@ -49,7 +49,7 @@ ms.lasthandoff: 05/22/2017
   
  また、以前のバージョンの .NET Framework を対象とするものの、[!INCLUDE[net_v461](../../../includes/net-v461-md.md)] 以降のバージョンで実行されているアプリでは、アプリケーション構成ファイルの [\<runtime>](../../../docs/framework/configure-apps/file-schema/runtime/runtime-element.md) セクションに構成設定を追加して、この動作を有効にすることができます。 以下は、`<runtime>` セクションと有効への切り替えの両方を示しています。  
   
-```  
+```xml  
 <runtime>  
    <AppContextSwitchOverrides value="Switch.System.IO.Compression.ZipFile.UseBackslash=false" />  
 </runtime>  
