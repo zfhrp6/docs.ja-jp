@@ -102,11 +102,11 @@ Visual Studio を使用して、.NET Core アプリケーションを開発す�
 
    たとえば、次の例は、アプリが 64 ビット Windows 10 オペレーティング システムおよび 64 ビット OS X バージョン 10.11 オペレーティング システムで実行されることを示します。
 
-       ```xml
-        <PropertyGroup>
-          <RuntimeIdentifiers>win10-x64;osx.10.11-x64</RuntimeIdentifiers>
-        </PropertyGroup>
-       ```
+```xml
+<PropertyGroup>
+    <RuntimeIdentifiers>win10-x64;osx.10.11-x64</RuntimeIdentifiers>
+</PropertyGroup>
+```
    なお、`<RuntimeIdentifiers>` 要素は、*csproj* ファイルの任意の `<PropertyGroup>` に入れることが可能です。 *csproj* ファイルの完全なサンプルは、このセクションの後の部分で示しています。
 
 1. アプリのデバッグ ビルドを作成します。
