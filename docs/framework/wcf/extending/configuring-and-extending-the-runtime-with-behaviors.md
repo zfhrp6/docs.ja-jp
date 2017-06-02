@@ -1,0 +1,252 @@
+---
+title: "動作を使用したランタイムの構成と拡張 | Microsoft Docs"
+ms.custom: ""
+ms.date: "03/30/2017"
+ms.prod: ".net-framework"
+ms.reviewer: ""
+ms.suite: ""
+ms.technology: 
+  - "dotnet-clr"
+ms.tgt_pltfrm: ""
+ms.topic: "article"
+helpviewer_keywords: 
+  - "動作を使用した拡張機能の関連付け [WCF]"
+ms.assetid: 149b99b6-6eb6-4f45-be22-c967279677d9
+caps.latest.revision: 20
+author: "Erikre"
+ms.author: "erikre"
+manager: "erikre"
+caps.handback.revision: 20
+---
+# 動作を使用したランタイムの構成と拡張
+動作を使用すると、既定の動作を変更したり、カスタム拡張機能を追加したりできます。カスタム拡張機能では、サービス構成の検査および検証や、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] クライアント アプリケーションとサービス アプリケーションのランタイム動作の変更を行います。ここでは、動作インターフェイスとその実装方法について説明します。また、動作インターフェイスをサービスの説明 \(サービス アプリケーションの場合\) またはエンドポイント \(クライアント アプリケーションの場合\) にプログラムによって追加する方法と、構成ファイル内で追加する方法についても説明します。システムが提供する動作の使用方法の詳細については、「[サービスのランタイム動作の指定](../../../../docs/framework/wcf/specifying-service-run-time-behavior.md)」および「[クライアントのランタイム動作の指定](../../../../docs/framework/wcf/specifying-client-run-time-behavior.md)」を参照してください。  
+  
+## 動作  
+ 動作の型は、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] がサービス説明オブジェクト \(サービスの場合\) またはサービス エンド ポイント説明オブジェクト \(クライアントの場合\) を使用してランタイムを作成する前に、これらのオブジェクトに追加されます。このランタイムは、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスまたは [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアントを実行します。ランタイムの構築プロセスでこれらの動作を呼び出すと、コントラクト、バインディング、およびアドレスによって構築されたランタイムを変更するランタイム プロパティやランタイム メソッドにアクセスできます。  
+  
+### 動作メソッド  
+ すべての動作で、`AddBindingParameters` メソッド、`ApplyDispatchBehavior` メソッド、`Validate` メソッド、および `ApplyClientBehavior` メソッドを使用できます。ただし、`ApplyClientBehavior` には、例外が 1 つあります。<xref:System.ServiceModel.Description.IServiceBehavior> はクライアントで実行できないため、このメソッドを実装していません。  
+  
+-   カスタム オブジェクトを変更したり、ランタイム構築時に使用するためにカスタム バインディングがアクセスできるコレクションにカスタム オブジェクトを追加したりするには、`AddBindingParameters` メソッドを使用します。たとえば、これによって、チャネルを構築する方法に影響するが、チャネル開発者には知られていない保護要件を指定します。  
+  
+-   説明ツリーと対応するランタイム オブジェクトを検査し、特定の基準セットに従っていることを確認するには、`Validate` メソッドを使用します。  
+  
+-   説明ツリーを検査し、サービスまたはクライアントの特定のスコープのランタイムを変更するには、`ApplyDispatchBehavior` メソッドと `ApplyClientBehavior` メソッドを使用します。また、拡張オブジェクトを挿入することもできます。  
+  
+    > [!NOTE]
+    >  これらのメソッドでは説明ツリーが提供されますが、説明ツリーは検査にのみ使用します。説明ツリーを変更すると、動作は未定義の状態になります。  
+  
+ 変更できるプロパティと実装できるカスタマイズ インターフェイスには、サービスおよびクライアントのランタイム クラスからアクセスできます。サービス型は、<xref:System.ServiceModel.Dispatcher.DispatchRuntime> クラスと <xref:System.ServiceModel.Dispatcher.DispatchOperation> クラスです。クライアント型は、<xref:System.ServiceModel.Dispatcher.ClientRuntime> クラスと <xref:System.ServiceModel.Dispatcher.ClientOperation> クラスです。<xref:System.ServiceModel.Dispatcher.ClientRuntime> クラスと <xref:System.ServiceModel.Dispatcher.DispatchRuntime> クラスは、それぞれクライアント全体またはサービス全体のランタイム プロパティと拡張コレクションにアクセスするための拡張エントリ ポイントです。同様に、<xref:System.ServiceModel.Dispatcher.ClientOperation> クラスと <xref:System.ServiceModel.Dispatcher.DispatchOperation> クラスは、それぞれクライアント操作またはサービス操作のランタイム プロパティと拡張コレクションを公開します。ただし、必要に応じて、操作ランタイム オブジェクトからより広いスコープのランタイム オブジェクトにアクセスできます。また、逆の場合も同様です。  
+  
+> [!NOTE]
+>  クライアントの実行動作を変更する際に使用できるランタイム プロパティと拡張型の詳細については、「[クライアントの拡張](../../../../docs/framework/wcf/extending/extending-clients.md)」を参照してください。サービス ディスパッチャーの実行動作を変更する際に使用できるランタイム プロパティと拡張型の詳細については、「[ディスパッチャーの拡張](../../../../docs/framework/wcf/extending/extending-dispatchers.md)」を参照してください。  
+  
+ ほとんどの [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] ユーザーは、ランタイムと直接やり取りすることはありません。代わりに、構成ファイル内のクラスや動作で、コア プログラミング モデルの構成要素 \(エンドポイント、コントラクト、バインディング、アドレス、動作属性など\) を使用します。これらの要素によって*説明ツリー*が構成されます。説明ツリーは、このツリーで示されるサービスまたはクライアントをサポートするランタイムを構築するための完全な仕様を表します。  
+  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] には、次の 4 種類の動作があります。  
+  
+-   サービスの動作 \(<xref:System.ServiceModel.Description.IServiceBehavior> 型\) : <xref:System.ServiceModel.ServiceHostBase> を含むサービス ランタイム全体のカスタマイズを実現します。  
+  
+-   エンドポイントの動作 \(<xref:System.ServiceModel.Description.IEndpointBehavior> 型\) : サービス エンドポイントと、関連する <xref:System.ServiceModel.Dispatcher.EndpointDispatcher> オブジェクトのカスタマイズを実現します。  
+  
+-   コントラクトの動作 \(<xref:System.ServiceModel.Description.IContractBehavior> 型\) : <xref:System.ServiceModel.Dispatcher.ClientRuntime> クラス \(クライアント アプリケーションの場合\) と、<xref:System.ServiceModel.Dispatcher.DispatchRuntime> クラス \(サービス アプリケーションの場合\) のカスタマイズを実現します。  
+  
+-   操作の動作 \(<xref:System.ServiceModel.Description.IOperationBehavior> 型\) : <xref:System.ServiceModel.Dispatcher.ClientOperation> クラス \(クライアントの場合\) と、<xref:System.ServiceModel.Dispatcher.DispatchOperation> クラス \(サービスの場合\) のカスタマイズを実現します。  
+  
+ カスタム属性を実装するか、アプリケーション構成ファイルを使用することにより、これらの動作をさまざまな説明オブジェクトに追加できます。また、適切な説明オブジェクトの動作コレクションに直接追加することもできます。ただし、<xref:System.ServiceModel.ServiceHost> または <xref:System.ServiceModel.ChannelFactory%601> で <xref:System.ServiceModel.ICommunicationObject.Open%2A?displayProperty=fullName> を呼び出す前に、サービス説明オブジェクトまたはサービス エンドポイント説明オブジェクトに追加する必要があります。  
+  
+### 動作のスコープ  
+ 4 種類の動作があり、それぞれランタイム アクセスの特定のスコープに対応しています。  
+  
+#### サービスの動作  
+ <xref:System.ServiceModel.Description.IServiceBehavior> を実装するサービスの動作は、サービス ランタイム全体を変更する主要機構です。サービスの動作をサービスに追加する場合、3 つの方法があります。  
+  
+1.  サービス クラスの属性を使用する方法。<xref:System.ServiceModel.ServiceHost> を構築すると、<xref:System.ServiceModel.ServiceHost> 実装は、リフレクションを使用してそのサービス型の属性セットを検出します。これらの属性のいずれかが <xref:System.ServiceModel.Description.IServiceBehavior> の実装である場合、<xref:System.ServiceModel.Description.ServiceDescription> の動作コレクションに追加されます。これにより、これらの動作はサービス ランタイムの構築に参加できます。  
+  
+2.  プログラムによって、<xref:System.ServiceModel.Description.ServiceDescription> の動作コレクションに動作を追加する方法。これを行うには、次のコード行を使用します。  
+  
+    ```  
+    ServiceHost host = new ServiceHost(/* Parameters */);  
+    host.Description.Behaviors.Add(/* Service Behavior */);  
+    ```  
+  
+3.  構成を拡張するカスタムの <xref:System.ServiceModel.Configuration.BehaviorExtensionElement> を実装する方法。これにより、アプリケーション構成ファイルからサービスの動作を使用できるようになります。  
+  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] のサービスの動作の例として、<xref:System.ServiceModel.ServiceBehaviorAttribute> 属性、<xref:System.ServiceModel.Description.ServiceThrottlingBehavior>、<xref:System.ServiceModel.Description.ServiceMetadataBehavior> 動作などがあります。  
+  
+#### コントラクトの動作  
+ <xref:System.ServiceModel.Description.IContractBehavior> インターフェイスを実装するコントラクトの動作は、コントラクト全体にわたり、クライアント ランタイムとサービス ランタイムを拡張する際に使用します。  
+  
+ コントラクトの動作をコントラクトに追加する場合、2 つの方法があります。1 つは、コントラクト インターフェイスで使用するカスタム属性を作成する方法です。コントラクト インターフェイスを <xref:System.ServiceModel.ServiceHost> または <xref:System.ServiceModel.ChannelFactory%601> に渡すと、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] はインターフェイスの属性を検査します。属性のいずれかが <xref:System.ServiceModel.Description.IContractBehavior> の実装である場合、そのインターフェイス用に作成された <xref:System.ServiceModel.Description.ContractDescription?displayProperty=fullName> の動作コレクションに追加されます。  
+  
+ カスタム コントラクトの動作属性に <xref:System.ServiceModel.Description.IContractBehaviorAttribute?displayProperty=fullName> を実装することもできます。この場合、適用先に応じて動作は次のようになります。  
+  
+ •コントラクト インターフェイスに適用した場合。この場合、動作は任意のエンドポイント内の該当の型のすべてのコントラクトに適用されます。[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、<xref:System.ServiceModel.Description.IContractBehaviorAttribute.TargetContract%2A?displayProperty=fullName> プロパティの値を無視します。  
+  
+ •サービス クラスに適用した場合。この場合、動作はコントラクトが <xref:System.ServiceModel.Description.IContractBehaviorAttribute.TargetContract%2A> プロパティの値であるエンドポイントにのみ適用されます。  
+  
+ •コールバック クラスに適用した場合。この場合、動作は双方向クライアントのエンドポイントに適用されます。[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、<xref:System.ServiceModel.Description.IContractBehaviorAttribute.TargetContract%2A> プロパティの値を無視します。  
+  
+ 2 番目の方法として、<xref:System.ServiceModel.Description.ContractDescription> の動作コレクションに動作を追加する方法があります。  
+  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] のコントラクトの動作の例として、<xref:System.ServiceModel.DeliveryRequirementsAttribute?displayProperty=fullName> 属性などがあります。詳細および例については、リファレンス トピックを参照してください。  
+  
+#### エンドポイントの動作  
+ <xref:System.ServiceModel.Description.IEndpointBehavior> を実装するエンドポイントの動作は、特定のエンドポイントのサービス ランタイムまたはクライアント ランタイム全体を変更する主要機構です。  
+  
+ エンドポイントの動作をサービスに追加する場合、2 つの方法があります。  
+  
+1.  <xref:System.ServiceModel.Description.ServiceEndpoint.Behaviors%2A> プロパティに動作を追加する方法。  
+  
+2.  構成を拡張するカスタムの <xref:System.ServiceModel.Configuration.BehaviorExtensionElement> を実装する方法。  
+  
+ 詳細および例については、リファレンス トピックを参照してください。  
+  
+#### 操作の動作  
+ <xref:System.ServiceModel.Description.IOperationBehavior> インターフェイスを実装する操作の動作は、各操作のクライアント ランタイムとサービス ランタイムを拡張する際に使用します。  
+  
+ 操作の動作を操作に追加する場合、2 つの方法があります。1 つは、操作をモデル化するメソッドで使用するカスタム属性を作成する方法です。<xref:System.ServiceModel.ServiceHost> または <xref:System.ServiceModel.ChannelFactory> に操作を追加すると、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、その操作用に作成された <xref:System.ServiceModel.Description.OperationDescription> の動作コレクションに任意の <xref:System.ServiceModel.Description.IOperationBehavior> 属性を追加します。  
+  
+ 2 番目の機構は、構成された <xref:System.ServiceModel.Description.OperationDescription> の動作コレクションに動作を直接追加します。  
+  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] の操作の動作の例として、<xref:System.ServiceModel.OperationBehaviorAttribute> や <xref:System.ServiceModel.TransactionFlowAttribute> などがあります。  
+  
+ 詳細および例については、リファレンス トピックを参照してください。  
+  
+### 構成を使用した動作の作成  
+ サービス、エンドポイント、およびコントラクトの動作は、コードまたは属性を使用して指定するように設計できます。アプリケーション構成ファイルまたは Web 構成ファイルを使用して構成できるのは、サービスの動作とエンドポイントの動作だけです。属性を使用して動作を公開した場合、開発者は、実行時に追加、削除、または変更できない動作をコンパイル時に指定できます。多くの場合、これはサービスの適切な操作のために常に必要となる動作に適しています \(<xref:System.ServiceModel.ServiceBehaviorAttribute?displayProperty=fullName> 属性に対するトランザクション関連のパラメーターなど\)。構成を使用して動作を公開すると、開発者はサービス展開者に動作の仕様と構成を委ねることができます。これは、動作がオプション コンポーネント、または他の展開固有の構成 \(サービスまたはサービスの特定の承認構成についてメタデータを公開するかどうかなど\) である場合に適しています。  
+  
+> [!NOTE]
+>  企業のアプリケーション ポリシーを machine.config 構成ファイルに挿入し、これらの項目をロックダウンすることで、ポリシーを適用する構成をサポートする動作を使用することもできます。説明および例については、「[方法 : 企業内のエンドポイントをロックダウンする](../../../../docs/framework/wcf/extending/how-to-lock-down-endpoints-in-the-enterprise.md)」を参照してください。  
+  
+ 構成を使用して動作を公開するには、開発者は <xref:System.ServiceModel.Configuration.BehaviorExtensionElement> の派生クラスを作成し、その拡張を構成に登録する必要があります。  
+  
+ <xref:System.ServiceModel.Description.IEndpointBehavior> で <xref:System.ServiceModel.Configuration.BehaviorExtensionElement> を実装する方法を次のコード例に示します。  
+  
+```  
+// BehaviorExtensionElement members  
+    public override Type BehaviorType  
+    {  
+      get { return typeof(EndpointBehaviorMessageInspector); }  
+    }  
+  
+    protected override object CreateBehavior()  
+    {  
+      return new EndpointBehaviorMessageInspector();  
+    }  
+```  
+  
+ 構成システムでカスタムの <xref:System.ServiceModel.Configuration.BehaviorExtensionElement> を読み込むには、拡張として登録する必要があります。上記のエンドポイントの動作の構成ファイルを次のコード例に示します。  
+  
+```xml  
+<configuration>  
+  <system.serviceModel>  
+    <services>  
+      <service   
+        name="Microsoft.WCF.Documentation.SampleService"  
+        behaviorConfiguration="metadataSupport"  
+      >  
+        <host>  
+          <baseAddresses>  
+            <add baseAddress="http://localhost:8080/ServiceMetadata" />  
+          </baseAddresses>  
+        </host>  
+        <endpoint  
+          address="/SampleService"  
+          binding="wsHttpBinding"  
+          behaviorConfiguration="withMessageInspector"   
+          contract="Microsoft.WCF.Documentation.ISampleService"  
+        />  
+        <endpoint  
+           address="mex"  
+           binding="mexHttpBinding"  
+           contract="IMetadataExchange"  
+        />  
+      </service>  
+    </services>  
+    <behaviors>  
+      <serviceBehaviors>  
+      <behavior name="metadataSupport">  
+        <serviceMetadata httpGetEnabled="true" httpGetUrl=""/>  
+      </behavior>  
+      </serviceBehaviors>  
+      <endpointBehaviors>  
+        <behavior name="withMessageInspector">  
+          <endpointMessageInspector />  
+        </behavior>  
+      </endpointBehaviors>  
+    </behaviors>  
+    <extensions>  
+      <behaviorExtensions>  
+        <add   
+          name="endpointMessageInspector"  
+          type="Microsoft.WCF.Documentation.EndpointBehaviorMessageInspector, HostApplication, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"  
+        />  
+      </behaviorExtensions>  
+    </extensions>  
+  </system.serviceModel>  
+</configuration>  
+  
+```  
+  
+ ここで、`Microsoft.WCF.Documentation.EndpointBehaviorMessageInspector` は動作拡張型です。また、`HostApplication` は、該当のクラスがコンパイルされているアセンブリの名前です。  
+  
+### 評価順序  
+ <xref:System.ServiceModel.ChannelFactory%601?displayProperty=fullName> と <xref:System.ServiceModel.ServiceHost?displayProperty=fullName> は、プログラミング モデルと記述からランタイムを構築します。前述のように、動作は、サービス、エンドポイント、コントラクト、および操作でランタイムの構築プロセスを支援します。  
+  
+ <xref:System.ServiceModel.ServiceHost> は次の順序で動作を適用します。  
+  
+1.  サービス  
+  
+2.  コントラクト  
+  
+3.  エンドポイント  
+  
+4.  操作  
+  
+ 動作のどのコレクション内でも、順序が保証されるというわけではありません。  
+  
+ <xref:System.ServiceModel.ChannelFactory%601> は次の順序で動作を適用します。  
+  
+1.  コントラクト  
+  
+2.  エンドポイント  
+  
+3.  操作  
+  
+ この場合も、動作のどのコレクション内でも、順序が保証されるというわけではありません。  
+  
+### プログラムによる動作の追加  
+ <xref:System.ServiceModel.ServiceHostBase?displayProperty=fullName> の <xref:System.ServiceModel.Channels.CommunicationObject.OnOpening%2A?displayProperty=fullName> メソッドの後で、サービス アプリケーションの <xref:System.ServiceModel.Description.ServiceDescription?displayProperty=fullName> の各プロパティを変更しないでください。このメソッドの後で変更すると、<xref:System.ServiceModel.ServiceHostBase> および <xref:System.ServiceModel.ServiceHost?displayProperty=fullName> の <xref:System.ServiceModel.ServiceHostBase.Credentials%2A?displayProperty=fullName> プロパティや `AddServiceEndpoint` メソッドなどの一部のメンバーは例外をスローします。変更を許可するメンバーもありますが、結果は未定義の状態になります。  
+  
+ 同様に、クライアントで、<xref:System.ServiceModel.ChannelFactory?displayProperty=fullName> の <xref:System.ServiceModel.Channels.CommunicationObject.OnOpening%2A> 呼び出しの後で、<xref:System.ServiceModel.Description.ServiceEndpoint?displayProperty=fullName> 値を変更しないでください。この呼び出しの後で変更すると、<xref:System.ServiceModel.ChannelFactory.Credentials%2A?displayProperty=fullName> プロパティは例外をスローします。その他のクライアント記述値は、エラーを発生させずに変更できます。ただし、結果は未定義の状態になります。  
+  
+ サービスとクライアントのどちらの場合も、<xref:System.ServiceModel.Channels.CommunicationObject.Open%2A?displayProperty=fullName> の呼び出しの前に記述を変更することをお勧めします。  
+  
+### 動作属性の継承ルール  
+ 4 種類の動作はすべて、属性 \(サービスの動作とコントラクトの動作\) を使用して設定できます。属性はマネージ オブジェクトとメンバーで定義され、マネージ オブジェクトとメンバーは継承をサポートしているため、継承のコンテキストでの動作属性の機能を定義する必要があります。  
+  
+ 大まかに言えば、特定のスコープ \(サービス、コントラクト、操作など\) については、そのスコープの継承階層内のすべての動作属性が適用されるという継承ルールになります。同じ種類の 2 つの動作属性がある場合、最も多く派生された種類だけが使用されます。  
+  
+#### サービスの動作  
+ サービス クラスの場合、指定のクラスとその親のすべてのサービス動作属性が適用されます。継承階層の複数の場所に同じ種類の属性が適用されている場合は、最も多く派生された種類が使用されます。  
+  
+```  
+[ServiceBehavior(ConcurrencyMode = ConcurrencyMode.Multiple)]  
+[AspNetCompatibilityRequirementsAttribute(  
+    AspNetCompatibilityRequirementsMode = AspNetCompatibilityRequirementsMode.Allowed)]  
+public class A { /* … */ }  
+  
+[ServiceBehavior(InstanceContextMode = InstanceContextMode.Single)]  
+public class B : A { /* … */}  
+```  
+  
+ たとえば、上記の例では、最終的にサービス B は、<xref:System.ServiceModel.InstanceContextMode> が <xref:System.ServiceModel.InstanceContextMode>、<xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsMode> が <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsMode>、<xref:System.ServiceModel.ConcurrencyMode> が <xref:System.ServiceModel.ConcurrencyMode> になります。<xref:System.ServiceModel.ConcurrencyMode> が <xref:System.ServiceModel.ConcurrencyMode> になるのは、サービス B の <xref:System.ServiceModel.ServiceBehaviorAttribute> 属性の方がサービス A よりも多く派生されているためです。  
+  
+#### コントラクトの動作  
+ コントラクトの場合、指定のインターフェイスとその親のすべてのコントラクト動作属性が適用されます。継承階層の複数の場所に同じ種類の属性が適用されている場合は、最も多く派生された種類が使用されます。  
+  
+#### 操作の動作  
+ 指定の操作が既存の抽象操作または仮想操作をオーバーライドしない場合、継承ルールは適用されません。  
+  
+ 操作が既存の操作をオーバーライドする場合は、その操作とその親のすべての操作動作属性が適用されます。継承階層の複数の場所に同じ種類の属性が適用されている場合は、最も多く派生された種類が使用されます。

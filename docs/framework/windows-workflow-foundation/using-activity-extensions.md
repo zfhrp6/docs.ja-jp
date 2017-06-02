@@ -1,0 +1,139 @@
+---
+title: "アクティビティ拡張機能の使用 | Microsoft Docs"
+ms.custom: ""
+ms.date: "03/30/2017"
+ms.prod: ".net-framework"
+ms.reviewer: ""
+ms.suite: ""
+ms.tgt_pltfrm: ""
+ms.topic: "article"
+ms.assetid: 500eb96a-c009-4247-b6b5-b36faffdf715
+caps.latest.revision: 5
+author: "Erikre"
+ms.author: "erikre"
+manager: "erikre"
+caps.handback.revision: 5
+---
+# アクティビティ拡張機能の使用
+アクティビティは、ワークフローで明示的にモデル化されていない追加機能の提供をホストに許可するワークフロー アプリケーション拡張機能と相互作用することができます。ここでは、アクティビティの実行回数をカウントする拡張機能を作成および使用する方法について説明します。  
+  
+### 実行回数をカウントするアクティビティ拡張機能を使用するには  
+  
+1.  [!INCLUDE[vs2010](../../../includes/vs2010-md.md)] を起動します。**\[新規作成\]**、**\[プロジェクト\]** の順に選択します。**\[Visual C\#\]** ノードから **\[ワークフロー\]** を選択します。テンプレートの一覧から **\[ワークフロー コンソール アプリケーション\]** を選択します。プロジェクトに「`Extensions`」という名前を付けます。**\[OK\]** をクリックして、プロジェクトを作成します。  
+  
+2.  Program.cs ファイルに、**System.Collections.Generic** 名前空間の `using` ステートメントを追加します。  
+  
+    ```  
+    using System.Collections.Generic;  
+  
+    ```  
+  
+3.  Program.cs ファイルで、**ExecutionCountExtension** という名前の新しいクラスを作成します。次のコードは、**Register** メソッドを呼び出したときにインスタンス ID を追跡するワークフロー拡張機能を作成します。  
+  
+    ```  
+    // This extension collects a list of workflow Ids  
+    public class ExecutionCountExtension  
+    {  
+        IList<Guid> instances = new List<Guid>();  
+  
+        public int ExecutionCount  
+        {  
+            get  
+            {  
+                return this.instances.Count;  
+            }  
+        }  
+  
+        public IEnumerable<Guid> InstanceIds  
+        {  
+            get  
+            {  
+                return this.instances;  
+            }  
+        }  
+  
+        public void Register(Guid activityInstanceId)  
+        {  
+            if (!this.instances.Contains<Guid>(activityInstanceId))  
+            {  
+                instances.Add(activityInstanceId);  
+            }  
+        }  
+    }  
+  
+    ```  
+  
+4.  **ExecutionCountExtension** を使用するアクティビティを作成します。次のコードは、ランタイムから **ExecutionCountExtension** オブジェクトを取得して、アクティビティが実行されるとその **Register** メソッドを呼び出すアクティビティを定義します。  
+  
+    ```  
+    // Activity that consumes an extension provided by the host. If the extension is available  
+    // in the context, it will invoke (in this case, registers the Id of the executing workflow)  
+    public class MyActivity: CodeActivity  
+    {  
+        protected override void Execute(CodeActivityContext context)  
+        {  
+            ExecutionCountExtension ext = context.GetExtension<ExecutionCountExtension>();  
+            if (ext != null)  
+            {  
+                ext.Register(context.WorkflowInstanceId);                         
+            }  
+  
+        }  
+    }  
+  
+    ```  
+  
+5.  program.cs ファイルの **Main** メソッドにアクティビティを実装します。次のコードには、2 つの異なるワークフローを生成し、各ワークフローを数回実行して、拡張機能に含まれる結果のデータを表示するメソッドが含まれています。  
+  
+    ```  
+    class Program  
+    {  
+        // Creates a workflow that uses the activity that consumes the extension  
+        static Activity CreateWorkflow1()  
+        {  
+            return new Sequence  
+            {  
+                Activities =  
+                {  
+                    new MyActivity()  
+                }  
+            };  
+        }  
+  
+        // Creates a workflow that uses two instances of the activity that consumes the extension  
+        static Activity CreateWorkflow2()  
+        {  
+            return new Sequence  
+            {  
+                Activities =  
+                {  
+                    new MyActivity(),  
+                    new MyActivity()  
+                }  
+            };  
+        }  
+  
+        static void Main(string[] args)  
+        {  
+            // create the extension   
+            ExecutionCountExtension executionCountExt = new ExecutionCountExtension();  
+  
+            // configure the first invoker and execute 3 times  
+            WorkflowInvoker invoker = new WorkflowInvoker(CreateWorkflow1());  
+            invoker.Extensions.Add(executionCountExt);                          
+            invoker.Invoke();  
+            invoker.Invoke();  
+            invoker.Invoke();  
+  
+            // configure the second invoker and execute 2 times  
+            WorkflowInvoker invoker2 = new WorkflowInvoker(CreateWorkflow2());  
+            invoker2.Extensions.Add(executionCountExt);  
+            invoker2.Invoke();  
+            invoker2.Invoke();  
+  
+            // show the data in the extension  
+            Console.WriteLine("Executed {0} times", executionCountExt.ExecutionCount);  
+            executionCountExt.InstanceIds.ToList().ForEach(i => Console.WriteLine("...{0}", i));  
+        }  
+    }  
+    ```
