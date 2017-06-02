@@ -26,11 +26,11 @@ caps.latest.revision: 56
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 3dbadeec14ce9c023af39ae4ff95d0183826e7c1
-ms.openlocfilehash: eb0f0636abb39eabb387388fcdd39df8aca88c34
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: fe9ab371ab8d3eee3778412e446b7aa30b42476b
+ms.openlocfilehash: 46f524a8c2ee2d65d5c756a101a5c26c5919e165
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/02/2017
+ms.lasthandoff: 06/02/2017
 
 ---
 # <a name="deploying-the-net-framework-and-applications"></a>.NET Framework およびアプリケーションの配置
@@ -57,13 +57,13 @@ ms.lasthandoff: 05/02/2017
   
     -   [.NET Framework 4.5 のインストール中のシステム再起動の削減](../../../docs/framework/deployment/reducing-system-restarts.md)  
   
-    -   [.NET Framework のインストールとアンインストールのブロックに関するトラブルシューティング](~/docs/framework/install/troubleshoot-blocked-installations-and-uninstallations.md)  
+    -   [.NET Framework のインストールおよびアンインストールのブロックのトラブルシューティング](~/docs/framework/install/troubleshoot-blocked-installations-and-uninstallations.md)  
   
 -   .NET Framework とクライアント アプリケーションの配置 (開発者向け):  
   
-    -   セットアップと配置プロジェクトでの [InstallShield の使用](../../../docs/framework/deployment/deployment-guide-for-developers.md#installshield)  
+    -   セットアップと配置プロジェクトでの [InstallShield の使用](../../../docs/framework/deployment/deployment-guide-for-developers.md#installshield-deployment)  
   
-    -   [Visual Studio の ClickOnce アプリケーションの使用](../../../docs/framework/deployment/deployment-guide-for-developers.md#clickonce)  
+    -   [Visual Studio の ClickOnce アプリケーションの使用](../../../docs/framework/deployment/deployment-guide-for-developers.md#clickonce-deployment)  
   
     -   [WiX インストール パッケージの作成](../../../docs/framework/deployment/deployment-guide-for-developers.md#wix)  
   
@@ -171,12 +171,12 @@ ms.lasthandoff: 05/02/2017
 |タイトル|説明|  
 |-----------|-----------------|  
 |[ランタイムがアセンブリを検索する方法](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)|共通言語ランタイムが、バインド要求を満たすために、使用するアセンブリをどのように特定するかを説明します。|  
-|[アセンブリの読み込みのベスト プラクティス](../../../docs/framework/deployment/best-practices-for-assembly-loading.md)|<xref:System.InvalidCastException>、<xref:System.MissingMethodException>、その他のエラーなどの原因となることがある型 ID の問題を回避する方法について説明します。|  
+|[アセンブリの読み込みのベスト プラクティス](../../../docs/framework/deployment/best-practices-for-assembly-loading.md)|<xref:System.InvalidCastException>、<xref:System.MissingMethodException>、およびその他のエラーの原因となることがある型 ID の問題を回避する方法について説明します。|  
 |[.NET Framework 4.5 のインストール中のシステム再起動の削減](../../../docs/framework/deployment/reducing-system-restarts.md)|再起動をできる限り回避する再起動マネージャーと、.NET Framework をインストールするアプリケーションがそれをどのように利用できるかを説明しています。|  
 |[配置ガイド (管理者向け)](../../../docs/framework/deployment/guide-for-administrators.md)|System Center Configuration Manager (SCCM) を使用したシステム管理者による .NET Framework の配置方法と、ネットワーク全体でのシステムの依存関係について説明します。|  
 |[配置ガイド (開発者向け)](../../../docs/framework/deployment/deployment-guide-for-developers.md)|開発者による .NET Framework とアプリケーションのユーザーのコンピューターへのインストール方法について説明します。|  
 |[アプリケーション、サービス、およびコンポーネントの配置](https://docs.microsoft.com/visualstudio/deployment/deploying-applications-services-and-components)|ClickOnce を使用したアプリケーションの発行手順や、Windows インストーラー テクノロジなど、Visual Studio の配置オプションについて説明します。| 
-|[ClickOnce アプリケーションの発行](http://msdn.microsoft.com/library/eb6dfe79-f54c-4331-8e36-073688e70973)|Windows フォーム アプリケーションをパッケージ化し、これを ClickOnce でネットワーク上のクライアント コンピューターに配置する方法を説明します。|  
+|[ClickOnce アプリケーションの発行](/visualstudio/deployment/publishing-clickonce-applications)|Windows フォーム アプリケーションをパッケージ化し、これを ClickOnce でネットワーク上のクライアント コンピューターに配置する方法を説明します。|  
 |[リソースのパッケージ化と配置](../../../docs/framework/resources/packaging-and-deploying-resources-in-desktop-apps.md)|.NET Framework でリソースのパッケージ化と配置に使用する、ハブ アンド スポーク モデルについて説明します。リソースの名前付け規則、フォールバック プロセス、およびパッケージ化の代替策についても説明します。|  
 |[相互運用アプリケーションの配置](../../../docs/framework/interop/deploying-an-interop-application.md)|相互運用アプリケーションの出荷方法とインストール方法について説明します。通常、相互運用アプリケーションには、.NET Framework クライアント アセンブリ、個別の COM タイプ ライブラリを表す 1 つ以上の相互運用機能アセンブリ、および 1 つ以上の登録済み COM コンポーネントが含まれています。|  
 |[方法: .NET Framework 4.5 インストーラーの進行状況を表示する](../../../docs/framework/deployment/how-to-get-progress-from-the-dotnet-installer.md)|進行状況のビューを独自に表示する一方で、.NET Framework セットアップ プロセスをサイレントで起動および追跡する方法を説明します。|  
