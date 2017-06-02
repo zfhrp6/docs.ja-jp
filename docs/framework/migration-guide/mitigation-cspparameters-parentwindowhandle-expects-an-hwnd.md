@@ -28,9 +28,9 @@ ms.lasthandoff: 05/22/2017
 
 .NET Framework 2.0 で導入された <xref:System.Security.Cryptography.CspParameters.ParentWindowHandle%2A> プロパティをアプリケーションに使用すると、親ウィンドウのハンドル値を登録できます。これを利用して、キーにアクセスする必要がある UI (PIN プロンプトや同意を求めるダイアログなど) を、指定したウィンドウの子のモーダルとして開くことができます。 .NET Framework 4.7 以降をターゲットとするアプリケーションでは、ウィンドウ ハンドル (HWND) をこのプロパティに割り当てることができます。
 
-.NET Framework 4.6.2 までの .NET Framework バージョンでは、<xref:System.Security.Cryptography.CspParameters.ParentWindowHandle%2A> プロパティに割り当てられている値は、HWND 値があるメモリ内の場所を表す <xref:System.IntPtr> であると想定されています。 Windows 7 以前のバージョンの Windows オペレーティング システムでは、このプロパティを `form.Handle` に設定しても影響がありませんが、Windows 8 以降のバージョンでは、<xref:System.Security.Cryptography> の結果として "パラメーターが正しくありません" エラーが表示されます。
+.NET Framework 4.6.2 までの .NET Framework バージョンでは、<xref:System.Security.Cryptography.CspParameters.ParentWindowHandle%2A> プロパティに割り当てられている値は、HWND 値があるメモリ内の場所を表す <xref:System.IntPtr> であると想定されています。 Windows 7 以前のバージョンの Windows オペレーティング システムでは、このプロパティを `form.Handle` に設定しても影響がありませんが、Windows 8 以降のバージョンでは、<xref:System.Security.Cryptography> の結果として "パラメーターが正しくありません" というエラーが表示されます。
 
-.NET Framework 4.7 以降をターゲットとするアプリの場合、Windows フォーム アプリケーションでは次のようなコードで <xref:System.Security.Cryptography.CspParameters.ParentWindowHandle%2A> プロパティを設定できます。
+.NET Framework 4.7 を対象とするアプリ以降では、Windows フォーム アプリケーションは、次のようなコードを使用して、<xref:System.Security.Cryptography.CspParameters.ParentWindowHandle%2A> プロパティを設定できます。
 
 ```csharp
 cspParameters.ParentWindowHandle = form.Handle;

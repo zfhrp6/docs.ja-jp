@@ -17,25 +17,25 @@ author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.translationtype: Human Translation
-ms.sourcegitcommit: dc1c456c71efb3cc6e60a8fdc77384e65975f110
-ms.openlocfilehash: c51d905ab1b2dc6ca923463536ecdc19735d7643
+ms.sourcegitcommit: fe9ab371ab8d3eee3778412e446b7aa30b42476b
+ms.openlocfilehash: ec15e14b299b5bed46d8d35a8c60e5f73a1d5237
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/15/2017
+ms.lasthandoff: 05/22/2017
 
 ---
 # <a name="net-framework-versions-and-dependencies"></a>.NET Framework のバージョンおよび依存関係
 .NET Framework の各バージョンには、共通言語ランタイム (CLR)、基底クラス ライブラリ、およびその他のマネージ ライブラリが含まれています。 このトピックでは、.NET Framework の各バージョンの主要な機能について説明し、基になっている CLR のバージョンおよび関連する開発環境に関する情報と、Windows オペレーティング システムでインストールされる .NET Framework のバージョンを示します。  
   
 > [!NOTE]
->  .NET Framework のダウンロードとインストールの詳細については、[インストール ガイド](../../../docs/framework/install/guide-for-developers.md)に関するページを参照してください。  
+>  .NET Framework のダウンロードとインストールの詳細については、「[開発者向けの .NET Framework のインストール](../../../docs/framework/install/guide-for-developers.md)」を参照してください。  
   
  次の表に、.NET Framework のバージョン履歴を要約し、各バージョンと Visual Studio、Windows、および Windows Server との関係を示します。 Visual Studio ではマルチターゲット機能が提供されているため、記載されている .NET Framework のバージョンに限定される必要はありません。  
   
  新しい各バージョンの .NET Framework には、1 つ前のバージョンの機能が含まれると共に、新機能が追加されています。 CLR は独自のバージョン番号で識別されます。 .NET Framework のバージョン番号はリリースごとにインクリメントされますが、CLR のバージョンは必ずしもインクリメントされるわけではありません。 たとえば、.NET Framework 4、4.5、およびそれ以降のリリースには CLR 4 が含まれますが、.NET Framework 2.0、3.0、3.5 には CLR 2.0 が含まれます。 (CLR の Version 3 はありません)。  
   
- サポートされるオペレーティング システムの全一覧については、[システム要件](../../../docs/framework/get-started/system-requirements.md)に関するページを参照してください。 ダウンロードについては、[インストール ガイド](../../../docs/framework/install/guide-for-developers.md)に関するページを参照してください。 コンピューターにインストールされている .NET Framework のバージョンを確認する方法については、「[方法: インストールされている .NET Framework バージョンを確認する](../../../docs/framework/migration-guide/how-to-determine-which-versions-are-installed.md)」を参照してください。  
+ サポートされるオペレーティング システムの全一覧については、[システム要件](../../../docs/framework/get-started/system-requirements.md)に関するページを参照してください。 ダウンロードについては、「[開発者向けの .NET Framework のインストール](../../../docs/framework/install/guide-for-developers.md)」を参照してください。 コンピューターにインストールされている .NET Framework のバージョンを確認する方法については、「[方法: インストールされている .NET Framework バージョンを確認する](../../../docs/framework/migration-guide/how-to-determine-which-versions-are-installed.md)」を参照してください。  
   
- 次の表の "**このバージョンを含む/インストール可能な Windows**" 列および "**このバージョンを含む/インストール可能な Windows Server**" 列に ✓マークが付いているオペレーティング システム バージョンにインストールされている .NET Framework のバージョンを、[コントロール パネルで有効にする](../../../docs/framework/install/net-framework-3-5-on-windows-8-plus.md) (Windows の場合) かサーバー マネージャーで有効にする (Windows Server の場合) 必要があります。  
+ 次の表の "**このバージョンを含む/インストール可能な Windows**" 列および "**このバージョンを含む/インストール可能な Windows Server**" 列に ✓マークが付いているオペレーティング システム バージョンにインストールされている .NET Framework のバージョンを、[コントロール パネルで有効にする](../../../docs/framework/install/dotnet-35-windows-10.md) (Windows の場合) かサーバー マネージャーで有効にする (Windows Server の場合) 必要があります。  
   
 |.NET Framework のバージョン|CLR バージョン|フィーチャー|Visual Studio バージョンに含まれる|✓ このバージョンを含む製品<br />+ インストール可能<br />Windows|✓ このバージョンを含む製品<br />+ インストール可能<br />Windows Server|インストールされた .NET バージョンを確認するには|  
 |----------------------------|-----------------|--------------|---------------------------------------|----------------------------------------------------|-----------------------------------------------------------|-----------------------------------------| 
@@ -64,12 +64,12 @@ ms.lasthandoff: 05/15/2017
   
      ここで使用されている [!INCLUDE[net_v451](../../../includes/net-v451-md.md)] と [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] は単なる例にすぎません。 この原則は、実行されているシステムにインストールされているものより新しい .NET Framework のバージョンをターゲットにするアプリに適用されます。  
   
- .NET Framework の変更により、アプリケーション コードの変更が必要な場合があります。既存のアプリケーションを [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] またはそれ以降のバージョンで実行する前に、[アプリケーションの互換性](../../../docs/framework/migration-guide/application-compatibility.md)に関するページを参照してください。 現行バージョンのインストールの詳細については、[インストール ガイド](../../../docs/framework/install/guide-for-developers.md)に関するページを参照してください。 .NET Framework のサポートの詳細については、Microsoft サポート オンラインの [Microsoft .NET Framework のサポート ライフサイクル ポリシー](http://go.microsoft.com/fwlink/?LinkId=196607)に関するページを参照してください。  
+ .NET Framework の変更により、アプリケーション コードの変更が必要な場合があります。既存のアプリケーションを [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] またはそれ以降のバージョンで実行する前に、[アプリケーションの互換性](../../../docs/framework/migration-guide/application-compatibility.md)に関するページを参照してください。 現行バージョンのインストールについては、「[開発者向けの .NET Framework のインストール](../../../docs/framework/install/guide-for-developers.md)」を参照してください。 .NET Framework のサポートの詳細については、Microsoft サポート オンラインの [Microsoft .NET Framework のサポート ライフサイクル ポリシー](http://go.microsoft.com/fwlink/?LinkId=196607)に関するページを参照してください。  
   
 ## <a name="targeting-and-running-apps-for-older-versions"></a>以前のバージョンのアプリの対象化と実行  
  .NET Framework 2.0、3.0 および 3.5 は、同じバージョンの CLR (CLR 2.0) でビルドされています。 これらのバージョンは 1 つのインストールの連続したレイヤーを表します。 各バージョンは、以前のバージョンの上にインクリメンタル方式でビルドされます。 コンピューターでバージョン 2.0、3.0、および 3.5 を side-by-side で実行することはできません。 バージョン 3.5 をインストールすると、2.0 と 3.0 のレイヤーが自動的に取得され、バージョン 2.0、3.0、および 3.5 を対象としてビルドされたアプリケーションはすべて、バージョン 3.5 で実行できます。 ただし、.NET Framework 4 でこのレイヤーのアプローチは終了しています。 NET Framework 4 以降では、インプロセスの side-by-side ホスティングを使用して、1 つのプロセスで複数のバージョンの CLR を実行できます。 詳細については、「[アセンブリと side-by-side 実行](../../../docs/framework/app-domains/assemblies-and-side-by-side-execution.md)」を参照してください。  
   
- さらに、アプリケーションがバージョン 2.0、3.0、または 3.5 を対象とする場合、ユーザーがアプリケーションを実行する前に、[!INCLUDE[win8](../../../includes/win8-md.md)] または [!INCLUDE[win81](../../../includes/win81-md.md)] のコンピューター上で .NET Framework 3.5 を有効にするように求められる場合があります。 詳細については、[Windows 8 以降のバージョンへの .NET Framework 3.5 のインストール](../../../docs/framework/install/net-framework-3-5-on-windows-8-plus.md)に関するページを参照してください。  
+ さらに、アプリケーションがバージョン 2.0、3.0、または 3.5 を対象とする場合、ユーザーがアプリケーションを実行する前に、[!INCLUDE[win8](../../../includes/win8-md.md)] または [!INCLUDE[win81](../../../includes/win81-md.md)] のコンピューター上で .NET Framework 3.5 を有効にするように求められる場合があります。 詳細については、[Windows 10、Windows 8.1、Windows 8 への .NET Framework 3.5 のインストール](../../../docs/framework/install/dotnet-35-windows-10.md)に関するページを参照してください。  
   
 ## <a name="next-steps"></a>次のステップ  
   
@@ -81,8 +81,9 @@ ms.lasthandoff: 05/15/2017
   
 -   コンピューターにどのバージョンまたは更新プログラムがインストールされているかを判別する方法については、「[方法: インストールされている .NET Framework バージョンを確認する](../../../docs/framework/migration-guide/how-to-determine-which-versions-are-installed.md)」と「[方法: インストールされている .NET Framework の更新プログラムを確認する](../../../docs/framework/migration-guide/how-to-determine-which-net-framework-updates-are-installed.md)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
- [バージョンの互換性](../../../docs/framework/migration-guide/version-compatibility.md)   
- [Microsoft .NET Framework のサポート ライフサイクル ポリシー](http://go.microsoft.com/fwlink/?LinkId=196607)   
- [トラブルシューティング](../../../docs/framework/install/troubleshoot-blocked-installations-and-uninstallations.md)
+## <a name="see-also"></a>関連項目
+
+[バージョンの互換性](../../../docs/framework/migration-guide/version-compatibility.md)   
+[Microsoft .NET Framework のサポート ライフサイクル ポリシー](http://go.microsoft.com/fwlink/?LinkId=196607)   
+[.NET Framework のインストールおよびアンインストールのブロックのトラブルシューティング](../../../docs/framework/install/troubleshoot-blocked-installations-and-uninstallations.md)
 
