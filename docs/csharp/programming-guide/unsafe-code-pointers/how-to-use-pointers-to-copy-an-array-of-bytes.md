@@ -1,34 +1,53 @@
 ---
 title: "方法 : ポインターを使用してバイトの配列をコピーする (C# プログラミング ガイド) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.technology: 
-  - "devlang-csharp"
-ms.topic: "article"
-dev_langs: 
-  - "CSharp"
-helpviewer_keywords: 
-  - "配列 [C#], byte"
-  - "バイト配列 [C#]"
-  - "ポインター [C#], バイトをコピーするための"
+ms.date: 2015-07-20
+ms.prod: .net
+ms.technology:
+- devlang-csharp
+ms.topic: article
+dev_langs:
+- CSharp
+helpviewer_keywords:
+- byte arrays [C#]
+- arrays [C#], byte
+- pointers [C#], to copy bytes
 ms.assetid: ec16fbb4-a24e-45f5-a763-9499d3fabe0a
 caps.latest.revision: 21
-author: "BillWagner"
-ms.author: "wiwagn"
-caps.handback.revision: 21
+author: BillWagner
+ms.author: wiwagn
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: Human Translation
+ms.sourcegitcommit: c50b3e328998b65ec47efe6d7457b36116813c77
+ms.openlocfilehash: b9d6f93a92b48fcbdd70475ae4c1b8a62ddd9125
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/08/2017
+
 ---
-# 方法 : ポインターを使用してバイトの配列をコピーする (C# プログラミング ガイド)
-次の例では、ポインターを使用して配列間でバイトをコピーします。  
+# <a name="how-to-use-pointers-to-copy-an-array-of-bytes--c-programming-guide"></a>方法 : ポインターを使用してバイトの配列をコピーする (C# プログラミング ガイド)
+次の例では、ポインターを使って 1 つの配列から別の配列にバイトをコピーします。  
   
- この例では、[unsafe](../../../csharp/language-reference/keywords/unsafe.md) キーワードを使用して、`Copy` メソッド内でポインターを使用できるようにしています。  [fixed](../../../csharp/language-reference/keywords/fixed-statement.md) ステートメントを使用して、コピー元とコピー先の配列へのポインターを宣言します。  これで、ガベージ コレクションによって移動されないように、メモリ内でコピー元とコピー先の位置が*固定*されます。  `fixed` ブロックが完了すると、配列のメモリ ブロックの固定が解除されます。  この例の `Copy` メソッドでは `unsafe` キーワードを使用しているため、**\/unsafe** コンパイラ オプションを指定してコンパイルする必要があります。  Visual Studio でこのオプションを設定するには、プロジェクト名を右クリックし、**\[プロパティ\]** をクリックします。  **\[ビルド\]** タブで、**\[アンセーフ コードの許可\]** を選択します。  
+ この例では、[unsafe](../../../csharp/language-reference/keywords/unsafe.md) キーワードを使います。このキーワードは、`Copy` メソッドでのポインターの使用を可能にします。 [fixed](../../../csharp/language-reference/keywords/fixed-statement.md) ステートメントを使って、コピー元とコピー先の配列へのポインターを宣言します。 これにより、コピー元配列とコピー先配列のメモリ内での位置を "*固定*" し、ガベージ コレクションによって移動されないようにします。 `fixed` ブロックが完了すると、これらの配列のメモリ ブロックは固定解除されます。 この例の `Copy` メソッドは `unsafe` キーワードを使っているので、**/unsafe** コンパイラ オプションを指定してコンパイルする必要があります。 Visual Studio でオプションを設定するには、プロジェクト名を右クリックして、**[プロパティ]** をクリックします。 **[ビルド]** タブで **[アンセーフ コードの許可]** を選択します。  
   
-## 使用例  
+## <a name="example"></a>例  
  [!code-cs[csProgGuidePointers#3](../../../csharp/programming-guide/unsafe-code-pointers/codesnippet/CSharp/how-to-use-pointers-to-copy-an-array-of-bytes_1.cs)]  
   
  [!code-cs[csProgGuidePointers#18](../../../csharp/programming-guide/unsafe-code-pointers/codesnippet/CSharp/how-to-use-pointers-to-copy-an-array-of-bytes_2.cs)]  
   
-## 参照  
- [C\# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
- [unsafe コードとポインター](../../../csharp/programming-guide/unsafe-code-pointers/index.md)   
- [\/unsafe \(Enable Unsafe Mode\)](../../../csharp/language-reference/compiler-options/unsafe-compiler-option.md)   
- [Garbage Collection](../Topic/Garbage%20Collection.md)
+## <a name="see-also"></a>関連項目  
+ [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
+ [アンセーフ コードとポインター](../../../csharp/programming-guide/unsafe-code-pointers/index.md)   
+ [/unsafe (C# コンパイラ オプション)](../../../csharp/language-reference/compiler-options/unsafe-compiler-option.md)   
+ [ガベージ コレクション](../../../standard/garbage-collection/index.md)

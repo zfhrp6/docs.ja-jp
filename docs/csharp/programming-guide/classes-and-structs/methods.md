@@ -29,10 +29,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: e44ef58e85fee164ab3b8be73a35083bd44c5df1
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: a5ed524a1b17f7be8903f998cbd732594faab831
+ms.openlocfilehash: da1abda4faec540c115d93e14a757dae24c5ae78
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/15/2017
 
 ---
 # <a name="methods-c-programming-guide"></a>メソッド (C# プログラミング ガイド)
@@ -42,7 +43,7 @@ ms.lasthandoff: 03/13/2017
 >  このトピックでは、名前付きメソッドについて説明します。 匿名関数については、「[匿名関数](../../../csharp/programming-guide/statements-expressions-operators/anonymous-functions.md)」を参照してください。  
   
 ## <a name="method-signatures"></a>メソッド シグネチャ  
- メソッドは、[クラス](../../../csharp/language-reference/keywords/class.md)または[構造体](../../../csharp/language-reference/keywords/struct.md)で、アクセス レベル (`public` や `private` など)、オプションの修飾子 (`abstract` や `sealed` など)、戻り値、メソッドの名前、メソッド パラメーターを指定して宣言します。 これらのまとまりがメソッドのシグネチャとなります。  
+ メソッドは、 [クラス](../../../csharp/language-reference/keywords/class.md) または [構造体](../../../csharp/language-reference/keywords/struct.md) で、アクセス レベル ( `public` や `private`など)、オプションの修飾子 ( `abstract` や `sealed`など)、戻り値、メソッドの名前、およびメソッド パラメーターを指定して宣言します。 これらのまとまりがメソッドのシグネチャとなります。  
   
 > [!NOTE]
 >  メソッドのオーバーロードを可能にするために、メソッドの戻り値の型はメソッドのシグネチャには含まれません。 ただし、デリゲートとそれが指すメソッドの互換性を決定する場合には、メソッドのシグネチャの一部となります。  
@@ -111,13 +112,12 @@ static void Main(string[] args)
                 }  
             }  
         }  
-  
 ```  
   
- 詳細については、「[return](../../../csharp/language-reference/keywords/return.md)」を参照してください。  
+ 詳細については、「 [return](../../../csharp/language-reference/keywords/return.md)」を参照してください。  
   
 ## <a name="async-methods"></a>非同期メソッド  
- 非同期機能を使用することによって、明示的なコールバックを使用せずに、または複数のメソッドやラムダ式にわたって手動でコードを分割することなく、非同期メソッドを呼び出すことができます。 非同期機能は、[!INCLUDE[vs_dev11_long](../../../csharp/includes/vs_dev11_long_md.md)] で導入されました。  
+ 非同期機能を使用することによって、明示的なコールバックを使用せずに、または複数のメソッドやラムダ式にわたって手動でコードを分割することなく、非同期メソッドを呼び出すことができます。 
   
  メソッドに [async](../../../csharp/language-reference/keywords/async.md) 修飾子を付けると、そのメソッドで [await](../../../csharp/language-reference/keywords/await.md) 演算子を使用できます。 コントロールが非同期メソッドの await 式に到達すると、コントロールは呼び出し元に戻り、待機中のタスクが完了するまでメソッドの進行状況は中断されます。 タスクが完了すると、メソッドで実行を再開できます。  
   
@@ -126,7 +126,7 @@ static void Main(string[] args)
   
  非同期メソッドの戻り値の型としては、<xref:System.Threading.Tasks.Task%601>、<xref:System.Threading.Tasks.Task>、または void を指定できます。 戻り値の型 void は主として、void の戻り値の型が必要なイベント ハンドラーの定義に使用されます。 void を返す非同期メソッドは待機できません。void を返すメソッドの呼び出し元は、このメソッドがスローする例外をキャッチできません。  
   
- 次の例で、`DelayAsync` は戻り値の型が <xref:System.Threading.Tasks.Task%601> である非同期メソッドです。 `DelayAsync` には、整数を返す `return` ステートメントがあります。 そのため、メソッド宣言 `DelayAsync` では、戻り値の型を `Task<int>` とする必要があります。 戻り値の型が `Task<int>`であるため、ステートメント `await` に示すように、 `DoSomethingAsync` 内の `int result = await delayTask`式を評価すると整数が生成されます。  
+ 次の例で、`DelayAsync` は戻り値の型が <xref:System.Threading.Tasks.Task%601> である非同期メソッドです。 `DelayAsync` には、整数を返す `return` ステートメントがあります。 そのため、メソッド宣言 `DelayAsync` では、戻り値の型を `Task<int>`とする必要があります。 戻り値の型が `Task<int>`であるため、ステートメント `await` に示すように、 `DoSomethingAsync` 内の `int result = await delayTask`式を評価すると整数が生成されます。  
   
  `startButton_Click` メソッドは、戻り値の型が void の非同期メソッドの例です。 `DoSomethingAsync` が非同期メソッドであるため、 `DoSomethingAsync` を呼び出すタスクは、ステートメント `await DoSomethingAsync();`に示すように待機する必要があります。 `startButton_Click` メソッドでは `async` 式が使用されているため、 `await` 修飾子を使用して定義する必要があります。  
   
@@ -151,16 +151,16 @@ public Customer this[long id] => store.LookupCustomer(id);
  メソッドが `void` を返すか、非同期メソッドである場合は、メソッドの本文を (ラムダの場合と同様に) ステートメント式にする必要があります。  プロパティとインデクサーは読み取り専用にする必要があるため、 `get` アクセサー キーワードは使用しないでください。  
   
 ## <a name="iterators"></a>反復子  
- 反復子は、リストや配列など、コレクションに対するカスタム イテレーションを実行します。 反復子は、[yield return](../../../csharp/language-reference/keywords/yield.md) ステートメントを使用して、各要素を 1 回に 1 つ返します。 [yield return](../../../csharp/language-reference/keywords/yield.md) ステートメントに達すると、コードの現在の場所が記憶されます。 反復子が次回呼び出されたとき、この場所から実行が再開されます。  
+ 反復子は、リストや配列など、コレクションに対するカスタム イテレーションを実行します。 反復子は、 [yield return](../../../csharp/language-reference/keywords/yield.md) ステートメントを使用して、各要素を 1 回に1 つ返します。 [yield return](../../../csharp/language-reference/keywords/yield.md) ステートメントに達すると、コードの現在の場所が記憶されます。 反復子が次回呼び出されたとき、この場所から実行が再開されます。  
   
  [foreach](../../../csharp/language-reference/keywords/foreach-in.md) ステートメントを使用して、クライアント コードから反復子を呼び出します。  
   
- 反復子の戻り値の型は、<xref:System.Collections.IEnumerable>、<xref:System.Collections.Generic.IEnumerable%601>、<xref:System.Collections.IEnumerator>、または <xref:System.Collections.Generic.IEnumerator%601> となります。  
+ 反復子の戻り値の型には、<xref:System.Collections.IEnumerable>、<xref:System.Collections.Generic.IEnumerable%601>、<xref:System.Collections.IEnumerator>、または <xref:System.Collections.Generic.IEnumerator%601> を指定できます。  
   
- 詳細については、「[反復子](http://msdn.microsoft.com/library/f45331db-d595-46ec-9142-551d3d1eb1a7)」をご覧ください。  
+ 詳細については、「 [反復子](http://msdn.microsoft.com/library/f45331db-d595-46ec-9142-551d3d1eb1a7)」を参照してください。  
   
 ## <a name="c-language-specification"></a>C# 言語仕様  
- [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec_md.md)]  
+ [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
 ## <a name="see-also"></a>関連項目  
  [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
@@ -174,3 +174,4 @@ public Customer this[long id] => store.LookupCustomer(id);
  [out](../../../csharp/language-reference/keywords/out.md)   
  [ref](../../../csharp/language-reference/keywords/ref.md)   
  [パラメーターの引き渡し](passing-parameters.md)
+

@@ -4,16 +4,17 @@ description: "プロパティ"
 keywords: .NET, .NET Core
 author: BillWagner
 ms.author: wiwagn
-ms.date: 06/20/2016
+ms.date: 04/03/2017
 ms.topic: article
 ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 6950d25a-bba1-4744-b7c7-a3cc90438c55
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 871beb36f9801a0456eec1501fdbf07375c9b418
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: f9eab74a3b259037aff30320753191eee95aa974
+ms.openlocfilehash: 763a76a8ea0e48fd6935c951ce584efad50dabb9
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/25/2017
 
 ---
 
@@ -25,6 +26,7 @@ C# のプロパティは、非常に優れた機能です。 開発者は C# で
 ただし、フィールドとは異なり、プロパティの実装ではアクセサーを使用します。プロパティがアクセスされたときや値を割り当てられたときに実行されるステートメントをアクセサーで定義します。
 
 ## <a name="property-syntax"></a>プロパティの構文
+
 プロパティの構文は、フィールドを自然に拡張したものです。 フィールドで格納場所を定義します。
 
 ```csharp
@@ -40,16 +42,27 @@ public class Person
 ```csharp
 public class Person
 {
-    public string FirstName
-    {
-        get;
-        set;
-    }
+    public string FirstName { get; set; }
+
     // remaining implementation removed from listing
 }
 ```
 
 上記の構文は "*自動プロパティ*" の構文です。 コンパイラによって、プロパティをバックアップするフィールドの格納場所が生成されます。 また、`get` アクセサーと `set` アクセサーの本体もコンパイラによって実装されます。
+
+場合によっては、その型の既定以外の値にプロパティを初期化する必要があります。  C# では、プロパティの右中かっこの後で値を設定することにより可能です。 `FirstName` プロパティの初期値は `null` より空の文字列の方がよい場合があります。 その場合は次に示すように指定します。
+
+```csharp
+public class Person
+{
+    public string FirstName { get; set; } = string.Empty;
+
+    // remaining implementation removed from listing
+}
+```
+
+これは、このトピックで後述するように、読み取り専用プロパティに最も役立ちます。
+
 格納場所は、下に示すように、開発者が定義することもできます。
 
 ```csharp
@@ -64,14 +77,31 @@ public class Person
     // remaining implementation removed from listing
 }
 ```
- 
+
+プロパティの実装が 1 つの式の場合は、*式形式のメンバー*を get アクセス操作子または set アクセス操作子に使用できます。
+
+```csharp
+public class Person
+{
+    public string FirstName
+    {
+        get => firstName;
+        set => firstName = value;
+    }
+    private string firstName;
+    // remaining implementation removed from listing
+}
+```
+
+このトピックでは、該当する箇所ではこの簡単な構文を使います。
+
 上に示したプロパティの定義は、読み取り/書き込みプロパティです。 set アクセサーの `value` に注目してください。 `set` アクセサーには常に、`value` という名前のパラメーターが 1 つあります。 `get` アクセサーは、プロパティの型に変換可能な値を返す必要があります (この例では `string`)。
  
-これが構文の基本です。 さまざまな設計手法をサポートするバリエーションが多数あります。 これらを詳しく確認しながら、各種シナリオに応じた構文の選択肢を見てみましょう。 
+これが構文の基本です。 さまざまな設計手法をサポートするバリエーションが多数あります。 これらを詳しく確認しながら、各種シナリオに応じた構文の選択肢を見てみましょう。
 
 ## <a name="scenarios"></a>シナリオ
 
-ここまでに示した例は、検証が行われない読み取り/書き込みプロパティという、プロパティ定義の中でも単純なものでした。 目的のコードを `get` アクセサーと `set` アクセサーで記述することで、さまざまなシナリオに対応できます。  
+ここまでに示した例は、検証が行われない読み取り/書き込みプロパティという、プロパティ定義の中でも単純なものでした。 目的のコードを `get` アクセサーと `set` アクセサーで記述することで、さまざまなシナリオに対応できます。
 
 ### <a name="validation"></a>検証
 
@@ -82,7 +112,7 @@ public class Person
 {
     public string FirstName
     {
-        get { return firstName; }
+        get => firstName;
         set
         {
             if (string.IsNullOrWhiteSpace(value))
@@ -96,9 +126,11 @@ public class Person
 ```
 
 上記の例では、名を空白にしてはいけないというルールが強制的に適用されます。 もし開発者が下のように指定すると、
+
 ```csharp
 hero.FirstName = "";
 ```
+
 この割り当てに対して `ArgumentException` がスローされます。 プロパティの set アクセサーの戻り値は void でなければならないため、例外をスローすることで set アクセサーにエラーを報告します。
 
 これが検証のシンプルな例です。 この構文を拡張して、シナリオに必要なあらゆる要素に対応できます。 たとえば、各種プロパティ間の関係をチェックしたり、外部条件に対して検証したりできます。 C# で有効なステートメントは、すべてプロパティ アクセサーでも有効です。
@@ -111,20 +143,43 @@ hero.FirstName = "";
 ```csharp
 public class Person
 {
-    public string FirstName
-    {
-        get;
-        private set;
-    }
+    public string FirstName { get; private set; }
+
     // remaining implementation removed from listing
 }
 ```
 
 これで、`FirstName` プロパティにはどのコードからもアクセスできる一方で、値の割り当ては `Person` クラス内の他のコードからしかできなくなります。
+
 制限を設定するアクセス修飾子を set アクセサーと get アクセサーのどちらか 1 つに追加することもできます。 個々のアクセサーには、プロパティ定義のアクセス修飾子よりも制限が強いアクセス修飾子を設定する必要があります。 上記は、`FirstName` プロパティが `public` ですが set アクセサーが `private` であるため、有効です。 `public` なアクセサーを持つ `private` なプロパティを宣言することはできません。 プロパティの宣言では、`protected`、`internal`、`protected internal`、`private` を宣言することもできます。   
 
 `get` アクセサーに制限の高い修飾子を設定することも有効です。 たとえば、`public` なプロパティで、`get` アクセサーを `private` に制限できます。 ただし、このようなシナリオは実際にはほとんどありません。
- 
+
+また、コンストラクターやプロパティの初期化子でのみ設定できるように、プロパティに対する変更を制限することもできます。 `Person` クラスを次のように変更することができます。
+
+```csharp
+public class Person
+{
+    public Person(string firstName)
+    {
+        this.FirstName = firstName;
+    }
+
+    public string FirstName { get; }
+
+    // remaining implementation removed from listing
+}
+```
+
+この機能は、読み取り専用プロパティとして公開されるコレクションを初期化する場合に最もよく使われます。
+
+```csharp
+public class Measurements
+{
+    public ICollection<DataPoint> points { get; } = new List<DataPoint>();
+}
+```
+
 ### <a name="computed-properties"></a>計算されたプロパティ
 
 プロパティが返す値は、メンバー フィールドの値でなくてもかまいません。 計算された値を返すプロパティを作成できます。 姓と名を連結する計算をしてフルネームを返すように `Person` オブジェクトを拡張してみましょう。
@@ -132,25 +187,11 @@ public class Person
 ```csharp
 public class Person
 {
-    public string FirstName
-    {
-        get;
-        set;
-    }
+    public string FirstName { get; set; }
 
-    public string LastName
-    {
-        get;
-        set;
-    }
+    public string LastName { get; set; }
 
-    public string FullName
-    {
-        get
-        {
-            return $"{FirstName} {LastName}";
-        }
-    }
+    public string FullName { get { return $"{FirstName} {LastName}"; } }
 }
 ```
 
@@ -161,17 +202,9 @@ public class Person
 ```csharp
 public class Person
 {
-    public string FirstName
-    {
-        get;
-        set;
-    }
+    public string FirstName { get; set; }
 
-    public string LastName
-    {
-        get;
-        set;
-    }
+    public string LastName { get; set; }
 
     public string FullName =>  $"{FirstName} {LastName}";
 }
@@ -186,17 +219,9 @@ public class Person
 ```csharp
 public class Person
 {
-    public string FirstName
-    {
-        get;
-        set;
-    }
+    public string FirstName { get; set; }
 
-    public string LastName
-    {
-        get;
-        set;
-    }
+    public string LastName { get; set; }
 
     private string fullName;
     public string FullName
@@ -219,7 +244,7 @@ public class Person
     private string firstName;
     public string FirstName
     {
-        get { return firstName; }
+        get => firstName;
         set
         {
             firstName = value;
@@ -230,7 +255,7 @@ public class Person
     private string lastName;
     public string LastName
     {
-        get { return lastName; }
+        get => lastName;
         set
         {
             lastName = value;
@@ -252,7 +277,7 @@ public class Person
 ```
 
 上の最終版では、必要になった場合にのみ `FullName` プロパティが評価されます。
-以前に計算されたものが有効であれば、それが使用されます。 状態が変化したことで、以前に計算されたバージョンが無効になると、再計算が行われます。 このクラスを使用するにあたって、開発者は実装の詳細を知っている必要はありません。 内部で変化があっても Person オブジェクトの使用には影響しません。 これが、プロパティを使用してオブジェクトのデータ メンバーを公開するする重要な利点です。 
+以前に計算されたものが有効であれば、それが使用されます。 状態が変化したことで、以前に計算されたバージョンが無効になると、再計算が行われます。 このクラスを使用するにあたって、開発者は実装の詳細を知っている必要はありません。 内部で変化があっても Person オブジェクトの使用には影響しません。 これが、プロパティを使用してオブジェクトのデータ メンバーを公開するする重要な利点です。
  
 ### <a name="inotifypropertychanged"></a>INotifyPropertyChanged
 
@@ -263,7 +288,7 @@ public class Person : INotifyPropertyChanged
 {
     public string FirstName
     {
-        get { return firstName; }
+        get => firstName;
         set
         {
             if (string.IsNullOrWhiteSpace(value))
@@ -288,7 +313,7 @@ public class Person : INotifyPropertyChanged
 
 これも、アクセサーでコードを記述することで目的のシナリオをサポートできるケースの一例です。
 
-## <a name="summing-up"></a>まとめ 
+## <a name="summing-up"></a>まとめ
 
 プロパティは、クラスまたはオブジェクトに含まれた一種のスマート フィールドです。 オブジェクトの外部からは、オブジェクト内にあるフィールドのように見えます。 一方、プロパティは、C# の機能をどれでも自由に使用して実装できます。
 検証、各種アクセシビリティ、遅延評価など、目的のシナリオで必要となる要素はすべて提供できます。

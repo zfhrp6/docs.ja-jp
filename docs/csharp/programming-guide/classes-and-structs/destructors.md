@@ -1,6 +1,6 @@
 ---
-title: "デストラクター (C# プログラミング ガイド) | Microsoft Docs"
-ms.date: 2015-07-20
+title: "ファイナライザー (C# プログラミング ガイド) | Microsoft Docs"
+ms.date: 2017-05-10
 ms.prod: .net
 ms.technology:
 - devlang-csharp
@@ -8,9 +8,9 @@ ms.topic: article
 dev_langs:
 - CSharp
 helpviewer_keywords:
-- ~ [C#], in destructors
-- C# language, destructors
-- destructors [C#]
+- ~ [C#], in finalizers
+- C# language, finalizers
+- finalizers [C#]
 ms.assetid: 1ae6e46d-a4b1-4a49-abe5-b97f53d9e049
 caps.latest.revision: 24
 author: BillWagner
@@ -29,34 +29,39 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 6940be34b6cc15f006901e6d14d2a38ebb5d012a
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: a5ed524a1b17f7be8903f998cbd732594faab831
+ms.openlocfilehash: b4221d37bd955da98c812dadef3b0dd4a69a21bf
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/15/2017
 
 ---
-# <a name="destructors-c-programming-guide"></a>デストラクター (C# プログラミング ガイド)
-デストラクターは、クラスのインスタンスを消滅させるために使用します。  
+# <a name="finalizers-c-programming-guide"></a>ファイナライザー (C# プログラミング ガイド)
+ファイナライザーは、クラスのインスタンスを破棄するために使います。  
   
 ## <a name="remarks"></a>コメント  
   
--   デストラクターは、構造体には定義できません。 クラスでだけ使用します。  
+-   ファイナライザーは、構造体には定義できません。 クラスでだけ使用します。  
   
--   クラスで使用できるデストラクターは 1 つだけです。  
+-   クラスで使用できるファイナライザーは 1 つだけです。  
   
--   デストラクターを継承またはオーバーロードすることはできません。  
+-   ファイナライザーを継承またはオーバーロードすることはできません。  
   
--   デストラクターを呼び出すことはできません。 デストラクターは自動的に起動されます。  
+-   ファイナライザーを呼び出すことはできません。 デストラクターは自動的に起動されます。  
   
--   デストラクターは修飾子を取らず、パラメーターはありません。  
+-   ファイナライザーは修飾子を取らず、パラメーターはありません。  
   
- たとえば、次はクラス `Car` に対するデストラクターの宣言です。  
+ たとえば、次はクラス `Car` に対するファイナライザーの宣言です。
   
  [!code-cs[csProgGuideObjects#86](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/destructors_1.cs)]  
+
+ファイナライザーは、式本体の定義として実行することもできます。次に例を示します。
+
+[!code-cs[expression-bodied-finalizer](../../../../samples/snippets/csharp/programming-guide/classes-and-structs/expr-bodied-destructor.cs#1)]  
   
- デストラクターは、オブジェクトの基底クラスで <xref:System.Object.Finalize%2A> を暗黙的に呼び出します。 したがって、前のデストラクターのコードは、暗黙的に次のコードに解釈されます。  
+ ファイナライザーは、オブジェクトの基底クラスで <xref:System.Object.Finalize%2A> を暗黙的に呼び出します。 そのため、ファイナライザーの呼び出しは、暗黙的に次のコードに解釈されます。  
   
-```  
+```csharp  
 protected override void Finalize()  
 {  
     try  
@@ -73,28 +78,28 @@ protected override void Finalize()
  つまり、派生が最も多いクラスから派生が最も少ないクラスまで、継承チェーンのすべてのインスタンスに対して、`Finalize` メソッドが再帰的に呼び出されます。  
   
 > [!NOTE]
->  空のデストラクターは使用しないでください。 デストラクターがクラスに存在するときは、エントリが `Finalize` キューで作成されます。 デストラクターを呼び出すと、ガベージ コレクターが呼び出され、このキューを処理します。 デストラクターが空の場合、パフォーマンスを不必要に低下させるだけです。  
+>  空のファイナライザーは使用しないでください。 ファイナライザーがクラスに存在するときは、エントリが `Finalize` キューで作成されます。 ファイナライザーを呼び出すと、ガベージ コレクターが呼び出され、このキューを処理します。 ファイナライザーが空の場合、パフォーマンスを不必要に低下させるだけです。  
   
- デストラクターがいつ呼び出されるかはガベージ コレクターによって決定されるため、プログラマは制御できません。 ガベージ コレクターは、アプリケーションが使用していないオブジェクトをチェックします。 消滅できるオブジェクトと考えられる場合、デストラクター (存在する場合) を呼び出し、オブジェクトの格納に使用されているメモリを解放します。 デストラクターは、プログラムの終了時にも呼び出されます。  
+ ファイナライザーがいつ呼び出されるかはガベージ コレクターによって決定されるため、プログラマは制御できません。 ガベージ コレクターは、アプリケーションが使用していないオブジェクトをチェックします。 終了処理が可能なオブジェクトと考えられる場合、ファイナライザー (存在する場合) を呼び出し、オブジェクトの格納に使用されているメモリを解放します。 ファイナライザーは、プログラムの終了時にも呼び出されます。  
   
  <xref:System.GC.Collect%2A> を呼び出すことによって、ガベージ コレクションを強制的に行うことができます。ただし、パフォーマンスに問題が発生する可能性があるため、通常はこの処理を避けます。  
   
-## <a name="using-destructors-to-release-resources"></a>デストラクターを使ったリソースの解放  
- 一般に C# では、ガベージ コレクションでランタイムにターゲットを設定しない言語で開発する場合ほど、メモリ管理を必要としません。 .NET Framework のガベージ コレクターが、オブジェクトに対するメモリの割り当てと解放を暗黙的に管理するからです。 ただし、ウィンドウ、ファイル、ネットワーク接続などのアンマネージ リソースをアプリケーションでカプセル化するとき、デストラクターを使ってこれらのリソースを解放する必要があります。 オブジェクトを消滅させることができるとき、ガベージ コレクターはそのオブジェクトの `Finalize` メソッドを実行します。  
+## <a name="using-finalizers-to-release-resources"></a>ファイナライザーを使ったリソースの解放  
+ 一般に C# では、ガベージ コレクションでランタイムにターゲットを設定しない言語で開発する場合ほど、メモリ管理を必要としません。 .NET Framework のガベージ コレクターが、オブジェクトに対するメモリの割り当てと解放を暗黙的に管理するからです。 ただし、ウィンドウ、ファイル、ネットワーク接続などのアンマネージ リソースをアプリケーションでカプセル化するとき、ファイナライザーを使ってこれらのリソースを解放する必要があります。 終了処理が可能なオブジェクトの場合、ガベージ コレクターはそのオブジェクトの `Finalize` メソッドを実行します。  
   
 ## <a name="explicit-release-of-resources"></a>リソースの明示的な解放  
- アプリケーションで高額な外部リソースを使用している場合、ガベージ コレクターがオブジェクトを解放する前にリソースを明示的に解放する手段を用意することが推奨されます。 この処理を行うには、オブジェクトに対して必要なクリーンアップを実行する `Dispose` メソッドを <xref:System.IDisposable> インターフェイスから実装します。 これによって、アプリケーションのパフォーマンスを大幅に向上させることができます。 このようにリソースを明示的に制御する場合でも、デストラクターは、`Dispose` メソッドの呼び出しが失敗したときにリソースをクリーンアップするための安全装置になります。  
+ アプリケーションで高額な外部リソースを使用している場合、ガベージ コレクターがオブジェクトを解放する前にリソースを明示的に解放する手段を用意することが推奨されます。 この処理を行うには、オブジェクトに対して必要なクリーンアップを実行する `Dispose` メソッドを <xref:System.IDisposable> インターフェイスから実装します。 これによって、アプリケーションのパフォーマンスを大幅に向上させることができます。 このようにリソースを明示的に制御する場合でも、ファイナライザーは、`Dispose` メソッドの呼び出しが失敗したときにリソースをクリーンアップするための安全装置になります。  
   
  リソースのクリーンアップの詳細については、次のトピックを参照してください。  
   
--   [アンマネージ リソースのクリーンアップ](http://msdn.microsoft.com/library/a17b0066-71c2-4ba4-9822-8e19332fc213)  
+-   [アンマネージ リソースのクリーンアップ](../../../standard/garbage-collection/unmanaged.md)  
   
--   [Dispose メソッドの実装](http://msdn.microsoft.com/library/eb4e1af0-3b48-4fbc-ad4e-fc2f64138bf9)  
+-   [Dispose メソッドの実装](../../../standard/garbage-collection/implementing-dispose.md)  
   
 -   [using ステートメント](../../../csharp/language-reference/keywords/using-statement.md)  
   
 ## <a name="example"></a>例  
- 次の例では、継承チェーンを形成する 3 つのクラスを作成します。 `First` が基底クラスであり、`Second` は `First` から派生し、`Third` は `Second` から派生します。 3 つのクラスのいずれにもデストラクターがあります。 `Main()` では、派生が最も多いクラスのインスタンスが作成されます。 プログラムを実行すると、3 つのクラスのデストラクターが派生が最も多いクラスから派生が最も少ないクラスの順に自動的に呼び出されます。  
+ 次の例では、継承チェーンを形成する 3 つのクラスを作成します。 `First` が基底クラスであり、`Second` は `First` から派生し、`Third` は `Second` から派生します。 3 つのクラスのいずれにもファイナライザーがあります。 `Main` では、派生が最も多いクラスのインスタンスが作成されます。 プログラムを実行すると、3 つのクラスのファイナライザーが派生が最も多いクラスから派生が最も少ないクラスの順に自動的に呼び出されます。  
   
  [!code-cs[csProgGuideObjects#85](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/destructors_2.cs)]  
   
@@ -105,4 +110,4 @@ protected override void Finalize()
  <xref:System.IDisposable>   
  [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
  [コンストラクター](../../../csharp/programming-guide/classes-and-structs/constructors.md)   
- [ガベージ コレクション](../../../standard/garbagecollection/index.md)
+ [ガベージ コレクション](../../../standard/garbage-collection/index.md)

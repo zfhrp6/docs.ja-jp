@@ -36,10 +36,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 3ef53fb9439159c94bb3894c233977088edc8872
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
+ms.openlocfilehash: 44e6dc6add43050897bbcae6eff3d2e58d027821
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/22/2017
 
 ---
 # <a name="walkthrough-determining-where-myapplicationlog-writes-information-visual-basic"></a>チュートリアル: My.Application.Log による情報の書き込み先の確認 (Visual Basic)
@@ -49,7 +50,7 @@ ms.lasthandoff: 03/13/2017
   
 ### <a name="to-determine-the-listeners-for-myapplicationlog"></a>My.Application.Log のリスナーを確認するには  
   
-1.  アセンブリの構成ファイルを見つけます。 アセンブリを開発中の段階では、**ソリューション エクスプローラー**から [!INCLUDE[vsprvs](../../../../csharp/includes/vsprvs_md.md)] の app.config にアクセスできます。 開発が終了すると、構成ファイルはアセンブリの名前に ".config" を付け加えたファイル名で、アセンブリと同じディレクトリに配置されています。  
+1.  アセンブリの構成ファイルを見つけます。 アセンブリを開発中の段階では、 [!INCLUDE[vsprvs](../../../../csharp/includes/vsprvs_md.md)] ソリューション エクスプローラー **から**の app.config にアクセスできます。 開発が終了すると、構成ファイルはアセンブリの名前に ".config" を付け加えたファイル名で、アセンブリと同じディレクトリに配置されています。  
   
     > [!NOTE]
     >  アセンブリによっては、構成ファイルがない場合もあります。  
@@ -80,9 +81,9 @@ ms.lasthandoff: 03/13/2017
   
     -   <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener?displayProperty=fullName> リスナーは、導入部で説明したように、ファイル ログに書き込みます。  
   
-    -   <xref:System.Diagnostics.EventLogTraceListener?displayProperty=fullName> リスナーは、`initializeData` パラメーターで指定されたコンピューターのイベント ログに情報を書き込みます。 イベント ログを参照するには、 **サーバー エクスプローラー** または **Windows イベント ビューアー**を使用できます。 詳しくは、「[.NET Framework の ETW イベント](http://msdn.microsoft.com/library/d186276f-6afb-4dfd-bf3c-4251edc2c299)」をご覧ください。  
+    -   <xref:System.Diagnostics.EventLogTraceListener?displayProperty=fullName> リスナーは、`initializeData` パラメーターで指定された、コンピューターのイベント ログに情報を書き込みます。 イベント ログを参照するには、 **サーバー エクスプローラー** または **Windows イベント ビューアー**を使用できます。 詳細については、「 [ETW Events in the .NET Framework](http://msdn.microsoft.com/library/d186276f-6afb-4dfd-bf3c-4251edc2c299)」を参照してください。  
   
-    -   <xref:System.Diagnostics.DelimitedListTraceListener?displayProperty=fullName> および <xref:System.Diagnostics.XmlWriterTraceListener?displayProperty=fullName> リスナーは、`initializeData` パラメーターで指定されたファイルに書き込みます。  
+    -   <xref:System.Diagnostics.DelimitedListTraceListener?displayProperty=fullName> リスナーおよび <xref:System.Diagnostics.XmlWriterTraceListener?displayProperty=fullName> リスナーは、`initializeData` パラメーターで指定されたファイルに書き込みます。  
   
     -   <xref:System.Diagnostics.ConsoleTraceListener?displayProperty=fullName> リスナーは、コマンド ライン コンソールに書き込みます。  
   

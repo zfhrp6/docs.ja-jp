@@ -28,17 +28,18 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: bfd3c08f69461d65140ef948672774a7435c326d
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 39e8e757a446b30ab18914465853138e1c239e40
+ms.openlocfilehash: a2c5986dfb9ed4f80e15e8e3ddf061ef858a1e93
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/22/2017
 
 ---
 # <a name="introduction-to-the-c-language-and-the-net-framework"></a>C# 言語と .NET Framework の概要
 C# は、タイプ セーフで洗練されたオブジェクト指向言語です。C# を使用すると、[!INCLUDE[dnprdnshort](../../csharp/getting-started/includes/dnprdnshort_md.md)] で稼働する、安全で信頼性の高いさまざまなアプリケーションを構築できます。 C# を使用すると、Windows クライアント アプリケーション、XML Web サービス、分散コンポーネント、クライアント/サーバー アプリケーション、データベース アプリケーションなど、さまざまなアプリケーションを作成できます。 Visual C# には、高度なコード エディター、便利なユーザー インターフェイス デザイナー、統合デバッガーなど、C# 言語と [!INCLUDE[dnprdnshort](../../csharp/getting-started/includes/dnprdnshort_md.md)] に基づいたアプリケーション開発をより簡単にする多数のツールが用意されています。  
   
 > [!NOTE]
->  [!INCLUDE[csprcs](../../csharp/includes/csprcs_md.md)] のドキュメントは、基本的なプログラミング概念を理解している方を対象に書かれています。 初心者である場合、Web で入手できる [!INCLUDE[csprcsxpr](../../csharp/getting-started/includes/csprcsxpr_md.md)] が参考になります。 C# に関する書籍や Web リソースを利用して、実践的なプログラミング スキルを身に付けることもできます。  
+> [!INCLUDE[csprcs](../../csharp/includes/csprcs_md.md)] のドキュメントは、基本的なプログラミング概念を理解している方を対象に書かれています。 初心者である場合、Web で入手できる [!INCLUDE[csprcsxpr](../../csharp/getting-started/includes/csprcsxpr_md.md)] が参考になります。 C# に関する書籍や Web リソースを利用して、実践的なプログラミング スキルを身に付けることもできます。  
   
 ## <a name="c-language"></a>C# 言語  
  C# の構文は表現力が豊かですが、単純ですぐに覚えることができます。 C、C++、または Java に慣れていれば、C# の中かっこ ({}) 構文をすぐに理解できます。 これらの言語のいずれかを理解していると、一般に、C# での開発を短期間で始めることができます。 C# 構文では、C++ の複雑な部分が数多く簡略化され、null 許容値型、列挙体、デリゲート、ラムダ式、ダイレクト メモリ アクセスなど、Java にはない強力な機能が実装されました。 C# はジェネリック メソッドおよびジェネリック型をサポートしているため、タイプ セーフおよびパフォーマンスが向上し、反復子もサポートしているため、クライアント コードで簡単に使用できるカスタムの反復動作をコレクション クラスの実装側が定義できます。 [!INCLUDE[vbteclinqext](../../csharp/getting-started/includes/vbteclinqext_md.md)] 式により、厳密に型指定されたクエリは高度な言語構成要素になります。  
@@ -85,15 +86,6 @@ C# は、タイプ セーフで洗練されたオブジェクト指向言語で�
  [!INCLUDE[dnprdnshort](../../csharp/getting-started/includes/dnprdnshort_md.md)] には、実行時のサービス以外にも、4,000 クラスを超える多数のライブラリが用意されています。このライブラリは、ファイルの入出力、XML 解析のための文字列操作、Windows フォーム コントロールなど、役に立つさまざまな機能を備えた名前空間に構成されています。 C# アプリケーションでは、一般に、[!INCLUDE[dnprdnshort](../../csharp/getting-started/includes/dnprdnshort_md.md)] クラス ライブラリを広範囲に使用して、一般的な "配管工事" のような作業を処理しています。  
   
  .NET Framework の詳細については、[Microsoft .NET Framework の概要](http://msdn.microsoft.com/en-us/d05daf50-00fe-45c7-8383-06fe41697355)に関する記事を参照してください。  
-  
-## <a name="featured-book-chapters"></a>参考書籍の該当する章  
- 『[Learning C# 3.0: Master the fundamentals of C# 3.0 (C# 3.0 の学習: C# 3.0 の基礎を習得)](http://go.microsoft.com/fwlink/?LinkId=195412)』の「[C# Language Fundamentals (C# 言語の基礎)](http://go.microsoft.com/fwlink/?LinkId=195416)」  
-  
- 『[Learning C# 3.0: Master the fundamentals of C# 3.0 (C# 3.0 の学習: C# 3.0 の基礎を習得)](http://go.microsoft.com/fwlink/?LinkId=195412)』の「[C# and .NET Programming (C# および .NET プログラミング)](http://go.microsoft.com/fwlink/?LinkId=195413)」  
-  
- 『[Beginning Visual C# 2010 (Visual C# 2010 の開始)](http://go.microsoft.com/fwlink/?LinkId=221214)』の「[Introducing C# (C# の紹介)](http://go.microsoft.com/fwlink/?LinkId=221226)」  
-  
- 『[Learning C# 3.0: Master the fundamentals of C# 3.0 (C# 3.0 の学習: C# 3.0 の基礎を習得)](http://go.microsoft.com/fwlink/?LinkId=195412)』の「[Visual Studio 2008 and C# Express 2008 (Visual Studio 2008 および C# Express 2008)](http://go.microsoft.com/fwlink/?LinkId=195414)」  
   
 ## <a name="see-also"></a>関連項目  
  [C#](../../csharp/csharp.md)   

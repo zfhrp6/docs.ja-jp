@@ -1,7 +1,7 @@
 ---
-title: "統合言語クエリ (LINQ)"
-description: "C における統合言語クエリ (LINQ) の概要#"
-keywords: .NET, .NET Core, LINQ, C#
+title: "統合言語クエリ (LINQ) | Microsoft Docs"
+description: "C# における統合言語クエリ (LINQ) の概要"
+keywords: ".NET、.NET Core、LINQ、C#"
 author: BillWagner
 ms.author: wiwagn
 ms.date: 11/30/2016
@@ -10,16 +10,17 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 007cc736-f5cf-4919-b99b-0c00ab2814ce
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 099775f5849eefca98a83d2986c5ecbb92b88782
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 4437ce5d344cf06d30e31911def6287999fc6ffc
+ms.openlocfilehash: 21e4420d385bff07173b265782dd23f89f61e797
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/23/2017
 
 ---
 
 # <a name="language-integrated-query-linq"></a>統合言語クエリ (LINQ)
 
-統合言語クエリ (LINQ) は、C# 言語への直接的なクエリ機能の統合に基づくテクノロジのセットの名前です。 これまでは、データに対するクエリは、コンパイル時の型チェックや IntelliSense のサポートなしに、単純な文字列として表現されてきました。 さらに、SQL データベース、XML ドキュメント、さまざまな Web サービスといったデータ ソースの種類ごとに、異なるクエリ言語を習得する必要がありました。 LINQ では、クエリは、クラス、メソッド、イベントと同様に、ファースト クラスの言語コンストラクトです。
+統合言語クエリ (LINQ) は、C# 言語への直接的なクエリ機能の統合に基づくテクノロジのセットの名前です。 これまでは、データに対するクエリは、コンパイル時の型チェックや IntelliSense のサポートがない単純な文字列として表現されてきました。 さらに、SQL データベース、XML ドキュメント、さまざまな Web サービスといったデータ ソースの種類ごとに、異なるクエリ言語を習得する必要がありました。 LINQ では、クエリは、クラス、メソッド、イベントと同様に、ファースト クラスの言語コンストラクトです。
 
 クエリを記述する開発者にとって、最も目立つ LINQ の "統合言語" 部分は、クエリ式です。 クエリ式は、宣言型の "*クエリ構文*" で記述されます。 クエリ構文を使用することで、フィルター処理、並べ替え、グループ化などのデータ ソースに対する操作を、最小限のコードで実行できます。 同一の基本的なクエリ式のパターンを使用して、SQL データベース、ADO .NET データセット、XML ドキュメントとストリーム、および .NET コレクション内のデータを照会して変換できます。
 
@@ -41,16 +42,16 @@ ms.lasthandoff: 03/13/2017
   
 -   原則として、LINQ クエリを記述するときは、可能であれば常にクエリ構文を使用し、必要な場合にメソッド構文を使用することをお勧めします。 この 2 つの異なる形式の間には、セマンティックの違いもパフォーマンスの違いもありません。 多くの場合、クエリ式のほうが、メソッド構文で記述された同等の式よりも読みやすくなります。  
   
--   一部のクエリ操作 (<xref:System.Linq.Enumerable.Count%2A> や <xref:System.Linq.Enumerable.Max%2A> など) には同等のクエリ式の句がないため、メソッド呼び出しとして表現する必要があります。 メソッド構文は、さまざまな方法でクエリ構文と組み合わせることができます。 詳細については、「[LINQ でのクエリ構文とメソッド構文](../programming-guide/concepts/linq/query-syntax-and-method-syntax-in-linq.md)」を参照してください。  
+-   <xref:System.Linq.Enumerable.Count%2A> や <xref:System.Linq.Enumerable.Max%2A> など一部のクエリ操作には、同等のクエリ式の句がないため、メソッドの呼び出しとして表す必要があります。 メソッド構文は、さまざまな方法でクエリ構文と組み合わせることができます。 詳細については、「[LINQ でのクエリ構文とメソッド構文](../programming-guide/concepts/linq/query-syntax-and-method-syntax-in-linq.md)」を参照してください。  
   
--   クエリ式は、クエリの適用対象の種類によって、式ツリーまたはデリゲートにコンパイルすることができます。 <xref:System.Collections.Generic.IEnumerable%601> クエリは、デリゲートにコンパイルされます。 <xref:System.Linq.IQueryable> クエリと <xref:System.Linq.IQueryable%601> クエリは、式ツリーにコンパイルされます。 詳細については、「[式ツリー](../expression-trees.md)」を参照してください。  
+-   クエリ式は、クエリの適用対象の種類によって、式ツリーまたはデリゲートにコンパイルすることができます。 <xref:System.Collections.Generic.IEnumerable%601> クエリはデリゲートにコンパイルされます。 <xref:System.Linq.IQueryable> および <xref:System.Linq.IQueryable%601> クエリは式ツリーにコンパイルされます。 詳細については、「[式ツリー](../expression-trees.md)」を参照してください。  
 
 ## <a name="next-steps"></a>次のステップ
 
 LINQ の詳細については、最初に「[クエリ式の基本](query-expression-basics.md)」で基本的な概念を理解してから、関心のある LINQ テクノロジのドキュメントを参照してください。   
 -   XML ドキュメント: [LINQ to XML](../programming-guide/concepts/linq/linq-to-xml.md)  
   
--   ADO.NET Entity Framework: [LINQ to entities](http://msdn.microsoft.com/library/641f9b68-9046-47a1-abb0-1c8eaeda0e2d)  
+-   ADO.NET Entity Framework: [LINQ to entities](../../framework/data/adonet/ef/language-reference/linq-to-entities.md)  
   
 -   .NET のコレクション、ファイル、文字列など: [LINQ to Objects ](../programming-guide/concepts/linq/linq-to-objects.md)
 

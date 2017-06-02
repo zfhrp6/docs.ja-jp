@@ -1,71 +1,75 @@
 ---
 title: "Lc.exe (ライセンス コンパイラ) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - ".licenses ファイル"
-  - ".licx ファイル"
-  - "コンパイル (licenses ファイルの)"
-  - "コントロールのライセンス [Windows フォーム]"
-  - "Lc.exe"
-  - "ライセンス コンパイラ"
-  - "ライセンス ファイル"
-  - "ライセンスされたコントロール [Windows フォーム]"
-  - "Windows フォーム, コントロールのライセンス"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- VB
+- CSharp
+- C++
+- jsharp
+helpviewer_keywords:
+- Lc.exe
+- .licx file
+- License Compiler
+- control licenses [Windows Forms]
+- compiling licenses file
+- license file
+- .licenses file
+- Windows Forms, control licenses
+- licensed controls [Windows Forms]
 ms.assetid: 2de803b8-495e-4982-b209-19a72aba0460
 caps.latest.revision: 18
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 18
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 14abadaf548e228244a1ff7ca72fa3896ef4eb5d
+ms.openlocfilehash: 4b20c589622526fd973700ed5b8bdd6f86d9b2ff
+ms.contentlocale: ja-jp
+ms.lasthandoff: 06/02/2017
+
 ---
-# Lc.exe (ライセンス コンパイラ)
+# <a name="lcexe-license-compiler"></a>Lc.exe (ライセンス コンパイラ)
 ライセンス コンパイラは、ライセンス情報を含むテキスト ファイルを読み込んで、バイナリ ファイルを生成します。このバイナリ ファイルは、リソースとして共通言語ランタイムの実行可能ファイルに埋め込むことができます。  
   
- .licx テキスト ファイルは、ライセンスされたコントロールがフォームに追加されると、Windows フォーム デザイナーによって自動的に生成または更新されます。  プロジェクト システムは、コンパイルの過程で、.licx テキスト ファイルを、.NET のコントロール ライセンス サポートを提供する .licenses バイナリのリソースに変換します。  バイナリのリソースは、その後、プロジェクト出力に埋め込まれます。  
+ .licx テキスト ファイルは、ライセンスされたコントロールがフォームに追加されると、Windows フォーム デザイナーによって自動的に生成または更新されます。 プロジェクト システムは、コンパイルの過程で、.licx テキスト ファイルを、.NET のコントロール ライセンス サポートを提供する .licenses バイナリのリソースに変換します。 バイナリのリソースは、その後、プロジェクト出力に埋め込まれます。  
   
- プロジェクトをビルドするときにライセンス コンパイラを使用した場合は、32 ビットと 64 ビットの間のクロス コンパイルはサポートされません。  これは、ライセンス コンパイラはアセンブリを読み込む必要があり、32 ビット アプリケーションからの 64 ビット アセンブリの読み込みおよびその逆は、許可されないためです。  この場合は、コマンド ラインからライセンス コンパイラを使用して手動でライセンスをコンパイルし、対応するアーキテクチャを指定します。  
+ プロジェクトをビルドするときにライセンス コンパイラを使用した場合は、32 ビットと 64 ビットの間のクロス コンパイルはサポートされません。 これは、ライセンス コンパイラはアセンブリを読み込む必要があり、32 ビット アプリケーションからの 64 ビット アセンブリの読み込みおよびその逆は、許可されないためです。 この場合は、コマンド ラインからライセンス コンパイラを使用して手動でライセンスをコンパイルし、対応するアーキテクチャを指定します。  
   
- このツールは、Visual Studio と共に自動的にインストールされます。  このツールを実行するには、開発者コマンド プロンプト \(または、Windows 7 の Visual Studio コマンド プロンプト\) を使用します。  詳しくは、「[コマンド プロンプト](../../../docs/framework/tools/developer-command-prompt-for-vs.md)」をご覧ください。  
+ このツールは、Visual Studio と共に自動的にインストールされます。 このツールを実行するには、開発者コマンド プロンプト (または、Windows 7 の Visual Studio コマンド プロンプト) を使用します。 詳細については、「[コマンド プロンプト](../../../docs/framework/tools/developer-command-prompt-for-vs.md)」を参照してください。  
   
  コマンド プロンプトに次のように入力します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
-  
-        lc /target:  
-        targetPE /complist:filename [/outdir:path]  
+      lc /target:  
+      targetPE /complist:filename [/outdir:path]  
 /i:modules [/nologo] [/v]  
 ```  
   
 |オプション|説明|  
-|-----------|--------|  
-|**\/complist:** *filename*|.licenses ファイルに組み込むライセンス付きコンポーネントの一覧を含むファイルの名前を指定します。  各コンポーネントを参照するにはフルネームを使用し、各行にコンポーネントを 1 つだけ指定します。<br /><br /> コマンド行を使用する場合は、プロジェクトに属するフォームごとに個別のファイルを指定できます。  Lc.exe は複数の入力ファイルを受け付けて、1 つの .licenses ファイルを生成します。|  
-|**\/h**\[**elp**\]|このツールのコマンド構文とオプションを表示します。|  
-|**\/i:** *module*|**\/complist** ファイル内に一覧表示されたコンポーネントを含むモジュールを指定します。  複数のモジュールを指定するには、複数の **\/i** フラグを使用します。|  
-|**\/nologo**|Microsoft 著作権情報を表示しません。|  
-|**\/outdir:** *path*|出力 .licenses ファイルを格納するディレクトリを指定します。|  
-|**\/target:** *targetPE*|.licenses ファイルを生成する実行可能ファイルを指定します。|  
-|**\/v**|詳細出力モードを指定します。コンパイルの進行状況に関する情報が表示されます。|  
-|**@** *file*|応答 \(.rsp\) ファイルを指定します。|  
-|**\/?**|このツールのコマンド構文とオプションを表示します。|  
+|------------|-----------------|  
+|**/complist:** *filename*|.licenses ファイルに組み込むライセンス付きコンポーネントの一覧を含むファイルの名前を指定します。 各コンポーネントを参照するにはフルネームを使用し、各行にコンポーネントを 1 つだけ指定します。<br /><br /> コマンド行を使用する場合は、プロジェクトに属するフォームごとに個別のファイルを指定できます。 Lc.exe は複数の入力ファイルを受け付けて、1 つの .licenses ファイルを生成します。|  
+|**/h**[**elp**]|このツールのコマンド構文とオプションを表示します。|  
+|**/i:** *module*|**/complist** ファイル内に一覧表示されたコンポーネントを含むモジュールを指定します。 複数のモジュールを指定するには、複数の **/i** フラグを使用します。|  
+|**/nologo**|Microsoft 著作権情報を表示しません。|  
+|**/outdir:** *path*|出力 .licenses ファイルを格納するディレクトリを指定します。|  
+|**/target:** *targetPE*|.licenses ファイルを生成する実行可能ファイルを指定します。|  
+|**/v**|詳細出力モードを指定します。コンパイルの進行状況に関する情報が表示されます。|  
+|**@** *file*|応答 (.rsp) ファイルを指定します。|  
+|**/?**|このツールのコマンド構文とオプションを表示します。|  
   
-## 使用例  
+## <a name="example"></a>例  
   
-1.  `HostApp.exe` という名前のアプリケーション内の `Samples.DLL` に格納されているライセンス付きコントロール `MyCompany.Samples.LicControl1` を使用すると、次の内容を含む `HostAppLic.txt` を作成できます。  
+1.  `HostApp.exe` という名前のアプリケーション内の `Samples.DLL` に格納されているライセンス付きコントロール `MyCompany.Samples.LicControl1` を使用すると*、*次の内容を含む `HostAppLic.txt` を作成できます。  
   
     ```  
     MyCompany.Samples.LicControl1, Samples.DLL  
@@ -77,27 +81,26 @@ caps.handback.revision: 18
     lc /target:HostApp.exe /complist:hostapplic.txt /i:Samples.DLL /outdir:c:\bindir  
     ```  
   
-3.  この .licenses ファイルをリソースとして含む  `HostApp.exe` を作成します。  C\# アプリケーションを作成していた場合は、次のコマンドを使用してアプリケーションを作成します。  
+3.  この .licenses ファイルをリソースとして含む  `HostApp.exe` を作成します。 C# アプリケーションを作成していた場合は、次のコマンドを使用してアプリケーションを作成します。  
   
     ```  
     csc /res:HostApp.exe.licenses /out:HostApp.exe *.cs  
     ```  
   
- `myApp.licenses`、`hostapplic.txt`、および `hostapplic2.txt` で指定されるライセンス付きコンポーネントの一覧から `hostapplic3.txt` をコンパイルするコマンドを次に示します。  引数 `modulesList` によって、ライセンス付きコンポーネントを含むモジュールを指定します。  
+ `myApp.licenses`、`hostapplic.txt`、および `hostapplic2.txt` で指定されるライセンス付きコンポーネントの一覧から `hostapplic3.txt` をコンパイルするコマンドを次に示します。 引数 `modulesList` によって、ライセンス付きコンポーネントを含むモジュールを指定します。  
   
 ```  
 lc /target:myApp /complist:hostapplic.txt /complist:hostapplic2.txt /complist: hostapplic3.txt /i:modulesList  
 ```  
   
-## 応答ファイルの例  
- 次のリストは、`response.rsp` 応答ファイルの例を示しています。  応答ファイルの詳細については、「[Response Files](../Topic/MSBuild%20Response%20Files.md)」をご覧ください。  
+## <a name="response-file-example"></a>応答ファイルの例  
+ 次のリストは、`response.rsp` 応答ファイルの例を示しています。 応答ファイルの詳細については、「[応答ファイル](/visualstudio/msbuild/msbuild-response-files)」をご覧ください。  
   
 ```  
 /target:hostapp.exe  
 /complist:hostapplic.txt   
 /i:WFCPrj.dll   
 /outdir:"C:\My Folder"  
-  
 ```  
   
  次のコマンドラインで、この `response.rsp` ファイルを使用します。  
@@ -106,7 +109,8 @@ lc /target:myApp /complist:hostapplic.txt /complist:hostapplic2.txt /complist: h
 lc @response.rsp  
 ```  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [ツール](../../../docs/framework/tools/index.md)   
- [Al.exe \(アセンブリ リンカー\)](../../../docs/framework/tools/al-exe-assembly-linker.md)   
+ [Al.exe (アセンブリ リンカー)](../../../docs/framework/tools/al-exe-assembly-linker.md)   
  [コマンド プロンプト](../../../docs/framework/tools/developer-command-prompt-for-vs.md)
+

@@ -30,10 +30,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
 ms.openlocfilehash: 6f4d2bf3ad04fedafb44f8fed63f7234d48af63b
-ms.lasthandoff: 03/13/2017
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/22/2017
 
 ---
 # <a name="properties-c-programming-guide"></a>プロパティ (C# プログラミング ガイド)
@@ -53,7 +54,7 @@ ms.lasthandoff: 03/13/2017
  
 ## <a name="properties-with-backing-fields"></a>バッキング フィールドを持つプロパティ
 
-プロパティを実装する基本的な手法の&1; つとして、プロパティ値の設定と取得にプライベート バッキング フィールドを使用する方法があります。 この方法では、`get` アクセサーはプライベート フィールドの値を返します。`set` アクセサーはプライベート フィールドに値を割り当てる前にデータ検証を実行できます。 また、どちらのアクセサーも、データの変換や計算を行ってから、データを格納したり返したりすることができます。
+プロパティを実装する基本的な手法の 1 つとして、プロパティ値の設定と取得にプライベート バッキング フィールドを使用する方法があります。 この方法では、`get` アクセサーはプライベート フィールドの値を返します。`set` アクセサーはプライベート フィールドに値を割り当てる前にデータ検証を実行できます。 また、どちらのアクセサーも、データの変換や計算を行ってから、データを格納したり返したりすることができます。
 
 このパターンを説明する例を下に示します。 この例では、`TimePeriod` クラスは時間間隔を表しています。 クラスの内部では、`seconds` という名前のプライベート フィールドに時間間隔が秒単位で格納されます。 `Hours` という読み取り/書き込みプロパティでは、ユーザーが時間間隔を時間単位で指定できます。 `get` アクセサーと `set` アクセサーの両方で、必要に応じて時間と秒の変換が実行されます。 また、`set` アクセサーは、データを検証し、時間数が無効である場合に @System.ArgumentOutOfRangeException をスローします。 
    
@@ -61,7 +62,7 @@ ms.lasthandoff: 03/13/2017
   
 ## <a name="expression-body-definitions"></a>式本体の定義  
 
- プロパティ アクセサーは、通常、式の結果を割り当てるか返すだけの&1; 行のステートメントで構成されます。 プロパティは、本体が式形式のメンバーとして実装できます。 式本体の定義は、`=>` 記号の後に、プロパティに割り当てるかプロパティから取得するための式を続けて構成します。
+ プロパティ アクセサーは、通常、式の結果を割り当てるか返すだけの 1 行のステートメントで構成されます。 プロパティは、本体が式形式のメンバーとして実装できます。 式本体の定義は、`=>` 記号の後に、プロパティに割り当てるかプロパティから取得するための式を続けて構成します。
 
  C# 6 以降では、読み取り専用プロパティに `get` アクセサーを式形式のメンバーとして実装できます。 この場合、`get` アクセサー キーワードと `return` キーワードはどちらも使用しません。 次の例では、読み取り専用 `Name` プロパティを式形式のメンバーとして実装しています。
 
@@ -92,7 +93,7 @@ ms.lasthandoff: 03/13/2017
 -   [自動実装プロパティ](../../../csharp/programming-guide/classes-and-structs/auto-implemented-properties.md)  
   
 ## <a name="c-language-specification"></a>C# 言語仕様  
- [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec_md.md)]  
+ [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
 ## <a name="see-also"></a>関連項目
  [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   

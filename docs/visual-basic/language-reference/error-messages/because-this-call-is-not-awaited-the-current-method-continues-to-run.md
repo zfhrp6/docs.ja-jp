@@ -31,9 +31,10 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Machine Translation
+ms.translationtype: Machine Translation
 ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
 ms.openlocfilehash: a9165414bc08b62aab20410e7af187fa4b45c162
+ms.contentlocale: ja-jp
 ms.lasthandoff: 03/13/2017
 
 ---
@@ -102,13 +103,11 @@ ms.lasthandoff: 03/13/2017
         Await Task.Delay(howLong)  
         ResultsTextBox.Text &= vbCrLf & "    Task.Delay is finished--returning from called method."  
     End Function  
-  
     ```  
   
      この例では、呼び出し 1 または呼び出し 2 を選択した場合、完了が待機されない非同期メソッド (`CalledMethodAsync`) は、呼び出し元 (`CallingMethodAsync`) と呼び出し元の呼び出し元 (`StartButton_Click`) の両方が完了した後に完了します。 次の出力の最後の行に、呼び出されたメソッドがいつ完了したかが示されています。 この出力には、完全な例の `CallingMethodAsync` を呼び出すイベント ハンドラーへのエントリとその終了が示されています。  
   
     ```  
-  
     Entering the Click event handler.  
       Entering calling method.  
         Entering called method, starting and awaiting Task.Delay.  
@@ -138,7 +137,6 @@ ms.lasthandoff: 03/13/2017
             <TextBox x:Name="ResultsTextBox" Margin="0,80,0,0" TextWrapping="Wrap" FontFamily="Lucida Console"/>  
         </Grid>  
     </Window>  
-  
     ```  
   
      ボタンとテキスト ボックスを含むシンプルなウィンドウが、MainWindow.xaml の **[デザイン]** ビューに表示されます。  
@@ -148,7 +146,6 @@ ms.lasthandoff: 03/13/2017
 4.  MainWindow.xaml.vb のコードを次のコードに置き換えます。  
   
     ```vb  
-  
     Class MainWindow   
   
         Private Async Sub StartButton_Click(sender As Object, e As RoutedEventArgs)  
@@ -233,3 +230,4 @@ ms.lasthandoff: 03/13/2017
 ## <a name="see-also"></a>関連項目  
  [Await 演算子](../../../visual-basic/language-reference/operators/await-operator.md)   
  [Async および Await を使用した非同期プログラミング](../../../visual-basic/programming-guide/concepts/async/index.md)
+

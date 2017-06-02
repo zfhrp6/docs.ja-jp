@@ -15,9 +15,10 @@ ms.assetid: 6831e1db-5e97-444f-a7a1-d0a87104b005
 caps.latest.revision: 3
 author: dotnet-bot
 ms.author: dotnetcontent
-translationtype: Machine Translation
+ms.translationtype: Machine Translation
 ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
 ms.openlocfilehash: 7c1ef9db560de02efa20dbe88ff0e73ffd9e7fff
+ms.contentlocale: ja-jp
 ms.lasthandoff: 03/13/2017
 
 
@@ -65,7 +66,6 @@ End If
 For Each el As XElement In list1  
     Console.WriteLine(el)  
 Next  
-  
 ```  
   
  この例を実行すると、次の出力が生成されます。  
@@ -94,3 +94,4 @@ Results are identical
   
 ## <a name="see-also"></a>関連項目  
  [LINQ to XML の XPath ユーザー (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)
+

@@ -31,9 +31,10 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
 ms.openlocfilehash: 98cec8d5077e777f18c18ad1af0040b3359151f7
+ms.contentlocale: ja-jp
 ms.lasthandoff: 03/13/2017
 
 ---
@@ -115,7 +116,7 @@ ms.lasthandoff: 03/13/2017
   
 3.  `<listeners>` セクションに次の要素を追加します。  
   
-    ```  
+    ```xml  
     <add name="SimpleLog" />  
     ```  
   
@@ -123,7 +124,7 @@ ms.lasthandoff: 03/13/2017
   
 5.  その `<sharedListeners>` セクションに次の要素を追加します。  
   
-    ```  
+    ```xml  
     <add name="SimpleLog" type="SimpleLogStrongName" />  
     ```  
   

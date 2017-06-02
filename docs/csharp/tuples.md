@@ -10,16 +10,17 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: ee8bf7c3-aa3e-4c9e-a5c6-e05cc6138baa
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: f2c81b7e18f36bde5b46c0c6df5c8122cd303931
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 6b30f41e3fb07a962542a09a41c698efee7ebb5a
+ms.openlocfilehash: 0ea7299d87dc69784e3bed93e48d83e4a0076a20
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/26/2017
 
 ---
 
 # <a name="c-tuple-types"></a>C# のタプル型 #
 
-C# のタプルは、軽量構文を使用して定義する型で、 構文がシンプルである、変換の規則がフィールドの数 ("アリティ" と呼ばれます) と種類に基づく、コピーと割り当ての規則が一貫している、などのメリットがあります。 そのトレードオフとして、タプルでは、継承に関連するオブジェクト指向の表現形式の一部がサポートされていません。 概要については、[C# 7 の新機能のタプル](csharp-7.md#tuples)に関するトピックのセクションをご覧ください。
+C# のタプルは、軽量構文を使用して定義する型で、 構文がシンプルである、変換の規則がフィールドの数 ("アリティ" と呼ばれます) と種類に基づく、コピーと割り当ての規則が一貫している、などのメリットがあります。 そのトレードオフとして、タプルでは、継承に関連するオブジェクト指向の表現形式の一部がサポートされていません。 概要については、[C# 7 の新機能のタプル](whats-new/csharp-7.md#tuples)に関するトピックのセクションをご覧ください。
 
 このトピックでは、C# 7 でタプルに適用される言語の規則、タプルの使用方法、およびタプルを操作するための入門的ガイダンスについて説明します。
 
@@ -65,7 +66,7 @@ C# のタプルは、軽量構文を使用して定義する型で、 構文が�
 
 ## <a name="assignment-and-tuples"></a>割り当てとタプル
 
-フィールドの数と型が同じタプル型間での割り当てがサポートされています。 型は、コンパイル時に完全に一致している必要があります。 他の変換は、割り当てでは考慮されません。 タプル型間で許可されている割り当ての種類を見てみましょう。
+フィールドの数が同じで、これらの各フィールドに型の暗黙的な変換があるタプル型間での、代入がサポートされています。 他の変換は、割り当てでは考慮されません。 タプル型間で許可されている割り当ての種類を見てみましょう。
 
 以降の例で使用されている変数について考えます。
 
@@ -181,7 +182,7 @@ private static (double, double, int) ComputeSumAndSumOfSquares(IEnumerable<doubl
 ```
 タプル内のフィールドすべての型が同じでも、かっこ外では使用できない型があることに注意してください。
 
-### <a name="deconstring-user-defined-types"></a>ユーザー定義型の分解
+### <a name="deconstructing-user-defined-types"></a>ユーザー定義型の分解
 
 上に示したように、すべてのタプル型を分解できます。 また、ユーザー定義型 (クラス、構造体、またはインターフェイス) も簡単に分解できます。
 

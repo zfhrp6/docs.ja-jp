@@ -1,5 +1,5 @@
 ---
-title: "C# のガイド"
+title: "C# のガイド | Microsoft Docs"
 description: "C# のガイド"
 keywords: .NET, .NET Core
 author: BillWagner
@@ -9,10 +9,11 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 52db8280-0e53-40cf-858b-e8eef3997dea
-translationtype: Human Translation
-ms.sourcegitcommit: 75908d895017c31e36da6702f1b69816afb91d14
-ms.openlocfilehash: 8721c71bf69210cf73d7e703f19a22e267e36a28
-ms.lasthandoff: 03/28/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 4437ce5d344cf06d30e31911def6287999fc6ffc
+ms.openlocfilehash: b87601e339a73b7d9f3132d80496742317439ffa
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/23/2017
 
 ---
 
@@ -24,10 +25,10 @@ C# のガイドでは、C# 言語に関するさまざまな情報を提供し�
     - 「[チュートリアル](tutorials/index.md)」セクションから始めましょう。 チュートリアルでは、C# プログラムを 1 から作成する方法が説明されており、 段階を追ってプログラムを作成できるようになっています。 C# 言語の概念と、自分で C# プログラムを作成する方法を学べます。 最初に概要を読みたい場合は、「[C# 言語のツアー](tour-of-csharp/index.md)」から始めてください。 ここでは C# 言語の概念を学べます。 ツアーを読み終えたら、C# 言語の基本的な知識を基に、チュートリアルを試したり、自分でプログラムを作成したりできるようになります。
 
 * C# を初めて使用する開発者: 
-    - 開発経験はあるものの、C# は初めてという場合は、「[C# 言語のツアー](tour-of-csharp/index.md)」をお読みください。 C# 言語の基本的な構文と構造について学び、使用経験のある他の言語と比較することができます。 「[チュートリアル](tutorials/index.md)」を参照し、基本的な C# プログラムを試してみるのもよいでしょう。 または、「[C# の概念](concepts.md)」を読み、C# 言語の機能を詳しく学ぶこともできます。
+    - 開発経験はあるものの、C# は初めてという場合は、「[C# 言語のツアー](tour-of-csharp/index.md)」をお読みください。 C# 言語の基本的な構文と構造について学び、使用経験のある他の言語と比較することができます。 「[チュートリアル](tutorials/index.md)」を参照し、基本的な C# プログラムを試してみるのもよいでしょう。
 
 * 経験豊富な C# 開発者:
-    - C# の経験がある場合は、最新バージョンの新機能を知ることから始めましょう。 現在のバージョンの新機能は、「[C# の新機能](whats-new/index.md)」で確認することができます。 新機能を確認したら、「[C# の概念](concepts.md)」を読んで知識をより深めましょう。
+    - C# の経験がある場合は、最新バージョンの新機能を知ることから始めましょう。 現在のバージョンの新機能は、「[C# の新機能](whats-new/index.md)」で確認することができます。
  
 ## <a name="how-the-c-guide-is-organized"></a>C# ガイドの編成
 
@@ -45,15 +46,12 @@ C# ガイドには 7 つのセクションがあります。 順番に読み進�
 * [最新の機能](whats-new/index.md):
     - C# 言語の新機能について説明し、 C# インタラクティブ (C# の REPL) や .NET コンパイラ プラットフォーム SDK などの新しいツールを紹介しています。 C# 言語の進化について学び、 新しいツールを使った C# 言語の活用とタスクの自動化によって生産性を高める方法を知ることができます。 
 
-* [C# インタラクティブ](interactive/index.md):
-    - C# インタラクティブは対話型の評価環境 (Read-Eval-Print Loop: REPL) で、C# を対話的に使用するために使用できます。 対話型のアプローチでさまざまなアクションを試みることによって、さまざまなライブラリやフレームワークを探索することもできます。 ここでは、C# インタラクティブをインストールして起動する方法と、C# インタラクティブを使用して API を探索する方法について説明します。 また、C# インタラクティブを使用して、テスト済みのクラスを後で使用するためにエクスポートする方法についても説明します。  
-
-* [C# の概念](concepts.md):
-    - C# プログラマにとって最も役立つ概念を説明します。 C# 開発のさまざまな手法を示すエンド ツー エンドのシナリオが含まれています。 C# 言語に焦点を当てていますが、エンド ツー エンドのシナリオの性質上、.NET エコシステムの一部である別のフレームワークやライブラリのデモを示すプログラムも含まれています。
-
-* [.NET コンパイラ プラットフォーム SDK](roslyn/index.md):
-    - .NET コンパイラ プラットフォーム SDK を使用すると、コードを分析し、そのコードを改良する (またはその提案をする) コンポーネントを記述することができます。 ここでは、API の編成と、チームの規則と原則を有効にするコードを作成する方法について説明します。 また、サンプル、エンド ツー エンドのシナリオ、およびこれらの API を使用するその他のサンプルを含むライブラリへのリンクも示します。
-
+<!--* [C# Interactive](interactive/index.md):
+    - C# Interactive is a Read-Eval-Print Loop (REPL) that you can use to interactively explore the language. It can also be used to explore different libraries and frameworks by trying different actions using an interactive approach. In this section you'll learn how to install and start C# interactive, and how to explore APIs with it. You'll also learn how to use C# interactive to export tested classes for later use.  
+-->
+<!--* [.NET Compiler Platform SDK](roslyn/index.md):
+    - The .NET Compiler Platform SDK enables you to write components that analyze code, and suggest or make improvements to that code. In this section, you'll learn how the APIs are organized, and how you can create code that enables rules and practices for your team. You'll also see samples, end to end scenarios, and links to other libraries with more examples using these APIs.
+-->
 * [言語リファレンス](language-reference/index.md):
     - C# 言語に関するリファレンス資料が含まれています。 C# の構文とセマンティクスを理解するのに役立ちます。 
 

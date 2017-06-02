@@ -32,10 +32,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 9e5c3012ce057387497f97e713eb625ac2f2a7d1
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 87497d48c04a00e09c82550d49dc85d7be719edf
+ms.openlocfilehash: 7ca43aa68edc89420dd320f92b50311d7279ac06
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/19/2017
 
 ---
 # <a name="c-reference"></a>C# リファレンス
@@ -64,9 +65,10 @@ ms.lasthandoff: 03/13/2017
  Microsoft Word 形式で作成された最新バージョンの C# 言語仕様へのポインターを紹介します。  
   
 ## <a name="related-sections"></a>関連項目  
- [C# に関する FAQ](http://go.microsoft.com/fwlink/?LinkId=70367)  
- C# デベロッパー センターにおいて C# についてよく寄せられる質問の拡張中のリストを記載します。  
-  
+<!--
+ [C# FAQ](http://go.microsoft.com/fwlink/?LinkId=70367)  
+ Provides a growing list of C# Frequently Asked Questions in the C# Developer Center.  
+-->  
  [Microsoft サポート技術情報内の C# に関するサポート技術情報記事](http://go.microsoft.com/fwlink/?LinkId=70368)  
  MSDN で利用できるサポート技術情報に関する Microsoft の検索ページを開きます。  
   
@@ -78,3 +80,4 @@ ms.lasthandoff: 03/13/2017
   
  [C# プログラミング ガイド](../../csharp/programming-guide/index.md)  
  C# プログラミング言語の使用方法について説明します。
+

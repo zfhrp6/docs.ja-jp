@@ -31,18 +31,19 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 7ca42afd69e814ce448bfea97c2dbf480830a74a
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 7e33ed084c560470a486ebbb25035a59ddc18565
+ms.openlocfilehash: 21abcf70cce2d6c9052629ce60d08e9ec6ac16e7
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/22/2017
 
 ---
 # <a name="hello-world----your-first-program-c-programming-guide"></a>Hello World -- 最初のプログラム (C# プログラミング ガイド)
-次の手順では "Hello World!" プログラ ムの C# バージョンを作成します。 このプログラムでは `Hello World!` という文字列を表示します。  
+次の手順では、従来の "Hello World!" プログラムの C# バージョンを 作成します。 このプログラムでは `Hello World!` という文字列を表示します。  
   
  基本概念の例については、「[Visual C# と Visual Basic の概要](https://docs.microsoft.com/visualstudio/ide/getting-started-with-visual-csharp-and-visual-basic)」を参照してください。  
   
-[!INCLUDE[note_settings_general](../../../csharp/language-reference/compiler-messages/includes/note_settings_general_md.md)]  
+[!INCLUDE[note_settings_general](~/includes/note-settings-general-md.md)]  
   
 ### <a name="to-create-and-run-a-console-application"></a>コンソール アプリケーションを作成し、実行するには  
   
@@ -80,7 +81,7 @@ ms.lasthandoff: 03/13/2017
 ## <a name="main-method"></a>Main メソッド  
  C# コンソール アプリケーションには、`Main` メソッドが必要です。このメソッドの中で制御を開始して終了します。 `Main` メソッドでは、オブジェクトを作成し、ほかのメソッドを実行します。  
   
- `Main` メソッドはクラスまたは構造体の中に存在する [static](../../../csharp/language-reference/keywords/static.md) メソッドです。 前の "Hello World!" の例では、これは  `Hello` という名前のクラスに置かれていました。 次の方法のいずれかで `Main` メソッドを宣言できます。  
+ `Main` メソッドはクラスまたは構造体の中に存在する [static](../../../csharp/language-reference/keywords/static.md) メソッドです。 前の "Hello World!" の 例では、`Hello` という名前のクラスに存在していました。 次の方法のいずれかで `Main` メソッドを宣言できます。  
   
 -   `void` 型を返すことができます。  
   
@@ -114,7 +115,7 @@ ms.lasthandoff: 03/13/2017
  入出力メソッドの詳細については、「<xref:System.IO>」を参照してください。  
   
 ## <a name="command-line-compilation-and-execution"></a>コマンド ライン コンパイルと実行  
- Visual Studio 統合開発環境 (IDE: Integrated Development Environment) の代わりに、コマンド ラインを使用して "Hello World!"  プログラムをコンパイルできます。  
+ "Hello World!" プログラムは、 Visual Studio 統合開発環境 (IDE) の代わりに、コマンド ラインを使用してコンパイルできます。  
   
 #### <a name="to-compile-and-run-from-a-command-prompt"></a>コマンド プロンプトからコンパイルおよび実行するには  
   
@@ -146,10 +147,7 @@ ms.lasthandoff: 03/13/2017
   
      `Hello`  
   
- C# コンパイラとそのオプションの詳細については、「[C# コンパイラ オプション](../../../csharp/language-reference/compiler-options/index.md)」を参照してください。  
-  
-## <a name="featured-book-chapter"></a>参考書籍の該当する章  
- 『[Beginning Visual C# 2010 (Visual C# 2010 の開始)](http://go.microsoft.com/fwlink/?LinkId=221214)』の「[Writing a C# Program (C# プログラムの記述)](http://go.microsoft.com/fwlink/?LinkId=221227)」  
+ C# コンパイラとそのオプションの詳細については、「[C# コンパイラ オプション](../../../csharp/language-reference/compiler-options/index.md)」を参照してください。
   
 ## <a name="see-also"></a>関連項目  
  [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   

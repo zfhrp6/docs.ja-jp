@@ -1,5 +1,5 @@
 ---
-title: ".NET Compiler SDK の使用 | C# ガイド"
+title: ".NET Compiler SDK の使用 - C# のガイド | Microsoft Docs"
 description: "自動診断とコードの修正を作成する Roslyn API について説明します"
 keywords: .NET, .NET Core, C#, Roslyn,
 ms.date: 06/25/2016
@@ -8,10 +8,12 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: abed9e00-2ddc-468e-9cca-d033bd6a7e36
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 95742e602f289aabf810aacb972b2c034a6e3f58
-ms.lasthandoff: 03/13/2017
+redirect_url: /dotnet/articles/csharp/index
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 4437ce5d344cf06d30e31911def6287999fc6ffc
+ms.openlocfilehash: b08430b9d34fa5e5248438cf489eeb21e17404e3
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/23/2017
 
 ---
 

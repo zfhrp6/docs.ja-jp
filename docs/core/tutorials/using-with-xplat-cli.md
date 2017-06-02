@@ -10,10 +10,11 @@ ms.prod: .net-core
 ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: 41632e63-d5c6-4427-a09e-51dc1116d45f
-translationtype: Human Translation
-ms.sourcegitcommit: e30414ac3dd48bbb060ad6f2a33a0a124cba0fa3
-ms.openlocfilehash: 6ffca900d5649823e6aa2e28486a64a2f7844efc
-ms.lasthandoff: 03/22/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: deb760878391856cf07bab04563d0ec19a1511e7
+ms.openlocfilehash: b1ff9218932d5ef49941ca427d9ee38503a9c103
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/30/2017
 
 ---
 
@@ -30,9 +31,9 @@ ms.lasthandoff: 03/22/2017
 
 ## <a name="hello-console-app"></a>Hello コンソール アプリ
 
-最初に、適切な名前のフォルダーに移動するか、新しく作成します。 サンプル コードでは *Hello* という名前を使用しています ([こちら](https://github.com/dotnet/docs/tree/master/samples/core/console-apps/HelloMsBuild)を参照)。
+GitHub の dotnet/docs レポジトリから、[サンプル コードを表示またはダウンロード](https://github.com/dotnet/docs/tree/master/samples/core/console-apps/HelloMsBuild)することができます。 ダウンロード方法については、「[サンプルおよびチュートリアル](../../samples-and-tutorials/index.md#viewing-and-downloading-samples)」を参照してください。
 
-コマンド プロンプトを開いて次のように入力します。
+コマンド プロンプトを開き、*Hello* という名前のフォルダーを作成します。 作成したフォルダーに移動して、次のように入力します。
 
 ```
 $ dotnet new console
@@ -44,11 +45,11 @@ $ dotnet run
 
 1. `$ dotnet new console`
 
-[`dotnet new`](../tools/dotnet-new.md) は、コンソール アプリのビルドに必要な依存関係を含む最新の `Hello.csproj` プロジェクト ファイルを作成します。  また、アプリケーションのエントリ ポイントを含む基本的なファイルである `Program.cs` も作成します。
+   [`dotnet new`](../tools/dotnet-new.md) は、コンソール アプリのビルドに必要な依存関係を含む最新の `Hello.csproj` プロジェクト ファイルを作成します。  また、アプリケーションのエントリ ポイントを含む基本的なファイルである `Program.cs` も作成します。
    
-`Hello.csproj`:
+   `Hello.csproj`:
 
-[!code[Hello.csproj](../../../samples/core/console-apps/HelloMsBuild/Hello.csproj)]   
+   [!code[Hello.csproj](../../../samples/core/console-apps/HelloMsBuild/Hello.csproj)]   
 
    プロジェクト ファイルでは、依存関係を復元し、プログラムをビルドするために必要なすべてのものを指定します。
 
@@ -57,7 +58,7 @@ $ dotnet run
 
    `Program.cs`:
 
-[!code-csharp[Program.cs](../../../samples/core/console-apps/HelloMsBuild/Program.cs)]   
+   [!code-csharp[Program.cs](../../../samples/core/console-apps/HelloMsBuild/Program.cs)]   
 
    プログラムは `using System` で始まります。これは、"`System` 名前空間のすべてがこのファイルのスコープになる" こと意味します。 `System` 名前空間には、`string` などの基本的な構造、または数値型が含まれます。
 
@@ -65,7 +66,7 @@ $ dotnet run
 
 2. `$ dotnet restore`
 
-   [`dotnet restore`](../tools/dotnet-restore.md) は、[NuGet](http://nuget.org) (.NET パッケージ マネージャー) を参照して依存関係のツリーを復元します。 NuGet は、*Hello.csproj* ファイルを分析し、ファイルに記載されている依存関係をダウンロードして (またはコンピューターのキャッシュから取得して)、*obj/project.assets.json* ファイルを書き込みます。  *project.assets.json* ファイルをコンパイルして実行できる必要があります。
+   [`dotnet restore`](../tools/dotnet-restore.md) は、[NuGet](https://www.nuget.org/) (.NET パッケージ マネージャー) を参照して依存関係のツリーを復元します。 NuGet は、*Hello.csproj* ファイルを分析し、ファイルに記載されている依存関係をダウンロードして (またはコンピューターのキャッシュから取得して)、*obj/project.assets.json* ファイルを書き込みます。  *project.assets.json* ファイルをコンパイルして実行できる必要があります。
    
    *project.assets.json* ファイルは、NuGet の依存関係およびアプリについて記述するその他の情報のグラフの永続的で完全なセットです。  このファイルは、[`dotnet build`](../tools/dotnet-build.md) や [`dotnet run`](../tools/dotnet-run.md) などの他のツールによって読み取られ、これらのツールが NuGet の依存関係とバインド解決の正しいセットでソース コードを処理できるようにします。
    
@@ -93,32 +94,32 @@ $ dotnet run
 
 1. *Program.cs* ファイルの内容を次のコードで置き換えます。
 
-[!code-csharp[フィボナッチ](../../../samples/core/console-apps/fibonacci-msbuild/Program.cs)]   
+   [!code-csharp[フィボナッチ](../../../samples/core/console-apps/fibonacci-msbuild/Program.cs)]   
 
 2. [`dotnet build`](../tools/dotnet-build.md) を実行し、変更内容をコンパイルします。
 
 3. アプリにパラメーターを渡すプログラムを実行します。
 
-```
-$ dotnet run -- John
-Hello John!
-Fibonacci Numbers 1-15:
-1: 0
-2: 1
-3: 1
-4: 2
-5: 3
-6: 5
-7: 8
-8: 13
-9: 21
-10: 34
-11: 55
-12: 89
-13: 144
-14: 233
-15: 377
-```
+   ```
+   $ dotnet run -- John
+   Hello John!
+   Fibonacci Numbers 1-15:
+   1: 0
+   2: 1
+   3: 1
+   4: 2
+   5: 3
+   6: 5
+   7: 8
+   8: 13
+   9: 21
+   10: 34
+   11: 55
+   12: 89
+   13: 144
+   14: 233
+   15: 377
+   ```
 
 以上です。  自由に `Program.cs` を拡張できます。
 
@@ -128,33 +129,33 @@ Fibonacci Numbers 1-15:
 
 1. 次のコードを利用し、*FibonacciGenerator.cs* という名前の *Hello* ディレクトリ内に新しいファイルを追加します。
 
-[!code-csharp[フィボナッチ ジェネレーター](../../../samples/core/console-apps/FibonacciBetterMsBuild/FibonacciGenerator.cs)]   
+   [!code-csharp[フィボナッチ ジェネレーター](../../../samples/core/console-apps/FibonacciBetterMsBuild/FibonacciGenerator.cs)]   
 
 2. *Program.cs* ファイルの `Main` メソッドを変更し、次の例のように新しいクラスをインスタンス化し、そのメソッドを呼び出します。
 
-[!code-csharp[新しい Program.cs](../../../samples/core/console-apps/FibonacciBetterMsBuild/Program.cs)]
+   [!code-csharp[新しい Program.cs](../../../samples/core/console-apps/FibonacciBetterMsBuild/Program.cs)]
 
 3. [`dotnet build`](../tools/dotnet-build.md) を実行し、変更内容をコンパイルします。
 
 4. [`dotnet run`](../tools/dotnet-run.md) を実行し、アプリを実行します。 プログラムの出力は次のようになります。
 
-```
-0
-1
-1
-2
-3
-5
-8
-13
-21
-34
-55
-89
-144
-233
-377
-```
+   ```
+   0
+   1
+   1
+   2
+   3
+   5
+   8
+   13
+   21
+   34
+   55
+   89
+   144
+   233
+   377
+   ```
 
 以上です。 これで、ここで学習した基本的な概念を利用し、自分だけのプログラムを作成できます。
 

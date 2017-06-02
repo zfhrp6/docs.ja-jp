@@ -31,10 +31,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: c80cce6cbb29946dfc2d0407781cd4ba698a2ea2
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: fe32676f0e39ed109a68f39584cf41aec5f5ce90
+ms.openlocfilehash: 26027418b70d211dcadf6ace58b24927d94e427a
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/10/2017
 
 ---
 # <a name="join-clause-c-reference"></a>join 句 (C# リファレンス)
@@ -88,7 +89,7 @@ ms.lasthandoff: 03/13/2017
 ## <a name="joins-on-object-collections-vs-relational-tables"></a>オブジェクト コレクションとリレーショナル テーブルでの結合の比較  
  [!INCLUDE[vbteclinq](../../../csharp/includes/vbteclinq_md.md)] クエリ式での結合操作は、オブジェクト コレクションに対して実行されます。 2 つのリレーショナル テーブルの "結合" とまったく同じ方法でオブジェクト コレクションを結合することはできません。 [!INCLUDE[vbteclinq](../../../csharp/includes/vbteclinq_md.md)] では、2 つのソース シーケンスがリレーションシップによって関連付けられていない場合にのみ明示的な `join` 句が必要になります。 [!INCLUDE[vbtecdlinq](../../../csharp/includes/vbtecdlinq_md.md)] を使用する場合、外部キー テーブルはオブジェクト モデル内でプライマリ テーブルのプロパティとして表されます。 たとえば Northwind データベースでは、Customer テーブルに Orders テーブルとの外部キー リレーションシップがあります。 テーブルをオブジェクト モデルに割り当てると、Customer クラスには、その Customer に関連付けられた Orders のコレクションを含む Orders プロパティが含まれます。 実質的には、既に結合が実行されていることになります。  
   
- [!INCLUDE[vbtecdlinq](../../../csharp/includes/vbtecdlinq_md.md)] を使用した関連テーブル間でのクエリの詳細については、「[方法: データベース リレーションシップを割り当てる](http://msdn.microsoft.com/library/538def39-8399-46fb-b02d-60ede4e050af)」を参照してください。  
+ [!INCLUDE[vbtecdlinq](../../../csharp/includes/vbtecdlinq_md.md)] を使用した関連テーブル間でのクエリの詳細については、「[方法: データベース リレーションシップを割り当てる](../../../framework/data/adonet/sql/linq/how-to-map-database-relationships.md)」を参照してください。  
   
 ## <a name="composite-keys"></a>複合キー  
  複合キーを使用すると、複数の値の等価性をテストできます。 詳細については、「[方法: 複合キーを使用して結合する](../../../csharp/programming-guide/linq-query-expressions/how-to-join-by-using-composite-keys.md)」を参照してください。 複合キーは、`group` 句でも使用できます。  

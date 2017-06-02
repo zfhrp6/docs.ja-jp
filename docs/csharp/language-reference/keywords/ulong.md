@@ -1,6 +1,6 @@
 ---
 title: "ulong (C# リファレンス) | Microsoft Docs"
-ms.date: 2015-07-20
+ms.date: 2017-03-14
 ms.prod: .net
 ms.technology:
 - devlang-csharp
@@ -30,13 +30,15 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 36de0add1d7fdf58745c65d231f3789c532ab69f
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 400dfda51d978f35c3995f90840643aaff1b9c13
+ms.openlocfilehash: a0889086fbc986a37d052917469fbdb5442df44f
+ms.contentlocale: ja-jp
+ms.lasthandoff: 03/24/2017
 
 ---
 # <a name="ulong-c-reference"></a>ulong (C# リファレンス)
+
 `ulong` キーワードは、次の表に示されたサイズと範囲に従って値を格納する整数型を示します。  
   
 |型|範囲|サイズ|.NET Framework 型|  
@@ -44,44 +46,43 @@ ms.lasthandoff: 03/13/2017
 |`ulong`|0 ～ 18,446,744,073,709,551,615|符号なし 64 ビット整数|<xref:System.UInt64?displayProperty=fullName>|  
   
 ## <a name="literals"></a>リテラル  
- `ulong` 変数の宣言と初期化の例を次に示します。  
+
+`ulong` 変数を宣言し、10 進リテラル、16 進リテラル、または (C# 7 以降) バイナリ リテラルを割り当てることによって初期化できます。  整数リテラルが `ulong` の範囲外である場合は (つまり、<xref:System.UInt64.MinValue?displayProperty=fullName> より小さいか、<xref:System.UInt64.MaxValue?displayProperty=fullName> より大きい場合)、コンパイル エラーが発生します。 
+
+次の例では、整数 7,934,076,125 を 10 進リテラル、16 進リテラル、バイナリ リテラルで表したものが、`ulong` 値に割り当てられています。  
   
-```  
+[!code-cs[ulong](../../../../samples/snippets/csharp/language-reference/keywords/numeric-literals.cs#ULong)]  
+
+> [!NOTE] 
+> 16 進リテラルを表すにはプレフィックス `0x` または `0X` を使い、バイナリ リテラルを表すにはプレフィックス `0b` または `0B` を使います。 10 進リテラルには、プレフィックスはありません。 
+
+C# 7 以降では、次の例に示すように、アンダースコア文字 `_` を桁区切り記号として使って読みやすくすることもできます。
+
+[!code-cs[long](../../../../samples/snippets/csharp/language-reference/keywords/numeric-literals.cs#LongS)]  
+ 
+ 整数リテラルには、型を表すサフィックスを含めることもできます。 サフィックス `UL` または `ul` は、数値リテラルを `ulong` 値として明確に示します。 リテラル値が <xref:System.Int64.MaxValue?displayProperty=fullName> を超える場合、`L` サフィックスは `ulong` を示します。 また、リテラル値が <xref:System.UInt32.MaxValue?displayProperty=fullName> を超える場合は、`U` または `u` サフィックスは `ulong` を示します。 次の例では、`ul` サフィックスを使って long 整数を示しています。
+ 
+[!code-cs[ulsuffix](../../../../samples/snippets/csharp/language-reference/keywords/numeric-suffixes.cs#2)]
+
+サフィックスがない整数リテラルの型は、以下の型のうちその値を表すことができる最初のものになります。 
+
+1. [int](int.md)
+2. [uint](../../../csharp/language-reference/keywords/uint.md)
+3. [long](long.md)
+4. `ulong`
+
+## <a name="compiler-overload-resolution"></a>コンパイラのオーバーロード解決
   
-ulong uLong = 9223372036854775808;  
-```  
+ サフィックスは、オーバーロードされたメソッドの呼び出しでよく使用されます。 たとえば、`ulong` パラメーターと [int](../../../csharp/language-reference/keywords/int.md) パラメーターを使用するオーバーロードされたメソッドがあるとします。  
   
- サフィックスがない整数リテラルの場合、整数リテラルの型は、[int](../../../csharp/language-reference/keywords/int.md)、[uint](../../../csharp/language-reference/keywords/uint.md)、[long](../../../csharp/language-reference/keywords/long.md)、`ulong` のうち、その値を表すことができる最初の型になります。 上記の例では、これは `ulong` 型です。  
-  
- サフィックスを使用して、リテラルの型を次の規則に従って指定することもできます。  
-  
--   L または l を使用した場合、リテラル整数の型は、そのサイズに応じて [long](../../../csharp/language-reference/keywords/long.md) または `ulong` になります。  
-  
-    > [!NOTE]
-    >  小文字の "l" はサフィックスとして使用できます。 ただし、文字の "l" は数字の "1" と混同しやすいため、コンパイラから警告が出されます。 明確にするには、"L" を使用します。  
-  
--   `U` または `u` を使用した場合、リテラル整数の型は、そのサイズに応じて [uint](../../../csharp/language-reference/keywords/uint.md) または `ulong` になります。  
-  
--   UL、ul、Ul、uL、LU、lu、Lu または lU を使用した場合、リテラル整数の型は `ulong` になります。  
-  
-     たとえば、次の 3 つのステートメントの出力は、システム型 `UInt64` になります。これは、エイリアス `ulong` に対応します。  
-  
-    ```  
-    Console.WriteLine(9223372036854775808L.GetType());  
-    Console.WriteLine(123UL.GetType());  
-    Console.WriteLine((123UL + 456).GetType());  
-    ```  
-  
- サフィックスは、オーバー ロードされたメソッドの呼び出しでよく使用されます。 たとえば、`ulong` パラメーターと [int](../../../csharp/language-reference/keywords/int.md) パラメーターを使用するオーバーロードされたメソッドがあるとします。  
-  
-```  
+```csharp  
 public static void SampleMethod(int i) {}  
 public static void SampleMethod(ulong l) {}  
 ```  
   
  サフィックスを `ulong` パラメーターと共に使用すると、正しい型が呼び出されます。次に例を示します。  
   
-```  
+```csharp  
 SampleMethod(5);    // Calling the method with the int parameter  
 SampleMethod(5UL);  // Calling the method with the ulong parameter  
 ```  
@@ -91,7 +92,7 @@ SampleMethod(5UL);  // Calling the method with the ulong parameter
   
  `ulong` から整数型への暗黙的な変換は行われません。 たとえば、次の代入ステートメントは、明示的なキャストを使用しない場合、コンパイル エラーになります。  
   
-```  
+```csharp  
 long long1 = 8UL;   // Error: no implicit conversion from ulong  
 ```  
   
@@ -99,7 +100,7 @@ long long1 = 8UL;   // Error: no implicit conversion from ulong
   
  浮動小数点型から `ulong` への暗黙の型変換はありません。 たとえば、次のステートメントは、明示的なキャストを使用しない限り、コンパイル エラーになります。  
   
-```  
+```csharp  
 // Error -- no implicit conversion from double:  
 ulong x = 3.0;  
 // OK -- explicit conversion:  

@@ -31,10 +31,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
 ms.openlocfilehash: c6cfc54c2dbd3e14d874d7684fdc75a972260cc3
-ms.lasthandoff: 03/13/2017
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/22/2017
 
 ---
 # <a name="checked-c-compiler-options"></a>/checked (C# コンパイラ オプション)
@@ -42,7 +43,7 @@ ms.lasthandoff: 03/13/2017
   
 ## <a name="syntax"></a>構文  
   
-```  
+```console  
 /checked[+ | -]  
 ```  
   
@@ -59,16 +60,16 @@ ms.lasthandoff: 03/13/2017
   
 2.  **[ビルド]** プロパティ ページをクリックします。  
   
-3.  [詳細設定 **** ] ボタンをクリックします。  
+3.  **[詳細設定]** ボタンをクリックします。  
   
 4.  **[演算のオーバーフローおよびアンダーフローのチェック]** プロパティを変更します。  
   
- このコンパイラ オプションにプログラムでアクセスする方法については、「<xref:VSLangProj80.CSharpProjectConfigurationProperties3.CheckForOverflowUnderflow%2A>」を参照してください。  
+ プログラムによってこのコンパイラ オプションにアクセスする方法については、<xref:VSLangProj80.CSharpProjectConfigurationProperties3.CheckForOverflowUnderflow%2A> に関する記事をご覧ください。  
   
 ## <a name="example"></a>例  
  次のコマンドは `t2.cs` をコンパイルします。 コマンドで使用されている `/checked` は、ファイル内の整数の算術ステートメントのうち、`checked` または `unchecked` キーワードのスコープ内に含まれず、データ型の範囲外の値になるステートメントで、ランタイム例外が発生することを指定します。  
   
-```  
+```console  
 csc t2.cs /checked  
 ```  
   

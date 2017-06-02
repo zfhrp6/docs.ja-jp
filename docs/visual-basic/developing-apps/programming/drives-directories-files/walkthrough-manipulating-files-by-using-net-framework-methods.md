@@ -41,10 +41,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: e8bf73f32dba51455542778ed91ef3bfd2898754
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
+ms.openlocfilehash: a16d2168548dadf9210b653d90ce229d99469b64
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/22/2017
 
 ---
 # <a name="walkthrough-manipulating-files-by-using-net-framework-methods-visual-basic"></a>チュートリアル: .NET Framework のメソッドによるファイル操作 (Visual Basic)
@@ -69,12 +70,12 @@ ms.lasthandoff: 03/13/2017
   
 |**オブジェクト**|**プロパティ**|**値**|  
 |---|---|---|   
-|<xref:System.Windows.Forms.Button>|**名前**<br /><br /> **テキスト**|`Submit`<br /><br /> **エントリの送信**|  
-|<xref:System.Windows.Forms.Button>|**名前**<br /><br /> **テキスト**|`Clear`<br /><br /> **エントリのクリア**|  
-|<xref:System.Windows.Forms.TextBox>|**名前**<br /><br /> **テキスト**<br /><br /> **Multiline**|`Entry`<br /><br /> **テキストを入力してください。**<br /><br /> `False`|  
+|<xref:System.Windows.Forms.Button>|**Name**<br /><br /> **テキスト**|`Submit`<br /><br /> **エントリの送信**|  
+|<xref:System.Windows.Forms.Button>|**Name**<br /><br /> **テキスト**|`Clear`<br /><br /> **エントリのクリア**|  
+|<xref:System.Windows.Forms.TextBox>|**Name**<br /><br /> **テキスト**<br /><br /> **Multiline**|`Entry`<br /><br /> **テキストを入力してください。**<br /><br /> `False`|  
   
 ## <a name="writing-to-the-file"></a>ファイルへの書き込み  
- アプリケーションを通じてファイルに書き込む機能を追加するには、<xref:System.IO.StreamWriter> クラスを使用します。 <xref:System.IO.StreamWriter> は、特定のエンコードでの文字出力用に設計されています。これに対し <xref:System.IO.Stream> クラスは、バイト入出力用に設計されています。 標準のテキスト ファイルに複数行の情報を書き込む場合には、<xref:System.IO.StreamWriter> を使用します。 <xref:System.IO.StreamWriter> クラスについて詳しくは、「<xref:System.IO.StreamWriter>」をご覧ください。  
+ アプリケーションを通じてファイルに書き込む機能を追加するには、<xref:System.IO.StreamWriter> クラスを使用します。 <xref:System.IO.StreamWriter> は、特定のエンコードでの文字出力用に設計されています。これに対し <xref:System.IO.Stream> クラスは、バイト入出力用に設計されています。 標準のテキスト ファイルに複数行の情報を書き込む場合には、<xref:System.IO.StreamWriter> を使用します。 <xref:System.IO.StreamWriter> クラスの詳細については、「<xref:System.IO.StreamWriter>」をご覧ください。  
   
 #### <a name="to-add-writing-functionality"></a>書き込み機能を追加するには  
   
@@ -86,7 +87,7 @@ ms.lasthandoff: 03/13/2017
   
      ファイルへの書き込みを行う前に、<xref:System.IO.StreamWriter> クラスのインスタンスを作成する必要があります。  
   
-3.  **[表示]** メニューの **[デザイナー]** を選択して、**Windows フォーム デザイナー**に戻ります。 `Submit` ボタンをダブルクリックしてボタンの <xref:System.Windows.Forms.Control.Click> イベント ハンドラーを作成し、次のコードを追加します。  
+3.  **[表示]** メニューの **[デザイナー]** を選択して、**Windows フォーム デザイナー**に戻ります。 `Submit` ボタンをダブルクリックして、ボタンの <xref:System.Windows.Forms.Control.Click> イベント ハンドラーを作成し、次のコードを追加します。  
   
      [!code-vb[VbVbcnMyFileSystem#36](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/VisualBasic/walkthrough-manipulating-files-by-using-net-framework-methods_2.vb)]  
   
@@ -105,21 +106,21 @@ ms.lasthandoff: 03/13/2017
   
      [!code-vb[VbVbcnMyFileSystem#39](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/VisualBasic/walkthrough-manipulating-files-by-using-net-framework-methods_5.vb)]  
   
-4.  最後に、<xref:System.Windows.Forms.TextBox> をクリアするためのコードをアタッチします。 `Clear` ボタンの <xref:System.Windows.Forms.Control.Click> イベントに次のコードを追加します。  
+4.  最後に、<xref:System.Windows.Forms.TextBox> をクリアするためのコードを追加します。 `Clear` ボタンの <xref:System.Windows.Forms.Control.Click> イベントに次のコードを追加します。  
   
      [!code-vb[VbVbcnMyFileSystem#40](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/VisualBasic/walkthrough-manipulating-files-by-using-net-framework-methods_6.vb)]  
   
 ## <a name="adding-display-features-to-the-diary"></a>日記に表示機能を追加する  
- このセクションでは、`DisplayEntry`<xref:System.Windows.Forms.TextBox> に最新のエントリを表示する機能を追加します。 さまざまなエントリを表示したり、表示するエントリをユーザーが選択できるようにするための、`DisplayEntry`<xref:System.Windows.Forms.ComboBox> を追加することもできます。 <xref:System.IO.StreamReader> クラスのインスタンスは、`MyDiary.txt` からデータを読み取ります。 <xref:System.IO.StreamWriter> クラスと同様、<xref:System.IO.StreamReader> はテキスト ファイル用です。  
+ このセクションでは、`DisplayEntry`<xref:System.Windows.Forms.TextBox> に最新のエントリを表示する機能を追加します。 <xref:System.Windows.Forms.ComboBox> を追加することも可能で、これでさまざまなエントリを表示したり、`DisplayEntry`<xref:System.Windows.Forms.TextBox> に表示するエントリをユーザーが選択できるようにしたりできます。 <xref:System.IO.StreamReader> クラスのインスタンスは、`MyDiary.txt` からデータを読み取ります。 <xref:System.IO.StreamWriter> クラスと同様、<xref:System.IO.StreamReader> はテキスト ファイル用です。  
   
  チュートリアルのこのセクション用に、次の表にあるコントロールをフォームに追加し、それらのプロパティに対応する値を設定します。  
   
 |コントロール|プロパティ|値|  
 |-------------|----------------|------------|  
-|<xref:System.Windows.Forms.TextBox>|**名前**<br /><br /> **Visible**<br /><br /> **Size**<br /><br /> **Multiline**|`DisplayEntry`<br /><br /> `False`<br /><br /> `120,60`<br /><br /> `True`|  
-|<xref:System.Windows.Forms.Button>|**名前**<br /><br /> **テキスト**|`Display`<br /><br /> **表示**|  
-|<xref:System.Windows.Forms.Button>|**名前**<br /><br /> **テキスト**|`GetEntries`<br /><br /> **エントリの取得**|  
-|<xref:System.Windows.Forms.ComboBox>|**名前**<br /><br /> **テキスト**<br /><br /> **Enabled**|`PickEntries`<br /><br /> **エントリの選択**<br /><br /> `False`|  
+|<xref:System.Windows.Forms.TextBox>|**Name**<br /><br /> **Visible**<br /><br /> **Size**<br /><br /> **Multiline**|`DisplayEntry`<br /><br /> `False`<br /><br /> `120,60`<br /><br /> `True`|  
+|<xref:System.Windows.Forms.Button>|**Name**<br /><br /> **テキスト**|`Display`<br /><br /> **表示**|  
+|<xref:System.Windows.Forms.Button>|**Name**<br /><br /> **テキスト**|`GetEntries`<br /><br /> **エントリの取得**|  
+|<xref:System.Windows.Forms.ComboBox>|**Name**<br /><br /> **テキスト**<br /><br /> **Enabled**|`PickEntries`<br /><br /> **エントリの選択**<br /><br /> `False`|  
   
 #### <a name="to-populate-the-combo-box"></a>コンボ ボックスを設定するには  
   
@@ -135,7 +136,7 @@ ms.lasthandoff: 03/13/2017
   
      [!code-vb[VbVbcnMyFileSystem#42](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/VisualBasic/walkthrough-manipulating-files-by-using-net-framework-methods_8.vb)]  
   
-2.  コードをテストするには、F5 キーを押してアプリケーションをコンパイルし、エントリを送信をクリックします。 **[エントリの取得]** をクリックし、 <xref:System.Windows.Forms.ComboBox> からエントリを選択して、**[表示]** をクリックします。 選択したエントリのコンテンツが、`DisplayEntry`<xref:System.Windows.Forms.TextBox> に表示されます。  
+2.  コードをテストするには、F5 キーを押してアプリケーションをコンパイルし、エントリを送信します。 **[Get Entries] (エントリの取得)** をクリックし、<xref:System.Windows.Forms.ComboBox> からエントリを選択して、**[表示]** をクリックします。 選択したエントリのコンテンツが、`DisplayEntry`<xref:System.Windows.Forms.TextBox> に表示されます。  
   
 ## <a name="enabling-users-to-delete-or-modify-entries"></a>ユーザーがエントリの削除や変更を行えるようにする  
  ユーザーが `DeleteEntry` ボタンと `EditEntry` ボタンを使用してエントリを削除したり変更したりできる機能を追加できます。 どちらのボタンも、エントリが表示されているとき以外は無効になります。  
@@ -144,9 +145,9 @@ ms.lasthandoff: 03/13/2017
   
 |コントロール|プロパティ|値|  
 |-------------|----------------|------------|  
-|<xref:System.Windows.Forms.Button>|**名前**<br /><br /> **テキスト**<br /><br /> **Enabled**|`DeleteEntry`<br /><br /> **エントリの削除**<br /><br /> `False`|  
-|<xref:System.Windows.Forms.Button>|**名前**<br /><br /> **テキスト**<br /><br /> **Enabled**|`EditEntry`<br /><br /> **エントリの編集**<br /><br /> `False`|  
-|<xref:System.Windows.Forms.Button>|**名前**<br /><br /> **テキスト**<br /><br /> **Enabled**|`SubmitEdit`<br /><br /> **編集結果の送信**<br /><br /> `False`|  
+|<xref:System.Windows.Forms.Button>|**Name**<br /><br /> **テキスト**<br /><br /> **Enabled**|`DeleteEntry`<br /><br /> **エントリの削除**<br /><br /> `False`|  
+|<xref:System.Windows.Forms.Button>|**Name**<br /><br /> **テキスト**<br /><br /> **Enabled**|`EditEntry`<br /><br /> **エントリの編集**<br /><br /> `False`|  
+|<xref:System.Windows.Forms.Button>|**Name**<br /><br /> **テキスト**<br /><br /> **Enabled**|`SubmitEdit`<br /><br /> **編集結果の送信**<br /><br /> `False`|  
   
 #### <a name="to-enable-deletion-and-modification-of-entries"></a>エントリの削除と変更を有効にするには  
   
@@ -158,7 +159,7 @@ ms.lasthandoff: 03/13/2017
   
      [!code-vb[VbVbcnMyFileSystem#44](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/VisualBasic/walkthrough-manipulating-files-by-using-net-framework-methods_10.vb)]  
   
-3.  ユーザーがエントリが表示すると、`EditEntry` ボタンが有効になります。 `Display` ボタンの <xref:System.Windows.Forms.Control.Click> イベント (`DisplayEntry.Text = ReadString` の後) に、次のコードを追加します。  
+3.  ユーザーがエントリを表示すると、`EditEntry` ボタンが有効になります。 `Display` ボタンの <xref:System.Windows.Forms.Control.Click> イベント (`DisplayEntry.Text = ReadString` の後) に、次のコードを追加します。  
   
      [!code-vb[VbVbcnMyFileSystem#45](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/VisualBasic/walkthrough-manipulating-files-by-using-net-framework-methods_11.vb)]  
   
@@ -166,11 +167,11 @@ ms.lasthandoff: 03/13/2017
   
      [!code-vb[VbVbcnMyFileSystem#46](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/VisualBasic/walkthrough-manipulating-files-by-using-net-framework-methods_12.vb)]  
   
-5.  `SubmitEdit` ボタンの <xref:System.Windows.Forms.Control.Click> イベント ハンドラーを作成し、次のコードを追加します  
+5.  `SubmitEdit` ボタンの <xref:System.Windows.Forms.Control.Click> イベント ハンドラーを作成し、次のコードを追加します。  
   
      [!code-vb[VbVbcnMyFileSystem#47](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/VisualBasic/walkthrough-manipulating-files-by-using-net-framework-methods_13.vb)]  
   
- コードをテストするには、F5 キーを押してアプリケーションをコンパイルします。 **[エントリの取得]** をクリックし、エントリを選択して、**[表示]** をクリックします。 `DisplayEntry`<xref:System.Windows.Forms.TextBox> にエントリが表示されます。 **[エントリの編集]** をクリックします。 `Entry`<xref:System.Windows.Forms.TextBox> にエントリが表示されます。 `Entry`<xref:System.Windows.Forms.TextBox> でエントリを編集し、**[編集結果の送信]** をクリックします。 `MyDiary.txt` ファイルを開いて修正結果を確認します。 確認したら、エントリを選択し、**[エントリの削除]** をクリックします。 <xref:System.Windows.Forms.MessageBox> で確認を求められたら、**[OK]** をクリックします。 アプリケーションを閉じ、`MyDiary.txt` を開いて削除を確認します。  
+ コードをテストするには、F5 キーを押してアプリケーションをコンパイルします。 **[エントリの取得]** をクリックし、エントリを選択して、**[表示]** をクリックします。 `DisplayEntry`<xref:System.Windows.Forms.TextBox> にエントリが表示されます。 **[エントリの編集]** をクリックします。 `Entry`<xref:System.Windows.Forms.TextBox> にエントリが表示されます。 `Entry`<xref:System.Windows.Forms.TextBox> でエントリを編集し、**[Submit Edit] (編集結果の送信)** をクリックします。 `MyDiary.txt` ファイルを開いて修正結果を確認します。 確認したら、エントリを選択し、**[エントリの削除]** をクリックします。 <xref:System.Windows.Forms.MessageBox> で確認を求められたら、**[OK]** をクリックします。 アプリケーションを閉じ、`MyDiary.txt` を開いて削除を確認します。  
   
 ## <a name="see-also"></a>関連項目  
  <xref:System.IO.StreamReader>   

@@ -16,10 +16,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: fe482e4db15ce621e74bdacf9313a3d31ade51b2
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: a5ed524a1b17f7be8903f998cbd732594faab831
+ms.openlocfilehash: 11a606ef18bc497630c0a417488e533a0880056f
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/15/2017
 
 ---
 # <a name="iterators-c"></a>反復子 (C#)
@@ -102,7 +103,7 @@ public static System.Collections.Generic.IEnumerable<int>
 ```  
   
 ##  <a name="BKMK_CollectionClass"></a> コレクション クラスを作成する  
- 次の例では、`DaysOfTheWeek` クラスで、<xref:System.Collections.IEnumerable.GetEnumerator%2A> を必要とする <xref:System.Collections.IEnumerable> インターフェイスを実装します。 コンパイラは、<xref:System.Collections.IEnumerator> を返す `GetEnumerator` メソッドを暗黙的に呼び出します。  
+ 次の例の `DaysOfTheWeek` クラスは、<xref:System.Collections.IEnumerable.GetEnumerator%2A> メソッドを必要とする <xref:System.Collections.IEnumerable> インターフェイスを実装します。 コンパイラは、<xref:System.Collections.IEnumerator> を返す `GetEnumerator` メソッドを暗黙的に呼び出します。  
   
  `GetEnumerator` メソッドは、`yield return` ステートメントを使用して、各文字列を一度に 1 つ返します。  
   
@@ -231,9 +232,9 @@ public class Zoo : IEnumerable
 ```  
   
 ##  <a name="BKMK_GenericList"></a> ジェネリック リストと共に反復子を使用する  
- 次の例では、`Stack(Of T)` ジェネリック クラスで <xref:System.Collections.Generic.IEnumerable%601> ジェネリック インターフェイスを実装します。 `Push` メソッドでは、`T` 型の配列に値を割り当てます。 <xref:System.Collections.Generic.IEnumerable%601.GetEnumerator%2A> メソッドは、`yield return` ステートメントを使用して配列値を返します。  
+ 次の例の `Stack(Of T)` ジェネリック クラスは、<xref:System.Collections.Generic.IEnumerable%601> ジェネリック インターフェイスを実装しています。 `Push` メソッドでは、`T` 型の配列に値を割り当てます。 <xref:System.Collections.Generic.IEnumerable%601.GetEnumerator%2A> メソッドは、`yield return` ステートメントを使って配列値を返します。  
   
- ジェネリック <xref:System.Collections.Generic.IEnumerable%601.GetEnumerator%2A> メソッドだけでなく、非ジェネリック <xref:System.Collections.IEnumerable.GetEnumerator%2A> メソッドも実装する必要があります。 これは、<xref:System.Collections.Generic.IEnumerable%601> が <xref:System.Collections.IEnumerable> を継承するためです。 非ジェネリック実装は、ジェネリック実装に従います。  
+ ジェネリック メソッド <xref:System.Collections.Generic.IEnumerable%601.GetEnumerator%2A> だけでなく、非ジェネリック メソッド <xref:System.Collections.IEnumerable.GetEnumerator%2A> も実装する必要があります。 これは、<xref:System.Collections.Generic.IEnumerable%601> が <xref:System.Collections.IEnumerable> から継承するためです。 非ジェネリック実装は、ジェネリック実装に従います。  
   
  例では名前付き反復子を使用して、同じデータ コレクションでのさまざまな反復処理をサポートします。 この場合の名前付き反復子は、`TopToBottom` プロパティと `BottomToTop` プロパティ、および `TopN` メソッドです。  
   
@@ -348,7 +349,7 @@ public class Stack<T> : IEnumerable<T>
 ```  
   
 ##  <a name="BKMK_SyntaxInformation"></a> 構文情報  
- 反復子は、メソッドまたは `get` アクセサーとして指定できます。 反復子を、イベント、インスタンス コンストラクター、静的コンストラクター、静的デストラクターで指定することはできません。  
+ 反復子は、メソッドまたは `get` アクセサーとして指定できます。 反復子を、イベント、インスタンス コンストラクター、静的コンストラクター、静的ファイナライザーで指定することはできません。  
   
  `yield return` ステートメント内の式の型から反復子の戻り値の型への暗黙的な変換が存在する必要があります。  
   
@@ -361,11 +362,11 @@ public class Stack<T> : IEnumerable<T>
   
  コンパイラの動作を確認するには、Ildasm.exe ツールを使用して、iterator メソッドに対して生成される Microsoft 中間言語コードを表示します。  
   
- [クラス](../../../csharp/language-reference/keywords/class.md)または[構造体](../../../csharp/language-reference/keywords/struct.md)用の反復子を作成する場合は、<xref:System.Collections.IEnumerator> インターフェイス全体を実装する必要はありません。 コンパイラは、反復子を検出すると、<xref:System.Collections.IEnumerator> または <xref:System.Collections.Generic.IEnumerator%601> インターフェイスの `Current`、`MoveNext`、および `Dispose` メソッドを自動的に生成します。  
+ [クラス](../../../csharp/language-reference/keywords/class.md)または[構造体](../../../csharp/language-reference/keywords/struct.md)用の反復子を作成する場合、<xref:System.Collections.IEnumerator> インターフェイス全体を実装する必要はありません。 コンパイラは、反復子を検出すると、<xref:System.Collections.IEnumerator> または <xref:System.Collections.Generic.IEnumerator%601> インターフェイスの `Current`、`MoveNext`、および `Dispose` メソッドを自動的に生成します。  
   
  `foreach` ループの連続する反復ごとに (または `IEnumerator.MoveNext` を直接呼び出すと)、前の `yield return` ステートメントの後で次の反復子コード本体が再開されます。 その後、反復子本体の最後に到達するか、`yield break` ステートメントが検出されるまで、次の `yield return` ステートメントに続行されます。  
   
- 反復子では <xref:System.Collections.IEnumerator.Reset%2A?displayProperty=fullName> メソッドはサポートされません。 反復処理を最初から再度行う場合は、新しい反復子を取得する必要があります。  
+ 反復子は、<xref:System.Collections.IEnumerator.Reset%2A?displayProperty=fullName> メソッドをサポートしません。 反復処理を最初から再度行う場合は、新しい反復子を取得する必要があります。  
   
  詳細については、「[C# 言語の仕様](../../../csharp/language-reference/language-specification.md)」を参照してください。  
   

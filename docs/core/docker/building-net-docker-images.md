@@ -10,10 +10,11 @@ ms.prod: .net-core
 ms.technology: dotnet-docker
 ms.devlang: dotnet
 ms.assetid: 03c28597-7e73-46d6-a9c3-f9cb55642739
-translationtype: Human Translation
-ms.sourcegitcommit: 90fe68f7f3c4b46502b5d3770b1a2d57c6af748a
-ms.openlocfilehash: 038a67e3e7c3c9c120d76faa82cfc046233ab5df
-ms.lasthandoff: 03/02/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 890c058bd09893c2adb185e1d8107246eef2e20a
+ms.openlocfilehash: 007d96cf7d174e7849a2b9c8439cfac893c7aa5c
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/12/2017
 
 ---
  
@@ -24,7 +25,7 @@ ms.lasthandoff: 03/02/2017
 
 ## <a name="docker-image-optimizations"></a>Docker イメージの最適化
 
-開発者向けの Docker イメージをビルドするにあたり、次の主な&3; つのシナリオに重点を置きました。
+開発者向けの Docker イメージをビルドするにあたり、次の主な 3 つのシナリオに重点を置きました。
 
 - .NET Core アプリの開発に使用されるイメージ
 - .NET Core アプリのビルドに使用されるイメージ
@@ -36,7 +37,7 @@ ms.lasthandoff: 03/02/2017
 - **ビルド:** アプリのコンパイルに必要なもの。 これには、コンパイラと、バイナリを最適化するためのその他の依存関係が含まれます。 このイメージは配置するのではなく、実稼働イメージに配置するコンテンツをビルドする場合に使用します。 このイメージは継続的インテグレーション、またはビルド環境で使用されます。 たとえば、ビルド エージェントに直接すべての依存関係をインストールするのではなく、ビルド エージェントがビルド イメージをインスタンス化し、イメージ内に含まれるアプリのビルドに必要なすべての依存関係と共にアプリケーションをコンパイルします。 この Docker イメージの実行方法を理解する必要があるのはビルド エージェントのみです。 
 - **実稼働:** イメージをどれだけ速く配置し、開始できるか。 このイメージは小さいため、Docker レジストリから Docker ホストにネットワーク経由ですばやく移動できます。 コンテンツは実行できる状態であるため、Docker の実行から結果の処理までを最速で行うことができます。 変更できない Docker モデルの場合は、コードを動的にコンパイルする必要はありません。 このイメージに配置するコンテンツは、アプリケーションの実行に必要なバイナリとコンテンツに制限されます。 たとえば、`dotnet publish` を使用して発行された出力には、コンパイル済みのバイナリ、イメージ、.js および .css ファイルが含まれます。 時間の経過と共に、事前に Just-In-Time (JIT) にコンパイルされたパッケージを含むイメージが表示されます。  
 
-複数のバージョンの .NET Core イメージがありますが、すべて&1; つ以上のレイヤーを共有します。 格納に必要なディスク容量やレジストリからプルするデルタは、全体よりはるかに少なくなります。これは、すべてのイメージが同じ基本レイヤーとおそらく他のレイヤーを共有しているためです。  
+複数のバージョンの .NET Core イメージがありますが、すべて 1 つ以上のレイヤーを共有します。 格納に必要なディスク容量やレジストリからプルするデルタは、全体よりはるかに少なくなります。これは、すべてのイメージが同じ基本レイヤーとおそらく他のレイヤーを共有しているためです。  
 
 ## <a name="docker-image-variations"></a>Docker イメージのバリエーション
 
@@ -97,7 +98,7 @@ npm install -g yo generator-aspnet generator-docker
 
 参照ポイントとして、アプリケーションをコンテナー化する前に、まず、アプリケーションをローカルで実行します。 
 
-完成したアプリケーションは [GitHub の dotnet/core-docs リポジトリ](https://github.com/dotnet/docs/tree/master/samples/core/docker/building-net-docker-images)にあります。
+完成したアプリケーションは [GitHub の dotnet/docs リポジトリ](https://github.com/dotnet/docs/tree/master/samples/core/docker/building-net-docker-images)にあります。 ダウンロード方法については、「[サンプルおよびチュートリアル](../../samples-and-tutorials/index.md#viewing-and-downloading-samples)」を参照してください。
 
 アプリケーションのディレクトリを作成します。
 
@@ -145,7 +146,6 @@ $ yo docker
 ❯ .NET Core
   Golang
   Node.js
-
 ```
 
 - プロジェクトの種類として `.NET Core` を選択します。
@@ -168,7 +168,7 @@ $ yo docker
 - dockerTask.sh
 - .vscode/tasks.json
 
-ジェネレーターは&2; つの Dockerfile を作成します。
+ジェネレーターは 2 つの Dockerfile を作成します。
 
 **Dockerfile.debug** - このファイルは **microsoft/dotnet:1.0.0-preview2-sdk** イメージに基づいています。イメージ バリアント リストのイメージの場合は、SDK、CLI および .NET Core が含まれ、開発やデバッグ (F5) 用に使用されます。 これらすべてのコンポーネントを含めると、サイズが約 540 MB の大きなイメージが生成されます。
 

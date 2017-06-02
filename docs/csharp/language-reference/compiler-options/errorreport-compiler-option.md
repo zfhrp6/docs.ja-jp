@@ -31,10 +31,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
 ms.openlocfilehash: 34e7e3b8c6a9f645ec1b359095c2d289afd1370a
-ms.lasthandoff: 03/13/2017
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/22/2017
 
 ---
 # <a name="errorreport-c-compiler-options"></a>/errorreport (C# コンパイラ オプション)
@@ -45,7 +46,7 @@ ms.lasthandoff: 03/13/2017
   
 ## <a name="syntax"></a>構文  
   
-```  
+```console  
 /errorreport:{ none | prompt | queue | send }  
 ```  
   
@@ -79,7 +80,7 @@ ms.lasthandoff: 03/13/2017
   
 2.  **[ビルド]** プロパティ ページをクリックします。  
   
-3.  [詳細設定 **** ] ボタンをクリックします。  
+3.  **[詳細設定]** ボタンをクリックします。  
   
 4.  **[内部コンパイル エラー報告]** プロパティを変更します。  
   

@@ -1,4 +1,4 @@
-# [アセンブリとグローバル アセンブリ キャッシュ (Visual Basic)](index.md)
+# [アセンブリと GAC](index.md)
 ## [フレンド アセンブリ](friend-assemblies.md)
 ### [方法 : 署名のないフレンド アセンブリを作成する](how-to-create-unsigned-friend-assemblies.md)
 ### [方法: 署名されたフレンド アセンブリを作成する](how-to-create-signed-friend-assemblies.md)

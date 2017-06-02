@@ -10,10 +10,11 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 9aa627c3-3222-4094-9ca8-7e88e1071e06
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: d750209f2d970044aac2f3b8b119412a58595171
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 0184e07012ffe1a1300dc5af7e99e0d5a3517d6b
+ms.openlocfilehash: 8fc483fb52babd27f897958b17c0303710c6cce4
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/02/2017
 
 ---
 
@@ -24,7 +25,7 @@ ms.lasthandoff: 03/13/2017
 前回の記事では、最も一般的なイベント パターンについて説明しました。 .NET Core には、もっと柔軟なパターンがあります。 このバージョンでは、`EventHandler<TEventArgs>` 定義に、`TEventArgs` は `System.EventArgs` から派生したクラスでなければならないという制約がなくなりました。
 
 これにより、柔軟性が向上し、旧バージョンとの互換性が与えられます。 柔軟性から始めましょう。 クラス System.EventArgs で `MemberwiseClone()` というメソッドが導入されました。これはオブジェクトの簡易コピーを作成するメソッドです。
-そのメソッドでは、`EventArgs` から派生したあらゆるクラスのための機能を実装する目的で、[リフレクション](reflection.md)を利用する必要があります。 その機能では、特定の派生クラスでの作成が簡単になります。 つまり、System.EventArgs からの派生は設計を制限する制約ですが、他に利点はありません。
+そのメソッドでは、`EventArgs` から派生したあらゆるクラスのための機能を実装する目的で、リフレクションを利用する必要があります。 その機能では、特定の派生クラスでの作成が簡単になります。 つまり、System.EventArgs からの派生は設計を制限する制約ですが、他に利点はありません。
 実際、`EventArgs` から派生しないように `FileFoundArgs` と `SearchDirectoryArgs` の定義を変更できます。
 このプログラムはまったく同じように機能します。
 

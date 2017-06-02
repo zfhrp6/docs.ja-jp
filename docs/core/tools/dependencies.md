@@ -10,10 +10,11 @@ ms.prod: .net-core
 ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: 74b87cdb-a244-4c13-908c-539118bfeef9
-translationtype: Human Translation
-ms.sourcegitcommit: 195664ae6409be02ca132900d9c513a7b412acd4
-ms.openlocfilehash: f3eaf007593336234c6eff20127e9d02d2d5c9fa
-ms.lasthandoff: 03/07/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 25847dd6921e547074f4501d34d865dfb1b98b59
+ms.openlocfilehash: de496d96120df1ec275bb4a69f01b6266b0b5a89
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/17/2017
 
 ---
 
@@ -23,7 +24,7 @@ ms.lasthandoff: 03/07/2017
 
 ここでは、新しい参照型について説明します。 また、この新しい参照型を使ってプロジェクトにパッケージの依存関係を追加する方法も示します。 
 
-## <a name="the-new-packagereference-element"></a>新しい <PackageReference> 要素
+## <a name="the-new-packagereference-element"></a>新しい \<PackageReference> 要素
 `<PackageReference>` の基本的な構造は次のとおりです。
 
 ```xml
@@ -46,7 +47,7 @@ MSBuild に詳しい場合は、既に存在する他の参照型と似ている
 ## <a name="adding-a-dependency-to-your-project"></a>プロジェクトへの依存関係の追加
 簡単に依存関係をプロジェクトに追加できます。 ここでは、Json.NET バージョン `9.0.1` をプロジェクトに追加する方法の例を示します。 もちろん、NuGet の他の依存関係にも適用できます。 
 
-プロジェクト ファイルを開くと、2 つ以上の `<ItemGroup>` ノードがあります。 ノードの&1; つには `<PackageReference>` 要素が既にあります。 このノードに新しい依存関係を追加することも、新しいノードを追加することもできます。結果は同じなので開発者次第です。 
+プロジェクト ファイルを開くと、2 つ以上の `<ItemGroup>` ノードがあります。 ノードの 1 つには `<PackageReference>` 要素が既にあります。 このノードに新しい依存関係を追加することも、新しいノードを追加することもできます。結果は同じなので開発者次第です。 
 
 この例では、`dotnet new console` によって削除される既定のテンプレートを使います。 これは、簡単なコンソール アプリケーションです。 プロジェクトを開き、最初に `<PackageReference>` が既に存在する `<ItemGroup>` を探します。 次に、以下のコードをそれに追加します。
 
@@ -72,3 +73,4 @@ MSBuild に詳しい場合は、既に存在する他の参照型と似ている
 
 ## <a name="removing-a-dependency-from-the-project"></a>プロジェクトからの依存関係の削除
 プロジェクト ファイルから依存関係を削除するには、プロジェクト ファイルから `<PackageReference>` を削除するだけです。
+

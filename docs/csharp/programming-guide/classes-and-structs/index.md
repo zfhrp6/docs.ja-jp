@@ -34,10 +34,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 6023f09a9a355c9ab00252f9e2ac6cc45abf42ce
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: a5ed524a1b17f7be8903f998cbd732594faab831
+ms.openlocfilehash: d855989586fdee8b98bd994125ebb5c59776040a
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/15/2017
 
 ---
 # <a name="classes-and-structs-c-programming-guide"></a>クラスと構造体 (C# プログラミング ガイド)
@@ -76,9 +77,9 @@ ms.lasthandoff: 03/13/2017
   
 -   [コンストラクター](../../../csharp/programming-guide/classes-and-structs/constructors.md)  
   
--   [デストラクター](../../../csharp/programming-guide/classes-and-structs/destructors.md)  
-  
 -   [イベント](../../../csharp/programming-guide/events/index.md)  
+  
+-   [ファイナライザー](../../../csharp/programming-guide/classes-and-structs/destructors.md)  
   
 -   [インデクサー](../../../csharp/programming-guide/indexers/index.md)  
   
@@ -90,7 +91,7 @@ ms.lasthandoff: 03/13/2017
  メソッドやプロパティの中には、クラスまたは構造体の外部にあるコード ("*クライアント コード*" と呼ばれます) から呼び出されたりアクセスされたりするように用意されているものがあります。 その他のメソッドやプロパティは、クラスまたは構造体それ自体でのみ使用されるようになっています。 意図したクライアント コードだけがアクセスできるように、コードのアクセシビリティを制限することが重要です。 型やメンバーがクライアント コードにアクセスする方法を指定するには、アクセス修飾子 [public](../../../csharp/language-reference/keywords/public.md)、[protected](../../../csharp/language-reference/keywords/protected.md)、[internal](../../../csharp/language-reference/keywords/internal.md)、`protected internal`、および [private](../../../csharp/language-reference/keywords/private.md) を使用します。 既定のアクセシビリティは `private` です。 詳細については、「[アクセス修飾子](../../../csharp/programming-guide/classes-and-structs/access-modifiers.md)」を参照してください。  
   
 ### <a name="inheritance"></a>継承  
- クラスでは、継承の概念がサポートされます (構造体ではサポートされません)。 他のクラス ("*基底クラス*") から派生するクラスには、コンストラクターとデストラクターを除く基底クラスのすべてのパブリック メンバー、プロテクト メンバー、および内部メンバーが自動的に含まれます。 詳細については、「[継承](../../../csharp/programming-guide/classes-and-structs/inheritance.md)」および「[ポリモーフィズム](../../../csharp/programming-guide/classes-and-structs/polymorphism.md)」を参照してください。  
+ クラスでは、継承の概念がサポートされます (構造体ではサポートされません)。 他のクラス (*基底クラス*) から派生するクラスには、コンストラクターとファイナライザーを除く基底クラスのすべてのパブリック メンバー、プロテクト メンバー、および内部メンバーが自動的に含まれます。 詳細については、「[継承](../../../csharp/programming-guide/classes-and-structs/inheritance.md)」および「[ポリモーフィズム](../../../csharp/programming-guide/classes-and-structs/polymorphism.md)」を参照してください。  
   
  クラスは、[abstract](../../../csharp/language-reference/keywords/abstract.md) として宣言することもできます。このようなクラスは、1 つ以上のメソッドの実装を持っていないことを意味します。 抽象クラスを直接インスタンス化することはできませんが、他のクラスの基底クラスとして抽象クラスを使用し、不足している実装を提供することができます。 また、クラスを [sealed](../../../csharp/language-reference/keywords/sealed.md) として宣言して、他のクラスがそのクラスを継承しないようにすることもできます。 詳細については、「[抽象クラスとシール クラス、およびクラス メンバー](../../../csharp/programming-guide/classes-and-structs/abstract-and-sealed-classes-and-class-members.md)」を参照してください。  
   
@@ -98,7 +99,7 @@ ms.lasthandoff: 03/13/2017
  クラスと構造体は、複数のインターフェイスを継承できます。 インターフェイスの継承は、そのインターフェイスで定義されたすべてのメソッドを型が実装することを意味します。 詳細については、「[インターフェイス](../../../csharp/programming-guide/interfaces/index.md)」を参照してください。  
   
 ### <a name="generic-types"></a>ジェネリック型  
- クラスと構造体は、1 つ以上の型パラメーターを指定して定義できます。 クライアント コードでは、型のインスタンスの作成時に型を指定します。 たとえば、<xref:System.Collections.Generic> 名前空間の <xref:System.Collections.Generic.List%601> クラスは 1 つの型パラメーターを指定して定義されています。 クライアント コードでは、`List<string>` または `List<int>` のインスタンスを作成して、リストに保持する型を指定します。 詳細については、「[ジェネリック](../../../csharp/programming-guide/generics/index.md)」を参照してください。  
+ クラスと構造体は、1 つ以上の型パラメーターを指定して定義できます。 クライアント コードでは、型のインスタンスの作成時に型を指定します。 たとえば、<xref:System.Collections.Generic.List%601> 名前空間の <xref:System.Collections.Generic> クラスは、1 つの型パラメーターを指定して定義されています。 クライアント コードでは、`List<string>` または `List<int>` のインスタンスを作成して、リストに保持する型を指定します。 詳細については、「[ジェネリック](../../../csharp/programming-guide/generics/index.md)」を参照してください。  
   
 ### <a name="static-types"></a>静的な型  
  クラス (構造体ではありません) は、[static](../../../csharp/language-reference/keywords/static.md) として宣言できます。 静的クラスには含めることができるのは静的メンバーだけであり、静的クラスを new キーワードでインスタンス化することはできません。 プログラムが読み込まれると、クラスの 1 つのコピーがメモリに読み込まれます。そのメンバーには、クラス名を使用してアクセスします。 クラスと構造体は、いずれも静的メンバーを含むことができます。 詳細については、「[静的クラスと静的クラス メンバー](../../../csharp/programming-guide/classes-and-structs/static-classes-and-static-class-members.md)」を参照してください。  
@@ -122,7 +123,7 @@ ms.lasthandoff: 03/13/2017
  クラス メソッドや構造体メソッド内では、暗黙の型指定を使用して、コンパイル時に適切な型を判断するようにコンパイラに指示できます。 詳細については、「[暗黙的に型指定されるローカル変数](../../../csharp/programming-guide/classes-and-structs/implicitly-typed-local-variables.md)」を参照してください。  
   
 ## <a name="c-language-specification"></a>C# 言語仕様  
- [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec_md.md)]  
+ [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
 ## <a name="see-also"></a>関連項目  
  [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)

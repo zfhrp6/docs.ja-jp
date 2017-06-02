@@ -1,62 +1,67 @@
 ---
 title: ".NET にようこそ"
-description: "作業の開始"
-keywords: .NET
+description: ".NET ファミリのテクノロジの概要です。"
+keywords: ".NET, .NET Core, はじめに, ニュース"
 author: richlander
-manager: wpickett
-ms.date: 10/12/2016
+ms.author: mairaw
+ms.date: 05/11/2017
 ms.topic: article
 ms.prod: .net
-ms.technology: .net-technologies
 ms.devlang: dotnet
 ms.assetid: cb788dcf-2120-467f-9c34-c02a90e1f68f
-translationtype: Human Translation
-ms.sourcegitcommit: 15c55a87beb64f265a164db918c7721c7690fadf
-ms.openlocfilehash: dac380e7c493abc733c136f022d3634b807d8836
+ms.translationtype: Human Translation
+ms.sourcegitcommit: ae036cfcad341ffc859336a7ab2a49feec145715
+ms.openlocfilehash: 315b24896797badd0a7540477f79f3f220e5c300
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/18/2017
 
 ---
 
 # <a name="welcome-to-net"></a>.NET にようこそ
 
-> 「[Getting Started with .NET Core](core/getting-started.md)」 (.NET Core の概要) では、単純な .NET Core アプリケーションを作成する方法を学習できます。 最初のアプリを、ほんの数分で起動および実行できます。
+.NET Core アプリの作成方法については、「[Getting Started with .NET Core (.NET Core の概要)](core/get-started.md)」をご覧ください。
 
-.NET にようこそ! .NET では、クラウドから IoT からゲームまでの、あらゆる種類のアプリケーションを構築することができます。 Windows、Linux、Android、macOS、および iOS 用の次のアプリケーションの構築を、今日から開始することができます。 .NET を使用して、ミッション クリティカルなアプリケーション、個人用のアプリおよび体感型ゲームを動作させている開発者は多数います。 次のものを記述できます。
-
-Windows、macOS、および Linux のアプリとゲームを開発できます。 アプリやゲームを構築してサーバーやデスクトップに展開したり、それらをアプリ ストアに公開したりできる、無料のツールがあります。 それらには学生がアクセスでき、また世界中の大企業で使用されています。
+.NET では、クラウド、IoT、ゲームなどのさまざまな種類のアプリを、無料のクロスプラットフォーム ツールを使用して構築できます。 アプリは、Android、iOS、Linux、macOS、Windows で実行できます。 サーバーまたはデスクトップにアプリを展開し、モバイル デバイスへの展開用としてアプリ ストアに発行します。 .NET は学生やプログラミング愛好者も利用することができ、海外の活気ある開発コミュニティに参加したり、多くの .NET テクノロジに貢献したりできます。
 
 ## <a name="news"></a>ニュース
 
-.NET コミュニティには、常に学習したり探求したりすべき新しいことがあります。 確認していただきたい最新のニュースを次に示します。
-
 - [.NET Standard の概要](https://blogs.msdn.microsoft.com/dotnet/2016/09/26/introducing-net-standard/)
-- [.NET Core 1.0.1 に関するお知らせ](https://blogs.msdn.microsoft.com/dotnet/2016/09/13/announcing-september-2016-updates-for-net-core-1-0/)
-- [.NET Framework 4.6.2 の発表](https://blogs.msdn.microsoft.com/dotnet/2016/08/02/announcing-net-framework-4-6-2/)
-- [.NET Core 1.0 の発表](https://blogs.msdn.microsoft.com/dotnet/announcing-net-core-1-0)
-- [ASP.NET Core 1.0 の発表](https://blogs.msdn.microsoft.com/webdev/2016/06/27/announcing-asp-net-core-1-0/)
+- [.NET Core 2.0 Preview 1 の発表](https://blogs.msdn.microsoft.com/dotnet/2017/05/10/announcing-net-core-2-0-preview-1/)
+- [ASP.NET Core 2.0 Preview 1 と .NET Web 開発者向けの更新プログラムの発表](https://blogs.msdn.microsoft.com/webdev/2017/05/10/aspnet-2-preview-1/)
+- [Visual Studio 2017 と次のプレビューの新しい更新プログラム](https://blogs.msdn.microsoft.com/visualstudio/2017/05/10/update-to-visual-studio-2017-and-next-preview/)
+- [Visual Studio for Mac: 一般公開されました](https://blogs.msdn.microsoft.com/visualstudio/2017/05/10/visual-studio-for-mac-now-generally-available/)
+- [.NET Core Tools 1.0 (.NET Core 1.0.4、.NET Core 1.1.1、.NET Core SDK 1.0.1) の発表](https://blogs.msdn.microsoft.com/dotnet/2017/03/07/announcing-net-core-tools-1-0/)
+- [Visual Studio 2017 の一般提供開始の発表](https://blogs.msdn.microsoft.com/visualstudio/2017/03/07/announcing-visual-studio-2017-general-availability-and-more/)
+- [.NET Core と Visual Studio 2017 の新機能 (ビデオ)](https://channel9.msdn.com/events/Visual-Studio/Visual-Studio-2017-Launch/T108)
+- [.NET Framework 4.7 の発表](https://blogs.msdn.microsoft.com/dotnet/2017/04/05/announcing-the-net-framework-4-7/)
+- [C# 7.0 の新機能](https://blogs.msdn.microsoft.com/dotnet/2017/03/09/new-features-in-c-7-0/)
+- [F# 4.1 と Visual F# Tools for Visual Studio 2017 の発表](https://blogs.msdn.microsoft.com/dotnet/2017/03/07/announcing-f-4-1-and-the-visual-f-tools-for-visual-studio-2017-2/)
 - [オープン ソース Xamarin の準備完了](https://blog.xamarin.com/live-from-evolve-open-source-xamarin-ready-for-you/)
 - [今週の .NET](https://blogs.msdn.microsoft.com/dotnet/tag/week-in-net/)
-- [dotnetConf 2016 をご視聴いただきありがとうございました](https://blogs.msdn.microsoft.com/dotnet/2016/06/09/thank-you-for-watching-dotnetconf-2016/)
+- [Channel 9 で Build 2017 を視聴 - Microsoft の最新のテクノロジとニュースのビデオ](https://channel9.msdn.com/?wt.mc_id=build_hp#programGuide)
 
 ## <a name="documentation"></a>ドキュメント
 
-このドキュメントでは、アプリケーションを 1 から作成する方法、または既に作成開始しているアプリケーションを完了させる方法について説明します。 確認すべき重要なセクションを次に示します。
+このドキュメントでは、.NET 全体のプラットフォームおよび言語について説明します。  次のいずれかのセクションから .NET とその言語の作業を開始できます。
 
+- [.NET プラットフォーム ガイド](standard/index.md)
+- [.NET Core のガイド](core/index.md)
+- [.NET Framework ガイド](framework/index.md)
 - [C# のガイド](csharp/index.md)
 - [F# のガイド](fsharp/index.md)
-- [.NET Core API](../api/index.md)
-- [.NET Core のガイド](core/index.md)
-- [.NET Standard のガイド](standard/index.md)
+- [Visual Basic のガイド](visual-basic/index.md)
 
-## <a name="open-source"></a>オープン ソース
+また、「[.NET API リファレンス](https://docs.microsoft.com/dotnet/api)」を参照することもできます。
 
-.NET の多くの部分は、オープン ソースの共同作成者によって構築されています。 あなたもこの [.NET Documentation](https://github.com/dotnet/core-docs) (.NET ドキュメント) に貢献できます。 また、[.NET Core](https://github.com/dotnet/core) や [Xamarin](http://open.xamarin.com) などの .NET 製品のソースを読んだり、共同作成したりすることができます。 Microsoft の主要なプロジェクトは、[.NET Foundation](http://dotnetfoundation.org) に提供されています。
+## <a name="open-source"></a>ソースを開く
 
-## <a name="community"></a>コミュニティ
+このドキュメントは、完全な[オープン ソース](https://github.com/dotnet/docs)です。  問題の作成からドキュメントの作成まで、好みに応じて投稿することができます。  さらに、.NET 自体のほとんどがオープン ソースです。
 
-.NET コミュニティへようこそ。 [.NET のコミュニティ](https://www.microsoft.com/net/community)で既に活動している人たちに加わり、新しい情報を得たり、支援を求めたりすることができます。
+- [.NET Core ホーム](https://github.com/dotnet/core)
+- [.NET ライブラリ](https://github.com/dotnet/corefx)
+- [.NET Core ランタイム](https://github.com/dotnet/coreclr)
+- [Roslyn (C# および Visual Basic) コンパイラ プラットフォームと IDE ツール](https://github.com/dotnet/roslyn)
+- [F# コンパイラと IDE ツール](https://github.com/microsoft/visualfsharp)
 
-
-
-<!--HONumber=Nov16_HO1-->
-
+[.NET のコミュニティ](https://www.microsoft.com/net/community)で既に活動している人たちに加わり、新しい情報を得たり、支援を求めることができます。
 

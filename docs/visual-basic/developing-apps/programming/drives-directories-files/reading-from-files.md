@@ -34,10 +34,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: a21629921a04f26aa8cb6d18acdf923888d32ef9
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
+ms.openlocfilehash: 6e2dbabb7ad2141840fbfaed054494e5604e24c3
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/22/2017
 
 ---
 # <a name="reading-from-files-in-visual-basic"></a>Visual Basic でのファイルの読み取り
@@ -60,7 +61,7 @@ ms.lasthandoff: 03/13/2017
  バイナリ ファイルから読み取る方法について説明します。  
   
  [方法: StreamReader を使用してファイルからテキストを読み取る](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-read-text-from-files-with-a-streamreader.md)  
- <xref:System.IO.StreamReader> を使用したファイルから読み取る方法について説明します。  
+ <xref:System.IO.StreamReader> を使用してファイルを読み取る方法について説明します。  
   
 ## <a name="reference"></a>参照  
  <xref:Microsoft.VisualBasic.FileIO.FileSystem>  

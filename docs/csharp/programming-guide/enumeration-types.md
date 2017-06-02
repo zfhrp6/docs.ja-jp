@@ -30,10 +30,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 8c23c17967474af0f91c0dda6d071073234736c6
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 7e33ed084c560470a486ebbb25035a59ddc18565
+ms.openlocfilehash: 2014047f17f766023ba4db4981aad6e6d4902381
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/22/2017
 
 ---
 # <a name="enumeration-types-c-programming-guide"></a>列挙型 (C# プログラミング ガイド)
@@ -95,20 +96,17 @@ Console.WriteLine("{0} is month number #{1}.", thisMonth, monthNumber);
   
  [!code-cs[csProgGuideEnums#7](../../csharp/programming-guide/codesnippet/CSharp/enumeration-types_6.cs)]  
   
- <xref:System.FlagsAttribute?displayProperty=fullName> 属性で列挙型を定義するときに考慮する項目に関する詳細については、「<xref:System.Enum?displayProperty=fullName>」を参照してください。  
+ <xref:System.FlagsAttribute?displayProperty=fullName> 属性を使用して列挙型を定義する際の検討事項の詳細については、<xref:System.Enum?displayProperty=fullName> に関する記事を参照してください。  
   
 ## <a name="using-the-systemenum-methods-to-discover-and-manipulate-enum-values"></a>System.Enum メソッドを利用して列挙値を検出し、操作する  
- すべての列挙は、<xref:System.Enum?displayProperty=fullName> 型のインスタンスです。 <xref:System.Enum?displayProperty=fullName> から新しいクラスを派生させることはできませんが、そのメソッドを利用し、列挙インスタンスの値に関する情報を検出し、操作できます。  
+ 列挙はすべて、<xref:System.Enum?displayProperty=fullName> 型のインスタンスです。 <xref:System.Enum?displayProperty=fullName> から新しいクラスを派生させることはできませんが、このメソッドを利用して列挙インスタンスの値に関する情報を検出し、操作できます。  
   
  [!code-cs[csProgGuideEnums#5](../../csharp/programming-guide/codesnippet/CSharp/enumeration-types_7.cs)]  
   
  詳細については、「<xref:System.Enum?displayProperty=fullName>」を参照してください。  
   
  拡張メソッドを利用して列挙に新しいメソッドを作成することもできます。 詳細については、「[方法 : 列挙型対応の新しいメソッドを作成する](../../csharp/programming-guide/classes-and-structs/how-to-create-a-new-method-for-an-enumeration.md)」を参照してください。  
-  
-## <a name="featured-book-chapter"></a>参考書籍の該当する章  
- 『[Beginning Visual C# 2010](http://go.microsoft.com/fwlink/?LinkId=221214)』 (Visual C# 2010 の開始) の「[More About Variables](http://go.microsoft.com/fwlink/?LinkId=221230)」 (変数の詳細)  
-  
+
 ## <a name="see-also"></a>関連項目  
  <xref:System.Enum?displayProperty=fullName>   
  [C# プログラミング ガイド](../../csharp/programming-guide/index.md)   

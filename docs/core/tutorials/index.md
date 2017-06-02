@@ -1,5 +1,5 @@
 ---
-title: ".NET Core チュートリアル"
+title: ".NET Core チュートリアル | Microsoft Docs"
 description: ".NET Core チュートリアル"
 keywords: .NET, .NET Core
 author: richlander
@@ -9,10 +9,11 @@ ms.topic: article
 ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: f6f654b1-1d2c-4105-8376-7c1959e23803
-translationtype: Human Translation
-ms.sourcegitcommit: ff143583ba62fc1d82561e739a75107e50ebee88
-ms.openlocfilehash: 3f8c62a6a3b179e146874761465ad2665c20a6dd
-ms.lasthandoff: 04/11/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 4437ce5d344cf06d30e31911def6287999fc6ffc
+ms.openlocfilehash: 86320023259bae3bd262a146681f24a6c6d3f7ea
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/23/2017
 
 ---
 
@@ -23,11 +24,11 @@ ms.lasthandoff: 04/11/2017
 ## <a name="building-applications-with-visual-studio-2017"></a>Visual Studio 2017 でのアプリケーションのビルド
 
 - [C# Hello World アプリケーションのビルド](../../csharp/getting-started/with-visual-studio.md)
-- [C# Hello World アプリケーションのデバッグ](../../csharp/getting-started/debugging-with-visual-studio-2017.md)
-- [C# Hello World アプリケーションの発行](../../csharp/getting-started/publishing-with-visual-studio-2017.md)
-- [C# クラス ライブラリのビルド](../../csharp/getting-started/library-with-visual-studio-2017.md)
+- [C# Hello World アプリケーションのデバッグ](../../csharp/getting-started/debugging-with-visual-studio.md)
+- [C# Hello World アプリケーションの発行](../../csharp/getting-started/publishing-with-visual-studio.md)
+- [C# クラス ライブラリのビルド](../../csharp/getting-started/library-with-visual-studio.md)
 - [C# クラス ライブラリのテスト](../../csharp/getting-started/testing-library-with-visual-studio.md)
-- [C# クラス ライブラリと .NET Core の使用](../../csharp/getting-started/consuming-library-with-visual-studio-2017.md)
+- [C# クラス ライブラリと .NET Core の使用](../../csharp/getting-started/consuming-library-with-visual-studio.md)
 - [Windows 上の完全な C# .NET Core ソリューションのビルド](using-on-windows-full-solution.md)
 - [NoSQL チュートリアル: .NET Core での DocumentDB C# コンソール アプリケーションの作成](https://docs.microsoft.com/azure/documentdb/documentdb-dotnetcore-get-started)
 

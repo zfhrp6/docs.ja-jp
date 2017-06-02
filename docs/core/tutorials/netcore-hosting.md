@@ -9,10 +9,11 @@ ms.topic: article
 ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: 13edec8b-614d-47ed-9e95-ed6d3b94ec0c
-translationtype: Human Translation
-ms.sourcegitcommit: 9d770d008ff1223499de36b2b7b731d8ff6f0f2b
-ms.openlocfilehash: 7618af5bed33d2e1801b1a9c1351a1d09d49b86e
-ms.lasthandoff: 03/08/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: d866cf8eab2b8db936d813ccae7882f8d7db5720
+ms.openlocfilehash: cf420d4379afbdb3c6db048c7817a4c143c124d9
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/26/2017
 
 ---
 
@@ -22,19 +23,19 @@ ms.lasthandoff: 03/08/2017
 
 .NET Core ランタイムのホスティングは高度なシナリオです。ほとんどの場合、.NET Core 開発者はホスティングについて心配する必要がありません。.NET Core ビルド プロセスが .NET Core アプリケーションを実行するための既定ホストを提供するためです。 ただし、特別な状況で、ネイティブ プロセスのマネージ コードを呼び出す手段として、あるいはランタイムの動作をさらに細かくコントロールする目的で .NET Core ランタイムを明示的にホスティングすると効果的な場合があります。
 
-この記事では、ネイティブ コードから .NET Core ランタイムを開始し、最初のアプリケーション ドメイン (@System.AppDomain) を作成し、その中でマネージ コードを実行するために必要な手順について説明します。
+この記事では、ネイティブ コードから .NET Core ランタイムを開始し、最初のアプリケーション ドメイン (<xref:System.AppDomain>) を作成し、その中でマネージ コードを実行するために必要な手順について説明します。
 
-## <a name="prerequisites"></a>必須コンポーネント
+## <a name="prerequisites"></a>必要条件
 
 ホストはネイティブ アプリケーションであるため、このチュートリアルでは、C++ アプリケーションを構築して .NET Core をホスティングする方法について説明します。 C++ 開発環境が必要になります ([Visual Studio](https://www.visualstudio.com/downloads/) に付属のものなど)。
 
 ホストをテストするための単純な .NET Core アプリケーションも必要です。そのため、[.NET Core SDK](https://www.microsoft.com/net/core) をインストールし、[小さい .NET Core テスト アプリを作成](../../csharp/getting-started/with-visual-studio.md)してください ('Hello World' アプリなど)。 新しい .NET Core コンソール プロジェクト テンプレートで作成される 'Hello World' アプリで十分です。
 
-このチュートリアルとその[関連サンプル](https://github.com/dotnet/docs/tree/master/samples/core/hosting)では Windows ホストを作成します。Unix のホスティングについては、この記事の終わりにある注記を参照してください。
+このチュートリアルとその関連サンプルでは Windows ホストを作成します。Unix のホスティングについては、この記事の終わりにある注記を参照してください。
 
 ## <a name="creating-the-host"></a>ホストを作成する
 
-[.NET Core サンプル](https://github.com/dotnet/docs/tree/master/samples/core/hosting) リポジトリには、この記事で説明する手順を実演するサンプル ホストがあります。 サンプルの host.cpp ファイルにあるコメントを見れば、このチュートリアルで番号が付けられている手順がサンプルのどこで実行されるかわかります。
+dotnet/docs GitHub リポジトリには、この記事で説明する手順を実演する[サンプル ホスト](https://github.com/dotnet/docs/tree/master/samples/core/hosting)があります。 サンプルの *host.cpp* ファイルにあるコメントを見れば、このチュートリアルで番号が付けられている手順がサンプルのどこで実行されるかわかります。 ダウンロード方法については、「[サンプルおよびチュートリアル](../../samples-and-tutorials/index.md#viewing-and-downloading-samples)」を参照してください。
 
 サンプル ホストは学習目的のために利用されるものです。エラーのチェック時に軽くなっており、効率性より読みやすさを重視して設計されています。 より実際的なホスト サンプルは [dotnet/coreclr](https://github.com/dotnet/coreclr/tree/master/src/coreclr/hosts) リポジトリにあります。 特に、[CoreRun ホスト](https://github.com/dotnet/coreclr/tree/master/src/coreclr/hosts/corerun)は、単純なサンプルを読んだ後に学習するのに最適な汎用ホストです。
 
@@ -146,3 +147,4 @@ coreclrhost.h を利用する例 (mscoree.h を直接利用するのではなく
 最初の実行で動作しなかった場合、ホストが期待している場所に *coreclr.dll* があること、必要なすべての Framework ライブラリが TPA 一覧にあること、CoreCLR のビット数 (32 ビットまたは 64 ビット) がホストのビルド方法に一致することをもう一度確認してください。
 
 .NET Core ランタイムのホスティングは、多くの開発者が必要としない高度なシナリオですが、ネイティブ プロセスからマネージ コードを起動する場合や .NET Core ランタイムの動作をより細かくコントロールする場合、非常に便利です。 .NET Core は並行して実行できるので、同じプロセス内で、複数のバージョンの .NET Core ランタイムを初期化して開始するホストを作成し、そのすべてのホスト上でアプリを実行することもできます。 
+

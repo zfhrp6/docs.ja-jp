@@ -1,6 +1,6 @@
 ---
 title: "short (C# リファレンス) | Microsoft Docs"
-ms.date: 2015-07-20
+ms.date: 2017-03-14
 ms.prod: .net
 ms.technology:
 - devlang-csharp
@@ -30,79 +30,91 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 3c14ae463021fbeed9de24610292fa7516a453fe
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 400dfda51d978f35c3995f90840643aaff1b9c13
+ms.openlocfilehash: 14f9c66bb620e2ad35513abeeba77372904cc1f3
+ms.contentlocale: ja-jp
+ms.lasthandoff: 03/24/2017
 
 ---
 # <a name="short-c-reference"></a>short (C# リファレンス)
-`short` キーワードは、次の表に示すサイズと範囲で値を格納する整数データ型を示します。  
+
+`short` は、次の表に示すサイズと範囲で値を格納する整数データ型を示します。  
   
 |型|範囲|サイズ|.NET Framework 型|  
 |----------|-----------|----------|-------------------------|  
 |`short`|-32,768 ～ 32,767|符号付き 16 ビット整数|<xref:System.Int16?displayProperty=fullName>|  
   
 ## <a name="literals"></a>リテラル  
- `short` 変数の宣言と初期化の例を次に示します。  
+
+`short` 変数を宣言し、10 進リテラル、16 進リテラル、または (C# 7 以降) バイナリ リテラルを割り当てることによって初期化できます。  整数リテラルが `short` の範囲外である場合は (つまり、<xref:System.Int16.MinValue?displayProperty=fullName> より小さいか、<xref:System.Int16.MaxValue?displayProperty=fullName> より大きい場合)、コンパイル エラーが発生します。 
+
+次の例では、整数 1,034 を 10 進リテラル、16 進リテラル、バイナリ リテラルで表したものが、[int](../../../csharp/language-reference/keywords/int.md) から `short` 値に暗黙的に変換されています。  
   
-```  
-  
-short x = 32767;  
-```  
-  
- 上のように宣言すると、整数リテラル `32767` は暗黙的に [int](../../../csharp/language-reference/keywords/int.md) から `short` に変換されます。 整数リテラルを `short` の格納場所に格納できない場合は、コンパイル エラーになります。  
-  
+[!code-cs[Short](../../../../samples/snippets/csharp/language-reference/keywords/numeric-literals.cs#Short)]  
+
+> [!NOTE] 
+> 16 進リテラルを表すにはプレフィックス `0x` または `0X` を使い、バイナリ リテラルを表すにはプレフィックス `0b` または `0B` を使います。 10 進リテラルには、プレフィックスはありません。
+
+C# 7 以降では、次の例に示すように、アンダースコア文字 `_` を桁区切り記号として使って読みやすくすることもできます。
+
+[!code-cs[Short](../../../../samples/snippets/csharp/language-reference/keywords/numeric-literals.cs#ShortS)]  
+ 
+## <a name="compiler-overload-resolution"></a>コンパイラのオーバーロード解決
+
  オーバーロードされたメソッドを呼び出すときは、キャストを使用する必要があります。 たとえば、`short` パラメーターと [int](../../../csharp/language-reference/keywords/int.md) パラメーターを使用するオーバーロードされたメソッドがあるとします。  
   
-```  
+```csharp  
 public static void SampleMethod(int i) {}  
 public static void SampleMethod(short s) {}  
 ```  
   
  `short` キャストを使用すると、正しい型が呼び出されます。次に例を示します。  
   
-```  
+```csharp  
 SampleMethod(5);         // Calling the method with the int parameter  
 SampleMethod((short)5);  // Calling the method with the short parameter  
 ```  
   
 ## <a name="conversions"></a>変換  
+
  `short` から [int](../../../csharp/language-reference/keywords/int.md)、[long](../../../csharp/language-reference/keywords/long.md)、[float](../../../csharp/language-reference/keywords/float.md)、[double](../../../csharp/language-reference/keywords/double.md)、[decimal](../../../csharp/language-reference/keywords/decimal.md) への、定義済みの暗黙的な変換が組み込まれています。  
   
  記憶領域が大きなリテラル以外の数値型を暗黙的に `short` に変換することはできません (整数型の記憶領域については、「[整数型の一覧表](../../../csharp/language-reference/keywords/integral-types-table.md)」を参照してください)。 たとえば、2 つの `short` 変数 `x` と `y` があるとします。  
   
-```  
-  
+```csharp  
 short x = 5, y = 12;  
 ```  
   
  次の代入ステートメントは、代入演算子の右側にある算術式が既定で [int](../../../csharp/language-reference/keywords/int.md) に評価されるため、コンパイル エラーになります。  
   
- `short`   `z = x + y;   // Error: no conversion from int to short`  
-  
+```csharp
+short z  = x + y;        // Compiler error CS0266: no conversion from int to short
+```
+
  この問題を解決するには、キャストを使用します。  
   
- `short`   `z = (`  `short`  `)(x + y);   // OK: explicit conversion`  
+```csharp
+short z  = (short)(x + y);   // Explicit conversion
+```
   
- ただし、次のステートメントは使用できます。このステートメントでは、変換先の変数の記憶領域サイズは元のサイズ以上になります。  
+ 次のステートメントを使うこともできます。このステートメントでは、変換先の変数の記憶領域サイズは元のサイズ以上になります。  
   
-```  
+```csharp  
 int m = x + y;  
 long n = x + y;  
 ```  
   
  浮動小数点型から `short` への暗黙的な変換は行われません。 たとえば、次のステートメントは、明示的なキャストを使用しない限り、コンパイル エラーになります。  
   
-```  
-  
-      short x = 3.0;          // Error: no implicit conversion from double  
+```csharp  
+short x = 3.0;          // Error: no implicit conversion from double  
 short y = (short)3.0;   // OK: explicit conversion  
 ```  
   
  浮動小数点型と整数型の混在する算術式の詳細については、「[float](../../../csharp/language-reference/keywords/float.md)」と「[double](../../../csharp/language-reference/keywords/double.md)」を参照してください。  
   
- 暗黙的な数値変換規則の詳細については、「[暗黙的な数値変換の一覧表](../../../csharp/language-reference/keywords/implicit-numeric-conversions-table.md)」を参照してください。  
+ 暗黙的な数値変換規則について詳しくは、「[暗黙的な数値変換の一覧表](../../../csharp/language-reference/keywords/implicit-numeric-conversions-table.md)」をご覧ください。  
   
 ## <a name="c-language-specification"></a>C# 言語仕様  
  [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec_md.md)]  

@@ -31,17 +31,17 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 92750040466914389abc3e8bf1de84c44bb0987c
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: a5ed524a1b17f7be8903f998cbd732594faab831
+ms.openlocfilehash: 02491e64813f84d031debdca09161d88aab1b94c
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/15/2017
 
 ---
 # <a name="class-c-reference"></a>class (C# リファレンス)
 クラスは、次の例に示すように、キーワード `class` を使用して宣言します。  
   
 ```  
-  
       class TestClass  
 {  
     // Methods, properties, fields, events, delegates   
@@ -71,12 +71,12 @@ ms.lasthandoff: 03/13/2017
   
 -   [コンストラクター](../../../csharp/programming-guide/classes-and-structs/constructors.md)  
   
--   [デストラクター](../../../csharp/programming-guide/classes-and-structs/destructors.md)  
-  
 -   [定数](../../../csharp/programming-guide/classes-and-structs/constants.md)  
   
 -   [フィールド](../../../csharp/programming-guide/classes-and-structs/fields.md)  
   
+-   [ファイナライザー](../../../csharp/programming-guide/classes-and-structs/destructors.md)  
+
 -   [メソッド](../../../csharp/programming-guide/classes-and-structs/methods.md)  
   
 -   [プロパティ](../../../csharp/programming-guide/classes-and-structs/properties.md)  
@@ -114,10 +114,11 @@ Console.Write(child1.name);   // Error
  最後に、既定のコンストラクターを使用して作成されたオブジェクト (`child3`) は、既定で年齢フィールドが 0 に初期化されることに注意してください。  
   
 ## <a name="c-language-specification"></a>C# 言語仕様  
- [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec_md.md)]  
+ [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
 ## <a name="see-also"></a>関連項目  
  [C# リファレンス](../../../csharp/language-reference/index.md)   
  [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
  [C# のキーワード](../../../csharp/language-reference/keywords/index.md)   
  [参照型](../../../csharp/language-reference/keywords/reference-types.md)
+

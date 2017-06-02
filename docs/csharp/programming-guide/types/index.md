@@ -35,10 +35,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: 7e33ed084c560470a486ebbb25035a59ddc18565
-ms.openlocfilehash: 61f23020b8a5dd0136d54e0a2ceb925bebca88cc
-ms.lasthandoff: 03/31/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: fe32676f0e39ed109a68f39584cf41aec5f5ce90
+ms.openlocfilehash: 74604c2dfe16e6f90d5c0534fad3d72906dc07cc
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/10/2017
 
 ---
 # <a name="types-c-programming-guide"></a>型 (C# プログラミング ガイド)
@@ -90,7 +91,7 @@ ms.lasthandoff: 03/31/2017
 ## <a name="the-common-type-system"></a>共通型システム  
  [!INCLUDE[dnprdnshort](../../../csharp/getting-started/includes/dnprdnshort_md.md)] で型システムを使用する場合は、次の 2 つの基本事項を理解しておく必要があります。  
   
--   継承の原則がサポートされています。 他の型から型を派生させることができます。派生元の型は "*基本型*" と呼ばれます。 派生した型は、基本型のメソッド、プロパティ、およびその他のメンバーを (若干の制限付きで) 継承します。 基本型もなんらかの他の型から派生できます。この場合、派生した型はその継承階層内の両方の基本型のメンバーを継承します。 <xref:System.Int32?displayProperty=fullName> (C# キーワード: [int](../../../csharp/language-reference/keywords/int.md)) などの組み込み数値型を含むすべての型は、最終的には、<xref:System.Object?displayProperty=fullName> (C# キーワード: [object](../../../csharp/language-reference/keywords/object.md)) という 1 つの基本型から派生しています。 この一元化された型階層は、[共通型システム](http://msdn.microsoft.com/library/53c57c96-83e1-4ee3-9543-9ac832671a89) (CTS) と呼ばれます。 C# での継承の詳細については、「[継承](../../../csharp/programming-guide/classes-and-structs/inheritance.md)」を参照してください。  
+-   継承の原則がサポートされています。 他の型から型を派生させることができます。派生元の型は "*基本型*" と呼ばれます。 派生した型は、基本型のメソッド、プロパティ、およびその他のメンバーを (若干の制限付きで) 継承します。 基本型もなんらかの他の型から派生できます。この場合、派生した型はその継承階層内の両方の基本型のメンバーを継承します。 <xref:System.Int32?displayProperty=fullName> (C# のキーワードは [int](../../../csharp/language-reference/keywords/int.md)) などの組み込み数値型を含むすべての型は、最終的に <xref:System.Object?displayProperty=fullName> (C# のキーワードは [object](../../../csharp/language-reference/keywords/object.md)) という単一の基本型から派生します。 この一元化された型階層は、[共通型システム](../../../standard/base-types/common-type-system.md) (CTS) と呼ばれます。 C# での継承の詳細については、「[継承](../../../csharp/programming-guide/classes-and-structs/inheritance.md)」を参照してください。  
   
 -   CTS の各型は、"*値型*" または "*参照型*" として定義されます。 これは、.NET Framework クラス ライブラリのすべてのカスタムの型や、ユーザーが独自に定義した型にも当てはまります。 [struct](../../../csharp/language-reference/keywords/struct.md) キーワードを使用して定義した型は値型であり、すべての組み込み数値型は `structs` です。 [class](../../../csharp/language-reference/keywords/class.md) キーワードを使用して定義した型は、参照型です。 参照型と値型では、コンパイル時の規則や実行時の動作が異なります。  
   
@@ -103,7 +104,7 @@ CTS での値型と参照型
 >  この図を見るとわかるように、最もよく使用される型はすべて <xref:System> 名前空間に属しています。 しかし、型が属している名前空間は、その型が値型と参照型のどちらであるかには関係ありません。  
   
 ### <a name="value-types"></a>値型  
- 値型は、<xref:System.Object?displayProperty=fullName> から派生する <xref:System.ValueType?displayProperty=fullName> から派生します。 <xref:System.ValueType?displayProperty=fullName> から派生する型は、CLR 内で特殊な振る舞いをします。 値型の変数は、その値を直接含みます。つまり、変数がどのようなコンテキストで宣言されたとしても、必ずメモリがインラインで割り当てられます。 値型の変数には、独立したヒープ割り当てやガベージ コレクションのオーバーヘッドはありません。  
+ 値型は、<xref:System.ValueType?displayProperty=fullName> の派生型である <xref:System.Object?displayProperty=fullName> から派生します。 <xref:System.ValueType?displayProperty=fullName> から派生した型は、CLR では特殊な動作をします。 値型の変数は、その値を直接含みます。つまり、変数がどのようなコンテキストで宣言されたとしても、必ずメモリがインラインで割り当てられます。 値型の変数には、独立したヒープ割り当てやガベージ コレクションのオーバーヘッドはありません。  
   
  値型には、[構造体](../../../csharp/language-reference/keywords/struct.md)と[列挙体](../../../csharp/language-reference/keywords/enum.md)の 2 つのカテゴリがあります。  
   
@@ -128,15 +129,15 @@ char c = 'Z';
   
  [!code-cs[csProgGuideObjects#1](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/index_4.cs)]  
   
- 構造体の詳細については、「[Structs](../../../csharp/programming-guide/classes-and-structs/structs.md)」を参照してください。 [!INCLUDE[dnprdnshort](../../../csharp/getting-started/includes/dnprdnshort_md.md)] における値の型の詳細については、「[共通型システム](http://msdn.microsoft.com/library/53c57c96-83e1-4ee3-9543-9ac832671a89)」を参照してください。  
+ 構造体の詳細については、「[Structs](../../../csharp/programming-guide/classes-and-structs/structs.md)」を参照してください。 [!INCLUDE[dnprdnshort](../../../csharp/getting-started/includes/dnprdnshort_md.md)] における値の型の詳細については、「[共通型システム](../../../standard/base-types/common-type-system.md)」を参照してください。  
   
  別の種類の値型として、[列挙体](../../../csharp/language-reference/keywords/enum.md)があります。 列挙体は、一連の名前付き整数定数を定義します。 たとえば、.NET Framework クラス ライブラリの <xref:System.IO.FileMode?displayProperty=fullName> 列挙体には、ファイルを開く方法を指定する一連の名前付き整数定数が格納されています。 これは、次の例のように定義されます。  
  
  [!code-cs[csProgGuideTypes#44](../../../csharp/programming-guide/nullable-types/codesnippet/CSharp/index_5.cs)]  
   
- 定数 `System.IO.FileMode.Create` は、2 という値を持ちます。 しかし、人間がソース コードを読む場合は名前があるとわかりやすいため、このような場合は、リテラルの数値の定数を使用するよりも、列挙体を使用する方がよいと言えます。 詳細については、<xref:System.IO.FileMode?displayProperty=fullName> を参照してください。  
+ 定数 `System.IO.FileMode.Create` は、2 という値を持ちます。 しかし、人間がソース コードを読む場合は名前があるとわかりやすいため、このような場合は、リテラルの数値の定数を使用するよりも、列挙体を使用する方がよいと言えます。 詳細については、「<xref:System.IO.FileMode?displayProperty=fullName>」を参照してください。  
   
- すべての列挙体は、<xref:System.ValueType?displayProperty=fullName> から継承される <xref:System.Enum?displayProperty=fullName> から継承されます。 構造体に適用されるすべての規則が、列挙体にも適用されます。 詳細については、「[ 列挙型](../../../csharp/programming-guide/enumeration-types.md)」を参照してください。  
+ すべての列挙体は、<xref:System.Enum?displayProperty=fullName> の派生型である <xref:System.ValueType?displayProperty=fullName> から派生します。 構造体に適用されるすべての規則が、列挙体にも適用されます。 詳細については、「[ 列挙型](../../../csharp/programming-guide/enumeration-types.md)」を参照してください。  
   
 ### <a name="reference-types"></a>参照型  
  [class](../../../csharp/language-reference/keywords/class.md)、[delegate](../../../csharp/language-reference/keywords/delegate.md)、配列、または [interface](../../../csharp/language-reference/keywords/interface.md) として定義された型は、"*参照型*" です。 参照型の変数を宣言した場合、実行時には、[new](../../../csharp/language-reference/keywords/new.md) 演算子によってオブジェクトのインスタンスが明示的に作成されるまで、この変数には [null](../../../csharp/language-reference/keywords/null.md) が格納されます。または、`new, as shown in the following example:` を使用して、どこか別の場所で作成されたオブジェクトを割り当てることもできます。  
@@ -151,7 +152,7 @@ MyClass mc2 = mc;
 IMyInterface iface = new MyClass();  
 ```  
   
- オブジェクトが作成されると、マネージ ヒープ上でメモリが割り当てられ、変数にはそのオブジェクトの場所への参照のみが格納されます。 マネージ ヒープを使用する型では、メモリの割り当て時と、CLR の自動メモリ管理機能 ("*ガベージ コレクション*") による再要求時の両方についてオーバーヘッドが発生します。 しかし、ガベージ コレクションも高度に最適化されるため、ほとんどのシナリオでは、パフォーマンス上の問題が発生することはありません。 ガベージ コレクションの詳細については、「[自動メモリ管理](http://msdn.microsoft.com/library/d4850de5-fa63-4936-a250-5678d118acba)」を参照してください。  
+ オブジェクトが作成されると、マネージ ヒープ上でメモリが割り当てられ、変数にはそのオブジェクトの場所への参照のみが格納されます。 マネージ ヒープを使用する型では、メモリの割り当て時と、CLR の自動メモリ管理機能 ("*ガベージ コレクション*") による再要求時の両方についてオーバーヘッドが発生します。 しかし、ガベージ コレクションも高度に最適化されるため、ほとんどのシナリオでは、パフォーマンス上の問題が発生することはありません。 ガベージ コレクションの詳細については、「[自動メモリ管理](../../../standard/automatic-memory-management.md)」を参照してください。  
   
  配列は、その要素が値型の場合でも、すべて参照型です。 配列は、<xref:System.Array?displayProperty=fullName> クラスから暗黙的に派生しますが、C# に用意されている次の例のような簡単な構文で宣言および使用します。  
   
@@ -167,7 +168,7 @@ IMyInterface iface = new MyClass();
  [!code-cs[csProgGuideTypes#37](../../../csharp/programming-guide/nullable-types/codesnippet/CSharp/index_7.cs)]  
   
 ## <a name="generic-types"></a>ジェネリック型  
- クライアント コードが型のインスタンスを作成したときに提供される実際の型 ("*具象型*") のプレースホルダーとして使用される 1 つまたは複数の "*型パラメーター*" で、型を宣言することもできます。 このような型は、"*ジェネリック型*" と呼ばれます。 たとえば、.NET Framework の型 <xref:System.Collections.Generic.List%601?displayProperty=fullName> には、慣例的に *T* という名前が与えられた 1 つの型パラメーターがあります。この型のインスタンスを作成するときには、たとえば文字列の場合なら、リストに含まれるオブジェクトの型を次のように指定します。  
+ クライアント コードが型のインスタンスを作成したときに提供される実際の型 ("*具象型*") のプレースホルダーとして使用される 1 つまたは複数の "*型パラメーター*" で、型を宣言することもできます。 このような型は、"*ジェネリック型*" と呼ばれます。 たとえば、.NET Framework の型 <xref:System.Collections.Generic.List%601?displayProperty=fullName> には、慣例により *T* という名前が与えられる 1 つの型パラメーターがあります。この型のインスタンスを作成するときには、たとえば文字列の場合なら、リストに含まれるオブジェクトの型を次のように指定します。  
  
 ```csharp
 List<string> stringList = new List<string>();
@@ -182,7 +183,7 @@ stringList.Add(4);
   
  場合によっては、メソッドの境界を越えて格納したり受け渡したりする予定のない単純な一連の関連値に名前付きの型を作成するのは便利ではないこともあります。 このような場合は、"*匿名型*" を作成できます。 詳細については、「[匿名型](../../../csharp/programming-guide/classes-and-structs/anonymous-types.md)」を参照してください。  
   
- 値型には、通常、[null](../../../csharp/language-reference/keywords/null.md) 値を割り当てることができません。 しかし、型の後ろに `?` を付けることによって、null 値を設定できる値型を作成できます。 たとえば、`int?` は、[null](../../../csharp/language-reference/keywords/null.md) 値も設定できる `int` 型です。 CTS では、Null 許容型は、<xref:System.Nullable%601?displayProperty=fullName> のインスタンスです。 Null 許容型は、数値が null になる可能性のあるデータベースとの間でデータを受け渡しする場合に、特に便利です。 詳細については、「[ull 許容型](../../../csharp/programming-guide/nullable-types/index.md)」を参照してください。  
+ 値型には、通常、[null](../../../csharp/language-reference/keywords/null.md) 値を割り当てることができません。 しかし、型の後ろに `?` を付けることによって、null 値を設定できる値型を作成できます。 たとえば、`int?` は、[null](../../../csharp/language-reference/keywords/null.md) 値も設定できる `int` 型です。 CTS では、null 許容型は一般的な構造体型 <xref:System.Nullable%601?displayProperty=fullName> のインスタンスです。 Null 許容型は、数値が null になる可能性のあるデータベースとの間でデータを受け渡しする場合に、特に便利です。 詳細については、「[ull 許容型](../../../csharp/programming-guide/nullable-types/index.md)」を参照してください。  
   
 ## <a name="related-sections"></a>関連項目  
  詳細については、次のトピックを参照してください。  
@@ -209,6 +210,6 @@ stringList.Add(4);
 ## <a name="see-also"></a>関連項目  
  [C# リファレンス](../../../csharp/language-reference/index.md)   
  [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
- [XML データ型の変換](http://msdn.microsoft.com/library/a2aa99ba-8239-4818-9281-f1d72ee40bde)   
+ [XML データ型の変換](../../../standard/data/xml/conversion-of-xml-data-types.md)   
  [整数型の一覧表](../../../csharp/language-reference/keywords/integral-types-table.md)
 

@@ -34,10 +34,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: e68cde6d56d4de584861b8bcf29e072a5fc18928
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
+ms.openlocfilehash: b5054e277895d185ab8ec6f6a2950d5dedbef390
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/22/2017
 
 ---
 # <a name="how-to-read-a-value-from-a-registry-key-in-visual-basic"></a>方法 : Visual Basic で、レジストリ キーから値を読み取る
@@ -70,12 +71,12 @@ ms.lasthandoff: 03/13/2017
   
 -   キーの名前が `Nothing` である場合 (<xref:System.ArgumentNullException>)。  
   
--   ユーザーが、レジストリ キーからの読み取り権限を持っていない場合 (<xref:System.Security.SecurityException>)。  
+-   レジストリ キーからの読み取り権限がユーザーにない場合 (<xref:System.Security.SecurityException>)。  
   
 -   キー名が 255 文字の制限を超えている場合 (<xref:System.ArgumentException>)。  
   
 ## <a name="net-framework-security"></a>.NET Framework セキュリティ  
- このプロセスを実行するには、アセンブリに、<xref:System.Security.Permissions.RegistryPermission> クラスによって許可された特権レベルが必要です。 部分的に信頼されたコンテキストで実行している場合、プロセスは、特権がないために例外をスローする可能性があります。 同様に、ユーザーには、設定に対する作成や書き込みを行うための適切な ACL が必要です。 たとえば、コード アクセス セキュリティのアクセス許可を持つローカル アプリケーションには、オペレーティング システムのアクセス許可がない可能性があります。 詳しくは、「[コード アクセス セキュリティの基礎](https://msdn.microsoft.com/library/33tceax8)」をご覧ください。  
+ このプロセスを実行するには、アセンブリに対して <xref:System.Security.Permissions.RegistryPermission> クラスで特権レベルが許可されている必要があります。 部分的に信頼されたコンテキストで実行している場合、プロセスは、特権がないために例外をスローする可能性があります。 同様に、ユーザーには、設定に対する作成や書き込みを行うための適切な ACL が必要です。 たとえば、コード アクセス セキュリティのアクセス許可を持つローカル アプリケーションには、オペレーティング システムのアクセス許可がない可能性があります。 詳しくは、「[コード アクセス セキュリティの基礎](https://msdn.microsoft.com/library/33tceax8)」をご覧ください。  
   
 ## <a name="see-also"></a>関連項目  
  <xref:Microsoft.VisualBasic.MyServices.RegistryProxy>   

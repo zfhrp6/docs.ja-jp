@@ -1,35 +1,40 @@
 ---
 title: "Windows フォーム アプリケーションの拡張 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "Windows フォーム, 追加 (機能を)"
-  - "Windows フォーム, 拡張"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- jsharp
+helpviewer_keywords:
+- Windows Forms, enhancing
+- Windows Forms, adding features
 ms.assetid: 733d1219-d6ad-4256-a55b-9eccf47f5a06
 caps.latest.revision: 13
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 13
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
+ms.openlocfilehash: cbdc12b72de5d8943cd193195d6f382dfc4a496f
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/22/2017
+
 ---
-# Windows フォーム アプリケーションの拡張
-Windows フォームには、ユーザーの固有のニーズに合わせて、Windows ベースのアプリケーションを強化するために使用できる多くの機能が含まれます。  次のトピックは、これらの機能とその使用方法について説明します。  
+# <a name="enhancing-windows-forms-applications"></a>Windows フォーム アプリケーションの拡張
+Windows フォームには、ユーザーの固有のニーズに合わせて、Windows ベースのアプリケーションを強化するために使用できる多くの機能が含まれます。 次のトピックは、これらの機能とその使用方法について説明します。  
   
-## このセクションの内容  
+## <a name="in-this-section"></a>このセクションの内容  
  [Windows フォームにおけるグラフィックスと描画](../../../../docs/framework/winforms/advanced/graphics-and-drawing-in-windows-forms.md)  
  Windows フォームでグラフィックスのインターフェイスを使用する方法について説明したトピックへのリンクが含まれます。  
   
  [Windows フォームのアプリケーション設定](../../../../docs/framework/winforms/advanced/application-settings-for-windows-forms.md)  
- **アプリケーション設定**機能を使用する方法について説明したトピックへのリンクが含まれます。  
+ **アプリケーション設定**機能を使う方法について説明したトピックへのリンクが含まれます。  
   
  [Windows フォームにおける印刷のサポート](../../../../docs/framework/winforms/advanced/windows-forms-print-support.md)  
  Windows フォーム アプリケーションからファイルを印刷する方法について説明したトピックへのリンクを示します。  
@@ -55,8 +60,8 @@ Windows フォームには、ユーザーの固有のニーズに合わせて、
  [Windows フォームのビジュアルの継承](../../../../docs/framework/winforms/advanced/windows-forms-visual-inheritance.md)  
  基本フォームから継承する方法について説明します。  
   
- [マルチ ドキュメント インターフェイス \(MDI\) アプリケーション](../../../../docs/framework/winforms/advanced/multiple-document-interface-mdi-applications.md)  
- 複数のマルチ ドキュメント インターフェイス \(MDI\) アプリケーションを作成する方法について説明します。  
+ [マルチ ドキュメント インターフェイス (MDI) アプリケーション](../../../../docs/framework/winforms/advanced/multiple-document-interface-mdi-applications.md)  
+ 複数のマルチ ドキュメント インターフェイス (MDI) アプリケーションを作成する方法について説明します。  
   
  [Windows フォームでのヘルプの統合](../../../../docs/framework/winforms/advanced/integrating-user-help-in-windows-forms.md)  
  アプリケーションでユーザー ヘルプを統合する方法について説明します。  
@@ -67,7 +72,7 @@ Windows フォームには、ユーザーの固有のニーズに合わせて、
  [WPF コントロールの使用](../../../../docs/framework/winforms/advanced/using-wpf-controls.md)  
  Windows フォーム ベースのアプリケーションで WPF コントロールを使用する方法について説明します。  
   
-## 関連項目  
+## <a name="related-sections"></a>関連項目  
  [Windows フォーム アプリケーションのヘルプ システム](../../../../docs/framework/winforms/advanced/help-systems-in-windows-forms-applications.md)  
  Windows フォーム アプリケーションでユーザーにヘルプを提供する方法について説明したトピックへのリンクを示します。  
   

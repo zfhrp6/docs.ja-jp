@@ -31,9 +31,10 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
+ms.translationtype: Machine Translation
 ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
 ms.openlocfilehash: 9b181b18a28a8b92a392fffdc10e08690d54f545
+ms.contentlocale: ja-jp
 ms.lasthandoff: 03/13/2017
 
 ---
@@ -48,7 +49,6 @@ Function ( [ parameterlist ] ) expression
 Function ( [ parameterlist ] )  
   [ statements ]  
 End Function  
-  
 ```  
   
 ## <a name="parts"></a>指定項目  
@@ -121,3 +121,4 @@ Dim londonCusts = db.Customers.
  [ブール式](../../../visual-basic/programming-guide/language-features/operators-and-expressions/boolean-expressions.md)   
  [場合演算子](../../../visual-basic/language-reference/operators/if-operator.md)   
  [厳密でないデリゲート変換](../../../visual-basic/programming-guide/language-features/delegates/relaxed-delegate-conversion.md)
+

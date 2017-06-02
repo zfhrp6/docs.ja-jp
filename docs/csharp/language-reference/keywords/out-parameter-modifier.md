@@ -28,10 +28,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: af1f16016053d3c1b3cae34ff0cb6a3ce8cee9e7
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 400dfda51d978f35c3995f90840643aaff1b9c13
+ms.openlocfilehash: a2f2e9b9239836b051820bda66523822e95cdf52
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/22/2017
 
 ---
 # <a name="out-parameter-modifier-c-reference"></a>out パラメーター修飾子 (C# リファレンス)
@@ -72,7 +73,7 @@ class CS0663_Example
 
 ## <a name="declaring-out-arguments"></a>`out` 引数の宣言   
 
- `out` 引数を含むメソッドを宣言すると、メソッドで複数の値を返す場合に便利です。 次の例では `out` を使用して、1 つのメソッド呼び出しで&3; つの変数を返します。 3 番目の引数が null に割り当てられることに注意してください。 これにより、必要に応じてメソッドが値を返すことができます。  
+ `out` 引数を含むメソッドを宣言すると、メソッドで複数の値を返す場合に便利です。 次の例では `out` を使用して、1 つのメソッド呼び出しで 3 つの変数を返します。 3 番目の引数が null に割り当てられることに注意してください。 これにより、必要に応じてメソッドが値を返すことができます。  
   
  [!code-cs[csrefKeywordsMethodParams#4](../../../../samples/snippets/csharp/language-reference/keywords/out/out-4.cs)]  
 
@@ -93,7 +94,7 @@ C# 7 以降では、`out` 変数を、別の変数宣言内ではなく、メソ
  [!code-cs[csrefKeywordsMethodParams#7](../../../../samples/snippets/csharp/language-reference/keywords/out/out-7.cs)]  
    
 ## <a name="c-language-specification"></a>C# 言語仕様  
- [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec_md.md)]  
+ [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
 ## <a name="see-also"></a>関連項目  
  [C# リファレンス](../../../csharp/language-reference/index.md)   
