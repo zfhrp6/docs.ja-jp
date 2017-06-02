@@ -56,15 +56,15 @@ ms.lasthandoff: 05/22/2017
   
 -   作成するディレクトリの親ディレクトリが読み取り専用である場合 (<xref:System.IO.IOException>)。  
   
--   ディレクトリ名が `Nothing` である場合 (<xref:System.ArgumentNullException>)。  
+-   ディレクトリ名が `Nothing` の場合 (<xref:System.ArgumentNullException>)｡  
   
--   ディレクトリ名が長すぎる場合 (<xref:System.IO.PathTooLongException>)。  
+-   ディレクトリ名が長すぎる場合 (<xref:System.IO.PathTooLongException>)｡  
   
--   ディレクトリ名がコロン (:) である場合 (<xref:System.NotSupportedException>)。  
+-   ディレクトリ名がコロン ":" の場合 (<xref:System.NotSupportedException>)｡  
   
--   ユーザーにディレクトリを作成するアクセス許可がない場合 (<xref:System.UnauthorizedAccessException>)。  
+-   ユーザーがディレクトリを作成するアクセス許可を持っていない場合 (<xref:System.UnauthorizedAccessException>)。  
   
--   部分信頼されている状況でユーザーにアクセス許可がない場合 (<xref:System.Security.SecurityException>)。  
+-   部分的に信頼されている状況でユーザーにアクセス許可がない場合 (<xref:System.Security.SecurityException>)。  
   
 ## <a name="see-also"></a>関連項目  
  <xref:Microsoft.VisualBasic.FileIO.FileSystem.CreateDirectory%2A>   

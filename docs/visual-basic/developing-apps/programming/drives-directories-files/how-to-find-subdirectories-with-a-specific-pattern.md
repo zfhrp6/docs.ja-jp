@@ -39,7 +39,7 @@ ms.lasthandoff: 05/22/2017
 
 ---
 # <a name="how-to-find-subdirectories-with-a-specific-pattern-in-visual-basic"></a>方法: 特定のパターンに一致するサブディレクトリを検索する (Visual Basic)
-<xref:Microsoft.VisualBasic.FileIO.FileSystem.GetDirectories%2A> メソッドは、ディレクトリ内のサブディレクトリのパス名を表す文字列の読み取り専用のコレクションを返します。 `wildCards` パラメーターを使用して、特定のパターンを指定できます。 サブディレクトリの内容を検索対象に含めるには、`searchType` パラメーターを `SearchOption.SearchAllSubDirectories` に設定します。  
+<xref:Microsoft.VisualBasic.FileIO.FileSystem.GetDirectories%2A> メソッドは、ディレクトリのサブディレクトリのパス名を表す文字列の読み取り専用のコレクションを返します。 `wildCards` パラメーターを使用して、特定のパターンを指定できます。 サブディレクトリの内容を検索対象に含めるには、`searchType` パラメーターを `SearchOption.SearchAllSubDirectories` に設定します。  
   
  指定したパターンに一致するディレクトリが見つからなかった場合は、空のコレクションが返されます。  
   
@@ -52,9 +52,9 @@ ms.lasthandoff: 05/22/2017
 ## <a name="robust-programming"></a>信頼性の高いプログラミング  
  次の条件を満たす場合は、例外が発生する可能性があります。  
   
--   パスが無効である。これには、1) 長さが 0 の文字列である、2) 空白だけが含まれている、3) 無効な文字が含まれている、4) デバイス パスである (先頭が \\\\.\\)、のいずれかの理由が考えられます (<xref:System.ArgumentException>)。  
+-   パスが正しくない。長さが 0 の文字列である、空白だけが含まれている、使用できない文字が含まれている、デバイス パスである (先頭が \\\\.\\)、のいずれかの理由が考えられる (<xref:System.ArgumentException>)。  
   
--   パスが `Nothing` であるため、有効でない (<xref:System.ArgumentNullException>)。  
+-   パスが `Nothing` であるため、有効でない (<xref:System.ArgumentNullException>)  
   
 -   指定したワイルドカード文字の中に 1 つ以上の `Nothing`、空の文字列が含まれている、または空白のみである (<xref:System.ArgumentNullException>)。  
   
@@ -62,13 +62,13 @@ ms.lasthandoff: 05/22/2017
   
 -   `directory` が既存のファイルを指している (<xref:System.IO.IOException>)。  
   
--   パスがシステムで定義された最大長を超えている (<xref:System.IO.PathTooLongException>)。  
+-   パスがシステムで定義されている最大長を超えている (<xref:System.IO.PathTooLongException>)。  
   
--   パス内のファイル名またはフォルダー名にコロン (:) が含まれているか、または形式が無効である (<xref:System.NotSupportedException>)。  
+-   パス内のファイル名またはフォルダー名にコロン (:) が含まれている、または形式が無効である (<xref:System.NotSupportedException>)。  
   
--   ユーザーがパスを表示するために必要なアクセス許可がない (<xref:System.Security.SecurityException>)。  
+-   ユーザーがパスを参照するのに必要なアクセス許可がない (<xref:System.Security.SecurityException>)  
   
--   ユーザーに必要なアクセス許可がない (<xref:System.UnauthorizedAccessException>)。  
+-   ユーザーに必要な権限がない (<xref:System.UnauthorizedAccessException>)。  
   
 ## <a name="see-also"></a>関連項目  
  <xref:Microsoft.VisualBasic.FileIO.FileSystem.GetDirectories%2A>   

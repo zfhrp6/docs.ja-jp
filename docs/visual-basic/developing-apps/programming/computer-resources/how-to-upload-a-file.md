@@ -42,7 +42,7 @@ ms.lasthandoff: 05/22/2017
 
 ---
 # <a name="how-to-upload-a-file-in-visual-basic"></a>方法: Visual Basic でファイルをアップロードする
-<xref:Microsoft.VisualBasic.Devices.Network.UploadFile%2A> メソッドを使用すると、ファイルをアップロードして、リモートの場所に格納できます。 `ShowUI` パラメーターを `True` に設定した場合、ダウンロードの進行状況を示すダイアログ ボックスが表示され、ユーザーが操作をキャンセルできます。  
+<xref:Microsoft.VisualBasic.Devices.Network.UploadFile%2A> メソッドを利用してファイルをアップロードし、離れた場所に格納できます。 `ShowUI` パラメーターを `True` に設定した場合、ダウンロードの進行状況を示すダイアログ ボックスが表示され、ユーザーが操作をキャンセルできます。  
   
 ### <a name="to-upload-a-file"></a>ファイルをアップロードするには  
   
@@ -65,11 +65,11 @@ ms.lasthandoff: 05/22/2017
 ## <a name="robust-programming"></a>信頼性の高いプログラミング  
  次の条件を満たす場合は、例外がスローされる可能性があります。  
   
--   ローカル ファイルのパスが無効な場合 (<xref:System.ArgumentException>)。  
+-   ローカル ファイル パスが有効ではありません (<xref:System.ArgumentException>)。  
   
--   認証が失敗した場合 (<xref:System.Security.SecurityException>)。  
+-   認証に失敗しました (<xref:System.Security.SecurityException>)。  
   
--   接続がタイムアウトした場合 (<xref:System.TimeoutException>)。  
+-   接続がタイムアウトしました (<xref:System.TimeoutException>)。  
   
 ## <a name="see-also"></a>関連項目  
  <xref:Microsoft.VisualBasic.Devices.Network?displayProperty=fullName>   

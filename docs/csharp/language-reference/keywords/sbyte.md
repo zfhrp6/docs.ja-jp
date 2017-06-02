@@ -60,7 +60,7 @@ C# 7 以降では、次の例に示すように、アンダースコア文字 `_
 
 [!code-cs[SByteSeparator](../../../../samples/snippets/csharp/language-reference/keywords/numeric-literals.cs#SByteS)]  
 
-整数リテラルが `sbyte` の範囲外である場合は (つまり、<xref:System.SByte.MinValue?displayProperty=fullName> より小さいか、<xref:System.SByte.MaxValue?displayProperty=fullName> より大きい場合)、コンパイル エラーが発生します。 サフィックスがない整数リテラルの場合、整数リテラルの型は、[int](int.md)、[uint](uint.md)、[long](long.md)、[ulong](ulong.md) のうち、その値を表すことができる最初の型になります。 つまり、この例では、数値リテラル `0x9A` と `0b10011010` は値が 156 の 32 ビット符号付き整数として解釈され、これは <xref:System.SByte.MaxValue?displayProperty=fullName> を超えています。 このため、キャスト演算子が必要であり、割り当ては [unchecked](unchecked.md) コンテキストで行われる必要があります。 
+整数リテラルが `sbyte` の範囲外にある場合 (つまり、<xref:System.SByte.MinValue?displayProperty=fullName> より小さいか、<xref:System.SByte.MaxValue?displayProperty=fullName> より大きい場合)、コンパイル エラーが発生します。 サフィックスがない整数リテラルの場合、整数リテラルの型は、[int](int.md)、[uint](uint.md)、[long](long.md)、[ulong](ulong.md) のうち、その値を表すことができる最初の型になります。 つまり、この例では、数値リテラル `0x9A` と `0b10011010` は値が 156 の 32 ビット符号付き整数として解釈され、これは <xref:System.SByte.MaxValue?displayProperty=fullName> を超えています。 このため、キャスト演算子が必要であり、割り当ては [unchecked](unchecked.md) コンテキストで行われる必要があります。 
 
 ## <a name="compiler-overload-resolution"></a>コンパイラのオーバーロード解決
 

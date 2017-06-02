@@ -75,9 +75,9 @@ ms.lasthandoff: 05/22/2017
   
  Web アプリケーションからレジストリを読み取る際、現在のユーザーは Web アプリケーションに実装されている認証と偽装によります。  
   
- ローカル コンピューター (<xref:Microsoft.Win32.Registry.LocalMachine>) よりも、ユーザー フォルダー (<xref:Microsoft.Win32.Registry.CurrentUser>) にデータを書き込む方が安全です。  
+ ローカル コンピューター (<xref:Microsoft.Win32.Registry.LocalMachine>) よりもユーザー フォルダー (<xref:Microsoft.Win32.Registry.CurrentUser>) にデータを書き込む方が安全です。  
   
- レジストリの値を作成するときは、その値が既存の値である場合の処理を決めておく必要があります。 悪意のあるユーザーによって作成された別のプロセスが既に値を作成し、アクセス権を持っている可能性があります。 レジストリ値にデータを設定すると、そのデータを他のプロセスから利用できるようになります。 これを防ぐには、<xref:Microsoft.Win32.RegistryKey.GetValue%2A> メソッドを使用します。 このメソッドは、キーがまだ存在しない場合、`Nothing` を返します。  
+ レジストリの値を作成するときは、その値が既存の値である場合の処理を決めておく必要があります。 悪意のあるユーザーによって作成された別のプロセスが既に値を作成し、アクセス権を持っている可能性があります。 レジストリ値にデータを設定すると、そのデータを他のプロセスから利用できるようになります。 これを回避するには、<xref:Microsoft.Win32.RegistryKey.GetValue%2A> メソッドを使います。 このメソッドは、キーがまだ存在しない場合、`Nothing` を返します。  
   
  レジストリ キーがアクセス制御リスト (ACL: Access Control List) によって保護されていても、パスワードなど他人に知られたくないデータをプレーン テキストでレジストリに格納するのは危険です。  
   
@@ -89,12 +89,12 @@ ms.lasthandoff: 05/22/2017
   
 -   キー名が 255 文字の制限を超えている場合 (<xref:System.ArgumentException>)。  
   
--   キーが閉じられている場合 (<xref:System.IO.IOException>)。  
+-   キーが閉じている場合 (<xref:System.IO.IOException>)。  
   
 -   レジストリ キーが読み取り専用の場合 (<xref:System.UnauthorizedAccessException>)。  
   
 ## <a name="net-framework-security"></a>.NET Framework セキュリティ  
- このプロセスを実行するには、アセンブリに、<xref:System.Security.Permissions.RegistryPermission> クラスによって許可された特権レベルが必要です。 部分的に信頼されたコンテキストで実行している場合、プロセスは、特権がないために例外をスローする可能性があります。 同様に、ユーザーには、設定に対する作成や書き込みを行うための適切な ACL が必要です。 たとえば、コード アクセス セキュリティのアクセス許可を持つローカル アプリケーションには、オペレーティング システムのアクセス許可がない可能性があります。 詳しくは、「[コード アクセス セキュリティの基礎](https://msdn.microsoft.com/library/33tceax8)」をご覧ください。  
+ このプロセスを実行するには、アセンブリに対して <xref:System.Security.Permissions.RegistryPermission> クラスで特権レベルが許可されている必要があります。 部分的に信頼されたコンテキストで実行している場合、プロセスは、特権がないために例外をスローする可能性があります。 同様に、ユーザーには、設定に対する作成や書き込みを行うための適切な ACL が必要です。 たとえば、コード アクセス セキュリティのアクセス許可を持つローカル アプリケーションには、オペレーティング システムのアクセス許可がない可能性があります。 詳しくは、「[コード アクセス セキュリティの基礎](https://msdn.microsoft.com/library/33tceax8)」をご覧ください。  
   
 ## <a name="see-also"></a>関連項目  
  <xref:Microsoft.VisualBasic.MyServices.RegistryProxy>   

@@ -50,7 +50,7 @@ ms.lasthandoff: 05/22/2017
   
 ### <a name="to-determine-the-log-listeners-for-the-log-object-in-code"></a>コードで Log オブジェクトのログ リスナーを特定するには  
   
-1.  コード ファイルの先頭で、<xref:System.Diagnostics> 名前空間をインポートします。 詳細については、「[Imports ステートメント (.NET 名前空間および型)](../../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md)」を参照してください。  
+1.  コード ファイルの先頭に <xref:System.Diagnostics> 名前空間をインポートします。 詳細については、「[Imports ステートメント (.NET 名前空間および型)](../../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md)」を参照してください。  
   
      [!code-vb[VbVbalrMyApplicationLog#13](../../../../visual-basic/developing-apps/programming/log-info/codesnippet/VisualBasic/troubleshooting-log-listeners_1.vb)]  
   
@@ -62,7 +62,7 @@ ms.lasthandoff: 05/22/2017
   
      [!code-vb[VbVbalrMyApplicationLog#19](../../../../visual-basic/developing-apps/programming/log-info/codesnippet/VisualBasic/troubleshooting-log-listeners_3.vb)]  
   
-     詳しくは、「<xref:Microsoft.VisualBasic.Logging.Log.TraceSource%2A>」をご覧ください。  
+     詳細については、「<xref:Microsoft.VisualBasic.Logging.Log.TraceSource%2A>」を参照してください。  
   
 ## <a name="see-also"></a>関連項目  
  <xref:Microsoft.VisualBasic.Logging.Log?displayProperty=fullName>   

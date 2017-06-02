@@ -45,7 +45,7 @@ ms.lasthandoff: 05/22/2017
 
 ---
 # <a name="how-to-delete-a-registry-key-in-visual-basic"></a>方法: レジストリ キーを削除する (Visual Basic)
-<xref:Microsoft.Win32.RegistryKey.DeleteSubKey%28System.String%29> メソッドおよび <xref:Microsoft.Win32.RegistryKey.DeleteSubKey%28System.String%2CSystem.Boolean%29> メソッドを使用して、レジストリ キーを削除できます。  
+<xref:Microsoft.Win32.RegistryKey.DeleteSubKey%28System.String%29> メソッドと <xref:Microsoft.Win32.RegistryKey.DeleteSubKey%28System.String%2CSystem.Boolean%29> メソッドはレジストリ キーの削除に使用できます。  
   
 ## <a name="procedure"></a>プロシージャ  
   
@@ -62,7 +62,7 @@ ms.lasthandoff: 05/22/2017
   
 -   キーの名前が `Nothing` である場合 (<xref:System.ArgumentNullException>)。  
   
--   レジストリ キーを削除するためのアクセス許可がユーザーにない場合 (<xref:System.Security.SecurityException>)。  
+-   レジストリ キーを作成するためのアクセス許可がユーザーにない場合 (<xref:System.Security.SecurityException>)。  
   
 -   キー名が 255 文字の制限を超えている場合 (<xref:System.ArgumentException>)。  
   

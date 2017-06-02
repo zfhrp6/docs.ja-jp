@@ -50,7 +50,7 @@ ms.lasthandoff: 05/22/2017
  要求されたプロセス ID のアプリケーションが見つからない場合には、<xref:System.ArgumentException> 例外が発生します。  
   
 ## <a name="net-framework-security"></a>.NET Framework セキュリティ  
- `Shell` 関数の呼び出しは、完全に信頼されている必要があります (<xref:System.Security.SecurityException> クラス)。  
+ `Shell` 関数の呼び出しには完全な信頼が必要です (<xref:System.Security.SecurityException> クラス)。  
   
 ## <a name="see-also"></a>関連項目  
  <xref:Microsoft.VisualBasic.Devices.Keyboard.SendKeys%2A>   

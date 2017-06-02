@@ -60,33 +60,33 @@ ms.lasthandoff: 05/22/2017
 ## <a name="robust-programming"></a>信頼性の高いプログラミング  
  次の条件を満たす場合は、例外がスローされる可能性があります。  
   
--   パスが無効である。これには、1) 長さが 0 の文字列である、2) 空白だけが含まれている、3) 無効な文字が含まれている、4) デバイス パスである (先頭が \\\\.\\)、のいずれかの理由が考えられます (<xref:System.ArgumentException>)。  
+-   次のいずれかの理由で、パスが正しくない。長さが 0 の文字列である、空白だけが含まれている、使用できない文字が含まれている、デバイス パスである (先頭が \\\\.\\) (<xref:System.ArgumentException>)。  
   
 -   システムが絶対パスを取得できなかった (<xref:System.ArgumentException>)。  
   
--   パスが `Nothing` であるため、有効でない (<xref:System.ArgumentNullException>)。  
+-   パスが `Nothing` であるため、有効でない (<xref:System.ArgumentNullException>)  
   
--   ソース ファイルが有効でないか、存在しない (<xref:System.IO.FileNotFoundException>)。  
+-   ソース ファイルが正しくない、または存在しない (<xref:System.IO.FileNotFoundException>)。  
   
--   結合したパスが、既存のディレクトリをポイントしている (<xref:System.IO.IOException>)。  
+-   結合したパスが、既存のディレクトリを指している (<xref:System.IO.IOException>)。  
   
--   ターゲット ファイルが存在し、`overwrite` が `False` に設定されている (<xref:System.IO.IOException>)。  
+-   リンク先ファイルが存在し、`overwrite` が `False` に設定されている (<xref:System.IO.IOException>)。  
   
--   ユーザーにファイルにアクセスする十分なアクセス許可がない (<xref:System.IO.IOException>)。  
+-   ファイルにアクセスする十分なアクセス許可がユーザーにない (<xref:System.IO.IOException>)。  
   
 -   同じ名前がターゲット フォルダー内のファイルで使用されている (<xref:System.IO.IOException>)。  
   
--   パス内のファイル名またはフォルダー名にコロン (:) が含まれているか、または形式が無効である (<xref:System.NotSupportedException>)。  
+-   パス内のファイル名またはフォルダー名にコロン (:) が含まれている、または形式が無効である (<xref:System.NotSupportedException>)。  
   
--   `ShowUI` が `True` に設定されており、`onUserCancel` が `ThrowException`に設定されており、ユーザーが操作をキャンセルしている (<xref:System.OperationCanceledException>)。  
+-   `ShowUI` が `True` に設定され、`onUserCancel` が `ThrowException`に設定され、ユーザーが操作をキャンセルしている (<xref:System.OperationCanceledException>)。  
   
--   `ShowUI` が `True` に設定されており、`onUserCancel` が `ThrowException` に設定されており、指定していない I/O エラーが発生する (<xref:System.OperationCanceledException>)。  
+-   `ShowUI` が `True` に設定され、`onUserCancel` が `ThrowException` に設定され、未指定の I/O エラーが発生する (<xref:System.OperationCanceledException>)。  
   
--   パスがシステムで定義された最大長を超えている (<xref:System.IO.PathTooLongException>)。  
+-   パスがシステムで定義されている最大長を超えている (<xref:System.IO.PathTooLongException>)。  
   
 -   ユーザーに必要なアクセス許可がない (<xref:System.UnauthorizedAccessException>)。  
   
--   ユーザーがパスを表示するために必要なアクセス許可がない (<xref:System.Security.SecurityException>)。  
+-   ユーザーがパスを参照するのに必要なアクセス許可がない (<xref:System.Security.SecurityException>)  
   
 ## <a name="see-also"></a>関連項目  
  <xref:Microsoft.VisualBasic.FileIO.FileSystem>   

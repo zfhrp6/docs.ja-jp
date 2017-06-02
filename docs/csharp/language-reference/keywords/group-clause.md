@@ -52,7 +52,7 @@ ms.lasthandoff: 05/22/2017
  このトピックの「例」のセクションでは、`into` を含む場合と含まない場合の `group` の使用方法の完全な例があります。  
   
 ## <a name="enumerating-the-results-of-a-group-query"></a>グループ クエリの結果を列挙する  
- `group` クエリによって生成される <Xref:System.Linq.IGrouping%602> オブジェクトは基本的には、リストのリストであるため、各グループのアイテムにアクセスするには、入れ子になった [foreach](../../../csharp/language-reference/keywords/foreach-in.md) ループを使用する必要があります。 外側のループがグループ キーを反復処理し、内側のループがグループ自体の各項目を反復処理します。 グループには、キーがある場合はありますが、要素はありません。 次に、前のコード例でクエリを実行する `foreach` ループを示します。  
+ `group` クエリによって生成される <xref:System.Linq.IGrouping%602> オブジェクトは基本的には、リストのリストであるため、各グループのアイテムにアクセスするには、入れ子になった [foreach](../../../csharp/language-reference/keywords/foreach-in.md) ループを使用する必要があります。 外側のループがグループ キーを反復処理し、内側のループがグループ自体の各項目を反復処理します。 グループには、キーがある場合はありますが、要素はありません。 次に、前のコード例でクエリを実行する `foreach` ループを示します。  
   
  [!code-cs[cscsrefQueryKeywords#12](../../../csharp/language-reference/keywords/codesnippet/CSharp/group-clause_3.cs)]  
   
@@ -81,10 +81,10 @@ ms.lasthandoff: 05/22/2017
 group person by new {name = person.surname, city = person.city};  
 ```  
   
- クエリ変数を別のメソッドに渡す場合には、名前付きの型を使用します。 キーに自動実装されるプロパティを使用して、特殊なクラスを作成し、<xref:System.Object.Equals%2A> および <xref:System.Object.GetHashCode%2A> メソッドをオーバーライドします。 これらのメソッドを厳密にオーバーライドする必要がない構造体を使用することも可能です。 詳細については、「[方法 : 自動実装するプロパティを使用して簡易クラスを実装する](../../../csharp/programming-guide/classes-and-structs/how-to-implement-a-lightweight-class-with-auto-implemented-properties.md)」と「[Query for Duplicate Files in a Directory Tree](../../programming-guide/concepts/linq/how-to-query-for-duplicate-files-in-a-directory-tree-linq.md)」 (方法: ディレクトリ ツリーで重複するファイルを問い合わせる) を参照してください。 後述のトピックには、名前付きの型を複合キーで使用する方法のコード例があります。  
+ クエリ変数を別のメソッドに渡す場合には、名前付きの型を使用します。 キーの自動実装プロパティを使用して特殊クラスを作成し、<xref:System.Object.Equals%2A> メソッドと <xref:System.Object.GetHashCode%2A> メソッドをオーバーライドします。 これらのメソッドを厳密にオーバーライドする必要がない構造体を使用することも可能です。 詳細については、「[方法 : 自動実装するプロパティを使用して簡易クラスを実装する](../../../csharp/programming-guide/classes-and-structs/how-to-implement-a-lightweight-class-with-auto-implemented-properties.md)」と「[Query for Duplicate Files in a Directory Tree](../../programming-guide/concepts/linq/how-to-query-for-duplicate-files-in-a-directory-tree-linq.md)」 (方法: ディレクトリ ツリーで重複するファイルを問い合わせる) を参照してください。 後述のトピックには、名前付きの型を複合キーで使用する方法のコード例があります。  
   
 ## <a name="example"></a>例  
- 次の例では、グループにその他のクエリ ロジックが適用されていない場合、ソース データをグループに並べる標準的なパターンを示します。 これは連結なしのグループ化と呼ばれます。 文字列の配列の要素は、最初の文字でグループ化されます。 クエリの結果は、型 `char` のパブリック `Key` プロパティとグループの各項目を含む <xref:System.Collections.Generic.IEnumerable%601> コレクションを含む <xref:System.Linq.IGrouping%602> 型です。  
+ 次の例では、グループにその他のクエリ ロジックが適用されていない場合、ソース データをグループに並べる標準的なパターンを示します。 これは連結なしのグループ化と呼ばれます。 文字列の配列の要素は、最初の文字でグループ化されます。 クエリの結果は、型 `char` のパブリック `Key` プロパティを含む <xref:System.Linq.IGrouping%602> 型とグループに各項目を含む <xref:System.Collections.Generic.IEnumerable%601> コレクションです。  
   
  `group` 句の結果は、シーケンスのシーケンスです。 そのため、返される各グループ内の各要素にアクセスするには、次の例のように、グループ キーを反復処理するループ内で入れ子になった `foreach` ループを使用します。  
   
@@ -96,7 +96,7 @@ group person by new {name = person.surname, city = person.city};
  [!code-cs[cscsrefQueryKeywords#17](../../../csharp/language-reference/keywords/codesnippet/CSharp/group-clause_8.cs)]  
   
 ## <a name="remarks"></a>コメント  
- コンパイル時に、`group` 句は、<xref:System.Linq.Enumerable.GroupBy%2A> メソッドの呼び出しに変換されます。  
+ コンパイル時に `group` 句が <xref:System.Linq.Enumerable.GroupBy%2A> メソッドの呼び出しに変換されます。  
   
 ## <a name="see-also"></a>関連項目  
  <xref:System.Linq.IGrouping%602>   

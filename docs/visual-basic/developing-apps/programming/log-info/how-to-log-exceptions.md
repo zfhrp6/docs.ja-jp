@@ -55,7 +55,7 @@ ms.lasthandoff: 05/22/2017
   
 3.  例外が発生する可能性のあるコードを `Try` ブロックに記述します。  
   
-     `Dim` 行および `MsgBox` 行をコメントから外すと、<xref:System.NullReferenceException> 例外が発生します。  
+     `Dim` 行と `MsgBox` 行のコメントを解除すると、<xref:System.NullReferenceException> 例外が発生します。  
   
      [!code-vb[VbVbalrMyApplicationLog#7](../../../../visual-basic/developing-apps/programming/log-info/codesnippet/VisualBasic/how-to-log-exceptions_3.vb)]  
   

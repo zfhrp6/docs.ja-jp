@@ -62,7 +62,7 @@ ms.lasthandoff: 05/22/2017
   
 3.  その `<listeners>` セクションに次の要素を追加します。  
   
-    ```xml  
+    ```  
     <add name="FileLogListener" />  
     ```  
   
@@ -70,7 +70,7 @@ ms.lasthandoff: 05/22/2017
   
 5.  その `<sharedListeners>` セクションに次の要素を追加します。  
   
-    ```xml  
+    ```  
     <add name="FileLogListener"   
         type="Microsoft.VisualBasic.Logging.FileLogTraceListener,   
               Microsoft.VisualBasic, Version=8.0.0.0, Culture=neutral,   
@@ -83,7 +83,7 @@ ms.lasthandoff: 05/22/2017
      `customlocation` 属性の値をログ ディレクトリに変更します。  
   
     > [!NOTE]
-    >  リスナー プロパティの値を設定するには、プロパティと同じ名前ですべてが英小文字の属性を使います。 たとえば、`location` 属性は <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.Location%2A> プロパティの値を設定し、`customlocation` 属性は <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.CustomLocation%2A> プロパティの値を設定します。  
+    >  リスナー プロパティの値を設定するには、プロパティと同じ名前ですべてが英小文字の属性を使います。 たとえば、`location` 属性と `customlocation` 属性では、<xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.Location%2A> プロパティと <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.CustomLocation%2A> プロパティの値が設定されます。  
   
 ### <a name="to-write-event-information-to-the-file-log"></a>イベント情報をファイル ログに書き込むには  
   

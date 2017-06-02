@@ -47,7 +47,7 @@ ms.lasthandoff: 05/22/2017
   
 ## <a name="literals"></a>リテラル  
 
- `byte` 変数を宣言し、10 進リテラル、16 進リテラル、または (C# 7 以降) バイナリ リテラルを割り当てることによって初期化できます。 整数リテラルが `byte` の範囲外である場合は (つまり、<xref:System.Byte.MinValue?displayProperty=fullName> より小さいか、<xref:System.Byte.MaxValue?displayProperty=fullName> より大きい場合)、コンパイル エラーが発生します。
+ `byte` 変数を宣言し、10 進リテラル、16 進リテラル、または (C# 7 以降) バイナリ リテラルを割り当てることによって初期化できます。 整数リテラルが `byte` の範囲外にある場合 (つまり、<xref:System.Byte.MinValue?displayProperty=fullName> より小さいか、<xref:System.Byte.MaxValue?displayProperty=fullName> より大きい場合)、コンパイル エラーが発生します。
 
 次の例では、整数 201 を 10 進リテラル、16 進リテラル、バイナリ リテラルで表したものが、[int](../../../csharp/language-reference/keywords/int.md) から `byte` 値に暗黙的に変換されています。    
   
@@ -66,7 +66,6 @@ C# 7 以降では、次の例に示すように、アンダースコア文字 `_
  より大きな記憶領域のサイズを持つ、リテラル以外の数値型を暗黙的に `byte` に変換することはできません。 整数型の記憶域サイズの詳細については、「[整数型の一覧表](../../../csharp/language-reference/keywords/integral-types-table.md)」を参照してください。 たとえば、2 つの `byte` 変数 `x` と `y` があるとします。  
   
 ```  
-  
 byte x = 10, y = 20;  
 ```  
   
@@ -133,3 +132,4 @@ SampleMethod((byte)5);
  [組み込み型の一覧表](../../../csharp/language-reference/keywords/built-in-types-table.md)   
  [暗黙的な数値変換の一覧表](../../../csharp/language-reference/keywords/implicit-numeric-conversions-table.md)   
  [明示的な数値変換の一覧表](../../../csharp/language-reference/keywords/explicit-numeric-conversions-table.md)
+

@@ -92,7 +92,7 @@ ms.lasthandoff: 05/22/2017
  強力なパスワードの特性をチェックし、パスワードの複雑さのチェックに関する情報を使って文字列パラメーターを更新する方法について説明します。  
   
  [Visual Basic での文字列の暗号化と暗号化解除](../visual-basic/programming-guide/language-features/strings/walkthrough-encrypting-and-decrypting-strings.md)  
- <xref:System.Security.Cryptography.DESCryptoServiceProvider> クラスを使用して、文字列を暗号化および暗号化解除する方法について説明します。  
+ <xref:System.Security.Cryptography.DESCryptoServiceProvider> クラスを利用して文字列を暗号化し、暗号化解除する方法を示します。  
   
  [Visual Basic によるファイルとフォルダーの操作](../visual-basic/developing-apps/programming/drives-directories-files/walkthrough-manipulating-files-and-directories.md)  
  [!INCLUDE[vbprvb](../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] の関数を使用して、ファイル情報を確認する方法、ファイル内で文字列を検索する方法、およびファイルへの書き込みを行う方法について説明します。  

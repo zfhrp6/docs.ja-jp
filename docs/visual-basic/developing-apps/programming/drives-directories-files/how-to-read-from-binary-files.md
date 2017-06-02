@@ -56,21 +56,21 @@ ms.lasthandoff: 05/22/2017
 ## <a name="robust-programming"></a>信頼性の高いプログラミング  
  次の条件を満たす場合は、例外がスローされる可能性があります。  
   
--   パスが無効である。これには、1) 長さが 0 の文字列である、2) 空白だけが含まれている、3) 無効な文字が含まれている、4) デバイス パスである、のいずれかの理由が考えられます (<xref:System.ArgumentException>)。  
+-   パスが無効である場合。1) 長さが 0 の文字列である、2) 空白だけが含まれている、3) 無効な文字が含まれている、4) デバイス パスである、のいずれかの理由が考えられる (<xref:System.ArgumentException>)。  
   
--   パスが `Nothing` であるため、有効でない (<xref:System.ArgumentNullException>)。  
+-   パスが `Nothing` であるため、有効でない (<xref:System.ArgumentNullException>)  
   
 -   ファイルが存在しない (<xref:System.IO.FileNotFoundException>)。  
   
 -   他のプロセスがファイルを使用しているか、または I/O エラーが発生した (<xref:System.IO.IOException>)。  
   
--   パスがシステムで定義された最大長を超えている (<xref:System.IO.PathTooLongException>)。  
+-   パスがシステムで定義されている最大長を超えている (<xref:System.IO.PathTooLongException>)。  
   
--   パス内のファイル名またはディレクトリ名にコロン (:) が含まれているか、または形式が無効である (<xref:System.NotSupportedException>)。  
+-   パス内のファイル名またはディレクトリ名にコロン (:) が含まれているか、または形式が無効である (<xref:System.NotSupportedException>)  
   
--   文字列をバッファーに書き込むための十分なメモリがない (<xref:System.OutOfMemoryException>)。  
+-   文字列をバッファーに書き込むための十分なメモリがない (<xref:System.OutOfMemoryException>)  
   
--   ユーザーがパスを表示するために必要なアクセス許可がない (<xref:System.Security.SecurityException>)。  
+-   ユーザーがパスを参照するのに必要なアクセス許可がない (<xref:System.Security.SecurityException>)  
   
  ファイル名からファイルの内容を判断しないでください。 たとえば、Form1.vb というファイルは Visual Basic のソース ファイルではない可能性もあります。  
   

@@ -41,7 +41,7 @@ ms.lasthandoff: 05/22/2017
 
 ---
 # <a name="how-to-write-text-to-files-in-visual-basic"></a>方法: ファイルにテキストを書き込む (Visual Basic)
-<xref:Microsoft.VisualBasic.FileIO.FileSystem.WriteAllText%2A> メソッドを使うと、ファイルにテキストを書き込むことができます。 指定したファイルが存在しない場合は、作成されます。  
+<xref:Microsoft.VisualBasic.FileIO.FileSystem.WriteAllText%2A> メソッドを利用し、テキストをファイルに書き込みます。 指定したファイルが存在しない場合は、作成されます。  
   
 ## <a name="procedure"></a>プロシージャ  
   
@@ -62,23 +62,23 @@ ms.lasthandoff: 05/22/2017
 ## <a name="robust-programming"></a>信頼性の高いプログラミング  
  次の条件を満たす場合は、例外が発生する可能性があります。  
   
--   パスが無効である。これには、1) 長さが 0 の文字列である、2) 空白だけが含まれている、3) 無効な文字が含まれている、4) デバイス パスである (先頭が \\\\.\\)、のいずれかの理由が考えられます (<xref:System.ArgumentException>)。  
+-   パスが正しくない。長さが 0 の文字列である、空白だけが含まれている、使用できない文字が含まれている、デバイス パスである (先頭が \\\\.\\)、のいずれかの理由が考えられる (<xref:System.ArgumentException>)。  
   
--   パスが `Nothing` であるため、有効でない (<xref:System.ArgumentNullException>)。  
+-   パスが `Nothing` であるため、有効でない (<xref:System.ArgumentNullException>)  
   
--   `File` が存在しないパスを指定している (<xref:System.IO.FileNotFoundException> または <xref:System.IO.DirectoryNotFoundException>)。  
+-   `File` が、存在しないパスを指している (<xref:System.IO.FileNotFoundException> または <xref:System.IO.DirectoryNotFoundException>)。  
   
--   他のプロセスがファイルを使用している、または I/O エラーが発生した (<xref:System.IO.IOException>)。  
+-   他のプロセスがファイルを使用しているか、または I/O エラーが発生した (<xref:System.IO.IOException>)。  
   
--   パスがシステムで定義された最大長を超えている (<xref:System.IO.PathTooLongException>)。  
+-   パスがシステムで定義されている最大長を超えている (<xref:System.IO.PathTooLongException>)。  
   
--   パス内のファイル名またはディレクトリ名にコロン (:) が含まれているか、または形式が無効である (<xref:System.NotSupportedException>)。  
+-   パス内のファイル名またはディレクトリ名にコロン (:) が含まれているか、または形式が無効である (<xref:System.NotSupportedException>)  
   
--   ユーザーがパスを表示するために必要なアクセス許可がない (<xref:System.Security.SecurityException>)。  
+-   ユーザーがパスを参照するのに必要なアクセス許可がない (<xref:System.Security.SecurityException>)  
   
--   ディスクに空きがなく、`WriteAllText` の呼び出しが失敗する (<xref:System.IO.IOException>)。  
+-   ディスクがいっぱいになっており、`WriteAllText` の呼び出しが失敗する (<xref:System.IO.IOException>)。  
   
- 部分的に信頼されたコンテキストで実行している場合、コードは、特権がないために例外をスローする可能性があります。 詳しくは、「[コード アクセス セキュリティの基礎](https://msdn.microsoft.com/library/33tceax8)」をご覧ください。  
+ 部分的に信頼されているコンテキストで実行している場合は、特権不足のため例外がスローされることがあります。 詳しくは、「[コード アクセス セキュリティの基礎](https://msdn.microsoft.com/library/33tceax8)」をご覧ください。  
   
 ## <a name="see-also"></a>関連項目  
  <xref:Microsoft.VisualBasic.FileIO.FileSystem>   

@@ -64,25 +64,25 @@ ms.lasthandoff: 05/22/2017
 ## <a name="robust-programming"></a>信頼性の高いプログラミング  
  次の条件を満たす場合は、例外が発生する可能性があります。  
   
--   パスが無効である。これには、1) 長さが 0 の文字列である、2) 空白だけが含まれている、3) 無効な文字が含まれている、4) デバイス パスである (先頭が \\\\.\\)、のいずれかの理由が考えられます (<xref:System.ArgumentException>)。  
+-   パスが正しくない。長さが 0 の文字列である、空白だけが含まれている、使用できない文字が含まれている、デバイス パスである (先頭が \\\\.\\)、のいずれかの理由が考えられる (<xref:System.ArgumentException>)。  
   
--   パスが `Nothing` であるため、有効でない (<xref:System.ArgumentNullException>)。  
+-   パスが `Nothing` であるため、有効でない (<xref:System.ArgumentNullException>)  
   
--   パスがシステムで定義された最大長を超えている (<xref:System.IO.PathTooLongException>)。  
+-   パスがシステムで定義されている最大長を超えている (<xref:System.IO.PathTooLongException>)。  
   
--   パス内のファイル名またはフォルダー名にコロン (:) が含まれているか、または形式が無効である (<xref:System.NotSupportedException>)。  
+-   パス内のファイル名またはフォルダー名にコロン (:) が含まれている、または形式が無効である (<xref:System.NotSupportedException>)。  
   
--   ファイルが使用中である (<xref:System.IO.IOException>)。  
+-   ファイルが使用中の場合 (<xref:System.IO.IOException>)。  
   
--   ユーザーがパスを表示するために必要なアクセス許可がない (<xref:System.Security.SecurityException>)。  
+-   ユーザーがパスを参照するのに必要なアクセス許可がない (<xref:System.Security.SecurityException>)  
   
 -   ファイルが存在しない (<xref:System.IO.FileNotFoundException>)。  
   
 -   ファイルの削除に必要なアクセス許可がユーザーにないか、またはファイルが読み取り専用である (<xref:System.UnauthorizedAccessException>)。  
   
--   部分信頼の状況でユーザーに十分なアクセス許可がない (<xref:System.Security.SecurityException>)。  
+-   部分信頼の状況下で、必要なアクセス許可がユーザーにない (<xref:System.Security.SecurityException>)。  
   
--   ユーザーが操作をキャンセルし、`onUserCancel` が `ThrowException` に設定されている (<xref:System.OperationCanceledException>)。  
+-   ユーザーが操作を取り消し、`onUserCancel` が `ThrowException` に設定されている (<xref:System.OperationCanceledException>)。  
   
 ## <a name="see-also"></a>関連項目  
  <xref:Microsoft.VisualBasic.FileIO.UICancelOption>   

@@ -58,7 +58,7 @@ ms.lasthandoff: 05/22/2017
  **My Documents** ディレクトリでテキスト ファイルを新規作成し、それに書き込む方法を示します。  
   
  [方法: StreamWriter を使用してファイルにテキストを書き込む](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-write-text-to-files-with-a-streamwriter.md)  
- <xref:System.IO.StreamWriter?displayProperty=fullName> オブジェクトを使用してファイルに書き込む方法を示します。  
+ <xref:System.IO.StreamWriter?displayProperty=fullName> オブジェクトでファイルに書き込む方法を示します。  
   
 ## <a name="reference"></a>参照  
  <xref:Microsoft.VisualBasic.FileIO.FileSystem>  

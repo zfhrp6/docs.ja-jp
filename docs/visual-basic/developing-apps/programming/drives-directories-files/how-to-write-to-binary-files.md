@@ -40,7 +40,7 @@ ms.lasthandoff: 05/22/2017
 
 ---
 # <a name="how-to-write-to-binary-files-in-visual-basic"></a>方法 : Visual Basic でバイナリ ファイルに書き込む
-<xref:Microsoft.VisualBasic.FileIO.FileSystem.WriteAllBytes%2A> メソッドは、データをバイナリ ファイルに書き込みます。 `append` パラメーターが `True` の場合、データはファイルに追加されます。それ以外の場合は、ファイル内のデータが上書きされます。  
+<xref:Microsoft.VisualBasic.FileIO.FileSystem.WriteAllBytes%2A> メソッドは、バイナリ ファイルにデータを書き込みます。 `append` パラメーターが `True` の場合、データはファイルに追加されます。それ以外の場合は、ファイル内のデータが上書きされます。  
   
  指定されたパスのファイル名を除く部分が有効でない場合は、<xref:System.IO.DirectoryNotFoundException> 例外がスローされます。 パスが有効でもファイルが存在しない場合は、ファイルが作成されます。  
   
@@ -53,19 +53,19 @@ ms.lasthandoff: 05/22/2017
 ## <a name="robust-programming"></a>信頼性の高いプログラミング  
  次の条件を満たす場合は、例外が発生する可能性があります。  
   
--   文字列の長さが 0 である、空白文字だけが含まれる、または無効な文字が含まれるために、パスが無効である (<xref:System.ArgumentException>)。  
+-   文字列の長さが 0 である、空白文字だけが含まれる、または無効な文字が含まれるために、パスが無効である (<xref:System.ArgumentException>).  
   
--   パスが `Nothing` であるため、有効でない (<xref:System.ArgumentNullException>)。  
+-   パスが `Nothing` であるため、有効でない (<xref:System.ArgumentNullException>)  
   
--   `File` が存在しないパスを指定している (<xref:System.IO.FileNotFoundException> または <xref:System.IO.DirectoryNotFoundException>)。  
+-   `File` が、存在しないパスを指している (<xref:System.IO.FileNotFoundException> または <xref:System.IO.DirectoryNotFoundException>)。  
   
--   他のプロセスがファイルを使用している、または I/O エラーが発生した (<xref:System.IO.IOException>)。  
+-   他のプロセスがファイルを使用しているか、または I/O エラーが発生した (<xref:System.IO.IOException>)。  
   
--   パスがシステムで定義された最大長を超えている (<xref:System.IO.PathTooLongException>)。  
+-   パスがシステムで定義されている最大長を超えている (<xref:System.IO.PathTooLongException>)。  
   
--   パス内のファイル名またはディレクトリ名にコロン (:) が含まれているか、または形式が無効である (<xref:System.NotSupportedException>)。  
+-   パス内のファイル名またはディレクトリ名にコロン (:) が含まれているか、または形式が無効である (<xref:System.NotSupportedException>)  
   
--   ユーザーがパスを表示するために必要なアクセス許可がない (<xref:System.Security.SecurityException>)。  
+-   ユーザーがパスを参照するのに必要なアクセス許可がない (<xref:System.Security.SecurityException>)  
   
 ## <a name="see-also"></a>関連項目  
  <xref:Microsoft.VisualBasic.FileIO.FileSystem.WriteAllBytes%2A>   
