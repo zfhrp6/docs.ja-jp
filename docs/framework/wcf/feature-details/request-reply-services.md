@@ -1,0 +1,43 @@
+---
+title: "要求/応答サービス | Microsoft Docs"
+ms.custom: ""
+ms.date: "03/30/2017"
+ms.prod: ".net-framework-4.6"
+ms.reviewer: ""
+ms.suite: ""
+ms.technology: 
+  - "dotnet-clr"
+ms.tgt_pltfrm: ""
+ms.topic: "article"
+helpviewer_keywords: 
+  - "コントラクト [WCF], 要求/応答サービス"
+  - "要求/応答コントラクト [WCF]"
+  - "WCF [WCF], 要求/応答サービス"
+  - "Windows Communication Foundation [WCF], 要求/応答サービス"
+ms.assetid: 2fa710f1-47f4-4598-b063-3ab3bd22ebba
+caps.latest.revision: 7
+author: "Erikre"
+ms.author: "erikre"
+manager: "erikre"
+caps.handback.revision: 7
+---
+# 要求/応答サービス
+要求\/応答サービスは、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] の操作コントラクトの既定の種類です。クライアントはサービス操作を呼び出し、サービスからの応答を待機します。サービス操作の呼び出しは、同期的または非同期的に実行できます。同期呼び出しでは、応答を受信するか、呼び出しがタイムアウトするまで、クライアントがブロックされます。非同期呼び出しでは、クライアントはサービス操作の呼び出し後、動作を続行し、別のスレッドのサービスからの応答を受信できます。  
+  
+ 要求\/応答サービス コントラクトを作成するには、サービス コントラクトを定義し、次のサンプル コードに示すように <xref:System.ServiceModel.OperationContractAttribute> クラスを各操作に適用します。  
+  
+```  
+[ServiceContract(Namespace="http://Microsoft.ServiceModel.Samples")]  
+public interface IRequestReplyCalculator  
+{  
+    [OperationContract]  
+    double Add(double n1, double n2);  
+}  
+  
+```  
+  
+ これは既定の動作であるため、<xref:System.ServiceModel.OperationContractAttribute.IsOneWay%2A> プロパティを `false` に設定する必要はありません。  
+  
+## 参照  
+ [一方向サービス](../../../../docs/framework/wcf/feature-details/one-way-services.md)   
+ [双方向サービス](../../../../docs/framework/wcf/feature-details/duplex-services.md)
