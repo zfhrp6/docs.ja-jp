@@ -41,7 +41,7 @@ ms.lasthandoff: 03/13/2017
 
 ---
 # <a name="introduction-to-linq-queries-c"></a>LINQ クエリの概要 (C#)
-"*クエリ*" は、データ ソースからデータを取得する式です。 クエリは通常、専用のクエリ言語で表されます。 これまでに、リレーショナル データベース用の SQL や XML 用の XQuery など、データ ソースの種類に合わせてさまざまな言語が開発されてきました。 このため、開発者は、サポートする必要のあるデータ ソースの種類やデータ形式ごとに、新しいクエリ言語を習得する必要がありました。 [!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq_md.md)] は、さまざまな種類のデータ ソースやデータ形式のデータを操作するための一貫したモデルを提供することにより、この負担を軽減します。 [!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq_md.md)] クエリでは、操作の対象は常にオブジェクトになります。 共通の基本的なコーディング パターンを使用することで、[!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq_md.md)] プロバイダーを利用できる XML ドキュメント、SQL データベース、[!INCLUDE[vstecado](../../../../csharp/programming-guide/concepts/linq/includes/vstecado_md.md)] データセット、.NET コレクション、その他の任意の形式のデータを照会したり変換したりできます。  
+"*クエリ*" は、データ ソースからデータを取得する式です。 クエリは通常、専用のクエリ言語で表されます。 これまでに、リレーショナル データベース用の SQL や XML 用の XQuery など、データ ソースの種類に合わせてさまざまな言語が開発されてきました。 このため、開発者は、サポートする必要のあるデータ ソースの種類やデータ形式ごとに、新しいクエリ言語を習得する必要がありました。 [!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq_md.md)] は、さまざまな種類のデータ ソースやデータ形式のデータを操作するための一貫したモデルを提供することにより、この負担を軽減します。 [!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq_md.md)] クエリでは、操作の対象は常にオブジェクトになります。 共通の基本的なコーディング パターンを使用することで、[!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq_md.md)] プロバイダーを利用できる XML ドキュメント、SQL データベース、[!INCLUDE[vstecado](~/includes/vstecado-md.md)] データセット、.NET コレクション、その他の任意の形式のデータを照会したり変換したりできます。  
   
 ## <a name="three-parts-of-a-query-operation"></a>クエリ操作の 3 つの手順  
  すべての [!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq_md.md)] クエリ操作は、次の 3 つの手順で構成されます。  
