@@ -56,7 +56,7 @@ namespace TeleprompterConsole
 ## <a name="reading-and-echoing-the-file"></a>ファイルの読み取りとエコー
 最初に追加する機能は、テキスト ファイルを読み取り、そのテキストすべてをコンソールに表示する機能です。 まず、テキスト ファイルを追加しましょう。 この[サンプル](https://github.com/dotnet/docs/tree/master/samples/csharp/getting-started/console-teleprompter)の GitHub リポジトリから、[sampleQuotes.txt](https://raw.githubusercontent.com/dotnet/docs/master/samples/csharp/getting-started/console-teleprompter/sampleQuotes.txt) ファイルをプロジェクト ディレクトリにコピーします。 これがアプリケーションのスクリプトとして機能します。 このトピックのサンプル アプリをダウンロードする方法については、「[サンプルおよびチュートリアル](../../samples-and-tutorials/index.md#viewing-and-downloading-samples)」をご覧ください。
 
-次に、以下のメソッドを Program クラス (`Main` メソッドのすぐ下) に追加します。
+次に、以下のメソッドを Program クラス (`Main` メソッドの真下) に追加します。
 
 ```csharp
 static IEnumerable<string> ReadFrom(string file)
