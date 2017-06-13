@@ -22,11 +22,11 @@ caps.latest.revision: 19
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
-ms.openlocfilehash: ffe0b574b00e3ce420d83658f5844f26c3f8ea72
+ms.translationtype: Human Translation
+ms.sourcegitcommit: c50b3e328998b65ec47efe6d7457b36116813c77
+ms.openlocfilehash: 3bbfaf3272444fbd2127f01ae4d5c9ca0db7bd39
 ms.contentlocale: ja-jp
-ms.lasthandoff: 06/02/2017
+ms.lasthandoff: 04/08/2017
 
 ---
 # <a name="resources-in-desktop-apps"></a>デスクトップ アプリケーションのリソース
@@ -51,23 +51,23 @@ ms.lasthandoff: 06/02/2017
  詳細については、「[リソースのパッケージ化と配置](../../../docs/framework/resources/packaging-and-deploying-resources-in-desktop-apps.md)」の記事を参照してください。  
   
 ## <a name="retrieving-resources"></a>リソースの取得  
- 実行時に、アプリは、<xref:System.Globalization.CultureInfo.CurrentUICulture%2A?displayProperty=fullName> プロパティで指定されるカルチャに基づいて、適切なローカライズ バージョンのリソースをスレッド単位で読み込みます。 このプロパティ値の派生は次のように行われます。  
+ <xref:System.Globalization.CultureInfo.CurrentUICulture%2A?displayProperty=fullName> プロパティに指定されたカルチャに基づいて、アプリは実行時にスレッドごとに適切なローカライズ済みリソースをロードします。 このプロパティ値の派生は次のように行われます。  
   
 -   ローカライズされたカルチャを表す <xref:System.Globalization.CultureInfo> オブジェクトを <xref:System.Threading.Thread.CurrentUICulture%2A?displayProperty=fullName> プロパティに直接割り当てます。  
   
--   カルチャが明示的に割り当てられていない場合は、<xref:System.Globalization.CultureInfo.DefaultThreadCurrentUICulture%2A?displayProperty=fullName> プロパティから既定のスレッド UI カルチャを取得します。  
+-   カルチャが明示的に割り当てられていない場合は、<xref:System.Globalization.CultureInfo.DefaultThreadCurrentUICulture%2A?displayProperty=fullName> プロパティから既定の UI カルチャを取得します。  
   
 -   既定のスレッド UI カルチャが明示的に割り当てられていない場合は、Windows の `GetUserDefaultUILanguage` 関数を呼び出して、ローカル コンピューター上の現在のユーザーのカルチャを取得します。  
   
- 現在の UI カルチャを設定する方法の詳細については、「<xref:System.Globalization.CultureInfo>」リファレンス ページと「<xref:System.Globalization.CultureInfo.CurrentUICulture%2A?displayProperty=fullName>」リファレンス ページを参照してください。  
+ 現在の UIカルチャの設定方法の詳細については、<xref:System.Globalization.CultureInfo> および <xref:System.Globalization.CultureInfo.CurrentUICulture%2A?displayProperty=fullName> のリファレンス ページを参照してください。  
   
- これで、<xref:System.Resources.ResourceManager?displayProperty=fullName> クラスを使用して、現在の UI カルチャまたは特定のカルチャのリソースを取得できます。 <xref:System.Resources.ResourceManager> クラスはデスクトップ アプリのリソースを取得する場合に最もよく使用されますが、<xref:System.Resources?displayProperty=fullName> 名前空間には、リソースの取得に使用できるその他のタイプも含まれています。 以下に例を示します。  
+ これで、<xref:System.Resources.ResourceManager?displayProperty=fullName> クラスを使用して、現在の UI カルチャまたは特定のカルチャのリソースを取得できます。 <xref:System.Resources.ResourceManager> クラスはデスクトップ アプリのリソースを取得する場合に最もよく使用されますが、<xref:System.Resources?displayProperty=fullName> 名前空間には、リソースの取得に使用できるその他のタイプも含まれています。 次の設定があります。  
   
 -   <xref:System.Resources.ResourceReader> クラス。アセンブリに埋め込まれているリソースまたはスタンドアロンの .resources バイナリ ファイルに格納されているリソースを列挙できます。 これは、実行時に使用可能なリソースの正確な名前がわからない場合に役立ちます。  
   
 -   <xref:System.Resources.ResXResourceReader> クラス。XML (.resx) ファイルからリソースを取得できます。  
   
--   <xref:System.Resources.ResourceSet> クラス。フォールバック規則に従わずに特定のカルチャのリソースを取得できます。 リソースは、アセンブリ、またはスタンドアロンの .resources バイナリ ファイルに格納できます。 また、<xref:System.Resources.IResourceReader> の実装も開発できます。この実装によって、<xref:System.Resources.ResourceSet> クラスを使用して他のソースからリソースを取得できるようになります。  
+-   <xref:System.Resources.ResourceSet> クラス。フォールバック規則に従わずに特定のカルチャのリソースを取得できます。 リソースは、アセンブリ、またはスタンドアロンの .resources バイナリ ファイルに格納できます。 <xref:System.Resources.ResourceSet> クラスの使用を可能にする <xref:System.Resources.IResourceReader> 実装を開発して、その他のソースからリソースを取得することもできます。  
   
 -   <xref:System.Resources.ResXResourceSet> クラス。XML リソース ファイル内のすべての項目を取得してメモリに格納できます。  
   
