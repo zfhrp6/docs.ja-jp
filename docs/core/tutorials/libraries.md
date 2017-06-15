@@ -1,5 +1,5 @@
 ---
-title: "クロス プラットフォーム ツールによるライブラリの開発"
+title: "クロス プラットフォーム ツールによるライブラリの開発| Microsoft Docs"
 description: "クロス プラットフォーム ツールによるライブラリの開発"
 keywords: .NET, .NET Core
 author: cartermp
@@ -11,10 +11,10 @@ ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: 9f6e8679-bd7e-4317-b3f9-7255a260d9cf
 ms.translationtype: Human Translation
-ms.sourcegitcommit: e6286e65ac24de3318f9ec7c97ef6ee2c7b192ed
-ms.openlocfilehash: 15528cb0a12da07763613bee79180c4941224ddf
+ms.sourcegitcommit: fd5f6cccdc5c91eb435ba024c9c37351febc952a
+ms.openlocfilehash: b56a285d21c9103f76b4e9fb0749a4e36a603074
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/02/2017
+ms.lasthandoff: 06/15/2017
 
 ---
 
@@ -46,7 +46,7 @@ ms.lasthandoff: 05/02/2017
 
 この記事には、.NET Standard バージョンを多様な実装にマップする表が掲載されています。
 
-[!INCLUDE [net-standard-table](../../includes/net-standard-table.md)]
+[!INCLUDE [net-standard-table](~/includes/net-standard-table.md)]
 
 ライブラリを作成する目的でこの表の意味について説明します。
 
@@ -319,12 +319,13 @@ let doWork data = async {
 このような使用シナリオは、アクセスされる API が C# と F# 用に異なる構造を持つ必要があることを示します。  これを実現する一般的なアプローチとして、ライブラリのすべてのロジックをコア プロジェクトに取り入れ、C# および F# プロジェクトでコア プロジェクトに呼び出す API レイヤーを定義する方法があります。  以降のセクションでは、次の名前を使用します。
 
 * **AwesomeLibrary.Core** - ライブラリのすべてのロジックを含むコア プロジェクト
-* **AwesomeLibrary.CSharp** - C で使用するためのパブリック API を含むプロジェクト#
-* **AwesomeLibrary.FSharp** - F で使用するためのパブリック API を含むプロジェクト#
+* **AwesomeLibrary.CSharp** - C# で使用するためのパブリック API を含むプロジェクト
+* **AwesomeLibrary.FSharp** - F# で使用するためのパブリック API を含むプロジェクト
 
 自分の端末で次のコマンドを実行し、このガイドと同じ構造を作成することができます。
 
 ```console
+mkdir AwesomeLibrary && cd AwesomeLibrary
 dotnet new sln
 mkdir AwesomeLibrary.Core && cd AwesomeLibrary.Core && dotnet new classlib
 cd ..
@@ -332,9 +333,9 @@ mkdir AwesomeLibrary.CSharp && cd AwesomeLibrary.CSharp && dotnet new classlib
 cd ..
 mkdir AwesomeLibrary.FSharp && cd AwesomeLibrary.FSharp && dotnet new classlib -lang F#
 cd ..
-dotnet sln add AwesomeLibrary.Core/AwesomeLibrary.Core/csproj
-dotnet sln add AwesomeLibrary.CSharp/AwesomeLibrary.CSharp/csproj
-dotnet sln add AwesomeLibrary.FSharp/AwesomeLibrary.FSharp/csproj
+dotnet sln add AwesomeLibrary.Core/AwesomeLibrary.Core.csproj
+dotnet sln add AwesomeLibrary.CSharp/AwesomeLibrary.CSharp.csproj
+dotnet sln add AwesomeLibrary.FSharp/AwesomeLibrary.FSharp.fsproj
 ```
 
 これで上記の 3 つのプロジェクトと、プロジェクトをリンクするソリューション ファイルが追加されます。  ソリューション ファイルとリンクするプロジェクトを作成すると、最上位レベルからプロジェクトを復元し、ビルドできるようになります。
@@ -344,7 +345,7 @@ dotnet sln add AwesomeLibrary.FSharp/AwesomeLibrary.FSharp/csproj
 プロジェクトを参照するには、.NET CLI を使用してプロジェクト参照を追加することをお勧めします。  **AwesomeLibrary.CSharp** と **AwesomeLibrary.FSharp** のプロジェクト ディレクトリから、次のコマンドを実行できます。
 
 ```console
-$ dotnet add reference ../AwesomeLibrary.Core.csproj
+$ dotnet add reference ../AwesomeLibrary.Core/AwesomeLibrary.Core.csproj
 ```
 
 **AwesomeLibrary.CSharp** と **AwesomeLibrary.FSharp** の両方のプロジェクト ファイルは、`ProjectReference` ターゲットとして **AwesomeLibrary.Core** を参照するようになります。  この参照を確認するには、プロジェクト ファイルに以下の行があることを確認します。
@@ -360,3 +361,4 @@ $ dotnet add reference ../AwesomeLibrary.Core.csproj
 ### <a name="structuring-a-solution"></a>ソリューションの構築
 
 マルチプロジェクト ソリューションのもう 1 つの重要な側面は、全体のプロジェクト構造を適切に構築することです。 ただし、`dotnet sln add` でソリューション ファイルに各プロジェクト ファイルがリンクされ、ソリューション レベルで `dotnet restore` と `dotnet build` を実行できる限り、好みに応じてコードを整理することができます。
+
