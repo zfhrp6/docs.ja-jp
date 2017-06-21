@@ -1,5 +1,5 @@
 ---
-title: "#if (C# リファレンス) | Microsoft Docs"
+title: "#<a name=\"if-c-reference--microsoft-docs\"></a>if (C# リファレンス) | Microsoft Docs"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -39,7 +39,7 @@ ms.lasthandoff: 05/22/2017
 # <a name="if-c-reference"></a>#if (C# リファレンス)
 C# コンパイラでは、`#if` ディレクティブ、次いで [#endif](../../../csharp/language-reference/preprocessor-directives/preprocessor-endif.md) ディレクティブが検出されると、これらのディレクティブ間のコードがコンパイルされます (指定されたシンボルが定義されている場合に限る)。  C や C++ とは異なり、シンボルに数値を代入することはできません。C# の #if ステートメントはブール値であり、シンボルが定義済みかどうかのテストのみを行います。 次に例を示します。  
   
-```  
+```csharp
 #define DEBUG  
 // ...  
 #if DEBUG  
@@ -64,7 +64,7 @@ C# コンパイラでは、`#if` ディレクティブ、次いで [#endif](../.
   
 ## <a name="example"></a>例  
   
-```  
+```csharp
 // preprocessor_if.cs  
 #define DEBUG#define MYTEST  
 using System;  
@@ -90,3 +90,4 @@ public class MyClass
  [C# リファレンス](../../../csharp/language-reference/index.md)   
  [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
  [C# プリプロセッサ ディレクティブ](../../../csharp/language-reference/preprocessor-directives/index.md)
+

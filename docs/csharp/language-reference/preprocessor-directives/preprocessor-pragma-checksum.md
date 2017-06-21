@@ -1,5 +1,5 @@
 ---
-title: "##pragma checksum (C# リファレンス) | Microsoft Docs"
+title: "#<a name=\"pragma-checksum-c-reference--microsoft-docs\"></a>#pragma checksum (C# リファレンス) | Microsoft Docs"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -41,7 +41,7 @@ ms.lasthandoff: 06/15/2017
   
 ## <a name="syntax"></a>構文  
   
-```  
+```csharp
 #pragma checksum "filename" "{guid}" "checksum bytes"  
 ```  
   
@@ -66,7 +66,7 @@ ms.lasthandoff: 06/15/2017
   
 ## <a name="example"></a>例  
   
-```  
+```csharp
 class TestClass  
 {  
     static int Main()  
@@ -80,3 +80,4 @@ class TestClass
  [C# リファレンス](../../../csharp/language-reference/index.md)   
  [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
  [C# プリプロセッサ ディレクティブ](../../../csharp/language-reference/preprocessor-directives/index.md)
+
