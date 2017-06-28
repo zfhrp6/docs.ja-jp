@@ -1,50 +1,55 @@
 ---
 title: "マルチファイル アセンブリ | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-bcl"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "アセンブリ [.NET Framework], マルチファイル"
-  - "アセンブリ マニフェスト, マルチファイル アセンブリ"
-  - "コード モジュール"
-  - "コマンド ライン コンパイラ"
-  - "コンパイル (アセンブリの)"
-  - "エントリ ポイント (アセンブリの)"
-  - "マルチファイル アセンブリ"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- dotnet-bcl
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- assemblies [.NET Framework], multifile
+- entry point for assembly
+- compiling assemblies
+- command-line compilers
+- assembly manifest, multifile assemblies
+- code modules
+- multifile assemblies
 ms.assetid: 13509e73-db77-4645-8165-aad8dfaedff6
 caps.latest.revision: 9
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 9
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
+ms.openlocfilehash: 0521e3bcfc7ed4e58434bacf36b43840647ddf50
+ms.contentlocale: ja-jp
+ms.lasthandoff: 06/02/2017
+
 ---
-# マルチファイル アセンブリ
-マルチファイル アセンブリは、コマンド ライン コンパイラまたは Visual C\+\+ 付き [!INCLUDE[vsprvslong](../../../includes/vsprvslong-md.md)] を使用して作成できます。  アセンブリ内の 1 つのファイルでアセンブリ マニフェストを格納している必要があります。  また、アプリケーションを起動するアセンブリは、Main メソッドや WinMain メソッドなどのエントリ ポイントを含む必要があります。  
+# <a name="multifile-assemblies"></a>マルチファイル アセンブリ
+コマンド ライン コンパイラまたは Visual C++ で [!INCLUDE[vsprvslong](../../../includes/vsprvslong-md.md)] を使って、マルチファイル アセンブリを作成できます。 アセンブリ内の 1 つのファイルには、アセンブリ マニフェストが含まれている必要があります。 アプリケーションを起動するアセンブリには、Main メソッドや WinMain メソッドなどのエントリ ポイントも含まれている必要があります。  
   
- たとえば、Client.cs と Stringer.cs の 2 つのコード モジュールを含むアプリケーションがあるとします。  Stringer.cs は、Client.cs 内のコードによって参照される `myStringer` 名前空間を作成します。  Client.cs は、アプリケーションのエントリ ポイントである `Main` メソッドを格納します。  この例で、この 2 つのコード モジュールをコンパイルしてから、アプリケーションを起動するためのアセンブリ マニフェストを格納する 3 番目のファイルを作成します。  アセンブリ マニフェストは、`Client` モジュールと `Stringer` モジュールの両方を参照します。  
+ たとえば、2 つのコード モジュール Client.cs と Stringer.cs を含むアプリケーションがあるものとします。 Stringer.cs は、Client.cs 内のコードによって参照される `myStringer` 名前空間を作成します。 Client.cs には、アプリケーションのエントリ ポイントである `Main` メソッドが含まれます。 この例では、2 つのコード モジュールをコンパイルし、さらにアプリケーションを起動するアセンブリ マニフェストを含む 3 番目のファイルを作成します。 アセンブリ マニフェストは、`Client` モジュールと `Stringer` モジュールの両方を参照します。  
   
 > [!NOTE]
->  マルチファイル アセンブリは、アセンブリに複数のコード モジュールがある場合でも、1 つのエントリ ポイントしか持つことができません。  
+>  アセンブリに複数のコード モジュールがある場合でも、マルチファイル アセンブリが持つことのできるエントリ ポイントは 1 つだけです。  
   
- マルチファイル アセンブリの作成が必要になる理由は、いくつか考えられます。  
+ マルチファイル アセンブリを作成するのにはいくつかの理由があります。  
   
--   異なる言語で記述された複数のモジュールを結合するため。  これは、マルチファイル アセンブリの作成が必要になる最も一般的な理由です。  
+-   異なる言語で記述されたモジュールを結合するため。 これは、マルチファイル アセンブリを作成する最も一般的な理由です。  
   
--   必要な場合にしかダウンロードされないモジュールに使用頻度の低い型を配置することで、アプリケーションのダウンロードを最適化するため。  
+-   使用頻度の低い型を、必要なときにだけダウンロードされるモジュールに入れることにより、アプリケーションのダウンロードを最適化するため。  
   
     > [!NOTE]
-    >  `<object>` タグと Microsoft Internet Explorer を使用してダウンロードされるアプリケーションを作成する場合は、マルチファイル アセンブリを作成することが重要です。  この方法では、アセンブリは、アセンブリ マニフェストだけを格納するコードモジュールとは分けて作成します。  Internet Explorer は、最初にアセンブリ マニフェストをダウンロードしてから、その他の必要なモジュールまたはアセンブリをすべてダウンロードするためにワーカー スレッドを作成します。  アセンブリ マニフェストを格納するファイルのダウンロード中は、Internet Explorer はユーザーからの入力には応答しません。  アセンブリ マニフェストを格納するファイルが小さいほど、Internet Explorer が応答しない時間は短くなります。  
+    >  Microsoft Internet Explorer で `<object>` タグを使ってダウンロードされるアプリケーションを作成する場合は、マルチファイル アセンブリを作成することが重要です。 このシナリオでは、コード モジュールとは別に、アセンブリ マニフェストだけを含むファイルを作成します。 Internet Explorer は、最初にアセンブリ マニフェストをダウンロードした後、ワーカー スレッドを作成して、追加のモジュールまたは必要なアセンブリをダウンロードします。 アセンブリ マニフェストが含まれるファイルがダウンロードしている間、Internet Explorer はユーザー入力に応答できません。 アセンブリ マニフェストを含むファイルが小さいほど、Internet Explorer が応答しない時間が短くなります。  
   
--   複数の開発者が記述したコード モジュールを結合するため。  開発者は作成したコード モジュールを各自でコンパイルできます。しかしこの場合、すべてのモジュールを 1 つのマルチファイル アセンブリにするときには公開されない型が、パブリックな型として公開されてしまうことがあります。  
+-   複数の開発者が記述したコード モジュールを結合するため。 開発者ごとに各コード モジュールをアセンブリにコンパイルすることもできますが、そうすると、すべてのモジュールがマルチファイル アセンブリに収められている場合であれば公開されない一部の型が強制的に公開されることがあります。  
   
- アセンブリを作成した後は、アセンブリ マニフェストの格納ファイル、つまりアセンブリに署名したり、ファイルおよびアセンブリに厳密な名前を付けてグローバル アセンブリ キャッシュに配置したりできます。  
+ アセンブリを作成した後は、アセンブリ マニフェスト (以降アセンブリ) を含むファイルに署名したり、ファイル (およびアセンブリ) に厳密な名前を付けて、グローバル アセンブリ キャッシュに配置したりすることができます。  
   
-## 参照  
- [方法 : マルチファイル アセンブリをビルドする](../../../docs/framework/app-domains/how-to-build-a-multifile-assembly.md)   
+## <a name="see-also"></a>関連項目  
+ [方法: マルチファイル アセンブリをビルドする](../../../docs/framework/app-domains/how-to-build-a-multifile-assembly.md)   
  [アセンブリを使用したプログラミング](../../../docs/framework/app-domains/programming-with-assemblies.md)

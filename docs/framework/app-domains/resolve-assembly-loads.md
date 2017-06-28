@@ -1,86 +1,89 @@
 ---
 title: "アセンブリ読み込みの解決 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-bcl"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "アセンブリ [.NET Framework]、解決 (読み込みを)"
-  - "アプリケーション ドメイン、読み込み (アセンブリを)"
-  - "解決 (アセンブリ読み込みを)"
-  - "アセンブリ [.NET Framework]、読み込み"
-  - "アプリケーション ドメイン、解決 (アセンブリ読み込みを)"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- dotnet-bcl
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- assemblies [.NET Framework], resolving loads
+- application domains, loading assemblies
+- resolving assembly loads
+- assemblies [.NET Framework], loading
+- application domains, resolving assembly loads
 ms.assetid: 5099e549-f4fd-49fb-a290-549edd456c6a
 caps.latest.revision: 10
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 10
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
+ms.openlocfilehash: 71dfb65710a536c5cc470681285073a21da4c770
+ms.contentlocale: ja-jp
+ms.lasthandoff: 06/02/2017
+
 ---
-# アセンブリ読み込みの解決
-.NET Framework には、アセンブリの読み込みをより細かく制御する必要があるアプリケーション向けに <xref:System.AppDomain.AssemblyResolve?displayProperty=fullName> イベントが用意されています。  このイベントを処理することにより、アプリケーションでは、アセンブリを通常のプローブ パス以外から読み込みコンテキストに読み込んだり、読み込むアセンブリのバージョンを複数選択したり、動的アセンブリを生成して返したりすることができます。  このトピックでは、<xref:System.AppDomain.AssemblyResolve> イベントの処理に関するガイダンスを示します。  
+# <a name="resolving-assembly-loads"></a>解決 (アセンブリ読み込みを)
+.NET Framework では、アセンブリの読み込みをより細かく制御する必要があるアプリケーションのために、<xref:System.AppDomain.AssemblyResolve?displayProperty=fullName> イベントが用意されています。 アプリケーションでこのイベントを処理することにより、通常のプローブ パスの外部から読み込みコンテキストにアセンブリを読み込んだり、アセンブリの複数のバージョンから読み込むものを選んだり、動的アセンブリを生成してそれを返したりすることができます。 ここでは、<xref:System.AppDomain.AssemblyResolve> イベントの処理について説明します。  
   
 > [!NOTE]
->  リフレクション専用コンテキストでアセンブリの読み込みを解決する場合は、代わりに <xref:System.AppDomain.ReflectionOnlyAssemblyResolve?displayProperty=fullName> イベントを使用します。  
+>  リフレクションのみのコンテキストでアセンブリの読み込みを解決する場合は、代わりに <xref:System.AppDomain.ReflectionOnlyAssemblyResolve?displayProperty=fullName> イベントを使います。  
   
-## AssemblyResolve イベントの動作  
- <xref:System.AppDomain.AssemblyResolve> イベントのハンドラーを登録すると、ランタイムで名前によるアセンブリへのバインドに失敗した場合に、必ずこのハンドラーが呼び出されます。  たとえば、ユーザー コードから次のメソッドを呼び出すと、<xref:System.AppDomain.AssemblyResolve> イベントが発生することがあります。  
+## <a name="how-the-assemblyresolve-event-works"></a>AssemblyResolve イベントのしくみ  
+ <xref:System.AppDomain.AssemblyResolve> イベント用のハンドラーを登録すると、ランタイムが名前によるアセンブリへのバインドに失敗すると、常にハンドラーが呼び出されます。 たとえば、ユーザー コードから次のメソッドを呼び出すと、<xref:System.AppDomain.AssemblyResolve> イベントが発生する可能性があります。  
   
--   読み込むアセンブリの表示名を表す文字列 \(<xref:System.Reflection.Assembly.FullName%2A?displayProperty=fullName> プロパティによって返される文字列\) を最初の引数として指定する <xref:System.AppDomain.Load%2A?displayProperty=fullName> メソッド オーバーロードまたは <xref:System.Reflection.Assembly.Load%2A?displayProperty=fullName> メソッド オーバーロード。  
+-   1 番目の引数が読み込むアセンブリの表示名を表す文字列 (つまり、<xref:System.Reflection.Assembly.FullName%2A?displayProperty=fullName> プロパティによって返される文字列) である、<xref:System.AppDomain.Load%2A?displayProperty=fullName> メソッドまたは <xref:System.Reflection.Assembly.Load%2A?displayProperty=fullName> メソッドのオーバーロード。  
   
--   読み込むアセンブリを識別する <xref:System.Reflection.AssemblyName> オブジェクトを最初の引数として指定する <xref:System.AppDomain.Load%2A?displayProperty=fullName> メソッド オーバーロードまたは <xref:System.Reflection.Assembly.Load%2A?displayProperty=fullName> メソッド オーバーロード。  
+-   1 番目の引数が読み込むアセンブリを示す <xref:System.Reflection.AssemblyName> オブジェクトである、<xref:System.AppDomain.Load%2A?displayProperty=fullName> メソッドまたは <xref:System.Reflection.Assembly.Load%2A?displayProperty=fullName> メソッドのオーバーロード。  
   
--   <xref:System.Reflection.Assembly.LoadWithPartialName%2A?displayProperty=fullName> メソッド オーバーロード。  
+-   <xref:System.Reflection.Assembly.LoadWithPartialName%2A?displayProperty=fullName> メソッドのオーバーロード。  
   
--   別のアプリケーション ドメインのオブジェクトをインスタンス化する <xref:System.AppDomain.CreateInstance%2A?displayProperty=fullName> または <xref:System.AppDomain.CreateInstanceAndUnwrap%2A?displayProperty=fullName> メソッド オーバーロード。  
+-   別のアプリケーション ドメインでオブジェクトをインスタンス化する、<xref:System.AppDomain.CreateInstance%2A?displayProperty=fullName> メソッドまたは <xref:System.AppDomain.CreateInstanceAndUnwrap%2A?displayProperty=fullName> メソッドのオーバーロード。  
   
-### イベント ハンドラーで実行する処理  
- <xref:System.AppDomain.AssemblyResolve> イベントのハンドラーは、読み込むアセンブリの表示名を <xref:System.ResolveEventArgs.Name%2A?displayProperty=fullName> プロパティで受け取ります。  アセンブリ名を認識できない場合、ハンドラーは null \(Visual Basic の場合は `Nothing`、Visual C\+\+ の場合は `nullptr`\) を返します。  
+### <a name="what-the-event-handler-does"></a>イベント ハンドラーでの処理  
+ <xref:System.AppDomain.AssemblyResolve> イベントのハンドラーは、読み込まれるアセンブリの表示名を、<xref:System.ResolveEventArgs.Name%2A?displayProperty=fullName> プロパティで受け取ります。 ハンドラーは、アセンブリ名を認識できない場合は null を返します (Visual Basic では `Nothing`、C++ では `nullptr`)。  
   
- アセンブリ名を認識すると、ハンドラーは要求を満たすアセンブリを読み込んで返すことができます。  サンプルのシナリオをいくつか示します。  
+ ハンドラーは、アセンブリ名を認識すると、要求を満たすアセンブリを読み込んで返すことができます。 シナリオの例をいくつか示します。  
   
--   アセンブリのバージョンの場所がわかっている場合、<xref:System.Reflection.Assembly.LoadFrom%2A?displayProperty=fullName> メソッドまたは <xref:System.Reflection.Assembly.LoadFile%2A?displayProperty=fullName> メソッドを使用してアセンブリを読み込み、正常に読み込まれた場合はそのアセンブリを返すことができます。  
+-   ハンドラーは、アセンブリのバージョンの場所がわかっている場合は、<xref:System.Reflection.Assembly.LoadFrom%2A?displayProperty=fullName> メソッドまたは <xref:System.Reflection.Assembly.LoadFile%2A?displayProperty=fullName> メソッドを使ってアセンブリを読み込むことができ、正常に読み込んだ場合はアセンブリを返すことができます。  
   
--   アセンブリがバイト配列として格納されているデータベースにアクセスできる場合、バイト配列を受け取るいずれかの <xref:System.Reflection.Assembly.Load%2A?displayProperty=fullName> メソッド オーバーロードを使用してバイト配列を読み込むことができます。  
+-   ハンドラーは、バイト配列として格納されているアセンブリのデータベースにアクセスできる場合は、<xref:System.Reflection.Assembly.Load%2A?displayProperty=fullName> メソッドのバイト配列を受け取るオーバーロードのいずれかを使って、バイト配列を読み込むことができます。  
   
--   動的アセンブリを生成して返すことができます。  
+-   ハンドラーは、動的アセンブリを生成して返すことができます。  
   
 > [!NOTE]
->  このハンドラーでアセンブリを読み込むときは、読み込み元コンテキストまたは読み込みコンテキストに読み込むか、コンテキストなしで読み込む必要があります。  <xref:System.Reflection.Assembly.ReflectionOnlyLoad%2A?displayProperty=fullName> または <xref:System.Reflection.Assembly.ReflectionOnlyLoadFrom%2A?displayProperty=fullName> メソッドを使用してリフレクション専用コンテキストにアセンブリを読み込もうとすると、<xref:System.AppDomain.AssemblyResolve> イベントを発生させた読み込みは失敗します。  
+>  ハンドラーは、アセンブリを読み込み元コンテキストまたは読み込みコンテキストに読み込むか、コンテキストなしで読み込む必要があります。ハンドラーが <xref:System.Reflection.Assembly.ReflectionOnlyLoad%2A?displayProperty=fullName> メソッドまたは <xref:System.Reflection.Assembly.ReflectionOnlyLoadFrom%2A?displayProperty=fullName> メソッドを使ってリフレクションのみのコンテキストにアセンブリを読み込むと、<xref:System.AppDomain.AssemblyResolve> イベントを生成した読み込みの試みは失敗します。  
   
- イベント ハンドラーは、適切なアセンブリを返す必要があります。  ハンドラーでは、<xref:System.ResolveEventArgs.Name%2A?displayProperty=fullName> プロパティの値を <xref:System.Reflection.AssemblyName.%23ctor%28System.String%29> コンストラクターに渡すことによって、要求されたアセンブリの表示名を解析できます。  [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)] 以降では、<xref:System.ResolveEventArgs.RequestingAssembly%2A?displayProperty=fullName> プロパティを使用して、現在の要求が別のアセンブリと依存関係にあるかどうかを確認できます。  この情報は、依存関係を満たすアセンブリを識別するうえで役立ちます。  
+ 適切なアセンブリを返すのはイベント ハンドラーの役目です。 ハンドラーは、<xref:System.ResolveEventArgs.Name%2A?displayProperty=fullName> プロパティの値を <xref:System.Reflection.AssemblyName.%23ctor%28System.String%29> コンストラクターに渡すことによって、要求されたアセンブリの表示名を解析できます。 [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)] 以降では、ハンドラーは <xref:System.ResolveEventArgs.RequestingAssembly%2A?displayProperty=fullName> プロパティを使って、現在の要求が別のアセンブリの依存関係であるかどうかを確認できます。 この情報は、依存関係を満たすアセンブリを特定するのに役立ちます。  
   
- イベント ハンドラーは、要求されたバージョンとは異なるバージョンのアセンブリを返すことがあります。  
+ イベント ハンドラーは、要求されたバージョンとは異なるバージョンのアセンブリを返すことができます。  
   
- ほとんどの場合、ハンドラーによって返されるアセンブリは、ハンドラーが読み込んだコンテキストに関係なく、読み込みコンテキストで返されます。  たとえば、ハンドラーが <xref:System.Reflection.Assembly.LoadFrom%2A?displayProperty=fullName> メソッドを使用して読み込み元コンテキストにアセンブリを読み込んだ場合、ハンドラーからアセンブリが返されるときは読み込みコンテキストで返されます。  ただし、次の場合は、アセンブリがハンドラーからコンテキストなしで返されます。  
+ ほとんどの場合、ハンドラーによって返されたアセンブリは、ハンドラーがそれを読み込んだコンテキストに関係なく、読み込みコンテキストで表示されます。 たとえば、ハンドラーが <xref:System.Reflection.Assembly.LoadFrom%2A?displayProperty=fullName> メソッドを使って読み込み元コンテキストにアセンブリを読み込んだ場合でも、ハンドラーによって返されたアセンブリは、読み込みコンテキストに表示されます。 ただし、次の場合は、ハンドラーによって返されたアセンブリはコンテキストなしで表示されます。  
   
 -   ハンドラーがコンテキストなしでアセンブリを読み込んだ場合。  
   
--   <xref:System.ResolveEventArgs.RequestingAssembly%2A?displayProperty=fullName> プロパティが null でない場合。  
+-   <xref:System.ResolveEventArgs.RequestingAssembly%2A?displayProperty=fullName> プロパティが null ではない場合。  
   
--   要求元のアセンブリ \(<xref:System.ResolveEventArgs.RequestingAssembly%2A?displayProperty=fullName> プロパティによって返されるアセンブリ\) がコンテキストなしで読み込まれている場合。  
+-   要求元のアセンブリ (つまり、<xref:System.ResolveEventArgs.RequestingAssembly%2A?displayProperty=fullName> プロパティによって返されるアセンブリ) がコンテキストなしで読み込まれた場合。  
   
- コンテキストの詳細については、<xref:System.Reflection.Assembly.LoadFrom%28System.String%29?displayProperty=fullName> メソッド オーバーロードのトピックを参照してください。  
+ コンテキストについて詳しくは、<xref:System.Reflection.Assembly.LoadFrom%28System.String%29?displayProperty=fullName> メソッドのオーバーロードをご覧ください。  
   
- 同じアセンブリの複数のバージョンを同じアプリケーション ドメインに読み込むこともできますが、  型の割り当てで問題が生じる可能性があるため、この方法はお勧めしません。  「[アセンブリの読み込みのベスト プラクティス](../../../docs/framework/deployment/best-practices-for-assembly-loading.md)」を参照してください。  
+ 同じアセンブリの複数のバージョンを、同じアプリケーション ドメインに読み込むことができます。 ただし、型の割り当ての問題が発生する可能性があるため、この方法は推奨されません。 「[アセンブリの読み込みのベスト プラクティス](../../../docs/framework/deployment/best-practices-for-assembly-loading.md)」をご覧ください。  
   
-### イベント ハンドラーで実行すべきでない処理  
- <xref:System.AppDomain.AssemblyResolve> イベントを処理する際の基本的なルールとして、認識できないアセンブリは返さないようにしてください。  ハンドラーを記述するときは、このイベントが発生する原因となる可能性があるアセンブリを把握しておく必要があります。  それ以外のアセンブリについては、null を返すようにしてください。  
+### <a name="what-the-event-handler-should-not-do"></a>イベント ハンドラーで行ってはいけないこと  
+ <xref:System.AppDomain.AssemblyResolve> イベントの処理に関する基本原則は、認識できないアセンブリを返そうとしてはならない、ということです。 ハンドラーを記述するときは、イベントを発生させる可能性があるアセンブリを知っておく必要があります。 それ以外のアセンブリに対して、ハンドラーは null を返す必要があります。  
   
 > [!IMPORTANT]
->  [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] 以降では、<xref:System.AppDomain.AssemblyResolve> イベントはサテライト アセンブリに対して発生します。  この変更は、以前のバージョンの .NET Framework 用に記述されたイベント ハンドラーで、すべてのアセンブリ読み込み要求を解決しようとする場合に影響します。  認識できないアセンブリを無視するイベント ハンドラーには、この変更による影響はありません。それらのイベント ハンドラーは null を返し、通常のフォールバック機構に従います。  
+>  [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] 以降では、<xref:System.AppDomain.AssemblyResolve> イベントはサテライト アセンブリに対して発生します。 以前のバージョンの .NET Framework で作成されたイベント ハンドラーが、すべてのアセンブリ読み込み要求を解決しようとしている場合、この変更によって影響を受けます。 認識できないアセンブリを無視するイベント ハンドラーは、この変更による影響を受けません。そのようなハンドラーは null を返し、通常のフォールバック メカニズムに従います。  
   
- イベント ハンドラーでアセンブリを読み込むときに、<xref:System.AppDomain.AssemblyResolve> イベントを再帰的に発生させる可能性がある <xref:System.AppDomain.Load%2A?displayProperty=fullName> メソッド オーバーロードまたは <xref:System.Reflection.Assembly.Load%2A?displayProperty=fullName> メソッド オーバーロードは使用しないでください。これを使用すると、スタック オーバーフローが発生する可能性があります \(前述の一覧を参照してください\)。これは、読み込み要求の例外処理を指定した場合でも発生します。すべてのイベント ハンドラーから制御が戻るまでは例外がスローされないからです。  したがって、次のコードでは、`MyAssembly` が見つからないとスタック オーバーフローが発生します。  
+ アセンブリを読み込むとき、イベント ハンドラーは、<xref:System.AppDomain.AssemblyResolve> イベントを再帰的に生成する可能性がある <xref:System.AppDomain.Load%2A?displayProperty=fullName> メソッドまたは <xref:System.Reflection.Assembly.Load%2A?displayProperty=fullName> メソッドのオーバー ロードを、使わないようにする必要があります。使った場合、スタック オーバーフローが発生することがあります  (このトピックで先に示したリストを参照)。すべてのイベント ハンドラーから返るまで例外はスローされないため、読み込み要求に対して例外処理を提供した場合でも、この問題は発生します。 したがって、次のようなコードでは、`MyAssembly` が見つからないとスタック オーバーフローが発生します。  
   
- [!code-cpp[AssemblyResolveRecursive#1](../../../samples/snippets/cpp/VS_Snippets_CLR/assemblyresolverecursive/cpp/example.cpp#1)]
- [!code-csharp[AssemblyResolveRecursive#1](../../../samples/snippets/csharp/VS_Snippets_CLR/assemblyresolverecursive/cs/example.cs#1)]
- [!code-vb[AssemblyResolveRecursive#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/assemblyresolverecursive/vb/example.vb#1)]  
+ [!code-cpp[AssemblyResolveRecursive#1](../../../samples/snippets/cpp/VS_Snippets_CLR/assemblyresolverecursive/cpp/example.cpp#1)] [!code-csharp[AssemblyResolveRecursive#1](../../../samples/snippets/csharp/VS_Snippets_CLR/assemblyresolverecursive/cs/example.cs#1)] [!code-vb[AssemblyResolveRecursive#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/assemblyresolverecursive/vb/example.vb#1)]  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [アセンブリの読み込みのベスト プラクティス](../../../docs/framework/deployment/best-practices-for-assembly-loading.md)   
  [アプリケーション ドメインの使用](../../../docs/framework/app-domains/use.md)

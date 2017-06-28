@@ -1,101 +1,100 @@
 ---
 title: "CodeDOM グラフからのソース コードの生成およびコンパイル | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "アセンブリ [.NET Framework], CodeDOM"
-  - "コード コンパイラ"
-  - "Code Document Object Model, 生成 (ソース コードの)"
-  - "Code Document Object Model, グラフ"
-  - "コード ジェネレーター"
-  - "CodeDOM, 生成 (ソース コードの)"
-  - "CodeDOM, グラフ"
-  - "コンパイル (アセンブリの)"
-  - "コンパイル (ソース コードを), 複数言語"
-  - "動的コンパイル"
-  - "動的表現 (ソース コードの)"
-  - "生成 (CodeDOM グラフの)"
-  - "生成 (複数言語でのソース コードの)"
-  - "グラフ化 (CodeDOM による)"
-  - "出力 (CodeDOM によるソース コードの)"
-  - "ソース コードの生成"
-  - "ソース コード, 生成"
-  - "テンプレートを使ったコード生成"
-  - "翻訳 (言語から言語への)"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- code compilers
+- CodeDOM, generating source code
+- Code Document Object Model, graphs
+- templated code generation
+- source code, generating
+- dynamically representing source code
+- generating CodeDOM graphs
+- Code Document Object Model, generating source code
+- translating language to language
+- compiling assemblies
+- generating source code in multiple languages
+- graphing with CodeDOM
+- dynamic compilation
+- assemblies [.NET Framework], CodeDOM
+- source code generation
+- outputting source code by CodeDOM
+- code generators
+- compiling source code, multiple languages
+- CodeDOM, graphs
 ms.assetid: 6c864c8e-6dd3-4a65-ace0-36879d9a9c42
 caps.latest.revision: 20
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 20
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
+ms.openlocfilehash: 6805c4a98c1a3f4d62984435da708a813f92dde4
+ms.contentlocale: ja-jp
+ms.lasthandoff: 06/02/2017
+
 ---
-# CodeDOM グラフからのソース コードの生成およびコンパイル
-<xref:System.CodeDom.Compiler> 名前空間には、CodeDOM オブジェクト グラフからソース コードを生成するためのインターフェイスや、サポートされているコンパイラでコンパイルを管理するためのインターフェイスが用意されています。  コード プロバイダーでは、CodeDOM グラフに基づいて、特定のプログラミング言語でソース コードを生成できます。  <xref:System.CodeDom.Compiler.CodeDomProvider> から派生したクラスは、一般にプロバイダーがサポートする言語でコードを生成してコンパイルするためのメソッドを提供します。  
+# <a name="generating-and-compiling-source-code-from-a-codedom-graph"></a>CodeDOM グラフからのソース コードの生成およびコンパイル
+<xref:System.CodeDom.Compiler> 名前空間は、CodeDOM オブジェクト グラフからソース コードを生成し、サポートされているコンパイラでコンパイルを管理するためのインターフェイスを提供します。 コード プロバイダーは、CodeDOM グラフに基づいて、特定のプログラミング言語でソース コードを生成できます。 <xref:System.CodeDom.Compiler.CodeDomProvider> から派生したクラスは、通常、プロバイダーが対応している言語のコードを生成し、コンパイルするためのメソッドを提供します。  
   
-## CodeDOM コード プロバイダーを使用したソース コードの生成  
+## <a name="using-a-codedom-code-provider-to-generate-source-code"></a>CodeDOM コード プロバイダーを使用してソース コードを生成する  
  特定の言語でソース コードを生成するには、生成するソース コードの構造を表す CodeDOM グラフが必要です。  
   
- 次に示すのは、<xref:Microsoft.CSharp.CSharpCodeProvider> のインスタンスを作成する方法のコード例です。  
+ <xref:Microsoft.CSharp.CSharpCodeProvider> のインスタンスを作成する方法の例を次に示します。  
   
- [!code-cpp[CodeDomExample#21](../../../samples/snippets/cpp/VS_Snippets_CLR/CodeDomExample/CPP/source3.cpp#21)]
- [!code-csharp[CodeDomExample#21](../../../samples/snippets/csharp/VS_Snippets_CLR/CodeDomExample/CS/source3.cs#21)]
- [!code-vb[CodeDomExample#21](../../../samples/snippets/visualbasic/VS_Snippets_CLR/CodeDomExample/VB/source3.vb#21)]  
+ [!code-cpp[CodeDomExample#21](../../../samples/snippets/cpp/VS_Snippets_CLR/CodeDomExample/CPP/source3.cpp#21)] [!code-csharp[CodeDomExample#21](../../../samples/snippets/csharp/VS_Snippets_CLR/CodeDomExample/CS/source3.cs#21)] [!code-vb[CodeDomExample#21](../../../samples/snippets/visualbasic/VS_Snippets_CLR/CodeDomExample/VB/source3.vb#21)]  
   
- コードを生成するためのグラフは、通常、<xref:System.CodeDom.CodeCompileUnit> に格納されます。  CodeDOM グラフを含む **CodeCompileUnit** のコードを生成するには、コード プロバイダーの <xref:System.CodeDom.Compiler.CodeDomProvider.GenerateCodeFromCompileUnit%2A> メソッドを呼び出します。  このメソッドは、ソース コードを生成するために使用する <xref:System.IO.TextWriter> のパラメーターを使用するため、まず、書き込み可能な **TextWriter** を作成することが必要な場合もあります。  **CodeCompileUnit** からコードを生成し、生成したソース コードを HelloWorld.cs という名前のファイルに書き込む例を次に示します。  
+ コード生成のグラフは通常、<xref:System.CodeDom.CodeCompileUnit> に含まれます。 CodeDOM グラフが含まれる **CodeCompileUnit** のコードを生成するには、コード プロバイダーの <xref:System.CodeDom.Compiler.CodeDomProvider.GenerateCodeFromCompileUnit%2A> メソッドを呼び出します。 このメソッドには <xref:System.IO.TextWriter> のパラメーターがあり、それがソース コードの生成に利用されます。そのため、場合により、書き込みに使用する **TextWriter** を最初に作成する必要があります。 次の例では、**CodeCompileUnit** からコードを生成し、生成したソース コードを HelloWorld.cs という名前のファイルに書き込んでいます。  
   
- [!code-cpp[CodeDomExample#22](../../../samples/snippets/cpp/VS_Snippets_CLR/CodeDomExample/CPP/source3.cpp#22)]
- [!code-csharp[CodeDomExample#22](../../../samples/snippets/csharp/VS_Snippets_CLR/CodeDomExample/CS/source3.cs#22)]
- [!code-vb[CodeDomExample#22](../../../samples/snippets/visualbasic/VS_Snippets_CLR/CodeDomExample/VB/source3.vb#22)]  
+ [!code-cpp[CodeDomExample#22](../../../samples/snippets/cpp/VS_Snippets_CLR/CodeDomExample/CPP/source3.cpp#22)] [!code-csharp[CodeDomExample#22](../../../samples/snippets/csharp/VS_Snippets_CLR/CodeDomExample/CS/source3.cs#22)] [!code-vb[CodeDomExample#22](../../../samples/snippets/visualbasic/VS_Snippets_CLR/CodeDomExample/VB/source3.vb#22)]  
   
-## CodeDOM コード プロバイダーを使用したアセンブリのコンパイル  
- **コンパイルの実行**  
+## <a name="using-a-codedom-code-provider-to-compile-assemblies"></a>CodeDOM コード プロバイダーを使用してアセンブリをコンパイルする  
+ **コンパイルを呼び出す**  
   
- CodeDom プロバイダーを使用してアセンブリをコンパイルするには、コンパイラが用意されている言語でコンパイルするソース コードか、コンパイルするソース コードを生成できる CodeDOM グラフのいずれかが必要です。  
+ CodeDom プロバイダーを利用してアセンブリをコンパイルするには、コンパイラが理解できる言語でコンパイルするソース コードか、コンパイルするソース コードの生成元になる CodeDOM グラフを用意する必要があります。  
   
- CodeDOM グラフからコンパイルする場合は、グラフを格納している <xref:System.CodeDom.CodeCompileUnit> をコード プロバイダーの <xref:System.CodeDom.Compiler.CodeDomProvider.CompileAssemblyFromDom%2A> メソッドに渡します。  コンパイラが認識できる言語のソース コード ファイルがある場合は、ソース コードを含むファイルの名前を、コード プロバイダーの <xref:System.CodeDom.Compiler.CodeDomProvider.CompileAssemblyFromFile%2A> メソッドに渡します。  コンパイラが認識できる言語のソース コードを含む文字列を、CodeDom プロバイダーの <xref:System.CodeDom.Compiler.CodeDomProvider.CompileAssemblyFromSource%2A> メソッドに渡すこともできます。  
+ CodeDOM グラフからコンパイルする場合、コード プロバイダーの <xref:System.CodeDom.Compiler.CodeDomProvider.CompileAssemblyFromDom%2A> メソッドにグラフを含む <xref:System.CodeDom.CodeCompileUnit> を渡します。 コンパイラが理解できる言語のソース コード ファイルがある場合、CodeDOM プロバイダーの <xref:System.CodeDom.Compiler.CodeDomProvider.CompileAssemblyFromFile%2A> メソッドにソース コードを含むファイルの名前を渡します。 コンパイラが理解できる言語のソース コードを含む文字列を CodeDOM プロバイダーの <xref:System.CodeDom.Compiler.CodeDomProvider.CompileAssemblyFromSource%2A> メソッドに渡すこともできます。  
   
  **コンパイル パラメーターの構成**  
   
- CodeDom プロバイダーの標準的なコンパイル実行メソッドはすべて、コンパイルに使用するオプションを示す <xref:System.CodeDom.Compiler.CompilerParameters> 型のパラメーターを使用します。  
+ CodeDOM プロバイダーの標準的なコンパイル呼び出しメソッドにはすべて、型 <xref:System.CodeDom.Compiler.CompilerParameters> のパラメーターがあります。これはコンパイルに使用するオプションを示します。  
   
- **CompilerParameters** の <xref:System.CodeDom.Compiler.CompilerParameters.OutputAssembly%2A> プロパティで、出力アセンブリのファイル名を指定できます。  このファイル名を指定しない場合は、既定の出力ファイル名が使用されます。  
+ **CompilerParameters** の <xref:System.CodeDom.Compiler.CompilerParameters.OutputAssembly%2A> プロパティに出力アセンブリのファイル名を指定できます。 指定しない場合、既定の出力ファイル名が使用されます。  
   
- 既定では、新しい **CompilerParameters** は、<xref:System.CodeDom.Compiler.CompilerParameters.GenerateExecutable%2A> プロパティが **false** に設定された状態で初期化されます。  実行可能プログラムをコンパイルする場合は、**GenerateExecutable** プロパティを **true** に設定する必要があります。  **GenerateExecutable** が **false** に設定されている場合、コンパイラはクラス ライブラリを生成します。  
+ 既定では、新規の **CompilerParameters** は、<xref:System.CodeDom.Compiler.CompilerParameters.GenerateExecutable%2A> プロパティを **false** に設定して初期化されます。 実行可能ファイル プログラムをコンパイルする場合、**GenerateExecutable** プロパティを **true** に設定する必要があります。 **GenerateExecutable** を **false** に設定すると、コンパイラはクラス ライブラリを生成します。  
   
- CodeDOM グラフから実行可能ファイルをコンパイルする場合は、<xref:System.CodeDom.CodeEntryPointMethod> がグラフで定義されている必要があります。  複数のコード エントリ ポイントがある場合は、**CompilerParameters** の <xref:System.CodeDom.Compiler.CompilerParameters.MainClass%2A> プロパティを、使用するエントリ ポイントを定義するクラスの名前に設定する必要があります。  
+ CodeDOM グラフから実行可能ファイルをコンパイルする場合、グラフに <xref:System.CodeDom.CodeEntryPointMethod> を定義する必要があります。 コードのエントリ ポイントが複数存在するとき、場合によっては、使用するエントリ ポイントを定義するクラスの名前に **CompilerParameters** の <xref:System.CodeDom.Compiler.CompilerParameters.MainClass%2A> プロパティを設定する必要があります。  
   
- 生成された実行可能ファイルにデバッグ情報を含めるには、<xref:System.CodeDom.Compiler.CompilerParameters.IncludeDebugInformation%2A> プロパティを **true** に設定します。  
+ 生成された実行可能ファイルにデバッグ情報を追加するには、<xref:System.CodeDom.Compiler.CompilerParameters.IncludeDebugInformation%2A> プロパティを **true** に設定します。  
   
- プロジェクトがアセンブリを参照する場合は、<xref:System.Collections.Specialized.StringCollection> 内の項目としてのアセンブリ名を、コンパイル時に使用する **CompilerParameters** の <xref:System.CodeDom.Compiler.CompilerParameters.ReferencedAssemblies%2A> プロパティとして指定する必要があります。  
+ プロジェクトがアセンブリを参照する場合、コンパイルを呼び出すときに使用する **CompilerParameters** の <xref:System.CodeDom.Compiler.CompilerParameters.ReferencedAssemblies%2A> プロパティとして、<xref:System.Collections.Specialized.StringCollection> の項目としてのアセンブリ名を指定する必要があります。  
   
- <xref:System.CodeDom.Compiler.CompilerParameters.GenerateInMemory%2A> プロパティを **true** に設定することで、ディスクではなくメモリに書き込まれるアセンブリをコンパイルできます。  アセンブリをメモリ上に生成すると、コードでは、生成されたアセンブリへの参照を <xref:System.CodeDom.Compiler.CompilerResults> の <xref:System.CodeDom.Compiler.CompilerResults.CompiledAssembly%2A> プロパティから取得できます。  アセンブリがディスクに書き込まれる場合は、生成されたアセンブリへのパスを、**CompilerResults** の <xref:System.CodeDom.Compiler.CompilerResults.PathToAssembly%2A> プロパティから取得できます。  
+ <xref:System.CodeDom.Compiler.CompilerParameters.GenerateInMemory%2A> プロパティを **true** に設定することで、ディスクではなくメモリに書き込まれるアセンブリをコンパイルできます。 アセンブリをメモリに生成すると、<xref:System.CodeDom.Compiler.CompilerResults> の <xref:System.CodeDom.Compiler.CompilerResults.CompiledAssembly%2A> プロパティから生成されたアセンブリの参照がコードに与えられることがあります。 アセンブリをディスクに書き込む場合、**CompilerResults** の <xref:System.CodeDom.Compiler.CompilerResults.PathToAssembly%2A> プロパティから生成されたアセンブリのパスを取得できます。  
   
- コンパイル処理を実行するときに使用するカスタム コマンド ライン引数の文字列を指定するには、<xref:System.CodeDom.Compiler.CompilerParameters.CompilerOptions%2A> プロパティに文字列を設定します。  
+ コンパイル プロセスを呼び出すときに使用するカスタムのコマンドライン引数を指定するには、<xref:System.CodeDom.Compiler.CompilerParameters.CompilerOptions%2A> プロパティに文字列を設定します。  
   
- コンパイラ プロセスを起動するために Win32 セキュリティ トークンが必要な場合は、そのトークンを <xref:System.CodeDom.Compiler.CompilerParameters.UserToken%2A> プロパティに指定します。  
+ コンパイラ プロセスの呼び出しに Win32 セキュリティ トークンが必要な場合、<xref:System.CodeDom.Compiler.CompilerParameters.UserToken%2A> プロパティにトークンを指定します。  
   
- コンパイルされるアセンブリに Win32 リソース ファイルへのリンクを設定するには、Win32 リソース ファイルの名前を <xref:System.CodeDom.Compiler.CompilerParameters.Win32Resource%2A> プロパティに指定します。  
+ コンパイルされたアセンブリに Win32 リソース ファイルをリンクするには、<xref:System.CodeDom.Compiler.CompilerParameters.Win32Resource%2A> プロパティに Win32 リソース ファイルの名前を指定します。  
   
- コンパイルを中断する警告レベルを指定するには、<xref:System.CodeDom.Compiler.CompilerParameters.WarningLevel%2A> プロパティに、コンパイルを中断する警告レベルを表す整数を設定します。  <xref:System.CodeDom.Compiler.CompilerParameters.TreatWarningsAsErrors%2A> プロパティを **true** に設定して、警告が発生した場合にコンパイルを中断するようにコンパイラを構成することもできます。  
+ コンパイルを中止する警告レベルを指定するには、コンパイルを中止する警告レベルを表す整数に <xref:System.CodeDom.Compiler.CompilerParameters.WarningLevel%2A> プロパティを設定します。 <xref:System.CodeDom.Compiler.CompilerParameters.TreatWarningsAsErrors%2A> プロパティを **true** に設定すると、警告が出た場合にコンパイルを中止するようにコンパイラを設定することもできます。  
   
- <xref:System.CodeDom.Compiler.CodeDomProvider> クラスから派生する CodeDom プロバイダーを使用してソース ファイルをコンパイルする方法のコード例を次に示します。  
+ 次のコード サンプルでは、<xref:System.CodeDom.Compiler.CodeDomProvider> クラスから派生した CodeDOM プロバイダーを利用し、ソース ファイルをコンパイルしています。  
   
- [!code-cpp[CodeDomExample#23](../../../samples/snippets/cpp/VS_Snippets_CLR/CodeDomExample/CPP/source3.cpp#23)]
- [!code-csharp[CodeDomExample#23](../../../samples/snippets/csharp/VS_Snippets_CLR/CodeDomExample/CS/source3.cs#23)]
- [!code-vb[CodeDomExample#23](../../../samples/snippets/visualbasic/VS_Snippets_CLR/CodeDomExample/VB/source3.vb#23)]  
+ [!code-cpp[CodeDomExample#23](../../../samples/snippets/cpp/VS_Snippets_CLR/CodeDomExample/CPP/source3.cpp#23)] [!code-csharp[CodeDomExample#23](../../../samples/snippets/csharp/VS_Snippets_CLR/CodeDomExample/CS/source3.cs#23)] [!code-vb[CodeDomExample#23](../../../samples/snippets/visualbasic/VS_Snippets_CLR/CodeDomExample/VB/source3.vb#23)]  
   
-## 既定でサポートされる言語  
- .NET Framework には、C\#、Visual Basic、C\+\+、および JScript の各言語に対応したコード コンパイラとコード ジェネレーターが用意されています。  CodeDOM に、言語固有のコード ジェネレーターおよびコード コンパイラを実装することで、これら以外の言語もサポートできます。  
+## <a name="languages-with-initial-support"></a>初期サポートの言語  
+ .NET Framework は、C#、Visual Basic、C++、および JScript のコード コンパイラとコード ジェネレーターを提供します。 CodeDOM のサポートは、言語固有のコード ジェネレーターとコード コンパイラを実装することで、他の言語に拡張できます。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.CodeDom>   
  <xref:System.CodeDom.Compiler>   
  [動的なソース コードの生成とコンパイル](../../../docs/framework/reflection-and-codedom/dynamic-source-code-generation-and-compilation.md)   
- [CodeDOM Quick Reference](http://msdn.microsoft.com/ja-jp/c77b8bfd-0a32-4e36-b59a-4f687f32c524)
+ [CodeDOM クイック リファレンス](http://msdn.microsoft.com/en-us/c77b8bfd-0a32-4e36-b59a-4f687f32c524)

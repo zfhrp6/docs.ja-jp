@@ -1,7 +1,7 @@
 ---
-title: "Windows 8、Windows 8.1、および Windows 10 への .NET Framework 3.5 のインストール | Microsoft Docs"
+title: "Windows 8、Windows 8.1、および Windows 10 への .NET Framework 3.5 のインストールのトラブルシューティング | Microsoft Docs"
 ms.custom: 
-ms.date: 03/30/2017
+ms.date: 04/20/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
@@ -17,13 +17,14 @@ caps.latest.revision: 69
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
-ms.openlocfilehash: f48ef7a29e05824834395fdd9fd850a017a5f7e6
+ms.translationtype: Human Translation
+ms.sourcegitcommit: fe9ab371ab8d3eee3778412e446b7aa30b42476b
+ms.openlocfilehash: d935648da22db51b004a2f209070bde737a6908d
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/11/2017
+ms.lasthandoff: 06/02/2017
 
 ---
+
 # <a name="installing-the-net-framework-35-on-windows-8-windows-81-and-windows-10"></a>Windows 8、Windows 8.1、および Windows 10 への .NET Framework 3.5 のインストール
 .NET Framework は、Windows 上で実行されている多数のアプリケーションに不可欠な部分であり、それらのアプリケーションが実行するための共通の機能を提供します。 開発者に対し、.NET Framework はアプリケーションを作成するための一貫したプログラミング モデルを提供します。 Windows オペレーティング システムを使用している場合は、.NET Framework がコンピューターに既にインストールされている場合があります。 具体的には、 [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] には [!INCLUDE[win8](../../../includes/win8-md.md)]が組み込まれており、 [!INCLUDE[net_v451](../../../includes/net-v451-md.md)] には [!INCLUDE[win81](../../../includes/win81-md.md)] が組み込まれており、Windows 10 には [!INCLUDE[net_v46](../../../includes/net-v46-md.md)] が組み込まれています。  
   
@@ -73,3 +74,4 @@ ms.lasthandoff: 05/11/2017
   
 ## <a name="see-also"></a>関連項目  
  [インストール ガイド](../../../docs/framework/get-started/index.md)
+

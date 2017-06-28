@@ -1,84 +1,77 @@
 ---
 title: "型情報の表示 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-helpviewer_keywords: 
-  - "リフレクション, 表示 (型情報を)"
-  - "Type オブジェクト"
-  - "型, 表示 (型情報を)"
-  - "表示 (型情報を)"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- VB
+- CSharp
+helpviewer_keywords:
+- types, viewing type information
+- Type object
+- viewing type information
+- reflection, viewing type information
 ms.assetid: 7e7303a9-4064-4738-b4e7-b75974ed70d2
 caps.latest.revision: 13
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 12
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
+ms.openlocfilehash: 5bc5ed1dd10f04a2d5ef5b00127b6d858102e933
+ms.contentlocale: ja-jp
+ms.lasthandoff: 06/02/2017
+
 ---
-# 型情報の表示
-<xref:System.Type?displayProperty=fullName> クラスは、リフレクションの中枢です。  リフレクションが **Type** の作成を要求すると、共通言語ランタイムは、読み込まれた型に対して **Type** オブジェクトを作成します。  **Type** オブジェクトのメソッド、フィールド、プロパティ、および入れ子クラスを使用すると、その型についてのすべての情報を調べることができます。  
+# <a name="viewing-type-information"></a>型情報の表示
+<xref:System.Type?displayProperty=fullName> クラスは、リフレクションの中心です。 共通言語ランタイムは、リフレクションの要求時に読み込まれる型の**型**を作成します。 **型**オブジェクトのメソッド、フィールド、プロパティ、および入れ子になったクラスから、その型に関することがすべてわかります。  
   
- まだ読み込まれていないアセンブリから **Type** オブジェクトを取得するには、<xref:System.Reflection.Assembly.GetType%2A?displayProperty=fullName> または <xref:System.Reflection.Assembly.GetTypes%2A?displayProperty=fullName> を使用し、必要な型の名前を 1 つ以上渡します。  既に読み込まれているアプリケーションから **Type** オブジェクトを取得するには、<xref:System.Type.GetType%2A?displayProperty=fullName> を使用します。  モジュールの **Type** オブジェクトを取得するには、<xref:System.Reflection.Module.GetType%2A?displayProperty=fullName> および <xref:System.Reflection.Module.GetTypes%2A?displayProperty=fullName> を使用します。  
+ <xref:System.Reflection.Assembly.GetType%2A?displayProperty=fullName> または <xref:System.Reflection.Assembly.GetTypes%2A?displayProperty=fullName> を使用して、読み込まれていないアセンブリから**型**オブジェクトを取得します。これは、目的の型の名前で渡されます。 既に読み込まれているアセンブリから**型**オブジェクトを取得するには、<xref:System.Type.GetType%2A?displayProperty=fullName> を使用します。 <xref:System.Reflection.Module.GetType%2A?displayProperty=fullName> および <xref:System.Reflection.Module.GetTypes%2A?displayProperty=fullName> は、モジュール**型**オブジェクトを取得します。  
   
 > [!NOTE]
->  ジェネリック型およびメソッドを調べたり操作したりする場合は、「[リフレクションとジェネリック型](../../../docs/framework/reflection-and-codedom/reflection-and-generic-types.md)」および「[方法 : リフレクションを使用してジェネリック型をチェックおよびインスタンス化する](../../../docs/framework/reflection-and-codedom/how-to-examine-and-instantiate-generic-types-with-reflection.md)」を参照してください。  
+>  ジェネリック型およびメソッドをチェックして操作したい場合は、「[Reflection and Generic Types](../../../docs/framework/reflection-and-codedom/reflection-and-generic-types.md)」(リフレクション型とジェネリック型) および「[How to: Examine and Instantiate Generic Types with Reflection](../../../docs/framework/reflection-and-codedom/how-to-examine-and-instantiate-generic-types-with-reflection.md)」(方法: リフレクションを使用してジェネリック型をチェックおよびインスタンス化する) に記載された追加情報を参照してください。  
   
- アセンブリの <xref:System.Reflection.Assembly> オブジェクトおよびモジュールを取得するための構文を示すコード例は、次のとおりです。  
+ 次の例は、アセンブリの <xref:System.Reflection.Assembly> オブジェクトおよびモジュールの取得に必要な構文を示しています。  
   
- [!code-cpp[Conceptual.Types.ViewInfo#6](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.types.viewinfo/cpp/source5.cpp#6)]
- [!code-csharp[Conceptual.Types.ViewInfo#6](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.types.viewinfo/cs/source5.cs#6)]
- [!code-vb[Conceptual.Types.ViewInfo#6](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.types.viewinfo/vb/source5.vb#6)]  
+ [!code-cpp[Conceptual.Types.ViewInfo#6](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.types.viewinfo/cpp/source5.cpp#6)] [!code-csharp[Conceptual.Types.ViewInfo#6](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.types.viewinfo/cs/source5.cs#6)] [!code-vb[Conceptual.Types.ViewInfo#6](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.types.viewinfo/vb/source5.vb#6)]  
   
- 既に読み込まれているアセンブリから **Type** オブジェクトを取得する例を次に示します。  
+ 次の例は、読み込まれたアセンブリからの**型**オブジェクトの取得を示しています。  
   
- [!code-cpp[Conceptual.Types.ViewInfo#7](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.types.viewinfo/cpp/source5.cpp#7)]
- [!code-csharp[Conceptual.Types.ViewInfo#7](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.types.viewinfo/cs/source5.cs#7)]
- [!code-vb[Conceptual.Types.ViewInfo#7](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.types.viewinfo/vb/source5.vb#7)]  
+ [!code-cpp[Conceptual.Types.ViewInfo#7](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.types.viewinfo/cpp/source5.cpp#7)] [!code-csharp[Conceptual.Types.ViewInfo#7](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.types.viewinfo/cs/source5.cs#7)] [!code-vb[Conceptual.Types.ViewInfo#7](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.types.viewinfo/vb/source5.vb#7)]  
   
- **Type** を取得した後は、さまざまな方法で、この型のメンバーに関する情報を探索できます。  たとえば、現在の型の各メンバーが記述されている <xref:System.Reflection.MemberInfo> オブジェクトの配列を取得する <xref:System.Type.GetMembers%2A?displayProperty=fullName> メソッドを呼び出すと、その型のすべてのメンバーについて調べることができます。  
+ **型**を取得すると、その型のメンバーに関する情報をさまざまな方法で確認できます。 たとえば、その型の各メンバーについて説明した <xref:System.Reflection.MemberInfo> オブジェクトの配列を取得する <xref:System.Type.GetMembers%2A?displayProperty=fullName> メソッドを呼び出すことで、すべての型のメンバーについて確認できます。  
   
- また、**Type** クラスのメソッドを使用し、名前を指定することで、1 つ以上のコンストラクター、メソッド、イベント、フィールド、またはプロパティについての情報を取得できます。  たとえば、<xref:System.Type.GetConstructor%2A?displayProperty=fullName> は、現在のクラスの特定のコンストラクターをカプセル化します。  
+ **Type** クラスのメソッドを使用して、名前で指定した 1 つまたは複数のコンストラクター、メソッド、イベント、フィールド、プロパティに関する情報を取得することもできます。 たとえば、<xref:System.Type.GetConstructor%2A?displayProperty=fullName> は現在のクラスの特定のコンストラクターをカプセル化します。  
   
- **Type** が存在する場合は、<xref:System.Type.Module%2A?displayProperty=fullName> プロパティを使用して、その型を含んでいるモジュールをカプセル化するオブジェクトを取得できます。  そのモジュールを含んでいるアセンブリをカプセル化するオブジェクトを検索するには、<xref:System.Reflection.Module.Assembly%2A?displayProperty=fullName> プロパティを使用します。  <xref:System.Type.Assembly%2A?displayProperty=fullName> プロパティを使用すると、型をカプセル化するアセンブリを直接取得できます。  
+ **型**がある場合、<xref:System.Type.Module%2A?displayProperty=fullName> プロパティを使用して、その型が含まれるモジュールをカプセル化するオブジェクトを取得できます。 モジュールが含まれるアセンブリをカプセル化するオブジェクトを見つけるには、<xref:System.Reflection.Module.Assembly%2A?displayProperty=fullName> プロパティを使用します。 <xref:System.Type.Assembly%2A?displayProperty=fullName> プロパティを使用することで、型を直接カプセル化するアセンブリを取得できます。  
   
-## System.Type および ConstructorInfo  
- 特定のクラスのコンストラクター \(ここでは <xref:System.String> クラスのコンストラクター\) を一覧する方法を次の例で示します。  
+## <a name="systemtype-and-constructorinfo"></a>System.Type および ConstructorInfo  
+ 次の例は、クラス (この場合は <xref:System.String> クラス) のコンストラクターを一覧表示する方法を示しています。  
   
- [!code-cpp[Conceptual.Types.ViewInfo#1](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.types.viewinfo/cpp/source1.cpp#1)]
- [!code-csharp[Conceptual.Types.ViewInfo#1](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.types.viewinfo/cs/source1.cs#1)]
- [!code-vb[Conceptual.Types.ViewInfo#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.types.viewinfo/vb/source1.vb#1)]  
+ [!code-cpp[Conceptual.Types.ViewInfo#1](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.types.viewinfo/cpp/source1.cpp#1)] [!code-csharp[Conceptual.Types.ViewInfo#1](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.types.viewinfo/cs/source1.cs#1)] [!code-vb[Conceptual.Types.ViewInfo#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.types.viewinfo/vb/source1.vb#1)]  
   
-## MemberInfo、MethodInfo、FieldInfo、および PropertyInfo  
- <xref:System.Reflection.MemberInfo>、<xref:System.Reflection.MethodInfo>、<xref:System.Reflection.FieldInfo>、または <xref:System.Reflection.PropertyInfo> の各オブジェクトを使用して、型のメソッド、プロパティ、イベント、およびフィールドについての情報を取得します。  
+## <a name="memberinfo-methodinfo-fieldinfo-and-propertyinfo"></a>MemberInfo、MethodInfo、FieldInfo、および PropertyInfo  
+ <xref:System.Reflection.MemberInfo>、<xref:System.Reflection.MethodInfo>、<xref:System.Reflection.FieldInfo>、または <xref:System.Reflection.PropertyInfo> オブジェクトを使用して型のメソッド、プロパティ、イベント、およびフィールドに関する情報を取得します。  
   
- **MemberInfo** を使用して **System.IO.File** クラスのメンバー数を一覧し、[System.Type.IsPublic](frlrfSystemTypeClassIsPublicTopic) プロパティを使用して、このクラスの参照範囲を確認する例を次に示します。  
+ 次の例では、**MemberInfo** を使用して **System.IO.File** クラスのメンバー数を一覧表示し、<xref:System.Type.IsPublic%2A> プロパティを使用してクラスの可視性を決定しています。  
   
- [!code-cpp[Conceptual.Types.ViewInfo#2](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.types.viewinfo/cpp/source2.cpp#2)]
- [!code-csharp[Conceptual.Types.ViewInfo#2](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.types.viewinfo/cs/source2.cs#2)]
- [!code-vb[Conceptual.Types.ViewInfo#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.types.viewinfo/vb/source2.vb#2)]  
+ [!code-cpp[Conceptual.Types.ViewInfo#2](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.types.viewinfo/cpp/source2.cpp#2)] [!code-csharp[Conceptual.Types.ViewInfo#2](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.types.viewinfo/cs/source2.cs#2)] [!code-vb[Conceptual.Types.ViewInfo#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.types.viewinfo/vb/source2.vb#2)]  
   
- 特定のメンバーの型を調べる例を次に示します。  **MemberInfo** クラスのメンバーに対してリフレクションを実行し、そのメンバーの型を一覧します。  
+ 次の例では、指定されたメンバーの型を調べています。 **MemberInfo** クラスのメンバーにリフレクションを実行し、その型を一覧表示しています。  
   
- [!code-cpp[Conceptual.Types.ViewInfo#3](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.types.viewinfo/cpp/source3.cpp#3)]
- [!code-csharp[Conceptual.Types.ViewInfo#3](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.types.viewinfo/cs/source3.cs#3)]
- [!code-vb[Conceptual.Types.ViewInfo#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.types.viewinfo/vb/source3.vb#3)]  
+ [!code-cpp[Conceptual.Types.ViewInfo#3](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.types.viewinfo/cpp/source3.cpp#3)] [!code-csharp[Conceptual.Types.ViewInfo#3](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.types.viewinfo/cs/source3.cs#3)] [!code-vb[Conceptual.Types.ViewInfo#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.types.viewinfo/vb/source3.vb#3)]  
   
- すべてのリフレクション **\*Info** クラスを <xref:System.Reflection.BindingFlags> と共に使用して、指定したクラスのすべてのメンバー \(コンストラクター、フィールド、プロパティ、イベント、およびメソッド\) を一覧し、メンバーを静的カテゴリとインスタンス カテゴリに分割する例を次に示します。  
+ 次の例では、すべてのリフレクション **\*Info** クラスに <xref:System.Reflection.BindingFlags> を使用して、指定したクラスのすべてのメンバー (コンストラクター、フィールド、プロパティ、イベント、およびメソッド) を一覧表示しています。メンバーは静的およびインスタンスのカテゴリに分割されています。  
   
- [!code-cpp[Conceptual.Types.ViewInfo#4](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.types.viewinfo/cpp/source4.cpp#4)]
- [!code-csharp[Conceptual.Types.ViewInfo#4](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.types.viewinfo/cs/source4.cs#4)]
- [!code-vb[Conceptual.Types.ViewInfo#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.types.viewinfo/vb/source4.vb#4)]  
+ [!code-cpp[Conceptual.Types.ViewInfo#4](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.types.viewinfo/cpp/source4.cpp#4)] [!code-csharp[Conceptual.Types.ViewInfo#4](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.types.viewinfo/cs/source4.cs#4)] [!code-vb[Conceptual.Types.ViewInfo#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.types.viewinfo/vb/source4.vb#4)]  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Reflection.BindingFlags>   
  <xref:System.Reflection.Assembly.GetType%2A?displayProperty=fullName>   
  <xref:System.Reflection.Assembly.GetTypes%2A?displayProperty=fullName>   

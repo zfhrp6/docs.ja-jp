@@ -17,25 +17,27 @@ caps.latest.revision: 57
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: ddcefb2b35f8cbf06a3abcc16158eee850f799ff
-ms.openlocfilehash: 55228928d5d3d95cf28384e5179a43bfb0f598e9
+ms.translationtype: Human Translation
+ms.sourcegitcommit: fe9ab371ab8d3eee3778412e446b7aa30b42476b
+ms.openlocfilehash: 1d3dd5bc21bee91fe997deb8d5000145f4098f9c
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/11/2017
+ms.lasthandoff: 06/02/2017
 
 ---
-# <a name="troubleshooting-blocked-net-framework-installations-and-uninstallations"></a>.NET Framework のインストールおよびアンインストールのブロックのトラブルシューティング
-.NET Framework 4.5、4.5.1、4.5.2、4.6、4.6.1、4.6.2、または 4.7 の [Web またはオフライン インストーラー](../../../docs/framework/install/guide-for-developers.md)を実行すると、.NET Framework のインストールを妨げたり、ブロックしたりするような問題が発生することがあります。 次の表に、インストールをブロックすることが考えられる問題と、トラブルシューティング情報へのリンクを示します。  
-  
- Windows 8 以降では、.NET Framework はオペレーティング システム コンポーネントとなっているため、個別にアンインストールすることはできません。 .NET Framework の更新プログラムは、コントロール パネルの **[プログラムと機能]** アプリの **[インストールされた更新プログラム]** タブに表示されます。 .NET Framework がプレインストールされていないオペレーティング システムでは、.NET Framework は、コントロール パネルの **[プログラムと機能]** アプリの **[プログラムのアンインストールまたは変更]** タブ (または**[プログラムの追加と削除]** タブ) に表示されます。 .NET Framework がプレインストールされている Windows のバージョンについては、[システム要件](../../../docs/framework/get-started/system-requirements.md)に関するページを参照してください。  
+
+# <a name="troubleshoot-blocked-net-framework-installations-and-uninstallations"></a>.NET Framework のインストールおよびアンインストールのブロックのトラブルシューティング
+
+.NET Framework 4.5、4.5.1、4.5.2、4.6、4.6.1、4.6.2、または 4.7 の [Web またはオフライン インストーラー](../../../docs/framework/install/guide-for-developers.md)を実行すると、.NET Framework のインストールを妨げたり、ブロックしたりするような問題が発生することがあります。 次の表に、インストールをブロックすることが考えられる問題と、トラブルシューティング情報へのリンクを示します。
+
+Windows 8 以降では、.NET Framework はオペレーティング システム コンポーネントとなっているため、個別にアンインストールすることはできません。 .NET Framework の更新プログラムは、コントロール パネルの **[プログラムと機能]** アプリの **[インストールされた更新プログラム]** タブに表示されます。 .NET Framework がプレインストールされていないオペレーティング システムでは、.NET Framework は、コントロール パネルの **[プログラムと機能]** アプリの **[プログラムのアンインストールまたは変更]** タブ (または**[プログラムの追加と削除]** タブ) に表示されます。 .NET Framework がプレインストールされている Windows のバージョンについては、[システム要件](../../../docs/framework/get-started/system-requirements.md)に関するページを参照してください。
 
 > [!IMPORTANT]
-> .NET framework の 4.x バージョンはインプレース更新であるため、最新バージョンが既にインストールされているシステムに .NET Framework 4.x の以前のバージョンをインストールすることはできません。 たとえば、Windows 10 Creators Update がインストール済みのシステムでは、.NET Framework 4.7 がオペレーティング システムと共にプレインストールされているため、.NET Framework 4.6.2 をインストールすることはできません。  
-  
- システムにインストールされている .NET Framework のバージョンを確認してください。 詳細については、「[方法 : インストールされている .NET Framework バージョンを確認する](../../../docs/framework/migration-guide/how-to-determine-which-versions-are-installed.md)」を参照してください。  
-  
- 次の表で、4.5.*x* は .NET Framework 4.5 とそのポイント リリースである 4.5.1 と 4.5.2 を、4.6.*x* は .NET Framework 4.6 とそのポイント リリースである 4.6.1 と 4.6.2 を、4.7 は .NET Framework 4.7 を表します。  
-  
+> .NET framework の 4.x バージョンはインプレース更新であるため、最新バージョンが既にインストールされているシステムに .NET Framework 4.x の以前のバージョンをインストールすることはできません。 たとえば、Windows 10 Creators Update がインストール済みのシステムでは、.NET Framework 4.7 がオペレーティング システムと共にプレインストールされているため、.NET Framework 4.6.2 をインストールすることはできません。
+
+システムにインストールされている .NET Framework のバージョンを確認してください。 詳細については、「[方法 : インストールされている .NET Framework バージョンを確認する](../../../docs/framework/migration-guide/how-to-determine-which-versions-are-installed.md)」を参照してください。
+
+次の表で、4.5.*x* は .NET Framework 4.5 とそのポイント リリースである 4.5.1 と 4.5.2 を、4.6.*x* は .NET Framework 4.6 とそのポイント リリースである 4.6.1 と 4.6.2 を、4.7 は .NET Framework 4.7 を表します。
+
 |ブロッキング メッセージ|詳細情報または問題解決のための参照先|  
 |----------------------|--------------------------------------------------|  
 |Microsoft .NET Framework をアンインストールすると、一部のアプリケーションが機能しなくなる可能性があります。|一般に、コンピューターにインストールされている .NET Framework のバージョンはアンインストールしないでください。使用するアプリケーションが .NET Framework の特定のバージョンに依存している可能性があるからです。 詳しくは、*概要*ガイドの「[ユーザーにとっての .NET Framework](../../../docs/framework/get-started/index.md#ForUsers)」をご覧ください。|  
@@ -61,28 +63,32 @@ ms.lasthandoff: 05/11/2017
 |.NET Framework 4.5.*x* は既にこのオペレーティング システムの一部として組み込まれていますが、現在は無効になっています ([!INCLUDE[winserver8](../../../includes/winserver8-md.md)] のみ)。|Windows Web サイトの [Windows の機能の有効化または無効化](http://go.microsoft.com/fwlink/p/?LinkId=248438)に関するページを参照してください。|  
 |このセットアップ プログラムは x86 コンピューターのみを対象としています。 x64 コンピューターまたは IA64 コンピューターにはインストールできません。|MSDN ライブラリの[システム要件](../../../docs/framework/get-started/system-requirements.md)に関するページをご覧ください。|  
 |このセットアップ プログラムは x64 コンピューターまたは x86 コンピューターのみを対象としています。 IA64 コンピューターにはインストールできません。|MSDN ライブラリの[システム要件](../../../docs/framework/get-started/system-requirements.md)に関するページをご覧ください。|  
-  
-<a name="compat"></a>   
-### <a name="program-compatibility-issues"></a>プログラムの互換性問題  
- .NET Framework 4.5 またはそのポイント リリースのインストールを Windows プログラム互換性モードで実行すると、1603 エラー コードで失敗するか、ブロックされます。 **プログラム互換性アシスタント**により、.NET Framework が正しくインストールされていない可能性が示され、推奨設定 (プログラム互換性モード) を使用して再インストールするよう求められます。 プログラム互換性モードは、以前の .NET Framework セットアップの実行が失敗するか取り消されたときにプログラム互換性アシスタントによって設定されている可能性もあります。  
-  
- プログラム互換性モードで .NET Framework インストーラーを実行できません。 このブロッキング問題を解決するには、レジストリ エディターでシステム全体での互換性モードの設定が無効になっていることを確認する必要があります。  
-  
-1.  **[スタート]** ボタンをクリックし、**[ファイル名を指定して実行]** を選択します。  
-  
-2.  **[ファイル名を指定して実行]** ダイアログ ボックスで、「`regedit`」と入力し、**[OK]** をクリックします。  
-  
-3.  レジストリ エディターで、次のサブキーを参照します。  
-  
-    -   HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\Compatibility Assistant\Persisted  
-  
-    -   HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\Layers  
-  
-4.  [名前] 列で、インストールしているバージョンに応じて [!INCLUDE[net_v45](../../../includes/net-v45-md.md)]、4.5.1、4.5.2、4.6、4.6.1、または 4.6.2 のダウンロード名を検索し、これらのエントリを削除します。 ダウンロード名については、[インストール ガイド](../../../docs/framework/install/guide-for-developers.md)の記事を参照してください。  
-  
-5.  バージョン 4.5、4.5.1、4.5.2、4.6、4.6.1、4.6.2、または 4.7 の .NET Framework インストーラーを再実行します。  
-  
-## <a name="see-also"></a>関連項目  
- [インストール ガイド](../../../docs/framework/install/guide-for-developers.md)   
- [方法 : インストールされている .NET Framework バージョンを確認する](../../../docs/framework/migration-guide/how-to-determine-which-versions-are-installed.md)   
- [バージョンおよび依存関係](../../../docs/framework/migration-guide/versions-and-dependencies.md)
+
+<a name="compat"></a>
+### <a name="program-compatibility-issues"></a>プログラムの互換性問題
+
+.NET Framework 4.5 またはそのポイント リリースのインストールを Windows プログラム互換性モードで実行すると、1603 エラー コードで失敗するか、ブロックされます。 **プログラム互換性アシスタント**により、.NET Framework が正しくインストールされていない可能性が示され、推奨設定 (プログラム互換性モード) を使用して再インストールするよう求められます。 プログラム互換性モードは、以前の .NET Framework セットアップの実行が失敗するか取り消されたときにプログラム互換性アシスタントによって設定されている可能性もあります。
+
+プログラム互換性モードで .NET Framework インストーラーを実行できません。 このブロッキング問題を解決するには、レジストリ エディターでシステム全体での互換性モードの設定が無効になっていることを確認する必要があります。
+
+1. **[スタート]** ボタンをクリックし、**[ファイル名を指定して実行]** を選択します。
+
+1. **[ファイル名を指定して実行]** ダイアログ ボックスで、「regedit」と入力し、**[OK]** をクリックします。
+
+1. レジストリ エディターで、次のサブキーを参照します。
+
+   - HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\Compatibility Assistant\Persisted
+
+   - HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\Layers
+
+1. [名前] 列で、インストールしているバージョンに応じて [!INCLUDE[net_v45](../../../includes/net-v45-md.md)]、4.5.1、4.5.2、4.6、4.6.1、または 4.6.2 のダウンロード名を検索し、これらのエントリを削除します。 ダウンロード名については、「[開発者向けの .NET Framework のインストール](../../../docs/framework/install/guide-for-developers.md)」の記事を参照してください。
+
+1. バージョン 4.5、4.5.1、4.5.2、4.6、4.6.1、4.6.2、または 4.7 の .NET Framework インストーラーを再実行します。
+
+## <a name="see-also"></a>関連項目
+
+[開発者向けの .NET Framework のインストール](../../../docs/framework/install/guide-for-developers.md)   
+[方法 : インストールされている .NET Framework バージョンを確認する](../../../docs/framework/migration-guide/how-to-determine-which-versions-are-installed.md)   
+[バージョンおよび依存関係](../../../docs/framework/migration-guide/versions-and-dependencies.md)
+
+

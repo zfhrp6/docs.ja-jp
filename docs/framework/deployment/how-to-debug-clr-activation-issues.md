@@ -1,77 +1,82 @@
 ---
 title: "方法: CLR のアクティブ化に関する問題をデバッグする | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "CLR アクティベーション, デバッグ (問題を)"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- VB
+- CSharp
+- C++
+- jsharp
+helpviewer_keywords:
+- CLR activation, debugging issues
 ms.assetid: 4fe17546-d56e-4344-a930-6d8e4a545914
 caps.latest.revision: 5
-author: "mairaw"
-ms.author: "mairaw"
-manager: "wpickett"
-caps.handback.revision: 5
+author: mairaw
+ms.author: mairaw
+manager: wpickett
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 14abadaf548e228244a1ff7ca72fa3896ef4eb5d
+ms.openlocfilehash: 2df9b03603c5df6bd803187bd1299f5d730bc32c
+ms.contentlocale: ja-jp
+ms.lasthandoff: 06/02/2017
+
 ---
-# 方法: CLR のアクティブ化に関する問題をデバッグする
-正しいバージョンの共通言語ランタイム \(CLR\) を使用してアプリケーションを実行したときに問題が発生した場合は、CLR アクティベーション ログを表示してデバッグできます。  これらのログは、アプリケーションが予期していたバージョンとは異なる CLR バージョンを読み込むか、CLR を全く読み込まない場合のアクティベーションの問題の根本原因を突き止める上で非常に役立ちます。  アプリケーションの CLR が見つからない場合については、「[.NET Framework 初期化エラー: ユーザー エクスペリエンスの管理](../../../docs/framework/deployment/initialization-errors-managing-the-user-experience.md)」を参照してください。  
+# <a name="how-to-debug-clr-activation-issues"></a>方法: CLR のアクティブ化に関する問題をデバッグする
+正しいバージョンの共通言語ランタイム (CLR) でアプリケーションを実行して問題が発生した場合、CLR アクティベーション ログを表示し、デバッグできます。 アプリケーションで予想とは異なる CLR バージョンが読み込まれるときでも、CLR がまったく読み込まれないときでも、アクティベーション問題の根本原因を突き止めるときにこのログが大変役立ちます。 [.NET Framework 初期化エラー: ユーザー エクスペリエンスの管理](../../../docs/framework/deployment/initialization-errors-managing-the-user-experience.md)では、アプリケーションに対して CLR が見つからない場合について説明されています。  
   
- CLR アクティベーション ログは、HKEY\_LOCAL\_MACHINE レジストリ キーまたはシステム環境変数を使用してシステム全体で有効にできます。  ログは、レジストリ エントリまたは環境変数が削除されるまで生成されます。  また、ユーザーローカルまたはプロセスローカルの環境変数を使用して、範囲と期間の異なるログを有効にすることもできます。  
+ HKEY_LOCAL_MACHINE レジストリ キーまたはシステム環境変数を利用すれば、CLR アクティベーション ログをシステム全体で有効にできます。 このログは、レジストリ キーまたは環境変数が削除されるまで生成されます。 あるいは、ユーザーまたはプロセスのローカル環境変数を利用し、別の範囲や期間でログを有効にできます。  
   
- CLR アクティベーション ログは、[アセンブリ バインディング ログ](../../../docs/framework/tools/fuslogvw-exe-assembly-binding-log-viewer.md)と混同しないようにしてください。これは完全に異なるログです。  
+ CLR アクティベーション ログと[アセンブリ バインド ログ](../../../docs/framework/tools/fuslogvw-exe-assembly-binding-log-viewer.md)は完全に異なりますので混同しないでください。  
   
-## CLR アクティベーション ログを有効にするには  
+## <a name="to-enable-clr-activation-logging"></a>CLR アクティベーション ログを有効にするには  
   
-#### レジストリの使用  
+#### <a name="using-the-registry"></a>レジストリを利用する  
   
-1.  レジストリ エディターで、HKEY\_LOCAL\_MACHINE\\SOFTWARE\\Microsoft\\.NETFramework \(32 ビット コンピューターの場合\) または HKEY\_LOCAL\_MACHINE\\SOFTWARE\\Wow6432Node\\Microsoft\\.NETFramework フォルダー \(64 ビット コンピューターの場合\) に移動します。  
+1.  レジストリ エディターで、HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\\.NETFramework (32 ビット コンピューターの場合) または HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\\.NETFramework フォルダー (64 ビット コンピューターの場合) に移動します。  
   
-2.  `CLRLoadLogDir` という名前の文字列値を追加し、CLR アクティベーション ログを格納する既存のディレクトリの完全パスに設定します。  
+2.  `CLRLoadLogDir` という名前の文字列値を追加し、CLR アクティベーション ログを保存する既存ディレクトリの完全パスにそれを設定します。  
   
- アクティベーション ログは、文字列値を削除するまで有効なままになります。  
+ アクティベーション ログは、この文字列値を削除するまで有効です。  
   
-#### 環境変数の使用  
+#### <a name="using-an-environment-variable"></a>環境変数を利用する  
   
--   `COMPLUS_CLRLoadLogDir` 環境変数を、CLR アクティベーション ログを格納する既存のディレクトリの完全パスを表す文字列に設定します。  
+-   CLR アクティベーション ログを保存する既存ディレクトリの完全パスを表す文字列に `COMPLUS_CLRLoadLogDir` 環境変数を設定します。  
   
-     環境変数の設定方法によって、その範囲が以下のように決定されます。  
+     環境変数の設定方法でその範囲が決まります。  
   
-    -   システム レベルで設定した場合、アクティベーション ログは環境変数が削除されるまで、そのコンピューターのすべての .NET Framework アプリケーションで有効になります。  
+    -   システム レベルで設定した場合、環境変数が削除されるまで、そのコンピューターのすべての .NET Framework アプリケーションに対してアクティベーション ログが有効になります。  
   
-    -   ユーザー レベルで設定した場合、アクティベーション ログは現在のユーザー アカウントのみに対して有効になります。  ログ記録は環境変数が削除されるまで続行します。  
+    -   ユーザー レベルで設定した場合、現在のユーザー アカウントに対してのみ、アクティベーション ログが有効になります。 環境変数が削除されるまでログが記録されます。  
   
-    -   CLR を読み込む前にプロセス内から設定した場合、アクティベーション ログはプロセスが終了するまで有効になります。  
+    -   CLR を読み込む前にプロセス内から設定した場合、プロセスが終了するまでアクティベーション ログが有効になります。  
   
-    -   アプリケーションを実行する前にコマンド プロンプトで設定した場合、アクティベーション ログは、そのコマンド プロンプトから実行されるアプリケーションに対して有効になります。  
+    -   アプリケーションを実行する前にコマンド プロンプトで設定した場合、そのコマンド プロンプトから実行されたあらゆるアプリケーションに対してアクティベーション ログが有効になります。  
   
-     たとえば、アクティベーション ログをプロセスレベルのスコープの c:\\clrloadlogs ディレクトリに格納するには、アプリケーションを実行する前に、コマンド プロンプト ウィンドウを開き、次のように入力します。  
+     たとえば、プロセスレベルの範囲で c:\clrloadlogs ディレクトリにアクティベーション ログを保存するには、アプリケーションを実行する前にコマンド プロンプト ウィンドウを開き、次を入力します。  
   
     ```  
     set COMPLUS_CLRLoadLogDir=c:\clrloadlogs  
     ```  
   
-## 使用例  
- CLR アクティベーション ログは、CLR のアクティベーションおよび CLR ホスティング API の使用に関する大量のデータを提供します。  この記事で説明されているように、このデータのほとんどはマイクロソフトにより内部で使用されますが、一部のデータは開発者にも役立ちます。  
+## <a name="example"></a>例  
+ CLR アクティベーション ログは、CLR アクティベーションと API をホストする CLR の使用に関する大量のデータを提供します。 そのデータの大半は Microsoft が社内で利用しますが、一部のデータは、この記事で説明するように、開発者にとっても役立ちます。  
   
- ログは、CLR ホスティング API が呼び出された順序で記録されます。  また、コンピューターで検出された、一連のインストール済みランタイムに関する便利なデータも含まれています。  CLR アクティベーション ログ形式自体は文書化されていませんが、CLR のアクティベーションに関する問題を解決する必要のある開発者の役に立つことがあります。  
-  
-> [!NOTE]
->  アクティベーション ログは、CLR を使用するプロセスが終了するまで開くことができません。  
+ このログには、API をホストする CLR が呼び出された順序が反映されます。 コンピューターで検出された一連のインストール済みランタイムに関する有用な情報も含まれています。 CLR アクティベーション ログの書式自体は記録されませんが、開発者が CLR アクティベーションの問題を解決するとき、この書式は役に立ちます。  
   
 > [!NOTE]
->  CLR アクティベーション ログはローカライズされず、常に英語で生成されます。  
+>  CLR を使用するプロセスが終了するまで、アクティベーション ログを開くことはできません。  
   
- 次のアクティベーション ログの例では、最も役に立つ情報が強調表示されており、ログの後に説明されています。  
+> [!NOTE]
+>  CLR アクティベーション ログはローカライズされません。常に英語で生成されます。  
+  
+ 次のアクティベーション ログ例では、最も役に立つ情報が強調表示されており、ログの後に説明が付いています。  
   
 ```  
 532,205950.367,CLR Loading log for C:\Tests\myapp.exe   
@@ -100,37 +105,33 @@ caps.handback.revision: 5
 532,205950.398,Launching feature-on-demand installation. CmdLine: C:\Windows\system32\fondue.exe /enable-feature:NetFx3   
 532,205950.398,FunctionCall: RealDllMain. Reason: 0   
 532,205950.398,FunctionCall: OnShimDllMainCalled. Reason: 0  
-  
 ```  
   
--   **CLR Loading log** は、マネージ コードを読み込んだプロセスを開始した実行可能ファイルのパスを示します。  これはネイティブ ホストである可能性があります。  
+-   **CLR Loading log** には、マネージ コードを読み込んだプロセスを開始した実行可能ファイルのパスがあります。 ネイティブ ホストの可能性があることに注意してください。  
   
     ```  
     532,205950.367,CLR Loading log for C:\Tests\myapp.exe  
-  
     ```  
   
--   **Installed Runtime** は、コンピューター上にインストールされている、アクティベーション要求候補である一連の CLR バージョンです。  
+-   **Installed Runtime** は、コンピューターにインストールされている CLR の一連のバージョンであり、アクティベーション要求の候補となります。  
   
     ```  
     532,205950.382,Installed Runtime: v4.0.30319. VERSION_ARCHITECTURE: 0  
-  
     ```  
   
--   **built with version** は、[ICLRMetaHostPolicy::GetRequestedRuntime](../Topic/ICLRMetaHostPolicy::GetRequestedRuntime%20Method.md) などのメソッドに提供されたバイナリを構築するために使用された CLR のバージョンです。  
+-   **built with version** は、[ICLRMetaHostPolicy::GetRequestedRuntime](../../../docs/framework/unmanaged-api/hosting/iclrmetahostpolicy-getrequestedruntime-method.md) のようなメソッドに提供されたバイナリの構築に利用された CLR のバージョンです。  
   
     ```  
     532,205950.382,C:\Tests\myapp.exe was built with version: v2.0.50727  
-  
     ```  
   
--   **feature\-on\-demand installation** は、Windows 8 での .NET Framework 3.5 の有効化に関するものです。   このシナリオの詳細については、「[.NET Framework 初期化エラー: ユーザー エクスペリエンスの管理](../../../docs/framework/deployment/initialization-errors-managing-the-user-experience.md)」を参照してください。  
+-   **feature-on-demand installation** は Windows 8 で .NET Framework 3.5 を有効にすることを指します。 このシナリオの詳細については、「[.NET Framework 初期化エラー: ユーザー エクスペリエンスの管理](../../../docs/framework/deployment/initialization-errors-managing-the-user-experience.md)」を参照してください。  
   
     ```  
     532,205950.398,Launching feature-on-demand installation. CmdLine: C:\Windows\system32\fondue.exe /enable-feature:NetFx3  
-  
     ```  
   
-## 参照  
- [配置](../../../docs/framework/deployment/net-framework-and-applications.md)   
- [方法 : .NET Framework 4 または 4.5 をサポートするアプリケーションを構成する](../../../docs/framework/migration-guide/how-to-configure-an-app-to-support-net-framework-4-or-4-5.md)
+## <a name="see-also"></a>関連項目  
+ [展開](../../../docs/framework/deployment/index.md)   
+ [方法: .NET Framework 4 または 4.5 をサポートするアプリを構成する](../../../docs/framework/migration-guide/how-to-configure-an-app-to-support-net-framework-4-or-4-5.md)
+

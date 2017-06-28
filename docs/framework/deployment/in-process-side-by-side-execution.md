@@ -1,78 +1,83 @@
 ---
 title: "インプロセスの side-by-side 実行 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "インプロセスの side-by-side 実行"
-  - "side-by-side 実行, インプロセス"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- VB
+- CSharp
+- C++
+- jsharp
+helpviewer_keywords:
+- in-process side-by-side execution
+- side-by-side execution, in-process
 ms.assetid: 18019342-a810-4986-8ec2-b933a17c2267
 caps.latest.revision: 25
-author: "mairaw"
-ms.author: "mairaw"
-manager: "wpickett"
-caps.handback.revision: 25
+author: mairaw
+ms.author: mairaw
+manager: wpickett
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: a32f50ce8a92fa22d9627a1510a4b3ec1087364e
+ms.openlocfilehash: 09044e2f604ba9b1b87850eea001492c111d45c9
+ms.contentlocale: ja-jp
+ms.lasthandoff: 06/02/2017
+
 ---
-# インプロセスの side-by-side 実行
-[!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)] 以降では、インプロセスの side\-by\-side ホスティングを使用して、1 つのプロセスで複数のバージョンの共通言語ランタイム \(CLR: Common Language Runtime\) を実行できます。  既定では、マネージ COM コンポーネントは、プロセスに読み込まれている .NET Framework のバージョンに関係なく、そのコンポーネントのビルドに使用された .NET Framework のバージョンで実行されます。  
+# <a name="in-process-side-by-side-execution"></a>インプロセスの side-by-side 実行
+[!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)] 以降では、インプロセスの side-by-side ホスティングを使用して、1 つのプロセスで複数のバージョンの共通言語ランタイム (CLR) を実行できます。 既定では、マネージ COM コンポーネントは、プロセスに読み込まれている .NET Framework のバージョンに関係なく、コンポーネントがビルドされた .NET Framework のバージョンで実行されます。  
   
-## 背景  
- .NET Framework では、マネージ コード アプリケーションに対しては side\-by\-side ホスティングを常に提供してきましたが、[!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] まで、マネージ COM コンポーネントに対しては同様の機能がありませんでした。  これまで、プロセスに読み込まれたマネージ COM コンポーネントは、既に読み込まれているバージョンのランタイムか、インストールされている最新バージョンの .NET Framework で実行されていました。  このバージョンが COM コンポーネントと互換性がない場合、そのコンポーネントは失敗しました。  
+## <a name="background"></a>背景  
+ .NET Framework ではマネージ コード アプリケーションに対して常に side-by-side ホスティングが提供されてきましたが、[!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] より前のバージョンでは、マネージ COM コンポーネントについてはこの機能は提供されませんでした。 以前は、プロセスに読み込まれたマネージ COM コンポーネントは、既に読み込まれているランタイムのバージョン、またはインストールされている .NET Framework の最新バージョンで実行されました。 このバージョンが COM コンポーネントと互換性がない場合、コンポーネントは実行できませんでした。  
   
- [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] には、以下を実現する side\-by\-side ホスティングの新しい方法が用意されています。  
+ [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] が備える side-by-side ホスティングの新しいアプローチでは、次のことが保証されます。  
   
--   新しいバージョンの .NET Framework をインストールした場合に、既存のアプリケーションに影響を与えません。  
+-   .NET Framework の新しいバージョンをインストールしても、既存のアプリケーションに影響はありません。  
   
--   アプリケーションは、ビルドに使用されたバージョンの .NET Framework で実行されます。  新しいバージョンの .NET Framework を使用するには、そのように明示的に指示する必要があります。  ただし、新しいバージョンの .NET Framework を使用するようにアプリケーションを移行する方が簡単です。  
+-   アプリケーションは、それがビルドされたバージョンの .NET Framework に対して実行されます。 明示的に指示しない限り、新しいバージョンの .NET Framework は使われません。 ただし、新しいバージョンの .NET Framework を使うようにアプリケーションを移行する方が簡単です。  
   
-## ユーザーおよび開発者への影響  
+## <a name="effects-on-users-and-developers"></a>ユーザーと開発者への影響  
   
--   **エンド ユーザーおよびシステム管理者**。  新しいバージョンのランタイムを個別にまたはアプリケーションと共にインストールしても、使用しているコンピューターに影響を与えないので、安心して作業できます。  既存のアプリケーションはこれまでどおり実行されます。  
+-   **エンドユーザーとシステム管理者**。 これらのユーザーについては、単独で、またはアプリケーションと共に、ランタイムの新しいバージョンをインストールしても、コンピューターに影響がないことが、これまで以上に確実になっています。 既存のアプリケーションは引き続きこれまでと同じように動作します。  
   
--   **アプリケーション開発者**。  アプリケーション開発者にとって、side\-by\-side ホスティングによる影響はほとんどありません。  既定では、アプリケーションは、ビルドに使用されたバージョンの .NET Framework で常に実行されます。この点に変わりはありません。  ただし、開発者は、この動作をオーバーライドし、新しいバージョンの .NET Framework でアプリケーションを実行するように指示できます \([シナリオ 2](#scenarios) を参照してください\)。  
+-   **アプリケーション開発者**。 Side-by-side ホスティングは、アプリケーション開発者に対する影響はほとんどありません。 既定では、アプリケーションはそれがビルドされた .NET Framework のバージョンで常に実行されます。これは変更されていません。 ただし、開発者はこの動作をオーバーライドし、新しいバージョンの .NET Framework で実行するようアプリケーションに指示できます ([シナリオ 2](#scenarios) をご覧ください)。  
   
--   **ライブラリの開発者および使用者**。  side\-by\-side ホスティングでは、ライブラリ開発者が直面する互換性の問題は解決されません。  直接参照または <xref:System.Reflection.Assembly.Load%2A?displayProperty=fullName> の呼び出しによってアプリケーションで直接読み込まれるライブラリでは、読み込み先の <xref:System.AppDomain> のランタイムを引き続き使用します。  サポートする必要があるすべてのバージョンの .NET Framework に対してライブラリをテストする必要があります。  [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] ランタイムを使用してアプリケーションをコンパイルするが、アプリケーションに以前のランタイムを使用してビルドされたライブラリが含まれている場合は、そのライブラリでも [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] ランタイムが使用されます。  ただし、以前のランタイムを使用してビルドされたアプリケーションと、[!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] を使用してビルドされたライブラリの場合は、強制的にアプリケーションで [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] を使用する必要があります \([シナリオ 3](#scenarios) を参照してください\)。  
+-   **ライブラリ開発者とコンシューマー**。 ライブラリ開発者が直面する互換性の問題は、side-by-side ホスティングでは解決されません。 アプリケーションによって (直接参照または <xref:System.Reflection.Assembly.Load%2A?displayProperty=fullName> の呼び出しにより) 直接読み込まれるライブラリは、それが読み込まれる <xref:System.AppDomain> のランタイムを引き続き使います。 サポートする .NET Framework のすべてのバージョンについて、ライブラリをテストする必要があります。 [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] ランタイムを使ってコンパイルされているアプリケーションに、それより前のランタイムを使ってビルドされたライブラリが含まれる場合は、そのライブラリも [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] ランタイムを使います。 一方、ランタイムを使ってビルドされたアプリケーションに、[!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] を使ってビルドされたライブラリが含まれる場合は、アプリケーションも [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] を使うように強制する必要があります ([シナリオ 3](#scenarios) をご覧ください)。  
   
--   **マネージ COM コンポーネントの開発者**。  これまで、マネージ COM コンポーネントは、コンピューターにインストールされている最新バージョンのランタイムを使用して自動的に実行されていました。  現在では、COM コンポーネントは、ビルドに使用されたバージョンのランタイムで実行できます。  
+-   **マネージ COM コンポーネントの開発者**。 以前は、マネージ COM コンポーネントはコンピューターにインストールされている最新バージョンのランタイムを使って自動的に実行しました。 現在は、ビルドされたバージョンのランタイムに対して COM コンポーネントを実行できるようになりました。  
   
-     次の表に示すように、.NET Framework Version 1.1 でビルドされたコンポーネントは、Version 4 のコンポーネントと並行して実行できますが、Version 2.0、3.0、または 3.5 では side\-by\-side ホスティングを使用できないので、これらのバージョンのコンポーネントと並行して実行することはできません。  
+     次の表で示すように、.NET Framework バージョン 1.1 でビルドされたコンポーネントは、バージョン 4 のコンポーネントとであれば side-by-side で実行できますが、バージョン 2.0、3.0、3.5 のコンポーネントとは、これらのバージョンでは side-by-side ホスティングを使用できないために side-by-side では実行できません。  
   
-    |.NET Framework のバージョン|1.1|2.0 \- 3.5|4|  
-    |---------------------------|---------|----------------|-------|  
-    |1.1|該当なし|No|Yes|  
-    |2.0 \- 3.5|No|該当なし|Yes|  
-    |4|Yes|Yes|該当なし|  
+    |.NET Framework のバージョン|1.1|2.0 - 3.5|4|  
+    |----------------------------|---------|----------------|-------|  
+    |1.1|該当なし|いいえ|はい|  
+    |2.0 - 3.5|いいえ|該当なし|はい|  
+    |4|はい|はい|該当なし|  
   
 > [!NOTE]
->  .NET Framework Version 3.0 および 3.5 は、Version 2.0 を基盤としてインクリメント方式で構築されており、並行して実行する必要はありません。  これらのバージョンは、本質的に同じバージョンです。  
+>  .NET Framework バージョン 3.0 および 3.5 はバージョン 2.0 に対して増分的にビルドされているため、side-by-side で実行する必要はありません。 これらは、本質的に同じバージョンです。  
   
 <a name="scenarios"></a>   
-## side\-by\-side ホスティングの一般的なシナリオ  
+## <a name="common-side-by-side-hosting-scenarios"></a>side-by-side ホスティングの一般的なシナリオ  
   
--   **シナリオ 1:** 以前のバージョンの .NET Framework でビルドされた COM コンポーネントを使用するネイティブ アプリケーション。  
+-   **シナリオ 1:** 以前のバージョンの .NET Framework でビルドされた COM コンポーネントを使うネイティブ アプリケーション。  
   
-     インストールされている .NET Framework のバージョン: [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)]、および COM コンポーネントで使用されるその他のすべてのバージョンの .NET Framework。  
+     インストールされている .NET Framework のバージョン: [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] および COM コンポーネントによって使われている他のすべての .NET Framework のバージョンの場合。  
   
-     操作内容: このシナリオでは何もしません。  COM コンポーネントは、そのコンポーネントが登録されているバージョンの .NET Framework で実行されます。  
+     対処方法: このシナリオの場合は、何も行いません。 COM コンポーネントは、登録された .NET Framework のバージョンで実行されます。  
   
--   **シナリオ 2**: [!INCLUDE[net_v20SP1_short](../../../includes/net-v20sp1-short-md.md)] でビルドされたマネージ アプリケーション。[!INCLUDE[dnprdnext](../../../includes/dnprdnext-md.md)] で優先的に実行しますが、Version 2.0 がない場合は [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] で実行します。  
+-   **シナリオ 2**: [!INCLUDE[net_v20SP1_short](../../../includes/net-v20sp1-short-md.md)] でビルドされたマネージ アプリケーションを、できれば [!INCLUDE[dnprdnext](../../../includes/dnprdnext-md.md)] で実行したいが、バージョン 2.0 が存在しない場合は [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] で実行したい場合。  
   
-     インストールされている .NET Framework のバージョン: 以前のバージョンの .NET Framework および [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)]。  
+     インストールされている .NET Framework のバージョン: 以前のバージョンの .NET Framework と [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)]。  
   
-     操作内容: アプリケーション ディレクトリの [アプリケーション構成ファイル](../../../docs/framework/configure-apps/index.md) で、次のように設定されている [\<起動\> 要素](../../../docs/framework/configure-apps/file-schema/startup/startup-element.md) と [\<supportedRuntime\> 要素](../../../docs/framework/configure-apps/file-schema/startup/supportedruntime-element.md) を使用する:  
+     対処方法: アプリケーション ディレクトリの[アプリケーション構成ファイル](../../../docs/framework/configure-apps/index.md)で、次のように設定された [\<startup> 要素](../../../docs/framework/configure-apps/file-schema/startup/startup-element.md)と [\<supportedRuntime> 要素](../../../docs/framework/configure-apps/file-schema/startup/supportedruntime-element.md)を使います。  
   
-    ```  
+    ```xml  
     <configuration>  
       <startup >  
         <supportedRuntime version="v2.0.50727" />  
@@ -81,13 +86,13 @@ caps.handback.revision: 25
     </configuration>  
     ```  
   
--   **シナリオ 3:** 以前のバージョンの .NET Framework でビルドされた COM コンポーネントを使用するネイティブ アプリケーション。[!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] で実行します。  
+-   **シナリオ 3:** 以前のバージョンの .NET Framework でビルドされた COM コンポーネントを使うネイティブ アプリケーションを、[!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] で実行したい場合。  
   
      インストールされている .NET Framework のバージョン: [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)]。  
   
-     操作内容: アプリケーション ディレクトリのアプリケーション構成ファイルで、`useLegacyV2RuntimeActivationPolicy` 属性を `true` に設定した `<startup>` 要素と次のように設定した `<supportedRuntime>` 要素を使用します。  
+     対処方法: アプリケーション ディレクトリのアプリケーション構成ファイルで、`useLegacyV2RuntimeActivationPolicy` 属性と `true` に設定した `<startup>` 要素と、次のように設定された `<supportedRuntime>` 要素を使います。  
   
-    ```  
+    ```xml  
     <configuration>  
       <startup useLegacyV2RuntimeActivationPolicy="true">  
         <supportedRuntime version="v4.0" />  
@@ -95,10 +100,10 @@ caps.handback.revision: 25
     </configuration>  
     ```  
   
-## 例  
- マネージ COM コンポーネントを実行するアンマネージ COM ホストの例を次に示します。マネージ COM コンポーネントの実行には、そのコンパイルで対象としたバージョンの .NET Framework を使用します。  
+## <a name="example"></a>例  
+ 次の例では、コンポーネントがコンパイルされた .NET Framework のバージョンを使うことでマネージ COM コンポーネントを実行しているアンマネージ COM ホストを示します。  
   
- 次のコード例を実行し、次のマネージ COM コンポーネントを登録するには [!INCLUDE[net_v35_long](../../../includes/net-v35-long-md.md)]を使用してコンパイルします。  コンポーネントは、**\[プロジェクト\]** メニューに登録するには、**\[プロパティ\]** をクリックします、**\[ビルド\]** タブをクリックし、**\[COM 相互運用機能の登録\]** チェック ボックスをオンにします。  
+ 次の例を実行するには、[!INCLUDE[net_v35_long](../../../includes/net-v35-long-md.md)] を使って次のマネージ COM コンポーネントをコンパイルして登録します。 コンポーネントを登録するには、**[プロジェクト]** メニューの **[プロパティ]** をクリックし、**[ビルド]** タブをクリックして、**[COM の相互運用機能に登録]** チェック ボックスをオンにします。  
   
 ```  
 using System;  
@@ -123,7 +128,7 @@ namespace BasicComObject
 }  
 ```  
   
- 次のアンマネージ C\+\+ アプリケーションをコンパイルします。これにより、前の例で作成される COM オブジェクトがアクティブになります。  
+ 次のアンマネージ C++ アプリケーションをコンパイルすると、前の例で作成した COM オブジェクトがアクティブ化すされます。  
   
 ```  
 #include "stdafx.h"  
@@ -181,9 +186,9 @@ int _tmain(int argc, _TCHAR* argv[])
     CoUninitialize();  
     return 0;  
 }  
-  
 ```  
   
-## 参照  
- [\<startup\> 要素](../../../docs/framework/configure-apps/file-schema/startup/startup-element.md)   
- [\<supportedRuntime\> 要素](../../../docs/framework/configure-apps/file-schema/startup/supportedruntime-element.md)
+## <a name="see-also"></a>関連項目  
+ [\<startup> 要素](../../../docs/framework/configure-apps/file-schema/startup/startup-element.md)   
+ [\<<supportedRuntime> 要素](../../../docs/framework/configure-apps/file-schema/startup/supportedruntime-element.md)
+
