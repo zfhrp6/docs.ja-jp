@@ -11,10 +11,10 @@ ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: 9f6e8679-bd7e-4317-b3f9-7255a260d9cf
 ms.translationtype: Human Translation
-ms.sourcegitcommit: fd5f6cccdc5c91eb435ba024c9c37351febc952a
-ms.openlocfilehash: b56a285d21c9103f76b4e9fb0749a4e36a603074
+ms.sourcegitcommit: 9cd469dfd4f38605f1455c008388ad04c366e484
+ms.openlocfilehash: f1af698557abecc61d6f4ecdb8e4602ef69d9dc1
 ms.contentlocale: ja-jp
-ms.lasthandoff: 06/15/2017
+ms.lasthandoff: 07/03/2017
 
 ---
 
@@ -42,7 +42,7 @@ ms.lasthandoff: 06/15/2017
 
 ## <a name="how-to-target-the-net-standard"></a>.NET Standard をターゲット設定する方法
 
-.NET Standard にあまりなじみがない場合、詳細については、「[.NET Standard Library](../../standard/library.md)」を参照してください。
+.NET Standard にあまりなじみがない場合、詳細については、「[.NET Standard Library](../../standard/net-standard.md)」を参照してください。
 
 この記事には、.NET Standard バージョンを多様な実装にマップする表が掲載されています。
 
