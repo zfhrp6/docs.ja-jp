@@ -38,7 +38,7 @@ ms.translationtype: Human Translation
 ms.sourcegitcommit: 31905a37f09db5f5192123f0118252fbe8b02eff
 ms.openlocfilehash: 317ea9a17a792bcbfd11c5f1085218e2b0f2a312
 ms.contentlocale: ja-jp
-ms.lasthandoff: 06/15/2017
+ms.lasthandoff: 07/03/2017
 
 ---
 # <a name="introduction-to-linq-queries-c"></a>LINQ クエリの概要 (C#)
@@ -62,9 +62,9 @@ ms.lasthandoff: 06/15/2017
  ![LINQ クエリ操作の全体](../../../../csharp/programming-guide/concepts/linq/media/linq_query.png "LINQ_Query")  
   
 ## <a name="the-data-source"></a>データ ソース  
- 前の例では、データ ソースが配列であるため、暗黙的にジェネリック <xref:System.Collections.Generic.IEnumerable%601> インターフェイスがサポートされます。 つまり、[!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] でクエリを実行できるということです。 クエリは `foreach` ステートメントで実行されますが、`foreach` には <xref:System.Collections.IEnumerable> または <xref:System.Collections.Generic.IEnumerable%601> が必要です。 型をサポートする<xref:System.Collections.Generic.IEnumerable%601>またはジェネリックなどの派生インターフェイス<xref:System.Linq.IQueryable%601>と呼ばれます*クエリ可能型*です。  
+ 前の例では、データ ソースが配列であるため、暗黙的にジェネリック <xref:System.Collections.Generic.IEnumerable%601> インターフェイスがサポートされます。 つまり、[!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] でクエリを実行できるということです。 クエリは `foreach` ステートメントで実行されますが、`foreach` には <xref:System.Collections.IEnumerable> または <xref:System.Collections.Generic.IEnumerable%601> が必要です。 <xref:System.Collections.Generic.IEnumerable%601> をサポートする型や、ジェネリック <xref:System.Linq.IQueryable%601> などの派生インターフェイスは、*クエリ可能型*と呼ばれます。  
   
- クエリ可能型は、変更や特別な処理を行わなくても、[!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] データ ソースとして使用できます。 ソース データがメモリ内にクエリ可能型として存在していない場合、[!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] プロバイダーは、そのような型としてソース データを表す必要があります。 たとえば、[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]に、クエリ可能な XML ドキュメントを読み込みます<xref:System.Xml.Linq.XElement>型。  
+ クエリ可能型は、変更や特別な処理を行わなくても、[!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] データ ソースとして使用できます。 ソース データがメモリ内にクエリ可能型として存在していない場合、[!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] プロバイダーは、そのような型としてソース データを表す必要があります。 たとえば、[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] では、クエリ可能な <xref:System.Xml.Linq.XElement> 型に XML ドキュメントが読み込まれます。  
   
  [!code-cs[CsLINQGettingStarted#2](../../../../csharp/programming-guide/concepts/linq/codesnippet/CSharp/introduction-to-linq-queries_2.cs)]  
   
