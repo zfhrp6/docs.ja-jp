@@ -1,5 +1,5 @@
 ---
-title: "LINQ の使用"
+title: "LINQ の操作 | Microsoft Docs"
 description: "このチュートリアルでは、LINQ を使用してシーケンスを生成し、LINQ クエリで使用するためのメソッドを作成し、先行評価と遅延評価を区別する方法を説明します。"
 keywords: .NET, .NET Core
 author: BillWagner
@@ -11,16 +11,18 @@ ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 0db12548-82cb-4903-ac88-13103d70aa77
 ms.translationtype: Human Translation
-ms.sourcegitcommit: be7974018ce3195dc7344192d647fe64fb2ebcc4
-ms.openlocfilehash: ec86c558b9aa9c6269fcf9890978f61a934c081f
+ms.sourcegitcommit: 4437ce5d344cf06d30e31911def6287999fc6ffc
+ms.openlocfilehash: 81ae0a1bd54aff6a5be39ef75cf24eb29d3e0671
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/22/2017
+ms.lasthandoff: 05/23/2017
 
 ---
 
-# <a name="working-with-linq"></a>LINQ の使用
+<a id="working-with-linq" class="xliff"></a>
+# LINQ の使用
 
-## <a name="introduction"></a>はじめに
+<a id="introduction" class="xliff"></a>
+## はじめに
 
 このチュートリアルでは、.NET Core と C# 言語のさまざまな機能を説明します。 内容は以下の通りです。
 
@@ -36,17 +38,20 @@ ms.lasthandoff: 05/22/2017
 
 このチュートリアルには、複数の手順があります。 各手順の後に、アプリケーションを実行して進行状況を確認できます。 GitHub の dotnet/docs リポジトリでは、[完全版のサンプル](https://github.com/dotnet/docs/blob/master/samples/csharp/getting-started/console-linq)を確認することもできます。 ダウンロード方法については、「[サンプルおよびチュートリアル](../../samples-and-tutorials/index.md#viewing-and-downloading-samples)」を参照してください。
 
-## <a name="prerequisites"></a>必要条件
+<a id="prerequisites" class="xliff"></a>
+## 必要条件
 
 お使いのコンピューターを、.NET Core が実行されるように設定する必要があります。 インストールの指示については、[.NET Core](https://www.microsoft.com/net/core) のページを参照してください。 このアプリケーションは、Windows、Ubuntu Linux、OS X または Docker コンテナーで実行できます。 お好みのコード エディターをインストールしてください。 次の説明では、オープン ソースのクロス プラットフォーム エディターである [Visual Studio Code](https://code.visualstudio.com/) を使用しています。 しかし、他の使い慣れたツールを使用しても構いません。
 
-## <a name="create-the-application"></a>アプリケーションを作成する
+<a id="create-the-application" class="xliff"></a>
+## アプリケーションを作成する
 
 最初に新しいアプリケーションを作成します。 コマンド プロンプトを開き、アプリケーション用の新しいディレクトリを作成します。 それを、現在のディレクトリとしてください。 コマンド プロンプトで `dotnet new console` のコマンドを入力します。 これで、基本的な "Hello World" アプリケーションのスターター ファイルが作成されます。
 
 C# を始めて使用する方向けに、[このチュートリアル](console-teleprompter.md)で C# プログラムの構造について説明しています。 そのチュートリアルを先に読んでから、ここに戻って LINQ の詳細について学ぶのも良いでしょう。 
 
-## <a name="creating-the-data-set"></a>データ セットの作成
+<a id="creating-the-data-set" class="xliff"></a>
+## データ セットの作成
 
 まず、カードのデッキを作りましょう。 2 つのソースを持つ LINQ クエリを使用してデッキを作成します。ソースの 1 つは 4 種類のスート (スペードなどのマークのこと)、もう 1 つは 13 個の値です。 これらのソースを組み合わせて、52 枚のカード デッキを作ります。 `foreach` ループ内の `Console.WriteLine` ステートメントがカードを表示します。
 
@@ -100,7 +105,8 @@ static IEnumerable<string> Ranks()
 
 ![52 枚のカードをアプリケーションが書きだしているコンソール ウィンドウ](./media/working-with-linq/console.png)
 
-## <a name="manipulating-the-order"></a>順序の操作
+<a id="manipulating-the-order" class="xliff"></a>
+## 順序の操作
 
 次に、シャッフルを実行できるユーティリティ メソッドをビルドしてみましょう。 最初の手順では、デッキを 2 つに分割します。 LINQ API の一部である `Take()` メソッドと `Skip()` メソッドにより、この機能を使用できます。
 
@@ -173,7 +179,8 @@ public static void Main(string[] args)
 }
 ```
 
-## <a name="comparisons"></a>比較
+<a id="comparisons" class="xliff"></a>
+## 比較
 
 デッキを元の順序に戻すまでにシャッフルが何回必要かを見てみましょう。 2 つのシーケンスが等しいかどうかを判断するメソッドを記述する必要があります。 そのメソッドを記述したら、デッキをループでシャッフルするコードを配置し、どの時点で元の順序に戻るかを確認する必要があります。
 
@@ -207,7 +214,8 @@ Console.WriteLine(times);
 
 サンプルを実行して、8 回反復して元の構成に戻るまで、デッキがシャッフルごとにどのように配置されるかを確認します。
 
-## <a name="optimizations"></a>最適化
+<a id="optimizations" class="xliff"></a>
+## 最適化
 
 ここまでで構築したサンプルは、*イン シャッフル* (一番上と一番下のカードが毎回同じになること) を実行するものです。 ここで 1 つ変更を加え、*アウト シャッフル* (52 枚のカードすべてが位置を変えること) を実行しましょう。 アウト シャッフルでは、下半分の一番上のカードが、デッキの最上部に来るように、デッキをインターウィーブします。 つまり、上半分の一番下のカードがデッキの最下部のカードになります。 これは 1 行だけの変更です。 シャッフルの呼び出しを更新して、デッキの上半分と下半分の順序を変更します。
 
@@ -285,7 +293,8 @@ public static void Main(string[] args)
 
 実際には、先行評価を使用すると効率的に動作するアルゴリズムもあれば、遅延評価を使用したほうがよいアルゴリズムもあります。 (一般に、データ ソースがデータベース エンジンのように個別のプロセスである場合は、遅延評価のほうがはるかに適しています。 このような場合、遅延評価では、より複雑なクエリの実行がデータベース処理に対して 1 往復だけ可能になります。)LINQ では遅延評価と先行評価の両方が可能です。 検討し最適な方法を選んでください。
 
-## <a name="preparing-for-new-features"></a>新機能の準備
+<a id="preparing-for-new-features" class="xliff"></a>
+## 新機能の準備
 
 このサンプルで記述したコードは、目的を果たすために作成された単純なプロトタイプの例です。 問題の範囲を調査するのに優れた方法であり、多くの機能ではこれが最適な恒久策となりえます。 カードに*匿名型*を利用したので、それぞれのカードは文字列で表されます。
 
@@ -329,7 +338,8 @@ var startingDeck = (from s in Suits().LogQuery("Suit Generation")
 
 コンパイルして再実行します。 出力が少し読みやすくなり、コードが少し明確になってより簡単に拡張できるようになりました。
 
-## <a name="conclusion"></a>まとめ
+<a id="conclusion" class="xliff"></a>
+## まとめ
 
 このサンプルでは、LINQ で使用されるいくつかのメソッドと、LINQ が有効なコードで簡単に使えるメソッドの作成方法を紹介しました。 さらに、遅延評価と先行評価の違いを示し、どちらを選ぶかによってパフォーマンスにどのような影響があるかを説明しました。
 

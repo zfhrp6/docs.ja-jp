@@ -1,5 +1,5 @@
 ---
-title: "C# のデリゲート | C# 言語のツアー"
+title: "C# のデリゲート - C# 言語のツアー | Microsoft Docs"
 description: "C# のデリゲートと遅延バインディングについて"
 keywords: ".NET、C#、デリゲート、ラムダ、遅延バインディング"
 author: BillWagner
@@ -11,14 +11,15 @@ ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 3cc27357-3ac2-43a1-aad0-86a77b88f884
 ms.translationtype: Human Translation
-ms.sourcegitcommit: 19006cc5f24ffc66b92e53e8174c6bd33c249679
-ms.openlocfilehash: 9cfefa5f781944b41828ebb61004f960e6cf3d59
+ms.sourcegitcommit: 4437ce5d344cf06d30e31911def6287999fc6ffc
+ms.openlocfilehash: 217fd974f547a4a84b328979ee94ee634038b213
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/14/2017
+ms.lasthandoff: 05/23/2017
 
 ---
 
-# <a name="delegates"></a>デリゲート
+<a id="delegates" class="xliff"></a>
+# デリゲート
 
 ***デリゲート型***は、特定のパラメーター リストおよび戻り値を使用してメソッドへの参照を表します。 デリゲートを使用すれば、変数に割り当ててパラメーターとして渡すことのできるエンティティとして、メソッドを処理できます。 デリゲートはまた、他のいくつかの言語にみられる関数ポインターの概念に似ていますが、関数ポインターとは異なり、デリゲートはオブジェクト指向でタイプ セーフです。
 

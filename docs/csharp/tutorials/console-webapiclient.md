@@ -1,5 +1,5 @@
 ---
-title: ".NET Core を使用した REST クライアントの作成"
+title: ".NET Core を使用した REST クライアントの作成 | Microsoft Docs"
 description: "このチュートリアルでは、.NET Core と C# 言語のさまざまな機能を説明します。"
 keywords: .NET, .NET Core
 author: BillWagner
@@ -11,16 +11,18 @@ ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 51033ce2-7a53-4cdd-966d-9da15c8204d2
 ms.translationtype: Human Translation
-ms.sourcegitcommit: be7974018ce3195dc7344192d647fe64fb2ebcc4
-ms.openlocfilehash: 3dcf0204d57861543743fee4de9523231465d24c
+ms.sourcegitcommit: 4437ce5d344cf06d30e31911def6287999fc6ffc
+ms.openlocfilehash: e39e4f606d4bd1f17f5cb84940a48ef4bd53bd2d
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/14/2017
+ms.lasthandoff: 05/23/2017
 
 ---
 
-# <a name="rest-client"></a>REST クライアント
+<a id="rest-client" class="xliff"></a>
+# REST クライアント
 
-## <a name="introduction"></a>はじめに
+<a id="introduction" class="xliff"></a>
+## はじめに
 このチュートリアルでは、.NET Core と C# 言語のさまざまな機能を説明します。 内容は以下のとおりです。
 *    .NET Core コマンド ライン インターフェイス (CLI) の基本
 *   C# 言語機能の概要
@@ -35,16 +37,19 @@ GitHub 上の REST サービスに対して HTTP 要求を発行するアプリ�
 
 このトピックの[最終的なサンプル](https://github.com/dotnet/docs/tree/master/samples/csharp/getting-started/console-webapiclient)も参照したい方は、ダウンロードできます。 ダウンロード方法については、「[サンプルおよびチュートリアル](../../samples-and-tutorials/index.md#viewing-and-downloading-samples)」を参照してください。
 
-## <a name="prerequisites"></a>必要条件
+<a id="prerequisites" class="xliff"></a>
+## 必要条件
 お使いのコンピューターを、.NET Core が実行されるように設定する必要があります。 インストールの手順については、[.NET Core](https://www.microsoft.com/net/core) のページを参照してください。 このアプリケーションは、Windows、Linux、macOS または Docker コンテナーで実行できます。 お好みのコード エディターをインストールしてください。 次の説明では、オープン ソースのクロス プラットフォーム エディターである [Visual Studio Code](https://code.visualstudio.com/) を使用しています。 しかし、他の使い慣れたツールを使用しても構いません。
-## <a name="create-the-application"></a>アプリケーションを作成する
+<a id="create-the-application" class="xliff"></a>
+## アプリケーションを作成する
 最初に新しいアプリケーションを作成します。 コマンド プロンプトを開き、アプリケーション用の新しいディレクトリを作成します。 それを、現在のディレクトリとしてください。 コマンド プロンプトで `dotnet new console` のコマンドを入力します。 これで、基本的な "Hello World" アプリケーションのスターター ファイルが作成されます。
 
 変更を加える前に、このシンプルな Hello World アプリケーションを実行する手順を見ていきましょう。 アプリケーション作成後、コマンド プロンプトで `dotnet restore` と入力します。 このコマンドにより、NuGet パッケージの復元処理が実行されます。 NuGet は .NET パッケージ マネージャーです。 このコマンドにより、プロジェクトの依存関係のうち欠落しているものがすべてダウンロードされます。 これは新しいプロジェクトなので、依存関係は何もなく、最初の実行で .NET Core フレームワークがダウンロードされます。 この初期手順の後に必要なのは、新しい依存パッケージを追加するときに `dotnet restore` を実行するか、いずれかの依存関係のバージョンを更新するだけです。  
 
 パッケージを復元したら、`dotnet build` を実行します。 これにより、ビルド エンジンが実行され、アプリケーションが作成されます。 最後に、`dotnet run` を実行してアプリケーションを実行します。
 
-## <a name="adding-new-dependencies"></a>新しい依存関係を追加する
+<a id="adding-new-dependencies" class="xliff"></a>
+## 新しい依存関係を追加する
 .NET Core の重要な設計目標の 1 つは、.NET Framework のインストール サイズを最小限に抑えることです。 .NET Core アプリケーション フレームワークには、.NET Framework の最も一般的な要素だけが含まれています。 その一部の機能のための追加ライブラリがアプリケーションで必要な場合は、C# プロジェクト (*.csproj) ファイルにそれらの依存関係を追加します。 ここで示す例の場合は、`System.Runtime.Serialization.Json` パッケージを追加して、アプリケーションが JSON 応答を処理できるようにする必要があります。
 
 `csproj` プロジェクト ファイルを開きます。 ファイルの最初の行は次のように表示されます。
@@ -64,7 +69,8 @@ GitHub 上の REST サービスに対して HTTP 要求を発行するアプリ�
 
 これらの変更を行った後で、`dotnet restore` をもう一度実行して、システムにパッケージがインストールされるようにします。
 
-## <a name="making-web-requests"></a>Web 要求を作成する
+<a id="making-web-requests" class="xliff"></a>
+## Web 要求を作成する
 Web サイトからデータの取得を開始する準備ができました。 このアプリケーションでは、[GitHub API](https://developer.github.com/v3/) から情報を読み取ります。 [.NET Foundation](http://www.dotnetfoundation.org/) にあるプロジェクトに関する情報を読み取ります。 最初に、プロジェクトに関する情報を取得する GitHub API に対する要求を作成します。 使用するエンドポイントは、[https://api.github.com/orgs/dotnet/repos](https://api.github.com/orgs/dotnet/repos) です。 HTTP GET 要求を使用して、これらのプロジェクトに関する情報をすべて取得します。
 HTTP GET 要求はブラウザーでも使用されるので、ブラウザーに URL を貼り付けて、取得および処理する情報を確認できます。
 
@@ -130,7 +136,8 @@ using System.Net.Http.Headers;
 このメソッドの最後の 2 行は、そのタスクを待機し、コンソールに応答を出力します。
 アプリケーションをビルドして実行してください。 `ProcessRepositories` に `await` 演算子が含まれているため、ビルドの警告が表示されなくなりました。 JSON 形式の長いテキストが表示されます。   
 
-## <a name="processing-the-json-result"></a>JSON の結果を処理する
+<a id="processing-the-json-result" class="xliff"></a>
+## JSON の結果を処理する
 
 この時点では、Web サーバーからの応答を取得し、その応答に含まれているテキストを表示するコードの記述が完了しています。 次に、JSON 応答を C# オブジェクトに変換します。
 
@@ -192,7 +199,8 @@ foreach (var repo in repositories)
 
 アプリケーションをコンパイルして実行します。 .NET Foundation に含まれるリポジトリの名前が出力されます。
 
-## <a name="controlling-serialization"></a>シリアル化を制御する
+<a id="controlling-serialization" class="xliff"></a>
+## シリアル化を制御する
 
 機能を追加する前に、`repo` 型を処理して、その型が C# の標準的な規約に従うようにします。 そのためには、JSON シリアライザーの動作を制御する "*属性*" を使用して `repo` 型に注釈を設定します。 ここでは、これらの属性を使用して、JSON キー名と C# のクラスおよびメンバーの名前との間のマッピングを定義します。 使用する 2 つの属性は `DataContract` および `DataMember` です。 慣例により、すべての属性クラスはサフィックス `Attribute` で終わります。 ただし、属性の適用時にそのサフィックスを使用する必要はありません。 
 
@@ -289,7 +297,8 @@ public static void Main(string[] args)
 
 Task ブロックの `Result` プロパティへのアクセスは、タスクが完了するまでブロックされます。 通常、`ProcessRepositories` メソッドなどではタスクの完了に対して `await` の実行を選択しますが、`Main` メソッドでは許可されていません。
 
-## <a name="reading-more-information"></a>詳細情報を確認する
+<a id="reading-more-information" class="xliff"></a>
+## 詳細情報を確認する
 
 最後に、GitHub API から送信される JSON パケット内のいくつかのプロパティを処理します。 すべてのプロパティを追加する必要はありませんが、いくつかのプロパティを追加することで C# 言語のさらなる機能を示すことができます。
 
@@ -366,7 +375,8 @@ Console.WriteLine(repo.LastPush);
 
 以上で、作成してきたバージョンは[最終的なサンプル](https://github.com/dotnet/docs/tree/master/samples/csharp/getting-started/console-webapiclient)と同じになるはずです。
  
-## <a name="conclusion"></a>まとめ
+<a id="conclusion" class="xliff"></a>
+## まとめ
 
 このチュートリアルでは、Web 要求を作成する方法、結果を解析する方法、およびそれらの結果のプロパティを表示する方法を紹介しました。 また、依存関係として新しいパッケージをプロジェクトに追加しました。 さらに、オブジェクト指向の手法をサポートする C# 言語の一部の機能について確認しました。
 

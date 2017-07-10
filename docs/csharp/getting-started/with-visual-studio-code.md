@@ -1,6 +1,6 @@
 ---
-title: "Visual Studio Code の使用を開始する | C# のガイド"
-description: "VS Code を使用した、C# で初めての .NET Core アプリケーションを作成してデバッグする方法について説明します。"
+title: "Visual Studio Code の使用を開始する - C# のガイド | Microsoft Docs"
+description: "Visual Studio Code を使用した、C# で初めての .NET Core アプリケーションを作成してデバッグする方法について説明します。"
 keywords: "C#、概要、取得、インストール、Visual Studio Code、クロス プラットフォーム"
 author: kendrahavens
 ms.author: mairaw
@@ -11,30 +11,33 @@ ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 76c23597-4cf9-467e-8a47-0c3703ce37e7
 ms.translationtype: Human Translation
-ms.sourcegitcommit: d00f2096e0799107a8a2ff1d12274c6026d4c27a
-ms.openlocfilehash: a8233995046e6fdf980bf630da18908a02d2bfb0
+ms.sourcegitcommit: b64eb0d8f1778a4834ecce5d2ced71e0741dbff3
+ms.openlocfilehash: 14b1696c37f40f7ffc6eb295e08ce1ceee061e45
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/14/2017
+ms.lasthandoff: 05/27/2017
 
 ---
 
-# <a name="get-started-with-visual-studio-code"></a>Visual Studio Code の使用を開始する
+<a id="get-started-with-visual-studio-code" class="xliff"></a>
+# Visual Studio Code の使用を開始する
 
 .NET core は、Windows、Linux および macOS で実行されるサーバー アプリケーションを作成するための、高速でモジュール型のプラットフォームを提供します。 Visual Studio Code を C# 拡張機能とともに使用して、C# IntelliSense の完全サポート (スマート コード補完) とデバッグによる強力な編集機能をご活用ください。
 
-## <a name="prerequisites"></a>必須コンポーネント
+<a id="prerequisites" class="xliff"></a>
+## 必須コンポーネント
 
 1. [Visual Studio Code](https://code.visualstudio.com/) のインストール。
 2. [.NET Core SDK](https://www.microsoft.com/net/download/core) のインストール。
 3. Visual Studio Code Marketplace からの [C# 拡張機能](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp)のインストール。
 
-## <a name="hello-world"></a>Hello World
+<a id="hello-world" class="xliff"></a>
+## Hello World
 
 .NET Core でシンプルな "Hello World" プログラムを作成してみましょう。
 
 1. プロジェクトを開く
 
-    * VS Code を開きます。
+    * Visual Studio Code を開きます。
     * 左側のメニューで [エクスプローラー] アイコンをクリックし、**[フォルダーを開く]** をクリックします。
     * C# プロジェクトを保存するフォルダーを選択し、**[フォルダーの選択]** をクリックします。 ここで、"Hello World" という名前のプロジェクトのフォルダーを作成します。 
 
@@ -43,7 +46,7 @@ ms.lasthandoff: 05/14/2017
     * あるいは、メイン メニューから **[ファイル]** > **[フォルダーを開く]** と選択してプロジェクト フォルダーを開くこともできます。
 
 2. C# プロジェクトを初期化する
-    * <kbd>CTRL</kbd>+<kbd>\`</kbd> (バッククォート) と入力して、VS Code から統合ターミナルを開きます。
+    * <kbd>CTRL</kbd>+<kbd>\`</kbd> (バッククォート) と入力して、Visual Studio Code から統合ターミナルを開きます。
     * ターミナル ウィンドウで、`dotnet new console` と入力します。
     * これで、フォルダーに `HelloWorld.csproj` という名前の C# プロジェクト ファイルとともに、単純な "Hello World" プログラムが既に書き込まれた `Program.cs` ファイルが作成されます。
 
@@ -63,12 +66,13 @@ ms.lasthandoff: 05/14/2017
 
 [Windows](https://channel9.msdn.com/Blogs/dotnet/Get-started-with-VS-Code-using-CSharp-and-NET-Core)、[macOS](https://channel9.msdn.com/Blogs/dotnet/Get-started-with-VS-Code-using-CSharp-and-NET-Core-on-MacOS)、または [Linux](https://channel9.msdn.com/Blogs/dotnet/Get-started-with-VS-Code-Csharp-dotnet-Core-Ubuntu) での詳細設定については、簡単なビデオ チュートリアルを見ることができます。
 
-## <a name="debug"></a>デバッグ
-1. *Program.cs* をクリックして開きます。 VS Code で初めて C# ファイルを開くと、[OmniSharp](http://www.omnisharp.net/) がエディタに読み込まれます。
+<a id="debug" class="xliff"></a>
+## デバッグ
+1. *Program.cs* をクリックして開きます。 Visual Studio Code で初めて C# ファイルを開くと、[OmniSharp](http://www.omnisharp.net/) がエディタに読み込まれます。
 
   ![Program.cs ファイルを開く](media/with-visual-studio-code/opencs.png)
 
-2. VS Code で、アプリのビルドとデバッグに必要なアセットの追加を求められます。 **[はい]** を選択します。 
+2. Visual Studio Code で、アプリのビルドとデバッグに必要なアセットの追加を求められます。 **[はい]** を選択します。 
 
   ![足りない資産の入力を求める](media/with-visual-studio-code/missing-assets.png)
 
@@ -92,9 +96,10 @@ ms.lasthandoff: 05/14/2017
 7. 上部にある緑色の矢印を選択してデバッグを継続するか、赤色の四角形を押して停止します。
 
 > [!TIP] 
-> VS Code で OmniSharp を使用した .NET Core のデバッグの詳細とトラブルシューティングのヒントについては、「[Instructions for setting up the .NET Core debugger](https://github.com/OmniSharp/omnisharp-vscode/blob/master/debugger.md)」 (.NET Core デバッガーの設定に関する指示) を参照してください。
+> Visual Studio Code で OmniSharp を使用した .NET Core のデバッグの詳細とトラブルシューティングのヒントについては、「[Instructions for setting up the .NET Core debugger](https://github.com/OmniSharp/omnisharp-vscode/blob/master/debugger.md)」 (.NET Core デバッガーの設定に関する指示) を参照してください。
 
-## <a name="see-also"></a>関連項目
+<a id="see-also" class="xliff"></a>
+## 関連項目
 [Visual Studio Code の設定](https://code.visualstudio.com/docs/setup/setup-overview)   
 [Visual Studio Code でのデバッグ](https://code.visualstudio.com/Docs/editor/debugging)
 

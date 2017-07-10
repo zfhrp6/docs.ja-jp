@@ -1,5 +1,5 @@
 ---
-title: "C# およびクロスプラットフォーム ツールの概要 | C# のガイド"
+title: "C# およびクロスプラットフォーム ツールの概要 - C# のガイド | Microsoft Docs"
 description: "C# およびクロスプラットフォーム ツールの概要"
 keywords: "C#、概要、取得、クロス プラットフォーム"
 ms.date: 08/23/2016
@@ -9,14 +9,16 @@ ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 48cac496-2dc2-4dc7-b8fd-b9ade0fcdfd2
 redirect_url: /dotnet/articles/csharp/getting-started/index
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: a769400bb037ce98c20896dfda17928a4028c144
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 4437ce5d344cf06d30e31911def6287999fc6ffc
+ms.openlocfilehash: a3604e3e0dbe5783d1d177d9f8b1423b1dd4c299
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/23/2017
 
 ---
 
-# <a name="-getting-started-with-c-using-the-cross-platform-command-line-tools"></a>🔧 クロス プラットフォーム コマンド ライン ツールを使用した C# の概要
+<a id="-getting-started-with-c-using-the-cross-platform-command-line-tools" class="xliff"></a>
+# 🔧 クロス プラットフォーム コマンド ライン ツールを使用した C# の概要
 
 > **注:**
 > 

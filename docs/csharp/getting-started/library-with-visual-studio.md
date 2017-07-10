@@ -1,5 +1,5 @@
 ---
-title: "Visual Studio 2017 の C# および .NET Core を使用したクラス ライブラリの構築"
+title: "Visual Studio 2017 の C# および .NET Core を使用したクラス ライブラリの構築 | Microsoft Docs"
 description: "Visual Studio 2017 を使用してC# で記述されたクラス ライブラリを構築する方法について"
 keywords: ".NET Core、.NET Standard クラス ライブラリ、Visual Studio 2017"
 author: BillWagner
@@ -11,23 +11,25 @@ ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: c849ca26-6a25-4d35-9544-f343af88e0e7
 ms.translationtype: Human Translation
-ms.sourcegitcommit: 39e8e757a446b30ab18914465853138e1c239e40
-ms.openlocfilehash: 1ecccb03bc28da51a580b790b5ba8dd594bb7f18
+ms.sourcegitcommit: 9cd469dfd4f38605f1455c008388ad04c366e484
+ms.openlocfilehash: c29c4d2d1332fbf9e9e162e671200384a930aff1
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/03/2017
+ms.lasthandoff: 06/20/2017
 
 ---
 
-# <a name="building-a-class-library-with-c-and-net-core-in-visual-studio-2017"></a>Visual Studio 2017 の C# および .NET Core を使用したクラス ライブラリの構築
+<a id="building-a-class-library-with-c-and-net-core-in-visual-studio-2017" class="xliff"></a>
+# Visual Studio 2017 の C# および .NET Core を使用したクラス ライブラリの構築
 
 "*クラス ライブラリ*" は、アプリケーションから呼び出される型とメソッドを定義します。 .NET Core を使用して開発されたクラス ライブラリは .NET Standard Library をサポートしており、お使いのライブラリを、そのバージョンの .NET Standard Library をサポートする任意の .NET プラットフォームによって呼び出すことができます。 クラス ライブラリを完了させたら、サードパーティ製のコンポーネントとして配布するかどうか、あるいは 1 つまたは複数のアプリケーションにバンドルされたコンポーネントとして含めるかどうかを決定できます。
 
 > [!NOTE]
-> .NET Standard のバージョンとサポート対象のプラットフォームの一覧は、[.NET Standard Library](../../standard/library.md) を参照してください。
+> .NET Standard のバージョンとサポート対象のプラットフォームの一覧は、[「.NET Standard」](../../standard/net-standard.md)を参照してください。
 
 このトピックでは、1 つの文字列処理メソッドを含む簡単なユーティリティ ライブラリを作成します。 それを[拡張メソッド](../../csharp/programming-guide/classes-and-structs/extension-methods.md)として実装し、@System.String クラスのメンバーと同じように呼び出すことができるようにします。
 
-## <a name="creating-a-class-library-solution"></a>クラス ライブラリのソリューションを作成する
+<a id="creating-a-class-library-solution" class="xliff"></a>
+## クラス ライブラリのソリューションを作成する
 
 最初に、クラス ライブラリ プロジェクトとその関連プロジェクトのソリューションを作成します。 1 つの Visual Studio のソリューションは、1 つまたは複数のプロジェクトのコンテナーとして機能します。 このソリューションは次のように作成します。
 
@@ -37,7 +39,8 @@ ms.lasthandoff: 05/03/2017
 
    ![[新しいプロジェクト] ダイアログ](./media/library-with-visual-studio/newproject.png)
 
-## <a name="creating-the-class-library-project"></a>クラス ライブラリ プロジェクトの作成
+<a id="creating-the-class-library-project" class="xliff"></a>
+## クラス ライブラリ プロジェクトの作成
 
 クラス ライブラリ プロジェクトを作成します。
 
@@ -59,7 +62,8 @@ ms.lasthandoff: 05/03/2017
 
    ![ビルドが成功したことを示す出力ペイン](./media/library-with-visual-studio/buildsucceeds.png)
 
-## <a name="next-step"></a>次のステップ
+<a id="next-step" class="xliff"></a>
+## 次のステップ
 
 ライブラリを正常に作成できました。 そのメソッドの呼び出しをまだ行っていないので、期待どおりに動作するかわかりません。 ライブラリ開発の次のステップでは、[C# 単体テスト プロジェクト](testing-library-with-visual-studio.md)を使ってライブラリをテストします。
 

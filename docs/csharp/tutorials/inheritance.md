@@ -1,5 +1,5 @@
 ---
-title: "C# での継承"
+title: "C# での継承 | Microsoft Docs"
 description: "C# ライブラリやアプリケーションでの継承の使用について学習します。"
 keywords: "継承 (C#), 基底クラス, 派生クラス, 抽象基底クラス"
 author: rpetrusha
@@ -12,23 +12,27 @@ ms.technology: .net-core-technologies
 ms.devlang: dotnet
 ms.assetid: aeb68c74-0ea0-406f-9fbe-2ce02d47ef31
 ms.translationtype: Human Translation
-ms.sourcegitcommit: a5ed524a1b17f7be8903f998cbd732594faab831
-ms.openlocfilehash: 0c76bbcc8e60a2739b8c2735b3576842bd4f0942
+ms.sourcegitcommit: 4437ce5d344cf06d30e31911def6287999fc6ffc
+ms.openlocfilehash: ebb4c4eb754e456ae8a16226c282dc1698dcdd0d
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/15/2017
+ms.lasthandoff: 05/23/2017
 
 ---
-# <a name="inheritance-in-c-and-net"></a>C# と .NET での継承 #
+<a id="inheritance-in-c-and-net" class="xliff"></a>
+# C# と .NET での継承 #
 
-## <a name="introduction"></a>はじめに ##
+<a id="introduction" class="xliff"></a>
+## はじめに ##
 
 このチュートリアルでは、C# での継承について説明します。 継承は、オブジェクト指向プログラミング言語の一機能であり、特定の機能 (データおよび動作) を提供する基底クラスを定義し、その機能を継承またはオーバーライドする派生クラスを定義することができます。
 
-## <a name="prerequisites"></a>必須コンポーネント ##
+<a id="prerequisites" class="xliff"></a>
+## 必須コンポーネント ##
 
 このチュートリアルでは、.NET Core がインストールされていることを前提としています。 インストール手順については、「[.NET Core installation guide (.NET Core インストール ガイド)](https://www.microsoft.com/net/core)」を参照してください。 コード エディターも必要です。 このチュートリアルでは [Visual Studio Code](https://code.visualstudio.com) を使用していますが、任意のコード エディターを使用して構いません。
 
-## <a name="running-the-examples"></a>例の実行 ##
+<a id="running-the-examples" class="xliff"></a>
+## 例の実行 ##
 
 このチュートリアル内の例を作成して実行するには、コマンド ラインの [dotnet](../../core/tools/dotnet.md) ユーティリティを使用します。 それぞれの例について、次の手順に従います。
 
@@ -42,7 +46,8 @@ ms.lasthandoff: 05/15/2017
 
 1. [dotnet run](../../core/tools/dotnet-run.md) コマンドを入力して、例をコンパイルし実行します。
 
-## <a name="background-what-is-inheritance"></a>基礎知識: 継承とは何か ##
+<a id="background-what-is-inheritance" class="xliff"></a>
+## 基礎知識: 継承とは何か ##
 
 *継承*とは、オブジェクト指向プログラミングの基本的な属性の 1 つです。 親クラスの動作を再利用 (継承)、拡張、または変更する子クラスを定義することができます。 メンバーの継承元となるクラスを、*基底クラス*と呼びます。 基底クラスのメンバーを継承するクラスを、*派生クラス*と呼びます。
 
@@ -117,7 +122,8 @@ C# と .NET は*単一継承*のみをサポートしています。 つまり�
    }
    ```
 
-## <a name="implicit-inheritance"></a>暗黙的な継承 ##
+<a id="implicit-inheritance" class="xliff"></a>
+## 暗黙的な継承 ##
 
 .NET 型システムの型はすべて、単一継承によって継承する型のほかに、@System.Object またはその派生型から暗黙的に継承します。 これにより、あらゆる型において共通の機能が使用可能となります。
 
@@ -156,7 +162,8 @@ C# と .NET は*単一継承*のみをサポートしています。 つまり�
 | enum | @System.Enum, System.ValueType, @System.Object |
 | デリゲート | @System.MulticastDelegate、@System.Delegate、@System.Object |
 
-## <a name="inheritance-and-an-is-a-relationship"></a>継承と "is a" 関係 ##
+<a id="inheritance-and-an-is-a-relationship" class="xliff"></a>
+## 継承と "is a" 関係 ##
 
 継承は通常、基底クラスと 1 つまたは複数の派生クラスとの "is a" 関係を表現するのに使用します。ここで、派生クラスは基底クラスの特殊化されたバージョン、つまり基底クラスの 1 つの型です。 たとえば、`Publication` クラスはあらゆる種類の出版物を表しますが、`Book` クラスおよび `Magazine` クラスは特定の種類の出版物を表します。
 
@@ -172,11 +179,13 @@ C# と .NET は*単一継承*のみをサポートしています。 つまり�
 
 継承に基づいた is-a 関係の適用が最も適しているのは、基底クラスと、基底クラスにメンバーを追加する派生クラス、または基底クラスにない追加機能が必要な派生クラスです。
 
-## <a name="designing-the-base-class-and-derived-classes"></a>基底クラスと派生クラスの設計 ##
+<a id="designing-the-base-class-and-derived-classes" class="xliff"></a>
+## 基底クラスと派生クラスの設計 ##
 
 基底クラスとその派生クラスを設計するプロセスについて説明します。 このセクションでは、基底クラス `Publication` を定義します。書籍、雑誌、新聞、ジャーナル、記事などの任意の種類の出版物を表します。さらに `Publication` から派生する `Book` クラスも定義します。 この例を拡張して、簡単に `Magazine`、`Journal`、`Newspaper`、および `Article` などの他の派生クラスを定義することができます。
 
-### <a name="the-base-publication-class"></a>基底 `Publication` クラス ###
+<a id="the-base-publication-class" class="xliff"></a>
+### 基底 `Publication` クラス ###
 
 `Publication` クラスを設計するにあたり、設計について決まりをいくつか作る必要があります。
 
@@ -245,7 +254,8 @@ C# と .NET は*単一継承*のみをサポートしています。 つまり�
 
 ![Object および Publication クラス](media/publication-class.jpg)
 
-### <a name="the-book-class"></a>`Book` クラス ###
+<a id="the-book-class" class="xliff"></a>
+### `Book` クラス ###
 
 `Book` クラスは、特定の種類の出版物としての本を表します。 次の例は、`Book` クラスのソース コードを示しています。
 
@@ -301,7 +311,8 @@ C# と .NET は*単一継承*のみをサポートしています。 つまり�
 
 [!code-csharp[継承](../../../samples/snippets/csharp/tutorials/inheritance/shape.cs#3)]
 
-## <a name="see-also"></a>関連項目 ##
+<a id="see-also" class="xliff"></a>
+## 関連項目 ##
 
 [クラスとオブジェクト](../tour-of-csharp/classes-and-objects.md)</br>
 [継承 (C# プログラミング ガイド)](../programming-guide/classes-and-structs/inheritance.md)

@@ -1,5 +1,5 @@
 ---
-title: "C# の型と変数 | C# 言語のツアー"
+title: "C# の型と変数 - C# 言語のツアー | Microsoft Docs"
 description: "C# における型の定義と変数の宣言について説明します"
 keywords: ".NET, C#, 型, 参照型, 値型"
 author: BillWagner
@@ -11,14 +11,15 @@ ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: f8a8051e-0049-43f1-b594-9c84cc7b1224
 ms.translationtype: Human Translation
-ms.sourcegitcommit: be7974018ce3195dc7344192d647fe64fb2ebcc4
-ms.openlocfilehash: 24d405ad33cb4f11dd9e7ba7edb39f10db8041a1
+ms.sourcegitcommit: 4437ce5d344cf06d30e31911def6287999fc6ffc
+ms.openlocfilehash: 5c22d1087d27b03cfbf71d319a72e9e02203e9f2
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/14/2017
+ms.lasthandoff: 05/23/2017
 
 ---
 
-# <a name="types-and-variables"></a>型と変数
+<a id="types-and-variables" class="xliff"></a>
+# 型と変数
 
 C# には、*値型*と*参照型*という 2 種類の型があります。 値型の変数が直接データを格納するのに対して、参照型の変数はデータへの参照を格納し、後者はオブジェクトとして知られています。 参照型を使用すると 2 つの変数が同じオブジェクトを参照できるため、1 つの変数に対する演算によって、もう一方の変数によって参照されるオブジェクトに影響を与えることができます。 値型の場合、各変数が独自のデータ コピーを保持し、1 つの変数に対する演算で別の変数に影響を与えることはできません (`ref` と `out` のパラメーターの変数の場合を除く)。
 

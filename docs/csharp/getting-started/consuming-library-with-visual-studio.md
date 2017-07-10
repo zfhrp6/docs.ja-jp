@@ -1,5 +1,5 @@
 ---
-title: "Visual Studio 2017 の .NET Core を使用したクラス ライブラリの利用"
+title: "Visual Studio 2017 の .NET Core を使用したクラス ライブラリの利用 | Microsoft Docs"
 description: "Visual Studio 2017 でクラス ライブラリのメンバーを呼び出す方法について説明します。"
 keywords: ".NET Core, .NET Core クラス ライブラリ, .NET Standard, .NET Standard クラス ライブラリの配布"
 author: BillWagner
@@ -11,14 +11,15 @@ ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: d7b94076-1108-4174-94e7-a18f00072bb7
 ms.translationtype: Human Translation
-ms.sourcegitcommit: 39e8e757a446b30ab18914465853138e1c239e40
-ms.openlocfilehash: d980ae6c3c2f903dcabf18b26670c18fa9a49f22
+ms.sourcegitcommit: 4437ce5d344cf06d30e31911def6287999fc6ffc
+ms.openlocfilehash: 5ad07e4116c75eb9b9d513c2a4fe43dfe62660d5
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/03/2017
+ms.lasthandoff: 05/23/2017
 
 ---
 
-# <a name="consuming-a-class-library-with-net-core-in-visual-studio-2017"></a>Visual Studio 2017 の .NET Core を使用したクラス ライブラリの利用
+<a id="consuming-a-class-library-with-net-core-in-visual-studio-2017" class="xliff"></a>
+# Visual Studio 2017 の .NET Core を使用したクラス ライブラリの利用
 
 「[Visual Studio 2017 での C# と .NET Core を使用したクラス ライブラリの構築](./library-with-visual-studio.md)」および「[Visual Studio 2017 の .NET Core を使用したクラス ライブラリのテスト](testing-library-with-visual-studio.md)」の手順に従って、クラス ライブラリをビルドおよびテストし、ライブラリのリリース バージョンをビルドした後、次の手順では呼び出し元がリリース バージョンを利用できるようにします。 これは次の 2 つの方法で実行できます。
 
@@ -26,7 +27,8 @@ ms.lasthandoff: 05/03/2017
 
 * ライブラリが一般に公開されている場合は、NuGet パッケージとして配布できます。
 
-## <a name="including-a-library-as-a-project-in-a-solution"></a>ソリューション内のプロジェクトとしてライブラリを含める
+<a id="including-a-library-as-a-project-in-a-solution" class="xliff"></a>
+## ソリューション内のプロジェクトとしてライブラリを含める
 
 単体テストをクラス ライブラリと同じソリューションに含めたのと同様に、アプリケーションをソリューションの一部として含めることができます。 たとえば、文字列を入力するようにユーザーに要求して、最初の文字が大文字かどうかを報告するコンソール アプリケーションで、このクラス ライブラリを使うことができます。
 
@@ -62,7 +64,8 @@ ms.lasthandoff: 05/03/2017
 
 「[Visual Studio 2017 で C# Hello World Application をデバッグする](debugging-with-visual-studio.md)」および「[Visual Studio 2017 を使用した Hello World アプリケーションの発行](publishing-with-visual-studio.md)」の手順に従って、このライブラリを使うアプリケーションをデバッグして発行できます。
 
-## <a name="distributing-the-library-in-a-nuget-package"></a>ライブラリを NuGet パッケージで配布する
+<a id="distributing-the-library-in-a-nuget-package" class="xliff"></a>
+## ライブラリを NuGet パッケージで配布する
 
 NuGet パッケージとして発行すると、クラス ライブラリが広く利用可能になります。 NuGet パッケージの作成は Visual Studio ではサポートされていません。 作成するには、[`dotnet` コマンド ライン ユーティリティ](../../core/tools/dotnet.md)を使います。
 
