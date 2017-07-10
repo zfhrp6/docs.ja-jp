@@ -19,13 +19,14 @@ author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.translationtype: Human Translation
-ms.sourcegitcommit: 19006cc5f24ffc66b92e53e8174c6bd33c249679
-ms.openlocfilehash: 3a6101e6e2c99ff8321e90dd616230636753d844
+ms.sourcegitcommit: 84aadd0ccd7b5c786612d06ca0b46fb5aecd3d2b
+ms.openlocfilehash: d7f9c49fbe771e7ac7a5f346129e04c3b4932e3d
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/22/2017
+ms.lasthandoff: 05/23/2017
 
 ---
-# <a name="obsolete-members-in-the-net-framework"></a>.NET Framework で互換性のために残されているメンバー
+<a id="obsolete-members-in-the-net-framework" class="xliff"></a>
+# .NET Framework で互換性のために残されているメンバー
 この記事の表では、[!INCLUDE[net_v45](../../../includes/net-v45-md.md)] (\([!INCLUDE[net_v451](../../../includes/net-v451-md.md)]\) などのポイント リリースを含む) と [!INCLUDE[net_v46](../../../includes/net-v46-md.md)] (\(ポイント リリースも含む\)) で互換性のために残されている型メンバーをアセンブリ別に示します。 各アセンブリで互換性のために残されているメンバーと推奨される代替メンバーの一覧を表示するには、以下のリンクを使用してください。 このトピックでは、廃止された型のメンバーの一覧は表示されていません。 廃止された型の一覧については、[互換性のために残されている型](../../../docs/framework/whats-new/obsolete-types.md)に関するページをご覧ください。  
   
 -   [互換性のために残されているシステム アセンブリのメンバー](#SystemMembers)  
@@ -95,11 +96,13 @@ ms.lasthandoff: 05/22/2017
     -   [Microsoft.VisualBasic.dll](#visualbasic)  
   
 <a name="SystemMembers"></a>   
-## <a name="obsolete-members-in-system-assemblies"></a>互換性のために残されているシステム アセンブリのメンバー  
+<a id="obsolete-members-in-system-assemblies" class="xliff"></a>
+## 互換性のために残されているシステム アセンブリのメンバー  
  次の表に、互換性のために残されているシステム アセンブリのメンバーを示します。 これらのアセンブリは、.NET Framework を対象とする汎用アプリケーションの開発で使用するためのものです。  
   
 <a name="mscorlib"></a>   
-### <a name="assembly-mscorlibdll"></a>アセンブリ: mscorlib.dll  
+<a id="assembly-mscorlibdll" class="xliff"></a>
+### アセンブリ: mscorlib.dll  
   
 |種類|メンバー|メッセージ|  
 |----------|------------|-------------|  
@@ -125,7 +128,7 @@ ms.lasthandoff: 05/22/2017
 |<xref:System.AppDomain?displayProperty=fullName>|<xref:System.AppDomain.DefineDynamicAssembly%28System.Reflection.AssemblyName%2CSystem.Reflection.Emit.AssemblyBuilderAccess%2CSystem.String%2CSystem.Security.PermissionSet%2CSystem.Security.PermissionSet%2CSystem.Security.PermissionSet%29>|アセンブリ レベルの宣言セキュリティは互換性のために残されていますが、既定では、CLR によって強制されることはなくなりました。|  
 |<xref:System.AppDomain?displayProperty=fullName>|<xref:System.AppDomain.ExecuteAssembly%28System.String%2CSystem.Security.Policy.Evidence%29>|証拠に基づいてサンドボックス化するメソッドは互換性のために残されていますが、.NET Framework の将来のリリースでは削除されます。 <xref:System.Security.Policy.Evidence?displayProperty=fullName> パラメーターを受け取らない <xref:System.AppDomain.ExecuteAssembly%2A?displayProperty=fullName> のオーバーロードを使用してください。|  
 |<xref:System.AppDomain?displayProperty=fullName>|<xref:System.AppDomain.ExecuteAssembly%28System.String%2CSystem.Security.Policy.Evidence%2CSystem.String%5B%5D%29>|証拠に基づいてサンドボックス化するメソッドは互換性のために残されていますが、.NET Framework の将来のリリースでは削除されます。 <xref:System.Security.Policy.Evidence?displayProperty=fullName> パラメーターを受け取らない <xref:System.AppDomain.ExecuteAssembly%2A?displayProperty=fullName> のオーバーロードを使用してください。|  
-|<xref:System.AppDomain?displayProperty=fullName>|[\], Byte\<xref:System.AppDomain.ExecuteAssembly%28System.String%2CSystem.Security.Policy.Evidence%2CSystem.String%5B%5D%2CSystem.Byte%5B%5D%2CSystem.Configuration.Assemblies.AssemblyHashAlgorithm%29>|証拠に基づいてサンドボックス化するメソッドは互換性のために残されていますが、.NET Framework の将来のリリースでは削除されます。 <xref:System.Security.Policy.Evidence?displayProperty=fullName> パラメーターを受け取らない <xref:System.AppDomain.ExecuteAssembly%2A?displayProperty=fullName> のオーバーロードを使用してください。|  
+|<xref:System.AppDomain?displayProperty=fullName>|<xref:System.AppDomain.ExecuteAssembly%28System.String%2CSystem.Security.Policy.Evidence%2CSystem.String%5B%5D%2CSystem.Byte%5B%5D%2CSystem.Configuration.Assemblies.AssemblyHashAlgorithm%29>|証拠に基づいてサンドボックス化するメソッドは互換性のために残されていますが、.NET Framework の将来のリリースでは削除されます。 <xref:System.Security.Policy.Evidence?displayProperty=fullName> パラメーターを受け取らない <xref:System.AppDomain.ExecuteAssembly%2A?displayProperty=fullName> のオーバーロードを使用してください。|  
 |<xref:System.AppDomain?displayProperty=fullName>|<xref:System.AppDomain.ExecuteAssemblyByName%28System.Reflection.AssemblyName%2CSystem.Security.Policy.Evidence%2CSystem.String%5B%5D%29>|証拠に基づいてサンドボックス化するメソッドは互換性のために残されていますが、.NET Framework の将来のリリースでは削除されます。 <xref:System.Security.Policy.Evidence?displayProperty=fullName> パラメーターを受け取らない <xref:System.AppDomain.ExecuteAssemblyByName%2A?displayProperty=fullName> のオーバーロードを使用してください。|  
 |<xref:System.AppDomain?displayProperty=fullName>|<xref:System.AppDomain.ExecuteAssemblyByName%28System.String%2CSystem.Security.Policy.Evidence%29>|証拠に基づいてサンドボックス化するメソッドは互換性のために残されていますが、.NET Framework の将来のリリースでは削除されます。 <xref:System.Security.Policy.Evidence?displayProperty=fullName> パラメーターを受け取らない <xref:System.AppDomain.ExecuteAssemblyByName%2A?displayProperty=fullName> のオーバーロードを使用してください。|  
 |<xref:System.AppDomain?displayProperty=fullName>|<xref:System.AppDomain.ExecuteAssemblyByName%28System.String%2CSystem.Security.Policy.Evidence%2CSystem.String%5B%5D%29>|証拠に基づいてサンドボックス化するメソッドは互換性のために残されていますが、.NET Framework の将来のリリースでは削除されます。 <xref:System.Security.Policy.Evidence?displayProperty=fullName> パラメーターを受け取らない <xref:System.AppDomain.ExecuteAssemblyByName%2A?displayProperty=fullName> のオーバーロードを使用してください。|  
@@ -138,8 +141,8 @@ ms.lasthandoff: 05/22/2017
 |<xref:System.AppDomain?displayProperty=fullName>|<xref:System.AppDomain.SetDynamicBase%2A>|<xref:System.AppDomain.SetDynamicBase%2A> の使用は推奨されていません。 代わりに、<xref:System.AppDomainSetup.DynamicBase%2A?displayProperty=fullName> の使用を検討してください。|  
 |<xref:System.AppDomain?displayProperty=fullName>|<xref:System.AppDomain.SetShadowCopyFiles%2A>|<xref:System.AppDomain.SetShadowCopyFiles%2A> の使用は推奨されていません。 代わりに、<xref:System.AppDomainSetup.ShadowCopyFiles%2A?displayProperty=fullName> の使用を検討してください。|  
 |<xref:System.AppDomain?displayProperty=fullName>|<xref:System.AppDomain.SetShadowCopyPath%2A>|<xref:System.AppDomain.SetShadowCopyPath%2A> の使用は推奨されていません。 代わりに、<xref:System.AppDomainSetup.ShadowCopyDirectories%2A?displayProperty=fullName> の使用を検討してください。|  
-|<xref:System.Enum?displayProperty=fullName>|<xref:System.Enum.ToString%28System.IFormatProvider%29>|`provider` 引数は使用されなくなりました。 <xref:System.Enum.ToString?displayProperty=fullName> を使用してください。|  
-|<xref:System.Enum?displayProperty=fullName>|<xref:System.Enum.ToString%28System.String%2CSystem.IFormatProvider%29>|`provider` 引数は使用されなくなりました。 <xref:System.Enum.ToString?displayProperty=fullName> を使用してください。|  
+|<xref:System.Enum?displayProperty=fullName>|<xref:System.Enum.ToString(System.IFormatProvider)>|`provider` 引数は使用されなくなりました。 <xref:System.Enum.ToString%2A?displayProperty=fullName> を使用してください。|  
+|<xref:System.Enum?displayProperty=fullName>|<xref:System.Enum.ToString%2A>|`provider` 引数は使用されなくなりました。 <xref:System.Enum.ToString%2A?displayProperty=fullName> を使用してください。|  
 |<xref:System.LoaderOptimization?displayProperty=fullName>|<xref:System.LoaderOptimization>|このメソッドの使用は推奨されていません。 代わりに、<xref:System.Reflection.Assembly.Load%2A?displayProperty=fullName> を使用してください。|  
 |<xref:System.LoaderOptimization?displayProperty=fullName>|<xref:System.LoaderOptimization>|このメソッドの使用は推奨されていません。 代わりに、<xref:System.Reflection.Assembly.Load%2A?displayProperty=fullName> を使用してください。|  
 |<xref:System.Collections.Hashtable?displayProperty=fullName>|<xref:System.Collections.Hashtable.%23ctor%28System.Collections.IDictionary%2CSystem.Collections.IHashCodeProvider%2CSystem.Collections.IComparer%29>|代わりに、<xref:System.Collections.Hashtable.%23ctor%28System.Collections.IDictionary%2CSystem.Collections.IEqualityComparer%29?displayProperty=fullName> を使用してください。|  
@@ -265,7 +268,8 @@ ms.lasthandoff: 05/22/2017
 |<xref:System.Threading.WaitHandle?displayProperty=fullName>|<xref:System.Threading.WaitHandle.Handle%2A>|代わりに、<xref:System.Threading.WaitHandle.SafeWaitHandle%2A?displayProperty=fullName> プロパティを使用してください。|  
   
 <a name="PresentationCore"></a>   
-### <a name="assembly-presentationcoredll"></a>アセンブリ: PresentationCore.dll  
+<a id="assembly-presentationcoredll" class="xliff"></a>
+### アセンブリ: PresentationCore.dll  
   
 |種類|メンバー|メッセージ|  
 |----------|------------|-------------|  
@@ -300,7 +304,8 @@ ms.lasthandoff: 05/22/2017
 |<xref:System.Windows.Media.Media3D.Viewport3DVisual?displayProperty=fullName>|<xref:System.Windows.Media.Media3D.Viewport3DVisual.BitmapEffectInput%2A>|ビットマップ効果は廃止され、機能しなくなりました。 代わりに、必要に応じて <xref:System.Windows.Media.Effects.Effect?displayProperty=fullName> を使用することを検討してください。|  
   
 <a name="PresFW"></a>   
-### <a name="assembly-presentationframeworkdll"></a>アセンブリ: PresentationFramework.dll  
+<a id="assembly-presentationframeworkdll" class="xliff"></a>
+### アセンブリ: PresentationFramework.dll  
   
 |型|メンバー|メッセージ|  
 |----------|------------|-------------|  
@@ -310,7 +315,8 @@ ms.lasthandoff: 05/22/2017
 |<xref:System.Windows.Data.ListCollectionView?displayProperty=fullName>|<xref:System.Windows.Data.ListCollectionView.OnBeginChangeLogging%2A>|<xref:System.Windows.Data.ListCollectionView.OnAllowsCrossThreadChangesChanged%2A?displayProperty=fullName> で置き換えられます。|  
   
 <a name="Act"></a>   
-### <a name="assembly-systemactivitiesdll"></a>アセンブリ: System.Activities.dll  
+<a id="assembly-systemactivitiesdll" class="xliff"></a>
+### アセンブリ: System.Activities.dll  
   
 |種類|メンバー|メッセージ|  
 |----------|------------|-------------|  
@@ -318,22 +324,24 @@ ms.lasthandoff: 05/22/2017
 |<xref:System.Activities.Debugger.XamlDebuggerXmlReader?displayProperty=fullName>|<xref:System.Activities.Debugger.XamlDebuggerXmlReader.%23ctor%28System.Xaml.XamlReader%2CSystem.IO.TextReader%29?displayProperty=fullName>|最初に .NET Framework 4.5 で廃止されました。<br /><br /> このコンストラクターは使用しないでください。 代わりに、<xref:System.Activities.Debugger.XamlDebuggerXmlReader.%23ctor%28System.IO.TextReader%29?displayProperty=fullName> または <xref:System.Activities.Debugger.XamlDebuggerXmlReader.%23ctor%28System.IO.TextReader%2CSystem.Xaml.XamlSchemaContext%29?displayProperty=fullName> を使用してください。|  
   
 <a name="ActPres"></a>   
-### <a name="assembly-systemactivitiespresentationdll"></a>アセンブリ: System.Activities.Presentation.dll  
+<a id="assembly-systemactivitiespresentationdll" class="xliff"></a>
+### アセンブリ: System.Activities.Presentation.dll  
   
 |型|メンバー|メッセージ|  
 |----------|------------|-------------|  
-|<xref:System.Activities.Presentation.DragDropHelper?displayProperty=fullName>|<xref:System.Activities.Presentation.DragDropHelper.DoDragMove%28System.Activities.Presentation.WorkflowViewElement%2CSystem.Windows.Point%29>|最初に .NET Framework 4.5 で廃止されました。<br /><br /> このメソッドは、複数のアイテムのドラッグをサポートしていません。 代わりに、<!--zz <xref:System.Activities.Presentation.DragDropHelper.DoDragMove%28System.Collections.Generic.IEnumerable%7BSystem.Activities.Presentation.WorkflowViewElement%7D%2CSystem.Windows.Point%29> --> `System.Activities.Presentation.DragDropHelper.DoDragMove` を使用してください。|  
+|<xref:System.Activities.Presentation.DragDropHelper?displayProperty=fullName>|<xref:System.Activities.Presentation.DragDropHelper.DoDragMove%28System.Activities.Presentation.WorkflowViewElement%2CSystem.Windows.Point%29>|このメソッドは、複数のアイテムのドラッグをサポートしていません。|  
 |<xref:System.Activities.Presentation.DragDropHelper?displayProperty=fullName>|<xref:System.Activities.Presentation.DragDropHelper.GetCompositeView%28System.Windows.DragEventArgs%29>|最初に .NET Framework 4.5 で廃止されました。<br /><br /> このメソッドは、複数のアイテムのドラッグをサポートしていません。 代わりに、<xref:System.Activities.Presentation.DragDropHelper.GetCompositeView%28System.Activities.Presentation.WorkflowViewElement%29> を使用してください。|  
-|<xref:System.Activities.Presentation.DragDropHelper?displayProperty=fullName>|<xref:System.Activities.Presentation.DragDropHelper.GetDragDropCompletedEffects%2A>|最初に .NET Framework 4.5 で廃止されました。<br /><br /> このメソッドは、複数のアイテムのドラッグをサポートしていません。 代わりに、<xref:System.Activities.Presentation.DragDropHelper.SetDragDropMovedViewElements%28System.Windows.DragEventArgs%2CSystem.Collections.Generic.IEnumerable%7BSystem.Activities.Presentation.WorkflowViewElement%7D%29> を使用することを検討してください。|  
-|<xref:System.Activities.Presentation.DragDropHelper?displayProperty=fullName>|<xref:System.Activities.Presentation.DragDropHelper.GetDraggedModelItem%2A>|最初に .NET Framework 4.5 で廃止されました。<br /><br /> このメソッドは、複数のアイテムのドラッグをサポートしていません。 代わりに、<xref:System.Activities.Presentation.DragDropHelper.GetDraggedModelItems%2A> を使用してください。|  
-|<xref:System.Activities.Presentation.DragDropHelper?displayProperty=fullName>|<xref:System.Activities.Presentation.DragDropHelper.GetDroppedObject%2A>|最初に .NET Framework 4.5 で廃止されました。<br /><br /> このメソッドは、複数のアイテムのドラッグをサポートしていません。 代わりに、<xref:System.Activities.Presentation.DragDropHelper.GetDroppedObjects%2A> を使用してください。|  
-|<xref:System.Activities.Presentation.DragDropHelper?displayProperty=fullName>|<xref:System.Activities.Presentation.DragDropHelper.SetDragDropCompletedEffects%2A>|最初に .NET Framework 4.5 で廃止されました。<br /><br /> このメソッドは、複数のアイテムのドラッグをサポートしていません。 代わりに、<!--zz <xref:System.Activities.Presentation.DragDropHelper.SetDragDropMovedViewElements%2A> --> `xref:System.Activities.Presentation.DragDropHelper.SetDragDropMovedViewElements` を使用することを検討してください。|  
+|<xref:System.Activities.Presentation.DragDropHelper?displayProperty=fullName>|<xref:System.Activities.Presentation.DragDropHelper.GetDragDropCompletedEffects%2A>|このメソッドは、複数のアイテムのドラッグをサポートしていません。|  
+|<xref:System.Activities.Presentation.DragDropHelper?displayProperty=fullName>|<xref:System.Activities.Presentation.DragDropHelper.GetDraggedModelItem%2A>|最初に .NET Framework 4.5 で廃止されました。<br /><br /> このメソッドは、複数のアイテムのドラッグをサポートしていません。 代わりに、 <xref:System.Activities.Presentation.DragDropHelper.GetDraggedModelItems%2A> を使用してください。|  
+|<xref:System.Activities.Presentation.DragDropHelper?displayProperty=fullName>|<xref:System.Activities.Presentation.DragDropHelper.GetDroppedObject%2A>|最初に .NET Framework 4.5 で廃止されました。<br /><br /> このメソッドは、複数のアイテムのドラッグをサポートしていません。 代わりに、 <xref:System.Activities.Presentation.DragDropHelper.GetDroppedObjects%2A> を使用してください。|  
+|<xref:System.Activities.Presentation.DragDropHelper?displayProperty=fullName>|<xref:System.Activities.Presentation.DragDropHelper.SetDragDropCompletedEffects%2A>|このメソッドは、複数のアイテムのドラッグをサポートしていません。|  
 |<xref:System.Activities.Presentation.Services.ModelChangedEventArgs?displayProperty=fullName>|<xref:System.Activities.Presentation.Services.ModelChangedEventArgs.ItemsAdded%2A>|最初に .NET Framework 4.5 で廃止されました。<br /><br /> このプロパティは使用しないでください。 代わりに、<xref:System.Activities.Presentation.Services.ModelChangedEventArgs.ModelChangeInfo%2A> を使用してください。|  
 |<xref:System.Activities.Presentation.Services.ModelChangedEventArgs?displayProperty=fullName>|<xref:System.Activities.Presentation.Services.ModelChangedEventArgs.ItemsRemoved%2A>|最初に .NET Framework 4.5 で廃止されました。<br /><br /> このプロパティは使用しないでください。 代わりに、<xref:System.Activities.Presentation.Services.ModelChangedEventArgs.ModelChangeInfo%2A> を使用してください。|  
 |<xref:System.Activities.Presentation.Services.ModelChangedEventArgs?displayProperty=fullName>|<xref:System.Activities.Presentation.Services.ModelChangedEventArgs.PropertiesChanged%2A>|最初に .NET Framework 4.5 で廃止されました。<br /><br /> このプロパティは使用しないでください。 代わりに、<xref:System.Activities.Presentation.Services.ModelChangedEventArgs.ModelChangeInfo%2A> を使用してください。|  
   
 <a name="core"></a>   
-### <a name="assembly-systemcoredll"></a>アセンブリ: System.Core.dll  
+<a id="assembly-systemcoredll" class="xliff"></a>
+### アセンブリ: System.Core.dll  
   
 |種類|メンバー|メッセージ|  
 |----------|------------|-------------|  
@@ -376,7 +384,8 @@ ms.lasthandoff: 05/22/2017
 |<xref:System.Runtime.CompilerServices.RuntimeOps?displayProperty=fullName>|<xref:System.Runtime.CompilerServices.RuntimeOps.Quote%2A>|このメンバーを使用すると、コンパイラ エラーが発生します。<br /><br /> このメソッドは使用しないでください。|  
   
 <a name="data"></a>   
-### <a name="assembly-systemdatadll"></a>アセンブリ: System.Data.dll  
+<a id="assembly-systemdatadll" class="xliff"></a>
+### アセンブリ: System.Data.dll  
   
 |型|メンバー|メッセージ|  
 |----------|------------|-------------|  
@@ -398,7 +407,8 @@ ms.lasthandoff: 05/22/2017
 |<xref:System.Data.SqlClient.SqlParameterCollection?displayProperty=fullName>|<xref:System.Data.SqlClient.SqlParameterCollection.Add%28System.String%2CSystem.Object%29>|<xref:System.Data.SqlClient.SqlParameterCollection.Add%28System.String%2CSystem.Object%29> の使用は推奨されていません。 <xref:System.Data.SqlClient.SqlParameterCollection.AddWithValue%2A?displayProperty=fullName> を使用してください。|  
   
 <a name="entity"></a>   
-### <a name="assembly-systemdataentitydll"></a>アセンブリ: System.Data.Entity.dll  
+<a id="assembly-systemdataentitydll" class="xliff"></a>
+### アセンブリ: System.Data.Entity.dll  
   
 |型|メンバー|メッセージ|  
 |----------|------------|-------------|  
@@ -408,7 +418,8 @@ ms.lasthandoff: 05/22/2017
 |<xref:System.Data.Objects.ObjectContext?displayProperty=fullName>|<xref:System.Data.Objects.ObjectContext.SaveChanges%28System.Boolean%29>|代わりに、<xref:System.Data.Objects.ObjectContext.SaveChanges%28System.Data.Objects.SaveOptions%29> を使用してください。|  
   
 <a name="oracleclient"></a>   
-### <a name="assembly-systemdataoracleclientdll"></a>アセンブリ: System.Data.OracleClient.dll  
+<a id="assembly-systemdataoracleclientdll" class="xliff"></a>
+### アセンブリ: System.Data.OracleClient.dll  
   
 |種類|メンバー|メッセージ|  
 |----------|------------|-------------|  
@@ -417,7 +428,8 @@ ms.lasthandoff: 05/22/2017
 |<xref:System.Data.OracleClient.OracleParameterCollection?displayProperty=fullName>|<xref:System.Data.OracleClient.OracleParameterCollection.Add%28System.String%2CSystem.Object%29>|<xref:System.Data.OracleClient.OracleParameterCollection.Add%28System.String%2CSystem.Object%29> の使用は推奨されていません。 <xref:System.Data.OracleClient.OracleParameterCollection.AddWithValue%2A?displayProperty=fullName> を使用してください。|  
   
 <a name="design"></a>   
-### <a name="assembly-systemdesigndll"></a>アセンブリ: System.Design.dll  
+<a id="assembly-systemdesigndll" class="xliff"></a>
+### アセンブリ: System.Design.dll  
   
 |種類|メンバー|メッセージ|  
 |----------|------------|-------------|  
@@ -470,7 +482,8 @@ ms.lasthandoff: 05/22/2017
 |<xref:System.Windows.Forms.Design.ControlDesigner?displayProperty=fullName>|<xref:System.Windows.Forms.Design.ControlDesigner.OnSetComponentDefaults%2A>|このメソッドの使用は推奨されていません。 代わりに、<xref:System.Windows.Forms.Design.ControlDesigner.InitializeNewComponent%2A?displayProperty=fullName> を使用してください。|  
   
 <a name="system"></a>   
-### <a name="assembly-systemdll"></a>アセンブリ: System.dll  
+<a id="assembly-systemdll" class="xliff"></a>
+### アセンブリ: System.dll  
   
 |型|メンバー|メッセージ|  
 |----------|------------|-------------|  
@@ -492,7 +505,7 @@ ms.lasthandoff: 05/22/2017
 |<xref:System.Uri?displayProperty=fullName>|<xref:System.Uri.%23ctor%28System.String%2CSystem.Boolean%29>|このコンストラクターの使用は推奨されていません。 <xref:System.Uri.%23ctor%28System.String%29> を使用してください。 `dontEscape` パラメーターの使用は推奨されていません。値は常に、`false` です。|  
 |<xref:System.Uri?displayProperty=fullName>|<xref:System.Uri.%23ctor%28System.Uri%2CSystem.String%2CSystem.Boolean%29>|このコンストラクターの使用は推奨されていません。 <xref:System.Uri.%23ctor%28System.Uri%2CSystem.String%29> を使用してください。 `dontEscape` パラメーターの使用は推奨されていません。値は常に、`false` です。|  
 |<xref:System.CodeDom.Compiler.CodeDomProvider?displayProperty=fullName>|<xref:System.CodeDom.Compiler.CodeDomProvider.CreateCompiler%2A>|呼び出し元では、<xref:System.CodeDom.Compiler.ICodeCompiler?displayProperty=fullName> インターフェイスを使用する代わりに、<xref:System.CodeDom.Compiler.CodeDomProvider?displayProperty=fullName> クラスのメソッドを直接使用してください。 <xref:System.CodeDom.Compiler.CodeDomProvider> から継承した内容でインターフェイスが実装されることには変わりがないので、この警告を除外するか、このメソッドを互換性のために残してください。|  
-|<xref:System.CodeDom.Compiler.CodeDomProvider?displayProperty=fullName>|<xref:System.CodeDom.Compiler.CodeDomProvider.CreateGenerator>|呼び出し元では、<xref:System.CodeDom.Compiler.ICodeGenerator?displayProperty=fullName> インターフェイスを使用する代わりに、<xref:System.CodeDom.Compiler.CodeDomProvider?displayProperty=fullName> クラスのメソッドを直接使用してください。 <xref:System.CodeDom.Compiler.CodeDomProvider> から継承した内容でインターフェイスが実装されることには変わりがないので、この警告を除外するか、このメソッドを互換性のために残してください。|  
+|<xref:System.CodeDom.Compiler.CodeDomProvider?displayProperty=fullName>|<xref:System.CodeDom.Compiler.CodeDomProvider.CreateGenerator%2A>|呼び出し元では、<xref:System.CodeDom.Compiler.ICodeGenerator?displayProperty=fullName> インターフェイスを使用する代わりに、<xref:System.CodeDom.Compiler.CodeDomProvider?displayProperty=fullName> クラスのメソッドを直接使用してください。 <xref:System.CodeDom.Compiler.CodeDomProvider> から継承した内容でインターフェイスが実装されることには変わりがないので、この警告を除外するか、このメソッドを互換性のために残してください。|  
 |<xref:System.CodeDom.Compiler.CodeDomProvider?displayProperty=fullName>|<xref:System.CodeDom.Compiler.CodeDomProvider.CreateParser%2A>|呼び出し元では、<xref:System.CodeDom.Compiler.ICodeParser?displayProperty=fullName> インターフェイスを使用する代わりに、<xref:System.CodeDom.Compiler.CodeDomProvider?displayProperty=fullName> クラスのメソッドを直接使用してください。 <xref:System.CodeDom.Compiler.CodeDomProvider> から継承した内容でインターフェイスが実装されることには変わりがないので、この警告を除外するか、このメソッドを互換性のために残してください。|  
 |<xref:System.CodeDom.Compiler.CompilerParameters?displayProperty=fullName>|<xref:System.CodeDom.Compiler.CompilerParameters.Evidence%2A>|CAS ポリシーは互換性のために残されていますが、.NET Framework の将来のリリースでは削除されます。 詳細については、[.NET Framework 4 におけるセキュリティの変更点](http://go2.microsoft.com/fwlink/?LinkId=131738)に関するページを参照してください。|  
 |<xref:System.CodeDom.Compiler.CompilerResults?displayProperty=fullName>|<xref:System.CodeDom.Compiler.CompilerResults.Evidence%2A>|CAS ポリシーは互換性のために残されていますが、.NET Framework の将来のリリースでは削除されます。 詳細については、[.NET Framework 4 におけるセキュリティの変更点](http://go2.microsoft.com/fwlink/?LinkId=131738)に関するページを参照してください。|  
@@ -582,7 +595,8 @@ ms.lasthandoff: 05/22/2017
 |<xref:System.Security.Claims.DynamicRoleClaimProvider?displayProperty=fullName>|<xref:System.Security.Claims.DynamicRoleClaimProvider.AddDynamicRoleClaims%2A>|最初に .NET Framework 4.5 で廃止されました。<br /><br /> このメンバーを使用すると、コンパイラ エラーが発生します。<br /><br /> <xref:System.Security.Claims.ClaimsAuthenticationManager?displayProperty=fullName> を使用して、<xref:System.Security.Claims.ClaimsIdentity> にクレームを追加します。|  
   
 <a name="drawing"></a>   
-### <a name="assembly-systemdrawingdll"></a>アセンブリ: System.Drawing.dll  
+<a id="assembly-systemdrawingdll" class="xliff"></a>
+### アセンブリ: System.Drawing.dll  
   
 |型|メンバー|メッセージ|  
 |----------|------------|-------------|  
@@ -590,7 +604,8 @@ ms.lasthandoff: 05/22/2017
 |<xref:System.Drawing.Imaging.EncoderParameter?displayProperty=fullName>|<xref:System.Drawing.Imaging.EncoderParameter.%23ctor%28System.Drawing.Imaging.Encoder%2CSystem.Int32%2CSystem.Int32%2CSystem.Int32%29>|最初に .NET Framework 4.5 で廃止されました。<br /><br /> このコンストラクターの使用は推奨されていません。 <xref:System.Drawing.Imaging.EncoderParameter.%23ctor%28System.Drawing.Imaging.Encoder%2CSystem.Int32%2CSystem.Drawing.Imaging.EncoderParameterValueType%2CSystem.IntPtr%29> を使用してください。|  
   
 <a name="messaging"></a>   
-### <a name="assembly-systemmessagingdll"></a>アセンブリ: System.Messaging.dll  
+<a id="assembly-systemmessagingdll" class="xliff"></a>
+### アセンブリ: System.Messaging.dll  
   
 |型|メンバー|メッセージ|  
 |----------|------------|-------------|  
@@ -598,7 +613,8 @@ ms.lasthandoff: 05/22/2017
 |<xref:System.Messaging.MessageQueue?displayProperty=fullName>|<xref:System.Messaging.MessageQueue.GetMessageEnumerator%2A>|このメソッドは、<xref:System.Messaging.MessageEnumerator.RemoveCurrent%2A?displayProperty=fullName> メソッド ファミリを正しく実装していない <xref:System.Messaging.MessageEnumerator?displayProperty=fullName> を返します。 代わりに、<xref:System.Messaging.MessageQueue.GetMessageEnumerator2%2A?displayProperty=fullName> を使用してください。|  
   
 <a name="servicemodel"></a>   
-### <a name="assembly-systemservicemodeldll"></a>アセンブリ: System.ServiceModel.dll  
+<a id="assembly-systemservicemodeldll" class="xliff"></a>
+### アセンブリ: System.ServiceModel.dll  
   
 |型|メンバー|メッセージ|  
 |----------|------------|-------------|  
@@ -610,7 +626,8 @@ ms.lasthandoff: 05/22/2017
 |<xref:System.ServiceModel.Security.WindowsClientCredential?displayProperty=fullName>|<xref:System.ServiceModel.Security.WindowsClientCredential.AllowNtlm%2A>|このプロパティの使用は推奨されていません。下位互換性のためだけに保持されています。 NTLM を使用するかどうかを判断する場合には、ローカル コンピューター ポリシーが使用されます。|  
   
 <a name="smDisc"></a>   
-### <a name="assembly-systemservicemodeldiscoverydll"></a>アセンブリ: System.ServiceModel.Discovery.dll  
+<a id="assembly-systemservicemodeldiscoverydll" class="xliff"></a>
+### アセンブリ: System.ServiceModel.Discovery.dll  
   
 |型|メンバー|メッセージ|  
 |----------|------------|-------------|  
@@ -618,14 +635,16 @@ ms.lasthandoff: 05/22/2017
 |<xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint?displayProperty=fullName>|<xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint.TransportSettings%2A>|最初に .NET Framework 4.5 で廃止されました。<br /><br /> <xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint.TransportSettings%2A> は互換性のために残されています。 トランスポート プロパティを設定する際は、<xref:System.ServiceModel.Channels.UdpTransportBindingElement?displayProperty=fullName> を使用することを検討してください。|  
   
 <a name="datavisualization"></a>   
-### <a name="assembly-systemwebdatavisualizationdll"></a>アセンブリ: System.Web.DataVisualization.dll  
+<a id="assembly-systemwebdatavisualizationdll" class="xliff"></a>
+### アセンブリ: System.Web.DataVisualization.dll  
   
 |型|メンバー|メッセージ|  
 |----------|------------|-------------|  
 |<xref:System.Web.UI.DataVisualization.Charting.Chart?displayProperty=fullName>|<xref:System.Web.UI.DataVisualization.Charting.Chart.ViewStateData%2A>|<xref:System.Web.UI.DataVisualization.Charting.Chart.ViewStateData%2A> の使用は推奨されていません。 代わりに、<xref:System.Web.UI.Control.ViewState%2A?displayProperty=fullName> の使用を検討してください。|  
   
 <a name="web"></a>   
-### <a name="assembly-systemwebdll"></a>アセンブリ: System.Web.dll  
+<a id="assembly-systemwebdll" class="xliff"></a>
+### アセンブリ: System.Web.dll  
   
 |種類|メンバー|メッセージ|  
 |----------|------------|-------------|  
@@ -660,20 +679,22 @@ ms.lasthandoff: 05/22/2017
 |<xref:System.Web.UI.WebControls.Xml?displayProperty=fullName>|<xref:System.Web.UI.WebControls.Xml.Document%2A>|別の方法として、<xref:System.Web.UI.WebControls.Xml.XPathNavigator%2A?displayProperty=fullName> プロパティを使用することをお勧めします。 <xref:System.Xml.XPath.XPathNavigator?displayProperty=fullName> を作成するには、<xref:System.Xml.XPath.XPathDocument?displayProperty=fullName> を作成して、<xref:System.Xml.XPath.XPathDocument.CreateNavigator%2A?displayProperty=fullName> を呼び出します。|  
   
 <a name="dynamicdata"></a>   
-### <a name="assembly-systemwebdynamicdatadll"></a>アセンブリ: System.Web.DynamicData.dll  
+<a id="assembly-systemwebdynamicdatadll" class="xliff"></a>
+### アセンブリ: System.Web.DynamicData.dll  
   
 |型|メンバー|メッセージ|  
 |----------|------------|-------------|  
 |<xref:System.Web.DynamicData.DynamicDataExtensions?displayProperty=fullName>|<xref:System.Web.DynamicData.DynamicDataExtensions.EnablePersistedSelection%2A>|<xref:System.Web.UI.WebControls.GridView?displayProperty=fullName> や <xref:System.Web.UI.WebControls.ListView?displayProperty=fullName> など、データ バインディング コントロールの `EnablePersistedSelection` プロパティを使用してください。|  
   
 <a name="extensions"></a>   
-### <a name="assembly-systemwebextensionsdll"></a>アセンブリ: System.Web.Extensions.dll  
+<a id="assembly-systemwebextensionsdll" class="xliff"></a>
+### アセンブリ: System.Web.Extensions.dll  
   
 |型|メンバー|メッセージ|  
 |----------|------------|-------------|  
 |<xref:System.Web.UI.CompositeScriptReference?displayProperty=fullName>|<xref:System.Web.UI.CompositeScriptReference.IsFromSystemWebExtensions%2A>|<xref:System.Web.UI.CompositeScriptReference.IsAjaxFrameworkScript%2A?displayProperty=fullName> を使用してください。|  
-|<xref:System.Web.UI.ScriptManager?displayProperty=fullName>|<xref:System.Web.UI.ScriptManager.ScriptPath%2A>|このプロパティは今後使用しません。 代わりに、<xref:System.Web.UI.ScriptReference?displayProperty=fullName> ごとに <!--zz <xref:System.Web.UI.ScriptReference.Path%2A>--> `System.Web.UI.ScriptReference.Path` プロパティを設定してください。|  
-|<xref:System.Web.UI.ScriptReference?displayProperty=fullName>|<xref:System.Web.UI.ScriptReference.IgnoreScriptPath%2A>|このプロパティは今後使用しません。 <xref:System.Web.UI.ScriptManager.ScriptPath%2A?displayProperty=fullName> を使用する代わりに、<xref:System.Web.UI.ScriptReference?displayProperty=fullName> ごとに <xref:System.Web.UI.ScriptReference.Path%2A> プロパティを設定してください。|  
+|<xref:System.Web.UI.ScriptManager?displayProperty=fullName>|<xref:System.Web.UI.ScriptManager.ScriptPath%2A>|このプロパティは今後使用しません。 代わりに、<xref:System.Web.UI.ScriptReference?displayProperty=fullName> ごとに [`System.Web.UI.ScriptReference.Path`](xref:System.Web.UI.ScriptReferenceBase.Path%2A) プロパティを設定してください。|  
+|<xref:System.Web.UI.ScriptReference?displayProperty=fullName>|<xref:System.Web.UI.ScriptReference.IgnoreScriptPath%2A>|このプロパティは今後使用しません。 <xref:System.Web.UI.ScriptManager.ScriptPath%2A?displayProperty=fullName> を使用する代わりに、<xref:System.Web.UI.ScriptReference?displayProperty=fullName> ごとに [`System.Web.UI.ScriptReference.Path`](xref:System.Web.UI.ScriptReferenceBase.Path%2A) プロパティを設定してください。|  
 |<xref:System.Web.UI.ScriptReference?displayProperty=fullName>|<xref:System.Web.UI.ScriptReference.IsFromSystemWebExtensions%2A>|<xref:System.Web.UI.ScriptReference.IsAjaxFrameworkScript%2A?displayProperty=fullName> を使用してください。|  
 |<xref:System.Web.UI.ScriptReferenceBase?displayProperty=fullName>|<xref:System.Web.UI.ScriptReferenceBase.IsFromSystemWebExtensions%2A>|<xref:System.Web.UI.ScriptReferenceBase.IsAjaxFrameworkScript%2A?displayProperty=fullName> を使用してください。|  
 |<xref:System.Web.UI.ScriptReferenceBase?displayProperty=fullName>|<xref:System.Web.UI.ScriptReferenceBase.NotifyScriptLoaded%2A>|スクリプト参照では、<xref:System.Web.UI.ScriptReferenceBase.NotifyScriptLoaded%2A> は不要になりました。|  
@@ -681,7 +702,8 @@ ms.lasthandoff: 05/22/2017
 |<xref:System.Web.UI.ScriptResourceAttribute?displayProperty=fullName>|<xref:System.Web.UI.ScriptResourceAttribute.TypeName%2A>|このプロパティは今後使用しません。 代わりに、<xref:System.Web.UI.ScriptResourceAttribute.StringResourceClientTypeName%2A?displayProperty=fullName> を使用してください。|  
   
 <a name="services"></a>   
-### <a name="assembly-systemwebservicesdll"></a>アセンブリ: System.Web.Services.dll  
+<a id="assembly-systemwebservicesdll" class="xliff"></a>
+### アセンブリ: System.Web.Services.dll  
   
 |型|メンバー|メッセージ|  
 |----------|------------|-------------|  
@@ -689,7 +711,8 @@ ms.lasthandoff: 05/22/2017
 |<xref:System.Web.Services.Protocols.SoapHeaderAttribute?displayProperty=fullName>|<xref:System.Web.Services.Protocols.SoapHeaderAttribute.Required%2A>|このプロパティは、将来のバージョンでは削除されます。 SOAP メッセージ内の特定のヘッダーは必須ではなくなりました。|  
   
 <a name="forms"></a>   
-### <a name="assembly-systemwindowsformsdll"></a>アセンブリ: System.Windows.Forms.dll  
+<a id="assembly-systemwindowsformsdll" class="xliff"></a>
+### アセンブリ: System.Windows.Forms.dll  
   
 |型|メンバー|メッセージ|  
 |----------|------------|-------------|  
@@ -706,7 +729,8 @@ ms.lasthandoff: 05/22/2017
 |<xref:System.Windows.Forms.PrintPreviewDialog?displayProperty=fullName>|<xref:System.Windows.Forms.Form.AutoScaleBaseSize%2A>|このプロパティは推奨されていません。 代わりに、<xref:System.Windows.Forms.ContainerControl.AutoScaleDimensions%2A?displayProperty=fullName> プロパティを使用してください。|  
   
 <a name="xaml"></a>   
-### <a name="assembly-systemxamldll"></a>アセンブリ: System.Xaml.dll  
+<a id="assembly-systemxamldll" class="xliff"></a>
+### アセンブリ: System.Xaml.dll  
   
 |型|メンバー|メッセージ|  
 |----------|------------|-------------|  
@@ -714,7 +738,8 @@ ms.lasthandoff: 05/22/2017
 |<xref:System.Windows.Markup.MarkupExtensionReturnTypeAttribute?displayProperty=fullName>|<xref:System.Windows.Markup.MarkupExtensionReturnTypeAttribute.%23ctor%28System.Type%2CSystem.Type%29>|`expressionType` 引数は、XAML パーサーで使用されなくなりました。 有効な戻り値の型を指定するには、<xref:System.Windows.Markup.MarkupExtensionReturnTypeAttribute.%23ctor%28System.Type%29?displayProperty=fullName> を使用します。 式の型に対するカスタム ハンドリングを指定するには、<xref:System.Windows.Markup.XamlSetMarkupExtensionAttribute?displayProperty=fullName> を使用します。|  
   
 <a name="xml"></a>   
-### <a name="assembly-systemxmldll"></a>アセンブリ: System.Xml.dll  
+<a id="assembly-systemxmldll" class="xliff"></a>
+### アセンブリ: System.Xml.dll  
   
 |型|メンバー|メッセージ|  
 |----------|------------|-------------|  
@@ -736,22 +761,26 @@ ms.lasthandoff: 05/22/2017
 |<xref:System.Xml.Serialization.XmlSerializerFactory?displayProperty=fullName>|<xref:System.Xml.Serialization.XmlSerializerFactory.CreateSerializer%28System.Type%2CSystem.Xml.Serialization.XmlAttributeOverrides%2CSystem.Type%5B%5D%2CSystem.Xml.Serialization.XmlRootAttribute%2CSystem.String%2CSystem.String%2CSystem.Security.Policy.Evidence%29>|このメソッドは互換性のために残されていますが、.NET Framework の将来のリリースでは削除されます。 <xref:System.Security.Policy.Evidence?displayProperty=fullName> パラメーターを受け取らない <xref:System.Xml.Serialization.XmlSerializerFactory.CreateSerializer%2A?displayProperty=fullName> のオーバーロードを使用してください。|  
   
 <a name="MicrosoftMembers"></a>   
-## <a name="obsolete-members-in-microsoft-assemblies"></a>互換性のために残されている Microsoft アセンブリのメンバー  
+<a id="obsolete-members-in-microsoft-assemblies" class="xliff"></a>
+## 互換性のために残されている Microsoft アセンブリのメンバー  
  次の表に、互換性のために残されている Microsoft アセンブリのメンバーを示します。 これらのアセンブリは特殊な目的のアセンブリであり、個別の言語 (Microsoft.VisualBasic.dll など) やビルド システム (Microsoft.Build.Engine.dll など) を対象としたアセンブリが含まれています。  
   
 <a name="IEHost"></a>   
-### <a name="assembly-iehostdll-and-ieexecexe"></a>アセンブリ: IEHost.dll and IEExec.exe  
+<a id="assembly-iehostdll-and-ieexecexe" class="xliff"></a>
+### アセンブリ: IEHost.dll and IEExec.exe  
  IEHost.dll および IEExec.exe アセンブリは .NET Framework から削除されています。 そのすべての型およびメンバーは廃止され、[!INCLUDE[net_v45](../../../includes/net-v45-md.md)] ではサポートされていません。 これらのアセンブリは Internet Explorer で Windows フォーム コントロールをホストし、実行可能ファイルを実行するために使用されていました。 代替手段としては、ClickOnce、XAML ブラウザー アプリケーション (XBAP)、および Microsoft Silverlight をお勧めします。  
   
 <a name="isymwrapper"></a>   
-### <a name="assembly-isymwrapperdll"></a>アセンブリ: ISymWrapper.dll  
+<a id="assembly-isymwrapperdll" class="xliff"></a>
+### アセンブリ: ISymWrapper.dll  
   
 |型|メンバー|メッセージ|  
 |----------|------------|-------------|  
 |<xref:System.Diagnostics.SymbolStore.SymBinder?displayProperty=fullName>|<xref:System.Diagnostics.SymbolStore.SymBinder.GetReader%28System.Int32%2CSystem.String%2CSystem.String%29>|別の方法として、<xref:System.Diagnostics.SymbolStore.SymBinder.GetReader%28System.IntPtr%2CSystem.String%2CSystem.String%29?displayProperty=fullName> を使用することをお勧めします。                                          <xref:System.Diagnostics.SymbolStore.ISymbolBinder1.GetReader%2A?displayProperty=fullName> は、インポーターのインターフェイス ポインターを <xref:System.Int32?displayProperty=fullName> ではなく、<xref:System.IntPtr?displayProperty=fullName> として取得するので、32 ビット アーキテクチャと 64 ビット アーキテクチャの両方で機能します。|  
   
 <a name="conversion"></a>   
-### <a name="assembly-microsoftbuildconversionv40dll"></a>アセンブリ: Microsoft.Build.Conversion.v4.0.dll  
+<a id="assembly-microsoftbuildconversionv40dll" class="xliff"></a>
+### アセンブリ: Microsoft.Build.Conversion.v4.0.dll  
   
 |型|メンバー|メッセージ|  
 |----------|------------|-------------|  
@@ -761,7 +790,8 @@ ms.lasthandoff: 05/22/2017
 |<xref:Microsoft.Build.Conversion.ProjectFileConverter?displayProperty=fullName>|<xref:Microsoft.Build.Conversion.ProjectFileConverter.ConvertInMemory%28Microsoft.Build.BuildEngine.Engine%2CMicrosoft.Build.BuildEngine.ProjectLoadSettings%29>|代わりに、パラメーターなしの <xref:Microsoft.Build.Conversion.ProjectFileConverter.ConvertInMemory?displayProperty=fullName> メソッドを使用してください。|  
   
 <a name="engine"></a>   
-### <a name="assembly-microsoftbuildenginedll"></a>アセンブリ: Microsoft.Build.Engine.dll  
+<a id="assembly-microsoftbuildenginedll" class="xliff"></a>
+### アセンブリ: Microsoft.Build.Engine.dll  
   
 |型|メンバー|メッセージ|  
 |----------|------------|-------------|  
@@ -769,28 +799,32 @@ ms.lasthandoff: 05/22/2017
 |<xref:Microsoft.Build.BuildEngine.Engine?displayProperty=fullName>|<xref:Microsoft.Build.BuildEngine.Engine.%23ctor%28System.String%29>|.NET Framework の場所を <xref:Microsoft.Build.BuildEngine.Engine.BinPath%2A> として単純に渡そうとしていた場合は、パラメーターなしの <xref:Microsoft.Build.BuildEngine.Engine.%23ctor?displayProperty=fullName> コンストラクターに変更するだけです。 それ以外の場合は、カスタム ツールセットをレジストリまたは構成ファイルに定義するか、エンジンの <xref:Microsoft.Build.BuildEngine.ToolsetCollection?displayProperty=fullName> に要素を追加できます。 次に、<xref:Microsoft.Build.BuildEngine.Engine.%23ctor?displayProperty=fullName> コンストラクターまたは <xref:Microsoft.Build.BuildEngine.Engine.%23ctor%28Microsoft.Build.BuildEngine.ToolsetDefinitionLocations%29?displayProperty=fullName> コンストラクターを代わりに使用してください。|  
   
 <a name="BuildFW"></a>   
-### <a name="assembly-microsoftbuildframeworkdll"></a>アセンブリ: Microsoft.Build.Framework.dll  
+<a id="assembly-microsoftbuildframeworkdll" class="xliff"></a>
+### アセンブリ: Microsoft.Build.Framework.dll  
   
 |型|メンバー|メッセージ|  
 |----------|------------|-------------|  
 |<xref:Microsoft.Build.Framework.XamlTypes.ContentType?displayProperty=fullName>|<xref:Microsoft.Build.Framework.XamlTypes.ContentType.ItemGroupName%2A>|最初に .NET Framework 4.5 で廃止されました。<br /><br /> このメンバーを使用すると、コンパイラ エラーが発生します。<br /><br /> 代わりに、<xref:Microsoft.Build.Framework.XamlTypes.ContentType.ItemType%2A?displayProperty=fullName> プロパティを使用してください。|  
   
 <a name="BuildUtil4"></a>   
-### <a name="assembly-microsoftbuildutilitiesv40dll"></a>アセンブリ: Microsoft.Build.Utilities.v4.0.dll  
+<a id="assembly-microsoftbuildutilitiesv40dll" class="xliff"></a>
+### アセンブリ: Microsoft.Build.Utilities.v4.0.dll  
   
 |型|メンバー|メッセージ|  
 |----------|------------|-------------|  
 |<xref:Microsoft.Build.Utilities.ToolTask?displayProperty=fullName>|<xref:Microsoft.Build.Utilities.ToolTask.EnvironmentOverride%2A>|<xref:Microsoft.Build.Utilities.ToolTask.EnvironmentVariables%2A?displayProperty=fullName> プロパティを使用します。|  
   
 <a name="data_entity_tasks"></a>   
-### <a name="assembly-microsoftdataentitybuildtasksdll"></a>アセンブリ: Microsoft.Data.Entity.Build.Tasks.dll  
+<a id="assembly-microsoftdataentitybuildtasksdll" class="xliff"></a>
+### アセンブリ: Microsoft.Data.Entity.Build.Tasks.dll  
   
 |型|メンバー|メッセージ|  
 |----------|------------|-------------|  
 |<!--zz <xref:Microsoft.Data.Entity.Build.Tasks.EntityDeploy?displayProperty=fullName> --> `Microsoft.Data.Entity.Build.Tasks.EntityDeploy`| <!--zz <xref:Microsoft.Data.Entity.Build.Tasks.EntityDeploy.EntityDataModelEmbeddedResources%2A>  -->`Microsoft.Data.Entity.Build.Tasks.EntityDeploy.EntityDataModelEmbeddedResources`|最初に .NET Framework 4.5 で廃止されました。<br /><br /> バージョン 3.5 の下位互換性のためだけに使用されます。|  
   
 <a name="visualbasic"></a>   
-### <a name="assembly-microsoftvisualbasicdll"></a>アセンブリ: Microsoft.VisualBasic.dll  
+<a id="assembly-microsoftvisualbasicdll" class="xliff"></a>
+### アセンブリ: Microsoft.VisualBasic.dll  
   
 |種類|メンバー|メッセージ|  
 |----------|------------|-------------|  
@@ -807,6 +841,7 @@ ms.lasthandoff: 05/22/2017
 |<xref:Microsoft.VisualBasic.CompilerServices.Operators?displayProperty=fullName>|<xref:Microsoft.VisualBasic.CompilerServices.Operators.FallbackInvokeUserDefinedOperator%2A>|このメンバーを使用すると、コンパイラ エラーが発生します。<br /><br /> このメソッドは使用しないでください。|  
 |<xref:Microsoft.VisualBasic.MyServices.RegistryProxy?displayProperty=fullName>|<xref:Microsoft.VisualBasic.MyServices.RegistryProxy.DynData%2A>|`DynData` レジストリ キーは Win9x でのみ動作し、このバージョンの .NET Framework ではサポートされていません。 代わりに、`PerformanceData` レジストリ キーを使用してください。 このプロパティは、.NET Framework の将来のバージョンでは削除されます。|  
   
-## <a name="see-also"></a>関連項目  
+<a id="see-also" class="xliff"></a>
+## 関連項目  
  [クラス ライブラリの互換性のために残されている機能](../../../docs/framework/whats-new/whats-obsolete.md)   
  [互換性のために残されている型](../../../docs/framework/whats-new/obsolete-types.md)

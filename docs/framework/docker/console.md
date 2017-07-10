@@ -1,5 +1,5 @@
 ---
-title: "Docker でのコンソール アプリケーションの実行"
+title: "Docker でのコンソール アプリケーションの実行 | Microsoft Docs"
 description: "既存の .NET Framework コンソール アプリケーションを Windows Docker コンテナーで実行する方法について説明します。"
 author: spboyer
 keywords: ".NET, コンテナー, コンソール, アプリケーション"
@@ -10,14 +10,15 @@ ms.technology: vs-ide-deployment
 ms.devlang: dotnet
 ms.assetid: 85cca1d5-c9a4-4eb2-93e6-4f878de07fd7
 ms.translationtype: Human Translation
-ms.sourcegitcommit: 890c058bd09893c2adb185e1d8107246eef2e20a
-ms.openlocfilehash: 4f1034763e4dae3711694b441b7a64b40cc99456
+ms.sourcegitcommit: a32f50ce8a92fa22d9627a1510a4b3ec1087364e
+ms.openlocfilehash: 36df4d44e5c6f5493009ef9cfebeb9f31683a884
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/18/2017
+ms.lasthandoff: 06/01/2017
 
 ---
 
-# <a name="running-console-applications-in-windows-containers"></a>Windows コンテナーでのコンソール アプリケーションの実行
+<a id="running-console-applications-in-windows-containers" class="xliff"></a>
+# Windows コンテナーでのコンソール アプリケーションの実行
 
 コンソール アプリケーションは、状態の単純なクエリから、実行時間の長いドキュメント イメージ処理タスクまで、さまざまな目的で使用されます。 いずれの場合にも、これらのアプリケーションを起動およびスケーリングする機能は、ハードウェアの取得、起動時間、または複数インスタンスの実行による制約を受けます。
 
@@ -48,7 +49,8 @@ Docker アーキテクチャの詳細については、Docker サイトの「[Do
 1. [イメージの Dockerfile の作成](#creating-the-dockerfile)
 1. [Docker コンテナーをビルドして実行するプロセス](#creating-the-image)
 
-## <a name="prerequisites"></a>必要条件
+<a id="prerequisites" class="xliff"></a>
+## 必要条件
 Windows コンテナーは、[Windows 10 Anniversary Update](https://www.microsoft.com/en-us/software-download/windows10/) または [Windows Server 2016](https://www.microsoft.com/en-us/cloud-platform/windows-server) でサポートされています。
 
 > [!NOTE]
@@ -58,7 +60,8 @@ Windows コンテナーをサポートするには、Docker for Windows バー�
 
 ![Windows コンテナー](./media/console/SwitchContainer.png)
 
-## <a name="building-the-application"></a>アプリケーションのビルド
+<a id="building-the-application" class="xliff"></a>
+## アプリケーションのビルド
 通常、コンソール アプリケーションは、インストーラー、FTP、またはファイル共有の展開を通して配布されます。 コンテナーへの展開時には、資産をコンパイルし、Docker イメージを作成するときに使用できる場所にステージングする必要があります。
 
 *Build.ps1* で、スクリプトは資産のビルド タスクを実行するために、[MSBuild](https://msdn.microsoft.com/library/dd393574.aspx) を使用してアプリケーションをコンパイルします。 必要な資産を最終処理するために MSBuild に渡されるいくつかのパラメーターがあります。 コンパイルするプロジェクト ファイルまたはソリューションの名前、出力の場所、および構成 (Release または Debug) です。
@@ -73,7 +76,8 @@ function Invoke-MSBuild ([string]$MSBuildPath, [string]$MSBuildParameters) {
 Invoke-MSBuild -MSBuildPath "MSBuild.exe" -MSBuildParameters ".\ConsoleRandomAnswerGenerator.csproj /p:OutputPath=.\publish /p:Configuration=Release"
 ```
 
-## <a name="creating-the-dockerfile"></a>Dockerfile の作成
+<a id="creating-the-dockerfile" class="xliff"></a>
+## Dockerfile の作成
 コンソールの .NET Framework アプリケーションに使用される基本イメージは `microsoft/windowsservercore` であり、[Docker Hub](https://hub.docker.com/r/microsoft/windowsservercore/) で一般公開されています。 この基本イメージには、Windows Server 2016、.NET Framework 4.6.2 の最小限のインストールが含まれており、Windows コンテナーの基本 OS イメージとして機能します。
 
 ```
@@ -83,10 +87,11 @@ ENTRYPOINT ConsoleRandomAnswerGenerator.exe
 ```
 Dockerfile の最初の行は、[`FROM`](https://docs.docker.com/engine/reference/builder/#/from) 命令を使用して基本イメージを指定します。 次に、ファイル内の [`ADD`](https://docs.docker.com/engine/reference/builder/#/add) は、**publish** フォルダーからコンテナーのルート フォルダーにアプリケーション資産をコピーします。最後に、イメージの [`ENTRYPOINT`](https://docs.docker.com/engine/reference/builder/#/entrypoint) を設定することで、これがコンテナーの開始時に実行されるコマンドまたはアプリケーションであることを示します。 
 
-## <a name="creating-the-image"></a>イメージの作成
+<a id="creating-the-image" class="xliff"></a>
+## イメージの作成
 Docker イメージを作成するには、*build.ps1* スクリプトに次のコードを追加します。 スクリプトを実行すると、「[アプリケーションのビルド](#building-the-application)」セクションで定義した MSBuild からコンパイルされた資産を使用して、`console-random-answer-generator` イメージが作成されます。
 
-```
+```powershell
 $ImageName="console-random-answer-generator"
 
 function Invoke-Docker-Build ([string]$ImageName, [string]$ImagePath, [string]$DockerBuildArgs = "") {
@@ -106,7 +111,8 @@ REPOSITORY                        TAG                 IMAGE ID            CREATE
 console-random-answer-generator   latest              8f7c807db1b5        8 seconds ago       7.33 GB
 ```
 
-## <a name="running-the-container"></a>コンテナーの実行
+<a id="running-the-container" class="xliff"></a>
+## コンテナーの実行
 コンテナーは、コマンドラインから Docker コマンドを使用して起動できます。
 
 ```
@@ -134,7 +140,8 @@ docker run --rm console-random-answer-generator "Are you a square container?"
 
 このオプションを指定してコマンドを実行してから、`docker ps -a` コマンドの出力を見ると、コンテナー ID (`Environment.MachineName`) が一覧に表示されていません。
 
-### <a name="running-the-container-using-powershell"></a>PowerShell を使用したコンテナーの実行
+<a id="running-the-container-using-powershell" class="xliff"></a>
+### PowerShell を使用したコンテナーの実行
 サンプル プロジェクト ファイルには、PowerShell を使用して引数を受け入れるアプリケーションを実行する方法の例として、*run.ps1* も含まれています。
 
 実行するには、PowerShell を開き、次のコマンドを使用します。
@@ -143,6 +150,7 @@ docker run --rm console-random-answer-generator "Are you a square container?"
 .\run.ps1 "Is this easy or what?"
 ```
 
-## <a name="summary"></a>まとめ
+<a id="summary" class="xliff"></a>
+## まとめ
 Dockerfile を追加し、アプリケーションを発行するだけで、.NET Framework コンソール アプリケーションをコンテナー化できます。これにより、アプリケーション コードを全く変更せずに、複数のインスタンス、クリーンな起動と停止、および Windows Server 2016 のより多くの機能を実行することができます。
 

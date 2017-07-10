@@ -19,34 +19,36 @@ caps.latest.revision: 16
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-translationtype: Human Translation
-ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
-ms.openlocfilehash: 2ac1552dba8756d033ee02651142476c4a15a485
-ms.lasthandoff: 04/18/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 375babff42f13c41852651811f92f6bdda91b1e2
+ms.openlocfilehash: 7b4a762e3021e80a15d66b15589eec2e269a2888
+ms.contentlocale: ja-jp
+ms.lasthandoff: 06/15/2017
 
 ---
-# <a name="sorted-collection-types"></a>Sorted コレクション型
-<xref:System.Collections.SortedList?displayProperty=fullName> クラス、<xref:System.Collections.Generic.SortedList%602?displayProperty=fullName> ジェネリック クラス、および <xref:System.Collections.Generic.SortedDictionary%602?displayProperty=fullName> ジェネリック クラスは、<xref:System.Collections.IDictionary> インターフェイスを実装する点において <xref:System.Collections.Hashtable> クラスと <xref:System.Collections.Generic.Dictionary%602> ジェネリック クラスに似ていますが、キーによる並べ替え順序で自身の要素を維持し、ハッシュ テーブルの O(1) 挿入と取得の特性を備えていません。 これら 3 つのクラスには、次のような共通の特徴があります。  
+<a id="sorted-collection-types" class="xliff"></a>
+# Sorted コレクション型
+<xref:System.Collections.SortedList?displayProperty=fullName> クラス、<xref:System.Collections.Generic.SortedList%602?displayProperty=fullName> ジェネリック クラス、および <xref:System.Collections.Generic.SortedDictionary%602?displayProperty=fullName> ジェネリック クラスは、<xref:System.Collections.IDictionary> インターフェイスを実装する点において <xref:System.Collections.Hashtable> クラスと <xref:System.Collections.Generic.Dictionary%602> ジェネリック クラスに似ていますが、キーによる並べ替え順序で自身の要素を維持し、ハッシュ テーブルの O(1) 挿入と取得の特性はありません。 これら 3 つのクラスには、次のような共通の特徴があります。  
   
--   3 つのすべてのクラスは、<xref:System.Collections.IDictionary?displayProperty=fullName> インターフェイスを実装します。 2 つのジェネリック クラスは、<xref:System.Collections.Generic.IDictionary%602?displayProperty=fullName> ジェネリック インターフェイスも実装します。  
+-   この 3 つのクラスはすべて、<xref:System.Collections.IDictionary?displayProperty=fullName> インターフェイスを実装します。 2 つのジェネリック クラスも <xref:System.Collections.Generic.IDictionary%602?displayProperty=fullName> ジェネリック インターフェイスを実装します。  
   
 -   各要素は、列挙で使用できるようにキーと値のペアになっています。  
   
     > [!NOTE]
-    >  2 つのジェネリック タイプは <xref:System.Collections.Generic.KeyValuePair%602> オブジェクトを返しますが、非ジェネリックの <xref:System.Collections.SortedList> クラスは列挙の際に <xref:System.Collections.DictionaryEntry> オブジェクトを返します。  
+    >  <xref:System.Collections.SortedList> 非ジェネリック クラスは列挙されると <xref:System.Collections.DictionaryEntry> オブジェクトを返しますが、2 つのジェネリック型のクラスは <xref:System.Collections.Generic.KeyValuePair%602> オブジェクトを返します。  
   
--   要素は <xref:System.Collections.IComparer?displayProperty=fullName> 実装 (非ジェネリックの <xref:System.Collections.SortedList> の場合)、または <xref:System.Collections.Generic.IComparer%601?displayProperty=fullName> 実装 (2 つのジェネリック クラスの場合) に従って並べ替えられます。  
+-   要素の並べ替えは <xref:System.Collections.IComparer?displayProperty=fullName> の実装 (非ジェネリック クラス <xref:System.Collections.SortedList> の場合) または <xref:System.Collections.Generic.IComparer%601?displayProperty=fullName> 実装 (2 つのジェネリック クラスの場合) に基づいて行われます。  
   
 -   各クラスが提供するプロパティは、キーのみまたは値のみを含むコレクションを返します。  
   
  次の表に、2 つの並べ替えられたリスト クラスと <xref:System.Collections.Generic.SortedDictionary%602> クラスの違いをいくつか示します。  
   
-|<xref:System.Collections.SortedList> 非ジェネリック クラスと <xref:System.Collections.Generic.SortedList%602> ジェネリック クラス|<xref:System.Collections.Generic.SortedDictionary%602> ジェネリック クラス|  
+|<xref:System.Collections.SortedList>非ジェネリック クラスと <xref:System.Collections.Generic.SortedList%602> ジェネリック クラス|<xref:System.Collections.Generic.SortedDictionary%602> ジェネリック クラス|  
 |--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|  
 |キーと値を返すプロパティにはインデックスが付けられるため、インデックスを使用して効率的に取得できます。|インデックスを使用して取得することはできません。|  
 |取得は O(log `n`) です。|取得は O(log `n`) です。|  
-|挿入と削除は一般に O(`n`) ですが、既に並べ替えられているデータの挿入は O(1) であるため、各要素はリストの最後に追加されます。 (これは、サイズの変更が不要であることを前提としています。)|挿入と削除は O(log `n`) です。|  
-|<xref:System.Collections.Generic.SortedDictionary%602> よりもメモリ消費が少なくなります。|<xref:System.Collections.SortedList> 非ジェネリック クラスと <xref:System.Collections.Generic.SortedList%602> ジェネリック クラスよりもメモリ消費が増えます。|  
+|挿入と削除は一般に O(`n`) ですが、既に並べ替えられているデータの挿入は O(log `n`) であるため、各要素はリストの最後に追加されます。 (これは、サイズの変更が不要であることを前提としています。)|挿入と削除は O(log `n`) です。|  
+|使用するメモリは <xref:System.Collections.Generic.SortedDictionary%602> より少なくなります。|<xref:System.Collections.SortedList> 非ジェネリック クラスと <xref:System.Collections.Generic.SortedList%602> ジェネリック クラスより多くのメモリを使用します。|  
   
  並べ替えられたリストや辞書に複数のスレッドから同時にアクセスできる必要がある場合、<xref:System.Collections.Concurrent.ConcurrentDictionary%602> から派生するクラスに並べ替えロジックを追加できます。  
   
@@ -55,8 +57,10 @@ ms.lasthandoff: 04/18/2017
   
  [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)] より、<xref:System.Collections.Generic.SortedSet%601> クラスは、挿入、削除、および検索の操作後に並べ替えられた順序でデータを保持する自己平衡ツリーを提供します。 このクラスと <xref:System.Collections.Generic.HashSet%601> クラスは、<xref:System.Collections.Generic.ISet%601> インターフェイスを実装します。  
   
-## <a name="see-also"></a>関連項目  
+<a id="see-also" class="xliff"></a>
+## 関連項目  
  <xref:System.Collections.IDictionary?displayProperty=fullName>   
  <xref:System.Collections.Generic.IDictionary%602?displayProperty=fullName>   
  <xref:System.Collections.Concurrent.ConcurrentDictionary%602>   
  [ 一般的に使用されるコレクション型](../../../docs/standard/collections/commonly-used-collection-types.md)
+
