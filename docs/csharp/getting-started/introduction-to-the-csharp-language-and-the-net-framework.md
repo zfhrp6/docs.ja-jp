@@ -29,20 +29,20 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 ms.translationtype: Human Translation
-ms.sourcegitcommit: 39e8e757a446b30ab18914465853138e1c239e40
-ms.openlocfilehash: a2c5986dfb9ed4f80e15e8e3ddf061ef858a1e93
+ms.sourcegitcommit: 31905a37f09db5f5192123f0118252fbe8b02eff
+ms.openlocfilehash: e63a964956e2fbe91573a970c7df3fc29d848c9c
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/22/2017
+ms.lasthandoff: 05/26/2017
 
 ---
 # <a name="introduction-to-the-c-language-and-the-net-framework"></a>C# 言語と .NET Framework の概要
-C# は、タイプ セーフで洗練されたオブジェクト指向言語です。C# を使用すると、[!INCLUDE[dnprdnshort](../../csharp/getting-started/includes/dnprdnshort_md.md)] で稼働する、安全で信頼性の高いさまざまなアプリケーションを構築できます。 C# を使用すると、Windows クライアント アプリケーション、XML Web サービス、分散コンポーネント、クライアント/サーバー アプリケーション、データベース アプリケーションなど、さまざまなアプリケーションを作成できます。 Visual C# には、高度なコード エディター、便利なユーザー インターフェイス デザイナー、統合デバッガーなど、C# 言語と [!INCLUDE[dnprdnshort](../../csharp/getting-started/includes/dnprdnshort_md.md)] に基づいたアプリケーション開発をより簡単にする多数のツールが用意されています。  
+C# は、タイプ セーフで洗練されたオブジェクト指向言語です。C# を使用すると、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] で稼働する、安全で信頼性の高いさまざまなアプリケーションを構築できます。 C# を使用すると、Windows クライアント アプリケーション、XML Web サービス、分散コンポーネント、クライアント/サーバー アプリケーション、データベース アプリケーションなど、さまざまなアプリケーションを作成できます。 Visual C# には、高度なコード エディター、便利なユーザー インターフェイス デザイナー、統合デバッガーなど、C# 言語と [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] に基づいたアプリケーション開発をより簡単にする多数のツールが用意されています。  
   
 > [!NOTE]
-> [!INCLUDE[csprcs](../../csharp/includes/csprcs_md.md)] のドキュメントは、基本的なプログラミング概念を理解している方を対象に書かれています。 初心者である場合、Web で入手できる [!INCLUDE[csprcsxpr](../../csharp/getting-started/includes/csprcsxpr_md.md)] が参考になります。 C# に関する書籍や Web リソースを利用して、実践的なプログラミング スキルを身に付けることもできます。  
+> [!INCLUDE[csprcs](~/includes/csprcs-md.md)] のドキュメントは、基本的なプログラミング概念を理解している方を対象に書かれています。 初心者である場合、Web で入手できる [!INCLUDE[csprcsxpr](~/includes/csprcsxpr-md.md)] が参考になります。 C# に関する書籍や Web リソースを利用して、実践的なプログラミング スキルを身に付けることもできます。  
   
 ## <a name="c-language"></a>C# 言語  
- C# の構文は表現力が豊かですが、単純ですぐに覚えることができます。 C、C++、または Java に慣れていれば、C# の中かっこ ({}) 構文をすぐに理解できます。 これらの言語のいずれかを理解していると、一般に、C# での開発を短期間で始めることができます。 C# 構文では、C++ の複雑な部分が数多く簡略化され、null 許容値型、列挙体、デリゲート、ラムダ式、ダイレクト メモリ アクセスなど、Java にはない強力な機能が実装されました。 C# はジェネリック メソッドおよびジェネリック型をサポートしているため、タイプ セーフおよびパフォーマンスが向上し、反復子もサポートしているため、クライアント コードで簡単に使用できるカスタムの反復動作をコレクション クラスの実装側が定義できます。 [!INCLUDE[vbteclinqext](../../csharp/getting-started/includes/vbteclinqext_md.md)] 式により、厳密に型指定されたクエリは高度な言語構成要素になります。  
+ C# の構文は表現力が豊かですが、単純ですぐに覚えることができます。 C、C++、または Java に慣れていれば、C# の中かっこ ({}) 構文をすぐに理解できます。 これらの言語のいずれかを理解していると、一般に、C# での開発を短期間で始めることができます。 C# 構文では、C++ の複雑な部分が数多く簡略化され、null 許容値型、列挙体、デリゲート、ラムダ式、ダイレクト メモリ アクセスなど、Java にはない強力な機能が実装されました。 C# はジェネリック メソッドおよびジェネリック型をサポートしているため、タイプ セーフおよびパフォーマンスが向上し、反復子もサポートしているため、クライアント コードで簡単に使用できるカスタムの反復動作をコレクション クラスの実装側が定義できます。 [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] 式により、厳密に型指定されたクエリは高度な言語構成要素になります。  
   
  C# は、オブジェクト指向言語として、カプセル化、継承、およびポリモーフィズムの概念をサポートしています。 アプリケーションのエントリ ポイントである `Main` メソッドなど、変数とメソッドのすべてがクラス定義内でカプセル化されています。 親クラスから直接継承できるクラスは 1 つのみですが、クラスで実装できるインターフェイスの数は任意です。 親クラスの仮想メソッドをオーバーライドする場合、誤って再定義しないように、`override` キーワードを指定する必要があります。 C# の構造体はコンパクトなクラスのようなものです。インターフェイスを実装できるスタック割り当て型ですが、継承はサポートされていません。  
   
@@ -56,7 +56,7 @@ C# は、タイプ セーフで洗練されたオブジェクト指向言語で�
   
 -   インライン XML ドキュメントのコメント。  
   
--   [!INCLUDE[vbteclinqext](../../csharp/getting-started/includes/vbteclinqext_md.md)]。さまざまなデータ ソースを対象とする組み込みのクエリ機能を提供します。  
+-   [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)]。さまざまなデータ ソースを対象とする組み込みのクエリ機能を提供します。  
   
  COM オブジェクトやネイティブの Win32 DLL など、他の Windows ソフトウェアと対話するには、C# で "相互運用" というプロセスを使用します。 C# プログラムで相互運用機能を使用すると、ネイティブの C++ アプリケーションで実行できる機能をほぼすべて実行できます。 さらに、ダイレクト メモリ アクセスが必須の場合でも、ポインターと "unsafe" コードの概念がサポートされます。  
   
@@ -68,12 +68,12 @@ C# は、タイプ セーフで洗練されたオブジェクト指向言語で�
   
 -   C# 言語の具体的な側面の詳細については、「[C# リファレンス](../../csharp/language-reference/index.md)」を参照してください。  
   
--   [!INCLUDE[vbteclinq](../../csharp/includes/vbteclinq_md.md)] の詳細については、「[LINQ (Language-Integrated Query)](http://msdn.microsoft.com/library/a73c4aec-5d15-4e98-b962-1274021ea93d)」を参照してください。  
+-   [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] の詳細については、「[LINQ (Language-Integrated Query)](http://msdn.microsoft.com/library/a73c4aec-5d15-4e98-b962-1274021ea93d)」を参照してください。  
   
 -   Visual C# チームが提供する最新記事とその他のリソース見つけるには、[Visual C# デベロッパー センター](http://go.microsoft.com/fwlink/?LinkId=47811)を参照してください。  
   
 ## <a name="net-framework-platform-architecture"></a>.NET Framework のプラットフォーム アーキテクチャ  
- C# プログラムは、[!INCLUDE[dnprdnshort](../../csharp/getting-started/includes/dnprdnshort_md.md)] で実行されます。これは、共通言語ランタイム (CLR: Common Language Runtime) と呼ばれる仮想実行システムや統合的なクラス ライブラリを備えた Windows の統合コンポーネントです。 CLR は、共通言語基盤 (CLI: Common Language Infrastructure) をサポートする Microsoft のシステムです。CLI は、複数の言語やライブラリをシームレスに連携する実行環境と開発環境を構築するための、基本的な国際規格です。  
+ C# プログラムは、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] で実行されます。これは、共通言語ランタイム (CLR: Common Language Runtime) と呼ばれる仮想実行システムや統合的なクラス ライブラリを備えた Windows の統合コンポーネントです。 CLR は、共通言語基盤 (CLI: Common Language Infrastructure) をサポートする Microsoft のシステムです。CLI は、複数の言語やライブラリをシームレスに連携する実行環境と開発環境を構築するための、基本的な国際規格です。  
   
  C# で記述したソース コードは、CLI 仕様に準拠する中間言語 (IL) にコンパイルされます。 IL コードおよびリソース (ビットマップや文字列など) は、アセンブリと呼ばれる実行可能ファイルのあるディスクに保存されます。アセンブリの拡張子は、一般的に .exe か .dll です。 アセンブリに含まれるマニフェストには、アセンブリの種類、バージョン、カルチャ、およびセキュリティ要件に関する情報が規定されています。  
   
@@ -81,9 +81,9 @@ C# は、タイプ セーフで洗練されたオブジェクト指向言語で�
   
  ![ C&#35; ソース コードからマシン実行へ](../../csharp/getting-started/media/netarchitecture.png "NETarchitecture")  
   
- 言語の相互運用性は、[!INCLUDE[dnprdnshort](../../csharp/getting-started/includes/dnprdnshort_md.md)] の主要機能です。 C# コンパイラで生成された IL コードは、共通型の仕様 (CTS: Common Type Specification) に準拠しています。このため、C# の IL コードは、Visual Basic、Visual C++ の .NET バージョンを始めとする、20 を超える CTS 準拠言語で生成されたコードと相互運用性があります。 1 つのアセンブリには、異なる .NET 言語で記述されたモジュールを複数含めることができます。また、同じ言語で記述されている場合と同様に、型を参照することもできます。  
+ 言語の相互運用性は、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] の主要機能です。 C# コンパイラで生成された IL コードは、共通型の仕様 (CTS: Common Type Specification) に準拠しています。このため、C# の IL コードは、Visual Basic、Visual C++ の .NET バージョンを始めとする、20 を超える CTS 準拠言語で生成されたコードと相互運用性があります。 1 つのアセンブリには、異なる .NET 言語で記述されたモジュールを複数含めることができます。また、同じ言語で記述されている場合と同様に、型を参照することもできます。  
   
- [!INCLUDE[dnprdnshort](../../csharp/getting-started/includes/dnprdnshort_md.md)] には、実行時のサービス以外にも、4,000 クラスを超える多数のライブラリが用意されています。このライブラリは、ファイルの入出力、XML 解析のための文字列操作、Windows フォーム コントロールなど、役に立つさまざまな機能を備えた名前空間に構成されています。 C# アプリケーションでは、一般に、[!INCLUDE[dnprdnshort](../../csharp/getting-started/includes/dnprdnshort_md.md)] クラス ライブラリを広範囲に使用して、一般的な "配管工事" のような作業を処理しています。  
+ [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] には、実行時のサービス以外にも、4,000 クラスを超える多数のライブラリが用意されています。このライブラリは、ファイルの入出力、XML 解析のための文字列操作、Windows フォーム コントロールなど、役に立つさまざまな機能を備えた名前空間に構成されています。 C# アプリケーションでは、一般に、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] クラス ライブラリを広範囲に使用して、一般的な "配管工事" のような作業を処理しています。  
   
  .NET Framework の詳細については、[Microsoft .NET Framework の概要](http://msdn.microsoft.com/en-us/d05daf50-00fe-45c7-8383-06fe41697355)に関する記事を参照してください。  
   

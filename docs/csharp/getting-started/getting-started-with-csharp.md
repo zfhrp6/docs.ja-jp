@@ -30,10 +30,10 @@ translation.priority.mt:
 - pt-br
 - tr-tr
 ms.translationtype: Human Translation
-ms.sourcegitcommit: 0832ee88bba58579eea001335be9cb8c2130834d
-ms.openlocfilehash: 3fc7bb7cb54cb83fbb1c008283302c816f4d6fa4
+ms.sourcegitcommit: 31905a37f09db5f5192123f0118252fbe8b02eff
+ms.openlocfilehash: 4dd406d40bd6f3dc12db19087be80c13644419d7
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/22/2017
+ms.lasthandoff: 05/26/2017
 
 ---
 # <a name="getting-started-with-c"></a>C# の概要
@@ -48,7 +48,7 @@ ms.lasthandoff: 05/22/2017
   
 ## <a name="related-sections"></a>関連項目  
  [Visual C# 開発環境の使用](https://docs.microsoft.com/visualstudio/csharp-ide/using-the-visual-studio-development-environment-for-csharp)  
- [!INCLUDE[csprcs](../../csharp/includes/csprcs_md.md)] 統合開発環境を使用する方法について説明します。  
+ [!INCLUDE[csprcs](~/includes/csprcs-md.md)] 統合開発環境を使用する方法について説明します。  
   
  [C# プログラミング ガイド](../../csharp/programming-guide/index.md)  
  C# プログラミングの概念に関する情報を提供し、C# でさまざまなタスクを実行する方法について説明します。  
