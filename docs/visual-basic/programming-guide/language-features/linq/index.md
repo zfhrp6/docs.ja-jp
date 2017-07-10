@@ -31,18 +31,19 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 26d2ceac051905f5ac46b59f6fd2598e924355c7
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 31905a37f09db5f5192123f0118252fbe8b02eff
+ms.openlocfilehash: cdfd19e9df6ec107c1195e7555ce07aea8967588
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/26/2017
 
 ---
 # <a name="linq-in-visual-basic"></a>LINQ (Visual Basic における)
-このセクションでは、Visual Basic と [!INCLUDE[vbteclinqext](../../../../csharp/getting-started/includes/vbteclinqext_md.md)] を理解して使用するのに役立つ概要、例、および背景情報を示します。  
+このセクションでは、Visual Basic と [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] を理解して使用するのに役立つ概要、例、および背景情報を示します。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
  [Visual Basic における LINQ の概要](../../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)  
- [!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq_md.md)] のプロバイダー、演算子、クエリ構造、および言語機能の概要について説明します。  
+ [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] のプロバイダー、演算子、クエリ構造、および言語機能の概要について説明します。  
   
  [方法: データベースの照会](../../../../visual-basic/programming-guide/language-features/linq/how-to-query-a-database-by-using-linq.md)  
  SQL Server データベースに接続し、LINQ を使用してクエリを実行する方法の例を示します。  

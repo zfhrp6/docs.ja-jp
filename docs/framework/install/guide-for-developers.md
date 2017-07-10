@@ -20,10 +20,10 @@ author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.translationtype: Human Translation
-ms.sourcegitcommit: fe9ab371ab8d3eee3778412e446b7aa30b42476b
-ms.openlocfilehash: 348ef65fdb6c1a54abf379278d79ed1a9f626780
+ms.sourcegitcommit: 0248602661b93eb0372e12fbea1055515a9abca3
+ms.openlocfilehash: b7b7cb8d8f10d8d7f437b7bcf91f99237003ca74
 ms.contentlocale: ja-jp
-ms.lasthandoff: 06/02/2017
+ms.lasthandoff: 06/13/2017
 
 ---
 
@@ -151,7 +151,7 @@ Web インストーラーとオフライン インストーラーはどちらも
 <a name="standalone_language_packs"></a>   
 ## <a name="to-install-language-packs"></a>言語パックのインストール
 
- 言語パックは、サポートされている言語用にローカライズされたリソース (翻訳されたエラー メッセージや UI テキストなど) を含む実行可能ファイルです。 言語パックをインストールしない場合、.NET Framework のエラー メッセージ、その他のテキストは英語で表示されます。  Web インストーラーによって、オペレーティング システムに対応した言語パックが自動的にインストールされますが、追加の言語パックをコンピューターにダウンロードできます。 オフライン インストーラーには言語パックは含まれていません。 また、言語パックは、.NET Framework 4.7 には使用できません。
+ 言語パックは、サポートされている言語用にローカライズされたリソース (翻訳されたエラー メッセージや UI テキストなど) を含む実行可能ファイルです。 言語パックをインストールしない場合、.NET Framework のエラー メッセージ、その他のテキストは英語で表示されます。  Web インストーラーによって、オペレーティング システムに対応した言語パックが自動的にインストールされますが、追加の言語パックをコンピューターにダウンロードできます。 オフライン インストーラーには言語パックは含まれていません。 
   
 > [!IMPORTANT]
 > 言語パックには、アプリの実行に必要な .NET Framework コンポーネントは含まれていません。言語パックをインストールする前に、Web インストーラーまたはオフライン インストーラーを実行する必要があります。 既に言語パックをインストールしてある場合は、まず言語パックをアンインストールしてから、.NET Framework をインストールし、言語パックを再インストールします。  

@@ -32,21 +32,21 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 ms.translationtype: Human Translation
-ms.sourcegitcommit: 4892ed6dcfb3843bd6cb2de2d3e032bfeb1efdf9
-ms.openlocfilehash: 2c2db6fcbbd3d3736d9ab0e1e9190c2516a17937
+ms.sourcegitcommit: 31905a37f09db5f5192123f0118252fbe8b02eff
+ms.openlocfilehash: ee5a7731acb52b3f7891ac9490ff227ad478426f
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/16/2017
+ms.lasthandoff: 05/26/2017
 
 ---
 # <a name="objects-and-classes-in-visual-basic"></a>Visual Basic のオブジェクトとクラス
 "*オブジェクト*" は、1 つの単位として扱うことができるコードとデータの組み合わせです。 オブジェクトは、コントロールやフォームのように、アプリケーションの一部になることができます。 アプリケーション全体も、オブジェクトになることができます。
 
-[!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] でアプリケーションを作成するときは、常にオブジェクトを操作します。 [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] に用意されている、コントロール、フォーム、データ アクセスなどのオブジェクトを使用できます。 他のアプリケーションのオブジェクトを、作成中の [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] アプリケーションの中で使用することもできます。 独自のオブジェクトを作成し、それらのプロパティとメソッドを追加で定義することもできます。 オブジェクトはプログラムの作成済みの構成要素として機能し、コードを一度記述すれば、何度も再利用できます。  
+[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] でアプリケーションを作成するときは、常にオブジェクトを操作します。 [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] に用意されている、コントロール、フォーム、データ アクセスなどのオブジェクトを使用できます。 他のアプリケーションのオブジェクトを、作成中の [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] アプリケーションの中で使用することもできます。 独自のオブジェクトを作成し、それらのプロパティとメソッドを追加で定義することもできます。 オブジェクトはプログラムの作成済みの構成要素として機能し、コードを一度記述すれば、何度も再利用できます。  
   
 このトピックでは、オブジェクトの詳細について説明します。  
 
 ## <a name="objects-and-classes"></a>オブジェクトとクラス
-[!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] 内のオブジェクトは、*クラス*によって定義されます。 クラスは、オブジェクトの変数、プロパティ、プロシージャ、およびイベントを記述します。 オブジェクトはクラスのインスタンスです。クラスを定義したら、必要な数のオブジェクトを作成することができます。
+[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] 内のオブジェクトは、*クラス*によって定義されます。 クラスは、オブジェクトの変数、プロパティ、プロシージャ、およびイベントを記述します。 オブジェクトはクラスのインスタンスです。クラスを定義したら、必要な数のオブジェクトを作成することができます。
 
 オブジェクトとそのクラス間の関係を理解するために、クッキーの抜き型とクッキーを考えてみましょう。 クッキーの抜き型はクラスです。 それは、クッキーの特徴 (大きさや形など) を定義します。 クラスを使用して、オブジェクトを作成します。 オブジェクトはクッキーです。
 
@@ -190,7 +190,7 @@ safetyTimer.Start()
 ## <a name="reusing-classes-and-objects"></a>クラスとオブジェクトの再利用  
 オブジェクトを使用すると、変数とプロシージャを 1 度宣言した後、必要に応じていつでもそれらを再利用できます。 たとえば、スペル チェック機能をアプリケーションに追加する場合は、スペル チェック機能を提供するためのすべての変数とサポート機能を定義することができます。 スペル チェック機能をクラスとして作成した場合は、コンパイルされたアセンブリへの参照を追加することで、他のアプリケーションで再利用できます。 さらに、誰かが既に開発したスペル チェック機能のクラスを使用することで、作業の手間を省くことができます。
 
-[!INCLUDE[dnprdnshort](../../../../csharp/getting-started/includes/dnprdnshort_md.md)] には、使用可能なコンポーネントの例が多数用意されています。 次の例では、<xref:System> 名前空間に <xref:System.TimeZone> クラスが使用されています。 <xref:System.TimeZone> は、現在のコンピューター システムのタイム ゾーンに関する情報を取得できるメンバーを提供します。
+[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] には、使用可能なコンポーネントの例が多数用意されています。 次の例では、<xref:System> 名前空間に <xref:System.TimeZone> クラスが使用されています。 <xref:System.TimeZone> は、現在のコンピューター システムのタイム ゾーンに関する情報を取得できるメンバーを提供します。
 
 ```vb
 Public Sub examineTimeZone()
@@ -258,7 +258,7 @@ End Sub
 オブジェクトを関連付けることのできる別の方法は、"*含有関係*" にすることです。 コンテナー オブジェクトは、その他のオブジェクトを論理的にカプセル化します。 たとえば、<xref:System.OperatingSystem> オブジェクトには、その <xref:System.OperatingSystem.Version%2A> プロパティによって返される <xref:System.Version> オブジェクトが論理的に含まれています。 コンテナー オブジェクトが物理的にその他のオブジェクトを含んでいるわけではないことに注意してください。
 
 #### <a name="collections"></a>コレクション
-特別な種類のオブジェクトの含有として、"*コレクション*" と表現されるものがあります。 コレクションは、列挙することができる類似のオブジェクトの集まりです。 [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] では、[For Each...Next ステートメント](../../../../visual-basic/language-reference/statements/for-each-next-statement.md) で特別な構文をサポートしています。このステートメントを使用して、コレクションの項目を反復処理することができます。 さらに、多くの場合、コレクションでは、<xref:Microsoft.VisualBasic.Collection.Item%2A> を使用して、その要素を、インデックスまたは一意の文字列の関連付けによって取得することができます。 コレクションは、インデックスなしで項目を削除または追加できるため、配列よりも簡単に使用できます。 簡単に使用できるため、多くの場合、コレクションは、フォームとコントロールを格納するために使用されます。
+特別な種類のオブジェクトの含有として、"*コレクション*" と表現されるものがあります。 コレクションは、列挙することができる類似のオブジェクトの集まりです。 [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] では、[For Each...Next ステートメント](../../../../visual-basic/language-reference/statements/for-each-next-statement.md) で特別な構文をサポートしています。このステートメントを使用して、コレクションの項目を反復処理することができます。 さらに、多くの場合、コレクションでは、<xref:Microsoft.VisualBasic.Collection.Item%2A> を使用して、その要素を、インデックスまたは一意の文字列の関連付けによって取得することができます。 コレクションは、インデックスなしで項目を削除または追加できるため、配列よりも簡単に使用できます。 簡単に使用できるため、多くの場合、コレクションは、フォームとコントロールを格納するために使用されます。
 
 ## <a name="related-topics"></a>関連トピック  
  [チュートリアル : クラスの定義](../../../../visual-basic/programming-guide/language-features/objects-and-classes/walkthrough-defining-classes.md)  
@@ -281,4 +281,3 @@ End Sub
 
  [方法 : 匿名型の宣言におけるプロパティ名と型を推論する](../../../../visual-basic/programming-guide/language-features/objects-and-classes/how-to-infer-property-names-and-types-in-anonymous-type-declarations.md)  
  匿名型で宣言されたプロパティの名前と型を推論する方法について説明します。 推論の成功例と失敗例を示します。
-

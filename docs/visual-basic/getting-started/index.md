@@ -30,10 +30,10 @@ translation.priority.mt:
 - pt-br
 - tr-tr
 ms.translationtype: Human Translation
-ms.sourcegitcommit: d3f21e32c162133e70a124da125c30afc7303738
-ms.openlocfilehash: ada42b9a033b548f5e2967040c44f7c790014211
+ms.sourcegitcommit: 31905a37f09db5f5192123f0118252fbe8b02eff
+ms.openlocfilehash: 3f3d00e8145620520697941c9002ea81f8de9044
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/15/2017
+ms.lasthandoff: 05/26/2017
 
 ---
 # <a name="getting-started-with-visual-basic"></a>Visual Basic の概要
@@ -62,25 +62,25 @@ Visual Basic .NET の各バージョンの新機能を一覧表示します。
   
  [サンプル](../../visual-basic/sample-applications.md)  
  
-          [!INCLUDE[vbprvb](../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] によるサンプル コードへのリンクを示します。  
+          [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] によるサンプル コードへのリンクを示します。  
   
  [チュートリアル](../../visual-basic/walkthroughs.md)  
  
-          [!INCLUDE[vbprvb](../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] 言語のさまざまな面を説明するヘルプ ページの一覧を示します。  
+          [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] 言語のさまざまな面を説明するヘルプ ページの一覧を示します。  
   
  [ご意見](https://docs.microsoft.com/visualstudio/ide/talk-to-us)  
  サポートの利用方法、およびフィードバックの送付方法について説明します。  
   
  [Visual Studio](https://docs.microsoft.com/en-us/visualstudio/)  
  
-          [!INCLUDE[vsprvs](../../csharp/includes/vsprvs_md.md)] のドキュメントへのリンクを示します。  
+          [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] のドキュメントへのリンクを示します。  
   
  [C#](../../csharp/csharp.md)  
  
-          [!INCLUDE[csprcs](../../csharp/includes/csprcs_md.md)] を使用したアプリケーション開発についてのドキュメントへのリンクを示します。  
+          [!INCLUDE[csprcs](~/includes/csprcs-md.md)] を使用したアプリケーション開発についてのドキュメントへのリンクを示します。  
   
  [Visual C++](https://docs.microsoft.com/cpp/)  
  Visual C++ のドキュメントへのリンクを示します。  
   
  [Office および SharePoint 開発](https://msdn.microsoft.com/library/d2tx7z6d)  
- Microsoft Office と [!INCLUDE[vsprvs](../../csharp/includes/vsprvs_md.md)] をビジネス アプリケーションの一部として使用する方法について説明します。
+ Microsoft Office と [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] をビジネス アプリケーションの一部として使用する方法について説明します。

@@ -18,10 +18,10 @@ author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.translationtype: Human Translation
-ms.sourcegitcommit: 39e8e757a446b30ab18914465853138e1c239e40
-ms.openlocfilehash: 31898c86adc687b63a1b7f02eee98aae9b16c5f7
+ms.sourcegitcommit: 84aadd0ccd7b5c786612d06ca0b46fb5aecd3d2b
+ms.openlocfilehash: d068da3253056712f0aab7d536d8faf7c836422b
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/22/2017
+ms.lasthandoff: 05/23/2017
 
 ---
 # <a name="mitigation-cspparametersparentwindowhandle-expects-an-hwnd"></a>軽減策: CspParameters.ParentWindowHandle で HWND を受け取る
@@ -46,9 +46,9 @@ cspParameters.ParentWindowHandle = form.Handle;
 
 ## <a name="mitigation"></a>軽減策
 
-正しい値が `form.Handle` 値を保持するメモリ位置のアドレスであると特定した場合、次のように <xref:System.Security.AppContext> スイッチ `Switch.System.Security.Cryptography.DoNotAddrOfCspParentWindowHandle` を `true` に変更することでこの動作の変更を解除することができます。
+正しい値が `form.Handle` 値を保持するメモリ位置のアドレスであると特定した場合、次のように <xref:System.AppContext> スイッチ `Switch.System.Security.Cryptography.DoNotAddrOfCspParentWindowHandle` を `true` に変更することでこの動作の変更を解除することができます。
 
-- プログラムで、<xref:System.Security.AppContext> インスタンスの互換性スイッチを設定する
+- プログラムで、<xref:System.AppContext> インスタンスの互換性スイッチを設定する
 
 - app.config ファイルの `<runtime>` セクションに以下の行を追加する:
    
@@ -58,7 +58,7 @@ cspParameters.ParentWindowHandle = form.Handle;
    </runtime>
    ```
 
-逆に、.NET Framework 4.7 で実行するアプリケーションには新しい動作を選択し、旧バージョンの .NET Framework バージョンをターゲットとする場合は、<xref:System.Security.AppContext> スイッチを `false` に設定できます。
+逆に、.NET Framework 4.7 で実行するアプリケーションには新しい動作を選択し、旧バージョンの .NET Framework バージョンをターゲットとする場合は、<xref:System.AppContext> スイッチを `false` に設定できます。
  
 ## <a name="see-also"></a>関連項目
 

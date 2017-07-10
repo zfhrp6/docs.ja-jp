@@ -31,18 +31,19 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 31cf21a3db5f5fc7ad980765cb54041c0e99c24b
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 31905a37f09db5f5192123f0118252fbe8b02eff
+ms.openlocfilehash: 1cc54088723bf8a7ff644cc418dd4f6212fc91f3
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/26/2017
 
 ---
 # <a name="visual-basic-language-features"></a>Visual Basic 言語の機能
-次のトピックでは、オブジェクト指向プログラミング言語である [!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] の必須コンポーネントを紹介して説明します。 フォームとコントロールを使用してアプリケーションのユーザー インターフェイスを作成した後、アプリケーションの動作を定義するコードを作成する必要があります。 他の最新のプログラミング言語と同じように、[!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] は、多数の一般的なプログラミング構成要素と言語要素をサポートしています。  
+次のトピックでは、オブジェクト指向プログラミング言語である [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] の必須コンポーネントを紹介して説明します。 フォームとコントロールを使用してアプリケーションのユーザー インターフェイスを作成した後、アプリケーションの動作を定義するコードを作成する必要があります。 他の最新のプログラミング言語と同じように、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] は、多数の一般的なプログラミング構成要素と言語要素をサポートしています。  
   
- 他の言語でプログラミングしたことがある場合、このセクションで説明されている内容の大半はすでに知っている可能性があります。 [!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] の構造体の大部分は他の言語の構造体と似ていますが、イベント ドリブン型という性質のため、いくつかの微妙な違いが発生しています。  
+ 他の言語でプログラミングしたことがある場合、このセクションで説明されている内容の大半はすでに知っている可能性があります。 [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] の構造体の大部分は他の言語の構造体と似ていますが、イベント ドリブン型という性質のため、いくつかの微妙な違いが発生しています。  
   
- プログラミングの経験がない場合、このセクションの説明は、コードを記述するための基礎を紹介するものになります。 基礎を理解したら、[!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] を使用して強力なアプリケーションを作成することができます。  
+ プログラミングの経験がない場合、このセクションの説明は、コードを記述するための基礎を紹介するものになります。 基礎を理解したら、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] を使用して強力なアプリケーションを作成することができます。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
  [配列](../../../visual-basic/programming-guide/language-features/arrays/index.md)  
@@ -79,7 +80,7 @@ ms.lasthandoff: 03/13/2017
  インターフェイスの概要と、アプリケーションでの使用方法について説明します。  
   
  [LINQ](../../../visual-basic/programming-guide/language-features/linq/index.md)  
- [!INCLUDE[vbteclinqext](../../../csharp/getting-started/includes/vbteclinqext_md.md)] の機能とプログラミングの概要を説明するトピックへのリンクを示します。  
+ [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] の機能とプログラミングの概要を説明するトピックへのリンクを示します。  
   
  [クラスとオブジェクト](../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md)  
  オブジェクトとクラスの概要、使用方法、相互関係、オブジェクトとクラスによって公開されるプロパティ、メソッド、イベントについて説明します。  
@@ -107,4 +108,4 @@ ms.lasthandoff: 03/13/2017
  .NET Framework で提供されているコレクションの種類について説明します。 単純なコレクションおよびキーと値のペアのコレクションを使用する方法を示します。  
   
  [Visual Basic の言語リファレンス](../../../visual-basic/language-reference/index.md)  
- [!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] でのプログラミングのさまざまな側面に関するリファレンス情報を提供します。
+ [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] でのプログラミングのさまざまな側面に関するリファレンス情報を提供します。
