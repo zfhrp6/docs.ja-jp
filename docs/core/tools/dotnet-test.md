@@ -11,24 +11,32 @@ ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: 4bf0aef4-148a-41c6-bb95-0a9e1af8762e
 ms.translationtype: Human Translation
-ms.sourcegitcommit: ae036cfcad341ffc859336a7ab2a49feec145715
-ms.openlocfilehash: 734cf337fdd0d33f6c2b6d929b795b2307135550
+ms.sourcegitcommit: 1cd1761d630f61a58f29d88e9342551d48cbc6a8
+ms.openlocfilehash: 0537dbbdfa61503069f6329c4163278f2c9b0af3
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/18/2017
+ms.lasthandoff: 06/20/2017
 
 ---
 
-#<a name="dotnet-test"></a>dotnet-test
+<a id="dotnet-test" class="xliff"></a>
 
-## <a name="name"></a>名前
+#dotnet-test
+
+<a id="name" class="xliff"></a>
+
+## 名前
 
 `dotnet-test` - 単体テストを実行するために使用される .NET テスト ドライバー。
 
-## <a name="synopsis"></a>構文
+<a id="synopsis" class="xliff"></a>
+
+## 構文
 
 `dotnet test [<PROJECT>] [-s|--settings] [-t|--list-tests] [--filter] [-a|--test-adapter-path] [-l|--logger] [-c|--configuration] [-f|--framework] [-o|--output] [-d|--diag] [--no-build] [-v|--verbosity] [-h|--help]`
 
-## <a name="description"></a>説明
+<a id="description" class="xliff"></a>
+
+## 説明
 
 `dotnet test` コマンドは、指定されたプロジェクトで単体テストを実行する場合に使用されます。 単体テストは、単体テスト フレームワーク (MSTest、NUnit、xUnit など) および単体テスト フレームワークの dotnet テスト ランナーに対する依存関係があるコンソール アプリケーションです。 これらは NuGet パッケージとしてパッケージ化され、プロジェクトの通常の依存関係として復元されます。
 
@@ -36,7 +44,9 @@ ms.lasthandoff: 05/18/2017
 
 [!code-xml[XUnit 基本テンプレート](../../../samples/snippets/csharp/xunit-test/xunit-test.csproj)]
 
-## <a name="options"></a>オプション
+<a id="options" class="xliff"></a>
+
+## オプション
 
 `PROJECT`
     
@@ -90,7 +100,9 @@ ms.lasthandoff: 05/18/2017
 
 コマンドの詳細レベルを設定します。 指定できる値は、`q[uiet]`、`m[inimal]`、`n[ormal]`、`d[etailed]`、および `diag[nostic]` です。
 
-## <a name="examples"></a>例
+<a id="examples" class="xliff"></a>
+
+## 例
 
 現在のディレクトリのプロジェクトでテストを実行します。
 
@@ -100,7 +112,9 @@ ms.lasthandoff: 05/18/2017
 
 `dotnet test ~/projects/test1/test1.csproj`
 
-## <a name="filter-option-details"></a>フィルター オプションの詳細
+<a id="filter-option-details" class="xliff"></a>
+
+## フィルター オプションの詳細
 
 `--filter <EXPRESSION>`
 
@@ -129,14 +143,16 @@ ms.lasthandoff: 05/18/2017
 
 | 演算子 | 関数 |
 | :------: | :------: |
-| `|`      | OR       |
+| <code>&#124;</code>      | OR       |
 | `&`      | AND      |
 
 条件演算子を使用する場合は、式をかっこで囲みます (例: `(Name~TestMethod1) | (Name~TestMethod2)`)。
 
 選択的単体テストのフィルター処理の使用方法に関する詳細と例については、「[Running selective unit tests (選択的単体テストの実行)](../testing/selective-unit-tests.md)」をご覧ください。
 
-## <a name="see-also"></a>関連項目
+<a id="see-also" class="xliff"></a>
+
+## 関連項目
 
 [フレームワークとターゲット](../../standard/frameworks.md)   
 [.NET Core のランタイム識別子 (RID) のカタログ](../rid-catalog.md)
