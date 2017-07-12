@@ -1,5 +1,5 @@
 ---
-title: "dotnet テストを使用した .NET Core での単体テスト | Microsoft Docs"
+title: "dotnet テストと xUnit を使用した .NET Core での単体テスト | Microsoft Docs"
 description: "dotnet テストを使用した .NET Core での単体テスト"
 keywords: .NET, .NET Core
 author: ardalis
@@ -10,18 +10,21 @@ ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: bdcdb812-6f13-4f20-9e90-0c0977937142
 ms.translationtype: Human Translation
-ms.sourcegitcommit: fe32676f0e39ed109a68f39584cf41aec5f5ce90
-ms.openlocfilehash: cc2e823be1a3d1c0267d98c95b25126bd7d048d4
+ms.sourcegitcommit: 06e1ecc181847f87df9ed3a527638008ca6857fc
+ms.openlocfilehash: b5c6d162adf363da41c4c60fdd9fe38e1d58d27a
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/10/2017
+ms.lasthandoff: 05/22/2017
 
 ---
+<a id="unit-testing-in-net-core-using-dotnet-test-and-xunit" class="xliff"></a>
 
-# <a name="unit-testing-in-net-core-using-dotnet-test"></a>dotnet テストを使用した .NET Core での単体テスト
+# dotnet テストと xUnit を使用した .NET Core での単体テスト
 
 このチュートリアルでは、単体テストの概念について学習するためにサンプル ソリューションを段階的に構築する対話型のエクスペリエンスを示します。 構築済みのソリューションを使用してチュートリアルに従う場合は、開始する前に[サンプル コードを参照またはダウンロード](https://github.com/dotnet/docs/tree/master/samples/core/getting-started/unit-testing-using-dotnet-test/)してください。 ダウンロード方法については、「[サンプルおよびチュートリアル](../../samples-and-tutorials/index.md#viewing-and-downloading-samples)」を参照してください。
 
-### <a name="creating-the-source-project"></a>ソース プロジェクトの作成
+<a id="creating-the-source-project" class="xliff"></a>
+
+### ソース プロジェクトの作成
 
 シェル ウィンドウを開きます。 ソリューションを保持するための *unit-testing-using-dotnet-test* というディレクトリを作成します。 この新しいディレクトリ内に、*PrimeService* ディレクトリを作成します。 現時点のディレクトリ構造は次のようになっています。
 
@@ -47,7 +50,9 @@ namespace Prime.Services
 }
 ```
 
-### <a name="creating-the-test-project"></a>テスト プロジェクトの作成
+<a id="creating-the-test-project" class="xliff"></a>
+
+### テスト プロジェクトの作成
 
 *unit-testing-using-dotnet-test* ディレクトリに戻り、*PrimeService.Tests* ディレクトリを作成します。 ディレクトリ構造は次のようになります。
 
@@ -97,7 +102,9 @@ dotnet add reference ../PrimeService/PrimeService.csproj
         PrimeServiceTests.csproj
 ```
 
-## <a name="creating-the-first-test"></a>最初のテストの作成
+<a id="creating-the-first-test" class="xliff"></a>
+
+## 最初のテストの作成
 
 ライブラリまたはテストを構築する前に、*PrimeService.Tests* ディレクトリで [`dotnet restore`](../tools/dotnet-restore.md) を実行します。 このコマンドにより、各プロジェクトの必要なすべての NuGet パッケージが復元されます。
 
@@ -146,7 +153,9 @@ public bool IsPrime(int candidate)
 
 *PrimeService.Tests* ディレクトリで、`dotnet test` をもう一度実行します。 `dotnet test` コマンドは `PrimeService` プロジェクトのビルドを実行してから、`PrimeService.Tests` プロジェクトのビルドを実行します。 両方のプロジェクトをビルドすると、この単一テストが実行されます。 成功します。
 
-### <a name="adding-more-features"></a>他の機能の追加
+<a id="adding-more-features" class="xliff"></a>
+
+### 他の機能の追加
 
 テストが成功したので、他のテストも記述してみましょう。 素数に関する、いくつかの単純なケースが他にもあります (0、-1)。 これらは `[Fact]` 属性を使用して新しいテストとして追加できますが、すぐに煩雑になります。 一連の類似のテストを記述できるようになる、他の xUnit 属性があります。  `[Theory]` 属性は同じコードを実行するものの、異なる入力引数が含まれる一連のテストを表します。 `[InlineData]` 属性を使用して、そのような入力の値を指定することができます。 
  

@@ -1,5 +1,5 @@
 ---
-title: "サンプルおよびチュートリアル"
+title: "サンプルとチュートリアル | Microsoft Docs"
 description: ".NET Core、ASP.NET Core、C# 言語に関する、.NET の学習に役立つサンプルとチュートリアルの情報です。"
 keywords: ".NET、.NET Core、ASP.NET、C#、サンプル、チュートリアル"
 author: BillWagner
@@ -9,26 +9,35 @@ ms.topic: article
 ms.prod: .net
 ms.devlang: dotnet
 ms.assetid: 617310e7-336b-4864-8dab-7e2021512929
-translationtype: Human Translation
-ms.sourcegitcommit: 890c058bd09893c2adb185e1d8107246eef2e20a
-ms.openlocfilehash: 977dd60bb21b466a6bec357a6dec73aa9a931ead
-ms.lasthandoff: 05/02/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 4437ce5d344cf06d30e31911def6287999fc6ffc
+ms.openlocfilehash: 65c55837d6ccb93373b84aa4bdef416bdf4fa75a
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/23/2017
 
 ---
 
-# <a name="samples-and-tutorials"></a>サンプルおよびチュートリアル
+<a id="samples-and-tutorials" class="xliff"></a>
+
+# サンプルおよびチュートリアル
 
 .NET ドキュメントには、.NET について学習できるサンプルとチュートリアルが含まれています。 ここでは、.NET Core、ASP.NET Core、C# のサンプルを検索、表示、ダウンロードする方法について説明します。 F# プログラミング言語の学習に最適なリソースは [F# Foundation のサイト](http://fsharp.org/learn.html)にあります。 オンライン コード エディターを使用した C# の学習に関心がある場合は、[インタラクティブ チュートリアル](http://go.microsoft.com/fwlink/p/?LinkId=817234)をお試しください。 サンプル コードの表示とダウンロード方法については、「[サンプルの表示とダウンロード](#viewing-and-downloading-samples)」セクションをご覧ください。
 
-## <a name="net-core"></a>.NET Core
+<a id="net-core" class="xliff"></a>
 
-### <a name="samples"></a>サンプル
+## .NET Core
+
+<a id="samples" class="xliff"></a>
+
+### サンプル
 
 **[dotnet テストを使用した .NET Core での単体テスト](../core/testing/unit-testing-with-dotnet-test.md)**
 
-このガイドでは、ASP.NET Core の Web アプリと、関連する単体テストの作成方法について説明します。 最初に簡単な Web サービス アプリを作成し、テストを追加した後、 さらにテストを作成して、新しい機能の実装について説明します。 [完全なサンプル](https://github.com/dotnet/docs/tree/master/samples/core/getting-started/unit-testing-using-dotnet-test)は、GitHub の dotnet/docs リポジトリにあります。
+このガイドでは、ASP.NET Core の Web アプリと、関連する単体テストの作成方法について説明します。 最初に単純な Web サービス アプリを作成し、それからテストを追加します。 さらに多くのテストを作成し、新機能実装を指導します。 [完全なサンプル](https://github.com/dotnet/docs/tree/master/samples/core/getting-started/unit-testing-using-dotnet-test)は、GitHub の dotnet/docs リポジトリにあります。
 
-### <a name="tutorials"></a>チュートリアル
+<a id="tutorials" class="xliff"></a>
+
+### チュートリアル
 
 **[CLI ツールを使用する .NET Core コンソール アプリの作成: 手順ガイド](../core/tutorials/using-with-xplat-cli.md)**
 
@@ -38,13 +47,19 @@ ms.lasthandoff: 05/02/2017
 
 このサンプルでは、クロスプラットフォーム CLI ツールを使用して .NET 用ライブラリを作成する方法について説明します。 これらのツールは、サポートされる任意のオペレーティング システムで動作する効率的で低レベルのエクスペリエンスを提供します。 [完全なサンプル](https://github.com/dotnet/docs/tree/master/samples/framework/libraries/frameworks-library)は、GitHub の dotnet/docs リポジトリにあります。
 
-## <a name="aspnet-core"></a>ASP.NET Core
+<a id="aspnet-core" class="xliff"></a>
+
+## ASP.NET Core
 
 [ASP.NET Core のチュートリアル](https://docs.microsoft.com/aspnet/core/tutorials/)をご覧ください。 ASP.NET Core に関するドキュメントの記事の多くには、サンプルへのリンクが含まれています。
 
-## <a name="c-language"></a>C# 言語
+<a id="c-language" class="xliff"></a>
 
-### <a name="samples"></a>サンプル
+## C# 言語
+
+<a id="samples" class="xliff"></a>
+
+### サンプル
 
 **[反復子](../csharp/iterators.md)**
 
@@ -66,7 +81,9 @@ ms.lasthandoff: 05/02/2017
 
 この一連のサンプルは、統合言語クエリ (LINQ) の多くの機能を示しています。 [完全なサンプル](https://github.com/dotnet/docs/tree/master/samples/core/linq/csharp)は、GitHub の dotnet/docs リポジトリにあります。
 
-### <a name="tutorials"></a>チュートリアル
+<a id="tutorials" class="xliff"></a>
+
+### チュートリアル
 
 **[コンソール アプリケーション](../csharp/tutorials/console-teleprompter.md)**
 
@@ -92,7 +109,9 @@ ms.lasthandoff: 05/02/2017
 
 このチュートリアルでは、再利用可能なライブラリと単体テストを含む完全な .NET Core ソリューションを構築する方法を示します。
 
-## <a name="deploying-to-containers"></a>コンテナーへの展開
+<a id="deploying-to-containers" class="xliff"></a>
+
+## コンテナーへの展開
 
 **[Windows Docker コンテナーでの ASP.NET MVC アプリケーションの実行](../framework/docker/aspnetmvc.md)**
 
@@ -102,7 +121,9 @@ ms.lasthandoff: 05/02/2017
 
 このチュートリアルでは、Windows コンテナーで既存のコンソール アプリを展開する方法について説明します。 [完全なサンプル](https://github.com/dotnet/docs/tree/master/samples/framework/docker/ConsoleRandomAnswerGenerator)は、GitHub の dotnet/docs リポジトリにあります。
 
-## <a name="viewing-and-downloading-samples"></a>サンプルの表示とダウンロード
+<a id="viewing-and-downloading-samples" class="xliff"></a>
+
+## サンプルの表示とダウンロード
 
 多くのトピックには、GitHub から表示またはダウンロードできるソース コードとサンプルが示されています。 サンプルを表示するには、サンプルへのリンクをクリックしてください。 コードをダウンロードするには、次の手順に従います。
 

@@ -1,5 +1,5 @@
 ---
-title: ".NET Core の概要"
+title: ".NET Core の概要 | Microsoft Docs"
 description: "Windows、Linux、macOS で .NET Core アプリケーションをビルドする方法を学習するためのリソースを示します。"
 keywords: .NET, .NET Core
 author: mairaw
@@ -10,18 +10,22 @@ ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: d1453a0d-317c-4da6-b68e-422a2c0bfe49
 ms.translationtype: Human Translation
-ms.sourcegitcommit: d00f2096e0799107a8a2ff1d12274c6026d4c27a
-ms.openlocfilehash: 983a015557cdf09f660e84b32306662b924695aa
+ms.sourcegitcommit: b64eb0d8f1778a4834ecce5d2ced71e0741dbff3
+ms.openlocfilehash: b187cae8477a0395ca9b7edbbe170ae9e6be4220
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/14/2017
+ms.lasthandoff: 05/27/2017
 
 ---
 
-# <a name="get-started-with-net-core"></a>.NET Core の概要
+<a id="get-started-with-net-core" class="xliff"></a>
+
+# .NET Core の概要
 
 .NET Core は、[Windows](#windows)、[Linux](#linux)、および [macOS / OS X](#os-x--macos) で実行されます。
 
-## <a name="windows"></a>Windows
+<a id="windows" class="xliff"></a>
+
+## Windows
 
 [Windows](https://www.microsoft.com/net/core#windows) に .NET Core をインストールします。 
 
@@ -35,7 +39,9 @@ ms.lasthandoff: 05/14/2017
 
 サポートされている Windows のバージョンの一覧については、[Windows 開発の前提条件](windows-prerequisites.md)に関するページをご覧ください。 
 
-## <a name="linux"></a>Linux
+<a id="linux" class="xliff"></a>
+
+## Linux
 
 使用している配布/バージョンに .NET Core をインストールします。
 
@@ -53,14 +59,16 @@ ms.lasthandoff: 05/14/2017
 
 .NET Core は、インストールのリンクで上述されている Linux 配布とバージョンでサポートされています。
 
-## <a name="os-x--macos"></a>OS X / macOS
+<a id="os-x--macos" class="xliff"></a>
+
+## OS X / macOS
 
 [macOS](https://www.microsoft.com/net/core#macos) に .NET Core をインストールします。 .NET Core は、OS X El Capitan (バージョン 10.11) および macOS Sierra (バージョン 10.12) でサポートされています。
 
 次のステップ バイ ステップのチュートリアルに従って、.NET Core アプリの開発を開始できます。
 
 * [macOS で C# および .NET Core を使用した Visual Studio Code の概要](https://channel9.msdn.com/Blogs/dotnet/Get-started-VSCode-NET-Core-Mac) - この [Channel9](https://channel9.msdn.com) ビデオでは、.NET Core で最初のコンソール アプリケーションを作成するために、Microsoft の簡易クロスプラットフォーム コード エディターである [Visual Studio Code](https://code.visualstudio.com/) をインストールして使用する方法を示します。 
-* [Visual Studio Code を使用した macOS での .NET Core の概要](tutorials/using-on-macos.md) - 単体テスト、サードパーティ製のライブラリ、デバッグ ツールの使用方法を含む、VS コードを使用した .NET Core ソリューションを作成するための手順やワークフローのツアーです。
+* [Visual Studio Code を使用した macOS での .NET Core の概要](tutorials/using-on-macos.md) - 単体テスト、サードパーティ製のライブラリ、デバッグ ツールの使用方法を含む、Visual Studio コードを使用した .NET Core ソリューションを作成するための手順やワークフローのツアーです。
 * [コマンドラインを使用した .NET Core の概要](tutorials/using-with-xplat-cli.md) - [.NET Core クロスプラットフォーム コマンドライン インターフェイス (CLI)](tools/index.md) で任意のコード エディターを使用します。
 * [Visual Studio for Mac を使用した macOS での .NET Core の概要](tutorials/using-on-mac-vs.md) - このチュートリアルでは、Visual Studio for Mac を使用して単純な .NET Core コンソール アプリケーションを構築する方法を示します。
 * [Visual Studio for Mac を使用した macOS での完全な .NET Core ソリューションの構築](tutorials/using-on-mac-vs-full-solution.md) - このチュートリアルでは、再利用可能なライブラリと単体テストを含む完全な .NET Core ソリューションを構築する方法を示します。

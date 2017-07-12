@@ -1,5 +1,5 @@
 ---
-title: ".NET Core のランタイム識別子 (RID) のカタログ"
+title: ".NET Core のランタイム識別子 (RID) のカタログ | Microsoft Docs"
 description: ".NET Core のランタイム識別子 (RID) のカタログ"
 keywords: .NET, .NET Core
 author: blackdwarf
@@ -9,16 +9,21 @@ ms.topic: article
 ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: b2032f5d-771f-48d9-917c-587d9509035c
-translationtype: Human Translation
-ms.sourcegitcommit: 811b9539019b7cc2817b5742760ae52fbc2f95dd
-ms.openlocfilehash: fc59a9f3333f01caf9622dd500a5de6e2ae5132b
-ms.lasthandoff: 03/02/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 4437ce5d344cf06d30e31911def6287999fc6ffc
+ms.openlocfilehash: 904b9be05cd2e5337272ce7ddce15b1075fbefeb
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/23/2017
 
 ---
 
-# <a name="net-core-runtime-identifier-rid-catalog"></a>.NET Core のランタイム識別子 (RID) のカタログ
+<a id="net-core-runtime-identifier-rid-catalog" class="xliff"></a>
 
-## <a name="what-are-rids"></a>RID とは何か。
+# .NET Core のランタイム識別子 (RID) のカタログ
+
+<a id="what-are-rids" class="xliff"></a>
+
+## RID とは何か。
 RID は*ランタイム識別子*の略です。 RID は、アプリケーションやアセット (つまり、アセンブリ) が実行されるターゲット オペレーティング システムを特定するために利用されます。 "ubuntu.14.04-x64"、"win7-x64"、"osx.10.11-x64" のような識別子です。 ネイティブ依存関係のあるパッケージの場合、パッケージを復元できるプラットフォームが指定されます。 
 
 重要なことですが、RID は不透明な文字列です。 つまり、それを利用する操作に適合する必要があります。 たとえば、[Elementary OS](https://elementary.io/) の場合を考えてみます。これは Ubuntu 14.04 の単純なクローンです。 .NET Core と CLI はこのバージョンの Ubuntu の上で動作しますが、変更せずに Elementary OS の上で使用すると、パッケージの復元に失敗します。 これは、現在のところ、Elementary OS をプラットフォームとして指名する RID がないためです。 
@@ -59,13 +64,17 @@ RID グラフは「`runtime.json`」という名前のファイルに入って�
 * プラットフォームに既に定義されている RID を使用する必要があり、それは本書で説明するとおりです
 * RID は限定する必要がなく、実際の RID 値からは何も推測しないでください (特定のプラットフォームに必要な RID については本書を参照してください)
 
-## <a name="using-rids"></a>RID の使用
+<a id="using-rids" class="xliff"></a>
+
+## RID の使用
 RID を使用するには、どのような RID があるのか知る必要があります プラットフォームには新しい RID が定期的に追加されます。 最新バージョンについては、CoreFX リポジトリの [runtime.json](https://github.com/dotnet/corefx/blob/master/pkg/Microsoft.NETCore.Platforms/runtime.json) ファイルをご覧ください。
 
 > [!NOTE]
 > この情報をよりインタラクティブな形式にするために取り組んでいます。 それが実現した際には、このページを更新し、そのツールと使用方法が記載されたドキュメントを紹介します。 
 
-## <a name="windows-rids"></a>Windows RID
+<a id="windows-rids" class="xliff"></a>
+
+## Windows RID
 
 * Windows 7 / Windows Server 2008 R2
     * `win7-x64`
@@ -84,7 +93,9 @@ RID を使用するには、どのような RID があるのか知る必要が�
     * `win10-arm`
     * `win10-arm64`
 
-## <a name="linux-rids"></a>Linux RID
+<a id="linux-rids" class="xliff"></a>
+
+## Linux RID
 
 * Red Hat Enterprise Linux
     * `rhel.7-x64`
@@ -117,7 +128,9 @@ RID を使用するには、どのような RID があるのか知る必要が�
     * `linuxmint.17.3-x64`
     * `linuxmint.18-x64`
 
-## <a name="os-x-rids"></a>OS X RID
+<a id="os-x-rids" class="xliff"></a>
+
+## OS X RID
 
 * `osx.10.10-x64`
 * `osx.10.11-x64`
