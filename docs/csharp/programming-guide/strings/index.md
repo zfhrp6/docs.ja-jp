@@ -28,28 +28,37 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: 7e33ed084c560470a486ebbb25035a59ddc18565
-ms.openlocfilehash: 5ec9d6aebcb38e89aa21b86cbd005c594bf756e6
-ms.lasthandoff: 03/31/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 4f1f23bd4d95e617fadc64f4d3a30c5fa1fda85b
+ms.openlocfilehash: 699e9291400797ed1bedcb3686fdfe7848305726
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/30/2017
 
 ---
-# <a name="strings-c-programming-guide"></a>文字列 (C# プログラミング ガイド)
-文字列は、値がテキストである <xref:System.String> 型のオブジェクトです。 内部では、テキストは <xref:System.Char> オブジェクトの順次読み取り専用コレクションとして格納されます。 C# の文字列の末尾には null 終端文字はありません。したがって、C# の文字列には任意の数の null 文字 ('\0') を埋め込むことができます。 文字列の <xref:System.String.Length%2A> プロパティは、Unicode 文字の数ではなく、文字列に含まれている `Char` オブジェクトの数を表します。 文字列内の個別の Unicode コード ポイントにアクセスするには、<xref:System.Globalization.StringInfo> オブジェクトを使用します。  
+<a id="strings-c-programming-guide" class="xliff"></a>
+
+# 文字列 (C# プログラミング ガイド)
+文字列は、値がテキストの <xref:System.String> 型のオブジェクトです。 内部では、テキストは <xref:System.Char> オブジェクトの順次読み取り専用コレクションとして格納されます。 C# の文字列の末尾には null 終端文字はありません。したがって、C# の文字列には任意の数の null 文字 ('\0') を埋め込むことができます。 文字列の <xref:System.String.Length%2A> プロパティは、Unicode 文字の数ではなく、文字列に含まれている `Char` オブジェクトの数を表します。 文字列内の個別の Unicode コード ポイントにアクセスするには、<xref:System.Globalization.StringInfo> オブジェクトを使用します。  
   
-## <a name="string-vs-systemstring"></a>文字列と System.String  
+<a id="string-vs-systemstring" class="xliff"></a>
+
+## 文字列と System.String  
  C# では、`string` キーワードは <xref:System.String> のエイリアスです。 したがって、`String` と `string` は等価であり、どちらの名前付け規則を使用してもかまいません。 `String` クラスは、文字列を安全に作成、操作、比較するためのさまざまなメソッドを提供します。 また、C# 言語は、一般的な文字列操作を簡略化するためにいくつかの演算子をオーバーロードします。 キーワードの詳細については、「[string](../../../csharp/language-reference/keywords/string.md)」を参照してください。 型およびメソッドの詳細については、「<xref:System.String>」を参照してください。  
   
-## <a name="declaring-and-initializing-strings"></a>文字列の宣言と初期化  
+<a id="declaring-and-initializing-strings" class="xliff"></a>
+
+## 文字列の宣言と初期化  
  次の例に示すように、文字列はさまざまな方法で宣言および初期化できます。  
   
  [!code-cs[csProgGuideStrings#1](../../../csharp/programming-guide/strings/codesnippet/CSharp/index_1.cs)]  
   
  文字列を文字の配列で初期化する場合を除き、文字列オブジェクトの作成に [new](../../../csharp/language-reference/keywords/new-operator.md) 演算子を使用しないでください。  
   
- 文字列の長さが 0 の新しい <xref:System.String> オブジェクトを作成するには、<xref:System.String.Empty> 定数値で文字列を初期化します。 長さ 0 の文字列のリテラル文字列表現は "" です。 [null](../../../csharp/language-reference/keywords/null.md) ではなく <xref:System.String.Empty> 値で文字列を初期化することで、<xref:System.NullReferenceException> が発生する可能性が低くなります。 アクセス前に文字列の値を確認するには、静的な <xref:System.String.IsNullOrEmpty%28System.String%29> メソッドを使用します。  
+ 文字列の長さが 0 の新しい <xref:System.String> オブジェクトを作成するには、<xref:System.String.Empty> 定数値で文字列を初期化します。 長さ 0 の文字列のリテラル文字列表現は "" です。 [null](../../../csharp/language-reference/keywords/null.md) の代わりに <xref:System.String.Empty> 値を使用して文字列を初期化すると、<xref:System.NullReferenceException> が発生する可能性を減らすことができます。 静的な <xref:System.String.IsNullOrEmpty%28System.String%29> メソッドを使用すると、アクセスを試行する前に文字列の値を検証できます。  
   
-## <a name="immutability-of-string-objects"></a>文字列オブジェクトの不変性  
+<a id="immutability-of-string-objects" class="xliff"></a>
+
+## 文字列オブジェクトの不変性  
  文字列オブジェクトは*変更不可*です。つまり、作成した文字列オブジェクトは変更できません。 文字列を変更するように見える <xref:System.String> メソッドと C# 演算子はすべて、実際には新しい文字列オブジェクトで結果を返します。 次の例では、`s1` と `s2` の内容を連結して 1 つの文字列を形成するときに、2 つの元の文字列は変更されません。 `+=` 演算子で、連結した内容を含む新しい文字列が作成されます。 新しいオブジェクトは変数 `s1` に代入され、`s1` に代入された元のオブジェクトはガベージ コレクションに対して解放されます。これは、他の変数がこのオブジェクトへの参照を保持していないためです。  
   
  [!code-cs[csProgGuideStrings#2](../../../csharp/programming-guide/strings/codesnippet/CSharp/index_2.cs)]  
@@ -60,7 +69,9 @@ ms.lasthandoff: 03/31/2017
   
  元の文字列での検索操作や置換操作などの変更に基づく新しい文字列を作成する方法の詳細については、「[方法: 文字列の内容を変更する](../../../csharp/programming-guide/strings/how-to-modify-string-contents.md)」を参照してください。  
   
-## <a name="regular-and-verbatim-string-literals"></a>標準リテラル文字列と逐語的リテラル文字列  
+<a id="regular-and-verbatim-string-literals" class="xliff"></a>
+
+## 標準リテラル文字列と逐語的リテラル文字列  
  次の例に示すように、C# で提供されるエスケープ文字を埋め込む必要がある場合は、標準リテラル文字列を使用します。  
   
  [!code-cs[csProgGuideStrings#3](../../../csharp/programming-guide/strings/codesnippet/CSharp/index_4.cs)]  
@@ -69,13 +80,15 @@ ms.lasthandoff: 03/31/2017
   
  [!code-cs[csProgGuideStrings#4](../../../csharp/programming-guide/strings/codesnippet/CSharp/index_5.cs)]  
   
-## <a name="string-escape-sequences"></a>文字列のエスケープ シーケンス  
+<a id="string-escape-sequences" class="xliff"></a>
+
+## 文字列のエスケープ シーケンス  
   
 |エスケープ シーケンス|文字名|Unicode エンコーディング|  
 |---------------------|--------------------|----------------------|  
 |\\'|単一引用符|0x0027|  
 |\\"|二重引用符|0x0022|  
-|\\\|円記号|0x005C|  
+|\\\\ |円記号|0x005C|  
 |\0|Null|0x0000|  
 |\a|警告|0x0007|  
 |\b|バックスペース|0x0008|  
@@ -91,19 +104,25 @@ ms.lasthandoff: 03/31/2017
 > [!NOTE]
 >  コンパイル時に、逐語的文字列はエスケープ シーケンスと同様に通常の文字列に変換されます。 したがって、逐語的文字列をデバッガーのウォッチ ウィンドウで表示すると、ソース コードの逐語的バージョンではなく、コンパイラが追加したエスケープ文字が表示されます。 たとえば、逐語的文字列 @"C:\files.txt" は、ウォッチ ウィンドウでは "C:\\\files.txt" と表示されます。  
   
-## <a name="format-strings"></a>書式指定文字列  
+<a id="format-strings" class="xliff"></a>
+
+## 書式指定文字列  
  書式指定文字列は、内容が実行時に動的に決定される文字列です。 静的な <xref:System.String.Format%2A> メソッドを使用して、実行時に他の値に置換されるプレースホルダーを中かっこ内に埋め込むことで、書式指定文字列を作成します。 書式指定文字列を使用して、ループの各反復処理の結果を出力する例を次に示します。  
   
  [!code-cs[csProgGuideStrings#26](../../../csharp/programming-guide/strings/codesnippet/CSharp/index_6.cs)]  
   
- <xref:System.Console.WriteLine%2A> メソッドのオーバーロードは、パラメーターとして書式指定文字列を受け取ります。 したがって、メソッドを明示的に呼び出さずに書式指定リテラル文字列を埋め込むことができます。 ただし、<xref:System.Diagnostics.Trace.WriteLine%2A> メソッドを使用して Visual Studio の **[出力]** ウィンドウにデバッグ出力を表示する場合は、<xref:System.String.Format%2A> メソッドを明示的に呼び出す必要があります。これは、<xref:System.Diagnostics.Trace.WriteLine%2A> は、書式指定文字列ではなく文字列のみを受け入れるためです。 書式指定文字列の詳細については、「[型の書式設定](../../../standard/base-types/formatting-types.md)」を参照してください。  
+ <xref:System.Console.WriteLine%2A> メソッドのオーバーロードは、パラメーターとして書式指定文字列を受け取ります。 したがって、メソッドを明示的に呼び出さずに書式指定リテラル文字列を埋め込むことができます。 ただし、Visual Studio の [**出力**] ウィンドウにデバッグ出力を表示するために <xref:System.Diagnostics.Trace.WriteLine%2A> メソッドを使用する場合、<xref:System.Diagnostics.Trace.WriteLine%2A> は書式文字列ではなく、文字列のみを受け入れるので、明示的に <xref:System.String.Format%2A> メソッドを呼び出す必要があります。 書式指定文字列の詳細については、「[型の書式設定](../../../standard/base-types/formatting-types.md)」を参照してください。  
   
-## <a name="substrings"></a>部分文字列  
- 部分文字列は、1 つの文字列に含まれる一連の文字です。 元の文字列の一部から新しい文字列を作成するには、<xref:System.String.Substring%2A> メソッドを使用します。 <xref:System.String.IndexOf%2A> メソッドを使用して、1 つまたは複数の部分文字列を検索できます。 指定されたすべての部分文字列を新しい文字列に置換するには、<xref:System.String.Replace%2A> メソッドを使用します。 <xref:System.String.Substring%2A> メソッドと同様に、<xref:System.String.Replace%2A> は実際には新しい文字列を返し、元の文字列は変更しません。 詳細については、「[方法: String のメソッドを使用して文字列を検索する](../../../csharp/programming-guide/strings/how-to-search-strings-using-string-methods.md)」および「[方法: 文字列の内容を変更する](../../../csharp/programming-guide/strings/how-to-modify-string-contents.md)」を参照してください。  
+<a id="substrings" class="xliff"></a>
+
+## 部分文字列  
+ 部分文字列は、1 つの文字列に含まれる一連の文字です。 元の文字列の一部から新しい文字列を作成するには、<xref:System.String.Substring%2A> メソッドを使用します。 <xref:System.String.IndexOf%2A> メソッドを使用して、1 つまたは複数の部分文字列を検索できます。 指定されたすべての部分文字列を新しい文字列に置換するには、<xref:System.String.Replace%2A> メソッドを使用します。 <xref:System.String.Substring%2A> メソッドと同様に、<xref:System.String.Replace%2A> は実際に新しい文字列を返し、元の文字列は変更しません。 詳細については、「[方法: String のメソッドを使用して文字列を検索する](../../../csharp/programming-guide/strings/how-to-search-strings-using-string-methods.md)」および「[方法: 文字列の内容を変更する](../../../csharp/programming-guide/strings/how-to-modify-string-contents.md)」を参照してください。  
   
  [!code-cs[csProgGuideStrings#7](../../../csharp/programming-guide/strings/codesnippet/CSharp/index_7.cs)]  
   
-## <a name="accessing-individual-characters"></a>各文字へのアクセス  
+<a id="accessing-individual-characters" class="xliff"></a>
+
+## 各文字へのアクセス  
  次の例に示すように、配列表記とインデックス値を使用すると、それぞれの文字への読み取り専用アクセスが可能になります。  
   
  [!code-cs[csProgGuideStrings#9](../../../csharp/programming-guide/strings/codesnippet/CSharp/index_8.cs)]  
@@ -112,18 +131,22 @@ ms.lasthandoff: 03/31/2017
   
  [!code-cs[csProgGuideStrings#8](../../../csharp/programming-guide/strings/codesnippet/CSharp/index_9.cs)]  
   
-## <a name="null-strings-and-empty-strings"></a>null 文字列と空の文字列  
- 空の文字列は、文字数ゼロの <xref:System.String?displayProperty=fullName> オブジェクトのインスタンスです。 空の文字列は、空のテキスト フィールドを表すため、さまざまなプログラミング シナリオでよく使用されます。 空の文字列は有効な <xref:System.String?displayProperty=fullName> オブジェクトなので、メソッドを呼び出すことができます。 空の文字列は、次のように初期化されます。  
+<a id="null-strings-and-empty-strings" class="xliff"></a>
+
+## null 文字列と空の文字列  
+ 空の文字列はゼロ文字を含む <xref:System.String?displayProperty=fullName> オブジェクトのインスタンスです。 空の文字列は、空のテキスト フィールドを表すため、さまざまなプログラミング シナリオでよく使用されます。 有効な <xref:System.String?displayProperty=fullName> オブジェクトであるため、空の文字列でメソッドを呼び出すことができます。 空の文字列は、次のように初期化されます。  
   
 ```  
 string s = String.Empty;  
 ```  
   
- 一方、null 文字列は <xref:System.String?displayProperty=fullName> オブジェクトのインスタンスを参照しないので、null 文字列でメソッドを呼び出そうとすると <xref:System.NullReferenceException> が発生します。 しかし、null 文字列を他の文字列に連結したり、他の文字列と比較することは可能です。 次に、null 文字列の参照によって例外がスローされる場合とされない場合の例を示します。  
+ これに対し、null 文字列は <xref:System.String?displayProperty=fullName> オブジェクトのインスタンスを参照しないので、null 文字列でメソッドを呼び出そうとすると <xref:System.NullReferenceException> が発生します。 しかし、null 文字列を他の文字列に連結したり、他の文字列と比較することは可能です。 次に、null 文字列の参照によって例外がスローされる場合とされない場合の例を示します。  
   
  [!code-cs[csProgGuideStrings#27](../../../csharp/programming-guide/strings/codesnippet/CSharp/index_10.cs)]  
   
-## <a name="using-stringbuilder-for-fast-string-creation"></a>文字列を迅速に作成するための StringBuilder の使用  
+<a id="using-stringbuilder-for-fast-string-creation" class="xliff"></a>
+
+## 文字列を迅速に作成するための StringBuilder の使用  
  .NET での文字列操作は高度に最適化されており、ほとんどの場合パフォーマンスに大きく影響することはありません。 ただし、短いループが数百回または数千回実行されている場合など、シナリオによっては文字列操作がパフォーマンスに影響する可能性があります。 <xref:System.Text.StringBuilder> クラスが作成する文字列バッファーにより、プログラムで大量の文字列操作を実行する場合のパフォーマンスが向上します。 <xref:System.Text.StringBuilder> 文字列を使用すると、組み込み文字列データ型ではサポートされていない個別の文字を再割り当てできます。 たとえば、このコードでは、新しい文字列を作成せずに、文字列の内容を変更します。  
   
  [!code-cs[csProgGuideStrings#20](../../../csharp/programming-guide/strings/codesnippet/CSharp/index_11.cs)]  
@@ -132,10 +155,14 @@ string s = String.Empty;
   
  [!code-cs[csProgGuideStrings#15](../../../csharp/programming-guide/strings/codesnippet/CSharp/index_12.cs)]  
   
-## <a name="strings-extension-methods-and-linq"></a>文字列、拡張メソッド、LINQ  
- <xref:System.String> 型は <xref:System.Collections.Generic.IEnumerable%601> を実装するため、<xref:System.Linq.Enumerable> クラスで定義されている拡張メソッドを文字列で使用できます。 見やすさを考慮して、これらのメソッドは <xref:System.String> 型の IntelliSense からは除外されていますが、使用できます。 文字列で [!INCLUDE[vbteclinq](../../../csharp/includes/vbteclinq_md.md)] クエリ式を使用することもできます。 詳細については、「[LINQ と文字列](../../../csharp/programming-guide/concepts/linq/linq-and-strings.md)」を参照してください。  
+<a id="strings-extension-methods-and-linq" class="xliff"></a>
+
+## 文字列、拡張メソッド、LINQ  
+ <xref:System.String> 型は、<xref:System.Collections.Generic.IEnumerable%601> を実装するので、文字列には <xref:System.Linq.Enumerable> クラスで定義した拡張メソッドを使用できます。 見やすさを考慮して、これらのメソッドは <xref:System.String> 型の IntelliSense からは除外されていますが、使用できます。 文字列で [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] クエリ式を使用することもできます。 詳細については、「[LINQ と文字列](../../../csharp/programming-guide/concepts/linq/linq-and-strings.md)」を参照してください。  
   
-## <a name="related-topics"></a>関連トピック  
+<a id="related-topics" class="xliff"></a>
+
+## 関連トピック  
   
 |トピック|説明|  
 |-----------|-----------------|  
@@ -146,8 +173,8 @@ string s = String.Empty;
 |[方法: String のメソッドを使用して文字列を検索する](../../../csharp/programming-guide/strings/how-to-search-strings-using-string-methods.md)|特定のメソッドを使用して文字列を検索する方法について説明します。|  
 |[方法: 正規表現を使用して文字列を検索する](../../../csharp/programming-guide/strings/how-to-search-strings-using-regular-expressions.md)|正規表現を使用して文字列を検索する方法について説明します。|  
 |[方法: 文字列が数値を表しているかどうかを確認する](../../../csharp/programming-guide/strings/how-to-determine-whether-a-string-represents-a-numeric-value.md)|文字列を安全に解析して、有効な数値があるかどうかを確認する方法を示します。|  
-|[方法: 文字列を DateTime に変換する](../../../csharp/programming-guide/strings/how-to-convert-a-string-to-a-datetime.md)|"01/24/2008" などの文字列を <xref:System.DateTime?displayProperty=fullName> オブジェクトに変換する方法を示します。|  
-|[基本的な文字列操作](https://msdn.microsoft.com/library/a292he7t)|<xref:System.String?displayProperty=fullName> メソッドおよび <xref:System.Text.StringBuilder?displayProperty=fullName> メソッドを使用して基本的な文字列操作を実行するトピックへのリンクを示します。|  
+|[方法: 文字列を DateTime に変換する](../../../csharp/programming-guide/strings/how-to-convert-a-string-to-a-datetime.md)|"01/24/2008" などの文字列を、<xref:System.DateTime?displayProperty=fullName> オブジェクトに変換する方法を示します。|  
+|[基本的な文字列操作](https://msdn.microsoft.com/library/a292he7t)|<xref:System.String?displayProperty=fullName> メソッドおよび <xref:System.Text.StringBuilder?displayProperty=fullName> メソッドを使用し文字列の基本操作を実行する、トピックへのリンクがあります。|  
 |[文字列の解析](https://msdn.microsoft.com/library/b4w53z0y)|文字列に文字または空白を挿入する方法について説明します。|  
 |[文字列の比較](https://msdn.microsoft.com/library/fbh501kz)|文字列を比較する方法について説明し、C# および Visual Basic での例を示します。|  
 |[StringBuilder クラスの使用](../../../standard/base-types/stringbuilder.md)|<xref:System.Text.StringBuilder> クラスの動的な文字列オブジェクトを作成および変更する方法について説明します。|  

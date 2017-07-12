@@ -1,47 +1,70 @@
 ---
-title: "Control Flow in Visual Basic | Microsoft Docs"
-ms.custom: ""
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "statements [Visual Basic], control flow"
-  - "control flow"
-  - "control structures"
-  - "structures, control"
-  - "conditional statements, control flow"
+title: "Visual Basic における制御フロー | Microsoft Docs"
+ms.custom: 
+ms.date: 2015-07-20
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-visual-basic
+ms.topic: article
+dev_langs:
+- VB
+helpviewer_keywords:
+- statements [Visual Basic], control flow
+- control flow
+- control structures
+- structures, control
+- conditional statements, control flow
 ms.assetid: 5623ef47-52b1-4202-befd-9af36422ec6f
 caps.latest.revision: 14
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 14
----
-# Control Flow in Visual Basic
-[!INCLUDE[vs2017banner](../../../../visual-basic/developing-apps/includes/vs2017banner.md)]
+author: dotnet-bot
+ms.author: dotnetcontent
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 31905a37f09db5f5192123f0118252fbe8b02eff
+ms.openlocfilehash: 86ac374a3c2378d7ac167823ceee008260a4deb0
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/26/2017
 
-何も制御を加えないと、プログラムは最初から最後まで順番にステートメントを実行します。  このように一定方向の流れだけで記述できる単純なプログラムもあります。  しかし、プログラミング言語の能力と有用性のほとんどは、制御ステートメントやループを使った実行順序の変更の機能に由来します。  
+---
+<a id="control-flow-in-visual-basic" class="xliff"></a>
+
+# Visual Basic における制御フロー
+制御されていないままの場合、プログラムは最初から最後までそのステートメントを使って続行されます。 この 1 方向のフローのみを使用して、いくつかの単純なプログラムを記述できます。 ただし、任意のプログラミング言語の能力とユーティリティのほとんどは、制御ステートメントとループで実行する順番を変更する機能からのものです。  
   
- 制御構造では、プログラムの実行の流れを制御できます。  制御構造を使用すると、条件を判断したり処理を繰り返したりする [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] コードを記述できます。  その他にも、リソースの破棄や、同じオブジェクト参照に対する一連のステートメントの実行を保証する制御構造があります。  
+ 制御構造を使用すると、プログラムの実行フローを制御できます。 制御構造を使用して、判断したり、アクションを繰り返したりする [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] のコードを記述することができます。 他の制御構造を使用して、リソースの破棄を保証したり、同じオブジェクト参照で一連のステートメントを実行したりすることができます。  
   
+<a id="in-this-section" class="xliff"></a>
+
 ## このセクションの内容  
- [Decision Structures](../../../../visual-basic/programming-guide/language-features/control-flow/decision-structures.md)  
- 分岐に使う制御構造について説明します。  
+ [条件判断構造](../../../../visual-basic/programming-guide/language-features/control-flow/decision-structures.md)  
+ 分岐に使用する制御構造を説明します。  
   
- [Loop Structures](../../../../visual-basic/programming-guide/language-features/control-flow/loop-structures.md)  
- 処理の繰り返しに使う制御構造について説明します。  
+ [ループ構造](../../../../visual-basic/programming-guide/language-features/control-flow/loop-structures.md)  
+ プロセスを繰り返すために使用する制御構造を説明します。  
   
- [Other Control Structures](../../../../visual-basic/programming-guide/language-features/control-flow/other-control-structures.md)  
- リソースの破棄とオブジェクトへのアクセスに使う制御構造について説明します。  
+ [その他の制御構造](../../../../visual-basic/programming-guide/language-features/control-flow/other-control-structures.md)  
+ リソースの破棄とオブジェクトのアクセスに使用される制御構造を説明します。  
   
- [Nested Control Structures](../../../../visual-basic/programming-guide/language-features/control-flow/nested-control-structures.md)  
- 他の制御構造の内部にある制御構造について説明します。  
+ [入れ子になった制御構造](../../../../visual-basic/programming-guide/language-features/control-flow/nested-control-structures.md)  
+ 他の制御構造内に制御構造を含めます。  
   
+<a id="related-sections" class="xliff"></a>
+
 ## 関連項目  
- [Control Flow Summary](../../../../visual-basic/language-reference/keywords/control-flow-summary.md)  
- このテーマについての言語参照ページへのリンクです。
+ [制御フローの概要](../../../../visual-basic/language-reference/keywords/control-flow-summary.md)  
+ この領域の言語リファレンス ページへのリンクを提供します。
