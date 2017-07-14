@@ -27,11 +27,11 @@ ms.lasthandoff: 05/31/2017
 
 ---
 
-<a id="application-compatibility-in-the-net-framework" class="xliff"></a>
 # .NET Framework のアプリケーションの互換性
+<a id="application-compatibility-in-the-net-framework" class="xliff"></a>
 
-<a id="introduction" class="xliff"></a>
 ## はじめに
+<a id="introduction" class="xliff"></a>
 .NET の各リリースにおいて互換性は非常に重要な目標です。 各バージョンが付加的な場合は互換性が確保され、以前のバージョンも引き続き動作します。 一方、以前の機能に変更が生じた場合 (パフォーマンスの向上、セキュリティに関する問題への対処、またはバグの修正を目的として)、既存のコードまたは既存のアプリケーションを以降のバージョンで実行すると互換性に問題が発生する可能性があります。 .NET Framework では、変更の再ターゲットとランタイムの変更点を認識します。 変更の再ターゲットは、.NET Framework の特定のバージョンをターゲットとしているもののそれ以降のバージョンで実行されるアプリケーションに影響します。 ランタイムの変更点は、特定のバージョンで実行されるすべてのアプリケーションに影響します。
 
 各アプリは .NET Framework の特定のバージョンをターゲットとします。バージョンは次の方法で指定することができます。
@@ -42,18 +42,18 @@ ms.lasthandoff: 05/31/2017
 
 ターゲットに指定されたバージョンより新しいバージョンでアプリが実行されると、.NET Framework は後方互換動作によって、ターゲットに指定されている古いバージョンを模倣します。 つまり、アプリは、Framework の新しいバージョンで実行されていても、古いバージョンで実行されているように機能します。 .NET Framework のバージョン間の互換性の問題の多くは、この後方互換モデルを通して対応されます。
 
-<a id="runtime-changes" class="xliff"></a>
 ## ランタイムの変更
+<a id="runtime-changes" class="xliff"></a>
 
 ランタイムの問題とは、コンピューターに新しいランタイムを配置し前と同じバイナリを実行したが動作が異なっている場合に発生する問題です。 バイナリが .NET Framework 4.0 向けにコンパイルされている場合、そのバイナリは .NET Framework 4.5 以降のバージョンでは .NET Framework 4.0 互換モードで実行されます。 4.5 に影響する変更の多くは、4.0 向けにコンパイルされたバイナリには影響しません。 これは、AppDomain に固有のものであり、入力アセンブリの設定内容によって異なります。
 
-<a id="retargeting-changes" class="xliff"></a>
 ## 変更の再ターゲット
+<a id="retargeting-changes" class="xliff"></a>
 
 再ターゲットの問題とは、4.0 をターゲットにしていたアセンブリが今度は 4.5 をターゲットにするように設定されたときに発生するものです。 この場合、アセンブリは新しい機能を選択するようになるので、古い機能との互換性の問題が発生する可能性があります。 繰り返しますが、これは入力アセンブリによって異なります。したがって、アセンブリを使用するコンソール アプリ、またはアセンブリを参照する Web サイトが該当します。
 
-<a id="net-compatibility-diagnostics" class="xliff"></a>
 ## .NET 互換性診断
+<a id="net-compatibility-diagnostics" class="xliff"></a>
 
 .NET 互換性診断は、.NET Framework のバージョン間のアプリケーション互換性問題の識別に役立つ Roslyn を使用したアナライザーです。 この一覧には、使用可能なすべてのアナライザーが含まれますが、特定の移行に適用されるのは、その一部分のみです。 アナライザーは、計画的な移行に該当する問題と表面上の問題にすぎないものを判断します。
 
@@ -85,16 +85,16 @@ ms.lasthandoff: 05/31/2017
 
 -   使用可能な診断の ID
 
-<a id="usage" class="xliff"></a>
 ## 使用方法
+<a id="usage" class="xliff"></a>
 開始するには、以下の中から互換性の変更の種類を選択します。
 
 * [変更の再ターゲット](./retargeting/index.md)
 * [ランタイムの変更点](./runtime/index.md)
 
 
-<a id="see-also" class="xliff"></a>
 ## 関連項目
+<a id="see-also" class="xliff"></a>
 
 * [バージョンおよび依存関係](../../../docs/framework/migration-guide/versions-and-dependencies.md)
 * [新機能](../../../docs/framework/whats-new/index.md)
