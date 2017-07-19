@@ -53,4 +53,5 @@ ms.lasthandoff: 07/03/2017
   
 ## <a name="see-also"></a>関連項目  
  [LINQ と ADO.NET](http://msdn.microsoft.com/library/bf0c8f93-3ff7-49f3-8aed-f2b7ac938dec)   
+
  [統合言語クエリ (LINQ) (C#)](../../../../csharp/programming-guide/concepts/linq/index.md)

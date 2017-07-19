@@ -130,4 +130,5 @@ ms.lasthandoff: 07/03/2017
  [LINQ to DataSet](../../../../framework/data/adonet/linq-to-dataset.md)   
  [LINQ to XML (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-xml.md)   
  [LINQ クエリ式](../../../../csharp/programming-guide/linq-query-expressions/index.md)   
+
  [select 句](../../../../csharp/language-reference/keywords/select-clause.md)
