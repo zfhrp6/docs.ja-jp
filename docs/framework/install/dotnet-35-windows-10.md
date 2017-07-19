@@ -5,7 +5,7 @@ author: rlander
 keywords: ".Net Framework, インストール"
 ms.date: 04/20/2017
 ms.topic: article
-ms.prod: .net-framework-4.6
+ms.prod: .net-framework
 ms.technology: vs-ide-deployment
 ms.devlang: dotnet
 ms.assetid: 67cda1d5-c6g4-4eb5-93e6-4f478de07ff7
