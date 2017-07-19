@@ -32,16 +32,17 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 6083af22fe8743a3d952138e04be90536cbd75d3
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: be7974018ce3195dc7344192d647fe64fb2ebcc4
+ms.openlocfilehash: 43ba8cdf265efd930199f7c6a8a77e49f491e737
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/14/2017
 
 ---
 # <a name="lambda-expressions-c-programming-guide"></a>ラムダ式 (C# プログラミング ガイド)
-ラムダ式は、[デリゲート](../../../csharp/programming-guide/statements-expressions-operators/anonymous-methods.md)型または[式ツリー](../../../csharp/programming-guide/delegates/using-delegates.md)型を作成するために使用できる[匿名関数](http://msdn.microsoft.com/library/fb1d3ed8-d5b0-4211-a71f-dd271529294b)です。 ラムダ式を使用すると、引数として渡したり関数呼び出しの結果値として返すことができるローカル関数を記述できます。 ラムダ式は、LINQ クエリ式を記述する場合に特に便利です。  
+ラムダ式は、 [デリゲート](../../../csharp/programming-guide/statements-expressions-operators/anonymous-methods.md) 型または [式ツリー](../../../csharp/programming-guide/delegates/using-delegates.md) 型を作成するために使用できる [匿名関数](http://msdn.microsoft.com/library/fb1d3ed8-d5b0-4211-a71f-dd271529294b) です。 ラムダ式を使用すると、引数として渡したり関数呼び出しの結果値として返すことができるローカル関数を記述できます。 ラムダ式は、LINQ クエリ式を記述する場合に特に便利です。  
   
- ラムダ式を作成するには、ラムダ演算子 ([=>](../../../csharp/language-reference/operators/lambda-operator.md)) の左側に入力パラメーター (ある場合) を指定し、反対側に式またはステートメント ブロックを置きます。 たとえば、ラムダ式 `x => x * x` は、 `x` という名前のパラメーターを指定し、 `x` を 2 乗した値を返します。 次の例に示すように、この式をデリゲート型に割り当てることもできます。  
+ ラムダ式を作成するには、ラムダ演算子 ( [=>](../../../csharp/language-reference/operators/lambda-operator.md)) の左側に入力パラメーター (ある場合) を指定し、反対側に式またはステートメント ブロックを置きます。 たとえば、ラムダ式 `x => x * x` は、 `x` という名前のパラメーターを指定し、 `x` を 2 乗した値を返します。 次の例に示すように、この式をデリゲート型に割り当てることもできます。  
   
 ```csharp  
 delegate int del(int i);  
@@ -69,11 +70,11 @@ namespace ConsoleApplication1
 }  
 ```  
   
- `=>` 演算子は、代入 (`=`) と同じ優先順位であり、[結合規則が右から左](../../../csharp/programming-guide/statements-expressions-operators/operators.md)です (演算子に関するドキュメントの「結合規則」を参照してください)。  
+ `=>` 演算子は、代入 (`=`) と同じ優先順位であり、[結合規則が右から左](../../../csharp/programming-guide/statements-expressions-operators/operators.md) です (演算子に関するドキュメントの「結合規則」を参照してください)。  
   
  ラムダは、[!INCLUDE[vbteclinq](../../../csharp/includes/vbteclinq_md.md)] のメソッド ベースのクエリ内で標準クエリ演算子のメソッド (<xref:System.Linq.Enumerable.Where%2A> など) の引数として使用されます。  
   
- メソッド ベースの構文を使用して、([!INCLUDE[vbteclinq](../../../csharp/includes/vbteclinq_md.md)] to Objects や [!INCLUDE[sqltecxlinq](../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)] の場合と同様に) <xref:System.Linq.Enumerable> クラスの <xref:System.Linq.Enumerable.Where%2A> メソッドを呼び出すと、パラメーターはデリゲート型 <xref:System.Func%602?displayProperty=fullName> になります。 ラムダ式はデリゲートを作成するための最も便利な方法です。 たとえば、([!INCLUDE[vbtecdlinq](../../../csharp/includes/vbtecdlinq_md.md)] の場合と同様に) <xref:System.Linq.Queryable?displayProperty=fullName> クラスの同じメソッドを呼び出すと、パラメーター型は <xref:System.Linq.Expressions.Expression?displayProperty=fullName><Func\> になります。Func は、最大 16 のパラメーターを持つ Func デリゲートです。 ラムダ式は、こうした式ツリーを構築するための非常に簡潔な方法でもあります。 ラムダを使用すると `Where` 呼び出しの外観を似たものにできますが、ラムダから実際に作成されるオブジェクトの型は異なります。  
+ メソッド ベースの構文を使用して (<xref:System.Linq.Enumerable.Where%2A> to Objects および <xref:System.Linq.Enumerable> の場合と同様に) [!INCLUDE[vbteclinq](../../../csharp/includes/vbteclinq_md.md)] クラスの [!INCLUDE[sqltecxlinq](../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)] メソッドを呼び出すと、パラメーターはデリゲート型 <xref:System.Func%602?displayProperty=fullName> になります。 ラムダ式はデリゲートを作成するための最も便利な方法です。 たとえば (<xref:System.Linq.Queryable?displayProperty=fullName> の場合と同様に) [!INCLUDE[vbtecdlinq](../../../csharp/includes/vbtecdlinq_md.md)] クラスの同じメソッドを呼び出すと、パラメーター型は <xref:System.Linq.Expressions.Expression?displayProperty=fullName><Func\> になります。Func は最大 16 の入力パラメーターを持つ Func デリゲートです。 ラムダ式は、こうした式ツリーを構築するための非常に簡潔な方法でもあります。 ラムダを使用すると `Where` 呼び出しの外観を似たものにできますが、ラムダから実際に作成されるオブジェクトの型は異なります。  
   
  先ほどの例では、デリゲート シグネチャは暗黙的に型指定される `int`型の入力パラメーターを 1 つ持ち、 `int`を返します。 このラムダ式を同じ型のデリゲートに変換することができます。デリゲートも 1 つの入力パラメーター (`x`) を持ち、コンパイラが暗黙的に `int` 型に変換できる値を返すからです  (型の推論については後のセクションで詳しく説明します)。入力パラメーターとして 5 を使用してデリゲートを呼び出すと、デリゲートは 25 という結果を返します。  
   
@@ -115,9 +116,9 @@ namespace ConsoleApplication1
 
  ステートメント形式のラムダの本体は任意の数のステートメントで構成できますが、実際面では通常、2、3 個以下にします。  
   
- [StatementLamba#1](../../../../samples\snippets\csharp\programming-guide\lambda-expressions/statements.cs#1)]
+[!code-csharp[StatementLamba#1](../../../../samples\snippets\csharp\programming-guide\lambda-expressions/statements.cs#1)]
 
- [StatementLamba#2](../../../../samples\snippets\csharp\programming-guide\lambda-expressions/statements.cs#2)]
+[!code-csharp[StatementLamba#2](../../../../samples\snippets\csharp\programming-guide\lambda-expressions/statements.cs#2)]
 
  匿名メソッドと同様、ステートメント形式のラムダを使用して式ツリーを作成することはできません。  
   
@@ -174,13 +175,13 @@ public partial class Form1 : Form
  非同期メソッドの作成および使用方法の詳細については、「[Async および Await を使用した非同期プログラミング](../../../csharp/programming-guide/concepts/async/index.md)」を参照してください。  
   
 ## <a name="lambdas-with-the-standard-query-operators"></a>標準クエリ演算子でのラムダ  
- 多くの標準クエリ演算子には、<xref:System.Func%602> ファミリの汎用デリゲートに属する型の入力パラメーターがあります。 これらのデリゲートは型パラメーターを使用して入力パラメーターの数と型、およびデリゲートの戻り値の型を定義します。 `Func` デリゲートは、ソース データのセット内の各要素に適用されるユーザー定義の式をカプセル化する場合に非常に便利です。 たとえば、次のデリゲート型を考えてみましょう。  
+ 標準クエリ演算子の多くが、汎用デリゲートの <xref:System.Func%602> ファミリに属する型の入力パラメーターを持ちます。 これらのデリゲートは型パラメーターを使用して入力パラメーターの数と型、およびデリゲートの戻り値の型を定義します。 `Func` デリゲートは、ソース データのセット内の各要素に適用されるユーザー定義の式をカプセル化する場合に非常に便利です。 たとえば、次のデリゲート型を考えてみましょう。  
   
 ```csharp  
 public delegate TResult Func<TArg0, TResult>(TArg0 arg0)  
 ```  
   
- このデリゲートを `Func<int,bool> myFunc` としてインスタンス化できます。 `int` は入力パラメーター、 `bool` は戻り値です。 戻り値は必ず最後の型パラメーターで指定されます。 `Func<int, string, bool>` は 2 つの入力パラメーター (`int` と `string`) と戻り値の型 `bool` を持つデリゲートを定義しています。 次の `Func` デリゲートを呼び出すと、入力パラメーターが 5 に等しいかどうかを示す true または false が返されます。  
+ このデリゲートを `Func<int,bool> myFunc` としてインスタンス化できます。 `int` は入力パラメーター、 `bool` は戻り値です。 戻り値は必ず最後の型パラメーターで指定されます。 `Func<int, string, bool>` は 2 つの入力パラメーター ( `int` と `string`) と戻り値の型 `bool`を持つデリゲートを定義しています。 次の `Func` デリゲートを呼び出すと、入力パラメーターが 5 に等しいかどうかを示す true または false が返されます。  
   
 ```csharp  
 Func<int, bool> myFunc = x => x == 5;  
@@ -274,7 +275,6 @@ class Test
         Console.ReadKey();  
     }  
 }  
-  
 ```  
   
  ラムダ式における変数のスコープには、次の規則が適用されます。  
@@ -300,6 +300,7 @@ class Test
  [LINQ (統合言語クエリ)](http://msdn.microsoft.com/library/a73c4aec-5d15-4e98-b962-1274021ea93d)   
  [匿名メソッド](../../../csharp/programming-guide/statements-expressions-operators/anonymous-methods.md)   
  [is](../../../csharp/language-reference/keywords/is.md)   
- [式ツリー](http://msdn.microsoft.com/library/fb1d3ed8-d5b0-4211-a71f-dd271529294b)   
- [Visual Studio 2008 の C# サンプル (LINQ サンプル クエリ ファイルと XQuery プログラムを参照)](http://code.msdn.microsoft.com/Visual-Studio-2008-C-d295cdba)   
- [再帰的なラムダ式](http://go.microsoft.com/fwlink/?LinkId=112395)
+ [Expression Trees](http://msdn.microsoft.com/library/fb1d3ed8-d5b0-4211-a71f-dd271529294b)   
+ [Visual Studio 2008 C# Samples (Visual Studio 2008 の C# サンプル) (LINQ サンプル クエリ ファイルと XQuery プログラムを参照してください)](http://code.msdn.microsoft.com/Visual-Studio-2008-C-d295cdba)   
+ [Recursive lambda expressions (再帰的なラムダ式)](http://go.microsoft.com/fwlink/?LinkId=112395)
+

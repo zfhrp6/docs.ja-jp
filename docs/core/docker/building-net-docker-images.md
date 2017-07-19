@@ -1,5 +1,5 @@
 ---
-title: ".NET Core の Docker イメージのビルド"
+title: ".NET Core の Docker イメージのビルド | Microsoft Docs"
 description: "Docker イメージと .NET Core について"
 keywords: .NET, .NET Core, Docker
 author: spboyer
@@ -10,19 +10,24 @@ ms.prod: .net-core
 ms.technology: dotnet-docker
 ms.devlang: dotnet
 ms.assetid: 03c28597-7e73-46d6-a9c3-f9cb55642739
-translationtype: Human Translation
-ms.sourcegitcommit: 90fe68f7f3c4b46502b5d3770b1a2d57c6af748a
-ms.openlocfilehash: 038a67e3e7c3c9c120d76faa82cfc046233ab5df
-ms.lasthandoff: 03/02/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 7f6be5a87923a12eef879b2f5acdafc1347588e3
+ms.openlocfilehash: a8ade58a9ff1f5e68865506d91c200681cec2aeb
+ms.contentlocale: ja-jp
+ms.lasthandoff: 06/26/2017
 
 ---
  
 
-#<a name="building-docker-images-for-net-core-applications"></a>.NET Core アプリケーションの Docker イメージのビルド
+<a id="building-docker-images-for-net-core-applications" class="xliff"></a>
+
+#.NET Core アプリケーションの Docker イメージのビルド
 
 .NET Core と Docker を一緒に使用する方法を理解するには、まず、提供されるさまざまな Docker イメージと、適切な使用のタイミングを把握する必要があります。 ここでは、提供されるバリエーションを確認し、ASP.NET Core Web API をビルドし、Yeoman Docker ツールを使用してデバッグ可能なコンテナーを作成し、さらにプロセスにおいて Visual Studio Code がどのように役立つかを簡単に確認します。 
 
-## <a name="docker-image-optimizations"></a>Docker イメージの最適化
+<a id="docker-image-optimizations" class="xliff"></a>
+
+## Docker イメージの最適化
 
 開発者向けの Docker イメージをビルドするにあたり、次の主な 3 つのシナリオに重点を置きました。
 
@@ -32,21 +37,25 @@ ms.lasthandoff: 03/02/2017
 
 3 つのイメージである理由は、
 コンテナー化されたアプリケーションを開発、ビルドおよび実行する場合、優先順位がそれぞれ異なるためです。
-- **開発:**  変更をどれだけ速く繰り返せるかと、変更のデバッグ機能。 イメージのサイズはそれほど重要ではなく、むしろ、コードを変更し、それをすばやく確認できるかが重要になります。 VS Code で使用する [yo docker](https://aka.ms/yodocker) などの一部のツールでは、開発時にこのイメージを使用します。 
+- **開発:**  変更をどれだけ速く繰り返せるかと、変更のデバッグ機能。 イメージのサイズはそれほど重要ではなく、むしろ、コードを変更し、それをすばやく確認できるかが重要になります。 Visual Studio Code で使用する [yo docker](https://aka.ms/yodocker) などの一部のツールでは、開発時にこのイメージを使用します。 
 - **ビルド:** アプリのコンパイルに必要なもの。 これには、コンパイラと、バイナリを最適化するためのその他の依存関係が含まれます。 このイメージは配置するのではなく、実稼働イメージに配置するコンテンツをビルドする場合に使用します。 このイメージは継続的インテグレーション、またはビルド環境で使用されます。 たとえば、ビルド エージェントに直接すべての依存関係をインストールするのではなく、ビルド エージェントがビルド イメージをインスタンス化し、イメージ内に含まれるアプリのビルドに必要なすべての依存関係と共にアプリケーションをコンパイルします。 この Docker イメージの実行方法を理解する必要があるのはビルド エージェントのみです。 
 - **実稼働:** イメージをどれだけ速く配置し、開始できるか。 このイメージは小さいため、Docker レジストリから Docker ホストにネットワーク経由ですばやく移動できます。 コンテンツは実行できる状態であるため、Docker の実行から結果の処理までを最速で行うことができます。 変更できない Docker モデルの場合は、コードを動的にコンパイルする必要はありません。 このイメージに配置するコンテンツは、アプリケーションの実行に必要なバイナリとコンテンツに制限されます。 たとえば、`dotnet publish` を使用して発行された出力には、コンパイル済みのバイナリ、イメージ、.js および .css ファイルが含まれます。 時間の経過と共に、事前に Just-In-Time (JIT) にコンパイルされたパッケージを含むイメージが表示されます。  
 
 複数のバージョンの .NET Core イメージがありますが、すべて 1 つ以上のレイヤーを共有します。 格納に必要なディスク容量やレジストリからプルするデルタは、全体よりはるかに少なくなります。これは、すべてのイメージが同じ基本レイヤーとおそらく他のレイヤーを共有しているためです。  
 
-## <a name="docker-image-variations"></a>Docker イメージのバリエーション
+<a id="docker-image-variations" class="xliff"></a>
+
+## Docker イメージのバリエーション
 
 上記の目標を達成するために、[microsoft/dotnet](https://hub.docker.com/r/microsoft/dotnet/) にはイメージ バリアントが用意されています。
 
-- `microsoft/dotnet:<version>-sdk`: **microsoft/dotnet:1.0.0-preview2-sdk** です。このイメージには、.NET Core とコマンド ライン ツール (CLI) を含む .NET Core SDK が含まれています。 このイメージは**開発シナリオ**にマップされます。 このイメージは、ローカル開発、デバッグおよび単体テストに使用します。 たとえば、コードをチェックインする前に、すべての開発を行います。 このイメージは、**ビルド** シナリオでも使用できます。
+- `microsoft/dotnet:<version>-sdk`: **microsoft/dotnet:1.0.0-preview2-sdk** です。このイメージには、.NET Core とコマンド ライン ツール (CLI) を含む .NET Core SDK が含まれています。 このイメージは **開発シナリオ** にマップされます。 このイメージは、ローカル開発、デバッグおよび単体テストに使用します。 たとえば、コードをチェックインする前に、すべての開発を行います。 このイメージは、**ビルド** シナリオでも使用できます。
 
 - `microsoft/dotnet:<version>-core`: **microsoft/dotnet:1.0.0-core** です。このイメージは[ポータブル .NET Core アプリケーション](../deploying/index.md)を実行します。**実稼働**でアプリケーションを実行するために最適化されます。 これには SDK が含まれていません。`dotnet publish` の最適化された出力を取得するためのものです。 ポータブル ランタイムは、共有イメージ レイヤーによる利点が得られるため、複数のコンテナーを実行する Docker コンテナー シナリオに最適です。  
 
-## <a name="alternative-images"></a>その他のイメージ
+<a id="alternative-images" class="xliff"></a>
+
+## その他のイメージ
 
 開発、ビルドおよび実稼働の最適化されたシナリオに加え、次の追加イメージが提供されます。
 
@@ -75,12 +84,15 @@ microsoft/dotnet    latest                  03c10abbd08a        540.4 MB
 microsoft/dotnet    1.0.0-core              b8da4a1fd280        253.2 MB
 ```
 
-## <a name="prerequisites"></a>必須コンポーネント
+<a id="prerequisites" class="xliff"></a>
+
+## 必須コンポーネント
 
 ビルドと実行には、以下のいくつかのものをインストールする必要があります。
 
 - [.NET Core](http://dot.net)
-- [Docker](https://www.docker.com/products/docker)。Docker コンテナーをローカルで実行するためのものです。 
+- [Docker](https://www.docker.com/products/docker)。Docker コンテナーをローカルで実行するためのものです。
+- [Node.js](https://nodejs.org/)
 - [ASP.NET の Yeoman ジェネレーター](https://github.com/omnisharp/generator-aspnet)。Web API アプリケーションを作成するためのものです。
 - [Docker の Yeoman ジェネレーター](http://aka.ms/yodocker)。Microsoft が提供するものです。
 
@@ -93,11 +105,13 @@ npm install -g yo generator-aspnet generator-docker
 > [!NOTE]
 > このサンプルでは、エディターに [Visual Studio Code](http://code.visualstudio.com) を使用します。
 
-## <a name="creating-the-web-api-application"></a>Web API アプリケーションの作成
+<a id="creating-the-web-api-application" class="xliff"></a>
+
+## Web API アプリケーションの作成
 
 参照ポイントとして、アプリケーションをコンテナー化する前に、まず、アプリケーションをローカルで実行します。 
 
-完成したアプリケーションは [GitHub の dotnet/core-docs リポジトリ](https://github.com/dotnet/docs/tree/master/samples/core/docker/building-net-docker-images)にあります。
+完成したアプリケーションは [GitHub の dotnet/docs リポジトリ](https://github.com/dotnet/docs/tree/master/samples/core/docker/building-net-docker-images)にあります。 ダウンロード方法については、「[サンプルおよびチュートリアル](../../samples-and-tutorials/index.md#viewing-and-downloading-samples)」を参照してください。
 
 アプリケーションのディレクトリを作成します。
 
@@ -124,7 +138,9 @@ dotnet restore
 
 `Ctrl+C` を使用してアプリケーションを停止します。
 
-## <a name="adding-docker-support"></a>Docker サポートの追加
+<a id="adding-docker-support" class="xliff"></a>
+
+## Docker サポートの追加
 
 プロジェクトへの Docker サポートの追加は、Microsoft の Yeoman ジェネレーターを使用して行います。 現在、コンテナー内でのプロジェクトのビルドと実行に役立つ Dockerfile とスクリプトを作成するにより、.NET Core、Node.js および Go プロジェクトをサポートしています。 エディターのデバッグとコマンド パレットのサポートのために Visual Studio Code 固有のファイル (launch.json、tasks.json) も追加されます。
 
@@ -145,7 +161,6 @@ $ yo docker
 ❯ .NET Core
   Golang
   Node.js
-
 ```
 
 - プロジェクトの種類として `.NET Core` を選択します。
@@ -174,7 +189,9 @@ $ yo docker
 
 **Dockerfile** - このイメージは **microsoft/dotnet:1.0.0-core** に基づくリリース イメージで、実稼働で使用する必要があります。 ビルド時のこのイメージは約 253 MB です。
 
-### <a name="creating-the-docker-images"></a>Docker イメージの作成
+<a id="creating-the-docker-images" class="xliff"></a>
+
+### Docker イメージの作成
 `dockerTask.sh` または `dockerTask.ps1` スクリプトを使用して、特定の環境の **api** アプリケーション用にイメージとコンテナーをビルドまたは構成することができます。 以下のコマンドを実行して、**debug** イメージをビルドします。
 
 ```bash
@@ -192,7 +209,7 @@ api                 debug                70e89fbc5dbe        a few seconds ago  
 
 イメージを生成し、Docker コンテナー内でアプリケーションを実行する別の方法は、Visual Studio Code でアプリケーションを開き、デバッグ ツールを使用することです。 
 
-VS Code の左側にあるビュー バーのデバッグ アイコンを選択します。
+Visual Studio Code の左側にあるビュー バーのデバッグ アイコンを選択します。
 
 ![vscode デバッグ アイコン](./media/building-net-docker-images/debugging_debugicon.png)
 
@@ -216,7 +233,9 @@ api                 debug                70e89fbc5dbe        1 hour ago        7
 api                 latest               ef17184c8de6        1 hour ago        260.7 MB
 ```
 
-## <a name="summary"></a>まとめ
+<a id="summary" class="xliff"></a>
+
+## まとめ
 
 Docker ジェネレーターを使用して Web API アプリケーションに必要なファイルを追加することで、開発および実稼働バージョンのイメージを作成するプロセスが簡単になりました。  また、クロス プラットフォームのツールを使用し、PowerShell スクリプトを指定することで、コンテナー内のアプリケーションのステップ スルー デバッグを提供する Windows と Visual Studio Code の統合と同じ結果が得られるようになります。 イメージ バリアントとターゲット シナリオを理解することで、実稼働配置用に最適化されたイメージを生成できるだけでなく、内部ループの開発プロセスを最適化できます。  
 

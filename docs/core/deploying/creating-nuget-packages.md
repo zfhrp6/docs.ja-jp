@@ -1,5 +1,5 @@
 ---
-title: "クロス プラットフォーム ツールによる NuGet パッケージの作成"
+title: "クロス プラットフォーム ツールによる NuGet パッケージの作成 | Microsoft Docs"
 description: "クロス プラットフォーム ツールによる NuGet パッケージの作成"
 keywords: .NET, .NET Core, NuGet
 author: cartermp
@@ -11,14 +11,16 @@ ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: 2f0415c1-110b-433d-87c1-ae3d543a8844
 ms.translationtype: Human Translation
-ms.sourcegitcommit: 90fe68f7f3c4b46502b5d3770b1a2d57c6af748a
-ms.openlocfilehash: 657981a05e831ffb849d0cd5b3ea25c079cb4fc1
+ms.sourcegitcommit: 4437ce5d344cf06d30e31911def6287999fc6ffc
+ms.openlocfilehash: 2b2081bce1725fb4a019881521604e4171b85028
 ms.contentlocale: ja-jp
-ms.lasthandoff: 03/02/2017
+ms.lasthandoff: 05/23/2017
 
 ---
 
-# <a name="how-to-create-a-nuget-package-with-cross-platform-tools"></a>クロスプラットフォーム ツールを使用して NuGet パッケージを作成する方法
+<a id="how-to-create-a-nuget-package-with-cross-platform-tools" class="xliff"></a>
+
+# クロスプラットフォーム ツールを使用して NuGet パッケージを作成する方法
 
 > [!NOTE]
 > 以下は、Unix を使用する場合のコマンド ライン サンプルです。  ここに示されている `dotnet pack` コマンドは Windows でも同じように機能します。
@@ -63,7 +65,9 @@ SuperAwesomeLibrary.1.0.0.symbols.nupkg
 
 これで、NuGet パッケージを発行するために必要なファイルが準備できました。
 
-## <a name="dont-confuse-dotnet-pack-with-dotnet-publish"></a>`dotnet pack`と `dotnet publish` を混同しないようにしてください
+<a id="dont-confuse-dotnet-pack-with-dotnet-publish" class="xliff"></a>
+
+## `dotnet pack`と `dotnet publish` を混同しないようにしてください
 
 ここで `dotnet publish` コマンドを使用しても意味がありません。  `dotnet publish` コマンドは、同じバンドルにすべての依存関係があるアプリケーションを配置するためのものであり、NuGet 経由で配布して使用する NuGet パッケージを生成するためのものではありません。
 

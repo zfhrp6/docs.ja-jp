@@ -29,14 +29,14 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 ms.translationtype: Human Translation
-ms.sourcegitcommit: fe32676f0e39ed109a68f39584cf41aec5f5ce90
-ms.openlocfilehash: 7e2310df174a7c38fafba3fed4e4bd3de4fa377a
+ms.sourcegitcommit: cf8206e856a31882f5f30ee61d965ad5672f518e
+ms.openlocfilehash: 4bc2cd0e4fc165ef68338c2cda3b8c57c1bf18b2
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/10/2017
+ms.lasthandoff: 07/03/2017
 
 ---
 # <a name="using-type-dynamic-c-programming-guide"></a>dynamic 型の使用 (C# プログラミング ガイド)
-[!INCLUDE[csharp_dev10_long](../../../csharp/programming-guide/classes-and-structs/includes/csharp_dev10_long_md.md)] では、`dynamic` という新しい型が導入されています。 この型は静的な型ですが、`dynamic` 型のオブジェクトは静的な型チェックをバイパスします。 ほとんどの場合、`object` 型を使用する場合と同様に機能します。 コンパイル時には、`dynamic` として型指定された要素はあらゆる操作をサポートすると見なされます。 したがって、オブジェクトが COM API、IronPython などの動的言語、HTML ドキュメント オブジェクト モデル (DOM)、リフレクション、プログラムの他の場所のいずれから値を取得するのかを考慮する必要はありません。 ただし、コードが無効な場合には、実行時にエラーが検出されます。  
+[!INCLUDE[csharp_dev10_long](~/includes/csharp-dev10-long-md.md)] では、`dynamic` という新しい型が導入されています。 この型は静的な型ですが、`dynamic` 型のオブジェクトは静的な型チェックをバイパスします。 ほとんどの場合、`object` 型を使用する場合と同様に機能します。 コンパイル時には、`dynamic` として型指定された要素はあらゆる操作をサポートすると見なされます。 したがって、オブジェクトが COM API、IronPython などの動的言語、HTML ドキュメント オブジェクト モデル (DOM)、リフレクション、プログラムの他の場所のいずれから値を取得するのかを考慮する必要はありません。 ただし、コードが無効な場合には、実行時にエラーが検出されます。  
   
  たとえば、次のコードの `exampleMethod1` インスタンス メソッドにパラメーターが 1 つしかない場合、`ec.exampleMethod1(10, 4)` メソッドへの最初の呼び出しは引数を 2 つ含むため、コンパイラはこの呼び出しを無効と認識します。 この呼び出しではコンパイラ エラーが発生します。 `dynamic_ec.exampleMethod1(10, 4)` メソッドの 2 番目の呼び出しは、`dynamic_ec` の型が `dynamic` であるため、コンパイラによってチェックされません。 そのため、コンパイラ エラーは報告されません。 ただし、このエラーがいつまでも検出されないということではありません。 実行時に検出されて実行時例外が発生します。  
   
@@ -76,7 +76,7 @@ ms.lasthandoff: 05/10/2017
  動的言語ランタイム (DLR) は、[!INCLUDE[net_v40_short](~/includes/net-v40-short-md.md)] の新しい API です。 DLR は、C# の `dynamic` 型だけでなく、IronPython や IronRuby などの動的プログラミング言語の実装もサポートするインフラストラクチャを提供します。 DLR の詳細については、「[動的言語ランタイムの概要](../../../framework/reflection-and-codedom/dynamic-language-runtime-overview.md)」を参照してください。  
   
 ## <a name="com-interop"></a>COM 相互運用  
- [!INCLUDE[csharp_dev10_long](../../../csharp/programming-guide/classes-and-structs/includes/csharp_dev10_long_md.md)] には、Office オートメーション API などの COM API との相互運用エクスペリエンスを強化する複数の機能があります。 この機能強化には、`dynamic` 型の使用、および[名前付き引数と省略可能な引数](../../../csharp/programming-guide/classes-and-structs/named-and-optional-arguments.md)の使用が含まれます。  
+ [!INCLUDE[csharp_dev10_long](~/includes/csharp-dev10-long-md.md)] には、Office オートメーション API などの COM API との相互運用エクスペリエンスを強化する複数の機能があります。 この機能強化には、`dynamic` 型の使用、および[名前付き引数と省略可能な引数](../../../csharp/programming-guide/classes-and-structs/named-and-optional-arguments.md)の使用が含まれます。  
   
  多くの COM メソッドでは、型を `object` と指定することによって、引数の型と戻り値の型にバリエーションを持たせることができます。 このためには、C# で厳密に型指定された変数と連携できるように値の明示的なキャストが必要でした。 [/link (C# コンパイラ オプション)](../../../csharp/language-reference/compiler-options/link-compiler-option.md) オプションを使用してコンパイルする場合、`dynamic` 型が導入されて COM シグネチャの `object` のオカレンスを `dynamic` 型と同様に処理できるようになったため、ほとんどのキャストを回避できます。 たとえば、Microsoft Office Excel スプレッドシートのセルに `dynamic` 型を使用してアクセスする方法と、`dynamic` 型を使用しないでアクセスする方法の対比を次のステートメントに示します。  
   
@@ -91,4 +91,5 @@ ms.lasthandoff: 05/10/2017
 |[dynamic](../../../csharp/language-reference/keywords/dynamic.md)|`dynamic` キーワードの使用法について説明します。|  
 |[動的言語ランタイムの概要](../../../framework/reflection-and-codedom/dynamic-language-runtime-overview.md)|DLR の概要について説明します。DLR は動的言語の一連のサービスを共通言語ランタイム (CLR) に追加するランタイム環境です。|  
 |[チュートリアル: 動的オブジェクトの作成と使用](../../../csharp/programming-guide/types/walkthrough-creating-and-using-dynamic-objects.md)|動的なカスタム オブジェクト、および `IronPython` ライブラリにアクセスするプロジェクトを作成するための詳細な手順について説明します。|  
+
 |[方法: Visual C# の機能を使用して Office 相互運用オブジェクトにアクセスする](../../../csharp/programming-guide/interop/how-to-access-office-onterop-objects.md)|名前付き引数と省略可能な引数、`dynamic` 型、および Office API オブジェクトへのアクセスを簡単にするその他の強化機能を使用するプロジェクトを作成する方法について説明します。|

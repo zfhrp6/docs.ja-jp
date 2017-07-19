@@ -1,85 +1,104 @@
 ---
-title: "/linkresource (C# Compiler Options) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.technology: 
-  - "devlang-csharp"
-ms.topic: "article"
-f1_keywords: 
-  - "/linkresource"
-dev_langs: 
-  - "CSharp"
-helpviewer_keywords: 
-  - "/linkresource compiler option [C#]"
-  - "linkres compiler option [C#]"
-  - "/linkres compiler option [C#]"
-  - "-linkres compiler option [C#]"
-  - "-linkresource compiler option [C#]"
-  - "linkresource compiler option [C#]"
+title: "-linkresource (C# コンパイラ オプション) | Microsoft Docs"
+ms.date: 2015-07-20
+ms.prod: .net
+ms.technology:
+- devlang-csharp
+ms.topic: article
+f1_keywords:
+- /linkresource
+dev_langs:
+- CSharp
+helpviewer_keywords:
+- /linkresource compiler option [C#]
+- linkres compiler option [C#]
+- /linkres compiler option [C#]
+- -linkres compiler option [C#]
+- -linkresource compiler option [C#]
+- linkresource compiler option [C#]
 ms.assetid: 440c26c2-77c1-4811-a0a3-57cce3f5fc96
 caps.latest.revision: 17
-author: "BillWagner"
-ms.author: "wiwagn"
-caps.handback.revision: 17
+author: BillWagner
+ms.author: wiwagn
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: Human Translation
+ms.sourcegitcommit: fe32676f0e39ed109a68f39584cf41aec5f5ce90
+ms.openlocfilehash: d9a3bc4dc4b51d6170c67f9d2f95b6805497b31c
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/10/2017
+
 ---
-# /linkresource (C# Compiler Options)
-.NET Framework リソースへのリンクを出力ファイルに作成します。  リソース ファイルは出力ファイルには追加されません。  これは、リソース ファイルを出力ファイルに埋め込む [\/resource](../../../csharp/language-reference/compiler-options/resource-compiler-option.md) オプションとは異なります。  
+# <a name="linkresource-c-compiler-options"></a>/linkresource (C# コンパイラ オプション)
+.NET Framework のリソースへのリンクを出力ファイルに作成します。 リソース ファイルが出力ファイルに追加されることはありません。 これに対し、[/resource](../../../csharp/language-reference/compiler-options/resource-compiler-option.md) オプションはリソース ファイルを出力ファイルに埋め込みます。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
-```  
+```console  
 /linkresource:filename[,identifier[,accessibility-modifier]]  
 ```  
   
-## Arguments  
+## <a name="arguments"></a>引数  
  `filename`  
- アセンブリからのリンク先である .NET Framework リソース ファイル。  
+ アセンブリからリンクする .NET Framework のリソース ファイル。  
   
- `identifier` \(省略可能\)  
- リソースの論理名。リソースの読み込みに使用します。  既定値はファイル名です。  
+ `identifier` (省略可能)  
+ リソースの論理名。リソースを読み込むために使われる名前です。 既定値は、ファイルの名前です。  
   
- `accessibility-modifier` \(省略可能\)  
- リソースのアクセシビリティ \(public または private\)。  既定値は public です。  
+ `accessibility-modifier` (省略可能)  
+ リソースのアクセシビリティ。パブリックまたはプライベートです。 既定値はパブリックです。  
   
-## 解説  
- 既定では、リンクされたリソースを C\# コンパイラで作成すると、そのリソースはアセンブリ内で public になります。  リソースを private にする場合は、`private` をアクセシビリティ修飾子として指定します。  `public` と `private` 以外の修飾子は使用できません。  
+## <a name="remarks"></a>コメント  
+ 既定では、リンクされたリソースは、C# コンパイラで作成されるときにアセンブリ内でパブリックになります。 リソースをプライベートにするには、アクセシビリティ修飾子として `private` を指定します。 `public` または `private` 以外の他の修飾子は許可されません。  
   
- **\/linkresource** では、**\/target:module** 以外のいずれかの [\/target](../../../csharp/language-reference/compiler-options/target-compiler-option.md) オプションが必要です。  
+ **/linkresource** には、**/target:module** 以外のいずれかの [/target](../../../csharp/language-reference/compiler-options/target-compiler-option.md) オプションが必要です。  
   
- `filename` が .NET Framework リソース ファイルである場合、たとえば [Resgen.exe](../Topic/Resgen.exe%20\(Resource%20File%20Generator\).md) や開発環境で作成されたものである場合は、<xref:System.Resources> 名前空間のメンバーを使用してアクセスできます。  詳細については、「<xref:System.Resources.ResourceManager?displayProperty=fullName>」を参照してください。  それ以外のすべてのリソースに対しては、<xref:System.Reflection.Assembly> クラスの `GetManifestResource`\* メソッドを使用して、実行時にリソースにアクセスします。  
+ `filename` が [Resgen.exe](http://msdn.microsoft.com/library/8ef159de-b660-4bec-9213-c3fbc4d1c6f4) や開発環境などで作成された .NET Framework リソース ファイルである場合は、<xref:System.Resources> 名前空間のメンバーを使ってそのファイルにアクセスできます。 詳細については、「<xref:System.Resources.ResourceManager?displayProperty=fullName>」を参照してください。 それ以外のすべてのリソースについては、<xref:System.Reflection.Assembly> クラスの `GetManifestResource`* メソッドを使って、実行時にリソースにアクセスします。  
   
- `filename` に指定するファイルの形式は任意です。  たとえば、ネイティブ DLL をアセンブリの一部として含め、そのネイティブ DLL をグローバル アセンブリ キャッシュにインストールして、アセンブリ内のマネージ コードからアクセスできるようにすることもできます。  以下の 2 つ目の例では、この方法が示されています。  これと同じことは、アセンブリ リンカーで行うこともできます。  以下の 3 つ目の例では、この方法が示されています。  詳細については、「[Al.exe \(アセンブリ リンカー\)](../Topic/Al.exe%20\(Assembly%20Linker\).md)」および「[アセンブリとグローバル アセンブリ キャッシュの使用](../Topic/Working%20with%20Assemblies%20and%20the%20Global%20Assembly%20Cache.md)」を参照してください。  
+ `filename` で指定するファイルはどのような形式でもかまいません。 たとえば、ネイティブ DLL をアセンブリの一部にすることで、グローバル アセンブリ キャッシュにインストールして、アセンブリ内のマネージ コードからアクセスできるようにすることができます。 以下の例の 2 番目で、その方法を示します。 同じことをアセンブリ リンカーで行うことができます。 以下の例の 3 番目で、その方法を示します。 詳しくは、「[Al.exe (アセンブリ リンカー)](https://msdn.microsoft.com/library/c405shex)」および「[アセンブリとグローバル アセンブリ キャッシュの使用](../../../framework/app-domains/working-with-assemblies-and-the-gac.md)」をご覧ください。  
   
- **\/linkres** は **\/linkresource** の省略形です。  
+ **/linkres** は **/linkresource** の省略形式です。  
   
- このコンパイラ オプションは、Visual Studio で利用できず、プログラムで変更することもできません。  
+ このコンパイラ オプションは Visual Studio では使用できず、プログラムで変更することはできません。  
   
-## 使用例  
- `in.cs` をコンパイルし、リソース ファイル `rf.resource` にリンクさせる例を次に示します。  
+## <a name="example"></a>例  
+ `in.cs` をコンパイルして、リソース ファイル `rf.resource` にリンクします。  
   
-```  
+```console  
 csc /linkresource:rf.resource in.cs  
 ```  
   
-## 使用例  
- `A.cs` をコンパイルして DLL を作成し、ネイティブの DLL N.dll にリンクして、出力をグローバル アセンブリ キャッシュ \(GAC\) に格納します。  次の例では、A.dll および N.dll の両方が GAC に格納されます。  
+## <a name="example"></a>例  
+ `A.cs` をコンパイルして DLL を作成し、ネイティブ DLL N.dll にリンクして、出力をグローバル アセンブリ キャッシュ (GAC) に配置します。 この例では、A.dll と N.dll の両方を GAC に置きます。  
   
-```  
+```console  
 csc /linkresource:N.dll /t:library A.cs  
 gacutil -i A.dll  
 ```  
   
-## 使用例  
- 次の例では、前の例と同じことをアセンブリ リンカーのオプションを使って実行します。  
+## <a name="example"></a>例  
+ この例では、前の例と同じことを行いますが、アセンブリ リンカー オプションを使います。  
   
-```  
+```console  
 csc /t:module A.cs  
 al /out:A.dll A.netmodule /link:N.dll   
 gacutil -i A.dll  
 ```  
   
-## 参照  
- [C\# Compiler Options](../../../csharp/language-reference/compiler-options/index.md)   
- [Al.exe \(アセンブリ リンカー\)](../Topic/Al.exe%20\(Assembly%20Linker\).md)   
- [アセンブリとグローバル アセンブリ キャッシュの使用](../Topic/Working%20with%20Assemblies%20and%20the%20Global%20Assembly%20Cache.md)   
- [方法 : プロジェクト プロパティおよび構成設定を変更する](http://msdn.microsoft.com/ja-jp/e7184bc5-2f2b-4b4f-aa9a-3ecfcbc48b67)
+## <a name="see-also"></a>関連項目  
+ [C# コンパイラのオプション](../../../csharp/language-reference/compiler-options/index.md)   
+ [Al.exe (アセンブリ リンカー)](https://msdn.microsoft.com/library/c405shex)   
+ [アセンブリとグローバル アセンブリ キャッシュの使用](../../../framework/app-domains/working-with-assemblies-and-the-gac.md)   
+ [NIB 方法: プロジェクト プロパティと構成設定を変更する](http://msdn.microsoft.com/en-us/e7184bc5-2f2b-4b4f-aa9a-3ecfcbc48b67)

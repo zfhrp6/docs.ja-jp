@@ -32,14 +32,15 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 8e56646b1d8ff3b682a402b4b2fc7442c3338a49
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
+ms.openlocfilehash: c535dcce1ad1b9a5fecd3c6a86d7fb522acf079e
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/22/2017
 
 ---
 # <a name="how-to-receive-strings-from-serial-ports-in-visual-basic"></a>方法 : Visual Basic でシリアル ポートから文字列を受信する
-このトピックでは、[!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] で `My.Computer.Ports` を使用して、コンピュータのシリアルポートから文字列を受信する方法について説明します。  
+このトピックでは、[!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] で `My.Computer.Ports` を使用して、コンピューターのシリアルポートから文字列を受信する方法について説明します。  
   
 ### <a name="to-receive-strings-from-the-serial-port"></a>シリアル ポートから文字列を受信する  
   
@@ -49,7 +50,7 @@ ms.lasthandoff: 03/13/2017
   
 2.  どのシリアル ポートから文字列を取得するのかを決定します。 この例では、`COM1` です。  
   
-3.  `My.Computer.Ports.OpenSerialPort` メソッドを使用して、ポートへの参照を取得します。 詳しくは、「<xref:Microsoft.VisualBasic.Devices.Ports.OpenSerialPort%2A>」をご覧ください。  
+3.  `My.Computer.Ports.OpenSerialPort` メソッドを使用して、ポートへの参照を取得します。 詳細については、「<xref:Microsoft.VisualBasic.Devices.Ports.OpenSerialPort%2A>」を参照してください。  
   
      `Try...Catch...Finally` ブロックを使用すると、アプリケーションが例外を生成した場合でも、シリアル ポートを閉じることができます。 シリアル ポートを操作するコードはすべて、このブロック内に記述する必要があります。  
   
@@ -59,7 +60,7 @@ ms.lasthandoff: 03/13/2017
   
      [!code-vb[VbVbalrMyComputer#40](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/VisualBasic/how-to-receive-strings-from-serial-ports_3.vb)]  
   
-5.  <xref:System.IO.Ports.SerialPort.ReadLine%2A> メソッドを使用して、次に利用可能な行をシリアル ポートから読み取ります。  
+5.  <xref:System.IO.Ports.SerialPort.ReadLine%2A> メソッドを使用して、次に利用可能なテキスト行をシリアル ポートから読み取ります。  
   
      [!code-vb[VbVbalrMyComputer#41](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/VisualBasic/how-to-receive-strings-from-serial-ports_4.vb)]  
   

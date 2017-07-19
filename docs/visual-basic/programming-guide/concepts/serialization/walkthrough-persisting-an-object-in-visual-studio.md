@@ -1,5 +1,5 @@
 ---
-title: "Visual Studio (Visual Basic) でオブジェクトを永続化 |Microsoft ドキュメント"
+title: "Visual Studio でのオブジェクトの永続化 (Visual Basic) | Microsoft Docs"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -20,37 +20,38 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 0ff6320aee65850b8b445f445f80b4bbe2c9c254
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
+ms.openlocfilehash: f4b78654f79913d90667daa9e75c88f45f8efbdc
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/22/2017
 
 ---
-# <a name="walkthrough-persisting-an-object-in-visual-studio-visual-basic"></a>チュートリアル: Visual Studio (Visual Basic) でオブジェクトを永続化
-既定値にオブジェクトのプロパティを設定するにはデザイン時に、実行時に入力した値は、オブジェクトが破棄されるときに失われます。 シリアル化を使用して、値を格納し、次回のオブジェクトをインスタンス化して取得することにより、インスタンス間でオブジェクトのデータを永続化できます。  
+# <a name="walkthrough-persisting-an-object-in-visual-studio-visual-basic"></a>チュートリアル: Visual Studio でのオブジェクトの永続化 (Visual Basic)
+オブジェクトのプロパティはデザイン時に既定値に設定できますが、そのオブジェクトが破棄されると、実行時に入力した値はすべて失われます。 シリアル化によってインスタンス間でオブジェクトのデータを永続化すると、値を保存しておき、次にそのオブジェクトをインスタンス化するときに、その値を取得することができます。  
   
 > [!NOTE]
->  Visual basic で名前または番号などの単純なデータを格納することができますを使用して、`My.Settings`オブジェクトです。 詳細については、次を参照してください。 [My.settings](../../../../visual-basic/language-reference/objects/my-settings-object.md)します。  
+>  Visual Basic では、`My.Settings` オブジェクトを使用して、名前や数値などの単純なデータを保存できます。 詳細については、「[My.Settings オブジェクト](../../../../visual-basic/language-reference/objects/my-settings-object.md)」を参照してください。  
   
- このチュートリアルでは、単純なを作成します`Loan`オブジェクトし、そのデータ ファイルを保持します。 その後、オブジェクトの再作成するときに、データをファイルから取得されます。  
-  
-> [!IMPORTANT]
->  次のコード例では、ファイルが存在しない場合は新規にファイルを作成します。 そのアプリケーションにする必要がありますが、ファイルを作成する必要がある場合、`Create`フォルダーのアクセスを許可します。 権限は、アクセス制御リストを使用して設定されます。 アプリケーションにのみ必要な場合は、ファイルが既に存在する`Write`アクセス許可、いずれか小さいほうのアクセスを許可します。 展開時に、ファイルを作成し、だけを許可する方が安全では可能であれば、 `Read` (フォルダーに対する作成アクセス許可) ではなく&1; つのファイルへのアクセス許可。 また、ルート フォルダーまたは Program Files フォルダーよりもユーザー フォルダーにデータを書き込む方が安全です。  
+ このチュートリアルでは、簡単な `Loan` オブジェクトを作成し、そのデータをファイルに永続化します。 その後、オブジェクトを再作成するときに、そのファイルからデータを取得します。  
   
 > [!IMPORTANT]
->  この例では、バイナリのデータを格納します。 これらの形式は、パスワードやクレジット_カード番号などの機密データの指定しないでください。  
+>  次のコード例では、ファイルが存在しない場合は新規にファイルを作成します。 アプリケーションでファイルを作成する必要がある場合、そのアプリケーションには、フォルダーに対する `Create` アクセス許可が必要です。 アクセス許可は、アクセス制御リストを使用して設定します。 ファイルが既に存在する場合、アプリケーションに必要なのは下位の `Write` アクセス許可だけです。 可能な場合は、(フォルダーに対して Create アクセス許可を付与するのではなく) 配置時にファイルを作成し、1 つのファイルに対してのみ `Read` アクセス許可を付与する方が安全です。 また、ルート フォルダーや Program Files フォルダーにデータを書き込むよりも、ユーザー フォルダーに書き込む方が安全です。  
+  
+> [!IMPORTANT]
+>  この例では、バイナリにデータを格納します。 この形式は、パスワードやクレジット カード情報などの重要情報には使用しないでください。  
   
 > [!NOTE]
 >  実際に画面に表示されるダイアログ ボックスとメニュー コマンドは、アクティブな設定またはエディションによっては、ヘルプの説明と異なる場合があります。 設定を変更するには、 **[ツール]** メニューの **[設定のインポートとエクスポート]** をクリックします。 詳細については、「[Visual Studio での開発設定のカスタマイズ](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3)」を参照してください。  
   
-## <a name="creating-the-loan-object"></a>ローン オブジェクトを作成します。  
- 作成するには、まず、`Loan`クラスおよびクラスを使用するテスト アプリケーションです。  
+## <a name="creating-the-loan-object"></a>Loan オブジェクトの作成  
+ まず、`Loan` クラスとそのクラスを使用するテスト アプリケーションを作成します。  
   
-### <a name="to-create-the-loan-class"></a>ローン クラスを作成するには  
+### <a name="to-create-the-loan-class"></a>Loan クラスを作成するには  
   
-1.  新しいクラス ライブラリ プロジェクトを作成し、"LoanClass"という名前を付けます。 詳細については、「[ソリューションとプロジェクトの作成](http://docs.microsoft.com/visualstudio/ide/creating-solutions-and-projects)」を参照してください。  
+1.  新しいクラス ライブラリ プロジェクトを作成して、"LoanClass" という名前を付けます。 詳細については、「[ソリューションとプロジェクトの作成](http://docs.microsoft.com/visualstudio/ide/creating-solutions-and-projects)」を参照してください。  
   
-2.  **ソリューション エクスプ ローラー**Class1 ファイルのショートカット メニューを開き、選択**の名前を変更**します。 ファイルを`Loan`ENTER キーを押します。 ファイルの名前変更の名前も変更は、クラスに`Loan`します。  
+2.  **ソリューション エクスプローラー**で、Class1 ファイルのショートカット メニューを開き、**[名前の変更]** を選択します。 ファイルの名前を `Loan` に変更し、Enter キーを押します。 ファイルの名前を変更すると、クラスの名前も `Loan` に変更されます。  
   
 3.  クラスに次のパブリック メンバーを追加します。  
   
@@ -90,25 +91,25 @@ ms.lasthandoff: 03/13/2017
     End Class  
     ```  
   
- 使用する単純なアプリケーションを作成する必要があります、`Loan`クラスです。  
+ また、`Loan` クラスを使用する簡単なアプリケーションも作成する必要があります。  
   
 ### <a name="to-create-a-test-application"></a>テスト アプリケーションを作成するには  
   
-1.  ソリューションに Windows フォーム アプリケーション プロジェクトを追加する、**ファイル**] メニューの [選択**追加**、**新しいプロジェクト**します。  
+1.  **[ファイル]** メニューで **[追加]**、**[新しいプロジェクト]** の順に選択して、Windows フォーム アプリケーション プロジェクトをソリューションに追加します。  
   
-2.  **新しいプロジェクトの追加** ダイアログ ボックスで、選択**Windows フォーム アプリケーション**、入力と`LoanApp`クリックして、プロジェクトの名前として**ok**  ダイアログ ボックスを閉じます。  
+2.  **[新しいプロジェクトの追加]** ダイアログ ボックスで、**[Windows フォーム アプリケーション]** を選択し、プロジェクト名として「`LoanApp`」と入力します。次に、**[OK]** をクリックしてダイアログ ボックスを閉じます。  
   
-3.  **ソリューション エクスプ ローラー**、プロジェクトを選択します。  
+3.  **ソリューション エクスプローラー** で LoanApp プロジェクトを選択します。  
   
-4.  **プロジェクト**] メニューの [選択**スタートアップ プロジェクトとして設定**します。  
+4.  **[プロジェクト]** メニューの **[スタートアップ プロジェクトに設定]** をクリックします。  
   
 5.  **[プロジェクト]** メニューの **[参照の追加]**をクリックします。  
   
-6.  **参照の追加** ダイアログ ボックスで、選択、**プロジェクト**タブし、LoanClass プロジェクトを選択します。  
+6.  **[参照の追加]** ダイアログ ボックスで、**[プロジェクト]** タブをクリックし、LoanClass プロジェクトを選択します。  
   
 7.  [OK **** ] をクリックしてダイアログ ボックスを閉じます。  
   
-8.  デザイナーで、4 つの追加<xref:System.Windows.Forms.TextBox>フォームのコントロール</xref:System.Windows.Forms.TextBox>。  
+8.  デザイナーで、フォームに <xref:System.Windows.Forms.TextBox> コントロールを 4 つ追加します。  
   
 9. コード エディターで、次のコードを追加します。  
   
@@ -123,7 +124,7 @@ ms.lasthandoff: 03/13/2017
     End Sub  
     ```  
   
-10. イベント ハンドラーを追加、`PropertyChanged`次のコードを使用してフォームに、イベント。  
+10. 次のコードを使用して、`PropertyChanged` イベントのイベント ハンドラーをフォームに追加します。  
   
     ```vb  
     Public Sub CustomerPropertyChanged(  
@@ -135,27 +136,27 @@ ms.lasthandoff: 03/13/2017
     End Sub  
     ```  
   
- この時点では、ビルドおよびアプリケーションを実行することができます。 既定値を`Loan`クラスは、テキスト ボックスに表示されます。 7.5 から 7.1 に利率の値を変更して、アプリケーションを終了し、もう一度実行しようとしています。-値 7.5 の既定値に戻ります。  
+ この時点で、アプリケーションをビルドして実行できます。 `Loan` クラスの既定値が、テキスト ボックスに表示されます。 利率の値を 7.5 から 7.1 に変更し、アプリケーションをいったん閉じてから、再び実行してください。値が既定値の 7.5 に戻ります。  
   
- 現実の世界での金利を変更する、定期的に、必ずしもアプリケーションを実行するたびにします。 アプリケーションを実行するたびに利率を更新するユーザーを作成するには、代わりのアプリケーション インスタンス間で最新の金利を保持することをお勧めします。 次の手順でを実行したローン クラスをシリアル化を追加することで。  
+ 実際には利率は定期的に変わりますが、アプリケーションを実行するたびに変わるとは限りません。 アプリケーションを実行するたびにユーザーが利率を更新するのではなく、アプリケーションのインスタンス間で最新の利率を保持できるようにすると便利です。 次の手順では、Loan クラスにシリアル化を追加して、利率を保持できるようにします。  
   
-## <a name="using-serialization-to-persist-the-object"></a>シリアル化を使用して、オブジェクトを永続化  
- Loan クラスの値を保持するためを使用してクラスをマークする必要があります最初、`Serializable`属性です。  
+## <a name="using-serialization-to-persist-the-object"></a>シリアル化を使用したオブジェクトの永続化  
+ Loan クラスの値を永続化するには、まず、クラスを `Serializable` 属性でマークする必要があります。  
   
 ### <a name="to-mark-a-class-as-serializable"></a>クラスをシリアル化可能としてマークするには  
   
--   ローン クラスのクラス宣言を次のように変更します。  
+-   Loan クラスのクラス宣言を次のように変更します。  
   
     ```vb  
     <Serializable()>  
     Public Class Loan  
     ```  
   
- `Serializable`属性は、ファイルに保存する、クラス内のすべてをコンパイラに指示します。 `PropertyChanged`イベントが Windows フォーム オブジェクトによって処理される、シリアル化することはできません。 `NonSerialized`を永続化しないクラス メンバーをマークする属性を使用できます。  
+ `Serializable` 属性は、クラス内のすべての要素がファイルに永続化できることをコンパイラに示します。 `PropertyChanged` イベントは Windows フォーム オブジェクトで処理されるためシリアル化できません。 永続化しないクラス メンバーは、`NonSerialized` 属性でマークできます。  
   
-### <a name="to-prevent-a-member-from-being-serialized"></a>メンバーがシリアル化されないようにするには  
+### <a name="to-prevent-a-member-from-being-serialized"></a>メンバーをシリアル化の対象から除外するには  
   
--   宣言を変更する、`PropertyChanged`次のように、イベント。  
+-   `PropertyChanged` イベントの宣言を次のように変更します。  
   
     ```vb  
     <NonSerialized()>  
@@ -163,30 +164,30 @@ ms.lasthandoff: 03/13/2017
       Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged  
     ```  
   
- 次の手順では、LoanApp アプリケーションにシリアル化コードを追加します。 クラスをシリアル化し、ファイルへの書き込みをするには、使用して、<xref:System.IO>と<xref:System.Xml.Serialization>名前空間</xref:System.Xml.Serialization></xref:System.IO>。 完全修飾名の入力を回避するのには、必要なクラス ライブラリへの参照を追加できます。  
+ 次に、LoanApp アプリケーションにシリアル化コードを追加します。 クラスをシリアル化してファイルに書き込むには、<xref:System.IO> 名前空間と <xref:System.Xml.Serialization> 名前空間を使用します。 必要なクラス ライブラリへの参照を追加すると、完全修飾名の入力が不要になります。  
   
-### <a name="to-add-references-to-namespaces"></a>名前空間への参照を追加するには  
+### <a name="to-add-references-to-namespaces"></a>名前空間に参照を追加するには  
   
--   先頭に次のステートメントを追加、`Form1`クラス。  
+-   `Form1` クラスの先頭に、次のステートメントを追加します。  
   
     ```vb  
     Imports System.IO  
     Imports System.Runtime.Serialization.Formatters.Binary  
     ```  
   
-     この場合、オブジェクトをバイナリ形式で保存するには、バイナリ フォーマッタを使用しています。  
+     この場合は、バイナリ フォーマッタを使用して、バイナリ形式でオブジェクトを保存します。  
   
- 次の手順では、オブジェクトの作成時に、ファイルからオブジェクトを逆シリアル化するコードを追加します。  
+ 次の手順では、オブジェクトの作成時にファイルからオブジェクトを逆シリアル化するコードを追加します。  
   
 ### <a name="to-deserialize-an-object"></a>オブジェクトを逆シリアル化するには  
   
-1.  シリアル化されたデータのファイル名をクラスには、定数を追加します。  
+1.  シリアル化されたデータのファイル名を定数としてクラスに追加します。  
   
     ```vb  
     Const FileName As String = "..\..\SavedLoan.bin"  
     ```  
   
-2.  コードの変更、`Form1_Load`次のように、イベント プロシージャ。  
+2.  `Form1_Load` イベント プロシージャのコードを次のように変更します。  
   
     ```vb  
     Private WithEvents TestLoan As New LoanClass.Loan(10000.0, 0.075, 36, "Neil Black")  
@@ -208,13 +209,13 @@ ms.lasthandoff: 03/13/2017
     End Sub  
     ```  
   
-     まず必要がありますを確認するファイルが存在することに注意してください。 存在する場合は、作成、<xref:System.IO.Stream>バイナリ ファイルを読み取るためのクラスと<xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter>ファイルを変換するクラス</xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter></xref:System.IO.Stream>。 また、ストリーム型からローン オブジェクトの種類に変換する必要があります。  
+     まず、ファイルが存在することを確認する必要があります。 ファイルが存在する場合は、バイナリ ファイルを読み取る <xref:System.IO.Stream> クラスと、ファイルを変換する <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter> クラスを作成します。 ストリーム型を Loan オブジェクト型に変換する必要もあります。  
   
- 次に、テキスト ボックスに入力されたデータを保存するコードを追加する必要があります、`Loan`クラス、および、ファイルにクラスをシリアル化する必要があります。  
+ 次に、テキスト ボックスに入力されたデータを `Loan` クラスに保存するコードを追加します。その後、クラスをファイルにシリアル化する必要があります。  
   
-### <a name="to-save-the-data-and-serialize-the-class"></a>データを保存し、クラスをシリアル化するには  
+### <a name="to-save-the-data-and-serialize-the-class"></a>データを保存してクラスをシリアル化するには  
   
--   次のコードを追加、`Form1_FormClosing`イベント プロシージャ。  
+-   `Form1_FormClosing` イベント プロシージャに次のコードを追加します。  
   
     ```vb  
     Private Sub Form1_FormClosing() Handles MyBase.FormClosing  
@@ -230,7 +231,7 @@ ms.lasthandoff: 03/13/2017
     End Sub  
     ```  
   
- この時点では、もう一度ビルドして実行するアプリケーション。 最初に、既定値は、テキスト ボックスに表示されます。 値を変更し、4 つ目のテキスト ボックスに名前を入力しようとします。 アプリケーションを終了して再度実行します。 新しい値がテキスト ボックスに表示されていることに注意してください。  
+ この時点で、アプリケーションを再度ビルドして実行できます。 最初に既定値がテキスト ボックスに表示されます。 値を変更して、4 番目のテキスト ボックスに名前を入力します。 いったんアプリケーションを閉じて、再び実行します。 これで、新しい値がテキスト ボックスに表示されます。  
   
 ## <a name="see-also"></a>関連項目  
  [シリアル化 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/serialization/index.md)   

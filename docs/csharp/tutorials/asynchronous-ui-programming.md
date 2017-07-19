@@ -1,5 +1,5 @@
 ---
-title: "非同期 UI プログラミング | C# のガイド"
+title: "非同期 UI プログラミング - C# のガイド | Microsoft Docs"
 description: "プログラミングで非同期操作を処理中に、UI の応答性を保つ手法について学ぶ"
 keywords: C#, UWP, XAML
 ms.date: 08/24/2016
@@ -8,11 +8,12 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 7402b29b-1093-456d-be4c-f60ecb8926bb
-redirect_url: /dotnet/articles/csharp/tutorials/index
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 9d544740b2a172e08f333b55fb29c5a5f8782200
-ms.lasthandoff: 03/13/2017
+redirect_url: /dotnet/csharp/tutorials/index
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 4437ce5d344cf06d30e31911def6287999fc6ffc
+ms.openlocfilehash: 58cac34daca4199562ced9575212ad18fd8e03c0
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/23/2017
 
 ---
 

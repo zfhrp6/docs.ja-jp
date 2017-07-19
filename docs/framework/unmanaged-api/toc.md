@@ -1,0 +1,5 @@
+# [共有のデータ型](common-data-types-unmanaged-api-reference.md)
+# [アンマネージ API リファレンス](index.md)
+# [COR_PRF_ALLOWABLE_AFTER_ATTACH ビットマスク](cor-prf-allowable-after-attach-bitmask.md)
+# [定数](constants-unmanaged-api-reference.md)
+# [GUID_ManagedName 属性](guid-managedname-attribute.md)

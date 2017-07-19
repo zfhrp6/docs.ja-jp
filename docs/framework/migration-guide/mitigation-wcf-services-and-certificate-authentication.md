@@ -16,19 +16,22 @@ author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.translationtype: Human Translation
-ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
-ms.openlocfilehash: 4c2156087ca168bafb1b7333310066cef73f3334
+ms.sourcegitcommit: 6f3dc4235c75d7438f019838cb22192f4dc7c41a
+ms.openlocfilehash: 0b32fa96cd002e927fa00e8c2a797d1ff6b17cb8
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/18/2017
+ms.lasthandoff: 05/30/2017
 
 ---
-# <a name="mitigation-wcf-services-and-certificate-authentication"></a>軽減策: WCF サービスと証明書認証
+<a id="mitigation-wcf-services-and-certificate-authentication" class="xliff"></a>
+# 軽減策: WCF サービスと証明書認証
 .NET Framework 4.6 では、WCF SSL プロトコルの既定の一覧に TLS 1.1 および TLS 1.2 が追加されます。 クライアントとサーバーの両方のマシンに .NET Framework 4.6 以降がインストールされている場合は、TLS 1.2 がネゴシエーションに使用されます。  
   
-## <a name="impact"></a>影響  
+<a id="impact" class="xliff"></a>
+## 影響  
  TLS 1.2 では MD5 証明書認証がサポートされません。 そのため、顧客がハッシュ アルゴリズムで MD5 を使用する SSL 証明書を使用すると、WCF クライアントは WCF サービスに接続できません。 詳細については、「[Mitigation: WCF Services and Certificate Authentication](../../../docs/framework/migration-guide/mitigation-wcf-services-and-certificate-authentication.md)」(軽減策: WCF サービスと証明書認証) を参照してください。  
   
-## <a name="mitigation"></a>軽減策  
+<a id="mitigation" class="xliff"></a>
+## 軽減策  
  次のいずれかの操作を実行することで、この問題を回避して、WCF クライアントを WCF サーバーに接続できるようになります。  
   
 -   MD5 アルゴリズムを使用しないように証明書を更新します。 この解決策をお勧めします。  
@@ -59,11 +62,12 @@ ms.lasthandoff: 04/18/2017
     </configuration>  
     ```  
   
--   バインドがソース コードで動的に構成されている場合は、ソース コードで TLS 1.1 (<xref:System.Security.Authentication.SslProtocols?displayProperty=fullName>) または以前のバージョンのプロトコルを使用するように <xref:System.ServiceModel.TcpTransportSecurity.SslProtocols%2A?displayProperty=fullName> プロパティを更新します。  
+-   バインドがソース コードで動的に構成されている場合は、ソース コード内で TLS 1.1 (<xref:System.Security.Authentication.SslProtocols.Tls11?displayProperty=fullName>) または以前のバージョンのプロトコルを使用するように <xref:System.ServiceModel.TcpTransportSecurity.SslProtocols%2A?displayProperty=fullName> プロパティを更新します。  
   
     > [!CAUTION]
     >  MD5 ハッシュ アルゴリズムによる証明書は安全でないと見なされるため、この回避策はお勧めできません。  
   
-## <a name="see-also"></a>関連項目  
+<a id="see-also" class="xliff"></a>
+## 関連項目  
  [ランタイムの変更点](../../../docs/framework/migration-guide/runtime-changes-in-the-net-framework-4-6.md)
 

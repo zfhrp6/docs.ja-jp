@@ -19,13 +19,15 @@ caps.latest.revision: 34
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-translationtype: Human Translation
-ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
-ms.openlocfilehash: bed74cee6db01a38bc0bc3c6eeffa33b682bbd80
-ms.lasthandoff: 04/18/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: fe9ab371ab8d3eee3778412e446b7aa30b42476b
+ms.openlocfilehash: f7af2ff5db3d6d06383906fc271ae60d68f43731
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/19/2017
 
 ---
-# <a name="overview-of-the-net-framework"></a>.NET Framework の概要
+<a id="overview-of-the-net-framework" class="xliff"></a>
+# .NET Framework の概要
 .NET Framework は、次世代アプリケーションや XML Web サービスのビルドと実行をサポートするテクノロジです。 .NET Framework は、次の目的を実現するためにデザインされています。  
   
 -   オブジェクト コードがローカルに保存され実行されるか、インターネットに分散されローカルに実行されるか、リモートで実行されるかにかかわらず、一貫したオブジェクト指向プログラミング環境を提供すること。  
@@ -41,7 +43,7 @@ ms.lasthandoff: 04/18/2017
 -   .NET Framework に基づいたコードを他の任意のコードと統合できるように、すべての通信を業界標準に準拠して構築すること。  
   
 > [!NOTE]
->  ユーザーと開発者のための .NET Framework の概要については、「[.NET Framework の概要](../../../docs/framework/get-started/index.md)」を参照してください。 .NET Framework をダウンロードするには、「[インストール ガイド](../../../docs/framework/install/guide-for-developers.md)」を参照してください。  
+>  ユーザーと開発者のための .NET Framework の概要については、「[.NET Framework の概要](../../../docs/framework/get-started/index.md)」を参照してください。  
   
  .NET Framework は、共通言語ランタイムと .NET Framework クラス ライブラリから構成されます。 共通言語ランタイムは、.NET Framework の基礎となるコンポーネントです。 このランタイムは、実行時のコード管理を行うエージェントのようなものであり、メモリ管理、スレッド管理、リモート処理などの重要なサービスを提供したり、セキュリティや保全性を促進するために厳密なタイプ セーフやその他のコード整合性を強制的に適用したりします。 実際、コード管理の概念はこのランタイムの基本原理です。 このランタイムを使用して実行するように作成されたコードはマネージ コードと呼ばれ、そうでないコードはアンマネージ コードと呼ばれます。 クラス ライブラリは、従来のコマンド ラインやグラフィカル ユーザー インターフェイス (GUI) を使用したアプリケーションから、ASP.NET がもたらした最新の機構に基づく Web フォームや XML Web サービスなどのアプリケーションに至るまでのアプリケーション開発に使用できる、再利用可能な型の包括的なオブジェクト指向コレクションです。  
   
@@ -58,7 +60,8 @@ ms.lasthandoff: 04/18/2017
   
  .NET Framework の主要な機能を以降のセクションでより詳細に説明します。  
   
-## <a name="features-of-the-common-language-runtime"></a>共通言語ランタイムの機能  
+<a id="features-of-the-common-language-runtime" class="xliff"></a>
+## 共通言語ランタイムの機能  
  共通言語ランタイムでは、メモリ、スレッドの実行、コードの実行、コードの整合性検査、コンパイル、およびその他のシステム サービスを管理します。 これらの機能は、共通言語ランタイムで実行されるマネージ コードにあらかじめ用意されています。  
   
  セキュリティ関連では、マネージ コンポーネントには、その出所 (インターネット、企業内ネットワーク、ローカル コンピューターなど) を含めた一連の要因に基づいて、さまざまな程度の信頼が与えられます。 そのためマネージ コンポーネントは、同じアクティブなアプリケーションで使用されていても、ファイル アクセス操作、レジストリ アクセス操作、またはその他の一般に公開されない機能を、実行できる場合と実行できない場合があります。  
@@ -77,7 +80,8 @@ ms.lasthandoff: 04/18/2017
   
  最後に、共通言語ランタイムは、Microsoft SQL Server や Internet Information Services (IIS) などの高性能なサーバー側アプリケーションでホストできます。 このインフラストラクチャにより、マネージ コードを使用してビジネス ロジックを記述し、ランタイム ホストをサポートする企業向けサーバーの優れたパフォーマンスを享受できます。  
   
-## <a name="net-framework-class-library"></a>.NET Framework クラス ライブラリ  
+<a id="net-framework-class-library" class="xliff"></a>
+## .NET Framework クラス ライブラリ  
  .NET Framework クラス ライブラリは、共通言語ランタイムと緊密に統合された再利用可能な型のコレクションです。 このクラス ライブラリはオブジェクト指向で、このライブラリが提供する型を使用することにより、独自に作成したマネージ コード内で機能を継承できます。 これは .NET Framework の型を使いやすくするだけでなく、.NET Framework の新機能の学習に必要な時間を減らします。 さらに、.NET Framework のクラスには、サードパーティ製のコンポーネントをシームレスに統合できます。  
   
  たとえば、.NET Framework のコレクション クラスは、独自のコレクション クラスの開発に使用できる一連のインターフェイスを実装しています。 作成したコレクション クラスは、.NET Framework のクラスとシームレスに統合して使用できます。  
@@ -100,9 +104,10 @@ ms.lasthandoff: 04/18/2017
   
  たとえば Windows フォーム クラスは、Windows GUI の開発を非常に簡単にする、再利用可能な型の包括的なセットです。 ASP.NET Web フォーム アプリケーションを作成する場合は、Web フォーム クラスを使用します。  
   
-## <a name="see-also"></a>関連項目  
+<a id="see-also" class="xliff"></a>
+## 関連項目  
  [システム要件](../../../docs/framework/get-started/system-requirements.md)   
- [インストール ガイド](../../../docs/framework/install/guide-for-developers.md)   
+ [インストール ガイド](../../../docs/framework/install/index.md)   
  [開発ガイド](../../../docs/framework/development-guide.md)   
  [ツール](../../../docs/framework/tools/index.md)   
  [.NET Framework のサンプル](http://msdn.microsoft.com/en-us/177055f8-4a1f-43e7-aee6-995c196079b1)   

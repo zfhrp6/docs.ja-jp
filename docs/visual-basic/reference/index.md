@@ -28,27 +28,28 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 7b1ef288f04a83ef979b36e50cf0d3adc0e80387
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 31905a37f09db5f5192123f0118252fbe8b02eff
+ms.openlocfilehash: c730caa8b3beaa3e26e63b324a5394a4a0c46d64
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/26/2017
 
 ---
 # <a name="reference-visual-basic"></a>リファレンス (Visual Basic)
-このセクションでは、[!INCLUDE[vbprvb](../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] プログラミングに関するさまざまなリファレンス情報へのリンクを示します。  
+このセクションでは、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] プログラミングに関するさまざまなリファレンス情報へのリンクを示します。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
  [Visual Basic の言語リファレンス](../../visual-basic/language-reference/index.md)  
- [!INCLUDE[vbprvb](../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] 言語のさまざまな側面に関するリファレンス情報を提供します。  
+ [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] 言語のさまざまな側面に関するリファレンス情報を提供します。  
   
  [Visual Basic のコマンド ライン コンパイラ](../../visual-basic/reference/command-line-compiler/index.md)  
  コマンド ライン コンパイラに関する情報へのリンクを示します。コマンド ライン コンパイラは、Visual Studio IDE を使用せずにプログラムをコンパイルするためのツールです。  
   
  [.NET Framework リファレンス情報](../../visual-basic/reference/net-framework-reference-information.md)  
- [!INCLUDE[dnprdnshort](../../csharp/getting-started/includes/dnprdnshort_md.md)] クラス ライブラリの使用方法に関する情報へのリンクを示します。  
+ [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] クラス ライブラリの使用方法に関する情報へのリンクを示します。  
   
  [Visual Basic 言語仕様](../../visual-basic/reference/language-specification.md)  
- 完全な [!INCLUDE[vbprvb](../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] 言語仕様へのリンクを示します。ここには、この言語のあらゆる側面に関する詳細な情報が掲載されています。  
+ 完全な [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] 言語仕様へのリンクを示します。ここには、この言語のあらゆる側面に関する詳細な情報が掲載されています。  
   
 ## <a name="reference"></a>参照  
  <xref:Microsoft.VisualBasic.PowerPacks?displayProperty=fullName>  
@@ -59,10 +60,10 @@ ms.lasthandoff: 03/13/2017
   
 ## <a name="related-sections"></a>関連項目  
  [一般的なユーザー インターフェイス要素 (Visual Studio)](https://docs.microsoft.com/visualstudio/ide/reference/general-user-interface-elements-visual-studio)  
- [!INCLUDE[vsprvs](../../csharp/includes/vsprvs_md.md)] のダイアログ ボックスとウィンドウに関するトピックです。  
+ [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] のダイアログ ボックスとウィンドウに関するトピックです。  
   
  [Visual Studio の XML ツール](https://docs.microsoft.com/visualstudio/xml-tools/xml-tools-in-visual-studio)  
- [!INCLUDE[vsprvs](../../csharp/includes/vsprvs_md.md)] で使用可能な、さまざまな XML ツールに関するトピックへのリンクを示します。  
+ [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] で使用可能な、さまざまな XML ツールに関するトピックへのリンクを示します。  
   
  [オートメーションと機能拡張のリファレンス](http://msdn.microsoft.com/library/93112562-db21-4188-9383-ed19ad79bddf)  
- 共有コンポーネントと言語固有コンポーネントの両方について、[!INCLUDE[vsprvs](../../csharp/includes/vsprvs_md.md)] でのオートメーションと機能拡張に関するトピックへのリンクを示します。
+ 共有コンポーネントと言語固有コンポーネントの両方について、[!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] でのオートメーションと機能拡張に関するトピックへのリンクを示します。

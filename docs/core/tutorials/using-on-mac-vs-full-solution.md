@@ -4,20 +4,22 @@ description: "このトピックでは、再利用可能なライブラリと単
 keywords: .NET, .NET Core, macOS, Mac
 author: guardrex
 ms.author: mairaw
-ms.date: 03/16/2017
+ms.date: 06/12/2017
 ms.topic: article
 ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: 6945bedf-5bf3-4955-8588-83fb87511b79
 ms.translationtype: Human Translation
-ms.sourcegitcommit: 890c058bd09893c2adb185e1d8107246eef2e20a
-ms.openlocfilehash: c1f279e4c78111350dbc8ec01d33d65773c56bb1
+ms.sourcegitcommit: 83200e452bccc20bfa82d94899514019e9d05a23
+ms.openlocfilehash: a54100a4eda6997b73b60d88b583e290973acb8e
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/12/2017
+ms.lasthandoff: 07/05/2017
 
 ---
 
-# <a name="building-a-complete-net-core-solution-on-macos-using-visual-studio-for-mac"></a>Visual Studio for Mac を使用した macOS での完全な .NET Core ソリューションの構築
+<a id="building-a-complete-net-core-solution-on-macos-using-visual-studio-for-mac" class="xliff"></a>
+
+# Visual Studio for Mac を使用した macOS での完全な .NET Core ソリューションの構築
 
 Visual Studio for Mac では、.NET Core アプリケーション開発用の機能をすべて備えた統合開発環境 (IDE) が提供されます。 このトピックでは、再利用可能なライブラリと単体テストを含む .NET Core ソリューションの構築方法を示します。
 
@@ -28,21 +30,23 @@ Visual Studio for Mac では、.NET Core アプリケーション開発用の機
 > * Visual Studio for Mac で、メニューから **[ヘルプ]、[問題の報告]** の順に選択するか、ようこそ画面から **[問題の報告]** を選択して、バグ レポートを提出するためのウィンドウを開きます。
 > * 提案するには、メニューから **[ヘルプ]、[提案の送信]** の順に選択するか、ようこそ画面から **[提案の送信]** を選択し、[Visual Studio for Mac の UserVoice Web ページ](https://visualstudio.uservoice.com/forums/563332-visual-studio-for-mac)に移動します。
 
-## <a name="prerequisites"></a>必須コンポーネント
+<a id="prerequisites" class="xliff"></a>
 
-[.NET Core と OpenSSL](https://www.microsoft.com/net/core#macos)
+## 必須コンポーネント
 
 必須コンポーネントの詳細については、「[Mac における .NET Core の前提条件](../../core/macos-prerequisites.md)」を参照してください。
 
-## <a name="getting-started"></a>作業の開始
+<a id="getting-started" class="xliff"></a>
+
+## 作業の開始
 
 必須コンポーネントと Visual Studio for Mac を既にインストールしている場合は、このセクションをスキップして、「[ライブラリのビルド](#building-a-library)」に進みます。 以下の手順に従って、必須コンポーネントと Visual Studio for Mac をインストールします。
 
-1. [.NET Core と OpenSSL](https://www.microsoft.com/net/core#macos) をダウンロードしてインストールします。
+[Visual Studio for Mac インストーラー](https://www.visualstudio.com/vs/visual-studio-mac/)をダウンロードします。 インストーラーを実行します。 使用許諾契約書を読み、同意します。 インストール中に、Xamarin (クロスプラットフォーム モバイル アプリ開発テクノロジ) をインストールすることができます。 .NET Core の開発の場合、Xamarin とその関連コンポーネントのインストールは省略できます。 Visual Studio for Mac のインストール プロセスのチュートリアルについては、「[Introducing Visual Studio for Mac](https://developer.xamarin.com/guides/cross-platform/visual-studio-mac/)」 (Visual Studio for Mac の概要) を参照してください。 インストールが完了したら、Visual Studio for Mac IDE を起動します。
 
-1. [Visual Studio for Mac インストーラー](https://www.visualstudio.com/vs/visual-studio-mac/)をダウンロードします。 インストーラーを実行します。 使用許諾契約書を読み、同意します。 インストール中に、Xamarin (クロスプラットフォーム モバイル アプリ開発テクノロジ) をインストールすることができます。 .NET Core の開発の場合、Xamarin とその関連コンポーネントのインストールは省略できます。 Visual Studio for Mac のインストール プロセスのチュートリアルについては、「[Introducing Visual Studio for Mac](https://developer.xamarin.com/guides/cross-platform/visual-studio-mac/)」 (Visual Studio for Mac の概要) を参照してください。 インストールが完了したら、Visual Studio for Mac IDE を起動します。
+<a id="building-a-library" class="xliff"></a>
 
-## <a name="building-a-library"></a>ライブラリのビルド
+## ライブラリのビルド
 
 1. ようこそ画面で、**[新しいプロジェクト]** を選択します。 **[新しいプロジェクト]** ダイアログで、**[Multiplatform (マルチプラットフォーム)]** ノードの下にある **[.NET Standard Library (.NET 標準ライブラリ)]** テンプレートを選択します。 **[次へ]** を選択します。
 
@@ -70,7 +74,9 @@ Visual Studio for Mac では、.NET Core アプリケーション開発用の機
 
    ![ビルドの成功メッセージが表示された、[エラー] パネルのビルド出力ウィンドウ](./media/using-on-mac-vs-full-solution/vsmacfull04.png)
 
-## <a name="creating-a-test-project"></a>テスト プロジェクトの作成
+<a id="creating-a-test-project" class="xliff"></a>
+
+## テスト プロジェクトの作成
 
 単体テストでは、開発および公開時に自動化されたソフトウェア テストが提供されます。 このチュートリアルで使用するテスト フレームワークは [xUnit](https://xunit.github.io/) です。
 
@@ -158,7 +164,9 @@ Visual Studio for Mac では、.NET Core アプリケーション開発用の機
 
    ![テストに成功したことを示すコンソール ウィンドウ。 テストの合計: 4、成功したテスト数: 4、失敗したテスト数: 0。 テストの実行に成功しました。](./media/using-on-mac-vs-full-solution/vsmacfull12.png)
 
-## <a name="adding-a-console-app"></a>コンソール アプリの追加
+<a id="adding-a-console-app" class="xliff"></a>
+
+## コンソール アプリの追加
 
 1. **[ソリューション]** サイドバーで、`WordCounter` ソリューションを右クリックします。 **[.NET Core]、[アプリ]** テンプレートの順に移動してテンプレートを選択し、新しい**コンソール アプリケーション** プロジェクトを追加します。 **[次へ]** を選択します。 プロジェクトに **WordCounterApp** という名前を付けます。 **[作成]** を選択し、ソリューションでプロジェクトを作成します。
 
@@ -194,7 +202,9 @@ Visual Studio for Mac では、.NET Core アプリケーション開発用の機
 
    ![検索ワード カウントはアプリで出力された 999 の値に変更されます](./media/using-on-mac-vs-full-solution/vsmacfull19.png)
 
-## <a name="next-steps"></a>次のステップ
+<a id="next-steps" class="xliff"></a>
+
+## 次のステップ
 
 * Xamarin 開発者向け Web サイトの「[Introducing Visual Studio for Mac](https://developer.xamarin.com/guides/cross-platform/visual-studio-mac/)」 (Visual Studio for Mac の概要) で、Visual Studio for Mac の他の機能を確認します。
 * Visual Studio for Mac の機能の詳細については、[Xamarin Studio ツアー](https://developer.xamarin.com/guides/cross-platform/xamarin-studio/ide-tour/) ガイドを参照してください。

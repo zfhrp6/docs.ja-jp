@@ -30,18 +30,23 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: 7e33ed084c560470a486ebbb25035a59ddc18565
-ms.openlocfilehash: c29504e18aa716cbe106dbbe00c608fd465d9ac2
-ms.lasthandoff: 03/31/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 31905a37f09db5f5192123f0118252fbe8b02eff
+ms.openlocfilehash: be95d675d22dedcbf45c8eb1e8fd8d9f5ce0b56c
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/26/2017
 
 ---
-# <a name="interoperability-c-programming-guide"></a>相互運用性 (C# プログラミング ガイド)
+<a id="interoperability-c-programming-guide" class="xliff"></a>
+
+# 相互運用性 (C# プログラミング ガイド)
 相互運用性は、アンマネージ コードへの既存の投資を保持して活用できるようにします。 共通言語ランタイム (CLR) の制御下で実行されるコードは*マネージ コード*と呼ばれ、CLR の外部で実行されるコードは*アンマネージ コード*と呼ばれます。 アンマネージ コードの例は、COM、COM +、C++ コンポーネント、ActiveX コンポーネント、および Microsoft Win32 API です。  
   
- [!INCLUDE[dnprdnshort](../../../csharp/getting-started/includes/dnprdnshort_md.md)] では、プラットフォーム呼び出しサービス、<xref:System.Runtime.InteropServices>名前空間、C++ 相互運用性、および COM 相互運用性 (COM 相互運用機能) を通して、アンマネージ コードの相互運用を可能にしています。  
+ [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] では、プラットフォーム呼び出しサービス、<xref:System.Runtime.InteropServices> 名前空間、C++ 相互運用性、および COM 相互運用性 (COM 相互運用機能) を通して、アンマネージ コードの相互運用を可能にしています。  
   
-## <a name="in-this-section"></a>このセクションの内容  
+<a id="in-this-section" class="xliff"></a>
+
+## このセクションの内容  
  [相互運用性の概要](../../../csharp/programming-guide/interop/interoperability-overview.md)  
  C# のマネージ コードとアンマネージ コードの間で相互運用する方法について説明します。  
   
@@ -60,10 +65,14 @@ ms.lasthandoff: 03/31/2017
  [COM クラスの例](../../../csharp/programming-guide/interop/example-com-class.md)  
  C# クラスを COM オブジェクトとして公開する方法を示します。  
   
-## <a name="c-language-specification"></a>C# 言語仕様  
- [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec_md.md)]  
+<a id="c-language-specification" class="xliff"></a>
+
+## C# 言語仕様  
+ [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
-## <a name="see-also"></a>関連項目  
+<a id="see-also" class="xliff"></a>
+
+## 関連項目  
  <xref:System.Runtime.InteropServices.Marshal.ReleaseComObject%2A?displayProperty=fullName>   
  [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
  [アンマネージ コードとの相互運用](https://msdn.microsoft.com/library/sd10k43k)   

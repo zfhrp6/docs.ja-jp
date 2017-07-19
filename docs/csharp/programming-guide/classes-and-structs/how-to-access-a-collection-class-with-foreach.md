@@ -1,48 +1,95 @@
 ---
-title: "方法 : foreach を使用してコレクション クラスにアクセスする (C# プログラミング ガイド) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.technology: 
-  - "devlang-csharp"
-ms.topic: "article"
-dev_langs: 
-  - "CSharp"
-helpviewer_keywords: 
-  - "コレクション クラス [C#], foreach ステートメント"
+title: "方法: foreach を使用してコレクション クラスにアクセスする (C# プログラミング ガイド) | Microsoft Docs"
+ms.date: 2015-07-20
+ms.prod: .net
+ms.technology:
+- devlang-csharp
+ms.topic: article
+dev_langs:
+- CSharp
+helpviewer_keywords:
+- collection classes [C#], foreach statement
 ms.assetid: a6b9cf5c-6c8d-4223-b12c-288949434493
 caps.latest.revision: 21
-author: "BillWagner"
-ms.author: "wiwagn"
-caps.handback.revision: 21
+author: BillWagner
+ms.author: wiwagn
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 400dfda51d978f35c3995f90840643aaff1b9c13
+ms.openlocfilehash: 841132b5181c5e17d1eabae11d3550811aa959ec
+ms.contentlocale: ja-jp
+ms.lasthandoff: 03/24/2017
+
 ---
-# 方法 : foreach を使用してコレクション クラスにアクセスする (C# プログラミング ガイド)
-次のコード例では、[foreach](../../../csharp/language-reference/keywords/foreach-in.md) と共に使用できる非ジェネリック コレクション クラスの記述方法を示します。  この例では、文字列のトークナイザ クラスを定義しています。  
+# <a name="how-to-access-a-collection-class-with-foreach-c-programming-guide"></a>方法: foreach を使用してコレクション クラスにアクセスする (C# プログラミング ガイド)
+次のコード例では、[foreach](../../../csharp/language-reference/keywords/foreach-in.md) で使用できる非ジェネリック コレクション クラスを記述する方法を示しています。 この例では、文字列トークナイザー クラスを定義します。  
   
 > [!NOTE]
->  この例では、ジェネリック コレクション クラスを使用できない場合にのみ推奨される方法を示します。  <xref:System.Collections.Generic.IEnumerable%601> をサポートするタイプ セーフのジェネリック コレクション クラスを実装する方法の例については、「[反復子](../Topic/Iterators%20\(C%23%20and%20Visual%20Basic\).md)」を参照してください。  
+>  この例では、汎用のコレクション クラスを使用できないときのみに推奨される方法を示します。 <xref:System.Collections.Generic.IEnumerable%601> をサポートするタイプ セーフの汎用的なコレクション クラスを実装する方法の例は、「[反復子](http://msdn.microsoft.com/library/f45331db-d595-46ec-9142-551d3d1eb1a7)」を参照してください。  
   
- この例の次のコード セグメントでは、区切り記号として ' ' と '\-' を使用して "This is a sample sentence." という文をトークンに分割する `Tokens` クラスを使用しています。  コードでは、これらのトークンを表示するために `foreach` ステートメントを使用しています。  
+ この例では、次のコード セグメントが `Tokens` クラスを使用し、"This is a sample sentence." という文を  ' ' と '-' の区切りを使用してトークンに分割しています。 その後、コードでは `foreach` ステートメントを使用し、それらのトークンを示します。  
   
  [!code-cs[csProgGuideCollections#3](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/how-to-access-a-collection-class-with-foreach_1.cs)]  
   
-## 使用例  
- 内部では、`Tokens` クラスは配列を使用してトークンを格納します。  配列で <xref:System.Collections.IEnumerator> と <xref:System.Collections.IEnumerable> を実装しているため、このコード例では `Tokens` クラスでこれらを定義するのではなく、配列の列挙型メソッド \(<xref:System.Collections.IEnumerable.GetEnumerator%2A>、<xref:System.Collections.IEnumerator.MoveNext%2A>、<xref:System.Collections.IEnumerator.Reset%2A>、および <xref:System.Collections.IEnumerator.Current%2A>\) を使用することもできました。  この例にメソッド定義が含まれているのは、メソッドを定義する方法と各メソッドの動作を明確にするためです。  
+## <a name="example"></a>例  
+ `Tokens` クラスは、内部でトークンの保存に配列を使用します。 配列は <xref:System.Collections.IEnumerator> と <xref:System.Collections.IEnumerable> を実装するので、コード例では、`Tokens` クラスに定義する代わりに、配列の列挙型メソッド (<xref:System.Collections.IEnumerable.GetEnumerator%2A>、<xref:System.Collections.IEnumerator.MoveNext%2A>、<xref:System.Collections.IEnumerator.Reset%2A>、および <xref:System.Collections.IEnumerator.Current%2A>) を使用した可能性があります。 その定義方法およびそれらの動作を示すために、例にはメソッドの定義が含まれています。  
   
  [!code-cs[csProgGuideCollections#2](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/how-to-access-a-collection-class-with-foreach_2.cs)]  
   
- C\# では、`foreach` と互換性を保つために、コレクション クラスで <xref:System.Collections.IEnumerable> と <xref:System.Collections.IEnumerator> を実装する必要はありません。  必須の <xref:System.Collections.IEnumerable.GetEnumerator%2A>、<xref:System.Collections.IEnumerator.MoveNext%2A>、<xref:System.Collections.IEnumerator.Reset%2A>、および <xref:System.Collections.IEnumerator.Current%2A> の各メンバーがクラスに含まれていれば、クラスで `foreach` を使用できます。  インターフェイスを省略すると、`Current` の戻り値の型を <xref:System.Object> よりも明確に定義できるという利点があります。  これによりタイプ セーフになります。  
+ C# では、`foreach` に準拠するために、コレクション クラスで <xref:System.Collections.IEnumerable> と <xref:System.Collections.IEnumerator> を実装する必要はありません。 クラスに必要な <xref:System.Collections.IEnumerable.GetEnumerator%2A>、<xref:System.Collections.IEnumerator.MoveNext%2A>、<xref:System.Collections.IEnumerator.Reset%2A>、および <xref:System.Collections.IEnumerator.Current%2A> メンバーがある場合、`foreach` と動作します。 インターフェイスを省略すると、<xref:System.Object> よりも限定的な `Current` 用の戻り値の型を定義することが可能になると言う利点があります。 これにより、タイプ セーフとなります。  
   
- たとえば、前の例の次の行を変更します。  
+ たとえば、前の例の下記の行を変更します。  
   
-<CodeContentPlaceHolder>0</CodeContentPlaceHolder>  
- `Current` によって文字列が返されるため、次のコードに示すように、コンパイラは `foreach` ステートメントで互換性のない型が使用されていることを検出できます。  
+```csharp  
   
-<CodeContentPlaceHolder>1</CodeContentPlaceHolder>  
- <xref:System.Collections.IEnumerable> と <xref:System.Collections.IEnumerator> を省略すると、コレクション クラスを他の共通言語ランタイム言語の `foreach` ステートメント \(または同等のステートメント\) と相互運用できなくなるので注意が必要です。  
+// Change the Tokens class so that it no longer implements IEnumerable.  
+public class Tokens  
+{  
+    // . . .  
   
-## 参照  
+    // Change the return type for the GetEnumerator method.  
+    public TokenEnumerator GetEnumerator()  
+    {   }  
+  
+    // Change TokenEnumerator so that it no longer implements IEnumerator.  
+    public class TokenEnumerator  
+    {  
+        // . . .  
+  
+        // Change the return type of method Current to string.  
+        public string Current  
+        {   }  
+    }  
+ }  
+  
+```  
+  
+ `Current` では、文字列を返すので、`foreach` ステートメントで互換性のない型が使用されたとき、コンパイラが次のコードのとおりそれを検出できます。  
+  
+```csharp  
+  
+// Error: Cannot convert type string to int.  
+foreach (int item in f)    
+```  
+  
+ <xref:System.Collections.IEnumerable> と <xref:System.Collections.IEnumerator> を省略した場合、コレクション クラスが `foreach` ステートメント、同等のステートメントや他の共通言語ランタイム言語と互換性がなくなるという欠点があります。  
+  
+## <a name="see-also"></a>関連項目  
  <xref:System.Collections.Generic>   
- [C\# リファレンス](../../../csharp/language-reference/index.md)   
- [C\# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
+ [C# リファレンス](../../../csharp/language-reference/index.md)   
+ [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
  [配列](../../../csharp/programming-guide/arrays/index.md)   
- [コレクション](../Topic/Collections%20\(C%23%20and%20Visual%20Basic\).md)
+ [コレクション](http://msdn.microsoft.com/library/e76533a9-5033-4a0b-b003-9c2be60d185b)

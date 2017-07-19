@@ -18,7 +18,7 @@ ms.translationtype: Human Translation
 ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
 ms.openlocfilehash: a6bf9656dee0e6074a8341997abb0e73dc3666f5
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/18/2017
+ms.lasthandoff: 05/22/2017
 
 ---
 # <a name="mitigation-product-versioning"></a>軽減策: 製品のバージョン管理
@@ -31,9 +31,9 @@ ms.lasthandoff: 04/18/2017
   
 -   .NET Framework ファイルにおけるファイルおよび製品のバージョン管理は、.NET Framework 4.6 とそのポイント リリースの場合は以前のスキーマのバージョン管理 `4.0.30319.x` から `4.6.X.0` に、.NET Framework 4.7 とそのポイント リリースの場合は `4.7.X.0` にそれぞれ変更されました。 ファイルを右クリックしてファイルの **[プロパティ]** を表示すると、これらの新しい値が表示されます。  
   
--   マネージ アセンブリの <xref:System.Reflection.AssemblyFileVersionAttribute> 属性と <xref:System.Reflection.AssemblyInformationalVersionAttribute> 属性に含まれる <xref:System.Version> 値の表示形式は、.NET Framework 4.6 とそのポイント リリースの場合は `4.6.X.0`、 .NET Framework 4.7 の場合は `4.7.X.0` です。  
+-   マネージ アセンブリの <xref:System.Reflection.AssemblyFileVersionAttribute> 属性と <xref:System.Reflection.AssemblyInformationalVersionAttribute> 属性の <xref:System.Version> 値は、.NET Framework 4.6 とそのポイント リリースの場合は `4.6.X.0` という形式、.NET Framework 4.7 の場合は `4.7.X.0` という形式になります。  
   
--   [!INCLUDE[net_v46](../../../includes/net-v46-md.md)]、4.6.1、4.6.2、および 4.7 では、<xref:System.Environment.Version%2A?displayProperty=fullName> プロパティが、修正されたバージョン文字列 `4.0.30319.42000` を返します。 .NET Framework 4、4.5、4.5.1、および 4.5.2 では、`4.0.30319.xxxxx` の形式でバージョン文字列が返されます (例: "4.0.30319.18010")。 <xref:System.Environment.Version%2A?displayProperty=fullName> プロパティに新たに依存するアプリケーション コードを使用することはお勧めしません。  
+-   [!INCLUDE[net_v46](../../../includes/net-v46-md.md)]、4.6.1、4.6.2、4.7 で、<xref:System.Environment.Version%2A?displayProperty=fullName> プロパティは、固定のバージョン文字列 `4.0.30319.42000` を返します。 .NET Framework 4、4.5、4.5.1、および 4.5.2 では、`4.0.30319.xxxxx` の形式でバージョン文字列が返されます (例: "4.0.30319.18010")。 アプリケーションのコードで <xref:System.Environment.Version%2A?displayProperty=fullName> プロパティに新しい依存関係を設定することは推奨していないことに注意してください。  
   
 ### <a name="handling-the-product-versioning-changes"></a>製品のバージョン管理の変更に対する処置  
  一般に、.NET Framework のランタイムのバージョンやインストール ディレクトリを検出する際、アプリケーションは推奨される技法に従う必要があります。  
@@ -45,9 +45,9 @@ ms.lasthandoff: 04/18/2017
     > [!IMPORTANT]
     >  サブキー名は、`.NET Framework Setup` ではなく `NET Framework Setup` です。  
   
--   .NET Framework 共通言語ランタイムへのディレクトリ パスを確認するには、<xref:System.Runtime.InteropServices.RuntimeEnvironment.GetRuntimeDirectory%2A?displayProperty=fullName> メソッドを呼び出します。  
+-   .NET Framework の共通言語ランタイムへのディレクトリ パスを確認するには、<xref:System.Runtime.InteropServices.RuntimeEnvironment.GetRuntimeDirectory%2A?displayProperty=fullName> メソッドを呼び出します。  
   
--   CLR バージョンを取得するには、<xref:System.Runtime.InteropServices.RuntimeEnvironment.GetSystemVersion%2A?displayProperty=fullName> メソッドを呼び出します。   .NET Framework 4 とそのポイント リリース (.NET Framework 4.5、4.5.1、4.5.2、および [!INCLUDE[net_v46](../../../includes/net-v46-md.md)]、4.6.1、4.6.2、4.7) の場合、このメソッドは文字列 `v4.0.30319` を返します。  
+-   CLR のバージョンを取得するには、<xref:System.Runtime.InteropServices.RuntimeEnvironment.GetSystemVersion%2A?displayProperty=fullName> メソッドを呼び出します。   .NET Framework 4 とそのポイント リリース (.NET Framework 4.5、4.5.1、4.5.2、および [!INCLUDE[net_v46](../../../includes/net-v46-md.md)]、4.6.1、4.6.2、4.7) の場合、このメソッドは文字列 `v4.0.30319` を返します。  
   
 ## <a name="see-also"></a>関連項目  
  [ランタイムの変更点](../../../docs/framework/migration-guide/runtime-changes-in-the-net-framework-4-6.md)

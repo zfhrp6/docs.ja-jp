@@ -32,10 +32,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 4590130fed9606f0f0592895de548c4bd7865db7
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: a5ed524a1b17f7be8903f998cbd732594faab831
+ms.openlocfilehash: 4ad15bc57b3ec3b6b06f671f560dce426af64ccc
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/15/2017
 
 ---
 # <a name="inheritance-c-programming-guide"></a>継承 (C# プログラミング ガイド)
@@ -47,14 +48,14 @@ ms.lasthandoff: 03/13/2017
   
  概念的には、派生クラスは基底クラスから特化したクラスです。 たとえば、基底クラス `Animal` がある場合、`Mammal` という名前の派生クラスと、`Reptile` という名前の別の派生クラスを持つことができます。 `Mammal` は `Animal` であり、`Reptile` も `Animal` ですが、各派生クラスは、基底クラスから別々の特殊化を表します。  
   
- クラスを別のクラスから派生するように定義すると、派生クラスには、コンストラクターとデストラクターを除く、基底クラスのすべてのメンバーが暗黙的に引き継がれます。 そのため、派生クラスでは、基底クラスのコードを再実装しなくても再利用できます。 派生クラスには、メンバーを追加できます。 このような方法で、派生クラスは基底クラスの機能を拡張します。  
+ クラスを別のクラスから派生するように定義すると、派生クラスには、コンストラクターとファイナライザーを除く、基底クラスのすべてのメンバーが暗黙的に引き継がれます。 そのため、派生クラスでは、基底クラスのコードを再実装しなくても再利用できます。 派生クラスには、メンバーを追加できます。 このような方法で、派生クラスは基底クラスの機能を拡張します。  
   
- 次の図は、あるビジネス プロセスの作業項目を表す `WorkItem` クラスを示しています。 すべてのクラスと同様に、このクラスは <xref:System.Object?displayProperty=fullName> から派生し、そのすべてのメソッドを継承します。 `WorkItem` には、独自のメンバーが 5 つ追加されています。 これにはコンストラクターが含まれています。コンストラクターは継承されないためです。 `WorkItem` から継承される `ChangeRequest` クラスは、特定の種類の作業項目を表します。 `ChangeRequest` には、`WorkItem` と <xref:System.Object> から継承したメンバーに 2 つのメンバーが追加されます。 独自のコンストラクターを追加する必要があるほか、さらに `originalItemID` も追加されます。 `originalItemID` プロパティを使用すると、`ChangeRequest` インスタンスは、変更要求が適用される元の `WorkItem` と関連付けることができます。  
+ 次の図は、あるビジネス プロセスの作業項目を表す `WorkItem` クラスを示しています。 他のすべてのクラスと同様に、<xref:System.Object?displayProperty=fullName> から派生し、そのすべてのメソッドを継承します。 `WorkItem` には、独自のメンバーが 5 つ追加されています。 これにはコンストラクターが含まれています。コンストラクターは継承されないためです。 `WorkItem` から継承される `ChangeRequest` クラスは、特定の種類の作業項目を表します。 `ChangeRequest` には、`WorkItem` と <xref:System.Object> から継承したメンバーに 2 つのメンバーが追加されます。 独自のコンストラクターを追加する必要があるほか、さらに `originalItemID` も追加されます。 `originalItemID` プロパティを使用すると、`ChangeRequest` インスタンスは、変更要求が適用される元の `WorkItem` と関連付けることができます。  
   
  ![クラスの継承](../../../csharp/programming-guide/classes-and-structs/media/class_inheritance.png "Class_Inheritance")  
 クラスの継承  
   
- 次の例は、前の図に示したクラスの関係が C# でどのように表現されるかを示しています。 また、`WorkItem` で仮想メソッド <xref:System.Object.ToString%2A?displayProperty=fullName> をオーバーライドする方法と、`ChangeRequest` クラスでメソッドによる `WorkItem` の実装を継承する方法も示しています。  
+ 次の例は、前の図に示したクラスの関係が C# でどのように表現されるかを示しています。 また、`WorkItem` が仮想メソッド <xref:System.Object.ToString%2A?displayProperty=fullName> をオーバーライドする方法と、`ChangeRequest` クラスが `WorkItem` によるメソッドの実装を継承する方法も示しています。  
   
  [!code-cs[csProgGuideInheritance#49](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/inheritance_1.cs)]  
   

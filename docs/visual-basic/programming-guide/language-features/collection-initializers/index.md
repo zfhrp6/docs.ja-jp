@@ -1,99 +1,128 @@
 ---
-title: "Collection Initializers (Visual Basic) | Microsoft Docs"
-ms.custom: ""
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vb.CollectionInitializer"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "collection initializers [Visual Basic]"
+title: "コレクション初期化子 (Visual Basic) | Microsoft Docs"
+ms.custom: 
+ms.date: 2015-07-20
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-visual-basic
+ms.topic: article
+f1_keywords:
+- vb.CollectionInitializer
+dev_langs:
+- VB
+helpviewer_keywords:
+- collection initializers [Visual Basic]
 ms.assetid: a9290329-77b0-4fdf-ae75-8fc17287f469
 caps.latest.revision: 23
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 23
----
-# Collection Initializers (Visual Basic)
-[!INCLUDE[vs2017banner](../../../../visual-basic/developing-apps/includes/vs2017banner.md)]
+author: dotnet-bot
+ms.author: dotnetcontent
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: Human Translation
+ms.sourcegitcommit: e0a5ab6a7b3ee752af6b58a35a11e4fc0fb2b08a
+ms.openlocfilehash: 4b0abe2c6356370584356dce1c6fc5731d735810
+ms.contentlocale: ja-jp
+ms.lasthandoff: 07/03/2017
 
-*コレクション初期化子*は、コレクションを作成し、そのコレクションに初期値を設定するための簡略された構文を提供します。  コレクション初期化子は、コレクションを既知の値のセットから作成する場合に便利です。値のセットの例として、メニュー オプションやカテゴリのリスト、数値の初期セット、曜日や月の名前の静的文字列のリスト、検証に使用する都道府県リストなどの地理的な場所が挙げられます。  
+---
+<a id="collection-initializers-visual-basic" class="xliff"></a>
+
+# コレクション初期化子 (Visual Basic)
+*コレクション初期化子*とは、コレクションを作成して一連の初期値を設定できる、短い構文です。 コレクション初期化子は、コレクションを既知の値のセットから作成する場合に便利です。値のセットの例として、メニュー オプションやカテゴリのリスト、数値の初期セット、曜日や月の名前の静的文字列のリスト、検証に使用する州のリストなどの地理的な場所が挙げられます。  
   
- コレクションの詳細については、「[コレクション](../Topic/Collections%20\(C%23%20and%20Visual%20Basic\).md)」を参照してください。  
+ コレクションの詳細については、「[コレクション](http://msdn.microsoft.com/library/e76533a9-5033-4a0b-b003-9c2be60d185b)」を参照してください。  
   
- コレクション初期化子は、`From` キーワードの後に中かっこ \(`{}`\) を使用して指定します。  この構文は、「[配列](../../../../visual-basic/programming-guide/language-features/arrays/index.md)」に説明されている配列リテラル構文に似ています。  コレクションの作成のためにコレクション初期化子を使用する各種の方法を次の例に示します。  
+ コレクション初期化子は、`From` キーワードの後に中かっこ (`{}`) を使用して指定できます。 これは、「[配列](../../../../visual-basic/programming-guide/language-features/arrays/index.md)」で説明する配列リテラルの構文と似ています。 次の例では、コレクション初期化子を使用してコレクションを作成するさまざまな方法を示します。  
   
- [!code-vb[VbVbalrCollectionInitializers#1](../../../../visual-basic/programming-guide/language-features/arrays/codesnippet/VisualBasic/index_1.vb)]  
+ [!code-vb[VbVbalrCollectionInitializers#1](../../../../../samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrCollectionInitializers/VB/Module1.vb#1)]  
   
 > [!NOTE]
->  C\# にも、コレクション初期化子があります。  C\# のコレクション初期化子の機能は、Visual Basic のコレクション初期化子の機能と同じです。  C\# のコレクション初期化子の詳細については、「[オブジェクト初期化子とコレクション初期化子](../../../../csharp/programming-guide/classes-and-structs/object-and-collection-initializers.md)」を参照してください。  
+>  C# にもコレクション初期化子はあります。 C# のコレクション初期化子には、Visual Basic のコレクション初期化子と同じ機能があります。 C# のコレクション初期化子の詳細については、「[オブジェクト初期化子とコレクション初期化子](../../../../csharp/programming-guide/classes-and-structs/object-and-collection-initializers.md)」を参照してください。  
   
+<a id="syntax" class="xliff"></a>
+
 ## 構文  
- コレクション初期化子は、次のコードに示すように、`From` キーワードの後に、コンマ区切りの値を中かっこ \(`{}`\) で囲んだリストから構成されます。  
+ コレクション初期化子は、次のコードのように、先頭に `From` キーワードが付いた、中かっこ (`{}`) で囲まれたコンマ区切りの値の一覧で構成されます。  
   
- [!code-vb[VbVbalrCollectionInitializers#2](../../../../visual-basic/programming-guide/language-features/arrays/codesnippet/VisualBasic/index_2.vb)]  
+ [!code-vb[VbVbalrCollectionInitializers#2](../../../../../samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrCollectionInitializers/VB/Module1.vb#2)]  
   
- <xref:System.Collections.Generic.List%601> や <xref:System.Collections.Generic.Dictionary%602> などのコレクションを作成する場合、次のコードに示すように、コレクション初期化子の前にコレクション型を指定する必要があります。  
+ <xref:System.Collections.Generic.List%601> や <xref:System.Collections.Generic.Dictionary%602> などのコレクションを作成する場合、次のコードに示すように、コレクション初期化子の前に、コレクションの種類を指定する必要があります。  
   
- [!code-vb[VbVbalrCollectionInitializers#13](../../../../visual-basic/programming-guide/language-features/arrays/codesnippet/VisualBasic/index_3.vb)]  
+ [!code-vb[VbVbalrCollectionInitializers#13](../../../../../samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrCollectionInitializers/VB/Module1.vb#13)]  
   
 > [!NOTE]
->  コレクション初期化子とオブジェクト初期化子を組み合わせて、同じコレクション オブジェクトを初期化することはできません。  オブジェクト初期化子を使用して、コレクション初期化子内のオブジェクトを初期化できます。  
+>  コレクション初期化子とオブジェクト初期化子を組み合わせて、同じコレクション オブジェクトを初期化することはできません。 コレクション初期化子内のオブジェクトを初期化するには、オブジェクト初期化子を使用します。  
   
-## コレクション初期化子を使用したコレクションの作成  
- コレクション初期化子を使用してコレクションを作成する場合、コレクション初期化子に指定された各値は、コレクションの該当する `Add` メソッドに渡されます。  たとえば、コレクション初期化子を使用して <xref:System.Collections.Generic.List%601> を作成する場合、コレクション初期化子の各文字列値は、<xref:System.Collections.Generic.List%601.Add%2A> メソッドに渡されます。  コレクション初期化子を使用してコレクションを作成する場合、指定する型は、有効なコレクション型である必要があります。  有効なコレクション型の例には、<xref:System.Collections.Generic.IEnumerable%601> インターフェイスを実装するクラスや、<xref:System.Collections.CollectionBase> クラスを継承するクラスなどがあります。  指定する型は、次の条件を満たす `Add` メソッドを公開する必要もあります。  
+<a id="creating-a-collection-by-using-a-collection-intializer" class="xliff"></a>
+
+## コレクション初期化子を使用してコレクションを作成する  
+ コレクション初期化子を使用してコレクションを作成する場合、コレクション初期化子内の各値は、コレクション内の適切な `Add` メソッドに渡されます。 たとえば、コレクション初期化子を使用して <xref:System.Collections.Generic.List%601> 作成する場合、コレクション初期化子内の各文字列値は <xref:System.Collections.Generic.List%601.Add%2A> メソッドに渡されます。 コレクション初期化子を使用してコレクションを作成する場合は、指定した型は有効なコレクション型である必要があります。 有効なコレクションの型には、<xref:System.Collections.Generic.IEnumerable%601> インターフェイスを実装するクラスや、<xref:System.Collections.CollectionBase> クラスを継承するクラスなどがあります。 指定した型には、次の条件を満たす `Add` メソッドも公開されている必要があります。  
   
--   `Add` メソッドは、コレクション初期化子の呼び出し元の範囲から使用できる必要があります。  コレクションの非パブリック メソッドにアクセスできるシナリオでコレクション初期化子を使用する場合、`Add` メソッドはパブリックである必要はありません。  
+-   `Add` メソッドは、コレクション初期化子の呼び出し元の範囲から使用できる必要があります。 そのコレクションのパブリックでないメソッドにアクセスできるシナリオでコレクション初期化子を使用する場合は、`Add` メソッドは、パブリックである必要はありません。  
   
--   `Add` メソッドは、コレクション クラスのインスタンス メンバーまたは `Shared` メンバーであるか、拡張メソッドである必要があります。  
+-   `Add` メソッドはインスタンス メンバー、またはコレクション クラスの `Shared` メンバーまたは拡張メソッドである必要があります。  
   
 -   オーバーロード解決規則に基づいて、コレクション初期化子で提供される型に対応付けることができる `Add` メソッドが存在する必要があります。  
   
- 例として、コレクション初期化子を使用して `List(Of Customer)` コレクションを作成する方法を次のコード例に示します。  コードの実行時、各 `Customer` オブジェクトはジェネリック リストの `Add(Customer)` メソッドに渡されます。  
+ たとえば、コレクション初期化子を使用して、`List(Of Customer)` コレクションを作成する例を次に示します。 このコードを実行すると、`Customer` の各オブジェクトは汎用リストの `Add(Customer)` メソッドに渡されます。  
   
- [!code-vb[VbVbalrCollectionInitializers#9](../../../../visual-basic/programming-guide/language-features/arrays/codesnippet/VisualBasic/index_4.vb)]  
+ [!code-vb[VbVbalrCollectionInitializers#9](../../../../../samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrCollectionInitializers/VB/Module1.vb#9)]  
   
- 次のコード例に、同等の内容でコレクション初期化子を使用しない方法を示します。  
+ 次では、コレクション初期化子を使用しない同等のコード例を示します。  
   
- [!code-vb[VbVbalrCollectionInitializers#10](../../../../visual-basic/programming-guide/language-features/arrays/codesnippet/VisualBasic/index_5.vb)]  
+ [!code-vb[VbVbalrCollectionInitializers#10](../../../../../samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrCollectionInitializers/VB/Module1.vb#10)]  
   
- `Customer` オブジェクトのコンストラクターと一致するパラメーターがある `Add` メソッドがコレクションにある場合、次のセクションで説明するように、`Add` メソッドのパラメーター値は、コレクション初期化子内で入れ子にすることができます。  コレクションに `Add` メソッドがない場合、拡張メソッドとしてメソッドを作成できます。  コレクションに拡張メソッドとして `Add` メソッドを作成する方法の例については、「[How to: Create an Add Extension Method Used by a Collection Initializer](../../../../visual-basic/programming-guide/language-features/collection-initializers/how-to-create-an-add-extension-method-used-by-a-collection-initializer.md)」を参照してください。  コレクション初期化子内で使用できるカスタム コレクションを作成する方法の例については、「[How to: Create a Collection Used by a Collection Initializer](../../../../visual-basic/programming-guide/language-features/collection-initializers/how-to-create-a-collection-used-by-a-collection-initializer.md)」を参照してください。  
+ `Customer` オブジェクトのコンストラクターと一致するパラメーターを持つ `Add` メソッドがコレクションにある場合、次のセクションで説明するように、コレクション初期化子内に `Add` メソッドのパラメーター値を入れ子にすることができます。 コレクションにこのような `Add` メソッドがない場合、それを拡張メソッドとして作成できます。 コレクションの拡張メソッドとして `Add` メソッドを作成する方法の例については、「[方法: コレクション初期化子で使用される拡張メソッドを作成または追加する](../../../../visual-basic/programming-guide/language-features/collection-initializers/how-to-create-an-add-extension-method-used-by-a-collection-initializer.md)」を参照してください。 コレクション初期化子で使用できるカスタム コレクションを作成する方法の例については、「[方法: コレクション初期化子を使用してコレクションを作成する](../../../../visual-basic/programming-guide/language-features/collection-initializers/how-to-create-a-collection-used-by-a-collection-initializer.md)」を参照してください。  
   
-## 入れ子になったコレクション初期化子  
- 作成するコレクションの `Add` メソッドの固有のオーバーロードを識別するため、コレクション初期化子内の値を入れ子にすることができます。  `Add` メソッドに渡される値は、配列リテラルやコレクション初期化子に指定する場合と同様に、コンマ区切りにして中かっこ \(`{}`\) で囲む必要があります。  
+<a id="nesting-collection-initializers" class="xliff"></a>
+
+## コレクション初期化子を入れ子にする  
+ 作成するコレクションの `Add` メソッドで固有のオーバーロードを指定するため、コレクション初期化子内の値を入れ子にすることができます。 `Add` メソッドに渡す値は、配列リテラルまたはコレクション初期化子の場合と同じように、コンマで区切り、中かっこ (`{}`) で囲む必要があります。  
   
- 入れ子にした値を使用してコレクションを作成する場合、入れ子にされた値リストの各要素は、要素型と一致する `Add` メソッドに引数として渡されます。  例として、<xref:System.Collections.Generic.Dictionary%602> を作成し、このキーを `Integer` 型にし、値を `String` 型にするコードを次に示します。  入れ子にされた値リストの各値は、`Dictionary` の <xref:System.Collections.Generic.Dictionary%602.Add%2A> メソッドに照合されます。  
+ 入れ子にした値でコレクションを作成する場合、入れ子になった値一覧の各要素は、要素の型に一致する `Add` メソッドに引数として渡されます。 たとえば、次のコード例では、キーは `Integer` 型で値は `String` 型の <xref:System.Collections.Generic.Dictionary%602> が作成されます。 一連の入れ子になった値は、それぞれ `Dictionary` の <xref:System.Collections.Generic.Dictionary%602.Add%2A> メソッドと照合されます。  
   
- [!code-vb[VbVbalrCollectionInitializers#5](../../../../visual-basic/programming-guide/language-features/arrays/codesnippet/VisualBasic/index_6.vb)]  
+ [!code-vb[VbVbalrCollectionInitializers#5](../../../../../samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrCollectionInitializers/VB/Module1.vb#5)]  
   
- 上のコード例は、次のコードと同じ結果になります。  
+ 前のコード例は、次のコードと同じです。  
   
- [!code-vb[VbVbalrCollectionInitializers#6](../../../../visual-basic/programming-guide/language-features/arrays/codesnippet/VisualBasic/index_7.vb)]  
+ [!code-vb[VbVbalrCollectionInitializers#6](../../../../../samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrCollectionInitializers/VB/Module1.vb#6)]  
   
- 入れ子にされた値リストは、入れ子の最初のレベルからのみコレクション型の `Add` メソッドに送られます。  入れ子の最初のレベルより下のレベルは、配列リテラルとして扱われ、入れ子にされた値リストはコレクションの `Add` メソッドに照合されません。  
+ 入れ子の最初のレベルの一連の入れ子になった値のみが、それぞれそのコレクション型の `Add` メソッドに送信されます。 より深いレベルの入れ子は配列リテラルとして扱われ、入れ子になった一連の値はどのコレクションの `Add` メソッドとも照合されません。  
   
+<a id="related-topics" class="xliff"></a>
+
 ## 関連トピック  
   
-|||  
-|-|-|  
-|Title|Description|  
-|[How to: Create an Add Extension Method Used by a Collection Initializer](../../../../visual-basic/programming-guide/language-features/collection-initializers/how-to-create-an-add-extension-method-used-by-a-collection-initializer.md)|コレクション初期化子からの値を使用してコレクションを作成するために使用できる `Add` という拡張メソッドを作成する方法を示します。|  
-|[How to: Create a Collection Used by a Collection Initializer](../../../../visual-basic/programming-guide/language-features/collection-initializers/how-to-create-a-collection-used-by-a-collection-initializer.md)|このコレクション クラスに `Add` のメソッドを含めることによってコレクション初期化子を使用する方法を実装 `IEnumerable` 示します。|  
+|タイトル|説明|  
+|---|---|  
+|[方法: コレクション初期化子で使用される拡張メソッドを作成または追加する](../../../../visual-basic/programming-guide/language-features/collection-initializers/how-to-create-an-add-extension-method-used-by-a-collection-initializer.md)|コレクション初期化子の値をコレクションに入力するために使用できる `Add` と呼ばれる拡張メソッドを作成する方法を示します。|  
+|[方法: コレクション初期化子を使用してコレクションを作成する](../../../../visual-basic/programming-guide/language-features/collection-initializers/how-to-create-a-collection-used-by-a-collection-initializer.md)|`IEnumerable` を実装するコレクション クラスに `Add` メソッドを含めてコレクション初期化子を使用できるようにする方法を説明します。|  
   
-## 参照  
- [コレクション](../Topic/Collections%20\(C%23%20and%20Visual%20Basic\).md)   
+<a id="see-also" class="xliff"></a>
+
+## 関連項目  
+ [コレクション](http://msdn.microsoft.com/library/e76533a9-5033-4a0b-b003-9c2be60d185b)   
  [配列](../../../../visual-basic/programming-guide/language-features/arrays/index.md)   
- [Object Initializers: Named and Anonymous Types](../../../../visual-basic/programming-guide/language-features/objects-and-classes/object-initializers-named-and-anonymous-types.md)   
- [New Operator](../../../../visual-basic/language-reference/operators/new-operator.md)   
- [Auto\-Implemented Properties](../../../../visual-basic/programming-guide/language-features/procedures/auto-implemented-properties.md)   
- [How to: Initialize an Array Variable in Visual Basic](../../../../visual-basic/programming-guide/language-features/arrays/how-to-initialize-an-array-variable.md)   
- [Local Type Inference](../../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md)   
- [Anonymous Types](../../../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-types.md)   
- [Introduction to LINQ in Visual Basic](../../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)   
- [How to: Create a List of Items](../../../../visual-basic/programming-guide/concepts/linq/how-to-create-a-list-of-items.md)
+ [オブジェクト初期化子 : 名前付きの型と匿名型](../../../../visual-basic/programming-guide/language-features/objects-and-classes/object-initializers-named-and-anonymous-types.md)   
+ [New 演算子](../../../../visual-basic/language-reference/operators/new-operator.md)   
+ [自動実装プロパティ](../../../../visual-basic/programming-guide/language-features/procedures/auto-implemented-properties.md)   
+ [方法: Visual Basic で配列変数を初期化する](../../../../visual-basic/programming-guide/language-features/arrays/how-to-initialize-an-array-variable.md)   
+ [ローカル型の推論](../../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md)   
+ [匿名型](../../../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-types.md)   
+ [Visual Basic における LINQ の概要](../../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)   
+ [方法: 項目のリストを作成する](../../../../visual-basic/programming-guide/concepts/linq/how-to-create-a-list-of-items.md)
+

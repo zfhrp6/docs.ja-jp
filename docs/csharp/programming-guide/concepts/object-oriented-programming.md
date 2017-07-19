@@ -16,10 +16,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 74872957345de77f43f3ac649ed6f809aea5f784
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: a5ed524a1b17f7be8903f998cbd732594faab831
+ms.openlocfilehash: 3f3e6aa047e0de279d15298408c4593c5fb17666
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/15/2017
 
 ---
 # <a name="object-oriented-programming-c"></a>オブジェクト指向プログラミング (C#)
@@ -43,7 +44,7 @@ C# は、カプセル化、継承、ポリモーフィズムなど、オブジ�
   
          [コンストラクター](#Constructors)  
   
-         [デストラクター](#Destructors)  
+         [ファイナライザー](#Finalizers)  
   
          [イベント](#Events)  
   
@@ -197,13 +198,13 @@ public class SampleClass
   
  「[コンストラクター](../../../csharp/programming-guide/classes-and-structs/constructors.md)」。  
   
-####  <a name="Destructors"></a> デストラクター  
- デストラクターは、クラスのインスタンスを消滅させるために使用します。 .NET Framework では、アプリケーション内のマネージ オブジェクトのメモリの割り当てと解放は、ガベージ コレクターによって自動的に管理されます。 ただし、アプリケーションで作成されるアンマネージ リソースを適切にクリーンアップするために、デストラクターも必要になることがあります。 1 つのクラスに定義できるデストラクターは 1 つだけです。  
+####  <a name="Finalizers"></a> ファイナライザー  
+ ファイナライザーは、クラスのインスタンスを破棄するために使います。 .NET Framework では、アプリケーション内のマネージ オブジェクトのメモリの割り当てと解放は、ガベージ コレクターによって自動的に管理されます。 ただし、アプリケーションで作成されるアンマネージ リソースを適切にクリーンアップするために、ファイナライザーも必要になることがあります。 1 つのクラスに定義できるファイナライザーは 1 つだけです。  
   
- .NET Framework のデストラクターおよびガベージ コレクションの詳細については、「[ガベージ コレクション](../../../standard/garbagecollection/index.md)」をご覧ください。  
+ .NET Framework のファイナライザーおよびガベージ コレクションについて詳しくは、「[ガベージ コレクション](../../../standard/garbage-collection/index.md)」をご覧ください。  
   
 ####  <a name="Events"></a> イベント  
- クラスやオブジェクトは、何か重要なことが起こった場合に、イベントを使用して他のクラスまたはオブジェクトに通知を送ります。 イベントを送信する (発生させる) クラスは "*パブリッシャー*" と呼ばれ、イベントを受信する (処理する) クラスは "*サブスクライバー*" と呼ばれます。 イベント、およびイベントの発生と処理の詳細については、「[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)」をご覧ください。  
+ クラスやオブジェクトは、何か重要なことが起こった場合に、イベントを使用して他のクラスまたはオブジェクトに通知を送ります。 イベントを送信する (発生させる) クラスは "*パブリッシャー*" と呼ばれ、イベントを受信する (処理する) クラスは "*サブスクライバー*" と呼ばれます。 イベント、およびイベントの発生と処理の詳細については、「[イベント](../../../standard/events/index.md)」をご覧ください。  
   
 -   クラスでイベントを宣言するには、[event](../../../csharp/language-reference/keywords/event.md) キーワードを使います。  
   
@@ -413,7 +414,7 @@ sampleObject.Field = "Sample string";
  "*デリゲート*" は、メソッド シグネチャを定義する型であり、互換性のあるシグネチャを持つ任意のメソッドへの参照を提供できます。 メソッドは、デリゲートを使用して起動する (呼び出す) ことができます。 デリゲートは、他のメソッドへの引数としてメソッドを渡すために使用されます。  
   
 > [!NOTE]
->  イベント ハンドラーは、デリゲートを介して呼び出されるメソッドにすぎません。 デリゲートを使用したイベント処理について詳しくは、「[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)」をご覧ください。  
+>  イベント ハンドラーは、デリゲートを介して呼び出されるメソッドにすぎません。 デリゲートを使用したイベント処理について詳しくは、「[イベント](../../../standard/events/index.md)」をご覧ください。  
   
  デリゲートを作成するコード例を次に示します。  
   

@@ -1,148 +1,102 @@
 ---
 title: ".NET Framework のアプリケーションの互換性 | Microsoft Docs"
 ms.custom: 
-ms.date: 03/30/2017
+ms.date: 05/19/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
 ms.technology:
 - dotnet-clr
+- app-compat
 ms.tgt_pltfrm: 
 ms.topic: article
 helpviewer_keywords:
 - application compatibility
 - .NET Framework application compatibility
 - .NET Framework changes
-ms.assetid: c4ba3ff2-fe59-4c5d-9e0b-86bba3cd865c
 caps.latest.revision: 19
+ms.assetid: c4ba3ff2-fe59-4c5d-9e0b-86bba3cd865c
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-translationtype: Human Translation
-ms.sourcegitcommit: 8d4409b2bce36fe056d61633b056c1eac6ff290a
-ms.openlocfilehash: 076a603a6ea9f22ae7d1c554091506efae8b36eb
-ms.lasthandoff: 04/18/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 3d0d39f1d6d15dc2757387ea83d3a0f868f6ec17
+ms.openlocfilehash: 9169b8ec118ed0d9ab3f05eec47317cf68551754
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/31/2017
 
 ---
-# <a name="application-compatibility-in-the-net-framework"></a>.NET Framework のアプリケーションの互換性
-次の記事では、.NET Framework の最新バージョンでのアプリケーションの互換性の問題について説明します。  
-  
--   バージョン 4 と 4.5 間: [4.5 のアプリケーションの互換性](../../../docs/framework/migration-guide/application-compatibility-in-the-net-framework-4-5.md)  
-  
--   バージョン 4.5 と 4.5.1 間: [4.5.1 のアプリケーションの互換性](../../../docs/framework/migration-guide/application-compatibility-in-the-net-framework-4-5-1.md)  
-  
--   バージョン 4.5.1 と 4.5.2 間: [4.5.2 のアプリケーションの互換性](../../../docs/framework/migration-guide/application-compatibility-in-the-net-framework-4-5-2.md)  
-  
--   バージョン 4.5.2 と 4.6 間: [4.6 のアプリケーションの互換性](../../../docs/framework/migration-guide/application-compatibility-in-the-net-framework-4-6.md)  
-  
--   バージョン 4.6 と [!INCLUDE[net_v461](../../../includes/net-v461-md.md)] 間: [4.6.1 のアプリケーションの互換性](../../../docs/framework/migration-guide/application-compatibility-in-the-net-framework-4-6-1.md)  
-  
--   バージョン 4.6.1 と [!INCLUDE[net_v462](../../../includes/net-v462-md.md)] 間: [4.6.2 のアプリケーションの互換性](../../../docs/framework/migration-guide/application-compatibility-in-the-net-framework-4-6-2.md)  
 
-- バージョン 4.6.2 と .NET Framework 4.7 間: [4.7 のアプリケーションの互換性](../../../docs/framework/migration-guide/application-compatibility-in-the-net-framework-4-7.md)  
+# .NET Framework のアプリケーションの互換性
+<a id="application-compatibility-in-the-net-framework" class="xliff"></a>
 
-一般に、特定のバージョンを対象とするアプリが新しいバージョンで変更せずに実行できるように、.NET Framework のバージョン間の下位互換性を非常に高レベルで維持しようとしていました。 ほとんどのアプリケーションの互換性の問題の影響は少なく、アプリのプログラミング変更を必要とすることはほとんどありません。 プログラミング変更が必要になる変更点については、これらのリンクの表の「影響」列を参照してください。  
-  
-## <a name="migrating-from-versions-before-the-net-framework-4"></a>.NET Framework 4 以前のバージョンからの移行
-  
- .NET Framework 4 より前のバージョンの .NET Framework から移行するときは、アプリに影響する可能性があるアプリケーションの互換性の問題について次のトピックをレビューしてください。  
-  
--   [.NET framework 4 の移行に関する問題](http://msdn.microsoft.com/library/ee941656\(v=vs.100\).aspx)  
-  
--   [4.5 でのアプリケーションの互換性](../../../docs/framework/migration-guide/application-compatibility-in-the-net-framework-4-5.md)  
-  
--   [4.5.1 でのアプリケーションの互換性](../../../docs/framework/migration-guide/application-compatibility-in-the-net-framework-4-5-1.md)  
-  
--   [4.5.2 でのアプリケーションの互換性](../../../docs/framework/migration-guide/application-compatibility-in-the-net-framework-4-5-2.md)  
-  
--   [4.6 でのアプリケーションの互換性](../../../docs/framework/migration-guide/application-compatibility-in-the-net-framework-4-6.md)  
-  
--   [4.6.1 でのアプリケーションの互換性](../../../docs/framework/migration-guide/application-compatibility-in-the-net-framework-4-6-1.md)  
-  
--   [4.6.2 でのアプリケーションの互換性](../../../docs/framework/migration-guide/application-compatibility-in-the-net-framework-4-6-2.md)  
+## はじめに
+<a id="introduction" class="xliff"></a>
+.NET の各リリースにおいて互換性は非常に重要な目標です。 各バージョンが付加的な場合は互換性が確保され、以前のバージョンも引き続き動作します。 一方、以前の機能に変更が生じた場合 (パフォーマンスの向上、セキュリティに関する問題への対処、またはバグの修正を目的として)、既存のコードまたは既存のアプリケーションを以降のバージョンで実行すると互換性に問題が発生する可能性があります。 .NET Framework では、変更の再ターゲットとランタイムの変更点を認識します。 変更の再ターゲットは、.NET Framework の特定のバージョンをターゲットとしているもののそれ以降のバージョンで実行されるアプリケーションに影響します。 ランタイムの変更点は、特定のバージョンで実行されるすべてのアプリケーションに影響します。
 
-- [4.7 のアプリケーションの互換性](../../../docs/framework/migration-guide/application-compatibility-in-the-net-framework-4-7.md)
-  
-## <a name="migrating-from-the-net-framework-4"></a>.NET Framework 4 からの移行  
+各アプリは .NET Framework の特定のバージョンをターゲットとします。バージョンは次の方法で指定することができます。
 
-.NET Framework 4 からそれ以降のバージョンへ移行するときは、アプリに影響する可能性があるアプリケーションの互換性の問題について次のトピックをレビューしてください。  
-  
--   [4.5 でのアプリケーションの互換性](../../../docs/framework/migration-guide/application-compatibility-in-the-net-framework-4-5.md)  
-  
--   [4.5.1 でのアプリケーションの互換性](../../../docs/framework/migration-guide/application-compatibility-in-the-net-framework-4-5-1.md)  
-  
--   [4.5.2 でのアプリケーションの互換性](../../../docs/framework/migration-guide/application-compatibility-in-the-net-framework-4-5-2.md)  
-  
--   [4.6 でのアプリケーションの互換性](../../../docs/framework/migration-guide/application-compatibility-in-the-net-framework-4-6.md)  
-  
--   [4.6.1 でのアプリケーションの互換性](../../../docs/framework/migration-guide/application-compatibility-in-the-net-framework-4-6-1.md)  
-  
--   [4.6.2 でのアプリケーションの互換性](../../../docs/framework/migration-guide/application-compatibility-in-the-net-framework-4-6-2.md)  
+* Visual Studio でターゲット フレームワークを定義する。
+* プロジェクト ファイルでターゲット フレームワークを指定する。
+* <xref:System.Runtime.Versioning.TargetFrameworkAttribute> をソース コードに適用する。
 
-- [4.7 のアプリケーションの互換性](../../../docs/framework/migration-guide/application-compatibility-in-the-net-framework-4-7.md)
-  
-## <a name="migrating-from-the-net-framework-45"></a>.NET Framework 4.5 からの移行  
- .NET Framework 4.5 からそれ以降のバージョンへ移行するときは、アプリに影響する可能性があるアプリケーションの互換性の問題について次のトピックをレビューしてください。  
-  
--   [4.5.1 のアプリケーションの互換性](../../../docs/framework/migration-guide/application-compatibility-in-the-net-framework-4-5-1.md)  
-  
--   [4.5.2 でのアプリケーションの互換性](../../../docs/framework/migration-guide/application-compatibility-in-the-net-framework-4-5-2.md)  
-  
--   [4.6 でのアプリケーションの互換性](../../../docs/framework/migration-guide/application-compatibility-in-the-net-framework-4-6.md)  
-  
--   [4.6.1 でのアプリケーションの互換性](../../../docs/framework/migration-guide/application-compatibility-in-the-net-framework-4-6-1.md)  
-  
--   [4.6.2 でのアプリケーションの互換性](../../../docs/framework/migration-guide/application-compatibility-in-the-net-framework-4-6-2.md)  
+ターゲットに指定されたバージョンより新しいバージョンでアプリが実行されると、.NET Framework は後方互換動作によって、ターゲットに指定されている古いバージョンを模倣します。 つまり、アプリは、Framework の新しいバージョンで実行されていても、古いバージョンで実行されているように機能します。 .NET Framework のバージョン間の互換性の問題の多くは、この後方互換モデルを通して対応されます。
 
-- [4.7 のアプリケーションの互換性](../../../docs/framework/migration-guide/application-compatibility-in-the-net-framework-4-7.md)
-  
-## <a name="migrating-from-the-net-framework-451"></a>.NET Framework 4.5.1 からの移行  
+## ランタイムの変更
+<a id="runtime-changes" class="xliff"></a>
 
- .NET Framework 4.5.1 からそれ以降のバージョンへ移行するときは、アプリに影響する可能性があるアプリケーションの互換性の問題について次のトピックをレビューしてください。  
-  
--   [4.5.2 のアプリケーションの互換性](../../../docs/framework/migration-guide/application-compatibility-in-the-net-framework-4-5-2.md)  
-  
--   [4.6 でのアプリケーションの互換性](../../../docs/framework/migration-guide/application-compatibility-in-the-net-framework-4-6.md)  
-  
--   [4.6.1 でのアプリケーションの互換性](../../../docs/framework/migration-guide/application-compatibility-in-the-net-framework-4-6-1.md)  
-  
--   [4.6.2 でのアプリケーションの互換性](../../../docs/framework/migration-guide/application-compatibility-in-the-net-framework-4-6-2.md)  
+ランタイムの問題とは、コンピューターに新しいランタイムを配置し前と同じバイナリを実行したが動作が異なっている場合に発生する問題です。 バイナリが .NET Framework 4.0 向けにコンパイルされている場合、そのバイナリは .NET Framework 4.5 以降のバージョンでは .NET Framework 4.0 互換モードで実行されます。 4.5 に影響する変更の多くは、4.0 向けにコンパイルされたバイナリには影響しません。 これは、AppDomain に固有のものであり、入力アセンブリの設定内容によって異なります。
 
-- [4.7 のアプリケーションの互換性](../../../docs/framework/migration-guide/application-compatibility-in-the-net-framework-4-7.md)
-  
-## <a name="migrating-from-the-net-framework-452"></a>.NET Framework 4.5.2 からの移行  
- .NET Framework 4.5.2 からそれ以降のバージョンへ移行するときは、アプリに影響する可能性があるアプリケーションの互換性の問題について次のトピックをレビューしてください。  
-  
--   [4.6 のアプリケーションの互換性](../../../docs/framework/migration-guide/application-compatibility-in-the-net-framework-4-6.md)  
-  
--   [4.6.1 でのアプリケーションの互換性](../../../docs/framework/migration-guide/application-compatibility-in-the-net-framework-4-6-1.md)  
-  
--   [4.6.2 でのアプリケーションの互換性](../../../docs/framework/migration-guide/application-compatibility-in-the-net-framework-4-6-2.md)  
+## 変更の再ターゲット
+<a id="retargeting-changes" class="xliff"></a>
 
-- [4.7 のアプリケーションの互換性](../../../docs/framework/migration-guide/application-compatibility-in-the-net-framework-4-7.md)
-  
-## <a name="migrating-from-the-net-framework-46"></a>.NET Framework 4.6 からの移行  
- .NET Framework 4.6 からそれ以降のバージョンへ移行するときは、アプリに影響する可能性があるアプリケーションの互換性の問題について次のトピックをレビューしてください。  
-  
--   [4.6.1 のアプリケーションの互換性](../../../docs/framework/migration-guide/application-compatibility-in-the-net-framework-4-6-1.md)  
-  
--   [4.6.2 でのアプリケーションの互換性](../../../docs/framework/migration-guide/application-compatibility-in-the-net-framework-4-6-2.md)  
+再ターゲットの問題とは、4.0 をターゲットにしていたアセンブリが今度は 4.5 をターゲットにするように設定されたときに発生するものです。 この場合、アセンブリは新しい機能を選択するようになるので、古い機能との互換性の問題が発生する可能性があります。 繰り返しますが、これは入力アセンブリによって異なります。したがって、アセンブリを使用するコンソール アプリ、またはアセンブリを参照する Web サイトが該当します。
 
-- [4.7 のアプリケーションの互換性](../../../docs/framework/migration-guide/application-compatibility-in-the-net-framework-4-7.md)
-  
-## <a name="migrating-from-the-net-framework-461"></a>.NET Framework 4.6.1 からの移行  
- .NET Framework 4.6.1 から移行するときは、アプリに影響する可能性があるアプリケーションの互換性の問題を扱った次のトピックをレビューしてください。
- 
-- [4.6.2 のアプリケーションの互換性](../../../docs/framework/migration-guide/application-compatibility-in-the-net-framework-4-6-2.md)
+## .NET 互換性診断
+<a id="net-compatibility-diagnostics" class="xliff"></a>
 
-- [4.7 のアプリケーションの互換性](../../../docs/framework/migration-guide/application-compatibility-in-the-net-framework-4-7.md)  
+.NET 互換性診断は、.NET Framework のバージョン間のアプリケーション互換性問題の識別に役立つ Roslyn を使用したアナライザーです。 この一覧には、使用可能なすべてのアナライザーが含まれますが、特定の移行に適用されるのは、その一部分のみです。 アナライザーは、計画的な移行に該当する問題と表面上の問題にすぎないものを判断します。
 
-## <a name="migrating-from-the-net-framework-462"></a>.NET Framework 4.6.2 からの移行
+各問題には、次の情報が含まれます。
 
-.NET Framework 4.6.2 から移行するときは、アプリに影響する可能性があるアプリケーションの互換性の問題を扱った「[4.7 のアプリケーションの互換性](../../../docs/framework/migration-guide/application-compatibility-in-the-net-framework-4-7.md)」をレビューしてください。  
+-   以前のバージョンからの変更点の説明。
 
-## <a name="see-also"></a>関連項目  
- [バージョンおよび依存関係](../../../docs/framework/migration-guide/versions-and-dependencies.md)   
- [新機能](../../../docs/framework/whats-new/index.md)   
- [クラス ライブラリの互換性のために残されている機能](../../../docs/framework/whats-new/whats-obsolete.md)
+-   変更が顧客に与える影響と、バージョン間で互換性を保つための回避策があるかどうかの説明。
+
+-   変更の重要性の評価。 アプリケーション互換性問題は、次のように分類されます。
+
+    |   |   |
+    |---|---|
+    |Major|多数のアプリに影響するか、コードの大幅な変更を必要とする重大な変更。|
+    |マイナー|少数のアプリに影響するか、コードにわずかな変更を加える必要がある変更。|
+    |エッジ ケース|非常に限られた一般的でないシナリオでアプリに影響を与える変更。|
+    |透明|アプリケーションの開発者やユーザーには大きな影響を及ぼさない変更。|
+
+-   バージョンは、フレームワークで変更が最初に適用されたバージョンを示します。 変更によっては、特定のバージョンで導入され、それ以降のバージョンで元に戻されるものがあります。そのバージョンも同様に示されます。
+
+-   変更の種類：
+
+    |   |   |
+    |---|---|
+    |再ターゲット中|変更は、新しいバージョンの .NET Framework 向けに再コンパイルされるアプリに影響します。|
+    |ランタイム|変更は、以前のバージョンの .NET Framework 向けだが、その後のバージョンでも実行する既存のアプリに影響します。|
+
+-   影響を受ける API (ある場合)。
+
+-   使用可能な診断の ID
+
+## 使用方法
+<a id="usage" class="xliff"></a>
+開始するには、以下の中から互換性の変更の種類を選択します。
+
+* [変更の再ターゲット](./retargeting/index.md)
+* [ランタイムの変更点](./runtime/index.md)
+
+
+## 関連項目
+<a id="see-also" class="xliff"></a>
+
+* [バージョンおよび依存関係](../../../docs/framework/migration-guide/versions-and-dependencies.md)
+* [新機能](../../../docs/framework/whats-new/index.md)
+* [クラス ライブラリの互換性のために残されている機能](../../../docs/framework/whats-new/whats-obsolete.md)
 

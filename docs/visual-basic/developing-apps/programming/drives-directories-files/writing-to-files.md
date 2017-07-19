@@ -1,51 +1,68 @@
 ---
-title: "Writing to Files in Visual Basic | Microsoft Docs"
-ms.custom: ""
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "I/O [Visual Basic], writing to files"
-  - "files, writing to"
-  - "examples [Visual Basic], writing to files"
-  - "writing to files"
-  - "Visual Basic, writing to files"
+title: "Visual Basic でのファイルへの書き込み | Microsoft Docs"
+ms.custom: 
+ms.date: 2015-07-20
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-visual-basic
+ms.topic: article
+dev_langs:
+- VB
+helpviewer_keywords:
+- I/O [Visual Basic], writing to files
+- files, writing to
+- examples [Visual Basic], writing to files
+- writing to files
+- Visual Basic, writing to files
 ms.assetid: ac6fb453-0d6c-4ce4-93b4-1bbcd06de83e
 caps.latest.revision: 13
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 13
----
-# Writing to Files in Visual Basic
-[!INCLUDE[vs2017banner](../../../../visual-basic/developing-apps/includes/vs2017banner.md)]
+author: dotnet-bot
+ms.author: dotnetcontent
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
+ms.openlocfilehash: 5b6d02b8a1284a4b795617db32caed69d28db2de
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/22/2017
 
-このセクションではファイルに書き込む必要があるタスクを実行する方法について説明します。  
+---
+# <a name="writing-to-files-in-visual-basic"></a>Visual Basic でのファイルへの書き込み
+このセクションでは、ファイルへの書き込みを伴うタスクを実行する方法について説明します。  
   
-## このセクションの内容  
- [How to: Write Text to Files](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-write-text-to-files.md)  
- テキスト ファイルへの書き込み方法をデモンストレーションします。  
+## <a name="in-this-section"></a>このセクションの内容  
+ [方法: ファイルにテキストを書き込む](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-write-text-to-files.md)  
+ テキスト ファイルに書き込む方法を示します。  
   
- [How to: Append to Text Files](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-append-to-text-files.md)  
- テキスト ファイルにテキストを追加する方法をデモンストレーションします。  
+ [方法: テキスト ファイルに追記する](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-append-to-text-files.md)  
+ テキスト ファイルにテキストを追加する方法を示します。  
   
- [How to: Write to Binary Files](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-write-to-binary-files.md)  
- バイナリ ファイルへの書き込み方法をデモンストレーションします。  
+ [方法: バイナリ ファイルに書き込む](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-write-to-binary-files.md)  
+ バイナリ ファイルに書き込む方法を示します。  
   
- [How to: Write Text to Files in the My Documents Directory](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-write-text-to-files-in-the-my-documents-directory.md)  
- **My Documents** ディレクトリに新しいテキスト ファイルを作成して書き込む方法をデモンストレーションします。  
+ [方法: My Documents ディレクトリのファイルにテキストを書き込む](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-write-text-to-files-in-the-my-documents-directory.md)  
+ **My Documents** ディレクトリでテキスト ファイルを新規作成し、それに書き込む方法を示します。  
   
- [How to: Write Text to Files with a StreamWriter](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-write-text-to-files-with-a-streamwriter.md)  
- <xref:System.IO.StreamWriter?displayProperty=fullName> オブジェクトでのファイルへの書き込み方法をデモンストレーションします。  
+ [方法: StreamWriter を使用してファイルにテキストを書き込む](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-write-text-to-files-with-a-streamwriter.md)  
+ <xref:System.IO.StreamWriter?displayProperty=fullName> オブジェクトでファイルに書き込む方法を示します。  
   
-## 関連項目  
+## <a name="reference"></a>参照  
  <xref:Microsoft.VisualBasic.FileIO.FileSystem>  
- `My.Computer.FileSystem` オブジェクトとそのメソッドおよびプロパティについて説明します。  
+ `My.Computer.FileSystem` オブジェクト、そのメソッドおよびプロパティについて説明します。  
   
  <xref:Microsoft.VisualBasic.FileIO.FileSystem.OpenTextFileWriter%2A>  
  `OpenTextFileWriter` メソッドについて説明します。  
@@ -56,15 +73,15 @@ caps.handback.revision: 13
  <xref:Microsoft.VisualBasic.FileIO.FileSystem.WriteAllText%2A>  
  `WriteAllText` メソッドについて説明します。  
   
-## 関連項目  
- [Reading from Files](../../../../visual-basic/developing-apps/programming/drives-directories-files/reading-from-files.md)  
- ファイルを読み取る必要があるタスクを実行する方法について説明します。  
+## <a name="related-sections"></a>関連項目  
+ [ファイルの読み取り](../../../../visual-basic/developing-apps/programming/drives-directories-files/reading-from-files.md)  
+ ファイルの読み取りを伴うタスクを実行する方法について説明します。  
   
- [Creating, Deleting, and Moving Files and Directories](../../../../visual-basic/developing-apps/programming/drives-directories-files/creating-deleting-and-moving-files-and-directories.md)  
- ファイルとディレクトリの作成削除移動および名前を変更するタスクを実行する方法について説明します。  
+ [ファイルおよびディレクトリの作成、削除、および移動](../../../../visual-basic/developing-apps/programming/drives-directories-files/creating-deleting-and-moving-files-and-directories.md)  
+ ファイルとディレクトリの作成、削除、移動、名前変更を伴うタスクを実行する方法について説明します。  
   
- [Storing Data to and Reading from the Clipboard](../../../../visual-basic/developing-apps/programming/computer-resources/storing-data-to-and-reading-from-the-clipboard.md)  
- データの読み取りやクリップボードにデータを書き込むなどの `My.Computer.Clipboard` に関連付けられているタスクを実行する方法について説明します。  
+ [クリップボードのデータの格納と読み取り](../../../../visual-basic/developing-apps/programming/computer-resources/storing-data-to-and-reading-from-the-clipboard.md)  
+ クリップボードからのデータの読み取り、クリップボードへのデータの書き込みなど、`My.Computer.Clipboard` に関連付けられたタスクを実行する方法について説明します。  
   
- [File Encodings](../../../../visual-basic/developing-apps/programming/drives-directories-files/file-encodings.md)  
- ファイル エンコーディングの概要を説明します。
+ [ファイル エンコーディング](../../../../visual-basic/developing-apps/programming/drives-directories-files/file-encodings.md)  
+ ファイル エンコードの概要を説明します。

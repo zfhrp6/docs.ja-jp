@@ -1,5 +1,5 @@
 ---
-title: "C# の構造体 |C# 言語のツアー"
+title: "C# の構造体 - C# 言語のツアー | Microsoft Docs"
 description: "構造体と呼ばれる C# の値型の基本を学ぶ"
 keywords: ".NET、C#、構造体、値型"
 author: BillWagner
@@ -10,16 +10,18 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 88a74571-f741-4a31-a2b5-1ccf165535b8
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 321e2456c5f82f80c825f84ef2b7c0754a6a4e1e
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 4437ce5d344cf06d30e31911def6287999fc6ffc
+ms.openlocfilehash: 1061144a10a95b254c01db4d12144fdc5619a085
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/23/2017
 
 ---
 
-# <a name="structs"></a>構造体
+<a id="structs" class="xliff"></a>
+# 構造体
 
-***構造体***は、クラスと同様に、データ メンバーおよび関数メンバーを含むことができるデータ構造ですが、値型でありヒープ割り当てを必要としない点でクラスと異なります。 構造体型の変数は、構造体のデータを直接格納しますが、クラス型の変数は、動的に割り当てられたオブジェクトへの参照を格納します。 構造体型はユーザー指定の継承をサポートしていませんし、すべての構造体型が暗黙的に `object` 型を継承します。
+***構造体***は、クラスと同様に、データ メンバーおよび関数メンバーを含むことができるデータ構造ですが、値型でありヒープ割り当てを必要としない点でクラスと異なります。 構造体型の変数は、構造体のデータを直接格納しますが、クラス型の変数は、動的に割り当てられたオブジェクトへの参照を格納します。 構造体型はユーザー指定の継承をサポートせず、すべての構造体型は暗黙的に <xref:System.ValueType> 型を継承し、この型はさらに `object` を暗黙的に継承します。
 
 構造体は、値セマンティクスを持つ小規模なデータ構造に特に便利です。 構造体の主な例としては、複素数、座標系のポイント、ディクショナリのキーと値のペアなどがあります。 小規模なデータ構造には、クラスよりむしろ構造体を使用するほうが、アプリケーションが実行するメモリ割り当ての数を大幅に減らすことができます。 たとえば、次のプログラムでは、100 個のポイントの配列を作成し初期化します。 `Point` をクラスとして実装すると、101 個の別々のオブジェクトがインスタンス化されます。配列に1 個、残りは 100 個の要素に 1 個ずつです。
 

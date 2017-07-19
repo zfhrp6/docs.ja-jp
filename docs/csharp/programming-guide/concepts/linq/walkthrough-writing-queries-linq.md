@@ -34,10 +34,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 9dd72793d23c7f6ccc208a3368c255f7cc4dbbd7
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: fe32676f0e39ed109a68f39584cf41aec5f5ce90
+ms.openlocfilehash: 5692bd4b2fae4c5e17d48c12e98eb2e18523ba61
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/10/2017
 
 ---
 # <a name="walkthrough-writing-queries-in-c-linq"></a>チュートリアル: C# でのクエリの作成 (LINQ)
@@ -73,7 +74,7 @@ ms.lasthandoff: 03/13/2017
   
 -   リスト自体は、コレクション初期化子で初期化されます。  
   
- この全体的なデータ構造は、コンス トラクターへの明示的な呼び出しや、明示的なメンバー アクセスを行うことなく初期化され、インスタンス化されます。 これらの新機能について詳しくは、「[自動実装プロパティ](../../../../csharp/programming-guide/classes-and-structs/auto-implemented-properties.md)」および「[オブジェクト初期化子とコレクション初期化子](../../../../csharp/programming-guide/classes-and-structs/object-and-collection-initializers.md)」をご覧ください。  
+ この全体的なデータ構造は、コンストラクターへの明示的な呼び出しや、明示的なメンバー アクセスを行うことなく初期化され、インスタンス化されます。 これらの新機能について詳しくは、「[自動実装プロパティ](../../../../csharp/programming-guide/classes-and-structs/auto-implemented-properties.md)」および「[オブジェクト初期化子とコレクション初期化子](../../../../csharp/programming-guide/classes-and-structs/object-and-collection-initializers.md)」をご覧ください。  
   
 #### <a name="to-add-the-data-source"></a>データ ソースを追加するには  
   
@@ -202,7 +203,7 @@ ms.lasthandoff: 03/13/2017
   
  [LINQ to SQL](https://msdn.microsoft.com/library/bb386976)  
   
- [LINQ to DataSet](http://msdn.microsoft.com/library/743e3755-3ecb-45a2-8d9b-9ed41f0dcf17)  
+ [LINQ to DataSet](../../../../framework/data/adonet/linq-to-dataset.md)  
   
  [LINQ to XML (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-xml.md)  
   

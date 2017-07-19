@@ -23,7 +23,7 @@ ms.lasthandoff: 05/22/2017
 
 ---
 # <a name="mitigation-long-path-support"></a>軽減策: 長いパスのサポート
-[!INCLUDE[net_v462](../../../includes/net-v462-md.md)] を対象とするアプリ以降では、パスまたは完全修飾ファイル名が 260 (または `MAX_PATH`) 文字を超える場合、ファイル システムの I/O メソッドで自動的に <xref:System.IO.PathTooLongException> がスローされなくなりました。 代わりに、最大 32K の文字の長いパスがサポートされます。  
+[!INCLUDE[net_v462](../../../includes/net-v462-md.md)] 以降を対象とするアプリでは、パスまたは完全修飾ファイル名が 260 (または `MAX_PATH`) 文字を超える場合、ファイル システムの I/O メソッドで自動的に <xref:System.IO.PathTooLongException> がスローされなくなりました。 代わりに、最大 32K の文字の長いパスがサポートされます。  
   
 ## <a name="impact"></a>影響  
  [!INCLUDE[net_v462](../../../includes/net-v462-md.md)] を対象として再コンパイルされたアプリのうち、パスが 260 文字を超えたために以前は <xref:System.IO.PathTooLongException> を自動的にスローしていたアプリが、次の条件下でのみ <xref:System.IO.PathTooLongException> をスローするようになります。  
@@ -32,7 +32,7 @@ ms.lasthandoff: 05/22/2017
   
 -   オペレーティング システムが `COR_E_PATHTOOLONG` またはそれと同等のものを返す。  
   
- [!INCLUDE[net_v461](../../../includes/net-v461-md.md)] 以前を対象とするアプリの従来の動作では、パスが 260 文字を超えるたびにランタイムが自動的に <xref:System.IO.PathTooLongException> をスローしていました。  
+ [!INCLUDE[net_v461](../../../includes/net-v461-md.md)] 以前を対象とするアプリの従来の動作では、パスが 260 文字を超えるたびにランタイムで自動的に <xref:System.IO.PathTooLongException> がスローされていました。  
   
 ## <a name="mitigation"></a>軽減策  
  [!INCLUDE[net_v462](../../../includes/net-v462-md.md)] を対象とするアプリでは、長いパスのサポートが望ましくない場合、app.config ファイルの [\<runtime>](../../../docs/framework/configure-apps/file-schema/runtime/runtime-element.md) セクションに次の行を追加することでサポートを無効にできます。  

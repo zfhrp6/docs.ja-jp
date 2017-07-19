@@ -33,10 +33,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: cc316600acd5f551dad8fbd4b7260c512231da5e
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: fe32676f0e39ed109a68f39584cf41aec5f5ce90
+ms.openlocfilehash: 99231dca529afe13aede6de9c537e160e970a850
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/22/2017
 
 ---
 # <a name="how-to-show-available-serial-ports-in-visual-basic"></a>方法 : Visual Basic で利用可能なシリアル ポートを表示する
@@ -47,23 +48,23 @@ ms.lasthandoff: 03/13/2017
 ## <a name="example"></a>例  
  次の例では、`My.Computer.Ports.SerialPortNames` プロパティが返す文字列のすべてについてループします。 これらの文字列は、コンピューターで利用可能なシリアル ポートの名前です。  
   
- 通常、利用可能なポートの一覧から、アプリケーションで使用するシリアル ポートをユーザーが選択します。 この例では、シリアル ポートの名前を <xref:System.Windows.Forms.ListBox> コントロールに格納しています。 詳細については、「[ListBox コントロール](http://msdn.microsoft.com/library/b0172473-c5f2-411e-aaa4-c8f17cb5eed4)」を参照してください。  
+ 通常、利用可能なポートの一覧から、アプリケーションで使用するシリアル ポートをユーザーが選択します。 この例では、シリアル ポート名は <xref:System.Windows.Forms.ListBox> コントロールに格納されます。 詳細については、「[ListBox コントロール](../../../../framework/winforms/controls/listbox-control-windows-forms.md)」を参照してください。  
   
  [!code-vb[VbVbalrMyComputer # 45](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/VisualBasic/how-to-show-available-serial-ports_1.vb)]  
   
- このコード例は IntelliSense コード スニペットとしても利用できます。 コード スニペット ピッカーでは、このコードは「**接続とネットワーク**」にあります。 詳細については、「[Code Snippets](https://docs.microsoft.com/visualstudio/ide/code-snippets)」を参照してください。  
+ このコード例は IntelliSense コード スニペットとしても利用できます。 コード スニペット ピッカーでは、これは **[接続とネットワーク]** にあります。 詳細については、「[Code Snippets](https://docs.microsoft.com/visualstudio/ide/code-snippets)」を参照してください。  
   
 ## <a name="compiling-the-code"></a>コードのコンパイル  
  この例で必要な要素は次のとおりです。  
   
 -   System.Windows.Forms.dll へのプロジェクト参照が必要です。  
   
--   <xref:System.Windows.Forms> 名前空間のメンバーへのアクセスが必要です。 コード内でメンバー名を完全修飾していない場合は、`Imports` ステートメントを追加します。 詳細については、「[Imports ステートメント (.NET 名前空間および型)](../../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md)」を参照してください。  
+-   <xref:System.Windows.Forms> 名前空間のメンバーへのアクセス許可。 コード内でメンバー名を完全修飾していない場合は、`Imports` ステートメントを追加します。 詳細については、「[Imports ステートメント (.NET 名前空間および型)](../../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md)」を参照してください。  
   
--   フォーム上に `ListBox1` という名前の <xref:System.Windows.Forms.ListBox> コントロールが必要です。  
+-   `ListBox1` という名前の <xref:System.Windows.Forms.ListBox> コントロールを持つフォーム。  
   
 ## <a name="robust-programming"></a>信頼性の高いプログラミング  
- 利用可能なシリアル ポートの名前を表示するのに、<xref:System.Windows.Forms.ListBox> コントロールを使用しなくてもかまいません。 代わりに、<xref:System.Windows.Forms.ComboBox> やその他のコントロールを使用することもできます。 ユーザーからの応答が不要なアプリケーションの場合、<xref:System.Windows.Forms.TextBox> コントロールを使用して情報を表示できます。  
+ 利用可能なシリアル ポートの名前を表示するために、<xref:System.Windows.Forms.ListBox> コントロールを使用する必要はありません。 代わりに、<xref:System.Windows.Forms.ComboBox> やその他のコントロールを使用できます。 ユーザーからの応答が不要なアプリケーションの場合、<xref:System.Windows.Forms.TextBox> コントロールを使用して情報を表示できます。  
   
 > [!NOTE]
 >  Windows 98 の実行時には、`My.Computer.Ports.SerialPortNames` が返すポート名が正しくない場合があります。 アプリケーション エラーを防ぐには、ポート名を使用してポートを開くときに、`Try...Catch...Finally` ステートメントや `Using` ステートメントなどの例外処理を使用します。  

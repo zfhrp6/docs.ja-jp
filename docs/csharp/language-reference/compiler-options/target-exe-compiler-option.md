@@ -31,9 +31,10 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
 ms.openlocfilehash: 9d5784186f564241c896333d518e297c3c094f28
+ms.contentlocale: ja-jp
 ms.lasthandoff: 03/13/2017
 
 ---
@@ -42,7 +43,7 @@ ms.lasthandoff: 03/13/2017
   
 ## <a name="syntax"></a>構文  
   
-```  
+```console  
 /target:exe  
 ```  
   
@@ -70,7 +71,7 @@ ms.lasthandoff: 03/13/2017
 ## <a name="example"></a>例  
  次のコマンド ラインのいずれかで `in.cs` がコンパイルされ、`in.exe` が作成されます。  
   
-```  
+```console  
 csc /target:exe in.cs  
 csc in.cs  
 ```  

@@ -1,5 +1,5 @@
 ---
-title: "文字列補間 | C#"
+title: "文字列補間 - C# | Microsoft Docs"
 description: "C# 6 の文字列補間の動作について"
 keywords: ".NET、.NET Core、C#、文字列"
 author: mgroves
@@ -10,14 +10,16 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: f8806f6b-3ac7-4ee6-9b3e-c524d5301ae9
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 41afad1c1148319eb8d7d1c3066424eea431649d
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 4437ce5d344cf06d30e31911def6287999fc6ffc
+ms.openlocfilehash: 8396be84d229563973011470d0333af017302dc9
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/23/2017
 
 ---
 
-# <a name="string-interpolation-in-c"></a>C における文字列補間# #
+<a id="string-interpolation-in-c" class="xliff"></a>
+# C# における文字列補間 #
 
 文字列補間は、文字列内のプレースホルダーを文字列変数の値によって置き換える方法です。 C# 6 より前は、これは `System.String.Format` を使用して行われました。 それでも動作しますが、番号付きのプレースホルダーを使用するため読みにくく冗長になります。
 
@@ -31,11 +33,13 @@ echo "My name is $name.";
 
 C# 6 でついに、この形式の文字列補間ができるようになりました。 文字列の前に `$` を使用して、それらの値の変数または式に置き換えると示すことができます。
 
-## <a name="prerequisites"></a>必須コンポーネント
+<a id="prerequisites" class="xliff"></a>
+## 必須コンポーネント
 お使いのコンピューターを、.NET Core が実行されるように設定する必要があります。 インストールの指示については、[.NET Core](https://www.microsoft.com/net/core) のページを参照してください。
 このアプリケーションは、Windows、Ubuntu Linux、macOS または Docker コンテナーで実行できます。 お好みのコード エディターをインストールしてください。 次の説明では、オープン ソースのクロス プラットフォーム エディターである [Visual Studio Code](https://code.visualstudio.com/) を使用しています。 しかし、他の使い慣れたツールを使用しても構いません。
 
-## <a name="create-the-application"></a>アプリケーションを作成する
+<a id="create-the-application" class="xliff"></a>
+## アプリケーションを作成する
 
 すべてのツールをインストールしたら、新しい .NET Core アプリケーションを作成します。 コマンド ライン ジェネレーターを使用するには、`interpolated` などプロジェクトのディレクトリを作成し、好みのシェルで次のコマンドを実行します。
 
@@ -47,7 +51,8 @@ dotnet new console
 
 プログラムを実行するには `dotnet run` を使用します。 コンソールに "Hello, World" という出力が表示されます。
 
-## <a name="intro-to-string-interpolation"></a>文字列補間の概要
+<a id="intro-to-string-interpolation" class="xliff"></a>
+## 文字列補間の概要
 
 `System.String.Format` を使用して、文字列で、その文字列に続くパラメーターで置き換えられる "プレースホルダー" を指定します。 たとえば、次のようになります。
 
@@ -73,7 +78,8 @@ This is line number 4
 This is line number 5
 ```
 
-## <a name="how-string-interpolation-works"></a>文字列補間の動作
+<a id="how-string-interpolation-works" class="xliff"></a>
+## 文字列補間の動作
 
 背後では、この文字列補間の構文はコンパイラによって String.Format に変換されます。 そのため、[前に String.Format で実行したのと同様のこと](https://msdn.microsoft.com/en-us/library/dwhawy9k(v=vs.110).aspx)ができます。
 
@@ -109,7 +115,8 @@ Console.WriteLine(localizeMe);
 * `Cannot use local variable 'adj' before it is declared` - 変数 `adj` が補間された文字列の*後までに*宣言されなかった。
 * `The name 'otheranimal' does not exist in the current context` - `otheranimal` と呼ばれる変数が宣言すらされていない。
 
-## <a name="localization-and-internationalization"></a>ローカリゼーションと国際化
+<a id="localization-and-internationalization" class="xliff"></a>
+## ローカリゼーションと国際化
 
 補間された文字列は `IFormattable` と `FormattableString` をサポートしており、国際化するのに役立ちます。
 
@@ -119,7 +126,8 @@ Console.WriteLine(localizeMe);
 
 [!code-csharp[補間の国際化の例](../../../samples/snippets/csharp/new-in-6/string-interpolation.cs#InterpolationInternationalizationExample)]  
 
-## <a name="conclusion"></a>まとめ 
+<a id="conclusion" class="xliff"></a>
+## まとめ 
 
 このチュートリアルでは、C# 6 の文字列補間機能の使用方法について説明しました。 これは基本的に、シンプルな `String.Format` ステートメントを書く簡潔な方法で、より高度な使い方をするには注意が必要です。
 

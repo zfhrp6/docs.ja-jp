@@ -29,10 +29,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 1a7d66be3ce0a4a24fd95d5b77787dcad5598f4d
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: a5ed524a1b17f7be8903f998cbd732594faab831
+ms.openlocfilehash: 1f327e7171df8b91d4c5a787c879069a4e44f562
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/15/2017
 
 ---
 # <a name="classes-c-programming-guide"></a>クラス (C# プログラミング ガイド)
@@ -84,14 +85,14 @@ ms.lasthandoff: 03/13/2017
  [!code-cs[csProgGuideObjects#84](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/classes_6.cs)]  
   
 ## <a name="c-language-specification"></a>C# 言語仕様  
- [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec_md.md)]  
+ [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
 ## <a name="see-also"></a>関連項目  
  [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
- [オブジェクト指向プログラミング](http://msdn.microsoft.com/library/1cf6e655-3f30-45f1-9a5d-4a88ca24a1c2)   
+ [オブジェクト指向プログラミング](../concepts/object-oriented-programming.md)   
  [ポリモーフィズム](../../../csharp/programming-guide/classes-and-structs/polymorphism.md)   
  [メンバー](../../../csharp/programming-guide/classes-and-structs/members.md)   
  [メソッド](../../../csharp/programming-guide/classes-and-structs/methods.md)   
  [コンストラクター](../../../csharp/programming-guide/classes-and-structs/constructors.md)   
- [デストラクター](../../../csharp/programming-guide/classes-and-structs/destructors.md)   
+ [ファイナライザー](../../../csharp/programming-guide/classes-and-structs/destructors.md)   
  [オブジェクト](../../../csharp/programming-guide/classes-and-structs/objects.md)

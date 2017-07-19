@@ -27,10 +27,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 9ba08e55e3bc07c2ce6369e2b33ccbe632545d24
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 31905a37f09db5f5192123f0118252fbe8b02eff
+ms.openlocfilehash: bcebdd1a6462e651619776549754eacfac9f9573
+ms.contentlocale: ja-jp
+ms.lasthandoff: 07/03/2017
 
 ---
 # <a name="how-to-implement-and-call-a-custom-extension-method-c-programming-guide"></a>方法 : カスタム拡張メソッドを実装して呼び出す (C# プログラミング ガイド)
@@ -58,7 +59,7 @@ ms.lasthandoff: 03/13/2017
  [!code-cs[csProgGuideExtensionMethods#1](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/how-to-implement-and-call-a-custom-extension-method_1.cs)]  
   
 ## <a name="compiling-the-code"></a>コードのコンパイル  
- このコードを実行するには、[!INCLUDE[vs_current_short](../../../csharp/programming-guide/classes-and-structs/includes/vs_current_short_md.md)] で作成した Visual C# コンソール アプリケーション プロジェクトに、そのコードをコピーして貼り付けます。 既定では、このプロジェクトは、[!INCLUDE[dnprdnshort](../../../csharp/getting-started/includes/dnprdnshort_md.md)] のバージョン 3.5 を対象としており、System.Core.dll への参照と System.Linq の `using` ディレクティブが含まれます。 これらの要件のうち 1 つまたは複数がプロジェクトから欠落している場合は、手動で追加することができます。   
+ このコードを実行するには、[!INCLUDE[vs_current_short](~/includes/vs-current-short-md.md)] で作成した Visual C# コンソール アプリケーション プロジェクトに、そのコードをコピーして貼り付けます。 既定では、このプロジェクトは、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] のバージョン 3.5 を対象としており、System.Core.dll への参照と System.Linq の `using` ディレクティブが含まれます。 これらの要件のうち 1 つまたは複数がプロジェクトから欠落している場合は、手動で追加することができます。   
   
 ## <a name="net-framework-security"></a>.NET Framework セキュリティ  
  拡張メソッドには、固有のセキュリティ上の脆弱性はありません。 名前の衝突の解決では、型自体で定義されているインスタンス メソッドまたは静的メソッドが常に優先されるため、型の既存のメソッドを偽装するために拡張メソッドが使用されることはありません。 拡張メソッドは、拡張されたクラスのプライベート データにはアクセスできません。  

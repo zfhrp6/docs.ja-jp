@@ -1,6 +1,6 @@
 ---
 title: "long (C# リファレンス) | Microsoft Docs"
-ms.date: 2015-07-20
+ms.date: 2017-03-14
 ms.prod: .net
 ms.technology:
 - devlang-csharp
@@ -30,67 +30,81 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: c28c8308d7ed32f7240f56113a77a0794cb1ba62
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 400dfda51d978f35c3995f90840643aaff1b9c13
+ms.openlocfilehash: 0ea7f109ab934660418aab1a88bff7206ef23a37
+ms.contentlocale: ja-jp
+ms.lasthandoff: 03/24/2017
 
 ---
 # <a name="long-c-reference"></a>long (C# リファレンス)
-`long` キーワードは、次の表に示されたサイズと範囲に基づいて値を格納する整数型を示します。  
+
+`long` は、次の表に示されたサイズと範囲に従って値を格納する整数型を示します。  
   
 |型|範囲|サイズ|.NET Framework 型|  
 |----------|-----------|----------|-------------------------|  
 |`long`|– 9,223,372,036,854,775,808 ～ 9,223,372,036,854,775,807|符号付き 64 ビット整数|<xref:System.Int64?displayProperty=fullName>|  
   
-## <a name="literals"></a>リテラル  
- `long` 変数の宣言と初期化の例を次に示します。  
+## <a name="literals"></a>リテラル 
+
+`long` 変数を宣言し、10 進リテラル、16 進リテラル、または (C# 7 以降) バイナリ リテラルを割り当てることによって初期化できます。 
+
+次の例では、整数 4,294,967,296 を 10 進リテラル、16 進リテラル、バイナリ リテラルで表したものが、`long` 値に割り当てられています。  
   
+[!code-cs[long](../../../../samples/snippets/csharp/language-reference/keywords/numeric-literals.cs#Long)]  
+
+> [!NOTE] 
+> 16 進リテラルを表すにはプレフィックス `0x` または `0X` を使い、バイナリ リテラルを表すにはプレフィックス `0b` または `0B` を使います。 10 進リテラルには、プレフィックスはありません。 
+
+C# 7 以降では、次の例に示すように、アンダースコア文字 `_` を桁区切り記号として使って読みやすくすることもできます。
+
+[!code-cs[long](../../../../samples/snippets/csharp/language-reference/keywords/numeric-literals.cs#LongS)]  
+ 
+ 整数リテラルには、型を表すサフィックスを含めることもできます。 サフィックス `L` は `long` を表します。 次の例では、`L` サフィックスを使って long 整数を示しています。
+ 
+```csharp
+long value = 4294967296L;  
 ```  
+
+> [!NOTE]
+>  小文字の "l" もサフィックスとして使用できます。 ただし、文字の "l" は数字の "1" と混同しやすいため、コンパイラから警告が出されます。 明確にするには、"L" を使用します。  
   
-long long1 = 4294967296;  
-```  
+ サフィックス `L` を使う場合、整数リテラルの型は、そのサイズに応じて `long` または [ulong](../../../csharp/language-reference/keywords/ulong.md) のいずれかに決まります。 この場合、整数リテラルが [ulong](../../../csharp/language-reference/keywords/ulong.md) の範囲より小さいため、`long` になります。  
   
- サフィックスがない整数リテラルの場合、整数リテラルの型は、[int](../../../csharp/language-reference/keywords/int.md)、[uint](../../../csharp/language-reference/keywords/uint.md)、`long`、[ulong](../../../csharp/language-reference/keywords/ulong.md) のうち、その値を表すことができる最初の型になります。 上の例では、整数リテラルが [uint](../../../csharp/language-reference/keywords/uint.md) の範囲を超えているため、`long` 型になります (整数型の記憶サイズについては、「[整数型の一覧表](../../../csharp/language-reference/keywords/integral-types-table.md)」を参照してください)。  
+ サフィックスは、オーバーロードされたメソッドの呼び出しによく使われます。 たとえば、次のオーバーロードされたメソッドには、`long` 型と [int](../../../csharp/language-reference/keywords/int.md) 型のパラメーターがあります。  
   
- また、次の例のように、`long` 型にサフィックス L を付けることもできます。  
-  
-```  
-  
-long long2 = 4294967296L;  
-```  
-  
- サフィックス L を使用する場合、整数リテラルの型は、そのサイズに応じて `long` または [ulong](../../../csharp/language-reference/keywords/ulong.md) のいずれかに決まります。 この場合、整数リテラルが [ulong](../../../csharp/language-reference/keywords/ulong.md) の範囲より小さいため、`long` になります。  
-  
- サフィックスは、オーバーロードされたメソッドの呼び出しでよく使用されます。 たとえば、`long` パラメーターと [int](../../../csharp/language-reference/keywords/int.md) パラメーターを使用してオーバーロードされたメソッドがあるとします。  
-  
-```  
+```csharp
 public static void SampleMethod(int i) {}  
 public static void SampleMethod(long l) {}  
 ```  
   
- サフィックス L を使用すると、正しい型が呼び出されます。次に例を示します。  
+ `L` サフィックスにより、適切なオーバーロードが呼び出されることが保証されます。  
   
+```csharp  
+SampleMethod(5);    // Calls the method with the int parameter  
+SampleMethod(5L);   // Calls the method with the long parameter  
 ```  
-SampleMethod(5);    // Calling the method with the int parameter  
-SampleMethod(5L);   // Calling the method with the long parameter  
-```  
+サフィックスがない整数リテラルの型は、以下の型のうちその値を表すことができる最初のものになります。 
+
+1. [int](int.md)
+2. [uint](../../../csharp/language-reference/keywords/uint.md)
+3. `long`
+4. [ulong](../../../csharp/language-reference/keywords/ulong.md) 
+
+前の例のリテラル 4294967296 は、[uint](../../../csharp/language-reference/keywords/uint.md) の範囲を超えているため、`long` 型になります (整数型の記憶サイズについては、「[整数型の一覧表](../../../csharp/language-reference/keywords/integral-types-table.md)」をご覧ください)。  
   
- `long` 型とその他の数値の整数型を同じ式で使用できます。その場合、式は `long` (関係式またはブール式の場合は [bool](../../../csharp/language-reference/keywords/bool.md)) として評価されます。 たとえば、次の式は `long` として評価されます。  
+ 同じ式の他の整数型で `long` 型を使うと、式は `long` (関係式またはブール式の場合は [bool](../../../csharp/language-reference/keywords/bool.md)) として評価されます。 たとえば、次の式は `long` として評価されます。  
   
-```  
+```csharp  
 898L + 88  
 ```  
-  
-> [!NOTE]
->  小文字の "l" もサフィックスとして使用できます。 ただし、文字の "l" は数字の "1" と混同しやすいため、コンパイラから警告が出されます。 明確にするには、"L" を使用します。  
   
  浮動小数点型と整数型の混在する算術式の詳細については、「[float](../../../csharp/language-reference/keywords/float.md)」と「[double](../../../csharp/language-reference/keywords/double.md)」を参照してください。  
   
 ## <a name="conversions"></a>変換  
  `long` から [float](../../../csharp/language-reference/keywords/float.md)、[double](../../../csharp/language-reference/keywords/double.md)、[decimal](../../../csharp/language-reference/keywords/decimal.md) への暗黙の型変換が組み込まれています。 それ以外の型の場合は、キャストを使用する必要があります。 たとえば、次の代入ステートメントは、明示的なキャストを使用しない場合、コンパイル エラーになります。  
   
-```  
+```csharp  
 int x = 8L;        // Error: no implicit conversion from long to int  
 int x = (int)8L;   // OK: explicit conversion to int  
 ```  
@@ -99,9 +113,8 @@ int x = (int)8L;   // OK: explicit conversion to int
   
  また、浮動小数点型から `long` への暗黙の型変換が行われないことにも注意してください。 たとえば、次のステートメントは、明示的なキャストを使用しない場合、コンパイル エラーになります。  
   
-```  
-  
-      long x = 3.0;         // Error: no implicit conversion from double  
+```csharp  
+long x = 3.0;         // Error: no implicit conversion from double  
 long y = (long)3.0;   // OK: explicit conversion  
 ```  
   

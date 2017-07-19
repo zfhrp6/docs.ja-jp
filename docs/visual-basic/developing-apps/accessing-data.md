@@ -12,8 +12,8 @@ helpviewer_keywords:
 - Visual Basic, data access
 ms.assetid: 3086ab38-3be5-4b22-9385-7d0e16b04f6a
 caps.latest.revision: 23
-author: stevehoag
-ms.author: shoag
+author: dotnet-bot
+ms.author: dotnetcontent
 translation.priority.ht:
 - cs-cz
 - de-de
@@ -28,20 +28,21 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 01c5dfdd118d1db9adfd1c8e83c3ed63348e4c43
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
+ms.openlocfilehash: 227aaf74dff0ae16fc5030ac8031ffa0f9ddf632
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/12/2017
 
 ---
 # <a name="accessing-data-in-visual-basic-applications"></a>Visual Basic アプリケーションにおけるデータ アクセス
-[!INCLUDE[vbprvb](../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] には、データにアクセスするアプリケーションを開発する際に役立ついくつかの新機能が用意されています。 Windows アプリケーションのデータ バインド フォームは、[[データ ソース]](https://docs.microsoft.com/visualstudio/data-tools/bind-controls-to-data-in-visual-studio) ウィンドウからフォームに項目をドラッグすることにより作成できます。 データをコントロールにバインドするには、**[データ ソース]** ウィンドウから既存のコントロールに項目をドラッグします。  
+[!INCLUDE[vbprvb](../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] には、データにアクセスするアプリケーションを開発する際に役立ついくつかの新機能が用意されています。 Windows アプリケーションのデータ バインド フォームは、[[データ ソース]](https://docs.microsoft.com/visualstudio/data-tools/add-new-data-sources) ウィンドウからフォームに項目をドラッグすることにより作成できます。 データをコントロールにバインドするには、**[データ ソース]** ウィンドウから既存のコントロールに項目をドラッグします。  
   
 ## <a name="related-sections"></a>関連項目  
- [データ アプリケーションの作成](https://docs.microsoft.com/visualstudio/data-tools/creating-data-applications)  
+ [Visual Studio でのデータへのアクセス](https://docs.microsoft.com/visualstudio/data-tools/)  
  アプリケーションにデータ アクセス機能を取り込む方法について説明したページへのリンクを示します。
 
- [Visual Studio のデータ アプリケーションの概要](https://docs.microsoft.com/visualstudio/data-tools/overview-of-data-applications-in-visual-studio)  
+ [.NET 用の Visual Studio データ ツール](https://docs.microsoft.com/visualstudio/data-tools/visual-studio-data-tools-for-dotnet)  
  [!INCLUDE[vsprvs](../../csharp/includes/vsprvs_md.md)] を使用して、データを操作するアプリケーションを作成する方法に関するページへのリンクを示します。  
   
  [LINQ](../../visual-basic/programming-guide/language-features/linq/index.md)  
@@ -56,22 +57,22 @@ ms.lasthandoff: 03/13/2017
  [n 層アプリケーションでのデータセットの操作](https://docs.microsoft.com/visualstudio/data-tools/work-with-datasets-in-n-tier-applications)  
  複数層データ アプリケーションを作成する方法に関するトピックへのリンクを示します。  
      
- [Visual Studio でのデータへの接続](https://docs.microsoft.com/visualstudio/data-tools/connecting-to-data-in-visual-studio)  
+ [新しい接続の追加](https://docs.microsoft.com/visualstudio/data-tools/add-new-connections)  
  [!INCLUDE[vsprvs](../../csharp/includes/vsprvs_md.md)] で、デザイン時ツールを使用してアプリケーションをデータに接続する方法と、ADO.NET 接続オブジェクトを使用してアプリケーションをデータに接続する方法に関するページへのリンクを示します。  
 
- [アプリケーションへのデータのフェッチ](https://docs.microsoft.com/visualstudio/data-tools/fetching-data-into-your-application)  
+ [Visual Studio のデータセット ツール](https://docs.microsoft.com/visualstudio/data-tools/dataset-tools-in-visual-studio)  
  データセットにデータを読み込む方法と、SQL ステートメントおよびストアド プロシージャを実行する方法を説明しているページへのリンクを示します。  
   
  [Visual Studio でのデータへのコントロールのバインド](https://docs.microsoft.com/visualstudio/data-tools/bind-controls-to-data-in-visual-studio)  
  データ バインド コントロールを使用して Windows フォームにデータを表示する方法について説明しているページへのリンクを示します。  
   
- [アプリケーションでのデータ編集](https://docs.microsoft.com/visualstudio/data-tools/editing-data-in-your-application)  
+ [データセットのデータの編集](https://docs.microsoft.com/visualstudio/data-tools/edit-data-in-datasets)  
  データセットのデータ テーブルにあるデータを操作する方法について説明しているページへのリンクを示します。  
   
  [データセットのデータの検証](https://docs.microsoft.com/visualstudio/data-tools/validate-data-in-datasets)  
  列と行の変更時にデータセットに対する検証を追加する方法について説明しているページへのリンクを示します。  
   
- [データの保存](https://docs.microsoft.com/visualstudio/data-tools/saving-data)  
+ [データをデータベースに保存する](https://docs.microsoft.com/visualstudio/data-tools/save-data-back-to-the-database)  
  更新済みのデータをアプリケーションからデータベースに送信する方法について説明しているページへのリンクを示します。  
   
  [ADO.NET](https://msdn.microsoft.com/library/e80y5yhx.aspx)  
@@ -79,3 +80,4 @@ ms.lasthandoff: 03/13/2017
 
  [Office ソリューションにおけるデータ](https://msdn.microsoft.com/library/xx069ybh)  
  Office ソリューションでデータを操作する方法を説明するページへのリンクを示します。スキーマ指向プログラミング、データ キャッシュ、およびサーバー側データ アクセスに関する説明が含まれます。
+

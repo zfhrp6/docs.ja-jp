@@ -33,9 +33,10 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
+ms.translationtype: Machine Translation
 ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
 ms.openlocfilehash: 84af19189fa3fc510c8d4f8e408cbb2a393d8b8f
+ms.contentlocale: ja-jp
 ms.lasthandoff: 03/13/2017
 
 ---
@@ -52,7 +53,7 @@ Visual Basic における XML IntelliSense では、XML スキーマで定義さ
   
  Visual Basic における XML IntelliSense の機能の詳細については、次を参照してください。 [Visual Basic における XML IntelliSense](../../../../visual-basic/programming-guide/language-features/xml/xml-intellisense.md)します。 XML 名前空間をインポートする方法の詳細については、次を参照してください。 [Imports ステートメント (XML Namespace)](../../../../visual-basic/language-reference/statements/imports-statement-xml-namespace.md)または[参照設定 ページ、プロジェクト デザイナー) (Visual Basic)](https://docs.microsoft.com/visualstudio/ide/reference/references-page-project-designer-visual-basic)します。  
   
-[!INCLUDE[note_settings_general](../../../../csharp/language-reference/compiler-messages/includes/note_settings_general_md.md)]  
+[!INCLUDE[note_settings_general](~/includes/note-settings-general-md.md)]  
   
  ![ビデオへのリンク](../../../../visual-basic/programming-guide/language-features/xml/media/playvideo.gif "PlayVideo")このトピックのビデオ版について、次を参照してください。[ビデオ デモ: Visual Basic における XML IntelliSense を有効にする](http://go.microsoft.com/fwlink/?LinkId=102466)です。 関連するビデオ デモについては、次を参照してください。 [XML IntelliSense を有効にすると使用する XML 名前空間 How Do I?](http://go.microsoft.com/fwlink/?LinkId=143035)します。  
   

@@ -32,7 +32,7 @@ ms.lasthandoff: 04/18/2017
   
 -   アプリケーションを [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)] に再ターゲットして実行することができます。 再ターゲットするには、[\<supportedRuntime>](../../../docs/framework/configure-apps/file-schema/startup/supportedruntime-element.md) 要素をアプリケーションの構成ファイルに追加して [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] で実行できるようにする必要があります。 そのための構成ファイルの形式は次のとおりです。  
   
-    ```  
+    ```xml  
     <configuration>   
        <startup>  
           <supportedRuntime version="v4.0"/>  
@@ -53,7 +53,7 @@ ms.lasthandoff: 04/18/2017
 ## <a name="breaking-changes"></a>互換性に影響する変更点  
  互換性に影響する変更が行われた場合は、変更内容に応じて、アプリケーションの再ターゲットおよび再コンパイル時の回避策が提示される場合があります。 場合によっては、アプリケーションの構成ファイルの [\<runtime>](../../../docs/framework/configure-apps/file-schema/startup/supportedruntime-element.md) 要素に子要素を追加することで、以前の動作を復元できます。 たとえば、次の構成ファイルは [!INCLUDE[net_v11_short](../../../includes/net-v11-short-md.md)] での文字列の並べ替えおよび比較の動作を復元し、アプリケーションの再ターゲットまたは再コンパイルのいずれにも使用できます。  
   
-```  
+```xml  
 <configuration>  
    <runtime>  
       <CompatSortNLSVersion enabled="4096"/>  

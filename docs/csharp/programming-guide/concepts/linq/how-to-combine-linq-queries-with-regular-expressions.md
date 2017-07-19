@@ -19,9 +19,10 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
 ms.openlocfilehash: 51cce0d7ffd4806365600ee93d57806af96f08a8
+ms.contentlocale: ja-jp
 ms.lasthandoff: 03/13/2017
 
 ---
@@ -36,18 +37,16 @@ class QueryWithRegEx
     public static void Main()  
     {  
         // Modify this path as necessary so that it accesses your version of Visual Studio.  
-        string startFolder = @"c:\program files\Microsoft Visual Studio 9.0\";  
+        string startFolder = @"C:\Program Files (x86)\Microsoft Visual Studio 14.0\";  
         // One of the following paths may be more appropriate on your computer.  
-        //string startFolder = @"c:\program files (x86)\Microsoft Visual Studio 9.0\";  
-        //string startFolder = @"c:\program files\Microsoft Visual Studio 10.0\";  
-        //string startFolder = @"c:\program files (x86)\Microsoft Visual Studio 10.0\";  
+        //string startFolder = @"C:\Program Files (x86)\Microsoft Visual Studio\2017\";  
   
         // Take a snapshot of the file system.  
         IEnumerable<System.IO.FileInfo> fileList = GetFiles(startFolder);  
   
         // Create the regular expression to find all things "Visual".  
         System.Text.RegularExpressions.Regex searchTerm =  
-            new System.Text.RegularExpressions.Regex(@"Visual (Basic|C#|C\+\+|J#|SourceSafe|Studio)");  
+            new System.Text.RegularExpressions.Regex(@"Visual (Basic|C#|C\+\+|Studio)");  
   
         // Search the contents of each .htm file.  
         // Remove the where clause to find even more matchedValues!  
@@ -119,3 +118,4 @@ class QueryWithRegEx
 ## <a name="see-also"></a>関連項目  
  [LINQ と文字列 (C#)](../../../../csharp/programming-guide/concepts/linq/linq-and-strings.md)   
  [LINQ とファイル ディレクトリ (C#)](../../../../csharp/programming-guide/concepts/linq/linq-and-file-directories.md)
+

@@ -28,10 +28,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 8a4bbb2f6d8060cd9196dd510cd89c827c9d697d
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: a5ed524a1b17f7be8903f998cbd732594faab831
+ms.openlocfilehash: a8c29002ae2287df60996ed2b23068eec1e2739b
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/15/2017
 
 ---
 # <a name="using-exceptions-c-programming-guide"></a>例外の使用 (C# プログラミング ガイド)
@@ -59,7 +60,7 @@ C# では、例外と呼ばれるメカニズムを使用して、プログラ�
   
  例外がスローされた後、対応する `catch` ブロックが呼び出し履歴に見つからない場合は、次のいずれかが発生します。  
   
--   例外がデストラクターの内部で発生した場合、デストラクターは中止され、基本デストラクター (存在する場合) が呼び出されます。  
+-   例外がファイナライザーの内部で発生した場合、ファイナライザーは中止され、基本ファイナライザー (存在する場合) が呼び出されます。  
   
 -   呼び出し履歴に静的コンストラクターまたは静的フィールド初期化子が含まれている場合は、<xref:System.TypeInitializationException> がスローされ、新しい例外の <xref:System.Exception.InnerException%2A> プロパティに元の例外が割り当てられます。  
   

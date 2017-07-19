@@ -19,7 +19,7 @@ ms.translationtype: Human Translation
 ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
 ms.openlocfilehash: 2569e6a07ba1456d8bba9b27bf16190e634d6b47
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/18/2017
+ms.lasthandoff: 05/22/2017
 
 ---
 # <a name="mitigation-pool-blocking-period"></a>軽減策: プールのロック期間
@@ -42,7 +42,7 @@ Azure SQL データベースへの接続に関して、接続プールのブロ�
   
 -   `PoolBlockingPeriod.NeverBlock` 
   
- 以前の動作を復元するには、<xref:System.Data.SqlClient.SqlConnectionStringBuilder.PoolBlockingPeriod%2A> プロパティを `PoolBlockingPeriod.AlwaysBlock` に設定します。  
+ <xref:System.Data.SqlClient.SqlConnectionStringBuilder.PoolBlockingPeriod%2A> プロパティを `PoolBlockingPeriod.AlwaysBlock` に設定して、以前の動作を復元することができます。  
   
 ## <a name="see-also"></a>関連項目  
  [ランタイムの変更点](../../../docs/framework/migration-guide/runtime-changes-in-the-net-framework-4-6-2.md)

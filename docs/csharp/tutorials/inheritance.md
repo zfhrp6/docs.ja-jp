@@ -1,5 +1,5 @@
 ---
-title: "C での継承#"
+title: "C# での継承 | Microsoft Docs"
 description: "C# ライブラリやアプリケーションでの継承の使用について学習します。"
 keywords: "継承 (C#), 基底クラス, 派生クラス, 抽象基底クラス"
 author: rpetrusha
@@ -11,23 +11,28 @@ ms.prod: .net-core
 ms.technology: .net-core-technologies
 ms.devlang: dotnet
 ms.assetid: aeb68c74-0ea0-406f-9fbe-2ce02d47ef31
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: c14a2ecfa4b9c9522278098d54aad258b5feb1dc
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 4437ce5d344cf06d30e31911def6287999fc6ffc
+ms.openlocfilehash: ebb4c4eb754e456ae8a16226c282dc1698dcdd0d
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/23/2017
 
 ---
-# <a name="inheritance-in-c-and-net"></a>C# と .NET での継承 #
+<a id="inheritance-in-c-and-net" class="xliff"></a>
+# C# と .NET での継承 #
 
-## <a name="introduction"></a>はじめに ##
+<a id="introduction" class="xliff"></a>
+## はじめに ##
 
 このチュートリアルでは、C# での継承について説明します。 継承は、オブジェクト指向プログラミング言語の一機能であり、特定の機能 (データおよび動作) を提供する基底クラスを定義し、その機能を継承またはオーバーライドする派生クラスを定義することができます。
 
-## <a name="prerequisites"></a>必須コンポーネント ##
+<a id="prerequisites" class="xliff"></a>
+## 必須コンポーネント ##
 
 このチュートリアルでは、.NET Core がインストールされていることを前提としています。 インストール手順については、「[.NET Core installation guide (.NET Core インストール ガイド)](https://www.microsoft.com/net/core)」を参照してください。 コード エディターも必要です。 このチュートリアルでは [Visual Studio Code](https://code.visualstudio.com) を使用していますが、任意のコード エディターを使用して構いません。
 
-## <a name="running-the-examples"></a>例の実行 ##
+<a id="running-the-examples" class="xliff"></a>
+## 例の実行 ##
 
 このチュートリアル内の例を作成して実行するには、コマンド ラインの [dotnet](../../core/tools/dotnet.md) ユーティリティを使用します。 それぞれの例について、次の手順に従います。
 
@@ -41,7 +46,8 @@ ms.lasthandoff: 03/13/2017
 
 1. [dotnet run](../../core/tools/dotnet-run.md) コマンドを入力して、例をコンパイルし実行します。
 
-## <a name="background-what-is-inheritance"></a>基礎知識: 継承とは何か ##
+<a id="background-what-is-inheritance" class="xliff"></a>
+## 基礎知識: 継承とは何か ##
 
 *継承*とは、オブジェクト指向プログラミングの基本的な属性の 1 つです。 親クラスの動作を再利用 (継承)、拡張、または変更する子クラスを定義することができます。 メンバーの継承元となるクラスを、*基底クラス*と呼びます。 基底クラスのメンバーを継承するクラスを、*派生クラス*と呼びます。
 
@@ -53,13 +59,13 @@ C# と .NET は*単一継承*のみをサポートしています。 つまり�
 
 - [インスタンス コンストラクター](../programming-guide/classes-and-structs/constructors.md)。クラスの新しいインスタンスを作成するために呼び出すもの。 各クラスはそれ自身のコンストラクターを定義する必要があります。
 
-- [デストラクター](../programming-guide/classes-and-structs/destructors.md)。ランタイムのガベージ コレクターによって呼び出され、クラスのインスタンスを破棄するもの。
+- [ファイナライザー](../programming-guide/classes-and-structs/destructors.md)。ランタイムのガベージ コレクターによって呼び出され、クラスのインスタンスを破棄するもの。
 
 他のすべての基底クラスのメンバーは派生クラスに継承されますが、それらが表示されるどうかはアクセシビリティに依存します。 メンバーのアクセシビリティは、次のとおり、派生したクラスの可視性に影響します。
 
 - [プライベート](../language-reference/keywords/private.md) メンバーは、基底クラスで入れ子になっている派生クラスでのみ表示されます。 それ以外の場合、派生クラスでは表示されません。 次の例では、`A.B` は `A` から派生した入れ子になったクラスで、`C` は `A` から派生しています。 プライベートの `A.value` フィールドは A.B で表示されます。 しかし、`C.GetValue` メソッドからコメントを削除して例をコンパイルしようとすると、コンパイラ エラー CS0122 "'A.value' is inaccessible due to its protection level." ('A.value' はアクセスできない保護レベルになっています") が生成されます。
 
-   [!CODE [Inheritance](../../../samples/snippets/csharp/tutorials/inheritance/private.cs#1)]
+   [!code-csharp[継承](../../../samples/snippets/csharp/tutorials/inheritance/private.cs#1)]
 
 - [プロテクト](../language-reference/keywords/protected.md) メンバーは派生クラスでのみ表示されます。
 
@@ -67,7 +73,7 @@ C# と .NET は*単一継承*のみをサポートしています。 つまり�
 
 - [Public] (../language-reference/keywords/protected.md) メンバーは派生クラスで表示され、派生クラスのパブリック インターフェイスの一部です。 パブリックの継承されたメンバーは、派生クラスで定義された場合と同様に呼び出すことができます。 次の例では、クラス `A` が `Method1` という名前のメソッドを定義し、クラス `B` がクラス `A` から継承します。 そこでこの例は、`Method1` を `B` 上のインスタンス メソッドであるかのように呼び出します。
 
-[!CODE [Inheritance](../../../samples/snippets/csharp/tutorials/inheritance/basics.cs#1)]
+[!code-csharp[継承](../../../samples/snippets/csharp/tutorials/inheritance/basics.cs#1)]
 
 派生クラスはまた、代替実装を行うことにより、継承されたメンバーを*オーバーライド*することができます。 メンバーをオーバーライドするためには、基底クラスのメンバーは [virtual](../language-reference/keywords/virtual.md) のキーワードでマークされている必要があります。 既定では基底クラスのメンバーは `virtual` としてマークされていないので、オーバーライドすることはできません。 次の例のように、非仮想メンバーをオーバーライドしようとすると、コンパイラ エラー CS0506 "<member> cannot override inherited member <member> because it is not marked virtual, abstract, or override." ("継承されたメンバー member が virtual、abstract、または override でマークされていないため、member でオーバーライドすることができません") が生成されます。
 
@@ -116,17 +122,18 @@ C# と .NET は*単一継承*のみをサポートしています。 つまり�
    }
    ```
 
-## <a name="implicit-inheritance"></a>暗黙的な継承 ##
+<a id="implicit-inheritance" class="xliff"></a>
+## 暗黙的な継承 ##
 
 .NET 型システムの型はすべて、単一継承によって継承する型のほかに、@System.Object またはその派生型から暗黙的に継承します。 これにより、あらゆる型において共通の機能が使用可能となります。
 
 暗黙的な継承とはどのようなものか、新しいクラス `SimpleClass` を定義してみましょう。単純な空のクラス定義です。
 
-[!CODE [Inheritance](../../../samples/snippets/csharp/tutorials/inheritance/simpleclass.cs#1)]
+[!code-csharp[継承](../../../samples/snippets/csharp/tutorials/inheritance/simpleclass.cs#1)]
 
 次に、リフレクション (型のメタデータを検査してその型の情報を取得できるもの) を使用して、`SimpleClass` 型に属するメンバーの一覧を取得します。 `SimpleClass` クラスにはメンバーをまだ定義していないにもかかわらず、この例の出力は、9 つのメンバーが存在することを示しています。 そのうち 1 つは、パラメーターなしの (既定の) コンストラクターで、C# コンパイラによって `SimpleClass` 型に自動的に提供されるものです。 あとの 8 つは @System.Object のメンバーで、この型から、.NET 型システムのすべてのクラスとインターフェイスが最終的に暗黙的に継承します。
 
-[!CODE [Inheritance](../../../samples/snippets/csharp/tutorials/inheritance/simpleclass.cs#2)]
+[!code-csharp[継承](../../../samples/snippets/csharp/tutorials/inheritance/simpleclass.cs#2)]
 
 @System.Object クラスからの暗黙的な継承により、`SimpleClass` クラスで以下のメソッドが使用可能になります。
 
@@ -144,7 +151,7 @@ C# と .NET は*単一継承*のみをサポートしています。 つまり�
 
 暗黙的な継承によって、`SimpleClass` オブジェクトから任意の継承されたメンバーを、`SimpleClass` クラスで定義されたメンバーであるかのように呼び出すことができます。 たとえば、次の例では `SimpleClass.ToString` メソッドを呼び出しますが、これは `SimpleClass` が @System.Object から継承しています。
 
-[!CODE [Inheritance](../../../samples/snippets/csharp/tutorials/inheritance/simpleclass2.cs#1)]
+[!code-csharp[継承](../../../samples/snippets/csharp/tutorials/inheritance/simpleclass2.cs#1)]
 
 次の表は、C# で作成できる型のカテゴリと、暗黙的に継承する元となる型の一覧です。 各々の基本型によって、暗黙的な派生型への継承を通して、異なるメンバーのセットが利用可能となります。
 
@@ -155,7 +162,8 @@ C# と .NET は*単一継承*のみをサポートしています。 つまり�
 | enum | @System.Enum, System.ValueType, @System.Object |
 | デリゲート | @System.MulticastDelegate、@System.Delegate、@System.Object |
 
-## <a name="inheritance-and-an-is-a-relationship"></a>継承と "is a" 関係 ##
+<a id="inheritance-and-an-is-a-relationship" class="xliff"></a>
+## 継承と "is a" 関係 ##
 
 継承は通常、基底クラスと 1 つまたは複数の派生クラスとの "is a" 関係を表現するのに使用します。ここで、派生クラスは基底クラスの特殊化されたバージョン、つまり基底クラスの 1 つの型です。 たとえば、`Publication` クラスはあらゆる種類の出版物を表しますが、`Book` クラスおよび `Magazine` クラスは特定の種類の出版物を表します。
 
@@ -163,19 +171,21 @@ C# と .NET は*単一継承*のみをサポートしています。 つまり�
 
 なお、"is a" 関係は、型とその型の特定のインスタンス化の間の関係も表します。 次の例では、`Automobile` は一意の読み取り専用プロパティを 3 つ持つクラスです。自動車の製造メーカーである `Moke`、車種である `Model`、そして製造年である `Year` の 3 つです。 この `Automobile` クラスはまた、プロパティ値に割り当てられている引数があるコンストラクターを持ち、@System.Object.ToString メソッドをオーバーライドして、`Automobile` クラスではなく `Automobile` インスタンスを一意に識別する文字列を生成します。
 
-[!CODE [Inheritance](../../../samples/snippets/csharp/tutorials/inheritance/is-a.cs#1)]
+[!code-csharp[継承](../../../samples/snippets/csharp/tutorials/inheritance/is-a.cs#1)]
 
 この場合、特定の自動車メーカーと車種を表すために継承に依存すべきではありません。 たとえば、Packard Motor Car 社によって製造された自動車を表すのに、`Packard` という型を定義する必要はありません。 代わりに、次の例のように、`Automobile` オブジェクトを作成して、そのクラス コンストラクターに適切な値を渡すことによって同社の自動車を表すことができます。
 
-[!CODE [Inheritance](../../../samples/snippets/csharp/tutorials/inheritance/is-a.cs#2)]
+[!code-csharp[継承](../../../samples/snippets/csharp/tutorials/inheritance/is-a.cs#2)]
 
 継承に基づいた is-a 関係の適用が最も適しているのは、基底クラスと、基底クラスにメンバーを追加する派生クラス、または基底クラスにない追加機能が必要な派生クラスです。
 
-## <a name="designing-the-base-class-and-derived-classes"></a>基底クラスと派生クラスの設計 ##
+<a id="designing-the-base-class-and-derived-classes" class="xliff"></a>
+## 基底クラスと派生クラスの設計 ##
 
 基底クラスとその派生クラスを設計するプロセスについて説明します。 このセクションでは、基底クラス `Publication` を定義します。書籍、雑誌、新聞、ジャーナル、記事などの任意の種類の出版物を表します。さらに `Publication` から派生する `Book` クラスも定義します。 この例を拡張して、簡単に `Magazine`、`Journal`、`Newspaper`、および `Article` などの他の派生クラスを定義することができます。
 
-### <a name="the-base-publication-class"></a>基底 `Publication` クラス ###
+<a id="the-base-publication-class" class="xliff"></a>
+### 基底 `Publication` クラス ###
 
 `Publication` クラスを設計するにあたり、設計について決まりをいくつか作る必要があります。
 
@@ -187,7 +197,7 @@ C# と .NET は*単一継承*のみをサポートしています。 つまり�
 
    コードの再利用を最大化し、同時に論理的で直感的な継承階層を作成するために、`Publication` クラスには必ず、すべてもしくはほとんどの出版物に共通したデータと機能のみを含めるようにします。 そして派生クラスは、それ自身が表す特定の種類の出版物に固有のメンバーを実装します。
 
-- クラス階層をどの程度まで拡張すべきか。 1 つの基底クラスと 1 つまたは複数のの派生クラスではなく、3 つ以上のクラス階層を作るかどうか。 たとえば、`Publication` は `Periodical` の基底クラスになり得ますが、この Periodical は `Magazine`、`Journal`、および `Newspaper` の基底クラスです。
+- クラス階層をどの程度まで拡張すべきか。 1 つの基底クラスと 1 つまたは複数の派生クラスではなく、3 つ以上のクラス階層を作るかどうか。 たとえば、`Publication` は `Periodical` の基底クラスになり得ますが、この Periodical は `Magazine`、`Journal`、および `Newspaper` の基底クラスです。
 
    この例では、`Publication` クラスと 1 つの派生クラス `Book` という単純な階層構造を使用します。 この例を拡張すると、`Magazine` や `Article` など、`Publication` から派生するクラスを簡単に追加で多く作成できます。
 
@@ -205,7 +215,7 @@ C# と .NET は*単一継承*のみをサポートしています。 つまり�
 
 次の例では、`Publication` のソース コードを、`Publication.PublicationType` プロパティに返される `PublicationType` 列挙型とともに示します。 @System.Object から継承したメンバーに加え、`Publication` クラスは次の一意のメンバーおよびメンバー オーバーライドを定義します。
 
-[!CODE [Inheritance](../../../samples/snippets/csharp/tutorials/inheritance/base-and-derived.cs#1)]
+[!code-csharp[継承](../../../samples/snippets/csharp/tutorials/inheritance/base-and-derived.cs#1)]
 
 - コンストラクター
 
@@ -244,11 +254,12 @@ C# と .NET は*単一継承*のみをサポートしています。 つまり�
 
 ![Object および Publication クラス](media/publication-class.jpg)
 
-### <a name="the-book-class"></a>`Book` クラス ###
+<a id="the-book-class" class="xliff"></a>
+### `Book` クラス ###
 
 `Book` クラスは、特定の種類の出版物としての本を表します。 次の例は、`Book` クラスのソース コードを示しています。
 
-[!CODE [Inheritance](../../../samples/snippets/csharp/tutorials/inheritance/base-and-derived.cs#2)]
+[!code-csharp[継承](../../../samples/snippets/csharp/tutorials/inheritance/base-and-derived.cs#2)]
 
 `Publication` から継承したメンバーに加え、`Book` クラスは次の一意のメンバーおよびメンバー オーバーライドを定義します。
 
@@ -280,7 +291,7 @@ C# と .NET は*単一継承*のみをサポートしています。 つまり�
 
 これで、次の例に示すように、`Book` オブジェクトをインスタンス化して、その一意のメンバーと継承されたメンバーの両方を呼び出し、`Publication` 型または `Book` 型のパラメーターを必要とするメソッドに引数として渡すことができるようになりました。
 
-[!CODE [Inheritance](../../../samples/snippets/csharp/tutorials/inheritance/use-publication.cs#1)]
+[!code-csharp[継承](../../../samples/snippets/csharp/tutorials/inheritance/use-publication.cs#1)]
 
 ## <a name="abstract"></a> 抽象基底クラスとその派生クラスの設計 ##
 
@@ -290,17 +301,18 @@ C# と .NET は*単一継承*のみをサポートしています。 つまり�
 
 次の例では、`Area` と `Perimeter` という 2 つのプロパティを定義する、`Shape` という名前の抽象基底クラスを定義します。 クラスを [abstract](../language-reference/keywords/abstract.md) キーワードでマークするだけでなく、インスタンス メンバーもそれぞれ [abstract](../language-reference/keywords/abstract.md) キーワードでマークしていることに注意してください。 ここで `Shape` は @System.Object.ToString メソッドもオーバーライドして、完全修飾名ではなく、その型の名前を返します。 そして `GetArea` と `GetPerimeter` の 2 つの静的メンバーを定義し、呼び出し元で任意の派生クラスのインスタンスの面積と周を簡単に取得できるようにします。 これらのメソッドのいずれかに派生クラスのインスタンスを渡すとき、ランタイムは派生クラスのメソッド オーバーライドを呼び出します。
 
-[!CODE [Inheritance](../../../samples/snippets/csharp/tutorials/inheritance/shape.cs#1)]
+[!code-csharp[継承](../../../samples/snippets/csharp/tutorials/inheritance/shape.cs#1)]
 
 ここで特定の図形を表す `Shape` から、いくつかのクラスを派生させることができます。 次の例では、`Triangle`、`Rectangle`、および `Circle` の 3 つのクラスを定義します。 これらのクラスはそれぞれ、その図形に一意の数式を使用して面積と周を計算します。 一部の派生クラスも、`Rectangle.Diagonal` や `Circle.Diameter` など、その図形に固有のプロパティを定義します。
 
-[!CODE [Inheritance](../../../samples/snippets/csharp/tutorials/inheritance/shape.cs#2)]
+[!code-csharp[継承](../../../samples/snippets/csharp/tutorials/inheritance/shape.cs#2)]
 
 次の例では、`Shape` から派生したオブジェクトを使用しています。 ここでは `Shape` から派生したオブジェクトの配列をインスタンス化して、`Shape` クラスの静的メソッドを呼び出します。これにより、返された `Shape` のプロパティ値がラップされます。 ここで、ランタイムが派生型のオーバーライドされたプロパティから値を取得していることに注意してください。 この例ではまた、配列内の `Shape` オブジェクトをそれぞれの派生型にキャストし、キャストが成功すると、その特定の `Shape` サブクラスのプロパティを取得します。 
 
-[!CODE [Inheritance](../../../samples/snippets/csharp/tutorials/inheritance/shape.cs#3)]
+[!code-csharp[継承](../../../samples/snippets/csharp/tutorials/inheritance/shape.cs#3)]
 
-## <a name="see-also"></a>関連項目 ##
+<a id="see-also" class="xliff"></a>
+## 関連項目 ##
 
 [クラスとオブジェクト](../tour-of-csharp/classes-and-objects.md)</br>
 [継承 (C# プログラミング ガイド)](../programming-guide/classes-and-structs/inheritance.md)

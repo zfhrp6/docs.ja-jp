@@ -1,0 +1,191 @@
+---
+title: "診断用の WMI (Windows Management Instrumentation) の使用 | Microsoft Docs"
+ms.custom: ""
+ms.date: "03/30/2017"
+ms.prod: ".net-framework-4.6"
+ms.reviewer: ""
+ms.suite: ""
+ms.technology: 
+  - "dotnet-clr"
+ms.tgt_pltfrm: ""
+ms.topic: "article"
+ms.assetid: fe48738d-e31b-454d-b5ec-24c85c6bf79a
+caps.latest.revision: 24
+author: "Erikre"
+ms.author: "erikre"
+manager: "erikre"
+caps.handback.revision: 24
+---
+# 診断用の WMI (Windows Management Instrumentation) の使用
+[!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] は [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] WMI \(Windows Management Instrumentation\) プロバイダーを介して実行時のサービスの検査データを公開します。  
+  
+## WMI の有効化  
+ WMI は、Web ベースのエンタープライズ管理 \(WBEM\) 標準をマイクロソフトが実装したものです。  WMI SDK [!INCLUDE[crabout](../../../../../includes/crabout-md.md)]、MSDN ライブラリを参照してください。  \(http:\/\/msdn.microsoft.com\/library\/default.asp?url\=\/library\/wmisdk\/wmi\/wmi\_start\_page.asp\).  WBEM は、アプリケーションが Management Instrumentation を外部管理ツールに開示する業界標準の方法です。  
+  
+ WMI プロバイダーは、WBEM と互換性のあるインターフェイスを通して実行時にインストルメンテーションを公開するコンポーネントです。  これは、属性と値のペアを持つ WMI オブジェクトのセットで構成されます。  ペアには多くの単純型を指定できます。  管理ツールは、実行時にインターフェイスを介してサービスに接続できます。  [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] は、アドレス、バインディング、動作、リスナーなどのサービスの属性を公開します。  
+  
+ 組み込みの WMI プロバイダーは、アプリケーションの構成ファイルでアクティブにできます。  次のサンプル構成に示すように、これは [\<system.serviceModel\>](../../../../../docs/framework/configure-apps/file-schema/wcf/system-servicemodel.md)セクションにある [\<diagnostics\>](../../../../../docs/framework/configure-apps/file-schema/wcf/diagnostics.md)の `wmiProviderEnabled` 属性を介して実行されます。  
+  
+```  
+<system.serviceModel>  
+    …  
+    <diagnostics wmiProviderEnabled="true" />  
+    …  
+</system.serviceModel>  
+  
+```  
+  
+ この構成エントリには、WMI インターフェイスが開示されます。  管理アプリケーションはこのインターフェイスを通して接続し、アプリケーションの Management Instrumentation にアクセスできるようになります。  
+  
+## WMI データへのアクセス  
+ WMI データには、複数の異なる方法でアクセスできます。  マイクロソフトは、スクリプト用、[!INCLUDE[vbprvb](../../../../../includes/vbprvb-md.md)] アプリケーション用、C\+\+ アプリケーション用、および [!INCLUDE[dnprdnshort](../../../../../includes/dnprdnshort-md.md)] 用の WMI API を提供しています。  詳細については、「[WMI の使用](http://go.microsoft.com/fwlink/?LinkId=95183)」を参照してください。  
+  
+> [!CAUTION]
+>  .NET Framework 提供のメソッドを使用し、プログラムで WMI データにアクセスする場合、そのようなメソッドは接続確立時に例外をスローする場合があることを認識しておく必要があります。  接続は、<xref:System.Management.ManagementObject> インスタンスの構築中に確立されませんが、実際のデータ交換が含まれた最初の要求時に確立されます。  したがって、`try..catch` ブロックを使用して例外をキャッチする必要があります。  
+  
+ トレース レベルやメッセージ ログ レベルだけでなく、WMI の `System.ServiceModel` トレース ソースのメッセージ ログ オプションも変更できます。  変更するには、`LogMessagesAtServiceLevel`、`LogMessagesAtTransportLevel`、`LogMalformedMessages`、および `TraceLevel` のブール型プロパティを公開する [AppDomainInfo](../../../../../docs/framework/wcf/diagnostics/wmi/appdomaininfo.md) インスタンスにアクセスします。  そのため、メッセージ ログ用のトレース リスナーを構成していても、これらのオプションを構成で `false` に設定している場合は、後でアプリケーションを実行しているときに `true` に変更できます。  これで、メッセージ ログが実行時に有効になります。  同様に、構成ファイルでメッセージ ログを有効にしている場合は、実行時に WMI を使用して無効にできます。  
+  
+ 構成ファイルで、メッセージ ログのメッセージ ログ トレース リスナーまたはトレースの `System.ServiceModel` トレース リスナーが指定されていない場合、WMI が変更を受け入れても変更は有効になりません。  各リスナーの正しい設定の詳細については、「[メッセージ ログの構成](../../../../../docs/framework/wcf/diagnostics/configuring-message-logging.md)」および「[トレースの構成](../../../../../docs/framework/wcf/diagnostics/tracing/configuring-tracing.md)」を参照してください。  構成で設定された他のすべてのトレース ソースのトレース レベルは、アプリケーションが開始されると有効になり変更できません。  
+  
+ [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] は、スクリプト用に `GetOperationCounterInstanceName` メソッドを公開します。  このメソッドに操作名を指定した場合、このメソッドはパフォーマンス カウンターのインスタンス名を返します。  ただし、このメソッドは入力を検証しません。  したがって、正しくない操作名を指定した場合、正しくないカウンター名が返されます。  
+  
+ 接続先サービスの `OutgoingChannel` クライアントが `Service` メソッド内に作成されていない場合、[!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] インスタンスの `Service` プロパティは、別のサービスに接続するのに、そのサービスにより開かれたチャネルをカウントしません。  
+  
+ **注意 :** WMI は <xref:System.TimeSpan> 値を小数点以下 3 桁までしかサポートしません。  たとえば、サービスでプロパティの 1 つを <xref:System.TimeSpan.MaxValue> に設定した場合、WMI ではその値を小数点以下 3 桁より下を切り捨て表示します。  
+  
+## セキュリティ  
+ [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] WMI プロバイダーは環境内のサービスの検索を許しているため、環境へのアクセスの許可については十分に注意する必要があります。  既定の "管理者のみ" のアクセスを緩めた場合、信頼性の低いパーティに環境内の機密性のあるデータへのアクセスを許可する場合があります。  特にリモート WMI アクセスに対するアクセス許可を緩めた場合、大量の攻撃を受ける可能性があります。  過剰の WMI 要求により大量の処理が発生した場合、パフォーマンスが低下する可能性があります。  
+  
+ さらに、MOF ファイルに対するアクセス許可を緩めた場合、信頼性の低いパーティが WMI の動作を操作して WMI スキーマに読み込まれるオブジェクトを変更することができます。  たとえば、フィールドを削除して、重要データを管理者から隠したり、例外を設定しないかまたは例外の原因とならないフィールドを追加したりすることができます。  
+  
+ [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] WMI プロバイダーの既定では、"メソッドの実行"、"プロバイダーによる書き込み"、"アカウントの有効化" 権限が管理者に付与され、"アカウントの有効化" 権限が ASP.NET、ローカル サービス、ネットワーク サービスに付与されます。  特に、[!INCLUDE[wv](../../../../../includes/wv-md.md)] 以外のプラットフォームでは、ASP.NET アカウントは WMI ServiceModel 名前空間に対して読み取りアクセスが可能です。  特定のユーザー グループに対してこれらの権限を付与したくない場合は、WMI プロバイダーを非アクティブにするか \(既定では無効に設定されています\)、特定のユーザー グループのアクセスを無効にする必要があります。  
+  
+ また、構成を使用して WMI を有効にする場合、ユーザー権限が不十分のため WMI が有効にならない場合があります。  ただし、このエラーを記録するイベントはイベント ログに書き込まれません。  
+  
+ ユーザー権限のレベルを変更するには、次の手順に従います。  
+  
+1.  \[スタート\] ボタンをクリックし、\[ファイル名を指定して実行\] をクリックして**「compmgmt.msc」**と入力します。  
+  
+2.  **\[サービスとアプリケーション\] の \[WMI コントロール\]** を右クリックして、**\[プロパティ\]** をクリックします。  
+  
+3.  **\[セキュリティ\]** タブを選択し、**\[Root\/ServiceModel\]** 名前空間に移動します。  **\[セキュリティ\]** ボタンをクリックします。  
+  
+4.  アクセスを制御するグループまたはユーザーを選択し、**\[許可\]** または **\[拒否\]** チェックボックスを使用してアクセス許可を構成します。  
+  
+## 追加ユーザーへの WCF WMI 登録権限の付与  
+ WCF は管理データを WMI に公開します。  これはインプロセス WMI プロバイダーをホストすることによって行い、"分離プロバイダー" と呼ばれることもあります。  管理データを公開するには、このプロバイダーを登録するアカウントに適切な権限が必要です。  Windows では、権限を持つアカウントの少数のセットのみが、既定で分離プロバイダーを登録できます。ユーザーは通常、既定のセットではないアカウントで実行している WCF サービスから WMI データを公開するので、これは問題です。  
+  
+ このアクセスを提供するために、管理者は、次の権限を追加のアカウントに次の順序で付与する必要があります。  
+  
+1.  WCF WMI 名前空間へのアクセス権限  
+  
+2.  WCF 分離 WMI プロバイダーの登録権限  
+  
+#### WMI 名前空間へのアクセス権限を付与するには  
+  
+1.  次の PowerShell スクリプトを実行します。  
+  
+    ```powershell  
+    write-host “”  
+    write-host “Granting Access to root/servicemodel WMI namespace to built in users group”  
+    write-host “”  
+  
+    # Create the binary representation of the permissions to grant in SDDL  
+    $newPermissions = "O:BAG:BAD:P(A;CI;CCDCLCSWRPWPRCWD;;;BA)(A;CI;CC;;;NS)(A;CI;CC;;;LS)(A;CI;CC;;;BU)"  
+    $converter = new-object system.management.ManagementClass Win32_SecurityDescriptorHelper  
+    $binarySD = $converter.SDDLToBinarySD($newPermissions)  
+    $convertedPermissions = ,$binarySD.BinarySD  
+  
+    # Get the object used to set the permissions  
+    $security = gwmi -namespace root/servicemodel -class __SystemSecurity  
+  
+    # Get and output the current settings  
+    $binarySD = @($null)  
+    $result = $security.PsBase.InvokeMethod("GetSD",$binarySD)  
+  
+    $outsddl = $converter.BinarySDToSDDL($binarySD[0])  
+    write-host "Previous ACL: "$outsddl.SDDL  
+  
+    # Change the Access Control List (ACL) using SDDL  
+    $result = $security.PsBase.InvokeMethod("SetSD",$convertedPermissions)   
+  
+    # Get and output the current settings  
+    $binarySD = @($null)  
+    $result = $security.PsBase.InvokeMethod("GetSD",$binarySD)  
+  
+    $outsddl = $converter.BinarySDToSDDL($binarySD[0])  
+    write-host "New ACL:      "$outsddl.SDDL  
+    write-host “”  
+  
+    ```  
+  
+     この PowerShell スクリプトでは、SDDL \(Security Descriptor Definition Language\) を使用して、組み込みのユーザー グループのアクセス権を、“root\/servicemodel” WMI 名前空間に付与します。  次の ACL が指定されます。  
+  
+    -   組み込みの管理者 \(BA\) – 既にアクセス権を持っています。  
+  
+    -   ネットワーク サービス \(NS\) \- 既にアクセス権を持っています。  
+  
+    -   ローカル システム \(LS\) \- 既にアクセス権を持っています。  
+  
+    -   組み込みのユーザー – アクセス権を付与するグループ。  
+  
+#### プロバイダーに登録アクセス権を付与するには  
+  
+1.  次の PowerShell スクリプトを実行します。  
+  
+    ```powershell  
+    write-host “”  
+    write-host “Granting WCF provider registration access to built in users group”  
+    write-host “”  
+    # Set security on ServiceModel provider  
+    $provider = get-WmiObject -namespace "root\servicemodel" __Win32Provider  
+  
+    write-host "Previous ACL: "$provider.SecurityDescriptor  
+    $result = $provider.SecurityDescriptor = "O:BUG:BUD:(A;;0x1;;;BA)(A;;0x1;;;NS)(A;;0x1;;;LS)(A;;0x1;;;BU)"  
+  
+    # Commit the changes and display it to the console  
+    $result = $provider.Put()  
+    write-host "New ACL:      "$provider.SecurityDescriptor  
+    write-host “”  
+  
+    ```  
+  
+### 任意のユーザーまたはグループへのアクセス権の付与  
+ このセクションの例では、すべてのローカル ユーザーに WMI プロバイダー登録権限を付与します。  組み込まれていないユーザーまたはグループにアクセス権を付与する場合は、そのユーザーまたはグループのセキュリティ識別子 \(SID\) を取得する必要があります。  任意のユーザーの SID を取得する簡単な方法はありません。  1 つの方法としては、目的のユーザーとしてログオンし、次のシェル コマンドを発行します。  
+  
+```  
+Whoami /user  
+```  
+  
+ これにより、現在のユーザーの SID が提供されますが、この方法を使用して任意のユーザーで SID を取得することはできません。  SID を取得するもう 1 つの方法は、「[Windows 2000 リソース キット ツールの管理タスク](http://go.microsoft.com/fwlink/?LinkId=178660)」の [getsid.exe](http://go.microsoft.com/fwlink/?LinkId=186467) ツールを使用する方法です。  このツールは、2 人のユーザー \(ローカルまたはドメイン\) の SID を比較し、副作用として、2 つの SID をコマンド ラインに出力します。  [!INCLUDE[crdefault](../../../../../includes/crdefault-md.md)][既知の SID](http://go.microsoft.com/fwlink/?LinkId=186468).  
+  
+## リモート WMI オブジェクトのインスタンスへのアクセス  
+ リモート コンピューターの [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] WMI インスタンスにアクセスする必要がある場合、アクセスに使用するツールのパケットのプライバシーを有効にする必要があります。  次のセクションでは、WMI CIM Studio、Windows Management Instrumentation テスト、および .NET SDK 2.0 を使用してこれらを実現する方法を説明します。  
+  
+### WMI CIM Studio  
+ [WMI 管理ツール](http://go.microsoft.com/fwlink/?LinkId=95185) をインストールしている場合は、WMI CIM Studio を使用して WMI インスタンスにアクセスできます。  このツールは次のフォルダーにあります。  
+  
+ **%windir%\\Program Files\\WMI Tools\\**  
+  
+1.  **\[Connect to namespace:\]** ウィンドウに「root\\ServiceModel」と入力し、**\[OK\]** をクリックします。  
+  
+2.  **\[WMI CIM Studio Login\]** ウィンドウで、**\[オプション\>\>\]** ボタンをクリックしてウィンドウを展開します。  **\[認証レベル\]** で **\[パケットのプライバシー\]** を選択し、**\[OK\]** をクリックします。  
+  
+### Windows Management Instrumentation テスト  
+ このツールは Windows によりインストールされます。  このツールを実行するには、**\[スタート\] ボタン、\[ファイル名を指定して実行\]** の順にクリックし、ダイアログ ボックスに「cmd.exe」と入力して **\[OK\]**をクリックし、コマンド コンソールを起動します。  次に、コマンド ウィンドウに「wbemtest.exe」と入力します。  Windows Management Instrumentation テスト ツールが起動します。  
+  
+1.  ウィンドウの右上隅にある **\[接続\]** ボタンをクリックします。  
+  
+2.  新しいウィンドウの **\[名前空間\]** フィールドに「root\\ServiceModel」と入力し、**\[認証レベル\]** として **\[パケットのプライバシー\]** を選択します。  **\[接続\]** をクリックします。  
+  
+### マネージ コードの使用  
+ <xref:System.Management> 名前空間が提供するクラスを使用して、リモートの WMI インスタンスにプログラムでアクセスすることもできます。  これを実行する方法を次のコード例に示します。  
+  
+```  
+String wcfNamespace = String.Format(@"\\{0}\Root\ServiceModel",      
+   this.serviceMachineName);  
+  
+ConnectionOptions connection = new ConnectionOptions();  
+connection.Authentication = AuthenticationLevel.PacketPrivacy;  
+ManagementScope scope = new ManagementScope(this.wcfNamespace, connection);  
+```

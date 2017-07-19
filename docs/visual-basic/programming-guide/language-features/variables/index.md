@@ -1,52 +1,79 @@
 ---
-title: "Variables in Visual Basic | Microsoft Docs"
-ms.custom: ""
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "variables [Visual Basic]"
-  - "values [Visual Basic], storing"
+title: "Visual Basic における変数 | Microsoft Docs"
+ms.custom: 
+ms.date: 2015-07-20
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-visual-basic
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- VB
+helpviewer_keywords:
+- variables [Visual Basic]
+- values [Visual Basic], storing
 ms.assetid: 4cfaa06d-4ae3-4307-897b-cf599dc24caa
 caps.latest.revision: 27
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 27
----
-# Variables in Visual Basic
-[!INCLUDE[vs2017banner](../../../../visual-basic/developing-apps/includes/vs2017banner.md)]
+author: dotnet-bot
+ms.author: dotnetcontent
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 31905a37f09db5f5192123f0118252fbe8b02eff
+ms.openlocfilehash: 9a19838abed2d947e8e7ebf96fa4603feb208012
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/26/2017
 
-[!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] で計算を実行するときに、しばしば値を格納する必要が生じます。  たとえば、複数の値を計算、比較し、比較の結果に応じて異なる処理を実行する場合があります。  値を比較するためは、値を保持する必要があります。  
+---
+<a id="variables-in-visual-basic" class="xliff"></a>
+
+# Visual Basic における変数
+[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] で計算を行う場合、しばしば値を格納する必要があります。 たとえば、いくつかの値を計算し、比較し、比較の結果に応じて、さまざまな操作を実行する必要があるとします。 比較する場合には、その値を保持する必要があります。  
   
+<a id="usage" class="xliff"></a>
+
 ## 使用方法  
- [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] では、ほとんどのプログラミング言語と同様に、変数を使って値を格納します。  *変数*には、変数に格納されている値を参照するときに使用する「名前」があります。  変数はデータ型も持っています。これにより、変数に格納できるデータの種類が決まります。  密接な関係を持つ一連のデータ項目にインデックスを付けて格納する必要がある場合は、変数を配列として使用することもできます。  
+ 他のほとんどのプログラミング言語と同じように、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] では値の格納に変数を使用します。 *変数*には (変数に含まれる値を参照するために使用する語である) 名前があります。 変数には、(変数に格納できるデータの種類を決定する) データ型もあります。 密接に関連するデータ項目のインデックス セットを格納する必要がある場合、変数で配列を表現することもできます。  
   
- ローカル型の推定により、データ型を明示的に指定せずに変数を宣言できます。  その代わりに、コンパイラは変数の型を初期化式の型から推測します。  詳細については、「[Local Type Inference](../../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md)」および「[Option Infer Statement](../../../../visual-basic/language-reference/statements/option-infer-statement.md)」を参照してください。  
+ ローカル型推論では、データ型を明示的に指定せずに変数を宣言できます。 代わりに、コンパイラは、初期化式の型から変数の型を推測します。 詳細については、「[ローカル型の推論](../../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md)」と「[Option Infer ステートメント](../../../../visual-basic/language-reference/statements/option-infer-statement.md)」を参照してください。  
   
+<a id="assigning-values" class="xliff"></a>
+
 ## 値の代入  
- 計算を実行して結果を変数に代入するには、次の例のように、代入ステートメントを使用します。  
+ 次の例のように、計算を実行し、結果を変数に割り当てるために、代入ステートメントを使用できます。  
   
  [!code-vb[VbVbalrVariables#1](../../../../visual-basic/programming-guide/language-features/variables/codesnippet/VisualBasic/index_1.vb)]  
   
 > [!NOTE]
->  この例で使用されている等号 \(`=`\) は、等値演算子ではなく代入演算子です。  値は変数 `applesSold` に代入されます。  
+>  この例の等号 (`=`) は、等値演算子ではなく代入演算子です。 この値は、変数 `applesSold` に割り当てられます。  
   
- 詳細については、「[How to: Move Data Into and Out of a Variable](../../../../visual-basic/programming-guide/language-features/variables/how-to-move-data-into-and-out-of-a-variable.md)」を参照してください。  
+ 詳細については、「[方法 : 変数に値を格納する、および変数から値を取得する](../../../../visual-basic/programming-guide/language-features/variables/how-to-move-data-into-and-out-of-a-variable.md)」を参照してください。  
   
+<a id="variables-and-properties" class="xliff"></a>
+
 ## 変数とプロパティ  
- 項目がこのコレクション ビューに含まれている場合は 。それ以外の場合は 。  ただし、プロパティは変数よりも複雑です。  プロパティはコード ブロックを使用して、プロパティの値を設定および取得する方法を制御します。  詳細については、「[Differences Between Properties and Variables in Visual Basic](../../../../visual-basic/programming-guide/language-features/procedures/differences-between-properties-and-variables.md)」を参照してください。  
+ 変数と同様に、*プロパティ*はアクセス可能な値です。 ただし、変数よりも複雑です。 プロパティは、その値を設定し取得する方法を制御するコード ブロックを使用します。 詳細については、「[Visual Basic のプロパティと変数の違い](../../../../visual-basic/programming-guide/language-features/procedures/differences-between-properties-and-variables.md)」を参照してください。  
   
-## 参照  
+<a id="see-also" class="xliff"></a>
+
+## 関連項目  
  [変数宣言](../../../../visual-basic/programming-guide/language-features/variables/variable-declaration.md)   
- [Object Variables](../../../../visual-basic/programming-guide/language-features/variables/object-variables.md)   
+ [オブジェクト変数](../../../../visual-basic/programming-guide/language-features/variables/object-variables.md)   
  [変数のトラブルシューティング](../../../../visual-basic/programming-guide/language-features/variables/troubleshooting-variables.md)   
- [How to: Move Data Into and Out of a Variable](../../../../visual-basic/programming-guide/language-features/variables/how-to-move-data-into-and-out-of-a-variable.md)   
- [Differences Between Properties and Variables in Visual Basic](../../../../visual-basic/programming-guide/language-features/procedures/differences-between-properties-and-variables.md)   
- [Local Type Inference](../../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md)
+ [方法 : 変数に値を格納する、および変数から値を取得する](../../../../visual-basic/programming-guide/language-features/variables/how-to-move-data-into-and-out-of-a-variable.md)   
+ [Visual Basic のプロパティと変数の違い](../../../../visual-basic/programming-guide/language-features/procedures/differences-between-properties-and-variables.md)   
+ [ローカル型の推論](../../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md)

@@ -29,10 +29,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: dff752a9d31ec92b113dae9eed20cd72faf57c84
-ms.openlocfilehash: d95795c5900561bdb9d8247f819a51c2086377b7
-ms.lasthandoff: 03/22/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 31905a37f09db5f5192123f0118252fbe8b02eff
+ms.openlocfilehash: 6df68180b0b159009bfd4ccc3ff54db115791d9f
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/26/2017
 
 ---
 # <a name="visual-basic"></a>Visual Basic
@@ -59,7 +60,7 @@ Visual Basic は、タイプ セーフなオブジェクト指向アプリケー
  Visual Basic 言語とコンパイラの情報が含まれます。  
 
  [Visual Basic でのアプリケーションの開発](../visual-basic/developing-apps/index.md)  
- セキュリティ、例外処理、 [!INCLUDE[dnprdnshort](../csharp/getting-started/includes/dnprdnshort_md.md)]クラス ライブラリの使用など、Visual Basic での開発におけるさまざまな側面について説明します。
+ セキュリティ、例外処理、 [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]クラス ライブラリの使用など、Visual Basic での開発におけるさまざまな側面について説明します。
 
  [COM 相互運用](../visual-basic/programming-guide/com-interop/index.md)  
  Visual Basic でのコンポーネント オブジェクト モデル (COM) オブジェクトの作成と使用に関連する相互運用性の問題について説明します。  
@@ -75,4 +76,4 @@ Visual Basic は、タイプ セーフなオブジェクト指向アプリケー
  Visual Studio の基本についての学習に役立つトピックへのリンクを示します。  
   
  [.NET Framework クラス ライブラリ](http://go.microsoft.com/fwlink/?LinkID=227195)  
- Microsoft [!INCLUDE[dnprdnshort](../csharp/getting-started/includes/dnprdnshort_md.md)] SDK に含まれるクラス、インターフェイス、および値型のライブラリを紹介します。
+ Microsoft [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] SDK に含まれるクラス、インターフェイス、および値型のライブラリを紹介します。

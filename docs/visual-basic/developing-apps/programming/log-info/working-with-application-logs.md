@@ -33,10 +33,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 497f4ea3dfd175248ff733cceb691b2aa0c758e9
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
+ms.openlocfilehash: 3cc9bec56817bbccd5faa8e05535cb565a11baac
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/22/2017
 
 ---
 # <a name="working-with-application-logs-in-visual-basic"></a>Visual Basic でのアプリケーション ログの使用
@@ -56,7 +57,7 @@ ms.lasthandoff: 03/13/2017
 ## <a name="where-messages-are-logged"></a>メッセージがログに記録される場所  
  アセンブリに構成ファイルがない場合、`My.Application.Log` オブジェクトと `My.Log` オブジェクトは <xref:System.Diagnostics.DefaultTraceListener> クラスを介してアプリケーションのデバッグ出力への書き込みを行います。 また、`My.Application.Log` オブジェクトは <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener> クラスを介してアセンブリのログ ファイルへの書き込みを行い、`My.Log` オブジェクトは、<xref:System.Web.WebPageTraceListener> クラスを介して ASP.NET Web ページの出力への書き込みを行います。  
   
- デバッグ出力は、アプリケーションをデバッグ モードで実行中のときに [!INCLUDE[vsprvs](../../../../csharp/includes/vsprvs_md.md)] **[出力]** ウィンドウで参照できます。 **[出力]** ウィンドウを開くには、 **[デバッグ]** メニュー項目をクリックし、 **[ウィンドウ]**をポイントして、 **[出力]**をクリックします。 **[出力]** ウィンドウで **[出力元の表示]** ボックスの **[デバッグ]** を選択します。  
+ デバッグ出力は、アプリケーションをデバッグ モードで実行中のときに [!INCLUDE[vsprvs](../../../../csharp/includes/vsprvs_md.md)] **Output** window when running your application in debug mode. **[出力]** ウィンドウを開くには、 **[デバッグ]** メニュー項目をクリックし、 **[ウィンドウ]**をポイントして、 **[出力]**をクリックします。 **[出力]** ウィンドウで **[出力元の表示]** ボックスの **[デバッグ]** を選択します。  
   
  既定では、 `My.Application.Log` がログ ファイルを書き込む先は、ユーザーのアプリケーション データ用のパスです。 このパスは、<xref:Microsoft.VisualBasic.Logging.Log.DefaultFileLogWriter%2A> オブジェクトの <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.FullLogFileName%2A> プロパティから取得できます。 このパスの形式は次のとおりです。  
   
@@ -66,12 +67,12 @@ ms.lasthandoff: 03/13/2017
   
  C:\Documents and Settings\\`username`\Application Data  
   
- `CompanyName`、 `ProductName`、 `ProductVersion` の値は、アプリケーションのアセンブリ情報から取得されます。 ログ ファイル名の形式は *AssemblyName*.log です。 *AssemblyName* は、アセンブリのファイル名から拡張子を取り除いたものです。 複数のログ ファイルが必要な場合 (たとえば、アプリケーションがログに書き込もうとしているときで、元のログが利用できない場合) には、ログ ファイル名の形式は *AssemblyName*-*iteration*.log となります。`iteration` は正の `Integer` です。  
+ `CompanyName`、 `ProductName`、 `ProductVersion` の値は、アプリケーションのアセンブリ情報から取得されます。 ログ ファイル名の形式は *AssemblyName*.log です。 *AssemblyName* は、アセンブリのファイル名から拡張子を取り除いたものです。 複数のログ ファイルが必要な場合 (たとえば、アプリケーションがログに書き込もうとしているときで、元のログが利用できない場合) には、ログ ファイル名の形式は *AssemblyName*-*iteration*.log です。 `iteration` は正の `Integer`をクリックします。  
   
- コンピューターおよびアプリケーションの構成ファイルを追加または変更すると、既定の動作をオーバーライドできます。 詳しくは、「[チュートリアル: My.Application.Log による情報の書き込み先の変更](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-changing-where-my-application-log-writes-information.md)」をご覧ください。  
+ コンピューターおよびアプリケーションの構成ファイルを追加または変更すると、既定の動作をオーバーライドできます。 詳細については、「 [Walkthrough: Changing Where My.Application.Log Writes Information](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-changing-where-my-application-log-writes-information.md)」を参照してください。  
   
 ## <a name="configuring-log-settings"></a>ログ設定を構成する  
- `Log` オブジェクトの既定の実装では、アプリケーション構成ファイル app.config がなくても動作するようになっています。 既定の動作を変更するには、新しい設定を記述した構成ファイルを追加する必要があります。 詳しくは、「[チュートリアル: My.Application.Log の出力をフィルター処理する](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-filtering-my-application-log-output.md)」をご覧ください。  
+ `Log` オブジェクトの既定の実装では、アプリケーション構成ファイル app.config がなくても動作するようになっています。 既定の動作を変更するには、新しい設定を記述した構成ファイルを追加する必要があります。 詳細については、「 [Walkthrough: Filtering My.Application.Log Output](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-filtering-my-application-log-output.md)」を参照してください。  
   
  app.config ファイルでは、ログの構成セクションは、メインの `<system.diagnostics>` ノードの `<configuration>` ノードにあります。 ログ情報は、以下のノードに定義されています。  
   

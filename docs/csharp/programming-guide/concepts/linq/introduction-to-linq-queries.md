@@ -34,17 +34,18 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 957ab9907c16e494f87873934fe4caccc146c975
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 31905a37f09db5f5192123f0118252fbe8b02eff
+ms.openlocfilehash: 317ea9a17a792bcbfd11c5f1085218e2b0f2a312
+ms.contentlocale: ja-jp
+ms.lasthandoff: 07/03/2017
 
 ---
 # <a name="introduction-to-linq-queries-c"></a>LINQ クエリの概要 (C#)
-"*クエリ*" は、データ ソースからデータを取得する式です。 クエリは通常、専用のクエリ言語で表されます。 これまでに、リレーショナル データベース用の SQL や XML 用の XQuery など、データ ソースの種類に合わせてさまざまな言語が開発されてきました。 このため、開発者は、サポートする必要のあるデータ ソースの種類やデータ形式ごとに、新しいクエリ言語を習得する必要がありました。 [!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq_md.md)] は、さまざまな種類のデータ ソースやデータ形式のデータを操作するための一貫したモデルを提供することにより、この負担を軽減します。 [!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq_md.md)] クエリでは、操作の対象は常にオブジェクトになります。 共通の基本的なコーディング パターンを使用することで、[!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq_md.md)] プロバイダーを利用できる XML ドキュメント、SQL データベース、[!INCLUDE[vstecado](~/includes/vstecado-md.md)] データセット、.NET コレクション、その他の任意の形式のデータを照会したり変換したりできます。  
+"*クエリ*" は、データ ソースからデータを取得する式です。 クエリは通常、専用のクエリ言語で表されます。 これまでに、リレーショナル データベース用の SQL や XML 用の XQuery など、データ ソースの種類に合わせてさまざまな言語が開発されてきました。 このため、開発者は、サポートする必要のあるデータ ソースの種類やデータ形式ごとに、新しいクエリ言語を習得する必要がありました。 [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] は、さまざまな種類のデータ ソースやデータ形式のデータを操作するための一貫したモデルを提供することにより、この負担を軽減します。 [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] クエリでは、操作の対象は常にオブジェクトになります。 共通の基本的なコーディング パターンを使用することで、[!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] プロバイダーを利用できる XML ドキュメント、SQL データベース、[!INCLUDE[vstecado](~/includes/vstecado-md.md)] データセット、.NET コレクション、その他の任意の形式のデータを照会したり変換したりできます。  
   
 ## <a name="three-parts-of-a-query-operation"></a>クエリ操作の 3 つの手順  
- すべての [!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq_md.md)] クエリ操作は、次の 3 つの手順で構成されます。  
+ すべての [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] クエリ操作は、次の 3 つの手順で構成されます。  
   
 1.  データ ソースを取得します。  
   
@@ -56,18 +57,18 @@ ms.lasthandoff: 03/13/2017
   
  [!code-cs[CsLINQGettingStarted#1](../../../../csharp/programming-guide/concepts/linq/codesnippet/CSharp/introduction-to-linq-queries_1.cs)]  
   
- 次の図は、クエリ操作全体を表しています。 [!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq_md.md)] では、クエリの実行はクエリ自体とは別個のものです。つまり、クエリ変数を作成するだけでは、データは取得されません。  
+ 次の図は、クエリ操作全体を表しています。 [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] では、クエリの実行はクエリ自体とは別個のものです。つまり、クエリ変数を作成するだけでは、データは取得されません。  
   
  ![LINQ クエリ操作の全体](../../../../csharp/programming-guide/concepts/linq/media/linq_query.png "LINQ_Query")  
   
 ## <a name="the-data-source"></a>データ ソース  
- 前の例では、データ ソースが配列であるため、暗黙的にジェネリック <xref:System.Collections.Generic.IEnumerable%601> インターフェイスがサポートされます。 つまり、[!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq_md.md)] でクエリを実行できるということです。 クエリは `foreach` ステートメントで実行され、`foreach` は <xref:System.Collections.IEnumerable> または <xref:System.Collections.Generic.IEnumerable%601> を要求します。 <xref:System.Collections.Generic.IEnumerable%601> をサポートする型や、ジェネリック <xref:System.Linq.IQueryable%601> などの派生インターフェイスは、"*クエリ可能型*" と呼ばれます。  
+ 前の例では、データ ソースが配列であるため、暗黙的にジェネリック <xref:System.Collections.Generic.IEnumerable%601> インターフェイスがサポートされます。 つまり、[!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] でクエリを実行できるということです。 クエリは `foreach` ステートメントで実行されますが、`foreach` には <xref:System.Collections.IEnumerable> または <xref:System.Collections.Generic.IEnumerable%601> が必要です。 <xref:System.Collections.Generic.IEnumerable%601> をサポートする型や、ジェネリック <xref:System.Linq.IQueryable%601> などの派生インターフェイスは、*クエリ可能型*と呼ばれます。  
   
- クエリ可能型は、変更や特別な処理を行わなくても、[!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq_md.md)] データ ソースとして使用できます。 ソース データがメモリ内にクエリ可能型として存在していない場合、[!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq_md.md)] プロバイダーは、そのような型としてソース データを表す必要があります。 たとえば、[!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)] では、クエリ可能な <xref:System.Xml.Linq.XElement> 型に XML ドキュメントが読み込まれます。  
+ クエリ可能型は、変更や特別な処理を行わなくても、[!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] データ ソースとして使用できます。 ソース データがメモリ内にクエリ可能型として存在していない場合、[!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] プロバイダーは、そのような型としてソース データを表す必要があります。 たとえば、[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] では、クエリ可能な <xref:System.Xml.Linq.XElement> 型に XML ドキュメントが読み込まれます。  
   
  [!code-cs[CsLINQGettingStarted#2](../../../../csharp/programming-guide/concepts/linq/codesnippet/CSharp/introduction-to-linq-queries_2.cs)]  
   
- [!INCLUDE[vbtecdlinq](../../../../csharp/includes/vbtecdlinq_md.md)] では、まず、デザイン時に手動で、または Visual Studio で [LINQ to SQL ツール](https://docs.microsoft.com/visualstudio/data-tools/linq-to-sql-tools-in-visual-studio2)を使用して、オブジェクト リレーショナル マッピングを作成します。 オブジェクトに対するクエリを記述すると、実行時には、[!INCLUDE[vbtecdlinq](../../../../csharp/includes/vbtecdlinq_md.md)] によってデータベースとの通信が処理されます。 次の例では、`Customers` はデータベースの特定のテーブルを表し、クエリ結果の型 <xref:System.Linq.IQueryable%601> は <xref:System.Collections.Generic.IEnumerable%601> から派生しています。  
+ [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)] では、まず、デザイン時に手動で、または Visual Studio で [LINQ to SQL ツール](https://docs.microsoft.com/visualstudio/data-tools/linq-to-sql-tools-in-visual-studio2)を使用して、オブジェクト リレーショナル マッピングを作成します。 オブジェクトに対するクエリを記述すると、実行時には、[!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)] によってデータベースとの通信が処理されます。 次の例では、`Customers` がデータベース内の特定のテーブルを表し、クエリ結果の型 <xref:System.Linq.IQueryable%601> が <xref:System.Collections.Generic.IEnumerable%601> から派生しています。  
   
 ```csharp  
 Northwnd db = new Northwnd(@"c:\northwnd.mdf");  
@@ -77,18 +78,17 @@ IQueryable<Customer> custQuery =
     from cust in db.Customers  
     where cust.City == "London"  
     select cust;  
-  
 ```  
   
- それぞれの種類のデータ ソースを作成する方法の詳細については、対応する [!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq_md.md)] プロバイダーのドキュメントを参照してください。 ただし、基本的な規則は非常に単純です。[!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq_md.md)] データ ソースは、ジェネリック <xref:System.Collections.Generic.IEnumerable%601> インターフェイス、またはこれを継承するインターフェイスをサポートする任意のオブジェクトです。  
+ それぞれの種類のデータ ソースを作成する方法の詳細については、対応する [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] プロバイダーのドキュメントを参照してください。 ただし、基本的な規則は非常に単純です。[!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] データ ソースは、ジェネリック <xref:System.Collections.Generic.IEnumerable%601> インターフェイス、またはこれを継承するインターフェイスをサポートする任意のオブジェクトです。  
   
 > [!NOTE]
->  非ジェネリック <xref:System.Collections.IEnumerable> インターフェイスをサポートする <xref:System.Collections.ArrayList> などの型も、[!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq_md.md)] データ ソースとして使用できます。 詳細については、「[How to: Query an ArrayList with LINQ (C#) (方法: LINQ を使用して ArrayList を照会する (C#))](../../../../csharp/programming-guide/concepts/linq/how-to-query-an-arraylist-with-linq.md)」を参照してください。  
+>  非ジェネリック <xref:System.Collections.ArrayList> インターフェイスをサポートする <xref:System.Collections.IEnumerable> などの型も、[!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] データ ソースとして使用できます。 詳細については、「[How to: Query an ArrayList with LINQ (C#) (方法: LINQ を使用して ArrayList を照会する (C#))](../../../../csharp/programming-guide/concepts/linq/how-to-query-an-arraylist-with-linq.md)」を参照してください。  
   
 ##  <a name="query"></a> クエリ  
  クエリでは、データ ソースからどのような情報を取得するかを指定します。 オプションとして、情報が返される前に、その情報を並べ替え、グループ化し、構造化する方法を指定することもできます。 クエリはクエリ変数に格納され、クエリ式で初期化されます。 クエリを簡単に記述できるようにするために、C# に新しいクエリ構文が導入されています。  
   
- 前の例のクエリでは、整数の配列からすべての偶数が返されます。 クエリ式には、`from`、`where`、および `select` の 3 つの句が含まれています  (SQL に詳しい方は、句の順番が SQL での順番とは逆になっていることに気付かれると思います)。`from` 句はデータ ソースを指定し、`where` 句はフィルターを適用し、`select` 句は返される要素の種類を指定します。 これらのクエリ句およびその他のクエリ句の詳細については、「[LINQ クエリ式](../../../../csharp/programming-guide/linq-query-expressions/index.md)」セクションで説明しています。 今の段階で重要な点は、[!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq_md.md)] では、クエリ変数自体は何も処理を行わず、データを返さないという点です。 この時点では、後でクエリが実行されるときに結果の生成に必要となる情報が格納されるだけです。 背後でどのようにクエリが構築されるかについては、「[標準クエリ演算子の概要 (C#)](../../../../csharp/programming-guide/concepts/linq/standard-query-operators-overview.md)」と「[標準クエリ演算子の概要](http://msdn.microsoft.com/library/24cda21e-8af8-4632-b519-c404a839b9b2)」を参照してください。  
+ 前の例のクエリでは、整数の配列からすべての偶数が返されます。 クエリ式には、`from`、`where`、および `select` の 3 つの句が含まれています  (SQL に詳しい方は、句の順番が SQL での順番とは逆になっていることに気付かれると思います)。`from` 句はデータ ソースを指定し、`where` 句はフィルターを適用し、`select` 句は返される要素の種類を指定します。 これらのクエリ句およびその他のクエリ句の詳細については、「[LINQ クエリ式](../../../../csharp/programming-guide/linq-query-expressions/index.md)」セクションで説明しています。 今の段階で重要な点は、[!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] では、クエリ変数自体は何も処理を行わず、データを返さないという点です。 この時点では、後でクエリが実行されるときに結果の生成に必要となる情報が格納されるだけです。 背後でどのようにクエリが構築されるかについては、「[標準クエリ演算子の概要 (C#)](../../../../csharp/programming-guide/concepts/linq/standard-query-operators-overview.md)」をご覧ください。  
   
 > [!NOTE]
 >  クエリは、メソッド構文を使用して表すこともできます。 詳細については、「[LINQ でのクエリ構文とメソッド構文](../../../../csharp/programming-guide/concepts/linq/query-syntax-and-method-syntax-in-linq.md)」を参照してください。  
@@ -122,3 +122,5 @@ IQueryable<Customer> custQuery =
  [LINQ クエリ式](../../../../csharp/programming-guide/linq-query-expressions/index.md)   
  [foreach、in](../../../../csharp/language-reference/keywords/foreach-in.md)   
  [クエリ キーワード (LINQ)](../../../../csharp/language-reference/keywords/query-keywords.md)
+
+

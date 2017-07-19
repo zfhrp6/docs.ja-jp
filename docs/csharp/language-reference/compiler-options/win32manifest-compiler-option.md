@@ -31,10 +31,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: b9a5c7c994644d512d4049dbc5aab3fbea70d6ae
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: bb28bf28c3d8a426322e1c1795941de7e9aa4bf6
+ms.openlocfilehash: fd8c0a9a398c8f8d6c589ffcf0426a375a82a6a8
+ms.contentlocale: ja-jp
+ms.lasthandoff: 07/03/2017
 
 ---
 # <a name="win32manifest-c-compiler-options"></a>/win32manifest (C# コンパイラ オプション)
@@ -42,7 +43,7 @@ ms.lasthandoff: 03/13/2017
   
 ## <a name="syntax"></a>構文  
   
-```  
+```console  
 /win32manifest: filename  
 ```  
   
@@ -51,7 +52,7 @@ ms.lasthandoff: 03/13/2017
  カスタム マニフェスト ファイルの名前と場所。  
   
 ## <a name="remarks"></a>コメント  
- 既定では、 [!INCLUDE[csharp_current_short](../../../csharp/language-reference/compiler-options/includes/csharp_current_short_md.md)] コンパイラは "asInvoker" の要求実行レベルを指定するアプリケーション マニフェストを埋め込みます。 マニフェストは、実行可能ファイルがビルドされたフォルダーと同じフォルダーに作成されます (Visual Studio を使用している場合、通常は bin\Debug または bin\Release フォルダー)。 カスタム マニフェストを指定する場合 (たとえば、"highestAvailable" または "requireAdministrator" の要求実行レベルを指定する場合) は、このオプションを使用してファイルの名前を指定します。  
+ 既定では、 [!INCLUDE[csharp_current_short](~/includes/csharp-current-short-md.md)] コンパイラは "asInvoker" の要求実行レベルを指定するアプリケーション マニフェストを埋め込みます。 マニフェストは、実行可能ファイルがビルドされたフォルダーと同じフォルダーに作成されます (Visual Studio を使用している場合、通常は bin\Debug または bin\Release フォルダー)。 カスタム マニフェストを指定する場合 (たとえば、"highestAvailable" または "requireAdministrator" の要求実行レベルを指定する場合) は、このオプションを使用してファイルの名前を指定します。  
   
 > [!NOTE]
 >  このオプションと [/win32res (C# コンパイラ オプション)](../../../csharp/language-reference/compiler-options/win32res-compiler-option.md) オプションは、相互に排他的です。 同じコマンド行で両方のオプションを使おうすると、ビルド エラーが返されます。  
@@ -64,7 +65,7 @@ ms.lasthandoff: 03/13/2017
   
 -   要求実行レベルが指定されていないカスタム マニフェストを提供している。  
   
- [!INCLUDE[vsprvs](../../../csharp/includes/vsprvs_md.md)] は、既定の .manifest ファイルを作成し、それを実行可能ファイルと一緒にデバッグ ディレクトリとリリースディレクトリに保存します。 カスタム マニフェストを追加するには、任意のテキスト エディターでカスタム マニフェストを作成し、そのファイルをプロジェクトに追加します。 または、**ソリューション エクスプ ローラー**で **[プロジェクト]** アイコンを右クリックし、**[新しい項目の追加]** をクリックして、**[アプリケーション マニフェスト ファイル]** をクリックします。 新規または既存のマニフェスト ファイルを追加すると、そのマニフェストは **[マニフェスト]** ドロップダウン リストに表示されます。 詳しくは、「[[アプリケーション] ページ (プロジェクト デザイナー) (C#)](https://docs.microsoft.com/visualstudio/ide/reference/application-page-project-designer-csharp)」をご覧ください。  
+ [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] は、既定の .manifest ファイルを作成し、それを実行可能ファイルと一緒にデバッグ ディレクトリとリリースディレクトリに保存します。 カスタム マニフェストを追加するには、任意のテキスト エディターでカスタム マニフェストを作成し、そのファイルをプロジェクトに追加します。 または、**ソリューション エクスプ ローラー**で **[プロジェクト]** アイコンを右クリックし、**[新しい項目の追加]** をクリックして、**[アプリケーション マニフェスト ファイル]** をクリックします。 新規または既存のマニフェスト ファイルを追加すると、そのマニフェストは **[マニフェスト]** ドロップダウン リストに表示されます。 詳しくは、「[[アプリケーション] ページ (プロジェクト デザイナー) (C#)](https://docs.microsoft.com/visualstudio/ide/reference/application-page-project-designer-csharp)」をご覧ください。  
   
  アプリケーション マニフェストは、カスタムのビルド後手順として提供するか、または [/nowin32manifest (C# コンパイラ オプション)](../../../csharp/language-reference/compiler-options/nowin32manifest-compiler-option.md) オプションを使用して、Win32 リソース ファイルの一部として提供できます。 アプリケーションを Windows Vista でファイルまたはレジストリの仮想化の対象にする場合は、これと同じオプションを使用します。 これにより、コンパイラがポータブル実行可能 (PE) ファイル内に既定のマニフェストを作成し、埋め込むことを回避できます。  
   
@@ -74,7 +75,7 @@ ms.lasthandoff: 03/13/2017
 > [!NOTE]
 >  コンパイラは、標準のアプリケーション名 "MyApplication.app" を xml に挿入します。 これは、アプリケーションを Windows Server 2003 Service Pack 3 で実行できるようにするための回避策です。  
   
-```  
+```xml  
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>  
 <assembly xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0">  
   <assemblyIdentity version="1.0.0.0" name="MyApplication.app"/>  

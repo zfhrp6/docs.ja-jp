@@ -1,6 +1,6 @@
 ---
 title: "uint (C# リファレンス) | Microsoft Docs"
-ms.date: 2015-07-20
+ms.date: 2017-03-14
 ms.prod: .net
 ms.technology:
 - devlang-csharp
@@ -30,13 +30,15 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: fe4f7fcbbadee600e0ba6de70508312173d098ff
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 400dfda51d978f35c3995f90840643aaff1b9c13
+ms.openlocfilehash: 24a47d83f9f8a778b6df53b5e1e5444eda819680
+ms.contentlocale: ja-jp
+ms.lasthandoff: 03/24/2017
 
 ---
 # <a name="uint-c-reference"></a>uint (C# リファレンス)
+
 `uint` キーワードは、次の表に示すサイズと範囲で値を格納する整数型を示します。  
   
 |型|範囲|サイズ|.NET Framework 型|  
@@ -46,46 +48,41 @@ ms.lasthandoff: 03/13/2017
  **メモ** `uint` 型は CLS に準拠していません。 可能な場合は、`int` を使用します。  
   
 ## <a name="literals"></a>リテラル  
- `uint` 型の変数の宣言と初期化の例を次に示します。  
+
+`uint` 変数を宣言し、10 進リテラル、16 進リテラル、または (C# 7 以降) バイナリ リテラルを割り当てることによって初期化できます。 整数リテラルが `uint` の範囲外である場合は (つまり、<xref:System.UInt32.MinValue?displayProperty=fullName> より小さいか、<xref:System.UInt32.MaxValue?displayProperty=fullName> より大きい場合)、コンパイル エラーが発生します。
+
+次の例では、整数 3,000,000,000 を 10 進リテラル、16 進リテラル、バイナリ リテラルで表したものが、`uint` 値に割り当てられています。  
   
-```  
-  
-uint myUint = 4294967290;  
-```  
-  
- サフィックスがない整数リテラルの場合、整数リテラルの型は、[int](../../../csharp/language-reference/keywords/int.md)、`uint`、[long](../../../csharp/language-reference/keywords/long.md)、[ulong](../../../csharp/language-reference/keywords/ulong.md) のうち、その値を表すことができる最初の型になります。 この例では、`uint` です。  
-  
-```  
-  
-uint uInt1 = 123;  
-```  
-  
- また、次の例のように、サフィックス u または U を付けることもできます。  
-  
-```  
-  
-uint uInt2 = 123U;  
-```  
-  
- サフィックス `U` または `u` を使用すると、リテラルの型は、リテラルの数値に応じて `uint` または `ulong` のいずれかに決まります。 例:  
-  
-```  
-Console.WriteLine(44U.GetType());  
-Console.WriteLine(323442434344U.GetType());  
-```  
-  
- このコードでは、2 番目のリテラルが `uint` 型で格納するには大きすぎるため、`System.UInt32`、`System.UInt64` の順に表示します。これはそれぞれ、`uint` および `ulong` の基になる型です。  
+[!code-cs[uint](../../../../samples/snippets/csharp/language-reference/keywords/numeric-literals.cs#UInt)]  
+
+> [!NOTE] 
+> 16 進リテラルを表すにはプレフィックス `0x` または `0X` を使い、バイナリ リテラルを表すにはプレフィックス `0b` または `0B` を使います。 10 進リテラルには、プレフィックスはありません。 
+
+C# 7 以降では、次の例に示すように、アンダースコア文字 `_` を桁区切り記号として使って読みやすくすることもできます。
+
+[!code-cs[uint](../../../../samples/snippets/csharp/language-reference/keywords/numeric-literals.cs#UIntS)]  
+ 
+ 整数リテラルには、型を表すサフィックスを含めることもできます。 サフィックス `U` または 'u' は、リテラルの数値に応じて `uint` または `ulong` を示します。 次の例では、`u` サフィックスを使って、両方の型の符号なし整数を示しています。 1 番目のリテラルは値が <xref:System.UInt32.MaxValue?displayProperty=fullName> より小さいので `uint` であるのに対し、2 番目は <xref:System.UInt32.MaxValue?displayProperty=fullName> より大きいので `ulong` であることに注意してください。
+
+[!code-cs[usuffix](../../../../samples/snippets/csharp/language-reference/keywords/numeric-suffixes.cs#1)]  
+ 
+サフィックスがない整数リテラルの型は、以下の型のうちその値を表すことができる最初のものになります。 
+
+1. [int](int.md)
+2. `uint`
+3. [long](../../../csharp/language-reference/keywords/long.md)
+4. [ulong](../../../csharp/language-reference/keywords/ulong.md) 
   
 ## <a name="conversions"></a>変換  
  `uint` から [long](../../../csharp/language-reference/keywords/long.md)、[ulong](../../../csharp/language-reference/keywords/ulong.md)、[float](../../../csharp/language-reference/keywords/float.md)、[double](../../../csharp/language-reference/keywords/double.md)、[decimal](../../../csharp/language-reference/keywords/decimal.md) への、定義済みの暗黙的な変換が組み込まれています。 例:  
   
-```  
+```csharp  
 float myFloat = 4294967290;   // OK: implicit conversion to float  
 ```  
   
  [byte](../../../csharp/language-reference/keywords/byte.md)、[ushort](../../../csharp/language-reference/keywords/ushort.md)、または [char](../../../csharp/language-reference/keywords/char.md) から `uint` への、定義済みの暗黙的な変換が組み込まれています。 それ以外の場合は、キャストを使用する必要があります。 たとえば、次の代入ステートメントは、キャストを使用しない場合、コンパイル エラーになります。  
   
-```  
+```csharp  
 long aLong = 22;  
 // Error -- no implicit conversion from long:  
 uint uInt1 = aLong;   
@@ -95,7 +92,7 @@ uint uInt2 = (uint)aLong;
   
  浮動小数点型から `uint` への暗黙的な変換が行われないことにも注意してください。 たとえば、次のステートメントは、明示的なキャストを使用しない限り、コンパイル エラーになります。  
   
-```  
+```csharp  
 // Error -- no implicit conversion from double:  
 uint x = 3.0;  
 // OK -- explicit conversion:  

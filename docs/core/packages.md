@@ -1,5 +1,5 @@
 ---
-title: "パッケージ、メタパッケージ、フレームワーク"
+title: "パッケージ、メタパッケージ、フレームワーク | Microsoft Docs"
 description: "パッケージ、メタパッケージ、フレームワーク"
 keywords: .NET, .NET Core
 author: richlander
@@ -9,20 +9,25 @@ ms.topic: article
 ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: 609b0845-49e7-4864-957b-21ffe1b93bf2
-translationtype: Human Translation
-ms.sourcegitcommit: 519253bd6dc105afb138268c62347c29a6072fbb
-ms.openlocfilehash: 9cb957973e68129194c998c88e398351b48819ec
-ms.lasthandoff: 03/07/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 9cd469dfd4f38605f1455c008388ad04c366e484
+ms.openlocfilehash: 6a8f57de57e3470b0312b0d248d91d14f613ae94
+ms.contentlocale: ja-jp
+ms.lasthandoff: 06/20/2017
 
 ---
 
-# <a name="packages-metapackages-and-frameworks"></a>パッケージ、メタパッケージ、フレームワーク
+<a id="packages-metapackages-and-frameworks" class="xliff"></a>
+
+# パッケージ、メタパッケージ、フレームワーク
 
 .NET Core は、NuGet パッケージで作成されたプラットフォームです。 製品のエクスペリエンスには、粒度の細かいパッケージの定義から恩恵を受けるものもあれば、粒度の粗いパッケージの定義から恩恵を受けるものもあります。 この二重性に対応するために、製品は、粒度の細かいパッケージ セットとして配布され、俗に "メタパッケージ" と呼ばれるパッケージの種類を使用して粒度の粗いチャンク単位で記述されます。
 
 各 .NET Core パッケージは、フレームワークとして表現される、複数の .NET ランタイムでの実行に対応しています。 このようなフレームワークには、`net46` (.NET Framework に相当する) のような従来のフレームワークもあれば、 フレームワークを定義するために新しいモデルを確立し、"パッケージ ベースのフレームワーク" と見なすことができる新しいフレームワークもあります。 パッケージ ベースのフレームワークは、完全にパッケージとして形成および定義されるので、パッケージとフレームワークの間に強力なリレーションシップが形成されます。
 
-## <a name="packages"></a>パッケージ
+<a id="packages" class="xliff"></a>
+
+## パッケージ
 
 .NET core は、プリミティブ、上位レベルのデータ型、アプリ コンポジション型、および一般的なユーティリティを提供する一連のパッケージに分割されます。 これらのパッケージはいずれも、同じ名前の単一アセンブリです。 たとえば、[System.Runtime](https://www.nuget.org/packages/System.Runtime) には、System.Runtime.dll が含まれています。 
 
@@ -37,12 +42,12 @@ ms.lasthandoff: 03/07/2017
 
 .NET Core 用の主な NuGet パッケージを次に一覧します。
 
-- [System.Runtime](https://www.nuget.org/packages/System.Runtime) - 最も基本的な .NET Core パッケージです。[Object](http://docs.microsoft.com/dotnet/core/api/System.Object)、[String](http://docs.microsoft.com/dotnet/core/api/System.String)、[Array](http://docs.microsoft.com/dotnet/core/api/System.Array)、[Action](http://docs.microsoft.com/dotnet/core/api/System.Action)、[IList&lt;T&gt;](http://docs.microsoft.com/dotnet/core/api/System.Collections.Generic.IList-1) などがあります。
-- [System.Collections](https://www.nuget.org/packages/System.Collections) - (主な) ジェネリック コレクションのセットです。[List&lt;T&gt;](http://docs.microsoft.com/dotnet/core/api/System.Collections.Generic.List-1) や [Dictionary&lt;K,V&gt;](http://docs.microsoft.com/dotnet/core/api/System.Collections.Generic.Dictionary-2) などがあります。
-- [System.Net.Http](https://www.nuget.org/packages/System.Net.Http) - HTTP ネットワーク通信の種類のセットです。[HttpClient](http://docs.microsoft.com/dotnet/core/api/System.Net.Http.HttpClient) や [HttpResponseMessage](http://docs.microsoft.com/dotnet/core/api/System.Net.Http.HttpResponseMessage) などがあります。
-- [System.IO.FileSystem](https://www.nuget.org/packages/System.IO.FileSystem) - ローカルまたはネットワークに接続されたディスク ベースの記憶域に対する読み取りおよび書き込みの種類のセットです。[File](http://docs.microsoft.com/dotnet/core/api/System.IO.File) や [Directory](http://docs.microsoft.com/dotnet/core/api/System.IO.Directory) などがあります。
-- [System.Linq](https://www.nuget.org/packages/System.Linq) - オブジェクトに対するクエリの種類のセットです。Enumerable や [ILookup&lt;TKey, TElement&gt;](http://docs.microsoft.com/dotnet/core/api/System.Linq.ILookup-2) などがあります。
-- [System.Reflection](https://www.nuget.org/packages/System.Reflection) - 読み込み、検査、およびアクティブ化の種類のセットです。[Assembly](http://docs.microsoft.com/dotnet/core/api/System.Reflection.Assembly)、[TypeInfo](http://docs.microsoft.com/dotnet/core/api/System.Reflection.TypeInfo)、[MethodInfo](http://docs.microsoft.com/dotnet/core/api/System.Reflection.MethodInfo) などがあります。
+- [System.Runtime](https://www.nuget.org/packages/System.Runtime) - 最も基本的な .NET Core パッケージです。<xref:System.Object>、<xref:System.String>、<xref:System.Array>、<xref:System.Action>、<xref:System.Collections.Generic.IList%601> などがあります。
+- [System.Collections](https://www.nuget.org/packages/System.Collections) - (主な) ジェネリック コレクションのセットです。<xref:System.Collections.Generic.List%601> や <xref:System.Collections.Generic.Dictionary%602> などがあります。
+- [System.Net.Http](https://www.nuget.org/packages/System.Net.Http) - HTTP ネットワーク通信の種類のセットです。<xref:System.Net.Http.HttpClient> や <xref:System.Net.Http.HttpResponseMessage> などがあります。
+- [System.IO.FileSystem](https://www.nuget.org/packages/System.IO.FileSystem) - ローカルまたはネットワークに接続されたディスク ベースの記憶域に対する読み取りおよび書き込みの種類のセットです。<xref:System.IO.File> や <xref:System.IO.Directory> などがあります。
+- [System.Linq](https://www.nuget.org/packages/System.Linq) - オブジェクトに対するクエリの種類のセットです。`Enumerable` や <xref:System.Linq.ILookup%602> などがあります。
+- [System.Reflection](https://www.nuget.org/packages/System.Reflection) - 読み込み、検査、およびアクティブ化の種類のセットです。<xref:System.Reflection.Assembly>、<xref:System.Reflection.TypeInfo>、<xref:System.Reflection.MethodInfo> などがあります。
 
 一般的に、パッケージ単位でパッケージをプロジェクトに追加するより、*メタパッケージ*を追加する方がずっと簡単です。メタパッケージとは、よく一緒に使われるパッケージをセットにしたものです。 (メタパッケージの詳細については、次のセクションを参照してください。)ただし、単一のパッケージが必要な場合、下の例のように追加できます。[System.Runtime](https://www.nuget.org/packages/System.Runtime/) パッケージを参照しています。 
 
@@ -57,7 +62,9 @@ ms.lasthandoff: 03/07/2017
 </Project>
 ```
 
-## <a name="metapackages"></a>メタパッケージ
+<a id="metapackages" class="xliff"></a>
+
+## メタパッケージ
 
 メタパッケージは、統合して意味をなすパッケージ セットを記述するための NuGet パッケージの規則です。 メタパッケージでは、パッケージ間に依存関係を設定して、パッケージ セットを表現します。 メタパッケージでは必要に応じて、フレームワークを指定して、このパッケージ セットのフレームワークを確立することができます。 
 
@@ -79,7 +86,9 @@ ms.lasthandoff: 03/07/2017
 - [Microsoft.NETCore.App](https://www.nuget.org/packages/Microsoft.NETCore.App) - .NET Core 配布に含まれるライブラリについて記述します。 [`.NETCoreApp` フレームワーク](https://github.com/dotnet/core-setup/blob/master/pkg/projects/Microsoft.NETCore.App/Microsoft.NETCore.App.pkgproj)を確立します。 よりサイズの小さな `NETStandard.Library` に依存します。
 - [Microsoft.NETCore.Portable.Compatibility](https://www.nuget.org/packages/Microsoft.NETCore.Portable.Compatibility) - mscorlib ベースのポータブル クラス ライブラリ (PCL) を .NET Core で実行できるようにするための互換性ファサードのセットです。
 
-## <a name="frameworks"></a>フレームワーク
+<a id="frameworks" class="xliff"></a>
+
+## フレームワーク
 
 .NET Core の各パッケージでは、一連のランタイム フレームワークがサポートされます。 フレームワークでは、特定のフレームワークを対象とするときに依存することができる使用可能な API セット (および、場合によってはその他の特性) について記述します。 フレームワークのバージョンは、新しい API が追加されると更新されます。
 
@@ -95,7 +104,9 @@ ms.lasthandoff: 03/07/2017
 
 `.NETStandard,Version=1.3` フレームワークは、パッケージ ベースのフレームワークです。 これは、フレームワークに関して API を定義して公開するためにフレームワークを対象とするパッケージに依存します。
 
-## <a name="package-based-frameworks"></a>パッケージ ベースのフレームワーク
+<a id="package-based-frameworks" class="xliff"></a>
+
+## パッケージ ベースのフレームワーク
 
 フレームワークとパッケージの間には双方向のリレーションシップがあります。 リレーションシップの 1 番目の部分は、特定のフレームワーク (`netstandard1.3` など) で使用可能な API を定義することです。 `netstandard1.3` (または`netstandard1.0` のような互換性のあるフレームワーク) を対象とするパッケージは、`netstandard1.3` で使用可能な API を定義します。 循環定義のように思われるかもしれませんが、そうではありません。 "パッケージ ベース" であるため、フレームワークの API 定義は、パッケージから取得されます。 フレームワーク自体で、API の定義は行われません。
 
@@ -110,9 +121,11 @@ ms.lasthandoff: 03/07/2017
 - `netstandard`
 - `netcoreapp`
 
-### <a name="net-standard"></a>.NET Standard
+<a id="net-standard" class="xliff"></a>
 
-.NET Standard (ターゲット フレームワーク モニカー: `netstandard`) フレームワークは、[.NET Standard Library](../standard/library.md) によって定義され、.NET Standard Library の上に構築された API を表します。 複数のランタイムでの実行を意図したライブラリは、このフレームワークを対象とする必要があります。 それらのライブラリは、.NET Core、.NET Framework、Mono/Xamarin など、.NET Standard 準拠のランタイムでサポートされます。 このようなランタイムはそれぞれが、実装される API に応じて、一連の .NET Standard バージョンをサポートします。 
+### .NET Standard
+
+.NET Standard (ターゲット フレームワーク モニカー: `netstandard`) フレームワークは、[.NET Standard](../standard/net-standard.md) によって定義され、.NET Standard の上に構築された API を表します。 複数のランタイムでの実行を意図したライブラリは、このフレームワークを対象とする必要があります。 それらのライブラリは、.NET Core、.NET Framework、Mono/Xamarin など、.NET Standard 準拠のランタイムでサポートされます。 このようなランタイムはそれぞれが、実装される API に応じて、一連の .NET Standard バージョンをサポートします。 
 
 `netstandard` フレームワークは `NETStandard.Library` メタパッケージを暗黙的に参照します。 たとえば、次の MSBuild プロジェクト ファイルは、プロジェクトが `netstandard1.6` をターゲットにすることを示します。これは .NET Standard Library バージョン 1.6 メタパッケージを参照します。 
 
@@ -141,7 +154,9 @@ ms.lasthandoff: 03/07/2017
 
 逆は無効になります (`netstandard1.6` を対象とするが、`NETStandard.Library` のバージョン 1.3.0 を使用する)。 上位フレームワークと下位メタパッケージの組み合わせを対象とすることはできません。下位バージョンのメタパッケージはその上位フレームワークに対して資産を公開しないことが理由です。 メタパッケージのバージョン管理スキームは、メタパッケージが、記述したフレームワークの最上位バージョンと一致することをアサートします。 バージョン管理スキームにより、`netstandard1.6` 資産が含まれている場合、`NETStandard.Library` の最初のバージョンは v1.6.0 となります。 上記の例では対称性を考慮して v1.3.0 が使用されていますが、実際には存在しません。
 
-### <a name="net-core-application"></a>.NET Core アプリケーション
+<a id="net-core-application" class="xliff"></a>
+
+### .NET Core アプリケーション
 
 .NET Core アプリケーション (TFM: `netcoreapp`) フレームワークは、.NET Core 配布に付属のパッケージおよび関連する API と、.NET Core 配布によって提供されるコンソール アプリケーション モデルを表します。 .NET Core アプリは、コンソール アプリケーション モデルを対象とすることから、.NET Core での実行のみを意図するライブラリとして、このフレームワークを使用する必要があります。 このフレームワークを使用すると、アプリとライブラリは .NET Core でのみの実行に限定されます。 
 

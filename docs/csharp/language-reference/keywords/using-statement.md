@@ -27,10 +27,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 587e50d5c81c19d75e9d8bf4779064947a373b71
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: fe32676f0e39ed109a68f39584cf41aec5f5ce90
+ms.openlocfilehash: 49d7f0dc14f6595ed1e96e5072766dc119f22127
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/10/2017
 
 ---
 # <a name="using-statement-c-reference"></a>using ステートメント (C# リファレンス)
@@ -42,7 +43,7 @@ ms.lasthandoff: 03/13/2017
  [!code-cs[csrefKeywordsNamespace#4](../../../csharp/language-reference/keywords/codesnippet/CSharp/using-statement_1.cs)]  
   
 ## <a name="remarks"></a>コメント  
- <xref:System.IO.File> と <xref:System.Drawing.Font> は、アンマネージ リソース (この場合はファイル ハンドルとデバイス コンテキスト) にアクセスするマネージ型の例です。 アンマネージ リソースや、それをカプセル化するクラス ライブラリ型は他にもたくさんあります。 そのような型はすべて、<xref:System.IDisposable> インターフェイスを実装する必要があります。  
+ <xref:System.IO.File> と <xref:System.Drawing.Font> は、アンマネージ リソース (この場合はファイル ハンドルとデバイス コンテキスト) にアクセスするマネージ型の例です。 アンマネージ リソースや、それをカプセル化するクラス ライブラリ型は他にもたくさんあります。 このような型はすべて、<xref:System.IDisposable> インターフェイスを実装する必要があります。  
   
  一般に、`IDisposable` オブジェクトを使用するときは、それを `using` ステートメントで宣言して、インスタンス化する必要があります。 `using` ステートメントは、オブジェクトで正しく <xref:System.IDisposable.Dispose%2A> メソッドを呼び出します。(前述のようにこのステートメントを使用する場合) <xref:System.IDisposable.Dispose%2A> が呼び出されるとすぐに、オブジェクト自体がスコープの外側に出されます。 オブジェクトは、`using` ブロック内では読み取り専用です。変更したり再割り当てしたりすることはできません。  
   
@@ -59,12 +60,12 @@ ms.lasthandoff: 03/13/2017
  [!code-cs[csrefKeywordsNamespace#7](../../../csharp/language-reference/keywords/codesnippet/CSharp/using-statement_4.cs)]  
   
 ## <a name="c-language-specification"></a>C# 言語仕様  
- [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec_md.md)]  
+ [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
 ## <a name="see-also"></a>関連項目  
  [C# リファレンス](../../../csharp/language-reference/index.md)   
  [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
  [C# のキーワード](../../../csharp/language-reference/keywords/index.md)   
  [using ディレクティブ](../../../csharp/language-reference/keywords/using-directive.md)   
- [ガベージ コレクション](../../../standard/garbagecollection/index.md)   
- [Dispose メソッドの実装](http://msdn.microsoft.com/library/eb4e1af0-3b48-4fbc-ad4e-fc2f64138bf9)
+ [ガベージ コレクション](../../../standard/garbage-collection/index.md)   
+ [Dispose メソッドの実装](../../../standard/garbage-collection/implementing-dispose.md)

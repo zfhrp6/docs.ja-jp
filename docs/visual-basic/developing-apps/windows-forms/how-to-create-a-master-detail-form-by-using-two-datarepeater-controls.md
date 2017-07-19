@@ -28,9 +28,10 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
+ms.translationtype: Machine Translation
 ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
 ms.openlocfilehash: 23789bb11cab17b50928651e1dc00d5d59640c0f
+ms.contentlocale: ja-jp
 ms.lasthandoff: 03/13/2017
 
 ---
@@ -39,7 +40,7 @@ ms.lasthandoff: 03/13/2017
   
  共有から同じマスター テーブル ノードの詳細項目をドラッグして関連データを表示できる、**データ ソース**ウィンドウ、<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater>コントロール</xref:Microsoft.VisualBasic.PowerPacks.DataRepeater>。 たとえば、Customers テーブルと関連する Orders テーブルを持つデータ ソースがあれば、両方のテーブルとして表示ツリー ビューで、最上位ノード、**データソース**ウィンドウです。 列が表示されるように、Customers ノードを展開します。 一覧の最後の列は、Orders テーブルを表す展開可能なノードであることを確認します。 このノードは、顧客に関連する注文を表します。  
   
-[!INCLUDE[note_settings_general](../../../csharp/language-reference/compiler-messages/includes/note_settings_general_md.md)]  
+[!INCLUDE[note_settings_general](~/includes/note-settings-general-md.md)]  
   
 ### <a name="to-display-related-data-in-two-datarepeater-controls"></a>2 つの DataRepeater コントロールに関連するデータを表示するには  
   

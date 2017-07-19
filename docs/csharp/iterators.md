@@ -10,10 +10,11 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 5cf36f45-f91a-4fca-a0b7-87f233e108e9
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: df6e493f4dfb72ac59951832773cc818627f4c2f
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 890c058bd09893c2adb185e1d8107246eef2e20a
+ms.openlocfilehash: 7fea22be3b98c3218d173e5d80f1f22ef7ecf7e2
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/12/2017
 
 ---
 
@@ -29,6 +30,8 @@ ms.lasthandoff: 03/13/2017
 + 反復子メソッドによってデータ フローを効率化するデータ パイプラインの作成。
 
 C# 言語には、上記の両方のシナリオに対応するための機能が用意されています。 この記事では、それらの機能の概要について説明します。
+
+このチュートリアルには、複数の手順があります。 各手順の後に、アプリケーションを実行して進行状況を確認できます。 このトピックの[完全なサンプルを表示またはダウンロードする](https://github.com/dotnet/docs/blob/master/samples/csharp/iterators)こともできます。 ダウンロード方法については、「[サンプルおよびチュートリアル](../samples-and-tutorials/index.md#viewing-and-downloading-samples)」を参照してください。
 
 ## <a name="iterating-with-foreach"></a>foreach を使用した反復処理
 

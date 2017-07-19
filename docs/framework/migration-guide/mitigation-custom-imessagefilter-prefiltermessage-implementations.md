@@ -22,20 +22,20 @@ ms.lasthandoff: 05/22/2017
 
 ---
 # <a name="mitigation-custom-imessagefilterprefiltermessage-implementations"></a>軽減策: カスタムの IMessageFilter.PreFilterMessage 実装
-.NET Framework の [!INCLUDE[net_v461](../../../includes/net-v461-md.md)] 以降のバージョンを対象とする Windows フォーム アプリでは、<xref:System.Windows.Forms.Application.FilterMessage%2A?displayProperty=fullName> メソッドが呼び出されると、カスタムの <xref:System.Windows.Forms.IMessageFilter.PreFilterMessage%2A?displayProperty=fullName> 実装は、 <xref:System.Windows.Forms.IMessageFilter.PreFilterMessage%2A?displayProperty=fullName> 実装が次の場合に、メッセージを安全にフィルター処理できます。  
+.NET Framework の [!INCLUDE[net_v461](../../../includes/net-v461-md.md)] 以降のバージョンを対象とする Windows フォーム アプリでは、<xref:System.Windows.Forms.Application.FilterMessage%2A?displayProperty=fullName> メソッドが呼び出されると、カスタムの <xref:System.Windows.Forms.IMessageFilter.PreFilterMessage%2A?displayProperty=fullName> 実装は <xref:System.Windows.Forms.IMessageFilter.PreFilterMessage%2A?displayProperty=fullName> 実装が次のような場合に、メッセージを安全にフィルター処理できます。  
   
 -   次の操作のいずれか、または両方を行う場合:  
   
-    -   <xref:System.Windows.Forms.Application.AddMessageFilter%2A> メソッドを呼び出すことで、メッセージ フィルターを追加する。  
+    -   <xref:System.Windows.Forms.Application.AddMessageFilter%2A> メソッドを呼び出してメッセージ フィルターを追加する。  
   
-    -   <xref:System.Windows.Forms.Application.RemoveMessageFilter%2A> メソッドを呼び出すことで、メッセージ フィルターを削除する。 メソッドをオーバーライドします。  
+    -   <xref:System.Windows.Forms.Application.RemoveMessageFilter%2A> メソッドを呼び出してメッセージ フィルターを削除する。 メソッドをオーバーライドします。  
   
--   **および** <xref:System.Windows.Forms.Application.DoEvents%2A?displayProperty=fullName> メソッドを呼び出すことでメッセージをポンプする。  
+-   **なおかつ**、<xref:System.Windows.Forms.Application.DoEvents%2A?displayProperty=fullName> メソッドを呼び出してメッセージをポンプする場合。  
   
 ## <a name="impact"></a>影響  
  この変更によって影響を受けるのは、.NET Framework の [!INCLUDE[net_v461](../../../includes/net-v461-md.md)] 以降のバージョンを対象とする Windows フォーム アプリのみです。  
   
- 以前のバージョンの .NET Framework を対象とする Windows フォーム アプリの場合、<xref:System.Windows.Forms.Application.FilterMessage%2A?displayProperty=fullName>メソッドが呼び出されると、このような実装が <xref:System.IndexOutOfRangeException> 例外をスローする場合があります。  
+ .NET Framework の以前のバージョンを対象とする Windows フォーム アプリの場合、このような実装で、<xref:System.Windows.Forms.Application.FilterMessage%2A?displayProperty=fullName> メソッドが呼び出されると <xref:System.IndexOutOfRangeException> 例外がスローされることがあります。  
   
 ## <a name="mitigation"></a>軽減策  
  この変更が望ましくない場合は、[!INCLUDE[net_v461](../../../includes/net-v461-md.md)] またはそれ以降のバージョンを対象とするアプリでこの変更を無効にできます。この無効化は、そのアプリの構成ファイルの [\<<runtime>](../../../docs/framework/configure-apps/file-schema/runtime/runtime-element.md) セクションに次の構成設定を追加して行います。  

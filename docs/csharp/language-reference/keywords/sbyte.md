@@ -1,6 +1,6 @@
 ---
 title: "sbyte (C# リファレンス) | Microsoft Docs"
-ms.date: 2015-07-20
+ms.date: 2017-03-14
 ms.prod: .net
 ms.technology:
 - devlang-csharp
@@ -30,39 +30,50 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: df57296bb285441aeddc596289d82d1e458dc278
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 400dfda51d978f35c3995f90840643aaff1b9c13
+ms.openlocfilehash: 2de7b352382f1a39ef73788c553d9bd881644019
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/22/2017
 
 ---
 # <a name="sbyte-c-reference"></a>sbyte (C# リファレンス)
-`sbyte` キーワードは、次の表に示すサイズと範囲で値を格納する整数型を示します。  
+
+`sbyte` は、次の表に示されたサイズと範囲に従って値を格納する整数型を示します。  
   
 |型|範囲|サイズ|.NET Framework 型|  
 |----------|-----------|----------|-------------------------|  
 |`sbyte`|-128 ～ 127|符号付き 8 ビット整数|<xref:System.SByte?displayProperty=fullName>|  
   
 ## <a name="literals"></a>リテラル  
- `sbyte` 変数の宣言と初期化は次のように行うことができます。  
+
+`sbyte` 変数を宣言し、10 進リテラル、16 進リテラル、または (C# 7 以降) バイナリ リテラルを割り当てることによって初期化できます。 
+
+次の例では、整数 -102 を 10 進リテラル、16 進リテラル、バイナリ リテラルで表したものが、[int](../../../csharp/language-reference/keywords/int.md) から `sbyte` 値に変換されています。    
   
-```  
-  
-sbyte sByte1 = 127;  
-```  
-  
- 上のように宣言すると、整数リテラル 127 は暗黙的に [int](../../../csharp/language-reference/keywords/int.md) から `sbyte` に変換されます。 整数リテラルが `sbyte` の範囲を超えると、コンパイル エラーになります。  
-  
+[!code-cs[SByte](../../../../samples/snippets/csharp/language-reference/keywords/numeric-literals.cs#SByte)]  
+
+> [!NOTE] 
+> 16 進リテラルを表すにはプレフィックス `0x` または `0X` を使い、バイナリ リテラルを表すにはプレフィックス `0b` または `0B` を使います。 10 進リテラルには、プレフィックスはありません。
+
+C# 7 以降では、次の例に示すように、アンダースコア文字 `_` を桁区切り記号として使って読みやすくすることもできます。
+
+[!code-cs[SByteSeparator](../../../../samples/snippets/csharp/language-reference/keywords/numeric-literals.cs#SByteS)]  
+
+整数リテラルが `sbyte` の範囲外にある場合 (つまり、<xref:System.SByte.MinValue?displayProperty=fullName> より小さいか、<xref:System.SByte.MaxValue?displayProperty=fullName> より大きい場合)、コンパイル エラーが発生します。 サフィックスがない整数リテラルの場合、整数リテラルの型は、[int](int.md)、[uint](uint.md)、[long](long.md)、[ulong](ulong.md) のうち、その値を表すことができる最初の型になります。 つまり、この例では、数値リテラル `0x9A` と `0b10011010` は値が 156 の 32 ビット符号付き整数として解釈され、これは <xref:System.SByte.MaxValue?displayProperty=fullName> を超えています。 このため、キャスト演算子が必要であり、割り当ては [unchecked](unchecked.md) コンテキストで行われる必要があります。 
+
+## <a name="compiler-overload-resolution"></a>コンパイラのオーバーロード解決
+
  オーバーロードされたメソッドを呼び出すときは、キャストを使用する必要があります。 たとえば、`sbyte` パラメーターと [int](../../../csharp/language-reference/keywords/int.md) パラメーターを使用するオーバーロードされたメソッドがあるとします。  
   
-```  
+```csharp  
 public static void SampleMethod(int i) {}  
 public static void SampleMethod(sbyte b) {}  
 ```  
   
  `sbyte` キャストを使用すると、正しい型が呼び出されます。次に例を示します。  
   
-```  
+```csharp 
 // Calling the method with the int parameter:  
 SampleMethod(5);  
 // Calling the method with the sbyte parameter:  
@@ -74,39 +85,34 @@ SampleMethod((sbyte)5);
   
  記憶領域が大きなリテラル以外の数値型を暗黙的に `sbyte` に変換することはできません (整数型の記憶領域については、「[整数型の一覧表](../../../csharp/language-reference/keywords/integral-types-table.md)」を参照してください)。 たとえば、2 つの `sbyte` 変数 `x` と `y` があるとします。  
   
-```  
-  
+```csharp  
 sbyte x = 10, y = 20;  
 ```  
   
  次の代入ステートメントは、代入演算子の右側にある算術式が既定で [int](../../../csharp/language-reference/keywords/int.md) に評価されるため、コンパイル エラーになります。  
   
-```  
-  
+```csharp  
 sbyte z = x + y;   // Error: conversion from int to sbyte  
 ```  
   
  この問題を解決するには、次の例のように式をキャストします。  
   
-```  
-  
+```csharp  
 sbyte z = (sbyte)(x + y);   // OK: explicit conversion  
 ```  
   
  ただし、次のステートメントは使用できます。このステートメントでは、変換先の変数の記憶領域サイズは元のサイズ以上になります。  
   
-```  
-  
-      sbyte x = 10, y = 20;  
+```csharp
+sbyte x = 10, y = 20;  
 int m = x + y;  
 long n = x + y;  
 ```  
   
  浮動小数点型から `sbyte` への暗黙的な変換が行われないことにも注意してください。 たとえば、次のステートメントは、明示的なキャストを使用しない限り、コンパイル エラーになります。  
   
-```  
-  
-      sbyte x = 3.0;         // Error: no implicit conversion from double  
+```csharp  
+sbyte x = 3.0;         // Error: no implicit conversion from double  
 sbyte y = (sbyte)3.0;  // OK: explicit conversion  
 ```  
   

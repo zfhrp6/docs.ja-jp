@@ -19,13 +19,14 @@ author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.translationtype: Human Translation
-ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
-ms.openlocfilehash: 175e46e3729190423b85296d7c7c47b136339305
+ms.sourcegitcommit: 01c66e2c291766ba00376261740906934f065855
+ms.openlocfilehash: b7040d4c82c9434b2d24a579a93602660479ec59
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/18/2017
+ms.lasthandoff: 05/22/2017
 
 ---
-# <a name="obsolete-types-in-the-net-framework"></a>.NET Framework で互換性のために残されている型
+# .NET Framework で互換性のために残されている型
+<a id="obsolete-types-in-the-net-framework" class="xliff"></a>
 <a name="introduction"></a> この記事の表に、[!INCLUDE[net_v45](../../../includes/net-v45-md.md)] と [!INCLUDE[net_v46](../../../includes/net-v46-md.md)] で互換性のために残されている型をアセンブリ別に示します。 各アセンブリで互換性のために残されている型と推奨される代替型の一覧を表示するには、以下のリンクを使用してください。 これらの型は廃止されているため、そのメンバーもすべて廃止されます。 .NET Framework クラス ライブラリで互換性のために残されているその他のメンバーの一覧については、[互換性のために残されているメンバー](../../../docs/framework/whats-new/obsolete-members.md)に関する記事をご覧ください。  
   
 -   [互換性のために残されているシステム アセンブリの型](#obsolete_types_in_system_assemblies)  
@@ -81,11 +82,13 @@ ms.lasthandoff: 04/18/2017
     -   [Microsoft.VisualC.dll](#visualc)  
   
 <a name="obsolete_types_in_system_assemblies"></a>   
-## <a name="obsolete-types-in-system-assemblies"></a>互換性のために残されているシステム アセンブリの型  
+## 互換性のために残されているシステム アセンブリの型
+<a id="obsolete-types-in-system-assemblies" class="xliff"></a>  
  次の表に、システム アセンブリで、互換性のために残されていることが公表されている型を示します。 これらのアセンブリは、.NET Framework を対象とする汎用アプリケーションの開発で使用されます。  
   
 <a name="mscorlib"></a>   
-### <a name="assembly-mscorlibdll"></a>アセンブリ: mscorlib.dll  
+### アセンブリ: mscorlib.dll
+<a id="assembly-mscorlibdll" class="xliff"></a>  
   
 |型|メッセージ|  
 |----------|-------------|  
@@ -95,52 +98,52 @@ ms.lasthandoff: 04/18/2017
 |<xref:System.Configuration.Assemblies.AssemblyHash?displayProperty=fullName>|<xref:System.Configuration.Assemblies.AssemblyHash> クラスの使用は推奨されていません。|  
 |<xref:System.Diagnostics.Contracts.Internal.ContractHelper?displayProperty=fullName>|最初に .NET Framework 4.5 で廃止されました。 代わりに、System.Runtime.CompilerServices 名前空間の <xref:System.Runtime.CompilerServices.ContractHelper?displayProperty=fullName> クラスを使用してください。|  
 |<xref:System.Reflection.Emit.UnmanagedMarshal?displayProperty=fullName>|代替 API を使用できます。代わりに、<xref:System.Runtime.InteropServices.MarshalAsAttribute?displayProperty=fullName> カスタム属性を生成してください。|  
-|<xref:System.Runtime.InteropServices.BIND_OPTS?displayProperty=fullName>|代わりに、<xref:System.Runtime.InteropServices.ComTypes.BIND_OPTS?displayProperty=fullName> を使用してください。|  
-|<xref:System.Runtime.InteropServices.BINDPTR?displayProperty=fullName>|代わりに、<xref:System.Runtime.InteropServices.ComTypes.BINDPTR?displayProperty=fullName> を使用してください。|  
-|<xref:System.Runtime.InteropServices.CALLCONV?displayProperty=fullName>|代わりに、<xref:System.Runtime.InteropServices.ComTypes.CALLCONV?displayProperty=fullName> を使用してください。|  
-|<xref:System.Runtime.InteropServices.CONNECTDATA?displayProperty=fullName>|代わりに、<xref:System.Runtime.InteropServices.ComTypes.CONNECTDATA?displayProperty=fullName> を使用してください。|  
-|<xref:System.Runtime.InteropServices.DESCKIND?displayProperty=fullName>|代わりに、<xref:System.Runtime.InteropServices.ComTypes.DESCKIND?displayProperty=fullName> を使用してください。|  
-|<xref:System.Runtime.InteropServices.DISPPARAMS?displayProperty=fullName>|代わりに、<xref:System.Runtime.InteropServices.ComTypes.DISPPARAMS?displayProperty=fullName> を使用してください。|  
-|<xref:System.Runtime.InteropServices.ELEMDESC?displayProperty=fullName>|代わりに、<xref:System.Runtime.InteropServices.ComTypes.ELEMDESC?displayProperty=fullName> を使用してください。|  
-|<xref:System.Runtime.InteropServices.EXCEPINFO?displayProperty=fullName>|代わりに、<xref:System.Runtime.InteropServices.ComTypes.EXCEPINFO?displayProperty=fullName> を使用してください。|  
-|<xref:System.Runtime.InteropServices.FILETIME?displayProperty=fullName>|代わりに、<xref:System.Runtime.InteropServices.ComTypes.FILETIME?displayProperty=fullName> を使用してください。|  
-|<xref:System.Runtime.InteropServices.FUNCDESC?displayProperty=fullName>|代わりに、<xref:System.Runtime.InteropServices.ComTypes.FUNCDESC?displayProperty=fullName> を使用してください。|  
-|<xref:System.Runtime.InteropServices.FUNCFLAGS?displayProperty=fullName>|代わりに、<xref:System.Runtime.InteropServices.ComTypes.FUNCFLAGS?displayProperty=fullName> を使用してください。|  
-|<xref:System.Runtime.InteropServices.FUNCKIND?displayProperty=fullName>|代わりに、<xref:System.Runtime.InteropServices.ComTypes.FUNCKIND?displayProperty=fullName> を使用してください。|  
+|<xref:System.Runtime.InteropServices.BIND_OPTS?displayProperty=fullName>|代わりに、 <xref:System.Runtime.InteropServices.ComTypes.BIND_OPTS?displayProperty=fullName> を使用してください。|  
+|<xref:System.Runtime.InteropServices.BINDPTR?displayProperty=fullName>|代わりに、 <xref:System.Runtime.InteropServices.ComTypes.BINDPTR?displayProperty=fullName> を使用してください。|  
+|<xref:System.Runtime.InteropServices.CALLCONV?displayProperty=fullName>|代わりに、 <xref:System.Runtime.InteropServices.ComTypes.CALLCONV?displayProperty=fullName> を使用してください。|  
+|<xref:System.Runtime.InteropServices.CONNECTDATA?displayProperty=fullName>|代わりに、 <xref:System.Runtime.InteropServices.ComTypes.CONNECTDATA?displayProperty=fullName> を使用してください。|  
+|<xref:System.Runtime.InteropServices.DESCKIND?displayProperty=fullName>|代わりに、 <xref:System.Runtime.InteropServices.ComTypes.DESCKIND?displayProperty=fullName> を使用してください。|  
+|<xref:System.Runtime.InteropServices.DISPPARAMS?displayProperty=fullName>|代わりに、 <xref:System.Runtime.InteropServices.ComTypes.DISPPARAMS?displayProperty=fullName> を使用してください。|  
+|<xref:System.Runtime.InteropServices.ELEMDESC?displayProperty=fullName>|代わりに、 <xref:System.Runtime.InteropServices.ComTypes.ELEMDESC?displayProperty=fullName> を使用してください。|  
+|<xref:System.Runtime.InteropServices.EXCEPINFO?displayProperty=fullName>|代わりに、 <xref:System.Runtime.InteropServices.ComTypes.EXCEPINFO?displayProperty=fullName> を使用してください。|  
+|<xref:System.Runtime.InteropServices.FILETIME?displayProperty=fullName>|代わりに、 <xref:System.Runtime.InteropServices.ComTypes.FILETIME?displayProperty=fullName> を使用してください。|  
+|<xref:System.Runtime.InteropServices.FUNCDESC?displayProperty=fullName>|代わりに、 <xref:System.Runtime.InteropServices.ComTypes.FUNCDESC?displayProperty=fullName> を使用してください。|  
+|<xref:System.Runtime.InteropServices.FUNCFLAGS?displayProperty=fullName>|代わりに、 <xref:System.Runtime.InteropServices.ComTypes.FUNCFLAGS?displayProperty=fullName> を使用してください。|  
+|<xref:System.Runtime.InteropServices.FUNCKIND?displayProperty=fullName>|代わりに、 <xref:System.Runtime.InteropServices.ComTypes.FUNCKIND?displayProperty=fullName> を使用してください。|  
 |<xref:System.Runtime.InteropServices.IDispatchImplAttribute?displayProperty=fullName>|この属性の使用は推奨されていません。この属性は、将来のバージョンでは削除されます。|  
 |<xref:System.Runtime.InteropServices.IDispatchImplType?displayProperty=fullName>|<xref:System.Runtime.InteropServices.IDispatchImplAttribute?displayProperty=fullName> の使用は推奨されていません。|  
-|<xref:System.Runtime.InteropServices.IDLDESC?displayProperty=fullName>|代わりに、<xref:System.Runtime.InteropServices.ComTypes.IDLDESC?displayProperty=fullName> を使用してください。|  
-|<xref:System.Runtime.InteropServices.IDLFLAG?displayProperty=fullName>|代わりに、<xref:System.Runtime.InteropServices.ComTypes.IDLFLAG?displayProperty=fullName> を使用してください。|  
-|<xref:System.Runtime.InteropServices.IMPLTYPEFLAGS?displayProperty=fullName>|代わりに、<xref:System.Runtime.InteropServices.ComTypes.IMPLTYPEFLAGS?displayProperty=fullName> を使用してください。|  
-|<xref:System.Runtime.InteropServices.INVOKEKIND?displayProperty=fullName>|代わりに、<xref:System.Runtime.InteropServices.ComTypes.INVOKEKIND?displayProperty=fullName> を使用してください。|  
-|<xref:System.Runtime.InteropServices.LIBFLAGS?displayProperty=fullName>|代わりに、<xref:System.Runtime.InteropServices.ComTypes.LIBFLAGS?displayProperty=fullName> を使用してください。|  
-|<xref:System.Runtime.InteropServices.PARAMDESC?displayProperty=fullName>|代わりに、<xref:System.Runtime.InteropServices.ComTypes.PARAMDESC?displayProperty=fullName> を使用してください。|  
-|<xref:System.Runtime.InteropServices.PARAMFLAG?displayProperty=fullName>|代わりに、<xref:System.Runtime.InteropServices.ComTypes.PARAMFLAG?displayProperty=fullName> を使用してください。|  
+|<xref:System.Runtime.InteropServices.IDLDESC?displayProperty=fullName>|代わりに、 <xref:System.Runtime.InteropServices.ComTypes.IDLDESC?displayProperty=fullName> を使用してください。|  
+|<xref:System.Runtime.InteropServices.IDLFLAG?displayProperty=fullName>|代わりに、 <xref:System.Runtime.InteropServices.ComTypes.IDLFLAG?displayProperty=fullName> を使用してください。|  
+|<xref:System.Runtime.InteropServices.IMPLTYPEFLAGS?displayProperty=fullName>|代わりに、 <xref:System.Runtime.InteropServices.ComTypes.IMPLTYPEFLAGS?displayProperty=fullName> を使用してください。|  
+|<xref:System.Runtime.InteropServices.INVOKEKIND?displayProperty=fullName>|代わりに、 <xref:System.Runtime.InteropServices.ComTypes.INVOKEKIND?displayProperty=fullName> を使用してください。|  
+|<xref:System.Runtime.InteropServices.LIBFLAGS?displayProperty=fullName>|代わりに、 <xref:System.Runtime.InteropServices.ComTypes.LIBFLAGS?displayProperty=fullName> を使用してください。|  
+|<xref:System.Runtime.InteropServices.PARAMDESC?displayProperty=fullName>|代わりに、 <xref:System.Runtime.InteropServices.ComTypes.PARAMDESC?displayProperty=fullName> を使用してください。|  
+|<xref:System.Runtime.InteropServices.PARAMFLAG?displayProperty=fullName>|代わりに、 <xref:System.Runtime.InteropServices.ComTypes.PARAMFLAG?displayProperty=fullName> を使用してください。|  
 |<xref:System.Runtime.InteropServices.SetWin32ContextInIDispatchAttribute?displayProperty=fullName>|この属性は推奨されていません。 アプリケーション ドメインでは、IDispatch の呼び出しでアクティベーション コンテキスト境界は考慮されなくなりました。|  
-|<xref:System.Runtime.InteropServices.STATSTG?displayProperty=fullName>|代わりに、<xref:System.Runtime.InteropServices.ComTypes.STATSTG?displayProperty=fullName> を使用してください。|  
-|<xref:System.Runtime.InteropServices.SYSKIND?displayProperty=fullName>|代わりに、<xref:System.Runtime.InteropServices.ComTypes.SYSKIND?displayProperty=fullName> を使用してください。|  
-|<xref:System.Runtime.InteropServices.TYPEATTR?displayProperty=fullName>|代わりに、<xref:System.Runtime.InteropServices.ComTypes.TYPEATTR?displayProperty=fullName> を使用してください。|  
-|<xref:System.Runtime.InteropServices.TYPEDESC?displayProperty=fullName>|代わりに、<xref:System.Runtime.InteropServices.ComTypes.TYPEDESC?displayProperty=fullName> を使用してください。|  
-|<xref:System.Runtime.InteropServices.TYPEFLAGS?displayProperty=fullName>|代わりに、<xref:System.Runtime.InteropServices.ComTypes.TYPEFLAGS?displayProperty=fullName> を使用してください。|  
-|<xref:System.Runtime.InteropServices.TYPEKIND?displayProperty=fullName>|代わりに、<xref:System.Runtime.InteropServices.ComTypes.TYPEKIND?displayProperty=fullName> を使用してください。|  
-|<xref:System.Runtime.InteropServices.TYPELIBATTR?displayProperty=fullName>|代わりに、<xref:System.Runtime.InteropServices.ComTypes.TYPELIBATTR?displayProperty=fullName> を使用してください。|  
-|<xref:System.Runtime.InteropServices.UCOMIBindCtx?displayProperty=fullName>|代わりに、<xref:System.Runtime.InteropServices.ComTypes.IBindCtx?displayProperty=fullName> を使用してください。|  
-|<xref:System.Runtime.InteropServices.UCOMIConnectionPoint?displayProperty=fullName>|代わりに、<xref:System.Runtime.InteropServices.ComTypes.IConnectionPoint?displayProperty=fullName> を使用してください。|  
-|<xref:System.Runtime.InteropServices.UCOMIConnectionPointContainer?displayProperty=fullName>|代わりに、<xref:System.Runtime.InteropServices.ComTypes.IConnectionPointContainer?displayProperty=fullName> を使用してください。|  
-|<xref:System.Runtime.InteropServices.UCOMIEnumConnectionPoints?displayProperty=fullName>|代わりに、<xref:System.Runtime.InteropServices.ComTypes.IEnumConnectionPoints?displayProperty=fullName> を使用してください。|  
-|<xref:System.Runtime.InteropServices.UCOMIEnumConnections?displayProperty=fullName>|代わりに、<xref:System.Runtime.InteropServices.ComTypes.IEnumConnections?displayProperty=fullName> を使用してください。|  
-|<xref:System.Runtime.InteropServices.UCOMIEnumMoniker?displayProperty=fullName>|代わりに、<xref:System.Runtime.InteropServices.ComTypes.IEnumMoniker?displayProperty=fullName> を使用してください。|  
-|<xref:System.Runtime.InteropServices.UCOMIEnumString?displayProperty=fullName>|代わりに、<xref:System.Runtime.InteropServices.ComTypes.IEnumString?displayProperty=fullName> を使用してください。|  
-|<xref:System.Runtime.InteropServices.UCOMIEnumVARIANT?displayProperty=fullName>|代わりに、<xref:System.Runtime.InteropServices.ComTypes.IEnumVARIANT?displayProperty=fullName> を使用してください。|  
-|<xref:System.Runtime.InteropServices.UCOMIMoniker?displayProperty=fullName>|代わりに、<xref:System.Runtime.InteropServices.ComTypes.IMoniker?displayProperty=fullName> を使用してください。|  
-|<xref:System.Runtime.InteropServices.UCOMIPersistFile?displayProperty=fullName>|代わりに、<xref:System.Runtime.InteropServices.ComTypes.IPersistFile?displayProperty=fullName> を使用してください。|  
-|<xref:System.Runtime.InteropServices.UCOMIRunningObjectTable?displayProperty=fullName>|代わりに、<xref:System.Runtime.InteropServices.ComTypes.IRunningObjectTable?displayProperty=fullName> を使用してください。|  
-|<xref:System.Runtime.InteropServices.UCOMIStream?displayProperty=fullName>|代わりに、<xref:System.Runtime.InteropServices.ComTypes.IStream?displayProperty=fullName> を使用してください。|  
-|<xref:System.Runtime.InteropServices.UCOMITypeComp?displayProperty=fullName>|代わりに、<xref:System.Runtime.InteropServices.ComTypes.ITypeComp?displayProperty=fullName> を使用してください。|  
-|<xref:System.Runtime.InteropServices.UCOMITypeInfo?displayProperty=fullName>|代わりに、<xref:System.Runtime.InteropServices.ComTypes.ITypeInfo?displayProperty=fullName> を使用してください。|  
-|<xref:System.Runtime.InteropServices.UCOMITypeLib?displayProperty=fullName>|代わりに、<xref:System.Runtime.InteropServices.ComTypes.ITypeLib?displayProperty=fullName> を使用してください。|  
-|<xref:System.Runtime.InteropServices.VARDESC?displayProperty=fullName>|代わりに、<xref:System.Runtime.InteropServices.ComTypes.VARDESC?displayProperty=fullName> を使用してください。|  
-|<xref:System.Runtime.InteropServices.VARFLAGS?displayProperty=fullName>|代わりに、<xref:System.Runtime.InteropServices.ComTypes.VARFLAGS?displayProperty=fullName> を使用してください。|  
+|<xref:System.Runtime.InteropServices.STATSTG?displayProperty=fullName>|代わりに、 <xref:System.Runtime.InteropServices.ComTypes.STATSTG?displayProperty=fullName> を使用してください。|  
+|<xref:System.Runtime.InteropServices.SYSKIND?displayProperty=fullName>|代わりに、 <xref:System.Runtime.InteropServices.ComTypes.SYSKIND?displayProperty=fullName> を使用してください。|  
+|<xref:System.Runtime.InteropServices.TYPEATTR?displayProperty=fullName>|代わりに、 <xref:System.Runtime.InteropServices.ComTypes.TYPEATTR?displayProperty=fullName> を使用してください。|  
+|<xref:System.Runtime.InteropServices.TYPEDESC?displayProperty=fullName>|代わりに、 <xref:System.Runtime.InteropServices.ComTypes.TYPEDESC?displayProperty=fullName> を使用してください。|  
+|<xref:System.Runtime.InteropServices.TYPEFLAGS?displayProperty=fullName>|代わりに、 <xref:System.Runtime.InteropServices.ComTypes.TYPEFLAGS?displayProperty=fullName> を使用してください。|  
+|<xref:System.Runtime.InteropServices.TYPEKIND?displayProperty=fullName>|代わりに、 <xref:System.Runtime.InteropServices.ComTypes.TYPEKIND?displayProperty=fullName> を使用してください。|  
+|<xref:System.Runtime.InteropServices.TYPELIBATTR?displayProperty=fullName>|代わりに、 <xref:System.Runtime.InteropServices.ComTypes.TYPELIBATTR?displayProperty=fullName> を使用してください。|  
+|<xref:System.Runtime.InteropServices.UCOMIBindCtx?displayProperty=fullName>|代わりに、 <xref:System.Runtime.InteropServices.ComTypes.IBindCtx?displayProperty=fullName> を使用してください。|  
+|<xref:System.Runtime.InteropServices.UCOMIConnectionPoint?displayProperty=fullName>|代わりに、 <xref:System.Runtime.InteropServices.ComTypes.IConnectionPoint?displayProperty=fullName> を使用してください。|  
+|<xref:System.Runtime.InteropServices.UCOMIConnectionPointContainer?displayProperty=fullName>|代わりに、 <xref:System.Runtime.InteropServices.ComTypes.IConnectionPointContainer?displayProperty=fullName> を使用してください。|  
+|<xref:System.Runtime.InteropServices.UCOMIEnumConnectionPoints?displayProperty=fullName>|代わりに、 <xref:System.Runtime.InteropServices.ComTypes.IEnumConnectionPoints?displayProperty=fullName> を使用してください。|  
+|<xref:System.Runtime.InteropServices.UCOMIEnumConnections?displayProperty=fullName>|代わりに、 <xref:System.Runtime.InteropServices.ComTypes.IEnumConnections?displayProperty=fullName> を使用してください。|  
+|<xref:System.Runtime.InteropServices.UCOMIEnumMoniker?displayProperty=fullName>|代わりに、 <xref:System.Runtime.InteropServices.ComTypes.IEnumMoniker?displayProperty=fullName> を使用してください。|  
+|<xref:System.Runtime.InteropServices.UCOMIEnumString?displayProperty=fullName>|代わりに、 <xref:System.Runtime.InteropServices.ComTypes.IEnumString?displayProperty=fullName> を使用してください。|  
+|<xref:System.Runtime.InteropServices.UCOMIEnumVARIANT?displayProperty=fullName>|代わりに、 <xref:System.Runtime.InteropServices.ComTypes.IEnumVARIANT?displayProperty=fullName> を使用してください。|  
+|<xref:System.Runtime.InteropServices.UCOMIMoniker?displayProperty=fullName>|代わりに、 <xref:System.Runtime.InteropServices.ComTypes.IMoniker?displayProperty=fullName> を使用してください。|  
+|<xref:System.Runtime.InteropServices.UCOMIPersistFile?displayProperty=fullName>|代わりに、 <xref:System.Runtime.InteropServices.ComTypes.IPersistFile?displayProperty=fullName> を使用してください。|  
+|<xref:System.Runtime.InteropServices.UCOMIRunningObjectTable?displayProperty=fullName>|代わりに、 <xref:System.Runtime.InteropServices.ComTypes.IRunningObjectTable?displayProperty=fullName> を使用してください。|  
+|<xref:System.Runtime.InteropServices.UCOMIStream?displayProperty=fullName>|代わりに、 <xref:System.Runtime.InteropServices.ComTypes.IStream?displayProperty=fullName> を使用してください。|  
+|<xref:System.Runtime.InteropServices.UCOMITypeComp?displayProperty=fullName>|代わりに、 <xref:System.Runtime.InteropServices.ComTypes.ITypeComp?displayProperty=fullName> を使用してください。|  
+|<xref:System.Runtime.InteropServices.UCOMITypeInfo?displayProperty=fullName>|代わりに、 <xref:System.Runtime.InteropServices.ComTypes.ITypeInfo?displayProperty=fullName> を使用してください。|  
+|<xref:System.Runtime.InteropServices.UCOMITypeLib?displayProperty=fullName>|代わりに、 <xref:System.Runtime.InteropServices.ComTypes.ITypeLib?displayProperty=fullName> を使用してください。|  
+|<xref:System.Runtime.InteropServices.VARDESC?displayProperty=fullName>|代わりに、 <xref:System.Runtime.InteropServices.ComTypes.VARDESC?displayProperty=fullName> を使用してください。|  
+|<xref:System.Runtime.InteropServices.VARFLAGS?displayProperty=fullName>|代わりに、 <xref:System.Runtime.InteropServices.ComTypes.VARFLAGS?displayProperty=fullName> を使用してください。|  
 |<xref:System.Security.SecurityCriticalScope?displayProperty=fullName>|<xref:System.Security.SecurityCriticalScope> は、.NET 2.0 の透過的な互換性のみを目的として使用されます。|  
 |<xref:System.Security.SecurityTreatAsSafeAttribute?displayProperty=fullName>|<xref:System.Security.SecurityTreatAsSafeAttribute> は、.NET 2.0 の透過的な互換性のみを目的として使用されます。 代わりに、<xref:System.Security.SecuritySafeCriticalAttribute?displayProperty=fullName> を使用してください。|  
 |<xref:System.Security.Policy.FirstMatchCodeGroup?displayProperty=fullName>|この型は互換性のために残されていますが、.NET Framework の将来のリリースでは削除されます。|  
@@ -150,7 +153,8 @@ ms.lasthandoff: 04/18/2017
  [ページのトップへ](#introduction)  
   
 <a name="Core"></a>   
-### <a name="assembly-systemcoredll"></a>アセンブリ: System.Core.dll  
+### アセンブリ: System.Core.dll
+<a id="assembly-systemcoredll" class="xliff"></a>  
   
 |型|メッセージ|  
 |----------|-------------|  
@@ -159,7 +163,8 @@ ms.lasthandoff: 04/18/2017
  [ページのトップへ](#introduction)  
   
 <a name="data"></a>   
-### <a name="assembly-systemdatadll"></a>アセンブリ: System.Data.dll  
+### アセンブリ: System.Data.dll
+<a id="assembly-systemdatadll" class="xliff"></a>  
   
 |型|メッセージ|  
 |----------|-------------|  
@@ -171,7 +176,8 @@ ms.lasthandoff: 04/18/2017
  [ページのトップへ](#introduction)  
   
 <a name="oracleclient"></a>   
-### <a name="assembly-systemdataoracleclientdll"></a>アセンブリ: System.Data.OracleClient.dll  
+### アセンブリ: System.Data.OracleClient.dll
+<a id="assembly-systemdataoracleclientdll" class="xliff"></a>  
   
 |型|メッセージ|  
 |----------|-------------|  
@@ -187,29 +193,31 @@ ms.lasthandoff: 04/18/2017
  [ページのトップへ](#introduction)  
   
 <a name="design"></a>   
-### <a name="assembly-systemdesigndll"></a>アセンブリ: System.Design.dll  
+### アセンブリ: System.Design.dll
+<a id="assembly-systemdesigndll" class="xliff"></a>  
   
 |型|メッセージ|  
 |----------|-------------|  
-|<xref:System.ComponentModel.Design.LocalizationExtenderProvider?displayProperty=fullName>|このクラスの使用は推奨されていません。 代わりに、<xref:System.ComponentModel.Design.Serialization.CodeDomLocalizationProvider?displayProperty=fullName> を使用してください。|  
+|<xref:System.ComponentModel.Design.LocalizationExtenderProvider?displayProperty=fullName>|このクラスの使用は推奨されていません。 代わりに、 <xref:System.ComponentModel.Design.Serialization.CodeDomLocalizationProvider?displayProperty=fullName> を使用してください。|  
 |<xref:System.Web.UI.Design.DataBindingCollectionConverter?displayProperty=fullName>|データ バインディングの編集は、プロパティ グリッドではなく、<xref:System.ComponentModel.Design.DesignerActionList?displayProperty=fullName> から起動されるので、この型の使用は推奨されていません。|  
 |<xref:System.Web.UI.Design.DataBindingCollectionEditor?displayProperty=fullName>|データ バインディングの編集は、プロパティ グリッドではなく、<xref:System.ComponentModel.Design.DesignerActionList?displayProperty=fullName> から起動されるので、この型の使用は推奨されていません。|  
 |<xref:System.Web.UI.Design.IControlDesignerBehavior?displayProperty=fullName>|別の方法として、<xref:System.Web.UI.Design.IControlDesignerTag?displayProperty=fullName> および <xref:System.Web.UI.Design.IControlDesignerView?displayProperty=fullName> を使用することをお勧めします。|  
 |<xref:System.Web.UI.Design.IHtmlControlDesignerBehavior?displayProperty=fullName>|別の方法として、<xref:System.Web.UI.Design.IControlDesignerTag?displayProperty=fullName> および <xref:System.Web.UI.Design.IControlDesignerView?displayProperty=fullName> を使用することをお勧めします。|  
 |<xref:System.Web.UI.Design.ITemplateEditingFrame?displayProperty=fullName>|テンプレート編集は <xref:System.Web.UI.Design.ControlDesigner?displayProperty=fullName> で処理されるので、この型の使用は推奨されていません。 テンプレート編集をサポートするには、<xref:System.Web.UI.Design.ControlDesigner.TemplateGroups%2A?displayProperty=fullName> プロパティのテンプレート データを公開して、<xref:System.Web.UI.Design.ControlDesigner.SetViewFlags%2A?displayProperty=fullName> を呼び出します。|  
-|<xref:System.Web.UI.Design.IWebFormReferenceManager?displayProperty=fullName>|別の方法として、<xref:System.Web.UI.Design.WebFormsReferenceManager?displayProperty=fullName> を使用することをお勧めします。 <xref:System.Web.UI.Design.WebFormsReferenceManager> は機能が追加されており、さらに機能を拡張できます。 <xref:System.Web.UI.Design.WebFormsReferenceManager> を取得するには、<xref:System.Web.UI.Design.ControlDesigner?displayProperty=fullName> から `RootDesigner.ReferenceManager` プロパティを使用します。|  
-|<xref:System.Web.UI.Design.IWebFormsDocumentService?displayProperty=fullName>|別の方法として、<xref:System.Web.UI.Design.WebFormsRootDesigner?displayProperty=fullName> を使用することをお勧めします。 <xref:System.Web.UI.Design.WebFormsRootDesigner> は機能が追加されており、さらに機能を拡張できます。 <xref:System.Web.UI.Design.WebFormsRootDesigner> を取得するには、<xref:System.Web.UI.Design.ControlDesigner?displayProperty=fullName> から <xref:System.Web.UI.Design.ControlDesigner.RootDesigner%2A> プロパティを使用します。|  
+|<xref:System.Web.UI.Design.IWebFormReferenceManager?displayProperty=fullName>|別の方法として、<xref:System.Web.UI.Design.WebFormsReferenceManager?displayProperty=fullName> を使用することをお勧めします。 <xref:System.Web.UI.Design.WebFormsReferenceManager> は機能が追加されており、さらに機能を拡張できます。 <xref:System.Web.UI.Design.WebFormsReferenceManager> を取得するには、`RootDesigner.ReferenceManager` から <xref:System.Web.UI.Design.ControlDesigner?displayProperty=fullName> プロパティを使用します。|  
+|<xref:System.Web.UI.Design.IWebFormsDocumentService?displayProperty=fullName>|別の方法として、<xref:System.Web.UI.Design.WebFormsRootDesigner?displayProperty=fullName> を使用することをお勧めします。 <xref:System.Web.UI.Design.WebFormsRootDesigner> は機能が追加されており、さらに機能を拡張できます。 <xref:System.Web.UI.Design.WebFormsRootDesigner> を取得するには、<xref:System.Web.UI.Design.ControlDesigner.RootDesigner%2A> から <xref:System.Web.UI.Design.ControlDesigner?displayProperty=fullName> プロパティを使用します。|  
 |<xref:System.Web.UI.Design.ITemplateEditingService?displayProperty=fullName>|テンプレート編集は <xref:System.Web.UI.Design.ControlDesigner?displayProperty=fullName> で処理されるので、この型の使用は推奨されていません。 テンプレート編集をサポートするには、<xref:System.Web.UI.Design.ControlDesigner.TemplateGroups%2A?displayProperty=fullName> プロパティのテンプレート データを公開して、<xref:System.Web.UI.Design.ControlDesigner.SetViewFlags%2A?displayProperty=fullName> を呼び出します。|  
-|<xref:System.Web.UI.Design.ReadWriteControlDesigner?displayProperty=fullName>|別の方法として、コンテンツの編集に <xref:System.Web.UI.Design.EditableDesignerRegion?displayProperty=fullName> が使用されるので、<xref:System.Web.UI.Design.ContainerControlDesigner?displayProperty=fullName> を使用することをお勧めします。 デザイナーの各領域を使用すると、編集する対象のコンテンツの制御を強化できます。|  
+|<xref:System.Web.UI.Design.ReadWriteControlDesigner?displayProperty=fullName>|別の方法として、コンテンツの編集に <xref:System.Web.UI.Design.ContainerControlDesigner?displayProperty=fullName> が使用されるので、<xref:System.Web.UI.Design.EditableDesignerRegion?displayProperty=fullName> を使用することをお勧めします。 デザイナーの各領域を使用すると、編集する対象のコンテンツの制御を強化できます。|  
 |<xref:System.Web.UI.Design.TemplateEditingService?displayProperty=fullName>|テンプレート編集は <xref:System.Web.UI.Design.ControlDesigner?displayProperty=fullName> で処理されるので、この型の使用は推奨されていません。 テンプレート編集をサポートするには、<xref:System.Web.UI.Design.ControlDesigner.TemplateGroups%2A?displayProperty=fullName> プロパティのテンプレート データを公開して、<xref:System.Web.UI.Design.ControlDesigner.SetViewFlags%2A?displayProperty=fullName> を呼び出します。|  
 |<xref:System.Web.UI.Design.TemplateEditingVerb?displayProperty=fullName>|テンプレート編集は <xref:System.Web.UI.Design.ControlDesigner?displayProperty=fullName> で処理されるので、この型の使用は推奨されていません。 テンプレート編集をサポートするには、<xref:System.Web.UI.Design.ControlDesigner.TemplateGroups%2A?displayProperty=fullName> プロパティのテンプレート データを公開して、<xref:System.Web.UI.Design.ControlDesigner.SetViewFlags%2A?displayProperty=fullName> を呼び出します。|  
-|<xref:System.Web.UI.Design.WebControls.CalendarAutoFormatDialog?displayProperty=fullName>|[オートフォーマット] ダイアログ ボックスはデザイナー ホストによって起動されるので、この型の使用は推奨されていません。 使用できる [オートフォーマット] の一覧は、<xref:System.Web.UI.Design.ControlDesigner.AutoFormats%2A?displayProperty=fullName> プロパティの <xref:System.Web.UI.Design.ControlDesigner?displayProperty=fullName> で公開されています。|  
-|<xref:System.Web.UI.Design.WebControls.PanelDesigner?displayProperty=fullName>|別の方法として、コンテンツの編集に <xref:System.Web.UI.Design.EditableDesignerRegion?displayProperty=fullName> が使用されるので、<xref:System.Web.UI.Design.WebControls.PanelContainerDesigner?displayProperty=fullName> を使用することをお勧めします。 デザイナーの各領域を使用すると、編集する対象のコンテンツの制御を強化できます。|  
+|<xref:System.Web.UI.Design.WebControls.CalendarAutoFormatDialog?displayProperty=fullName>|[オートフォーマット] ダイアログ ボックスはデザイナー ホストによって起動されるので、この型の使用は推奨されていません。 使用できる [オートフォーマット] の一覧は、<xref:System.Web.UI.Design.ControlDesigner?displayProperty=fullName> プロパティの <xref:System.Web.UI.Design.ControlDesigner.AutoFormats%2A?displayProperty=fullName> に公開されています。|  
+|<xref:System.Web.UI.Design.WebControls.PanelDesigner?displayProperty=fullName>|別の方法として、コンテンツの編集に <xref:System.Web.UI.Design.WebControls.PanelContainerDesigner?displayProperty=fullName> が使用されるので、<xref:System.Web.UI.Design.EditableDesignerRegion?displayProperty=fullName> を使用することをお勧めします。 デザイナーの各領域を使用すると、編集する対象のコンテンツの制御を強化できます。|  
   
  [ページのトップへ](#introduction)  
   
 <a name="system"></a>   
-### <a name="assembly-systemdll"></a>アセンブリ: System.dll  
+### アセンブリ: System.dll
+<a id="assembly-systemdll" class="xliff"></a>  
   
 |型|メッセージ|  
 |----------|-------------|  
@@ -218,13 +226,14 @@ ms.lasthandoff: 04/18/2017
 |<xref:System.ComponentModel.Design.Serialization.RootDesignerSerializerAttribute?displayProperty=fullName>|この属性は推奨されていません。 代わりに、<xref:System.ComponentModel.Design.Serialization.DesignerSerializerAttribute?displayProperty=fullName> を使用してください。 たとえば、CodeDom のルート デザイナーを指定するには、`DesignerSerializerAttribute\(...,typeof\(TypeCodeDomSerializer\)\)` を使用します。|  
 |<xref:System.Diagnostics.DiagnosticsConfigurationHandler?displayProperty=fullName>|このクラスの使用は推奨されていません。|  
 |<xref:System.Diagnostics.PerformanceCounterManager?displayProperty=fullName>|このクラスの使用は推奨されていません。 代わりに、<xref:System.Diagnostics.PerformanceCounter?displayProperty=fullName> クラスからパフォーマンス カウンターを使用してください。|  
-|<xref:System.Net.GlobalProxySelection?displayProperty=fullName>|このクラスの使用は推奨されていません。 グローバルな既定のプロキシにアクセスして設定するには、代わりに、<xref:System.Net.WebRequest.DefaultWebProxy%2A?displayProperty=fullName> を使用してください。 <xref:System.Net.GlobalProxySelection.GetEmptyWebProxy%2A?displayProperty=fullName> の代わりに、"null" を使用してください。|  
+|<xref:System.Net.GlobalProxySelection?displayProperty=fullName>|このクラスの使用は推奨されていません。 グローバルな既定のプロキシにアクセスして設定するには、代わりに、<xref:System.Net.WebRequest.DefaultWebProxy%2A?displayProperty=fullName> を使用してください。 <xref:System.Net.GlobalProxySelection.GetEmptyWebProxy%2A?displayProperty=fullName> の代わりに、'null' を使用してください。|  
 |<xref:System.Net.Sockets.SocketClientAccessPolicyProtocol?displayProperty=fullName>|最初に .NET Framework 4.5 で廃止されました。<br /><br /> この型を使用すると、コンパイラ エラーが発生します。<br /><br /> この API は、.NET Framework インフラストラクチャをサポートします。独自に作成したコードから直接使用するためのものではありません。|  
   
  [ページのトップへ](#introduction)  
   
 <a name="enterpriseservices"></a>   
-### <a name="assembly-systementerpriseservicesdll"></a>アセンブリ: System.EnterpriseServices.dll  
+### アセンブリ: System.EnterpriseServices.dll
+<a id="assembly-systementerpriseservicesdll" class="xliff"></a>  
   
 |型|メッセージ|  
 |----------|-------------|  
@@ -233,7 +242,8 @@ ms.lasthandoff: 04/18/2017
  [ページのトップへ](#introduction)  
   
 <a name="net"></a>   
-### <a name="assembly-systemnetdll"></a>アセンブリ: System.Net.dll  
+### アセンブリ: System.Net.dll
+<a id="assembly-systemnetdll" class="xliff"></a>  
   
 |型|メッセージ|  
 |----------|-------------|  
@@ -250,12 +260,13 @@ ms.lasthandoff: 04/18/2017
  [ページのトップへ](#introduction)  
   
 <a name="servicemodel"></a>   
-### <a name="assembly-systemservicemodeldll"></a>アセンブリ: System.ServiceModel.dll  
+### アセンブリ: System.ServiceModel.dll
+<a id="assembly-systemservicemodeldll" class="xliff"></a>  
   
 |種類|メッセージ|  
 |----------|-------------|  
 |<xref:System.ServiceModel.NetPeerTcpBinding?displayProperty=fullName>|最初に .NET Framework 4.5 で廃止されました。<br /><br /> ピア チャネルの機能は互換性のために残されていますが、今後削除される予定です。|  
-|<xref:System.ServiceModel.Channels.HttpCookieContainerBindingElement?displayProperty=fullName>|最初に .NET Framework 4.5 で廃止されました。<br /><br /> この型は互換性のために残されています。 Http <xref:System.Net.CookieContainer> を有効にするには、Http バインドか <xref:System.ServiceModel.Channels.HttpTransportBindingElement> で `AllowCookies` プロパティを使用します。|  
+|<xref:System.ServiceModel.Channels.HttpCookieContainerBindingElement?displayProperty=fullName>|最初に .NET Framework 4.5 で廃止されました。<br /><br /> この型は互換性のために残されています。 Http <xref:System.Net.CookieContainer> を有効にするには、Http バインドか `AllowCookies` で <xref:System.ServiceModel.Channels.HttpTransportBindingElement> プロパティを使用します。|  
 |<xref:System.ServiceModel.Channels.PeerCustomResolverBindingElement?displayProperty=fullName>|最初に .NET Framework 4.5 で廃止されました。<br /><br /> ピア チャネルの機能は互換性のために残されていますが、今後削除される予定です。|  
 |<xref:System.ServiceModel.Channels.PeerTransportBindingElement?displayProperty=fullName>|最初に .NET Framework 4.5 で廃止されました。<br /><br /> ピア チャネルの機能は互換性のために残されていますが、今後削除される予定です。|  
 |<xref:System.ServiceModel.Configuration.NetPeerTcpBindingCollectionElement?displayProperty=fullName>|最初に .NET Framework 4.5 で廃止されました。<br /><br /> ピア チャネルの機能は互換性のために残されていますが、今後削除される予定です。|  
@@ -266,7 +277,8 @@ ms.lasthandoff: 04/18/2017
  [ページのトップへ](#introduction)  
   
 <a name="web"></a>   
-### <a name="assembly-systemwebdll"></a>アセンブリ: System.Web.dll  
+### アセンブリ: System.Web.dll
+<a id="assembly-systemwebdll" class="xliff"></a>  
   
 |型|メッセージ|  
 |----------|-------------|  
@@ -287,7 +299,8 @@ ms.lasthandoff: 04/18/2017
  [ページのトップへ](#introduction)  
   
 <a name="mobile"></a>   
-### <a name="assembly-systemwebmobiledll"></a>アセンブリ: System.Web.Mobile.dll  
+### アセンブリ: System.Web.Mobile.dll
+<a id="assembly-systemwebmobiledll" class="xliff"></a>  
   
 |種類|メッセージ|  
 |----------|-------------|  
@@ -487,7 +500,8 @@ ms.lasthandoff: 04/18/2017
  [ページのトップへ](#introduction)  
   
 <a name="workflow_activities"></a>   
-### <a name="assembly-systemworkflowactivitiesdll"></a>アセンブリ: System.Workflow.Activities.dll  
+### アセンブリ: System.Workflow.Activities.dll
+<a id="assembly-systemworkflowactivitiesdll" class="xliff"></a>  
   
 |型|メッセージ|  
 |----------|-------------|  
@@ -500,13 +514,14 @@ ms.lasthandoff: 04/18/2017
  [ページのトップへ](#introduction)  
   
 <a name="workflow_componentmodel"></a>   
-### <a name="assembly-systemworkflowcomponentmodeldll"></a>アセンブリ: System.Workflow.ComponentModel.dll  
+### アセンブリ: System.Workflow.ComponentModel.dll
+<a id="assembly-systemworkflowcomponentmodeldll" class="xliff"></a>  
   
 |型|メッセージ|  
 |----------|-------------|  
-|<xref:System.Workflow.ComponentModel.GetValueOverride?displayProperty=fullName> と <xref:System.Workflow.ComponentModel.SetValueOverride?displayProperty=fullName> を除く <xref:System.Workflow.ComponentModel> 名前空間のすべての型|最初に .NET Framework 4.5 で廃止されました。<br /><br /> System.Workflow.\* 型の使用は推奨されていません。 代わりに、<xref:System.Activities>.\* の新しい型を使用してください。|  
-|<xref:System.Workflow.ComponentModel.Compiler.ValidationError?displayProperty=fullName> と <xref:System.Workflow.ComponentModel.Compiler.ValidationErrorCollection?displayProperty=fullName> を除く <xref:System.Workflow.ComponentModel.Compiler> 名前空間のすべての型|最初に .NET Framework 4.5 で廃止されました。<br /><br /> System.Workflow.\* 型の使用は推奨されていません。 代わりに、<xref:System.Activities>.\* の新しい型を使用してください。|  
-|<xref:System.Workflow.ComponentModel.Design.ConnectorEventHandler> を除く <xref:System.Workflow.ComponentModel.Design> 名前空間のすべての型|最初に .NET Framework 4.5 で廃止されました。<br /><br /> System.Workflow.\* 型の使用は推奨されていません。 代わりに、<xref:System.Activities>.\* の新しい型を使用してください。|  
+|<xref:System.Workflow.ComponentModel> と <xref:System.Workflow.ComponentModel.GetValueOverride?displayProperty=fullName> を除く <xref:System.Workflow.ComponentModel.SetValueOverride?displayProperty=fullName> 名前空間のすべての型。|最初に .NET Framework 4.5 で廃止されました。<br /><br /> System.Workflow.\* 型の使用は推奨されていません。 代わりに、<xref:System.Activities>.\* の新しい型を使用してください。|  
+|<xref:System.Workflow.ComponentModel.Compiler> と <xref:System.Workflow.ComponentModel.Compiler.ValidationError?displayProperty=fullName> を除く <xref:System.Workflow.ComponentModel.Compiler.ValidationErrorCollection?displayProperty=fullName> 名前空間のすべての型。|最初に .NET Framework 4.5 で廃止されました。<br /><br /> System.Workflow.\* 型の使用は推奨されていません。 代わりに、<xref:System.Activities>.\* の新しい型を使用してください。|  
+|<xref:System.Workflow.ComponentModel.Design> を除く<xref:System.Workflow.ComponentModel.Design.ConnectorEventHandler> 名前空間のすべての型|最初に .NET Framework 4.5 で廃止されました。<br /><br /> System.Workflow.\* 型の使用は推奨されていません。 代わりに、<xref:System.Activities>.\* の新しい型を使用してください。|  
 |<xref:System.Workflow.ComponentModel.Serialization.ActivityCodeDomSerializationManager?displayProperty=fullName>|最初に .NET Framework 4.5 で廃止されました。<br /><br /> System.Workflow.\* 型の使用は推奨されていません。 代わりに、<xref:System.Activities>.\* の新しい型を使用してください。|  
 |<xref:System.Workflow.ComponentModel.Serialization.ActivityCodeDomSerializer?displayProperty=fullName>|最初に .NET Framework 4.5 で廃止されました。<br /><br /> System.Workflow.\* 型の使用は推奨されていません。 代わりに、<xref:System.Activities>.\* の新しい型を使用してください。|  
 |<xref:System.Workflow.ComponentModel.Serialization.ActivityMarkupSerializer?displayProperty=fullName>|最初に .NET Framework 4.5 で廃止されました。<br /><br /> System.Workflow.\* 型の使用は推奨されていません。 代わりに、<xref:System.Activities>.\* の新しい型を使用してください。|  
@@ -518,51 +533,54 @@ ms.lasthandoff: 04/18/2017
  [ページのトップへ](#introduction)  
   
 <a name="workflow_runtime"></a>   
-### <a name="assembly-systemworkflowruntimedll"></a>アセンブリ: System.Workflow.Runtime.dll  
+### アセンブリ: System.Workflow.Runtime.dll
+<a id="assembly-systemworkflowruntimedll" class="xliff"></a>  
   
 |型|メッセージ|  
 |----------|-------------| 
-|System.Activities.Statements.Interop](assetId:///T:System.Activities.Statements.Interop)|最初に .NET Framework 4.5 で廃止されました。<br /><br />Workflow Foundation 3.0 の型の使用は推奨されていません。 代わりに、<xref:System.Activities>.\* の Workflow 4.0 の型を使用してください。|  
+|<xref:System.Activities.Statements.Interop>|最初に .NET Framework 4.5 で廃止されました。<br /><br />Workflow Foundation 3.0 の型の使用は推奨されていません。 代わりに、<xref:System.Activities>.\* の Workflow 4.0 の型を使用してください。|  
 |<xref:System.Activities.Tracking.InteropTrackingRecord>|最初に .NET Framework 4.5 で廃止されました。<br /><br />Workflow Foundation 3.0 の型の使用は推奨されていません。 代わりに、<xref:System.Activities>.\* の Workflow 4.0 の型を使用してください。|   
 |<xref:System.Workflow.Runtime> 名前空間のすべての型|最初に .NET Framework 4.5 で廃止されました。<br /><br /> System.Workflow.\* 型の使用は推奨されていません。 代わりに、<xref:System.Activities>.\* の新しい型を使用してください。|  
 |<xref:System.Workflow.Runtime.Configuration> 名前空間のすべての型|最初に .NET Framework 4.5 で廃止されました。<br /><br /> System.Workflow.\* 型の使用は推奨されていません。 代わりに、<xref:System.Activities>.\* の新しい型を使用してください。|  
-|<xref:System.Workflow.Runtime.DebugEngine.DebugEngineCallback> を除く <xref:System.Workflow.Runtime.DebugEngine> 名前空間のすべての型|最初に .NET Framework 4.5 で廃止されました。<br /><br /> System.Workflow.\* 型の使用は推奨されていません。 代わりに、<xref:System.Activities>.\* の新しい型を使用してください。|  
-|<xref:System.Workflow.Runtime.Hosting.WorkflowCommitWorkBatchService.CommitWorkBatchCallback> を除く <xref:System.Workflow.Runtime.Hosting> 名前空間のすべての型|最初に .NET Framework 4.5 で廃止されました。<br /><br /> System.Workflow.\* 型の使用は推奨されていません。 代わりに、<xref:System.Activities>.\* の新しい型を使用してください。|  
+|<xref:System.Workflow.Runtime.DebugEngine> を除く<xref:System.Workflow.Runtime.DebugEngine.DebugEngineCallback> 名前空間のすべての型|最初に .NET Framework 4.5 で廃止されました。<br /><br /> System.Workflow.\* 型の使用は推奨されていません。 代わりに、<xref:System.Activities>.\* の新しい型を使用してください。|  
+|<xref:System.Workflow.Runtime.Hosting> を除く<xref:System.Workflow.Runtime.Hosting.WorkflowCommitWorkBatchService.CommitWorkBatchCallback> 名前空間のすべての型|最初に .NET Framework 4.5 で廃止されました。<br /><br /> System.Workflow.\* 型の使用は推奨されていません。 代わりに、<xref:System.Activities>.\* の新しい型を使用してください。|  
 |<xref:System.Workflow.Runtime.Tracking> 名前空間のすべての型|最初に .NET Framework 4.5 で廃止されました。<br /><br /> System.Workflow.\* 型の使用は推奨されていません。 代わりに、<xref:System.Activities>.\* の新しい型を使用してください。|  
   
  [ページのトップへ](#introduction)  
   
 <a name="workflowservices"></a>   
-### <a name="assembly-systemworkflowservicesdll"></a>アセンブリ: System.WorkflowServices.dll  
+### アセンブリ: System.WorkflowServices.dll
+<a id="assembly-systemworkflowservicesdll" class="xliff"></a>  
   
 |型|メッセージ|  
 |----------|-------------|  
-|<xref:System.ServiceModel.WorkflowServiceHost?displayProperty=fullName>|最初に .NET Framework 4.5 で廃止されました。<br /><br /> WF 3 の型は廃止されました。 代わりに、<xref:System.Activities>.\* の新しい WF 4 の型を使用してください。|  
-|<xref:System.ServiceModel.Activation.WorkflowServiceHostFactory?displayProperty=fullName>|最初に .NET Framework 4.5 で廃止されました。<br /><br /> WF 3 の型は廃止されました。 代わりに、<xref:System.Activities>.\* の新しい WF 4 の型を使用してください。|  
-|<xref:System.ServiceModel.Activities.Description.WorkflowRuntimeEndpoint?displayProperty=fullName>|最初に .NET Framework 4.5 で廃止されました。<br /><br /> WF 3 の型は廃止されました。 代わりに、<xref:System.Activities>.\* の新しい WF 4 の型を使用してください。|  
-|<xref:System.ServiceModel.Configuration.ExtendedWorkflowRuntimeServiceElementCollection?displayProperty=fullName>|最初に .NET Framework 4.5 で廃止されました。<br /><br /> WF 3 の型は廃止されました。 代わりに、<xref:System.Activities>.\* の新しい WF 4 の型を使用してください。|  
-|<xref:System.ServiceModel.Configuration.PersistenceProviderElement?displayProperty=fullName>|最初に .NET Framework 4.5 で廃止されました。<br /><br /> WF 3 の型は廃止されました。 代わりに、<xref:System.Activities>.\* の新しい WF 4 の型を使用してください。|  
-|<xref:System.ServiceModel.Configuration.WorkflowRuntimeElement?displayProperty=fullName>|最初に .NET Framework 4.5 で廃止されました。<br /><br /> WF 3 の型は廃止されました。 代わりに、<xref:System.Activities>.\* の新しい WF 4 の型を使用してください。|  
-|<xref:System.ServiceModel.Description.DurableOperationAttribute?displayProperty=fullName>|最初に .NET Framework 4.5 で廃止されました。<br /><br /> WF 3 の型は廃止されました。 代わりに、<xref:System.Activities>.\* の新しい WF 4 の型を使用してください。|  
-|<xref:System.ServiceModel.Description.DurableServiceAttribute?displayProperty=fullName>|最初に .NET Framework 4.5 で廃止されました。<br /><br /> WF 3 の型は廃止されました。 代わりに、<xref:System.Activities>.\* の新しい WF 4 の型を使用してください。|  
-|<xref:System.ServiceModel.Description.PersistenceProviderBehavior?displayProperty=fullName>|最初に .NET Framework 4.5 で廃止されました。<br /><br /> WF 3 の型は廃止されました。 代わりに、<xref:System.Activities>.\* の新しい WF 4 の型を使用してください。|  
-|<xref:System.ServiceModel.Description.UnknownExceptionAction?displayProperty=fullName>|最初に .NET Framework 4.5 で廃止されました。<br /><br /> WF 3 の型は廃止されました。 代わりに、<xref:System.Activities>.\* の新しい WF 4 の型を使用してください。|  
-|<xref:System.ServiceModel.Description.WorkflowRuntimeBehavior?displayProperty=fullName>|最初に .NET Framework 4.5 で廃止されました。<br /><br /> WF 3 の型は廃止されました。 代わりに、<xref:System.Activities>.\* の新しい WF 4 の型を使用してください。|  
-|<xref:System.ServiceModel.Dispatcher.DurableOperationContext?displayProperty=fullName>|最初に .NET Framework 4.5 で廃止されました。<br /><br /> WF 3 の型は廃止されました。 代わりに、<xref:System.Activities>.\* の新しい WF 4 の型を使用してください。|  
-|<xref:System.ServiceModel.Persistence.InstanceLockException?displayProperty=fullName>|最初に .NET Framework 4.5 で廃止されました。<br /><br /> WF 3 の型は廃止されました。 代わりに、<xref:System.Activities>.\* の新しい WF 4 の型を使用してください。|  
-|<xref:System.ServiceModel.Persistence.InstanceNotFoundException?displayProperty=fullName>|最初に .NET Framework 4.5 で廃止されました。<br /><br /> WF 3 の型は廃止されました。 代わりに、<xref:System.Activities>.\* の新しい WF 4 の型を使用してください。|  
-|<xref:System.ServiceModel.Persistence.LockingPersistenceProvider?displayProperty=fullName>|最初に .NET Framework 4.5 で廃止されました。<br /><br /> WF 3 の型は廃止されました。 代わりに、<xref:System.Activities>.\* の新しい WF 4 の型を使用してください。|  
-|<xref:System.ServiceModel.Persistence.PersistenceException?displayProperty=fullName>|最初に .NET Framework 4.5 で廃止されました。<br /><br /> WF 3 の型は廃止されました。 代わりに、<xref:System.Activities>.\* の新しい WF 4 の型を使用してください。|  
-|<xref:System.ServiceModel.Persistence.PersistenceProvider?displayProperty=fullName>|最初に .NET Framework 4.5 で廃止されました。<br /><br /> WF 3 の型は廃止されました。 代わりに、<xref:System.Activities>.\* の新しい WF 4 の型を使用してください。|  
-|<xref:System.ServiceModel.Persistence.PersistenceProviderFactory?displayProperty=fullName>|最初に .NET Framework 4.5 で廃止されました。<br /><br /> WF 3 の型は廃止されました。 代わりに、<xref:System.Activities>.\* の新しい WF 4 の型を使用してください。|  
-|<xref:System.ServiceModel.Persistence.SqlPersistenceProviderFactory?displayProperty=fullName>|最初に .NET Framework 4.5 で廃止されました。<br /><br /> WF 3 の型は廃止されました。 代わりに、<xref:System.Activities>.\* の新しい WF 4 の型を使用してください。|  
-|<xref:System.Workflow.Activities?displayProperty=fullName> 名前空間のすべての型|最初に .NET Framework 4.5 で廃止されました。<br /><br /> WF 3 の型は廃止されました。 代わりに、<xref:System.Activities>.\* の新しい WF 4 の型を使用してください。|  
-|<xref:System.Workflow.Runtime.Hosting.ChannelManagerService?displayProperty=fullName>|最初に .NET Framework 4.5 で廃止されました。<br /><br /> WF 3 の型は廃止されました。 代わりに、<xref:System.Activities>.\* の新しい WF 4 の型を使用してください。|  
+|<xref:System.ServiceModel.WorkflowServiceHost?displayProperty=fullName>|最初に .NET Framework 4.5 で廃止されました。<br /><br /> WF 3 の型は廃止されました。 代わりに、<xref:System.Activities>.\* の新しい WF 4 型を使用してください。|  
+|<xref:System.ServiceModel.Activation.WorkflowServiceHostFactory?displayProperty=fullName>|最初に .NET Framework 4.5 で廃止されました。<br /><br /> WF 3 の型は廃止されました。 代わりに、<xref:System.Activities>.\* の新しい WF 4 型を使用してください。|  
+|<xref:System.ServiceModel.Activities.Description.WorkflowRuntimeEndpoint?displayProperty=fullName>|最初に .NET Framework 4.5 で廃止されました。<br /><br /> WF 3 の型は廃止されました。 代わりに、<xref:System.Activities>.\* の新しい WF 4 型を使用してください。|  
+|<xref:System.ServiceModel.Configuration.ExtendedWorkflowRuntimeServiceElementCollection?displayProperty=fullName>|最初に .NET Framework 4.5 で廃止されました。<br /><br /> WF 3 の型は廃止されました。 代わりに、<xref:System.Activities>.\* の新しい WF 4 型を使用してください。|  
+|<xref:System.ServiceModel.Configuration.PersistenceProviderElement?displayProperty=fullName>|最初に .NET Framework 4.5 で廃止されました。<br /><br /> WF 3 の型は廃止されました。 代わりに、<xref:System.Activities>.\* の新しい WF 4 型を使用してください。|  
+|<xref:System.ServiceModel.Configuration.WorkflowRuntimeElement?displayProperty=fullName>|最初に .NET Framework 4.5 で廃止されました。<br /><br /> WF 3 の型は廃止されました。 代わりに、<xref:System.Activities>.\* の新しい WF 4 型を使用してください。|  
+|<xref:System.ServiceModel.Description.DurableOperationAttribute?displayProperty=fullName>|最初に .NET Framework 4.5 で廃止されました。<br /><br /> WF 3 の型は廃止されました。 代わりに、<xref:System.Activities>.\* の新しい WF 4 型を使用してください。|  
+|<xref:System.ServiceModel.Description.DurableServiceAttribute?displayProperty=fullName>|最初に .NET Framework 4.5 で廃止されました。<br /><br /> WF 3 の型は廃止されました。 代わりに、<xref:System.Activities>.\* の新しい WF 4 型を使用してください。|  
+|<xref:System.ServiceModel.Description.PersistenceProviderBehavior?displayProperty=fullName>|最初に .NET Framework 4.5 で廃止されました。<br /><br /> WF 3 の型は廃止されました。 代わりに、<xref:System.Activities>.\* の新しい WF 4 型を使用してください。|  
+|<xref:System.ServiceModel.Description.UnknownExceptionAction?displayProperty=fullName>|最初に .NET Framework 4.5 で廃止されました。<br /><br /> WF 3 の型は廃止されました。 代わりに、<xref:System.Activities>.\* の新しい WF 4 型を使用してください。|  
+|<xref:System.ServiceModel.Description.WorkflowRuntimeBehavior?displayProperty=fullName>|最初に .NET Framework 4.5 で廃止されました。<br /><br /> WF 3 の型は廃止されました。 代わりに、<xref:System.Activities>.\* の新しい WF 4 型を使用してください。|  
+|<xref:System.ServiceModel.Dispatcher.DurableOperationContext?displayProperty=fullName>|最初に .NET Framework 4.5 で廃止されました。<br /><br /> WF 3 の型は廃止されました。 代わりに、<xref:System.Activities>.\* の新しい WF 4 型を使用してください。|  
+|<xref:System.ServiceModel.Persistence.InstanceLockException?displayProperty=fullName>|最初に .NET Framework 4.5 で廃止されました。<br /><br /> WF 3 の型は廃止されました。 代わりに、<xref:System.Activities>.\* の新しい WF 4 型を使用してください。|  
+|<xref:System.ServiceModel.Persistence.InstanceNotFoundException?displayProperty=fullName>|最初に .NET Framework 4.5 で廃止されました。<br /><br /> WF 3 の型は廃止されました。 代わりに、<xref:System.Activities>.\* の新しい WF 4 型を使用してください。|  
+|<xref:System.ServiceModel.Persistence.LockingPersistenceProvider?displayProperty=fullName>|最初に .NET Framework 4.5 で廃止されました。<br /><br /> WF 3 の型は廃止されました。 代わりに、<xref:System.Activities>.\* の新しい WF 4 型を使用してください。|  
+|<xref:System.ServiceModel.Persistence.PersistenceException?displayProperty=fullName>|最初に .NET Framework 4.5 で廃止されました。<br /><br /> WF 3 の型は廃止されました。 代わりに、<xref:System.Activities>.\* の新しい WF 4 型を使用してください。|  
+|<xref:System.ServiceModel.Persistence.PersistenceProvider?displayProperty=fullName>|最初に .NET Framework 4.5 で廃止されました。<br /><br /> WF 3 の型は廃止されました。 代わりに、<xref:System.Activities>.\* の新しい WF 4 型を使用してください。|  
+|<xref:System.ServiceModel.Persistence.PersistenceProviderFactory?displayProperty=fullName>|最初に .NET Framework 4.5 で廃止されました。<br /><br /> WF 3 の型は廃止されました。 代わりに、<xref:System.Activities>.\* の新しい WF 4 型を使用してください。|  
+|<xref:System.ServiceModel.Persistence.SqlPersistenceProviderFactory?displayProperty=fullName>|最初に .NET Framework 4.5 で廃止されました。<br /><br /> WF 3 の型は廃止されました。 代わりに、<xref:System.Activities>.\* の新しい WF 4 型を使用してください。|  
+|<xref:System.Workflow.Activities?displayProperty=fullName> 名前空間のすべての型|最初に .NET Framework 4.5 で廃止されました。<br /><br /> WF 3 の型は廃止されました。 代わりに、<xref:System.Activities>.\* の新しい WF 4 型を使用してください。|  
+|<xref:System.Workflow.Runtime.Hosting.ChannelManagerService?displayProperty=fullName>|最初に .NET Framework 4.5 で廃止されました。<br /><br /> WF 3 の型は廃止されました。 代わりに、<xref:System.Activities>.\* の新しい WF 4 型を使用してください。|  
   
  [ページのトップへ](#introduction)  
   
 <a name="xaml"></a>   
-### <a name="assembly-systemxamldll"></a>アセンブリ: System.Xaml.dll  
+### アセンブリ: System.Xaml.dll
+<a id="assembly-systemxamldll" class="xliff"></a>  
   
 |種類|メッセージ|  
 |----------|-------------|  
@@ -571,20 +589,22 @@ ms.lasthandoff: 04/18/2017
  [ページのトップへ](#introduction)  
   
 <a name="xml"></a>   
-### <a name="assembly-systemxmldll"></a>アセンブリ: System.Xml.dll  
+### アセンブリ: System.Xml.dll
+<a id="assembly-systemxmldll" class="xliff"></a>  
   
 |型|メッセージ|  
 |----------|-------------|  
 |<xref:System.Xml.IApplicationResourceStreamResolver?displayProperty=fullName>|最初に .NET Framework 4.5 で廃止されました。<br /><br /> この型を使用すると、コンパイラ エラーが発生します。<br /><br /> この API は、.NET Framework インフラストラクチャをサポートします。独自に作成したコードから直接使用するためのものではありません。|  
 |<xref:System.Xml.Schema.XmlSchemaCollection?displayProperty=fullName>|スキーマ コンパイルおよび検証には、<xref:System.Xml.Schema.XmlSchemaSet?displayProperty=fullName> を使用してください。|  
-|<xref:System.Xml.XmlValidatingReader?displayProperty=fullName>|代わりに、適切な <xref:System.Xml.XmlReaderSettings?displayProperty=fullName> を使用する <xref:System.Xml.XmlReader.Create%2A?displayProperty=fullName> メソッドによって作成された <xref:System.Xml.XmlReader?displayProperty=fullName> を使用してください。|  
+|<xref:System.Xml.XmlValidatingReader?displayProperty=fullName>|代わりに、適切な <xref:System.Xml.XmlReader?displayProperty=fullName> を使用する <xref:System.Xml.XmlReader.Create%2A?displayProperty=fullName> メソッドによって作成された <xref:System.Xml.XmlReaderSettings?displayProperty=fullName> を使用してください。|  
 |<xref:System.Xml.XmlXapResolver?displayProperty=fullName>|この型を使用すると、コンパイラ エラーが発生します。 この API は、.NET Framework インフラストラクチャをサポートします。独自に作成したコードから直接使用するためのものではありません。|  
 |<xref:System.Xml.Xsl.XslTransform?displayProperty=fullName>|このクラスの使用は推奨されていません。 代わりに、<xref:System.Xml.Xsl.XslCompiledTransform?displayProperty=fullName> を使用してください。|  
   
  [ページのトップへ](#introduction)  
   
 <a name="WindowsBase"></a>   
-### <a name="assembly-windowsbasedll"></a>アセンブリ: WindowsBase.dll  
+### アセンブリ: WindowsBase.dll
+<a id="assembly-windowsbasedll" class="xliff"></a>  
   
 |型|メッセージ|  
 |----------|-------------|  
@@ -593,27 +613,31 @@ ms.lasthandoff: 04/18/2017
  [ページのトップへ](#introduction)  
   
 <a name="obsolete_types_in_microsoft_assemblies"></a>   
-## <a name="obsolete-types-in-microsoft-assemblies"></a>互換性のために残されている Microsoft アセンブリの型  
+## 互換性のために残されている Microsoft アセンブリの型
+<a id="obsolete-types-in-microsoft-assemblies" class="xliff"></a>  
  以下のセクションで、互換性のために残されている Microsoft アセンブリの型を示します。 これらのアセンブリは、個別の言語 (たとえば、Microsoft.JScript.dll や Microsoft.VisualC.dll) を対象とした特殊な目的のアセンブリです。  
   
 <a name="IEHost"></a>   
-### <a name="assembly-iehostdll-and-ieexecexe"></a>アセンブリ: IEHost.dll and IEExec.exe  
+### アセンブリ: IEHost.dll and IEExec.exe
+<a id="assembly-iehostdll-and-ieexecexe" class="xliff"></a>  
  IEHost.dll および IEExec.exe アセンブリは .NET Framework から削除されています。 これらのアセンブリのすべての型およびメンバーは廃止され、[!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] ではサポートされていません。 これらのアセンブリは Internet Explorer で Windows フォーム コントロールをホストし、実行可能ファイルを実行するために使用されていました。 代替手段としては、ClickOnce、XAML ブラウザー アプリケーション (XBAP)、および Microsoft Silverlight をお勧めします。  
   
  [ページのトップへ](#introduction)  
   
 <a name="Engine"></a>   
-### <a name="assembly-microsoftbuildenginedll"></a>アセンブリ: Microsoft.Build.Engine.dll  
+### アセンブリ: Microsoft.Build.Engine.dll
+<a id="assembly-microsoftbuildenginedll" class="xliff"></a>  
   
 |型|メッセージ|  
 |----------|-------------|  
-|<xref:Microsoft.Build.BuildEngine.Engine?displayProperty=fullName>|このクラスの使用は推奨されていません。 代わりに、<!--zz <xref:Microsoft.Build?displayProperty=fullName> -->`Microsoft.Build` アセンブリの <xref:Microsoft.Build.Evaluation.ProjectCollection?displayProperty=fullName> を使用してください。|  
-|<xref:Microsoft.Build.BuildEngine.Project?displayProperty=fullName>|このクラスの使用は推奨されていません。 代わりに、<xref:Microsoft.Build?displayProperty=fullName> アセンブリの <xref:Microsoft.Build.Evaluation.ProjectCollection?displayProperty=fullName> を使用してください。|  
+|<xref:Microsoft.Build.BuildEngine.Engine?displayProperty=fullName>|このクラスの使用は推奨されていません。 代わりに、*Microsoft.Build* アセンブリの <xref:Microsoft.Build.Evaluation.ProjectCollection?displayProperty=fullName> を使用してください。|  
+|<xref:Microsoft.Build.BuildEngine.Project?displayProperty=fullName>|このクラスの使用は推奨されていません。 代わりに、*Microsoft.Build* アセンブリの <xref:Microsoft.Build.Evaluation.ProjectCollection?displayProperty=fullName> を使用してください。|  
   
  [ページのトップへ](#introduction)  
   
 <a name="jscript"></a>   
-### <a name="assembly-microsoftjscriptdll"></a>アセンブリ: Microsoft.JScript.dll  
+### アセンブリ: Microsoft.JScript.dll
+<a id="assembly-microsoftjscriptdll" class="xliff"></a>  
   
 |型|メッセージ|  
 |----------|-------------|  
@@ -639,7 +663,8 @@ ms.lasthandoff: 04/18/2017
  [ページのトップへ](#introduction)  
   
 <a name="VBCompat"></a>   
-### <a name="assembly-microsoftvisualbasiccompatibilitydll"></a>アセンブリ: Microsoft.VisualBasic.Compatibility.dll  
+### アセンブリ: Microsoft.VisualBasic.Compatibility.dll
+<a id="assembly-microsoftvisualbasiccompatibilitydll" class="xliff"></a>  
   
 |型|メッセージ|  
 |----------|-------------|  
@@ -714,7 +739,8 @@ ms.lasthandoff: 04/18/2017
  [ページのトップへ](#introduction)  
   
 <a name="VBCompatData"></a>   
-### <a name="assembly-microsoftvisualbasiccompatibilitydatadll"></a>アセンブリ: Microsoft.VisualBasic.Compatibility.Data.dll  
+### アセンブリ: Microsoft.VisualBasic.Compatibility.Data.dll
+<a id="assembly-microsoftvisualbasiccompatibilitydatadll" class="xliff"></a>  
   
 |型|メッセージ|  
 |----------|-------------|  
@@ -771,7 +797,8 @@ ms.lasthandoff: 04/18/2017
  [ページのトップへ](#introduction)  
   
 <a name="visualc"></a>   
-### <a name="assembly-microsoftvisualcdll"></a>アセンブリ: Microsoft.VisualC.dll  
+### アセンブリ: Microsoft.VisualC.dll
+<a id="assembly-microsoftvisualcdll" class="xliff"></a>  
   
 |型|メッセージ|  
 |----------|-------------|  
@@ -786,6 +813,8 @@ ms.lasthandoff: 04/18/2017
 |<xref:Microsoft.VisualC.NeedsCopyConstructorModifier?displayProperty=fullName>|Microsoft.VisualC.dll は互換性のために残されているアセンブリであり、下位互換性のためだけに存在します。|  
 |<xref:Microsoft.VisualC.NoSignSpecifiedModifier?displayProperty=fullName>|Microsoft.VisualC.dll は互換性のために残されているアセンブリであり、下位互換性のためだけに存在します。|  
   
-## <a name="see-also"></a>関連項目  
+## 関連項目
+<a id="see-also" class="xliff"></a>  
  [クラス ライブラリの互換性のために残されている機能](../../../docs/framework/whats-new/whats-obsolete.md)   
  [互換性のために残されているメンバー](../../../docs/framework/whats-new/obsolete-members.md)
+

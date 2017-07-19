@@ -20,7 +20,7 @@ ms.translationtype: Human Translation
 ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
 ms.openlocfilehash: 9dcf0802b1d9a1d6b63d108289cbc814b73e8c48
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/18/2017
+ms.lasthandoff: 05/22/2017
 
 ---
 # <a name="when-to-use-generic-collections"></a>ジェネリック コレクションを使用する状況
@@ -34,11 +34,11 @@ ms.lasthandoff: 04/18/2017
   
 -   <xref:System.Collections.Generic.Dictionary%602> および <xref:System.Collections.Concurrent.ConcurrentDictionary%602> は、<xref:System.Collections.Hashtable> に対応するジェネリック クラスです。  
   
--   <xref:System.Collections.ObjectModel.Collection%601> は、<xref:System.Collections.CollectionBase> に対応するジェネリック クラスです。 <xref:System.Collections.ObjectModel.Collection%601> は基底クラスとして使用できますが、<xref:System.Collections.CollectionBase> の場合とは異なり、これは抽象ではありません。 そのため、より簡単に使用できます。  
+-   <xref:System.Collections.ObjectModel.Collection%601> は、<xref:System.Collections.CollectionBase> に対応するジェネリック クラスです。 <xref:System.Collections.ObjectModel.Collection%601> は基本クラスとして使用できますが、<xref:System.Collections.CollectionBase> とは異なり、抽象クラスではありません。 そのため、より簡単に使用できます。  
   
 -   <xref:System.Collections.ObjectModel.ReadOnlyCollection%601> は、<xref:System.Collections.ReadOnlyCollectionBase> に対応するジェネリック クラスです。 <xref:System.Collections.ObjectModel.ReadOnlyCollection%601> は抽象クラスではなく、既存の <xref:System.Collections.Generic.List%601> を読み取り専用のコレクションとして簡単に公開できるようにするコンストラクターを含んでいます。  
   
--   <xref:System.Collections.Generic.Queue%601>、<xref:System.Collections.Concurrent.ConcurrentQueue%601>、<xref:System.Collections.Generic.Stack%601>、<xref:System.Collections.Concurrent.ConcurrentStack%601>、および <xref:System.Collections.Generic.SortedList%602> ジェネリック クラスは、同じ名前を持つそれぞれの非ジェネリック クラスに対応します。  
+-   <xref:System.Collections.Generic.Queue%601>、<xref:System.Collections.Concurrent.ConcurrentQueue%601>、<xref:System.Collections.Generic.Stack%601>、<xref:System.Collections.Concurrent.ConcurrentStack%601>、および <xref:System.Collections.Generic.SortedList%602> ジェネリック クラスは、同じ名前を持つそれぞれの非ジェネリック クラスに対応しています。  
   
 ## <a name="additional-types"></a>その他の型  
  いくつかのジェネリック コレクション型には、対応する非ジェネリック型がありません。 次に例を示します。  
@@ -47,19 +47,19 @@ ms.lasthandoff: 04/18/2017
   
 -   <xref:System.Collections.Generic.SortedDictionary%602> は、挿入と取得の O(log `n`) 操作で並べ替えられたディクショナリで、<xref:System.Collections.Generic.SortedList%602> の代替として役立ちます。  
   
--   <xref:System.Collections.ObjectModel.KeyedCollection%602> はリストとディクショナリが組み合わされたものです。これは、独自のキーを含むオブジェクトを格納できます。  
+-   <xref:System.Collections.ObjectModel.KeyedCollection%602> は、リストとディクショナリを組み合わせたもので、独自のキーを含むオブジェクトの格納方法を提供します。  
   
--   <xref:System.Collections.Concurrent.BlockingCollection%601> は、境界およびブロッキング機能が備わったコレクション クラスを実装します。  
+-   <xref:System.Collections.Concurrent.BlockingCollection%601> は、境界ブロッキング機能を備えたコレクション クラスを実装します。  
   
--   <xref:System.Collections.Concurrent.ConcurrentBag%601> を使用して、順序付けられていない要素をすばやく挿入および削除できます。  
+-   <xref:System.Collections.Concurrent.ConcurrentBag%601> は、順序のない要素の高速な挿入および削除を提供します。  
   
 ## <a name="linq-to-objects"></a>LINQ to Objects  
  LINQ to Objects 機能では、オブジェクト型が <xref:System.Collections.IEnumerable?displayProperty=fullName> インターフェイスまたは <xref:System.Collections.Generic.IEnumerable%601?displayProperty=fullName> インターフェイスを実装している限り、LINQ クエリを使用してメモリ内オブジェクトにアクセスできます。 LINQ クエリはデータ アクセス用の一般的なパターンです。通常、これは標準の `foreach` ループよりも簡潔で読みやすく、フィルター処理、並べ替え、およびグループ化機能を備えています。 さらに、LINQ クエリによってパフォーマンスを向上させることができます。 詳しくは、「[LINQ to Objects](http://msdn.microsoft.com/library/73cafe73-37cf-46e7-bfa7-97c7eea7ced9)」および「[Parallel LINQ (PLINQ)](../../../docs/standard/parallel-programming/parallel-linq-plinq.md)」を参照してください。  
   
 ## <a name="additional-functionality"></a>その他の機能  
- 一部のジェネリック型には、非ジェネリック コレクション型にはない機能があります。 たとえば、非ジェネリックの <xref:System.Collections.ArrayList> クラスに対応する <xref:System.Collections.Generic.List%601> クラスには、リストを検索するメソッドを指定できる <xref:System.Predicate%601> デリゲート、リストの各要素に作用するメソッドを表す <xref:System.Action%601> デリゲートや、型間の変換を定義できるようにする <xref:System.Converter%602> デリゲートなどの、汎用デリゲートを受け取るメソッドが多数あります。  
+ 一部のジェネリック型には、非ジェネリック コレクション型にはない機能があります。 たとえば、非ジェネリックの <xref:System.Collections.Generic.List%601> クラスに対応する <xref:System.Collections.ArrayList> クラスには、リストを検索するメソッドを指定できる <xref:System.Predicate%601> デリゲートや、リストの各要素に作用するメソッドを表す <xref:System.Action%601> デリゲートや、型間の変換を定義できるようにする <xref:System.Converter%602> デリゲートなどの、汎用デリゲートを受け取るメソッドが多数あります。  
   
- <xref:System.Collections.Generic.List%601> クラスを使用すると、リストの並べ替えと検索を行う独自の <xref:System.Collections.Generic.IComparer%601> ジェネリック インターフェイス実装を指定できます。 <xref:System.Collections.Generic.SortedDictionary%602> クラスおよび <xref:System.Collections.Generic.SortedList%602> クラスにもこの機能があります。 また、これらのクラスを使用すると、コレクションの作成時に比較演算子を指定できます。 同様に、<xref:System.Collections.Generic.Dictionary%602> クラスと <xref:System.Collections.ObjectModel.KeyedCollection%602> クラスを使用して、独自の等価比較子を指定できます。  
+ <xref:System.Collections.Generic.List%601> クラスを使用すると、リストの並べ替えと検索を行う独自の <xref:System.Collections.Generic.IComparer%601> ジェネリック インターフェイス実装を指定できます。 <xref:System.Collections.Generic.SortedDictionary%602> クラスと <xref:System.Collections.Generic.SortedList%602> クラスにもこの機能があります。 また、これらのクラスを使用すると、コレクションの作成時に比較演算子を指定できます。 同様に、<xref:System.Collections.Generic.Dictionary%602> クラスと <xref:System.Collections.ObjectModel.KeyedCollection%602> クラスを使用すると、独自の等値比較子を指定できます。  
   
 ## <a name="see-also"></a>関連項目  
  [コレクションとデータ構造体](../../../docs/standard/collections/index.md)   

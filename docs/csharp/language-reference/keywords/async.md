@@ -31,10 +31,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 8734f639e45f12ddd987a1c34e7f3ac38aa7d73f
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 50e128137fde445f64e10cf7c2a1ee5fdecb34e6
+ms.openlocfilehash: e7f4cfa81de3c4db41d9303abf65cfd0edc926a4
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/01/2017
 
 ---
 # <a name="async-c-reference"></a>async (C# リファレンス)
@@ -64,7 +65,7 @@ string contents = await contentsTask;
  次の例は、非同期のイベント ハンドラー `StartButton_Click` と非同期メソッド `ExampleMethodAsync` との間の制御構造および制御フローを示しています。 非同期メソッドの結果は、ダウンロードされた web サイトの長さです。 このコードは、Visual Studio で Windows Presentation Foundation (WPF) アプリまたは Windows ストア アプリを作成する場合に適しています。アプリの設定に関するコード内のコメントを参照してください。  
   
 ```csharp  
-// You can run this code in Visual Studio 2013 as a WPF app or a Windows Store app.  
+// You can run this code in Visual Studio as a WPF app or a Windows Store app.  
 // You need a button (StartButton) and a textbox (ResultsTextBox).  
 // Remember to set the names and handler so that you have something like this:  
 // <Button Content="Button" HorizontalAlignment="Left" Margin="88,77,0,0" VerticalAlignment="Top" Width="75"  

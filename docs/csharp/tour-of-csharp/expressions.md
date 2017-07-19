@@ -1,5 +1,5 @@
 ---
-title: "C# の式 | C# 言語のツアー"
+title: "C# の式 - C# 言語のツアー | Microsoft Docs"
 description: "式、オペランド、および演算子は、C# 言語の構成要素です"
 keywords: ".NET、C#、式、演算子、オペランド"
 author: BillWagner
@@ -11,14 +11,15 @@ ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 20d5eb10-7381-47b9-ad90-f1cc895aa27e
 ms.translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: ce5f71ab3e797015a26dddbf0579c84dec580750
+ms.sourcegitcommit: 4437ce5d344cf06d30e31911def6287999fc6ffc
+ms.openlocfilehash: 66eae1fcb7eca4572c49dca78bc31155464a6920
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/22/2017
+ms.lasthandoff: 05/23/2017
 
 ---
 
-# <a name="expressions"></a>式
+<a id="expressions" class="xliff"></a>
+# 式
 
 *式*は、*オペランド*と*演算子*で構成されます。 式の演算子は、オペランドに適用する演算を表します。 演算子の例として、`+`、`-`、`*`、`/`、および `new` などがあります。 オペランドの例としては、リテラル、フィールド、ローカル変数、式などがあります。
 

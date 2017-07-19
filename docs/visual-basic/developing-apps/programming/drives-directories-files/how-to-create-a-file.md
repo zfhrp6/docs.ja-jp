@@ -1,61 +1,78 @@
 ---
-title: "How to: Create a File in Visual Basic | Microsoft Docs"
-ms.custom: ""
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "text files, creating"
-  - "files, creating"
+title: "方法 : Visual Basic でファイルを作成する | Microsoft Docs"
+ms.custom: 
+ms.date: 2015-07-20
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-visual-basic
+ms.topic: article
+dev_langs:
+- VB
+helpviewer_keywords:
+- text files, creating
+- files, creating
 ms.assetid: 0253bb6d-5519-4a50-b882-b93ef5cca0d9
 caps.latest.revision: 15
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 15
----
-# How to: Create a File in Visual Basic
-[!INCLUDE[vs2017banner](../../../../visual-basic/developing-apps/includes/vs2017banner.md)]
+author: dotnet-bot
+ms.author: dotnetcontent
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: Human Translation
+ms.sourcegitcommit: fe32676f0e39ed109a68f39584cf41aec5f5ce90
+ms.openlocfilehash: f9e2b11b6eed10bac04d22b202e7e16cfa70225d
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/22/2017
 
-この例では、<xref:System.IO.File> クラスの <xref:System.IO.File.Create%2A> メソッドを使用して、指定したパスに空のテキスト ファイルを作成します。  
+---
+# <a name="how-to-create-a-file-in-visual-basic"></a>方法 : Visual Basic でファイルを作成する
+この例では、<xref:System.IO.File> クラスで <xref:System.IO.File.Create%2A> メソッドを使用して、指定したパスに空のテキスト ファイルを作成します。  
   
-## 使用例  
+## <a name="example"></a>例  
  [!code-vb[VbFileIOMisc#1](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/VisualBasic/how-to-create-a-file_1.vb)]  
   
-## コードのコンパイル  
- `file` 変数を使用して、ファイルに書き込みます。  
+## <a name="compiling-the-code"></a>コードのコンパイル  
+ ファイルに書き込むには、`file` 変数を使用します。  
   
-## 信頼性の高いプログラミング  
- ファイルが既に存在する場合は、新しいファイルに置き換えられます。  
+## <a name="robust-programming"></a>信頼性の高いプログラミング  
+ ファイルが既に存在する場合、それは置き換えられます。  
   
  次の条件を満たす場合は、例外が発生する可能性があります。  
   
--   パス名の形式に誤りがある。  たとえば、不正な文字が含まれているか、空白のみである \(<xref:System.ArgumentException>\)。  
+-   パス名が不適切である場合。 たとえば、不正な文字が含まれている場合や、空白だけの場合などです (<xref:System.ArgumentException>)。  
   
--   パスが読み取り専用である場合 \(<xref:System.IO.IOException>\)。  
+-   パスが読み取り専用の場合 (<xref:System.IO.IOException>)。  
   
--   パス名が `Nothing` である場合 \(<xref:System.ArgumentNullException>\)。  
+-   パス名が `Nothing` の場合 (<xref:System.ArgumentNullException>)。  
   
--   パス名が長すぎる場合 \(<xref:System.IO.PathTooLongException>\)。  
+-   パス名が長すぎる場合 (<xref:System.IO.PathTooLongException>)。  
   
--   パスが無効である場合 \(<xref:System.IO.DirectoryNotFoundException>\)。  
+-   パスが無効な場合 (<xref:System.IO.DirectoryNotFoundException>)。  
   
--   パスにコロン \(":"\) だけが指定されている場合 \(<xref:System.NotSupportedException>\)。  
+-   パスがコロン ":" のみである場合 (<xref:System.NotSupportedException>)。  
   
-## .NET Framework セキュリティ  
- 部分信頼の環境では、<xref:System.Security.SecurityException> がスローされることがあります。  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 部分信頼環境では、<xref:System.Security.SecurityException> がスローされる場合があります。  
   
- <xref:System.IO.File.Create%2A> メソッドの呼び出しでは、<xref:System.Security.Permissions.FileIOPermission> が必要です。  
+ <xref:System.IO.File.Create%2A> メソッドへの呼び出しでは、<xref:System.Security.Permissions.FileIOPermission> が必要です。  
   
- ユーザーにファイル作成のアクセス許可がない場合には、<xref:System.UnauthorizedAccessException> がスローされます。  
+ ユーザーがファイルを作成するアクセス許可を持っていない場合、<xref:System.UnauthorizedAccessException> がスローされます。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.IO>   
  <xref:System.IO.File.Create%2A>   
- [部分信頼コードからのライブラリの使用](../Topic/Using%20Libraries%20from%20Partially%20Trusted%20Code.md)   
- [コード アクセス セキュリティの基礎](../Topic/Code%20Access%20Security%20Basics.md)
+ [部分信頼コードからのライブラリの使用](../../../../framework/misc/using-libraries-from-partially-trusted-code.md)   
+ [コード アクセス セキュリティの基礎](https://msdn.microsoft.com/library/33tceax8)

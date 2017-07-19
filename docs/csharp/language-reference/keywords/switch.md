@@ -36,10 +36,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: b6f8b110e087093bd47573a1a4a05752be91e743
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 31905a37f09db5f5192123f0118252fbe8b02eff
+ms.openlocfilehash: b53ab404e7a5ea0dfee7ca64b668a7e6fe026bde
+ms.contentlocale: ja-jp
+ms.lasthandoff: 06/15/2017
 
 ---
 # <a name="switch-c-reference"></a>switch (C# リファレンス)
@@ -208,7 +209,7 @@ C# 7 以降では、case ステートメントは相互に排他的である必�
 この例で、`Shape`オブジェクトが `null` かどうかをテストしようとする `when` 句は実行されません。 `null` をテストするための正しい型パターンは `case null:` です。
 
 ## <a name="c-language-specification"></a>C# 言語仕様  
- [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec_md.md)]  
+ [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
 ## <a name="see-also"></a>関連項目  
 

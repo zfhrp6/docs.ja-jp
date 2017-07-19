@@ -16,10 +16,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 8fb5101eabd95dd6574caf344a428afcd4bf648c
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: fe32676f0e39ed109a68f39584cf41aec5f5ce90
+ms.openlocfilehash: 6ce347ec50378590946c756b3adbf64fe855874d
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/10/2017
 
 ---
 # <a name="collections-c"></a>コレクション (C#)
@@ -156,7 +157,7 @@ numbers.ForEach(
 // Output: 0 2 4 6 8  
 ```  
   
- <xref:System.Collections.Generic.List%601> の要素の型の場合、独自のクラスを定義することもできます。 次の例では、<xref:System.Collections.Generic.List%601> で使用する `Galaxy` クラスがコードに定義されます。  
+ <xref:System.Collections.Generic.List%601> の要素の型は、独自のクラスでも定義できます。 次の例では、`Galaxy` が使用する <xref:System.Collections.Generic.List%601> クラスがコードに定義されます。  
   
 ```csharp  
 private static void IterateThroughList()  
@@ -204,14 +205,14 @@ public class Galaxy
 ### <a name="systemcollectionsgeneric-classes"></a>System.Collections.Generic のクラス  
  <xref:System.Collections.Generic> 名前空間の 1 つのクラスを使用すると、ジェネリック コレクションを作成できます。 ジェネリック コレクションは、コレクション内のすべての項目が同じデータ型である場合に便利です。 ジェネリック コレクションには該当するデータ型しか追加できないため、厳密な型指定が適用されます。  
   
- 次の表には、<xref:System.Collections.Generic?displayProperty=fullName> 名前空間でよく使用されるいくつかのクラスを一覧します。  
+ 次のテーブルは <xref:System.Collections.Generic?displayProperty=fullName> 名前空間でよく使用されるクラスの一覧です:  
 
 |クラス|説明| 
 |---|---|  
 |<xref:System.Collections.Generic.Dictionary%602>|キーに基づいて編成された、キーと値のペアのコレクションを表します。|  
 |<xref:System.Collections.Generic.List%601>|インデックスを使用してアクセスできる、オブジェクトの一覧を表します。 リストの検索、並べ替え、および変更のメソッドを提供します。|  
 |<xref:System.Collections.Generic.Queue%601>|先入れ先出し (FIFO) のオブジェクトのコレクションを表します。|  
-|<xref:System.Collections.Generic.SortedList%602>|関連付けられた <xref:System.Collections.Generic.IComparer%601> 実装に基づいてキーで並べ替えられた、キーと値のペアのコレクションを表します。|  
+|<xref:System.Collections.Generic.SortedList%602>|関連付けられた <xref:System.Collections.Generic.IComparer%601> 実装に基づいて、キーにより並べ替えられた、キーと値のペアのコレクションを表します。|  
 |<xref:System.Collections.Generic.Stack%601>|後入れ先出し (LIFO) のオブジェクトのコレクションを表します。|  
   
  詳細については、「[一般的に使用されるコレクション型](../../../standard/collections/commonly-used-collection-types.md)」、「[コレクション クラスの選択](../../../standard/collections/selecting-a-collection-class.md)」、「@System.Collections.Generic」を参照してください。  
@@ -220,15 +221,15 @@ public class Galaxy
 ### <a name="systemcollectionsconcurrent-classes"></a>System.Collections.Concurrent のクラス  
  .NET Framework 4 以降では、<xref:System.Collections.Concurrent> 名前空間のコレクションによって、複数のスレッドからコレクション項目にアクセスするための効率的なスレッド セーフ操作が可能になります。  
   
- 複数のスレッドが同時にコレクションにアクセスするたびに、<xref:System.Collections.Generic?displayProperty=fullName> 名前空間と <xref:System.Collections?displayProperty=fullName> 名前空間の対応する型の代わりに、<xref:System.Collections.Concurrent> 名前空間のクラスが使用されます。 詳細については、「[スレッド セーフなコレクション](../../../standard/collections/threadsafe/index.md)」および「<xref:System.Collections.Concurrent>」を参照してください。  
+ <xref:System.Collections.Concurrent> 名前空間のクラスは、複数のスレッドがコレクションに同時にアクセスするときに、<xref:System.Collections.Generic?displayProperty=fullName> 名前空間および <xref:System.Collections?displayProperty=fullName> 名前空間の対応する型の代わりに使用する必要があります。 詳しくは、「[スレッド セーフなコレクション](../../../standard/collections/thread-safe/index.md)」と「<xref:System.Collections.Concurrent>」を参照してください。  
   
- <xref:System.Collections.Concurrent> 名前空間に含まれるクラスは、<xref:System.Collections.Concurrent.BlockingCollection%601>、<xref:System.Collections.Concurrent.ConcurrentDictionary%602>、<xref:System.Collections.Concurrent.ConcurrentQueue%601>、および <xref:System.Collections.Concurrent.ConcurrentStack%601> になります。  
+ <xref:System.Collections.Concurrent> 名前空間には、<xref:System.Collections.Concurrent.BlockingCollection%601>、<xref:System.Collections.Concurrent.ConcurrentDictionary%602>、<xref:System.Collections.Concurrent.ConcurrentQueue%601>、および <xref:System.Collections.Concurrent.ConcurrentStack%601> などのクラスがあります。  
   
 <a name="BKMK_Collections"></a>
 ### <a name="systemcollections-classes"></a>System.Collections のクラス  
- <xref:System.Collections?displayProperty=fullName> 名前空間のクラスでは、要素は、固有の型のオブジェクトとしてではなく、`Object` 型のオブジェクトとして格納されます。  
+ <xref:System.Collections?displayProperty=fullName> 名前空間のクラスでは、要素は、固有の型のオブジェクトとしてではなく `Object` 型のオブジェクトとして格納されます。  
   
- 可能であれば、 `System.Collections` 名前空間の従来の型ではなく、<xref:System.Collections.Generic?displayProperty=fullName> 名前空間または <xref:System.Collections.Concurrent> 名前空間のジェネリック コレクションを使用してください。  
+ できる限り、<xref:System.Collections.Generic?displayProperty=fullName> 名前空間の従来の型の代わりに、<xref:System.Collections.Concurrent> 名前空間または `System.Collections` 名前空間のジェネリック コレクションを使用します。  
   
  次のテーブルは `System.Collections` 名前空間でよく使用されるクラスの一覧です:  
   
@@ -313,7 +314,7 @@ private static Dictionary<string, Element> BuildDictionary2()
 }  
 ```  
   
- 次の例では、キーで項目をすばやく見つけるために、<xref:System.Collections.Generic.Dictionary%602.ContainsKey%2A> メソッドと `Dictionary` の <xref:System.Collections.Generic.Dictionary%602.Item%2A> プロパティを使用します。 `Item` プロパティでは、C# の `elements[symbol]` を使用して `elements` コレクションの項目にアクセスできます。  
+ 次の例では、キーによって項目をすばやく検索するために、<xref:System.Collections.Generic.Dictionary%602.ContainsKey%2A> の <xref:System.Collections.Generic.Dictionary%602.Item%2A> メソッドと `Dictionary` プロパティを使用します。 `Item` プロパティでは、C# の `elements[symbol]` を使用して `elements` コレクションの項目にアクセスできます。  
   
 ```csharp  
 private static void FindInDictionary(string symbol)  
@@ -332,7 +333,7 @@ private static void FindInDictionary(string symbol)
 }  
 ```  
   
- 次の例では、キーで項目をすばやく見つける <xref:System.Collections.Generic.Dictionary%602.TryGetValue%2A> メソッドを代わりに使用します。  
+ 次の例では、キーによって項目をすばやく検索するために、<xref:System.Collections.Generic.Dictionary%602.TryGetValue%2A> メソッドを代わりに使用します。  
   
 ```csharp  
 private static void FindInDictionary2(string symbol)  
@@ -396,11 +397,11 @@ public class Element
 
 <a name="BKMK_Sorting"></a>
 ## <a name="sorting-a-collection"></a>コレクションを並べ替える  
- 次の例では、コレクションを並べ替えるための手順を示しています。 この例では、<xref:System.Collections.Generic.List%601> に格納されている `Car` クラスのインスタンスを並べ替えます。 `Car` クラスでは、<xref:System.IComparable%601.CompareTo%2A> メソッドを実装する必要がある、<xref:System.IComparable%601> インターフェイスを実装します。  
+ 次の例では、コレクションを並べ替えるための手順を示しています。 この例は、`Car` に格納されている <xref:System.Collections.Generic.List%601> クラスのインスタンスの並べ替えを実行します。 `Car` クラスは、<xref:System.IComparable%601> のメソッドの実装を必要とする <xref:System.IComparable%601.CompareTo%2A> インターフェイスを実装します。  
   
  <xref:System.IComparable%601.CompareTo%2A> メソッドに対する各呼び出しは、並べ替えに使用される単一の比較を実行します。 `CompareTo` メソッドのユーザーが作成したコードは、現在のオブジェクトと別のオブジェクトとの各比較の値を戻します。 現在のオブジェクトが別のオブジェクトよりも小さい場合はゼロ未満の値を、大きい場合はゼロ以上の値を、等しい場合はゼロを戻します。 これによって、より大きい、より小さい、等しい、の条件をコードに定義することができます。  
   
- `ListCars` のメソッドでは、`cars.Sort()` ステートメントがリストを並べ替えます。 <xref:System.Collections.Generic.List%601> の <xref:System.Collections.Generic.List%601.Sort%2A> メソッドに対するこの呼び出しによって、`List` の `Car` オブジェクトに `CompareTo` が自動的に呼び出されるようになります。  
+ `ListCars` のメソッドでは、`cars.Sort()` ステートメントがリストを並べ替えます。 <xref:System.Collections.Generic.List%601.Sort%2A> の <xref:System.Collections.Generic.List%601> メソッドへの呼び出しによって、`CompareTo` メソッドは `Car` 内の `List` オブジェクトに自動的に呼び出されます。  
   
 ```csharp  
 private static void ListCars()  
@@ -474,13 +475,13 @@ public class Car : IComparable<Car>
   
 <a name="BKMK_CustomCollection"></a>
 ## <a name="defining-a-custom-collection"></a>カスタム コレクションを定義する  
- <xref:System.Collections.Generic.IEnumerable%601> または <xref:System.Collections.IEnumerable> インターフェイスを実装して、コレクションを定義できます。 詳細については、「[方法 : foreach を使用してコレクション クラスにアクセスする](../../../csharp/programming-guide/classes-and-structs/how-to-access-a-collection-class-with-foreach.md)」を参照してください。  
+ <xref:System.Collections.Generic.IEnumerable%601> または <xref:System.Collections.IEnumerable> のインターフェイスを実装してコレクションを定義できます。 詳細については、「[方法 : foreach を使用してコレクション クラスにアクセスする](../../../csharp/programming-guide/classes-and-structs/how-to-access-a-collection-class-with-foreach.md)」を参照してください。  
   
  カスタム コレクションを定義できますが、通常は、.NET Framework に含まれるコレクションを使用することが推奨されます。これについては、このトピックの[コレクションの種類](#BKMK_KindsOfCollections)で既に説明されています。  
   
- 次の例は、`AllColors` という名前のカスタム コレクション クラスを定義します。 このクラスでは、<xref:System.Collections.IEnumerable.GetEnumerator%2A> を実装する必要がある <xref:System.Collections.IEnumerable> インターフェイスを実装します。  
+ 次の例は、`AllColors` という名前のカスタム コレクション クラスを定義します。 このクラスは、<xref:System.Collections.IEnumerable> メソッドの実装を必要とする <xref:System.Collections.IEnumerable.GetEnumerator%2A> インターフェイスを実装します。  
   
- `GetEnumerator` メソッドは、`ColorEnumerator` クラスのインスタンスを戻します。 `ColorEnumerator` では、<xref:System.Collections.IEnumerator.Current%2A> プロパティ、<xref:System.Collections.IEnumerator.MoveNext%2A> メソッド、および <xref:System.Collections.IEnumerator.Reset%2A> メソッドを実装する必要がある、<xref:System.Collections.IEnumerator> インターフェイスを実装します。  
+ `GetEnumerator` メソッドは、`ColorEnumerator` クラスのインスタンスを戻します。 `ColorEnumerator` は、<xref:System.Collections.IEnumerator> プロパティ、<xref:System.Collections.IEnumerator.Current%2A> メソッド、および <xref:System.Collections.IEnumerator.MoveNext%2A> メソッドの実装を必要とする <xref:System.Collections.IEnumerator.Reset%2A> インターフェイスを実装します。  
   
 ```csharp  
 private static void ListColors()  
@@ -593,7 +594,7 @@ private static IEnumerable<int> EvenSequence(
  [プログラミングの概念 (C#)](../../../csharp/programming-guide/concepts/index.md)   
  [Option Strict ステートメント](../../../visual-basic/language-reference/statements/option-strict-statement.md)   
  [LINQ to Objects (C#)](../../../csharp/programming-guide/concepts/linq/linq-to-objects.md)   
- [Parallel LINQ (PLINQ)](http://msdn.microsoft.com/library/3d4d0cd3-bde4-490b-99e7-f4e41be96455)   
+ [Parallel LINQ (PLINQ)](../../../standard/parallel-programming/parallel-linq-plinq.md)   
  [コレクションとデータ構造体](../../../standard/collections/index.md)   
  [コレクションの作成と操作](http://msdn.microsoft.com/en-us/2065398e-eb1a-4821-9188-75f16e42e069)   
  [コレクション クラスの選択](../../../standard/collections/selecting-a-collection-class.md)   

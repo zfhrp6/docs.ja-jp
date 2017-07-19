@@ -18,15 +18,15 @@ author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.translationtype: Human Translation
-ms.sourcegitcommit: 9460c8b6ca8db927af4064e3567eca34c1bf5c91
-ms.openlocfilehash: c7acce9d41af7e72b04b89751a7b186c9581dfea
+ms.sourcegitcommit: 39e8e757a446b30ab18914465853138e1c239e40
+ms.openlocfilehash: 75b3c39fa2739b58fdee5c2183d5dfaaeb2f6af5
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/18/2017
+ms.lasthandoff: 05/22/2017
 
 ---
 # <a name="mitigation-grid-control39s-space-allocation-to-star-columns"></a>軽減策: グリッド コントロールの *-column へのディスク領域の割り当て
 
-.NET Framework 4.7 以降をターゲットとするアプリでは、WPF は <xref:System.Windows.Controls.Grid> コントロールが \*-column に領域を割り当てるために使用するアルゴリズムを置き換えます。 
+.NET Framework 4.7 以降を対象とするアプリでは、WPF は <xref:System.Windows.Controls.Grid> コントロールが \*-column に領域を割り当てるために使用するアルゴリズムを置き換えます。 
 
 ## <a name="whats-changed"></a>変更点
 

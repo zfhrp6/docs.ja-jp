@@ -20,10 +20,10 @@ author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.translationtype: Human Translation
-ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
-ms.openlocfilehash: 994da1622246d09930fa9b74d6debac4f7a24b5b
+ms.sourcegitcommit: 407b31c8b5825093d9ba6bab6329aaf8dd821572
+ms.openlocfilehash: f5bab95cc5a4ff49a0ff81e209f0a71c78914976
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/18/2017
+ms.lasthandoff: 05/22/2017
 
 ---
 # <a name="mitigation-new-64-bit-jit-compiler"></a>軽減策: 新しい 64 ビット JIT コンパイラ
@@ -63,17 +63,15 @@ ms.lasthandoff: 04/18/2017
 ## <a name="mitigation-of-other-issues"></a>その他の問題の軽減策  
  古い 64 ビット コンパイラと新しい 64 ビット JIT コンパイラでコンパイルされたコードの動作、またはアプリのデバッグ バージョンとリリース バージョン (両方とも新しい 64 ビット JIT コンパイラでコンパイル) の動作に違いが見られる場合は、次のようにして、古い 64 ビット JIT コンパイラでアプリをコンパイルすることができます。  
   
--   アプリケーションごとに、アプリケーションの構成ファイルに [\<useLegacyJIT>](../../../docs/framework/configure-apps/file-schema/runtime/uselegacyjit-element.md) 要素を追加できます。 次のように新しい 64 ビット JIT コンパイラでのコンパイルを無効にし、代わりに従来の 64 ビット JIT コンパイラを使用します。  
+-   アプリケーションごとに、アプリケーションの構成ファイルに [\<useLegacyJit>](../../../docs/framework/configure-apps/file-schema/runtime/uselegacyjit-element.md) 要素を追加できます。 次のように新しい 64 ビット JIT コンパイラでのコンパイルを無効にし、代わりに従来の 64 ビット JIT コンパイラを使用します。  
   
     ```xml  
-  
     <?xml version ="1.0"?>  
     <configuration>  
         <runtime>  
-           <useLegacyJIT enabled="1" />  
+           <useLegacyJit enabled="1" />  
         </runtime>  
     </configuration>  
-  
     ```  
   
 -   ユーザーごとに、`useLegacyJit` という `REG_DWORD` 値をレジストリの `HKEY_CURRENT_USER\SOFTWARE\Microsoft\.NETFramework` キーに追加できます。 値を 1 にすると、従来の 64 ビット JIT コンパイラが有効になり、値を 0 にすると、従来の 64 ビット JIT コンパイラが無効になり、新しい 64 ビット JIT コンパイラが有効になります。  
@@ -84,4 +82,5 @@ ms.lasthandoff: 04/18/2017
   
 ## <a name="see-also"></a>関連項目  
  [ランタイムの変更点](../../../docs/framework/migration-guide/runtime-changes-in-the-net-framework-4-6.md)   
- [\<useLegacyJIT > 要素](../../../docs/framework/configure-apps/file-schema/runtime/uselegacyjit-element.md)
+ [\<useLegacyJit> 要素](../../../docs/framework/configure-apps/file-schema/runtime/uselegacyjit-element.md)
+

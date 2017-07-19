@@ -27,9 +27,10 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
 ms.openlocfilehash: 1e5b1880e6821b2fd4595baad31f7a1bd5599ac4
+ms.contentlocale: ja-jp
 ms.lasthandoff: 03/13/2017
 
 ---
@@ -66,7 +67,7 @@ ms.lasthandoff: 03/13/2017
  フィールドを [readonly](../../../csharp/language-reference/keywords/readonly.md) として宣言することもできます。 読み取り専用フィールドには、初期化時またはコンストラクターによる以外は、値を代入できません。 `static``readonly` フィールドは基本的に定数と同じですが、C# コンパイラが静的な読み取り専用フィールドの値にアクセスできるのは実行時のみで、コンパイル時はアクセスできない点が異なります。 詳細については、「[定数](../../../csharp/programming-guide/classes-and-structs/constants.md)」を参照してください。  
   
 ## <a name="c-language-specification"></a>C# 言語仕様  
- [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec_md.md)]  
+ [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
 ## <a name="see-also"></a>関連項目  
  [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   

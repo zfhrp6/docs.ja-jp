@@ -1,5 +1,5 @@
 ---
-title: "DNX から .NET Core CLI への移行"
+title: "DNX から .NET Core CLI への移行 | Microsoft Docs"
 description: "DNX から .NET Core CLI への移行"
 keywords: .NET, .NET Core
 author: blackdwarf
@@ -9,16 +9,21 @@ ms.topic: article
 ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: c0d70120-78c8-4d26-bb3c-801f42fc2366
-translationtype: Human Translation
-ms.sourcegitcommit: 4a1f0c88fb1ccd6694f8d4f5687431646adbe000
-ms.openlocfilehash: d32c73ac3a724d4701b7f6c1d548aedb3fb00c56
-ms.lasthandoff: 03/22/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 9cd469dfd4f38605f1455c008388ad04c366e484
+ms.openlocfilehash: 0deb251b672fdc09a9bca09e5ae52c9eaaa9ae8d
+ms.contentlocale: ja-jp
+ms.lasthandoff: 06/20/2017
 
 ---
 
-# <a name="migrating-from-dnx-to-net-core-cli-projectjson"></a>DNX から .NET Core CLI への移行 (project.json)
+<a id="migrating-from-dnx-to-net-core-cli-projectjson" class="xliff"></a>
 
-## <a name="overview"></a>概要
+# DNX から .NET Core CLI への移行 (project.json)
+
+<a id="overview" class="xliff"></a>
+
+## 概要
 NET Core と ASP.NET Core 1.0 の RC1 リリースでは、DNX ツールが導入されました。 NET Core と ASP.NET Core 1.0 の RC2 リリースでは、DNX から .NET Core CLI に移行しました。
 
 補足情報として、DNX とは何であったのかを要約します。 DNX は、ランタイムであると共に、.NET Core (具体的には ASP.NET Core 1.0 アプリケーション) を構築するために使用するツールセットでした。 おもに次の 3 つの部分で構成されていました。
@@ -31,10 +36,14 @@ CLI の導入により、上記のすべてが単一のツールセットに含�
 
 この移行ガイドでは、DNX からと .NET Core CLI にプロジェクトを移行する方法の要点を説明します。 プロジェクトを一から .NET Core で始める場合は、このドキュメントは自由にスキップできます。 
 
-## <a name="main-changes-in-the-tooling"></a>ツールの主な変更
+<a id="main-changes-in-the-tooling" class="xliff"></a>
+
+## ツールの主な変更
 まずツールの全般的な変更点をいくつか説明しておく必要があります。 
 
-### <a name="no-more-dnvm"></a>DNVM の終了
+<a id="no-more-dnvm" class="xliff"></a>
+
+### DNVM の終了
 DNVM (*DotNet Version Manager* の略) は、コンピューターに DNX をインストールするための bash/PowerShell スクリプトでした。 DNVM を使用することにより、ユーザーは自分で指定したフィード (または既定のフィード) から必要な DNX を容易に取得することができ、さらに、特定のセッションで $PATH にプッシュされるように特定の DNX に "アクティブ" マークを付けることができました。 これがあれば、さまざまなツールを使用できます。
 
 DNVM の機能セットは .NET Core CLI ツールで実施された変更内容と重複することから、DNVM は使用中止になりました。
@@ -48,50 +57,64 @@ CLI ツールは、主に次の 2 つの方法でパッケージ化されてい�
 
 `project.json` 内でランタイムを参照するには、特定のバージョンのパッケージを依存関係に追加します。 この変更により、アプリケーションは新しいランタイム コンポーネントを使用できるようになります。 これらのコンポーネントをコンピューターに組み込む方法は、CLI の場合と同じです。サポートされているネイティブ インストーラーのいずれか、またはインストール スクリプトを使用してランタイムをインストールします。 
 
-### <a name="different-commands"></a>種々のコマンド
+<a id="different-commands" class="xliff"></a>
+
+### 種々のコマンド
 DNX の場合、一部のコマンドについては 3 つのパート (DNX、DNU、DNVM) のいずれかから使用していました。 CLI になって、これらのコマンドの一部は変更され、一部は使用できなくなり、一部は同じであるがセマンティクスが若干異なる状況となりました。 
 
 次の表では、DNX/DNU コマンドと、対応する CLI コマンドのマッピングを示します。
 
 
-| DNX コマンド                        | CLI コマンド        | 説明                                                                                                         |
-|--------------------------------    |----------------    |-----------------------------------------------------------------------------------------------------------------    |
-| dnx run                            | dotnet run         | ソースからコードを実行します。                                                                                               |
-| dnu build                          | dotnet build       | コードの IL バイナリをビルドします。                                                                                    |
-| dnu pack                           | dotnet pack        | コードの NuGet パッケージをパッケージ化します。                                                                            |
-| dnx \[command] ("dnx web" など)     | 適用なし\*              | DNX の環境では、project.json 内の定義に従ってコマンドを実行します。                                                         |
-| dnu install                        | 適用なし\*              | DNX の環境では、パッケージを依存関係としてインストールします。                                                                |
-| dnu restore                        | dotnet restore     | project.json に指定された依存関係を復元します。                                                                |
-| dnu publish                        | dotnet publish     | 展開対象のアプリケーションを 3 つの形式 (ポータブル、ネイティブ アプリ、スタンドアロン) のいずれかで発行します。     |
-| dnu wrap                           | 適用なし\*              | DNX の環境では、csproj で project.json をラップします。                                                                        |
-| dnu commands                       | 適用なし\*              | DNX の環境では、インストールされたコマンドをグローバルに管理します。                                                               |
+| DNX コマンド                       | CLI コマンド       | 説明                                                                                                       |
+|--------------------------------   |----------------   |-----------------------------------------------------------------------------------------------------------------  |
+| dnx run                           | dotnet run        | ソースからコードを実行します。                                                                                             |
+| dnu build                         | dotnet build      | コードの IL バイナリをビルドします。                                                                                  |
+| dnu pack                          | dotnet pack       | コードの NuGet パッケージをパッケージ化します。                                                                          |
+| dnx \[command] ("dnx web" など)   | 適用なし\*             | DNX の環境では、project.json 内の定義に従ってコマンドを実行します。                                                       |
+| dnu install                       | 適用なし\*             | DNX の環境では、パッケージを依存関係としてインストールします。                                                              |
+| dnu restore                       | dotnet restore    | project.json に指定された依存関係を復元します。                                                              |
+| dnu publish                       | dotnet publish    | 展開対象のアプリケーションを 3 つの形式 (ポータブル、ネイティブ アプリ、スタンドアロン) のいずれかで発行します。    |
+| dnu wrap                          | 適用なし\*             | DNX の環境では、csproj で project.json をラップします。                                                                      |
+| dnu commands                      | 適用なし\*             | DNX の環境では、インストールされたコマンドをグローバルに管理します。                                                             |
 
 (\*) - これらの機能は、CLI では設計上サポートされていません。 
 
-## <a name="dnx-features-that-are-not-supported"></a>サポートされていない DNX 機能
+<a id="dnx-features-that-are-not-supported" class="xliff"></a>
+
+## サポートされていない DNX 機能
 上表に示すように、DNX 環境の機能の中には、少なくとも当面の間、CLI でサポートしないことに決定した機能があります。 このセクションでは、その中で最も重要なものを取り上げ、それらのサポートを中止した論理的根拠と、必要になった場合の解決策について概説します。
 
-### <a name="global-commands"></a>グローバル コマンド
+<a id="global-commands" class="xliff"></a>
+
+### グローバル コマンド
 DNU には、"グローバル コマンド" と呼ばれる概念が採用されています。 これらは基本的に、NuGet パッケージとしてパッケージ化されたコンソール アプリケーションであり、指定された DNX を呼び出してアプリケーションを実行するシェル スクリプトが含まれていました。 
 
 CLI では、この概念をサポートしていません。 しかし、使い慣れた `dotnet <command>` 構文を使用して呼び出し可能なプロジェクトごとのコマンドを追加する、という概念はサポートされています。
 
-### <a name="installing-dependencies"></a>依存関係のインストール
+<a id="installing-dependencies" class="xliff"></a>
+
+### 依存関係のインストール
 V1 の時点で、.NET Core CLI ツールは、依存関係をインストールするための `install` コマンドを備えていません。 NuGet からパッケージをインストールするには、該当するパッケージを依存関係として `project.json` ファイルに追加し、`dotnet restore` を実行する必要があります。 
 
-### <a name="running-your-code"></a>コードの実行
+<a id="running-your-code" class="xliff"></a>
+
+### コードの実行
 コードを実行する方法は、主に 2 つあります。 1 つは、`dotnet run` を使用してソースから実行する方法です。 この方法では、`dnx run` の場合とは異なり、メモリ内のコンパイルを行いません。 `dotnet build` を実際に呼び出すことで、コードをビルドし、ビルドされたバイナリを実行します。 
 
 もう 1 つは、`dotnet` 自体を使用してコードを実行する方法です。 そのためには、アセンブリへのパス `dotnet path/to/an/assembly.dll` を指定します。 
 
-## <a name="migrating-your-dnx-project-to-net-core-cli"></a>DNX プロジェクトを .NET Core CLI に移行する
+<a id="migrating-your-dnx-project-to-net-core-cli" class="xliff"></a>
+
+## DNX プロジェクトを .NET Core CLI に移行する
 DNX から移行する際には、コードの操作時に新しいコマンドを使用することに加えて、重要なことが他に 3 つあります。
 
 1. `global.json` ファイルで CLI を使用できるようにする場合は、このファイルを移行します。
 2. プロジェクト ファイル (`project.json`) 自体を CLI ツールに移行します。
 3. 任意の DNX API を、対応する BCL API に移行します。 
 
-### <a name="changing-the-globaljson-file"></a>global.json ファイルの変更
+<a id="changing-the-globaljson-file" class="xliff"></a>
+
+### global.json ファイルの変更
 `global.json` ファイルは、RC1 プロジェクトと RC2 (またはそれ以降の) プロジェクトの両方に対して、ソリューション ファイルのように機能します。 CLI ツール (および Visual Studio) で RC1 とそれ以降のバージョンを区別するために、`"sdk": { "version" }` プロパティを使用して、RC1 のプロジェクトまたはそれ以降のプロジェクトを区別します。 `global.json` にこのノードがまったく存在しない場合は、最新の状態であると見なされます。 
 
 `global.json` ファイルを更新するには、プロパティを削除するか、使用するツールの正確なバージョンをプロパティに設定します (次の例では、**1.0.0-preview2-003121**)。
@@ -104,8 +127,10 @@ DNX から移行する際には、コードの操作時に新しいコマンド�
 }
 ```
 
-### <a name="migrating-the-project-file"></a>プロジェクト ファイルの移行
-CLI と DNX は両方とも、`project.json` ファイルに基づいた同じ基本プロジェクト システムを使用しています。 プロジェクト ファイルの構文とセマンティクスはほぼ同じですが、シナリオに基づく多少の違いがあります。 スキーマ対する変更点もいくつかあります。これらは、[スキーマ ファイル](http://json.schemastore.org/project) か、よりわかりやすい [project.json 参照](../tools/project-json.md)で確認できます。 
+<a id="migrating-the-project-file" class="xliff"></a>
+
+### プロジェクト ファイルの移行
+CLI と DNX は両方とも、`project.json` ファイルに基づいた同じ基本プロジェクト システムを使用しています。 プロジェクト ファイルの構文とセマンティクスはほぼ同じですが、シナリオに基づく多少の違いがあります。 スキーマの変更もあります。内容は[スキーマ ファイル](http://json.schemastore.org/project)を参照してください。
 
 コンソール アプリケーションを作成する場合は、プロジェクト ファイルに次のスニペットを追加する必要があります。
 
@@ -121,7 +146,7 @@ CLI と DNX は両方とも、`project.json` ファイルに基づいた同じ�
 
 これらの処理が完了したら、アプリにどのような種類の移植性を持たせるかを決める必要があります。 .NET Core では、幅広い移植性オプションを用意し、その中から選択できるようにすることに力を注ぎました。 たとえば、完全に*移植可能な*アプリケーションが必要な場合もあれば、*自己完結型* アプリケーションが必要な場合もあります。 移植可能なアプリケーションの方は .NET Framework アプリケーションの動作によく似ています。対象のコンピューター上でアプリケーションを実行するには共有コンポーネント (.NET Core) が必要です。 自己完結型アプリケーションの場合は、.NET Core を対象のコンピューターにインストールする必要はありませんが、サポートする OS ごとにアプリケーションを 1 つずつ作成する必要があります。 このような移植性の種類と詳細情報については、 [アプリケーションの移植性の種類](../deploying/index.md)に関するページを参照してください。 
 
-目的の移植性の種類に対して呼び出しを行ったら、対象となるフレームワークを変更する必要があります。 .NET Core 用のアプリケーションを作成していた場合、対象となるフレームワークとして `dnxcore50` を使用していた可能性が最も高くなります。 CLI の場合、新しい [.NET Standard Library](https://github.com/dotnet/corefx/blob/master/Documentation/architecture/net-platform-standard.md) によってもたらされた変更点があるので、フレームワークを次のいずれかに設定する必要があります。
+目的の移植性の種類に対して呼び出しを行ったら、対象となるフレームワークを変更する必要があります。 .NET Core 用のアプリケーションを作成していた場合、対象となるフレームワークとして `dnxcore50` を使用していた可能性が最も高くなります。 CLI の場合、新しい [.NET Standard](https://github.com/dotnet/corefx/blob/master/Documentation/architecture/net-platform-standard.md) によってもたらされた変更点があるので、フレームワークを次のいずれかに設定する必要があります。
 
 1. `netcoreapp1.0`- .NET Core でアプリケーションを作成する場合 (ASP.NET Core アプリケーションを含む)
 2. `netstandard1.6`- .NET Core 用のクラス ライブラリを作成する場合
@@ -141,3 +166,4 @@ CLI と DNX は両方とも、`project.json` ファイルに基づいた同じ�
 ```
 
 `dotnet build` を実行した場合、数がそんなに多くなくても、最終的にビルド エラーが表示されます。 コードが構築され正常に動作したら、ランナーを使用して試してみることができます。 `dotnet <path-to-your-assembly>` を実行し、それが実行されているのを確認してください。
+

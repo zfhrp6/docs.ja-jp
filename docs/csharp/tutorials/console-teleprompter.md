@@ -1,5 +1,5 @@
 ---
-title: "コンソール アプリケーション"
+title: "コンソール アプリケーション | Microsoft Docs"
 description: "このチュートリアルでは、.NET Core と C# 言語のさまざまな機能を説明します。"
 keywords: .NET, .NET Core
 author: BillWagner
@@ -10,16 +10,19 @@ ms.prod: .net-core
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 883cd93d-50ce-4144-b7c9-2df28d9c11a0
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 41e8976e7b133380687a65265fd5ebe9a810a4ff
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 4437ce5d344cf06d30e31911def6287999fc6ffc
+ms.openlocfilehash: 7e8cc0ed7093a90a51d1b0c50123adb73ca968aa
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/23/2017
 
 ---
 
-# <a name="console-application"></a>コンソール アプリケーション
+<a id="console-application" class="xliff"></a>
+# コンソール アプリケーション
 
-## <a name="introduction"></a>はじめに
+<a id="introduction" class="xliff"></a>
+## はじめに
 このチュートリアルでは、.NET Core と C# 言語のさまざまな機能を説明します。 内容は以下の通りです。
 *    .NET Core コマンド ライン インターフェイス (CLI) の基本
 *    C# コンソール アプリケーションの構造
@@ -30,10 +33,12 @@ ms.lasthandoff: 03/13/2017
 テキスト ファイルを読み取って、そのテキスト ファイルの内容をコンソールにエコーするアプリケーションをビルドします。 コンソールへの出力を、内容を読み上げる速度に合わせるようにします。 ‘<’ または ‘>’ キーを押して、速度を速めたり遅めたりできます。
 
 このチュートリアルには、多くの機能が含まれています。 それらを 1 つずつビルドしてみましょう。 
-## <a name="prerequisites"></a>必須コンポーネント
-お使いのコンピューターを、.NET Core が実行するように設定する必要があります。 インストールの指示については、[.NET Core](https://www.microsoft.com/net/core) のページを参照してください。 このアプリケーションは、Windows、Linux、macOS または Docker コンテナーで実行できます。 お好みのコード エディターをインストールしてください。 
-## <a name="create-the-application"></a>アプリケーションを作成する
-まず最初に新しいアプリケーションを作成します。 コマンド プロンプトを開き、アプリケーション用の新しいディレクトリを作成します。 それを、現在のディレクトリとしてください。 コマンド プロンプトで `dotnet new console` のコマンドを入力します。 これで、基本的な "Hello World" アプリケーションのスターター ファイルが作成されます。
+<a id="prerequisites" class="xliff"></a>
+## 必須コンポーネント
+お使いのコンピューターを、.NET Core が実行されるように設定する必要があります。 インストールの指示については、[.NET Core](https://www.microsoft.com/net/core) のページを参照してください。 このアプリケーションは、Windows、Linux、macOS または Docker コンテナーで実行できます。 お好みのコード エディターをインストールしてください。 
+<a id="create-the-application" class="xliff"></a>
+## アプリケーションを作成する
+最初に新しいアプリケーションを作成します。 コマンド プロンプトを開き、アプリケーション用の新しいディレクトリを作成します。 それを、現在のディレクトリとしてください。 コマンド プロンプトで `dotnet new console` のコマンドを入力します。 これで、基本的な "Hello World" アプリケーションのスターター ファイルが作成されます。
 
 変更を加える前に、このシンプルな Hello World アプリケーションを実行する手順を見ていきましょう。 アプリケーション作成後、コマンド プロンプトで `dotnet restore` と入力します。 このコマンドにより、NuGet パッケージの復元処理が実行されます。 NuGet は .NET パッケージ マネージャーです。 このコマンドにより、プロジェクトの依存関係のうち欠落しているものがすべてダウンロードされます。 これは新しいプロジェクトなので、依存関係は何もなく、最初の実行で .NET Core フレームワークがダウンロードされます。 最初のこの手順の後は、新しい依存パッケージを追加するときに `dotnet restore` を実行するか、依存関係のいずれかのバージョンを更新する必要しかありません。 このプロセスでは、プロジェクト ディレクトリ内にプロジェクト ロック ファイル (project.lock.json) も作成されます。 このファイルは、プロジェクトの依存関係を管理するのに役立ちます。 ファイルには、プロジェクトの依存関係すべてのローカルの場所が含まれています。 このファイルはソース コントロールに配置する必要はありません。`dotnet restore` を実行するときに生成されるためです。 
 
@@ -52,8 +57,9 @@ using System;
 namespace TeleprompterConsole
 ```
 
-## <a name="reading-and-echoing-the-file"></a>ファイルの読み取りとエコー
-最初に追加する機能は、テキスト ファイルを読み取り、そのテキストすべてをコンソールに表示するものです。 まず、テキスト ファイルを追加しましょう。 この[サンプル](https://github.com/dotnet/docs/tree/master/samples/csharp/getting-started/console-teleprompter)の GitHub リポジトリから、[sampleQuotes.txt](https://raw.githubusercontent.com/dotnet/docs/master/samples/csharp/getting-started/console-teleprompter/sampleQuotes.txt) ファイルをプロジェクト ディレクトリにコピーします。 これがアプリケーションのスクリプトとして機能します。
+<a id="reading-and-echoing-the-file" class="xliff"></a>
+## ファイルの読み取りとエコー
+最初に追加する機能は、テキスト ファイルを読み取り、そのテキストすべてをコンソールに表示する機能です。 まず、テキスト ファイルを追加しましょう。 この[サンプル](https://github.com/dotnet/docs/tree/master/samples/csharp/getting-started/console-teleprompter)の GitHub リポジトリから、[sampleQuotes.txt](https://raw.githubusercontent.com/dotnet/docs/master/samples/csharp/getting-started/console-teleprompter/sampleQuotes.txt) ファイルをプロジェクト ディレクトリにコピーします。 これがアプリケーションのスクリプトとして機能します。 このトピックのサンプル アプリをダウンロードする方法については、「[サンプルおよびチュートリアル](../../samples-and-tutorials/index.md#viewing-and-downloading-samples)」をご覧ください。
 
 次に、以下のメソッドを Program クラス (`Main` メソッドの真下) に追加します。
 
@@ -98,7 +104,8 @@ foreach (var line in lines)
 
 プログラムを実行します (`dotnet run` を使用して、コンソールに出力されるすべての行を確認できるようにします)。  
 
-## <a name="adding-delays-and-formatting-output"></a>遅延の追加と出力の書式設定
+<a id="adding-delays-and-formatting-output" class="xliff"></a>
+## 遅延の追加と出力の書式設定
 コードは今の状態だと、表示が早すぎて読み上げることができません。 出力に遅延を追加する必要があります。 非同期処理を可能にするコア コードを作成していくことになります。 しかしここでの手順では、アンチパターンをいくつか使います。 このアンチパターンは、コードを追加しながらコメントで指摘され、コードは後の手順で更新されます。
 
 このセクションでは 2 つの手順があります。 最初に、行全体ではなく単一の語を返すように反復子メソッドを更新します。 そのために、次の変更をします。 `yield return line;` ステートメントを、次のコードに置き換えます。
@@ -151,7 +158,8 @@ if (lineLength > 70)
  
 サンプルを実行すると、事前に設定されていたペースで読み上げることができます。
 
-## <a name="async-tasks"></a>非同期タスク
+<a id="async-tasks" class="xliff"></a>
+## 非同期タスク
 この最後の手順では、1 つのタスク内で非同期的に出力を記述し、あわせて別のタスクを実行してテキスト表示の速度を上げ下げするユーザーからの命令を読み取る、というコードを追加します。 これは少しの手順だけで済み、これで必要な変更はすべて完了となります。
 最初に、ここまでで作成したファイルを読み取り表示するコードを表す、非同期の @System.Threading.Tasks.Task を返すメソッドを作成します。
 
@@ -311,7 +319,8 @@ public void SetDone()
 }
 ```
 
-## <a name="conclusion"></a>まとめ
+<a id="conclusion" class="xliff"></a>
+## まとめ
 このチュートリアルでは、コンソール アプリケーションでの作業に関連する、C# 言語と .NET Core ライブラリについての多くの機能を説明しました。
 ここでの知識を基にすれば、この言語やここで紹介したクラスについてさらに理解していけるでしょう。 ファイルとコンソール入出力の基本、タスク ベースの非同期プログラミング モデルのブロック使用と非ブロック使用、C# 言語のツアーと C# プログラムの構成方法、および .NET Core のコマンド ライン インターフェイスとツールについて説明しました。
  

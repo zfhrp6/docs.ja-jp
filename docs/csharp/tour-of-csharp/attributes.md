@@ -1,7 +1,7 @@
 ---
-title: "C# の属性 |C# 言語のツアー"
-description: "C で属性を使用した宣言型のプログラミングについて#"
-keywords: ".NET、C#"
+title: "C# の属性 - C# 言語のツアー | Microsoft Docs"
+description: "C# で属性を使用した宣言型のプログラミングについて"
+keywords: .NET, csharp
 author: BillWagner
 ms.author: wiwagn
 ms.date: 08/10/2016
@@ -10,14 +10,16 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 753bcfe2-7ddd-4487-9513-ba70937fc8e9
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 5ef8b93bf0a2cf98c5251b888b61db9ab12d9a71
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 4437ce5d344cf06d30e31911def6287999fc6ffc
+ms.openlocfilehash: 9e7ad62e85df83f181fa4aa8ea6da56b6f739f14
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/23/2017
 
 ---
 
-# <a name="attributes"></a>属性
+<a id="attributes" class="xliff"></a>
+# 属性
 
 C# プログラムにおける型、メンバー、およびその他のエンティティは、動作の特定の側面を制御する修飾子をサポートします。 たとえばメソッドのアクセシビリティは、`public`、`protected`、`internal`、および `private` 修飾子を使用して制御されます。 C# はこの機能を一般化し、宣言情報のユーザー定義型をプログラム エンティティに追加して実行時に取得できるようにします。 プログラムでは、***属性***を定義して使用することにより、この追加の宣言情報を指定します。
 

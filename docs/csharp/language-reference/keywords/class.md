@@ -114,7 +114,7 @@ Console.Write(child1.name);   // Error
  最後に、既定のコンストラクターを使用して作成されたオブジェクト (`child3`) は、既定で年齢フィールドが 0 に初期化されることに注意してください。  
   
 ## <a name="c-language-specification"></a>C# 言語仕様  
- [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec_md.md)]  
+ [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
 ## <a name="see-also"></a>関連項目  
  [C# リファレンス](../../../csharp/language-reference/index.md)   

@@ -33,10 +33,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: caa4b8be16e5000d02d82a83199a25d13ad07bba
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: fe32676f0e39ed109a68f39584cf41aec5f5ce90
+ms.openlocfilehash: c0b8b0a4174527d1fc512b461355d2508e34e152
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/22/2017
 
 ---
 # <a name="walkthrough-filtering-myapplicationlog-output-visual-basic"></a>チュートリアル: My.Application.Log の出力のフィルター処理 (Visual Basic)
@@ -51,7 +52,7 @@ ms.lasthandoff: 03/13/2017
   
 2.  Form1 に Button1 という名前のボタンを追加します。  
   
-3.  Button1 の <xref:System.Windows.Forms.Control.Click> イベント ハンドラーに、次のコードを追加します。  
+3.  Button1 の <xref:System.Windows.Forms.Control.Click> イベント ハンドラーで、次のコードを追加します。  
   
      [!code-vb[VbVbcnMyApplicationLogFiltering#1](../../../../visual-basic/developing-apps/programming/log-info/codesnippet/VisualBasic/walkthrough-filtering-my-application-log-output_1.vb)]  
   
@@ -72,10 +73,10 @@ ms.lasthandoff: 03/13/2017
     > [!NOTE]
     >  既定では、アプリケーションはアプリケーションの終了時にログ ファイルの出力をフラッシュします。  
   
-     上記の例では、<xref:Microsoft.VisualBasic.Logging.Log.WriteEntry%2A> メソッドに対する 2 番目の呼び出しと、<xref:Microsoft.VisualBasic.Logging.Log.WriteException%2A> メソッドに対する呼び出しでログ出力が生成されているのに対し、`WriteEntry` メソッドに対する最初と最後の呼び出しではログ出力が生成されていません。 これは、`WriteEntry` と `WriteException` の重大度レベルが "Information" と "Error" であるためです。これらはどちらも、`My.Application.Log` オブジェクトの既定のログ フィルター処理で許可されます。 これに対し、重大度レベルが "Start" および "Stop" のイベントについては、ログ出力が生成されません。  
+     上の例では、<xref:Microsoft.VisualBasic.Logging.Log.WriteEntry%2A> メソッドの 2 回目の呼び出しと <xref:Microsoft.VisualBasic.Logging.Log.WriteException%2A> メソッドの呼び出しでログが出力されます。`WriteEntry` メソッドの最初と最後の呼び出しでは出力されません。 これは、`WriteEntry` と `WriteException` の重大度レベルが "Information" と "Error" であるためです。これらはどちらも、`My.Application.Log` オブジェクトの既定のログ フィルター処理で許可されます。 これに対し、重大度レベルが "Start" および "Stop" のイベントについては、ログ出力が生成されません。  
   
 ## <a name="filtering-for-all-myapplicationlog-listeners"></a>すべての My.Application.Log リスナーのフィルター処理  
- `My.Application.Log` オブジェクトは、`DefaultSwitch` という <xref:System.Diagnostics.SourceSwitch> を使用して、`WriteEntry` および `WriteException` メソッドからログ リスナーに渡すメッセージを制御します。 アプリケーションの構成ファイル内にある `DefaultSwitch` は、その値を <xref:System.Diagnostics.SourceLevels> 列挙値のいずれかに設定することで構成できます。 既定では、この値は "Information" です。  
+ `My.Application.Log` オブジェクトは、`DefaultSwitch` という名前の <xref:System.Diagnostics.SourceSwitch> を使用し、`WriteEntry` および `WriteException` メソッドからログ リスナーに渡すメッセージを制御します。 アプリケーションの構成ファイル内にある `DefaultSwitch` は、その値を <xref:System.Diagnostics.SourceLevels> 列挙値のいずれかに設定することで構成できます。 既定では、この値は "Information" です。  
   
  次の表は、Log がリスナーにメッセージを書き込むために必要な重大度レベルを、`DefaultSwitch` の設定ごとに示したものです。  
   
@@ -161,7 +162,7 @@ ms.lasthandoff: 03/13/2017
 9. `value` 属性の値を "Information" に戻します。  
   
     > [!NOTE]
-    >  `DefaultSwitch` スイッチの設定では、`My.Application.Log` のみが制御されます。 [!INCLUDE[dnprdnshort](../../../../csharp/getting-started/includes/dnprdnshort_md.md)] の <xref:System.Diagnostics.Trace?displayProperty=fullName> クラスと <xref:System.Diagnostics.Debug?displayProperty=fullName> クラスの動作は変更されません。  
+    >  `DefaultSwitch` スイッチの設定では、`My.Application.Log` のみが制御されます。 [!INCLUDE[dnprdnshort](../../../../csharp/getting-started/includes/dnprdnshort_md.md)] の <xref:System.Diagnostics.Trace?displayProperty=fullName> クラスと <xref:System.Diagnostics.Debug?displayProperty=fullName> クラスの動作が変えられることはありません。  
   
 ## <a name="individual-filtering-for-myapplicationlog-listeners"></a>My.Application.Log リスナーの個別のフィルター処理  
  前の例では、すべての `My.Application.Log` 出力のフィルター処理を変更する方法について説明しました。 この例では、個別のログ リスナーをフィルター処理する方法について説明します。 既定では、アプリケーションには、アプリケーションのデバッグ出力とログ ファイルに情報を書き込む 2 つのリスナーがあります。  
@@ -212,7 +213,7 @@ ms.lasthandoff: 03/13/2017
     </add>  
     ```  
   
-     <xref:System.Diagnostics.EventTypeFilter> フィルターは、<xref:System.Diagnostics.SourceLevels> 列挙値のいずれかを `initializeData` 属性として取ります。  
+     <xref:System.Diagnostics.EventTypeFilter> フィルターは <xref:System.Diagnostics.SourceLevels> 列挙値の 1 つをその `initializeData` 属性として取ります。  
   
 7.  app.config ファイルの内容は次の XML のようになります。  
   
@@ -278,5 +279,5 @@ ms.lasthandoff: 03/13/2017
  [チュートリアル : My.Application.Log による情報の書き込み先の変更](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-changing-where-my-application-log-writes-information.md)   
  [チュートリアル : カスタム ログ リスナーの作成](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-creating-custom-log-listeners.md)   
  [方法: ログ メッセージを書き込む](../../../../visual-basic/developing-apps/programming/log-info/how-to-write-log-messages.md)   
- [トレース スイッチ](http://msdn.microsoft.com/library/8ab913aa-f400-4406-9436-f45bc6e54fbe)   
+ [トレース スイッチ](../../../../framework/debug-trace-profile/trace-switches.md)   
  [アプリケーションからの情報のログ記録](../../../../visual-basic/developing-apps/programming/log-info/logging-information-from-the-application.md)

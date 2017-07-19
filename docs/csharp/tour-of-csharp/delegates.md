@@ -1,5 +1,5 @@
 ---
-title: "C# のデリゲート | C# 言語のツアー"
+title: "C# のデリゲート - C# 言語のツアー | Microsoft Docs"
 description: "C# のデリゲートと遅延バインディングについて"
 keywords: ".NET、C#、デリゲート、ラムダ、遅延バインディング"
 author: BillWagner
@@ -10,14 +10,16 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 3cc27357-3ac2-43a1-aad0-86a77b88f884
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 5cb45d7ae09430c87872a12a0ceb451d5b2b5fda
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 4437ce5d344cf06d30e31911def6287999fc6ffc
+ms.openlocfilehash: 217fd974f547a4a84b328979ee94ee634038b213
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/23/2017
 
 ---
 
-# <a name="delegates"></a>デリゲート
+<a id="delegates" class="xliff"></a>
+# デリゲート
 
 ***デリゲート型***は、特定のパラメーター リストおよび戻り値を使用してメソッドへの参照を表します。 デリゲートを使用すれば、変数に割り当ててパラメーターとして渡すことのできるエンティティとして、メソッドを処理できます。 デリゲートはまた、他のいくつかの言語にみられる関数ポインターの概念に似ていますが、関数ポインターとは異なり、デリゲートはオブジェクト指向でタイプ セーフです。
 
@@ -27,7 +29,7 @@ ms.lasthandoff: 03/13/2017
 
 `Function` デリゲート型のインスタンスは、`double` 引数を取得して `double` 値を返す任意のメソッドを参照できます。 `Apply` メソッドは、指定された関数を `double[]` の要素に適用し、`double[]` を結果とともに返します。 `Main` メソッドでは、`Apply` は `double[]` に 3 つの異なる関数を適用するために使用されます。
 
-デリゲートは、静的メソッド (前述の例の `Square` や `Math.Sin` など) またはインスタンス メソッド (前述の例の `m.Multiply` など) のいずれかを参照できます。 インスタンス メソッドを参照するデリゲートはまた、特定のオブジェクトを参照し、インスタンス メソッドがデリゲートから呼び出されると、そのオブジェクトはこの呼び出しでこのようになります。
+デリゲートは、静的メソッド (前述の例の `Square` や `Math.Sin` など) またはインスタンス メソッド (前述の例の `m.Multiply` など) のいずれかを参照できます。 インスタンス メソッドを参照するデリゲートはまた、特定のオブジェクトを参照し、インスタンス メソッドがデリゲートから呼び出されると、そのオブジェクトは呼び出しで `this` になります。
 
 その場で作成される「インライン メソッド」である匿名関数を使用してデリゲートを作成することもできます。 匿名関数では、周囲のメソッドのローカル変数を確認できます。 したがって、上記の乗数の例は、乗数クラスを使用せずもっと簡単に記述できます。
 

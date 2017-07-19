@@ -10,14 +10,16 @@ ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: 1feadf3d-3cfc-41dd-abb5-a4fc303a7b53
 ms.translationtype: Human Translation
-ms.sourcegitcommit: be7974018ce3195dc7344192d647fe64fb2ebcc4
-ms.openlocfilehash: 7ee369e62027aaf59e4c1a340bbdd30a643e2b75
+ms.sourcegitcommit: b64eb0d8f1778a4834ecce5d2ced71e0741dbff3
+ms.openlocfilehash: ac870aa302c3e56b59cbfdfd0fc88e06bbaad5fb
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/14/2017
+ms.lasthandoff: 05/27/2017
 
 ---
 
-# <a name="migrating-net-core-projects-to-the-csproj-format"></a>.NET Core プロジェクトから .csproj 形式への移行
+<a id="migrating-net-core-projects-to-the-csproj-format" class="xliff"></a>
+
+# .NET Core プロジェクトから .csproj 形式への移行
 
 このドキュメントでは、.NET Core プロジェクトの移行シナリオについて説明します。次の 3 つの移行シナリオを取り上げます。
 
@@ -25,7 +27,9 @@ ms.lasthandoff: 05/14/2017
 2. [DNX から csproj への移行](#migration-from-dnx-to-csproj)
 3. [RC3 と以前の .NET Core csproj プロジェクトから最終形式への移行](#migration-from-earlier-net-core-csproj-formats-to-rtm-csproj)
 
-## <a name="migration-from-projectjson-to-csproj"></a>project.json から csproj への移行
+<a id="migration-from-projectjson-to-csproj" class="xliff"></a>
+
+## project.json から csproj への移行
 *project.json* から *.csproj* への移行は、次のいずれかの方法で実行できます。
 
 - [Visual Studio 2017](#visual-studio-2017)
@@ -33,7 +37,9 @@ ms.lasthandoff: 05/14/2017
  
 いずれの方法も、同じ基本エンジンを使用してプロジェクトを移行するので、両方の結果は同じです。 ほとんどの場合、2 つの方法のいずれかを使用して *project.json* を *csproj* に移行するだけで完了します。プロジェクト ファイルをさらに手動で編集する必要はありません。 結果の *.csproj* ファイルには、格納しているディレクトリ名と同じ名前が付けられます。
 
-### <a name="visual-studio-2017"></a>Visual Studio 2017
+<a id="visual-studio-2017" class="xliff"></a>
+
+### Visual Studio 2017
 
 *.xproj* ファイルまたは *.xproj* ファイルを参照するソリューションを開くと、**[一方向のアップグレード]** ダイアログが表示されます。 このダイアログには、移行されるプロジェクトが表示されます。 ソリューション ファイルを開くと、ソリューション ファイルに指定されているすべてのプロジェクトが表示されます。 移行されるプロジェクトの一覧を確認し、**[OK]** を選択します。
 
@@ -46,25 +52,31 @@ Visual Studio では、選択したプロジェクトが自動的に移行され
 > [!IMPORTANT]
 > 新しいツールは Visual Studio 2015 で使用できないので、Visual Studio 2015 を使用してプロジェクトを移行できません。
 
-### <a name="dotnet-migrate"></a>dotnet の移行
+<a id="dotnet-migrate" class="xliff"></a>
+
+### dotnet の移行
 
 コマンドラインのシナリオでは、[`dotnet migrate`](../tools/dotnet-migrate.md) コマンドを使用できます。 検出されたものに応じて、プロジェクト、ソリューション、または一連のフォルダーの順に移行されます。 プロジェクトを移行すると、プロジェクトとそのすべての依存ファイルが移行されます。
 
 移行されたファイル (*project.json*、*global.json*、および *.xproj*) は *Backup* フォルダーに移動されます。
 
 > [!NOTE]
-> VS コードを使用している場合、`dotnet migrate` コマンドを実行しても、`tasks.json` などの VS コード固有のファイルは変更されません。 これらのファイルは手動で変更する必要があります。 これは、Project Ryder などのエディターや、Visual Studio ではない統合開発環境 (IDE) を使用している場合にも該当します。 
+> Visual Studio コードを使用している場合、`dotnet migrate` コマンドを実行しても、`tasks.json` などの Visual Studio コード固有のファイルは変更されません。 これらのファイルは手動で変更する必要があります。 これは、Project Ryder などのエディターや、Visual Studio ではない統合開発環境 (IDE) を使用している場合にも該当します。 
 
 project.json および csproj 形式の比較については、「[project.json プロパティと csproj プロパティの間のマッピング](../tools/project-json-to-csproj.md)」を参照してください。
 
-### <a name="common-issues"></a>一般的な問題
+<a id="common-issues" class="xliff"></a>
+
+### 一般的な問題
 
 - "No executable found matching command dotnet-migrate" (コマンド dotnet-migrate と一致する実行ファイルが見つかりません) というエラーが発生する場合:
 
 `dotnet --version` を実行して使用しているバージョンを確認します。 [`dotnet migrate`](../tools/dotnet-migrate.md) には、.NET Core CLI RC3 以降が必要です。
 カレント ディレクトリまたは親ディレクトリに *global.json* ファイルがあり、`sdk` バージョンが古いバージョンに設定されている場合にこのエラーが発生します。
 
-## <a name="migration-from-dnx-to-csproj"></a>DNX から csproj への移行
+<a id="migration-from-dnx-to-csproj" class="xliff"></a>
+
+## DNX から csproj への移行
 .NET Core 開発にまだ DNX を使用している場合、移行プロセスは次の 2 段階で実行する必要があります。
 
 1. [既存の DNX 移行ガイダンス](from-dnx.md)を使用して DNX から project-json 対応の CLI に移行します。
@@ -73,7 +85,9 @@ project.json および csproj 形式の比較については、「[project.json 
 > [!NOTE]
 > Preview 1 リリースの .NET Core CLI で、DNX は公式に非推奨になりました。 
 
-## <a name="migration-from-earlier-net-core-csproj-formats-to-rtm-csproj"></a>以前の .NET Core csproj 形式から RTM csproj への移行
+<a id="migration-from-earlier-net-core-csproj-formats-to-rtm-csproj" class="xliff"></a>
+
+## 以前の .NET Core csproj 形式から RTM csproj への移行
 .NET Core csproj 形式は、ツールの新しいプレリリース バージョンごとに変化し、進化しています。 以前のバージョンの csproj から最新バージョンにプロジェクト ファイルを移行するツールはないため、プロジェクト ファイルを手動で編集する必要があります。 実際の手順は、移行するプロジェクト ファイルのバージョンによって異なります。 バージョン間で加えられた変更内容に基づいて、考慮する必要があるガイダンスの一部を次に示します。
 
 * `<Project>` 要素からツールのバージョン プロパティを削除します (存在する場合)。 
