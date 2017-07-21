@@ -62,7 +62,7 @@ F# Software Foundation の使命は、F# プログラミング言語の促進、
 ## <a name="video-learning-resources"></a>ビデオ学習リソース
 
 * [YouTube の F# でのプログラミングの概要シリーズ](https://www.youtube.com/watch?v=Teak30_pXHk&list=PLEoMzSkcN8oNiJ67Hd7oRGgD1d4YBxYGC)
-* [FSharpTV の F# の概要シリーズ](https://fsharp.tv/courses/fsharp-programming-intro/)
+* [FSharpTV の F# の概要シリーズ](https://fsharp.tv/courses/fsharp-programming-intro/
 
 ## <a name="further-resources"></a>他のリソース
 
