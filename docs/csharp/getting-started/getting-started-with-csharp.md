@@ -1,5 +1,5 @@
 ---
-title: "C# の概要 | Microsoft Docs"
+title: "C# の概要"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -29,11 +29,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 31905a37f09db5f5192123f0118252fbe8b02eff
-ms.openlocfilehash: 4dd406d40bd6f3dc12db19087be80c13644419d7
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 14022b0272d5ad356c76bf0153f6ea5dfda91994
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/26/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="getting-started-with-c"></a>C# の概要
@@ -47,7 +47,7 @@ ms.lasthandoff: 05/26/2017
  一般的な問題の解決に役立つ Web サイトおよびニュースグループへのリンクを示します。  
   
 ## <a name="related-sections"></a>関連項目  
- [Visual C# 開発環境の使用](https://docs.microsoft.com/visualstudio/csharp-ide/using-the-visual-studio-development-environment-for-csharp)  
+ [Visual C# 開発環境の使用](/visualstudio/csharp-ide/using-the-visual-studio-development-environment-for-csharp)  
  [!INCLUDE[csprcs](~/includes/csprcs-md.md)] 統合開発環境を使用する方法について説明します。  
   
  [C# プログラミング ガイド](../../csharp/programming-guide/index.md)  
@@ -56,12 +56,13 @@ ms.lasthandoff: 05/26/2017
  [C# リファレンス](../../csharp/language-reference/index.md)  
  C# のキーワード、演算子、プリプロセッサ ディレクティブ、コンパイラ オプション、およびコンパイラのエラーと警告に関する詳細なリファレンス情報を紹介します。  
   
- [Visual Studio のサンプル](https://docs.microsoft.com/visualstudio/ide/visual-studio-samples)  
+ [Visual Studio のサンプル](/visualstudio/ide/visual-studio-samples)  
  オンライン サンプルへのアクセス方法に関する情報を提供します。  
   
  [チュートリアル](../../csharp/walkthroughs.md)  
  C# を使用するプログラミングのチュートリアルと、各チュートリアルに関する簡単な説明へのリンクを示します。  
   
 ## <a name="see-also"></a>関連項目  
- [Visual C# と Visual Basic の概要](https://docs.microsoft.com/visualstudio/ide/getting-started-with-visual-csharp-and-visual-basic)   
+ [Visual C# と Visual Basic の概要](/visualstudio/ide/getting-started-with-visual-csharp-and-visual-basic)   
  [初級開発者向けラーニング センター](http://go.microsoft.com/fwlink/?LinkId=123826)
+

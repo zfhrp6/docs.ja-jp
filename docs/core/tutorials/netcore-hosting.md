@@ -1,5 +1,5 @@
 ---
-title: ".NET Core のホスティング | Microsoft Docs"
+title: ".NET Core のホスティング"
 description: "ネイティブ コードから .NET Core ランタイムをホスティングする"
 keywords: ".NET, .NET Core, ホスティング, .NET Core のホスティング"
 author: mjrousos
@@ -9,11 +9,11 @@ ms.topic: article
 ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: 13edec8b-614d-47ed-9e95-ed6d3b94ec0c
-ms.translationtype: Human Translation
-ms.sourcegitcommit: d866cf8eab2b8db936d813ccae7882f8d7db5720
-ms.openlocfilehash: cf420d4379afbdb3c6db048c7817a4c143c124d9
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 61c321b512b1920718196319d367f467f9291b2a
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/26/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 
@@ -25,7 +25,7 @@ ms.lasthandoff: 04/26/2017
 
 この記事では、ネイティブ コードから .NET Core ランタイムを開始し、最初のアプリケーション ドメイン (<xref:System.AppDomain>) を作成し、その中でマネージ コードを実行するために必要な手順について説明します。
 
-## <a name="prerequisites"></a>必要条件
+## <a name="prerequisites"></a>必須コンポーネント
 
 ホストはネイティブ アプリケーションであるため、このチュートリアルでは、C++ アプリケーションを構築して .NET Core をホスティングする方法について説明します。 C++ 開発環境が必要になります ([Visual Studio](https://www.visualstudio.com/downloads/) に付属のものなど)。
 
@@ -110,9 +110,9 @@ AppDomain が稼働したら、ホストはマネージ コードを実行でき
 void *pfnDelegate = NULL;
 hr = runtimeHost->CreateDelegate(
   domainId,
-  L"HW, Version=1.0.0.0, Culture=neutral",    // Target managed assembly
+  L"HW, Version=1.0.0.0, Culture=neutral",  // Target managed assembly
   L"ConsoleApplication.Program",            // Target managed type
-  L"Main",                                    // Target entry point (static method)
+  L"Main",                                  // Target entry point (static method)
   (INT_PTR*)&pfnDelegate);
 
 ((MainMethodFp*)pfnDelegate)(NULL);

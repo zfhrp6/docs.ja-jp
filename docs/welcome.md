@@ -1,5 +1,5 @@
 ---
-title: ".NET にようこそ | Microsoft Docs"
+title: ".NET にようこそ"
 description: ".NET ファミリのテクノロジの概要です。"
 keywords: ".NET, .NET Core, はじめに, ニュース"
 author: richlander
@@ -9,25 +9,21 @@ ms.topic: article
 ms.prod: .net
 ms.devlang: dotnet
 ms.assetid: cb788dcf-2120-467f-9c34-c02a90e1f68f
-ms.translationtype: Human Translation
-ms.sourcegitcommit: c12811f3eb8b0aeeeeab6d41ba2983ee9a0ae0f9
-ms.openlocfilehash: 7055438edf0ce4466f3ae6a5d8eb9216b324d3b7
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 0c6d4d9efbf51d8ae6308a34cbc4f522cceea001
 ms.contentlocale: ja-jp
-ms.lasthandoff: 07/06/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 
-<a id="welcome-to-net" class="xliff"></a>
-
-# .NET にようこそ
+# <a name="welcome-to-net"></a>.NET にようこそ
 
 .NET Core アプリの作成方法については、「[Getting Started with .NET Core (.NET Core の概要)](core/get-started.md)」をご覧ください。
 
 .NET では、クラウド、IoT、ゲームなどのさまざまな種類のアプリを、無料のクロスプラットフォーム ツールを使用して構築できます。 アプリは、Android、iOS、Linux、macOS、Windows で実行できます。 サーバーまたはデスクトップにアプリを展開し、モバイル デバイスへの展開用としてアプリ ストアに発行します。 .NET は学生やプログラミング愛好者も利用することができ、海外の活気ある開発コミュニティに参加したり、多くの .NET テクノロジに貢献したりできます。
 
-<a id="news" class="xliff"></a>
-
-## ニュース
+## <a name="news"></a>ニュース
 
 - [.NET Standard の概要](https://blogs.msdn.microsoft.com/dotnet/2016/09/26/introducing-net-standard/)
 - [.NET Core 2.0 Preview 2 の発表](https://blogs.msdn.microsoft.com/dotnet/2017/06/28/announcing-net-core-2-0-preview-2/)
@@ -44,9 +40,7 @@ ms.lasthandoff: 07/06/2017
 - [今週の .NET](https://blogs.msdn.microsoft.com/dotnet/tag/week-in-net/)
 - [Channel 9 で Build 2017 を視聴 - Microsoft の最新のテクノロジとニュースのビデオ](https://channel9.msdn.com/?wt.mc_id=build_hp#programGuide)
 
-<a id="documentation" class="xliff"></a>
-
-## ドキュメント
+## <a name="documentation"></a>ドキュメント
 
 このドキュメントでは、.NET 全体のプラットフォームおよび言語について説明します。  次のいずれかのセクションから .NET とその言語の作業を開始できます。
 
@@ -57,11 +51,9 @@ ms.lasthandoff: 07/06/2017
 - [F# のガイド](fsharp/index.md)
 - [Visual Basic のガイド](visual-basic/index.md)
 
-また、「[.NET API リファレンス](https://docs.microsoft.com/dotnet/api)」を参照することもできます。
+また、「[.NET API リファレンス](/dotnet/api)」を参照することもできます。
 
-<a id="open-source" class="xliff"></a>
-
-## ソースを開く
+## <a name="open-source"></a>ソースを開く
 
 このドキュメントは、完全な[オープン ソース](https://github.com/dotnet/docs)です。  問題の作成からドキュメントの作成まで、好みに応じて投稿することができます。  さらに、.NET 自体のほとんどがオープン ソースです。
 
