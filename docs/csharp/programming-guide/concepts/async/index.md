@@ -1,5 +1,5 @@
 ---
-title: "Async および Await を使用した非同期プログラミング (C#) | Microsoft Docs"
+title: "Async および Await を使用した非同期プログラミング (C#)"
 ms.date: 2017-05-22
 ms.prod: .net
 ms.technology:
@@ -16,16 +16,14 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 45d2357336b6ffade3a9767ff13343cdfc2965be
-ms.openlocfilehash: a7c89d56bb3d2c40804ae7a2cc191a0f2f722764
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: d087951ce3e3f05c7f1e8f9c99529eab2f76b8d5
 ms.contentlocale: ja-jp
-ms.lasthandoff: 06/26/2017
+ms.lasthandoff: 07/28/2017
 
 ---
-<a id="asynchronous-programming-with-async-and-await-c" class="xliff"></a>
-
-# Async および Await を使用した非同期プログラミング (C#)
+# <a name="asynchronous-programming-with-async-and-await-c"></a>Async および Await を使用した非同期プログラミング (C#)
 パフォーマンスのボトルネックを回避しアプリケーション全体の応答性を向上させるために、非同期プログラミングを使用できます。 ただ、非同期アプリケーションを作成する従来の方法は複雑で、プログラムの作成、デバッグ、保守が困難な場合があります。  
   
 [C# 5](../../../whats-new/index.md#previous-versions) では、.NET Framework 4.5 以降、.NET Core および Windows ランタイムの非同期サポートを利用した "非同期プログラミング" と呼ばれる簡単な方法が導入されました。 コンパイラがこれまで開発者が行っていた難しい作業を実行し、アプリケーションは同期コードに類似した論理構造を保持します。 その結果、わずかな作業量で非同期プログラミングのすべての利点を得られます。  
@@ -350,9 +348,7 @@ namespace AsyncFirstExample
 // Length of the downloaded string: 41564.  
 ```  
   
-<a id="see-also" class="xliff"></a>
-
-## 関連項目  
+## <a name="see-also"></a>関連項目  
  [async](../../../../csharp/language-reference/keywords/async.md)   
  [await](../../../../csharp/language-reference/keywords/await.md)
 

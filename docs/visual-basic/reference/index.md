@@ -1,5 +1,5 @@
 ---
-title: "リファレンス (Visual Basic) | Microsoft Docs"
+title: "リファレンス (Visual Basic)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -28,11 +28,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 31905a37f09db5f5192123f0118252fbe8b02eff
-ms.openlocfilehash: c730caa8b3beaa3e26e63b324a5394a4a0c46d64
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 4c341ec68a12019814d0185cab9b89ad5928d171
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/26/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="reference-visual-basic"></a>リファレンス (Visual Basic)
@@ -48,7 +48,7 @@ ms.lasthandoff: 05/26/2017
  [.NET Framework リファレンス情報](../../visual-basic/reference/net-framework-reference-information.md)  
  [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] クラス ライブラリの使用方法に関する情報へのリンクを示します。  
   
- [Visual Basic 言語仕様](../../visual-basic/reference/language-specification.md)  
+ [Visual Basic 言語仕様](../../visual-basic/reference/language-specification/index.md)  
  完全な [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] 言語仕様へのリンクを示します。ここには、この言語のあらゆる側面に関する詳細な情報が掲載されています。  
   
 ## <a name="reference"></a>参照  
@@ -59,11 +59,12 @@ ms.lasthandoff: 05/26/2017
  この名前空間は、画面に表示されているとおりにフォームの複製を印刷できるようにするコンポーネントを提供します。  
   
 ## <a name="related-sections"></a>関連項目  
- [一般的なユーザー インターフェイス要素 (Visual Studio)](https://docs.microsoft.com/visualstudio/ide/reference/general-user-interface-elements-visual-studio)  
+ [一般的なユーザー インターフェイス要素 (Visual Studio)](/visualstudio/ide/reference/general-user-interface-elements-visual-studio)  
  [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] のダイアログ ボックスとウィンドウに関するトピックです。  
   
- [Visual Studio の XML ツール](https://docs.microsoft.com/visualstudio/xml-tools/xml-tools-in-visual-studio)  
+ [Visual Studio の XML ツール](/visualstudio/xml-tools/xml-tools-in-visual-studio)  
  [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] で使用可能な、さまざまな XML ツールに関するトピックへのリンクを示します。  
   
  [オートメーションと機能拡張のリファレンス](http://msdn.microsoft.com/library/93112562-db21-4188-9383-ed19ad79bddf)  
  共有コンポーネントと言語固有コンポーネントの両方について、[!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] でのオートメーションと機能拡張に関するトピックへのリンクを示します。
+

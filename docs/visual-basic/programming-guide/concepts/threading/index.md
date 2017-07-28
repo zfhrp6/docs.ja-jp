@@ -1,5 +1,5 @@
 ---
-title: "スレッド処理 (Visual Basic) | Microsoft Docs"
+title: "スレッド処理 (Visual Basic)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -20,16 +20,14 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 31905a37f09db5f5192123f0118252fbe8b02eff
-ms.openlocfilehash: 0c9cf36aeee43afc710dd3261f5d012ba53c02e5
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 840cc7df20250acb67bd09a8d39b353c772e82da
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/26/2017
+ms.lasthandoff: 07/28/2017
 
 ---
-<a id="threading-visual-basic" class="xliff"></a>
-
-# スレッド処理 (Visual Basic)
+# <a name="threading-visual-basic"></a>スレッド処理 (Visual Basic)
 スレッド処理により、Visual Basic プログラムが同時処理を実行できるようになり、一度に複数の操作を行うことが可能になります。 たとえば、スレッド処理を使用してユーザーの入力を監視したり、バックグラウンド タスクを実行したり、入力の同時ストリームを処理したりできます。  
   
  スレッドには次のようなプロパティがあります。  
@@ -53,9 +51,7 @@ ms.lasthandoff: 05/26/2017
 > [!NOTE]
 >  [!INCLUDE[net_v40_long](~/includes/net-v40-long-md.md)] 以降では、<xref:System.Threading.Tasks.Parallel?displayProperty=fullName> クラスおよび <xref:System.Threading.Tasks.Task?displayProperty=fullName> クラス、[Parallel LINQ (PLINQ)](https://msdn.microsoft.com/library/dd460688)、<xref:System.Collections.Concurrent?displayProperty=fullName> 名前空間の新しい同時実行コレクション クラス、スレッドではなくタスクの概念をベースにした新しいプログラミング モデルにより、マルチスレッド プログラミングが大幅に簡略化されています。 詳細については、[並列プログラミング](https://msdn.microsoft.com/library/dd460693)に関するページをご覧ください。  
   
-<a id="related-topics" class="xliff"></a>
-
-## 関連トピック  
+## <a name="related-topics"></a>関連トピック  
   
 |タイトル|説明|  
 |-----------|-----------------|  
@@ -67,3 +63,4 @@ ms.lasthandoff: 05/26/2017
 |[スレッド プール (Visual Basic)](../../../../visual-basic/programming-guide/concepts/threading/thread-pooling.md)|システムで管理されるワーカー スレッドのプールを使用する方法について説明します。|  
 |[方法: スレッド プールを使用する (Visual Basic)](../../../../visual-basic/programming-guide/concepts/threading/how-to-use-a-thread-pool.md)|スレッド プール内の複数スレッドの同期された使用方法を示します。|  
 |[スレッド化](https://msdn.microsoft.com/library/3e8s7xdd)|.NET Framework でのスレッドの実装方法について説明します。|
+

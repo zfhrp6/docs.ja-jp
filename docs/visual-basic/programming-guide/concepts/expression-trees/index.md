@@ -1,5 +1,5 @@
 ---
-title: "式ツリー (Visual Basic) | Microsoft Docs"
+title: "式ツリー (Visual Basic)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -20,10 +20,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: 7e33ed084c560470a486ebbb25035a59ddc18565
-ms.openlocfilehash: 5f22d535ea6fb55ccadba4476e2e61f32b7a64f2
-ms.lasthandoff: 03/31/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: e67f6696ab6e41e9185c7d1356b98113e1473a87
+ms.contentlocale: ja-jp
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="expression-trees-visual-basic"></a>式ツリー (Visual Basic)
@@ -48,7 +49,7 @@ Dim lambda As Expression(Of Func(Of Integer, Boolean)) =
 ```  
   
 ## <a name="creating-expression-trees-by-using-the-api"></a>API を使用した式ツリーの作成  
- API を使用して式ツリーを作成するには、<xref:System.Linq.Expressions.Expression> クラスを使用します。 このクラスには、変数またはパラメーターを表す <xref:System.Linq.Expressions.ParameterExpression> や、メソッドの呼び出しを表す <xref:System.Linq.Expressions.MethodCallExpression> などの特定の型の式ツリー ノードを作成する、静的ファクトリ メソッドが含まれます。 <xref:System.Linq.Expressions.ParameterExpression>、 <xref:System.Linq.Expressions.MethodCallExpression>、その他の式固有の型も <xref:System.Linq.Expressions> 名前空間で定義されます。 これらの型は、抽象型 <xref:System.Linq.Expressions.Expression> から派生しています。  
+ API を使用して式ツリーを作成するには、<xref:System.Linq.Expressions.Expression> クラスを使用します。 このクラスには、特定の型を持つ式ツリー ノードを作成する静的ファクトリ メソッドが含まれます。たとえば、変数またはパラメーターを表す <xref:System.Linq.Expressions.ParameterExpression> や、メソッドの呼び出しを表す <xref:System.Linq.Expressions.MethodCallExpression> などです。 <xref:System.Linq.Expressions.ParameterExpression>、<xref:System.Linq.Expressions.MethodCallExpression> などの式固有の型も、<xref:System.Linq.Expressions> 名前空間で定義されます。 これらの型は、<xref:System.Linq.Expressions.Expression> 抽象型から派生したものです。  
   
  次のコード例は、API を使用して、ラムダ式 `Function(num) num < 5` を表す式ツリーを作成する方法を示しています。  
   
@@ -131,7 +132,7 @@ Console.WriteLine(String.Format("Decomposed expression: {0} => {1} {2} {3}",
  式ツリーは変更できません。 つまり、式ツリーを変更するには、既存の式ツリーをコピーしてツリー内のノードを置き換えることで、新しい式ツリーを作成する必要があります。 式ツリー ビジターを使用して、既存の式ツリーを走査することができます。 詳細については、「[方法: 式ツリーを変更する (Visual Basic)](../../../../visual-basic/programming-guide/concepts/expression-trees/how-to-modify-expression-trees.md)」を参照してください。  
   
 ## <a name="compiling-expression-trees"></a>式ツリーのコンパイル  
- <xref:System.Linq.Expressions.Expression%601> の型は、式ツリーで表されたコードを実行可能なデリゲートにコンパイルする <xref:System.Linq.Expressions.Expression%601.Compile%2A> メソッドを提供します。  
+ <xref:System.Linq.Expressions.Expression%601> 型に含まれる <xref:System.Linq.Expressions.Expression%601.Compile%2A> メソッドにより、式ツリーが表すコードを実行可能なデリゲートにコンパイルします。  
   
  次のコード例は、式ツリーをコンパイルして結果のコードを実行する方法を示しています。  
   
@@ -165,3 +166,4 @@ Console.WriteLine(expr.Compile()(4))
  [ラムダ式](../../../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md)   
  [動的言語ランタイムの概要](https://msdn.microsoft.com/library/dd233052)   
  [プログラミングの概念 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/index.md)
+

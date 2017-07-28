@@ -1,5 +1,5 @@
 ---
-title: "Windows Vista への .NET Framework のインストール | Microsoft Docs"
+title: "Windows Vista への .NET Framework のインストール"
 description: "Windows Vista に .NET Framework をインストールする方法について説明します"
 author: rlander
 keywords: ".Net Framework, インストール"
@@ -9,11 +9,11 @@ ms.prod: .net-framework
 ms.technology: vs-ide-deployment
 ms.devlang: dotnet
 ms.assetid: 67cda1d5-c6g5-5eb5-93e6-5f478de07ff7
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 4437ce5d344cf06d30e31911def6287999fc6ffc
-ms.openlocfilehash: 4bfba1da356227518b4f1812018ea5ca62cdaaf5
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 6777b07c7714b3fedd5b729718e8c29c152c0a4d
 ms.contentlocale: ja-jp
-ms.lasthandoff: 06/02/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 

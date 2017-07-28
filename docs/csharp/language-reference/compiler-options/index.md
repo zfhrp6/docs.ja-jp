@@ -1,5 +1,5 @@
 ---
-title: "C# コンパイラ オプション | Microsoft Docs"
+title: "C# コンパイラ オプション"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -33,10 +33,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: c355f42106cfb7790591108b9b0f0938c34fdb32
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 12fd3210aeda6c260c91232baf99381a55b00cab
+ms.contentlocale: ja-jp
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="c-compiler-options"></a>C# コンパイラ オプション
@@ -63,11 +64,12 @@ ms.lasthandoff: 03/13/2017
  コンパイラ オプションのアルファベット順の一覧です。  
   
 ## <a name="related-sections"></a>関連項目  
- [プロジェクト デザイナーの [ビルド] ページ](https://docs.microsoft.com/visualstudio/ide/reference/build-page-project-designer-csharp)  
+ [プロジェクト デザイナーの [ビルド] ページ](/visualstudio/ide/reference/build-page-project-designer-csharp)  
  プロジェクトのコンパイル、ビルド、およびデバッグ方法を制御するプロパティを設定します。 Visual C# プロジェクトのカスタム ビルド手順に関する情報が含まれています。  
   
- [既定のビルドとカスタム ビルド](https://docs.microsoft.com/visualstudio/ide/compiling-and-building-in-visual-studio)  
+ [既定のビルドとカスタム ビルド](/visualstudio/ide/compiling-and-building-in-visual-studio)  
  ビルドの種類と構成に関する情報です。  
   
- [ビルドの準備と管理](https://docs.microsoft.com/visualstudio/ide/building-and-cleaning-projects-and-solutions-in-visual-studio)  
+ [ビルドの準備と管理](/visualstudio/ide/building-and-cleaning-projects-and-solutions-in-visual-studio)  
  Visual Studio 開発環境でビルドするための手順です。
+

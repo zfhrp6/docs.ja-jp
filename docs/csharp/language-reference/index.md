@@ -1,5 +1,5 @@
 ---
-title: "C# リファレンス | Microsoft Docs"
+title: "C# リファレンス"
 ms.date: 2017-02-14
 ms.prod: .net
 ms.technology:
@@ -32,11 +32,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 87497d48c04a00e09c82550d49dc85d7be719edf
-ms.openlocfilehash: 7ca43aa68edc89420dd320f92b50311d7279ac06
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 4a988a8a2c5999351061254da2b7877bdffd8a32
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/19/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="c-reference"></a>C# リファレンス
@@ -61,7 +61,7 @@ ms.lasthandoff: 05/19/2017
  [C# コンパイラ エラー](../../csharp/language-reference/compiler-messages/index.md)  
  C# コンパイラのエラーや警告の原因と修正法を示すコード スニペットを示します。  
   
- [C# 言語仕様](../../csharp/language-reference/language-specification.md)  
+ [C# 言語仕様](../../csharp/language-reference/language-specification/index.md)  
  Microsoft Word 形式で作成された最新バージョンの C# 言語仕様へのポインターを紹介します。  
   
 ## <a name="related-sections"></a>関連項目  
@@ -75,7 +75,7 @@ ms.lasthandoff: 05/19/2017
  [C#](../../csharp/csharp.md)  
  Visual C# ドキュメントへのポータルを提供します。  
   
- [Visual C# 開発環境の使用](https://docs.microsoft.com/visualstudio/csharp-ide/using-the-visual-studio-development-environment-for-csharp)  
+ [Visual C# 開発環境の使用](/visualstudio/csharp-ide/using-the-visual-studio-development-environment-for-csharp)  
  IDE およびエディターについて説明する概念トピックおよびタスク トピックへのリンクを提供します。  
   
  [C# プログラミング ガイド](../../csharp/programming-guide/index.md)  

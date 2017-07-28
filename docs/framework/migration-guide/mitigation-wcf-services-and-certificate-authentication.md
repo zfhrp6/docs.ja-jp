@@ -1,5 +1,5 @@
 ---
-title: "軽減策: WCF サービスと証明書認証 | Microsoft Docs"
+title: "軽減策: WCF サービスと証明書認証"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
@@ -15,23 +15,20 @@ caps.latest.revision: 3
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 6f3dc4235c75d7438f019838cb22192f4dc7c41a
-ms.openlocfilehash: 0b32fa96cd002e927fa00e8c2a797d1ff6b17cb8
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 1d6f78d24fc6411fca81fbbb8eb886d6d0a7fe9c
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/30/2017
+ms.lasthandoff: 07/28/2017
 
 ---
-<a id="mitigation-wcf-services-and-certificate-authentication" class="xliff"></a>
-# 軽減策: WCF サービスと証明書認証
+# <a name="mitigation-wcf-services-and-certificate-authentication"></a>軽減策: WCF サービスと証明書認証
 .NET Framework 4.6 では、WCF SSL プロトコルの既定の一覧に TLS 1.1 および TLS 1.2 が追加されます。 クライアントとサーバーの両方のマシンに .NET Framework 4.6 以降がインストールされている場合は、TLS 1.2 がネゴシエーションに使用されます。  
   
-<a id="impact" class="xliff"></a>
-## 影響  
+## <a name="impact"></a>影響  
  TLS 1.2 では MD5 証明書認証がサポートされません。 そのため、顧客がハッシュ アルゴリズムで MD5 を使用する SSL 証明書を使用すると、WCF クライアントは WCF サービスに接続できません。 詳細については、「[Mitigation: WCF Services and Certificate Authentication](../../../docs/framework/migration-guide/mitigation-wcf-services-and-certificate-authentication.md)」(軽減策: WCF サービスと証明書認証) を参照してください。  
   
-<a id="mitigation" class="xliff"></a>
-## 軽減策  
+## <a name="mitigation"></a>軽減策  
  次のいずれかの操作を実行することで、この問題を回避して、WCF クライアントを WCF サーバーに接続できるようになります。  
   
 -   MD5 アルゴリズムを使用しないように証明書を更新します。 この解決策をお勧めします。  
@@ -67,7 +64,6 @@ ms.lasthandoff: 05/30/2017
     > [!CAUTION]
     >  MD5 ハッシュ アルゴリズムによる証明書は安全でないと見なされるため、この回避策はお勧めできません。  
   
-<a id="see-also" class="xliff"></a>
-## 関連項目  
+## <a name="see-also"></a>関連項目  
  [ランタイムの変更点](../../../docs/framework/migration-guide/runtime-changes-in-the-net-framework-4-6.md)
 

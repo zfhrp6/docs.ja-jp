@@ -1,5 +1,5 @@
 ---
-title: "Sorted コレクション型 | Microsoft Docs"
+title: "Sorted コレクション型"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net
@@ -19,15 +19,14 @@ caps.latest.revision: 16
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 375babff42f13c41852651811f92f6bdda91b1e2
-ms.openlocfilehash: 7b4a762e3021e80a15d66b15589eec2e269a2888
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 210582c6cf31b59f7f6c4b577c0e8a2c2f25ddd6
 ms.contentlocale: ja-jp
-ms.lasthandoff: 06/15/2017
+ms.lasthandoff: 07/28/2017
 
 ---
-<a id="sorted-collection-types" class="xliff"></a>
-# Sorted コレクション型
+# <a name="sorted-collection-types"></a>Sorted コレクション型
 <xref:System.Collections.SortedList?displayProperty=fullName> クラス、<xref:System.Collections.Generic.SortedList%602?displayProperty=fullName> ジェネリック クラス、および <xref:System.Collections.Generic.SortedDictionary%602?displayProperty=fullName> ジェネリック クラスは、<xref:System.Collections.IDictionary> インターフェイスを実装する点において <xref:System.Collections.Hashtable> クラスと <xref:System.Collections.Generic.Dictionary%602> ジェネリック クラスに似ていますが、キーによる並べ替え順序で自身の要素を維持し、ハッシュ テーブルの O(1) 挿入と取得の特性はありません。 これら 3 つのクラスには、次のような共通の特徴があります。  
   
 -   この 3 つのクラスはすべて、<xref:System.Collections.IDictionary?displayProperty=fullName> インターフェイスを実装します。 2 つのジェネリック クラスも <xref:System.Collections.Generic.IDictionary%602?displayProperty=fullName> ジェネリック インターフェイスを実装します。  
@@ -57,8 +56,7 @@ ms.lasthandoff: 06/15/2017
   
  [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)] より、<xref:System.Collections.Generic.SortedSet%601> クラスは、挿入、削除、および検索の操作後に並べ替えられた順序でデータを保持する自己平衡ツリーを提供します。 このクラスと <xref:System.Collections.Generic.HashSet%601> クラスは、<xref:System.Collections.Generic.ISet%601> インターフェイスを実装します。  
   
-<a id="see-also" class="xliff"></a>
-## 関連項目  
+## <a name="see-also"></a>関連項目  
  <xref:System.Collections.IDictionary?displayProperty=fullName>   
  <xref:System.Collections.Generic.IDictionary%602?displayProperty=fullName>   
  <xref:System.Collections.Concurrent.ConcurrentDictionary%602>   

@@ -1,5 +1,5 @@
 ---
-title: "オブジェクト (Visual Basic) | Microsoft Docs"
+title: "オブジェクト (Visual Basic)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.suite: 
@@ -28,21 +28,17 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 31905a37f09db5f5192123f0118252fbe8b02eff
-ms.openlocfilehash: 6d4ed7e551c9a0d039f0206a86fa3a748dd728ef
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 98503c5764690d6dea90bf46a229e9ee2fd81df7
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/26/2017
+ms.lasthandoff: 07/28/2017
 
 ---
-<a id="objects-visual-basic" class="xliff"></a>
-
-# オブジェクト (Visual Basic)
+# <a name="objects-visual-basic"></a>オブジェクト (Visual Basic)
 このトピックでは、Visual Basic ランタイム オブジェクトを示すトピックや、そのメンバー プロシージャ、プロパティ、およびイベントの表を含む、その他のトピックへのリンクを提供します。  
   
-<a id="visual-basic-run-time-objects" class="xliff"></a>
-
-## Visual Basic ランタイム オブジェクト  
+## <a name="visual-basic-run-time-objects"></a>Visual Basic ランタイム オブジェクト  
   
 |||  
 |---|---|  
@@ -73,8 +69,7 @@ ms.lasthandoff: 05/26/2017
 |[My.WebServices オブジェクト](../../../visual-basic/language-reference/objects/my-webservices-object.md)|現在のプロジェクトによって参照される各 Web サービスの単一のインスタンスを作成してアクセスするためのプロパティを提供します。|  
 |<xref:Microsoft.VisualBasic.FileIO.TextFieldParser>|構造化テキスト ファイルの解析に使用するメソッドとプロパティを提供します。|  
   
-<a id="see-also" class="xliff"></a>
-
-## 関連項目  
+## <a name="see-also"></a>関連項目  
  [Visual Basic 言語リファレンス](../../../visual-basic/language-reference/index.md)   
  [Visual Basic](../../../visual-basic/index.md)
+

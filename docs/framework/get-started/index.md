@@ -1,5 +1,5 @@
 ---
-title: ".NET Framework の概要 | Microsoft Docs"
+title: ".NET Framework の概要"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
@@ -17,11 +17,11 @@ caps.latest.revision: 35
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: Human Translation
-ms.sourcegitcommit: fe9ab371ab8d3eee3778412e446b7aa30b42476b
-ms.openlocfilehash: 42d0ddd649ffaaaf375c3396e4a82b066c9719e9
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: f5c2441148ba869629a88ab2fcc83131f5205493
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/19/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="get-started-with-the-net-framework"></a>.NET Framework の概要
@@ -86,10 +86,11 @@ ms.lasthandoff: 05/19/2017
 |[NET Framework および特別なリリース](../../../docs/framework/get-started/the-net-framework-and-out-of-band-releases.md)|.NET Framework のアウトオブバンド リリースと、これらをアプリ内で使用する方法について説明します。|
 |[システム要件](../../../docs/framework/get-started/system-requirements.md)|.NET Framework を実行するためのハードウェアおよびソフトウェアの要件を示します。|
 |[.NET Core とオープン ソース](../../../docs/framework/get-started/net-core-and-open-source.md)|.NET Core と .NET Framework の関係性、およびオープン ソースの .NET Core プロジェクトにアクセスする方法について説明します。|
-|[.NET Core ドキュメント](https://docs.microsoft.com/dotnet/)|.NET Core の概念と API リファレンス ドキュメントです。|
+|[.NET Core ドキュメント](/dotnet/)|.NET Core の概念と API リファレンス ドキュメントです。|
 
 ## <a name="see-also"></a>関連項目
  [.NET Framework ガイド](../../../docs/framework/index.md)   
  [新機能](../../../docs/framework/whats-new/index.md)   
  [.NET API ブラウザー](/dotnet/api/)   
  [開発ガイド](../../../docs/framework/development-guide.md)
+

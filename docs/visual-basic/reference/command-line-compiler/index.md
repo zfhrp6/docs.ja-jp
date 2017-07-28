@@ -1,5 +1,5 @@
 ---
-title: "Visual Basic のコマンド ライン コンパイラ | Microsoft Docs"
+title: "Visual Basic のコマンド ライン コンパイラ"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.reviewer: 
@@ -33,21 +33,17 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 31905a37f09db5f5192123f0118252fbe8b02eff
-ms.openlocfilehash: 7c62eb47ba748cb119855e9a3987cab8c6a5b74b
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 850aac4098dc22bacd377362f7886fa70219d365
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/26/2017
+ms.lasthandoff: 07/28/2017
 
 ---
-<a id="visual-basic-command-line-compiler" class="xliff"></a>
-
-# Visual Basic のコマンド ライン コンパイラ
+# <a name="visual-basic-command-line-compiler"></a>Visual Basic のコマンド ライン コンパイラ
 [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] コマンド ライン コンパイラは、[!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] 統合開発環境 (IDE) 内からプログラムをコンパイルする方法の代替手段です。 ここでは、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] コンパイラ オプションについて説明します。  
   
-<a id="in-this-section" class="xliff"></a>
-
-## このセクションの内容  
+## <a name="in-this-section"></a>このセクションの内容  
  [コマンド ラインからのビルド](../../../visual-basic/reference/command-line-compiler/building-from-the-command-line.md)  
  [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] IDE 内からプログラムをコンパイルする方法の代替手段として提供される、[!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] コマンド ライン コンパイラについて説明します。  
   
@@ -57,11 +53,10 @@ ms.lasthandoff: 05/26/2017
  [Visual Basic コンパイラ オプション一覧 (カテゴリ別)](../../../visual-basic/reference/command-line-compiler/compiler-options-listed-by-category.md)  
  機能別グループでコンパイラ オプションを示します。  
   
-<a id="related-sections" class="xliff"></a>
-
-## 関連項目  
+## <a name="related-sections"></a>関連項目  
  [NIB: Managing Project Properties with the Project Designer](http://msdn.microsoft.com/en-us/983f3c18-832f-4666-afec-74b716ff3e0e) (NIB: プロジェクト デザイナーでプロジェクトのプロパティを管理する)  
  プロジェクト デザイナーを使用して、プロジェクトのグローバル設定を指定する方法について説明します。  
   
  [Visual Basic](../../../visual-basic/index.md)  
  [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] ヘルプの開始位置。
+

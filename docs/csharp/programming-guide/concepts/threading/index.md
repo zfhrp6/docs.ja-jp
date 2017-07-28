@@ -1,5 +1,5 @@
 ---
-title: "スレッド処理 (C#) | Microsoft Docs"
+title: "スレッド処理 (C#)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -19,11 +19,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 31905a37f09db5f5192123f0118252fbe8b02eff
-ms.openlocfilehash: e3f213b43c2f05a5afef1db7aec8b9c2695df989
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 45ffa38254717c9aee29c3922bf801f6a90c716e
 ms.contentlocale: ja-jp
-ms.lasthandoff: 07/03/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="threading-c"></a>スレッド処理 (C#)
@@ -62,3 +62,4 @@ ms.lasthandoff: 07/03/2017
 |[スレッド プール (C#)](../../../../csharp/programming-guide/concepts/threading/thread-pooling.md)|システムで管理されるワーカー スレッドのプールを使用する方法について説明します。|  
 |[方法: スレッド プールを使用する (C#)](../../../../csharp/programming-guide/concepts/threading/how-to-use-a-thread-pool.md)|スレッド プール内の複数スレッドの同期された使用方法を示します。|  
 |[スレッド化](https://msdn.microsoft.com/library/3e8s7xdd)|.NET Framework でのスレッドの実装方法について説明します。|
+

@@ -1,5 +1,5 @@
 ---
-title: "Visual Basic のプログラミング ガイド | Microsoft Docs"
+title: "Visual Basic のプログラミング ガイド"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -29,21 +29,17 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 31905a37f09db5f5192123f0118252fbe8b02eff
-ms.openlocfilehash: 43f0e9958838bf9a4ca5111ccd93499e3d4d13c5
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 01d6a1fc688f2cdf55ab4be5c6d0a8daccda2031
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/26/2017
+ms.lasthandoff: 07/28/2017
 
 ---
-<a id="visual-basic-programming-guide" class="xliff"></a>
-
-# Visual Basic のプログラミング ガイド
+# <a name="visual-basic-programming-guide"></a>Visual Basic のプログラミング ガイド
 他の最新のプログラミング言語と同様、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] は、多くの一般的なプログラミング構成要素と言語要素をサポートします。 このガイドでは、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] によるプログラミングの主な要素について説明します。  
   
-<a id="in-this-section" class="xliff"></a>
-
-## このセクションの内容  
+## <a name="in-this-section"></a>このセクションの内容  
  [プログラム構造とコード規則](../../visual-basic/programming-guide/program-structure/program-structure-and-code-conventions.md)  
  [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] の基本的な構造およびコード規則 (名前付け規則、コード内のコメント、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] での制限事項など) についてのドキュメントが含まれています。  
   
@@ -53,11 +49,10 @@ ms.lasthandoff: 05/26/2017
  [COM 相互運用](../../visual-basic/programming-guide/com-interop/index.md)  
  [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] でのコンポーネント オブジェクト モデル (COM) オブジェクトの作成および使用に関連する相互運用性の問題について説明します。  
   
-<a id="related-sections" class="xliff"></a>
-
-## 関連項目  
+## <a name="related-sections"></a>関連項目  
  [Visual Basic の言語リファレンス](../../visual-basic/language-reference/index.md)  
  [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] プログラミングのさまざまな側面に関するリファレンス情報を提供します。  
   
  [Visual Basic のコマンド ライン コンパイラ](../../visual-basic/reference/command-line-compiler/index.md)  
  [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] のコマンド ライン コンパイラ、コンパイラ オプション、およびキーワード アップグレード ツールの使用について説明します。
+

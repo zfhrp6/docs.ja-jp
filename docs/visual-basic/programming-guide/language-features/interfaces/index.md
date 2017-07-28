@@ -1,5 +1,5 @@
 ---
-title: "インターフェイス (Visual Basic) | Microsoft Docs"
+title: "インターフェイス (Visual Basic)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -33,16 +33,14 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 31905a37f09db5f5192123f0118252fbe8b02eff
-ms.openlocfilehash: a95f3cfc8213c6a34953ae3ce87c6f5da9c0f8ca
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 1da2458f39886a5d5f0bbf17fd9e63550ed80adf
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/26/2017
+ms.lasthandoff: 07/28/2017
 
 ---
-<a id="interfaces-visual-basic" class="xliff"></a>
-
-# インターフェイス (Visual Basic)
+# <a name="interfaces-visual-basic"></a>インターフェイス (Visual Basic)
 *インターフェイス*は、クラスが実装できるプロパティ、メソッド、およびイベントを定義します。 インターフェイスでは、密接に関連するプロパティ、メソッド、およびイベントの小さなグループとして機能を定義できます。これにより、既存のコードを損なうことなく、インターフェイスを拡張して実装を開発できるため、互換性の問題を減らすことができます。 追加のインターフェイスと実装を開発することで、いつでも新しい機能を追加できます。  
   
  クラスの継承の代わりにインターフェイスを使用する方が望ましい理由が、その他にもいくつかあります。  
@@ -55,9 +53,7 @@ ms.lasthandoff: 05/26/2017
   
 -   インターフェイスは、クラスの継承を使用できない場合に便利です。 たとえば、構造体はクラスから継承できませんが、インターフェイスを実装できます。  
   
-<a id="declaring-interfaces" class="xliff"></a>
-
-## インターフェイスの宣言  
+## <a name="declaring-interfaces"></a>インターフェイスの宣言  
  インターフェイスの定義は、`Interface` ステートメントと `End Interface` ステートメントで囲みます。 `Interface` ステートメントの後に、オプションで`Inherits` ステートメントを追加して、継承されるインターフェイスを 1 つ以上指定することができます。 `Inherits` ステートメントは、宣言内のコメントを除く他のすべてのステートメントより前に記述する必要があります。 インターフェイス定義の残りのステートメントは、`Event`、`Sub`、`Function`、`Property`、`Interface`、`Class`、`Structure`、および `Enum` ステートメントです。 インターフェイスには、`End Sub` や `End Property` など、実装コードや実装コードに関連付けられているステートメントを含めることはできません。  
   
  名前空間内で、インターフェイス ステートメントは既定では `Friend` ですが、明示的に `Public` または `Friend` として宣言することもできます。 クラス、モジュール、インターフェイス、および構造体内で定義されたインターフェイスは、既定では `Public` ですが、明示的に `Public`、`Friend`、`Protected`、または `Private` として宣言することもできます。  
@@ -69,19 +65,13 @@ ms.lasthandoff: 05/26/2017
   
  [!code-vb[VbVbalrOOP#17](../../../../visual-basic/misc/codesnippet/VisualBasic/index_1.vb)]  
   
-<a id="implementing-interfaces" class="xliff"></a>
-
-## インターフェイスの実装  
+## <a name="implementing-interfaces"></a>インターフェイスの実装  
  [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] では、予約語 `Implements` が 2 つの方法で使用されます。 `Implements` ステートメントは、クラスまたは構造体がインターフェイスを実装することを示します。 `Implements` キーワードは、クラス メンバーまたは構造体メンバーが特定のインターフェイス メンバーを実装することを示します。  
   
-<a id="implements-statement" class="xliff"></a>
-
-### Implements ステートメント  
+### <a name="implements-statement"></a>Implements ステートメント  
  クラスまたは構造体が 1 つ以上のインターフェイスを実装する場合は、`Implements` ステートメントを `Class` または `Structure` ステートメントの直後に記述する必要があります。 `Implements` ステートメントには、クラスによって実装されるインターフェイスのコンマ区切りのリストが必要です。 クラスまたは構造体は、すべてのインターフェイス メンバーを `Implements` キーワードを使用して実装する必要があります。  
   
-<a id="implements-keyword" class="xliff"></a>
-
-### Implements キーワード  
+### <a name="implements-keyword"></a>Implements キーワード  
  `Implements` キーワードには、実装されるインターフェイス メンバーのコンマ区切りのリストが必要です。 一般的には、1 つのインターフェイス メンバーのみが指定されますが、複数のメンバーを指定することもできます。 インターフェイス メンバーの指定は、クラス内の implements ステートメントで指定する必要があるインターフェイス名と、ピリオドと、実装されるメンバー関数、プロパティ、またはイベントの名前で構成されます。 インターフェイス メンバーを実装するメンバーの名前には、有効な任意の識別子を使用できます。また、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] の以前のバージョンで使用されている `InterfaceName_MethodName` 規則の制限を受けません。  
   
  たとえば、次のコードは、インターフェイスのメソッドを実装する `Sub1` という名前のサブルーチンを宣言する方法を示しています。  
@@ -98,9 +88,7 @@ ms.lasthandoff: 05/26/2017
   
  インターフェイス メンバーを実装するには、プライベート メンバーを使用することができます。 プライベート メンバーでインターフェイスのメンバーを実装すると、そのメンバーは、クラスのオブジェクト変数で直接利用できない場合でも、インターフェイスを通じて利用できるようになります。  
   
-<a id="interface-implementation-examples" class="xliff"></a>
-
-### インターフェイスの実装の例  
+### <a name="interface-implementation-examples"></a>インターフェイスの実装の例  
  インターフェイスを実装するクラスは、そのすべてのプロパティ、メソッド、およびイベントを実装する必要があります。  
   
  次の例では、2 つのインターフェイスが定義されます。 2 番目のインターフェイス `Interface2` は `Interface1` を継承し、追加のプロパティとメソッドを定義します。  
@@ -117,11 +105,10 @@ ms.lasthandoff: 05/26/2017
   
  readwrite プロパティを使用して、readonly プロパティを実装できます (つまり、実装するクラスで readonly を宣言する必要はありません)。  インターフェイスを実装する場合、少なくともインターフェイスが宣言しているメンバーを実装することになりますが、プロパティを書き込み可能にするなど、追加の機能を提供することもできます。  
   
-<a id="related-topics" class="xliff"></a>
-
-## 関連トピック  
+## <a name="related-topics"></a>関連トピック  
   
 |タイトル|説明|  
 |-----------|-----------------|  
 |[チュートリアル: インターフェイスの作成と実装](../../../../visual-basic/programming-guide/language-features/interfaces/walkthrough-creating-and-implementing-interfaces.md)|独自のインターフェイスを定義および実装する処理の詳細な手順を説明します。|  
 |[ジェネリック インターフェイスの分散](http://msdn.microsoft.com/library/e14322da-1db3-42f2-9a67-397daddd6b6a)|ジェネリック インターフェイスでの共変性と反変性について説明し、.NET Framework でのバリアント ジェネリック インターフェイスの一覧を示します。|
+

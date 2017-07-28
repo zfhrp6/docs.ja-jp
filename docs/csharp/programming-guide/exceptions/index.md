@@ -1,5 +1,5 @@
 ---
-title: "例外と例外処理 (C# プログラミング ガイド) | Microsoft Docs"
+title: "例外と例外処理 (C# プログラミング ガイド)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -29,11 +29,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 31905a37f09db5f5192123f0118252fbe8b02eff
-ms.openlocfilehash: e9faf744717980468afb995eceeb31bda93443b9
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: e372cfa3239c39af86a29cda06b5817f0aeff0a2
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/26/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="exceptions-and-exception-handling-c-programming-guide"></a>例外と例外処理 (C# プログラミング ガイド)
@@ -66,7 +66,7 @@ C# 言語の例外処理機能は、プログラムの実行時に発生する�
   
 -   `finally` ブロック内のコードは、例外がスローされた場合でも実行されます。 `finally` ブロックを使用してリソースを解放します。たとえば、`try` ブロックで開かれたストリームまたはファイルを閉じます。  
   
--   .NET Framework のマネージ例外は、Win32 構造化例外処理メカニズムの上に実装されます。 詳細については、「[構造化例外処理 (C/C++)](https://docs.microsoft.com/cpp/cpp/structured-exception-handling-c-cpp)」と「[A Crash Course on the Depths of Win32 Structured Exception Handling (Win32 構造化例外処理に関する短期集中コース)」](http://go.microsoft.com/fwlink/?LinkId=119654)を参照してください。  
+-   .NET Framework のマネージ例外は、Win32 構造化例外処理メカニズムの上に実装されます。 詳細については、「[構造化例外処理 (C/C++)](/cpp/cpp/structured-exception-handling-c-cpp)」と「[A Crash Course on the Depths of Win32 Structured Exception Handling (Win32 構造化例外処理に関する短期集中コース)」](http://go.microsoft.com/fwlink/?LinkId=119654)を参照してください。  
   
 ## <a name="related-sections"></a>関連項目  
  例外と例外処理の詳細については、次のトピックを参照してください。  
@@ -98,3 +98,4 @@ C# 言語の例外処理機能は、プログラムの実行時に発生する�
  [例外階層](http://msdn.microsoft.com/library/f7d68675-be06-40fb-a555-05f0c5a6f66b)   
  [信頼できる .NET コードを記述する](http://go.microsoft.com/fwlink/?LinkId=112400)   
  [特定の例外のミニダンプ](http://go.microsoft.com/fwlink/?LinkId=112408)
+

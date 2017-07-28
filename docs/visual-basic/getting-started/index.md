@@ -1,5 +1,5 @@
 ---
-title: "Visual Basic の概要 | Microsoft Docs"
+title: "Visual Basic の概要"
 ms.date: 2017-05-01
 ms.prod: .net
 ms.technology:
@@ -29,11 +29,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 31905a37f09db5f5192123f0118252fbe8b02eff
-ms.openlocfilehash: 3f3d00e8145620520697941c9002ea81f8de9044
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 0f94aab658175c1a338aff78d2645fd631fd37c8
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/26/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="getting-started-with-visual-basic"></a>Visual Basic の概要
@@ -53,7 +53,7 @@ Visual Basic .NET の各バージョンの新機能を一覧表示します。
  [Visual Basic に関する詳細情報](http://msdn.microsoft.com/vstudio/hh388573.aspx)  
  Visual Basic でのプログラミング方法を学習するためのリソースへのリンクを示します。  
   
- [Visual Basic を入手する](https://www.visualstudio.com/downloads/)  
+ [Visual Basic の取得](https://www.visualstudio.com/downloads/)  
  Visual Basic のサポートを含む Visual Studio のバージョン (無料版など) のダウンロード リンクを提供します。  
   
 ## <a name="related-sections"></a>関連項目  
@@ -68,10 +68,10 @@ Visual Basic .NET の各バージョンの新機能を一覧表示します。
  
           [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] 言語のさまざまな面を説明するヘルプ ページの一覧を示します。  
   
- [ご意見](https://docs.microsoft.com/visualstudio/ide/talk-to-us)  
+ [ご意見](/visualstudio/ide/talk-to-us)  
  サポートの利用方法、およびフィードバックの送付方法について説明します。  
   
- [Visual Studio](https://docs.microsoft.com/en-us/visualstudio/)  
+ [Visual Studio](/visualstudio/)  
  
           [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] のドキュメントへのリンクを示します。  
   
@@ -79,8 +79,9 @@ Visual Basic .NET の各バージョンの新機能を一覧表示します。
  
           [!INCLUDE[csprcs](~/includes/csprcs-md.md)] を使用したアプリケーション開発についてのドキュメントへのリンクを示します。  
   
- [Visual C++](https://docs.microsoft.com/cpp/)  
+ [Visual C++](/cpp/)  
  Visual C++ のドキュメントへのリンクを示します。  
   
  [Office および SharePoint 開発](https://msdn.microsoft.com/library/d2tx7z6d)  
  Microsoft Office と [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] をビジネス アプリケーションの一部として使用する方法について説明します。
+

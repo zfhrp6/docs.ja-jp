@@ -1,5 +1,5 @@
 ---
-title: "キーワード (Visual Basic) | Microsoft Docs"
+title: "キーワード (Visual Basic)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.suite: 
@@ -35,21 +35,17 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 31905a37f09db5f5192123f0118252fbe8b02eff
-ms.openlocfilehash: 5474dd8cf57253a7783a272638081b0439483306
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 6997ab8d05e2061a0f42ab86d6a7d7fb74b634fe
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/26/2017
+ms.lasthandoff: 07/28/2017
 
 ---
-<a id="keywords-visual-basic" class="xliff"></a>
-
-# キーワード (Visual Basic)
+# <a name="keywords-visual-basic"></a>キーワード (Visual Basic)
 次の表は、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] 言語のすべてのキーワードの一覧です。  
   
-<a id="reserved-keywords" class="xliff"></a>
-
-## 予約済みのキーワード  
+## <a name="reserved-keywords"></a>予約済みのキーワード  
  次のキーワードは*予約済み*であり、プログラミングの要素 (変数やプロシージャなど) の名前として使用できません。 ただし、名前を角かっこ (`[``]`) で囲むと、この制約を回避できます。 詳細については、「[宣言された要素の名前](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md)」の「エスケープされた名前」を参照してください。  
   
 > [!NOTE]
@@ -108,9 +104,7 @@ ms.lasthandoff: 05/26/2017
 > [!NOTE]
 >  `EndIf`、`GoSub`、`Variant`、`Wend` は、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] では使用されなくなりましたが、予約済みのキーワードとして残っています。 `Let` キーワードは、意味が変更されました。 `Let` は、LINQ クエリで使用するようになっています。 詳細については、「[Let 句](../../../visual-basic/language-reference/queries/let-clause.md)」を参照してください。  
   
-<a id="unreserved-keywords" class="xliff"></a>
-
-## 予約されていないキーワード  
+## <a name="unreserved-keywords"></a>予約されていないキーワード  
  次のキーワードは予約されていません。したがって、プログラミングの要素の名前として使用できます。 ただし、コードの可読性が低下し、検出しにくい微妙なエラーの原因となる可能性があるため、これらのキーワードを要素の名前として使用することは避けてください。  
   
 |||||  
@@ -126,9 +120,7 @@ ms.lasthandoff: 05/26/2017
 |[Until](../../../visual-basic/language-reference/statements/do-loop-statement.md)|[Where](../../../visual-basic/language-reference/queries/where-clause.md)|[Yield](../../../visual-basic/language-reference/statements/yield-statement.md)|[#ExternalSource](../../../visual-basic/language-reference/directives/externalsource-directive.md)|  
 |[#Region](../../../visual-basic/language-reference/directives/region-directive.md)||||  
   
-<a id="related-topics" class="xliff"></a>
-
-## 関連トピック  
+## <a name="related-topics"></a>関連トピック  
   
 |タイトル|説明|  
 |-----------|-----------------|  
@@ -151,8 +143,6 @@ ms.lasthandoff: 05/26/2017
 |[レジストリの概要](../../../visual-basic/language-reference/keywords/registry-summary.md)|プログラム設定の読み込み、保存、および削除に使用される関数の一覧を示します。|  
 |[文字列操作の概要](../../../visual-basic/language-reference/keywords/string-manipulation-summary.md)|文字列操作に使用される関数の一覧を示します。|  
   
-<a id="see-also" class="xliff"></a>
-
-## 関連項目  
+## <a name="see-also"></a>関連項目  
  [Visual Basic ランタイム ライブラリのメンバー](../../../visual-basic/language-reference/runtime-library-members.md)
 

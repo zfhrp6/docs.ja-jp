@@ -1,5 +1,5 @@
 ---
-title: "Null 許容型 (C# プログラミング ガイド) | Microsoft Docs"
+title: "Null 許容型 (C# プログラミング ガイド)"
 ms.date: 2017-05-15
 ms.prod: .net
 ms.technology:
@@ -29,25 +29,21 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: fd5f6cccdc5c91eb435ba024c9c37351febc952a
-ms.openlocfilehash: 2d13fdbef24ee16855261a3c1e26d7fca4f986f2
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 909c90da69d85512399eacd16e1ba6db7aad2291
 ms.contentlocale: ja-jp
-ms.lasthandoff: 06/13/2017
+ms.lasthandoff: 07/28/2017
 
 ---
-<a id="nullable-types-c-programming-guide" class="xliff"></a>
-
-# Null 許容型 (C# プログラミング ガイド)
+# <a name="nullable-types-c-programming-guide"></a>Null 許容型 (C# プログラミング ガイド)
 Null 許容型は、<xref:System.Nullable%601?displayProperty=fullName> 構造体のインスタンスです。 Null 許容型は、基になる値型の適切な範囲の値だけでなく、`null` 値も表すことができます。 たとえば、`Nullable<Int32>` ("Null 許容の Int32" と読みます) には、-2147483648 ～ 2147483647 の範囲の任意の値または `null` 値を割り当てることができます。 `Nullable<bool>` には、[true](../../../csharp/language-reference/keywords/true.md)、[false](../../../csharp/language-reference/keywords/false.md)、または [null](../../../csharp/language-reference/keywords/null.md) の値を割り当てることができます。 数値型と Boolean 型に `null` を割り当てる機能は、値が割り当てられていない可能性がある要素を含むデータベースとその他のデータ型を処理するときに特に役に立ちます。 たとえば、データベースの Boolean フィールドには、値 `true` または `false` が格納されている可能性がありますが、未定義である可能性もあります。 
   
 [!code-cs[null 許容型](../../../../samples/snippets/csharp/programming-guide/nullable-types/nullable-ex1.cs)]  
   
 その他の例については、「[Null 許容型の使用](../../../csharp/programming-guide/nullable-types/using-nullable-types.md)」を参照してください  
   
-<a id="nullable-types-overview" class="xliff"></a>
-
-## Null 許容型の概要  
+## <a name="nullable-types-overview"></a>Null 許容型の概要  
  Null 許容型には次の特性があります。  
   
 -   Null 許容型は、`null`値を割り当てることができる、値型の変数を表します。 参照型に基づいた Null 許容型は作成できません  (参照型は既に `null` 値をサポートしています)。  
@@ -72,9 +68,7 @@ Null 許容型は、<xref:System.Nullable%601?displayProperty=fullName> 構造�
   
 -   入れ子になった Null 許容型は許可されません。 次の行はコンパイルされません。`Nullable<Nullable<int>> n;`  
   
-<a id="related-sections" class="xliff"></a>
-
-## 関連項目  
+## <a name="related-sections"></a>関連項目  
  詳細情報  
   
 -   [Null 許容型の使用](../../../csharp/programming-guide/nullable-types/using-nullable-types.md)  
@@ -83,14 +77,10 @@ Null 許容型は、<xref:System.Nullable%601?displayProperty=fullName> 構造�
   
 -   [??演算子](../../../csharp/language-reference/operators/null-conditional-operator.md)  
   
-<a id="c-language-specification" class="xliff"></a>
-
-## C# 言語仕様  
+## <a name="c-language-specification"></a>C# 言語仕様  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
-<a id="see-also" class="xliff"></a>
-
-## 関連項目  
+## <a name="see-also"></a>関連項目  
  <xref:System.Nullable>   
  [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
  [C#](../../../csharp/csharp.md)   

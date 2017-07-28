@@ -1,5 +1,5 @@
 ---
-title: "コレクション初期化子 (Visual Basic) | Microsoft Docs"
+title: "コレクション初期化子 (Visual Basic)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -32,16 +32,14 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: e0a5ab6a7b3ee752af6b58a35a11e4fc0fb2b08a
-ms.openlocfilehash: 4b0abe2c6356370584356dce1c6fc5731d735810
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 72ca6506d0bd867efa60ba73ecda72c32def129e
 ms.contentlocale: ja-jp
-ms.lasthandoff: 07/03/2017
+ms.lasthandoff: 07/28/2017
 
 ---
-<a id="collection-initializers-visual-basic" class="xliff"></a>
-
-# コレクション初期化子 (Visual Basic)
+# <a name="collection-initializers-visual-basic"></a>コレクション初期化子 (Visual Basic)
 *コレクション初期化子*とは、コレクションを作成して一連の初期値を設定できる、短い構文です。 コレクション初期化子は、コレクションを既知の値のセットから作成する場合に便利です。値のセットの例として、メニュー オプションやカテゴリのリスト、数値の初期セット、曜日や月の名前の静的文字列のリスト、検証に使用する州のリストなどの地理的な場所が挙げられます。  
   
  コレクションの詳細については、「[コレクション](http://msdn.microsoft.com/library/e76533a9-5033-4a0b-b003-9c2be60d185b)」を参照してください。  
@@ -53,9 +51,7 @@ ms.lasthandoff: 07/03/2017
 > [!NOTE]
 >  C# にもコレクション初期化子はあります。 C# のコレクション初期化子には、Visual Basic のコレクション初期化子と同じ機能があります。 C# のコレクション初期化子の詳細については、「[オブジェクト初期化子とコレクション初期化子](../../../../csharp/programming-guide/classes-and-structs/object-and-collection-initializers.md)」を参照してください。  
   
-<a id="syntax" class="xliff"></a>
-
-## 構文  
+## <a name="syntax"></a>構文  
  コレクション初期化子は、次のコードのように、先頭に `From` キーワードが付いた、中かっこ (`{}`) で囲まれたコンマ区切りの値の一覧で構成されます。  
   
  [!code-vb[VbVbalrCollectionInitializers#2](../../../../../samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrCollectionInitializers/VB/Module1.vb#2)]  
@@ -67,9 +63,7 @@ ms.lasthandoff: 07/03/2017
 > [!NOTE]
 >  コレクション初期化子とオブジェクト初期化子を組み合わせて、同じコレクション オブジェクトを初期化することはできません。 コレクション初期化子内のオブジェクトを初期化するには、オブジェクト初期化子を使用します。  
   
-<a id="creating-a-collection-by-using-a-collection-intializer" class="xliff"></a>
-
-## コレクション初期化子を使用してコレクションを作成する  
+## <a name="creating-a-collection-by-using-a-collection-intializer"></a>コレクション初期化子を使用してコレクションを作成する  
  コレクション初期化子を使用してコレクションを作成する場合、コレクション初期化子内の各値は、コレクション内の適切な `Add` メソッドに渡されます。 たとえば、コレクション初期化子を使用して <xref:System.Collections.Generic.List%601> 作成する場合、コレクション初期化子内の各文字列値は <xref:System.Collections.Generic.List%601.Add%2A> メソッドに渡されます。 コレクション初期化子を使用してコレクションを作成する場合は、指定した型は有効なコレクション型である必要があります。 有効なコレクションの型には、<xref:System.Collections.Generic.IEnumerable%601> インターフェイスを実装するクラスや、<xref:System.Collections.CollectionBase> クラスを継承するクラスなどがあります。 指定した型には、次の条件を満たす `Add` メソッドも公開されている必要があります。  
   
 -   `Add` メソッドは、コレクション初期化子の呼び出し元の範囲から使用できる必要があります。 そのコレクションのパブリックでないメソッドにアクセスできるシナリオでコレクション初期化子を使用する場合は、`Add` メソッドは、パブリックである必要はありません。  
@@ -88,9 +82,7 @@ ms.lasthandoff: 07/03/2017
   
  `Customer` オブジェクトのコンストラクターと一致するパラメーターを持つ `Add` メソッドがコレクションにある場合、次のセクションで説明するように、コレクション初期化子内に `Add` メソッドのパラメーター値を入れ子にすることができます。 コレクションにこのような `Add` メソッドがない場合、それを拡張メソッドとして作成できます。 コレクションの拡張メソッドとして `Add` メソッドを作成する方法の例については、「[方法: コレクション初期化子で使用される拡張メソッドを作成または追加する](../../../../visual-basic/programming-guide/language-features/collection-initializers/how-to-create-an-add-extension-method-used-by-a-collection-initializer.md)」を参照してください。 コレクション初期化子で使用できるカスタム コレクションを作成する方法の例については、「[方法: コレクション初期化子を使用してコレクションを作成する](../../../../visual-basic/programming-guide/language-features/collection-initializers/how-to-create-a-collection-used-by-a-collection-initializer.md)」を参照してください。  
   
-<a id="nesting-collection-initializers" class="xliff"></a>
-
-## コレクション初期化子を入れ子にする  
+## <a name="nesting-collection-initializers"></a>コレクション初期化子を入れ子にする  
  作成するコレクションの `Add` メソッドで固有のオーバーロードを指定するため、コレクション初期化子内の値を入れ子にすることができます。 `Add` メソッドに渡す値は、配列リテラルまたはコレクション初期化子の場合と同じように、コンマで区切り、中かっこ (`{}`) で囲む必要があります。  
   
  入れ子にした値でコレクションを作成する場合、入れ子になった値一覧の各要素は、要素の型に一致する `Add` メソッドに引数として渡されます。 たとえば、次のコード例では、キーは `Integer` 型で値は `String` 型の <xref:System.Collections.Generic.Dictionary%602> が作成されます。 一連の入れ子になった値は、それぞれ `Dictionary` の <xref:System.Collections.Generic.Dictionary%602.Add%2A> メソッドと照合されます。  
@@ -103,18 +95,14 @@ ms.lasthandoff: 07/03/2017
   
  入れ子の最初のレベルの一連の入れ子になった値のみが、それぞれそのコレクション型の `Add` メソッドに送信されます。 より深いレベルの入れ子は配列リテラルとして扱われ、入れ子になった一連の値はどのコレクションの `Add` メソッドとも照合されません。  
   
-<a id="related-topics" class="xliff"></a>
-
-## 関連トピック  
+## <a name="related-topics"></a>関連トピック  
   
 |タイトル|説明|  
 |---|---|  
 |[方法: コレクション初期化子で使用される拡張メソッドを作成または追加する](../../../../visual-basic/programming-guide/language-features/collection-initializers/how-to-create-an-add-extension-method-used-by-a-collection-initializer.md)|コレクション初期化子の値をコレクションに入力するために使用できる `Add` と呼ばれる拡張メソッドを作成する方法を示します。|  
 |[方法: コレクション初期化子を使用してコレクションを作成する](../../../../visual-basic/programming-guide/language-features/collection-initializers/how-to-create-a-collection-used-by-a-collection-initializer.md)|`IEnumerable` を実装するコレクション クラスに `Add` メソッドを含めてコレクション初期化子を使用できるようにする方法を説明します。|  
   
-<a id="see-also" class="xliff"></a>
-
-## 関連項目  
+## <a name="see-also"></a>関連項目  
  [コレクション](http://msdn.microsoft.com/library/e76533a9-5033-4a0b-b003-9c2be60d185b)   
  [配列](../../../../visual-basic/programming-guide/language-features/arrays/index.md)   
  [オブジェクト初期化子 : 名前付きの型と匿名型](../../../../visual-basic/programming-guide/language-features/objects-and-classes/object-initializers-named-and-anonymous-types.md)   

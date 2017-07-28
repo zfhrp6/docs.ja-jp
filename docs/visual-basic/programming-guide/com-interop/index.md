@@ -1,5 +1,5 @@
 ---
-title: "COM 相互運用 (Visual Basic) | Microsoft Docs"
+title: "COM 相互運用 (Visual Basic)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -31,21 +31,17 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 31905a37f09db5f5192123f0118252fbe8b02eff
-ms.openlocfilehash: 6aaa083c7d668659d2e68638b677a20ce22fa214
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 29275519a00ad0c33a5b85e592532ce456daefe0
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/26/2017
+ms.lasthandoff: 07/28/2017
 
 ---
-<a id="com-interop-visual-basic" class="xliff"></a>
-
-# COM 相互運用 (Visual Basic)
+# <a name="com-interop-visual-basic"></a>COM 相互運用 (Visual Basic)
 コンポーネント オブジェクト モデル (COM) では、オブジェクトがその機能を他のコンポーネントに公開し、アプリケーションをホストすることを許可します。 今日のソフトウェアのほとんどに、COM オブジェクトが含まれています。 .NET アセンブリは新しいアプリケーションに最適ですが、時には COM オブジェクトを使用する必要があります。 このセクションには、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] での COM オブジェクトの作成と使用に関連するいくつかの問題も含まれています。  
   
-<a id="in-this-section" class="xliff"></a>
-
-## このセクションの内容  
+## <a name="in-this-section"></a>このセクションの内容  
  [COM 相互運用の概要](../../../visual-basic/programming-guide/com-interop/introduction-to-com-interop.md)  
  COM 相互運用の概要を示します。  
   
@@ -76,9 +72,7 @@ ms.lasthandoff: 05/26/2017
  [チュートリアル : COM オブジェクトによる継承の実装](../../../visual-basic/programming-guide/com-interop/walkthrough-implementing-inheritance-with-com-objects.md)  
  新しいオブジェクトの基本として既存の COM オブジェクトを使用する方法を説明します。  
   
-<a id="related-sections" class="xliff"></a>
-
-## 関連項目  
+## <a name="related-sections"></a>関連項目  
  [アンマネージ コードとの相互運用](https://msdn.microsoft.com/library/sd10k43k)  
  共通言語ランタイムが提供する相互運用サービスについて説明します。  
   
@@ -90,3 +84,4 @@ ms.lasthandoff: 05/26/2017
   
  [相互運用固有の属性の適用](https://msdn.microsoft.com/library/d4w8x20h)  
  アンマネージ コードを操作するときに使用できる属性について説明します。
+

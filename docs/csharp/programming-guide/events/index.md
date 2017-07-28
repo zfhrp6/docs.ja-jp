@@ -1,5 +1,5 @@
 ---
-title: "イベント (C# プログラミング ガイド) | Microsoft Docs"
+title: "イベント (C# プログラミング ガイド)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -30,23 +30,19 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 31905a37f09db5f5192123f0118252fbe8b02eff
-ms.openlocfilehash: b3f4673eccdbd568fa8ab042023a4b3bd8230bb3
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 6a913a615de8185bb358376def1e2a051bdaa951
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/26/2017
+ms.lasthandoff: 07/28/2017
 
 ---
-<a id="events-c-programming-guide" class="xliff"></a>
-
-# イベント (C# プログラミング ガイド)
+# <a name="events-c-programming-guide"></a>イベント (C# プログラミング ガイド)
 [クラス](../../../csharp/language-reference/keywords/class.md) やオブジェクトは、何か重要なことが起こった場合に、イベントを使用して他のクラスまたはオブジェクトに通知を送ります。 イベントを送信する ( *発生させる*) クラスを *パブリッシャー* 、イベントを受信する ( *処理する*) クラスを *サブスクライバー*と呼びます。  
   
  一般的な C# Windows フォームまたは Web アプリケーションでは、ボタンやリスト ボックスなどのコントロールによって発生したイベントを定期受信します。 [!INCLUDE[csprcs](~/includes/csprcs-md.md)] 統合開発環境 (IDE) を使用して、コントロールによって発行されるイベントを参照し、処理するイベントを選択できます。 IDE は、空のイベント ハンドラー メソッドとイベントを定期受信するためのコードを自動的に追加します。 詳細については、「[方法: イベント サブスクリプションとサブスクリプションの解除](../../../csharp/programming-guide/events/how-to-subscribe-to-and-unsubscribe-from-events.md)」を参照してください。  
   
-<a id="events-overview" class="xliff"></a>
-
-## イベントの概要  
+## <a name="events-overview"></a>イベントの概要  
  イベントには次のようなプロパティがあります。  
   
 -   パブリッシャーがイベントが発生するタイミングを判断し、サブスクライバーがイベントに対応して実行するアクションを決定します。  
@@ -59,11 +55,9 @@ ms.lasthandoff: 05/26/2017
   
 -   イベントに複数のサブスクライバーがある場合は、イベントが発生したときに複数のイベント ハンドラーが同時に呼び出されます。 イベントを非同期に呼び出すには、「 [Calling Synchronous Methods Asynchronously](https://msdn.microsoft.com/library/2e08f6yc)」を参照してください。  
   
--   [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] クラス ライブラリ以内で、イベントは、<xref:System.EventHandler> デリゲートおよび <xref:System.EventArgs> 基底クラスを基にしています。  
+-   [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] クラス ライブラリ以内で、イベントは、 <xref:System.EventHandler> デリゲートおよび <xref:System.EventArgs> 基底クラスを基にしています。  
   
-<a id="related-sections" class="xliff"></a>
-
-## 関連項目  
+## <a name="related-sections"></a>関連項目  
  詳細については次を参照してください:  
   
 -   [方法: イベント サブスクリプションとサブスクリプションの解除](../../../csharp/programming-guide/events/how-to-subscribe-to-and-unsubscribe-from-events.md)  
@@ -80,23 +74,18 @@ ms.lasthandoff: 05/26/2017
   
 -   [方法: カスタム イベント アクセサーを実装する](../../../csharp/programming-guide/events/how-to-implement-custom-event-accessors.md)  
   
-<a id="c-language-specification" class="xliff"></a>
-
-## C# 言語仕様  
+## <a name="c-language-specification"></a>C# 言語仕様  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
-<a id="featured-book-chapters" class="xliff"></a>
-
-## 参考書籍の該当する章  
+## <a name="featured-book-chapters"></a>参考書籍の該当する章  
  『[Delegates, Events, and Lambda Expressions (デリゲート、イベント、およびラムダ式) (C# 3.0 クックブック (第 3 版): C# 3.0 プログラマ向けの 250 以上のソリューション)](http://go.microsoft.com/fwlink/?LinkId=195395) 』の「 [Delegates, Events, and Lambda Expressions (デリゲート、イベント、およびラムダ式)](http://go.microsoft.com/fwlink/?LinkId=195369)」  
   
  「[Learn」の「g C# 3.0: Master the Fundamentals of C# 3.0 (C# 3.0 の学習: C# 3.0 の基礎を習得)](http://go.microsoft.com/fwlink/?LinkId=195418) 」の「 [Learn」の「g C# 3.0: Master the fundamentals of C# 3.0](http://go.microsoft.com/fwlink/?LinkId=195412)」  
   
-<a id="see-also" class="xliff"></a>
-
-## 関連項目  
+## <a name="see-also"></a>関連項目  
  <xref:System.EventHandler>   
  [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
  [デリゲート](../../../csharp/programming-guide/delegates/index.md)   
  [Windows フォーム内のイベント ハンドラーの作成](https://msdn.microsoft.com/library/dacysss4.aspx)   
  [イベント ベースの非同期パターンを使用したマルチスレッド プログラミング](https://msdn.microsoft.com/library/hkasytyf)
+

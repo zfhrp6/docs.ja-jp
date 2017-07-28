@@ -1,5 +1,5 @@
 ---
-title: "Visual Basic における文字列 | Microsoft Docs"
+title: "Visual Basic における文字列"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -31,21 +31,17 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 31905a37f09db5f5192123f0118252fbe8b02eff
-ms.openlocfilehash: 3bfb94cf3b3e40164ccd9ff6021e1b624c963039
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 05cb6db768779895ebf3e57a0feb7bb58c65fc2a
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/26/2017
+ms.lasthandoff: 07/28/2017
 
 ---
-<a id="strings-in-visual-basic" class="xliff"></a>
-
-# Visual Basic における文字列
+# <a name="strings-in-visual-basic"></a>Visual Basic における文字列
 このセクションは、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] で文字列を使用する場合の基本的な考え方について説明します。  
   
-<a id="in-this-section" class="xliff"></a>
-
-## このセクションの内容  
+## <a name="in-this-section"></a>このセクションの内容  
  [Visual Basic の文字列の概要](../../../../visual-basic/programming-guide/language-features/strings/introduction-to-strings.md)  
  [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] で文字列を使用する場合の基本概念に関するトピックを紹介します。  
   
@@ -64,7 +60,6 @@ ms.lasthandoff: 05/26/2017
  [チュートリアル : Visual Basic での文字列の暗号化と複合化](../../../../visual-basic/programming-guide/language-features/strings/walkthrough-encrypting-and-decrypting-strings.md)  
  Triple Data Encryption Standard アルゴリズムの暗号化サービス プロバイダー バージョンを使用して文字列を暗号化および暗号化解除する方法を説明します。  
   
-<a id="see-also" class="xliff"></a>
-
-## 関連項目  
+## <a name="see-also"></a>関連項目  
  [Visual Basic 言語の機能](../../../../visual-basic/programming-guide/language-features/index.md)
+
