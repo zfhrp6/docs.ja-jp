@@ -1,5 +1,5 @@
 ---
-title: Visual Studio Tools for Docker | Microsoft Docs
+title: Visual Studio Tools for Docker
 description: "Visual Studio Tools for Docker を使用する"
 keywords: .NET, .NET Core, Docker, ASP.NET Core, Visual Studio
 author: spboyer
@@ -11,29 +11,23 @@ ms.technology: dotnet-docker
 ms.devlang: dotnet
 ms.assetid: 1f3b9a68-4dea-4b60-8cb3-f46164eedbbf
 ms.translationtype: Human Translation
-ms.sourcegitcommit: 4437ce5d344cf06d30e31911def6287999fc6ffc
-ms.openlocfilehash: dd1a0dc226d6ac9af5a474da54ac14094855fe31
+ms.sourcegitcommit: 50e128137fde445f64e10cf7c2a1ee5fdecb34e6
+ms.openlocfilehash: 283b9405000cba328c348fada81c70683b700a8b
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/23/2017
+ms.lasthandoff: 05/01/2017
 
 ---
 
-<a id="visual-studio-tools-for-docker" class="xliff"></a>
-
-# Visual Studio Tools for Docker
+# <a name="visual-studio-tools-for-docker"></a>Visual Studio Tools for Docker
 
 [Docker for Windows](https://docs.docker.com/docker-for-windows/install/) を含む [Microsoft Visual Studio 2017](https://www.visualstudio.com/) では、Windows と Linux コンテナーを使用した .NET Framework および .NET Core の Web アプリケーションやコンソール アプリケーションのビルド、デバッグ、実行をサポートします。
 
-<a id="prerequisites" class="xliff"></a>
-
-## 必要条件
+## <a name="prerequisites"></a>必要条件
 
 - [Microsoft Visual Studio 2017](https://www.visualstudio.com/)
 - [Docker for Windows](https://docs.docker.com/docker-for-windows/install/)
 
-<a id="installation-and-setup" class="xliff"></a>
-
-## インストールとセットアップ
+## <a name="installation-and-setup"></a>インストールとセットアップ
 
 .NET Core ワークロードで [Microsoft Visual Studio 2017](https://www.visualstudio.com/) をインストールします。 「[Docker for Windows: What to know before you install](https://docs.docker.com/docker-for-windows/install/#what-to-know-before-you-install)」 (Docker for Windows: インストール前に知っておくべきこと) の情報を確認し、[Docker for Windows](https://docs.docker.com/docker-for-windows/install/) をインストールします。
 
@@ -43,9 +37,7 @@ Docker for Windows では、**[共有ドライブ](https://docs.docker.com/docke
 
 ![共有ドライブ](./media/visual-studio-tools-for-docker/settings-shared-drives-win.png)
 
-<a id="create-an-aspnet-web-application-and-add-docker-support" class="xliff"></a>
-
-## ASP.NET Web アプリケーションを作成し、Docker のサポートを追加する
+## <a name="create-an-aspnet-web-application-and-add-docker-support"></a>ASP.NET Web アプリケーションを作成し、Docker のサポートを追加する
 
 Visual Studio を使用して、新しい ASP.NET Core Web アプリケーションを作成できます。 アプリケーションが読み込まれたら、[**プロジェクト**] メニューの 「**Add Docker Support**」 (Docker サポートの追加) を選択するか、ソリューション エクスプローラーからプロジェクトを右クリックし、[**追加**] > 「**Docker Support**」 (Docker サポート) の順に選択します。
 
@@ -83,9 +75,7 @@ services:
 
 イメージをレジストリにプッシュする場合、`user` を Docker Hub のユーザー名に変更してください。 たとえば、`spboyer/hellodockertools` や、構成に応じて `privateregistry.domain.com/` のプライベート レジストリ url に変更します。
 
-<a id="debugging" class="xliff"></a>
-
-### デバッグ
+### <a name="debugging"></a>デバッグ
 
 ツールバーのデバッグ ドロップダウンから [**Docker**] を選択し、F5 を使用してアプリケーションのデバッグを開始します。 
 
@@ -111,9 +101,7 @@ CONTAINER ID        IMAGE                          COMMAND               CREATED
 3f240cf686c9        spboyer/hellodockertools:dev   "tail -f /dev/null"   4 minutes ago       Up 4 minutes        0.0.0.0:32769->80/tcp   hellodockertools_hellodockertools_1
 ```
 
-<a id="edit-and-continue" class="xliff"></a>
-
-### エディット コンティニュ
+### <a name="edit-and-continue"></a>エディット コンティニュ
 
 静的なファイルや razor テンプレート ファイル (.cshtml) に対する変更は、コンパイルをする必要なく、自動的に更新されます。 変更を行って保存し、タップしてブラウザーを更新し、更新を確認します。  
 
@@ -124,9 +112,7 @@ CONTAINER ID        IMAGE                          COMMAND               CREATED
 3f240cf686c9        spboyer/hellodockertools:dev   "tail -f /dev/null"   10 minutes ago      Up 10 minutes       0.0.0.0:32769->80/tcp   hellodockertools_hellodockertools_1
 ```
 
-<a id="publishing-docker-images" class="xliff"></a>
-
-### Docker イメージの発行
+### <a name="publishing-docker-images"></a>Docker イメージの発行
 
 アプリケーションの開発とデバッグのサイクルが完了したら、Visual Studio Tools for Docker でアプリケーションの実稼働イメージを作成できます。 デバッグ ドロップダウンを [**リリース**] に変更し、アプリケーションを構築します。 このツールにより、イメージが、プライベート レジストリまたは Docker Hub にプッシュできる `:latest` タグ付きで生成されます。 
 

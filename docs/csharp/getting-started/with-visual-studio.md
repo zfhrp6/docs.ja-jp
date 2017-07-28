@@ -1,5 +1,5 @@
 ---
-title: "Visual Studio 2017 での .NET Core を使用した C# Hello World アプリケーションの構築 | Microsoft Docs"
+title: "Visual Studio 2017 での .NET Core を使用した C# Hello World アプリケーションの構築"
 description: "Visual Studio 2017 を使用した、単純な .NET Core コンソール アプリケーションを構築する方法について説明します。"
 keywords: ".NET Core、.NET Core コンソール アプリケーション、Visual Studio 2017"
 author: BillWagner
@@ -11,27 +11,24 @@ ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 97aa50bf-bdf8-416d-a56c-ac77504c14ea
 ms.translationtype: Human Translation
-ms.sourcegitcommit: 4437ce5d344cf06d30e31911def6287999fc6ffc
-ms.openlocfilehash: 08c8e18a95c25477eb81bd6df10cf593b284bf64
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: b19bf07b2a2bba944bb33ddb1c887f77331ba8d1
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/23/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 
-<a id="building-a-c-hello-world-application-with-net-core-in-visual-studio-2017" class="xliff"></a>
-# Visual Studio 2017 での .NET Core を使用した C# Hello World アプリケーションの構築
+# <a name="building-a-c-hello-world-application-with-net-core-in-visual-studio-2017"></a>Visual Studio 2017 での .NET Core を使用した C# Hello World アプリケーションの構築
 
 このトピックでは、Visual Studio 2017 を使用して、簡単な .NET Core コンソール アプリケーションを構築、デバッグ、発行するステップ バイ ステップの概要を説明します。 Visual Studio 2017 は、.NET Core アプリケーション構築用の機能をすべて備えた開発環境を提供します。 アプリケーションが特定のプラットフォームに依存する場合を除き、.NET Core が対象とする任意のプラットフォームおよび .NET Core がインストールされている任意のシステムで実行可能です。
 
-<a id="prerequisites" class="xliff"></a>
-## 必要条件
+## <a name="prerequisites"></a>必要条件
 
 [Visual Studio 2017](https://www.visualstudio.com/downloads/) が ".NET Core クロスプラット フォーム開発" とともにインストールされていること。 
 
 詳細については、「[Windows における .NET Core の前提条件](../../core/windows-prerequisites.md)」を参照してください。
 
-<a id="a-simple-hello-world-application" class="xliff"></a>
-## シンプルな "Hello World" アプリケーション
+## <a name="a-simple-hello-world-application"></a>シンプルな "Hello World" アプリケーション
 
 まず、シンプルな "Hello World" コンソール アプリケーションを作成してみましょう。 この場合は、以下の手順に従ってください。
 
@@ -61,8 +58,7 @@ ms.lasthandoff: 05/23/2017
 
 1. 任意のキーを押して、コンソール ウィンドウを閉じます。
 
-<a id="enhancing-the-hello-world-application" class="xliff"></a>
-## Hello World アプリケーションの拡張
+## <a name="enhancing-the-hello-world-application"></a>Hello World アプリケーションの拡張
 
 アプリケーションを拡張し、ユーザーに名前の入力を求め、日付と時刻と共にそれを表示するようにします。 以下のように、プログラムを変更してテストします。
 
@@ -88,8 +84,7 @@ ms.lasthandoff: 05/23/2017
 
 - アプリケーションの再頒布可能バージョンの開発と発行については、「[Visual Studio 2017 を使用した Hello World アプリケーションの発行](publishing-with-visual-studio.md)」を参照してください。
 
-<a id="related-topics" class="xliff"></a>
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 .NET Core と Visual Studio 2017 では、コンソール アプリケーションの代わりにクラス ライブラリを構築することもできます。 ステップ バイ ステップの説明については、「[Visual Studio 2017 の C# および .NET Core を使用したクラス ライブラリの構築](library-with-visual-studio.md)」を参照してください。
 
