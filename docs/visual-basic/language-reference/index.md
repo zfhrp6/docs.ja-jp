@@ -1,5 +1,5 @@
 ---
-title: "Visual Basic の言語リファレンス | Microsoft Docs"
+title: "Visual Basic の言語リファレンス"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -33,21 +33,17 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 31905a37f09db5f5192123f0118252fbe8b02eff
-ms.openlocfilehash: ada35fcbbbe84f6339f47af736a8581db85cfb56
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 1ac47bde27397e80993a6bb5d2512715f44acfc1
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/26/2017
+ms.lasthandoff: 07/28/2017
 
 ---
-<a id="visual-basic-language-reference" class="xliff"></a>
-
-# Visual Basic の言語リファレンス
+# <a name="visual-basic-language-reference"></a>Visual Basic の言語リファレンス
 このセクションでは、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] 言語のさまざまな側面の参照情報を示します。  
   
-<a id="in-this-section" class="xliff"></a>
-
-## このセクションの内容  
+## <a name="in-this-section"></a>このセクションの内容  
  [表記規則とコード規則](../../visual-basic/language-reference/typographic-and-code-conventions.md)  
  [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] ドキュメントで、キーワード、プレースホルダー、および言語の他の要素の書式設定の方法に関する概要を示します。  
   
@@ -108,11 +104,10 @@ ms.lasthandoff: 05/26/2017
  [エラー メッセージ](../../visual-basic/language-reference/error-messages/index.md)  
  [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] コンパイラとランタイム エラー メッセージの一覧およびそれらの対処方法のヘルプがあります。  
   
-<a id="related-sections" class="xliff"></a>
-
-## 関連項目  
+## <a name="related-sections"></a>関連項目  
  [Visual Basic](../../visual-basic/index.md)  
  [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] 言語のすべての領域の包括的なヘルプがあります。  
   
  [Visual Basic のコマンド ライン コンパイラ](../../visual-basic/reference/command-line-compiler/index.md)  
  [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] 統合開発環境 (IDE) でプログラムをコンパイルする方法の代替手段としてコマンド ライン コンパイルを使用する方法を説明しています。
+

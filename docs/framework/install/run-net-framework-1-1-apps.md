@@ -1,5 +1,5 @@
 ---
-title: "Windows 8、Windows 8.1、または Windows 10 での .NET Framework 1.1 アプリの実行 | Microsoft Docs"
+title: "Windows 8、Windows 8.1、または Windows 10 での .NET Framework 1.1 アプリの実行"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
@@ -17,11 +17,11 @@ caps.latest.revision: 9
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.translationtype: Human Translation
-ms.sourcegitcommit: fe9ab371ab8d3eee3778412e446b7aa30b42476b
-ms.openlocfilehash: d1480f28a1df94011f32c1597c1d90df3fee466b
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 4ae88205af37d8ffb49e845942e83432357d4bdd
 ms.contentlocale: ja-jp
-ms.lasthandoff: 06/02/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 
@@ -37,3 +37,4 @@ ms.lasthandoff: 06/02/2017
 
 [.NET Framework 1.1 からの移行](../../../docs/framework/migration-guide/migrating-from-the-net-framework-1-1.md)
 [Windows 8、Windows 8.1、および Windows 10 への .NET Framework 3.5 のインストール](../../../docs/framework/install/dotnet-35-windows-10.md)
+

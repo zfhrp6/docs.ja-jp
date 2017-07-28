@@ -1,5 +1,5 @@
 ---
-title: "方法: インストールされている .NET Framework の更新プログラムを確認する | Microsoft Docs"
+title: "方法 : インストールされている .NET Framework の更新プログラムを確認する"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
@@ -17,21 +17,19 @@ caps.latest.revision: 6
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 14abadaf548e228244a1ff7ca72fa3896ef4eb5d
-ms.openlocfilehash: 6a6e4c9c2bdacc01f82d3a53aec706809bcfaa5a
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: b29b402e859688dcced6bd4429b18298070fb5e4
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/23/2017
+ms.lasthandoff: 07/28/2017
 
 ---
-<a id="how-to-determine-which-net-framework-updates-are-installed" class="xliff"></a>
-# 方法 : インストールされている .NET Framework の更新プログラムを確認する
+# <a name="how-to-determine-which-net-framework-updates-are-installed"></a>方法 : インストールされている .NET Framework の更新プログラムを確認する
 コンピューターにインストールされている .NET Framework のバージョンごとのインストール済みの更新プログラムは、Windows レジストリに一覧表示されます。 レジストリ エディター (regedit.exe) を使用して、この情報を表示することができます。  
   
  レジストリ エディターでは、各バージョンの .NET Framework バージョンとインストールされている更新プログラムが別々のサブキーに格納されます。 インストールされているバージョン番号を検出する方法については、「[方法: インストールされている .NET Framework バージョンを確認する](../../../docs/framework/migration-guide/how-to-determine-which-versions-are-installed.md)」を参照してください。 .NET Framework のインストールの詳細については、「[開発者向けの .NET Framework のインストール](../../../docs/framework/install/guide-for-developers.md)」を参照してください。  
   
-<a id="to-find-installed-updates" class="xliff"></a>
-### インストールされている更新プログラムを確認するには  
+### <a name="to-find-installed-updates"></a>インストールされている更新プログラムを確認するには  
   
 1.  プログラム **regedit.exe** を開きます。 Windows 8 以降の場合、スタート画面を開き、名前を入力します。 それより前のバージョンの Windows では、**[スタート]** メニューの **[ファイル名を指定して実行]** を選択し、**[開く]** ボックスに **regedit.exe** と入力します。  
   
@@ -43,8 +41,7 @@ ms.lasthandoff: 05/23/2017
   
      インストールされている更新プログラムは、適用された .NET Framework バージョンを識別するサブキーの下に一覧表示されています。 各更新プログラムは、サポート技術情報の (KB) 番号で識別されます。  
   
-<a id="example" class="xliff"></a>
-## 例  
+## <a name="example"></a>例  
  次のコードは、プログラミングによってコンピューターにインストールされている .NET Framework の更新プログラムを判断します。 この例を実行するには、管理特権が必要です。  
   
  [!code-csharp[ListUpdates#1](../../../samples/snippets/csharp/VS_Snippets_CLR/listupdates/cs/program.cs#1)] [!code-vb[ListUpdates#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/listupdates/vb/program.vb#1)]  
@@ -77,8 +74,7 @@ Microsoft .NET Framework 4 Extended
   KB2656351  Security Update for Microsoft .NET Framework 4 Extended (KB2656351)  
 ```  
   
-<a id="see-also" class="xliff"></a>
-## 関連項目
+## <a name="see-also"></a>関連項目
 
 [方法 : インストールされている .NET Framework バージョンを確認する](../../../docs/framework/migration-guide/how-to-determine-which-versions-are-installed.md)   
 [.NET Framework のインストール](../../../docs/framework/install/guide-for-developers.md)   

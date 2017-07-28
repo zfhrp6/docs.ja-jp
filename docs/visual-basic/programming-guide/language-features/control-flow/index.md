@@ -1,5 +1,5 @@
 ---
-title: "Visual Basic における制御フロー | Microsoft Docs"
+title: "Visual Basic における制御フロー"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -34,23 +34,19 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 31905a37f09db5f5192123f0118252fbe8b02eff
-ms.openlocfilehash: 86ac374a3c2378d7ac167823ceee008260a4deb0
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: a764732919c32499a062c9136c261539334688cb
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/26/2017
+ms.lasthandoff: 07/28/2017
 
 ---
-<a id="control-flow-in-visual-basic" class="xliff"></a>
-
-# Visual Basic における制御フロー
+# <a name="control-flow-in-visual-basic"></a>Visual Basic における制御フロー
 制御されていないままの場合、プログラムは最初から最後までそのステートメントを使って続行されます。 この 1 方向のフローのみを使用して、いくつかの単純なプログラムを記述できます。 ただし、任意のプログラミング言語の能力とユーティリティのほとんどは、制御ステートメントとループで実行する順番を変更する機能からのものです。  
   
  制御構造を使用すると、プログラムの実行フローを制御できます。 制御構造を使用して、判断したり、アクションを繰り返したりする [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] のコードを記述することができます。 他の制御構造を使用して、リソースの破棄を保証したり、同じオブジェクト参照で一連のステートメントを実行したりすることができます。  
   
-<a id="in-this-section" class="xliff"></a>
-
-## このセクションの内容  
+## <a name="in-this-section"></a>このセクションの内容  
  [条件判断構造](../../../../visual-basic/programming-guide/language-features/control-flow/decision-structures.md)  
  分岐に使用する制御構造を説明します。  
   
@@ -63,8 +59,7 @@ ms.lasthandoff: 05/26/2017
  [入れ子になった制御構造](../../../../visual-basic/programming-guide/language-features/control-flow/nested-control-structures.md)  
  他の制御構造内に制御構造を含めます。  
   
-<a id="related-sections" class="xliff"></a>
-
-## 関連項目  
+## <a name="related-sections"></a>関連項目  
  [制御フローの概要](../../../../visual-basic/language-reference/keywords/control-flow-summary.md)  
  この領域の言語リファレンス ページへのリンクを提供します。
+

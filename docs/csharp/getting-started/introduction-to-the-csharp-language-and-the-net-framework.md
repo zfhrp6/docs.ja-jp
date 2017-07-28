@@ -1,5 +1,5 @@
 ---
-title: "C# 言語と .NET Framework の概要 | Microsoft Docs"
+title: "C# 言語と .NET Framework の概要"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -28,11 +28,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 31905a37f09db5f5192123f0118252fbe8b02eff
-ms.openlocfilehash: e63a964956e2fbe91573a970c7df3fc29d848c9c
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: d828e5e1914e73193e6449d4fb6d8fb3f0d0775b
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/26/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="introduction-to-the-c-language-and-the-net-framework"></a>C# 言語と .NET Framework の概要
@@ -64,7 +64,7 @@ C# は、タイプ セーフで洗練されたオブジェクト指向言語で�
   
  その他に、C# の参照ドキュメントを紹介します。  
   
--   C# 言語の概略については、「[C# 言語仕様](../../csharp/language-reference/language-specification.md)」の第 1 章を参照してください。  
+-   C# 言語の概略については、「[C# 言語仕様](../../csharp/language-reference/language-specification/index.md)」の第 1 章を参照してください。  
   
 -   C# 言語の具体的な側面の詳細については、「[C# リファレンス](../../csharp/language-reference/index.md)」を参照してください。  
   
@@ -89,4 +89,5 @@ C# は、タイプ セーフで洗練されたオブジェクト指向言語で�
   
 ## <a name="see-also"></a>関連項目  
  [C#](../../csharp/csharp.md)   
- [Visual C# と Visual Basic の概要](https://docs.microsoft.com/visualstudio/ide/getting-started-with-visual-csharp-and-visual-basic)
+ [Visual C# と Visual Basic の概要](/visualstudio/ide/getting-started-with-visual-csharp-and-visual-basic)
+

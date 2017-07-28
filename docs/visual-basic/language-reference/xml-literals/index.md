@@ -1,5 +1,5 @@
 ---
-title: "XML リテラル (Visual Basic) | Microsoft Docs"
+title: "XML リテラル (Visual Basic)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.reviewer: 
@@ -34,21 +34,17 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 31905a37f09db5f5192123f0118252fbe8b02eff
-ms.openlocfilehash: 7398d02ddd73576fb502a10559891127307b96c0
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 9182402167c64d6683670ae240cd0dd58ee9d1ef
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/26/2017
+ms.lasthandoff: 07/28/2017
 
 ---
-<a id="xml-literals-visual-basic" class="xliff"></a>
-
-# XML リテラル (Visual Basic)
+# <a name="xml-literals-visual-basic"></a>XML リテラル (Visual Basic)
 このセクションのトピックでは、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] の XML リテラルの構文を示します。 XML リテラルの構文を使用すると、コード内に直接 XML を組み込むことができます。  
   
-<a id="in-this-section" class="xliff"></a>
-
-## このセクションの内容  
+## <a name="in-this-section"></a>このセクションの内容  
   
 |トピック|説明|  
 |-----------|-----------------|  
@@ -58,7 +54,6 @@ ms.lasthandoff: 05/26/2017
 |[XML コメント リテラル](../../../visual-basic/language-reference/xml-literals/xml-comment-literal.md)|<xref:System.Xml.Linq.XComment> オブジェクトを表すリテラルの構文を説明します。|  
 |[XML 処理命令リテラル](../../../visual-basic/language-reference/xml-literals/xml-processing-instruction-literal.md)|<xref:System.Xml.Linq.XProcessingInstruction> オブジェクトを表すリテラルの構文を説明します。|  
   
-<a id="see-also" class="xliff"></a>
-
-## 関連項目  
+## <a name="see-also"></a>関連項目  
  [XML](../../../visual-basic/programming-guide/language-features/xml/index.md)
+

@@ -1,5 +1,5 @@
 ---
-title: "Main() とコマンド ライン引数 (C# プログラミング ガイド) | Microsoft Docs"
+title: "Main() とコマンド ライン引数 (C# プログラミング ガイド)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -35,25 +35,21 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 31905a37f09db5f5192123f0118252fbe8b02eff
-ms.openlocfilehash: eb1d380ee4dfd64081d8fe36880a06e3a450f639
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 1b2950f7718cda66b545935229a64850449850d0
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/26/2017
+ms.lasthandoff: 07/28/2017
 
 ---
-<a id="main-and-command-line-arguments-c-programming-guide" class="xliff"></a>
-
-# Main() とコマンド ライン引数 (C# プログラミング ガイド)
+# <a name="main-and-command-line-arguments-c-programming-guide"></a>Main() とコマンド ライン引数 (C# プログラミング ガイド)
 `Main` メソッドは、C# コンソール アプリケーションまたは Windows アプリケーションのエントリ ポイントです (ライブラリおよびサービスでは、エントリ ポイントとしての `Main` メソッドは必要ありません)。 アプリケーションを起動すると、最初に `Main` メソッドが呼び出されます。  
   
  C# プログラムのエントリ ポイントは 1 つのみです。 `Main` メソッドを持つクラスが 2 つ以上ある場合、プログラムをコンパイルする際に **/main** コンパイラ オプションを使用して、どの `Main` メソッドをエントリ ポイントとして使用するかを指定する必要があります。 詳細については、「[/main (C# コンパイラ オプション)](../../../csharp/language-reference/compiler-options/main-compiler-option.md)」を参照してください。  
   
  [!code-cs[csProgGuideMain 17](../../../csharp/programming-guide/inside-a-program/codesnippet/CSharp/main-and-command-line-arguments_1.cs)]  
   
-<a id="overview" class="xliff"></a>
-
-## 概要  
+## <a name="overview"></a>概要  
   
 -   `Main` メソッドは .exe プログラムのエントリ ポイントです。ここで、プログラムの制御を開始および終了します。  
   
@@ -63,9 +59,7 @@ ms.lasthandoff: 05/26/2017
   
 -   `Main` メソッドを宣言する際、コマンドライン引数を含む `string[]` パラメーターは指定してもしなくてもかまいません。 [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] を使用して Windows フォーム アプリケーションを作成する場合、パラメーターを手動で追加するか、<xref:System.Environment> クラスを使用してコマンドライン引数を取得します。 パラメーターは、インデックス 0 のコマンドライン引数として読み取られます。 C や C++ とは異なり、プログラムの名前が最初のコマンドライン引数として扱われることはありません。  
   
-<a id="in-this-section" class="xliff"></a>
-
-## このセクションの内容  
+## <a name="in-this-section"></a>このセクションの内容  
   
 -   [コマンド ライン引数](../../../csharp/programming-guide/main-and-command-args/command-line-arguments.md)  
   
@@ -75,16 +69,13 @@ ms.lasthandoff: 05/26/2017
   
 -   [Main() の戻り値](../../../csharp/programming-guide/main-and-command-args/main-return-values.md)  
   
-<a id="c-language-specification" class="xliff"></a>
-
-## C# 言語仕様  
+## <a name="c-language-specification"></a>C# 言語仕様  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
-<a id="see-also" class="xliff"></a>
-
-## 関連項目  
+## <a name="see-also"></a>関連項目  
  [csc.exe を使用したコマンド ラインからのビルド](../../../csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md)   
  [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
  [メソッド](../../../csharp/programming-guide/classes-and-structs/methods.md)   
  [インサイド C# プログラム](../../../csharp/programming-guide/inside-a-program/index.md)   
  [\<paveover>C# サンプル アプリケーション](http://msdn.microsoft.com/en-us/9a9d7aaa-51d3-4224-b564-95409b0f3e15)
+

@@ -1,5 +1,5 @@
 ---
-title: "Visual Basic のオブジェクトとクラス | Microsoft Docs"
+title: "Visual Basic のオブジェクトとクラス"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -31,11 +31,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 31905a37f09db5f5192123f0118252fbe8b02eff
-ms.openlocfilehash: ee5a7731acb52b3f7891ac9490ff227ad478426f
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: b71219fff8354497f34930232952262008f6cc78
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/26/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="objects-and-classes-in-visual-basic"></a>Visual Basic のオブジェクトとクラス
@@ -281,3 +281,4 @@ End Sub
 
  [方法 : 匿名型の宣言におけるプロパティ名と型を推論する](../../../../visual-basic/programming-guide/language-features/objects-and-classes/how-to-infer-property-names-and-types-in-anonymous-type-declarations.md)  
  匿名型で宣言されたプロパティの名前と型を推論する方法について説明します。 推論の成功例と失敗例を示します。
+

@@ -1,5 +1,5 @@
 ---
-title: ".NET Framework クラス ライブラリの互換性のために残されている機能 | Microsoft ドキュメント"
+title: ".NET Framework クラス ライブラリの互換性のために残されている機能"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
@@ -18,11 +18,11 @@ caps.latest.revision: 19
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
-ms.openlocfilehash: 68c71e26ac5e5a1872ac006d02adec84c1fb63da
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 7afe9496ca116ed0c330c4ff9e7c3a855249cf14
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/18/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="what39s-obsolete-in-the-net-framework-class-library"></a>.NET Framework クラス ライブラリの互換性のために残されている機能
@@ -38,7 +38,7 @@ ms.lasthandoff: 04/18/2017
   
  型または型のメンバーが旧式であることを示す以外に、<xref:System.ObsoleteAttribute> は、その型またはメンバーが含まれているソース コードをコンパイラで処理する方法を定義します。 コードをコンパイルするが警告メッセージを出力するようにすることも、旧式の型またはメンバーの使用をエラーとして扱うこともできます。 前者の場合、コードを正常にコンパイルできますが、警告メッセージによって型またはメンバーが旧式であることが示されます。 後者の場合、コンパイルは失敗します。  
   
- コンパイルで警告メッセージではなくエラーが生成される場合でも、<xref:System.ObsoleteAttribute> はランタイム動作には影響を与えません。 つまり、旧式の型またはメンバーを使用しているが正常にコンパイルされたアプリケーションは、常に正常に実行されます。 旧式の型またはメンバーを使用するアプリケーションを再コンパイルしようとした場合にのみ失敗します。  
+ コンパイルで警告メッセージではなくエラーが生成される場合でも、<xref:System.ObsoleteAttribute> は実行時の動作には影響を与えません。 つまり、旧式の型またはメンバーを使用しているが正常にコンパイルされたアプリケーションは、常に正常に実行されます。 旧式の型またはメンバーを使用するアプリケーションを再コンパイルしようとした場合にのみ失敗します。  
   
 ## <a name="how-to-handle-obsolete-types-and-members"></a>旧式の型とメンバーを処理する方法  
  既存のコードをアップグレードし、再コンパイルする場合に、コンパイラの警告を生成する旧式の型またはメンバーをアプリケーションで使用しても、まったく問題ありません。 ただし、コンパイラの警告メッセージを確認して、アプリケーション コードを変更する必要があるかどうか判断する必要があります。 代わりとなる適切な方法がメッセージに示されていない場合は、次のいずれかの操作を行う必要があります。  
@@ -92,3 +92,4 @@ ms.lasthandoff: 04/18/2017
   
 ## <a name="see-also"></a>関連項目  
  [\<<supportedRuntime> 要素](../../../docs/framework/configure-apps/file-schema/startup/supportedruntime-element.md)
+

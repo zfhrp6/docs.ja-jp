@@ -1,5 +1,5 @@
 ---
-title: "Windows における .NET Core の前提条件 | Microsoft Docs"
+title: "Windows における .NET Core の前提条件"
 description: "Windows コンピューターで .NET Core アプリケーションを開発および実行する場合に必要な依存関係について説明します。"
 keywords: ".NET Core, Windows, 前提条件, 依存関係, Visual Studio"
 author: mairaw
@@ -9,23 +9,19 @@ ms.topic: article
 ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: c33b1241-ab66-4583-9eba-52cf51146f5a
-ms.translationtype: Human Translation
-ms.sourcegitcommit: dc5c9cdad9c0180eff30886ac923cf6beaff4e0c
-ms.openlocfilehash: 22f7acab3ffbe2d3af587f7af2bfaad204f8e259
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 0e414af0edbafed5b7f540eda6de2e5078eac789
 ms.contentlocale: ja-jp
-ms.lasthandoff: 06/29/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 
-<a id="prerequisites-for-net-core-on-windows" class="xliff"></a>
-
-# Windows における .NET Core の前提条件
+# <a name="prerequisites-for-net-core-on-windows"></a>Windows における .NET Core の前提条件
 
 この記事では、.NET Core アプリケーションを Windows コンピューターで展開および実行、ならびに Visual Studio を使用して開発するのに必要となる依存関係について説明します。
 
-<a id="supported-windows-versions" class="xliff"></a>
-
-## サポートされている Windows バージョン
+## <a name="supported-windows-versions"></a>サポートされている Windows バージョン
 
 .NET Core は、Windows の次のバージョンでサポートされています。
 
@@ -39,9 +35,7 @@ ms.lasthandoff: 06/29/2017
 
 サポートされるすべてのオペレーティング システムは、[.NET Core のリリース ノート](https://github.com/dotnet/core/blob/master/release-notes/1.1/1.1.md)で確認してください。
 
-<a id="net-core-dependencies" class="xliff"></a>
-
-## .NET Core の依存関係
+## <a name="net-core-dependencies"></a>.NET Core の依存関係
 
 .NET Core を Windows 10 および Windows Server 2016 よりも前の Windows バージョンで実行する場合、Visual C++ 再頒布可能パッケージが必要です。 この依存関係は、.NET Core インストーラーを使用する場合は自動でインストールされます。 ただし、.NET Core を[インストーラー スクリプト](./tools/dotnet-install-script.md)でインストールしたか、自己完結型の .NET Core アプリケーションを配置する場合は、[Microsoft Visual C++ 2015 再頒布可能パッケージ Update 3](https://www.microsoft.com/en-us/download/details.aspx?id=52685) を手動でインストールする必要があります。
 
@@ -49,9 +43,7 @@ ms.lasthandoff: 06/29/2017
 > <em>Windows 7 および Windows Server 2008 コンピューターのみ:</em><br>
 > Windows のインストールが最新であり、Windows Update から修正プログラム [KB2533623](https://support.microsoft.com/help/2533623) をインストールしていることを確認してください。
 
-<a id="prerequisites-with-visual-studio-2017" class="xliff"></a>
-
-## Visual Studio 2017 の前提条件
+## <a name="prerequisites-with-visual-studio-2017"></a>Visual Studio 2017 の前提条件
 
 .NET Core SDK を使用して .NET Core アプリケーションを開発する場合は、好きなエディターを使用できます。 一方、統合開発環境の Windows 上で .NET Core アプリケーションを開発する場合、[Visual Studio 2017](#visual-studio-2017) を使用できます。
 
@@ -61,7 +53,7 @@ ms.lasthandoff: 06/29/2017
 Visual Studio 2017 を使用して .NET Core アプリを開発する場合は、最新版の Visual Studio をインストールする必要があります。その際、(**[他のツールセット]** セクションで) **プラットフォームに依存しない .NET Core** 開発ツールセットを選択します。
 ![".NET Core クロスプラットフォームの開発" ワークロードが選択された状態の Visual Studio 2017 インストールのスクリーン ショット](./media/windows-prerequisites/vs_workloads.jpg)
 
-Visual Studio 2017 には複数のエディションがあります。 [Visual Studio Community 2017](https://www.visualstudio.com/downloads/) を無料でダウンロードして始められます。  Visual Studio のインストール プロセスの詳細については、「[Install Visual Studio 2017](https://docs.microsoft.com/visualstudio/install/install-visual-studio)」(Visual Studio のインストール) を参照してください。
+Visual Studio 2017 には複数のエディションがあります。 [Visual Studio Community 2017](https://www.visualstudio.com/downloads/) を無料でダウンロードして始められます。  Visual Studio のインストール プロセスの詳細については、「[Install Visual Studio 2017](/visualstudio/install/install-visual-studio)」(Visual Studio のインストール) を参照してください。
 
 Visual Studio 2017 の最新バージョンを実行していることを確認するには、次の操作を行います。
 
