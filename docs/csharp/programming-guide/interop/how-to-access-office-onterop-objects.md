@@ -46,7 +46,7 @@ Visual C# には、Office API オブジェクトへのアクセスを容易に�
   
  このチュートリアルを実行するには、Microsoft Office Excel 2007 と Microsoft Office Word 2007 またはそれ以降のバージョンがコンピューターにインストールされている必要があります。  
   
- [!INCLUDE[windowsver](../../../csharp/programming-guide/interop/includes/windowsver_md.md)] よりも前のオペレーティング システムを使用している場合は、[!INCLUDE[dnprdnlong](../../../csharp/programming-guide/events/includes/dnprdnlong_md.md)] がインストールされていることを確認します。  
+ [!INCLUDE[windowsver](../../../csharp/programming-guide/interop/includes/windowsver_md.md)]よりも前のオペレーティング システムを使用している場合は、 [!INCLUDE[dnprdnlong](../../../csharp/programming-guide/events/includes/dnprdnlong_md.md)] がインストールされていることを確認します。  
   
 [!INCLUDE[note_settings_general](../../../csharp/language-reference/compiler-messages/includes/note_settings_general_md.md)]  
   

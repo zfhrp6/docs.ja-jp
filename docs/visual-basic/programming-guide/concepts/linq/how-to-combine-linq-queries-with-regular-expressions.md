@@ -1,5 +1,5 @@
 ---
-title: "方法: LINQ クエリと正規表現 (Visual Basic) を組み合わせて |Microsoft ドキュメント"
+title: "方法: LINQ クエリと正規表現を組み合わせる (Visual Basic) | Microsoft Docs"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -20,15 +20,15 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 283b5e844c91da22aadd7bcf88ea327ccc080be7
+ms.translationtype: MT
+ms.sourcegitcommit: 1cd1761d630f61a58f29d88e9342551d48cbc6a8
+ms.openlocfilehash: d9d63a729a31394b96a78479bc115125a1a7baeb
 ms.contentlocale: ja-jp
-ms.lasthandoff: 03/13/2017
+ms.lasthandoff: 07/26/2017
 
 ---
-# <a name="how-to-combine-linq-queries-with-regular-expressions-visual-basic"></a>方法: LINQ クエリは、正規表現 (Visual Basic) とを組み合わせる
-この例では、使用して、<xref:System.Text.RegularExpressions.Regex>のテキスト文字列にさらに複雑な一致する正規表現を作成するクラス</xref:System.Text.RegularExpressions.Regex>。 LINQ クエリでは、簡単に正規表現を検索して、結果の形式にファイルだけにフィルターします。  
+# <a name="how-to-combine-linq-queries-with-regular-expressions-visual-basic"></a>方法: LINQ クエリと正規表現を組み合わせる (Visual Basic)
+この例では、<xref:System.Text.RegularExpressions.Regex> クラスを使用して正規表現を作成し、テキスト文字列内の複雑な一致を取得する方法を示します。 LINQ クエリを使用すると、正規表現で検索する必要のあるファイルだけをフィルターで抽出したり、結果の形式を指定したりするのが簡単になります。  
   
 ## <a name="example"></a>例  
   
@@ -97,10 +97,10 @@ Class LinqRegExVB
 End Class  
 ```  
   
- 照会することもなお、<xref:System.Text.RegularExpressions.MatchCollection>によって返されるオブジェクト、`RegEx`検索</xref:System.Text.RegularExpressions.MatchCollection>。 この例では、各一致文字列の値のみが結果として生成します。 ただし、LINQ を使用して、すべての種類のフィルター処理、並べ替え、およびそのコレクションにグループ化を実行することもできます。 <xref:System.Text.RegularExpressions.MatchCollection>非ジェネリック型<xref:System.Collections.IEnumerable>コレクション、クエリの範囲変数の型を明示的に記述する必要がある</xref:System.Collections.IEnumerable></xref:System.Text.RegularExpressions.MatchCollection>。  
+ `RegEx` 検索で返された <xref:System.Text.RegularExpressions.MatchCollection> オブジェクトのクエリを実行することも可能です。 この例では、一致した各文字列の値のみが結果として生成されています。 しかし、LINQ を使用して、各種のフィルター処理、並べ替え、グループ化をそのコレクションに対して実行することもできます。 <xref:System.Text.RegularExpressions.MatchCollection> が非ジェネリック <xref:System.Collections.IEnumerable> コレクションなので、クエリで範囲変数の型を明示的に記述する必要があります。  
   
 ## <a name="compiling-the-code"></a>コードのコンパイル  
- .NET Framework version 3.5 またはそれ以上、System.Core.dll への参照を対象とするプロジェクトを作成し、 `Imports` System.Linq 名前空間のステートメントです。  
+ .NET Framework Version 3.5 以降を対象とするプロジェクトを作成します。System.Core.dll および System.Linq 名前空間の `Imports` ステートメントを参照設定します。  
   
 ## <a name="see-also"></a>関連項目  
  [LINQ と文字列 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-strings.md)   

@@ -1,5 +1,5 @@
 ---
-title: "C# で記述された Hello World アプリを Visual Studio 2017 を使用してデバッグする方法 | Microsoft Docs"
+title: "Visual Studio 2017 で C# Hello World Application をデバッグする"
 description: "Visual Studio 2017 を使用して C# で記述された Hello World アプリをデバッグする方法を説明します。"
 keywords: ".NET Core, .NET Core コンソール アプリケーション, .NET Core デバッグ"
 author: BillWagner
@@ -11,20 +11,18 @@ ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: cb213625-cc60-438b-9b9e-49aed0e4a974
 ms.translationtype: Human Translation
-ms.sourcegitcommit: 4437ce5d344cf06d30e31911def6287999fc6ffc
-ms.openlocfilehash: 026158029bfc843bd6cd171933091dc9ac6d4dbe
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: a3ed6572d0c8f64f89f77527aa21df454b30982c
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/23/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 
-<a id="debugging-your-c-hello-world-application-with-visual-studio-2017" class="xliff"></a>
-# Visual Studio 2017 で C# Hello World Application をデバッグする
+# <a name="debugging-your-c-hello-world-application-with-visual-studio-2017"></a>Visual Studio 2017 で C# Hello World Application をデバッグする
 
 ここまでは、「[Visual Studio 2017 での .NET Core を使用した C# Hello World アプリケーションの構築](.\with-visual-studio.md)」の手順に従って、簡単なコンソール アプリケーションを作成して実行しました。 アプリケーションを記述してコンパイルしたら、テストを開始できます。 Visual Studio には、アプリケーションのテストおよびトラブルシューティングの際に使用できるデバッグ ツールの包括的なセットが含まれています。
 
-<a id="debugging-in-debug-mode" class="xliff"></a>
-## デバッグ モードでのデバッグ
+## <a name="debugging-in-debug-mode"></a>デバッグ モードでのデバッグ
 
 "*デバッグ*" と "*リリース*" は、 Visual Studio に 2 つある既定のビルド構成です。 現時点のビルド構成はツールバーに表示されています。 次のツール バーの画像では、**デバッグ** モードでアプリケーションをコンパイルするように Visual Studio が構成されています。
 
@@ -32,8 +30,7 @@ ms.lasthandoff: 05/23/2017
 
 最初は常にデバッグ モードでプログラムをテストする必要があります。 デバッグ モードでは、コンパイラのほとんどの最適化がオフになり、ビルド プロセスの間に豊富な情報が提供されます。
 
-<a id="setting-a-breakpoint" class="xliff"></a>
-## ブレークポイントの設定
+## <a name="setting-a-breakpoint"></a>ブレークポイントの設定
 
 プログラムをデバッグ モードで実行して、デバッグ機能をいくつか試してみます。
 
@@ -65,8 +62,7 @@ ms.lasthandoff: 05/23/2017
 
 1. 任意のキーを押してアプリケーションを終了して、デバッグ モードを終了します。
 
-<a id="setting-a-conditional-breakpoint" class="xliff"></a>
-## 条件付きブレークポイントの設定
+## <a name="setting-a-conditional-breakpoint"></a>条件付きブレークポイントの設定
 
 プログラムは、ユーザーが入力した文字列を表示します。 ユーザーが何も入力しないとどうなるでしょうか。 これは、便利なデバッグ機能 "*条件付きブレークポイント*" を使ってテストできます。この機能は、1 つまたは複数の条件が満たされたときにプログラムの実行をブレークします。
 
@@ -108,8 +104,7 @@ ms.lasthandoff: 05/23/2017
 
 1. コード ウィンドウの左端の余白のドットをクリックするか、行を選択して **[デバッグ] > [ブレークポイントの設定/解除]** メニュー項目を選んで、ブレークポイントをクリアします。
 
-<a id="stepping-through-a-program" class="xliff"></a>
-## プログラムのステップ実行
+## <a name="stepping-through-a-program"></a>プログラムのステップ実行
 
 Visual Studio では、1 行ずつプログラムをステップ実行して、実行を監視することもできます。 通常は、ブレークポイントを設定してこの機能を使用し、プログラム コードのごく一部を通じてプログラム フローに従います。 プログラムが小さいため、次の手順に従ってプログラム全体をステップ実行できます。
 
@@ -137,8 +132,7 @@ Visual Studio では、1 行ずつプログラムをステップ実行して、�
 
 1. 任意のキーを押してコンソール ウィンドウを閉じ、デバッグ モードを終了します。
 
-<a id="building-a-release-version" class="xliff"></a>
-## リリース バージョンのビルド
+## <a name="building-a-release-version"></a>リリース バージョンのビルド
 
 アプリケーションのデバッグ ビルドのテストが終了したら、リリース バージョンもコンパイルしてテストする必要があります。 リリース バージョンには、アプリケーションの動作に悪影響を与える可能性があるコンパイラの最適化が組み込まれています。 たとえば、パフォーマンスを向上させるように設計されたコンパイラの最適化では、非同期アプリケーションまたはマルチスレッド アプリケーションで競合状態が生じる場合があります。
 

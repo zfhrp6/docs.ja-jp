@@ -1,5 +1,5 @@
 ---
-title: "プロジェクトを整理し、.NET Framework と .NET Core をサポートする | Microsoft Docs"
+title: "プロジェクトを整理し、.NET Framework と .NET Core をサポートする"
 description: "プロジェクト所有者が横並びの .NET Framework と .NET Core に対してソリューションをコンパイルするときに役立ちます。"
 keywords: ".NET, .NET Core, .NET Framework, プロジェクト レイアウト, 複数のフレームワーク"
 author: conniey
@@ -10,16 +10,14 @@ ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: 3af62252-1dfa-4336-8d2f-5cfdb57d7724
 ms.translationtype: Human Translation
-ms.sourcegitcommit: 4437ce5d344cf06d30e31911def6287999fc6ffc
-ms.openlocfilehash: 6565ccd42180a37eba52c286becfecb5bef1890d
+ms.sourcegitcommit: 9fd4e033a5f33d4f560b12e23950abd62c7825c5
+ms.openlocfilehash: d83378b094fbae16c788c04269b833a4ecae3608
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/23/2017
+ms.lasthandoff: 04/07/2017
 
 ---
 
-<a id="organizing-your-project-to-support-net-framework-and-net-core" class="xliff"></a>
-
-# プロジェクトを整理し、.NET Framework と .NET Core をサポートする
+# <a name="organizing-your-project-to-support-net-framework-and-net-core"></a>プロジェクトを整理し、.NET Framework と .NET Core をサポートする
 
 この記事は、プロジェクト所有者が横並びの .NET Framework と .NET Core に対してソリューションをコンパイルするときに役立ちます。 プロジェクトを整理するためのオプションを提供し、開発者を支援します。 次の一覧で、.NET Core でプロジェクト レイアウトを設定する方法について決定するときに考慮する典型的なシナリオを紹介します。 この一覧はプロジェクトのニーズに基づいて選択されており、すべてを網羅しるわけではりません。
 
@@ -40,9 +38,7 @@ ms.lasthandoff: 05/23/2017
   * 既存のプロジェクトで引き続き開発をサポートします。Visual Studio 2017 を所有していない開発者/貢献者はアップグレードする必要がありません。
   * 既存のプロジェクトで新しいバグが発生する可能性が減ります。既存のプロジェクトではコード チャーンが要求されないためです。
 
-<a id="example" class="xliff"></a>
-
-## 例
+## <a name="example"></a>例
 
 次のリポジトリを考慮してください。
 
@@ -52,9 +48,7 @@ ms.lasthandoff: 05/23/2017
 
 下に説明する既存のプロジェクトの制約や複雑性にもよりますが、このリポジトリのために .NET Core のサポートを追加する方法がいくつかあります。
 
-<a id="replace-existing-projects-with-a-multi-targeted-net-core-project" class="xliff"></a>
-
-## 既存のプロジェクトとターゲットが複数ある .NET Core Project を置換します
+## <a name="replace-existing-projects-with-a-multi-targeted-net-core-project"></a>既存のプロジェクトとターゲットが複数ある .NET Core Project を置換します
 
 リポジトリを再整理できます。既存の *\*.csproj* ファイルが削除され、複数のフレームワークをターゲットにするシングル *\*.csproj* ファイルが作成されます。 異なるフレームワークに対してシングル プロジェクトでコンパイルできるので、この方法が推奨されます。 さまざまなコンパイル オプション、ターゲットにするフレームワークごとの依存関係などを処理することもできます。
 
@@ -65,9 +59,7 @@ ms.lasthandoff: 05/23/2017
 注目するべき変更点:
 * *packages.config* と *\*.csproj* が新しい [.NET Core *\*.csproj*][example-csproj-netcore] に置き換わりました。 NuGet パッケージが `<PackageReference> ItemGroup` で指定されています。
 
-<a id="keep-existing-projects-and-create-a-net-core-project" class="xliff"></a>
-
-## 既存のプロジェクトを保持し、.NET Core プロジェクトを作成する
+## <a name="keep-existing-projects-and-create-a-net-core-project"></a>既存のプロジェクトを保持し、.NET Core プロジェクトを作成する
 
 古いフレームワークをターゲットにする既存のプロジェクトがあるとき、そのようなプロジェクトをそのまま残し、.NET Core プロジェクトを利用して今後のフレームワークをターゲットにすると効率的な場合があります。
 
@@ -79,9 +71,7 @@ ms.lasthandoff: 05/23/2017
 * .NET Core と既存のプロジェクトを別々のフォルダーに保存します。
     * プロジェクトを別々のフォルダーに保存すれば、Visual Studio 2017 を所有する必要がありません。 古いプロジェクトだけを開く別個のソリューションを作成できます。
 
-<a id="see-also" class="xliff"></a>
-
-## 関連項目
+## <a name="see-also"></a>関連項目
 
 .NET Core に移行する方法の詳細なガイダンスについては、[.NET Core の移植に関するドキュメント][porting-doc]のページを参照してください。
 
