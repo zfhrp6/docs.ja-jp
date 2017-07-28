@@ -1,5 +1,5 @@
 ---
-title: ".NET Framework のバージョンの互換性 | Microsoft Docs"
+title: ".NET Framework のバージョンの互換性"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
@@ -18,11 +18,11 @@ caps.latest.revision: 35
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
-ms.openlocfilehash: 09f682d9c3a1cf5d42bba878676d84b9328a1a81
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 741c2d1c49f44a6a7b299845cdc37cc8425c326b
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/22/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="version-compatibility-in-the-net-framework"></a>.NET Framework のバージョンの互換性
@@ -59,7 +59,7 @@ ms.lasthandoff: 05/22/2017
   
 -   これらのトピックで、アプリに影響する可能性がある変更を確認し、説明されている代替手段を適用します。  
   
-    -   [.NET framework 4 への移行に関する問題](http://go.microsoft.com/fwlink/p/?LinkId=248212)  
+    -   [.NET framework 4 への移行に関する問題](../../../docs/framework/migration-guide/net-framework-4-migration-issues.md)  
   
     -   [4.5 でのアプリケーションの互換性](../../../docs/framework/migration-guide/application-compatibility-in-the-net-framework-4-5.md)  
   
@@ -95,5 +95,5 @@ ms.lasthandoff: 05/22/2017
  [クラス ライブラリの互換性のために残されている機能](../../../docs/framework/whats-new/whats-obsolete.md)   
  [アプリケーションの互換性](../../../docs/framework/migration-guide/application-compatibility.md)   
  [Microsoft .NET Framework のサポート ライフサイクル ポリシー](http://go.microsoft.com/fwlink/p/?LinkId=248212)   
- [.NET framework 4 への移行に関する問題](http://go.microsoft.com/fwlink/p/?LinkId=248212)
+ [.NET framework 4 への移行に関する問題](../../../docs/framework/migration-guide/net-framework-4-migration-issues.md)
 

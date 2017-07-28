@@ -1,5 +1,5 @@
 ---
-title: ".NET Framework のシステム要件 | Microsoft Docs"
+title: ".NET Framework のシステム要件"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
@@ -20,23 +20,21 @@ caps.latest.revision: 95
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 1cd1761d630f61a58f29d88e9342551d48cbc6a8
-ms.openlocfilehash: eb1d58651f1e982b53bc5cc06d4d58ba4690b1d7
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 4b48b2d7b8b6256c2395cee069d7705001258a0a
 ms.contentlocale: ja-jp
-ms.lasthandoff: 06/20/2017
+ms.lasthandoff: 07/28/2017
 
 ---
-<a id="net-framework-system-requirements" class="xliff"></a>
-# .NET Framework のシステム要件
+# <a name="net-framework-system-requirements"></a>.NET Framework のシステム要件
 このトピックの表では、.NET Framework 4.5 とそのポイント リリース (4.5.1 と 4.5.2)、[!INCLUDE[net_v46](../../../includes/net-v46-md.md)] とそのポイント リリース (4.6.1 と 4.6.2)、.NET Framework 4.7 のハードウェア、オペレーティング システム、およびソフトウェアの要件を示します。 .NET Framework 用のアプリケーションを開発するための開発環境では、要件セットが異なります。
 
  ダウンロード情報とリンクについては、[「開発者向けの .NET Framework のインストール」](../../../docs/framework/install/guide-for-developers.md) を参照してください。
 
  .NET Framework バージョンのサポート ライフサイクルについては、[マイクロソフト サポート ライフサイクル](https://support.microsoft.com/en-us/lifecycle/search?sort=PN&alpha=Microsoft%20.NET%20Framework&Filter=FilterNO)をご覧ください。
 
-<a id="hardware-requirements" class="xliff"></a>
-## ハードウェア要件
+## <a name="hardware-requirements"></a>ハードウェア要件
 
 |||
 |-|-|
@@ -46,13 +44,11 @@ ms.lasthandoff: 06/20/2017
 |32 ビット|4.5 GB|
 |64 ビット|4.5 GB|
 
-<a id="installation-requirements" class="xliff"></a>
-## インストール要件
+## <a name="installation-requirements"></a>インストール要件
 
 - .NET Framework をインストールするには管理者権限が必要です。 .NET Framework をインストールするコンピューター上での管理者権限がない場合には、ネットワーク管理者にお問い合わせください。
 
-<a id="supported-client-operating-systems" class="xliff"></a>
-## サポートされているクライアント オペレーティング システム
+## <a name="supported-client-operating-systems"></a>サポートされているクライアント オペレーティング システム
 
 |オペレーティング システム|サポートされているエディション|OS と共にプレインストール済み|個別にインストール可能|
 |----------------------|------------------------|------------------------------|----------------------------|
@@ -78,8 +74,7 @@ ms.lasthandoff: 06/20/2017
 
 - 64 ビット オペレーティング システムでは、.NET Framework は WOW64 (64 ビット コンピューター上での 32 ビット処理) とネイティブ 64 ビット処理の両方をサポートしています。
 
-<a id="supported-server-operating-systems" class="xliff"></a>
-## サポートされているサーバー オペレーティング システム
+## <a name="supported-server-operating-systems"></a>サポートされているサーバー オペレーティング システム
 
 |オペレーティング システム|サポートされているエディション|OS と共にプレインストール済み|個別にインストール可能|
 |----------------------|------------------------|------------------------------|----------------------------|
@@ -101,8 +96,7 @@ ms.lasthandoff: 06/20/2017
 
 - 64 ビット オペレーティング システムでは、.NET Framework は WOW64 (64 ビット コンピューター上での 32 ビット処理) とネイティブ 64 ビット処理の両方をサポートしています。
 
-<a id="see-also" class="xliff"></a>
-## 関連項目
+## <a name="see-also"></a>関連項目
  [インストール ガイド](../../../docs/framework/install/index.md)   
  [はじめに](../../../docs/framework/get-started/index.md)   
  [.NET Framework のインストールおよびアンインストールのブロックのトラブルシューティング](../../../docs/framework/install/troubleshoot-blocked-installations-and-uninstallations.md)
