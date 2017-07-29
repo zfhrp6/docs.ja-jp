@@ -1,5 +1,5 @@
 ---
-title: "方法 : 派生クラスから基本クラス イベントを発生させる (C# プログラミング ガイド) | Microsoft Docs"
+title: "方法 : 派生クラスから基本クラス イベントを発生させる (C# プログラミング ガイド)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -27,14 +27,15 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 4f3990959bb62676562dc21e1e5eabfb8ead20d5
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 13501f51a1e99eb6fb792a1c6abe5c7029cc020a
+ms.contentlocale: ja-jp
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="how-to-raise-base-class-events-in-derived-classes-c-programming-guide"></a>方法 : 派生クラスから基本クラス イベントを発生させる (C# プログラミング ガイド)
-ここでは単純な例を使用し、派生クラスからも発生させることができるように基底クラスでイベントを宣言する標準的な方法について説明します。 このパターンは、[!INCLUDE[dnprdnshort](../../../csharp/getting-started/includes/dnprdnshort_md.md)] クラス ライブラリの Windows フォーム クラスで広く使用されています。  
+ここでは単純な例を使用し、派生クラスからも発生させることができるように基底クラスでイベントを宣言する標準的な方法について説明します。 このパターンは、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] クラス ライブラリの Windows フォーム クラスで広く使用されています。  
   
  他のクラスの基底クラスとして使用できるクラスを作成するときは、イベントは宣言元のクラス内からしか呼び出せない特別な種類のデリゲートであることを考慮する必要があります。 派生クラスは、基底クラスの中で宣言されたイベントを直接呼び出せません。 常に基底クラスからイベントを発生させるようにすると便利な場合もありますが、ほとんどの場合、派生クラスで基底クラス イベントを呼び出せるようにするべきです。 そのために、イベントをラップする基底クラスで、保護された呼び出しメソッドを作成できます。 この呼び出しメソッドを呼び出すかオーバーライドすることによって、派生クラスから間接的にイベントを呼び出すことができます。  
   
@@ -50,3 +51,4 @@ ms.lasthandoff: 03/13/2017
  [デリゲート](../../../csharp/programming-guide/delegates/index.md)   
  [アクセス修飾子](../../../csharp/programming-guide/classes-and-structs/access-modifiers.md)   
  [Windows フォーム内でのイベント ハンドラーの作成](https://msdn.microsoft.com/library/dacysss4.aspx)
+

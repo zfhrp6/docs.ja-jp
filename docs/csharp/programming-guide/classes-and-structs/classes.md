@@ -1,5 +1,5 @@
 ---
-title: "クラス (C# プログラミング ガイド) | Microsoft Docs"
+title: "クラス (C# プログラミング ガイド)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -29,11 +29,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-ms.translationtype: Human Translation
-ms.sourcegitcommit: a5ed524a1b17f7be8903f998cbd732594faab831
-ms.openlocfilehash: 1f327e7171df8b91d4c5a787c879069a4e44f562
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: eedb087f177b1bff6f4d4177cd56ac4cca016490
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/15/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="classes-c-programming-guide"></a>クラス (C# プログラミング ガイド)
@@ -96,3 +96,4 @@ ms.lasthandoff: 05/15/2017
  [コンストラクター](../../../csharp/programming-guide/classes-and-structs/constructors.md)   
  [ファイナライザー](../../../csharp/programming-guide/classes-and-structs/destructors.md)   
  [オブジェクト](../../../csharp/programming-guide/classes-and-structs/objects.md)
+

@@ -1,5 +1,5 @@
 ---
-title: "方法: 名前空間内の要素を検索する (XPath-LINQ to XML) (C#) | Microsoft Docs"
+title: "方法: 名前空間内の要素を検索する (XPath-LINQ to XML) (C#)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -14,22 +14,22 @@ ms.assetid: cae1c4ac-6cd5-46cf-9b1c-bd85bc9b7ea9
 caps.latest.revision: 3
 author: BillWagner
 ms.author: wiwagn
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: dc1b201a807b8e5c060720018195fe3639e748dc
-ms.lasthandoff: 03/13/2017
-
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: f67bea5244b69013a5f694415ded6f0bc94f77f7
+ms.contentlocale: ja-jp
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="how-to-find-elements-in-a-namespace-xpath-linq-to-xml-c"></a>方法: 名前空間内の要素を検索する (XPath-LINQ to XML) (C#)
-XPath 式を使用すると、特定の名前空間内のノードを検索できます。 XPath 式では、名前空間を指定する名前空間プレフィックスを使用します。 名前空間プレフィックスを含む XPath 式を解析するには、<xref:System.Xml.IXmlNamespaceResolver> を実装する XPath メソッドにオブジェクトを渡す必要があります。 この例では、<xref:System.Xml.XmlNamespaceManager> を使用します。  
+XPath 式を使用すると、特定の名前空間内のノードを検索できます。 XPath 式では、名前空間を指定する名前空間プレフィックスを使用します。 名前空間プレフィックスを含む XPath 式を解析するには、<xref:System.Xml.IXmlNamespaceResolver> を実装する XPath メソッドにオブジェクトを渡す必要があります。 この例では <xref:System.Xml.XmlNamespaceManager> を使用します。  
   
  XPath 式を次に示します。  
   
  `./aw:*`  
   
 ## <a name="example"></a>例  
- 次の例では、2 つの名前空間を含む XML ツリーを読み込みます。 <xref:System.Xml.XmlReader> を使用して XML ドキュメントを読み込ます。 次に、<xref:System.Xml.XmlReader> から <xref:System.Xml.XmlNameTable> を取得し、<xref:System.Xml.XmlNameTable> から <xref:System.Xml.XmlNamespaceManager> を取得します。 要素を選択するときには <xref:System.Xml.XmlNamespaceManager> を使用します。  
+ 次の例では、2 つの名前空間を含む XML ツリーを読み込みます。 <xref:System.Xml.XmlReader> を使用して XML ドキュメントを読み込ます。 次に、<xref:System.Xml.XmlNameTable> から <xref:System.Xml.XmlReader> を取得し、<xref:System.Xml.XmlNamespaceManager> から <xref:System.Xml.XmlNameTable> を取得します。 要素を選択する際には <xref:System.Xml.XmlNamespaceManager> を使用します。  
   
 ```csharp  
 XmlReader reader = XmlReader.Create("ConsolidatedPurchaseOrders.xml");  
@@ -88,3 +88,4 @@ Results are identical
   
 ## <a name="see-also"></a>関連項目  
  [XPath ユーザー向けの LINQ to XML (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)
+

@@ -1,5 +1,5 @@
 ---
-title: "double (C# リファレンス) | Microsoft Docs"
+title: "double (C# リファレンス)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -30,10 +30,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: ccdd29c78a3cdc9d32fa08b1be94eecd717418fc
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: d5588f8391157fb56a5e5067bb8e11f9269fe733
+ms.contentlocale: ja-jp
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="double-c-reference"></a>double (C# リファレンス)
@@ -47,7 +48,6 @@ ms.lasthandoff: 03/13/2017
  既定では、代入演算子の右辺にある実数値リテラルは `double` として扱われます。 ただし、整数を `double` として処理する場合、次のようにサフィックスの d または D を使用します。  
   
 ```  
-  
 double x = 3D;  
 ```  
   
@@ -76,7 +76,7 @@ double x = 3D;
  [!code-cs[csrefKeywordsTypes#9](../../../csharp/language-reference/keywords/codesnippet/CSharp/double_1.cs)]  
   
 ## <a name="c-language-specification"></a>C# 言語仕様  
- [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec_md.md)]  
+ [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
 ## <a name="see-also"></a>関連項目  
  [C# リファレンス](../../../csharp/language-reference/index.md)   
@@ -87,3 +87,4 @@ double x = 3D;
  [浮動小数点型の一覧表](../../../csharp/language-reference/keywords/floating-point-types-table.md)   
  [暗黙的な数値変換の一覧表](../../../csharp/language-reference/keywords/implicit-numeric-conversions-table.md)   
  [明示的な数値変換の一覧表](../../../csharp/language-reference/keywords/explicit-numeric-conversions-table.md)
+

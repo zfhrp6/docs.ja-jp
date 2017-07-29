@@ -1,5 +1,5 @@
 ---
-title: "データのパーティション分割 (C#) | Microsoft Docs"
+title: "データのパーティション分割 (C#)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -19,10 +19,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 8bab82ff0921871e610eef37650d1aa52e16006c
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 2f1690dac93d5e74f1305bd457f8bc749bec5449
+ms.contentlocale: ja-jp
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="partitioning-data-c"></a>データのパーティション分割 (C#)
@@ -46,3 +47,4 @@ LINQ におけるパーティション分割とは、要素を並べ替えずに
 ## <a name="see-also"></a>関連項目  
  <xref:System.Linq>   
  [標準クエリ演算子の概要 (C#)](../../../../csharp/programming-guide/concepts/linq/standard-query-operators-overview.md)
+

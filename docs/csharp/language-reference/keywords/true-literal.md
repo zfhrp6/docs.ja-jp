@@ -1,5 +1,5 @@
 ---
-title: "true リテラル (C# リファレンス) | Microsoft Docs"
+title: "true リテラル (C# リファレンス)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -27,11 +27,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 05c985256e3008feece8048012ff36316856e6fb
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 2cf324458d2130bce53639fac785bef58bac1380
 ms.contentlocale: ja-jp
-ms.lasthandoff: 03/13/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="true-literal-c-reference"></a>true リテラル (C# リファレンス)
@@ -48,3 +48,4 @@ ms.lasthandoff: 03/13/2017
  [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
  [C# のキーワード](../../../csharp/language-reference/keywords/index.md)   
  [false](../../../csharp/language-reference/keywords/false.md)
+

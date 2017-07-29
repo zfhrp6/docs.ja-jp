@@ -1,5 +1,5 @@
 ---
-title: "構造体の使用 (C# プログラミング ガイド) | Microsoft Docs"
+title: "構造体の使用 (C# プログラミング ガイド)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -28,14 +28,15 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 8cb5fa79de38294add5cebdd38537636591de126
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 67fa4f764e6e40041e4b8e37eccbd1adb2b509d3
+ms.contentlocale: ja-jp
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="using-structs-c-programming-guide"></a>構造体の使用 (C# プログラミング ガイド)
-`struct` 型は、 `Point`、 `Rectangle`、 `Color`などの軽量のオブジェクトを表すのに適しています。 点を表す場合は[自動実装プロパティ](../../../csharp/programming-guide/classes-and-structs/auto-implemented-properties.md)がある[クラス](../../../csharp/language-reference/keywords/class.md)を使用するのも同程度に便利ですが、シナリオによっては[構造体](../../../csharp/language-reference/keywords/struct.md)を使用する方がより効率的です。 たとえば、1,000 個の `Point` オブジェクトから成る配列を宣言する場合は、各オブジェクトの参照用に追加のメモリを割り当てます。この場合、構造体であれば処理上の負荷を抑えることができます。 [!INCLUDE[dnprdnshort](../../../csharp/getting-started/includes/dnprdnshort_md.md)] には <xref:System.Drawing.Point> という名前のオブジェクトが含まれているため、この例の構造体には代わりに "CoOrds" という名前が付けられています。  
+`struct` 型は、 `Point`、 `Rectangle`、 `Color`などの軽量のオブジェクトを表すのに適しています。 点を表すには [自動実装プロパティ](../../../csharp/language-reference/keywords/class.md) がある [クラス](../../../csharp/programming-guide/classes-and-structs/auto-implemented-properties.md)を使用するのと同じくらい便利ですが、シナリオによっては [構造体](../../../csharp/language-reference/keywords/struct.md) を使用する方がより効率的です。 たとえば、1,000 個の `Point` オブジェクトから成る配列を宣言する場合は、各オブジェクトの参照用に追加のメモリを割り当てます。この場合、構造体であれば処理上の負荷を抑えることができます。 [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] には <xref:System.Drawing.Point>という名前のオブジェクトが含まれているため、この例の構造体には代わりに "CoOrds" という名前が付けられています。  
   
  [!code-cs[csProgGuideObjects#1](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/using-structs_1.cs)]  
   
@@ -45,9 +46,9 @@ ms.lasthandoff: 03/13/2017
   
  構造体に参照型がメンバーとして含まれている場合は、メンバーの既定のコンストラクターを明示的に呼び出す必要があります。そうしないと、メンバーは未割り当てのままになり、構造体は使用できません (結果として、コンパイル エラー CS0171 が発生します)。  
   
- クラスには継承がありますが、構造体には継承がありません。 構造体は、他の構造体やクラスから継承できず、基本クラスになることはできません。 ただし、構造体は、基底クラス <xref:System.Object> から継承します。 構造体は、クラスの場合とまったく同じ方法でインターフェイスを実装できます。  
+ クラスには継承がありますが、構造体には継承がありません。 構造体は、他の構造体やクラスから継承できず、基本クラスになることはできません。 ただし、構造体は、基本クラス <xref:System.Object>から継承します。 構造体は、クラスの場合とまったく同じ方法でインターフェイスを実装できます。  
   
- `struct`キーワードを使用してクラスを宣言することはできません。 C# では、クラスと構造体は、意味が異なります。 構造体は値型ですが、クラスは参照型です。 詳細については、「[値型](../../../csharp/language-reference/keywords/value-types.md)」を参照してください。  
+ `struct`キーワードを使用してクラスを宣言することはできません。 C# では、クラスと構造体は、意味が異なります。 構造体は値型ですが、クラスは参照型です。 詳細については、「 [Value Types (値型)](../../../csharp/language-reference/keywords/value-types.md)」を参照してください。  
   
  参照型の機能が必要な場合以外は、小さいクラスを構造体として宣言した方が、システムによってより効率的に処理される可能性があります。  
   
@@ -75,3 +76,4 @@ ms.lasthandoff: 03/13/2017
  [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
  [クラスと構造体](../../../csharp/programming-guide/classes-and-structs/index.md)   
  [構造体](../../../csharp/programming-guide/classes-and-structs/structs.md)
+

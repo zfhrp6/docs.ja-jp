@@ -1,5 +1,5 @@
 ---
-title: "非同期アプリにおける再入の処理 (C#) | Microsoft Docs"
+title: "非同期アプリにおける再入の処理 (C#)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -19,11 +19,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-ms.translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 7be76ad572be522071d9e8c2ae9cf8c770fd1fd0
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: bd51c81c9589831146942ad9f0eae3642d4678e9
 ms.contentlocale: ja-jp
-ms.lasthandoff: 03/13/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="handling-reentrancy-in-async-apps-c"></a>非同期アプリにおける再入の処理 (C#)
@@ -157,7 +157,7 @@ private async void StartButton_Click(object sender, RoutedEventArgs e)
   
  このシナリオを設定するには、「[例のアプリをレビューして実行する](http://msdn.microsoft.com/library/5b54de66-6be3-459e-b869-65070b020645)」に用意されている基本コードを次のように変更します。 また、完成したアプリを「[Async Samples: Reentrancy in .NET Desktop Apps (非同期の例: .NET デスクトップ アプリでの再入)](http://go.microsoft.com/fwlink/?LinkId=266571)」からダウンロードすることもできます。 このプロジェクトの名前は CancelAndRestart です。  
   
-1.  <xref:System.Threading.CancellationTokenSource> 変数 `cts` を宣言します。この変数はすべてのメソッドのスコープ内にあります。  
+1.  すべてのメソッドのスコープである <xref:System.Threading.CancellationTokenSource> 変数、`cts` を宣言します。  
   
     ```csharp  
     public partial class MainWindow : Window   // Or class MainPage  
@@ -236,7 +236,7 @@ private async void StartButton_Click(object sender, RoutedEventArgs e)
   
 -   `StartButton_Click` からキャンセル トークンを受け取るためのパラメーターを追加します。  
   
--   <xref:System.Net.Http.HttpClient.GetAsync%2A> メソッドを使用して Web サイトをダウンロードします (`GetAsync` は <xref:System.Threading.CancellationToken> 引数を受け入れるため)。  
+-   <xref:System.Net.Http.HttpClient.GetAsync%2A> メソッドを使用して Web サイトをダウンロードします。これは `GetAsync` が <xref:System.Threading.CancellationToken> 引数を受け取るからです。  
   
 -   `DisplayResults` を呼び出してダウンロードした各 Web サイトの結果を表示する前に、`ct` で、現在の処理が取り消されていないことを確認します。  
   
@@ -313,7 +313,7 @@ TOTAL bytes returned:  890591
 ###  <a name="BKMK_RunMultipleOperations"></a>複数の操作を実行して出力をキューに登録する  
  この 3 番目の例は、ユーザーが **[Start]** ボタンをクリックするたびに非同期操作が開始され、すべての操作が完了まで実行されるという点で最も複雑です。 要求されたすべての操作によって Web サイトがリストから非同期的にダウンロードされますが、操作からの出力は順次表示されます。 つまり、「[再入を認識する](http://msdn.microsoft.com/library/5b54de66-6be3-459e-b869-65070b020645)」の出力に示されているように、実際のダウンロード アクティビティはインターリーブされますが、各グループの結果のリストは個別に表示されます。  
   
- 操作は、表示プロセスのゲートキーパーとして機能するグローバル <xref:System.Threading.Tasks.Task> である `pendingWork` を共有します。  
+ 操作は、表示プロセスのゲートキーパーとして機能するグローバル <xref:System.Threading.Tasks.Task>、`pendingWork` を共有します。  
   
  この例を実行するには、変更を「[アプリケーションをビルドする](http://msdn.microsoft.com/library/5b54de66-6be3-459e-b869-65070b020645)」のコードに貼り付けます。また、「[アプリをダウンロードする](http://msdn.microsoft.com/library/5b54de66-6be3-459e-b869-65070b020645)」の手順に従って、サンプルをダウンロードし、QueueResults プロジェクトを実行することもできます。  
   
@@ -438,7 +438,7 @@ private async void StartButton_Click(object sender, RoutedEventArgs e)
 ```  
   
 #### <a name="the-accessthewebasync-method"></a>AccessTheWebAsync メソッド  
- この例では、`AccessTheWebAsync` を 2 つのメソッドに分割します。 最初のメソッド、`AccessTheWebAsync` は、グループのすべてのダウンロード タスクを開始し、`pendingWork` を設定して表示プロセスを制御します。 このメソッドは、統合言語クエリ (LINQ クエリ) と <xref:System.Linq.Enumerable.ToArray%2A> を使用して、すべてのダウンロード タスクを同時に開始します。  
+ この例では、`AccessTheWebAsync` を 2 つのメソッドに分割します。 最初のメソッド、`AccessTheWebAsync` は、グループのすべてのダウンロード タスクを開始し、`pendingWork` を設定して表示プロセスを制御します。 このメソッドは、統合言語クエリ (LINQ クエリ) と <xref:System.Linq.Enumerable.ToArray%2A> を使用して、すべてのダウンロードを同時に開始します。  
   
  その後、`AccessTheWebAsync` は、`FinishOneGroupAsync` を呼び出して各ダウンロードが完了するまで待機し、その長さを表示します。  
   

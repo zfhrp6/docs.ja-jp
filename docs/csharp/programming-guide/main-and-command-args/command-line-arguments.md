@@ -1,5 +1,5 @@
 ---
-title: "コマンド ライン引数 (C# プログラミング ガイド) | Microsoft Docs"
+title: "コマンド ライン引数 (C# プログラミング ガイド)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -27,10 +27,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 4034f1575321c94f003a12a83df617d4a0d50702
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: f0d404ae0384ec97b0eb78c6284e07cac8065548
+ms.contentlocale: ja-jp
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="command-line-arguments-c-programming-guide"></a>コマンド ライン引数 (C# プログラミング ガイド)
@@ -47,7 +48,7 @@ ms.lasthandoff: 03/13/2017
   
  [!code-cs[csProgGuideMain#4](../../../csharp/programming-guide/inside-a-program/codesnippet/CSharp/command-line-arguments_3.cs)]  
   
- <xref:System.Convert> クラスまたは `Parse` メソッドを使って、文字列型の引数を数値型に変換することもできます。 たとえば、次のステートメントでは、<xref:System.Int64.Parse%2A> メソッドを使用して `string` を `long` 値に変換します。  
+ また、<xref:System.Convert> クラスまたは `Parse` メソッドを使って、文字列型の引数を数値型に変換できます。 たとえば、次のステートメントでは、`string` メソッドを使用して `long` を <xref:System.Int64.Parse%2A> 値に変換します。  
   
 ```  
 long num = Int64.Parse(args[0]);  
@@ -65,7 +66,7 @@ long num = long.Parse(args[0]);
 long num = Convert.ToInt64(s);  
 ```  
   
- 詳細については、<xref:System.Int64.Parse%2A> と <xref:System.Convert> に関する各ページを参照してください。  
+ 詳細については、<xref:System.Int64.Parse%2A> および <xref:System.Convert> を参照してください。  
   
 ## <a name="example"></a>例  
  コンソール アプリケーションでコマンド ライン引数を使用する方法の例を次に示します。 アプリケーションは、実行時に引数を 1 つ受け取り、整数に変換し、その値の階乗を計算しています。 引数がない場合は、アプリケーションの正しい使用方法を説明するメッセージを表示します。  
@@ -91,7 +92,7 @@ long num = Convert.ToInt64(s);
 5.  次の出力が生成されます: `The factorial of 3 is 6.`  
   
 > [!NOTE]
->  Visual Studio でアプリケーションを実行する場合、「[[デバッグ] ページ (プロジェクト デザイナー)](https://docs.microsoft.com/visualstudio/ide/reference/debug-page-project-designer)」のコマンド ライン引数を指定できます。  
+>  Visual Studio でアプリケーションを実行する場合、「[[デバッグ] ページ (プロジェクト デザイナー)](/visualstudio/ide/reference/debug-page-project-designer)」のコマンド ライン引数を指定できます。  
   
  コマンド ライン引数の使用方法の例については、「[方法: コマンド ラインを使用してアセンブリを作成および使用する](http://msdn.microsoft.com/library/70f65026-3687-4e9c-ab79-c18b97dd8be4)」を参照してください。  
   
@@ -103,3 +104,4 @@ long num = Convert.ToInt64(s);
  [方法: foreach を使用してコマンド ライン引数にアクセスする](../../../csharp/programming-guide/main-and-command-args/how-to-access-command-line-arguments-using-foreach.md)   
  [Main() の戻り値](../../../csharp/programming-guide/main-and-command-args/main-return-values.md)   
  [クラス](../../../csharp/programming-guide/classes-and-structs/classes.md)
+

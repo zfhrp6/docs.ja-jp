@@ -1,5 +1,5 @@
 ---
-title: "連結クエリのパフォーマンス (LINQ to XML) (C#) | Microsoft Docs"
+title: "連結クエリのパフォーマンス (LINQ to XML) (C#)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -14,11 +14,11 @@ ms.assetid: b2f1d715-8946-4dc0-8d56-fb3d1bba54a6
 caps.latest.revision: 3
 author: BillWagner
 ms.author: wiwagn
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 3429da268df07900ebe59ed206b927d209b1cf7f
-ms.lasthandoff: 03/13/2017
-
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 7c72c4eebd29152ed4fb95f2ee42075797c60b8a
+ms.contentlocale: ja-jp
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="performance-of-chained-queries-linq-to-xml-c"></a>連結クエリのパフォーマンス (LINQ to XML) (C#)
@@ -54,11 +54,11 @@ foreach (var i in query2)
   
  この連結クエリは、リンク リストの反復と同じパフォーマンス プロファイルを提供します。  
   
--   <xref:System.Xml.Linq.XContainer.Elements%2A> 軸のパフォーマンスは、基本的にリンク リストの反復と同じです。 <xref:System.Xml.Linq.XContainer.Elements%2A> は遅延実行のある反復子として実装されます。 つまり、リンク リストの反復の他に、反復子オブジェクトの割り当てや実行状態の追跡などの作業をします。 この作業は、反復子の設定時に行われる作業と、各反復中に行われる作業の 2 つのカテゴリに分けることができます。 設定作業は一定量の小さい作業であり、各反復中に行われる作業はソース コレクションの項目数に比例します。  
+-   <xref:System.Xml.Linq.XContainer.Elements%2A> 軸のパフォーマンスは、基本的にリンク リストの反復と同じです。 <xref:System.Xml.Linq.XContainer.Elements%2A> は、遅延実行のある反復子として実装されます。 つまり、リンク リストの反復の他に、反復子オブジェクトの割り当てや実行状態の追跡などの作業をします。 この作業は、反復子の設定時に行われる作業と、各反復中に行われる作業の 2 つのカテゴリに分けることができます。 設定作業は一定量の小さい作業であり、各反復中に行われる作業はソース コレクションの項目数に比例します。  
   
--   `query1` では、`where` 句によってクエリで <xref:System.Linq.Enumerable.Where%2A> メソッドが呼び出されます。 このメソッドも反復子として実装されています。 設定作業は、ラムダ式を参照するデリゲートのインスタンス化と、反復子の通常の設定から成ります。 反復ごとに、デリゲートが呼び出されて述語を実行します。 設定作業と、各反復中に行われる作業は、軸の反復中に行われる作業に似ています。  
+-   `query1` では、`where` 句によってクエリは <xref:System.Linq.Enumerable.Where%2A> メソッドを呼び出します。 このメソッドも反復子として実装されています。 設定作業は、ラムダ式を参照するデリゲートのインスタンス化と、反復子の通常の設定から成ります。 反復ごとに、デリゲートが呼び出されて述語を実行します。 設定作業と、各反復中に行われる作業は、軸の反復中に行われる作業に似ています。  
   
--   `query1` では、select 句によってクエリで <xref:System.Linq.Enumerable.Select%2A> メソッドが呼び出されます。 このメソッドのパフォーマンス プロファイルは <xref:System.Linq.Enumerable.Where%2A> メソッドと同じです。  
+-   `query1` では、SELECT 句によってクエリが <xref:System.Linq.Enumerable.Select%2A> メソッドを呼び出します。 このメソッドには <xref:System.Linq.Enumerable.Where%2A> メソッドと同じパフォーマンス プロファイルがあります。  
   
 -   `query2` では、`where` 句と `select` 句の両方に `query1` と同じパフォーマンス プロファイルがあります。  
   
@@ -70,3 +70,4 @@ foreach (var i in query2)
   
 ## <a name="see-also"></a>関連項目  
  [パフォーマンス (LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/performance-linq-to-xml.md)
+

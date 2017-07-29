@@ -1,5 +1,5 @@
 ---
-title: "ドキュメント タグの区切り記号 (C# プログラミング ガイド) | Microsoft Docs"
+title: "ドキュメント タグの区切り記号 (C# プログラミング ガイド)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -29,11 +29,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: ba3b38a8bce9f5b49ef863acfae04bc2a39c052a
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 3e31f0c3d815c0454a9be6813ff9a04e5fa4c7de
 ms.contentlocale: ja-jp
-ms.lasthandoff: 03/13/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="delimiters-for-documentation-tags-c-programming-guide"></a>ドキュメント タグの区切り記号 (C# プログラミング ガイド)
@@ -43,7 +43,7 @@ XML ドキュメント コメントでは区切り記号を使用し、ドキュ
  単一行の区切り記号。 ドキュメント例で使用されています。この区切り記号は、Visual C# プロジェクト テンプレートで使用されます。 区切り記号の直後に空白文字が続く場合、その文字は XML 出力に含まれません。  
   
 > [!NOTE]
->  Visual Studio IDE には、スマート コメント編集と呼ばれる機能があります。コード エディターで `///` 区切り記号を入力すると、\<summary> タグと \</summary> タグが自動的に挿入され、これらのタグの内側にカーソルが移動します。 この機能には、プロジェクト プロパティ ページの [[オプション]、[テキスト エディター]、[C#]、[書式設定]](https://docs.microsoft.com/visualstudio/ide/reference/options-text-editor-csharp-formatting) からアクセスします。  
+>  Visual Studio IDE には、スマート コメント編集と呼ばれる機能があります。コード エディターで `///` 区切り記号を入力すると、\<summary> タグと \</summary> タグが自動的に挿入され、これらのタグの内側にカーソルが移動します。 この機能には、プロジェクト プロパティ ページの [[オプション]、[テキスト エディター]、[C#]、[書式設定]](/visualstudio/ide/reference/options-text-editor-csharp-formatting) からアクセスします。  
   
  `/** */`  
  複数行の区切り記号。  

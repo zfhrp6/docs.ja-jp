@@ -1,5 +1,5 @@
 ---
-title: "コンピューターのポートへのアクセス (Visual Basic) | Microsoft Docs"
+title: "コンピューターのポートへのアクセス (Visual Basic)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -31,11 +31,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
-ms.openlocfilehash: 69153a48b87e069de68b9332c7fc7653058096ef
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: db4fdbea07000ab92d5329f53d68c61db9d0547d
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/22/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="accessing-the-computer39s-ports-visual-basic"></a>コンピューターのポートへのアクセス (Visual Basic)
@@ -55,7 +55,7 @@ ms.lasthandoff: 05/22/2017
  コンピューターのシリアル ポートから文字列を受信する方法について説明します。  
   
  [.NET Framework でのポート操作](../../../../visual-basic/developing-apps/programming/computer-resources/port-operations-in-the-net-framework.md)  
- ポート操作の実行時に [!INCLUDE[dnprdnshort](../../../../csharp/getting-started/includes/dnprdnshort_md.md)] を使用する方法について説明します。  
+ ポート操作の実行時に [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] を使用する方法について説明します。  
   
 ## <a name="reference"></a>参照  
  <xref:Microsoft.VisualBasic.Devices.Ports>  
@@ -70,3 +70,4 @@ ms.lasthandoff: 05/22/2017
 ## <a name="related-sections"></a>関連項目  
  <xref:System.IO.Ports.SerialPort>  
  .NET Framework の <xref:System.IO.Ports.SerialPort> クラスについて説明します。
+

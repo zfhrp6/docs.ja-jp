@@ -1,5 +1,5 @@
 ---
-title: "呼び出し元情報 (C#) | Microsoft Docs"
+title: "呼び出し元情報 (C#)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -16,16 +16,17 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 087b547cfc558fb4c82026e9af6ac621809e0ca0
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 8c514266b474f6d4cd3f02e6f9008bef053c407a
+ms.contentlocale: ja-jp
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="caller-information-c"></a>呼び出し元情報 (C#)
 呼び出し元情報の属性を使用すると、メソッドへの呼び出し元に関する情報を取得できます。 ソース コードのファイル パス、ソース コードの行番号、および呼び出し元のメンバー名を取得できます。 この情報は、トレース、デバッグ、および診断ツールの作成に役立ちます。  
   
- この情報を取得するには、省略可能なパラメーターに適用される属性を使用します。各パラメーターには既定値があります。 <xref:System.Runtime.CompilerServices?displayProperty=fullName> 名前空間に定義されている呼び出し元情報属性の一覧を次の表に示します。  
+ この情報を取得するには、省略可能なパラメーターに適用される属性を使用します。各パラメーターには既定値があります。 次の表は、<xref:System.Runtime.CompilerServices?displayProperty=fullName> 名前空間で定義されている呼び出し元情報の属性の一覧です。  
   
 |属性|説明|型|  
 |---|---|---|  
@@ -74,7 +75,7 @@ public void TraceMessage(string message,
   
 -   トレース ルーチンと診断ルーチンの使用。  
   
--   データ バインド時の <xref:System.ComponentModel.INotifyPropertyChanged> インターフェイスの実装。 このインターフェイスを使用すると、オブジェクトのプロパティが、プロパティが変更されたことをデータ バインド コントロールに通知できます。これによって、このコントロールは、更新された情報を表示できます。 `CallerMemberName` 属性がない場合は、リテラルとしてプロパティ名を指定する必要があります。  
+-   データ バインディング時の <xref:System.ComponentModel.INotifyPropertyChanged> インターフェイスの実装。 このインターフェイスを使用すると、オブジェクトのプロパティが、プロパティが変更されたことをデータ バインド コントロールに通知できます。これによって、このコントロールは、更新された情報を表示できます。 `CallerMemberName` 属性がない場合は、リテラルとしてプロパティ名を指定する必要があります。  
   
  次のグラフは、`CallerMemberName` 属性の使用時に返されるメンバー名を示します。  
   
@@ -93,3 +94,4 @@ public void TraceMessage(string message,
  [共通属性 (C#)](../../../csharp/programming-guide/concepts/attributes/common-attributes.md)   
  [名前付き引数と省略可能な引数](../../../csharp/programming-guide/classes-and-structs/named-and-optional-arguments.md)   
  [プログラミングの概念 (C#)](../../../csharp/programming-guide/concepts/index.md)
+

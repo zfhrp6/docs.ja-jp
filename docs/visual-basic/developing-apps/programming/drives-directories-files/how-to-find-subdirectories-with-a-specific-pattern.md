@@ -1,5 +1,5 @@
 ---
-title: "方法: 特定のパターンに一致するサブディレクトリを検索する (Visual Basic) | Microsoft Docs"
+title: "方法: 特定のパターンに一致するサブディレクトリを検索する (Visual Basic)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -31,11 +31,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
-ms.openlocfilehash: 3fc7683c6629e2d94f3acb670810c6632efec094
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 3719c13c74b873927382d2ff3ca733e3fd8fe945
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/22/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="how-to-find-subdirectories-with-a-specific-pattern-in-visual-basic"></a>方法: 特定のパターンに一致するサブディレクトリを検索する (Visual Basic)
@@ -73,3 +73,4 @@ ms.lasthandoff: 05/22/2017
 ## <a name="see-also"></a>関連項目  
  <xref:Microsoft.VisualBasic.FileIO.FileSystem.GetDirectories%2A>   
  [方法: 特定のパターンに一致するファイルを検索する](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-find-files-with-a-specific-pattern.md)
+

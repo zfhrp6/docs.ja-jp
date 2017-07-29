@@ -1,5 +1,5 @@
 ---
-title: "const (C# リファレンス) | Microsoft Docs"
+title: "const (C# リファレンス)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -30,18 +30,18 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 700e80272384a946609d538c5516f0480b7fed27
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: b8f6d567deed513ff5693fe39bd21c8607677402
 ms.contentlocale: ja-jp
-ms.lasthandoff: 03/13/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="const-c-reference"></a>const (C# リファレンス)
 定数フィールドまたはローカル定数を宣言するには、`const` キーワードを使用します。 定数フィールドとローカルは変数でないため、変更できません。 定数には、数字、ブール値、文字列、または null 参照が含まれます。 いずれかの時点で変わることが予想される情報を表すために定数を作成してはなりません。 たとえば、サービスの価格、製品バージョン番号、会社のブランド名などを格納するためには定数フィールドを使用しないでください。 これらの値は時間の経過とともに変更される場合があります。コンパイラは定数を伝達するため、ライブラリでコンパイルされた他のコードを再コンパイルして、変更点を反映することが必要になってしまいます。 [readonly](../../../csharp/language-reference/keywords/readonly.md) キーワードも参照してください。 例:  
   
-```  
-      const int x = 0;  
+```csharp
+const int x = 0;  
 public const double gravitationalConstant = 6.673e-11;  
 private const string productName = "Visual C#";  
 ```  
@@ -53,7 +53,7 @@ private const string productName = "Visual C#";
   
  定数宣言は、複数の定数を宣言できます。たとえば、次のように宣言できます。  
   
-```  
+```csharp
 public const double x = 1.0, y = 2.0, z = 3.0;  
 ```  
   
@@ -61,7 +61,7 @@ public const double x = 1.0, y = 2.0, z = 3.0;
   
  定数は、次に示すように、定数式の一部になることができます。  
   
-```  
+```csharp
 public const int c1 = 5;  
 public const int c2 = c1 + 100;  
 ```  

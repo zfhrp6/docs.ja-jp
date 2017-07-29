@@ -1,5 +1,5 @@
 ---
-title: "方法: レジストリ キーを作成し、その値を設定する (Visual Basic) | Microsoft Docs"
+title: "方法: レジストリ キーを作成し、その値を設定する (Visual Basic)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -37,11 +37,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
-ms.openlocfilehash: 28a01911dc715483aee8191972387781a6f1933e
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 106a98a1b15c37eb2cac05e1a681bf7dfed3543d
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/22/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="how-to-create-a-registry-key-and-set-its-value-in-visual-basic"></a>方法: レジストリ キーを作成し、その値を設定する (Visual Basic)
@@ -102,3 +102,4 @@ ms.lasthandoff: 05/22/2017
  <xref:Microsoft.Win32.RegistryKey.CreateSubKey%2A>   
  [レジストリからの読み取りとレジストリへの書き込み](../../../../visual-basic/developing-apps/programming/computer-resources/reading-from-and-writing-to-the-registry.md)   
  [コード アクセス セキュリティの基礎](https://msdn.microsoft.com/library/33tceax8)
+

@@ -1,7 +1,7 @@
 ---
 title: "クエリ結果のグループ化"
 description: "結果をグループ化する方法です。"
-keywords: ".NET、.NET Core、C#"
+keywords: .NET, .NET Core, C#
 author: BillWagner
 manager: wpickett
 ms.author: wiwagn
@@ -11,10 +11,11 @@ ms.prod: .net-core
 ms.technology: .net-core-technologies
 ms.devlang: dotnet
 ms.assetid: 2e4ec27f-06fb-4de7-8973-0189906d4520
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: ee1ad2d65fda8a524b42f44f893e0b6f5f81eea5
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 1c1639651699afbe5fb768db26b98a9b2d734315
+ms.contentlocale: ja-jp
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="group-query-results"></a>クエリ結果のグループ化
@@ -84,3 +85,4 @@ ms.lasthandoff: 03/13/2017
  [グループ化操作でのサブクエリの実行](perform-a-subquery-on-a-grouping-operation.md)   
  [入れ子になったグループの作成](create-a-nested-group.md)   
  [データのグループ化](../programming-guide/concepts/linq/grouping-data.md)
+

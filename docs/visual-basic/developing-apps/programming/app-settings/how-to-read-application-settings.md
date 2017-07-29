@@ -1,5 +1,5 @@
 ---
-title: "方法: Visual Basic でアプリケーション設定を読み取る | Microsoft Docs"
+title: "方法 : Visual Basic でアプリケーション設定を読み取る"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -32,11 +32,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
-ms.openlocfilehash: 39c98f4fa461d037f5a0c551b5c1ea089f25451d
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: e18c1da475ac7945a8bf080aad3ba2905d5d8658
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/22/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="how-to-read-application-settings-in-visual-basic"></a>方法 : Visual Basic でアプリケーション設定を読み取る
@@ -49,11 +49,12 @@ ms.lasthandoff: 05/22/2017
   
  [!code-vb[VbVbalrMyResources#14](../../../../visual-basic/developing-apps/programming/app-settings/codesnippet/VisualBasic/how-to-read-application-settings_1.vb)]  
   
- この例を実行するには、アプリケーションで `String` 型の `Nickname` を設定する必要があります。 詳細については、[アプリケーションの設定の管理 (.NET)](https://docs.microsoft.com/visualstudio/ide/managing-application-settings-dotnet) を参照してください。  
+ この例を実行するには、アプリケーションで `String` 型の `Nickname` を設定する必要があります。 詳細については、[アプリケーションの設定の管理 (.NET)](/visualstudio/ide/managing-application-settings-dotnet) を参照してください。  
   
 ## <a name="see-also"></a>関連項目  
  [My.Settings オブジェクト](../../../../visual-basic/language-reference/objects/my-settings-object.md)   
  [方法: Visual Basic でユーザー設定を変更する](../../../../visual-basic/developing-apps/programming/app-settings/how-to-change-user-settings.md)   
  [方法: Visual Basic でユーザー設定を永続化する](../../../../visual-basic/developing-apps/programming/app-settings/how-to-persist-user-settings.md)   
  [方法: Visual Basic でユーザー設定のためのプロパティ グリッドを作成する](../../../../visual-basic/developing-apps/programming/app-settings/how-to-create-property-grids-for-user-settings.md)   
- [アプリケーションの設定の管理 (.NET)](https://docs.microsoft.com/visualstudio/ide/managing-application-settings-dotnet)
+ [アプリケーションの設定の管理 (.NET)](/visualstudio/ide/managing-application-settings-dotnet)
+

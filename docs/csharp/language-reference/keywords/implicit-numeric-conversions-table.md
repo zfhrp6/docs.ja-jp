@@ -1,5 +1,5 @@
 ---
-title: "暗黙的な数値変換の一覧表 (C# リファレンス) | Microsoft Docs"
+title: "暗黙的な数値変換の一覧表 (C# リファレンス)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -30,11 +30,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: e4a0eca529b7c66cca527cfef3078a2c5bd24555
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 4c7aa29f9bdeb5f30918e6d7b990c5197e7fe1a1
 ms.contentlocale: ja-jp
-ms.lasthandoff: 03/13/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="implicit-numeric-conversions-table-c-reference"></a>暗黙的な数値変換の一覧表 (C# リファレンス)
@@ -73,3 +73,4 @@ ms.lasthandoff: 03/13/2017
  [組み込み型の一覧表](../../../csharp/language-reference/keywords/built-in-types-table.md)   
  [明示的な数値変換の一覧表](../../../csharp/language-reference/keywords/explicit-numeric-conversions-table.md)   
  [キャストと型変換](../../../csharp/programming-guide/types/casting-and-type-conversions.md)
+

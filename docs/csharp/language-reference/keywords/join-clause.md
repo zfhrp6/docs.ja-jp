@@ -1,5 +1,5 @@
 ---
-title: "join 句 (C# リファレンス) | Microsoft Docs"
+title: "join 句 (C# リファレンス)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -31,11 +31,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: fe32676f0e39ed109a68f39584cf41aec5f5ce90
-ms.openlocfilehash: 26027418b70d211dcadf6ace58b24927d94e427a
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 3368ba14101eda38ed8e3ee2bdc81bcab74a9b82
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/10/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="join-clause-c-reference"></a>join 句 (C# リファレンス)
@@ -74,7 +74,7 @@ ms.lasthandoff: 05/10/2017
  詳細については、「[方法: グループ化結合を実行する](../../../csharp/programming-guide/linq-query-expressions/how-to-perform-grouped-joins.md)」を参照してください。  
   
 ## <a name="left-outer-join"></a>左外部結合  
- 左外部結合では、右側のシーケンスに一致する要素がなくても、左側のソース シーケンスのすべての要素が返されます。 [!INCLUDE[vbteclinq](../../../csharp/includes/vbteclinq_md.md)] で左外部結合を実行するには、`DefaultIfEmpty` メソッドとグループ結合を組み合わせて使用し、左側の要素に一致するものがない場合に既定の右側の要素を生成するように指定します。 参照型用の既定値として `null` を使用するか、ユーザー定義の既定の型を指定できます。 次の例では、ユーザー定義の既定の型を示しています。  
+ 左外部結合では、右側のシーケンスに一致する要素がなくても、左側のソース シーケンスのすべての要素が返されます。 [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] で左外部結合を実行するには、`DefaultIfEmpty` メソッドとグループ結合を組み合わせて使用し、左側の要素に一致するものがない場合に既定の右側の要素を生成するように指定します。 参照型用の既定値として `null` を使用するか、ユーザー定義の既定の型を指定できます。 次の例では、ユーザー定義の既定の型を示しています。  
   
  [!code-cs[cscsrefQueryKeywords#27](../../../csharp/language-reference/keywords/codesnippet/CSharp/join-clause_4.cs)]  
   
@@ -87,9 +87,9 @@ ms.lasthandoff: 05/10/2017
  複数の `from` 句を使用して新しいシーケンスをクエリに個別に導入することで、非等結合、クロス結合、およびその他のカスタム結合操作を実行できます。 詳細については、「[方法: カスタム結合操作を実行する](../../../csharp/programming-guide/linq-query-expressions/how-to-perform-custom-join-operations.md)」を参照してください。  
   
 ## <a name="joins-on-object-collections-vs-relational-tables"></a>オブジェクト コレクションとリレーショナル テーブルでの結合の比較  
- [!INCLUDE[vbteclinq](../../../csharp/includes/vbteclinq_md.md)] クエリ式での結合操作は、オブジェクト コレクションに対して実行されます。 2 つのリレーショナル テーブルの "結合" とまったく同じ方法でオブジェクト コレクションを結合することはできません。 [!INCLUDE[vbteclinq](../../../csharp/includes/vbteclinq_md.md)] では、2 つのソース シーケンスがリレーションシップによって関連付けられていない場合にのみ明示的な `join` 句が必要になります。 [!INCLUDE[vbtecdlinq](../../../csharp/includes/vbtecdlinq_md.md)] を使用する場合、外部キー テーブルはオブジェクト モデル内でプライマリ テーブルのプロパティとして表されます。 たとえば Northwind データベースでは、Customer テーブルに Orders テーブルとの外部キー リレーションシップがあります。 テーブルをオブジェクト モデルに割り当てると、Customer クラスには、その Customer に関連付けられた Orders のコレクションを含む Orders プロパティが含まれます。 実質的には、既に結合が実行されていることになります。  
+ [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] クエリ式での結合操作は、オブジェクト コレクションに対して実行されます。 2 つのリレーショナル テーブルの "結合" とまったく同じ方法でオブジェクト コレクションを結合することはできません。 [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] では、2 つのソース シーケンスがリレーションシップによって関連付けられていない場合にのみ明示的な `join` 句が必要になります。 [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)] を使用する場合、外部キー テーブルはオブジェクト モデル内でプライマリ テーブルのプロパティとして表されます。 たとえば Northwind データベースでは、Customer テーブルに Orders テーブルとの外部キー リレーションシップがあります。 テーブルをオブジェクト モデルに割り当てると、Customer クラスには、その Customer に関連付けられた Orders のコレクションを含む Orders プロパティが含まれます。 実質的には、既に結合が実行されていることになります。  
   
- [!INCLUDE[vbtecdlinq](../../../csharp/includes/vbtecdlinq_md.md)] を使用した関連テーブル間でのクエリの詳細については、「[方法: データベース リレーションシップを割り当てる](../../../framework/data/adonet/sql/linq/how-to-map-database-relationships.md)」を参照してください。  
+ [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)] を使用した関連テーブル間でのクエリの詳細については、「[方法: データベース リレーションシップを割り当てる](../../../framework/data/adonet/sql/linq/how-to-map-database-relationships.md)」を参照してください。  
   
 ## <a name="composite-keys"></a>複合キー  
  複合キーを使用すると、複数の値の等価性をテストできます。 詳細については、「[方法: 複合キーを使用して結合する](../../../csharp/programming-guide/linq-query-expressions/how-to-join-by-using-composite-keys.md)」を参照してください。 複合キーは、`group` 句でも使用できます。  
@@ -113,3 +113,4 @@ ms.lasthandoff: 05/10/2017
  [方法: join 句の結果の順序を指定する](../../../csharp/programming-guide/linq-query-expressions/how-to-order-the-results-of-a-join-clause.md)   
  [方法: 複合キーを使用して結合する](../../../csharp/programming-guide/linq-query-expressions/how-to-join-by-using-composite-keys.md)   
  [方法 : サンプル データベースをインストールする](http://msdn.microsoft.com/library/ed1291f6-604c-4972-ae22-0345c6dea12e)
+

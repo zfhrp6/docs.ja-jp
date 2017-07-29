@@ -1,5 +1,5 @@
 ---
-title: "方法: Async と Await を使用して複数の Web 要求を並列実行する (C#) | Microsoft Docs"
+title: "方法: Async と Await を使用して複数の Web 要求を並列実行する (C#)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -19,11 +19,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-ms.translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: eb358daf212b171acd998a1aa74fe2ecd82a239a
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: bfa7781241b837f353fe34d43b8cc6ab82f15564
 ms.contentlocale: ja-jp
-ms.lasthandoff: 03/13/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="how-to-make-multiple-web-requests-in-parallel-by-using-async-and-await-c"></a>方法: Async と Await を使用して複数の Web 要求を並列実行する (C#)
@@ -112,9 +112,9 @@ var result = await myTask;
   
 4.  最後に、次の手順を実行するメソッド `CreateMultipleTasksAsync` を定義します。  
   
-    -   このメソッドは、`ProcessURLAsync` の <xref:System.Net.Http.HttpClient.GetByteArrayAsync%2A> メソッドにアクセスする際に必要な `HttpClient` オブジェクトを宣言します。  
+    -   このメソッドは、`HttpClient` の <xref:System.Net.Http.HttpClient.GetByteArrayAsync%2A> メソッドにアクセスするために必要な `ProcessURLAsync` オブジェクトを宣言します。  
   
-    -   このメソッドは `TResult` が整数である <xref:System.Threading.Tasks.Task%601> 型の 3 つのタスクを作成して開始します。 各タスクが終了すると、`DisplayResults` はタスクの URL とダウンロードしたコンテンツの長さを表示します。 タスクは非同期的に実行されるため、結果が表示される順序は、宣言された順序と異なる場合があります。  
+    -   このメソッドは <xref:System.Threading.Tasks.Task%601> が整数である `TResult` 型の 3 つのタスクを作成して開始します。 各タスクが終了すると、`DisplayResults` はタスクの URL とダウンロードしたコンテンツの長さを表示します。 タスクは非同期的に実行されるため、結果が表示される順序は、宣言された順序と異なる場合があります。  
   
     -   メソッドは、各タスクの完了を待機します。 各 `await` 演算子は、待機したタスクが終了するまで `CreateMultipleTasksAsync` の実行を中断します。 さらに演算子は、完了した各タスクから `ProcessURLAsync` への呼び出しからの戻り値を取得します。  
   

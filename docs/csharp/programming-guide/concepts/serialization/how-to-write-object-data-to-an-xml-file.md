@@ -1,5 +1,5 @@
 ---
-title: "方法: XML ファイルにオブジェクト データを書き込む (C#) | Microsoft Docs"
+title: "方法: XML ファイルにオブジェクト データを書き込む (C#)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -19,10 +19,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 197e91be6d3785e437cb33541b2b4c9b4a2cbb84
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: a4b2fde8f823e6b945d074327559013f4e748909
+ms.contentlocale: ja-jp
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="how-to-write-object-data-to-an-xml-file-c"></a>方法: XML ファイルにオブジェクト データを書き込む (C#)
@@ -68,9 +69,9 @@ public class XMLWrite
   
 -   シリアル化されるクラスにパブリックなパラメーターなしのコンストラクターがない場合  
   
--   ファイルが存在し、読み取り専用である場合 (<xref:System.IO.IOException>)  
+-   ファイルが存在するものの、読み取り専用の場合 (<xref:System.IO.IOException>)  
   
--   パスが長すぎる場合 (<xref:System.IO.PathTooLongException>)  
+-   パスが長すぎる (<xref:System.IO.PathTooLongException>)。  
   
 -   ディスクの空き領域がない場合 (<xref:System.IO.IOException>)  
   
@@ -81,3 +82,4 @@ public class XMLWrite
  <xref:System.IO.StreamWriter>   
  [方法: XML ファイルからオブジェクト データを読み込む (C#)](../../../../csharp/programming-guide/concepts/serialization/how-to-read-object-data-from-an-xml-file.md)   
  [シリアル化 (C#)](../../../../csharp/programming-guide/concepts/serialization/index.md)
+

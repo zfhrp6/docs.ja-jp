@@ -1,5 +1,5 @@
 ---
-title: "方法 : ポインターを使用してバイトの配列をコピーする (C# プログラミング ガイド) | Microsoft Docs"
+title: "方法 : ポインターを使用してバイトの配列をコピーする (C# プログラミング ガイド)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -29,11 +29,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: c50b3e328998b65ec47efe6d7457b36116813c77
-ms.openlocfilehash: b9d6f93a92b48fcbdd70475ae4c1b8a62ddd9125
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 808a74f75e4dcbcec47735d98063138e2c7456e5
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/08/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="how-to-use-pointers-to-copy-an-array-of-bytes--c-programming-guide"></a>方法 : ポインターを使用してバイトの配列をコピーする (C# プログラミング ガイド)
@@ -51,3 +51,4 @@ ms.lasthandoff: 04/08/2017
  [アンセーフ コードとポインター](../../../csharp/programming-guide/unsafe-code-pointers/index.md)   
  [/unsafe (C# コンパイラ オプション)](../../../csharp/language-reference/compiler-options/unsafe-compiler-option.md)   
  [ガベージ コレクション](../../../standard/garbage-collection/index.md)
+

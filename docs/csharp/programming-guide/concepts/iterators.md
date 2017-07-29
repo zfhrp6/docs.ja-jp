@@ -1,5 +1,5 @@
 ---
-title: "反復子 (C#) | Microsoft Docs"
+title: "反復子 (C#)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -16,11 +16,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-ms.translationtype: Human Translation
-ms.sourcegitcommit: a5ed524a1b17f7be8903f998cbd732594faab831
-ms.openlocfilehash: 11a606ef18bc497630c0a417488e533a0880056f
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 5d5543a48d0c835f5270067d1e5ad514c28842b2
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/15/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="iterators-c"></a>反復子 (C#)
@@ -368,7 +368,7 @@ public class Stack<T> : IEnumerable<T>
   
  反復子は、<xref:System.Collections.IEnumerator.Reset%2A?displayProperty=fullName> メソッドをサポートしません。 反復処理を最初から再度行う場合は、新しい反復子を取得する必要があります。  
   
- 詳細については、「[C# 言語の仕様](../../../csharp/language-reference/language-specification.md)」を参照してください。  
+ 詳細については、「[C# 言語の仕様](../../../csharp/language-reference/language-specification/index.md)」を参照してください。  
   
 ##  <a name="BKMK_UseOfIterators"></a> 反復子の使用  
  反復子を使用すると、複雑なコードを使用して一覧シーケンスを設定する必要がある場合に、`foreach` ループの単純さを維持することができます。 これは次のような場合に役立ちます。  
@@ -386,3 +386,4 @@ public class Stack<T> : IEnumerable<T>
  [yield](../../../csharp/language-reference/keywords/yield.md)   
  [配列での foreach の使用](../../../csharp/programming-guide/arrays/using-foreach-with-arrays.md)   
  [ジェネリック](../../../csharp/programming-guide/generics/index.md)
+

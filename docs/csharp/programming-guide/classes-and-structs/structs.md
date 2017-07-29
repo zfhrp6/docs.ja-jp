@@ -1,5 +1,5 @@
 ---
-title: "構造体 (C# プログラミング ガイド) | Microsoft Docs"
+title: "構造体 (C# プログラミング ガイド)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -28,11 +28,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: a5ed524a1b17f7be8903f998cbd732594faab831
-ms.openlocfilehash: 41574404f923695b3ba065d3c22f102bd2843e68
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: ce12f402c0748ea6729c82e3f188c0a58f63d628
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/22/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="structs-c-programming-guide"></a>構造体 (C# プログラミング ガイド)
@@ -77,3 +77,4 @@ ms.lasthandoff: 05/22/2017
  [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
  [クラスと構造体](../../../csharp/programming-guide/classes-and-structs/index.md)   
  [クラス](../../../csharp/programming-guide/classes-and-structs/classes.md)
+

@@ -1,5 +1,5 @@
 ---
-title: "方法: 文字列を DateTime に変換する (C# プログラミング ガイド) | Microsoft Docs"
+title: "方法 : 文字列を DateTime に変換する (C# プログラミング ガイド)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -28,14 +28,15 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: f31deeb2b29495ab48781c7e673fed37e8ad8dce
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 15ef1ec4debf242cdabc42f26add890bd4b61507
+ms.contentlocale: ja-jp
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="how-to-convert-a-string-to-a-datetime-c-programming-guide"></a>方法 : 文字列を DateTime に変換する (C# プログラミング ガイド)
-プログラムでは、ユーザーが文字列値として日付を入力できるようにするのが一般的です。 文字列ベースの日付を <xref:System.DateTime?displayProperty=fullName> オブジェクトに変換するには、次の例に示すように、<xref:System.Convert.ToDateTime%28System.String%29?displayProperty=fullName> メソッドまたは <xref:System.DateTime.Parse%28System.String%29?displayProperty=fullName> 静的メソッドを使用します。  
+プログラムでは、ユーザーが文字列値として日付を入力できるようにするのが一般的です。 文字列ベースの日付を <xref:System.DateTime?displayProperty=fullName> オブジェクトに変換するには、次の例に示すように、 <xref:System.Convert.ToDateTime%28System.String%29?displayProperty=fullName> メソッドまたは <xref:System.DateTime.Parse%28System.String%29?displayProperty=fullName> 静的メソッドを使用することができます。  
   
  **カルチャ**。  カルチャが異なると、日付文字列の記述方法も異なり場合があります。  たとえば、米国では 2008 年 1 月 20 日を 01/20/2008 と記述します。  フランスでは、この値に対して InvalidFormatException がスローされます。 これは、フランスでは日付時刻を日/月/年として読み込み、米国では月/日/年として読み込むためです。  
   
@@ -45,7 +46,7 @@ ms.lasthandoff: 03/13/2017
   
  文字列を dateTime に変換する簡単な例については、次の例を参照してください。  
   
- 日付文字列の例については、「<xref:System.Convert.ToDateTime%28System.String%29?displayProperty=fullName>」を参照してください。  
+ 日付文字列の例については、「 <xref:System.Convert.ToDateTime%28System.String%29?displayProperty=fullName>」を参照してください。  
   
 ```csharp  
 string dateTime = "01/08/2008 14:50:50.42";  
@@ -73,3 +74,4 @@ Press any key to continue . . .
   
 ## <a name="see-also"></a>関連項目  
  [文字列](../../../csharp/programming-guide/strings/index.md)
+

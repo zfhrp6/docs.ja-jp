@@ -1,5 +1,5 @@
 ---
-title: "LINQ to ADO.NET (ポータル ページ) | Microsoft Docs"
+title: "LINQ to ADO.NET (ポータル ページ)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -19,11 +19,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 31905a37f09db5f5192123f0118252fbe8b02eff
-ms.openlocfilehash: dd0e67a0c01fdf0a08a2a57fa4c196e726f575bd
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: d768d5796e5eb7ff4fed071d906c672b83b42d2b
 ms.contentlocale: ja-jp
-ms.lasthandoff: 07/03/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="linq-to-adonet-portal-page"></a>LINQ to ADO.NET (ポータル ページ)
@@ -53,5 +53,5 @@ ms.lasthandoff: 07/03/2017
   
 ## <a name="see-also"></a>関連項目  
  [LINQ と ADO.NET](http://msdn.microsoft.com/library/bf0c8f93-3ff7-49f3-8aed-f2b7ac938dec)   
-
  [統合言語クエリ (LINQ) (C#)](../../../../csharp/programming-guide/concepts/linq/index.md)
+

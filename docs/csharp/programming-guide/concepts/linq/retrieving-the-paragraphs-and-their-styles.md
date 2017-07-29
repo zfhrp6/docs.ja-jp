@@ -1,5 +1,5 @@
 ---
-title: "段落とそのスタイルの取得 (C#) | Microsoft Docs"
+title: "段落とそのスタイルの取得 (C#)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -14,11 +14,11 @@ ms.assetid: c2f767f8-57b1-4b4b-af04-89ffb1f7067d
 caps.latest.revision: 3
 author: BillWagner
 ms.author: wiwagn
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: fddaa5e25befc40278888c0b401ad39a61e8e9d4
-ms.lasthandoff: 03/13/2017
-
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: db420c0aca9edadb8009556ebf476f196ee7641a
+ms.contentlocale: ja-jp
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="retrieving-the-paragraphs-and-their-styles-c"></a>段落とそのスタイルの取得 (C#)
@@ -35,7 +35,7 @@ ms.lasthandoff: 03/13/2017
 xDoc.Root.Element(w + "body").Descendants(w + "p")  
 ```  
   
- この式は、前の例「[既定の段落スタイルの検索 (C#)](../../../../csharp/programming-guide/concepts/linq/finding-the-default-paragraph-style.md)」のクエリのソースと似ています。 主な違いは、<xref:System.Xml.Linq.XContainer.Elements%2A> 軸の代わりに <xref:System.Xml.Linq.XContainer.Descendants%2A> 軸を使用している点です。 クエリで <xref:System.Xml.Linq.XContainer.Descendants%2A> 軸を使用しているのは、セクションが含まれているドキュメントの場合、段落が本文要素の直接の子とならず、階層内で 2 つ下のレベルに位置するためです。 コードで <xref:System.Xml.Linq.XContainer.Descendants%2A> 軸を使用すると、ドキュメントでセクションが使用されているかどうかにかかわらず機能するようになります。  
+ この式は、前の例「[既定の段落スタイルの検索 (C#)](../../../../csharp/programming-guide/concepts/linq/finding-the-default-paragraph-style.md)」のクエリのソースと似ています。 主な違いは、<xref:System.Xml.Linq.XContainer.Descendants%2A> 軸の代わりに <xref:System.Xml.Linq.XContainer.Elements%2A> 軸を使用している点です。 クエリで <xref:System.Xml.Linq.XContainer.Descendants%2A> 軸を使用しているのは、セクションが含まれているドキュメントの場合、段落が本文要素の直接の子とならず、階層内で 2 つ下のレベルに位置するためです。 コードで <xref:System.Xml.Linq.XContainer.Descendants%2A> 軸を使用すると、ドキュメントでセクションが使用されているかどうかにかかわらず機能するようになります。  
   
 ## <a name="example"></a>例  
  クエリで `let` 句を使用して、スタイル ノードが含まれる要素を特定します。 要素がない場合は、`styleNode` が `null` に設定されます。  
@@ -146,3 +146,4 @@ StyleName:Code
   
 ## <a name="see-also"></a>関連項目  
  [チュートリアル: WordprocessingML ドキュメント内のコンテンツの操作 (C#)](../../../../csharp/programming-guide/concepts/linq/tutorial-manipulating-content-in-a-wordprocessingml-document.md)
+

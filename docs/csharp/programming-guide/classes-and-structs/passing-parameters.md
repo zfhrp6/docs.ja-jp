@@ -1,5 +1,5 @@
 ---
-title: "パラメーターの引き渡し (C# プログラミング ガイド) | Microsoft Docs"
+title: "パラメーターの引き渡し (C# プログラミング ガイド)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -31,11 +31,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: a4004cb22dfd23d24c6c333a560cb89b8ab08771
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 4b8c0c7f7b8c3820edbafbe90fb961c12da8fc84
 ms.contentlocale: ja-jp
-ms.lasthandoff: 03/13/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="passing-parameters-c-programming-guide"></a>パラメーターの引き渡し (C# プログラミング ガイド)
@@ -57,3 +57,4 @@ C# では、引数を値または参照によってパラメーターに渡す�
 ## <a name="see-also"></a>関連項目  
  [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
  [メソッド](../../../csharp/programming-guide/classes-and-structs/methods.md)
+

@@ -1,5 +1,5 @@
 ---
-title: "XML ツリーへの要素、属性、およびノードの追加 (C#) | Microsoft Docs"
+title: "XML ツリーへの要素、属性、およびノードの追加"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -14,25 +14,25 @@ ms.assetid: db911e4f-40aa-499a-9500-a9763bb6df56
 caps.latest.revision: 3
 author: BillWagner
 ms.author: wiwagn
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 858d5b2c5ed680a0e52e374b8ec98762d7fde043
-ms.lasthandoff: 03/13/2017
-
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 6894e0685d413297c01118df16d01f7d956ee333
+ms.contentlocale: ja-jp
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="adding-elements-attributes-and-nodes-to-an-xml-tree-c"></a>XML ツリーへの要素、属性、およびノードの追加
 コンテンツ (要素、属性、コメント、処理命令、テキスト、および CDATA) を既存の XML ツリーに追加できます。  
   
 ## <a name="methods-for-adding-content"></a>コンテンツを追加するためのメソッド  
- 次のメソッドは <xref:System.Xml.Linq.XElement> または <xref:System.Xml.Linq.XDocument> に子コンテンツを追加します。  
+ 次のメソッドを使用すると、<xref:System.Xml.Linq.XElement> または <xref:System.Xml.Linq.XDocument> に子コンテンツを追加できます。  
   
 |メソッド|説明|  
 |------------|-----------------|  
 |<xref:System.Xml.Linq.XContainer.Add%2A>|<xref:System.Xml.Linq.XContainer> の子コンテンツの末尾にコンテンツを追加します。|  
 |<xref:System.Xml.Linq.XContainer.AddFirst%2A>|<xref:System.Xml.Linq.XContainer> の子コンテンツの冒頭にコンテンツを追加します。|  
   
- 次のメソッドは、<xref:System.Xml.Linq.XNode> の兄弟ノードとしてコンテンツを追加します。 兄弟コンテンツを追加する最も一般的なノードは <xref:System.Xml.Linq.XElement> です。ただし、<xref:System.Xml.Linq.XText> や <xref:System.Xml.Linq.XComment> など、他の種類のノードに有効な兄弟コンテンツを追加することもできます。  
+ 次のメソッドは、<xref:System.Xml.Linq.XNode> の兄弟ノードとしてコンテンツを追加します。 兄弟コンテンツの追加先となる最も一般的なノードは <xref:System.Xml.Linq.XElement> ですが、<xref:System.Xml.Linq.XText> や <xref:System.Xml.Linq.XComment> など別の種類のノードに、有効な兄弟コンテンツを追加することもできます。  
   
 |メソッド|説明|  
 |------------|-----------------|  
@@ -91,3 +91,4 @@ Console.WriteLine(xmlTree);
   
 ## <a name="see-also"></a>関連項目  
  [XML ツリーの変更 (LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/modifying-xml-trees-linq-to-xml.md)
+

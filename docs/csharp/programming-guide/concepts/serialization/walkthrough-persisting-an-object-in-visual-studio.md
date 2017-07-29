@@ -1,5 +1,5 @@
 ---
-title: "チュートリアル: オブジェクトの永続化 (Visual Studio) (C#) | Microsoft Docs"
+title: "チュートリアル: オブジェクトの永続化 (Visual Studio) (C#)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -19,10 +19,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: f76e40e2503bf857922490d728c3a9f3432aa31f
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 4c8dce64c470f01f540a83f68e3861df56913e4c
+ms.contentlocale: ja-jp
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="walkthrough-persisting-an-object-in-visual-studio-c"></a>チュートリアル: オブジェクトの永続化 (Visual Studio) (C#)
@@ -44,7 +45,7 @@ ms.lasthandoff: 03/13/2017
   
 ### <a name="to-create-the-loan-class"></a>Loan クラスを作成するには  
   
-1.  新しいクラス ライブラリ プロジェクトを作成して、"LoanClass" という名前を付けます。 詳細については、「[ソリューションとプロジェクトの作成](https://docs.microsoft.com/visualstudio/ide/creating-solutions-and-projects)」を参照してください。  
+1.  新しいクラス ライブラリ プロジェクトを作成して、"LoanClass" という名前を付けます。 詳細については、「[ソリューションとプロジェクトの作成](/visualstudio/ide/creating-solutions-and-projects)」を参照してください。  
   
 2.  **ソリューション エクスプローラー**で、Class1 ファイルのショートカット メニューを開き、**[名前の変更]** を選択します。 ファイルの名前を `Loan` に変更し、Enter キーを押します。 ファイルの名前を変更すると、クラスの名前も `Loan` に変更されます。  
   
@@ -102,7 +103,7 @@ ms.lasthandoff: 03/13/2017
   
 7.  [OK **** ] をクリックしてダイアログ ボックスを閉じます。  
   
-8.  デザイナーで、フォームに 4 つの <xref:System.Windows.Forms.TextBox> コントロールを追加します。  
+8.  デザイナーで、フォームに <xref:System.Windows.Forms.TextBox> コントロールを 4 つ追加します。  
   
 9. コード エディターで、次のコードを追加します。  
   
@@ -203,7 +204,7 @@ ms.lasthandoff: 03/13/2017
     }  
     ```  
   
-     まず、ファイルが存在することを確認する必要があります。 存在する場合は、バイナリ ファイルを読み取る <xref:System.IO.Stream> クラスと、ファイルを変換する <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter> クラスを作成します。 ストリーム型を Loan オブジェクト型に変換する必要もあります。  
+     まず、ファイルが存在することを確認する必要があります。 ファイルが存在する場合は、バイナリ ファイルを読み取る <xref:System.IO.Stream> クラスと、ファイルを変換する <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter> クラスを作成します。 ストリーム型を Loan オブジェクト型に変換する必要もあります。  
   
  次に、テキスト ボックスに入力されたデータを `Loan` クラスに保存するコードを追加します。その後、クラスをファイルにシリアル化する必要があります。  
   

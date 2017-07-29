@@ -1,5 +1,5 @@
 ---
-title: "方法: エンコードされたドキュメントを読み書きする (C#) | Microsoft Docs"
+title: "方法: エンコードされたドキュメントを読み書きする (C#)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -19,10 +19,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 6f599d279e804372ef8779514939f14cee15c5e3
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: fc7c21c1aa6f4035bfaee509c7bc542542635313
+ms.contentlocale: ja-jp
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="how-to-read-and-write-an-encoded-document-c"></a>方法: エンコードされたドキュメントを読み書きする (C#)
@@ -30,9 +31,9 @@ ms.lasthandoff: 03/13/2017
   
  <xref:System.Text.Encoding.WebName%2A> から返される値はすべて有効な値です。  
   
- エンコードされたドキュメントを読み取る場合、<xref:System.Xml.Linq.XDeclaration.Encoding%2A> プロパティがコード ページの名前に設定されます。  
+ エンコードされたドキュメントを読み込むと、<xref:System.Xml.Linq.XDeclaration.Encoding%2A> プロパティがコード ページ名に設定されます。  
   
- <xref:System.Xml.Linq.XDeclaration.Encoding%2A> を有効なコード ページ名に設定すると、指定したエンコーディングで [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)] がシリアル化されます。  
+ <xref:System.Xml.Linq.XDeclaration.Encoding%2A> を有効なコード ページ名に設定すると、指定したエンコーディングで [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] がシリアル化されます。  
   
 ## <a name="example"></a>例  
  次の例では、UTF-8 エンコーディングのドキュメントと UTF-16 エンコーディングのドキュメントを 1 つずつ作成します。 次に、ドキュメントを読み込み、エンコーディングをコンソールに出力します。  
@@ -95,3 +96,4 @@ Encoding of loaded document is:utf-16
 ## <a name="see-also"></a>関連項目  
  <xref:System.Xml.Linq.XDeclaration.Encoding%2A?displayProperty=fullName>   
  [高度な LINQ to XML プログラミング (C#)](../../../../csharp/programming-guide/concepts/linq/advanced-linq-to-xml-programming.md)
+

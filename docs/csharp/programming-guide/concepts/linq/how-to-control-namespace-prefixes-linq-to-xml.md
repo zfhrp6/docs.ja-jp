@@ -1,5 +1,5 @@
 ---
-title: "方法: 名前空間プレフィックスを制御する (C#) (LINQ to XML) | Microsoft Docs"
+title: "方法 : 名前空間プレフィックスを制御する (C#) (LINQ to XML)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -19,10 +19,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 96bc6d1187aa72f8653cd01b2027306009634fd5
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 1e56dcf74725940019cda1bf340b2f3ac4e1f6c4
+ms.contentlocale: ja-jp
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="how-to-control-namespace-prefixes-c-linq-to-xml"></a>方法 : 名前空間プレフィックスを制御する (C#) (LINQ to XML)
@@ -36,9 +37,9 @@ ms.lasthandoff: 03/13/2017
   
  名前空間プレフィックスを制御するもう 1 つの一般的な理由として、ユーザーが XML ドキュメントを手動で編集できるようにし、ユーザーにとって入力しやすい名前空間プレフィックスを作成する必要性が挙げられます。 たとえば、XSD ドキュメントを生成するとします。 スキーマの規則では、スキーマ名前空間のプレフィックスとして `xs` または `xsd` のいずれかを使用することが推奨されています。  
   
- 名前空間プレフィックスを制御するには、名前空間を宣言する属性を挿入します。 特定のプレフィックスを持つ名前空間を宣言すると、[!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)] はシリアル化の際にその名前空間プレフィックスの使用を試みます。  
+ 名前空間プレフィックスを制御するには、名前空間を宣言する属性を挿入します。 特定のプレフィックスを持つ名前空間を宣言すると、[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] はシリアル化の際にその名前空間プレフィックスの使用を試みます。  
   
- プレフィックスがある名前空間を宣言する属性を作成するには、属性の名前の名前空間が <xref:System.Xml.Linq.XNamespace.Xmlns%2A> で、属性の名前が名前空間プレフィックスであるような属性を作成します。 属性の値は、名前空間の URI です。  
+ プレフィックスを持つ名前空間を宣言する属性を作成するには、属性の名前の名前空間が <xref:System.Xml.Linq.XNamespace.Xmlns%2A> で、属性の名前が名前空間プレフィックスであるような属性を作成します。 属性の値は、名前空間の URI です。  
   
 ## <a name="example"></a>例  
  この例では、2 つの名前空間を宣言します。 `http://www.adventure-works.com` 名前空間のプレフィックスを `aw` と指定し、`www.fourthcoffee.com` 名前空間のプレフィックスを `fc` と指定します。  
@@ -72,3 +73,4 @@ Console.WriteLine(root);
   
 ## <a name="see-also"></a>関連項目  
  [XML 名前空間の使用 (C#)](../../../../csharp/programming-guide/concepts/linq/working-with-xml-namespaces.md)
+

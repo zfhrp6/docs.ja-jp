@@ -1,5 +1,5 @@
 ---
-title: "方法: ファイルを移動する (Visual Basic) | Microsoft Docs"
+title: "方法: ファイルを移動する (Visual Basic)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -31,11 +31,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
-ms.openlocfilehash: 44e0e81a28d1475a3f3cf6bcb7372b05eb8037bf
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 5a2623ec7e440e8fdf85138cd0b3de9ab18b773c
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/22/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="how-to-move-a-file-in-visual-basic"></a>方法: ファイルを移動する (Visual Basic)
@@ -62,13 +62,13 @@ ms.lasthandoff: 05/22/2017
   
 -   `destinationFileName` が `Nothing` または空の文字列である (<xref:System.ArgumentNullException>)。  
   
--   ソース ファイルが正しくない、または存在しない (<xref:System.IO.FileNotFoundException>)。  
+-   ソース ファイルが正しくないか、存在しない (<xref:System.IO.FileNotFoundException>)。  
   
--   パスを組み合わせると既存のディレクトリと同じになる、リンク先ファイルが存在し `overwrite` が `False` に設定されている、移動先ディレクトリにある同じ名前のファイルが使用中である、またはユーザーがファイルにアクセスするのに必要なアクセス許可がない (<xref:System.IO.IOException>)。  
+-   パスを組み合わせると既存のディレクトリと同じになる、移動先のファイルが既に存在し `overwrite` が `False`に設定されている、移動先ディレクトリにある同じ名前のファイルが使用中である、またはユーザーがファイルにアクセスするのに必要なアクセス許可がない (<xref:System.IO.IOException>)。  
   
 -   パス内のファイル名またはディレクトリ名にコロン (:) が含まれているか、または形式が無効である (<xref:System.NotSupportedException>)  
   
--   `showUI` が `True` に設定され、`onUserCancel` が `ThrowException` に設定されている状態で、ユーザーが操作をキャンセルしたか、または指定されていない I/O エラーが発生した (<xref:System.OperationCanceledException>)。  
+-   `showUI` が `True`に設定され、 `onUserCancel` が `ThrowException`に設定されている状態で、ユーザーが操作をキャンセルしたか、または指定されていない I/O エラーが発生した (<xref:System.OperationCanceledException>)。  
   
 -   パスがシステムで定義されている最大長を超えている (<xref:System.IO.PathTooLongException>)。  
   
@@ -81,3 +81,4 @@ ms.lasthandoff: 05/22/2017
  [方法: ファイルの名前を変更する](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-rename-a-file.md)   
  [方法: ファイルのコピーを別のディレクトリに作成する](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-create-a-copy-of-a-file-in-a-different-directory.md)   
  [方法: ファイル パスを解析する](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-parse-file-paths.md)
+

@@ -1,5 +1,5 @@
 ---
-title: "方法: CSV ファイルから XML を生成する (C#) | Microsoft Docs"
+title: "方法: CSV ファイルから XML を生成する (C#)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -14,18 +14,18 @@ ms.assetid: 57b9ccde-f983-4a21-ae61-70ecede30307
 caps.latest.revision: 3
 author: BillWagner
 ms.author: wiwagn
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 8297ec6c462a3b01548b156f10a1470b8a5e6173
-ms.lasthandoff: 03/13/2017
-
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 749919868364d0f35bd60246460013b07c004643
+ms.contentlocale: ja-jp
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="how-to-generate-xml-from-csv-files-c"></a>方法: CSV ファイルから XML を生成する (C#)
-この例では、[!INCLUDE[vbteclinqext](../../../../csharp/getting-started/includes/vbteclinqext_md.md)] および [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)] を使用して、コンマ区切り (CSV) ファイルから XML ファイルを生成する方法について説明します。  
+この例では、[!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] および [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] を使用して、コンマ区切り (CSV) ファイルから XML ファイルを生成する方法について説明します。  
   
 ## <a name="example"></a>例  
- 次のコードは、文字列の配列に対して [!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq_md.md)] クエリを実行します。  
+ 次のコードは、文字列の配列に対して [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] クエリを実行します。  
   
  クエリでは、`let` 句を使用して各文字列をフィールドの配列に分割します。  
   
@@ -121,3 +121,4 @@ Console.WriteLine(cust);
   
 ## <a name="see-also"></a>関連項目  
  [プロジェクションと変換 (LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/projections-and-transformations-linq-to-xml.md)
+

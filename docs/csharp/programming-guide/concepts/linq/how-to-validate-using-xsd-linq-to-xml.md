@@ -1,5 +1,5 @@
 ---
-title: "方法: XSD を使用して検証する (LINQ to XML) (C#) | Microsoft Docs"
+title: "方法: XSD を使用して検証する (LINQ to XML) (C#)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -19,14 +19,15 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: c3a510c91b74df1e5d0ad26655fa33e8447ea850
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: cec3090541f7bbc306eb41fff409dc890cc55d17
+ms.contentlocale: ja-jp
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="how-to-validate-using-xsd-linq-to-xml-c"></a>方法: XSD を使用して検証する (LINQ to XML) (C#)
-<xref:System.Xml.Schema> 名前空間には、XML スキーマ定義言語 (XSD) ファイルに対して XML ツリーを簡単に検証できる拡張メソッドが含まれています。 詳しくは、<xref:System.Xml.Schema.Extensions.Validate%2A> メソッドのドキュメントをご覧ください。  
+<xref:System.Xml.Schema> 名前空間には、XML スキーマ定義言語 (XSD) ファイルに対して XML ツリーを簡単に検証できる拡張メソッドが含まれています。 詳細については、<xref:System.Xml.Schema.Extensions.Validate%2A> メソッドのドキュメントを参照してください。  
   
 ## <a name="example"></a>例  
  次の例では、<xref:System.Xml.Schema.XmlSchemaSet> を作成し、このスキーマ セットに対して 2 つの <xref:System.Xml.Linq.XDocument> オブジェクトを検証します。 ドキュメントの 1 つは有効ですが、その他のドキュメントは無効です。  
@@ -139,3 +140,4 @@ custOrdDoc did not validate
 ## <a name="see-also"></a>関連項目  
  <xref:System.Xml.Schema.Extensions.Validate%2A>   
  [XML ツリーの作成 (C#)](../../../../csharp/programming-guide/concepts/linq/creating-xml-trees.md)
+

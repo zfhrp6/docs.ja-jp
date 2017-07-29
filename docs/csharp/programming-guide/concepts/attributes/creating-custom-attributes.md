@@ -1,5 +1,5 @@
 ---
-title: "カスタム属性の作成 (C#) | Microsoft Docs"
+title: "カスタム属性の作成 (C#)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -19,11 +19,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-ms.translationtype: Human Translation
-ms.sourcegitcommit: fe32676f0e39ed109a68f39584cf41aec5f5ce90
-ms.openlocfilehash: 346a5311a100e75adacea6100d6e5f1f893812ff
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 8ae5084501a2dd60ae23c93bbdb52dcd44f3f3f7
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/10/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="creating-custom-attributes-c"></a>カスタム属性の作成 (C#)
@@ -91,3 +91,4 @@ class SampleClass
  [属性 (C#)](../../../../csharp/programming-guide/concepts/attributes/index.md)   
  [リフレクションを使用した属性へのアクセス (C#)](../../../../csharp/programming-guide/concepts/attributes/accessing-attributes-by-using-reflection.md)   
  [AttributeUsage (C#)](../../../../csharp/programming-guide/concepts/attributes/attributeusage.md)
+

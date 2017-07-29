@@ -1,5 +1,5 @@
 ---
-title: "C# のコーディング規則 (C# プログラミング ガイド) | Microsoft Docs"
+title: "C# のコーディング規則 (C# プログラミング ガイド)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -29,11 +29,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: fe32676f0e39ed109a68f39584cf41aec5f5ce90
-ms.openlocfilehash: 85e113f66998157a69be3f1d9065a5c4c1117773
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 9f32fdc0eb1954cdac30c39e05c74d43301d850c
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/10/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="c-coding-conventions-c-programming-guide"></a>C# のコーディング規則 (C# プログラミング ガイド)
@@ -60,7 +60,7 @@ ms.lasthandoff: 05/10/2017
 ## <a name="layout-conventions"></a>レイアウト規則  
  コードの構造を強調する書式が使用され、コードが読みやすくなっているのが、優れたレイアウトです。 マイクロソフトの例とサンプルは、次の規則に準拠しています。  
   
--   コード エディターの既定の設定 (スマート インデント、4 文字インデント、タブを空白として保存) を使用します。 詳細については、「[[オプション]、[テキスト エディター]、[C#]、[書式設定]](https://docs.microsoft.com/visualstudio/ide/reference/options-text-editor-csharp-formatting)」を参照してください。  
+-   コード エディターの既定の設定 (スマート インデント、4 文字インデント、タブを空白として保存) を使用します。 詳細については、「[[オプション]、[テキスト エディター]、[C#]、[書式設定]](/visualstudio/ide/reference/options-text-editor-csharp-formatting)」を参照してください。  
   
 -   1 つの行には 1 つのステートメントのみを記述します。  
   
@@ -221,3 +221,4 @@ ms.lasthandoff: 05/10/2017
 ## <a name="see-also"></a>関連項目  
  [Visual Basic のコーディング規則](../../../visual-basic/programming-guide/program-structure/coding-conventions.md)   
  [安全なコーディングのガイドライン](../../../standard/security/secure-coding-guidelines.md)
+

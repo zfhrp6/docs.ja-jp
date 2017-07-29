@@ -1,5 +1,5 @@
 ---
-title: "方法: イベント情報をテキスト ファイルに書き込む (Visual Basic) | Microsoft Docs"
+title: "方法: イベント情報をテキスト ファイルに書き込む (Visual Basic)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -32,11 +32,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: a32f50ce8a92fa22d9627a1510a4b3ec1087364e
-ms.openlocfilehash: ac7256c333c375a0deb8ffe5c31c02fdca09f9b6
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: a8008f25198928e0bf2bd7e1c0caee8118b8fec9
 ms.contentlocale: ja-jp
-ms.lasthandoff: 06/26/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="how-to-write-event-information-to-a-text-file-visual-basic"></a>方法: イベント情報をテキスト ファイルに書き込む (Visual Basic)
@@ -97,3 +97,4 @@ ms.lasthandoff: 06/26/2017
  <xref:Microsoft.VisualBasic.Logging.Log.WriteException%2A>   
  [アプリケーション ログの使用](../../../../visual-basic/developing-apps/programming/log-info/working-with-application-logs.md)   
  [方法 : 例外をログに記録する](../../../../visual-basic/developing-apps/programming/log-info/how-to-log-exceptions.md)
+

@@ -1,5 +1,5 @@
 ---
-title: "プライベート コンストラクター (C# プログラミング ガイド) | Microsoft Docs"
+title: "プライベート コンストラクター (C# プログラミング ガイド)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -28,11 +28,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: a5ed524a1b17f7be8903f998cbd732594faab831
-ms.openlocfilehash: e2ac39bc642cf5379d4a8e8f9c74068b93b0b5b4
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 1ccd3db5f95e3a237bb37d9e09c34f415fcfd752
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/15/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="private-constructors-c-programming-guide"></a>プライベート コンストラクター (C# プログラミング ガイド)
@@ -63,3 +63,4 @@ ms.lasthandoff: 05/15/2017
  [ファイナライザー](../../../csharp/programming-guide/classes-and-structs/destructors.md)   
  [private](../../../csharp/language-reference/keywords/private.md)   
  [public](../../../csharp/language-reference/keywords/public.md)
+

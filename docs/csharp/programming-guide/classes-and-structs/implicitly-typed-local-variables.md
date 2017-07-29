@@ -1,5 +1,5 @@
 ---
-title: "暗黙的に型指定されたローカル変数 (C# プログラミング ガイド) | Microsoft Docs"
+title: "暗黙的に型指定されるローカル変数 (C# プログラミング ガイド)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -28,11 +28,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 1aaa231a807ec50b8bcb922bf0dd218ec72d24ff
-ms.openlocfilehash: 21180ce100f81e38b327347e548929a47a2e029d
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: cc02c0f7ef5fbbbf3c60188426a8027f6a60fb89
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/25/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="implicitly-typed-local-variables-c-programming-guide"></a>暗黙的に型指定されるローカル変数 (C# プログラミング ガイド)
@@ -69,7 +69,7 @@ ms.lasthandoff: 04/25/2017
  詳細については、「[方法: クエリ式で暗黙的に型指定されるローカル変数および配列を使用する](../../../csharp/programming-guide/classes-and-structs/how-to-use-implicitly-typed-local-variables-and-arrays-in-a-query-expression.md)」を参照してください。  
   
 ## <a name="var-and-anonymous-types"></a>var と匿名型  
- 多くの場合、`var` の使用は任意であり、構文上便利なだけです。 ただし、変数が匿名型で初期化される場合、後でオブジェクトのプロパティへのアクセスが必要になったら、変数を `var` として宣言する必要があります。 これは、[!INCLUDE[vbteclinq](../../../csharp/includes/vbteclinq_md.md)] クエリ式では一般的なシナリオです。 詳細については、「[匿名型](../../../csharp/programming-guide/classes-and-structs/anonymous-types.md)」を参照してください。  
+ 多くの場合、`var` の使用は任意であり、構文上便利なだけです。 ただし、変数が匿名型で初期化される場合、後でオブジェクトのプロパティへのアクセスが必要になったら、変数を `var` として宣言する必要があります。 これは、[!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] クエリ式では一般的なシナリオです。 詳細については、「[匿名型](../../../csharp/programming-guide/classes-and-structs/anonymous-types.md)」を参照してください。  
   
  ソース コードの観点から見ると、匿名型には名前がありません。 そのため、クエリ変数が `var` で初期化された場合、返されたオブジェクトのシーケンスのプロパティにアクセスするための唯一の方法は、`foreach` ステートメント内の繰り返し変数の型として `var` を使用することです。  
   

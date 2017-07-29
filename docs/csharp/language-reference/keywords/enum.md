@@ -1,5 +1,5 @@
 ---
-title: "enum (C# リファレンス) | Microsoft Docs"
+title: "enum (C# リファレンス)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -30,11 +30,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: f064ed0710a83e4bf0eaf5c35b962c29443f9d23
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: cf12724ec9e450a2bc237db614f235d7f03a4a7e
 ms.contentlocale: ja-jp
-ms.lasthandoff: 03/13/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="enum-c-reference"></a>enum (C# リファレンス)
@@ -56,13 +56,13 @@ enum Days {Sat=1, Sun, Mon, Tue, Wed, Thu, Fri};
   
  この列挙型では、要素の並びは `1` からではなく、 `0`から開始します。 ただし、列挙型には値が 0 となる定数を含めておくことをお勧めします。 詳細については、[列挙型](../../../csharp/programming-guide/enumeration-types.md)を参照してください。  
   
- すべての列挙型には基になる型があり、基になる型には [char](../../../csharp/language-reference/keywords/char.md) 以外の任意の整数型を指定できます。 列挙要素の基になる既定の型は [int](../../../csharp/language-reference/keywords/int.md) です。 [byte](../../../csharp/language-reference/keywords/byte.md)など、他の整数型の列挙型を宣言するには、次の例に示すように、識別子に続けてコロンを使用し、その後に型を記述します。  
+ すべての列挙型には基になる型があり、基になる型には [char](../../../csharp/language-reference/keywords/char.md) 以外の任意の整数型を指定できます。 列挙要素の基になる既定の型は [int](../../../csharp/language-reference/keywords/int.md)です。 [byte](../../../csharp/language-reference/keywords/byte.md)など、他の整数型の列挙型を宣言するには、次の例に示すように、識別子に続けてコロンを使用し、その後に型を記述します。  
   
 ```  
 enum Days : byte {Sat=1, Sun, Mon, Tue, Wed, Thu, Fri};  
 ```  
   
- 列挙型で許容される型は、`byte`、[sbyte](../../../csharp/language-reference/keywords/sbyte.md)、[short](../../../csharp/language-reference/keywords/short.md)、[ushort](../../../csharp/language-reference/keywords/ushort.md)、[int](../../../csharp/language-reference/keywords/int.md)、[uint](../../../csharp/language-reference/keywords/uint.md)、[long](../../../csharp/language-reference/keywords/long.md)、[ulong](../../../csharp/language-reference/keywords/ulong.md) です。  
+ 列挙型で許容される型は、 `byte`、 [sbyte](../../../csharp/language-reference/keywords/sbyte.md)、 [short](../../../csharp/language-reference/keywords/short.md)、 [ushort](../../../csharp/language-reference/keywords/ushort.md)、 [int](../../../csharp/language-reference/keywords/int.md)、 [uint](../../../csharp/language-reference/keywords/uint.md)、 [long](../../../csharp/language-reference/keywords/long.md)、または [ulong](../../../csharp/language-reference/keywords/ulong.md)です。  
   
  型 `Days` の変数には、基になる型の範囲内の任意の値を割り当てることができます。値は名前付き定数に限定されません。  
   
@@ -71,18 +71,18 @@ enum Days : byte {Sat=1, Sun, Mon, Tue, Wed, Thu, Fri};
 > [!NOTE]
 >  列挙子の名前に空白を使用することはできません。  
   
- 基になる型は、列挙子ごとに割り当てるストレージの大きさを指定します。 ただし、 `enum` 型を整数型に変換するには、明示的なキャストが必要です。 たとえば、次のステートメントでは、キャストを使用して `enum` から `int` に変換することにより、列挙子 `Sun` を [int](../../../csharp/language-reference/keywords/int.md) 型の変数に代入します。  
+ 基になる型は、列挙子ごとに割り当てるストレージの大きさを指定します。 ただし、 `enum` 型を整数型に変換するには、明示的なキャストが必要です。 たとえば、次のステートメントではキャストを使用して `Sun` から [に変換することで、列挙子](../../../csharp/language-reference/keywords/int.md) を `enum` int `int`型の変数に代入します。  
   
 ```  
 int x = (int)Days.Sun;  
 ```  
   
- 列挙型に <xref:System.FlagsAttribute?displayProperty=fullName> を適用し、その要素をビットごとの `OR` 演算と組み合わせると、一部のツールを使用したときに、`enum` の動作に属性が反映されます。 このような変更は、<xref:System.Console> クラス メソッドや式エバリュエーターなどのツールを使用して確認できます。 (3 番目の使用例をご参照ください。)  
+ 列挙型に <xref:System.FlagsAttribute?displayProperty=fullName> を適用し、その要素をビットごとの `OR` 演算と組み合わせると、一部のツールを使用したときに、 `enum` の動作に属性が反映されます。 このような変更は、 <xref:System.Console> クラス メソッドや式エバリュエーターなどのツールを使用して確認できます。 (3 番目の使用例をご参照ください。)  
   
 ## <a name="robust-programming"></a>信頼性の高いプログラミング  
  定数の場合と同様に、列挙型の個々の値へのすべての参照はコンパイル時に数値リテラルに変換されます。 これにより、「[定数](../../../csharp/programming-guide/classes-and-structs/constants.md)」で説明しているように、バージョン管理の問題が発生する可能性があります。  
   
- 新しいバージョンの列挙型に追加の値を割り当てるか、新しいバージョンの列挙型メンバーの値を変更すると、依存関係のあるソース コードに問題が発生することがあります。 列挙値は、[switch](../../../csharp/language-reference/keywords/switch.md) ステートメントでよく使用されます。 `enum` 型に追加要素が追加されている場合、switch ステートメントの default セクションが予期せずに選択される場合があります。  
+ 新しいバージョンの列挙型に追加の値を割り当てるか、新しいバージョンの列挙型メンバーの値を変更すると、依存関係のあるソース コードに問題が発生することがあります。 列挙値は、 [switch](../../../csharp/language-reference/keywords/switch.md) ステートメントでよく使用されます。 `enum` 型に追加要素が追加されている場合、switch ステートメントの default セクションが予期せずに選択される場合があります。  
   
  作成したコードが他の開発者によって使用される場合は、新しい要素を `enum` 型に追加したときのコードの反応を規定するガイドラインを用意しておく必要があります。  
   
@@ -97,7 +97,7 @@ int x = (int)Days.Sun;
  [!code-cs[csrefKeywordsTypes#11](../../../csharp/language-reference/keywords/codesnippet/CSharp/enum_2.cs)]  
   
 ## <a name="example"></a>例  
- 次のコード例では、`enum` 宣言での <xref:System.FlagsAttribute?displayProperty=fullName> 属性の使用とその効果を示します。  
+ 次のコード例では、 <xref:System.FlagsAttribute?displayProperty=fullName> 宣言での `enum` 属性の使用とその効果を示します。  
   
  [!code-cs[csrefKeywordsTypes#12](../../../csharp/language-reference/keywords/codesnippet/CSharp/enum_3.cs)]  
   

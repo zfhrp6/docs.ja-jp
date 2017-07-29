@@ -1,5 +1,5 @@
 ---
-title: "ファイル アクセスにおける非同期の使用 (C#) | Microsoft Docs"
+title: "ファイル アクセスにおける非同期の使用 (C#)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -19,11 +19,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-ms.translationtype: Human Translation
-ms.sourcegitcommit: fe32676f0e39ed109a68f39584cf41aec5f5ce90
-ms.openlocfilehash: 9aaf49c685498bce451eb53a35a56d8a8fde928c
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 1b2994b77150f0566f250d20f2ac121c44a365bc
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/10/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="using-async-for-file-access-c"></a>ファイル アクセスにおける非同期の使用 (C#)
@@ -195,3 +195,4 @@ public async void ProcessWriteMult()
  [Async および Await を使用した非同期プログラミング (C#)](../../../../csharp/programming-guide/concepts/async/index.md)   
  [非同期の戻り値の型 (C#)](../../../../csharp/programming-guide/concepts/async/async-return-types.md)   
  [非同期プログラムにおける制御フロー (C#)](../../../../csharp/programming-guide/concepts/async/control-flow-in-async-programs.md)
+

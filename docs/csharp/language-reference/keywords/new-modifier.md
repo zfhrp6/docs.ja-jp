@@ -1,5 +1,5 @@
 ---
-title: "new 修飾子 (C# リファレンス) | Microsoft Docs"
+title: "new 修飾子 (C# リファレンス)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -27,11 +27,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 3c636d50e6c871c529104d5f2985e861f9a652b2
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: f763b9a1d2f146b8ebb475a01bd12f1a4238050a
 ms.contentlocale: ja-jp
-ms.lasthandoff: 03/13/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="new-modifier-c-reference"></a>new 修飾子 (C# リファレンス)
@@ -82,3 +82,4 @@ The keyword new is required on 'MyDerivedC.x' because it hides inherited member 
  [修飾子](../../../csharp/language-reference/keywords/modifiers.md)   
  [Override キーワードと New キーワードによるバージョン管理](../../../csharp/programming-guide/classes-and-structs/versioning-with-the-override-and-new-keywords.md)   
  [Override キーワードと New キーワードを使用する場合について](../../../csharp/programming-guide/classes-and-structs/knowing-when-to-use-override-and-new-keywords.md)
+

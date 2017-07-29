@@ -1,5 +1,5 @@
 ---
-title: "方法: 要素を並べ替える (C#) | Microsoft Docs"
+title: "方法: 要素を並べ替える (C#)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -14,11 +14,11 @@ ms.assetid: aee6fbbc-81fd-4b3e-b40f-6ed7b3bd3fee
 caps.latest.revision: 3
 author: BillWagner
 ms.author: wiwagn
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: aaada38cd0d8858989f808c42fcdc8853433d1f6
-ms.lasthandoff: 03/13/2017
-
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: a5c17b13f6f637559e2f99426b71947e795e0516
+ms.contentlocale: ja-jp
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="how-to-sort-elements-c"></a>方法: 要素を並べ替える (C#)
@@ -53,7 +53,7 @@ foreach (decimal el in prices)
 ## <a name="example"></a>例  
  次の例は名前空間に含まれている XML 用のクエリです。これらのクエリは上の例と同じ機能を表しています。 詳細については、「[XML 名前空間の使用 (C#)](../../../../csharp/programming-guide/concepts/linq/working-with-xml-namespaces.md)」を参照してください。  
   
- この例では、「[サンプル XML ファイル: 名前空間内の数値データ](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-numerical-data-in-a-namespace.md)」の XML ドキュメントを使います。  
+ この例では、「[サンプル XML ファイル: 名前空間内の数値データ](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-numerical-data-in-a-namespace.md)」の XML ドキュメントを使用します。  
   
 ```csharp  
 XElement root = XElement.Load("DataInNamespace.xml");  
@@ -82,3 +82,4 @@ foreach (decimal el in prices)
 ## <a name="see-also"></a>関連項目  
  [データの並べ替え (C#)](../../../../csharp/programming-guide/concepts/linq/sorting-data.md)   
  [基本的なクエリ (LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/basic-queries-linq-to-xml.md)
+

@@ -1,5 +1,5 @@
 ---
-title: ":: 演算子 (C# リファレンス) | Microsoft Docs"
+title: ":: 演算子 (C# リファレンス)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -31,11 +31,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 12a0265d430a5a110d8c73107a48b36e0ab15405
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 97b9fa706669244ac579602a107c092e8593567d
 ms.contentlocale: ja-jp
-ms.lasthandoff: 03/13/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="-operator-c-reference"></a>:: 演算子 (C# リファレンス)
@@ -61,3 +61,4 @@ ms.lasthandoff: 03/13/2017
  [名前空間キーワード](../../../csharp/language-reference/keywords/namespace-keywords.md)   
  [。演算子](../../../csharp/language-reference/operators/member-access-operator.md)   
  [extern エイリアス](../../../csharp/language-reference/keywords/extern-alias.md)
+

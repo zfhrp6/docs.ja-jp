@@ -1,5 +1,5 @@
 ---
-title: "繰り返しステートメント (C# リファレンス) | Microsoft Docs"
+title: "繰り返しステートメント (C# リファレンス)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -28,11 +28,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 7e33ed084c560470a486ebbb25035a59ddc18565
-ms.openlocfilehash: cc3022ec31f93f894f639699cef2a788101bff7b
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: ae023712a2b299ea66ff8034d3677c44a37426f8
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/22/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="iteration-statements-c-reference"></a>繰り返しステートメント (C# リファレンス)
@@ -55,3 +55,4 @@ ms.lasthandoff: 05/22/2017
  [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
  [C# のキーワード](../../../csharp/language-reference/keywords/index.md)   
  [ステートメントのキーワード](../../../csharp/language-reference/keywords/statement-keywords.md)
+

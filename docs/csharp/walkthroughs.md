@@ -1,5 +1,5 @@
 ---
-title: "C# チュートリアル | Microsoft Docs"
+title: "C# チュートリアル"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -29,11 +29,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 0832ee88bba58579eea001335be9cb8c2130834d
-ms.openlocfilehash: 1008d0ff78ee7c2876b49564dd03a767a63e78f3
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 0e49290852ccdc83ab7879366102602f0ca3f99b
 ms.contentlocale: ja-jp
-ms.lasthandoff: 03/28/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="c-walkthroughs"></a>C# チュートリアル
@@ -47,7 +47,7 @@ ms.lasthandoff: 03/28/2017
  [async](../csharp/language-reference/keywords/async.md) と [await](../csharp/language-reference/keywords/await.md) を使用して非同期ソリューションを作成する方法を示します。  
   
  [Creating a Windows Runtime Component in C# or Visual Basic and Calling it from JavaScript](https://msdn.microsoft.com/library/windows/apps/hh779077.aspx) (C# および Visual Basic での Windows ランタイム コンポーネントの作成および JavaScript による呼び出し)  
- [!INCLUDE[wrt](../csharp/includes/wrt_md.md)] 型を作成し、[!INCLUDE[wrt](../csharp/includes/wrt_md.md)] コンポーネントにパッケージ化して、その後、JavaScript を使用して Windows 用に作成された [!INCLUDE[win8_appname_long](../csharp/includes/win8_appname_long_md.md)] アプリからコンポーネントを呼び出す方法を示します。  
+ [!INCLUDE[wrt](~/includes/wrt-md.md)] 型を作成し、[!INCLUDE[wrt](~/includes/wrt-md.md)] コンポーネントにパッケージ化して、その後、JavaScript を使用して Windows 用に作成された [!INCLUDE[win8_appname_long](~/includes/win8-appname-long-md.md)] アプリからコンポーネントを呼び出す方法を示します。  
   
  [Office のプログラミング (C# および Visual Basic)](../csharp/programming-guide/interop/walkthrough-office-programming.md)  
  C# および Visual Basic を使用して、Excel ブックや Word 文書を作成する方法を示します。  
@@ -71,10 +71,10 @@ ms.lasthandoff: 03/28/2017
  `TabControl` でのタブの追加や削除、コントロールの親コントロールへのドッキング、`SplitContainer` コントロールの方向の変更など、よく実行されるタスクの例を示します。  
   
  [C# でのクエリの作成 (LINQ)](../csharp/programming-guide/concepts/linq/walkthrough-writing-queries-linq.md)  
- [!INCLUDE[vbteclinq](../csharp/includes/vbteclinq_md.md)] クエリ式の記述に使用される C# 言語機能を示します。  
+ [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] クエリ式の記述に使用される C# 言語機能を示します。  
   
  [データの操作 (C#) (LINQ to SQL)](https://msdn.microsoft.com/library/bb386927.aspx)  
- データベース内のデータの追加、変更、および削除の [!INCLUDE[vbtecdlinq](../csharp/includes/vbtecdlinq_md.md)] のシナリオについて説明します。  
+ データベース内のデータの追加、変更、および削除の [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)] のシナリオについて説明します。  
   
  [簡単なオブジェクト モデルとクエリ (C#) (LINQ to SQL)](https://msdn.microsoft.com/library/bb386940.aspx)  
  エンティティ クラスとエンティティ クラスをフィルター処理する簡単なクエリを作成する方法について説明します。  
@@ -83,15 +83,16 @@ ms.lasthandoff: 03/28/2017
  ストアド プロシージャのみを実行してデータにアクセスする LINQ to SQL を使用する方法を示します。  
   
  [リレーションシップ間でのクエリの実行 (C#) (LINQ to SQL)](https://msdn.microsoft.com/library/bb386951.aspx)  
- データベース内の外部キーのリレーションシップを表す [!INCLUDE[vbtecdlinq](../csharp/includes/vbtecdlinq_md.md)] の関連付けの使用の例を示します。  
+ データベース内の外部キーのリレーションシップを表す [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)] の関連付けの使用の例を示します。  
 
- [C# でビジュアライザーを記述する](https://docs.microsoft.com/visualstudio/debugger/walkthrough-writing-a-visualizer-in-csharp)  
+ [C# でビジュアライザーを記述する](/visualstudio/debugger/walkthrough-writing-a-visualizer-in-csharp)  
  C# を使用して簡単なビジュアライザーを作成する方法を説明します。  
   
 ## <a name="related-sections"></a>関連項目  
- [配置のサンプルとチュートリアル](https://docs.microsoft.com/visualstudio/deployment/clickonce-deployment-samples-and-walkthroughs)  
+ [配置のサンプルとチュートリアル](/visualstudio/deployment/clickonce-deployment-samples-and-walkthroughs)  
  一般的な配置シナリオの詳細な例を示します。  
   
 ## <a name="see-also"></a>関連項目  
  [C# プログラミング ガイド](../csharp/programming-guide/index.md)   
- [Visual Studio のサンプル](https://docs.microsoft.com/visualstudio/ide/visual-studio-samples)
+ [Visual Studio のサンプル](/visualstudio/ide/visual-studio-samples)
+

@@ -1,5 +1,5 @@
 ---
-title: "do (C# リファレンス) | Microsoft Docs"
+title: "do (C# リファレンス)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -30,11 +30,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 95655432bde750de54996daaa2e9457a420d7c80
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 58a9361c440bc1b17c5ab929ff7b45ba71ce50a4
 ms.contentlocale: ja-jp
-ms.lasthandoff: 03/13/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="do-c-reference"></a>do (C# リファレンス)
@@ -58,5 +58,6 @@ ms.lasthandoff: 03/13/2017
  [C# リファレンス](../../../csharp/language-reference/index.md)   
  [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
  [C# のキーワード](../../../csharp/language-reference/keywords/index.md)   
- [do-while ステートメント (C++)](https://docs.microsoft.com/cpp/cpp/do-while-statement-cpp)   
+ [do-while ステートメント (C++)](/cpp/cpp/do-while-statement-cpp)   
  [繰り返しステートメント](../../../csharp/language-reference/keywords/iteration-statements.md)
+

@@ -1,5 +1,5 @@
 ---
-title: "方法: foreach を使用してコマンド ライン引数にアクセスする (C# プログラミング ガイド) | Microsoft Docs"
+title: "方法: foreach を使用してコマンド ライン引数にアクセスする (C# プログラミング ガイド)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -27,17 +27,18 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 2f0e3bce88beafd45a21773a7b26ffb2bb41215d
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 766b5cd0879edec1dc409e07c4f62ee693fd615d
+ms.contentlocale: ja-jp
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="how-to-access-command-line-arguments-using-foreach-c-programming-guide"></a>方法: foreach を使用してコマンド ライン引数にアクセスする (C# プログラミング ガイド)
 配列の反復処理には、この例で示すように [foreach](../../../csharp/language-reference/keywords/foreach-in.md) ステートメントを使用する方法もあります。 `foreach` ステートメントは、配列、.NET Framework コレクション クラス、または <xref:System.Collections.IEnumerable> インターフェイスを実装する任意のクラスや構造体の反復処理に使用できます。  
   
 > [!NOTE]
->  Visual Studio でアプリケーションを実行する場合、「[[デバッグ] ページ (プロジェクト デザイナー)](https://docs.microsoft.com/visualstudio/ide/reference/debug-page-project-designer)」のコマンド ライン引数を指定できます。  
+>  Visual Studio でアプリケーションを実行する場合、「[[デバッグ] ページ (プロジェクト デザイナー)](/visualstudio/ide/reference/debug-page-project-designer)」のコマンド ライン引数を指定できます。  
   
 ## <a name="example"></a>例  
  この例では、`foreach` を使用したコマンド ライン引数の出力方法を示します。  
@@ -55,3 +56,4 @@ ms.lasthandoff: 03/13/2017
  [Main() とコマンド ライン引数](../../../csharp/programming-guide/main-and-command-args/index.md)   
  [方法: コマンド ライン引数を表示する](../../../csharp/programming-guide/main-and-command-args/how-to-display-command-line-arguments.md)   
  [Main() の戻り値](../../../csharp/programming-guide/main-and-command-args/main-return-values.md)
+
