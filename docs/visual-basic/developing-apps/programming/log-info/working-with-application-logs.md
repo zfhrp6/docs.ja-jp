@@ -1,5 +1,5 @@
 ---
-title: "Visual Basic でのアプリケーション ログの使用 | Microsoft Docs"
+title: "Visual Basic でのアプリケーション ログの使用"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -33,18 +33,18 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
-ms.openlocfilehash: 3cc9bec56817bbccd5faa8e05535cb565a11baac
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 0f6916571ff978c6558343ff51217b5d342a4d5c
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/22/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="working-with-application-logs-in-visual-basic"></a>Visual Basic でのアプリケーション ログの使用
 `My.Applicaton.Log` オブジェクトと `My.Log` オブジェクトを使用すると、ログおよびトレース情報をログに簡単に書き込むことができます。  
   
 ## <a name="how-messages-are-logged"></a>メッセージをログに記録する方法  
- 最初に、ログの <xref:Microsoft.VisualBasic.Logging.Log.TraceSource%2A> プロパティの <xref:System.Diagnostics.TraceSource.Switch%2A> プロパティを使用してメッセージの重大度がチェックされます。 既定では、重大度が "情報" 以上のメッセージのみ、ログの `TraceListener` コレクションで指定されたトレース リスナーに渡されます。 次に各リスナーは、メッセージの重大度をリスナーの <xref:System.Diagnostics.TraceSource.Switch%2A> プロパティと比較します。 メッセージの重大度が十分に高い場合に、リスナーはメッセージを書き込みます。  
+ 最初に、ログの <xref:System.Diagnostics.TraceSource.Switch%2A> プロパティの <xref:Microsoft.VisualBasic.Logging.Log.TraceSource%2A> プロパティを使用してメッセージの重大度がチェックされます。 既定では、重大度が "情報" 以上のメッセージのみ、ログの `TraceListener` コレクションで指定されたトレース リスナーに渡されます。 次に各リスナーは、メッセージの重大度をリスナーの <xref:System.Diagnostics.TraceSource.Switch%2A> プロパティと比較します。 メッセージの重大度が十分に高い場合に、リスナーはメッセージを書き込みます。  
   
  次の図は、 `WriteEntry` メソッドに書き込まれたメッセージが、ログのトレース リスナーの `WriteLine` メソッドにどのように渡されるかを示しています。  
   
@@ -55,11 +55,11 @@ ms.lasthandoff: 05/22/2017
  ![My ログ構成](../../../../visual-basic/developing-apps/programming/log-info/media/mylogconfig.png "MyLogConfig")  
   
 ## <a name="where-messages-are-logged"></a>メッセージがログに記録される場所  
- アセンブリに構成ファイルがない場合、`My.Application.Log` オブジェクトと `My.Log` オブジェクトは <xref:System.Diagnostics.DefaultTraceListener> クラスを介してアプリケーションのデバッグ出力への書き込みを行います。 また、`My.Application.Log` オブジェクトは <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener> クラスを介してアセンブリのログ ファイルへの書き込みを行い、`My.Log` オブジェクトは、<xref:System.Web.WebPageTraceListener> クラスを介して ASP.NET Web ページの出力への書き込みを行います。  
+ アセンブリに構成ファイルがない場合、 `My.Application.Log` オブジェクトと `My.Log` オブジェクトは <xref:System.Diagnostics.DefaultTraceListener> クラスを介してアプリケーションのデバッグ出力への書き込みを行います。 また、`My.Application.Log` オブジェクトは <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener> クラスを介してアセンブリのログ ファイルへの書き込みを行い、`My.Log` オブジェクトは、<xref:System.Web.WebPageTraceListener> クラスを介して ASP.NET Web ページの出力への書き込みを行います。  
   
- デバッグ出力は、アプリケーションをデバッグ モードで実行中のときに [!INCLUDE[vsprvs](../../../../csharp/includes/vsprvs_md.md)] **Output** window when running your application in debug mode. **[出力]** ウィンドウを開くには、 **[デバッグ]** メニュー項目をクリックし、 **[ウィンドウ]**をポイントして、 **[出力]**をクリックします。 **[出力]** ウィンドウで **[出力元の表示]** ボックスの **[デバッグ]** を選択します。  
+ デバッグ出力は、アプリケーションをデバッグ モードで実行中のときに [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] **Output** window when running your application in debug mode. **[出力]** ウィンドウを開くには、 **[デバッグ]** メニュー項目をクリックし、 **[ウィンドウ]**をポイントして、 **[出力]**をクリックします。 **[出力]** ウィンドウで **[出力元の表示]** ボックスの **[デバッグ]** を選択します。  
   
- 既定では、 `My.Application.Log` がログ ファイルを書き込む先は、ユーザーのアプリケーション データ用のパスです。 このパスは、<xref:Microsoft.VisualBasic.Logging.Log.DefaultFileLogWriter%2A> オブジェクトの <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.FullLogFileName%2A> プロパティから取得できます。 このパスの形式は次のとおりです。  
+ 既定では、 `My.Application.Log` がログ ファイルを書き込む先は、ユーザーのアプリケーション データ用のパスです。 このパスは、 <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.FullLogFileName%2A> オブジェクトの <xref:Microsoft.VisualBasic.Logging.Log.DefaultFileLogWriter%2A> プロパティから取得できます。 このパスの形式は次のとおりです。  
   
  `BasePath`\\`CompanyName`\\`ProductName`\\`ProductVersion`  
   
@@ -84,7 +84,7 @@ ms.lasthandoff: 05/22/2017
   
  次のコードに、 `<sources>`、 `<switches>`、 `<sharedListeners>` の各ノードの例を示します。  
   
-```  
+```xml  
 <configuration>  
   <system.diagnostics>  
     <sources>  
@@ -130,3 +130,4 @@ ms.lasthandoff: 05/22/2017
 ## <a name="see-also"></a>関連項目  
  <xref:Microsoft.VisualBasic.Logging.Log?displayProperty=fullName>   
  [アプリケーションからの情報のログ記録](../../../../visual-basic/developing-apps/programming/log-info/logging-information-from-the-application.md)
+

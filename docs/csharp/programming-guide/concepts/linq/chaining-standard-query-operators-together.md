@@ -1,5 +1,5 @@
 ---
-title: "標準クエリ演算子の連結 (C#) | Microsoft Docs"
+title: "標準クエリ演算子の連結 (C#)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -14,11 +14,11 @@ ms.assetid: 66f2b0a9-2c23-4735-988e-bbc9dfb55c7b
 caps.latest.revision: 3
 author: BillWagner
 ms.author: wiwagn
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 8e9da047fcc224176d028f8caef8b57bc134dc21
-ms.lasthandoff: 03/13/2017
-
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 40c65c80c08caa310cb72a194534ad63fcea890a
+ms.contentlocale: ja-jp
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="chaining-standard-query-operators-together-c"></a>標準クエリ演算子の連結 (C#)
@@ -27,7 +27,7 @@ ms.lasthandoff: 03/13/2017
  標準クエリ演算子も連結することができます。 たとえば、<xref:System.Linq.Enumerable.Where%2A?displayProperty=fullName> 演算子を挿入することができます。また、この演算子はレイジー方式でも機能します。 この演算子によって中間結果が具体化されることはありません。  
   
 ## <a name="example"></a>例  
- この例では、<xref:System.Linq.Enumerable.Where%2A> メソッドは `ConvertCollectionToUpperCase` を呼び出す前に呼び出されます。 <xref:System.Linq.Enumerable.Where%2A> メソッドは、このチュートリアルの前の例で使用したレイジー メソッド (`ConvertCollectionToUpperCase` と `AppendString`) とほぼ同様に動作しますが、この例では異なる点もあります。  
+ この例では、<xref:System.Linq.Enumerable.Where%2A> の前に `ConvertCollectionToUpperCase` メソッドが呼び出されます。 <xref:System.Linq.Enumerable.Where%2A> メソッドは、このチュートリアルの前の例で使用したレイジー メソッド (`ConvertCollectionToUpperCase` および `AppendString`) とほぼ同様に動作しますが、この例では異なる点もあります。  
   
  異なる点とは、この場合の <xref:System.Linq.Enumerable.Where%2A> メソッドではソース コレクションを反復処理し、最初の項目を述語に渡さないことを決定してから、述語に渡す次の項目を取得します。 その後、2 番目の項目を生成します。  
   
@@ -100,3 +100,4 @@ Main: str >GHI!!!<
   
 ## <a name="see-also"></a>関連項目  
  [チュートリアル: クエリの連結 (C#)](../../../../csharp/programming-guide/concepts/linq/tutorial-chaining-queries-together.md)
+

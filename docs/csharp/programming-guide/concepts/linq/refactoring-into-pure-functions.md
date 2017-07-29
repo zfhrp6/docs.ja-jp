@@ -1,5 +1,5 @@
 ---
-title: "純粋関数へのリファクタリング (C#) | Microsoft Docs"
+title: "純粋関数へのリファクタリング (C#)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -14,11 +14,11 @@ ms.assetid: 2944a0d4-fd33-4e2e-badd-abb0f9be2fcc
 caps.latest.revision: 3
 author: BillWagner
 ms.author: wiwagn
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: d0243dbc1a884cb48eeebd71079c3b17bc520553
-ms.lasthandoff: 03/13/2017
-
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 9e3bb704cab77d4ad9895624bf7f721920000378
+ms.contentlocale: ja-jp
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="refactoring-into-pure-functions-c"></a>純粋関数へのリファクタリング (C#)
@@ -89,7 +89,7 @@ public class Program
 }  
 ```  
   
- このバージョンのプログラムは、最初のバージョンと同じ出力を生成します。これは、`HypenatedConcat` 関数が <xref:System.Text.StringBuilder.Append%2A> メンバー関数を呼び出して、最初のパラメーターの値 (状態) を変更したためです。 `HypenatedConcat` はパラメーターを値で渡しますが、それでもこの変更は行われるので注意してください。  
+ このバージョンのプログラムは、最初のバージョンと同じ出力を生成します。これは、`HypenatedConcat` 関数が <xref:System.Text.StringBuilder.Append%2A> メンバー関数を呼び出して最初のパラメーターの値 (状態) を変更したためです。 `HypenatedConcat` はパラメーターを値で渡しますが、それでもこの変更は行われるので注意してください。  
   
 > [!IMPORTANT]
 >  参照型の場合、パラメーターを値で渡すと、渡されるオブジェクトへの参照がコピーされて渡されます。 このコピーは、参照変数が新しいオブジェクトに割り当てられるまで、元の参照と同じインスタンス データに関連付けられたままとなります。 パラメーターを変更する場合に、必ずしも関数に参照を渡す必要はありません。  
@@ -126,3 +126,4 @@ class Program
 ## <a name="see-also"></a>関連項目  
  [純粋関数型変換の概要 (C#)](../../../../csharp/programming-guide/concepts/linq/introduction-to-pure-functional-transformations.md)   
  [関数型プログラミングと命令型プログラミング (C#)](../../../../csharp/programming-guide/concepts/linq/functional-programming-vs-imperative-programming.md)
+

@@ -1,5 +1,5 @@
 ---
-title: "方法: Visual Basic でファイルをダウンロードする | Microsoft Docs"
+title: "方法 : Visual Basic でファイルをダウンロードする"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -34,25 +34,25 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: bd37b52d12876dad6ec4b2a1bb34f4987f933c08
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 8988b922df921c2de3e2c4f6d7a8e98887ba7b0a
 ms.contentlocale: ja-jp
-ms.lasthandoff: 03/13/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="how-to-download-a-file-in-visual-basic"></a>方法 : Visual Basic でファイルをダウンロードする
-<xref:Microsoft.VisualBasic.Devices.Network.DownloadFile%2A> メソッドを使用すると、リモート ファイルをダウンロードして、特定の場所に格納できます。 `ShowUI` パラメーターを `True` に設定した場合、ダウンロードの進行状況を示すダイアログ ボックスが表示されます。ユーザーは、このダイアログ ボックスで操作をキャンセルすることもできます。 既定では、同じ名前を持つ既存のファイルは上書きされません。既存のファイルを上書きするには、`overwrite` パラメーターを `True` に設定します。  
+<xref:Microsoft.VisualBasic.Devices.Network.DownloadFile%2A> メソッドを使用すると、リモート ファイルをダウンロードして、指定した場所へ保存できます。 `ShowUI` パラメーターを `True` に設定した場合、ダウンロードの進行状況を示すダイアログ ボックスが表示されます。ユーザーは、このダイアログ ボックスで操作をキャンセルすることもできます。 既定では、同じ名前を持つ既存のファイルは上書きされません。既存のファイルを上書きするには、`overwrite` パラメーターを `True` に設定します。  
   
  次の条件を満たす場合は、例外が発生する可能性があります。  
   
--   ドライブ名が有効でない (<xref:System.ArgumentException>)。  
+-   ドライブ名が有効ではない (<xref:System.ArgumentException>)。  
   
--   必要な認証が与えられていない (<xref:System.UnauthorizedAccessException> または <xref:System.Security.SecurityException>)。  
+-   必要な認証が付与されていない (<xref:System.UnauthorizedAccessException> または <xref:System.Security.SecurityException>)。  
   
 -   指定した `connectionTimeout` 内にサーバーが応答しない (<xref:System.TimeoutException>)。  
   
--   Web サイトが要求を拒否した (<xref:System.Net.WebException>)。  
+-   要求が Web サイトにより拒否された (<xref:System.Net.WebException>)。  
   
 [!INCLUDE[note_settings_general](~/includes/note-settings-general-md.md)]  
   

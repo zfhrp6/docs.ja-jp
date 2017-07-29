@@ -1,5 +1,5 @@
 ---
-title: "方法: 新しい型を射影する (LINQ to XML) (C#) | Microsoft Docs"
+title: "方法: 新しい型を射影する (LINQ to XML) (C#)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -14,15 +14,15 @@ ms.assetid: 48145cf9-1e0b-4e73-bbfd-28fc04800dc4
 caps.latest.revision: 3
 author: BillWagner
 ms.author: wiwagn
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 1aa8c4676890dcc25108d919a501bde44299db04
-ms.lasthandoff: 03/13/2017
-
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: b772326b3b8827351ffbfbb1888b105bd6e537df
+ms.contentlocale: ja-jp
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="how-to-project-a-new-type-linq-to-xml-c"></a>方法: 新しい型を射影する (LINQ to XML) (C#)
-このセクションにある他の例では、<xref:System.Xml.Linq.XElement> の <xref:System.Collections.Generic.IEnumerable%601>、`string` の <xref:System.Collections.Generic.IEnumerable%601>、および `int` の <xref:System.Collections.Generic.IEnumerable%601> として結果を返すクエリを示しています。 これらは一般的な戻り値の型ですが、すべてのシナリオに適切であるとは限りません。 多くの場合、クエリを使用して、別の型の <xref:System.Collections.Generic.IEnumerable%601> を返すようにする必要があります。  
+このセクションにあるその他の例では、<xref:System.Collections.Generic.IEnumerable%601> の <xref:System.Xml.Linq.XElement>、<xref:System.Collections.Generic.IEnumerable%601> の `string`、および <xref:System.Collections.Generic.IEnumerable%601> の `int` として結果を返すクエリを示しています。 これらは一般的な戻り値の型ですが、すべてのシナリオに適切であるとは限りません。 多くの場合、クエリを使用して、別の型の <xref:System.Collections.Generic.IEnumerable%601> を返すようにする必要があります。  
   
 ## <a name="example"></a>例  
  この例では、`select` 句でオブジェクトをインスタンス化する方法を示します。 コードでは、まずコンストラクターを使用して新しいクラスを定義し、次に、式が新しいクラスの新しいインスタンスになるように `select` ステートメントを変更します。  
@@ -68,3 +68,4 @@ Baby Monitor:2
   
 ## <a name="see-also"></a>関連項目  
  [プロジェクションと変換 (LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/projections-and-transformations-linq-to-xml.md)
+

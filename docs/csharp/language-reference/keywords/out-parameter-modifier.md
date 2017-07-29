@@ -1,5 +1,5 @@
 ---
-title: "out パラメーター修飾子 (C# リファレンス) | Microsoft Docs"
+title: "out パラメーター修飾子 (C# リファレンス)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -28,11 +28,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 400dfda51d978f35c3995f90840643aaff1b9c13
-ms.openlocfilehash: a2f2e9b9239836b051820bda66523822e95cdf52
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 227241d1b290dde2e9de66e6c0e3c904b432bae0
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/22/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="out-parameter-modifier-c-reference"></a>out パラメーター修飾子 (C# リファレンス)
@@ -77,7 +77,7 @@ class CS0663_Example
   
  [!code-cs[csrefKeywordsMethodParams#4](../../../../samples/snippets/csharp/language-reference/keywords/out/out-4.cs)]  
 
- [Try パターン](https://docs.microsoft.com/visualstudio/code-quality/ca1021-avoid-out-parameters#try-pattern-methods.md)には、操作が成功したか失敗したかを示す `bool` を返す処理と、操作によって生成された値を `out` 引数で返す処理が含まれます。 @System.DateTime.TryParse(System.String,@System.DateTime) メソッドなど、多くの解析メソッドでこのパターンが使用されます。
+ [Try パターン](/visualstudio/code-quality/ca1021-avoid-out-parameters#try-pattern-methods.md)には、操作が成功したか失敗したかを示す `bool` を返す処理と、操作によって生成された値を `out` 引数で返す処理が含まれます。 @System.DateTime.TryParse(System.String,@System.DateTime) メソッドなど、多くの解析メソッドでこのパターンが使用されます。
    
 ## <a name="calling-a-method-with-an-out-argument"></a>`out` 引数を含むメソッドの呼び出し
 
@@ -101,3 +101,4 @@ C# 7 以降では、`out` 変数を、別の変数宣言内ではなく、メソ
  [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
  [C# のキーワード](../../../csharp/language-reference/keywords/index.md)   
  [メソッド パラメーター](../../../csharp/language-reference/keywords/method-parameters.md)
+

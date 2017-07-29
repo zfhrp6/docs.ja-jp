@@ -1,5 +1,5 @@
 ---
-title: "方法: コマンド ライン引数を表示する (C# プログラミング ガイド) | Microsoft Docs"
+title: "方法: コマンド ライン引数を表示する (C# プログラミング ガイド)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -27,10 +27,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: e46860ecc2f5062abb440a764443ecee19c5153d
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: cf8a57cce252b3596f0a19c9df643427615467c6
+ms.contentlocale: ja-jp
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="how-to-display-command-line-arguments-c-programming-guide"></a>方法: コマンド ライン引数を表示する (C# プログラミング ガイド)
@@ -43,7 +44,7 @@ ms.lasthandoff: 03/13/2017
 |**executable.exe "one two" three**|"one two"<br /><br /> "three"|  
   
 > [!NOTE]
->  Visual Studio でアプリケーションを実行する場合は、[[デバッグ] ページ (プロジェクト デザイナー)](https://docs.microsoft.com/visualstudio/ide/reference/debug-page-project-designer) でコマンド ライン引数を指定できます。  
+>  Visual Studio でアプリケーションを実行する場合は、[[デバッグ] ページ (プロジェクト デザイナー)](/visualstudio/ide/reference/debug-page-project-designer) でコマンド ライン引数を指定できます。  
   
 ## <a name="example"></a>例  
  この例は、コマンド ライン アプリケーションに渡されるコマンド ライン引数を示しています。 次の出力は、上の表の最初のエントリに対するものです。  
@@ -56,3 +57,4 @@ ms.lasthandoff: 03/13/2017
  [Main() とコマンド ライン引数](../../../csharp/programming-guide/main-and-command-args/index.md)   
  [方法: foreach を使用してコマンド ライン引数にアクセスする](../../../csharp/programming-guide/main-and-command-args/how-to-access-command-line-arguments-using-foreach.md)   
  [Main() の戻り値](../../../csharp/programming-guide/main-and-command-args/main-return-values.md)
+

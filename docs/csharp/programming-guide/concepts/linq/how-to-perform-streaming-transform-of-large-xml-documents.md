@@ -1,5 +1,5 @@
 ---
-title: "方法: 大きな XML ドキュメントのストリーミング変換を実行する (C#) | Microsoft Docs"
+title: "方法: 大きな XML ドキュメントのストリーミング変換を実行する (C#)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -19,11 +19,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 400dfda51d978f35c3995f90840643aaff1b9c13
-ms.openlocfilehash: fc8716c2190ac42b66ba8d76ccfec152ea804c4a
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 952fad19f9abdea464e2763b721446ab5fe68301
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/22/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="how-to-perform-streaming-transform-of-large-xml-documents-c"></a>方法: 大きな XML ドキュメントのストリーミング変換を実行する (C#)
@@ -33,7 +33,7 @@ ms.lasthandoff: 05/22/2017
   
  「[方法: ヘッダー情報にアクセスして XML フラグメントをストリーム出力する (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-stream-xml-fragments-with-access-to-header-information.md)」の手法を使用しても、変換されたドキュメントが含まれた XML ツリーをアセンブルしようとすると、メモリが過剰に使用されます。  
   
- 主な方法は 2 つあります。 1 つは、<xref:System.Xml.Linq.XStreamingElement> の遅延処理の特性を使用する方法です。 もう 1 つは、<xref:System.Xml.XmlWriter> を作成し、[!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)] の機能を使用して <xref:System.Xml.XmlWriter> に要素を書き込む方法です。 このトピックでは、両方の方法について説明します。  
+ 主な方法は 2 つあります。 1 つは、<xref:System.Xml.Linq.XStreamingElement> の遅延処理の特性を使用する方法です。 もう 1 つは、<xref:System.Xml.XmlWriter> を作成し、[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] の機能を使用して <xref:System.Xml.XmlWriter> に要素を書き込む方法です。 このトピックでは、両方の方法について説明します。  
   
 ## <a name="example"></a>例  
  「[方法: ヘッダー情報にアクセスして XML フラグメントをストリーム出力する (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-stream-xml-fragments-with-access-to-header-information.md)」の例を基に構築した例を次に示します。  
@@ -208,7 +208,7 @@ static void Main(string[] args)
 ## <a name="example"></a>例  
  次の例も、「[方法: ヘッダー情報にアクセスして XML フラグメントをストリーム出力する (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-stream-xml-fragments-with-access-to-header-information.md)」の例を基に構築されています。  
   
- この例では、[!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)] の機能を使用して <xref:System.Xml.XmlWriter> に要素を書き込みます。 この例を使用すると、メモリ使用量を低く抑えながら、非常に大きなドキュメントを変換することができます。  
+ この例では、[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] の機能を使用して <xref:System.Xml.XmlWriter> に要素を書き込みます。 この例を使用すると、メモリ使用量を低く抑えながら、非常に大きなドキュメントを変換することができます。  
   
  カスタム軸 (`StreamCustomerItem`) は、`Customer`、`Name`、`Item` の各要素を含んだドキュメントを前提として記述されています。また、それらの要素は、次に示す Source.xml ドキュメントと同じように配置されます。 ただし、より堅牢に実装する場合は、ソース ドキュメントを XSD で検証するか、無効なドキュメントの解析にも対応するようにします。  
   
@@ -341,3 +341,4 @@ static void Main(string[] args)
   
 ## <a name="see-also"></a>関連項目  
  [高度な LINQ to XML プログラミング (C#)](../../../../csharp/programming-guide/concepts/linq/advanced-linq-to-xml-programming.md)
+

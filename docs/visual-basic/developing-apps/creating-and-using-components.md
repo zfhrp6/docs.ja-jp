@@ -1,5 +1,5 @@
 ---
-title: "Visual Basic でのコンポーネントの作成および使用 | Microsoft Docs"
+title: "Visual Basic でのコンポーネントの作成および使用"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -27,17 +27,17 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: fe32676f0e39ed109a68f39584cf41aec5f5ce90
-ms.openlocfilehash: 1235f62f6ac0878e16387c35150764f3585bc004
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 03929dd0dbb81a9efee5b69ede78ff0b4ab4d380
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/22/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="creating-and-using-components-in-visual-basic"></a>Visual Basic でのコンポーネントの作成および使用
-*コンポーネント*は、<xref:System.ComponentModel.IComponent?displayProperty=fullName> インターフェイスを実装するか、<xref:System.ComponentModel.IComponent> を実装するクラスから直接的または間接的に派生するクラスです。 [!INCLUDE[dnprdnshort](../../csharp/getting-started/includes/dnprdnshort_md.md)] のコンポーネントは、再利用可能なオブジェクトで、他のオブジェクトとやり取りでき、外部リソースの制御やデザイン時サポートが備わっています。  
+*コンポーネント*は、<xref:System.ComponentModel.IComponent?displayProperty=fullName> インターフェイスを実装するか、<xref:System.ComponentModel.IComponent> を実装するクラスから直接的または間接的に派生するクラスです。 [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] のコンポーネントは、再利用可能なオブジェクトで、他のオブジェクトとやり取りでき、外部リソースの制御やデザイン時サポートが備わっています。  
   
- コンポーネントの重要な特徴の 1 つは、コンポーネントがデザイン可能であるということです。つまり、コンポーネントであるクラスは [!INCLUDE[vsprvs](../../csharp/includes/vsprvs_md.md)] 統合開発環境で使用できます。 コンポーネントは、ツールボックスへの追加、フォームへのドラッグ アンド ドロップ、デザイン サーフェイスでの操作が可能です。 コンポーネントの基本のデザイン時サポートは [!INCLUDE[dnprdnshort](../../csharp/getting-started/includes/dnprdnshort_md.md)] に組み込まれているため、コンポーネント開発者は追加の作業を行わずに基本のデザイン時機能を利用できます。  
+ コンポーネントの重要な特徴の 1 つは、コンポーネントがデザイン可能であるということです。つまり、コンポーネントであるクラスは [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] 統合開発環境で使用できます。 コンポーネントは、ツールボックスへの追加、フォームへのドラッグ アンド ドロップ、デザイン サーフェイスでの操作が可能です。 コンポーネントの基本のデザイン時サポートは [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] に組み込まれているため、コンポーネント開発者は追加の作業を行わずに基本のデザイン時機能を利用できます。  
   
  デザイン可能という点では、"*コントロール*" もコンポーネントに似ています。 ただし、コントロールにはユーザー インターフェイスが用意されているのに対し、コンポーネントには用意されていません。 コントロールは基本コントロール クラスである <xref:System.Windows.Forms.Control> または <xref:System.Web.UI.Control> から派生する必要があります。  
   
@@ -103,3 +103,4 @@ ms.lasthandoff: 05/22/2017
  [方法: Windows フォームでデザイン時サポートにアクセスする](http://msdn.microsoft.com/library/a84f8579-1f47-41b9-ba37-69030b0aff09)   
  [方法: デザイン モードでコントロールの外観と動作を拡張する](http://msdn.microsoft.com/library/68f85054-2253-47f5-a4f2-3f1ac8c9f27b)   
  [方法: デザイン モードでコントロールのカスタム初期化を行う](http://msdn.microsoft.com/library/914eaa03-092f-4556-9160-b8a2a40641d9)
+

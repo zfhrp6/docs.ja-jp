@@ -1,5 +1,5 @@
 ---
-title: "方法: Visual Basic でファイル パスを解析する | Microsoft Docs"
+title: "方法 : Visual Basic でファイル パスを解析する"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -32,27 +32,27 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
-ms.openlocfilehash: a23fb13e99e94d6fa144c82edffca7afaaef96b3
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 6327d661c6f1fe7647cc64b56d7f72f1f3455467
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/22/2017
+ms.lasthandoff: 07/28/2017
 
 ---
-# <a name="how-to-parse-file-paths-in-visual-basic"></a>方法: Visual Basic でファイル パスを解析する
+# <a name="how-to-parse-file-paths-in-visual-basic"></a>方法 : Visual Basic でファイル パスを解析する
 <xref:Microsoft.VisualBasic.FileIO.FileSystem> オブジェクトには、ファイル パスを解析するときに役立つメソッドがいくつか用意されています。  
   
 -   <xref:Microsoft.VisualBasic.FileIO.FileSystem.CombinePath%2A> メソッドは、2 つのパスを受け取り、適切な書式で結合されたパスを返します。  
   
 -   <xref:Microsoft.VisualBasic.FileIO.FileSystem.GetParentPath%2A> メソッドは、指定されたパスの親の絶対パスを返します。  
   
--   <xref:Microsoft.VisualBasic.FileIO.FileSystem.GetFileInfo%2A> メソッドは、<xref:System.IO.FileInfo> オブジェクトを返します。このオブジェクトを照会すると、ファイルのプロパティ (名前やパスなど) を確認できます。  
+-   <xref:Microsoft.VisualBasic.FileIO.FileSystem.GetFileInfo%2A> メソッドは、 <xref:System.IO.FileInfo> オブジェクトを返します。このオブジェクトを照会すると、ファイルのプロパティ (名前やパスなど) を確認できます。  
   
  ファイル名の拡張子に基づいてファイルの内容を判断しないでください。 たとえば、Form1.vb というファイルは Visual Basic のソース ファイルではない可能性もあります。  
   
 ### <a name="to-determine-a-files-name-and-path"></a>ファイルの名前とパスを確認するには  
   
--   <xref:System.IO.FileInfo> オブジェクトの <xref:System.IO.FileInfo.DirectoryName%2A> および <xref:System.IO.FileInfo.Name%2A> プロパティを使用して、ファイルの名前とパスを確認します。 この例は、名前とパスを確認し、それらを表示します。  
+-   <xref:System.IO.FileInfo.DirectoryName%2A> オブジェクトの <xref:System.IO.FileInfo.Name%2A> および <xref:System.IO.FileInfo> プロパティを使用して、ファイルの名前とパスを確認します。 この例は、名前とパスを確認し、それらを表示します。  
   
      [!code-vb[VbVbcnMyFileSystem#54](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/VisualBasic/how-to-parse-file-paths_1.vb)]  
   
@@ -68,3 +68,4 @@ ms.lasthandoff: 05/22/2017
  <xref:System.IO.FileInfo>   
  <xref:Microsoft.VisualBasic.FileIO.FileSystem.GetFileInfo%2A>   
  [方法: ディレクトリにあるファイルのコレクションを取得する](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-get-the-collection-of-files-in-a-directory.md)
+

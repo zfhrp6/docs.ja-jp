@@ -1,5 +1,5 @@
 ---
-title: "例外処理ステートメント (C# リファレンス) | Microsoft Docs"
+title: "例外処理ステートメント (C# リファレンス)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -27,10 +27,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 156be3b61afc26401956b2f257c5e00b9ef03fc9
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 0c60adc167fc585755c8bbb85a05cf2af025edd3
+ms.contentlocale: ja-jp
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="exception-handling-statements-c-reference"></a>例外処理ステートメント (C# リファレンス)
@@ -52,3 +53,4 @@ C# では、プログラムの実行時に発生する例外と呼ばれる異�
  [C# のキーワード](../../../csharp/language-reference/keywords/index.md)   
  [ステートメントのキーワード](../../../csharp/language-reference/keywords/statement-keywords.md)   
  [例外と例外処理](../../../csharp/programming-guide/exceptions/index.md)
+

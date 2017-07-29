@@ -1,5 +1,5 @@
 ---
-title: "選択ステートメント (C# リファレンス) | Microsoft Docs"
+title: "選択ステートメント (C# リファレンス)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -27,11 +27,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 7e33ed084c560470a486ebbb25035a59ddc18565
-ms.openlocfilehash: 937406b347d8f7c99a60d88440ef7382b2987222
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: c137b129b8bbf8311f3709322348d4a69aa7f812
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/22/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="selection-statements-c-reference"></a>選択ステートメント (C# リファレンス)
@@ -54,3 +54,4 @@ ms.lasthandoff: 05/22/2017
  [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
  [C# のキーワード](../../../csharp/language-reference/keywords/index.md)   
  [ステートメントのキーワード](../../../csharp/language-reference/keywords/statement-keywords.md)
+

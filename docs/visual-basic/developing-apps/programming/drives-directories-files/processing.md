@@ -1,5 +1,5 @@
 ---
-title: "ドライブ、ディレクトリ、およびファイルの処理 (Visual Basic) | Microsoft Docs"
+title: "ドライブ、ディレクトリ、およびファイルの処理 (Visual Basic)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -35,15 +35,15 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
-ms.openlocfilehash: 4cbb2ead7075e8cda58ac4ec33d9fb6535d3284a
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 8cb9735b82d381dfb57211bf37ce29dfbb7374aa
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/22/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="processing-drives-directories-and-files-visual-basic"></a>ドライブ、ディレクトリ、およびファイルの処理 (Visual Basic)
-[!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] では、`My.Computer.FileSystem` オブジェクトを使用して、ドライブ、フォルダー、ファイルを処理できます。このオブジェクトは、`FileOpen` 関数や `Write` 関数などの従来のメソッドに比べて、パフォーマンスが優れており、使い方も簡単です (従来のメソッドも引き続き使用できます)。 以下のセクションでは、これらの方法について詳しく説明します。  
+[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] では、`My.Computer.FileSystem` オブジェクトを使用して、ドライブ、フォルダー、ファイルを処理できます。このオブジェクトは、`FileOpen` 関数や `Write` 関数などの従来のメソッドに比べて、パフォーマンスが優れており、使い方も簡単です (従来のメソッドも引き続き使用できます)。 以下のセクションでは、これらの方法について詳しく説明します。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
  [Visual Basic におけるファイル アクセス](../../../../visual-basic/developing-apps/programming/drives-directories-files/file-access.md)  
@@ -53,7 +53,7 @@ ms.lasthandoff: 05/22/2017
  ストリーム、分離ストレージ、ファイル イベント、ファイル属性、ファイル アクセスなど、.NET Framework におけるファイル I/O の考え方の概要を示します。  
   
  [チュートリアル : .NET Framework のメソッドによるファイル操作](../../../../visual-basic/developing-apps/programming/drives-directories-files/walkthrough-manipulating-files-by-using-net-framework-methods.md)  
- [!INCLUDE[dnprdnshort](../../../../csharp/getting-started/includes/dnprdnshort_md.md)] を使用してファイルやフォルダーを操作する方法を説明します。  
+ [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] を使用してファイルやフォルダーを操作する方法を説明します。  
   
  [チュートリアル: Visual Basic によるファイルとディレクトリの操作](../../../../visual-basic/developing-apps/programming/drives-directories-files/walkthrough-manipulating-files-and-directories.md)  
  `My.Computer.FileSystem` オブジェクトを使用してファイルやフォルダーを操作する方法を説明します。  
@@ -64,3 +64,4 @@ ms.lasthandoff: 05/22/2017
   
  <xref:Microsoft.VisualBasic.FileIO.FileSystem>  
  `My.Computer.FileSystem` オブジェクトとそのメンバーのリファレンス ドキュメントです。
+

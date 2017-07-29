@@ -1,5 +1,5 @@
 ---
-title: "extern エイリアス (C# リファレンス) | Microsoft Docs"
+title: "extern エイリアス (C# リファレンス)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -31,11 +31,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 2bda6b652b56c50883700fe5a2a81189dbcb0d2d
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 66b399aaf6d4b3ba27957f3eadad3c1079ed2e90
 ms.contentlocale: ja-jp
-ms.lasthandoff: 03/13/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="extern-alias-c-reference"></a>extern エイリアス (C# リファレンス)
@@ -70,3 +70,4 @@ ms.lasthandoff: 03/13/2017
  [名前空間キーワード](../../../csharp/language-reference/keywords/namespace-keywords.md)   
  [:: 演算子](../../../csharp/language-reference/operators/namespace-alias-qualifer.md)   
  [-reference (C# コンパイラ オプション)](../../../csharp/language-reference/compiler-options/reference-compiler-option.md)
+

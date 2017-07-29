@@ -1,5 +1,5 @@
 ---
-title: "ラムダ式 (C# プログラミング ガイド) | Microsoft Docs"
+title: "ラムダ式 (C# プログラミング ガイド)"
 ms.date: 2017-03-03
 ms.prod: .net
 ms.technology:
@@ -32,11 +32,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-ms.translationtype: Human Translation
-ms.sourcegitcommit: be7974018ce3195dc7344192d647fe64fb2ebcc4
-ms.openlocfilehash: 43ba8cdf265efd930199f7c6a8a77e49f491e737
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: c952c72d9108775fbd0f824f82cacdab5ba91d09
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/14/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="lambda-expressions-c-programming-guide"></a>ラムダ式 (C# プログラミング ガイド)
@@ -72,9 +72,9 @@ namespace ConsoleApplication1
   
  `=>` 演算子は、代入 (`=`) と同じ優先順位であり、[結合規則が右から左](../../../csharp/programming-guide/statements-expressions-operators/operators.md) です (演算子に関するドキュメントの「結合規則」を参照してください)。  
   
- ラムダは、[!INCLUDE[vbteclinq](../../../csharp/includes/vbteclinq_md.md)] のメソッド ベースのクエリ内で標準クエリ演算子のメソッド (<xref:System.Linq.Enumerable.Where%2A> など) の引数として使用されます。  
+ ラムダは、[!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] のメソッド ベースのクエリ内で標準クエリ演算子のメソッド (<xref:System.Linq.Enumerable.Where%2A> など) の引数として使用されます。  
   
- メソッド ベースの構文を使用して (<xref:System.Linq.Enumerable.Where%2A> to Objects および <xref:System.Linq.Enumerable> の場合と同様に) [!INCLUDE[vbteclinq](../../../csharp/includes/vbteclinq_md.md)] クラスの [!INCLUDE[sqltecxlinq](../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)] メソッドを呼び出すと、パラメーターはデリゲート型 <xref:System.Func%602?displayProperty=fullName> になります。 ラムダ式はデリゲートを作成するための最も便利な方法です。 たとえば (<xref:System.Linq.Queryable?displayProperty=fullName> の場合と同様に) [!INCLUDE[vbtecdlinq](../../../csharp/includes/vbtecdlinq_md.md)] クラスの同じメソッドを呼び出すと、パラメーター型は <xref:System.Linq.Expressions.Expression?displayProperty=fullName><Func\> になります。Func は最大 16 の入力パラメーターを持つ Func デリゲートです。 ラムダ式は、こうした式ツリーを構築するための非常に簡潔な方法でもあります。 ラムダを使用すると `Where` 呼び出しの外観を似たものにできますが、ラムダから実際に作成されるオブジェクトの型は異なります。  
+ メソッド ベースの構文を使用して ( <xref:System.Linq.Enumerable.Where%2A> to Objects および <xref:System.Linq.Enumerable> の場合と同様に) [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] クラスの [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]メソッドを呼び出すと、パラメーターはデリゲート型 <xref:System.Func%602?displayProperty=fullName>になります。 ラムダ式はデリゲートを作成するための最も便利な方法です。 たとえば (<xref:System.Linq.Queryable?displayProperty=fullName> の場合と同様に) [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)] クラスの同じメソッドを呼び出すと、パラメーター型は <xref:System.Linq.Expressions.Expression?displayProperty=fullName><Func\> になります。Func は最大 16 の入力パラメーターを持つ Func デリゲートです。 ラムダ式は、こうした式ツリーを構築するための非常に簡潔な方法でもあります。 ラムダを使用すると `Where` 呼び出しの外観を似たものにできますが、ラムダから実際に作成されるオブジェクトの型は異なります。  
   
  先ほどの例では、デリゲート シグネチャは暗黙的に型指定される `int`型の入力パラメーターを 1 つ持ち、 `int`を返します。 このラムダ式を同じ型のデリゲートに変換することができます。デリゲートも 1 つの入力パラメーター (`x`) を持ち、コンパイラが暗黙的に `int` 型に変換できる値を返すからです  (型の推論については後のセクションで詳しく説明します)。入力パラメーターとして 5 を使用してデリゲートを呼び出すと、デリゲートは 25 という結果を返します。  
   
@@ -290,7 +290,7 @@ class Test
 -   ラムダ式には、 `goto` ステートメント、 `break` ステートメント、およびジャンプ ステートメントのジャンプ先がブロック外である場合はラムダ式の内部にある `continue` ステートメントを含めることはできません。 また、ジャンプ先がブロックの内部にある場合は、ラムダ式の外部でジャンプ ステートメントを使用するとエラーになります。  
   
 ## <a name="c-language-specification"></a>C# 言語仕様  
- [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec_md.md)]  
+ [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
 ## <a name="featured-book-chapter"></a>参考書籍の該当する章  
  『[C# 3.0 Cookbook, Third Edition: More than 250 solutions for C# 3.0 programmers (C# 3.0 クックブック (第 3 版): C# 3.0 プログラマ向けの 250 以上のソリューション)](http://go.microsoft.com/fwlink/?LinkId=195369)』の「[Delegates, Events, and Lambda Expressions (デリゲート、イベント、およびラムダ式)](http://go.microsoft.com/fwlink/?LinkId=195395)」  

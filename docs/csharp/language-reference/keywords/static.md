@@ -1,5 +1,5 @@
 ---
-title: "static (C# リファレンス) | Microsoft Docs"
+title: "static (C# リファレンス)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -30,11 +30,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: a5ed524a1b17f7be8903f998cbd732594faab831
-ms.openlocfilehash: 36c9fd396914f2d958615b9f62666a0d0cc47fc1
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 8e46dc2f00d1c185379dba1017ca445b9ae5ae72
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/15/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="static-c-reference"></a>static (C# リファレンス)
@@ -66,7 +66,7 @@ Console.WriteLine(MyBaseC.MyStruct.x);
  クラスおよび静的クラスには、静的コンストラクターを含めることができます。 静的コンストラクターは、プログラムが開始されてからクラスがインスタンス化されるまでの間に呼び出されます。  
   
 > [!NOTE]
->  `static` キーワードの用法は、C++ の場合よりも制限されています。 C++ キーワードと比較するには、「[ストレージ クラス (C++)](https://docs.microsoft.com/cpp/cpp/storage-classes-cpp#static)」をご覧ください。
+>  `static` キーワードの用法は、C++ の場合よりも制限されています。 C++ キーワードと比較するには、「[ストレージ クラス (C++)](/cpp/cpp/storage-classes-cpp#static)」をご覧ください。
   
  静的メンバーの例を示すために、ある企業の従業員を表すクラスを考えてみます。 このクラスには、従業員数を数えるメソッドと、従業員数を格納するフィールドがあります。 メソッドとフィールドはどちらも、従業員のインスタンスに属しておらず、 企業クラスに属しています。 そのため、クラスの静的メンバーとして宣言する必要があります。  
   

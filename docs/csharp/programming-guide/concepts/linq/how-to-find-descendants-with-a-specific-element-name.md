@@ -1,5 +1,5 @@
 ---
-title: "方法: 特定の要素名を持つ子孫を検索する (C#) | Microsoft Docs"
+title: "方法: 特定の要素名を持つ子孫を検索する (C#)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -14,11 +14,11 @@ ms.assetid: f684da20-bee9-47f5-9607-7e3fd7e67470
 caps.latest.revision: 3
 author: BillWagner
 ms.author: wiwagn
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: ef272c973d469376a9a7de85b8e90a955af08dfb
-ms.lasthandoff: 03/13/2017
-
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 72659358a50d3ae1de9c699bff0bdd9f4ac4f383
+ms.contentlocale: ja-jp
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="how-to-find-descendants-with-a-specific-element-name-c"></a>方法: 特定の要素名を持つ子孫を検索する (C#)
@@ -106,3 +106,4 @@ Some text that is broken up into multiple segments.
 ## <a name="see-also"></a>関連項目  
  <xref:System.Xml.Linq.XContainer.Descendants%2A>   
  [基本的なクエリ (LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/basic-queries-linq-to-xml.md)
+

@@ -1,5 +1,5 @@
 ---
-title: "方法: テキストから XML へのストリーミング変換を実行する (C#) | Microsoft Docs"
+title: "方法: テキストから XML へのストリーミング変換を実行する (C#)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -14,11 +14,11 @@ ms.assetid: 9b3bd941-d0ff-4f2d-ae41-7c3b81d8fae6
 caps.latest.revision: 3
 author: BillWagner
 ms.author: wiwagn
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: bba371063439dfe5698ab6c3342500eec9fdc015
-ms.lasthandoff: 03/13/2017
-
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 3351f88bb27807714b3566992242e72a5d03ac14
+ms.contentlocale: ja-jp
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="how-to-perform-streaming-transformations-of-text-to-xml-c"></a>方法: テキストから XML へのストリーミング変換を実行する (C#)
@@ -101,3 +101,4 @@ class Program
 ## <a name="see-also"></a>関連項目  
  <xref:System.Xml.Linq.XStreamingElement>   
  [高度なクエリ手法 (LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/advanced-query-techniques-linq-to-xml.md)
+

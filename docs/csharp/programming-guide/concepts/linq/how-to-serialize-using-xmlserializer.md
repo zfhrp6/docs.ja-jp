@@ -1,5 +1,5 @@
 ---
-title: "方法: XmlSerializer を使用してシリアル化する (C#) | Microsoft Docs"
+title: "方法: XmlSerializer を使用してシリアル化する (C#)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -19,17 +19,18 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 6721edf0a533d89e8987f4bf231142f3a236d0c7
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 826c10835da385a0fd7b052db4d6981b706fc6ed
+ms.contentlocale: ja-jp
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="how-to-serialize-using-xmlserializer-c"></a>方法: XmlSerializer を使用してシリアル化する (C#)
 このトピックでは、<xref:System.Xml.Serialization.XmlSerializer> を使用してシリアル化および逆シリアル化を行う例について説明します。  
   
 ## <a name="example"></a>例  
- 次の例では、<xref:System.Xml.Linq.XElement> オブジェクトを含む多数のオブジェクトを作成します。 次に、それらのオブジェクトをメモリ ストリームにシリアル化し、メモリ ストリームから逆シリアル化します。  
+ 次の例では、<xref:System.Xml.Linq.XElement> オブジェクトを含んでいる多数のオブジェクトを作成します。 次に、それらのオブジェクトをメモリ ストリームにシリアル化し、メモリ ストリームから逆シリアル化します。  
   
 ```csharp  
 using System;  
@@ -107,3 +108,4 @@ Testing for type: XElementContainer
   
 ## <a name="see-also"></a>関連項目  
  [XElement オブジェクトを含むオブジェクト グラフのシリアル化 (C#)](../../../../csharp/programming-guide/concepts/linq/serializing-object-graphs-that-contain-xelement-objects.md)
+

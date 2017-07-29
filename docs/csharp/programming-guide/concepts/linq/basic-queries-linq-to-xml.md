@@ -1,5 +1,5 @@
 ---
-title: "基本的なクエリ (LINQ to XML) (C#) | Microsoft Docs"
+title: "基本的なクエリ (LINQ to XML) (C#)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -14,16 +14,15 @@ ms.assetid: d333bb7d-20c1-448a-95b7-e5ba07915744
 caps.latest.revision: 3
 author: BillWagner
 ms.author: wiwagn
-ms.translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: e3879dfe92f158c545a1f4a42c6bfc35aae06f3c
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 272cfadeccb505960f7872274a2af8c18efc3679
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/24/2017
-
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="basic-queries-linq-to-xml-c"></a>基本的なクエリ (LINQ to XML) (C#)
-ここでは、基本的な [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)] クエリの例について説明します。  
+ここでは、基本的な [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] クエリの例について説明します。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
   
@@ -39,9 +38,10 @@ ms.lasthandoff: 05/24/2017
 |[方法: 名前空間内のすべてのノードを検索する (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-find-all-nodes-in-a-namespace.md)|特定の名前空間内のすべてのノードを検索する方法について説明します。|  
 |[方法: 要素を並べ替える (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-sort-elements.md)|結果を並べ替えるクエリを記述する方法について説明します。|  
 |[方法: 複数のキーに基づいて要素を並べ替える (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-sort-elements-on-multiple-keys.md)|複数のキーに基づく並べ替えの方法について説明します。|  
-|[方法: 中間値を計算する (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-calculate-intermediate-values.md)|`Let` 句を使って [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)] クエリの中間値を計算する方法について説明します。|  
+|[方法: 中間値を計算する (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-calculate-intermediate-values.md)|`Let` 句を使って [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] クエリの中間値を計算する方法について説明します。|  
 |[方法: コンテキストに基づいて要素を検索するクエリを記述する (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-write-a-query-that-finds-elements-based-on-context.md)|ツリー内の他の要素に基づいて要素を選択する方法について説明します。|  
 |[方法: 空のクエリ結果セットをデバッグする (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-debug-empty-query-results-sets.md)|既定の名前空間の XML に対するクエリをデバッグする際の適切な修正方法について説明します。|  
   
 ## <a name="see-also"></a>関連項目  
  [XML ツリーのクエリ (C#)](../../../../csharp/programming-guide/concepts/linq/querying-xml-trees.md)
+

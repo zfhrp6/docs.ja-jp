@@ -1,5 +1,5 @@
 ---
-title: "yield (C# リファレンス) | Microsoft Docs"
+title: "yield (C# リファレンス)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -30,15 +30,15 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 400dfda51d978f35c3995f90840643aaff1b9c13
-ms.openlocfilehash: 22ef950c85b5d19141ea346a9e02d58003f45232
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: eb55fd5b1ade48316516cda83633935abbf8dcf9
 ms.contentlocale: ja-jp
-ms.lasthandoff: 03/24/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="yield-c-reference"></a>yield (C# リファレンス)
-ステートメントで `yield` キーワードを使用した場合、メソッド、演算子、または `get` アクセサーが反復子であることを示します。 `yield` を使用して反復子を定義すると、カスタム コレクション型の <xref:System.Collections.IEnumerable> および <xref:System.Collections.IEnumerator> パターンを実装するときに明示的な余分なクラス (列挙の状態を保持するクラス。たとえば <xref:System.Collections.Generic.IEnumerator%601> を参照) が不要になります。  
+ステートメントで `yield` キーワードを使用した場合、メソッド、演算子、または `get` アクセサーが反復子であることを示します。 `yield` を使用して反復子を定義すると、カスタム コレクション型の <xref:System.Collections.Generic.IEnumerator%601> および <xref:System.Collections.IEnumerable> パターンを実装するときに明示的な余分なクラス (列挙の状態を保持するクラス。たとえば <xref:System.Collections.IEnumerator> を参照) が不要になります。  
   
  `yield` ステートメントの 2 つの形式を次の例に示します。  
   
@@ -63,7 +63,7 @@ yield break;
   
 -   この宣言には、[ref](../../../csharp/language-reference/keywords/ref.md) パラメーターまたは [out](../../../csharp/language-reference/keywords/out.md) パラメーターを含めることはできません。  
   
- <xref:System.Collections.IEnumerable> または <xref:System.Collections.IEnumerator> を返す反復子の `yield` 型は `object` です。  反復子が <xref:System.Collections.Generic.IEnumerable%601> または <xref:System.Collections.Generic.IEnumerator%601> を返す場合、`yield return` ステートメント内の式の型から、ジェネリック型パラメーターへの暗黙的な変換が存在する必要があります。  
+ `yield` または <xref:System.Collections.IEnumerable> を返す反復子の <xref:System.Collections.IEnumerator> 型は `object` です。  反復子が <xref:System.Collections.Generic.IEnumerable%601> または <xref:System.Collections.Generic.IEnumerator%601> を返す場合、`yield return` ステートメント内の式の型から、ジェネリック型パラメーターへの暗黙的な変換が存在する必要があります。  
   
  次の特性を持つメソッドに `yield return` ステートメントまたは `yield break` ステートメントを含めることはできません。  
   
@@ -91,7 +91,7 @@ foreach (string element in elements)
   
  `MyIteratorMethod` への呼び出しでは、メソッドの本体は実行されません。 この呼び出しでは、`IEnumerable<string>` が `elements` 変数に返されます。  
   
- `foreach` ループの反復処理では、`elements` について <xref:System.Collections.IEnumerator.MoveNext%2A> メソッドが呼び出されます。 この呼び出しでは、次の `MyIteratorMethod` ステートメントに到達するまで、`yield return` の本体が実行されます。 `yield return` ステートメントによって返される式は、ループ本体による処理に対する `element` 変数の値だけでなく、`IEnumerable<string>` である要素の <xref:System.Collections.Generic.IEnumerator%601.Current%2A> プロパティも決定します。  
+ `foreach` ループの反復処理では、<xref:System.Collections.IEnumerator.MoveNext%2A> について `elements` メソッドが呼び出されます。 この呼び出しでは、次の `MyIteratorMethod` ステートメントに到達するまで、`yield return` の本体が実行されます。 `yield return` ステートメントによって返される式は、ループ本体による処理に対する `element` 変数の値だけでなく、<xref:System.Collections.Generic.IEnumerator%601.Current%2A> である要素の `IEnumerable<string>` プロパティも決定します。  
   
  `foreach` ループの以降の各反復処理では、反復子本体の実行が中断した場所から続行し、`yield return` ステートメントに到達したときに再度停止します。 iterator メソッドまたは `foreach` ステートメントの最後に到達すると、`yield break` ループは完了します。  
   
@@ -115,3 +115,4 @@ foreach (string element in elements)
  [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
  [foreach、in](../../../csharp/language-reference/keywords/foreach-in.md)   
  [反復子](http://msdn.microsoft.com/library/f45331db-d595-46ec-9142-551d3d1eb1a7)
+

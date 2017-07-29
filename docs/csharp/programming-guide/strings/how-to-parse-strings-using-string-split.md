@@ -1,5 +1,5 @@
 ---
-title: "方法: String.Split を使用して文字列を解析する (C# プログラミング ガイド) | Microsoft Docs"
+title: "方法: String.Split を使用して文字列を解析する (C# プログラミング ガイド)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -31,17 +31,17 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 400dfda51d978f35c3995f90840643aaff1b9c13
-ms.openlocfilehash: 1f5f15c305619c538aa276396c31296f42c8f40a
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: c0ef96f1cb074c32208457c192d53c69d95a102d
 ms.contentlocale: ja-jp
-ms.lasthandoff: 03/24/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="how-to-parse-strings-using-stringsplit-c-programming-guide"></a>方法: String.Split を使用して文字列を解析する (C# プログラミング ガイド)
-次のコード例では、<xref:System.String.Split%2A?displayProperty=fullName> メソッドを使用して文字列を解析する方法を示します。 入力として、<xref:System.String.Split%2A> は、ターゲット文字列から対象の部分文字列を区切る文字を示す文字配列を受け取ります。  関数は、部分文字列を含む配列を返します。  
+<xref:System.String.Split%2A?displayProperty=fullName> メソッドを使用して文字列を解析する方法を次のコード例に示します。 入力として、 <xref:System.String.Split%2A> は、ターゲット文字列から対象の部分文字列を区切る文字を示す文字配列を受け取ります。  関数は、部分文字列を含む配列を返します。  
   
- この例では、スペース、コンマ、ピリオド、コロン、およびタブを使用しています。すべて、これらの区切り文字を格納した配列で <xref:System.String.Split%2A> に渡されます。  ターゲット文字列の文に含まれている各単語は、結果の文字列の配列とは別に表示されます。  
+ この例ではスペース、コンマ、ピリオド、コロン、およびタブを使用しています。すべて、これらの区切り文字を格納した配列で <xref:System.String.Split%2A>に渡されます。  ターゲット文字列の文に含まれている各単語は、結果の文字列の配列とは別に表示されます。  
   
 ## <a name="example"></a>例  
  [!code-cs[csProgGuideStrings#16](../../../csharp/programming-guide/strings/codesnippet/CSharp/how-to-parse-strings-using-string-split_1.cs)]  

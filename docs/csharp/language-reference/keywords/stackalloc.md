@@ -1,5 +1,5 @@
 ---
-title: "stackalloc (C# リファレンス) | Microsoft Docs"
+title: "stackalloc (C# リファレンス)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -30,11 +30,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 337a06daaf36a1eb265f66cd191fc48b80f0bae1
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 53d61cfdcf4d356a28881c57ad923017c2b479ae
 ms.contentlocale: ja-jp
-ms.lasthandoff: 03/13/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="stackalloc-c-reference"></a>stackalloc (C# リファレンス)
@@ -57,7 +57,7 @@ block = stackalloc int[100];
   
  ポインター型が使用されるため、`stackalloc` には [unsafe](../../../csharp/language-reference/keywords/unsafe.md) コンテキストが必要です。 詳細については、「[アンセーフ コードとポインター](../../../csharp/programming-guide/unsafe-code-pointers/index.md)」を参照してください。  
   
- `stackalloc` は、C ランタイム ライブラリの [_alloca](https://docs.microsoft.com/cpp/c-runtime-library/reference/alloca) に似ています。  
+ `stackalloc` は、C ランタイム ライブラリの [_alloca](/cpp/c-runtime-library/reference/alloca) に似ています。  
   
  次の例では、フィボナッチ数列の最初の 20 個の数値を計算して表示します。 それぞれの数値が、前の 2 つの数値の和になっています。 このコードでは、`int` 型の要素を 20 個保持できるサイズのメモリ ブロックが、ヒープではなくスタックに割り当てられ、 そのブロックのアドレスは `fib` ポインターに格納されます。 このメモリは、ガベージ コレクションの対象にはならないため、[fixed](../../../csharp/language-reference/keywords/fixed-statement.md) を使用して固定する必要はありません。 メモリ ブロックの有効期間は、そのブロックを定義するメソッドの有効期間に限定されます。 メソッドから制御が戻る前に、メモリを解放することはできません。  
   
@@ -76,3 +76,4 @@ block = stackalloc int[100];
  [C# のキーワード](../../../csharp/language-reference/keywords/index.md)   
  [演算子のキーワード](../../../csharp/language-reference/keywords/operator-keywords.md)   
  [アンセーフ コードとポインター](../../../csharp/programming-guide/unsafe-code-pointers/index.md)
+

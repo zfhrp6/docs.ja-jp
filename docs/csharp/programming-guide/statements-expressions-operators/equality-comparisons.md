@@ -1,5 +1,5 @@
 ---
-title: "等価比較 (C# プログラミング ガイド) | Microsoft Docs"
+title: "等価比較 (C# プログラミング ガイド)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -28,11 +28,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 400dfda51d978f35c3995f90840643aaff1b9c13
-ms.openlocfilehash: 9f7d8c6e816efe248739d0771d332a784b1e185f
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 948bbc1b5b8535cc31ea362497fa69a816b43edc
 ms.contentlocale: ja-jp
-ms.lasthandoff: 03/24/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="equality-comparisons-c-programming-guide"></a>等価比較 (C# プログラミング ガイド)
@@ -66,7 +66,7 @@ if( b == a)
  ただし、等価性を 1 つの型のすべてのフィールドに基づいて判断する必要はありません。 サブセットに基づいて判断できます。 所有していない型を比較する場合は、その型の等価性がどのように定義されるのかを明確に理解している必要があります。 独自のクラスおよび構造体で値が等しいかどうかを定義する方法の詳細については、「[方法: 型の値の等価性を定義する](../../../csharp/programming-guide/statements-expressions-operators/how-to-define-value-equality-for-a-type.md)」を参照してください。  
   
 ### <a name="value-equality-for-floating-point-values"></a>浮動小数点値での値の等価性  
- バイナリのコンピューター上での浮動小数点演算には誤差があるため、浮動小数点値 ([double](../../../csharp/language-reference/keywords/double.md) および [float](../../../csharp/language-reference/keywords/float.md)) の等価比較には問題があります。 詳細については、<xref:System.Double?displayProperty=fullName> のトピックの解説を参照してください。  
+ バイナリのコンピューター上での浮動小数点演算には誤差があるため、浮動小数点値 ([double](../../../csharp/language-reference/keywords/double.md) および [float](../../../csharp/language-reference/keywords/float.md)) の等価比較には問題があります。 詳細については、<xref:System.Double?displayProperty=fullName> のトピックの「解説」を参照してください。  
   
 ## <a name="related-topics"></a>関連トピック  
   
@@ -79,3 +79,4 @@ if( b == a)
   
 ## <a name="see-also"></a>関連項目  
  [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)
+

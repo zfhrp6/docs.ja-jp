@@ -1,5 +1,5 @@
 ---
-title: "方法 : Visual Basic で、レジストリ キーから値を読み取る | Microsoft Docs"
+title: "方法 : Visual Basic で、レジストリ キーから値を読み取る"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -34,11 +34,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
-ms.openlocfilehash: b5054e277895d185ab8ec6f6a2950d5dedbef390
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 69b833777629cfd642ab75ac055b96b59c1da70b
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/22/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="how-to-read-a-value-from-a-registry-key-in-visual-basic"></a>方法 : Visual Basic で、レジストリ キーから値を読み取る
@@ -56,7 +56,7 @@ ms.lasthandoff: 05/22/2017
   
      [!code-vb[VbResourceTasks#4](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/VisualBasic/how-to-read-a-value-from-a-registry-key_1.vb)]  
   
- このコード例は、IntelliSense コード スニペットとしても利用できます。 コード スニペット ピッカーでは、これは **[Windows オペレーティング システム] > [レジストリ]** に配置されます。 詳細については、「[Code Snippets](https://docs.microsoft.com/visualstudio/ide/code-snippets)」を参照してください。  
+ このコード例は、IntelliSense コード スニペットとしても利用できます。 コード スニペット ピッカーでは、これは **[Windows オペレーティング システム] > [レジストリ]** に配置されます。 詳細については、「[Code Snippets](/visualstudio/ide/code-snippets)」を参照してください。  
   
 ### <a name="to-determine-whether-a-value-exists-in-a-registry-key"></a>レジストリ キー内値が存在するかどうかを確認するには  
   
@@ -82,3 +82,4 @@ ms.lasthandoff: 05/22/2017
  <xref:Microsoft.VisualBasic.MyServices.RegistryProxy>   
  <xref:Microsoft.Win32.RegistryHive>   
  [レジストリからの読み取りとレジストリへの書き込み](../../../../visual-basic/developing-apps/programming/computer-resources/reading-from-and-writing-to-the-registry.md)
+

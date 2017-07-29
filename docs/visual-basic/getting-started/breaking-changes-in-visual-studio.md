@@ -1,5 +1,5 @@
 ---
-title: "Visual Studio における Visual Basic の互換性に影響する変更点 | Microsoft Docs"
+title: "Visual Studio における Visual Basic の互換性に影響する変更点"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -28,11 +28,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 50e128137fde445f64e10cf7c2a1ee5fdecb34e6
-ms.openlocfilehash: 12a8222081a1082a36d7b2710686ab33db474652
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: f9822ea140584a5b978b5fa8802a40db257ad7f8
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/01/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="visual-basic-breaking-changes-in-visual-studio"></a>Visual Studio における Visual Basic の互換性に影響する変更点
@@ -47,3 +47,4 @@ Visual Studio 2015 の Visual Basic の変更によって、Visual Studio 2013 �
  [For Each...Next ステートメント](../../visual-basic/language-reference/statements/for-each-next-statement.md)   
  [はじめに](../../visual-basic/getting-started/index.md)   
  [互換性に影響のない言語の修正によって互換性の問題が起こる場合](http://go.microsoft.com/fwlink/?LinkId=259542)
+

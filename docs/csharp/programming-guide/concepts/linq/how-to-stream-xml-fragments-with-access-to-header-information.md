@@ -1,5 +1,5 @@
 ---
-title: "方法: ヘッダー情報にアクセスして XML フラグメントをストリーム出力する (C#) | Microsoft Docs"
+title: "方法: ヘッダー情報にアクセスして XML フラグメントをストリーム出力する (C#)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -19,18 +19,19 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 81d0ba2403726f76d50465e1776e6e91ea49d355
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: b7a83c9fc88b6e59cc1c8308d92464591896d312
+ms.contentlocale: ja-jp
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="how-to-stream-xml-fragments-with-access-to-header-information-c"></a>方法: ヘッダー情報にアクセスして XML フラグメントをストリーム出力する (C#)
 大きな XML ファイルを任意に読み取り、アプリケーションのメモリ使用量を予想できるようにアプリケーションを作成しなければならない場合があります。 大きな XML ファイルを XML ツリーに設定しようとすると、ファイルのサイズに比例してメモリが過剰に使用されます。 したがって、代わりにストリーミングの手法を使用する必要があります。  
   
- これを実現する 1 つの選択肢として、<xref:System.Xml.XmlReader> を使ってアプリケーションを作成する方法があります。 ただし、場合によっては、XML ツリーに対してクエリを実行するとき、[!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq_md.md)] の使用が必要になることがあります。 このような場合は、カスタムの軸メソッドを独自に記述します。 詳しくは、「[方法 : LINQ to XML 軸メソッドを記述する (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-write-a-linq-to-xml-axis-method.md)」をご覧ください。  
+ これを実現する 1 つの選択肢として、<xref:System.Xml.XmlReader> を使用してアプリケーションを作成する方法があります。 ただし、場合によっては、XML ツリーに対してクエリを実行するとき、[!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] の使用が必要になることがあります。 このような場合は、カスタムの軸メソッドを独自に記述します。 詳しくは、「[方法 : LINQ to XML 軸メソッドを記述する (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-write-a-linq-to-xml-axis-method.md)」をご覧ください。  
   
- 独自の軸メソッドを作成するには、<xref:System.Xml.XmlReader> を使って、対象となるノードの 1 つに到達するまでノードを読み取る小さなメソッドを記述します。 このメソッドから <xref:System.Xml.Linq.XNode.ReadFrom%2A> が呼び出され、これにより <xref:System.Xml.XmlReader> からデータが読み取られて、XML フラグメントがインスタンス化されます。 さらに、カスタムの軸メソッドを列挙するメソッドに対しては、`yield return` を使用して各フラグメントが生成されます。 これで、カスタムの軸メソッド上に LINQ クエリを記述できます。  
+ 独自の軸メソッドを記述するには、<xref:System.Xml.XmlReader> を使用して、対象となるノードの 1 つに到達するまでノードを読み取る小さなメソッドを記述します。 このメソッドから <xref:System.Xml.Linq.XNode.ReadFrom%2A> が呼び出され、これにより <xref:System.Xml.XmlReader> からデータが読み取られ、XML フラグメントがインスタンス化されます。 さらに、カスタムの軸メソッドを列挙するメソッドに対しては、`yield return` を使用して各フラグメントが生成されます。 これで、カスタムの軸メソッド上に LINQ クエリを記述できます。  
   
  ストリーミングの手法は、ソース ドキュメントを 1 回だけ処理する必要がある場合に適しており、ドキュメントの順序で要素を処理できます。 <xref:System.Linq.Enumerable.OrderBy%2A> などの一部の標準クエリ演算子では、ソースが反復処理され、すべてのデータが収集され並べ替えられて、最終的にはシーケンス内の最初の項目が生成されます。 最初の項目を生成する前にソースを具体化するクエリ演算子を使用すると、メモリ使用量を低く維持することができないので注意してください。  
   
@@ -184,3 +185,4 @@ static void Main(string[] args)
   
 ## <a name="see-also"></a>関連項目  
  [高度な LINQ to XML プログラミング (C#)](../../../../csharp/programming-guide/concepts/linq/advanced-linq-to-xml-programming.md)
+

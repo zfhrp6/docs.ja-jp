@@ -1,5 +1,5 @@
 ---
-title: "Override キーワードと New キーワードによるバージョン管理 (C# プログラミング ガイド) | Microsoft Docs"
+title: "Override キーワードと New キーワードによるバージョン管理 (C# プログラミング ガイド)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -28,10 +28,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: b464b4c395af093bb9124bb671c5c212c750f497
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 167262f7b2423fffec61b1e903f849d2ab387ed2
+ms.contentlocale: ja-jp
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="versioning-with-the-override-and-new-keywords-c-programming-guide"></a>Override キーワードと New キーワードによるバージョン管理 (C# プログラミング ガイド)
@@ -77,7 +78,7 @@ C# 言語は、異なるライブラリ内の[基底](../../../csharp/language-r
   
  [!code-cs[csProgGuideInheritance#44](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/versioning-with-the-override-and-new-keywords_5.cs)]  
   
- このメソッドで新しい基底クラス メソッドをオーバーライドしない場合には、次の考慮事項が適用されます。 2 つのメソッド間の混乱を避けるために、メソッドの名前を変更できます。 これは時間がかかるうえにエラーが起こりやすいため、場合によっては実用的でない可能性があります。 ただし、プロジェクトが比較的小さい場合は、Visual Studio のリファクタリング オプションを使用して、メソッドの名前を変更することができます。 詳しくは、「[クラスおよび型のリファクタリング (クラス デザイナー)](https://docs.microsoft.com/visualstudio/ide/refactoring-classes-and-types-class-designer)」をご覧ください。  
+ このメソッドで新しい基底クラス メソッドをオーバーライドしない場合には、次の考慮事項が適用されます。 2 つのメソッド間の混乱を避けるために、メソッドの名前を変更できます。 これは時間がかかるうえにエラーが起こりやすいため、場合によっては実用的でない可能性があります。 ただし、プロジェクトが比較的小さい場合は、Visual Studio のリファクタリング オプションを使用して、メソッドの名前を変更することができます。 詳しくは、「[クラスおよび型のリファクタリング (クラス デザイナー)](/visualstudio/ide/refactoring-classes-and-types-class-designer)」をご覧ください。  
   
  なお、派生クラスの定義内で `new` キーワードを使用することで、警告を回避することもできます。  
   
@@ -105,3 +106,4 @@ C# 言語は、異なるライブラリ内の[基底](../../../csharp/language-r
  [クラスと構造体](../../../csharp/programming-guide/classes-and-structs/index.md)   
  [メソッド](../../../csharp/programming-guide/classes-and-structs/methods.md)   
  [継承](../../../csharp/programming-guide/classes-and-structs/inheritance.md)
+

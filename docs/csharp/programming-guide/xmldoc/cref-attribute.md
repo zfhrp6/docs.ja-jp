@@ -1,5 +1,5 @@
 ---
-title: "cref 属性 (C# プログラミング ガイド) | Microsoft Docs"
+title: "cref 属性 (C# プログラミング ガイド)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -27,15 +27,15 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: dc1c456c71efb3cc6e60a8fdc77384e65975f110
-ms.openlocfilehash: 781efb81acab79dfbcd72c24761aa3dfdd79940c
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 7861d6696b7a40b8a665d489b92a3b196a7dd0ce
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/15/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="cref-attribute-c-programming-guide"></a>cref 属性 (C# プログラミング ガイド)
-XML ドキュメント タグの `cref` 属性は "コード参照" を意味します。 タグの内部テキストが、型、メソッド、プロパティなど、コード要素であることを指定します。 [Sandcastle](http://go.microsoft.com/fwlink/?LinkId=124061) のようなドキュメント ツールは `cref` 属性を利用し、型やメンバーが文書化されるページのハイパーリンクを自動的に生成します。  
+XML ドキュメント タグの `cref` 属性は "コード参照" を意味します。 タグの内部テキストが、型、メソッド、プロパティなど、コード要素であることを指定します。 [Sandcastle](https://github.com/EWSoftware/SHFB) のようなドキュメント ツールは `cref` 属性を利用し、型やメンバーが文書化されるページのハイパーリンクを自動的に生成します。  
   
 ## <a name="example"></a>例  
  次の例は、[\<see>](../../../csharp/programming-guide/xmldoc/see.md) タグで使用される `cref` 属性のものです。  
@@ -44,7 +44,7 @@ XML ドキュメント タグの `cref` 属性は "コード参照" を意味し
   
  コンパイルすると、このプログラムの XML 出力は次のようになります。 たとえば、`GetZero` メソッドの `cref` 属性がコンパイラにより `"M:TestNamespace.TestClass.GetZero"` に変換されていることに注意してください。 "M:" プレフィックスは "method" という意味であり、Sandcastle のようなドキュメント ツールで認識される規約です。 プレフィックスの完全一覧については、「[XML ファイルの処理](../../../csharp/programming-guide/xmldoc/processing-the-xml-file.md)」を参照してください。  
   
-```  
+```xml  
 <?xml version="1.0"?>  
 <doc>  
     <assembly>  

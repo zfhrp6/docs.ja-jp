@@ -1,5 +1,5 @@
 ---
-title: "非同期タスクまたはタスクの一覧のキャンセル (C#) | Microsoft Docs"
+title: "非同期タスクまたはタスクの一覧のキャンセル (C#)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -19,11 +19,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 400dfda51d978f35c3995f90840643aaff1b9c13
-ms.openlocfilehash: 9fbfa3602766b51c4be5078b793139501802a90c
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 2e34344c9cdf0717291c4c7375bab703679515a7
 ms.contentlocale: ja-jp
-ms.lasthandoff: 03/24/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="cancel-an-async-task-or-a-list-of-tasks-c"></a>非同期タスクまたはタスクの一覧のキャンセル (C#)
@@ -70,7 +70,7 @@ ms.lasthandoff: 03/24/2017
         CancellationTokenSource cts;  
     ```  
   
-2.  次のような**キャンセル** ボタンのイベント ハンドラーのコードを追加します。 ユーザーからキャンセルの要求があると、イベント ハンドラーは <xref:System.Threading.CancellationTokenSource.Cancel%2A?displayProperty=fullName> メソッドを使用して `cts` に通知します。  
+2.  次のような**キャンセル** ボタンのイベント ハンドラーのコードを追加します。 ユーザーが取り消しを要求すると、イベント ハンドラーは <xref:System.Threading.CancellationTokenSource.Cancel%2A?displayProperty=fullName> メソッドを使って `cts` に通知します。  
   
     ```csharp  
     // ***Add an event handler for the Cancel button.  
@@ -92,7 +92,7 @@ ms.lasthandoff: 03/24/2017
         cts = new CancellationTokenSource();  
         ```  
   
-    -   指定した Web サイトのコンテンツをダウンロードする `AccessTheWebAsync` への呼び出しで、`cts` の <xref:System.Threading.CancellationTokenSource.Token%2A?displayProperty=fullName> プロパティを引数として送信します。 取り消しが要求されると、`Token` プロパティがメッセージを伝達します。 ユーザーがダウンロード操作の取り消しを選択するとメッセージを表示する catch ブロックを追加します。 次のコードは変更点を示しています。  
+    -   指定された Web サイトのコンテンツをダウンロードする `AccessTheWebAsync` の呼び出しでは、引数として <xref:System.Threading.CancellationTokenSource.Token%2A?displayProperty=fullName> の `cts` プロパティを送ります。 取り消しが要求されると、`Token` プロパティがメッセージを伝達します。 ユーザーがダウンロード操作の取り消しを選択するとメッセージを表示する catch ブロックを追加します。 次のコードは変更点を示しています。  
   
         ```csharp  
         try  
@@ -113,7 +113,7 @@ ms.lasthandoff: 03/24/2017
         }  
         ```  
   
-4.  `AccessTheWebAsync` で、<xref:System.Net.Http.HttpClient> 型の `GetAsync` メソッドの <xref:System.Net.Http.HttpClient.GetAsync%28System.String%2CSystem.Threading.CancellationToken%29?displayProperty=fullName> オーバーロードを使用して、Web サイトのコンテンツをダウンロードします。 `AccessTheWebAsync` の <xref:System.Threading.CancellationToken> パラメーター `ct`を 2 番目の引数として渡します。 ユーザーが**キャンセル** ボタンをクリックすると、トークンがメッセージを送信します。  
+4.  `AccessTheWebAsync` では、Web サイトのコンテンツをダウンロードするために <xref:System.Net.Http.HttpClient.GetAsync%28System.String%2CSystem.Threading.CancellationToken%29?displayProperty=fullName> 型の `GetAsync` メソッドの <xref:System.Net.Http.HttpClient> オーバーロードを使用します。 2 番目の引数として、`ct` の <xref:System.Threading.CancellationToken> パラメーターである `AccessTheWebAsync` を渡します。 ユーザーが**キャンセル** ボタンをクリックすると、トークンがメッセージを送信します。  
   
      次のコードは、`AccessTheWebAsync` の変更点を示しています。  
   
@@ -224,7 +224,7 @@ ms.lasthandoff: 03/24/2017
     }  
     ```  
   
-4.  `AccessTheWebAsync` は長さを表示するため、メソッドは何も返す必要はありません。 return ステートメントを削除し、メソッドの戻り値の型を <xref:System.Threading.Tasks.Task%601> ではなく <xref:System.Threading.Tasks.Task> に変更します。  
+4.  `AccessTheWebAsync` は長さを表示するため、メソッドは何も返す必要はありません。 return ステートメントを削除し、メソッドの戻り値の型を <xref:System.Threading.Tasks.Task> ではなく <xref:System.Threading.Tasks.Task%601> に変更します。  
   
     ```csharp  
     async Task AccessTheWebAsync(CancellationToken ct)  
@@ -239,7 +239,6 @@ ms.lasthandoff: 03/24/2017
 5.  プログラムの取り消しをしない場合、次の出力を生成します。  
   
     ```  
-  
     Length of the downloaded string: 35939.  
   
     Length of the downloaded string: 237682.  
@@ -255,7 +254,6 @@ ms.lasthandoff: 03/24/2017
     Length of the downloaded string: 145790.  
   
     Downloads complete.  
-  
     ```  
   
      ダウンロードが完了する前に**キャンセル** ボタンをクリックすると、出力には取り消しの前に完了したダウンロードの長さが含まれています。  
@@ -268,7 +266,6 @@ ms.lasthandoff: 03/24/2017
     Length of the downloaded string: 128607.  
   
     Downloads canceled.  
-  
     ```  
   
 ##  <a name="BKMK_CompleteExamples"></a>コード例全体  
@@ -538,3 +535,4 @@ namespace CancelAListOfTasks
  [Async および Await を使用した非同期プログラミング (C#)](../../../../csharp/programming-guide/concepts/async/index.md)   
  [非同期アプリケーションの微調整 (C#)](../../../../csharp/programming-guide/concepts/async/fine-tuning-your-async-application.md)   
  [非同期のサンプル: アプリケーションの微調整](http://go.microsoft.com/fwlink/?LinkId=255046)
+

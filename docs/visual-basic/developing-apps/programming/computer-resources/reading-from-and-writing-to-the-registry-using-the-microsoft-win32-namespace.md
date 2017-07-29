@@ -1,5 +1,5 @@
 ---
-title: "Microsoft.Win32 名前空間を使用したレジストリの読み取りと書き込み (Visual Basic) | Microsoft Docs"
+title: "Microsoft.Win32 名前空間を使用したレジストリの読み取りと書き込み (Visual Basic)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -31,15 +31,15 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
-ms.openlocfilehash: f96b64590975416a85ce1957f475c44ff5e35f50
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: cefde5317b2ed2bc0a2834224b1475e8020f7f25
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/22/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="reading-from-and-writing-to-the-registry-using-the-microsoftwin32-namespace-visual-basic"></a>Microsoft.Win32 名前空間を使用したレジストリの読み取りと書き込み (Visual Basic)
-レジストリに対してプログラミングする際の基本的なニーズには `My.Computer.Registry` で対応できますが、[!INCLUDE[dnprdnshort](../../../../csharp/getting-started/includes/dnprdnshort_md.md)] の <xref:Microsoft.Win32> 名前空間の <xref:Microsoft.Win32.Registry> クラスと <xref:Microsoft.Win32.RegistryKey> クラスを使用することもできます。  
+レジストリに対してプログラミングする際の基本的なニーズには `My.Computer.Registry` で対応できますが、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] の <xref:Microsoft.Win32> 名前空間の <xref:Microsoft.Win32.Registry> クラスと <xref:Microsoft.Win32.RegistryKey> クラスを使用することもできます。  
   
 ## <a name="keys-in-the-registry-class"></a>Registry クラスのキー  
  <xref:Microsoft.Win32.Registry> クラスでは、サブキーとその値にアクセスするために使用できるベース レジストリ キーが提供されます。 ベース キー自体は読み取り専用です。 次の表では、<xref:Microsoft.Win32.Registry> クラスによって公開される 7 つのキーについて説明します。  
@@ -73,3 +73,4 @@ ms.lasthandoff: 05/22/2017
  [Try...Catch...Finally ステートメント](../../../../visual-basic/language-reference/statements/try-catch-finally-statement.md)   
  [レジストリからの読み取りとレジストリへの書き込み](../../../../visual-basic/developing-apps/programming/computer-resources/reading-from-and-writing-to-the-registry.md)   
  [セキュリティとレジストリ](../../../../visual-basic/developing-apps/programming/computer-resources/security-and-the-registry.md)
+

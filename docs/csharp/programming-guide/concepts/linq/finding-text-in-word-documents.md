@@ -1,5 +1,5 @@
 ---
-title: "Word 文書内のテキストの検索 (C#) | Microsoft Docs"
+title: "Word 文書内のテキストの検索 (C#)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -14,11 +14,11 @@ ms.assetid: 82f86677-560b-49dc-a089-610409939b2a
 caps.latest.revision: 3
 author: BillWagner
 ms.author: wiwagn
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: f51cbe8a9debf989512b55a501bd3b3b6bcf0893
-ms.lasthandoff: 03/13/2017
-
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: d8a171965c302e38de9403b8e9f03a34100a425a
+ms.contentlocale: ja-jp
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="finding-text-in-word-documents-c"></a>Word 文書内のテキストの検索 (C#)
@@ -343,3 +343,4 @@ StyleName:Code ><
  [チュートリアル: WordprocessingML ドキュメント内のコンテンツの操作 (C#)](../../../../csharp/programming-guide/concepts/linq/tutorial-manipulating-content-in-a-wordprocessingml-document.md)   
  [純粋関数によるリファクタリング (C#)](../../../../csharp/programming-guide/concepts/linq/refactoring-using-a-pure-function.md)   
  [LINQ to XML における遅延実行とレイジー評価 (C#)](../../../../csharp/programming-guide/concepts/linq/deferred-execution-and-lazy-evaluation-in-linq-to-xml.md)
+

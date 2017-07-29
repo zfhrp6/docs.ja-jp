@@ -1,5 +1,5 @@
 ---
-title: "&lt;summary&gt; (C# プログラミング ガイド) | Microsoft Docs"
+title: "&lt;summary&gt; (C# プログラミング ガイド)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -32,17 +32,17 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-ms.translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: b74e5bf964ff82f88fe2822257a64eccb5697535
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: bd96e58494196fcfdeb46e9e59481666ec9466f3
 ms.contentlocale: ja-jp
-ms.lasthandoff: 03/13/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="ltsummarygt-c-programming-guide"></a>&lt;summary&gt; (C# プログラミング ガイド)
 ## <a name="syntax"></a>構文  
   
-```  
+```xml  
 <summary>description</summary>  
 ```  
   
@@ -51,18 +51,18 @@ ms.lasthandoff: 03/13/2017
  オブジェクトの概要。  
   
 ## <a name="remarks"></a>コメント  
- \<summary> タグは、型または型のメンバーの説明に使用します。 型の説明に補足情報を追加するには、[\<remarks>](../../../csharp/programming-guide/xmldoc/remarks.md) タグを使用します。 [Sandcastle](http://go.microsoft.com/fwlink/?LinkId=124061) などのドキュメント ツールでコード要素のドキュメント ページへの内部ハイパーリンクを作成できるようにするには、[cref 属性](../../../csharp/programming-guide/xmldoc/cref-attribute.md)を使用します。  
+ \<summary> タグは、型または型のメンバーの説明に使用します。 型の説明に補足情報を追加するには、[\<remarks>](../../../csharp/programming-guide/xmldoc/remarks.md) タグを使用します。 [Sandcastle](https://github.com/EWSoftware/SHFB) などのドキュメント ツールでコード要素のドキュメント ページへの内部ハイパーリンクを作成できるようにするには、[cref 属性](../../../csharp/programming-guide/xmldoc/cref-attribute.md)を使用します。  
   
  \<summary> タグのテキストは、IntelliSense の型に関する唯一のソースで、オブジェクト ブラウザー ウィンドウにも表示されます。  
   
- コンパイル時に [/doc](../../../csharp/language-reference/compiler-options/doc-compiler-option.md) を指定して、ドキュメント コメントをファイルに出力します。 コンパイラによって生成されたファイルに基づいて最終的なドキュメントを作成するには、カスタム ツールを作成するか、[Sandcastle](http://go.microsoft.com/fwlink/?LinkId=124061) などのツールを使用します。  
+ コンパイル時に [/doc](../../../csharp/language-reference/compiler-options/doc-compiler-option.md) を指定して、ドキュメント コメントをファイルに出力します。 コンパイラによって生成されたファイルに基づいて最終的なドキュメントを作成するには、カスタム ツールを作成するか、[Sandcastle](https://github.com/EWSoftware/SHFB) などのツールを使用します。  
   
 ## <a name="example"></a>例  
  [!code-cs[csProgGuideDocComments#12](../../../csharp/programming-guide/xmldoc/codesnippet/CSharp/summary_1.cs)]  
   
  前の例では、次の XML ファイルが生成されます。  
   
-```  
+```xml  
 <?xml version="1.0"?>  
 <doc>  
     <assembly>  
@@ -92,7 +92,7 @@ ms.lasthandoff: 03/13/2017
   
  前の例では、次の XML ファイルが生成されます。  
   
-```  
+```xml  
 <?xml version="1.0"?>  
 <doc>  
     <assembly>  

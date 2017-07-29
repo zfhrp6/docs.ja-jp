@@ -1,5 +1,5 @@
 ---
-title: "方法: テキスト ファイルからデータを読み取る (Visual Basic) | Microsoft Docs"
+title: "方法: テキスト ファイルからデータを読み取る (Visual Basic)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -34,11 +34,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
-ms.openlocfilehash: 4ea4f6ebfaf06a8b2b5d161d9986eebd28f50d5b
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 9b38b7f869a1d4ff290042a18a9bc2e0fa2709b7
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/22/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="how-to-read-from-text-files-in-visual-basic"></a>方法: テキスト ファイルからデータを読み取る (Visual Basic)
@@ -80,7 +80,7 @@ ms.lasthandoff: 05/22/2017
   
 -   ユーザーがパスを参照するのに必要なアクセス許可がない (<xref:System.Security.SecurityException>)  
   
- ファイル名からファイルの内容を判断しないでください。 たとえば、Form1.vb というファイルは [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] のソース ファイルではない可能性もあります。  
+ ファイル名からファイルの内容を判断しないでください。 たとえば、Form1.vb というファイルは [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] のソース ファイルではない可能性もあります。  
   
  アプリケーションでデータを使用する前に、入力をすべて検証してください。 ファイルの内容が予想どおりでないことがあり、ファイルの内容を読み取るメソッドが失敗する可能性があります。  
   
@@ -94,3 +94,4 @@ ms.lasthandoff: 05/22/2017
  [トラブルシューティング : テキスト ファイルの読み取りと書き込み](../../../../visual-basic/developing-apps/programming/drives-directories-files/troubleshooting-reading-from-and-writing-to-text-files.md)   
  [チュートリアル: Visual Basic によるファイルとディレクトリの操作](../../../../visual-basic/developing-apps/programming/drives-directories-files/walkthrough-manipulating-files-and-directories.md)   
  [ファイル エンコーディング](../../../../visual-basic/developing-apps/programming/drives-directories-files/file-encodings.md)
+

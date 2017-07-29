@@ -1,5 +1,5 @@
 ---
-title: "XML ツリーのシリアル化 (C#) | Microsoft Docs"
+title: "XML ツリーのシリアル化 (C#)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -19,14 +19,15 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 348f9cab6fa93ada89eb87d0077e0e5838b449d7
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: f3b8ee68065a056cccbf02d96bf5f21e7ccea16b
+ms.contentlocale: ja-jp
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="serializing-xml-trees-c"></a>XML ツリーのシリアル化 (C#)
-XML ツリーのシリアル化とは、XML ツリーから XML を生成することです。 ファイル、<xref:System.IO.TextWriter> クラスの具象実装、または <xref:System.Xml.XmlWriter> の具象実装へのシリアル化を行うことができます。  
+XML ツリーのシリアル化とは、XML ツリーから XML を生成することです。 ファイル、<xref:System.IO.TextWriter> クラスの具象実装、または <xref:System.Xml.XmlWriter> クラスの具象実装へのシリアル化を行うことができます。  
   
  シリアル化では、 シリアル化された XML をインデントするかどうかや、XML 宣言を書き込むかどうかなど、さまざまな側面を制御できます。  
   
@@ -41,3 +42,4 @@ XML ツリーのシリアル化とは、XML ツリーから XML を生成する�
   
 ## <a name="see-also"></a>関連項目  
  [プログラミング ガイド (LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/programming-guide-linq-to-xml.md)
+

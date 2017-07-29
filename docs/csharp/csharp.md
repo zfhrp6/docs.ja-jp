@@ -1,5 +1,5 @@
 ---
-title: C# | Microsoft Docs
+title: C#
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -31,10 +31,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: d8470043d266275cd70d48299be96f1ee6f50682
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: f9a46179f25c166923f702b745e874406adfdeac
+ms.contentlocale: ja-jp
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="c"></a>C#
@@ -44,10 +45,10 @@ C# ("C シャープ" と読みます) は、.NET Framework で動作する幅広
   
 ## <a name="in-this-section"></a>このセクションの内容  
  [C# の概要](../csharp/getting-started/getting-started-with-csharp.md)  
- C# 言語または [!INCLUDE[vsprvs](../csharp/includes/vsprvs_md.md)] を初めて使用するプログラマー向けに、C# の機能を紹介します。また、[!INCLUDE[vsprvs](../csharp/includes/vsprvs_md.md)] のヘルプを検索するためのロードマップも示します。  
+ C# 言語または [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] を初めて使用するプログラマー向けに、C# の機能を紹介します。また、[!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] のヘルプを検索するためのロードマップも示します。  
   
- [Visual C# 開発環境の使用](https://docs.microsoft.com/visualstudio/csharp-ide/using-the-visual-studio-development-environment-for-csharp)  
- [!INCLUDE[csprcs](../csharp/includes/csprcs_md.md)] 開発環境について紹介します。  
+ [Visual C# 開発環境の使用](/visualstudio/csharp-ide/using-the-visual-studio-development-environment-for-csharp)  
+ [!INCLUDE[csprcs](~/includes/csprcs-md.md)] 開発環境について紹介します。  
   
  [C# プログラミング ガイド](../csharp/programming-guide/index.md)  
  C# 言語構成要素の使用方法に関する情報および実際の例を提供します。  
@@ -62,9 +63,10 @@ C# ("C シャープ" と読みます) は、.NET Framework で動作する幅広
  C# を使用するプログラミングのチュートリアルと、各チュートリアルに関する簡単な説明へのリンクを示します。  
   
 ## <a name="related-sections"></a>関連項目  
- [C# 言語仕様](../csharp/language-reference/language-specification.md)  
+ [C# 言語仕様](../csharp/language-reference/language-specification/index.md)  
  Microsoft Word 形式で作成された最新バージョンの C# 仕様へのリンクを紹介します。  
   
 ## <a name="see-also"></a>関連項目  
- [Visual C# と Visual Basic の概要](https://docs.microsoft.com/visualstudio/ide/getting-started-with-visual-csharp-and-visual-basic)   
+ [Visual C# と Visual Basic の概要](/visualstudio/ide/getting-started-with-visual-csharp-and-visual-basic)   
  [.NET 開発](https://msdn.microsoft.com/library/ff361664)
+

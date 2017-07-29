@@ -1,5 +1,5 @@
 ---
-title: "ジェネリックとリフレクション (C# プログラミング ガイド) | Microsoft Docs"
+title: "ジェネリックとリフレクション (C# プログラミング ガイド)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -28,17 +28,17 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: fe32676f0e39ed109a68f39584cf41aec5f5ce90
-ms.openlocfilehash: 2eeb2f0b833d3b5cc658ec96570d95c2d167b40b
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 201806cca08be0633d41e10ecb7641a0f03c975b
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/10/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="generics-and-reflection-c-programming-guide"></a>ジェネリックとリフレクション (C# プログラミング ガイド)
 共通言語ランタイム (CLR) は実行時にジェネリック型の情報にアクセスできるため、非ジェネリック型の場合と同じように、リフレクションを使用してジェネリック型の情報を取得できます。 詳細については、「[ランタイムのジェネリック](../../../csharp/programming-guide/generics/generics-in-the-run-time.md)」を参照してください。  
   
- [!INCLUDE[dnprdnlong](../../../csharp/programming-guide/events/includes/dnprdnlong_md.md)] には、ジェネリック型の実行時の情報を有効にする新しいメンバーがいくつか <xref:System.Type> クラスに追加されています。 それらのメソッドとプロパティの使用方法の詳細については、そのクラスのドキュメントを参照してください。 <xref:System.Reflection.Emit> 名前空間にも、ジェネリックをサポートする新しいメンバーが追加されています。 「[方法: リフレクション出力を使用してジェネリック型を定義する](../../../framework/reflection-and-codedom/how-to-define-a-generic-type-with-reflection-emit.md)」を参照してください。  
+ [!INCLUDE[dnprdnlong](~/includes/dnprdnlong-md.md)] には、ジェネリック型の実行時の情報を有効にする新しいメンバーがいくつか <xref:System.Type> クラスに追加されています。 それらのメソッドとプロパティの使用方法の詳細については、そのクラスのドキュメントを参照してください。 <xref:System.Reflection.Emit> 名前空間にも、ジェネリックをサポートする新しいメンバーが追加されています。 「[方法: リフレクション出力を使用してジェネリック型を定義する](../../../framework/reflection-and-codedom/how-to-define-a-generic-type-with-reflection-emit.md)」を参照してください。  
   
  ジェネリック リフレクションで使用する用語に関する一定の条件の一覧については、<xref:System.Type.IsGenericType%2A> プロパティの解説を参照してください。  
   
@@ -71,4 +71,5 @@ ms.lasthandoff: 05/10/2017
  [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
  [ジェネリック](../../../csharp/programming-guide/generics/index.md)   
  [リフレクションとジェネリック型](../../../framework/reflection-and-codedom/reflection-and-generic-types.md)   
- [ジェネリック](https://msdn.microsoft.com/library/ms172192)
+ [ジェネリック](~/docs/standard/generics/index.md)
+

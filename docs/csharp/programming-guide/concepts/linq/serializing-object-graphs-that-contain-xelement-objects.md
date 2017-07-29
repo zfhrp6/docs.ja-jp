@@ -1,5 +1,5 @@
 ---
-title: "XElement オブジェクトを含むオブジェクト グラフのシリアル化 (C#) | Microsoft Docs"
+title: "XElement オブジェクトを含むオブジェクト グラフのシリアル化 (C#)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -19,14 +19,15 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 752092f7455fa0a10efcaa41166b66ff1f87b16e
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 4e7b1d6365eb27596477de39577caa4144aa3501
+ms.contentlocale: ja-jp
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="serializing-object-graphs-that-contain-xelement-objects-c"></a>XElement オブジェクトを含むオブジェクト グラフのシリアル化 (C#)
-このトピックでは、<xref:System.Xml.Linq.XElement> 型のオブジェクトへの参照を含むオブジェクト グラフをシリアル化する機能について説明します。 この種のシリアル化を円滑に行うために、<xref:System.Xml.Linq.XElement> は <xref:System.Xml.Serialization.IXmlSerializable> インターフェイスを実装しています。  
+このトピックでは、<xref:System.Xml.Linq.XElement> 型のオブジェクトへの参照が含まれているオブジェクト グラフのシリアル化機能について説明します。 この種のシリアル化を円滑に行うために、<xref:System.Xml.Linq.XElement> は <xref:System.Xml.Serialization.IXmlSerializable> インターフェイスを実装しています。  
   
  シリアル化を実装しているのは <xref:System.Xml.Linq.XElement> クラスだけであることに注意してください。  
   
@@ -39,3 +40,4 @@ ms.lasthandoff: 03/13/2017
   
 ## <a name="see-also"></a>関連項目  
  [高度な LINQ to XML プログラミング (C#)](../../../../csharp/programming-guide/concepts/linq/advanced-linq-to-xml-programming.md)
+

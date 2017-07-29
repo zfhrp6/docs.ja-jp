@@ -1,5 +1,5 @@
 ---
-title: "方法: 属性の値を取得する (LINQ to XML) (C#) | Microsoft Docs"
+title: "方法: 属性の値を取得する (LINQ to XML) (C#)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -14,11 +14,11 @@ ms.assetid: 817bbe89-5979-4234-bf0c-46f63692ac8c
 caps.latest.revision: 3
 author: BillWagner
 ms.author: wiwagn
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 687a9d6da80259d41f6ed541cee4c579cdff23d8
-ms.lasthandoff: 03/13/2017
-
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 8a16a884501869bdc3fbec260568ea2035a5e9f4
+ms.contentlocale: ja-jp
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="how-to-retrieve-the-value-of-an-attribute-linq-to-xml-c"></a>方法: 属性の値を取得する (LINQ to XML) (C#)
@@ -63,3 +63,4 @@ abcde
   
 ## <a name="see-also"></a>関連項目  
  [LINQ to XML 軸 (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-xml-axes.md)
+

@@ -1,5 +1,5 @@
 ---
-title: "レジストリからの読み取りとレジストリへの書き込み (Visual Basic) | Microsoft Docs"
+title: "レジストリからの読み取りとレジストリへの書き込み (Visual Basic)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -32,17 +32,17 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
-ms.openlocfilehash: a093754423ba8b6942170792655e65e256df49bd
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 742aeb48f028918040479593a31b1223fba1b02f
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/22/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="reading-from-and-writing-to-the-registry-visual-basic"></a>レジストリからの読み取りとレジストリへの書き込み (Visual Basic)
 このトピックでは、レジストリに関連するタスクおよび概念説明のトピックについて説明します。  
   
- [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] のプログラミングでは、レジストリへのアクセスには、[!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] に用意されている関数を使用する方法と、.NET Framework のレジストリ クラスを使用する方法のいずれかを選択できます。 レジストリは、オペレーティング システムからの情報と、コンピューターにホストされるアプリケーションからの情報をホストします。 レジストリを操作すると、システム リソースや保護情報への不適切なアクセスが許可され、セキュリティが損なわれる場合があります。  
+ [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] のプログラミングでは、レジストリへのアクセスには、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] に用意されている関数を使用する方法と、.NET Framework のレジストリ クラスを使用する方法のいずれかを選択できます。 レジストリは、オペレーティング システムからの情報と、コンピューターにホストされるアプリケーションからの情報をホストします。 レジストリを操作すると、システム リソースや保護情報への不適切なアクセスが許可され、セキュリティが損なわれる場合があります。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
  [方法: レジストリ キーを作成し、その値を設定する](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-create-a-registry-key-and-set-its-value.md)  
@@ -55,7 +55,7 @@ ms.lasthandoff: 05/22/2017
  `My.Computer.Registry.CurrentUser` プロパティの `DeleteSubKey` メソッドを使用して、レジストリ キーを削除する方法について説明します。  
   
  [Microsoft.Win32 名前空間を使用したレジストリの読み取りと書き込み](../../../../visual-basic/developing-apps/programming/computer-resources/reading-from-and-writing-to-the-registry-using-the-microsoft-win32-namespace.md)  
- [!INCLUDE[dnprdnshort](../../../../csharp/getting-started/includes/dnprdnshort_md.md)] の `Registry` および `RegistryKey` クラスを使用して、レジストリにアクセスする方法について説明します。  
+ [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] の `Registry` および `RegistryKey` クラスを使用して、レジストリにアクセスする方法について説明します。  
   
  [セキュリティとレジストリ](../../../../visual-basic/developing-apps/programming/computer-resources/security-and-the-registry.md)  
  レジストリに関連するセキュリティの問題について説明します。  
@@ -66,3 +66,4 @@ ms.lasthandoff: 05/22/2017
   
  <xref:Microsoft.Win32.Registry>  
  `Registry` クラスの概要と、個々のキーおよびメンバーへのリンクを示します。
+

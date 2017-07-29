@@ -1,5 +1,5 @@
 ---
-title: "XDocument のクエリと XElement のクエリ (C#) | Microsoft Docs"
+title: "XDocument のクエリと XElement のクエリ (C#)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -14,18 +14,18 @@ ms.assetid: 46221ff5-62ee-4de8-93ba-66465facb5c1
 caps.latest.revision: 3
 author: BillWagner
 ms.author: wiwagn
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 9a3da563618ad3dbc9797f252ab51588a43ce8e6
-ms.lasthandoff: 03/13/2017
-
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: fa756d4adb1c361ef52e58bf6bdfd3bc2e31d13a
+ms.contentlocale: ja-jp
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="querying-an-xdocument-vs-querying-an-xelement-c"></a>XDocument のクエリと XElement のクエリ (C#)
 <xref:System.Xml.Linq.XDocument.Load%2A?displayProperty=fullName> によってドキュメントを読み込む場合、<xref:System.Xml.Linq.XElement.Load%2A?displayProperty=fullName> によって読み込む場合とは少し異なるクエリを記述する必要があることがわかります。  
   
 ## <a name="comparison-of-xdocumentload-and-xelementload"></a>XDocument.Load と XElement.Load の比較  
- <xref:System.Xml.Linq.XElement.Load%2A?displayProperty=fullName> によって XML ドキュメントを <xref:System.Xml.Linq.XElement> に読み込む場合、XML ツリーのルートの <xref:System.Xml.Linq.XElement> には読み込んだドキュメントのルート要素が含まれます。 一方、<xref:System.Xml.Linq.XDocument.Load%2A?displayProperty=fullName> によって同じ XML ドキュメントを <xref:System.Xml.Linq.XDocument> に読み込む場合は、ツリーのルートは <xref:System.Xml.Linq.XDocument> ノードで、読み込んだドキュメントのルート要素は <xref:System.Xml.Linq.XDocument> の許可されている 1 つの子 <xref:System.Xml.Linq.XElement> ノードになります。 [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)] 軸は、ルート ノードを基準に動作します。  
+ <xref:System.Xml.Linq.XElement> によって XML ドキュメントを <xref:System.Xml.Linq.XElement.Load%2A?displayProperty=fullName> に読み込む場合、XML ツリーのルートの <xref:System.Xml.Linq.XElement> には読み込んだドキュメントのルート要素が含まれます。 一方、<xref:System.Xml.Linq.XDocument> によって同じ XML ドキュメントを <xref:System.Xml.Linq.XDocument.Load%2A?displayProperty=fullName> に読み込む場合は、ツリーのルートは <xref:System.Xml.Linq.XDocument> ノードで、読み込んだドキュメントのルート要素は <xref:System.Xml.Linq.XElement> の許可されている 1 つの子 <xref:System.Xml.Linq.XDocument> ノードになります。 [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] 軸は、ルート ノードを基準に動作します。  
   
  この最初の例では、<xref:System.Xml.Linq.XElement.Load%2A> を使用して XML ツリー読み込みます。 次に、ツリーのルートの子要素をクエリします。  
   
@@ -57,7 +57,7 @@ Querying tree loaded with XElement.Load
 <Child3>3</Child3>  
 ```  
   
- 次の例は上の例と同じですが、<xref:System.Xml.Linq.XElement> ではなく <xref:System.Xml.Linq.XDocument> に XML ツリーが読み込まれる点が異なります。  
+ 次の例は上の例と同じですが、<xref:System.Xml.Linq.XDocument> ではなく <xref:System.Xml.Linq.XElement> に XML ツリーが読み込まれる点が異なります。  
   
 ```csharp  
 // Create a simple document and write it to a file  
@@ -123,3 +123,4 @@ Querying tree loaded with XDocument.Load
   
 ## <a name="see-also"></a>関連項目  
  [基本的なクエリ (LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/basic-queries-linq-to-xml.md)
+

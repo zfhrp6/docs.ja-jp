@@ -1,5 +1,5 @@
 ---
-title: "方法: オブジェクト初期化子を使用してオブジェクトを初期化する (C# プログラミング ガイド) | Microsoft Docs"
+title: "方法: オブジェクト初期化子を使用してオブジェクトを初期化する (C# プログラミング ガイド)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -28,10 +28,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 9d6537332b4ddcca185a0ac3039a925e0b3fcef2
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 01f2391680d9236b42f0d015b944b8f12455d0c8
+ms.contentlocale: ja-jp
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="how-to-initialize-objects-by-using-an-object-initializer-c-programming-guide"></a>方法: オブジェクト初期化子を使用してオブジェクトを初期化する (C# プログラミング ガイド)
@@ -52,8 +53,9 @@ ms.lasthandoff: 03/13/2017
  [!code-cs[csProgGuideLINQ#36](../../../csharp/programming-guide/arrays/codesnippet/CSharp/how-to-initialize-objects-by-using-an-object-initializer_2.cs)]  
   
 ## <a name="compiling-the-code"></a>コードのコンパイル  
- このコードを実行するには、クラスをコピーし、[!INCLUDE[vsprvs](../../../csharp/includes/vsprvs_md.md)] で作成した Visual C# コンソール アプリケーション プロジェクトに貼り付けます。   
+ このコードを実行するには、クラスをコピーし、[!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] で作成した Visual C# コンソール アプリケーション プロジェクトに貼り付けます。   
   
 ## <a name="see-also"></a>関連項目  
  [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
  [オブジェクト初期化子とコレクション初期化子](../../../csharp/programming-guide/classes-and-structs/object-and-collection-initializers.md)
+

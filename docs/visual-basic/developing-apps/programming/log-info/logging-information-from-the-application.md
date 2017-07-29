@@ -1,5 +1,5 @@
 ---
-title: "アプリケーションからの情報のログ記録 (Visual Basic) | Microsoft Docs"
+title: "アプリケーションからの情報のログ記録 (Visual Basic)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -35,11 +35,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
-ms.openlocfilehash: 25bf4e1d8b9b87c1545272c0d2746dc808d3fa4b
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 58f21df20425b0164586143ad5af6f363a90c3ef
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/22/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="logging-information-from-the-application-visual-basic"></a>アプリケーションからの情報のログ記録 (Visual Basic)
@@ -47,7 +47,7 @@ ms.lasthandoff: 05/22/2017
   
  `Log` オブジェクトはアプリケーションのログ リスナーに情報を書き込むためのメソッドを提供し、`Log` オブジェクトの高度な `TraceSource` プロパティは詳細な構成情報を提供します。 `Log` オブジェクトは、アプリケーションの構成ファイルによって構成されます。  
   
- `My.Log` オブジェクトは、ASP.NET アプリケーションでのみ使うことができます。 クライアント アプリケーションの場合は `My.Application.Log` を使います。 詳しくは、「<xref:Microsoft.VisualBasic.Logging.Log>」をご覧ください。  
+ `My.Log` オブジェクトは、ASP.NET アプリケーションでのみ使うことができます。 クライアント アプリケーションの場合は `My.Application.Log` を使います。 詳細については、「<xref:Microsoft.VisualBasic.Logging.Log>」を参照してください。  
   
 ## <a name="tasks"></a>タスク  
   
@@ -67,3 +67,4 @@ ms.lasthandoff: 05/22/2017
  <xref:Microsoft.VisualBasic.Logging.Log?displayProperty=fullName>   
  [アプリケーション ログの使用](../../../../visual-basic/developing-apps/programming/log-info/working-with-application-logs.md)   
  [トラブルシューティング : ログ リスナー](../../../../visual-basic/developing-apps/programming/log-info/troubleshooting-log-listeners.md)
+

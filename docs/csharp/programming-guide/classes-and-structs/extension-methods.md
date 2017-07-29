@@ -1,5 +1,5 @@
 ---
-title: "拡張メソッド (C# プログラミング ガイド) | Microsoft Docs"
+title: "拡張メソッド (C# プログラミング ガイド)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -29,17 +29,17 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: d65b4050287289df419685127cdbbb18f52ec719
-ms.openlocfilehash: a214f129424fd458decf473ef94ec3c5ed6eed3c
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: bfc0c0af620f7ec8b6b8a8352bf4253b85cc682c
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/16/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="extension-methods-c-programming-guide"></a>拡張メソッド (C# プログラミング ガイド)
 拡張メソッドを使用すると、新規の派生型の作成、再コンパイル、または元の型の変更を行うことなく既存の型にメソッドを "追加" できます。 拡張メソッドは特別な種類の静的メソッドですが、拡張された型のインスタンス メソッドのように呼び出します。 C# および Visual Basic で作成されたクライアント コードの場合は、拡張メソッドの呼び出しと、型で実際に定義されたメソッドの呼び出しに明確な違いはありません。  
   
- 最も一般的な拡張メソッドは、既存の [!INCLUDE[vbteclinq](../../../csharp/includes/vbteclinq_md.md)] 型および <xref:System.Collections.IEnumerable?displayProperty=fullName> 型にクエリ機能を追加する <xref:System.Collections.Generic.IEnumerable%601?displayProperty=fullName> 標準クエリ演算子です。 この標準クエリ演算子を使用するには、まず `using System.Linq` ディレクティブを使用して、スコープに含めます。 <xref:System.Collections.Generic.IEnumerable%601> を実装するすべての型は、<xref:System.Linq.Enumerable.GroupBy%2A>、<xref:System.Linq.Enumerable.OrderBy%2A>、<xref:System.Linq.Enumerable.Average%2A> などのインスタンス メソッドを持っていると考えられます。 <xref:System.Collections.Generic.List%601>、<xref:System.Array> などの <xref:System.Collections.Generic.IEnumerable%601> 型のインスタンスの後に "ドット" を入力すると、IntelliSense により、ステートメントの入力候補としてこれらの追加メソッドが表示されます。  
+ 最も一般的な拡張メソッドは、既存の [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] 型および <xref:System.Collections.IEnumerable?displayProperty=fullName> 型にクエリ機能を追加する <xref:System.Collections.Generic.IEnumerable%601?displayProperty=fullName> 標準クエリ演算子です。 この標準クエリ演算子を使用するには、まず `using System.Linq` ディレクティブを使用して、スコープに含めます。 <xref:System.Collections.Generic.IEnumerable%601> を実装するすべての型は、<xref:System.Linq.Enumerable.GroupBy%2A>、<xref:System.Linq.Enumerable.OrderBy%2A>、<xref:System.Linq.Enumerable.Average%2A> などのインスタンス メソッドを持っていると考えられます。 <xref:System.Collections.Generic.List%601>、<xref:System.Array> などの <xref:System.Collections.Generic.IEnumerable%601> 型のインスタンスの後に "ドット" を入力すると、IntelliSense により、ステートメントの入力候補としてこれらの追加メソッドが表示されます。  
   
  整数の配列において、標準クエリ演算子の `OrderBy` メソッドを呼び出す方法を次の例に示します。 かっこ内の式はラムダ式です。 標準クエリ演算子の多くはパラメーターとしてラムダ式を受け取りますが、拡張メソッドでは、これは必須ではありません。 詳細については、「[ラムダ式](../../../csharp/programming-guide/statements-expressions-operators/lambda-expressions.md)」を参照してください。  
   

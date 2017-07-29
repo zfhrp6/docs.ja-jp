@@ -1,5 +1,5 @@
 ---
-title: "dynamic (C# リファレンス) | Microsoft Docs"
+title: "dynamic (C# リファレンス)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -30,11 +30,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 400dfda51d978f35c3995f90840643aaff1b9c13
-ms.openlocfilehash: 7cec26e59a865e78bf02a84cfe2d3b5177fa55af
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: b68a6ef4dc3dda01638b9bb84db58ba77214f490
 ms.contentlocale: ja-jp
-ms.lasthandoff: 03/24/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="dynamic-c-reference"></a>dynamic (C# リファレンス)
@@ -93,3 +93,4 @@ obj = obj + 3;
  [typeof](../../../csharp/language-reference/keywords/typeof.md)   
  [方法: as 演算子と is 演算子を使用して安全にキャストする](../../../csharp/programming-guide/types/how-to-safely-cast-by-using-as-and-is-operators.md)   
  [チュートリアル: 動的オブジェクトの作成と使用](../../../csharp/programming-guide/types/walkthrough-creating-and-using-dynamic-objects.md)
+

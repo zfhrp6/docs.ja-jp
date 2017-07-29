@@ -1,5 +1,5 @@
 ---
-title: "方法: 文字列を数値に変換する (C# プログラミング ガイド) | Microsoft Docs"
+title: "方法: 文字列を数値に変換する (C# プログラミング ガイド)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -30,11 +30,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: be7974018ce3195dc7344192d647fe64fb2ebcc4
-ms.openlocfilehash: d406f1731db1e0979be8bba8d10301e57a2281e9
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 08d13e40a385ce8e9011b508b04361b2e050f904
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/14/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="how-to-convert-a-string-to-a-number-c-programming-guide"></a>方法: 文字列を数値に変換する (C# プログラミング ガイド)
@@ -80,3 +80,4 @@ ms.lasthandoff: 05/14/2017
  [型](../../../csharp/programming-guide/types/index.md)   
  [方法: 文字列が数値を表しているかどうかを確認する](../../../csharp/programming-guide/strings/how-to-determine-whether-a-string-represents-a-numeric-value.md)   
  [.NET Framework 4 の書式指定ユーティリティ](http://code.msdn.microsoft.com/NET-Framework-4-Formatting-9c4dae8d)
+

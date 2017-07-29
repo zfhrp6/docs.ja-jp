@@ -1,5 +1,5 @@
 ---
-title: "完了時での複数の非同期タスクとプロセスの実行 (C#) | Microsoft Docs"
+title: "完了時での複数の非同期タスクとプロセスの実行 (C#)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -19,15 +19,15 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 400dfda51d978f35c3995f90840643aaff1b9c13
-ms.openlocfilehash: 0ab1c8d117327c9f5805d184b263a0932ab0bc3f
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 770655005a3cf9cd13eb13cff1ca1d7e291e54e8
 ms.contentlocale: ja-jp
-ms.lasthandoff: 03/24/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="start-multiple-async-tasks-and-process-them-as-they-complete-c"></a>完了時での複数の非同期タスクとプロセスの実行 (C#)
-<xref:System.Threading.Tasks.Task.WhenAny%2A?displayProperty=fullName> を使用すると、複数のタスクを、開始された順番に処理するのでなく、同時に開始して、完了するごとに 1 つずつ処理できます。  
+<xref:System.Threading.Tasks.Task.WhenAny%2A?displayProperty=fullName> を使用すると、複数のタスクを、開始された順番に処理するのでなく、同時に開始して完了するごとに 1 つずつ処理できます。  
   
  クエリを使用して、タスクのコレクションを作成する例を次に示します。 各タスクは、指定された Web サイトのコンテンツをダウンロードします。 while ループの各反復で、待機されている `WhenAny` への呼び出しは、最初にダウンロードを終了するタスクのコレクションにあるタスクを返します。 タスクはコレクションから削除され、処理されます。 ループは、コレクションのタスクがなくなるまで繰り返されます。  
   
@@ -58,7 +58,7 @@ ms.lasthandoff: 03/24/2017
   
  この例を自分でビルドするには、「例をダウンロードする」のセクションの詳細な手順の指示に従いますが、**[スタートアップ プロジェクト]** では **CancelAfterOneTask** を選択します。 そのプロジェクトの `AccessTheWebAsync` メソッドに、このトピックでの変更を追加します。 変更部分にはアスタリスクが付いています。  
   
- **CancelAfterOneTask** プロジェクトには、実行時にタスクのコレクションを作成するクエリが含まれています。 次のコードの `ProcessURLAsync` への各呼び出しは、`TResult` が整数である <xref:System.Threading.Tasks.Task%601> を返します。  
+ **CancelAfterOneTask** プロジェクトには、実行時にタスクのコレクションを作成するクエリが含まれています。 次のコードの `ProcessURLAsync` への各呼び出しは、<xref:System.Threading.Tasks.Task%601> が整数である `TResult` を返します。  
   
 ```csharp  
 IEnumerable<Task<int>> downloadTasksQuery =  
@@ -67,7 +67,7 @@ IEnumerable<Task<int>> downloadTasksQuery =
   
  プロジェクトの MainWindow.xaml.cs ファイルで、`AccessTheWebAsync` メソッドに次の変更を行います。  
   
--   <xref:System.Linq.Enumerable.ToArray%2A> の代わりに <xref:System.Linq.Enumerable.ToList%2A?displayProperty=fullName> を適用して、クエリを実行します。  
+-   <xref:System.Linq.Enumerable.ToList%2A?displayProperty=fullName> の代わりに <xref:System.Linq.Enumerable.ToArray%2A> を適用して、クエリを実行します。  
   
     ```csharp  
     List<Task<int>> downloadTasks = downloadTasksQuery.ToList();  
@@ -87,7 +87,7 @@ IEnumerable<Task<int>> downloadTasksQuery =
         downloadTasks.Remove(firstFinishedTask);  
         ```  
   
-    3.  `firstFinishedTask` への呼び出しから返される、`ProcessURLAsync` を待機します。 `firstFinishedTask` 変数は `TReturn` が整数である <xref:System.Threading.Tasks.Task%601> です。 次の例に示すように、タスクは既に完了していますが、ダウンロードした Web サイトの長さの取得を待機します。  
+    3.  `firstFinishedTask` への呼び出しから返される、`ProcessURLAsync` を待機します。 `firstFinishedTask` 変数は <xref:System.Threading.Tasks.Task%601> が整数である `TReturn` です。 次の例に示すように、タスクは既に完了していますが、ダウンロードした Web サイトの長さの取得を待機します。  
   
         ```csharp  
         int length = await firstFinishedTask;  
@@ -247,3 +247,4 @@ namespace ProcessTasksAsTheyFinish
  [非同期アプリケーションの微調整 (C#)](../../../../csharp/programming-guide/concepts/async/fine-tuning-your-async-application.md)   
  [Async および Await を使用した非同期プログラミング (C#)](../../../../csharp/programming-guide/concepts/async/index.md)   
  [非同期のサンプル: アプリケーションの微調整](http://go.microsoft.com/fwlink/?LinkId=255046)
+

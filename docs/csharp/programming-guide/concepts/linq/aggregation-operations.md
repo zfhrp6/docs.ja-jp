@@ -1,5 +1,5 @@
 ---
-title: "集計処理 (C#) | Microsoft Docs"
+title: "集計処理 (C#)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -19,10 +19,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 3a444d353a89ae803ecd358e487c8aaa8f371cab
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 6c453bdccdb3af026fe4f4fb79c6e33e44e7a8f0
+ms.contentlocale: ja-jp
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="aggregation-operations-c"></a>集計処理 (C#)
@@ -52,3 +53,4 @@ ms.lasthandoff: 03/13/2017
  [方法: CSV テキスト ファイルの列値を計算する (LINQ) (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-compute-column-values-in-a-csv-text-file-linq.md)   
  [方法: ディレクトリ ツリー内で最もサイズの大きいファイルを照会する (LINQ) (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-query-for-the-largest-file-or-files-in-a-directory-tree-linq.md)   
  [方法: 一連のフォルダーの合計バイト数を問い合わせる (LINQ) (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-query-for-the-total-number-of-bytes-in-a-set-of-folders-linq.md)
+

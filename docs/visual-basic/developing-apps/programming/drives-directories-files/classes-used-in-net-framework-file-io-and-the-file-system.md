@@ -1,5 +1,5 @@
 ---
-title: ".NET Framework のファイル I/O とファイル システムで使用するクラス (Visual Basic) | Microsoft Docs"
+title: ".NET Framework のファイル I/O とファイル システムで使用するクラス (Visual Basic)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -30,17 +30,17 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
-ms.openlocfilehash: ca1ecff264734c16369c9a7d28fbb388bb2f1ccc
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: a87d2e6f87b92b5f66706095d3f485c080008e0f
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/22/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="classes-used-in-net-framework-file-io-and-the-file-system-visual-basic"></a>.NET Framework のファイル I/O とファイル システムで使用するクラス (Visual Basic)
 以下の表は、.NET Framework のファイル I/O で一般的に使用するクラスの一覧です。ファイル I/O クラス、ストリームの作成に使用するクラス、ストリームの読み取りと書き込みに使用するクラスに分類されています。  
   
- [!INCLUDE[dnprdnlong](../../../../csharp/programming-guide/events/includes/dnprdnlong_md.md)] ドキュメントで詳細な一覧を参照するには、「[クラス ライブラリの概要](https://msdn.microsoft.com/library/hfa3fa08)」をご覧ください。  
+ [!INCLUDE[dnprdnlong](~/includes/dnprdnlong-md.md)] ドキュメントで詳細な一覧を参照するには、「[クラス ライブラリの概要](https://msdn.microsoft.com/library/hfa3fa08)」をご覧ください。  
   
 ## <a name="basic-io-classes-for-files-drives-and-directories"></a>ファイル、ドライブ、およびディレクトリ用の基本 I/O クラス  
  次の表は、ファイル I/O に使用する主要なクラスの一覧と各クラスの説明です。  
@@ -87,3 +87,4 @@ ms.lasthandoff: 05/22/2017
  [ファイルおよびストリーム入出力](https://msdn.microsoft.com/library/k3352a4t)   
  [非同期ファイル I/O](https://msdn.microsoft.com/library/kztecsys)   
  [.NET Framework のファイル I/O とファイル システムの基礎 (Visual Basic)](../../../../visual-basic/developing-apps/programming/drives-directories-files/basics-of-net-framework-file-io-and-the-file-system.md)
+

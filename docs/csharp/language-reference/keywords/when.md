@@ -1,5 +1,5 @@
 ---
-title: "when (C# リファレンス) | Microsoft Docs"
+title: "when (C# リファレンス)"
 ms.date: 2017-03-07
 ms.prod: .net
 ms.technology:
@@ -30,10 +30,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: f6218eed8afa7d71429b72be86ab7cc426029e92
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: ae869fa04d2dfb963694f258624c5cd594ff1184
+ms.contentlocale: ja-jp
+ms.lasthandoff: 07/28/2017
 
 ---
  # <a name="when-c-reference"></a>when (C# リファレンス)

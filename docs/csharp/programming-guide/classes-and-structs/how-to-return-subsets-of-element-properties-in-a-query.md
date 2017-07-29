@@ -1,5 +1,5 @@
 ---
-title: "方法 : クエリで要素のプロパティのサブセットを返す (C# プログラミング ガイド) | Microsoft Docs"
+title: "方法 : クエリで要素のプロパティのサブセットを返す (C# プログラミング ガイド)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -27,11 +27,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 31905a37f09db5f5192123f0118252fbe8b02eff
-ms.openlocfilehash: 99768c4b486dd6e8a25af22ab187c673c548ece9
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: de6f4f1aeb07d7878d02b4f51e6f42b69d0bdcf5
 ms.contentlocale: ja-jp
-ms.lasthandoff: 07/03/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="how-to-return-subsets-of-element-properties-in-a-query-c-programming-guide"></a>方法 : クエリで要素のプロパティのサブセットを返す (C# プログラミング ガイド)
@@ -72,3 +72,4 @@ Console.WriteLine(student.First + " " + student.Last);
  [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
  [匿名型](../../../csharp/programming-guide/classes-and-structs/anonymous-types.md)   
  [LINQ クエリ式](../../../csharp/programming-guide/linq-query-expressions/index.md)
+

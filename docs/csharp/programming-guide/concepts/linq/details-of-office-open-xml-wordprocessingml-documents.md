@@ -1,5 +1,5 @@
 ---
-title: "Office Open XML WordprocessingML ドキュメントの詳細 (C#) | Microsoft Docs"
+title: "Office Open XML WordprocessingML ドキュメントの詳細 (C#)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -14,11 +14,11 @@ ms.assetid: 40c9ed57-b827-4c9e-a3e7-8b2163122106
 caps.latest.revision: 4
 author: BillWagner
 ms.author: wiwagn
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: ce3c9a7fcebd4cce0698be39a6bd2c634f6b5f59
-ms.lasthandoff: 03/13/2017
-
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: e36174c28b857922e7e23bff7017b340f0e4769c
+ms.contentlocale: ja-jp
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="details-of-office-open-xml-wordprocessingml-documents-c"></a>Office Open XML WordprocessingML ドキュメントの詳細 (C#)
@@ -34,3 +34,4 @@ ms.lasthandoff: 03/13/2017
   
 ## <a name="see-also"></a>関連項目  
  [チュートリアル: WordprocessingML ドキュメント内のコンテンツの操作 (C#)](../../../../csharp/programming-guide/concepts/linq/tutorial-manipulating-content-in-a-wordprocessingml-document.md)
+

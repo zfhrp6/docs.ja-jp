@@ -1,5 +1,5 @@
 ---
-title: "部分クラスと部分メソッド (C# プログラミング ガイド) | Microsoft Docs"
+title: "部分クラスと部分メソッド (C# プログラミング ガイド)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -29,11 +29,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 3c74328ec5a42d7c480f367585cf6c94cd2b1d84
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 41b07af83faa6af23695f3719aae29183c35a417
 ms.contentlocale: ja-jp
-ms.lasthandoff: 03/13/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="partial-classes-and-methods-c-programming-guide"></a>部分クラスと部分メソッド (C# プログラミング ガイド)
@@ -189,3 +189,4 @@ partial void onNameChanged()
  [構造体](../../../csharp/programming-guide/classes-and-structs/structs.md)   
  [インターフェイス](../../../csharp/programming-guide/interfaces/index.md)   
  [partial (型)](../../../csharp/language-reference/keywords/partial-type.md)
+

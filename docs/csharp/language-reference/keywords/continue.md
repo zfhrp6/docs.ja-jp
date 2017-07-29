@@ -1,5 +1,5 @@
 ---
-title: "continue (C# リファレンス) | Microsoft Docs"
+title: "continue (C# リファレンス)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -31,11 +31,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-ms.translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: d12dc62cfacd13e5914d5f25edf18769c83d6b6a
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 4a0dcedb32b153c31ec5ed799f66062463307db9
 ms.contentlocale: ja-jp
-ms.lasthandoff: 03/13/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="continue-c-reference"></a>continue (C# リファレンス)
@@ -53,5 +53,6 @@ ms.lasthandoff: 03/13/2017
  [C# リファレンス](../../../csharp/language-reference/index.md)   
  [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
  [C# のキーワード](../../../csharp/language-reference/keywords/index.md)   
- [break ステートメント](https://docs.microsoft.com/cpp/cpp/break-statement-cpp)   
+ [break ステートメント](/cpp/cpp/break-statement-cpp)   
  [ジャンプ ステートメント](../../../csharp/language-reference/keywords/jump-statements.md)
+

@@ -1,5 +1,5 @@
 ---
-title: "方法: 単一の子要素を取得する (LINQ to XML) (C#) | Microsoft Docs"
+title: "方法: 単一の子要素を取得する (LINQ to XML) (C#)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -14,23 +14,22 @@ ms.assetid: ce37db9e-76fa-46eb-b4cc-e8f32d22ad90
 caps.latest.revision: 3
 author: BillWagner
 ms.author: wiwagn
-ms.translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: a8cc212a91e4646ef7001d41ba9bb5486cc60052
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 11a53104f73325a905ef5144aabddf8c270fd024
 ms.contentlocale: ja-jp
-ms.lasthandoff: 03/13/2017
-
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="how-to-retrieve-a-single-child-element-linq-to-xml-c"></a>方法: 単一の子要素を取得する (LINQ to XML) (C#)
 このトピックでは、子要素名を指定して単一の子要素を取得する方法について説明します。 子要素の名前が既知であり、この名前を持つ要素が 1 つしか存在しない場合は、コレクションの代わりに 1 つの要素だけを取得する方が便利な場合があります。  
   
- <xref:System.Xml.Linq.XContainer.Element%2A> メソッドでは、<xref:System.Xml.Linq.XName> を指定して最初の子 <xref:System.Xml.Linq.XElement> を返します。  
+ <xref:System.Xml.Linq.XContainer.Element%2A> メソッドは、指定された <xref:System.Xml.Linq.XElement> を持つ最初の子 <xref:System.Xml.Linq.XName> を返します。  
   
  Visual Basic で単一の子要素を取得する場合の一般的な方法は、XML プロパティを使用し、配列インデクサー表記を使用して最初の要素を取得する方法です。  
   
 ## <a name="example"></a>例  
- 次に <xref:System.Xml.Linq.XContainer.Element%2A> メソッドの使用例を示します。 この例では、`po` という名前の XML ツリーを受け取り、`Comment` という名前の最初の要素を検索します。  
+ <xref:System.Xml.Linq.XContainer.Element%2A> メソッドの使用例を次に示します。 この例では、`po` という名前の XML ツリーを受け取り、`Comment` という名前の最初の要素を検索します。  
   
  Visual Basic の例では、配列インデクサー表記を使用して単一の要素を取得しています。  
   

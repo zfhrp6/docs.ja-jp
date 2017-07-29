@@ -1,5 +1,5 @@
 ---
-title: "LINQ to XML のセキュリティ (C#) | Microsoft Docs"
+title: "LINQ to XML のセキュリティ (C#)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -19,10 +19,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: d4da76c120b8028c12a8c2ac58e5130d89a01e05
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: b55a9b70ad4291bc74b629e289bdc168a30702ca
+ms.contentlocale: ja-jp
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="linq-to-xml-security-c"></a>LINQ to XML のセキュリティ (C#)
@@ -31,14 +32,14 @@ ms.lasthandoff: 03/13/2017
 ## <a name="linq-to-xml-security-overview"></a>LINQ to XML のセキュリティの概要  
  LINQ to XML は、厳密なセキュリティ要件が必要なサーバー側アプリケーション向けというよりも、プログラミングの利便性に重点を置いて設計されています。 ほとんどの XML のシナリオでは、サーバーにアップロードされる信頼できない XML ドキュメントではなく、信頼できる XML ドキュメントが処理されます。 LINQ to XML は、こうした一般的なシナリオに最適化されています。  
   
- ソースが不明な信頼できないデータを処理する必要がある場合は、既知の XML サービス拒否 (DoS) 攻撃をフィルターで除外するように構成された <xref:System.Xml.XmlReader> クラスのインスタンスを使うことをお勧めします。  
+ ソースが不明な信頼できないデータを処理する必要がある場合は、既知の XML サービス拒否 (DoS) 攻撃をフィルターで除外するように構成された <xref:System.Xml.XmlReader> クラスのインスタンスを使用することをお勧めします。  
   
- サービス拒否攻撃を緩和するように <xref:System.Xml.XmlReader> を構成したら、それを使って LINQ to XML ツリーを設定できます。これにより、LINQ to XML によるプログラミングの生産性向上のメリットも受けられます。 このように、セキュリティの問題を緩和するように構成されたリーダーを作成し、その構成済みのリーダーを使用して XML ツリーをインスタンス化する方法は、多くの軽減技法で利用されています。  
+ サービス拒否攻撃を緩和するように <xref:System.Xml.XmlReader> を構成したら、それを使用して LINQ to XML ツリーを設定できます。これにより、LINQ to XML によるプログラミングの生産性向上のメリットも受けられます。 このように、セキュリティの問題を緩和するように構成されたリーダーを作成し、その構成済みのリーダーを使用して XML ツリーをインスタンス化する方法は、多くの軽減技法で利用されています。  
   
  XML は、ドキュメントのサイズ、深さ、要素名のサイズなどの制限がないため、サービス拒否攻撃に対して本質的に脆弱です。 XML の処理に使用するコンポーネントに関係なく、リソースが過剰に使用されている場合は、常にアプリケーション ドメインを再利用できるようにしておく必要があります。  
   
 ## <a name="mitigation-of-xml-xsd-xpath-and-xslt-attacks"></a>XML、XSD、XPath、および XSLT の攻撃の緩和  
- LINQ to XML は、<xref:System.Xml.XmlReader> と <xref:System.Xml.XmlWriter> に基づいて構築されており、 <xref:System.Xml.Schema?displayProperty=fullName> 名前空間と <xref:System.Xml.XPath?displayProperty=fullName> 名前空間の拡張メソッドによって XSD と XPath をサポートしています。 <xref:System.Xml.XmlReader>、<xref:System.Xml.XPath.XPathNavigator>、<xref:System.Xml.XmlWriter> の各クラスを LINQ to XML と組み合わせて使うことにより、XSLT を呼び出して XML ツリーを変換することができます。  
+ LINQ to XML は、<xref:System.Xml.XmlReader> と <xref:System.Xml.XmlWriter> に基づいて構築されており、 <xref:System.Xml.Schema?displayProperty=fullName> 名前空間と <xref:System.Xml.XPath?displayProperty=fullName> 名前空間の拡張メソッドによって XSD と XPath をサポートしています。 <xref:System.Xml.XmlReader>、<xref:System.Xml.XPath.XPathNavigator>、および <xref:System.Xml.XmlWriter> の各クラスを LINQ to XML と組み合わせて使用することにより、XSLT を呼び出して XML ツリーを変換することができます。  
   
  運用環境の安全性が高くない場合は、XML や <xref:System.Xml?displayProperty=fullName>、<xref:System.Xml.Schema?displayProperty=fullName>、<xref:System.Xml.XPath?displayProperty=fullName>、および <xref:System.Xml.Xsl?displayProperty=fullName> の各クラスの使用に関連するセキュリティの問題が発生する可能性が高いといえます。 そのような問題の一部を次に示します。  
   
@@ -54,7 +55,7 @@ ms.lasthandoff: 03/13/2017
   
 -   極端に階層の深い XML ドキュメントが原因で、サービス拒否攻撃を受ける可能性があります。XML ドキュメントの階層を制限することをお勧めします。  
   
--   信頼できないソースからの <xref:System.Xml.NameTable>、<xref:System.Xml.XmlNamespaceManager>、および <xref:System.Xml.XmlResolver> オブジェクトなどのサポート コンポーネントは受け入れないようにします。  
+-   信頼できないアセンブリからの <xref:System.Xml.NameTable>、<xref:System.Xml.XmlNamespaceManager>、および <xref:System.Xml.XmlResolver> オブジェクトなどのサポート コンポーネントは受け入れないようにします。  
   
 -   サイズの大きなドキュメントによる攻撃を緩和するためにデータをチャンク単位で読み取ります。  
   
@@ -77,7 +78,7 @@ ms.lasthandoff: 03/13/2017
 ### <a name="do-not-call-codeaccesspermissionsassert-in-an-event-handler"></a>イベント ハンドラーで CodeAccessPermissions.Assert を呼び出さない  
  アセンブリの権限は、低い場合もあれば高い場合もあります。 高い権限を持つアセンブリは、コンピューターやその環境をより自由に制御できます。  
   
- 高いアクセス許可を持つアセンブリのコードがイベント ハンドラーで <xref:System.Security.CodeAccessPermission.Assert%2A?displayProperty=fullName> を呼び出した後に、アクセス許可が制限されている悪意のあるアセンブリに XML ツリーが渡されると、悪意のあるアセンブリによってイベントが発生させられる可能性があります。 このイベントは、高い権限を持つアセンブリ内のコードを実行するため、悪意のあるアセンブリが高度な特権で動作するようになります。  
+ 高い権限を持つアセンブリのコードがイベント ハンドラーで <xref:System.Security.CodeAccessPermission.Assert%2A?displayProperty=fullName> を呼び出した後に、権限が制限されている悪意のあるアセンブリに XML ツリーが渡されると、悪意のあるアセンブリによってイベントが発生させられる可能性があります。 このイベントは、高い権限を持つアセンブリ内のコードを実行するため、悪意のあるアセンブリが高度な特権で動作するようになります。  
   
  イベント ハンドラーでは <xref:System.Security.CodeAccessPermission.Assert%2A?displayProperty=fullName> を呼び出さないようにすることをお勧めします。  
   
@@ -100,13 +101,13 @@ ms.lasthandoff: 03/13/2017
  サービス拒否攻撃は、極端に深い階層を持つドキュメントが送信された場合にも発生します。 これを防ぐには、要素の深さをカウントする独自のクラスで <xref:System.Xml.XmlReader> をラップします。 これにより、要素の深さが事前に設定したレベルを超えている場合に、その悪意のあるドキュメントの処理を終了できます。  
   
 ### <a name="protect-against-untrusted-xmlreader-or-xmlwriter-implementations"></a>信頼されていない XmlReader や XmlWriter の実装から保護する  
- 管理者は、外部から提供された <xref:System.Xml.XmlReader> や <xref:System.Xml.XmlWriter> の実装について、厳密な名前が使われているかどうか、コンピューターの構成に登録されているかどうかを確認する必要があります。 これにより、リーダーやライターを装った悪意のあるコードが読み込まれるのを防ぐことができます。  
+ 管理者は、外部から提供された <xref:System.Xml.XmlReader> や <xref:System.Xml.XmlWriter> の実装について、厳密な名前が使用されているかどうか、コンピューターの構成に登録されているかどうかを確認する必要があります。 これにより、リーダーやライターを装った悪意のあるコードが読み込まれるのを防ぐことができます。  
   
 ### <a name="periodically-free-objects-that-reference-xname"></a>XName を参照するオブジェクトを定期的に解放する  
  アプリケーション プログラマは、ある種の攻撃に対する保護のために、アプリケーション ドメインで <xref:System.Xml.Linq.XName> オブジェクトを参照しているすべてのオブジェクトを定期的に解放する必要があります。  
   
 ### <a name="protect-against-random-xml-names"></a>ランダムな XML 名から保護する  
- 信頼されていないソースのデータを受け取るアプリケーションを作成する場合、<xref:System.Xml.XmlReader> をカスタム コードでラップして使い、ランダムな XML 名や XML 名前空間の使用を検査するように考慮する必要があります。 これにより、ランダムな XML 名や XML 名前空間が検出された場合に、アプリケーションでその悪意のあるドキュメントの処理を終了できます。  
+ 信頼されていないソースのデータを受け取るアプリケーションを作成する場合、<xref:System.Xml.XmlReader> をカスタム コードでラップして使用し、ランダムな XML 名や XML 名前空間の使用を検査するように考慮する必要があります。 これにより、ランダムな XML 名や XML 名前空間が検出された場合に、アプリケーションでその悪意のあるドキュメントの処理を終了できます。  
   
  特定の名前空間の名前の数 (および名前空間に含まれない名前の数) を制限することをお勧めします。  
   
@@ -117,3 +118,4 @@ ms.lasthandoff: 03/13/2017
   
 ## <a name="see-also"></a>関連項目  
  [プログラミング ガイド (LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/programming-guide-linq-to-xml.md)
+

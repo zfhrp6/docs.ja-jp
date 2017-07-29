@@ -1,5 +1,5 @@
 ---
-title: "Visual Basic の新機能 | Microsoft Docs"
+title: "Visual Basic の新機能"
 ms.date: 2017-04-27
 ms.prod: .net
 ms.technology:
@@ -31,11 +31,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: d3f21e32c162133e70a124da125c30afc7303738
-ms.openlocfilehash: 18544a0311e24cf427111e364421db6e9fc27326
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 0a9379d5dd2d1c6b3ed6820e350c19fb346ac84c
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/15/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="whats-new-for-visual-basic"></a>Visual Basic の新機能
@@ -105,7 +105,7 @@ C# 7 以降の C# は参照戻り値に対応しています。 つまり、メ�
 
 たとえば、C# で記述された次の `Sentence` クラスには、指定された部分文字列で始まる文の次の単語を探す `FindNext` メソッドが含まれています。 文字列は参照戻り値として返され、参照によりメソッドに渡される `Boolean` 変数は検索が成功したかどうかを示します。 つまり、呼び出すことで戻り値を読めるだけでなく、変更することもできます。その変更は `Sentence` クラスで反映されます。
 
-[!code-vb[Ref-Return](../../../samples/snippets/visualbasic/getting-started/ref-returns.cs)]
+[!code-csharp[Ref-Return](../../../samples/snippets/visualbasic/getting-started/ref-returns.cs)]
 
 最も単純な形式では、次のようなコードを利用し、文中で見つかった単語を変更できます。 メソッドに値を割り当てるのではなく、メソッドが返す式、つまり、参照戻り値に値を割り当てる点に注意してください。
 
@@ -191,5 +191,5 @@ End Interface
  コンパイラーは通常のオーバーロード解決規則を使用して、呼び出しに最も適切な `GetDetails` を選択するようになりました。サンプルで示されているようなインターフェイスのリレーションシップを Visual Basic で宣言できるようになりました。  
   
 ## <a name="see-also"></a>関連項目  
- [Visual Studio 2017 の新機能](https://docs.microsoft.com/en-us/visualstudio/ide/whats-new-in-visual-studio)
+ [Visual Studio 2017 の新機能](/visualstudio/ide/whats-new-in-visual-studio)
 

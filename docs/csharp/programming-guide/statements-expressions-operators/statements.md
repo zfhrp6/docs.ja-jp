@@ -1,5 +1,5 @@
 ---
-title: "ステートメント (C# プログラミング ガイド) | Microsoft Docs"
+title: "ステートメント (C# プログラミング ガイド)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -28,11 +28,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: cfbd607f614bd8d287dd33f08dd47b12fa651ced
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 4df592821f9bebb318138cffac9045fdbec1e759
 ms.contentlocale: ja-jp
-ms.lasthandoff: 03/13/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="statements-c-programming-guide"></a>ステートメント (C# プログラミング ガイド)
@@ -54,7 +54,7 @@ ms.lasthandoff: 03/13/2017
 |[ジャンプ ステートメント](../../../csharp/language-reference/keywords/jump-statements.md)|ジャンプ ステートメントでは、別のコード セクションに制御を移します。 詳細については、次のトピックを参照してください。<br /><br /> [break](../../../csharp/language-reference/keywords/break.md)、[continue](../../../csharp/language-reference/keywords/continue.md)、[default](../../../csharp/language-reference/keywords/switch.md)、[goto](../../../csharp/language-reference/keywords/goto.md)、[return](../../../csharp/language-reference/keywords/return.md)、[yield](../../../csharp/language-reference/keywords/yield.md)|  
 |[例外処理ステートメント](../../../csharp/language-reference/keywords/exception-handling-statements.md)|例外処理ステートメントを使用すると、実行時に発生する例外状態から適切に回復できます。 詳細については、次のトピックを参照してください。<br /><br /> [throw](../../../csharp/language-reference/keywords/throw.md)、[try-catch](../../../csharp/language-reference/keywords/try-catch.md)、[try-finally](../../../csharp/language-reference/keywords/try-finally.md)、[try-catch-finally](../../../csharp/language-reference/keywords/try-catch-finally.md)|  
 |[checked と unchecked](../../../csharp/language-reference/keywords/checked-and-unchecked.md)|checked ステートメントと unchecked ステートメントを使用すると、結果の値を保持するには小さすぎる変数に結果が格納される場合に、数値演算でオーバーフローが発生するのを許可するかどうかを指定できます。 詳細については、「[checked](../../../csharp/language-reference/keywords/checked.md)」および「[unchecked](../../../csharp/language-reference/keywords/unchecked.md)」を参照してください。|  
-`await` ステートメント|メソッドに [async](../../../csharp/language-reference/keywords/async.md) 修飾子を付けると、そのメソッドで [await](../../../csharp/language-reference/keywords/await.md) 演算子を使用できます。 コントロールが非同期メソッドの `await` 式に到達すると、コントロールは呼び出し元に戻り、待機中のタスクが完了するまでメソッドの進行状況は中断されます。 タスクが完了すると、メソッドで実行を再開できます。<br /><br /> 簡単な例については、「[メソッド](../../../csharp/programming-guide/classes-and-structs/methods.md)」の「非同期メソッド」セクションを参照してください。 詳細については、「[Async および Await を使用した非同期プログラミング](../../../csharp/programming-guide/concepts/async/index.md)」を参照してください。|  
+|`await` ステートメント|メソッドに [async](../../../csharp/language-reference/keywords/async.md) 修飾子を付けると、そのメソッドで [await](../../../csharp/language-reference/keywords/await.md) 演算子を使用できます。 コントロールが非同期メソッドの `await` 式に到達すると、コントロールは呼び出し元に戻り、待機中のタスクが完了するまでメソッドの進行状況は中断されます。 タスクが完了すると、メソッドで実行を再開できます。<br /><br /> 簡単な例については、「[メソッド](../../../csharp/programming-guide/classes-and-structs/methods.md)」の「非同期メソッド」セクションを参照してください。 詳細については、「[Async および Await を使用した非同期プログラミング](../../../csharp/programming-guide/concepts/async/index.md)」を参照してください。|  
 |`yield return` ステートメント|反復子は、リストや配列など、コレクションに対するカスタム イテレーションを実行します。 反復子は、[yield return](../../../csharp/language-reference/keywords/yield.md) ステートメントを使用して、各要素を 1 回に 1 つ返します。 `yield return` ステートメントに達すると、コードの現在の場所が記憶されます。 反復子が次回呼び出されたとき、この場所から実行が再開されます。<br /><br /> 詳細については、「[反復子](http://msdn.microsoft.com/library/f45331db-d595-46ec-9142-551d3d1eb1a7)」をご覧ください。|  
 |`fixed` ステートメント|fixed ステートメントは、移動可能な変数がガベージ コレクターにより再配置されることを防ぎます。 詳細については、「[fixed](../../../csharp/language-reference/keywords/fixed-statement.md)」を参照してください。|  
 |`lock` ステートメント|lock ステートメントを使用すると、一度に 1 つのスレッドしかコード ブロックにアクセスしないように制限できます。 詳細については、「[lock](../../../csharp/language-reference/keywords/lock-statement.md)」を参照してください。|  
@@ -97,3 +97,4 @@ ms.lasthandoff: 03/13/2017
   
 ## <a name="see-also"></a>関連項目  
  [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)
+

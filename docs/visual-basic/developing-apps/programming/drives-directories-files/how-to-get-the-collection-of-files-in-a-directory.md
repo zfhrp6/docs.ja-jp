@@ -1,5 +1,5 @@
 ---
-title: "方法: Visual Basic でディレクトリにあるファイルのコレクションを取得する | Microsoft Docs"
+title: "方法: Visual Basic でディレクトリにあるファイルのコレクションを取得する"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -31,11 +31,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
-ms.openlocfilehash: 1884195983856b3331b0c40e5b3844b0731e75ac
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 023fb90622b45fe0067cd146f62bc3edb326b5ef
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/22/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="how-to-get-the-collection-of-files-in-a-directory-in-visual-basic"></a>方法: Visual Basic でディレクトリにあるファイルのコレクションを取得する
@@ -43,7 +43,7 @@ ms.lasthandoff: 05/22/2017
   
 -   指定されたディレクトリ内を検索し、サブディレクトリを検索しない単純なファイル検索には <xref:Microsoft.VisualBasic.FileIO.FileSystem.GetFiles%28System.String%29> オーバーロードを使用します。  
   
--   検索に追加オプションを指定するには、<xref:Microsoft.VisualBasic.FileIO.FileSystem.GetFiles(System.String,Microsoft.VisualBasic.FileIO.SearchOption,System.String[])> オーバーロードを使用します。 `wildCards` パラメーターを使用して、検索パターンを指定できます。 検索にサブディレクトリを含めるには、`searchType` パラメーターを <xref:Microsoft.VisualBasic.FileIO.SearchOption?displayProperty=fullName> に設定します。  
+-   検索に追加オプションを指定するには、<xref:Microsoft.VisualBasic.FileIO.FileSystem.GetFiles(System.String,Microsoft.VisualBasic.FileIO.SearchOption,System.String[])> オーバーロードを使用します。 `wildCards` パラメーターを使用して、検索パターンを指定できます。 検索にサブディレクトリを含めるには、`searchType` パラメーターを <xref:Microsoft.VisualBasic.FileIO.SearchOption.SearchAllSubDirectories?displayProperty=fullName> に設定します。  
   
  指定したパターンに一致するファイルがない場合は、空のコレクションが返されます。  
   

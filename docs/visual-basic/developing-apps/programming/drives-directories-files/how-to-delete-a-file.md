@@ -1,5 +1,5 @@
 ---
-title: "方法: Visual Basic でファイルを削除する | Microsoft Docs"
+title: "方法: Visual Basic でファイルを削除する"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -33,11 +33,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
-ms.openlocfilehash: f6cf3192d6983b6222815c5c77a3dfd0b3845650
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: e4b0b87fd403556777e0ab5a1edd517687360374
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/22/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="how-to-delete-a-file-in-visual-basic"></a>方法: Visual Basic でファイルを削除する
@@ -90,3 +90,4 @@ ms.lasthandoff: 05/22/2017
  <xref:Microsoft.VisualBasic.FileIO.UIOption>   
  <xref:Microsoft.VisualBasic.FileIO.RecycleOption>   
  [方法: ディレクトリにあるファイルのコレクションを取得する](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-get-the-collection-of-files-in-a-directory.md)
+

@@ -1,5 +1,5 @@
 ---
-title: "固定サイズ バッファー (C# プログラミング ガイド) | Microsoft Docs"
+title: "固定サイズ バッファー (C# プログラミング ガイド)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -29,10 +29,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 6c5cacb588dc263e5b72e4b3cd93ad10b4b681f2
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: e1a3dcf953cb56fc3436fdd5e7ecb60478a12922
+ms.contentlocale: ja-jp
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="fixed-size-buffers-c-programming-guide"></a>固定サイズ バッファー (C# プログラミング ガイド)
@@ -55,7 +56,7 @@ private fixed char name[30];
   
  [!code-cs[csProgGuidePointers#20](../../../csharp/programming-guide/unsafe-code-pointers/codesnippet/CSharp/fixed-size-buffers_2.cs)]  
   
- 要素数 128 の `char` 配列のサイズは 256 バイトです。 固定サイズの [char](../../../csharp/language-reference/keywords/char.md) 型バッファーは、エンコーディングに関係なく常に、1 文字あたり 2 バイトを消費します。 これは、char 型のバッファーが、`CharSet = CharSet.Auto` または `CharSet = CharSet.Ansi` で API メソッドや構造体にマーシャリングされたときにも当てはまります。 詳細については、<xref:System.Runtime.InteropServices.CharSet> を参照してください。  
+ 要素数 128 の `char` 配列のサイズは 256 バイトです。 固定サイズの [char](../../../csharp/language-reference/keywords/char.md) 型バッファーは、エンコーディングに関係なく常に、1 文字あたり 2 バイトを消費します。 これは、char 型のバッファーが、`CharSet = CharSet.Auto` または `CharSet = CharSet.Ansi` で API メソッドや構造体にマーシャリングされたときにも当てはまります。 詳細については、「<xref:System.Runtime.InteropServices.CharSet>」を参照してください。  
   
  一般的な固定サイズの配列としては、他にも [bool](../../../csharp/language-reference/keywords/bool.md) 配列があります。 `bool` 配列内の要素のサイズは常に 1 バイトです。 `bool` 配列は、ビット配列やバッファーの作成には適していません。  
   
@@ -77,3 +78,4 @@ private fixed char name[30];
  [アンセーフ コードとポインター](../../../csharp/programming-guide/unsafe-code-pointers/index.md)   
  [fixed ステートメント](../../../csharp/language-reference/keywords/fixed-statement.md)   
  [相互運用性](../../../csharp/programming-guide/interop/index.md)
+

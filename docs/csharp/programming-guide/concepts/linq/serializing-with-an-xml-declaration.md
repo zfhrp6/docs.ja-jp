@@ -1,5 +1,5 @@
 ---
-title: "XML 宣言付きのシリアル化 (C#) | Microsoft Docs"
+title: "XML 宣言付きのシリアル化 (C#)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -19,17 +19,18 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 5c0389630c7fc4b8aa394974b7e42cce2a5101a4
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 36ffb8ddd584785c660896ca77707d504638852f
+ms.contentlocale: ja-jp
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="serializing-with-an-xml-declaration-c"></a>XML 宣言付きのシリアル化 (C#)
 このトピックでは、シリアル化を実行する際に XML 宣言を生成するかどうかを制御する方法について説明します。  
   
 ## <a name="xml-declaration-generation"></a>XML 宣言の生成  
- <xref:System.Xml.Linq.XElement.Save%2A?displayProperty=fullName> メソッドまたは <xref:System.Xml.Linq.XDocument.Save%2A?displayProperty=fullName> メソッドを使用して <xref:System.IO.File> または <xref:System.IO.TextWriter> にシリアル化すると、XML 宣言が生成されます。 <xref:System.Xml.XmlWriter> にシリアル化する場合は、<xref:System.Xml.XmlWriterSettings> オブジェクトで指定したライター設定により、XML 宣言が生成されるかどうかが決定されます。  
+ <xref:System.IO.File> メソッドまたは <xref:System.IO.TextWriter> メソッドを使用して <xref:System.Xml.Linq.XElement.Save%2A?displayProperty=fullName> または <xref:System.Xml.Linq.XDocument.Save%2A?displayProperty=fullName> にシリアル化すると、XML 宣言が生成されます。 <xref:System.Xml.XmlWriter> にシリアル化する場合は、<xref:System.Xml.XmlWriterSettings> オブジェクトで指定したライター設定により、XML 宣言が生成されるかどうかが決定されます。  
   
  `ToString` メソッドを使用して文字列にシリアル化する場合、生成される XML には XML 宣言は含まれません。  
   
@@ -79,3 +80,4 @@ Console.WriteLine(sb.ToString());
   
 ## <a name="see-also"></a>関連項目  
  [XML ツリーのシリアル化 (C#)](../../../../csharp/programming-guide/concepts/linq/serializing-xml-trees.md)
+

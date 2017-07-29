@@ -1,5 +1,5 @@
 ---
-title: "csc.exe を使用したコマンド ラインからのビルド | Microsoft Docs"
+title: "csc.exe を使用したコマンド ラインからのビルド"
 ms.date: 2017-04-19
 ms.prod: .net
 ms.technology:
@@ -28,11 +28,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: fe32676f0e39ed109a68f39584cf41aec5f5ce90
-ms.openlocfilehash: d90dc35fd985cbe35cfe86f7c299bd12aed11365
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: dd47544e11222dfb0035f37196abcdf5654d5537
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/10/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="command-line-build-with-cscexe"></a>csc.exe を使用したコマンド ラインからのビルド
@@ -42,7 +42,7 @@ C# コンパイラは、その実行可能ファイルの名前 (*csc.exe*) を�
 
 標準のコマンド プロンプト ウィンドウを使用する場合は、コンピューター上の任意のサブディレクトリから *csc.exe* を呼び出すことができるようにパスを修正する必要があります。 また、*vsvars32.bat* を実行して、コマンド ライン ビルドをサポートするための適切な環境変数を設定する必要があります。 検索して実行する方法の手順など、*vsvars32.bat* の詳細については、「[方法: Visual Studio のコマンド ラインのための環境変数を設定する](../../../csharp/language-reference/compiler-options/how-to-set-environment-variables-for-the-visual-studio-command-line.md)」を参照してください。
 
-[!INCLUDE[winsdklong](../../../csharp/language-reference/compiler-options/includes/winsdklong_md.md)] のみがインストールされているコンピューターでは、**SDK コマンド プロンプト** (**[Microsoft .NET Framework SDK]** メニュー オプションから開くことができます) で C# コンパイラを使用できます。
+[!INCLUDE[winsdklong](~/includes/winsdklong-md.md)] のみがインストールされているコンピューターでは、**SDK コマンド プロンプト** (**[Microsoft .NET Framework SDK]** メニュー オプションから開くことができます) で C# コンパイラを使用できます。
 
 MSBuild を使用して、プログラムによって C# プログラムをビルドすることもできます。 詳細については、「[MSBuild](/visualstudio/msbuild/msbuild)」を参照してください。
 
@@ -81,37 +81,37 @@ C# コンパイラは、オペレーティング システムのコマンド ラ
 
 - *File.cs* をコンパイルして *File.exe* を作成します。
 
-```
+```console
 csc File.cs 
 ```
 
 - *File.cs* をコンパイルして *File.dll* を作成します。
 
-```
+```console
 csc /target:library File.cs
 ```
 
 - *File.cs* をコンパイルして *My.exe* を作成します。
 
-```
+```console
 csc /out:My.exe File.cs
 ```
 
 - 最適化を有効にし、DEBUG シンボルを定義して、現在のディレクトリにあるすべての C# ファイルをコンパイルします。 *File2.exe* が出力されます。
 
-```
+```console
 csc /define:DEBUG /optimize /out:File2.exe *.cs
 ```
 
 - 現在のディレクトリにあるすべての C# ファイルをコンパイルして、デバッグ バージョンの *File2.dll* を作成します。 ロゴや警告は表示されません。
 
-```
+```console
 csc /target:library /out:File2.dll /warn:0 /nologo /debug *.cs
 ```
 
 - 現在のディレクトリにあるすべての C# ファイルをコンパイルして、*Something.xyz* (DLL) に出力します。
 
-```
+```console
 csc /target:library /out:Something.xyz *.cs
 ```
 

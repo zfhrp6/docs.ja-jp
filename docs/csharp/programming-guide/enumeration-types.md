@@ -1,5 +1,5 @@
 ---
-title: "列挙型 (C# プログラミング ガイド) | Microsoft Docs"
+title: "列挙型 (C# プログラミング ガイド)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -30,11 +30,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 7e33ed084c560470a486ebbb25035a59ddc18565
-ms.openlocfilehash: 2014047f17f766023ba4db4981aad6e6d4902381
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 677de7c6e0c0f72b600ce8ee5a8bad265725f6d3
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/22/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="enumeration-types-c-programming-guide"></a>列挙型 (C# プログラミング ガイド)
@@ -64,7 +64,7 @@ Console.WriteLine("{0} is month number #{1}.", thisMonth, monthNumber);
   
 -   変数に対して有効な値をクライアント コードのために明確に指定します。  
   
--   [!INCLUDE[vsprvs](../../csharp/includes/vsprvs_md.md)] の IntelliSense で、定義済みの値が一覧表示されます。  
+-   [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] の IntelliSense で、定義済みの値が一覧表示されます。  
   
  列挙子一覧に要素の値を指定しないとき、値は自動的に 1 ずつ増えます。 前の例では、`Days.Sunday` の値が 0 で、`Days.Monday` の値が 1 です。その後も同様に 1 ずつ増えます。 新しい `Days` オブジェクトを作成するとき、明示的に値を割り当てない場合、`Days.Sunday` の既定値 (0) が与えられます。 列挙を作成するときは、最も論理的な既定値を選択し、それにゼロの値を与えます。 それにより、列挙を作成したときに明示的に値を割り当てない場合、すべての列挙にその既定値が与えられます。  
   
@@ -111,3 +111,4 @@ Console.WriteLine("{0} is month number #{1}.", thisMonth, monthNumber);
  <xref:System.Enum?displayProperty=fullName>   
  [C# プログラミング ガイド](../../csharp/programming-guide/index.md)   
  [enum](../../csharp/language-reference/keywords/enum.md)
+

@@ -1,5 +1,5 @@
 ---
-title: "方法: XML ツリー全体の名前空間を変更する (C#) | Microsoft Docs"
+title: "方法: XML ツリー全体の名前空間を変更する (C#)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -14,15 +14,15 @@ ms.assetid: 1584ff3b-c77d-4241-ab62-80adfb7bfc1b
 caps.latest.revision: 3
 author: BillWagner
 ms.author: wiwagn
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 1ce710355e410e123fb9c4129e8d7bf339d5beff
-ms.lasthandoff: 03/13/2017
-
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: ffebf1bda275eb815ff3e15538fd69de6d3b0c1a
+ms.contentlocale: ja-jp
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="how-to-change-the-namespace-for-an-entire-xml-tree-c"></a>方法: XML ツリー全体の名前空間を変更する (C#)
-要素または属性の名前空間をプログラムで変更しなければならない場合があります。 LINQ to XML では、この操作を簡単に行うことができます。 <xref:System.Xml.Linq.XElement.Name%2A?displayProperty=fullName> プロパティは、値の設定が可能です。 <xref:System.Xml.Linq.XAttribute.Name%2A?displayProperty=fullName> プロパティに値を設定することはできませんが、その属性を <xref:System.Collections.Generic.List%601?displayProperty=fullName> にコピーし、既存の属性を削除してから、新しい目的の名前空間に存在する新しい属性を追加することは簡単に行うことができます。  
+要素または属性の名前空間をプログラムで変更しなければならない場合があります。 LINQ to XML では、この操作を簡単に行うことができます。 <xref:System.Xml.Linq.XElement.Name%2A?displayProperty=fullName> プロパティを設定できます。 <xref:System.Xml.Linq.XAttribute.Name%2A?displayProperty=fullName> プロパティは設定できませんが、簡単に属性を <xref:System.Collections.Generic.List%601?displayProperty=fullName> にコピーし、既存の属性を削除して、目的の新しい名前空間に含まれる新しい属性を追加できます。  
   
  詳細については、「[XML 名前空間の使用 (C#)](../../../../csharp/programming-guide/concepts/linq/working-with-xml-namespaces.md)」を参照してください。  
   
@@ -91,3 +91,4 @@ Console.WriteLine(root);
   
 ## <a name="see-also"></a>関連項目  
  [XML ツリーの変更 (LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/modifying-xml-trees-linq-to-xml.md)
+

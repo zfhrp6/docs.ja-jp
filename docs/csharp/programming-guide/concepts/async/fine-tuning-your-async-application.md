@@ -1,5 +1,5 @@
 ---
-title: "非同期アプリケーションの微調整 (C#) | Microsoft Docs"
+title: "非同期アプリケーションの微調整 (C#)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -19,14 +19,15 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 74cab732debe2381cbd3b9106b2431e2490ef57e
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 7afcdb28fbe10d5aa33dd2704d264ffd716af5d6
+ms.contentlocale: ja-jp
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="fine-tuning-your-async-application-c"></a>非同期アプリケーションの微調整 (C#)
-<xref:System.Threading.Tasks.Task> 型を使用できるメソッドとプロパティを使って、非同期アプリケーションに精度と柔軟性を追加できます。 このセクションのトピックでは、<xref:System.Threading.CancellationToken> と、<xref:System.Threading.Tasks.Task.WhenAll%2A?displayProperty=fullName> や <xref:System.Threading.Tasks.Task.WhenAny%2A?displayProperty=fullName> などの重要な `Task` メソッドを使う例を示します。  
+<xref:System.Threading.Tasks.Task> 型を使用できるメソッドとプロパティを使用して、非同期アプリケーションに精度と柔軟性を追加できます。 このセクションのトピックでは <xref:System.Threading.CancellationToken> および `Task` などのような、重要な <xref:System.Threading.Tasks.Task.WhenAll%2A?displayProperty=fullName> メソッドおよび <xref:System.Threading.Tasks.Task.WhenAny%2A?displayProperty=fullName> の使用例を示します。  
   
  `WhenAny` と `WhenAll` を使用すると、複数のタスクをより簡単に開始し、単一のタスクを監視して、その完了を待機できます。  
   
@@ -59,3 +60,4 @@ ms.lasthandoff: 03/13/2017
   
 ## <a name="see-also"></a>関連項目  
  [Async および Await を使用した非同期プログラミング (C#)](../../../../csharp/programming-guide/concepts/async/index.md)
+

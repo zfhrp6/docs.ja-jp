@@ -1,5 +1,5 @@
 ---
-title: "方法: Visual Basic でディレクトリを別のディレクトリにコピーする | Microsoft Docs"
+title: "方法 : Visual Basic でディレクトリを別のディレクトリにコピーする"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -33,11 +33,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
-ms.openlocfilehash: 59efea23743d126e9b1d5a842fc7655ad3350acd
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 7bcc7f924d26247b0d0ab30a9ea0fc6d6333b652
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/22/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="how-to-copy-a-directory-to-another-directory-in-visual-basic"></a>方法 : Visual Basic でディレクトリを別のディレクトリにコピーする
@@ -51,7 +51,7 @@ ms.lasthandoff: 05/22/2017
   
      [!code-vb[VbVbcnMyFileSystem#16](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/VisualBasic/how-to-copy-a-directory-to-another-directory_1.vb)]  
   
-     このコード例は、IntelliSense コード スニペットとしても利用できます。 コード スニペット ピッカーでは、コード例は [**ファイル システム - ドライブ、フォルダー、およびファイルの処理**] にあります。 詳細については、「[Code Snippets](https://docs.microsoft.com/visualstudio/ide/code-snippets)」を参照してください。  
+     このコード例は、IntelliSense コード スニペットとしても利用できます。 コード スニペット ピッカーでは、コード例は [**ファイル システム - ドライブ、フォルダー、およびファイルの処理**] にあります。 詳細については、「[Code Snippets](/visualstudio/ide/code-snippets)」を参照してください。  
   
 ## <a name="robust-programming"></a>信頼性の高いプログラミング  
  次の条件を満たす場合は、例外が発生する可能性があります。  
@@ -90,3 +90,4 @@ ms.lasthandoff: 05/22/2017
  <xref:Microsoft.VisualBasic.FileIO.FileSystem.CopyDirectory%2A>   
  [方法: 特定のパターンに一致するサブディレクトリを検索する](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-find-subdirectories-with-a-specific-pattern.md)   
  [方法: ディレクトリにあるファイルのコレクションを取得する](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-get-the-collection-of-files-in-a-directory.md)
+

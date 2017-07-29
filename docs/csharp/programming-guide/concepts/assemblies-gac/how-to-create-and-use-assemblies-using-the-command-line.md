@@ -1,5 +1,5 @@
 ---
-title: "方法: コマンド ラインを使用してアセンブリを作成および使用する (C#) | Microsoft Docs"
+title: "方法: コマンド ラインを使用してアセンブリを作成および使用する (C#)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -19,11 +19,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-ms.translationtype: Human Translation
-ms.sourcegitcommit: fe32676f0e39ed109a68f39584cf41aec5f5ce90
-ms.openlocfilehash: fc55d0ead04897f967d8cfe767e0a79f3469427c
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 630a799331e03860fbee34eab6bea3bb594ef0f0
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/10/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="how-to-create-and-use-assemblies-using-the-command-line-c"></a>方法: コマンド ラインを使用してアセンブリを作成および使用する (C#)
@@ -143,3 +143,4 @@ csc /out:TestCode.exe /reference:MathLibrary.DLL TestCode.cs
  [C# プログラミング ガイド](../../../../csharp/programming-guide/index.md)   
  [アセンブリとグローバル アセンブリ キャッシュ (C#)](../../../../csharp/programming-guide/concepts/assemblies-gac/index.md)   
  [DLL 関数を保持するクラスの作成](../../../../framework/interop/creating-a-class-to-hold-dll-functions.md)
+
