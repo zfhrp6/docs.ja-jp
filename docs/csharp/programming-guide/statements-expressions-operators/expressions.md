@@ -1,5 +1,5 @@
 ---
-title: "式 (C# プログラミング ガイド) | Microsoft Docs"
+title: "式 (C# プログラミング ガイド)"
 ms.date: 2017-05-11
 ms.prod: .net
 ms.technology:
@@ -28,11 +28,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: a5ed524a1b17f7be8903f998cbd732594faab831
-ms.openlocfilehash: 79efbca3d8d0b32c83dc3909e0a33839ecc0ef3e
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 9cfefe047805282ea682e127ffb56528fda48c0a
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/22/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="expressions-c-programming-guide"></a>式 (C# プログラミング ガイド)
@@ -101,3 +101,4 @@ C# は*式形式のメンバー*をサポートしています。式形式のメ
  [演算子](../../../csharp/programming-guide/statements-expressions-operators/operators.md)   
  [型](../../../csharp/programming-guide/types/index.md)   
  [LINQ クエリ式](../../../csharp/programming-guide/linq-query-expressions/index.md)
+

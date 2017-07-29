@@ -1,5 +1,5 @@
 ---
-title: "goto (C# リファレンス) | Microsoft Docs"
+title: "goto (C# リファレンス)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -30,11 +30,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 700376096d969052a9f4633f565f9d9fd4dfec46
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: cd298809ab883f425f3bb88239f2951ab98cc03e
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/22/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="goto-c-reference"></a>goto (C# リファレンス)
@@ -61,5 +61,6 @@ ms.lasthandoff: 05/22/2017
  [C# リファレンス](../../../csharp/language-reference/index.md)   
  [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
  [C# のキーワード](../../../csharp/language-reference/keywords/index.md)   
- [GoTo ステートメント](https://docs.microsoft.com/cpp/cpp/goto-statement-cpp)   
+ [GoTo ステートメント](/cpp/cpp/goto-statement-cpp)   
  [ジャンプ ステートメント](../../../csharp/language-reference/keywords/jump-statements.md)
+

@@ -1,5 +1,5 @@
 ---
-title: "explicit (C# リファレンス) | Microsoft Docs"
+title: "explicit (C# リファレンス)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -30,11 +30,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: a5c842eba24f0a30d357afc24aeed10c1447345e
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: f11a930f0be5d504c92271b66009613de5d68579
 ms.contentlocale: ja-jp
-ms.lasthandoff: 03/13/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="explicit-c-reference"></a>explicit (C# リファレンス)
@@ -73,3 +73,4 @@ ms.lasthandoff: 03/13/2017
  [演算子 (C# リファレンス)](../../../csharp/language-reference/keywords/operator.md)   
  [方法: 構造体間にユーザー定義の変換を実装する](../../../csharp/programming-guide/statements-expressions-operators/how-to-implement-user-defined-conversions-between-structs.md)   
  [Chained user-defined explicit conversions in C#](http://go.microsoft.com/fwlink/?LinkId=112384) (C# でのユーザー定義の明示的変換の連結)
+
