@@ -1,5 +1,5 @@
 ---
-title: "C# の式 - C# 言語のツアー | Microsoft Docs"
+title: "C# の式 - C# 言語のツアー"
 description: "式、オペランド、および演算子は、C# 言語の構成要素です"
 keywords: ".NET、C#、式、演算子、オペランド"
 author: BillWagner
@@ -10,16 +10,15 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 20d5eb10-7381-47b9-ad90-f1cc895aa27e
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 4437ce5d344cf06d30e31911def6287999fc6ffc
-ms.openlocfilehash: 66eae1fcb7eca4572c49dca78bc31155464a6920
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 155804dd212d8eda8d81ce7e296a9fe308e9c69b
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/23/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 
-<a id="expressions" class="xliff"></a>
-# 式
+# <a name="expressions"></a>式
 
 *式*は、*オペランド*と*演算子*で構成されます。 式の演算子は、オペランドに適用する演算を表します。 演算子の例として、`+`、`-`、`*`、`/`、および `new` などがあります。 オペランドの例としては、リテラル、フィールド、ローカル変数、式などがあります。
 
@@ -27,8 +26,8 @@ ms.lasthandoff: 05/23/2017
 
 1 つのオペランドが同じ優先順位を持つ 2 つの演算子の間で発生した場合、演算子の*結合性*によって演算が実行される順序が決定されます。
 
-*    代入演算子を除くすべてのバイナリ演算子は、*左からの結合*、つまり演算は左から右に実行されます。 たとえば、`x + y + z` は `(x + y) + z` と評価されます。
-*    代入演算子と条件演算子 (`?:`) は*右からの結合*、つまり演算は右から左に実行されます。 たとえば、`x = y = z` は `x = (y = z)` と評価されます。
+*   代入演算子を除くすべてのバイナリ演算子は、*左からの結合*、つまり演算は左から右に実行されます。 たとえば、`x + y + z` は `(x + y) + z` と評価されます。
+*   代入演算子と条件演算子 (`?:`) は*右からの結合*、つまり演算は右から左に実行されます。 たとえば、`x = y = z` は `x = (y = z)` と評価されます。
 
 優先順位と結合性は、かっこを使用して制御することができます。 たとえば、`x + y * z` は最初に `y` と `z` を掛け、そして結果を `x` に足しますが、`(x + y) * z` では最初に `x` と `y` を足してから `z` を掛けます。
 
@@ -42,7 +41,7 @@ ms.lasthandoff: 05/23/2017
     - `x[...]`: 配列アクセスおよびインデクサー アクセス
     - `x++`: 後置インクリメント
     - `x--`: 後置デクリメント
-    - `new T(...)`:    オブジェクトおよびデリゲートの作成
+    - `new T(...)`: オブジェクトおよびデリゲートの作成
     - `new T(...){...}`: 初期化子を使用したオブジェクトの作成
     - `new {...}`:  匿名オブジェクト初期化子
     - `new T[...]`: 配列の作成
