@@ -1,5 +1,5 @@
 ---
-title: "C# のステートメント - C# 言語のツアー | Microsoft Docs"
+title: "C# のステートメント - C# 言語のツアー"
 description: "ステートメントを使用して C# プログラムの処理を作成します"
 keywords: ".NET, シーシャープ, ステートメント, 構文"
 author: BillWagner
@@ -10,16 +10,15 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 5409c379-5622-4fae-88b5-1654276ea8d4
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 4437ce5d344cf06d30e31911def6287999fc6ffc
-ms.openlocfilehash: a6389d041fd9e464a40a86c4c7a4075086d05e9b
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 99ec2489daf89926da9b8c4e148965412826a8a6
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/23/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 
-<a id="statements" class="xliff"></a>
-# ステートメント
+# <a name="statements"></a>ステートメント
 
 プログラムの処理は、"*ステートメント*" を使用して表されます。 C# はさまざまな種類のステートメントをサポートしており、その多くは埋め込みステートメントとして定義されています。
 

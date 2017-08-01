@@ -1,5 +1,5 @@
 ---
-title: "Visual Studio Code の使用を開始する - C# のガイド | Microsoft Docs"
+title: "Visual Studio Code の使用を開始する - C# のガイド"
 description: "Visual Studio Code を使用した、C# で初めての .NET Core アプリケーションを作成してデバッグする方法について説明します。"
 keywords: "C#、概要、取得、インストール、Visual Studio Code、クロス プラットフォーム"
 author: kendrahavens
@@ -10,28 +10,25 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 76c23597-4cf9-467e-8a47-0c3703ce37e7
-ms.translationtype: Human Translation
-ms.sourcegitcommit: b64eb0d8f1778a4834ecce5d2ced71e0741dbff3
-ms.openlocfilehash: 14b1696c37f40f7ffc6eb295e08ce1ceee061e45
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 2e1e9ce39b2de05478a2bf010584e2e7fd8eb02f
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/27/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 
-<a id="get-started-with-visual-studio-code" class="xliff"></a>
-# Visual Studio Code の使用を開始する
+# <a name="get-started-with-visual-studio-code"></a>Visual Studio Code の使用を開始する
 
 .NET core は、Windows、Linux および macOS で実行されるサーバー アプリケーションを作成するための、高速でモジュール型のプラットフォームを提供します。 Visual Studio Code を C# 拡張機能とともに使用して、C# IntelliSense の完全サポート (スマート コード補完) とデバッグによる強力な編集機能をご活用ください。
 
-<a id="prerequisites" class="xliff"></a>
-## 必須コンポーネント
+## <a name="prerequisites"></a>必須コンポーネント
 
 1. [Visual Studio Code](https://code.visualstudio.com/) のインストール。
 2. [.NET Core SDK](https://www.microsoft.com/net/download/core) のインストール。
 3. Visual Studio Code Marketplace からの [C# 拡張機能](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp)のインストール。
 
-<a id="hello-world" class="xliff"></a>
-## Hello World
+## <a name="hello-world"></a>Hello World
 
 .NET Core でシンプルな "Hello World" プログラムを作成してみましょう。
 
@@ -66,8 +63,7 @@ ms.lasthandoff: 05/27/2017
 
 [Windows](https://channel9.msdn.com/Blogs/dotnet/Get-started-with-VS-Code-using-CSharp-and-NET-Core)、[macOS](https://channel9.msdn.com/Blogs/dotnet/Get-started-with-VS-Code-using-CSharp-and-NET-Core-on-MacOS)、または [Linux](https://channel9.msdn.com/Blogs/dotnet/Get-started-with-VS-Code-Csharp-dotnet-Core-Ubuntu) での詳細設定については、簡単なビデオ チュートリアルを見ることができます。
 
-<a id="debug" class="xliff"></a>
-## デバッグ
+## <a name="debug"></a>デバッグ
 1. *Program.cs* をクリックして開きます。 Visual Studio Code で初めて C# ファイルを開くと、[OmniSharp](http://www.omnisharp.net/) がエディタに読み込まれます。
 
   ![Program.cs ファイルを開く](media/with-visual-studio-code/opencs.png)
@@ -98,8 +94,7 @@ ms.lasthandoff: 05/27/2017
 > [!TIP] 
 > Visual Studio Code で OmniSharp を使用した .NET Core のデバッグの詳細とトラブルシューティングのヒントについては、「[Instructions for setting up the .NET Core debugger](https://github.com/OmniSharp/omnisharp-vscode/blob/master/debugger.md)」 (.NET Core デバッガーの設定に関する指示) を参照してください。
 
-<a id="see-also" class="xliff"></a>
-## 関連項目
+## <a name="see-also"></a>関連項目
 [Visual Studio Code の設定](https://code.visualstudio.com/docs/setup/setup-overview)   
 [Visual Studio Code でのデバッグ](https://code.visualstudio.com/Docs/editor/debugging)
 

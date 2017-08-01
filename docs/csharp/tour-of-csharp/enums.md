@@ -1,5 +1,5 @@
 ---
-title: "C# の列挙型 - C# 言語のツアー | Microsoft Docs"
+title: "C# の列挙型 - C# 言語のツアー"
 description: "C# における列挙型、離散した名前付き定数について"
 keywords: .NET, csharp
 author: BillWagner
@@ -10,16 +10,15 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 7faba1cc-6ea9-4a19-adb9-0335e4b132e5
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 4437ce5d344cf06d30e31911def6287999fc6ffc
-ms.openlocfilehash: b317f399fcbb5c1e91976defba3532bf5533b539
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 77d315dd87d9cab32605de415674d146eb9115fa
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/23/2017
+ms.lasthandoff: 07/28/2017
 
 ---
     
-<a id="enums" class="xliff"></a>
-# 列挙型
+# <a name="enums"></a>列挙型
 
 ***列挙型***は、一連の名前付き定数を使用する固有の値の型です。 一連の離散値が使用される型を定義する必要がある場合に、列挙型を定義します。 列挙型は、整数値の型のいずれかを基になる記憶域として使用します。 列挙型により、離散値にセマンティックな意味が付与されます。
 
