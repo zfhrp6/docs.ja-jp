@@ -1,5 +1,5 @@
 ---
-title: "C# プログラムの構造 - C# 言語のツアー | Microsoft Docs"
+title: "C# プログラムの構造 - C# 言語のツアー"
 description: "C# プログラムの基本的な構造について説明します"
 keywords: .NET .NET Core
 author: BillWagner
@@ -10,16 +10,15 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 984f0314-507f-47a0-af56-9011243f5e65
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 4437ce5d344cf06d30e31911def6287999fc6ffc
-ms.openlocfilehash: 3642b6525691d6179eca66f11d5002377323cdf3
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 8d8f443f8458cd392c75e9787e612ca1cc3518c7
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/23/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 
-<a id="program-structure" class="xliff"></a>
-# プログラムの構造
+# <a name="program-structure"></a>プログラムの構造
 
 C# における主要な組織的概念は、***プログラム***、***名前空間***、***型***、***メンバー***、および***アセンブリ***です。 C# プログラムは、1 つまたは複数のソース ファイルで構成されています。 プログラムは型を宣言します。型にはメンバーが含まれていて、複数の名前空間に編成することができます。 型の例には、クラスおよびインターフェイスがあります。 メンバーの例には、フィールド、メソッド、プロパティ、およびイベントがあります。 C# プログラムはコンパイルされると、物理的にアセンブリにパッケージ化されます。 アセンブリには通常、***アプリケーション***または***ライブラリ***のどちらかを実行するかに応じて、それぞれ `.exe` または `.dll` のファイル拡張子があります。
 

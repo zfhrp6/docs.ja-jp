@@ -1,5 +1,5 @@
 ---
-title: "属性 - C# | Microsoft Docs"
+title: "属性 - C#"
 description: "C# での属性の機能について説明します。"
 keywords: ".NET, .NET Core, C#, 属性"
 author: mgroves
@@ -10,16 +10,15 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: b152cf36-76e4-43a5-b805-1a1952e53b79
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 4437ce5d344cf06d30e31911def6287999fc6ffc
-ms.openlocfilehash: 512a222a727e3e6a032848b87463dda0ae8f7362
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: cc8f38d96f7f1c41f04d64c2acc2f53805b6b012
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/23/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 
-<a id="using-attributes-in-c" class="xliff"></a>
-# C# での属性の使用 #
+# <a name="using-attributes-in-c"></a>C# での属性の使用 #
 
 属性は、情報をコードに宣言的に関連付けるための手段を提供します。 また、さまざまなターゲットに適用できる再利用可能な要素も提供します。
 
@@ -27,13 +26,11 @@ ms.lasthandoff: 05/23/2017
 
 このチュートリアルでは、コードに属性を追加する方法、独自の属性を作成して使用する方法、.NET Core に組み込まれているいくつかの属性を使用する方法について説明します。
 
-<a id="prerequisites" class="xliff"></a>
-## 必須コンポーネント
+## <a name="prerequisites"></a>必須コンポーネント
 お使いのコンピューターを、.NET Core が実行されるように設定する必要があります。 インストールの手順については、[.NET Core](https://www.microsoft.com/net/core) のページを参照してください。
 このアプリケーションは、Windows、Ubuntu Linux、macOS または Docker コンテナーで実行できます。 お好みのコード エディターをインストールしてください。 次の説明では、オープン ソースのクロス プラットフォーム エディターである [Visual Studio Code](https://code.visualstudio.com/) を使用しています。 しかし、他の使い慣れたツールを使用しても構いません。
 
-<a id="create-the-application" class="xliff"></a>
-## アプリケーションを作成する
+## <a name="create-the-application"></a>アプリケーションを作成する
 
 すべてのツールをインストールしたら、新しい .NET Core アプリケーションを作成します。 コマンド ライン ジェネレーターを使用するには、お使いのシェルで次のコマンドを実行します。
 
@@ -43,8 +40,7 @@ ms.lasthandoff: 05/23/2017
 
 プログラムを実行するには `dotnet run` を使用します。 コンソールに "Hello, World" という出力が表示されます。
 
-<a id="how-to-add-attributes-to-code" class="xliff"></a>
-## コードに属性を追加する方法
+## <a name="how-to-add-attributes-to-code"></a>コードに属性を追加する方法
 
 C# では、属性は `Attribute` 基底クラスを継承するクラスです。 `Attribute` クラスから継承したクラスは、コードの他の部分で一種の "タグ" として使用できます。
 たとえば `ObsoleteAttribute` という名前の属性があります。 これは、そのコードが古いので現在は使用できないことを警告するために使用されます。 この属性を、角かっこを使用して、たとえばクラスに適用することができます。
@@ -63,8 +59,7 @@ C# では、属性は `Attribute` 基底クラスを継承するクラスです�
 属性コンストラクターに渡すパラメーターは、単純な型/リテラル (`bool, int, double, string, Type, enums, etc`) とそれらの配列のみに限られます。
 式または変数は使用できません。 位置指定パラメーターや名前付きパラメーターは自由に使用できます。
 
-<a id="how-to-create-your-own-attribute" class="xliff"></a>
-## 独自の属性を作成する方法
+## <a name="how-to-create-your-own-attribute"></a>独自の属性を作成する方法
 
 属性の作成は、`Attribute` 基底クラスからの継承と同じくらいに簡単です。
 
@@ -86,8 +81,7 @@ C# では、属性は `Attribute` 基底クラスを継承するクラスです�
 
 上のコードでは、次のようなエラーが発生します。`Attribute constructor parameter 'myClass' has type 'Foo', which is not a valid attribute parameter type`
 
-<a id="how-to-restrict-attribute-usage" class="xliff"></a>
-## 属性の用途を制限する方法
+## <a name="how-to-restrict-attribute-usage"></a>属性の用途を制限する方法
 
 属性はさまざまな "ターゲット" に対して使用できます。 上の例ではクラスに使用しましたが、次のターゲットに対しても使用できます。
 
@@ -115,8 +109,7 @@ C# の既定では、属性クラスを作成した場合、その属性は可�
 
 [!code-csharp[独自の属性の使用](../../../samples/snippets/csharp/tutorials/attributes/Program.cs#AttributeUsageExample2)]
 
-<a id="how-to-use-attributes-attached-to-a-code-element" class="xliff"></a>
-## コード要素にアタッチされた属性を使用する方法
+## <a name="how-to-use-attributes-attached-to-a-code-element"></a>コード要素にアタッチされた属性を使用する方法
 
 属性はメタデータとして機能します。 外からの力が働かないかぎり、実際には何の処理も実行しません。
 
@@ -140,8 +133,7 @@ C# の既定では、属性クラスを作成した場合、その属性は可�
 `Attribute` オブジェクトは限定的にインスタンス化されることに注意してください。 つまり、`GetCustomAttribute` または `GetCustomAttributes` を使用するまでインスタンス化されません。
 また、インスタンス化は使用のたびに行われます。 行内で `GetCustomAttributes` を 2 回呼び出すと、`ObsoleteAttribute` の異なる 2 つのインスタンスが返されます。
 
-<a id="common-attributes-in-the-base-class-library-bcl" class="xliff"></a>
-## 基本クラス ライブラリ (BCL) のよく使用される属性
+## <a name="common-attributes-in-the-base-class-library-bcl"></a>基本クラス ライブラリ (BCL) のよく使用される属性
 
 属性は、さまざまなツールやフレームワークで使用されます。 NUnit は、`[Test]` や `[TestFixture]` などの属性を NUnit テスト ランナーで使用します。 ASP.NET MVC は、`[Authorize]` などの属性を使用して、MVC アクションに対する横断的な処理を実行するためのアクション フィルター フレームワークを提供します。 [PostSharp](https://www.postsharp.net) は、属性構文を使用して C# でアスペクト指向プログラミングを行えるようにします。
 
@@ -158,8 +150,7 @@ C# の既定では、属性クラスを作成した場合、その属性は可�
 
 上のコードでは、リテラルの `"Name"` 文字列を使用する必要はありません。 これは入力ミス関連のバグを防ぎ、リファクタリングや名前変更をスムーズにするのに役立ちます。
 
-<a id="summary" class="xliff"></a>
-## まとめ
+## <a name="summary"></a>まとめ
 
 属性は、C# に宣言的な機能を提供します。 ただし、コードのメタデータの一種であり、それ自体では処理を実行しません。
 

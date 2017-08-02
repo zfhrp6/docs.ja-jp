@@ -1,5 +1,5 @@
 ---
-title: "Docker でホストされているマイクロサービス - C# | Microsoft Docs"
+title: "Docker でホストされているマイクロサービス - C"
 description: "Docker コンテナーで実行される ASP.NET Core サービスを作成する方法を学ぶ"
 keywords: ".NET, .NET Core, Docker, C#, ASP.NET, マイクロサービス"
 author: BillWagner
@@ -10,19 +10,17 @@ ms.prod: .net-core
 ms.technology: dotnet-docker
 ms.devlang: csharp
 ms.assetid: 87e93838-a363-4813-b859-7356023d98ed
-ms.translationtype: Human Translation
-ms.sourcegitcommit: b64eb0d8f1778a4834ecce5d2ced71e0741dbff3
-ms.openlocfilehash: 40d81a161e6be06a32fb559b70a4e7eeca41e4da
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 5585db33fb5020ed18c26f32ce0b63f97353d20f
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/27/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 
-<a id="microservices-hosted-in-docker" class="xliff"></a>
-# Docker でホストされているマイクロサービス
+# <a name="microservices-hosted-in-docker"></a>Docker でホストされているマイクロサービス
 
-<a id="introduction" class="xliff"></a>
-## はじめに
+## <a name="introduction"></a>はじめに
 
 このチュートリアルでは、Docker コンテナーにおける ASP.NET Core マイクロサービスの構築および展開に必要な作業について説明します。 このチュートリアルを通して、以下のことを学びます。
 
@@ -40,16 +38,14 @@ ms.lasthandoff: 05/27/2017
 
 このトピックの[サンプル アプリを表示またはダウンロード](https://github.com/dotnet/docs/tree/master/samples/csharp/getting-started/WeatherMicroservice)できます。 ダウンロード方法については、「[サンプルおよびチュートリアル](../../samples-and-tutorials/index.md#viewing-and-downloading-samples)」を参照してください。
 
-<a id="why-docker" class="xliff"></a>
-### Docker を使用する理由
+### <a name="why-docker"></a>Docker を使用する理由
 
 Docker を使うと、簡単に標準的なコンピューター イメージを作成し、データ センターやパブリック クラウドでサービスをホストすることができます。 Docker ではイメージを構成することができ、必要に応じてイメージを複製してアプリケーションのインストール サイズを拡大縮小することができます。
 
 このチュートリアルに含まれるコードはすべて、どんな .NET Core 環境でも動作します。
 Docker インストールの追加タスクは、ASP.NET Core アプリケーションで機能します。 
 
-<a id="prerequisites" class="xliff"></a>
-## 必須コンポーネント
+## <a name="prerequisites"></a>必須コンポーネント
 お使いのコンピューターを、.NET Core が実行されるように設定する必要があります。 インストールの手順については、[.NET Core](https://www.microsoft.com/net/core) のページを参照してください。
 このアプリケーションは、Windows、Ubuntu Linux、macOS または Docker コンテナーで実行できます。 お好みのコード エディターをインストールしてください。 次の説明では、オープン ソースのクロス プラットフォーム エディターである [Visual Studio Code](https://code.visualstudio.com/) を使用しています。 しかし、他の使い慣れたツールを使用しても構いません。
 
@@ -66,8 +62,7 @@ Docker は、多くの Linux ディストリビューション、macOS、また�
 
 `npm install -g generator-aspnet`
 
-<a id="create-the-application" class="xliff"></a>
-## アプリケーションを作成する
+## <a name="create-the-application"></a>アプリケーションを作成する
 
 すべてのツールをインストールしたら、新しい ASP.NET Core アプリケーションを作成します。 コマンド ライン ジェネレーターを使用するには、お使いのシェルで、次の Yeoman コマンドを実行します。
 
@@ -108,8 +103,7 @@ dotnet run
 
 既定の構成では http://localhost:5000 がリッスンされます。 ブラウザーを開いてそのページに移動すると、"Hello World!" という メッセージが表示されます。
 
-<a id="anatomy-of-an-aspnet-core-application" class="xliff"></a>
-### ASP.NET Core アプリケーションの構造
+### <a name="anatomy-of-an-aspnet-core-application"></a>ASP.NET Core アプリケーションの構造
 
 アプリケーションがビルドされたので、この機能が実装される仕組みを見てみましょう。 生成されたファイルのうち、この時点で特に重要なのは、project.json と Startup.cs の 2 つです。 
 
@@ -122,8 +116,7 @@ Project.json には、プロジェクトに関する情報が格納されてい�
 
 これら 2 つのメソッドは ASP.NET Core インフラストラクチャによって呼び出され、アプリケーションを構成および実行します。 `ConfigureServices` メソッドではこのアプリケーションに必要なサービスが記述されます。 簡潔なマイクロサービスを作成するので、依存関係が構成される必要はありません。 `Configure` メソッドでは受信 HTTP 要求のハンドラ―が構成されます。 このテンプレートでは、あらゆる要求に 'Hello World!' というテキストで応答する単純なハンドラーが生成されます。
 
-<a id="build-a-microservice" class="xliff"></a>
-## マイクロサービスの構築
+## <a name="build-a-microservice"></a>マイクロサービスの構築
 
 これから構築するサービスは、世界中のあらゆる場所から天気予報を提供するものです。 実際に稼働するアプリケーションでは、通常なんらかのサービスを呼び出して気象データを取得します。 このサンプルでは、ランダムな天気予報を生成します。 
 
@@ -137,8 +130,7 @@ Project.json には、プロジェクトに関する情報が格納されてい�
 
 以降のセクションで、これらの手順をそれぞれ順を追って説明します。
 
-<a id="parsing-the-query-string" class="xliff"></a>
-### クエリ文字列の解析
+### <a name="parsing-the-query-string"></a>クエリ文字列の解析
 
 クエリ文字列の解析から始めます。 サービスは、次の形式で、クエリ文字列の 'lat' 引数および 'long' 引数を受け取ります。
 
@@ -178,8 +170,7 @@ bool TryParse(string s, out double result);
 
 この時点で、Web アプリケーションを実行して、解析コードが機能しているかどうかを確認することができます。 ブラウザーで Web 要求に値を追加すると、更新された結果が表示されます。
 
-<a id="build-a-random-weather-forecast" class="xliff"></a>
-### ランダムな天気予報の構築
+### <a name="build-a-random-weather-forecast"></a>ランダムな天気予報の構築
 
 次のタスクは、ランダムな天気予報の構築です。 天気予報に使用する値を格納するデータ コンテナーから始めましょう。
 
@@ -211,8 +202,7 @@ public class WeatherReport
 
 [!code-csharp[GenerateRandomReport](../../../samples/csharp/getting-started/WeatherMicroservice/Startup.cs#GenerateRandomReport "ランダムな天気予報の生成")]
 
-<a id="build-the-json-response" class="xliff"></a>
-### JSON 応答の構築
+### <a name="build-the-json-response"></a>JSON 応答の構築
 
 サーバー上の最後のコード作業は、WeatherReport 配列を JSON パケットに変換し、それをクライアントに送信して返すことです。 まず JSON パケットを作成しましょう。 NewtonSoft JSON シリアライザーを、依存関係の一覧に追加します。 これは `dotnet` CLI を使用して実行できます。
 
@@ -228,8 +218,7 @@ dotnet add package Newtonsoft.Json
 
 これで、アプリケーションが実行され、ランダムな予報が返されます。
 
-<a id="build-a-docker-image" class="xliff"></a>
-## Docker イメージの構築
+## <a name="build-a-docker-image"></a>Docker イメージの構築
 
 最後のタスクは、Docker でのアプリケーションの実行です。 アプリケーションを表す Docker イメージを実行する Docker コンテナーを作成します。
 
@@ -279,8 +268,7 @@ ENTRYPOINT ["dotnet", "out/WeatherMicroservice.dll", "--server.urls", "http://0.
 
 この構成されたポートは、Dockerfile の最終行の `dotnet` への `--server.urls` 引数で参照されます。 `ENTRYPOINT` コマンドは、どのコマンドとコマンド ラインのオプションによってサービスが開始されるかを、Docker に通知します。 
 
-<a id="building-and-running-the-image-in-a-container" class="xliff"></a>
-## コンテナー内でのイメージの構築および実行
+## <a name="building-and-running-the-image-in-a-container"></a>コンテナー内でのイメージの構築および実行
 
 イメージを構築して Docker コンテナー内でサービスを実行しましょう。 ローカル ディレクトリにあるすべてのファイルをイメージにコピーする必要はありません。 代わりに、コンテナーでアプリケーションをビルドします。 `.dockerignore` ファイルを作成して、イメージにコピーしないディレクトリを指定します。 ビルド資産はいっさいコピーしません。 `.dockerignore` ファイルに、ビルド ディレクトリおよび発行のディレクトリを指定します。
 
@@ -320,8 +308,7 @@ docker ps
 http://localhost/?lat=35.5&long=40.75
 ```
 
-<a id="attaching-to-a-running-container" class="xliff"></a>
-## 実行中のコンテナーへのアタッチ
+## <a name="attaching-to-a-running-container"></a>実行中のコンテナーへのアタッチ
 
 コマンド ウィンドウでサービスを実行したとき、要求ごとに診断情報が表示されました。 この情報は、コンテナーがデタッチ モードで実行されているときは表示されません。 Docker の attach コマンドを使用すると、実行中のコンテナーにアタッチして、ログ情報が表示されるようにできます。  コマンド ウィンドウから次のコマンドを実行します。
 
@@ -356,8 +343,7 @@ docker rm hello-docker
 docker rmi weather-microservice
 ```
 
-<a id="conclusion" class="xliff"></a>
-## まとめ 
+## <a name="conclusion"></a>まとめ 
 
 このチュートリアルでは、ASP.NET Core マイクロサービスを構築し、単純な機能をいくつか追加しました。
 

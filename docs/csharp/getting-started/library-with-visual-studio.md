@@ -1,5 +1,5 @@
 ---
-title: "Visual Studio 2017 の C# および .NET Core を使用したクラス ライブラリの構築 | Microsoft Docs"
+title: "Visual Studio 2017 の C# および .NET Core を使用したクラス ライブラリの構築"
 description: "Visual Studio 2017 を使用してC# で記述されたクラス ライブラリを構築する方法について"
 keywords: ".NET Core、.NET Standard クラス ライブラリ、Visual Studio 2017"
 author: BillWagner
@@ -10,26 +10,24 @@ ms.prod: .net-core
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: c849ca26-6a25-4d35-9544-f343af88e0e7
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 9cd469dfd4f38605f1455c008388ad04c366e484
-ms.openlocfilehash: c29c4d2d1332fbf9e9e162e671200384a930aff1
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 709b05dc9baeae1e99481a37287b91730b395f63
 ms.contentlocale: ja-jp
-ms.lasthandoff: 06/20/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 
-<a id="building-a-class-library-with-c-and-net-core-in-visual-studio-2017" class="xliff"></a>
-# Visual Studio 2017 の C# および .NET Core を使用したクラス ライブラリの構築
+# <a name="building-a-class-library-with-c-and-net-core-in-visual-studio-2017"></a>Visual Studio 2017 の C# および .NET Core を使用したクラス ライブラリの構築
 
-"*クラス ライブラリ*" は、アプリケーションから呼び出される型とメソッドを定義します。 .NET Core を使用して開発されたクラス ライブラリは .NET Standard Library をサポートしており、お使いのライブラリを、そのバージョンの .NET Standard Library をサポートする任意の .NET プラットフォームによって呼び出すことができます。 クラス ライブラリを完了させたら、サードパーティ製のコンポーネントとして配布するかどうか、あるいは 1 つまたは複数のアプリケーションにバンドルされたコンポーネントとして含めるかどうかを決定できます。
+"*クラス ライブラリ*" は、アプリケーションから呼び出される型とメソッドを定義します。 .NET Core を使用して開発されたクラス ライブラリは .NET Standard をサポートしており、お使いのライブラリを、そのバージョンの .NET Standard をサポートする任意の .NET プラットフォームによって呼び出すことができます。 クラス ライブラリを完了させたら、サードパーティ製のコンポーネントとして配布するかどうか、あるいは 1 つまたは複数のアプリケーションにバンドルされたコンポーネントとして含めるかどうかを決定できます。
 
 > [!NOTE]
 > .NET Standard のバージョンとサポート対象のプラットフォームの一覧は、[「.NET Standard」](../../standard/net-standard.md)を参照してください。
 
 このトピックでは、1 つの文字列処理メソッドを含む簡単なユーティリティ ライブラリを作成します。 それを[拡張メソッド](../../csharp/programming-guide/classes-and-structs/extension-methods.md)として実装し、@System.String クラスのメンバーと同じように呼び出すことができるようにします。
 
-<a id="creating-a-class-library-solution" class="xliff"></a>
-## クラス ライブラリのソリューションを作成する
+## <a name="creating-a-class-library-solution"></a>クラス ライブラリのソリューションを作成する
 
 最初に、クラス ライブラリ プロジェクトとその関連プロジェクトのソリューションを作成します。 1 つの Visual Studio のソリューションは、1 つまたは複数のプロジェクトのコンテナーとして機能します。 このソリューションは次のように作成します。
 
@@ -39,8 +37,7 @@ ms.lasthandoff: 06/20/2017
 
    ![[新しいプロジェクト] ダイアログ](./media/library-with-visual-studio/newproject.png)
 
-<a id="creating-the-class-library-project" class="xliff"></a>
-## クラス ライブラリ プロジェクトの作成
+## <a name="creating-the-class-library-project"></a>クラス ライブラリ プロジェクトの作成
 
 クラス ライブラリ プロジェクトを作成します。
 
@@ -62,8 +59,7 @@ ms.lasthandoff: 06/20/2017
 
    ![ビルドが成功したことを示す出力ペイン](./media/library-with-visual-studio/buildsucceeds.png)
 
-<a id="next-step" class="xliff"></a>
-## 次のステップ
+## <a name="next-step"></a>次のステップ
 
 ライブラリを正常に作成できました。 そのメソッドの呼び出しをまだ行っていないので、期待どおりに動作するかわかりません。 ライブラリ開発の次のステップでは、[C# 単体テスト プロジェクト](testing-library-with-visual-studio.md)を使ってライブラリをテストします。
 
