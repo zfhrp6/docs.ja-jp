@@ -18,7 +18,7 @@ ms.author: "wiwagn"
 caps.handback.revision: 12
 ---
 # #undef (C# リファレンス)
-`#undef` を使用すると、シンボルを未定義状態にできます。たとえば、未定義状態のシンボルを [\#iff](../../../csharp/language-reference/preprocessor-directives/preprocessor-if.md) ディレクティブで式として使用すると、その式は `false` と評価されます。  
+`#undef` を使用すると、シンボルを未定義状態にできます。たとえば、未定義状態のシンボルを [\#if](../../../csharp/language-reference/preprocessor-directives/preprocessor-if.md) ディレクティブで式として使用すると、その式は `false` と評価されます。  
   
  シンボルは、[\#define](../../../csharp/language-reference/preprocessor-directives/preprocessor-define.md) ディレクティブまたは [\/define](../../../csharp/language-reference/compiler-options/define-compiler-option.md) コンパイラ オプションで定義できます。  `#undef` ディレクティブをファイルに記述する場合は、ディレクティブやそれ以外のステートメントよりも前に記述する必要があります。  
   
