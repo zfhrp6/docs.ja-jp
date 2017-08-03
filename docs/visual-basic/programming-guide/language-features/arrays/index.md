@@ -1,5 +1,5 @@
 ---
-title: "Visual Basic における配列 | Microsoft Docs"
+title: "Visual Basic における配列"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -34,11 +34,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-ms.translationtype: Human Translation
-ms.sourcegitcommit: e0a5ab6a7b3ee752af6b58a35a11e4fc0fb2b08a
-ms.openlocfilehash: cc7f5e28831cfe6ec12526d7dac5b12c208fb05a
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 8ebad59a07d07d61ea77e41e4044b3febc0ef250
 ms.contentlocale: ja-jp
-ms.lasthandoff: 07/03/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="arrays-in-visual-basic"></a>Visual Basic における配列
@@ -224,9 +224,9 @@ Dim sales()() As Double = New Double(11)() {}
   
  次のような場合に、長さ 0 の配列を作成する必要があります。  
   
--   <xref:System.NullReferenceException> 例外を発生させずにコードで <xref:System.Array> クラスのメンバー (<xref:System.Array.Length%2A>、<xref:System.Array.Rank%2A> など) にアクセスしたり [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] 関数 (<xref:Microsoft.VisualBasic.Information.UBound%2A> など) を呼び出したりする必要がある場合。  
+-   <xref:System.NullReferenceException> 例外を発生させずにコードで <xref:System.Array> クラスのメンバー ( <xref:System.Array.Length%2A> 、 <xref:System.Array.Rank%2A>など) にアクセスしたり [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] 関数 ( <xref:Microsoft.VisualBasic.Information.UBound%2A>など) を呼び出したりする必要がある場合。  
   
--   特別なケースですが、`Nothing` をチェックする必要性をなくすことによって利用側のコードを簡素化する場合。  
+-   特別なケースとして、 `Nothing` をチェックする必要性をなくすことによって利用側のコードを簡素化する場合。  
   
 -   コードで、長さ 0 の配列を 1 つ以上のプロシージャに渡す必要があるアプリケーション プログラミング インターフェイス (API: Application Programming Interface) とやり取りする場合、または API の 1 つ以上のプロシージャから長さ 0 の配列が返される場合。  
   
@@ -235,22 +235,22 @@ Dim sales()() As Double = New Double(11)() {}
   
  次の例では 3 次元配列を宣言しています。  
   
-```  
+```vb
 Dim prices(3, 4, 5) As Long  
 ```  
   
  変数 `prices` の配列の全体のサイズは、(3 + 1) x (4 + 1) x (5 + 1) = 120 です。  
   
- 配列のサイズは、<xref:System.Array.Length%2A> プロパティを使用して確認できます。 多次元配列の各次元の長さは、<xref:System.Array.GetLength%2A> メソッドを使用して確認できます。  
+ 配列のサイズは、<xref:System.Array.Length%2A> プロパティを使用して確認できます。 多次元配列の各次元の長さは、 <xref:System.Array.GetLength%2A> メソッドを使用して確認できます。  
   
- 配列変数のサイズを変更するには、新しい配列オブジェクトを割り当てるか、`ReDim` ステートメントを使用します。  
+ 配列変数のサイズを変更するには、新しい配列オブジェクトを割り当てるか、 `ReDim` ステートメントを使用します。  
   
  配列のサイズを扱う際に考慮する必要がある点がいくつかあります。  
   
 |||  
 |---|---|  
 |次元の長さ|各次元のインデックスは 0 ベースであり、範囲は 0 から上限です。 したがって、次元の長さは、その次元に対する宣言された上限よりも 1 だけ大きくなります。|  
-|長さの制限|配列のすべての次元の長さは、`Integer` データ型の最大値に制限されます。最大値は (2 ^ 31) - 1 です。 しかし、配列のサイズの総数も、システムで利用できるメモリによって制限されます。 利用できる RAM の容量を超える配列を初期化する場合、共通言語ランタイムは <xref:System.OutOfMemoryException> 例外をスローします。|  
+|長さの制限|配列のすべての次元の長さは、`Integer` データ型の最大値に制限されます。最大値は (2 ^ 31) - 1 です。 しかし、配列のサイズの総数も、システムで利用できるメモリによって制限されます。 利用できる RAM の容量を超える配列を初期化しようとすると、共通言語ランタイムは <xref:System.OutOfMemoryException> 例外をスローします。|  
 |サイズおよび要素のサイズ|配列のサイズは、その要素のデータ型には依存しません。 サイズは常に、使用するストレージのバイト数ではなく、要素の合計数を表します。|  
 |メモリの使用量|配列がどのようにメモリに格納されるかに関して、前提を置くことは安全ではありません。 ストレージは、プラットフォームのデータ幅が異なると変わります。したがって、同じ配列でも、32 ビットのシステムよりも 64 ビットのシステムの方が多くのメモリを使用します。 配列を初期化すると、システム構成に応じて、要素をできるだけ近くに集めるように、またはすべてがハードウェア自体の境界に合致するように、共通言語ランタイム (CLR: Common Language Runtime) によってストレージが割り当てられます。 また、配列は制御情報のためにストレージのオーバーヘッドを必要とします。このオーバーヘッドは、次元が追加されるごとに増加します。|  
   
@@ -265,7 +265,7 @@ Dim prices(3, 4, 5) As Long
   
 -   変数を <xref:Microsoft.VisualBasic.Information.TypeName%2A> 関数に渡して、実行時型の名前が含まれる `String` を取得できます。  
   
--   変数を <xref:Microsoft.VisualBasic.Information.VarType%2A> 関数に渡して、変数の型の分類を表す `VariantType`値を受け取ることができます。  
+-   変数を <xref:Microsoft.VisualBasic.Information.VarType%2A> 関数に渡して、変数の型の分類を表す `VariantType` 値を受け取ることができます。  
   
  `TypeName` 関数を呼び出して配列の型と配列の要素の型を確認する例を次に示します。 配列の型は `Integer(,)` で、配列の要素の型は `Integer`です。  
   
@@ -278,7 +278,7 @@ Dim prices(3, 4, 5) As Long
   
  コレクションによっては、コレクションに含まれるオブジェクトのキーを割り当てると、そのキーを使用してオブジェクトを迅速に取り出すことができます。  
   
- 含まれる要素が 1 つのデータ型だけのコレクションの場合は、<xref:System.Collections.Generic?displayProperty=fullName> 名前空間のクラスのいずれかを使用できます。 ジェネリック コレクションでは、タイプ セーフが強制されるため、他のデータ型を追加することはできません。 ジェネリック コレクションから要素を取得する場合は、データ型を判断したり、変換したりする必要はありません。  
+ 含まれる要素が 1 つのデータ型だけのコレクションの場合は、 <xref:System.Collections.Generic?displayProperty=fullName> 名前空間のクラスのいずれかを使用できます。 ジェネリック コレクションでは、タイプ セーフが強制されるため、他のデータ型を追加することはできません。 ジェネリック コレクションから要素を取得する場合は、データ型を判断したり、変換したりする必要はありません。  
   
  コレクションの詳細については、「[コレクション](http://msdn.microsoft.com/library/e76533a9-5033-4a0b-b003-9c2be60d185b)」を参照してください。  
   

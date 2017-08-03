@@ -1,6 +1,6 @@
 ---
-title: "Docker と .NET Core | Microsoft Docs"
-description: "Docker と .NET Core"
+title: "Docker と .NET Core"
+description: "以下の楽しいチュートリアルを使用して、.NET Core と共に Docker を使用する方法を学習します。"
 keywords: Docker, .NET, .NET Core
 author: spboyer
 ms.author: shboyer
@@ -10,11 +10,11 @@ ms.prod: .net-core
 ms.technology: dotnet-docker
 ms.devlang: dotnet
 ms.assetid: cae32148-aef4-4e64-a7f0-88072bad4400
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 4437ce5d344cf06d30e31911def6287999fc6ffc
-ms.openlocfilehash: 70e854fbeb9d9da64815e2a67f7a0fe36695a17a
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 0e74a939cbab13705e8a1bd8fe86e292dc97b9ae
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/23/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 
@@ -25,5 +25,5 @@ ms.lasthandoff: 05/23/2017
 - [.NET Core アプリケーションの Docker イメージのビルド](building-net-docker-images.md)
 - [Visual Studio Tools for Docker](visual-studio-tools-for-docker.md)
 
-ASP.NET Core Web アプリケーションの開発に関するチュートリアルについては、[ASP.NET Core のドキュメント](https://docs.microsoft.com/aspnet/core/)を参照してください。
+ASP.NET Core Web アプリケーションの開発に関するチュートリアルについては、[ASP.NET Core のドキュメント](/aspnet/core/)を参照してください。
 

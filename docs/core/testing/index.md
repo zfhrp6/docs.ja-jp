@@ -1,6 +1,6 @@
 ---
-title: ".NET Core での単体テスト | Microsoft Docs"
-description: ".NET Core での単体テスト"
+title: ".NET Core での単体テスト"
+description: "単体テストがさらに容易になりました。 .NET Core プロジェクトでの単体テストの使用方法を参照してください。"
 keywords: .NET, .NET Core
 author: ardalis
 ms.author: wiwagn
@@ -9,11 +9,11 @@ ms.topic: article
 ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: 815ac74c-4bd9-4a94-a87c-78288b27c0e2
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 4437ce5d344cf06d30e31911def6287999fc6ffc
-ms.openlocfilehash: 4983af5386efc6b713f10f200687535b7dc36a11
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 22647a9ad7723bbfcf0d54530b3c0538198e7c35
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/23/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 
@@ -28,12 +28,12 @@ ms.lasthandoff: 05/23/2017
 > [!NOTE]
 > 多くの場合、開発者はテストのクラスやメソッドに適した名前を考え出すのに苦心します。 開始点として、ASP.NET 製品チームは[これらの規則](https://github.com/aspnet/Home/wiki/Engineering-guidelines#unit-tests-and-functional-tests)に従います。
 
-単体テストを記述するときは、インフラストラクチャに対する依存関係を誤って導入しないように注意してください。 これらを導入すると、テストが低速で不安定になるので、統合テスト用に残しておく必要があります。 アプリケーション コードでこれらの非表示の依存関係を回避するには、[明示的な依存関係の原則](http://deviq.com/explicit-dependencies-principle/)に従い、[依存関係の挿入](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/dependency-injection)を使用して、フレームワークに依存関係を要求します。 また、統合テストとは別個のプロジェクト内に単体テストを保持し、単体テスト プロジェクトがインフラストラクチャ パッケージへの参照または依存関係を確実に含まないようにできます。
+単体テストを記述するときは、インフラストラクチャに対する依存関係を誤って導入しないように注意してください。 これらを導入すると、テストが低速で不安定になるので、統合テスト用に残しておく必要があります。 アプリケーション コードでこれらの非表示の依存関係を回避するには、[明示的な依存関係の原則](http://deviq.com/explicit-dependencies-principle/)に従い、[依存関係の挿入](/aspnet/core/fundamentals/dependency-injection)を使用して、フレームワークに依存関係を要求します。 また、統合テストとは別個のプロジェクト内に単体テストを保持し、単体テスト プロジェクトがインフラストラクチャ パッケージへの参照または依存関係を確実に含まないようにできます。
 
 .NET Core プロジェクトでの単体テストの詳細については、次を参照してください。
 
-* この [xUnit と .NET CLI による単体テストの作成チュートリアル](unit-testing-with-dotnet-test.md)を試してみてください。 
+* この [xUnit と .NET Core CLI による単体テストの作成チュートリアル](unit-testing-with-dotnet-test.md)を試してください。 
 * XUnit チームは、書き込みが [.NET Core および Visual Studio で xUnit を使用する方法](http://xunit.github.io/docs/getting-started-dotnet-core.html)を示すチュートリアルを作成しました。
-* MSTest を使用する場合は、[MSTest と .NET CLI を使用して単体テストを作成する方法のチュートリアル](unit-testing-with-mstest.md)を試してください。
+* MSTest を使用する場合は、[MSTest と .NET Core CLI を使用して単体テストを作成する方法のチュートリアル](unit-testing-with-mstest.md)を試してください。
 * 選択的単体テストのフィルター処理の使用方法に関する詳細と例については、「[Running selective unit tests (選択的単体テストの実行)](../testing/selective-unit-tests.md)」をご覧ください。
 

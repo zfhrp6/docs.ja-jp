@@ -1,6 +1,6 @@
 ---
-title: .NET Core | Microsoft Docs
-description: .NET Core
+title: .NET Core
+description: ".NET Core は、Windows、Linux、および Mac アプリを作成するためのモジュール型の高性能な .NET 実装です。 ここでは、.NET Core の概要について説明します。"
 keywords: .NET, .NET Core
 author: richlander
 ms.author: mairaw
@@ -9,17 +9,15 @@ ms.topic: article
 ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: f2b312cb-f80c-4b0d-9101-93908f06a6fa
-ms.translationtype: Human Translation
-ms.sourcegitcommit: dc5c9cdad9c0180eff30886ac923cf6beaff4e0c
-ms.openlocfilehash: 168ebcd1ad5bff5802c188ebfd06c08f4bdd13b1
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 0e002411d9856bc5f98566ed1bd9d8122e884d5d
 ms.contentlocale: ja-jp
-ms.lasthandoff: 06/29/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 
-<a id="net-core" class="xliff"></a>
-
-# .NET Core
+# <a name="net-core"></a>.NET Core
 
 > 「[Getting Started](get-started.md)」 (概要) では、単純な .NET Core アプリケーションを作成する方法を学習できます。 最初のアプリを、ほんの数分で起動および実行できます。
 
@@ -34,9 +32,7 @@ ms.lasthandoff: 06/29/2017
 - **オープン ソース:** .NET Core プラットフォームはオープン ソースであり、MIT および Apache 2 ライセンスを使用します。 ドキュメントは [CC-BY](https://creativecommons.org/licenses/by/4.0/) 下でライセンス付与されています。 .NET Core は [.NET Foundation](https://dotnetfoundation.org/) プロジェクトです。
 - **Microsoft によるサポート:** .NET Core は、[.NET Core サポート](https://www.microsoft.com/net/core/support/)ごとに Microsoft によってサポートされます。
 
-<a id="composition" class="xliff"></a>
-
-## コンポジション
+## <a name="composition"></a>コンポジション
 
 .NET Core は、次の部分で構成されます。
 
@@ -45,55 +41,41 @@ ms.lasthandoff: 06/29/2017
 - [SDK ツールのセット](https://github.com/dotnet/cli)と[言語コンパイラ](https://github.com/dotnet/roslyn)。[.NET Core SDK](sdk.md) に含まれており、ベース開発者エクスペリエンスを有効にします。
 - 'dotnet' アプリケ ホスト。.NET Core アプリの起動に使用されます。 ランタイムの選択、ランタイムのホスト、アセンブリ読み込みポリシーの提供、およびアプリの起動を行います。 同じホストが、ほぼ同じ方法で SDK ツールの起動にも使用されます。
 
-<a id="languages" class="xliff"></a>
-
-### 言語
+### <a name="languages"></a>言語
 
 .NET Core のアプリケーションとライブラリを記述するには、C# および F# 言語を使用できます (Visual Basic も間もなく使用可能になります)。 コンパイラは .NET Core 上で実行され、任意の実行場所で .NET Core 用の開発を可能にします。 一般的に、コンパイラは直接使用せず、SDK ツールを使用して間接的に使用します。
 
 C# および F# コンパイラと .NET Core ツールは、 Visual Studio、[Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp)、Sublime Text、Vim などの複数のテキスト エディターおよび IDE に統合されているか、または統合することができます。これにより、任意のコーディング環境および OS で .NET Core 開発を行うことができます。 この統合は、1 つには [OmniSharp プロジェクト](http://www.omnisharp.net/)の優れた要員によって提供されます。
 
-<a id="net-apis-and-compatibility" class="xliff"></a>
-
-### .NET API と互換性
+### <a name="net-apis-and-compatibility"></a>.NET API と互換性
 
 .NET Core は、.NET Framework 基本クラス ライブラリ (BCL) のレイヤーでは .NET Framework のクロスプラットフォーム バージョンとして考えることができます。 これは [.NET 標準](../standard/net-standard.md)仕様を実装します。 .NET Core は、.NET Framework または Mono/Xamarin で使用可能な API のサブセットを提供します。 場合によっては、型は完全には実装されません (一部のメンバーが使用できないか、移動されています)。
 
 .NET Core API ロードマップの詳細については、「[.NET Core Roadmap](https://github.com/dotnet/core/blob/master/roadmap.md)」 (.NET Core ロードマップ) を参照してください。
 
-<a id="relationship-to-the-net-standard-library" class="xliff"></a>
+### <a name="relationship-to-net-standard"></a>.NET 標準との関係
 
-### .NET 標準ライブラリとの関係
+[.NET 標準](../standard/net-standard.md)は、開発者が各 .NET 実装で予想できる .NET API の一貫性のあるセットを表す API 仕様です。 .NET 実装では、.NET 標準準拠と見なされるために、また、.NET 標準をターゲットとするライブラリをサポートするために、この仕様を実装する必要があります。 
 
-[.NET 標準](../standard/net-standard.md)は、開発者が各 .NET 実装で予想できる .NET API の一貫性のあるセットを表す API 仕様です。 .NET 実装では、.NET 標準ライブラリ準拠と見なされるとともに、標準ライブラリをターゲットとするライブラリをサポートするために、この仕様を実装する必要があります。 
+.NET Core は .NET 標準を実装します。したがって、.NET 標準ライブラリがサポートされます。
 
-.NET Core は .NET 標準ライブラリを実装するので、.NET 標準ライブラリをサポートしています。
-
-<a id="workloads" class="xliff"></a>
-
-### 作業負荷
+### <a name="workloads"></a>作業負荷
 
 .NET Core 自体には 1 つのアプリケーション モデル (コンソール アプリ) が含まれており、ツール、ローカル サービス、およびテキストベースのゲームに便利です。 次のような機能を拡張するために、.NET Core の上に追加のアプリケーション モデルがビルドされています。
 
-- [ASP.NET Core](https://docs.microsoft.com/aspnet/core/)
+- [ASP.NET Core](/aspnet/core/)
 - [Windows 10 ユニバーサル Windows プラットフォーム (UWP)](https://developer.microsoft.com/windows)
 - [UWP を対象とするときの Xamarin.Forms](https://www.xamarin.com/forms)
 
-<a id="open-source" class="xliff"></a>
-
-### オープン ソース
+### <a name="open-source"></a>オープン ソース
 
 [.NET Core](https://github.com/dotnet/core) はオープン ソース (MIT ライセンス) であり、2014 年に Microsoft によって [.NET Foundation](https://dotnetfoundation.org) に提供されたものです。 現在では、最もアクティブな .NET Foundation プロジェクトの 1 つとなっています。 個人、学術、商用などの目的で、個人および企業が自由に採用できます。 複数の企業が、アプリ、ツール、新しいプラットフォーム、およびホスティング サービスの一部として .NET Core を使用しています。 これらの企業の一部は、GitHub の .NET Core に多大な貢献をしており、[.NET Foundation テクニカル ステアリング グループ](https://dotnetfoundation.org/blog/tsg-welcome)の一員として製品の方向性に関するガイダンスを提供しています。
 
-<a id="acquisition" class="xliff"></a>
-
-## 取得
+## <a name="acquisition"></a>取得
 
 .NET Core は、NuGet.org でのパッケージとスタンドアロンでの配布という 2 つの主な方法で配布されます。
 
-<a id="distributions" class="xliff"></a>
-
-### 分布
+### <a name="distributions"></a>分布
 
 .NET Core は、「[.NET Core Getting Started](https://www.microsoft.com/net/core)」 (.NET Core の概要) ページでダウンロードできます。
 
@@ -102,22 +84,16 @@ C# および F# コンパイラと .NET Core ツールは、 Visual Studio、[Vi
 
 通常、.NET Core 開発を開始するには、最初に .NET Core SDK をインストールします。 追加の .NET Core (たとえばプレリリース版) ビルドをインストールすることもできます。
 
-<a id="packages" class="xliff"></a>
-
-### パッケージ
+### <a name="packages"></a>パッケージ
 
 - [.NET Core パッケージ](packages.md)には、.NET Core ランタイムおよびライブラリ (参照アセンブリおよび実装) が含まれています。 たとえば、[System.Net.Http](https://www.nuget.org/packages/System.Net.Http/) です。
 - [.NET Core メタパッケージ](packages.md)は、バージョン管理されたライブラリ パッケージの適切なセットを参照することで、さまざまなレイヤーおよびアプリモデルを記述します。
 
-<a id="architecture" class="xliff"></a>
-
-## アーキテクチャ
+## <a name="architecture"></a>アーキテクチャ
 
 .NET Core は、クロスプラットフォーム .NET 実装です。 .NET Core に固有の主要なアーキテクチャの問題は、サポートされているプラットフォームでプラットフォーム固有の実装を提供することに関連します。
 
-<a id="environments" class="xliff"></a>
-
-### 環境
+### <a name="environments"></a>環境
 
 .NET Core は、Microsoft Windows、macOS、Linux でサポートされています。 Linux 上で Microsoft は、Red Hat Enterprise Linux (RHEL) および Debian 配布ファミリで実行されている .NET Core を主にサポートしています。
 
@@ -127,9 +103,7 @@ C# および F# コンパイラと .NET Core ツールは、 Visual Studio、[Vi
 
 他の企業やグループは、他のアプリの種類および環境に対して .NET Core をサポートする場合があります。
 
-<a id="designed-for-adaptability" class="xliff"></a>
-
-### 適応できる設計
+### <a name="designed-for-adaptability"></a>適応できる設計
 
 .NET Core は、その他の .NET 製品と非常に似ているがユニークな製品としてビルドされています。 新しいワークロード用に新しいコンパイラ ツールチェーンにより、新しいプラットフォームへの広範な適応性を可能にするように設計されています。 進行中の複数の OS および CPU ポートがあり、さらに多くの OS に移植できます。 例として、[LLVM](http://llvm.org/) コンパイラによる .NET Core のネイティブ コンパイルの初期プロトタイプである、[LLILC](https://github.com/dotnet/llilc) プロジェクトがあります。
 
@@ -150,15 +124,11 @@ Windows 実装と Unix 実装はほぼ同じサイズです。 CoreFX は、[Mic
 - [System.IO](https://github.com/dotnet/corefx/tree/master/src/System.IO) と [System.Security.Cryptography.Algorithms](https://github.com/dotnet/corefx/tree/master/src/System.Security.Cryptography.Algorithms) は、記憶域および暗号化 API が各 OS で大幅に異なるので、プラットフォーム固有です。 
 - [System.Collections](https://github.com/dotnet/corefx/tree/master/src/System.Collections) と [System.Linq](https://github.com/dotnet/corefx/tree/master/src/System.Linq) は、データ構造上で作成および操作を行うので、プラットフォームに依存しません。
 
-<a id="comparisons-to-other-net-platforms" class="xliff"></a>
-
-## その他の .NET プラットフォームとの比較
+## <a name="comparisons-to-other-net-platforms"></a>その他の .NET プラットフォームとの比較
 
 .NET Core のサイズとシェイプは、既存の .NET プラットフォームと比較するとよくわかります。 
 
-<a id="comparison-with-net-framework" class="xliff"></a>
-
-### .NET Framework との比較
+### <a name="comparison-with-net-framework"></a>.NET Framework との比較
 
 .NET プラットフォームは、最初に 2000 年に Microsoft によって発表され、進化してきました。 .NET Framework はその後 15 年以上にわたり、Microsoft によって製造される主要な .NET 製品となっています。 
 
@@ -172,9 +142,7 @@ Windows 実装と Unix 実装はほぼ同じサイズです。 CoreFX は、[Mic
 
 .NET Core はユニークな製品で、.NET Framework およびその他の .NET プラットフォームとは大きな違いがあり、ソースまたはバイナリの共有技術を使用してコードを簡単に共有できます。 
 
-<a id="comparison-with-mono" class="xliff"></a>
-
-### Mono との比較
+### <a name="comparison-with-mono"></a>Mono との比較
 
 [Mono](http://www.mono-project.com/) は、オリジナルのクロスプラットフォームおよび[オープン ソース](https://github.com/mono/mono)の .NET 実装であり、2004 年に登場しました。 .NET Framework のコミュニティの複製として考えることができます。 Mono プロジェクト チームは、互換性のある実装を提供するために、Microsoft によって発行されたオープン [.NET 標準](https://github.com/dotnet/coreclr/blob/master/Documentation/project-docs/dotnet-standards.md) (特に ECMA 335) に依存していました。
 

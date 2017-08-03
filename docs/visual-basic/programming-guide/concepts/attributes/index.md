@@ -1,5 +1,5 @@
 ---
-title: "属性の概要 (Visual Basic) | Microsoft Docs"
+title: "属性の概要 (Visual Basic)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -20,10 +20,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 81f6275334a0ba1507dcff2bcd85e0b1aa276067
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 0464de06390a9899cbe312b16cbad41d0b6639eb
+ms.contentlocale: ja-jp
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="attributes-overview-visual-basic"></a>属性の概要 (Visual Basic)
@@ -50,7 +51,7 @@ ms.lasthandoff: 03/13/2017
 End Class  
 ```  
   
- 属性 <xref:System.Runtime.InteropServices.DllImportAttribute> を持つメソッドは、次のように宣言されます。  
+ 属性 <xref:System.Runtime.InteropServices.DllImportAttribute> を持つメソッドは次のように宣言されます。  
   
 ```vb  
 Imports System.Runtime.InteropServices  
@@ -75,7 +76,7 @@ Sub MethodB(<Out(), [In]()> ByVal x As Double)
 End Sub  
 ```  
   
- 特定のエンティティで複数回指定できる属性もあります。 たとえば、<xref:System.Diagnostics.ConditionalAttribute> 属性などです。  
+ 特定のエンティティで複数回指定できる属性もあります。 このような複数回指定できる属性の例として <xref:System.Diagnostics.ConditionalAttribute> があります。  
   
 ```vb  
 <Conditional("DEBUG"), Conditional("TEST1")>   
@@ -163,3 +164,4 @@ Module: CLSCompliant(True)>
  [Visual Basic のプログラミング ガイド](../../../../visual-basic/programming-guide/index.md)   
  [リフレクション (Visual Basic)](../../../../visual-basic/programming-guide/concepts/reflection.md)   
  [属性](https://msdn.microsoft.com/library/5x6cd29c)
+

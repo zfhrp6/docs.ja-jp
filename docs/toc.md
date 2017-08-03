@@ -1,7 +1,7 @@
 # [ようこそ](welcome.md)
 
-<!-- Start of .NET Platform Guide -->
-# [.NET プラットフォーム ガイド](standard/index.md)
+<!-- Start of .NET Guide -->
+# [.NET のガイド](standard/index.md)
 ## [.NET の使用を開始する](standard/get-started.md)
 ## [.NET のツアー](standard/tour.md)
 ## [.NET マイクロサービス: コンテナー化された .NET アプリケーションのアーキテクチャ](standard/microservices-architecture/)
@@ -48,7 +48,7 @@
 ## [並列プログラミング](standard/parallel-programming/)
 ## [セキュリティ](standard/security/)
 ## [複数のプラットフォームの開発](standard/cross-platform/)
-<!-- End of .NET Platform Guide -->
+<!-- End of .NET Guide -->
 
 <!-- .NET Core Content -->
 # [.NET Core のガイド](core/index.md)
@@ -124,6 +124,8 @@
 ### [サードパーティの依存関係の分析](core/porting/third-party-deps.md)
 ### [ライブラリの移植](core/porting/libraries.md)
 <!--### [🔧 NuGet packages](core/porting/nuget-packages.md)-->
+## [ソースから .NET Core をビルドする](core/build/index.md)
+### [.NET Core の配布パッケージ](core/build/distribution-packaging.md)
 ## [VS 2015/project.json ドキュメント](project-json.md)
 <!-- End .NET Core Content -->
 
@@ -201,7 +203,7 @@
 #### [厳密に型指定されたデリゲート](csharp/delegates-strongly-typed.md)
 #### [デリゲートの一般的なパターン](csharp/delegates-patterns.md)
 #### [イベントの概要](csharp/events-overview.md)
-#### [.NET イベント パターン](csharp/event-pattern.md)
+#### [標準的な .NET イベント パターン](csharp/event-pattern.md)
 #### [更新された .NET イベント パターン](csharp/modern-events.md)
 #### [デリゲートとイベントの識別](csharp/distinguish-delegates-events.md)
 ### [統合言語クエリ (LINQ)](csharp/linq/)
@@ -231,14 +233,13 @@
 # [F# のガイド](fsharp/index.md)
 
 ## [F# のツアー](fsharp/tour.md)
-
+## [開始するには](fsharp/get-started/index.md)
+### [Visual Studio 入門](fsharp/get-started/get-started-visual-studio.md)
+### [Visual Studio for Mac の使用を開始する](fsharp/get-started/get-started-with-visual-studio-for-mac.md)
+### [Visual Studio Code および Ionide の概要](fsharp/get-started/get-started-vscode.md)
+### [.NET Core CLI の概要](fsharp/get-started/get-started-command-line.md)
 <!--## [Tutorials](fsharp/tutorials/index.md)-->
 ## チュートリアル
-### [開始するには](fsharp/tutorials/getting-started/index.md)
-#### [Visual Studio 入門](fsharp/tutorials/getting-started/getting-started-visual-studio.md)
-#### [Visual Studio for Mac の使用を開始する](fsharp/tutorials/getting-started/getting-started-with-visual-studio-for-mac.md)
-#### [Visual Studio Code および Ionide の概要](fsharp/tutorials/getting-started/getting-started-vscode.md)
-#### [コマンド ライン ツールの概要](fsharp/tutorials/getting-started/getting-started-command-line.md)
 ### [F# Interactive](fsharp/tutorials/fsharp-interactive/index.md)
 #### [F# Interactive オプション](fsharp/tutorials/fsharp-interactive/fsharp-interactive-options.md)
 ### [型プロバイダー](fsharp/tutorials/type-providers/index.md)
@@ -1058,7 +1059,7 @@
 ##### [/win32resource](visual-basic/reference/command-line-compiler/win32resource.md)
 #### [カテゴリ別のコンパイラ オプション](visual-basic/reference/command-line-compiler/compiler-options-listed-by-category.md)
 ### [.NET Framework リファレンス情報](visual-basic/reference/net-framework-reference-information.md)
-### [言語仕様](visual-basic/reference/language-specification.md)
+### [言語仕様](visual-basic/reference/language-specification/)
 ## [サンプル アプリケーション](visual-basic/sample-applications.md)
 ## [チュートリアル](visual-basic/walkthroughs.md)
 

@@ -1,72 +1,90 @@
 ---
-title: "Declared Elements in Visual Basic | Microsoft Docs"
-ms.custom: ""
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
+title: "Visual Basic における宣言された要素"
+ms.custom: 
+ms.date: 2015-07-20
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-visual-basic
+ms.topic: article
+dev_langs:
+- VB
 ms.assetid: 0d1d1bb5-ac0b-485f-8922-cdcec5574c79
 caps.latest.revision: 15
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 15
----
-# Declared Elements in Visual Basic
-[!INCLUDE[vs2017banner](../../../../visual-basic/developing-apps/includes/vs2017banner.md)]
+author: dotnet-bot
+ms.author: dotnetcontent
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 074ae8af056784e2ae4b870545ec4389deb9388e
+ms.contentlocale: ja-jp
+ms.lasthandoff: 07/28/2017
 
-*宣言された要素*とは、宣言ステートメントで定義されたプログラミング要素です。  変数、定数、列挙値、クラス、構造体、モジュール、インターフェイス、プロシージャ、プロシージャのパラメーター、関数の戻り値、外部のプロシージャ参照、演算子、プロパティ、イベント、およびデリゲートは、すべて宣言された要素です。  
+---
+# <a name="declared-elements-in-visual-basic"></a>Visual Basic における宣言された要素
+*宣言された要素*は、宣言ステートメントで定義されているプログラミング要素です。 宣言された要素には、変数、定数、列挙型、クラス、構造体、モジュール、インターフェイス、プロシージャ、プロシージャ パラメーター、関数の戻り値、外部プロシージャの参照、演算子、プロパティ、イベント、およびデリゲートが含まれます。  
   
- 宣言ステートメントの例を以下に示します。  
+ 宣言ステートメントは次のとおりです。  
   
--   [Dim Statement](../../../../visual-basic/language-reference/statements/dim-statement.md)  
+-   [Dim ステートメント](../../../../visual-basic/language-reference/statements/dim-statement.md)  
   
--   [Const Statement](../../../../visual-basic/language-reference/statements/const-statement.md)  
+-   [Const ステートメント](../../../../visual-basic/language-reference/statements/const-statement.md)  
   
--   [Enum Statement](../../../../visual-basic/language-reference/statements/enum-statement.md)  
+-   [Enum ステートメント](../../../../visual-basic/language-reference/statements/enum-statement.md)  
   
--   [Class Statement](../../../../visual-basic/language-reference/statements/class-statement.md)  
+-   [Class ステートメント](../../../../visual-basic/language-reference/statements/class-statement.md)  
   
--   [Structure Statement](../../../../visual-basic/language-reference/statements/structure-statement.md)  
+-   [Structure ステートメント](../../../../visual-basic/language-reference/statements/structure-statement.md)  
   
--   [Module Statement](../../../../visual-basic/language-reference/statements/module-statement.md)  
+-   [Module ステートメント](../../../../visual-basic/language-reference/statements/module-statement.md)  
   
--   [Interface Statement](../../../../visual-basic/language-reference/statements/interface-statement.md)  
+-   [Interface ステートメント](../../../../visual-basic/language-reference/statements/interface-statement.md)  
   
--   [Function Statement](../../../../visual-basic/language-reference/statements/function-statement.md)  
+-   [Function ステートメント](../../../../visual-basic/language-reference/statements/function-statement.md)  
   
--   [Sub Statement](../../../../visual-basic/language-reference/statements/sub-statement.md)  
+-   [Sub ステートメント](../../../../visual-basic/language-reference/statements/sub-statement.md)  
   
--   [Declare Statement](../../../../visual-basic/language-reference/statements/declare-statement.md)  
+-   [Declare ステートメント](../../../../visual-basic/language-reference/statements/declare-statement.md)  
   
--   [Operator Statement](../../../../visual-basic/language-reference/statements/operator-statement.md)  
+-   [Operator ステートメント](../../../../visual-basic/language-reference/statements/operator-statement.md)  
   
--   [Property Statement](../../../../visual-basic/language-reference/statements/property-statement.md)  
+-   [Property ステートメント](../../../../visual-basic/language-reference/statements/property-statement.md)  
   
--   [Event Statement](../../../../visual-basic/language-reference/statements/event-statement.md)  
+-   [Event ステートメント](../../../../visual-basic/language-reference/statements/event-statement.md)  
   
--   [Delegate Statement](../../../../visual-basic/language-reference/statements/delegate-statement.md)  
+-   [Delegate ステートメント](../../../../visual-basic/language-reference/statements/delegate-statement.md)  
   
-## このセクションの内容  
+## <a name="in-this-section"></a>このセクションの内容  
  [Declared Element Names](../../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md)  
- 要素の名前の付け方、および大文字と小文字の区別について説明します。  
+ 要素の名前を指定し、英字の大文字と小文字を使用する方法を説明します。  
   
- [Declared Element Characteristics](../../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-characteristics.md)  
- 宣言された要素の特性 \(スコープなど\) について説明します。  
+ [宣言された要素の特性](../../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-characteristics.md)  
+ 宣言された要素に所有される、スコープなどの特性について説明します。  
   
- [References to Declared Elements](../../../../visual-basic/programming-guide/language-features/declared-elements/references-to-declared-elements.md)  
- コンパイラが参照を宣言に対応させる方法、および名前に修飾子を付ける方法について説明します。  
+ [宣言された要素の参照](../../../../visual-basic/programming-guide/language-features/declared-elements/references-to-declared-elements.md)  
+ コンパイラが宣言への参照を一致させる方法と、名前を修飾する方法を説明します。  
   
-## 関連項目  
+## <a name="related-sections"></a>関連項目  
  [プログラム構造とコード規則](../../../../visual-basic/programming-guide/program-structure/program-structure-and-code-conventions.md)  
- コードの読み取り、理解、および保守を簡単にするためのガイドラインを示します。  
+ コードの読み取り、理解、保守を容易にするためのガイドラインを示します。  
   
- [Statements](../../../../visual-basic/language-reference/statements/index.md)  
- プロシージャ、変数、配列、および定数に名前を付けて定義するステートメントについて説明します。  
+ [ステートメント](../../../../visual-basic/language-reference/statements/index.md)  
+ プロシージャ、変数、配列、および定数の名前を指定して定義するステートメントについて説明します。  
   
- [Declaration Contexts and Default Access Levels](../../../../visual-basic/language-reference/statements/declaration-contexts-and-default-access-levels.md)  
- 宣言された要素の種類を示し、それぞれについてその宣言ステートメント、どのコンテキストで宣言できるか、および既定のアクセスレベルは何かを説明します。
+ [宣言コンテキストと既定のアクセス レベル](../../../../visual-basic/language-reference/statements/declaration-contexts-and-default-access-levels.md)  
+ 宣言された要素の種類をリストし、それぞれの宣言ステートメント、それを宣言できるコンテキスト、およびその既定のアクセス レベルを示します。
+
