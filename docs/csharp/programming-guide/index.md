@@ -1,5 +1,5 @@
 ---
-title: "C# プログラミング ガイド | Microsoft Docs"
+title: "C# プログラミング ガイド"
 ms.date: 2017-05-02
 ms.prod: .net
 ms.technology:
@@ -32,33 +32,27 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: fd5f6cccdc5c91eb435ba024c9c37351febc952a
-ms.openlocfilehash: a7c73e7b17275de0c9f305653005b84d2d1e8030
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 073c0600840ccc802b0481bf0023a6099821bec3
 ms.contentlocale: ja-jp
-ms.lasthandoff: 06/13/2017
+ms.lasthandoff: 07/28/2017
 
 ---
-<a id="c-programming-guide" class="xliff"></a>
-
-# C# プログラミング ガイド
+# <a name="c-programming-guide"></a>C# プログラミング ガイド
 このセクションでは、C# 言語の重要な機能に関する詳細と、.NET Framework 経由でアクセスできる C# の機能について説明します。  
   
- このセクションの大部分は、C# と一般的なプログラミングの概念について、ある程度の知識を持っていることを前提として説明されています。 プログラミングまたは C# の経験がない場合は、[C# デベロッパー センター](http://go.microsoft.com/fwlink/?linkid=95125)を参照することをお勧めします。プログラミングを開始するために役立つ多数のチュートリアル、サンプル、およびビデオが用意されています。  
+ このセクションの大部分は、C# と一般的なプログラミングの概念について、ある程度の知識を持っていることを前提として説明されています。 プログラミングや C# のまったくの初心者の方は、「[Getting Started with C#](https://www.microsoft.com/net/tutorials/csharp/getting-started)」 (C# の概要) の対話型チュートリアルを参照してください。プログラミングの予備知識は必要ありません。  
   
- 特定のキーワード、演算子、およびプリプロセッサ ディレクティブについては、「[C# リファレンス](../../csharp/language-reference/index.md)」を参照してください。 C# 言語の仕様については、「[C# 言語仕様](../../csharp/language-reference/language-specification.md)」を参照してください。  
+ 特定のキーワード、演算子、およびプリプロセッサ ディレクティブについては、「[C# リファレンス](../../csharp/language-reference/index.md)」を参照してください。 C# 言語の仕様については、「[C# 言語仕様](../../csharp/language-reference/language-specification/index.md)」を参照してください。  
   
-<a id="program-sections" class="xliff"></a>
-
-## プログラムのセクション
+## <a name="program-sections"></a>プログラムのセクション
 
 [インサイド C# プログラム](../../csharp/programming-guide/inside-a-program/index.md)  
   
 [Main() とコマンド ライン引数](../../csharp/programming-guide/main-and-command-args/index.md)  
  
-<a id="language-sections" class="xliff"></a>
-
-## 言語セクション  
+## <a name="language-sections"></a>言語セクション  
 [ステートメント、式、および演算子](../../csharp/programming-guide/statements-expressions-operators/index.md)  
 
  [型](../../csharp/programming-guide/types/index.md)  
@@ -97,9 +91,7 @@ ms.lasthandoff: 06/13/2017
   
  [XML ドキュメント コメント](../../csharp/programming-guide/xmldoc/xml-documentation-comments.md)  
   
-<a id="platform-sections" class="xliff"></a>
-
-## プラットフォーム セクション  
+## <a name="platform-sections"></a>プラットフォーム セクション  
  [アプリケーション ドメイン (C# と Visual Basic)](http://msdn.microsoft.com/en-us/1bc2939a-79db-4a4a-a677-4a2ce6de2b1e)  
   
  [アセンブリとグローバル アセンブリ キャッシュ](../../csharp/programming-guide/concepts/assemblies-gac/index.md)  
@@ -116,8 +108,7 @@ ms.lasthandoff: 06/13/2017
   
  [リフレクション](../../csharp/programming-guide/concepts/reflection.md)  
   
-<a id="see-also" class="xliff"></a>
-
-## 関連項目  
+## <a name="see-also"></a>関連項目  
  [C# リファレンス](../../csharp/language-reference/index.md)   
  [C#](../../csharp/csharp.md)
+

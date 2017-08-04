@@ -8,3 +8,4 @@
 ### [方法: インストールされている .NET Framework の更新プログラムを確認する](how-to-determine-which-net-framework-updates-are-installed.md)
 ## [方法: .NET Framework 4 または 4.5 をサポートするアプリを構成する](how-to-configure-an-app-to-support-net-framework-4-or-4-5.md)
 ## [.NET Framework 1.1 からの移行](migrating-from-the-net-framework-1-1.md)
+## [.NET Framework 4 の移行の問題](net-framework-4-migration-issues.md)

@@ -1,5 +1,5 @@
 ---
-title: "スレッド セーフなコレクション | Microsoft Docs"
+title: "スレッド セーフなコレクション"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net
@@ -15,11 +15,11 @@ caps.latest.revision: 24
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.translationtype: Human Translation
-ms.sourcegitcommit: c50b3e328998b65ec47efe6d7457b36116813c77
-ms.openlocfilehash: b35c47a7d77038cc6a213b221e0081a4d83c8dae
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 8d0fa0af8f6a78a6d209fdb4956cbbe9448b5204
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/08/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="thread-safe-collections"></a>スレッド セーフなコレクション
@@ -33,18 +33,18 @@ ms.lasthandoff: 04/08/2017
  [!INCLUDE[net_v40_short](../../../../includes/net-v40-short-md.md)] の同時実行コレクション クラスを使用することをお勧めします。このクラスは、.NET Framework 2.0 コレクション クラスのタイプ セーフを確保するだけでなく、[!INCLUDE[net_v10_short](../../../../includes/net-v10-short-md.md)] コレクションよりも効率的で完全なスレッド セーフも確保します。  
   
 ## <a name="fine-grained-locking-and-lock-free-mechanisms"></a>粒度の細かいロック機構とロック制御の不要な機構  
- 同時実行コレクション型には、[!INCLUDE[net_v40_short](../../../../includes/net-v40-short-md.md)] の新機能である <xref:System.Threading.SpinLock>、<xref:System.Threading.SpinWait>、<xref:System.Threading.SemaphoreSlim>、および <xref:System.Threading.CountdownEvent> などの軽量な同期機構を使用するものもあります。 これらの同期型では、通常、スレッドを実際の待機状態にする前の短期間に*ビジー スピン*が使用されます。 待機時間が非常に短くなると予測される場合は、スピンを使用すると、負荷がかかるカーネル遷移を伴う待機を行うよりも負荷が格段に小さくなります。 スピンを使用するコレクション クラスでは、この効率性は、複数のスレッドで項目を高速で追加および削除できることを意味します。 スピンとブロッキングの詳細については、「[SpinLock](../../../../docs/standard/threading/spinlock.md)」および「[SpinWait](../../../../docs/standard/threading/spinwait.md)」を参照してください。  
+ 同時実行コレクション型には、<xref:System.Threading.SpinLock> の新機能である <xref:System.Threading.SpinWait>、<xref:System.Threading.SemaphoreSlim>、<xref:System.Threading.CountdownEvent>、[!INCLUDE[net_v40_short](../../../../includes/net-v40-short-md.md)] などの軽量な同期機構を使用するものもあります。 これらの同期型では、通常、スレッドを実際の待機状態にする前の短期間に*ビジー スピン*が使用されます。 待機時間が非常に短くなると予測される場合は、スピンを使用すると、負荷がかかるカーネル遷移を伴う待機を行うよりも負荷が格段に小さくなります。 スピンを使用するコレクション クラスでは、この効率性は、複数のスレッドで項目を高速で追加および削除できることを意味します。 スピンとブロッキングの詳細については、「[SpinLock](../../../../docs/standard/threading/spinlock.md)」および「[SpinWait](../../../../docs/standard/threading/spinwait.md)」を参照してください。  
   
  <xref:System.Collections.Concurrent.ConcurrentQueue%601> クラスと <xref:System.Collections.Concurrent.ConcurrentStack%601> クラスでは、ロックは使用されません。 代わりに、<xref:System.Threading.Interlocked> 操作によってスレッド セーフを確保します。  
   
 > [!NOTE]
->  同時実行コレクション クラスでは、<xref:System.Collections.ICollection> をサポートしているので、<xref:System.Collections.ICollection.IsSynchronized%2A> プロパティと <xref:System.Collections.ICollection.SyncRoot%2A> プロパティが無関係であっても、これらのプロパティの実装を提供します。 `IsSynchronized` は常に `false` を返し、`SyncRoot` は常に `null` (Visual Basic の場合は `Nothing`) になります。  
+>  同時実行コレクション クラスでは <xref:System.Collections.ICollection> がサポートされるので、<xref:System.Collections.ICollection.IsSynchronized%2A> プロパティと <xref:System.Collections.ICollection.SyncRoot%2A> プロパティの実装が、これらのプロパティが無関係の場合でも提供されます。 `IsSynchronized` は常に `false` を返し、`SyncRoot` は常に `null` (Visual Basic の場合は `Nothing`) になります。  
   
- 次の表は、<xref:System.Collections.Concurrent?displayProperty=fullName> 名前空間のコレクション型を示しています。  
+ <xref:System.Collections.Concurrent?displayProperty=fullName> 名前空間に属するコレクション型を次の表に示します。  
   
 |型|説明|  
 |----------|-----------------|  
-|<xref:System.Collections.Concurrent.BlockingCollection%601>|<xref:System.Collections.Concurrent.IProducerConsumerCollection%601> を実装する任意の型に境界ブロッキング機能を提供します。 詳細については、「[BlockingCollection の概要](../../../../docs/standard/collections/thread-safe/blockingcollection-overview.md)」を参照してください。|  
+|<xref:System.Collections.Concurrent.BlockingCollection%601>|<xref:System.Collections.Concurrent.IProducerConsumerCollection%601> を実装する任意の型の境界ブロッキング機能を提供します。 詳細については、「[BlockingCollection の概要](../../../../docs/standard/collections/thread-safe/blockingcollection-overview.md)」を参照してください。|  
 |<xref:System.Collections.Concurrent.ConcurrentDictionary%602>|キーと値のペアのディクショナリのスレッド セーフな実装。|  
 |<xref:System.Collections.Concurrent.ConcurrentQueue%601>|先入れ先出し (FIFO: First In First Out) キューのスレッド セーフな実装。|  
 |<xref:System.Collections.Concurrent.ConcurrentStack%601>|後入れ先出し (LIFO: Last In First Out) スタックのスレッド セーフな実装。|  
@@ -65,3 +65,4 @@ ms.lasthandoff: 04/08/2017
   
 ## <a name="reference"></a>参照  
  <xref:System.Collections.Concurrent?displayProperty=fullName>
+

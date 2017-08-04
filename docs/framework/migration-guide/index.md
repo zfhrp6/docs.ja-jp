@@ -1,5 +1,5 @@
 ---
-title: ".NET Framework 4.7、4.6、4.5 移行ガイド | Microsoft Docs"
+title: ".NET Framework 4.7、4.6、4.5 移行ガイド "
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
@@ -17,15 +17,15 @@ caps.latest.revision: 56
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: Human Translation
-ms.sourcegitcommit: d745ff3729fed78cdaf7402d8e8847e95a4ed400
-ms.openlocfilehash: aa587b7ca0beaabae8eb44f83355427579241b47
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 820d1966172a93c06c6451c51bc7f360496f46b8
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/13/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="migration-guide-to-the-net-framework-47-46-and-45"></a>.NET Framework 4.7、4.6、4.5 移行ガイド 
-旧バージョンの .NET Framework を使用してアプリを作成した場合、通常は .NET Framework 4.5 とそのポイント リリース (4.5.1 と 4.5.2)、.NET Framework 4.6 とそのポイント リリース (4.6.1 と 4.6.2)、または .NET Framework 4.7 へ簡単にアップグレードできます。 Visual Studio でプロジェクトを開きます。 プロジェクトが旧バージョンで作成されている場合は、**[Project Compatibility]** (プロジェクト互換性) ダイアログ ボックスが自動的に開きます。 Visual Studio におけるプロジェクトのアップグレードの詳細については、「[Visual Studio プロジェクトのポート、移行、アップグレード](https://docs.microsoft.com/en-us/visualstudio/porting/port-migrate-and-upgrade-visual-studio-projects)」と「[Visual Studio 2017 の対象プラットフォームと互換性](https://www.visualstudio.com/en-us/productinfo/vs2017-compatibility-vs)」を参照してください。  
+旧バージョンの .NET Framework を使用してアプリを作成した場合、通常は .NET Framework 4.5 とそのポイント リリース (4.5.1 と 4.5.2)、.NET Framework 4.6 とそのポイント リリース (4.6.1 と 4.6.2)、または .NET Framework 4.7 へ簡単にアップグレードできます。 Visual Studio でプロジェクトを開きます。 プロジェクトが旧バージョンで作成されている場合は、**[Project Compatibility]** (プロジェクト互換性) ダイアログ ボックスが自動的に開きます。 Visual Studio におけるプロジェクトのアップグレードの詳細については、「[Visual Studio プロジェクトのポート、移行、アップグレード](/visualstudio/porting/port-migrate-and-upgrade-visual-studio-projects)」と「[Visual Studio 2017 の対象プラットフォームと互換性](https://www.visualstudio.com/en-us/productinfo/vs2017-compatibility-vs)」を参照してください。  
   
  ただし、.NET Framework で行われたいくつかの変更により、コードを変更する必要があります。 .NET Framework 4.5 とそのポイント リリース、.NET Framework 4.6 とそのポイント リリース、または .NET Framework 4.7 の新しい機能を利用することもできます。 .NET Framework の新しいバージョンに対応するためのアプリに対するこの種の変更は、一般に*移行*と呼ばれます。 アプリを移行する必要がない場合、アプリは再コンパイルなしで .NET Framework 4.5 またはそれ以降のバージョンで実行できます。  
   
@@ -49,4 +49,5 @@ ms.lasthandoff: 04/13/2017
  [新機能](../../../docs/framework/whats-new/index.md)   
  [クラス ライブラリの互換性のために残されている機能](../../../docs/framework/whats-new/whats-obsolete.md)   
  [.NET Framework のバージョンとアセンブリ情報](http://go.microsoft.com/fwlink/?LinkId=201701)   
- [Microsoft .NET Framework のサポート ライフサイクル ポリシー](http://go.microsoft.com/fwlink/?LinkId=196607)
+ [Microsoft .NET Framework のサポート ライフサイクル ポリシー](http://go.microsoft.com/fwlink/?LinkId=196607) [.NET framework 4 の移行に関する問題](net-framework-4-migration-issues.md)
+

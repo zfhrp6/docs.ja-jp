@@ -1,6 +1,5 @@
 ---
-
-title: "使用を開始する - C# のガイド | Microsoft Docs"
+title: "概要 - C# ガイド"
 description: "C# の使用を開始する"
 keywords: "C#, 概要, 取得,インストール"
 author: rpetrusha
@@ -11,11 +10,11 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: b77c7263-7cbf-4729-9626-8fbc3f5f14d9
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 4437ce5d344cf06d30e31911def6287999fc6ffc
-ms.openlocfilehash: 0878fb6328d406ae3456a740e6e806f3ebbdbbb8
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 09415f996c9dd03c34a74cfe2d2d030f2b4b6fe8
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/23/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="get-started-with-c"></a>C# の使用を開始する #

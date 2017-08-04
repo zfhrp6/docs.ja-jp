@@ -1,25 +1,23 @@
 ---
-title: ".NET Core の csproj 形式への移行 | Microsoft Docs"
+title: ".NET Core の csproj 形式への移行"
 description: ".NET Core project.json から csproj への移行"
 keywords: ".NET、.NET Core、.NET Core の移行"
 author: blackdwarf
 ms.author: mairaw
-ms.date: 03/13/2017
+ms.date: 07/19/2017
 ms.topic: article
 ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: 1feadf3d-3cfc-41dd-abb5-a4fc303a7b53
-ms.translationtype: Human Translation
-ms.sourcegitcommit: b64eb0d8f1778a4834ecce5d2ced71e0741dbff3
-ms.openlocfilehash: ac870aa302c3e56b59cbfdfd0fc88e06bbaad5fb
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 1d972489536e929c8694bd6a4cab31c9f2d624a8
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/27/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 
-<a id="migrating-net-core-projects-to-the-csproj-format" class="xliff"></a>
-
-# .NET Core プロジェクトから .csproj 形式への移行
+# <a name="migrating-net-core-projects-to-the-csproj-format"></a>.NET Core プロジェクトから .csproj 形式への移行
 
 このドキュメントでは、.NET Core プロジェクトの移行シナリオについて説明します。次の 3 つの移行シナリオを取り上げます。
 
@@ -27,9 +25,7 @@ ms.lasthandoff: 05/27/2017
 2. [DNX から csproj への移行](#migration-from-dnx-to-csproj)
 3. [RC3 と以前の .NET Core csproj プロジェクトから最終形式への移行](#migration-from-earlier-net-core-csproj-formats-to-rtm-csproj)
 
-<a id="migration-from-projectjson-to-csproj" class="xliff"></a>
-
-## project.json から csproj への移行
+## <a name="migration-from-projectjson-to-csproj"></a>project.json から csproj への移行
 *project.json* から *.csproj* への移行は、次のいずれかの方法で実行できます。
 
 - [Visual Studio 2017](#visual-studio-2017)
@@ -37,24 +33,20 @@ ms.lasthandoff: 05/27/2017
  
 いずれの方法も、同じ基本エンジンを使用してプロジェクトを移行するので、両方の結果は同じです。 ほとんどの場合、2 つの方法のいずれかを使用して *project.json* を *csproj* に移行するだけで完了します。プロジェクト ファイルをさらに手動で編集する必要はありません。 結果の *.csproj* ファイルには、格納しているディレクトリ名と同じ名前が付けられます。
 
-<a id="visual-studio-2017" class="xliff"></a>
-
-### Visual Studio 2017
+### <a name="visual-studio-2017"></a>Visual Studio 2017
 
 *.xproj* ファイルまたは *.xproj* ファイルを参照するソリューションを開くと、**[一方向のアップグレード]** ダイアログが表示されます。 このダイアログには、移行されるプロジェクトが表示されます。 ソリューション ファイルを開くと、ソリューション ファイルに指定されているすべてのプロジェクトが表示されます。 移行されるプロジェクトの一覧を確認し、**[OK]** を選択します。
 
 ![移行されるプロジェクトの一覧が表示された [一方向のアップグレード] ダイアログ](media/one-way-upgrade.jpg)
 
-Visual Studio では、選択したプロジェクトが自動的に移行されます。 すべてのプロジェクトを選択していない状態でソリューションを移行すると、同じダイアログが開き、そのソリューションの残りのプロジェクトをアップグレードすることを確認するメッセージが表示されます。
+Visual Studio では、選択したプロジェクトが自動的に移行されます。 すべてのプロジェクトを選択していない状態でソリューションを移行すると、同じダイアログが開き、そのソリューションの残りのプロジェクトをアップグレードすることを確認するメッセージが表示されます。 プロジェクトが移行されたら、**ソリューション エクスプローラー** ウィンドウでプロジェクトを右クリックして、**[編集 \<プロジェクト名.csproj]** を選択し、そのコンテンツを表示して変更することができます。
 
 移行されたファイル (*project.json*、*global.json*、*.xproj*、およびソリューション ファイル) は *Backup* フォルダーに移動されます。 移行されるソリューション ファイルは Visual Studio 2017 にアップグレードされ、以前のバージョンの Visual Studio ではそのソリューション ファイルを開くことができなくなります。 移行レポートを含む *UpgradeLog.htm* というファイルも保存され、自動的に開かれます。
 
 > [!IMPORTANT]
 > 新しいツールは Visual Studio 2015 で使用できないので、Visual Studio 2015 を使用してプロジェクトを移行できません。
 
-<a id="dotnet-migrate" class="xliff"></a>
-
-### dotnet の移行
+### <a name="dotnet-migrate"></a>dotnet の移行
 
 コマンドラインのシナリオでは、[`dotnet migrate`](../tools/dotnet-migrate.md) コマンドを使用できます。 検出されたものに応じて、プロジェクト、ソリューション、または一連のフォルダーの順に移行されます。 プロジェクトを移行すると、プロジェクトとそのすべての依存ファイルが移行されます。
 
@@ -65,18 +57,14 @@ Visual Studio では、選択したプロジェクトが自動的に移行され
 
 project.json および csproj 形式の比較については、「[project.json プロパティと csproj プロパティの間のマッピング](../tools/project-json-to-csproj.md)」を参照してください。
 
-<a id="common-issues" class="xliff"></a>
-
-### 一般的な問題
+### <a name="common-issues"></a>一般的な問題
 
 - "No executable found matching command dotnet-migrate" (コマンド dotnet-migrate と一致する実行ファイルが見つかりません) というエラーが発生する場合:
 
 `dotnet --version` を実行して使用しているバージョンを確認します。 [`dotnet migrate`](../tools/dotnet-migrate.md) には、.NET Core CLI RC3 以降が必要です。
 カレント ディレクトリまたは親ディレクトリに *global.json* ファイルがあり、`sdk` バージョンが古いバージョンに設定されている場合にこのエラーが発生します。
 
-<a id="migration-from-dnx-to-csproj" class="xliff"></a>
-
-## DNX から csproj への移行
+## <a name="migration-from-dnx-to-csproj"></a>DNX から csproj への移行
 .NET Core 開発にまだ DNX を使用している場合、移行プロセスは次の 2 段階で実行する必要があります。
 
 1. [既存の DNX 移行ガイダンス](from-dnx.md)を使用して DNX から project-json 対応の CLI に移行します。
@@ -85,9 +73,7 @@ project.json および csproj 形式の比較については、「[project.json 
 > [!NOTE]
 > Preview 1 リリースの .NET Core CLI で、DNX は公式に非推奨になりました。 
 
-<a id="migration-from-earlier-net-core-csproj-formats-to-rtm-csproj" class="xliff"></a>
-
-## 以前の .NET Core csproj 形式から RTM csproj への移行
+## <a name="migration-from-earlier-net-core-csproj-formats-to-rtm-csproj"></a>以前の .NET Core csproj 形式から RTM csproj への移行
 .NET Core csproj 形式は、ツールの新しいプレリリース バージョンごとに変化し、進化しています。 以前のバージョンの csproj から最新バージョンにプロジェクト ファイルを移行するツールはないため、プロジェクト ファイルを手動で編集する必要があります。 実際の手順は、移行するプロジェクト ファイルのバージョンによって異なります。 バージョン間で加えられた変更内容に基づいて、考慮する必要があるガイダンスの一部を次に示します。
 
 * `<Project>` 要素からツールのバージョン プロパティを削除します (存在する場合)。 
@@ -101,4 +87,7 @@ project.json および csproj 形式の比較については、「[project.json 
 これらの手順を実行すると、RTM .NET Core csproj 形式と完全に互換性のあるプロジェクトになります。 
 
 古い csproj 形式から新しい形式に移行する前と後の例については、.NET ブログの記事「[Updating Visual Studio 2017 RC – .NET Core Tooling improvements](https://blogs.msdn.microsoft.com/dotnet/2016/12/12/updating-visual-studio-2017-rc-net-core-tooling-improvements/)」 (Visual Studio 2017 RC の更新 - .NET Core ツールの改善) を参照してください。
+
+## <a name="see-also"></a>関連項目
+[Visual Studio プロジェクトのポート、移行、アップグレード](/visualstudio/porting/port-migrate-and-upgrade-visual-studio-projects)
 

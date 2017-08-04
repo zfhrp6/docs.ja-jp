@@ -1,6 +1,6 @@
 ---
-title: "C# のガイド | Microsoft Docs"
-description: "C# のガイド"
+title: "C# のガイド"
+description: "開発の初心者であるか、経験豊富な専門家であるかを問わず、C# のガイドが C# に関する広範な知識を得るのにどのように役立つかを示します。"
 keywords: .NET, .NET Core
 author: BillWagner
 ms.date: 08/03/2016
@@ -9,11 +9,11 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 52db8280-0e53-40cf-858b-e8eef3997dea
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 4437ce5d344cf06d30e31911def6287999fc6ffc
-ms.openlocfilehash: b87601e339a73b7d9f3132d80496742317439ffa
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 18e26035e41c97af135f0075075bd2441182f157
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/23/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 

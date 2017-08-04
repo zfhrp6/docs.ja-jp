@@ -1,5 +1,5 @@
 ---
-title: "シリアル化 (Visual Basic) | Microsoft Docs"
+title: "シリアル化 (Visual Basic)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -20,10 +20,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 9fb4404bf648f108a3b98952234d29e2bc1d4189
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: b88f78b86e79802238b78cfe097a0ccc73bfe778
+ms.contentlocale: ja-jp
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="serialization-visual-basic"></a>シリアル化 (Visual Basic)
@@ -40,11 +41,11 @@ ms.lasthandoff: 03/13/2017
  開発者は、シリアル化を使用して、オブジェクトの状態を保存し、必要に応じて、オブジェクトのストレージとデータ交換を指定することで、オブジェクトを再作成することができます。 シリアル化を通じて、開発者は、Web サービスによるリモート アプリケーションへのオブジェクトの送信、ドメイン間のオブジェクトの受け渡し、XML 文字列としてのオブジェクトのファイアウォールの通過、アプリケーション間でのセキュリティまたはユーザー固有情報の維持などの操作を実行できます。  
   
 ### <a name="making-an-object-serializable"></a>オブジェクトをシリアル化可能にする  
- オブジェクトをシリアル化するには、シリアル化するオブジェクト、シリアル化したオブジェクトを格納するストリーム、および <xref:System.Runtime.Serialization.Formatter> が必要です。 <xref:System.Runtime.Serialization> には、オブジェクトのシリアル化と逆シリアル化を行うために必要なクラスが含まれています。  
+ オブジェクトをシリアル化するには、シリアル化するオブジェクト、シリアル化したオブジェクトを格納するストリーム、および <xref:System.Runtime.Serialization.Formatter> が必要です。 <xref:System.Runtime.Serialization> には、オブジェクトのシリアル化と逆シリアル化に必要なクラスが含まれます。  
   
- この型のインスタンスをシリアル化できることを示すには、<xref:System.SerializableAttribute> 属性を適用します。 <xref:System.SerializableAttribute> 属性がない型をシリアル化しようとすると、<xref:System.Runtime.Serialization.SerializationException> 例外がスローされます。  
+ この型のインスタンスをシリアル化できることを示すには、<xref:System.SerializableAttribute> 属性を適用します。 型に <xref:System.Runtime.Serialization.SerializationException> 属性が適用されていない状態でシリアル化しようとすると、<xref:System.SerializableAttribute> 例外がスローされます。  
   
- クラス内のフィールドをシリアル化しない場合は、<xref:System.NonSerializedAttribute> を適用します。 シリアル化できる型のフィールドに、特定の環境に固有のポインター、ハンドル、その他のデータ構造が含まれているときに、そのフィールドを別の環境で意味があるように再構成できない場合は、シリアル化不可にすることができます。  
+ クラス内のフィールドをシリアル化しない場合は、<xref:System.NonSerializedAttribute> 属性を適用します。 シリアル化できる型のフィールドに、特定の環境に固有のポインター、ハンドル、その他のデータ構造が含まれているときに、そのフィールドを別の環境で意味があるように再構成できない場合は、シリアル化不可にすることができます。  
   
  シリアル化されたクラスに、<xref:System.SerializableAttribute> とマークされている他のクラスのオブジェクトへの参照が含まれている場合は、これらのオブジェクトもシリアル化されます。  
   
@@ -55,7 +56,7 @@ ms.lasthandoff: 03/13/2017
  バイナリ シリアル化では、バイナリ エンコードを使用して、ストレージやソケット ベースのネットワーク ストリームなどのためのコンパクトなシリアル化を生成します。  
   
 ### <a name="xml-serialization"></a>XML シリアル化  
- XML シリアル化では、オブジェクトのパブリック フィールドやパブリック プロパティ、またはメソッドのパラメーターや戻り値を、特定の XML スキーマ定義言語 (XSD) ドキュメントに準拠する XML ストリームにシリアル化します。 XML シリアル化では、XML に変換されるパブリック プロパティとパブリック フィールドによって厳密に型指定されたクラスが生成されます。 <xref:System.Xml.Serialization> には、オブジェクトのシリアル化と逆シリアル化を行うために必要なクラスが含まれています。  
+ XML シリアル化では、オブジェクトのパブリック フィールドやパブリック プロパティ、またはメソッドのパラメーターや戻り値を、特定の XML スキーマ定義言語 (XSD) ドキュメントに準拠する XML ストリームにシリアル化します。 XML シリアル化では、XML に変換されるパブリック プロパティとパブリック フィールドによって厳密に型指定されたクラスが生成されます。 <xref:System.Xml.Serialization> には、XML のシリアル化と逆シリアル化に必要なクラスが含まれます。  
   
  属性をクラスおよびクラス メンバーに適用すると、<xref:System.Xml.Serialization.XmlSerializer> がそのクラスのインスタンスをシリアル化または逆シリアル化する方法を制御できます。  
   
@@ -63,12 +64,12 @@ ms.lasthandoff: 03/13/2017
  シリアル化は、2 つの方法で実行できます (基本およびカスタム)。 基本的なシリアル化では、.NET Framework を使用して、オブジェクトが自動的にシリアル化されます。  
   
 ### <a name="basic-serialization"></a>基本的なシリアル化  
- 基本的なシリアル化の唯一の要件は、オブジェクトに <xref:System.SerializableAttribute> 属性が適用されていることです。 <xref:System.NonSerializedAttribute> を使用して、特定のフィールドをシリアル化されないようにすることができます。  
+ 基本的なシリアル化の唯一の要件は、オブジェクトに <xref:System.SerializableAttribute> 属性が適用されていることです。 <xref:System.NonSerializedAttribute> を使用して、特定のフィールドがシリアル化されないようにすることができます。  
   
  基本的なシリアル化を使用した場合、オブジェクトのバージョン管理で問題が発生することがあります。この場合は、カスタムのシリアル化を使用することをお勧めします。 基本的なシリアル化は、シリアル化を実行する最も簡単な方法ですが、プロセスを細かく制御することはできません。  
   
 ### <a name="custom-serialization"></a>カスタムのシリアル化  
- カスタムのシリアル化では、シリアル化するオブジェクトとシリアル化の方法を正確を指定できます。 クラスを <xref:System.SerializableAttribute> でマークし、<xref:System.Runtime.Serialization.ISerializable> インターフェイスで実装する必要があります。  
+ カスタムのシリアル化では、シリアル化するオブジェクトとシリアル化の方法を正確を指定できます。 クラスを <xref:System.SerializableAttribute> でマークし、<xref:System.Runtime.Serialization.ISerializable> インターフェイスを実装する必要があります。  
   
  カスタムの方法でオブジェクトを逆シリアル化する場合は、カスタム コンストラクターを使用する必要があります。  
   
@@ -80,7 +81,8 @@ ms.lasthandoff: 03/13/2017
  シリアル化によってインスタンス間でオブジェクトのデータを永続化して値を保存しておき、次にそのオブジェクトをインスタンス化するときにその値を取得する方法を示します。  
   
  [方法: XML ファイルからオブジェクト データを読み込む (Visual Basic)](../../../../visual-basic/programming-guide/concepts/serialization/how-to-read-object-data-from-an-xml-file.md)  
- <xref:System.Xml.Serialization.XmlSerializer> クラスを使用して、XML ファイルに書き込んだオブジェクト データを読み込む方法を示します。  
+ <xref:System.Xml.Serialization.XmlSerializer> クラスを使用して、XML ファイルに以前に書き込まれたオブジェクト データを読み込む方法を示します。  
   
  [方法: XML ファイルにオブジェクト データを書き込む (Visual Basic)](../../../../visual-basic/programming-guide/concepts/serialization/how-to-write-object-data-to-an-xml-file.md)  
  <xref:System.Xml.Serialization.XmlSerializer> クラスを使用して、クラスから XML ファイルにオブジェクトを書き込む方法を示します。
+

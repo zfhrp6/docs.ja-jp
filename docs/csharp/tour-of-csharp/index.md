@@ -1,5 +1,5 @@
 ---
-title: "C# のツアー - C# のガイド | Microsoft Docs"
+title: "C# のツアー - C# ガイド"
 description: "C# を始めてお使いの方のために、 この言語の基本を説明します。"
 keywords: ".NET, .NET Core, C#, C# 入門, C# ガイド"
 author: BillWagner
@@ -10,11 +10,11 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: ebc727cd-8112-42e7-b59c-3c2873ad661c
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 4437ce5d344cf06d30e31911def6287999fc6ffc
-ms.openlocfilehash: f122f59dd6f194facd98f4c6fa7f84c658c02a90
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 0fa7f9f906ba72b114fc59c8026b4b6c79586dd2
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/23/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 
@@ -81,7 +81,7 @@ C# について学ぶべきことはまだたくさんあります。  以下の
 * [デリゲート](delegates.md)
     - "***デリゲート型***" は、特定のパラメーター リストおよび戻り値を使用してメソッドへの参照を表します。 デリゲートを使用すれば、変数に割り当ててパラメーターとして渡すことのできるエンティティとして、メソッドを処理できます。 デリゲートはまた、他のいくつかの言語にみられる関数ポインターの概念に似ていますが、関数ポインターとは異なり、デリゲートはオブジェクト指向でタイプ セーフです。
 * [属性](attributes.md)
-     * "***属性***" を使用すると、プログラムで型、メンバー、その他のエンティティに関する追加の宣言的な情報を指定できます。
+    * "***属性***" を使用すると、プログラムで型、メンバー、その他のエンティティに関する追加の宣言的な情報を指定できます。
 
 >[!div class="step-by-step"]
 [次へ](program-structure.md)

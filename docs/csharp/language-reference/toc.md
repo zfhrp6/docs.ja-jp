@@ -6,4 +6,4 @@
 ## [C# プリプロセッサ ディレクティブ](preprocessor-directives/)
 ## [C# コンパイラ オプション](compiler-options/)
 ## [C# コンパイラ エラー](compiler-messages/)
-## [C# 言語仕様](language-specification.md)
+## [C# 6.0 のドラフト言語仕様](language-specification/)

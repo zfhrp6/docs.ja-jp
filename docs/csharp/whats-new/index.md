@@ -1,5 +1,5 @@
 ---
-title: "C# の新機能 - C# のガイド | Microsoft Docs"
+title: "C# の新機能 - C# ガイド"
 description: "C# 言語がどのように進化しているか"
 keywords: "C#, 最新の機能, 新機能, Roslyn"
 author: BillWagner
@@ -10,11 +10,11 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 77deec51-a14d-46d4-9bb3-faf449477149
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 4437ce5d344cf06d30e31911def6287999fc6ffc
-ms.openlocfilehash: f337a916f0a15c6e81b228ec378a34e97055f68e
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 3ea221cfe71256ac44238f99f272c55c5810d0c3
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/23/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 
@@ -31,7 +31,7 @@ ms.lasthandoff: 05/23/2017
     - This page describes C# Interactive, an interactive Read Eval Print Loop (REPL) that you can use to explore the C# language. You can use it to write code interactively and see it execute immediately, without any compile or build step.
 -->
 * [クロス プラットフォーム サポート](../../core/index.md):
-    - C# は .NET Core のサポートにより、複数のプラットフォームで実行できます。 macOS や、Linux をサポートする多くのディストリビューションのうち 1 つで C# を使用する場合は、.NET Core の詳細を確認してください。
+    - C# は .NET Core のサポートにより、複数のプラットフォームで実行できます。 macOS や、Linux をサポートする多くのディストリビューションのいずれかで C# を使用する場合は、.NET Core の詳細を確認してください。
 
 <!--
 - [.NET Compiler Platform SDK](../roslyn/index.md):

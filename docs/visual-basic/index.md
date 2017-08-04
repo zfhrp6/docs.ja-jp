@@ -1,5 +1,5 @@
 ---
-title: Visual Basic | Microsoft Docs
+title: Visual Basic
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -29,11 +29,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 31905a37f09db5f5192123f0118252fbe8b02eff
-ms.openlocfilehash: 6df68180b0b159009bfd4ccc3ff54db115791d9f
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 00f3cb66a19af0d63e7bcd158ae39a5930b27c9f
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/26/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="visual-basic"></a>Visual Basic
@@ -47,8 +47,7 @@ Visual Basic は、タイプ セーフなオブジェクト指向アプリケー
  [はじめに](../visual-basic/getting-started/index.md)   
  この製品の新機能および各種エディションで使用できる機能の一覧を示し、製品について簡単に説明します。  
    
- [プログラミングの概念](../visual-basic/programming-guide/concepts/index.md) 
- Visual Basic プログラマにとって最も役に立つ言語の概念を紹介します。
+ [プログラミングの概念](../visual-basic/programming-guide/concepts/index.md) Visual Basic プログラマにとって最も役に立つ言語の概念を紹介します。
 
  [プログラム構造とコード規則](../visual-basic/programming-guide/program-structure/program-structure-and-code-conventions.md)  
  Visual Basic の基本的な構造およびコード規則 (名前付け規則、コード内のコメント、Visual Basic での制限事項など) についてのドキュメントが含まれています。  
@@ -72,8 +71,9 @@ Visual Basic は、タイプ セーフなオブジェクト指向アプリケー
  一般的なシナリオでの詳細な操作手順へのリンクを示します。  
   
 ## <a name="related-sections"></a>関連項目  
- [Visual Studio を使用した開発の開始](https://docs.microsoft.com/visualstudio/ide/get-started-developing-with-visual-studio)  
+ [Visual Studio を使用した開発の開始](/visualstudio/ide/get-started-developing-with-visual-studio)  
  Visual Studio の基本についての学習に役立つトピックへのリンクを示します。  
   
  [.NET Framework クラス ライブラリ](http://go.microsoft.com/fwlink/?LinkID=227195)  
  Microsoft [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] SDK に含まれるクラス、インターフェイス、および値型のライブラリを紹介します。
+

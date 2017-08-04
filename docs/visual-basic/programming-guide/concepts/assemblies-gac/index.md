@@ -1,5 +1,5 @@
 ---
-title: "アセンブリとグローバル アセンブリ キャッシュ (Visual Basic) | Microsoft Docs"
+title: "アセンブリとグローバル アセンブリ キャッシュ (Visual Basic)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -20,10 +20,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 0b712132becfe47d50d1c06c0e8fd9940b8035e9
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: c5a1a3a651fc7d2b42f8ac55ab6f2d832f258bb0
+ms.contentlocale: ja-jp
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="assemblies-and-the-global-assembly-cache-visual-basic"></a>アセンブリとグローバル アセンブリ キャッシュ (Visual Basic)
@@ -41,7 +42,7 @@ ms.lasthandoff: 03/13/2017
   
 -   リフレクションを使用して、アセンブリに関する情報をプログラムによって取得できます。 詳細については、「[リフレクション (Visual Basic)](../../../../visual-basic/programming-guide/concepts/reflection.md)」を参照してください。  
   
--   検査目的でのみアセンブリを読み込む場合は、<xref:System.Reflection.Assembly.ReflectionOnlyLoadFrom%2A> などのメソッドを使用します。  
+-   アセンブリのみを読み込んで検査する場合は、<xref:System.Reflection.Assembly.ReflectionOnlyLoadFrom%2A> などのメソッドを使用します。  
   
 ## <a name="assembly-manifest"></a>アセンブリ マニフェスト  
  すべてのアセンブリの中にあるのが "*アセンブリ マニフェスト*" です。 目次と同じように、アセンブリ マニフェストには次の項目が含まれます。  
@@ -50,7 +51,7 @@ ms.lasthandoff: 03/13/2017
   
 -   アセンブリを構成するその他すべてのファイルについて記述するファイル テーブル。.exe または .dll ファイルが依存するアセンブリ、ビットマップ、Readme ファイルなどが含まれます。  
   
--   "*アセンブリ参照リスト*"。これはすべての外部依存関係の一覧であり、アプリケーションが必要とする .dll ファイルやその他のファイルで、他の人物が作成している場合があるファイルです。 アセンブリ参照には、グローバルおよびプライベートの両方のオブジェクトへの参照が含まれます。 グローバル オブジェクトは、System32 ディレクトリのような、他のアプリケーションが使用できるグローバル アセンブリ キャッシュ内に存在します。 <xref:Microsoft.VisualBasic?displayProperty=fullName> 名前空間は、グローバル アセンブリ キャッシュ内のアセンブリの一例です。 プライベート オブジェクトは、アプリケーションがインストールされているディレクトリと同じレベルまたはその下のディレクトリ内に存在する必要があります。  
+-   "*アセンブリ参照リスト*"。これはすべての外部依存関係の一覧であり、アプリケーションが必要とする .dll ファイルやその他のファイルで、他の人物が作成している場合があるファイルです。 アセンブリ参照には、グローバルおよびプライベートの両方のオブジェクトへの参照が含まれます。 グローバル オブジェクトは、System32 ディレクトリのような、他のアプリケーションが使用できるグローバル アセンブリ キャッシュ内に存在します。 <xref:Microsoft.VisualBasic?displayProperty=fullName> 名前空間は、グローバル アセンブリ キャッシュ内のアセンブリの例です。 プライベート オブジェクトは、アプリケーションがインストールされているディレクトリと同じレベルまたはその下のディレクトリ内に存在する必要があります。  
   
  アセンブリには、コンテンツ、バージョン管理、および依存関係に関する情報が含まれているため、Visual Basic で作成するアプリケーションは、正常に機能するために Windows のレジストリ値に依存するはありません。 アセンブリは、.dll の競合を減らし、アプリケーションの信頼性を高め、配置を容易にします。 多くの場合、 NET ベースのアプリケーションは、対象のコンピュータにそのファイルをコピーするだけでインストールすることができます。  
   
@@ -74,3 +75,4 @@ ms.lasthandoff: 03/13/2017
  [方法: コマンド ラインを使用してアセンブリを作成および使用する (Visual Basic)](how-to-create-and-use-assemblies-using-the-command-line.md)   
  [チュートリアル: Visual Studio でマネージ アセンブリからの型を埋め込む (Visual Basic)](walkthrough-embedding-types-from-managed-assemblies-in-vs.md)   
  [チュートリアル: Visual Studio で Microsoft Office アセンブリからの型情報を埋め込む (Visual Basic)](walkthrough-embedding-type-information-from-microsoft-office-assemblies-in-vs.md)
+

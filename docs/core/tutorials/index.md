@@ -1,6 +1,6 @@
 ---
-title: ".NET Core チュートリアル | Microsoft Docs"
-description: ".NET Core チュートリアル"
+title: ".NET Core チュートリアル"
+description: "Mac、Linux、および Windows でアプリとライブラリをビルドする場合は、.NET Core について学習するためのチュートリアルに従ってください。"
 keywords: .NET, .NET Core
 author: richlander
 ms.author: mairaw
@@ -9,11 +9,11 @@ ms.topic: article
 ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: f6f654b1-1d2c-4105-8376-7c1959e23803
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 4437ce5d344cf06d30e31911def6287999fc6ffc
-ms.openlocfilehash: 86320023259bae3bd262a146681f24a6c6d3f7ea
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: d12286fb6d9666aa74b4da260a5e64776010890c
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/23/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 
@@ -30,7 +30,7 @@ ms.lasthandoff: 05/23/2017
 - [C# クラス ライブラリのテスト](../../csharp/getting-started/testing-library-with-visual-studio.md)
 - [C# クラス ライブラリと .NET Core の使用](../../csharp/getting-started/consuming-library-with-visual-studio.md)
 - [Windows 上の完全な C# .NET Core ソリューションのビルド](using-on-windows-full-solution.md)
-- [NoSQL チュートリアル: .NET Core での DocumentDB C# コンソール アプリケーションの作成](https://docs.microsoft.com/azure/documentdb/documentdb-dotnetcore-get-started)
+- [NoSQL チュートリアル: .NET Core での DocumentDB C# コンソール アプリケーションの作成](/azure/documentdb/documentdb-dotnetcore-get-started)
 
 ## <a name="building-applications-with-visual-studio-code"></a>Visual Studio Code でのアプリケーションのビルド
 
@@ -55,5 +55,5 @@ ms.lasthandoff: 05/23/2017
 - [.NET Core 1.0 のパッケージ依存関係バージョンを管理する方法](managing-package-dependency-versions.md)
 - [ネイティブ コードからの .NET Core のホスト](netcore-hosting.md)
 
-ASP.NET Core Web アプリケーションの開発に関するチュートリアルについては、[ASP.NET Core のドキュメント](https://docs.microsoft.com/aspnet/core/)を参照してください。
+ASP.NET Core Web アプリケーションの開発に関するチュートリアルについては、[ASP.NET Core のドキュメント](/aspnet/core/)を参照してください。
 

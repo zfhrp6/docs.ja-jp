@@ -1,5 +1,5 @@
 ---
-title: "統合言語クエリ (LINQ) (C#) | Microsoft Docs"
+title: "統合言語クエリ (LINQ) (C#)"
 ms.custom: 
 ms.date: 02-02-2017
 ms.prod: .net
@@ -19,11 +19,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-ms.translationtype: Human Translation
-ms.sourcegitcommit: fe32676f0e39ed109a68f39584cf41aec5f5ce90
-ms.openlocfilehash: 65e882db800d51c69f6f135b4d4529af0bc86653
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: e81eb0717dc60f6b4a9df26eedbbe8a3d2ff1ccd
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/10/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 
@@ -47,7 +47,7 @@ ms.lasthandoff: 05/10/2017
   
 -   クエリは、たとえば `foreach` ステートメントでクエリ変数を反復処理するまで実行されません。 詳細については、「[LINQ クエリの概要](introduction-to-linq-queries.md)」を参照してください。  
   
--   コンパイル時に、クエリ式は、C# 仕様に規定された規則に従って、標準クエリ演算子メソッドの呼び出しに変換されます。 クエリ構文を使用して表現できるすべてのクエリは、メソッド構文でも表現することができます。 ただし、ほとんどの場合、クエリ構文のほうが読みやすく、簡潔です。 詳細については、「[# 言語仕様](../../../language-reference/language-specification.md)」と「[標準クエリ演算子の概要](standard-query-operators-overview.md)」を参照してください。  
+-   コンパイル時に、クエリ式は、C# 仕様に規定された規則に従って、標準クエリ演算子メソッドの呼び出しに変換されます。 クエリ構文を使用して表現できるすべてのクエリは、メソッド構文でも表現することができます。 ただし、ほとんどの場合、クエリ構文のほうが読みやすく、簡潔です。 詳細については、「[# 言語仕様](../../../language-reference/language-specification/index.md)」と「[標準クエリ演算子の概要](standard-query-operators-overview.md)」を参照してください。  
   
 -   原則として、LINQ クエリを記述するときは、可能であれば常にクエリ構文を使用し、必要な場合にメソッド構文を使用することをお勧めします。 この 2 つの異なる形式の間には、セマンティックの違いもパフォーマンスの違いもありません。 多くの場合、クエリ式のほうが、メソッド構文で記述された同等の式よりも読みやすくなります。  
   

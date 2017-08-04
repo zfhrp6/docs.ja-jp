@@ -1,5 +1,5 @@
 ---
-title: ".NET Core アプリケーション展開 | Microsoft Docs"
+title: ".NET Core アプリケーション展開"
 description: ".NET Core アプリケーションの展開。"
 keywords: ".NET, .NET Core, .NET Core 展開"
 author: rpetrusha
@@ -9,17 +9,15 @@ ms.topic: article
 ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: da7a31a0-8072-4f23-82aa-8a19184cb701
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 83200e452bccc20bfa82d94899514019e9d05a23
-ms.openlocfilehash: 5e2b03d0731e13e1d5261679a65b1e01cd1d3fe4
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 199bb132df201175dbdbdd19634de5c3551b5f3b
 ms.contentlocale: ja-jp
-ms.lasthandoff: 07/05/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 
-<a id="net-core-application-deployment" class="xliff"></a>
-
-# .NET Core アプリケーションの展開
+# <a name="net-core-application-deployment"></a>.NET Core アプリケーションの展開
 
 .NET Core アプリケーションに対して、次の 2 種類の展開を作成できます。
 
@@ -27,15 +25,11 @@ ms.lasthandoff: 07/05/2017
 
 - 自己完結型の展開。 FDD とは異なり、自己完結型の展開 (SCD) は、ターゲット システムに共有コンポーネントが存在することに依存しません。 .NET Core ライブラリと .NET Core ランタイムの両方を含むすべてのコンポーネントがアプリケーションに含まれており、他の .NET Core アプリケーションから分離されています。 SCD には、プラットフォーム固有の .NET Core ホストの名前変更後のバージョンである実行可能ファイル (`app` という名前のアプリケーションに対する Windows プラットフォーム上の *app.exe* など)、および実際のアプリケーションである *.dll* ファイル (*app.dll* など) が含まれています。
 
-<a id="framework-dependent-deployments-fdd" class="xliff"></a>
-
-## フレームワークに依存する展開 (FDD)
+## <a name="framework-dependent-deployments-fdd"></a>フレームワークに依存する展開 (FDD)
 
 FDD では、アプリ、およびサードパーティの依存関係のみを展開します。 アプリは、ターゲット システムに存在する .NET Core のバージョンを使うので、.NET Core を展開する必要はありません。 これは、.NET Core アプリの既定の展開モデルです。
 
-<a id="why-create-a-framework-dependent-deployment" class="xliff"></a>
-
-### フレームワークに依存する展開を作成する理由
+### <a name="why-create-a-framework-dependent-deployment"></a>フレームワークに依存する展開を作成する理由
 
 FDD の展開には、次のいくつかの利点があります。
 
@@ -51,15 +45,13 @@ FDD の展開には、次のいくつかの利点があります。
 
 - 将来のリリースでは、ユーザーの認識なしに .NET Core ランタイムおよびライブラリが変更される場合があります。 まれなケースでは、アプリのビヘイビアーが変更される可能性があります。
 
-<a id="self-contained-deployments-scd" class="xliff"></a>
-
-## 自己完結型の展開 (SCD)
+## <a name="self-contained-deployments-scd"></a>自己完結型の展開 (SCD)
 
 自己完結型の展開では、アプリおよびすべての必要なサードパーティの依存関係と共に、アプリのビルドに使った .NET Core のバージョンも展開します。 SCD の作成には、さまざまなプラットフォーム上の [.NET Core のネイティブの依存関係](https://github.com/dotnet/core/blob/master/Documentation/prereqs.md)は含まれないので、アプリが実行する前にこれらが存在している必要があります。
 
-<a id="why-deploy-a-self-contained-deployment" class="xliff"></a>
+FDD および SCD の展開では別個のホスト実行可能ファイルを使用するため、発行元のシグネチャで SCD のホスト実行可能ファイルに署名できます。
 
-### 自己完結型の展開を展開する理由
+### <a name="why-deploy-a-self-contained-deployment"></a>自己完結型の展開を展開する理由
 
 自己完結型の展開を展開するのには、次の 2 つの主な利点があります。
 
@@ -75,9 +67,7 @@ FDD の展開には、次のいくつかの利点があります。
 
 - 多数の自己完結型の .NET Core アプリをシステムに展開すると、各アプリが .NET Core ファイルを複製するので、非常に多くのディスク領域を使用する可能性があります。
 
-<a id="step-by-step-examples" class="xliff"></a>
-
-## 手順の例
+## <a name="step-by-step-examples"></a>手順の例
 
 CLI ツールで .NET Core アプリを展開する手順の例については、「[Deploying .NET Core Apps with CLI Tools](deploy-with-cli.md)」(CLI ツールで .NET Core アプリを展開する) をご覧ください。 Visual Studio で .NET Core アプリを展開する手順の例については、「[Deploying .NET Core Apps with Visual Studio](deploy-with-vs.md)」(Visual Studio で .NET Core アプリを展開する) をご覧ください。 各トピックには、次の展開の例が含まれます。
 
@@ -86,9 +76,7 @@ CLI ツールで .NET Core アプリを展開する手順の例については�
 - 自己完結型の展開
 - サードパーティの依存関係を含む、自己完結型の展開
 
-<a id="see-also" class="xliff"></a>
-
-# 関連項目
+# <a name="see-also"></a>関連項目
 
 [CLI ツールで .NET Core アプリを展開する](deploy-with-cli.md)   
 [Visual Studio で .NET Core アプリを展開する](deploy-with-vs.md)   
