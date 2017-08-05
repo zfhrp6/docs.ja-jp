@@ -1,7 +1,7 @@
 ---
 title: ".NET Framework のインストールおよびアンインストールのブロックのトラブルシューティング"
 ms.custom: 
-ms.date: 03/30/2017
+ms.date: 05/26/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
@@ -90,5 +90,4 @@ Windows 8 以降では、.NET Framework はオペレーティング システム
 [開発者向けの .NET Framework のインストール](../../../docs/framework/install/guide-for-developers.md)   
 [方法 : インストールされている .NET Framework バージョンを確認する](../../../docs/framework/migration-guide/how-to-determine-which-versions-are-installed.md)   
 [バージョンおよび依存関係](../../../docs/framework/migration-guide/versions-and-dependencies.md)
-
 
