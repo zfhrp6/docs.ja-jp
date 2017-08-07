@@ -1,5 +1,5 @@
 ---
-title: "CLI を使用する .NET Core に関する概要 | Microsoft Docs"
+title: "CLI を使用する .NET Core に関する概要"
 description: "Windows、Linux、または macOS の .NET Core での、.NET Core コマンド ライン インターフェイス (CLI) の使用方法を段階的に説明するチュートリアル。"
 keywords: .NET Core, CLI
 author: cartermp
@@ -10,11 +10,11 @@ ms.prod: .net-core
 ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: 41632e63-d5c6-4427-a09e-51dc1116d45f
-ms.translationtype: Human Translation
-ms.sourcegitcommit: deb760878391856cf07bab04563d0ec19a1511e7
-ms.openlocfilehash: b1ff9218932d5ef49941ca427d9ee38503a9c103
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 5cb697703ad117a131ca8cea1dd19e3acc8cca84
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/30/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 

@@ -1,6 +1,6 @@
 ---
-title: ".NET Core 1.0 のパッケージ依存関係バージョンを管理する方法 | Microsoft Docs"
-description: ".NET Core 1.0 のパッケージ依存関係バージョンを管理する方法"
+title: ".NET Core 1.0 のパッケージ依存関係バージョンを管理する方法"
+description: ".NET Core ライブラリとアプリにおけるパッケージの依存関係のバージョン管理について説明します。"
 keywords: .NET, .NET Core
 author: cartermp
 ms.author: mairaw
@@ -9,21 +9,19 @@ ms.topic: article
 ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: 4424a947-bdf9-4775-8d48-dc350a4e0aee
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 4437ce5d344cf06d30e31911def6287999fc6ffc
-ms.openlocfilehash: 3576fecfd4964bc0a4ca9482888cd61e6ac44350
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 7f31aeb3c07a75059a4f8cd9392dcea31eb5bf41
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/23/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 
-# .NET Core 1.0 のパッケージ依存関係バージョンを管理する方法
-<a id="how-to-manage-package-dependency-versions-for-net-core-10" class="xliff"></a>
+# <a name="how-to-manage-package-dependency-versions-for-net-core-10"></a>.NET Core 1.0 のパッケージ依存関係バージョンを管理する方法
 
 この記事では、.NET Core ライブラリとアプリのパッケージ バージョンについて知っておくべき事項を説明します。
 
-## 用語集
-<a id="glossary" class="xliff"></a>
+## <a name="glossary"></a>用語集
 
 **固定** - 依存関係を固定するとは、NuGet for .NET Core 1.0 でリリースされた同一 "ファミリ" のパッケージを使用することを意味します。
 
@@ -31,8 +29,7 @@ ms.lasthandoff: 05/23/2017
 
 **トリミング** - 依存しないパッケージをメタパッケージから削除する動作です。  これは、NuGet パッケージの作成者に関連するものです。  詳細については、「[Reducing Package Dependencies with project.json](../deploying/reducing-dependencies.md)」 (project.json によるパッケージ依存関係の縮小) を参照してください。 
 
-## 依存関係を .NET Core 1.0 に固定する
-<a id="fix-your-dependencies-to-net-core-10" class="xliff"></a>
+## <a name="fix-your-dependencies-to-net-core-10"></a>依存関係を .NET Core 1.0 に固定する
 
 パッケージを確実に復元して信頼性の高いコードを記述するには、.NET Core 1.0 と共に配布されるパッケージのバージョンに依存関係を固定することが重要です。  すなわち、どのパッケージのバージョンも、修飾子が付加されていない単一バージョンとする必要があるということです。
 
@@ -52,13 +49,11 @@ ms.lasthandoff: 05/23/2017
 
 `"System.Text.RegularExpressions":"4.0.10-rc3-24021-00"`
 
-### なぜこれが重要なのでしょうか?
-<a id="why-does-this-matter" class="xliff"></a>
+### <a name="why-does-this-matter"></a>なぜこれが重要なのでしょうか?
 
 .NET Core 1.0 と共に配布されるバージョンに依存関係を固定すると、それらのパッケージはすべて確実に連携して動作します。  使用するパッケージがこのように固定されたものではない場合、パッケージの連携は保証されません。
 
-### シナリオ
-<a id="scenarios" class="xliff"></a>
+### <a name="scenarios"></a>シナリオ
 
 .NET Core 1.0 でリリースされたすべてのパッケージとそのバージョンを掲載した一覧が長くても、コードが特定のシナリオに分類されている場合は、一覧を調べなくてもよい場合があります。
 
@@ -78,17 +73,15 @@ ms.lasthandoff: 05/23/2017
 
 そのようにする場合は、ほかの依存関係を 1.0 に固定する必要があります。  この記事の最後で、適切なパッケージ バージョンを確認し、数値をビルドします。
 
-### バージョン管理の際の記号文字列 (\*) の使用に関する注意事項
-<a id="a-note-on-using-a-splat-string--when-versioning" class="xliff"></a>
+### <a name="a-note-on-using-a-splat-string--when-versioning"></a>バージョン管理の際の記号文字列 (\*) の使用に関する注意事項
 
 次のように、記号 (\*) 文字列を使用したバージョン管理パターンを採用している場合があるかもしれません。`"System.Collections":"4.0.11-*"`。
 
 **これはよくありません**。  記号文字列を使用すると、さまざまなビルドからパッケージが復元される可能性があります。そのなかには、.NET Core 1.0 よりも前のものが含まれる場合があります。  結果として、互換性のないパッケージが存在することになる可能性があります。
 
-## メタパッケージで整理されるパッケージとバージョン番号
-<a id="packages-and-version-numbers-organized-by-metapackage" class="xliff"></a>
+## <a name="packages-and-version-numbers-organized-by-metapackage"></a>メタパッケージで整理されるパッケージとバージョン番号
 
-[1.0 に対するすべての .NET Standard ライブラリ パッケージとそのバージョンの一覧](https://github.com/dotnet/versions/blob/master/build-info/dotnet/corefx/release/1.0.0/Latest_Packages.txt)。
+[1.0 用の .NET Standard パッケージとそのバージョンの一覧](https://github.com/dotnet/versions/blob/master/build-info/dotnet/corefx/release/1.0.0/Latest_Packages.txt)。
 
 [1.0 に対するすべてのランタイム パッケージとそのバージョンの一覧](https://github.com/dotnet/versions/blob/master/build-info/dotnet/coreclr/release/1.0.0/LKG_Packages.txt)。
 

@@ -1,5 +1,5 @@
 ---
-title: "project.json と csproj の比較 - .NET Core | Microsoft Docs"
+title: "project.json と csproj の比較 - .NET Core"
 description: "「project.json 要素と csproj 要素の間のマッピング」を参照してください。"
 keywords: project.json, csproj, .NET Core, MSBuild
 author: natemcmaster
@@ -10,11 +10,11 @@ ms.prod: .net-core
 ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: 79c50621-a24a-4e64-bbb9-b953113e841c
-ms.translationtype: Human Translation
-ms.sourcegitcommit: deb760878391856cf07bab04563d0ec19a1511e7
-ms.openlocfilehash: 7062102ff17c13b7cf25a1cfbb266c696221151b
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 0f82e82c6a11220e24c85cef19bc131e12c77bf0
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/30/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 
@@ -56,7 +56,7 @@ ms.lasthandoff: 04/30/2017
 </PropertyGroup>
 ```
 
-`buildOptions\outputName` プロパティが project.json で定義された場合、`<AssemblyName>` には別の値 `<PackageId>` が設定されます。 詳細については、「[その他の共通ビルド オプション](#other-common-build-options)」を参照してください。
+project.json に `buildOptions\outputName` プロパティが定義されている場合、`<AssemblyName>` には `<PackageId>` 以外の値が設定されます。 詳細については、「[その他の共通ビルド オプション](#other-common-build-options)」を参照してください。
 
 ### <a name="version"></a>version
 
@@ -494,7 +494,7 @@ MSBuild では、`owners` 要素に相当するものはありません。 `summ
 }
 ```
 
-MSBuild でこれに相当するものは[ターゲット](https://docs.microsoft.com/visualstudio/msbuild/msbuild-targets)です。
+MSBuild でこれに相当するものは[ターゲット](/visualstudio/msbuild/msbuild-targets)です。
 
 ```xml
 <Target Name="MyPreCompileTarget" BeforeTargets="Build">
@@ -562,12 +562,12 @@ MSBuild でこれに相当するものは[ターゲット](https://docs.microsof
 }
 ```
 
-csproj ではサポートされていません。 代わりに、*.nuspec* ファイルにコンテンツ ファイルを追加する必要があります。 詳細については、「[Including content files](https://docs.microsoft.com/nuget/schema/nuspec#including-content-files)」 (コンテンツ ファイルを追加する) を参照してください。
+csproj ではサポートされていません。 代わりに、*.nuspec* ファイルにコンテンツ ファイルを追加する必要があります。 詳細については、「[Including content files](/nuget/schema/nuspec#including-content-files)」 (コンテンツ ファイルを追加する) を参照してください。
 
 ## <a name="files"></a>ファイル
 
 *project.json* では、ビルドとパックは、複数のフォルダーからのコンパイルと埋め込みまで拡張できます。
-MSBuild では、これは[項目](https://docs.microsoft.com/visualstudio/msbuild/common-msbuild-project-items)の使用により行われます。 次の例は一般的な変換です。
+MSBuild では、これは[項目](/visualstudio/msbuild/common-msbuild-project-items)の使用により行われます。 次の例は一般的な変換です。
 
 ```json
 {
@@ -620,7 +620,7 @@ MSBuild では、これは[項目](https://docs.microsoft.com/visualstudio/msbui
 
 .nupkg 内のパッケージ レイアウトは `PackagePath="path"` で変更できます。
 
-`Content` を除き、ほとんどの項目グループで、パッケージに `Pack="true"` を明示的に追加する必要があります。 MSBuild の `<IncludeContentInPack>` プロパティが既定で `true` に設定されているため、`Content` はパッケージの*コンテンツ* フォルダーに置かれます。 詳細については、「[Including content in a package](https://docs.microsoft.com/nuget/schema/msbuild-targets#including-content-in-a-package)」 (パッケージにコンテンツを追加する) を参照してください。
+`Content` を除き、ほとんどの項目グループで、パッケージに `Pack="true"` を明示的に追加する必要があります。 MSBuild の `<IncludeContentInPack>` プロパティが既定で `true` に設定されているため、`Content` はパッケージの*コンテンツ* フォルダーに置かれます。 詳細については、「[Including content in a package](/nuget/schema/msbuild-targets#including-content-in-a-package)」 (パッケージにコンテンツを追加する) を参照してください。
 
 `PackagePath="%(Identity)"` は、パッケージ パスをプロジェクト関連のファイル パスに設定する簡単な方法です。
 

@@ -1,5 +1,5 @@
 ---
-title: "dotnet-run コマンド - .NET Core CLI | Microsoft Docs"
+title: "dotnet-run コマンド - .NET Core CLI"
 description: "dotnet-run コマンドは、ソース コードからアプリケーションを実行する便利なオプションを提供します。"
 keywords: "dotnet-run, CLI, CLI コマンド, .NET Core"
 author: blackdwarf
@@ -10,10 +10,11 @@ ms.prod: .net-core
 ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: 40d4e60f-9900-4a48-b03c-0bae06792d91
-translationtype: Human Translation
-ms.sourcegitcommit: dff752a9d31ec92b113dae9eed20cd72faf57c84
-ms.openlocfilehash: 49e6738a90663645f761bb7748a723624ad8fdc6
-ms.lasthandoff: 03/22/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: f0a6fce4f83808076b7cbcabdaa948badde2cf80
+ms.contentlocale: ja-jp
+ms.lasthandoff: 07/28/2017
 
 ---
 

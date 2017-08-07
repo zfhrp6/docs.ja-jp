@@ -1,401 +1,200 @@
 ---
-title: ".NET Core への移植 - ライブラリ | Microsoft Docs"
-description: ".NET Core への移植 - ライブラリ"
+title: ".NET Core への移植 - ライブラリ"
+description: "ライブラリ プロジェクトを .NET Framework から .NET Core に移植する方法を説明します。"
 keywords: .NET, .NET Core
 author: cartermp
 ms.author: mairaw
-ms.date: 06/20/2016
+ms.date: 07/14/2017
 ms.topic: article
 ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: a0fd860d-d6b6-4659-b325-8a6e6f5fa4a1
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 9cd469dfd4f38605f1455c008388ad04c366e484
-ms.openlocfilehash: 271720298d6432e9fed9ef757df2000c5b7d2482
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: b7cce50df0862a93c8ce144cd30965fb5b5705ed
 ms.contentlocale: ja-jp
-ms.lasthandoff: 06/20/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 
-<a id="porting-to-net-core---libraries" class="xliff"></a>
+# <a name="porting-to-net-core---libraries"></a>.NET Core への移植 - ライブラリ
 
-# .NET Core への移植 - ライブラリ
+この記事では、ライブラリ コードを .NET Core に移植し、クロスプラットフォームで実行されるようにする方法について説明します。
 
-.NET Core 1.0 がリリースされ、既存のライブラリをコードを移植してクロスプラットフォームを実行できるようになりました。 この記事では、.NET Standard Library、使用できないテクノロジ、.NET Core 1.0 で使用できる少ない数の API の考慮、.NET Core SDK Preview 2 に付属するツールの使用方法、推奨されるコードの移植方法について説明します。
+## <a name="prerequisites"></a>必須コンポーネント
 
-移植は時間がかかる可能性がある作業です。コードベースが大きいときは特にそうです。 実際のコードに合わせ、このガイダンスを採用するようにしてください。 すべてのコードベースに同じものはないので、この記事では柔軟な方法でガイダンスを構成するように心がけていますが、必要に応じて所定のガイダンスから逸脱してもかまいません。
+この記事では、以下を前提とします。
 
-<a id="prerequisites" class="xliff"></a>
+- Visual Studio 2017 以降を使用している。 それ以前のバージョンの Visual Studio では、.NET Core がサポートされていません。
+- [推奨の移植プロセス](index.md)を理解している。
+- [サード パーティの依存関係](third-party-deps.md)の問題が解決されている。
 
-## 必要条件
+次のトピックの内容を理解している必要もあります。
 
-この記事では、Windows で Visual Studio 2017 以降を使用していると想定しています。 旧バージョンの Visual Studio では、.NET Core コードの構築に必要な機能の一部を使用できません。
+[.NET Standard](~/docs/standard/net-standard.md)   
+このトピックでは、すべての .NET ランタイムで使用可能にすることを目的とした、.NET API の正式な仕様について説明します。
 
-また、この記事では、[推奨される移植プロセス](index.md)を理解し、[サードパーティの依存関係に関する問題を解決した](third-party-deps.md)と想定しています。
+[パッケージ、メタパッケージ、フレームワーク](~/docs/core/packages.md)   
+この記事では、.NET Core でのパッケージの定義と使用について説明すると共に、複数の .NET ランタイムで実行されるコードがパッケージでどのようにサポートされるかについて説明します。
 
-<a id="targeting-the-net-standard-library" class="xliff"></a>
+[クロス プラットフォーム ツールによるライブラリの作成](~/docs/core/tutorials/libraries.md)   
+このトピックでは、クロスプラットフォーム CLI ツールを使用して .NET 用ライブラリを作成する方法について説明します。
 
-## .NET Standard Library のターゲット設定
+[.NET Core の *csproj* 形式に追加されたもの](~/docs/core/tools/csproj.md)   
+この記事では、*csproj* および MSBuild への移行に伴ってプロジェクト ファイルに追加された変更について説明します。
 
-.NET Core 用のクロスプラットフォーム ライブラリを構築する最適な方法は、[.NET Standard](../../standard/net-standard.md) のターゲット設定です。 .NET Standard Library は、すべての .NET ランタイム上で使用できることを意図した .NET API の正式な仕様です。 このライブラリは .NET Core ランタイムでサポートされています。
+[.NET Core への移植 - サード パーティの依存関係の分析](~/docs/core/porting/third-party-deps.md)   
+このトピックでは、サード パーティの依存関係の移植性と、NuGet パッケージの依存関係が .NET Core で機能しない場合の対処方法について説明します。
 
-つまり、使用できる API とサポートできるプラットフォームとのトレードオフを考え、目的のトレードオフに最適な .NET Platform Standard のバージョンを選択する必要があります。
+## <a name="net-framework-technologies-unavailable-on-net-core"></a>.NET Core で使用できない .NET Framework テクノロジ
 
-現時点で、.NET Standard には 1.0 から 1.6 まで 7 つのバージョンがあります。 新しいバージョンを選択すると、使用できる API は多くなりますが、動作するターゲットは少なくなります。 古いバージョンを選択すると、動作するターゲットは多くなりますが、使用できる API は少なくなります。
+.NET Framework ライブラリで使用できるテクノロジの中には、.NET Core で使用できないものがあります。たとえば、AppDomain、リモート処理、コード アクセス セキュリティ (CAS)、セキュリティ透過性などです。 ライブラリがこれらのテクノロジの 1 つ以上に依存する場合、以下に示す代替方法を検討してください。 API の互換性の詳細については、CoreFX チームが GitHub で提供する[動作の変更/互換性の破棄と廃止/レガシ API の一覧](https://github.com/dotnet/corefx/wiki/ApiCompat)をご覧ください。
 
-参考までに、各 .NET Standard バージョンと、それぞれの実行領域の一覧を次に示します。
+API またはテクノロジが現在実装されていないからといって、意図的にサポートされていないわけではありません。 GitHub の [dotnet/corefx リポジトリの問題](https://github.com/dotnet/corefx/issues)に問題点を挙げて、特定の API やテクノロジについて質問してください。 [問題内の移植に関する要求](https://github.com/dotnet/corefx/labels/port-to-core)には、`port-to-core` のラベルが付いています。
 
-| プラットフォーム名 | Alias |  |  |  |  |  | | |
-| :---------- | :--------- |:--------- |:--------- |:--------- |:--------- |:--------- |:--------- |:--------- |
-|.NET Standard | netstandard | 1.0 | 1.1 | 1.2 | 1.3 | 1.4 | 1.5 | 1.6 |
-|.NET Core|netcoreapp|&rarr;|&rarr;|&rarr;|&rarr;|&rarr;|&rarr;|1.0|
-|.NET Framework|net|&rarr;|4.5|4.5.1|4.6|4.6.1|4.6.2|4.6.3|
-|Mono/Xamarin プラットフォーム||&rarr;|&rarr;|&rarr;|&rarr;|&rarr;|&rarr;|*|
-|ユニバーサル Windows プラットフォーム|uap|&rarr;|&rarr;|&rarr;|&rarr;|10.0|||
-|Windows|win|&rarr;|8.0|8.1|||||
-|Windows Phone|wpa|&rarr;|&rarr;|8.1|||||
-|Windows Phone Silverlight|wp|8.0|||||||
+### <a name="appdomains"></a>AppDomain
 
-**古いバージョンをターゲットとするプロジェクトは、新しいバージョンをターゲットとするプロジェクトを参照できない**、という点を把握することが重要です。 たとえば、.NET Platform Standard バージョン 1.2 をターゲットとするプロジェクトは、.NET Platform Standard バージョン 1.3 以降をターゲットとするプロジェクトを参照できません。 プロジェクトは古いバージョンを**参照できる**ので、.NET Platform Standard 1.3 をターゲットとするプロジェクトは、.NET Platform Standard 1.2 以前をターゲットとするプロジェクトを参照できます。
+AppDomain はアプリを互いに分離します。 AppDomain ではランタイム サポートが必要で、通常は非常に高額です。 .NET Core には実装されていません。 将来この機能が追加される予定はありません。 コードの分離には、代わりの方法として、プロセスの分離やコンテナーの利用をお勧めします。 アセンブリの動的読み込みには、新しい <xref:System.Runtime.Loader.AssemblyLoadContext> クラスをお勧めします。
 
-可能な限り古い .NET Standard バージョンを選択し、プロジェクト全体でそれを使用することをお勧めします。
+.NET Framework からのコードの移行を簡単にするために、.NET Core の <xref:System.AppDomain> API サーフェスの一部を公開しています。 API のなかには、正常に機能するもの (<xref:System.AppDomain.UnhandledException?displayProperty=fullName> など)、処理を行わないメンバー (<xref:System.AppDomain.SetCachePath%2A> など)、<xref:System.PlatformNotSupportedException> をスローするもの (<xref:System.AppDomain.CreateDomain%2A> など) があります。 [dotnet/corefx GitHub リポジトリ](https://github.com/dotnet/corefx)の[ `System.AppDomain` 参照ソース](https://github.com/dotnet/corefx/blob/master/src/System.Runtime.Extensions/src/System/AppDomain.cs)に照らして使用する種類を確認し、実装バージョンに合ったブランチを選択してください。
 
-詳細については、「[.NET Platform Standard Library](../../standard/net-standard.md)」を参照してください。
+### <a name="remoting"></a>リモート処理
 
-<a id="key-technologies-not-yet-available-on-the-net-standard-or-net-core" class="xliff"></a>
+.NET リモート処理は、問題のあるアーキテクチャであると判断されました。 AppDomain 間の通信で使用されていますが、今後はサポートされなくなります。 また、リモート処理にはランタイム サポートが必要で、維持するのに高いコストがかかります。 これらの理由から、.NET リモート処理は .NET Core でサポートされておらず、また将来サポートが追加される予定もありません。
 
-## .NET Standard または .NET Core でまだ使用できない主要テクノロジ
+プロセス間の通信では、リモート処理に代わる方法として、<xref:System.IO.Pipes> または <xref:System.IO.MemoryMappedFiles.MemoryMappedFile> クラスなどのプロセス間通信 (IPC) メカニズムを検討してください。
 
-現在は .NET Core で使用できず、.NET Framework では使用できるテクノロジがあります。 以下の各サブセクションは、そのような各テクノロジに対応しています。 代替方法も挙げていますので、可能な場合は採用してください。
+マシン間では、代替方法としてネットワーク ベースのソリューションを使用してください。 可能であれば、HTTP などのオーバーヘッドの少ないプレーンテキストのプロトコルを使用してください。 この場合、ASP.NET Core で使用される Web サーバーの [Kestrel Web Server](https://docs.microsoft.com/aspnet/core/fundamentals/servers/kestrel) も選択できます。 また、ネットワーク ベースのマシン間のシナリオとして、<xref:System.Net.Sockets> の使用も検討してください。 その他のオプションについては、[.NET オープン ソース開発者プロジェクト: メッセージング](https://github.com/Microsoft/dotnet/blob/master/dotnet-developer-projects.md#messaging)に関する記事をご覧ください。
 
-<a id="app-domains" class="xliff"></a>
+### <a name="code-access-security-cas"></a>コード アクセス セキュリティ (CAS)
 
-### アプリ ドメイン
+サンド ボックスは、マネージ アプリケーションやライブラリが使用または実行するリソースの制限を、ランタイムまたはフレームワークに依存しています。これは [.NET Framework ではサポートされていない](~/docs/framework/misc/code-access-security.md)ため、.NET Core でもサポートされていません。 .NET Framework やランタイムでは、特権の昇格が発生するケースが多すぎるため、このまま CAS をセキュリティ境界と見なすことはできないと考えています。 さらに、CAS は実装が複雑化しており、その使用を予定していないアプリケーションでは、多くの場合で正確性のパフォーマンスに影響します。
 
-AppDomains は、.NET Framework でさまざまな目的に使用されます。 コードの分離のためには、代替方法としてプロセスやコンテナーを別にすることが推奨されます。 アセンブリの動的読み込みには、新しい @System.Runtime.Loader.AssemblyLoadContext クラスが推奨されます。
+仮想化、コンテナー、ユーザー アカウントなど、オペレーティング システムが提供するセキュリティ境界を使用して、最低限の特権セットでプロセスを実行します。
 
-<a id="remoting" class="xliff"></a>
+### <a name="security-transparency"></a>セキュリティ透過性
 
-### リモート処理
+CAS と同様に、セキュリティ透過性を利用すると、サンドボックス コードをセキュリティ クリティカルなコードから宣言的に分離できますが、[現在はセキュリティ境界としてはサポートされていません](~/docs/framework/misc/security-transparent-code.md)。 この機能は、Silverlight で頻繁に使用されます。 
 
-プロセス間の通信のためには、[パイプ](https://docs.microsoft.com/dotnet/core/api/system.io.pipes)、[メモリ マップ ファイル](https://docs.microsoft.com/dotnet/core/api/system.io.memorymappedfiles.memorymappedfile)など、プロセス間通信 (IPC) メカニズムをローミングの代替方法として使用できます。
+仮想化、コンテナー、ユーザー アカウントなど、オペレーティング システムが提供するセキュリティ境界を使用して、最低限の特権セットでプロセスを実行します。
 
-マシン間には、ネットワーク ベースのソリューションを代替方法として使用できます。できれば、HTTP など、オーバーヘッドの少ないプレーン テキスト プロトコルが推奨されます。 この場合、ASP.NET Core で使用される Web サーバーである [KestrelHttpServer](https://github.com/aspnet/KestrelHttpServer) も選択できます。 [Castle.Core](https://github.com/castleproject/Core) 経由のリモート プロキシ生成も、1 つの選択肢として考えられます。
+### <a name="globaljson"></a>global.json
 
-<a id="binary-serialization" class="xliff"></a>
-
-### バイナリ シリアル化
-
-バイナリ シリアル化の代替方法として、さまざまなシリアル化テクノロジを選択できます。 形式とフットプリントの目標に合わせて、いずれかのテクノロジを選択してください。 主に次の選択肢に人気があります。
-
-* [JSON.NET](http://www.newtonsoft.com/json) (JSON 向け)
-* @System.Runtime.Serialization.DataContractSerializer (XML および JSON 向け)
-* @System.Xml.Serialization.XmlSerializer (XML 向け)
-* [protobuf-net](https://github.com/mgravell/protobuf-net) (Protocol Buffers 向け)
-
-リンクされているリソースを参照して利点を確認し、実際のニーズに合わせて選択してください。 他にも多数のシリアル化形式とテクノロジがあり、その多くはオープン ソースです。
-
-<a id="sandboxes" class="xliff"></a>
-
-### サンドボックス
-
-サンドボックスの代替方法として、ユーザー アカウントなど、オペレーティング システムが提供するセキュリティ境界を使用して、最低限の特権セットでプロセスを実行します。
-
-<a id="overview-of-projectjson" class="xliff"></a>
-
-## `project.json` の概要
-
-[project.json プロジェクト モデル](../tools/project-json.md)は、.NET Core SDK 1.0 Preview 2 に付属しているプロジェクト モデルです。 このプロジェクト モデルには、次のように、すぐに利用したいような利点があります。
-
-* 単純なマルチターゲットで、ターゲット固有のアセンブリを 1 つのビルドから生成できる。
-* プロジェクトのビルドで NuGet パッケージを簡単に生成できる。
-* プロジェクト ファイル内のファイルを列挙する必要がない。
-* NuGet パッケージの依存関係とプロジェクト間の依存関係の統一。
-
-> `project.json` は最終的に廃止される予定ですが、現在は .NET Standard でのライブラリの構築に使用できます。
-
-<a id="the-project-file-projectjson" class="xliff"></a>
-
-### プロジェクト ファイル: `project.json`
-
-.NET Core プロジェクトは、`project.json` ファイルを含むディレクトリで定義されています。 このファイルには、パッケージの依存関係、コンパイラ構成、ランタイム構成など、プロジェクトのさまざまな側面が宣言されています。
-
-`dotnet restore` コマンドは、このプロジェクト ファイルを読み取り、プロジェクトのすべての依存関係を復元し、`project.lock.json` ファイルを生成します。 このファイルには、ビルド システムがプロジェクトのビルドに必要なすべての情報が含まれています。
-
-`project.json` ファイルの詳細については、[project.json リファレンス](../tools/project-json.md)を参照してください。
-
-<a id="the-solution-file-globaljson" class="xliff"></a>
-
-### ソリューション ファイル: `global.json`
-
-`global.json` ファイルは、複数のプロジェクトがあるソリューションに含まれているオプションのファイルです。 通常、プロジェクト セットのルート ディレクトリにあります。 ビルド システムに対して、プロジェクトが含まれる可能性がある複数のサブディレクトリについて通知するために、このファイルが使用されます。 このファイルは、複数のプロジェクトで構成される大規模なシステム向けです。
-
-たとえば、次のように、コードを最上位の `/src` フォルダーや `/test` フォルダーに整理することができます。
+*global.json* ファイルは、プロジェクトの .NET Core ツールのバージョンを設定できるオプションのファイルです。 .NET Core のナイトリー ビルドを使用しながら、特定のバージョンの SDK を指定したい場合、*global.json* ファイルでバージョンを指定します。 通常、このファイルは、現在の作業ディレクトリまたはその親ディレクトリのいずれかに存在します。 
 
 ```json
 {
-    "projects":[ "src", "test" ]
+  "sdk": {
+    "version": "2.1.0-preview1-006491"
+  }
 }
 ```
 
-`/src` と `/test` 内のサブフォルダー以下に、複数の `project.json` ファイルを保存することができます。
+## <a name="converting-a-pcl-project"></a>PCL プロジェクトの変換
 
-<a id="how-to-multitarget-with-projectjson" class="xliff"></a>
+Visual Studio 2017 でライブラリを読み込み、次の手順を行うことで、PCL プロジェクトのターゲットを .NET Standard に変更できます。
 
-### `project.json` でマルチターゲットを設定する方法
+1. プロジェクト ファイルを右クリックし、**[プロパティ]** を選択します。
+1. **[ライブラリ]** から、**[ターゲットの .NET Platform Standard]** を選択します。
 
-多くのライブラリは、できるだけ対象が広くなるようにマルチターゲットを設定しています。 .NET Core では、マルチターゲット設定は "一流の市民" です。つまり、1 つのビルドでプラットフォーム固有の複数のアセンブリを簡単に生成できます。
+パッケージで NuGet 3.0 がサポートされている場合、プロジェクトは .NET Standard に再ターゲット設定します。
 
-マルチターゲット設定は、正しいターゲット フレームワーク モニカー (TFM) を `project.json` ファイルに追加するだけの簡単な操作です。その際に、各ターゲット (`dependencies` for .NET Core、`frameworkAssemblies` for .NET Framework) に合わせて正しい依存関係を使用し、必要に応じて `#if` ディレクティブを使用して、プラットフォーム固有の API 用法に合わせた条件付きでソース コードをコンパイルします。
+パッケージで NuGet 3.0 がサポートされていない場合、Visual Studio で、現在のパッケージをアンインストールするように促すダイアログが表示されます。 この通知が表示される場合は、次の手順を実行します。
 
-たとえば、いくつかのネットワーク操作を実行するライブラリを構築し、このライブラリでは、すべての .NET Framework バージョン、ポータブル クラス ライブラリ (PCL) プロファイル、.NET Core 上で動作することを想定します。 .NET Core と .NET Framework 4.5 以降のターゲットの場合、`System.Net.Http` ライブラリと `async`/`await` を使用できます。 ただし、以前のバージョンの .NET Framework では、これらの API を使用できません。
+1. プロジェクトを右クリックし、**[NuGet パッケージの管理]** を選択します。
+1. プロジェクトのパッケージをメモしておきます。
+1. パッケージを 1 つずつアンインストールします。
+1. アンインストール プロセスを完了するには、Visual Studio を再起動しなくてはならない場合があります。 その場合、**[NuGet パッケージ マネージャー]** ウィンドウに **[再起動]** ボタンが表示されます。
+1. プロジェクトが再度読み込まれると、.NET Standard がターゲット設定されます。 アンインストールが必要なパッケージを追加します。
 
-次のサンプル `frameworks` セクションは、.NET Framework バージョン 2.0、3.5、4.0、4.5、および .NET Standard 1.6 をターゲットにする `project.json` 向けです。
+## <a name="retargeting-your-net-framework-code-to-net-framework-462"></a>.NET Framework コードのターゲットを .NET Framework 4.6.2 に変更する
 
-```javascript
-{
-    "frameworks":{
-        "net20":{
-            "frameworkAssemblies":{
-                "System.Net":""
-            }
-        },
-        "net35":{
-            "frameworkAssemblies":{
-                "System.Net":""
-            }
-        },
-        "net40":{
-            "frameworkAssemblies":{
-                "System.Net":""
-            }
-        },
-        "net45":{
-            "frameworkAssemblies":{
-                "System.Net.Http":"",
-                "System.Threading.Tasks":""
-            }
-        },
-        ".NETPortable,Version=v4.5,Profile=Profile259": {
-            "buildOptions": {
-                "define": [ "PORTABLE" ]
-             },
-             "frameworkAssemblies":{
-                 "mscorlib":"",
-                 "System":"",
-                 "System.Core":"",
-                 "System.Net.Http":""
-             }
-        },
-        "netstandard16":{
-            "dependencies":{
-                "NETStandard.Library":"1.6.0",
-                "System.Net.Http":"4.0.1",
-                "System.Threading.Tasks":"4.0.11"
-            }
-        },
-    }
-}
-```
-
-PCL ターゲットは特殊である点に注意してください。PCL ターゲットでは、コンパイラに認識させるビルド定義を指定する必要があります。また、`mscorlib` を含め、使用するすべてのアセンブリを指定する必要があります。
-
-ソース コードには、次のように依存関係を使用できます。
-
-```csharp
-#if (NET20 || NET35 || NET40 || PORTABLE)
-using System.Net;
-#else
-using System.Net.Http;
-using System.Threading.Tasks;
-#endif
-```
-
-すべての .NET Framework と .NET Standard ターゲットには、コンパイラから認識される名前があります。
-
-```
-.NET Framework 2.0   --> NET20
-.NET Framework 3.5   --> NET35
-.NET Framework 4.0   --> NET40
-.NET Framework 4.5   --> NET45
-.NET Framework 4.5.1 --> NET451
-.NET Framework 4.5.2 --> NET452
-.NET Framework 4.6   --> NET46
-.NET Framework 4.6.1 --> NET461
-.NET Framework 4.6.2 --> NET462
-.NET Standard 1.0    --> NETSTANDARD1_0
-.NET Standard 1.1    --> NETSTANDARD1_1
-.NET Standard 1.2    --> NETSTANDARD1_2
-.NET Standard 1.3    --> NETSTANDARD1_3
-.NET Standard 1.4    --> NETSTANDARD1_4
-.NET Standard 1.5    --> NETSTANDARD1_5
-.NET Standard 1.6    --> NETSTANDARD1_6
-```
-
-前述のように、PCL をターゲット設定している場合、コンパイラに理解させるビルド定義を指定する必要があります。 コンパイラが使用できる既定の定義はありません。
-
-<a id="using-projectjson-in-visual-studio" class="xliff"></a>
-
-### Visual Studio で `project.json` を使用する
-
-Visual Studio で `project.json` を使用する場合、2 つの選択肢があります。
-
-1. 新しい xproj プロジェクトの種類。
-2. .NET Standard をサポートするようにターゲットを再設定した PCL プロジェクト。
-
-それぞれに利点と欠点があります。
-
-<a id="when-to-pick-an-xproj-project" class="xliff"></a>
-
-#### Xproj プロジェクトを選択する場合
-
-Visual Studio の新しい Xproj プロジェクト システムでは、`project.json` ベースのプロジェクト モデルの機能を利用して、既存のプロジェクトの種類に対して、複数のアセンブリをビルドしてシームレスにマルチターゲットを設定する機能と、ビルド時に NuGet パッケージを直接生成する機能という、主に 2 つの機能を提供できます。
-
-ただし、次のように、一部の機能を使用できなくなる可能性があります。
-
-- F# または Visual Basic のサポート
-- リソース文字列がローカライズされたサテライト アセンブリを生成する
-- ファイルシステム上の `.dll` ファイルを直接参照する
-- 参照マネージャーの csproj ベースのプロジェクトを参照する機能 (ただし、`.dll` ファイルが直接サポートされているかどうかによります)
-
-プロジェクトのニーズが比較的少なく、xproj の新しい機能を利用できる場合は、これをプロジェクト システムとして選択することをお勧めします。 この操作は、次のように Visual Studio で行うことができます。
-
-1. この操作には、Visual Studio 2015 以降を使用してください。
-2. [ファイル]、[新しいプロジェクト] の順に選択します。
-3. Visual C# で [.NET Core] を選択します。
-4. [クラス ライブラリ (.NET Core)] テンプレートを選択します。 
-
-<a id="when-to-pick-a-pcl-project" class="xliff"></a>
-
-#### PCL プロジェクトを選択する場合
-
-Visual Studio の従来のプロジェクト システムでは、.NET Core をターゲット設定することができます。ターゲット設定するには、ポータブル クラス ライブラリ (PCL) を作成し、プロジェクト構成ダイアログで [.NET Core] を選択します。 次に、.NET Standard に基づくようにプロジェクトのターゲットを再設定する必要があります。
-
-1. Visual Studio でプロジェクト ファイルを右クリックし、[プロパティ] を選択します。
-2. [ビルド] で 「Convert to .NET Standard」 (.NET Standard に変換) を選択します。
-
-より高度なプロジェクト システムが必要な場合、これを選択することをお勧めします。 `xproj` プロジェクト システムなどのプラットフォーム固有のアセンブリを生成してマルチターゲットを設定する場合、「[How to Make Portable Class Libraries Work for You](https://blogs.msdn.microsoft.com/dsplaisted/2012/08/27/how-to-make-portable-class-libraries-work-for-you/)」(ポータブル クラス ライブラリを活用する方法) の説明を参照して、"おとり" の PCL を作成する必要があります。
-
-<a id="retargeting-your-net-framework-code-to-net-framework-462" class="xliff"></a>
-
-## .NET Framework コードのターゲットを .NET Framework 4.6.2 に変更する
-
-コードのターゲットが .NET Framework 4.6.2 ではない場合は、ターゲット設定することをお勧めします。 ターゲット設定することで、.NET Standard が既存の API をサポートできない場合に、最新の代替 API を使用できるようになります。
+コードのターゲットが .NET Framework 4.6.2 でない場合、.NET Framework 4.6.2 に再ターゲット設定することをお勧めします。 ターゲット設定することで、.NET Standard が既存の API をサポートしていない場合に、最新の代替 API を使用できるようになります。
 
 移植する Visual Studio の各プロジェクトで、次の手順を実行します。
 
 1. プロジェクトを右クリックし、[プロパティ] を選択します。
-2. [対象とする Framework] ボックスの一覧で、[.NET Framework 4.6.2] を選択します。
-3. プロジェクトを再コンパイルします。
+1. **[対象とする Framework]** ボックスの一覧で、**[.NET Framework 4.6.2]** を選択します。
+1. プロジェクトを再コンパイルします。
 
-以上です。 プロジェクトのターゲットは .NET Framework 4.6.2 になったので、コード移植のベースとして .NET Framework 4.6.2 を使用できます。
+プロジェクトのターゲットが .NET Framework 4.6.2 になったため、コード移植のベースとして .NET Framework 4.6.2 を使用できます。
 
-<a id="determining-the-portability-of-your-code" class="xliff"></a>
+## <a name="determining-the-portability-of-your-code"></a>コードの移植性を判別する
 
-## コードの移植性を判断する
+次の手順では、API Portability Analyzer (ApiPort) を実行して、分析用の移植性レポートを生成します。
 
-次の手順は、API Portability Analyzer (ApiPort) を実行して、移植性レポートを生成することです。このレポートで分析を始めることができます。
+[API Portability Analyzer (ApiPort)](~/docs/standard/portability-analyzer.md) を理解し、.NET Core をターゲットとする移植性レポートを生成する方法を理解している必要があります。 その方法は、ニーズと個人の好みによって変わります。 以下に、異なるアプローチをいくつか示します。 コードの構成内容によっては、これらのアプローチの手順を組み合わせて使用していることに気付くかもしれません。
 
-[API Portability ツール (ApiPort)](https://github.com/Microsoft/dotnet-apiport/blob/master/docs/HowTo/) を理解し、.NET Core のターゲット設定のために移植性レポートを生成できるようになる必要があります。 その方法は、ニーズと個人の好みによって変わります。 次に、いくつかのアプローチを紹介します。実際のコードの構築方法に応じて、各アプローチを組み合わせることもできます。
+### <a name="dealing-primarily-with-the-compiler"></a>主にコンパイラを使用して対処する
 
-<a id="dealing-primarily-with-the-compiler" class="xliff"></a>
+このアプローチは、小さなプロジェクト、つまり多くの .NET Framework API を使用しないプロジェクトにお勧めです。 このアプローチは単純です。
 
-### 主にコンパイラに対処する
+1. 必要に応じてプロジェクトで ApiPort を実行します。 ApiPort を実行すると、レポートから対応が必要となる問題についての情報を得られます。
+1. すべてのコードを新しい .NET Core プロジェクトにコピーします。
+1. 移植性に関するレポート (生成されている場合) を参照しながら、プロジェクトが完全にコンパイルされるまでコンパイラ エラーを解決します。
 
-このアプローチは、小さなプロジェクト、つまり多くの .NET Framework API を使用しないプロジェクトにお勧めです。 このアプローチはとても単純です。
+これは非体系的なアプローチですが、多くの場合、コード中心のアプローチが問題を迅速に解決します。また、これは小規模なプロジェクトやライブラリに最適なアプローチかもしれません。 特に、データ モデルのみが含まれるプロジェクトにはこのアプローチが最適です。
 
-1. 必要に応じてプロジェクトで ApiPort を実行します。
-2. ApiPort が実行されていた場合は、レポートの概要を確認します。
-3. すべてのコードを新しい .NET Core プロジェクトにコピーします。
-4. コンパイルできるまでコンパイラ エラーに対応します。必要に応じて移植性レポートを参照します。
-5. 必要に応じて繰り返します。
+### <a name="staying-on-the-net-framework-until-portability-issues-are-resolved"></a>移植性の問題が解決されるまで .NET Framework を使い続ける
 
-このアプローチはあまり体系化されていませんが、コード中心のアプローチは問題を迅速に解決できる可能性があります。また、小規模なプロジェクトやライブラリには最適なアプローチかもしれません。 特に、データ モデルのみが含まれるプロジェクトには最適です。
-
-<a id="staying-on-the-net-framework-until-portability-issues-are-resolved" class="xliff"></a>
-
-### 移植性の問題が解決されるまで .NET Framework を使い続ける
-
-このアプローチは、プロセス全体で、コンパイルできるコードを持っている方を好む場合にお勧めです。 アプローチは次のとおりです。
+このアプローチは、すべてのプロセスでコンパイルできるコードを作成したい場合にお勧めです。 アプローチは次のとおりです。
 
 1. プロジェクトで ApiPort を実行します。
-2. 移植可能な別の API を使用して問題に対処します。
-3. 代替の API を直接使用できない領域をメモしておきます。
-4. .NET Core プロジェクトにコピーしても問題ないことが確認できるまで、移植するすべてのプロジェクトに対して手順 1 から 3 を繰り返します。
-5. コードを新しい .NET Core プロジェクトにコピーします。
-6. メモしておいた問題があれば解決します。
+1. 移植可能な別の API を使用して問題に対処します。
+1. 直接の代替方法を使用できない領域をすべて書き留めます。
+1. 新しい .NET Core プロジェクトにコピーしても問題ないことが確認できるまで、移植するすべてのプロジェクトに対して前の手順を繰り返します。
+1. コードを新しい .NET Core プロジェクトにコピーします。
+1. 直接の代替手段がないと書き留めた問題に対処します。
 
-この慎重なアプローチは、コンパイラ エラーに対処するだけの方法よりも体系的ですが、それでも比較的にはコード中心であり、コンパイルできるコードが常にあるという利点があります。 別の API を使用するだけでは解決できない問題を解決する方法は、問題によって大きく異なります。 プロジェクトによっては、次のアプローチのように、より包括的な計画を開発する必要があります。
+この慎重なアプローチは、コンパイラ エラーに対処するだけの方法よりも体系的ですが、それでも比較的コード中心であり、コンパイルできるコードが常にあるという利点があります。 別の API を使用するだけでは解決できなかった問題を解決する方法は、大きく異なります。 プロジェクトによっては、次のアプローチのように、より包括的な計画を開発する必要があります。
 
-<a id="developing-a-comprehensive-plan-of-attack" class="xliff"></a>
+### <a name="developing-a-comprehensive-plan-of-attack"></a>包括的な計画を新たに作成する
 
-### 攻撃に対する包括的な計画を開発する
-
-このアプローチは、.NET Core をサポートするためにコードの再構築や特定領域の書き換えが必要になる可能性がある、大規模で複雑なプロジェクトにお勧めです。 アプローチは次のとおりです。
+このアプローチは、.NET Core をサポートするために、コードの再構築や特定範囲の完全な書き換えが必要になる可能性があるような、大規模で複雑なプロジェクトにお勧めです。 アプローチは次のとおりです。
 
 1. プロジェクトで ApiPort を実行します。
-2. コードで移植できない種類が使用されている場所と、全体的な移植性に対する影響を把握します。
-
-   a.  種類の性質を理解します。 数は少なくても頻繁に使用されていますか。 数は多くても使用頻度は低いですか。 コードで集中して使用されていますか、それともあちこちで使用されていますか。
-   
-   b.  移植可能ではないコードを分離することは簡単なので、簡単に処理できますか。
-   
-   c. コードをリファクタリングする必要はありますか。
-   
-   d. 移植可能ではない種類の場合、同じ作業を実行できる代替 API はありますか。 たとえば、`WebClient` クラスを使用している場合は、代わりに `HttpClient` クラスを使用できます。
-   
-   e. 当座の代替 API であっても、利用できる別の移植可能な API で作業を達成できますか。 たとえば、`XmlSchema` を使用して XML を解析し、XML スキーマの検出は必要ない場合、`System.Linq.Xml` API を使用し、データを手動解析することができます。
-
-3. 移植が困難なアセンブリがある場合、.NET Framework を今すぐ止める価値はあるでしょうか。 次の点を考慮することをお勧めします。
-
-   a.  .NET Framework または Windows 固有の機能に依存している部分が多いため、.NET Core と互換性がない機能がライブラリにいくつかあるとします。 今すぐその機能をあきらめて、しばらくの間、機能が少ない .NET Core バージョンのライブラリをリリースする価値はあるでしょうか。
-   
-   b.  リファクタリングが有効な場合ですか。
-   
-4. 使用できない .NET Framework API の代わりになる実装を開発することは理にかなっていますか。
-
-   [.NET Framework のリファレンス ソース](https://github.com/Microsoft/referencesource)のコードをコピー、変更、および使用することもできます。 [MIT ライセンス](https://github.com/Microsoft/referencesource/blob/master/LICENSE.txt)下でライセンスが付与されるので、高い自由度でこのような操作を行うことができます。 ただし、コードで Microsoft への帰属を適切に指定してください。
-   
-5. プロジェクトごとにこのプロセスを繰り返します。
-6. 計画を作成したら、その計画を実行します。
+1. 移植できない性質のものが使用されている箇所と、それが移植性全体に与える影響を把握します。
+   - 種類の性質を理解します。 数は少なくても使用頻度は高いですか。 数は多くても使用頻度は低いですか。 コードで集中して使用されていますか、それともあちこちで使用されていますか。
+   - 移植できないコードの分離は簡単で、効果的に処理できますか。
+   - コードをリファクタリングする必要はありますか。
+   - 移植可能ではない種類の場合、同じ作業を実行できる代替 API はありますか。 たとえば、<xref:System.Net.WebClient> クラスを使用している場合は、代わりに <xref:System.Net.Http.HttpClient> クラスを使用できます。
+   - 一時的な置き換えでない場合でも、作業を完了させるのに使用できる、移植可能な API が別にありますか。 たとえば、<xref:System.Xml.Schema.XmlSchema> を使用して XML を解析しているが、XML スキーマ検出が不要な場合、<xref:System.Xml.Linq> API を使用して API に依存しない解析を独自に実装できます。
+1. 移植が困難なアセンブリがある場合、.NET Framework を今すぐ止める価値はあるでしょうか。 次の点を考慮することをお勧めします。
+   - .NET Framework または Windows 固有の機能への依存度が高いために、.NET Core との互換性がない機能がライブラリにあるとします。 ただちにその機能をあきらめ、機能を移植できるリソースが利用できるようになるまで、機能の少ない .NET Core バージョンのライブラリを一時的にリリースするのがよいでしょうか。
+   - リファクタリングが有効でしょうか。
+1. 使用できない .NET Framework API の代わりになる実装を開発することは理にかなっていますか。
+   [.NET Framework の参照ソース](https://github.com/Microsoft/referencesource)のコードのコピー、変更、および使用も検討できます。 この参照ソース コードは [MIT ライセンス](https://github.com/Microsoft/referencesource/blob/master/LICENSE.txt)の下で使用が許可されているため、このソースをコードの基盤として、かなり自由に使用できます。 ただし、コードには Microsoft への帰属を適切に示してください。
+1. プロジェクトごとにこのプロセスを繰り返します。
  
-コードベースのサイズに応じては、分析フェーズに時間がかかる可能性があります。 このフェーズに時間を使って、必要な変更の範囲を完全に把握し、計画を作成することで、長期的には多くの時間を節約できます。特に、複雑なコードベースであるほど、お勧めします。
+コードベースのサイズによっては、分析フェーズに時間がかかる場合があります。 このフェーズに時間を割き、必要な変更の範囲を完全に把握してから計画を立てることで、長期的には多くの時間を節約できます。特に、コードベースが複雑な場合には有効です。
 
-コードベースの大幅な変更が必要な計画になる可能性がありますが、ターゲット設定は .NET Framework 4.6.2 です。そのため、これは前のアプローチよりも体系化されたバージョンです。 計画の取り組み方法は、コードベースによって異なります。
+コードベースの大幅な変更が必要な計画になる可能性がありますが、ターゲット設定は .NET Framework 4.6.2 です。そのため、これは前のアプローチよりも体系化されたバージョンです。 計画の実施方法は、コードベースによって異なります。
 
-<a id="mixing-approaches" class="xliff"></a>
-
-### 混合アプローチ
+### <a name="mixing-approaches"></a>混合アプローチ
 
 多くの場合は、プロジェクトごとに、前述のアプローチを混合して利用します。 自分とコードベースにとって最も有用な処理を実行するようにします。
 
-<a id="porting-your-tests" class="xliff"></a>
+## <a name="porting-your-tests"></a>テストを移植する
 
-## テストを移植する
+コードを移植したときにすべての機能が動作することを確認するには、コードを .NET Core に移植してテストすることをお勧めします。 このテストを行うには、.NET Core 用のテストを構築して実行するためのテスト フレームワークを使用する必要があります。 現在のところ、次の 3 つの選択肢があります。
 
-コードを移植したときにすべての機能が動作することを確認するには、コードを .NET Core に移植してテストすることをお勧めします。 テストするには、.NET Core 用にテストを構築して実行するテスト フレームワークを使用する必要があります。 現在のところ、次の 3 つの選択肢があります。
+- [xUnit](https://xunit.github.io/)
+  * [はじめに](http://xunit.github.io/docs/getting-started-dotnet-core.html)
+  * [MSTest プロジェクトを xUnit に変換するツール](https://github.com/dotnet/codeformatter/tree/master/src/XUnitConverter)
+- [NUnit](http://www.nunit.org/)
+  * [はじめに](https://github.com/nunit/docs/wiki/Installation)
+  * [MSTest から NUnit への移行に関するブログ投稿](http://www.florian-rappl.de/News/Page/275/convert-mstest-to-nunit)
+- [MSTest](https://docs.microsoft.com/visualstudio/test/unit-test-basics)
 
-* [xUnit](https://xunit.github.io/)
-   - [はじめに](http://xunit.github.io/docs/getting-started-dotnet-core.html)
-   - [MSTest プロジェクトを xUnit に変換するツール](https://github.com/dotnet/codeformatter/tree/master/src/XUnitConverter)
-* [NUnit](http://www.nunit.org/)
-  - [はじめに](https://github.com/nunit/docs/wiki/Installation)
-  - [MSTest から NUnit への移行に関するブログ投稿](http://www.florian-rappl.de/News/Page/275/convert-mstest-to-nunit)
-* [MSTest](https://msdn.microsoft.com/library/ms243147.aspx)
+## <a name="recommended-approach-to-porting"></a>移植について推奨されるアプローチ
 
-<a id="recommended-approach-to-porting" class="xliff"></a>
-
-## 移植について推奨されるアプローチ
-
-結局はコードを移植することです。 最終的に、実際のポート作業は .NET Framework コードの構築方法に大きく左右されます。 ここでは実際のコードベースで動作する可能性がある推奨アプローチを紹介します。
-
-コードを移植するには、ライブラリの "ベース" から始めることをお勧めします。 ベースは、その他すべてが直接的または間接的に使用するデータ モデルまたは他の基本クラスおよびメソッドの場合があります。
+最終的に、移植作業は .NET Framework コードの構成内容に大きく左右されます。 コードを移植するのに良い方法は、コードの基本コンポーネントであるライブラリの*ベース*から始めることです。 ベースは、その他すべてが直接または間接的に使用するデータ モデル、または他の基本クラスやメソッドの場合があります。
 
 1. 移植対象のライブラリのレイヤーをテストするテスト プロジェクトを移植します。
-2. ライブラリの "ベース" を新しい .NET Core プロジェクトにコピーし、サポートする .NET Standard のバージョンを選択します。
-3. 必要に応じてコードを変更し、コンパイルします。 多くの場合、NuGet パッケージの依存関係を `project.json` ファイルに追加する必要があります。
-4. テストを実行し、必要な調整を行います。
-5. 次のコード レイヤーを選択して移植し、手順 2 と 3 を繰り返します。
+1. ライブラリのベースを新しい .NET Core プロジェクトにコピーし、サポートする .NET Standard のバージョンを選択します。
+1. 必要に応じてコードを変更し、コンパイルします。 多くの場合、NuGet パッケージの依存関係を *csproj* ファイルに追加する必要があります。
+1. テストを実行し、必要な調整を行います。
+1. 次のコード レイヤーを選択して移植し、前の手順を繰り返します。
 
-ライブラリのベースから系統的に移動し、必要に応じて各レイヤーをテストする場合、移植は体系的なプロセスになり、問題は 1 度に 1 レイヤーに分離されます。
+ライブラリのベースから開始してベースから外側に向かい、必要に応じて各レイヤーをテストする場合、移植は、問題が一度でコードの 1 レイヤーに分離される体系的なプロセスになります。
 

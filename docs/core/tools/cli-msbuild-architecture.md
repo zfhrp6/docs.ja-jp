@@ -1,5 +1,5 @@
 ---
-title: ".NET Core コマンドライン ツールのアーキテクチャ | Microsoft Docs"
+title: ".NET Core コマンドライン ツールのアーキテクチャ"
 description: ".NET Core ツール レイヤーと最近のバージョンの変更内容について説明します。"
 keywords: ".NET Core, MSBuild, アーキテクチャ"
 author: blackdwarf
@@ -9,33 +9,27 @@ ms.prod: .net-core
 ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: 7fff0f61-ac23-42f0-9661-72a7240a4456
-ms.translationtype: Human Translation
-ms.sourcegitcommit: b64eb0d8f1778a4834ecce5d2ced71e0741dbff3
-ms.openlocfilehash: 10e565af67056dee1ea51e4949f32e1e1de54600
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 6830cc46994aa44d46a9c862efff525142578003
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/27/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 
-<a id="high-level-overview-of-changes-in-the-net-core-tools" class="xliff"></a>
+# <a name="high-level-overview-of-changes-in-the-net-core-tools"></a>.NET Core ツールの変更の概要
 
-# .NET Core ツールの変更の概要
+このドキュメントでは、*project.json* から MSBuild への移行に関連する変更について、および *csproj* プロジェクト システムについて、.NET Core ツールのレイヤー化と CLI コマンド実装の変更に関する情報と共に説明します。 これらの変更は、2017 年 3 月 7 日の .NET Core SDK 1.0 および Visual Studio 2017 のリリース ([アナウンス](https://blogs.msdn.microsoft.com/dotnet/2017/03/07/announcing-net-core-tools-1-0/)をご覧ください) に伴って発生しましたが、.NET Core SDK Preview 3 のリリースで初めて実装されました。
 
-このドキュメントでは、*project.json* から MSBuild および *.csproj* プロジェクト システムに移行する場合の概要を説明します。 ツールの新しい階層化の概要および、使用できる新しいツールとそれの全体の中での位置付けを示します。 この記事を読み終えると、MSBuild と *.csproj* に移行した後の .NET Core ツールのすべてのツールをより理解できるようになります。 
-
-<a id="moving-away-from-projectjson" class="xliff"></a>
-
-## project.json から移行する
+## <a name="moving-away-from-projectjson"></a>project.json から移行する
 .NET Core のツールの最大の違いは、プロジェクト システムが [project.json から csproj に移行](https://blogs.msdn.microsoft.com/dotnet/2016/05/23/changes-to-project-json/)されることです。 最新バージョンのコマンドライン ツールは *project.json* ファイルをサポートしていません。 これは、project.json を使用してアプリケーションやライブラリを構築、実行、発行できないことを意味します。 このバージョンのツールを使用するには、既存のプロジェクトを移行するか、新規に作成する必要があります。 
 
 この移行の一環として、project.json プロジェクトの構築用に開発されたカスタム ビルド エンジンが、[MSBuild](https://github.com/Microsoft/msbuild) と呼ばれる、成熟した完全な機能を持つビルド エンジンに置き換えられました。 MSBuild は、プラットフォームの最初のリリース以来重要なテクノロジとなっているエンジンで、.NET コミュニティでは広く知られています。 MSBuild では .NET Core アプリケーションを構築するので、もちろん .NET Core に移植され、.NET Core を実行するすべてのプラットフォームで使用できるようになっています。 .NET Core の最大の保証の 1 つは、これがクロスプラット フォームの開発スタックであるということです。この動きによってこれは保証され続けるように努めました。
 
 > [!NOTE]
-> MSBuild を初めて使用する際に詳細を学習するには、まず、「[MSBuild の概念](https://docs.microsoft.com/visualstudio/msbuild/msbuild-concepts)」という記事をお読みください。 
+> MSBuild を初めて使用する際に詳細を学習するには、まず、「[MSBuild の概念](/visualstudio/msbuild/msbuild-concepts)」という記事をお読みください。 
 
-<a id="the-tooling-layers" class="xliff"></a>
-
-## ツールの階層
+## <a name="the-tooling-layers"></a>ツールの階層
 既存のプロジェクト システムとビルド エンジンが切り替わるにあたり、これらの変更によって .NET Core ツールのエコシステム全体の "レイヤー" には全体的な変更があるのかという疑問が当然生じると思います。 小さなものからコンポーネントまで、新しいものはありますか?
 
 次の図で Preview 2 のレイヤーを簡単に再確認してみましょう。
@@ -51,13 +45,11 @@ ms.lasthandoff: 05/27/2017
 主な違いは、CLI が基本的なレイヤーではなくなり、この役割が "共有 SDK コンポーネント" に置き換えられたことです。 この共有 SDK コンポーネントとは、一連のターゲットとそれに関連付けられている、コードのコンパイル、その発行、NuGet パッケージの作成などを担当するタスクです。SDK 自体はオープン ソースであり、GitHub の [SDK リポジトリ](https://github.com/dotnet/sdk)から入手できます。 
 
 > [!NOTE]
-> "ターゲット" とは、MSBuild が呼び出すことのできる名前付きの操作を意味する MSBuild の用語です。 これは、通常ターゲットが行うことを期待されているいくつかのロジックを実行する 1 つ以上のタスクと連結されています。 MSBuild では、`Copy` や `Execute` などの多数の既製ターゲットをサポートしています。また、ユーザーがマネージ コードを使用して、独自のタスクを記述し、それらのタスクをターゲットに実行させるよう定義することも可能です。 詳細については、「[MSBuild タスク](https://docs.microsoft.com/visualstudio/msbuild/msbuild-tasks)」を参照してください。 
+> "ターゲット" とは、MSBuild が呼び出すことのできる名前付きの操作を意味する MSBuild の用語です。 これは、通常ターゲットが行うことを期待されているいくつかのロジックを実行する 1 つ以上のタスクと連結されています。 MSBuild では、`Copy` や `Execute` などの多数の既製ターゲットをサポートしています。また、ユーザーがマネージ コードを使用して、独自のタスクを記述し、それらのタスクをターゲットに実行させるよう定義することも可能です。 詳細については、「[MSBuild タスク](/visualstudio/msbuild/msbuild-tasks)」を参照してください。 
 
 すべてのツールセットは、CLI を含む、共有 SDK コンポーネントとそのターゲットを消費します。 たとえば、Visual Studio の次のバージョンでは .NET Core プロジェクトの依存関係の復元に `dotnet restore` コマンドを呼び出しません。直接 "Restore" ターゲットを使用します。 これらは MSBuild のターゲットであるため、これらの実行に未加工の MSBuild の [dotnet msbuild](dotnet-msbuild.md) コマンドを使用することも可能です。 
 
-<a id="cli-commands" class="xliff"></a>
-
-### CLI コマンド
+### <a name="cli-commands"></a>CLI コマンド
 共有 SDK コンポーネントとは、大多数の既存の CLI コマンドが MSBuild のタスクやターゲットとして再実装されたものです。 これは CLI コマンドやツールセットの使用にどのような意味があるのでしょうか? 
 
 使用の観点からは、CLI の使用方法には変わりはありません。 CLI にはまだ Preview 2 リリースにある主要なコマンドがあります。
@@ -81,3 +73,4 @@ ms.lasthandoff: 05/27/2017
    `dotnet msbuild /t:Publish /p:OutputPath=pub /p:Configuration=Release`
 
 `new` と `run` のコマンドは、MSBuild のターゲットとして実装されておらず、このルールの主な例外です。
+

@@ -1,19 +1,20 @@
 ---
-title: "dotnet-install スクリプト | Microsoft Docs"
+title: "dotnet-install スクリプト"
 description: ".NET Core CLI ツールと共有ランタイムをインストールする dotnet-install スクリプトについて説明します。"
 keywords: "dotnet-install, dotnet-install スクリプト, .NET Core"
 author: blackdwarf
 ms.author: mairaw
-ms.date: 03/15/2017
+ms.date: 07/10/2017
 ms.topic: article
 ms.prod: .net-core
 ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: b64e7e6f-ffb4-4fc8-b43b-5731c89479c2
-translationtype: Human Translation
-ms.sourcegitcommit: 4a1f0c88fb1ccd6694f8d4f5687431646adbe000
-ms.openlocfilehash: fbc1ce8d864a5c2150c61f4b8bf7cb8544921634
-ms.lasthandoff: 03/22/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 8af168e96f8f5b57626b126135d8b5e509fbb059
+ms.contentlocale: ja-jp
+ms.lasthandoff: 07/28/2017
 
 ---
 
@@ -57,15 +58,28 @@ macOS/Linux の場合:
 
 `-Channel <CHANNEL>`
 
-インストールのソース チャネルを指定します。 値は、`future`、`preview`、`production` です。 既定値は `production` です。
+インストールのソース チャネルを指定します。 次の値を指定できます。
+
+- `Current` - 最新リリース
+- `LTS`- 長期的なサポート チャネル (サポートされている最新リリース)
+- 特定のリリースを表す X.Y 形式の 2 部構成のバージョン (たとえば、`2.0` または `1.0`)
+- ブランチ名 [たとえば、`master` ブランチの最新は `release/2.0.0`、`release/2.0.0-preview2`、または `master` ("bleeding edge (最先端)" のナイトリー リリース)]
+
+既定値は `LTS` です。 .NET のサポート チャネルの詳細については、[.NET Core サポート ライフサイクル](https://www.microsoft.com/net/core/support)に関するトピックをご覧ください。
 
 `-Version <VERSION>`
 
-インストールする CLI のバージョンを指定します。 3 つの部分からなるバージョン (1.0.0-13232 など) を指定する必要があります。 省略した場合は、既定で `version` プロパティを含む最初の [global.json](global-json.md) に設定されます。 それが存在しない場合は、最新のバージョンが使われます。
+ソース チャネルでのビルド バージョンを表します (`-Channel` オプションをご覧ください)。 次の値を指定できます。
+
+- `latest` - チャネルの最新ビルド
+- `coherent` - チャネルの最新のコヒーレント ビルド。最新の安定版パッケージの組み合わせを使用します。
+- 特定のビルド バージョンを表す X.Y.Z 形式の 3 部構成のバージョン (たとえば、`1.0.x` の `x` は、パッチ バージョン、または `2.0.0-preview2-006120` などの特定のビルドを表します)。
+
+省略した場合、`-Version` は既定で、`version` メンバーを含む最初の [global.json](global-json.md) となります。 それが存在しない場合、`-Version` の既定値は `latest` です。
 
 `-InstallDir <DIRECTORY>`
 
-インストール パスを指定します。 存在しない場合は、ディレクトリが作成されます。 既定値は *%LocalAppData%\.dotnet* です。
+インストール パスを指定します。 存在しない場合は、ディレクトリが作成されます。 既定値は *%LocalAppData%\.dotnet* です。 ディレクトリに直接バイナリを配置していることに注意してください。
 
 `-Architecture <ARCHITECTURE>`
 
@@ -84,7 +98,7 @@ macOS/Linux の場合:
 
 `-DryRun`
 
-設定すると、スクリプトでインストールは実行されませんが、現在要求されているバージョンの .NET CLI を常にインストールするために使用するコマンド ラインが表示されます。 たとえば、バージョン `latest` を指定すると、そのバージョンのリンクが表示されるので、ビルド スクリプトで確定的にこのコマンドを使用できます。 また、自分でインストールまたはダウンロードしたい場合、バイナリの場所も表示されます。
+設定すると、スクリプトでインストールは実行されませんが、現在要求されているバージョンの .NET Core CLI を一貫してインストールするために使用するコマンド ラインが表示されます。 たとえば、バージョン `latest` を指定すると、そのバージョンのリンクが表示されるので、ビルド スクリプトで確定的にこのコマンドを使用できます。 また、自分でインストールまたはダウンロードしたい場合、バイナリの場所も表示されます。
 
 `-NoPath`
 
@@ -102,13 +116,26 @@ Azure フィードの URL をインストーラーに指定します。 この�
 
 `dotnet-install.sh [--channel] [--version] [--install-dir] [--architecture] [--shared-runtime] [--debug-symbols] [--dry-run] [--no-path] [--verbose] [--azure-feed] [--help]`
 
-`--channel <CHANNEL>`
+`-Channel <CHANNEL>`
 
-インストールのソース チャネルを指定します。 値は、`future`、`dev`、`production` です。 既定値は `production` です。
+インストールのソース チャネルを指定します。 次の値を指定できます。
 
-`--version <VERSION>`
+- `Current` - 最新リリース
+- `LTS`- 長期的なサポート チャネル (サポートされている最新リリース)
+- 特定のリリースを表す X.Y 形式の 2 部構成のバージョン (たとえば、`2.0` または `1.0`)
+- ブランチ名 [たとえば、`master` ブランチの最新は `release/2.0.0`、`release/2.0.0-preview2`、または `master` ("bleeding edge (最先端)" のナイトリー リリース)]
 
-インストールする CLI のバージョンを指定します。 3 つの部分からなるバージョン (1.0.0-13232 など) を指定する必要があります。 省略した場合は、既定で `version` プロパティを含む最初の [global.json](global-json.md) に設定されます。 それが存在しない場合は、最新のバージョンが使われます。
+既定値は `LTS` です。 .NET のサポート チャネルの詳細については、[.NET Core サポート ライフサイクル](https://www.microsoft.com/net/core/support)に関するトピックをご覧ください。
+
+`-Version <VERSION>`
+
+ソース チャネルでのビルド バージョンを表します (`-Channel` オプションをご覧ください)。 次の値を指定できます。
+
+- `latest` - チャネルの最新ビルド
+- `coherent` - チャネルの最新のコヒーレント ビルド。最新の安定版パッケージの組み合わせを使用します。
+- 特定のビルド バージョンを表す X.Y.Z 形式の 3 部構成のバージョン (たとえば、`1.0.x` の `x` は、パッチ バージョン、または `2.0.0-preview2-006120` などの特定のビルドを表します)。
+
+省略した場合、`-Version` は既定で、`version` メンバーを含む最初の [global.json](global-json.md) となります。 それが存在しない場合、`-Version` の既定値は `latest` です。
 
 `--install-dir <DIRECTORY>`
 
@@ -131,7 +158,7 @@ Azure フィードの URL をインストーラーに指定します。 この�
 
 `--dry-run`
 
-設定すると、スクリプトでインストールは実行されませんが、現在要求されているバージョンの .NET CLI を常にインストールするために使用するコマンド ラインが表示されます。 たとえば、バージョン `latest` を指定すると、そのバージョンのリンクが表示されるので、ビルド スクリプトで確定的にこのコマンドを使用できます。 また、自分でインストールまたはダウンロードしたい場合、バイナリの場所も表示されます。
+設定すると、スクリプトでインストールは実行されませんが、現在要求されているバージョンの .NET Core CLI を一貫してインストールするために使用するコマンド ラインが表示されます。 たとえば、バージョン `latest` を指定すると、そのバージョンのリンクが表示されるので、ビルド スクリプトで確定的にこのコマンドを使用できます。 また、自分でインストールまたはダウンロードしたい場合、バイナリの場所も表示されます。
 
 `--no-path`
 
@@ -170,3 +197,9 @@ Windows の場合:
 macOS/Linux の場合:
 
 `./dotnet-install.sh --channel preview --install-dir ~/cli`
+
+## <a name="see-also"></a>関連項目
+
+[.NET Core のリリース](https://github.com/dotnet/core/releases)   
+[.NET Core ランタイムと SDK ダウンロード アーカイブ](https://github.com/dotnet/core/blob/master/release-notes/download-archive.md)
+
