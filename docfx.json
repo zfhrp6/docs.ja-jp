@@ -15,11 +15,14 @@
         ]
       },
       {
-        "files": [ "**/*.md" ],
+        "files": [ 
+          "**/*.md" 
+        ],
         "src": "docs",
         "dest": ".",
         "exclude": [
-          "**/includes/**",
+         "toc.md",
+         "**/includes/**",
           "***/contributing.md",
           "framework/add-ins/**",
           "framework/additional-apis/**",
