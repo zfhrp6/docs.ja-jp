@@ -116,5 +116,6 @@
 ### [推奨タグ](../../../../_vblang/spec/documentation-comments.md#recommended-tags)
 ### [ID 文字列](../../../../_vblang/spec/documentation-comments.md#id-strings)
 ### [ドキュメント コメントの例](../../../../_vblang/spec/documentation-comments.md#documentation-comments-example)
-## 文法: [vb.html](http://ljw1004.github.io/vbspec/vb.html)。 または、ANTLR 形式でダウンロード: [vb.g4](vb.g4?raw=true)。
-
+## 文法
+### [vb.html](http://ljw1004.github.io/vbspec/vb.html)
+### [vb.g4 - ANTLR 形式](http://ljw1004.github.io/vbspec/vb.g4?raw=true)

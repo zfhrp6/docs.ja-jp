@@ -36,10 +36,10 @@ translation.priority.mt:
 - pt-br
 - tr-tr
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 5b8b7951c01ac5a82c79a0942fdc99368c2d0175
+ms.sourcegitcommit: 9fc16c63a6e0e0dd31ee4a68fca8b945b8281e04
+ms.openlocfilehash: 906fa362c249c3e5abbd6f2ed3ba879a81334aeb
 ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
+ms.lasthandoff: 08/01/2017
 
 ---
 # <a name="types-c-programming-guide"></a>型 (C# プログラミング ガイド)
@@ -140,7 +140,7 @@ char c = 'Z';
  すべての列挙体は、<xref:System.Enum?displayProperty=fullName> の派生型である <xref:System.ValueType?displayProperty=fullName> から派生します。 構造体に適用されるすべての規則が、列挙体にも適用されます。 詳細については、「[ 列挙型](../../../csharp/programming-guide/enumeration-types.md)」を参照してください。  
   
 ### <a name="reference-types"></a>参照型  
- [class](../../../csharp/language-reference/keywords/class.md)、[delegate](../../../csharp/language-reference/keywords/delegate.md)、配列、または [interface](../../../csharp/language-reference/keywords/interface.md) として定義された型は、"*参照型*" です。 参照型の変数を宣言した場合、実行時には、[new](../../../csharp/language-reference/keywords/new.md) 演算子によってオブジェクトのインスタンスが明示的に作成されるまで、この変数には [null](../../../csharp/language-reference/keywords/null.md) が格納されます。または、`new, as shown in the following example:` を使用して、どこか別の場所で作成されたオブジェクトを割り当てることもできます。  
+ [class](../../../csharp/language-reference/keywords/class.md)、[delegate](../../../csharp/language-reference/keywords/delegate.md)、配列、または [interface](../../../csharp/language-reference/keywords/interface.md) として定義された型は、"*参照型*" です。 参照型の変数を宣言した場合、実行時には、[new](../../../csharp/language-reference/keywords/new.md) 演算子によってオブジェクトのインスタンスが明示的に作成されるまで、この変数には [null](../../../csharp/language-reference/keywords/null.md) が格納されます。または、次の例に示すように `new` を使用して、別の場所で作成されたオブジェクトを割り当てることもできます。
   
 ```csharp  
 MyClass mc = new MyClass();  

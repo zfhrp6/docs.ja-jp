@@ -10,10 +10,10 @@ ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: f6f654b1-1d2c-4105-8376-7c1959e23803
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: d12286fb6d9666aa74b4da260a5e64776010890c
+ms.sourcegitcommit: 3bd8800e7410ae4a3b89f5962af957789edd48b0
+ms.openlocfilehash: 828a858f1c0679d72d59eb0a1db2d5e26aa7b88e
 ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
+ms.lasthandoff: 08/03/2017
 
 ---
 
@@ -34,7 +34,7 @@ ms.lasthandoff: 07/28/2017
 
 ## <a name="building-applications-with-visual-studio-code"></a>Visual Studio Code でのアプリケーションのビルド
 
-- [Visual Studio Code での C# の概要](../../csharp/getting-started/with-visual-studio-code.md)
+- [C# および Visual Studio Code の概要](with-visual-studio-code.md)
 - [macOS での .NET Core の概要](using-on-macos.md)
 
 ## <a name="building-applications-with-visual-studio-for-mac"></a>Visual Studio for Mac でのアプリケーションのビルド

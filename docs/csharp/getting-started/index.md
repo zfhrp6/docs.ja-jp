@@ -11,10 +11,10 @@ ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: b77c7263-7cbf-4729-9626-8fbc3f5f14d9
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 09415f996c9dd03c34a74cfe2d2d030f2b4b6fe8
+ms.sourcegitcommit: 3bd8800e7410ae4a3b89f5962af957789edd48b0
+ms.openlocfilehash: 923875aa48fb78c63e8e3e9e17095ff424c8e49d
 ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
+ms.lasthandoff: 08/03/2017
 
 ---
 # <a name="get-started-with-c"></a>C# の使用を開始する #
@@ -33,7 +33,7 @@ ms.lasthandoff: 07/28/2017
 
    クラス ライブラリを使用して、別のアプリケーションから呼び出すことができる型と型のメンバーを定義できます。 このトピックでは、文字列が大文字で始まるかどうかを決定する単一のメソッドがあるクラス ライブラリを作成できます。 ライブラリの構築が完了したら、[単体テスト](testing-library-with-visual-studio.md)を開発して、それが期待どおりに動作することを確認した後、[そのライブラリを使用したいアプリケーション](consuming-library-with-visual-studio.md)で使用できるようにします。
 
-- [Visual Studio Code の使用を開始する](with-visual-studio-code.md)
+- [C# および Visual Studio Code の使用を開始する](../../core/tutorials/with-visual-studio-code.md)
 
    Visual Studio Code は、最新の Web アプリケーションやクラウド アプリケーションのビルドとデバッグ向けに最適化された無料コード エディターです。 IntelliSense をサポートしており、Linux、macOS、Windows で使用できます。
 
