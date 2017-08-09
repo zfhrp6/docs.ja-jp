@@ -10,10 +10,10 @@ ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: f6f684b1-1d2c-4105-8376-7c1959e23803
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: b4f59c0ba38168960bf5d662e4719d9b31ef553d
+ms.sourcegitcommit: 2762cdc983465979a530192716c33de7044dd1ed
+ms.openlocfilehash: 4708abcbd14f47089859ea1dba143a6648c845e5
 ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
+ms.lasthandoff: 08/04/2017
 
 ---
 
@@ -83,7 +83,7 @@ MAJOR.MINOR.PATCH[-PRERELEASE-BUILDNUMBER]
 
 - .NET Core 1.0 の場合は v1.6 (これらのバージョンは、通常、または意図的に一致しません)。
 - `netstandard` フレームワークにマップされます。 
-- .NET プラットフォームが [.NET 標準](../../standard/net-standard.md)プラットフォームと見なされるために実装しなければならない、最新のアプリ開発に必要と考えられるパッケージを記述します。
+- .NET 実装が [.NET 標準](../../standard/net-standard.md)プラットフォームと見なされるために実装しなければならない、最新のアプリ開発に必要と考えられるパッケージを記述します。
 
 **Microsoft.NETCore.App**
 
@@ -97,7 +97,7 @@ MAJOR.MINOR.PATCH[-PRERELEASE-BUILDNUMBER]
 
 フレームワーク バージョンは、新しい API が追加されると更新されます。 これらは API のシェイプを表し、実装には関係しないので、修正プログラム バージョンの概念はありません。 メジャーおよびマイナー バージョン管理は、前に指定した SemVer 規則に従います。
 
-`netcoreapp` フレームワークは、.NET Core 配布に関連付けられており、 .NET Core で使用されるバージョン番号に従います。 たとえば、.NET Core 2.0 がリリースされると、`netcoreapp2.0` をターゲットとします。 `netstandard` フレームワークは、すべての .NET ランタイムに等しく適用できるので、そのいずれのバージョン管理スキームとも一致しません。
+`netcoreapp` フレームワークは、.NET Core 配布に関連付けられており、 .NET Core で使用されるバージョン番号に従います。 たとえば、.NET Core 2.0 がリリースされると、`netcoreapp2.0` をターゲットとします。 `netstandard` フレームワークは、すべての .NET 実装に等しく適用できるので、そのいずれのバージョン管理スキームとも一致しません。
 
 ## <a name="versioning-in-practice"></a>実際のバージョン管理
 
