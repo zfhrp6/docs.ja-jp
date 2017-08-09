@@ -13,8 +13,8 @@
 | Windows Phone Silverlight                 | 8.0   |        |       |       |       |        |        |       |
 
 - 列は .NET Standard バージョンです。 各見出しセルは、そのバージョンの .NET Standard に追加された API に関するドキュメントのリンクになっています。
-- 行は、各 .NET プラットフォームです。
-- 各セルのバージョン番号は、その .NET Standard バージョンをターゲットにするために必要な*最小*バージョンのプラットフォームです。
+- 行は、各 .NET 実装です。
+- 各セルのバージョン番号は、その .NET Standard バージョンをターゲットにするために必要な*最小*バージョンの実装です。
 
 [1.0]: https://github.com/dotnet/standard/blob/master/docs/versions/netstandard1.0.md
 [1.1]: https://github.com/dotnet/standard/blob/master/docs/versions/netstandard1.1.md
