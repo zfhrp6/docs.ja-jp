@@ -1,5 +1,5 @@
 ---
-title: "軽減策: X509CertificateClaimSet.FindClaims メソッド | Microsoft ドキュメント"
+title: "軽減策: X509CertificiateClaimSet.FindClaims メソッド"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
@@ -14,11 +14,11 @@ caps.latest.revision: 7
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
-ms.openlocfilehash: c234d6ddeda50dfefff8c49a2e14d623cdd8d861
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: d19bf73e36061729c0c57439f4e4144669787d1a
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/18/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="mitigation-x509certificateclaimsetfindclaims-method"></a>軽減策: X509CertificiateClaimSet.FindClaims メソッド

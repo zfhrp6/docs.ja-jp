@@ -1,5 +1,5 @@
 ---
-title: "軽減策: パスのコロン チェック | Microsoft Docs"
+title: "軽減策: パスのコロン チェック"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
@@ -15,18 +15,18 @@ caps.latest.revision: 5
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
-ms.openlocfilehash: b5e2426fc81c8fd38994a4124cf71af8ec445bfb
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 8eb6864213aa4420f7a4373b9abbf173880f035f
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/18/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="mitigation-path-colon-checks"></a>軽減策: パスのコロン チェック
 [!INCLUDE[net_v462](../../../includes/net-v462-md.md)] を対象とするアプリ以降では、以前はサポートされていなかったパスをサポートするために (長さと形式の両方について) 数多くの変更が加えられました。 具体的には、適切なドライブの区切り構文 (コロン) のチェックがより正しく行われるようになりました。  
   
 ## <a name="impact"></a>影響  
- これらの変更により、<xref:System.IO.Path.GetDirectoryName%2A?displayProperty=fullName> メソッドや <xref:System.IO.Path.GetPathRoot%2A?displayProperty=fullName> メソッドで以前はサポートされていた一部の URI パスがブロックされます。  
+ これらの変更は、以前は <xref:System.IO.Path.GetDirectoryName%2A?displayProperty=fullName> メソッドと <xref:System.IO.Path.GetPathRoot%2A?displayProperty=fullName> メソッドでサポートされていた一部の URI のパスをブロックします。  
   
 ## <a name="mitigation"></a>軽減策  
  <xref:System.IO.Path.GetDirectoryName%2A?displayProperty=fullName> メソッドや <xref:System.IO.Path.GetPathRoot%2A?displayProperty=fullName> メソッドでサポートされなくなった、以前は受け入れられていたパスの問題を回避するには、次のようにします。  

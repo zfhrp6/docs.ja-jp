@@ -1,5 +1,5 @@
 ---
-title: "軽減策: MemberDescriptor.Equals | Microsoft Docs"
+title: "軽減策: MemberDescriptor.Equals"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
@@ -15,17 +15,17 @@ caps.latest.revision: 7
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
-ms.openlocfilehash: 409f06f4dfbe7be50dd2c487e49d3d4d8a477539
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 4989d3c2611b500063158955f102931902e1ab32
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/18/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="mitigation-memberdescriptorequals"></a>軽減策: MemberDescriptor.Equals
-[!INCLUDE[net_v462](../../../includes/net-v462-md.md)] を対象とするアプリ以降、<xref:System.ComponentModel.MemberDescriptor.Equals%2A?displayProperty=fullName> メソッドの実装が変更されました。 `System.ComponentModel.EventDescriptor.Equals` メソッドと `System.ComponentModel.PropertyDescriptor.Equals` メソッドでは基底クラスの実装が継承されるため、変更はこれらのメソッドにも影響します。  
+[!INCLUDE[net_v462](../../../includes/net-v462-md.md)] 以降を対象とするアプリでは、<xref:System.ComponentModel.MemberDescriptor.Equals%2A?displayProperty=fullName> メソッドの実装が変更されました。 `System.ComponentModel.EventDescriptor.Equals` メソッドと `System.ComponentModel.PropertyDescriptor.Equals` メソッドでは基底クラスの実装が継承されるため、変更はこれらのメソッドにも影響します。  
   
- [!INCLUDE[net_v462](../../../includes/net-v462-md.md)] より前のバージョンの .NET Framework を対象とするアプリでは、<xref:System.ComponentModel.MemberDescriptor.Equals%2A?displayProperty=fullName> メソッドの一部の等価テストで、あるオブジェクトの <xref:System.ComponentModel.MemberDescriptor.Category%2A?displayProperty=fullName> プロパティと、別のオブジェクトの <xref:System.ComponentModel.MemberDescriptor.Description%2A?displayProperty=fullName> プロパティが誤って比較されていました。 [!INCLUDE[net_v462](../../../includes/net-v462-md.md)] を対象とするアプリ以降では、<xref:System.ComponentModel.MemberDescriptor.Equals%2A?displayProperty=fullName> メソッドで 2 つのオブジェクトの <xref:System.ComponentModel.MemberDescriptor.Description%2A?displayProperty=fullName> プロパティが比較されます。  
+ .NET Framework [!INCLUDE[net_v462](../../../includes/net-v462-md.md)] より前のバージョンの .NET Framework を対象とするアプリでは、<xref:System.ComponentModel.MemberDescriptor.Equals%2A?displayProperty=fullName> メソッドの一部の等価テストで、あるオブジェクトの <xref:System.ComponentModel.MemberDescriptor.Category%2A?displayProperty=fullName> プロパティと、別のオブジェクトの <xref:System.ComponentModel.MemberDescriptor.Description%2A?displayProperty=fullName> プロパティが誤って比較されていました。 [!INCLUDE[net_v462](../../../includes/net-v462-md.md)] 以降を対象とするアプリでは、<xref:System.ComponentModel.MemberDescriptor.Equals%2A?displayProperty=fullName> メソッドで 2 つのオブジェクトの <xref:System.ComponentModel.MemberDescriptor.Description%2A?displayProperty=fullName> プロパティが比較されます。  
   
 ## <a name="impact"></a>影響  
  この変更により、<xref:System.ComponentModel.MemberDescriptor?displayProperty=fullName> オブジェクトの等価テストが正しく実装され、影響は最小限になるはずです。  
@@ -41,7 +41,7 @@ ms.lasthandoff: 04/18/2017
      </runtime>  
     ```  
   
--   次のコード フラグメントのように、ソース コードを変更し、<xref:System.ComponentModel.MemberDescriptor.Equals%2A?displayProperty=fullName> メソッドを呼び出した後で <xref:System.ComponentModel.MemberDescriptor.Category%2A?displayProperty=fullName> プロパティと <xref:System.ComponentModel.MemberDescriptor.Description%2A?displayProperty=fullName> プロパティを手動で比較して以前の動作を復元することができます。  
+-   次のコード フラグメントのように、ソース コードを変更し、<xref:System.ComponentModel.MemberDescriptor.Equals%2A?displayProperty=fullName> メソッドを呼び出した後で <xref:System.ComponentModel.MemberDescriptor.Category%2A?displayProperty=fullName> プロパティと <xref:System.ComponentModel.MemberDescriptor.Description%2A?displayProperty=fullName> プロパティを手動で比較して、以前の動作を復元できます。  
   
     ```csharp  
     if (memberDescriptor1.Equals(memberDescriptor2) &   

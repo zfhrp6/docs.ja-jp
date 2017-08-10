@@ -1,5 +1,5 @@
 ---
-title: ".NET Core とオープン ソース | Microsoft ドキュメント"
+title: ".NET Core とオープン ソース"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
@@ -14,20 +14,18 @@ caps.latest.revision: 8
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 24ae3c7e78d43960cf8c4127a164caa7edb69254
-ms.openlocfilehash: c6e7a2658cffa5692ffe515f6d07918f550d72c6
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: b61533260a86f10beda0b6652771c858828ec62c
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/25/2017
+ms.lasthandoff: 07/28/2017
 
 ---
-<a id="net-core-and-open-source" class="xliff"></a>
-# .NET Core とオープン ソース
+# <a name="net-core-and-open-source"></a>.NET Core とオープン ソース
 このトピックでは、.NET Core の概要のほか、詳細情報の入手方法を説明します。 .NET Core に関するトピックの完全な一覧については、[「.NET Core のガイド」](../../core/index.md) を参照してください。
   
 <a name="BKMK_WhatisNETCore"></a>   
-<a id="what-is-net-core" class="xliff"></a>
-## .NET Core とは何ですか?  
+## <a name="what-is-net-core"></a>.NET Core とは何ですか?  
  .NET Core は、モジュール形式のクロスプラットフォームかつオープン ソースを実装した汎用の .NET プラットフォームです。 .NET Framework と同じ API の多くが含まれるほか (ただし、.NET Core の方が数が少ない) 、ランタイム、フレームワーク、コンパイラ、およびさまざまなオペレーティング システムやチップ ターゲットをサポートするツールのコンポーネントが含まれます。 .NET Core の実装は、主に ASP.NET Core のワークロードによるものですが、新しいランタイムの必要性とユーザーの要望にも後押しされました。 この実装は、デバイス、クラウド、および埋め込み/IoT のシナリオで使用できます。  
   
  .NET Core を使用する場合、[.NET Core のホームページ](https://www.microsoft.com/net/core)を参照してください。  
@@ -42,8 +40,7 @@ ms.lasthandoff: 05/25/2017
 
 -   **モジュール形式:** .NET Core は、小規模のアセンブリ パッケージで NuGet を介してリリースされるためモジュール形式となっています。 .NET Core はコア機能のほとんどが含まれる 1 つの大きなアセンブリではなく、中心的な機能が含まれる比較的小さなパッケージとして提供されています。 これによって開発モデルがよりアジャイル化されるため、必要な NuGet パッケージだけが含まれるようにアプリを最適化することができます。 小さいアプリ領域の利点には、セキュリティの強化、サービスの削減、パフォーマンスの向上、従量課金モデルによるコスト削減などがあります。  
   
-<a id="the-net-core-platform" class="xliff"></a>
-## .NET Core プラットフォーム  
+## <a name="the-net-core-platform"></a>.NET Core プラットフォーム  
  .NET Core プラットフォームは複数コンポーネントで構成され、マネージ コンパイラ、ランタイム、基本クラス ライブラリ、および ASP.NET Core などの多数のアプリケーション モデルが含まれます。 さまざまなコンポーネントの詳細や、実際の操作については、以下の [GitHub](https://github.com/) リポジトリを参照してください。  
   
 -   [.NET Core](https://github.com/dotnet/core)  
@@ -52,14 +49,14 @@ ms.lasthandoff: 05/25/2017
   
 -   [CoreCLR - .NET Core runtime (CoreCLR - .NET Core ランタイム)](https://github.com/dotnet/coreclr)  
   
--   [CLI - .NET Core command-line tools (CLI - .NET Core のコマンド ライン ツール)](https://github.com/dotnet/cli)  
+-   [CLI - .NET Core command-line tools (CLI - .NET Core のコマンドライン ツール)](https://github.com/dotnet/cli)  
   
 -   [Roslyn - .NET Compiler Platform (.NET コンパイラ プラットフォーム)](https://github.com/dotnet/roslyn)  
   
 -   [ASP.NET Core](https://github.com/aspnet/home)  
   
-<a id="see-also" class="xliff"></a>
-## 関連項目  
+## <a name="see-also"></a>関連項目  
  [.NET Core のホーム ページ](https://www.microsoft.com/net/core)   
- [.NET Core ドキュメント サイト](../core/index.md)   
+ [.NET Core ガイド](../../core/index.md)   
  [ASP.NET Core ドキュメント](/aspnet/core/)
+
