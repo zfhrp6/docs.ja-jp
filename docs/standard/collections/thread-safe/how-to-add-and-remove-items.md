@@ -1,5 +1,5 @@
 ---
-title: "方法: ConcurrentDictionary の項目を追加および削除する | Microsoft Docs"
+title: "方法: ConcurrentDictionary の項目を追加および削除する"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net
@@ -15,10 +15,11 @@ caps.latest.revision: 13
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-translationtype: Human Translation
-ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
-ms.openlocfilehash: 9d20d75b2492c214305c07a5e19941cd91b66f67
-ms.lasthandoff: 04/18/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 40291d424916c2f87a2070a9a8a6e49243ac083a
+ms.contentlocale: ja-jp
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="how-to-add-and-remove-items-from-a-concurrentdictionary"></a>方法: ConcurrentDictionary の項目を追加および削除する
@@ -30,19 +31,18 @@ ms.lasthandoff: 04/18/2017
 |------------|---------------|  
 |<xref:System.Collections.Concurrent.ConcurrentDictionary%602.AddOrUpdate%2A>|指定したキーで新しい値を追加し、キーが既に存在する場合は値を置換します。|  
 |<xref:System.Collections.Concurrent.ConcurrentDictionary%602.GetOrAdd%2A>|指定したキーの既存の値を取得し、キーが存在しない場合はキー/値ペアを指定します。|  
-|<xref:System.Collections.Concurrent.ConcurrentDictionary%602.TryAdd%2A>、<xref:System.Collections.Concurrent.ConcurrentDictionary%602.TryGetValue%2A>、<xref:System.Collections.Concurrent.ConcurrentDictionary%602.TryUpdate%2A>、<xref:System.Collections.Concurrent.ConcurrentDictionary%602.TryRemove%2A>|キー/値ペアを追加、取得、更新、または削除し、キーが既に存在するか、他の何らかの理由で操作が失敗する場合は、代わりの操作を実行します。|  
+|<xref:System.Collections.Concurrent.ConcurrentDictionary%602.TryAdd%2A>, <xref:System.Collections.Concurrent.ConcurrentDictionary%602.TryGetValue%2A> , <xref:System.Collections.Concurrent.ConcurrentDictionary%602.TryUpdate%2A> , <xref:System.Collections.Concurrent.ConcurrentDictionary%602.TryRemove%2A>|キー/値ペアを追加、取得、更新、または削除し、キーが既に存在するか、他の何らかの理由で操作が失敗する場合は、代わりの操作を実行します。|  
   
 ## <a name="example"></a>例  
- 次の例では、同時に 2 つの <xref:System.Threading.Tasks.Task> インスタンスを使用して複数の要素を <xref:System.Collections.Concurrent.ConcurrentDictionary%602> に追加し、要素が正常に追加されたことを示すためにすべてのコンテンツを出力します。 また、<xref:System.Collections.Concurrent.ConcurrentDictionary%602.AddOrUpdate%2A>、<xref:System.Collections.Generic.Dictionary%602.TryGetValue%2A>、および <xref:System.Collections.Concurrent.ConcurrentDictionary%602.GetOrAdd%2A> の各メソッドを使用して、コレクションの項目を追加、更新、および取得する例も示しています。  
+ 次の例では、同時に 2 つの <xref:System.Threading.Tasks.Task> インスタンスを使用して複数の要素を <xref:System.Collections.Concurrent.ConcurrentDictionary%602> に追加し、要素が正常に追加されたことを示すためにすべてのコンテンツを出力します。 また、<xref:System.Collections.Concurrent.ConcurrentDictionary%602.AddOrUpdate%2A>、<xref:System.Collections.Generic.Dictionary%602.TryGetValue%2A>、<xref:System.Collections.Concurrent.ConcurrentDictionary%602.GetOrAdd%2A> の各メソッドを使用して、コレクションの項目を追加、更新、および取得する例も示しています。  
   
- [!code-csharp[CDS#16](../../../../samples/snippets/csharp/VS_Snippets_Misc/cds/cs/cds_dictionaryhowto.cs#16)]
- [!code-vb[CDS#16](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/cds/vb/cds_concdict.vb#16)]  
+ [!code-csharp[CDS#16](../../../../samples/snippets/csharp/VS_Snippets_Misc/cds/cs/cds_dictionaryhowto.cs#16)] [!code-vb[CDS#16](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/cds/vb/cds_concdict.vb#16)]  
   
  <xref:System.Collections.Concurrent.ConcurrentDictionary%602> はマルチスレッド シナリオ向けに設計されています。 コレクションの項目を追加または削除するために、コードでロックを使用する必要はありません。 ただし、あるスレッドが値を取得した直後に、別のスレッドが同じキーと新しい値を指定してコレクションを更新する可能性が常にあります。  
   
- また、<xref:System.Collections.Concurrent.ConcurrentDictionary%602> のすべてのメソッドはスレッドセーフですが、アトミックではないメソッド (具体的には <xref:System.Collections.Concurrent.ConcurrentDictionary%602.GetOrAdd%2A> と <xref:System.Collections.Concurrent.ConcurrentDictionary%602.AddOrUpdate%2A>) もあります。 これらのメソッドに渡されるユーザー デリゲートは、ディクショナリの内部ロックの外側で呼び出されます  (これは、不明なコードがすべてのスレッドをブロックするのを防ぐために行われます)。そのため、次のような一連のイベントが発生する可能性があります。  
+ また、<xref:System.Collections.Concurrent.ConcurrentDictionary%602> のメソッドはすべてスレッド セーフですが、<xref:System.Collections.Concurrent.ConcurrentDictionary%602.GetOrAdd%2A> や <xref:System.Collections.Concurrent.ConcurrentDictionary%602.AddOrUpdate%2A> などの一部のメソッドはアトミックではありません。 これらのメソッドに渡されるユーザー デリゲートは、ディクショナリの内部ロックの外側で呼び出されます  (これは、不明なコードがすべてのスレッドをブロックするのを防ぐために行われます)。そのため、次のような一連のイベントが発生する可能性があります。  
   
- 1\) threadA は <xref:System.Collections.Concurrent.ConcurrentDictionary%602.GetOrAdd%2A> を呼び出し、アイテムが見つからず、valueFactory デリゲートを呼び出して、新しいアイテムを作成して追加します。  
+ 1\) threadA が <xref:System.Collections.Concurrent.ConcurrentDictionary%602.GetOrAdd%2A> を呼び出しましたが、項目が見つからないため、valueFactory デリゲートを呼び出すことにより新しい項目を作成して追加します。  
   
  2\) threadB が同時に <xref:System.Collections.Concurrent.ConcurrentDictionary%602.GetOrAdd%2A> を呼び出します。その valueFactory デリゲートが呼び出され、threadA より前に内部ロックに到達し、新しいキー/値ペアをディクショナリに追加します。  
   
@@ -50,8 +50,9 @@ ms.lasthandoff: 04/18/2017
   
  4\) threadA は "Get" を実行し、threadB によって前に追加されたデータを返します。  
   
- したがって、<xref:System.Collections.Concurrent.ConcurrentDictionary%602.GetOrAdd%2A> によって返されるデータが、スレッドの valueFactory によって作成された同じデータであることは保証されません。 <xref:System.Collections.Concurrent.ConcurrentDictionary%602.AddOrUpdate%2A> を呼び出すと、同様のシーケンスのイベントを起こすことができます。  
+ したがって、<xref:System.Collections.Concurrent.ConcurrentDictionary%602.GetOrAdd%2A> によって返されるデータが、スレッドの valueFactory によって作成された同じデータであることは保証されません。 <xref:System.Collections.Concurrent.ConcurrentDictionary%602.AddOrUpdate%2A> を呼び出したときも、同様の一連のイベントが発生する可能性があります。  
   
 ## <a name="see-also"></a>関連項目  
  <xref:System.Collections.Concurrent?displayProperty=fullName>   
  [スレッドセーフなコレクション](../../../../docs/standard/collections/thread-safe/index.md)
+
