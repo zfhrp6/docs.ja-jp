@@ -382,7 +382,7 @@
 # [Visual Basic のガイド](visual-basic/index.md)
 ## [開始するには](visual-basic/getting-started/index.md)
 ### [Visual Basic の新機能](visual-basic/getting-started/whats-new.md)
-### [Visual Studio 2015 における Visual Basic の互換性に影響する変更点](visual-basic/getting-started/breaking-changes-in-visual-studio-2015.md)
+### [Visual Studio における Visual Basic の互換性に影響する変更点](visual-basic/getting-started/breaking-changes-in-visual-studio.md)
 ### [Visual Basic プログラマのための追加リソース](visual-basic/getting-started/additional-resources.md)
 
 ## [開発 (アプリケーションを)](visual-basic/developing-apps/index.md)
