@@ -10,11 +10,11 @@ ms.prod: .net-core
 ms.technology: dotnet-docker
 ms.devlang: dotnet
 ms.assetid: 1f3b9a68-4dea-4b60-8cb3-f46164eedbbf
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 50e128137fde445f64e10cf7c2a1ee5fdecb34e6
-ms.openlocfilehash: 283b9405000cba328c348fada81c70683b700a8b
+ms.translationtype: HT
+ms.sourcegitcommit: 318bf7a77748dfcee5f28243409d31e8d3e5c9ff
+ms.openlocfilehash: 8e0fd8db2810c36358a7bcf94f4bc5e7d2aa399e
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/01/2017
+ms.lasthandoff: 08/03/2017
 
 ---
 
@@ -33,7 +33,7 @@ ms.lasthandoff: 05/01/2017
 
 Docker for Windows では、**[共有ドライブ](https://docs.docker.com/docker-for-windows/#shared-drives)**を設定する必要があります。 この設定は、ボリュームのマップとデバッグのサポートで必要です。
 
-システム トレイの Docker アイコンを右クリックして、[設定] をクリックして 「Shared Drives」 (共有ドライブ) を選択します。
+システム トレイの Docker アイコンを右クリックして **[設定]** をクリックし、**[Shared Drives]\(共有ドライブ\)** を選択します。 Docker によるファイルの格納先となるドライブを選択して、変更を適用します。
 
 ![共有ドライブ](./media/visual-studio-tools-for-docker/settings-shared-drives-win.png)
 
@@ -48,6 +48,8 @@ Visual Studio を使用して、新しい ASP.NET Core Web アプリケーショ
 プロジェクトのコンテキスト メニュー
 
 ![[追加]、「Docker Support」 (Docker サポート) を右クリック](./media/visual-studio-tools-for-docker/right-click-add-docker-support.png)
+
+プロジェクトに Docker サポートを追加する場合、Windows または Linux のいずれかのコンテナーを選択できます。 (Docker ホストが同じコンテナーの種類を実行している必要があります。 実行中の Docker インスタンスでコンテナーの種類を変更する必要がある場合、システム トレイの **Docker** アイコンを右クリックして、**[Switch to Windows containers]\(Windows コンテナーに切り替える\)**、または **[Switch to Linux containers]\(Linux コンテナーに切り替える\)** を選択します。) 
 
 プロジェクトに次のファイルが追加されます。
 
