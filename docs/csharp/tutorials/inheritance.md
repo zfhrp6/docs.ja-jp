@@ -12,16 +12,13 @@ ms.technology: .net-core-technologies
 ms.devlang: dotnet
 ms.assetid: aeb68c74-0ea0-406f-9fbe-2ce02d47ef31
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: c3004d84e9a87fcf86737b18fe58bb200eefd33b
+ms.sourcegitcommit: 7912d46736fd9f9d9d2ee41c416d3dfc157cfe12
+ms.openlocfilehash: 44e77b099b15b5ddccfd6b3826d0225de1b0a74f
 ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
+ms.lasthandoff: 08/09/2017
 
 ---
-
 # <a name="inheritance-in-c-and-net"></a>C# と .NET での継承
-
-## <a name="introduction"></a>はじめに
 
 このチュートリアルでは、C# での継承について説明します。 継承は、オブジェクト指向プログラミング言語の一機能であり、特定の機能 (データおよび動作) を提供する基底クラスを定義し、その機能を継承またはオーバーライドする派生クラスを定義することができます。
 
@@ -128,7 +125,7 @@ public struct ValueStructure : ValueType // Generates CS0527.
 
 <xref:System.Object> クラスからの暗黙的な継承により、`SimpleClass` クラスで以下のメソッドが使用可能になります。
 
-- パブリック `ToString` メソッド。`SimpleClass` オブジェクトを完全修飾型名の文字列表記に変換します。 ここで、`ToString` メソッドは文字列 "SimpleClass" を返します。
+- パブリック `ToString` メソッド。`SimpleClass` オブジェクトを文字列表記に変換し、完全修飾型名を返します。 ここで、`ToString` メソッドは文字列 "SimpleClass" を返します。
 
 - 2 つのオブジェクトが等しいかどうか調べる 3 つのメソッド: パブリック インスタンス `Equals(Object)` メソッド、パブリック静的 `Equals(Object, Object)` メソッド、およびパブリック静的 `ReferenceEquals(Object, Object)` メソッド。 既定により、これらのメソッドは参照の等価性を調べます。つまり、等価であるためには、2 つのオブジェクトの変数が同じオブジェクトを参照している必要があります。
 
@@ -160,7 +157,7 @@ public struct ValueStructure : ValueType // Generates CS0527.
 > [!NOTE]
 > 1 つのクラスまたは構造体は、1 つまたは複数のインターフェイスを実装できます。 インターフェイスの実装は、単一継承の回避策として、または構造体とともに継承を使用する方法として提示されることが多いですが、継承というよりは、インターフェイスとその実装型の間の別の関係 ("can do" 関係) を表すものとして意図されています。 インターフェイスは、その実装型で使用可能とする機能 (等価性を調べる機能、オブジェクトを比較または並べ替える機能、カルチャに依存した解析および書式設定のサポート機能など) のサブセットを定義します。
 
-なお、"is a" 関係は、型とその型の特定のインスタンス化の間の関係も表します。 次の例では、`Automobile` は一意の読み取り専用プロパティを 3 つ持つクラスです。自動車の製造メーカーである `Moke`、車種である `Model`、そして製造年である `Year` の 3 つです。 この `Automobile` クラスはまた、プロパティ値に割り当てられている引数があるコンストラクターを持ち、<xref:System.Object.ToString%2A?displayProperty=fullName> メソッドをオーバーライドして、`Automobile` クラスではなく `Automobile` インスタンスを一意に識別する文字列を生成します。
+なお、"is a" 関係は、型とその型の特定のインスタンス化の間の関係も表します。 次の例では、`Automobile` は一意の読み取り専用プロパティを 3 つ持つクラスです。自動車の製造メーカーである `Make`、車種である `Model`、そして製造年である `Year` の 3 つです。 この `Automobile` クラスはまた、プロパティ値に割り当てられている引数があるコンストラクターを持ち、<xref:System.Object.ToString%2A?displayProperty=fullName> メソッドをオーバーライドして、`Automobile` クラスではなく `Automobile` インスタンスを一意に識別する文字列を生成します。
 
 [!code-csharp[継承](../../../samples/snippets/csharp/tutorials/inheritance/is-a.cs#1)]
 

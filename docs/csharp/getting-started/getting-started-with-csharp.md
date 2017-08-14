@@ -30,10 +30,10 @@ translation.priority.mt:
 - pt-br
 - tr-tr
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 14022b0272d5ad356c76bf0153f6ea5dfda91994
+ms.sourcegitcommit: 3155295489e1188640dae5aa5bf9fdceb7480ed6
+ms.openlocfilehash: f88dc299bdc503ae83740e4c1259aa1896481760
 ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
+ms.lasthandoff: 08/05/2017
 
 ---
 # <a name="getting-started-with-c"></a>C# の概要
@@ -41,7 +41,7 @@ ms.lasthandoff: 07/28/2017
   
 ## <a name="in-this-section"></a>このセクションの内容  
  [C# 言語と .NET Framework の概要](../../csharp/getting-started/introduction-to-the-csharp-language-and-the-net-framework.md)  
- C# 言語および .NET プラットフォームの概要を示します。  
+ C# 言語および .NET の概要を示します。  
   
  [Visual C# プログラマのための追加リソース](../../csharp/getting-started/additional-resources.md)  
  一般的な問題の解決に役立つ Web サイトおよびニュースグループへのリンクを示します。  
