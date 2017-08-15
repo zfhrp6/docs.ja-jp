@@ -1,19 +1,18 @@
 ---
 title: "Windows Vista への .NET Framework のインストール"
-description: "Windows Vista に .NET Framework をインストールする方法について説明します"
+description: "Windows Vista に .NET Framework をインストールする方法について説明します。"
 author: rlander
+ms.author: mairaw
 keywords: ".Net Framework, インストール"
-ms.date: 03/28/2017
+ms.date: 08/03/2017
 ms.topic: article
 ms.prod: .net-framework
-ms.technology: vs-ide-deployment
 ms.devlang: dotnet
-ms.assetid: 67cda1d5-c6g5-5eb5-93e6-5f478de07ff7
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 6777b07c7714b3fedd5b729718e8c29c152c0a4d
+ms.sourcegitcommit: 21c6a1485f3d0c38bde065d6ecc7b07d5e424c1d
+ms.openlocfilehash: fbc37ee82c431edadaee98be86caf50791d65133
 ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
+ms.lasthandoff: 08/05/2017
 
 ---
 
@@ -35,7 +34,7 @@ Windows Vista には、[.NET Framework 4.6](http://go.microsoft.com/fwlink/?Link
 
 Windows Vista には、[.NET Framework 3.5](http://go.microsoft.com/fwlink/?LinkID=213834&dotnetdocs) をインストールできます。
 
-.NET Framework 3.5 は、.NET Framework 1.0 から 3.5 用に構築されたアプリケーションを実行するために使用できます。
+.NET Framework 3.5 は、.NET Framework 1.0 から 3.5 用に構築されたアプリケーションをサポートします。
 
 ## <a name="help"></a>ヘルプ
 

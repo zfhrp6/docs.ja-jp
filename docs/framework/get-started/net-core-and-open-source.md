@@ -15,10 +15,10 @@ author: mairaw
 ms.author: mairaw
 manager: wpickett
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: b61533260a86f10beda0b6652771c858828ec62c
+ms.sourcegitcommit: 3155295489e1188640dae5aa5bf9fdceb7480ed6
+ms.openlocfilehash: db4689ee58b48fad2e3696e5e64aa187710f4868
 ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
+ms.lasthandoff: 08/05/2017
 
 ---
 # <a name="net-core-and-open-source"></a>.NET Core とオープン ソース
@@ -26,7 +26,7 @@ ms.lasthandoff: 07/28/2017
   
 <a name="BKMK_WhatisNETCore"></a>   
 ## <a name="what-is-net-core"></a>.NET Core とは何ですか?  
- .NET Core は、モジュール形式のクロスプラットフォームかつオープン ソースを実装した汎用の .NET プラットフォームです。 .NET Framework と同じ API の多くが含まれるほか (ただし、.NET Core の方が数が少ない) 、ランタイム、フレームワーク、コンパイラ、およびさまざまなオペレーティング システムやチップ ターゲットをサポートするツールのコンポーネントが含まれます。 .NET Core の実装は、主に ASP.NET Core のワークロードによるものですが、新しいランタイムの必要性とユーザーの要望にも後押しされました。 この実装は、デバイス、クラウド、および埋め込み/IoT のシナリオで使用できます。  
+ .NET Core は、モジュール形式のクロスプラットフォームかつオープン ソースを実装した汎用の .NET Standard です。 .NET Framework と同じ API の多くが含まれるほか (ただし、.NET Core の方が数が少ない)、ランタイム、フレームワーク、コンパイラ、およびさまざまなオペレーティング システムやチップ ターゲットをサポートするツールのコンポーネントが含まれます。 .NET Core の実装は、主に ASP.NET Core のワークロードによるものですが、新しい実装の必要性とユーザーの要望にも後押しされました。 この実装は、デバイス、クラウド、および埋め込み/IoT のシナリオで使用できます。  
   
  .NET Core を使用する場合、[.NET Core のホームページ](https://www.microsoft.com/net/core)を参照してください。  
   

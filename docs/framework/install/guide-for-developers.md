@@ -1,7 +1,7 @@
 ---
 title: "開発者向けの .NET Framework のインストール"
 ms.custom: 
-ms.date: 04/28/2017
+ms.date: 05/26/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
@@ -20,10 +20,10 @@ author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: da0e9bd789068d94feda3c2a6ab0d35606d423a1
+ms.sourcegitcommit: 21c6a1485f3d0c38bde065d6ecc7b07d5e424c1d
+ms.openlocfilehash: 844b3e40b816d324ca4ba22d6884be5a7e3a2ec1
 ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
+ms.lasthandoff: 08/05/2017
 
 ---
 

@@ -1,19 +1,18 @@
 ---
 title: "Windows XP への .NET Framework のインストール"
-description: "Windows XP に .NET Framework をインストールする方法について説明します"
+description: "Windows XP に .NET Framework をインストールする方法について説明します。"
 author: rlander
+ms.author: mairaw
 keywords: ".Net Framework, インストール"
-ms.date: 03/28/2017
+ms.date: 08/03/2017
 ms.topic: article
 ms.prod: .net-framework
-ms.technology: vs-ide-deployment
 ms.devlang: dotnet
-ms.assetid: 87cda1d5-c8g5-5eb5-93e8-5f478de07ff7
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 7a4bf14ad57495c5d6cd2ba40e2bd63b91551e33
+ms.sourcegitcommit: 21c6a1485f3d0c38bde065d6ecc7b07d5e424c1d
+ms.openlocfilehash: fe9d044efae87f212c620b9fa8c02221ca475d71
 ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
+ms.lasthandoff: 08/05/2017
 
 ---
 
@@ -28,7 +27,7 @@ Windows XP でアプリケーションを実行するために .NET Framework �
 
 Windows XP には、.NET Framework 4.5 以降をインストールできません。 .NET Framework 4.5 以降のバージョンを使用するには、新しいバージョンの Windows にアップグレードする必要があります。
 
-.NET Framework 4.6.2 は、[Windows 10 Anniversary Update](https://www.microsoft.com/software-download/windows10) に含まれています。
+.NET Framework 4.7 は [Windows 10 Creators Update](https://www.microsoft.com/software-download/windows10) に含まれています。
 
 ## <a name="net-framework-403"></a>.NET Framework 4.0.3
 
