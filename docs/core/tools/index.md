@@ -4,20 +4,19 @@ description: "コマンドライン インターフェイス (CLI) ツールと�
 keywords: "CLI, CLI ツール, .NET, .NET Core"
 author: blackdwarf
 ms.author: mairaw
-ms.date: 03/20/2017
+ms.date: 08/12/2017
 ms.topic: article
 ms.prod: .net-core
 ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: 7c5eee9f-d873-4224-8f5f-ed83df329a59
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: a8c91621095ea187dd4236db7533520556840c59
+ms.sourcegitcommit: 61dedb132a34cf97894e77bb20d47694b2c0c104
+ms.openlocfilehash: adde2922a6e98cc4ced7ea7313fa8eb702932471
 ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
+ms.lasthandoff: 08/13/2017
 
 ---
-
 # <a name="net-core-command-line-interface-cli-tools"></a>.NET Core コマンドライン インターフェイス (CLI) ツール
 
 .NET Core コマンドライン インターフェイス (CLI) は、.NET アプリケーションを開発するための新しいクロスプラットフォーム ツールチェーンです。 CLI は、統合開発環境 (IDE)、エディター、ビルド オーケストレーターなど、上位レベル ツールの基になるものです。
@@ -48,6 +47,7 @@ ms.lasthandoff: 07/28/2017
 * [migrate](dotnet-migrate.md)
 * [clean](dotnet-clean.md)
 * [sln](dotnet-sln.md)
+* [store](dotnet-store.md) - .NET Core 2.0 SDK とそれ以降のバージョンで使用可能です。
 
 ### <a name="project-modification-commands"></a>プロジェクトの変更コマンド
 
