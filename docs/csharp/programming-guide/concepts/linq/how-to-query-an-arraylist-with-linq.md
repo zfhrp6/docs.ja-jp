@@ -1,5 +1,5 @@
 ---
-title: "方法: LINQ を使用して ArrayList をクエリする (C#) | Microsoft Docs"
+title: "方法: LINQ を使用して ArrayList をクエリする (C#)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -19,11 +19,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-ms.translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 09489e2dabd34da0446a623e91cd85de35c3c70b
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 5aece8a49762898f4ea3af41a9290daa22bfe96d
 ms.contentlocale: ja-jp
-ms.lasthandoff: 03/13/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="how-to-query-an-arraylist-with-linq-c"></a>方法: LINQ を使用して ArrayList をクエリする (C#)
@@ -36,10 +36,10 @@ var query = from Student s in arrList
   
  範囲変数の型を指定することで、<xref:System.Collections.ArrayList> 内の各項目を `Student` にキャストします。  
   
- 明示的に型指定された範囲変数をクエリ式で使用すると、<xref:System.Linq.Enumerable.Cast%2A> メソッドを呼び出した場合と同じ結果を得ることができます。 指定されたキャストを実行できない場合、<xref:System.Linq.Enumerable.Cast%2A> は例外をスローします。 <xref:System.Linq.Enumerable.Cast%2A> と <xref:System.Linq.Enumerable.OfType%2A> は、非ジェネリックの <xref:System.Collections.IEnumerable> 型で実行できる標準クエリ演算子メソッドです。 詳細については、「[LINQ クエリ操作での型の関係](../../../../csharp/programming-guide/concepts/linq/type-relationships-in-linq-query-operations.md)」を参照してください。  
+ 明示的に型指定された範囲変数をクエリ式で使用すると、<xref:System.Linq.Enumerable.Cast%2A> メソッドを呼び出した場合と同じ結果を得ることができます。 指定したキャストを実行できない場合、<xref:System.Linq.Enumerable.Cast%2A> は例外をスローします。 <xref:System.Linq.Enumerable.Cast%2A> および <xref:System.Linq.Enumerable.OfType%2A> は、非ジェネリックの <xref:System.Collections.IEnumerable> 型で動作する、2 つの標準クエリ演算子メソッドです。 詳細については、「[LINQ クエリ操作での型の関係](../../../../csharp/programming-guide/concepts/linq/type-relationships-in-linq-query-operations.md)」を参照してください。  
   
 ## <a name="example"></a>例  
- <xref:System.Collections.ArrayList> に対する単純なクエリの例を次に示します。 この例では、コードが <xref:System.Collections.ArrayList.Add%2A> メソッドを呼び出すときにオブジェクト初期化子を使用していますが、これは必須ではありません。  
+ 次の例では、<xref:System.Collections.ArrayList> に対して単純なクエリを実行しています。 この例では、コードが <xref:System.Collections.ArrayList.Add%2A> メソッドを呼び出すときにオブジェクト初期化子を使用していますが、これは必須ではありません。  
   
 ```csharp  
 using System;  
