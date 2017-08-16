@@ -11,10 +11,10 @@ ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: fffc3400-aeb9-4c07-9fea-83bc8dbdcbf3
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 5c4d478d42f395cefdd38c796b19a1f875c4ef2e
+ms.sourcegitcommit: 434b27f6c2d44c63b4ce4deee094ac6c322cf2b5
+ms.openlocfilehash: 62de584fe5d7f1029e73e4c8c5f9b428c567751a
 ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
+ms.lasthandoff: 08/09/2017
 
 ---
 
@@ -162,7 +162,7 @@ echo "Hello World!"
 echo "Hello World"
 ```
 
-macOS では、このスクリプトを `dotnet-hello` として保存し、その実行可能ビットを `chmod +x dotnet-hello` に設定します。 これで、コマンド `ln -s dotnet-hello /usr/local/bin/` を使用して、`/usr/local/bin` でこのスクリプトへのシンボリック リンクを作成できます。 これにより、`dotnet hello` 構文を使用して、コマンドを起動できるようになります。
+macOS では、このスクリプトを `dotnet-hello` として保存し、その実行可能ビットを `chmod +x dotnet-hello` に設定します。 これで、コマンド `ln -s <full_path>/dotnet-hello /usr/local/bin/` を使用して、`/usr/local/bin` でこのスクリプトへのシンボリック リンクを作成できます。 これにより、`dotnet hello` 構文を使用して、コマンドを起動できるようになります。
 
 Windows では、このスクリプトを `dotnet-hello.cmd` として保存し、システム パス内の場所に格納できます (または、既にパス内にあるフォルダーに追加できます)。 その後、`dotnet hello` を使用するだけでこの例を実行できます。
 
