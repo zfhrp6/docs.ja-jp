@@ -1,5 +1,5 @@
 ---
-title: "デスクトップ アプリケーションでのリソースのパッケージ化と配置 | Microsoft Docs"
+title: "デスクトップ アプリケーションでのリソースのパッケージ化と配置"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
@@ -35,11 +35,11 @@ caps.latest.revision: 26
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: a32f50ce8a92fa22d9627a1510a4b3ec1087364e
-ms.openlocfilehash: 8f77d86ba453389b8fc5f52797a3ce43377176ae
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 5de456ff1a371a43241dba3b47be7dcd80bf8f70
 ms.contentlocale: ja-jp
-ms.lasthandoff: 06/02/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="packaging-and-deploying-resources-in-desktop-apps"></a>デスクトップ アプリケーションでのリソースのパッケージ化と配置

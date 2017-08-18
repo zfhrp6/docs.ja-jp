@@ -1,5 +1,5 @@
 ---
-title: "アセンブリのシャドウ コピー | Microsoft Docs"
+title: "アセンブリのシャドウ コピー"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
@@ -18,11 +18,11 @@ caps.latest.revision: 15
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
-ms.openlocfilehash: e451c7f15026b06db98d1922e06183a06e42d982
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 9ca1f68b7f88c3aec08d58fc1ccba7ea082bb026
 ms.contentlocale: ja-jp
-ms.lasthandoff: 06/02/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="shadow-copying-assemblies"></a>アセンブリのシャドウ コピー
@@ -93,3 +93,4 @@ ms.lasthandoff: 06/02/2017
  <xref:System.AppDomainSetup.ApplicationName%2A?displayProperty=fullName>   
  <xref:System.AppDomainSetup.ShadowCopyDirectories%2A?displayProperty=fullName>   
  [\<shadowCopyVerifyByTimestamp> 要素](../../../docs/framework/configure-apps/file-schema/runtime/shadowcopyverifybytimestamp-element.md)
+

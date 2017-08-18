@@ -1,5 +1,5 @@
 ---
-title: "方法: グローバル アセンブリ キャッシュにアセンブリをインストールする | Microsoft Docs"
+title: "方法 : グローバル アセンブリ キャッシュにアセンブリをインストールする"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
@@ -20,11 +20,11 @@ caps.latest.revision: 24
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
-ms.openlocfilehash: 63e1c2273e85117fd5419e63e823da6d2137726a
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: c1a0eb5034c10b84b02f493cd21bccd121c8315c
 ms.contentlocale: ja-jp
-ms.lasthandoff: 06/02/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="how-to-install-an-assembly-into-the-global-assembly-cache"></a>方法 : グローバル アセンブリ キャッシュにアセンブリをインストールする
@@ -93,3 +93,4 @@ gacutil -i hello.dll
  [Gacutil.exe (グローバル アセンブリ キャッシュ ツール)](../../../docs/framework/tools/gacutil-exe-gac-tool.md)   
  [方法 : 厳密な名前でアセンブリに署名する](../../../docs/framework/app-domains/how-to-sign-an-assembly-with-a-strong-name.md)   
  [Windows インストーラーの配置](http://msdn.microsoft.com/en-us/121be21b-b916-43e2-8f10-8b080516d2a0)
+

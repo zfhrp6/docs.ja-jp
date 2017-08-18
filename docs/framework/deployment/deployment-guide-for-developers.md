@@ -1,5 +1,5 @@
 ---
-title: ".NET Framework 配置ガイド (開発者向け) | Microsoft Docs"
+title: ".NET Framework 配置ガイド (開発者向け)"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
@@ -22,11 +22,11 @@ caps.latest.revision: 108
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: fe9ab371ab8d3eee3778412e446b7aa30b42476b
-ms.openlocfilehash: 5ceb8014ce3b6cea08e8e6c8c347ccb1658ee0ea
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 043338d73e67ee36d2888b748402d824ee6d5daf
 ms.contentlocale: ja-jp
-ms.lasthandoff: 06/02/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="net-framework-deployment-guide-for-developers"></a>.NET Framework 配置ガイド (開発者向け)
@@ -76,9 +76,9 @@ ms.lasthandoff: 06/02/2017
 
 |アプリケーションの配置戦略|使用できる配置方法|使用する .NET Framework 再頒布可能パッケージ|
 |--------------------------------------|----------------------------------|-------------------------------------------|
-|Web からのインストール|- [InstallShield](#installshield-deployment)<br />- [WiX ツールセット](#wix)<br />- [手動インストール](#installing_manually)|[Web インストーラー](#redistributable-packages)|
-|ディスクからのインストール|- [InstallShield](#installshield-deployment)<br />- [WiX ツールセット](#wix)<br />- [手動インストール](#installing_manually)|[オフライン インストーラー](#redistributable-packages)|
-|ローカル エリア ネットワークからのインストール (エンタープライズ アプリケーションの場合)|- [ClickOnce](#clickonce-deployment)|[Web インストーラー](#redistributable-packages) (制約については「[ClickOnce](#clickonce-deployment)」を参照) または[オフライン インストーラー](#redistributable-packages)|
+|Web からのインストール|- [InstallShield](#installshield-deployment)<br />- [WiX ツールセット](#wix)<br />- [手動インストール](#installing_manually)|[Web installer](#redistributable-packages)|
+|ディスクからのインストール|- [InstallShield](#installshield-deployment)<br />- [WiX ツールセット](#wix)<br />- [手動インストール](#installing_manually)|[Offline installer](#redistributable-packages)|
+|ローカル エリア ネットワークからのインストール (エンタープライズ アプリケーションの場合)|- [ClickOnce](#clickonce-deployment)|[Web インストーラー](#redistributable-packages) (制約については「 [ClickOnce](#clickonce-deployment) 」を参照) または [オフライン インストーラー](#redistributable-packages)|
 
 ## <a name="redistributable-packages"></a>頒布可能パッケージ
  .NET Framework は、Web インストーラー (ブートストラップ) とオフライン インストーラー (スタンドアロン再頒布可能パッケージ) の 2 種類の再頒布可能パッケージで入手できます。 2 つのパッケージの比較を次の表に示します。
@@ -92,7 +92,7 @@ ms.lasthandoff: 06/02/2017
 |配置方法|すべてのメソッドをサポート<br /><br /> - [ClickOnce](#clickonce-deployment)<br />- [InstallShield](#installshield-deployment)<br />- [Windows インストーラー XML (WiX)](#wix)<br />- [手動インストール](#installing_manually)<br />- [カスタム セットアップ (チェーン)](#chaining)|すべてのメソッドをサポート<br /><br /> - [ClickOnce](#clickonce-deployment)<br />- [InstallShield](#installshield-deployment)<br />- [Windows インストーラー XML (WiX)](#wix)<br />- [手動インストール](#installing_manually)<br />- [カスタム セットアップ (チェーン)](#chaining)|
 |ClickOnce 配置のダウンロード場所|Microsoft ダウンロード センター:<br /><br /> - [.NET Framework 4.7](http://go.microsoft.com/fwlink/?LinkId=825298) <br/> - [.NET Framework 4.6.2](http://go.microsoft.com/fwlink/?LinkId=780596)<br />- [.NET Framework 4.6.1](http://go.microsoft.com/fwlink/?LinkId=671728)<br />- [.NET Framework 4.6](http://go.microsoft.com/fwlink/?LinkId=528222)<br />- [.NET Framework 4.5.2](http://go.microsoft.com/fwlink/?LinkId=397703)<br />- [.NET Framework 4.5.1](http://go.microsoft.com/fwlink/p/?LinkId=310158)<br />- [.NET Framework 4.5](http://go.microsoft.com/fwlink/p/?LinkId=245484)|独自のサーバーまたは Microsoft ダウンロード センター:<br /><br /> - [.NET Framework 4.7](http://go.microsoft.com/fwlink/?LinkId=825302)<br /> - [.NET Framework 4.6.2](http://go.microsoft.com/fwlink/?LinkId=780600)<br />- [.NET Framework 4.6.1](http://go.microsoft.com/fwlink/?LinkId=671743)<br />- [.NET Framework 4.6](http://go.microsoft.com/fwlink/?LinkId=528232)<br />- [.NET Framework 4.5.2](http://go.microsoft.com/fwlink/p/?LinkId=397706)<br />- [.NET Framework 4.5.1](http://go.microsoft.com/fwlink/p/?LinkId=310159)<br />- [.NET Framework 4.5](http://go.microsoft.com/fwlink/p/?LinkId=245484)|
 
- \* オフライン インストーラーは、すべての対象プラットフォームのコンポーネントを含むため、より大きくなっています。 セットアップの実行が終了すると、Windows オペレーティング システムは使用されたインストーラーのみキャッシュします。 オフライン インストーラーがインストール後に削除されると、使用されるディスク領域は Web インストーラーに使用される領域と同じになります。 アプリのセットアップ プログラムの作成に使用するツール (たとえば、[InstallShield](#installshield-deployment)) によって、インストール後に削除されるセットアップ ファイル フォルダーが提供される場合は、オフライン インストーラーをそのセットアップ フォルダー内に配置することで自動的に削除できます。
+ \* オフライン インストーラーは、すべての対象プラットフォームのコンポーネントを含むため、より大きくなっています。 セットアップの実行が終了すると、Windows オペレーティング システムは使用されたインストーラーのみキャッシュします。 オフライン インストーラーがインストール後に削除されると、使用されるディスク領域は Web インストーラーに使用される領域と同じになります。 アプリのセットアップ プログラムの作成に使用するツール (たとえば、 [InstallShield](#installshield-deployment)) によって、インストール後に削除されるセットアップ ファイル フォルダーが提供される場合は、オフライン インストーラーをそのセットアップ フォルダー内に配置することで自動的に削除できます。
 
  ** カスタム設定の Web インストーラーを使用する場合は、ユーザーの複数言語ユーザー インターフェイス (MUI) 設定に基づいて既定の言語設定を使用するか、コマンド ラインで `/LCID` オプションを使用して別の言語パックを指定できます。 例については、「 [既定の .NET Framework の UI を使用したチェーン](#chaining_default) 」を参照してください。
 
@@ -166,7 +166,7 @@ ms.lasthandoff: 06/02/2017
 
 <a name="installing_manually"></a> 
 ## <a name="installing-the-net-framework-manually"></a>.NET Framework の手動インストール
- アプリと一緒に .NET Framework を自動的にインストールすることが適切でない場合もあります。 そのような場合は、ユーザーが .NET Framework を手動でインストールできます。 再頒布可能パッケージは、[2 つのパッケージ](#redistributable-packages)で使用できます。 セットアップ プロセスでは、.NET Framework を探す方法とインストールする方法についてユーザーに指示する必要があります。
+ アプリと一緒に .NET Framework を自動的にインストールすることが適切でない場合もあります。 そのような場合は、ユーザーが .NET Framework を手動でインストールできます。 頒布可能パッケージは、 [2 つのパッケージ](#redistributable-packages)で使用できます。 セットアップ プロセスでは、.NET Framework を探す方法とインストールする方法についてユーザーに指示する必要があります。
 
 <a name="chaining"></a> 
 ## <a name="chaining-the-net-framework-installation-to-your-apps-setup"></a>アプリケーションのセットアップへの .NET Framework のインストールのチェーン
@@ -217,9 +217,9 @@ dotNetFx45_Full_x86_x64.exe /q /norestart /ChainingPackage Contoso
     > [!NOTE]
     > 言語パックのリリース日は、それぞれ異なっている場合があります。 指定した言語パックがダウンロード センターで入手できない場合、セットアップは言語パックなしで .NET Framework をインストールします。 .NET Framework がユーザーのコンピューターに既にインストールされている場合、セットアップは言語パックだけをインストールします。
 
- オプションの完全なリストについては、「[コマンド ライン オプション](#command-line-options)」を参照してください。
+ オプションの完全なリストについては、「 [コマンド ライン オプション](#command-line-options) 」を参照してください。
 
- 共通のリターン コードについては、「[リターン コード](#return-codes)」のセクションを参照してください。
+ 共通の戻りコードについては、「 [戻りコード](#return-codes) 」を参照してください。
 
 <a name="chaining_custom"></a>
 ### <a name="chaining-by-using-a-custom-ui"></a>カスタム UI を使用したチェーン
@@ -298,7 +298,7 @@ Type: DWORD
 > [!IMPORTANT]
 > 言語パックには、アプリの実行に必要な .NET Framework コンポーネントは含まれていません。言語パックをインストールする前に、Web インストーラーまたはオフラインのインストーラーを使用して .NET Framework をインストールする必要があります。
 
- [!INCLUDE[net_v451](../../../includes/net-v451-md.md)] より、パッケージ名の形式は NDP<`version`>-KB<`number`>-x86-x64-AllOS-<`culture`>.exe になります。`version` は .NET Framework のバージョン番号です。`number` は Microsoft サポート情報記事番号です。`culture` は[国/地域](#supported-languages)です。 これらのパッケージの一例は、 `NDP452-KB2901907-x86-x64-AllOS-JPN.exe`です。 パッケージ名はこの記事の既出の「[頒布可能パッケージ](#redistributable-packages)」セクションに記載されています。
+ [!INCLUDE[net_v451](../../../includes/net-v451-md.md)] より、パッケージ名の形式は NDP<`version`>-KB<`number`>-x86-x64-AllOS-<`culture`>.exe になります。`version` は .NET Framework のバージョン番号です。`number` は Microsoft サポート情報記事番号です。`culture` は[国/地域](#supported-languages)です。 これらのパッケージの一例は、 `NDP452-KB2901907-x86-x64-AllOS-JPN.exe`です。 パッケージ名はこの記事の既出の [Redistributable Packages](#redistributable-packages) セクションに記載されています。
 
  .NET Framework のオフライン インストーラーを言語パックと一緒にインストールするには、言語パックをアプリのセットアップにチェーンする必要があります。 たとえば、 [!INCLUDE[net_v451](../../../includes/net-v451-md.md)] のオフライン インストーラーを日本語言語パックと一緒に配置するには、次のコマンドを使用します。
 
@@ -308,11 +308,11 @@ NDP451-KB2858728-x86-x64-AllOS-JPN.exe/q /norestart /ChainingPackage <ProductNam
 
  Web インストーラーを使用する場合は、言語パックをチェーンする必要はありません。セットアップはユーザーの MUI 設定と一致する言語パックをインストールします。 異なる言語をインストールするには、 `/LCID` オプションを使用して言語パックを指定します。
 
- コマンド ライン オプションの完全なリストについては、「[コマンド ライン オプション](#command-line-options)」を参照してください。
+ コマンド ライン オプションの完全なリストについては、「 [コマンド ライン オプション](#command-line-options) 」を参照してください。
 
 ### <a name="troubleshooting"></a>トラブルシューティング
 
-#### <a name="return-codes"></a>リターン コード
+#### <a name="return-codes"></a>戻りコード
  次の表は、.NET Framework の再頒布可能インストーラーから返される最も一般的なリターン コードを示しています。 これらのリターン コードは、すべてのバージョンのインストーラーで共通です。 詳細情報へのリンクについては、次のセクションを参照してください。
 
 |リターン コード|説明|
@@ -355,11 +355,11 @@ NDP451-KB2858728-x86-x64-AllOS-JPN.exe/q /norestart /ChainingPackage <ProductNam
 |------------|-----------------|
 |**/CEIPConsent**|既定の動作を上書きし、今後の配置操作を改良するための匿名のフィードバックを Microsoft に送信します。 このオプションは、セットアップ プログラムで同意メッセージが表示され、ユーザーが匿名のフィードバックを Microsoft に送信することを許可した場合のみ使用できます。|
 |**/chainingpackage** `packageName`|チェーンを行っている実行可能ファイルの名前を指定します。 この情報は、今後の配置操作を改良するための匿名のフィードバックとして Microsoft に送信されます。<br /><br /> パッケージ名にスペースが含まれている場合は、区切り記号として二重引用符を使用します (例: **/chainingpackage "Lucerne Publishing"**)。 チェーン パッケージの例については、MSDN ライブラリの「 [インストール パッケージからの進行状況に関する情報の取得](http://go.microsoft.com/fwlink/?LinkId=181926) 」をご覧ください。|
-|**/LCID**  `LCID`<br /><br /> `LCID` はロケール識別子を指定します (「[サポートされる言語](#supported-languages)」を参照してください)|`LCID` によって指定された言語パックをインストールし、クワイエット モードが設定されていない限り表示される UI をその言語で表示します。<br /><br /> Web インストーラーでは、このオプションは、Web から言語パッケージをチェーンしてインストールします。 **注:** このオプションは Web インストーラーだけに使用します。|
+|**/LCID**  `LCID`<br /><br /> `LCID` はロケール識別子を指定します (「 [サポートされる言語](#supported-languages)」を参照してください)。|`LCID` によって指定された言語パックをインストールし、クワイエット モードが設定されていない限り表示される UI をその言語で表示します。<br /><br /> Web インストーラーでは、このオプションは、Web から言語パッケージをチェーンしてインストールします。 **注:** このオプションは Web インストーラーだけに使用します。|
 |**/log** `file` &#124; `folder`|ログ ファイルの場所を指定します。 既定ではプロセスの一時フォルダーになっており、既定のファイル名はパッケージに基づきます。 ファイル拡張子が .txt の場合、テキスト ログが生成されます。 他の拡張子を指定するか、拡張子がないと、HTML ログが作成されます。|
 |**/msioptions**|.msi と .msp の項目に渡されるオプションを指定します。例: `/msioptions "PROPERTY1='Value'"`|
 |**/norestart**|セットアップ プログラムが自動的に再起動しないようにします。 このオプションを使用する場合、チェーン アプリがリターン コードをキャプチャし、再起動を処理する必要があります (MSDN ライブラリの「 [インストール パッケージからの進行状況に関する情報の取得](http://go.microsoft.com/fwlink/?LinkId=179606) 」をご覧ください)。|
-|**/passive**|受動モードを設定します。 インストールが進行中であることを示す進行状況バーを表示しますが、ユーザーに対してプロンプトやエラー メッセージは表示しません。 このモードでは、セットアップ プログラムによってチェーンされたときに、チェーン パッケージが[リターン コード](#return-codes)を処理する必要があります。|
+|**/passive**|受動モードを設定します。 インストールが進行中であることを示す進行状況バーを表示しますが、ユーザーに対してプロンプトやエラー メッセージは表示しません。 このモードでは、セットアップ プログラムによってチェーンされたときに、チェーン パッケージが [リターン コード](#return-codes)を処理する必要があります。|
 |**/pipe**|チェーン パッケージが進行状況を取得できるように通信チャネルを作成します。|
 |**/promptrestart**|受動モードのみ、セットアップ プログラムの再起動が必要な場合は、ユーザーに対してメッセージが表示されます。 このオプションでは、再起動が必要な場合はユーザーの操作を必要とします。|
 |**/q**|クワイエット モードを設定します。|
@@ -405,3 +405,4 @@ NDP451-KB2858728-x86-x64-AllOS-JPN.exe/q /norestart /ChainingPackage <ProductNam
  [.NET Framework のインストールおよびアンインストールのブロックのトラブルシューティング](../../../docs/framework/install/troubleshoot-blocked-installations-and-uninstallations.md)   
  [.NET Framework 4.5 のインストール中のシステム再起動の削減](../../../docs/framework/deployment/reducing-system-restarts.md)   
  [方法: .NET Framework 4.5 インストーラーの進行状況を表示する](../../../docs/framework/deployment/how-to-get-progress-from-the-dotnet-installer.md)
+

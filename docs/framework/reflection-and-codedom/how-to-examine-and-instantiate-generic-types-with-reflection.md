@@ -1,5 +1,5 @@
 ---
-title: "方法 : リフレクションを使用してジェネリック型をチェックおよびインスタンス化する | Microsoft Docs"
+title: "方法 : リフレクションを使用してジェネリック型をチェックおよびインスタンス化する"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
@@ -17,11 +17,11 @@ caps.latest.revision: 16
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 6f3dc4235c75d7438f019838cb22192f4dc7c41a
-ms.openlocfilehash: 5839e2f596d31faf4843a03f1a34d4f1aeafe144
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 27b6315b30c27d0902d34a013c6cb6c6072dffe7
 ms.contentlocale: ja-jp
-ms.lasthandoff: 06/02/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="how-to-examine-and-instantiate-generic-types-with-reflection"></a>方法 : リフレクションを使用してジェネリック型をチェックおよびインスタンス化する
@@ -109,3 +109,4 @@ ms.lasthandoff: 06/02/2017
  [リフレクションとジェネリック型](../../../docs/framework/reflection-and-codedom/reflection-and-generic-types.md)   
  [型情報の表示](../../../docs/framework/reflection-and-codedom/viewing-type-information.md)   
  [ジェネリック](../../../docs/standard/generics/index.md)
+

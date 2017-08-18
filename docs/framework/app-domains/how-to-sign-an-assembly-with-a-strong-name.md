@@ -1,5 +1,5 @@
 ---
-title: "方法: 厳密な名前でアセンブリに署名する | Microsoft Docs"
+title: "方法 : 厳密な名前でアセンブリに署名する"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
@@ -19,11 +19,11 @@ caps.latest.revision: 23
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: fe32676f0e39ed109a68f39584cf41aec5f5ce90
-ms.openlocfilehash: 548cc4ffd0f894c4f522552c5f032be4c94d3585
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 7758871a22b8b58d7df5cf2df481db185c07a987
 ms.contentlocale: ja-jp
-ms.lasthandoff: 06/02/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="how-to-sign-an-assembly-with-a-strong-name"></a>方法 : 厳密な名前でアセンブリに署名する
@@ -33,7 +33,7 @@ ms.lasthandoff: 06/02/2017
   
 -   [アセンブリ リンカー (Al.exe)](../../../docs/framework/tools/al-exe-assembly-linker.md) を使用して、.NET Framework のコード モジュール (.netmodule ファイル) をキー ファイルにリンクする。  
   
--   アセンブリ属性を使用して、厳密な名前情報をコードに挿入する。 使用するキー ファイルが配置されている場所に応じて、<xref:System.Reflection.AssemblyKeyFileAttribute> または <xref:System.Reflection.AssemblyKeyNameAttribute> 属性を使用できます。  
+-   アセンブリ属性を使用して、厳密な名前情報をコードに挿入する。 使用するキー ファイルが配置されている場所に応じて、 <xref:System.Reflection.AssemblyKeyFileAttribute> または <xref:System.Reflection.AssemblyKeyNameAttribute> 属性を使用できます。  
   
 -   コンパイラ オプションを使用する。  
   
@@ -108,3 +108,4 @@ al /out:MyAssembly.dll MyModule.netmodule /keyfile:sgKey.snk
  [アセンブリへの遅延署名](../../../docs/framework/app-domains/delay-sign-assembly.md)   
  [アセンブリおよびマニフェストへの署名の管理](/visualstudio/ide/managing-assembly-and-manifest-signing)   
  [[署名] ページ (プロジェクト デザイナー)](https://msdn.microsoft.com/library/0k50fs3b)
+

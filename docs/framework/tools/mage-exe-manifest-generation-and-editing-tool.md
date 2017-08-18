@@ -1,5 +1,5 @@
 ---
-title: "Mage.exe (マニフェストの生成および編集ツール) | Microsoft ドキュメント"
+title: "Mage.exe (マニフェストの生成および編集ツール)"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
@@ -22,11 +22,11 @@ caps.latest.revision: 68
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: a32f50ce8a92fa22d9627a1510a4b3ec1087364e
-ms.openlocfilehash: caa06be840f0612e94742e7ea167f02b8b8d657d
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 67551eb207461d5ac68db9f23b48ff7266c39ae9
 ms.contentlocale: ja-jp
-ms.lasthandoff: 06/02/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="mageexe-manifest-generation-and-editing-tool"></a>Mage.exe (マニフェストの生成および編集ツール)
@@ -114,7 +114,7 @@ mage -Update c:\HelloWorldDeployment\HelloWorld.deploy -CertFile cert.pfx
   
  **-AppManifest** オプションを使用して配置マニフェストを作成した場合、Mage.exe は、配置マニフェストと同じディレクトリにアプリケーション マニフェストが存在し、サブディレクトリには現在の配置のバージョンから名前が付けてあると仮定して、配置マニフェストを適切に構成します。 アプリケーション マニフェストを別の場所に格納する場合は、 **-AppCodeBase** オプションを使用して、他の場所を設定します。  
   
- 配置マニフェストおよびアプリケーション マニフェストは、アプリケーションを配置する前に、署名される必要があります。 マニフェストに署名する方法については、「[信頼されたアプリケーションの配置の概要](/visualstudio/deployment/trusted-application-deployment-overview)」を参照してください。  
+ 配置マニフェストおよびアプリケーション マニフェストは、アプリケーションを配置する前に、署名される必要があります。 マニフェストに署名する方法については、「 [Trusted Application Deployment Overview](/visualstudio/deployment/trusted-application-deployment-overview)」を参照してください。  
   
  アプリケーション マニフェストに **-TrustLevel** オプションを指定すると、アプリケーションをクライアント コンピューターで実行するために必要なアクセス許可セットが表示されます。 既定では、アプリケーションの URL が存在する *ゾーン* に基づいてアプリケーションに信頼レベルが割り当てられます。 会社のネットワーク上にアプリケーションを配置する場合、アプリケーションは通常、イントラネット ゾーンに格納されます。一方、インターネット上にアプリケーションを配置する場合には、インターネット ゾーンに格納されます。 どちらのセキュリティ ゾーンでも、アプリケーションからローカル リソースへのアクセスは制限されますが、イントラネット ゾーンはインターネット ゾーンに比べ、制限が少し緩くなっています。 FullTrust ゾーンのアプリケーションの場合には、コンピューターのローカル リソースに制限なしでアクセスできます。 **-TrustLevel** オプションを使用してアプリケーションのゾーンを指定すると、高いレベルの信頼を与えるかどうかを決定するように求めるメッセージが、CLR の Trust Manager コンポーネントによってユーザーに表示されます。 会社のネットワーク上にアプリケーションを配置する場合は、信頼されたアプリケーションの配置を使用すると、ユーザーにメッセージで確認することなく、アプリケーションの信頼レベルを引き上げることができます。  
   
@@ -215,3 +215,4 @@ mage -Sign deploy.application -CertFile cert.pfx -Password <passwd>
  [信頼されたアプリケーションの配置の概要](/visualstudio/deployment/trusted-application-deployment-overview)   
  [MageUI.exe (マニフェスト生成および編集ツールのグラフィカル クライアント)](../../../docs/framework/tools/mageui-exe-manifest-generation-and-editing-tool-graphical-client.md)   
  [コマンド プロンプト](../../../docs/framework/tools/developer-command-prompt-for-vs.md)
+

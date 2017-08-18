@@ -1,5 +1,5 @@
 ---
-title: "リフレクションに関するセキュリティ上の考慮事項 | Microsoft Docs"
+title: "リフレクションに関するセキュリティ上の考慮事項"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
@@ -22,11 +22,11 @@ caps.latest.revision: 21
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 6f3dc4235c75d7438f019838cb22192f4dc7c41a
-ms.openlocfilehash: 43db8eb6101454344a0b9515929e21c49a512acd
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 653b91f899da5962132577fba0df6ecfcdfde4ae
 ms.contentlocale: ja-jp
-ms.lasthandoff: 06/02/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="security-considerations-for-reflection"></a>リフレクションに関するセキュリティ上の考慮事項
@@ -124,3 +124,4 @@ ms.lasthandoff: 06/02/2017
  [型情報の表示](../../../docs/framework/reflection-and-codedom/viewing-type-information.md)   
  [属性の適用](../../../docs/standard/attributes/applying-attributes.md)   
  [カスタム属性へのアクセス](../../../docs/framework/reflection-and-codedom/accessing-custom-attributes.md)
+

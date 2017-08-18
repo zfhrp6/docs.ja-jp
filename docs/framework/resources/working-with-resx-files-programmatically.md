@@ -1,5 +1,5 @@
 ---
-title: "プログラムによる .resx ファイルの使用 | Microsoft Docs"
+title: "プログラムによる .resx ファイルの使用"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
@@ -17,17 +17,17 @@ caps.latest.revision: 12
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
-ms.openlocfilehash: c74a79b06503e105dd9ba47cc8079019e038b11f
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 361559ab3ea5b09e5568a94692ca6cf374fe5ecf
 ms.contentlocale: ja-jp
-ms.lasthandoff: 06/02/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="working-with-resx-files-programmatically"></a>プログラムによる .resx ファイルの使用
-XML リソース (.resx) ファイルは適切に定義された XML で構成する必要があり、特定のスキーマに従ったヘッダーの後に、名前と値のペアになったデータが続きます。そのため、手動で作成するとエラーが発生しやすくなります。 代わりに、.NET Framework クラス ライブラリの型とメンバーを使って、.resx ファイルをプログラムで作成できます。 また、.resx ファイルに格納されているリソースを取得するために、.NET Framework クラス ライブラリを使うこともできます。 このトピックでは、<xref:System.Resources> 名前空間の型とメンバーを使って、.resx ファイルを操作する方法を説明します。  
+XML リソース (.resx) ファイルは適切に定義された XML で構成する必要があり、特定のスキーマに従ったヘッダーの後に、名前と値のペアになったデータが続きます。そのため、手動で作成するとエラーが発生しやすくなります。 代わりに、.NET Framework クラス ライブラリの型とメンバーを使って、.resx ファイルをプログラムで作成できます。 また、.resx ファイルに格納されているリソースを取得するために、.NET Framework クラス ライブラリを使うこともできます。 このトピックでは、 <xref:System.Resources> 名前空間の型とメンバーを使って、.resx ファイルを操作する方法を説明します。  
   
- なお、この記事では、リソースを含む XML (.resx) ファイルの操作について説明します。 アセンブリに埋め込まれたバイナリ リソース ファイルの操作について詳しくは、<xref:System.Resources.ResourceManager> トピックを参照してください。  
+ なお、この記事では、リソースを含む XML (.resx) ファイルの操作について説明します。 アセンブリに埋め込まれたバイナリ リソース ファイルの操作について詳しくは、 <xref:System.Resources.ResourceManager> トピックをご覧ください。  
   
 > [!WARNING]
 >  プログラムでの操作以外にも、.resx ファイルを操作する方法はあります。 リソース ファイルを Visual Studio プロジェクトに追加すると、Visual Studio では、.resx ファイルを作成して維持するためのインターフェイスが提供され、コンパイル時に .resx ファイルは .resources ファイルに自動的に変換されます。 .resx ファイルを直接操作するためにテキスト エディターを使うこともできます。 ただし、ファイルの破損を避けるため、ファイルに格納されているバイナリ情報を変更しないように注意してください。  
@@ -35,13 +35,13 @@ XML リソース (.resx) ファイルは適切に定義された XML で構成�
 ## <a name="creating-a-resx-file"></a>.resx ファイルを作成する  
  <xref:System.Resources.ResXResourceWriter?displayProperty=fullName> クラスを使い、次の手順に従って .resx ファイルをプログラムで作成できます。  
   
-1.  <xref:System.Resources.ResXResourceWriter.%23ctor%28System.String%29?displayProperty=fullName> メソッドを呼び出して、.resx ファイルの名前を指定することにより、<xref:System.Resources.ResXResourceWriter> オブジェクトをインスタンス化します。 ファイル名には、.resx 拡張子を含める必要があります。 `using` ブロック内の <xref:System.Resources.ResXResourceWriter> オブジェクトをインスタンス化する場合、手順 3 で <xref:System.Resources.ResXResourceWriter.Close%2A?displayProperty=fullName> メソッドを明示的に呼び出す必要はありません。  
+1.  <xref:System.Resources.ResXResourceWriter> メソッドを呼び出して、.resx ファイルの名前を指定することにより、 <xref:System.Resources.ResXResourceWriter.%23ctor%28System.String%29?displayProperty=fullName> オブジェクトをインスタンス化します。 ファイル名には、.resx 拡張子を含める必要があります。 <xref:System.Resources.ResXResourceWriter> ブロック内の `using` オブジェクトをインスタンス化する場合、手順 3 で <xref:System.Resources.ResXResourceWriter.Close%2A?displayProperty=fullName> メソッドを明示的に呼び出す必要はありません。  
   
 2.  ファイルに追加するリソースごとに <xref:System.Resources.ResXResourceWriter.AddResource%2A?displayProperty=fullName> メソッドを呼び出します。 このメソッドのオーバーロードを使って、文字列、オブジェクト、バイナリ (バイト配列) のデータを追加します。 リソースがオブジェクトの場合は、シリアル化可能でなければなりません。  
   
-3.  <xref:System.Resources.ResXResourceWriter.Close%2A?displayProperty=fullName> メソッドを呼び出して、リソース ファイルを生成し、すべてのリソースを解放します。 <xref:System.Resources.ResXResourceWriter> オブジェクトが `using` ブロック内で作成された場合、リソースは .resx ファイルに書き込まれ、<xref:System.Resources.ResXResourceWriter> オブジェクトが使うリソースは `using` ブロックの最後に解放されます。  
+3.  <xref:System.Resources.ResXResourceWriter.Close%2A?displayProperty=fullName> メソッドを呼び出して、リソース ファイルを生成し、すべてのリソースを解放します。 <xref:System.Resources.ResXResourceWriter> オブジェクトが `using` ブロック内で作成された場合、リソースは .resx ファイルに書き込まれ、 <xref:System.Resources.ResXResourceWriter> オブジェクトが使うリソースは `using` ブロックの最後に解放されます。  
   
- 結果として得られる .resx ファイルには、適切なヘッダーと <xref:System.Resources.ResXResourceWriter.AddResource%2A?displayProperty=fullName> メソッドによって追加された各リソースの `data` タグが含まれます。  
+ 結果として得られる .resx ファイルには、適切なヘッダーと `data` メソッドによって追加された各リソースの <xref:System.Resources.ResXResourceWriter.AddResource%2A?displayProperty=fullName> タグが含まれます。  
   
 > [!WARNING]
 >  パスワード、セキュリティの配慮が必要な情報、プライベートなデータなどの格納には、リソース ファイルを使用しないでください。  
@@ -56,14 +56,14 @@ XML リソース (.resx) ファイルは適切に定義された XML で構成�
  .resx ファイルをランタイムの実行可能ファイルに埋め込むことや、サテライト アセンブリにコンパイルすることはできません。 [リソース ファイル ジェネレーター (Resgen.exe)](../../../docs/framework/tools/resgen-exe-resource-file-generator.md)を使って、.resx ファイルをバイナリ リソース (.resources) ファイルに変換する必要があります。 結果として得られる .resources ファイルは、アプリケーション アセンブリやサテライト アセンブリに埋め込むことができます。 詳細については、「 [Creating Resource Files](../../../docs/framework/resources/creating-resource-files-for-desktop-apps.md)」を参照してください。  
   
 ## <a name="enumerating-resources"></a>リソースを列挙する  
- 場合によっては、.resx ファイルから、特定のリソースではなく、すべてのリソースを取得したいことがあります。 これを行うには、.resx ファイル内のすべてのリソースの列挙子を提供する <xref:System.Resources.ResXResourceReader?displayProperty=fullName> クラスを使います。 <xref:System.Resources.ResXResourceReader?displayProperty=fullName> クラスは <xref:System.Collections.IDictionaryEnumerator> を実装します。これは、ループの反復処理ごとに特定のリソースを示す <xref:System.Collections.DictionaryEntry> を返します。 その <xref:System.Collections.DictionaryEntry.Key%2A?displayProperty=fullName> プロパティはリソースのキーを返し、その <xref:System.Collections.DictionaryEntry.Value%2A?displayProperty=fullName> プロパティはリソースの値を返します。  
+ 場合によっては、.resx ファイルから、特定のリソースではなく、すべてのリソースを取得したいことがあります。 これを行うには、.resx ファイル内のすべてのリソースの列挙子を提供する <xref:System.Resources.ResXResourceReader?displayProperty=fullName> クラスを使います。 <xref:System.Resources.ResXResourceReader?displayProperty=fullName> クラスは <xref:System.Collections.IDictionaryEnumerator>を実装します。これは、ループの反復処理ごとに特定のリソースを示す <xref:System.Collections.DictionaryEntry> を返します。 その <xref:System.Collections.DictionaryEntry.Key%2A?displayProperty=fullName> プロパティはリソースのキーを返し、その <xref:System.Collections.DictionaryEntry.Value%2A?displayProperty=fullName> プロパティはリソースの値を返します。  
   
  次の例では、前の例で作成した CarResources.resx ファイルの <xref:System.Resources.ResXResourceReader> オブジェクトを作成して、リソース ファイルを反復処理します。 リソース ファイルに定義された 2 つの `Automobile` オブジェクトを <xref:System.Collections.Generic.List%601?displayProperty=fullName> オブジェクトに追加し、6 個中 5 個の文字列を <xref:System.Collections.SortedList> オブジェクトに追加します。 <xref:System.Collections.SortedList> オブジェクト内の値は、コンソールに列見出しを表示するために使われるパラメーター配列に変換されます。 `Automobile` プロパティ値もコンソールに表示されます。  
   
  [!code-csharp[Conceptual.Resources.ResX#2](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.resources.resx/cs/enumerate1.cs#2)] [!code-vb[Conceptual.Resources.ResX#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.resources.resx/vb/enumerate1.vb#2)]  
   
 ## <a name="retrieving-a-specific-resource"></a>特定のリソースを取得する  
- .resx ファイル内の項目を列挙することに加えて、<xref:System.Resources.ResXResourceSet?displayProperty=fullName> クラスを使って特定のリソースを名前によって取得できます。 <xref:System.Resources.ResourceSet.GetString%28System.String%29?displayProperty=fullName> メソッドは、名前付きの文字列リソースの値を取得します。 <xref:System.Resources.ResourceSet.GetObject%28System.String%29?displayProperty=fullName> メソッドは、名前付きオブジェクトの値やバイナリ データを取得します。 メソッドはオブジェクトを返します。そのオブジェクトはその後適切な型のオブジェクトにキャスト (C#) するか、変換 (Visual Basic) する必要があります。  
+ .resx ファイル内の項目を列挙することに加えて、 <xref:System.Resources.ResXResourceSet?displayProperty=fullName> クラスを使って特定のリソースを名前によって取得できます。 <xref:System.Resources.ResourceSet.GetString%28System.String%29?displayProperty=fullName> メソッドは、名前付きの文字列リソースの値を取得します。 <xref:System.Resources.ResourceSet.GetObject%28System.String%29?displayProperty=fullName> メソッドは、名前付きオブジェクトの値やバイナリ データを取得します。 メソッドはオブジェクトを返します。そのオブジェクトはその後適切な型のオブジェクトにキャスト (C#) するか、変換 (Visual Basic) する必要があります。  
   
  次の例では、そのリソース名を使って、フォームのキャプション文字列とアイコンを取得します。 また、前の例で使ったアプリケーション定義の `Automobile` オブジェクトを取得して、<xref:System.Windows.Forms.DataGridView> コントロールに表示します。  
   
@@ -92,3 +92,4 @@ XML リソース (.resx) ファイルは適切に定義された XML で構成�
  [リソース ファイルの作成](../../../docs/framework/resources/creating-resource-files-for-desktop-apps.md)   
  [Resgen.exe (リソース ファイル ジェネレーター)](../../../docs/framework/tools/resgen-exe-resource-file-generator.md)   
  [Al.exe (アセンブリ リンカー)](../../../docs/framework/tools/al-exe-assembly-linker.md)
+
