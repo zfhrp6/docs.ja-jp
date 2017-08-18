@@ -1,6 +1,6 @@
 ---
 title: "ローカル関数とラムダ式の比較"
-description: "ローカル関数がラムダ式よりも適した選択肢となり得る理由"
+description: "ローカル関数がラムダ式よりも適した選択肢となり得る理由について。"
 keywords: "C#, .NET, .NET Core, 最新の機能, 新機能, ローカル関数, ラムダ式"
 author: BillWagner
 ms.author: wiwagn
@@ -11,10 +11,10 @@ ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 368d1752-3659-489a-97b4-f15d87e49ae3
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 315d4c5ee1f16c4fe59599c3a37437b112b784f6
+ms.sourcegitcommit: a7eda5cde2998bfb2b6a609a4ffc90019ab57a7c
+ms.openlocfilehash: 4cace9b5549b2d8c08c993e7c22e5f1b5fc8a9c3
 ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
+ms.lasthandoff: 08/01/2017
 
 ---
 

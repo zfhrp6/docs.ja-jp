@@ -37,10 +37,10 @@ translation.priority.mt:
 - pt-br
 - tr-tr
 ms.translationtype: HT
-ms.sourcegitcommit: 4609c30a03c835b9b1338ea6bc9672f7445cfd25
-ms.openlocfilehash: ebbfb5818c8f2a07df7a8cb4724e99b1b9268b03
+ms.sourcegitcommit: 387c8c7e44ab818ca97e686330746f50df091bb9
+ms.openlocfilehash: 5c151e3bbd46212f1234d46ff05d389f2384ca0e
 ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
+ms.lasthandoff: 08/01/2017
 
 ---
 # <a name="switch-c-reference"></a>switch (C# リファレンス)
@@ -100,7 +100,7 @@ switch (caseSwitch)
   
  [!code-cs[switch#4](../../../../samples/snippets/csharp/language-reference/keywords/switch/switch4.cs#1)]    
   
- match 式に一致する case ラベルが含まれた switch セクションにおけるステートメント リストの実行は、ステートメント リストに沿って最初のステートメントから順に開始され、通常は、`break`、`goto case`、`return`、`throw` などのジャンプ ステートメントに達するまで続きます。 この時点で、制御は `switch` ステートメントの外側、または他の case ラベルに移動します。  
+ match 式に一致する case ラベルが含まれた switch セクションにおけるステートメント リストの実行は、ステートメント リストに沿って最初のステートメントから順に開始され、通常は、`break`、`goto case`、`goto label`、`return`、または`throw` などのジャンプ ステートメントに達するまで続きます。 この時点で、制御は `switch` ステートメントの外側、または他の case ラベルに移動します。 `goto` ステートメントを使用する場合は、制御を constant ラベルに転送する必要があります。 この制約が必要になるのは、非 constant ラベルに制御を転送しようとすると望ましくない副作用 (コード内の意図しない場所に制御を転送してしまったり、無限ループを作成してしまったりなど) が生じる可能性があるためです。
 
 ## <a name="case-labels"></a>case ラベル
 
