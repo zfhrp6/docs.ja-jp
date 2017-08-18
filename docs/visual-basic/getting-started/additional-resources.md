@@ -70,12 +70,9 @@ ms.lasthandoff: 07/28/2017
   
 |用語|定義|  
 |----------|----------------|  
-|[Visual Basic 言語](http://go.microsoft.com/fwlink/?LinkId=145963)|
-          [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] 言語の構文とコンパイラについて議論されています。|  
-|[Visual Basic の相互運用とアップグレード](http://go.microsoft.com/fwlink/?LinkId=145966)|
-          [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] へのアップグレードと相互運用機能の使用について議論されています。|  
-|[Visual Basic IDE](http://go.microsoft.com/fwlink/?LinkId=145971)|
-          [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] 統合開発環境の使用について議論されています。|  
+|[Visual Basic 言語](http://go.microsoft.com/fwlink/?LinkId=145963)|[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] 言語の構文とコンパイラについて議論されています。|  
+|[Visual Basic の相互運用とアップグレード](http://go.microsoft.com/fwlink/?LinkId=145966)|[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] へのアップグレードと相互運用機能の使用について議論されています。|  
+|[Visual Basic IDE](http://go.microsoft.com/fwlink/?LinkId=145971)|[!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] 統合開発環境の使用について議論されています。|  
 |[Visual Basic Power Packs](http://social.msdn.microsoft.com/Forums/vbpowerpacks/threads)|Visual Basic Power Packs に含まれるアドイン、コントロール、コンポーネント、サンプル、およびツールについて議論されています。|  
 |[Visual Basic 全般](http://go.microsoft.com/fwlink/?LinkId=145973)|その他のフォーラムで議論されていない [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] の問題について議論されています。|  
   
