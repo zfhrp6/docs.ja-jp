@@ -11,16 +11,16 @@ ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 368d1752-3659-489a-97b4-f15d87e49ae3
 ms.translationtype: HT
-ms.sourcegitcommit: a7eda5cde2998bfb2b6a609a4ffc90019ab57a7c
-ms.openlocfilehash: 4cace9b5549b2d8c08c993e7c22e5f1b5fc8a9c3
+ms.sourcegitcommit: 4582cb0ee091526423cce3fc1d8243029f34f59c
+ms.openlocfilehash: 366d7465433f2786960e22418b8aa46ba10e1fd1
 ms.contentlocale: ja-jp
-ms.lasthandoff: 08/01/2017
+ms.lasthandoff: 08/16/2017
 
 ---
 
 ### <a name="local-functions-compared-to-lambda-expressions"></a>ローカル関数とラムダ式の比較
 
-一見したところ、[ローカル関数](programming-guide/classes-and/structs/local-functions.md)と[ラムダ式](lambda-expressions.md)は、非常に似ています。
+一見したところ、[ローカル関数](programming-guide/classes-and-structs/local-functions.md)と[ラムダ式](lambda-expressions.md)は、非常に似ています。
 ローカル関数は、必要に応じてより使いやすく、単純なソリューションにすることができます。
 
 階乗アルゴリズムのローカル関数とラムダ式の実装の違いについて見てみましょう。 まずは、ローカル関数を使用するバージョンです。
