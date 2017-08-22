@@ -1,5 +1,5 @@
 ---
-title: "方法: 厳密な名前のアセンブリを参照する| Microsoft Docs"
+title: "方法 : 厳密な名前のアセンブリを参照する"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
@@ -19,11 +19,11 @@ caps.latest.revision: 14
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
-ms.openlocfilehash: dcdf967312cdcb700b89a4e75d86c451e67eebab
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: aa46bfdfe42dca9509e39d4b6218473aa00a1877
 ms.contentlocale: ja-jp
-ms.lasthandoff: 06/02/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="how-to-reference-a-strong-named-assembly"></a>方法 : 厳密な名前のアセンブリを参照する
@@ -76,3 +76,4 @@ csc /t:library myAssembly.cs /reference:myLibAssembly.dll
   
 ## <a name="see-also"></a>関連項目  
  [厳密な名前付きアセンブリの作成と使用](../../../docs/framework/app-domains/create-and-use-strong-named-assemblies.md)
+

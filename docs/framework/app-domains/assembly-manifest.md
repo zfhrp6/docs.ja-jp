@@ -1,5 +1,5 @@
 ---
-title: "アセンブリ マニフェスト | Microsoft Docs"
+title: "アセンブリ マニフェスト"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
@@ -20,11 +20,11 @@ caps.latest.revision: 7
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
-ms.openlocfilehash: 58098e2107fcab96f82677094e50529fafba98e5
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: eb20bfac6717779f5394724617d247a6dc980c7e
 ms.contentlocale: ja-jp
-ms.lasthandoff: 06/02/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="assembly-manifest"></a>アセンブリ マニフェスト
@@ -32,7 +32,7 @@ ms.lasthandoff: 06/02/2017
   
  マニフェストを格納するさまざまな方法を次の図に示します。  
   
- ![単独ファイル アセンブリ](../../../docs/framework/app-domains/media/assemblytypes.gif "assemblytypes")  
+ ![A single&#45;file assembly](../../../docs/framework/app-domains/media/assemblytypes.gif "assemblytypes")  
 アセンブリの種類  
   
  関連付けられているファイルが 1 つだけのアセンブリの場合、マニフェストは PE ファイルに組み込まれ、シングルファイル アセンブリを形成します。 マルチファイル アセンブリを作成する場合は、スタンドアロンのマニフェスト ファイルか、またはそのアセンブリの PE ファイルのうちの 1 つに組み込んだマニフェストを使用します。  
@@ -69,3 +69,4 @@ ms.lasthandoff: 06/02/2017
  [アセンブリのバージョン管理](../../../docs/framework/app-domains/assembly-versioning.md)   
  [サテライト アセンブリの作成](../../../docs/framework/resources/creating-satellite-assemblies-for-desktop-apps.md)   
  [厳密な名前付きアセンブリ](../../../docs/framework/app-domains/strong-named-assemblies.md)
+

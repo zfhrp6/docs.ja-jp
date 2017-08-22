@@ -1,5 +1,5 @@
 ---
-title: "デスクトップ アプリケーションに対するサテライト アセンブリの作成 | Microsoft Docs"
+title: "デスクトップ アプリケーションに対するサテライト アセンブリの作成"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
@@ -32,11 +32,11 @@ caps.latest.revision: 11
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 6f3dc4235c75d7438f019838cb22192f4dc7c41a
-ms.openlocfilehash: b4ae5474ebf910389148745105adbe9a0ae608bb
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: febb9d50bd61eef53f39bb0f36cd4e3a6049e9f5
 ms.contentlocale: ja-jp
-ms.lasthandoff: 06/02/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="creating-satellite-assemblies-for-desktop-apps"></a>デスクトップ アプリケーションに対するサテライト アセンブリの作成
@@ -61,7 +61,7 @@ ms.lasthandoff: 06/02/2017
   
  [グローバル アセンブリ キャッシュ](../../../docs/framework/app-domains/gac.md)内にインストールしないアプリケーションについて、サンプルのディレクトリ構造と位置に関する要件を次の図に示します。 拡張子が .txt および .resources の項目は、最終的なアプリケーションには付属していません。 それらは、最終的なサテライト リソース アセンブリを作成するために使用する中間リソース ファイルです。 この例では、.txt ファイルを .resx ファイルに置き換えることができます。 詳細については、「[リソースのパッケージ化と配置](../../../docs/framework/resources/packaging-and-deploying-resources-in-desktop-apps.md)」を参照してください。  
   
- ![Satellite assemblies](../../../docs/framework/resources/media/satelliteassemblydir.gif "satelliteassemblydir")  
+ ![サテライト アセンブリ](../../../docs/framework/resources/media/satelliteassemblydir.gif "satelliteassemblydir")  
 サテライト アセンブリ ディレクトリ  
   
 ## <a name="compiling-satellite-assemblies"></a>コンパイル (サテライト アセンブリの)  
