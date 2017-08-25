@@ -13,10 +13,10 @@ caps.latest.revision: 69
 author: mairaw
 ms.author: mairaw
 ms.translationtype: HT
-ms.sourcegitcommit: 20b0c1b36f705deb2f46ef4ab23653f829faf7ca
-ms.openlocfilehash: 8a0395e28c01363eed27f327ea623feb4832c844
+ms.sourcegitcommit: 93f77dd5c3ca61935ae98ddef15f9c5cf7644bbb
+ms.openlocfilehash: e9c8dcfacff689761d9ec891db8a1a4756acece0
 ms.contentlocale: ja-jp
-ms.lasthandoff: 08/08/2017
+ms.lasthandoff: 08/23/2017
 
 ---
 
@@ -32,7 +32,7 @@ ms.lasthandoff: 08/08/2017
   
 - [.NET Framework 3.5 インストーラーをダウンロードする](http://www.microsoft.com/en-us/download/details.aspx?id=21) (注: これは .NET Framework を直接ダウンロードするのでなく、Windows Update を呼び出すインストーラーです)。  
   
-インストール中にエラー 0x800f0906、0x800f0907、または 0x800f081f が発生することがあります。その場合は、「[.NET Framework 3.5 インストール エラー: 0x800f0906、0x800f0907、または 0x800f081f](https://support.microsoft.com/en-us/kb/2734782)」を参照してください。 なお、これらのエラーは、 [セキュリティ更新プログラム 3005628](https://support.microsoft.com/kb/3005628)をインストールすれば解決することがあります。  
+インストール中にエラー 0x800f0906、0x800f0907、または 0x800f081f が発生することがあります。その場合は、「[.NET Framework 3.5 インストール エラー: 0x800f0906、0x800f0907、または 0x800f081f](https://support.microsoft.com/help/2734782/net-framework-3-5-installation-error-0x800f0906--0x800f081f--0x800f09)」を参照してください。 なお、これらのエラーは、 [セキュリティ更新プログラム 3005628](https://support.microsoft.com/kb/3005628)をインストールすれば解決することがあります。  
   
 前述の方法がいずれも失敗した場合、またはインターネット接続がない場合は、Windows のインストール メディアを使用する必要があります。 詳細については、 [.NET Framework 3.5 のインストール エラーに関する記事](https://support.microsoft.com/en-us/kb/2734782)に記載されているエラー 0x800f0906 用の方法 3 を参照してください。 インストール メディアがいない場合は、「[Windows 8.1 用のインストール メディアを作成する](http://windows.microsoft.com/en-US/windows-8/create-reset-refresh-media?woldogcb=0)」を参照してください。  
   
