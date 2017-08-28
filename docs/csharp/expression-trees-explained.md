@@ -1,6 +1,6 @@
 ---
 title: "式ツリーの説明"
-description: "式ツリーの説明"
+description: "式ツリーについて、また、外部実行のためのアルゴリズム変換と実行前のコード検査で式ツリーがいかに役立つかについて説明します。"
 keywords: .NET, .NET Core
 author: BillWagner
 ms.author: wiwagn
@@ -10,10 +10,11 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: bbcdd339-86eb-4ae5-9911-4c214a39a92d
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: c1d8a3f8d0627de9e1de4a8c360cf1a56b0ee1d0
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 14673f86d7d228bc1fc17a3154e0337b4c6e5f57
+ms.contentlocale: ja-jp
+ms.lasthandoff: 07/28/2017
 
 ---
 

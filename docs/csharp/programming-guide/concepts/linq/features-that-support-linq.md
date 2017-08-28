@@ -1,5 +1,5 @@
 ---
-title: "LINQ をサポートする C# の機能 | Microsoft Docs"
+title: "LINQ をサポートする C# の機能"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -31,17 +31,18 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: f844e967e2abb7ea23e04a797017261e33bb4d75
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 01db44482ee3230d15af5ce8e0373fb15a769609
+ms.contentlocale: ja-jp
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="c-features-that-support-linq"></a>LINQ をサポートする C# の機能
-このセクションでは、C# 3.0 で導入された新しい言語構成要素について説明します。 これらの新機能はすべてある程度まで [!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq_md.md)] クエリで使用されていますが、[!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq_md.md)] だけでなく、これらの機能が役立つと思われるあらゆる状況で使用できます。  
+このセクションでは、C# 3.0 で導入された新しい言語構成要素について説明します。 これらの新機能はすべてある程度まで [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] クエリで使用されていますが、[!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] だけでなく、これらの機能が役立つと思われるあらゆる状況で使用できます。  
   
 ## <a name="query-expressions"></a>クエリ式  
- クエリ式は、SQL や XQuery に似た宣言型構文を使用して、IEnumerable コレクションを照会します。 クエリ構文は、コンパイル時に、[!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq_md.md)] プロバイダーの標準クエリ演算子拡張メソッドの実装に対するメソッド呼び出しに変換されます。 アプリケーションは、`using` ディレクティブを使用して適切な名前空間を指定することにより、スコープ内の標準クエリ演算子を制御します。 次のクエリ式では、文字列の配列を受け取り、文字列の最初の文字を基に文字列をグループ化し、グループを並び替えています。  
+ クエリ式は、SQL や XQuery に似た宣言型構文を使用して、IEnumerable コレクションを照会します。 クエリ構文は、コンパイル時に、[!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] プロバイダーの標準クエリ演算子拡張メソッドの実装に対するメソッド呼び出しに変換されます。 アプリケーションは、`using` ディレクティブを使用して適切な名前空間を指定することにより、スコープ内の標準クエリ演算子を制御します。 次のクエリ式では、文字列の配列を受け取り、文字列の最初の文字を基に文字列をグループ化し、グループを並び替えています。  
   
 ```  
 var query = from str in stringArray  
@@ -86,12 +87,12 @@ select new {name = cust.Name, phone = cust.Phone};
  詳細については、「[匿名型](../../../../csharp/programming-guide/classes-and-structs/anonymous-types.md)」を参照してください。  
   
 ## <a name="extension-methods"></a>拡張メソッド  
- 拡張メソッドは型に関連付けることができる静的メソッドであるため、その型のインスタンス メソッドと同じように呼び出すことができます。 この機能を使用すると、既存の型を実際に変更しなくても、その型に新しいメソッドを実質的に "追加" できます。 標準クエリ演算子は、<xref:System.Collections.Generic.IEnumerable%601> を実装する任意の型で [!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq_md.md)] クエリ機能を実現する拡張メソッドのセットです。  
+ 拡張メソッドは型に関連付けることができる静的メソッドであるため、その型のインスタンス メソッドと同じように呼び出すことができます。 この機能を使用すると、既存の型を実際に変更しなくても、その型に新しいメソッドを実質的に "追加" できます。 標準クエリ演算子は、<xref:System.Collections.Generic.IEnumerable%601> を実装する任意の型で [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] クエリ機能を実現する拡張メソッドのセットです。  
   
  詳細については、「[拡張メソッド](../../../../csharp/programming-guide/classes-and-structs/extension-methods.md)」を参照してください。  
   
 ## <a name="lambda-expressions"></a>ラムダ式  
- ラムダ式は、=> 演算子を使用して関数本体からパラメーター入力を分離するインライン関数で、コンパイル時にデリゲートまたは式ツリーに変換されます。 [!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq_md.md)] プログラミングでは、標準クエリ演算子に対する直接メソッド呼び出しを行う場合にラムダ式を使用します。  
+ ラムダ式は、=> 演算子を使用して関数本体からパラメーター入力を分離するインライン関数で、コンパイル時にデリゲートまたは式ツリーに変換されます。 [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] プログラミングでは、標準クエリ演算子に対する直接メソッド呼び出しを行う場合にラムダ式を使用します。  
   
  詳細については次を参照してください:  
   
@@ -112,3 +113,4 @@ public string Name {get; set;}
   
 ## <a name="see-also"></a>関連項目  
  [統合言語クエリ (LINQ) (C#)](../../../../csharp/programming-guide/concepts/linq/index.md)
+

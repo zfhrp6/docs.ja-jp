@@ -1,57 +1,77 @@
 ---
-title: "ランタイムのジェネリック (C# プログラミング ガイド) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.technology: 
-  - "devlang-csharp"
-ms.topic: "article"
-dev_langs: 
-  - "CSharp"
-helpviewer_keywords: 
-  - "ジェネリック [C#], 実行時"
+title: "ランタイムのジェネリック (C# プログラミング ガイド)"
+ms.date: 2015-07-20
+ms.prod: .net
+ms.technology:
+- devlang-csharp
+ms.topic: article
+dev_langs:
+- CSharp
+helpviewer_keywords:
+- generics [C#], at run time
 ms.assetid: 119df7e6-9ceb-49df-af36-24f8f8c0747f
 caps.latest.revision: 18
-author: "BillWagner"
-ms.author: "wiwagn"
-caps.handback.revision: 18
+author: BillWagner
+ms.author: wiwagn
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 661dff2d8ec2e12ab6a459660a5378f74e93b9c5
+ms.contentlocale: ja-jp
+ms.lasthandoff: 07/28/2017
+
 ---
-# ランタイムのジェネリック (C# プログラミング ガイド)
-ジェネリック型またはジェネリック メソッドを Microsoft Intermediate Language \(MSIL\) にコンパイルすると、型パラメーターを持つと識別されるメタデータが組み込まれます。  ジェネリック型の MSIL の使用方法は、指定した型パラメーターが値型か参照型かによって異なります。  
+# <a name="generics-in-the-run-time-c-programming-guide"></a>ランタイムのジェネリック (C# プログラミング ガイド)
+ジェネリック型またはメソッドが Microsoft 中間言語 (MSIL) にコンパイルされるとき、型パラメーターありとして識別するメタデータが追加されます。 ジェネリック型の MSIL の使われ方は、指定した型パラメーターの種類 (値型または参照型) によって異なります。  
   
- パラメーターとして値型を持つジェネリック型を初めて構築すると、ランタイムは指定したパラメーターが適切な位置で置換された特殊なジェネリック型を MSIL で作成します。  特殊なジェネリック型は、パラメーターとして使用される一意の値型ごとに、1 回作成されます。  
+ ジェネリック型が値型をパラメーターとして最初に構築されるとき、ランタイムにより、特殊なジェネリック型が作成されます。このとき、MSIL の適切な場所で指定のパラメーターが代わりに使用されます。 特殊なジェネリック型は、パラメーターとして使用される一意の値型ごとに 1 回作成されます。  
   
- たとえば、プログラミング コードで、次のように整数で構築されたスタックが宣言されているとします。  
+ たとえば、プログラム コードで、整数で構成されるスタックを宣言したとします。  
   
  [!code-cs[csProgGuideGenerics#42](../../../csharp/programming-guide/generics/codesnippet/CSharp/generics-in-the-run-time_1.cs)]  
   
- この時点で、ランタイムはパラメーターを整数に置き換えた特殊なバージョンの <xref:System.Collections.Generic.Stack%601> クラスを生成します。  これで、プログラミング コードで整数のスタックを使用すると、ランタイムでは、この生成された特殊な <xref:System.Collections.Generic.Stack%601> クラスが必ず再利用されるようになります。  次の例では、整数スタックの 2 つのインスタンスを作成し、これらのインスタンスが `Stack<int>` コードの単一のインスタンスを共有します。  
+ この時点で、整数がそのパラメーターに合わせて置き換えられた <xref:System.Collections.Generic.Stack%601> クラスの特殊なバージョンがランタイムにより生成されます。 プログラム コードで整数のスタックを使用するたびに、ランタイムは、生成された特殊な <xref:System.Collections.Generic.Stack%601> クラスを再利用します。 次の例では、整数のスタックの 2 つのインスタンスが作成され、`Stack<int>` コードの単一インスタンスを共有します。  
   
  [!code-cs[csProgGuideGenerics#43](../../../csharp/programming-guide/generics/codesnippet/CSharp/generics-in-the-run-time_2.cs)]  
   
- 一方、`long` などの異なる値型やユーザー定義の構造体をパラメーターとして持つ別の <xref:System.Collections.Generic.Stack%601> クラスがコードの別の箇所で作成されるとします。  その結果、ランタイムは別のバージョンのジェネリック型を生成し、MSIL で適切な位置にある `long` を置換します。  この特殊なジェネリック クラスにはそれぞれネイティブに値型が含まれるため、変換は必要ありません。  
+ ただし、`long` のような異なる値型を持つか、パラメーターとしてユーザー定義構造を持つ別の <xref:System.Collections.Generic.Stack%601> クラスがコード内の別のポイントで作成されると想定します。 結果として、ランタイムによりジェネリック型の別バージョンが生成され、MSIL 内の適切な場所で `long` を代わりに使います。 特殊なジェネリック クラスにはそれぞれ、ネイティブで値型が含まれているため、変換は必要ありません。  
   
- 参照型の場合、ジェネリックの機能はやや異なります。  ジェネリック型を参照型で初めて構築すると、MSIL のパラメーターを置換するオブジェクト参照を持つ、特殊なジェネリック型がランタイムで作成されます。  次に、構築された型がパラメーターとして参照型でインスタンス化されるたびに、その型の種類にかかわらず、以前に作成した特殊なバージョンのジェネリック型がランタイムで再利用されます。  参照はいずれも同じサイズのため、このように処理されます。  
+ 参照型の場合、ジェネリックの動作は少し異なります。 何らかの参照型でジェネリック型を初めて構築するとき、ランタイムは、MSIL のパラメーターの代わりに使用されているオブジェクト参照を利用して特殊なジェネリック型を作成します。 その後、構築された型が参照型をそのパラメーターとしてインスタンス化されるたびに、型に関係なく、ランタイムは、以前に利用した特殊なバージョンのジェネリック型を再利用します。 すべての参照のサイズが同じであるため、これが可能になります。  
   
- たとえば、`Customer` クラスと `Order` クラスという 2 つの参照型があり、さらに `Customer` 型のスタックを作成したとします。  
+ たとえば、`Customer` クラスと `Order` クラスという 2 つの参照型があるとき、`Customer` 型のスタックを作成したとします。  
   
  [!code-cs[csProgGuideGenerics#47](../../../csharp/programming-guide/generics/codesnippet/CSharp/generics-in-the-run-time_3.cs)]  
   
  [!code-cs[csProgGuideGenerics#44](../../../csharp/programming-guide/generics/codesnippet/CSharp/generics-in-the-run-time_4.cs)]  
   
- この時点で、データではなく、後で入力されるオブジェクト参照を格納した、特殊なバージョンの <xref:System.Collections.Generic.Stack%601> クラスがランタイムで生成されます。  次のコード行で、`Order` という別の参照型のスタックが作成されるとします。  
+ この時点で、オブジェクト参照を格納する <xref:System.Collections.Generic.Stack%601> クラスの特殊なバージョンがランタイムにより生成されます。データを保存しなくても、後にオブジェクト参照にデータが入力されます。 次のコード行により、`Order` という名前のもう 1 つの参照型のスタックが作成されるとします。  
   
  [!code-cs[csProgGuideGenerics#45](../../../csharp/programming-guide/generics/codesnippet/CSharp/generics-in-the-run-time_5.cs)]  
   
- 値型とは異なり、`Order` 型用に特殊なバージョンの <xref:System.Collections.Generic.Stack%601> クラスは新たに作成されません。  代わりに、特殊なバージョンの <xref:System.Collections.Generic.Stack%601> クラスのインスタンスが作成され、`orders` 変数はそのインスタンスを参照するように設定されます。  このとき、`Customer` 型のスタックを作成するコード行があるとします。  
+ 値型とは異なり、<xref:System.Collections.Generic.Stack%601> クラスのもう 1 つの特殊なバージョンは `Order` 型に対して作成されません。 代わりに、<xref:System.Collections.Generic.Stack%601> クラスの特殊なバージョンのインスタンスが作成され、それを参照するように `orders` 変数が設定されます。 その後、`Customer` 型のスタックを作成するコード行が見つかったとします。  
   
  [!code-cs[csProgGuideGenerics#46](../../../csharp/programming-guide/generics/codesnippet/CSharp/generics-in-the-run-time_6.cs)]  
   
- 前述した、`Order` 型を使用して作成された <xref:System.Collections.Generic.Stack%601> クラスを使用する場合と同様に、特殊な <xref:System.Collections.Generic.Stack%601> クラスのインスタンスが新たに作成されます。  インスタンスに含まれるポインターは、`Customer` 型のサイズを示すメモリ領域を参照するように設定されます。  参照型の数はプログラムによって大幅に異なるため、C\# のジェネリックの実装は、参照型のジェネリック クラスのためにコンパイラで作成される特殊なクラスの数を 1 つに減らし、コードの量を大幅に少なくします。  
+ `Order` 型を利用して作成された <xref:System.Collections.Generic.Stack%601> クラスの前の使用と同様に、特殊な <xref:System.Collections.Generic.Stack%601> クラスのもう 1 つのインスタンスが作成されます。 そこに含まれるポインターは、`Customer` 型のサイズのメモリ領域を参照するように設定されています。 参照型はプログラムによって大きく異なることがあるため、ジェネリックの C# 実装では、コードの量が大幅に、参照型のジェネリック クラスのコンパイラにより作成された特殊なクラスの数まで減ります。  
   
- さらに、ジェネリック C\# クラスを値型パラメーターまたは参照型パラメーターを使用してインスタンス化する場合は、それに対してリフレクションが実行時にクエリを実行でき、実際の型と型パラメーターの両方を確認できます。  
+ また、ジェネリック C# クラスが値型または参照型パラメーターの利用によりインスタンス化されるとき、ランタイム時にリフレクションがクエリを実行し、その型パラメーターを確かめることができます。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Collections.Generic>   
- [C\# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
+ [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
  [ジェネリックの概要](../../../csharp/programming-guide/generics/introduction-to-generics.md)   
- [ジェネリック](../Topic/Generics%20in%20the%20.NET%20Framework.md)
+ [ジェネリック](~/docs/standard/generics/index.md)
+

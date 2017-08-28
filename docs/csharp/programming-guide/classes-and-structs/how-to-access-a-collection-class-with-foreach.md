@@ -1,5 +1,5 @@
 ---
-title: "方法: foreach を使用してコレクション クラスにアクセスする (C# プログラミング ガイド) | Microsoft Docs"
+title: "方法: foreach を使用してコレクション クラスにアクセスする (C# プログラミング ガイド)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -27,11 +27,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 400dfda51d978f35c3995f90840643aaff1b9c13
-ms.openlocfilehash: 841132b5181c5e17d1eabae11d3550811aa959ec
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 2ad81ab699b079f4aabb04a886211e94a937335d
 ms.contentlocale: ja-jp
-ms.lasthandoff: 03/24/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="how-to-access-a-collection-class-with-foreach-c-programming-guide"></a>方法: foreach を使用してコレクション クラスにアクセスする (C# プログラミング ガイド)
@@ -45,16 +45,15 @@ ms.lasthandoff: 03/24/2017
  [!code-cs[csProgGuideCollections#3](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/how-to-access-a-collection-class-with-foreach_1.cs)]  
   
 ## <a name="example"></a>例  
- `Tokens` クラスは、内部でトークンの保存に配列を使用します。 配列は <xref:System.Collections.IEnumerator> と <xref:System.Collections.IEnumerable> を実装するので、コード例では、`Tokens` クラスに定義する代わりに、配列の列挙型メソッド (<xref:System.Collections.IEnumerable.GetEnumerator%2A>、<xref:System.Collections.IEnumerator.MoveNext%2A>、<xref:System.Collections.IEnumerator.Reset%2A>、および <xref:System.Collections.IEnumerator.Current%2A>) を使用した可能性があります。 その定義方法およびそれらの動作を示すために、例にはメソッドの定義が含まれています。  
+ `Tokens` クラスは、内部でトークンの保存に配列を使用します。 配列は <xref:System.Collections.IEnumerator> と <xref:System.Collections.IEnumerable> を実装するため、このコード例では、`Tokens` クラスで定義する代わりに、配列の列挙メソッド (<xref:System.Collections.IEnumerable.GetEnumerator%2A>、<xref:System.Collections.IEnumerator.MoveNext%2A>、<xref:System.Collections.IEnumerator.Reset%2A>、<xref:System.Collections.IEnumerator.Current%2A>) を使用することができました。 その定義方法およびそれらの動作を示すために、例にはメソッドの定義が含まれています。  
   
  [!code-cs[csProgGuideCollections#2](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/how-to-access-a-collection-class-with-foreach_2.cs)]  
   
- C# では、`foreach` に準拠するために、コレクション クラスで <xref:System.Collections.IEnumerable> と <xref:System.Collections.IEnumerator> を実装する必要はありません。 クラスに必要な <xref:System.Collections.IEnumerable.GetEnumerator%2A>、<xref:System.Collections.IEnumerator.MoveNext%2A>、<xref:System.Collections.IEnumerator.Reset%2A>、および <xref:System.Collections.IEnumerator.Current%2A> メンバーがある場合、`foreach` と動作します。 インターフェイスを省略すると、<xref:System.Object> よりも限定的な `Current` 用の戻り値の型を定義することが可能になると言う利点があります。 これにより、タイプ セーフとなります。  
+ C# の場合、<xref:System.Collections.IEnumerable> と <xref:System.Collections.IEnumerator> を実装しなくてもコレクション クラスは `foreach` 互換になります。 クラスに必須の <xref:System.Collections.IEnumerable.GetEnumerator%2A>、<xref:System.Collections.IEnumerator.MoveNext%2A>、<xref:System.Collections.IEnumerator.Reset%2A>、<xref:System.Collections.IEnumerator.Current%2A> メンバーがある場合、`foreach` と連動します。 インターフェイスを省略すると、<xref:System.Object> よりも限定的な `Current` 用の戻り値の型を定義することが可能になると言う利点があります。 これにより、タイプ セーフとなります。  
   
  たとえば、前の例の下記の行を変更します。  
   
 ```csharp  
-  
 // Change the Tokens class so that it no longer implements IEnumerable.  
 public class Tokens  
 {  
@@ -74,13 +73,11 @@ public class Tokens
         {   }  
     }  
  }  
-  
 ```  
   
  `Current` では、文字列を返すので、`foreach` ステートメントで互換性のない型が使用されたとき、コンパイラが次のコードのとおりそれを検出できます。  
   
 ```csharp  
-  
 // Error: Cannot convert type string to int.  
 foreach (int item in f)    
 ```  
@@ -93,3 +90,4 @@ foreach (int item in f)
  [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
  [配列](../../../csharp/programming-guide/arrays/index.md)   
  [コレクション](http://msdn.microsoft.com/library/e76533a9-5033-4a0b-b003-9c2be60d185b)
+

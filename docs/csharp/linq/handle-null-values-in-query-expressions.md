@@ -1,7 +1,7 @@
 ---
 title: "クエリ式の null 値の処理"
 description: "クエリ式の null 値を処理する方法。"
-keywords: ".NET、.NET Core、C#"
+keywords: .NET, .NET Core, C#
 author: BillWagner
 manager: wpickett
 ms.author: wiwagn
@@ -11,15 +11,16 @@ ms.prod: .net-core
 ms.technology: .net-core-technologies
 ms.devlang: dotnet
 ms.assetid: ac63ae8b-724d-4251-9334-528f4e884ae7
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 14b64bf8d3590f4f7dc3d1b00cb50d0bc421d9bc
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: f4f189504c57c9c01268b10bc96ad3c9af49ddbd
+ms.contentlocale: ja-jp
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="handle-null-values-in-query-expressions"></a>クエリ式の null 値の処理
 
-この例では、ソース コレクション内の可能な null 値を処理する方法を示します。 <xref:System.Collections.Generic.IEnumerable%601> などのオブジェクト コレクションには、値が [null](../language-reference/keywords/null.md) である要素を格納できます。 ソース コレクションが null であるか null の値を持つ要素を含み、クエリで null 値を処理しない場合、クエリを実行すると <xref:System.NullReferenceException> がスローされます。  
+この例では、ソース コレクション内の可能な null 値を処理する方法を示します。 <xref:System.Collections.Generic.IEnumerable%601> のようなオブジェクト コレクションには、値が [null](../language-reference/keywords/null.md) の要素を含めることができます。 ソース コレクションが null であるか null の値を持つ要素を含み、クエリで null 値を処理しない場合、クエリを実行すると <xref:System.NullReferenceException> がスローされます。  
   
 ## <a name="example"></a>例
 
@@ -39,3 +40,4 @@ ms.lasthandoff: 03/13/2017
  <xref:System.Nullable%601>   
  [LINQ クエリ式](index.md)   
  [Null 許容型](../programming-guide/nullable-types/index.md)
+

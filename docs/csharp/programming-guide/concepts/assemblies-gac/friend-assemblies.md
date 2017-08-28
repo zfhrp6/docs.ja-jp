@@ -1,5 +1,5 @@
 ---
-title: "フレンド アセンブリ (C#) | Microsoft Docs"
+title: "フレンド アセンブリ (C#)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -19,10 +19,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: ca01b9e91de08f3bdf53cd0572a3e1d1af0cf0af
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: e2680b5799c552a063ff7c539a31a5dd00b90a75
+ms.contentlocale: ja-jp
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="friend-assemblies-c"></a>フレンド アセンブリ (C#)
@@ -33,7 +34,7 @@ ms.lasthandoff: 03/13/2017
 -   クラス ライブラリの開発中、そのライブラリへの追加機能が別のアセンブリにある状況で、既存アセンブリ内の `internal` メンバーにアクセスしなければならないとき。  
   
 ## <a name="remarks"></a>コメント  
- 特定のアセンブリのフレンド アセンブリは、<xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> 属性を使用して指定できます。 次の例では、アセンブリ A で <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> 属性を使用し、アセンブリ `AssemblyB` をフレンド アセンブリとして指定します。 これでアセンブリ `AssemblyB` は、アセンブリ A の中で `internal` として宣言されているすべての型とメンバーにアクセスすることができます。  
+ <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> 属性を利用し、特定のアセンブリの 1 つまたは複数のフレンド アセンブリを特定できます。 次の例では、アセンブリ A で <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> 属性を利用し、アセンブリ `AssemblyB` をフレンド アセンブリとして指定しています。 これでアセンブリ `AssemblyB` は、アセンブリ A の中で `internal` として宣言されているすべての型とメンバーにアクセスすることができます。  
   
 > [!NOTE]
 >  別のアセンブリ (アセンブリ *A*) の内部型または内部メンバーにアクセスするアセンブリ (アセンブリ `AssemblyB`) をコンパイルする際は、**/out** コンパイラ オプションを使用して、出力ファイル (.exe または .dll) の名前を明示的に指定する必要があります。 この指定は必ず行ってください。コンパイラが外部参照にバインドする時点ではまだ、ビルド中のアセンブリの名前が生成されていないためです。 詳細については、「[/out (C#)](../../../../csharp/language-reference/compiler-options/out-compiler-option.md)」を参照してください。  
@@ -66,7 +67,7 @@ public class ClassWithFriendMethod
   
  `internal` な型とメンバーにアクセスできるのは、明示的にフレンドとして指定されたアセンブリだけです。 たとえば、アセンブリ B がアセンブリ A のフレンドで、アセンブリ C がアセンブリ B を参照している場合、A の `internal` 型に C からアクセスすることはできません。  
   
- <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> 属性に渡されたフレンド アセンブリ名には、コンパイラによって基本的な検証が実行されます。 アセンブリ *A* が *B* をフレンド アセンブリとして宣言する場合、検証規則は次のとおりです。  
+ コンパイラは、<xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> 属性に渡されるフレンド アセンブリ名の基本検証を実行します。 アセンブリ *A* が *B* をフレンド アセンブリとして宣言する場合、検証規則は次のとおりです。  
   
 -   アセンブリ *A* に厳密な名前が付けられている場合、アセンブリ *B* にも厳密な名前が付けられている必要があります。 属性に渡されるフレンド アセンブリ名は、アセンブリ名と、アセンブリ *B* の署名に使用される厳密名キーの公開キーで構成されている必要があります。  
   
@@ -76,13 +77,13 @@ public class ClassWithFriendMethod
   
 -   アセンブリ *B* に厳密な名前が付けられている場合、プロジェクトの設定またはコマンド ラインの `/keyfile` コンパイラ オプションを使用してアセンブリ *B* の厳密名キーを指定する必要があります。 詳細については、「[方法: 署名されたフレンド アセンブリを作成する (C#)](../../../../csharp/programming-guide/concepts/assemblies-gac/how-to-create-signed-friend-assemblies.md)」を参照してください。  
   
- <xref:System.Security.Permissions.StrongNameIdentityPermission> クラスにも型を共有する機能がありますが、次の点が異なります。  
+ <xref:System.Security.Permissions.StrongNameIdentityPermission> クラスも型を共有する機能を提供しますが、次のような違いがあります。  
   
--   <xref:System.Security.Permissions.StrongNameIdentityPermission> は個々の型に適用されるのに対し、フレンド アセンブリはアセンブリ全体に適用されます。  
+-   フレンド アセンブリはアセンブリ全体に適用されますが、<xref:System.Security.Permissions.StrongNameIdentityPermission> は個々の型に適用されます。  
   
 -   アセンブリ *B* との間で共有したい型がアセンブリ *A* に数百個存在する場合、そのすべてに対して <xref:System.Security.Permissions.StrongNameIdentityPermission> を追加する必要があります。 フレンド アセンブリを使用した場合、フレンド関係を 1 回宣言するだけで済みます。  
   
--   <xref:System.Security.Permissions.StrongNameIdentityPermission> を使用する場合、共有する型が public として宣言されている必要があります。 フレンド アセンブリを使用する場合、共有する型は `internal` として宣言されます。  
+-   <xref:System.Security.Permissions.StrongNameIdentityPermission> を使用する場合、共有する型をパブリックとして宣言する必要があります。 フレンド アセンブリを使用する場合、共有する型は `internal` として宣言されます。  
   
  アセンブリの `internal` な型とメソッドにモジュール ファイル (.netmodule 拡張子の付いたファイル) からアクセスする方法については、「[/moduleassemblyname (C#)](../../../../csharp/language-reference/compiler-options/moduleassemblyname-compiler-option.md)」を参照してください。  
   
@@ -93,3 +94,4 @@ public class ClassWithFriendMethod
  [方法: 署名されたフレンド アセンブリを作成する (C#)](../../../../csharp/programming-guide/concepts/assemblies-gac/how-to-create-signed-friend-assemblies.md)   
  [アセンブリとグローバル アセンブリ キャッシュ (C#)](../../../../csharp/programming-guide/concepts/assemblies-gac/index.md)   
  [C# プログラミング ガイド](../../../../csharp/programming-guide/index.md)
+

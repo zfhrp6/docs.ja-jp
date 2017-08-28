@@ -1,6 +1,6 @@
 ---
 title: "式の解釈"
-description: "式の解釈"
+description: "式ツリーの構造を調べるためのコードの記述方法について説明します。"
 keywords: .NET, .NET Core
 author: BillWagner
 ms.author: wiwagn
@@ -10,11 +10,11 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: adf73dde-1e52-4df3-9929-2e0670e28e16
-ms.translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 07352a2807c08ad19b8d5a47c5a42a0e1c455ab6
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: e7c5f7404546c6f3812fc5cc3d0320c77816634d
 ms.contentlocale: ja-jp
-ms.lasthandoff: 03/13/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 
@@ -368,7 +368,7 @@ Expression<Func<int, int>> factorial = (n) =>
 この式では、次の型のノードすべてが使用されています。
 1. 等号 (二項式)
 2. 乗算 (二項式)
-3. 条件 (? : 式)
+3. 条件付き (? : 式)
 4. メソッド呼び出し式 (`Range()` と `Aggregate()` を呼び出す)
 
 ビジター アルゴリズムを修正する方法の 1 つは、アルゴリズムの実行を繰り返し、`default` 句に行き着くたびにノード型を記述することです。 数回繰り返せば、検出の可能性がある各ノードを確認できます。 その段階で、必要なものがすべて揃います。 結果は次のようになります。
@@ -522,7 +522,7 @@ The expression body is:
 
 最後のサンプルでも、想定されるノード型のサブセットを認識できます。
 コードの処理が失敗する式をさらに読み込ませることもできます。
-完全な実装は、[ExpressionVisitor](https://docs.microsoft.com/dotnet/core/api/System.Linq.Expressions.ExpressionVisitor) という名前で .NET Standard Library に含まれていて、想定されるすべてのノード型を処理できます。
+完全な実装は、[ExpressionVisitor](/dotnet/core/api/System.Linq.Expressions.ExpressionVisitor) という名前で .NET Standard に含まれていて、想定されるすべてのノード型を処理できます。
 
 最後に、この記事で使用したライブラリはデモ用および学習用として構築しました。 ライブラリの最適化は行っていません。 ライブラリを記述したのは、使用した構造体を明確にし、ノードのアクセスに使用した手法を浮き彫りにして、その内容を分析するためです。 運用環境への実装では、今回試みたよりもさらにパフォーマンスに注意を払うことになります。
 

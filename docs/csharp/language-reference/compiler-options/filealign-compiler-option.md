@@ -1,5 +1,5 @@
 ---
-title: "-filealign (C# コンパイラ オプション) | Microsoft Docs"
+title: "-filealign (C# コンパイラ オプション)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -39,11 +39,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 83569fa264ba3ed6e271281885940a70a5354840
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 1b13dee0a221bc0b97349be5897a04188304ff16
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/22/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="filealign-c-compiler-options"></a>/filealign (C# コンパイラ オプション)
@@ -64,7 +64,7 @@ ms.lasthandoff: 05/22/2017
   
  セクションのサイズを指定すると、出力ファイルのサイズに影響します。 セクションのサイズ変更は、比較的小さなデバイスで実行されるプログラムに対して有効な場合があります。  
   
- 出力ファイル内のセクションに関する情報を表示するには、[DUMPBIN](https://docs.microsoft.com/cpp/build/reference/dumpbin-options) を使用します。  
+ 出力ファイル内のセクションに関する情報を表示するには、[DUMPBIN](/cpp/build/reference/dumpbin-options) を使用します。  
   
 ### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>Visual Studio 開発環境でこのコンパイラ オプションを設定するには  
   
@@ -80,4 +80,5 @@ ms.lasthandoff: 05/22/2017
   
 ## <a name="see-also"></a>関連項目  
  [C# コンパイラのオプション](../../../csharp/language-reference/compiler-options/index.md)   
- [NIB 方法: プロジェクト プロパティと構成設定を変更する](http://msdn.microsoft.com/en-us/e7184bc5-2f2b-4b4f-aa9a-3ecfcbc48b67)
+ [プロジェクトおよびソリューションのプロパティの管理](/visualstudio/ide/managing-project-and-solution-properties)
+

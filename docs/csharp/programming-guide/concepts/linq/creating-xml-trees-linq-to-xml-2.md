@@ -1,5 +1,5 @@
 ---
-title: "C# での XML ツリーの作成 (LINQ to XML) | Microsoft Docs"
+title: "C# での XML ツリーの作成 (LINQ to XML)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -19,10 +19,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 92ba0d345183ec503d61254355f948f82a18f053
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: ac95fcf49736b554c8a3d4d0061f63b3ac4d3f65
+ms.contentlocale: ja-jp
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="creating-xml-trees-in-c-linq-to-xml"></a>C# での XML ツリーの作成 (LINQ to XML)
@@ -61,8 +62,8 @@ XElement contacts =
 |コンストラクター|説明|  
 |-----------------|-----------------|  
 |`XElement(XName name, object content)`|<xref:System.Xml.Linq.XElement> を作成します。 `name` パラメーターには要素の名前を指定し、`content` には要素のコンテンツを指定します。|  
-|`XElement(XName name)`|指定した名前で <xref:System.Xml.Linq.XName> を初期化して、<xref:System.Xml.Linq.XElement> を作成します。|  
-|`XElement(XName name, params object[] content)`|指定した名前で <xref:System.Xml.Linq.XName> を初期化して、<xref:System.Xml.Linq.XElement> を作成します。 属性や子要素が、パラメーター リストのコンテンツから作成されます。|  
+|`XElement(XName name)`|指定した名前で <xref:System.Xml.Linq.XElement> を初期化して、<xref:System.Xml.Linq.XName> を作成します。|  
+|`XElement(XName name, params object[] content)`|指定した名前で <xref:System.Xml.Linq.XElement> を初期化して、<xref:System.Xml.Linq.XName> を作成します。 属性や子要素が、パラメーター リストのコンテンツから作成されます。|  
   
  `content` パラメーターは非常に柔軟です。 <xref:System.Xml.Linq.XElement> の有効な子オブジェクトの型すべてがサポートされています。 このパラメーターで渡されるさまざまな型のオブジェクトには、次の規則が適用されます。  
   
@@ -237,3 +238,4 @@ Child2 was attached
   
 ## <a name="see-also"></a>関連項目  
  [XML ツリーの作成 (C#)](../../../../csharp/programming-guide/concepts/linq/creating-xml-trees.md)
+

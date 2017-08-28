@@ -1,6 +1,6 @@
 ---
 title: Expression Trees
-description: Expression Trees
+description: ".NET Core の式ツリーについて、また、それを利用し、検査、変更、実行が可能な構造体としてコードを表す方法について説明します。"
 keywords: .NET, .NET Core
 author: BillWagner
 ms.author: wiwagn
@@ -10,11 +10,11 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: aceb4719-0d5a-4b19-b01f-b51063bcc54f
-ms.translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: e6ec60b6cdbe29def719f7970dad15fad65902e7
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 3935906d9fca81a094999eefdd49ae4ed56990bf
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/22/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 
@@ -31,10 +31,10 @@ LINQ クエリを作成するときに関数の引数を作成するには、通
 そのため、[Entity Framework](http://docs.efproject.net/en/latest/) では、C# で作成したクエリをデータベース エンジンで実行される SQL に変換することができます。 もう 1 つの例として [Moq](https://github.com/Moq/moq) があります。Moq は、.NET でよく使われるモック作成フレームワークです。
 
 以降、このチュートリアルでは、式ツリーの概要、式ツリーをサポートするフレームワーク クラス、式ツリーの使用方法について説明します。 式ツリーの読み方、式ツリーの作成方法、変更を加えた式ツリーの作成方法、式ツリーで表されるコードの実行方法を学びます。 チュートリアルを読み終わると、これらの構造を使用し、高度な適合アルゴリズムを作成できるようになります。
-<style type="text/css"> ol { list-style-type: upper-roman; } </style>
+
 1. [式ツリーの説明](expression-trees-explained.md)
 
-    Understand the structure and concepts behind *Expression Trees*.
+    *式ツリー*の構造と概念を理解します。
     
 2. [式ツリーをサポートするフレームワークの型](expression-classes.md)
     

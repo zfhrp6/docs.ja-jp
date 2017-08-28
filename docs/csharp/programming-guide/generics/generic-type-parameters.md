@@ -1,46 +1,66 @@
 ---
-title: "ジェネリック型の型パラメーター (C# プログラミング ガイド) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.technology: 
-  - "devlang-csharp"
-ms.topic: "article"
-dev_langs: 
-  - "CSharp"
-helpviewer_keywords: 
-  - "ジェネリック [C#], 型パラメーター"
-  - "型パラメーター [C#]"
+title: "ジェネリック型の型パラメーター (C# プログラミング ガイド)"
+ms.date: 2015-07-20
+ms.prod: .net
+ms.technology:
+- devlang-csharp
+ms.topic: article
+dev_langs:
+- CSharp
+helpviewer_keywords:
+- generics [C#], type parameters
+- type parameters [C#]
 ms.assetid: a03b0ab2-0606-4b41-b7bf-e64d5bb4d18f
 caps.latest.revision: 23
-author: "BillWagner"
-ms.author: "wiwagn"
-caps.handback.revision: 23
+author: BillWagner
+ms.author: wiwagn
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: ce1024215a381afb3a7b42f2127fe5e8c212d378
+ms.contentlocale: ja-jp
+ms.lasthandoff: 07/28/2017
+
 ---
-# ジェネリック型の型パラメーター (C# プログラミング ガイド)
-ジェネリック型またはジェネリック メソッドの定義では、型パラメーターは、ジェネリック型の変数をインスタンス化するときにクライアントが指定する、特定の型のプレースホルダーです。  「[ジェネリックの概要](../../../csharp/programming-guide/generics/introduction-to-generics.md)」に紹介されている `GenericList<T>` などのジェネリック クラスは、実際のところ型ではなく、型の設計図のようなものなので、そのままでは使用できません。  `GenericList<T>` を使用するには、クライアント コードで、山かっこ内に型の引数を指定して構築型を宣言し、インスタンス化する必要があります。  この特定クラスの型の引数には、コンパイラで認識される任意の型を使用できます。  構築型のインスタンスはいくつでも作成できます。また、それぞれに対して、次のように異なる型の引数を使用できます。  
+# <a name="generic-type-parameters-c-programming-guide"></a>ジェネリック型の型パラメーター (C# プログラミング ガイド)
+ジェネリック型またはメソッド定義で、型パラメーターは、ジェネリック型の変数をインスタンス化するときにクライアントが指定する特定の型のためのプレースホルダーになります。 「[ジェネリックの概要](../../../csharp/programming-guide/generics/introduction-to-generics.md)」に記載されている `GenericList<T>` などのジェネリック クラスは、実際は型でないため、そのままでは使用できません。これは型の設計図のようなものです。 `GenericList<T>` を使用するには、クライアント コードで構築された型を宣言し、インスタンス化する必要があります。山かっこ内に型引数を指定します。 この特定のクラスの型引数は、コンパイラで認識されるあらゆる型にすることができます。 構築された型インスタンスは、次のようにさまざまな型引数を利用し、いくつでも作成できます。  
   
  [!code-cs[csProgGuideGenerics#7](../../../csharp/programming-guide/generics/codesnippet/CSharp/generic-type-parameters_1.cs)]  
   
- この `GenericList<T>` の各インスタンスでは、クラスで `T` が発生すると、実行時に型の引数で置換されます。  この置換を利用して、単一のクラス定義を使用したタイプ セーフで効率的なオブジェクトを 3 つ作成しました。  この置換を CLR で実行する方法の詳細については、「[ランタイムのジェネリック](../../../csharp/programming-guide/generics/generics-in-the-run-time.md)」を参照してください。  
+ `GenericList<T>` の各インスタンスでは、クラス内のすべての `T` は実行時に型引数に置換されます。 この置換を使用し、単一クラス定義を使用してタイプ セーフで効率的なオブジェクトを 3 つ作成しました。 この置換が CLR で実行されるしくみについては、「[ランタイムのジェネリック](../../../csharp/programming-guide/generics/generics-in-the-run-time.md)」を参照してください。  
   
-## 型パラメーターの名前付けのガイドライン  
+## <a name="type-parameter-naming-guidelines"></a>型パラメーターの名前付けガイドライン  
   
--   1 文字の名前だけで理解でき、追加の文字が必要ない場合を除き、ジェネリック型の型パラメーターには、わかりやすい名前を付けます。  
+-   1 文字の名前でも完全に説明され、説明的な名前を付けることに意味がない場合を除き、ジェネリック型パラメーターには**説明的な名前を付けてください**。  
   
      [!code-cs[csProgGuideGenerics#8](../../../csharp/programming-guide/generics/codesnippet/CSharp/generic-type-parameters_2.cs)]  
   
--   1 文字の型パラメーターを持つ型である場合、型パラメーター名として T を使用することを検討します。  
+-   1 文字の型パラメーターを持つ型の型パラメーター名として T を利用することを**検討してください**。  
   
      [!code-cs[csProgGuideGenerics#9](../../../csharp/programming-guide/generics/codesnippet/CSharp/generic-type-parameters_3.cs)]  
   
--   わかりやすい型パラメーター名の前に "T" を付けます。  
+-   型パラメーターの説明的な名前には "T" という**接頭辞を付けてください**。  
   
      [!code-cs[csProgGuideGenerics#10](../../../csharp/programming-guide/generics/codesnippet/CSharp/generic-type-parameters_4.cs)]  
   
--   パラメーターの名前に型パラメーターに関する制約を指定することを検討します。  たとえば、`ISession` に制約されるパラメーターである場合、`TSession` と指定します。  
+-   型パラメーターに与えられた制約をパラメーターの名前で示唆することを**検討してください**。 たとえば、`ISession` に制約されているパラメーターの名前を `TSession` にします。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Collections.Generic>   
- [C\# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
+ [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
  [ジェネリック](../../../csharp/programming-guide/generics/index.md)   
- [C\+\+ テンプレートと C\# ジェネリックの違い](../../../csharp/programming-guide/generics/differences-between-cpp-templates-and-csharp-generics.md)
+ [C++ テンプレートと C# ジェネリックの違い](../../../csharp/programming-guide/generics/differences-between-cpp-templates-and-csharp-generics.md)
+
