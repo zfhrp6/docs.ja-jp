@@ -12,10 +12,10 @@ helpviewer_keywords:
 author: rpetrusha
 ms.author: ronpet
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 5a4b84756be7d33c478d8115b812795dba182cdf
+ms.sourcegitcommit: 4582cb0ee091526423cce3fc1d8243029f34f59c
+ms.openlocfilehash: 069a6411e3d89fa1c2dba57f0b83badff1342763
 ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
+ms.lasthandoff: 08/16/2017
 
 ---
 # <a name="local-functions-c-programming-guide"></a>ローカル関数 (C# プログラミング ガイド)
@@ -54,7 +54,7 @@ C# 7 以降、C# では*ローカル関数*がサポートされています。 
 
 - メンバー アクセス修飾子。 すべてのローカル関数はプライベートであるため、`private` キーワードなどのアクセス修飾子が含まれていると、コンパイラ エラー CS0106 "修飾子 'private' がこの項目に対して有効ではありません" が生成されます。
  
-- [static](..\..\language-reference\keywords\static.md) キーワード。 `static` キーワードが含まれていると、コンパイラ エラー CS0106 "修飾子 'static' がこの項目に対して有効ではありません" が生成されます。
+- [static](../../language-reference/keywords/static.md) キーワード。 `static` キーワードが含まれていると、コンパイラ エラー CS0106 "修飾子 'static' がこの項目に対して有効ではありません" が生成されます。
 
 さらに、ローカル関数またはローカル関数のパラメーターと型パラメーターには属性を適用できません。 
  

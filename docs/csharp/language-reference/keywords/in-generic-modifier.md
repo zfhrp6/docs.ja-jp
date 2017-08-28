@@ -29,10 +29,10 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: a2c20a74b48fad8eb7021e23002d06e78a1fd624
+ms.sourcegitcommit: 775e4512a5ff31c7059961f6332c6bdc0dc5247a
+ms.openlocfilehash: 663fa75a7e214ed97efb45dda2c9ac298559653d
 ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
+ms.lasthandoff: 08/11/2017
 
 ---
 # <a name="in-generic-modifier-c-reference"></a>in (ジェネリック修飾子) (C# リファレンス)
@@ -46,7 +46,7 @@ ms.lasthandoff: 07/28/2017
   
  反変のデリゲートには、型は同じでありながらより弱い派生ジェネリック型パラメーターを持つ別のデリゲートを割り当てることができます。  
   
- 詳細については、「[共変性と反変性](http://msdn.microsoft.com/library/a58cc086-276f-4f91-a366-85b7f95f38b8)」を参照してください。  
+ 詳細については、「[共変性と反変性](../../programming-guide/concepts/covariance-contravariance/index.md)」を参照してください。  
   
 ## <a name="example"></a>例  
  次の例では、反変のジェネリック インターフェイスを宣言、拡張、および実装する方法を示します。 また、このインターフェイスを実装するクラスの暗黙的な変換を使用する方法も示します。  
@@ -63,6 +63,6 @@ ms.lasthandoff: 07/28/2017
   
 ## <a name="see-also"></a>関連項目  
  [out](../../../csharp/language-reference/keywords/out-generic-modifier.md)   
- [共変性と反変性](http://msdn.microsoft.com/library/a58cc086-276f-4f91-a366-85b7f95f38b8)   
+ [共変性と反変性](../../programming-guide/concepts/covariance-contravariance/index.md)   
  [修飾子](../../../csharp/language-reference/keywords/modifiers.md)
 
