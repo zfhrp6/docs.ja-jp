@@ -1,5 +1,5 @@
 ---
-title: "方法: レジストリにキーを作成する (Visual C#) | Microsoft Docs"
+title: "方法: レジストリにキーを作成する (Visual C#)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -29,10 +29,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 3a377a85acdc31b426171ab6583bff92b24889b3
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 96d34df3314494fc96ad8b55d7462b67dcc7bd72
+ms.contentlocale: ja-jp
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="how-to-create-a-key-in-the-registry-visual-c"></a>方法: レジストリにキーを作成する (Visual C#)
@@ -53,7 +54,7 @@ key.Close();
   
 -   `Names` パラメーターをレジストリの HKEY_CURRENT_USER ノードの直下にあるキーの名前に置き換えます。  
   
--   `Nam`e パラメーターを Names ノードの直下にある値の名前に置き換えます。  
+-   `Name` パラメーターを Names ノードの直下にある値の名前に置き換えます。  
   
 ## <a name="robust-programming"></a>信頼性の高いプログラミング  
  レジストリの構造を調べて、キーの適切な場所を見つけることができます。 たとえば、現在のユーザーの Software キーを開き、会社名のキーを作成できます。 その後で、会社名のキーにレジストリ値を追加します。  
@@ -82,3 +83,4 @@ key.Close();
  [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
  [ファイル システムとレジストリ (C# プログラミング ガイド)](../../../csharp/programming-guide/file-system/index.md)   
  [C# によるレジストリからの読み取り、書き込み、および削除](http://www.codeproject.com/Articles/3389/Read-write-and-delete-from-registry-with-C)
+

@@ -1,5 +1,5 @@
 ---
-title: "LINQ クエリの基本操作 (C#) | Microsoft Docs"
+title: "LINQ クエリの基本操作 (C#)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -44,14 +44,15 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 48624d608c3eb8d1118a2492454595d46025cb3e
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: e5dbebb7950678a0f40ec774d23b42dfe89cff49
+ms.contentlocale: ja-jp
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="basic-linq-query-operations-c"></a>LINQ クエリの基本操作 (C#)
-このトピックでは、[!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq_md.md)] クエリ式とクエリで実行する一般的な操作について、簡単に説明します。 詳細については、以下のトピックを参照してください。  
+このトピックでは、[!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] クエリ式とクエリで実行する一般的な操作について、簡単に説明します。 詳細については、以下のトピックを参照してください。  
   
  [LINQ クエリ式](../../../../csharp/programming-guide/linq-query-expressions/index.md)  
   
@@ -60,14 +61,14 @@ ms.lasthandoff: 03/13/2017
  [チュートリアル: C# でのクエリの作成](../../../../csharp/programming-guide/concepts/linq/walkthrough-writing-queries-linq.md)  
   
 > [!NOTE]
->  既に SQL や XQuery などのクエリ言語に精通している場合は、このトピックの大部分を省略できます。 [!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq_md.md)] クエリ式における句の順序について理解するには、次のセクションの "`from` 句" を参照してください。  
+>  既に SQL や XQuery などのクエリ言語に精通している場合は、このトピックの大部分を省略できます。 [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] クエリ式における句の順序について理解するには、次のセクションの "`from` 句" を参照してください。  
   
 ## <a name="obtaining-a-data-source"></a>データ ソースの取得  
- [!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq_md.md)] クエリで必要な最初の手順は、データ ソースを指定することです。 ほとんどのプログラミング言語と同じように、C# でも、変数を使用する前に宣言しておく必要があります。 [!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq_md.md)] クエリでは、データ ソース (`customers`) および*範囲変数*(`cust`)を導入するために `from` 句が最初に使用されます。  
+ [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] クエリで必要な最初の手順は、データ ソースを指定することです。 ほとんどのプログラミング言語と同じように、C# でも、変数を使用する前に宣言しておく必要があります。 [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] クエリでは、データ ソース (`customers`) および*範囲変数*(`cust`) を導入するために `from` 句が最初に使用されます。  
   
  [!code-cs[csLINQGettingStarted#23](../../../../csharp/programming-guide/concepts/linq/codesnippet/CSharp/basic-linq-query-operations_1.cs)]  
   
- 範囲変数は、`foreach`ループの反復変数と似ていますが、クエリ式では実際の反復は発生しません。 クエリが実行されると、範囲変数は `customers` の連続する各要素への参照として機能します。 `cust` の型はコンパイラで推論できるため、明示的に指定する必要はありません。 追加の範囲変数は、`let` 句で導入できます。 詳細については、「[let 句](../../../../csharp/language-reference/keywords/let-clause.md)」を参照してください。  
+ 範囲変数は、`foreach`ループの反復変数と似ていますが、クエリ式では実際の反復は発生しません。 クエリが実行されると、範囲変数は `customers` の連続する各要素への参照として機能します。 `cust` の型はコンパイラで推論できるため、明示的に指定する必要はありません。 追加の範囲変数は、`let` 句で導入できます。 詳しくは、「[let 句](../../../../csharp/language-reference/keywords/let-clause.md)」をご覧ください。  
   
 > [!NOTE]
 >  <xref:System.Collections.ArrayList> などの非ジェネリック データ ソースの場合は、範囲変数を明示的に型指定する必要があります。 詳細については、「[方法: LINQ を使用して ArrayList を照会する (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-query-an-arraylist-with-linq.md)」および「[from 句](../../../../csharp/language-reference/keywords/from-clause.md)」を参照してください。  
@@ -110,11 +111,11 @@ ms.lasthandoff: 03/13/2017
  詳細については、「[group 句](../../../../csharp/language-reference/keywords/group-clause.md)」を参照してください。  
   
 ## <a name="joining"></a>結合  
- 結合操作は、データ ソースで明示的にモデル化されていないシーケンス間に関連付けを作成します。 たとえば、結合を実行して、住所地が同じすべての顧客と販売業者を検索することができます。 [!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq_md.md)] では、`join` 句はデータベース テーブルを直接の対象とするのではなく、オブジェクトのコレクションを対象として機能します。  
+ 結合操作は、データ ソースで明示的にモデル化されていないシーケンス間に関連付けを作成します。 たとえば、結合を実行して、住所地が同じすべての顧客と販売業者を検索することができます。 [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] では、`join` 句はデータベース テーブルを直接の対象とするのではなく、オブジェクトのコレクションを対象として機能します。  
   
  [!code-cs[csLINQGettingStarted#36](../../../../csharp/programming-guide/concepts/linq/codesnippet/CSharp/basic-linq-query-operations_8.cs)]  
   
- [!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq_md.md)] では、SQL ほど頻繁に `join` を使用する必要はありません。これは、オブジェクト モデルでは、[!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq_md.md)] の外部キーが項目のコレクションを保持するプロパティとして表されるためです。 たとえば、`Customer` オブジェクトには `Order` オブジェクトのコレクションが含まれます。 結合を実行しなくても、ドット表記を使用して注文にアクセスできます。  
+ [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] では、SQL ほど頻繁に `join` を使用する必要はありません。これは、オブジェクト モデルでは、[!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] の外部キーが項目のコレクションを保持するプロパティとして表されるためです。 たとえば、`Customer` オブジェクトには `Order` オブジェクトのコレクションが含まれます。 結合を実行しなくても、ドット表記を使用して注文にアクセスできます。  
   
 ```  
 from order in Customer.Orders...  
@@ -123,7 +124,7 @@ from order in Customer.Orders...
  詳細については、「[join 句](../../../../csharp/language-reference/keywords/join-clause.md)」を参照してください。  
   
 ## <a name="selecting-projections"></a>選択 (投影)  
- `select` 句はクエリの結果を生成し、返される各要素の "シェイプ" つまり型を指定します。 たとえば、完全な `Customer` オブジェクト、１ つのメンバーのみ、メンバーのサブセット、または計算や新しいオブジェクトの作成に基づいた、まったく異なる種類の結果のいずれで結果が構成されるかを指定できます。 `select` 句でソース要素のコピー以外のものを生成する場合、その操作は*投影*と呼ばれます。 投影を使用したデータの変換は、[!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq_md.md)] クエリ式の強力な機能です。 詳細については、「[LINQ によるデータ変換 (C#)](../../../../csharp/programming-guide/concepts/linq/data-transformations-with-linq.md)」と「[select 句](../../../../csharp/language-reference/keywords/select-clause.md)」を参照してください。  
+ `select` 句はクエリの結果を生成し、返される各要素の "シェイプ" つまり型を指定します。 たとえば、完全な `Customer` オブジェクト、1 つのメンバーのみ、メンバーのサブセット、または計算や新しいオブジェクトの作成に基づいた、まったく異なる種類の結果のいずれで結果が構成されるかを指定できます。 `select` 句でソース要素のコピー以外のものを生成する場合、その操作は*投影*と呼ばれます。 投影を使用したデータの変換は、[!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] クエリ式の強力な機能です。 詳細については、「[LINQ によるデータ変換 (C#)](../../../../csharp/programming-guide/concepts/linq/data-transformations-with-linq.md)」と「[select 句](../../../../csharp/language-reference/keywords/select-clause.md)」を参照してください。  
   
 ## <a name="see-also"></a>関連項目  
  [C# の LINQ の概要](../../../../csharp/programming-guide/concepts/linq/getting-started-with-linq.md)   
@@ -131,3 +132,4 @@ from order in Customer.Orders...
  [チュートリアル: C# でのクエリの作成](../../../../csharp/programming-guide/concepts/linq/walkthrough-writing-queries-linq.md)   
  [クエリ キーワード (LINQ)](../../../../csharp/language-reference/keywords/query-keywords.md)   
  [匿名型](../../../../csharp/programming-guide/classes-and-structs/anonymous-types.md)
+

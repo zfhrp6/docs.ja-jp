@@ -1,5 +1,5 @@
 ---
-title: "スレッド プール (C#) | Microsoft Docs"
+title: "スレッド プール (C#)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -19,10 +19,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: da18d75f5d80cd7ad8a9a974bf0ffda196e7ea86
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: d2f8e5a2d7a83dc6fef72ef87b4003ae49656d8f
+ms.contentlocale: ja-jp
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="thread-pooling-c"></a>スレッド プール (C#)
@@ -82,3 +83,4 @@ private void AnotherLongTask(Object state)
  [スレッド処理 (C#)](../../../../csharp/programming-guide/concepts/threading/index.md)   
  [マルチスレッド アプリケーション (C#)](../../../../csharp/programming-guide/concepts/threading/multithreaded-applications.md)   
  [スレッドの同期 (C#)](../../../../csharp/programming-guide/concepts/threading/thread-synchronization.md)
+

@@ -1,5 +1,5 @@
 ---
-title: "-target:winmdobj (C# コンパイラ オプション) | Microsoft Docs"
+title: "-target:winmdobj (C# コンパイラ オプション)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -26,10 +26,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 7581ec18db0d2741452b47ad6200482b63c102be
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 3967f7f9326652271ce55aa286e9f42f94dee775
+ms.contentlocale: ja-jp
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="targetwinmdobj-c-compiler-options"></a>/target:winmdobj (C# コンパイラ オプション)
@@ -37,12 +38,12 @@ ms.lasthandoff: 03/13/2017
   
 ## <a name="syntax"></a>構文  
   
-```  
+```console  
 /target:winmdobj  
 ```  
   
 ## <a name="remarks"></a>コメント  
- **winmdobj** 設定は、中間モジュールが必要であることをコンパイラに通知します。 これに対し、Visual Studio が C# クラス ライブラリを .winmdobj ファイルとしてコンパイルします。 その後、.winmdobj ファイルは <xref:Microsoft.Build.Tasks.WinMDExp> エクスポート ツールで送信され、Windows メタデータ (.winmd) ファイルが生成されます。 .winmd ファイルには、元のライブラリのコードと WinMD メタデータの両方が含まれています。メタデータは、JavaScript または C++、および Windows ランタイムで使用されます。  
+ **winmdobj** 設定は、中間モジュールが必要であることをコンパイラに通知します。 これに対し、Visual Studio が C# クラス ライブラリを .winmdobj ファイルとしてコンパイルします。 .winmdobj ファイルは <xref:Microsoft.Build.Tasks.WinMDExp> エクスポート ツールで送信され、Windows メタデータ ファイル (.winmd) が生成されます。 .winmd ファイルには、元のライブラリのコードと WinMD メタデータの両方が含まれています。メタデータは、JavaScript または C++、および Windows ランタイムで使用されます。  
   
  **/target:winmdobj** コンパイラ オプションを使用してコンパイルされたファイルの出力は、WimMDExp エクスポート ツール用の入力としてのみ使用するように設計されています。.winmdobj ファイル自体は直接参照されません。  
   
@@ -58,17 +59,18 @@ ms.lasthandoff: 03/13/2017
   
 3.  **[出力の種類]** リストで、**[WinMD ファイル]** を選択します。  
   
-     **[WinMD ファイル]** オプションは、[!INCLUDE[win8_appname_long](../../../csharp/includes/win8_appname_long_md.md)] アプリケーション テンプレートでのみ使用できます。  
+     **[WinMD ファイル]** オプションは、[!INCLUDE[win8_appname_long](~/includes/win8-appname-long-md.md)] アプリケーション テンプレートでのみ使用できます。  
   
  このコンパイラ オプションをプログラムで設定する方法については、「<xref:VSLangProj80.ProjectProperties3.OutputType%2A>」を参照してください。  
   
 ## <a name="example"></a>例  
  次のコマンドは .winmdobj 中間ファイルに `filename.cs` をコンパイルします。  
   
-```  
+```console  
 csc /target:winmdobj filename.cs  
 ```  
   
 ## <a name="see-also"></a>関連項目  
  [/target (C# コンパイラ オプション)](../../../csharp/language-reference/compiler-options/target-compiler-option.md)   
  [C# コンパイラ オプション](../../../csharp/language-reference/compiler-options/index.md)
+

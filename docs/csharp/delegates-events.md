@@ -1,6 +1,6 @@
 ---
 title: "デリゲートとイベント"
-description: "デリゲートとイベント"
+description: ".NET Core ドキュメントのデリゲートとイベントに関する情報の場所を確認します。"
 keywords: .NET, .NET Core
 author: BillWagner
 ms.author: wiwagn
@@ -10,10 +10,11 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 4e80e053-8022-4987-a8a0-209caec0315d
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: c9a2d44ae73208543380c52547473a572ba45d04
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: e511b5057cb83119819a1403d56f23f738488a3f
+ms.contentlocale: ja-jp
+ms.lasthandoff: 07/28/2017
 
 ---
 
@@ -21,10 +22,9 @@ ms.lasthandoff: 03/13/2017
 
 このトピックは、以下の記事で取り上げています。
 
-<style type="text/css"> ol { list-style-type: upper-roman; } </style>
 1. [デリゲートの概要](delegates-overview.md)
 
-    This article covers an overview of delegates.
+    この記事では、デリゲートの概要について取り上げます。
 
 2. [System.Delegate と `delegate` キーワード](delegate-class.md)
 
@@ -42,7 +42,7 @@ ms.lasthandoff: 03/13/2017
 
     この記事では、.NET におけるイベントの概要について取り上げます。
 
-6. [.NET イベント パターン](event-pattern.md)
+6. [標準的な .NET イベント パターン](event-pattern.md)
 
     この記事では、.NET における標準的なイベント パターンについて取り上げます。
 

@@ -1,5 +1,5 @@
 ---
-title: "方法: Office プログラミングで名前付き引数と省略可能な引数を使用する (C# プログラミング ガイド) | Microsoft Docs"
+title: "方法: Office プログラミングで名前付き引数と省略可能な引数を使用する (C# プログラミング ガイド)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -29,20 +29,21 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: c6a591108b1ae225ecd311dcc04cd744acb48712
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: c773e7a6d902b9e61e724a69c9fdf5d61606de50
+ms.contentlocale: ja-jp
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="how-to-use-named-and-optional-arguments-in-office-programming-c-programming-guide"></a>方法: Office プログラミングで名前付き引数と省略可能な引数を使用する (C# プログラミング ガイド)
-[!INCLUDE[csharp_dev10_long](../../../csharp/programming-guide/classes-and-structs/includes/csharp_dev10_long_md.md)] で導入された名前付き引数と省略可能な引数を使うと、C# プログラミングの便利さ、柔軟性、読みやすさが向上します。 さらに、Microsoft Office オートメーション API などの COM インターフェイスへのアクセスが大幅に楽になります。  
+[!INCLUDE[csharp_dev10_long](~/includes/csharp-dev10-long-md.md)] で導入された名前付き引数と省略可能な引数を使うと、C# プログラミングの便利さ、柔軟性、読みやすさが向上します。 さらに、Microsoft Office オートメーション API などの COM インターフェイスへのアクセスが大幅に楽になります。  
   
  次の例の [ConvertToTable](http://go.microsoft.com/fwlink/?LinkId=145378) メソッドには、列と行の数、書式設定、罫線、フォント、色など、テーブルの特性を表す 16 個のパラメーターがあります。 ほとんどの場合はこれらすべての特性に具体的な値を指定することはないので、16 個のパラメーターはすべて省略可能です。 しかし、名前付きの省略可能な引数を使わないと、各パラメーターに値またはプレースホルダー値を指定する必要があります。 名前付きの省略可能な引数を使うと、プロジェクトに必要なパラメーターの値だけを指定できます。  
   
  以下の手順を行うには、Microsoft Office Word がコンピューターにインストールされている必要があります。  
   
-[!INCLUDE[note_settings_general](../../../csharp/language-reference/compiler-messages/includes/note_settings_general_md.md)]  
+[!INCLUDE[note_settings_general](~/includes/note-settings-general-md.md)]  
   
 ### <a name="to-create-a-new-console-application"></a>新しいコンソール アプリケーションを作成するには  
   
@@ -130,3 +131,4 @@ ConvertToTable のパラメーター
   
 ## <a name="see-also"></a>関連項目  
  [名前付き引数と省略可能な引数](../../../csharp/programming-guide/classes-and-structs/named-and-optional-arguments.md)
+

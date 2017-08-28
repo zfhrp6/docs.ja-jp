@@ -1,5 +1,5 @@
 ---
-title: "LINQ とジェネリック型 (C#) | Microsoft Docs"
+title: "LINQ とジェネリック型 (C#)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -33,23 +33,24 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 1951d53b069104f3439aa2fe3ee3975bae0e1659
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 177db64491d58b31ca50cef0bb2eda8c2cb65078
+ms.contentlocale: ja-jp
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="linq-and-generic-types-c"></a>LINQ とジェネリック型 (C#)
-[!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq_md.md)] クエリは、[!INCLUDE[dnprdnshort](../../../../csharp/getting-started/includes/dnprdnshort_md.md)] Version 2.0 で導入されたジェネリック型に基づいています。 クエリを記述するために、ジェネリックについて詳しく知っておく必要ありません。 ただし、次の 2 つの基本的な概念を理解しておくと役立ちます。  
+[!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] クエリは、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] Version 2.0 で導入されたジェネリック型に基づいています。 クエリを記述するために、ジェネリックについて詳しく知っておく必要ありません。 ただし、次の 2 つの基本的な概念を理解しておくと役立ちます。  
   
 1.  <xref:System.Collections.Generic.List%601> などのジェネリック コレクション クラスのインスタンスを作成するときに、リストに保持されるオブジェクトの型で "T" を置き換えます。 たとえば、文字列のリストは `List<string>` で表され、`Customer`オブジェクトのリストは `List<Customer>` で表されます。 ジェネリック リストは厳密に型指定されるため、要素を <xref:System.Object> として格納するコレクションと比べて多くの利点があります。 `Customer`を `List<string>` に追加しようとすると、コンパイル時にエラーが発生します。 実行時に型キャストを実行する必要がないため、ジェネリック コレクションを使用するのは簡単です。  
   
-2.  <xref:System.Collections.Generic.IEnumerable%601> は、`foreach` ステートメントを使用してジェネリック コレクションのクラスを列挙できるようにするインターフェイスです。 <xref:System.Collections.ArrayList> などの非ジェネリック コレクション クラスが <xref:System.Collections.IEnumerable> をサポートするのと同様に、ジェネリック コレクション クラスは <xref:System.Collections.Generic.IEnumerable%601> をサポートします。  
+2.  <xref:System.Collections.Generic.IEnumerable%601> は、`foreach` ステートメントを使用してジェネリック コレクションのクラスを列挙できるようにするインターフェイスです。 <xref:System.Collections.ArrayList> などの非ジェネリック コレクション クラスが <xref:System.Collections.IEnumerable> をサポートするように、ジェネリック コレクション クラスは、<xref:System.Collections.Generic.IEnumerable%601> をサポートします。  
   
  ジェネリックの詳細については、「[ジェネリック](../../../../csharp/programming-guide/generics/index.md)」を参照してください。  
   
 ## <a name="ienumerablet-variables-in-linq-queries"></a>LINQ クエリの IEnumerable<T\> 変数  
- [!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq_md.md)] クエリ変数は、<xref:System.Collections.Generic.IEnumerable%601> か、<xref:System.Linq.IQueryable%601> などの派生型として型指定されます。 `IEnumerable<Customer>` として型指定されたクエリ変数が見つかった場合は、クエリが実行されたときに 0 個以上の `Customer` オブジェクトのシーケンスが作成されることを意味します。  
+ [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] クエリ変数は、<xref:System.Collections.Generic.IEnumerable%601>、または <xref:System.Linq.IQueryable%601> などの派生型として型指定されます。 `IEnumerable<Customer>` として型指定されたクエリ変数が見つかった場合は、クエリが実行されたときに 0 個以上の `Customer` オブジェクトのシーケンスが作成されることを意味します。  
   
  [!code-cs[csLINQGettingStarted#34](../../../../csharp/programming-guide/concepts/linq/codesnippet/CSharp/linq-and-generic-types_1.cs)]  
   
@@ -65,3 +66,4 @@ ms.lasthandoff: 03/13/2017
 ## <a name="see-also"></a>関連項目  
  [C# の LINQ の概要](../../../../csharp/programming-guide/concepts/linq/getting-started-with-linq.md)   
  [ジェネリック](../../../../csharp/programming-guide/generics/index.md)
+

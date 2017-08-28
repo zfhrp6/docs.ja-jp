@@ -1,5 +1,5 @@
 ---
-title: "名前付き引数と省略可能な引数 (C# プログラミング ガイド) | Microsoft Docs"
+title: "名前付き引数と省略可能な引数 (C# プログラミング ガイド)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -36,14 +36,15 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 9827553c1362d92bdf68a50e840b33474a22dcaa
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: c4da026d7ad38976565cbaad930652670aed2854
+ms.contentlocale: ja-jp
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="named-and-optional-arguments-c-programming-guide"></a>名前付き引数と省略可能な引数 (C# プログラミング ガイド)
-[!INCLUDE[csharp_dev10_long](../../../csharp/programming-guide/classes-and-structs/includes/csharp_dev10_long_md.md)] では、名前付き引数と省略可能な引数が導入されています。 *名前付き引数*を使用すると、パラメーター リストのパラメーターの位置ではなく、パラメーター名に引数を関連付けることによって、特定のパラメーターの引数を指定できます。 *省略可能な引数*を使用すると、一部のパラメーターの引数を省略できます。 両方の手法をメソッド、インデクサー、コンストラクター、デリゲートで使用できます。  
+[!INCLUDE[csharp_dev10_long](~/includes/csharp-dev10-long-md.md)] では、名前付き引数と省略可能な引数が導入されています。 *名前付き引数*を使用すると、パラメーター リストのパラメーターの位置ではなく、パラメーター名に引数を関連付けることによって、特定のパラメーターの引数を指定できます。 *省略可能な引数*を使用すると、一部のパラメーターの引数を省略できます。 両方の手法をメソッド、インデクサー、コンストラクター、デリゲートで使用できます。  
   
  名前付き引数と省略可能な引数を使用すると、引数は、パラメーター リストではなく、引数リストに記述されている順に評価されます。  
   
@@ -104,7 +105,7 @@ ms.lasthandoff: 03/13/2017
 ExampleMethod の省略可能なパラメーター  
   
 > [!NOTE]
->  また、<xref:System.Runtime.InteropServices.OptionalAttribute> クラスを使用して省略可能なパラメーターを宣言することもできます。 `OptionalAttribute` パラメーターに既定値は必要ありません。  
+>  また、.NET <xref:System.Runtime.InteropServices.OptionalAttribute> クラスを使用して省略可能なパラメーターを宣言することもできます。 `OptionalAttribute` パラメーターに既定値は必要ありません。  
   
 ## <a name="example"></a>例  
  次の例では、`ExampleClass` のコンストラクターに省略可能なパラメーターが 1 つあります。 `ExampleMethod` インスタンス メソッドには、`required` という 1 つの必須パラメーターと、`optionalstr` と `optionalint` という 2 つの省略可能なパラメーターがあります。 `Main` のコードに示すように、いくつかの異なる方法でコンストラクターとメソッドを呼び出すことができます。  
@@ -139,10 +140,11 @@ AutoFormat パラメーター
 -   2 つの候補が等しく良好であると判断された場合、呼び出しで引数が省略された任意のパラメーターのない候補が優先されます。 これはパラメーターの少ない候補に関するオーバーロード解決の一般優先設定の結果です。  
   
 ## <a name="c-language-specification"></a>C# 言語仕様  
- [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec_md.md)]  
+ [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
 ## <a name="see-also"></a>関連項目  
  [方法: Office プログラミングで名前付き引数と省略可能な引数を使用する](../../../csharp/programming-guide/classes-and-structs/how-to-use-named-and-optional-arguments-in-office-programming.md)   
  [dynamic 型の使用](../../../csharp/programming-guide/types/using-type-dynamic.md)   
  [コンストラクターの使用](../../../csharp/programming-guide/classes-and-structs/using-constructors.md)   
  [インデクサーの使用](../../../csharp/programming-guide/indexers/using-indexers.md)
+

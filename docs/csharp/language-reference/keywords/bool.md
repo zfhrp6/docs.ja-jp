@@ -1,5 +1,5 @@
 ---
-title: "bool (C# リファレンス) | Microsoft Docs"
+title: "bool (C# リファレンス)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -30,15 +30,15 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: ef8cc9a0584829eeed06e7fc3c2227f0683ef413
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: f3b7455ab6b0ec780afe7d81b2ff990d47a31d20
 ms.contentlocale: ja-jp
-ms.lasthandoff: 03/13/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="bool-c-reference"></a>bool (C# リファレンス)
-`bool` キーワードは、<xref:System.Boolean?displayProperty=fullName> の別名です。 ブール値 ([true](../../../csharp/language-reference/keywords/true.md) と [false](../../../csharp/language-reference/keywords/false.md)) を格納する変数を宣言するために使われます。  
+`bool` キーワードは <xref:System.Boolean?displayProperty=fullName> の別名です。 ブール値 ([true](../../../csharp/language-reference/keywords/true.md) と [false](../../../csharp/language-reference/keywords/false.md)) を格納する変数を宣言するために使われます。  
   
 > [!NOTE]
 >  値 `null` も格納できるブール変数が必要な場合は、`bool?` を使います。 詳細については、「[null 許容型](../../../csharp/programming-guide/nullable-types/index.md)」を参照してください。  
@@ -60,7 +60,7 @@ ms.lasthandoff: 03/13/2017
  [!code-cs[csrefKeywordsTypes#3](../../../csharp/language-reference/keywords/codesnippet/CSharp/bool_3.cs)]  
   
 ## <a name="example"></a>例  
- この例のプログラムは、キーボードから文字された文字がアルファベットかどうかを調べます。 アルファベットである場合は、小文字か大文字かを調べます。 これらのチェックは、<xref:System.Char.IsLetter%2A> と <xref:System.Char.IsLower%2A> で実行されます。どちらも、`bool` 型を返します。  
+ この例のプログラムは、キーボードから文字された文字がアルファベットかどうかを調べます。 アルファベットである場合は、小文字か大文字かを調べます。 こうしたチェックは <xref:System.Char.IsLetter%2A> と <xref:System.Char.IsLower%2A> で実行され、どちらも `bool` 型を返します。  
   
  [!code-cs[csrefKeywordsTypes#4](../../../csharp/language-reference/keywords/codesnippet/CSharp/bool_4.cs)]  
   
@@ -75,3 +75,4 @@ ms.lasthandoff: 03/13/2017
  [組み込み型の一覧表](../../../csharp/language-reference/keywords/built-in-types-table.md)   
  [暗黙的な数値変換の一覧表](../../../csharp/language-reference/keywords/implicit-numeric-conversions-table.md)   
  [明示的な数値変換の一覧表](../../../csharp/language-reference/keywords/explicit-numeric-conversions-table.md)
+

@@ -1,5 +1,5 @@
 ---
-title: "C#1 での既定の名前空間のスコープ | Microsoft Docs"
+title: "C# での既定の名前空間のスコープ 1"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -19,14 +19,15 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 760716dc81f5cd946ae014ed22b6c5a7df64a5dd
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: f1c8d8106f7e3e01bb546ce24dd4153b90a0142d
+ms.contentlocale: ja-jp
+ms.lasthandoff: 07/28/2017
 
 ---
-# <a name="scope-of-default-namespaces-in-c"></a>C での既定の名前空間のスコープ#
-XML ツリーで表される既定の名前空間は、クエリのスコープ内にありません。 既定の名前空間に含まれる XML が存在する場合は、引き続き、<xref:System.Xml.Linq.XNamespace> 変数を宣言し、この変数をローカル名と組み合わせて作成した修飾名をクエリで使用する必要があります。  
+# <a name="scope-of-default-namespaces-in-c"></a>C# での既定の名前空間のスコープ
+XML ツリーで表される既定の名前空間は、クエリのスコープ内にありません。 既定の名前空間に含まれる XML が存在する場合は、<xref:System.Xml.Linq.XNamespace> 変数を宣言し、この変数をローカル名と組み合わせて作成した修飾名をクエリで使用する必要があります。  
   
  XML ツリーのクエリにおける最も一般的な問題の 1 つは、XML ツリーに既定の名前空間がある場合に、XML が名前空間に含まれていないものとして開発者がクエリを記述してしまうことです。  
   
@@ -69,7 +70,7 @@ End of result set
 ## <a name="example"></a>例  
  この例では、名前空間内にある XML の作成と、適切に記述されたクエリを示します。  
   
- 上記の不適切に記述された例に対して、C# を使用する場合は、<xref:System.Xml.Linq.XNamespace> オブジェクトを宣言して初期化し、そのオブジェクトを <xref:System.Xml.Linq.XName> オブジェクトの指定時に使用するのが正しい方法です。 この場合、<xref:System.Xml.Linq.XElement.Elements%2A> メソッドに対する引数は <xref:System.Xml.Linq.XName> オブジェクトです。  
+ 上記の不適切に記述された例に対して、C# を使用する場合は、<xref:System.Xml.Linq.XNamespace> オブジェクトを宣言して初期化し、そのオブジェクトを <xref:System.Xml.Linq.XName> オブジェクトの指定時に使用するのが正しい方法です。 この場合、<xref:System.Xml.Linq.XElement.Elements%2A> メソッドの引数は <xref:System.Xml.Linq.XName> オブジェクトです。  
   
 ### <a name="code"></a>コード  
   
@@ -106,3 +107,4 @@ End of result set
   
 ## <a name="see-also"></a>関連項目  
  [XML 名前空間の使用 (C#)](../../../../csharp/programming-guide/concepts/linq/working-with-xml-namespaces.md)
+

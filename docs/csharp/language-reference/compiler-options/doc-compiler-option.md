@@ -1,5 +1,5 @@
 ---
-title: "-doc (C# コンパイラ オプション) | Microsoft Docs"
+title: "-doc (C# コンパイラ オプション)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -35,11 +35,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 8addbbfe1e854feee560192292b713da4fc67e6c
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 58608c1301b2df3286c1f8a1de189f6256b19052
 ms.contentlocale: ja-jp
-ms.lasthandoff: 03/13/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="doc-c-compiler-options"></a>/doc (C# コンパイラ オプション)
@@ -64,7 +64,7 @@ ms.lasthandoff: 03/13/2017
   
  Main を含むソース コード ファイルが最初に XML に出力されます。  
   
- 生成された .xml ファイルで [IntelliSense](https://docs.microsoft.com/visualstudio/ide/using-intellisense) 機能を使用するには、サポートするアセンブリの名前と .xml ファイル名を同じにして、その .xml ファイルをアセンブリと同じディレクトリに置きます。 これで、アセンブリが Visual Studio プロジェクトで参照されると、.xml ファイルも同様に検出されます。 詳細については、[コード コメントの追加](https://docs.microsoft.com/visualstudio/ide/supplying-xml-code-comments)に関するページを参照してください。  
+ 生成された .xml ファイルで [IntelliSense](/visualstudio/ide/using-intellisense) 機能を使用するには、サポートするアセンブリの名前と .xml ファイル名を同じにして、その .xml ファイルをアセンブリと同じディレクトリに置きます。 これで、アセンブリが Visual Studio プロジェクトで参照されると、.xml ファイルも同様に検出されます。 詳細については、[コード コメントの追加](/visualstudio/ide/supplying-xml-code-comments)に関するページを参照してください。  
   
  [/target:module](../../../csharp/language-reference/compiler-options/target-module-compiler-option.md) でコンパイルしない限り、`file` には \<assembly>\</assembly> タグが追加されます。コンパイルの出力ファイルのアセンブリ マニフェストを含むファイルの名前が指定されます。  
   
@@ -81,8 +81,9 @@ ms.lasthandoff: 03/13/2017
   
 3.  **[XML ドキュメント ファイル]** プロパティを変更します。  
   
- このコンパイラ オプションをプログラムで設定する方法については、「<xref:VSLangProj80.CSharpProjectConfigurationProperties3.DocumentationFile%2A>」を参照してください。  
+ このコンパイラ オプションをプログラムで設定する方法については、「<xref:VSLangProj80.CSharpProjectConfigurationProperties3.DocumentationFile%2A>」をご覧ください。  
   
 ## <a name="see-also"></a>関連項目  
  [C# コンパイラのオプション](../../../csharp/language-reference/compiler-options/index.md)   
- [NIB 方法: プロジェクト プロパティと構成設定を変更する](http://msdn.microsoft.com/en-us/e7184bc5-2f2b-4b4f-aa9a-3ecfcbc48b67)
+ [プロジェクトおよびソリューションのプロパティの管理](/visualstudio/ide/managing-project-and-solution-properties)
+

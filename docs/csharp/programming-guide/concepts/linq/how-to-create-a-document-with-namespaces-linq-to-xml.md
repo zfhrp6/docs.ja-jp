@@ -1,5 +1,5 @@
 ---
-title: "方法: 名前空間を持つドキュメントを作成する (C#) (LINQ to XML) | Microsoft Docs"
+title: "方法 : 名前空間を持つドキュメントを作成する (C#) (LINQ to XML)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -19,10 +19,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 23cc762b1dcd5e39b923c1a57b6f171c7885f0ad
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: cecd2012012ba789ad2c2935b6b69c282718a066
+ms.contentlocale: ja-jp
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="how-to-create-a-document-with-namespaces-c-linq-to-xml"></a>方法 : 名前空間を持つドキュメントを作成する (C#) (LINQ to XML)
@@ -31,7 +32,7 @@ ms.lasthandoff: 03/13/2017
 ## <a name="example"></a>例  
  名前空間にある要素や属性を作成するには、最初に <xref:System.Xml.Linq.XNamespace> オブジェクトを宣言して初期化します。 次に、加算演算子オーバーロードを使用して名前空間をローカル名に連結し、文字列として表します。  
   
- 次の例では、1 つの名前空間を持つドキュメントを作成します。 既定では、[!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)] によって、このドキュメントが既定の名前空間でシリアル化されます。  
+ 次の例では、1 つの名前空間を持つドキュメントを作成します。 既定では、[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] によって、このドキュメントが既定の名前空間でシリアル化されます。  
   
 ```csharp  
 // Create an XML tree in a namespace.  
@@ -135,9 +136,9 @@ Console.WriteLine(root);
 ```  
   
 ## <a name="example"></a>例  
- <xref:System.Xml.Linq.XNamespace> オブジェクトを宣言して作成する代わりに、拡張名を使用しても同じ結果が得られます。  
+ <xref:System.Xml.Linq.XNamespace> オブジェクトを宣言して作成する代わりに、展開名を使用しても同じ結果が得られます。  
   
- ただし、この方法はパフォーマンスに影響を与えます。 拡張名が含まれた文字列を [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)] に渡すたびに、[!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)] は名前を解析して、アトミック化された名前空間を検索し、アトミック化された名前を見つける必要があります。 この処理は CPU 時間を消費します。 パフォーマンスが重要な場合には、<xref:System.Xml.Linq.XNamespace> オブジェクトを明示的に宣言して使用することをお勧めします。  
+ ただし、この方法はパフォーマンスに影響を与えます。 拡張名が含まれた文字列を [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] に渡すたびに、[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] は名前を解析して、アトミック化された名前空間を検索し、アトミック化された名前を見つける必要があります。 この処理は CPU 時間を消費します。 パフォーマンスが重要な場合には、<xref:System.Xml.Linq.XNamespace> オブジェクトを明示的に宣言して使用することをお勧めします。  
   
  パフォーマンスが重要な場合、詳細については、「[XName オブジェクトの事前アトミック化 (LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/pre-atomization-of-xname-objects-linq-to-xml.md)」を参照してください  
   
@@ -160,3 +161,4 @@ Console.WriteLine(root);
   
 ## <a name="see-also"></a>関連項目  
  [XML 名前空間の使用 (C#)](../../../../csharp/programming-guide/concepts/linq/working-with-xml-namespaces.md)
+

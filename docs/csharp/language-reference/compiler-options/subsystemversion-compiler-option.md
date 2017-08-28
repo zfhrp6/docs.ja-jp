@@ -1,5 +1,5 @@
 ---
-title: "-subsystemversion (C# コンパイラ オプション) | Microsoft Docs"
+title: "-subsystemversion (C# コンパイラ オプション)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -25,10 +25,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 8766904cad739b29c7dfe80b29305ea2b3bd2e6f
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: c7992086eb33577d795496025820ed8f7bb51c24
+ms.contentlocale: ja-jp
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="subsystemversion-c-compiler-options"></a>/subsystemversion (C# コンパイラ オプション)
@@ -39,7 +40,7 @@ ms.lasthandoff: 03/13/2017
   
 ## <a name="syntax"></a>構文  
   
-```  
+```console  
 /subsystemversion:major.minor  
 ```  
   
@@ -60,7 +61,7 @@ ms.lasthandoff: 03/13/2017
 |Windows Vista|6.00|  
 |Windows 7|6.01|  
 |Windows Server 2008|6.01|  
-|[!INCLUDE[win8](../../../csharp/language-reference/compiler-options/includes/win8_md.md)]|6.02|  
+|[!INCLUDE[win8](~/includes/win8-md.md)]|6.02|  
   
 ## <a name="default-values"></a>既定の値  
  **/subsystemversion** コンパイラ オプションの既定値は条件によって異なります。その条件を次に示します。  
@@ -73,12 +74,13 @@ ms.lasthandoff: 03/13/2017
   
     -   [/platform:arm](../../../csharp/language-reference/compiler-options/platform-compiler-option.md)  
   
--   MSBuild を使用しており、[!INCLUDE[net_v45](../../../csharp/language-reference/compiler-options/includes/net_v45_md.md)] が対象で、さらにこの一覧で前に指定したコンパイラ オプションを設定していない場合、既定値は 6.00 です。  
+-   MSBuild を使用しており、[!INCLUDE[net_v45](~/includes/net-v45-md.md)] が対象で、さらにこの一覧で前に指定したコンパイラ オプションを設定していない場合、既定値は 6.00 です。  
   
 -   上記の条件がどれも当てはまらない場合、既定値は 4.00 です。  
   
 ## <a name="setting-this-option"></a>このオプションを設定する  
- Visual Studio で **/subsystemversion** コンパイラ オプションを設定するには、.csproj ファイルを開き、MSBuild XML で `SubsystemVersion` プロパティの値を指定する必要があります。 Visual Studio IDE でこのオプションを設定することはできません。 詳細については、このトピックの「既定値」または「[MSBuild プロジェクトの共通プロパティ](https://docs.microsoft.com/visualstudio/msbuild/common-msbuild-project-properties)」を参照してください。  
+ Visual Studio で **/subsystemversion** コンパイラ オプションを設定するには、.csproj ファイルを開き、MSBuild XML で `SubsystemVersion` プロパティの値を指定する必要があります。 Visual Studio IDE でこのオプションを設定することはできません。 詳細については、このトピックの「既定値」または「[MSBuild プロジェクトの共通プロパティ](/visualstudio/msbuild/common-msbuild-project-properties)」を参照してください。  
   
 ## <a name="see-also"></a>関連項目  
  [C# コンパイラ オプション](../../../csharp/language-reference/compiler-options/index.md)
+

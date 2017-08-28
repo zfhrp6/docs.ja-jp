@@ -1,5 +1,5 @@
 ---
-title: "方法 : イベント サブスクリプションとサブスクリプションの解除 (C# プログラミング ガイド) | Microsoft Docs"
+title: "方法 : イベント サブスクリプションとサブスクリプションの解除 (C# プログラミング ガイド)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -29,10 +29,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 583168bc8cce2f4bee9a2dd35d1e59c7a0f380a6
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: d444a2efe03ec127ff88236deadab719d0d64259
+ms.contentlocale: ja-jp
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="how-to-subscribe-to-and-unsubscribe-from-events-c-programming-guide"></a>方法 : イベント サブスクリプションとサブスクリプションの解除 (C# プログラミング ガイド)
@@ -46,7 +47,7 @@ ms.lasthandoff: 03/13/2017
   
 3.  作成するイベントをダブルクリックします (`Load` イベントなど)。  
   
-     [!INCLUDE[csprcs](../../../csharp/includes/csprcs_md.md)] によって空のイベント ハンドラー メソッドを作成され、コードに追加されます。 または、**コード** ビューを使って手動でコードを追加することもできます。 たとえば、次のコード行では、`Form` クラスで `Load` イベントが発生すると呼び出されるイベント ハンドラー メソッドを宣言しています。  
+     [!INCLUDE[csprcs](~/includes/csprcs-md.md)] によって空のイベント ハンドラー メソッドを作成され、コードに追加されます。 または、**コード** ビューを使って手動でコードを追加することもできます。 たとえば、次のコード行では、`Form` クラスで `Load` イベントが発生すると呼び出されるイベント ハンドラー メソッドを宣言しています。  
   
      [!code-cs[csProgGuideEvents#11](../../../csharp/programming-guide/events/codesnippet/CSharp/how-to-subscribe-to-and-unsubscribe-from-events_1.cs)]  
   

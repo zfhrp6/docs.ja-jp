@@ -1,5 +1,5 @@
 ---
-title: "ulong (C# リファレンス) | Microsoft Docs"
+title: "ulong (C# リファレンス)"
 ms.date: 2017-03-14
 ms.prod: .net
 ms.technology:
@@ -30,11 +30,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 400dfda51d978f35c3995f90840643aaff1b9c13
-ms.openlocfilehash: a0889086fbc986a37d052917469fbdb5442df44f
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: c2da253e4da7a5d6cfa71116e4fcba7816441e92
 ms.contentlocale: ja-jp
-ms.lasthandoff: 03/24/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="ulong-c-reference"></a>ulong (C# リファレンス)
@@ -47,7 +47,7 @@ ms.lasthandoff: 03/24/2017
   
 ## <a name="literals"></a>リテラル  
 
-`ulong` 変数を宣言し、10 進リテラル、16 進リテラル、または (C# 7 以降) バイナリ リテラルを割り当てることによって初期化できます。  整数リテラルが `ulong` の範囲外である場合は (つまり、<xref:System.UInt64.MinValue?displayProperty=fullName> より小さいか、<xref:System.UInt64.MaxValue?displayProperty=fullName> より大きい場合)、コンパイル エラーが発生します。 
+`ulong` 変数を宣言し、10 進リテラル、16 進リテラル、または (C# 7 以降) バイナリ リテラルを割り当てることによって初期化できます。  整数リテラルが `ulong` の範囲外にある場合 (つまり、<xref:System.UInt64.MinValue?displayProperty=fullName> より小さいか、<xref:System.UInt64.MaxValue?displayProperty=fullName> より大きい場合)、コンパイル エラーが発生します。 
 
 次の例では、整数 7,934,076,125 を 10 進リテラル、16 進リテラル、バイナリ リテラルで表したものが、`ulong` 値に割り当てられています。  
   
@@ -60,7 +60,7 @@ C# 7 以降では、次の例に示すように、アンダースコア文字 `_
 
 [!code-cs[long](../../../../samples/snippets/csharp/language-reference/keywords/numeric-literals.cs#LongS)]  
  
- 整数リテラルには、型を表すサフィックスを含めることもできます。 サフィックス `UL` または `ul` は、数値リテラルを `ulong` 値として明確に示します。 リテラル値が <xref:System.Int64.MaxValue?displayProperty=fullName> を超える場合、`L` サフィックスは `ulong` を示します。 また、リテラル値が <xref:System.UInt32.MaxValue?displayProperty=fullName> を超える場合は、`U` または `u` サフィックスは `ulong` を示します。 次の例では、`ul` サフィックスを使って long 整数を示しています。
+ 整数リテラルには、型を表すサフィックスを含めることもできます。 サフィックス `UL` または `ul` は、数値リテラルを `ulong` 値として明確に示します。 リテラル値が <xref:System.Int64.MaxValue?displayProperty=fullName> を超える場合、`L` サフィックスは `ulong` を表します。 また、リテラル値が <xref:System.UInt32.MaxValue?displayProperty=fullName> を超える場合、`U` または `u` サフィックスは `ulong` を表します。 次の例では、`ul` サフィックスを使って long 整数を示しています。
  
 [!code-cs[ulsuffix](../../../../samples/snippets/csharp/language-reference/keywords/numeric-suffixes.cs#2)]
 
@@ -112,7 +112,7 @@ ulong y = (ulong)3.0;
  暗黙的な数値変換規則について詳しくは、「[暗黙的な数値変換の一覧表](../../../csharp/language-reference/keywords/implicit-numeric-conversions-table.md)」をご覧ください。  
   
 ## <a name="c-language-specification"></a>C# 言語仕様  
- [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec_md.md)]  
+ [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
 ## <a name="see-also"></a>関連項目  
  <xref:System.UInt64>   
@@ -123,3 +123,4 @@ ulong y = (ulong)3.0;
  [組み込み型の一覧表](../../../csharp/language-reference/keywords/built-in-types-table.md)   
  [暗黙的な数値変換の一覧表](../../../csharp/language-reference/keywords/implicit-numeric-conversions-table.md)   
  [明示的な数値変換の一覧表](../../../csharp/language-reference/keywords/explicit-numeric-conversions-table.md)
+

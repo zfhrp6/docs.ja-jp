@@ -1,5 +1,5 @@
 ---
-title: "スレッドの同期 (C#) | Microsoft Docs"
+title: "スレッドの同期 (C#)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -19,11 +19,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-ms.translationtype: Human Translation
-ms.sourcegitcommit: fe32676f0e39ed109a68f39584cf41aec5f5ce90
-ms.openlocfilehash: f8d51aa1c50c097577a575be9b5da4b9e0effc55
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: df4093d4bf777f904aa8ce376cd164ed822350a0
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/10/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="thread-synchronization-c"></a>スレッドの同期 (C#)
@@ -100,7 +100,7 @@ finally
 }  
 ```  
   
- 通常、<xref:System.Threading.Monitor> クラスを直接使用するよりも `lock` キーワードを使用することをお勧めします。この理由としては、`lock` の方が簡潔であるということと、`lock` を使用すると、保護されたコードが例外をスローした場合でも基になるモニターが確実に解放されるということがあります。 モニターを確実に解放するには、`finally` キーワードを使用します。このキーワードを使用することにより、例外がスローされたかどうかに関係なく、関連付けられているコード ブロックが実行されます。  
+ 通常は、<xref:System.Threading.Monitor> クラスを直接使用するよりも `lock` キーワードを使用することをお勧めします。`lock` の方が簡潔であり、また、`lock` を使用すると、保護されたコードが例外をスローした場合でも基になるモニターが確実に解放されるためです。 モニターを確実に解放するには、`finally` キーワードを使用します。このキーワードを使用することにより、例外がスローされたかどうかに関係なく、関連付けられているコード ブロックが実行されます。  
   
 ## <a name="synchronization-events-and-wait-handles"></a>同期イベントと待機ハンドル  
  スレッド依存のコード ブロックが同時に実行されないようにするためにロックやモニターを使用することは有効ですが、このような構成要素だけでは、スレッド間でイベントをやりとりすることはできません。 そこで、*同期イベント*が必要になります。これは、シグナル状態と非シグナル状態という 2 つの状態を持つオブジェクトで、これを使用することにより、スレッドをアクティブにしたり中断したりできます。 非シグナル状態の同期イベントを待機させることによってスレッドを中断できます。また、イベントの状態をシグナル状態に変更することにより、スレッドをアクティブにできます。 既にシグナル状態にあるイベントをスレッドが待機している場合、スレッドは遅延なしに実行され続けます。  
@@ -183,3 +183,4 @@ class ThreadingExample
  [インタロックされた操作](../../../../standard/threading/interlocked-operations.md)   
  [AutoResetEvent](../../../../standard/threading/autoresetevent.md)   
  [マルチスレッド処理のためのデータの同期](../../../../standard/threading/synchronizing-data-for-multithreading.md)
+

@@ -1,5 +1,5 @@
 ---
-title: "方法: バイト配列を int に変換する (C# プログラミング ガイド) | Microsoft Docs"
+title: "方法: バイト配列を int に変換する (C# プログラミング ガイド)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -29,10 +29,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 2d26bb4821e09c6633d1c5a4dd40e132e57acf94
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 86ecfe95ab6fb5ce60e7568050cdf974d0dc3d88
+ms.contentlocale: ja-jp
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="how-to-convert-a-byte-array-to-an-int-c-programming-guide"></a>方法: バイト配列を int に変換する (C# プログラミング ガイド)

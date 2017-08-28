@@ -1,5 +1,5 @@
 ---
-title: "long (C# リファレンス) | Microsoft Docs"
+title: "long (C# リファレンス)"
 ms.date: 2017-03-14
 ms.prod: .net
 ms.technology:
@@ -30,11 +30,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 400dfda51d978f35c3995f90840643aaff1b9c13
-ms.openlocfilehash: 0ea7f109ab934660418aab1a88bff7206ef23a37
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 5f7d2d6a3d5781b4e120b8399c7206d4429dd98e
 ms.contentlocale: ja-jp
-ms.lasthandoff: 03/24/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="long-c-reference"></a>long (C# リファレンス)
@@ -43,7 +43,7 @@ ms.lasthandoff: 03/24/2017
   
 |型|範囲|サイズ|.NET Framework 型|  
 |----------|-----------|----------|-------------------------|  
-|`long`|– 9,223,372,036,854,775,808 ～ 9,223,372,036,854,775,807|符号付き 64 ビット整数|<xref:System.Int64?displayProperty=fullName>|  
+|`long`|-9,223,372,036,854,775,808 から 9,223,372,036,854,775,807|符号付き 64 ビット整数|<xref:System.Int64?displayProperty=fullName>|  
   
 ## <a name="literals"></a>リテラル 
 
@@ -119,7 +119,7 @@ long y = (long)3.0;   // OK: explicit conversion
 ```  
   
 ## <a name="c-language-specification"></a>C# 言語仕様  
- [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec_md.md)]  
+ [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
 ## <a name="see-also"></a>関連項目  
  <xref:System.Int64>   
@@ -130,3 +130,4 @@ long y = (long)3.0;   // OK: explicit conversion
  [組み込み型の一覧表](../../../csharp/language-reference/keywords/built-in-types-table.md)   
  [暗黙的な数値変換の一覧表](../../../csharp/language-reference/keywords/implicit-numeric-conversions-table.md)   
  [明示的な数値変換の一覧表](../../../csharp/language-reference/keywords/explicit-numeric-conversions-table.md)
+

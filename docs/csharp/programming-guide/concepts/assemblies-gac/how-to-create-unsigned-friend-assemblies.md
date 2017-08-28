@@ -1,5 +1,5 @@
 ---
-title: "方法: 署名のないフレンド アセンブリを作成する (C#) | Microsoft Docs"
+title: "方法: 署名のないフレンド アセンブリを作成する (C#)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -19,10 +19,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: c7d2924f0a619c234871232e155bb6f23e43aee4
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 967436204ab0824a510c12dc4c6e288d91d7dfa0
+ms.contentlocale: ja-jp
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="how-to-create-unsigned-friend-assemblies-c"></a>方法: 署名のないフレンド アセンブリを作成する (C#)
@@ -32,7 +33,7 @@ ms.lasthandoff: 03/13/2017
   
 1.  コマンド プロンプトを開きます。  
   
-2.  次のコードを含む、`friend_signed_A.` という名前の C# ファイルを作成します。 このコードは、<xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> 属性を使用して、friend_signed_B をフレンド アセンブリとして宣言します。  
+2.  次のコードを含む、`friend_signed_A.` という名前の C# ファイルを作成します。 コードでは <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> 属性を使用して、フレンド アセンブリとして friend_signed_B を宣言します。  
   
     ```csharp  
     // friend_unsigned_A.cs  
@@ -97,14 +98,14 @@ ms.lasthandoff: 03/13/2017
     csc /r:friend_unsigned_A.dll /out:friend_unsigned_B.exe friend_unsigned_B.cs  
     ```  
   
-     コンパイラによって生成されたアセンブリの名前は、<xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> 属性に渡されたフレンド アセンブリ名と一致している必要があります。 `/out` コンパイラ オプションを使用して、出力アセンブリ (.exe または .dll) の名前を明示的に指定する必要があります。 詳しくは、「[/out (C# コンパイラ オプション)](../../../../csharp/language-reference/compiler-options/out-compiler-option.md)」をご覧ください。  
+     コンパイラによって生成されるアセンブリの名前は、<xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> 属性に渡されるフレンド アセンブリ名と一致している必要があります。 `/out` コンパイラ オプションを使用して、出力アセンブリ (.exe または .dll) の名前を明示的に指定する必要があります。 詳しくは、「[/out (C# コンパイラ オプション)](../../../../csharp/language-reference/compiler-options/out-compiler-option.md)」をご覧ください。  
   
 6.  friend_signed_B.exe ファイルを実行します。  
   
      プログラムによって 2 つの文字列 "Class1.Test" と "Class2.Test" が出力されます。  
   
 ## <a name="net-framework-security"></a>.NET Framework セキュリティ  
- <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> 属性と <xref:System.Security.Permissions.StrongNameIdentityPermission> クラスには、類似点がいくつかあります。 主な違いは、<xref:System.Security.Permissions.StrongNameIdentityPermission> はセキュリティ アクセス許可を要求することで特定のコード セクションを実行しますが、<xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> 属性は `internal` 型とメンバーの参照可能範囲を制御します。  
+ <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> 属性と <xref:System.Security.Permissions.StrongNameIdentityPermission> クラスには類似点があります。 主な違いは、<xref:System.Security.Permissions.StrongNameIdentityPermission> はセキュリティ アクセス許可を要求することで特定のコード セクションを実行できますが、<xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> 属性では `internal` 型とメンバーの参照可能範囲を制御することです。  
   
 ## <a name="see-also"></a>関連項目  
  <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute>   
@@ -112,3 +113,4 @@ ms.lasthandoff: 03/13/2017
  [フレンド アセンブリ (C++)](../../../../csharp/programming-guide/concepts/assemblies-gac/friend-assemblies.md)   
  [方法: 署名されたフレンド アセンブリを作成する (C#)](../../../../csharp/programming-guide/concepts/assemblies-gac/how-to-create-signed-friend-assemblies.md)   
  [C# プログラミング ガイド](../../../../csharp/programming-guide/index.md)
+

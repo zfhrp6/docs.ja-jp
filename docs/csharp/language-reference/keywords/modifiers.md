@@ -1,26 +1,45 @@
 ---
-title: "修飾子 (C# リファレンス) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.technology: 
-  - "devlang-csharp"
-ms.topic: "article"
-dev_langs: 
-  - "CSharp"
-helpviewer_keywords: 
-  - "キーワード [C#], 修飾子"
-  - "修飾子 [C#]"
+title: "修飾子 (C# リファレンス)"
+ms.date: 2015-07-20
+ms.prod: .net
+ms.technology:
+- devlang-csharp
+ms.topic: article
+dev_langs:
+- CSharp
+helpviewer_keywords:
+- keywords [C#], modifiers
+- modifiers [C#]
 ms.assetid: c96691dd-b357-49ec-b5ae-03ca214fadfb
 caps.latest.revision: 18
-author: "BillWagner"
-ms.author: "wiwagn"
-caps.handback.revision: 18
+author: BillWagner
+ms.author: wiwagn
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 9e2e7e5e3907ac9bb66676e749ddd55a8ac4836c
+ms.contentlocale: ja-jp
+ms.lasthandoff: 07/28/2017
+
 ---
-# 修飾子 (C# リファレンス)
-修飾子は、型および型メンバーの宣言を修飾するために使用されます。  ここでは、C\# の修飾子について説明します。  
+# <a name="modifiers-c-reference"></a>修飾子 (C# リファレンス)
+修飾子は、型および型メンバーの宣言を修飾するために使用されます。 ここでは、C# の修飾子について説明します。  
   
 |修飾子|目的|  
-|---------|--------|  
+|--------------|-------------|  
 |[アクセス修飾子](../../../csharp/language-reference/keywords/access-modifiers.md)<br /><br /> -   [public](../../../csharp/language-reference/keywords/public.md)<br />-   [private](../../../csharp/language-reference/keywords/private.md)<br />-   [internal](../../../csharp/language-reference/keywords/internal.md)<br />-   [protected](../../../csharp/language-reference/keywords/protected.md)|型および型のメンバーで宣言されたアクセシビリティを指定します。|  
 |[abstract](../../../csharp/language-reference/keywords/abstract.md)|クラスが、他のクラスの基本クラスになるためだけのものであることを示します。|  
 |[async](../../../csharp/language-reference/keywords/async.md)|修飾されたメソッド、ラムダ式、または匿名メソッドが非同期であることを示します。|  
@@ -37,7 +56,8 @@ caps.handback.revision: 18
 |[virtual](../../../csharp/language-reference/keywords/virtual.md)|メソッドまたはアクセサーを宣言します。これらの実装は、派生クラスでオーバーライドするメンバーによって変更できます。|  
 |[volatile](../../../csharp/language-reference/keywords/volatile.md)|オペレーティング システム、ハードウェア、現在実行中のスレッドなどによって、フィールドがプログラム中で変更される場合があることを示します。|  
   
-## 参照  
- [C\# リファレンス](../../../csharp/language-reference/index.md)   
- [C\# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
- [C\# のキーワード](../../../csharp/language-reference/keywords/index.md)
+## <a name="see-also"></a>関連項目  
+ [C# リファレンス](../../../csharp/language-reference/index.md)   
+ [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
+ [C# のキーワード](../../../csharp/language-reference/keywords/index.md)
+

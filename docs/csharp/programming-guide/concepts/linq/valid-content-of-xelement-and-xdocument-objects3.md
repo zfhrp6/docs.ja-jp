@@ -1,5 +1,5 @@
 ---
-title: "XElement オブジェクトと XDocument オブジェクトの有効なコンテンツ | Microsoft Docs"
+title: "XElement オブジェクトと XDocument オブジェクトの有効なコンテンツ"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -19,17 +19,18 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 3db6b15d2b95016db0814f202143ec198425e2ad
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 2552c233961c13816fd91c79c5e6b589674985f6
+ms.contentlocale: ja-jp
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="valid-content-of-xelement-and-xdocument-objects"></a>XElement オブジェクトと XDocument オブジェクトの有効なコンテンツ
 ここでは、コンストラクターやメソッドに渡すことができる有効な引数について説明します。これらのコンストラクターやメソッドは、コンテンツを要素やドキュメントに追加するためのものです。  
   
 ## <a name="valid-content"></a>有効なコンテンツ  
- 多くのクエリは、<xref:System.Xml.Linq.XElement> の <xref:System.Collections.Generic.IEnumerable%601> または <xref:System.Xml.Linq.XAttribute> の <xref:System.Collections.Generic.IEnumerable%601> に評価されます。 <xref:System.Xml.Linq.XElement> オブジェクトまたは <xref:System.Xml.Linq.XAttribute> オブジェクトのコレクションを <xref:System.Xml.Linq.XElement> コンストラクターに渡すことができます。 したがって、XML ツリーの設定に使用するメソッドとコンストラクターに対して、クエリの結果をコンテンツとして渡すと便利です。  
+ 多くのクエリは、<xref:System.Collections.Generic.IEnumerable%601> の <xref:System.Xml.Linq.XElement> または <xref:System.Collections.Generic.IEnumerable%601> の <xref:System.Xml.Linq.XAttribute> に評価されます。 <xref:System.Xml.Linq.XElement> オブジェクトまたは <xref:System.Xml.Linq.XAttribute> オブジェクトのコレクションを <xref:System.Xml.Linq.XElement> コンストラクターに渡すことができます。 したがって、XML ツリーの設定に使用するメソッドとコンストラクターに対して、クエリの結果をコンテンツとして渡すと便利です。  
   
  単純コンテンツを追加するときに、さまざまな型をこのメソッドに渡すことができます。 有効な型は、次のとおりです。  
   
@@ -51,7 +52,7 @@ ms.lasthandoff: 03/13/2017
   
 -   `Object.ToString` を実装する任意の型  
   
--   <xref:System.Collections.Generic.IEnumerable%601> を実装する任意の型。  
+-   <xref:System.Collections.Generic.IEnumerable%601> を実装する任意の型  
   
  複合コンテンツを追加するときは、次のような型をこのメソッドに渡すことができます。  
   
@@ -69,7 +70,7 @@ ms.lasthandoff: 03/13/2017
   
  追加する属性の名前は、そのコンテナー要素内で一意であることが必要です。  
   
- <xref:System.Xml.Linq.XNode> オブジェクトや <xref:System.Xml.Linq.XAttribute> オブジェクトを追加するとき、新しいコンテンツに親がない場合は、単にオブジェクトが XML ツリーにアタッチされます。 新しいコンテンツに既に親があり、別の XML ツリーの一部となっている場合は、新しいコンテンツが複製され、新しく複製されたコンテンツが XML ツリーにアタッチされます。  
+ <xref:System.Xml.Linq.XNode> オブジェクトや <xref:System.Xml.Linq.XAttribute> オブジェクトを追加するとき、新しいコンテンツに親がない場合、単にオブジェクトが XML ツリーにアタッチされます。 新しいコンテンツに既に親があり、別の XML ツリーの一部となっている場合は、新しいコンテンツが複製され、新しく複製されたコンテンツが XML ツリーにアタッチされます。  
   
 ## <a name="valid-content-for-documents"></a>ドキュメントの有効なコンテンツ  
  属性と単純コンテンツをドキュメントに追加することはできません。  
@@ -93,8 +94,8 @@ ms.lasthandoff: 03/13/2017
   
 |メソッド|説明|  
 |------------|-----------------|  
-|<xref:System.Xml.Linq.XElement.%23ctor%2A>|<xref:System.Xml.Linq.XElement> を作成します。|  
-|<xref:System.Xml.Linq.XDocument.%23ctor%2A>|<xref:System.Xml.Linq.XDocument> を作成します。|  
+|<xref:System.Xml.Linq.XElement.%23ctor%2A>|<xref:System.Xml.Linq.XElement> を構築します。|  
+|<xref:System.Xml.Linq.XDocument.%23ctor%2A>|<xref:System.Xml.Linq.XDocument> を構築します。|  
 |<xref:System.Xml.Linq.XContainer.Add%2A>|<xref:System.Xml.Linq.XElement> または <xref:System.Xml.Linq.XDocument> の子コンテンツの末尾に追加します。|  
 |<xref:System.Xml.Linq.XNode.AddAfterSelf%2A>|<xref:System.Xml.Linq.XNode> の後にコンテンツを追加します。|  
 |<xref:System.Xml.Linq.XNode.AddBeforeSelf%2A>|<xref:System.Xml.Linq.XNode> の前にコンテンツを追加します。|  
@@ -106,3 +107,4 @@ ms.lasthandoff: 03/13/2017
   
 ## <a name="see-also"></a>関連項目  
  [XML ツリーの作成 (C#)](../../../../csharp/programming-guide/concepts/linq/creating-xml-trees.md)
+

@@ -1,35 +1,54 @@
 ---
-title: "#warning (C# リファレンス) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.technology: 
-  - "devlang-csharp"
-ms.topic: "article"
-f1_keywords: 
-  - "#warning"
-dev_langs: 
-  - "CSharp"
-helpviewer_keywords: 
-  - "#warning ディレクティブ [C#]"
+title: "#<a name=\"warning-c-reference\"></a>warning (C# リファレンス)"
+ms.date: 2015-07-20
+ms.prod: .net
+ms.technology:
+- devlang-csharp
+ms.topic: article
+f1_keywords:
+- '#warning'
+dev_langs:
+- CSharp
+helpviewer_keywords:
+- '#warning directive [C#]'
 ms.assetid: e6fb496d-bb8b-4018-baf6-5b60a0c8902b
 caps.latest.revision: 9
-author: "BillWagner"
-ms.author: "wiwagn"
-caps.handback.revision: 9
+author: BillWagner
+ms.author: wiwagn
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 8630101a90bd6d4ed2036b495b254c9475531dc0
+ms.contentlocale: ja-jp
+ms.lasthandoff: 07/28/2017
+
 ---
-# #warning (C# リファレンス)
-`#warning` を使用すると、コードの特定の位置でレベル 1 警告を表示できます。  次に例を示します。  
+# <a name="warning-c-reference"></a>#warning (C# リファレンス)
+`#warning` を使用すると、コード内の特定の場所からレベル 1 の警告を生成できます。 例:  
   
-```  
+```csharp
 #warning Deprecated code in this method.  
 ```  
   
-## 解説  
- `#warning` は、一般に、条件付きディレクティブ内で使用します。  また、[\#error](../../../csharp/language-reference/preprocessor-directives/preprocessor-error.md) でユーザー定義のエラーを生成することもできます。  
+## <a name="remarks"></a>コメント  
+ `#warning` は条件付きディレクティブ内で一般的に使用されます。 [#error](../../../csharp/language-reference/preprocessor-directives/preprocessor-error.md) を使用してユーザー定義のエラーを生成することもできます。  
   
-## 使用例  
+## <a name="example"></a>例  
   
-```  
+```csharp
 // preprocessor_warning.cs  
 // CS1030 expected  
 #define DEBUG  
@@ -44,7 +63,8 @@ class MainClass
 }  
 ```  
   
-## 参照  
- [C\# リファレンス](../../../csharp/language-reference/index.md)   
- [C\# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
- [C\# プリプロセッサ ディレクティブ](../../../csharp/language-reference/preprocessor-directives/index.md)
+## <a name="see-also"></a>関連項目  
+ [C# リファレンス](../../../csharp/language-reference/index.md)   
+ [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
+ [C# プリプロセッサ ディレクティブ](../../../csharp/language-reference/preprocessor-directives/index.md)
+

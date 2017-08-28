@@ -1,5 +1,5 @@
 ---
-title: "char (C# リファレンス) | Microsoft Docs"
+title: "char (C# リファレンス)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -31,14 +31,15 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: bf4c71d6f33d66e5ca917f2cfeb6c882b19b9d22
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: c6601a58804d6ecfcbedbc19da09560884e54e7f
+ms.contentlocale: ja-jp
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="char-c-reference"></a>char (C# リファレンス)
-`char` キーワードは、Unicode 文字を表すために .NET Framework によって使用される <xref:System.Char?displayProperty=fullName> 構造体のインスタンスを宣言するために使用されます。 `Char` オブジェクトの値は、16 ビット数 (序数) 値です。  
+`char` キーワードは、Unicode 文字を表すために .NET Framework によって使用される <xref:System.Char?displayProperty=fullName> 構造体のインスタンスを宣言するときに使用されます。 `Char` オブジェクトの値は、16 ビット数 (序数) 値です。  
   
  Unicode 文字は、世界各国の文字言語の大半を表すために使用されます。  
   
@@ -57,7 +58,7 @@ ms.lasthandoff: 03/13/2017
  <xref:System.Char?displayProperty=fullName> 型では、`char` 値を操作するための静的メソッドがいくつか提供されています。  
   
 ## <a name="c-language-specification"></a>C# 言語仕様  
- [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec_md.md)]  
+ [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
 ## <a name="see-also"></a>関連項目  
  <xref:System.Char>   
@@ -70,3 +71,4 @@ ms.lasthandoff: 03/13/2017
  [明示的な数値変換の一覧表](../../../csharp/language-reference/keywords/explicit-numeric-conversions-table.md)   
  [Null 許容型](../../../csharp/programming-guide/nullable-types/index.md)   
  [文字列](../../../csharp/programming-guide/strings/index.md)
+

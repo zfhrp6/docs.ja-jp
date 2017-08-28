@@ -1,36 +1,56 @@
 ---
-title: "方法 : メソッドに構造体を渡すこととクラス参照を渡すことの違いを理解する (C# プログラミング ガイド) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.technology: 
-  - "devlang-csharp"
-ms.topic: "article"
-dev_langs: 
-  - "CSharp"
-helpviewer_keywords: 
-  - "メソッド [C#], 渡す (クラスと構造体を)"
-  - "渡す (パラメーターを) [C#], 構造体とクラス"
-  - "構造体 [C#], 渡す (メソッド パラメーターとして)"
+title: "方法 : メソッドに構造体を渡すこととクラス参照を渡すことの違いを理解する (C# プログラミング ガイド)"
+ms.date: 2015-07-20
+ms.prod: .net
+ms.technology:
+- devlang-csharp
+ms.topic: article
+dev_langs:
+- CSharp
+helpviewer_keywords:
+- structs [C#], passing as method parameter
+- passing parameters [C#], structs vs. classes
+- methods [C#], passing classes vs. structs
 ms.assetid: 9c1313a6-32a8-4ea7-a59f-450f66af628b
 caps.latest.revision: 25
-author: "BillWagner"
-ms.author: "wiwagn"
-caps.handback.revision: 25
+author: BillWagner
+ms.author: wiwagn
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 1a4508c8765ac678fd371180cb0c3ece3e1d9a44
+ms.contentlocale: ja-jp
+ms.lasthandoff: 07/28/2017
+
 ---
-# 方法 : メソッドに構造体を渡すこととクラス参照を渡すことの違いを理解する (C# プログラミング ガイド)
-メソッドに [構造体](../../../csharp/language-reference/keywords/struct.md) を渡すことがメソッドに [クラス](../../../csharp/language-reference/keywords/class.md) のインスタンスを渡す場合の違いを次の例に示します。  例では、引数の両方で、値との両方のメソッド （構造体とクラス インスタンス）変更する引数の 1 つがのフィールドの値渡しされます。  ただし、 2 回のメソッドは、クラスのインスタンスを渡すと、渡されたを渡すと、渡された場合に構造体が異なるため同じではありません。  
+# <a name="how-to-know-the-difference-between-passing-a-struct-and-passing-a-class-reference-to-a-method-c-programming-guide"></a>方法 : メソッドに構造体を渡すこととクラス参照を渡すことの違いを理解する (C# プログラミング ガイド)
+次の例では、メソッドに[構造体](../../../csharp/language-reference/keywords/struct.md)を渡すことと[クラス](../../../csharp/language-reference/keywords/class.md) インスタンスを渡すことの違いを示します。 この例では、両方の引数 (構造体とクラス インスタンス) が値によって渡され、両方のメソッドが引数の 1 つのフィールドの値を変更します。 ただし、2 つのメソッドの結果は同じではありません。構造体を渡した場合に渡される内容と、クラスのインスタンスを渡した場合に渡される内容が異なるためです。  
   
- 構造体が [値型](../../../csharp/language-reference/keywords/value-types.md)であるため、メソッドへの [値を構造体を渡します。](../../../csharp/programming-guide/classes-and-structs/passing-value-type-parameters.md) 構造体、メソッドの引数のコピーを受信し、操作するとき。  したがって、メソッドに呼び出し元のメソッドに、元の構造体へのアクセスがなく、何かの要素を変更できません。  メソッドは一つしか変更できます。  
+ 構造体は[値型](../../../csharp/language-reference/keywords/value-types.md)であるため、メソッドに[構造体が値によって渡される](../../../csharp/programming-guide/classes-and-structs/passing-value-type-parameters.md)と、メソッドは構造体引数のコピーを受け取って操作します。 メソッドは、呼び出し側メソッドの元の構造体にはアクセスできないため、どのような場合でもこの構造体を変更することはできません。 メソッドで変更できるのはコピーのみです。  
   
- クラス インスタンスは [参照型](../../../csharp/language-reference/keywords/reference-types.md)値型ではありません。  メソッドへの [参照型は値渡しされます](../../../csharp/programming-guide/classes-and-structs/passing-reference-type-parameters.md) メソッドが、クラス インスタンスへの参照のコピーを受信したとき。  つまり、メソッドはインスタンス インスタンスのコピーではなく、のアドレスのコピーを受信します。  呼び出し元のメソッドのクラス インスタンスにアドレスがありますが、呼び出されたメソッドのパラメーターにアドレスのコピーがあり、アドレスは両方とも、同じオブジェクトを示します。  パラメーターがアドレスのコピーであるため、呼び出されたメソッドは、呼び出し元のメソッド インスタンスのアドレスを変更できません。  ただし、呼び出されたメソッドは元のアドレスとコピーの両方が参照するクラス メンバーにアクセスするには、アドレスを使用できます。  呼び出されたメソッドがクラス メンバーを変更して、呼び出し元のメソッドの元のクラス インスタンスも変更されます。  
+ クラス インスタンスは、値型ではなく、[参照型](../../../csharp/language-reference/keywords/reference-types.md)です。 メソッドに[参照型が値によって渡される](../../../csharp/programming-guide/classes-and-structs/passing-reference-type-parameters.md)と、メソッドはクラス インスタンスへの参照のコピーを受け取ります。 つまり、メソッドは、インスタンス自体のコピーではなく、インスタンスのアドレスのコピーを受け取ることになります。 呼び出し側メソッドのクラス インスタンスにはアドレスがあり、呼び出されたメソッドのパラメータにはそのアドレスのコピーがあり、両方のアドレスが同じオブジェクトを参照します。 パラメーターにはアドレスのコピーのみが含まれるため、呼び出されたメソッドは呼び出し側メソッドのクラス インスタンスのアドレスを変更できません。 ただし、呼び出されたメソッドはアドレスを使用して、元のアドレスとコピーの両方が参照するクラス メンバーにアクセスできます。 呼び出されたメソッドがクラス メンバーを変更すると、呼び出し側メソッドの元のクラス インスタンスも変更されます。  
   
- 次の例の出力は違いを示しています。  クラス インスタンスの `willIChange` フィールドの値は、メソッド `ClassTaker` に呼び出しによってクラス インスタンスの指定したフィールドを検索するには、メソッドがパラメーターのアドレスを使用するので変更されます。  呼び出し元のメソッドの構造体の `willIChange` フィールドは、メソッド `StructTaker` 、アドレスのコピーを呼び出し、引数の値が構造体自体のコピーであるため変更されません。  `StructTaker` は コピーを変更し、 `StructTaker` への呼び出しが完了すると、コピーは失われます。  
+ 次の例の出力はこの違いを示しています。 クラス インスタンスの `willIChange` フィールドの値はメソッド `ClassTaker` の呼び出しによって変更されます。これは、メソッドがパラメーターのアドレスを使用して、クラス インスタンスの指定されたフィールドを検索するためです。 呼び出し側メソッドの構造体の `willIChange` フィールドはメソッド `StructTaker` の呼び出しによって変更されません。これは、引数の値が、そのアドレスのコピーではなく、構造体自体のコピーであるためです。 `StructTaker` はコピーを変更し、そのコピーは、`StructTaker` の呼び出しが完了したときに失われます。  
   
-## 使用例  
+## <a name="example"></a>例  
  [!code-cs[csProgGuideObjects#32](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/how-to-know-the-difference-passing-a-struct-and-passing-a-class-to-a-method_1.cs)]  
   
-## 参照  
- [C\# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
+## <a name="see-also"></a>関連項目  
+ [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
  [クラス](../../../csharp/programming-guide/classes-and-structs/classes.md)   
  [構造体](../../../csharp/programming-guide/classes-and-structs/structs.md)   
  [パラメーターの引き渡し](../../../csharp/programming-guide/classes-and-structs/passing-parameters.md)
+

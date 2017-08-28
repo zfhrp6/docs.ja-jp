@@ -1,5 +1,5 @@
 ---
-title: "方法 : ファイル、フォルダー、およびドライブに関する情報を取得する (C# プログラミング ガイド) | Microsoft Docs"
+title: "方法 : ファイル、フォルダー、およびドライブに関する情報を取得する (C# プログラミング ガイド)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -27,10 +27,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 16950f835938846804ade1a8ad23d907aa69b9c3
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 6067ea9d51c31c9398c7b1fcd83ca8fa3a4fec76
+ms.contentlocale: ja-jp
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="how-to-get-information-about-files-folders-and-drives--c-programming-guide"></a>方法 : ファイル、フォルダー、およびドライブに関する情報を取得する (C# プログラミング ガイド)
@@ -46,7 +47,7 @@ ms.lasthandoff: 03/13/2017
   
 -   <xref:System.IO.File?displayProperty=fullName>  
   
- <xref:System.IO.FileInfo> クラスと<xref:System.IO.DirectoryInfo> クラスはファイルまたはディレクトリを表し、NTFS ファイル システムでサポートされるファイル属性の多くを公開するプロパティを含みます。 また、ファイルとフォルダーを開く、閉じる、移動する、および削除するためのメソッドも含まれます。 コンストラクターに、ファイル、フォルダー、またはドライブの名前を表す文字列を渡すことで、クラスのインスタンスを作成できます。  
+ <xref:System.IO.FileInfo> クラスと <xref:System.IO.DirectoryInfo> クラスはファイルまたはディレクトリを表し、NTFS ファイル システムでサポートされるファイル属性の多くを公開するプロパティを含みます。 また、ファイルとフォルダーを開く、閉じる、移動する、および削除するためのメソッドも含まれます。 コンストラクターに、ファイル、フォルダー、またはドライブの名前を表す文字列を渡すことで、クラスのインスタンスを作成できます。  
   
 ```csharp  
 System.IO.DriveInfo di = new System.IO.DriveInfo(@"C:\");  
@@ -54,7 +55,7 @@ System.IO.DriveInfo di = new System.IO.DriveInfo(@"C:\");
   
  また、<xref:System.IO.DirectoryInfo.GetDirectories%2A?displayProperty=fullName>、<xref:System.IO.DirectoryInfo.GetFiles%2A?displayProperty=fullName>、および <xref:System.IO.DriveInfo.RootDirectory%2A?displayProperty=fullName> の呼び出しを使用して、ファイル、フォルダー、またはドライブの名前を取得することもできます。  
   
- <xref:System.IO.Directory?displayProperty=fullName> クラスと<xref:System.IO.File?displayProperty=fullName> クラスは、ディレクトリとファイルに関する情報を取得するための静的メソッドを提供します。  
+ <xref:System.IO.Directory?displayProperty=fullName> クラスと <xref:System.IO.File?displayProperty=fullName> クラスは、ディレクトリとファイルに関する情報を取得するための静的メソッドを提供します。  
   
 ## <a name="example"></a>例  
  次の例では、ファイルとフォルダーに関する情報にアクセスするさまざまな方法を示します。  
@@ -78,3 +79,4 @@ System.IO.DriveInfo di = new System.IO.DriveInfo(@"C:\");
  <xref:System.IO?displayProperty=fullName>   
  [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
  [ファイル システムとレジストリ (C# プログラミング ガイド)](../../../csharp/programming-guide/file-system/index.md)
+

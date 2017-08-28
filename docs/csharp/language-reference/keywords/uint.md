@@ -1,5 +1,5 @@
 ---
-title: "uint (C# リファレンス) | Microsoft Docs"
+title: "uint (C# リファレンス)"
 ms.date: 2017-03-14
 ms.prod: .net
 ms.technology:
@@ -30,11 +30,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 400dfda51d978f35c3995f90840643aaff1b9c13
-ms.openlocfilehash: 24a47d83f9f8a778b6df53b5e1e5444eda819680
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 4342c08ab536f45a2e3b5fa6fe94839436600a4a
 ms.contentlocale: ja-jp
-ms.lasthandoff: 03/24/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="uint-c-reference"></a>uint (C# リファレンス)
@@ -49,7 +49,7 @@ ms.lasthandoff: 03/24/2017
   
 ## <a name="literals"></a>リテラル  
 
-`uint` 変数を宣言し、10 進リテラル、16 進リテラル、または (C# 7 以降) バイナリ リテラルを割り当てることによって初期化できます。 整数リテラルが `uint` の範囲外である場合は (つまり、<xref:System.UInt32.MinValue?displayProperty=fullName> より小さいか、<xref:System.UInt32.MaxValue?displayProperty=fullName> より大きい場合)、コンパイル エラーが発生します。
+`uint` 変数を宣言し、10 進リテラル、16 進リテラル、または (C# 7 以降) バイナリ リテラルを割り当てることによって初期化できます。 整数リテラルが `uint` の範囲外にある場合 (つまり、<xref:System.UInt32.MinValue?displayProperty=fullName> より小さいか、<xref:System.UInt32.MaxValue?displayProperty=fullName> より大きい場合)、コンパイル エラーが発生します。
 
 次の例では、整数 3,000,000,000 を 10 進リテラル、16 進リテラル、バイナリ リテラルで表したものが、`uint` 値に割り当てられています。  
   
@@ -62,7 +62,7 @@ C# 7 以降では、次の例に示すように、アンダースコア文字 `_
 
 [!code-cs[uint](../../../../samples/snippets/csharp/language-reference/keywords/numeric-literals.cs#UIntS)]  
  
- 整数リテラルには、型を表すサフィックスを含めることもできます。 サフィックス `U` または 'u' は、リテラルの数値に応じて `uint` または `ulong` を示します。 次の例では、`u` サフィックスを使って、両方の型の符号なし整数を示しています。 1 番目のリテラルは値が <xref:System.UInt32.MaxValue?displayProperty=fullName> より小さいので `uint` であるのに対し、2 番目は <xref:System.UInt32.MaxValue?displayProperty=fullName> より大きいので `ulong` であることに注意してください。
+ 整数リテラルには、型を表すサフィックスを含めることもできます。 サフィックス `U` または 'u' は、リテラルの数値に応じて `uint` または `ulong` を示します。 次の例では、`u` サフィックスを使って、両方の型の符号なし整数を示しています。 最初のリテラルは値が <xref:System.UInt32.MaxValue?displayProperty=fullName> より小さいため、`uint` であるのに対し、2 番目は値が <xref:System.UInt32.MaxValue?displayProperty=fullName> より大きいため、`ulong` であることに注意してください。
 
 [!code-cs[usuffix](../../../../samples/snippets/csharp/language-reference/keywords/numeric-suffixes.cs#1)]  
  
@@ -104,7 +104,7 @@ uint y = (uint)3.0;
  暗黙的な数値変換規則の詳細については、「[暗黙的な数値変換の一覧表](../../../csharp/language-reference/keywords/implicit-numeric-conversions-table.md)」を参照してください。  
   
 ## <a name="c-language-specification"></a>C# 言語仕様  
- [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec_md.md)]  
+ [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
 ## <a name="see-also"></a>関連項目  
  <xref:System.UInt32>   
@@ -115,3 +115,4 @@ uint y = (uint)3.0;
  [組み込み型の一覧表](../../../csharp/language-reference/keywords/built-in-types-table.md)   
  [暗黙的な数値変換の一覧表](../../../csharp/language-reference/keywords/implicit-numeric-conversions-table.md)   
  [明示的な数値変換の一覧表](../../../csharp/language-reference/keywords/explicit-numeric-conversions-table.md)
+

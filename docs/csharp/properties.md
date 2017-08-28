@@ -1,6 +1,6 @@
 ---
 title: "プロパティ"
-description: "プロパティ"
+description: "C# のプロパティについて説明します。C# のプロパティには、検証、計算値、遅延評価、プロパティ変更通知の機能があります。"
 keywords: .NET, .NET Core
 author: BillWagner
 ms.author: wiwagn
@@ -10,11 +10,11 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 6950d25a-bba1-4744-b7c7-a3cc90438c55
-ms.translationtype: Human Translation
-ms.sourcegitcommit: f9eab74a3b259037aff30320753191eee95aa974
-ms.openlocfilehash: 763a76a8ea0e48fd6935c951ce584efad50dabb9
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: e5d2d5d7074678383243e687d4b469606007e585
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/25/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 
@@ -277,7 +277,7 @@ public class Person
 ```
 
 上の最終版では、必要になった場合にのみ `FullName` プロパティが評価されます。
-以前に計算されたものが有効であれば、それが使用されます。 状態が変化したことで、以前に計算されたバージョンが無効になると、再計算が行われます。 このクラスを使用するにあたって、開発者は実装の詳細を知っている必要はありません。 内部で変化があっても Person オブジェクトの使用には影響しません。 これが、プロパティを使用してオブジェクトのデータ メンバーを公開するする重要な利点です。
+以前に計算されたものが有効であれば、それが使用されます。 状態が変化したことで、以前に計算されたバージョンが無効になると、再計算が行われます。 このクラスを使用するにあたって、開発者は実装の詳細を知っている必要はありません。 内部で変化があっても Person オブジェクトの使用には影響しません。 これが、プロパティを使用してオブジェクトのデータ メンバーを公開する重要な利点です。
  
 ### <a name="inotifypropertychanged"></a>INotifyPropertyChanged
 

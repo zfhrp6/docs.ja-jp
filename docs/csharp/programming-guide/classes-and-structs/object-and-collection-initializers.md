@@ -1,5 +1,5 @@
 ---
-title: "オブジェクト初期化子とコレクション初期化子 (C# プログラミング ガイド) | Microsoft Docs"
+title: "オブジェクト初期化子とコレクション初期化子 (C# プログラミング ガイド)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -28,11 +28,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 66045a6902e64db394a1f5812658e25a11692027
-ms.openlocfilehash: a4d0e8f348afdf1793804a4062be45d2fb4e7e2b
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: c4144f383d539129b4e03d5cad262e5a7b9e6b34
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/21/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="object-and-collection-initializers-c-programming-guide"></a>オブジェクト初期化子とコレクション初期化子 (C# プログラミング ガイド)
@@ -43,13 +43,13 @@ ms.lasthandoff: 04/21/2017
  [!code-cs[csProgGuideLINQ#45](../../../csharp/programming-guide/arrays/codesnippet/CSharp/object-and-collection-initializers_2.cs)]  
   
 ## <a name="object-initializers-with-anonymous-types"></a>オブジェクト初期化子と匿名型  
- オブジェクト初期化子は、どのような場合にも使うことができますが、[!INCLUDE[vbteclinq](../../../csharp/includes/vbteclinq_md.md)] クエリ式で使うと特に有用です。 クエリ式では、次の宣言に示すように、オブジェクト初期化子を使うことによってのみ初期化できる[匿名型](../../../csharp/programming-guide/classes-and-structs/anonymous-types.md)が頻繁に使われます。  
+ オブジェクト初期化子は、どのような場合にも使うことができますが、[!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] クエリ式で使うと特に有用です。 クエリ式では、次の宣言に示すように、オブジェクト初期化子を使うことによってのみ初期化できる[匿名型](../../../csharp/programming-guide/classes-and-structs/anonymous-types.md)が頻繁に使われます。  
   
 ```csharp
 var pet = new { Age = 10, Name = "Fluffy" };  
 ```  
   
- 匿名型を使うと、[!INCLUDE[vbteclinq](../../../csharp/includes/vbteclinq_md.md)] クエリ式の `select` 句によって元のシーケンスのオブジェクトを値と形状が元とは異なるオブジェクトに変換できます。 この方法は、シーケンス内の各オブジェクトの情報の一部のみを保存する場合に便利です。 次の例は、製品オブジェクト (`p`) に多くのフィールドおよびメソッドが含まれており、製品名および単価を含むオブジェクトのシーケンスを作成することにのみ関心があることを想定しています。  
+ 匿名型を使うと、[!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] クエリ式の `select` 句によって元のシーケンスのオブジェクトを値と形状が元とは異なるオブジェクトに変換できます。 この方法は、シーケンス内の各オブジェクトの情報の一部のみを保存する場合に便利です。 次の例は、製品オブジェクト (`p`) に多くのフィールドおよびメソッドが含まれており、製品名および単価を含むオブジェクトのシーケンスを作成することにのみ関心があることを想定しています。  
   
  [!code-cs[csProgGuideLINQ#40](../../../csharp/programming-guide/arrays/codesnippet/CSharp/object-and-collection-initializers_3.cs)]  
   

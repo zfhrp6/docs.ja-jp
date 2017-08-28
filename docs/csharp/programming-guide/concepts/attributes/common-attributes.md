@@ -1,5 +1,5 @@
 ---
-title: "共通属性 (C#) | Microsoft Docs"
+title: "共通属性 (C#)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -19,10 +19,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: bafcb0a9a81d97e060acca38b7c0bfca23efdaad
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 98bb21ef0b5582202578b72fd6eaf459801747cc
+ms.contentlocale: ja-jp
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="common-attributes-c"></a>共通属性 (C#)
@@ -54,7 +55,7 @@ ms.lasthandoff: 03/13/2017
 -   アセンブリ マニフェスト属性  
   
 ### <a name="assembly-identity-attributes"></a>アセンブリ ID 属性  
- アセンブリの ID は、名前、バージョン、カルチャの 3 つの属性によって識別されます (適用できる場合は厳密な名前も使用されます)。 アセンブリの完全な名前を形成するこれらの属性は、コード内でアセンブリを参照するときに必要になります。 アセンブリのバージョンとカルチャは、属性を使用して設定できます。 ただし名前の値は、コンパイラ、Visual Studio IDE の [[アセンブリ情報]](https://docs.microsoft.com/visualstudio/ide/reference/assembly-information-dialog-box) ダイアログ ボックス、またはアセンブリ リンカー (AI.exe) によってアセンブリの作成時に設定されます。このとき、設定はアセンブリ マニフェストが含まれたファイルに基づきます。 <xref:System.Reflection.AssemblyFlagsAttribute> 属性は、アセンブリの複数のコピーが共存できるかどうかを指定します。  
+ アセンブリの ID は、名前、バージョン、カルチャの 3 つの属性によって識別されます (適用できる場合は厳密な名前も使用されます)。 アセンブリの完全な名前を形成するこれらの属性は、コード内でアセンブリを参照するときに必要になります。 アセンブリのバージョンとカルチャは、属性を使用して設定できます。 ただし名前の値は、コンパイラ、Visual Studio IDE の [[アセンブリ情報]](/visualstudio/ide/reference/assembly-information-dialog-box) ダイアログ ボックス、またはアセンブリ リンカー (AI.exe) によってアセンブリの作成時に設定されます。このとき、設定はアセンブリ マニフェストが含まれたファイルに基づきます。 <xref:System.Reflection.AssemblyFlagsAttribute> 属性は、アセンブリの複数のコピーが共存できるかどうかを指定します。  
   
  次の表に ID 属性を示します。  
   
@@ -233,7 +234,7 @@ class SampleClass
 ##  <a name="CallerInfo"></a> 呼び出し元情報属性  
  呼び出し元情報の属性を使用すると、メソッドへの呼び出し元に関する情報を取得できます。 ソース コードのファイル パス、ソース コードの行番号、呼び出し元のメンバー名を取得できます。  
   
- メンバー呼び出し元情報を取得するには、省略可能なパラメーターに適用される属性を使用します。 省略可能な各パラメーターでは既定値が指定されます。 <xref:System.Runtime.CompilerServices?displayProperty=fullName> 名前空間に定義されている呼び出し元情報属性の一覧を、次の表に示します。  
+ メンバー呼び出し元情報を取得するには、省略可能なパラメーターに適用される属性を使用します。 省略可能な各パラメーターでは既定値が指定されます。 次の表は、<xref:System.Runtime.CompilerServices?displayProperty=fullName> 名前空間で定義されている呼び出し元情報の属性の一覧です。  
   
 |属性|説明|型|  
 |---|---|---|  
@@ -250,3 +251,4 @@ class SampleClass
  [属性](https://msdn.microsoft.com/library/5x6cd29c)   
  [リフレクション (C#)](../../../../csharp/programming-guide/concepts/reflection.md)   
  [リフレクションを使用した属性へのアクセス (C#)](../../../../csharp/programming-guide/concepts/attributes/accessing-attributes-by-using-reflection.md)
+

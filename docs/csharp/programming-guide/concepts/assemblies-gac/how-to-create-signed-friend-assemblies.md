@@ -1,5 +1,5 @@
 ---
-title: "方法: 署名されたフレンド アセンブリを作成する (C#) | Microsoft Docs"
+title: "方法: 署名されたフレンド アセンブリを作成する (C#)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -19,10 +19,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 890cead4b28b8532dd7bd7f571defe7e280e4cdc
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: e9d56602eaffe73ff301ade95aaebeabab663be6
+ms.contentlocale: ja-jp
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="how-to-create-signed-friend-assemblies-c"></a>方法: 署名されたフレンド アセンブリを作成する (C#)
@@ -46,7 +47,7 @@ ms.lasthandoff: 03/13/2017
   
          `sn -tp FriendAssemblies.publickey`  
   
-3.  次のコードを含む、`friend_signed_A` という名前の C# ファイルを作成します。 このコードは、<xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> 属性を使用して、friend_signed_B をフレンド アセンブリとして宣言します。  
+3.  次のコードを含む、`friend_signed_A` という名前の C# ファイルを作成します。 コードでは <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> 属性を使用して、フレンド アセンブリとして friend_signed_B を宣言します。  
   
      厳密な名前ツールは、実行するごとに新しい公開鍵を生成します。 このため、次の例に示すコード内の公開鍵を、ここで生成した公開鍵に置き換える必要があります。  
   
@@ -102,7 +103,7 @@ ms.lasthandoff: 03/13/2017
      このプログラムでは、文字列 "Class1.Test" が出力されます。  
   
 ## <a name="net-framework-security"></a>.NET Framework セキュリティ  
- <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> 属性と <xref:System.Security.Permissions.StrongNameIdentityPermission> クラスには、類似点がいくつかあります。 主な違いは、<xref:System.Security.Permissions.StrongNameIdentityPermission> はセキュリティ アクセス許可を要求することで特定のコード セクションを実行しますが、<xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> 属性は `internal` 型とメンバーの参照可能範囲を制御します。  
+ <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> 属性と <xref:System.Security.Permissions.StrongNameIdentityPermission> クラスには類似点があります。 主な違いは、<xref:System.Security.Permissions.StrongNameIdentityPermission> はセキュリティ アクセス許可を要求することで特定のコード セクションを実行できますが、<xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> 属性では `internal` 型とメンバーの参照可能範囲を制御することです。  
   
 ## <a name="see-also"></a>関連項目  
  <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute>   
@@ -113,3 +114,4 @@ ms.lasthandoff: 03/13/2017
  [Sn.exe (厳密名ツール)](https://msdn.microsoft.com/library/k5b5tt23)   
  [厳密な名前付きアセンブリの作成と使用](https://msdn.microsoft.com/library/xwb8f617)   
  [C# プログラミング ガイド](../../../../csharp/programming-guide/index.md)
+

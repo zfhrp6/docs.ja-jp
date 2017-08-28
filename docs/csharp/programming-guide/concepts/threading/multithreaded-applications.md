@@ -1,5 +1,5 @@
 ---
-title: "マルチスレッド アプリケーション (C#) | Microsoft Docs"
+title: "マルチスレッド アプリケーション (C#)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -19,10 +19,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: a36fd71ff41eb219f4c4de36d4fa8da9b8ee179a
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: dfe0f9c6e911295270df8464d1070a524412466d
+ms.contentlocale: ja-jp
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="multithreaded-applications-c"></a>マルチスレッド アプリケーション (C#)
@@ -58,7 +59,7 @@ newThread.Abort();
 ### <a name="thread-methods"></a>スレッド メソッド  
  次の表は、個々のスレッドを制御できるメソッドをまとめたものです。  
   
-|メソッド|操作|  
+|メソッド|アクション|  
 |------------|------------|  
 |<xref:System.Threading.Thread.Start%2A>|スレッドの実行を開始します。|  
 |<xref:System.Threading.Thread.Sleep%2A>|指定した時間だけスレッドを一時停止します。|  
@@ -94,3 +95,4 @@ newThread.Abort();
  [スレッドの同期 (C#)](../../../../csharp/programming-guide/concepts/threading/thread-synchronization.md)   
  [マルチスレッド プロシージャのパラメーターと戻り値 (C#)](../../../../csharp/programming-guide/concepts/threading/parameters-and-return-values-for-multithreaded-procedures.md)   
  [スレッド処理 (C#)](../../../../csharp/programming-guide/concepts/threading/index.md)
+

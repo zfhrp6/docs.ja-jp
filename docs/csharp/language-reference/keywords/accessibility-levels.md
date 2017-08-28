@@ -1,5 +1,5 @@
 ---
-title: "アクセシビリティ レベル (C# リファレンス) | Microsoft Docs"
+title: "アクセシビリティ レベル (C# リファレンス)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -28,11 +28,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 30220e92e55ac6101cf8fedd8920755cd25978bd
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 796802a407c486c1df5332d5b4920467f3a1171b
 ms.contentlocale: ja-jp
-ms.lasthandoff: 03/13/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="accessibility-levels-c-reference"></a>アクセシビリティ レベル (C# リファレンス)
@@ -43,10 +43,10 @@ ms.lasthandoff: 03/13/2017
 |`public`|アクセスは無制限です。|  
 |`protected`|コンテナーであるクラスまたはそこから派生した型にアクセスが限定されます。|  
 |`internal`|アクセスは現在のアセンブリに限定されます。|  
-|`protected` `internal`|現在のアセンブリ、またはコンテナーであるクラスから派生した型にアクセスが限定されます。|  
+|`protected internal`|現在のアセンブリ、またはコンテナーであるクラスから派生した型にアクセスが限定されます。|  
 |`private`|コンテナーである型にアクセスが限定されます。|  
   
- `protected` と `internal` を組み合わせて使う場合を除き、1 つのメンバーまたは 1 つの型に指定できるアクセス修飾子は 1 つだけです。  
+ `protected internal` の組み合わせを使う場合を除き、1 つのメンバーまたは 1 つの型に指定できるアクセス修飾子は 1 つだけです。  
   
  アクセス修飾子を名前空間に適用することはできません。 名前空間には、アクセス制限がありません。  
   
@@ -59,7 +59,7 @@ ms.lasthandoff: 03/13/2017
 |コンテナー|メンバーの既定のアクセシビリティ|メンバーに対して宣言できるアクセシビリティ|  
 |----------------|----------------------------------|--------------------------------------------------|  
 |`enum`|`public`|なし|  
-|`class`|`private`|`public`<br /><br /> `protected`<br /><br /> `internal`<br /><br /> `private`<br /><br /> `protected` `internal`|  
+|`class`|`private`|`public`<br /><br /> `protected`<br /><br /> `internal`<br /><br /> `private`<br /><br /> `protected internal`|  
 |`interface`|`public`|なし|  
 |`struct`|`private`|`public`<br /><br /> `internal`<br /><br /> `private`|  
   
@@ -80,3 +80,4 @@ ms.lasthandoff: 03/13/2017
  [private](../../../csharp/language-reference/keywords/private.md)   
  [protected](../../../csharp/language-reference/keywords/protected.md)   
  [internal](../../../csharp/language-reference/keywords/internal.md)
+

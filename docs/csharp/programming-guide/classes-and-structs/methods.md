@@ -1,5 +1,5 @@
 ---
-title: "メソッド (C# プログラミング ガイド) | Microsoft Docs"
+title: "メソッド (C# プログラミング ガイド)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -29,11 +29,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-ms.translationtype: Human Translation
-ms.sourcegitcommit: a5ed524a1b17f7be8903f998cbd732594faab831
-ms.openlocfilehash: da1abda4faec540c115d93e14a757dae24c5ae78
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: cf320a26e697943416cd8f1065f1b4ca4afeac07
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/15/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="methods-c-programming-guide"></a>メソッド (C# プログラミング ガイド)
@@ -80,7 +80,18 @@ ms.lasthandoff: 05/15/2017
  参照型を参照渡しまたは値渡しで渡す方法の詳細については、「[参照型パラメーターの引き渡し](../../../csharp/programming-guide/classes-and-structs/passing-reference-type-parameters.md)」と「[参照型](../../../csharp/language-reference/keywords/reference-types.md)」を参照してください。  
   
 ## <a name="return-values"></a>戻り値  
- メソッドは、呼び出し元に値を返すことができます。 戻り値の型 (メソッド名の前に記述されている型) が `void`でない場合、メソッドは、 `return` キーワードを使用して値を返すことができます。 `return` キーワードに続いて戻り値の型に一致する値が記述されたステートメントは、その値をメソッドの呼び出し元に返します。 また、 `return` キーワードは、メソッドの実行を中止します。 戻り値の型が `void`の場合、値を持たない `return` ステートメントは、メソッドの実行を中止するときに役立ちます。 `return` キーワードを使用しない場合、メソッドは、コード ブロックの最後に到達したときに実行を中止します。 戻り値の型が void 以外のメソッドで値を返すには、 `return` キーワードを使用する必要があります。 たとえば、次の 2 つのメソッドは、 `return` キーワードを使用して整数を返します。  
+メソッドは、呼び出し元に値を返すことができます。 戻り値の型 (メソッド名の前に記述されている型) が `void`でない場合、メソッドは、 `return` キーワードを使用して値を返すことができます。 `return` キーワードに続いて戻り値の型に一致する値が記述されたステートメントは、その値をメソッドの呼び出し元に返します。 
+
+値を呼び出し元に返す方法には、値によって返す方法と、C# 7 以降の[参照](ref-returns.md)によって返す方法があります。 値が参照によって呼び出し元に返されるのは、`ref` キーワードがメソッド シグネチャで使用されていて、そのキーワードが各 `return` キーワードの後に続いている場合です。 たとえば、次のメソッド シグネチャと return ステートメントは、メソッドが変数名 `estDistance` を参照によって呼び出し元に返すことを示しています。
+
+```csharp
+public ref double GetEstimatedDistance()
+{
+   return ref estDistance;
+}
+```
+
+また、 `return` キーワードは、メソッドの実行を中止します。 戻り値の型が `void`の場合、値を持たない `return` ステートメントは、メソッドの実行を中止するときに役立ちます。 `return` キーワードを使用しない場合、メソッドは、コード ブロックの最後に到達したときに実行を中止します。 戻り値の型が void 以外のメソッドで値を返すには、 `return` キーワードを使用する必要があります。 たとえば、次の 2 つのメソッドは、 `return` キーワードを使用して整数を返します。  
   
  [!code-cs[csProgGuideObjects#44](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/methods_6.cs)]  
   
@@ -91,8 +102,14 @@ ms.lasthandoff: 05/15/2017
  [!code-cs[csProgGuideObjects#46](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/methods_8.cs)]  
   
  この場合、ローカル変数 `result`を使用して値を格納する手順はオプションです。 このローカル変数によってコードの読みやすさが向上することがあります。また、引数の元の値をメソッドのスコープ全体で保持する場合に必要になることがあります。  
-  
- 呼び出し元関数から、配列の内容を変更するメソッド M に配列が渡された場合、メソッド M から多次元配列を返す必要はありません。値の適切なスタイルまたは機能フローのために M から結果の配列を返すことはできますが、必須ではありません。  変更された配列を返す必要がないのは、C# ではすべての参照型が値で渡され、配列参照の値がその配列へのポインターになるためです。 メソッド M では、次の例に示すように、配列の内容に対する変更は、配列への参照を含むコードによって監視できます。  
+
+メソッドから参照によって返された値を使用する場合、値を変更するには、[ref ローカル](ref-returns.md#ref-locals)変数を宣言する必要があります。 たとえば、`Planet.GetEstimatedDistance` メソッドが <xref:System.Double> の値を参照によって返す場合は、次のようなコードを使用して、その値を ref ローカル変数として定義できます。
+
+```csharp
+ref int distance = plant 
+```
+
+呼び出し元の関数から、配列の内容を変更するメソッド `M` に配列が渡された場合、`M` から多次元配列を返す必要はありません。  値の適切なスタイルまたは機能フローのために `M` から結果の配列を返すことはできますが、必須ではありません。変更された配列を返す必要がないのは、C# ではすべての参照型が値で渡され、配列参照の値がその配列へのポインターになるためです。 メソッド `M` では、次の例に示すように、配列の内容に対する変更は、配列への参照を含むコードによって監視できます。  
   
 ```csharp  
 static void Main(string[] args)  
@@ -124,9 +141,9 @@ static void Main(string[] args)
 > [!NOTE]
 >  非同期メソッドは、まだ完了していない待機中の最初のオブジェクトに達するか、または非同期メソッドの最後に達すると、呼び出し元に戻ります。  
   
- 非同期メソッドの戻り値の型としては、<xref:System.Threading.Tasks.Task%601>、<xref:System.Threading.Tasks.Task>、または void を指定できます。 戻り値の型 void は主として、void の戻り値の型が必要なイベント ハンドラーの定義に使用されます。 void を返す非同期メソッドは待機できません。void を返すメソッドの呼び出し元は、このメソッドがスローする例外をキャッチできません。  
+ 非同期メソッドの戻り値の型としては、 <xref:System.Threading.Tasks.Task%601>、 <xref:System.Threading.Tasks.Task>、または void を指定できます。 戻り値の型 void は主として、void の戻り値の型が必要なイベント ハンドラーの定義に使用されます。 void を返す非同期メソッドは待機できません。void を返すメソッドの呼び出し元は、このメソッドがスローする例外をキャッチできません。  
   
- 次の例で、`DelayAsync` は戻り値の型が <xref:System.Threading.Tasks.Task%601> である非同期メソッドです。 `DelayAsync` には、整数を返す `return` ステートメントがあります。 そのため、メソッド宣言 `DelayAsync` では、戻り値の型を `Task<int>`とする必要があります。 戻り値の型が `Task<int>`であるため、ステートメント `await` に示すように、 `DoSomethingAsync` 内の `int result = await delayTask`式を評価すると整数が生成されます。  
+ 次の例で、 `DelayAsync` は戻り値の型が <xref:System.Threading.Tasks.Task%601>である非同期メソッドです。 `DelayAsync` には、整数を返す `return` ステートメントがあります。 そのため、メソッド宣言 `DelayAsync` では、戻り値の型を `Task<int>`とする必要があります。 戻り値の型が `Task<int>`であるため、ステートメント `await` に示すように、 `DoSomethingAsync` 内の `int result = await delayTask`式を評価すると整数が生成されます。  
   
  `startButton_Click` メソッドは、戻り値の型が void の非同期メソッドの例です。 `DoSomethingAsync` が非同期メソッドであるため、 `DoSomethingAsync` を呼び出すタスクは、ステートメント `await DoSomethingAsync();`に示すように待機する必要があります。 `startButton_Click` メソッドでは `async` 式が使用されているため、 `await` 修飾子を使用して定義する必要があります。  
   
@@ -155,7 +172,7 @@ public Customer this[long id] => store.LookupCustomer(id);
   
  [foreach](../../../csharp/language-reference/keywords/foreach-in.md) ステートメントを使用して、クライアント コードから反復子を呼び出します。  
   
- 反復子の戻り値の型には、<xref:System.Collections.IEnumerable>、<xref:System.Collections.Generic.IEnumerable%601>、<xref:System.Collections.IEnumerator>、または <xref:System.Collections.Generic.IEnumerator%601> を指定できます。  
+ 反復子の戻り値の型には、 <xref:System.Collections.IEnumerable>、 <xref:System.Collections.Generic.IEnumerable%601>、 <xref:System.Collections.IEnumerator>、または <xref:System.Collections.Generic.IEnumerator%601>を指定できます。  
   
  詳細については、「 [反復子](http://msdn.microsoft.com/library/f45331db-d595-46ec-9142-551d3d1eb1a7)」を参照してください。  
   

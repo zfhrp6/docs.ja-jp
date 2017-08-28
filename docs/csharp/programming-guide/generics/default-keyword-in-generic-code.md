@@ -1,37 +1,57 @@
 ---
-title: "ジェネリック コードの default キーワード (C# プログラミング ガイド) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.technology: 
-  - "devlang-csharp"
-ms.topic: "article"
-dev_langs: 
-  - "CSharp"
-helpviewer_keywords: 
-  - "default キーワード [C#], ジェネリック プログラミング"
-  - "ジェネリック [C#], default キーワード"
+title: "ジェネリック コードの default キーワード (C# プログラミング ガイド)"
+ms.date: 2015-07-20
+ms.prod: .net
+ms.technology:
+- devlang-csharp
+ms.topic: article
+dev_langs:
+- CSharp
+helpviewer_keywords:
+- generics [C#], default keyword
+- default keyword [C#], generic programming
 ms.assetid: b9daf449-4e64-496e-8592-6ed2c8875a98
 caps.latest.revision: 22
-author: "BillWagner"
-ms.author: "wiwagn"
-caps.handback.revision: 22
+author: BillWagner
+ms.author: wiwagn
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: b5f5995b720d377717a5fff8a5e7e6e2196c612c
+ms.contentlocale: ja-jp
+ms.lasthandoff: 07/28/2017
+
 ---
-# ジェネリック コードの default キーワード (C# プログラミング ガイド)
-ジェネリック クラスとジェネリック メソッドでは、あらかじめ以下の情報を把握していない場合に、パラメーター化された型 T に既定値を割り当てる方法が 1 つの問題となります。  
+# <a name="default-keyword-in-generic-code-c-programming-guide"></a>ジェネリック コードの default キーワード (C# プログラミング ガイド)
+ジェネリック クラスとジェネリック メソッドで発生する問題の 1 つは、次のことがあらかじめわかっていない場合に、パラメーター化された型 T に既定値を割り当てる方法です。  
   
--   T が参照型か値型か  
+-   T が参照型または値型のどちらか。  
   
--   T が値型の場合、数値か構造体か  
+-   T が値型の場合、T は数値か構造体か。  
   
- パラメーター化された型 T の変数がある場合、ステートメント t \= null は、T が参照型のときにのみ有効です。また、t \= 0 は、数値では機能しますが、構造体では機能しません。  この問題を解決するには、`default` キーワードを使用します。このキーワードは、参照型の場合には null を返し、数値の値型にはゼロを返します。  構造体の場合、ゼロまたは null \(値型か参照型かによって変わります\) に初期化された構造体の各メンバーを返します。  null 許容値型の場合、default は <xref:System.Nullable%601?displayProperty=fullName> を返します。これは、他の構造体と同様に初期化されます。  
+ t をパラメーター化された型 T の変数であるとすると、ステートメント t = null は T が参照型の場合にのみ有効であり、t = 0 は数値型に対してのみ動作し、構造体の場合は動作しません。 このような場合の解決策は、`default` キーワードを使うことです。このキーワードは、参照型に対しては null を返し、値型に対しては 0 を返します。 構造体の場合は、構造体の各メンバーが値型か参照型かに応じて、0 または null に初期化されたメンバーを返します。 null 許容値型の場合は、default は構造体と同様に初期化される <xref:System.Nullable%601?displayProperty=fullName> を返します。  
   
- `GenericList<T>` クラスで `default` キーワードを使用する方法の例を次に示します。  詳細については、「[ジェネリックの概要 \(C\# プログラミング ガイド\)](../../../csharp/programming-guide/generics/introduction-to-generics.md)」を参照してください。  
+ `GenericList<T>` クラスの次の例では、`default` キーワードを使う方法を示します。 詳しくは、「[ジェネリックの概要](../../../csharp/programming-guide/generics/introduction-to-generics.md)」をご覧ください。  
   
  [!code-cs[csProgGuideGenerics#41](../../../csharp/programming-guide/generics/codesnippet/CSharp/default-keyword-in-generic-code_1.cs)]  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Collections.Generic>   
- [C\# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
+ [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
  [ジェネリック](../../../csharp/programming-guide/generics/index.md)   
  [ジェネリック メソッド](../../../csharp/programming-guide/generics/generic-methods.md)   
- [ジェネリック](../Topic/Generics%20in%20the%20.NET%20Framework.md)
+ [ジェネリック](~/docs/standard/generics/index.md)
+

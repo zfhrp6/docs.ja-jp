@@ -1,5 +1,5 @@
 ---
-title: "方法: Visual Basic でファイルをアップロードする | Microsoft Docs"
+title: "方法: Visual Basic でファイルをアップロードする"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -34,15 +34,15 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
-ms.openlocfilehash: 1663cc6ad0a6e5f2a940c050c75d403cffd1f53f
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 29baf1f420cece6e0b05f9638b30a326178a013d
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/22/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="how-to-upload-a-file-in-visual-basic"></a>方法: Visual Basic でファイルをアップロードする
-<xref:Microsoft.VisualBasic.Devices.Network.UploadFile%2A> メソッドを利用してファイルをアップロードし、離れた場所に格納できます。 `ShowUI` パラメーターを `True` に設定した場合、ダウンロードの進行状況を示すダイアログ ボックスが表示され、ユーザーが操作をキャンセルできます。  
+<xref:Microsoft.VisualBasic.Devices.Network.UploadFile%2A> メソッドを利用してファイルをアップロードし、離れた場所に格納できます。 `ShowUI` パラメーターを `True` に設定した場合、アップロードの進行状況を示すダイアログ ボックスが表示され、ユーザーが操作をキャンセルできます。  
   
 ### <a name="to-upload-a-file"></a>ファイルをアップロードするには  
   
@@ -76,3 +76,4 @@ ms.lasthandoff: 05/22/2017
  <xref:Microsoft.VisualBasic.Devices.Network.UploadFile%2A>   
  [方法: ファイルをダウンロードする](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-download-a-file.md)   
  [方法: ファイル パスを解析する](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-parse-file-paths.md)
+

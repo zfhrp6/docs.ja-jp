@@ -1,5 +1,5 @@
 ---
-title: "式ツリーのデバッグ (Visual Studio) (C#) | Microsoft Docs"
+title: "式ツリーのデバッグ (Visual Studio) (C#)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -19,16 +19,17 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 14ab67e78a3b4c4819ddca36a406526e78f5485e
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 0cf40b38ca9a6f743aca2894506e1d0ea80c9d57
+ms.contentlocale: ja-jp
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="debugging-expression-trees-in-visual-studio-c"></a>式ツリーのデバッグ (Visual Studio) (C#)
-アプリケーションをデバッグするときに、式ツリーの構造および内容を分析できます。 式ツリーの構造を簡単に確認する場合は、`DebugView` プロパティを使用できます。このプロパティは、デバッグ モードでのみ使用できます。 デバッグの詳細については、「[Visual Studio でのデバッグ](https://docs.microsoft.com/visualstudio/debugger/debugging-in-visual-studio)」を参照してください。  
+アプリケーションをデバッグするときに、式ツリーの構造および内容を分析できます。 式ツリーの構造を簡単に確認する場合は、`DebugView` プロパティを使用できます。このプロパティは、デバッグ モードでのみ使用できます。 デバッグの詳細については、「[Visual Studio でのデバッグ](/visualstudio/debugger/debugging-in-visual-studio)」を参照してください。  
   
- 式ツリーの内容をわかりやすく表すために、`DebugView` プロパティでは Visual Studio ビジュアライザーを使用します。 詳細については、「[Create Custom Visualizers](https://docs.microsoft.com/visualstudio/debugger/create-custom-visualizers-of-data)」 (カスタム ビジュアライザーを作成する) を参照してください。  
+ 式ツリーの内容をわかりやすく表すために、`DebugView` プロパティでは Visual Studio ビジュアライザーを使用します。 詳細については、「[Create Custom Visualizers](/visualstudio/debugger/create-custom-visualizers-of-data)」 (カスタム ビジュアライザーを作成する) を参照してください。  
   
 ### <a name="to-open-a-visualizer-for-an-expression-tree"></a>式ツリーのビジュアライザーを開くには  
   
@@ -41,7 +42,7 @@ ms.lasthandoff: 03/13/2017
  それぞれの式の型は、以下のセクションで説明するように、ビジュアライザーに表示されます。  
   
 ## <a name="parameterexpressions"></a>ParameterExpressions  
- <xref:System.Linq.Expressions.ParameterExpression> 変数名は、先頭に "$" 記号が付く形式で表示されます。  
+ <xref:System.Linq.Expressions.ParameterExpression> 変数名は、先頭に記号 "$" を付けて表示されます。  
   
  パラメーターに名前がない場合、`$var1` や `$var2` など、自動的に生成された名前が割り当てられます。  
   
@@ -121,5 +122,6 @@ ms.lasthandoff: 03/13/2017
   
 ## <a name="see-also"></a>関連項目  
  [式ツリー (C#)](../../../../csharp/programming-guide/concepts/expression-trees/index.md)   
- [Visual Studio でのデバッグ](https://docs.microsoft.com/visualstudio/debugger/debugging-in-visual-studio)   
- [カスタム ビジュアライザーを作成する](https://docs.microsoft.com/visualstudio/debugger/create-custom-visualizers-of-data)
+ [Visual Studio でのデバッグ](/visualstudio/debugger/debugging-in-visual-studio)   
+ [カスタム ビジュアライザーを作成する](/visualstudio/debugger/create-custom-visualizers-of-data)
+

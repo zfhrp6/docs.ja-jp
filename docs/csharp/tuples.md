@@ -1,6 +1,6 @@
 ---
-title: "タプル | C# ガイド"
-description: "C の名前のないタプルと名前付きタプルについて#"
+title: "タプル - C# ガイド"
+description: "C# の名前のないタプルと名前付きタプルについて"
 keywords: .NET, .NET Core, C#
 author: BillWagner
 ms-author: wiwagn
@@ -10,11 +10,11 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: ee8bf7c3-aa3e-4c9e-a5c6-e05cc6138baa
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 6b30f41e3fb07a962542a09a41c698efee7ebb5a
-ms.openlocfilehash: 0ea7299d87dc69784e3bed93e48d83e4a0076a20
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 0efb478491ab4c226ec56519c9a957b19ce0478f
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/26/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 
@@ -25,8 +25,10 @@ C# のタプルは、軽量構文を使用して定義する型で、 構文が�
 このトピックでは、C# 7 でタプルに適用される言語の規則、タプルの使用方法、およびタプルを操作するための入門的ガイダンスについて説明します。
 
 > [!NOTE]
-> 新しいタプル機能を使用するには、`System.ValueTuple` 型が必要です。 Visual Studio 2017 の場合、NuGet ギャラリーで入手可能な NuGet パッケージ [System.ValueTuple](https://www.nuget.org/packages/System.ValueTuple/) を追加する必要があります。
-> このパッケージがないと、`error CS8179: Predefined type 'System.ValueTuple``2' is not defined or imported`、`error CS8137: Cannot define a class or member that utilizes tuples because the compiler required type 'System.Runtime.CompilerServices.TupleElementNamesAttribute' cannot be found.` などのコンパイル エラーが発生する可能性があります
+> 新しいタプル機能を使用するには、@System.ValueTuple 型が必要です。
+> 型が含まれていないプラットフォームで使用する場合は、NuGet パッケージ [`System.ValueTuple`](https://www.nuget.org/packages/System.ValueTuple/) を追加する必要があります。
+>
+> これは、フレームワークで提供される型に依存するその他の言語機能に似ています。 たとえば、`INotifyCompletion` インターフェイスに依存する `async` や `await`、`IEnumerable<T>` に依存する LINQ などがあります。 ただし、.NET がプラットフォームにさらに依存しなくなりつつあるため、配信メカニズムもそれに応じて変わりつつあります。 .NET Framework が、言語コンパイラと同じ周期で配布されるとは限りません。 新しい言語機能が新しい型に依存する場合、それらの型は、言語機能の配布時に NuGet パッケージとして入手できます。 これらの新しい型は .NET 標準 API に追加され、フレームワークの一部として配信されるため、NuGet パッケージは必要なくなります。
 
 詳しく見ていく前に、新しいタプルのサポートを追加した理由について説明します。 メソッドが返すのは 1 つのオブジェクトです。 タプルを使用すると、その 1 つのオブジェクトに複数の値を簡単にパッケージできます。 
 
@@ -167,7 +169,7 @@ private static (double, double, int) ComputeSumAndSumOfSquares(IEnumerable<doubl
 
 ## <a name="deconstruction"></a>分解
 
-タプル内のすべての項目を展開するには、メソッドによって返されるタプルを "*分解*" します。 タプルは 2 とおりの方法で分解できます。  まず、かっこの中で各フィールドの型を明示的に宣言して、タプルのフィールドごとに個別の変数を作成することができます。
+タプル内のすべての項目を展開するには、メソッドによって返されるタプルを*分解*します。 タプルは 2 とおりの方法で分解できます。  まず、かっこの中で各フィールドの型を明示的に宣言して、タプルのフィールドごとに個別の変数を作成することができます。
 
 [!code-csharp[Deconstruct](../../samples/snippets/csharp/tuples/tuples/statistics.cs#10_Deconstruct "分解する")]
 

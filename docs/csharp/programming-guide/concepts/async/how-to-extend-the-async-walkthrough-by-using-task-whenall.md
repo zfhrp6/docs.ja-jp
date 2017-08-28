@@ -1,5 +1,5 @@
 ---
-title: "方法: Task.WhenAll を使用して AsyncWalkthrough を拡張する (C#) | Microsoft Docs"
+title: "方法: Task.WhenAll を使用して AsyncWalkthrough を拡張する (C#)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -19,10 +19,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: cf538f555c9b1636980fb68ca1c132504112d9fb
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 132332f4fd274126bb8bc270cd762e1bdc97106f
+ms.contentlocale: ja-jp
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="how-to-extend-the-async-walkthrough-by-using-taskwhenall-c"></a>方法: Task.WhenAll を使用して AsyncWalkthrough を拡張する (C#)
@@ -77,7 +78,7 @@ ms.lasthandoff: 03/13/2017
     //}  
     ```  
   
-3.  タスクのコレクションを作成します。 次のコードは、<xref:System.Linq.Enumerable.ToArray%2A> メソッドによって実行されるときに、各 Web サイトのコンテンツをダウンロードするタスクのコレクションを作成する[クエリ](http://msdn.microsoft.com/library/a73c4aec-5d15-4e98-b962-1274021ea93d)を定義しています。 タスクは、クエリが評価されるときに開始されます。  
+3.  タスクのコレクションを作成します。 次のコードは、<xref:System.Linq.Enumerable.ToArray%2A> メソッドによって実行されるときに、各 Web サイトのコンテンツをダウンロードするタスクのコレクションを作成する[クエリ](http://msdn.microsoft.com/library/a73c4aec-5d15-4e98-b962-1274021ea93d)を定義します。 タスクは、クエリが評価されるときに開始されます。  
   
      `SumPageSizesAsync` の宣言の後の `urlList` メソッドに、次のコードを追加します。  
   
@@ -119,7 +120,7 @@ ms.lasthandoff: 03/13/2017
   
      `ProcessURLAsync` メソッドは、元のチュートリアルの `SumPageSizesAsync` の `foreach` ループの本体にあるアクションを統合します。 このメソッドは、指定した Web サイトのコンテンツをバイト配列として非同期的にダウンロードし、バイト配列の長さを表示して返します。  
   
-     前の手順の `ProcessURLAsync` メソッドとの唯一の違いは、<xref:System.Net.Http.HttpClient> インスタンス `client` を使用している点です。  
+     前の手順の `ProcessURLAsync` メソッドとの唯一の違いは、<xref:System.Net.Http.HttpClient> インスタンス `client` の使用です。  
   
     ```csharp  
     async Task<int> ProcessURL(string url, HttpClient client)  
@@ -152,7 +153,7 @@ ms.lasthandoff: 03/13/2017
     //}  
     ```  
   
-3.  <xref:System.Linq.Enumerable.ToArray%2A> メソッドによって実行されるときに、各 Web サイトのコンテンツをダウンロードするタスクのコレクションを作成する[クエリ](http://msdn.microsoft.com/library/a73c4aec-5d15-4e98-b962-1274021ea93d)を定義しています。 タスクは、クエリが評価されるときに開始されます。  
+3.  <xref:System.Linq.Enumerable.ToArray%2A> メソッドによって実行されるときに、各 Web サイトのコンテンツをダウンロードするタスクのコレクションを作成する[クエリ](http://msdn.microsoft.com/library/a73c4aec-5d15-4e98-b962-1274021ea93d)を定義します。 タスクは、クエリが評価されるときに開始されます。  
   
      `SumPageSizesAsync` および `client` の宣言の後の `urlList` メソッドに、次のコードを追加します。  
   
@@ -178,7 +179,7 @@ ms.lasthandoff: 03/13/2017
     //int[] lengths = await whenAllTask;  
     ```  
   
-5.  最後に <xref:System.Linq.Enumerable.Sum%2A> メソッドを使って、すべての Web サイトの長さの合計を取得します。 `SumPageSizesAsync` に次の行を追加します。  
+5.  最後に <xref:System.Linq.Enumerable.Sum%2A> メソッドを使って、すべての Web サイトの長さの合計を計算します。 `SumPageSizesAsync` に次の行を追加します。  
   
     ```csharp  
     int total = lengths.Sum();
@@ -453,5 +454,5 @@ namespace AsyncExampleWPF_HttpClient_WhenAll
   
 ## <a name="see-also"></a>関連項目  
  <xref:System.Threading.Tasks.Task.WhenAll%2A?displayProperty=fullName>   
- [チュートリアル: Async と Await を使用した Web へのアクセス (C#)](../../../../csharp/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md)
+ [チュートリアル: async と await を使用した Web へのアクセス (C#)](../../../../csharp/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md)
 

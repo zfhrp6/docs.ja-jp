@@ -1,5 +1,5 @@
 ---
-title: "方法: 属性を使用して C/C++ の共用体を作成する (C#) | Microsoft Docs"
+title: "方法: 属性を使用して C-C++ の共用体を作成する (C#)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -19,10 +19,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: dd6bc60dfd1c6146d8fa72abdcfc6a00006817aa
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 4532829080d994cf4cec92d64a12e3bf1890dc6a
+ms.contentlocale: ja-jp
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="how-to-create-a-cc-union-by-using-attributes-c"></a>方法: 属性を使用して C/C++ の共用体を作成する (C#)
@@ -91,3 +92,4 @@ ms.lasthandoff: 03/13/2017
  [属性 (C#)](../../../../csharp/programming-guide/concepts/attributes/index.md)   
  [カスタム属性の作成 (C#)](../../../../csharp/programming-guide/concepts/attributes/creating-custom-attributes.md)   
  [リフレクションを使用した属性へのアクセス (C#)](../../../../csharp/programming-guide/concepts/attributes/accessing-attributes-by-using-reflection.md)
+

@@ -1,60 +1,80 @@
 ---
-title: "/warnaserror (C# Compiler Options) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.technology: 
-  - "devlang-csharp"
-ms.topic: "article"
-f1_keywords: 
-  - "/warnaserror"
-dev_langs: 
-  - "CSharp"
-helpviewer_keywords: 
-  - "/warnaserror compiler option [C#]"
-  - "-warnaserror compiler option [C#]"
-  - "warnaserror compiler option [C#]"
+title: "-warnaserror (C# コンパイラ オプション)"
+ms.date: 2015-07-20
+ms.prod: .net
+ms.technology:
+- devlang-csharp
+ms.topic: article
+f1_keywords:
+- /warnaserror
+dev_langs:
+- CSharp
+helpviewer_keywords:
+- /warnaserror compiler option [C#]
+- -warnaserror compiler option [C#]
+- warnaserror compiler option [C#]
 ms.assetid: 04680ec3-08d6-4e2e-a274-38310e10e33c
 caps.latest.revision: 15
-author: "BillWagner"
-ms.author: "wiwagn"
-caps.handback.revision: 15
+author: BillWagner
+ms.author: wiwagn
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: df29fd760e0e4a002f1b5078d85370a74f322e23
+ms.contentlocale: ja-jp
+ms.lasthandoff: 07/28/2017
+
 ---
-# /warnaserror (C# Compiler Options)
-**\/warnaserror\+** オプションは、すべての警告をエラーとして扱います。  
+# <a name="warnaserror-c-compiler-options"></a>/warnaserror (C# コンパイラ オプション)
+**/warnaserror+** オプションは、すべての警告をエラーとして扱います  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
-```  
+```console  
 /warnaserror[<U>+</U> | -][:warning-list]  
 ```  
   
-## 解説  
- 通常は警告としてレポートされるメッセージがエラーとしてレポートされ、ビルド処理が中断します。出力ファイルはビルドされません。  
+## <a name="remarks"></a>コメント  
+ 通常は警告として報告されるすべてのメッセージが、代わりにエラーとして報告され、ビルド プロセスが停止します (出力ファイルはビルドされません)。  
   
- 既定では、警告が出力ファイルの生成を妨げない、**\/warnaserror\-** が有効です。  **\/warnaserror\+** と同じ機能を持つ **\/warnaserror** は、警告をエラーとして扱います。  
+ 既定では、**/warnaserror-** が有効になっているため、警告により出力ファイルの生成が妨げられることはありません。 **/warnaserror** は **/warnaserror+** と同じで、警告がエラーとして扱われます。  
   
- また、エラーと見なす警告の番号をコンマ区切りで指定することにより、一部の特定の警告だけをエラーとして扱うこともできます。  
+ 必要に応じて、いくつかの特定の警告のみをエラーとして扱う場合は、エラーとして扱う警告番号のコンマ区切りのリストを指定できます。  
   
- コンパイラで表示する警告のレベルを指定するには、[\/warn](../../../csharp/language-reference/compiler-options/warn-compiler-option.md) を使用します。  特定の警告を無効にするには、[\/nowarn](../../../csharp/language-reference/compiler-options/nowarn-compiler-option.md) を使用します。  
+ コンパイラで表示する警告のレベルを指定するには、[/warn](../../../csharp/language-reference/compiler-options/warn-compiler-option.md) を使用します。 特定の警告を無効にするには、[/nowarn](../../../csharp/language-reference/compiler-options/nowarn-compiler-option.md) を使用します。  
   
-### Visual Studio 開発環境でこのコンパイラ オプションを設定するには  
+### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>Visual Studio 開発環境でこのコンパイラ オプションを設定するには  
   
-1.  プロジェクトの **\[プロパティ\]** ページを開きます。  
+1.  プロジェクトの **[プロパティ]** ページを開きます。  
   
-2.  **\[ビルド\]** プロパティ ページをクリックします。  
+2.  **[ビルド]** プロパティ ページをクリックします。  
   
-3.  **\[警告をエラーとして扱う\]** プロパティを変更します。  
+3.  **警告をエラーとして扱う**プロパティを変更します。  
   
-     このコンパイラ オプションをコードから設定するには、「<xref:VSLangProj80.CSharpProjectConfigurationProperties3.TreatWarningsAsErrors%2A>」を参照してください。  
+     このコンパイラ オプションをプログラムによって設定するには、「<xref:VSLangProj80.CSharpProjectConfigurationProperties3.TreatWarningsAsErrors%2A>」を参照してください。  
   
-## 使用例  
- `in.cs` をコンパイルし、コンパイラで警告を表示しないようにする例を次に示します。  
+## <a name="example"></a>例  
+ `in.cs` をコンパイルして、コンパイラで警告を表示させないようにします。  
   
-```  
+```console  
 csc /warnaserror in.cs  
 csc /warnaserror:642,649,652 in.cs  
 ```  
   
-## 参照  
- [C\# Compiler Options](../../../csharp/language-reference/compiler-options/index.md)   
- [方法 : プロジェクト プロパティおよび構成設定を変更する](http://msdn.microsoft.com/ja-jp/e7184bc5-2f2b-4b4f-aa9a-3ecfcbc48b67)
+## <a name="see-also"></a>関連項目  
+ [C# コンパイラのオプション](../../../csharp/language-reference/compiler-options/index.md)   
+ [プロジェクトおよびソリューションのプロパティの管理](/visualstudio/ide/managing-project-and-solution-properties)
+

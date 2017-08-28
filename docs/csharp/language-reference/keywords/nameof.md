@@ -1,6 +1,6 @@
 ---
-title: "nameof (C# および Visual Basic リファレンス) | Microsoft Docs"
-ms.date: 2017-03-03
+title: "nameof (C# リファレンス)"
+ms.date: 2017-06-16
 ms.prod: .net
 ms.technology:
 - devlang-csharp
@@ -28,14 +28,14 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: dc1c456c71efb3cc6e60a8fdc77384e65975f110
-ms.openlocfilehash: da3fef282ac71de07057131069bf58d4f761ad2d
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: db79af5f38439b881863cf3e03aa0e684ec5cd39
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/15/2017
+ms.lasthandoff: 07/28/2017
 
 ---
-# <a name="nameof-c-and-visual-basic-reference"></a>nameof (C# および Visual Basic リファレンス)
+# <a name="nameof-c-reference"></a>nameof (C# リファレンス)
 
 変数、型、またはメンバーの単純な (修飾されていない) 文字列名を取得するのに使用します。  
 
@@ -122,19 +122,6 @@ nameof(f<>) -> syntax error
 nameof(Method2()) -> error "This expression does not have a name"  
 ```  
   
- 上記のサンプルの多くは、Visual Basic に適用されます。  特定の Visual Basic の例をいくつか示します。  
-  
-```vb  
-NameOf(a!Foo) -> ' error  "This expression does not have a name"  
-NameOf(dict("Foo")) -> ' error  "This expression does not have a name": default property access  
-NameOf(dict.Item("Foo")) -> ' error  "This expression does not have a name"  
-NameOf(arr(2)) -> ' error  "This expression does not have a name": array element index  
-Dim x = Nothing   
-NameOf(x.ToString(2)) -> ' error  "This expression does not have a name"  
-Dim o = Nothing  
-NameOf(o.Equals) -> ' result "Equals".  Warning: "Access of static member of instance; instance will not be evaluated"  
-```  
-  
 ## <a name="remarks"></a>コメント  
  `nameof` への引数は、簡易名、修飾名、メンバー アクセス、メンバーを指定した base アクセス、またはメンバーを指定した this アクセスでなければなりません。  引数の式はコード定義を識別しますが、評価されることはありません。  
   
@@ -165,12 +152,9 @@ class C {
 ## <a name="language-specifications"></a>言語仕様  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
- 詳しくは、「[Visual Basic 言語リファレンス](../../../visual-basic/language-reference/index.md)」をご覧ください。  
-  
 ## <a name="see-also"></a>関連項目  
  [C# リファレンス](../../../csharp/language-reference/index.md)   
  [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
  [typeof](../../../csharp/language-reference/keywords/typeof.md)   
- [Visual Basic 言語リファレンス](../../../visual-basic/language-reference/index.md)   
- [Visual Basic プログラミング ガイド](../../../visual-basic/programming-guide/index.md)
+ 
 

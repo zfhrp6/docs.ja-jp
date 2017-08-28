@@ -1,5 +1,5 @@
 ---
-title: "is (C# リファレンス) | Microsoft Docs"
+title: "is (C# リファレンス)"
 keywords: "is キーワード (C#), is (C#)"
 ms.date: 2017-02-17
 ms.prod: .net
@@ -31,11 +31,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: c0d300dbb47e64d2425f8af3bc6a819b145786fa
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 58b18284b12ca0c636ed3fa923c43d94f202597f
 ms.contentlocale: ja-jp
-ms.lasthandoff: 03/13/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="is-c-reference"></a>is (C# リファレンス) #
@@ -111,7 +111,7 @@ C# 7 以降では、`is` および [switch](../../../csharp/language-reference/k
 
 *exp* が `true` で `is` が `if` ステートメントと共に使用されている場合は *varname* への代入が行われ、そのローカル スコープは `if` ステートメント内に限定されます。
 
-次の例では、`is` 型パターンを使用して型の <xref:System.IComparable.CompareTo(System.Object)?displayProperty=fullName> メソッドを実装しています。
+次の例では、`is` 型のパターンを使用して、型 <xref:System.IComparable.CompareTo(System.Object)?displayProperty=fullName> のメソッドの実装を提供します。
 
 [!code-cs[is#5](../../../../samples/snippets/csharp/language-reference/keywords/is/is-type-pattern5.cs#5)]
 

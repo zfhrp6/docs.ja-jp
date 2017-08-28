@@ -1,5 +1,5 @@
 ---
-title: "-target:library (C# コンパイラ オプション) | Microsoft Docs"
+title: "-target:library (C# コンパイラ オプション)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -31,11 +31,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: f739d778e7bada7f34e42ecfd05364e8cae5d453
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: c54599a3badf65fe6d53f74f71fde58772afa6c2
 ms.contentlocale: ja-jp
-ms.lasthandoff: 03/13/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="targetlibrary-c-compiler-options"></a>/target:library (C# コンパイラ オプション)
@@ -64,7 +64,7 @@ ms.lasthandoff: 03/13/2017
   
 3.  **[出力の種類]** プロパティを変更します。  
   
- このコンパイラ オプションをプログラムで設定する方法については、「<xref:VSLangProj80.ProjectProperties3.OutputType%2A>」を参照してください。  
+ このコンパイラ オプションをプログラムで設定する方法については、「<xref:VSLangProj80.ProjectProperties3.OutputType%2A>」をご覧ください。  
   
 ## <a name="example"></a>例  
  `in.cs` をコンパイルし、`in.dll` を作成するには、次のコードを使用します。  
@@ -76,3 +76,4 @@ csc /target:library in.cs
 ## <a name="see-also"></a>関連項目  
  [/target (C# コンパイラ オプション)](../../../csharp/language-reference/compiler-options/target-compiler-option.md)   
  [C# コンパイラ オプション](../../../csharp/language-reference/compiler-options/index.md)
+

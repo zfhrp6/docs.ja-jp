@@ -1,5 +1,5 @@
 ---
-title: "byte (C# リファレンス) | Microsoft Docs"
+title: "byte (C# リファレンス)"
 ms.date: 2017-03-14
 ms.prod: .net
 ms.technology:
@@ -30,11 +30,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 57c4b1c7ead9386ff4067da5915a55a79f5e562e
-ms.openlocfilehash: fce94687cbf055219913758d49642c8e4a999db3
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 8ef7494e2a8a1463d37cff77d1dacebec8182b66
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/22/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="byte-c-reference"></a>byte (C# リファレンス)
@@ -121,7 +121,7 @@ SampleMethod((byte)5);
  暗黙的な数値変換規則について詳しくは、「[暗黙的な数値変換の一覧表](../../../csharp/language-reference/keywords/implicit-numeric-conversions-table.md)」をご覧ください。  
   
 ## <a name="c-language-specification"></a>C# 言語仕様  
- [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec_md.md)]  
+ [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
 ## <a name="see-also"></a>関連項目  
  <xref:System.Byte>   

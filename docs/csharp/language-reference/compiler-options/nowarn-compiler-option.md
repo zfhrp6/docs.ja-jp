@@ -1,5 +1,5 @@
 ---
-title: "-nowarn (C# コンパイラ オプション) | Microsoft Docs"
+title: "-nowarn (C# コンパイラ オプション)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -31,11 +31,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 34152b6e7247ac112bcc9c725402b8c9a5d631ed
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 3bae7e6d16c044b8f1aeba26de434cdf17479e82
 ms.contentlocale: ja-jp
-ms.lasthandoff: 03/13/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="nowarn-c-compiler-options"></a>/nowarn (C# コンパイラ オプション)
@@ -66,7 +66,7 @@ ms.lasthandoff: 03/13/2017
   
 ### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>Visual Studio 開発環境でこのコンパイラ オプションを設定するには  
   
-1.  プロジェクトの **[プロパティ]** ページを開きます。 詳細については、「[[ビルド] ページ (プロジェクト デザイナー) (C#)](https://docs.microsoft.com/visualstudio/ide/reference/build-page-project-designer-csharp)」を参照してください。  
+1.  プロジェクトの **[プロパティ]** ページを開きます。 詳細については、「[[ビルド] ページ (プロジェクト デザイナー) (C#)](/visualstudio/ide/reference/build-page-project-designer-csharp)」を参照してください。  
   
 2.  **[ビルド]** プロパティ ページをクリックします。  
   
@@ -76,5 +76,6 @@ ms.lasthandoff: 03/13/2017
   
 ## <a name="see-also"></a>関連項目  
  [C# コンパイラのオプション](../../../csharp/language-reference/compiler-options/index.md)   
- [NIB 方法: プロジェクト プロパティと構成設定を変更する](http://msdn.microsoft.com/en-us/e7184bc5-2f2b-4b4f-aa9a-3ecfcbc48b67)   
+ [プロジェクトおよびソリューションのプロパティの管理](/visualstudio/ide/managing-project-and-solution-properties)   
  [C# コンパイラ エラー](../../../csharp/language-reference/compiler-messages/index.md)
+

@@ -1,5 +1,5 @@
 ---
-title: "サンプル XML ファイル: 統合購買発注書 | Microsoft Docs"
+title: "サンプル XML ファイル: 統合購買発注書 2"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -19,14 +19,15 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: da0c55f413bf9ce3bd0b0c353b4cc332b9969c79
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 81699b266e67c006a707a3941349a41189a3b442
+ms.contentlocale: ja-jp
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="sample-xml-file-consolidated-purchase-orders"></a>サンプル XML ファイル : 統合購買発注書
-次の XML ファイルは、[!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)] ドキュメントのさまざまな例で使用されます。 このファイルは、形式の異なる複数企業の購買発注書をまとめたものです。 各企業の購買発注書は、別々の名前空間に含まれています。  
+次の XML ファイルは、[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] ドキュメントのさまざまな例で使用されます。 このファイルは、形式の異なる複数企業の購買発注書をまとめたものです。 各企業の購買発注書は、別々の名前空間に含まれています。  
   
 ## <a name="consolidatedpurchaseordersxml"></a>ConsolidatedPurchaseOrders.xml  
   
@@ -162,3 +163,4 @@ ms.lasthandoff: 03/13/2017
   
 ## <a name="see-also"></a>関連項目  
  [サンプル XML ドキュメント (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-documents-linq-to-xml.md)
+

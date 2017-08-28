@@ -1,5 +1,5 @@
 ---
-title: "decimal (C# リファレンス) | Microsoft Docs"
+title: "decimal (C# リファレンス)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -30,24 +30,24 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: fe32676f0e39ed109a68f39584cf41aec5f5ce90
-ms.openlocfilehash: 336a4a7bb485a48282dd740bafb81421e0cba693
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 4c06d14f01302a21427845d0269fc8181a380914
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/10/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="decimal-c-reference"></a>decimal (C# リファレンス)
-`decimal` キーワードは、128 ビットのデータ型を示します。 `decimal` 型は、浮動小数点型よりも有効桁数が多く、範囲が狭いので、財務や金融の計算に適しています。 `decimal` 型の概算の範囲と有効桁数は、次のとおりです。  
+`decimal` キーワードは、128 ビットのデータ型を示します。 `decimal` 型は、他の浮動小数点型よりも有効桁数が多く、範囲が狭いので、財務や金融の計算に適しています。 `decimal` 型の概算の範囲と有効桁数は、次のとおりです。  
   
 |型|おおよその範囲|有効桁数|.NET Framework 型|  
 |----------|-----------------------|---------------|-------------------------|  
-|`decimal`|(-7.9 x 10<sup>28</sup> ～ 7.9 x 10<sup>28</sup>) / (10<sup>0 ～ 28</sup>)|有効桁数 28 ～ 29|<xref:System.Decimal?displayProperty=fullName>|  
+|`decimal`|(-7.9 x 10<sup>28</sup> ～ 7.9 x 10<sup>28</sup>) / (10<sup>0</sup> ～ 10<sup>28</sup>)|有効桁数 28 ～ 29|<xref:System.Decimal?displayProperty=fullName>|  
   
 ## <a name="literals"></a>リテラル  
  実数値リテラルを `decimal` として扱うには、サフィックス m または M を使用します。次に例を示します。  
   
-```  
+```csharp
 decimal myMoney = 300.5m;  
 ```  
   
@@ -56,19 +56,19 @@ decimal myMoney = 300.5m;
 ## <a name="conversions"></a>変換  
  整数型は、暗黙的に `decimal` に変換され、結果は `decimal` になります。 したがって、サフィックスなしで整数リテラルを使用して 10 進変数を初期化できます。次に例を示します。  
   
-```  
+```csharp
 decimal myMoney = 300;  
 ```  
   
- 浮動小数点型と `decimal` 型の間に暗黙の型変換はありません。2 つの型の間で変換を実行するには、キャストを使用する必要があります。 例:  
+ 他の浮動小数点型と `decimal` 型の間に暗黙の型変換はありません。2 つの型の間で変換を実行するには、キャストを使用する必要があります。 例:  
   
-```  
-      decimal myMoney = 99.9m;  
+```csharp
+decimal myMoney = 99.9m;  
 double x = (double)myMoney;  
 myMoney = (decimal)x;  
 ```  
   
- `decimal` 型と数値の整数型を同じ式に混在させることもできます。 ただし、`decimal` 型と浮動小数点型をキャストなしで混在させると、コンパイル エラーになります。  
+ `decimal` 型と数値の整数型を同じ式に混在させることもできます。 ただし、`decimal` 型と他の浮動小数点型をキャストなしで混在させると、コンパイル エラーになります。  
   
  暗黙的な数値変換の詳細については、「[暗黙的な数値変換の一覧表](../../../csharp/language-reference/keywords/implicit-numeric-conversions-table.md)」を参照してください。  
   
@@ -105,7 +105,7 @@ Console.WriteLine((double)dec + dub);
  [!code-cs[csrefKeywordsTypes#7](../../../csharp/language-reference/keywords/codesnippet/CSharp/decimal_2.cs)]  
   
 ## <a name="c-language-specification"></a>C# 言語仕様  
- [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec_md.md)]  
+ [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
 ## <a name="see-also"></a>関連項目  
  <xref:System.Decimal>   

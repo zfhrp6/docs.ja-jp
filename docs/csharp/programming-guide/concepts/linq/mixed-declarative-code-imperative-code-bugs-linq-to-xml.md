@@ -1,5 +1,5 @@
 ---
-title: "宣言型コードと命令型コードの混在のバグ (LINQ to XML) (C#) | Microsoft Docs"
+title: "宣言型コードと命令型コードの混在のバグ (LINQ to XML) (C#)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -19,14 +19,15 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 747b3462dd6e463a565b27553f241b1ee5171de7
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 2fb679ee2593520e633daba969ccaa4db4d30509
+ms.contentlocale: ja-jp
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="mixed-declarative-codeimperative-code-bugs-linq-to-xml-c"></a>宣言型コードと命令型コードの混在のバグ (LINQ to XML) (C#)
-[!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)] には、XML ツリーを直接変更できるさまざまなメソッドが含まれています。 たとえば、要素の追加、要素の削除、要素の内容の変更、属性の追加などの操作を行うことができます。 このプログラミング インターフェイスについては、「[XML ツリーの変更 (LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/modifying-xml-trees-linq-to-xml.md)」を参照してください。 いずれかの軸 (<xref:System.Xml.Linq.XContainer.Elements%2A> など) を反復処理する場合、その過程で XML ツリーを変更すると、見慣れないバグが発生することがあります。  
+[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] には、XML ツリーを直接変更できるさまざまなメソッドが含まれています。 たとえば、要素の追加、要素の削除、要素の内容の変更、属性の追加などの操作を行うことができます。 このプログラミング インターフェイスについては、「[XML ツリーの変更 (LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/modifying-xml-trees-linq-to-xml.md)」を参照してください。 いずれかの軸 (<xref:System.Xml.Linq.XContainer.Elements%2A> など) を反復処理する場合に、その過程で XML ツリーを変更すると、見慣れないバグが発生することがあります。  
   
  この問題は、"ハロウィーン問題" と呼ばれることがあります。  
   
@@ -62,7 +63,7 @@ foreach (XElement e in root.Elements())
   
  このコードは、無限ループに入ります。 `foreach` ステートメントは、`Elements()` 軸を反復処理して `doc` 要素に新しい要素を追加しますが、 追加した要素も反復処理されることになります。 ループが繰り返されるたびに新しいオブジェクトが割り当てられるため、最後には使用可能なメモリがすべて消費されてしまいます。  
   
- この問題を修正するには、次のように、標準クエリ演算子の <xref:System.Linq.Enumerable.ToList%2A> を使用して、コレクションをメモリに読み込みます。  
+ この問題を修正するには、次のように、標準クエリ演算子の <xref:System.Linq.Enumerable.ToList%2A> を使用してコレクションをメモリに読み込みます。  
   
 ```csharp  
 XElement root = new XElement("Root",  
@@ -186,3 +187,4 @@ Console.WriteLine(newRoot);
   
 ## <a name="see-also"></a>関連項目  
  [高度な LINQ to XML プログラミング (C#)](../../../../csharp/programming-guide/concepts/linq/advanced-linq-to-xml-programming.md)
+

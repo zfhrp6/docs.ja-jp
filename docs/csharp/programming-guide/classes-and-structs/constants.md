@@ -1,5 +1,5 @@
 ---
-title: "定数 (C# プログラミング ガイド) | Microsoft Docs"
+title: "定数 (C# プログラミング ガイド)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -28,11 +28,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: ad6c8119d74be0f178681b334f940ff5c38c05ed
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 85273420e9e0dbf4b8f24568d97be127c85d5f42
 ms.contentlocale: ja-jp
-ms.lasthandoff: 03/13/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="constants-c-programming-guide"></a>定数 (C# プログラミング ガイド)
@@ -59,7 +59,7 @@ ms.lasthandoff: 03/13/2017
   
  [!code-cs[csProgGuideObjects#66](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/constants_3.cs)]  
   
- 定数は、[public](../../../csharp/language-reference/keywords/public.md)、[private](../../../csharp/language-reference/keywords/private.md)、[protected](../../../csharp/language-reference/keywords/protected.md)、[internal](../../../csharp/language-reference/keywords/internal.md)、または `protected``internal` としてマークできます。 これらのアクセス修飾子により、クラスのユーザーが定数にアクセスする方法が定義されます。 詳細については、「[アクセス修飾子](../../../csharp/programming-guide/classes-and-structs/access-modifiers.md)」を参照してください。  
+ 定数は、[public](../../../csharp/language-reference/keywords/public.md)、[private](../../../csharp/language-reference/keywords/private.md)、[protected](../../../csharp/language-reference/keywords/protected.md)、[internal](../../../csharp/language-reference/keywords/internal.md)、または `protected internal` としてマークできます。 これらのアクセス修飾子により、クラスのユーザーが定数にアクセスする方法が定義されます。 詳細については、「[アクセス修飾子](../../../csharp/programming-guide/classes-and-structs/access-modifiers.md)」を参照してください。  
   
  定数の値は型のすべてのインスタンスで同じであるため、定数は[静的](../../../csharp/language-reference/keywords/static.md)フィールドのようにアクセスされます。 定数の宣言に `static` キーワードは使用しません。 定数を定義しているクラスに含まれていない式で定数を使用する場合は、クラス名、ピリオド、定数の名前を使用する必要があります。 例:  
   
@@ -75,3 +75,4 @@ ms.lasthandoff: 03/13/2017
  [型](../../../csharp/programming-guide/types/index.md)   
  [readonly](../../../csharp/language-reference/keywords/readonly.md)   
  [C# の不変性パート 1: 不変性の種類](http://go.microsoft.com/fwlink/?LinkId=112379)
+

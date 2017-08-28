@@ -1,5 +1,5 @@
 ---
-title: "静的クラスと静的クラス メンバー (C# プログラミング ガイド) | Microsoft Docs"
+title: "静的クラスと静的クラス メンバー (C# プログラミング ガイド)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -31,10 +31,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: f93706bb5df41e46c860ca70d131d94015a6348f
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 63f46f9ae35b3c699744f7bf61cad3b08b796509
+ms.contentlocale: ja-jp
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="static-classes-and-static-class-members-c-programming-guide"></a>静的クラスと静的クラス メンバー (C# プログラミング ガイド)
@@ -58,7 +59,7 @@ Console.WriteLine(Math.Round(Math.Abs(dub)));
 // 3  
 ```  
   
- すべてのクラス型の場合と同様に、静的クラスの型情報は、[!INCLUDE[dnprdnshort](../../../csharp/getting-started/includes/dnprdnshort_md.md)] の共通言語ランタイム (CLR) によって、そのクラスを参照しているプログラムが読み込まれるときに読み込まれます。 プログラムでは、クラスが読み込まれるタイミングを正確に指定することはできません。 ただし、クラスがプログラム内で最初に参照される前に、そのクラスが読み込まれ、そのフィールドが初期化され、その静的コンストラクターが呼び出されることが保証されます。 静的コンストラクターは一度だけ呼び出され、静的クラスは、プログラムが存在するアプリケーション ドメインの有効期間にわたってメモリに保持されます。  
+ すべてのクラス型の場合と同様に、静的クラスの型情報は、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] の共通言語ランタイム (CLR) によって、そのクラスを参照しているプログラムが読み込まれるときに読み込まれます。 プログラムでは、クラスが読み込まれるタイミングを正確に指定することはできません。 ただし、クラスがプログラム内で最初に参照される前に、そのクラスが読み込まれ、そのフィールドが初期化され、その静的コンストラクターが呼び出されることが保証されます。 静的コンストラクターは一度だけ呼び出され、静的クラスは、プログラムが存在するアプリケーション ドメインの有効期間にわたってメモリに保持されます。  
   
 > [!NOTE]
 >  インスタンスの作成を 1 つしか許可しない非静的クラスを作成する場合は、「[C# でのシングルトンの実装](http://go.microsoft.com/fwlink/?LinkID=100567)」を参照してください。  
@@ -106,7 +107,7 @@ Console.WriteLine(Math.Round(Math.Abs(dub)));
  静的メソッドの呼び出しでは、Microsoft Intermediate Language (MSIL) の call 命令が生成されます。これに対して、インスタンス メソッドの呼び出しでは `callvirt` 命令が生成され、null オブジェクト参照もチェックされます。 ただし、ほとんどの場合、2 つの間にパフォーマンス上の違いはそれほどありません。  
   
 ## <a name="c-language-specification"></a>C# 言語仕様  
- [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec_md.md)]  
+ [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
 ## <a name="see-also"></a>関連項目  
  [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
@@ -115,3 +116,4 @@ Console.WriteLine(Math.Round(Math.Abs(dub)));
  [class](../../../csharp/language-reference/keywords/class.md)   
  [静的コンストラクター](../../../csharp/programming-guide/classes-and-structs/static-constructors.md)   
  [インスタンス コンストラクター](../../../csharp/programming-guide/classes-and-structs/instance-constructors.md)
+

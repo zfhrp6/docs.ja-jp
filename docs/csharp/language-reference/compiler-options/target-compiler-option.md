@@ -1,5 +1,5 @@
 ---
-title: "-target (C# コンパイラ オプション) | Microsoft Docs"
+title: "-target (C# コンパイラ オプション)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -32,17 +32,18 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 615a0e2993dc78919008e8f9245504a486e2fb77
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 22dc86ce0c0a24681d05e54e5f1ba4f36295659a
+ms.contentlocale: ja-jp
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="target-c-compiler-options"></a>/target (C# コンパイラ オプション)
 **/target** コンパイラ オプションは、次の 6 つの形式のいずれかで指定できます。  
   
  [/target:appcontainerexe](../../../csharp/language-reference/compiler-options/target-appcontainerexe-compiler-option.md)  
- [!INCLUDE[win8_appname_long](../../../csharp/includes/win8_appname_long_md.md)] アプリの .exe ファイルを作成する場合。  
+ [!INCLUDE[win8_appname_long](~/includes/win8-appname-long-md.md)] アプリの .exe ファイルを作成する場合。  
   
  [/target:exe](../../../csharp/language-reference/compiler-options/target-exe-compiler-option.md)  
  .exe ファイルを作成する場合。  
@@ -63,7 +64,7 @@ ms.lasthandoff: 03/13/2017
   
  アセンブリ マニフェストは、コンパイル中の最初の .exe 出力ファイルに配置されます。.exe 出力ファイルがない場合には、最初の DLL ファイルに配置されます。 たとえば、次のコマンド ラインでは、マニフェストは `1.exe` に配置されます。  
   
-```  
+```console  
 csc /out:1.exe t1.cs /out:2.netmodule t2.cs  
 ```  
   
@@ -71,7 +72,7 @@ csc /out:1.exe t1.cs /out:2.netmodule t2.cs
   
  アセンブリを作成する場合は、<xref:System.CLSCompliantAttribute> 属性を使用して、コードのすべてまたは一部が CLS 準拠であることを指定できます。  
   
-```  
+```csharp  
 // target_clscompliant.cs  
 [assembly:System.CLSCompliant(true)]   // specify assembly compliance  
   
@@ -82,9 +83,10 @@ public class TestClass
 }  
 ```  
   
- このコンパイラ オプションをプログラムで設定する方法の詳細については、「<xref:VSLangProj80.ProjectProperties3.OutputType%2A>」を参照してください。  
+ このコンパイラ オプションのプログラムによる設定の詳細については、「<xref:VSLangProj80.ProjectProperties3.OutputType%2A>」を参照してください。  
   
 ## <a name="see-also"></a>関連項目  
  [C# コンパイラのオプション](../../../csharp/language-reference/compiler-options/index.md)   
- [NIB 方法: プロジェクト プロパティと構成設定を変更する](http://msdn.microsoft.com/en-us/e7184bc5-2f2b-4b4f-aa9a-3ecfcbc48b67)   
+ [プロジェクトおよびソリューションのプロパティの管理](/visualstudio/ide/managing-project-and-solution-properties)   
  [/subsystemversion (C# コンパイラ オプション)](../../../csharp/language-reference/compiler-options/subsystemversion-compiler-option.md)
+
