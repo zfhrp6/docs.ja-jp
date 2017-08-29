@@ -31,10 +31,10 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 2722ddad74023cb8c1be86d3a628313a45d35d8a
+ms.sourcegitcommit: 935428cc9442a3e1d15eeb8942176c237bff4e22
+ms.openlocfilehash: 6e87893bcd9800b61297e71b782028fec5116479
 ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
+ms.lasthandoff: 08/22/2017
 
 ---
 # <a name="int-c-reference"></a>int (C# リファレンス)
@@ -49,7 +49,7 @@ ms.lasthandoff: 07/28/2017
  
 `int` 変数を宣言し、10 進リテラル、16 進リテラル、または (C# 7 以降) バイナリ リテラルを割り当てることによって初期化できます。  整数リテラルが `int` の範囲外にある場合 (つまり、<xref:System.Int32.MinValue?displayProperty=fullName> より小さいか、<xref:System.Int32.MaxValue?displayProperty=fullName> より大きい場合)、コンパイル エラーが発生します。 
 
-次の例では、整数 16,342 を 10 進リテラル、16 進リテラル、バイナリ リテラルで表したものが、`int` 値に割り当てられています。  
+次の例では、整数 90,946 を 10 進リテラル、16 進リテラル、バイナリ リテラルで表したものが、`int` 値に割り当てられています。  
   
 [!code-cs[int](../../../../samples/snippets/csharp/language-reference/keywords/numeric-literals.cs#Int)]  
 
