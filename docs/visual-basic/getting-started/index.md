@@ -30,16 +30,22 @@ translation.priority.mt:
 - pt-br
 - tr-tr
 ms.translationtype: HT
-ms.sourcegitcommit: d69fc927565c3bb1c365850875c3c6a1787a1fe7
-ms.openlocfilehash: 3dfa38a495d12bc1e3f301009f4a90d42cbe4754
+ms.sourcegitcommit: 0dc28adab90f56befc925eb895d00a3cd5966928
+ms.openlocfilehash: 75a3d841e8d22e2e8f76dc4c0f900318eb6bf42f
 ms.contentlocale: ja-jp
-ms.lasthandoff: 08/11/2017
+ms.lasthandoff: 08/18/2017
 
 ---
 # <a name="get-started-with-visual-basic"></a>Visual Basic 入門
 このセクションでは、Visual Basic によるアプリケーション開発を開始するための情報を提供します。  
   
-## <a name="in-this-section"></a>このセクションの内容  
+## <a name="get-started-with-visual-basic-and-net-core"></a>Visual Basic と .NET Core 入門
+
+[Visual Studio 2017 での .NET Core を使用した Visual Basic Hello World アプリケーションの構築](../../core/tutorials/vb-with-visual-studio.md)
+
+[Visual Studio 2017 で Visual Basic と .NET Core を使用したクラス ライブラリの構築](../../core/tutorials/vb-library-with-visual-studio.md)  
+
+## <a name="additional-information"></a>追加情報
 
 [Visual Basic の新機能](whats-new.md)   
 Visual Basic .NET の各バージョンの新機能を一覧表示します。
