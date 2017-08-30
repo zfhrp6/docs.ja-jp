@@ -24,11 +24,11 @@ ms.lasthandoff: 08/16/2017
 
 階乗アルゴリズムのローカル関数とラムダ式の実装の違いについて見てみましょう。 まずは、ローカル関数を使用するバージョンです。
 
-[!code-csharp(../../samples/snippets/csharp/new-in-7/MathUtilities.cs#37_LocalFunctionFactorial "ローカル関数を使用する再帰的階乗、")[LocalFunctionFactorial]]
+[!code-csharp[LocalFunctionFactorial](../../samples/snippets/csharp/new-in-7/MathUtilities.cs#37_LocalFunctionFactorial "ローカル関数を使用する再帰的階乗、")]
 
 ラムダ式を使用するバージョンの実装と比較します。
 
-[!code-csharp(../../samples/snippets/csharp/new-in-7/MathUtilities.cs#38_LambdaFactorial "ラムダ式を使用する再帰的階乗、")[26_LambdaFactorial]]
+[!code-csharp[26_LambdaFactorial](../../samples/snippets/csharp/new-in-7/MathUtilities.cs#38_LambdaFactorial "ラムダ式を使用する再帰的階乗、")]
 
 最初に、ラムダ式は、デリゲートをインスタンス化して、そのデリゲートを呼び出すことで実装されます。 ローカル関数は、メソッド呼び出しとして実装されます。
 ラムダ式に必要なインスタンス化では、余分なメモリの割り当てが必要となり、タイム クリティカルなコード パスに影響を与えるパフォーマンス因子となる可能性があります。
