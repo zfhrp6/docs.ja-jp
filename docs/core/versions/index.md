@@ -3,16 +3,16 @@ title: ".NET Core バージョン管理"
 description: ".NET Core でのバージョン管理のしくみについて説明します。"
 author: bleroy
 ms.author: mairaw
-ms.date: 08/11/2017
+ms.date: 08/25/2017
 ms.topic: article
 ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: f6f684b1-1d2c-4105-8376-7c1959e23803
 ms.translationtype: HT
-ms.sourcegitcommit: c5a80e487d4351e0eaf20e510df06999e212e096
-ms.openlocfilehash: d672e93a3e4f70439aa42aef04674500b0b0566d
+ms.sourcegitcommit: 02cfb7708959057de593506db55e4f31f5ab4fd0
+ms.openlocfilehash: 48343ad8d42ad576b1975e81cd764b4ec6f5bc76
 ms.contentlocale: ja-jp
-ms.lasthandoff: 08/14/2017
+ms.lasthandoff: 08/28/2017
 
 ---
 # <a name="net-core-versioning"></a>.NET Core バージョン管理
@@ -103,7 +103,7 @@ dotnet-sdk-2.0.4-ubuntu.16.04-x64.deb               # SDK tools
 
 ##### <a name="preview-versions"></a>プレビュー バージョン
 
-パッケージ管理者は、ランタイムと SDK のプレビュー バージョンを含めるという選択もできます。 それらのプレビュー バージョンはバージョン管理されない `dotnet-sdk` パッケージに含めないでください。ただし、名前のメジャーおよびマイナー バージョン セクションにプレビュー マーカーを追加して、バージョン管理されたパッケージとしてリリースできます。 たとえば、`dotnet-sdk-2.0-preview-1-final` のようなパッケージが可能です。
+パッケージ管理者は、ランタイムと SDK のプレビュー バージョンを含めるという選択もできます。 それらのプレビュー バージョンはバージョン管理されない `dotnet-sdk` パッケージに含めないでください。ただし、名前のメジャーおよびマイナー バージョン セクションにプレビュー マーカーを追加して、バージョン管理されたパッケージとしてリリースできます。 たとえば、`dotnet-sdk-2.0-preview1-final` のようなパッケージが可能です。
 
 ### <a name="docker"></a>Docker
 
@@ -153,7 +153,7 @@ MAJOR.MINOR.PATCH[-PRERELEASE-BUILDNUMBER]
 
 ### <a name="preview-versions"></a>プレビュー バージョン
 
-プレビュー バージョンには、`-preview-[number]-([build]|"final")` がバージョンに追加されます。 たとえば、`2.0.0-preview-1-final` のようにします。
+プレビュー バージョンには、`-preview[number]-([build]|"final")` がバージョンに追加されます。 たとえば、`2.0.0-preview1-final` のようにします。
 
 ### <a name="servicing-versions"></a>サービスのバージョン
 

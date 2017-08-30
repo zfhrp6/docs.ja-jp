@@ -29,10 +29,10 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 4899b3604343925e7e4e0535929d041b1a1f1081
+ms.sourcegitcommit: 1e548df4de2c07934313311a7ffcfae82be76000
+ms.openlocfilehash: de81058173b0985577474e8601aa84d4e83336a5
 ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
+ms.lasthandoff: 08/28/2017
 
 ---
 # <a name="generics-c-programming-guide"></a>ジェネリック (C# プログラミング ガイド)
@@ -72,8 +72,6 @@ ms.lasthandoff: 07/28/2017
 -   [ジェネリック メソッド](../../../csharp/programming-guide/generics/generic-methods.md)  
   
 -   [汎用デリゲート](../../../csharp/programming-guide/generics/generic-delegates.md)  
-  
--   [default キーワード](../../../csharp/programming-guide/generics/default-keyword-in-generic-code.md)  
   
 -   [C++ テンプレートと C# ジェネリックの違い](../../../csharp/programming-guide/generics/differences-between-cpp-templates-and-csharp-generics.md)  
   
