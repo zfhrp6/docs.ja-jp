@@ -1,6 +1,6 @@
 ---
 title: "LINQ (統合言語クエリ)"
-description: "LINQ (統合言語クエリ)"
+description: "LINQ が言語レベルのクエリ機能と、表現力豊かな宣言コードを記述する方法として C# および VB に API を提供する方法を説明します。"
 keywords: .NET, .NET Core
 author: cartermp
 ms.author: wiwagn
@@ -10,10 +10,11 @@ ms.prod: .net
 ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: c00939e1-59e3-4e61-8fe9-08ad6b3f1295
-translationtype: Human Translation
-ms.sourcegitcommit: 90fe68f7f3c4b46502b5d3770b1a2d57c6af748a
-ms.openlocfilehash: 6d9c163255939c3732177ecccb373479ab610447
-ms.lasthandoff: 03/02/2017
+ms.translationtype: HT
+ms.sourcegitcommit: ef6d1bf9a7153f7adf635d13b4dcfb7647ed2e33
+ms.openlocfilehash: 1478b5dc5844cef0abfea44eba88a12801d32bd4
+ms.contentlocale: ja-jp
+ms.lasthandoff: 08/21/2017
 
 ---
 
@@ -29,7 +30,6 @@ LINQ では、言語レベルのクエリ機能と、表現力豊かな宣言コ
 var linqExperts = from p in programmers
                   where p.IsNewToLINQ
                   select new LINQExpert(p);
-
 ```
 
 上記を `IEnumerable<T>` API を使用して表した場合の例:
@@ -37,7 +37,6 @@ var linqExperts = from p in programmers
 ```csharp
 var linqExperts = programmers.Where(p => IsNewToLINQ)
                              .Select(p => new LINQExpert(p));
-
 ```
 
 ## <a name="linq-is-expressive"></a>LINQ は表現力が豊か
@@ -53,7 +52,6 @@ foreach (var pet in pets)
 {
     petLookup.Add(pet.RFID, pet);
 }
-
 ```
 
 コードの目的は、新しい `Dictionary<int, Pet>` を作成し、ループを使用して追加することではなく、既存のリストを辞書に変換することです。 LINQ ではこの目的が維持されますが、命令型コードでは維持されません。
@@ -62,7 +60,6 @@ foreach (var pet in pets)
 
 ```csharp
 var petLookup = pets.ToDictionary(pet => pet.RFID);
-
 ```
 
 プログラマーとして考えると、目的とコードを同等にするため、LINQ を使用するコードのほうが有益です。 また、コードが簡潔であるという利点があります。 上記のように、コードベースの大部分を 3 分の 1 に減らせることを考えれば、 賢明な選択です。
@@ -81,7 +78,6 @@ public static IEnumerable<XElement> FindAllElementsWithAttribute(XElement docume
            where (string)el.Element(attributeName) == value
            select el;
 }
-
 ```
 
 コードを記述して XML ドキュメントを手動でスキャンし、このタスクを実行するのはとても難しいことです。
@@ -94,7 +90,6 @@ XML との対話が、LINQ プロバイダーでできる唯一のことでは�
 
 ```csharp
 var filteredItems = myItems.Where(item => item.Foo);
-
 ```
 
 上の構文は下の構文よりもずっと簡潔です。
@@ -103,7 +98,6 @@ var filteredItems = myItems.Where(item => item.Foo);
 var filteredItems = from item in myItems
                     where item.Foo
                     select item;
-
 ```
 
 API 構文は単に、クエリ構文を実行するより簡潔な方法であるだけでしょうか? 
@@ -151,7 +145,6 @@ var queryCats = from dog in dogs
 // Summing then lengths of a set of strings
 int seed = 0;
 int sumOfStrings = strings.Aggregate(seed, (s1, s2) => s1.Length + s2.Length);
-
 ```
 
 *   リストをまとめてフラット化する場合:
@@ -159,7 +152,6 @@ int sumOfStrings = strings.Aggregate(seed, (s1, s2) => s1.Length + s2.Length);
 ```csharp
 // Transforms the list of kennels into a list of all their dogs.
 var allDogsFromKennels = kennels.SelectMany(kennel => kennel.Dogs);
-
 ```
 
 *   2 つのセットの和集合 (カスタム比較子を含む):
@@ -195,7 +187,6 @@ public class DogHairLengthComparer : IEqualityComparer<Dog>
 
 // Gets all the short-haired dogs between two different kennels
 var allShortHairedDogs = kennel1.Dogs.Union(kennel2.Dogs, new DogHairLengthComparer());
-
 ```
 
 *   2 つのセットの積集合:
@@ -204,7 +195,6 @@ var allShortHairedDogs = kennel1.Dogs.Union(kennel2.Dogs, new DogHairLengthCompa
 // Gets the volunteers who spend share time with two humane societies.
 var volunteers = humaneSociety1.Volunteers.Intersect(humaneSociety2.Volunteers,
                                                      new VolunteerTimeComparer());
-
 ```
 
 *   並べ替え:
@@ -214,10 +204,9 @@ var volunteers = humaneSociety1.Volunteers.Intersect(humaneSociety2.Volunteers,
 var results = DirectionsProcessor.GetDirections(start, end)
               .OrderBy(direction => direction.HasNoTolls)
               .ThenBy(direction => direction.EstimatedTime);
-
 ```
 
-*   最後に、より高度なサンプルを以下に示します。同じ型の&2; つのインスタンスのプロパティ値が等しいかどうかを判断します ([この StackOverflow の投稿](http://stackoverflow.com/a/844855)から借用し、変更したもの)。
+*   最後に、より高度なサンプルを以下に示します。同じ型の 2 つのインスタンスのプロパティ値が等しいかどうかを判断します ([この StackOverflow の投稿](http://stackoverflow.com/a/844855)から借用し、変更したもの)。
 
 ```csharp
 public static bool PublicInstancePropertiesEqual<T>(this T self, T to, params string[] ignore) where T : class
@@ -239,7 +228,6 @@ public static bool PublicInstancePropertiesEqual<T>(this T self, T to, params st
 
     return self == to;
 }
-
 ```
 
 ## <a name="plinq"></a>PLINQ
@@ -260,7 +248,6 @@ public static string GetAllFacebookUserLikesMessage(IEnumerable<FacebookUser> fa
     return facebookUsers.AsParallel()
                         .Aggregate(seed, threadAccumulator, threadResultAccumulator, resultSelector);
 }
-
 ```
 
 このコードでは、必要に応じてシステム スレッドにまたがる `facebookUsers` をパーティション分割し、各スレッドの "いいね!" の数を合計し、スレッドごとの計算結果を合計して、その結果を適切な文字列に投影します。

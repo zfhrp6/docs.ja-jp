@@ -1,76 +1,74 @@
 ---
 title: "サーバー アプリ用 .NET Core と .NET Framework の選択"
-description: ".NET でのサーバー アプリのビルド時に考慮する必要がある .NET の種類に関するガイドです。"
-keywords: .NET, .NET Core, .NET Framework
+description: ".NET でのサーバー アプリのビルド時に考慮する必要がある .NET の実装に関するガイドです。"
 author: cartermp
 ms.author: mairaw
-ms.date: 11/16/2016
+ms.date: 08/15/2016
 ms.topic: article
 ms.prod: .net
-ms.technology: dotnet-standard
-ms.devlang: dotnet
-ms.assetid: 155553e4-89a2-418d-be88-4e75f6c3cc69
-translationtype: Human Translation
-ms.sourcegitcommit: 405bac1faa446687a4acdcf2d5536ee31f31f246
-ms.openlocfilehash: 7151c87d373afce88c83239499ba33980383ab98
-ms.lasthandoff: 03/15/2017
+ms.translationtype: HT
+ms.sourcegitcommit: fe2c7ff4055779a000b68a68333f3e4d06381410
+ms.openlocfilehash: aa06ff8253f22c5c867d4ba12c0a132269e04a97
+ms.contentlocale: ja-jp
+ms.lasthandoff: 08/21/2017
 
 ---
-
 # <a name="choosing-between-net-core-and-net-framework-for-server-apps"></a>サーバー アプリ用 .NET Core と .NET Framework の選択
 
-.NET を使用してサーバー側のアプリケーションをビルドする場合に選択できるサポート対象ランタイムには、.NET Framework と .NET Core の 2 つがあります。 両方で同じ .NET プラットフォーム コンポーネントの多くが共有され、2 つの間でコードを共有することができます。 ただし、2 つには基本的な違いがあり、どちらを選択するかは実行内容によって決まります。  この記事では、それぞれを使用するタイミングに関するガイダンスを提供します。
+.NET を使用してサーバー側のアプリケーションをビルドする場合に選択できるサポート対象の実装には、.NET Framework と .NET Core の 2 つがあります。 この 2 つは多数の同じコンポーネントを共有しているため、両者でコードを共有できます。 ただし、2 つには基本的な違いがあり、どちらを選択するかは実行内容によって決まります。  この記事では、それぞれを使用するタイミングに関するガイダンスを提供します。
 
-次のような場合、サーバー アプリケーションには .NET Core を使用する必要があります。
+次のような場合、サーバー アプリケーションには .NET Core を使用します。
 
 * クロスプラット フォームが必要である。
 * マイクロサービスが対象である。
 * Docker コンテナーを使用している。
 * 高パフォーマンスでスケーラブルなシステムが必要である。
-* アプリケーションごとに異なる .NET バージョンが必要である。
+* 1 つのアプリケーションに複数の .NET バージョンが必要である。
 
-次のような場合、サーバー アプリケーションには .NET Framework を使用する必要があります。
+次のような場合、サーバー アプリケーションには .NET Framework を使用します。
 
-* 現在、アプリケーションで .NET Framework を使用している (移行ではなく拡張することをお勧めします)。
-* .NET Core で使用できないサードパーティ製の .NET ライブラリまたは NuGet パッケージを使用する必要がある。
-* .NET Core で使用できない .NET テクノロジを使用する必要がある。
-* .NET Core をサポートしていないプラットフォームを使用する必要があります。
+* 現在、アプリで .NET Framework を使用している (移行ではなく拡張することをお勧めします)。
+* アプリが .NET Core で使用できないサードパーティ製の .NET ライブラリや NuGet パッケージを使用している。
+* アプリで、.NET Core で使用できない .NET テクノロジを使用している。
+* アプリで、.NET Core をサポートしていないプラットフォームを使用している。
 
 ## <a name="when-to-choose-net-core"></a>どのような場合に .NET Core を選択すべきか
 
-以下に、前述の .NET Core を選択する理由について詳しく説明します。
+以下のセクションで、前述の .NET Core を選択する理由について詳しく説明します。
 
 ### <a name="cross-platform-needs"></a>クロスプラットフォームの必要性
 
-複数のプラットフォーム (Windows、Linux および macOS) でアプリケーション (Web/サービス) を実行できるようにすることが目的であれば、明らかに .NET Core は最良の選択です。
+複数のプラットフォーム (Windows、Linux、macOS ) で実行する必要があるアプリケーション (Web/サービス) の場合は、.NET Core を使用します。
 
-.NET Core では、開発ワークステーションとして前述のオペレーティング システムもサポートします。 Visual Studio では、Windows 用の統合開発環境 (IDE) が提供されます。  Visual Studio コードは、IntelliSense とデバッグを含む、.NET Core を完全にサポートする macOS、Linux および Windows でも使用できます。 また、Sublime、Emacs、VI などのサードパーティ製のほとんどのエディターを .NET Core で使用することができ、オープン ソースの [Omnisharp](http://www.omnisharp.net/) プロジェクトを使用してエディターの IntelliSense を取得できます。 さらに、コード エディターをまったく使用せずに、サポートされているすべてのプラットフォームで利用可能な .NET Core コマンドライン ツールを直接使用することもできます。
+.NET Core は、開発ワークステーションとして前述のオペレーティング システムをサポートしています。 Visual Studio では、Windows および Mac 用の統合開発環境 (IDE) が用意されています。 また、macOS、Linux、および Windows 上で動作する Visual Studio Code も使用できます。 Visual Studio Code は、IntelliSense、デバッグなどの .NET Core をサポートしています。 Sublime、Emacs、VI など、ほとんどのサード パーティ製エディターは、.NET Core で動作します。 これらのサード パーティ製エディターでは、[Omnisharp](http://www.omnisharp.net/) を使用して、エディターを IntelliSense にします。 さらに、コード エディターをまったく使用せずに、サポートされているすべてのプラットフォームで利用可能な [.NET Core CLI ツール](../core/tools/index.md)を直接使用することもできます。
 
 ### <a name="microservices-architecture"></a>マイクロサービス アーキテクチャ
 
-複数の独立した動的にスケーラブルなステートフルまたはステートレス マイクロサービスで構成されるマイクロサービス指向のシステムを採用する場合は、.NET Core が最適です。 .NET Core は軽量で、その API サーフェイスはマイクロサービスのスコープに合わせて最小化することができます。 マイクロサービス アーキテクチャでは、サービスの境界をまたいでテクノロジを混在させることもできます。これにより、.NET Framework、Java、Ruby、またはその他のモノリシック テクノロジで開発された他のマイクロサービスやサービスと連動する新しいマイクロサービスで .NET Core を段階的に採用することができます。
+マイクロサービス アーキテクチャでは、サービスの境界を越えて、複数のテクノロジを組み合わせて使用できます。 このテクノロジの組み合わせによって、他のマイクロサービスやサービスと連携する新しいマイクロサービスに .NET Core を段階的に採用することができます。 たとえば、.NET Framework、Java、Ruby などのモノリシックなテクノロジを使用して開発されたマイクロサービスまたはサービスを組み合わせることができます。
 
-使用できるインフラストラクチャ プラットフォームは多数あります。 大規模で複雑なマイクロサービス システムでは、[Azure Service Fabric](https://azure.microsoft.com/services/service-fabric/) を使用できます。 ステートレス マイクロサービスでは、[Azure App Service](https://azure.microsoft.com/services/app-service/) などの他の製品を使用することもできます。 Docker ベースのマイクロサービスの代替手段は、以下の説明のように、どのような種類のマイクロサービスのアプローチにもフィットします。 これらすべてのプラットフォームでは .NET Core がサポートされるため、マイクロサービスをホストするには最適です。
+使用できるインフラストラクチャ プラットフォームは多数あります。 [Azure Service Fabric](https://azure.microsoft.com/services/service-fabric/) は、大規模で複雑なマイクロサービス システム向けに設計されています。 [Azure App Service](https://azure.microsoft.com/services/app-service/) は、ステートレス マイクロサービスに推奨されます。 「[コンテナー](#containers)」セクションで説明するように、Docker ベースのマイクロサービスの代替手段は、どのような種類のマイクロサービスのアプローチにも適しています。 これらすべてのプラットフォームでは .NET Core がサポートされるため、マイクロサービスをホストするには最適です。
+
+マイクロサービス アーキテクチャの詳細については、「[.NET Microservices:Architecture for Containerized .NET Applications](microservices-architecture/index.md)」(.NET マイクロサービス: コンテナー化された .NET アプリケーションのアーキテクチャ) を参照してください。
 
 ### <a name="containers"></a>コンテナー
 
-一般的に、コンテナーはマイクロサービス アーキテクチャと併用されますが、アーキテクチャ パターンに従う Web アプリやサービスをコンテナー化するために使用することもできます。 Windows コンテナーで .NET Framework を使用できますが、モジュール性があり、軽量な .NET Core はコンテナーには最適です。 コンテナーを作成して展開する場合、そのイメージのサイズは .NET Framework より .NET Core の方がはるかに小さくなります。 また、クロスプラットフォームであるため、Linux Docker コンテナーなどにサーバー アプリを展開することができます。
+通常、コンテナーは、マイクロサービス アーキテクチャと組み合わせて使用されます。 コンテナーは、任意のアーキテクチャ パターンに従う Web アプリやサービスをコンテナー化するためにも使用できます。 Windows コンテナーで .NET Framework を使用できますが、モジュール方式で軽量である .NET Core はコンテナーに適しています。 コンテナーを作成して展開する場合、そのイメージのサイズは .NET Framework より .NET Core の方がはるかに小さくなります。 また、クロスプラットフォームであるため、Linux Docker コンテナーなどにサーバー アプリを展開することができます。
 
-したがって、独自の Linux または Windows インフラストラクチャで Docker コンテナーをホストしたり、クラスターでコンテナー ベースのアプリケーションを管理、オーケストレーションおよびスケーリングできる [Azure Container Service](https://azure.microsoft.com/services/container-service/) などのクラウド サービスを使用したりすることができます。
+Docker コンテナーは、オンプレミスの Linux または Windows インフラストラクチャ、または [Azure Container Service](https://azure.microsoft.com/services/container-service/) などのクラウド サービスでホストできます。 Azure Container Service は、コンテナーベースのアプリケーションの管理、調整、およびスケールをクラウドで行うことができます。
 
 ### <a name="a-need-for-high-performance-and-scalable-systems"></a>高パフォーマンスでスケーラブルなシステムの必要性
 
-システムで考えられる最高のパフォーマンスとスケーラビリティが必要な場合、NET Core と ASP.NET Core が最適です。 ASP.NET Core は ASP.NET よりパフォーマンスが 10 倍優れており、Java サーブレット、Go および node.js などのマイクロサービスの他の一般的な業界テクノロジをリードしています。
+システムで考えられる最高のパフォーマンスとスケーラビリティが必要な場合、NET Core と ASP.NET Core が最適です。 .NET は Windows Server および Linux 向けの高パフォーマンスなサーバー ランタイムであり、[TechEmpower のベンチマーク](https://www.techempower.com/benchmarks/#hw=ph&test=plaintext)で高パフォーマンスの Web フレームワークとして上位に評価されました。
 
-これは、特に何百ものマイクロサービスを実行している可能性があるマイクロサービス アーキテクチャに関連します。 ASP.NET Core を使用することで、はるかに少ない数のサーバー/VM でシステムを実行でき、最終的にインフラストラクチャやホストの費用を節約できます。
+何百ものマイクロサービスが実行される可能性があるマイクロサービス アーキテクチャの場合は特に、パフォーマンスとスケーラビリティが重要です。 ASP.NET Core では、少数のサーバー/仮想マシン (VM) 数でシステムが動作します。 サーバー/VM が減るので、インフラストラクチャとホスティングにかかるコストを節約できます。
 
 ### <a name="a-need-for-side-by-side-of-net-versions-per-application-level"></a>アプリケーション レベルごとに異なる .NET バージョンの必要性
 
-.NET で異なるバージョンのフレームワークへの依存関係を持つアプリケーションをインストールできるようにする場合は、100% 共存可能な .NET Core を使用する必要があります。 同じコンピューター上に異なるバージョンの .NET Core を簡単にサイド バイ サイド インストールできるため、同じサーバーの複数のサービスをそれぞれ別のバージョンの .NET Core で使用できます。これにより、アプリケーションのアップグレードや IT 運用におけるリスクがなくなり、費用を節約できます。
+複数バージョンの .NET に依存するアプリケーションをインストールする場合は、.NET Core をお勧めします。 .NET Core では、同じコンピューター上で、複数バージョンの .NET Core ランタイムのサイド バイ サイド インストールを利用できます。 サイド バイ サイド インストールによって、同じサーバー上で、使用する .NET Core バージョンが異なる複数のサービスを実行できるようになります。 また、アプリケーションのアップグレードと IT 運用に関係するリスクとコストを軽減できます。
 
 ## <a name="when-to-choose-net-framework"></a>どのような場合に .NET Framework を選択すべきか
 
-.NET Core は新しいアプリケーションとアプリケーション パターンには大きな利点がありますが、既存の多くのシナリオでは引き続き .NET Framework が自然な選択肢となります。そのため、すべてのサーバー アプリケーションで .NET Core が代わりに使用されることはありません。
+新しいアプリケーションやアプリケーション パターンの場合は特に .NET Core の利点があります。 一方、多くの既存のシナリオなどについては、今後も .NET Framework が選ばれても不思議ではありません。 どのサーバー アプリケーションでも、.NET Framework は .NET Core に置き換えられません。
 
 ### <a name="current-net-framework-applications"></a>現在の .NET Framework アプリケーション
 
@@ -78,36 +76,41 @@ ms.lasthandoff: 03/15/2017
 
 ### <a name="a-need-to-use-third-party-net-libraries-or-nuget-packages-not-available-for-net-core"></a>.NET Core で使用できないサードパーティ製の .NET ライブラリや NuGet パッケージを使用する必要性
 
-ライブラリでは .NET Standard の採用が迅速に進められています。これにより、.NET Core を含むすべての種類の .NET でコードを共有できるようになります。 .NET Standard 2.0 では、これがさらに容易になります。.NET Core API サーフェイスがかなり大きくなり、.NET Core アプリケーションで既存の .NET Framework ライブラリを直接使用できるようになるためです。 この移行はすぐには行われませんが、いずれにせよ、決定する前に、アプリケーションで必要な特定のライブラリを確認することをお勧めします。
+ライブラリは、短期間で .NET Standard を採用しています。 .NET Standard を使用すると、.NET Core を含め、すべての .NET 実装全体でコードを共有できます。 .NET Standard 2.0 を使用すれば、さらに簡単です。
+- API サーフェスがはるかに大きくなりました。 
+- .NET Framework 互換モードが導入されました。 この互換モードにより、.NET Standard/.NET Core プロジェクトは .NET Framework ライブラリを参照できます。 互換モードの詳細については、「[Announcing .NET Standard 2.0](https://blogs.msdn.microsoft.com/dotnet/2017/08/14/announcing-net-standard-2-0/)」(.NET Standard 2.0 のお知らせ) を参照してください。
+
+そのため、ライブラリまたは NuGet パッケージが、.NET Standard/.NET Core で使用できないテクノロジを使用している場合にのみ、.NET Framework を使用する必要があります。
 
 ### <a name="a-need-to-use-net-technologies-not-available-for-net-core"></a>.NET Core で使用できない .NET テクノロジを使用する必要性
 
-一部の .NET Framework テクノロジは .NET Core では使用できません。 .NET Core の今後のリリースで使用可能になるものもありますが、それ以外は .NET Core の対象となる新しいアプリケーション パターンには適用されず、使用可能にならない可能性があります。 .NET Core 1.0 にはない最も一般的なテクノロジを、以下のリストに示します。
+一部の .NET Framework テクノロジは .NET Core では使用できません。 その一部は、.NET Core の今後のリリースで使用できるようになる可能性があります。 それ以外は .NET Core の対象となる新しいアプリケーション パターンには適用されず、使用可能にならない可能性があります。 .NET Core にはない最も一般的なテクノロジを、以下のリストに示します。
 
-* ASP.NET Web フォーム アプリケーション: ASP.NET Web フォームは .NET Framework でのみ使用可能であるため、このシナリオでは ASP.NET Core/.NET Core を使用することはできません。 現時点では、ASP.NET Web フォームを .NET Core で使用できるようにする予定はありません。
+* ASP.NET Web フォーム アプリケーション: ASP.NET Web フォームは、.NET Framework でのみ使用できます。 ASP.NET Core は、ASP.NET Web フォームに使用できません。 ASP.NET Web フォームが .NET Core で使用できるようになる予定はありません。
 
-* ASP.NET Web ページ アプリケーション: ASP.NET Web ページは ASP.NET Core 1.0 には含まれていませんが、[.NET Core のロードマップ](https://github.com/aspnet/Home/wiki/Roadmap)に関するページの説明のとおり、今度のリリースに含まれる予定です。
+* ASP.NET Web ページ アプリケーション: ASP.NET Web ページは、ASP.NET Core に含まれていません。 ASP.NET Core [Razor ページ](/aspnet/core/mvc/razor-pages/)には、Web ページとの類似点が多数あります。
 
-* ASP.NET SignalR サーバー/クライアントの実装。 .NET Core 1.0 リリース (2016 年 6 月) の時点では、ASP.NET SignalR は ASP.NET Core (クライアントとサーバーの両方) では使用できませんが、[.NET Core のロードマップ](https://github.com/aspnet/Home/wiki/Roadmap)に関するページの説明のとおり、今度のリリースに含まれる予定です。 Preview 版は、[サーバー側](https://github.com/aspnet/SignalR-Server)と[クライアント ライブラリ](https://github.com/aspnet/SignalR-Client-Net)の GitHub リポジトリで利用できます。
+* ASP.NET SignalR サーバー/クライアントの実装。 現時点では、ASP.NET SignalR は ASP.NET Core (クライアントとサーバーの両方) で使用できません。 ASP.NET Core SignalR は ASP.NET Core 2.1 で実装される予定です。 「[ASP.NET Core Schedule and Roadmap](https://github.com/aspnet/Home/wiki/Roadmap)」(ASP.NET Core のスケジュールとロードマップ) を参照してください。 Preview 版は、[サーバー側](https://github.com/aspnet/SignalR-Server)と[クライアント ライブラリ](https://github.com/aspnet/SignalR-Client-Net)の GitHub リポジトリで利用できます。
 
-* WCF サービスの実装。 .NET Core から WCF サービスを利用する [WCF クライアント ライブラリ](https://github.com/dotnet/wcf)がある場合でも、2016 年 6 月の時点では、WCF サーバーの実装は .NET Framework でのみ可能です。 このシナリオは .NET Core の現在の計画に含まれていませんが、将来に向けて検討中です。
+* WCF サービスの実装。 現在のところ、.NET Core から WCF サービスを利用する [WCF クライアント ライブラリ](https://github.com/dotnet/wcf)がある場合でも、WCF サーバーの実装は .NET Framework でのみ可能です。 このシナリオは .NET Core の現在の計画に含まれていませんが、将来に向けて検討中です。
 
-* ワークフローに関連するサービス: .Windows Workflow Foundation (WF)、ワークフロー サービス (1 つのサービスに WCF と WF) および WCF Data Services (旧称: "ADO.NET Data Services") は、NET Framework でのみ使用できます。.NET Core で使用できるようにする予定はありません。
+* ワークフローに関連するサービス: .Windows Workflow Foundation (WF)、ワークフロー サービス (1 つのサービスに WCF と WF) および WCF Data Services (旧称: "ADO.NET Data Services") は、NET Framework でのみ使用できます。  WF/WCF+WF/WCF Data Services を .NET Core に導入する予定はありません。
 
-* Windows Presentation Foundation (WPF) と Windows フォーム: WPF アプリケーションと Windows フォーム アプリケーションは、.NET Framework でのみ使うことができます。 .NET Core に移植する計画はありません。 
+* Windows Presentation Foundation (WPF) と Windows フォーム: WPF アプリケーションと Windows フォーム アプリケーションは、.NET Framework でのみ使うことができます。 .NET Core に移植する計画はありません。
 
-* 言語サポート: 現在、Visual Basic と F# は .NET Core でサポートされていませんが、Visual Studio 2017 以降のバージョンの Visual Studio ではどちらもサポートされる予定です。
+* 言語のサポート: Visual Basic と F# は現在 .NET Core でサポートされていますが、サポートされないプロジェクトの種類もあります。 サポートされるプロジェクト テンプレートの一覧については、[dotnet new のテンプレート オプション](../core/tools/dotnet-new.md#arguments)に関するセクションを参照してください。
 
-正式なロードマップに加え、.NET Core に移植される他のフレームワークもあります。完全なリストについては、[port-to-core](https://github.com/dotnet/corefx/issues?q=is%3Aopen+is%3Aissue+label%3Aport-to-core) というマークの付いた CoreFX の案件を参照してください。 このリストは Microsoft がこれらのコンポーネントを .NET Core に提供することを約束するものではなく、単にコミュニティの要望を取り込んでいるだけであることに注意してください。 上にリストされているコンポーネントが気になる場合には、GitHub でのディスカッションに参加して意見を述べることを検討してください。 また、何か足りないと感じた場合は、[CoreFX リポジトリで新しい案件を作成](https://github.com/dotnet/corefx/issues/new)してください。
+公式のロードマップに加え、.NET Core に移植される予定のフレームワークが他にもあります。 詳細な一覧については、[port-to-core](https://github.com/dotnet/corefx/issues?q=is%3Aopen+is%3Aissue+label%3Aport-to-core) とマークされている CoreFX の論点を参照してください。 この一覧は、Microsoft がそれらのコンポーネントを .NET Core に導入する予定ではありません。 単に、コミュニティからの希望をまとめたものです。 `port-to-core` とマークされているいずれかのコンポーネントに関心がある場合は、GitHub のディスカッションに参加してください。 また、一覧に欠けている点があるとお考えの場合は、[CoreFX リポジトリ](https://github.com/dotnet/corefx/issues/new)に登録してください。
 
 ### <a name="a-need-to-use-a-platform-that-doesnt-support-net-core"></a>.NET Core をサポートしていないプラットフォームを使用する必要性
 
 Microsoft やサードパーティ製のプラットフォームの中には、.NET Core をサポートしないものもあります。 たとえば、Service Fabric のステートフル Reliable Services や Service Fabric Reliable Actors などのいくつかの Azure サービスでは .NET Framework が必要です。 他のいくつかのサービスでは、.NET Core ではまだ使用できない SDK が提供されます。 すべての Azure サービスでは .NET Core を使用しているために、これは過渡的な状況です。 その間、クライアント SDK の代わりに同等の REST API をいつでも使用できます。
 
-## <a name="further-resources"></a>他のリソース
-
-* [.NET Core のガイド](../core/index.md)
-* [.NET Framework から .NET Core への移植](../core/porting/index.md)
-* [Docker 上の .NET Framework のガイド](../framework/index.md)
-* [.NET コンポーネントの概要](components.md)
+## <a name="see-also"></a>関連項目
+ [ASP.NET と ASP.NET Core の選択](/aspnet/core/choose-aspnet-framework)   
+ [.NET Core ガイド](../core/index.md)   
+ [.NET Framework から .NET Core への移植](../core/porting/index.md)   
+ [Docker 上の .NET Framework のガイド](../framework/docker/index.md)   
+ [.NET コンポーネントの概要](components.md)   
+ [.NET マイクロサービス:コンテナー化された .NET アプリケーションのアーキテクチャ](microservices-architecture/index.md)
 

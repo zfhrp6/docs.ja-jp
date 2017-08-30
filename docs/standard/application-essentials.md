@@ -1,24 +1,28 @@
 ---
-title: ".NET Framework アプリケーションの基本事項 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - ".NET Framework の開発"
+title: ".NET Framework アプリケーションの基本事項"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- .NET Framework development
 ms.assetid: 653da4ba-3752-4d1f-a08a-de017dc86ecc
 caps.latest.revision: 19
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 19
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.translationtype: HT
+ms.sourcegitcommit: 318bf7a77748dfcee5f28243409d31e8d3e5c9ff
+ms.openlocfilehash: 00bc12a16418038c74a5e8858a77818e66982727
+ms.contentlocale: ja-jp
+ms.lasthandoff: 08/21/2017
+
 ---
-# .NET Framework アプリケーションの基本事項
+# <a name="net-framework-application-essentials"></a>.NET Framework アプリケーションの基本事項
 .NET Framework ドキュメントのこのセクションでは、.NET Framework での基本的なアプリケーション開発タスクに関する情報を提供します。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
@@ -40,7 +44,7 @@ caps.handback.revision: 19
  [例外](../../docs/standard/exceptions/index.md)  
  .NET Framework が提供するエラー処理および例外処理の基本事項について説明します。  
   
- [ファイルおよびストリームは、O](../../docs/standard/io/index.md)  
+ [ファイルおよびストリーム入出力](../../docs/standard/io/index.md)  
  ファイルやデータ ストリームに対する同期アクセスおよび非同期アクセスの実行方法と、分離ストレージの使用方法について説明します。  
   
  [日付、時刻、およびタイム ゾーン](../../docs/standard/datetime/index.md)  
@@ -49,13 +53,13 @@ caps.handback.revision: 19
  [アプリケーション ドメインとアセンブリ](../../docs/framework/app-domains/index.md)  
  アセンブリとアプリケーション ドメインの作成方法および操作方法について説明します。  
   
- [シリアル化](../../docs/framework/serialization/index.md)  
+ [シリアル化](../../docs/standard/serialization/index.md)  
  オブジェクトの状態を永続化または転送できる形式に変換するプロセスについて説明します。  
   
- [デスクトップ アプリでのリソース](../../docs/framework/resources/index.md)  
+ [デスクトップ アプリケーションのリソース](../../docs/framework/resources/index.md)  
  リソースを作成し格納するための .NET Framework のサポートについて説明します。 また、このセクションでは、ローカライズされたリソースに対するサポートについて説明し、それらローカライズされたリソースのパッケージ化および配置のサテライト アセンブリ リソース モデルについて説明します。  
   
- [グローバリゼーションとローカリゼーション](../../docs/standard/globalization-localization/index.md)  
+ [グローバライズとローカライズ](../../docs/standard/globalization-localization/index.md)  
  国際対応アプリケーションの設計および開発に役立つ情報を提供します。  
   
  ユーザー補助  
@@ -73,3 +77,4 @@ caps.handback.revision: 19
   
  [セキュリティ](../../docs/standard/security/index.md)  
  共通言語ランタイムおよび .NET Framework において安全なアプリケーションの開発を促進するクラスおよびサービスに関する情報を提供します。
+

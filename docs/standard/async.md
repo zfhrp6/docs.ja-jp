@@ -1,6 +1,6 @@
 ---
 title: "非同期の概要"
-description: "非同期の概要"
+description: "ブロッキング I/O と複数コアでの同時操作の処理を容易にする鍵となる手法である非同期プログラミングについて説明します。"
 keywords: .NET, .NET Core
 author: cartermp
 ms.author: wiwagn
@@ -10,10 +10,11 @@ ms.prod: .net
 ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: 1e38e9d9-8284-46ee-a15f-199adc4f26f4
-translationtype: Human Translation
-ms.sourcegitcommit: b967d8e55347f44a012e4ad8e916440ae228c8ec
-ms.openlocfilehash: db4c9721381a9675b06f0fc6b5381d987816e9a4
-ms.lasthandoff: 03/10/2017
+ms.translationtype: HT
+ms.sourcegitcommit: ef6d1bf9a7153f7adf635d13b4dcfb7647ed2e33
+ms.openlocfilehash: bf0cc4ed21c92a57f3f5b2cfa27ac1f054e15172
+ms.contentlocale: ja-jp
+ms.lasthandoff: 08/21/2017
 
 ---
 
@@ -28,7 +29,7 @@ ms.lasthandoff: 03/10/2017
 
 ## <a name="why-write-async-code"></a>非同期コードを記述する理由
 
-最新アプリでは、ファイルおよびネットワーク I/O を広範囲に使用します。 従来の I/O API は既定によりブロックし、困難なパターンを学習して使用しない限り、結果的にユーザー エクスペリエンスとハードウェア使用率が不適切になっていました。 このモデルを逆転させたのが非同期 API と言語レベルの非同期プログラミング モデルであり、非同期実行が既定になりました。これに関して新たに学習する必要がある概念はほとんどありません。
+最新アプリでは、ファイルおよびネットワーク I/O を広範囲に使用します。 従来の I/O API は既定によりブロックし、困難なパターンを学習して使用しない限り、結果的にユーザー エクスペリエンスとハードウェア使用率が不適切になっていました。 このモデルを逆転させたのがタスクベースの非同期 API と言語レベルの非同期プログラミング モデルであり、非同期実行が既定になりました。これに関して新たに学習する必要がある概念はほとんどありません。
 
 非同期コードの特性は次のとおりです。
 
@@ -39,6 +40,5 @@ ms.lasthandoff: 03/10/2017
 
 ## <a name="whats-next"></a>次の内容
 
-非同期の概念とプログラミングの詳細については、「[非同期の詳細](async-in-depth.md)」を参照してください。
-
+非同期の概念とプログラミングの詳細については、「[非同期の詳細](async-in-depth.md)」と「[Task-based asynchronous programming](~/docs/standard/parallel-programming/task-based-asynchronous-programming.md)」(タスクベースの非同期プログラミング) を参照してください。
 

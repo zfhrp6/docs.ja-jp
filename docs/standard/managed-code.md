@@ -1,6 +1,6 @@
 ---
-title: "&quot;マネージ コード&quot; とは"
-description: "&quot;マネージ コード&quot; とは"
+title: "マネージ コードとは"
+description: "ランタイムによって管理されるコードであるマネージ コードが共通言語ランタイム (CLR) によってどのように管理されるかを説明します。"
 keywords: .NET, .NET Core
 author: blackdwarf
 ms.author: mairaw
@@ -10,17 +10,15 @@ ms.prod: .net
 ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: 20bb7ea8-192e-4a96-8ef3-e10e1950fd3d
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 4bd90ac423134c67eb35836d417b09053c98f586
-ms.openlocfilehash: 7f761c4fc24b8d22d8d1f8116745ebb3f6583378
+ms.translationtype: HT
+ms.sourcegitcommit: 3155295489e1188640dae5aa5bf9fdceb7480ed6
+ms.openlocfilehash: 263662c1c7f22c84e0de14c6480fa9807b46b2f2
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/18/2017
+ms.lasthandoff: 08/21/2017
 
 ---
 
-<a id="what-is-managed-code" class="xliff"></a>
-
-# "マネージ コード" とは
+# <a name="what-is-managed-code"></a>"マネージ コード" とは
 
 .NET Framework を使用していると、よく "マネージ コード" という用語を目にすることがあります。 このドキュメントでは、この用語の意味とそれに関する追加の情報について説明します。
 
@@ -28,11 +26,9 @@ ms.lasthandoff: 04/18/2017
 
 これを、"アンマネージ コード" とも呼ばれる C/C++ プログラムを実行する方法と比較します。 アンマネージ環境では、プログラマがほとんどすべてのことを担当します。 実際のプログラムは、基本的に、オペレーティング システム (OS) がメモリに読み込み、起動するバイナリです。 メモリ管理からセキュリティの考慮事項まで、他のすべてのことをプログラマが担当します。
 
-マネージ コードは C#、Visual Basic、F# など、.NET プラットフォーム上で実行可能な高水準言語のいずれかで記述されます。 それらの言語で書かれたコードをそれぞれのコンパイラでコンパイルした場合、マシン コードは得られません。 **中間言語**コードが得られ、それをランタイムがコンパイルして実行します。 C++ は、Windows で実行するネイティブなアンマネージ バイナリも生成できるため、この規則の 1 つの例外です。
+マネージ コードは C#、Visual Basic、F# など、.NET 上で実行可能な高水準言語のいずれかで記述されます。 それらの言語で書かれたコードをそれぞれのコンパイラでコンパイルした場合、マシン コードは得られません。 **中間言語**コードが得られ、それをランタイムがコンパイルして実行します。 C++ は、Windows で実行するネイティブなアンマネージ バイナリも生成できるため、この規則の 1 つの例外です。
 
-<a id="intermediate-language--execution" class="xliff"></a>
-
-## 中間言語と実行
+## <a name="intermediate-language--execution"></a>中間言語と実行
 
 "中間言語" (または略して IL) とは それは、高水準 .NET 言語で記述されたコードのコンパイルの成果物です。 これらの言語のいずれかで記述されたコードをコンパイルすると、IL で構成されたバイナリが得られます。 IL はランタイムで実行される特定の言語に依存しないことに注意してください。それについて個別の仕様もあるため、参照することができます。
 
@@ -40,17 +36,13 @@ ms.lasthandoff: 04/18/2017
 
 中間言語は、共通中間言語 (CIL) または Microsoft Intermediate Language (MSIL) と呼ばれることもあります。
 
-<a id="unmanaged-code-interoperability" class="xliff"></a>
-
-## アンマネージ コードの相互運用性
+## <a name="unmanaged-code-interoperability"></a>アンマネージ コードの相互運用性
 
 もちろん、CLR は、マネージ環境とアンマネージ環境間の境界を越えることができ、[基本クラス ライブラリ](framework-libraries.md)にも、それを行う多くのコードがあります。 これは**相互運用性 (interoperability)** または略して **相互運用 (interop)** と呼ばれます。 これらのプロビジョニングにより、たとえばアンマネージ ライブラリをラップし、それを呼び出すことができます。 ただし、これを実行すると、コードがランタイムの境界を越えたときに、実行の実際の管理が再びアンマネージ コードの担当になるため、同じ制限が課せられることになります。
 
 これと同様に、C# は、実行が CLR によって管理されないコードの一部を指定する**アンセーフ コンテキスト**として知られる機能を使用して、コード内の直接のポインターなど、アンマネージ コンストラクトを使用できる 1 つの言語です。
 
-<a id="more-resources" class="xliff"></a>
-
-## その他のリソース
+## <a name="more-resources"></a>その他のリソース
 
 *   [.NET framework の概念の概要](https://msdn.microsoft.com/library/zw4w595w.aspx)
 *   [アンセーフ コードとポインター](https://msdn.microsoft.com/library/t2yzs44b.aspx)

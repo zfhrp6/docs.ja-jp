@@ -1,86 +1,102 @@
 ---
 title: ".NET アーキテクチャ コンポーネント"
-description: ".NET Standard Library、.NET ランタイム、ツールなど、主要な .NET アーキテクチャ コンポーネントについて説明します。"
-keywords: ".NET, .NET Standard Library, .NET Standard, .NET Core, .NET Framework, Xamarin, MSBuild, C#, F#, VB, コンパイラ"
+description: ".NET Standard、.NET 実装、.NET ランタイム、ツールなど、.NET アーキテクチャ コンポーネントについて説明します。"
+keywords: ".NET, .NET Standard, .NET Core, .NET Framework, Mono, Xamarin, MSBuild, C#, F#, VB, コンパイラ"
 author: cartermp
 ms.author: mairaw
-ms.date: 11/16/2016
+ms.date: 08/10/2017
 ms.topic: article
 ms.prod: .net
 ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: 2e38e9d9-8284-46ee-a15f-199adc4f26f4
-translationtype: Human Translation
-ms.sourcegitcommit: 7741df222250f3746abb1e3c359bd9e89e6a732c
-ms.openlocfilehash: e93764ff4d3391110c79f73a34512bd073ce0499
-ms.lasthandoff: 01/18/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 14522f165b22a7b1bb2a717a7c9f293a265f4eb0
+ms.openlocfilehash: 8934febe77b30fb318b06e4d8d297282368438a5
+ms.contentlocale: ja-jp
+ms.lasthandoff: 08/21/2017
 
 ---
 
 # <a name="net-architectural-components"></a>.NET アーキテクチャ コンポーネント
 
-.NET は複数の主要コンポーネントで構成されています。  .NET Standard Library という名前の標準ライブラリは、どこでも実行できる大規模な API のセットです。  この標準ライブラリは、3 つの .NET ランタイム、つまり .NET Framework、.NET Core、Mono for Xamarin で実装されています。  また、.NET 言語はどの .NET ランタイムでも実行します。  さらに、すべてのプラットフォームにプロジェクトをビルドするためのツールがあります。  これらのツールは、どのランタイムを選んでも同じです。
+.NET アプリは、1 つまたは複数の *.NET 実装*向けに開発され、実行されます。  .NET 実装には、.NET Framework、.NET Core、および Mono が含まれます。 すべての .NET 実装に共通する API 仕様があり、それを.NET Standard と呼びます。 この記事では、それぞれの概念について簡単に説明します。
 
-次の図は、これまでに説明した .NET の各コンポーネントの概要とそれらの関係を示したものです。
+## <a name="net-standard"></a>.NET Standard
 
-![すべての .NET アーキテクチャ コンポーネント](media/components.png)
+.NET Standard は、.NET 実装の基本クラス ライブラリで実装されている API のセットです。 さらに厳密に言うと、コードのコンパイル対象である統一されたコントラクトのセットを構成する .NET API の仕様です。 これらのコントラクトが各 .NET 実装に実装されています。 これにより異なる .NET 実装間で移植することができるため、実質的にコードをどこでも実行できるようになります。
 
-以降では、これらの主要コンポーネントのそれぞれについて簡単に説明します。  
+.NET Standard は、[ターゲット フレームワーク](glossary.md#target-framework)でもあります。 コードが .NET Standard のバージョンをターゲットにする場合、.NET Standard のそのバージョンをサポートするすべての .NET 実装でそのコードを実行できます。
 
-## <a name="net-standard-library"></a>.NET Standard Library
+.NET Standard とそのターゲットの設定方法については、「[.NET Standard](net-standard.md)」を参照してください。
 
-.NET Standard Library は、.NET ランタイムによって実装される API のセットです。
+## <a name="net-implementations"></a>.NET 実装
 
-さらに厳密に言うと、コードのコンパイル対象である統一されたコントラクトのセットを構成する .NET API の仕様です。  これらのコントラクトには、各 .NET ランタイムの基になる実装があります。  これにより異なる .NET ランタイム間の移植性が可能になり、コードは効率的に "どこでも実行" できるようになります。
+各 .NET 実装には、次のコンポーネントが含まれています。
 
-.NET Standard Library はビルド ターゲットでもあり、.NET Standard と呼ばれます。  現在は .NET Standard 1.0 ～ 1.6 を対象にできます。  コードが .NET Standard のバージョンを対象にする場合、そのバージョンを実装するすべての .NET ランタイムで動作することが保証されます。
+- 1 つまたは複数のランタイム。 たとえば、CLR for .NET Framework、CoreCLR、CoreRT for .NET Core などです。
+- .NET Standard を実装し、他の API も実装する可能性があるクラス ライブラリ。 たとえば、.NET Framework 基本クラス ライブラリや .NET Core 基本クラス ライブラリなどです。
+- 必要に応じて、1 つまたは複数のアプリケーション フレームワーク。 たとえば、.NET Framework には、[ASP.NET](https://www.asp.net/)、[Windows フォーム](../framework/winforms/windows-forms-overview.md)、[Windows Presentation Foundation (WPF)](../framework/wpf/index.md) などです。
+- 必要に応じて、開発ツール。 一部の開発ツールは、複数の実装間で共有されます。
 
-.NET Standard Library および .NET Standard の対象化の詳細については、「[.NET Standard Library](library.md)」をご覧ください。
-
-## <a name="net-runtimes"></a>.NET ランタイム
-
-Microsoft が積極的に開発し保守している主要な .NET ランタイムとしては、.NET Core、.NET Framework、Mono for Xamarin の 3 つがあります。
+Microsoft が積極的に開発し保守している主要な .NET 実装としては、.NET Core、.NET Framework、Mono、UWP の 4 つがあります。
 
 ### <a name="net-core"></a>.NET Core
 
-.NET Core は、サーバーのワークロード用に最適化されたクロスプラットフォーム ランタイムです。  .NET Standard Library を実装しているので、.NET Standard を対象とするすべてのコードが .NET Core 上で実行できます。  ASP.NET Core およびユニバーサル Windows プラットフォーム (UWP) で使用されるランタイムです。  最新の機能を備え、効率的であり、大規模なサーバーとクラウドのワークロードを処理するように設計されています。
+.NET Core は、サーバーのワークロード用に最適化されたクロスプラットフォームの .NET 実装です。 最新の機能を備え、効率的であり、大規模なサーバーとクラウドのワークロードを処理するように設計されています。 .NET Standard を実装しているので、.NET Standard をターゲットとするすべてのコードを .NET Core 上で実行できます。 ASP.NET Core は、.NET Core 上で実行されます。
 
 .NET Core について詳しくは、「[.NET Core](../core/index.md)」をご覧ください。
 
 ### <a name="net-framework"></a>.NET Framework
 
-.NET Framework は従来の .NET ランタイムであり、2002 年から使用されています。  既存の .NET 開発者が常に使用してきたものと同じ .NET Framework です。  .NET Standard Library を実装しているので、.NET Standard を対象とするすべてのコードが .NET Framework 上で実行できます。  Windows フォームと WPF での Windows デスクトップ開発用 API など、追加の Windows 固有 API が含まれます。  .NET Framework は、Windows デスクトップ アプリケーション開発用に最適化されています。
+.Net Framework は、2002 年からリリースされている元の .NET 実装です。 既存の .NET 開発者が常に使用してきたものと同じ .NET Framework です。 バージョン 4.5 以降では .NET Standard を実装しているので、.NET Standard をターゲットとするすべてのコードが .NET Framework 4.5 以降で実行できます。 Windows フォームと WPF での Windows デスクトップ開発用 API など、追加の Windows 固有 API が含まれます。 .NET Framework は、Windows デスクトップ アプリケーション開発用に最適化されています。
 
 .NET Framework について詳しくは、「[.NET Framework](../framework/index.md)」をご覧ください。
 
-### <a name="mono-for-xamarin"></a>Mono for Xamarin
+### <a name="mono"></a>Mono
 
-Mono は、Xamarin アプリで使われるランタイムです。  .NET Standard Library を実装しているので、.NET Standard を対象とするすべてのコードが Xamarin アプリ上で実行できます。  iOS、Android、Xamarin.Forms、Xamarin.Mac 用の追加 API が含まれます。  iOS および Android でのモバイル アプリケーションの開発に最適化されています。
+Mono は、主に小規模なランタイムが必要な場合に使用される .NET 実装です。 Android、Mac、iOS、tvOS、および watchOS 上の Xamarin アプリケーションで利用されるランタイムで、フットプリントが小さいことに重点を置いています。
+
+現在公開されているすべての .NET Standard バージョンをサポートしています。
+
+これまで Mono は .NET Framework の多数の API を実装し、Unix で人気の高い機能の一部をエミュレートしていました。 また、Unix のそのような機能に依存する .NET アプリケーションを実行するために使用されることもあります。
+
+一般的に Mono は、Just-In-Time コンパイラと共に使用されますが、iOS のようなプラットフォームに使用される完全な静的コンパイラ (Ahead Of Time コンパイル) としても機能します。
 
 Mono について詳しくは、[Mono のドキュメント](http://www.mono-project.com/docs/)をご覧ください。
 
+### <a name="universal-windows-platform-uwp"></a>ユニバーサル Windows プラットフォーム (UWP)
+
+UWP は、モノのインターネット (IoT) 用に最新のタッチ対応の Windows アプリケーションとソフトウェアを構築するために使われる .NET 実装です。 PC、タブレット、ファブレット、携帯電話、Xbox など、ターゲットにする可能性があるさまざまな種類のデバイスを統一するように設計されています。 UWP は、一元的なアプリ ストア、実行環境 (AppContainer)、Win32 の代わりに使う Windows API のセット (WinRT) など、多くのサービスを提供します。 アプリは、C++、C#、VB.NET、および JavaScript で記述することができます。 C# と VB.NET を使うときは、.NET Core によって .NET API が提供されます。
+
+UWP の詳細については、「[ユニバーサル Windows プラットフォームの紹介](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide)」を参照してください。
+
+## <a name="net-runtimes"></a>.NET ランタイム
+
+ランタイムは、マネージ プログラムの実行環境です。 OS は、ランタイム環境の一部ですが、.NET ランタイムの一部ではありません。 .NET ランタイムの例を次に示します。
+ 
+ - .NET Framework 用共通言語ランタイム (CLR)
+ - .NET Core 用共通言語ランタイム (CoreCLR)
+ - ユニバーサル Windows プラットフォーム用 .NET Native 
+ - Xamarin.iOS、Xamarin.Android、Xamarin.Mac、Mono デスクトップ フレームワーク用ランタイム
+
 ## <a name="net-tooling-and-common-infrastructure"></a>.NET のツールと共通インフラストラクチャ
 
-.NET 用のツールは、.NET の各実装に共通でもあります。  次に一例を挙げます。
+すべての .NET 実装と連携する多様なツールやインフラストラクチャ コンポーネントにアクセスできます。 その一部を次に示します。
 
-* .NET 言語とコンパイラ
-* JIT やガベージ コレクターなどのランタイム コンポーネント
-* .NET プロジェクト システム ("csproj"、"vbproj"、"fsproj" などと呼ばれることもあります)
-* プロジェクトのビルドに使われるビルド エンジンである MSBuild
-* Microsoft の .NET 用パッケージ マネージャーである NuGet
-* .NET プロジェクト開発用のクロスプラットフォーム コマンドライン インターフェイスである .NET CLI
-* オープン ソースのビルド オーケストレーション ツール (CAKE、FAKE など)
+- .NET 言語とコンパイラ
+- .NET プロジェクト システム (*.csproj*、*.vbproj*、および*.fsproj* ファイルに基づく)
+- [MSBuild](/visualstudio/msbuild/msbuild) (プロジェクトのビルドに使用されるビルド エンジン)
+- [NuGet](/nuget/) (Microsoft の .NET 用パッケージ マネージャー)
+- オープン ソースのビルド オーケストレーション ツール ([CAKE](http://cakebuild.net/)、[FAKE](https://fake.build/) など)
 
-ここで重要なのは、アプリ開発に .NET のどの "フレーバー" を選択しても共通のツールとインフラストラクチャが多数存在することです。
+## <a name="see-also"></a>関連項目
 
-## <a name="next-steps"></a>次の手順
+[.NET Standard](net-standard.md)  
+[.NET Core のガイド](../core/index.md)  
+[.NET Framework ガイド](../framework/index.md)  
+[C# のガイド](../csharp/index.md)  
+[F# のガイド](../fsharp/index.md)  
+[VB.NET ガイド](../visual-basic/index.md)  
 
-詳細については、次のトピックを参照してください。
-
-* [.NET 標準ライブラリ](library.md)
-* [.NET Core のガイド](../core/index.md)
-* [.NET Framework ガイド](../framework/index.md)
-* [C# のガイド](../csharp/index.md)
-* [F# のガイド](../fsharp/index.md)
-* [VB.NET ガイド](../visual-basic/index.md)
 

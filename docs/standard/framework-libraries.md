@@ -1,6 +1,6 @@
 ---
 title: "フレームワーク ライブラリ"
-description: "フレームワーク ライブラリ"
+description: "多くの一般的な型、アプリ固有の型、アルゴリズム、ユーティリティの機能の実装を提供しているライブラリについて説明します。"
 keywords: .NET, .NET Core
 author: richlander
 ms.author: ronpet
@@ -10,9 +10,11 @@ ms.prod: .net
 ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: 7b77b6c1-8367-4602-bff3-91e4c05ac643
-translationtype: Human Translation
-ms.sourcegitcommit: 9df468c7225dbf1e3317ea34bd8b2285361a69f4
-ms.openlocfilehash: f14e6552b2f59694f5cf877ee8ab76ffa026f18f
+ms.translationtype: HT
+ms.sourcegitcommit: 934373d61407c8cc19b7d6424898a582880f9c21
+ms.openlocfilehash: 9c38237a8e729155c443298814f4c98bec61016b
+ms.contentlocale: ja-jp
+ms.lasthandoff: 08/21/2017
 
 ---
 
@@ -30,42 +32,37 @@ BCL は最も基本的な型およびユーティリティの機能を提供し�
 
 .NET には、すべてのプログラムで (さまざまな程度で) 使用されるプリミティブ型のセットが含まれています。 これらの型には、数値、文字列、バイト、および任意のオブジェクトなどのデータが含まれています。 C# 言語には、これらの型のキーワードが含まれています。 これらの型のサンプル セットを、一致する C# キーワードとともに以下に示します。
 
-* [System.Object](https://msdn.microsoft.com/library/system.object.aspx) ([object](https://msdn.microsoft.com/library/9kkx3h3c.aspx)): CLR 型システムの基底クラス。 型階層のルートです。
-* [System.Int16](https://msdn.microsoft.com/library/system.int16.aspx) ([short](https://msdn.microsoft.com/library/ybs77ex4.aspx)): 16 ビットの符号付き整数型。 符号なしの [UInt16](https://msdn.microsoft.com/library/system.uint16.aspx) も存在します。
-* [System.Int32](https://msdn.microsoft.com/library/system.int32.aspx) ([int](https://msdn.microsoft.com/library/5kzh1b5w.aspx)): 32 ビットの符号付き整数型。 符号なしの [UInt32](https://msdn.microsoft.com/library/x0sksh43.aspx) も存在します。
-* [System.Single](https://msdn.microsoft.com/library/system.single.aspx) ([float](https://msdn.microsoft.com/library/b1e65aza.aspx)): 32 ビット浮動小数点型。
-* [System.Decimal](https://msdn.microsoft.com/library/system.decimal.aspx) ([decimal](https://msdn.microsoft.com/library/364x0z75.aspx)): 128 ビットの 10 進数型。
-* [System.Byte](https://msdn.microsoft.com/library/system.byte.aspx) ([byte](https://msdn.microsoft.com/library/5bdb6693.aspx)): メモリのバイトを表す符号なし 8 ビット整数。
-* [System.Boolean](https://msdn.microsoft.com/library/system.boolean.aspx) ([bool](https://msdn.microsoft.com/library/c8f5xwh7.aspx)): 'true' または 'false' を表すブール型。
-* [System.Char](https://msdn.microsoft.com/library/system.char.aspx) ([char](https://msdn.microsoft.com/library/x9h8tsay.aspx)): Unicode 文字を表す 16 ビットの数値型。
-* [System.String](https://msdn.microsoft.com/library/system.string.aspx) ([string](https://msdn.microsoft.com/library/362314fe.aspx)): 一連の文字を表します。 `char[]` とは異なりますが、`string` で各 `char` にインデックスを付けることができます。
+* <xref:System.Object?displayProperty=fullName> ([object](../csharp/language-reference/keywords/object.md)): CLR 型システムの最も基本の基底クラス。 型階層のルートです。
+* <xref:System.Int16?displayProperty=fullName> ([short](../csharp/language-reference/keywords/short.md)): 16 ビットの符号付き整数型。 符号なしの <xref:System.UInt16> も存在します。
+* <xref:System.Int32?displayProperty=fullName> ([int](../csharp/language-reference/keywords/int.md)): 32 ビットの符号付き整数型。 符号なしの [UInt32](../csharp/language-reference/keywords/uint.md) も存在します。
+* <xref:System.Single?displayProperty=fullName> ([float](../csharp/language-reference/keywords/float.md)): 32 ビット浮動小数点型。
+* <xref:System.Decimal?displayProperty=fullName> ([decimal](../csharp/language-reference/keywords/decimal.md)): 128 ビットの 10 進数型。
+* <xref:System.Byte?displayProperty=fullName> ([byte](../csharp/language-reference/keywords/byte.md)): メモリのバイトを表す符号なし 8 ビット整数。
+* <xref:System.Boolean?displayProperty=fullName> ([bool](../csharp/language-reference/keywords/bool.md)): `true` または `false` を表すブール型。
+* <xref:System.Char?displayProperty=fullName> ([char](../csharp/language-reference/keywords/char.md)): Unicode 文字を表す 16 ビットの数値型。
+* <xref:System.String?displayProperty=fullName> ([string](../csharp/language-reference/keywords/string.md)): 一連の文字を表します。 `char[]` とは異なりますが、`string` で各 `char` にインデックスを付けることができます。
 
 ## <a name="data-structures"></a>データ構造
 
 .NET には、ほとんどの .NET アプリの主力となるデータ構造体のセットが含まれています。 これらはほとんどがコレクションですが、その他の型も含まれています。
 
-*   [Array](https://msdn.microsoft.com/library/system.array.aspx): インデックスを使用してアクセスできる、厳密に型指定されたオブジェクトの配列を表します。 その構造ごとの固定サイズがあります。
-*   [List](https://msdn.microsoft.com/library/6sh2ey19.aspx): インデックスを使用してアクセスできる、厳密に型指定されたオブジェクトのリストを表します。 必要に応じてサイズを自動調整します。
-*   [Dictionary](https://msdn.microsoft.com/library/xfhwa508.aspx): -キーによってインデックスが作成される値のコレクションを表します。 値は、キーを使用してアクセスできます。 必要に応じてサイズを自動調整します。
-*   [Uri](https://msdn.microsoft.com/library/system.uri.aspx): オブジェクト表現を可能にし、URI (Uniform Resource Identifier) の一部へ簡単にアクセスできるようにします。
-*   [DateTime](https://msdn.microsoft.com/library/system.datetime.aspx): 通常、日付や時刻として表現される瞬間を表します。
+*   <xref:System.Array>: インデックスを使用してアクセスできる、厳密に型指定されたオブジェクトの配列を表します。 その構造ごとの固定サイズがあります。
+*   <xref:System.Collections.Generic.List%601>: インデックスを使用してアクセスできる、厳密に型指定されたオブジェクトのリストを表します。 必要に応じてサイズを自動調整します。
+*   <xref:System.Collections.Generic.Dictionary%602>: キーによってインデックスが作成される値のコレクションを表します。 値は、キーを使用してアクセスできます。 必要に応じてサイズを自動調整します。
+*   <xref:System.Uri>: URI (Uniform Resource Identifier) のオブジェクト表現を可能にし、URI の一部へ簡単にアクセスできるようにします。
+*   <xref:System.DateTime>: 通常、日付や時刻として表現される瞬間を表します。
 
 ## <a name="utility-apis"></a>ユーティリティ API
 
 .NET には多くの重要なタスクの機能を提供するユーティリティ API のセットが含まれています。
 
-*   [HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient.aspx): URI で識別されるリソースに HTTP 要求を送信し、そのリソースから HTTP 応答を受信するための基底クラスを提供する API です。
-*   [XDocument](https://msdn.microsoft.com/library/system.xml.linq.xdocument.aspx): LINQ を使用して XML ドキュメントのロードと照会をするための API です。
-*   [StreamReader](https://msdn.microsoft.com/library/system.io.streamreader.aspx): ファイル ([StreamWriter](https://msdn.microsoft.com/library/system.io.stringwriter.aspx)) を読み取るための API です。ファイルの書き込みに使用できます。
+*   <xref:System.Net.Http.HttpClient>: URI で識別されるリソースに HTTP 要求を送信し、そのリソースから HTTP 応答を受信するための基底クラスを提供する API です。
+*   <xref:System.Xml.Linq.XDocument>: LINQ を使用して XML ドキュメントのロードと照会をするための API です。
+*   <xref:System.IO.StreamReader>: ファイル (<xref:System.IO.StringWriter>) を読み取るための API です。ファイルの書き込みに使用できます。
 
 ## <a name="app-model-apis"></a>アプリ モデル API
 
 .NET で使用できる多くのアプリ モデルが、複数の企業から提供されています。
 
 *   [ASP.NET](http://asp.net): Web サイトとサービスを構築するための Web フレームワークを提供します。 Windows、Linux、macOS でサポートされます (ASP.NET のバージョンによって異なります)。
-
-
-
-<!--HONumber=Jan17_HO3-->
-
 
