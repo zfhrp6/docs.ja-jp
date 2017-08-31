@@ -31,10 +31,10 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 291c35f73b47167289a88f0b7655c26699fdc009
+ms.sourcegitcommit: 8e8d01587ccde967b8484b3b61916f8cf437f6c0
+ms.openlocfilehash: 8a32dcab0a64fdb715871806088825e227f08abb
 ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
+ms.lasthandoff: 08/14/2017
 
 ---
 # <a name="c-compiler-options-listed-alphabetically"></a>アルファベット順の C# コンパイラ オプションの一覧
@@ -85,6 +85,8 @@ ms.lasthandoff: 07/28/2017
 |[/preferreduilang](../../../csharp/language-reference/compiler-options/preferreduilang-compiler-option.md)|コンパイラの出力に使用する言語を指定します。|  
 |[/recurse](../../../csharp/language-reference/compiler-options/recurse-compiler-option.md)|ワイルドカードの指定に従い、現在のディレクトリとサブディレクトリ内のすべてのファイルをインクルードします。|  
 |[/reference](../../../csharp/language-reference/compiler-options/reference-compiler-option.md)|指定されたアセンブリ ファイルからメタデータを参照します。|  
+|[/refout](refout-compiler-option.md)|プライマリ アセンブリだけでなく、参照アセンブリを生成します。|  
+|[/refonly](refonly-compiler-option.md)|プライマリ アセンブリの代わりに、参照アセンブリを生成します。|  
 |[/resource](../../../csharp/language-reference/compiler-options/resource-compiler-option.md)|指定したリソースを埋め込みます。|  
 |/ruleset:\<ファイル>|特定の診断を無効にするルールセット ファイルを指定します。|  
 |[/subsystemversion](../../../csharp/language-reference/compiler-options/subsystemversion-compiler-option.md)|実行可能ファイルが使用できるサブシステムの最低限のバージョンを指定します。|  

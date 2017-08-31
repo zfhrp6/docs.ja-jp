@@ -30,10 +30,10 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: bf0b4a4130fe69a15e6db438ac1d58b676c9ee8b
+ms.sourcegitcommit: 8e8d01587ccde967b8484b3b61916f8cf437f6c0
+ms.openlocfilehash: 584d0cb249644e6b4ffe15e115c49256f5fa2716
 ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
+ms.lasthandoff: 08/14/2017
 
 ---
 # <a name="c-compiler-options-listed-by-category"></a>カテゴリ別の C# コンパイラ オプションの一覧
@@ -55,6 +55,8 @@ ms.lasthandoff: 07/28/2017
 |[/pdb](../../../csharp/language-reference/compiler-options/pdb-compiler-option.md)|.pdb ファイルの名前と場所を指定します。|  
 |[/platform](../../../csharp/language-reference/compiler-options/platform-compiler-option.md)|出力プラットフォームを指定します。|  
 |[/preferreduilang](../../../csharp/language-reference/compiler-options/preferreduilang-compiler-option.md)|コンパイラ出力用の言語を指定します。|  
+|[/refout](refout-compiler-option.md)|プライマリ アセンブリだけでなく、参照アセンブリを生成します。|  
+|[/refonly](refonly-compiler-option.md)|プライマリ アセンブリの代わりに、参照アセンブリを生成します。|  
 |[/target](../../../csharp/language-reference/compiler-options/target-compiler-option.md)|6 つのオプション ([/target:appcontainerexe](../../../csharp/language-reference/compiler-options/target-appcontainerexe-compiler-option.md)、[/target:exe](../../../csharp/language-reference/compiler-options/target-exe-compiler-option.md)、[/target:library](../../../csharp/language-reference/compiler-options/target-library-compiler-option.md)、[/target:module](../../../csharp/language-reference/compiler-options/target-module-compiler-option.md)、[/target:winexe](../../../csharp/language-reference/compiler-options/target-winexe-compiler-option.md)、[/target:winmdobj](../../../csharp/language-reference/compiler-options/target-winmdobj-compiler-option.md)) のいずれかを使用して、出力ファイルの形式を指定します。|  
 |/modulename:\<文字列>|ソース モジュールの名前を指定します。|  
   

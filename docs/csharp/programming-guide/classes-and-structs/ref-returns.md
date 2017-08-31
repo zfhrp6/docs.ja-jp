@@ -10,15 +10,15 @@ ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 18cf7a4b-29f0-4b14-85b8-80af754aabd8
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 753c620e1352dfc5fc57c380c66479c8e2d9b0ee
+ms.sourcegitcommit: 4582cb0ee091526423cce3fc1d8243029f34f59c
+ms.openlocfilehash: 3f2ee35db5b77efcce629b6315060a723429b19c
 ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
+ms.lasthandoff: 08/16/2017
 
 ---
 # <a name="ref-returns-and-ref-locals"></a>ref 戻り値と ref ローカル変数
 
-C# 7 以降の C# は参照戻り値 (ref 戻り値) に対応しています。 参照戻り値を使用すると、メソッドから呼び出し元に、値ではなく、オブジェクトへの参照を返すことができます。 呼び出し元は、返されたオブジェクトを値渡しとして処理するか、参照渡しとして処理するかを選択できます。 呼び出し元が値ではなく参照として処理する、参照渡しで返された値が ref 変数です。
+C# 7 以降の C# は参照戻り値 (ref 戻り値) に対応しています。 参照戻り値を使用すると、メソッドから呼び出し元に、値ではなく、オブジェクトへの参照を返すことができます。 呼び出し元は、返されたオブジェクトを値渡しとして処理するか、参照渡しとして処理するかを選択できます。 呼び出し元が値ではなく参照として処理する、参照渡しで返された値が ref ローカル変数です。
 
 ## <a name="what-is-a-reference-return-value"></a>参照戻り値とは
 
@@ -44,7 +44,7 @@ C# 7 以降の C# は参照戻り値 (ref 戻り値) に対応しています。
  
 - 戻り値は、定数または列挙型のメンバーにすることも、`class` または `struct` のプロパティにすることもできません。 それらのいずれかを返そうとすると、コンパイラ エラー CS8156 "参照渡しで返すことができないため、このコンテキストで使用できない式があります" が生成されます。
 
-さらに、非同期メソッドは実行が完了して戻り値が判明する前に戻る可能性があるため、`async` メソッドでは参照戻り値を使用できません。
+さらに、非同期メソッドは、実行が完了する前にまだ戻り値が判明していないときに返される可能性があるため、非同期メソッドでは参照戻り値を使用できません。
  
 ## <a name="defining-a-ref-return-value"></a>ref 戻り値の定義
 
