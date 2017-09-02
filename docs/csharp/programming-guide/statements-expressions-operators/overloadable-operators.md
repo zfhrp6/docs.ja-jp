@@ -29,10 +29,10 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 ms.translationtype: HT
-ms.sourcegitcommit: 982c2b03a81e094d791fef1c3178bc637ef4ad8b
-ms.openlocfilehash: 2ba47e8462c3a8dc6baa5ef2dc1f11937ebf6d29
+ms.sourcegitcommit: 1e548df4de2c07934313311a7ffcfae82be76000
+ms.openlocfilehash: 9e4f54f3a5b461be267301a2b8bc8de52ef9f776
 ms.contentlocale: ja-jp
-ms.lasthandoff: 08/01/2017
+ms.lasthandoff: 08/28/2017
 
 ---
 # <a name="overloadable-operators-c-programming-guide"></a>オーバーロードされた演算子 (C# プログラミング ガイド)
@@ -48,7 +48,7 @@ C# では、[operator](../../../csharp/language-reference/keywords/operator.md) 
 |[&#91;&#93;](../../../csharp/language-reference/operators/index-operator.md)|配列のインデックス付け演算子はオーバーロードできませんが、インデクサーを定義できます。|
 |[(T)x](../../../csharp/language-reference/operators/invocation-operator.md)|キャスト演算子はオーバーロードできませんが、新しい変換演算子を定義できます (「[explicit](../../../csharp/language-reference/keywords/explicit.md)」および「[implicit](../../../csharp/language-reference/keywords/implicit.md)」を参照してください)。|
 |[+=](../../../csharp/language-reference/operators/addition-assignment-operator.md), [-=](../../../csharp/language-reference/operators/subtraction-assignment-operator.md), [\*=](../../../csharp/language-reference/operators/multiplication-assignment-operator.md), [/=](../../../csharp/language-reference/operators/division-assignment-operator.md), [%=](../../../csharp/language-reference/operators/modulus-assignment-operator.md), [&=](../../../csharp/language-reference/operators/and-assignment-operator.md), [&#124;=](../../../csharp/language-reference/operators/or-assignment-operator.md), [^=](../../../csharp/language-reference/operators/xor-assignment-operator.md), [\<\<=](../../../csharp/language-reference/operators/left-shift-assignment-operator.md), [>>=](../../../csharp/language-reference/operators/right-shift-assignment-operator.md)|代入演算子はオーバーロードできません。ただし、たとえばオーバーロードできる `+` を使用して `+=` を評価することができます。|
-|[=](../../../csharp/language-reference/operators/assignment-operator.md)、[.](../../../csharp/language-reference/operators/member-access-operator.md)、[?:](../../../csharp/language-reference/operators/conditional-operator.md)、[??](../../../csharp/language-reference/operators/null-conditional-operator.md)、[->](../../../csharp/language-reference/operators/dereference-operator.md)、[=>](../../../csharp/language-reference/operators/lambda-operator.md)、[f(x)](../../../csharp/language-reference/operators/invocation-operator.md)、[as](../../../csharp/language-reference/keywords/as.md)、[checked](../../../csharp/language-reference/keywords/checked.md)、[unchecked](../../../csharp/language-reference/keywords/unchecked.md)、[default](../../../csharp/programming-guide/generics/default-keyword-in-generic-code.md)、[delegate](../../../csharp/programming-guide/statements-expressions-operators/anonymous-methods.md)、[is](../../../csharp/language-reference/keywords/is.md)、[new](../../../csharp/language-reference/keywords/new.md)、[sizeof](../../../csharp/language-reference/keywords/sizeof.md)、[typeof](../../../csharp/language-reference/keywords/typeof.md)|これらの演算子はオーバーロードできません。|
+|[=](../../../csharp/language-reference/operators/assignment-operator.md)、[.](../../../csharp/language-reference/operators/member-access-operator.md)、[?:](../../../csharp/language-reference/operators/conditional-operator.md)、[??](../../../csharp/language-reference/operators/null-conditional-operator.md)、[->](../../../csharp/language-reference/operators/dereference-operator.md)、[=>](../../../csharp/language-reference/operators/lambda-operator.md)、[f(x)](../../../csharp/language-reference/operators/invocation-operator.md)、[as](../../../csharp/language-reference/keywords/as.md)、[checked](../../../csharp/language-reference/keywords/checked.md)、[unchecked](../../../csharp/language-reference/keywords/unchecked.md)、[default](../../../csharp/programming-guide/statements-expressions-operators/default-value-expressions.md)、[delegate](../../../csharp/programming-guide/statements-expressions-operators/anonymous-methods.md)、[is](../../../csharp/language-reference/keywords/is.md)、[new](../../../csharp/language-reference/keywords/new.md)、[sizeof](../../../csharp/language-reference/keywords/sizeof.md)、[typeof](../../../csharp/language-reference/keywords/typeof.md)|これらの演算子はオーバーロードできません。|
 
 > [!NOTE]
 > 比較演算子をオーバーロードする場合はペアでオーバーロードする必要があります。つまり、`==` をオーバーロードする場合は `!=` もオーバーロードする必要があります。 逆もまた真であり、`!=` をオーバーロードする場合は、`==` のオーバーロードも必要です。 比較演算子 `<` と `>`、および `<=` と `>=` の場合も同様です。
