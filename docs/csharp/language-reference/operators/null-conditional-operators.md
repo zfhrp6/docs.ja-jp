@@ -26,10 +26,10 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 3a396280e1095497b86e4792f4debb9cf0435f50
+ms.sourcegitcommit: 6118956a5681ddbeb110f6e01f090b85cdd65089
+ms.openlocfilehash: 465a395a33c027132b7890e02d540438096e2073
 ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
+ms.lasthandoff: 08/23/2017
 
 ---
 # <a name="null-conditional-operators-c-and-visual-basic"></a>Null 条件演算子 (C# および Visual Basic)
@@ -47,7 +47,7 @@ Dim first as Customer = customers?(0)  ' null if customers is null
 Dim count as Integer? = customers?(0)?.Orders?.Count()  ' null if customers, the first customer, or Orders is null  
 ```  
   
- 最後の例は、null 条件演算子がショート サーキットであることを示します。  条件付きのメンバー アクセスおよびインデックス操作のチェーンの 1 つの演算が null を返す場合、チェーンの実行の残りの部分は停止します。  式内の優先度の低い他の演算は続行されます。  たとえば、次の式内の `E` は常に実行され、`??` 演算と `==` 演算が実行されます。  
+ 最後の例は、null 条件演算子がショート サーキットであることを示します。  条件付きのメンバー アクセスおよびインデックス操作のチェーンの 1 つの演算が null を返す場合、チェーンの実行の残りの部分は停止します。  式内の優先度の低い他の演算は続行されます。  たとえば、次の 2 行目にある `E` が実行され、`??` 演算と `==` 演算が実行されます。  1 行目の `??` はショート サーキットであり、左辺が null 以外に評価されると、`E` は実行されません。
   
 ```csharp
 A?.B?.C?[0] ?? E  
