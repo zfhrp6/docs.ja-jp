@@ -5,17 +5,17 @@ keywords: "継承 (C#), 基底クラス, 派生クラス, 抽象基底クラス"
 author: rpetrusha
 manager: wpickett
 ms.author: ronpet
-ms.date: 03/06/2017
+ms.date: 08/16/2017
 ms.topic: article
 ms.prod: .net-core
 ms.technology: .net-core-technologies
 ms.devlang: dotnet
 ms.assetid: aeb68c74-0ea0-406f-9fbe-2ce02d47ef31
 ms.translationtype: HT
-ms.sourcegitcommit: 7912d46736fd9f9d9d2ee41c416d3dfc157cfe12
-ms.openlocfilehash: 44e77b099b15b5ddccfd6b3826d0225de1b0a74f
+ms.sourcegitcommit: 3e1ec8b24c4debf24a0d52ad2a23897975c41550
+ms.openlocfilehash: 78aff41ae597a3dbe9a57e2342b52b399ea96d66
 ms.contentlocale: ja-jp
-ms.lasthandoff: 08/09/2017
+ms.lasthandoff: 08/17/2017
 
 ---
 # <a name="inheritance-in-c-and-net"></a>C# と .NET での継承
@@ -44,7 +44,7 @@ C# と .NET は*単一継承*のみをサポートしています。 つまり�
 
 基底クラスのすべてのメンバーが、派生クラスによって継承されるわけではありません。 以下のメンバーは継承されません。
 
-- [静的コンスラクター](../programming-guide/classes-and-structs/static-constructors.md)。クラスの静的データを初期化するもの。
+- [静的コンストラクター](../programming-guide/classes-and-structs/static-constructors.md)。クラスの静的データを初期化するもの。
 
 - [インスタンス コンストラクター](../programming-guide/classes-and-structs/constructors.md)。クラスの新しいインスタンスを作成するために呼び出すもの。 各クラスはそれ自身のコンストラクターを定義する必要があります。
 
@@ -216,13 +216,13 @@ public struct ValueStructure : ValueType // Generates CS0527.
 
 - 出版物に関する 2 つのプロパティ
 
-  `Title` は読み取り専用の <xref:System.String> プロパティで、`Publication` コンストラクターを呼び出すことでその値が提供され、`pubTitle` というプライベート フィールドに格納されます。
+  `Title` は読み取り専用の <xref:System.String> プロパティで、`Publication` コンストラクターを呼び出すことでその値が提供されます。
 
   `Pages` は読み取り/書き込みの <xref:System.Int32> プロパティで、出版物の総ページ数を示します。 その値は `totalPages` というプライベート フィールドに格納されています。 正の数である必要があり、そうでなければ <xref:System.ArgumentOutOfRangeException> がスローされます。
 
 - 出版社に関するメンバー
 
-  `Publisher` および `Type` という 2 つの読み取り専用プロパティは、`pubName` および `pubType` というプライベート フィールドの値を返します。 これらの値はもともと `Publication` クラスのコンストラクターへの呼び出しによって提供されるものです。
+  2 つの読み取り専用プロパティ `Publisher` と `Type`。 これらの値はもともと `Publication` クラスのコンストラクターへの呼び出しによって提供されるものです。
 
 - 出版に関するメンバー
 
@@ -230,7 +230,7 @@ public struct ValueStructure : ValueType // Generates CS0527.
 
 - 著作権に関するメンバー
 
-  `Copyright` メソッドは、著作権者の名前および著作権年を引数として受け取り、プライベートの `copyrName` フィールドおよび `copyrDate` フィールドに割り当てます。 これらの値は `CopyrightName` プロパティおよび `CopyrightDate` プロパティから取得できます。
+  `Copyright` メソッドは、著作権者の名前および著作権年を引数として受け取り、`CopyrightName` および `CopyrightDate` プロパティに割り当てます。
 
 - `ToString` メソッドのオーバーライド
 
@@ -250,13 +250,13 @@ public struct ValueStructure : ValueType // Generates CS0527.
 
 - 2 つのコンストラクター
 
-  2 つの `Book` コンストラクターは、共通パラメーターを 3 つ共有しています。 *タイトル*および*出版社*の 2 つは、`Publication` コンストラクターのパラメーターに対応します。 3 つ目は*著者*で、プライベートの `authorName` フィールドに格納されています。 1 つのコンストラクターには *isbn* パラメーターが 1 つ含まれていて、プライベート `id` フィールドに格納されています。
+  2 つの `Book` コンストラクターは、共通パラメーターを 3 つ共有しています。 *タイトル*および*出版社*の 2 つは、`Publication` コンストラクターのパラメーターに対応します。 3 つ目は*著者*で、プライベートの `authorName` フィールドに格納されています。 1 つのコンストラクターには *isbn* パラメーターが 1 つ含まれていて、`ISBN` 自動プロパティに格納されています。
 
-  最初のコンストラクターは[この](../language-reference/keywords/this.md)キーワードを使用して、他のコンストラクターを呼び出します。 これがコンストラクターを定義する上で一般的なパターンです。パラメーターが最も多いコンストラクターを呼び出すときに、パラメーターのより少ないコンストラクターが既定値を提供するものです。
+  最初のコンストラクターは[この](../language-reference/keywords/this.md)キーワードを使用して、他のコンストラクターを呼び出します。 これがコンストラクターを定義する上で一般的なパターンです。 パラメーターが最も多いコンストラクターを呼び出すときに、パラメーターのより少ないコンストラクターが既定値を提供するものです。
 
   2 番目のコンストラクターは [base](../language-reference/keywords/base.md) キーワードを使用して、基底クラスのコンストラクターにタイトルと出版社名を渡します。 ソース コードで基底クラスのコンストラクターを明示的に呼び出さない場合、C# コンパイラは、基底クラスの既定またはパラメーターなしのコンストラクターへの呼び出しを自動的に提供します。
 
-- 読み取り専用の `ISBN` プロパティ。`Book` オブジェクトの ISBN (一意の 10 ～ 13 桁の数字) を返します。 ISBN は `Book` コンストラクターの 1 つに引数として提供され、プライベート `id` フィールドに格納されます。
+- 読み取り専用の `ISBN` プロパティ。`Book` オブジェクトの ISBN (一意の 10 ～ 13 桁の数字) を返します。 ISBN は `Book` コンストラクターの 1 つに引数として提供されます。 ISBN は、コンパイラで自動生成されるプライベート バッキング フィールドに格納されます。
 
 - 読み取り専用の `Author` プロパティ。 著者名は両方の `Book` コンストラクターに引数として提供され、プライベート `authorName` フィールドに格納されます。
 
