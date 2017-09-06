@@ -32,10 +32,10 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: fb4e78fc7d8b292d36e548ece9f6efab0d8d6323
+ms.sourcegitcommit: 710c1a8031a9f598b1879ebb6306ba3a072a7de1
+ms.openlocfilehash: bcd8e7ad1b60f520536653cdcb67192da470699a
 ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
+ms.lasthandoff: 08/23/2017
 
 ---
 # <a name="out-c-reference"></a>out (C# リファレンス)

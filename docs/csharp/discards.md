@@ -10,10 +10,10 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.translationtype: HT
-ms.sourcegitcommit: 4582cb0ee091526423cce3fc1d8243029f34f59c
-ms.openlocfilehash: eca5febd448a135eb7ec52e4243ae341563190df
+ms.sourcegitcommit: 6170e096e36f8d054fdfe9cbd8311e6492e32a04
+ms.openlocfilehash: 3f8804f9b7522e385b145a9643dec942cc1aab9f
 ms.contentlocale: ja-jp
-ms.lasthandoff: 08/16/2017
+ms.lasthandoff: 08/28/2017
 
 ---
 # <a name="discards---c-guide"></a>破棄 - C# ガイド
@@ -33,7 +33,7 @@ C# 7 では、破棄は次のコンテキストの割り当てでサポートさ
 - `out` パラメーターを使用したメソッドの呼び出し。
 - `_` がスコープ内にない場合のスタンドアロンの `_`。
 
-`_` が有効な破棄の場合、その値を取得しようとすると、または代入演算で使用しようとすると、"名前 '_' は、現在のコンテキストに存在していません" というコンパイラ エラー CS0301 が生成されます。 これは、`_` に値が割り当てられておらず、記憶域の場所も割り当てることができないためです。 実際の変数であれば、前の例のように、複数の値を破棄できません。
+`_` が有効な破棄の場合、その値を取得しようとすると、または代入演算で使用しようとすると、"名前 '\_' は、現在のコンテキストに存在していません" というコンパイラ エラー CS0301 が生成されます。 これは、`_` に値が割り当てられておらず、記憶域の場所も割り当てることができないためです。 実際の変数であれば、前の例のように、複数の値を破棄できません。
 
 ## <a name="tuple-and-object-deconstruction"></a>タプルとオブジェクトの分解
 

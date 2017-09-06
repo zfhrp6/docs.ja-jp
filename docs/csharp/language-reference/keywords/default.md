@@ -1,6 +1,6 @@
 ---
 title: "default (C# リファレンス)"
-ms.date: 2015-07-20
+ms.date: 2017-08-04
 ms.prod: .net
 ms.technology:
 - devlang-csharp
@@ -31,23 +31,26 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 4b4167f53d64f80fc4665a9f1171c050bf0fa433
+ms.sourcegitcommit: 1e548df4de2c07934313311a7ffcfae82be76000
+ms.openlocfilehash: 60607855e4a947af694c8ad8a9a3f0515ebb1700
 ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
+ms.lasthandoff: 08/28/2017
 
 ---
+
 # <a name="default-c-reference"></a>default (C# リファレンス)
-`default` キーワード。  
-  
- `default` キーワードは、`switch` ステートメントまたはジェネリック コードで使うことができます。  
-  
--   [switch ステートメント](../../../csharp/language-reference/keywords/switch.md): 既定のラベルを指定します。  
-  
--   [ジェネリック コード](../../../csharp/programming-guide/generics/default-keyword-in-generic-code.md): 型パラメーターの既定値を指定します。 これは、参照型の場合は null、値型の場合は 0 になります。  
-  
-## <a name="see-also"></a>関連項目  
- [C# リファレンス](../../../csharp/language-reference/index.md)   
- [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
- [C# のキーワード](../../../csharp/language-reference/keywords/index.md)
+
+`default` キーワード。
+
+`default` キーワードは、`switch` ステートメントまたは既定の値式で使うことができます。
+
+- [switch ステートメント](switch.md): 既定のラベルを指定します。
+
+- [既定の値式](../../programming-guide/statements-expressions-operators/default-value-expressions.md): 型の既定値を生成します。 これは、参照型の場合は null、値型の場合は 0、構造体の場合は 0 ビット パターンになります。
+
+## <a name="see-also"></a>関連項目
+
+ [C# リファレンス](../index.md)   
+ [C# プログラミング ガイド](../../programming-guide/index.md)   
+ [C# のキーワード](index.md)   
 
