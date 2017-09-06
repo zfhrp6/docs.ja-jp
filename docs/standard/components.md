@@ -1,23 +1,19 @@
 ---
 title: ".NET アーキテクチャ コンポーネント"
 description: ".NET Standard、.NET 実装、.NET ランタイム、ツールなど、.NET アーキテクチャ コンポーネントについて説明します。"
-keywords: ".NET, .NET Standard, .NET Core, .NET Framework, Mono, Xamarin, MSBuild, C#, F#, VB, コンパイラ"
 author: cartermp
 ms.author: mairaw
-ms.date: 08/10/2017
+ms.date: 08/23/2017
 ms.topic: article
 ms.prod: .net
 ms.technology: dotnet-standard
-ms.devlang: dotnet
-ms.assetid: 2e38e9d9-8284-46ee-a15f-199adc4f26f4
 ms.translationtype: HT
-ms.sourcegitcommit: 14522f165b22a7b1bb2a717a7c9f293a265f4eb0
-ms.openlocfilehash: 8934febe77b30fb318b06e4d8d297282368438a5
+ms.sourcegitcommit: 1b028e5880f9e57e87c16eabeb442e0a46a369da
+ms.openlocfilehash: ce3368f4c34a8e4b20a7deb2a6c6e4d163927cd4
 ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
+ms.lasthandoff: 08/23/2017
 
 ---
-
 # <a name="net-architectural-components"></a>.NET アーキテクチャ コンポーネント
 
 .NET アプリは、1 つまたは複数の *.NET 実装*向けに開発され、実行されます。  .NET 実装には、.NET Framework、.NET Core、および Mono が含まれます。 すべての .NET 実装に共通する API 仕様があり、それを.NET Standard と呼びます。 この記事では、それぞれの概念について簡単に説明します。
@@ -43,9 +39,9 @@ Microsoft が積極的に開発し保守している主要な .NET 実装とし�
 
 ### <a name="net-core"></a>.NET Core
 
-.NET Core は、サーバーのワークロード用に最適化されたクロスプラットフォームの .NET 実装です。 最新の機能を備え、効率的であり、大規模なサーバーとクラウドのワークロードを処理するように設計されています。 .NET Standard を実装しているので、.NET Standard をターゲットとするすべてのコードを .NET Core 上で実行できます。 ASP.NET Core は、.NET Core 上で実行されます。
+.NET Core は .NET のクラスプラットフォーム実装であり、サーバーとクラウドのワークロードをその規模に応じて処理するように設計されています。 Windows、macOS および Linux で実行されます。 .NET Standard を実装しているので、.NET Standard をターゲットとするすべてのコードを .NET Core 上で実行できます。 ASP.NET Core は、.NET Core 上で実行されます。 
 
-.NET Core について詳しくは、「[.NET Core](../core/index.md)」をご覧ください。
+.NET Core の詳細については、「[.NET Core](../core/index.md)」および「[サーバー アプリ用 .NET Core と .NET Framework の選択](choosing-core-framework-server.md)」を参照してください。
 
 ### <a name="net-framework"></a>.NET Framework
 
@@ -91,7 +87,7 @@ UWP の詳細については、「[ユニバーサル Windows プラットフォ
 - オープン ソースのビルド オーケストレーション ツール ([CAKE](http://cakebuild.net/)、[FAKE](https://fake.build/) など)
 
 ## <a name="see-also"></a>関連項目
-
+[サーバー アプリ用 .NET Core と .NET Framework の選択](choosing-core-framework-server.md)   
 [.NET Standard](net-standard.md)  
 [.NET Core のガイド](../core/index.md)  
 [.NET Framework ガイド](../framework/index.md)  
