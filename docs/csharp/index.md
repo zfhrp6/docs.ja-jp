@@ -3,17 +3,23 @@ title: "C# のガイド"
 description: "開発の初心者であるか、経験豊富な専門家であるかを問わず、C# のガイドが C# に関する広範な知識を得るのにどのように役立つかを示します。"
 keywords: .NET, .NET Core
 author: BillWagner
-ms.date: 08/03/2016
+ms.date: 08/23/2017
 ms.topic: article
 ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 52db8280-0e53-40cf-858b-e8eef3997dea
+helpviewer_keywords:
+- documentation [C#]
+- Help, Visual C# documentation
+- C# language
+- Visual C#
+ms.author: wiwagn
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 18e26035e41c97af135f0075075bd2441182f157
+ms.sourcegitcommit: 9bb64ea7199f5699ff166d1affb7f8126dcc6612
+ms.openlocfilehash: 5cb79aa1fd89e080e8dc67c379a0a927102a6419
 ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
+ms.lasthandoff: 09/02/2017
 
 ---
 
@@ -32,7 +38,7 @@ C# のガイドでは、C# 言語に関するさまざまな情報を提供し�
  
 ## <a name="how-the-c-guide-is-organized"></a>C# ガイドの編成
 
-C# ガイドには 7 つのセクションがあります。 順番に読み進めても、興味のある記事を選んで読んでもかまいません。 言語に関する説明がメインのセクションもあれば、 C# と .NET Framework を使用して作成できるプログラムのデモを示す、エンド ツー エンドのシナリオを示すセクションもあります。
+C# ガイドにはいくつかのセクションがあります。 順番に読み進めても、興味のある記事を選んで読んでもかまいません。 言語に関する説明がメインのセクションもあれば、 C# と .NET Framework を使用して作成できるプログラムのデモを示す、エンド ツー エンドのシナリオを示すセクションもあります。
 
 * [はじめに](getting-started/index.md):
     - ここでは、好みのプラットフォームで C# 開発環境を使用するためにインストールする必要があるものについて説明します。 このセクションの各トピックで、サポートされているさまざまな環境で初めての C# プログラムを作成する方法を説明します。
@@ -52,6 +58,25 @@ C# ガイドには 7 つのセクションがあります。 順番に読み進�
 <!--* [.NET Compiler Platform SDK](roslyn/index.md):
     - The .NET Compiler Platform SDK enables you to write components that analyze code, and suggest or make improvements to that code. In this section, you'll learn how the APIs are organized, and how you can create code that enables rules and practices for your team. You'll also see samples, end to end scenarios, and links to other libraries with more examples using these APIs.
 -->
+* [Visual C# 開発環境の使用](/visualstudio/csharp-ide/using-the-visual-studio-development-environment-for-csharp)  
+    - [!INCLUDE[csprcs](~/includes/csprcs-md.md)] 開発環境について紹介します。  
+
+* [C# プログラミング ガイド](../csharp/programming-guide/index.md)  
+    - C# 言語構成要素の使用方法に関する情報および実際の例を提供します。  
+
+* [C++ のサンプル](http://code.msdn.microsoft.com/site/search?f%5B0%5D.Type=ProgrammingLanguage&f%5B0%5D.Value=C%23&f%5B0%5D.Text=C%23)  
+    - C# でフィルター処理された MSDN Code Gallery  
+  
+* [チュートリアル](../csharp/walkthroughs.md)  
+    - C# を使用するプログラミングのチュートリアルと、各チュートリアルに関する簡単な説明へのリンクを示します。  
+
 * [言語リファレンス](language-reference/index.md):
-    - C# 言語に関するリファレンス資料が含まれています。 C# の構文とセマンティクスを理解するのに役立ちます。 
+    - C# 言語に関するリファレンス資料が含まれています。 C# の構文とセマンティクスを理解するのに役立ちます。 型、演算子、属性、プリプロセッサ ディレクティブ、コンパイラ スイッチ、およびコンパイラのエラーと警告に関するリファレンス情報も含まれています。
+  
+* [C# 言語仕様](../csharp/language-reference/language-specification/index.md)  
+    - Microsoft Word 形式で作成された最新バージョンの C# 仕様へのリンクを紹介します。  
+  
+## <a name="see-also"></a>関連項目  
+ [Visual C# と Visual Basic の概要](/visualstudio/ide/getting-started-with-visual-csharp-and-visual-basic)   
+ [.NET 開発](https://msdn.microsoft.com/library/ff361664)
 

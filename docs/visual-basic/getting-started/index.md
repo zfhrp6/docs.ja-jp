@@ -30,10 +30,10 @@ translation.priority.mt:
 - pt-br
 - tr-tr
 ms.translationtype: HT
-ms.sourcegitcommit: 0dc28adab90f56befc925eb895d00a3cd5966928
-ms.openlocfilehash: 75a3d841e8d22e2e8f76dc4c0f900318eb6bf42f
+ms.sourcegitcommit: 9bb64ea7199f5699ff166d1affb7f8126dcc6612
+ms.openlocfilehash: 4e3c1a1e6728d4a5e256b81b0f8a8b29851dc625
 ms.contentlocale: ja-jp
-ms.lasthandoff: 08/18/2017
+ms.lasthandoff: 09/02/2017
 
 ---
 # <a name="get-started-with-visual-basic"></a>Visual Basic 入門
@@ -55,7 +55,13 @@ Visual Basic .NET の各バージョンの新機能を一覧表示します。
   
 [Visual Basic プログラマのための追加リソース](additional-resources.md)  
 一般的な問題を解決するのに役立つ Web サイトおよびニュースグループの一覧を示します。  
-  
+
+## <a name="develop-net-core-applications-with-visual-basic"></a>Visual Basic での .NET Core アプリケーションの開発
+
+[Visual Studio 2017 での .NET Core を使用した Visual Basic Hello World アプリの構築](../../core/tutorials/vb-with-visual-studio.md) 
+
+[Visual Studio 2017 で Visual Basic と .NET Core を使用したクラス ライブラリの構築](../../core/tutorials/vb-library-with-visual-studio.md) 
+
 ## <a name="see-also"></a>関連項目
  [Visual Basic の取得](https://www.visualstudio.com/downloads/)  
  Visual Basic のサポートを含む Visual Studio のバージョン (無料版など) のダウンロード リンクを提供します。  
@@ -81,9 +87,7 @@ Visual Basic .NET の各バージョンの新機能を一覧表示します。
  
           [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] のドキュメントへのリンクを示します。  
   
- [C#](../../csharp/csharp.md)  
- 
-          [!INCLUDE[csprcs](~/includes/csprcs-md.md)] を使用したアプリケーション開発についてのドキュメントへのリンクを示します。  
+ [C#](../../csharp/index.md) [!INCLUDE[csprcs](~/includes/csprcs-md.md)] を使用したアプリケーション開発についてのドキュメントへのリンクを示します。  
   
  [Visual C++](/cpp/)  
  Visual C++ のドキュメントへのリンクを示します。  

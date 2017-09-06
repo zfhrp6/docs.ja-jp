@@ -30,10 +30,10 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 909c90da69d85512399eacd16e1ba6db7aad2291
+ms.sourcegitcommit: 9bb64ea7199f5699ff166d1affb7f8126dcc6612
+ms.openlocfilehash: 56e22638457017688ff380f6683b463b47c53a17
 ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
+ms.lasthandoff: 09/02/2017
 
 ---
 # <a name="nullable-types-c-programming-guide"></a>Null 許容型 (C# プログラミング ガイド)
@@ -83,7 +83,7 @@ Null 許容型は、<xref:System.Nullable%601?displayProperty=fullName> 構造�
 ## <a name="see-also"></a>関連項目  
  <xref:System.Nullable>   
  [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
- [C#](../../../csharp/csharp.md)   
+ [C#](../../../csharp/index.md)   
  [C# リファレンス](../../../csharp/language-reference/index.md)   
  [What Exactly Does 'Lifted' mean? ('Lifted' の正確な意味)](http://go.microsoft.com/fwlink/?LinkId=112382)
 

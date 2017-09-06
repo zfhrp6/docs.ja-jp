@@ -2,18 +2,21 @@
 title: "概要 - C# ガイド"
 description: "短期間で C# の概念について学習でき、.NET Core アプリケーションを作成することができるようになるような、短くて簡単なチュートリアルを探します。"
 keywords: "C#, 概要, 取得,インストール"
+helpviewer_keywords:
+- Visual C#, getting started
+- getting started, Visual C#
 author: rpetrusha
 ms.author: ronpet
-ms.date: 05/02/2017
+ms.date: 08/23/2017
 ms.topic: article
 ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.translationtype: HT
-ms.sourcegitcommit: 867f9eb286fa7ff5ef3e9167c1ab944c81161216
-ms.openlocfilehash: 347c88a66363ab04d519d10fdf7973692fcadde9
+ms.sourcegitcommit: 9bb64ea7199f5699ff166d1affb7f8126dcc6612
+ms.openlocfilehash: c2e2408b2d7a02a1a75965f32888d240bafae0f0
 ms.contentlocale: ja-jp
-ms.lasthandoff: 08/17/2017
+ms.lasthandoff: 09/02/2017
 
 ---
 # <a name="get-started-with-c"></a>C# の使用を開始する #
@@ -21,6 +24,10 @@ ms.lasthandoff: 08/17/2017
 このセクションでは、C# と .NET Core を使用して短時間でアプリケーションを構築できる、短いシンプルなチュートリアルについて説明します。 Visual Studio 2017 と Visual Studio Code については、その概要を説明しているトピックがあります。 単純な Hello World アプリケーションをビルドするか、Visual Studio 2017 を持っている場合は、他のアプリケーションで使用できる単純なクラス ライブラリをビルドできます。
 
 次のトピックを参照できます。
+
+* [C# 言語と .NET Framework の概要](introduction-to-the-csharp-language-and-the-net-framework.md)
+
+     C# 言語および .NET の概要を示します。
 
 * [Visual Studio 2017 での .NET Core を使用した C# Hello World アプリケーションの構築](../../core/tutorials/with-visual-studio.md)
 
@@ -37,4 +44,33 @@ ms.lasthandoff: 08/17/2017
    Visual Studio Code は、最新の Web アプリケーションやクラウド アプリケーションのビルドとデバッグ向けに最適化された無料コード エディターです。 IntelliSense をサポートしており、Linux、macOS、Windows で使用できます。
 
    このトピックでは、Visual Studio Code と .NET Core を使用して、単純な Hello World アプリケーションを作成して実行する方法を説明します。
+
+* [Visual C# プログラマのための追加リソース](additional-resources.md)
+
+   一般的な問題の解決に役立つ Web サイトおよびニュースグループへのリンクを示します。
+
+## <a name="related-sections"></a>関連項目
+
+* [Visual C# 開発環境の使用](/visualstudio/csharp-ide/using-the-visual-studio-development-environment-for-csharp)  
+
+    [!INCLUDE[csprcs](~/includes/csprcs-md.md)] 統合開発環境を使用する方法について説明します。
+
+* [C# プログラミング ガイド](../../csharp/programming-guide/index.md)
+
+    C# プログラミングの概念に関する情報を提供し、C# でさまざまなタスクを実行する方法について説明します。
+
+* [C# リファレンス](../../csharp/language-reference/index.md)
+
+    C# のキーワード、演算子、プリプロセッサ ディレクティブ、コンパイラ オプション、およびコンパイラのエラーと警告に関する詳細なリファレンス情報を紹介します。
+
+* [Visual Studio のサンプル](/visualstudio/ide/visual-studio-samples)
+
+    オンライン サンプルへのアクセス方法に関する情報を提供します。
+
+* [チュートリアル](../../csharp/walkthroughs.md)
+
+    C# を使用するプログラミングのチュートリアルと、各チュートリアルに関する簡単な説明へのリンクを示します。
+
+## <a name="see-also"></a>関連項目
+ [Visual Studio を使用した Visual C# と Visual Basic の概要](/visualstudio/ide/getting-started-with-visual-csharp-and-visual-basic)[初級開発者向けラーニング センター](http://go.microsoft.com/fwlink/?LinkId=123826)
 
