@@ -11,10 +11,10 @@ ms.technology: dotnet-docker
 ms.devlang: dotnet
 ms.assetid: 1f3b9a68-4dea-4b60-8cb3-f46164eedbbf
 ms.translationtype: HT
-ms.sourcegitcommit: 318bf7a77748dfcee5f28243409d31e8d3e5c9ff
-ms.openlocfilehash: 8e0fd8db2810c36358a7bcf94f4bc5e7d2aa399e
+ms.sourcegitcommit: 9bb17207ba72bb22f5d6db55e9d1bd77e3013445
+ms.openlocfilehash: 113d470a55fd92704de0e6def392a6e0a1a3a118
 ms.contentlocale: ja-jp
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 08/25/2017
 
 ---
 
@@ -22,14 +22,16 @@ ms.lasthandoff: 08/03/2017
 
 [Docker for Windows](https://docs.docker.com/docker-for-windows/install/) を含む [Microsoft Visual Studio 2017](https://www.visualstudio.com/) では、Windows と Linux コンテナーを使用した .NET Framework および .NET Core の Web アプリケーションやコンソール アプリケーションのビルド、デバッグ、実行をサポートします。
 
-## <a name="prerequisites"></a>必要条件
+## <a name="prerequisites"></a>必須コンポーネント
 
-- [Microsoft Visual Studio 2017](https://www.visualstudio.com/)
+- .NET Core ワークロードを含む [Microsoft Visual Studio 2017](https://www.visualstudio.com/)
 - [Docker for Windows](https://docs.docker.com/docker-for-windows/install/)
 
 ## <a name="installation-and-setup"></a>インストールとセットアップ
 
-.NET Core ワークロードで [Microsoft Visual Studio 2017](https://www.visualstudio.com/) をインストールします。 「[Docker for Windows: What to know before you install](https://docs.docker.com/docker-for-windows/install/#what-to-know-before-you-install)」 (Docker for Windows: インストール前に知っておくべきこと) の情報を確認し、[Docker for Windows](https://docs.docker.com/docker-for-windows/install/) をインストールします。
+.NET Core ワークロードで [Microsoft Visual Studio 2017](https://docs.microsoft.com/en-us/visualstudio/install/install-visual-studio) をインストールします。
+
+Docker をインストールする場合、「[Docker for Windows: What to know before you install](https://docs.docker.com/docker-for-windows/install/#what-to-know-before-you-install)」 (Docker for Windows: インストール前に知っておくべきこと) の情報を確認し、[Docker for Windows](https://docs.docker.com/docker-for-windows/install/) をインストールします。
 
 Docker for Windows では、**[共有ドライブ](https://docs.docker.com/docker-for-windows/#shared-drives)**を設定する必要があります。 この設定は、ボリュームのマップとデバッグのサポートで必要です。
 
