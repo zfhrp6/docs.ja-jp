@@ -1,5 +1,5 @@
 ---
-title: "例外の処理とスロー | Microsoft Docs"
+title: "例外の処理とスロー"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net
@@ -21,11 +21,11 @@ caps.latest.revision: 16
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
-ms.openlocfilehash: c8c5962db342dba6ff22c409d145af5e628eed3d
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 5d44996042d167c029291f2b454dc1a22cfbcfb4
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/02/2017
+ms.lasthandoff: 09/05/2017
 
 ---
 # <a name="handling-and-throwing-exceptions-in-net"></a>.NET での例外の処理とスロー

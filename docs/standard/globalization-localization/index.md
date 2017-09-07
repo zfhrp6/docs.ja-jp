@@ -1,5 +1,5 @@
 ---
-title: ".NET Framework アプリケーションのグローバライズとローカライズ | Microsoft Docs"
+title: ".NET Framework アプリケーションのグローバライズとローカライズ"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net
@@ -21,11 +21,11 @@ caps.latest.revision: 42
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
-ms.openlocfilehash: 46a0ccb9db4d468e68b1e8d1d278308e6e87e85e
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 63832eb1b7c750bb4ef86660304ab883a7c3695f
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/22/2017
+ms.lasthandoff: 09/05/2017
 
 ---
 # <a name="globalizing-and-localizing-net-framework-applications"></a>.NET Framework アプリケーションのグローバライズとローカライズ
@@ -81,3 +81,4 @@ ms.lasthandoff: 05/22/2017
   
  [Winres.exe (Windows フォーム リソース エディター)](../../../docs/framework/tools/winres-exe-windows-forms-resource-editor.md)  
  Winres.exe を使用して Windows フォームのフォームをローカライズする方法について説明します。
+
