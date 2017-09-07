@@ -1,5 +1,5 @@
 ---
-title: "方法 : クライアント アプリケーション サービスを構成する | Microsoft Docs"
+title: "方法 : クライアント アプリケーション サービスを構成する"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
@@ -16,11 +16,11 @@ caps.latest.revision: 23
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: a32f50ce8a92fa22d9627a1510a4b3ec1087364e
-ms.openlocfilehash: e943e6784adb85194bf4ae272627f9772a91e35e
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: a1d15e380b6b7e8b226f26b261f4d4540eeef88d
 ms.contentlocale: ja-jp
-ms.lasthandoff: 06/02/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="how-to-configure-client-application-services"></a>方法 : クライアント アプリケーション サービスを構成する
@@ -163,3 +163,4 @@ ms.lasthandoff: 06/02/2017
  [ロール プロバイダの実装](http://msdn.microsoft.com/library/851671ce-bf9b-43f2-aba4-bc9d28b11c7d)   
  [アプリケーション設定アーキテクチャ](../../../docs/framework/winforms/advanced/application-settings-architecture.md)   
  [SQL Server 向けアプリケーション サービス データベースの作成と構成](http://msdn.microsoft.com/library/ab894e83-7e2f-4af8-a116-b1bff8f815b2)
+

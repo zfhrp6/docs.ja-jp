@@ -31,10 +31,10 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 8d8586e5601db67105e9e2f4290f37d2598fb89a
+ms.sourcegitcommit: dbc7f6ad4e6ddd30b3c808840420335a0c0155ad
+ms.openlocfilehash: 904b0f5bf99ed133eb505f65faaa63ca99053f5a
 ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
+ms.lasthandoff: 08/23/2017
 
 ---
 # <a name="c-60-draft-language-specification"></a>C# 6.0 のドラフト言語仕様
@@ -47,7 +47,8 @@ C# 言語仕様は、C# の構文と使用法に関する信頼性のある情�
 ドラフト仕様の問題は [dotnet/csharplang](https://github.com/dotnet/csharplang/issues) リポジトリで作成する必要があります。 見つけたエラーを修正したい場合は、同じレポジトリに[プル要求](https://github.com/dotnet/csharplang/pulls)を送信できます。
 
 ## <a name="see-also"></a>関連項目  
- [C# リファレンス](../../language-reference/index.md) [C# プログラミング ガイド](../../programming-guide/index.md)
+ [C# リファレンス](../../language-reference/index.md)  
+ [C# プログラミング ガイド](../../programming-guide/index.md)
 
 >[!div class="step-by-step"]
 [次へ](../../../../_csharplang/spec/lexical-structure.md)

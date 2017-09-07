@@ -1,6 +1,6 @@
 ---
 title: "イベントの概要"
-description: "イベントの概要"
+description: "この概要では、.NET Core のイベントと、イベントの言語上の設計目標について説明します。"
 keywords: .NET, .NET Core
 author: BillWagner
 ms.author: wiwagn
@@ -10,10 +10,11 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 9b8d2a00-1584-4a5b-8994-5003d54d8e0c
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: a2eb8daef0883b78769a185be7d64e43c88b1d15
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: f81c2d9fc2ec69c295485fe06029b5de65335db0
+ms.contentlocale: ja-jp
+ms.lasthandoff: 07/28/2017
 
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: "ファイル、TextWriter、および XmlWriters1 へのシリアル化 | Microsoft Docs"
+title: "ファイル、TextWriter、および XmlWriter へのシリアル化1"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -19,18 +19,19 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: f61324395e81509e5800e99b654a8c669d4397f0
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 94a2b3e16703496d2e59b08677395db30d944d56
+ms.contentlocale: ja-jp
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="serializing-to-files-textwriters-and-xmlwriters"></a>ファイル、TextWriter、および XmlWriter へのシリアル化
-XML ツリーを <xref:System.IO.File>、<xref:System.IO.TextWriter> または <xref:System.Xml.XmlWriter> にシリアル化することができます。  
+XML ツリーは、<xref:System.IO.File>、<xref:System.IO.TextWriter>、または <xref:System.Xml.XmlWriter> にシリアル化できます。  
   
- `ToString` メソッドを使用すると、<xref:System.Xml.Linq.XDocument> や <xref:System.Xml.Linq.XElement> を含む、XML コンポーネントを文字列にシリアル化できます。  
+ <xref:System.Xml.Linq.XDocument> メソッドを使用すると、<xref:System.Xml.Linq.XElement> や `ToString` など任意の XML コンポーネントを文字列にシリアル化できます。  
   
- 文字列にシリアル化するときに書式設定されないようにする場合は、<xref:System.Xml.Linq.XNode.ToString%2A?displayProperty=fullName> メソッドを使用できます。  
+ 文字列にシリアル化するときに書式設定されないようにするには、<xref:System.Xml.Linq.XNode.ToString%2A?displayProperty=fullName> メソッドを使用します。  
   
  ファイルにシリアル化するときの既定の動作では、結果の XML ドキュメントの書式設定 (インデント設定) が行われます。 インデントを設定する場合、XML ツリー内の意味のない空白は保持されません。 書式を設定してシリアル化するには、<xref:System.Xml.Linq.SaveOptions> を引数として受け取らない次のメソッドのいずれかのオーバーロードを使用します。  
   
@@ -48,3 +49,4 @@ XML ツリーを <xref:System.IO.File>、<xref:System.IO.TextWriter> または <
   
 ## <a name="see-also"></a>関連項目  
  [XML ツリーのシリアル化 (C#)](../../../../csharp/programming-guide/concepts/linq/serializing-xml-trees.md)
+

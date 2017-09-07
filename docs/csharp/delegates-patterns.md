@@ -1,6 +1,6 @@
 ---
 title: "デリゲートの一般的なパターン"
-description: "デリゲートの一般的なパターン"
+description: "コンポーネント間の密接な結合を避けるための、コードでのデリゲートの一般的な使用パターンについて説明します。"
 keywords: .NET, .NET Core
 author: BillWagner
 ms.author: wiwagn
@@ -10,10 +10,11 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 0ff8fdfd-6a11-4327-b061-0f2526f35b43
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 549edb4e55adf60feb874b0b8ba9d80c46ec667a
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 83214800fb997e9274cacfd1bae85ab07c4515a2
+ms.contentlocale: ja-jp
+ms.lasthandoff: 07/28/2017
 
 ---
 
@@ -153,7 +154,7 @@ public static class Logger
 
 ## <a name="building-a-second-output-engine"></a>2 つ目の出力エンジンの作成
 
-1 つ目のログ コンポーネントがうまく作成できたところで、 もう 1 つ出力エンジンを追加してみましょう。今度は、メッセージをファイルに記録するものです。 この出力エンジンは、先ほどよりも少し複雑になります。 このクラスにはファイル操作がカプセル化され、毎回出力後に必ずファイルが閉じられます。 これによって、メッセージが生成されるたびにすべてのデータが確実にディスクにフラッシュされます。
+1 つ目のログ コンポーネントがうまく作成できました。 次は、メッセージをファイルに記録する出力エンジンを追加してみましょう。 この出力エンジンは、先ほどよりも少し複雑になります。 このクラスにはファイル操作がカプセル化され、毎回出力後に必ずファイルが閉じられます。 これによって、メッセージが生成されるたびにすべてのデータが確実にディスクにフラッシュされます。
 
 このファイル ベースのロガーを次に示します。
 

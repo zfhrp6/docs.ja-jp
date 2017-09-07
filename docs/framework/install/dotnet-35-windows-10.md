@@ -2,18 +2,19 @@
 title: "Windows 8、Windows 8.1、および Windows 10 への .NET Framework 3.5 のインストール"
 description: "Windows 10、Windows 8.1、および Windows 8 に .NET Framework 3.5 をインストールする方法について説明します"
 author: rlander
+ms.author: mairaw
 keywords: ".Net Framework, インストール"
-ms.date: 04/20/2017
+ms.date: 05/26/2017
 ms.topic: article
 ms.prod: .net-framework
 ms.technology: vs-ide-deployment
 ms.devlang: dotnet
 ms.assetid: 67cda1d5-c6g4-4eb5-93e6-4f478de07ff7
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 64ba9cb408e565b20a001382c3b39a41602b6e55
+ms.sourcegitcommit: 21c6a1485f3d0c38bde065d6ecc7b07d5e424c1d
+ms.openlocfilehash: 85a3cada074714c24015d90c26d94551f4f411f2
 ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
+ms.lasthandoff: 08/05/2017
 
 ---
 
@@ -33,7 +34,7 @@ Windows のコントロール パネルを使用して .NET Framework 3.5 を有
 
 1. キーボードの Windows キー ![Windows ロゴ](https://i-msdn.sec.s-msft.com/dynimg/IC721376.jpeg) を押し、「Windows の機能」と入力して、Enter キーを押します。 **[Windows 機能の有効化または無効化]** ダイアログ ボックスが表示されます。
 
-2. **[.NET Framework 3.5 (.NET 2.0 および 3.0 を含む)]** チェック ボックスをオンにして [OK] を選択し、メッセージが表示された場合はコンピューターを再起動します。
+2. **[.NET Framework 3.5 (.NET 2.0 および 3.0 を含む)]** チェック ボックスをオンにして **[OK]** を選択し、メッセージが表示された場合はコンピューターを再起動します。
 
    ![コントロール パネルを使用した .NET のインストール](./media/dotnet-control-panel.png)
 

@@ -1,7 +1,7 @@
 ---
-title: "開発者向けの .NET Framework のインストール | Microsoft Docs"
+title: "開発者向けの .NET Framework のインストール"
 ms.custom: 
-ms.date: 04/28/2017
+ms.date: 05/26/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
@@ -19,11 +19,11 @@ caps.latest.revision: 165
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 0248602661b93eb0372e12fbea1055515a9abca3
-ms.openlocfilehash: b7b7cb8d8f10d8d7f437b7bcf91f99237003ca74
+ms.translationtype: HT
+ms.sourcegitcommit: 21c6a1485f3d0c38bde065d6ecc7b07d5e424c1d
+ms.openlocfilehash: 844b3e40b816d324ca4ba22d6884be5a7e3a2ec1
 ms.contentlocale: ja-jp
-ms.lasthandoff: 06/13/2017
+ms.lasthandoff: 08/05/2017
 
 ---
 

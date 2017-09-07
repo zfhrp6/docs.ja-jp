@@ -1,5 +1,5 @@
 ---
-title: ".NET Framework 配置ガイド (管理者向け) | Microsoft Docs"
+title: ".NET Framework 配置ガイド (管理者向け)"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
@@ -22,11 +22,11 @@ caps.latest.revision: 40
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
-ms.openlocfilehash: 95f0a049db17d8aa2d55200c184be2b2f2ec45fc
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 07b7381ddc94e3bc40a4eb0ed546f9526b57600a
 ms.contentlocale: ja-jp
-ms.lasthandoff: 06/02/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="net-framework-deployment-guide-for-administrators"></a>.NET Framework 配置ガイド (管理者向け)
@@ -274,3 +274,4 @@ ms.lasthandoff: 06/02/2017
 ## <a name="see-also"></a>関連項目  
  [配置ガイド (開発者向け)](../../../docs/framework/deployment/deployment-guide-for-developers.md)   
  [システム要件](../../../docs/framework/get-started/system-requirements.md)
+

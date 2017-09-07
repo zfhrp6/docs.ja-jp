@@ -1,50 +1,42 @@
 ---
-title: "Visual Studio for Mac を使用した macOS での .NET Core の概要 | Microsoft Docs"
+title: "Visual Studio for Mac を使用した macOS での .NET Core の概要"
 description: "このトピックでは、Visual Studio for Mac と .NET Core を使用して、単純なコンソール アプリケーションをビルドする手順を示します。"
 keywords: .NET, .NET Core, macOS, Mac
 author: guardrex
 ms.author: mairaw
 ms.date: 06/12/2017
-ms.topic: article
+ms.topic: get-started-article
 ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: 8902e849-dd17-42c0-8264-cc7ae3927a0c
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 83200e452bccc20bfa82d94899514019e9d05a23
-ms.openlocfilehash: c377d0669efed9abb50965652d286ceb6fad3299
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: e11515031716a66ead866e52504137cb4e1df137
 ms.contentlocale: ja-jp
-ms.lasthandoff: 07/05/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 
-<a id="getting-started-with-net-core-on-macos-using-visual-studio-for-mac" class="xliff"></a>
-
-# Visual Studio for Mac を使用した macOS での .NET Core の概要
+# <a name="getting-started-with-net-core-on-macos-using-visual-studio-for-mac"></a>Visual Studio for Mac を使用した macOS での .NET Core の概要
 
 Visual Studio for Mac では、.NET Core アプリケーション開発用の機能をすべて備えた統合開発環境 (IDE) が提供されます。 このトピックでは、Visual Studio for Mac と .NET Core を使用して、単純なコンソール アプリケーションをビルドする手順を示します。
 
 > [!NOTE]
-> Visual Studio for Mac はプレビュー ソフトウェアです。 Microsoft 製品のすべてのプレビュー バージョンの場合と同様に、お客様からのフィードバックはとても貴重なものです。 次の 2 つの方法で Visual Studio for Mac の開発チームにフィードバックを送信することができます。
-> * Visual Studio for Mac で、メニューから **[ヘルプ]、[問題の報告]** の順に選択するか、ようこそ画面から **[問題の報告]** を選択して、バグ レポートを提出するためのウィンドウを開きます。
-> * 提案するには、メニューから **[ヘルプ]、[提案の送信]** の順に選択するか、ようこそ画面から **[提案の送信]** を選択し、[Visual Studio for Mac の UserVoice Web ページ](https://visualstudio.uservoice.com/forums/563332-visual-studio-for-mac)に移動します。
+> お客様のフィードバックは非常に貴重です。 次の 2 つの方法で Visual Studio for Mac の開発チームにフィードバックを送信することができます。
+> * Visual Studio for Mac で、メニューから **[ヘルプ]** > **[問題の報告]** の順に選択するか、ようこそ画面から **[問題の報告]** を選択して、バグ報告を提出するためのウィンドウを開きます。 お客様のフィードバックは、[開発者コミュニティ](https://developercommunity.visualstudio.com/spaces/8/index.html) ポータルで追跡することができます。
+> * 提案するには、メニューから **[ヘルプ]** > **[提案の送信]** の順に選択するか、ようこそ画面から **[提案の送信]** を選択し、[Visual Studio for Mac の UserVoice Web ページ](https://visualstudio.uservoice.com/forums/563332-visual-studio-for-mac)に移動します。
 
-<a id="prerequisites" class="xliff"></a>
+## <a name="prerequisites"></a>必須コンポーネント
 
-## 必須コンポーネント
+「[Mac における .NET Core の前提条件](../../core/macos-prerequisites.md)」のトピックをご覧ください。
 
-必須コンポーネントの詳細については、「[Mac における .NET Core の前提条件](../../core/macos-prerequisites.md)」を参照してください。
-
-<a id="getting-started" class="xliff"></a>
-
-## 作業の開始
+## <a name="getting-started"></a>作業の開始
 
 必須コンポーネントと Visual Studio for Mac を既にインストールしている場合は、このセクションをスキップして、「[プロジェクトの作成](#creating-a-project)」に進みます。 以下の手順に従って、必須コンポーネントと Visual Studio for Mac をインストールします。
 
 [Visual Studio for Mac インストーラー](https://www.visualstudio.com/vs/visual-studio-mac/)をダウンロードします。 インストーラーを実行します。 使用許諾契約書を読み、同意します。 インストール中に、Xamarin (クロスプラットフォーム モバイル アプリ開発テクノロジ) をインストールすることができます。 .NET Core の開発の場合、Xamarin とその関連コンポーネントのインストールは省略できます。 Visual Studio for Mac のインストール プロセスのチュートリアルについては、「[Introducing Visual Studio for Mac](https://developer.xamarin.com/guides/cross-platform/visual-studio-mac/)」 (Visual Studio for Mac の概要) を参照してください。 インストールが完了したら、Visual Studio for Mac IDE を起動します。
 
-<a id="creating-a-project" class="xliff"></a>
-
-## プロジェクトの作成
+## <a name="creating-a-project"></a>プロジェクトの作成
 
 1. ようこそ画面で **[新しいプロジェクト]** を選択します。
 
@@ -62,17 +54,13 @@ Visual Studio for Mac では、.NET Core アプリケーション開発用の機
 
    ![Program.cs ファイルが開かれた状態のメイン ウィンドウ](./media/using-on-mac-vs/vsmac4.png)
 
-<a id="run-the-application" class="xliff"></a>
-
-## アプリケーションの実行
+## <a name="run-the-application"></a>アプリケーションの実行
 
 アプリは、<kbd>F5</kbd> キーを使用する場合はデバッグ モードで、<kbd>Ctrl</kbd> + <kbd>F5</kbd> キーを使用する場合はリリース モードで実行します。
 
 ![[アプリケーション出力] ウィンドウに Hello World! が表示された状態](./media/using-on-mac-vs/vsmac5.png)
 
-<a id="next-step" class="xliff"></a>
-
-## 次のステップ
+## <a name="next-step"></a>次のステップ
 
 「[Visual Studio for Mac を使用した macOS での完全な .NET Core ソリューションの構築](using-on-mac-vs-full-solution.md)」トピックでは、再利用可能なライブラリと単体テストを含む完全な .NET Core ソリューションを構築する方法を示します。
 

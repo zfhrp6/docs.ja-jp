@@ -1,5 +1,5 @@
 ---
-title: "C# での LINQ クエリの作成#"
+title: "C# での LINQ クエリの作成"
 description: "クエリの記述方法について説明します。"
 keywords: .NET, .NET Core, C#
 author: BillWagner
@@ -11,14 +11,15 @@ ms.prod: .net-core
 ms.technology: .net-core-technologies
 ms.devlang: dotnet
 ms.assetid: 30703f79-cf3a-4d02-b892-c95d58a1d9ed
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 2e08c8e3594bedeab763895c8b6f7d78a2bbf56d
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 7051e33a185b0ab898c4b9d7368f8f0e6883c119
+ms.contentlocale: ja-jp
+ms.lasthandoff: 07/28/2017
 
 ---
 
-# <a name="write-linq-queries-in-c"></a>C# での LINQ クエリの作成#
+# <a name="write-linq-queries-in-c"></a>C# での LINQ クエリの作成
 
 このトピックでは、C# で LINQ クエリを記述できる 3 つの方法について説明します。  
   
@@ -49,7 +50,7 @@ ms.lasthandoff: 03/13/2017
 ## <a name="example"></a>例  
   
 ## <a name="method-syntax"></a>メソッド構文  
- 一部のクエリ操作は、メソッド呼び出しとして表す必要があります。 この種のメソッドで特に一般的なものは、<xref:System.Linq.Enumerable.Sum%2A>、 <xref:System.Linq.Enumerable.Max%2A>、 <xref:System.Linq.Enumerable.Min%2A>、 <xref:System.Linq.Enumerable.Average%2A> などのシングルトン数値を返すメソッドです。 これらのメソッドは、単一の値のみを表し、追加のクエリ操作のソースとしては使用できないため、常に、どのクエリよりも後に呼び出す必要があります。 次の例は、クエリ式でのメソッド呼び出しを示したものです。  
+ 一部のクエリ操作は、メソッド呼び出しとして表す必要があります。 このようなメソッドで最も一般的なものは、<xref:System.Linq.Enumerable.Sum%2A>、<xref:System.Linq.Enumerable.Max%2A>、<xref:System.Linq.Enumerable.Min%2A>、<xref:System.Linq.Enumerable.Average%2A> のような単一の数値を返すメソッドです。 これらのメソッドは、単一の値のみを表し、追加のクエリ操作のソースとしては使用できないため、常に、どのクエリよりも後に呼び出す必要があります。 次の例は、クエリ式でのメソッド呼び出しを示したものです。  
   
  [!code-cs[csProgGuideLINQ#6](../../../samples/snippets/csharp/concepts/linq/how-to-write-linq-queries_2.cs)]  
   
@@ -58,7 +59,7 @@ ms.lasthandoff: 03/13/2017
   
  [!code-cs[csProgGuideLINQ#7](../../../samples/snippets/csharp/concepts/linq/how-to-write-linq-queries_3.cs)]  
   
- 上記のクエリでは Query #4 だけが直ちに実行されます。 これは、このクエリがジェネリック型の <xref:System.Collections.Generic.IEnumerable%601> コレクションではなく、単一の値を返すためです。 メソッド自体は、値を計算するために `foreach` を使用する必要があります。  
+ 上記のクエリでは Query #4 だけが直ちに実行されます。 これは、それがジェネリック <xref:System.Collections.Generic.IEnumerable%601> コレクションではなく、単一値を返すためです。 メソッド自体は、値を計算するために `foreach` を使用する必要があります。  
   
  上記の各クエリは、[var](../language-reference/keywords/var.md) による暗黙的型指定を使用しても記述できます。次に例を示します。  
   
@@ -95,3 +96,4 @@ int numCount = numbers.Where(n => n < 3 || n > 7).Count();
   [チュートリアル: C# でのクエリの作成](../programming-guide/concepts/linq/walkthrough-writing-queries-linq.md)   
  [LINQ クエリ式](index.md)   
  [where 句](../language-reference/keywords/where-clause.md)
+

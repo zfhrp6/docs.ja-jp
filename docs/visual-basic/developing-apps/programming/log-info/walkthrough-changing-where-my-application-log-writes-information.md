@@ -1,5 +1,5 @@
 ---
-title: "My.Application.Log による情報の書き込み先の変更 (Visual Basic) | Microsoft Docs"
+title: "My.Application.Log による情報の書き込み先の変更 (Visual Basic)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -32,11 +32,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-ms.translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 5e3d68e6a64ec9f8e9cd8bfd13fa8174da568299
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: a02307c55283c359ae069170e8038cd1983d495b
 ms.contentlocale: ja-jp
-ms.lasthandoff: 03/13/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="walkthrough-changing-where-myapplicationlog-writes-information-visual-basic"></a>チュートリアル: My.Application.Log による情報の書き込み先の変更 (Visual Basic)
@@ -176,15 +176,15 @@ ms.lasthandoff: 03/13/2017
   
 1.  `<add>` セクションで、リスナーの `<sharedListeners>` 要素を見つけます。  
   
-2.  `type` 属性はリスナーの型の名前を表します。 この型は、<xref:System.Diagnostics.TraceListener> クラスから継承する必要があります。 正しい型が確実に使用されるよう、型名には厳密な名前を使用します。 詳細については、後述の「厳密な名前を指定された型を参照するには」を参照してください。  
+2.  `type` 属性はリスナーの型の名前を表します。 この型は <xref:System.Diagnostics.TraceListener> クラスを継承する必要があります。 正しい型が確実に使用されるよう、型名には厳密な名前を使用します。 詳細については、後述の「厳密な名前を指定された型を参照するには」を参照してください。  
   
      使用できる型のいくつかを以下に示します。  
   
     -   <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener?displayProperty=fullName> リスナー。ファイル ログに書き込みます。  
   
-    -   <xref:System.Diagnostics.EventLogTraceListener?displayProperty=fullName> リスナー。`initializeData` パラメーターで指定された、コンピューターのイベント ログに情報を書き込みます。  
+    -   <xref:System.Diagnostics.EventLogTraceListener?displayProperty=fullName> リスナー。 `initializeData` パラメーターで指定された、コンピューターのイベント ログに情報を書き込みます。  
   
-    -   <xref:System.Diagnostics.DelimitedListTraceListener?displayProperty=fullName> および <xref:System.Diagnostics.XmlWriterTraceListener?displayProperty=fullName> リスナー。`initializeData` パラメーターで指定されたファイルに書き込みます。  
+    -   <xref:System.Diagnostics.DelimitedListTraceListener?displayProperty=fullName> リスナーおよび <xref:System.Diagnostics.XmlWriterTraceListener?displayProperty=fullName> リスナー。 `initializeData` パラメーターで指定されたファイルに書き込みます。  
   
     -   <xref:System.Diagnostics.ConsoleTraceListener?displayProperty=fullName> リスナー。コマンド ライン コンソールに書き込みます。  
   
@@ -215,3 +215,4 @@ ms.lasthandoff: 03/13/2017
  <xref:System.Diagnostics.EventLogTraceListener?displayProperty=fullName>   
  [方法 : イベント情報をテキスト ファイルに書き込む](../../../../visual-basic/developing-apps/programming/log-info/how-to-write-event-information-to-a-text-file.md)   
  [方法 : アプリケーション イベント ログに書き込む](../../../../visual-basic/developing-apps/programming/log-info/how-to-write-to-an-application-event-log.md)
+

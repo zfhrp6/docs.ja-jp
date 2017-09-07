@@ -1,5 +1,5 @@
 ---
-title: "コンストラクター (C# プログラミング ガイド) | Microsoft Docs"
+title: "コンストラクター (C# プログラミング ガイド)"
 ms.date: 2017-05-05
 ms.prod: .net
 ms.technology:
@@ -30,11 +30,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-ms.translationtype: Human Translation
-ms.sourcegitcommit: a5ed524a1b17f7be8903f998cbd732594faab831
-ms.openlocfilehash: 064d8f8b3068596cd1d4fc2dd073f165f0ebadcb
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 400afcda2fe30bf0e3621ee4c4247486e01d3ee4
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/15/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="constructors-c-programming-guide"></a>コンストラクター (C# プログラミング ガイド)
@@ -50,13 +50,13 @@ ms.lasthandoff: 05/15/2017
 
 [!code-cs[constructors](../../../../samples/snippets/csharp/programming-guide/classes-and-structs/constructors1.cs#1)]  
 
-コンストラクターを 1 つのステートメントとして実装できる場合、[式の本体の定義](../statements-expressions-operators/expression-bodied-members.md)を利用できます。 次の例では、コンストラクターに *name* という名前の文字列パラメーターが 1 つある `Location` クラスが定義されています。 式の本体の定義により `Name` プロパティに引数が割り当てられます。
+コンストラクターを 1 つのステートメントとして実装できる場合、[式の本体の定義](../statements-expressions-operators/expression-bodied-members.md)を利用できます。 次の例では、コンストラクターに *name* という名前の文字列パラメーターが 1 つある `Location` クラスが定義されています。 式の本体の定義により `locationName` フィールドに引数が割り当てられます。
 
 [!code-cs[expression-bodied-constructor](../../../../samples/snippets/csharp/programming-guide/classes-and-structs/expr-bodied-ctor.cs#1)]  
 
 ## <a name="static-constructors"></a>静的コンストラクター
 
-前の例には、表示されるすべてのインスタンス コンストラクターがあり、それが新しいオブジェクトを作成します。 クラスまたは構造体には静的コンストラクターを与えることもできます。静的コンストラクターは型の静的メンバーを初期化します。  静的コンストラクターにはパラメーターがありません。 静的コンストラクターを指定して静的フィールドを初期化しない場合、C# コンパイラは、「[既定値の一覧表](../../../csharp/language-reference/keywords/default-values-table.md)」の一覧にある既定値にフィールドを初期化する既定の静的コンストラクターを与えます。 
+前の例には、表示されるすべてのインスタンス コンストラクターがあり、それが新しいオブジェクトを作成します。 クラスまたは構造体には静的コンストラクターを与えることもできます。静的コンストラクターは型の静的メンバーを初期化します。  静的コンストラクターにはパラメーターがありません。 静的コンストラクターを指定して静的フィールドを初期化しない場合、C# コンパイラは、「[既定値の一覧表](../../../csharp/language-reference/keywords/default-values-table.md)」の一覧にある既定値に静的フィールドを初期化する既定の静的コンストラクターを与えます。 
 
 次の例では、静的コンストラクターを使用して静的フィールドを初期化しています。
 
@@ -85,3 +85,4 @@ ms.lasthandoff: 05/15/2017
  [ファイナライザー](../../../csharp/programming-guide/classes-and-structs/destructors.md)   
  [static](../../../csharp/language-reference/keywords/static.md)   
  [初期化子がコンストラクターとは反対の順序で実行される理由その 1](http://go.microsoft.com/fwlink/?LinkId=112374)
+

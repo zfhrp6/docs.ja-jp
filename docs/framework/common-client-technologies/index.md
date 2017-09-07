@@ -1,5 +1,5 @@
 ---
-title: ".NET Framework の共通クライアント技術 | Microsoft Docs"
+title: ".NET Framework の共通クライアント技術"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
@@ -14,11 +14,11 @@ caps.latest.revision: 3
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.translationtype: Human Translation
-ms.sourcegitcommit: c50b3e328998b65ec47efe6d7457b36116813c77
-ms.openlocfilehash: 25bf2fef9936a3b685ccedb479c941cb7e3f499b
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 8c36d3577d46136d98b3cbcc9aefd19b30960a0b
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/08/2017
+ms.lasthandoff: 09/05/2017
 
 ---
 # <a name="common-client-technologies-in-the-net-framework"></a>.NET Framework の共通クライアント技術
@@ -30,3 +30,4 @@ ms.lasthandoff: 04/08/2017
   
  [クライアント アプリケーション サービス](../../../docs/framework/common-client-technologies/client-application-services.md)  
  Windows ベースのアプリケーションで Microsoft ASP.NET 2.0 AJAX Extensions に含まれる [!INCLUDE[ajax_current_short](../../../includes/ajax-current-short-md.md)] のログイン、ロール、およびプロファイル アプリケーション サービスを使用する方法を説明します。
+

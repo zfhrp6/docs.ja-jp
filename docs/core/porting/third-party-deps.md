@@ -1,5 +1,5 @@
 ---
-title: ".NET Core への移植 - サードパーティの依存関係の分析 | Microsoft Docs"
+title: ".NET Core への移植 - サードパーティの依存関係の分析"
 description: ".NET Core への移植 - サードパーティの依存関係の分析"
 keywords: .NET, .NET Core
 author: cartermp
@@ -9,29 +9,23 @@ ms.topic: article
 ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: b446e9e0-72f6-48f6-92c6-70ad0ce3f86a
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 9cd469dfd4f38605f1455c008388ad04c366e484
-ms.openlocfilehash: c4c97f7f1aa6f574e4acae91320c92c2a76147ea
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: a074978f2817abafa7b8a9fefe7c67c9c52195b3
 ms.contentlocale: ja-jp
-ms.lasthandoff: 06/20/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 
-<a id="porting-to-net-core---analyzing-your-third-party-party-dependencies" class="xliff"></a>
-
-# .NET Core への移植 - サードパーティの依存関係の分析
+# <a name="porting-to-net-core---analyzing-your-third-party-party-dependencies"></a>.NET Core への移植 - サードパーティの依存関係の分析
 
 移植プロセスの最初の手順は、サード パーティの依存関係を理解することです。  .NET Core でまだ実行されていないもの (がある場合) はどれかを確認し、それらに対して代替計画を作成する必要があります。
 
-<a id="prerequisites" class="xliff"></a>
-
-## 必須コンポーネント
+## <a name="prerequisites"></a>必須コンポーネント
 
 この記事は、Windows および Visual Studio を使用しており、最新の .NET Framework で実行されるコードがあることを前提にしています。
 
-<a id="analyzing-nuget-packages" class="xliff"></a>
-
-## NuGet パッケージの分析
+## <a name="analyzing-nuget-packages"></a>NuGet パッケージの分析
 
 NuGet パッケージの移植性の分析は非常に簡単です。  NuGet パッケージはそれ自体がプラットフォーム固有のアセンブリを含むフォルダーのセットであるため、.NET Core のアセンブリが含まれるフォルダーがあるかどうかを確認するだけです。
 
@@ -61,7 +55,7 @@ portable-net451-win81
 portable-net45-win8-wpa8-wpa81
 ```
 
-これらは [.NET 標準ライブラリ](../../standard/net-standard.md)のバージョンにマップされる Target Framework Moniker (TFM) および .NET Core と互換性がある従来のポータブル クラス ライブラリ (PCL) プロファイルです。  `netcoreapp1.0` には互換性はありますが、アプリケーションを対象としており、ライブラリは対象としていません。  `netcoreapp1.0` をベースとするライブラリを使用する場合は問題ありませんが、そのライブラリが他の `netcoreapp1.0` アプリケーションで使用される*以外*のことを想定していない場合があります。
+これらは [.NET Standard](../../standard/net-standard.md) のバージョンにマップされる Target Framework Moniker (TFM) であり、.NET Core と互換性がある従来のポータブル クラス ライブラリ (PCL) プロファイルです。  `netcoreapp1.0` には互換性はありますが、アプリケーションを対象としており、ライブラリは対象としていません。  `netcoreapp1.0` をベースとするライブラリを使用する場合は問題ありませんが、そのライブラリが他の `netcoreapp1.0` アプリケーションで使用される*以外*のことを想定していない場合があります。
 
 また、プレリリース版の .NET Core で使用されるレガシ TFM にも、互換性のあるものがあります。
 
@@ -80,9 +74,7 @@ dotnet5.5
 > [!NOTE]
 > 従来の PCL またはプレリリースの .NET Core ターゲットを対象とするパッケージを使用するには、`project.json` ファイルで `imports` ディレクティブを使用する必要があります。
 
-<a id="what-to-do-when-your-nuget-package-dependency-doesnt-run-on-net-core" class="xliff"></a>
-
-### NuGet パッケージの依存関係が .NET Core で動作しない場合の対処方法
+### <a name="what-to-do-when-your-nuget-package-dependency-doesnt-run-on-net-core"></a>NuGet パッケージの依存関係が .NET Core で動作しない場合の対処方法
 
 依存している NuGet パッケージが .NET Core で動作しない場合の対処方法はいくつかあります。
 
@@ -98,15 +90,11 @@ dotnet5.5
 
 .NET チームは次の .NET Core のサポートでどのライブラリが最も重要かを知りたいと考えています。 使用したいライブラリについて、dotnet@microsoft.comにメールを送ることもできます。
 
-<a id="analyzing-dependencies-which-arent-nuget-packages" class="xliff"></a>
-
-## NuGet パッケージではない依存関係の分析
+## <a name="analyzing-dependencies-which-arent-nuget-packages"></a>NuGet パッケージではない依存関係の分析
 
 ファイル システム内の DLL など、NuGet パッケージではない依存関係がある場合もあります。  その依存関係の移植性を調べる唯一の方法が、[ApiPort ツール](https://github.com/Microsoft/dotnet-apiport/blob/master/docs/HowTo/)を実行することです。
 
-<a id="next-steps" class="xliff"></a>
-
-## 次の手順
+## <a name="next-steps"></a>次の手順
 
 ライブラリを移植している場合は、「[Porting your Libraries](libraries.md)」(ライブラリへの移植) を参照してください。
 

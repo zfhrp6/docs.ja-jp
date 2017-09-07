@@ -1,5 +1,5 @@
 ---
-title: ".NET Framework で互換性のために残されている型 | Microsoft Docs"
+title: ".NET Framework で互換性のために残されている型"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
@@ -18,15 +18,14 @@ caps.latest.revision: 41
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 01c66e2c291766ba00376261740906934f065855
-ms.openlocfilehash: b7040d4c82c9434b2d24a579a93602660479ec59
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 15ab48dedaef24ea209c38939ee87a0321da55cf
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/22/2017
+ms.lasthandoff: 07/28/2017
 
 ---
-# .NET Framework で互換性のために残されている型
-<a id="obsolete-types-in-the-net-framework" class="xliff"></a>
+# <a name="obsolete-types-in-the-net-framework"></a>.NET Framework で互換性のために残されている型
 <a name="introduction"></a> この記事の表に、[!INCLUDE[net_v45](../../../includes/net-v45-md.md)] と [!INCLUDE[net_v46](../../../includes/net-v46-md.md)] で互換性のために残されている型をアセンブリ別に示します。 各アセンブリで互換性のために残されている型と推奨される代替型の一覧を表示するには、以下のリンクを使用してください。 これらの型は廃止されているため、そのメンバーもすべて廃止されます。 .NET Framework クラス ライブラリで互換性のために残されているその他のメンバーの一覧については、[互換性のために残されているメンバー](../../../docs/framework/whats-new/obsolete-members.md)に関する記事をご覧ください。  
   
 -   [互換性のために残されているシステム アセンブリの型](#obsolete_types_in_system_assemblies)  
@@ -82,13 +81,11 @@ ms.lasthandoff: 05/22/2017
     -   [Microsoft.VisualC.dll](#visualc)  
   
 <a name="obsolete_types_in_system_assemblies"></a>   
-## 互換性のために残されているシステム アセンブリの型
-<a id="obsolete-types-in-system-assemblies" class="xliff"></a>  
+## <a name="obsolete-types-in-system-assemblies"></a>互換性のために残されているシステム アセンブリの型  
  次の表に、システム アセンブリで、互換性のために残されていることが公表されている型を示します。 これらのアセンブリは、.NET Framework を対象とする汎用アプリケーションの開発で使用されます。  
   
 <a name="mscorlib"></a>   
-### アセンブリ: mscorlib.dll
-<a id="assembly-mscorlibdll" class="xliff"></a>  
+### <a name="assembly-mscorlibdll"></a>アセンブリ: mscorlib.dll  
   
 |型|メッセージ|  
 |----------|-------------|  
@@ -153,8 +150,7 @@ ms.lasthandoff: 05/22/2017
  [ページのトップへ](#introduction)  
   
 <a name="Core"></a>   
-### アセンブリ: System.Core.dll
-<a id="assembly-systemcoredll" class="xliff"></a>  
+### <a name="assembly-systemcoredll"></a>アセンブリ: System.Core.dll  
   
 |型|メッセージ|  
 |----------|-------------|  
@@ -163,8 +159,7 @@ ms.lasthandoff: 05/22/2017
  [ページのトップへ](#introduction)  
   
 <a name="data"></a>   
-### アセンブリ: System.Data.dll
-<a id="assembly-systemdatadll" class="xliff"></a>  
+### <a name="assembly-systemdatadll"></a>アセンブリ: System.Data.dll  
   
 |型|メッセージ|  
 |----------|-------------|  
@@ -176,8 +171,7 @@ ms.lasthandoff: 05/22/2017
  [ページのトップへ](#introduction)  
   
 <a name="oracleclient"></a>   
-### アセンブリ: System.Data.OracleClient.dll
-<a id="assembly-systemdataoracleclientdll" class="xliff"></a>  
+### <a name="assembly-systemdataoracleclientdll"></a>アセンブリ: System.Data.OracleClient.dll  
   
 |型|メッセージ|  
 |----------|-------------|  
@@ -193,8 +187,7 @@ ms.lasthandoff: 05/22/2017
  [ページのトップへ](#introduction)  
   
 <a name="design"></a>   
-### アセンブリ: System.Design.dll
-<a id="assembly-systemdesigndll" class="xliff"></a>  
+### <a name="assembly-systemdesigndll"></a>アセンブリ: System.Design.dll  
   
 |型|メッセージ|  
 |----------|-------------|  
@@ -216,8 +209,7 @@ ms.lasthandoff: 05/22/2017
  [ページのトップへ](#introduction)  
   
 <a name="system"></a>   
-### アセンブリ: System.dll
-<a id="assembly-systemdll" class="xliff"></a>  
+### <a name="assembly-systemdll"></a>アセンブリ: System.dll  
   
 |型|メッセージ|  
 |----------|-------------|  
@@ -232,8 +224,7 @@ ms.lasthandoff: 05/22/2017
  [ページのトップへ](#introduction)  
   
 <a name="enterpriseservices"></a>   
-### アセンブリ: System.EnterpriseServices.dll
-<a id="assembly-systementerpriseservicesdll" class="xliff"></a>  
+### <a name="assembly-systementerpriseservicesdll"></a>アセンブリ: System.EnterpriseServices.dll  
   
 |型|メッセージ|  
 |----------|-------------|  
@@ -242,8 +233,7 @@ ms.lasthandoff: 05/22/2017
  [ページのトップへ](#introduction)  
   
 <a name="net"></a>   
-### アセンブリ: System.Net.dll
-<a id="assembly-systemnetdll" class="xliff"></a>  
+### <a name="assembly-systemnetdll"></a>アセンブリ: System.Net.dll  
   
 |型|メッセージ|  
 |----------|-------------|  
@@ -260,8 +250,7 @@ ms.lasthandoff: 05/22/2017
  [ページのトップへ](#introduction)  
   
 <a name="servicemodel"></a>   
-### アセンブリ: System.ServiceModel.dll
-<a id="assembly-systemservicemodeldll" class="xliff"></a>  
+### <a name="assembly-systemservicemodeldll"></a>アセンブリ: System.ServiceModel.dll  
   
 |種類|メッセージ|  
 |----------|-------------|  
@@ -277,8 +266,7 @@ ms.lasthandoff: 05/22/2017
  [ページのトップへ](#introduction)  
   
 <a name="web"></a>   
-### アセンブリ: System.Web.dll
-<a id="assembly-systemwebdll" class="xliff"></a>  
+### <a name="assembly-systemwebdll"></a>アセンブリ: System.Web.dll  
   
 |型|メッセージ|  
 |----------|-------------|  
@@ -299,8 +287,7 @@ ms.lasthandoff: 05/22/2017
  [ページのトップへ](#introduction)  
   
 <a name="mobile"></a>   
-### アセンブリ: System.Web.Mobile.dll
-<a id="assembly-systemwebmobiledll" class="xliff"></a>  
+### <a name="assembly-systemwebmobiledll"></a>アセンブリ: System.Web.Mobile.dll  
   
 |種類|メッセージ|  
 |----------|-------------|  
@@ -500,8 +487,7 @@ ms.lasthandoff: 05/22/2017
  [ページのトップへ](#introduction)  
   
 <a name="workflow_activities"></a>   
-### アセンブリ: System.Workflow.Activities.dll
-<a id="assembly-systemworkflowactivitiesdll" class="xliff"></a>  
+### <a name="assembly-systemworkflowactivitiesdll"></a>アセンブリ: System.Workflow.Activities.dll  
   
 |型|メッセージ|  
 |----------|-------------|  
@@ -514,8 +500,7 @@ ms.lasthandoff: 05/22/2017
  [ページのトップへ](#introduction)  
   
 <a name="workflow_componentmodel"></a>   
-### アセンブリ: System.Workflow.ComponentModel.dll
-<a id="assembly-systemworkflowcomponentmodeldll" class="xliff"></a>  
+### <a name="assembly-systemworkflowcomponentmodeldll"></a>アセンブリ: System.Workflow.ComponentModel.dll  
   
 |型|メッセージ|  
 |----------|-------------|  
@@ -533,8 +518,7 @@ ms.lasthandoff: 05/22/2017
  [ページのトップへ](#introduction)  
   
 <a name="workflow_runtime"></a>   
-### アセンブリ: System.Workflow.Runtime.dll
-<a id="assembly-systemworkflowruntimedll" class="xliff"></a>  
+### <a name="assembly-systemworkflowruntimedll"></a>アセンブリ: System.Workflow.Runtime.dll  
   
 |型|メッセージ|  
 |----------|-------------| 
@@ -549,8 +533,7 @@ ms.lasthandoff: 05/22/2017
  [ページのトップへ](#introduction)  
   
 <a name="workflowservices"></a>   
-### アセンブリ: System.WorkflowServices.dll
-<a id="assembly-systemworkflowservicesdll" class="xliff"></a>  
+### <a name="assembly-systemworkflowservicesdll"></a>アセンブリ: System.WorkflowServices.dll  
   
 |型|メッセージ|  
 |----------|-------------|  
@@ -579,8 +562,7 @@ ms.lasthandoff: 05/22/2017
  [ページのトップへ](#introduction)  
   
 <a name="xaml"></a>   
-### アセンブリ: System.Xaml.dll
-<a id="assembly-systemxamldll" class="xliff"></a>  
+### <a name="assembly-systemxamldll"></a>アセンブリ: System.Xaml.dll  
   
 |種類|メッセージ|  
 |----------|-------------|  
@@ -589,8 +571,7 @@ ms.lasthandoff: 05/22/2017
  [ページのトップへ](#introduction)  
   
 <a name="xml"></a>   
-### アセンブリ: System.Xml.dll
-<a id="assembly-systemxmldll" class="xliff"></a>  
+### <a name="assembly-systemxmldll"></a>アセンブリ: System.Xml.dll  
   
 |型|メッセージ|  
 |----------|-------------|  
@@ -603,8 +584,7 @@ ms.lasthandoff: 05/22/2017
  [ページのトップへ](#introduction)  
   
 <a name="WindowsBase"></a>   
-### アセンブリ: WindowsBase.dll
-<a id="assembly-windowsbasedll" class="xliff"></a>  
+### <a name="assembly-windowsbasedll"></a>アセンブリ: WindowsBase.dll  
   
 |型|メッセージ|  
 |----------|-------------|  
@@ -613,20 +593,17 @@ ms.lasthandoff: 05/22/2017
  [ページのトップへ](#introduction)  
   
 <a name="obsolete_types_in_microsoft_assemblies"></a>   
-## 互換性のために残されている Microsoft アセンブリの型
-<a id="obsolete-types-in-microsoft-assemblies" class="xliff"></a>  
+## <a name="obsolete-types-in-microsoft-assemblies"></a>互換性のために残されている Microsoft アセンブリの型  
  以下のセクションで、互換性のために残されている Microsoft アセンブリの型を示します。 これらのアセンブリは、個別の言語 (たとえば、Microsoft.JScript.dll や Microsoft.VisualC.dll) を対象とした特殊な目的のアセンブリです。  
   
 <a name="IEHost"></a>   
-### アセンブリ: IEHost.dll and IEExec.exe
-<a id="assembly-iehostdll-and-ieexecexe" class="xliff"></a>  
+### <a name="assembly-iehostdll-and-ieexecexe"></a>アセンブリ: IEHost.dll and IEExec.exe  
  IEHost.dll および IEExec.exe アセンブリは .NET Framework から削除されています。 これらのアセンブリのすべての型およびメンバーは廃止され、[!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] ではサポートされていません。 これらのアセンブリは Internet Explorer で Windows フォーム コントロールをホストし、実行可能ファイルを実行するために使用されていました。 代替手段としては、ClickOnce、XAML ブラウザー アプリケーション (XBAP)、および Microsoft Silverlight をお勧めします。  
   
  [ページのトップへ](#introduction)  
   
 <a name="Engine"></a>   
-### アセンブリ: Microsoft.Build.Engine.dll
-<a id="assembly-microsoftbuildenginedll" class="xliff"></a>  
+### <a name="assembly-microsoftbuildenginedll"></a>アセンブリ: Microsoft.Build.Engine.dll  
   
 |型|メッセージ|  
 |----------|-------------|  
@@ -636,8 +613,7 @@ ms.lasthandoff: 05/22/2017
  [ページのトップへ](#introduction)  
   
 <a name="jscript"></a>   
-### アセンブリ: Microsoft.JScript.dll
-<a id="assembly-microsoftjscriptdll" class="xliff"></a>  
+### <a name="assembly-microsoftjscriptdll"></a>アセンブリ: Microsoft.JScript.dll  
   
 |型|メッセージ|  
 |----------|-------------|  
@@ -663,8 +639,7 @@ ms.lasthandoff: 05/22/2017
  [ページのトップへ](#introduction)  
   
 <a name="VBCompat"></a>   
-### アセンブリ: Microsoft.VisualBasic.Compatibility.dll
-<a id="assembly-microsoftvisualbasiccompatibilitydll" class="xliff"></a>  
+### <a name="assembly-microsoftvisualbasiccompatibilitydll"></a>アセンブリ: Microsoft.VisualBasic.Compatibility.dll  
   
 |型|メッセージ|  
 |----------|-------------|  
@@ -739,8 +714,7 @@ ms.lasthandoff: 05/22/2017
  [ページのトップへ](#introduction)  
   
 <a name="VBCompatData"></a>   
-### アセンブリ: Microsoft.VisualBasic.Compatibility.Data.dll
-<a id="assembly-microsoftvisualbasiccompatibilitydatadll" class="xliff"></a>  
+### <a name="assembly-microsoftvisualbasiccompatibilitydatadll"></a>アセンブリ: Microsoft.VisualBasic.Compatibility.Data.dll  
   
 |型|メッセージ|  
 |----------|-------------|  
@@ -797,8 +771,7 @@ ms.lasthandoff: 05/22/2017
  [ページのトップへ](#introduction)  
   
 <a name="visualc"></a>   
-### アセンブリ: Microsoft.VisualC.dll
-<a id="assembly-microsoftvisualcdll" class="xliff"></a>  
+### <a name="assembly-microsoftvisualcdll"></a>アセンブリ: Microsoft.VisualC.dll  
   
 |型|メッセージ|  
 |----------|-------------|  
@@ -813,8 +786,7 @@ ms.lasthandoff: 05/22/2017
 |<xref:Microsoft.VisualC.NeedsCopyConstructorModifier?displayProperty=fullName>|Microsoft.VisualC.dll は互換性のために残されているアセンブリであり、下位互換性のためだけに存在します。|  
 |<xref:Microsoft.VisualC.NoSignSpecifiedModifier?displayProperty=fullName>|Microsoft.VisualC.dll は互換性のために残されているアセンブリであり、下位互換性のためだけに存在します。|  
   
-## 関連項目
-<a id="see-also" class="xliff"></a>  
+## <a name="see-also"></a>関連項目  
  [クラス ライブラリの互換性のために残されている機能](../../../docs/framework/whats-new/whats-obsolete.md)   
  [互換性のために残されているメンバー](../../../docs/framework/whats-new/obsolete-members.md)
 

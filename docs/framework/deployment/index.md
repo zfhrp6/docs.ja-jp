@@ -1,5 +1,5 @@
 ---
-title: ".NET Framework およびアプリケーションの配置 | Microsoft Docs"
+title: ".NET Framework およびアプリケーションの配置"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
@@ -26,11 +26,11 @@ caps.latest.revision: 56
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: fe9ab371ab8d3eee3778412e446b7aa30b42476b
-ms.openlocfilehash: 46f524a8c2ee2d65d5c756a101a5c26c5919e165
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 3fc00af210ae777e2749767c6426405c87c9c097
 ms.contentlocale: ja-jp
-ms.lasthandoff: 06/02/2017
+ms.lasthandoff: 09/05/2017
 
 ---
 # <a name="deploying-the-net-framework-and-applications"></a>.NET Framework およびアプリケーションの配置
@@ -175,7 +175,7 @@ ms.lasthandoff: 06/02/2017
 |[.NET Framework 4.5 のインストール中のシステム再起動の削減](../../../docs/framework/deployment/reducing-system-restarts.md)|再起動をできる限り回避する再起動マネージャーと、.NET Framework をインストールするアプリケーションがそれをどのように利用できるかを説明しています。|  
 |[配置ガイド (管理者向け)](../../../docs/framework/deployment/guide-for-administrators.md)|System Center Configuration Manager (SCCM) を使用したシステム管理者による .NET Framework の配置方法と、ネットワーク全体でのシステムの依存関係について説明します。|  
 |[配置ガイド (開発者向け)](../../../docs/framework/deployment/deployment-guide-for-developers.md)|開発者による .NET Framework とアプリケーションのユーザーのコンピューターへのインストール方法について説明します。|  
-|[アプリケーション、サービス、およびコンポーネントの配置](https://docs.microsoft.com/visualstudio/deployment/deploying-applications-services-and-components)|ClickOnce を使用したアプリケーションの発行手順や、Windows インストーラー テクノロジなど、Visual Studio の配置オプションについて説明します。| 
+|[アプリケーション、サービス、およびコンポーネントの配置](/visualstudio/deployment/deploying-applications-services-and-components)|ClickOnce を使用したアプリケーションの発行手順や、Windows インストーラー テクノロジなど、Visual Studio の配置オプションについて説明します。| 
 |[ClickOnce アプリケーションの発行](/visualstudio/deployment/publishing-clickonce-applications)|Windows フォーム アプリケーションをパッケージ化し、これを ClickOnce でネットワーク上のクライアント コンピューターに配置する方法を説明します。|  
 |[リソースのパッケージ化と配置](../../../docs/framework/resources/packaging-and-deploying-resources-in-desktop-apps.md)|.NET Framework でリソースのパッケージ化と配置に使用する、ハブ アンド スポーク モデルについて説明します。リソースの名前付け規則、フォールバック プロセス、およびパッケージ化の代替策についても説明します。|  
 |[相互運用アプリケーションの配置](../../../docs/framework/interop/deploying-an-interop-application.md)|相互運用アプリケーションの出荷方法とインストール方法について説明します。通常、相互運用アプリケーションには、.NET Framework クライアント アセンブリ、個別の COM タイプ ライブラリを表す 1 つ以上の相互運用機能アセンブリ、および 1 つ以上の登録済み COM コンポーネントが含まれています。|  

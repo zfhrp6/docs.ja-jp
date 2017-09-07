@@ -1,48 +1,68 @@
 ---
-title: "&lt;param&gt; (C# プログラミング ガイド) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.technology: 
-  - "devlang-csharp"
-ms.topic: "article"
-f1_keywords: 
-  - "param"
-  - "<param>"
-dev_langs: 
-  - "CSharp"
-helpviewer_keywords: 
-  - "<param> C# XML タグ"
-  - "param C# XML タグ"
+title: "&lt;param&gt; (C# プログラミング ガイド)"
+ms.date: 2015-07-20
+ms.prod: .net
+ms.technology:
+- devlang-csharp
+ms.topic: article
+f1_keywords:
+- param
+- <param>
+dev_langs:
+- CSharp
+helpviewer_keywords:
+- <param> C# XML tag
+- param C# XML tag
 ms.assetid: 46d329b1-5b84-4537-9e17-73ca97313e4e
 caps.latest.revision: 15
-author: "BillWagner"
-ms.author: "wiwagn"
-caps.handback.revision: 15
+author: BillWagner
+ms.author: wiwagn
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 1076405d60c85540eeaeba39821bd20bc628030d
+ms.contentlocale: ja-jp
+ms.lasthandoff: 07/28/2017
+
 ---
-# &lt;param&gt; (C# プログラミング ガイド)
-## 構文  
+# <a name="ltparamgt-c-programming-guide"></a>&lt;param&gt; (C# プログラミング ガイド)
+## <a name="syntax"></a>構文  
   
-```  
+```xml  
 <param name="name">description</param>  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `name`  
- メソッド パラメーターの名前。  名前は、二重引用符 \(" "\) で囲みます。  
+ メソッド パラメーターの名前です。 名前は二重引用符 (" ") で囲みます。  
   
  `description`  
- パラメーターの説明。  
+ パラメーターの説明です。  
   
-## 解説  
- \<param\> タグは、メソッド宣言のコメント内で使用してメソッドのパラメーターの 1 つを説明します。  複数のパラメーターを文書化するには、複数の \<param\> タグを使用します。  
+## <a name="remarks"></a>コメント  
+ \<param> タグは、メソッドのいずれか 1 つのパラメーターを説明するためにメソッドの宣言のコメントで使用する必要があります。 複数のパラメーターをドキュメント化するには、複数の \<param> タグを使用します。  
   
- \<param\> タグのテキストは、IntelliSense、オブジェクト ブラウザー、およびコード コメント Web レポートに表示されます。  
+ \<param> タグのテキストは、IntelliSense、オブジェクト ブラウザー、コード コメント Web レポートに表示されます。  
   
- コンパイル時に [\/doc](../../../csharp/language-reference/compiler-options/doc-compiler-option.md) を指定してドキュメント コメントをファイルに出力します。  
+ コンパイル時に [/doc](../../../csharp/language-reference/compiler-options/doc-compiler-option.md) を指定して、ドキュメント コメントをファイルに出力します。  
   
-## 使用例  
+## <a name="example"></a>例  
  [!code-cs[csProgGuideDocComments#1](../../../csharp/programming-guide/xmldoc/codesnippet/CSharp/param_1.cs)]  
   
-## 参照  
- [C\# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
+## <a name="see-also"></a>関連項目  
+ [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
  [ドキュメント コメントとして推奨されるタグ](../../../csharp/programming-guide/xmldoc/recommended-tags-for-documentation-comments.md)
+

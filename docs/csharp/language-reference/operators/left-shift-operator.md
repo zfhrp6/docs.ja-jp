@@ -1,42 +1,62 @@
 ---
-title: "&lt;&lt; 演算子 (C# リファレンス) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.technology: 
-  - "devlang-csharp"
-ms.topic: "article"
-f1_keywords: 
-  - "<<_CSharpKeyword"
-dev_langs: 
-  - "CSharp"
-helpviewer_keywords: 
-  - "<< 演算子 [C#]"
-  - "左シフト演算子 (<<) [C#]"
+title: "&lt;&lt; 演算子 (C# リファレンス)"
+ms.date: 2015-07-20
+ms.prod: .net
+ms.technology:
+- devlang-csharp
+ms.topic: article
+f1_keywords:
+- <<_CSharpKeyword
+dev_langs:
+- CSharp
+helpviewer_keywords:
+- left shift operator (<<) [C#]
+- << operator [C#]
 ms.assetid: a654eb56-1ff7-4bf3-9064-b631be0cdccc
 caps.latest.revision: 18
-author: "BillWagner"
-ms.author: "wiwagn"
-caps.handback.revision: 18
+author: BillWagner
+ms.author: wiwagn
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 4e6ad17232ec4eb087ca300342331af6a30789b1
+ms.contentlocale: ja-jp
+ms.lasthandoff: 07/28/2017
+
 ---
-# &lt;&lt; 演算子 (C# リファレンス)
-左シフト演算子 \(`<<`\) では、2 番目のオペランドで指定されたビット数だけ最初のオペランドが左にシフトされます。  2 番目のオペランドの型は [int](../../../csharp/language-reference/keywords/int.md) であるか、`int` への暗黙の数値変換が定義されている型である必要があります。  
+# <a name="ltlt-operator-c-reference"></a>&lt;&lt; 演算子 (C# リファレンス)
+左シフト演算子 (`<<`) は、最初のオペランドを 2 番目のオペランドで指定されたビット数だけ左にシフトします。 2 番目のオペランドの型は、[int](../../../csharp/language-reference/keywords/int.md) または事前に定義された `int` への暗黙的な数値変換を持つ型にする必要があります。  
   
-## 解説  
- 1 番目のオペランドが [int](../../../csharp/language-reference/keywords/int.md) または [uint](../../../csharp/language-reference/keywords/uint.md) \(32 ビット値\) の場合、シフト数は 2 番目のオペランドの下位 5 ビットで指定されます。  つまり、実際のシフト数は 0 ～ 31 ビットです。  
+## <a name="remarks"></a>コメント  
+ 最初のオペランドが [int](../../../csharp/language-reference/keywords/int.md) または [uint](../../../csharp/language-reference/keywords/uint.md) (32 ビット値) である場合、シフト数は、2 番目のオペランドの下位 5 ビットで指定されます。 つまり、実際のシフト数は、0 - 31 ビットです。  
   
- 1 番目のオペランドが [long](../../../csharp/language-reference/keywords/long.md) または [ulong](../../../csharp/language-reference/keywords/ulong.md) \(64 ビット値\) の場合、シフト数は 2 番目のオペランドの下位 6 ビットで指定されます。  つまり、実際のシフト数は 0 ～ 63 ビットです。  
+ 最初のオペランドが [long](../../../csharp/language-reference/keywords/long.md) または [ulong](../../../csharp/language-reference/keywords/ulong.md) (64 ビット値) である場合、シフト数は、2 番目のオペランドの下位 6 ビットで指定されます。 つまり、実際のシフト数は、0 - 63 ビットです。  
   
- シフトの結果、1 番目のオペランドの型の範囲内にない上位ビットは破棄され、空になる下位ビットには 0 が入ります。  シフト演算では、オーバーフローは発生しません。  
+ シフトが破棄された後に最初のオペランドの型の範囲内に含まれないすべての上位ビットおよび下位の空のビットはゼロで埋められます。 シフト演算ではオーバーフローは発生しません。  
   
- `<<` 演算子はユーザー定義型でオーバーロードできます。詳細については、「[operator](../../../csharp/language-reference/keywords/operator.md)」を参照してください。オーバーロードでは、最初のオペランドの型はユーザー定義型、2 番目のオペランドの型は `int` である必要があります。  二項演算子をオーバーロードすると、対応する代入演算子がある場合には、この演算子も暗黙でオーバーロードされます。  
+ ユーザー定義型は、`<<` 演算子をオーバーロードすることができます (「[operator](../../../csharp/language-reference/keywords/operator.md)」を参照)。最初のオペランドの型は、ユーザー定義型である必要があり、2 番目のオペランドの型は `int` でなければなりません。 二項演算子をオーバーロードすると、対応する代入演算子がある場合、これも暗黙的にオーバーロードされます。  
   
-## 使用例  
+## <a name="example"></a>例  
  [!code-cs[csRefOperators#14](../../../csharp/language-reference/operators/codesnippet/CSharp/left-shift-operator_1.cs)]  
   
-## コメント  
- 1 と 33 では下位 5 ビットが同じであるため、`i<<1` と `i<<33`  の結果は同じになります。  
+## <a name="comments"></a>コメント  
+ 1 と 33 は同じ下位 5 ビットを持つため、`i<<1` と `i<<33` は、同じ結果になります。  
   
-## 参照  
- [C\# リファレンス](../../../csharp/language-reference/index.md)   
- [C\# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
- [C\# 演算子](../../../csharp/language-reference/operators/index.md)
+## <a name="see-also"></a>関連項目  
+ [C# リファレンス](../../../csharp/language-reference/index.md)   
+ [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
+ [C# 演算子](../../../csharp/language-reference/operators/index.md)
+

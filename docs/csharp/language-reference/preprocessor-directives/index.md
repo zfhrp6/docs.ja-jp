@@ -31,50 +31,37 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 91bb2daefbc677fad8a3dd93b37aac996234d48c
+ms.sourcegitcommit: 76dfbcd548608eba7753fe9e91fdf6cdff2a5878
+ms.openlocfilehash: ccf46666baafe6e98103310554fee7a858bc4e01
 ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
+ms.lasthandoff: 08/22/2017
 
 ---
 # <a name="c-preprocessor-directives"></a>C# プリプロセッサ ディレクティブ
-このセクションでは、次の C# プリプロセッサ ディレクティブについて説明します。  
-  
- [#if](../../../csharp/language-reference/preprocessor-directives/preprocessor-if.md)  
-  
- [#else](../../../csharp/language-reference/preprocessor-directives/preprocessor-else.md)  
-  
- [#elif](../../../csharp/language-reference/preprocessor-directives/preprocessor-elif.md)  
-  
- [#endif](../../../csharp/language-reference/preprocessor-directives/preprocessor-endif.md)  
-  
- [#define](../../../csharp/language-reference/preprocessor-directives/preprocessor-define.md)  
-  
- [#undef](../../../csharp/language-reference/preprocessor-directives/preprocessor-undef.md)  
-  
- [#warning](../../../csharp/language-reference/preprocessor-directives/preprocessor-warning.md)  
-  
- [#error](../../../csharp/language-reference/preprocessor-directives/preprocessor-error.md)  
-  
- [#line](../../../csharp/language-reference/preprocessor-directives/preprocessor-line.md)  
-  
- [#region](../../../csharp/language-reference/preprocessor-directives/preprocessor-region.md)  
-  
- [#endregion](../../../csharp/language-reference/preprocessor-directives/preprocessor-endregion.md)  
-  
- [#pragma](../../../csharp/language-reference/preprocessor-directives/preprocessor-pragma.md)  
-  
- [#pragma warning](../../../csharp/language-reference/preprocessor-directives/preprocessor-pragma-warning.md)  
-  
- [#pragma checksum](../../../csharp/language-reference/preprocessor-directives/preprocessor-pragma-checksum.md)  
-  
- 詳細および例については、個々のトピックを参照してください。  
-  
- コンパイラに個別のプリプロセッサはありませんが、このセクションに示すディレクティブは、ある場合と同じように処理されます。 これらは条件付きコンパイルに役立ちます。 C や C++ のディレクティブとは異なり、マクロを作成するのにこれらのディレクティブを使用することはできません。  
-  
- プリプロセッサ ディレクティブは、行の唯一の命令である必要があります。  
-  
-## <a name="see-also"></a>関連項目  
+このセクションでは、次の C# プリプロセッサ ディレクティブについて説明します。
+
+- [#if](../../../csharp/language-reference/preprocessor-directives/preprocessor-if.md)
+- [#else](../../../csharp/language-reference/preprocessor-directives/preprocessor-else.md)
+- [#elif](../../../csharp/language-reference/preprocessor-directives/preprocessor-elif.md)
+- [#endif](../../../csharp/language-reference/preprocessor-directives/preprocessor-endif.md)
+- [#define](../../../csharp/language-reference/preprocessor-directives/preprocessor-define.md)
+- [#undef](../../../csharp/language-reference/preprocessor-directives/preprocessor-undef.md)
+- [#warning](../../../csharp/language-reference/preprocessor-directives/preprocessor-warning.md)
+- [#error](../../../csharp/language-reference/preprocessor-directives/preprocessor-error.md)
+- [#line](../../../csharp/language-reference/preprocessor-directives/preprocessor-line.md)
+- [#region](../../../csharp/language-reference/preprocessor-directives/preprocessor-region.md)
+- [#endregion](../../../csharp/language-reference/preprocessor-directives/preprocessor-endregion.md)
+- [#pragma](../../../csharp/language-reference/preprocessor-directives/preprocessor-pragma.md)
+- [#pragma warning](../../../csharp/language-reference/preprocessor-directives/preprocessor-pragma-warning.md)
+- [#pragma checksum](../../../csharp/language-reference/preprocessor-directives/preprocessor-pragma-checksum.md)
+
+詳細および例については、個々のトピックを参照してください。
+
+コンパイラに個別のプリプロセッサはありませんが、このセクションに示すディレクティブは、ある場合と同じように処理されます。 これらは条件付きコンパイルに役立ちます。 C や C++ のディレクティブとは異なり、マクロを作成するのにこれらのディレクティブを使用することはできません。
+
+プリプロセッサ ディレクティブは、行の唯一の命令である必要があります。
+
+## <a name="see-also"></a>関連項目
  [C# リファレンス](../../../csharp/language-reference/index.md)   
  [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)
 

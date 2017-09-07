@@ -33,10 +33,10 @@ translation.priority.mt:
 - pt-br
 - tr-tr
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 4a988a8a2c5999351061254da2b7877bdffd8a32
+ms.sourcegitcommit: 9bb64ea7199f5699ff166d1affb7f8126dcc6612
+ms.openlocfilehash: 1ad08fd188e901f49e01803816407870af37729d
 ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
+ms.lasthandoff: 09/02/2017
 
 ---
 # <a name="c-reference"></a>C# リファレンス
@@ -72,8 +72,7 @@ ms.lasthandoff: 07/28/2017
  [Microsoft サポート技術情報内の C# に関するサポート技術情報記事](http://go.microsoft.com/fwlink/?LinkId=70368)  
  MSDN で利用できるサポート技術情報に関する Microsoft の検索ページを開きます。  
   
- [C#](../../csharp/csharp.md)  
- Visual C# ドキュメントへのポータルを提供します。  
+ [C#](../../csharp/index.md) Visual C# ドキュメントへのポータルを提供します。  
   
  [Visual C# 開発環境の使用](/visualstudio/csharp-ide/using-the-visual-studio-development-environment-for-csharp)  
  IDE およびエディターについて説明する概念トピックおよびタスク トピックへのリンクを提供します。  

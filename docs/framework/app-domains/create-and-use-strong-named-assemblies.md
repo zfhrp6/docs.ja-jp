@@ -1,13 +1,9 @@
 ---
-title: "厳密な名前付きアセンブリの作成と使用 | Microsoft Docs"
-ms.custom: 
-ms.date: 03/30/2017
+title: "厳密な名前付きアセンブリの作成と使用"
+ms.date: 08/01/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - dotnet-bcl
-ms.tgt_pltfrm: 
 ms.topic: article
 helpviewer_keywords:
 - strong-name bypass feature
@@ -24,17 +20,17 @@ caps.latest.revision: 17
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
-ms.openlocfilehash: 7c694fc26d65fee277c7a6873494c8d1900408b2
+ms.translationtype: HT
+ms.sourcegitcommit: 0ee5fed355e0d8418500f1ecee53019548d9f7f8
+ms.openlocfilehash: 39fbd38549a791a761c633dca90dbdeeeefce10b
 ms.contentlocale: ja-jp
-ms.lasthandoff: 06/02/2017
+ms.lasthandoff: 08/02/2017
 
 ---
 # <a name="creating-and-using-strong-named-assemblies"></a>厳密な名前付きアセンブリの作成と使用
 <a name="top"></a> 厳密な名前は、単純テキスト名、バージョン番号、カルチャ情報 (設定されている場合) から成るアセンブリの識別子と、公開キーおよびデジタル署名で構成されます。 このデジタル署名は、対応する秘密キーを使用してアセンブリ ファイルから生成されます。 (アセンブリ ファイルにはアセンブリ マニフェストが格納されており、そこに、アセンブリを構成するすべてのファイルの名前とハッシュが含まれます。)  
   
- 厳密な名前のアセンブリは、他の厳密な名前のアセンブリでのタイプだけを使用できます。 それ以外の場合は、厳密な名前のアセンブリのセキュリティが損なわれます。  
+ 厳密な名前のアセンブリは、他の厳密な名前のアセンブリでのタイプだけを使用できます。 それ以外の場合は、厳密な名前のアセンブリの整合性が損なわれます。  
   
  この概要は、次のセクションで構成されています。  
   
@@ -61,7 +57,7 @@ ms.lasthandoff: 06/02/2017
 4.  共通言語ランタイムは、アセンブリがグローバル アセンブリ キャッシュに入れられる際に、厳密な名前の署名を確認します。 実行時に厳密な名前でバインドするとき、共通言語ランタイムは、アセンブリ B のマニフェストに格納されているキーと、アセンブリ A の厳密な名前を生成するために使用されたキーを比較します。.NET Framework のセキュリティ チェックに合格してバインドが成功すると、アセンブリ B は、アセンブリ A のビットが改ざんされていないことと、これらのビットが実際にアセンブリ A の開発者からのものであることが保証されます。  
   
 > [!NOTE]
->  このシナリオは、信頼の問題を扱っていません。 厳密な名前に加えて、完全な Microsoft Authenticode 署名をアセンブリに持たせることができます。 Authenticode 署名には、信頼を確立するための証明書が含まれます。 厳密な名前を使用すると、コードにこのように署名する必要がないということに注意してください。 実際に、厳密な名前の署名の生成に使用されるキーは、Authenticode 署名の生成に使用されるキーと同じである必要はありません。  
+>  このシナリオは、信頼の問題を扱っていません。 厳密な名前に加えて、完全な Microsoft Authenticode 署名をアセンブリに持たせることができます。 Authenticode 署名には、信頼を確立するための証明書が含まれます。 厳密な名前を使用すると、コードにこのように署名する必要がないということに注意してください。 厳密な名前は、一意の ID を提供するだけです。  
   
  [ページのトップへ](#top)  
   
@@ -94,6 +90,7 @@ ms.lasthandoff: 06/02/2017
 |[方法 : 厳密な名前のアセンブリを参照する](../../../docs/framework/app-domains/how-to-reference-a-strong-named-assembly.md)|コンパイル時または実行時に厳密な名前のアセンブリでタイプまたはリソースを参照する方法について説明します。|  
 |[方法: 厳密な名前のバイパス機能を無効にする](../../../docs/framework/app-domains/how-to-disable-the-strong-name-bypass-feature.md)|厳密な名前の署名の検証をバイパスする機能を無効にする方法について説明します。 すべてのまたは特定のアプリケーションに対して、この機能を無効にすることができます。|  
 |[アセンブリの作成](../../../docs/framework/app-domains/create-assemblies.md)|単一ファイル アセンブリおよびマルチファイル アセンブリの概要を示します。|  
-|[NIB: 方法 : アセンブリの遅延署名 (Visual Studio)](http://msdn.microsoft.com/en-us/cab63b7a-591e-4674-b236-d77cd29a79ea)|アセンブリを作成した後に厳密な名前でアセンブリに署名する方法について説明します。|  
+|[Visual Studio 内でアセンブリに遅延署名する方法](/visualstudio/ide/managing-assembly-and-manifest-signing#how-to-sign-an-assembly-in-visual-studio)|アセンブリを作成した後に厳密な名前でアセンブリに署名する方法について説明します。|  
 |[Sn.exe (厳密名ツール)](../../../docs/framework/tools/sn-exe-strong-name-tool.md)|厳密な名前のアセンブリの作成に役立つ、.NET Framework に付属のツールについて説明します。 このツールには、キーの管理、署名の生成、署名の検査に関する各オプションが用意されています。|  
 |[Al.exe (アセンブリ リンカー)](../../../docs/framework/tools/al-exe-assembly-linker.md)|モジュールまたはリソース ファイルからアセンブリ マニフェストを含むファイルを生成する、.NET Framework に付属のツールについて説明します。|
+

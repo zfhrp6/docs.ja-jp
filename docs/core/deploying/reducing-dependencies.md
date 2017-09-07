@@ -1,6 +1,6 @@
 ---
-title: "project.json によるパッケージ依存関係の縮小 | Microsoft Docs"
-description: "project.json によるパッケージ依存関係の縮小"
+title: "project.json によるパッケージ依存関係の縮小"
+description: "project.json ベースのライブラリ作成時にパッケージの依存関係を減らします。"
 keywords: .NET, .NET Core
 author: cartermp
 ms.author: mairaw
@@ -9,31 +9,25 @@ ms.topic: article
 ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: 916251e3-87f9-4eee-81ec-94076215e6fa
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 4437ce5d344cf06d30e31911def6287999fc6ffc
-ms.openlocfilehash: 616fb3f4b2ed3fda9a2a49ac3ec83ff466c43968
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 23d83f0402e35bc4bed31ef59a6fff0e28e01d35
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/23/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 
-<a id="reducing-package-dependencies-with-projectjson" class="xliff"></a>
-
-# project.json によるパッケージ依存関係の縮小
+# <a name="reducing-package-dependencies-with-projectjson"></a>project.json によるパッケージ依存関係の縮小
 
 この記事では、`project.json` ライブラリの作成時にパッケージ依存関係を減らすために知っておくべきことについて紹介します。 この記事を最後までお読みいただくと、必要な依存関係だけが使用されるようにライブラリを構築する方法を理解できます。 
 
-<a id="why-its-important" class="xliff"></a>
+## <a name="why-its-important"></a>これが重要な理由
 
-## これが重要な理由
-
-.NET Core は NuGet パッケージで構成される製品です。  必要不可欠なパッケージが [.NET Standard Library メタパッケージ](https://www.nuget.org/packages/NETStandard.Library)です。これは他のパッケージから構成される NuGet パッケージです。  一連のパッケージが提供されますが、それらは .NET Framework、.NET Core、Xamarin/Mono など、複数の .NET 実装で動作することが確認されています。
+.NET Core は NuGet パッケージで構成される製品です。  必要不可欠なパッケージが [.NETStandard.Library メタパッケージ](https://www.nuget.org/packages/NETStandard.Library)です。これは他のパッケージから構成される NuGet パッケージです。  一連のパッケージが提供されますが、それらは .NET Framework、.NET Core、Xamarin/Mono など、複数の .NET 実装で動作することが確認されています。
 
 しかしながら、お使いのライブラリではすべてのパッケージが使用されるとは限りません。  ライブラリを作成し、NuGet 経由で配信するときは、実際に使用するパッケージにのみ依存関係を "減らす" ことが推奨されます。  結果的に、NuGet パッケージの全体的フットプリントが少なくなります。
 
-<a id="how-to-do-it" class="xliff"></a>
-
-## その方法
+## <a name="how-to-do-it"></a>その方法
 
 現在のところ、パッケージ参照を減らす正式な `dotnet` コマンドはありません。  代わりに、手動で行う必要があります。  一般的なプロセスは次のようになります。
 
@@ -49,9 +43,7 @@ ms.lasthandoff: 05/23/2017
 1. 試用とエラー。  パッケージを削除したり、復元したり、ライブラリがまだコンパイルするか確認したり、このプロセスを繰り返したりなどの操作が含まれます。
 2. [ILSpy](http://ilspy.net) や [.NET Reflector](http://www.red-gate.com/products/dotnet-development/reflector) などのツールを利用し、コードで実際に利用されている参照を確認します。  その後、利用している種類に該当しないパッケージを削除できます。
 
-<a id="example" class="xliff"></a>
-
-## 例 
+## <a name="example"></a>例 
 
 追加機能を汎用コレクション タイプに提供するライブラリを記述したとします。  そのようなライブラリは `System.Collections` のようなパッケージに依存しなければなりませんが、`System.Net.Http` のようなパッケージにはまったく依存しないことがあります。  そのため、このライブラリが必要とするものだけにパッケージ依存関係を減らすと効果的です。
 

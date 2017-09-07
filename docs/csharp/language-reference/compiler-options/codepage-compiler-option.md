@@ -1,46 +1,66 @@
 ---
-title: "/codepage (C# Compiler Options) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.technology: 
-  - "devlang-csharp"
-ms.topic: "article"
-f1_keywords: 
-  - "/codepage"
-dev_langs: 
-  - "CSharp"
-helpviewer_keywords: 
-  - "/codepage compiler option [C#]"
-  - "codepage compiler option [C#]"
-  - "-codepage compiler option [C#]"
+title: "-codepage (C# コンパイラ オプション)"
+ms.date: 2015-07-20
+ms.prod: .net
+ms.technology:
+- devlang-csharp
+ms.topic: article
+f1_keywords:
+- /codepage
+dev_langs:
+- CSharp
+helpviewer_keywords:
+- /codepage compiler option [C#]
+- codepage compiler option [C#]
+- -codepage compiler option [C#]
 ms.assetid: 75942989-b69a-4308-90a0-840c73d2c478
 caps.latest.revision: 15
-author: "BillWagner"
-ms.author: "wiwagn"
-caps.handback.revision: 15
+author: BillWagner
+ms.author: wiwagn
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: b80f6fcf8891d2f0b921af01cc094f624d807aa1
+ms.contentlocale: ja-jp
+ms.lasthandoff: 07/28/2017
+
 ---
-# /codepage (C# Compiler Options)
-このオプションは、コンパイル時に使用するコード ページを指定します。システムで現在使用されている既定のコードページ以外のコードページを使用する場合に使用します。  
+# <a name="codepage-c-compiler-options"></a>/codepage (C# コンパイラ オプション)
+このオプションでは、必要とするページが、システムで使用されている現在の既定のコードページでない場合に、コンパイル時に使用するコード ページを指定します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
-```  
+```console  
 /codepage:id  
 ```  
   
-## Arguments  
+## <a name="arguments"></a>引数  
  `id`  
- コンパイル時にすべてのソース コード ファイルで使うコード ページの ID。  
+ コンパイル時にすべてのソース コード ファイルで使うコード ページの ID です。  
   
-## 解説  
- コンピューターの既定のコード ページを使わずに作成されたソース コード ファイルをコンパイルする場合は、**\/codepage** オプションで使用するコード ページを指定できます。  **\/codepage** は、コンパイル時にすべてのソース コード ファイルに適用されます。  
+## <a name="remarks"></a>コメント  
+ コンピューターの既定のコード ページを使わずに作成されたソース コード ファイルをコンパイルする場合は、**/codepage** オプションで、使用するコード ページを指定できます。 **/codepage** は、コンパイル時にすべてのソース コード ファイルに適用されます。  
   
- ソース コードの作成時に使用されたコード ページがコンピューターで有効なコード ページと同じ場合、または UNICODE か UTF\-8 の場合は、**\/codepage** を使う必要はありません。  
+ ソース コード ファイルが、コンピューターで有効なコード ページと同じものを使って作成された場合、または UNICODE か UTF-8 で作成された場合、**/codepage** を使う必要はありません。  
   
- コード ページが [GetCPInfo](http://go.microsoft.com/fwlink/?LinkId=148371) システムでサポートされるかを見つける方法については、"参照してください。  
+ 使用しているシステムでサポートされているコード ページを確認する方法については、[GetCPInfo](http://go.microsoft.com/fwlink/?LinkId=148371) に関するページをご覧ください。  
   
- このコンパイラ オプションは、Visual Studio で利用できず、プログラムで変更することもできません。  
+ このコンパイラ オプションは Visual Studio では使用できず、プログラムで変更することはできません。  
   
-## 参照  
- [C\# Compiler Options](../../../csharp/language-reference/compiler-options/index.md)   
- [方法 : プロジェクト プロパティおよび構成設定を変更する](http://msdn.microsoft.com/ja-jp/e7184bc5-2f2b-4b4f-aa9a-3ecfcbc48b67)
+## <a name="see-also"></a>関連項目  
+ [C# コンパイラのオプション](../../../csharp/language-reference/compiler-options/index.md)   
+ [プロジェクトおよびソリューションのプロパティの管理](/visualstudio/ide/managing-project-and-solution-properties)
+

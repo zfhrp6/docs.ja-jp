@@ -1,5 +1,5 @@
 ---
-title: "方法: ToString メソッドをオーバーライドする (C# プログラミング ガイド) | Microsoft Docs"
+title: "方法: ToString メソッドをオーバーライドする (C# プログラミング ガイド)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -28,11 +28,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 400dfda51d978f35c3995f90840643aaff1b9c13
-ms.openlocfilehash: 2dde281d439a07d7736949294772a57e926eb587
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 60cec855286a3bb572a0bacd08c0f7920a1fc912
 ms.contentlocale: ja-jp
-ms.lasthandoff: 03/24/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="how-to-override-the-tostring-method-c-programming-guide"></a>方法: ToString メソッドをオーバーライドする (C# プログラミング ガイド)
@@ -75,3 +75,4 @@ C# では、すべてのクラスまたは構造体が、暗黙的に <xref:Syst
  [override](../../../csharp/language-reference/keywords/override.md)   
  [virtual](../../../csharp/language-reference/keywords/virtual.md)   
  [型の書式設定](../../../standard/base-types/formatting-types.md)
+

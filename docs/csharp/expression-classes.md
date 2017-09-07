@@ -1,6 +1,6 @@
 ---
 title: "式ツリーをサポートするフレームワークの型"
-description: "式ツリーをサポートするフレームワークの型"
+description: "式ツリーをサポートするフレームワークの型、式ツリーの作成、式ツリー API の操作テクニックについて説明します。"
 keywords: .NET, .NET Core
 author: BillWagner
 ms.author: wiwagn
@@ -10,10 +10,11 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: e9c85021-0d36-48af-91b7-aaaa66f22654
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 64b3b7999b6ff01bdf28cb7902ba50087d191cb4
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: ed89b286eee9b4c2e11bb27d18e50f777f94f33e
+ms.contentlocale: ja-jp
+ms.lasthandoff: 07/28/2017
 
 ---
 
@@ -22,7 +23,7 @@ ms.lasthandoff: 03/13/2017
 [前へ -- 式ツリーの説明](expression-trees-explained.md)
 
 式ツリーを使用する .NET Core framework には、多くのクラスがあります。
-クラスの全リストは[ここ](https://docs.microsoft.com/dotnet/core/api/System.Linq.Expressions)で確認できます。
+クラスの全リストは[ここ](/dotnet/core/api/System.Linq.Expressions)で確認できます。
 ここでは、リストのすべてを説明するのではなく、フレームワークのクラスがどう設計されているかを把握します。
 
 言語設計の観点から言えば、式は、評価して値を返すコードの本体です。 式はごく単純な場合があります。定数式 `1` は定数値 1 を返します。 式が複雑になる場合もあります。式 `(-B + Math.Sqrt(B*B + 4 * A * C)) / (2 * A)` は二次方程式の 1 つの解を返します (式に解がある場合)。  

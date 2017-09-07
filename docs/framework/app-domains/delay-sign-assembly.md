@@ -1,13 +1,9 @@
 ---
-title: "アセンブリへの遅延署名 | Microsoft Docs"
-ms.custom: 
-ms.date: 03/30/2017
+title: "アセンブリへの遅延署名"
+ms.date: 07/31/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - dotnet-bcl
-ms.tgt_pltfrm: 
 ms.topic: article
 helpviewer_keywords:
 - deferring assembly signing
@@ -20,11 +16,11 @@ caps.latest.revision: 15
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
-ms.openlocfilehash: 2fce2174da6b5d954e0197d7c834289070c09a22
+ms.translationtype: HT
+ms.sourcegitcommit: 0ee5fed355e0d8418500f1ecee53019548d9f7f8
+ms.openlocfilehash: 2c50a652c834dba80595f2ea419bc75148e13419
 ms.contentlocale: ja-jp
-ms.lasthandoff: 06/02/2017
+ms.lasthandoff: 08/02/2017
 
 ---
 # <a name="delay-signing-an-assembly"></a>アセンブリへの遅延署名
@@ -62,8 +58,8 @@ ms.lasthandoff: 06/02/2017
   
      **–Vr** または **–Vk** のどちらかのオプションでは、テスト キー署名のための .snk ファイルを任意で含めることができます。  
   
-    > [!CAUTION]
-    >  **-Vr** または **–Vk** のオプションは開発時だけ使用します。 検証省略リストにアセンブリを追加すると、セキュリティ上の脆弱性が生じます。 悪意のあるアセンブリは、検証省略リストに追加されたアセンブリの完全限定アセンブリ名 (アセンブリ名、バージョン、カルチャ、および公開キー トークン) を使用することによって、その ID を偽装できます。 これによって、悪意のあるアセンブリの検証も省略できます。  
+    > [!WARNING]
+    > セキュリティに関しては、厳格な名前に依存しないでください。 厳格な名前は、一意の ID を提供するだけです。
   
     > [!NOTE]
     >  64 ビット コンピューターの Visual Studio を使用した開発中に、遅延署名を使用して、**Any CPU** のアセンブリをコンパイルする場合は、**-Vr** オプションを 2 回適用しなければならない場合があります。 (Visual Studio では、**Any CPU** は**プラットフォーム ターゲット**のビルド プロパティの値です。コマンド ラインからコンパイルする場合は、これが既定です。)コマンド ラインまたはファイル エクスプローラーからアプリケーションを実行する場合は、64 ビット バージョンの [Sn.exe (厳密な名前ツール)](../../../docs/framework/tools/sn-exe-strong-name-tool.md) を使用して、アセンブリに **-Vr** オプションを適用します。 設計時に Visual Studio にアセンブリを読み込む (たとえば、アプリケーションの他のアセンブリで使用されているコンポーネントがアセンブリに含まれている) 場合は、32 ビット バージョンの厳密な名前ツールを使用してください。 これは、Just-In-Time (JIT) コンパイラが、コマンド ラインからアセンブリを実行する場合には 64 ビットのネイティブ コードに、設計時の環境にアセンブリを読み込む場合には 32 ビットのネイティブ コードにアセンブリをコンパイルするためです。  
@@ -81,3 +77,4 @@ ms.lasthandoff: 06/02/2017
  [方法 : 公開キーと秘密キーのキー ペアを作成する](../../../docs/framework/app-domains/how-to-create-a-public-private-key-pair.md)   
  [Sn.exe (厳密名ツール)](../../../docs/framework/tools/sn-exe-strong-name-tool.md)   
  [アセンブリを使用したプログラミング](../../../docs/framework/app-domains/programming-with-assemblies.md)
+

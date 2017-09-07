@@ -1,5 +1,5 @@
 ---
-title: "方法: CodeDOM を使用して XML ドキュメント ファイルを作成する | Microsoft Docs"
+title: "方法: CodeDOM を使用して XML ドキュメント ファイルを作成する"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
@@ -18,11 +18,11 @@ caps.latest.revision: 8
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: a32f50ce8a92fa22d9627a1510a4b3ec1087364e
-ms.openlocfilehash: f9f90a91511b846a9ade9dc197c49caed082d57b
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 7d5569fd22cc8469052cc318fd50a5f8ef94c1a9
 ms.contentlocale: ja-jp
-ms.lasthandoff: 06/02/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="how-to-create-an-xml-documentation-file-using-codedom"></a>方法: CodeDOM を使用して XML ドキュメント ファイルを作成する
@@ -86,3 +86,4 @@ CodeDOM を利用し、XML ドキュメントを生成するコードを作成�
  [XML の使用によるコードのドキュメントの作成](~/docs/visual-basic/programming-guide/program-structure/documenting-your-code-with-xml.md)   
  [XML ドキュメント コメント](~/docs/csharp/programming-guide/xmldoc/xml-documentation-comments.md)   
  [XML に関するドキュメント](/cpp/ide/xml-documentation-visual-cpp)
+

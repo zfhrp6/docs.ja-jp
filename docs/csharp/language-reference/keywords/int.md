@@ -1,5 +1,5 @@
 ---
-title: "int (C# リファレンス) | Microsoft Docs"
+title: "int (C# リファレンス)"
 ms.date: 2017-03-14
 ms.prod: .net
 ms.technology:
@@ -30,11 +30,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 400dfda51d978f35c3995f90840643aaff1b9c13
-ms.openlocfilehash: 48283ce80bbbff4182362ea9ae6258d31e175e0d
+ms.translationtype: HT
+ms.sourcegitcommit: 935428cc9442a3e1d15eeb8942176c237bff4e22
+ms.openlocfilehash: 6e87893bcd9800b61297e71b782028fec5116479
 ms.contentlocale: ja-jp
-ms.lasthandoff: 03/24/2017
+ms.lasthandoff: 08/22/2017
 
 ---
 # <a name="int-c-reference"></a>int (C# リファレンス)
@@ -47,9 +47,9 @@ ms.lasthandoff: 03/24/2017
   
 ## <a name="literals"></a>リテラル  
  
-`int` 変数を宣言し、10 進リテラル、16 進リテラル、または (C# 7 以降) バイナリ リテラルを割り当てることによって初期化できます。  整数リテラルが `int` の範囲外である場合は (つまり、<xref:System.Int32.MinValue?displayProperty=fullName> より小さいか、<xref:System.Int32.MaxValue?displayProperty=fullName> より大きい場合)、コンパイル エラーが発生します。 
+`int` 変数を宣言し、10 進リテラル、16 進リテラル、または (C# 7 以降) バイナリ リテラルを割り当てることによって初期化できます。  整数リテラルが `int` の範囲外にある場合 (つまり、<xref:System.Int32.MinValue?displayProperty=fullName> より小さいか、<xref:System.Int32.MaxValue?displayProperty=fullName> より大きい場合)、コンパイル エラーが発生します。 
 
-次の例では、整数 16,342 を 10 進リテラル、16 進リテラル、バイナリ リテラルで表したものが、`int` 値に割り当てられています。  
+次の例では、整数 90,946 を 10 進リテラル、16 進リテラル、バイナリ リテラルで表したものが、`int` 値に割り当てられています。  
   
 [!code-cs[int](../../../../samples/snippets/csharp/language-reference/keywords/numeric-literals.cs#Int)]  
 
@@ -95,7 +95,7 @@ int y = (int)3.0;    // OK: explicit conversion.
  浮動小数点型と整数型の混在する算術式の詳細については、「[float](../../../csharp/language-reference/keywords/float.md)」と「[double](../../../csharp/language-reference/keywords/double.md)」を参照してください。  
   
 ## <a name="c-language-specification"></a>C# 言語仕様  
- [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec_md.md)]  
+ [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
 ## <a name="see-also"></a>関連項目  
  <xref:System.Int32>   
@@ -106,3 +106,4 @@ int y = (int)3.0;    // OK: explicit conversion.
  [組み込み型の一覧表](../../../csharp/language-reference/keywords/built-in-types-table.md)   
  [暗黙的な数値変換の一覧表](../../../csharp/language-reference/keywords/implicit-numeric-conversions-table.md)   
  [明示的な数値変換の一覧表](../../../csharp/language-reference/keywords/explicit-numeric-conversions-table.md)
+

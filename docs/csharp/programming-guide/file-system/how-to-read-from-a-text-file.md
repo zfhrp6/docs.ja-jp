@@ -1,5 +1,5 @@
 ---
-title: "方法: テキスト ファイルから読み込む (C# プログラミング ガイド) | Microsoft Docs"
+title: "方法: テキスト ファイルから読み込む (C# プログラミング ガイド)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -32,14 +32,15 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: d545aa7f25da49b3ca0fc50b0c5a55c9c0d2b967
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: bd0ad3e062c4d4b32fb6140cacba9a4a32674759
+ms.contentlocale: ja-jp
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="how-to-read-from-a-text-file-c-programming-guide"></a>方法: テキスト ファイルから読み込む (C# プログラミング ガイド)
-この例では、<xref:System.IO.File?displayProperty=fullName> クラスの静的メソッド <xref:System.IO.File.ReadAllText%2A> と <xref:System.IO.File.ReadAllLines%2A> を使ってテキスト ファイルの内容を読み取ります。  
+この例では、<xref:System.IO.File?displayProperty=fullName> クラスの静的メソッド <xref:System.IO.File.ReadAllText%2A> と <xref:System.IO.File.ReadAllLines%2A> を使用してテキスト ファイルの内容を読み取ります。  
   
  <xref:System.IO.StreamReader> の使用例については、「[方法: テキスト ファイルを一度に 1 行読み込む](../../../csharp/programming-guide/file-system/how-to-read-a-text-file-one-line-at-a-time.md)」を参照してください。  
   
@@ -66,3 +67,4 @@ ms.lasthandoff: 03/13/2017
  <xref:System.IO?displayProperty=fullName>   
  [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
  [ファイル システムとレジストリ (C# プログラミング ガイド)](../../../csharp/programming-guide/file-system/index.md)
+

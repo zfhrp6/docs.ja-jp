@@ -1,5 +1,5 @@
 ---
-title: "方法: 指定された単語のセットを含む文章を照会する (LINQ) (C#) | Microsoft Docs"
+title: "方法 : 指定された単語のセットを含む文章を照会する (LINQ) (C#)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -19,10 +19,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: c445a70d2f461ea60b575f58e6d57c1edcda922b
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 8bc90e9919d620127c305c9a2c857968e2c799af
+ms.contentlocale: ja-jp
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="how-to-query-for-sentences-that-contain-a-specified-set-of-words-linq-c"></a>方法 : 指定された単語のセットを含む文章を照会する (LINQ) (C#)
@@ -87,3 +88,4 @@ Historically, the world of data and the world of objects have not been well inte
   
 ## <a name="see-also"></a>関連項目  
  [LINQ と文字列 (C#)](../../../../csharp/programming-guide/concepts/linq/linq-and-strings.md)
+

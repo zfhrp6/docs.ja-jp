@@ -1,5 +1,5 @@
 ---
-title: "動的言語ランタイムの概要 | Microsoft Docs"
+title: "動的言語ランタイムの概要"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
@@ -19,11 +19,11 @@ caps.latest.revision: 26
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
-ms.openlocfilehash: 0930cd01af6af3f00aae070e712e5a758fd99090
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 0f6bfc54a3a597325da153852710a0b22871b54e
 ms.contentlocale: ja-jp
-ms.lasthandoff: 06/02/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="dynamic-language-runtime-overview"></a>動的言語ランタイムの概要
@@ -60,7 +60,7 @@ ms.lasthandoff: 06/02/2017
   
  以下は、DLR を使用して開発された言語の例です。  
   
--   IronPython。 [CodePlex](http://go.microsoft.com/fwlink/?LinkId=141040) の Web サイトから、オープン ソース ソフトウェアとして入手できます。  
+-   IronPython。 [GitHub](https://github.com/IronLanguages/ironpython2) の Web サイトから、オープン ソース ソフトウェアとして入手できます。  
   
 -   IronRuby。 [RubyForge](http://go.microsoft.com/fwlink/?LinkId=141044) の Web サイトから、オープン ソース ソフトウェアとして入手できます。  
   
@@ -107,3 +107,4 @@ DLR のアーキテクチャ
  [共通言語ランタイム (CLR)](../../../docs/standard/clr.md)   
  [Expression Trees](http://msdn.microsoft.com/library/fb1d3ed8-d5b0-4211-a71f-dd271529294b)   
  [チュートリアル: 動的オブジェクトの作成と使用](~/docs/csharp/programming-guide/types/walkthrough-creating-and-using-dynamic-objects.md)
+

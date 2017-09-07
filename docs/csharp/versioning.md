@@ -1,8 +1,8 @@
 ---
-title: "C# のバージョン管理 | C# ガイド"
+title: "C# のバージョン管理 - C# ガイド"
 description: "C# と .NET でのバージョン管理のしくみについて説明します"
 keywords: .NET, .NET Core, C#
-author: tsolarin
+author: BillWagner
 manager: wpickett
 ms.date: 01/08/2017
 ms.topic: article
@@ -10,14 +10,15 @@ ms.prod: visual-studio-dev-14
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: aa8732d7-5cd0-46e1-994a-78017f20d861
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: bfa94e6d994f63adb13bdeea9b23f7130799b438
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 0b671333019c00abafcfb72533e30936f8fc6ad7
+ms.contentlocale: ja-jp
+ms.lasthandoff: 07/28/2017
 
 ---
 
-# <a name="versioning-in-c"></a>C# でのバージョン管理# #
+# <a name="versioning-in-c"></a>C# でのバージョン管理 #
 
 このチュートリアルでは、.NET でのバージョン管理のしくみについて学習します。 また、ライブラリのバージョン管理を行う際や、ライブラリを新しいバージョンにアップグレードする際の考慮事項についても学習します。
 

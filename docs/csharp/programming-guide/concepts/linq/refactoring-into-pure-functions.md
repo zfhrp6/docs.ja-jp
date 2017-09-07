@@ -1,27 +1,23 @@
 ---
 title: "純粋関数へのリファクタリング (C#)"
-ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
 ms.assetid: 2944a0d4-fd33-4e2e-badd-abb0f9be2fcc
 caps.latest.revision: 3
 author: BillWagner
 ms.author: wiwagn
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 9e3bb704cab77d4ad9895624bf7f721920000378
+ms.sourcegitcommit: 9bb17207ba72bb22f5d6db55e9d1bd77e3013445
+ms.openlocfilehash: 2bce781df80a777203ed8e713bedf83f1c7779a8
 ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
+ms.lasthandoff: 08/25/2017
 
 ---
 # <a name="refactoring-into-pure-functions-c"></a>純粋関数へのリファクタリング (C#)
+
 純粋関数型変換で重要なのは、純粋関数を使用してコードをリファクターする方法を理解することです。  
   
 > [!NOTE]
@@ -95,7 +91,7 @@ public class Program
 >  参照型の場合、パラメーターを値で渡すと、渡されるオブジェクトへの参照がコピーされて渡されます。 このコピーは、参照変数が新しいオブジェクトに割り当てられるまで、元の参照と同じインスタンス データに関連付けられたままとなります。 パラメーターを変更する場合に、必ずしも関数に参照を渡す必要はありません。  
   
 ### <a name="pure-function"></a>純粋関数  
- 次のバージョンのプログラムは、`HypenatedConcat` 関数を純粋関数として実装する方法を示しています。  
+次のバージョンのプログラムは、`HypenatedConcat` 関数を純粋関数として実装する方法を示しています。  
   
 ```csharp  
 class Program  

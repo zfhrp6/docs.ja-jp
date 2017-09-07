@@ -1,5 +1,5 @@
 ---
-title: "アセンブリの読み込みのベスト プラクティス | Microsoft Docs"
+title: "アセンブリの読み込みのベスト プラクティス"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
@@ -29,11 +29,11 @@ caps.latest.revision: 10
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 6f3dc4235c75d7438f019838cb22192f4dc7c41a
-ms.openlocfilehash: f7df4873cf0a1a7329642762534b7e762866de34
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: d8fe9ae599f8a8470a85000bc23823d66ef0c8ca
 ms.contentlocale: ja-jp
-ms.lasthandoff: 06/02/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="best-practices-for-assembly-loading"></a>アセンブリの読み込みのベスト プラクティス
@@ -185,3 +185,4 @@ ms.lasthandoff: 06/02/2017
  <xref:System.Reflection.Assembly.LoadFile%2A?displayProperty=fullName>   
  <xref:System.AppDomain.AssemblyResolve?displayProperty=fullName>   
  [アドインおよび拡張機能](../../../docs/framework/add-ins/index.md)
+

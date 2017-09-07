@@ -1,5 +1,5 @@
 ---
-title: "-reference (C# コンパイラ オプション) | Microsoft Docs"
+title: "-reference (C# コンパイラ オプション)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -36,11 +36,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 7e33ed084c560470a486ebbb25035a59ddc18565
-ms.openlocfilehash: 11bb7fc9490879714542bfbd77a81d58e7d8e8ed
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: f057da85202dc5b677af7b9106468b3bc1af6d3f
 ms.contentlocale: ja-jp
-ms.lasthandoff: 03/31/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="reference-c-compiler-options"></a>/reference (C# コンパイラ オプション)
@@ -84,7 +84,7 @@ ms.lasthandoff: 03/31/2017
  既定では、よく使われる .NET Framework アセンブリを参照する csc 応答 (.rsp) ファイルが使われます。 コンパイラが csc.rsp を使わないようにする場合は、[/noconfig](../../../csharp/language-reference/compiler-options/noconfig-compiler-option.md) を指定します。  
   
 > [!NOTE]
-> Visual Studio では、**[参照の追加]** ダイアログ ボックスを使います。 詳細については、「[方法: 参照マネージャーを使用して参照を追加または削除する](https://docs.microsoft.com/en-us/visualstudio/ide/how-to-add-or-remove-references-by-using-the-reference-manager)」を参照してください。 `/reference` を使った場合と **[参照の追加]** ダイアログ ボックスを使った場合で、参照の追加の動作が同じになるようにするには、追加するアセンブリの **[相互運用型の埋め込み]** プロパティを **[False]** に設定します。 このプロパティの既定値は **[True]** です。  
+> Visual Studio では、**[参照の追加]** ダイアログ ボックスを使います。 詳細については、「[方法: 参照マネージャーを使用して参照を追加または削除する](/visualstudio/ide/how-to-add-or-remove-references-by-using-the-reference-manager)」を参照してください。 `/reference` を使った場合と **[参照の追加]** ダイアログ ボックスを使った場合で、参照の追加の動作が同じになるようにするには、追加するアセンブリの **[相互運用型の埋め込み]** プロパティを **[False]** に設定します。 このプロパティの既定値は **[True]** です。  
   
 ## <a name="example"></a>例  
  この例では、[extern alias](../../../csharp/language-reference/keywords/extern-alias.md) 機能を使う方法を示します。  
@@ -115,4 +115,5 @@ GridV2::Grid
   
 ## <a name="see-also"></a>関連項目  
  [C# コンパイラのオプション](../../../csharp/language-reference/compiler-options/index.md)   
- [NIB 方法: プロジェクト プロパティと構成設定を変更する](http://msdn.microsoft.com/en-us/e7184bc5-2f2b-4b4f-aa9a-3ecfcbc48b67)
+ [プロジェクトおよびソリューションのプロパティの管理](/visualstudio/ide/managing-project-and-solution-properties)
+

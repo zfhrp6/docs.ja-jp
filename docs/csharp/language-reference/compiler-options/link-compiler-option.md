@@ -1,5 +1,5 @@
 ---
-title: "-link (C# コンパイラ オプション) | Microsoft Docs"
+title: "-link (C# コンパイラ オプション)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -34,10 +34,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 3096dd622a0b7c5fae13412a95322b934bd38b76
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: c08f2e7f13a51fb1a350acadff5224cfa8d61aaa
+ms.contentlocale: ja-jp
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="link-c-compiler-options"></a>/link (C# コンパイラ オプション)
@@ -45,7 +46,7 @@ ms.lasthandoff: 03/13/2017
   
 ## <a name="syntax"></a>構文  
   
-```  
+```console  
 /link:fileList  
 // -or-  
 /l:fileList  
@@ -65,7 +66,7 @@ ms.lasthandoff: 03/13/2017
 > [!NOTE]
 >  コードで埋め込み COM 型のインスタンスを作成する際は、適切なインターフェイスを使用してインスタンスを作成する必要があります。 コクラスを使用して埋め込み COM 型のインスタンスを作成しようとすると、エラーが発生します。  
   
- [!INCLUDE[vsprvs](../../../csharp/includes/vsprvs_md.md)] で `/link` オプションを設定するには、アセンブリ参照を追加し、`Embed Interop Types` プロパティを **true** に設定します。 `Embed Interop Types` プロパティの既定値は **false** です。  
+ [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] で `/link` オプションを設定するには、アセンブリ参照を追加し、`Embed Interop Types` プロパティを **true** に設定します。 `Embed Interop Types` プロパティの既定値は **false** です。  
   
  別の COM アセンブリ (アセンブリ B) を参照する COM アセンブリ (アセンブリ A) にリンクする場合、次のいずれかが当てはまるときは、アセンブリ B にもリンクする必要があります。  
   
@@ -73,7 +74,7 @@ ms.lasthandoff: 03/13/2017
   
 -   アセンブリ B の戻り値の型またはパラメーターの型を使用するフィールド、プロパティ、イベント、またはメソッドが呼び出される。  
   
- [/reference](../../../csharp/language-reference/compiler-options/reference-compiler-option.md) コンパイラ オプションと同様、`/link`コンパイラ オプションでは、使用頻度の高い [!INCLUDE[dnprdnshort](../../../csharp/getting-started/includes/dnprdnshort_md.md)]アセンブリを参照する Csc.rsp 応答ファイルを使用します。 コンパイラで Csc.rsp ファイルを使用しない場合は、[/noconfig](../../../csharp/language-reference/compiler-options/noconfig-compiler-option.md) コンパイラ オプションを使用してください。  
+ [/reference](../../../csharp/language-reference/compiler-options/reference-compiler-option.md) コンパイラ オプションと同様、`/link`コンパイラ オプションでは、使用頻度の高い [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]アセンブリを参照する Csc.rsp 応答ファイルを使用します。 コンパイラで Csc.rsp ファイルを使用しない場合は、[/noconfig](../../../csharp/language-reference/compiler-options/noconfig-compiler-option.md) コンパイラ オプションを使用してください。  
   
  `/link` の省略形は `/l` です。  
   
@@ -86,7 +87,7 @@ ms.lasthandoff: 03/13/2017
  [!code-cs[VbLinkCompilerCS#1](../../../csharp/language-reference/compiler-options/codesnippet/CSharp/link-compiler-option_1.cs)]  
   
 ### <a name="types-that-have-generic-parameters"></a>ジェネリック パラメーターを含む型  
- 型が相互運用アセンブリから埋め込まれているジェネリック パラメーターを含む型は、外部アセンブリからの型である場合に使用できません。 この制限はインターフェイスには当てはまりません。 たとえば、<xref:Microsoft.Office.Interop.Excel> アセンブリで定義されている <xref:Microsoft.Office.Interop.Excel.Range> インターフェイスを考えてみます。 ライブラリによって <xref:Microsoft.Office.Interop.Excel> アセンブリから相互運用型が埋め込まれ、型が <xref:Microsoft.Office.Interop.Excel.Range> インターフェイスであるパラメーターを含むジェネリック型を返すメソッドが公開される場合、次のコード例に示すように、そのメソッドはジェネリック インターフェイスを返す必要があります。  
+ 型が相互運用アセンブリから埋め込まれているジェネリック パラメーターを含む型は、外部アセンブリからの型である場合に使用できません。 この制限はインターフェイスには当てはまりません。 たとえば、<xref:Microsoft.Office.Interop.Excel> アセンブリで定義されている <xref:Microsoft.Office.Interop.Excel.Range> インターフェイスについて考えます。 ライブラリによって <xref:Microsoft.Office.Interop.Excel> アセンブリから相互運用型が埋め込まれ、型が <xref:Microsoft.Office.Interop.Excel.Range> インターフェイスであるパラメーターを含むジェネリック型を返すメソッドが公開される場合、次のコード例に示すように、そのメソッドはジェネリック インターフェイスを返す必要があります。  
   
  [!code-cs[VbLinkCompilerCS#2](../../../csharp/language-reference/compiler-options/codesnippet/CSharp/link-compiler-option_2.cs)]  
 [!code-cs[VbLinkCompilerCS#3](../../../csharp/language-reference/compiler-options/codesnippet/CSharp/link-compiler-option_3.cs)]  
@@ -110,3 +111,4 @@ csc /link:COMData1.dll,COMData2.dll /out:OfficeApp.exe OfficeApp.cs
  [/noconfig (C# コンパイラ オプション)](../../../csharp/language-reference/compiler-options/noconfig-compiler-option.md)   
  [csc.exe を使用したコマンド ラインからのビルド](../../../csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md)   
  [相互運用性の概要](../../../csharp/programming-guide/interop/interoperability-overview.md)
+

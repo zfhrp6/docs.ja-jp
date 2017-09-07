@@ -1,5 +1,5 @@
 ---
-title: "XML ファイルの処理 (C# プログラミング ガイド) | Microsoft Docs"
+title: "XML ファイルの処理 (C# プログラミング ガイド)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -28,11 +28,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: a780a11d8dd238187eb82933359bbb151bb3c333
-ms.openlocfilehash: 3a585025063847f93dc2c3b3747bd3406f89eae4
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 610f3ac5c88fb41a4b55f2990fecdc4c13074e19
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/22/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="processing-the-xml-file-c-programming-guide"></a>XML ファイルの処理 (C# プログラミング ガイド)
@@ -62,7 +62,7 @@ ms.lasthandoff: 05/22/2017
   
     -   基本データ型。 通常の型 (ELEMENT_TYPE_CLASS または ELEMENT_TYPE_VALUETYPE) は、型の完全修飾名で表されます。  
   
-    -   組み込み型 (ELEMENT_TYPE_I4、ELEMENT_TYPE_OBJECT、ELEMENT_TYPE_STRING、ELEMENT_TYPE_TYPEDBYREF、ELEMENT_TYPE_VOID など) は、 対応する完全な型の完全修飾名で表されます。 たとえば、System.Int32 や System.TypedReference です。  
+    -   組み込みの型 (たとえば、ELEMENT_TYPE_I4、ELEMENT_TYPE_OBJECT、ELEMENT_TYPE_STRING、ELEMENT_TYPE_TYPEDBYREF や、 ELEMENT_TYPE_VOID) は、対応する完全な型の完全修飾名として表されます。 たとえば、System.Int32 や System.TypedReference です。  
   
     -   ELEMENT_TYPE_PTR は、修飾される型に続けて '*' と表されます。  
   
@@ -107,3 +107,4 @@ ms.lasthandoff: 05/22/2017
  [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
  [/doc (C# コンパイラ オプション)](../../../csharp/language-reference/compiler-options/doc-compiler-option.md)   
  [XML ドキュメント コメント](../../../csharp/programming-guide/xmldoc/xml-documentation-comments.md)
+

@@ -1,5 +1,5 @@
 ---
-title: "アセンブリのバージョン管理 | Microsoft Docs"
+title: "アセンブリのバージョン管理"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
@@ -20,11 +20,11 @@ caps.latest.revision: 10
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
-ms.openlocfilehash: 1e6c2e433b5520e0720511c483f1378df8977f13
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 124d53efb8d87a9b002abb4cb8359a1bbf6f479b
 ms.contentlocale: ja-jp
-ms.lasthandoff: 06/02/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="assembly-versioning"></a>アセンブリのバージョン管理
@@ -85,3 +85,4 @@ ms.lasthandoff: 06/02/2017
  [アプリの構成](../../../docs/framework/configure-apps/index.md)   
  [アセンブリ属性の設定](../../../docs/framework/app-domains/set-assembly-attributes.md)   
  [共通言語ランタイムのアセンブリ](../../../docs/framework/app-domains/assemblies-in-the-common-language-runtime.md)
+

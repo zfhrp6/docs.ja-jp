@@ -1,5 +1,5 @@
 ---
-title: "構造体 | C# ガイド"
+title: "構造体 - C# ガイド"
 description: "構造体型と、構造体を作成する方法について説明します"
 keywords: .NET, .NET Core, C#
 author: BillWagner
@@ -10,11 +10,11 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: a7094b8c-7229-4b6f-82fc-824d0ea0ec40
-ms.translationtype: Human Translation
-ms.sourcegitcommit: a5ed524a1b17f7be8903f998cbd732594faab831
-ms.openlocfilehash: ff7e67add731324e01b8f2cc323a66e3a8683ec9
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: e2a4bfdb46a69113d5eb8949df4ccf902acf9dee
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/15/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 
@@ -77,3 +77,4 @@ C# では、リテラル値の型がコンパイラによって決定されま�
 [クラス](classes.md)
 
 [基本型](basic-types.md)
+

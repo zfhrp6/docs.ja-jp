@@ -42,10 +42,10 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: ee13c7dec733dcc8e3067ea2bf9421177a284d54
+ms.sourcegitcommit: 9bb64ea7199f5699ff166d1affb7f8126dcc6612
+ms.openlocfilehash: eb8c4f11e540aa2685989ef11b2515a32d8d1fd6
 ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
+ms.lasthandoff: 09/02/2017
 
 ---
 # <a name="c-operators"></a>C# 演算子
@@ -80,7 +80,7 @@ C# には、多くの演算子が用意されています。演算子とは、�
   
  [unchecked](../../../csharp/language-reference/keywords/unchecked.md) – 整数演算のオーバーフロー チェックを無効にします。  これがコンパイラの既定の動作です。  
   
- [default(T)](../../../csharp/programming-guide/generics/default-keyword-in-generic-code.md) – 型 T の既定の初期値 (参照型の場合は `null`、数値型の場合は 0、構造体型の場合は 0 または `null` が格納されたメンバー) を返します。  
+ [default(T)](../../../csharp/programming-guide/statements-expressions-operators/default-value-expressions.md) – 型 T の既定の値 (参照型の場合は `null`、数値型の場合は 0、構造体型の場合は 0 または `null` が格納されたメンバー) を返します。  
   
  [Delegate](../../../csharp/programming-guide/statements-expressions-operators/anonymous-methods.md) – delegate インスタンスを宣言して返します。  
   
@@ -235,7 +235,6 @@ C# には、多くの演算子が用意されています。演算子とは、�
 ## <a name="see-also"></a>関連項目  
  [C# リファレンス](../../../csharp/language-reference/index.md)   
  [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
- [C#](../../../csharp/csharp.md)   
- [オーバーロード可能な演算子](../../../csharp/programming-guide/statements-expressions-operators/overloadable-operators.md)   
+ [C#](../../../csharp/index.md) [オーバーロードされた演算子](../../../csharp/programming-guide/statements-expressions-operators/overloadable-operators.md)   
  [C# のキーワード](../../../csharp/language-reference/keywords/index.md)
 

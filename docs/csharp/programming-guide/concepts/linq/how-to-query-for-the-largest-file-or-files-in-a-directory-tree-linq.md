@@ -1,5 +1,5 @@
 ---
-title: "方法: ディレクトリ ツリー内で最もサイズの大きいファイルを照会する (LINQ) (C#) | Microsoft Docs"
+title: "方法: ディレクトリ ツリー内で最もサイズの大きいファイルを照会する (LINQ) (C#)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -19,10 +19,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 2adc77cb88964a0eb7bec1bb39fdcae12ba4183e
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 22bb97865e13722f35aa716ca2bd829989330ab6
+ms.contentlocale: ja-jp
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="how-to-query-for-the-largest-file-or-files-in-a-directory-tree-linq-c"></a>方法: ディレクトリ ツリー内で最もサイズの大きいファイルを照会する (LINQ) (C#)
@@ -154,7 +155,7 @@ class QueryBySize
 }  
 ```  
   
- このクエリは、完全な <xref:System.IO.FileInfo> オブジェクトを返すために、まずデータ ソース内の各ファイルを調べ、それらのファイルを Length プロパティの値で並べ替えています。 そうすることで、長さが最大である単一のファイルまたは一連のファイルを取得することができます。 リスト内の最初の要素は、<xref:System.Linq.Enumerable.First%2A> で取得します。 先頭から n 件の要素を取得するには、<xref:System.Linq.Enumerable.Take%2A> を使用します。 並べ替え順序に Descending を指定することによって、最小の要素がリストの先頭に来るようにしています。  
+ このクエリは、完全な <xref:System.IO.FileInfo> オブジェクトを返すために、まずデータ ソース内の各ファイルを調べ、それらのファイルを Length プロパティの値で並べ替えています。 そうすることで、長さが最大である単一のファイルまたは一連のファイルを取得することができます。 リスト内の最初の要素は、<xref:System.Linq.Enumerable.First%2A> を使用して取得します。 先頭から n 件の要素を取得するには、<xref:System.Linq.Enumerable.Take%2A> を使用します。 並べ替え順序に Descending を指定することによって、最小の要素がリストの先頭に来るようにしています。  
   
  このクエリでは、`GetFiles` の呼び出しで <xref:System.IO.FileInfo> オブジェクトが作成された後に別のスレッドでファイルが削除された場合に発生する例外の可能性に対処するために、別途設けられたメソッドを呼び出してファイル サイズ (バイト単位) を取得しています。 <xref:System.IO.FileInfo> オブジェクトの作成後であっても、例外は発生する可能性があります。<xref:System.IO.FileInfo> オブジェクトは、<xref:System.IO.FileInfo.Length%2A> プロパティが最初にアクセスされたときに最新のサイズ (バイト単位) に基づいてそのプロパティを更新しようと試みるためです。 この操作をクエリの外側の try-catch ブロックに置くことで、"副作用の原因となりうるような操作はクエリ内では行わない" という原則に従っているのです。 一般に、アプリケーションが不明な状態に陥ることのないよう、例外を処理する際には十分な注意が必要です。  
   
@@ -164,3 +165,4 @@ class QueryBySize
 ## <a name="see-also"></a>関連項目  
  [LINQ to Objects (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-objects.md)   
  [LINQ とファイル ディレクトリ (C#)](../../../../csharp/programming-guide/concepts/linq/linq-and-file-directories.md)
+

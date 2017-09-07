@@ -32,10 +32,10 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 2305c0232038130e9d42d3e892597e3b753d5d08
+ms.sourcegitcommit: b7cb84362c96dac50ae5136334138b55ed1ce00b
+ms.openlocfilehash: 03891f83885cf41ab157ebd78ef7e72767b4b163
 ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
+ms.lasthandoff: 07/31/2017
 
 ---
 # <a name="hello-world----your-first-program-c-programming-guide"></a>Hello World -- 最初のプログラム (C# プログラミング ガイド)
@@ -123,11 +123,11 @@ ms.lasthandoff: 07/28/2017
   
 2.  次のいずれかの手順を実行してコマンド プロンプト ウィンドウを開きます。  
   
-    -   Windows 8 の **[スタート]** 画面で、「`Developer Command Prompt`」を検索し、**[VS2012 の開発者コマンド プロンプト]** をタップまたは選択します。  
+    -   Windows 10 の場合、**[スタート]** メニューで `Developer Command Prompt` を検索し、**[開発者コマンド プロンプト for VS 2017]** をタップまたは選択します。  
   
          [開発者コマンド プロンプト] ウィンドウが表示されます。  
   
-    -   Windows 7 の **[スタート]** メニューを開き、Visual Studio の現在のバージョンのフォルダーを展開し、**[Visual Studio ツール]** のショートカット メニューを開いて、**[VS2012 の開発者コマンド プロンプト]** をクリックします。  
+    -   Windows 7 の場合、**[スタート]** メニューを開き、Visual Studio の現在のバージョンのフォルダーを展開し、**[Visual Studio Tools]** のショートカット メニューを開いて、**[開発者コマンド プロンプト for VS 2017]** をクリックします。  
   
          [開発者コマンド プロンプト] ウィンドウが表示されます。  
   

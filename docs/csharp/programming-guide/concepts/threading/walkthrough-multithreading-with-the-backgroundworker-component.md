@@ -1,5 +1,5 @@
 ---
-title: "チュートリアル: BackgroundWorker コンポーネントでのマルチスレッド (C#) | Microsoft Docs"
+title: "チュートリアル: BackgroundWorker コンポーネントでのマルチスレッド (C#)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -19,10 +19,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 1a27591c62e55295b3cf2b9716776b25d984865a
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 541a1ec788c337eea9965b8a46155e5c6606ea2f
+ms.contentlocale: ja-jp
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="walkthrough-multithreading-with-the-backgroundworker-component-c"></a>チュートリアル: BackgroundWorker コンポーネントでのマルチスレッド (C#)
@@ -32,7 +33,7 @@ ms.lasthandoff: 03/13/2017
   
 -   <xref:System.ComponentModel.BackgroundWorker> コンポーネントによって生成されたイベントを処理する。  
   
--   <xref:System.ComponentModel.BackgroundWorker> コンポーネントを起動して メソッドを実行する。  
+-   <xref:System.ComponentModel.BackgroundWorker> コンポーネントを起動してメソッドを実行する。  
   
 -   <xref:System.ComponentModel.BackgroundWorker> コンポーネントを停止する `Cancel` ボタンを実装する。  
   
@@ -64,7 +65,7 @@ ms.lasthandoff: 03/13/2017
   
 ### <a name="to-create-a-backgroundworker-component-and-subscribe-to-its-events"></a>BackgroundWorker コンポーネントを作成し、そのイベントをサブスクライブするには  
   
-1.  **[ツールボックス]** の **[コンポーネント]** セクションから、<xref:System.ComponentModel.BackgroundWorker> コンポーネントをフォームに追加にします。 追加したコンポーネントは、フォームのコンポーネント トレイに表示されます。  
+1.  **[ツールボックス]** の **[コンポーネント]** セクションから、<xref:System.ComponentModel.BackgroundWorker> コンポーネントをフォームに追加します。 追加したコンポーネントは、フォームのコンポーネント トレイに表示されます。  
   
 2.  BackgroundWorker1 オブジェクトについて、次のプロパティを設定します。  
   
@@ -79,7 +80,7 @@ ms.lasthandoff: 03/13/2017
   
 1.  **[プロジェクト]** メニューの **[クラスの追加]** を選択して、プロジェクトにクラスを追加します。 **[新しい項目の追加]** ダイアログ ボックスが表示されます。  
   
-2.  テンプレート ウィンドウから **[クラス]** を選択し、名前 フィールドに「`Words.cs`」と入力します。  
+2.  テンプレート ウィンドウから **[クラス]** を選択し、名前フィールドに「`Words.cs`」と入力します。  
   
 3.  **[追加]**をクリックします。 `Words` クラスが表示されます。  
   
@@ -293,3 +294,4 @@ ms.lasthandoff: 03/13/2017
 ## <a name="see-also"></a>関連項目  
  [スレッド処理 (C#)](../../../../csharp/programming-guide/concepts/threading/index.md)   
  [方法: イベント サブスクリプションとサブスクリプションの解除](../../../../csharp/programming-guide/events/how-to-subscribe-to-and-unsubscribe-from-events.md)
+

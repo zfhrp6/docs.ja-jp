@@ -1,5 +1,5 @@
 ---
-title: "-errorreport (C# コンパイラ オプション) | Microsoft Docs"
+title: "-errorreport (C# コンパイラ オプション)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -31,11 +31,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 34e7e3b8c6a9f645ec1b359095c2d289afd1370a
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: d32ec08da36509527b153166ae15019f129aad71
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/22/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="errorreport-c-compiler-options"></a>/errorreport (C# コンパイラ オプション)
@@ -76,7 +76,7 @@ ms.lasthandoff: 05/22/2017
   
 ### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>Visual Studio 開発環境でこのコンパイラ オプションを設定するには  
   
-1.  プロジェクトの **[プロパティ]** ページを開きます。 詳細については、「[Build Page, Project Designer (C#)](https://docs.microsoft.com/visualstudio/ide/reference/build-page-project-designer-csharp)」([ビルド] ページ (プロジェクト デザイナー) (C#)) を参照してください。  
+1.  プロジェクトの **[プロパティ]** ページを開きます。 詳細については、「[Build Page, Project Designer (C#)](/visualstudio/ide/reference/build-page-project-designer-csharp)」([ビルド] ページ (プロジェクト デザイナー) (C#)) を参照してください。  
   
 2.  **[ビルド]** プロパティ ページをクリックします。  
   
@@ -88,3 +88,4 @@ ms.lasthandoff: 05/22/2017
   
 ## <a name="see-also"></a>関連項目  
  [C# コンパイラ オプション](../../../csharp/language-reference/compiler-options/index.md)
+

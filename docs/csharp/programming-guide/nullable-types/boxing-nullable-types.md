@@ -1,5 +1,5 @@
 ---
-title: "Null 許容型のボックス化 (C# プログラミング ガイド) | Microsoft Docs"
+title: "Null 許容型のボックス化 (C# プログラミング ガイド)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -29,11 +29,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 400dfda51d978f35c3995f90840643aaff1b9c13
-ms.openlocfilehash: e4ff2e8a31ca5a59494f80597460e90107e78c8a
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 5ce063a70ced98fd8b99b4b46d704e08ddc96e10
 ms.contentlocale: ja-jp
-ms.lasthandoff: 03/24/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="boxing-nullable-types-c-programming-guide"></a>Null 許容型のボックス化 (C# プログラミング ガイド)
@@ -94,3 +94,4 @@ int? i2 = (int?)iBoxed;
  [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
  [Null 許容型](../../../csharp/programming-guide/nullable-types/index.md)   
  [方法: Null 許容型を識別する](../../../csharp/programming-guide/nullable-types/how-to-identify-a-nullable-type.md)
+

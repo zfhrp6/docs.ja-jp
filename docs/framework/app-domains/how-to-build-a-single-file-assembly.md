@@ -1,5 +1,5 @@
 ---
-title: "方法: シングルファイル アセンブリをビルドする | Microsoft Docs"
+title: "方法: シングルファイル アセンブリをビルドする"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
@@ -22,18 +22,18 @@ caps.latest.revision: 10
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
-ms.openlocfilehash: 0ddf25f1d588c0972381a54ee0da4b35e3c0dc33
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 1a584e6ded79489e5e33b07d02dde618541c6cc8
 ms.contentlocale: ja-jp
-ms.lasthandoff: 06/02/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="how-to-build-a-single-file-assembly"></a>方法: シングルファイル アセンブリをビルドする
 アセンブリの最も単純な形式であるシングルファイル アセンブリには、型の情報、実装、[アセンブリ マニフェスト](../../../docs/framework/app-domains/assembly-manifest.md)が含まれています。 コマンド ライン コンパイラや [!INCLUDE[vsprvslong](../../../includes/vsprvslong-md.md)] を利用し、シングルファイル アセンブリを作成できます。 既定では、コンパイラは .exe 拡張子でアセンブリ ファイルを作成します。  
   
 > [!NOTE]
-> C# と Visual Basic の  [!INCLUDE[vsprvslong](../../../includes/vsprvslong-md.md)] は、シングルファイル アセンブリの作成にのみ使用できます。 マルチファイル アセンブリを作成する場合は、コマンド ライン コンパイラまたは [!INCLUDE[vsprvslong](../../../includes/vsprvslong-md.md)] for Visual C++ を使用する必要があります。  
+>  C# と Visual Basic の [!INCLUDE[vsprvslong](../../../includes/vsprvslong-md.md)] は、シングルファイル アセンブリの作成にのみ使用できます。 マルチファイル アセンブリを作成する場合は、コマンド ライン コンパイラまたは [!INCLUDE[vsprvslong](../../../includes/vsprvslong-md.md)] for Visual C++ を使用する必要があります。  
   
  次の手順は、コマンド ライン コンパイラでシングルファイル アセンブリを作成する方法です。  
   
@@ -99,3 +99,4 @@ vbc /out:myCodeLibrary.dll /t:library myCode.vb
  [マルチファイル アセンブリ](../../../docs/framework/app-domains/multifile-assemblies.md)   
  [方法: マルチファイル アセンブリをビルドする](../../../docs/framework/app-domains/how-to-build-a-multifile-assembly.md)   
  [アセンブリを使用したプログラミング](../../../docs/framework/app-domains/programming-with-assemblies.md)
+

@@ -1,5 +1,5 @@
 ---
-title: "string (C# リファレンス) | Microsoft Docs"
+title: "string (C# リファレンス)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -34,11 +34,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-ms.translationtype: Human Translation
-ms.sourcegitcommit: fe32676f0e39ed109a68f39584cf41aec5f5ce90
-ms.openlocfilehash: 737a0902a0cb010a74b59560abe43f5cfb6550db
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 56847aad4cb8b0427594a299df2306d21675506b
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/10/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="string-c-reference"></a>string (C# リファレンス)
@@ -93,7 +93,7 @@ Console.WriteLine(a);
 ```  
   
 > [!NOTE]
->  エスケープ コード `\`u`dddd` (`dddd` は 4 桁の数字) は、Unicode 文字 U +`dddd` を表します。 8 桁の Unicode エスケープ コード `\Udddddddd` も認識できます。  
+>  エスケープ コード `\udddd` (`dddd` は 4 桁の数字) は、Unicode 文字 U +`dddd` を表します。 8 桁の Unicode エスケープ コード `\Udddddddd` も認識できます。  
   
  verbatim 文字列リテラルの場合は、先頭に @ を付け、さらに前後に二重引用符を付けます。 例:  
   

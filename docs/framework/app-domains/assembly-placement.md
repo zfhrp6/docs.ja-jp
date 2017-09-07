@@ -1,5 +1,5 @@
 ---
-title: "アセンブリの配置 | Microsoft Docs"
+title: "アセンブリの配置"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
@@ -19,11 +19,11 @@ caps.latest.revision: 9
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
-ms.openlocfilehash: 5152d639c34a128c1c0625d9ae2ba12bc4fa7f9d
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: f5f80649e214583dae52ed8ec7933b77bf72fca5
 ms.contentlocale: ja-jp
-ms.lasthandoff: 06/02/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="assembly-placement"></a>アセンブリの配置
@@ -36,3 +36,4 @@ ms.lasthandoff: 06/02/2017
  [アプリの構成](../../../docs/framework/configure-apps/index.md)   
  [高度な COM 相互運用性](http://msdn.microsoft.com/en-us/3ada36e5-2390-4d70-b490-6ad8de92f2fb)   
  [共通言語ランタイムのアセンブリ](../../../docs/framework/app-domains/assemblies-in-the-common-language-runtime.md)
+

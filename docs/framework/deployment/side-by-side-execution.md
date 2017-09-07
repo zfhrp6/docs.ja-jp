@@ -1,5 +1,5 @@
 ---
-title: ".NET Framework での side-by-side 実行 | Microsoft Docs"
+title: ".NET Framework での side-by-side 実行"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
@@ -21,11 +21,11 @@ caps.latest.revision: 21
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: a32f50ce8a92fa22d9627a1510a4b3ec1087364e
-ms.openlocfilehash: 460471cceda60697382d770e1b95be75ff3cfc8a
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 1628d75ab7f842c6b7486a1d57f490b4d876ee28
 ms.contentlocale: ja-jp
-ms.lasthandoff: 06/02/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="side-by-side-execution-in-the-net-framework"></a>.NET Framework での side-by-side 実行
@@ -33,14 +33,14 @@ side-by-side 実行は、アプリケーションまたはコンポーネント�
   
  共通言語ランタイムの 2 つの異なるバージョンを同じコンピューターで使用する複数のアプリケーションを次の図に示します。 アプリケーション A、B、および C はランタイム バージョン 1.0 を使用し、アプリケーション D はランタイム バージョン 1.1 を使用します。  
   
- ![side&#45;by&#45;side 実行](../../../docs/framework/deployment/media/simplesbs.gif "simplesbs")  
+ ![Side&#45;by&#45;side execution](../../../docs/framework/deployment/media/simplesbs.gif "simplesbs")  
 ランタイムの 2 つのバージョンの side-by-side 実行  
   
  .NET Framework は、共通言語ランタイムと API 型を含むアセンブリのコレクションで構成されています。 ランタイムと .NET Framework アセンブリは、個別にバージョン管理されます。 たとえば、ランタイムのバージョン 4.0 は実際にはバージョン 4.0.319 で、.NET Framework アセンブリのバージョン 1.0 はバージョン 1.0.3300.0 です。  
   
  コンポーネントの 2 つの異なるバージョンを同じコンピューターで使用する複数のアプリケーションを次の図に示します。 アプリケーション A とアプリケーション B はコンポーネントのバージョン 1.0 を使用し、アプリケーション C は同じコンポーネントのバージョン 2.0 を使用します。  
   
- ![side&#45;by&#45;side 実行](../../../docs/framework/deployment/media/compsbs.gif "compsbs")  
+ ![Side&#45;by&#45;side execution](../../../docs/framework/deployment/media/compsbs.gif "compsbs")  
 コンポーネントの 2 つのバージョンの side-by-side 実行  
   
  side-by-side 実行により、アプリケーションがバインドするコンポーネントのバージョンやアプリケーションが使用するランタイムのバージョンをより詳細に制御できます。  
@@ -138,3 +138,4 @@ publicKeyToken=...,
   
 ## <a name="reference"></a>参照  
  [\<<supportedRuntime> 要素](../../../docs/framework/configure-apps/file-schema/startup/supportedruntime-element.md)
+

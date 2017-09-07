@@ -1,5 +1,5 @@
 ---
-title: "-target:exe (C# コンパイラ オプション) | Microsoft Docs"
+title: "-target:exe (C# コンパイラ オプション)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -31,11 +31,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 9d5784186f564241c896333d518e297c3c094f28
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: bd035bffb697e895da8765f9e5d230fa84e98f04
 ms.contentlocale: ja-jp
-ms.lasthandoff: 03/13/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="targetexe-c-compiler-options"></a>/target:exe (C# コンパイラ オプション)
@@ -66,7 +66,7 @@ ms.lasthandoff: 03/13/2017
   
 3.  **[出力の種類]** プロパティを変更します。  
   
- このコンパイラ オプションをプログラムで設定する方法については、「<xref:VSLangProj80.ProjectProperties3.OutputType%2A>」を参照してください。  
+ このコンパイラ オプションをプログラムで設定する方法については、「<xref:VSLangProj80.ProjectProperties3.OutputType%2A>」をご覧ください。  
   
 ## <a name="example"></a>例  
  次のコマンド ラインのいずれかで `in.cs` がコンパイルされ、`in.exe` が作成されます。  
@@ -79,3 +79,4 @@ csc in.cs
 ## <a name="see-also"></a>関連項目  
  [/target (C# コンパイラ オプション)](../../../csharp/language-reference/compiler-options/target-compiler-option.md)   
  [C# コンパイラ オプション](../../../csharp/language-reference/compiler-options/index.md)
+

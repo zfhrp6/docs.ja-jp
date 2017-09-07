@@ -1,5 +1,5 @@
 ---
-title: "get (C# リファレンス) | Microsoft Docs"
+title: "get (C# リファレンス)"
 ms.date: 2017-03-10
 ms.prod: .net
 ms.technology:
@@ -30,11 +30,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: cdd3107a9e23e2f41a412390c8a723d4366e3952
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 88603864ae0a31a193cab211b8ce8061ec63c169
 ms.contentlocale: ja-jp
-ms.lasthandoff: 03/13/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="get-c-reference"></a>get (C# リファレンス)
@@ -45,7 +45,7 @@ ms.lasthandoff: 03/13/2017
  
  [!code-cs[get#1](../../../../samples/snippets/csharp/language-reference/keywords/get/get-1.cs)]  
   
-前の例のように、多くの場合、`get` アクセサーは値を返す&1; つのステートメントで構成されます。 C# 7 以降では、式形式のメンバーとして `get` アクセサーを実装できます。 次の例では、`get` アクセサーと `set` アクセサーの両方を、式形式のメンバーとして実装しています。
+前の例のように、多くの場合、`get` アクセサーは値を返す 1 つのステートメントで構成されます。 C# 7 以降では、式形式のメンバーとして `get` アクセサーを実装できます。 次の例では、`get` アクセサーと `set` アクセサーの両方を、式形式のメンバーとして実装しています。
 
  [!code-cs[get#3](../../../../samples/snippets/csharp/language-reference/keywords/get/get-3.cs)]   
  
@@ -60,6 +60,5 @@ ms.lasthandoff: 03/13/2017
 ## <a name="see-also"></a>関連項目  
  [C# リファレンス](../../../csharp/language-reference/index.md)   
  [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
- [C# のキーワード](../../../csharp/language-reference/keywords/index.md)
- [プロパティ](../../../csharp/programming-guide/classes-and-structs/properties.md)
+ [C# のキーワード](../../../csharp/language-reference/keywords/index.md) [プロパティ](../../../csharp/programming-guide/classes-and-structs/properties.md)
 

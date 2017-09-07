@@ -1,5 +1,5 @@
 ---
-title: "方法: パイプラインでブロッキング コレクションの配列を使用する | Microsoft Docs"
+title: "方法: パイプラインでブロッキング コレクションの配列を使用する"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net
@@ -15,10 +15,11 @@ caps.latest.revision: 8
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-translationtype: Human Translation
-ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
-ms.openlocfilehash: 234dfa6a3a905b9db53ae8699bbe1c62f3411184
-ms.lasthandoff: 04/18/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 8dda929df8e3de907c228bbef85749cba5cabc25
+ms.contentlocale: ja-jp
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="how-to-use-arrays-of-blocking-collections-in-a-pipeline"></a>方法: パイプラインでブロッキング コレクションの配列を使用する
@@ -27,9 +28,9 @@ ms.lasthandoff: 04/18/2017
 ## <a name="example"></a>例  
  次の例では、各オブジェクトが同時にデータを入力コレクションから取得し、変換して、出力コレクションに渡す、基本的なパイプラインの実装を示します。  
   
- [!code-csharp[CDS_BlockingCollection#07](../../../../samples/snippets/csharp/VS_Snippets_Misc/cds_blockingcollection/cs/example07.cs#07)]
- [!code-vb[CDS_BlockingCollection#07](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/cds_blockingcollection/vb/bcpipeline.vb#07)]  
+ [!code-csharp[CDS_BlockingCollection#07](../../../../samples/snippets/csharp/VS_Snippets_Misc/cds_blockingcollection/cs/example07.cs#07)] [!code-vb[CDS_BlockingCollection#07](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/cds_blockingcollection/vb/bcpipeline.vb#07)]  
   
 ## <a name="see-also"></a>関連項目  
  <xref:System.Collections.Concurrent?displayProperty=fullName>   
  [スレッドセーフなコレクション](../../../../docs/standard/collections/thread-safe/index.md)
+

@@ -1,5 +1,5 @@
 ---
-title: "式形式のメンバー (C# プログラミング ガイド) | Microsoft Docs"
+title: "式形式のメンバー (C# プログラミング ガイド)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -12,11 +12,11 @@ helpviewer_keywords:
 - C# language, expresion-bodied members
 author: rpetrusha
 ms.author: ronpet
-ms.translationtype: Human Translation
-ms.sourcegitcommit: a5ed524a1b17f7be8903f998cbd732594faab831
-ms.openlocfilehash: b77f656d36dc4f0a715755e13bfcd6c3515c697b
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: d12f9f3af9a57e142311f6d1676b5f97e8b60d19
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/15/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="expression-bodied-members-c-programming-guide"></a>式形式のメンバー (C# プログラミング ガイド)

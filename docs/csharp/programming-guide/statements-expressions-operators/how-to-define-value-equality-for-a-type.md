@@ -1,5 +1,5 @@
 ---
-title: "方法: 型の値の等価性を定義する (C# プログラミング ガイド) | Microsoft Docs"
+title: "方法: 型の値の等価性を定義する (C# プログラミング ガイド)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -31,10 +31,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 33b2ab2252fac8442caa7b2f3e9b5b311cc0f9b6
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: e008be022765ff7d2bb440f0a37193b882038b76
+ms.contentlocale: ja-jp
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="how-to-define-value-equality-for-a-type-c-programming-guide"></a>方法: 型の値の等価性を定義する (C# プログラミング ガイド)
@@ -56,13 +57,13 @@ ms.lasthandoff: 03/13/2017
   
 1.  [仮想](../../../csharp/language-reference/keywords/virtual.md) <xref:System.Object.Equals%28System.Object%29?displayProperty=fullName> メソッドをオーバーライドします。 ほとんどの場合、`bool Equals( object obj )` の実装には、<xref:System.IEquatable%601?displayProperty=fullName> インターフェイスの実装である型固有の `Equals` メソッドを呼び出すだけで済みます  (手順 2 を参照)。  
   
-2.  型固有の `Equals` メソッドを指定して、<xref:System.IEquatable%601?displayProperty=fullName> インターフェイスを実装します。 ここで実際の等価性の比較を実行します。 たとえば、型のフィールドを 1 ～ 2 個だけ比較することで等価性を定義できます。 `Equals` から例外をスローしないでください。 クラスの場合に限り、このメソッドはクラスで宣言されているフィールドのみを調べます。 基底クラスに含まれるフィールドを調べるには、`base.Equals` を呼び出す必要があります  (<xref:System.Object> から直接継承された型である場合は、この呼び出しを行わないでください。<xref:System.Object.Equals%28System.Object%29?displayProperty=fullName> の <xref:System.Object> 実装では参照の等価性チェックが実行されるためです)。  
+2.  型固有の `Equals` メソッドを指定して、<xref:System.IEquatable%601?displayProperty=fullName> インターフェイスを実装します。 ここで実際の等価性の比較を実行します。 たとえば、型のフィールドを 1 ～ 2 個だけ比較することで等価性を定義できます。 `Equals` から例外をスローしないでください。 クラスの場合に限り、このメソッドはクラスで宣言されているフィールドのみを調べます。 基底クラスに含まれるフィールドを調べるには、`base.Equals` を呼び出す必要があります  (<xref:System.Object> から型が直接継承された場合は、この呼び出しを行わないでください。<xref:System.Object.Equals%28System.Object%29?displayProperty=fullName> の <xref:System.Object> 実装では参照の等価性チェックが実行されるためです)。  
   
 3.  推奨、ただし省略可能: [==](../../../csharp/language-reference/operators/equality-comparison-operator.md) 演算子および [!=](../../../csharp/language-reference/operators/not-equal-operator.md) 演算子をオーバーロードします。  
   
 4.  値の等価性を持つ 2 つのオブジェクトによって同じハッシュ コードが生成されるように、<xref:System.Object.GetHashCode%2A?displayProperty=fullName> をオーバーライドします。  
   
-5.  省略可能: "大なり" または "少なり" の定義をサポートするには、型に対して <xref:System.IComparable%601> インターフェイスを実装したうえで、[<=](../../../csharp/language-reference/operators/less-than-equal-operator.md) 演算子および [>=](../../../csharp/language-reference/operators/greater-than-equal-operator.md) 演算子をオーバーロードします。  
+5.  省略可能: "大なり" または "小なり" の定義をサポートするには、型に対して <xref:System.IComparable%601> インターフェイスを実装したうえで、[<=](../../../csharp/language-reference/operators/less-than-equal-operator.md) 演算子および [>=](../../../csharp/language-reference/operators/greater-than-equal-operator.md) 演算子をオーバーロードします。  
   
  次に示す最初の例は、クラスの実装です。 2 番目の例は、構造体の実装を示しています。  
   

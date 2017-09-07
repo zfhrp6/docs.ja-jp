@@ -1,5 +1,5 @@
 ---
-title: ".NET Framework クラス ライブラリのジェネリック (C# プログラミング ガイド) | Microsoft Docs"
+title: ".NET Framework クラス ライブラリのジェネリック (C# プログラミング ガイド)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -27,10 +27,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 35a6c53b089872076028e8ec82f55de2a90962a6
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: f3d5f15c92031301b68c6a702cf8d6b135cca36d
+ms.contentlocale: ja-jp
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="generics-in-the-net-framework-class-library-c-programming-guide"></a>.NET Framework クラス ライブラリのジェネリック (C# プログラミング ガイド)
@@ -41,3 +42,4 @@ ms.lasthandoff: 03/13/2017
  [ジェネリック コレクションを使用する状況](../../../standard/collections/when-to-use-generic-collections.md)   
  [コレクションとデータ構造体](../../../standard/collections/index.md)   
  [ジェネリックの概要](../../../csharp/programming-guide/generics/introduction-to-generics.md)
+

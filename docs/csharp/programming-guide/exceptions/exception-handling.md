@@ -1,5 +1,5 @@
 ---
-title: "例外処理 (C# プログラミング ガイド) | Microsoft Docs"
+title: "例外処理 (C# プログラミング ガイド)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -28,11 +28,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 481621ab8c3d6e1c98c9ad38590ac030827c26c5
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: ab03e00a6b62d0c737c90fdb489be2a78f7ab6af
 ms.contentlocale: ja-jp
-ms.lasthandoff: 03/13/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="exception-handling-c-programming-guide"></a>例外処理 (C# プログラミング ガイド)
@@ -49,7 +49,7 @@ ms.lasthandoff: 03/13/2017
  `try` ブロックに `catch` または `finally` ブロックがない場合は、コンパイル エラーが発生します。  
   
 ## <a name="catch-blocks"></a>catch ブロック  
- `catch` ブロックでは、キャッチする例外の種類を指定できます。 この型指定は、*例外フィルター*と呼ばれます。 例外の種類は、 <xref:System.Exception> から派生している必要があります。 一般に、`try` ブロックでスローされる可能性があるすべての例外の処理方法を把握してる場合や、`catch` ブロックの末尾に [throw](../../../csharp/language-reference/keywords/throw.md) ステートメントを記述している場合を除いては、例外フィルタとして <xref:System.Exception> を指定することは避けてください。  
+ `catch` ブロックでは、キャッチする例外の種類を指定できます。 この型指定は、*例外フィルター*と呼ばれます。 例外の種類は、<xref:System.Exception> から派生している必要があります。 一般に、`try` ブロックでスローされる可能性があるすべての例外の処理方法を把握している場合や、`catch` ブロックの末尾に [throw](../../../csharp/language-reference/keywords/throw.md) ステートメントを記述している場合を除いては、例外フィルターとして <xref:System.Exception> を指定することは避けてください。  
   
  複数の `catch` ブロックに異なる例外フィルターが含まれている場合は、それらを連結することができます。 `catch` ブロックはコード内で上から下に評価されますが、スローされた各例外に対して実行される `catch` ブロックは 1 つだけです。 スローされた例外の厳密な型か、その基底クラスを指定する最初の `catch` ブロックが実行されます。 一致する例外フィルターを指定した `catch` ブロックがない場合は、フィルターのない `catch` ブロックが選択されます (それがステートメント内に存在する場合)。 最初に配置する `catch` ブロックでは、最も具体的な (つまり、最終派生の) 例外の種類を指定することが重要です。  
   
@@ -85,3 +85,4 @@ ms.lasthandoff: 03/13/2017
  [try-finally](../../../csharp/language-reference/keywords/try-finally.md)   
  [try-catch-finally](../../../csharp/language-reference/keywords/try-catch-finally.md)   
  [using ステートメント](../../../csharp/language-reference/keywords/using-statement.md)
+

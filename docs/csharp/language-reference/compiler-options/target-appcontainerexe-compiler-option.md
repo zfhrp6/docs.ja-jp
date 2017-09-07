@@ -1,5 +1,5 @@
 ---
-title: "/target:appcontainerexe (C# コンパイラ オプション) | Microsoft Docs"
+title: "-target:appcontainerexe (C# コンパイラ オプション)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -26,18 +26,19 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 168771506692308bc9b031df5c059e58e8d190b1
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 77016d094ec7e82729a46208c17e2a77fe733103
+ms.contentlocale: ja-jp
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="targetappcontainerexe-c-compiler-options"></a>/target:appcontainerexe (C# コンパイラ オプション)
-**/target:appcontainerexe** コンパイラ オプションを使用すると、アプリケーション コンテナーで実行する必要のある Windows 実行可能ファイル (.exe) がコンパイラによって作成されます。 このオプションは [/target:winexe](../../../csharp/language-reference/compiler-options/target-winexe-compiler-option.md) に相当しますが、[!INCLUDE[win8_appname_long](../../../csharp/includes/win8_appname_long_md.md)] アプリ用に設計されています。  
+**/target:appcontainerexe** コンパイラ オプションを使用すると、アプリケーション コンテナーで実行する必要のある Windows 実行可能ファイル (.exe) がコンパイラによって作成されます。 このオプションは [/target:winexe](../../../csharp/language-reference/compiler-options/target-winexe-compiler-option.md) に相当しますが、[!INCLUDE[win8_appname_long](~/includes/win8-appname-long-md.md)] アプリ用に設計されています。  
   
 ## <a name="syntax"></a>構文  
   
-```  
+```console  
 /target:appcontainerexe  
 ```  
   
@@ -54,14 +55,14 @@ ms.lasthandoff: 03/13/2017
   
 2.  **[アプリケーション]** タブの **[出力の種類]** ボックスの一覧で、**[Windows ストア アプリ]** をクリックします。  
   
-     このオプションは [!INCLUDE[win8_appname_long](../../../csharp/includes/win8_appname_long_md.md)] アプリケーション テンプレートでのみ使用できます。  
+     このオプションは [!INCLUDE[win8_appname_long](~/includes/win8-appname-long-md.md)] アプリケーション テンプレートでのみ使用できます。  
   
  このコンパイラ オプションをプログラムで設定する方法については、「<xref:VSLangProj80.ProjectProperties3.OutputType%2A>」を参照してください。  
   
 ## <a name="example"></a>例  
  次のコマンドは、アプリケーション コンテナーでのみ実行できる Windows 実行可能ファイルに `filename.cs` をコンパイルします。  
   
-```  
+```console  
 csc /target:appcontainerexe filename.cs  
 ```  
   
@@ -69,3 +70,4 @@ csc /target:appcontainerexe filename.cs
  [/target (C# コンパイラ オプション)](../../../csharp/language-reference/compiler-options/target-compiler-option.md)   
  [/target:winexe (C# コンパイラ オプション)](../../../csharp/language-reference/compiler-options/target-winexe-compiler-option.md)   
  [C# コンパイラ オプション](../../../csharp/language-reference/compiler-options/index.md)
+

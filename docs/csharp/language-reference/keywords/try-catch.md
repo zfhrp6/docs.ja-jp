@@ -1,5 +1,5 @@
 ---
-title: "try-catch (C# リファレンス) | Microsoft Docs"
+title: "try-catch (C# リファレンス)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -34,11 +34,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-ms.translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 13684c7e32c52765f4d45d6a5bd2c6f8194efefe
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: b7ec6c96ac21ba2115d1e7eead5700b6dbfcc952
 ms.contentlocale: ja-jp
-ms.lasthandoff: 03/13/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="try-catch-c-reference"></a>try-catch (C# リファレンス)
@@ -57,7 +57,7 @@ try
 }  
 ```  
   
- `catch` 句は、引数なしで使用してすべての種類の例外をキャッチできますが、この使用方法はお勧めできません。 通常は、回復方法が判明している例外のみキャッチします。 そのため、常に <xref:System.Exception?displayProperty=fullName> から派生したオブジェクト引数を指定してください。以下に例を示します。  
+ `catch` 句は、引数なしで使用してすべての種類の例外をキャッチできますが、この使用方法はお勧めできません。 通常は、回復方法が判明している例外のみキャッチします。 したがって、<xref:System.Exception?displayProperty=fullName> から派生したオブジェクト引数を必ず指定します。以下に例を示します。  
   
 ```csharp  
 catch (InvalidCastException e)   
@@ -150,7 +150,7 @@ static void Main()
   
  例外をキャッチするには、`try` ブロックでタスクを待機し、関連付けられている `catch` ブロックで例外をキャッチします。 例については、「使用例」のセクションを参照してください。  
   
- 待機中の非同期メソッドで複数の例外が発生したことが原因で、タスクが違反状態になることがあります。 たとえば、タスクが <xref:System.Threading.Tasks.Task.WhenAll%2A?displayProperty=fullName> の呼び出しの結果である場合があります。 このようなタスクを待機すると、1 つの例外のみがキャッチされます。どの例外がキャッチされるかは予測できません。 例については、「使用例」のセクションを参照してください。  
+ 待機中の非同期メソッドで複数の例外が発生したことが原因で、タスクが違反状態になることがあります。 たとえば、タスクは <xref:System.Threading.Tasks.Task.WhenAll%2A?displayProperty=fullName> の呼び出しの結果になることがあります。 このようなタスクを待機すると、1 つの例外のみがキャッチされます。どの例外がキャッチされるかは予測できません。 例については、「使用例」のセクションを参照してください。  
   
 ## <a name="example"></a>例  
  例外が発生する可能性がある `ProcessString` メソッドへの呼び出しを含む `try` ブロックの例を次に示します。 `catch` 句には、メッセージを画面に表示するだけの例外ハンドラーがあります。 `throw` ステートメントが `MyMethod` の内側から呼び出されると、システムによって `catch` ステートメントが検索され、メッセージ `Exception caught` が表示されます。  
@@ -189,7 +189,7 @@ static void Main()
  [C# リファレンス](../../../csharp/language-reference/index.md)   
  [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
  [C# のキーワード](../../../csharp/language-reference/keywords/index.md)   
- [try、throw、catch ステートメント (C++)](https://docs.microsoft.com/cpp/cpp/try-throw-and-catch-statements-cpp)   
+ [try、throw、catch ステートメント (C++)](/cpp/cpp/try-throw-and-catch-statements-cpp)   
  [例外処理ステートメント](../../../csharp/language-reference/keywords/exception-handling-statements.md)   
  [throw](../../../csharp/language-reference/keywords/throw.md)   
  [try-finally](../../../csharp/language-reference/keywords/try-finally.md)   

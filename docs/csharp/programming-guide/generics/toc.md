@@ -8,7 +8,6 @@
 ## [ジェネリック メソッド](generic-methods.md)
 ## [ジェネリックと配列](generics-and-arrays.md)
 ## [汎用デリゲート](generic-delegates.md)
-## [ジェネリック コードの default キーワード](default-keyword-in-generic-code.md)
 ## [C++ テンプレートと C# ジェネリックの違い](differences-between-cpp-templates-and-csharp-generics.md)
 ## [ランタイムのジェネリック](generics-in-the-run-time.md)
 ## [.NET Framework クラス ライブラリのジェネリック](generics-in-the-net-framework-class-library.md)

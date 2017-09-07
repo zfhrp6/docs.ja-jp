@@ -1,5 +1,5 @@
 ---
-title: "デリゲートの分散 (C#) | Microsoft Docs"
+title: "デリゲートの分散 (C#)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -19,11 +19,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 400dfda51d978f35c3995f90840643aaff1b9c13
-ms.openlocfilehash: cd1b765faa734973bf5e184cee2ac934ebdf9241
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 79de8218f3fcdf52dad84bb0bacffde01a222066
 ms.contentlocale: ja-jp
-ms.lasthandoff: 03/24/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="variance-in-delegates-c"></a>デリゲートの分散 (C#)
@@ -157,7 +157,7 @@ public delegate void DContravariant<in A>(A a);
 ```  
   
 > [!IMPORTANT]
-> C# の  `ref` パラメーターと `out` パラメーターを、バリアントとしてマークすることはできません。  
+>  C# の `ref` パラメーターと `out` パラメーターを、バリアントとしてマークすることはできません。  
   
  同じデリゲートで、型パラメーターが異なる場合は、分散と共変性の両方をサポートすることもできます。 これを次の例に示します。  
   
@@ -214,6 +214,7 @@ public static void Test()
 ```  
   
 ## <a name="see-also"></a>関連項目  
- [ジェネリック](https://msdn.microsoft.com/library/ms172192)   
+ [ジェネリック](~/docs/standard/generics/index.md)   
  [Func および Action 汎用デリゲートでの分散の使用 (C#)](../../../../csharp/programming-guide/concepts/covariance-contravariance/using-variance-for-func-and-action-generic-delegates.md)   
  [方法: デリゲートを結合する (マルチキャスト デリゲート)](../../../../csharp/programming-guide/delegates/how-to-combine-delegates-multicast-delegates.md)
+

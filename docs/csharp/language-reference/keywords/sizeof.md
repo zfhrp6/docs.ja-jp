@@ -1,5 +1,5 @@
 ---
-title: "sizeof (C# リファレンス) | Microsoft Docs"
+title: "sizeof (C# リファレンス)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -30,11 +30,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 7a1944caceaba3ffb8d83a8f67e5ef2975bf9644
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 15d11071c369fad398d40cfef301e462c006d5e4
 ms.contentlocale: ja-jp
-ms.lasthandoff: 03/13/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="sizeof-c-reference"></a>sizeof (C# リファレンス)
@@ -70,11 +70,11 @@ int intSize = sizeof(int);
 |`sizeof(ulong)`|8|  
 |`sizeof(char)`|2 (Unicode)|  
 |`sizeof(float)`|4|  
-|`sizeof(double)`|8|  
+|`sizeof(double)`|9|  
 |`sizeof(decimal)`|16|  
 |`sizeof(bool)`|1|  
   
- struct など、その他の型については、`sizeof` 演算子はアンセーフ コード ブロックでのみ使用できます。 <xref:System.Runtime.InteropServices.Marshal.SizeOf%2A?displayProperty=fullName> メソッドは使用できますが、このメソッドの戻り値が `sizeof` の戻り値と等しいとは限りません。 <xref:System.Runtime.InteropServices.Marshal.SizeOf%2A?displayProperty=fullName> は、型のマーシャリング後にサイズを返します。一方、`sizeof` は、共通言語ランタイムによって割り当てられたサイズ (埋め込みを含む) を返します。  
+ struct など、その他の型については、`sizeof` 演算子はアンセーフ コード ブロックでのみ使用できます。 <xref:System.Runtime.InteropServices.Marshal.SizeOf%2A?displayProperty=fullName> メソッドを使用できますが、このメソッドによって返される値は常に `sizeof` によって返される値と同じとは限りません。 <xref:System.Runtime.InteropServices.Marshal.SizeOf%2A?displayProperty=fullName> は、型のマーシャリング後にサイズを返します。一方、`sizeof` は、共通言語ランタイムによって割り当てられたサイズ (埋め込みを含む) を返します。  
   
 ## <a name="example"></a>例  
  [!code-cs[csrefKeywordsOperator#11](../../../csharp/language-reference/keywords/codesnippet/CSharp/sizeof_1.cs)]  
@@ -91,3 +91,4 @@ int intSize = sizeof(int);
  [アンセーフ コードとポインター](../../../csharp/programming-guide/unsafe-code-pointers/index.md)   
  [構造体](../../../csharp/programming-guide/classes-and-structs/structs.md)   
  [定数](../../../csharp/programming-guide/classes-and-structs/constants.md)
+

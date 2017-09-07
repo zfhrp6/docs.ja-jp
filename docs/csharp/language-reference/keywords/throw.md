@@ -1,5 +1,5 @@
 ---
-title: "throw (C# リファレンス) | Microsoft Docs"
+title: "throw (C# リファレンス)"
 ms.date: 2015-03-02
 ms.prod: .net
 ms.technology:
@@ -32,11 +32,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 095a86f5ab2ce50f5931643161a44b5759583e4e
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 955f6d87614e0b452ace162e79e34aec9decad54
 ms.contentlocale: ja-jp
-ms.lasthandoff: 03/13/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="throw-c-reference"></a>throw (C# リファレンス)
@@ -49,7 +49,7 @@ ms.lasthandoff: 03/13/2017
 ```csharp
 throw [e]
 ```
-ここで `e` は、<xref:System.Exception?displayProperty=fullName> から派生したクラスのインスタンスです。 次の例では、`GetNumber` という名前のメソッドに渡された引数が内部配列の有効なインデックスに対応していない場合に、`throw` ステートメントを使用して @System.IndexOutOfRangeException をスローします。
+ここで `e` は <xref:System.Exception?displayProperty=fullName> から派生したクラスのインスタンスです。 次の例では、`GetNumber` という名前のメソッドに渡された引数が内部配列の有効なインデックスに対応していない場合に、`throw` ステートメントを使用して @System.IndexOutOfRangeException をスローします。
 
 [!code-cs[csrefKeyword#1](../../../../samples/snippets/csharp/language-reference/keywords/throw/throw-1.cs#1)]  
 
@@ -94,3 +94,4 @@ C# 7 以降、`throw` は、式およびステートメントとして使用で�
  [C# のキーワード](../../../csharp/language-reference/keywords/index.md)   
  [例外処理ステートメント](../../../csharp/language-reference/keywords/exception-handling-statements.md)   
  [方法: 例外を明示的にスローする](https://msdn.microsoft.com/library/xhcbs8fz)
+

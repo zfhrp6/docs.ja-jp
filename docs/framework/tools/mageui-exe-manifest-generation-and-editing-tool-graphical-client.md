@@ -1,5 +1,5 @@
 ---
-title: "MageUI.exe (マニフェスト生成および編集ツールのグラフィカル クライアント) | Microsoft Docs"
+title: "MageUI.exe (マニフェスト生成および編集ツールのグラフィカル クライアント)"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
@@ -22,11 +22,11 @@ caps.latest.revision: 38
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: fe32676f0e39ed109a68f39584cf41aec5f5ce90
-ms.openlocfilehash: acd994c4b36200a924c537750f7e8b14a24d06c8
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: f6daa65c15a35bc84d8d7c07a86f42ffd251274d
 ms.contentlocale: ja-jp
-ms.lasthandoff: 06/02/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="mageuiexe-manifest-generation-and-editing-tool-graphical-client"></a>MageUI.exe (マニフェスト生成および編集ツールのグラフィカル クライアント)
@@ -210,3 +210,4 @@ MageUI.exe でサポートされている機能は、コマンド ライン ツ�
  [ClickOnce のセキュリティと配置](/visualstudio/deployment/clickonce-security-and-deployment)   
  [チュートリアル : ClickOnce アプリケーションを手動で配置する](/visualstudio/deployment/walkthrough-manually-deploying-a-clickonce-application)   
  [Mage.exe (マニフェストの生成および編集ツール)](../../../docs/framework/tools/mage-exe-manifest-generation-and-editing-tool.md)
+

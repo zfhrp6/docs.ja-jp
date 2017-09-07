@@ -1,5 +1,5 @@
 ---
-title: "using ディレクティブ (C# リファレンス) | Microsoft Docs"
+title: "using ディレクティブ (C# リファレンス)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -27,11 +27,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: e91cc4fea9fbe57b257e17915cd28b3b82f12f6e
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 1129efd8a1c4058a9648eab61f98cdcef7e9f2f7
 ms.contentlocale: ja-jp
-ms.lasthandoff: 03/13/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="using-directive-c-reference"></a>using ディレクティブ (C# リファレンス)
@@ -57,7 +57,7 @@ ms.lasthandoff: 03/13/2017
     using Project = PC.MyCompany.Project;  
     ```  
   
- `using` キーワードは、"*using ステートメント*" の作成にも使用されます。このキーワードによって、ファイル、フォントなどの <xref:System.IDisposable> オブジェクトが正しく処理されます。 詳細については、「[using ステートメント](../../../csharp/language-reference/keywords/using-statement.md)」を参照してください。  
+ `using` キーワードは、*using ステートメント*の作成にも使用します。ファイルやフォントなどの <xref:System.IDisposable> オブジェクトを正しく処理できるようになります。 詳しくは、「[using ステートメント](../../../csharp/language-reference/keywords/using-statement.md)」をご覧ください。  
   
 ## <a name="using-static-type"></a>using static 型  
  アクセスを型名で修飾することなく型の静的メンバーにアクセスできます。  

@@ -1,5 +1,5 @@
 ---
-title: "方法: CSV テキスト ファイルの列値を計算する (LINQ) (C#) | Microsoft Docs"
+title: "方法: CSV テキスト ファイルの列値を計算する (LINQ) (C#)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -19,10 +19,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: bb39880afedcc3d319a63b7be1ad0d54b99fb8f6
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: b397f3aa52a17dc35c73399b9cefdc9ad749167b
+ms.contentlocale: ja-jp
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="how-to-compute-column-values-in-a-csv-text-file-linq-c"></a>方法: CSV テキスト ファイルの列値を計算する (LINQ) (C#)
@@ -180,3 +181,4 @@ class SumColumns
 ## <a name="see-also"></a>関連項目  
  [LINQ と文字列 (C#)](../../../../csharp/programming-guide/concepts/linq/linq-and-strings.md)   
  [LINQ とファイル ディレクトリ (C#)](../../../../csharp/programming-guide/concepts/linq/linq-and-file-directories.md)
+

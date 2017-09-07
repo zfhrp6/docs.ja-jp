@@ -1,10 +1,7 @@
 ---
-title: "XML ツリーからの要素、属性、およびノードの削除 (C#) | Microsoft Docs"
-ms.custom: 
+title: "XML ツリーからの要素、属性、およびノードの削除 (C#)"
 ms.date: 2015-07-20
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - devlang-csharp
 ms.topic: article
@@ -14,11 +11,11 @@ ms.assetid: 07dd06d6-1117-4077-bf98-9120cf51176e
 caps.latest.revision: 4
 author: BillWagner
 ms.author: wiwagn
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 23091224f314582908438f29340b811498d4c90e
-ms.lasthandoff: 03/13/2017
-
+ms.translationtype: HT
+ms.sourcegitcommit: 934373d61407c8cc19b7d6424898a582880f9c21
+ms.openlocfilehash: 40be8959c731746df9392e3cbf29c88fce222b0b
+ms.contentlocale: ja-jp
+ms.lasthandoff: 08/10/2017
 
 ---
 # <a name="removing-elements-attributes-and-nodes-from-an-xml-tree-c"></a>XML ツリーからの要素、属性、およびノードの削除 (C#)
@@ -32,8 +29,8 @@ ms.lasthandoff: 03/13/2017
   
 |メソッド|説明|  
 |------------|-----------------|  
-|[XAttribute.Remove](https://msdn.microsoft.com/library/system.xml.linq.xattribute.remove\(v=vs.110\).aspx)|<xref:System.Xml.Linq.XAttribute> をその親から削除します。|  
-|[XContainer.RemoveNodes](https://msdn.microsoft.com/library/system.xml.linq.xcontainer.removenodes\(v=vs.110\).aspx)|子ノードを <xref:System.Xml.Linq.XContainer> から削除します。|  
+|<xref:System.Xml.Linq.XAttribute.Remove%2A?displayProperty=fullName>|<xref:System.Xml.Linq.XAttribute> をその親から削除します。|  
+|<xref:System.Xml.Linq.XContainer.RemoveNodes%2A?displayProperty=fullName>|子ノードを <xref:System.Xml.Linq.XContainer> から削除します。|  
 |<xref:System.Xml.Linq.XElement.RemoveAll%2A?displayProperty=fullName>|コンテンツおよび属性を <xref:System.Xml.Linq.XElement> から削除します。|  
 |<xref:System.Xml.Linq.XElement.RemoveAttributes%2A?displayProperty=fullName>|<xref:System.Xml.Linq.XElement> の属性を削除します。|  
 |<xref:System.Xml.Linq.XElement.SetAttributeValue%2A?displayProperty=fullName>|`null` を値に受け取ると、属性を削除します。|  
@@ -92,3 +89,4 @@ Console.WriteLine(root);
   
 ## <a name="see-also"></a>関連項目  
  [XML ツリーの変更 (LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/modifying-xml-trees-linq-to-xml.md)
+

@@ -1,5 +1,5 @@
 ---
-title: "チュートリアル: Async と Await を使用した Web へのアクセス (C#) | Microsoft Docs"
+title: "チュートリアル: Async と Await を使用した Web へのアクセス (C#)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -19,11 +19,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 0832ee88bba58579eea001335be9cb8c2130834d
-ms.openlocfilehash: 2874eaadd23fdfdc1baf9337169ad5a52c05905f
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 7c03cad060e2ba459277c28f929df88be70e4044
 ms.contentlocale: ja-jp
-ms.lasthandoff: 03/28/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="walkthrough-accessing-the-web-by-using-async-and-await-c"></a>チュートリアル: Async と Await を使用した Web へのアクセス (C#)
@@ -105,7 +105,7 @@ async/await 機能を使用することで、非同期プログラムをより�
   
 6.  テキスト ボックスとボタンの位置を調整し、両方が **[MainWindow]** ウィンドウ内に表示されるようにします。  
   
-     WPF XAML デザイナーについて詳しくは、「[XAML デザイナーを使用した UI の作成](https://docs.microsoft.com/visualstudio/designers/creating-a-ui-by-using-xaml-designer-in-visual-studio)」をご覧ください。  
+     WPF XAML デザイナーについて詳しくは、「[XAML デザイナーを使用した UI の作成](/visualstudio/designers/creating-a-ui-by-using-xaml-designer-in-visual-studio)」をご覧ください。  
   
 ##  <a name="BKMK_AddReference"></a>   
 ###  <a name="AddRef"></a> 参照を追加するには  
@@ -271,7 +271,7 @@ async/await 機能を使用することで、非同期プログラムをより�
 ##  <a name="BKMK_ConvertGtBtArr"></a>   
 ###  <a name="GetURLContents"></a> GetURLContents を非同期メソッドに変換するには  
   
-1.  同期ソリューションを非同期ソリューションに変換するには、`GetURLContents` が最適な開始場所です。なぜなら、アプリケーションが Web にアクセスする場所は、<xref:System.Net.HttpWebRequest> の <xref:System.Net.HttpWebRequest.GetResponse%2A> メソッドと <xref:System.IO.Stream> の <xref:System.IO.Stream.CopyTo%2A> メソッドに対する呼び出しだからです。 .NET Framework には両方のメソッドの非同期バージョンが用意されているため、変換は簡単です。  
+1.  同期ソリューションを非同期ソリューションに変換する際に、最初に取りかかるのに最適な場所は、`GetURLContents` 内です。その理由は、<xref:System.Net.HttpWebRequest> の <xref:System.Net.HttpWebRequest.GetResponse%2A> メソッドおよび <xref:System.IO.Stream> の <xref:System.IO.Stream.CopyTo%2A> メソッドへの呼び出しで、アプリケーションが Web にアクセスするためです。 .NET Framework には両方のメソッドの非同期バージョンが用意されているため、変換は簡単です。  
   
      `GetURLContents` で使用されているメソッドの詳細については、「<xref:System.Net.WebRequest>」を参照してください。  
   
@@ -284,7 +284,7 @@ async/await 機能を使用することで、非同期プログラムをより�
     using (WebResponse response = webReq.GetResponseAsync())  
     ```  
   
-2.  `GetResponseAsync` は <xref:System.Threading.Tasks.Task%601> を返します。 この場合、*タスク戻り変数*の `TResult` の型は <xref:System.Net.WebResponse> です。 このタスクは、要求されたデータのダウンロードが完了し、タスクが最後まで実行された後に、実際の `WebResponse` オブジェクトを生成するという約束です。  
+2.  `GetResponseAsync` は、<xref:System.Threading.Tasks.Task%601> を返します。 この場合、*タスク戻り変数*の `TResult` の型は <xref:System.Net.WebResponse> です。 このタスクは、要求されたデータのダウンロードが完了し、タスクが最後まで実行された後に、実際の `WebResponse` オブジェクトを生成するという約束です。  
   
      タスクから `WebResponse` 値を取得するには、次のコードに示すように、[await](../../../../csharp/language-reference/keywords/await.md) (C#) 演算子を `GetResponseAsync` への呼び出しに適用します。  
   
@@ -309,7 +309,7 @@ async/await 機能を使用することで、非同期プログラムをより�
   
     -   呼び出されるメソッドの名前を <xref:System.IO.Stream.CopyToAsync%2A> に変更します。  
   
-    -   `CopyTo` または `CopyToAsync` メソッドは、その引数 `content` にバイトをコピーし、意味のある値は返しません。 同期バージョンでは、`CopyTo` への呼び出しは値を返さない単純なステートメントです。 非同期バージョン (`CopyToAsync`) は、<xref:System.Threading.Tasks.Task> を返します。 タスクは "Task(void)" のように機能し、メソッドを待機できるようにします。 次のコードに示すように、`Await` または `await` を、`CopyToAsync` への呼び出しに適用します。  
+    -   `CopyTo` または `CopyToAsync` メソッドは、その引数 `content` にバイトをコピーし、意味のある値は返しません。 同期バージョンでは、`CopyTo` への呼び出しは値を返さない単純なステートメントです。 非同期バージョンでは、`CopyToAsync` は <xref:System.Threading.Tasks.Task> を返します。 タスクは "Task(void)" のように機能し、メソッドを待機できるようにします。 次のコードに示すように、`Await` または `await` を、`CopyToAsync` への呼び出しに適用します。  
   
         ```csharp  
         await responseStream.CopyToAsync(content);  
@@ -332,7 +332,7 @@ async/await 機能を使用することで、非同期プログラムをより�
     private async byte[] GetURLContents(string url)  
     ```  
   
-5.  C# では、非同期メソッドの戻り値の型として指定できるのは、<xref:System.Threading.Tasks.Task>、<xref:System.Threading.Tasks.Task%601>、または `void` だけです。 通常、`void` の戻り値の型は、`void` を必要とする非同期イベント ハンドラーでのみ使用します。 それ以外のケースでは、完成したメソッドに、T 型の値を返す [return](../../../../csharp/language-reference/keywords/return.md) ステートメントが含まれる場合は `Task(T)` を使用し、完成したメソッドが意味のある値を返さない場合は `Task` を使用します。 戻り値の型 `Task` は、"Task(void)" を意味するものと考えることができます。  
+5.  C# での非同期メソッドの戻り値の型は、<xref:System.Threading.Tasks.Task>、<xref:System.Threading.Tasks.Task%601>、または `void` のみを指定できます。 通常、`void` の戻り値の型は、`void` を必要とする非同期イベント ハンドラーでのみ使用します。 それ以外のケースでは、完成したメソッドに、T 型の値を返す [return](../../../../csharp/language-reference/keywords/return.md) ステートメントが含まれる場合は `Task(T)` を使用し、完成したメソッドが意味のある値を返さない場合は `Task` を使用します。 戻り値の型 `Task` は、"Task(void)" を意味するものと考えることができます。  
   
      詳しくは、「[非同期の戻り値の型 (C#)](../../../../csharp/programming-guide/concepts/async/async-return-types.md)」をご覧ください。  
   
@@ -450,7 +450,7 @@ async/await 機能を使用することで、非同期プログラムをより�
 ##  <a name="BKMK_ReplaceGetByteArrayAsync"></a>   
 ###  <a name="GetURLContentsAsync"></a> GetURLContentsAsync メソッドを .NET Framework メソッドに置き換えるには  
   
-1.  .NET Framework 4.5 では、使用できる非同期メソッドが数多く用意されています。 そのうちの1 つである <xref:System.Net.Http.HttpClient> の <xref:System.Net.Http.HttpClient.GetByteArrayAsync%28System.String%29> メソッドは、まさにこのチュートリアルに適しています。 これを、前述の手順で作成した `GetURLContentsAsync` メソッドの代わりに使用できます。  
+1.  .NET Framework 4.5 では、使用できる非同期メソッドが数多く用意されています。 その 1 つである、<xref:System.Net.Http.HttpClient> の <xref:System.Net.Http.HttpClient.GetByteArrayAsync%28System.String%29> メソッドは、このチュートリアルに必要な処理だけを実行します。 これを、前述の手順で作成した `GetURLContentsAsync` メソッドの代わりに使用できます。  
   
      まずは、`SumPageSizesAsync` メソッドに `HttpClient` オブジェクトを作成します。 次の宣言をメソッドの先頭に追加します。  
   

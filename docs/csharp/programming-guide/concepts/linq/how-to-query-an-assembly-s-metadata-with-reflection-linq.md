@@ -1,5 +1,5 @@
 ---
-title: "方法: リフレクションを使用してアセンブリのメタデータをクエリする (LINQ) (C#) | Microsoft Docs"
+title: "方法: リフレクションを使用してアセンブリのメタデータをクエリする (LINQ) (C#)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -14,11 +14,11 @@ ms.assetid: c4cdce49-b1c8-4420-b12a-9ff7e6671368
 caps.latest.revision: 3
 author: BillWagner
 ms.author: wiwagn
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 50409af2add7f5ca3d591ac9d942e45ccce409af
-ms.lasthandoff: 03/13/2017
-
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 181d72db228bbc43c00ce3d3266fde8e1d3324e9
+ms.contentlocale: ja-jp
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="how-to-query-an-assembly39s-metadata-with-reflection-linq-c"></a>方法: リフレクションを使用してアセンブリのメタデータをクエリする (LINQ) (C#)
@@ -68,3 +68,4 @@ namespace LINQReflection
   
 ## <a name="see-also"></a>関連項目  
  [LINQ to Objects (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-objects.md)
+

@@ -1,5 +1,5 @@
 ---
-title: "ushort (C# リファレンス) | Microsoft Docs"
+title: "ushort (C# リファレンス)"
 ms.date: 2017-03-14
 ms.prod: .net
 ms.technology:
@@ -30,11 +30,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 400dfda51d978f35c3995f90840643aaff1b9c13
-ms.openlocfilehash: 20d3c1e9b10df0d1fff96fa3e56e6a81c4663f51
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 2b067a2ffd0fbffe06dc5c9f2a9910c9563eec4b
 ms.contentlocale: ja-jp
-ms.lasthandoff: 03/24/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="ushort-c-reference"></a>ushort (C# リファレンス)
@@ -47,7 +47,7 @@ ms.lasthandoff: 03/24/2017
   
 ## <a name="literals"></a>リテラル  
 
-`ushort` 変数を宣言し、10 進リテラル、16 進リテラル、または (C# 7 以降) バイナリ リテラルを割り当てることによって初期化できます。 整数リテラルが `ushort` の範囲外である場合は (つまり、<xref:System.UInt16.MinValue?displayProperty=fullName> より小さいか、<xref:System.UInt16.MaxValue?displayProperty=fullName> より大きい場合)、コンパイル エラーが発生します。
+`ushort` 変数を宣言し、10 進リテラル、16 進リテラル、または (C# 7 以降) バイナリ リテラルを割り当てることによって初期化できます。 整数リテラルが `ushort` の範囲外にある場合 (つまり、<xref:System.UInt16.MinValue?displayProperty=fullName> より小さいか、<xref:System.UInt16.MaxValue?displayProperty=fullName> より大きい場合)、コンパイル エラーが発生します。
 
 次の例では、整数 65,034 を 10 進リテラル、16 進リテラル、バイナリ リテラルで表したものが、[int](../../../csharp/language-reference/keywords/int.md) から `ushort` 値に暗黙的に変換されています。    
   
@@ -120,7 +120,7 @@ ushort y = (ushort)3.0;
  暗黙的な数値変換規則の詳細については、「[暗黙的な数値変換の一覧表](../../../csharp/language-reference/keywords/implicit-numeric-conversions-table.md)」を参照してください。  
   
 ## <a name="c-language-specification"></a>C# 言語仕様  
- [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec_md.md)]  
+ [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
 ## <a name="see-also"></a>関連項目  
  <xref:System.UInt16>   
@@ -131,3 +131,4 @@ ushort y = (ushort)3.0;
  [組み込み型の一覧表](../../../csharp/language-reference/keywords/built-in-types-table.md)   
  [暗黙的な数値変換の一覧表](../../../csharp/language-reference/keywords/implicit-numeric-conversions-table.md)   
  [明示的な数値変換の一覧表](../../../csharp/language-reference/keywords/explicit-numeric-conversions-table.md)
+

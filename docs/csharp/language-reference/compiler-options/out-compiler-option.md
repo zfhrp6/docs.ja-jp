@@ -1,74 +1,94 @@
 ---
-title: "/out (C# Compiler Options) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.technology: 
-  - "devlang-csharp"
-ms.topic: "article"
-f1_keywords: 
-  - "/out"
-dev_langs: 
-  - "CSharp"
-helpviewer_keywords: 
-  - "/out compiler option [C#]"
-  - "out compiler option [C#]"
-  - "-out compiler option [C#]"
+title: "-out (C# コンパイラ オプション)"
+ms.date: 2015-07-20
+ms.prod: .net
+ms.technology:
+- devlang-csharp
+ms.topic: article
+f1_keywords:
+- /out
+dev_langs:
+- CSharp
+helpviewer_keywords:
+- /out compiler option [C#]
+- out compiler option [C#]
+- -out compiler option [C#]
 ms.assetid: 70d91d01-7bd2-4aea-ba8b-4e9807e9caa5
 caps.latest.revision: 15
-author: "BillWagner"
-ms.author: "wiwagn"
-caps.handback.revision: 15
+author: BillWagner
+ms.author: wiwagn
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: a6db728bc98f5223fc35268a1cce41021ff530cc
+ms.contentlocale: ja-jp
+ms.lasthandoff: 07/28/2017
+
 ---
-# /out (C# Compiler Options)
-**\/out** オプションは、出力ファイルの名前を指定します。  
+# <a name="out-c-compiler-options"></a>/out (C# コンパイラ オプション)
+**/out** オプションは、出力ファイルの名前を指定します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
-```  
+```console  
 /out:filename  
 ```  
   
-## Arguments  
+## <a name="arguments"></a>引数  
  `filename`  
- コンパイラで作成される出力ファイルの名前。  
+ コンパイラによって作成された出力ファイルの名前です。  
   
-## 解説  
- コマンド ラインでは、コンパイルに対して複数の出力ファイルを指定できます。  **\/out** オプションの後に、1 つ以上のソース コード ファイルを指定します。  **\/out** オプションの後に指定されたソース コード ファイルはすべて、その **\/out** オプションに指定された出力ファイルにコンパイルされます。  
+## <a name="remarks"></a>コメント  
+ コマンド ラインでは、コンパイル用に複数の出力ファイルを指定することができます。 コンパイラは、**/out** オプションの後に 1 つまたは複数のソース コード ファイルがあることを想定しています。 そしてすべてのソース コード ファイルがその **/out** オプションで指定された出力ファイルにコンパイルされます。  
   
- 作成するファイルについて、フルネームと拡張子を指定します。  
+ 作成するファイルの完全な名前と拡張子を指定します。  
   
- 出力ファイルの名前を指定しない場合は、次のように処理されます。  
+ 出力ファイルの名前を指定しない場合:  
   
--   .exe の名前は、**Main** メソッドを含むソース コード ファイルと同じになります。  
+-   .exe は **Main** メソッドを含むソース コード ファイルからその名前を取得します。  
   
--   .dll または .netmodule は最初のソース ファイルの名前を指定します。  
+-   .dll または .netmodule は最初のソース コード ファイルからその名前を取得します。  
   
- ある出力ファイルのコンパイルに使用されるソース コード ファイルは、同じコンパイルで別の出力ファイルにコンパイルできません。  
+ 1 つの出力ファイルをコンパイルするために使用されるソース コード ファイルは、別の出力ファイルのコンパイルの同じコンパイルでは使用できません。  
   
- 複数の出力ファイルを 1 回のコマンド ライン コンパイルで作成する場合、アセンブリにできるのは、出力ファイルのうちの 1 ファイルだけであり、暗黙にまたは **\/out** を使用して明示的に指定した最初の出力ファイルだけがアセンブリになります。  
+ コマンド ラインのコンパイルで複数の出力ファイルを生成する場合は、出力ファイルのいずれか 1 つだけがアセンブリになれること、および (**/out** で暗黙的または明示的に) 指定された最初の出力ファイルだけがアセンブリになれることに留意してください。  
   
- コンパイルで作成されたモジュールはすべて、そのコンパイルで作成されたアセンブリに関連付けられるファイルになります。  [ildasm.exe](../Topic/Ildasm.exe%20\(IL%20Disassembler\).md) を使用してアセンブリ マニフェストを表示し、関連付けられたファイルを確認してください。  
+ コンパイルの一部として生成されるすべてのモジュールが、同じくコンパイルで作成されるアセンブリに関連付けらるファイルになります。 [ildasm.exe](https://msdn.microsoft.com/library/f7dy01k1) を使用して、アセンブリ マニフェストを表示し、関連付けられているファイルを確認します。  
   
- target オプションに exe ファイルを指定してフレンド アセンブリを追加するには、\/out コンパイラ オプションが必要です。  詳細については、「[フレンド アセンブリ](../Topic/Friend%20Assemblies%20\(C%23%20and%20Visual%20Basic\).md)」を参照してください。  
+ exe をフレンド アセンブリのターゲットにするには、/out コンパイラ オプションが必要です。 詳細については、「[フレンド アセンブリ](http://msdn.microsoft.com/library/df0c70ea-2c2a-4bdc-9526-df951ad2d055)」を参照してください。  
   
-### Visual Studio 開発環境でこのコンパイラ オプションを設定するには  
+### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>Visual Studio 開発環境でこのコンパイラ オプションを設定するには  
   
-1.  プロジェクトの **\[プロパティ\]** ページを開きます。  
+1.  プロジェクトの **[プロパティ]** ページを開きます。  
   
-2.  **\[アプリケーション\]** プロパティ ページをクリックします。  
+2.  **[アプリケーション]** プロパティ ページをクリックします。  
   
-3.  **\[アセンブリ名\]** プロパティを変更します。  
+3.  **[アセンブリ名]** プロパティを変更します。  
   
-     このコンパイラ オプションをプログラムから設定するには: <xref:VSLangProj80.ProjectProperties3.OutputFileName%2A> は読み取り専用のプロパティです。プロジェクトの種類 \(exe、ライブラリなど\) と、アセンブリ名の組み合わせに基づいて決定されます。  これらのプロパティの一方または両方を変更するには、出力ファイル名を設定する必要があります。  
+     このコンパイラ オプションをプログラムで設定するには: <xref:VSLangProj80.ProjectProperties3.OutputFileName%2A> は読み取り専用のプロパティで、プロジェクトの種類 (exe、ライブラリなど) と、アセンブリ名の組み合わせによって決まります。 これらのプロパティの一方または両方を変更するには、出力ファイル名を設定する必要があります。  
   
-## 使用例  
- `t.cs` をコンパイルして出力ファイル `t.exe` を作成し、`t2.cs` をビルドしてモジュール出力ファイル `mymodule.netmodule` を作成するには、次のコードを使用します。  
+## <a name="example"></a>例  
+ `t.cs` をコンパイルして出力ファイル `t.exe` とビルド `t2.cs` を作成し、モジュール出力ファイル `mymodule.netmodule` を作成します。  
   
-```  
+```console  
 csc t.cs /out:mymodule.netmodule /target:module t2.cs  
 ```  
   
-## 参照  
- [C\# Compiler Options](../../../csharp/language-reference/compiler-options/index.md)   
- [フレンド アセンブリ](../Topic/Friend%20Assemblies%20\(C%23%20and%20Visual%20Basic\).md)   
- [方法 : プロジェクト プロパティおよび構成設定を変更する](http://msdn.microsoft.com/ja-jp/e7184bc5-2f2b-4b4f-aa9a-3ecfcbc48b67)
+## <a name="see-also"></a>関連項目  
+ [C# コンパイラのオプション](../../../csharp/language-reference/compiler-options/index.md)   
+ [フレンド アセンブリ](http://msdn.microsoft.com/library/df0c70ea-2c2a-4bdc-9526-df951ad2d055)   
+ [プロジェクトおよびソリューションのプロパティの管理](/visualstudio/ide/managing-project-and-solution-properties)
+

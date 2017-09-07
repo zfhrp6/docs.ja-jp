@@ -1,5 +1,5 @@
 ---
-title: "標準クエリ演算子の概要 (C#) | Microsoft Docs"
+title: "標準クエリ演算子の概要 (C#)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -19,24 +19,25 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 5b03c85a298b3864a91a7052ca80cf3714ba98fe
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: ffb68dd9c1a488e1367117bae639805ba9167551
+ms.contentlocale: ja-jp
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="standard-query-operators-overview-c"></a>標準クエリ演算子の概要 (C#)
-"*標準クエリ演算子*" は、LINQ パターンを形成するメソッドです。 ほとんどの場合、そのメソッドの操作の対象はシーケンスです。シーケンスとは、型が <xref:System.Collections.Generic.IEnumerable%601> インターフェイスまたは <xref:System.Linq.IQueryable%601> インターフェイスを実装しているオブジェクトのことです。 標準クエリ演算子には、フィルター処理、プロジェクション、集計、並べ替えなどのクエリ機能が用意されています。  
+"*標準クエリ演算子*" は、LINQ パターンを形成するメソッドです。 これらのメソッドの大部分はシーケンスに対して機能します。ここでシーケンスとは、<xref:System.Collections.Generic.IEnumerable%601> インターフェイスまたは <xref:System.Linq.IQueryable%601> インターフェイスを実装している型のオブジェクトのことです。 標準クエリ演算子には、フィルター処理、プロジェクション、集計、並べ替えなどのクエリ機能が用意されています。  
   
- LINQ 標準クエリ演算子には 2 つのセットがあります。1 つは <xref:System.Collections.Generic.IEnumerable%601> 型のオブジェクトを操作する演算子、もう 1 つは <xref:System.Linq.IQueryable%601> 型のオブジェクトを操作する演算子です。 各セットを構成するメソッドは、それぞれ <xref:System.Linq.Enumerable> クラスと <xref:System.Linq.Queryable> クラスの静的メンバーで、 そのメソッドの操作対象である型の "*拡張メソッド*" として定義されています。 つまり、静的メソッド構文またはインスタンス メソッド構文のいずれかを使用して呼び出すことができます。  
+ LINQ 標準クエリ演算子には 2 つのセットがあります。1 つは <xref:System.Collections.Generic.IEnumerable%601> 型のオブジェクトを操作する演算子、もう 1 つは <xref:System.Linq.IQueryable%601> 型のオブジェクトを操作する演算子です。 各セットを構成するメソッドは、それぞれ、<xref:System.Linq.Enumerable> および <xref:System.Linq.Queryable> クラスの静的メンバーです。 そのメソッドの操作対象である型の "*拡張メソッド*" として定義されています。 つまり、静的メソッド構文またはインスタンス メソッド構文のいずれかを使用して呼び出すことができます。  
   
- また、標準クエリ演算子には、<xref:System.Collections.Generic.IEnumerable%601> または <xref:System.Linq.IQueryable%601> をベースにした型以外の型を操作するメソッドがいくつかあります。 <xref:System.Linq.Enumerable> 型ではこのようなメソッドが 2 つ定義されており、両メソッドとも <xref:System.Collections.IEnumerable> 型のオブジェクトを操作します。 その 1 つは <xref:System.Linq.Enumerable.Cast%60%601%28System.Collections.IEnumerable%29> メソッドで、もう 1 つは <xref:System.Linq.Enumerable.OfType%60%601%28System.Collections.IEnumerable%29> メソッドです。これらのメソッドを使用すると、パラメーター付きでない (非ジェネリック) コレクションに対して、LINQ パターンでクエリを実行できます。 これを行うには、厳密に型指定されたオブジェクトのコレクションを作成します。 <xref:System.Linq.Queryable> クラスでも、同様のメソッドが 2 つ定義されています。1 つは <xref:System.Linq.Queryable.Cast%60%601%28System.Linq.IQueryable%29> メソッド、もう 1 つは <xref:System.Linq.Queryable.OfType%60%601%28System.Linq.IQueryable%29> メソッドで、両方とも <xref:System.Linq.Queryable> 型のオブジェクトを操作します。  
+ さらに、いくつかの標準クエリ演算子メソッドが、<xref:System.Collections.Generic.IEnumerable%601> または <xref:System.Linq.IQueryable%601> を基にする型以外の型を操作します。 <xref:System.Linq.Enumerable> 型は、このような 2 つのメソッドを定義し、その両方が <xref:System.Collections.IEnumerable> 型のオブジェクトを操作します。 これらのメソッド <xref:System.Linq.Enumerable.Cast%60%601%28System.Collections.IEnumerable%29> と <xref:System.Linq.Enumerable.OfType%60%601%28System.Collections.IEnumerable%29> を使用して、LINQ パターンでクエリされるパラメーター化されていないまたは非ジェネリック型のコレクションを有効にすることができます。 これを行うには、厳密に型指定されたオブジェクトのコレクションを作成します。 <xref:System.Linq.Queryable> クラスは、型 <xref:System.Linq.Queryable> のオブジェクトを操作する 2 つの類似したメソッド <xref:System.Linq.Queryable.Cast%60%601%28System.Linq.IQueryable%29> と <xref:System.Linq.Queryable.OfType%60%601%28System.Linq.IQueryable%29> を定義します。  
   
- 標準クエリ演算子の実行のタイミングは、シングルトン値を返すか、値のシーケンスを返すかで異なります。 シングルトン値を返すメソッド (<xref:System.Linq.Enumerable.Average%2A>、<xref:System.Linq.Enumerable.Sum%2A> など) は、直ちに実行されます。 シーケンスを返すメソッドは、クエリの実行を遅延させ、列挙可能なオブジェクトを返します。  
+ 標準クエリ演算子の実行のタイミングは、シングルトン値を返すか、値のシーケンスを返すかで異なります。 これらのシングルトン値を返すメソッド (たとえば、<xref:System.Linq.Enumerable.Average%2A> と <xref:System.Linq.Enumerable.Sum%2A>) は、すぐに実行されます。 シーケンスを返すメソッドは、クエリの実行を遅延させ、列挙可能なオブジェクトを返します。  
   
  メモリ内コレクションを操作するメソッド、つまり <xref:System.Collections.Generic.IEnumerable%601> を拡張するメソッドの場合、返される列挙可能なオブジェクトは、メソッドに渡された引数をキャプチャします。 オブジェクトが列挙されると、クエリ演算子のロジックが使用され、クエリ結果が返されます。  
   
- 一方、<xref:System.Linq.IQueryable%601> を拡張するメソッドはクエリ動作を実装しませんが、実行されるクエリを表す式ツリーを作成します。 クエリ処理は、ソース <xref:System.Linq.IQueryable%601> オブジェクトによって行われます。  
+ 一方、<xref:System.Linq.IQueryable%601> を拡張するメソッドはクエリ動作を実装しませんが、実行されるクエリを表す式ツリーを作成します。 クエリの処理は、ソース <xref:System.Linq.IQueryable%601> オブジェクトによって処理されます。  
   
  クエリ メソッドの呼び出しは 1 回のクエリにまとめてチェーン化できるため、クエリが複雑になることがあります。  
   
@@ -126,3 +127,4 @@ foreach (var obj in query)
  [標準クエリ演算子のクエリ式構文 (C#)](../../../../csharp/programming-guide/concepts/linq/query-expression-syntax-for-standard-query-operators.md)   
  [実行方法による標準クエリ演算子の分類 (C#)](../../../../csharp/programming-guide/concepts/linq/classification-of-standard-query-operators-by-manner-of-execution.md)   
  [拡張メソッド](../../../../csharp/programming-guide/classes-and-structs/extension-methods.md)
+

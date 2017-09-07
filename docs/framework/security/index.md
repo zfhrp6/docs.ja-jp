@@ -1,7 +1,8 @@
 ---
-title: Windows Identity Foundation | Microsoft Docs
+title: Windows Identity Foundation
 ms.custom: 
 ms.date: 03/30/2017
+ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
 ms.technology:
@@ -13,11 +14,11 @@ caps.latest.revision: 15
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.translationtype: Human Translation
-ms.sourcegitcommit: c50b3e328998b65ec47efe6d7457b36116813c77
-ms.openlocfilehash: 8f8a9661cbb15f583ed6b1dbde307c9b8cb51675
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 92f070a919363e373cd898682c37ac7a199d2463
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/02/2017
+ms.lasthandoff: 09/05/2017
 
 ---
 # <a name="windows-identity-foundation"></a>Windows Identity Foundation
@@ -86,3 +87,4 @@ ms.lasthandoff: 05/02/2017
 -   [WIF 構成のリファレンス](../../../docs/framework/security/wif-configuration-reference.md)  
   
     -   [WIF 構成スキーマの規則](../../../docs/framework/security/wif-configuration-schema-conventions.md)
+

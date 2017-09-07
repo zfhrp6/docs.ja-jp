@@ -1,5 +1,5 @@
 ---
-title: "方法: オブジェクト グラフを射影する (C#) | Microsoft Docs"
+title: "方法: オブジェクト グラフを射影する (C#)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -14,11 +14,11 @@ ms.assetid: 293d15d5-3eaf-48de-9a02-3e13cb117b5b
 caps.latest.revision: 3
 author: BillWagner
 ms.author: wiwagn
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: abf16b36fa8b384c2685a29a1697cc7c3e53a7ec
-ms.lasthandoff: 03/13/2017
-
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 3f09d1ab23d027829a8b3ea94fa62455ddb95499
+ms.contentlocale: ja-jp
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="how-to-project-an-object-graph-c"></a>方法: オブジェクト グラフを射影する (C#)
@@ -227,7 +227,7 @@ class Program {
 }  
 ```  
   
- この例では、[!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq_md.md)] クエリの結果は、`PurchaseOrderItem` の <xref:System.Collections.Generic.IEnumerable%601> として返されます。 `PurchaseOrder` クラスの項目は、`PurchaseOrderItem` の <xref:System.Collections.Generic.IEnumerable%601> 型です。 このコードでは、<xref:System.Linq.Enumerable.ToList%2A> 拡張メソッドを使用して、クエリの結果から <xref:System.Collections.Generic.List%601> コレクションを作成します。  
+ この例では、[!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] クエリの結果は、<xref:System.Collections.Generic.IEnumerable%601> の `PurchaseOrderItem` として返されます。 `PurchaseOrder` クラスの項目は、<xref:System.Collections.Generic.IEnumerable%601> の `PurchaseOrderItem` 型です。 このコードでは、<xref:System.Linq.Enumerable.ToList%2A> 拡張メソッドを使用して、クエリの結果から <xref:System.Collections.Generic.List%601> コレクションを作成します。  
   
  この例では次の出力が生成されます。  
   
@@ -272,3 +272,4 @@ ShipDate: 5/21/1999
  <xref:System.Linq.Enumerable.Select%2A>   
  <xref:System.Linq.Enumerable.ToList%2A>   
  [プロジェクションと変換 (LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/projections-and-transformations-linq-to-xml.md)
+

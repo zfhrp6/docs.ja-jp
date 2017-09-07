@@ -1,5 +1,5 @@
 ---
-title: "データ型の変換 (C#) | Microsoft Docs"
+title: "データ型の変換 (C#)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -19,10 +19,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 922e2f26c5f8ded260644e8effa043b03b721020
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 454fb0ce937d7d20dfce26d92dbf49de24f062f0
+ms.contentlocale: ja-jp
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="converting-data-types-c"></a>データ型の変換 (C#)
@@ -30,11 +31,11 @@ ms.lasthandoff: 03/13/2017
   
  LINQ クエリの変換操作は、さまざまなアプリケーションで役に立ちます。 次にいくつかの例を示します。  
   
--   <xref:System.Linq.Enumerable.AsEnumerable%2A?displayProperty=fullName> メソッドは、標準クエリ演算子の型のカスタム実装を隠すために使用できます。  
+-   <xref:System.Linq.Enumerable.AsEnumerable%2A?displayProperty=fullName> メソッドを使用すると、標準クエリ演算子の型のカスタム実装を非表示することができます。  
   
--   <xref:System.Linq.Enumerable.OfType%2A?displayProperty=fullName> メソッドは、LINQ クエリのパラメーター化されていないコレクションを有効にするために使用できます。  
+-   <xref:System.Linq.Enumerable.OfType%2A?displayProperty=fullName> メソッドを使用すると、LINQ クエリのパラメーター化されていないコレクションを有効にすることができます。  
   
--   <xref:System.Linq.Enumerable.ToArray%2A?displayProperty=fullName> メソッド、<xref:System.Linq.Enumerable.ToDictionary%2A?displayProperty=fullName> メソッド、<xref:System.Linq.Enumerable.ToList%2A?displayProperty=fullName> メソッド、<xref:System.Linq.Enumerable.ToLookup%2A?displayProperty=fullName> メソッドは、クエリが列挙されるまで延期することなく、即時クエリ実行を強制するために使用できます。  
+-   <xref:System.Linq.Enumerable.ToArray%2A?displayProperty=fullName>、<xref:System.Linq.Enumerable.ToDictionary%2A?displayProperty=fullName>、<xref:System.Linq.Enumerable.ToList%2A?displayProperty=fullName>、および <xref:System.Linq.Enumerable.ToLookup%2A?displayProperty=fullName> メソッドを使用すると、クエリが列挙されるまで延期させるのではなく、即時のクエリ実行を強制することができます。  
   
 ## <a name="methods"></a>メソッド  
  次の表には、データ型の変換を実行する標準クエリ演算子メソッドの一覧が示されています。  
@@ -96,3 +97,4 @@ static void Cast()
  [from 句](../../../../csharp/language-reference/keywords/from-clause.md)   
  [LINQ クエリ式](../../../../csharp/programming-guide/linq-query-expressions/index.md)   
  [方法: LINQ を使用して ArrayList を照会する (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-query-an-arraylist-with-linq.md)
+

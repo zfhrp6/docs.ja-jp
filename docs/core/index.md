@@ -1,5 +1,5 @@
 ---
-title: .NET Core
+title: ".NET Core のガイド"
 description: ".NET Core は、Windows、Linux、および Mac アプリを作成するためのモジュール型の高性能な .NET 実装です。 ここでは、.NET Core の概要について説明します。"
 keywords: .NET, .NET Core
 author: richlander
@@ -10,14 +10,14 @@ ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: f2b312cb-f80c-4b0d-9101-93908f06a6fa
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 0e002411d9856bc5f98566ed1bd9d8122e884d5d
+ms.sourcegitcommit: 9f2128080d34e78733cec926e59ee5dbe9b98a0d
+ms.openlocfilehash: 14e72dad71b8d99cea947e14f2ac77aedcfb5672
 ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
+ms.lasthandoff: 08/07/2017
 
 ---
 
-# <a name="net-core"></a>.NET Core
+# <a name="net-core-guide"></a>.NET Core のガイド
 
 > 「[Getting Started](get-started.md)」 (概要) では、単純な .NET Core アプリケーションを作成する方法を学習できます。 最初のアプリを、ほんの数分で起動および実行できます。
 
@@ -124,13 +124,13 @@ Windows 実装と Unix 実装はほぼ同じサイズです。 CoreFX は、[Mic
 - [System.IO](https://github.com/dotnet/corefx/tree/master/src/System.IO) と [System.Security.Cryptography.Algorithms](https://github.com/dotnet/corefx/tree/master/src/System.Security.Cryptography.Algorithms) は、記憶域および暗号化 API が各 OS で大幅に異なるので、プラットフォーム固有です。 
 - [System.Collections](https://github.com/dotnet/corefx/tree/master/src/System.Collections) と [System.Linq](https://github.com/dotnet/corefx/tree/master/src/System.Linq) は、データ構造上で作成および操作を行うので、プラットフォームに依存しません。
 
-## <a name="comparisons-to-other-net-platforms"></a>その他の .NET プラットフォームとの比較
+## <a name="comparisons-to-other-net-implementations"></a>その他の .NET 実装との比較
 
-.NET Core のサイズとシェイプは、既存の .NET プラットフォームと比較するとよくわかります。 
+.NET Core のサイズとシェイプは、既存の .NET 実装と比較するとよくわかります。 
 
 ### <a name="comparison-with-net-framework"></a>.NET Framework との比較
 
-.NET プラットフォームは、最初に 2000 年に Microsoft によって発表され、進化してきました。 .NET Framework はその後 15 年以上にわたり、Microsoft によって製造される主要な .NET 製品となっています。 
+.NET は、最初に 2000 年に Microsoft によって発表され、進化してきました。 .NET Framework はその後 15 年以上にわたり、Microsoft によって製造される主要な .NET 実装となっています。 
 
 .NET Core と .NET Framework の主な違いは、次のとおりです。 
 
@@ -140,7 +140,7 @@ Windows 実装と Unix 実装はほぼ同じサイズです。 CoreFX は、[Mic
 - **プラットフォーム** -- .NET Framework は Windows と Windows Server をサポートしており、.NET Core は macOS と Linux もサポートしています。
 - **オープン ソース** -- .NET Core はオープン ソースであり、[.NET Framework の読み取り専用のサブセット](https://github.com/microsoft/referencesource)はオープン ソースです。
 
-.NET Core はユニークな製品で、.NET Framework およびその他の .NET プラットフォームとは大きな違いがあり、ソースまたはバイナリの共有技術を使用してコードを簡単に共有できます。 
+.NET Core はユニークな製品で、.NET Framework およびその他の .NET 実装とは大きな違いがあり、ソースまたはバイナリの共有技術を使用してコードを簡単に共有できます。 
 
 ### <a name="comparison-with-mono"></a>Mono との比較
 

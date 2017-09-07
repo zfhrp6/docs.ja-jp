@@ -1,6 +1,6 @@
 ---
 title: "非同期プログラミング"
-description: "非同期プログラミング"
+description: ".NET Core で提供される、C# 言語レベルの非同期プログラミング モデルについて説明します。"
 keywords: .NET, .NET Core
 author: cartermp
 ms.author: wiwagn
@@ -10,11 +10,11 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: b878c34c-a78f-419e-a594-a2b44fa521a4
-ms.translationtype: Human Translation
-ms.sourcegitcommit: be7974018ce3195dc7344192d647fe64fb2ebcc4
-ms.openlocfilehash: 2983dccc63c38884a24f4183d41b406797d5d10f
+ms.translationtype: HT
+ms.sourcegitcommit: 019461964ba63d874ce86511474aa37b4342bbc4
+ms.openlocfilehash: b4a95438fe8b7490337de10299b824c5796bb4d1
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/14/2017
+ms.lasthandoff: 08/29/2017
 
 ---
 
@@ -32,7 +32,7 @@ I/O バインドのコードでは、`async` メソッドの内部で `Task` ま
 
 CPU バインドのコードでは、`Task.Run` メソッドによってバックグラウンド スレッドで開始された操作を待機 (`await`) します。
 
-`await` キーワードは魔法が行われる場所であり、`await` を実行したメソッドの呼び出し元に制御が委譲されます。  これによって最終的に、UI は応答できるようになり、サービスは柔軟性を持つようになります。
+`await` キーワードはマジックが行われる場所であり、 `await` を実行したメソッドの呼び出し元に制御が委譲されます。これによって最終的に、UI は応答できるようになり、サービスは柔軟性を持つようになります。
 
 上でリンクされている TAP の記事で説明されているように `async` と `await` 以外にも非同期コードへのアプローチはありますが、このドキュメントではこれ以降、言語レベルの構造に注目します。
 
@@ -74,7 +74,7 @@ private DamageResult CalculateDamageDone()
 
 calculateButton.Clicked += async (o, e) =>
 {
-    // This line will yield control to the UI CalculateDamageDone()
+    // This line will yield control to the UI while CalculateDamageDone()
     // performs its work.  The UI thread is free to perform other work.
     var damageResult = await Task.Run(() => CalculateDamageDone());
     DisplayDamage(damageResult);
@@ -105,7 +105,7 @@ C# 側では、コンパイラはコードをステート マシンに変換し�
 
 コードを記述する前に次の 2 点について考える必要があります。
 
-1. コードは、何かを "待機" していますか (データベースのデータなど)。
+1. コードは何か (データベースのデータなど) を "待機" していますか。
 
     答えが "はい" の場合、その処理は **I/O バインド**です。
 
@@ -128,7 +128,7 @@ C# 側では、コンパイラはコードをステート マシンに変換し�
 このスニペットは、www.dotnetfoundation.org から HTML をダウンロードし、HTML に文字列 ".NET" が出現する回数を数えます。  ASP.NET MVC を使って定義されている Web コントローラー メソッドが、このタスクを実行して、数を返します。
 
 > [!NOTE]
-> 実際の HTML 解析を行う場合は、正規表現を使わないでください。  運用環境のコードでこれを行う場合は、解析ライブラリを使ってください。
+> 運用コードで HTML の解析の実行を計画している場合は、正規表現を使用しないでください。 代わりに解析ライブラリを使用します。
 
 ```csharp
 private readonly HttpClient _httpClient = new HttpClient();
@@ -180,7 +180,6 @@ private async void SeeTheDotNets_Click(object sender, RoutedEventArgs e)
 次の例では、一連の `userId` に対する `User` データを取得する方法を示します。
 
 ```csharp
-
 public async Task<User> GetUser(int userId)
 {
     // Code omitted:
@@ -205,7 +204,6 @@ public static Task<IEnumerable<User>> GetUsers(IEnumerable<int> userIds)
 LINQ を使ってもう少し簡潔に記述する別の方法を次に示します。
 
 ```csharp
-
 public async Task<User> GetUser(int userId)
 {
     // Code omitted:

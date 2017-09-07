@@ -1,5 +1,5 @@
 ---
-title: "#define (C# リファレンス) | Microsoft Docs"
+title: "#<a name=\"define-c-reference\"></a>define (C# リファレンス)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -29,11 +29,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: fe32676f0e39ed109a68f39584cf41aec5f5ce90
-ms.openlocfilehash: 0db5a86fee1ed2139ae5046ada66121ffe8210b1
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 8ace15f79480c9aeb0fcb4c7d46c207d4904cef0
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/10/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="define-c-reference"></a>#define (C# リファレンス)
@@ -92,3 +92,4 @@ public class TestDefine
  [方法 : トレースとデバッグを指定して条件付きコンパイルを実行する](../../../framework/debug-trace-profile/how-to-compile-conditionally-with-trace-and-debug.md)   
  [#undef](../../../csharp/language-reference/preprocessor-directives/preprocessor-undef.md)   
  [#if](../../../csharp/language-reference/preprocessor-directives/preprocessor-if.md)
+

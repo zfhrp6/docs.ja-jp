@@ -1,6 +1,6 @@
 ---
-title: "Main() とコマンド ライン引数 (C# プログラミング ガイド)"
-ms.date: 2015-07-20
+title: "Main() とコマンドライン引数 (C# プログラミング ガイド)"
+ms.date: 2017-08-02
 ms.prod: .net
 ms.technology:
 - devlang-csharp
@@ -36,46 +36,37 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 1b2950f7718cda66b545935229a64850449850d0
+ms.sourcegitcommit: d019d1c5757a961c03439d756e808ae13fd8a67b
+ms.openlocfilehash: 51408654abd0dcd2f7159438b507c44bd579bfd9
 ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
+ms.lasthandoff: 08/03/2017
 
 ---
-# <a name="main-and-command-line-arguments-c-programming-guide"></a>Main() とコマンド ライン引数 (C# プログラミング ガイド)
-`Main` メソッドは、C# コンソール アプリケーションまたは Windows アプリケーションのエントリ ポイントです (ライブラリおよびサービスでは、エントリ ポイントとしての `Main` メソッドは必要ありません)。 アプリケーションを起動すると、最初に `Main` メソッドが呼び出されます。  
-  
- C# プログラムのエントリ ポイントは 1 つのみです。 `Main` メソッドを持つクラスが 2 つ以上ある場合、プログラムをコンパイルする際に **/main** コンパイラ オプションを使用して、どの `Main` メソッドをエントリ ポイントとして使用するかを指定する必要があります。 詳細については、「[/main (C# コンパイラ オプション)](../../../csharp/language-reference/compiler-options/main-compiler-option.md)」を参照してください。  
-  
- [!code-cs[csProgGuideMain 17](../../../csharp/programming-guide/inside-a-program/codesnippet/CSharp/main-and-command-line-arguments_1.cs)]  
-  
-## <a name="overview"></a>概要  
-  
--   `Main` メソッドは .exe プログラムのエントリ ポイントです。ここで、プログラムの制御を開始および終了します。  
-  
--   `Main` は、クラスまたは構造体の内部で宣言されます。 `Main` は [public](../../../csharp/language-reference/keywords/public.md) ではなく、[static](../../../csharp/language-reference/keywords/static.md) である必要があります (先ほどの例では、既定の [private](../../../csharp/language-reference/keywords/private.md) のアクセスを受け取ります)。外側のクラスまたは構造体は、static である必要はありません。  
-  
--   `Main` の戻り値は、`void` または `int` のいずれかになります。  
-  
--   `Main` メソッドを宣言する際、コマンドライン引数を含む `string[]` パラメーターは指定してもしなくてもかまいません。 [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] を使用して Windows フォーム アプリケーションを作成する場合、パラメーターを手動で追加するか、<xref:System.Environment> クラスを使用してコマンドライン引数を取得します。 パラメーターは、インデックス 0 のコマンドライン引数として読み取られます。 C や C++ とは異なり、プログラムの名前が最初のコマンドライン引数として扱われることはありません。  
-  
-## <a name="in-this-section"></a>このセクションの内容  
-  
--   [コマンド ライン引数](../../../csharp/programming-guide/main-and-command-args/command-line-arguments.md)  
-  
--   [方法: コマンド ライン引数を表示する](../../../csharp/programming-guide/main-and-command-args/how-to-display-command-line-arguments.md)  
-  
--   [方法: foreach を使用してコマンド ライン引数にアクセスする](../../../csharp/programming-guide/main-and-command-args/how-to-access-command-line-arguments-using-foreach.md)  
-  
--   [Main() の戻り値](../../../csharp/programming-guide/main-and-command-args/main-return-values.md)  
-  
-## <a name="c-language-specification"></a>C# 言語仕様  
- [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
-  
-## <a name="see-also"></a>関連項目  
- [csc.exe を使用したコマンド ラインからのビルド](../../../csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md)   
- [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
- [メソッド](../../../csharp/programming-guide/classes-and-structs/methods.md)   
- [インサイド C# プログラム](../../../csharp/programming-guide/inside-a-program/index.md)   
- [\<paveover>C# サンプル アプリケーション](http://msdn.microsoft.com/en-us/9a9d7aaa-51d3-4224-b564-95409b0f3e15)
+# <a name="main-and-command-line-arguments-c-programming-guide"></a>Main() とコマンドライン引数 (C# プログラミング ガイド)
+
+`Main` メソッドは、C# アプリケーションのエントリ ポイントです (ライブラリおよびサービスでは、エントリ ポイントとしての `Main` メソッドは必要ありません)。アプリケーションを起動すると、最初に `Main` メソッドが呼び出されます。
+
+ C# プログラムのエントリ ポイントは 1 つのみです。 `Main` メソッドを持つクラスが 2 つ以上ある場合、プログラムをコンパイルする際に **/main** コンパイラ オプションを使用して、どの `Main` メソッドをエントリ ポイントとして使用するかを指定する必要があります。 詳細については、「[/main (C# コンパイラ オプション)](../../../csharp/language-reference/compiler-options/main-compiler-option.md)」を参照してください。
+
+ [!code-cs[csProgGuideMain 17](../../../csharp/programming-guide/inside-a-program/codesnippet/CSharp/main-and-command-line-arguments_1.cs)]
+
+## <a name="overview"></a>概要
+
+- `Main` メソッドは実行可能プログラムのエントリ ポイントであり、ここでプログラムの制御を開始および終了します。
+- `Main` は、クラスまたは構造体の内部で宣言されます。 `Main` は [static](../../../csharp/language-reference/keywords/static.md) である必要がありますが、[public](../../../csharp/language-reference/keywords/public.md) である必要はありません (先ほどの例では、既定の [private](../../../csharp/language-reference/keywords/private.md) のアクセスを受け取ります)。外側のクラスまたは構造体は、static である必要はありません。
+- `Main` の戻り値の型は、`void` または `int` のいずれかになります。C# 7.1 以降では `Task` または `Task<int>` になる場合もあります。
+- `Main` で `Task` または `Task<int>` が返される場合に限り、`Main` の宣言に [`async`](../../language-reference/keywords/async.md) 修飾子を含めることができます。 この条件により、`async void Main` メソッドが明確に除外されることに注意してください。
+- `Main` メソッドを宣言する際、コマンドライン引数を含む `string[]` パラメーターは指定してもしなくてもかまいません。 [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] を使用して Windows アプリケーションを作成する場合、このパラメーターを手動で追加するか <xref:System.Environment> クラスを使用して、コマンドライン引数を取得できます。 パラメーターは、インデックス 0 のコマンドライン引数として読み取られます。 C や C++ とは異なり、プログラムの名前が最初のコマンドライン引数として扱われることはありません。
+
+コンソール アプリケーションの `Main` で `await` を使用して非同期操作を開始する必要がある場合、戻り値の型 `async`、`Task`、`Task<int>` を追加することでプログラム コードを簡略化できます。
+
+## <a name="c-language-specification"></a>C# 言語仕様
+
+[!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]
+
+## <a name="see-also"></a>関連項目
+[csc.exe を使用したコマンドラインからのビルド](../../../csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md)
+[C# プログラミング ガイド](../../../csharp/programming-guide/index.md)
+[メソッド](../../../csharp/programming-guide/classes-and-structs/methods.md)
+[インサイド C# プログラム](../../../csharp/programming-guide/inside-a-program/index.md)
 

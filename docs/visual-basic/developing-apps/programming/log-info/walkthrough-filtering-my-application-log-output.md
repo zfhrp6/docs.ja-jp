@@ -1,5 +1,5 @@
 ---
-title: "My.Application.Log の出力のフィルター処理 (Visual Basic) | Microsoft Docs"
+title: "My.Application.Log の出力のフィルター処理 (Visual Basic)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -33,11 +33,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-ms.translationtype: Human Translation
-ms.sourcegitcommit: fe32676f0e39ed109a68f39584cf41aec5f5ce90
-ms.openlocfilehash: c0b8b0a4174527d1fc512b461355d2508e34e152
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: a19bd71f1346be292dcc7b143a0080ac1cf11ec0
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/22/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="walkthrough-filtering-myapplicationlog-output-visual-basic"></a>チュートリアル: My.Application.Log の出力のフィルター処理 (Visual Basic)
@@ -48,7 +48,7 @@ ms.lasthandoff: 05/22/2017
   
 #### <a name="to-build-the-sample-application"></a>サンプル アプリケーションをビルドするには  
   
-1.  新しい [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] Windows アプリケーション プロジェクトを開きます。  
+1.  新しい [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] Windows アプリケーション プロジェクトを開きます。  
   
 2.  Form1 に Button1 という名前のボタンを追加します。  
   
@@ -68,7 +68,7 @@ ms.lasthandoff: 05/22/2017
   
 6.  アプリケーションを終了します。  
   
-     アプリケーションのデバッグ出力ウィンドウを表示する方法について詳しくは、「[出力ウィンドウ](https://docs.microsoft.com/visualstudio/ide/reference/output-window)」をご覧ください。 アプリケーションのログ ファイルの場所について詳しくは、「[チュートリアル: My.Application.Log による情報の書き込み先の確認](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-determining-where-my-application-log-writes-information.md)」をご覧ください。  
+     アプリケーションのデバッグ出力ウィンドウを表示する方法について詳しくは、「[出力ウィンドウ](/visualstudio/ide/reference/output-window)」をご覧ください。 アプリケーションのログ ファイルの場所について詳しくは、「[チュートリアル: My.Application.Log による情報の書き込み先の確認](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-determining-where-my-application-log-writes-information.md)」をご覧ください。  
   
     > [!NOTE]
     >  既定では、アプリケーションはアプリケーションの終了時にログ ファイルの出力をフラッシュします。  
@@ -162,7 +162,7 @@ ms.lasthandoff: 05/22/2017
 9. `value` 属性の値を "Information" に戻します。  
   
     > [!NOTE]
-    >  `DefaultSwitch` スイッチの設定では、`My.Application.Log` のみが制御されます。 [!INCLUDE[dnprdnshort](../../../../csharp/getting-started/includes/dnprdnshort_md.md)] の <xref:System.Diagnostics.Trace?displayProperty=fullName> クラスと <xref:System.Diagnostics.Debug?displayProperty=fullName> クラスの動作が変えられることはありません。  
+    >  `DefaultSwitch` スイッチの設定では、`My.Application.Log` のみが制御されます。 [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] の <xref:System.Diagnostics.Trace?displayProperty=fullName> クラスと <xref:System.Diagnostics.Debug?displayProperty=fullName> クラスの動作が変えられることはありません。  
   
 ## <a name="individual-filtering-for-myapplicationlog-listeners"></a>My.Application.Log リスナーの個別のフィルター処理  
  前の例では、すべての `My.Application.Log` 出力のフィルター処理を変更する方法について説明しました。 この例では、個別のログ リスナーをフィルター処理する方法について説明します。 既定では、アプリケーションには、アプリケーションのデバッグ出力とログ ファイルに情報を書き込む 2 つのリスナーがあります。  
@@ -281,3 +281,4 @@ ms.lasthandoff: 05/22/2017
  [方法: ログ メッセージを書き込む](../../../../visual-basic/developing-apps/programming/log-info/how-to-write-log-messages.md)   
  [トレース スイッチ](../../../../framework/debug-trace-profile/trace-switches.md)   
  [アプリケーションからの情報のログ記録](../../../../visual-basic/developing-apps/programming/log-info/logging-information-from-the-application.md)
+

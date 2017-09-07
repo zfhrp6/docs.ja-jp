@@ -1,5 +1,5 @@
 ---
-title: "Winres.exe (Windows フォーム リソース エディター) | Microsoft Docs"
+title: "Winres.exe (Windows フォーム リソース エディター)"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
@@ -27,11 +27,11 @@ caps.latest.revision: 23
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
-ms.openlocfilehash: 2149e21f82b224e40cc4b2dd80a7decd9988385d
+ms.translationtype: HT
+ms.sourcegitcommit: 934373d61407c8cc19b7d6424898a582880f9c21
+ms.openlocfilehash: e2a2121d97cd1f7de211a72ed95e2fdf24bfac60
 ms.contentlocale: ja-jp
-ms.lasthandoff: 06/02/2017
+ms.lasthandoff: 08/10/2017
 
 ---
 # <a name="winresexe-windows-forms-resource-editor"></a>Winres.exe (Windows フォーム リソース エディター)
@@ -146,7 +146,7 @@ winres /?
   
 4.  ローカライズしたバージョンの .resx ファイルや .resources ファイルを保存するには、**[上書き保存]** ボタンをクリックするか、**[ファイル]** メニューの [上書き保存] をクリックします。 **[カルチャを選択する]** ウィンドウが表示されます。  
   
-5.  適切なカルチャおよびファイル モードを選択し、**[OK]** をクリックします。 ファイルは、ローカライズ後のリソース ファイルで予測される名前付け規則を使用して保存されます。 たとえば、`TestApp.resources` をドイツのドイツ語用にローカライズする場合、ファイルは `TestApp.de-DE.resources` という名前で保存されます。 `TestApp.resx` をドイツのドイツ語用にローカライズする場合、ファイルは `TestApp.de-DE.resx` という名前で保存されます。 リソースの名前付け規則について詳しくは、「[リソースのパッケージ化と配置](../../../docs/framework/resources/packaging-and-deploying-resources-in-desktop-apps.md)」を参照してください。 ランタイムで使用される定義済みカルチャ名の一覧については、「[CultureInfo クラス](https://msdn.microsoft.com/en-us/library/system.globalization.cultureinfo.aspx)」を参照してください。  
+5.  適切なカルチャおよびファイル モードを選択し、**[OK]** をクリックします。 ファイルは、ローカライズ後のリソース ファイルで予測される名前付け規則を使用して保存されます。 たとえば、`TestApp.resources` をドイツのドイツ語用にローカライズする場合、ファイルは `TestApp.de-DE.resources` という名前で保存されます。 `TestApp.resx` をドイツのドイツ語用にローカライズする場合、ファイルは `TestApp.de-DE.resx` という名前で保存されます。 リソースの名前付け規則について詳しくは、「[リソースのパッケージ化と配置](../../../docs/framework/resources/packaging-and-deploying-resources-in-desktop-apps.md)」を参照してください。 ランタイムで使用される定義済みカルチャ名の一覧については、「<xref:System.Globalization.CultureInfo> クラス」を参照してください。  
   
 ## <a name="see-also"></a>関連項目  
  <xref:System.ComponentModel.LocalizableAttribute>   
@@ -157,3 +157,4 @@ winres /?
  [ツール](../../../docs/framework/tools/index.md)   
  [デスクトップ アプリケーションのリソース](../../../docs/framework/resources/index.md)   
  [グローバライズとローカライズ](../../../docs/standard/globalization-localization/index.md)
+

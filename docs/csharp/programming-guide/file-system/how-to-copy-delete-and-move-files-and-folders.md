@@ -1,5 +1,5 @@
 ---
-title: "方法: ファイルおよびフォルダーのコピー、削除、および移動を行う (C# プログラミング ガイド) | Microsoft Docs"
+title: "方法: ファイルおよびフォルダーのコピー、削除、および移動を行う (C# プログラミング ガイド)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -27,16 +27,17 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: c7e9a170882c4e8dbb04dc014642a28ad4365e39
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: a4cfec46e0af0056a0de20a1ed83a370cd010055
+ms.contentlocale: ja-jp
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="how-to-copy-delete-and-move-files-and-folders-c-programming-guide"></a>方法: ファイルおよびフォルダーのコピー、削除、および移動を行う (C# プログラミング ガイド)
-次の例では、<xref:System.IO?displayProperty=fullName>名前空間から <xref:System.IO.File?displayProperty=fullName>、<xref:System.IO.Directory?displayProperty=fullName>、<xref:System.IO.FileInfo?displayProperty=fullName>、<xref:System.IO.DirectoryInfo?displayProperty=fullName> の各クラスを使用して、ファイルおよびフォルダーを同期的な方法でコピー、移動、削除する方法を示します。 これらの例では、進行状況バーやその他のユーザー インターフェイスは表示されません。 標準の進行状況ダイアログ ボックスを表示する場合は、「[方法: ファイル操作の [進行状況] ダイアログ ボックスを表示する](how-to-provide-a-progress-dialog-box-for-file-operations.md)」を参照してください。  
+次の例では、<xref:System.IO?displayProperty=fullName> 名前空間から <xref:System.IO.File?displayProperty=fullName>、<xref:System.IO.Directory?displayProperty=fullName>、<xref:System.IO.FileInfo?displayProperty=fullName>、および <xref:System.IO.DirectoryInfo?displayProperty=fullName> クラスを使用して、同期的な方法でファイルとフォルダーをコピー、移動および削除する方法を示します。 これらの例では、進行状況バーやその他のユーザー インターフェイスは表示されません。 標準の進行状況ダイアログ ボックスを表示する場合は、「[方法: ファイル操作の [進行状況] ダイアログ ボックスを表示する](how-to-provide-a-progress-dialog-box-for-file-operations.md)」を参照してください。  
   
- 複数ファイルを操作するときに進行状況を計算するイベントを提供するには、<xref:System.IO.FileSystemWatcher?displayProperty=fullName> を使用します。 プラットフォーム呼び出しを使用して、Windows シェルで関連するファイル関連メソッドを呼び出す方法もあります。 これらのファイル操作を非同期に実行する方法については、「[非同期ファイル I/O](https://msdn.microsoft.com/library/kztecsys)」を参照してください。  
+ 複数のファイルを操作するときに進行状況を計算できるイベントを提供するには、<xref:System.IO.FileSystemWatcher?displayProperty=fullName> を使用します。 プラットフォーム呼び出しを使用して、Windows シェルで関連するファイル関連メソッドを呼び出す方法もあります。 これらのファイル操作を非同期に実行する方法については、「[非同期ファイル I/O](https://msdn.microsoft.com/library/kztecsys)」を参照してください。  
   
 ## <a name="example"></a>例  
  次の例では、ファイルとディレクトリをコピーする方法を示します。  
@@ -60,3 +61,4 @@ ms.lasthandoff: 03/13/2017
  [方法: ファイル操作の [進行状況] ダイアログ ボックスを表示する](how-to-provide-a-progress-dialog-box-for-file-operations.md)   
  [ファイルおよびストリーム入出力](https://msdn.microsoft.com/library/k3352a4t)   
  [共通 I/O タスク](https://msdn.microsoft.com/library/ms404278)
+

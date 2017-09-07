@@ -17,10 +17,10 @@ author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: b7197f2453367e4613b4d44f0d84be5984525a5a
+ms.sourcegitcommit: 3155295489e1188640dae5aa5bf9fdceb7480ed6
+ms.openlocfilehash: f922abca6898e91748158ee16f89ca7f57a81bf7
 ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
+ms.lasthandoff: 08/05/2017
 
 ---
 
@@ -703,7 +703,7 @@ Dim utc As New Date(2016, 11, 07, 3, 0, 0, DateTimeKind.Utc)
 
 - **ASP.NET 5**
 
-     .NET 2015 には、ASP.NET 5 が含まれています。これは、最新のクラウド ベースのアプリを構築するのに非常に効率の良い .NET プラットフォームです。 このプラットフォームはモジュール形式であるため、アプリケーションで必要な機能のみを含めることができます。 IIS でホストすることも、カスタムのプロセスでセルフホストすることもできます。さらに同じサーバー上のさまざまなバージョンの .NET Framework でアプリを実行することも可能です。 クラウド展開用に設計されている新たな環境構成システムが含まれています。
+     .NET 2015 には、ASP.NET 5 が含まれています。これは、最新のクラウド ベースのアプリを構築するのに非常に効率の良い .NET 実装です。 ASP.NET 5 はモジュール形式であるため、アプリケーションで必要な機能のみを含めることができます。 IIS でホストすることも、カスタムのプロセスでセルフホストすることもできます。さらに同じサーバー上のさまざまなバージョンの .NET Framework でアプリを実行することも可能です。 クラウド展開用に設計されている新たな環境構成システムが含まれています。
 
      MVC、Web API、および Web ページは、MVC 6 と呼ばれる 1 つのフレームワークに統合されています。 Visual Studio 2015 の新しいツールで ASP.NET 5 アプリをビルドします。 既存のアプリケーションは、この新しい .NET Framework で動作しますが、MVC 6 または SignalR 3 を使用するアプリケーションをビルドするには Visual Studio 2015 のプロジェクト システムを使用する必要があります。
 

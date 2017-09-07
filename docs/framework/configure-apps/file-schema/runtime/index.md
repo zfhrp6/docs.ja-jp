@@ -1,5 +1,5 @@
 ---
-title: "ランタイム設定スキーマ | Microsoft Docs"
+title: "ランタイム設定スキーマ"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
@@ -23,11 +23,11 @@ caps.latest.revision: 49
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: deb760878391856cf07bab04563d0ec19a1511e7
-ms.openlocfilehash: 84935c04856e9d72a8305d9d215acbab5090234a
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: f457546a07e95e57ac1282bd2d1a2bab6024cdf3
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/22/2017
+ms.lasthandoff: 09/05/2017
 
 ---
 # <a name="runtime-settings-schema"></a>ランタイム設定スキーマ
@@ -144,3 +144,4 @@ ms.lasthandoff: 05/22/2017
  [構成ファイル スキーマ](../../../../../docs/framework/configure-apps/file-schema/index.md)   
  [方法: 同時実行ガベージ コレクションを無効にする](http://msdn.microsoft.com/en-us/ba2c6c67-5778-497c-9fac-5f793b5500c7)   
  [アセンブリ バージョンのリダイレクト](../../../../../docs/framework/configure-apps/redirect-assembly-versions.md)
+

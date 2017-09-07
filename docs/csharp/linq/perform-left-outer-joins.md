@@ -11,14 +11,15 @@ ms.prod: .net-core
 ms.technology: .net-core-technologies
 ms.devlang: dotnet
 ms.assetid: f542cee6-3169-4dcf-a631-3a6a79ccd473
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 6ba90a6fe16d4ba33e8b9e55c93f7365b6bc905b
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: d81f6e9df228dc6eec985253f53b70a95493ed42
+ms.contentlocale: ja-jp
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="perform-left-outer-joins"></a>左外部結合の実行
-左外部結合は、最初のコレクションの各要素を、2 つ目のコレクション内にある要素との相関関係の有無にかかわらず返す結合です。 LINQ を使用すると、グループ結合の結果に対して <xref:System.Linq.Enumerable.DefaultIfEmpty%2A> メソッド呼び出すことで、左外部結合を実行できます。  
+左外部結合は、最初のコレクションの各要素を、2 つ目のコレクション内にある要素との相関関係の有無にかかわらず返す結合です。 LINQ を使用すると、グループ結合の結果に対して <xref:System.Linq.Enumerable.DefaultIfEmpty%2A> メソッドを呼び出すことで、左外部結合を実行できます。  
   
 ## <a name="example"></a>例  
  次の例は、グループ結合の結果に対して <xref:System.Linq.Enumerable.DefaultIfEmpty%2A> メソッドを使用し、左外部結合を実行する方法を示しています。  
@@ -39,3 +40,4 @@ ms.lasthandoff: 03/13/2017
  [グループ化結合の実行](perform-grouped-joins.md)   
  [匿名型](../programming-guide/classes-and-structs/anonymous-types.md)   
  
+

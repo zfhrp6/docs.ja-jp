@@ -1,77 +1,97 @@
 ---
-title: "ジェネリック クラス (C# プログラミング ガイド) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.technology: 
-  - "devlang-csharp"
-ms.topic: "article"
-dev_langs: 
-  - "CSharp"
-helpviewer_keywords: 
-  - "C# 言語, ジェネリック クラス"
-  - "ジェネリック [C#], クラス"
+title: "ジェネリック クラス (C# プログラミング ガイド)"
+ms.date: 2015-07-20
+ms.prod: .net
+ms.technology:
+- devlang-csharp
+ms.topic: article
+dev_langs:
+- CSharp
+helpviewer_keywords:
+- C# language, generic classes
+- generics [C#], classes
 ms.assetid: 27d6f256-cd61-41e3-bc6e-b990a53b0224
 caps.latest.revision: 30
-author: "BillWagner"
-ms.author: "wiwagn"
-caps.handback.revision: 30
+author: BillWagner
+ms.author: wiwagn
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 17ec9f5d26c01b7f7f7f95026bfdfaa88d709b60
+ms.contentlocale: ja-jp
+ms.lasthandoff: 07/28/2017
+
 ---
-# ジェネリック クラス (C# プログラミング ガイド)
-ジェネリック クラスは、特定のデータ型に固有ではない操作をカプセル化します。  一般に、ジェネリック クラスは、リンクされたリスト、ハッシュ テーブル、スタック、キュー、ツリーなどのコレクションと共に使用されます。  コレクション内の項目の追加や削除などの操作は、格納されるデータ型にかかわらず、基本的に同じ方法で実行されます。  
+# <a name="generic-classes-c-programming-guide"></a>ジェネリック クラス (C# プログラミング ガイド)
+ジェネリック クラスは、特定のデータ型に固有ではない操作をカプセル化します。 ジェネリック クラスは最も一般的に、リンク リスト、ハッシュ テーブル、スタック、キュー、ツリーなどのコレクションと共に使用されます。 コレクションの項目を追加または削除するなどの操作は、保存されているデータの型に関係なく、基本的に同じように実行されます。  
   
- コレクション クラスが必要な場合、一般に、.NET Framework クラス ライブラリに用意されているものを使用することをお勧めします。  これらのクラスの使用方法の詳細については、「[.NET Framework クラス ライブラリのジェネリック](../../../csharp/programming-guide/generics/generics-in-the-net-framework-class-library.md)」を参照してください。  
+ コレクション クラスを必要とするほとんどのシナリオで、.NET Framework クラス ライブラリで提供されているものを使用するという方法が推奨されます。 これらのクラスの詳細については、「[.NET Framework クラス ライブラリのジェネリック](../../../csharp/programming-guide/generics/generics-in-the-net-framework-class-library.md)」を参照してください。  
   
- 通常、ジェネリック クラスを作成するには、既存の具象クラスから始め、生成と使いやすさが最適なバランスになるまで、1 つずつ、型を型パラメーターに変更します。  独自にジェネリック クラスを作成する場合は、次の点を考慮する必要があります。  
+ 通常、ジェネリック クラスを作成するには、既存の具象クラスから始め、汎用性と使いやすさの間で最適なバランスが取れるまで、一度に 1 つずつ型を型パラメーターに変更します。 独自のジェネリック クラスを作成するときの重要な考慮事項は次のとおりです。  
   
--   型パラメーターに一般化する型。  
+-   型パラメーターに汎用化する型。  
   
-     一般に、パラメーター化できる型が増えると、コードの柔軟性と再利用できる度合いが向上します。  ただし、一般化しすぎると、他の開発者が読んだり理解したりするのが困難なコードになります。  
+     通例、パラメーター化できる型が多ければ多いほど、コードの柔軟性が上がり、再利用しやすくなります。 ただし、汎用化が多すぎると、他の開発者にとって読みにくい、理解しにくいコードが生成されます。  
   
--   型パラメーターに適用する制約 \(存在する場合\) の内容 \(「[型パラメーターの制約](../../../csharp/programming-guide/generics/constraints-on-type-parameters.md)」を参照してください\)。  
+-   型パラメーターに適用する制約 (制約がある場合) (「[型パラメーターの制約](../../../csharp/programming-guide/generics/constraints-on-type-parameters.md)」を参照)。  
   
-     望ましい規則は、必要に応じて型を処理できる範囲で、最大の制約を適用することです。  たとえば、参照型でのみジェネリック クラスを使用することがわかっていれば、そのクラスの制約を適用します。  こうすることで、値型でクラスを使うという意図しない用法を回避できます。また、`T` で `as` 演算子を使用し、null 値をチェックできるようになります。  
+     処理しなければならない型を処理できる範囲で最大の制約を適用することが推奨されます。 たとえば、ジェネリック クラスが参照型でのみ使用される場合、クラス制約を適用します。 それにより、意図しない、値型でのクラスの使用が回避され、`T` で `as` 演算子を使用したり、null 値を確認したりできます。  
   
--   ジェネリックの動作を基本クラスとサブクラスにファクタリングするかどうか。  
+-   基底クラスやサブクラスの要因としてジェネリック動作を考慮するかどうか。  
   
-     ジェネリック クラスは基本クラスとして機能するため、非ジェネリック クラスと同様なデザインの考慮事項が適用されます。  ジェネリックな基本クラスからの継承に関する規則については、後述します。  
+     ジェネリック クラスは基底クラスとして機能できるので、非ジェネリック クラスと同様の設計考慮事項がここで適用されます。 ジェネリック基底クラスからの継承ルールについて、このトピックの後半で確認してください。  
   
--   1 つ以上のジェネリック インターフェイスを実装するかどうか。  
+-   1 つまたは複数のジェネリック インターフェイスを実装するかどうか。  
   
-     たとえば、ジェネリック ベースのコレクションに項目を作成するときに使用するクラスを設計している場合、`T` がそのクラスの型である <xref:System.IComparable%601> などのインターフェイスの実装が必要になることがあります。  
+     たとえば、ジェネリック基盤のコレクションで項目を作成するために使用されるクラスを設計するとき、場合によっては、<xref:System.IComparable%601> のようなインターフェイスを実装する必要があります。ここで `T` はクラスの型です。  
   
  単純なジェネリック クラスの例については、「[ジェネリックの概要](../../../csharp/programming-guide/generics/introduction-to-generics.md)」を参照してください。  
   
- 型パラメーターの規則と制約には、ジェネリック クラスの動作 \(特に、継承とメンバーのアクセシビリティ\) について、暗示的な意味合いがあります。  次に進む前に、いくつかの用語を理解しておく必要があります。  ジェネリック クラスで、`Node<T>,` クライアント コードでクラスを参照するには、型の引数を指定してクローズ構築型 \(`Node<int>`\) を作成します。  または、たとえばジェネリックな基本クラスを指定するときに型パラメーターを指定せずに、オープン構築型 \(`Node<T>`\) を作成します。  ジェネリック クラスは、具象、クローズ構築、またはオープン構築の各基本クラスから継承できます。  
+ 型パラメーターや制約のルールは、特に継承とメンバーのアクセシビリティに関して、ジェネリック クラスの動作と密接な関係があります。 続行する前に、いくつかの用語を理解してください。 ジェネリック クラス `Node<T>,` の場合、型引数を指定することで、クライアント コードはクラスを参照し、構築されたクローズ型を作成できます (`Node<int>`)。 あるいは、ジェネリック基底クラスを指定するときなど、型パラメーターを指定せず、構築されたオープン型を作成できます (`Node<T>`)。 ジェネリック クラスは、具象、構築されたクローズ型、または構築されたオープン型の基底クラスから継承できます。  
   
  [!code-cs[csProgGuideGenerics#16](../../../csharp/programming-guide/generics/codesnippet/CSharp/generic-classes_1.cs)]  
   
- 非ジェネリック クラス \(つまり具象クラス\) は、クローズ構築の基本クラスからは継承できますが、オープン構築のクラスや型パラメーターからは継承できません。実行時に、クライアント コードから基本クラスをインスタンス化するときに必要な型の引数を提示する方法がないためです。  
+ 非ジェネリック クラス、言い換えれば、具象クラスは、構築されたクローズ型の基底クラスから継承できますが、構築されたオープン型のクラスや型パラメーターからは継承できません。ランタイム時、基底クラスのインスタンス化に必要な型引数をクライアント コードが提供できないためです。  
   
  [!code-cs[csProgGuideGenerics#17](../../../csharp/programming-guide/generics/codesnippet/CSharp/generic-classes_2.cs)]  
   
- オープン構築型から継承するジェネリック クラスの場合、継承するクラスで共有されない基本クラスの型パラメーターに対して、型の引数を提示する必要があります。次にコード例を示します。  
+ 構築されたオープン型から継承するジェネリック クラスは、継承クラスで共有されない基底クラスの型パラメーターに対して型引数を提供する必要があります。次のコードをご覧ください。  
   
  [!code-cs[csProgGuideGenerics#18](../../../csharp/programming-guide/generics/codesnippet/CSharp/generic-classes_3.cs)]  
   
- オープン構築型から継承するジェネリック クラスでは、基本型に対する制約のスーパーセットである制約、または基本型に対する制約を暗示する制約を指定する必要があります。  
+ 構築されたオープン型から継承するジェネリック クラスは、基底クラスの制約のスーパーセットである (基底クラスの制約を暗黙に定義する) 制約を指定する必要があります。  
   
  [!code-cs[csProgGuideGenerics#19](../../../csharp/programming-guide/generics/codesnippet/CSharp/generic-classes_4.cs)]  
   
- ジェネリック型では、次のように複数の型パラメーターと制約を使用できます。  
+ ジェネリック型では、次のように、複数の型パラメーターと制約を使用できます。  
   
  [!code-cs[csProgGuideGenerics#20](../../../csharp/programming-guide/generics/codesnippet/CSharp/generic-classes_5.cs)]  
   
- オープン構築型とクローズ構築j型は、メソッドのパラメーターとして使用できます。  
+ 構築されたオープン型と構築されたクローズ型をメソッド パラメーターとして使用できます。  
   
  [!code-cs[csProgGuideGenerics#21](../../../csharp/programming-guide/generics/codesnippet/CSharp/generic-classes_6.cs)]  
   
- ジェネリック クラスがインターフェイスを実装する場合、そのクラスのすべてのインスタンスをそのインターフェイスにキャストできます。  
+ ジェネリック クラスでインターフェイスを実装する場合、そのクラスのすべてのインスタンスをそのインターフェイスにキャストできます。  
   
- ジェネリック クラスは不変です。  つまり、入力パラメーターで `List<BaseClass>` を使用していて、`List<DerivedClass>` を提示しようとすると、コンパイル時にエラーが発生します。  
+ ジェネリック クラスは変化しません。 言い換えると、入力パラメーターが `List<BaseClass>` を指定するとき、`List<DerivedClass>` を指定するとコンパイル時エラーが表示されます。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Collections.Generic>   
- [C\# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
+ [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
  [ジェネリック](../../../csharp/programming-guide/generics/index.md)   
- [Saving the State of Enumerators \(列挙子の状態を保存する\)](http://go.microsoft.com/fwlink/?LinkId=112390)   
- [An Inheritance Puzzle, Part One \(継承パズル、パート 1\)](http://go.microsoft.com/fwlink/?LinkId=112380)
+ [列挙子の状態を保存する](http://go.microsoft.com/fwlink/?LinkId=112390)   
+ [継承パズル、パート 1](http://go.microsoft.com/fwlink/?LinkId=112380)
+

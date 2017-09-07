@@ -21,46 +21,48 @@ author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 4b48b2d7b8b6256c2395cee069d7705001258a0a
+ms.sourcegitcommit: 21c6a1485f3d0c38bde065d6ecc7b07d5e424c1d
+ms.openlocfilehash: 18875105836ee4be0a3d3fb61a83ef6cd29b8c58
 ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
+ms.lasthandoff: 08/05/2017
 
 ---
+
 # <a name="net-framework-system-requirements"></a>.NET Framework のシステム要件
+
 このトピックの表では、.NET Framework 4.5 とそのポイント リリース (4.5.1 と 4.5.2)、[!INCLUDE[net_v46](../../../includes/net-v46-md.md)] とそのポイント リリース (4.6.1 と 4.6.2)、.NET Framework 4.7 のハードウェア、オペレーティング システム、およびソフトウェアの要件を示します。 .NET Framework 用のアプリケーションを開発するための開発環境では、要件セットが異なります。
 
- ダウンロード情報とリンクについては、[「開発者向けの .NET Framework のインストール」](../../../docs/framework/install/guide-for-developers.md) を参照してください。
+ダウンロード情報とリンクについては、[「開発者向けの .NET Framework のインストール」](../../../docs/framework/install/guide-for-developers.md) を参照してください。
 
- .NET Framework バージョンのサポート ライフサイクルについては、[マイクロソフト サポート ライフサイクル](https://support.microsoft.com/en-us/lifecycle/search?sort=PN&alpha=Microsoft%20.NET%20Framework&Filter=FilterNO)をご覧ください。
+.NET Framework バージョンのサポート ライフサイクルについては、[マイクロソフト サポート ライフサイクル](https://support.microsoft.com/en-us/lifecycle/search?sort=PN&alpha=Microsoft%20.NET%20Framework&Filter=FilterNO)をご覧ください。
 
 ## <a name="hardware-requirements"></a>ハードウェア要件
 
-|||
-|-|-|
-|**プロセッサ**|1 GHz|
-|**RAM**|512 MB|
-|**ディスク容量 (最小)**||
-|32 ビット|4.5 GB|
-|64 ビット|4.5 GB|
+|                          |        |
+| ------------------------ | ------ |
+| **プロセッサ**            | 1 GHz  |
+| **RAM**                  | 512 MB |
+| **ディスク容量 (最小)** |        |
+| 32 ビット                   | 4.5 GB |
+| 64 ビット                   | 4.5 GB |
 
 ## <a name="installation-requirements"></a>インストール要件
 
-- .NET Framework をインストールするには管理者権限が必要です。 .NET Framework をインストールするコンピューター上での管理者権限がない場合には、ネットワーク管理者にお問い合わせください。
+.NET Framework をインストールするには管理者権限が必要です。 .NET Framework をインストールするコンピューター上での管理者権限がない場合には、ネットワーク管理者にお問い合わせください。
 
 ## <a name="supported-client-operating-systems"></a>サポートされているクライアント オペレーティング システム
 
-|オペレーティング システム|サポートされているエディション|OS と共にプレインストール済み|個別にインストール可能|
-|----------------------|------------------------|------------------------------|----------------------------|
-| Windows 10 Creators Update|32 ビットおよび 64 ビット|.NET Framework 4.7|| 
-|Windows 10 Anniversary Update|32 ビットおよび 64 ビット|[!INCLUDE[net_v462](../../../includes/net-v462-md.md)]|.NET Framework 4.7|
-|Windows 10 の 11 月更新版|32 ビットおよび 64 ビット|[!INCLUDE[net_v461](../../../includes/net-v461-md.md)]||
-|Windows 10|32 ビットおよび 64 ビット|[!INCLUDE[net_v46](../../../includes/net-v46-md.md)]|[!INCLUDE[net_v461](../../../includes/net-v461-md.md)]|
-|[!INCLUDE[win81](../../../includes/win81-md.md)]|32 ビット、64 ビット、および ARM|[!INCLUDE[net_v451](../../../includes/net-v451-md.md)]|[!INCLUDE[net_v452](../../../includes/net-v452-md.md)]<br /><br /> [!INCLUDE[net_v46](../../../includes/net-v46-md.md)]<br /><br /> [!INCLUDE[net_v461](../../../includes/net-v461-md.md)]<br /><br /> [!INCLUDE[net_v462](../../../includes/net-v462-md.md)]<br /><br />.NET Framework 4.7|
-|[!INCLUDE[win8](../../../includes/win8-md.md)]|32 ビット、64 ビット、および ARM|[!INCLUDE[net_v45](../../../includes/net-v45-md.md)]|[!INCLUDE[net_v451](../../../includes/net-v451-md.md)]<br /><br /> [!INCLUDE[net_v452](../../../includes/net-v452-md.md)]<br /><br /> [!INCLUDE[net_v46](../../../includes/net-v46-md.md)]<br /><br /> [!INCLUDE[net_v461](../../../includes/net-v461-md.md)]|
-|Windows 7 SP1|32 ビットおよび 64 ビット|--|.NET Framework 4<br /><br /> [!INCLUDE[net_v45](../../../includes/net-v45-md.md)]<br /><br /> [!INCLUDE[net_v451](../../../includes/net-v451-md.md)]<br /><br /> [!INCLUDE[net_v452](../../../includes/net-v452-md.md)]<br /><br /> [!INCLUDE[net_v46](../../../includes/net-v46-md.md)]<br /><br /> [!INCLUDE[net_v461](../../../includes/net-v461-md.md)]<br /><br /> [!INCLUDE[net_v462](../../../includes/net-v462-md.md)]<br /><br />.NET Framework 4.7|
-|Windows Vista SP2|32 ビットおよび 64 ビット|--|.NET Framework 4<br /><br /> [!INCLUDE[net_v45](../../../includes/net-v45-md.md)]<br /><br /> [!INCLUDE[net_v451](../../../includes/net-v451-md.md)]<br /><br /> [!INCLUDE[net_v452](../../../includes/net-v452-md.md)]<br /><br /> [!INCLUDE[net_v46](../../../includes/net-v46-md.md)]|
-|Windows XP|32 ビットおよび 64 ビット|--|.NET Framework 4|
+| オペレーティング システム | サポートされているエディション | OS と共にプレインストール済み | 個別にインストール可能 |
+| ---------------- | ------------------ | ------------------------ | ---------------------- |
+| Windows 10 Creators Update | 32 ビットおよび 64 ビット | .NET Framework 4.7 | | 
+| Windows 10 Anniversary Update | 32 ビットおよび 64 ビット | [!INCLUDE[net_v462](../../../includes/net-v462-md.md)]|.NET Framework 4.7 |
+| Windows 10 の 11 月更新版 | 32 ビットおよび 64 ビット | [!INCLUDE[net_v461](../../../includes/net-v461-md.md)] | |
+| Windows 10 | 32 ビットおよび 64 ビット | [!INCLUDE[net_v46](../../../includes/net-v46-md.md)] | [!INCLUDE[net_v461](../../../includes/net-v461-md.md)] |
+| [!INCLUDE[win81](../../../includes/win81-md.md)] | 32 ビット、64 ビット、および ARM | [!INCLUDE[net_v451](../../../includes/net-v451-md.md)] | [!INCLUDE[net_v452](../../../includes/net-v452-md.md)]<br /><br /> [!INCLUDE[net_v46](../../../includes/net-v46-md.md)]<br /><br /> [!INCLUDE[net_v461](../../../includes/net-v461-md.md)]<br /><br /> [!INCLUDE[net_v462](../../../includes/net-v462-md.md)]<br /><br />.NET Framework 4.7 |
+| [!INCLUDE[win8](../../../includes/win8-md.md)] | 32 ビット、64 ビット、および ARM | [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] | [!INCLUDE[net_v451](../../../includes/net-v451-md.md)]<br /><br /> [!INCLUDE[net_v452](../../../includes/net-v452-md.md)]<br /><br /> [!INCLUDE[net_v46](../../../includes/net-v46-md.md)]<br /><br /> [!INCLUDE[net_v461](../../../includes/net-v461-md.md)] |
+| Windows 7 SP1|32 ビットおよび 64 ビット | -- | .NET Framework 4<br /><br /> [!INCLUDE[net_v45](../../../includes/net-v45-md.md)]<br /><br /> [!INCLUDE[net_v451](../../../includes/net-v451-md.md)]<br /><br /> [!INCLUDE[net_v452](../../../includes/net-v452-md.md)]<br /><br /> [!INCLUDE[net_v46](../../../includes/net-v46-md.md)]<br /><br /> [!INCLUDE[net_v461](../../../includes/net-v461-md.md)]<br /><br /> [!INCLUDE[net_v462](../../../includes/net-v462-md.md)]<br /><br />.NET Framework 4.7 |
+| Windows Vista SP2|32 ビットおよび 64 ビット | -- | .NET Framework 4<br /><br /> [!INCLUDE[net_v45](../../../includes/net-v45-md.md)]<br /><br /> [!INCLUDE[net_v451](../../../includes/net-v451-md.md)]<br /><br /> [!INCLUDE[net_v452](../../../includes/net-v452-md.md)]<br /><br /> [!INCLUDE[net_v46](../../../includes/net-v46-md.md)] |
+| Windows XP |32 ビットおよび 64 ビット | -- | .NET Framework 4 |
 
  **注:**
 
@@ -76,13 +78,13 @@ ms.lasthandoff: 07/28/2017
 
 ## <a name="supported-server-operating-systems"></a>サポートされているサーバー オペレーティング システム
 
-|オペレーティング システム|サポートされているエディション|OS と共にプレインストール済み|個別にインストール可能|
-|----------------------|------------------------|------------------------------|----------------------------|
-|Windows Server 2016|64 ビット|[!INCLUDE[net_v462](../../../includes/net-v462-md.md)]|.NET Framework 4.7|
-|[!INCLUDE[winblue_server_2](../../../includes/winblue-server-2-md.md)]|64 ビット|[!INCLUDE[net_v451](../../../includes/net-v451-md.md)]|[!INCLUDE[net_v452](../../../includes/net-v452-md.md)]<br /><br /> [!INCLUDE[net_v46](../../../includes/net-v46-md.md)]<br /><br /> [!INCLUDE[net_v461](../../../includes/net-v461-md.md)]<br /><br /> [!INCLUDE[net_v462](../../../includes/net-v462-md.md)]<br /><br />.NET Framework 4.7|
-|[!INCLUDE[winserver8](../../../includes/winserver8-md.md)] (64 ビット エディション)|64 ビット|[!INCLUDE[net_v45](../../../includes/net-v45-md.md)]|[!INCLUDE[net_v451](../../../includes/net-v451-md.md)]<br /><br /> [!INCLUDE[net_v452](../../../includes/net-v452-md.md)]<br /><br /> [!INCLUDE[net_v46](../../../includes/net-v46-md.md)]<br /><br /> [!INCLUDE[net_v461](../../../includes/net-v461-md.md)]<br /><br /> [!INCLUDE[net_v462](../../../includes/net-v462-md.md)]<br /><br />.NET Framework 4.7|
-|Windows Server 2008 R2 SP1|64 ビット|--|.NET Framework 4<br /><br /> [!INCLUDE[net_v45](../../../includes/net-v45-md.md)]<br /><br /> [!INCLUDE[net_v451](../../../includes/net-v451-md.md)]<br /><br /> [!INCLUDE[net_v452](../../../includes/net-v452-md.md)]<br /><br /> [!INCLUDE[net_v46](../../../includes/net-v46-md.md)]<br /><br /> [!INCLUDE[net_v461](../../../includes/net-v461-md.md)]<br /><br /> [!INCLUDE[net_v462](../../../includes/net-v462-md.md)]<br /><br />.NET Framework 4.7|
-|Windows Server 2008 SP2|32 ビットおよび 64 ビット|--|.NET Framework 4<br /><br /> [!INCLUDE[net_v45](../../../includes/net-v45-md.md)]<br /><br /> [!INCLUDE[net_v451](../../../includes/net-v451-md.md)]<br /><br /> [!INCLUDE[net_v452](../../../includes/net-v452-md.md)]<br /><br /> [!INCLUDE[net_v46](../../../includes/net-v46-md.md)]|
+| オペレーティング システム | サポートされているエディション | OS と共にプレインストール済み | 個別にインストール可能 |
+| ---------------- | ------------------ | ------------------------ | ---------------------- |
+| Windows Server 2016 | 64 ビット | [!INCLUDE[net_v462](../../../includes/net-v462-md.md)] | .NET Framework 4.7 |
+| [!INCLUDE[winblue_server_2](../../../includes/winblue-server-2-md.md)] | 64 ビット | [!INCLUDE[net_v451](../../../includes/net-v451-md.md)] | [!INCLUDE[net_v452](../../../includes/net-v452-md.md)]<br /><br /> [!INCLUDE[net_v46](../../../includes/net-v46-md.md)]<br /><br /> [!INCLUDE[net_v461](../../../includes/net-v461-md.md)]<br /><br /> [!INCLUDE[net_v462](../../../includes/net-v462-md.md)]<br /><br />.NET Framework 4.7 |
+| [!INCLUDE[winserver8](../../../includes/winserver8-md.md)] (64 ビット エディション) | 64 ビット| [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] | [!INCLUDE[net_v451](../../../includes/net-v451-md.md)]<br /><br /> [!INCLUDE[net_v452](../../../includes/net-v452-md.md)]<br /><br /> [!INCLUDE[net_v46](../../../includes/net-v46-md.md)]<br /><br /> [!INCLUDE[net_v461](../../../includes/net-v461-md.md)]<br /><br /> [!INCLUDE[net_v462](../../../includes/net-v462-md.md)]<br /><br />.NET Framework 4.7 |
+| Windows Server 2008 R2 SP1|64 ビット | -- | .NET Framework 4<br /><br /> [!INCLUDE[net_v45](../../../includes/net-v45-md.md)]<br /><br /> [!INCLUDE[net_v451](../../../includes/net-v451-md.md)]<br /><br /> [!INCLUDE[net_v452](../../../includes/net-v452-md.md)]<br /><br /> [!INCLUDE[net_v46](../../../includes/net-v46-md.md)]<br /><br /> [!INCLUDE[net_v461](../../../includes/net-v461-md.md)]<br /><br /> [!INCLUDE[net_v462](../../../includes/net-v462-md.md)]<br /><br />.NET Framework 4.7 |
+| Windows Server 2008 SP2|32 ビットおよび 64 ビット | -- | .NET Framework 4<br /><br /> [!INCLUDE[net_v45](../../../includes/net-v45-md.md)]<br /><br /> [!INCLUDE[net_v451](../../../includes/net-v451-md.md)]<br /><br /> [!INCLUDE[net_v452](../../../includes/net-v452-md.md)]<br /><br /> [!INCLUDE[net_v46](../../../includes/net-v46-md.md)] |
 
  **注:**
 
@@ -97,7 +99,8 @@ ms.lasthandoff: 07/28/2017
 - 64 ビット オペレーティング システムでは、.NET Framework は WOW64 (64 ビット コンピューター上での 32 ビット処理) とネイティブ 64 ビット処理の両方をサポートしています。
 
 ## <a name="see-also"></a>関連項目
- [インストール ガイド](../../../docs/framework/install/index.md)   
- [はじめに](../../../docs/framework/get-started/index.md)   
- [.NET Framework のインストールおよびアンインストールのブロックのトラブルシューティング](../../../docs/framework/install/troubleshoot-blocked-installations-and-uninstallations.md)
+
+[インストール ガイド](../../../docs/framework/install/index.md)   
+[はじめに](../../../docs/framework/get-started/index.md)   
+[.NET Framework のインストールおよびアンインストールのブロックのトラブルシューティング](../../../docs/framework/install/troubleshoot-blocked-installations-and-uninstallations.md)
 

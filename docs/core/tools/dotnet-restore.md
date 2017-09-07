@@ -1,5 +1,5 @@
 ---
-title: "dotnet-restore コマンド - .NET Core CLI | Microsoft Docs"
+title: "dotnet-restore コマンド - .NET Core CLI"
 description: "dotnet restore コマンドを使用して、依存関係とプロジェクト固有のツールを復元する方法について説明します。"
 keywords: "dotnet-restore, CLI, CLI コマンド, .NET Core"
 author: blackdwarf
@@ -10,11 +10,11 @@ ms.prod: .net-core
 ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: fd7a5769-afbe-4838-bbaf-3ae0cfcbb914
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 602c173ff8d114a76c5598cd0826485ac32a2e72
-ms.openlocfilehash: fd4fd6ef2e8482a2b961ccbca1f5227d80c8be53
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: a9e471bd1d66d68703b025cd3eaa009cb296a9fb
 ms.contentlocale: ja-jp
-ms.lasthandoff: 03/29/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 
@@ -38,7 +38,7 @@ ms.lasthandoff: 03/29/2017
 
 プロジェクト固有のツールについては、`dotnet restore` はまず、ツールがパックされているパッケージを復元し、プロジェクト ファイルに指定されているツールの依存関係の復元に進みます。
 
-*Nuget.Config* がある場合、`dotnet restore` コマンドの動作はその設定の一部に影響を受けます。 たとえば、*NuGet.Config* に `globalPackagesFolder` を設定すると、指定されたフォルダーに NuGet パッケージが復元されます。 これは `dotnet restore` コマンドで `--packages` オプションを指定する操作の代替方法です。 詳細については、「[NuGet.Config reference](https://docs.microsoft.com/nuget/schema/nuget-config-file)」(NuGet.Config リファレンス) を参照してください。
+*Nuget.Config* がある場合、`dotnet restore` コマンドの動作はその設定の一部に影響を受けます。 たとえば、*NuGet.Config* に `globalPackagesFolder` を設定すると、指定されたフォルダーに NuGet パッケージが復元されます。 これは `dotnet restore` コマンドで `--packages` オプションを指定する操作の代替方法です。 詳細については、「[NuGet.Config reference](/nuget/schema/nuget-config-file)」(NuGet.Config リファレンス) を参照してください。
 
 ## <a name="arguments"></a>引数
 

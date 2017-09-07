@@ -1,5 +1,5 @@
 ---
-title: "Visual Basic によるファイルとディレクトリの操作 | Microsoft Docs"
+title: "Visual Basic によるファイルとディレクトリの操作"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -41,19 +41,19 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
-ms.openlocfilehash: a5ae7f4a720c04639191edf36425426dfc339a37
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 9e66d062df07fc23dfbd5d509e08ccd08813db15
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/22/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="walkthrough-manipulating-files-and-directories-in-visual-basic"></a>チュートリアル : Visual Basic によるファイルとディレクトリの操作
-このチュートリアルでは、[!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] でのファイル I/O の基礎について概説します。 具体的には、ディレクトリ内のテキスト ファイルをリストして調査する小さなアプリケーションを作成する方法について説明します。 このアプリケーションは、選択された各テキスト ファイルについて、ファイルの属性とコンテンツの最初の行を取得します。 ログ ファイルに情報を書き込むオプションもあります。  
+このチュートリアルでは、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] でのファイル I/O の基礎について概説します。 具体的には、ディレクトリ内のテキスト ファイルをリストして調査する小さなアプリケーションを作成する方法について説明します。 このアプリケーションは、選択された各テキスト ファイルについて、ファイルの属性とコンテンツの最初の行を取得します。 ログ ファイルに情報を書き込むオプションもあります。  
   
- このチュートリアルでは、[!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] で利用可能な、`My.Computer.FileSystem Object` のメンバーを使用します。 詳細については、「<xref:Microsoft.VisualBasic.FileIO.FileSystem>」を参照してください。 チュートリアルの最後では、<xref:System.IO> 名前空間のクラスを使用する同等の例を示します。  
+ このチュートリアルでは、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] で利用可能な、`My.Computer.FileSystem Object` のメンバーを使用します。 詳細については、「<xref:Microsoft.VisualBasic.FileIO.FileSystem>」を参照してください。 チュートリアルの最後では、<xref:System.IO> 名前空間のクラスを使用する同等の例を示します。  
   
-[!INCLUDE[note_settings_general](../../../../csharp/language-reference/compiler-messages/includes/note_settings_general_md.md)]  
+[!INCLUDE[note_settings_general](~/includes/note-settings-general-md.md)]  
   
 ### <a name="to-create-the-project"></a>プロジェクトを作成するには  
   
@@ -65,7 +65,7 @@ ms.lasthandoff: 05/22/2017
   
 3.  **[名前]** ボックスに「`FileExplorer`」と入力してプロジェクト名を設定し、**[OK]** をクリックします。  
   
-     [!INCLUDE[vsprvs](../../../../csharp/includes/vsprvs_md.md)] の**ソリューション エクスプローラー**にプロジェクトが追加され、Windows フォーム デザイナーが開きます。  
+     [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] の**ソリューション エクスプローラー**にプロジェクトが追加され、Windows フォーム デザイナーが開きます。  
   
 4.  次の表にあるコントロールをフォームに追加し、それらのプロパティに対応する値を設定します。  
   

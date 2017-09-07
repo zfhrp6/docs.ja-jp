@@ -1,5 +1,5 @@
 ---
-title: "LINQ と文字列 (C#) | Microsoft Docs"
+title: "LINQ と文字列 (C#)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -19,21 +19,22 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 39c181bbf3c865b3c3a7f840b600be3ed6f56a7a
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 49c51595ffff45df503308b9eba55fc67b4da2e8
+ms.contentlocale: ja-jp
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="linq-and-strings-c"></a>LINQ と文字列 (C#)
-文字列やそのコレクションは、LINQ を使って照会したり変換したりすることができます。 特に、テキスト ファイル内の半構造化されたデータでその利便性が発揮されます。 LINQ クエリは、従来の文字列関数や正規表現と組み合わせることができます。 たとえば、<xref:System.String.Split%2A> メソッドや <xref:System.Text.RegularExpressions.Regex.Split%2A> メソッドを使って文字列の配列を作成し、LINQ を使って照会したり変更を加えたりすることが可能です。 LINQ クエリの `where` 句には、<xref:System.Text.RegularExpressions.Regex.IsMatch%2A> メソッドを使うことができます。 さらに、正規表現によって返された <xref:System.Text.RegularExpressions.MatchCollection> 型の結果を LINQ から照会したり変更を加えたりすることもできます。  
+文字列やそのコレクションは、LINQ を使って照会したり変換したりすることができます。 特に、テキスト ファイル内の半構造化されたデータでその利便性が発揮されます。 LINQ クエリは、従来の文字列関数や正規表現と組み合わせることができます。 たとえば、<xref:System.String.Split%2A> または <xref:System.Text.RegularExpressions.Regex.Split%2A> メソッドを使用して、文字列の配列を作成し、その後で LINQ を使用してクエリを実行したり変更したりすることができます。 LINQ クエリの `where` 句で <xref:System.Text.RegularExpressions.Regex.IsMatch%2A> メソッドを使用できます。 LINQ を使用して、正規表現によって返される <xref:System.Text.RegularExpressions.MatchCollection> の結果に対してクエリを実行したり変更したりすることができます。  
   
  このセクションで説明する手法を使えば、半構造化されたテキスト データを XML に変換することもできます。 詳細については、「[方法: CSV ファイルから XML を生成する](http://msdn.microsoft.com/library/dd7bab8c-96fa-4343-94d0-9739dd6a74fd)」を参照してください。  
   
  このセクションの例は、次の 2 つのカテゴリに分かれています。  
   
 ## <a name="querying-a-block-of-text"></a>テキスト ブロックの照会  
- テキスト ブロックは、<xref:System.String.Split%2A> メソッドまたは <xref:System.Text.RegularExpressions.Regex.Split%2A> メソッドで小さな文字列に分割し、それらをクエリ可能な配列に格納することで照会、分析、編集することができます。 単語や文、段落、ページなどの単位にソース テキストを分割できるほか、クエリ内で必要であれば、さらに細かく分割することもできます。  
+ <xref:System.String.Split%2A> メソッドまたは <xref:System.Text.RegularExpressions.Regex.Split%2A> メソッドを使用して、テキスト ブロックをクエリ可能な小さな文字列の配列に分割することによって、テキスト ブロックのクエリ、分析、および変更を実行できます。 単語や文、段落、ページなどの単位にソース テキストを分割できるほか、クエリ内で必要であれば、さらに細かく分割することもできます。  
   
  [方法: 文字列での単語の出現回数をカウントする (LINQ) (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-count-occurrences-of-a-word-in-a-string-linq.md)  
  テキストに対する単純なクエリを LINQ で行う方法が紹介されています。  
@@ -77,3 +78,4 @@ ms.lasthandoff: 03/13/2017
 ## <a name="see-also"></a>関連項目  
  [統合言語クエリ (LINQ) (C#)](../../../../csharp/programming-guide/concepts/linq/index.md)   
  [方法: CSV ファイルから XML を生成する](http://msdn.microsoft.com/library/dd7bab8c-96fa-4343-94d0-9739dd6a74fd)
+

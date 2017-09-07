@@ -10,10 +10,10 @@ ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: f6f654b1-1d2c-4105-8376-7c1959e23803
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: d12286fb6d9666aa74b4da260a5e64776010890c
+ms.sourcegitcommit: e0271ba3392ce8861dc916714af8c16d4581ce4f
+ms.openlocfilehash: 9932555d5a5b029b4faaf3edcaa3ab523eebe77e
 ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
+ms.lasthandoff: 08/14/2017
 
 ---
 
@@ -23,18 +23,19 @@ ms.lasthandoff: 07/28/2017
 
 ## <a name="building-applications-with-visual-studio-2017"></a>Visual Studio 2017 でのアプリケーションのビルド
 
-- [C# Hello World アプリケーションのビルド](../../csharp/getting-started/with-visual-studio.md)
-- [C# Hello World アプリケーションのデバッグ](../../csharp/getting-started/debugging-with-visual-studio.md)
-- [C# Hello World アプリケーションの発行](../../csharp/getting-started/publishing-with-visual-studio.md)
-- [C# クラス ライブラリのビルド](../../csharp/getting-started/library-with-visual-studio.md)
-- [C# クラス ライブラリのテスト](../../csharp/getting-started/testing-library-with-visual-studio.md)
-- [C# クラス ライブラリと .NET Core の使用](../../csharp/getting-started/consuming-library-with-visual-studio.md)
+- [C# Hello World アプリケーションのビルド](with-visual-studio.md)
+- [C# Hello World アプリケーションのデバッグ](debugging-with-visual-studio.md)
+- [C# Hello World アプリケーションの発行](publishing-with-visual-studio.md)
+- [C# クラス ライブラリのビルド](library-with-visual-studio.md)
+- [Visual Basic でのクラス ライブラリのビルド](vb-library-with-visual-studio.md)
+- [クラス ライブラリのテスト](testing-library-with-visual-studio.md)
+- [クラス ライブラリの利用](consuming-library-with-visual-studio.md)
 - [Windows 上の完全な C# .NET Core ソリューションのビルド](using-on-windows-full-solution.md)
 - [NoSQL チュートリアル: .NET Core での DocumentDB C# コンソール アプリケーションの作成](/azure/documentdb/documentdb-dotnetcore-get-started)
 
 ## <a name="building-applications-with-visual-studio-code"></a>Visual Studio Code でのアプリケーションのビルド
 
-- [Visual Studio Code での C# の概要](../../csharp/getting-started/with-visual-studio-code.md)
+- [C# および Visual Studio Code の概要](with-visual-studio-code.md)
 - [macOS での .NET Core の概要](using-on-macos.md)
 
 ## <a name="building-applications-with-visual-studio-for-mac"></a>Visual Studio for Mac でのアプリケーションのビルド
@@ -46,7 +47,7 @@ ms.lasthandoff: 07/28/2017
 
 - [.NET Core CLI ツールを使用した Windows/Linux/macOS での .NET Core の概要](using-with-xplat-cli.md)
 - [.NET Core CLI ツールを使用したプロジェクトの整理およびテスト](testing-with-cli.md)
-- [F# の概要](../../fsharp/tutorials/getting-started/getting-started-command-line.md)
+- [F# の使用を開始する](../../fsharp/get-started/get-started-command-line.md)
 
 ## <a name="other"></a>その他
 - [dotnet テストを使用した .NET Core での単体テスト](../testing/unit-testing-with-dotnet-test.md)
@@ -54,6 +55,7 @@ ms.lasthandoff: 07/28/2017
 - [クロス プラットフォーム ツールによるライブラリの開発](libraries.md)
 - [.NET Core 1.0 のパッケージ依存関係バージョンを管理する方法](managing-package-dependency-versions.md)
 - [ネイティブ コードからの .NET Core のホスト](netcore-hosting.md)
+- [dotnet new のカスタム テンプレートを作成する](create-custom-template.md)
 
 ASP.NET Core Web アプリケーションの開発に関するチュートリアルについては、[ASP.NET Core のドキュメント](/aspnet/core/)を参照してください。
 

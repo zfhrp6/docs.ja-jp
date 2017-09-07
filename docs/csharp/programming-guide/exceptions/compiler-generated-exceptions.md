@@ -1,5 +1,5 @@
 ---
-title: "コンパイラにより生成された例外 (C# プログラミング ガイド) | Microsoft Docs"
+title: "コンパイラにより生成された例外 (C# プログラミング ガイド)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -27,10 +27,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 4015551ac983610afc8bf1f08e73a33c1ac338ff
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: d8fbae9272b34dd4d010199470c930c846cd1b74
+ms.contentlocale: ja-jp
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="compiler-generated-exceptions-c-programming-guide"></a>コンパイラにより生成された例外 (C# プログラミング ガイド)
@@ -38,7 +39,7 @@ ms.lasthandoff: 03/13/2017
   
 |例外|説明|  
 |---------------|-----------------|  
-|<xref:System.ArithmeticException>|算術演算中に発生する例外 (<xref:System.DivideByZeroException> や <xref:System.OverflowException> など) の基底クラス。|  
+|<xref:System.ArithmeticException>|算術演算中に発生する例外 (<xref:System.DivideByZeroException>、<xref:System.OverflowException> など) の基底クラスです。|  
 |<xref:System.ArrayTypeMismatchException>|要素の実際の型が配列の実際の型に適合していないことが原因で、指定された要素を配列に格納できない場合にスローされます。|  
 |<xref:System.DivideByZeroException>|整数値のゼロ除算が試行されたときにスローされます。|  
 |<xref:System.IndexOutOfRangeException>|インデックスがゼロよりも小さい場合またはインデックスが配列の境界外にある場合に、配列のインデックス作成が試行されたときにスローされます。|  
@@ -56,3 +57,4 @@ ms.lasthandoff: 03/13/2017
  [try-catch](../../../csharp/language-reference/keywords/try-catch.md)   
  [try-finally](../../../csharp/language-reference/keywords/try-finally.md)   
  [try-catch-finally](../../../csharp/language-reference/keywords/try-catch-finally.md)
+

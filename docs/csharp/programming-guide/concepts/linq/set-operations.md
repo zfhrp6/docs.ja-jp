@@ -1,5 +1,5 @@
 ---
-title: "セット操作 (C#) | Microsoft Docs"
+title: "セット操作 (C#)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -19,10 +19,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 37841cde3aa5e4aaa6545b3a160422d024be5842
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 121dcd4d41dcfea332c45031a5fbed594e2f1e3e
+ms.contentlocale: ja-jp
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="set-operations-c"></a>セット操作 (C#)
@@ -47,12 +48,12 @@ LINQ のセット操作は、同一または別個のコレクション (また�
  ![Distinct&#40;&#41; の動作を示すグラフィック。](../../../../csharp/programming-guide/concepts/linq/media/distinct.png "Distinct")  
   
 ### <a name="except"></a>除く  
- 次の図は、<xref:System.Linq.Enumerable.Except%2A?displayProperty=fullName> の動作を示しています。 返されたシーケンスには、1 つ目の入力シーケンスのうち、2 つ目の入力シーケンスには存在しない要素が格納されています。  
+ <xref:System.Linq.Enumerable.Except%2A?displayProperty=fullName> の動作を次の図に示します。 返されたシーケンスには、1 つ目の入力シーケンスのうち、2 つ目の入力シーケンスには存在しない要素が格納されています。  
   
  ![Except&#40;&#41; のアクションを示すグラフィック。](../../../../csharp/programming-guide/concepts/linq/media/except.png "Except")  
   
 ### <a name="intersect"></a>交差  
- 次の図は、<xref:System.Linq.Enumerable.Intersect%2A?displayProperty=fullName> の動作を示しています。 返されたシーケンスには、両方の入力シーケンスに共通する要素が格納されています。  
+ <xref:System.Linq.Enumerable.Intersect%2A?displayProperty=fullName> の動作を次の図に示します。 返されたシーケンスには、両方の入力シーケンスに共通する要素が格納されています。  
   
  ![2 つのシーケンスの交差部分を示すグラフィック。](../../../../csharp/programming-guide/concepts/linq/media/intersect.png "Intersect")  
   
@@ -66,3 +67,4 @@ LINQ のセット操作は、同一または別個のコレクション (また�
  [標準クエリ演算子の概要 (C#)](../../../../csharp/programming-guide/concepts/linq/standard-query-operators-overview.md)   
  [方法: 文字列コレクションを結合および比較する (LINQ) (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-combine-and-compare-string-collections-linq.md)   
  [方法: 2 つのリストの差集合を見つける (LINQ) (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-find-the-set-difference-between-two-lists-linq.md)
+

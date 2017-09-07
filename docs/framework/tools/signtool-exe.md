@@ -1,5 +1,5 @@
 ---
-title: "SignTool.exe (署名ツール) | Microsoft Docs"
+title: "SignTool.exe (署名ツール)"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
@@ -22,11 +22,11 @@ caps.latest.revision: 33
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 14abadaf548e228244a1ff7ca72fa3896ef4eb5d
-ms.openlocfilehash: 4cdbfda05fe9acafc6d717f3e0d3b1a57026df9c
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 78814d27e8416d37a018fa3bc1ab643d99970ec9
 ms.contentlocale: ja-jp
-ms.lasthandoff: 06/02/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="signtoolexe-sign-tool"></a>SignTool.exe (署名ツール)
@@ -164,7 +164,7 @@ signtool [command] [options] [file_name | ...]
 |2|実行は完了しましたが、警告があります。|  
   
 ## <a name="examples"></a>例  
- カタログ ファイル MyCatalogFileName.cat をシステム コンポーネントおよびドライバー データベースに追加するコマンドを次に示します。 `/v` オプションは、必要に応じて一意の名前を生成し、`MyCatalogFileName.cat` という名前の既存のカタログ ファイルが置き換えられないようにします。  
+ カタログ ファイル MyCatalogFileName.cat をシステム コンポーネントおよびドライバー データベースに追加するコマンドを次に示します。 `/u` オプションは、必要に応じて一意の名前を生成し、`MyCatalogFileName.cat` という名前の既存のカタログ ファイルが置き換えられないようにします。  
   
 ```  
 signtool catdb /v /u MyCatalogFileName.cat  

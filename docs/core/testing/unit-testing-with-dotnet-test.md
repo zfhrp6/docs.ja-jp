@@ -1,26 +1,23 @@
 ---
 title: "dotnet テストと xUnit を使用した .NET Core での単体テスト"
-description: "dotnet テストを使用した .NET Core での単体テスト"
-keywords: .NET, .NET Core
+description: ".NET テストおよび xUnit を使用するサンプル ソリューションを手順を追って構築する対話型エクスペリエンスを通じて、.NET Core の単体テストの概念について説明します。"
 author: ardalis
 ms.author: wiwagn
 ms.date: 03/21/2017
 ms.topic: article
 ms.prod: .net-core
-ms.devlang: dotnet
-ms.assetid: bdcdb812-6f13-4f20-9e90-0c0977937142
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 6bb539231e7c0101755193d612e15893f9637fe1
+ms.sourcegitcommit: 867f9eb286fa7ff5ef3e9167c1ab944c81161216
+ms.openlocfilehash: d989ee731d7ffd0439bac69afe1458e2aa10733a
 ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
+ms.lasthandoff: 08/17/2017
 
 ---
 # <a name="unit-testing-in-net-core-using-dotnet-test-and-xunit"></a>dotnet テストと xUnit を使用した .NET Core での単体テスト
 
 このチュートリアルでは、単体テストの概念について学習するためにサンプル ソリューションを段階的に構築する対話型のエクスペリエンスを示します。 構築済みのソリューションを使用してチュートリアルに従う場合は、開始する前に[サンプル コードを参照またはダウンロード](https://github.com/dotnet/docs/tree/master/samples/core/getting-started/unit-testing-using-dotnet-test/)してください。 ダウンロード方法については、「[サンプルおよびチュートリアル](../../samples-and-tutorials/index.md#viewing-and-downloading-samples)」を参照してください。
 
-### <a name="creating-the-source-project"></a>ソース プロジェクトの作成
+## <a name="creating-the-source-project"></a>ソース プロジェクトの作成
 
 シェル ウィンドウを開きます。 ソリューションを保持するための *unit-testing-using-dotnet-test* というディレクトリを作成します。 この新しいディレクトリ内に、*PrimeService* ディレクトリを作成します。 現時点のディレクトリ構造は次のようになっています。
 
@@ -46,7 +43,7 @@ namespace Prime.Services
 }
 ```
 
-### <a name="creating-the-test-project"></a>テスト プロジェクトの作成
+## <a name="creating-the-test-project"></a>テスト プロジェクトの作成
 
 *unit-testing-using-dotnet-test* ディレクトリに戻り、*PrimeService.Tests* ディレクトリを作成します。 ディレクトリ構造は次のようになります。
 
@@ -145,7 +142,7 @@ public bool IsPrime(int candidate)
 
 *PrimeService.Tests* ディレクトリで、`dotnet test` をもう一度実行します。 `dotnet test` コマンドは `PrimeService` プロジェクトのビルドを実行してから、`PrimeService.Tests` プロジェクトのビルドを実行します。 両方のプロジェクトをビルドすると、この単一テストが実行されます。 成功します。
 
-### <a name="adding-more-features"></a>他の機能の追加
+## <a name="adding-more-features"></a>他の機能の追加
 
 テストが成功したので、他のテストも記述してみましょう。 素数に関する、いくつかの単純なケースが他にもあります (0、-1)。 これらは `[Fact]` 属性を使用して新しいテストとして追加できますが、すぐに煩雑になります。 一連の類似のテストを記述できるようになる、他の xUnit 属性があります。  `[Theory]` 属性は同じコードを実行するものの、異なる入力引数が含まれる一連のテストを表します。 `[InlineData]` 属性を使用して、そのような入力の値を指定することができます。 
  

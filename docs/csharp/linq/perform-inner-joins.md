@@ -11,10 +11,11 @@ ms.prod: .net-core
 ms.technology: .net-core-technologies
 ms.devlang: dotnet
 ms.assetid: 45bceed6-f549-4114-a9b1-b44feb497742
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 6492e536976b74fa0a0b06cdc94d8aad9584e5be
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 2b73b954dbb090484a320302a3af72509fccd9d3
+ms.contentlocale: ja-jp
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="perform-inner-joins"></a>内部結合の実行
@@ -82,3 +83,4 @@ ms.lasthandoff: 03/13/2017
  [左外部結合の実行](perform-left-outer-joins.md)   
  [匿名型](../programming-guide/classes-and-structs/anonymous-types.md)   
  
+

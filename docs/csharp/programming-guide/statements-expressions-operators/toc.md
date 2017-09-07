@@ -10,6 +10,7 @@
 ### [匿名メソッド](anonymous-methods.md)
 ## [オーバーロードされた演算子](overloadable-operators.md)
 ## [変換演算子](conversion-operators.md)
+## [既定値式](default-value-expressions.md)
 ### [変換演算子の使用](using-conversion-operators.md)
 ### [方法: 構造体間にユーザー定義の変換を実装する](how-to-implement-user-defined-conversions-between-structs.md)
 ## [方法: 演算子のオーバーロードを使用して複素数クラスを作成する](how-to-use-operator-overloading-to-create-a-complex-number-class.md)

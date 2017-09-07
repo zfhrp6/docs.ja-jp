@@ -1,110 +1,130 @@
 ---
-title: "プロパティの使用 (C# プログラミング ガイド) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.technology: 
-  - "devlang-csharp"
-ms.topic: "article"
-dev_langs: 
-  - "CSharp"
-helpviewer_keywords: 
-  - "get アクセサー [C#]"
-  - "プロパティ [C#], プロパティの概要"
-  - "set アクセサー [C#]"
+title: "プロパティの使用 (C# プログラミング ガイド)"
+ms.date: 2015-07-20
+ms.prod: .net
+ms.technology:
+- devlang-csharp
+ms.topic: article
+dev_langs:
+- CSharp
+helpviewer_keywords:
+- set accessor [C#]
+- get accessor [C#]
+- properties [C#], about properties
 ms.assetid: f7f67b05-0983-4cdb-96af-1855d24c967c
 caps.latest.revision: 24
-author: "BillWagner"
-ms.author: "wiwagn"
-caps.handback.revision: 24
+author: BillWagner
+ms.author: wiwagn
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 6b1b1dbffa3af7fdaf1f3a93ecdf6183fe1c1cf2
+ms.contentlocale: ja-jp
+ms.lasthandoff: 07/28/2017
+
 ---
-# プロパティの使用 (C# プログラミング ガイド)
-プロパティは、フィールドとメソッドの両方の側面を兼ね備えています。  オブジェクトを使用する側から見ると、プロパティはフィールドのように見えます。プロパティへのアクセス方法はフィールドと同じです。  クラスを実装する側から見ると、プロパティは、[get](../../../csharp/language-reference/keywords/get.md) アクセサーと [set](../../../csharp/language-reference/keywords/set.md) アクセサーのいずれか、または両方を表すコード ブロックです。  `get` アクセサーのコード ブロックは、プロパティが読み込まれたときに実行されます。`set` アクセサーのコード ブロックは、プロパティに新しい値が割り当てられたときに実行されます。  `set` アクセサーなしのプロパティは、読み取り専用と見なされます。  `get` アクセサーなしのプロパティは、書き込み専用と見なされます。  両方のアクセサーを持つプロパティは、読み書きが可能です。  
+# <a name="using-properties-c-programming-guide"></a>プロパティの使用 (C# プログラミング ガイド)
+プロパティは、フィールドとメソッドの両方の側面を結合します。 オブジェクトのユーザーにとってプロパティは、プロパティへのアクセスに同じ構文を必要とするフィールドのように見えます。 クラスの実装者にとってプロパティは、[get](../../../csharp/language-reference/keywords/get.md) アクセサーと [set](../../../csharp/language-reference/keywords/set.md) アクセサーの両方またはいずれかを表す 1 つまたは 2 つのコード ブロックです。 `get` アクセサーのコード ブロックはプロパティが読み取られる時に実行され、`set` アクセサーのコード ブロックはプロパティに新しい値が割り当てられるときに実行されます。 `set` アクセサーのないプロパティは読み取り専用と見なされます。 `get` アクセサーのないプロパティは書き込み専用と見なされます。 両方のアクセサーを持つプロパティは、読み取り/書き込みです。  
   
- フィールドとは異なり、プロパティは変数には分類されません。  したがって、プロパティを [ref](../../../csharp/language-reference/keywords/ref.md) パラメーターまたは [out](../../../csharp/language-reference/keywords/out.md) パラメーターとして渡すことはできません。  
+ フィールドとは異なり、プロパティは変数には分類されません。 そのため、プロパティを [ref](../../../csharp/language-reference/keywords/ref.md) または [out](../../../csharp/language-reference/keywords/out.md) パラメーターとして渡すことはできません。  
   
- プロパティの用途はさまざまです。たとえば、変更を許可する前にデータを検証できます。データベースなど、他のソースからクラス上のデータが取得されている場合、そのデータを透過的に公開できます。データが変更されたときに、イベントを発行したり他のフィールド値を変更したりするなど、アクションを実行できます。  
+ プロパティには次のようなさまざまな用途があります。変更を許可する前にデータを検証したり、データをそのデータが実際に他のソース (データベースなど) から取得されるクラスで透過的に公開したり、イベントの発生や他のフィールドの値を変更するなど、データが変更されたときに、アクションを実行したりすることができます。  
   
- クラス ブロック内でプロパティを宣言するには、フィールドのアクセス レベル、プロパティの種類、プロパティの名前の順に宣言し、その後に `get` アクセサーと `set` アクセサーのいずれかまたは両方を宣言するコード ブロックが続きます。  次に例を示します。  
+ プロパティはクラス ブロックで宣言できます。フィールドのアクセス レベル、プロパティの型、プロパティの名前、`get` アクセサーと `set` アクセサーの両方またはいずれかを宣言するコード ブロックの順で指定します。 例:  
   
  [!code-cs[csProgGuideProperties#7](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/using-properties_1.cs)]  
   
- この例では、`Month` がプロパティとして宣言されています。これは、`set` アクセサーで `Month` の値が 1 ～ 12 の間に設定されるようにするためです。  `Month` プロパティでは、プライベート フィールドを使用して実際の値を追跡します。  プロパティ データの実際の位置は、プロパティの "バッキング ストア" と呼ばれます。プロパティでは、プライベート フィールドをバッキング ストアとして使用することは一般的です。  プロパティの呼び出しによってのみフィールドを変更できるように、フィールドはプライベートとマークされます。  パブリック アクセスとプライベート アクセスの制約の詳細については、「[アクセス修飾子](../../../csharp/programming-guide/classes-and-structs/access-modifiers.md)」を参照してください。  
+ この例では、`set` アクセサーが `Month` が 1 から 12 までの値に設定されていることを確認できるように、`Month` がプロパティとして宣言されています。 `Month` プロパティは、プライベート フィールドを使用して実際の値を追跡します。 プロパティのデータの実際の場所は、プロパティの "バッキング ストア" と呼ばれることがよくあります。 プロパティがプライベート フィールドをバッキング ストアとして使用するのは一般的なことです。 フィールドは、プロパティを呼び出すことでのみ変更できるようにするため、プライベートとマークされます。 パブリックおよびプライベートのアクセス制限の詳細については、「[アクセス修飾子](../../../csharp/programming-guide/classes-and-structs/access-modifiers.md)」を参照してください。  
   
- 自動実装するプロパティは、単純なプロパティ宣言に簡略化した構文を提供します。  詳細については、「[自動実装プロパティ](../../../csharp/programming-guide/classes-and-structs/auto-implemented-properties.md)」を参照してください。  
+ 自動実装プロパティは、単純なプロパティ宣言の簡単な構文を提供します。 詳細については、「[自動実装プロパティ](../../../csharp/programming-guide/classes-and-structs/auto-implemented-properties.md)」を参照してください。  
   
-## get アクセサー  
- `get` アクセサーの本体は、メソッドの本体と似ています。  アクセサーは、プロパティの型の値を返す必要があります。  `get` アクセサーを実行することは、フィールドの値を読み取ることに相当します。  たとえば、`get` アクセサーからプライベート値が戻ったときに最適化が有効な場合、`get` アクセサー メソッドの呼び出しは、コンパイルでインライン展開されます。そのため、メソッド呼び出しのオーバーヘッドはありません。  ただし、仮想 `get` アクセサー メソッドは、インライン展開できません。これは、コンパイル時点では、実行時に実際に呼び出されるメソッドをコンパイラで判断できないためです。  次に示すのは、プライベート フィールド `name` の値を返す `get` アクセサーです。  
+## <a name="the-get-accessor"></a>get アクセサー  
+ `get` アクセサーの本体は、メソッドの本体と似ています。 プロパティの型の値を返す必要があります。 `get` アクセサーの実行は、フィールドの値を読み取ることに相当します。 たとえば、`get` アクセサーからプライベート変数を返し、最適化が有効になっている場合、`get` アクセサー メソッドへの呼び出しはコンパイラによってインライン化されるため、メソッド呼び出しのオーバーヘッドはありません。 ただし、仮想 `get` アクセサー メソッドはインライン化できません。これは、コンパイラがコンパイル時にどのメソッドが実際に実行時に呼び出されるかを認識しないからです。 次に、プライベート フィールド `name` の値を返す `get` アクセサーを示します。  
   
  [!code-cs[csProgGuideProperties#8](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/using-properties_2.cs)]  
   
- 代入の対象になる場合を除き、プロパティを参照すると、プロパティの値を読み取るために `get` アクセサーが呼び出されます。  次に例を示します。  
+ プロパティを参照するとき、割り当ての対象を除き、`get` アクセサーがプロパティの値を読み取るために呼び出されます。 例:  
   
  [!code-cs[csProgGuideProperties#9](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/using-properties_3.cs)]  
   
- `get` アクセサーは [return](../../../csharp/language-reference/keywords/return.md) ステートメントまたは [throw](../../../csharp/language-reference/keywords/throw.md) ステートメントで終了する必要があり、さらに、制御がアクセサーの本体から離れないようにします。  
+ `get` アクセサーは [return](../../../csharp/language-reference/keywords/return.md) または [throw](../../../csharp/language-reference/keywords/throw.md) ステートメントで終わる必要があります。コントロールはアクセサー本体をフロー オフすることはできません。  
   
- `get` アクセサーを使ってオブジェクトの状態を変更するのは、不適切なプログラミング スタイルです。  たとえば、次のアクセサーには、`number` フィールドにアクセスするたびにオブジェクトの状態が変化するという副作用があります。  
+ `get` アクセサーを使用してオブジェクトの状態を変更するのは、悪いプログラミング スタイルです。 たとえば、次のアクセサーでは、`number` フィールドにアクセスされるたびにオブジェクトの状態が変更される副作用が発生します。  
   
  [!code-cs[csProgGuideProperties#10](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/using-properties_4.cs)]  
   
- `get` アクセサーを使えば、フィールドの値を返したり、フィールドの値を計算して返したりできます。  次に例を示します。  
+ `get` アクセサーは、フィールド値を返すまたは計算してから返すために使用できます。 例:  
   
  [!code-cs[csProgGuideProperties#11](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/using-properties_5.cs)]  
   
- 前のコード例では、`Name` プロパティに値を代入しないと、NA という値を返します。  
+ 前のコード セグメントで `Name` プロパティに値を割り当てない場合、値 NA が返されます。  
   
-## set アクセサー  
- `set` アクセサーは、戻り値が [void](../../../csharp/language-reference/keywords/void.md) のメソッドと似ています。  プロパティの型の `value` という名前の暗黙のパラメーターを使用します。  次の例では、`set` アクセサーを `Name` プロパティに追加しています。  
+## <a name="the-set-accessor"></a>set アクセサー  
+ `set` アクセサーは、戻り値の型が [void](../../../csharp/language-reference/keywords/void.md) のメソッドと似ています。 型がプロパティの型の `value` と呼ばれる暗黙のパラメーターを使用します。 次の例では、`set` アクセサーが `Name` プロパティに追加されます。  
   
  [!code-cs[csProgGuideProperties#12](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/using-properties_6.cs)]  
   
- プロパティに値を代入すると、新しい値を渡す引数を指定して `set` アクセサーが呼び出されます。  次に例を示します。  
+ プロパティに値を割り当てるときに、新しい値を提供する引数を使用して `set` アクセサーが呼び出されます。 例:  
   
  [!code-cs[csProgGuideProperties#13](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/using-properties_7.cs)]  
   
- `set` アクセサーでローカル変数の宣言に暗黙のパラメーター名 \(`value`\) を使用するとエラーになります。  
+ `set` アクセサーでローカル変数の宣言に暗黙のパラメーター名 `value` を使用すると、エラーになります。  
   
-## 解説  
- プロパティは、`public`、`private`、`protected`、`internal`、または `protected internal` とマークできます。  これらのアクセス修飾子により、クラスのユーザーがプロパティにどのようにアクセスできるかが定義されます。  同じプロパティでも、`get` アクセサーと `set` アクセサーとでアクセス修飾子が異なることがあります。  たとえば、`get` は、その型の外部からは読み取り専用アクセスのみを許可する `public` で、`set` は `private` または `protected` のことがあります。  詳細については、「[アクセス修飾子](../../../csharp/programming-guide/classes-and-structs/access-modifiers.md)」を参照してください。  
+## <a name="remarks"></a>コメント  
+ プロパティは`public`、`private`、`protected`、`internal`、または `protected internal` のいずれかでマークされます。 これらのアクセス修飾子により、クラスのユーザーがプロパティにアクセスできる方法が定義されます。 同じプロパティの `get` と `set` アクセサーは、異なるアクセス修飾子を持つことができます。 たとえば、`get` を `public` にして、型の外部からの読み取り専用アクセスを許可して、`set` を `private` または `protected` にすることができます。 詳細については、「[アクセス修飾子](../../../csharp/programming-guide/classes-and-structs/access-modifiers.md)」を参照してください。  
   
- プロパティは、`static` キーワードを使用して静的プロパティと宣言することもできます。  このように宣言すると、クラスのインスタンスが存在しない場合でも、呼び出し元がいつでもプロパティにアクセスできます。  詳細については、「[静的クラスと静的クラス メンバー](../../../csharp/programming-guide/classes-and-structs/static-classes-and-static-class-members.md)」を参照してください。  
+ `static` キーワードを使用して、プロパティを静的プロパティとして宣言できます。 その場合、クラスのインスタンスが存在しなくても、呼び出し元がいつでもプロパティを使用できるようになります。 詳細については、「[静的クラスと静的クラス メンバー](../../../csharp/programming-guide/classes-and-structs/static-classes-and-static-class-members.md)」を参照してください。  
   
- プロパティは、[virtual](../../../csharp/language-reference/keywords/virtual.md) キーワードを使用して仮想プロパティとマークすることもできます。  この場合、派生クラスでは、[override](../../../csharp/language-reference/keywords/override.md) キーワードを使用して、プロパティの動作をオーバーライドできます。  これらのオプションの詳細については、「[継承](../../../csharp/programming-guide/classes-and-structs/inheritance.md)」を参照してください。  
+ プロパティは、[virtual](../../../csharp/language-reference/keywords/virtual.md) キーワードを使用して仮想プロパティとしてマークできます。 その場合、派生クラスでは、[override](../../../csharp/language-reference/keywords/override.md) キーワードを使用してプロパティの動作をオーバーライドできます。 これらのオプションの詳細については、「[継承](../../../csharp/programming-guide/classes-and-structs/inheritance.md)」を参照してください。  
   
- 仮想プロパティをオーバーライドするプロパティは、[sealed](../../../csharp/language-reference/keywords/sealed.md) にすることもできます。この場合、派生クラスでは、プロパティが仮想でなくなります。  最後に、プロパティは [abstract](../../../csharp/language-reference/keywords/abstract.md) と宣言できます。  この場合、クラスには実装が存在しないので、派生クラスで独自の実装を記述する必要があります。  これらのオプションの詳細については、「[抽象クラスとシール クラス、およびクラス メンバー](../../../csharp/programming-guide/classes-and-structs/abstract-and-sealed-classes-and-class-members.md)」を参照してください。  
+ 仮想プロパティをオーバーライドするプロパティは、[sealed](../../../csharp/language-reference/keywords/sealed.md) にすることもできます。その場合、派生クラスでは、プロパティが仮想でなくなります。 最後に、プロパティは[抽象](../../../csharp/language-reference/keywords/abstract.md)として宣言できます。 つまり、クラスに実装はなく、派生クラスが独自の実装を記述する必要があります。 これらのオプションの詳細については、「[抽象クラスとシール クラス、およびクラス メンバー](../../../csharp/programming-guide/classes-and-structs/abstract-and-sealed-classes-and-class-members.md)」を参照してください。  
   
 > [!NOTE]
->  [静的](../../../csharp/language-reference/keywords/static.md)プロパティのアクセサーで [virtual](../../../csharp/language-reference/keywords/virtual.md)、[abstract](../../../csharp/language-reference/keywords/abstract.md)、または [オーバーライド](../../../csharp/language-reference/keywords/override.md) のいずれかの修飾子を使うと、エラーになります。  
+>  [静的](../../../csharp/language-reference/keywords/static.md)プロパティのアクセサーで[virtual](../../../csharp/language-reference/keywords/virtual.md)、[abstract](../../../csharp/language-reference/keywords/abstract.md)、または [override](../../../csharp/language-reference/keywords/override.md) 修飾子を使用すると、エラーになります。  
   
-## 使用例  
- 次の例では、インスタンス プロパティ、静的プロパティ、および読み取り専用プロパティが使われています。  キーボードから入力された従業員の名前を受け取り、`NumberOfEmployees` の値を 1 だけインクリメントし、従業員の名前と番号を表示します。  
+## <a name="example"></a>例  
+ この例では、インスタンス、静的、および読み取り専用のプロパティを示します。 キーボードから従業員の名前を受け取り、`NumberOfEmployees` を 1 だけインクリメントし、従業員の名前と番号を表示します。  
   
  [!code-cs[csProgGuideProperties#2](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/using-properties_8.cs)]  
   
-## 使用例  
- 基本クラスのプロパティは、派生クラスにある同じ名前の別のプロパティによって隠ぺいされています。次の例は、この基本クラスのプロパティにアクセスする方法を示しています。  
+## <a name="example"></a>例  
+ この例では、派生クラスで同じ名前を持つ別のプロパティによって非表示にされている基底クラスのプロパティにアクセスする方法を示します。  
   
  [!code-cs[csProgGuideProperties#3](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/using-properties_9.cs)]  
   
- 上記の例で重要な点は次のとおりです。  
+ 前の例で重要な点を次に示します。  
   
--   派生クラスのプロパティ `Name` は、基本クラスのプロパティ `Name` を隠ぺいしています。  この場合、派生クラスのプロパティの宣言では `new` 修飾子が使われます。  
+-   派生クラスのプロパティ `Name` により基底クラス内のプロパティ `Name` が非表示になっています。 このような場合、`new` 修飾子は派生クラスのプロパティの宣言で使用されます。  
   
      [!code-cs[csProgGuideProperties#4](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/using-properties_10.cs)]  
   
--   基本クラスの隠ぺいされたプロパティにアクセスするには、キャスト `(Employee)` を使用します。  
+-   キャスト `(Employee)` は基底クラスで非表示のプロパティにアクセスするために使用されます。  
   
      [!code-cs[csProgGuideProperties#5](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/using-properties_11.cs)]  
   
-     メンバーを隠ぺいする方法の詳細については、「[new 修飾子](../../../csharp/language-reference/keywords/new-modifier.md)」を参照してください。  
+     メンバーを非表示にする詳細については、「[new 修飾子](../../../csharp/language-reference/keywords/new-modifier.md)」を参照してください。  
   
-## 使用例  
- 次の例では、2 つのクラス `Cube` と `Square` が抽象クラス `Shape` を実装しており、その抽象プロパティ `Area` をオーバーライドしています。  プロパティに対する [override](../../../csharp/language-reference/keywords/override.md) 修飾子の使用に注意してください。  プログラムは、入力として 1 辺の長さ \(side\) を受け取り、正方形の面積 \(square\) と立方体の表面積 \(cube\) を計算します。  また、入力として面積を受け取り、正方形の 1 辺の長さと立方体の 1 辺の長さを計算することもできます。  
+## <a name="example"></a>例  
+ この例では、`Cube` と `Square` の 2 つのクラスが抽象クラス `Shape` を実装し、その抽象 `Area` プロパティを上書きします。 プロパティでの [override](../../../csharp/language-reference/keywords/override.md) 修飾子の使用に注意してください。 プログラムは、入力として辺を受け入れ、四角形と立方体の面積を計算します。 プログラムはまた、入力として面積を受け入れ、四角形と立方体の対応する辺を計算します。  
   
  [!code-cs[csProgGuideProperties#6](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/using-properties_12.cs)]  
   
-## 参照  
- [C\# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
+## <a name="see-also"></a>関連項目  
+ [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
  [プロパティ](../../../csharp/programming-guide/classes-and-structs/properties.md)   
  [インターフェイスのプロパティ](../../../csharp/programming-guide/classes-and-structs/interface-properties.md)   
  [自動実装プロパティ](../../../csharp/programming-guide/classes-and-structs/auto-implemented-properties.md)
+

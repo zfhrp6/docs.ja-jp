@@ -1,5 +1,5 @@
 ---
-title: "#<a name=\"if-c-reference--microsoft-docs\"></a>if (C# リファレンス) | Microsoft Docs"
+title: "#<a name=\"if-c-reference\"></a>if (C# リファレンス)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -29,11 +29,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: a780a11d8dd238187eb82933359bbb151bb3c333
-ms.openlocfilehash: 4fc51446d297015d9e492703c9b1868c3b513c53
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: f70dac98d5731370ae961f795b08a71946867d9b
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/22/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="if-c-reference"></a>#if (C# リファレンス)
