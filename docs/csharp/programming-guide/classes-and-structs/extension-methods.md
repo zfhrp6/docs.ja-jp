@@ -30,14 +30,14 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: bfc0c0af620f7ec8b6b8a8352bf4253b85cc682c
+ms.sourcegitcommit: d74c1d0760d4e776c2cf4c7dea1dac060c85a83c
+ms.openlocfilehash: 657f9ebfba5d6f49d3a88cb1cf790e4a0134a007
 ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
+ms.lasthandoff: 09/05/2017
 
 ---
 # <a name="extension-methods-c-programming-guide"></a>拡張メソッド (C# プログラミング ガイド)
-拡張メソッドを使用すると、新規の派生型の作成、再コンパイル、または元の型の変更を行うことなく既存の型にメソッドを "追加" できます。 拡張メソッドは特別な種類の静的メソッドですが、拡張された型のインスタンス メソッドのように呼び出します。 C# および Visual Basic で作成されたクライアント コードの場合は、拡張メソッドの呼び出しと、型で実際に定義されたメソッドの呼び出しに明確な違いはありません。  
+拡張メソッドを使用すると、新規の派生型の作成、再コンパイル、または元の型の変更を行うことなく既存の型にメソッドを "追加" できます。 拡張メソッドは特別な種類の静的メソッドですが、拡張された型のインスタンス メソッドのように呼び出します。 C#、F#、および Visual Basic で作成されたクライアント コードの場合は、拡張メソッドの呼び出しと、型で実際に定義されたメソッドの呼び出しに明確な違いはありません。  
   
  最も一般的な拡張メソッドは、既存の [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] 型および <xref:System.Collections.IEnumerable?displayProperty=fullName> 型にクエリ機能を追加する <xref:System.Collections.Generic.IEnumerable%601?displayProperty=fullName> 標準クエリ演算子です。 この標準クエリ演算子を使用するには、まず `using System.Linq` ディレクティブを使用して、スコープに含めます。 <xref:System.Collections.Generic.IEnumerable%601> を実装するすべての型は、<xref:System.Linq.Enumerable.GroupBy%2A>、<xref:System.Linq.Enumerable.OrderBy%2A>、<xref:System.Linq.Enumerable.Average%2A> などのインスタンス メソッドを持っていると考えられます。 <xref:System.Collections.Generic.List%601>、<xref:System.Array> などの <xref:System.Collections.Generic.IEnumerable%601> 型のインスタンスの後に "ドット" を入力すると、IntelliSense により、ステートメントの入力候補としてこれらの追加メソッドが表示されます。  
   
