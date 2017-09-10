@@ -10,10 +10,10 @@ ms.prod: .net
 ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.translationtype: HT
-ms.sourcegitcommit: f8cf12317f1f0163028db003ff31604480da5d1c
-ms.openlocfilehash: d9a1b1aa2b19e80b885a2da87746667bff04e234
+ms.sourcegitcommit: 33b22ab80f9b4d42975f2c41c880543c615a3e01
+ms.openlocfilehash: c66f1b2b85d377c84712c0ad73682cdeeb7249fd
 ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
+ms.lasthandoff: 08/31/2017
 
 ---
 
@@ -92,7 +92,7 @@ CLR/CoreCLR とは異なり、CoreRT は仮想マシンではありません。�
 
 既存のドキュメントでは、[.NET の実装](#implementation-of-net)を指して "フレームワーク" が使われていることがあります。 たとえば、.NET Core をフレームワークと呼んでいる場合があります。 このような混乱を招く使用法をドキュメントから除去することが予定されています。
 
-## <a name="gc"></a>GC
+## <a name="gc"></a>[GC]
 
 ガベージ コレクター (Garbage Collector)。
 
@@ -141,13 +141,15 @@ Just-In-Time コンパイラ。
 
 ## <a name="mono"></a>Mono
 
-.NET Framework に代わるオープン ソース。
+Mono は、主に小規模なランタイムが必要な場合に使用される .NET 実装です。 Android、Mac、iOS、tvOS、および watchOS 上の Xamarin アプリケーションで利用されるランタイムで、フットプリントが小さいアプリに重点を置いています。
 
-Mono は、.NET Framework の最初のリリースとほぼ同時に始まりました。 .NET Framework はオープン ソースではなかったため、Mono は何もない状態から始めることを余儀なくされ、したがって、共有コードを持たない .NET Framework の再実装になっています。
+現在公開されているすべての .NET Standard バージョンをサポートしています。
 
-.NET Core を MIT ライセンスでリリースしたとき、Microsoft は[MIT ライセンスの下で .NET Framework の大きなチャンク](https://github.com/microsoft/referencesource)もリリースしました。 これにより、Mono コミュニティは、.NET Framework で使われているものと同じコードを使って、ギャップを埋め、動作の違いを回避できるようになりました。
+これまで Mono は .NET Framework の多数の API を実装し、Unix で人気の高い機能の一部をエミュレートしていました。 また、Unix のそのような機能に依存する .NET アプリケーションを実行するために使用されることもあります。
 
-Mono は、主に、.NET アプリケーションを Linux および macOS で実行するために使われています。 Mono は他のプラットフォームにも移植されています。Mono の「[Supported Platforms](http://www.mono-project.com/docs/about-mono/supported-platforms/)」(サポートされているプラットフォーム) をご覧ください。 Mono には WinForms、ASP.NET、`System.Drawing` の実装があります (ただし、必ずしも完全ではありません)。
+一般的に Mono は、Just-In-Time コンパイラと共に使用されますが、iOS のようなプラットフォームに使用される完全な静的コンパイラ (Ahead Of Time コンパイル) としても機能します。
+
+Mono について詳しくは、[Mono のドキュメント](http://www.mono-project.com/docs/)をご覧ください。
 
 ## <a name="net"></a>.NET
 
@@ -245,7 +247,7 @@ OS は、ランタイム環境の一部ですが、.NET ランタイムの一部
 
 ".NET スタック" は、.NET Standard および .NET のすべての実装を指します。 ".NET スタック" という語句が .NET の 1 つの実装を示すこともあります。 
 
-## <a name="target-framework"></a>ターゲット フレーム
+## <a name="target-framework"></a>対象フレーム
 
 .NET アプリまたはライブラリが依存する API のコレクション。
 

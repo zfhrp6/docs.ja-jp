@@ -26,14 +26,14 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 969e02ea7a560a18f8c0f79ada089fd791362808
+ms.sourcegitcommit: aba9547bcd96b9e8038bc973aa9ef971bb82f698
+ms.openlocfilehash: 891c783429c069d7c807a9c31aff45d02f518eee
 ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
+ms.lasthandoff: 09/01/2017
 
 ---
 # <a name="developing-client-applications-with-the-net-framework"></a>.NET Framework を使用したクライアント アプリケーションの開発
-ユーザーのコンピューターやデバイスでローカルに動作する .NET Framework で、Windows ベースのアプリケーションを開発する方法はいくつかあります。 このセクションには、Windows Presentation Foundation (WPF) または Windows Forms を使用して Windows ベースのアプリケーションを作成する方法について説明しているトピックがあります。 ただし、.NET Framework を使用してクライアント アプリケーションを作成し、コンピューターやデバイスの Windows ストアおよび Windows Phone ストア、ブラウザーで表示できる Web アプリケーションを介してユーザーに提供することができます。  
+ユーザーのコンピューターやデバイスでローカルに動作する .NET Framework で、Windows ベースのアプリケーションを開発する方法はいくつかあります。 このセクションには、Windows Presentation Foundation (WPF) または Windows Forms を使用して Windows ベースのアプリケーションを作成する方法について説明しているトピックがあります。 ただし、.NET Framework を使用して Web アプリケーションを作成したり、コンピューターやデバイス向けのクライアント アプリケーションを作成したりして、Windows ストアおよび Windows Phone ストアで公開することもできます。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
  [Windows Presentation Foundation](../../docs/framework/wpf/index.md)  
