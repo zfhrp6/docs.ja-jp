@@ -1,1 +1,1 @@
-ADO
+<span data-ttu-id="0b157-101">ADO</span><span class="sxs-lookup"><span data-stu-id="0b157-101">ADO</span></span>

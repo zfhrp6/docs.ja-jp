@@ -1,4 +1,4 @@
-# [共変性と反変性](covariance-and-contravariance.md)
+# [共変性と反変性](index.md)
 ## [ジェネリック インターフェイスの分散](variance-in-generic-interfaces.md)
 ### [作成 (バリアント ジェネリック インターフェイスを)](creating-variant-generic-interfaces.md)
 ### [ジェネリック コレクションに対するインターフェイスでの分散の使用](using-variance-in-interfaces-for-generic-collections.md)

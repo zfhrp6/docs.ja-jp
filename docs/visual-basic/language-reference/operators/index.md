@@ -36,36 +36,36 @@ ms.contentlocale: ja-jp
 ms.lasthandoff: 07/28/2017
 
 ---
-# <a name="operators-visual-basic"></a>演算子 (Visual Basic)
-## <a name="in-this-section"></a>このセクションの内容  
- [Visual Basic における演算子の優先順位](../../../visual-basic/language-reference/operators/operator-precedence.md)  
+# <a name="operators-visual-basic"></a><span data-ttu-id="48fa6-102">演算子 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="48fa6-102">Operators (Visual Basic)</span></span>
+## <a name="in-this-section"></a><span data-ttu-id="48fa6-103">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="48fa6-103">In This Section</span></span>  
+ [<span data-ttu-id="48fa6-104">Visual Basic における演算子の優先順位</span><span class="sxs-lookup"><span data-stu-id="48fa6-104">Operator Precedence in Visual Basic</span></span>](../../../visual-basic/language-reference/operators/operator-precedence.md)  
   
- [機能別の演算子一覧](../../../visual-basic/language-reference/operators/operators-listed-by-functionality.md)  
+ [<span data-ttu-id="48fa6-105">機能別の演算子一覧</span><span class="sxs-lookup"><span data-stu-id="48fa6-105">Operators Listed by Functionality</span></span>](../../../visual-basic/language-reference/operators/operators-listed-by-functionality.md)  
   
- [演算子の結果のデータ型](../../../visual-basic/language-reference/operators/data-types-of-operator-results.md)  
+ [<span data-ttu-id="48fa6-106">演算子の結果のデータ型</span><span class="sxs-lookup"><span data-stu-id="48fa6-106">Data Types of Operator Results</span></span>](../../../visual-basic/language-reference/operators/data-types-of-operator-results.md)  
   
- [DirectCast 演算子](../../../visual-basic/language-reference/operators/directcast-operator.md)  
+ [<span data-ttu-id="48fa6-107">DirectCast 演算子</span><span class="sxs-lookup"><span data-stu-id="48fa6-107">DirectCast Operator</span></span>](../../../visual-basic/language-reference/operators/directcast-operator.md)  
   
- [TryCast 演算子](../../../visual-basic/language-reference/operators/trycast-operator.md)  
+ [<span data-ttu-id="48fa6-108">TryCast 演算子</span><span class="sxs-lookup"><span data-stu-id="48fa6-108">TryCast Operator</span></span>](../../../visual-basic/language-reference/operators/trycast-operator.md)  
   
- [New 演算子](../../../visual-basic/language-reference/operators/new-operator.md)  
+ [<span data-ttu-id="48fa6-109">New 演算子</span><span class="sxs-lookup"><span data-stu-id="48fa6-109">New Operator</span></span>](../../../visual-basic/language-reference/operators/new-operator.md)  
   
- [算術演算子](../../../visual-basic/language-reference/operators/arithmetic-operators.md)  
+ [<span data-ttu-id="48fa6-110">算術演算子</span><span class="sxs-lookup"><span data-stu-id="48fa6-110">Arithmetic Operators</span></span>](../../../visual-basic/language-reference/operators/arithmetic-operators.md)  
   
- [代入演算子](../../../visual-basic/language-reference/operators/assignment-operators.md)  
+ [<span data-ttu-id="48fa6-111">代入演算子</span><span class="sxs-lookup"><span data-stu-id="48fa6-111">Assignment Operators</span></span>](../../../visual-basic/language-reference/operators/assignment-operators.md)  
   
- [ビット シフト演算子](../../../visual-basic/language-reference/operators/bit-shift-operators.md)  
+ [<span data-ttu-id="48fa6-112">ビット シフト演算子</span><span class="sxs-lookup"><span data-stu-id="48fa6-112">Bit Shift Operators</span></span>](../../../visual-basic/language-reference/operators/bit-shift-operators.md)  
   
- [比較演算子](../../../visual-basic/language-reference/operators/comparison-operators.md)  
+ [<span data-ttu-id="48fa6-113">比較演算子</span><span class="sxs-lookup"><span data-stu-id="48fa6-113">Comparison Operators</span></span>](../../../visual-basic/language-reference/operators/comparison-operators.md)  
   
- [連結演算子](../../../visual-basic/language-reference/operators/concatenation-operators.md)  
+ [<span data-ttu-id="48fa6-114">連結演算子</span><span class="sxs-lookup"><span data-stu-id="48fa6-114">Concatenation Operators</span></span>](../../../visual-basic/language-reference/operators/concatenation-operators.md)  
   
- [論理/ビット演算子](../../../visual-basic/language-reference/operators/logical-bitwise-operators.md)  
+ [<span data-ttu-id="48fa6-115">論理/ビット演算子</span><span class="sxs-lookup"><span data-stu-id="48fa6-115">Logical/Bitwise Operators</span></span>](../../../visual-basic/language-reference/operators/logical-bitwise-operators.md)  
   
- [その他の演算子](../../../visual-basic/language-reference/operators/miscellaneous-operators.md)  
+ [<span data-ttu-id="48fa6-116">その他の演算子</span><span class="sxs-lookup"><span data-stu-id="48fa6-116">Miscellaneous Operators</span></span>](../../../visual-basic/language-reference/operators/miscellaneous-operators.md)  
   
-## <a name="related-sections"></a>関連項目  
- [Visual Basic の言語リファレンス](../../../visual-basic/language-reference/index.md)  
+## <a name="related-sections"></a><span data-ttu-id="48fa6-117">関連項目</span><span class="sxs-lookup"><span data-stu-id="48fa6-117">Related Sections</span></span>  
+ [<span data-ttu-id="48fa6-118">Visual Basic の言語リファレンス</span><span class="sxs-lookup"><span data-stu-id="48fa6-118">Visual Basic Language Reference</span></span>](../../../visual-basic/language-reference/index.md)  
   
- [Visual Basic](../../../visual-basic/index.md)
+ [<span data-ttu-id="48fa6-119">Visual Basic</span><span class="sxs-lookup"><span data-stu-id="48fa6-119">Visual Basic</span></span>](../../../visual-basic/index.md)
 

@@ -34,39 +34,40 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: d35de576bd9e267800acc2a9bfd5761dd977622f
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
+ms.openlocfilehash: 6e614a1dce4894dcd18509854f3cae149665cbf0
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/12/2017
 
 ---
-# <a name="removehandler-statement"></a>RemoveHandler ステートメント
-イベントとイベント ハンドラーの間の関連付けを削除します。  
+# <a name="removehandler-statement"></a><span data-ttu-id="cdcd3-102">RemoveHandler ステートメント</span><span class="sxs-lookup"><span data-stu-id="cdcd3-102">RemoveHandler Statement</span></span>
+<span data-ttu-id="cdcd3-103">イベントとイベント ハンドラーの間の関連付けを削除します。</span><span class="sxs-lookup"><span data-stu-id="cdcd3-103">Removes the association between an event and an event handler.</span></span>  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a><span data-ttu-id="cdcd3-104">構文</span><span class="sxs-lookup"><span data-stu-id="cdcd3-104">Syntax</span></span>  
   
 ```  
 RemoveHandler event, AddressOf eventhandler  
 ```  
   
-## <a name="parts"></a>指定項目  
+## <a name="parts"></a><span data-ttu-id="cdcd3-105">指定項目</span><span class="sxs-lookup"><span data-stu-id="cdcd3-105">Parts</span></span>  
   
-|用語|定義|  
+|<span data-ttu-id="cdcd3-106">用語</span><span class="sxs-lookup"><span data-stu-id="cdcd3-106">Term</span></span>|<span data-ttu-id="cdcd3-107">定義</span><span class="sxs-lookup"><span data-stu-id="cdcd3-107">Definition</span></span>|  
 |---|---|  
-|`event`|処理されるイベントの名前。|  
-|`eventhandler`|現在、イベントを処理するプロシージャの名前。|  
+|`event`|<span data-ttu-id="cdcd3-108">処理されるイベントの名前。</span><span class="sxs-lookup"><span data-stu-id="cdcd3-108">The name of the event being handled.</span></span>|  
+|`eventhandler`|<span data-ttu-id="cdcd3-109">現在、イベントを処理するプロシージャの名前。</span><span class="sxs-lookup"><span data-stu-id="cdcd3-109">The name of the procedure currently handling the event.</span></span>|  
   
-## <a name="remarks"></a>コメント  
- `AddHandler`と`RemoveHandler`ステートメントを使用すると、起動して、プログラムの実行中にいつでも、特定のイベントのイベント処理を停止します。  
+## <a name="remarks"></a><span data-ttu-id="cdcd3-110">コメント</span><span class="sxs-lookup"><span data-stu-id="cdcd3-110">Remarks</span></span>  
+ <span data-ttu-id="cdcd3-111">`AddHandler`と`RemoveHandler`ステートメントを使用すると、起動して、プログラムの実行中にいつでも、特定のイベントのイベント処理を停止します。</span><span class="sxs-lookup"><span data-stu-id="cdcd3-111">The `AddHandler` and `RemoveHandler` statements allow you to start and stop event handling for a specific event at any time during program execution.</span></span>  
   
 > [!NOTE]
->  カスタム イベントの場合、`RemoveHandler`ステートメントで呼び出されるイベントの`RemoveHandler`アクセサー。 カスタム イベントの詳細については、次を参照してください。 [Event ステートメント](../../../visual-basic/language-reference/statements/event-statement.md)します。  
+>  <span data-ttu-id="cdcd3-112">カスタム イベントの場合、`RemoveHandler`ステートメントで呼び出されるイベントの`RemoveHandler`アクセサー。</span><span class="sxs-lookup"><span data-stu-id="cdcd3-112">For custom events, the `RemoveHandler` statement invokes the event's `RemoveHandler` accessor.</span></span> <span data-ttu-id="cdcd3-113">カスタム イベントの詳細については、次を参照してください。 [Event ステートメント](../../../visual-basic/language-reference/statements/event-statement.md)します。</span><span class="sxs-lookup"><span data-stu-id="cdcd3-113">For more information on custom events, see [Event Statement](../../../visual-basic/language-reference/statements/event-statement.md).</span></span>  
   
-## <a name="example"></a>例  
- [!code-vb[VbVbalrEvents&17;](../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/removehandler-statement_1.vb)]  
+## <a name="example"></a><span data-ttu-id="cdcd3-114">例</span><span class="sxs-lookup"><span data-stu-id="cdcd3-114">Example</span></span>  
+ <span data-ttu-id="cdcd3-115">[!code-vb[VbVbalrEvents&17;](../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/removehandler-statement_1.vb)]</span><span class="sxs-lookup"><span data-stu-id="cdcd3-115">[!code-vb[VbVbalrEvents#17](../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/removehandler-statement_1.vb)]</span></span>  
   
-## <a name="see-also"></a>関連項目  
- [AddHandler ステートメント](../../../visual-basic/language-reference/statements/addhandler-statement.md)   
- [ハンドル](../../../visual-basic/language-reference/statements/handles-clause.md)   
- [Event ステートメント](../../../visual-basic/language-reference/statements/event-statement.md)   
- [イベント](../../../visual-basic/programming-guide/language-features/events/index.md)
+## <a name="see-also"></a><span data-ttu-id="cdcd3-116">関連項目</span><span class="sxs-lookup"><span data-stu-id="cdcd3-116">See Also</span></span>  
+ <span data-ttu-id="cdcd3-117">[AddHandler ステートメント](../../../visual-basic/language-reference/statements/addhandler-statement.md) </span><span class="sxs-lookup"><span data-stu-id="cdcd3-117">[AddHandler Statement](../../../visual-basic/language-reference/statements/addhandler-statement.md) </span></span>  
+<span data-ttu-id="cdcd3-118"> [ハンドル](../../../visual-basic/language-reference/statements/handles-clause.md) </span><span class="sxs-lookup"><span data-stu-id="cdcd3-118"> [Handles](../../../visual-basic/language-reference/statements/handles-clause.md) </span></span>  
+<span data-ttu-id="cdcd3-119"> [Event ステートメント](../../../visual-basic/language-reference/statements/event-statement.md) </span><span class="sxs-lookup"><span data-stu-id="cdcd3-119"> [Event Statement](../../../visual-basic/language-reference/statements/event-statement.md) </span></span>  
+<span data-ttu-id="cdcd3-120"> [イベント](../../../visual-basic/programming-guide/language-features/events/index.md)</span><span class="sxs-lookup"><span data-stu-id="cdcd3-120"> [Events](../../../visual-basic/programming-guide/language-features/events/index.md)</span></span>

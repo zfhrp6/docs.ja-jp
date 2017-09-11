@@ -20,16 +20,17 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 81e6e6319fd8d5f1bcb7065cda6b8eb652a99b55
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
+ms.openlocfilehash: 02ea88ee2b2d088cd1f0c5e896210619f8bf8144
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/12/2017
 
 ---
-# <a name="sample-xml-file-multiple-purchase-orders-in-a-namespace"></a>サンプル XML ファイル : 名前空間内の複数の購買発注書
-次の XML ファイルは、[!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)] ドキュメントのさまざまな例で使用されます。 このファイルには、複数の購買発注書が含まれています。 XML は名前空間に含まれています。  
+# <a name="sample-xml-file-multiple-purchase-orders-in-a-namespace"></a><span data-ttu-id="fc33b-102">サンプル XML ファイル : 名前空間内の複数の購買発注書</span><span class="sxs-lookup"><span data-stu-id="fc33b-102">Sample XML File: Multiple Purchase Orders in a Namespace</span></span>
+<span data-ttu-id="fc33b-103">次の XML ファイルは、[!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)] ドキュメントのさまざまな例で使用されます。</span><span class="sxs-lookup"><span data-stu-id="fc33b-103">The following XML file is used in various examples in the [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)] documentation.</span></span> <span data-ttu-id="fc33b-104">このファイルには、複数の購買発注書が含まれています。</span><span class="sxs-lookup"><span data-stu-id="fc33b-104">This file contains several purchase orders.</span></span> <span data-ttu-id="fc33b-105">XML は名前空間に含まれています。</span><span class="sxs-lookup"><span data-stu-id="fc33b-105">The XML is in a namespace.</span></span>  
   
-## <a name="purchaseordersinnamespacexml"></a>PurchaseOrdersInNamespace.xml  
+## <a name="purchaseordersinnamespacexml"></a><span data-ttu-id="fc33b-106">PurchaseOrdersInNamespace.xml</span><span class="sxs-lookup"><span data-stu-id="fc33b-106">PurchaseOrdersInNamespace.xml</span></span>  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8"?>  
@@ -126,5 +127,5 @@ ms.lasthandoff: 03/13/2017
 </aw:PurchaseOrders>  
 ```  
   
-## <a name="see-also"></a>関連項目  
- [サンプル XML ドキュメント (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-documents-linq-to-xml.md)
+## <a name="see-also"></a><span data-ttu-id="fc33b-107">関連項目</span><span class="sxs-lookup"><span data-stu-id="fc33b-107">See Also</span></span>  
+ [<span data-ttu-id="fc33b-108">サンプル XML ドキュメント (LINQ to XML)</span><span class="sxs-lookup"><span data-stu-id="fc33b-108">Sample XML Documents (LINQ to XML)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-documents-linq-to-xml.md)

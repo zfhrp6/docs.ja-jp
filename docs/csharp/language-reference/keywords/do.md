@@ -37,27 +37,27 @@ ms.contentlocale: ja-jp
 ms.lasthandoff: 07/28/2017
 
 ---
-# <a name="do-c-reference"></a>do (C# リファレンス)
-`do` ステートメントでは、指定された式が `false` になるまで、ステートメントまたはステートメント ブロックが繰り返し実行されます。 ループの本体は、単一のステートメントで構成されている場合を除いて、中かっこ (`{}`) で囲む必要があります。 単一ステートメントで構成されている場合、中かっこはオプションです。  
+# <a name="do-c-reference"></a><span data-ttu-id="b0d5d-102">do (C# リファレンス)</span><span class="sxs-lookup"><span data-stu-id="b0d5d-102">do (C# Reference)</span></span>
+<span data-ttu-id="b0d5d-103">`do` ステートメントでは、指定された式が `false` になるまで、ステートメントまたはステートメント ブロックが繰り返し実行されます。</span><span class="sxs-lookup"><span data-stu-id="b0d5d-103">The `do` statement executes a statement or a block of statements repeatedly until a specified expression evaluates to `false`.</span></span> <span data-ttu-id="b0d5d-104">ループの本体は、単一のステートメントで構成されている場合を除いて、中かっこ (`{}`) で囲む必要があります。</span><span class="sxs-lookup"><span data-stu-id="b0d5d-104">The body of the loop must be enclosed in braces, `{}`, unless it consists of a single statement.</span></span> <span data-ttu-id="b0d5d-105">単一ステートメントで構成されている場合、中かっこはオプションです。</span><span class="sxs-lookup"><span data-stu-id="b0d5d-105">In that case, the braces are optional.</span></span>  
   
-## <a name="example"></a>例  
- 次の例では、変数 `x` が 5 未満である限り、`do-while` ループ ステートメントが実行されます。  
+## <a name="example"></a><span data-ttu-id="b0d5d-106">例</span><span class="sxs-lookup"><span data-stu-id="b0d5d-106">Example</span></span>  
+ <span data-ttu-id="b0d5d-107">次の例では、変数 `x` が 5 未満である限り、`do-while` ループ ステートメントが実行されます。</span><span class="sxs-lookup"><span data-stu-id="b0d5d-107">In the following example, the `do-while` loop statements execute as long as the variable `x` is less than 5.</span></span>  
   
- [!code-cs[csrefKeywordsIteration#1](../../../csharp/language-reference/keywords/codesnippet/CSharp/do_1.cs)]  
+ <span data-ttu-id="b0d5d-108">[!code-cs[csrefKeywordsIteration#1](../../../csharp/language-reference/keywords/codesnippet/CSharp/do_1.cs)]</span><span class="sxs-lookup"><span data-stu-id="b0d5d-108">[!code-cs[csrefKeywordsIteration#1](../../../csharp/language-reference/keywords/codesnippet/CSharp/do_1.cs)]</span></span>  
   
- [while](../../../csharp/language-reference/keywords/while.md) ステートメントとは異なり、`do-while` ループは条件式が評価される前に 1 回実行されます。  
+ <span data-ttu-id="b0d5d-109">[while](../../../csharp/language-reference/keywords/while.md) ステートメントとは異なり、`do-while` ループは条件式が評価される前に 1 回実行されます。</span><span class="sxs-lookup"><span data-stu-id="b0d5d-109">Unlike the [while](../../../csharp/language-reference/keywords/while.md) statement, a `do-while` loop is executed one time before the conditional expression is evaluated.</span></span>  
   
- `do-while` ブロック内の任意の位置で、[break](../../../csharp/language-reference/keywords/break.md) ステートメントを使用してループを抜けることができます。 [continue](../../../csharp/language-reference/keywords/continue.md) ステートメントを使用すると、`while` 式の評価ステートメントを直接ステップ実行できます。 `while` 式の評価が true の場合、ループの最初のステートメントから実行が続行されます。 式の評価が false の場合、`do-while` ループの後の最初のステートメントから実行が続行されます。  
+ <span data-ttu-id="b0d5d-110">`do-while` ブロック内の任意の位置で、[break](../../../csharp/language-reference/keywords/break.md) ステートメントを使用してループを抜けることができます。</span><span class="sxs-lookup"><span data-stu-id="b0d5d-110">At any point in the `do-while` block, you can break out of the loop using the [break](../../../csharp/language-reference/keywords/break.md) statement.</span></span> <span data-ttu-id="b0d5d-111">[continue](../../../csharp/language-reference/keywords/continue.md) ステートメントを使用すると、`while` 式の評価ステートメントを直接ステップ実行できます。</span><span class="sxs-lookup"><span data-stu-id="b0d5d-111">You can step directly to the `while` expression evaluation statement by using the [continue](../../../csharp/language-reference/keywords/continue.md) statement.</span></span> <span data-ttu-id="b0d5d-112">`while` 式の評価が true の場合、ループの最初のステートメントから実行が続行されます。</span><span class="sxs-lookup"><span data-stu-id="b0d5d-112">If the `while` expression evaluates to true, execution continues at the first statement in the loop.</span></span> <span data-ttu-id="b0d5d-113">式の評価が false の場合、`do-while` ループの後の最初のステートメントから実行が続行されます。</span><span class="sxs-lookup"><span data-stu-id="b0d5d-113">If the expression evaluates to false, execution continues at the first statement after the `do-while` loop.</span></span>  
   
- [goto](../../../csharp/language-reference/keywords/goto.md) ステートメント、[return](../../../csharp/language-reference/keywords/return.md) ステートメント、または [throw](../../../csharp/language-reference/keywords/throw.md) ステートメントを使用して `do-while` ループを抜けることもできます。  
+ <span data-ttu-id="b0d5d-114">[goto](../../../csharp/language-reference/keywords/goto.md) ステートメント、[return](../../../csharp/language-reference/keywords/return.md) ステートメント、または [throw](../../../csharp/language-reference/keywords/throw.md) ステートメントを使用して `do-while` ループを抜けることもできます。</span><span class="sxs-lookup"><span data-stu-id="b0d5d-114">A `do-while` loop can also be exited by the [goto](../../../csharp/language-reference/keywords/goto.md), [return](../../../csharp/language-reference/keywords/return.md), or [throw](../../../csharp/language-reference/keywords/throw.md) statements.</span></span>  
   
-## <a name="c-language-specification"></a>C# 言語仕様  
+## <a name="c-language-specification"></a><span data-ttu-id="b0d5d-115">C# 言語仕様</span><span class="sxs-lookup"><span data-stu-id="b0d5d-115">C# Language Specification</span></span>  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
-## <a name="see-also"></a>関連項目  
- [C# リファレンス](../../../csharp/language-reference/index.md)   
- [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
- [C# のキーワード](../../../csharp/language-reference/keywords/index.md)   
- [do-while ステートメント (C++)](/cpp/cpp/do-while-statement-cpp)   
- [繰り返しステートメント](../../../csharp/language-reference/keywords/iteration-statements.md)
+## <a name="see-also"></a><span data-ttu-id="b0d5d-116">関連項目</span><span class="sxs-lookup"><span data-stu-id="b0d5d-116">See Also</span></span>  
+ <span data-ttu-id="b0d5d-117">[C# リファレンス](../../../csharp/language-reference/index.md) </span><span class="sxs-lookup"><span data-stu-id="b0d5d-117">[C# Reference](../../../csharp/language-reference/index.md) </span></span>  
+ <span data-ttu-id="b0d5d-118">[C# プログラミング ガイド](../../../csharp/programming-guide/index.md) </span><span class="sxs-lookup"><span data-stu-id="b0d5d-118">[C# Programming Guide](../../../csharp/programming-guide/index.md) </span></span>  
+ <span data-ttu-id="b0d5d-119">[C# のキーワード](../../../csharp/language-reference/keywords/index.md) </span><span class="sxs-lookup"><span data-stu-id="b0d5d-119">[C# Keywords](../../../csharp/language-reference/keywords/index.md) </span></span>  
+ <span data-ttu-id="b0d5d-120">[do-while ステートメント (C++)](/cpp/cpp/do-while-statement-cpp) </span><span class="sxs-lookup"><span data-stu-id="b0d5d-120">[do-while Statement (C++)](/cpp/cpp/do-while-statement-cpp) </span></span>  
+ [<span data-ttu-id="b0d5d-121">繰り返しステートメント</span><span class="sxs-lookup"><span data-stu-id="b0d5d-121">Iteration Statements</span></span>](../../../csharp/language-reference/keywords/iteration-statements.md)
 

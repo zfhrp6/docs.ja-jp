@@ -32,29 +32,30 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: b861b5c6c151c5d3aeec2810c7f2a228f22fdf6e
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
+ms.openlocfilehash: 127f89f4c7ddaf794f58707d8925731a511f3740
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/12/2017
 
 ---
-# <a name="function-evaluation-is-disabled-because-a-previous-function-evaluation-timed-out"></a>前の関数の評価がタイムアウトしたため、関数の評価は無効になりました。
-前の関数の評価がタイムアウトしたため、関数の評価は無効になりました。 関数の評価をもう一度有効にするには、もう一度ステップを実行するか、またはデバッグを再起動してください。  
+# <a name="function-evaluation-is-disabled-because-a-previous-function-evaluation-timed-out"></a><span data-ttu-id="066e1-102">前の関数の評価がタイムアウトしたため、関数の評価は無効になりました。</span><span class="sxs-lookup"><span data-stu-id="066e1-102">Function evaluation is disabled because a previous function evaluation timed out</span></span>
+<span data-ttu-id="066e1-103">前の関数の評価がタイムアウトしたため、関数の評価は無効になりました。</span><span class="sxs-lookup"><span data-stu-id="066e1-103">Function evaluation is disabled because a previous function evaluation timed out.</span></span> <span data-ttu-id="066e1-104">関数の評価をもう一度有効にするには、もう一度ステップを実行するか、またはデバッグを再起動してください。</span><span class="sxs-lookup"><span data-stu-id="066e1-104">To re-enable function evaluation, step again or restart debugging.</span></span>  
   
- Visual Studio デバッガーで、プロシージャ呼び出しが式に指定されていますが、別の評価がタイムアウトしています。  
+ <span data-ttu-id="066e1-105">Visual Studio デバッガーで、プロシージャ呼び出しが式に指定されていますが、別の評価がタイムアウトしています。</span><span class="sxs-lookup"><span data-stu-id="066e1-105">In the Visual Studio debugger, an expression specifies a procedure call, but another evaluation has timed out.</span></span>  
   
- プロシージャ呼び出しがタイムアウトの原因が考えられますが、無限ループを含めるか、*無限ループ*します。 詳細については、次を参照してください[にしています.。次のステートメントの](../../../visual-basic/language-reference/statements/for-next-statement.md)です。  
+ <span data-ttu-id="066e1-106">プロシージャ呼び出しがタイムアウトの原因が考えられますが、無限ループを含めるか、*無限ループ*します。</span><span class="sxs-lookup"><span data-stu-id="066e1-106">Possible causes for a procedure call to time out include an infinite loop or *endless loop*.</span></span> <span data-ttu-id="066e1-107">詳細については、次を参照してください[にしています.。次のステートメントの](../../../visual-basic/language-reference/statements/for-next-statement.md)です。</span><span class="sxs-lookup"><span data-stu-id="066e1-107">For more information, see [For...Next Statement](../../../visual-basic/language-reference/statements/for-next-statement.md).</span></span>  
   
- 無限ループの特殊なケースが*再帰*します。 詳細については、次を参照してください。[再帰プロシージャ](../../../visual-basic/programming-guide/language-features/procedures/recursive-procedures.md)します。  
+ <span data-ttu-id="066e1-108">無限ループの特殊なケースが*再帰*します。</span><span class="sxs-lookup"><span data-stu-id="066e1-108">A special case of an infinite loop is *recursion*.</span></span> <span data-ttu-id="066e1-109">詳細については、次を参照してください。[再帰プロシージャ](../../../visual-basic/programming-guide/language-features/procedures/recursive-procedures.md)します。</span><span class="sxs-lookup"><span data-stu-id="066e1-109">For more information, see [Recursive Procedures](../../../visual-basic/programming-guide/language-features/procedures/recursive-procedures.md).</span></span>  
   
- **エラー ID:** BC30957  
+ <span data-ttu-id="066e1-110">**エラー ID:** BC30957</span><span class="sxs-lookup"><span data-stu-id="066e1-110">**Error ID:** BC30957</span></span>  
   
-## <a name="to-correct-this-error"></a>このエラーを解決するには  
+## <a name="to-correct-this-error"></a><span data-ttu-id="066e1-111">このエラーを解決するには</span><span class="sxs-lookup"><span data-stu-id="066e1-111">To correct this error</span></span>  
   
-1.  可能であれば、前回の関数の評価がどれかを判断し、タイムアウトした理由を調べます。 判断できない場合、このエラーが再度表示される可能性があります。  
+1.  <span data-ttu-id="066e1-112">可能であれば、前回の関数の評価がどれかを判断し、タイムアウトした理由を調べます。</span><span class="sxs-lookup"><span data-stu-id="066e1-112">If possible, determine what the previous function evaluation was and what caused it to time out.</span></span> <span data-ttu-id="066e1-113">判断できない場合、このエラーが再度表示される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="066e1-113">Otherwise, you might encounter this error again.</span></span>  
   
-2.  デバッガーのステップをもう一度実行するか、デバッガーを終了させて再起動します。  
+2.  <span data-ttu-id="066e1-114">デバッガーのステップをもう一度実行するか、デバッガーを終了させて再起動します。</span><span class="sxs-lookup"><span data-stu-id="066e1-114">Either step the debugger again, or terminate and restart debugging.</span></span>  
   
-## <a name="see-also"></a>関連項目  
- [Visual Studio でのデバッグ](https://docs.microsoft.com/visualstudio/debugger/debugging-in-visual-studio)   
- [デバッガーでのコード間の移動](https://docs.microsoft.com/visualstudio/debugger/navigating-through-code-with-the-debugger)
+## <a name="see-also"></a><span data-ttu-id="066e1-115">関連項目</span><span class="sxs-lookup"><span data-stu-id="066e1-115">See Also</span></span>  
+ <span data-ttu-id="066e1-116">[Visual Studio でのデバッグ](https://docs.microsoft.com/visualstudio/debugger/debugging-in-visual-studio) </span><span class="sxs-lookup"><span data-stu-id="066e1-116">[Debugging in Visual Studio](https://docs.microsoft.com/visualstudio/debugger/debugging-in-visual-studio) </span></span>  
+<span data-ttu-id="066e1-117"> [デバッガーでのコード間の移動](https://docs.microsoft.com/visualstudio/debugger/navigating-through-code-with-the-debugger)</span><span class="sxs-lookup"><span data-stu-id="066e1-117"> [Navigating through Code with the Debugger](https://docs.microsoft.com/visualstudio/debugger/navigating-through-code-with-the-debugger)</span></span>

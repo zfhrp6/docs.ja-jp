@@ -45,83 +45,84 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 88c5db6e7e82a88ae8015b581e5a795ec389d003
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
+ms.openlocfilehash: c00db1c631e1cc71df856407e8646532a73c6d44
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/12/2017
 
 ---
-# <a name="widening-and-narrowing-conversions-visual-basic"></a>拡大変換と縮小変換 (Visual Basic)
-型変換で重要な考慮事項は、変換の結果が先のデータ型の範囲内かどうかです。  
+# <a name="widening-and-narrowing-conversions-visual-basic"></a><span data-ttu-id="e578f-102">拡大変換と縮小変換 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="e578f-102">Widening and Narrowing Conversions (Visual Basic)</span></span>
+<span data-ttu-id="e578f-103">型変換で重要な考慮事項は、変換の結果が先のデータ型の範囲内かどうかです。</span><span class="sxs-lookup"><span data-stu-id="e578f-103">An important consideration with a type conversion is whether the result of the conversion is within the range of the destination data type.</span></span>  
   
- A*拡大変換*の元のデータのすべての値が許容されるデータ型に値を変更します。  拡大変換では、元の値を保持できますが、その表現を変更することができます。 これから整数型に変換する場合に発生`Decimal`、またはから`Char`に`String`します。  
+ <span data-ttu-id="e578f-104">A*拡大変換*の元のデータのすべての値が許容されるデータ型に値を変更します。</span><span class="sxs-lookup"><span data-stu-id="e578f-104">A *widening conversion* changes a value to a data type that can allow for any possible value of the original data.</span></span>  <span data-ttu-id="e578f-105">拡大変換では、元の値を保持できますが、その表現を変更することができます。</span><span class="sxs-lookup"><span data-stu-id="e578f-105">Widening conversions preserve the source value but can change its representation.</span></span> <span data-ttu-id="e578f-106">これから整数型に変換する場合に発生`Decimal`、またはから`Char`に`String`します。</span><span class="sxs-lookup"><span data-stu-id="e578f-106">This occurs if you convert from an integral type to `Decimal`, or from `Char` to `String`.</span></span>  
   
- *縮小変換* により、有効値の一部を保持できない可能性のあるデータ型に値が変更されます。 たとえば、小数部の値は、整数型に変換する数値型を変換するときに丸められます`Boolean`がいずれかに減少`True`または`False`です。  
+ <span data-ttu-id="e578f-107">*縮小変換* により、有効値の一部を保持できない可能性のあるデータ型に値が変更されます。</span><span class="sxs-lookup"><span data-stu-id="e578f-107">A *narrowing conversion* changes a value to a data type that might not be able to hold some of the possible values.</span></span> <span data-ttu-id="e578f-108">たとえば、小数部の値は、整数型に変換する数値型を変換するときに丸められます`Boolean`がいずれかに減少`True`または`False`です。</span><span class="sxs-lookup"><span data-stu-id="e578f-108">For example, a fractional value is rounded when it is converted to an integral type, and a numeric type being converted to `Boolean` is reduced to either `True` or `False`.</span></span>  
   
-## <a name="widening-conversions"></a>拡大変換  
- 次の表は、標準の上位変換を示します。  
+## <a name="widening-conversions"></a><span data-ttu-id="e578f-109">拡大変換</span><span class="sxs-lookup"><span data-stu-id="e578f-109">Widening Conversions</span></span>  
+ <span data-ttu-id="e578f-110">次の表は、標準の上位変換を示します。</span><span class="sxs-lookup"><span data-stu-id="e578f-110">The following table shows the standard widening conversions.</span></span>  
   
-|データ型|データ型に拡大変換<sup>1</sup>|  
+|<span data-ttu-id="e578f-111">データ型</span><span class="sxs-lookup"><span data-stu-id="e578f-111">Data type</span></span>|<span data-ttu-id="e578f-112">データ型に拡大変換<sup>1</sup></span><span class="sxs-lookup"><span data-stu-id="e578f-112">Widens to data types <sup>1</sup></span></span>|  
 |---|---|  
-|[SByte](../../../../visual-basic/language-reference/data-types/sbyte-data-type.md)|`SByte`, `Short`, `Integer`, `Long`, `Decimal`, `Single`, `Double`|  
-|[Byte](../../../../visual-basic/language-reference/data-types/byte-data-type.md)|`Byte`、`Short`、`UShort`、`Integer`、`UInteger`、`Long`、`ULong`、`Decimal`、`Single`、`Double`|  
-|[短い](../../../../visual-basic/language-reference/data-types/short-data-type.md)|`Short`, `Integer`, `Long`, `Decimal`, `Single`, `Double`|  
-|[UShort](../../../../visual-basic/language-reference/data-types/ushort-data-type.md)|`UShort`, `Integer`, `UInteger`, `Long`, `ULong`, `Decimal`, `Single`, `Double`|  
-|[整数](../../../../visual-basic/language-reference/data-types/integer-data-type.md)|`Integer`, `Long`, `Decimal`, `Single`, `Double`<sup>2</sup>|  
-|[UInteger](../../../../visual-basic/language-reference/data-types/uinteger-data-type.md)|`UInteger`, `Long`, `ULong`, `Decimal`, `Single`, `Double`<sup>2</sup>|  
-|[長い](../../../../visual-basic/language-reference/data-types/long-data-type.md)|`Long`, `Decimal`, `Single`, `Double`<sup>2</sup>|  
-|[ULong](../../../../visual-basic/language-reference/data-types/ulong-data-type.md)|`ULong`, `Decimal`, `Single`, `Double`<sup>2</sup>|  
-|[Decimal](../../../../visual-basic/language-reference/data-types/decimal-data-type.md)|`Decimal`, `Single`, `Double`<sup>2</sup>|  
-|[Single](../../../../visual-basic/language-reference/data-types/single-data-type.md)|`Single`, `Double`|  
-|[Double](../../../../visual-basic/language-reference/data-types/double-data-type.md)|`Double`|  
-|いずれかの列挙型 ([Enum](../../../../visual-basic/language-reference/statements/enum-statement.md))|その基になる整数型と任意の型を基になる型が拡大します。|  
-|[Char](../../../../visual-basic/language-reference/data-types/char-data-type.md)|`Char`, `String`|  
-|`Char` 配列|`Char`配列、`String`|  
-|任意の型|[オブジェクト](../../../../visual-basic/language-reference/data-types/object-data-type.md)|  
-|すべての派生型|いずれかの基本データ型の派生元である<sup>3</sup>します。|  
-|任意の型|任意のインターフェイスを実装します。|  
-|[Nothing](../../../../visual-basic/language-reference/nothing.md)|任意のデータ型またはオブジェクトの種類。|  
+|[<span data-ttu-id="e578f-113">SByte</span><span class="sxs-lookup"><span data-stu-id="e578f-113">SByte</span></span>](../../../../visual-basic/language-reference/data-types/sbyte-data-type.md)|<span data-ttu-id="e578f-114">`SByte`, `Short`, `Integer`, `Long`, `Decimal`, `Single`, `Double`</span><span class="sxs-lookup"><span data-stu-id="e578f-114">`SByte`, `Short`, `Integer`, `Long`, `Decimal`, `Single`, `Double`</span></span>|  
+|[<span data-ttu-id="e578f-115">Byte</span><span class="sxs-lookup"><span data-stu-id="e578f-115">Byte</span></span>](../../../../visual-basic/language-reference/data-types/byte-data-type.md)|<span data-ttu-id="e578f-116">`Byte`、`Short`、`UShort`、`Integer`、`UInteger`、`Long`、`ULong`、`Decimal`、`Single`、`Double`</span><span class="sxs-lookup"><span data-stu-id="e578f-116">`Byte`, `Short`, `UShort`, `Integer`, `UInteger`, `Long`, `ULong`, `Decimal`, `Single`, `Double`</span></span>|  
+|[<span data-ttu-id="e578f-117">短い</span><span class="sxs-lookup"><span data-stu-id="e578f-117">Short</span></span>](../../../../visual-basic/language-reference/data-types/short-data-type.md)|<span data-ttu-id="e578f-118">`Short`, `Integer`, `Long`, `Decimal`, `Single`, `Double`</span><span class="sxs-lookup"><span data-stu-id="e578f-118">`Short`, `Integer`, `Long`, `Decimal`, `Single`, `Double`</span></span>|  
+|[<span data-ttu-id="e578f-119">UShort</span><span class="sxs-lookup"><span data-stu-id="e578f-119">UShort</span></span>](../../../../visual-basic/language-reference/data-types/ushort-data-type.md)|<span data-ttu-id="e578f-120">`UShort`, `Integer`, `UInteger`, `Long`, `ULong`, `Decimal`, `Single`, `Double`</span><span class="sxs-lookup"><span data-stu-id="e578f-120">`UShort`, `Integer`, `UInteger`, `Long`, `ULong`, `Decimal`, `Single`, `Double`</span></span>|  
+|[<span data-ttu-id="e578f-121">整数</span><span class="sxs-lookup"><span data-stu-id="e578f-121">Integer</span></span>](../../../../visual-basic/language-reference/data-types/integer-data-type.md)|<span data-ttu-id="e578f-122">`Integer`, `Long`, `Decimal`, `Single`, `Double`<sup>2</sup></span><span class="sxs-lookup"><span data-stu-id="e578f-122">`Integer`, `Long`, `Decimal`, `Single`, `Double`<sup>2</sup></span></span>|  
+|[<span data-ttu-id="e578f-123">UInteger</span><span class="sxs-lookup"><span data-stu-id="e578f-123">UInteger</span></span>](../../../../visual-basic/language-reference/data-types/uinteger-data-type.md)|<span data-ttu-id="e578f-124">`UInteger`, `Long`, `ULong`, `Decimal`, `Single`, `Double`<sup>2</sup></span><span class="sxs-lookup"><span data-stu-id="e578f-124">`UInteger`, `Long`, `ULong`, `Decimal`, `Single`, `Double`<sup>2</sup></span></span>|  
+|[<span data-ttu-id="e578f-125">長い</span><span class="sxs-lookup"><span data-stu-id="e578f-125">Long</span></span>](../../../../visual-basic/language-reference/data-types/long-data-type.md)|<span data-ttu-id="e578f-126">`Long`, `Decimal`, `Single`, `Double`<sup>2</sup></span><span class="sxs-lookup"><span data-stu-id="e578f-126">`Long`, `Decimal`, `Single`, `Double`<sup>2</sup></span></span>|  
+|[<span data-ttu-id="e578f-127">ULong</span><span class="sxs-lookup"><span data-stu-id="e578f-127">ULong</span></span>](../../../../visual-basic/language-reference/data-types/ulong-data-type.md)|<span data-ttu-id="e578f-128">`ULong`, `Decimal`, `Single`, `Double`<sup>2</sup></span><span class="sxs-lookup"><span data-stu-id="e578f-128">`ULong`, `Decimal`, `Single`, `Double`<sup>2</sup></span></span>|  
+|[<span data-ttu-id="e578f-129">Decimal</span><span class="sxs-lookup"><span data-stu-id="e578f-129">Decimal</span></span>](../../../../visual-basic/language-reference/data-types/decimal-data-type.md)|<span data-ttu-id="e578f-130">`Decimal`, `Single`, `Double`<sup>2</sup></span><span class="sxs-lookup"><span data-stu-id="e578f-130">`Decimal`, `Single`, `Double`<sup>2</sup></span></span>|  
+|[<span data-ttu-id="e578f-131">Single</span><span class="sxs-lookup"><span data-stu-id="e578f-131">Single</span></span>](../../../../visual-basic/language-reference/data-types/single-data-type.md)|<span data-ttu-id="e578f-132">`Single`, `Double`</span><span class="sxs-lookup"><span data-stu-id="e578f-132">`Single`, `Double`</span></span>|  
+|[<span data-ttu-id="e578f-133">Double</span><span class="sxs-lookup"><span data-stu-id="e578f-133">Double</span></span>](../../../../visual-basic/language-reference/data-types/double-data-type.md)|`Double`|  
+|<span data-ttu-id="e578f-134">いずれかの列挙型 ([Enum](../../../../visual-basic/language-reference/statements/enum-statement.md))</span><span class="sxs-lookup"><span data-stu-id="e578f-134">Any enumerated type ([Enum](../../../../visual-basic/language-reference/statements/enum-statement.md))</span></span>|<span data-ttu-id="e578f-135">その基になる整数型と任意の型を基になる型が拡大します。</span><span class="sxs-lookup"><span data-stu-id="e578f-135">Its underlying integral type and any type to which the underlying type widens.</span></span>|  
+|[<span data-ttu-id="e578f-136">Char</span><span class="sxs-lookup"><span data-stu-id="e578f-136">Char</span></span>](../../../../visual-basic/language-reference/data-types/char-data-type.md)|<span data-ttu-id="e578f-137">`Char`, `String`</span><span class="sxs-lookup"><span data-stu-id="e578f-137">`Char`, `String`</span></span>|  
+|<span data-ttu-id="e578f-138">`Char` 配列</span><span class="sxs-lookup"><span data-stu-id="e578f-138">`Char` array</span></span>|<span data-ttu-id="e578f-139">`Char`配列、`String`</span><span class="sxs-lookup"><span data-stu-id="e578f-139">`Char` array, `String`</span></span>|  
+|<span data-ttu-id="e578f-140">任意の型</span><span class="sxs-lookup"><span data-stu-id="e578f-140">Any type</span></span>|[<span data-ttu-id="e578f-141">オブジェクト</span><span class="sxs-lookup"><span data-stu-id="e578f-141">Object</span></span>](../../../../visual-basic/language-reference/data-types/object-data-type.md)|  
+|<span data-ttu-id="e578f-142">すべての派生型</span><span class="sxs-lookup"><span data-stu-id="e578f-142">Any derived type</span></span>|<span data-ttu-id="e578f-143">いずれかの基本データ型の派生元である<sup>3</sup>します。</span><span class="sxs-lookup"><span data-stu-id="e578f-143">Any base type from which it is derived <sup>3</sup>.</span></span>|  
+|<span data-ttu-id="e578f-144">任意の型</span><span class="sxs-lookup"><span data-stu-id="e578f-144">Any type</span></span>|<span data-ttu-id="e578f-145">任意のインターフェイスを実装します。</span><span class="sxs-lookup"><span data-stu-id="e578f-145">Any interface it implements.</span></span>|  
+|[<span data-ttu-id="e578f-146">Nothing</span><span class="sxs-lookup"><span data-stu-id="e578f-146">Nothing</span></span>](../../../../visual-basic/language-reference/nothing.md)|<span data-ttu-id="e578f-147">任意のデータ型またはオブジェクトの種類。</span><span class="sxs-lookup"><span data-stu-id="e578f-147">Any data type or object type.</span></span>|  
   
- <sup>1</sup>定義では、すべてのデータ型は自動的に拡大します。  
+ <span data-ttu-id="e578f-148"><sup>1</sup>定義では、すべてのデータ型は自動的に拡大します。</span><span class="sxs-lookup"><span data-stu-id="e578f-148"><sup>1</sup> By definition, every data type widens to itself.</span></span>  
   
- <sup>2</sup>から変換`Integer`、 `UInteger`、 `Long`、 `ULong`、または`Decimal`に`Single`または`Double`大きさが失われることはありませんが、精度が失われる可能性があります。 この意味は情報の損失は発生しません。  
+ <span data-ttu-id="e578f-149"><sup>2</sup>から変換`Integer`、 `UInteger`、 `Long`、 `ULong`、または`Decimal`に`Single`または`Double`大きさが失われることはありませんが、精度が失われる可能性があります。</span><span class="sxs-lookup"><span data-stu-id="e578f-149"><sup>2</sup> Conversions from `Integer`, `UInteger`, `Long`, `ULong`, or `Decimal` to `Single` or `Double` might result in loss of precision, but never in loss of magnitude.</span></span> <span data-ttu-id="e578f-150">この意味は情報の損失は発生しません。</span><span class="sxs-lookup"><span data-stu-id="e578f-150">In this sense they do not incur information loss.</span></span>  
   
- <sup>3</sup>派生型からその基本型のいずれかへの変換を広げることは驚くかもしれません。 理由は、派生型には、基本型のインスタンスとして扱うことのように、基本型のすべてのメンバーが含まれています。 反対の方向に、基本データ型に派生型で定義されたメンバーは含まれません。  
+ <span data-ttu-id="e578f-151"><sup>3</sup>派生型からその基本型のいずれかへの変換を広げることは驚くかもしれません。</span><span class="sxs-lookup"><span data-stu-id="e578f-151"><sup>3</sup> It might seem surprising that a conversion from a derived type to one of its base types is widening.</span></span> <span data-ttu-id="e578f-152">理由は、派生型には、基本型のインスタンスとして扱うことのように、基本型のすべてのメンバーが含まれています。</span><span class="sxs-lookup"><span data-stu-id="e578f-152">The justification is that the derived type contains all the members of the base type, so it qualifies as an instance of the base type.</span></span> <span data-ttu-id="e578f-153">反対の方向に、基本データ型に派生型で定義されたメンバーは含まれません。</span><span class="sxs-lookup"><span data-stu-id="e578f-153">In the opposite direction, the base type does not contain any new members defined by the derived type.</span></span>  
   
- 拡大変換では、実行時に常に成功して、データの損失を発生することはありません。 暗黙的に常に実行しているかどうか、 [Option Strict ステートメント](../../../../visual-basic/language-reference/statements/option-strict-statement.md)チェックするスイッチの種類を設定`On`または`Off`です。  
+ <span data-ttu-id="e578f-154">拡大変換では、実行時に常に成功して、データの損失を発生することはありません。</span><span class="sxs-lookup"><span data-stu-id="e578f-154">Widening conversions always succeed at run time and never incur data loss.</span></span> <span data-ttu-id="e578f-155">暗黙的に常に実行しているかどうか、 [Option Strict ステートメント](../../../../visual-basic/language-reference/statements/option-strict-statement.md)チェックするスイッチの種類を設定`On`または`Off`です。</span><span class="sxs-lookup"><span data-stu-id="e578f-155">You can always perform them implicitly, whether the [Option Strict Statement](../../../../visual-basic/language-reference/statements/option-strict-statement.md) sets the type checking switch to `On` or to `Off`.</span></span>  
   
-## <a name="narrowing-conversions"></a>縮小変換  
- 標準的な縮小変換を以下に示します。  
+## <a name="narrowing-conversions"></a><span data-ttu-id="e578f-156">縮小変換</span><span class="sxs-lookup"><span data-stu-id="e578f-156">Narrowing Conversions</span></span>  
+ <span data-ttu-id="e578f-157">標準的な縮小変換を以下に示します。</span><span class="sxs-lookup"><span data-stu-id="e578f-157">The standard narrowing conversions include the following:</span></span>  
   
--   (すべての型は、自動的に拡大) する点を除いて逆方向の拡大変換前の表にします。  
+-   <span data-ttu-id="e578f-158">(すべての型は、自動的に拡大) する点を除いて逆方向の拡大変換前の表にします。</span><span class="sxs-lookup"><span data-stu-id="e578f-158">The reverse directions of the widening conversions in the preceding table (except that every type widens to itself)</span></span>  
   
--   いずれかの方向の間で変換[ブール](../../../../visual-basic/language-reference/data-types/boolean-data-type.md)と任意の数値型  
+-   <span data-ttu-id="e578f-159">いずれかの方向の間で変換[ブール](../../../../visual-basic/language-reference/data-types/boolean-data-type.md)と任意の数値型</span><span class="sxs-lookup"><span data-stu-id="e578f-159">Conversions in either direction between [Boolean](../../../../visual-basic/language-reference/data-types/boolean-data-type.md) and any numeric type</span></span>  
   
--   列挙型のいずれかの任意の数値型に変換 (`Enum`)  
+-   <span data-ttu-id="e578f-160">列挙型のいずれかの任意の数値型に変換 (`Enum`)</span><span class="sxs-lookup"><span data-stu-id="e578f-160">Conversions from any numeric type to any enumerated type (`Enum`)</span></span>  
   
--   いずれかの方向の間で変換[文字列](../../../../visual-basic/language-reference/data-types/string-data-type.md)と任意の数値型`Boolean`、または[日付](../../../../visual-basic/language-reference/data-types/date-data-type.md)  
+-   <span data-ttu-id="e578f-161">いずれかの方向の間で変換[文字列](../../../../visual-basic/language-reference/data-types/string-data-type.md)と任意の数値型`Boolean`、または[日付](../../../../visual-basic/language-reference/data-types/date-data-type.md)</span><span class="sxs-lookup"><span data-stu-id="e578f-161">Conversions in either direction between [String](../../../../visual-basic/language-reference/data-types/string-data-type.md) and any numeric type, `Boolean`, or [Date](../../../../visual-basic/language-reference/data-types/date-data-type.md)</span></span>  
   
--   派生した型に型のデータ型またはオブジェクトからの変換  
+-   <span data-ttu-id="e578f-162">派生した型に型のデータ型またはオブジェクトからの変換</span><span class="sxs-lookup"><span data-stu-id="e578f-162">Conversions from a data type or object type to a type derived from it</span></span>  
   
- 縮小変換は常にではありません、実行時に成功してことができます。 または失敗データ消失が発生します。 マッピング先データ型に変換される値を受信できない場合は、エラーが発生します。 たとえば、数値の変換は、オーバーフローが発生する可能性です。 コンパイラがしない限り、縮小変換を暗黙的に実行を許可していない、 [Option Strict ステートメント](../../../../visual-basic/language-reference/statements/option-strict-statement.md)チェックするスイッチの種類を設定`Off`します。  
+ <span data-ttu-id="e578f-163">縮小変換は常にではありません、実行時に成功してことができます。 または失敗データ消失が発生します。</span><span class="sxs-lookup"><span data-stu-id="e578f-163">Narrowing conversions do not always succeed at run time, and can fail or incur data loss.</span></span> <span data-ttu-id="e578f-164">マッピング先データ型に変換される値を受信できない場合は、エラーが発生します。</span><span class="sxs-lookup"><span data-stu-id="e578f-164">An error occurs if the destination data type cannot receive the value being converted.</span></span> <span data-ttu-id="e578f-165">たとえば、数値の変換は、オーバーフローが発生する可能性です。</span><span class="sxs-lookup"><span data-stu-id="e578f-165">For example, a numeric conversion can result in an overflow.</span></span> <span data-ttu-id="e578f-166">コンパイラがしない限り、縮小変換を暗黙的に実行を許可していない、 [Option Strict ステートメント](../../../../visual-basic/language-reference/statements/option-strict-statement.md)チェックするスイッチの種類を設定`Off`します。</span><span class="sxs-lookup"><span data-stu-id="e578f-166">The compiler does not allow you to perform narrowing conversions implicitly unless the [Option Strict Statement](../../../../visual-basic/language-reference/statements/option-strict-statement.md) sets the type checking switch to `Off`.</span></span>  
   
 > [!NOTE]
->  内の要素からの変換の縮小変換エラーは出力されず、`For Each…Next`ループ制御変数のコレクション。 詳細と例については、「縮小変換」セクションを参照して[ごとにしています.次のステートメントの](../../../../visual-basic/language-reference/statements/for-each-next-statement.md)です。  
+>  <span data-ttu-id="e578f-167">内の要素からの変換の縮小変換エラーは出力されず、`For Each…Next`ループ制御変数のコレクション。</span><span class="sxs-lookup"><span data-stu-id="e578f-167">The narrowing-conversion error is suppressed for conversions from the elements in a `For Each…Next` collection to the loop control variable.</span></span> <span data-ttu-id="e578f-168">詳細と例については、「縮小変換」セクションを参照して[ごとにしています.次のステートメントの](../../../../visual-basic/language-reference/statements/for-each-next-statement.md)です。</span><span class="sxs-lookup"><span data-stu-id="e578f-168">For more information and examples, see the "Narrowing Conversions" section in [For Each...Next Statement](../../../../visual-basic/language-reference/statements/for-each-next-statement.md).</span></span>  
   
-### <a name="when-to-use-narrowing-conversions"></a>縮小変換を使用する場合  
- 変換元の値は、エラーやデータ損失なし先のデータ型に変換できることがわかっている場合は、縮小変換を使用します。 ある場合など、`String`使用できますがわかっている"True"または"False"を含む、`CBool`キーワードに変換を`Boolean`します。  
+### <a name="when-to-use-narrowing-conversions"></a><span data-ttu-id="e578f-169">縮小変換を使用する場合</span><span class="sxs-lookup"><span data-stu-id="e578f-169">When to Use Narrowing Conversions</span></span>  
+ <span data-ttu-id="e578f-170">変換元の値は、エラーやデータ損失なし先のデータ型に変換できることがわかっている場合は、縮小変換を使用します。</span><span class="sxs-lookup"><span data-stu-id="e578f-170">You use a narrowing conversion when you know the source value can be converted to the destination data type without error or data loss.</span></span> <span data-ttu-id="e578f-171">ある場合など、`String`使用できますがわかっている"True"または"False"を含む、`CBool`キーワードに変換を`Boolean`します。</span><span class="sxs-lookup"><span data-stu-id="e578f-171">For example, if you have a `String` that you know contains either "True" or "False," you can use the `CBool` keyword to convert it to `Boolean`.</span></span>  
   
-## <a name="exceptions-during-conversion"></a>変換中に例外  
- 拡大変換を常に成功、例外をスローしません。 縮小変換を失敗した場合は、最もよく、次の例外をスローします。  
+## <a name="exceptions-during-conversion"></a><span data-ttu-id="e578f-172">変換中に例外</span><span class="sxs-lookup"><span data-stu-id="e578f-172">Exceptions During Conversion</span></span>  
+ <span data-ttu-id="e578f-173">拡大変換を常に成功、例外をスローしません。</span><span class="sxs-lookup"><span data-stu-id="e578f-173">Because widening conversions always succeed, they do not throw exceptions.</span></span> <span data-ttu-id="e578f-174">縮小変換を失敗した場合は、最もよく、次の例外をスローします。</span><span class="sxs-lookup"><span data-stu-id="e578f-174">Narrowing conversions, when they fail, most commonly throw the following exceptions:</span></span>  
   
--   <xref:System.InvalidCastException>-2 つの型の間で変換が定義されていない場合</xref:System.InvalidCastException>  
+-   <span data-ttu-id="e578f-175"><xref:System.InvalidCastException>-2 つの型の間で変換が定義されていない場合</xref:System.InvalidCastException></span><span class="sxs-lookup"><span data-stu-id="e578f-175"><xref:System.InvalidCastException> — if no conversion is defined between the two types</span></span>  
   
--   <xref:System.OverflowException>-(整数型のみ) のターゲット タイプについては、変換後の値が大きすぎる場合</xref:System.OverflowException>  
+-   <span data-ttu-id="e578f-176"><xref:System.OverflowException>-(整数型のみ) のターゲット タイプについては、変換後の値が大きすぎる場合</xref:System.OverflowException></span><span class="sxs-lookup"><span data-stu-id="e578f-176"><xref:System.OverflowException> — (integral types only) if the converted value is too large for the target type</span></span>  
   
- クラスまたは構造体が定義されている場合、 [CType 関数](../../../../visual-basic/language-reference/functions/ctype-function.md)そのクラスまたは構造体、または変換演算子として機能するを`CType`は適切な処置をとり、例外をスローします。 さらを`CType`呼び出すことが[!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]関数または[!INCLUDE[dnprdnshort](../../../../csharp/getting-started/includes/dnprdnshort_md.md)]メソッドで、さらに、さまざまな例外をスローする可能性があります。  
+ <span data-ttu-id="e578f-177">クラスまたは構造体が定義されている場合、 [CType 関数](../../../../visual-basic/language-reference/functions/ctype-function.md)そのクラスまたは構造体、または変換演算子として機能するを`CType`は適切な処置をとり、例外をスローします。</span><span class="sxs-lookup"><span data-stu-id="e578f-177">If a class or structure defines a [CType Function](../../../../visual-basic/language-reference/functions/ctype-function.md) to serve as a conversion operator to or from that class or structure, that `CType` can throw any exception it deems appropriate.</span></span> <span data-ttu-id="e578f-178">さらを`CType`呼び出すことが[!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]関数または[!INCLUDE[dnprdnshort](../../../../csharp/getting-started/includes/dnprdnshort_md.md)]メソッドで、さらに、さまざまな例外をスローする可能性があります。</span><span class="sxs-lookup"><span data-stu-id="e578f-178">In addition, that `CType` might call [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] functions or [!INCLUDE[dnprdnshort](../../../../csharp/getting-started/includes/dnprdnshort_md.md)] methods, which in turn could throw a variety of exceptions.</span></span>  
   
-## <a name="changes-during-reference-type-conversions"></a>参照型の変換中の変更  
- 変換、*型参照*ポインターだけが、値をコピーします。 値そのものがコピーも、任意の方法で変更します。 変更できることだけは、ポインターを保持する変数のデータ型です。 次の例では、データ型が派生クラスからその基本クラスに変換されますが、両方の変数は、これが指すオブジェクトは変更されません。  
+## <a name="changes-during-reference-type-conversions"></a><span data-ttu-id="e578f-179">参照型の変換中の変更</span><span class="sxs-lookup"><span data-stu-id="e578f-179">Changes During Reference Type Conversions</span></span>  
+ <span data-ttu-id="e578f-180">変換、*型参照*ポインターだけが、値をコピーします。</span><span class="sxs-lookup"><span data-stu-id="e578f-180">A conversion from a *reference type* copies only the pointer to the value.</span></span> <span data-ttu-id="e578f-181">値そのものがコピーも、任意の方法で変更します。</span><span class="sxs-lookup"><span data-stu-id="e578f-181">The value itself is neither copied nor changed in any way.</span></span> <span data-ttu-id="e578f-182">変更できることだけは、ポインターを保持する変数のデータ型です。</span><span class="sxs-lookup"><span data-stu-id="e578f-182">The only thing that can change is the data type of the variable holding the pointer.</span></span> <span data-ttu-id="e578f-183">次の例では、データ型が派生クラスからその基本クラスに変換されますが、両方の変数は、これが指すオブジェクトは変更されません。</span><span class="sxs-lookup"><span data-stu-id="e578f-183">In the following example, the data type is converted from the derived class to its base class, but the object that both variables now point to is unchanged.</span></span>  
   
 ```  
 ' Assume class cSquare inherits from class cShape.  
@@ -132,12 +133,12 @@ Dim square As cSquare = New cSquare
 shape = square  
 ```  
   
-## <a name="see-also"></a>関連項目  
- [データ型](../../../../visual-basic/programming-guide/language-features/data-types/index.md)   
- [Visual Basic における型変換](../../../../visual-basic/programming-guide/language-features/data-types/type-conversions.md)   
- [明示的および暗黙的な変換](../../../../visual-basic/programming-guide/language-features/data-types/implicit-and-explicit-conversions.md)   
- [文字列とその他の型の間の変換](../../../../visual-basic/programming-guide/language-features/data-types/conversions-between-strings-and-other-types.md)   
- [方法: Visual Basic での別の型のオブジェクトの変換](../../../../visual-basic/programming-guide/language-features/data-types/how-to-convert-an-object-to-another-type.md)   
- [配列の変換](../../../../visual-basic/programming-guide/language-features/data-types/array-conversions.md)   
- [データ型](../../../../visual-basic/language-reference/data-types/data-type-summary.md)   
- [データ型変換関数](../../../../visual-basic/language-reference/functions/type-conversion-functions.md)
+## <a name="see-also"></a><span data-ttu-id="e578f-184">関連項目</span><span class="sxs-lookup"><span data-stu-id="e578f-184">See Also</span></span>  
+ <span data-ttu-id="e578f-185">[データ型](../../../../visual-basic/programming-guide/language-features/data-types/index.md) </span><span class="sxs-lookup"><span data-stu-id="e578f-185">[Data Types](../../../../visual-basic/programming-guide/language-features/data-types/index.md) </span></span>  
+<span data-ttu-id="e578f-186"> [Visual Basic における型変換](../../../../visual-basic/programming-guide/language-features/data-types/type-conversions.md) </span><span class="sxs-lookup"><span data-stu-id="e578f-186"> [Type Conversions in Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/type-conversions.md) </span></span>  
+<span data-ttu-id="e578f-187"> [明示的および暗黙的な変換](../../../../visual-basic/programming-guide/language-features/data-types/implicit-and-explicit-conversions.md) </span><span class="sxs-lookup"><span data-stu-id="e578f-187"> [Implicit and Explicit Conversions](../../../../visual-basic/programming-guide/language-features/data-types/implicit-and-explicit-conversions.md) </span></span>  
+<span data-ttu-id="e578f-188"> [文字列とその他の型の間の変換](../../../../visual-basic/programming-guide/language-features/data-types/conversions-between-strings-and-other-types.md) </span><span class="sxs-lookup"><span data-stu-id="e578f-188"> [Conversions Between Strings and Other Types](../../../../visual-basic/programming-guide/language-features/data-types/conversions-between-strings-and-other-types.md) </span></span>  
+<span data-ttu-id="e578f-189"> [方法: Visual Basic での別の型のオブジェクトの変換](../../../../visual-basic/programming-guide/language-features/data-types/how-to-convert-an-object-to-another-type.md) </span><span class="sxs-lookup"><span data-stu-id="e578f-189"> [How to: Convert an Object to Another Type in Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/how-to-convert-an-object-to-another-type.md) </span></span>  
+<span data-ttu-id="e578f-190"> [配列の変換](../../../../visual-basic/programming-guide/language-features/data-types/array-conversions.md) </span><span class="sxs-lookup"><span data-stu-id="e578f-190"> [Array Conversions](../../../../visual-basic/programming-guide/language-features/data-types/array-conversions.md) </span></span>  
+<span data-ttu-id="e578f-191"> [データ型](../../../../visual-basic/language-reference/data-types/data-type-summary.md) </span><span class="sxs-lookup"><span data-stu-id="e578f-191"> [Data Types](../../../../visual-basic/language-reference/data-types/data-type-summary.md) </span></span>  
+<span data-ttu-id="e578f-192"> [データ型変換関数](../../../../visual-basic/language-reference/functions/type-conversion-functions.md)</span><span class="sxs-lookup"><span data-stu-id="e578f-192"> [Type Conversion Functions](../../../../visual-basic/language-reference/functions/type-conversion-functions.md)</span></span>

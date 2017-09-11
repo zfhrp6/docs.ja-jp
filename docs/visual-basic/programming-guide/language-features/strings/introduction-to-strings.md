@@ -30,24 +30,25 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 604aa2f91bb2a25ba59dc75d5d73314bc7bf2343
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
+ms.openlocfilehash: 49f8be86d7ec86152b0d4cfc74dd9e13e6814d32
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/12/2017
 
 ---
-# <a name="introduction-to-strings-in-visual-basic"></a>Visual Basic の文字列の概要
-このセクションでの文字列を使用して基本的な概念を説明[!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]します。  
+# <a name="introduction-to-strings-in-visual-basic"></a><span data-ttu-id="e1397-102">Visual Basic の文字列の概要</span><span class="sxs-lookup"><span data-stu-id="e1397-102">Introduction to Strings in Visual Basic</span></span>
+<span data-ttu-id="e1397-103">このセクションでの文字列を使用して基本的な概念を説明[!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]します。</span><span class="sxs-lookup"><span data-stu-id="e1397-103">This section describes the basic concepts behind using strings in [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)].</span></span>  
   
-## <a name="in-this-section"></a>このセクションの内容  
- [文字列の基本](../../../../visual-basic/programming-guide/language-features/strings/string-basics.md)  
- 文字列および文字列変数を使用して基本的な概念を紹介します。  
+## <a name="in-this-section"></a><span data-ttu-id="e1397-104">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="e1397-104">In This Section</span></span>  
+ [<span data-ttu-id="e1397-105">文字列の基本</span><span class="sxs-lookup"><span data-stu-id="e1397-105">String Basics</span></span>](../../../../visual-basic/programming-guide/language-features/strings/string-basics.md)  
+ <span data-ttu-id="e1397-106">文字列および文字列変数を使用して基本的な概念を紹介します。</span><span class="sxs-lookup"><span data-stu-id="e1397-106">Introduces the basic concepts behind using strings and string variables.</span></span>  
   
- [Visual Basic で文字列操作メソッドの種類](../../../../visual-basic/programming-guide/language-features/strings/types-of-string-manipulation-methods.md)  
- 分析して、文字列を操作するいくつかの方法を紹介します。  
+ [<span data-ttu-id="e1397-107">Visual Basic で文字列操作メソッドの種類</span><span class="sxs-lookup"><span data-stu-id="e1397-107">Types of String Manipulation Methods in Visual Basic</span></span>](../../../../visual-basic/programming-guide/language-features/strings/types-of-string-manipulation-methods.md)  
+ <span data-ttu-id="e1397-108">分析して、文字列を操作するいくつかの方法を紹介します。</span><span class="sxs-lookup"><span data-stu-id="e1397-108">Introduces several different ways to analyze and manipulate strings.</span></span>  
   
- [Visual Basic における文字列のカルチャのしくみ](../../../../visual-basic/programming-guide/language-features/strings/how-culture-affects-strings.md)  
- 説明方法[!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]カルチャ文字列の変換との比較を実行する情報を使用します。  
+ [<span data-ttu-id="e1397-109">Visual Basic における文字列のカルチャのしくみ</span><span class="sxs-lookup"><span data-stu-id="e1397-109">How Culture Affects Strings in Visual Basic</span></span>](../../../../visual-basic/programming-guide/language-features/strings/how-culture-affects-strings.md)  
+ <span data-ttu-id="e1397-110">説明方法[!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]カルチャ文字列の変換との比較を実行する情報を使用します。</span><span class="sxs-lookup"><span data-stu-id="e1397-110">Discusses how [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] uses culture information to perform string conversions and comparisons.</span></span>  
   
-## <a name="see-also"></a>関連項目  
- [文字列](../../../../visual-basic/programming-guide/language-features/strings/index.md)
+## <a name="see-also"></a><span data-ttu-id="e1397-111">関連項目</span><span class="sxs-lookup"><span data-stu-id="e1397-111">See Also</span></span>  
+ [<span data-ttu-id="e1397-112">文字列</span><span class="sxs-lookup"><span data-stu-id="e1397-112">Strings</span></span>](../../../../visual-basic/programming-guide/language-features/strings/index.md)

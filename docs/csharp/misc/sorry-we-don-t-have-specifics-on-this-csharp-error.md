@@ -897,32 +897,33 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
+ms.translationtype: Machine Translation
 ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
 ms.openlocfilehash: d1f8fb48a1f3b64d7e11a0ef57d1ef1d23ef9ae5
+ms.contentlocale: ja-jp
 ms.lasthandoff: 03/13/2017
 
 ---
-# <a name="sorry-we-don39t-have-specifics-on-this-c-error"></a>申し訳ありません。 が、この c# エラーに関する詳細はありません。
-申し訳ありませんが、このエラーに関する特定の情報はありません。 Web でエラー番号とメッセージ テキストを検索して情報を探すことができます。 または、次のフォーラムのいずれかを使用して他の開発者に尋ねることができます。  
+# <a name="sorry-we-don39t-have-specifics-on-this-c-error"></a><span data-ttu-id="5d3ef-102">申し訳ありません。 が、この c# エラーに関する詳細はありません。</span><span class="sxs-lookup"><span data-stu-id="5d3ef-102">Sorry, we don&#39;t have specifics on this C# error</span></span>
+<span data-ttu-id="5d3ef-103">申し訳ありませんが、このエラーに関する特定の情報はありません。</span><span class="sxs-lookup"><span data-stu-id="5d3ef-103">We’re sorry, but we don’t have any specific information about this error.</span></span> <span data-ttu-id="5d3ef-104">Web でエラー番号とメッセージ テキストを検索して情報を探すことができます。</span><span class="sxs-lookup"><span data-stu-id="5d3ef-104">You can search for the error number and message text to find information on the web.</span></span> <span data-ttu-id="5d3ef-105">または、次のフォーラムのいずれかを使用して他の開発者に尋ねることができます。</span><span class="sxs-lookup"><span data-stu-id="5d3ef-105">Or, you can ask other developers using one of these forums:</span></span>  
   
- [Visual c# 言語](http://go.microsoft.com/fwlink/?LinkId=146921)  
- [!INCLUDE[csprcs](../../csharp/includes/csprcs_md.md)] 言語の構文やコンパイラに関する質問や議論のためのフォーラムです。  
+ [<span data-ttu-id="5d3ef-106">Visual c# 言語</span><span class="sxs-lookup"><span data-stu-id="5d3ef-106">Visual C# Language</span></span>](http://go.microsoft.com/fwlink/?LinkId=146921)  
+ <span data-ttu-id="5d3ef-107">[!INCLUDE[csprcs](../../csharp/includes/csprcs_md.md)] 言語の構文やコンパイラに関する質問や議論のためのフォーラムです。</span><span class="sxs-lookup"><span data-stu-id="5d3ef-107">Provides a forum for questions about and general discussions of the [!INCLUDE[csprcs](../../csharp/includes/csprcs_md.md)] language syntax and compiler.</span></span>  
   
- [Visual c# IDE](http://go.microsoft.com/fwlink/?LinkId=146922)  
- [!INCLUDE[vsprvs](../../csharp/includes/vsprvs_md.md)] 環境で作業する方法について質問するためのフォーラムです。  
+ [<span data-ttu-id="5d3ef-108">Visual c# IDE</span><span class="sxs-lookup"><span data-stu-id="5d3ef-108">Visual C# IDE</span></span>](http://go.microsoft.com/fwlink/?LinkId=146922)  
+ <span data-ttu-id="5d3ef-109">[!INCLUDE[vsprvs](../../csharp/includes/vsprvs_md.md)] 環境で作業する方法について質問するためのフォーラムです。</span><span class="sxs-lookup"><span data-stu-id="5d3ef-109">Provides a forum for questions about how to work in the [!INCLUDE[vsprvs](../../csharp/includes/vsprvs_md.md)] environment.</span></span>  
   
- [Visual c# 全般](http://go.microsoft.com/fwlink/?LinkId=146920)  
- 他のフォーラムで取り上げていない [!INCLUDE[csprcs](../../csharp/includes/csprcs_md.md)] に関する質問や議論のためのフォーラムです。  
+ [<span data-ttu-id="5d3ef-110">Visual c# 全般</span><span class="sxs-lookup"><span data-stu-id="5d3ef-110">Visual C# General</span></span>](http://go.microsoft.com/fwlink/?LinkId=146920)  
+ <span data-ttu-id="5d3ef-111">他のフォーラムで取り上げていない [!INCLUDE[csprcs](../../csharp/includes/csprcs_md.md)] に関する質問や議論のためのフォーラムです。</span><span class="sxs-lookup"><span data-stu-id="5d3ef-111">Provides a forum for questions about and issues with [!INCLUDE[csprcs](../../csharp/includes/csprcs_md.md)] that are not discussed in other forums.</span></span>  
   
- [StackOverflow](http://stackoverflow.com/questions/tagged/c%23)  
- [!INCLUDE[csprcs](../../csharp/includes/csprcs_md.md)] に関する質問や問題のためのフォーラムです。  
+ [<span data-ttu-id="5d3ef-112">StackOverflow</span><span class="sxs-lookup"><span data-stu-id="5d3ef-112">StackOverflow</span></span>](http://stackoverflow.com/questions/tagged/c%23)  
+ <span data-ttu-id="5d3ef-113">[!INCLUDE[csprcs](../../csharp/includes/csprcs_md.md)] に関する質問や問題のためのフォーラムです。</span><span class="sxs-lookup"><span data-stu-id="5d3ef-113">Provides a forum for questions about and issues with [!INCLUDE[csprcs](../../csharp/includes/csprcs_md.md)].</span></span>  
   
- 関連項目:  
- [Visual c# プログラマのための他のリソース](../../csharp/getting-started/additional-resources.md)  
+ <span data-ttu-id="5d3ef-114">関連項目:</span><span class="sxs-lookup"><span data-stu-id="5d3ef-114">Also see:</span></span>  
+<span data-ttu-id="5d3ef-115"> [Visual c# プログラマのための他のリソース](../../csharp/getting-started/additional-resources.md)</span><span class="sxs-lookup"><span data-stu-id="5d3ef-115"> [Additional Resources for Visual C# Programmers](../../csharp/getting-started/additional-resources.md)</span></span>  
   
-## <a name="see-also"></a>関連項目  
- [C# プログラミング ガイド](../../csharp/programming-guide/index.md)   
- [C# リファレンス](../../csharp/language-reference/index.md)   
- [ご意見](https://docs.microsoft.com/visualstudio/ide/talk-to-us)   
- [ご意見](https://docs.microsoft.com/visualstudio/ide/talk-to-us)
+## <a name="see-also"></a><span data-ttu-id="5d3ef-116">関連項目</span><span class="sxs-lookup"><span data-stu-id="5d3ef-116">See Also</span></span>  
+ <span data-ttu-id="5d3ef-117">[C# プログラミング ガイド](../../csharp/programming-guide/index.md) </span><span class="sxs-lookup"><span data-stu-id="5d3ef-117">[C# Programming Guide](../../csharp/programming-guide/index.md) </span></span>  
+<span data-ttu-id="5d3ef-118"> [C# リファレンス](../../csharp/language-reference/index.md) </span><span class="sxs-lookup"><span data-stu-id="5d3ef-118"> [C# Reference](../../csharp/language-reference/index.md) </span></span>  
+<span data-ttu-id="5d3ef-119"> [ご意見](https://docs.microsoft.com/visualstudio/ide/talk-to-us) </span><span class="sxs-lookup"><span data-stu-id="5d3ef-119"> [Talk to Us](https://docs.microsoft.com/visualstudio/ide/talk-to-us) </span></span>  
+<span data-ttu-id="5d3ef-120"> [ご意見](https://docs.microsoft.com/visualstudio/ide/talk-to-us)</span><span class="sxs-lookup"><span data-stu-id="5d3ef-120"> [Talk to Us](https://docs.microsoft.com/visualstudio/ide/talk-to-us)</span></span>

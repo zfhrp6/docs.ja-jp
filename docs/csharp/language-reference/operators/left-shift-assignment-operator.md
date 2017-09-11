@@ -37,31 +37,31 @@ ms.contentlocale: ja-jp
 ms.lasthandoff: 07/28/2017
 
 ---
-# <a name="ltlt-operator-c-reference"></a>&lt;&lt;= 演算子 (C# リファレンス)
-左シフト代入演算子。  
+# <a name="ltlt-operator-c-reference"></a><span data-ttu-id="6bf55-102">&lt;&lt;= 演算子 (C# リファレンス)</span><span class="sxs-lookup"><span data-stu-id="6bf55-102">&lt;&lt;= Operator (C# Reference)</span></span>
+<span data-ttu-id="6bf55-103">左シフト代入演算子。</span><span class="sxs-lookup"><span data-stu-id="6bf55-103">The left-shift assignment operator.</span></span>  
   
-## <a name="remarks"></a>コメント  
- 次のような形式の式があります。  
+## <a name="remarks"></a><span data-ttu-id="6bf55-104">コメント</span><span class="sxs-lookup"><span data-stu-id="6bf55-104">Remarks</span></span>  
+ <span data-ttu-id="6bf55-105">次のような形式の式があります。</span><span class="sxs-lookup"><span data-stu-id="6bf55-105">An expression of the form</span></span>  
   
 ```  
 x <<= y  
 ```  
   
- これが次のように評価されます。  
+ <span data-ttu-id="6bf55-106">これが次のように評価されます。</span><span class="sxs-lookup"><span data-stu-id="6bf55-106">is evaluated as</span></span>  
   
 ```  
 x = x << y  
 ```  
   
- ただし、`x` が評価されるのは 1 回だけです。 [<< 演算子](../../../csharp/language-reference/operators/left-shift-operator.md) は、`y` で指定されたビット数だけ `x` を左にシフトします。  
+ <span data-ttu-id="6bf55-107">ただし、`x` が評価されるのは 1 回だけです。</span><span class="sxs-lookup"><span data-stu-id="6bf55-107">except that `x` is only evaluated once.</span></span> <span data-ttu-id="6bf55-108">[<< 演算子](../../../csharp/language-reference/operators/left-shift-operator.md) は、`y` で指定されたビット数だけ `x` を左にシフトします。</span><span class="sxs-lookup"><span data-stu-id="6bf55-108">The [<< operator](../../../csharp/language-reference/operators/left-shift-operator.md) shifts `x` left by the number of bits specified by `y`.</span></span>  
   
- `<<=` 演算子は直接オーバーロードできませんが、ユーザー定義型は [<< 演算子](../../../csharp/language-reference/operators/left-shift-operator.md) をオーバーロードできます (「[operator](../../../csharp/language-reference/keywords/operator.md)」参照)。  
+ <span data-ttu-id="6bf55-109">`<<=` 演算子は直接オーバーロードできませんが、ユーザー定義型は [<< 演算子](../../../csharp/language-reference/operators/left-shift-operator.md) をオーバーロードできます (「[operator](../../../csharp/language-reference/keywords/operator.md)」参照)。</span><span class="sxs-lookup"><span data-stu-id="6bf55-109">The `<<=` operator cannot be overloaded directly, but user-defined types can overload the [<< operator](../../../csharp/language-reference/operators/left-shift-operator.md) (see [operator](../../../csharp/language-reference/keywords/operator.md)).</span></span>  
   
-## <a name="example"></a>例  
- [!code-cs[csRefOperators#12](../../../csharp/language-reference/operators/codesnippet/CSharp/left-shift-assignment-operator_1.cs)]  
+## <a name="example"></a><span data-ttu-id="6bf55-110">例</span><span class="sxs-lookup"><span data-stu-id="6bf55-110">Example</span></span>  
+ <span data-ttu-id="6bf55-111">[!code-cs[csRefOperators#12](../../../csharp/language-reference/operators/codesnippet/CSharp/left-shift-assignment-operator_1.cs)]</span><span class="sxs-lookup"><span data-stu-id="6bf55-111">[!code-cs[csRefOperators#12](../../../csharp/language-reference/operators/codesnippet/CSharp/left-shift-assignment-operator_1.cs)]</span></span>  
   
-## <a name="see-also"></a>関連項目  
- [C# リファレンス](../../../csharp/language-reference/index.md)   
- [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
- [C# 演算子](../../../csharp/language-reference/operators/index.md)
+## <a name="see-also"></a><span data-ttu-id="6bf55-112">関連項目</span><span class="sxs-lookup"><span data-stu-id="6bf55-112">See Also</span></span>  
+ <span data-ttu-id="6bf55-113">[C# リファレンス](../../../csharp/language-reference/index.md) </span><span class="sxs-lookup"><span data-stu-id="6bf55-113">[C# Reference](../../../csharp/language-reference/index.md) </span></span>  
+ <span data-ttu-id="6bf55-114">[C# プログラミング ガイド](../../../csharp/programming-guide/index.md) </span><span class="sxs-lookup"><span data-stu-id="6bf55-114">[C# Programming Guide](../../../csharp/programming-guide/index.md) </span></span>  
+ [<span data-ttu-id="6bf55-115">C# 演算子</span><span class="sxs-lookup"><span data-stu-id="6bf55-115">C# Operators</span></span>](../../../csharp/language-reference/operators/index.md)
 

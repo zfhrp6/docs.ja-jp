@@ -26,16 +26,16 @@ ms.contentlocale: ja-jp
 ms.lasthandoff: 07/28/2017
 
 ---
-# <a name="reference-linq-to-xml"></a>リファレンス (LINQ to XML)
-このトピックには、LINQ to XML のリファレンス トピックへのリンクが含まれています。  
+# <a name="reference-linq-to-xml"></a><span data-ttu-id="258b7-102">リファレンス (LINQ to XML)</span><span class="sxs-lookup"><span data-stu-id="258b7-102">Reference (LINQ to XML)</span></span>
+<span data-ttu-id="258b7-103">このトピックには、LINQ to XML のリファレンス トピックへのリンクが含まれています。</span><span class="sxs-lookup"><span data-stu-id="258b7-103">This topic contains links to the LINQ to XML reference topics.</span></span>  
   
-## <a name="in-this-section"></a>このセクションの内容  
- LINQ to XML クラスに関するリファレンス ドキュメントについては、<xref:System.Xml.Linq> を参照してください。  
+## <a name="in-this-section"></a><span data-ttu-id="258b7-104">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="258b7-104">In This Section</span></span>  
+ <span data-ttu-id="258b7-105">LINQ to XML クラスに関するリファレンス ドキュメントについては、<xref:System.Xml.Linq> を参照してください。</span><span class="sxs-lookup"><span data-stu-id="258b7-105">For reference documentation for the LINQ to XML classes, see <xref:System.Xml.Linq>.</span></span>  
   
- XSD ファイルを基準とした XML ツリーの検証に役立つ拡張メソッドに関するリファレンス ドキュメントについては、<xref:System.Xml.Schema.Extensions?displayProperty=fullName> を参照してください。  
+ <span data-ttu-id="258b7-106">XSD ファイルを基準とした XML ツリーの検証に役立つ拡張メソッドに関するリファレンス ドキュメントについては、<xref:System.Xml.Schema.Extensions?displayProperty=fullName> を参照してください。</span><span class="sxs-lookup"><span data-stu-id="258b7-106">For reference documentation for the extension methods that help you validate XML trees against an XSD file, see <xref:System.Xml.Schema.Extensions?displayProperty=fullName>.</span></span>  
   
- XML ツリーで XPath クエリを評価するための拡張メソッドに関するリファレンス ドキュメントについては、<xref:System.Xml.XPath.Extensions?displayProperty=fullName> を参照してください。  
+ <span data-ttu-id="258b7-107">XML ツリーで XPath クエリを評価するための拡張メソッドに関するリファレンス ドキュメントについては、<xref:System.Xml.XPath.Extensions?displayProperty=fullName> を参照してください。</span><span class="sxs-lookup"><span data-stu-id="258b7-107">For reference documentation for the extension methods that enable you to evaluate XPath queries on an XML tree, see <xref:System.Xml.XPath.Extensions?displayProperty=fullName>.</span></span>  
   
-## <a name="see-also"></a>関連項目  
- [LINQ to XML (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-xml.md)
+## <a name="see-also"></a><span data-ttu-id="258b7-108">関連項目</span><span class="sxs-lookup"><span data-stu-id="258b7-108">See Also</span></span>  
+ [<span data-ttu-id="258b7-109">LINQ to XML (C#)</span><span class="sxs-lookup"><span data-stu-id="258b7-109">LINQ to XML (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/linq-to-xml.md)
 

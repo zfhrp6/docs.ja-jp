@@ -21,13 +21,13 @@ ms.contentlocale: ja-jp
 ms.lasthandoff: 07/28/2017
 
 ---
-# <a name="statically-compiled-queries-linq-to-xml-c"></a>静的にコンパイルされたクエリ (LINQ to XML) (C#)
-<xref:System.Xml.XmlDocument> に対し、LINQ to XML で最も重要なパフォーマンスの利点の 1 つは、XPath のクエリは実行時に解釈する必要がある一方で LINQ to XML のクエリは静的にコンパイルされるという点です。 この機能は LINQ to XML に組み込まれているので、追加の手順を実行することなく利用できますが、その違いを理解しておくと、この 2 つの技術のどちらかを選ぶときに役立ちます。 このトピックでは、相違点について説明します。  
+# <a name="statically-compiled-queries-linq-to-xml-c"></a><span data-ttu-id="58cc1-102">静的にコンパイルされたクエリ (LINQ to XML) (C#)</span><span class="sxs-lookup"><span data-stu-id="58cc1-102">Statically Compiled Queries (LINQ to XML) (C#)</span></span>
+<span data-ttu-id="58cc1-103"><xref:System.Xml.XmlDocument> に対し、LINQ to XML で最も重要なパフォーマンスの利点の 1 つは、XPath のクエリは実行時に解釈する必要がある一方で LINQ to XML のクエリは静的にコンパイルされるという点です。</span><span class="sxs-lookup"><span data-stu-id="58cc1-103">One of the most important performance benefits LINQ to XML, as opposed to <xref:System.Xml.XmlDocument>, is that queries in LINQ to XML are statically compiled, whereas XPath queries must be interpreted at run time.</span></span> <span data-ttu-id="58cc1-104">この機能は LINQ to XML に組み込まれているので、追加の手順を実行することなく利用できますが、その違いを理解しておくと、この 2 つの技術のどちらかを選ぶときに役立ちます。</span><span class="sxs-lookup"><span data-stu-id="58cc1-104">This feature is built in to LINQ to XML, so you do not have to perform extra steps to take advantage of it, but it is helpful to understand the distinction when choosing between the two technologies.</span></span> <span data-ttu-id="58cc1-105">このトピックでは、相違点について説明します。</span><span class="sxs-lookup"><span data-stu-id="58cc1-105">This topic explains the difference.</span></span>  
   
-## <a name="statically-compiled-queries-vs-xpath"></a>静的にコンパイルされたクエリと XPath  
- 次の例は、指定した名前と指定した値の属性がある子孫要素を取得する方法を示しています。  
+## <a name="statically-compiled-queries-vs-xpath"></a><span data-ttu-id="58cc1-106">静的にコンパイルされたクエリと XPath</span><span class="sxs-lookup"><span data-stu-id="58cc1-106">Statically Compiled Queries vs. XPath</span></span>  
+ <span data-ttu-id="58cc1-107">次の例は、指定した名前と指定した値の属性がある子孫要素を取得する方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="58cc1-107">The following example shows how to get the descendant elements with a specified name, and with an attribute with a specified value.</span></span>  
   
- 次に示すのは、これに相当する XPath 式です。  
+ <span data-ttu-id="58cc1-108">次に示すのは、これに相当する XPath 式です。</span><span class="sxs-lookup"><span data-stu-id="58cc1-108">The following is the equivalent XPath expression:</span></span>  
   
 ```  
 //Address[@Type='Shipping']  
@@ -45,7 +45,7 @@ foreach (XElement el in list1)
     Console.WriteLine(el);  
 ```  
   
- この例のクエリ式は、コンパイラによってメソッドベースのクエリ構文に書き換えられています。 メソッドベースのクエリ構文で書かれた次の例では、前の例と同じ結果が生成されます。  
+ <span data-ttu-id="58cc1-109">この例のクエリ式は、コンパイラによってメソッドベースのクエリ構文に書き換えられています。</span><span class="sxs-lookup"><span data-stu-id="58cc1-109">The query expression in this example is re-written by the compiler to method-based query syntax.</span></span> <span data-ttu-id="58cc1-110">メソッドベースのクエリ構文で書かれた次の例では、前の例と同じ結果が生成されます。</span><span class="sxs-lookup"><span data-stu-id="58cc1-110">The following example, which is written in method-based query syntax, produces the same results as the previous one:</span></span>  
   
 ```csharp  
 XDocument po = XDocument.Load("PurchaseOrders.xml");  
@@ -59,7 +59,7 @@ foreach (XElement el in list1)
     Console.WriteLine(el);  
 ```  
   
- <xref:System.Linq.Enumerable.Where%2A> メソッドは拡張メソッドです。 詳細については、「[拡張メソッド](../../../../csharp/programming-guide/classes-and-structs/extension-methods.md)」を参照してください。 <xref:System.Linq.Enumerable.Where%2A> は拡張メソッドであるため、上記のクエリは次のように書かれたかのようにコンパイルされます。  
+ <span data-ttu-id="58cc1-111"><xref:System.Linq.Enumerable.Where%2A> メソッドは拡張メソッドです。</span><span class="sxs-lookup"><span data-stu-id="58cc1-111">The <xref:System.Linq.Enumerable.Where%2A> method is an extension method.</span></span> <span data-ttu-id="58cc1-112">詳細については、「[拡張メソッド](../../../../csharp/programming-guide/classes-and-structs/extension-methods.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="58cc1-112">For more information, see [Extension Methods](../../../../csharp/programming-guide/classes-and-structs/extension-methods.md).</span></span> <span data-ttu-id="58cc1-113"><xref:System.Linq.Enumerable.Where%2A> は拡張メソッドであるため、上記のクエリは次のように書かれたかのようにコンパイルされます。</span><span class="sxs-lookup"><span data-stu-id="58cc1-113">Because <xref:System.Linq.Enumerable.Where%2A> is an extension method, the query above is compiled as though it were written as follows:</span></span>  
   
 ```csharp  
 XDocument po = XDocument.Load("PurchaseOrders.xml");  
@@ -73,13 +73,13 @@ foreach (XElement el in list1)
     Console.WriteLine(el);  
 ```  
   
- この例では、前の 2 つの例と同じ結果が生成されます。 これは、静的にリンクされたメソッド呼び出しにクエリが効果的にコンパイルされたことを示します。 これと反復子の遅延実行セマンティクスが組み合わさることで、パフォーマンスが向上します。 反復子の遅延実行セマンティクスの詳細については、「[LINQ to XML における遅延実行とレイジー評価 (C#)](../../../../csharp/programming-guide/concepts/linq/deferred-execution-and-lazy-evaluation-in-linq-to-xml.md)」を参照してください。  
+ <span data-ttu-id="58cc1-114">この例では、前の 2 つの例と同じ結果が生成されます。</span><span class="sxs-lookup"><span data-stu-id="58cc1-114">This example produces exactly the same results as the previous two examples.</span></span> <span data-ttu-id="58cc1-115">これは、静的にリンクされたメソッド呼び出しにクエリが効果的にコンパイルされたことを示します。</span><span class="sxs-lookup"><span data-stu-id="58cc1-115">This illustrates the fact that queries are effectively compiled into statically linked method calls.</span></span> <span data-ttu-id="58cc1-116">これと反復子の遅延実行セマンティクスが組み合わさることで、パフォーマンスが向上します。</span><span class="sxs-lookup"><span data-stu-id="58cc1-116">This, combined with the deferred execution semantics of iterators, improves performance.</span></span> <span data-ttu-id="58cc1-117">反復子の遅延実行セマンティクスの詳細については、「[LINQ to XML における遅延実行とレイジー評価 (C#)](../../../../csharp/programming-guide/concepts/linq/deferred-execution-and-lazy-evaluation-in-linq-to-xml.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="58cc1-117">For more information about the deferred execution semantics of iterators, see [Deferred Execution and Lazy Evaluation in LINQ to XML (C#)](../../../../csharp/programming-guide/concepts/linq/deferred-execution-and-lazy-evaluation-in-linq-to-xml.md).</span></span>  
   
 > [!NOTE]
->  これらは、コンパイラが書き込むコードの例です。 実際の実装はこれらの例と若干異なる可能性がありますが、パフォーマンスは同じか類似したものになります。  
+>  <span data-ttu-id="58cc1-118">これらは、コンパイラが書き込むコードの例です。</span><span class="sxs-lookup"><span data-stu-id="58cc1-118">These examples are representative of the code that the compiler might write.</span></span> <span data-ttu-id="58cc1-119">実際の実装はこれらの例と若干異なる可能性がありますが、パフォーマンスは同じか類似したものになります。</span><span class="sxs-lookup"><span data-stu-id="58cc1-119">The actual implementation might differ slightly from these examples, but the performance will be the same or similar to these examples.</span></span>  
   
-## <a name="executing-xpath-expressions-with-xmldocument"></a>XmlDocument を使用した XPath 式の実行  
- 次の例では、<xref:System.Xml.XmlDocument> を使用して前の例と同じ結果を達成します。  
+## <a name="executing-xpath-expressions-with-xmldocument"></a><span data-ttu-id="58cc1-120">XmlDocument を使用した XPath 式の実行</span><span class="sxs-lookup"><span data-stu-id="58cc1-120">Executing XPath Expressions with XmlDocument</span></span>  
+ <span data-ttu-id="58cc1-121">次の例では、<xref:System.Xml.XmlDocument> を使用して前の例と同じ結果を達成します。</span><span class="sxs-lookup"><span data-stu-id="58cc1-121">The following example uses <xref:System.Xml.XmlDocument> to accomplish the same results as the previous examples:</span></span>  
   
 ```csharp  
 XmlReader reader = XmlReader.Create("PurchaseOrders.xml");  
@@ -91,20 +91,20 @@ foreach (XmlNode n in nl)
 reader.Close();  
 ```  
   
- このクエリは、LINQ to XML を使用する例と同じ出力を返します。唯一の違いは、出力する XML が LINQ to XML ではインデントされるのに対し、<xref:System.Xml.XmlDocument> ではインデントされないという点です。  
+ <span data-ttu-id="58cc1-122">このクエリは、LINQ to XML を使用する例と同じ出力を返します。唯一の違いは、出力する XML が LINQ to XML ではインデントされるのに対し、<xref:System.Xml.XmlDocument> ではインデントされないという点です。</span><span class="sxs-lookup"><span data-stu-id="58cc1-122">This query returns the same output as the examples that use LINQ to XML; the only difference is that LINQ to XML indents the printed XML, whereas <xref:System.Xml.XmlDocument> does not.</span></span>  
   
- ただし、一般に <xref:System.Xml.XmlDocument> の方法では、<xref:System.Xml.XmlNode.SelectNodes%2A> メソッドが呼び出されるたびに内部で次の処理を行わなければならないため、LINQ to XML ほどのパフォーマンスは達成できません。  
+ <span data-ttu-id="58cc1-123">ただし、一般に <xref:System.Xml.XmlDocument> の方法では、<xref:System.Xml.XmlNode.SelectNodes%2A> メソッドが呼び出されるたびに内部で次の処理を行わなければならないため、LINQ to XML ほどのパフォーマンスは達成できません。</span><span class="sxs-lookup"><span data-stu-id="58cc1-123">However, the <xref:System.Xml.XmlDocument> approach generally does not perform as well as LINQ to XML, because the <xref:System.Xml.XmlNode.SelectNodes%2A> method must do the following internally every time it is called:</span></span>  
   
--   XPath 式を含んでいる文字列を解析してトークンに分解します。  
+-   <span data-ttu-id="58cc1-124">XPath 式を含んでいる文字列を解析してトークンに分解します。</span><span class="sxs-lookup"><span data-stu-id="58cc1-124">It parses the string that contains the XPath expression, breaking the string into tokens.</span></span>  
   
--   トークンを検証して、XPath 式が有効であることを確認します。  
+-   <span data-ttu-id="58cc1-125">トークンを検証して、XPath 式が有効であることを確認します。</span><span class="sxs-lookup"><span data-stu-id="58cc1-125">It validates the tokens to make sure that the XPath expression is valid.</span></span>  
   
--   式を内部式ツリーに変換します。  
+-   <span data-ttu-id="58cc1-126">式を内部式ツリーに変換します。</span><span class="sxs-lookup"><span data-stu-id="58cc1-126">It translates the expression into an internal expression tree.</span></span>  
   
--   ノードを反復処理し、式の評価に基づいて結果セットのノードを適切に選択します。  
+-   <span data-ttu-id="58cc1-127">ノードを反復処理し、式の評価に基づいて結果セットのノードを適切に選択します。</span><span class="sxs-lookup"><span data-stu-id="58cc1-127">It iterates through the nodes, appropriately selecting the nodes for the result set based on the evaluation of the expression.</span></span>  
   
- この場合、対応する LINQ to XML のクエリよりも処理量がかなり多くなります。 具体的なパフォーマンスの違いはクエリの種類によって異なりますが、一般に LINQ to XML のクエリは処理量が少ないため、<xref:System.Xml.XmlDocument> を使用して XPath 式を評価するよりも良いパフォーマンスが得られます。  
+ <span data-ttu-id="58cc1-128">この場合、対応する LINQ to XML のクエリよりも処理量がかなり多くなります。</span><span class="sxs-lookup"><span data-stu-id="58cc1-128">This is significantly more than the work done by the corresponding LINQ to XML query.</span></span> <span data-ttu-id="58cc1-129">具体的なパフォーマンスの違いはクエリの種類によって異なりますが、一般に LINQ to XML のクエリは処理量が少ないため、<xref:System.Xml.XmlDocument> を使用して XPath 式を評価するよりも良いパフォーマンスが得られます。</span><span class="sxs-lookup"><span data-stu-id="58cc1-129">The specific performance difference varies for different types of queries, but in general LINQ to XML queries do less work, and therefore perform better, than evaluating XPath expressions using <xref:System.Xml.XmlDocument>.</span></span>  
   
-## <a name="see-also"></a>関連項目  
- [パフォーマンス (LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/performance-linq-to-xml.md)
+## <a name="see-also"></a><span data-ttu-id="58cc1-130">関連項目</span><span class="sxs-lookup"><span data-stu-id="58cc1-130">See Also</span></span>  
+ [<span data-ttu-id="58cc1-131">パフォーマンス (LINQ to XML) (C#)</span><span class="sxs-lookup"><span data-stu-id="58cc1-131">Performance (LINQ to XML) (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/performance-linq-to-xml.md)
 

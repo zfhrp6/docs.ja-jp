@@ -20,21 +20,22 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 5bd3e60031eac713cee3dee1399af8c6b83e6656
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
+ms.openlocfilehash: 620fd61000e42d68f566e441d023d73a036000ae
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/12/2017
 
 ---
-# <a name="using-variance-in-delegates-visual-basic"></a>デリゲート (Visual Basic) の分散の使用
-デリゲートにメソッドを割り当てるときに*共変性*と*反変性*メソッド シグネチャを持つデリゲート型に一致する柔軟性を提供します。 ジェネリックの共変性は、メソッドのデリゲートで定義されているよりも強い派生は、戻り値の型を許可します。 反変性により、デリゲート型の場合よりも弱い派生パラメーター型を持つメソッドです。  
+# <a name="using-variance-in-delegates-visual-basic"></a><span data-ttu-id="4bfc9-102">デリゲート (Visual Basic) の分散の使用</span><span class="sxs-lookup"><span data-stu-id="4bfc9-102">Using Variance in Delegates (Visual Basic)</span></span>
+<span data-ttu-id="4bfc9-103">デリゲートにメソッドを割り当てるときに*共変性*と*反変性*メソッド シグネチャを持つデリゲート型に一致する柔軟性を提供します。</span><span class="sxs-lookup"><span data-stu-id="4bfc9-103">When you assign a method to a delegate, *covariance* and *contravariance* provide flexibility for matching a delegate type with a method signature.</span></span> <span data-ttu-id="4bfc9-104">ジェネリックの共変性は、メソッドのデリゲートで定義されているよりも強い派生は、戻り値の型を許可します。</span><span class="sxs-lookup"><span data-stu-id="4bfc9-104">Covariance permits a method to have return type that is more derived than that defined in the delegate.</span></span> <span data-ttu-id="4bfc9-105">反変性により、デリゲート型の場合よりも弱い派生パラメーター型を持つメソッドです。</span><span class="sxs-lookup"><span data-stu-id="4bfc9-105">Contravariance permits a method that has parameter types that are less derived than those in the delegate type.</span></span>  
   
-## <a name="example-1-covariance"></a>例 1: 共変性  
+## <a name="example-1-covariance"></a><span data-ttu-id="4bfc9-106">例 1: 共変性</span><span class="sxs-lookup"><span data-stu-id="4bfc9-106">Example 1: Covariance</span></span>  
   
-### <a name="description"></a>説明  
- この例では、デリゲート シグネチャの戻り値の型から派生した戻り値の型の方法でデリゲートを使用する方法を示します。 によって返されるデータ型`DogsHandler`型`Dogs`から派生した、`Mammals`デリゲートで定義されている型。  
+### <a name="description"></a><span data-ttu-id="4bfc9-107">説明</span><span class="sxs-lookup"><span data-stu-id="4bfc9-107">Description</span></span>  
+ <span data-ttu-id="4bfc9-108">この例では、デリゲート シグネチャの戻り値の型から派生した戻り値の型の方法でデリゲートを使用する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="4bfc9-108">This example demonstrates how delegates can be used with methods that have return types that are derived from the return type in the delegate signature.</span></span> <span data-ttu-id="4bfc9-109">によって返されるデータ型`DogsHandler`型`Dogs`から派生した、`Mammals`デリゲートで定義されている型。</span><span class="sxs-lookup"><span data-stu-id="4bfc9-109">The data type returned by `DogsHandler` is of type `Dogs`, which derives from the `Mammals` type that is defined in the delegate.</span></span>  
   
-### <a name="code"></a>コード  
+### <a name="code"></a><span data-ttu-id="4bfc9-110">コード</span><span class="sxs-lookup"><span data-stu-id="4bfc9-110">Code</span></span>  
   
 ```vb  
 Class Mammals  
@@ -59,12 +60,12 @@ Class Test
 End Class  
 ```  
   
-## <a name="example-2-contravariance"></a>例 2: 反変性  
+## <a name="example-2-contravariance"></a><span data-ttu-id="4bfc9-111">例 2: 反変性</span><span class="sxs-lookup"><span data-stu-id="4bfc9-111">Example 2: Contravariance</span></span>  
   
-### <a name="description"></a>説明  
- この例では、デリゲート シグネチャのパラメーターの型の基本型である型のパラメーターを持つメソッドでデリゲートを使用する方法を示します。 反変性により、複数のハンドラーではなく&1; つのイベント ハンドラーを使用することができます。 受け取るイベント ハンドラーを作成するなど、`EventArgs`パラメーターを入力し、それを使用、`Button.MouseClick`イベントを送信する、`MouseEventArgs`型をパラメーターとして、さらに、`TextBox.KeyDown`イベントを送信する、`KeyEventArgs`パラメーター。  
+### <a name="description"></a><span data-ttu-id="4bfc9-112">説明</span><span class="sxs-lookup"><span data-stu-id="4bfc9-112">Description</span></span>  
+ <span data-ttu-id="4bfc9-113">この例では、デリゲート シグネチャのパラメーターの型の基本型である型のパラメーターを持つメソッドでデリゲートを使用する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="4bfc9-113">This example demonstrates how delegates can be used with methods that have parameters of a type that are base types of the delegate signature parameter type.</span></span> <span data-ttu-id="4bfc9-114">反変性により、複数のハンドラーではなく&1; つのイベント ハンドラーを使用することができます。</span><span class="sxs-lookup"><span data-stu-id="4bfc9-114">With contravariance, you can use one event handler instead of separate handlers.</span></span> <span data-ttu-id="4bfc9-115">受け取るイベント ハンドラーを作成するなど、`EventArgs`パラメーターを入力し、それを使用、`Button.MouseClick`イベントを送信する、`MouseEventArgs`型をパラメーターとして、さらに、`TextBox.KeyDown`イベントを送信する、`KeyEventArgs`パラメーター。</span><span class="sxs-lookup"><span data-stu-id="4bfc9-115">For example, you can create an event handler that accepts an `EventArgs` input parameter and use it with a `Button.MouseClick` event that sends a `MouseEventArgs` type as a parameter, and also with a `TextBox.KeyDown` event that sends a `KeyEventArgs` parameter.</span></span>  
   
-### <a name="code"></a>コード  
+### <a name="code"></a><span data-ttu-id="4bfc9-116">コード</span><span class="sxs-lookup"><span data-stu-id="4bfc9-116">Code</span></span>  
   
 ```vb  
 ' Event hander that accepts a parameter of the EventArgs type.  
@@ -86,6 +87,6 @@ Private Sub Form1_Load(ByVal sender As System.Object,
 End Sub  
 ```  
   
-## <a name="see-also"></a>関連項目  
- [デリゲート (Visual Basic) の分散](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/variance-in-delegates.md)   
- [Func および Action 汎用デリゲート (Visual Basic) に対する分散の使用](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/using-variance-for-func-and-action-generic-delegates.md)
+## <a name="see-also"></a><span data-ttu-id="4bfc9-117">関連項目</span><span class="sxs-lookup"><span data-stu-id="4bfc9-117">See Also</span></span>  
+ <span data-ttu-id="4bfc9-118">[デリゲート (Visual Basic) の分散](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/variance-in-delegates.md) </span><span class="sxs-lookup"><span data-stu-id="4bfc9-118">[Variance in Delegates (Visual Basic)](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/variance-in-delegates.md) </span></span>  
+<span data-ttu-id="4bfc9-119"> [Func および Action 汎用デリゲート (Visual Basic) に対する分散の使用](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/using-variance-for-func-and-action-generic-delegates.md)</span><span class="sxs-lookup"><span data-stu-id="4bfc9-119"> [Using Variance for Func and Action Generic Delegates (Visual Basic)](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/using-variance-for-func-and-action-generic-delegates.md)</span></span>

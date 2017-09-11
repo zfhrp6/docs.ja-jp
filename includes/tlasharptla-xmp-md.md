@@ -1,1 +1,1 @@
-拡張可能メタデータ プラットフォーム (XMP)
+<span data-ttu-id="26290-101">拡張可能メタデータ プラットフォーム (XMP)</span><span class="sxs-lookup"><span data-stu-id="26290-101">Extensible Metadata Platform (XMP)</span></span>

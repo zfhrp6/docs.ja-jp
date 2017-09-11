@@ -26,12 +26,12 @@ ms.contentlocale: ja-jp
 ms.lasthandoff: 07/28/2017
 
 ---
-# <a name="how-to-join-content-from-dissimilar-files-linq-c"></a>方法: 異種ファイルのコンテンツを結合する (LINQ) (C#)
-この例では、一致するキーとして共通の値を使用する 2 つのコンマ区切りファイルのデータを結合する方法を示します。 この方法は、2 つのスプレッドシートのデータ、またはスプレッドシートのデータと別の形式のファイルのデータを、新しいファイルに結合する必要がある場合に役立ちます。 この例は、変更を加えることで、あらゆる構造化テキスト ファイルに応用できます。  
+# <a name="how-to-join-content-from-dissimilar-files-linq-c"></a><span data-ttu-id="dd33d-102">方法: 異種ファイルのコンテンツを結合する (LINQ) (C#)</span><span class="sxs-lookup"><span data-stu-id="dd33d-102">How to: Join Content from Dissimilar Files (LINQ) (C#)</span></span>
+<span data-ttu-id="dd33d-103">この例では、一致するキーとして共通の値を使用する 2 つのコンマ区切りファイルのデータを結合する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="dd33d-103">This example shows how to join data from two comma-delimited files that share a common value that is used as a matching key.</span></span> <span data-ttu-id="dd33d-104">この方法は、2 つのスプレッドシートのデータ、またはスプレッドシートのデータと別の形式のファイルのデータを、新しいファイルに結合する必要がある場合に役立ちます。</span><span class="sxs-lookup"><span data-stu-id="dd33d-104">This technique can be useful if you have to combine data from two spreadsheets, or from a spreadsheet and from a file that has another format, into a new file.</span></span> <span data-ttu-id="dd33d-105">この例は、変更を加えることで、あらゆる構造化テキスト ファイルに応用できます。</span><span class="sxs-lookup"><span data-stu-id="dd33d-105">You can modify the example to work with any kind of structured text.</span></span>  
   
-### <a name="to-create-the-data-files"></a>データ ファイルを作成するには  
+### <a name="to-create-the-data-files"></a><span data-ttu-id="dd33d-106">データ ファイルを作成するには</span><span class="sxs-lookup"><span data-stu-id="dd33d-106">To create the data files</span></span>  
   
-1.  次の行を scores.csv という名前のファイルにコピーし、プロジェクト フォルダーに保存します。 このファイルは、スプレッドシートのデータを表しています。 列 1 は学生の ID、列 2 ～ 5 はテストの得点です。  
+1.  <span data-ttu-id="dd33d-107">次の行を scores.csv という名前のファイルにコピーし、プロジェクト フォルダーに保存します。</span><span class="sxs-lookup"><span data-stu-id="dd33d-107">Copy the following lines into a file that is named scores.csv and save it to your project folder.</span></span> <span data-ttu-id="dd33d-108">このファイルは、スプレッドシートのデータを表しています。</span><span class="sxs-lookup"><span data-stu-id="dd33d-108">The file represents spreadsheet data.</span></span> <span data-ttu-id="dd33d-109">列 1 は学生の ID、列 2 ～ 5 はテストの得点です。</span><span class="sxs-lookup"><span data-stu-id="dd33d-109">Column 1 is the student's ID, and columns 2 through 5 are test scores.</span></span>  
   
     ```  
     111, 97, 92, 81, 60  
@@ -48,7 +48,7 @@ ms.lasthandoff: 07/28/2017
     122, 94, 92, 91, 91  
     ```  
   
-2.  次の行を names.csv という名前のファイルにコピーし、プロジェクト フォルダーに保存します。 このファイルは、学生の姓、名、および学生 ID が含まれるスプレッドシートを表しています。  
+2.  <span data-ttu-id="dd33d-110">次の行を names.csv という名前のファイルにコピーし、プロジェクト フォルダーに保存します。</span><span class="sxs-lookup"><span data-stu-id="dd33d-110">Copy the following lines into a file that is named names.csv and save it to your project folder.</span></span> <span data-ttu-id="dd33d-111">このファイルは、学生の姓、名、および学生 ID が含まれるスプレッドシートを表しています。</span><span class="sxs-lookup"><span data-stu-id="dd33d-111">The file represents a spreadsheet that contains the student's last name, first name, and student ID.</span></span>  
   
     ```  
     Omelchenko,Svetlana,111  
@@ -65,7 +65,7 @@ ms.lasthandoff: 07/28/2017
     Tucker,Michael,122  
     ```  
   
-## <a name="example"></a>例  
+## <a name="example"></a><span data-ttu-id="dd33d-112">例</span><span class="sxs-lookup"><span data-stu-id="dd33d-112">Example</span></span>  
   
 ```csharp  
 class JoinStrings  
@@ -136,10 +136,10 @@ Zabokritski, 96, 85, 91, 60
  */  
 ```  
   
-## <a name="compiling-the-code"></a>コードのコンパイル  
- .NET Framework Version 3.5 以降を対象とするプロジェクトを作成します。System.Core.dll を参照設定し、System.Linq 名前空間と System.IO 名前空間を `using` ディレクティブで指定します。  
+## <a name="compiling-the-code"></a><span data-ttu-id="dd33d-113">コードのコンパイル</span><span class="sxs-lookup"><span data-stu-id="dd33d-113">Compiling the Code</span></span>  
+ <span data-ttu-id="dd33d-114">.NET Framework Version 3.5 以降を対象とするプロジェクトを作成します。System.Core.dll を参照設定し、System.Linq 名前空間と System.IO 名前空間を `using` ディレクティブで指定します。</span><span class="sxs-lookup"><span data-stu-id="dd33d-114">Create a project that targets the .NET Framework  version 3.5 or higher, with a reference to System.Core.dll and `using` directives for the System.Linq and System.IO namespaces.</span></span>  
   
-## <a name="see-also"></a>関連項目  
- [LINQ と文字列 (C#)](../../../../csharp/programming-guide/concepts/linq/linq-and-strings.md)   
- [LINQ とファイル ディレクトリ (C#)](../../../../csharp/programming-guide/concepts/linq/linq-and-file-directories.md)
+## <a name="see-also"></a><span data-ttu-id="dd33d-115">関連項目</span><span class="sxs-lookup"><span data-stu-id="dd33d-115">See Also</span></span>  
+ <span data-ttu-id="dd33d-116">[LINQ と文字列 (C#)](../../../../csharp/programming-guide/concepts/linq/linq-and-strings.md) </span><span class="sxs-lookup"><span data-stu-id="dd33d-116">[LINQ and Strings (C#)](../../../../csharp/programming-guide/concepts/linq/linq-and-strings.md) </span></span>  
+ [<span data-ttu-id="dd33d-117">LINQ とファイル ディレクトリ (C#)</span><span class="sxs-lookup"><span data-stu-id="dd33d-117">LINQ and File Directories (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/linq-and-file-directories.md)
 

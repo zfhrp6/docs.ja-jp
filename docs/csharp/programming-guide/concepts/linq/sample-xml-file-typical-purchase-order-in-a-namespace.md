@@ -26,10 +26,10 @@ ms.contentlocale: ja-jp
 ms.lasthandoff: 07/28/2017
 
 ---
-# <a name="sample-xml-file-typical-purchase-order-in-a-namespace"></a>サンプル XML ファイル : 名前空間内の一般的な購買発注書
-次の XML ファイルは、[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] ドキュメントのさまざまな例で使用されます。 このファイルは、一般的な購買発注書です。 XML は名前空間に含まれています。  
+# <a name="sample-xml-file-typical-purchase-order-in-a-namespace"></a><span data-ttu-id="95df5-102">サンプル XML ファイル : 名前空間内の一般的な購買発注書</span><span class="sxs-lookup"><span data-stu-id="95df5-102">Sample XML File: Typical Purchase Order in a Namespace</span></span>
+<span data-ttu-id="95df5-103">次の XML ファイルは、[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] ドキュメントのさまざまな例で使用されます。</span><span class="sxs-lookup"><span data-stu-id="95df5-103">The following XML file is used in various examples in the [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] documentation.</span></span> <span data-ttu-id="95df5-104">このファイルは、一般的な購買発注書です。</span><span class="sxs-lookup"><span data-stu-id="95df5-104">This file is a typical purchase order.</span></span> <span data-ttu-id="95df5-105">XML は名前空間に含まれています。</span><span class="sxs-lookup"><span data-stu-id="95df5-105">The XML is in a namespace.</span></span>  
   
-## <a name="purchaseorderinnamespacexml"></a>PurchaseOrderInNamespace.xml  
+## <a name="purchaseorderinnamespacexml"></a><span data-ttu-id="95df5-106">PurchaseOrderInNamespace.xml</span><span class="sxs-lookup"><span data-stu-id="95df5-106">PurchaseOrderInNamespace.xml</span></span>  
   
 ```xml  
 <?xml version="1.0"?>  
@@ -71,6 +71,6 @@ ms.lasthandoff: 07/28/2017
 </aw:PurchaseOrder>  
 ```  
   
-## <a name="see-also"></a>関連項目  
- [サンプル XML ドキュメント (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-documents-linq-to-xml.md)
+## <a name="see-also"></a><span data-ttu-id="95df5-107">関連項目</span><span class="sxs-lookup"><span data-stu-id="95df5-107">See Also</span></span>  
+ [<span data-ttu-id="95df5-108">サンプル XML ドキュメント (LINQ to XML)</span><span class="sxs-lookup"><span data-stu-id="95df5-108">Sample XML Documents (LINQ to XML)</span></span>](../../../../csharp/programming-guide/concepts/linq/sample-xml-documents-linq-to-xml.md)
 

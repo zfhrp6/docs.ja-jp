@@ -37,15 +37,15 @@ ms.contentlocale: ja-jp
 ms.lasthandoff: 07/28/2017
 
 ---
-# <a name="false-c-reference"></a>false (C# リファレンス)
-オーバーロードされた演算子またはリテラルとして使用:  
+# <a name="false-c-reference"></a><span data-ttu-id="98d1a-102">false (C# リファレンス)</span><span class="sxs-lookup"><span data-stu-id="98d1a-102">false (C# Reference)</span></span>
+<span data-ttu-id="98d1a-103">オーバーロードされた演算子またはリテラルとして使用:</span><span class="sxs-lookup"><span data-stu-id="98d1a-103">Used as an overloaded operator or as a literal:</span></span>  
   
--   [false 演算子](../../../csharp/language-reference/keywords/false-operator.md)  
+-   [<span data-ttu-id="98d1a-104">false 演算子</span><span class="sxs-lookup"><span data-stu-id="98d1a-104">false Operator</span></span>](../../../csharp/language-reference/keywords/false-operator.md)  
   
--   [false リテラル](../../../csharp/language-reference/keywords/false-literal.md)  
+-   [<span data-ttu-id="98d1a-105">false リテラル</span><span class="sxs-lookup"><span data-stu-id="98d1a-105">false Literal</span></span>](../../../csharp/language-reference/keywords/false-literal.md)  
   
-## <a name="see-also"></a>関連項目  
- [C# リファレンス](../../../csharp/language-reference/index.md)   
- [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
- [C# のキーワード](../../../csharp/language-reference/keywords/index.md)
+## <a name="see-also"></a><span data-ttu-id="98d1a-106">関連項目</span><span class="sxs-lookup"><span data-stu-id="98d1a-106">See Also</span></span>  
+ <span data-ttu-id="98d1a-107">[C# リファレンス](../../../csharp/language-reference/index.md) </span><span class="sxs-lookup"><span data-stu-id="98d1a-107">[C# Reference](../../../csharp/language-reference/index.md) </span></span>  
+ <span data-ttu-id="98d1a-108">[C# プログラミング ガイド](../../../csharp/programming-guide/index.md) </span><span class="sxs-lookup"><span data-stu-id="98d1a-108">[C# Programming Guide](../../../csharp/programming-guide/index.md) </span></span>  
+ [<span data-ttu-id="98d1a-109">C# のキーワード</span><span class="sxs-lookup"><span data-stu-id="98d1a-109">C# Keywords</span></span>](../../../csharp/language-reference/keywords/index.md)
 

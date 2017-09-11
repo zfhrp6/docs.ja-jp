@@ -38,26 +38,26 @@ ms.contentlocale: ja-jp
 ms.lasthandoff: 07/28/2017
 
 ---
-# <a name="ltparamrefgt-c-programming-guide"></a>&lt;paramref&gt; (C# プログラミング ガイド)
-## <a name="syntax"></a>構文  
+# <a name="ltparamrefgt-c-programming-guide"></a><span data-ttu-id="4bd6d-102">&lt;paramref&gt; (C# プログラミング ガイド)</span><span class="sxs-lookup"><span data-stu-id="4bd6d-102">&lt;paramref&gt; (C# Programming Guide)</span></span>
+## <a name="syntax"></a><span data-ttu-id="4bd6d-103">構文</span><span class="sxs-lookup"><span data-stu-id="4bd6d-103">Syntax</span></span>  
   
 ```xml  
 <paramref name="name"/>  
 ```  
   
-#### <a name="parameters"></a>パラメーター  
+#### <a name="parameters"></a><span data-ttu-id="4bd6d-104">パラメーター</span><span class="sxs-lookup"><span data-stu-id="4bd6d-104">Parameters</span></span>  
  `name`  
- 参照されるパラメーターの名前です。 名前は二重引用符 (" ") で囲みます。  
+ <span data-ttu-id="4bd6d-105">参照されるパラメーターの名前です。</span><span class="sxs-lookup"><span data-stu-id="4bd6d-105">The name of the parameter to refer to.</span></span> <span data-ttu-id="4bd6d-106">名前は二重引用符 (" ") で囲みます。</span><span class="sxs-lookup"><span data-stu-id="4bd6d-106">Enclose the name in double quotation marks (" ").</span></span>  
   
-## <a name="remarks"></a>コメント  
- \<paramref> タグを使用すると、\<summary> または \<remarks> ブロックなどのコード コメント内の単語がパラメーターを参照することを示すことができます。 この単語を、太字や斜体のフォントを使うなど、何らかの独自の方法で書式設定するために XML ファイルを処理できます。  
+## <a name="remarks"></a><span data-ttu-id="4bd6d-107">コメント</span><span class="sxs-lookup"><span data-stu-id="4bd6d-107">Remarks</span></span>  
+ <span data-ttu-id="4bd6d-108">\<paramref> タグを使用すると、\<summary> または \<remarks> ブロックなどのコード コメント内の単語がパラメーターを参照することを示すことができます。</span><span class="sxs-lookup"><span data-stu-id="4bd6d-108">The \<paramref> tag gives you a way to indicate that a word in the code comments, for example in a \<summary> or \<remarks> block refers to a parameter.</span></span> <span data-ttu-id="4bd6d-109">この単語を、太字や斜体のフォントを使うなど、何らかの独自の方法で書式設定するために XML ファイルを処理できます。</span><span class="sxs-lookup"><span data-stu-id="4bd6d-109">The XML file can be processed to format this word in some distinct way, such as with a bold or italic font.</span></span>  
   
- コンパイル時に [/doc](../../../csharp/language-reference/compiler-options/doc-compiler-option.md) を指定して、ドキュメント コメントをファイルに出力します。  
+ <span data-ttu-id="4bd6d-110">コンパイル時に [/doc](../../../csharp/language-reference/compiler-options/doc-compiler-option.md) を指定して、ドキュメント コメントをファイルに出力します。</span><span class="sxs-lookup"><span data-stu-id="4bd6d-110">Compile with [/doc](../../../csharp/language-reference/compiler-options/doc-compiler-option.md) to process documentation comments to a file.</span></span>  
   
-## <a name="example"></a>例  
- [!code-cs[csProgGuideDocComments#7](../../../csharp/programming-guide/xmldoc/codesnippet/CSharp/paramref_1.cs)]  
+## <a name="example"></a><span data-ttu-id="4bd6d-111">例</span><span class="sxs-lookup"><span data-stu-id="4bd6d-111">Example</span></span>  
+ <span data-ttu-id="4bd6d-112">[!code-cs[csProgGuideDocComments#7](../../../csharp/programming-guide/xmldoc/codesnippet/CSharp/paramref_1.cs)]</span><span class="sxs-lookup"><span data-stu-id="4bd6d-112">[!code-cs[csProgGuideDocComments#7](../../../csharp/programming-guide/xmldoc/codesnippet/CSharp/paramref_1.cs)]</span></span>  
   
-## <a name="see-also"></a>関連項目  
- [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
- [ドキュメント コメントとして推奨されるタグ](../../../csharp/programming-guide/xmldoc/recommended-tags-for-documentation-comments.md)
+## <a name="see-also"></a><span data-ttu-id="4bd6d-113">関連項目</span><span class="sxs-lookup"><span data-stu-id="4bd6d-113">See Also</span></span>  
+ <span data-ttu-id="4bd6d-114">[C# プログラミング ガイド](../../../csharp/programming-guide/index.md) </span><span class="sxs-lookup"><span data-stu-id="4bd6d-114">[C# Programming Guide](../../../csharp/programming-guide/index.md) </span></span>  
+ [<span data-ttu-id="4bd6d-115">ドキュメント コメントとして推奨されるタグ</span><span class="sxs-lookup"><span data-stu-id="4bd6d-115">Recommended Tags for Documentation Comments</span></span>](../../../csharp/programming-guide/xmldoc/recommended-tags-for-documentation-comments.md)
 

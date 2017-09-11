@@ -21,11 +21,11 @@ ms.contentlocale: ja-jp
 ms.lasthandoff: 07/28/2017
 
 ---
-# <a name="how-to-retrieve-a-collection-of-attributes-linq-to-xml-c"></a>方法: 属性のコレクションを取得する (LINQ to XML) (C#)
-このトピックでは、<xref:System.Xml.Linq.XElement.Attributes%2A> メソッドについて説明します。 このメソッドは、要素の属性を取得します。  
+# <a name="how-to-retrieve-a-collection-of-attributes-linq-to-xml-c"></a><span data-ttu-id="af39c-102">方法: 属性のコレクションを取得する (LINQ to XML) (C#)</span><span class="sxs-lookup"><span data-stu-id="af39c-102">How to: Retrieve a Collection of Attributes (LINQ to XML) (C#)</span></span>
+<span data-ttu-id="af39c-103">このトピックでは、<xref:System.Xml.Linq.XElement.Attributes%2A> メソッドについて説明します。</span><span class="sxs-lookup"><span data-stu-id="af39c-103">This topic introduces the <xref:System.Xml.Linq.XElement.Attributes%2A> method.</span></span> <span data-ttu-id="af39c-104">このメソッドは、要素の属性を取得します。</span><span class="sxs-lookup"><span data-stu-id="af39c-104">This method retrieves the attributes of an element.</span></span>  
   
-## <a name="example"></a>例  
- 次の例では、要素の属性のコレクションを反復処理する方法を示します。  
+## <a name="example"></a><span data-ttu-id="af39c-105">例</span><span class="sxs-lookup"><span data-stu-id="af39c-105">Example</span></span>  
+ <span data-ttu-id="af39c-106">次の例では、要素の属性のコレクションを反復処理する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="af39c-106">The following example shows how to iterate through the collection of attributes of an element.</span></span>  
   
 ```csharp  
 XElement val = new XElement("Value",  
@@ -40,7 +40,7 @@ foreach (XAttribute a in listOfAttributes)
     Console.WriteLine(a);  
 ```  
   
- このコードを実行すると、次の出力が生成されます。  
+ <span data-ttu-id="af39c-107">このコードを実行すると、次の出力が生成されます。</span><span class="sxs-lookup"><span data-stu-id="af39c-107">This code produces the following output:</span></span>  
   
 ```  
 ID="1243"  
@@ -48,6 +48,6 @@ Type="int"
 ConvertableTo="double"  
 ```  
   
-## <a name="see-also"></a>関連項目  
- [LINQ to XML 軸 (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-xml-axes.md)
+## <a name="see-also"></a><span data-ttu-id="af39c-108">関連項目</span><span class="sxs-lookup"><span data-stu-id="af39c-108">See Also</span></span>  
+ [<span data-ttu-id="af39c-109">LINQ to XML 軸 (C#)</span><span class="sxs-lookup"><span data-stu-id="af39c-109">LINQ to XML Axes (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/linq-to-xml-axes.md)
 

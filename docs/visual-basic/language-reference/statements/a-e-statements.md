@@ -27,24 +27,25 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 82c97eae0ba9a41182b857a799303c1ce4f8053f
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
+ms.openlocfilehash: b6148e97de23ef7be9b3c26f40b3db10caed18a0
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/12/2017
 
 ---
-# <a name="a-e-statements"></a>ステートメント A ～ E
-次の表には一覧が含まれています[!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]言語ステートメントです。  
+# <a name="a-e-statements"></a><span data-ttu-id="fa6fb-102">ステートメント A ～ E</span><span class="sxs-lookup"><span data-stu-id="fa6fb-102">A-E Statements</span></span>
+<span data-ttu-id="fa6fb-103">次の表には一覧が含まれています[!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]言語ステートメントです。</span><span class="sxs-lookup"><span data-stu-id="fa6fb-103">The following table contains a listing of [!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] language statements.</span></span>  
   
 |||||  
 |---|---|---|---|  
-|[AddHandler](../../../visual-basic/language-reference/statements/addhandler-statement.md)|[呼び出し](../../../visual-basic/language-reference/statements/call-statement.md)|[クラス](../../../visual-basic/language-reference/statements/class-statement.md)|[定数](../../../visual-basic/language-reference/statements/const-statement.md)|  
-|[続行](../../../visual-basic/language-reference/statements/continue-statement.md)|[宣言](../../../visual-basic/language-reference/statements/declare-statement.md)|[デリゲート](../../../visual-basic/language-reference/statements/delegate-statement.md)|[Dim](../../../visual-basic/language-reference/statements/dim-statement.md)|  
-|[操作を実行しています.ループ](../../../visual-basic/language-reference/statements/do-loop-statement.md)|[その他](../../../visual-basic/language-reference/statements/else-statement.md)|[終わり](../../../visual-basic/language-reference/statements/end-statement.md)|[終了\<キーワード >](../../../visual-basic/language-reference/statements/end-keyword-statement.md)|  
-|[列挙型](../../../visual-basic/language-reference/statements/enum-statement.md)|[消去](../../../visual-basic/language-reference/statements/erase-statement.md)|[エラー](../../../visual-basic/language-reference/statements/error-statement.md)|[イベント](../../../visual-basic/language-reference/statements/event-statement.md)|  
-|[終了](../../../visual-basic/language-reference/statements/exit-statement.md)||||  
+|[<span data-ttu-id="fa6fb-104">AddHandler</span><span class="sxs-lookup"><span data-stu-id="fa6fb-104">AddHandler</span></span>](../../../visual-basic/language-reference/statements/addhandler-statement.md)|[<span data-ttu-id="fa6fb-105">呼び出し</span><span class="sxs-lookup"><span data-stu-id="fa6fb-105">Call</span></span>](../../../visual-basic/language-reference/statements/call-statement.md)|[<span data-ttu-id="fa6fb-106">クラス</span><span class="sxs-lookup"><span data-stu-id="fa6fb-106">Class</span></span>](../../../visual-basic/language-reference/statements/class-statement.md)|[<span data-ttu-id="fa6fb-107">定数</span><span class="sxs-lookup"><span data-stu-id="fa6fb-107">Const</span></span>](../../../visual-basic/language-reference/statements/const-statement.md)|  
+|[<span data-ttu-id="fa6fb-108">続行</span><span class="sxs-lookup"><span data-stu-id="fa6fb-108">Continue</span></span>](../../../visual-basic/language-reference/statements/continue-statement.md)|[<span data-ttu-id="fa6fb-109">宣言</span><span class="sxs-lookup"><span data-stu-id="fa6fb-109">Declare</span></span>](../../../visual-basic/language-reference/statements/declare-statement.md)|[<span data-ttu-id="fa6fb-110">デリゲート</span><span class="sxs-lookup"><span data-stu-id="fa6fb-110">Delegate</span></span>](../../../visual-basic/language-reference/statements/delegate-statement.md)|[<span data-ttu-id="fa6fb-111">Dim</span><span class="sxs-lookup"><span data-stu-id="fa6fb-111">Dim</span></span>](../../../visual-basic/language-reference/statements/dim-statement.md)|  
+|[<span data-ttu-id="fa6fb-112">操作を実行しています.ループ</span><span class="sxs-lookup"><span data-stu-id="fa6fb-112">Do...Loop</span></span>](../../../visual-basic/language-reference/statements/do-loop-statement.md)|[<span data-ttu-id="fa6fb-113">その他</span><span class="sxs-lookup"><span data-stu-id="fa6fb-113">Else</span></span>](../../../visual-basic/language-reference/statements/else-statement.md)|[<span data-ttu-id="fa6fb-114">終わり</span><span class="sxs-lookup"><span data-stu-id="fa6fb-114">End</span></span>](../../../visual-basic/language-reference/statements/end-statement.md)|[<span data-ttu-id="fa6fb-115">終了\<キーワード ></span><span class="sxs-lookup"><span data-stu-id="fa6fb-115">End \<keyword></span></span>](../../../visual-basic/language-reference/statements/end-keyword-statement.md)|  
+|[<span data-ttu-id="fa6fb-116">列挙型</span><span class="sxs-lookup"><span data-stu-id="fa6fb-116">Enum</span></span>](../../../visual-basic/language-reference/statements/enum-statement.md)|[<span data-ttu-id="fa6fb-117">消去</span><span class="sxs-lookup"><span data-stu-id="fa6fb-117">Erase</span></span>](../../../visual-basic/language-reference/statements/erase-statement.md)|[<span data-ttu-id="fa6fb-118">エラー</span><span class="sxs-lookup"><span data-stu-id="fa6fb-118">Error</span></span>](../../../visual-basic/language-reference/statements/error-statement.md)|[<span data-ttu-id="fa6fb-119">イベント</span><span class="sxs-lookup"><span data-stu-id="fa6fb-119">Event</span></span>](../../../visual-basic/language-reference/statements/event-statement.md)|  
+|[<span data-ttu-id="fa6fb-120">終了</span><span class="sxs-lookup"><span data-stu-id="fa6fb-120">Exit</span></span>](../../../visual-basic/language-reference/statements/exit-statement.md)||||  
   
-## <a name="see-also"></a>関連項目  
- [ステートメント F ~ P](../../../visual-basic/language-reference/statements/f-p-statements.md)   
- [ステートメント Q ~ Z](../../../visual-basic/language-reference/statements/q-z-statements.md)   
- [Visual Basic の言語リファレンス](../../../visual-basic/language-reference/index.md)
+## <a name="see-also"></a><span data-ttu-id="fa6fb-121">関連項目</span><span class="sxs-lookup"><span data-stu-id="fa6fb-121">See Also</span></span>  
+ <span data-ttu-id="fa6fb-122">[ステートメント F ~ P](../../../visual-basic/language-reference/statements/f-p-statements.md) </span><span class="sxs-lookup"><span data-stu-id="fa6fb-122">[F-P Statements](../../../visual-basic/language-reference/statements/f-p-statements.md) </span></span>  
+<span data-ttu-id="fa6fb-123"> [ステートメント Q ~ Z](../../../visual-basic/language-reference/statements/q-z-statements.md) </span><span class="sxs-lookup"><span data-stu-id="fa6fb-123"> [Q-Z Statements](../../../visual-basic/language-reference/statements/q-z-statements.md) </span></span>  
+<span data-ttu-id="fa6fb-124"> [Visual Basic の言語リファレンス](../../../visual-basic/language-reference/index.md)</span><span class="sxs-lookup"><span data-stu-id="fa6fb-124"> [Visual Basic Language Reference](../../../visual-basic/language-reference/index.md)</span></span>

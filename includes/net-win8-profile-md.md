@@ -1,1 +1,1 @@
-Windows 8.x ストア アプリ用 .NET
+<span data-ttu-id="e09f3-101">Windows 8.x ストア アプリ用 .NET</span><span class="sxs-lookup"><span data-stu-id="e09f3-101">.NET for Windows 8.x Store apps</span></span>

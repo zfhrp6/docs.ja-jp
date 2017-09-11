@@ -55,96 +55,96 @@ ms.contentlocale: ja-jp
 ms.lasthandoff: 07/28/2017
 
 ---
-# <a name="creating-deleting-and-moving-files-and-directories-in-visual-basic"></a>Visual Basic でのファイルおよびディレクトリの作成、削除、および移動
-このセクションでは、Visual Basic でのファイルとディレクトリの作成、削除、移動、名前変更に関連するタスクを列挙します。  
+# <a name="creating-deleting-and-moving-files-and-directories-in-visual-basic"></a><span data-ttu-id="d5e5a-102">Visual Basic でのファイルおよびディレクトリの作成、削除、および移動</span><span class="sxs-lookup"><span data-stu-id="d5e5a-102">Creating, Deleting, and Moving Files and Directories in Visual Basic</span></span>
+<span data-ttu-id="d5e5a-103">このセクションでは、Visual Basic でのファイルとディレクトリの作成、削除、移動、名前変更に関連するタスクを列挙します。</span><span class="sxs-lookup"><span data-stu-id="d5e5a-103">This section lists tasks associated with creating, deleting, moving, and renaming files and directories in Visual Basic.</span></span>  
   
-## <a name="in-this-section"></a>このセクションの内容  
- [方法: 特定のパターンを持つファイルをディレクトリにコピーする](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-copy-files-with-a-specific-pattern-to-a-directory.md)  
- 特定のファイル名パターンを持つファイルをディレクトリにコピーする方法を示します。たとえば、.txt ファイルのみをコピーします。  
+## <a name="in-this-section"></a><span data-ttu-id="d5e5a-104">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="d5e5a-104">In This Section</span></span>  
+ [<span data-ttu-id="d5e5a-105">方法: 特定のパターンを持つファイルをディレクトリにコピーする</span><span class="sxs-lookup"><span data-stu-id="d5e5a-105">How to: Copy Files with a Specific Pattern to a Directory</span></span>](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-copy-files-with-a-specific-pattern-to-a-directory.md)  
+ <span data-ttu-id="d5e5a-106">特定のファイル名パターンを持つファイルをディレクトリにコピーする方法を示します。たとえば、.txt ファイルのみをコピーします。</span><span class="sxs-lookup"><span data-stu-id="d5e5a-106">Demonstrates how to copy files with a specific file name pattern, such as only .txt files, to a directory.</span></span>  
   
- [方法: ファイルのコピーを同じディレクトリに作成する](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-create-a-copy-of-a-file-in-the-same-directory.md)  
- ファイルのコピーを同じディレクトリに作成する方法を示します。  
+ [<span data-ttu-id="d5e5a-107">方法: ファイルのコピーを同じディレクトリに作成する</span><span class="sxs-lookup"><span data-stu-id="d5e5a-107">How to: Create a Copy of a File in the Same Directory</span></span>](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-create-a-copy-of-a-file-in-the-same-directory.md)  
+ <span data-ttu-id="d5e5a-108">ファイルのコピーを同じディレクトリに作成する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="d5e5a-108">Demonstrates how to create a copy of a file in the same directory.</span></span>  
   
- [方法: ファイルのコピーを別のディレクトリに作成する](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-create-a-copy-of-a-file-in-a-different-directory.md)  
- 別のディレクトリにファイルをコピーする方法を示します。  
+ [<span data-ttu-id="d5e5a-109">方法: ファイルのコピーを別のディレクトリに作成する</span><span class="sxs-lookup"><span data-stu-id="d5e5a-109">How to: Create a Copy of a File in a Different Directory</span></span>](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-create-a-copy-of-a-file-in-a-different-directory.md)  
+ <span data-ttu-id="d5e5a-110">別のディレクトリにファイルをコピーする方法を示します。</span><span class="sxs-lookup"><span data-stu-id="d5e5a-110">Demonstrates how to copy a file to another directory.</span></span>  
   
- [方法: ファイルを作成する](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-create-a-file.md)  
- ファイルの作成方法を示します。  
+ [<span data-ttu-id="d5e5a-111">方法: ファイルを作成する</span><span class="sxs-lookup"><span data-stu-id="d5e5a-111">How to: Create a File</span></span>](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-create-a-file.md)  
+ <span data-ttu-id="d5e5a-112">ファイルの作成方法を示します。</span><span class="sxs-lookup"><span data-stu-id="d5e5a-112">Demonstrates how to create a file.</span></span>  
   
- [方法: ファイルを削除する](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-delete-a-file.md)  
- ファイルの削除方法を示します。  
+ [<span data-ttu-id="d5e5a-113">方法: ファイルを削除する</span><span class="sxs-lookup"><span data-stu-id="d5e5a-113">How to: Delete a File</span></span>](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-delete-a-file.md)  
+ <span data-ttu-id="d5e5a-114">ファイルの削除方法を示します。</span><span class="sxs-lookup"><span data-stu-id="d5e5a-114">Demonstrates how to delete a file.</span></span>  
   
- [方法: 特定のパターンに一致するファイルを検索する](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-find-files-with-a-specific-pattern.md)  
- あるディレクトリにある、特定のファイル名パターンを持つファイルのみを一覧表示する方法を示します。  
+ [<span data-ttu-id="d5e5a-115">方法: 特定のパターンに一致するファイルを検索する</span><span class="sxs-lookup"><span data-stu-id="d5e5a-115">How to: Find Files with a Specific Pattern</span></span>](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-find-files-with-a-specific-pattern.md)  
+ <span data-ttu-id="d5e5a-116">あるディレクトリにある、特定のファイル名パターンを持つファイルのみを一覧表示する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="d5e5a-116">Demonstrates how to list only files with a specific file name pattern in a directory.</span></span>  
   
- [方法: ファイルを移動する](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-move-a-file.md)  
- 別のディレクトリにファイルを移動する方法を示します。  
+ [<span data-ttu-id="d5e5a-117">方法: ファイルを移動する</span><span class="sxs-lookup"><span data-stu-id="d5e5a-117">How to: Move a File</span></span>](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-move-a-file.md)  
+ <span data-ttu-id="d5e5a-118">別のディレクトリにファイルを移動する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="d5e5a-118">Demonstrates how to move a file to a different directory.</span></span>  
   
- [方法: ファイルの名前を変更する](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-rename-a-file.md)  
- ファイルの名前変更方法を示します。  
+ [<span data-ttu-id="d5e5a-119">方法: ファイルの名前を変更する</span><span class="sxs-lookup"><span data-stu-id="d5e5a-119">How to: Rename a File</span></span>](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-rename-a-file.md)  
+ <span data-ttu-id="d5e5a-120">ファイルの名前変更方法を示します。</span><span class="sxs-lookup"><span data-stu-id="d5e5a-120">Demonstrates how to rename a file.</span></span>  
   
- [方法: ディレクトリを別のディレクトリにコピーする](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-copy-a-directory-to-another-directory.md)  
- 別の場所にディレクトリをコピーする方法を示します。  
+ [<span data-ttu-id="d5e5a-121">方法: ディレクトリを別のディレクトリにコピーする</span><span class="sxs-lookup"><span data-stu-id="d5e5a-121">How to: Copy a Directory to Another Directory</span></span>](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-copy-a-directory-to-another-directory.md)  
+ <span data-ttu-id="d5e5a-122">別の場所にディレクトリをコピーする方法を示します。</span><span class="sxs-lookup"><span data-stu-id="d5e5a-122">Demonstrates how to copy a directory to another location.</span></span>  
   
- [方法: ディレクトリを作成する](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-create-a-directory.md)  
- ディレクトリの作成方法を示します。  
+ [<span data-ttu-id="d5e5a-123">方法: ディレクトリを作成する</span><span class="sxs-lookup"><span data-stu-id="d5e5a-123">How to: Create a Directory</span></span>](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-create-a-directory.md)  
+ <span data-ttu-id="d5e5a-124">ディレクトリの作成方法を示します。</span><span class="sxs-lookup"><span data-stu-id="d5e5a-124">Demonstrates how to create a directory.</span></span>  
   
- [方法: 特定のパターンに一致するサブディレクトリを検索する](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-find-subdirectories-with-a-specific-pattern.md)  
- 名前に特定のパターンを持つディレクトリを一覧表示する方法を示します。  
+ [<span data-ttu-id="d5e5a-125">方法: 特定のパターンに一致するサブディレクトリを検索する</span><span class="sxs-lookup"><span data-stu-id="d5e5a-125">How to: Find Subdirectories with a Specific Pattern</span></span>](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-find-subdirectories-with-a-specific-pattern.md)  
+ <span data-ttu-id="d5e5a-126">名前に特定のパターンを持つディレクトリを一覧表示する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="d5e5a-126">Demonstrates how to list directories with a specific pattern in their name.</span></span>  
   
- [方法: ディレクトリにあるファイルのコレクションを取得する](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-get-the-collection-of-files-in-a-directory.md)  
- ディレクトリのファイルを一覧表示する方法を示します。  
+ [<span data-ttu-id="d5e5a-127">方法: ディレクトリにあるファイルのコレクションを取得する</span><span class="sxs-lookup"><span data-stu-id="d5e5a-127">How to: Get the Collection of Files in a Directory</span></span>](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-get-the-collection-of-files-in-a-directory.md)  
+ <span data-ttu-id="d5e5a-128">ディレクトリのファイルを一覧表示する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="d5e5a-128">Demonstrates how to list the files in a directory.</span></span>  
   
- [方法: My Documents ディレクトリの内容を取得する](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-retrieve-the-contents-of-the-my-documents-directory.md)  
- 特定のディレクトリから読み取る方法について説明します。  
+ [<span data-ttu-id="d5e5a-129">方法: My Documents ディレクトリの内容を取得する</span><span class="sxs-lookup"><span data-stu-id="d5e5a-129">How to: Retrieve the Contents of the My Documents Directory</span></span>](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-retrieve-the-contents-of-the-my-documents-directory.md)  
+ <span data-ttu-id="d5e5a-130">特定のディレクトリから読み取る方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="d5e5a-130">Demonstrates how to read from special directories.</span></span>  
   
- [方法: ファイル パスを解析する](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-parse-file-paths.md)  
- `My` メソッドを使用し、ファイル パスを結合する方法を示します。  
+ [<span data-ttu-id="d5e5a-131">方法: ファイル パスを解析する</span><span class="sxs-lookup"><span data-stu-id="d5e5a-131">How to: Parse File Paths</span></span>](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-parse-file-paths.md)  
+ <span data-ttu-id="d5e5a-132">`My` メソッドを使用し、ファイル パスを結合する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="d5e5a-132">Demonstrates how to use `My` methods to combine file paths.</span></span>  
   
-## <a name="reference"></a>参照  
+## <a name="reference"></a><span data-ttu-id="d5e5a-133">参照</span><span class="sxs-lookup"><span data-stu-id="d5e5a-133">Reference</span></span>  
  <xref:Microsoft.VisualBasic.FileIO.FileSystem>  
- `My.Computer.FileSystem` オブジェクトとそのメンバーについて説明します。  
+ <span data-ttu-id="d5e5a-134">`My.Computer.FileSystem` オブジェクトとそのメンバーについて説明します。</span><span class="sxs-lookup"><span data-stu-id="d5e5a-134">Describes the `My.Computer.FileSystem` object and its members.</span></span>  
   
  <xref:Microsoft.VisualBasic.FileIO.FileSystem.CombinePath%2A>  
- `CombinePath` メソッドについて説明します。  
+ <span data-ttu-id="d5e5a-135">`CombinePath` メソッドについて説明します。</span><span class="sxs-lookup"><span data-stu-id="d5e5a-135">Describes the `CombinePath` method.</span></span>  
   
  <xref:Microsoft.VisualBasic.FileIO.FileSystem.CopyDirectory%2A>  
- `CopyDirectory` メソッドについて説明します。  
+ <span data-ttu-id="d5e5a-136">`CopyDirectory` メソッドについて説明します。</span><span class="sxs-lookup"><span data-stu-id="d5e5a-136">Describes the `CopyDirectory` method.</span></span>  
   
  <xref:Microsoft.VisualBasic.FileIO.FileSystem.CopyFile%2A>  
- `CopyFile` メソッドについて説明します。  
+ <span data-ttu-id="d5e5a-137">`CopyFile` メソッドについて説明します。</span><span class="sxs-lookup"><span data-stu-id="d5e5a-137">Describes the `CopyFile` method.</span></span>  
   
  <xref:Microsoft.VisualBasic.FileIO.FileSystem.CreateDirectory%2A>  
- `CreateDirectory` メソッドについて説明します。  
+ <span data-ttu-id="d5e5a-138">`CreateDirectory` メソッドについて説明します。</span><span class="sxs-lookup"><span data-stu-id="d5e5a-138">Describes the `CreateDirectory` method.</span></span>  
   
  <xref:Microsoft.VisualBasic.FileIO.FileSystem.DeleteDirectory%2A>  
- `DeleteDirectory` メソッドについて説明します。  
+ <span data-ttu-id="d5e5a-139">`DeleteDirectory` メソッドについて説明します。</span><span class="sxs-lookup"><span data-stu-id="d5e5a-139">Describes the `DeleteDirectory` method.</span></span>  
   
  <xref:Microsoft.VisualBasic.FileIO.FileSystem.DeleteFile%2A>  
- `DeleteFile` メソッドについて説明します。  
+ <span data-ttu-id="d5e5a-140">`DeleteFile` メソッドについて説明します。</span><span class="sxs-lookup"><span data-stu-id="d5e5a-140">Describes the `DeleteFile` method.</span></span>  
   
  <xref:Microsoft.VisualBasic.FileIO.FileSystem.GetParentPath%2A>  
- `GetParentPath` メソッドについて説明します。  
+ <span data-ttu-id="d5e5a-141">`GetParentPath` メソッドについて説明します。</span><span class="sxs-lookup"><span data-stu-id="d5e5a-141">Describes the `GetParentPath` method.</span></span>  
   
  <xref:Microsoft.VisualBasic.FileIO.FileSystem.MoveDirectory%2A>  
- `MoveDirectory` メソッドについて説明します。  
+ <span data-ttu-id="d5e5a-142">`MoveDirectory` メソッドについて説明します。</span><span class="sxs-lookup"><span data-stu-id="d5e5a-142">Describes the `MoveDirectory` method.</span></span>  
   
  <xref:Microsoft.VisualBasic.FileIO.FileSystem.MoveFile%2A>  
- `MoveFile` メソッドについて説明します。  
+ <span data-ttu-id="d5e5a-143">`MoveFile` メソッドについて説明します。</span><span class="sxs-lookup"><span data-stu-id="d5e5a-143">Describes the `MoveFile` method.</span></span>  
   
  <xref:Microsoft.VisualBasic.FileIO.FileSystem.RenameDirectory%2A>  
- `RenameDirectory` メソッドについて説明します。  
+ <span data-ttu-id="d5e5a-144">`RenameDirectory` メソッドについて説明します。</span><span class="sxs-lookup"><span data-stu-id="d5e5a-144">Describes the `RenameDirectory` method.</span></span>  
   
  <xref:Microsoft.VisualBasic.FileIO.FileSystem.RenameFile%2A>  
- `RenameFile` メソッドについて説明します。  
+ <span data-ttu-id="d5e5a-145">`RenameFile` メソッドについて説明します。</span><span class="sxs-lookup"><span data-stu-id="d5e5a-145">Describes the `RenameFile` method.</span></span>  
   
  <xref:Microsoft.VisualBasic.FileIO.SpecialDirectories>  
- `SpecialDirectories` オブジェクトについて説明します。  
+ <span data-ttu-id="d5e5a-146">`SpecialDirectories` オブジェクトについて説明します。</span><span class="sxs-lookup"><span data-stu-id="d5e5a-146">Describes the `SpecialDirectories` object.</span></span>  
   
-## <a name="related-sections"></a>関連項目  
- [ファイルの読み取り](../../../../visual-basic/developing-apps/programming/drives-directories-files/reading-from-files.md)  
- ファイルの読み取りに関連するタスクを一覧表示します。  
+## <a name="related-sections"></a><span data-ttu-id="d5e5a-147">関連項目</span><span class="sxs-lookup"><span data-stu-id="d5e5a-147">Related Sections</span></span>  
+ [<span data-ttu-id="d5e5a-148">ファイルの読み取り</span><span class="sxs-lookup"><span data-stu-id="d5e5a-148">Reading from Files</span></span>](../../../../visual-basic/developing-apps/programming/drives-directories-files/reading-from-files.md)  
+ <span data-ttu-id="d5e5a-149">ファイルの読み取りに関連するタスクを一覧表示します。</span><span class="sxs-lookup"><span data-stu-id="d5e5a-149">Lists tasks associated with reading from files.</span></span>  
   
- [ファイルへの書き込み](../../../../visual-basic/developing-apps/programming/drives-directories-files/writing-to-files.md)  
- ファイルへの書き込みに関連するタスクを一覧表示します。
+ [<span data-ttu-id="d5e5a-150">ファイルへの書き込み</span><span class="sxs-lookup"><span data-stu-id="d5e5a-150">Writing to Files</span></span>](../../../../visual-basic/developing-apps/programming/drives-directories-files/writing-to-files.md)  
+ <span data-ttu-id="d5e5a-151">ファイルへの書き込みに関連するタスクを一覧表示します。</span><span class="sxs-lookup"><span data-stu-id="d5e5a-151">Lists tasks involving writing to files.</span></span>
 

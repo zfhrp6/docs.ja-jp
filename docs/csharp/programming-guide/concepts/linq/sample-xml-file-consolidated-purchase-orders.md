@@ -26,10 +26,10 @@ ms.contentlocale: ja-jp
 ms.lasthandoff: 07/28/2017
 
 ---
-# <a name="sample-xml-file-consolidated-purchase-orders"></a>サンプル XML ファイル : 統合購買発注書
-次の XML ファイルは、[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] ドキュメントのさまざまな例で使用されます。 このファイルは、形式の異なる複数企業の購買発注書をまとめたものです。 各企業の購買発注書は、別々の名前空間に含まれています。  
+# <a name="sample-xml-file-consolidated-purchase-orders"></a><span data-ttu-id="049b9-102">サンプル XML ファイル : 統合購買発注書</span><span class="sxs-lookup"><span data-stu-id="049b9-102">Sample XML File: Consolidated Purchase Orders</span></span>
+<span data-ttu-id="049b9-103">次の XML ファイルは、[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] ドキュメントのさまざまな例で使用されます。</span><span class="sxs-lookup"><span data-stu-id="049b9-103">The following XML file is used in various examples in the [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] documentation.</span></span> <span data-ttu-id="049b9-104">このファイルは、形式の異なる複数企業の購買発注書をまとめたものです。</span><span class="sxs-lookup"><span data-stu-id="049b9-104">This file is a set of purchase orders with different shapes from multiple companies.</span></span> <span data-ttu-id="049b9-105">各企業の購買発注書は、別々の名前空間に含まれています。</span><span class="sxs-lookup"><span data-stu-id="049b9-105">Purchase orders from each company are in separate namespaces.</span></span>  
   
-## <a name="consolidatedpurchaseordersxml"></a>ConsolidatedPurchaseOrders.xml  
+## <a name="consolidatedpurchaseordersxml"></a><span data-ttu-id="049b9-106">ConsolidatedPurchaseOrders.xml</span><span class="sxs-lookup"><span data-stu-id="049b9-106">ConsolidatedPurchaseOrders.xml</span></span>  
   
 ```xml  
 <?xml version="1.0"?>  
@@ -161,6 +161,6 @@ ms.lasthandoff: 07/28/2017
 </PurchaseOrders>  
 ```  
   
-## <a name="see-also"></a>関連項目  
- [サンプル XML ドキュメント (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-documents-linq-to-xml.md)
+## <a name="see-also"></a><span data-ttu-id="049b9-107">関連項目</span><span class="sxs-lookup"><span data-stu-id="049b9-107">See Also</span></span>  
+ [<span data-ttu-id="049b9-108">サンプル XML ドキュメント (LINQ to XML)</span><span class="sxs-lookup"><span data-stu-id="049b9-108">Sample XML Documents (LINQ to XML)</span></span>](../../../../csharp/programming-guide/concepts/linq/sample-xml-documents-linq-to-xml.md)
 

@@ -1,1 +1,1 @@
-Uniform Resource Identifier (URI)
+<span data-ttu-id="ee0ae-101">Uniform Resource Identifier (URI)</span><span class="sxs-lookup"><span data-stu-id="ee0ae-101">uniform resource identifiers (URIs)</span></span>

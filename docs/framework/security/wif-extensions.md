@@ -21,10 +21,10 @@ ms.contentlocale: ja-jp
 ms.lasthandoff: 08/21/2017
 
 ---
-# <a name="wif-extensions"></a>WIF の拡張
-ここでは、Windows Identity Foundation の拡張機能について説明します。  
+# <a name="wif-extensions"></a><span data-ttu-id="4c6be-102">WIF の拡張</span><span class="sxs-lookup"><span data-stu-id="4c6be-102">WIF Extensions</span></span>
+<span data-ttu-id="4c6be-103">ここでは、Windows Identity Foundation の拡張機能について説明します。</span><span class="sxs-lookup"><span data-stu-id="4c6be-103">This section describes the extensions for Windows Identity Foundation.</span></span>  
   
--   [JSON Web トークン ハンドラー](../../../docs/framework/security/json-web-token-handler.md)  
+-   [<span data-ttu-id="4c6be-104">JSON Web トークン ハンドラー</span><span class="sxs-lookup"><span data-stu-id="4c6be-104">JSON Web Token Handler</span></span>](../../../docs/framework/security/json-web-token-handler.md)  
   
--   [発行者名レジストリの検証](../../../docs/framework/security/validating-issuer-name-registry.md)
+-   [<span data-ttu-id="4c6be-105">発行者名レジストリの検証</span><span class="sxs-lookup"><span data-stu-id="4c6be-105">Validating Issuer Name Registry</span></span>](../../../docs/framework/security/validating-issuer-name-registry.md)
 

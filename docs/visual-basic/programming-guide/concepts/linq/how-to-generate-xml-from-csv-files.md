@@ -16,18 +16,18 @@ caps.latest.revision: 3
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 3729a9494c3b7486555b01245036c3c8441bf7e0
+ms.sourcegitcommit: 14abadaf548e228244a1ff7ca72fa3896ef4eb5d
+ms.openlocfilehash: a36818659adbeef13e2468170360aba090ecc1cb
 ms.contentlocale: ja-jp
-ms.lasthandoff: 03/13/2017
+ms.lasthandoff: 05/23/2017
 
 
 ---
-# <a name="how-to-generate-xml-from-csv-files-visual-basic"></a>方法: CSV ファイル (Visual Basic) から XML を生成
-この例では、[!INCLUDE[vbteclinqext](../../../../csharp/getting-started/includes/vbteclinqext_md.md)] および [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)] を使用して、コンマ区切り (CSV) ファイルから XML ファイルを生成する方法について説明します。  
+# <a name="how-to-generate-xml-from-csv-files-visual-basic"></a><span data-ttu-id="66fb4-102">方法: CSV ファイル (Visual Basic) から XML を生成</span><span class="sxs-lookup"><span data-stu-id="66fb4-102">How to: Generate XML from CSV Files (Visual Basic)</span></span>
+<span data-ttu-id="66fb4-103">この例では、[!INCLUDE[vbteclinqext](../../../../csharp/getting-started/includes/vbteclinqext_md.md)] および [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)] を使用して、コンマ区切り (CSV) ファイルから XML ファイルを生成する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="66fb4-103">This example shows how to use [!INCLUDE[vbteclinqext](../../../../csharp/getting-started/includes/vbteclinqext_md.md)] and [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)] to generate an XML file from a comma-separated value (CSV) file.</span></span>  
   
-## <a name="example"></a>例  
- 次のコードは、文字列の配列に対して [!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq_md.md)] クエリを実行します。  
+## <a name="example"></a><span data-ttu-id="66fb4-104">例</span><span class="sxs-lookup"><span data-stu-id="66fb4-104">Example</span></span>  
+ <span data-ttu-id="66fb4-105">次のコードは、文字列の配列に対して [!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq_md.md)] クエリを実行します。</span><span class="sxs-lookup"><span data-stu-id="66fb4-105">The following code performs a [!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq_md.md)] query on an array of strings.</span></span>  
   
 ```vb  
       ' Create the text file.  
@@ -62,7 +62,7 @@ Dim cust As XElement = _
 Console.WriteLine(cust)  
 ```  
   
- このコードを実行すると、次の出力が生成されます。  
+ <span data-ttu-id="66fb4-106">このコードを実行すると、次の出力が生成されます。</span><span class="sxs-lookup"><span data-stu-id="66fb4-106">This code produces the following output:</span></span>  
   
 ```xml  
 <Root>  
@@ -121,6 +121,6 @@ Console.WriteLine(cust)
 </Root>  
 ```  
   
-## <a name="see-also"></a>関連項目  
- [射影と変換 (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/projections-and-transformations-linq-to-xml.md)
+## <a name="see-also"></a><span data-ttu-id="66fb4-107">関連項目</span><span class="sxs-lookup"><span data-stu-id="66fb4-107">See Also</span></span>  
+ [<span data-ttu-id="66fb4-108">射影と変換 (LINQ to XML) (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="66fb4-108">Projections and Transformations (LINQ to XML) (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/projections-and-transformations-linq-to-xml.md)
 

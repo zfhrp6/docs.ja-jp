@@ -1,80 +1,78 @@
 ---
-title: ".NET Framework における型変換の表 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "拡大変換"
-  - "縮小変換"
-  - "型変換、表"
-  - "変換 (型を)、縮小変換"
-  - "変換 (型を)、拡大変換"
-  - "基本型、変換"
-  - "表 [.NET Framework]、型変換"
-  - "データ型 [.NET Framework]、変換"
-ms.assetid: 0ea65c59-85eb-4a52-94ca-c36d3bd13058
-caps.latest.revision: 11
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 11
+title: "型変換の表"
+description: "型変換の表"
+keywords: .NET, .NET Core
+author: stevehoag
+ms.author: shoag
+ms.date: 07/22/2016
+ms.topic: article
+ms.prod: .net
+ms.technology: dotnet-standard
+ms.devlang: dotnet
+ms.assetid: d602f260-e7cf-49c8-a37f-731f40e4a538
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 90fe68f7f3c4b46502b5d3770b1a2d57c6af748a
+ms.openlocfilehash: a27f78bc3c0753a7c5bc752bb6391839bfc21e75
+ms.contentlocale: ja-jp
+ms.lasthandoff: 03/02/2017
+
 ---
-# .NET Framework における型変換の表
-拡大変換は、ある型の値をそれよりサイズが大きいかまたは等しい別の型に変換するときに実行されます。  縮小変換は、ある型の値をそれよりサイズが小さい別の型の値に変換するときに実行されます。  このトピックの表では、この 2 種類の変換の動作を示します。  
-  
-## 拡大変換  
- 情報を失わずに実行できる拡大変換について次の表にまとめます。  
-  
-|型|データを失わない変換後の型|  
-|-------|-------------------|  
-|<xref:System.Byte>|<xref:System.UInt16>, <xref:System.Int16>, <xref:System.UInt32>, <xref:System.Int32>, <xref:System.UInt64>, <xref:System.Int64>, <xref:System.Single>, <xref:System.Double>, <xref:System.Decimal>|  
-|<xref:System.SByte>|<xref:System.Int16>, <xref:System.Int32>, <xref:System.Int64>, <xref:System.Single>, <xref:System.Double>, <xref:System.Decimal>|  
-|<xref:System.Int16>|<xref:System.Int32>, <xref:System.Int64>, <xref:System.Single>, <xref:System.Double>, <xref:System.Decimal>|  
-|<xref:System.UInt16>|<xref:System.UInt32>, <xref:System.Int32>, <xref:System.UInt64>, <xref:System.Int64>, <xref:System.Single>, <xref:System.Double>, <xref:System.Decimal>|  
-|<xref:System.Char>|<xref:System.UInt16>, <xref:System.UInt32>, <xref:System.Int32>, <xref:System.UInt64>, <xref:System.Int64>, <xref:System.Single>, <xref:System.Double>, <xref:System.Decimal>|  
-|<xref:System.Int32>|<xref:System.Int64>, <xref:System.Double>, <xref:System.Decimal>|  
-|<xref:System.UInt32>|<xref:System.Int64>, <xref:System.UInt64>, <xref:System.Double>, <xref:System.Decimal>|  
-|<xref:System.Int64>|<xref:System.Decimal>|  
-|<xref:System.UInt64>|<xref:System.Decimal>|  
-|<xref:System.Single>|<xref:System.Double>|  
-  
- <xref:System.Single> または <xref:System.Double> への拡大変換では、精度が失われることがあります。  情報が失われる可能性のある拡大変換について次の表にまとめます。  
-  
-|型|変換後の型|  
-|-------|-----------|  
-|<xref:System.Int32>|<xref:System.Single>|  
-|<xref:System.UInt32>|<xref:System.Single>|  
-|<xref:System.Int64>|<xref:System.Single>, <xref:System.Double>|  
-|<xref:System.UInt64>|<xref:System.Single>, <xref:System.Double>|  
-|<xref:System.Decimal>|<xref:System.Single>, <xref:System.Double>|  
-  
-## 縮小変換  
- <xref:System.Single> または <xref:System.Double> への縮小変換では、情報が失われることがあります。  変換先の型が変換元の絶対値を正確に表現できない場合、結果の型は定数 `PositiveInfinity` または `NegativeInfinity` に設定されます。  `PositiveInfinity` の値は、正の数を 0 で除算した結果であり、<xref:System.Single> または <xref:System.Double> の値が `MaxValue` フィールドの値を上回った場合にも返されます。  `NegativeInfinity` の値は、負の数を 0 で除算した結果であり、<xref:System.Single> または <xref:System.Double> の値が `MinValue` フィールドの値を下回った場合にも返されます。  <xref:System.Double> から <xref:System.Single> に変換すると、結果が `PositiveInfinity` または `NegativeInfinity` になります。  
-  
- ほかのデータ型の縮小変換でも、情報が失われることがあります。  ただし、変換結果の型の値が、変換先の型の `MaxValue` フィールドおよび `MinValue` フィールドで指定されている範囲外になる場合は <xref:System.OverflowException> がスローされ、変換先の型の値が `MaxValue` または `MinValue` を超えないことを保証するためにランタイムによってその変換がチェックされます。  <xref:System.Convert?displayProperty=fullName> クラスを使用して実行される変換は、必ずこの方法でチェックされます。  
-  
- <xref:System.Convert?displayProperty=fullName> を使用した変換や、チェックを伴うその他の変換で、変換結果の型の値が結果の型で定義されている範囲外の値になる場合に <xref:System.OverflowException> がスローされるケースを次の表にまとめます。  
-  
-|型|変換後の型|  
-|-------|-----------|  
-|<xref:System.Byte>|<xref:System.SByte>|  
-|<xref:System.SByte>|<xref:System.Byte>, <xref:System.UInt16>, <xref:System.UInt32>, <xref:System.UInt64>|  
-|<xref:System.Int16>|<xref:System.Byte>, <xref:System.SByte>, <xref:System.UInt16>|  
-|<xref:System.UInt16>|<xref:System.Byte>, <xref:System.SByte>, <xref:System.Int16>|  
-|<xref:System.Int32>|<xref:System.Byte>, <xref:System.SByte>, <xref:System.Int16>, <xref:System.UInt16>,<xref:System.UInt32>|  
-|<xref:System.UInt32>|<xref:System.Byte>, <xref:System.SByte>, <xref:System.Int16>, <xref:System.UInt16>, <xref:System.Int32>|  
-|<xref:System.Int64>|<xref:System.Byte>, <xref:System.SByte>, <xref:System.Int16>, <xref:System.UInt16>, <xref:System.Int32>,<xref:System.UInt32>,<xref:System.UInt64>|  
-|<xref:System.UInt64>|<xref:System.Byte>, <xref:System.SByte>, <xref:System.Int16>, <xref:System.UInt16>, <xref:System.Int32>, <xref:System.UInt32>, <xref:System.Int64>|  
-|<xref:System.Decimal>|<xref:System.Byte>, <xref:System.SByte>, <xref:System.Int16>, <xref:System.UInt16>, <xref:System.Int32>, <xref:System.UInt32>, <xref:System.Int64>, <xref:System.UInt64>|  
-|<xref:System.Single>|<xref:System.Byte>, <xref:System.SByte>, <xref:System.Int16>, <xref:System.UInt16>, <xref:System.Int32>, <xref:System.UInt32>, <xref:System.Int64>, <xref:System.UInt64>|  
-|<xref:System.Double>|<xref:System.Byte>, <xref:System.SByte>, <xref:System.Int16>, <xref:System.UInt16>, <xref:System.Int32>, <xref:System.UInt32>, <xref:System.Int64>, <xref:System.UInt64>|  
-  
-## 参照  
- <xref:System.Convert?displayProperty=fullName>   
- [.NET Framework における型変換](../../../docs/standard/base-types/type-conversion.md)
+
+# <a name="type-conversion-tables"></a><span data-ttu-id="2c74a-104">型変換の表</span><span class="sxs-lookup"><span data-stu-id="2c74a-104">Type conversion tables</span></span>
+
+<span data-ttu-id="2c74a-105">拡大変換は、1 つの型の値が、サイズが同じかそれ以上の別の型に変換されるときに発生します。</span><span class="sxs-lookup"><span data-stu-id="2c74a-105">Widening conversion occurs when a value of one type is converted to another type that is of equal or greater size.</span></span> <span data-ttu-id="2c74a-106">縮小変換は、1 つの型の値が、サイズがより小さい別の型の値に変換されるときに発生します。</span><span class="sxs-lookup"><span data-stu-id="2c74a-106">A narrowing conversion occurs when a value of one type is converted to a value of another type that is of a smaller size.</span></span> <span data-ttu-id="2c74a-107">このトピックの表は、両方の種類の変換の動作を示しています。</span><span class="sxs-lookup"><span data-stu-id="2c74a-107">The tables in this topic illustrate the behaviors exhibited by both types of conversions.</span></span>
+
+## <a name="widening-conversions"></a><span data-ttu-id="2c74a-108">拡大変換</span><span class="sxs-lookup"><span data-stu-id="2c74a-108">Widening Conversions</span></span>
+
+<span data-ttu-id="2c74a-109">型</span><span class="sxs-lookup"><span data-stu-id="2c74a-109">Type</span></span> | <span data-ttu-id="2c74a-110">データ損失なしに次の型に変換可能</span><span class="sxs-lookup"><span data-stu-id="2c74a-110">Can be converted without data loss to</span></span>
+---- | -------------------------------------
+[<span data-ttu-id="2c74a-111">Byte</span><span class="sxs-lookup"><span data-stu-id="2c74a-111">Byte</span></span>](xref:System.Byte) | <span data-ttu-id="2c74a-112">[UInt16](xref:System.UInt16)、[Int16](xref:System.Int16)、[UInt32](xref:System.UInt32)、[Int32](xref:System.Int32)、[UInt64](xref:System.UInt64)、[Int64](xref:System.Int64)、[Single](xref:System.Single)、[Double](xref:System.Double)、[Decimal](xref:System.Decimal)</span><span class="sxs-lookup"><span data-stu-id="2c74a-112">[UInt16](xref:System.UInt16), [Int16](xref:System.Int16), [UInt32](xref:System.UInt32), [Int32](xref:System.Int32), [UInt64](xref:System.UInt64), [Int64](xref:System.Int64), [Single](xref:System.Single), [Double](xref:System.Double), [Decimal](xref:System.Decimal)</span></span>
+[<span data-ttu-id="2c74a-113">SByte</span><span class="sxs-lookup"><span data-stu-id="2c74a-113">SByte</span></span>](xref:System.SByte) | <span data-ttu-id="2c74a-114">[Int16](xref:System.Int16)、[Int32](xref:System.Int32)、[Int64](xref:System.Int64)、[Single](xref:System.Single)、[Double](xref:System.Double)、[Decimal](xref:System.Decimal)</span><span class="sxs-lookup"><span data-stu-id="2c74a-114">[Int16](xref:System.Int16), [Int32](xref:System.Int32), [Int64](xref:System.Int64), [Single](xref:System.Single), [Double](xref:System.Double), [Decimal](xref:System.Decimal)</span></span>
+[<span data-ttu-id="2c74a-115">Int16</span><span class="sxs-lookup"><span data-stu-id="2c74a-115">Int16</span></span>](xref:System.Int16) | <span data-ttu-id="2c74a-116">[Int32](xref:System.Int32)、[Int64](xref:System.Int64)、[Single](xref:System.Single)、[Double](xref:System.Double)、[Decimal](xref:System.Decimal)</span><span class="sxs-lookup"><span data-stu-id="2c74a-116">[Int32](xref:System.Int32), [Int64](xref:System.Int64), [Single](xref:System.Single), [Double](xref:System.Double), [Decimal](xref:System.Decimal)</span></span>
+[<span data-ttu-id="2c74a-117">UInt16</span><span class="sxs-lookup"><span data-stu-id="2c74a-117">UInt16</span></span>](xref:System.UInt16) | <span data-ttu-id="2c74a-118">[UInt32](xref:System.UInt32)、[Int32](xref:System.Int32)、[UInt64](xref:System.UInt64)、[Int64](xref:System.Int64)、[Single](xref:System.Single)、[Double](xref:System.Double)、[Decimal](xref:System.Decimal)</span><span class="sxs-lookup"><span data-stu-id="2c74a-118">[UInt32](xref:System.UInt32), [Int32](xref:System.Int32), [UInt64](xref:System.UInt64), [Int64](xref:System.Int64), [Single](xref:System.Single), [Double](xref:System.Double), [Decimal](xref:System.Decimal)</span></span>
+[<span data-ttu-id="2c74a-119">Char</span><span class="sxs-lookup"><span data-stu-id="2c74a-119">Char</span></span>](xref:System.Char) | <span data-ttu-id="2c74a-120">[UInt16](xref:System.UInt16)、[UInt32](xref:System.UInt32)、[Int32](xref:System.Int32)、[UInt64](xref:System.UInt64)、[Int64](xref:System.Int64)、[Single](xref:System.Single)、[Double](xref:System.Double)、[Decimal](xref:System.Decimal)</span><span class="sxs-lookup"><span data-stu-id="2c74a-120">[UInt16](xref:System.UInt16), [UInt32](xref:System.UInt32), [Int32](xref:System.Int32), [UInt64](xref:System.UInt64), [Int64](xref:System.Int64), [Single](xref:System.Single), [Double](xref:System.Double), [Decimal](xref:System.Decimal)</span></span>
+[<span data-ttu-id="2c74a-121">Int32</span><span class="sxs-lookup"><span data-stu-id="2c74a-121">Int32</span></span>](xref:System.Int32) | <span data-ttu-id="2c74a-122">[Int64](xref:System.Int64)、[Double](xref:System.Double)、[Decimal](xref:System.Decimal)</span><span class="sxs-lookup"><span data-stu-id="2c74a-122">[Int64](xref:System.Int64), [Double](xref:System.Double), [Decimal](xref:System.Decimal)</span></span>
+[<span data-ttu-id="2c74a-123">UInt32</span><span class="sxs-lookup"><span data-stu-id="2c74a-123">UInt32</span></span>](xref:System.UInt32) | <span data-ttu-id="2c74a-124">[Int64](xref:System.Int64)、[UInt64](xref:System.UInt64)、[Double](xref:System.Double)、[Decimal](xref:System.Decimal)</span><span class="sxs-lookup"><span data-stu-id="2c74a-124">[Int64](xref:System.Int64), [UInt64](xref:System.UInt64), [Double](xref:System.Double), [Decimal](xref:System.Decimal)</span></span>
+[<span data-ttu-id="2c74a-125">Int64</span><span class="sxs-lookup"><span data-stu-id="2c74a-125">Int64</span></span>](xref:System.Int64) | [<span data-ttu-id="2c74a-126">Decimal</span><span class="sxs-lookup"><span data-stu-id="2c74a-126">Decimal</span></span>](xref:System.Decimal)
+[<span data-ttu-id="2c74a-127">UInt64</span><span class="sxs-lookup"><span data-stu-id="2c74a-127">UInt64</span></span>](xref:System.UInt64) | [<span data-ttu-id="2c74a-128">Decimal</span><span class="sxs-lookup"><span data-stu-id="2c74a-128">Decimal</span></span>](xref:System.Decimal)
+[<span data-ttu-id="2c74a-129">Single</span><span class="sxs-lookup"><span data-stu-id="2c74a-129">Single</span></span>](xref:System.Single) | [<span data-ttu-id="2c74a-130">Double</span><span class="sxs-lookup"><span data-stu-id="2c74a-130">Double</span></span>](xref:System.Double)
+
+<span data-ttu-id="2c74a-131">一部の [Single](xref:System.Single) または [Double](xref:System.Double) への拡大変換では、精度が損なわれる可能性があります。</span><span class="sxs-lookup"><span data-stu-id="2c74a-131">Some widening conversions to [Single](xref:System.Single) or [Double](xref:System.Double) can cause a loss of precision.</span></span> <span data-ttu-id="2c74a-132">次の表は、情報が失われる可能性のある拡大変換を示しています。</span><span class="sxs-lookup"><span data-stu-id="2c74a-132">The following table describes the widening conversions that sometimes result in a loss of information.</span></span>
+
+<span data-ttu-id="2c74a-133">型</span><span class="sxs-lookup"><span data-stu-id="2c74a-133">Type</span></span> | <span data-ttu-id="2c74a-134">次の型に変換可能</span><span class="sxs-lookup"><span data-stu-id="2c74a-134">Can be converted to</span></span>
+---- | -------------------
+[<span data-ttu-id="2c74a-135">Int32</span><span class="sxs-lookup"><span data-stu-id="2c74a-135">Int32</span></span>](xref:System.Int32) | [<span data-ttu-id="2c74a-136">Single</span><span class="sxs-lookup"><span data-stu-id="2c74a-136">Single</span></span>](xref:System.Single)
+[<span data-ttu-id="2c74a-137">UInt32</span><span class="sxs-lookup"><span data-stu-id="2c74a-137">UInt32</span></span>](xref:System.UInt32) | [<span data-ttu-id="2c74a-138">Single</span><span class="sxs-lookup"><span data-stu-id="2c74a-138">Single</span></span>](xref:System.Single)
+[<span data-ttu-id="2c74a-139">Int64</span><span class="sxs-lookup"><span data-stu-id="2c74a-139">Int64</span></span>](xref:System.Int64) | <span data-ttu-id="2c74a-140">[Single](xref:System.Single)、[Double](xref:System.Double)</span><span class="sxs-lookup"><span data-stu-id="2c74a-140">[Single](xref:System.Single), [Double](xref:System.Double)</span></span>
+[<span data-ttu-id="2c74a-141">UInt64</span><span class="sxs-lookup"><span data-stu-id="2c74a-141">UInt64</span></span>](xref:System.UInt64) | <span data-ttu-id="2c74a-142">[Single](xref:System.Single)、[Double](xref:System.Double)</span><span class="sxs-lookup"><span data-stu-id="2c74a-142">[Single](xref:System.Single), [Double](xref:System.Double)</span></span>
+[<span data-ttu-id="2c74a-143">Decimal</span><span class="sxs-lookup"><span data-stu-id="2c74a-143">Decimal</span></span>](xref:System.Decimal) | <span data-ttu-id="2c74a-144">[Single](xref:System.Single)、[Double](xref:System.Double)</span><span class="sxs-lookup"><span data-stu-id="2c74a-144">[Single](xref:System.Single), [Double](xref:System.Double)</span></span>
+
+## <a name="narrowing-conversions"></a><span data-ttu-id="2c74a-145">縮小変換</span><span class="sxs-lookup"><span data-stu-id="2c74a-145">Narrowing Conversions</span></span>
+
+<span data-ttu-id="2c74a-146">[Single](xref:System.Single) または [Double](xref:System.Double) への縮小変換では、情報が失われる可能性があります。</span><span class="sxs-lookup"><span data-stu-id="2c74a-146">A narrowing conversion to [Single](xref:System.Single) or [Double](xref:System.Double) can cause a loss of information.</span></span> <span data-ttu-id="2c74a-147">ターゲット型がソースの大きさを正確に表現できない場合、結果の型は定数 `PositiveInfinity` または `NegativeInfinity` に設定されます。</span><span class="sxs-lookup"><span data-stu-id="2c74a-147">If the target type cannot properly express the magnitude of the source, the resulting type is set to the constant `PositiveInfinity` or `NegativeInfinity`.</span></span> <span data-ttu-id="2c74a-148">`PositiveInfinity` は、正の数を&0; で除算した結果であり、[Single](xref:System.Single) または [Double](xref:System.Double) の値が `MaxValue` フィールドの値を超える場合にも返されます。</span><span class="sxs-lookup"><span data-stu-id="2c74a-148">`PositiveInfinity` results from dividing a positive number by zero and is also returned when the value of a [Single](xref:System.Single) or [Double](xref:System.Double) exceeds the value of the `MaxValue` field.</span></span> <span data-ttu-id="2c74a-149">`NegativeInfinity` は、負の数を&0; で除算した結果であり、[Single](xref:System.Single) または [Double](xref:System.Double) の値が `MinValue` フィールドの値を下回る場合にも返されます。</span><span class="sxs-lookup"><span data-stu-id="2c74a-149">`NegativeInfinity` results from dividing a negative number by zero and is also returned when the value of a [Single](xref:System.Single) or [Double](xref:System.Double) falls below the value of the `MinValue` field.</span></span> <span data-ttu-id="2c74a-150">[Double](xref:System.Double) から [Single](xref:System.Single) への変換は、`PositiveInfinity` または `NegativeInfinity` になる場合があります。</span><span class="sxs-lookup"><span data-stu-id="2c74a-150">A conversion from a [Double](xref:System.Double) to a [Single](xref:System.Single) might result in `PositiveInfinity` or `NegativeInfinity`.</span></span>
+
+<span data-ttu-id="2c74a-151">その他のデータ型についても、縮小変換によって情報が失われる可能性があります。</span><span class="sxs-lookup"><span data-stu-id="2c74a-151">A narrowing conversion can also result in a loss of information for other data types.</span></span> <span data-ttu-id="2c74a-152">ただし、変換される型の値が、ターゲット型の `MaxValue` フィールドと `MinValue` フィールドで指定された範囲外にある場合は、[OverflowException](xref:System.OverflowException) がスローされます。また、ターゲット型の値がその `MaxValue` または `MinValue` を超えないことを確認するために、ランタイムによって変換がチェックされます。</span><span class="sxs-lookup"><span data-stu-id="2c74a-152">However, an [OverflowException](xref:System.OverflowException) is thrown if the value of a type that is being converted falls outside of the range specified by the target type's `MaxValue` and `MinValue` fields, and the conversion is checked by the runtime to ensure that the value of the target type does not exceed its `MaxValue` or `MinValue`.</span></span> <span data-ttu-id="2c74a-153">[System.Convert](xref:System.Convert) クラスを使用して実行される変換は、常にこの方法でチェックされます。</span><span class="sxs-lookup"><span data-stu-id="2c74a-153">Conversions that are performed with the [System.Convert](xref:System.Convert) class are always checked in this manner.</span></span>
+
+<span data-ttu-id="2c74a-154">次の表は、[System.Convert](xref:System.Convert) を使用して [OverflowException](xref:System.OverflowException) をスローする変換、または、変換される型の値が結果の型の定義済みの範囲外にあるかどうかのチェックを行うすべての変換を示しています。</span><span class="sxs-lookup"><span data-stu-id="2c74a-154">The following table lists conversions that throw an [OverflowException](xref:System.OverflowException) using [System.Convert](xref:System.Convert) or any checked conversion if the value of the type being converted is outside the defined range of the resulting type.</span></span>
+
+<span data-ttu-id="2c74a-155">型</span><span class="sxs-lookup"><span data-stu-id="2c74a-155">Type</span></span> | <span data-ttu-id="2c74a-156">次の型に変換可能</span><span class="sxs-lookup"><span data-stu-id="2c74a-156">Can be converted to</span></span>
+---- | -------------------
+[<span data-ttu-id="2c74a-157">Byte</span><span class="sxs-lookup"><span data-stu-id="2c74a-157">Byte</span></span>](xref:System.Byte) | [<span data-ttu-id="2c74a-158">SByte</span><span class="sxs-lookup"><span data-stu-id="2c74a-158">SByte</span></span>](xref:System.SByte)
+[<span data-ttu-id="2c74a-159">SByte</span><span class="sxs-lookup"><span data-stu-id="2c74a-159">SByte</span></span>](xref:System.SByte) | <span data-ttu-id="2c74a-160">[Byte](xref:System.Byte)、[UInt16](xref:System.UInt16)、[UInt32](xref:System.UInt32)、[UInt64](xref:System.UInt64)</span><span class="sxs-lookup"><span data-stu-id="2c74a-160">[Byte](xref:System.Byte), [UInt16](xref:System.UInt16), [UInt32](xref:System.UInt32), [UInt64](xref:System.UInt64)</span></span>
+[<span data-ttu-id="2c74a-161">Int16</span><span class="sxs-lookup"><span data-stu-id="2c74a-161">Int16</span></span>](xref:System.Int16) | <span data-ttu-id="2c74a-162">[Byte](xref:System.Byte)、[SByte](xref:System.SByte)、[UInt16](xref:System.UInt16)</span><span class="sxs-lookup"><span data-stu-id="2c74a-162">[Byte](xref:System.Byte), [SByte](xref:System.SByte), [UInt16](xref:System.UInt16)</span></span>
+[<span data-ttu-id="2c74a-163">UInt16</span><span class="sxs-lookup"><span data-stu-id="2c74a-163">UInt16</span></span>](xref:System.UInt16) | <span data-ttu-id="2c74a-164">[Byte](xref:System.Byte)、[SByte](xref:System.SByte)、[Int16](xref:System.Int16)</span><span class="sxs-lookup"><span data-stu-id="2c74a-164">[Byte](xref:System.Byte), [SByte](xref:System.SByte), [Int16](xref:System.Int16)</span></span>
+[<span data-ttu-id="2c74a-165">Int32</span><span class="sxs-lookup"><span data-stu-id="2c74a-165">Int32</span></span>](xref:System.Int32) | <span data-ttu-id="2c74a-166">[Byte](xref:System.Byte)、[SByte](xref:System.SByte)、[Int16](xref:System.Int16)、[UInt16](xref:System.UInt16)、[UInt32](xref:System.UInt32)</span><span class="sxs-lookup"><span data-stu-id="2c74a-166">[Byte](xref:System.Byte), [SByte](xref:System.SByte), [Int16](xref:System.Int16), [UInt16](xref:System.UInt16), [UInt32](xref:System.UInt32)</span></span>
+[<span data-ttu-id="2c74a-167">UInt32</span><span class="sxs-lookup"><span data-stu-id="2c74a-167">UInt32</span></span>](xref:System.UInt32) | <span data-ttu-id="2c74a-168">[Byte](xref:System.Byte)、[SByte](xref:System.SByte)、[Int16](xref:System.Int16)、[UInt16](xref:System.UInt16)、[Int32](xref:System.Int32)</span><span class="sxs-lookup"><span data-stu-id="2c74a-168">[Byte](xref:System.Byte), [SByte](xref:System.SByte), [Int16](xref:System.Int16), [UInt16](xref:System.UInt16), [Int32](xref:System.Int32)</span></span>
+[<span data-ttu-id="2c74a-169">Int64</span><span class="sxs-lookup"><span data-stu-id="2c74a-169">Int64</span></span>](xref:System.Int64) | <span data-ttu-id="2c74a-170">[Byte](xref:System.Byte)、[SByte](xref:System.SByte)、[Int16](xref:System.Int16)、[UInt16](xref:System.UInt16)、[Int32](xref:System.Int32)、[UInt32](xref:System.UInt32)、[UInt64](xref:System.UInt64)</span><span class="sxs-lookup"><span data-stu-id="2c74a-170">[Byte](xref:System.Byte), [SByte](xref:System.SByte), [Int16](xref:System.Int16), [UInt16](xref:System.UInt16), [Int32](xref:System.Int32), [UInt32](xref:System.UInt32), [UInt64](xref:System.UInt64)</span></span>
+[<span data-ttu-id="2c74a-171">UInt64</span><span class="sxs-lookup"><span data-stu-id="2c74a-171">UInt64</span></span>](xref:System.UInt64) | <span data-ttu-id="2c74a-172">[Byte](xref:System.Byte)、[SByte](xref:System.SByte)、[Int16](xref:System.Int16)、[UInt16](xref:System.UInt16)、[Int32](xref:System.Int32)、[UInt32](xref:System.UInt32)、[Int64](xref:System.Int64)</span><span class="sxs-lookup"><span data-stu-id="2c74a-172">[Byte](xref:System.Byte), [SByte](xref:System.SByte), [Int16](xref:System.Int16), [UInt16](xref:System.UInt16), [Int32](xref:System.Int32), [UInt32](xref:System.UInt32), [Int64](xref:System.Int64)</span></span>
+[<span data-ttu-id="2c74a-173">Decimal</span><span class="sxs-lookup"><span data-stu-id="2c74a-173">Decimal</span></span>](xref:System.Decimal) | <span data-ttu-id="2c74a-174">[Byte](xref:System.Byte)、[SByte](xref:System.SByte)、[Int16](xref:System.Int16)、[UInt16](xref:System.UInt16)、[Int32](xref:System.Int32)、[UInt32](xref:System.UInt32)、[Int64](xref:System.Int64)、[UInt64](xref:System.UInt64)</span><span class="sxs-lookup"><span data-stu-id="2c74a-174">[Byte](xref:System.Byte), [SByte](xref:System.SByte), [Int16](xref:System.Int16), [UInt16](xref:System.UInt16), [Int32](xref:System.Int32), [UInt32](xref:System.UInt32), [Int64](xref:System.Int64), [UInt64](xref:System.UInt64)</span></span>
+[<span data-ttu-id="2c74a-175">Single</span><span class="sxs-lookup"><span data-stu-id="2c74a-175">Single</span></span>](xref:System.Single) | <span data-ttu-id="2c74a-176">[Byte](xref:System.Byte)、[SByte](xref:System.SByte)、[Int16](xref:System.Int16)、[UInt16](xref:System.UInt16)、[Int32](xref:System.Int32)、[UInt32](xref:System.UInt32)、[Int64](xref:System.Int64)、[UInt64](xref:System.UInt64)</span><span class="sxs-lookup"><span data-stu-id="2c74a-176">[Byte](xref:System.Byte), [SByte](xref:System.SByte), [Int16](xref:System.Int16), [UInt16](xref:System.UInt16), [Int32](xref:System.Int32), [UInt32](xref:System.UInt32), [Int64](xref:System.Int64), [UInt64](xref:System.UInt64)</span></span>
+[<span data-ttu-id="2c74a-177">Double</span><span class="sxs-lookup"><span data-stu-id="2c74a-177">Double</span></span>](xref:System.Double) | <span data-ttu-id="2c74a-178">[Byte](xref:System.Byte)、[SByte](xref:System.SByte)、[Int16](xref:System.Int16)、[UInt16](xref:System.UInt16)、[Int32](xref:System.Int32)、[UInt32](xref:System.UInt32)、[Int64](xref:System.Int64)、[UInt64](xref:System.UInt64)</span><span class="sxs-lookup"><span data-stu-id="2c74a-178">[Byte](xref:System.Byte), [SByte](xref:System.SByte), [Int16](xref:System.Int16), [UInt16](xref:System.UInt16), [Int32](xref:System.Int32), [UInt32](xref:System.UInt32), [Int64](xref:System.Int64), [UInt64](xref:System.UInt64)</span></span>
+
+## <a name="see-also"></a><span data-ttu-id="2c74a-179">関連項目</span><span class="sxs-lookup"><span data-stu-id="2c74a-179">See Also</span></span>
+
+[<span data-ttu-id="2c74a-180">System.Convert</span><span class="sxs-lookup"><span data-stu-id="2c74a-180">System.Convert</span></span>](xref:System.Convert)
+
+[<span data-ttu-id="2c74a-181">型変換</span><span class="sxs-lookup"><span data-stu-id="2c74a-181">Type Conversion</span></span>](type-conversion.md)
+
+

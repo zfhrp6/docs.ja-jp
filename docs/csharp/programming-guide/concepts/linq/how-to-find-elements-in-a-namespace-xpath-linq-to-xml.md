@@ -21,15 +21,15 @@ ms.contentlocale: ja-jp
 ms.lasthandoff: 07/28/2017
 
 ---
-# <a name="how-to-find-elements-in-a-namespace-xpath-linq-to-xml-c"></a>方法: 名前空間内の要素を検索する (XPath-LINQ to XML) (C#)
-XPath 式を使用すると、特定の名前空間内のノードを検索できます。 XPath 式では、名前空間を指定する名前空間プレフィックスを使用します。 名前空間プレフィックスを含む XPath 式を解析するには、<xref:System.Xml.IXmlNamespaceResolver> を実装する XPath メソッドにオブジェクトを渡す必要があります。 この例では <xref:System.Xml.XmlNamespaceManager> を使用します。  
+# <a name="how-to-find-elements-in-a-namespace-xpath-linq-to-xml-c"></a><span data-ttu-id="cdd84-102">方法: 名前空間内の要素を検索する (XPath-LINQ to XML) (C#)</span><span class="sxs-lookup"><span data-stu-id="cdd84-102">How to: Find Elements in a Namespace (XPath-LINQ to XML) (C#)</span></span>
+<span data-ttu-id="cdd84-103">XPath 式を使用すると、特定の名前空間内のノードを検索できます。</span><span class="sxs-lookup"><span data-stu-id="cdd84-103">XPath expressions can find nodes in a particular namespace.</span></span> <span data-ttu-id="cdd84-104">XPath 式では、名前空間を指定する名前空間プレフィックスを使用します。</span><span class="sxs-lookup"><span data-stu-id="cdd84-104">XPath expressions use namespace prefixes for specifying namespaces.</span></span> <span data-ttu-id="cdd84-105">名前空間プレフィックスを含む XPath 式を解析するには、<xref:System.Xml.IXmlNamespaceResolver> を実装する XPath メソッドにオブジェクトを渡す必要があります。</span><span class="sxs-lookup"><span data-stu-id="cdd84-105">To parse an XPath expression that contains namespace prefixes, you must pass an object to the XPath methods that implements <xref:System.Xml.IXmlNamespaceResolver>.</span></span> <span data-ttu-id="cdd84-106">この例では <xref:System.Xml.XmlNamespaceManager> を使用します。</span><span class="sxs-lookup"><span data-stu-id="cdd84-106">This example uses <xref:System.Xml.XmlNamespaceManager>.</span></span>  
   
- XPath 式を次に示します。  
+ <span data-ttu-id="cdd84-107">XPath 式を次に示します。</span><span class="sxs-lookup"><span data-stu-id="cdd84-107">The XPath expression is:</span></span>  
   
  `./aw:*`  
   
-## <a name="example"></a>例  
- 次の例では、2 つの名前空間を含む XML ツリーを読み込みます。 <xref:System.Xml.XmlReader> を使用して XML ドキュメントを読み込ます。 次に、<xref:System.Xml.XmlNameTable> から <xref:System.Xml.XmlReader> を取得し、<xref:System.Xml.XmlNamespaceManager> から <xref:System.Xml.XmlNameTable> を取得します。 要素を選択する際には <xref:System.Xml.XmlNamespaceManager> を使用します。  
+## <a name="example"></a><span data-ttu-id="cdd84-108">例</span><span class="sxs-lookup"><span data-stu-id="cdd84-108">Example</span></span>  
+ <span data-ttu-id="cdd84-109">次の例では、2 つの名前空間を含む XML ツリーを読み込みます。</span><span class="sxs-lookup"><span data-stu-id="cdd84-109">The following example reads an XML tree that contains two namespaces.</span></span> <span data-ttu-id="cdd84-110"><xref:System.Xml.XmlReader> を使用して XML ドキュメントを読み込ます。</span><span class="sxs-lookup"><span data-stu-id="cdd84-110">It uses an <xref:System.Xml.XmlReader> to read the XML document.</span></span> <span data-ttu-id="cdd84-111">次に、<xref:System.Xml.XmlNameTable> から <xref:System.Xml.XmlReader> を取得し、<xref:System.Xml.XmlNamespaceManager> から <xref:System.Xml.XmlNameTable> を取得します。</span><span class="sxs-lookup"><span data-stu-id="cdd84-111">It then gets an <xref:System.Xml.XmlNameTable> from the <xref:System.Xml.XmlReader>, and an <xref:System.Xml.XmlNamespaceManager> from the <xref:System.Xml.XmlNameTable>.</span></span> <span data-ttu-id="cdd84-112">要素を選択する際には <xref:System.Xml.XmlNamespaceManager> を使用します。</span><span class="sxs-lookup"><span data-stu-id="cdd84-112">It uses the <xref:System.Xml.XmlNamespaceManager> when selecting elements.</span></span>  
   
 ```csharp  
 XmlReader reader = XmlReader.Create("ConsolidatedPurchaseOrders.xml");  
@@ -51,7 +51,7 @@ foreach (XElement el in list2)
     Console.WriteLine(el);  
 ```  
   
- この例を実行すると、次の出力が生成されます。  
+ <span data-ttu-id="cdd84-113">この例を実行すると、次の出力が生成されます。</span><span class="sxs-lookup"><span data-stu-id="cdd84-113">This example produces the following output:</span></span>  
   
 ```  
 Results are identical  
@@ -86,6 +86,6 @@ Results are identical
   </aw:PurchaseOrder>  
 ```  
   
-## <a name="see-also"></a>関連項目  
- [XPath ユーザー向けの LINQ to XML (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)
+## <a name="see-also"></a><span data-ttu-id="cdd84-114">関連項目</span><span class="sxs-lookup"><span data-stu-id="cdd84-114">See Also</span></span>  
+ [<span data-ttu-id="cdd84-115">XPath ユーザー向けの LINQ to XML (C#)</span><span class="sxs-lookup"><span data-stu-id="cdd84-115">LINQ to XML for XPath Users (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)
 

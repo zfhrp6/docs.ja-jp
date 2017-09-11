@@ -17,288 +17,289 @@ ms.contentlocale: ja-jp
 ms.lasthandoff: 07/28/2017
 
 ---
-# <a name="classes-and-objects"></a>クラスとオブジェクト
+# <a name="classes-and-objects"></a><span data-ttu-id="bb21b-105">クラスとオブジェクト</span><span class="sxs-lookup"><span data-stu-id="bb21b-105">Classes and objects</span></span>
 
-"*クラス*" は C# の最も基本的な型です。 クラスは、状態 (フィールド) とアクション (メソッドおよびその他の関数メンバー) を 1 つの単位としてまとめたデータ構造です。 クラスは動的に作成された "*インスタンス*" の定義を提供し、"*オブジェクト*" とも呼ばれます。 クラスでは、"*継承*"と "*ポリモーフィズム*" をサポートします。これによって "*派生クラス*" が "*基底クラス*" を拡張して特殊化できます。
+<span data-ttu-id="bb21b-106">"*クラス*" は C# の最も基本的な型です。</span><span class="sxs-lookup"><span data-stu-id="bb21b-106">*Classes* are the most fundamental of C#’s types.</span></span> <span data-ttu-id="bb21b-107">クラスは、状態 (フィールド) とアクション (メソッドおよびその他の関数メンバー) を 1 つの単位としてまとめたデータ構造です。</span><span class="sxs-lookup"><span data-stu-id="bb21b-107">A class is a data structure that combines state (fields) and actions (methods and other function members) in a single unit.</span></span> <span data-ttu-id="bb21b-108">クラスは動的に作成された "*インスタンス*" の定義を提供し、"*オブジェクト*" とも呼ばれます。</span><span class="sxs-lookup"><span data-stu-id="bb21b-108">A class provides a definition for dynamically created *instances* of the class, also known as *objects*.</span></span> <span data-ttu-id="bb21b-109">クラスでは、"*継承*"と "*ポリモーフィズム*" をサポートします。これによって "*派生クラス*" が "*基底クラス*" を拡張して特殊化できます。</span><span class="sxs-lookup"><span data-stu-id="bb21b-109">Classes support *inheritance* and *polymorphism*, mechanisms whereby *derived classes* can extend and specialize *base classes*.</span></span>
 
-新しいクラスはクラス宣言を使用して作成されます。 クラス宣言は、クラスの属性と修飾子、クラスの名前、基底クラス (指定されている場合)、およびクラスによって実装されるインターフェイスを指定するヘッダーで開始します。 ヘッダーの後にはクラス本体が続きます。これは、区切り記号 `{` と `}` の間に記述するメンバー宣言のリストで構成されます。
+<span data-ttu-id="bb21b-110">新しいクラスはクラス宣言を使用して作成されます。</span><span class="sxs-lookup"><span data-stu-id="bb21b-110">New classes are created using class declarations.</span></span> <span data-ttu-id="bb21b-111">クラス宣言は、クラスの属性と修飾子、クラスの名前、基底クラス (指定されている場合)、およびクラスによって実装されるインターフェイスを指定するヘッダーで開始します。</span><span class="sxs-lookup"><span data-stu-id="bb21b-111">A class declaration starts with a header that specifies the attributes and modifiers of the class, the name of the class, the base class (if given), and the interfaces implemented by the class.</span></span> <span data-ttu-id="bb21b-112">ヘッダーの後にはクラス本体が続きます。これは、区切り記号 `{` と `}` の間に記述するメンバー宣言のリストで構成されます。</span><span class="sxs-lookup"><span data-stu-id="bb21b-112">The header is followed by the class body, which consists of a list of member declarations written between the delimiters `{` and `}`.</span></span>
 
-`Point` という名前の単純なクラスの宣言を次に示します。
+<span data-ttu-id="bb21b-113">`Point` という名前の単純なクラスの宣言を次に示します。</span><span class="sxs-lookup"><span data-stu-id="bb21b-113">The following is a declaration of a simple class named `Point`:</span></span>
 
-[!code-csharp[Point クラス](../../../samples/snippets/csharp/tour/classes-and-objects/Point.cs#L3-L11)]
+<span data-ttu-id="bb21b-114">[!code-csharp[Point クラス](../../../samples/snippets/csharp/tour/classes-and-objects/Point.cs#L3-L11)]</span><span class="sxs-lookup"><span data-stu-id="bb21b-114">[!code-csharp[PointClass](../../../samples/snippets/csharp/tour/classes-and-objects/Point.cs#L3-L11)]</span></span>
 
-クラスのインスタンスは `new` 演算子を使用して作成されます。この演算子は新しいインスタンスのメモリを割り当て、コンストラクターを呼び出してインスタンスを初期化し、インスタンスへの参照を返します。 次のステートメントは、2 つの Point オブジェクトを作成し、それらのオブジェクトへの参照を 2 つの変数に格納します。
+<span data-ttu-id="bb21b-115">クラスのインスタンスは `new` 演算子を使用して作成されます。この演算子は新しいインスタンスのメモリを割り当て、コンストラクターを呼び出してインスタンスを初期化し、インスタンスへの参照を返します。</span><span class="sxs-lookup"><span data-stu-id="bb21b-115">Instances of classes are created using the `new` operator, which allocates memory for a new instance, invokes a constructor to initialize the instance, and returns a reference to the instance.</span></span> <span data-ttu-id="bb21b-116">次のステートメントは、2 つの Point オブジェクトを作成し、それらのオブジェクトへの参照を 2 つの変数に格納します。</span><span class="sxs-lookup"><span data-stu-id="bb21b-116">The following statements create two Point objects and store references to those objects in two variables:</span></span>
 
-[!code-csharp[Point の例](../../../samples/snippets/csharp/tour/classes-and-objects/Program.cs#L9-L10)]
+<span data-ttu-id="bb21b-117">[!code-csharp[Point の例](../../../samples/snippets/csharp/tour/classes-and-objects/Program.cs#L9-L10)]</span><span class="sxs-lookup"><span data-stu-id="bb21b-117">[!code-csharp[PointExample](../../../samples/snippets/csharp/tour/classes-and-objects/Program.cs#L9-L10)]</span></span>
 
-オブジェクトで占有されたメモリは、そのオブジェクトに到達できなくなると自動的に解放されます。 C# では、オブジェクトの割り当てを明示的に解除する必要がなく、また解除することもできません。
+<span data-ttu-id="bb21b-118">オブジェクトで占有されたメモリは、そのオブジェクトに到達できなくなると自動的に解放されます。</span><span class="sxs-lookup"><span data-stu-id="bb21b-118">The memory occupied by an object is automatically reclaimed when the object is no longer reachable.</span></span> <span data-ttu-id="bb21b-119">C# では、オブジェクトの割り当てを明示的に解除する必要がなく、また解除することもできません。</span><span class="sxs-lookup"><span data-stu-id="bb21b-119">It is neither necessary nor possible to explicitly deallocate objects in C#.</span></span>
 
-## <a name="members"></a>メンバー
+## <a name="members"></a><span data-ttu-id="bb21b-120">メンバー</span><span class="sxs-lookup"><span data-stu-id="bb21b-120">Members</span></span>
 
-クラスのメンバーは、静的メンバーまたはインスタンス メンバーです。 静的メンバーはクラスに属しており、インスタンス メンバーはオブジェクト (クラスのインスタンス) に属しています。
+<span data-ttu-id="bb21b-121">クラスのメンバーは、静的メンバーまたはインスタンス メンバーです。</span><span class="sxs-lookup"><span data-stu-id="bb21b-121">The members of a class are either static members or instance members.</span></span> <span data-ttu-id="bb21b-122">静的メンバーはクラスに属しており、インスタンス メンバーはオブジェクト (クラスのインスタンス) に属しています。</span><span class="sxs-lookup"><span data-stu-id="bb21b-122">Static members belong to classes, and instance members belong to objects (instances of classes).</span></span>
 
-クラスに格納できるメンバーの種類の概要を次に示します。
+<span data-ttu-id="bb21b-123">クラスに格納できるメンバーの種類の概要を次に示します。</span><span class="sxs-lookup"><span data-stu-id="bb21b-123">The following provides an overview of the kinds of members a class can contain.</span></span>
 
-* 定数
-    - クラスに関連付けられている定数値
-* フィールド
-    - クラスの変数
-* メソッド
-    - クラスによって実行可能な計算とアクション
-* プロパティ
-    - クラスの名前付きプロパティの読み取りと書き込みに関連付けられているアクション
-* インデクサー
-    - 配列など、クラスのインスタンスのインデックス作成に関連付けられているアクション
-* イベント
-    - クラスによって生成可能な通知
-* 演算子
-    - クラスによってサポートされている変換と式の演算子
-* コンストラクター
-    - クラスのインスタンスまたはクラス自体を初期化するために必要なアクション
-* ファイナライザー
-    - クラスのインスタンスが完全に破棄される前に実行するアクション
-* 種類
-    - クラスで宣言される、入れ子にされた型
+* <span data-ttu-id="bb21b-124">定数</span><span class="sxs-lookup"><span data-stu-id="bb21b-124">Constants</span></span>
+    - <span data-ttu-id="bb21b-125">クラスに関連付けられている定数値</span><span class="sxs-lookup"><span data-stu-id="bb21b-125">Constant values associated with the class</span></span>
+* <span data-ttu-id="bb21b-126">フィールド</span><span class="sxs-lookup"><span data-stu-id="bb21b-126">Fields</span></span>
+    - <span data-ttu-id="bb21b-127">クラスの変数</span><span class="sxs-lookup"><span data-stu-id="bb21b-127">Variables of the class</span></span>
+* <span data-ttu-id="bb21b-128">メソッド</span><span class="sxs-lookup"><span data-stu-id="bb21b-128">Methods</span></span>
+    - <span data-ttu-id="bb21b-129">クラスによって実行可能な計算とアクション</span><span class="sxs-lookup"><span data-stu-id="bb21b-129">Computations and actions that can be performed by the class</span></span>
+* <span data-ttu-id="bb21b-130">プロパティ</span><span class="sxs-lookup"><span data-stu-id="bb21b-130">Properties</span></span>
+    - <span data-ttu-id="bb21b-131">クラスの名前付きプロパティの読み取りと書き込みに関連付けられているアクション</span><span class="sxs-lookup"><span data-stu-id="bb21b-131">Actions associated with reading and writing named properties of the class</span></span>
+* <span data-ttu-id="bb21b-132">インデクサー</span><span class="sxs-lookup"><span data-stu-id="bb21b-132">Indexers</span></span>
+    - <span data-ttu-id="bb21b-133">配列など、クラスのインスタンスのインデックス作成に関連付けられているアクション</span><span class="sxs-lookup"><span data-stu-id="bb21b-133">Actions associated with indexing instances of the class like an array</span></span>
+* <span data-ttu-id="bb21b-134">イベント</span><span class="sxs-lookup"><span data-stu-id="bb21b-134">Events</span></span>
+    - <span data-ttu-id="bb21b-135">クラスによって生成可能な通知</span><span class="sxs-lookup"><span data-stu-id="bb21b-135">Notifications that can be generated by the class</span></span>
+* <span data-ttu-id="bb21b-136">演算子</span><span class="sxs-lookup"><span data-stu-id="bb21b-136">Operators</span></span>
+    - <span data-ttu-id="bb21b-137">クラスによってサポートされている変換と式の演算子</span><span class="sxs-lookup"><span data-stu-id="bb21b-137">Conversions and expression operators supported by the class</span></span>
+* <span data-ttu-id="bb21b-138">コンストラクター</span><span class="sxs-lookup"><span data-stu-id="bb21b-138">Constructors</span></span>
+    - <span data-ttu-id="bb21b-139">クラスのインスタンスまたはクラス自体を初期化するために必要なアクション</span><span class="sxs-lookup"><span data-stu-id="bb21b-139">Actions required to initialize instances of the class or the class itself</span></span>
+* <span data-ttu-id="bb21b-140">ファイナライザー</span><span class="sxs-lookup"><span data-stu-id="bb21b-140">Finalizers</span></span>
+    - <span data-ttu-id="bb21b-141">クラスのインスタンスが完全に破棄される前に実行するアクション</span><span class="sxs-lookup"><span data-stu-id="bb21b-141">Actions to perform before instances of the class are permanently discarded</span></span>
+* <span data-ttu-id="bb21b-142">種類</span><span class="sxs-lookup"><span data-stu-id="bb21b-142">Types</span></span>
+    - <span data-ttu-id="bb21b-143">クラスで宣言される、入れ子にされた型</span><span class="sxs-lookup"><span data-stu-id="bb21b-143">Nested types declared by the class</span></span>
 
-## <a name="accessibility"></a>ユーザー補助
+## <a name="accessibility"></a><span data-ttu-id="bb21b-144">ユーザー補助</span><span class="sxs-lookup"><span data-stu-id="bb21b-144">Accessibility</span></span>
 
-クラスの各メンバーにはアクセシビリティが関連付けられています。アクセシビリティは、メンバーへのアクセスが可能なプログラムのテキストの範囲を制御します。 アクセシビリティには 5 つの有効な形式があります。 これらの概要を次に示します。
+<span data-ttu-id="bb21b-145">クラスの各メンバーにはアクセシビリティが関連付けられています。アクセシビリティは、メンバーへのアクセスが可能なプログラムのテキストの範囲を制御します。</span><span class="sxs-lookup"><span data-stu-id="bb21b-145">Each member of a class has an associated accessibility, which controls the regions of program text that are able to access the member.</span></span> <span data-ttu-id="bb21b-146">アクセシビリティには 5 つの有効な形式があります。</span><span class="sxs-lookup"><span data-stu-id="bb21b-146">There are five possible forms of accessibility.</span></span> <span data-ttu-id="bb21b-147">これらの概要を次に示します。</span><span class="sxs-lookup"><span data-stu-id="bb21b-147">These are summarized below.</span></span>
 
 * `public`
-    - アクセスは制限されません。
+    - <span data-ttu-id="bb21b-148">アクセスは制限されません。</span><span class="sxs-lookup"><span data-stu-id="bb21b-148">Access not limited</span></span>
 * `protected`
-    - アクセスは、このクラスまたはこのクラスから派生したクラスに制限されます。
+    - <span data-ttu-id="bb21b-149">アクセスは、このクラスまたはこのクラスから派生したクラスに制限されます。</span><span class="sxs-lookup"><span data-stu-id="bb21b-149">Access limited to this class or classes derived from this class</span></span>
 * `internal`
-    - アクセスは、現在のアセンブリ (.exe、.dll など) に制限されます。
+    - <span data-ttu-id="bb21b-150">アクセスは、現在のアセンブリ (.exe、.dll など) に制限されます。</span><span class="sxs-lookup"><span data-stu-id="bb21b-150">Access limited to the current assembly (.exe, .dll, etc.)</span></span>
 * `protected internal`
-    - アクセスは、それを含んでいるクラスまたは含んでいるクラスから派生されたクラスに制限されます。
+    - <span data-ttu-id="bb21b-151">アクセスは、それを含んでいるクラスまたは含んでいるクラスから派生されたクラスに制限されます。</span><span class="sxs-lookup"><span data-stu-id="bb21b-151">Access limited to the containing class or classes derived from the containing class</span></span>
 * `private`
-    - アクセスはこのクラスに制限されます。
+    - <span data-ttu-id="bb21b-152">アクセスはこのクラスに制限されます。</span><span class="sxs-lookup"><span data-stu-id="bb21b-152">Access limited to this class</span></span>
 
-## <a name="type-parameters"></a>型パラメーター
+## <a name="type-parameters"></a><span data-ttu-id="bb21b-153">型パラメーター</span><span class="sxs-lookup"><span data-stu-id="bb21b-153">Type parameters</span></span>
 
-クラス定義では、クラス名の後に型パラメーター名のリストを山かっこで囲むことで、型パラメーターのセットを指定できます。 これで、クラスのメンバーを定義するクラス宣言の本体で型パラメーターを使用できます。 次の例では、`Pair` の型パラメーターは `TFirst` と `TSecond` です。
+<span data-ttu-id="bb21b-154">クラス定義では、クラス名の後に型パラメーター名のリストを山かっこで囲むことで、型パラメーターのセットを指定できます。</span><span class="sxs-lookup"><span data-stu-id="bb21b-154">A class definition may specify a set of type parameters by following the class name with angle brackets enclosing a list of type parameter names.</span></span> <span data-ttu-id="bb21b-155">これで、クラスのメンバーを定義するクラス宣言の本体で型パラメーターを使用できます。</span><span class="sxs-lookup"><span data-stu-id="bb21b-155">The type parameters can then be used in the body of the class declarations to define the members of the class.</span></span> <span data-ttu-id="bb21b-156">次の例では、`Pair` の型パラメーターは `TFirst` と `TSecond` です。</span><span class="sxs-lookup"><span data-stu-id="bb21b-156">In the following example, the type parameters of `Pair` are `TFirst` and `TSecond`:</span></span>
 
-[!code-csharp[Pair](../../../samples/snippets/csharp/tour/classes-and-objects/Pair.cs#L3-L7)]
+<span data-ttu-id="bb21b-157">[!code-csharp[Pair](../../../samples/snippets/csharp/tour/classes-and-objects/Pair.cs#L3-L7)]</span><span class="sxs-lookup"><span data-stu-id="bb21b-157">[!code-csharp[Pair](../../../samples/snippets/csharp/tour/classes-and-objects/Pair.cs#L3-L7)]</span></span>
 
-型パラメーターを受け取るために宣言されるクラス型は、"*ジェネリック クラス型*" と呼ばれます。 構造体、インターフェイス、およびデリゲートの型もジェネリックです。
-ジェネリック クラスを使用する場合は、それぞれの型パラメーターの型引数を指定する必要があります。
+<span data-ttu-id="bb21b-158">型パラメーターを受け取るために宣言されるクラス型は、"*ジェネリック クラス型*" と呼ばれます。</span><span class="sxs-lookup"><span data-stu-id="bb21b-158">A class type that is declared to take type parameters is called a *generic class type*.</span></span> <span data-ttu-id="bb21b-159">構造体、インターフェイス、およびデリゲートの型もジェネリックです。</span><span class="sxs-lookup"><span data-stu-id="bb21b-159">Struct, interface and delegate types can also be generic.</span></span>
+<span data-ttu-id="bb21b-160">ジェネリック クラスを使用する場合は、それぞれの型パラメーターの型引数を指定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="bb21b-160">When the generic class is used, type arguments must be provided for each of the type parameters:</span></span>
 
-[!code-csharp[Pair の例](../../../samples/snippets/csharp/tour/classes-and-objects/Program.cs#L15-L17)]
+<span data-ttu-id="bb21b-161">[!code-csharp[Pair の例](../../../samples/snippets/csharp/tour/classes-and-objects/Program.cs#L15-L17)]</span><span class="sxs-lookup"><span data-stu-id="bb21b-161">[!code-csharp[PairExample](../../../samples/snippets/csharp/tour/classes-and-objects/Program.cs#L15-L17)]</span></span>
 
-上記の `Pair<int,string>` のような、型引数が指定されたジェネリック型は "*構築された型*" と呼ばれます。
+<span data-ttu-id="bb21b-162">上記の `Pair<int,string>` のような、型引数が指定されたジェネリック型は "*構築された型*" と呼ばれます。</span><span class="sxs-lookup"><span data-stu-id="bb21b-162">A generic type with type arguments provided, like `Pair<int,string>` above, is called a *constructed type*.</span></span>
 
-## <a name="base-classes"></a>基底クラス
+## <a name="base-classes"></a><span data-ttu-id="bb21b-163">基底クラス</span><span class="sxs-lookup"><span data-stu-id="bb21b-163">Base classes</span></span>
 
-クラス宣言では、クラス名と型パラメーターの後にコロンと基底クラスの名前を入力することで、基底クラスを指定できます。 基底クラスの指定の省略は、`object` 型からの派生と同じです。 次の例では、`Point3D` の基底クラスは `Point` であり、`Point` の基底クラスは `object` です。
+<span data-ttu-id="bb21b-164">クラス宣言では、クラス名と型パラメーターの後にコロンと基底クラスの名前を入力することで、基底クラスを指定できます。</span><span class="sxs-lookup"><span data-stu-id="bb21b-164">A class declaration may specify a base class by following the class name and type parameters with a colon and the name of the base class.</span></span> <span data-ttu-id="bb21b-165">基底クラスの指定の省略は、`object` 型からの派生と同じです。</span><span class="sxs-lookup"><span data-stu-id="bb21b-165">Omitting a base class specification is the same as deriving from type `object`.</span></span> <span data-ttu-id="bb21b-166">次の例では、`Point3D` の基底クラスは `Point` であり、`Point` の基底クラスは `object` です。</span><span class="sxs-lookup"><span data-stu-id="bb21b-166">In the following example, the base class of `Point3D` is `Point`, and the base class of `Point` is `object`:</span></span>
 
-[!code-csharp[Point3D クラス](../../../samples/snippets/csharp/tour/classes-and-objects/Point.cs#L3-L20)]
+<span data-ttu-id="bb21b-167">[!code-csharp[Point3D クラス](../../../samples/snippets/csharp/tour/classes-and-objects/Point.cs#L3-L20)]</span><span class="sxs-lookup"><span data-stu-id="bb21b-167">[!code-csharp[Point3DClass](../../../samples/snippets/csharp/tour/classes-and-objects/Point.cs#L3-L20)]</span></span>
 
-クラスは、その基底クラスのメンバーを継承します。 継承では、インスタンス、静的コンストラクター、および基底クラスのファイナライザーを除く、基底クラスのすべてのメンバーがクラスに暗黙的に含まれています。 派生クラスは、継承するメンバーに新しいメンバーを追加できますが、継承されたメンバーの定義を削除することはできません。 前述の例では、`Point3D` は、`Point` から `x` フィールドと `y` フィールドを継承します。各 `Point3D` インスタンスには、`x`、`y`、`z` の 3 つのフィールドが含まれています。
+<span data-ttu-id="bb21b-168">クラスは、その基底クラスのメンバーを継承します。</span><span class="sxs-lookup"><span data-stu-id="bb21b-168">A class inherits the members of its base class.</span></span> <span data-ttu-id="bb21b-169">継承では、インスタンス、静的コンストラクター、および基底クラスのファイナライザーを除く、基底クラスのすべてのメンバーがクラスに暗黙的に含まれています。</span><span class="sxs-lookup"><span data-stu-id="bb21b-169">Inheritance means that a class implicitly contains all members of its base class, except for the instance and static constructors, and the finalizers of the base class.</span></span> <span data-ttu-id="bb21b-170">派生クラスは、継承するメンバーに新しいメンバーを追加できますが、継承されたメンバーの定義を削除することはできません。</span><span class="sxs-lookup"><span data-stu-id="bb21b-170">A derived class can add new members to those it inherits, but it cannot remove the definition of an inherited member.</span></span> <span data-ttu-id="bb21b-171">前述の例では、`Point3D` は、`Point` から `x` フィールドと `y` フィールドを継承します。各 `Point3D` インスタンスには、`x`、`y`、`z` の 3 つのフィールドが含まれています。</span><span class="sxs-lookup"><span data-stu-id="bb21b-171">In the previous example, `Point3D` inherits the `x` and `y` fields from `Point`, and every `Point3D` instance contains three fields, `x`, `y`, and `z`.</span></span>
 
-暗黙的な変換は、クラス型からその基底クラス型のいずれかに存在します。 そのため、クラス型の変数は、そのクラスのインスタンスまたは任意の派生クラスのインスタンスを参照できます。 たとえば、前述のクラス宣言では、`Point` 型の変数が `Point` または `Point3D` を参照できます。
+<span data-ttu-id="bb21b-172">暗黙的な変換は、クラス型からその基底クラス型のいずれかに存在します。</span><span class="sxs-lookup"><span data-stu-id="bb21b-172">An implicit conversion exists from a class type to any of its base class types.</span></span> <span data-ttu-id="bb21b-173">そのため、クラス型の変数は、そのクラスのインスタンスまたは任意の派生クラスのインスタンスを参照できます。</span><span class="sxs-lookup"><span data-stu-id="bb21b-173">Therefore, a variable of a class type can reference an instance of that class or an instance of any derived class.</span></span> <span data-ttu-id="bb21b-174">たとえば、前述のクラス宣言では、`Point` 型の変数が `Point` または `Point3D` を参照できます。</span><span class="sxs-lookup"><span data-stu-id="bb21b-174">For example, given the previous class declarations, a variable of type `Point` can reference either a `Point` or a `Point3D`:</span></span>
 
-[!code-csharp[Point3D の例](../../../samples/snippets/csharp/tour/classes-and-objects/Program.cs#L22-L23)]
+<span data-ttu-id="bb21b-175">[!code-csharp[Point3D の例](../../../samples/snippets/csharp/tour/classes-and-objects/Program.cs#L22-L23)]</span><span class="sxs-lookup"><span data-stu-id="bb21b-175">[!code-csharp[Point3DExample](../../../samples/snippets/csharp/tour/classes-and-objects/Program.cs#L22-L23)]</span></span>
 
-## <a name="fields"></a>フィールド
+## <a name="fields"></a><span data-ttu-id="bb21b-176">フィールド</span><span class="sxs-lookup"><span data-stu-id="bb21b-176">Fields</span></span>
 
-"*フィールド*" は、クラスまたはクラスのインスタンスに関連付けられている変数です。
+<span data-ttu-id="bb21b-177">"*フィールド*" は、クラスまたはクラスのインスタンスに関連付けられている変数です。</span><span class="sxs-lookup"><span data-stu-id="bb21b-177">A *field* is a variable that is associated with a class or with an instance of a class.</span></span>
 
-static 修飾子で宣言されているフィールドは、静的フィールドを定義します。 静的フィールドは、格納場所を 1 つだけ識別します。 クラスのインスタンスがいくつ作成されても、静的フィールドのコピーは 1 つだけです。
+<span data-ttu-id="bb21b-178">static 修飾子で宣言されているフィールドは、静的フィールドを定義します。</span><span class="sxs-lookup"><span data-stu-id="bb21b-178">A field declared with the static modifier defines a static field.</span></span> <span data-ttu-id="bb21b-179">静的フィールドは、格納場所を 1 つだけ識別します。</span><span class="sxs-lookup"><span data-stu-id="bb21b-179">A static field identifies exactly one storage location.</span></span> <span data-ttu-id="bb21b-180">クラスのインスタンスがいくつ作成されても、静的フィールドのコピーは 1 つだけです。</span><span class="sxs-lookup"><span data-stu-id="bb21b-180">No matter how many instances of a class are created, there is only ever one copy of a static field.</span></span>
 
-static 修飾子なしで宣言されているフィールドは、インスタンス フィールドを定義します。 クラスの各インスタンスには、そのクラスのすべてのインスタンス フィールドの個別のコピーが含まれています。
+<span data-ttu-id="bb21b-181">static 修飾子なしで宣言されているフィールドは、インスタンス フィールドを定義します。</span><span class="sxs-lookup"><span data-stu-id="bb21b-181">A field declared without the static modifier defines an instance field.</span></span> <span data-ttu-id="bb21b-182">クラスの各インスタンスには、そのクラスのすべてのインスタンス フィールドの個別のコピーが含まれています。</span><span class="sxs-lookup"><span data-stu-id="bb21b-182">Every instance of a class contains a separate copy of all the instance fields of that class.</span></span>
 
-次の例では、`Color` クラスの各インスタンスに、インスタンス フィールド `r`、`g`、`b` の個別のコピーが含まれていますが、静的フィールド `Black`、`White`、`Red`、`Green`、`Blue` のコピーは 1 つだけです。
+<span data-ttu-id="bb21b-183">次の例では、`Color` クラスの各インスタンスに、インスタンス フィールド `r`、`g`、`b` の個別のコピーが含まれていますが、静的フィールド `Black`、`White`、`Red`、`Green`、`Blue` のコピーは 1 つだけです。</span><span class="sxs-lookup"><span data-stu-id="bb21b-183">In the following example, each instance of the `Color` class has a separate copy of the `r`, `g`, and `b` instance fields, but there is only one copy of the `Black`, `White`, `Red`, `Green`, and `Blue` static fields:</span></span>
 
-[!code-csharp[Color クラス](../../../samples/snippets/csharp/tour/classes-and-objects/Color.cs#L3-L17)]
+<span data-ttu-id="bb21b-184">[!code-csharp[Color クラス](../../../samples/snippets/csharp/tour/classes-and-objects/Color.cs#L3-L17)]</span><span class="sxs-lookup"><span data-stu-id="bb21b-184">[!code-csharp[ColorClass](../../../samples/snippets/csharp/tour/classes-and-objects/Color.cs#L3-L17)]</span></span>
 
-前述の例のように、`readonly` 修飾子を使用して "*読み取り専用フィールド*" を宣言できます。 `readonly` フィールドへの割り当ては、フィールドの宣言の一部として、または同じクラスのコンストラクター内でのみ可能です。
+<span data-ttu-id="bb21b-185">前述の例のように、`readonly` 修飾子を使用して "*読み取り専用フィールド*" を宣言できます。</span><span class="sxs-lookup"><span data-stu-id="bb21b-185">As shown in the previous example, *read-only fields* may be declared with a `readonly` modifier.</span></span> <span data-ttu-id="bb21b-186">`readonly` フィールドへの割り当ては、フィールドの宣言の一部として、または同じクラスのコンストラクター内でのみ可能です。</span><span class="sxs-lookup"><span data-stu-id="bb21b-186">Assignment to a `readonly` field can only occur as part of the field’s declaration or in a constructor in the same class.</span></span>
 
-## <a name="methods"></a>メソッド
+## <a name="methods"></a><span data-ttu-id="bb21b-187">メソッド</span><span class="sxs-lookup"><span data-stu-id="bb21b-187">Methods</span></span>
 
-"*メソッド*" は、オブジェクトまたはクラスによって実行可能な計算またはアクションを実装するメンバーです。 "*静的メソッド*" にはクラスを通じてアクセスします。 "*インスタンス メソッド*" にはクラスのインスタンスを通じてアクセスします。
+<span data-ttu-id="bb21b-188">"*メソッド*" は、オブジェクトまたはクラスによって実行可能な計算またはアクションを実装するメンバーです。</span><span class="sxs-lookup"><span data-stu-id="bb21b-188">A *method* is a member that implements a computation or action that can be performed by an object or class.</span></span> <span data-ttu-id="bb21b-189">"*静的メソッド*" にはクラスを通じてアクセスします。</span><span class="sxs-lookup"><span data-stu-id="bb21b-189">*Static methods* are accessed through the class.</span></span> <span data-ttu-id="bb21b-190">"*インスタンス メソッド*" にはクラスのインスタンスを通じてアクセスします。</span><span class="sxs-lookup"><span data-stu-id="bb21b-190">*Instance methods* are accessed through instances of the class.</span></span>
 
-メソッドには、"*パラメーター*" のリスト (パラメーターは、メソッドに渡される値または変数参照を表します) と "*戻り値の型*" (メソッドによって計算されて返される値の型を指定します) を含めることができます。 メソッドが値を返さない場合、メソッドの戻り値の型は `void` です。
+<span data-ttu-id="bb21b-191">メソッドには、"*パラメーター*" のリスト (パラメーターは、メソッドに渡される値または変数参照を表します) と "*戻り値の型*" (メソッドによって計算されて返される値の型を指定します) を含めることができます。</span><span class="sxs-lookup"><span data-stu-id="bb21b-191">Methods may have a list of *parameters*, which represent values or variable references passed to the method, and a *return type*, which specifies the type of the value computed and returned by the method.</span></span> <span data-ttu-id="bb21b-192">メソッドが値を返さない場合、メソッドの戻り値の型は `void` です。</span><span class="sxs-lookup"><span data-stu-id="bb21b-192">A method’s return type is `void` if it does not return a value.</span></span>
 
-型と同様に、メソッドには型パラメーターのセットを含めることができます。その場合、メソッドの呼び出し時に型引数を指定する必要があります。 型引数は、型とは異なり、多くの場合メソッド呼び出しの引数から推論できます。型引数を明示的に指定する必要はありません。
+<span data-ttu-id="bb21b-193">型と同様に、メソッドには型パラメーターのセットを含めることができます。その場合、メソッドの呼び出し時に型引数を指定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="bb21b-193">Like types, methods may also have a set of type parameters, for which type arguments must be specified when the method is called.</span></span> <span data-ttu-id="bb21b-194">型引数は、型とは異なり、多くの場合メソッド呼び出しの引数から推論できます。型引数を明示的に指定する必要はありません。</span><span class="sxs-lookup"><span data-stu-id="bb21b-194">Unlike types, the type arguments can often be inferred from the arguments of a method call and need not be explicitly given.</span></span>
 
-メソッドの "*シグネチャ*" は、メソッドが宣言されているクラス内で一意である必要があります。 メソッドのシグネチャは、メソッドの名前、型パラメーターの数、およびメソッドのパラメーターの数、修飾子、型で構成されます。 メソッドのシグネチャに戻り値の型は含まれません。
+<span data-ttu-id="bb21b-195">メソッドの "*シグネチャ*" は、メソッドが宣言されているクラス内で一意である必要があります。</span><span class="sxs-lookup"><span data-stu-id="bb21b-195">The *signature* of a method must be unique in the class in which the method is declared.</span></span> <span data-ttu-id="bb21b-196">メソッドのシグネチャは、メソッドの名前、型パラメーターの数、およびメソッドのパラメーターの数、修飾子、型で構成されます。</span><span class="sxs-lookup"><span data-stu-id="bb21b-196">The signature of a method consists of the name of the method, the number of type parameters and the number, modifiers, and types of its parameters.</span></span> <span data-ttu-id="bb21b-197">メソッドのシグネチャに戻り値の型は含まれません。</span><span class="sxs-lookup"><span data-stu-id="bb21b-197">The signature of a method does not include the return type.</span></span>
 
-### <a name="parameters"></a>パラメーター
+### <a name="parameters"></a><span data-ttu-id="bb21b-198">パラメーター</span><span class="sxs-lookup"><span data-stu-id="bb21b-198">Parameters</span></span>
 
-パラメーターは、値または変数参照をメソッドに渡すために使用されます。 メソッドのパラメーターは、メソッドの呼び出し時に指定する "*引数*" から実際の値を取得します。 値パラメーター、参照パラメーター、出力パラメーター、およびパラメーター配列の 4 種類のパラメーターがあります。
+<span data-ttu-id="bb21b-199">パラメーターは、値または変数参照をメソッドに渡すために使用されます。</span><span class="sxs-lookup"><span data-stu-id="bb21b-199">Parameters are used to pass values or variable references to methods.</span></span> <span data-ttu-id="bb21b-200">メソッドのパラメーターは、メソッドの呼び出し時に指定する "*引数*" から実際の値を取得します。</span><span class="sxs-lookup"><span data-stu-id="bb21b-200">The parameters of a method get their actual values from the *arguments* that are specified when the method is invoked.</span></span> <span data-ttu-id="bb21b-201">値パラメーター、参照パラメーター、出力パラメーター、およびパラメーター配列の 4 種類のパラメーターがあります。</span><span class="sxs-lookup"><span data-stu-id="bb21b-201">There are four kinds of parameters: value parameters, reference parameters, output parameters, and parameter arrays.</span></span>
 
-"*値パラメーター*" は、入力引数を渡すために使われます。 値パラメーターは、パラメーターに渡された引数からその初期値を取得するローカル変数に相当します。 値パラメーターに対する変更は、パラメーターに渡された引数には影響しません。 
+<span data-ttu-id="bb21b-202">"*値パラメーター*" は、入力引数を渡すために使われます。</span><span class="sxs-lookup"><span data-stu-id="bb21b-202">A *value parameter* is used for passing input arguments.</span></span> <span data-ttu-id="bb21b-203">値パラメーターは、パラメーターに渡された引数からその初期値を取得するローカル変数に相当します。</span><span class="sxs-lookup"><span data-stu-id="bb21b-203">A value parameter corresponds to a local variable that gets its initial value from the argument that was passed for the parameter.</span></span> <span data-ttu-id="bb21b-204">値パラメーターに対する変更は、パラメーターに渡された引数には影響しません。</span><span class="sxs-lookup"><span data-stu-id="bb21b-204">Modifications to a value parameter do not affect the argument that was passed for the parameter.</span></span> 
 
-値パラメーターは省略可能であり、既定値を指定すると、対応する引数を省略できます。
+<span data-ttu-id="bb21b-205">値パラメーターは省略可能であり、既定値を指定すると、対応する引数を省略できます。</span><span class="sxs-lookup"><span data-stu-id="bb21b-205">Value parameters can be optional, by specifying a default value so that corresponding arguments can be omitted.</span></span>
 
-"*参照パラメーター*" は、参照によって引数を渡すために使われます。 参照パラメーターに渡す引数は確定値を持つ変数である必要があり、メソッドが実行している間、参照パラメーターは引数の変数と同じ格納場所を表します。 参照パラメーターは、`ref` 修飾子で宣言されます。 `ref` パラメーターの使用例を次に示します。
+<span data-ttu-id="bb21b-206">"*参照パラメーター*" は、参照によって引数を渡すために使われます。</span><span class="sxs-lookup"><span data-stu-id="bb21b-206">A *reference parameter* is used for passing arguments by reference.</span></span> <span data-ttu-id="bb21b-207">参照パラメーターに渡す引数は確定値を持つ変数である必要があり、メソッドが実行している間、参照パラメーターは引数の変数と同じ格納場所を表します。</span><span class="sxs-lookup"><span data-stu-id="bb21b-207">The argument passed for a reference parameter must be a variable with a definite value, and during execution of the method, the reference parameter represents the same storage location as the argument variable.</span></span> <span data-ttu-id="bb21b-208">参照パラメーターは、`ref` 修飾子で宣言されます。</span><span class="sxs-lookup"><span data-stu-id="bb21b-208">A reference parameter is declared with the `ref` modifier.</span></span> <span data-ttu-id="bb21b-209">`ref` パラメーターの使用例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="bb21b-209">The following example shows the use of `ref` parameters.</span></span>
 
-[!code-csharp[swap の例](../../../samples/snippets/csharp/tour/classes-and-objects/RefExample.cs#L3-L18)]
+<span data-ttu-id="bb21b-210">[!code-csharp[swap の例](../../../samples/snippets/csharp/tour/classes-and-objects/RefExample.cs#L3-L18)]</span><span class="sxs-lookup"><span data-stu-id="bb21b-210">[!code-csharp[swapExample](../../../samples/snippets/csharp/tour/classes-and-objects/RefExample.cs#L3-L18)]</span></span>
 
-"*出力パラメーター*" は、参照によって引数を渡すために使われます。 参照パラメーターに似ていますが、呼び出し元が提供する引数に値を明示的に割り当てる必要がない点が異なります。 出力パラメーターは、`out` 修飾子で宣言されます。 次の例では、C# 7 で導入された構文を使っている `out` パラメーターを示します。
+<span data-ttu-id="bb21b-211">"*出力パラメーター*" は、参照によって引数を渡すために使われます。</span><span class="sxs-lookup"><span data-stu-id="bb21b-211">An *output parameter* is used for passing arguments by reference.</span></span> <span data-ttu-id="bb21b-212">参照パラメーターに似ていますが、呼び出し元が提供する引数に値を明示的に割り当てる必要がない点が異なります。</span><span class="sxs-lookup"><span data-stu-id="bb21b-212">It's similar to a reference parameter, except that it doesn't require that you explicitly assign a value to the caller-provided argument.</span></span> <span data-ttu-id="bb21b-213">出力パラメーターは、`out` 修飾子で宣言されます。</span><span class="sxs-lookup"><span data-stu-id="bb21b-213">An output parameter is declared with the `out` modifier.</span></span> <span data-ttu-id="bb21b-214">次の例では、C# 7 で導入された構文を使っている `out` パラメーターを示します。</span><span class="sxs-lookup"><span data-stu-id="bb21b-214">The following example shows the use of `out` parameters using the syntax introduced in C# 7.</span></span>
 
-[!code-csharp[out の例](../../../samples/snippets/csharp/tour/classes-and-objects/OutExample.cs#L3-L17)]
+<span data-ttu-id="bb21b-215">[!code-csharp[out の例](../../../samples/snippets/csharp/tour/classes-and-objects/OutExample.cs#L3-L17)]</span><span class="sxs-lookup"><span data-stu-id="bb21b-215">[!code-csharp[OutExample](../../../samples/snippets/csharp/tour/classes-and-objects/OutExample.cs#L3-L17)]</span></span>
 
-"*パラメーター配列*" は、引数の変数の数をメソッドに渡せるようにします。 パラメーター配列は、`params` 修飾子で宣言されます。 パラメーター配列として使用できるのは、メソッドの最後のパラメーターのみです。パラメーター配列の型は、1 次元配列の型である必要があります。 `@System.Console` クラスの Write メソッドと WriteLine メソッドは、パラメーター配列の使用方法を示す良い例です。 これらのメソッドは次のように宣言されます。
+<span data-ttu-id="bb21b-216">"*パラメーター配列*" は、引数の変数の数をメソッドに渡せるようにします。</span><span class="sxs-lookup"><span data-stu-id="bb21b-216">A *parameter array* permits a variable number of arguments to be passed to a method.</span></span> <span data-ttu-id="bb21b-217">パラメーター配列は、`params` 修飾子で宣言されます。</span><span class="sxs-lookup"><span data-stu-id="bb21b-217">A parameter array is declared with the `params` modifier.</span></span> <span data-ttu-id="bb21b-218">パラメーター配列として使用できるのは、メソッドの最後のパラメーターのみです。パラメーター配列の型は、1 次元配列の型である必要があります。</span><span class="sxs-lookup"><span data-stu-id="bb21b-218">Only the last parameter of a method can be a parameter array, and the type of a parameter array must be a single-dimensional array type.</span></span> <span data-ttu-id="bb21b-219">`@System.Console` クラスの Write メソッドと WriteLine メソッドは、パラメーター配列の使用方法を示す良い例です。</span><span class="sxs-lookup"><span data-stu-id="bb21b-219">The Write and WriteLine methods of the `@System.Console` class are good examples of parameter array usage.</span></span> <span data-ttu-id="bb21b-220">これらのメソッドは次のように宣言されます。</span><span class="sxs-lookup"><span data-stu-id="bb21b-220">They are declared as follows.</span></span>
 
-[!code-csharp[Console の例](../../../samples/snippets/csharp/tour/classes-and-objects/Program.cs#L78-L83)]
+<span data-ttu-id="bb21b-221">[!code-csharp[Console の例](../../../samples/snippets/csharp/tour/classes-and-objects/Program.cs#L78-L83)]</span><span class="sxs-lookup"><span data-stu-id="bb21b-221">[!code-csharp[ConsoleExample](../../../samples/snippets/csharp/tour/classes-and-objects/Program.cs#L78-L83)]</span></span>
 
-パラメーター配列を使用するメソッド内では、パラメーター配列は、配列型の通常のパラメーターとまったく同じように動作します。 ただし、パラメーター配列を使用するメソッドの呼び出しでは、パラメーター配列の型の 1 つの引数またはパラメーター配列の要素型の任意の数の引数を渡すことができます。 後者の場合、配列インスタンスが自動的に作成され、指定した引数を使用して初期化されます。 次のような例があるとします。
+<span data-ttu-id="bb21b-222">パラメーター配列を使用するメソッド内では、パラメーター配列は、配列型の通常のパラメーターとまったく同じように動作します。</span><span class="sxs-lookup"><span data-stu-id="bb21b-222">Within a method that uses a parameter array, the parameter array behaves exactly like a regular parameter of an array type.</span></span> <span data-ttu-id="bb21b-223">ただし、パラメーター配列を使用するメソッドの呼び出しでは、パラメーター配列の型の 1 つの引数またはパラメーター配列の要素型の任意の数の引数を渡すことができます。</span><span class="sxs-lookup"><span data-stu-id="bb21b-223">However, in an invocation of a method with a parameter array, it is possible to pass either a single argument of the parameter array type or any number of arguments of the element type of the parameter array.</span></span> <span data-ttu-id="bb21b-224">後者の場合、配列インスタンスが自動的に作成され、指定した引数を使用して初期化されます。</span><span class="sxs-lookup"><span data-stu-id="bb21b-224">In the latter case, an array instance is automatically created and initialized with the given arguments.</span></span> <span data-ttu-id="bb21b-225">次のような例があるとします。</span><span class="sxs-lookup"><span data-stu-id="bb21b-225">This example</span></span>
 
-[!code-csharp[文字列の形式](../../../samples/snippets/csharp/tour/classes-and-objects/Program.cs#L55-L55)]
+<span data-ttu-id="bb21b-226">[!code-csharp[文字列の形式](../../../samples/snippets/csharp/tour/classes-and-objects/Program.cs#L55-L55)]</span><span class="sxs-lookup"><span data-stu-id="bb21b-226">[!code-csharp[StringFormat](../../../samples/snippets/csharp/tour/classes-and-objects/Program.cs#L55-L55)]</span></span>
 
-これは、次の記述と同じです。
+<span data-ttu-id="bb21b-227">これは、次の記述と同じです。</span><span class="sxs-lookup"><span data-stu-id="bb21b-227">is equivalent to writing the following.</span></span>
 
-[!code-csharp[文字列の形式 2](../../../samples/snippets/csharp/tour/classes-and-objects/Program.cs#L30-L35)]
+<span data-ttu-id="bb21b-228">[!code-csharp[文字列の形式 2](../../../samples/snippets/csharp/tour/classes-and-objects/Program.cs#L30-L35)]</span><span class="sxs-lookup"><span data-stu-id="bb21b-228">[!code-csharp[StringFormat2](../../../samples/snippets/csharp/tour/classes-and-objects/Program.cs#L30-L35)]</span></span>
 
-### <a name="method-body-and-local-variables"></a>メソッドの本体とローカル変数
+### <a name="method-body-and-local-variables"></a><span data-ttu-id="bb21b-229">メソッドの本体とローカル変数</span><span class="sxs-lookup"><span data-stu-id="bb21b-229">Method body and local variables</span></span>
 
-メソッドの本体では、メソッドの呼び出し時に実行するステートメントを指定します。
+<span data-ttu-id="bb21b-230">メソッドの本体では、メソッドの呼び出し時に実行するステートメントを指定します。</span><span class="sxs-lookup"><span data-stu-id="bb21b-230">A method’s body specifies the statements to execute when the method is invoked.</span></span>
 
-メソッドの本体は、メソッドの呼び出しに固有の変数を宣言できます。 このような変数は "*ローカル変数*" と呼ばれます。 ローカル変数宣言は、型名、変数名、および (場合によっては) 初期値を指定します。 次の例では、初期値 0 を使用してローカル変数 `i` を宣言し、初期値を使用せずにローカル変数 `j` を宣言します。
+<span data-ttu-id="bb21b-231">メソッドの本体は、メソッドの呼び出しに固有の変数を宣言できます。</span><span class="sxs-lookup"><span data-stu-id="bb21b-231">A method body can declare variables that are specific to the invocation of the method.</span></span> <span data-ttu-id="bb21b-232">このような変数は "*ローカル変数*" と呼ばれます。</span><span class="sxs-lookup"><span data-stu-id="bb21b-232">Such variables are called *local variables*.</span></span> <span data-ttu-id="bb21b-233">ローカル変数宣言は、型名、変数名、および (場合によっては) 初期値を指定します。</span><span class="sxs-lookup"><span data-stu-id="bb21b-233">A local variable declaration specifies a type name, a variable name, and possibly an initial value.</span></span> <span data-ttu-id="bb21b-234">次の例では、初期値 0 を使用してローカル変数 `i` を宣言し、初期値を使用せずにローカル変数 `j` を宣言します。</span><span class="sxs-lookup"><span data-stu-id="bb21b-234">The following example declares a local variable `i` with an initial value of zero and a local variable `j` with no initial value.</span></span>
 
-[!code-csharp[Squares](../../../samples/snippets/csharp/tour/classes-and-objects/Squares.cs#L3-L17)]
+<span data-ttu-id="bb21b-235">[!code-csharp[Squares](../../../samples/snippets/csharp/tour/classes-and-objects/Squares.cs#L3-L17)]</span><span class="sxs-lookup"><span data-stu-id="bb21b-235">[!code-csharp[Squares](../../../samples/snippets/csharp/tour/classes-and-objects/Squares.cs#L3-L17)]</span></span>
 
-C# では、ローカル変数の値を取得する前に、ローカル変数を "*明示的に割り当てる*" 必要があります。 たとえば、前述の `i` の宣言に初期値が含まれていなかった場合、コンパイラは以降の `i` の使用に対するエラーを報告します。これは、プログラム内のそれらのポイントで `i` が明示的に割り当てられていないためです。
+<span data-ttu-id="bb21b-236">C# では、ローカル変数の値を取得する前に、ローカル変数を "*明示的に割り当てる*" 必要があります。</span><span class="sxs-lookup"><span data-stu-id="bb21b-236">C# requires a local variable to be *definitely assigned* before its value can be obtained.</span></span> <span data-ttu-id="bb21b-237">たとえば、前述の `i` の宣言に初期値が含まれていなかった場合、コンパイラは以降の `i` の使用に対するエラーを報告します。これは、プログラム内のそれらのポイントで `i` が明示的に割り当てられていないためです。</span><span class="sxs-lookup"><span data-stu-id="bb21b-237">For example, if the declaration of the previous `i` did not include an initial value, the compiler would report an error for the subsequent usages of `i` because `i` would not be definitely assigned at those points in the program.</span></span>
 
-メソッドでは、`return` ステートメントを使用して、呼び出し元に制御を戻すことができます。 `void` を返すメソッドの場合、`return` ステートメントは式を指定できません。 void 以外を返すメソッドの場合、`return` ステートメントは戻り値を計算する式を含める必要があります。
+<span data-ttu-id="bb21b-238">メソッドでは、`return` ステートメントを使用して、呼び出し元に制御を戻すことができます。</span><span class="sxs-lookup"><span data-stu-id="bb21b-238">A method can use `return` statements to return control to its caller.</span></span> <span data-ttu-id="bb21b-239">`void` を返すメソッドの場合、`return` ステートメントは式を指定できません。</span><span class="sxs-lookup"><span data-stu-id="bb21b-239">In a method returning `void`, `return` statements cannot specify an expression.</span></span> <span data-ttu-id="bb21b-240">void 以外を返すメソッドの場合、`return` ステートメントは戻り値を計算する式を含める必要があります。</span><span class="sxs-lookup"><span data-stu-id="bb21b-240">In a method returning non-void, `return` statements must include an expression that computes the return value.</span></span>
 
-### <a name="static-and-instance-methods"></a>静的メソッドとインスタンス メソッド
+### <a name="static-and-instance-methods"></a><span data-ttu-id="bb21b-241">静的メソッドとインスタンス メソッド</span><span class="sxs-lookup"><span data-stu-id="bb21b-241">Static and instance methods</span></span>
 
-static 修飾子で宣言されているメソッドは "*静的メソッド*" です。 静的メソッドは、特定のインスタンスでは動作せず、静的メンバーにのみ直接アクセスできます。
+<span data-ttu-id="bb21b-242">static 修飾子で宣言されているメソッドは "*静的メソッド*" です。</span><span class="sxs-lookup"><span data-stu-id="bb21b-242">A method declared with a static modifier is a *static method*.</span></span> <span data-ttu-id="bb21b-243">静的メソッドは、特定のインスタンスでは動作せず、静的メンバーにのみ直接アクセスできます。</span><span class="sxs-lookup"><span data-stu-id="bb21b-243">A static method does not operate on a specific instance and can only directly access static members.</span></span>
 
-static 修飾子なしで宣言されているメソッドは "*インスタンス メソッド*" です。 インスタンス メソッドは、特定のインスタンスで動作し、静的メンバーとインスタンス メンバーの両方にアクセスできます。 インスタンス メソッドが呼び出されたインスタンスには、`this` として明示的にアクセスできます。 静的メソッドで `this` を参照するとエラーになります。
+<span data-ttu-id="bb21b-244">static 修飾子なしで宣言されているメソッドは "*インスタンス メソッド*" です。</span><span class="sxs-lookup"><span data-stu-id="bb21b-244">A method declared without a static modifier is an *instance method*.</span></span> <span data-ttu-id="bb21b-245">インスタンス メソッドは、特定のインスタンスで動作し、静的メンバーとインスタンス メンバーの両方にアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="bb21b-245">An instance method operates on a specific instance and can access both static and instance members.</span></span> <span data-ttu-id="bb21b-246">インスタンス メソッドが呼び出されたインスタンスには、`this` として明示的にアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="bb21b-246">The instance on which an instance method was invoked can be explicitly accessed as `this`.</span></span> <span data-ttu-id="bb21b-247">静的メソッドで `this` を参照するとエラーになります。</span><span class="sxs-lookup"><span data-stu-id="bb21b-247">It is an error to refer to `this` in a static method.</span></span>
 
-次の `Entity` クラスには、静的メンバーとインスタンス メンバーの両方があります。
+<span data-ttu-id="bb21b-248">次の `Entity` クラスには、静的メンバーとインスタンス メンバーの両方があります。</span><span class="sxs-lookup"><span data-stu-id="bb21b-248">The following `Entity` class has both static and instance members.</span></span>
 
-[!code-csharp[Entity](../../../samples/snippets/csharp/tour/classes-and-objects/Entity.cs#L16-L36)]
+<span data-ttu-id="bb21b-249">[!code-csharp[Entity](../../../samples/snippets/csharp/tour/classes-and-objects/Entity.cs#L16-L36)]</span><span class="sxs-lookup"><span data-stu-id="bb21b-249">[!code-csharp[Entity](../../../samples/snippets/csharp/tour/classes-and-objects/Entity.cs#L16-L36)]</span></span>
 
-各 `Entity` インスタンスには、シリアル番号 (およびここに表示されていないその他の情報) が含まれています。 `Entity` コンストラクターは (インスタンス メソッドと同様に)、次に使用可能なシリアル番号を持つ新しいインスタンスを初期化します。 コンストラクターはインスタンス メンバーであるため、`serialNo` インスタンス フィールドと `nextSerialNo` 静的フィールドの両方にアクセスできます。
+<span data-ttu-id="bb21b-250">各 `Entity` インスタンスには、シリアル番号 (およびここに表示されていないその他の情報) が含まれています。</span><span class="sxs-lookup"><span data-stu-id="bb21b-250">Each `Entity` instance contains a serial number (and presumably some other information that is not shown here).</span></span> <span data-ttu-id="bb21b-251">`Entity` コンストラクターは (インスタンス メソッドと同様に)、次に使用可能なシリアル番号を持つ新しいインスタンスを初期化します。</span><span class="sxs-lookup"><span data-stu-id="bb21b-251">The `Entity` constructor (which is like an instance method) initializes the new instance with the next available serial number.</span></span> <span data-ttu-id="bb21b-252">コンストラクターはインスタンス メンバーであるため、`serialNo` インスタンス フィールドと `nextSerialNo` 静的フィールドの両方にアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="bb21b-252">Because the constructor is an instance member, it is permitted to access both the `serialNo` instance field and the `nextSerialNo` static field.</span></span>
 
-静的メソッドである `GetNextSerialNo` と `SetNextSerialNo` は `nextSerialNo` 静的フィールドにアクセスできますが、`serialNo` インスタンス フィールドに直接アクセスするとエラーになります。
+<span data-ttu-id="bb21b-253">静的メソッドである `GetNextSerialNo` と `SetNextSerialNo` は `nextSerialNo` 静的フィールドにアクセスできますが、`serialNo` インスタンス フィールドに直接アクセスするとエラーになります。</span><span class="sxs-lookup"><span data-stu-id="bb21b-253">The `GetNextSerialNo` and `SetNextSerialNo` static methods can access the `nextSerialNo` static field, but it would be an error for them to directly access the `serialNo` instance field.</span></span>
 
-Entity クラスの使用例を次に示します。
+<span data-ttu-id="bb21b-254">Entity クラスの使用例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="bb21b-254">The following example shows the use of the Entity class.</span></span>
 
-[!code-csharp[Entity の例](../../../samples/snippets/csharp/tour/classes-and-objects/Entity.cs#L3-L15)]
+<span data-ttu-id="bb21b-255">[!code-csharp[Entity の例](../../../samples/snippets/csharp/tour/classes-and-objects/Entity.cs#L3-L15)]</span><span class="sxs-lookup"><span data-stu-id="bb21b-255">[!code-csharp[EntityExample](../../../samples/snippets/csharp/tour/classes-and-objects/Entity.cs#L3-L15)]</span></span>
 
-静的メソッドである `SetNextSerialNo` と `GetNextSerialNo` はクラスで呼び出されますが、`GetSerialNo` インスタンス メソッドはクラスのインスタンスで呼び出されます。
+<span data-ttu-id="bb21b-256">静的メソッドである `SetNextSerialNo` と `GetNextSerialNo` はクラスで呼び出されますが、`GetSerialNo` インスタンス メソッドはクラスのインスタンスで呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="bb21b-256">Note that the `SetNextSerialNo` and `GetNextSerialNo` static methods are invoked on the class whereas the `GetSerialNo` instance method is invoked on instances of the class.</span></span>
 
-### <a name="virtual-override-and-abstract-methods"></a>仮想メソッド、オーバーライド メソッド、および抽象メソッド
+### <a name="virtual-override-and-abstract-methods"></a><span data-ttu-id="bb21b-257">仮想メソッド、オーバーライド メソッド、および抽象メソッド</span><span class="sxs-lookup"><span data-stu-id="bb21b-257">Virtual, override, and abstract methods</span></span>
 
-インスタンス メソッドの宣言に `virtual` 修飾子が含まれている場合、そのメソッドは "*仮想メソッド*" と呼ばれます。 virtual 修飾子が存在しない場合、そのメソッドは "*非仮想メソッド*" と呼ばれます。
+<span data-ttu-id="bb21b-258">インスタンス メソッドの宣言に `virtual` 修飾子が含まれている場合、そのメソッドは "*仮想メソッド*" と呼ばれます。</span><span class="sxs-lookup"><span data-stu-id="bb21b-258">When an instance method declaration includes a `virtual` modifier, the method is said to be a *virtual method*.</span></span> <span data-ttu-id="bb21b-259">virtual 修飾子が存在しない場合、そのメソッドは "*非仮想メソッド*" と呼ばれます。</span><span class="sxs-lookup"><span data-stu-id="bb21b-259">When no virtual modifier is present, the method is said to be a *nonvirtual method*.</span></span>
 
-仮想メソッドが呼び出されると、その呼び出しが行われるインスタンスの "*実行時の型*" によって、呼び出す実際のメソッドの実装が決定します。 非仮想メソッドの呼び出しでは、インスタンスの "*コンパイル時の型*" が決定要因です。
+<span data-ttu-id="bb21b-260">仮想メソッドが呼び出されると、その呼び出しが行われるインスタンスの "*実行時の型*" によって、呼び出す実際のメソッドの実装が決定します。</span><span class="sxs-lookup"><span data-stu-id="bb21b-260">When a virtual method is invoked, the *run-time type* of the instance for which that invocation takes place determines the actual method implementation to invoke.</span></span> <span data-ttu-id="bb21b-261">非仮想メソッドの呼び出しでは、インスタンスの "*コンパイル時の型*" が決定要因です。</span><span class="sxs-lookup"><span data-stu-id="bb21b-261">In a nonvirtual method invocation, the *compile-time type* of the instance is the determining factor.</span></span>
 
-仮想メソッドは派生クラスで "*オーバーライド*" できます。 インスタンス メソッドの宣言に override 修飾子が含まれている場合、メソッドは、同じシグネチャを持つ継承された仮想メソッドをオーバーライドします。 仮想メソッドの宣言には新しいメソッドが導入されていますが、オーバーライド メソッドの宣言では、そのメソッドの新しい実装を提供することで既存の継承された仮想メソッドを特殊化します。
+<span data-ttu-id="bb21b-262">仮想メソッドは派生クラスで "*オーバーライド*" できます。</span><span class="sxs-lookup"><span data-stu-id="bb21b-262">A virtual method can be *overridden* in a derived class.</span></span> <span data-ttu-id="bb21b-263">インスタンス メソッドの宣言に override 修飾子が含まれている場合、メソッドは、同じシグネチャを持つ継承された仮想メソッドをオーバーライドします。</span><span class="sxs-lookup"><span data-stu-id="bb21b-263">When an instance method declaration includes an override modifier, the method overrides an inherited virtual method with the same signature.</span></span> <span data-ttu-id="bb21b-264">仮想メソッドの宣言には新しいメソッドが導入されていますが、オーバーライド メソッドの宣言では、そのメソッドの新しい実装を提供することで既存の継承された仮想メソッドを特殊化します。</span><span class="sxs-lookup"><span data-stu-id="bb21b-264">Whereas a virtual method declaration introduces a new method, an override method declaration specializes an existing inherited virtual method by providing a new implementation of that method.</span></span>
 
-"*抽象メソッド*" は、実装のない仮想メソッドです。 抽象メソッドは、abstract 修飾子で宣言され、抽象として宣言されるクラスでのみ許可されます。 抽象メソッドは、すべての非抽象派生クラスでオーバーライドする必要があります。
+<span data-ttu-id="bb21b-265">"*抽象メソッド*" は、実装のない仮想メソッドです。</span><span class="sxs-lookup"><span data-stu-id="bb21b-265">An *abstract method* is a virtual method with no implementation.</span></span> <span data-ttu-id="bb21b-266">抽象メソッドは、abstract 修飾子で宣言され、抽象として宣言されるクラスでのみ許可されます。</span><span class="sxs-lookup"><span data-stu-id="bb21b-266">An abstract method is declared with the abstract modifier and is permitted only in a class that is also declared abstract.</span></span> <span data-ttu-id="bb21b-267">抽象メソッドは、すべての非抽象派生クラスでオーバーライドする必要があります。</span><span class="sxs-lookup"><span data-stu-id="bb21b-267">An abstract method must be overridden in every non-abstract derived class.</span></span>
 
-次の例では、式ツリー ノードを表す抽象クラス `Expression`、および定数、変数参照、算術演算の式ツリー ノードを実装する 3 つの派生クラス `Constant`、`VariableReference`、`Operation` を宣言します  (これは式ツリー型に似ていますが、混同しないようにしてください)。
+<span data-ttu-id="bb21b-268">次の例では、式ツリー ノードを表す抽象クラス `Expression`、および定数、変数参照、算術演算の式ツリー ノードを実装する 3 つの派生クラス `Constant`、`VariableReference`、`Operation` を宣言します </span><span class="sxs-lookup"><span data-stu-id="bb21b-268">The following example declares an abstract class, `Expression`, which represents an expression tree node, and three derived classes, `Constant`, `VariableReference`, and `Operation`, which implement expression tree nodes for constants, variable references, and arithmetic operations.</span></span> <span data-ttu-id="bb21b-269">(これは式ツリー型に似ていますが、混同しないようにしてください)。</span><span class="sxs-lookup"><span data-stu-id="bb21b-269">(This is similar to, but not to be confused with the expression tree types).</span></span>
 
-[!code-csharp[Expression クラス](../../../samples/snippets/csharp/tour/classes-and-objects/Expressions.cs#L3-L61)]
+<span data-ttu-id="bb21b-270">[!code-csharp[Expression クラス](../../../samples/snippets/csharp/tour/classes-and-objects/Expressions.cs#L3-L61)]</span><span class="sxs-lookup"><span data-stu-id="bb21b-270">[!code-csharp[ExpressionClass](../../../samples/snippets/csharp/tour/classes-and-objects/Expressions.cs#L3-L61)]</span></span>
 
-前述の 4 つのクラスは、算術式をモデル化するために使用できます。 たとえば、これらのクラスのインスタンスを使用して、式 `x + 3` を次のように表すことができます。
+<span data-ttu-id="bb21b-271">前述の 4 つのクラスは、算術式をモデル化するために使用できます。</span><span class="sxs-lookup"><span data-stu-id="bb21b-271">The previous four classes can be used to model arithmetic expressions.</span></span> <span data-ttu-id="bb21b-272">たとえば、これらのクラスのインスタンスを使用して、式 `x + 3` を次のように表すことができます。</span><span class="sxs-lookup"><span data-stu-id="bb21b-272">For example, using instances of these classes, the expression `x + 3` can be represented as follows.</span></span>
 
-[!code-csharp[Expression の例](../../../samples/snippets/csharp/tour/classes-and-objects/Program.cs#L40-L43)]
+<span data-ttu-id="bb21b-273">[!code-csharp[Expression の例](../../../samples/snippets/csharp/tour/classes-and-objects/Program.cs#L40-L43)]</span><span class="sxs-lookup"><span data-stu-id="bb21b-273">[!code-csharp[ExpressionExample](../../../samples/snippets/csharp/tour/classes-and-objects/Program.cs#L40-L43)]</span></span>
 
-`Expression` インスタンスの `Evaluate` メソッドが呼び出され、指定された式を評価して `double` 値を生成します。 このメソッドは、変数の名前 (エントリのキーとして) と値 (エントリの値として) が格納されている `Dictionary` 引数を受け取ります。 `Evaluate` は抽象メソッドなので、`Expression` から派生した非抽象クラスでは、`Evaluate` をオーバーライドする必要があります。
+<span data-ttu-id="bb21b-274">`Expression` インスタンスの `Evaluate` メソッドが呼び出され、指定された式を評価して `double` 値を生成します。</span><span class="sxs-lookup"><span data-stu-id="bb21b-274">The `Evaluate` method of an `Expression` instance is invoked to evaluate the given expression and produce a `double` value.</span></span> <span data-ttu-id="bb21b-275">このメソッドは、変数の名前 (エントリのキーとして) と値 (エントリの値として) が格納されている `Dictionary` 引数を受け取ります。</span><span class="sxs-lookup"><span data-stu-id="bb21b-275">The method takes a `Dictionary` argument that contains variable names (as keys of the entries) and values (as values of the entries).</span></span> <span data-ttu-id="bb21b-276">`Evaluate` は抽象メソッドなので、`Expression` から派生した非抽象クラスでは、`Evaluate` をオーバーライドする必要があります。</span><span class="sxs-lookup"><span data-stu-id="bb21b-276">Because `Evaluate` is an abstract method, non-abstract classes derived from `Expression` must override `Evaluate`.</span></span>
 
-`Evaluate` の `Constant` の実装は、格納された定数を単に返します。 `VariableReference` の実装は、ディクショナリで変数名を検索し、結果の値を返します。 `Operation` の実装は、(`Evaluate` メソッドを再帰的に呼び出すことによって) まず左と右のオペランドを評価し、指定された算術演算を実行します。
+<span data-ttu-id="bb21b-277">`Evaluate` の `Constant` の実装は、格納された定数を単に返します。</span><span class="sxs-lookup"><span data-stu-id="bb21b-277">A `Constant`'s implementation of `Evaluate` simply returns the stored constant.</span></span> <span data-ttu-id="bb21b-278">`VariableReference` の実装は、ディクショナリで変数名を検索し、結果の値を返します。</span><span class="sxs-lookup"><span data-stu-id="bb21b-278">A `VariableReference`'s implementation looks up the variable name in the dictionary and returns the resulting value.</span></span> <span data-ttu-id="bb21b-279">`Operation` の実装は、(`Evaluate` メソッドを再帰的に呼び出すことによって) まず左と右のオペランドを評価し、指定された算術演算を実行します。</span><span class="sxs-lookup"><span data-stu-id="bb21b-279">An `Operation`'s implementation first evaluates the left and right operands (by recursively invoking their `Evaluate` methods) and then performs the given arithmetic operation.</span></span>
 
-次のプログラムでは、`Expression` クラスを使用して、式 `x * (y + 2)` の異なる値の `x` と `y` を評価します。
+<span data-ttu-id="bb21b-280">次のプログラムでは、`Expression` クラスを使用して、式 `x * (y + 2)` の異なる値の `x` と `y` を評価します。</span><span class="sxs-lookup"><span data-stu-id="bb21b-280">The following program uses the `Expression` classes to evaluate the expression `x * (y + 2)` for different values of `x` and `y`.</span></span>
 
-[!code-csharp[Expression の使用例](../../../samples/snippets/csharp/tour/classes-and-objects/Expressions.cs#L66-L89)]
+<span data-ttu-id="bb21b-281">[!code-csharp[Expression の使用例](../../../samples/snippets/csharp/tour/classes-and-objects/Expressions.cs#L66-L89)]</span><span class="sxs-lookup"><span data-stu-id="bb21b-281">[!code-csharp[ExpressionUsage](../../../samples/snippets/csharp/tour/classes-and-objects/Expressions.cs#L66-L89)]</span></span>
 
-### <a name="method-overloading"></a>メソッドのオーバーロード
+### <a name="method-overloading"></a><span data-ttu-id="bb21b-282">メソッドのオーバーロード</span><span class="sxs-lookup"><span data-stu-id="bb21b-282">Method overloading</span></span>
 
-メソッドの "*オーバーロード*" では、メソッドのシグネチャが一意であれば、同じクラス内の複数のメソッドに同じ名前を付けることができます。 オーバーロードされたメソッドの呼び出しをコンパイルする場合、コンパイラは "*オーバーロードの解決*" を使用して、呼び出すメソッドを決定します。 オーバーロードの解決では、引数に最も一致する 1 つのメソッドが特定されます。最も一致するメソッドが見つからない場合は、エラーが報告されます。 次の例は、オーバーロードの解決が有効な場合を示しています。 `Main` メソッド内の各呼び出しのコメントは、実際に呼び出されるメソッドを示しています。
+<span data-ttu-id="bb21b-283">メソッドの "*オーバーロード*" では、メソッドのシグネチャが一意であれば、同じクラス内の複数のメソッドに同じ名前を付けることができます。</span><span class="sxs-lookup"><span data-stu-id="bb21b-283">Method *overloading* permits multiple methods in the same class to have the same name as long as they have unique signatures.</span></span> <span data-ttu-id="bb21b-284">オーバーロードされたメソッドの呼び出しをコンパイルする場合、コンパイラは "*オーバーロードの解決*" を使用して、呼び出すメソッドを決定します。</span><span class="sxs-lookup"><span data-stu-id="bb21b-284">When compiling an invocation of an overloaded method, the compiler uses *overload resolution* to determine the specific method to invoke.</span></span> <span data-ttu-id="bb21b-285">オーバーロードの解決では、引数に最も一致する 1 つのメソッドが特定されます。最も一致するメソッドが見つからない場合は、エラーが報告されます。</span><span class="sxs-lookup"><span data-stu-id="bb21b-285">Overload resolution finds the one method that best matches the arguments or reports an error if no single best match can be found.</span></span> <span data-ttu-id="bb21b-286">次の例は、オーバーロードの解決が有効な場合を示しています。</span><span class="sxs-lookup"><span data-stu-id="bb21b-286">The following example shows overload resolution in effect.</span></span> <span data-ttu-id="bb21b-287">`Main` メソッド内の各呼び出しのコメントは、実際に呼び出されるメソッドを示しています。</span><span class="sxs-lookup"><span data-stu-id="bb21b-287">The comment for each invocation in the `Main` method shows which method is actually invoked.</span></span>
 
-[!code-csharp[オーバーロードの使用例](../../../samples/snippets/csharp/tour/classes-and-objects/Overloading.cs#L3-L41)]
+<span data-ttu-id="bb21b-288">[!code-csharp[オーバーロードの使用例](../../../samples/snippets/csharp/tour/classes-and-objects/Overloading.cs#L3-L41)]</span><span class="sxs-lookup"><span data-stu-id="bb21b-288">[!code-csharp[OverloadUsage](../../../samples/snippets/csharp/tour/classes-and-objects/Overloading.cs#L3-L41)]</span></span>
 
-この例に示すように、パラメーターの厳密な型に引数を明示的にキャストするか、または型引数を明示的に指定することにより、特定のメソッドを常に選択できます。
+<span data-ttu-id="bb21b-289">この例に示すように、パラメーターの厳密な型に引数を明示的にキャストするか、または型引数を明示的に指定することにより、特定のメソッドを常に選択できます。</span><span class="sxs-lookup"><span data-stu-id="bb21b-289">As shown by the example, a particular method can always be selected by explicitly casting the arguments to the exact parameter types and/or explicitly supplying type arguments.</span></span>
 
-## <a name="other-function-members"></a>その他の関数メンバー
+## <a name="other-function-members"></a><span data-ttu-id="bb21b-290">その他の関数メンバー</span><span class="sxs-lookup"><span data-stu-id="bb21b-290">Other function members</span></span>
 
-実行可能コードが含まれるメンバーは、クラスの "*関数メンバー*" と総称されます。 前のセクションでは、関数メンバーの主な種類であるメソッドについて説明しました。 ここでは、C# でサポートされるその他の種類の関数メンバー (コンストラクター、プロパティ、インデクサー、イベント、演算子、およびファイナライザー) について説明します。
+<span data-ttu-id="bb21b-291">実行可能コードが含まれるメンバーは、クラスの "*関数メンバー*" と総称されます。</span><span class="sxs-lookup"><span data-stu-id="bb21b-291">Members that contain executable code are collectively known as the *function members* of a class.</span></span> <span data-ttu-id="bb21b-292">前のセクションでは、関数メンバーの主な種類であるメソッドについて説明しました。</span><span class="sxs-lookup"><span data-stu-id="bb21b-292">The preceding section describes methods, which are the primary kind of function members.</span></span> <span data-ttu-id="bb21b-293">ここでは、C# でサポートされるその他の種類の関数メンバー (コンストラクター、プロパティ、インデクサー、イベント、演算子、およびファイナライザー) について説明します。</span><span class="sxs-lookup"><span data-stu-id="bb21b-293">This section describes the other kinds of function members supported by C#: constructors, properties, indexers, events, operators, and finalizers.</span></span>
 
-オブジェクトの拡張可能なリストを実装する、List<T> と呼ばれるジェネリック クラスを次に示します。 このクラスには、最も一般的な種類の関数メンバーの例がいくつか含まれています。
+<span data-ttu-id="bb21b-294">オブジェクトの拡張可能なリストを実装する、List<T> と呼ばれるジェネリック クラスを次に示します。</span><span class="sxs-lookup"><span data-stu-id="bb21b-294">The following shows a generic class called List<T>, which implements a growable list of objects.</span></span> <span data-ttu-id="bb21b-295">このクラスには、最も一般的な種類の関数メンバーの例がいくつか含まれています。</span><span class="sxs-lookup"><span data-stu-id="bb21b-295">The class contains several examples of the most common kinds of function members.</span></span>
 
-[!code-csharp[List クラス](../../../samples/snippets/csharp/tour/classes-and-objects/ListBasedExamples.cs#L4-L89)]
+<span data-ttu-id="bb21b-296">[!code-csharp[List クラス](../../../samples/snippets/csharp/tour/classes-and-objects/ListBasedExamples.cs#L4-L89)]</span><span class="sxs-lookup"><span data-stu-id="bb21b-296">[!code-csharp[ListClass](../../../samples/snippets/csharp/tour/classes-and-objects/ListBasedExamples.cs#L4-L89)]</span></span>
 
-### <a name="constructors"></a>コンストラクター
+### <a name="constructors"></a><span data-ttu-id="bb21b-297">コンストラクター</span><span class="sxs-lookup"><span data-stu-id="bb21b-297">Constructors</span></span>
 
-C# は、インスタンス コンストラクターと静的コンストラクターの両方をサポートします。 "*インスタンス コンストラクター*" は、クラスのインスタンスを初期化するために必要なアクションを実装するメンバーです。 "*静的コンストラクター*" は、クラスを最初に読み込むときに、そのクラス自体を初期化するために必要なアクションを実装するメンバーです。
+<span data-ttu-id="bb21b-298">C# は、インスタンス コンストラクターと静的コンストラクターの両方をサポートします。</span><span class="sxs-lookup"><span data-stu-id="bb21b-298">C# supports both instance and static constructors.</span></span> <span data-ttu-id="bb21b-299">"*インスタンス コンストラクター*" は、クラスのインスタンスを初期化するために必要なアクションを実装するメンバーです。</span><span class="sxs-lookup"><span data-stu-id="bb21b-299">An *instance constructor* is a member that implements the actions required to initialize an instance of a class.</span></span> <span data-ttu-id="bb21b-300">"*静的コンストラクター*" は、クラスを最初に読み込むときに、そのクラス自体を初期化するために必要なアクションを実装するメンバーです。</span><span class="sxs-lookup"><span data-stu-id="bb21b-300">A *static constructor* is a member that implements the actions required to initialize a class itself when it is first loaded.</span></span>
 
-コンストラクターは、戻り値の型がなく、含んでいるクラスと同じ名前を持つメソッドのように宣言されます。 コンストラクターの宣言に static 修飾子が含まれている場合は、静的コンストラクターが宣言されます。 それ以外の場合は、インスタンス コンストラクターが宣言されます。
+<span data-ttu-id="bb21b-301">コンストラクターは、戻り値の型がなく、含んでいるクラスと同じ名前を持つメソッドのように宣言されます。</span><span class="sxs-lookup"><span data-stu-id="bb21b-301">A constructor is declared like a method with no return type and the same name as the containing class.</span></span> <span data-ttu-id="bb21b-302">コンストラクターの宣言に static 修飾子が含まれている場合は、静的コンストラクターが宣言されます。</span><span class="sxs-lookup"><span data-stu-id="bb21b-302">If a constructor declaration includes a static modifier, it declares a static constructor.</span></span> <span data-ttu-id="bb21b-303">それ以外の場合は、インスタンス コンストラクターが宣言されます。</span><span class="sxs-lookup"><span data-stu-id="bb21b-303">Otherwise, it declares an instance constructor.</span></span>
 
-インスタンス コンストラクターはオーバーロード可能であり、省略可能なパラメーターを指定できます。 たとえば、`List<T>` クラスは、2 つの (1 つはパラメーターなし、もう 1 つは `int` パラメーターを受け取る) インスタンス コンストラクターを宣言します。 インスタンス コンストラクターは、`new` 演算子を使用して呼び出されます。 次のステートメントは、`List` クラスのコンストラクターを使用して、2 つの `List<string>` インスタンスを割り当てます (省略可能な引数を使用した場合と使用していない場合の両方を示します)。
+<span data-ttu-id="bb21b-304">インスタンス コンストラクターはオーバーロード可能であり、省略可能なパラメーターを指定できます。</span><span class="sxs-lookup"><span data-stu-id="bb21b-304">Instance constructors can be overloaded, and can have optional parameters.</span></span> <span data-ttu-id="bb21b-305">たとえば、`List<T>` クラスは、2 つの (1 つはパラメーターなし、もう 1 つは `int` パラメーターを受け取る) インスタンス コンストラクターを宣言します。</span><span class="sxs-lookup"><span data-stu-id="bb21b-305">For example, the `List<T>` class declares two instance constructors, one with no parameters and one that takes an `int` parameter.</span></span> <span data-ttu-id="bb21b-306">インスタンス コンストラクターは、`new` 演算子を使用して呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="bb21b-306">Instance constructors are invoked using the `new` operator.</span></span> <span data-ttu-id="bb21b-307">次のステートメントは、`List` クラスのコンストラクターを使用して、2 つの `List<string>` インスタンスを割り当てます (省略可能な引数を使用した場合と使用していない場合の両方を示します)。</span><span class="sxs-lookup"><span data-stu-id="bb21b-307">The following statements allocate two `List<string>` instances using the constructor of the `List` class with and without the optional argument.</span></span>
 
-[!code-csharp[List の例 1](../../../samples/snippets/csharp/tour/classes-and-objects/ListBasedExamples.cs#L95-L96)]
+<span data-ttu-id="bb21b-308">[!code-csharp[List の例 1](../../../samples/snippets/csharp/tour/classes-and-objects/ListBasedExamples.cs#L95-L96)]</span><span class="sxs-lookup"><span data-stu-id="bb21b-308">[!code-csharp[ListExample1](../../../samples/snippets/csharp/tour/classes-and-objects/ListBasedExamples.cs#L95-L96)]</span></span>
 
-他のメンバーとは異なり、インスタンス コンストラクターは継承されず、クラスには、そのクラスで実際に宣言された以外のインスタンス コンストラクターがありません。 クラスのインスタンス コンストラクターが指定されていない場合は、パラメーターなしの空のコンストラクターが自動的に指定されます。
+<span data-ttu-id="bb21b-309">他のメンバーとは異なり、インスタンス コンストラクターは継承されず、クラスには、そのクラスで実際に宣言された以外のインスタンス コンストラクターがありません。</span><span class="sxs-lookup"><span data-stu-id="bb21b-309">Unlike other members, instance constructors are not inherited, and a class has no instance constructors other than those actually declared in the class.</span></span> <span data-ttu-id="bb21b-310">クラスのインスタンス コンストラクターが指定されていない場合は、パラメーターなしの空のコンストラクターが自動的に指定されます。</span><span class="sxs-lookup"><span data-stu-id="bb21b-310">If no instance constructor is supplied for a class, then an empty one with no parameters is automatically provided.</span></span>
 
-### <a name="properties"></a>プロパティ
+### <a name="properties"></a><span data-ttu-id="bb21b-311">プロパティ</span><span class="sxs-lookup"><span data-stu-id="bb21b-311">Properties</span></span>
 
-"*プロパティ*" は、フィールドが自然に拡張したものです。 フィールドとプロパティはどちらも型が関連付けられている名前付きのメンバーであり、それらにアクセスするための構文は同じです。 ただし、フィールドとは異なり、プロパティは格納場所を表しません。 その代わりに、プロパティには、値の読み取りまたは書き込みの際に実行されるステートメントを指定する "*アクセサー*" があります。
+<span data-ttu-id="bb21b-312">"*プロパティ*" は、フィールドが自然に拡張したものです。</span><span class="sxs-lookup"><span data-stu-id="bb21b-312">*Properties* are a natural extension of fields.</span></span> <span data-ttu-id="bb21b-313">フィールドとプロパティはどちらも型が関連付けられている名前付きのメンバーであり、それらにアクセスするための構文は同じです。</span><span class="sxs-lookup"><span data-stu-id="bb21b-313">Both are named members with associated types, and the syntax for accessing fields and properties is the same.</span></span> <span data-ttu-id="bb21b-314">ただし、フィールドとは異なり、プロパティは格納場所を表しません。</span><span class="sxs-lookup"><span data-stu-id="bb21b-314">However, unlike fields, properties do not denote storage locations.</span></span> <span data-ttu-id="bb21b-315">その代わりに、プロパティには、値の読み取りまたは書き込みの際に実行されるステートメントを指定する "*アクセサー*" があります。</span><span class="sxs-lookup"><span data-stu-id="bb21b-315">Instead, properties have *accessors* that specify the statements to be executed when their values are read or written.</span></span>
 
-プロパティはフィールドのように宣言されますが、宣言はセミコロンで終わるのではなく、区切り記号 `{` と `}` の間に記述する get アクセサーまたは set アクセサーで終わる点が異なります。 get アクセサーと set アクセサーの両方を持つプロパティは "*読み取り/書き込みプロパティ*"、get アクセサーだけを持つプロパティは "*読み取り専用プロパティ*"、set アクセサーだけを持つプロパティは "*書き込み専用プロパティ*" です。
+<span data-ttu-id="bb21b-316">プロパティはフィールドのように宣言されますが、宣言はセミコロンで終わるのではなく、区切り記号 `{` と `}` の間に記述する get アクセサーまたは set アクセサーで終わる点が異なります。</span><span class="sxs-lookup"><span data-stu-id="bb21b-316">A property is declared like a field, except that the declaration ends with a get accessor and/or a set accessor written between the delimiters `{` and `}` instead of ending in a semicolon.</span></span> <span data-ttu-id="bb21b-317">get アクセサーと set アクセサーの両方を持つプロパティは "*読み取り/書き込みプロパティ*"、get アクセサーだけを持つプロパティは "*読み取り専用プロパティ*"、set アクセサーだけを持つプロパティは "*書き込み専用プロパティ*" です。</span><span class="sxs-lookup"><span data-stu-id="bb21b-317">A property that has both a get accessor and a set accessor is a *read-write property*, a property that has only a get accessor is a *read-only property*, and a property that has only a set accessor is a *write-only property*.</span></span>
 
-get アクセサーは、プロパティの型の戻り値を持つパラメーターなしのメソッドに相当します。 プロパティが式で参照される場合 (割り当ての対象として参照される場合を除く) は、プロパティの値を計算するためにプロパティの get アクセサーが呼び出されます。
+<span data-ttu-id="bb21b-318">get アクセサーは、プロパティの型の戻り値を持つパラメーターなしのメソッドに相当します。</span><span class="sxs-lookup"><span data-stu-id="bb21b-318">A get accessor corresponds to a parameterless method with a return value of the property type.</span></span> <span data-ttu-id="bb21b-319">プロパティが式で参照される場合 (割り当ての対象として参照される場合を除く) は、プロパティの値を計算するためにプロパティの get アクセサーが呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="bb21b-319">Except as the target of an assignment, when a property is referenced in an expression, the get accessor of the property is invoked to compute the value of the property.</span></span>
 
-set アクセサーは、1 つのパラメーターの名前付きの値を持ち、戻り値の型を持たないメソッドに相当します。 プロパティが割り当ての対象として、または ++ あるいは -- のオペランドとして参照される場合は、新しい値を指定する引数と共に set アクセサーが呼び出されます。
+<span data-ttu-id="bb21b-320">set アクセサーは、1 つのパラメーターの名前付きの値を持ち、戻り値の型を持たないメソッドに相当します。</span><span class="sxs-lookup"><span data-stu-id="bb21b-320">A set accessor corresponds to a method with a single parameter named value and no return type.</span></span> <span data-ttu-id="bb21b-321">プロパティが割り当ての対象として、または ++ あるいは -- のオペランドとして参照される場合は、新しい値を指定する引数と共に set アクセサーが呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="bb21b-321">When a property is referenced as the target of an assignment or as the operand of ++ or --, the set accessor is invoked with an argument that provides the new value.</span></span>
 
-`List<T>` クラスは 2 つのプロパティ (Count と Capacity) を宣言します。これらは、それぞれ読み取り専用プロパティと読み取り/書き込みプロパティです。 これらのプロパティの使用例を次に示します。
+<span data-ttu-id="bb21b-322">`List<T>` クラスは 2 つのプロパティ (Count と Capacity) を宣言します。これらは、それぞれ読み取り専用プロパティと読み取り/書き込みプロパティです。</span><span class="sxs-lookup"><span data-stu-id="bb21b-322">The `List<T>` class declares two properties, Count and Capacity, which are read-only and read-write, respectively.</span></span> <span data-ttu-id="bb21b-323">これらのプロパティの使用例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="bb21b-323">The following is an example of use of these properties.</span></span>
 
-[!code-csharp[List の例 2](../../../samples/snippets/csharp/tour/classes-and-objects/ListBasedExamples.cs#L101-L104)]
+<span data-ttu-id="bb21b-324">[!code-csharp[List の例 2](../../../samples/snippets/csharp/tour/classes-and-objects/ListBasedExamples.cs#L101-L104)]</span><span class="sxs-lookup"><span data-stu-id="bb21b-324">[!code-csharp[ListExample2](../../../samples/snippets/csharp/tour/classes-and-objects/ListBasedExamples.cs#L101-L104)]</span></span>
 
-フィールドおよびメソッドと同様に、C# はインスタンス プロパティと静的プロパティの両方をサポートします。 静的プロパティは static 修飾子で宣言され、インスタンス プロパティは修飾子なしで宣言されます。
+<span data-ttu-id="bb21b-325">フィールドおよびメソッドと同様に、C# はインスタンス プロパティと静的プロパティの両方をサポートします。</span><span class="sxs-lookup"><span data-stu-id="bb21b-325">Similar to fields and methods, C# supports both instance properties and static properties.</span></span> <span data-ttu-id="bb21b-326">静的プロパティは static 修飾子で宣言され、インスタンス プロパティは修飾子なしで宣言されます。</span><span class="sxs-lookup"><span data-stu-id="bb21b-326">Static properties are declared with the static modifier, and instance properties are declared without it.</span></span>
 
-プロパティのアクセサーは仮想にすることができます。 プロパティの宣言に `virtual`、`abstract`、または `override` の各修飾子が含まれている場合、その宣言はプロパティのアクセサーに適用されます。
+<span data-ttu-id="bb21b-327">プロパティのアクセサーは仮想にすることができます。</span><span class="sxs-lookup"><span data-stu-id="bb21b-327">The accessor(s) of a property can be virtual.</span></span> <span data-ttu-id="bb21b-328">プロパティの宣言に `virtual`、`abstract`、または `override` の各修飾子が含まれている場合、その宣言はプロパティのアクセサーに適用されます。</span><span class="sxs-lookup"><span data-stu-id="bb21b-328">When a property declaration includes a `virtual`, `abstract`, or `override` modifier, it applies to the accessor(s) of the property.</span></span>
 
-### <a name="indexers"></a>インデクサー
+### <a name="indexers"></a><span data-ttu-id="bb21b-329">インデクサー</span><span class="sxs-lookup"><span data-stu-id="bb21b-329">Indexers</span></span>
 
-"*インデクサー*" は、配列と同じ方法でオブジェクトのインデックスを作成できるようにするメンバーです。 インデクサーはプロパティのように宣言されますが、メンバーの名前の後に区切り記号 `[` と `]` の間に記述するパラメーター リストが続く点が異なります。 パラメーターは、インデクサーのアクセサーで使用できます。 プロパティと同様に、読み取り/書き込み、読み取り専用、および書き込み専用のインデクサーを使用できます。また、インデクサーのアクセサーを仮想にすることができます。
+<span data-ttu-id="bb21b-330">"*インデクサー*" は、配列と同じ方法でオブジェクトのインデックスを作成できるようにするメンバーです。</span><span class="sxs-lookup"><span data-stu-id="bb21b-330">An *indexer* is a member that enables objects to be indexed in the same way as an array.</span></span> <span data-ttu-id="bb21b-331">インデクサーはプロパティのように宣言されますが、メンバーの名前の後に区切り記号 `[` と `]` の間に記述するパラメーター リストが続く点が異なります。</span><span class="sxs-lookup"><span data-stu-id="bb21b-331">An indexer is declared like a property except that the name of the member is this followed by a parameter list written between the delimiters `[` and `]`.</span></span> <span data-ttu-id="bb21b-332">パラメーターは、インデクサーのアクセサーで使用できます。</span><span class="sxs-lookup"><span data-stu-id="bb21b-332">The parameters are available in the accessor(s) of the indexer.</span></span> <span data-ttu-id="bb21b-333">プロパティと同様に、読み取り/書き込み、読み取り専用、および書き込み専用のインデクサーを使用できます。また、インデクサーのアクセサーを仮想にすることができます。</span><span class="sxs-lookup"><span data-stu-id="bb21b-333">Similar to properties, indexers can be read-write, read-only, and write-only, and the accessor(s) of an indexer can be virtual.</span></span>
 
-`List` クラスは、`int` パラメーターを受け取る 1 つの読み取り/書き込みインデクサーを宣言します。 インデクサーを使用すると、`int` 値を持つ `List` インスタンスのインデックスを作成できます。 例:
+<span data-ttu-id="bb21b-334">`List` クラスは、`int` パラメーターを受け取る 1 つの読み取り/書き込みインデクサーを宣言します。</span><span class="sxs-lookup"><span data-stu-id="bb21b-334">The `List` class declares a single read-write indexer that takes an `int` parameter.</span></span> <span data-ttu-id="bb21b-335">インデクサーを使用すると、`int` 値を持つ `List` インスタンスのインデックスを作成できます。</span><span class="sxs-lookup"><span data-stu-id="bb21b-335">The indexer makes it possible to index `List` instances with `int` values.</span></span> <span data-ttu-id="bb21b-336">例:</span><span class="sxs-lookup"><span data-stu-id="bb21b-336">For example:</span></span>
 
-[!code-csharp[List の例 3](../../../samples/snippets/csharp/tour/classes-and-objects/ListBasedExamples.cs#L109-L117)]
+<span data-ttu-id="bb21b-337">[!code-csharp[List の例 3](../../../samples/snippets/csharp/tour/classes-and-objects/ListBasedExamples.cs#L109-L117)]</span><span class="sxs-lookup"><span data-stu-id="bb21b-337">[!code-csharp[ListExample3](../../../samples/snippets/csharp/tour/classes-and-objects/ListBasedExamples.cs#L109-L117)]</span></span>
 
-インデクサーはオーバーロードできます。つまり、パラメーターの数または型が異なる限り、クラスは複数のインデクサーを宣言できます。
+<span data-ttu-id="bb21b-338">インデクサーはオーバーロードできます。つまり、パラメーターの数または型が異なる限り、クラスは複数のインデクサーを宣言できます。</span><span class="sxs-lookup"><span data-stu-id="bb21b-338">Indexers can be overloaded, meaning that a class can declare multiple indexers as long as the number or types of their parameters differ.</span></span>
 
-### <a name="events"></a>イベント
+### <a name="events"></a><span data-ttu-id="bb21b-339">イベント</span><span class="sxs-lookup"><span data-stu-id="bb21b-339">Events</span></span>
 
-"*イベント*" は、クラスまたはオブジェクトで通知を提供できるようにするメンバーです。 イベントはフィールドのように宣言されますが、イベント キーワードが宣言に含まれており、型がデリゲート型でなければならない点が異なります。
+<span data-ttu-id="bb21b-340">"*イベント*" は、クラスまたはオブジェクトで通知を提供できるようにするメンバーです。</span><span class="sxs-lookup"><span data-stu-id="bb21b-340">An *event* is a member that enables a class or object to provide notifications.</span></span> <span data-ttu-id="bb21b-341">イベントはフィールドのように宣言されますが、イベント キーワードが宣言に含まれており、型がデリゲート型でなければならない点が異なります。</span><span class="sxs-lookup"><span data-stu-id="bb21b-341">An event is declared like a field except that the declaration includes an event keyword and the type must be a delegate type.</span></span>
 
-イベント メンバーを宣言するクラス内では、イベントはデリゲート型のフィールドと同じように動作します (イベントが抽象イベントでなく、アクセサーを宣言しない場合)。 フィールドは、イベントに追加されたイベント ハンドラーを表すデリゲートへの参照を格納します。 イベント ハンドラーが存在しない場合、フィールドは `null` です。
+<span data-ttu-id="bb21b-342">イベント メンバーを宣言するクラス内では、イベントはデリゲート型のフィールドと同じように動作します (イベントが抽象イベントでなく、アクセサーを宣言しない場合)。</span><span class="sxs-lookup"><span data-stu-id="bb21b-342">Within a class that declares an event member, the event behaves just like a field of a delegate type (provided the event is not abstract and does not declare accessors).</span></span> <span data-ttu-id="bb21b-343">フィールドは、イベントに追加されたイベント ハンドラーを表すデリゲートへの参照を格納します。</span><span class="sxs-lookup"><span data-stu-id="bb21b-343">The field stores a reference to a delegate that represents the event handlers that have been added to the event.</span></span> <span data-ttu-id="bb21b-344">イベント ハンドラーが存在しない場合、フィールドは `null` です。</span><span class="sxs-lookup"><span data-stu-id="bb21b-344">If no event handlers are present, the field is `null`.</span></span>
 
-`List<T>` クラスは、`Changed` という 1 つのイベント メンバーを宣言します。このメンバーは新しい項目がリストに追加されたことを示します。 Changed イベントは `OnChanged` 仮想メソッドによって発生します。このメソッドは、最初にイベントが `null` であるかどうか (ハンドラーが存在しないこと) を確認します。 イベントを発生させるという概念は、イベントによって表されるデリゲートの呼び出しとまったく同じです。したがって、イベントを発生させるための特殊な言語コンストラクトはありません。
+<span data-ttu-id="bb21b-345">`List<T>` クラスは、`Changed` という 1 つのイベント メンバーを宣言します。このメンバーは新しい項目がリストに追加されたことを示します。</span><span class="sxs-lookup"><span data-stu-id="bb21b-345">The `List<T>` class declares a single event member called `Changed`, which indicates that a new item has been added to the list.</span></span> <span data-ttu-id="bb21b-346">Changed イベントは `OnChanged` 仮想メソッドによって発生します。このメソッドは、最初にイベントが `null` であるかどうか (ハンドラーが存在しないこと) を確認します。</span><span class="sxs-lookup"><span data-stu-id="bb21b-346">The Changed event is raised by the `OnChanged` virtual method, which first checks whether the event is `null` (meaning that no handlers are present).</span></span> <span data-ttu-id="bb21b-347">イベントを発生させるという概念は、イベントによって表されるデリゲートの呼び出しとまったく同じです。したがって、イベントを発生させるための特殊な言語コンストラクトはありません。</span><span class="sxs-lookup"><span data-stu-id="bb21b-347">The notion of raising an event is precisely equivalent to invoking the delegate represented by the event—thus, there are no special language constructs for raising events.</span></span>
 
-クライアントは、"*イベント ハンドラー*" を使用してイベントに対応します。 イベント ハンドラーは、`+=` 演算子を使用してアタッチされ、`-=` 演算子を使用して削除されます。 次の例では、`List<string>` の `Changed` イベントにイベント ハンドラーをアタッチします。
+<span data-ttu-id="bb21b-348">クライアントは、"*イベント ハンドラー*" を使用してイベントに対応します。</span><span class="sxs-lookup"><span data-stu-id="bb21b-348">Clients react to events through *event handlers*.</span></span> <span data-ttu-id="bb21b-349">イベント ハンドラーは、`+=` 演算子を使用してアタッチされ、`-=` 演算子を使用して削除されます。</span><span class="sxs-lookup"><span data-stu-id="bb21b-349">Event handlers are attached using the `+=` operator and removed using the `-=` operator.</span></span> <span data-ttu-id="bb21b-350">次の例では、`List<string>` の `Changed` イベントにイベント ハンドラーをアタッチします。</span><span class="sxs-lookup"><span data-stu-id="bb21b-350">The following example attaches an event handler to the `Changed` event of a `List<string>`.</span></span>
 
-[!code-csharp[EventExample](../../../samples/snippets/csharp/tour/classes-and-objects/ListBasedExamples.cs#L132-L148)]
+<span data-ttu-id="bb21b-351">[!code-csharp[EventExample](../../../samples/snippets/csharp/tour/classes-and-objects/ListBasedExamples.cs#L132-L148)]</span><span class="sxs-lookup"><span data-stu-id="bb21b-351">[!code-csharp[EventExample](../../../samples/snippets/csharp/tour/classes-and-objects/ListBasedExamples.cs#L132-L148)]</span></span>
 
-イベントの基になる記憶域の制御が求められる高度なシナリオでは、イベントの宣言で `add` アクセサーと `remove` アクセサーを明示的に指定できます。これらは、プロパティの `set` アクセサーにある程度似ています。
+<span data-ttu-id="bb21b-352">イベントの基になる記憶域の制御が求められる高度なシナリオでは、イベントの宣言で `add` アクセサーと `remove` アクセサーを明示的に指定できます。これらは、プロパティの `set` アクセサーにある程度似ています。</span><span class="sxs-lookup"><span data-stu-id="bb21b-352">For advanced scenarios where control of the underlying storage of an event is desired, an event declaration can explicitly provide `add` and `remove` accessors, which are somewhat similar to the `set` accessor of a property.</span></span>
 
-### <a name="operators"></a>演算子
+### <a name="operators"></a><span data-ttu-id="bb21b-353">演算子</span><span class="sxs-lookup"><span data-stu-id="bb21b-353">Operators</span></span>
 
-"*演算子*" は、クラスのインスタンスに特定の式の演算子を適用する意味を定義するメンバーです。 単項演算子、2 項演算子、および変換演算子の 3 種類を定義できます。 すべての演算子は `public` および `static` として宣言する必要があります。
+<span data-ttu-id="bb21b-354">"*演算子*" は、クラスのインスタンスに特定の式の演算子を適用する意味を定義するメンバーです。</span><span class="sxs-lookup"><span data-stu-id="bb21b-354">An *operator* is a member that defines the meaning of applying a particular expression operator to instances of a class.</span></span> <span data-ttu-id="bb21b-355">単項演算子、2 項演算子、および変換演算子の 3 種類を定義できます。</span><span class="sxs-lookup"><span data-stu-id="bb21b-355">Three kinds of operators can be defined: unary operators, binary operators, and conversion operators.</span></span> <span data-ttu-id="bb21b-356">すべての演算子は `public` および `static` として宣言する必要があります。</span><span class="sxs-lookup"><span data-stu-id="bb21b-356">All operators must be declared as `public` and `static`.</span></span>
 
-`List<T>` クラスは 2 つの演算子 (`operator ==` と `operator !=`) を宣言し、`List` インスタンスにこれらの演算子を適用する式に新しい意味を持たせます。 具体的には、Equals メソッドを使用して含まれている各オブジェクトを比較する際に、演算子が 2 つの `List<T>` インスタンスの等価性を定義します。 次の例では、`==` 演算子を使用して 2 つの `List<int>` インスタンスを比較します。
+<span data-ttu-id="bb21b-357">`List<T>` クラスは 2 つの演算子 (`operator ==` と `operator !=`) を宣言し、`List` インスタンスにこれらの演算子を適用する式に新しい意味を持たせます。</span><span class="sxs-lookup"><span data-stu-id="bb21b-357">The `List<T>` class declares two operators, `operator ==` and `operator !=`, and thus gives new meaning to expressions that apply those operators to `List` instances.</span></span> <span data-ttu-id="bb21b-358">具体的には、Equals メソッドを使用して含まれている各オブジェクトを比較する際に、演算子が 2 つの `List<T>` インスタンスの等価性を定義します。</span><span class="sxs-lookup"><span data-stu-id="bb21b-358">Specifically, the operators define equality of two `List<T>` instances as comparing each of the contained objects using their Equals methods.</span></span> <span data-ttu-id="bb21b-359">次の例では、`==` 演算子を使用して 2 つの `List<int>` インスタンスを比較します。</span><span class="sxs-lookup"><span data-stu-id="bb21b-359">The following example uses the `==` operator to compare two `List<int>` instances.</span></span>
 
-[!code-csharp[演算子の例](../../../samples/snippets/csharp/tour/classes-and-objects/ListBasedExamples.cs#L121-L129)]
+<span data-ttu-id="bb21b-360">[!code-csharp[演算子の例](../../../samples/snippets/csharp/tour/classes-and-objects/ListBasedExamples.cs#L121-L129)]</span><span class="sxs-lookup"><span data-stu-id="bb21b-360">[!code-csharp[OperatorExample](../../../samples/snippets/csharp/tour/classes-and-objects/ListBasedExamples.cs#L121-L129)]</span></span>
 
-最初の `Console.WriteLine` は `True` を出力します。これは、2 つのリストに、同じ値を持つ同じ数のオブジェクトが同じ順序で含まれているためです。 `List<T>` で `operator ==` が定義されていない場合は、`a` と `b` が異なる `List<int>` インスタンスを参照するため、最初の `Console.WriteLine` は `False` を出力します。
+<span data-ttu-id="bb21b-361">最初の `Console.WriteLine` は `True` を出力します。これは、2 つのリストに、同じ値を持つ同じ数のオブジェクトが同じ順序で含まれているためです。</span><span class="sxs-lookup"><span data-stu-id="bb21b-361">The first `Console.WriteLine` outputs `True` because the two lists contain the same number of objects with the same values in the same order.</span></span> <span data-ttu-id="bb21b-362">`List<T>` で `operator ==` が定義されていない場合は、`a` と `b` が異なる `List<int>` インスタンスを参照するため、最初の `Console.WriteLine` は `False` を出力します。</span><span class="sxs-lookup"><span data-stu-id="bb21b-362">Had `List<T>` not defined `operator ==`, the first `Console.WriteLine` would have output `False` because `a` and `b` reference different `List<int>` instances.</span></span>
 
-### <a name="finalizers"></a>ファイナライザー
+### <a name="finalizers"></a><span data-ttu-id="bb21b-363">ファイナライザー</span><span class="sxs-lookup"><span data-stu-id="bb21b-363">Finalizers</span></span>
 
-"*ファイナライザー*" は、クラスのインスタンスを最終処理するために必要なアクションを実装するメンバーです。 ファイナライザーではパラメーターとアクセシビリティ修飾子を使用できません。また、ファイナライザーを明示的に呼び出すことはできません。 インスタンスのファイナライザーは、ガベージ コレクション中に自動的に呼び出されます。
+<span data-ttu-id="bb21b-364">"*ファイナライザー*" は、クラスのインスタンスを最終処理するために必要なアクションを実装するメンバーです。</span><span class="sxs-lookup"><span data-stu-id="bb21b-364">A *finalizer* is a member that implements the actions required to finalize an instance of a class.</span></span> <span data-ttu-id="bb21b-365">ファイナライザーではパラメーターとアクセシビリティ修飾子を使用できません。また、ファイナライザーを明示的に呼び出すことはできません。</span><span class="sxs-lookup"><span data-stu-id="bb21b-365">Finalizers cannot have parameters, they cannot have accessibility modifiers, and they cannot be invoked explicitly.</span></span> <span data-ttu-id="bb21b-366">インスタンスのファイナライザーは、ガベージ コレクション中に自動的に呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="bb21b-366">The finalizer for an instance is invoked automatically during garbage collection.</span></span>
 
-ガベージ コレクターは、オブジェクトを収集してファイナライザーを実行するタイミングを決定する際に広く許容されます。 具体的には、ファイナライザーの呼び出しのタイミングは確定的ではなく、ファイナライザーは任意のスレッドで実行される可能性があります。 これらの理由およびそれ以外の理由のため、他のソリューションが実現できない場合にのみ、クラスはファイナライザーを実装する必要があります。
+<span data-ttu-id="bb21b-367">ガベージ コレクターは、オブジェクトを収集してファイナライザーを実行するタイミングを決定する際に広く許容されます。</span><span class="sxs-lookup"><span data-stu-id="bb21b-367">The garbage collector is allowed wide latitude in deciding when to collect objects and run finalizers.</span></span> <span data-ttu-id="bb21b-368">具体的には、ファイナライザーの呼び出しのタイミングは確定的ではなく、ファイナライザーは任意のスレッドで実行される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="bb21b-368">Specifically, the timing of finalizer invocations is not deterministic, and finalizers may be executed on any thread.</span></span> <span data-ttu-id="bb21b-369">これらの理由およびそれ以外の理由のため、他のソリューションが実現できない場合にのみ、クラスはファイナライザーを実装する必要があります。</span><span class="sxs-lookup"><span data-stu-id="bb21b-369">For these and other reasons, classes should implement finalizers only when no other solutions are feasible.</span></span>
 
-`using` ステートメントは、オブジェクトを破棄するためのより適切な方法を提供します。
+<span data-ttu-id="bb21b-370">`using` ステートメントは、オブジェクトを破棄するためのより適切な方法を提供します。</span><span class="sxs-lookup"><span data-stu-id="bb21b-370">The `using` statement provides a better approach to object destruction.</span></span>
 
 >[!div class="step-by-step"]
-[前へ](statements.md)
-[次へ](structs.md)
+<span data-ttu-id="bb21b-371">[前へ](statements.md)
+[次へ](structs.md)</span><span class="sxs-lookup"><span data-stu-id="bb21b-371">[Previous](statements.md)
+[Next](structs.md)</span></span>
 

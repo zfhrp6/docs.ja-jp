@@ -30,39 +30,39 @@ ms.contentlocale: ja-jp
 ms.lasthandoff: 07/28/2017
 
 ---
-# <a name="how-to-remove-an-assembly-from-the-global-assembly-cache"></a>方法 : グローバル アセンブリ キャッシュからアセンブリを削除する
-グローバル アセンブリ キャッシュ (GAC) からアセンブリを削除するには、次の 2 つの方法があります。  
+# <a name="how-to-remove-an-assembly-from-the-global-assembly-cache"></a><span data-ttu-id="f9dea-102">方法 : グローバル アセンブリ キャッシュからアセンブリを削除する</span><span class="sxs-lookup"><span data-stu-id="f9dea-102">How to: Remove an Assembly from the Global Assembly Cache</span></span>
+<span data-ttu-id="f9dea-103">グローバル アセンブリ キャッシュ (GAC) からアセンブリを削除するには、次の 2 つの方法があります。</span><span class="sxs-lookup"><span data-stu-id="f9dea-103">There are two ways to remove an assembly from the global assembly cache (GAC):</span></span>  
   
--   [グローバル アセンブリ キャッシュ ツール (Gacutil.exe)](../../../docs/framework/tools/gacutil-exe-gac-tool.md) を使用する方法。 このオプションを使用すると、開発およびテスト時に GAC に配置したアセンブリをアンインストールできます。  
+-   <span data-ttu-id="f9dea-104">[グローバル アセンブリ キャッシュ ツール (Gacutil.exe)](../../../docs/framework/tools/gacutil-exe-gac-tool.md) を使用する方法。</span><span class="sxs-lookup"><span data-stu-id="f9dea-104">By using the [Global Assembly Cache tool (Gacutil.exe)](../../../docs/framework/tools/gacutil-exe-gac-tool.md).</span></span> <span data-ttu-id="f9dea-105">このオプションを使用すると、開発およびテスト時に GAC に配置したアセンブリをアンインストールできます。</span><span class="sxs-lookup"><span data-stu-id="f9dea-105">You can use this option to uninstall assemblies that you've placed in the GAC during development and testing.</span></span>  
   
--   [Windows インストーラー](http://msdn.microsoft.com/library/windows/desktop/cc185688.aspx)を使用する方法。 インストール パッケージをテストするとき、そして実稼働システムのために、アセンブリをアンインストールするにはこのオプションを使用する必要があります。  
+-   <span data-ttu-id="f9dea-106">[Windows インストーラー](http://msdn.microsoft.com/library/windows/desktop/cc185688.aspx)を使用する方法。</span><span class="sxs-lookup"><span data-stu-id="f9dea-106">By using [Windows Installer](http://msdn.microsoft.com/library/windows/desktop/cc185688.aspx).</span></span> <span data-ttu-id="f9dea-107">インストール パッケージをテストするとき、そして実稼働システムのために、アセンブリをアンインストールするにはこのオプションを使用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="f9dea-107">You should use this option to uninstall assemblies when testing installation packages and for production systems.</span></span>  
   
-### <a name="removing-an-assembly-with-gacutilexe"></a>Gacutil.exe によるアセンブリの削除  
+### <a name="removing-an-assembly-with-gacutilexe"></a><span data-ttu-id="f9dea-108">Gacutil.exe によるアセンブリの削除</span><span class="sxs-lookup"><span data-stu-id="f9dea-108">Removing an assembly with Gacutil.exe</span></span>  
   
-1.  コマンド プロンプトに次のコマンドを入力します。  
+1.  <span data-ttu-id="f9dea-109">コマンド プロンプトに次のコマンドを入力します。</span><span class="sxs-lookup"><span data-stu-id="f9dea-109">At the command prompt, type the following command:</span></span>  
   
-     **gacutil –u** \<*assembly name*>  
+     <span data-ttu-id="f9dea-110">**gacutil –u** \<*assembly name*></span><span class="sxs-lookup"><span data-stu-id="f9dea-110">**gacutil –u** \<*assembly name*></span></span>  
   
-     このコマンドで、*assembly name* はグローバル アセンブリ キャッシュから削除するアセンブリの名前です。  
+     <span data-ttu-id="f9dea-111">このコマンドで、*assembly name* はグローバル アセンブリ キャッシュから削除するアセンブリの名前です。</span><span class="sxs-lookup"><span data-stu-id="f9dea-111">In this command, *assembly name* is the name of the assembly to remove from the global assembly cache.</span></span>  
   
     > [!WARNING]
-    >  アセンブリが一部のアプリケーションで引き続き必要となる可能性があるので、Gacutil.exe を使用して実稼働システムのアセンブリを削除しないでください。 代わりに、GAC にインストールされる各アセンブリの参照カウントを保持する Windows インストーラーを使用する必要があります。  
+    >  <span data-ttu-id="f9dea-112">アセンブリが一部のアプリケーションで引き続き必要となる可能性があるので、Gacutil.exe を使用して実稼働システムのアセンブリを削除しないでください。</span><span class="sxs-lookup"><span data-stu-id="f9dea-112">You should not use Gacutil.exe to remove assemblies on production systems because of the possibility that the assembly may still be required by some application.</span></span> <span data-ttu-id="f9dea-113">代わりに、GAC にインストールされる各アセンブリの参照カウントを保持する Windows インストーラーを使用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="f9dea-113">Instead, you should use the Windows Installer, which maintains a reference count for each assembly it installs in the GAC.</span></span>  
   
- 次の例では、`hello.dll` という名前のアセンブリが、グローバル アセンブリ キャッシュから削除されます。  
+ <span data-ttu-id="f9dea-114">次の例では、`hello.dll` という名前のアセンブリが、グローバル アセンブリ キャッシュから削除されます。</span><span class="sxs-lookup"><span data-stu-id="f9dea-114">The following example removes an assembly named `hello.dll` from the global assembly cache.</span></span>  
   
 ```  
 gacutil -u hello  
 ```  
   
-### <a name="removing-an-assembly-with-windows-installer"></a>Windows インストーラーでアセンブリを削除する  
+### <a name="removing-an-assembly-with-windows-installer"></a><span data-ttu-id="f9dea-115">Windows インストーラーでアセンブリを削除する</span><span class="sxs-lookup"><span data-stu-id="f9dea-115">Removing an assembly with Windows Installer</span></span>  
   
-1.  **コントロール パネル**の**プログラムと機能**アプリで、アンインストールするアプリを選択します。 インストール パッケージが GAC にアセンブリを配置した場合、それらが別のアプリケーションによって使用されないときは、Windows インストーラーはそれらを削除します。  
+1.  <span data-ttu-id="f9dea-116">**コントロール パネル**の**プログラムと機能**アプリで、アンインストールするアプリを選択します。</span><span class="sxs-lookup"><span data-stu-id="f9dea-116">From the **Programs and Features** app in **Control Panel**, select the app that you want to uninstall.</span></span> <span data-ttu-id="f9dea-117">インストール パッケージが GAC にアセンブリを配置した場合、それらが別のアプリケーションによって使用されないときは、Windows インストーラーはそれらを削除します。</span><span class="sxs-lookup"><span data-stu-id="f9dea-117">If the installation package placed assemblies in the GAC, Windows Installer will remove them if they are not used by another application.</span></span>  
   
     > [!NOTE]
-    >  Windows インストーラーは、GAC にインストールされたアセンブリの参照カウントを保持します。 アセンブリの参照カウントがゼロになる場合 (それが Windows インストーラー パッケージによってインストールされたアプリケーションによって使用されないことを示す) にのみ、アセンブリが GAC から削除されます。  
+    >  <span data-ttu-id="f9dea-118">Windows インストーラーは、GAC にインストールされたアセンブリの参照カウントを保持します。</span><span class="sxs-lookup"><span data-stu-id="f9dea-118">Windows Installer maintains a reference count for assemblies installed in the GAC.</span></span> <span data-ttu-id="f9dea-119">アセンブリの参照カウントがゼロになる場合 (それが Windows インストーラー パッケージによってインストールされたアプリケーションによって使用されないことを示す) にのみ、アセンブリが GAC から削除されます。</span><span class="sxs-lookup"><span data-stu-id="f9dea-119">An assembly is removed from the GAC only when its reference count reaches zero, which indicates that it is not used by any application installed by a Windows Installer package.</span></span>  
   
-## <a name="see-also"></a>関連項目  
- [アセンブリとグローバル アセンブリ キャッシュの使用](../../../docs/framework/app-domains/working-with-assemblies-and-the-gac.md)   
- [方法: グローバル アセンブリ キャッシュにアセンブリをインストールする](../../../docs/framework/app-domains/how-to-install-an-assembly-into-the-gac.md)   
- [Gacutil.exe (グローバル アセンブリ キャッシュ ツール)](../../../docs/framework/tools/gacutil-exe-gac-tool.md)
+## <a name="see-also"></a><span data-ttu-id="f9dea-120">関連項目</span><span class="sxs-lookup"><span data-stu-id="f9dea-120">See Also</span></span>  
+ <span data-ttu-id="f9dea-121">[アセンブリとグローバル アセンブリ キャッシュの使用](../../../docs/framework/app-domains/working-with-assemblies-and-the-gac.md) </span><span class="sxs-lookup"><span data-stu-id="f9dea-121">[Working with Assemblies and the Global Assembly Cache](../../../docs/framework/app-domains/working-with-assemblies-and-the-gac.md) </span></span>  
+ <span data-ttu-id="f9dea-122">[方法: グローバル アセンブリ キャッシュにアセンブリをインストールする](../../../docs/framework/app-domains/how-to-install-an-assembly-into-the-gac.md) </span><span class="sxs-lookup"><span data-stu-id="f9dea-122">[How to: Install an Assembly into the Global Assembly Cache](../../../docs/framework/app-domains/how-to-install-an-assembly-into-the-gac.md) </span></span>  
+ [<span data-ttu-id="f9dea-123">Gacutil.exe (グローバル アセンブリ キャッシュ ツール)</span><span class="sxs-lookup"><span data-stu-id="f9dea-123">Gacutil.exe (Global Assembly Cache Tool)</span></span>](../../../docs/framework/tools/gacutil-exe-gac-tool.md)
 

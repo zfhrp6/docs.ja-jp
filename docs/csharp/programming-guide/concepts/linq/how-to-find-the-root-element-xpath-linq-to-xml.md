@@ -21,17 +21,17 @@ ms.contentlocale: ja-jp
 ms.lasthandoff: 07/28/2017
 
 ---
-# <a name="how-to-find-the-root-element-xpath-linq-to-xml-c"></a>方法: ルート要素を検索する (XPath-LINQ to XML) (C#)
-このトピックでは、XPath および [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] を使用してルート要素を取得する方法について説明します。  
+# <a name="how-to-find-the-root-element-xpath-linq-to-xml-c"></a><span data-ttu-id="9f104-102">方法: ルート要素を検索する (XPath-LINQ to XML) (C#)</span><span class="sxs-lookup"><span data-stu-id="9f104-102">How to: Find the Root Element (XPath-LINQ to XML) (C#)</span></span>
+<span data-ttu-id="9f104-103">このトピックでは、XPath および [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] を使用してルート要素を取得する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="9f104-103">This topic shows how to get the root element with XPath and [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)].</span></span>  
   
- XPath 式を次に示します。  
+ <span data-ttu-id="9f104-104">XPath 式を次に示します。</span><span class="sxs-lookup"><span data-stu-id="9f104-104">The XPath expression is:</span></span>  
   
  `/PurchaseOrders`  
   
-## <a name="example"></a>例  
- この例では、ルート要素を検索します。  
+## <a name="example"></a><span data-ttu-id="9f104-105">例</span><span class="sxs-lookup"><span data-stu-id="9f104-105">Example</span></span>  
+ <span data-ttu-id="9f104-106">この例では、ルート要素を検索します。</span><span class="sxs-lookup"><span data-stu-id="9f104-106">This example finds the root element.</span></span>  
   
- この例では、「[サンプル XML ファイル: 複数の購買発注書 (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-multiple-purchase-orders-linq-to-xml.md)」の XML ドキュメントを使用します。  
+ <span data-ttu-id="9f104-107">この例では、「[サンプル XML ファイル: 複数の購買発注書 (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-multiple-purchase-orders-linq-to-xml.md)」の XML ドキュメントを使用します。</span><span class="sxs-lookup"><span data-stu-id="9f104-107">This example uses the following XML document: [Sample XML File: Multiple Purchase Orders (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-multiple-purchase-orders-linq-to-xml.md).</span></span>  
   
 ```csharp  
 XDocument po = XDocument.Load("PurchaseOrders.xml");  
@@ -49,13 +49,13 @@ else
 Console.WriteLine(el1.Name);  
 ```  
   
- この例を実行すると、次の出力が生成されます。  
+ <span data-ttu-id="9f104-108">この例を実行すると、次の出力が生成されます。</span><span class="sxs-lookup"><span data-stu-id="9f104-108">This example produces the following output:</span></span>  
   
 ```  
 Results are identical  
 PurchaseOrders  
 ```  
   
-## <a name="see-also"></a>関連項目  
- [XPath ユーザー向けの LINQ to XML (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)
+## <a name="see-also"></a><span data-ttu-id="9f104-109">関連項目</span><span class="sxs-lookup"><span data-stu-id="9f104-109">See Also</span></span>  
+ [<span data-ttu-id="9f104-110">XPath ユーザー向けの LINQ to XML (C#)</span><span class="sxs-lookup"><span data-stu-id="9f104-110">LINQ to XML for XPath Users (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)
 

@@ -26,10 +26,10 @@ ms.contentlocale: ja-jp
 ms.lasthandoff: 07/28/2017
 
 ---
-# <a name="sample-xml-file-customers-and-orders-in-a-namespace"></a>サンプル XML ファイル : 名前空間内の顧客と注文
-次の XML ファイルは、[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] ドキュメントのさまざまな例で使用されます。 このファイルには顧客と注文が含まれています。 XML は名前空間に含まれています。  
+# <a name="sample-xml-file-customers-and-orders-in-a-namespace"></a><span data-ttu-id="e301e-102">サンプル XML ファイル : 名前空間内の顧客と注文</span><span class="sxs-lookup"><span data-stu-id="e301e-102">Sample XML File: Customers and Orders in a Namespace</span></span>
+<span data-ttu-id="e301e-103">次の XML ファイルは、[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] ドキュメントのさまざまな例で使用されます。</span><span class="sxs-lookup"><span data-stu-id="e301e-103">The following XML file is used in various examples in the [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] documentation.</span></span> <span data-ttu-id="e301e-104">このファイルには顧客と注文が含まれています。</span><span class="sxs-lookup"><span data-stu-id="e301e-104">This file contains customers and orders.</span></span> <span data-ttu-id="e301e-105">XML は名前空間に含まれています。</span><span class="sxs-lookup"><span data-stu-id="e301e-105">The XML is in a namespace.</span></span>  
   
-## <a name="customersordersinnamespacexml"></a>CustomersOrdersInNamespace.xml  
+## <a name="customersordersinnamespacexml"></a><span data-ttu-id="e301e-106">CustomersOrdersInNamespace.xml</span><span class="sxs-lookup"><span data-stu-id="e301e-106">CustomersOrdersInNamespace.xml</span></span>  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8"?>  
@@ -447,6 +447,6 @@ ms.lasthandoff: 07/28/2017
 </Root>  
 ```  
   
-## <a name="see-also"></a>関連項目  
- [サンプル XML ドキュメント (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-documents-linq-to-xml.md)
+## <a name="see-also"></a><span data-ttu-id="e301e-107">関連項目</span><span class="sxs-lookup"><span data-stu-id="e301e-107">See Also</span></span>  
+ [<span data-ttu-id="e301e-108">サンプル XML ドキュメント (LINQ to XML)</span><span class="sxs-lookup"><span data-stu-id="e301e-108">Sample XML Documents (LINQ to XML)</span></span>](../../../../csharp/programming-guide/concepts/linq/sample-xml-documents-linq-to-xml.md)
 

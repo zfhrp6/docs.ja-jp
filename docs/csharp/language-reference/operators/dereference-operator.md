@@ -37,31 +37,31 @@ ms.contentlocale: ja-jp
 ms.lasthandoff: 07/28/2017
 
 ---
-# <a name="-gt-operator-c-reference"></a>-&gt; 演算子 (C# リファレンス)
-`->` 演算子は、ポインターの逆参照とメンバー アクセスを組み合わせます。  
+# <a name="-gt-operator-c-reference"></a><span data-ttu-id="d8456-102">-&gt; 演算子 (C# リファレンス)</span><span class="sxs-lookup"><span data-stu-id="d8456-102">-&gt; Operator (C# Reference)</span></span>
+<span data-ttu-id="d8456-103">`->` 演算子は、ポインターの逆参照とメンバー アクセスを組み合わせます。</span><span class="sxs-lookup"><span data-stu-id="d8456-103">The `->` operator combines pointer dereferencing and member access.</span></span>  
   
-## <a name="remarks"></a>コメント  
- 次のような形式の式があるとします。  
+## <a name="remarks"></a><span data-ttu-id="d8456-104">コメント</span><span class="sxs-lookup"><span data-stu-id="d8456-104">Remarks</span></span>  
+ <span data-ttu-id="d8456-105">次のような形式の式があるとします。</span><span class="sxs-lookup"><span data-stu-id="d8456-105">An expression of the form,</span></span>  
   
 ```  
 x->y  
 ```  
   
- ここで、`x` は `T*` 型のポインター、`y` は `T` のメンバーです。この式は次の式と同じです。  
+ <span data-ttu-id="d8456-106">ここで、`x` は `T*` 型のポインター、`y` は `T` のメンバーです。この式は次の式と同じです。</span><span class="sxs-lookup"><span data-stu-id="d8456-106">(where `x` is a pointer of type `T*` and `y` is a member of `T`) is equivalent to,</span></span>  
   
 ```  
 (*x).y  
 ```  
   
- `->` 演算子は、[unsafe](../../../csharp/language-reference/keywords/unsafe.md) とマークされているコードでのみ使用できます。  
+ <span data-ttu-id="d8456-107">`->` 演算子は、[unsafe](../../../csharp/language-reference/keywords/unsafe.md) とマークされているコードでのみ使用できます。</span><span class="sxs-lookup"><span data-stu-id="d8456-107">The `->` operator can be used only in code that is marked as [unsafe](../../../csharp/language-reference/keywords/unsafe.md).</span></span>  
   
- `->` 演算子はオーバーロードできません。  
+ <span data-ttu-id="d8456-108">`->` 演算子はオーバーロードできません。</span><span class="sxs-lookup"><span data-stu-id="d8456-108">The `->` operator cannot be overloaded.</span></span>  
   
-## <a name="example"></a>例  
- [!code-cs[csRefOperators#15](../../../csharp/language-reference/operators/codesnippet/CSharp/dereference-operator_1.cs)]  
+## <a name="example"></a><span data-ttu-id="d8456-109">例</span><span class="sxs-lookup"><span data-stu-id="d8456-109">Example</span></span>  
+ <span data-ttu-id="d8456-110">[!code-cs[csRefOperators#15](../../../csharp/language-reference/operators/codesnippet/CSharp/dereference-operator_1.cs)]</span><span class="sxs-lookup"><span data-stu-id="d8456-110">[!code-cs[csRefOperators#15](../../../csharp/language-reference/operators/codesnippet/CSharp/dereference-operator_1.cs)]</span></span>  
   
-## <a name="see-also"></a>関連項目  
- [C# リファレンス](../../../csharp/language-reference/index.md)   
- [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
- [C# 演算子](../../../csharp/language-reference/operators/index.md)
+## <a name="see-also"></a><span data-ttu-id="d8456-111">関連項目</span><span class="sxs-lookup"><span data-stu-id="d8456-111">See Also</span></span>  
+ <span data-ttu-id="d8456-112">[C# リファレンス](../../../csharp/language-reference/index.md) </span><span class="sxs-lookup"><span data-stu-id="d8456-112">[C# Reference](../../../csharp/language-reference/index.md) </span></span>  
+ <span data-ttu-id="d8456-113">[C# プログラミング ガイド](../../../csharp/programming-guide/index.md) </span><span class="sxs-lookup"><span data-stu-id="d8456-113">[C# Programming Guide](../../../csharp/programming-guide/index.md) </span></span>  
+ [<span data-ttu-id="d8456-114">C# 演算子</span><span class="sxs-lookup"><span data-stu-id="d8456-114">C# Operators</span></span>](../../../csharp/language-reference/operators/index.md)
 

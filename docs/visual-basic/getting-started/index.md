@@ -30,64 +30,68 @@ translation.priority.mt:
 - pt-br
 - tr-tr
 ms.translationtype: HT
-ms.sourcegitcommit: 0dc28adab90f56befc925eb895d00a3cd5966928
-ms.openlocfilehash: 75a3d841e8d22e2e8f76dc4c0f900318eb6bf42f
+ms.sourcegitcommit: 9bb64ea7199f5699ff166d1affb7f8126dcc6612
+ms.openlocfilehash: 4e3c1a1e6728d4a5e256b81b0f8a8b29851dc625
 ms.contentlocale: ja-jp
-ms.lasthandoff: 08/18/2017
+ms.lasthandoff: 09/02/2017
 
 ---
-# <a name="get-started-with-visual-basic"></a>Visual Basic 入門
-このセクションでは、Visual Basic によるアプリケーション開発を開始するための情報を提供します。  
+# <a name="get-started-with-visual-basic"></a><span data-ttu-id="805d4-102">Visual Basic 入門</span><span class="sxs-lookup"><span data-stu-id="805d4-102">Get started with Visual Basic</span></span>
+<span data-ttu-id="805d4-103">このセクションでは、Visual Basic によるアプリケーション開発を開始するための情報を提供します。</span><span class="sxs-lookup"><span data-stu-id="805d4-103">This section of the documentation helps you get started with Visual Basic application development.</span></span>  
   
-## <a name="get-started-with-visual-basic-and-net-core"></a>Visual Basic と .NET Core 入門
+## <a name="get-started-with-visual-basic-and-net-core"></a><span data-ttu-id="805d4-104">Visual Basic と .NET Core 入門</span><span class="sxs-lookup"><span data-stu-id="805d4-104">Get started with Visual Basic and .NET Core</span></span>
 
-[Visual Studio 2017 での .NET Core を使用した Visual Basic Hello World アプリケーションの構築](../../core/tutorials/vb-with-visual-studio.md)
+[<span data-ttu-id="805d4-105">Visual Studio 2017 での .NET Core を使用した Visual Basic Hello World アプリケーションの構築</span><span class="sxs-lookup"><span data-stu-id="805d4-105">Build a Visual Basic Hello World application with .NET Core in Visual Studio 2017</span></span>](../../core/tutorials/vb-with-visual-studio.md)
 
-[Visual Studio 2017 で Visual Basic と .NET Core を使用したクラス ライブラリの構築](../../core/tutorials/vb-library-with-visual-studio.md)  
+[<span data-ttu-id="805d4-106">Visual Studio 2017 で Visual Basic と .NET Core を使用したクラス ライブラリの構築</span><span class="sxs-lookup"><span data-stu-id="805d4-106">Build a class library with Visual Basic and .NET Core in Visual Studio 2017</span></span>](../../core/tutorials/vb-library-with-visual-studio.md)  
 
-## <a name="additional-information"></a>追加情報
+## <a name="additional-information"></a><span data-ttu-id="805d4-107">追加情報</span><span class="sxs-lookup"><span data-stu-id="805d4-107">Additional information</span></span>
 
-[Visual Basic の新機能](whats-new.md)   
-Visual Basic .NET の各バージョンの新機能を一覧表示します。
+<span data-ttu-id="805d4-108">[Visual Basic の新機能](whats-new.md) </span><span class="sxs-lookup"><span data-stu-id="805d4-108">[What's new for Visual Basic](whats-new.md) </span></span>  
+<span data-ttu-id="805d4-109">Visual Basic .NET の各バージョンの新機能を一覧表示します。</span><span class="sxs-lookup"><span data-stu-id="805d4-109">Lists new features in each of the versions of Visual Basic .NET.</span></span>
 
-[Visual Studio における Visual Basic の互換性に影響する変更点](breaking-changes-in-visual-studio.md)  
-アプリケーションをコンパイルできなくなる可能性や、実行時の動作が変わる可能性のある、このリリースでの変更点を示します。  
+[<span data-ttu-id="805d4-110">Visual Studio における Visual Basic の互換性に影響する変更点</span><span class="sxs-lookup"><span data-stu-id="805d4-110">Visual Basic Breaking Changes in Visual Studio</span></span>](breaking-changes-in-visual-studio.md)  
+<span data-ttu-id="805d4-111">アプリケーションをコンパイルできなくなる可能性や、実行時の動作が変わる可能性のある、このリリースでの変更点を示します。</span><span class="sxs-lookup"><span data-stu-id="805d4-111">Lists changes in this release that might prevent an application from compiling or change its run-time behavior.</span></span>  
   
-[Visual Basic プログラマのための追加リソース](additional-resources.md)  
-一般的な問題を解決するのに役立つ Web サイトおよびニュースグループの一覧を示します。  
-  
-## <a name="see-also"></a>関連項目
- [Visual Basic の取得](https://www.visualstudio.com/downloads/)  
- Visual Basic のサポートを含む Visual Studio のバージョン (無料版など) のダウンロード リンクを提供します。  
+[<span data-ttu-id="805d4-112">Visual Basic プログラマのための追加リソース</span><span class="sxs-lookup"><span data-stu-id="805d4-112">Additional Resources for Visual Basic Programmers</span></span>](additional-resources.md)  
+<span data-ttu-id="805d4-113">一般的な問題を解決するのに役立つ Web サイトおよびニュースグループの一覧を示します。</span><span class="sxs-lookup"><span data-stu-id="805d4-113">Provides a list of Web sites and newsgroups that can help you find answers to common problems.</span></span>  
 
- [超初心者向けの Visual Basic の基本](https://mva.microsoft.com/training-courses/visual-basic-fundamentals-for-absolute-beginners-16507)   
- Visual Basic プログラミングの基礎について説明する Microsoft Virtual Academy コース。
+## <a name="develop-net-core-applications-with-visual-basic"></a><span data-ttu-id="805d4-114">Visual Basic での .NET Core アプリケーションの開発</span><span class="sxs-lookup"><span data-stu-id="805d4-114">Develop .NET Core applications with Visual Basic</span></span>
 
- [オブジェクト指向プログラミング](../programming-guide/concepts/object-oriented-programming.md)  
- オブジェクト指向プログラミングの概要、独自のオブジェクトの作成方法、およびオブジェクトを使用してコーディングを簡潔にする方法を説明するページへのリンクを示します。  
+[<span data-ttu-id="805d4-115">Visual Studio 2017 での .NET Core を使用した Visual Basic Hello World アプリの構築</span><span class="sxs-lookup"><span data-stu-id="805d4-115">Build a Visual Basic Hello World app with .NET Core in Visual Studio 2017</span></span>](../../core/tutorials/vb-with-visual-studio.md) 
+
+[<span data-ttu-id="805d4-116">Visual Studio 2017 で Visual Basic と .NET Core を使用したクラス ライブラリの構築</span><span class="sxs-lookup"><span data-stu-id="805d4-116">Build a class library with Visual Basic and .NET Core in Visual Studio 2017</span></span>](../../core/tutorials/vb-library-with-visual-studio.md) 
+
+## <a name="see-also"></a><span data-ttu-id="805d4-117">関連項目</span><span class="sxs-lookup"><span data-stu-id="805d4-117">See also</span></span>
+ [<span data-ttu-id="805d4-118">Visual Basic の取得</span><span class="sxs-lookup"><span data-stu-id="805d4-118">Get Visual Basic</span></span>](https://www.visualstudio.com/downloads/)  
+ <span data-ttu-id="805d4-119">Visual Basic のサポートを含む Visual Studio のバージョン (無料版など) のダウンロード リンクを提供します。</span><span class="sxs-lookup"><span data-stu-id="805d4-119">Provides download links for Visual Studio versions that include Visual basic support, including free versions.</span></span>  
+
+ <span data-ttu-id="805d4-120">[超初心者向けの Visual Basic の基本](https://mva.microsoft.com/training-courses/visual-basic-fundamentals-for-absolute-beginners-16507) </span><span class="sxs-lookup"><span data-stu-id="805d4-120">[Visual Basic Fundamentals for Absolute Beginners](https://mva.microsoft.com/training-courses/visual-basic-fundamentals-for-absolute-beginners-16507) </span></span>  
+ <span data-ttu-id="805d4-121">Visual Basic プログラミングの基礎について説明する Microsoft Virtual Academy コース。</span><span class="sxs-lookup"><span data-stu-id="805d4-121">Microsoft Virtual Academy course that teaches the fundamentals of Visual Basic programming.</span></span>
+
+ [<span data-ttu-id="805d4-122">オブジェクト指向プログラミング</span><span class="sxs-lookup"><span data-stu-id="805d4-122">Object-Oriented Programming</span></span>](../programming-guide/concepts/object-oriented-programming.md)  
+ <span data-ttu-id="805d4-123">オブジェクト指向プログラミングの概要、独自のオブジェクトの作成方法、およびオブジェクトを使用してコーディングを簡潔にする方法を説明するページへのリンクを示します。</span><span class="sxs-lookup"><span data-stu-id="805d4-123">Provides links to pages that introduce object-oriented programming and describe how to create your own objects and how to use objects to simplify your coding.</span></span>  
   
- [サンプル](../../visual-basic/sample-applications.md)  
- 
-          [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] によるサンプル コードへのリンクを示します。  
+ [<span data-ttu-id="805d4-124">サンプル</span><span class="sxs-lookup"><span data-stu-id="805d4-124">Samples</span></span>](../../visual-basic/sample-applications.md)  
+ <span data-ttu-id="805d4-125">
+          [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] によるサンプル コードへのリンクを示します。</span><span class="sxs-lookup"><span data-stu-id="805d4-125">Provides links to sample code in [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)].</span></span>  
   
- [チュートリアル](../../visual-basic/walkthroughs.md)  
- 
-          [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] 言語のさまざまな面を説明するヘルプ ページの一覧を示します。  
+ [<span data-ttu-id="805d4-126">チュートリアル</span><span class="sxs-lookup"><span data-stu-id="805d4-126">Walkthroughs</span></span>](../../visual-basic/walkthroughs.md)  
+ <span data-ttu-id="805d4-127">
+          [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] 言語のさまざまな面を説明するヘルプ ページの一覧を示します。</span><span class="sxs-lookup"><span data-stu-id="805d4-127">Provides a list of Help pages that demonstrate aspects of the [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] language.</span></span>  
   
- [ご意見](/visualstudio/ide/talk-to-us)  
- サポートの利用方法、およびフィードバックの送付方法について説明します。  
+ [<span data-ttu-id="805d4-128">ご意見</span><span class="sxs-lookup"><span data-stu-id="805d4-128">Talk to Us</span></span>](/visualstudio/ide/talk-to-us)  
+ <span data-ttu-id="805d4-129">サポートの利用方法、およびフィードバックの送付方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="805d4-129">Covers how to receive support and give feedback.</span></span>  
   
- [Visual Studio](/visualstudio/)  
- 
-          [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] のドキュメントへのリンクを示します。  
+ [<span data-ttu-id="805d4-130">Visual Studio</span><span class="sxs-lookup"><span data-stu-id="805d4-130">Visual Studio</span></span>](/visualstudio/)  
+ <span data-ttu-id="805d4-131">
+          [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] のドキュメントへのリンクを示します。</span><span class="sxs-lookup"><span data-stu-id="805d4-131">Provides links into the [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] documentation.</span></span>  
   
- [C#](../../csharp/csharp.md)  
- 
-          [!INCLUDE[csprcs](~/includes/csprcs-md.md)] を使用したアプリケーション開発についてのドキュメントへのリンクを示します。  
+ <span data-ttu-id="805d4-132">[C#](../../csharp/index.md) [!INCLUDE[csprcs](~/includes/csprcs-md.md)] を使用したアプリケーション開発についてのドキュメントへのリンクを示します。</span><span class="sxs-lookup"><span data-stu-id="805d4-132">[C#](../../csharp/index.md) Provides links into the documentation on application development with [!INCLUDE[csprcs](~/includes/csprcs-md.md)].</span></span>  
   
- [Visual C++](/cpp/)  
- Visual C++ のドキュメントへのリンクを示します。  
+ [<span data-ttu-id="805d4-133">Visual C++</span><span class="sxs-lookup"><span data-stu-id="805d4-133">Visual C++</span></span>](/cpp/)  
+ <span data-ttu-id="805d4-134">Visual C++ のドキュメントへのリンクを示します。</span><span class="sxs-lookup"><span data-stu-id="805d4-134">Provides links into the Visual C++ documentation.</span></span>  
   
- [Office および SharePoint 開発](https://msdn.microsoft.com/library/d2tx7z6d)  
- Microsoft Office と [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] をビジネス アプリケーションの一部として使用する方法について説明します。
+ [<span data-ttu-id="805d4-135">Office および SharePoint 開発</span><span class="sxs-lookup"><span data-stu-id="805d4-135">Office and SharePoint Development</span></span>](https://msdn.microsoft.com/library/d2tx7z6d)  
+ <span data-ttu-id="805d4-136">Microsoft Office と [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] をビジネス アプリケーションの一部として使用する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="805d4-136">Provides information about using Microsoft Office and [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] as part of a business application.</span></span>
 

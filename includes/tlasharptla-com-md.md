@@ -1,1 +1,1 @@
-コンポーネント オブジェクト モデル (COM)
+<span data-ttu-id="6da3e-101">コンポーネント オブジェクト モデル (COM)</span><span class="sxs-lookup"><span data-stu-id="6da3e-101">Component Object Model (COM)</span></span>

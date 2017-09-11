@@ -1,1 +1,1 @@
-XPath
+<span data-ttu-id="d153e-101">XPath</span><span class="sxs-lookup"><span data-stu-id="d153e-101">XPath</span></span>

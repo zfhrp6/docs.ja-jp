@@ -26,11 +26,11 @@ ms.contentlocale: ja-jp
 ms.lasthandoff: 07/28/2017
 
 ---
-# <a name="how-to-parse-a-string-c"></a>方法: 文字列を解析する (C#)
-このトピックでは、C# で文字列を解析して XML ツリーを作成する方法について説明します。  
+# <a name="how-to-parse-a-string-c"></a><span data-ttu-id="3fa5b-102">方法: 文字列を解析する (C#)</span><span class="sxs-lookup"><span data-stu-id="3fa5b-102">How to: Parse a String (C#)</span></span>
+<span data-ttu-id="3fa5b-103">このトピックでは、C# で文字列を解析して XML ツリーを作成する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="3fa5b-103">This topic shows how to parse a string to create an XML tree in C#.</span></span>  
   
-## <a name="example"></a>例  
- 次の C# コードは、文字列を解析する方法を示しています。  
+## <a name="example"></a><span data-ttu-id="3fa5b-104">例</span><span class="sxs-lookup"><span data-stu-id="3fa5b-104">Example</span></span>  
+ <span data-ttu-id="3fa5b-105">次の C# コードは、文字列を解析する方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="3fa5b-105">The following C# code shows how to parse a string.</span></span>  
   
 ```csharp  
 XElement contacts = XElement.Parse(  
@@ -62,6 +62,6 @@ XElement contacts = XElement.Parse(
 Console.WriteLine(contacts);  
 ```  
   
-## <a name="see-also"></a>関連項目  
- [XML の解析 (C#)](../../../../csharp/programming-guide/concepts/linq/parsing-xml.md)
+## <a name="see-also"></a><span data-ttu-id="3fa5b-106">関連項目</span><span class="sxs-lookup"><span data-stu-id="3fa5b-106">See Also</span></span>  
+ [<span data-ttu-id="3fa5b-107">XML の解析 (C#)</span><span class="sxs-lookup"><span data-stu-id="3fa5b-107">Parsing XML (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/parsing-xml.md)
 

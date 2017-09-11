@@ -36,23 +36,23 @@ ms.contentlocale: ja-jp
 ms.lasthandoff: 07/28/2017
 
 ---
-# <a name="visual-basic-programming-guide"></a>Visual Basic のプログラミング ガイド
-他の最新のプログラミング言語と同様、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] は、多くの一般的なプログラミング構成要素と言語要素をサポートします。 このガイドでは、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] によるプログラミングの主な要素について説明します。  
+# <a name="visual-basic-programming-guide"></a><span data-ttu-id="43921-102">Visual Basic のプログラミング ガイド</span><span class="sxs-lookup"><span data-stu-id="43921-102">Visual Basic Programming Guide</span></span>
+<span data-ttu-id="43921-103">他の最新のプログラミング言語と同様、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] は、多くの一般的なプログラミング構成要素と言語要素をサポートします。</span><span class="sxs-lookup"><span data-stu-id="43921-103">As with any modern programming language, [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] supports many common programming constructs and language elements.</span></span> <span data-ttu-id="43921-104">このガイドでは、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] によるプログラミングの主な要素について説明します。</span><span class="sxs-lookup"><span data-stu-id="43921-104">This guide describes all the major elements of programming with [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)].</span></span>  
   
-## <a name="in-this-section"></a>このセクションの内容  
- [プログラム構造とコード規則](../../visual-basic/programming-guide/program-structure/program-structure-and-code-conventions.md)  
- [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] の基本的な構造およびコード規則 (名前付け規則、コード内のコメント、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] での制限事項など) についてのドキュメントが含まれています。  
+## <a name="in-this-section"></a><span data-ttu-id="43921-105">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="43921-105">In This Section</span></span>  
+ [<span data-ttu-id="43921-106">プログラム構造とコード規則</span><span class="sxs-lookup"><span data-stu-id="43921-106">Program Structure and Code Conventions</span></span>](../../visual-basic/programming-guide/program-structure/program-structure-and-code-conventions.md)  
+ <span data-ttu-id="43921-107">[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] の基本的な構造およびコード規則 (名前付け規則、コード内のコメント、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] での制限事項など) についてのドキュメントが含まれています。</span><span class="sxs-lookup"><span data-stu-id="43921-107">Contains documentation on the basic structure and code conventions of [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)], such as naming conventions, comments in code, and limitations within [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)].</span></span>  
   
- [Visual Basic 言語の機能](../../visual-basic/programming-guide/language-features/index.md)  
- LINQ や XML リテラルなど、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] の重要な機能に関するトピックへのリンクを示します。  
+ [<span data-ttu-id="43921-108">Visual Basic 言語の機能</span><span class="sxs-lookup"><span data-stu-id="43921-108">Visual Basic Language Features</span></span>](../../visual-basic/programming-guide/language-features/index.md)  
+ <span data-ttu-id="43921-109">LINQ や XML リテラルなど、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] の重要な機能に関するトピックへのリンクを示します。</span><span class="sxs-lookup"><span data-stu-id="43921-109">Provides links to topics that introduce and discuss important features of [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)], including LINQ and XML literals.</span></span>  
   
- [COM 相互運用](../../visual-basic/programming-guide/com-interop/index.md)  
- [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] でのコンポーネント オブジェクト モデル (COM) オブジェクトの作成および使用に関連する相互運用性の問題について説明します。  
+ [<span data-ttu-id="43921-110">COM 相互運用</span><span class="sxs-lookup"><span data-stu-id="43921-110">COM Interop</span></span>](../../visual-basic/programming-guide/com-interop/index.md)  
+ <span data-ttu-id="43921-111">[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] でのコンポーネント オブジェクト モデル (COM) オブジェクトの作成および使用に関連する相互運用性の問題について説明します。</span><span class="sxs-lookup"><span data-stu-id="43921-111">Explains the interoperability issues associated with creating and using component object model (COM) objects with [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)].</span></span>  
   
-## <a name="related-sections"></a>関連項目  
- [Visual Basic の言語リファレンス](../../visual-basic/language-reference/index.md)  
- [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] プログラミングのさまざまな側面に関するリファレンス情報を提供します。  
+## <a name="related-sections"></a><span data-ttu-id="43921-112">関連項目</span><span class="sxs-lookup"><span data-stu-id="43921-112">Related Sections</span></span>  
+ [<span data-ttu-id="43921-113">Visual Basic の言語リファレンス</span><span class="sxs-lookup"><span data-stu-id="43921-113">Visual Basic Language Reference</span></span>](../../visual-basic/language-reference/index.md)  
+ <span data-ttu-id="43921-114">[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] プログラミングのさまざまな側面に関するリファレンス情報を提供します。</span><span class="sxs-lookup"><span data-stu-id="43921-114">Provides reference information about various aspects of [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] programming.</span></span>  
   
- [Visual Basic のコマンド ライン コンパイラ](../../visual-basic/reference/command-line-compiler/index.md)  
- [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] のコマンド ライン コンパイラ、コンパイラ オプション、およびキーワード アップグレード ツールの使用について説明します。
+ [<span data-ttu-id="43921-115">Visual Basic のコマンド ライン コンパイラ</span><span class="sxs-lookup"><span data-stu-id="43921-115">Visual Basic Command-Line Compiler</span></span>](../../visual-basic/reference/command-line-compiler/index.md)  
+ <span data-ttu-id="43921-116">[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] のコマンド ライン コンパイラ、コンパイラ オプション、およびキーワード アップグレード ツールの使用について説明します。</span><span class="sxs-lookup"><span data-stu-id="43921-116">Offers information on using the [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] command-line compiler, the compiler options, and the Keyword Upgrade tool.</span></span>
 

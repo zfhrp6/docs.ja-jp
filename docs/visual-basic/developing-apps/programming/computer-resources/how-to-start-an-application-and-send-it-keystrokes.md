@@ -40,19 +40,19 @@ ms.contentlocale: ja-jp
 ms.lasthandoff: 07/28/2017
 
 ---
-# <a name="how-to-start-an-application-and-send-it-keystrokes-visual-basic"></a>方法: アプリケーションを起動してキーストロークを送る (Visual Basic)
-この例では、`Shell` 関数を使用して電卓アプリケーションを起動し、`My.Computer.Keyboard.SendKeys` メソッドを使用してキーストロークを送って、2 つの数値を乗算します。  
+# <a name="how-to-start-an-application-and-send-it-keystrokes-visual-basic"></a><span data-ttu-id="fbad9-102">方法: アプリケーションを起動してキーストロークを送る (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="fbad9-102">How to: Start an Application and Send it Keystrokes (Visual Basic)</span></span>
+<span data-ttu-id="fbad9-103">この例では、`Shell` 関数を使用して電卓アプリケーションを起動し、`My.Computer.Keyboard.SendKeys` メソッドを使用してキーストロークを送って、2 つの数値を乗算します。</span><span class="sxs-lookup"><span data-stu-id="fbad9-103">This example uses the `Shell` function to start the calculator application and then multiplies two numbers by sending keystrokes using the `My.Computer.Keyboard.SendKeys` method.</span></span>  
   
-## <a name="example"></a>例  
- [!code-vb[VbVbalrMyComputer#25](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/VisualBasic/how-to-start-an-application-and-send-it-keystrokes_1.vb)]  
+## <a name="example"></a><span data-ttu-id="fbad9-104">例</span><span class="sxs-lookup"><span data-stu-id="fbad9-104">Example</span></span>  
+ <span data-ttu-id="fbad9-105">[!code-vb[VbVbalrMyComputer#25](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/VisualBasic/how-to-start-an-application-and-send-it-keystrokes_1.vb)]</span><span class="sxs-lookup"><span data-stu-id="fbad9-105">[!code-vb[VbVbalrMyComputer#25](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/VisualBasic/how-to-start-an-application-and-send-it-keystrokes_1.vb)]</span></span>  
   
-## <a name="robust-programming"></a>信頼性の高いプログラミング  
- 要求されたプロセス ID のアプリケーションが見つからない場合には、<xref:System.ArgumentException> 例外が発生します。  
+## <a name="robust-programming"></a><span data-ttu-id="fbad9-106">信頼性の高いプログラミング</span><span class="sxs-lookup"><span data-stu-id="fbad9-106">Robust Programming</span></span>  
+ <span data-ttu-id="fbad9-107">要求されたプロセス ID のアプリケーションが見つからない場合には、<xref:System.ArgumentException> 例外が発生します。</span><span class="sxs-lookup"><span data-stu-id="fbad9-107">A <xref:System.ArgumentException> exception is raised if an application with the requested process identifier cannot be found.</span></span>  
   
-## <a name="net-framework-security"></a>.NET Framework セキュリティ  
- `Shell` 関数の呼び出しには完全な信頼が必要です (<xref:System.Security.SecurityException> クラス)。  
+## <a name="net-framework-security"></a><span data-ttu-id="fbad9-108">.NET Framework セキュリティ</span><span class="sxs-lookup"><span data-stu-id="fbad9-108">.NET Framework Security</span></span>  
+ <span data-ttu-id="fbad9-109">`Shell` 関数の呼び出しには完全な信頼が必要です (<xref:System.Security.SecurityException> クラス)。</span><span class="sxs-lookup"><span data-stu-id="fbad9-109">The call to the `Shell` function requires full trust (<xref:System.Security.SecurityException> class).</span></span>  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a><span data-ttu-id="fbad9-110">関連項目</span><span class="sxs-lookup"><span data-stu-id="fbad9-110">See Also</span></span>  
  <xref:Microsoft.VisualBasic.Devices.Keyboard.SendKeys%2A>   
  <xref:Microsoft.VisualBasic.Interaction.Shell%2A>   
  <xref:Microsoft.VisualBasic.Interaction.AppActivate%2A>

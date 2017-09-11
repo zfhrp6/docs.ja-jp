@@ -28,20 +28,20 @@ ms.contentlocale: ja-jp
 ms.lasthandoff: 05/22/2017
 
 ---
-# <a name="advanced-windows-presentation-foundation"></a>詳細設定 (Windows Presentation Foundation)
-このセクションでは、WPF の高度な領域について説明します。  
+# <a name="advanced-windows-presentation-foundation"></a><span data-ttu-id="f31dc-102">詳細設定 (Windows Presentation Foundation)</span><span class="sxs-lookup"><span data-stu-id="f31dc-102">Advanced (Windows Presentation Foundation)</span></span>
+<span data-ttu-id="f31dc-103">このセクションでは、WPF の高度な領域について説明します。</span><span class="sxs-lookup"><span data-stu-id="f31dc-103">This section describes some of the advanced areas in WPF.</span></span>  
   
-## <a name="in-this-section"></a>このセクションの内容  
- [WPF アーキテクチャ](../../../../docs/framework/wpf/advanced/wpf-architecture.md)  
- [基本要素](../../../../docs/framework/wpf/advanced/base-elements.md)  
- [要素のツリーおよびシリアル化](../../../../docs/framework/wpf/advanced/element-tree-and-serialization.md)  
- [ドラッグ アンド ドロップ](../../../../docs/framework/wpf/advanced/drag-and-drop.md)  
- [ドキュメント](../../../../docs/framework/wpf/advanced/documents.md)  
- [グローバライズとローカライズ](../../../../docs/framework/wpf/advanced/globalization-and-localization.md)  
- [移行と相互運用性](../../../../docs/framework/wpf/advanced/migration-and-interoperability.md)  
- [パフォーマンス](../../../../docs/framework/wpf/advanced/performance.md)  
- [スレッド モデル](../../../../docs/framework/wpf/advanced/threading-model.md)  
- [WPF のアドインの概要](../../../../docs/framework/wpf/app-development/wpf-add-ins-overview.md)  
- [WPF のアンマネージ API リファレンス](../../../../docs/framework/wpf/advanced/wpf-unmanaged-api-reference.md)  
+## <a name="in-this-section"></a><span data-ttu-id="f31dc-104">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="f31dc-104">In This Section</span></span>  
+ [<span data-ttu-id="f31dc-105">WPF アーキテクチャ</span><span class="sxs-lookup"><span data-stu-id="f31dc-105">WPF Architecture</span></span>](../../../../docs/framework/wpf/advanced/wpf-architecture.md)  
+<span data-ttu-id="f31dc-106"> [基本要素](../../../../docs/framework/wpf/advanced/base-elements.md)</span><span class="sxs-lookup"><span data-stu-id="f31dc-106"> [Base Elements](../../../../docs/framework/wpf/advanced/base-elements.md)</span></span>  
+<span data-ttu-id="f31dc-107"> [要素のツリーおよびシリアル化](../../../../docs/framework/wpf/advanced/element-tree-and-serialization.md)</span><span class="sxs-lookup"><span data-stu-id="f31dc-107"> [Element Tree and Serialization](../../../../docs/framework/wpf/advanced/element-tree-and-serialization.md)</span></span>  
+<span data-ttu-id="f31dc-108"> [ドラッグ アンド ドロップ](../../../../docs/framework/wpf/advanced/drag-and-drop.md)</span><span class="sxs-lookup"><span data-stu-id="f31dc-108"> [Drag and Drop](../../../../docs/framework/wpf/advanced/drag-and-drop.md)</span></span>  
+<span data-ttu-id="f31dc-109"> [ドキュメント](../../../../docs/framework/wpf/advanced/documents.md)</span><span class="sxs-lookup"><span data-stu-id="f31dc-109"> [Documents](../../../../docs/framework/wpf/advanced/documents.md)</span></span>  
+<span data-ttu-id="f31dc-110"> [グローバライズとローカライズ](../../../../docs/framework/wpf/advanced/globalization-and-localization.md)</span><span class="sxs-lookup"><span data-stu-id="f31dc-110"> [Globalization and Localization](../../../../docs/framework/wpf/advanced/globalization-and-localization.md)</span></span>  
+<span data-ttu-id="f31dc-111"> [移行と相互運用性](../../../../docs/framework/wpf/advanced/migration-and-interoperability.md)</span><span class="sxs-lookup"><span data-stu-id="f31dc-111"> [Migration and Interoperability](../../../../docs/framework/wpf/advanced/migration-and-interoperability.md)</span></span>  
+<span data-ttu-id="f31dc-112"> [パフォーマンス](../../../../docs/framework/wpf/advanced/performance.md)</span><span class="sxs-lookup"><span data-stu-id="f31dc-112"> [Performance](../../../../docs/framework/wpf/advanced/performance.md)</span></span>  
+<span data-ttu-id="f31dc-113"> [スレッド モデル](../../../../docs/framework/wpf/advanced/threading-model.md)</span><span class="sxs-lookup"><span data-stu-id="f31dc-113"> [Threading Model](../../../../docs/framework/wpf/advanced/threading-model.md)</span></span>  
+<span data-ttu-id="f31dc-114"> [WPF のアドインの概要](../../../../docs/framework/wpf/app-development/wpf-add-ins-overview.md)</span><span class="sxs-lookup"><span data-stu-id="f31dc-114"> [WPF Add-Ins Overview](../../../../docs/framework/wpf/app-development/wpf-add-ins-overview.md)</span></span>  
+<span data-ttu-id="f31dc-115"> [WPF のアンマネージ API リファレンス](../../../../docs/framework/wpf/advanced/wpf-unmanaged-api-reference.md)</span><span class="sxs-lookup"><span data-stu-id="f31dc-115"> [Unmanaged WPF API Reference](../../../../docs/framework/wpf/advanced/wpf-unmanaged-api-reference.md)</span></span>  
   
-## <a name="related-sections"></a>関連項目
+## <a name="related-sections"></a><span data-ttu-id="f31dc-116">関連項目</span><span class="sxs-lookup"><span data-stu-id="f31dc-116">Related Sections</span></span>

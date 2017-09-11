@@ -20,45 +20,46 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 6708bd92d8dc2455b9dcb8e02dcc0a4455e00cda
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
+ms.openlocfilehash: 9c2c7c09f9af7c9b7bdcb6411b6db6e2ca4984cb
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/12/2017
 
 ---
-# <a name="cancel-async-tasks-after-a-period-of-time-visual-basic"></a>経過時間 (Visual Basic) の非同期タスクをキャンセルします。
-使用して、一定時間後に非同期操作を取り消すことができます、<xref:System.Threading.CancellationTokenSource.CancelAfter%2A?displayProperty=fullName>メソッド操作が終了するまで待機したくない場合</xref:System.Threading.CancellationTokenSource.CancelAfter%2A?displayProperty=fullName>。 このメソッドは、`CancelAfter` 式によって指定された時間内に完了しない、関連付けられたタスクの取り消しをスケジュールします。  
+# <a name="cancel-async-tasks-after-a-period-of-time-visual-basic"></a><span data-ttu-id="20f8b-102">経過時間 (Visual Basic) の非同期タスクをキャンセルします。</span><span class="sxs-lookup"><span data-stu-id="20f8b-102">Cancel Async Tasks after a Period of Time (Visual Basic)</span></span>
+<span data-ttu-id="20f8b-103">使用して、一定時間後に非同期操作を取り消すことができます、<xref:System.Threading.CancellationTokenSource.CancelAfter%2A?displayProperty=fullName>メソッド操作が終了するまで待機したくない場合</xref:System.Threading.CancellationTokenSource.CancelAfter%2A?displayProperty=fullName>。</span><span class="sxs-lookup"><span data-stu-id="20f8b-103">You can cancel an asynchronous operation after a period of time by using the  <xref:System.Threading.CancellationTokenSource.CancelAfter%2A?displayProperty=fullName> method if you don't want to wait for the operation to finish.</span></span> <span data-ttu-id="20f8b-104">このメソッドは、`CancelAfter` 式によって指定された時間内に完了しない、関連付けられたタスクの取り消しをスケジュールします。</span><span class="sxs-lookup"><span data-stu-id="20f8b-104">This method schedules the cancellation of any associated tasks that aren’t complete within the period of time that’s designated by the `CancelAfter` expression.</span></span>  
   
- この例で開発されたコードを追加[非同期タスクまたは一覧のタスク (Visual Basic) をキャンセル](../../../../visual-basic/programming-guide/concepts/async/cancel-an-async-task-or-a-list-of-tasks.md)web サイトの一覧をダウンロードし、それぞれのコンテンツの長さを表示します。  
+ <span data-ttu-id="20f8b-105">この例で開発されたコードを追加[非同期タスクまたは一覧のタスク (Visual Basic) をキャンセル](../../../../visual-basic/programming-guide/concepts/async/cancel-an-async-task-or-a-list-of-tasks.md)web サイトの一覧をダウンロードし、それぞれのコンテンツの長さを表示します。</span><span class="sxs-lookup"><span data-stu-id="20f8b-105">This example adds to the code that’s developed in [Cancel an Async Task or a List of Tasks (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/cancel-an-async-task-or-a-list-of-tasks.md) to download a list of websites and to display the length of the contents of each one.</span></span>  
   
 > [!NOTE]
->  例を実行するには、Visual Studio 2012 以降と .NET Framework 4.5 が必要または後で、コンピューターにインストールします。  
+>  <span data-ttu-id="20f8b-106">例を実行するには、Visual Studio 2012 以降と .NET Framework 4.5 が必要または後で、コンピューターにインストールします。</span><span class="sxs-lookup"><span data-stu-id="20f8b-106">To run the examples, you must have Visual Studio 2012 or later and the .NET Framework 4.5 or later installed on your computer.</span></span>  
   
-## <a name="downloading-the-example"></a>例をダウンロードする  
- 完全な Windows Presentation Foundation (WPF) プロジェクトをダウンロードすることができます[Async サンプル: 細かいアプリケーションの調整](http://go.microsoft.com/fwlink/?LinkId=255046)し次の手順に従います。  
+## <a name="downloading-the-example"></a><span data-ttu-id="20f8b-107">例をダウンロードする</span><span class="sxs-lookup"><span data-stu-id="20f8b-107">Downloading the Example</span></span>  
+ <span data-ttu-id="20f8b-108">完全な Windows Presentation Foundation (WPF) プロジェクトをダウンロードすることができます[Async サンプル: 細かいアプリケーションの調整](http://go.microsoft.com/fwlink/?LinkId=255046)し次の手順に従います。</span><span class="sxs-lookup"><span data-stu-id="20f8b-108">You can download the complete Windows Presentation Foundation (WPF) project from [Async Sample: Fine Tuning Your Application](http://go.microsoft.com/fwlink/?LinkId=255046) and then follow these steps.</span></span>  
   
-1.  ダウンロードしたファイルを圧縮解除し、Visual Studio を起動します。  
+1.  <span data-ttu-id="20f8b-109">ダウンロードしたファイルを圧縮解除し、Visual Studio を起動します。</span><span class="sxs-lookup"><span data-stu-id="20f8b-109">Decompress the file that you downloaded, and then start Visual Studio.</span></span>  
   
-2.  メニュー バーで **[ファイル]**、 **[開く]**、 **[プロジェクト/ソリューション]**の順に選択します。  
+2.  <span data-ttu-id="20f8b-110">メニュー バーで **[ファイル]**、 **[開く]**、 **[プロジェクト/ソリューション]**の順に選択します。</span><span class="sxs-lookup"><span data-stu-id="20f8b-110">On the menu bar, choose **File**, **Open**, **Project/Solution**.</span></span>  
   
-3.  **プロジェクトを開く** ダイアログ ボックスでは、圧縮解除したサンプル コードが含まれるフォルダーを開き、AsyncFineTuningVB のソリューション (.sln) ファイルを開きます。  
+3.  <span data-ttu-id="20f8b-111">**プロジェクトを開く** ダイアログ ボックスでは、圧縮解除したサンプル コードが含まれるフォルダーを開き、AsyncFineTuningVB のソリューション (.sln) ファイルを開きます。</span><span class="sxs-lookup"><span data-stu-id="20f8b-111">In the **Open Project** dialog box, open the folder that holds the sample code that you decompressed, and then open the solution (.sln) file for AsyncFineTuningVB.</span></span>  
   
-4.  **ソリューション エクスプ ローラー**、ショートカット メニューを開き、 **CancelAfterTime**プロジェクトを開いて、**スタートアップ プロジェクトとして設定**します。  
+4.  <span data-ttu-id="20f8b-112">**ソリューション エクスプ ローラー**、ショートカット メニューを開き、 **CancelAfterTime**プロジェクトを開いて、**スタートアップ プロジェクトとして設定**します。</span><span class="sxs-lookup"><span data-stu-id="20f8b-112">In **Solution Explorer**, open the shortcut menu for the **CancelAfterTime** project, and then choose **Set as StartUp Project**.</span></span>  
   
-5.  F5 キーを押してプロジェクトを実行します。  
+5.  <span data-ttu-id="20f8b-113">F5 キーを押してプロジェクトを実行します。</span><span class="sxs-lookup"><span data-stu-id="20f8b-113">Choose the F5 key to run the project.</span></span>  
   
-     Ctrl + F5 キーを押して、デバッグを行わずにプロジェクトを実行します。  
+     <span data-ttu-id="20f8b-114">Ctrl + F5 キーを押して、デバッグを行わずにプロジェクトを実行します。</span><span class="sxs-lookup"><span data-stu-id="20f8b-114">Choose the Ctrl+F5 keys to run the project without debugging it.</span></span>  
   
-6.  プログラムを複数回実行して、出力がすべての Web サイトの出力を示したり、どの Web サイトの出力も示さなかったり、一部の Web サイトの出力を示したりすることを確認します。  
+6.  <span data-ttu-id="20f8b-115">プログラムを複数回実行して、出力がすべての Web サイトの出力を示したり、どの Web サイトの出力も示さなかったり、一部の Web サイトの出力を示したりすることを確認します。</span><span class="sxs-lookup"><span data-stu-id="20f8b-115">Run the program several times to verify that the output might show output for all websites, no websites, or some web sites.</span></span>  
   
- プロジェクトをダウンロードできない場合は、このトピックの最後の MainWindow.xaml.vb ファイルを確認できます。  
+ <span data-ttu-id="20f8b-116">プロジェクトをダウンロードできない場合は、このトピックの最後の MainWindow.xaml.vb ファイルを確認できます。</span><span class="sxs-lookup"><span data-stu-id="20f8b-116">If you don't want to download the project, you can review the MainWindow.xaml.vb file at the end of this topic.</span></span>  
   
-## <a name="building-the-example"></a>例のビルド  
- このトピックの例で開発されたプロジェクトに追加[非同期タスクまたは一覧のタスク (Visual Basic) をキャンセル](../../../../visual-basic/programming-guide/concepts/async/cancel-an-async-task-or-a-list-of-tasks.md)タスクのリストを取り消します。 この例には、同じ UI が使用されますが、**キャンセル**ボタンは明示的に使用します。  
+## <a name="building-the-example"></a><span data-ttu-id="20f8b-117">例のビルド</span><span class="sxs-lookup"><span data-stu-id="20f8b-117">Building the Example</span></span>  
+ <span data-ttu-id="20f8b-118">このトピックの例で開発されたプロジェクトに追加[非同期タスクまたは一覧のタスク (Visual Basic) をキャンセル](../../../../visual-basic/programming-guide/concepts/async/cancel-an-async-task-or-a-list-of-tasks.md)タスクのリストを取り消します。</span><span class="sxs-lookup"><span data-stu-id="20f8b-118">The example in this topic adds to the project that's developed in [Cancel an Async Task or a List of Tasks (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/cancel-an-async-task-or-a-list-of-tasks.md) to cancel a list of tasks.</span></span> <span data-ttu-id="20f8b-119">この例には、同じ UI が使用されますが、**キャンセル**ボタンは明示的に使用します。</span><span class="sxs-lookup"><span data-stu-id="20f8b-119">The example uses the same UI, although the **Cancel** button isn’t used explicitly.</span></span>  
   
- 例をビルドする、自分のステップ バイ ステップ「例をダウンロードする」セクション指示従いますが、選択**CancelAListOfTasks**として、**スタートアップ プロジェクト**します。 そのプロジェクトに、このトピックでの変更を追加します。  
+ <span data-ttu-id="20f8b-120">例をビルドする、自分のステップ バイ ステップ「例をダウンロードする」セクション指示従いますが、選択**CancelAListOfTasks**として、**スタートアップ プロジェクト**します。</span><span class="sxs-lookup"><span data-stu-id="20f8b-120">To build the example yourself, step by step, follow the instructions in the "Downloading the Example" section, but choose **CancelAListOfTasks** as the **StartUp Project**.</span></span> <span data-ttu-id="20f8b-121">そのプロジェクトに、このトピックでの変更を追加します。</span><span class="sxs-lookup"><span data-stu-id="20f8b-121">Add the changes in this topic to that project.</span></span>  
   
- 次の例に示すように、タスクが取り消し済みとマークされるまでの最大時間を指定するには、`CancelAfter` に `startButton_Click` への呼び出しを追加します。 追加部分にはアスタリスクが付いています。  
+ <span data-ttu-id="20f8b-122">次の例に示すように、タスクが取り消し済みとマークされるまでの最大時間を指定するには、`CancelAfter` に `startButton_Click` への呼び出しを追加します。</span><span class="sxs-lookup"><span data-stu-id="20f8b-122">To specify a maximum time before the tasks are marked as canceled, add a call to `CancelAfter` to `startButton_Click`, as the following example shows.</span></span> <span data-ttu-id="20f8b-123">追加部分にはアスタリスクが付いています。</span><span class="sxs-lookup"><span data-stu-id="20f8b-123">The addition is marked with asterisks.</span></span>  
   
 ```vb  
 Private Async Sub startButton_Click(sender As Object, e As RoutedEventArgs)  
@@ -88,7 +89,7 @@ Private Async Sub startButton_Click(sender As Object, e As RoutedEventArgs)
 End Sub  
 ```  
   
- プログラムを複数回実行して、出力がすべての Web サイトの出力を示したり、どの Web サイトの出力も示さなかったり、一部の Web サイトの出力を示したりすることを確認します。 出力例を次に示します。  
+ <span data-ttu-id="20f8b-124">プログラムを複数回実行して、出力がすべての Web サイトの出力を示したり、どの Web サイトの出力も示さなかったり、一部の Web サイトの出力を示したりすることを確認します。</span><span class="sxs-lookup"><span data-stu-id="20f8b-124">Run the program several times to verify that the output might show output for all websites, no websites, or some web sites.</span></span> <span data-ttu-id="20f8b-125">出力例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="20f8b-125">The following output is a sample.</span></span>  
   
 ```  
 Length of the downloaded string: 35990.  
@@ -100,12 +101,12 @@ Length of the downloaded string: 226091.
 Downloads canceled.  
 ```  
   
-## <a name="complete-example"></a>コード例全体  
- 次のコードは、たとえば、MainWindow.xaml.vb ファイルの完全なテキストです。 アスタリスクはこの例のために追加された要素を示しています。  
+## <a name="complete-example"></a><span data-ttu-id="20f8b-126">コード例全体</span><span class="sxs-lookup"><span data-stu-id="20f8b-126">Complete Example</span></span>  
+ <span data-ttu-id="20f8b-127">次のコードは、たとえば、MainWindow.xaml.vb ファイルの完全なテキストです。</span><span class="sxs-lookup"><span data-stu-id="20f8b-127">The following code is the complete text of the MainWindow.xaml.vb file for the example.</span></span> <span data-ttu-id="20f8b-128">アスタリスクはこの例のために追加された要素を示しています。</span><span class="sxs-lookup"><span data-stu-id="20f8b-128">Asterisks mark the elements that were added for this example.</span></span>  
   
- <xref:System.Net.Http>。</xref:System.Net.Http>への参照を追加する必要があることに注意してください。  
+ <span data-ttu-id="20f8b-129"><xref:System.Net.Http>。</xref:System.Net.Http>への参照を追加する必要があることに注意してください。</span><span class="sxs-lookup"><span data-stu-id="20f8b-129">Notice that you must add a reference for <xref:System.Net.Http>.</span></span>  
   
- プロジェクトをダウンロードする[Async サンプル: 細かいアプリケーションの調整](http://go.microsoft.com/fwlink/?LinkId=255046)します。  
+ <span data-ttu-id="20f8b-130">プロジェクトをダウンロードする[Async サンプル: 細かいアプリケーションの調整](http://go.microsoft.com/fwlink/?LinkId=255046)します。</span><span class="sxs-lookup"><span data-stu-id="20f8b-130">You can download the project from [Async Sample: Fine Tuning Your Application](http://go.microsoft.com/fwlink/?LinkId=255046).</span></span>  
   
 ```vb  
 ' Add an Imports directive and a reference for System.Net.Http.  
@@ -206,9 +207,9 @@ End Class
 ' Downloads canceled.  
 ```  
   
-## <a name="see-also"></a>関連項目  
- [非同期プログラミングを Async と Await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/index.md)   
- [チュートリアル: Async を使用して Web へのアクセスと Await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md)   
- [非同期タスクまたはタスク (Visual Basic) の一覧をキャンセルします。](../../../../visual-basic/programming-guide/concepts/async/cancel-an-async-task-or-a-list-of-tasks.md)   
- [非同期アプリケーション (Visual Basic) の微調整](../../../../visual-basic/programming-guide/concepts/async/fine-tuning-your-async-application.md)   
- [アプリケーションの微調整の非同期のサンプル:](http://go.microsoft.com/fwlink/?LinkId=255046)
+## <a name="see-also"></a><span data-ttu-id="20f8b-131">関連項目</span><span class="sxs-lookup"><span data-stu-id="20f8b-131">See Also</span></span>  
+ <span data-ttu-id="20f8b-132">[非同期プログラミングを Async と Await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/index.md) </span><span class="sxs-lookup"><span data-stu-id="20f8b-132">[Asynchronous Programming with Async and Await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/index.md) </span></span>  
+<span data-ttu-id="20f8b-133"> [チュートリアル: Async を使用して Web へのアクセスと Await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md) </span><span class="sxs-lookup"><span data-stu-id="20f8b-133"> [Walkthrough: Accessing the Web by Using Async and Await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md) </span></span>  
+<span data-ttu-id="20f8b-134"> [非同期タスクまたはタスク (Visual Basic) の一覧をキャンセルします。](../../../../visual-basic/programming-guide/concepts/async/cancel-an-async-task-or-a-list-of-tasks.md) </span><span class="sxs-lookup"><span data-stu-id="20f8b-134"> [Cancel an Async Task or a List of Tasks (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/cancel-an-async-task-or-a-list-of-tasks.md) </span></span>  
+<span data-ttu-id="20f8b-135"> [非同期アプリケーション (Visual Basic) の微調整](../../../../visual-basic/programming-guide/concepts/async/fine-tuning-your-async-application.md) </span><span class="sxs-lookup"><span data-stu-id="20f8b-135"> [Fine-Tuning Your Async Application (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/fine-tuning-your-async-application.md) </span></span>  
+<span data-ttu-id="20f8b-136"> [アプリケーションの微調整の非同期のサンプル:](http://go.microsoft.com/fwlink/?LinkId=255046)</span><span class="sxs-lookup"><span data-stu-id="20f8b-136"> [Async Sample: Fine Tuning Your Application](http://go.microsoft.com/fwlink/?LinkId=255046)</span></span>

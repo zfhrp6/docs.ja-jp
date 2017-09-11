@@ -1,1 +1,1 @@
-このメンバーは .NET Framework インフラストラクチャをサポートします。独自に作成したコードから直接使用するためのものではありません。
+<span data-ttu-id="c39be-101">このメンバーは .NET Framework インフラストラクチャをサポートします。独自に作成したコードから直接使用するためのものではありません。</span><span class="sxs-lookup"><span data-stu-id="c39be-101">This member supports the .NET Framework infrastructure and is not intended to be used directly from your code.</span></span>

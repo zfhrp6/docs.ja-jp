@@ -26,19 +26,20 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: aef57e597233e6179bc1a00b28182b46bb53cc59
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
+ms.openlocfilehash: 57de9f91b695dfd63bb3e69204272e657e887345
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/12/2017
 
 ---
-# <a name="public-member-39ltmembernamegt39-on-type-39lttypenamegt39-not-found"></a>パブリック メンバー '&lt;membername&gt;'type' on&lt;typename&gt;' が見つかりません。
-アクセスしようとしているメンバーが見つかりません。 このエラーは、遅延バインディング オブジェクトの非パブリック メンバーにアクセスするときに発生することがあります。  
+# <a name="public-member-39ltmembernamegt39-on-type-39lttypenamegt39-not-found"></a><span data-ttu-id="ea537-102">パブリック メンバー '&lt;membername&gt;'type' on&lt;typename&gt;' が見つかりません。</span><span class="sxs-lookup"><span data-stu-id="ea537-102">Public member &#39;&lt;membername&gt;&#39; on type &#39;&lt;typename&gt;&#39; not found</span></span>
+<span data-ttu-id="ea537-103">アクセスしようとしているメンバーが見つかりません。</span><span class="sxs-lookup"><span data-stu-id="ea537-103">The member you are trying to access cannot be found.</span></span> <span data-ttu-id="ea537-104">このエラーは、遅延バインディング オブジェクトの非パブリック メンバーにアクセスするときに発生することがあります。</span><span class="sxs-lookup"><span data-stu-id="ea537-104">This error can occur when accessing non-public members of late-bound objects.</span></span>  
   
-## <a name="to-correct-this-error"></a>このエラーを解決するには  
+## <a name="to-correct-this-error"></a><span data-ttu-id="ea537-105">このエラーを解決するには</span><span class="sxs-lookup"><span data-stu-id="ea537-105">To correct this error</span></span>  
   
-1.  メンバーが存在する場合は、 `Public`として宣言されていることを確認します。  
+1.  <span data-ttu-id="ea537-106">メンバーが存在する場合は、 `Public`として宣言されていることを確認します。</span><span class="sxs-lookup"><span data-stu-id="ea537-106">If the member exists, ensure that it is declared as `Public`.</span></span>  
   
-## <a name="see-also"></a>関連項目  
- [パブリック](../../visual-basic/language-reference/modifiers/public.md)   
- [事前バインディングと遅延バインディング](../../visual-basic/programming-guide/language-features/early-late-binding/index.md)
+## <a name="see-also"></a><span data-ttu-id="ea537-107">関連項目</span><span class="sxs-lookup"><span data-stu-id="ea537-107">See Also</span></span>  
+ <span data-ttu-id="ea537-108">[パブリック](../../visual-basic/language-reference/modifiers/public.md) </span><span class="sxs-lookup"><span data-stu-id="ea537-108">[Public](../../visual-basic/language-reference/modifiers/public.md) </span></span>  
+<span data-ttu-id="ea537-109"> [事前バインディングと遅延バインディング](../../visual-basic/programming-guide/language-features/early-late-binding/index.md)</span><span class="sxs-lookup"><span data-stu-id="ea537-109"> [Early and Late Binding](../../visual-basic/programming-guide/language-features/early-late-binding/index.md)</span></span>

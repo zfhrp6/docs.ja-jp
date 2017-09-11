@@ -18,9 +18,9 @@ ms.lasthandoff: 08/21/2017
 
 ---
 
-# <a name="delegates-and-lambdas"></a>デリゲートとラムダ
+# <a name="delegates-and-lambdas"></a><span data-ttu-id="bb1ae-104">デリゲートとラムダ</span><span class="sxs-lookup"><span data-stu-id="bb1ae-104">Delegates and lambdas</span></span>
 
-デリゲートは、特定のメソッド シグネチャを指定する型を定義します。 このシグネチャを満たすメソッド (静的またはインスタンス) は、その型の変数に代入し、(適切な引数を使用して) 直接呼び出したり、別のメソッドに引数そのものとして渡してから呼び出すことができます。 次の例は、デリゲートの使い方を示しています。
+<span data-ttu-id="bb1ae-105">デリゲートは、特定のメソッド シグネチャを指定する型を定義します。</span><span class="sxs-lookup"><span data-stu-id="bb1ae-105">Delegates define a type, which specify a particular method signature.</span></span> <span data-ttu-id="bb1ae-106">このシグネチャを満たすメソッド (静的またはインスタンス) は、その型の変数に代入し、(適切な引数を使用して) 直接呼び出したり、別のメソッドに引数そのものとして渡してから呼び出すことができます。</span><span class="sxs-lookup"><span data-stu-id="bb1ae-106">A method (static or instance) that satisfies this signature can be assigned to a variable of that type, then called directly (with the appropriate arguments) or passed as an argument itself to another method and then called.</span></span> <span data-ttu-id="bb1ae-107">次の例は、デリゲートの使い方を示しています。</span><span class="sxs-lookup"><span data-stu-id="bb1ae-107">The following example demonstrates delegate use.</span></span>
 
 ```csharp
 public class Program
@@ -42,18 +42,18 @@ public class Program
 }
 ```
 
-*   4 行目で特定のシグネチャのデリゲート型を作成しています。この場合、文字列パラメーターを取ってから文字列パラメーターを返すメソッドです。
-*   6 行目で、まったく同じシグネチャを持つメソッドを提供することによって、デリゲートの実装を定義しています。
-*   13 行目では、メソッドが `Reverse` デリゲートに準拠する型に割り当てられます。
-*   最後に、15 行目で元に戻す文字列を渡してデリゲートを呼び出します。
+*   <span data-ttu-id="bb1ae-108">4 行目で特定のシグネチャのデリゲート型を作成しています。この場合、文字列パラメーターを取ってから文字列パラメーターを返すメソッドです。</span><span class="sxs-lookup"><span data-stu-id="bb1ae-108">On line 4 we create a delegate type of a certain signature, in this case a method that takes a string parameter and then returns a string parameter.</span></span>
+*   <span data-ttu-id="bb1ae-109">6 行目で、まったく同じシグネチャを持つメソッドを提供することによって、デリゲートの実装を定義しています。</span><span class="sxs-lookup"><span data-stu-id="bb1ae-109">On line 6, we define the implementation of the delegate by providing a method that has the exact same signature.</span></span>
+*   <span data-ttu-id="bb1ae-110">13 行目では、メソッドが `Reverse` デリゲートに準拠する型に割り当てられます。</span><span class="sxs-lookup"><span data-stu-id="bb1ae-110">On line 13, the method is assigned to a type that conforms to the `Reverse` delegate.</span></span>
+*   <span data-ttu-id="bb1ae-111">最後に、15 行目で元に戻す文字列を渡してデリゲートを呼び出します。</span><span class="sxs-lookup"><span data-stu-id="bb1ae-111">Finally, on line 15 we invoke the delegate passing a string to be reversed.</span></span>
 
-開発プロセスを効率化するため、.NET にはプログラマが再利用できるデリゲート型のセットが含まれているため、新しい型を作成する必要はありません。 これらは `Func<>`、`Action<>`、および `Predicate<>` で、新しいデリゲート型を定義することなく、.NET API を通じてさまざまな場所で使用できます。 もちろん、これらの 3 つの間にはそのシグネチャで見られるように、いくつかの違いがあり、ほとんどがその用途に関係しています。
+<span data-ttu-id="bb1ae-112">開発プロセスを効率化するため、.NET にはプログラマが再利用できるデリゲート型のセットが含まれているため、新しい型を作成する必要はありません。</span><span class="sxs-lookup"><span data-stu-id="bb1ae-112">In order to streamline the development process, .NET includes a set of delegate types that programmers can reuse and not have to create new types.</span></span> <span data-ttu-id="bb1ae-113">これらは `Func<>`、`Action<>`、および `Predicate<>` で、新しいデリゲート型を定義することなく、.NET API を通じてさまざまな場所で使用できます。</span><span class="sxs-lookup"><span data-stu-id="bb1ae-113">These are `Func<>`, `Action<>` and `Predicate<>`, and they can be used in various places throughout the .NET APIs without the need to define new delegate types.</span></span> <span data-ttu-id="bb1ae-114">もちろん、これらの 3 つの間にはそのシグネチャで見られるように、いくつかの違いがあり、ほとんどがその用途に関係しています。</span><span class="sxs-lookup"><span data-stu-id="bb1ae-114">Of course, there are some differences between the three as you will see in their signatures which mostly have to do with the way they were meant to be used:</span></span>
 
-*   `Action<>` は、デリゲートの引数を使用してアクションを実行する必要がある場合に使用されます。
-*   `Func<>` は、通常、変換が手元にあるときに使用されます。つまり、デリゲートの引数を異なる結果に変換する必要があります。 これの典型的な例が予測です。
-*   `Predicate<>` は、引数がデリゲートの条件を満たすかどうかを判断する必要がある場合に使用されます。 `Func<T, bool>` として書き込むこともできます。
+*   <span data-ttu-id="bb1ae-115">`Action<>` は、デリゲートの引数を使用してアクションを実行する必要がある場合に使用されます。</span><span class="sxs-lookup"><span data-stu-id="bb1ae-115">`Action<>` is used when there is a need to perform an action using the arguments of the delegate.</span></span>
+*   <span data-ttu-id="bb1ae-116">`Func<>` は、通常、変換が手元にあるときに使用されます。つまり、デリゲートの引数を異なる結果に変換する必要があります。</span><span class="sxs-lookup"><span data-stu-id="bb1ae-116">`Func<>` is used usually when you have a transformation on hand, that is, you need to transform the arguments of the delegate into a different result.</span></span> <span data-ttu-id="bb1ae-117">これの典型的な例が予測です。</span><span class="sxs-lookup"><span data-stu-id="bb1ae-117">Projections are a prime example of this.</span></span>
+*   <span data-ttu-id="bb1ae-118">`Predicate<>` は、引数がデリゲートの条件を満たすかどうかを判断する必要がある場合に使用されます。</span><span class="sxs-lookup"><span data-stu-id="bb1ae-118">`Predicate<>` is used when you need to determine if the argument satisfies the condition of the delegate.</span></span> <span data-ttu-id="bb1ae-119">`Func<T, bool>` として書き込むこともできます。</span><span class="sxs-lookup"><span data-stu-id="bb1ae-119">It can also be written as a `Func<T, bool>`.</span></span>
 
-ここで、上記の例を使用して、カスタム型の代わりに `Func<>` デリゲートを使用して書き換えることができます。 プログラムは引き続きまったく同じに実行されます。
+<span data-ttu-id="bb1ae-120">ここで、上記の例を使用して、カスタム型の代わりに `Func<>` デリゲートを使用して書き換えることができます。</span><span class="sxs-lookup"><span data-stu-id="bb1ae-120">We can now take our example above and rewrite it using the `Func<>` delegate instead of a custom type.</span></span> <span data-ttu-id="bb1ae-121">プログラムは引き続きまったく同じに実行されます。</span><span class="sxs-lookup"><span data-stu-id="bb1ae-121">The program will continue running exactly the same.</span></span>
 
 ```csharp
 public class Program
@@ -73,9 +73,9 @@ public class Program
 }
 ```
 
-この簡単な例では、Main() メソッドの外部で定義されているメソッドは、少し余分なようです。 これは、.NET Framework 2.0 で**匿名デリゲート**の概念が導入されたためです。 そのサポートにより、追加の型やメソッドを指定せずに、"インライン" デリゲートを作成することができます。 必要に応じて、デリゲートの定義を単純にインライン化します。
+<span data-ttu-id="bb1ae-122">この簡単な例では、Main() メソッドの外部で定義されているメソッドは、少し余分なようです。</span><span class="sxs-lookup"><span data-stu-id="bb1ae-122">For this simple example, having a method defined outside of the Main() method seems a bit superfluous.</span></span> <span data-ttu-id="bb1ae-123">これは、.NET Framework 2.0 で**匿名デリゲート**の概念が導入されたためです。</span><span class="sxs-lookup"><span data-stu-id="bb1ae-123">It is because of this that .NET Framework 2.0 introduced the concept of **anonymous delegates**.</span></span> <span data-ttu-id="bb1ae-124">そのサポートにより、追加の型やメソッドを指定せずに、"インライン" デリゲートを作成することができます。</span><span class="sxs-lookup"><span data-stu-id="bb1ae-124">With their support you are able to create "inline" delegates without having to specify any additional type or method.</span></span> <span data-ttu-id="bb1ae-125">必要に応じて、デリゲートの定義を単純にインライン化します。</span><span class="sxs-lookup"><span data-stu-id="bb1ae-125">You simply inline the definition of the delegate where you need it.</span></span>
 
-たとえば、デリゲートを切り替え、この匿名デリゲートを使用して、偶数だけをリストから除外し、コンソールに表示します。
+<span data-ttu-id="bb1ae-126">たとえば、デリゲートを切り替え、この匿名デリゲートを使用して、偶数だけをリストから除外し、コンソールに表示します。</span><span class="sxs-lookup"><span data-stu-id="bb1ae-126">For an example, we are going to switch it up and use our anonymous delegate to filter out a list of only even numbers and then print them to the console.</span></span>
 
 ```csharp
 public class Program
@@ -105,13 +105,13 @@ public class Program
 }
 ```
 
-強調表示された行に注目してください。 ご覧のように、デリゲートの本体は、他のデリゲートと同じく、単なる式のセットです。 しかし、それを別の定義にする代わりに、`List<T>` 型の `FindAll()` メソッドへの呼び出しでそれを_アド ホック_で導入しました。
+<span data-ttu-id="bb1ae-127">強調表示された行に注目してください。</span><span class="sxs-lookup"><span data-stu-id="bb1ae-127">Notice the highlighted lines.</span></span> <span data-ttu-id="bb1ae-128">ご覧のように、デリゲートの本体は、他のデリゲートと同じく、単なる式のセットです。</span><span class="sxs-lookup"><span data-stu-id="bb1ae-128">As you can see, the body of the delegate is just a set of expressions, as any other delegate.</span></span> <span data-ttu-id="bb1ae-129">しかし、それを別の定義にする代わりに、`List<T>` 型の `FindAll()` メソッドへの呼び出しでそれを_アド ホック_で導入しました。</span><span class="sxs-lookup"><span data-stu-id="bb1ae-129">But instead of it being a separate definition, we’ve introduced it _ad hoc_ in our call to the `FindAll()` method of the `List<T>` type.</span></span>
 
-ただし、この方法でも、破棄できる多くのコードがまだ残ります。 このような場合に**ラムダ式**が機能します。
+<span data-ttu-id="bb1ae-130">ただし、この方法でも、破棄できる多くのコードがまだ残ります。</span><span class="sxs-lookup"><span data-stu-id="bb1ae-130">However, even with this approach, there is still much code that we can throw away.</span></span> <span data-ttu-id="bb1ae-131">このような場合に**ラムダ式**が機能します。</span><span class="sxs-lookup"><span data-stu-id="bb1ae-131">This is where **lambda expressions** come into play.</span></span>
 
-ラムダ式 (または略して単に "ラムダ") は、最初に C# 3.0 で統合言語クエリ (LINQ) のコア ビルディング ブロックの 1 つとして導入されました。 これらは、デリゲートの使用の利便性を高める構文です。 これらは、シグネチャとメソッド本体を宣言しますが、デリゲートに割り当てられない限り、独自の正式な ID を持ちません。 デリゲートの場合とは異なり、これらはイベント登録の左側として、またはさまざまな Linq 句およびメソッドで、直接割り当てることができます。
+<span data-ttu-id="bb1ae-132">ラムダ式 (または略して単に "ラムダ") は、最初に C# 3.0 で統合言語クエリ (LINQ) のコア ビルディング ブロックの 1 つとして導入されました。</span><span class="sxs-lookup"><span data-stu-id="bb1ae-132">Lambda expressions, or just "lambdas" for short, were introduced first in C# 3.0, as one of the core building blocks of Language Integrated Query (LINQ).</span></span> <span data-ttu-id="bb1ae-133">これらは、デリゲートの使用の利便性を高める構文です。</span><span class="sxs-lookup"><span data-stu-id="bb1ae-133">They are just a more convenient syntax for using delegates.</span></span> <span data-ttu-id="bb1ae-134">これらは、シグネチャとメソッド本体を宣言しますが、デリゲートに割り当てられない限り、独自の正式な ID を持ちません。</span><span class="sxs-lookup"><span data-stu-id="bb1ae-134">They declare a signature and a method body, but don’t have an formal identity of their own, unless they are assigned to a delegate.</span></span> <span data-ttu-id="bb1ae-135">デリゲートの場合とは異なり、これらはイベント登録の左側として、またはさまざまな Linq 句およびメソッドで、直接割り当てることができます。</span><span class="sxs-lookup"><span data-stu-id="bb1ae-135">Unlike delegates, they can be directly assigned as the left-hand side of event registration or in various Linq clauses and methods.</span></span>
 
-ラムダ式はデリゲートを指定するもう 1 つの方法であるため、上記のサンプルを匿名デリゲートの代わりにラムダ式を使用するように書き換えることができるようになる必要があります。
+<span data-ttu-id="bb1ae-136">ラムダ式はデリゲートを指定するもう 1 つの方法であるため、上記のサンプルを匿名デリゲートの代わりにラムダ式を使用するように書き換えることができるようになる必要があります。</span><span class="sxs-lookup"><span data-stu-id="bb1ae-136">Since a lambda expression is just another way of specifying a delegate, we should be able to rewrite the above sample to use a lambda expression instead of an anonymous delegate.</span></span>
 
 ```csharp
 public class Program
@@ -136,9 +136,9 @@ public class Program
 }
 ```
 
-強調表示された行を見ると、ラムダ式がどのようなものかがわかります。 繰り返しますが、これは、匿名デリゲートの使用に**非常に**便利な構文であるため、内部での動作は匿名デリゲートの動作と似ています。
+<span data-ttu-id="bb1ae-137">強調表示された行を見ると、ラムダ式がどのようなものかがわかります。</span><span class="sxs-lookup"><span data-stu-id="bb1ae-137">If you take a look at the highlighted lines, you can see how a lambda expression looks like.</span></span> <span data-ttu-id="bb1ae-138">繰り返しますが、これは、匿名デリゲートの使用に**非常に**便利な構文であるため、内部での動作は匿名デリゲートの動作と似ています。</span><span class="sxs-lookup"><span data-stu-id="bb1ae-138">Again, it is just a **very** convenient syntax for using delegates, so what happens under the covers is similar to what happens with the anonymous delegate.</span></span>
 
-ここでも、ラムダは単なるデリゲートです。つまり、次のコード スニペットに示すように、ラムダは問題なくイベント ハンドラーとして使用することができます。
+<span data-ttu-id="bb1ae-139">ここでも、ラムダは単なるデリゲートです。つまり、次のコード スニペットに示すように、ラムダは問題なくイベント ハンドラーとして使用することができます。</span><span class="sxs-lookup"><span data-stu-id="bb1ae-139">Again, lambdas are just delegates, which means that they can be used as an event handler without any problems, as the following code snippet illustrates.</span></span>
 
 ```csharp
 public MainWindow()
@@ -152,9 +152,9 @@ public MainWindow()
 }
 ```
 
-## <a name="further-reading-and-resources"></a>参考資料とリソース
+## <a name="further-reading-and-resources"></a><span data-ttu-id="bb1ae-140">参考資料とリソース</span><span class="sxs-lookup"><span data-stu-id="bb1ae-140">Further reading and resources</span></span>
 
-*   [デリゲート](https://msdn.microsoft.com/library/ms173171.aspx)
-*   [匿名関数](https://msdn.microsoft.com/library/bb882516.aspx)
-*   [ラムダ式](https://msdn.microsoft.com/library/bb397687.aspx)
+*   [<span data-ttu-id="bb1ae-141">デリゲート</span><span class="sxs-lookup"><span data-stu-id="bb1ae-141">Delegates</span></span>](https://msdn.microsoft.com/library/ms173171.aspx)
+*   [<span data-ttu-id="bb1ae-142">匿名関数</span><span class="sxs-lookup"><span data-stu-id="bb1ae-142">Anonymous Functions</span></span>](https://msdn.microsoft.com/library/bb882516.aspx)
+*   [<span data-ttu-id="bb1ae-143">ラムダ式</span><span class="sxs-lookup"><span data-stu-id="bb1ae-143">Lambda expressions</span></span>](https://msdn.microsoft.com/library/bb397687.aspx)
 

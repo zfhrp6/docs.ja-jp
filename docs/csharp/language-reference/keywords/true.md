@@ -37,15 +37,15 @@ ms.contentlocale: ja-jp
 ms.lasthandoff: 07/28/2017
 
 ---
-# <a name="true-c-reference"></a>true (C# リファレンス)
-オーバーロードされた演算子またはリテラルとして使用:  
+# <a name="true-c-reference"></a><span data-ttu-id="00b7b-102">true (C# リファレンス)</span><span class="sxs-lookup"><span data-stu-id="00b7b-102">true (C# Reference)</span></span>
+<span data-ttu-id="00b7b-103">オーバーロードされた演算子またはリテラルとして使用:</span><span class="sxs-lookup"><span data-stu-id="00b7b-103">Used as an overloaded operator or as a literal:</span></span>  
   
- [true 演算子](../../../csharp/language-reference/keywords/true-operator.md)  
+ [<span data-ttu-id="00b7b-104">true 演算子</span><span class="sxs-lookup"><span data-stu-id="00b7b-104">true Operator</span></span>](../../../csharp/language-reference/keywords/true-operator.md)  
   
- [true リテラル](../../../csharp/language-reference/keywords/true-literal.md)  
+ [<span data-ttu-id="00b7b-105">true リテラル</span><span class="sxs-lookup"><span data-stu-id="00b7b-105">true Literal</span></span>](../../../csharp/language-reference/keywords/true-literal.md)  
   
-## <a name="see-also"></a>関連項目  
- [C# リファレンス](../../../csharp/language-reference/index.md)   
- [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
- [C# のキーワード](../../../csharp/language-reference/keywords/index.md)
+## <a name="see-also"></a><span data-ttu-id="00b7b-106">関連項目</span><span class="sxs-lookup"><span data-stu-id="00b7b-106">See Also</span></span>  
+ <span data-ttu-id="00b7b-107">[C# リファレンス](../../../csharp/language-reference/index.md) </span><span class="sxs-lookup"><span data-stu-id="00b7b-107">[C# Reference](../../../csharp/language-reference/index.md) </span></span>  
+ <span data-ttu-id="00b7b-108">[C# プログラミング ガイド](../../../csharp/programming-guide/index.md) </span><span class="sxs-lookup"><span data-stu-id="00b7b-108">[C# Programming Guide](../../../csharp/programming-guide/index.md) </span></span>  
+ [<span data-ttu-id="00b7b-109">C# のキーワード</span><span class="sxs-lookup"><span data-stu-id="00b7b-109">C# Keywords</span></span>](../../../csharp/language-reference/keywords/index.md)
 

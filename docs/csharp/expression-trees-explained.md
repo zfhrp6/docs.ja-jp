@@ -18,37 +18,37 @@ ms.lasthandoff: 07/28/2017
 
 ---
 
-# <a name="expression-trees-explained"></a>式ツリーの説明
+# <a name="expression-trees-explained"></a><span data-ttu-id="70009-104">式ツリーの説明</span><span class="sxs-lookup"><span data-stu-id="70009-104">Expression Trees Explained</span></span>
 
-[前回 -- 概要](expression-trees.md)
+[<span data-ttu-id="70009-105">前回 -- 概要</span><span class="sxs-lookup"><span data-stu-id="70009-105">Previous -- Overview</span></span>](expression-trees.md)
 
-式ツリーはコードを定義するデータ構造です。 式ツリーは、コードの分析とコンパイル済み出力の生成にコンパイラが使用する構造と同じ構造に基づいています。 このチュートリアルを読むと、式ツリーと、[Analyzers と CodeFixes](https://github.com/dotnet/roslyn-analyzers) の構築に Roslyn API で使用される型が似ている点が多くあることがわかります
-(Analyzers と CodeFixes は、コードに対して静的分析を実行し、開発者に修正案を示す機能がある NuGet パッケージです)。概念が似ており、最終的に、わかりやすい方法でソース コードを調査できるデータ構造になります。 ただし、式ツリーは Roslyn API とまったく異なるクラスと API のセットに基づいています。
+<span data-ttu-id="70009-106">式ツリーはコードを定義するデータ構造です。</span><span class="sxs-lookup"><span data-stu-id="70009-106">An Expression Tree is a data structure that defines code.</span></span> <span data-ttu-id="70009-107">式ツリーは、コードの分析とコンパイル済み出力の生成にコンパイラが使用する構造と同じ構造に基づいています。</span><span class="sxs-lookup"><span data-stu-id="70009-107">They are based on the same structures that a compiler uses to analyze code and generate the compiled output.</span></span> <span data-ttu-id="70009-108">このチュートリアルを読むと、式ツリーと、[Analyzers と CodeFixes](https://github.com/dotnet/roslyn-analyzers) の構築に Roslyn API で使用される型が似ている点が多くあることがわかります</span><span class="sxs-lookup"><span data-stu-id="70009-108">As you read through this tutorial, you will notice quite a bit of similarity between Expression Trees and the types used in the Roslyn APIs to build [Analyzers and CodeFixes](https://github.com/dotnet/roslyn-analyzers).</span></span>
+<span data-ttu-id="70009-109">(Analyzers と CodeFixes は、コードに対して静的分析を実行し、開発者に修正案を示す機能がある NuGet パッケージです)。概念が似ており、最終的に、わかりやすい方法でソース コードを調査できるデータ構造になります。</span><span class="sxs-lookup"><span data-stu-id="70009-109">(Analyzers and CodeFixes are NuGet packages that perform static analysis on code and can suggest potential fixes for a developer.) The concepts are similar, and the end result is a data structure that allows examination of the source code in a meaningful way.</span></span> <span data-ttu-id="70009-110">ただし、式ツリーは Roslyn API とまったく異なるクラスと API のセットに基づいています。</span><span class="sxs-lookup"><span data-stu-id="70009-110">However, Expression Trees are based on a totally different set of classes and APIs than the Roslyn APIs.</span></span>
     
-単純な例を見てみましょう。
-次のコードがあります。
+<span data-ttu-id="70009-111">単純な例を見てみましょう。</span><span class="sxs-lookup"><span data-stu-id="70009-111">Let's look at a simple example.</span></span>
+<span data-ttu-id="70009-112">次のコードがあります。</span><span class="sxs-lookup"><span data-stu-id="70009-112">Here's a line of code:</span></span>
 ```csharp
 var sum = 1 + 2;
 ```
-この式ツリーを分析すると、ツリーにはいくつかのノードが含まれています。
-最も外側のノードは、代入 (`var sum = 1 + 2;`) ありの変数宣言ステートメントです。この最も外側のノードには、いくつかの子ノードが含まれています。変数の宣言、代入演算子、そして等号の右側を表す式です。 この式は、さらに加算演算と加算の左右のオペランドを表す式に分割されます。
+<span data-ttu-id="70009-113">この式ツリーを分析すると、ツリーにはいくつかのノードが含まれています。</span><span class="sxs-lookup"><span data-stu-id="70009-113">If you were to analyze this as an expression tree, the tree contains several nodes.</span></span>
+<span data-ttu-id="70009-114">最も外側のノードは、代入 (`var sum = 1 + 2;`) ありの変数宣言ステートメントです。この最も外側のノードには、いくつかの子ノードが含まれています。変数の宣言、代入演算子、そして等号の右側を表す式です。</span><span class="sxs-lookup"><span data-stu-id="70009-114">The outermost node is a variable declaration statement with assignment (`var sum = 1 + 2;`) That outermost node contains several child nodes: a variable declaration, an assignment operator, and an expression representing the right hand side of the equals sign.</span></span> <span data-ttu-id="70009-115">この式は、さらに加算演算と加算の左右のオペランドを表す式に分割されます。</span><span class="sxs-lookup"><span data-stu-id="70009-115">That expression is further subdivided into expressions that represent the addition operation, and left and right operands of the addition.</span></span>
 
-等号の右側を構成する式を詳しく見てみましょう。
-式は `1 + 2` です。 これは二項式です。 具体的には、二項加算式です。 二項加算式には、加算式の左ノードと右ノードを表す 2 つの子があります。 ここでは、両方のノードは定数式です。左オペランドは値 `1`、右オペランドは値 `2` です。
+<span data-ttu-id="70009-116">等号の右側を構成する式を詳しく見てみましょう。</span><span class="sxs-lookup"><span data-stu-id="70009-116">Let's drill down a bit more into the expressions that make up the right side of the equals sign.</span></span>
+<span data-ttu-id="70009-117">式は `1 + 2` です。</span><span class="sxs-lookup"><span data-stu-id="70009-117">The expression is `1 + 2`.</span></span> <span data-ttu-id="70009-118">これは二項式です。</span><span class="sxs-lookup"><span data-stu-id="70009-118">That's a binary expression.</span></span> <span data-ttu-id="70009-119">具体的には、二項加算式です。</span><span class="sxs-lookup"><span data-stu-id="70009-119">More specifically, it's a binary addition expression.</span></span> <span data-ttu-id="70009-120">二項加算式には、加算式の左ノードと右ノードを表す 2 つの子があります。</span><span class="sxs-lookup"><span data-stu-id="70009-120">A binary addition expression has two children, representing the left and right nodes of the addition expression.</span></span> <span data-ttu-id="70009-121">ここでは、両方のノードは定数式です。左オペランドは値 `1`、右オペランドは値 `2` です。</span><span class="sxs-lookup"><span data-stu-id="70009-121">Here, both nodes are constant expressions: The left operand is the value `1`, and the right operand is the value `2`.</span></span>
 
-見た目では、ステートメント全体が 1 つのツリーです。ルート ノードから始めて、ツリーの各ノードをたどり、ステートメントを構成するコードを確認することができます。
+<span data-ttu-id="70009-122">見た目では、ステートメント全体が 1 つのツリーです。ルート ノードから始めて、ツリーの各ノードをたどり、ステートメントを構成するコードを確認することができます。</span><span class="sxs-lookup"><span data-stu-id="70009-122">Visually, the entire statement is a tree: You could start at the root node, and travel to each node in the tree to see the code that makes up the statement:</span></span>
 
-- 代入 (`var sum = 1 + 2;`) ありの変数宣言ステートメント
-    * 暗黙的な変数の型宣言 (`var sum`)
-        - 暗黙的な var キーワード (`var`)
-        - 変数名の宣言 (`sum`)
-    * 代入演算子 (`=`)
-    * 二項加算式 (`1 + 2`)
-        - 左オペランド (`1`)
-        - 加算演算子 (`+`)
-        - 右オペランド (`2`)
+- <span data-ttu-id="70009-123">代入 (`var sum = 1 + 2;`) ありの変数宣言ステートメント</span><span class="sxs-lookup"><span data-stu-id="70009-123">Variable declaration statement with assignment (`var sum = 1 + 2;`)</span></span>
+    * <span data-ttu-id="70009-124">暗黙的な変数の型宣言 (`var sum`)</span><span class="sxs-lookup"><span data-stu-id="70009-124">Implicit variable type declaration (`var sum`)</span></span>
+        - <span data-ttu-id="70009-125">暗黙的な var キーワード (`var`)</span><span class="sxs-lookup"><span data-stu-id="70009-125">Implicit var keyword (`var`)</span></span>
+        - <span data-ttu-id="70009-126">変数名の宣言 (`sum`)</span><span class="sxs-lookup"><span data-stu-id="70009-126">Variable name declaration (`sum`)</span></span>
+    * <span data-ttu-id="70009-127">代入演算子 (`=`)</span><span class="sxs-lookup"><span data-stu-id="70009-127">Assignment operator (`=`)</span></span>
+    * <span data-ttu-id="70009-128">二項加算式 (`1 + 2`)</span><span class="sxs-lookup"><span data-stu-id="70009-128">Binary addition expression (`1 + 2`)</span></span>
+        - <span data-ttu-id="70009-129">左オペランド (`1`)</span><span class="sxs-lookup"><span data-stu-id="70009-129">Left operand (`1`)</span></span>
+        - <span data-ttu-id="70009-130">加算演算子 (`+`)</span><span class="sxs-lookup"><span data-stu-id="70009-130">Addition operator (`+`)</span></span>
+        - <span data-ttu-id="70009-131">右オペランド (`2`)</span><span class="sxs-lookup"><span data-stu-id="70009-131">Right operand (`2`)</span></span>
 
-これは複雑に見えるかもしれませんが、とても強力です。 同じプロセスに従って、はるかに複雑な式を分解することができます。 次の式について考えます。
+<span data-ttu-id="70009-132">これは複雑に見えるかもしれませんが、とても強力です。</span><span class="sxs-lookup"><span data-stu-id="70009-132">This may look complicated, but it is very powerful.</span></span> <span data-ttu-id="70009-133">同じプロセスに従って、はるかに複雑な式を分解することができます。</span><span class="sxs-lookup"><span data-stu-id="70009-133">Following the same process, you can decompose much more complicated expressions.</span></span> <span data-ttu-id="70009-134">次の式について考えます。</span><span class="sxs-lookup"><span data-stu-id="70009-134">Consider this expression:</span></span>
 ```csharp
 var finalAnswer = this.SecretSauceFuncion(
     currentState.createInterimResult(), currentState.createSecondValue(1, 2),
@@ -56,23 +56,23 @@ var finalAnswer = this.SecretSauceFuncion(
     MoreSecretSauce('A', DateTime.Now, true);
 ```
 
-上の式も、代入ありの変数宣言です。
-この例では、代入の右側はとても複雑なツリーです。
-ここではこの式を分解しませんが、どのようなノードがあるかを考えてみてください。 現在のオブジェクトをレシーバーとして使用するメソッド呼び出しがあります。1 つは明示的な `this` レシーバーを持つものと、もう 1 つは持たないものです。 他のレシーバー オブジェクトを使用するメソッド呼び出しがあり、さまざまな型の定数の引数があります。 最後に、二項加算演算子があります。 `SecretSauceFunction()` または `MoreSecretSauce()` の戻り値の型にもよりますが、二項加算演算子がオーバーライドされた加算演算子のメソッド呼び出しになり、静的メソッド呼び出しがクラスに定義されている二項加算演算子に解決されることがあります。
+<span data-ttu-id="70009-135">上の式も、代入ありの変数宣言です。</span><span class="sxs-lookup"><span data-stu-id="70009-135">The expression above is also a variable declaration with an assignment.</span></span>
+<span data-ttu-id="70009-136">この例では、代入の右側はとても複雑なツリーです。</span><span class="sxs-lookup"><span data-stu-id="70009-136">In this instance, the right hand side of the assignment is a much more complicated tree.</span></span>
+<span data-ttu-id="70009-137">ここではこの式を分解しませんが、どのようなノードがあるかを考えてみてください。</span><span class="sxs-lookup"><span data-stu-id="70009-137">I'm not going to decompose this expression, but consider what the different nodes might be.</span></span> <span data-ttu-id="70009-138">現在のオブジェクトをレシーバーとして使用するメソッド呼び出しがあります。1 つは明示的な `this` レシーバーを持つものと、もう 1 つは持たないものです。</span><span class="sxs-lookup"><span data-stu-id="70009-138">There are method calls using the current object as a receiver, one that has an explicit `this` receiver, one that does not.</span></span> <span data-ttu-id="70009-139">他のレシーバー オブジェクトを使用するメソッド呼び出しがあり、さまざまな型の定数の引数があります。</span><span class="sxs-lookup"><span data-stu-id="70009-139">There are method calls using other receiver objects, there are constant arguments of different types.</span></span> <span data-ttu-id="70009-140">最後に、二項加算演算子があります。</span><span class="sxs-lookup"><span data-stu-id="70009-140">And finally, there is a binary addition operator.</span></span> <span data-ttu-id="70009-141">`SecretSauceFunction()` または `MoreSecretSauce()` の戻り値の型にもよりますが、二項加算演算子がオーバーライドされた加算演算子のメソッド呼び出しになり、静的メソッド呼び出しがクラスに定義されている二項加算演算子に解決されることがあります。</span><span class="sxs-lookup"><span data-stu-id="70009-141">Depending on the return type of `SecretSauceFunction()` or `MoreSecretSauce()`, that binary addition operator may be a method call to an overridden addition operator, resolving to a static method call to the binary addition operator defined for a class.</span></span>
 
-このような複雑さはありますが、上の式では、最初のサンプルと同じくらい簡単にたどることができるツリー構造が作成されます。 子ノードをたどっていくと、式内のリーフ ノードを見つけることができます。 親ノードには子への参照があり、各ノードにはノードの種類を説明するプロパティがあります。
+<span data-ttu-id="70009-142">このような複雑さはありますが、上の式では、最初のサンプルと同じくらい簡単にたどることができるツリー構造が作成されます。</span><span class="sxs-lookup"><span data-stu-id="70009-142">Despite this perceived complexity, the expression above creates a tree structure that can be navigated as easily as the first sample.</span></span> <span data-ttu-id="70009-143">子ノードをたどっていくと、式内のリーフ ノードを見つけることができます。</span><span class="sxs-lookup"><span data-stu-id="70009-143">You can keep traversing child nodes to find leaf nodes in the expression.</span></span> <span data-ttu-id="70009-144">親ノードには子への参照があり、各ノードにはノードの種類を説明するプロパティがあります。</span><span class="sxs-lookup"><span data-stu-id="70009-144">Parent nodes will have references to their children, and each node has a property that describes what kind of node it is.</span></span>
 
-式ツリーの構造には高い一貫性があります。 基本がわかると、非常に複雑なコードが式ツリーとして表された場合でも理解できるようになります。 データ構造が洗練されているので、C# コンパイラが非常に複雑な C# プログラムをどのように分析し、複雑なソース コードから正しい出力を生成できるかがわかります。
+<span data-ttu-id="70009-145">式ツリーの構造には高い一貫性があります。</span><span class="sxs-lookup"><span data-stu-id="70009-145">The structure of an expression tree is very consistent.</span></span> <span data-ttu-id="70009-146">基本がわかると、非常に複雑なコードが式ツリーとして表された場合でも理解できるようになります。</span><span class="sxs-lookup"><span data-stu-id="70009-146">Once you've learned the basics, you can understand even the most complex code when it is represented as an expression tree.</span></span> <span data-ttu-id="70009-147">データ構造が洗練されているので、C# コンパイラが非常に複雑な C# プログラムをどのように分析し、複雑なソース コードから正しい出力を生成できるかがわかります。</span><span class="sxs-lookup"><span data-stu-id="70009-147">The elegance in the data structure explains how the C# compiler can analyze the most complex C# programs and create proper output from that complicated source code.</span></span>
 
-式ツリーの構造に慣れると、その身につけた知識を他の高度なシナリオにもすぐに応用できるようになります。 式ツリーには優れた機能があります。
+<span data-ttu-id="70009-148">式ツリーの構造に慣れると、その身につけた知識を他の高度なシナリオにもすぐに応用できるようになります。</span><span class="sxs-lookup"><span data-stu-id="70009-148">Once you become familiar with the structure of expression trees, you will find that knowledge you've gained quickly enables you to work with many more and more advanced scenarios.</span></span> <span data-ttu-id="70009-149">式ツリーには優れた機能があります。</span><span class="sxs-lookup"><span data-stu-id="70009-149">There is incredible power to expression trees.</span></span>
 
-他の環境で実行されるアルゴリズムを変換するだけでなく、式ツリーを使用してコードの実行前に調査するアルゴリズムを簡単に作成できます。 引数が式のメソッドを作成し、その式を調査してからコードを実行できます。 式ツリーは、コード全体を表したものです。任意のサブ式の値を確認できます。
-メソッドとプロパティ名を確認できます。 定数式の値を確認できます。
-また、式ツリーを実行可能なデリゲートに変換し、コードを実行することもできます。
+<span data-ttu-id="70009-150">他の環境で実行されるアルゴリズムを変換するだけでなく、式ツリーを使用してコードの実行前に調査するアルゴリズムを簡単に作成できます。</span><span class="sxs-lookup"><span data-stu-id="70009-150">In addition to translating algorithms to execute in other environments, expression trees can be used to make it easier to write algorithms that inspect code before executing it.</span></span> <span data-ttu-id="70009-151">引数が式のメソッドを作成し、その式を調査してからコードを実行できます。</span><span class="sxs-lookup"><span data-stu-id="70009-151">You can write a method whose arguments are expressions and then examine those expressions before executing the code.</span></span> <span data-ttu-id="70009-152">式ツリーは、コード全体を表したものです。任意のサブ式の値を確認できます。</span><span class="sxs-lookup"><span data-stu-id="70009-152">The Expression Tree is a full representation of the code: you can see values of any sub-expression.</span></span>
+<span data-ttu-id="70009-153">メソッドとプロパティ名を確認できます。</span><span class="sxs-lookup"><span data-stu-id="70009-153">You can see method and property names.</span></span> <span data-ttu-id="70009-154">定数式の値を確認できます。</span><span class="sxs-lookup"><span data-stu-id="70009-154">You can see the value of any constant expressions.</span></span>
+<span data-ttu-id="70009-155">また、式ツリーを実行可能なデリゲートに変換し、コードを実行することもできます。</span><span class="sxs-lookup"><span data-stu-id="70009-155">You can also convert an expression tree into an executable delegate, and execute the code.</span></span>
 
-式ツリーの API を使用すると、ほぼすべての有効なコード コンストラクトを表すツリーを作成できます。 ただし、可能な限り単純にするために、式ツリーでは一部の C# の表現方法を作成できません。 たとえば、(`async` および `await` キーワードを使用する) 非同期式です。 非同期アルゴリズムが必要な場合は、コンパイラのサポートに頼らず、`Task` オブジェクトを直接操作する必要があります。 もう 1 つの例は、ループの作成時です。 通常、ループの作成には `for`、`foreach`、`while`、または `do` ループを使用します。 [このシリーズの後半](expression-trees-building.md)で説明しますが、式ツリーの API は、ループの繰り返しを制御する `break` 式と `continue` 式を使用した 1 つのループ式をサポートしています。
+<span data-ttu-id="70009-156">式ツリーの API を使用すると、ほぼすべての有効なコード コンストラクトを表すツリーを作成できます。</span><span class="sxs-lookup"><span data-stu-id="70009-156">The APIs for Expression Trees enable you to create trees that represent almost any valid code construct.</span></span> <span data-ttu-id="70009-157">ただし、可能な限り単純にするために、式ツリーでは一部の C# の表現方法を作成できません。</span><span class="sxs-lookup"><span data-stu-id="70009-157">However, to keep things as simple as possible, some C# idioms cannot be created in an expression tree.</span></span> <span data-ttu-id="70009-158">たとえば、(`async` および `await` キーワードを使用する) 非同期式です。</span><span class="sxs-lookup"><span data-stu-id="70009-158">One example is asynchronous expressions (using the `async` and `await` keywords).</span></span> <span data-ttu-id="70009-159">非同期アルゴリズムが必要な場合は、コンパイラのサポートに頼らず、`Task` オブジェクトを直接操作する必要があります。</span><span class="sxs-lookup"><span data-stu-id="70009-159">If your needs require asynchronous algorithms, you would need to manipulate the `Task` objects directly, rather than rely on the compiler support.</span></span> <span data-ttu-id="70009-160">もう 1 つの例は、ループの作成時です。</span><span class="sxs-lookup"><span data-stu-id="70009-160">Another is in creating loops.</span></span> <span data-ttu-id="70009-161">通常、ループの作成には `for`、`foreach`、`while`、または `do` ループを使用します。</span><span class="sxs-lookup"><span data-stu-id="70009-161">Typically, you create these by using `for`, `foreach`, `while` or `do` loops.</span></span> <span data-ttu-id="70009-162">[このシリーズの後半](expression-trees-building.md)で説明しますが、式ツリーの API は、ループの繰り返しを制御する `break` 式と `continue` 式を使用した 1 つのループ式をサポートしています。</span><span class="sxs-lookup"><span data-stu-id="70009-162">As you'll see [later in this series](expression-trees-building.md), the APIs for expression trees support a single loop expression, with `break` and `continue` expressions that control repeating the loop.</span></span>
 
-実行できないことの 1 つが式ツリーの変更です。  式ツリーは不変のデータ構造です。 式ツリーを変更するには、元の式ツリーのコピーに変更を加えた新しいツリーを作成する必要があります。 
+<span data-ttu-id="70009-163">実行できないことの 1 つが式ツリーの変更です。</span><span class="sxs-lookup"><span data-stu-id="70009-163">The one thing you can't do is modify an expression tree.</span></span>  <span data-ttu-id="70009-164">式ツリーは不変のデータ構造です。</span><span class="sxs-lookup"><span data-stu-id="70009-164">Expression Trees are immutable data structures.</span></span> <span data-ttu-id="70009-165">式ツリーを変更するには、元の式ツリーのコピーに変更を加えた新しいツリーを作成する必要があります。</span><span class="sxs-lookup"><span data-stu-id="70009-165">If you want to mutate (change) an expression tree, you must create a new tree that is a copy of the original, but with your desired changes.</span></span> 
 
-[次回 -- 式ツリーをサポートするフレームワークの型](expression-classes.md)
+[<span data-ttu-id="70009-166">次回 -- 式ツリーをサポートするフレームワークの型</span><span class="sxs-lookup"><span data-stu-id="70009-166">Next -- Framework Types Supporting Expression Trees</span></span>](expression-classes.md)
 

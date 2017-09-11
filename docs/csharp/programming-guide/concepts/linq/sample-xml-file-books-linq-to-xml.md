@@ -26,10 +26,10 @@ ms.contentlocale: ja-jp
 ms.lasthandoff: 07/28/2017
 
 ---
-# <a name="sample-xml-file-books-linq-to-xml"></a>サンプル XML ファイル : 書籍 (LINQ to XML)
-次の XML ファイルは、[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] ドキュメントのさまざまな例で使用されます。 このファイルには、書籍に関する情報が含まれています。  
+# <a name="sample-xml-file-books-linq-to-xml"></a><span data-ttu-id="b97dc-102">サンプル XML ファイル : 書籍 (LINQ to XML)</span><span class="sxs-lookup"><span data-stu-id="b97dc-102">Sample XML File: Books (LINQ to XML)</span></span>
+<span data-ttu-id="b97dc-103">次の XML ファイルは、[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] ドキュメントのさまざまな例で使用されます。</span><span class="sxs-lookup"><span data-stu-id="b97dc-103">The following XML file is used in various examples in the [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] documentation.</span></span> <span data-ttu-id="b97dc-104">このファイルには、書籍に関する情報が含まれています。</span><span class="sxs-lookup"><span data-stu-id="b97dc-104">The file contains information about books.</span></span>  
   
-## <a name="booksxml"></a>books.xml  
+## <a name="booksxml"></a><span data-ttu-id="b97dc-105">books.xml</span><span class="sxs-lookup"><span data-stu-id="b97dc-105">books.xml</span></span>  
   
 ```xml  
 <?xml version="1.0"?>  
@@ -56,6 +56,6 @@ ms.lasthandoff: 07/28/2017
 </Catalog>  
 ```  
   
-## <a name="see-also"></a>関連項目  
- [サンプル XML ドキュメント (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-documents-linq-to-xml.md)
+## <a name="see-also"></a><span data-ttu-id="b97dc-106">関連項目</span><span class="sxs-lookup"><span data-stu-id="b97dc-106">See Also</span></span>  
+ [<span data-ttu-id="b97dc-107">サンプル XML ドキュメント (LINQ to XML)</span><span class="sxs-lookup"><span data-stu-id="b97dc-107">Sample XML Documents (LINQ to XML)</span></span>](../../../../csharp/programming-guide/concepts/linq/sample-xml-documents-linq-to-xml.md)
 

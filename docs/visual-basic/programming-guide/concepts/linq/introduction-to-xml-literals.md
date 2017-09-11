@@ -20,21 +20,22 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 391dd14f971f91d4d128841a7ebd24981266846a
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
+ms.openlocfilehash: a3aff4755c23664153ce1dc0ec2df58a96d29c66
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/12/2017
 
 ---
-# <a name="introduction-to-xml-literals-in-visual-basic"></a>Visual Basic の XML リテラルの概要
-ここでは、[!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] での XML ツリーの作成について説明します。  
+# <a name="introduction-to-xml-literals-in-visual-basic"></a><span data-ttu-id="a97dd-102">Visual Basic の XML リテラルの概要</span><span class="sxs-lookup"><span data-stu-id="a97dd-102">Introduction to XML Literals in Visual Basic</span></span>
+<span data-ttu-id="a97dd-103">ここでは、[!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] での XML ツリーの作成について説明します。</span><span class="sxs-lookup"><span data-stu-id="a97dd-103">This section provides information about creating XML trees in [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)].</span></span>  
   
- LINQ クエリの結果をコンテンツとして XML ツリーの使用方法の詳細については、次を参照してください。[関数型構築 (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/functional-construction-linq-to-xml.md)します。  
+ <span data-ttu-id="a97dd-104">LINQ クエリの結果をコンテンツとして XML ツリーの使用方法の詳細については、次を参照してください。[関数型構築 (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/functional-construction-linq-to-xml.md)します。</span><span class="sxs-lookup"><span data-stu-id="a97dd-104">For information about using the results of LINQ queries as the content for an XML tree, see [Functional Construction (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/functional-construction-linq-to-xml.md).</span></span>  
   
- 詳細については、XML リテラルの[!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]を参照してください[概要の LINQ to Visual Basic で XML](../../../../visual-basic/programming-guide/language-features/xml/overview-of-linq-to-xml.md)します。  
+ <span data-ttu-id="a97dd-105">詳細については、XML リテラルの[!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]を参照してください[概要の LINQ to Visual Basic で XML](../../../../visual-basic/programming-guide/language-features/xml/overview-of-linq-to-xml.md)します。</span><span class="sxs-lookup"><span data-stu-id="a97dd-105">For more information on XML literals in [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)], see [Overview of LINQ to XML in Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/overview-of-linq-to-xml.md).</span></span>  
   
-## <a name="creating-xml-trees"></a>XML ツリーの作成  
- 次の例では、作成する方法、 <xref:System.Xml.Linq.XElement>、ここで`contacts`:</xref:System.Xml.Linq.XElement>  
+## <a name="creating-xml-trees"></a><span data-ttu-id="a97dd-106">XML ツリーの作成</span><span class="sxs-lookup"><span data-stu-id="a97dd-106">Creating XML Trees</span></span>  
+ <span data-ttu-id="a97dd-107">次の例では、作成する方法、 <xref:System.Xml.Linq.XElement>、ここで`contacts`:</xref:System.Xml.Linq.XElement></span><span class="sxs-lookup"><span data-stu-id="a97dd-107">The following example shows how to create an <xref:System.Xml.Linq.XElement>, in this case `contacts`:</span></span>  
   
 ```vb  
 Dim contacts As XElement = _  
@@ -52,42 +53,42 @@ Dim contacts As XElement = _
     </Contacts>  
 ```  
   
-### <a name="creating-an-xelement-with-simple-content"></a>単純コンテンツを持つ XElement の作成  
- 作成することができます、<xref:System.Xml.Linq.XElement>次のように、単純コンテンツを含む:</xref:System.Xml.Linq.XElement>  
+### <a name="creating-an-xelement-with-simple-content"></a><span data-ttu-id="a97dd-108">単純コンテンツを持つ XElement の作成</span><span class="sxs-lookup"><span data-stu-id="a97dd-108">Creating an XElement with Simple Content</span></span>  
+ <span data-ttu-id="a97dd-109">作成することができます、<xref:System.Xml.Linq.XElement>次のように、単純コンテンツを含む:</xref:System.Xml.Linq.XElement></span><span class="sxs-lookup"><span data-stu-id="a97dd-109">You can create an <xref:System.Xml.Linq.XElement> that contains simple content, as follows:</span></span>  
   
 ```vb  
 Dim n as XElement = <Customer>Adventure Works</Customer>  
 Console.WriteLine(n)   
 ```  
   
- この例を実行すると、次の出力が生成されます。  
+ <span data-ttu-id="a97dd-110">この例を実行すると、次の出力が生成されます。</span><span class="sxs-lookup"><span data-stu-id="a97dd-110">This example produces the following output:</span></span>  
   
 ```xml  
 <Customer>Adventure Works</Customer>  
 ```  
   
-### <a name="creating-an-empty-element"></a>空要素の作成  
- 空を作成する<xref:System.Xml.Linq.XElement>、次のように:</xref:System.Xml.Linq.XElement>  
+### <a name="creating-an-empty-element"></a><span data-ttu-id="a97dd-111">空要素の作成</span><span class="sxs-lookup"><span data-stu-id="a97dd-111">Creating an Empty Element</span></span>  
+ <span data-ttu-id="a97dd-112">空を作成する<xref:System.Xml.Linq.XElement>、次のように:</xref:System.Xml.Linq.XElement></span><span class="sxs-lookup"><span data-stu-id="a97dd-112">You can create an empty <xref:System.Xml.Linq.XElement>, as follows:</span></span>  
   
 ```vb  
 Dim n As XElement = <Customer/>  
 Console.WriteLine(n)  
 ```  
   
- この例を実行すると、次の出力が生成されます。  
+ <span data-ttu-id="a97dd-113">この例を実行すると、次の出力が生成されます。</span><span class="sxs-lookup"><span data-stu-id="a97dd-113">This example produces the following output:</span></span>  
   
 ```xml  
 <Customer />  
 ```  
   
-### <a name="using-embedded-expressions"></a>組み込み式の使用  
- XML リテラルの重要な機能は、組み込み式を利用できることです。 組み込み式を使用すると、式を評価してその式の結果を XML ツリーに挿入できます。 型に式が評価された場合に<xref:System.Xml.Linq.XElement>、要素がツリーに挿入します</xref:System.Xml.Linq.XElement>。 型に式が評価された場合に<xref:System.Xml.Linq.XAttribute>、属性がツリーに挿入します</xref:System.Xml.Linq.XAttribute>。 要素および属性は、それらが有効となるツリーにのみ挿入できます。  
+### <a name="using-embedded-expressions"></a><span data-ttu-id="a97dd-114">組み込み式の使用</span><span class="sxs-lookup"><span data-stu-id="a97dd-114">Using Embedded Expressions</span></span>  
+ <span data-ttu-id="a97dd-115">XML リテラルの重要な機能は、組み込み式を利用できることです。</span><span class="sxs-lookup"><span data-stu-id="a97dd-115">An important feature of XML literals is that they allow embedded expressions.</span></span> <span data-ttu-id="a97dd-116">組み込み式を使用すると、式を評価してその式の結果を XML ツリーに挿入できます。</span><span class="sxs-lookup"><span data-stu-id="a97dd-116">Embedded expressions enable you to evaluate an expression and insert the results of the expression into the XML tree.</span></span> <span data-ttu-id="a97dd-117">型に式が評価された場合に<xref:System.Xml.Linq.XElement>、要素がツリーに挿入します</xref:System.Xml.Linq.XElement>。</span><span class="sxs-lookup"><span data-stu-id="a97dd-117">If the expression evaluates to a type of <xref:System.Xml.Linq.XElement>, an element is inserted into the tree.</span></span> <span data-ttu-id="a97dd-118">型に式が評価された場合に<xref:System.Xml.Linq.XAttribute>、属性がツリーに挿入します</xref:System.Xml.Linq.XAttribute>。</span><span class="sxs-lookup"><span data-stu-id="a97dd-118">If the expression evaluates to a type of <xref:System.Xml.Linq.XAttribute>, an attribute is inserted into the tree.</span></span> <span data-ttu-id="a97dd-119">要素および属性は、それらが有効となるツリーにのみ挿入できます。</span><span class="sxs-lookup"><span data-stu-id="a97dd-119">You can insert elements and attributes into the tree only where they are valid.</span></span>  
   
- 組み込み式に含めることができるのは&1; つの式だけであることに注意してください。 複数のステートメントを組み込むことはできません。 式が複数の行にまたがる場合は、行連結文字を使用する必要があります。  
+ <span data-ttu-id="a97dd-120">組み込み式に含めることができるのは&1; つの式だけであることに注意してください。</span><span class="sxs-lookup"><span data-stu-id="a97dd-120">It is important to note that only a single expression can go into an embedded expression.</span></span> <span data-ttu-id="a97dd-121">複数のステートメントを組み込むことはできません。</span><span class="sxs-lookup"><span data-stu-id="a97dd-121">You cannot embed multiple statements.</span></span> <span data-ttu-id="a97dd-122">式が複数の行にまたがる場合は、行連結文字を使用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="a97dd-122">If an expression extends beyond a single line, you must use the line continuation character.</span></span>  
   
- 組み込み式を使用して既存のノード (要素を含む) や属性を新しい XML ツリーに追加する場合に、その既存のノードに既に親があるときは、ノードが複製されます。 新しく複製されたノードは、新しい XML ツリーにアタッチされます。 既存のノードに親がない場合は、単にノードが新しい XML ツリーにアタッチされます。 このトピックの最後の例では、この動作について説明します。  
+ <span data-ttu-id="a97dd-123">組み込み式を使用して既存のノード (要素を含む) や属性を新しい XML ツリーに追加する場合に、その既存のノードに既に親があるときは、ノードが複製されます。</span><span class="sxs-lookup"><span data-stu-id="a97dd-123">If you use an embedded expression to add existing nodes (including elements) and attributes to a new XML tree and if the existing nodes are already parented, the nodes are cloned.</span></span> <span data-ttu-id="a97dd-124">新しく複製されたノードは、新しい XML ツリーにアタッチされます。</span><span class="sxs-lookup"><span data-stu-id="a97dd-124">The newly cloned nodes are attached to the new XML tree.</span></span> <span data-ttu-id="a97dd-125">既存のノードに親がない場合は、単にノードが新しい XML ツリーにアタッチされます。</span><span class="sxs-lookup"><span data-stu-id="a97dd-125">If the existing nodes are not parented, the nodes are simply attached to the new XML tree.</span></span> <span data-ttu-id="a97dd-126">このトピックの最後の例では、この動作について説明します。</span><span class="sxs-lookup"><span data-stu-id="a97dd-126">The last example in this topic demonstrates this.</span></span>  
   
- 次の例では、組み込み式を使用して要素をツリーに挿入します。  
+ <span data-ttu-id="a97dd-127">次の例では、組み込み式を使用して要素をツリーに挿入します。</span><span class="sxs-lookup"><span data-stu-id="a97dd-127">The following example uses an embedded expression to insert an element into the tree:</span></span>  
   
 ```vb  
 xmlTree1 As XElement = _  
@@ -101,7 +102,7 @@ Dim xmlTree2 As XElement = _
 Console.WriteLine(xmlTree2)  
 ```  
   
- この例を実行すると、次の出力が生成されます。  
+ <span data-ttu-id="a97dd-128">この例を実行すると、次の出力が生成されます。</span><span class="sxs-lookup"><span data-stu-id="a97dd-128">This example produces the following output:</span></span>  
   
 ```xml  
 <Root>  
@@ -109,8 +110,8 @@ Console.WriteLine(xmlTree2)
 </Root>  
 ```  
   
-### <a name="using-embedded-expressions-for-content"></a>コンテンツに対する組み込み式の使用  
- 組み込み式を使用して要素のコンテンツを指定できます。  
+### <a name="using-embedded-expressions-for-content"></a><span data-ttu-id="a97dd-129">コンテンツに対する組み込み式の使用</span><span class="sxs-lookup"><span data-stu-id="a97dd-129">Using Embedded Expressions for Content</span></span>  
+ <span data-ttu-id="a97dd-130">組み込み式を使用して要素のコンテンツを指定できます。</span><span class="sxs-lookup"><span data-stu-id="a97dd-130">You can use an embedded expression to supply the content of an element:</span></span>  
   
 ```vb  
 Dim str As String  
@@ -119,14 +120,14 @@ Dim root As XElement = <Root><%= str %></Root>
 Console.WriteLine(root)  
 ```  
   
- この例を実行すると、次の出力が生成されます。  
+ <span data-ttu-id="a97dd-131">この例を実行すると、次の出力が生成されます。</span><span class="sxs-lookup"><span data-stu-id="a97dd-131">This example produces the following output:</span></span>  
   
 ```xml  
 <Root>Some content</Root>  
 ```  
   
-### <a name="using-a-linq-query-in-an-embedded-expression"></a>組み込み式での LINQ クエリの使用  
- 要素のコンテンツに対する LINQ クエリの結果を使用できます。  
+### <a name="using-a-linq-query-in-an-embedded-expression"></a><span data-ttu-id="a97dd-132">組み込み式での LINQ クエリの使用</span><span class="sxs-lookup"><span data-stu-id="a97dd-132">Using a LINQ Query in an Embedded Expression</span></span>  
+ <span data-ttu-id="a97dd-133">要素のコンテンツに対する LINQ クエリの結果を使用できます。</span><span class="sxs-lookup"><span data-stu-id="a97dd-133">You can use the results of a LINQ query for the content of an element:</span></span>  
   
 ```vb  
 Dim arr As Integer() = {1, 2, 3}  
@@ -139,7 +140,7 @@ Dim n As XElement = _
 Console.WriteLine(n)  
 ```  
   
- この例を実行すると、次の出力が生成されます。  
+ <span data-ttu-id="a97dd-134">この例を実行すると、次の出力が生成されます。</span><span class="sxs-lookup"><span data-stu-id="a97dd-134">This example produces the following output:</span></span>  
   
 ```xml  
 <Root>  
@@ -149,8 +150,8 @@ Console.WriteLine(n)
 </Root>  
 ```  
   
-### <a name="using-embedded-expressions-for-node-names"></a>ノード名に対する組み込み式の使用  
- 組み込み式を使用して、属性名、属性値、要素名、および要素値を計算することもできます。  
+### <a name="using-embedded-expressions-for-node-names"></a><span data-ttu-id="a97dd-135">ノード名に対する組み込み式の使用</span><span class="sxs-lookup"><span data-stu-id="a97dd-135">Using Embedded Expressions for Node Names</span></span>  
+ <span data-ttu-id="a97dd-136">組み込み式を使用して、属性名、属性値、要素名、および要素値を計算することもできます。</span><span class="sxs-lookup"><span data-stu-id="a97dd-136">You can also use embedded expressions to calculate attribute names, attribute values, element names, and element values:</span></span>  
   
 ```vb  
 Dim eleName As String = "ele"  
@@ -166,7 +167,7 @@ Dim n As XElement = _
 Console.WriteLine(n)  
 ```  
   
- この例を実行すると、次の出力が生成されます。  
+ <span data-ttu-id="a97dd-137">この例を実行すると、次の出力が生成されます。</span><span class="sxs-lookup"><span data-stu-id="a97dd-137">This example produces the following output:</span></span>  
   
 ```xml  
 <Root att="aValue">  
@@ -174,8 +175,8 @@ Console.WriteLine(n)
 </Root>  
 ```  
   
-### <a name="cloning-vs-attaching"></a>複製とアタッチ  
- 既に説明したとおり、組み込み式を使用して既存のノード (要素を含む) や属性を新しい XML ツリーに追加する場合に、その既存のノードに既に親があるときは、ノードが複製され、新しく複製されたノードが新しい XML ツリーにアタッチされます。 既存のノードに親がない場合は、単にノードが新しい XML ツリーにアタッチされます。  
+### <a name="cloning-vs-attaching"></a><span data-ttu-id="a97dd-138">複製とアタッチ</span><span class="sxs-lookup"><span data-stu-id="a97dd-138">Cloning vs. Attaching</span></span>  
+ <span data-ttu-id="a97dd-139">既に説明したとおり、組み込み式を使用して既存のノード (要素を含む) や属性を新しい XML ツリーに追加する場合に、その既存のノードに既に親があるときは、ノードが複製され、新しく複製されたノードが新しい XML ツリーにアタッチされます。</span><span class="sxs-lookup"><span data-stu-id="a97dd-139">As mentioned earlier, if you use an embedded expression to add existing nodes (including elements) and attributes to a new XML tree, if the existing nodes are already parented, the nodes are cloned and the newly cloned nodes are attached to the new XML tree.</span></span> <span data-ttu-id="a97dd-140">既存のノードに親がない場合は、単にノードが新しい XML ツリーにアタッチされます。</span><span class="sxs-lookup"><span data-stu-id="a97dd-140">If the existing nodes are not parented, they are simply attached to the new XML tree.</span></span>  
   
 ```vb  
 ' Create a tree with a child element.  
@@ -205,12 +206,12 @@ Console.WriteLine("Child2 was {0}", _
     "attached", "cloned"))  
 ```  
   
- この例を実行すると、次の出力が生成されます。  
+ <span data-ttu-id="a97dd-141">この例を実行すると、次の出力が生成されます。</span><span class="sxs-lookup"><span data-stu-id="a97dd-141">This example produces the following output:</span></span>  
   
 ```  
 Child1 was cloned  
 Child2 was attached  
 ```  
   
-## <a name="see-also"></a>関連項目  
- [XML ツリー (Visual Basic) の作成](../../../../visual-basic/programming-guide/concepts/linq/creating-xml-trees.md)
+## <a name="see-also"></a><span data-ttu-id="a97dd-142">関連項目</span><span class="sxs-lookup"><span data-stu-id="a97dd-142">See Also</span></span>  
+ [<span data-ttu-id="a97dd-143">XML ツリー (Visual Basic) の作成</span><span class="sxs-lookup"><span data-stu-id="a97dd-143">Creating XML Trees (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/creating-xml-trees.md)

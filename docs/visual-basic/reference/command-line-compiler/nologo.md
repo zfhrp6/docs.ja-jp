@@ -32,34 +32,35 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: a0e309a80082f19fb47ccbbb43c00f22c8addd3b
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
+ms.openlocfilehash: fe03c36f46717248269c9aaec13b40569161b0e0
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/12/2017
 
 ---
-# <a name="nologo-visual-basic"></a>/nologo (Visual Basic)
-コンパイル時に著作権画面を表示および情報メッセージの表示を抑制します。  
+# <a name="nologo-visual-basic"></a><span data-ttu-id="e4c68-102">/nologo (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="e4c68-102">/nologo (Visual Basic)</span></span>
+<span data-ttu-id="e4c68-103">コンパイル時に著作権画面を表示および情報メッセージの表示を抑制します。</span><span class="sxs-lookup"><span data-stu-id="e4c68-103">Suppresses display of the copyright banner and informational messages during compilation.</span></span>  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a><span data-ttu-id="e4c68-104">構文</span><span class="sxs-lookup"><span data-stu-id="e4c68-104">Syntax</span></span>  
   
 ```  
 /nologo  
 ```  
   
-## <a name="remarks"></a>コメント  
- 指定した場合`/nologo`コンパイラでは、著作権画面は表示されません。 既定では、`/nologo` は無効です。  
+## <a name="remarks"></a><span data-ttu-id="e4c68-105">コメント</span><span class="sxs-lookup"><span data-stu-id="e4c68-105">Remarks</span></span>  
+ <span data-ttu-id="e4c68-106">指定した場合`/nologo`コンパイラでは、著作権画面は表示されません。</span><span class="sxs-lookup"><span data-stu-id="e4c68-106">If you specify `/nologo`, the compiler does not display a copyright banner.</span></span> <span data-ttu-id="e4c68-107">既定では、`/nologo` は無効です。</span><span class="sxs-lookup"><span data-stu-id="e4c68-107">By default, `/nologo` is not in effect.</span></span>  
   
 > [!NOTE]
->  `/nologo`オプションは、Visual Studio 開発環境内から使用できません。 コマンドラインからコンパイルする場合だけに利用可能になります。  
+>  <span data-ttu-id="e4c68-108">`/nologo`オプションは、Visual Studio 開発環境内から使用できません。 コマンドラインからコンパイルする場合だけに利用可能になります。</span><span class="sxs-lookup"><span data-stu-id="e4c68-108">The `/nologo` option is not available from within the Visual Studio development environment; it is available only when compiling from the command line.</span></span>  
   
-## <a name="example"></a>例  
- 次のコードのコンパイル`T2.vb`著作権バナーに表示されていません。  
+## <a name="example"></a><span data-ttu-id="e4c68-109">例</span><span class="sxs-lookup"><span data-stu-id="e4c68-109">Example</span></span>  
+ <span data-ttu-id="e4c68-110">次のコードのコンパイル`T2.vb`著作権バナーに表示されていません。</span><span class="sxs-lookup"><span data-stu-id="e4c68-110">The following code compiles `T2.vb` and does not display a copyright banner.</span></span>  
   
 ```  
 vbc /nologo t2.vb  
 ```  
   
-## <a name="see-also"></a>関連項目  
- [Visual Basic のコマンド ライン コンパイラ](../../../visual-basic/reference/command-line-compiler/index.md)   
- [コンパイル コマンド ラインのサンプル](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)
+## <a name="see-also"></a><span data-ttu-id="e4c68-111">関連項目</span><span class="sxs-lookup"><span data-stu-id="e4c68-111">See Also</span></span>  
+ <span data-ttu-id="e4c68-112">[Visual Basic のコマンド ライン コンパイラ](../../../visual-basic/reference/command-line-compiler/index.md) </span><span class="sxs-lookup"><span data-stu-id="e4c68-112">[Visual Basic Command-Line Compiler](../../../visual-basic/reference/command-line-compiler/index.md) </span></span>  
+<span data-ttu-id="e4c68-113"> [コンパイル コマンド ラインのサンプル](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)</span><span class="sxs-lookup"><span data-stu-id="e4c68-113"> [Sample Compilation Command Lines](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)</span></span>

@@ -20,16 +20,17 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: e68f891bc0d6bc1368bc826e4a2fb9d49489d4a1
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
+ms.openlocfilehash: 2586813bd1709ab998b0bc64a19440d67c273704
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/12/2017
 
 ---
-# <a name="sample-xml-file-multiple-purchase-orders-linq-to-xml"></a>サンプル XML ファイル : 複数の購買発注書 (LINQ to XML)
-次の XML ファイルは、[!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)] ドキュメントのさまざまな例で使用されます。 このファイルには、複数の購買発注書が含まれています。  
+# <a name="sample-xml-file-multiple-purchase-orders-linq-to-xml"></a><span data-ttu-id="4dfe1-102">サンプル XML ファイル : 複数の購買発注書 (LINQ to XML)</span><span class="sxs-lookup"><span data-stu-id="4dfe1-102">Sample XML File: Multiple Purchase Orders (LINQ to XML)</span></span>
+<span data-ttu-id="4dfe1-103">次の XML ファイルは、[!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)] ドキュメントのさまざまな例で使用されます。</span><span class="sxs-lookup"><span data-stu-id="4dfe1-103">The following XML file is used in various examples in the [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)] documentation.</span></span> <span data-ttu-id="4dfe1-104">このファイルには、複数の購買発注書が含まれています。</span><span class="sxs-lookup"><span data-stu-id="4dfe1-104">This file contains several purchase orders.</span></span>  
   
-## <a name="purchaseordersxml"></a>PurchaseOrders.xml  
+## <a name="purchaseordersxml"></a><span data-ttu-id="4dfe1-105">PurchaseOrders.xml</span><span class="sxs-lookup"><span data-stu-id="4dfe1-105">PurchaseOrders.xml</span></span>  
   
 ```xml  
 <?xml version="1.0"?>  
@@ -126,5 +127,5 @@ ms.lasthandoff: 03/13/2017
 </PurchaseOrders>  
 ```  
   
-## <a name="see-also"></a>関連項目  
- [サンプル XML ドキュメント (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-documents-linq-to-xml.md)
+## <a name="see-also"></a><span data-ttu-id="4dfe1-106">関連項目</span><span class="sxs-lookup"><span data-stu-id="4dfe1-106">See Also</span></span>  
+ [<span data-ttu-id="4dfe1-107">サンプル XML ドキュメント (LINQ to XML)</span><span class="sxs-lookup"><span data-stu-id="4dfe1-107">Sample XML Documents (LINQ to XML)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-documents-linq-to-xml.md)

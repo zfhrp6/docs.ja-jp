@@ -1,1 +1,1 @@
-被制御シーケンス内の要素の型。
+<span data-ttu-id="6c8c0-101">被制御シーケンス内の要素の型。</span><span class="sxs-lookup"><span data-stu-id="6c8c0-101">The type of an element in the controlled sequence.</span></span>

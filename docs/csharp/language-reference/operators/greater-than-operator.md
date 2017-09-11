@@ -37,18 +37,18 @@ ms.contentlocale: ja-jp
 ms.lasthandoff: 07/28/2017
 
 ---
-# <a name="gt-operator-c-reference"></a>&gt; 演算子 (C# リファレンス)
-すべての数値型と列挙型で "より大きい" 関係演算子 (`>`) が定義されます。これは、最初のオペランドが 2 番目のオペランドより大きい場合に `true` を返し、それ以外の場合、`false` を返します。  
+# <a name="gt-operator-c-reference"></a><span data-ttu-id="887be-102">&gt; 演算子 (C# リファレンス)</span><span class="sxs-lookup"><span data-stu-id="887be-102">&gt; Operator (C# Reference)</span></span>
+<span data-ttu-id="887be-103">すべての数値型と列挙型で "より大きい" 関係演算子 (`>`) が定義されます。これは、最初のオペランドが 2 番目のオペランドより大きい場合に `true` を返し、それ以外の場合、`false` を返します。</span><span class="sxs-lookup"><span data-stu-id="887be-103">All numeric and enumeration types define a "greater than" relational operator (`>`) that returns `true` if the first operand is greater than the second, `false` otherwise.</span></span>  
   
-## <a name="remarks"></a>コメント  
- ユーザー定義型は `>` 演算子をオーバーロードできます (「[演算子](../../../csharp/language-reference/keywords/operator.md)」を参照)。 `>` をオーバーロードする場合は、[<](../../../csharp/language-reference/operators/less-than-operator.md) もオーバーロードする必要があります。 二項演算子をオーバーロードすると、対応する代入演算子がある場合、これも暗黙的にオーバーロードされます。  
+## <a name="remarks"></a><span data-ttu-id="887be-104">コメント</span><span class="sxs-lookup"><span data-stu-id="887be-104">Remarks</span></span>  
+ <span data-ttu-id="887be-105">ユーザー定義型は `>` 演算子をオーバーロードできます (「[演算子](../../../csharp/language-reference/keywords/operator.md)」を参照)。</span><span class="sxs-lookup"><span data-stu-id="887be-105">User-defined types can overload the `>` operator (see [operator](../../../csharp/language-reference/keywords/operator.md)).</span></span> <span data-ttu-id="887be-106">`>` をオーバーロードする場合は、[<](../../../csharp/language-reference/operators/less-than-operator.md) もオーバーロードする必要があります。</span><span class="sxs-lookup"><span data-stu-id="887be-106">If `>` is overloaded, [<](../../../csharp/language-reference/operators/less-than-operator.md) must also be overloaded.</span></span> <span data-ttu-id="887be-107">二項演算子をオーバーロードすると、対応する代入演算子がある場合、これも暗黙的にオーバーロードされます。</span><span class="sxs-lookup"><span data-stu-id="887be-107">When a binary operator is overloaded, the corresponding assignment operator, if any, is also implicitly overloaded.</span></span>  
   
-## <a name="example"></a>例  
- [!code-cs[csRefOperators#29](../../../csharp/language-reference/operators/codesnippet/CSharp/greater-than-operator_1.cs)]  
+## <a name="example"></a><span data-ttu-id="887be-108">例</span><span class="sxs-lookup"><span data-stu-id="887be-108">Example</span></span>  
+ <span data-ttu-id="887be-109">[!code-cs[csRefOperators#29](../../../csharp/language-reference/operators/codesnippet/CSharp/greater-than-operator_1.cs)]</span><span class="sxs-lookup"><span data-stu-id="887be-109">[!code-cs[csRefOperators#29](../../../csharp/language-reference/operators/codesnippet/CSharp/greater-than-operator_1.cs)]</span></span>  
   
-## <a name="see-also"></a>関連項目  
- [C# リファレンス](../../../csharp/language-reference/index.md)   
- [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
- [C# 演算子](../../../csharp/language-reference/operators/index.md)   
- [explicit](../../../csharp/language-reference/keywords/explicit.md)
+## <a name="see-also"></a><span data-ttu-id="887be-110">関連項目</span><span class="sxs-lookup"><span data-stu-id="887be-110">See Also</span></span>  
+ <span data-ttu-id="887be-111">[C# リファレンス](../../../csharp/language-reference/index.md) </span><span class="sxs-lookup"><span data-stu-id="887be-111">[C# Reference](../../../csharp/language-reference/index.md) </span></span>  
+ <span data-ttu-id="887be-112">[C# プログラミング ガイド](../../../csharp/programming-guide/index.md) </span><span class="sxs-lookup"><span data-stu-id="887be-112">[C# Programming Guide](../../../csharp/programming-guide/index.md) </span></span>  
+ <span data-ttu-id="887be-113">[C# 演算子](../../../csharp/language-reference/operators/index.md) </span><span class="sxs-lookup"><span data-stu-id="887be-113">[C# Operators](../../../csharp/language-reference/operators/index.md) </span></span>  
+ [<span data-ttu-id="887be-114">explicit</span><span class="sxs-lookup"><span data-stu-id="887be-114">explicit</span></span>](../../../csharp/language-reference/keywords/explicit.md)
 

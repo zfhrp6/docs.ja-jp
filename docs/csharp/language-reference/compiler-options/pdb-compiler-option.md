@@ -38,34 +38,34 @@ ms.contentlocale: ja-jp
 ms.lasthandoff: 07/28/2017
 
 ---
-# <a name="pdb-c-compiler-options"></a>/pdb (C# コンパイラ オプション)
-**/pdb** コンパイラ オプションは、デバッグ シンボル ファイルの場所と名前を指定します。  
+# <a name="pdb-c-compiler-options"></a><span data-ttu-id="4b1b0-102">/pdb (C# コンパイラ オプション)</span><span class="sxs-lookup"><span data-stu-id="4b1b0-102">/pdb (C# Compiler Options)</span></span>
+<span data-ttu-id="4b1b0-103">**/pdb** コンパイラ オプションは、デバッグ シンボル ファイルの場所と名前を指定します。</span><span class="sxs-lookup"><span data-stu-id="4b1b0-103">The **/pdb** compiler option specifies the name and location of the debug symbols file.</span></span>  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a><span data-ttu-id="4b1b0-104">構文</span><span class="sxs-lookup"><span data-stu-id="4b1b0-104">Syntax</span></span>  
   
 ```console  
 /pdb:filename  
 ```  
   
-## <a name="arguments"></a>引数  
+## <a name="arguments"></a><span data-ttu-id="4b1b0-105">引数</span><span class="sxs-lookup"><span data-stu-id="4b1b0-105">Arguments</span></span>  
  `filename`  
- デバッグ シンボル ファイルの名前と場所です。  
+ <span data-ttu-id="4b1b0-106">デバッグ シンボル ファイルの名前と場所です。</span><span class="sxs-lookup"><span data-stu-id="4b1b0-106">The name and location of the debug symbols file.</span></span>  
   
-## <a name="remarks"></a>コメント  
- [/debug (C# コンパイラ オプション)](../../../csharp/language-reference/compiler-options/debug-compiler-option.md) を指定すると、コンパイラは、コンパイラが出力ファイル (.exe または .dll) を作成するのと同じディレクトリに、出力ファイルと同じ名前のファイル名で .pdb ファイルを作成します。  
+## <a name="remarks"></a><span data-ttu-id="4b1b0-107">コメント</span><span class="sxs-lookup"><span data-stu-id="4b1b0-107">Remarks</span></span>  
+ <span data-ttu-id="4b1b0-108">[/debug (C# コンパイラ オプション)](../../../csharp/language-reference/compiler-options/debug-compiler-option.md) を指定すると、コンパイラは、コンパイラが出力ファイル (.exe または .dll) を作成するのと同じディレクトリに、出力ファイルと同じ名前のファイル名で .pdb ファイルを作成します。</span><span class="sxs-lookup"><span data-stu-id="4b1b0-108">When you specify [/debug (C# Compiler Options)](../../../csharp/language-reference/compiler-options/debug-compiler-option.md), the compiler will create a .pdb file in the same directory where the compiler will create the output file (.exe or .dll) with a file name that is the same as the name of the output file.</span></span>  
   
- **/pdb** では、.pdb ファイルに対し、既定以外のファイル名と場所を指定することができます。  
+ <span data-ttu-id="4b1b0-109">**/pdb** では、.pdb ファイルに対し、既定以外のファイル名と場所を指定することができます。</span><span class="sxs-lookup"><span data-stu-id="4b1b0-109">**/pdb** allows you to specify a non-default file name and location for the .pdb file.</span></span>  
   
- このコンパイラ オプションは、Visual Studio 開発環境で設定することはできません。また、プログラムで変更することもできません。  
+ <span data-ttu-id="4b1b0-110">このコンパイラ オプションは、Visual Studio 開発環境で設定することはできません。また、プログラムで変更することもできません。</span><span class="sxs-lookup"><span data-stu-id="4b1b0-110">This compiler option cannot be set in the Visual Studio development environment, nor can it be changed programmatically.</span></span>  
   
-## <a name="example"></a>例  
- `t.cs` をコンパイルして、tt.pdb と呼ばれる .pdb ファイルを作成します。  
+## <a name="example"></a><span data-ttu-id="4b1b0-111">例</span><span class="sxs-lookup"><span data-stu-id="4b1b0-111">Example</span></span>  
+ <span data-ttu-id="4b1b0-112">`t.cs` をコンパイルして、tt.pdb と呼ばれる .pdb ファイルを作成します。</span><span class="sxs-lookup"><span data-stu-id="4b1b0-112">Compile `t.cs` and create a .pdb file called tt.pdb:</span></span>  
   
 ```console  
 csc /debug /pdb:tt t.cs  
 ```  
   
-## <a name="see-also"></a>関連項目  
- [C# コンパイラのオプション](../../../csharp/language-reference/compiler-options/index.md)   
- [プロジェクトおよびソリューションのプロパティの管理](/visualstudio/ide/managing-project-and-solution-properties)
+## <a name="see-also"></a><span data-ttu-id="4b1b0-113">関連項目</span><span class="sxs-lookup"><span data-stu-id="4b1b0-113">See Also</span></span>  
+ <span data-ttu-id="4b1b0-114">[C# コンパイラのオプション](../../../csharp/language-reference/compiler-options/index.md) </span><span class="sxs-lookup"><span data-stu-id="4b1b0-114">[C# Compiler Options](../../../csharp/language-reference/compiler-options/index.md) </span></span>  
+ [<span data-ttu-id="4b1b0-115">プロジェクトおよびソリューションのプロパティの管理</span><span class="sxs-lookup"><span data-stu-id="4b1b0-115">Managing Project and Solution Properties</span></span>](/visualstudio/ide/managing-project-and-solution-properties)
 

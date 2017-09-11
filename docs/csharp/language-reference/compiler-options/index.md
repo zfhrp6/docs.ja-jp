@@ -40,33 +40,33 @@ ms.contentlocale: ja-jp
 ms.lasthandoff: 08/28/2017
 
 ---
-# <a name="c-compiler-options"></a>C# コンパイラ オプション
-コンパイラは、実行可能ファイル (.exe)、ダイナミック リンク ライブラリ (.dll)、またはコード モジュール (.netmodule) を生成します。  
+# <a name="c-compiler-options"></a><span data-ttu-id="7c63d-102">C# コンパイラ オプション</span><span class="sxs-lookup"><span data-stu-id="7c63d-102">C# Compiler Options</span></span>
+<span data-ttu-id="7c63d-103">コンパイラは、実行可能ファイル (.exe)、ダイナミック リンク ライブラリ (.dll)、またはコード モジュール (.netmodule) を生成します。</span><span class="sxs-lookup"><span data-stu-id="7c63d-103">The compiler produces executable (.exe) files, dynamic-link libraries (.dll), or code modules (.netmodule).</span></span>  
   
- すべてのコンパイル オプションは、**-option** および **/option** という 2 つの形で使用できます。 このドキュメントでは、**/option** のみを示しています。  
+ <span data-ttu-id="7c63d-104">すべてのコンパイル オプションは、**-option** および **/option** という 2 つの形で使用できます。</span><span class="sxs-lookup"><span data-stu-id="7c63d-104">Every compiler option is available in two forms: **-option** and **/option**.</span></span> <span data-ttu-id="7c63d-105">このドキュメントでは、**/option** のみを示しています。</span><span class="sxs-lookup"><span data-stu-id="7c63d-105">The documentation only shows the **/option** form.</span></span>  
   
- Visual Web Developer 2008 では、コンパイラ オプションは web.config ファイルに設定します。 詳細については、「[\<compiler> 要素](https://msdn.microsoft.com/library/y9x69bzw)」を参照してください。  
+ <span data-ttu-id="7c63d-106">Visual Web Developer 2008 では、コンパイラ オプションは web.config ファイルに設定します。</span><span class="sxs-lookup"><span data-stu-id="7c63d-106">In Visual Web Developer 2008, you set compiler options in the web.config file.</span></span> <span data-ttu-id="7c63d-107">詳細については、「[\<compiler> 要素](https://msdn.microsoft.com/library/y9x69bzw)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="7c63d-107">For more information, see [\<compiler> Element](https://msdn.microsoft.com/library/y9x69bzw).</span></span>  
   
-## <a name="in-this-section"></a>このセクションの内容  
- [csc.exe を使用したコマンド ラインからのビルド](../../../csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md)  
- コマンドラインからの Visual C# アプリケーションの構築に関する情報を提供します。  
+## <a name="in-this-section"></a><span data-ttu-id="7c63d-108">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="7c63d-108">In This Section</span></span>  
+ [<span data-ttu-id="7c63d-109">csc.exe を使用したコマンド ラインからのビルド</span><span class="sxs-lookup"><span data-stu-id="7c63d-109">Command-line Building With csc.exe</span></span>](../../../csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md)  
+ <span data-ttu-id="7c63d-110">コマンドラインからの Visual C# アプリケーションの構築に関する情報を提供します。</span><span class="sxs-lookup"><span data-stu-id="7c63d-110">Information about building a Visual C# application from the command line.</span></span>  
   
- [方法: Visual Studio のコマンドラインのための環境変数を設定する](../../../csharp/language-reference/compiler-options/how-to-set-environment-variables-for-the-visual-studio-command-line.md)  
- vsvars32.bat を実行してコマンドライン ビルドを有効にするための手順について説明します。  
+ [<span data-ttu-id="7c63d-111">方法: Visual Studio のコマンドラインのための環境変数を設定する</span><span class="sxs-lookup"><span data-stu-id="7c63d-111">How to: Set Environment Variables for the Visual Studio Command Line</span></span>](../../../csharp/language-reference/compiler-options/how-to-set-environment-variables-for-the-visual-studio-command-line.md)  
+ <span data-ttu-id="7c63d-112">vsvars32.bat を実行してコマンドライン ビルドを有効にするための手順について説明します。</span><span class="sxs-lookup"><span data-stu-id="7c63d-112">Provides steps for running vsvars32.bat  to enable command-line builds.</span></span>  
   
- [カテゴリ別の C# コンパイラ オプションの一覧](../../../csharp/language-reference/compiler-options/listed-by-category.md)  
- コンパイラ オプションのカテゴリ別の一覧です。  
+ [<span data-ttu-id="7c63d-113">カテゴリ別の C# コンパイラ オプションの一覧</span><span class="sxs-lookup"><span data-stu-id="7c63d-113">C# Compiler Options Listed by Category</span></span>](../../../csharp/language-reference/compiler-options/listed-by-category.md)  
+ <span data-ttu-id="7c63d-114">コンパイラ オプションのカテゴリ別の一覧です。</span><span class="sxs-lookup"><span data-stu-id="7c63d-114">A categorical listing of the compiler options.</span></span>  
   
- [アルファベット順の C# コンパイラ オプションの一覧](../../../csharp/language-reference/compiler-options/listed-alphabetically.md)  
- コンパイラ オプションのアルファベット順の一覧です。  
+ [<span data-ttu-id="7c63d-115">アルファベット順の C# コンパイラ オプションの一覧</span><span class="sxs-lookup"><span data-stu-id="7c63d-115">C# Compiler Options Listed Alphabetically</span></span>](../../../csharp/language-reference/compiler-options/listed-alphabetically.md)  
+ <span data-ttu-id="7c63d-116">コンパイラ オプションのアルファベット順の一覧です。</span><span class="sxs-lookup"><span data-stu-id="7c63d-116">An alphabetical listing of the compiler options.</span></span>  
   
-## <a name="related-sections"></a>関連項目  
- [プロジェクト デザイナーの [ビルド] ページ](/visualstudio/ide/reference/build-page-project-designer-csharp)  
- プロジェクトのコンパイル、ビルド、およびデバッグ方法を制御するプロパティを設定します。 Visual C# プロジェクトのカスタム ビルド手順に関する情報が含まれています。  
+## <a name="related-sections"></a><span data-ttu-id="7c63d-117">関連項目</span><span class="sxs-lookup"><span data-stu-id="7c63d-117">Related Sections</span></span>  
+ <span data-ttu-id="7c63d-118">[プロジェクト デザイナーの [ビルド] ページ](/visualstudio/ide/reference/build-page-project-designer-csharp)</span><span class="sxs-lookup"><span data-stu-id="7c63d-118">[Build Page, Project Designer](/visualstudio/ide/reference/build-page-project-designer-csharp)</span></span>  
+ <span data-ttu-id="7c63d-119">プロジェクトのコンパイル、ビルド、およびデバッグ方法を制御するプロパティを設定します。</span><span class="sxs-lookup"><span data-stu-id="7c63d-119">Setting properties that govern how your project is compiled, built, and debugged.</span></span> <span data-ttu-id="7c63d-120">Visual C# プロジェクトのカスタム ビルド手順に関する情報が含まれています。</span><span class="sxs-lookup"><span data-stu-id="7c63d-120">Includes information about custom build steps in Visual C# projects.</span></span>  
   
- [既定のビルドとカスタム ビルド](/visualstudio/ide/compiling-and-building-in-visual-studio)  
- ビルドの種類と構成に関する情報です。  
+ [<span data-ttu-id="7c63d-121">既定のビルドとカスタム ビルド</span><span class="sxs-lookup"><span data-stu-id="7c63d-121">Default and Custom Builds</span></span>](/visualstudio/ide/compiling-and-building-in-visual-studio)  
+ <span data-ttu-id="7c63d-122">ビルドの種類と構成に関する情報です。</span><span class="sxs-lookup"><span data-stu-id="7c63d-122">Information on build types and configurations.</span></span>  
   
- [ビルドの準備と管理](/visualstudio/ide/building-and-cleaning-projects-and-solutions-in-visual-studio)  
- Visual Studio 開発環境でビルドするための手順です。
+ [<span data-ttu-id="7c63d-123">ビルドの準備と管理</span><span class="sxs-lookup"><span data-stu-id="7c63d-123">Preparing and Managing Builds</span></span>](/visualstudio/ide/building-and-cleaning-projects-and-solutions-in-visual-studio)  
+ <span data-ttu-id="7c63d-124">Visual Studio 開発環境でビルドするための手順です。</span><span class="sxs-lookup"><span data-stu-id="7c63d-124">Procedures for building within the Visual Studio development environment.</span></span>
 

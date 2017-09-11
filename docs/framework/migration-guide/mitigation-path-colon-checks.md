@@ -22,20 +22,20 @@ ms.contentlocale: ja-jp
 ms.lasthandoff: 07/28/2017
 
 ---
-# <a name="mitigation-path-colon-checks"></a>軽減策: パスのコロン チェック
-[!INCLUDE[net_v462](../../../includes/net-v462-md.md)] を対象とするアプリ以降では、以前はサポートされていなかったパスをサポートするために (長さと形式の両方について) 数多くの変更が加えられました。 具体的には、適切なドライブの区切り構文 (コロン) のチェックがより正しく行われるようになりました。  
+# <a name="mitigation-path-colon-checks"></a><span data-ttu-id="8a353-102">軽減策: パスのコロン チェック</span><span class="sxs-lookup"><span data-stu-id="8a353-102">Mitigation: Path Colon Checks</span></span>
+<span data-ttu-id="8a353-103">[!INCLUDE[net_v462](../../../includes/net-v462-md.md)] を対象とするアプリ以降では、以前はサポートされていなかったパスをサポートするために (長さと形式の両方について) 数多くの変更が加えられました。</span><span class="sxs-lookup"><span data-stu-id="8a353-103">Starting with apps that target the [!INCLUDE[net_v462](../../../includes/net-v462-md.md)], a number of changes were made to support previously unsupported paths (both in terms of length and format).</span></span> <span data-ttu-id="8a353-104">具体的には、適切なドライブの区切り構文 (コロン) のチェックがより正しく行われるようになりました。</span><span class="sxs-lookup"><span data-stu-id="8a353-104">In particular, checks for the proper drive separator syntax (the colon) were made more correct.</span></span>  
   
-## <a name="impact"></a>影響  
- これらの変更は、以前は <xref:System.IO.Path.GetDirectoryName%2A?displayProperty=fullName> メソッドと <xref:System.IO.Path.GetPathRoot%2A?displayProperty=fullName> メソッドでサポートされていた一部の URI のパスをブロックします。  
+## <a name="impact"></a><span data-ttu-id="8a353-105">影響</span><span class="sxs-lookup"><span data-stu-id="8a353-105">Impact</span></span>  
+ <span data-ttu-id="8a353-106">これらの変更は、以前は <xref:System.IO.Path.GetDirectoryName%2A?displayProperty=fullName> メソッドと <xref:System.IO.Path.GetPathRoot%2A?displayProperty=fullName> メソッドでサポートされていた一部の URI のパスをブロックします。</span><span class="sxs-lookup"><span data-stu-id="8a353-106">These changes block some URI paths the <xref:System.IO.Path.GetDirectoryName%2A?displayProperty=fullName> and <xref:System.IO.Path.GetPathRoot%2A?displayProperty=fullName> methods previously supported.</span></span>  
   
-## <a name="mitigation"></a>軽減策  
- <xref:System.IO.Path.GetDirectoryName%2A?displayProperty=fullName> メソッドや <xref:System.IO.Path.GetPathRoot%2A?displayProperty=fullName> メソッドでサポートされなくなった、以前は受け入れられていたパスの問題を回避するには、次のようにします。  
+## <a name="mitigation"></a><span data-ttu-id="8a353-107">軽減策</span><span class="sxs-lookup"><span data-stu-id="8a353-107">Mitigation</span></span>  
+ <span data-ttu-id="8a353-108"><xref:System.IO.Path.GetDirectoryName%2A?displayProperty=fullName> メソッドや <xref:System.IO.Path.GetPathRoot%2A?displayProperty=fullName> メソッドでサポートされなくなった、以前は受け入れられていたパスの問題を回避するには、次のようにします。</span><span class="sxs-lookup"><span data-stu-id="8a353-108">To work around the problem of a previously acceptable path that is no longer supported by the <xref:System.IO.Path.GetDirectoryName%2A?displayProperty=fullName> and <xref:System.IO.Path.GetPathRoot%2A?displayProperty=fullName> methods, you can do the following:</span></span>  
   
--   URL からスキームを手動で削除します。 たとえば、URL から `file://` を削除します。  
+-   <span data-ttu-id="8a353-109">URL からスキームを手動で削除します。</span><span class="sxs-lookup"><span data-stu-id="8a353-109">Manually remove the scheme from a URL.</span></span> <span data-ttu-id="8a353-110">たとえば、URL から `file://` を削除します。</span><span class="sxs-lookup"><span data-stu-id="8a353-110">For example, remove `file://` from a URL.</span></span>  
   
--   <xref:System.Uri> コンストラクターに URI を渡し、<xref:System.Uri.LocalPath%2A?displayProperty=fullName> プロパティの値を取得します。  
+-   <span data-ttu-id="8a353-111"><xref:System.Uri> コンストラクターに URI を渡し、<xref:System.Uri.LocalPath%2A?displayProperty=fullName> プロパティの値を取得します。</span><span class="sxs-lookup"><span data-stu-id="8a353-111">Pass the URI to a <xref:System.Uri> constructor,  and retrieve the value of the <xref:System.Uri.LocalPath%2A?displayProperty=fullName> property.</span></span>  
   
--   `Switch.System.IO.UseLegacyPathHandling`<xref:System.AppContext> を `true` に切り替えて、新しいパスの正規化を無効にします。  
+-   <span data-ttu-id="8a353-112">`Switch.System.IO.UseLegacyPathHandling`<xref:System.AppContext> を `true` に切り替えて、新しいパスの正規化を無効にします。</span><span class="sxs-lookup"><span data-stu-id="8a353-112">Opt out of the new path normalization by setting the `Switch.System.IO.UseLegacyPathHandling`<xref:System.AppContext> switch to `true`.</span></span>  
   
     ```xml  
     <runtime>  
@@ -43,6 +43,6 @@ ms.lasthandoff: 07/28/2017
     </runtime>  
     ```  
   
-## <a name="see-also"></a>関連項目  
- [変更の再ターゲット](../../../docs/framework/migration-guide/retargeting-changes-in-the-net-framework-4-6-2.md)
+## <a name="see-also"></a><span data-ttu-id="8a353-113">関連項目</span><span class="sxs-lookup"><span data-stu-id="8a353-113">See Also</span></span>  
+ [<span data-ttu-id="8a353-114">変更の再ターゲット</span><span class="sxs-lookup"><span data-stu-id="8a353-114">Retargeting Changes</span></span>](../../../docs/framework/migration-guide/retargeting-changes-in-the-net-framework-4-6-2.md)
 

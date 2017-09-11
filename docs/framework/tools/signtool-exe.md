@@ -29,202 +29,202 @@ ms.contentlocale: ja-jp
 ms.lasthandoff: 07/28/2017
 
 ---
-# <a name="signtoolexe-sign-tool"></a>SignTool.exe (署名ツール)
-署名ツールはコマンド ライン ツールで、ファイルにデジタル署名を添付し、ファイルの署名を検証し、ファイルにタイム スタンプを付けます。  
+# <a name="signtoolexe-sign-tool"></a><span data-ttu-id="87c7a-102">SignTool.exe (署名ツール)</span><span class="sxs-lookup"><span data-stu-id="87c7a-102">SignTool.exe (Sign Tool)</span></span>
+<span data-ttu-id="87c7a-103">署名ツールはコマンド ライン ツールで、ファイルにデジタル署名を添付し、ファイルの署名を検証し、ファイルにタイム スタンプを付けます。</span><span class="sxs-lookup"><span data-stu-id="87c7a-103">Sign Tool is a command-line tool that digitally signs files, verifies signatures in files, and time-stamps files.</span></span>  
   
- このツールは、Visual Studio と共に自動的にインストールされます。 このツールを実行するには、開発者コマンド プロンプト (または、Windows 7 の Visual Studio コマンド プロンプト) を使用します。 詳細については、「[コマンド プロンプト](../../../docs/framework/tools/developer-command-prompt-for-vs.md)」を参照してください。  
+ <span data-ttu-id="87c7a-104">このツールは、Visual Studio と共に自動的にインストールされます。</span><span class="sxs-lookup"><span data-stu-id="87c7a-104">This tool is automatically installed with Visual Studio.</span></span> <span data-ttu-id="87c7a-105">このツールを実行するには、開発者コマンド プロンプト (または、Windows 7 の Visual Studio コマンド プロンプト) を使用します。</span><span class="sxs-lookup"><span data-stu-id="87c7a-105">To run the tool, use the Developer Command Prompt (or the Visual Studio Command Prompt in Windows 7).</span></span> <span data-ttu-id="87c7a-106">詳細については、「[コマンド プロンプト](../../../docs/framework/tools/developer-command-prompt-for-vs.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="87c7a-106">For more information, see [Command Prompts](../../../docs/framework/tools/developer-command-prompt-for-vs.md).</span></span>  
   
- コマンド プロンプトに次のように入力します。  
+ <span data-ttu-id="87c7a-107">コマンド プロンプトに次のように入力します。</span><span class="sxs-lookup"><span data-stu-id="87c7a-107">At the command prompt, type the following:</span></span>  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a><span data-ttu-id="87c7a-108">構文</span><span class="sxs-lookup"><span data-stu-id="87c7a-108">Syntax</span></span>  
   
 ```  
 signtool [command] [options] [file_name | ...]  
 ```  
   
-#### <a name="parameters"></a>パラメーター  
+#### <a name="parameters"></a><span data-ttu-id="87c7a-109">パラメーター</span><span class="sxs-lookup"><span data-stu-id="87c7a-109">Parameters</span></span>  
   
-|引数|説明|  
+|<span data-ttu-id="87c7a-110">引数</span><span class="sxs-lookup"><span data-stu-id="87c7a-110">Argument</span></span>|<span data-ttu-id="87c7a-111">説明</span><span class="sxs-lookup"><span data-stu-id="87c7a-111">Description</span></span>|  
 |--------------|-----------------|  
-|`command`|4 つのコマンド (`catdb`、`sign`、`Timestamp`、または `Verify`) の 1 つで、ファイルで実行する操作を指定します。 各コマンドの詳細については、次の表を参照してください。|  
-|`options`|コマンドを変更するオプションです。 グローバル オプション `/q` および `/v` のほかに、各コマンドは固有のオプション セットをサポートします。|  
-|`file_name`|署名するファイルへのパスです。|  
+|`command`|<span data-ttu-id="87c7a-112">4 つのコマンド (`catdb`、`sign`、`Timestamp`、または `Verify`) の 1 つで、ファイルで実行する操作を指定します。</span><span class="sxs-lookup"><span data-stu-id="87c7a-112">One of four commands (`catdb`, `sign`, `Timestamp`, or `Verify`) that specifies an operation to perform on a file.</span></span> <span data-ttu-id="87c7a-113">各コマンドの詳細については、次の表を参照してください。</span><span class="sxs-lookup"><span data-stu-id="87c7a-113">For a description of each command, see the next table.</span></span>|  
+|`options`|<span data-ttu-id="87c7a-114">コマンドを変更するオプションです。</span><span class="sxs-lookup"><span data-stu-id="87c7a-114">An option that modifies a command.</span></span> <span data-ttu-id="87c7a-115">グローバル オプション `/q` および `/v` のほかに、各コマンドは固有のオプション セットをサポートします。</span><span class="sxs-lookup"><span data-stu-id="87c7a-115">In addition to the global `/q` and `/v` options, each command supports a unique set of options.</span></span>|  
+|`file_name`|<span data-ttu-id="87c7a-116">署名するファイルへのパスです。</span><span class="sxs-lookup"><span data-stu-id="87c7a-116">The path to a file to sign.</span></span>|  
   
- 次のコマンドは、署名ツールでサポートされています。 各コマンドは、それぞれのセクションに示す個別のオプション セットと共に使用されます。  
+ <span data-ttu-id="87c7a-117">次のコマンドは、署名ツールでサポートされています。</span><span class="sxs-lookup"><span data-stu-id="87c7a-117">The following commands are supported by Sign Tool.</span></span> <span data-ttu-id="87c7a-118">各コマンドは、それぞれのセクションに示す個別のオプション セットと共に使用されます。</span><span class="sxs-lookup"><span data-stu-id="87c7a-118">Each command is used with distinct sets of options, which are listed in their respective sections.</span></span>  
   
-|コマンド|説明|  
+|<span data-ttu-id="87c7a-119">コマンド</span><span class="sxs-lookup"><span data-stu-id="87c7a-119">Command</span></span>|<span data-ttu-id="87c7a-120">説明</span><span class="sxs-lookup"><span data-stu-id="87c7a-120">Description</span></span>|  
 |-------------|-----------------|  
-|`catdb`|カタログ ファイルをカタログ データベースに追加したり、カタログ データベースから削除したりします。 カタログ データベースは、カタログ ファイルの自動検索で使用され、GUID によって識別されます。 `catdb` コマンドでサポートされているオプションの一覧については、「[catdb コマンド オプション](../../../docs/framework/tools/signtool-exe.md#catdb)」を参照してください。|  
-|`sign`|ファイルにデジタル署名します。 デジタル署名はファイルの改ざんを防止し、ユーザーが署名証明書に基づいて署名者を検証できるようにします。 `sign` コマンドでサポートされているオプションの一覧については、「[sign コマンド オプション](../../../docs/framework/tools/signtool-exe.md#sign)」を参照してください。|  
-|`Timestamp`|ファイルにタイム スタンプを付けます。 `TimeStamp` コマンドでサポートされているオプションの一覧については、「[TimeStamp コマンド オプション](../../../docs/framework/tools/signtool-exe.md#TimeStamp)」を参照してください。|  
-|`Verify`|ファイルのデジタル署名を検証します。そのために、署名証明書が信頼できる機関により発行されたかどうか、署名証明書が取り消されたかどうかを確認します。また、オプションで、署名証明書が特定のポリシーに対して有効になっているかどうかを確認します。 `Verify` コマンドでサポートされているオプションの一覧については、「[Verify コマンド オプション](../../../docs/framework/tools/signtool-exe.md#Verify)」を参照してください。|  
+|`catdb`|<span data-ttu-id="87c7a-121">カタログ ファイルをカタログ データベースに追加したり、カタログ データベースから削除したりします。</span><span class="sxs-lookup"><span data-stu-id="87c7a-121">Adds a catalog file to, or removes it from, a catalog database.</span></span> <span data-ttu-id="87c7a-122">カタログ データベースは、カタログ ファイルの自動検索で使用され、GUID によって識別されます。</span><span class="sxs-lookup"><span data-stu-id="87c7a-122">Catalog databases are used for automatic lookup of catalog files and are identified by GUID.</span></span> <span data-ttu-id="87c7a-123">`catdb` コマンドでサポートされているオプションの一覧については、「[catdb コマンド オプション](../../../docs/framework/tools/signtool-exe.md#catdb)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="87c7a-123">For a list of the options supported by the `catdb` command, see [catdb Command Options](../../../docs/framework/tools/signtool-exe.md#catdb).</span></span>|  
+|`sign`|<span data-ttu-id="87c7a-124">ファイルにデジタル署名します。</span><span class="sxs-lookup"><span data-stu-id="87c7a-124">Digitally signs files.</span></span> <span data-ttu-id="87c7a-125">デジタル署名はファイルの改ざんを防止し、ユーザーが署名証明書に基づいて署名者を検証できるようにします。</span><span class="sxs-lookup"><span data-stu-id="87c7a-125">Digital signatures protect files from tampering, and enable users to verify the signer based on a signing certificate.</span></span> <span data-ttu-id="87c7a-126">`sign` コマンドでサポートされているオプションの一覧については、「[sign コマンド オプション](../../../docs/framework/tools/signtool-exe.md#sign)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="87c7a-126">For a list of the options supported by the `sign` command, see [sign Command Options](../../../docs/framework/tools/signtool-exe.md#sign).</span></span>|  
+|`Timestamp`|<span data-ttu-id="87c7a-127">ファイルにタイム スタンプを付けます。</span><span class="sxs-lookup"><span data-stu-id="87c7a-127">Time-stamps files.</span></span> <span data-ttu-id="87c7a-128">`TimeStamp` コマンドでサポートされているオプションの一覧については、「[TimeStamp コマンド オプション](../../../docs/framework/tools/signtool-exe.md#TimeStamp)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="87c7a-128">For a list of the options supported by the `TimeStamp` command, see [TimeStamp Command Options](../../../docs/framework/tools/signtool-exe.md#TimeStamp).</span></span>|  
+|`Verify`|<span data-ttu-id="87c7a-129">ファイルのデジタル署名を検証します。そのために、署名証明書が信頼できる機関により発行されたかどうか、署名証明書が取り消されたかどうかを確認します。また、オプションで、署名証明書が特定のポリシーに対して有効になっているかどうかを確認します。</span><span class="sxs-lookup"><span data-stu-id="87c7a-129">Verifies the digital signature of files by determining whether the signing certificate was issued by a trusted authority, whether the signing certificate has been revoked, and, optionally, whether the signing certificate is valid for a specific policy.</span></span> <span data-ttu-id="87c7a-130">`Verify` コマンドでサポートされているオプションの一覧については、「[Verify コマンド オプション](../../../docs/framework/tools/signtool-exe.md#Verify)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="87c7a-130">For a list of the options supported by the `Verify` command, see [Verify Command Options](../../../docs/framework/tools/signtool-exe.md#Verify).</span></span>|  
   
- 次のオプションは、すべての署名ツール コマンドに適用されます。  
+ <span data-ttu-id="87c7a-131">次のオプションは、すべての署名ツール コマンドに適用されます。</span><span class="sxs-lookup"><span data-stu-id="87c7a-131">The following options apply to all Sign Tool commands.</span></span>  
   
-|Global オプション|説明|  
+|<span data-ttu-id="87c7a-132">Global オプション</span><span class="sxs-lookup"><span data-stu-id="87c7a-132">Global option</span></span>|<span data-ttu-id="87c7a-133">説明</span><span class="sxs-lookup"><span data-stu-id="87c7a-133">Description</span></span>|  
 |-------------------|-----------------|  
-|**/q**|コマンドが正常に実行した場合には何も出力されず、コマンドが失敗した場合には最小限の出力が表示されます。|  
-|**/v**|コマンドが正常に実行したか、失敗したかにかかわらず、詳細出力と警告メッセージが表示されます。|  
-|**/debug**|デバッグ情報を表示します。|  
+|<span data-ttu-id="87c7a-134">**/q**</span><span class="sxs-lookup"><span data-stu-id="87c7a-134">**/q**</span></span>|<span data-ttu-id="87c7a-135">コマンドが正常に実行した場合には何も出力されず、コマンドが失敗した場合には最小限の出力が表示されます。</span><span class="sxs-lookup"><span data-stu-id="87c7a-135">Displays no output if the command runs successfully, and displays minimal output if the command fails.</span></span>|  
+|<span data-ttu-id="87c7a-136">**/v**</span><span class="sxs-lookup"><span data-stu-id="87c7a-136">**/v**</span></span>|<span data-ttu-id="87c7a-137">コマンドが正常に実行したか、失敗したかにかかわらず、詳細出力と警告メッセージが表示されます。</span><span class="sxs-lookup"><span data-stu-id="87c7a-137">Displays verbose output regardless of whether the command runs successfully or fails, and displays warning messages.</span></span>|  
+|<span data-ttu-id="87c7a-138">**/debug**</span><span class="sxs-lookup"><span data-stu-id="87c7a-138">**/debug**</span></span>|<span data-ttu-id="87c7a-139">デバッグ情報を表示します。</span><span class="sxs-lookup"><span data-stu-id="87c7a-139">Displays debugging information.</span></span>|  
   
 <a name="catdb"></a>   
-## <a name="catdb-command-options"></a>catdb コマンド オプション  
- 次の表に、`catdb` コマンドと共に使用できるオプションを示します。  
+## <a name="catdb-command-options"></a><span data-ttu-id="87c7a-140">catdb コマンド オプション</span><span class="sxs-lookup"><span data-stu-id="87c7a-140">catdb Command Options</span></span>  
+ <span data-ttu-id="87c7a-141">次の表に、`catdb` コマンドと共に使用できるオプションを示します。</span><span class="sxs-lookup"><span data-stu-id="87c7a-141">The following table lists the options that can be used with the `catdb` command.</span></span>  
   
-|Catdb オプション|説明|  
+|<span data-ttu-id="87c7a-142">Catdb オプション</span><span class="sxs-lookup"><span data-stu-id="87c7a-142">Catdb option</span></span>|<span data-ttu-id="87c7a-143">説明</span><span class="sxs-lookup"><span data-stu-id="87c7a-143">Description</span></span>|  
 |------------------|-----------------|  
-|`/d`|既定のカタログ データベースを更新するように指定します。 `/d` と `/g` のいずれのオプションも使用しない場合、署名ツールはシステム コンポーネントおよびドライバー データベースを更新します。|  
-|`/g` *GUID*|グローバル一意識別子 *GUID* によって識別されるカタログ データベースを更新するように指定します。|  
-|`/r`|指定したカタログをカタログ データベースから削除します。 このオプションが指定されていない場合、署名ツールはカタログ データベースに指定されたカタログを追加します。|  
-|`/u`|追加されたカタログ ファイルに対して、一意な名前を自動的に生成するように指定します。 必要に応じて、既存のカタログ ファイルと名前が競合しないように、カタログ ファイルの名前が変更されます。 このオプションが指定されていない場合、署名ツールは追加されるカタログと同じ名前を持つ既存のカタログを上書きします。|  
+|`/d`|<span data-ttu-id="87c7a-144">既定のカタログ データベースを更新するように指定します。</span><span class="sxs-lookup"><span data-stu-id="87c7a-144">Specifies that the default catalog database is updated.</span></span> <span data-ttu-id="87c7a-145">`/d` と `/g` のいずれのオプションも使用しない場合、署名ツールはシステム コンポーネントおよびドライバー データベースを更新します。</span><span class="sxs-lookup"><span data-stu-id="87c7a-145">If neither the `/d` nor the `/g` option is used, Sign Tool updates the system component and driver database.</span></span>|  
+|<span data-ttu-id="87c7a-146">`/g` *GUID*</span><span class="sxs-lookup"><span data-stu-id="87c7a-146">`/g` *GUID*</span></span>|<span data-ttu-id="87c7a-147">グローバル一意識別子 *GUID* によって識別されるカタログ データベースを更新するように指定します。</span><span class="sxs-lookup"><span data-stu-id="87c7a-147">Specifies that the catalog database identified by the globally unique identifier *GUID* is updated.</span></span>|  
+|`/r`|<span data-ttu-id="87c7a-148">指定したカタログをカタログ データベースから削除します。</span><span class="sxs-lookup"><span data-stu-id="87c7a-148">Removes the specified catalogs from the catalog database.</span></span> <span data-ttu-id="87c7a-149">このオプションが指定されていない場合、署名ツールはカタログ データベースに指定されたカタログを追加します。</span><span class="sxs-lookup"><span data-stu-id="87c7a-149">If this option is not specified, Sign Tool adds the specified catalogs to the catalog database.</span></span>|  
+|`/u`|<span data-ttu-id="87c7a-150">追加されたカタログ ファイルに対して、一意な名前を自動的に生成するように指定します。</span><span class="sxs-lookup"><span data-stu-id="87c7a-150">Specifies that a unique name is automatically generated for the added catalog files.</span></span> <span data-ttu-id="87c7a-151">必要に応じて、既存のカタログ ファイルと名前が競合しないように、カタログ ファイルの名前が変更されます。</span><span class="sxs-lookup"><span data-stu-id="87c7a-151">If necessary, the catalog files are renamed to prevent name conflicts with existing catalog files.</span></span> <span data-ttu-id="87c7a-152">このオプションが指定されていない場合、署名ツールは追加されるカタログと同じ名前を持つ既存のカタログを上書きします。</span><span class="sxs-lookup"><span data-stu-id="87c7a-152">If this option is not specified, Sign Tool overwrites any existing catalog that has the same name as the catalog being added.</span></span>|  
   
 <a name="sign"></a>   
-## <a name="sign-command-options"></a>sign コマンド オプション  
- 次の表に、`sign` コマンドと共に使用できるオプションを示します。  
+## <a name="sign-command-options"></a><span data-ttu-id="87c7a-153">sign コマンド オプション</span><span class="sxs-lookup"><span data-stu-id="87c7a-153">sign Command Options</span></span>  
+ <span data-ttu-id="87c7a-154">次の表に、`sign` コマンドと共に使用できるオプションを示します。</span><span class="sxs-lookup"><span data-stu-id="87c7a-154">The following table lists the options that can be used with the `sign` command.</span></span>  
   
-|Sign コマンド オプション|説明|  
+|<span data-ttu-id="87c7a-155">Sign コマンド オプション</span><span class="sxs-lookup"><span data-stu-id="87c7a-155">Sign command option</span></span>|<span data-ttu-id="87c7a-156">説明</span><span class="sxs-lookup"><span data-stu-id="87c7a-156">Description</span></span>|  
 |-------------------------|-----------------|  
-|`/a`|最適な署名証明書を自動的に選択します。 署名ツールは、指定されたすべての条件を満たす有効な証明書をすべて検出し、最も長い期間有効である証明書を選択します。 このオプションが指定されていない場合、署名ツールは有効な署名証明書を 1 つだけ検索することが前提とします。|  
-|`/ac`  *file*|*file* から署名ブロックに証明書を追加します。|  
-|`/as`|この署名を追加します。 プライマリ署名が存在しない場合、この署名がプライマリ署名になります。|  
-|`/c`  *CertTemplateName*|署名証明書に対して証明書テンプレート名 (Microsoft 拡張機能) を指定します。|  
-|`/csp`  *CSPName*|秘密キー コンテナーを含む暗号化サービス プロバイダー (CSP: Cryptographic Service Provider) を指定します。|  
-|`/d`  *Desc*|署名された内容の説明を指定します。|  
-|`/du`  *URL*|署名された内容の詳細な説明に対する URL (Uniform Resource Locator) を指定します。|  
-|`/f`  *SignCertFile*|ファイルの署名証明書を指定します。 ファイルが個人情報交換 (PFX: Personal Information Exchange) 形式でパスワードによって保護されている場合に、`/p` オプションを使用してパスワードを指定します。 ファイルに秘密キーが含まれていない場合、`/csp` および `/k` オプションを使用して、CSP と秘密キー コンテナー名を指定します。|  
-|`/fd`|ファイルの署名の作成に使用するファイル ダイジェスト アルゴリズムを指定します。 既定値は SHA1 です。|  
-|`/i`  *IssuerName*|署名証明書の発行者の名前を指定します。 この値には、発行者名全体の部分文字列を指定できます。|  
-|`/kc`  *PrivKeyContainerName*|秘密キー コンテナー名を指定します。|  
-|`/n`  *SubjectName*|署名証明書の件名を指定します。 この値には、件名全体の部分文字列を指定できます。|  
-|`/nph`|サポートされている場合に、実行可能ファイルのページ ハッシュを抑制します。 既定値は、SIGNTOOL_PAGE_HASHES 環境変数と wintrust.dll のバージョンによって決定されます。 PE ファイル以外では、このオプションは無視されます。|  
-|`/p`  *Password*|PFX ファイルを開くときに使用するパスワードを指定します。 PFX ファイルを指定するには、`/f` オプションを使用します。|  
-|`/p7` *Path*|指定する各コンテンツ ファイルについて公開キー暗号化規格 (PKCS) #7 ファイルを作成することを指定します。 PKCS #7 ファイルの名前は *path*\\*filename*.p7 です。|  
-|`/p7ce` *Value*|署名された PKCS#7 コンテンツのオプションを指定します。 署名されたコンテンツを PKCS #7 ファイルに埋め込む場合は *Value* を "Embedded" に設定し、デタッチされた PKCS #7 ファイルの署名されたデータ部分を作成する場合には "DetachedSignedData" に設定します。 `/p7ce` オプションを使用しない場合は、既定で署名されたコンテンツが埋め込まれます。|  
-|`/p7co` *\<OID>*|署名された PKCS#7 コンテンツを識別するオブジェクト識別子 (OID) を指定します。|  
-|`/ph`|サポートされている場合に、実行可能ファイルのページ ハッシュを生成します。|  
-|`/r`  *RootSubjectName*|署名証明書のチェーン先とするルート証明書の件名を指定します。 この値には、ルート証明書の件名全体の部分文字列を指定できます。|  
-|`/s`  *StoreName*|証明書を検索するときに開くストアを指定します。 このオプションが指定されていない場合、`My` ストアが開きます。|  
-|`/sha1`  *Hash*|署名証明書の SHA1 ハッシュを指定します。 以降のスイッチによって指定された条件を複数の証明書が満たす場合、一般的に SHA1 ハッシュが指定されます。|  
-|`/sm`|ユーザー ストアの代わりに、コンピューター ストアを使用するように指定します。|  
-|`/t`  *URL*|タイム スタンプ サーバーの URL を指定します。 このオプション (または `/tr`) が指定されていない場合、署名されたファイルにはタイム スタンプが付きません。 タイム スタンプを付けるのに失敗すると、警告が生成されます。 このオプションは、`/tr` オプションと一緒に使用することはできません。|  
-|`/td`  *alg*|`/tr` オプションと共に使用して、RFC 3161 タイム スタンプ サーバーで使用されるダイジェスト アルゴリズムを要求します。|  
-|`/tr`  *URL*|RFC 3161 タイム スタンプ サーバーの URL を指定します。 このオプション (または `/t`) が指定されていない場合、署名されたファイルにはタイム スタンプが付きません。 タイム スタンプを付けるのに失敗すると、警告が生成されます。 このオプションは、`/t` オプションと一緒に使用することはできません。|  
-|`/u`  *Usage*|署名証明書に必要な拡張キー使用法 (EKU: Enhanced Key Usage) を指定します。 使用法の値は、OID または文字列によって指定できます。 既定の使用法は "Code Signing" (1.3.6.1.5.5.7.3.3) です。|  
-|`/uw`|使用法 "Windows System Component Verification" (1.3.6.1.4.1.311.10.3.6) を指定します。|  
+|`/a`|<span data-ttu-id="87c7a-157">最適な署名証明書を自動的に選択します。</span><span class="sxs-lookup"><span data-stu-id="87c7a-157">Automatically selects the best signing certificate.</span></span> <span data-ttu-id="87c7a-158">署名ツールは、指定されたすべての条件を満たす有効な証明書をすべて検出し、最も長い期間有効である証明書を選択します。</span><span class="sxs-lookup"><span data-stu-id="87c7a-158">Sign Tool will find all valid certificates that satisfy all specified conditions and select the one that is valid for the longest time.</span></span> <span data-ttu-id="87c7a-159">このオプションが指定されていない場合、署名ツールは有効な署名証明書を 1 つだけ検索することが前提とします。</span><span class="sxs-lookup"><span data-stu-id="87c7a-159">If this option is not present, Sign Tool expects to find only one valid signing certificate.</span></span>|  
+|<span data-ttu-id="87c7a-160">`/ac`  *file*</span><span class="sxs-lookup"><span data-stu-id="87c7a-160">`/ac`  *file*</span></span>|<span data-ttu-id="87c7a-161">*file* から署名ブロックに証明書を追加します。</span><span class="sxs-lookup"><span data-stu-id="87c7a-161">Adds an additional certificate from *file* to the signature block.</span></span>|  
+|`/as`|<span data-ttu-id="87c7a-162">この署名を追加します。</span><span class="sxs-lookup"><span data-stu-id="87c7a-162">Appends this signature.</span></span> <span data-ttu-id="87c7a-163">プライマリ署名が存在しない場合、この署名がプライマリ署名になります。</span><span class="sxs-lookup"><span data-stu-id="87c7a-163">If no primary signature is present, this signature is made the primary signature instead.</span></span>|  
+|<span data-ttu-id="87c7a-164">`/c`  *CertTemplateName*</span><span class="sxs-lookup"><span data-stu-id="87c7a-164">`/c`  *CertTemplateName*</span></span>|<span data-ttu-id="87c7a-165">署名証明書に対して証明書テンプレート名 (Microsoft 拡張機能) を指定します。</span><span class="sxs-lookup"><span data-stu-id="87c7a-165">Specifies the Certificate Template Name (a Microsoft extension) for the signing certificate.</span></span>|  
+|<span data-ttu-id="87c7a-166">`/csp`  *CSPName*</span><span class="sxs-lookup"><span data-stu-id="87c7a-166">`/csp`  *CSPName*</span></span>|<span data-ttu-id="87c7a-167">秘密キー コンテナーを含む暗号化サービス プロバイダー (CSP: Cryptographic Service Provider) を指定します。</span><span class="sxs-lookup"><span data-stu-id="87c7a-167">Specifies the cryptographic service provider (CSP) that contains the private key container.</span></span>|  
+|<span data-ttu-id="87c7a-168">`/d`  *Desc*</span><span class="sxs-lookup"><span data-stu-id="87c7a-168">`/d`  *Desc*</span></span>|<span data-ttu-id="87c7a-169">署名された内容の説明を指定します。</span><span class="sxs-lookup"><span data-stu-id="87c7a-169">Specifies a description of the signed content.</span></span>|  
+|<span data-ttu-id="87c7a-170">`/du`  *URL*</span><span class="sxs-lookup"><span data-stu-id="87c7a-170">`/du`  *URL*</span></span>|<span data-ttu-id="87c7a-171">署名された内容の詳細な説明に対する URL (Uniform Resource Locator) を指定します。</span><span class="sxs-lookup"><span data-stu-id="87c7a-171">Specifies a Uniform Resource Locator (URL) for the expanded description of the signed content.</span></span>|  
+|<span data-ttu-id="87c7a-172">`/f`  *SignCertFile*</span><span class="sxs-lookup"><span data-stu-id="87c7a-172">`/f`  *SignCertFile*</span></span>|<span data-ttu-id="87c7a-173">ファイルの署名証明書を指定します。</span><span class="sxs-lookup"><span data-stu-id="87c7a-173">Specifies the signing certificate in a file.</span></span> <span data-ttu-id="87c7a-174">ファイルが個人情報交換 (PFX: Personal Information Exchange) 形式でパスワードによって保護されている場合に、`/p` オプションを使用してパスワードを指定します。</span><span class="sxs-lookup"><span data-stu-id="87c7a-174">If the file is in Personal Information Exchange (PFX) format and protected by a password, use the `/p` option to specify the password.</span></span> <span data-ttu-id="87c7a-175">ファイルに秘密キーが含まれていない場合、`/csp` および `/k` オプションを使用して、CSP と秘密キー コンテナー名を指定します。</span><span class="sxs-lookup"><span data-stu-id="87c7a-175">If the file does not contain private keys, use the `/csp` and `/k` options to specify the CSP and private key container name.</span></span>|  
+|`/fd`|<span data-ttu-id="87c7a-176">ファイルの署名の作成に使用するファイル ダイジェスト アルゴリズムを指定します。</span><span class="sxs-lookup"><span data-stu-id="87c7a-176">Specifies the file digest algorithm to use for creating file signatures.</span></span> <span data-ttu-id="87c7a-177">既定値は SHA1 です。</span><span class="sxs-lookup"><span data-stu-id="87c7a-177">The default is SHA1.</span></span>|  
+|<span data-ttu-id="87c7a-178">`/i`  *IssuerName*</span><span class="sxs-lookup"><span data-stu-id="87c7a-178">`/i`  *IssuerName*</span></span>|<span data-ttu-id="87c7a-179">署名証明書の発行者の名前を指定します。</span><span class="sxs-lookup"><span data-stu-id="87c7a-179">Specifies the name of the issuer of the signing certificate.</span></span> <span data-ttu-id="87c7a-180">この値には、発行者名全体の部分文字列を指定できます。</span><span class="sxs-lookup"><span data-stu-id="87c7a-180">This value can be a substring of the entire issuer name.</span></span>|  
+|<span data-ttu-id="87c7a-181">`/kc`  *PrivKeyContainerName*</span><span class="sxs-lookup"><span data-stu-id="87c7a-181">`/kc`  *PrivKeyContainerName*</span></span>|<span data-ttu-id="87c7a-182">秘密キー コンテナー名を指定します。</span><span class="sxs-lookup"><span data-stu-id="87c7a-182">Specifies the private key container name.</span></span>|  
+|<span data-ttu-id="87c7a-183">`/n`  *SubjectName*</span><span class="sxs-lookup"><span data-stu-id="87c7a-183">`/n`  *SubjectName*</span></span>|<span data-ttu-id="87c7a-184">署名証明書の件名を指定します。</span><span class="sxs-lookup"><span data-stu-id="87c7a-184">Specifies the name of the subject of the signing certificate.</span></span> <span data-ttu-id="87c7a-185">この値には、件名全体の部分文字列を指定できます。</span><span class="sxs-lookup"><span data-stu-id="87c7a-185">This value can be a substring of the entire subject name.</span></span>|  
+|`/nph`|<span data-ttu-id="87c7a-186">サポートされている場合に、実行可能ファイルのページ ハッシュを抑制します。</span><span class="sxs-lookup"><span data-stu-id="87c7a-186">If supported, suppresses page hashes for executable files.</span></span> <span data-ttu-id="87c7a-187">既定値は、SIGNTOOL_PAGE_HASHES 環境変数と wintrust.dll のバージョンによって決定されます。</span><span class="sxs-lookup"><span data-stu-id="87c7a-187">The default is determined by the SIGNTOOL_PAGE_HASHES environment variable and by the wintrust.dll version.</span></span> <span data-ttu-id="87c7a-188">PE ファイル以外では、このオプションは無視されます。</span><span class="sxs-lookup"><span data-stu-id="87c7a-188">This option is ignored for non-PE files.</span></span>|  
+|<span data-ttu-id="87c7a-189">`/p`  *Password*</span><span class="sxs-lookup"><span data-stu-id="87c7a-189">`/p`  *Password*</span></span>|<span data-ttu-id="87c7a-190">PFX ファイルを開くときに使用するパスワードを指定します。</span><span class="sxs-lookup"><span data-stu-id="87c7a-190">Specifies the password to use when opening a PFX file.</span></span> <span data-ttu-id="87c7a-191">PFX ファイルを指定するには、`/f` オプションを使用します。</span><span class="sxs-lookup"><span data-stu-id="87c7a-191">(Use the `/f` option to specify a PFX file.)</span></span>|  
+|<span data-ttu-id="87c7a-192">`/p7` *Path*</span><span class="sxs-lookup"><span data-stu-id="87c7a-192">`/p7` *Path*</span></span>|<span data-ttu-id="87c7a-193">指定する各コンテンツ ファイルについて公開キー暗号化規格 (PKCS) #7 ファイルを作成することを指定します。</span><span class="sxs-lookup"><span data-stu-id="87c7a-193">Specifies that a Public Key Cryptography Standards (PKCS) #7 file is produced for each specified content file.</span></span> <span data-ttu-id="87c7a-194">PKCS #7 ファイルの名前は *path*\\*filename*.p7 です。</span><span class="sxs-lookup"><span data-stu-id="87c7a-194">PKCS #7 files are named *path*\\*filename*.p7.</span></span>|  
+|<span data-ttu-id="87c7a-195">`/p7ce` *Value*</span><span class="sxs-lookup"><span data-stu-id="87c7a-195">`/p7ce` *Value*</span></span>|<span data-ttu-id="87c7a-196">署名された PKCS#7 コンテンツのオプションを指定します。</span><span class="sxs-lookup"><span data-stu-id="87c7a-196">Specifies options for the signed PKCS #7 content.</span></span> <span data-ttu-id="87c7a-197">署名されたコンテンツを PKCS #7 ファイルに埋め込む場合は *Value* を "Embedded" に設定し、デタッチされた PKCS #7 ファイルの署名されたデータ部分を作成する場合には "DetachedSignedData" に設定します。</span><span class="sxs-lookup"><span data-stu-id="87c7a-197">Set *Value* to "Embedded" to embed the signed content in the PKCS #7 file, or to "DetachedSignedData" to produce the signed data portion of a detached PKCS #7 file.</span></span> <span data-ttu-id="87c7a-198">`/p7ce` オプションを使用しない場合は、既定で署名されたコンテンツが埋め込まれます。</span><span class="sxs-lookup"><span data-stu-id="87c7a-198">If the `/p7ce` option is not used, the signed content is embedded by default.</span></span>|  
+|<span data-ttu-id="87c7a-199">`/p7co` *\<OID>*</span><span class="sxs-lookup"><span data-stu-id="87c7a-199">`/p7co` *\<OID>*</span></span>|<span data-ttu-id="87c7a-200">署名された PKCS#7 コンテンツを識別するオブジェクト識別子 (OID) を指定します。</span><span class="sxs-lookup"><span data-stu-id="87c7a-200">Specifies the object identifier (OID) that identifies the signed PKCS #7 content.</span></span>|  
+|`/ph`|<span data-ttu-id="87c7a-201">サポートされている場合に、実行可能ファイルのページ ハッシュを生成します。</span><span class="sxs-lookup"><span data-stu-id="87c7a-201">If supported, generates page hashes for executable files.</span></span>|  
+|<span data-ttu-id="87c7a-202">`/r`  *RootSubjectName*</span><span class="sxs-lookup"><span data-stu-id="87c7a-202">`/r`  *RootSubjectName*</span></span>|<span data-ttu-id="87c7a-203">署名証明書のチェーン先とするルート証明書の件名を指定します。</span><span class="sxs-lookup"><span data-stu-id="87c7a-203">Specifies the name of the subject of the root certificate that the signing certificate must chain to.</span></span> <span data-ttu-id="87c7a-204">この値には、ルート証明書の件名全体の部分文字列を指定できます。</span><span class="sxs-lookup"><span data-stu-id="87c7a-204">This value may be a substring of the entire subject name of the root certificate.</span></span>|  
+|<span data-ttu-id="87c7a-205">`/s`  *StoreName*</span><span class="sxs-lookup"><span data-stu-id="87c7a-205">`/s`  *StoreName*</span></span>|<span data-ttu-id="87c7a-206">証明書を検索するときに開くストアを指定します。</span><span class="sxs-lookup"><span data-stu-id="87c7a-206">Specifies the store to open when searching for the certificate.</span></span> <span data-ttu-id="87c7a-207">このオプションが指定されていない場合、`My` ストアが開きます。</span><span class="sxs-lookup"><span data-stu-id="87c7a-207">If this option is not specified, the `My` store is opened.</span></span>|  
+|<span data-ttu-id="87c7a-208">`/sha1`  *Hash*</span><span class="sxs-lookup"><span data-stu-id="87c7a-208">`/sha1`  *Hash*</span></span>|<span data-ttu-id="87c7a-209">署名証明書の SHA1 ハッシュを指定します。</span><span class="sxs-lookup"><span data-stu-id="87c7a-209">Specifies the SHA1 hash of the signing certificate.</span></span> <span data-ttu-id="87c7a-210">以降のスイッチによって指定された条件を複数の証明書が満たす場合、一般的に SHA1 ハッシュが指定されます。</span><span class="sxs-lookup"><span data-stu-id="87c7a-210">The SHA1 hash is commonly specified when multiple certificates satisfy the criteria specified by the remaining switches.</span></span>|  
+|`/sm`|<span data-ttu-id="87c7a-211">ユーザー ストアの代わりに、コンピューター ストアを使用するように指定します。</span><span class="sxs-lookup"><span data-stu-id="87c7a-211">Specifies that a machine store, instead of a user store, is used.</span></span>|  
+|<span data-ttu-id="87c7a-212">`/t`  *URL*</span><span class="sxs-lookup"><span data-stu-id="87c7a-212">`/t`  *URL*</span></span>|<span data-ttu-id="87c7a-213">タイム スタンプ サーバーの URL を指定します。</span><span class="sxs-lookup"><span data-stu-id="87c7a-213">Specifies the URL of the time stamp server.</span></span> <span data-ttu-id="87c7a-214">このオプション (または `/tr`) が指定されていない場合、署名されたファイルにはタイム スタンプが付きません。</span><span class="sxs-lookup"><span data-stu-id="87c7a-214">If this option (or `/tr`) is not present, the signed file will not be time stamped.</span></span> <span data-ttu-id="87c7a-215">タイム スタンプを付けるのに失敗すると、警告が生成されます。</span><span class="sxs-lookup"><span data-stu-id="87c7a-215">A warning is generated if time stamping fails.</span></span> <span data-ttu-id="87c7a-216">このオプションは、`/tr` オプションと一緒に使用することはできません。</span><span class="sxs-lookup"><span data-stu-id="87c7a-216">This option cannot be used with the `/tr` option.</span></span>|  
+|<span data-ttu-id="87c7a-217">`/td`  *alg*</span><span class="sxs-lookup"><span data-stu-id="87c7a-217">`/td`  *alg*</span></span>|<span data-ttu-id="87c7a-218">`/tr` オプションと共に使用して、RFC 3161 タイム スタンプ サーバーで使用されるダイジェスト アルゴリズムを要求します。</span><span class="sxs-lookup"><span data-stu-id="87c7a-218">Used with the `/tr` option to request a digest algorithm used by the RFC 3161 time stamp server.</span></span>|  
+|<span data-ttu-id="87c7a-219">`/tr`  *URL*</span><span class="sxs-lookup"><span data-stu-id="87c7a-219">`/tr`  *URL*</span></span>|<span data-ttu-id="87c7a-220">RFC 3161 タイム スタンプ サーバーの URL を指定します。</span><span class="sxs-lookup"><span data-stu-id="87c7a-220">Specifies the URL of the RFC 3161 time stamp server.</span></span> <span data-ttu-id="87c7a-221">このオプション (または `/t`) が指定されていない場合、署名されたファイルにはタイム スタンプが付きません。</span><span class="sxs-lookup"><span data-stu-id="87c7a-221">If this option (or `/t`) is not present, the signed file will not be time stamped.</span></span> <span data-ttu-id="87c7a-222">タイム スタンプを付けるのに失敗すると、警告が生成されます。</span><span class="sxs-lookup"><span data-stu-id="87c7a-222">A warning is generated if time stamping fails.</span></span> <span data-ttu-id="87c7a-223">このオプションは、`/t` オプションと一緒に使用することはできません。</span><span class="sxs-lookup"><span data-stu-id="87c7a-223">This option cannot be used with the `/t` option.</span></span>|  
+|<span data-ttu-id="87c7a-224">`/u`  *Usage*</span><span class="sxs-lookup"><span data-stu-id="87c7a-224">`/u`  *Usage*</span></span>|<span data-ttu-id="87c7a-225">署名証明書に必要な拡張キー使用法 (EKU: Enhanced Key Usage) を指定します。</span><span class="sxs-lookup"><span data-stu-id="87c7a-225">Specifies the enhanced key usage (EKU) that must be present in the signing certificate.</span></span> <span data-ttu-id="87c7a-226">使用法の値は、OID または文字列によって指定できます。</span><span class="sxs-lookup"><span data-stu-id="87c7a-226">The usage value can be specified by OID or string.</span></span> <span data-ttu-id="87c7a-227">既定の使用法は "Code Signing" (1.3.6.1.5.5.7.3.3) です。</span><span class="sxs-lookup"><span data-stu-id="87c7a-227">The default usage is "Code Signing" (1.3.6.1.5.5.7.3.3).</span></span>|  
+|`/uw`|<span data-ttu-id="87c7a-228">使用法 "Windows System Component Verification" (1.3.6.1.4.1.311.10.3.6) を指定します。</span><span class="sxs-lookup"><span data-stu-id="87c7a-228">Specifies usage of "Windows System Component Verification" (1.3.6.1.4.1.311.10.3.6).</span></span>|  
   
- 使用例については、「[Using SignTool to Sign a File](http://msdn.microsoft.com/library/windows/desktop/aa388170.aspx)」(SignTool を使用してファイルに署名する) を参照してください。  
+ <span data-ttu-id="87c7a-229">使用例については、「[Using SignTool to Sign a File](http://msdn.microsoft.com/library/windows/desktop/aa388170.aspx)」(SignTool を使用してファイルに署名する) を参照してください。</span><span class="sxs-lookup"><span data-stu-id="87c7a-229">For usage examples, see [Using SignTool to Sign a File](http://msdn.microsoft.com/library/windows/desktop/aa388170.aspx).</span></span>  
   
 <a name="TimeStamp"></a>   
-## <a name="timestamp-command-options"></a>TimeStamp コマンド オプション  
- 次の表に、`TimeStamp` コマンドと共に使用できるオプションを示します。  
+## <a name="timestamp-command-options"></a><span data-ttu-id="87c7a-230">TimeStamp コマンド オプション</span><span class="sxs-lookup"><span data-stu-id="87c7a-230">TimeStamp Command Options</span></span>  
+ <span data-ttu-id="87c7a-231">次の表に、`TimeStamp` コマンドと共に使用できるオプションを示します。</span><span class="sxs-lookup"><span data-stu-id="87c7a-231">The following table lists the options that can be used with the `TimeStamp` command.</span></span>  
   
-|TimeStamp オプション|説明|  
+|<span data-ttu-id="87c7a-232">TimeStamp オプション</span><span class="sxs-lookup"><span data-stu-id="87c7a-232">TimeStamp option</span></span>|<span data-ttu-id="87c7a-233">説明</span><span class="sxs-lookup"><span data-stu-id="87c7a-233">Description</span></span>|  
 |----------------------|-----------------|  
-|`/p7`|PKCS #7 ファイルにタイム スタンプを付けます。|  
-|`/t`  *URL*|タイム スタンプ サーバーの URL を指定します。 タイム スタンプを付けるファイルは、事前に署名されている必要があります。 `/t` オプションまたは `/tr` オプションを指定する必要があります。|  
-|`/td`  *alg*|RFC 3161 タイム スタンプ サーバーで使用されるダイジェスト アルゴリズムを要求します。 `/td` は、`/tr` オプションと共に使用します。|  
-|`/tp` *index*|*index* で署名にタイム スタンプを付けます。|  
-|`/tr`  *URL*|RFC 3161 タイム スタンプ サーバーの URL を指定します。 タイム スタンプを付けるファイルは、事前に署名されている必要があります。 `/tr` オプションまたは `/t` オプションを指定する必要があります。|  
+|`/p7`|<span data-ttu-id="87c7a-234">PKCS #7 ファイルにタイム スタンプを付けます。</span><span class="sxs-lookup"><span data-stu-id="87c7a-234">Time stamps PKCS #7 files.</span></span>|  
+|<span data-ttu-id="87c7a-235">`/t`  *URL*</span><span class="sxs-lookup"><span data-stu-id="87c7a-235">`/t`  *URL*</span></span>|<span data-ttu-id="87c7a-236">タイム スタンプ サーバーの URL を指定します。</span><span class="sxs-lookup"><span data-stu-id="87c7a-236">Specifies the URL of the time stamp server.</span></span> <span data-ttu-id="87c7a-237">タイム スタンプを付けるファイルは、事前に署名されている必要があります。</span><span class="sxs-lookup"><span data-stu-id="87c7a-237">The file being time stamped must have previously been signed.</span></span> <span data-ttu-id="87c7a-238">`/t` オプションまたは `/tr` オプションを指定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="87c7a-238">Either the `/t` or the `/tr` option is required.</span></span>|  
+|<span data-ttu-id="87c7a-239">`/td`  *alg*</span><span class="sxs-lookup"><span data-stu-id="87c7a-239">`/td`  *alg*</span></span>|<span data-ttu-id="87c7a-240">RFC 3161 タイム スタンプ サーバーで使用されるダイジェスト アルゴリズムを要求します。</span><span class="sxs-lookup"><span data-stu-id="87c7a-240">Requests a digest algorithm used by the RFC 3161 time stamp server.</span></span> <span data-ttu-id="87c7a-241">`/td` は、`/tr` オプションと共に使用します。</span><span class="sxs-lookup"><span data-stu-id="87c7a-241">`/td` is used with the `/tr` option.</span></span>|  
+|<span data-ttu-id="87c7a-242">`/tp` *index*</span><span class="sxs-lookup"><span data-stu-id="87c7a-242">`/tp` *index*</span></span>|<span data-ttu-id="87c7a-243">*index* で署名にタイム スタンプを付けます。</span><span class="sxs-lookup"><span data-stu-id="87c7a-243">Time stamps the signature at *index*.</span></span>|  
+|<span data-ttu-id="87c7a-244">`/tr`  *URL*</span><span class="sxs-lookup"><span data-stu-id="87c7a-244">`/tr`  *URL*</span></span>|<span data-ttu-id="87c7a-245">RFC 3161 タイム スタンプ サーバーの URL を指定します。</span><span class="sxs-lookup"><span data-stu-id="87c7a-245">Specifies the URL of the RFC 3161 time stamp server.</span></span> <span data-ttu-id="87c7a-246">タイム スタンプを付けるファイルは、事前に署名されている必要があります。</span><span class="sxs-lookup"><span data-stu-id="87c7a-246">The file being time stamped must have previously been signed.</span></span> <span data-ttu-id="87c7a-247">`/tr` オプションまたは `/t` オプションを指定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="87c7a-247">Either the `/tr` or the `/t` option is required.</span></span>|  
   
- 使用例については、「[Adding Time Stamps to Previously Signed Files](http://msdn.microsoft.com/library/windows/desktop/aa375542.aspx)」(署名済みのファイルにタイム スタンプを追加する) を参照してください。  
+ <span data-ttu-id="87c7a-248">使用例については、「[Adding Time Stamps to Previously Signed Files](http://msdn.microsoft.com/library/windows/desktop/aa375542.aspx)」(署名済みのファイルにタイム スタンプを追加する) を参照してください。</span><span class="sxs-lookup"><span data-stu-id="87c7a-248">For a usage example, see [Adding Time Stamps to Previously Signed Files](http://msdn.microsoft.com/library/windows/desktop/aa375542.aspx).</span></span>  
   
 <a name="Verify"></a>   
-## <a name="verify-command-options"></a>Verify コマンド オプション  
+## <a name="verify-command-options"></a><span data-ttu-id="87c7a-249">Verify コマンド オプション</span><span class="sxs-lookup"><span data-stu-id="87c7a-249">Verify Command Options</span></span>  
   
-|Verify オプション|説明|  
+|<span data-ttu-id="87c7a-250">Verify オプション</span><span class="sxs-lookup"><span data-stu-id="87c7a-250">Verify option</span></span>|<span data-ttu-id="87c7a-251">説明</span><span class="sxs-lookup"><span data-stu-id="87c7a-251">Description</span></span>|  
 |-------------------|-----------------|  
-|`/a`|ファイルの検証にすべてのメソッドを使用できることを指定します。 まず、カタログ データベースを検索して、カタログでファイルが署名されているかどうかを確認します。 任意のカタログでファイルが署名されていない場合、署名ツールはファイルの埋め込み署名の検証を試みます。 カタログで署名されているファイルまたは署名されていないファイルを検証するときには、このオプションをお勧めします。 これらのファイルの例には、Windows ファイルまたはドライバーが含まれます。|  
-|`/ad`|既定のカタログ データベースを使用してカタログを検索します。|  
-|`/ag` *CatDBGUID*|*CatDBGUID* によって識別されるカタログ データベースのカタログを検索します。|  
-|`/all`|複数の署名を含むファイル内のすべての署名を確認します。|  
-|`/as`|システム コンポーネント (ドライバー) のカタログ データベースを使用してカタログを検索します。|  
-|`/c` *CatFile*|名前でカタログ ファイルを指定します。|  
-|`/d`|署名ツールで説明と説明の URL を出力するように指定します。|  
-|`/ds`  *Index*|指定した位置の署名を検証します。|  
-|`/hash` (`SHA1`&#124;`SHA256`)|カタログ内のファイルを検索する場合に使用するオプションのハッシュ アルゴリズムを指定します。|  
-|`/kp`|カーネル モード ドライバーの署名ポリシーを使用して検証を実行するように指定します。|  
-|`/ms`|複数の検証セマンティクスを使用します。 これは、[!INCLUDE[win8](../../../includes/win8-md.md)] 以上での [WinVerifyTrust](http://msdn.microsoft.com/library/windows/desktop/aa388208.aspx) 呼び出しの既定の動作です。|  
-|`/o` *Version*|オペレーティング システムのバージョンでファイルを確認します。 *Version* の形式は、*PlatformID*:*VerMajor*.*VerMinor*.*BuildNumber* です。 *PlatformID* は、<xref:System.PlatformID> 列挙メンバーの基になる値を表します。 **重要:** `/o` スイッチを使用することをお勧めします。 `/o` を指定しない場合、SignTool.exe から予期しない結果が返されることがあります。 たとえば、`/o` スイッチを含めない場合、古いオペレーティング システム上で正しく検証されるシステム カタログが新しいオペレーティング システムで正しく検証されないことがあります。|  
-|`/p7`|PKCS #7 ファイルを確認します。 PKCS #7 検証で既存のポリシーは使用されません。 署名がチェックされ、署名証明書のチェーンがビルドされます。|  
-|`/pa`|既定の Authenticode 検証ポリシーを使用するように指定します。 `/pa` オプションが指定されていない場合、署名ツールは Windows ドライバー検証ポリシーを使用します。 このオプションは、`catdb` オプションと一緒に使用することはできません。|  
-|`/pg` *PolicyGUID*|GUID により検証ポリシーを指定します。 *PolicyGUID* は検証ポリシーの ActionID に対応しています。 このオプションは、`catdb` オプションと一緒に使用することはできません。|  
-|`/ph`|署名ツールでページ ハッシュ値を出力および検証するように指定します。|  
-|`/r` *RootSubjectName*|署名証明書のチェーン先とするルート証明書の件名を指定します。 この値には、ルート証明書の件名全体の部分文字列を指定できます。|  
-|`/tw`|署名にタイム スタンプが付けられていない場合に、警告を生成することを指定します。|  
+|`/a`|<span data-ttu-id="87c7a-252">ファイルの検証にすべてのメソッドを使用できることを指定します。</span><span class="sxs-lookup"><span data-stu-id="87c7a-252">Specifies that all methods can be used to verify the file.</span></span> <span data-ttu-id="87c7a-253">まず、カタログ データベースを検索して、カタログでファイルが署名されているかどうかを確認します。</span><span class="sxs-lookup"><span data-stu-id="87c7a-253">First, the catalog databases are searched to determine whether the file is signed in a catalog.</span></span> <span data-ttu-id="87c7a-254">任意のカタログでファイルが署名されていない場合、署名ツールはファイルの埋め込み署名の検証を試みます。</span><span class="sxs-lookup"><span data-stu-id="87c7a-254">If the file is not signed in any catalog, Sign Tool attempts to verify the file's embedded signature.</span></span> <span data-ttu-id="87c7a-255">カタログで署名されているファイルまたは署名されていないファイルを検証するときには、このオプションをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="87c7a-255">This option is recommended when verifying files that may or may not be signed in a catalog.</span></span> <span data-ttu-id="87c7a-256">これらのファイルの例には、Windows ファイルまたはドライバーが含まれます。</span><span class="sxs-lookup"><span data-stu-id="87c7a-256">Examples of these files include Windows files or drivers.</span></span>|  
+|`/ad`|<span data-ttu-id="87c7a-257">既定のカタログ データベースを使用してカタログを検索します。</span><span class="sxs-lookup"><span data-stu-id="87c7a-257">Finds the catalog by using the default catalog database.</span></span>|  
+|<span data-ttu-id="87c7a-258">`/ag` *CatDBGUID*</span><span class="sxs-lookup"><span data-stu-id="87c7a-258">`/ag` *CatDBGUID*</span></span>|<span data-ttu-id="87c7a-259">*CatDBGUID* によって識別されるカタログ データベースのカタログを検索します。</span><span class="sxs-lookup"><span data-stu-id="87c7a-259">Finds the catalog in the catalog database that is identified by the *CatDBGUID*.</span></span>|  
+|`/all`|<span data-ttu-id="87c7a-260">複数の署名を含むファイル内のすべての署名を確認します。</span><span class="sxs-lookup"><span data-stu-id="87c7a-260">Verifies all signatures in a file that includes multiple signatures.</span></span>|  
+|`/as`|<span data-ttu-id="87c7a-261">システム コンポーネント (ドライバー) のカタログ データベースを使用してカタログを検索します。</span><span class="sxs-lookup"><span data-stu-id="87c7a-261">Finds the catalog by using the system component (driver) catalog database.</span></span>|  
+|<span data-ttu-id="87c7a-262">`/c` *CatFile*</span><span class="sxs-lookup"><span data-stu-id="87c7a-262">`/c` *CatFile*</span></span>|<span data-ttu-id="87c7a-263">名前でカタログ ファイルを指定します。</span><span class="sxs-lookup"><span data-stu-id="87c7a-263">Specifies the catalog file by name.</span></span>|  
+|`/d`|<span data-ttu-id="87c7a-264">署名ツールで説明と説明の URL を出力するように指定します。</span><span class="sxs-lookup"><span data-stu-id="87c7a-264">Specifies that Sign Tool should print the description and the description URL.</span></span>|  
+|<span data-ttu-id="87c7a-265">`/ds`  *Index*</span><span class="sxs-lookup"><span data-stu-id="87c7a-265">`/ds`  *Index*</span></span>|<span data-ttu-id="87c7a-266">指定した位置の署名を検証します。</span><span class="sxs-lookup"><span data-stu-id="87c7a-266">Verifies the signature at a specified position.</span></span>|  
+|<span data-ttu-id="87c7a-267">`/hash` (`SHA1`&#124;`SHA256`)</span><span class="sxs-lookup"><span data-stu-id="87c7a-267">`/hash` (`SHA1`&#124;`SHA256`)</span></span>|<span data-ttu-id="87c7a-268">カタログ内のファイルを検索する場合に使用するオプションのハッシュ アルゴリズムを指定します。</span><span class="sxs-lookup"><span data-stu-id="87c7a-268">Specifies an optional hash algorithm to use when searching for a file in a catalog.</span></span>|  
+|`/kp`|<span data-ttu-id="87c7a-269">カーネル モード ドライバーの署名ポリシーを使用して検証を実行するように指定します。</span><span class="sxs-lookup"><span data-stu-id="87c7a-269">Specifies that verification should be performed with the kernel-mode driver signing policy.</span></span>|  
+|`/ms`|<span data-ttu-id="87c7a-270">複数の検証セマンティクスを使用します。</span><span class="sxs-lookup"><span data-stu-id="87c7a-270">Uses multiple verification semantics.</span></span> <span data-ttu-id="87c7a-271">これは、[!INCLUDE[win8](../../../includes/win8-md.md)] 以上での [WinVerifyTrust](http://msdn.microsoft.com/library/windows/desktop/aa388208.aspx) 呼び出しの既定の動作です。</span><span class="sxs-lookup"><span data-stu-id="87c7a-271">This is the default behavior of a [WinVerifyTrust](http://msdn.microsoft.com/library/windows/desktop/aa388208.aspx) call on [!INCLUDE[win8](../../../includes/win8-md.md)] and above.</span></span>|  
+|<span data-ttu-id="87c7a-272">`/o` *Version*</span><span class="sxs-lookup"><span data-stu-id="87c7a-272">`/o` *Version*</span></span>|<span data-ttu-id="87c7a-273">オペレーティング システムのバージョンでファイルを確認します。</span><span class="sxs-lookup"><span data-stu-id="87c7a-273">Verifies the file by operating system version.</span></span> <span data-ttu-id="87c7a-274">*Version* の形式は、*PlatformID*:*VerMajor*.*VerMinor*.*BuildNumber* です。</span><span class="sxs-lookup"><span data-stu-id="87c7a-274">*Version* has the following form: *PlatformID*:*VerMajor*.*VerMinor*.*BuildNumber*.</span></span> <span data-ttu-id="87c7a-275">*PlatformID* は、<xref:System.PlatformID> 列挙メンバーの基になる値を表します。</span><span class="sxs-lookup"><span data-stu-id="87c7a-275">*PlatformID* represents the underlying value of a <xref:System.PlatformID> enumeration member.</span></span> <span data-ttu-id="87c7a-276">**重要:** `/o` スイッチを使用することをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="87c7a-276">**Important:**  The use of the `/o` switch is recommended.</span></span> <span data-ttu-id="87c7a-277">`/o` を指定しない場合、SignTool.exe から予期しない結果が返されることがあります。</span><span class="sxs-lookup"><span data-stu-id="87c7a-277">If `/o` is not specified, SignTool.exe may return unexpected results.</span></span> <span data-ttu-id="87c7a-278">たとえば、`/o` スイッチを含めない場合、古いオペレーティング システム上で正しく検証されるシステム カタログが新しいオペレーティング システムで正しく検証されないことがあります。</span><span class="sxs-lookup"><span data-stu-id="87c7a-278">For example, if you do not include the `/o` switch, system catalogs that validate correctly on an older operating system may not validate correctly on a newer operating system.</span></span>|  
+|`/p7`|<span data-ttu-id="87c7a-279">PKCS #7 ファイルを確認します。</span><span class="sxs-lookup"><span data-stu-id="87c7a-279">Verifies PKCS #7 files.</span></span> <span data-ttu-id="87c7a-280">PKCS #7 検証で既存のポリシーは使用されません。</span><span class="sxs-lookup"><span data-stu-id="87c7a-280">No existing policies are used for PKCS #7 validation.</span></span> <span data-ttu-id="87c7a-281">署名がチェックされ、署名証明書のチェーンがビルドされます。</span><span class="sxs-lookup"><span data-stu-id="87c7a-281">The signature is checked and a chain is built for the signing certificate.</span></span>|  
+|`/pa`|<span data-ttu-id="87c7a-282">既定の Authenticode 検証ポリシーを使用するように指定します。</span><span class="sxs-lookup"><span data-stu-id="87c7a-282">Specifies that the Default Authenticode Verification Policy should be used.</span></span> <span data-ttu-id="87c7a-283">`/pa` オプションが指定されていない場合、署名ツールは Windows ドライバー検証ポリシーを使用します。</span><span class="sxs-lookup"><span data-stu-id="87c7a-283">If the `/pa` option is not specified, Sign Tool uses the Windows Driver Verification Policy.</span></span> <span data-ttu-id="87c7a-284">このオプションは、`catdb` オプションと一緒に使用することはできません。</span><span class="sxs-lookup"><span data-stu-id="87c7a-284">This option cannot be used with the `catdb` options.</span></span>|  
+|<span data-ttu-id="87c7a-285">`/pg` *PolicyGUID*</span><span class="sxs-lookup"><span data-stu-id="87c7a-285">`/pg` *PolicyGUID*</span></span>|<span data-ttu-id="87c7a-286">GUID により検証ポリシーを指定します。</span><span class="sxs-lookup"><span data-stu-id="87c7a-286">Specifies a verification policy by GUID.</span></span> <span data-ttu-id="87c7a-287">*PolicyGUID* は検証ポリシーの ActionID に対応しています。</span><span class="sxs-lookup"><span data-stu-id="87c7a-287">The *PolicyGUID* corresponds to the ActionID of the verification policy.</span></span> <span data-ttu-id="87c7a-288">このオプションは、`catdb` オプションと一緒に使用することはできません。</span><span class="sxs-lookup"><span data-stu-id="87c7a-288">This option cannot be used with the `catdb` options.</span></span>|  
+|`/ph`|<span data-ttu-id="87c7a-289">署名ツールでページ ハッシュ値を出力および検証するように指定します。</span><span class="sxs-lookup"><span data-stu-id="87c7a-289">Specifies that Sign Tool should print and verify page hash values.</span></span>|  
+|<span data-ttu-id="87c7a-290">`/r` *RootSubjectName*</span><span class="sxs-lookup"><span data-stu-id="87c7a-290">`/r` *RootSubjectName*</span></span>|<span data-ttu-id="87c7a-291">署名証明書のチェーン先とするルート証明書の件名を指定します。</span><span class="sxs-lookup"><span data-stu-id="87c7a-291">Specifies the name of the subject of the root certificate that the signing certificate must chain to.</span></span> <span data-ttu-id="87c7a-292">この値には、ルート証明書の件名全体の部分文字列を指定できます。</span><span class="sxs-lookup"><span data-stu-id="87c7a-292">This value can be a substring of the entire subject name of the root certificate.</span></span>|  
+|`/tw`|<span data-ttu-id="87c7a-293">署名にタイム スタンプが付けられていない場合に、警告を生成することを指定します。</span><span class="sxs-lookup"><span data-stu-id="87c7a-293">Specifies that a warning should be generated if the signature is not time stamped.</span></span>|  
   
- 使用例については、「[Using SignTool to Verify a File Signature](http://msdn.microsoft.com/library/windows/desktop/aa388171.aspx)」(SignTool を使用してファイルの署名を検証する) を参照してください。  
+ <span data-ttu-id="87c7a-294">使用例については、「[Using SignTool to Verify a File Signature](http://msdn.microsoft.com/library/windows/desktop/aa388171.aspx)」(SignTool を使用してファイルの署名を検証する) を参照してください。</span><span class="sxs-lookup"><span data-stu-id="87c7a-294">For usage examples, see [Using SignTool to Verify a File Signature](http://msdn.microsoft.com/library/windows/desktop/aa388171.aspx).</span></span>  
   
-## <a name="return-value"></a>戻り値  
- 署名ツールは、終了時に次のいずれかの終了コードを返します。  
+## <a name="return-value"></a><span data-ttu-id="87c7a-295">戻り値</span><span class="sxs-lookup"><span data-stu-id="87c7a-295">Return Value</span></span>  
+ <span data-ttu-id="87c7a-296">署名ツールは、終了時に次のいずれかの終了コードを返します。</span><span class="sxs-lookup"><span data-stu-id="87c7a-296">Sign Tool returns one of the following exit codes when it terminates.</span></span>  
   
-|終了コード|説明|  
+|<span data-ttu-id="87c7a-297">終了コード</span><span class="sxs-lookup"><span data-stu-id="87c7a-297">Exit code</span></span>|<span data-ttu-id="87c7a-298">説明</span><span class="sxs-lookup"><span data-stu-id="87c7a-298">Description</span></span>|  
 |---------------|-----------------|  
-|0|実行に成功しました。|  
-|1|実行に失敗しました。|  
-|2|実行は完了しましたが、警告があります。|  
+|<span data-ttu-id="87c7a-299">0</span><span class="sxs-lookup"><span data-stu-id="87c7a-299">0</span></span>|<span data-ttu-id="87c7a-300">実行に成功しました。</span><span class="sxs-lookup"><span data-stu-id="87c7a-300">Execution was successful.</span></span>|  
+|<span data-ttu-id="87c7a-301">1</span><span class="sxs-lookup"><span data-stu-id="87c7a-301">1</span></span>|<span data-ttu-id="87c7a-302">実行に失敗しました。</span><span class="sxs-lookup"><span data-stu-id="87c7a-302">Execution has failed.</span></span>|  
+|<span data-ttu-id="87c7a-303">2</span><span class="sxs-lookup"><span data-stu-id="87c7a-303">2</span></span>|<span data-ttu-id="87c7a-304">実行は完了しましたが、警告があります。</span><span class="sxs-lookup"><span data-stu-id="87c7a-304">Execution has completed with warnings.</span></span>|  
   
-## <a name="examples"></a>例  
- カタログ ファイル MyCatalogFileName.cat をシステム コンポーネントおよびドライバー データベースに追加するコマンドを次に示します。 `/u` オプションは、必要に応じて一意の名前を生成し、`MyCatalogFileName.cat` という名前の既存のカタログ ファイルが置き換えられないようにします。  
+## <a name="examples"></a><span data-ttu-id="87c7a-305">例</span><span class="sxs-lookup"><span data-stu-id="87c7a-305">Examples</span></span>  
+ <span data-ttu-id="87c7a-306">カタログ ファイル MyCatalogFileName.cat をシステム コンポーネントおよびドライバー データベースに追加するコマンドを次に示します。</span><span class="sxs-lookup"><span data-stu-id="87c7a-306">The following command adds the catalog file MyCatalogFileName.cat to the system component and driver database.</span></span> <span data-ttu-id="87c7a-307">`/u` オプションは、必要に応じて一意の名前を生成し、`MyCatalogFileName.cat` という名前の既存のカタログ ファイルが置き換えられないようにします。</span><span class="sxs-lookup"><span data-stu-id="87c7a-307">The `/u` option generates a unique name if necessary to prevent replacing an existing catalog file named `MyCatalogFileName.cat`.</span></span>  
   
 ```  
 signtool catdb /v /u MyCatalogFileName.cat  
 ```  
   
- 最適な証明書を使用してファイルに自動的に署名するコマンドを次に示します。  
+ <span data-ttu-id="87c7a-308">最適な証明書を使用してファイルに自動的に署名するコマンドを次に示します。</span><span class="sxs-lookup"><span data-stu-id="87c7a-308">The following command signs a file automatically by using the best certificate.</span></span>  
   
 ```  
 signtool sign /a MyFile.exe  
 ```  
   
- パスワードで保護された PFX ファイルに格納されている証明書を使用してファイルにデジタル署名するコマンドを次に示します。  
+ <span data-ttu-id="87c7a-309">パスワードで保護された PFX ファイルに格納されている証明書を使用してファイルにデジタル署名するコマンドを次に示します。</span><span class="sxs-lookup"><span data-stu-id="87c7a-309">The following command digitally signs a file by using a certificate stored in a password-protected PFX file.</span></span>  
   
 ```  
 signtool sign /f MyCert.pfx /p MyPassword MyFile.exe  
 ```  
   
- ファイルにデジタル署名してタイム スタンプを付けるコマンドを次に示します。 ファイルへの署名に使用する証明書は、PFX ファイルに格納されています。  
+ <span data-ttu-id="87c7a-310">ファイルにデジタル署名してタイム スタンプを付けるコマンドを次に示します。</span><span class="sxs-lookup"><span data-stu-id="87c7a-310">The following command digitally signs and time-stamps a file.</span></span> <span data-ttu-id="87c7a-311">ファイルへの署名に使用する証明書は、PFX ファイルに格納されています。</span><span class="sxs-lookup"><span data-stu-id="87c7a-311">The certificate used to sign the file is stored in a PFX file.</span></span>  
   
 ```  
 signtool sign /f MyCert.pfx /t  HYPERLINK "http://timestamp.verisign.com/scripts/timstamp.dll" http://timestamp.verisign.com/scripts/timstamp.dll MyFile.exe  
 ```  
   
- `My` ストアにある件名が `My Company Certificate` の証明書を使用してファイルに署名するコマンドを次に示します。  
+ <span data-ttu-id="87c7a-312">`My` ストアにある件名が `My Company Certificate` の証明書を使用してファイルに署名するコマンドを次に示します。</span><span class="sxs-lookup"><span data-stu-id="87c7a-312">The following command signs a file by using a certificate located in the `My` store that has a subject name of `My Company Certificate`.</span></span>  
   
 ```  
 signtool sign /n "My Company Certificate" MyFile.exe  
 ```  
   
- ActiveX コントロールに署名して、ユーザーがコントロールをインストールするように求められるときに Internet Explorer に表示される情報を指定するコマンドを次に示します。  
+ <span data-ttu-id="87c7a-313">ActiveX コントロールに署名して、ユーザーがコントロールをインストールするように求められるときに Internet Explorer に表示される情報を指定するコマンドを次に示します。</span><span class="sxs-lookup"><span data-stu-id="87c7a-313">The following command signs an ActiveX control and provides information that is displayed by Internet Explorer when the user is prompted to install the control.</span></span>  
   
 ```  
 Signtool sign /f MyCert.pfx /d: "MyControl" /du http://www.example.com/MyControl/info.html MyControl.exe  
 ```  
   
- デジタル署名済みのファイルにタイム スタンプを付けるコマンドを次に示します。  
+ <span data-ttu-id="87c7a-314">デジタル署名済みのファイルにタイム スタンプを付けるコマンドを次に示します。</span><span class="sxs-lookup"><span data-stu-id="87c7a-314">The following command time-stamps a file that has already been digitally signed.</span></span>  
   
 ```  
 signtool timestamp /t  HYPERLINK "http://timestamp.verisign.com/scripts/timstamp.dll" http://timestamp.verisign.com/scripts/timstamp.dll MyFile.exe  
 ```  
   
- ファイルが署名済みであることを検証するコマンドを次に示します。  
+ <span data-ttu-id="87c7a-315">ファイルが署名済みであることを検証するコマンドを次に示します。</span><span class="sxs-lookup"><span data-stu-id="87c7a-315">The following command verifies that a file has been signed.</span></span>  
   
 ```  
 signtool verify MyFile.exe  
 ```  
   
- カタログで署名されている可能性があるシステム ファイルを検証するコマンドを次に示します。  
+ <span data-ttu-id="87c7a-316">カタログで署名されている可能性があるシステム ファイルを検証するコマンドを次に示します。</span><span class="sxs-lookup"><span data-stu-id="87c7a-316">The following command verifies a system file that may be signed in a catalog.</span></span>  
   
 ```  
 signtool verify /a SystemFile.dll  
 ```  
   
- `MyCatalog.cat` という名前のカタログで署名されているシステム ファイルを検証するコマンドを次に示します。  
+ <span data-ttu-id="87c7a-317">`MyCatalog.cat` という名前のカタログで署名されているシステム ファイルを検証するコマンドを次に示します。</span><span class="sxs-lookup"><span data-stu-id="87c7a-317">The following command verifies a system file that is signed in a catalog named `MyCatalog.cat`.</span></span>  
   
 ```  
 signtool verify /c MyCatalog.cat SystemFile.dll  
 ```  
   
-## <a name="see-also"></a>関連項目  
- [ツール](../../../docs/framework/tools/index.md)   
- [コマンド プロンプト](../../../docs/framework/tools/developer-command-prompt-for-vs.md)
+## <a name="see-also"></a><span data-ttu-id="87c7a-318">関連項目</span><span class="sxs-lookup"><span data-stu-id="87c7a-318">See Also</span></span>  
+ <span data-ttu-id="87c7a-319">[ツール](../../../docs/framework/tools/index.md) </span><span class="sxs-lookup"><span data-stu-id="87c7a-319">[Tools](../../../docs/framework/tools/index.md) </span></span>  
+ [<span data-ttu-id="87c7a-320">コマンド プロンプト</span><span class="sxs-lookup"><span data-stu-id="87c7a-320">Command Prompts</span></span>](../../../docs/framework/tools/developer-command-prompt-for-vs.md)
 

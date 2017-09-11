@@ -17,70 +17,70 @@ ms.lasthandoff: 08/04/2017
 
 ---
 
-# <a name="porting-to-net-core---libraries"></a>.NET Core への移植 - ライブラリ
+# <a name="porting-to-net-core---libraries"></a><span data-ttu-id="a2e73-104">.NET Core への移植 - ライブラリ</span><span class="sxs-lookup"><span data-stu-id="a2e73-104">Porting to .NET Core - Libraries</span></span>
 
-この記事では、ライブラリ コードを .NET Core に移植し、クロスプラットフォームで実行されるようにする方法について説明します。
+<span data-ttu-id="a2e73-105">この記事では、ライブラリ コードを .NET Core に移植し、クロスプラットフォームで実行されるようにする方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="a2e73-105">This article discusses porting library code to .NET Core so that it runs cross-platform.</span></span>
 
-## <a name="prerequisites"></a>必須コンポーネント
+## <a name="prerequisites"></a><span data-ttu-id="a2e73-106">必須コンポーネント</span><span class="sxs-lookup"><span data-stu-id="a2e73-106">Prerequisites</span></span>
 
-この記事では、以下を前提とします。
+<span data-ttu-id="a2e73-107">この記事では、以下を前提とします。</span><span class="sxs-lookup"><span data-stu-id="a2e73-107">This article assumes that you:</span></span>
 
-- Visual Studio 2017 以降を使用している。 それ以前のバージョンの Visual Studio では、.NET Core がサポートされていません。
-- [推奨の移植プロセス](index.md)を理解している。
-- [サード パーティの依存関係](third-party-deps.md)の問題が解決されている。
+- <span data-ttu-id="a2e73-108">Visual Studio 2017 以降を使用している。</span><span class="sxs-lookup"><span data-stu-id="a2e73-108">Are using Visual Studio 2017 or later.</span></span> <span data-ttu-id="a2e73-109">それ以前のバージョンの Visual Studio では、.NET Core がサポートされていません。</span><span class="sxs-lookup"><span data-stu-id="a2e73-109">.NET Core isn't supported on earlier versions of Visual Studio.</span></span>
+- <span data-ttu-id="a2e73-110">[推奨の移植プロセス](index.md)を理解している。</span><span class="sxs-lookup"><span data-stu-id="a2e73-110">Understand the [recommended porting process](index.md).</span></span>
+- <span data-ttu-id="a2e73-111">[サード パーティの依存関係](third-party-deps.md)の問題が解決されている。</span><span class="sxs-lookup"><span data-stu-id="a2e73-111">Have resolved any issues with [third-party dependencies](third-party-deps.md).</span></span>
 
-次のトピックの内容を理解している必要もあります。
+<span data-ttu-id="a2e73-112">次のトピックの内容を理解している必要もあります。</span><span class="sxs-lookup"><span data-stu-id="a2e73-112">You should also become familiar with the content of the following topics:</span></span>
 
-[.NET Standard](~/docs/standard/net-standard.md)   
-このトピックでは、すべての .NET 実装で使用可能にすることを目的とした、.NET API の正式な仕様について説明します。
+<span data-ttu-id="a2e73-113">[.NET Standard](~/docs/standard/net-standard.md) </span><span class="sxs-lookup"><span data-stu-id="a2e73-113">[.NET Standard](~/docs/standard/net-standard.md) </span></span>  
+<span data-ttu-id="a2e73-114">このトピックでは、すべての .NET 実装で使用可能にすることを目的とした、.NET API の正式な仕様について説明します。</span><span class="sxs-lookup"><span data-stu-id="a2e73-114">This topic describes the formal specification of .NET APIs that are intended to be available on all .NET implementations.</span></span>
 
-[パッケージ、メタパッケージ、フレームワーク](~/docs/core/packages.md)   
-この記事では、.NET Core でのパッケージの定義と使用について説明すると共に、複数の .NET 実装で実行されるコードがパッケージでどのようにサポートされるかについて説明します。
+<span data-ttu-id="a2e73-115">[パッケージ、メタパッケージ、フレームワーク](~/docs/core/packages.md) </span><span class="sxs-lookup"><span data-stu-id="a2e73-115">[Packages, Metapackages and Frameworks](~/docs/core/packages.md) </span></span>  
+<span data-ttu-id="a2e73-116">この記事では、.NET Core でのパッケージの定義と使用について説明すると共に、複数の .NET 実装で実行されるコードがパッケージでどのようにサポートされるかについて説明します。</span><span class="sxs-lookup"><span data-stu-id="a2e73-116">This article discusses how .NET Core defines and uses packages and how packages support code running on multiple .NET implementations.</span></span>
 
-[クロス プラットフォーム ツールによるライブラリの作成](~/docs/core/tutorials/libraries.md)   
-このトピックでは、クロスプラットフォーム CLI ツールを使用して .NET 用ライブラリを作成する方法について説明します。
+<span data-ttu-id="a2e73-117">[クロス プラットフォーム ツールによるライブラリの作成](~/docs/core/tutorials/libraries.md) </span><span class="sxs-lookup"><span data-stu-id="a2e73-117">[Developing Libraries with Cross Platform Tools](~/docs/core/tutorials/libraries.md) </span></span>  
+<span data-ttu-id="a2e73-118">このトピックでは、クロスプラットフォーム CLI ツールを使用して .NET 用ライブラリを作成する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="a2e73-118">This topic explains how to write libraries for .NET using cross-platform CLI tools.</span></span>
 
-[.NET Core の *csproj* 形式に追加されたもの](~/docs/core/tools/csproj.md)   
-この記事では、*csproj* および MSBuild への移行に伴ってプロジェクト ファイルに追加された変更について説明します。
+<span data-ttu-id="a2e73-119">[.NET Core の *csproj* 形式に追加されたもの](~/docs/core/tools/csproj.md) </span><span class="sxs-lookup"><span data-stu-id="a2e73-119">[Additions to the *csproj* format for .NET Core](~/docs/core/tools/csproj.md) </span></span>  
+<span data-ttu-id="a2e73-120">この記事では、*csproj* および MSBuild への移行に伴ってプロジェクト ファイルに追加された変更について説明します。</span><span class="sxs-lookup"><span data-stu-id="a2e73-120">This article outlines the changes that were added to the project file as part of the move to *csproj* and MSBuild.</span></span>
 
-[.NET Core への移植 - サード パーティの依存関係の分析](~/docs/core/porting/third-party-deps.md)   
-このトピックでは、サード パーティの依存関係の移植性と、NuGet パッケージの依存関係が .NET Core で機能しない場合の対処方法について説明します。
+<span data-ttu-id="a2e73-121">[.NET Core への移植 - サード パーティの依存関係の分析](~/docs/core/porting/third-party-deps.md) </span><span class="sxs-lookup"><span data-stu-id="a2e73-121">[Porting to .NET Core - Analyzing your Third-Party Party Dependencies](~/docs/core/porting/third-party-deps.md) </span></span>  
+<span data-ttu-id="a2e73-122">このトピックでは、サード パーティの依存関係の移植性と、NuGet パッケージの依存関係が .NET Core で機能しない場合の対処方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="a2e73-122">This topic discusses the portability of third-party dependencies and what to do when a NuGet package dependency doesn't run on .NET Core.</span></span>
 
-## <a name="net-framework-technologies-unavailable-on-net-core"></a>.NET Core で使用できない .NET Framework テクノロジ
+## <a name="net-framework-technologies-unavailable-on-net-core"></a><span data-ttu-id="a2e73-123">.NET Core で使用できない .NET Framework テクノロジ</span><span class="sxs-lookup"><span data-stu-id="a2e73-123">.NET Framework technologies unavailable on .NET Core</span></span>
 
-.NET Framework ライブラリで使用できるテクノロジの中には、.NET Core で使用できないものがあります。たとえば、AppDomain、リモート処理、コード アクセス セキュリティ (CAS)、セキュリティ透過性などです。 ライブラリがこれらのテクノロジの 1 つ以上に依存する場合、以下に示す代替方法を検討してください。 API の互換性の詳細については、CoreFX チームが GitHub で提供する[動作の変更/互換性の破棄と廃止/レガシ API の一覧](https://github.com/dotnet/corefx/wiki/ApiCompat)をご覧ください。
+<span data-ttu-id="a2e73-124">.NET Framework ライブラリで使用できるテクノロジの中には、.NET Core で使用できないものがあります。たとえば、AppDomain、リモート処理、コード アクセス セキュリティ (CAS)、セキュリティ透過性などです。</span><span class="sxs-lookup"><span data-stu-id="a2e73-124">Several technologies available to .NET Framework libraries aren't available for use with .NET Core, such as AppDomains, Remoting, Code Access Security (CAS), and Security Transparency.</span></span> <span data-ttu-id="a2e73-125">ライブラリがこれらのテクノロジの 1 つ以上に依存する場合、以下に示す代替方法を検討してください。</span><span class="sxs-lookup"><span data-stu-id="a2e73-125">If your libraries rely on one or more of these technologies, consider the alternative approaches outlined below.</span></span> <span data-ttu-id="a2e73-126">API の互換性の詳細については、CoreFX チームが GitHub で提供する[動作の変更/互換性の破棄と廃止/レガシ API の一覧](https://github.com/dotnet/corefx/wiki/ApiCompat)をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="a2e73-126">For more information on API compatibility, the CoreFX team maintains a [List of behavioral changes/compat breaks and deprecated/legacy APIs](https://github.com/dotnet/corefx/wiki/ApiCompat) at GitHub.</span></span>
 
-API またはテクノロジが現在実装されていないからといって、意図的にサポートされていないわけではありません。 GitHub の [dotnet/corefx リポジトリの問題](https://github.com/dotnet/corefx/issues)に問題点を挙げて、特定の API やテクノロジについて質問してください。 [問題内の移植に関する要求](https://github.com/dotnet/corefx/labels/port-to-core)には、`port-to-core` のラベルが付いています。
+<span data-ttu-id="a2e73-127">API またはテクノロジが現在実装されていないからといって、意図的にサポートされていないわけではありません。</span><span class="sxs-lookup"><span data-stu-id="a2e73-127">Just because an API or technology isn't currently implemented doesn't imply it's intentionally unsupported.</span></span> <span data-ttu-id="a2e73-128">GitHub の [dotnet/corefx リポジトリの問題](https://github.com/dotnet/corefx/issues)に問題点を挙げて、特定の API やテクノロジについて質問してください。</span><span class="sxs-lookup"><span data-stu-id="a2e73-128">File an issue in the [dotnet/corefx repository issues](https://github.com/dotnet/corefx/issues) at GitHub to ask for specific APIs and technologies.</span></span> <span data-ttu-id="a2e73-129">[問題内の移植に関する要求](https://github.com/dotnet/corefx/labels/port-to-core)には、`port-to-core` のラベルが付いています。</span><span class="sxs-lookup"><span data-stu-id="a2e73-129">[Porting requests in the issues](https://github.com/dotnet/corefx/labels/port-to-core) are marked with the `port-to-core` label.</span></span>
 
-### <a name="appdomains"></a>AppDomain
+### <a name="appdomains"></a><span data-ttu-id="a2e73-130">AppDomain</span><span class="sxs-lookup"><span data-stu-id="a2e73-130">AppDomains</span></span>
 
-AppDomain はアプリを互いに分離します。 AppDomain ではランタイム サポートが必要で、通常は非常に高額です。 .NET Core には実装されていません。 将来この機能が追加される予定はありません。 コードの分離には、代わりの方法として、プロセスの分離やコンテナーの利用をお勧めします。 アセンブリの動的読み込みには、新しい <xref:System.Runtime.Loader.AssemblyLoadContext> クラスをお勧めします。
+<span data-ttu-id="a2e73-131">AppDomain はアプリを互いに分離します。</span><span class="sxs-lookup"><span data-stu-id="a2e73-131">AppDomains isolate apps from one another.</span></span> <span data-ttu-id="a2e73-132">AppDomain ではランタイム サポートが必要で、通常は非常に高額です。</span><span class="sxs-lookup"><span data-stu-id="a2e73-132">AppDomains require runtime support and are generally quite expensive.</span></span> <span data-ttu-id="a2e73-133">.NET Core には実装されていません。</span><span class="sxs-lookup"><span data-stu-id="a2e73-133">They're not implemented in .NET Core.</span></span> <span data-ttu-id="a2e73-134">将来この機能が追加される予定はありません。</span><span class="sxs-lookup"><span data-stu-id="a2e73-134">We don't plan on adding this capability in future.</span></span> <span data-ttu-id="a2e73-135">コードの分離には、代わりの方法として、プロセスの分離やコンテナーの利用をお勧めします。</span><span class="sxs-lookup"><span data-stu-id="a2e73-135">For code isolation, we recommend separate processes or using containers as an alternative.</span></span> <span data-ttu-id="a2e73-136">アセンブリの動的読み込みには、新しい <xref:System.Runtime.Loader.AssemblyLoadContext> クラスをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="a2e73-136">For the dynamic loading of assemblies, we recommend the new <xref:System.Runtime.Loader.AssemblyLoadContext> class.</span></span>
 
-.NET Framework からのコードの移行を簡単にするために、.NET Core の <xref:System.AppDomain> API サーフェスの一部を公開しています。 API のなかには、正常に機能するもの (<xref:System.AppDomain.UnhandledException?displayProperty=fullName> など)、処理を行わないメンバー (<xref:System.AppDomain.SetCachePath%2A> など)、<xref:System.PlatformNotSupportedException> をスローするもの (<xref:System.AppDomain.CreateDomain%2A> など) があります。 [dotnet/corefx GitHub リポジトリ](https://github.com/dotnet/corefx)の[ `System.AppDomain` 参照ソース](https://github.com/dotnet/corefx/blob/master/src/System.Runtime.Extensions/src/System/AppDomain.cs)に照らして使用する種類を確認し、実装バージョンに合ったブランチを選択してください。
+<span data-ttu-id="a2e73-137">.NET Framework からのコードの移行を簡単にするために、.NET Core の <xref:System.AppDomain> API サーフェスの一部を公開しています。</span><span class="sxs-lookup"><span data-stu-id="a2e73-137">To make code migration from .NET Framework easier, we've exposed some of the <xref:System.AppDomain> API surface in .NET Core.</span></span> <span data-ttu-id="a2e73-138">API のなかには、正常に機能するもの (<xref:System.AppDomain.UnhandledException?displayProperty=fullName> など)、処理を行わないメンバー (<xref:System.AppDomain.SetCachePath%2A> など)、<xref:System.PlatformNotSupportedException> をスローするもの (<xref:System.AppDomain.CreateDomain%2A> など) があります。</span><span class="sxs-lookup"><span data-stu-id="a2e73-138">Some of the API functions normally (for example, <xref:System.AppDomain.UnhandledException?displayProperty=fullName>), some members do nothing (for example, <xref:System.AppDomain.SetCachePath%2A>), and some of them throw <xref:System.PlatformNotSupportedException> (for example, <xref:System.AppDomain.CreateDomain%2A>).</span></span> <span data-ttu-id="a2e73-139">[dotnet/corefx GitHub リポジトリ](https://github.com/dotnet/corefx)の[ `System.AppDomain` 参照ソース](https://github.com/dotnet/corefx/blob/master/src/System.Runtime.Extensions/src/System/AppDomain.cs)に照らして使用する種類を確認し、実装バージョンに合ったブランチを選択してください。</span><span class="sxs-lookup"><span data-stu-id="a2e73-139">Check the types you use against the [`System.AppDomain` reference source](https://github.com/dotnet/corefx/blob/master/src/System.Runtime.Extensions/src/System/AppDomain.cs) in the [dotnet/corefx GitHub repository](https://github.com/dotnet/corefx) making sure to select the branch that matches your implemented version.</span></span>
 
-### <a name="remoting"></a>リモート処理
+### <a name="remoting"></a><span data-ttu-id="a2e73-140">リモート処理</span><span class="sxs-lookup"><span data-stu-id="a2e73-140">Remoting</span></span>
 
-.NET リモート処理は、問題のあるアーキテクチャであると判断されました。 AppDomain 間の通信で使用されていますが、今後はサポートされなくなります。 また、リモート処理にはランタイム サポートが必要で、維持するのに高いコストがかかります。 これらの理由から、.NET リモート処理は .NET Core でサポートされておらず、また将来サポートが追加される予定もありません。
+<span data-ttu-id="a2e73-141">.NET リモート処理は、問題のあるアーキテクチャであると判断されました。</span><span class="sxs-lookup"><span data-stu-id="a2e73-141">.NET Remoting was identified as a problematic architecture.</span></span> <span data-ttu-id="a2e73-142">AppDomain 間の通信で使用されていますが、今後はサポートされなくなります。</span><span class="sxs-lookup"><span data-stu-id="a2e73-142">It's used for cross-AppDomain communication, which is no longer supported.</span></span> <span data-ttu-id="a2e73-143">また、リモート処理にはランタイム サポートが必要で、維持するのに高いコストがかかります。</span><span class="sxs-lookup"><span data-stu-id="a2e73-143">Also, Remoting requires runtime support, which is expensive to maintain.</span></span> <span data-ttu-id="a2e73-144">これらの理由から、.NET リモート処理は .NET Core でサポートされておらず、また将来サポートが追加される予定もありません。</span><span class="sxs-lookup"><span data-stu-id="a2e73-144">For these reasons, .NET Remoting isn't supported on .NET Core, and we don't plan on adding support for it in the future.</span></span>
 
-プロセス間の通信では、リモート処理に代わる方法として、<xref:System.IO.Pipes> または <xref:System.IO.MemoryMappedFiles.MemoryMappedFile> クラスなどのプロセス間通信 (IPC) メカニズムを検討してください。
+<span data-ttu-id="a2e73-145">プロセス間の通信では、リモート処理に代わる方法として、<xref:System.IO.Pipes> または <xref:System.IO.MemoryMappedFiles.MemoryMappedFile> クラスなどのプロセス間通信 (IPC) メカニズムを検討してください。</span><span class="sxs-lookup"><span data-stu-id="a2e73-145">For communication across processes, consider inter-process communication (IPC) mechanisms as an alternative to Remoting, such as the <xref:System.IO.Pipes> or the <xref:System.IO.MemoryMappedFiles.MemoryMappedFile> class.</span></span>
 
-マシン間では、代替方法としてネットワーク ベースのソリューションを使用してください。 可能であれば、HTTP などのオーバーヘッドの少ないプレーンテキストのプロトコルを使用してください。 この場合、ASP.NET Core で使用される Web サーバーの [Kestrel Web Server](https://docs.microsoft.com/aspnet/core/fundamentals/servers/kestrel) も選択できます。 また、ネットワーク ベースのマシン間のシナリオとして、<xref:System.Net.Sockets> の使用も検討してください。 その他のオプションについては、[.NET オープン ソース開発者プロジェクト: メッセージング](https://github.com/Microsoft/dotnet/blob/master/dotnet-developer-projects.md#messaging)に関する記事をご覧ください。
+<span data-ttu-id="a2e73-146">マシン間では、代替方法としてネットワーク ベースのソリューションを使用してください。</span><span class="sxs-lookup"><span data-stu-id="a2e73-146">Across machines, use a network-based solution as an alternative.</span></span> <span data-ttu-id="a2e73-147">可能であれば、HTTP などのオーバーヘッドの少ないプレーンテキストのプロトコルを使用してください。</span><span class="sxs-lookup"><span data-stu-id="a2e73-147">Preferably, use a low-overhead plain text protocol, such as HTTP.</span></span> <span data-ttu-id="a2e73-148">この場合、ASP.NET Core で使用される Web サーバーの [Kestrel Web Server](https://docs.microsoft.com/aspnet/core/fundamentals/servers/kestrel) も選択できます。</span><span class="sxs-lookup"><span data-stu-id="a2e73-148">The [Kestrel web server](https://docs.microsoft.com/aspnet/core/fundamentals/servers/kestrel), the web server used by ASP.NET Core, is an option here.</span></span> <span data-ttu-id="a2e73-149">また、ネットワーク ベースのマシン間のシナリオとして、<xref:System.Net.Sockets> の使用も検討してください。</span><span class="sxs-lookup"><span data-stu-id="a2e73-149">Also consider using <xref:System.Net.Sockets> for network-based, cross-machine scenarios.</span></span> <span data-ttu-id="a2e73-150">その他のオプションについては、[.NET オープン ソース開発者プロジェクト: メッセージング](https://github.com/Microsoft/dotnet/blob/master/dotnet-developer-projects.md#messaging)に関する記事をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="a2e73-150">For more options, see [.NET Open Source Developer Projects: Messaging](https://github.com/Microsoft/dotnet/blob/master/dotnet-developer-projects.md#messaging).</span></span>
 
-### <a name="code-access-security-cas"></a>コード アクセス セキュリティ (CAS)
+### <a name="code-access-security-cas"></a><span data-ttu-id="a2e73-151">コード アクセス セキュリティ (CAS)</span><span class="sxs-lookup"><span data-stu-id="a2e73-151">Code Access Security (CAS)</span></span>
 
-サンド ボックスは、マネージ アプリケーションやライブラリが使用または実行するリソースの制限を、ランタイムまたはフレームワークに依存しています。これは [.NET Framework ではサポートされていない](~/docs/framework/misc/code-access-security.md)ため、.NET Core でもサポートされていません。 .NET Framework やランタイムでは、特権の昇格が発生するケースが多すぎるため、このまま CAS をセキュリティ境界と見なすことはできないと考えています。 さらに、CAS は実装が複雑化しており、その使用を予定していないアプリケーションでは、多くの場合で正確性のパフォーマンスに影響します。
+<span data-ttu-id="a2e73-152">サンド ボックスは、マネージ アプリケーションやライブラリが使用または実行するリソースの制限を、ランタイムまたはフレームワークに依存しています。これは [.NET Framework ではサポートされていない](~/docs/framework/misc/code-access-security.md)ため、.NET Core でもサポートされていません。</span><span class="sxs-lookup"><span data-stu-id="a2e73-152">Sandboxing, which is relying on the runtime or the framework to constrain which resources a managed application or library uses or runs, [isn't supported on .NET Framework](~/docs/framework/misc/code-access-security.md) and therefore is also not supported on .NET Core.</span></span> <span data-ttu-id="a2e73-153">.NET Framework やランタイムでは、特権の昇格が発生するケースが多すぎるため、このまま CAS をセキュリティ境界と見なすことはできないと考えています。</span><span class="sxs-lookup"><span data-stu-id="a2e73-153">We believe that there are too many cases in the .NET Framework and runtime where an elevation of privileges occurs to continue treating CAS as a security boundary.</span></span> <span data-ttu-id="a2e73-154">さらに、CAS は実装が複雑化しており、その使用を予定していないアプリケーションでは、多くの場合で正確性のパフォーマンスに影響します。</span><span class="sxs-lookup"><span data-stu-id="a2e73-154">In addition, CAS makes the implementation more complicated and often has correctness-performance implications for applications that don't intend to use it.</span></span>
 
-仮想化、コンテナー、ユーザー アカウントなど、オペレーティング システムが提供するセキュリティ境界を使用して、最低限の特権セットでプロセスを実行します。
+<span data-ttu-id="a2e73-155">仮想化、コンテナー、ユーザー アカウントなど、オペレーティング システムが提供するセキュリティ境界を使用して、最低限の特権セットでプロセスを実行します。</span><span class="sxs-lookup"><span data-stu-id="a2e73-155">Use security boundaries provided by the operating system, such as virtualization, containers, or user accounts for running processes with the least set of privileges.</span></span>
 
-### <a name="security-transparency"></a>セキュリティ透過性
+### <a name="security-transparency"></a><span data-ttu-id="a2e73-156">セキュリティ透過性</span><span class="sxs-lookup"><span data-stu-id="a2e73-156">Security Transparency</span></span>
 
-CAS と同様に、セキュリティ透過性を利用すると、サンドボックス コードをセキュリティ クリティカルなコードから宣言的に分離できますが、[現在はセキュリティ境界としてはサポートされていません](~/docs/framework/misc/security-transparent-code.md)。 この機能は、Silverlight で頻繁に使用されます。 
+<span data-ttu-id="a2e73-157">CAS と同様に、セキュリティ透過性を利用すると、サンドボックス コードをセキュリティ クリティカルなコードから宣言的に分離できますが、[現在はセキュリティ境界としてはサポートされていません](~/docs/framework/misc/security-transparent-code.md)。</span><span class="sxs-lookup"><span data-stu-id="a2e73-157">Similar to CAS, Security Transparency allows separating sandboxed code from security critical code in a declarative fashion but is [no longer supported as a security boundary](~/docs/framework/misc/security-transparent-code.md).</span></span> <span data-ttu-id="a2e73-158">この機能は、Silverlight で頻繁に使用されます。</span><span class="sxs-lookup"><span data-stu-id="a2e73-158">This feature is heavily used by Silverlight.</span></span> 
 
-仮想化、コンテナー、ユーザー アカウントなど、オペレーティング システムが提供するセキュリティ境界を使用して、最低限の特権セットでプロセスを実行します。
+<span data-ttu-id="a2e73-159">仮想化、コンテナー、ユーザー アカウントなど、オペレーティング システムが提供するセキュリティ境界を使用して、最低限の特権セットでプロセスを実行します。</span><span class="sxs-lookup"><span data-stu-id="a2e73-159">Use security boundaries provided by the operating system, such as virtualization, containers, or user accounts for running processes with the least set of privileges.</span></span>
 
-### <a name="globaljson"></a>global.json
+### <a name="globaljson"></a><span data-ttu-id="a2e73-160">global.json</span><span class="sxs-lookup"><span data-stu-id="a2e73-160">global.json</span></span>
 
-*global.json* ファイルは、プロジェクトの .NET Core ツールのバージョンを設定できるオプションのファイルです。 .NET Core のナイトリー ビルドを使用しながら、特定のバージョンの SDK を指定したい場合、*global.json* ファイルでバージョンを指定します。 通常、このファイルは、現在の作業ディレクトリまたはその親ディレクトリのいずれかに存在します。 
+<span data-ttu-id="a2e73-161">*global.json* ファイルは、プロジェクトの .NET Core ツールのバージョンを設定できるオプションのファイルです。</span><span class="sxs-lookup"><span data-stu-id="a2e73-161">The *global.json* file is an optional file that allows you to set the .NET Core tools version of a project.</span></span> <span data-ttu-id="a2e73-162">.NET Core のナイトリー ビルドを使用しながら、特定のバージョンの SDK を指定したい場合、*global.json* ファイルでバージョンを指定します。</span><span class="sxs-lookup"><span data-stu-id="a2e73-162">If you're using nightly builds of .NET Core and wish to specify a specific version of the SDK, specify the version with a *global.json* file.</span></span> <span data-ttu-id="a2e73-163">通常、このファイルは、現在の作業ディレクトリまたはその親ディレクトリのいずれかに存在します。</span><span class="sxs-lookup"><span data-stu-id="a2e73-163">It typically resides in the current working directory or one of its parent directories.</span></span> 
 
 ```json
 {
@@ -90,111 +90,111 @@ CAS と同様に、セキュリティ透過性を利用すると、サンドボ�
 }
 ```
 
-## <a name="converting-a-pcl-project"></a>PCL プロジェクトの変換
+## <a name="converting-a-pcl-project"></a><span data-ttu-id="a2e73-164">PCL プロジェクトの変換</span><span class="sxs-lookup"><span data-stu-id="a2e73-164">Converting a PCL project</span></span>
 
-Visual Studio 2017 でライブラリを読み込み、次の手順を行うことで、PCL プロジェクトのターゲットを .NET Standard に変更できます。
+<span data-ttu-id="a2e73-165">Visual Studio 2017 でライブラリを読み込み、次の手順を行うことで、PCL プロジェクトのターゲットを .NET Standard に変更できます。</span><span class="sxs-lookup"><span data-stu-id="a2e73-165">You can convert the targets of a PCL project to .NET Standard by loading the library in Visual Studio 2017 and performing the following steps:</span></span>
 
-1. プロジェクト ファイルを右クリックし、**[プロパティ]** を選択します。
-1. **[ライブラリ]** から、**[ターゲットの .NET Platform Standard]** を選択します。
+1. <span data-ttu-id="a2e73-166">プロジェクト ファイルを右クリックし、**[プロパティ]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="a2e73-166">Right-click on the project file and select **Properties**.</span></span>
+1. <span data-ttu-id="a2e73-167">**[ライブラリ]** から、**[ターゲットの .NET Platform Standard]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="a2e73-167">Under **Library**, select **Target .NET Platform Standard**.</span></span>
 
-パッケージで NuGet 3.0 がサポートされている場合、プロジェクトは .NET Standard に再ターゲット設定します。
+<span data-ttu-id="a2e73-168">パッケージで NuGet 3.0 がサポートされている場合、プロジェクトは .NET Standard に再ターゲット設定します。</span><span class="sxs-lookup"><span data-stu-id="a2e73-168">If your packages support NuGet 3.0, the project retargets to .NET Standard.</span></span>
 
-パッケージで NuGet 3.0 がサポートされていない場合、Visual Studio で、現在のパッケージをアンインストールするように促すダイアログが表示されます。 この通知が表示される場合は、次の手順を実行します。
+<span data-ttu-id="a2e73-169">パッケージで NuGet 3.0 がサポートされていない場合、Visual Studio で、現在のパッケージをアンインストールするように促すダイアログが表示されます。</span><span class="sxs-lookup"><span data-stu-id="a2e73-169">If your packages don't support NuGet 3.0, you receive a dialog from Visual Studio telling you to uninstall your current packages.</span></span> <span data-ttu-id="a2e73-170">この通知が表示される場合は、次の手順を実行します。</span><span class="sxs-lookup"><span data-stu-id="a2e73-170">If you receive this notice, perform the following steps:</span></span>
 
-1. プロジェクトを右クリックし、**[NuGet パッケージの管理]** を選択します。
-1. プロジェクトのパッケージをメモしておきます。
-1. パッケージを 1 つずつアンインストールします。
-1. アンインストール プロセスを完了するには、Visual Studio を再起動しなくてはならない場合があります。 その場合、**[NuGet パッケージ マネージャー]** ウィンドウに **[再起動]** ボタンが表示されます。
-1. プロジェクトが再度読み込まれると、.NET Standard がターゲット設定されます。 アンインストールが必要なパッケージを追加します。
+1. <span data-ttu-id="a2e73-171">プロジェクトを右クリックし、**[NuGet パッケージの管理]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="a2e73-171">Right-click the project, select **Manage NuGet Packages**.</span></span>
+1. <span data-ttu-id="a2e73-172">プロジェクトのパッケージをメモしておきます。</span><span class="sxs-lookup"><span data-stu-id="a2e73-172">Make a note of the project's packages.</span></span>
+1. <span data-ttu-id="a2e73-173">パッケージを 1 つずつアンインストールします。</span><span class="sxs-lookup"><span data-stu-id="a2e73-173">Uninstall the packages one-by-one.</span></span>
+1. <span data-ttu-id="a2e73-174">アンインストール プロセスを完了するには、Visual Studio を再起動しなくてはならない場合があります。</span><span class="sxs-lookup"><span data-stu-id="a2e73-174">You might need to restart Visual Studio to complete the uninstall process.</span></span> <span data-ttu-id="a2e73-175">その場合、**[NuGet パッケージ マネージャー]** ウィンドウに **[再起動]** ボタンが表示されます。</span><span class="sxs-lookup"><span data-stu-id="a2e73-175">If so, a **Restart** button is presented to you in the **NuGet Package Manager** window.</span></span>
+1. <span data-ttu-id="a2e73-176">プロジェクトが再度読み込まれると、.NET Standard がターゲット設定されます。</span><span class="sxs-lookup"><span data-stu-id="a2e73-176">When the project reloads, it targets .NET Standard.</span></span> <span data-ttu-id="a2e73-177">アンインストールが必要なパッケージを追加します。</span><span class="sxs-lookup"><span data-stu-id="a2e73-177">Add the packages you were required to uninstall.</span></span>
 
-## <a name="retargeting-your-net-framework-code-to-net-framework-462"></a>.NET Framework コードのターゲットを .NET Framework 4.6.2 に変更する
+## <a name="retargeting-your-net-framework-code-to-net-framework-462"></a><span data-ttu-id="a2e73-178">.NET Framework コードのターゲットを .NET Framework 4.6.2 に変更する</span><span class="sxs-lookup"><span data-stu-id="a2e73-178">Retargeting your .NET Framework code to .NET Framework 4.6.2</span></span>
 
-コードのターゲットが .NET Framework 4.6.2 でない場合、.NET Framework 4.6.2 に再ターゲット設定することをお勧めします。 ターゲット設定することで、.NET Standard が既存の API をサポートしていない場合に、最新の代替 API を使用できるようになります。
+<span data-ttu-id="a2e73-179">コードのターゲットが .NET Framework 4.6.2 でない場合、.NET Framework 4.6.2 に再ターゲット設定することをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="a2e73-179">If your code isn't targeting .NET Framework 4.6.2, we recommended that you retarget to .NET Framework 4.6.2.</span></span> <span data-ttu-id="a2e73-180">ターゲット設定することで、.NET Standard が既存の API をサポートしていない場合に、最新の代替 API を使用できるようになります。</span><span class="sxs-lookup"><span data-stu-id="a2e73-180">This ensures the availability of the latest API alternatives for cases where the .NET Standard doesn't support existing APIs.</span></span>
 
-移植する Visual Studio の各プロジェクトで、次の手順を実行します。
+<span data-ttu-id="a2e73-181">移植する Visual Studio の各プロジェクトで、次の手順を実行します。</span><span class="sxs-lookup"><span data-stu-id="a2e73-181">For each of your projects in Visual Studio you wish to port, do the following:</span></span>
 
-1. プロジェクトを右クリックし、[プロパティ] を選択します。
-1. **[対象とする Framework]** ボックスの一覧で、**[.NET Framework 4.6.2]** を選択します。
-1. プロジェクトを再コンパイルします。
+1. <span data-ttu-id="a2e73-182">プロジェクトを右クリックし、[プロパティ] を選択します。</span><span class="sxs-lookup"><span data-stu-id="a2e73-182">Right-click on the project and select Properties.</span></span>
+1. <span data-ttu-id="a2e73-183">**[対象とする Framework]** ボックスの一覧で、**[.NET Framework 4.6.2]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="a2e73-183">In the **Target Framework** dropdown, select **.NET Framework 4.6.2**.</span></span>
+1. <span data-ttu-id="a2e73-184">プロジェクトを再コンパイルします。</span><span class="sxs-lookup"><span data-stu-id="a2e73-184">Recompile your projects.</span></span>
 
-プロジェクトのターゲットが .NET Framework 4.6.2 になったため、コード移植のベースとして .NET Framework 4.6.2 を使用できます。
+<span data-ttu-id="a2e73-185">プロジェクトのターゲットが .NET Framework 4.6.2 になったため、コード移植のベースとして .NET Framework 4.6.2 を使用できます。</span><span class="sxs-lookup"><span data-stu-id="a2e73-185">Because your projects now target .NET Framework 4.6.2, use that version of the .NET Framework as your base for porting code.</span></span>
 
-## <a name="determining-the-portability-of-your-code"></a>コードの移植性を判別する
+## <a name="determining-the-portability-of-your-code"></a><span data-ttu-id="a2e73-186">コードの移植性を判別する</span><span class="sxs-lookup"><span data-stu-id="a2e73-186">Determining the portability of your code</span></span>
 
-次の手順では、API Portability Analyzer (ApiPort) を実行して、分析用の移植性レポートを生成します。
+<span data-ttu-id="a2e73-187">次の手順では、API Portability Analyzer (ApiPort) を実行して、分析用の移植性レポートを生成します。</span><span class="sxs-lookup"><span data-stu-id="a2e73-187">The next step is to run the API Portability Analyzer (ApiPort) to generate a portability report for analysis.</span></span>
 
-[API Portability Analyzer (ApiPort)](~/docs/standard/portability-analyzer.md) を理解し、.NET Core をターゲットとする移植性レポートを生成する方法を理解している必要があります。 その方法は、ニーズと個人の好みによって変わります。 以下に、異なるアプローチをいくつか示します。 コードの構成内容によっては、これらのアプローチの手順を組み合わせて使用していることに気付くかもしれません。
+<span data-ttu-id="a2e73-188">[API Portability Analyzer (ApiPort)](~/docs/standard/portability-analyzer.md) を理解し、.NET Core をターゲットとする移植性レポートを生成する方法を理解している必要があります。</span><span class="sxs-lookup"><span data-stu-id="a2e73-188">Make sure you understand the [API Portability Analyzer (ApiPort)](~/docs/standard/portability-analyzer.md) and how to generate portability reports for targeting .NET Core.</span></span> <span data-ttu-id="a2e73-189">その方法は、ニーズと個人の好みによって変わります。</span><span class="sxs-lookup"><span data-stu-id="a2e73-189">How you do this likely varies based on your needs and personal tastes.</span></span> <span data-ttu-id="a2e73-190">以下に、異なるアプローチをいくつか示します。</span><span class="sxs-lookup"><span data-stu-id="a2e73-190">What follows are a few different approaches.</span></span> <span data-ttu-id="a2e73-191">コードの構成内容によっては、これらのアプローチの手順を組み合わせて使用していることに気付くかもしれません。</span><span class="sxs-lookup"><span data-stu-id="a2e73-191">You may find yourself mixing steps of these approaches depending on how your code is structured.</span></span>
 
-### <a name="dealing-primarily-with-the-compiler"></a>主にコンパイラを使用して対処する
+### <a name="dealing-primarily-with-the-compiler"></a><span data-ttu-id="a2e73-192">主にコンパイラを使用して対処する</span><span class="sxs-lookup"><span data-stu-id="a2e73-192">Dealing primarily with the compiler</span></span>
 
-このアプローチは、小さなプロジェクト、つまり多くの .NET Framework API を使用しないプロジェクトにお勧めです。 このアプローチは単純です。
+<span data-ttu-id="a2e73-193">このアプローチは、小さなプロジェクト、つまり多くの .NET Framework API を使用しないプロジェクトにお勧めです。</span><span class="sxs-lookup"><span data-stu-id="a2e73-193">This approach may be the best for small projects or projects which don't use many .NET Framework APIs.</span></span> <span data-ttu-id="a2e73-194">このアプローチは単純です。</span><span class="sxs-lookup"><span data-stu-id="a2e73-194">The approach is simple:</span></span>
 
-1. 必要に応じてプロジェクトで ApiPort を実行します。 ApiPort を実行すると、レポートから対応が必要となる問題についての情報を得られます。
-1. すべてのコードを新しい .NET Core プロジェクトにコピーします。
-1. 移植性に関するレポート (生成されている場合) を参照しながら、プロジェクトが完全にコンパイルされるまでコンパイラ エラーを解決します。
+1. <span data-ttu-id="a2e73-195">必要に応じてプロジェクトで ApiPort を実行します。</span><span class="sxs-lookup"><span data-stu-id="a2e73-195">Optionally, run ApiPort on your project.</span></span> <span data-ttu-id="a2e73-196">ApiPort を実行すると、レポートから対応が必要となる問題についての情報を得られます。</span><span class="sxs-lookup"><span data-stu-id="a2e73-196">If you run ApiPort, gain knowledge from the report on issues you'll need to address.</span></span>
+1. <span data-ttu-id="a2e73-197">すべてのコードを新しい .NET Core プロジェクトにコピーします。</span><span class="sxs-lookup"><span data-stu-id="a2e73-197">Copy all of your code over into a new .NET Core project.</span></span>
+1. <span data-ttu-id="a2e73-198">移植性に関するレポート (生成されている場合) を参照しながら、プロジェクトが完全にコンパイルされるまでコンパイラ エラーを解決します。</span><span class="sxs-lookup"><span data-stu-id="a2e73-198">While referring to the portability report (if generated), solve compiler errors until the project fully compiles.</span></span>
 
-これは非体系的なアプローチですが、多くの場合、コード中心のアプローチが問題を迅速に解決します。また、これは小規模なプロジェクトやライブラリに最適なアプローチかもしれません。 特に、データ モデルのみが含まれるプロジェクトにはこのアプローチが最適です。
+<span data-ttu-id="a2e73-199">これは非体系的なアプローチですが、多くの場合、コード中心のアプローチが問題を迅速に解決します。また、これは小規模なプロジェクトやライブラリに最適なアプローチかもしれません。</span><span class="sxs-lookup"><span data-stu-id="a2e73-199">Although this approach is unstructured, the code-focused approach often leads to resolving issues quickly and might be the best approach for smaller projects or libraries.</span></span> <span data-ttu-id="a2e73-200">特に、データ モデルのみが含まれるプロジェクトにはこのアプローチが最適です。</span><span class="sxs-lookup"><span data-stu-id="a2e73-200">A project that contains only data models might be an ideal candidate for this approach.</span></span>
 
-### <a name="staying-on-the-net-framework-until-portability-issues-are-resolved"></a>移植性の問題が解決されるまで .NET Framework を使い続ける
+### <a name="staying-on-the-net-framework-until-portability-issues-are-resolved"></a><span data-ttu-id="a2e73-201">移植性の問題が解決されるまで .NET Framework を使い続ける</span><span class="sxs-lookup"><span data-stu-id="a2e73-201">Staying on the .NET Framework until portability issues are resolved</span></span>
 
-このアプローチは、すべてのプロセスでコンパイルできるコードを作成したい場合にお勧めです。 アプローチは次のとおりです。
+<span data-ttu-id="a2e73-202">このアプローチは、すべてのプロセスでコンパイルできるコードを作成したい場合にお勧めです。</span><span class="sxs-lookup"><span data-stu-id="a2e73-202">This approach might be the best if you prefer to have code that compiles during the entire process.</span></span> <span data-ttu-id="a2e73-203">アプローチは次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="a2e73-203">The approach is as follows:</span></span>
 
-1. プロジェクトで ApiPort を実行します。
-1. 移植可能な別の API を使用して問題に対処します。
-1. 直接の代替方法を使用できない領域をすべて書き留めます。
-1. 新しい .NET Core プロジェクトにコピーしても問題ないことが確認できるまで、移植するすべてのプロジェクトに対して前の手順を繰り返します。
-1. コードを新しい .NET Core プロジェクトにコピーします。
-1. 直接の代替手段がないと書き留めた問題に対処します。
+1. <span data-ttu-id="a2e73-204">プロジェクトで ApiPort を実行します。</span><span class="sxs-lookup"><span data-stu-id="a2e73-204">Run ApiPort on a project.</span></span>
+1. <span data-ttu-id="a2e73-205">移植可能な別の API を使用して問題に対処します。</span><span class="sxs-lookup"><span data-stu-id="a2e73-205">Address issues by using different APIs that are portable.</span></span>
+1. <span data-ttu-id="a2e73-206">直接の代替方法を使用できない領域をすべて書き留めます。</span><span class="sxs-lookup"><span data-stu-id="a2e73-206">Take note of any areas where you're prevented from using a direct alternative.</span></span>
+1. <span data-ttu-id="a2e73-207">新しい .NET Core プロジェクトにコピーしても問題ないことが確認できるまで、移植するすべてのプロジェクトに対して前の手順を繰り返します。</span><span class="sxs-lookup"><span data-stu-id="a2e73-207">Repeat the prior steps for all projects you're porting until you're confident each is ready to be copied over into a new .NET Core project.</span></span>
+1. <span data-ttu-id="a2e73-208">コードを新しい .NET Core プロジェクトにコピーします。</span><span class="sxs-lookup"><span data-stu-id="a2e73-208">Copy the code into a new .NET Core project.</span></span>
+1. <span data-ttu-id="a2e73-209">直接の代替手段がないと書き留めた問題に対処します。</span><span class="sxs-lookup"><span data-stu-id="a2e73-209">Work out any issues where you noted that a direct alternative doesn't exist.</span></span>
 
-この慎重なアプローチは、コンパイラ エラーに対処するだけの方法よりも体系的ですが、それでも比較的コード中心であり、コンパイルできるコードが常にあるという利点があります。 別の API を使用するだけでは解決できなかった問題を解決する方法は、大きく異なります。 プロジェクトによっては、次のアプローチのように、より包括的な計画を開発する必要があります。
+<span data-ttu-id="a2e73-210">この慎重なアプローチは、コンパイラ エラーに対処するだけの方法よりも体系的ですが、それでも比較的コード中心であり、コンパイルできるコードが常にあるという利点があります。</span><span class="sxs-lookup"><span data-stu-id="a2e73-210">This careful approach is more structured than simply working out compiler errors, but it's still relatively code-focused and has the benefit of always having code that compiles.</span></span> <span data-ttu-id="a2e73-211">別の API を使用するだけでは解決できなかった問題を解決する方法は、大きく異なります。</span><span class="sxs-lookup"><span data-stu-id="a2e73-211">The way you resolve certain issues that couldn't be addressed by just using another API varies greatly.</span></span> <span data-ttu-id="a2e73-212">プロジェクトによっては、次のアプローチのように、より包括的な計画を開発する必要があります。</span><span class="sxs-lookup"><span data-stu-id="a2e73-212">You may find that you need to develop a more comprehensive plan for certain projects, which is covered as the next approach.</span></span>
 
-### <a name="developing-a-comprehensive-plan-of-attack"></a>包括的な計画を新たに作成する
+### <a name="developing-a-comprehensive-plan-of-attack"></a><span data-ttu-id="a2e73-213">包括的な計画を新たに作成する</span><span class="sxs-lookup"><span data-stu-id="a2e73-213">Developing a comprehensive plan of attack</span></span>
 
-このアプローチは、.NET Core をサポートするために、コードの再構築や特定範囲の完全な書き換えが必要になる可能性があるような、大規模で複雑なプロジェクトにお勧めです。 アプローチは次のとおりです。
+<span data-ttu-id="a2e73-214">このアプローチは、.NET Core をサポートするために、コードの再構築や特定範囲の完全な書き換えが必要になる可能性があるような、大規模で複雑なプロジェクトにお勧めです。</span><span class="sxs-lookup"><span data-stu-id="a2e73-214">This approach might be best for larger and more complex projects, where restructuring code or completely rewriting certain areas of code might be necessary to support .NET Core.</span></span> <span data-ttu-id="a2e73-215">アプローチは次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="a2e73-215">The approach is as follows:</span></span>
 
-1. プロジェクトで ApiPort を実行します。
-1. 移植できない性質のものが使用されている箇所と、それが移植性全体に与える影響を把握します。
-   - 種類の性質を理解します。 数は少なくても使用頻度は高いですか。 数は多くても使用頻度は低いですか。 コードで集中して使用されていますか、それともあちこちで使用されていますか。
-   - 移植できないコードの分離は簡単で、効果的に処理できますか。
-   - コードをリファクタリングする必要はありますか。
-   - 移植可能ではない種類の場合、同じ作業を実行できる代替 API はありますか。 たとえば、<xref:System.Net.WebClient> クラスを使用している場合は、代わりに <xref:System.Net.Http.HttpClient> クラスを使用できます。
-   - 一時的な置き換えでない場合でも、作業を完了させるのに使用できる、移植可能な API が別にありますか。 たとえば、<xref:System.Xml.Schema.XmlSchema> を使用して XML を解析しているが、XML スキーマ検出が不要な場合、<xref:System.Xml.Linq> API を使用して API に依存しない解析を独自に実装できます。
-1. 移植が困難なアセンブリがある場合、.NET Framework を今すぐ止める価値はあるでしょうか。 次の点を考慮することをお勧めします。
-   - .NET Framework または Windows 固有の機能への依存度が高いために、.NET Core との互換性がない機能がライブラリにあるとします。 ただちにその機能をあきらめ、機能を移植できるリソースが利用できるようになるまで、機能の少ない .NET Core バージョンのライブラリを一時的にリリースするのがよいでしょうか。
-   - リファクタリングが有効でしょうか。
-1. 使用できない .NET Framework API の代わりになる実装を開発することは理にかなっていますか。
-   [.NET Framework の参照ソース](https://github.com/Microsoft/referencesource)のコードのコピー、変更、および使用も検討できます。 この参照ソース コードは [MIT ライセンス](https://github.com/Microsoft/referencesource/blob/master/LICENSE.txt)の下で使用が許可されているため、このソースをコードの基盤として、かなり自由に使用できます。 ただし、コードには Microsoft への帰属を適切に示してください。
-1. プロジェクトごとにこのプロセスを繰り返します。
+1. <span data-ttu-id="a2e73-216">プロジェクトで ApiPort を実行します。</span><span class="sxs-lookup"><span data-stu-id="a2e73-216">Run ApiPort on a project.</span></span>
+1. <span data-ttu-id="a2e73-217">移植できない性質のものが使用されている箇所と、それが移植性全体に与える影響を把握します。</span><span class="sxs-lookup"><span data-stu-id="a2e73-217">Understand where each non-portable type is used and how that affects overall portability.</span></span>
+   - <span data-ttu-id="a2e73-218">種類の性質を理解します。</span><span class="sxs-lookup"><span data-stu-id="a2e73-218">Understand the nature of those types.</span></span> <span data-ttu-id="a2e73-219">数は少なくても使用頻度は高いですか。</span><span class="sxs-lookup"><span data-stu-id="a2e73-219">Are they small in number but used frequently?</span></span> <span data-ttu-id="a2e73-220">数は多くても使用頻度は低いですか。</span><span class="sxs-lookup"><span data-stu-id="a2e73-220">Are they large in number but used infrequently?</span></span> <span data-ttu-id="a2e73-221">コードで集中して使用されていますか、それともあちこちで使用されていますか。</span><span class="sxs-lookup"><span data-stu-id="a2e73-221">Is their use concentrated, or is it spread throughout your code?</span></span>
+   - <span data-ttu-id="a2e73-222">移植できないコードの分離は簡単で、効果的に処理できますか。</span><span class="sxs-lookup"><span data-stu-id="a2e73-222">Is it easy to isolate code that isn't portable so that you can deal with it more effectively?</span></span>
+   - <span data-ttu-id="a2e73-223">コードをリファクタリングする必要はありますか。</span><span class="sxs-lookup"><span data-stu-id="a2e73-223">Do you need to refactor your code?</span></span>
+   - <span data-ttu-id="a2e73-224">移植可能ではない種類の場合、同じ作業を実行できる代替 API はありますか。</span><span class="sxs-lookup"><span data-stu-id="a2e73-224">For those types which aren't portable, are there alternative APIs that accomplish the same task?</span></span> <span data-ttu-id="a2e73-225">たとえば、<xref:System.Net.WebClient> クラスを使用している場合は、代わりに <xref:System.Net.Http.HttpClient> クラスを使用できます。</span><span class="sxs-lookup"><span data-stu-id="a2e73-225">For example if you're using the <xref:System.Net.WebClient> class, you might be able to use the <xref:System.Net.Http.HttpClient> class instead.</span></span>
+   - <span data-ttu-id="a2e73-226">一時的な置き換えでない場合でも、作業を完了させるのに使用できる、移植可能な API が別にありますか。</span><span class="sxs-lookup"><span data-stu-id="a2e73-226">Are there different portable APIs available to accomplish a task, even if it's not a drop-in replacement?</span></span> <span data-ttu-id="a2e73-227">たとえば、<xref:System.Xml.Schema.XmlSchema> を使用して XML を解析しているが、XML スキーマ検出が不要な場合、<xref:System.Xml.Linq> API を使用して API に依存しない解析を独自に実装できます。</span><span class="sxs-lookup"><span data-stu-id="a2e73-227">For example if you're using <xref:System.Xml.Schema.XmlSchema> to parse XML but don't require XML schema discovery, you could use <xref:System.Xml.Linq> APIs and implement parsing yourself as opposed to relying on an API.</span></span>
+1. <span data-ttu-id="a2e73-228">移植が困難なアセンブリがある場合、.NET Framework を今すぐ止める価値はあるでしょうか。</span><span class="sxs-lookup"><span data-stu-id="a2e73-228">If you have assemblies that are difficult to port, is it worth leaving them on .NET Framework for now?</span></span> <span data-ttu-id="a2e73-229">次の点を考慮することをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="a2e73-229">Here are some things to consider:</span></span>
+   - <span data-ttu-id="a2e73-230">.NET Framework または Windows 固有の機能への依存度が高いために、.NET Core との互換性がない機能がライブラリにあるとします。</span><span class="sxs-lookup"><span data-stu-id="a2e73-230">You may have some functionality in your library that's incompatible with .NET Core because it relies too heavily on .NET Framework or Windows-specific functionality.</span></span> <span data-ttu-id="a2e73-231">ただちにその機能をあきらめ、機能を移植できるリソースが利用できるようになるまで、機能の少ない .NET Core バージョンのライブラリを一時的にリリースするのがよいでしょうか。</span><span class="sxs-lookup"><span data-stu-id="a2e73-231">Is it worth leaving that functionality behind for now and releasing a .NET Core version of your library with less features on a temporary basis until resources are available to port the features?</span></span>
+   - <span data-ttu-id="a2e73-232">リファクタリングが有効でしょうか。</span><span class="sxs-lookup"><span data-stu-id="a2e73-232">Would a refactor help?</span></span>
+1. <span data-ttu-id="a2e73-233">使用できない .NET Framework API の代わりになる実装を開発することは理にかなっていますか。</span><span class="sxs-lookup"><span data-stu-id="a2e73-233">Is it reasonable to write your own implementation of an unavailable .NET Framework API?</span></span>
+   <span data-ttu-id="a2e73-234">[.NET Framework の参照ソース](https://github.com/Microsoft/referencesource)のコードのコピー、変更、および使用も検討できます。</span><span class="sxs-lookup"><span data-stu-id="a2e73-234">You could consider copying, modifying, and using code from the [.NET Framework Reference Source](https://github.com/Microsoft/referencesource).</span></span> <span data-ttu-id="a2e73-235">この参照ソース コードは [MIT ライセンス](https://github.com/Microsoft/referencesource/blob/master/LICENSE.txt)の下で使用が許可されているため、このソースをコードの基盤として、かなり自由に使用できます。</span><span class="sxs-lookup"><span data-stu-id="a2e73-235">The reference source code is licensed under the [MIT License](https://github.com/Microsoft/referencesource/blob/master/LICENSE.txt), so you have significant freedom to use the source as a basis for your own code.</span></span> <span data-ttu-id="a2e73-236">ただし、コードには Microsoft への帰属を適切に示してください。</span><span class="sxs-lookup"><span data-stu-id="a2e73-236">Just be sure to properly attribute Microsoft in your code.</span></span>
+1. <span data-ttu-id="a2e73-237">プロジェクトごとにこのプロセスを繰り返します。</span><span class="sxs-lookup"><span data-stu-id="a2e73-237">Repeat this process as needed for different projects.</span></span>
  
-コードベースのサイズによっては、分析フェーズに時間がかかる場合があります。 このフェーズに時間を割き、必要な変更の範囲を完全に把握してから計画を立てることで、長期的には多くの時間を節約できます。特に、コードベースが複雑な場合には有効です。
+<span data-ttu-id="a2e73-238">コードベースのサイズによっては、分析フェーズに時間がかかる場合があります。</span><span class="sxs-lookup"><span data-stu-id="a2e73-238">The analysis phase could take some time depending on the size of your codebase.</span></span> <span data-ttu-id="a2e73-239">このフェーズに時間を割き、必要な変更の範囲を完全に把握してから計画を立てることで、長期的には多くの時間を節約できます。特に、コードベースが複雑な場合には有効です。</span><span class="sxs-lookup"><span data-stu-id="a2e73-239">Spending time in this phase to thoroughly understand the scope of changes needed and to develop a plan usually saves you time in the long run, particularly if you have a complex codebase.</span></span>
 
-コードベースの大幅な変更が必要な計画になる可能性がありますが、ターゲット設定は .NET Framework 4.6.2 です。そのため、これは前のアプローチよりも体系化されたバージョンです。 計画の実施方法は、コードベースによって異なります。
+<span data-ttu-id="a2e73-240">コードベースの大幅な変更が必要な計画になる可能性がありますが、ターゲット設定は .NET Framework 4.6.2 です。そのため、これは前のアプローチよりも体系化されたバージョンです。</span><span class="sxs-lookup"><span data-stu-id="a2e73-240">Your plan could involve making significant changes to your codebase while still targeting .NET Framework 4.6.2, making this a more structured version of the previous approach.</span></span> <span data-ttu-id="a2e73-241">計画の実施方法は、コードベースによって異なります。</span><span class="sxs-lookup"><span data-stu-id="a2e73-241">How you go about executing your plan is dependent on your codebase.</span></span>
 
-### <a name="mixing-approaches"></a>混合アプローチ
+### <a name="mixing-approaches"></a><span data-ttu-id="a2e73-242">混合アプローチ</span><span class="sxs-lookup"><span data-stu-id="a2e73-242">Mixing approaches</span></span>
 
-多くの場合は、プロジェクトごとに、前述のアプローチを混合して利用します。 自分とコードベースにとって最も有用な処理を実行するようにします。
+<span data-ttu-id="a2e73-243">多くの場合は、プロジェクトごとに、前述のアプローチを混合して利用します。</span><span class="sxs-lookup"><span data-stu-id="a2e73-243">It's likely that you'll mix the above approaches on a per-project basis.</span></span> <span data-ttu-id="a2e73-244">自分とコードベースにとって最も有用な処理を実行するようにします。</span><span class="sxs-lookup"><span data-stu-id="a2e73-244">You should do what makes the most sense to you and for your codebase.</span></span>
 
-## <a name="porting-your-tests"></a>テストを移植する
+## <a name="porting-your-tests"></a><span data-ttu-id="a2e73-245">テストを移植する</span><span class="sxs-lookup"><span data-stu-id="a2e73-245">Porting your tests</span></span>
 
-コードを移植したときにすべての機能が動作することを確認するには、コードを .NET Core に移植してテストすることをお勧めします。 このテストを行うには、.NET Core 用のテストを構築して実行するためのテスト フレームワークを使用する必要があります。 現在のところ、次の 3 つの選択肢があります。
+<span data-ttu-id="a2e73-246">コードを移植したときにすべての機能が動作することを確認するには、コードを .NET Core に移植してテストすることをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="a2e73-246">The best way to make sure everything works when you've ported your code is to test your code as you port it to .NET Core.</span></span> <span data-ttu-id="a2e73-247">このテストを行うには、.NET Core 用のテストを構築して実行するためのテスト フレームワークを使用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="a2e73-247">To do this, you'll need to use a testing framework that builds and runs tests for .NET Core.</span></span> <span data-ttu-id="a2e73-248">現在のところ、次の 3 つの選択肢があります。</span><span class="sxs-lookup"><span data-stu-id="a2e73-248">Currently, you have three options:</span></span>
 
-- [xUnit](https://xunit.github.io/)
-  * [はじめに](http://xunit.github.io/docs/getting-started-dotnet-core.html)
-  * [MSTest プロジェクトを xUnit に変換するツール](https://github.com/dotnet/codeformatter/tree/master/src/XUnitConverter)
-- [NUnit](http://www.nunit.org/)
-  * [はじめに](https://github.com/nunit/docs/wiki/Installation)
-  * [MSTest から NUnit への移行に関するブログ投稿](http://www.florian-rappl.de/News/Page/275/convert-mstest-to-nunit)
-- [MSTest](https://docs.microsoft.com/visualstudio/test/unit-test-basics)
+- [<span data-ttu-id="a2e73-249">xUnit</span><span class="sxs-lookup"><span data-stu-id="a2e73-249">xUnit</span></span>](https://xunit.github.io/)
+  * [<span data-ttu-id="a2e73-250">はじめに</span><span class="sxs-lookup"><span data-stu-id="a2e73-250">Getting Started</span></span>](http://xunit.github.io/docs/getting-started-dotnet-core.html)
+  * [<span data-ttu-id="a2e73-251">MSTest プロジェクトを xUnit に変換するツール</span><span class="sxs-lookup"><span data-stu-id="a2e73-251">Tool to convert an MSTest project to xUnit</span></span>](https://github.com/dotnet/codeformatter/tree/master/src/XUnitConverter)
+- [<span data-ttu-id="a2e73-252">NUnit</span><span class="sxs-lookup"><span data-stu-id="a2e73-252">NUnit</span></span>](http://www.nunit.org/)
+  * [<span data-ttu-id="a2e73-253">はじめに</span><span class="sxs-lookup"><span data-stu-id="a2e73-253">Getting Started</span></span>](https://github.com/nunit/docs/wiki/Installation)
+  * [<span data-ttu-id="a2e73-254">MSTest から NUnit への移行に関するブログ投稿</span><span class="sxs-lookup"><span data-stu-id="a2e73-254">Blog post about migrating from MSTest to NUnit</span></span>](http://www.florian-rappl.de/News/Page/275/convert-mstest-to-nunit)
+- [<span data-ttu-id="a2e73-255">MSTest</span><span class="sxs-lookup"><span data-stu-id="a2e73-255">MSTest</span></span>](https://docs.microsoft.com/visualstudio/test/unit-test-basics)
 
-## <a name="recommended-approach-to-porting"></a>移植について推奨されるアプローチ
+## <a name="recommended-approach-to-porting"></a><span data-ttu-id="a2e73-256">移植について推奨されるアプローチ</span><span class="sxs-lookup"><span data-stu-id="a2e73-256">Recommended approach to porting</span></span>
 
-最終的に、移植作業は .NET Framework コードの構成内容に大きく左右されます。 コードを移植するのに良い方法は、コードの基本コンポーネントであるライブラリの*ベース*から始めることです。 ベースは、その他すべてが直接または間接的に使用するデータ モデル、または他の基本クラスやメソッドの場合があります。
+<span data-ttu-id="a2e73-257">最終的に、移植作業は .NET Framework コードの構成内容に大きく左右されます。</span><span class="sxs-lookup"><span data-stu-id="a2e73-257">Ultimately, the porting effort depends heavily on how your .NET Framework code is structured.</span></span> <span data-ttu-id="a2e73-258">コードを移植するのに良い方法は、コードの基本コンポーネントであるライブラリの*ベース*から始めることです。</span><span class="sxs-lookup"><span data-stu-id="a2e73-258">A good way to port your code is to begin with the *base* of your library, which are the foundational components of your code.</span></span> <span data-ttu-id="a2e73-259">ベースは、その他すべてが直接または間接的に使用するデータ モデル、または他の基本クラスやメソッドの場合があります。</span><span class="sxs-lookup"><span data-stu-id="a2e73-259">This might be data models or some other foundational classes and methods that everything else uses directly or indirectly.</span></span>
 
-1. 移植対象のライブラリのレイヤーをテストするテスト プロジェクトを移植します。
-1. ライブラリのベースを新しい .NET Core プロジェクトにコピーし、サポートする .NET Standard のバージョンを選択します。
-1. 必要に応じてコードを変更し、コンパイルします。 多くの場合、NuGet パッケージの依存関係を *csproj* ファイルに追加する必要があります。
-1. テストを実行し、必要な調整を行います。
-1. 次のコード レイヤーを選択して移植し、前の手順を繰り返します。
+1. <span data-ttu-id="a2e73-260">移植対象のライブラリのレイヤーをテストするテスト プロジェクトを移植します。</span><span class="sxs-lookup"><span data-stu-id="a2e73-260">Port the test project that tests the layer of your library that you're currently porting.</span></span>
+1. <span data-ttu-id="a2e73-261">ライブラリのベースを新しい .NET Core プロジェクトにコピーし、サポートする .NET Standard のバージョンを選択します。</span><span class="sxs-lookup"><span data-stu-id="a2e73-261">Copy over the base of your library into a new .NET Core project and select the version of the .NET Standard you wish to support.</span></span>
+1. <span data-ttu-id="a2e73-262">必要に応じてコードを変更し、コンパイルします。</span><span class="sxs-lookup"><span data-stu-id="a2e73-262">Make any changes needed to get the code to compile.</span></span> <span data-ttu-id="a2e73-263">多くの場合、NuGet パッケージの依存関係を *csproj* ファイルに追加する必要があります。</span><span class="sxs-lookup"><span data-stu-id="a2e73-263">Much of this may require adding NuGet package dependencies to your *csproj* file.</span></span>
+1. <span data-ttu-id="a2e73-264">テストを実行し、必要な調整を行います。</span><span class="sxs-lookup"><span data-stu-id="a2e73-264">Run the tests and make any needed adjustments.</span></span>
+1. <span data-ttu-id="a2e73-265">次のコード レイヤーを選択して移植し、前の手順を繰り返します。</span><span class="sxs-lookup"><span data-stu-id="a2e73-265">Pick the next layer of code to port over and repeat the prior steps.</span></span>
 
-ライブラリのベースから開始してベースから外側に向かい、必要に応じて各レイヤーをテストする場合、移植は、問題が一度でコードの 1 レイヤーに分離される体系的なプロセスになります。
+<span data-ttu-id="a2e73-266">ライブラリのベースから開始してベースから外側に向かい、必要に応じて各レイヤーをテストする場合、移植は、問題が一度でコードの 1 レイヤーに分離される体系的なプロセスになります。</span><span class="sxs-lookup"><span data-stu-id="a2e73-266">If you start with the base of your library and move outward from the base and test each layer as needed, porting is a systematic process where problems are isolated to one layer of code at a time.</span></span>
 

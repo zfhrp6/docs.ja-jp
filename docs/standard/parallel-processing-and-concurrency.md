@@ -25,25 +25,25 @@ ms.contentlocale: ja-jp
 ms.lasthandoff: 08/21/2017
 
 ---
-# <a name="parallel-processing-and-concurrency-in-the-net-framework"></a>.NET Framework の並列処理と同時実行
-.NET Framework には、ユーザーのコンピューターのパフォーマンスを最大化しながら、アプリケーションのユーザーに対する応答性を維持するために、複数の実行スレッドを使用する方法がいくつか用意されています。  
+# <a name="parallel-processing-and-concurrency-in-the-net-framework"></a><span data-ttu-id="2239e-102">.NET Framework の並列処理と同時実行</span><span class="sxs-lookup"><span data-stu-id="2239e-102">Parallel Processing and Concurrency in the .NET Framework</span></span>
+<span data-ttu-id="2239e-103">.NET Framework には、ユーザーのコンピューターのパフォーマンスを最大化しながら、アプリケーションのユーザーに対する応答性を維持するために、複数の実行スレッドを使用する方法がいくつか用意されています。</span><span class="sxs-lookup"><span data-stu-id="2239e-103">The .NET Framework provides several ways for you to use multiple threads of execution to keep your application responsive to your user while maximizing the performance of your user's computer.</span></span>  
   
-## <a name="in-this-section"></a>このセクションの内容  
- [スレッド化](../../docs/standard/threading/index.md)  
- .NET Framework に用意されている基本的な同時実行および同期のための機構について説明します。  
+## <a name="in-this-section"></a><span data-ttu-id="2239e-104">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="2239e-104">In This Section</span></span>  
+ [<span data-ttu-id="2239e-105">スレッド化</span><span class="sxs-lookup"><span data-stu-id="2239e-105">Threading</span></span>](../../docs/standard/threading/index.md)  
+ <span data-ttu-id="2239e-106">.NET Framework に用意されている基本的な同時実行および同期のための機構について説明します。</span><span class="sxs-lookup"><span data-stu-id="2239e-106">Describes the basic concurrency and synchronization mechanisms provided by the .NET Framework.</span></span>  
   
- [非同期プログラミングのパターン](../../docs/standard/asynchronous-programming-patterns/index.md)  
- .NET Framework でサポートされている 3 種類の非同期パターンのプログラミングの概要が記載されています。  
+ [<span data-ttu-id="2239e-107">非同期プログラミングのパターン</span><span class="sxs-lookup"><span data-stu-id="2239e-107">Asynchronous Programming Patterns</span></span>](../../docs/standard/asynchronous-programming-patterns/index.md)  
+ <span data-ttu-id="2239e-108">.NET Framework でサポートされている 3 種類の非同期パターンのプログラミングの概要が記載されています。</span><span class="sxs-lookup"><span data-stu-id="2239e-108">Provides a brief overview of the three asynchronous programming patterns supported in the .NET Framework:</span></span>  
   
--   [非同期プログラミング モデル (APM)](../../docs/standard/asynchronous-programming-patterns/asynchronous-programming-model-apm.md) (レガシ)  
+-   <span data-ttu-id="2239e-109">[非同期プログラミング モデル (APM)](../../docs/standard/asynchronous-programming-patterns/asynchronous-programming-model-apm.md) (レガシ)</span><span class="sxs-lookup"><span data-stu-id="2239e-109">[Asynchronous Programming Model (APM)](../../docs/standard/asynchronous-programming-patterns/asynchronous-programming-model-apm.md) (legacy)</span></span>  
   
--   [イベント ベースの非同期パターン (EAP)](../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-eap.md) (レガシ)  
+-   <span data-ttu-id="2239e-110">[イベント ベースの非同期パターン (EAP)](../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-eap.md) (レガシ)</span><span class="sxs-lookup"><span data-stu-id="2239e-110">[Event-based Asynchronous Pattern (EAP)](../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-eap.md) (legacy)</span></span>  
   
--   [タスク ベースの非同期パターン (TAP)](../../docs/standard/asynchronous-programming-patterns/task-based-asynchronous-pattern-tap.md) (新規の開発に推奨)  
+-   <span data-ttu-id="2239e-111">[タスク ベースの非同期パターン (TAP)](../../docs/standard/asynchronous-programming-patterns/task-based-asynchronous-pattern-tap.md) (新規の開発に推奨)</span><span class="sxs-lookup"><span data-stu-id="2239e-111">[Task-based Asynchronous Pattern (TAP)](../../docs/standard/asynchronous-programming-patterns/task-based-asynchronous-pattern-tap.md) (recommended for new development)</span></span>  
   
- [並列プログラミング](../../docs/standard/parallel-programming/index.md)  
- 並行開発を簡素化するタスクベースのプログラミング モデルについて説明します。このモデルにより、スレッドやスレッド プールを直接操作することなく、効率的で詳細な、拡張性のある並列コードを自然な表現方法で記述できるようになります。  
+ [<span data-ttu-id="2239e-112">並列プログラミング</span><span class="sxs-lookup"><span data-stu-id="2239e-112">Parallel Programming</span></span>](../../docs/standard/parallel-programming/index.md)  
+ <span data-ttu-id="2239e-113">並行開発を簡素化するタスクベースのプログラミング モデルについて説明します。このモデルにより、スレッドやスレッド プールを直接操作することなく、効率的で詳細な、拡張性のある並列コードを自然な表現方法で記述できるようになります。</span><span class="sxs-lookup"><span data-stu-id="2239e-113">Describes a task-based programming model that simplifies parallel development, enabling you to write efficient, fine-grained, and scalable parallel code in a natural idiom without having to work directly with threads or the thread pool.</span></span>  
   
-## <a name="see-also"></a>関連項目  
- [開発ガイド](../../docs/framework/development-guide.md)
+## <a name="see-also"></a><span data-ttu-id="2239e-114">関連項目</span><span class="sxs-lookup"><span data-stu-id="2239e-114">See Also</span></span>  
+ [<span data-ttu-id="2239e-115">開発ガイド</span><span class="sxs-lookup"><span data-stu-id="2239e-115">Development Guide</span></span>](../../docs/framework/development-guide.md)
 

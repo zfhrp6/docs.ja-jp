@@ -21,17 +21,17 @@ ms.contentlocale: ja-jp
 ms.lasthandoff: 07/28/2017
 
 ---
-# <a name="projecting-xml-in-a-different-shape-c"></a>異なる構造の XML の射影 (C#)
-このトピックでは、ソース XML とは異なる構造の XML を射影する例について説明します。  
+# <a name="projecting-xml-in-a-different-shape-c"></a><span data-ttu-id="a655d-102">異なる構造の XML の射影 (C#)</span><span class="sxs-lookup"><span data-stu-id="a655d-102">Projecting XML in a Different Shape (C#)</span></span>
+<span data-ttu-id="a655d-103">このトピックでは、ソース XML とは異なる構造の XML を射影する例について説明します。</span><span class="sxs-lookup"><span data-stu-id="a655d-103">This topic shows an example of projecting XML that is in a different shape than the source XML.</span></span>  
   
- 一般的な XML 変換の多くは、この例のように連結されたクエリで構成されます。 通常、ある形式の XML から開始して、中間結果を匿名型または名前付き型のコレクションとして射影し、最終的にその結果をソース XML とはまったく異なる構造の XML に射影します。  
+ <span data-ttu-id="a655d-104">一般的な XML 変換の多くは、この例のように連結されたクエリで構成されます。</span><span class="sxs-lookup"><span data-stu-id="a655d-104">Many typical XML transformations consist of chained queries, as in this example.</span></span> <span data-ttu-id="a655d-105">通常、ある形式の XML から開始して、中間結果を匿名型または名前付き型のコレクションとして射影し、最終的にその結果をソース XML とはまったく異なる構造の XML に射影します。</span><span class="sxs-lookup"><span data-stu-id="a655d-105">It is common to start with some form of XML, project intermediate results as collections of anonymous types or named types, and then finally to project the results back into XML that is in an entirely different shape than the source XML.</span></span>  
   
-## <a name="example"></a>例  
- この例では、WordprocessingML ドキュメントを処理して、WordprocessingML ドキュメントから段落ノードを取得します。 それぞれの段落のスタイルおよびテキストも特定します。 最後に、別の構造を持った XML を射影します。 この例は、このチュートリアルのこれまでの例に基づいています。 射影を行う新しいステートメントについては、以下のコード内にあるコメントで説明が示されています。  
+## <a name="example"></a><span data-ttu-id="a655d-106">例</span><span class="sxs-lookup"><span data-stu-id="a655d-106">Example</span></span>  
+ <span data-ttu-id="a655d-107">この例では、WordprocessingML ドキュメントを処理して、WordprocessingML ドキュメントから段落ノードを取得します。</span><span class="sxs-lookup"><span data-stu-id="a655d-107">This example processes a WordprocessingML document, retrieving the paragraph nodes from a WordprocessingML document.</span></span> <span data-ttu-id="a655d-108">それぞれの段落のスタイルおよびテキストも特定します。</span><span class="sxs-lookup"><span data-stu-id="a655d-108">It also identifies the style and text of each paragraph.</span></span> <span data-ttu-id="a655d-109">最後に、別の構造を持った XML を射影します。</span><span class="sxs-lookup"><span data-stu-id="a655d-109">Finally, the example projects XML with a different shape.</span></span> <span data-ttu-id="a655d-110">この例は、このチュートリアルのこれまでの例に基づいています。</span><span class="sxs-lookup"><span data-stu-id="a655d-110">This example builds on the previous examples in this tutorial.</span></span> <span data-ttu-id="a655d-111">射影を行う新しいステートメントについては、以下のコード内にあるコメントで説明が示されています。</span><span class="sxs-lookup"><span data-stu-id="a655d-111">The new statement that does the projection is called out in comments in the code below.</span></span>  
   
- この例のソース ドキュメントを作成する方法の詳細については、「[ソースとなる Office Open XML ドキュメントの作成 (C#)](../../../../csharp/programming-guide/concepts/linq/creating-the-source-office-open-xml-document.md)」を参照してください。  
+ <span data-ttu-id="a655d-112">この例のソース ドキュメントを作成する方法の詳細については、「[ソースとなる Office Open XML ドキュメントの作成 (C#)](../../../../csharp/programming-guide/concepts/linq/creating-the-source-office-open-xml-document.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="a655d-112">For instructions for creating the source document for this example, see [Creating the Source Office Open XML Document (C#)](../../../../csharp/programming-guide/concepts/linq/creating-the-source-office-open-xml-document.md).</span></span>  
   
- この例では、WindowsBase アセンブリのクラスを使用します。 また、<xref:System.IO.Packaging?displayProperty=fullName> 名前空間内の型を使用します。  
+ <span data-ttu-id="a655d-113">この例では、WindowsBase アセンブリのクラスを使用します。</span><span class="sxs-lookup"><span data-stu-id="a655d-113">This example uses classes from the WindowsBase assembly.</span></span> <span data-ttu-id="a655d-114">また、<xref:System.IO.Packaging?displayProperty=fullName> 名前空間内の型を使用します。</span><span class="sxs-lookup"><span data-stu-id="a655d-114">It uses types in the <xref:System.IO.Packaging?displayProperty=fullName> namespace.</span></span>  
   
 ```csharp  
 public static class LocalExtensions  
@@ -175,7 +175,7 @@ class Program
 }  
 ```  
   
- この例を実行すると、次の出力が生成されます。  
+ <span data-ttu-id="a655d-115">この例を実行すると、次の出力が生成されます。</span><span class="sxs-lookup"><span data-stu-id="a655d-115">This example produces the following output:</span></span>  
   
 ```xml  
 <Root>  
@@ -242,11 +242,11 @@ class Program
 </Root>  
 ```  
   
-## <a name="next-steps"></a>次の手順  
- 次の例では、クエリを実行して Word 文書内のテキストをすべて検索します。  
+## <a name="next-steps"></a><span data-ttu-id="a655d-116">次の手順</span><span class="sxs-lookup"><span data-stu-id="a655d-116">Next Steps</span></span>  
+ <span data-ttu-id="a655d-117">次の例では、クエリを実行して Word 文書内のテキストをすべて検索します。</span><span class="sxs-lookup"><span data-stu-id="a655d-117">In the next example, you'll query to find all the text in a Word document:</span></span>  
   
--   [Word 文書内のテキストの検索 (C#)](../../../../csharp/programming-guide/concepts/linq/finding-text-in-word-documents.md)  
+-   [<span data-ttu-id="a655d-118">Word 文書内のテキストの検索 (C#)</span><span class="sxs-lookup"><span data-stu-id="a655d-118">Finding Text in Word Documents (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/finding-text-in-word-documents.md)  
   
-## <a name="see-also"></a>関連項目  
- [チュートリアル: WordprocessingML ドキュメント内のコンテンツの操作 (C#)](../../../../csharp/programming-guide/concepts/linq/tutorial-manipulating-content-in-a-wordprocessingml-document.md)
+## <a name="see-also"></a><span data-ttu-id="a655d-119">関連項目</span><span class="sxs-lookup"><span data-stu-id="a655d-119">See Also</span></span>  
+ [<span data-ttu-id="a655d-120">チュートリアル: WordprocessingML ドキュメント内のコンテンツの操作 (C#)</span><span class="sxs-lookup"><span data-stu-id="a655d-120">Tutorial: Manipulating Content in a WordprocessingML Document (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/tutorial-manipulating-content-in-a-wordprocessingml-document.md)
 

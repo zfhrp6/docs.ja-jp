@@ -26,11 +26,11 @@ ms.contentlocale: ja-jp
 ms.lasthandoff: 07/28/2017
 
 ---
-# <a name="thread-timers-c"></a>スレッド タイマー (C#)
-<xref:System.Threading.Timer?displayProperty=fullName> クラスは、タスクを別々のスレッドで定期的に実行するのに便利です。 たとえば、スレッド タイマーを使用すると、データベースのステータスと整合性をチェックしたり、重要なファイルをバックアップしたりできます。  
+# <a name="thread-timers-c"></a><span data-ttu-id="a72cf-102">スレッド タイマー (C#)</span><span class="sxs-lookup"><span data-stu-id="a72cf-102">Thread Timers (C#)</span></span>
+<span data-ttu-id="a72cf-103"><xref:System.Threading.Timer?displayProperty=fullName> クラスは、タスクを別々のスレッドで定期的に実行するのに便利です。</span><span class="sxs-lookup"><span data-stu-id="a72cf-103">The <xref:System.Threading.Timer?displayProperty=fullName> class is useful for periodically running a task on a separate thread.</span></span> <span data-ttu-id="a72cf-104">たとえば、スレッド タイマーを使用すると、データベースのステータスと整合性をチェックしたり、重要なファイルをバックアップしたりできます。</span><span class="sxs-lookup"><span data-stu-id="a72cf-104">For example, you could use a thread timer to check the status and integrity of a database or to back up critical files.</span></span>  
   
-## <a name="thread-timer-example"></a>スレッド タイマーの例  
- 2 秒ごとにタスクを起動し、フラグを使用して <xref:System.IDisposable.Dispose%2A> メソッドを開始し、タイマーを停止する例を次に示します。 この例は、ステータスを出力ウィンドウに出力します。  
+## <a name="thread-timer-example"></a><span data-ttu-id="a72cf-105">スレッド タイマーの例</span><span class="sxs-lookup"><span data-stu-id="a72cf-105">Thread Timer Example</span></span>  
+ <span data-ttu-id="a72cf-106">2 秒ごとにタスクを起動し、フラグを使用して <xref:System.IDisposable.Dispose%2A> メソッドを開始し、タイマーを停止する例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="a72cf-106">The following example starts a task every two seconds and uses a flag to initiate the <xref:System.IDisposable.Dispose%2A> method that stops the timer.</span></span> <span data-ttu-id="a72cf-107">この例は、ステータスを出力ウィンドウに出力します。</span><span class="sxs-lookup"><span data-stu-id="a72cf-107">This example posts status to the output window.</span></span>  
   
 ```csharp  
 private class StateObjClass  
@@ -84,9 +84,9 @@ private void TimerTask(object StateObj)
 }  
 ```  
   
- スレッド タイマーは、コンソール アプリケーションを開発するときなど、<xref:System.Windows.Forms.Timer?displayProperty=fullName> オブジェクトを使用できないときに特に有効です。  
+ <span data-ttu-id="a72cf-108">スレッド タイマーは、コンソール アプリケーションを開発するときなど、<xref:System.Windows.Forms.Timer?displayProperty=fullName> オブジェクトを使用できないときに特に有効です。</span><span class="sxs-lookup"><span data-stu-id="a72cf-108">Thread timers are particularly useful when the <xref:System.Windows.Forms.Timer?displayProperty=fullName> object is unavailable, such as when you are developing console applications.</span></span>  
   
-## <a name="see-also"></a>関連項目  
- <xref:System.Threading>   
- [マルチスレッド アプリケーション (C#)](../../../../csharp/programming-guide/concepts/threading/multithreaded-applications.md)
+## <a name="see-also"></a><span data-ttu-id="a72cf-109">関連項目</span><span class="sxs-lookup"><span data-stu-id="a72cf-109">See Also</span></span>  
+ <span data-ttu-id="a72cf-110"><xref:System.Threading></span><span class="sxs-lookup"><span data-stu-id="a72cf-110"><xref:System.Threading></span></span>   
+ [<span data-ttu-id="a72cf-111">マルチスレッド アプリケーション (C#)</span><span class="sxs-lookup"><span data-stu-id="a72cf-111">Multithreaded Applications (C#)</span></span>](../../../../csharp/programming-guide/concepts/threading/multithreaded-applications.md)
 

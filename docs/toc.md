@@ -55,10 +55,15 @@
 <!-- .NET Core Content -->
 # [.NET Core のガイド](core/index.md)
 ## [開始するには](core/get-started.md)
-## [.NET Core の新機能](core/whats-new/index.md)
+### [C# および Visual Studio Code の使用を開始する](core/tutorials/with-visual-studio-code.md)
+### [Visual Studio 2017 での .NET Core を使用した C# Hello World アプリの構築](core/tutorials/with-visual-studio.md)
+### [Visual Studio 2017 での .NET Core を使用した Visual Basic Hello World アプリの構築](core/tutorials/vb-with-visual-studio.md)
+### [Visual Studio 2017 での C# と .NET Core を使用したクラス ライブラリの構築](core/tutorials/library-with-visual-studio.md)
+### [Visual Studio 2017 で Visual Basic と .NET Core を使用したクラス ライブラリの構築](core/tutorials/vb-library-with-visual-studio.md)
 ## [Windows の前提条件](core/windows-prerequisites.md)
 ## [macOS の前提条件](core/macos-prerequisites.md)
 ## [Linux の前提条件](core/linux-prerequisites.md)
+## [.NET Core の新機能](core/whats-new/index.md)
 ## [チュートリアル](core/tutorials/index.md)
 ### [Visual Studio 2017 を使用した Windows での完全な .NET Core ソリューションの構築](core/tutorials/using-on-windows-full-solution.md)
 ### [C# および Visual Studio Code の使用を開始する](core/tutorials/with-visual-studio-code.md)
@@ -187,6 +192,7 @@
 <!-- The "What's New" section is short, and one level
     deep, so leave it in the main TOC -->
 ## [C# の新機能](csharp/whats-new/index.md) 
+### [C# 7.1 の新機能](csharp/whats-new/csharp-7-1.md)
 ### [C# 7 の新機能](csharp/whats-new/csharp-7.md)
 ### [C# 6 の新機能](csharp/whats-new/csharp-6.md)
 ### [言語とフレームワークの関係](csharp/whats-new/relationships-between-language-and-library.md)

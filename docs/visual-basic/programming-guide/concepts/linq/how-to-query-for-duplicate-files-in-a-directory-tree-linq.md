@@ -20,16 +20,17 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 9773f1fc5a17957cb77a0f14e12a2f61e67d73c3
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
+ms.openlocfilehash: 3f4ddab6129e7d05851553e544b9813951415a45
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/12/2017
 
 ---
-# <a name="how-to-query-for-duplicate-files-in-a-directory-tree-linq-visual-basic"></a>方法: ディレクトリ ツリー (LINQ) (Visual Basic) で重複するファイルのクエリ
-あります&1; つ以上のフォルダーに同じ名前を持つファイルを配置することがあります。 たとえばの Visual Studio インストール フォルダーは、いくつかのフォルダーと、readme.htm ファイルがあります。 この例では、指定したルート フォルダーの下にある場合は、このような重複するファイル名を照会する方法を示します。 2 番目の例では、ファイル サイズを照会する方法と作成時間にも一致します。  
+# <a name="how-to-query-for-duplicate-files-in-a-directory-tree-linq-visual-basic"></a><span data-ttu-id="a1f5f-102">方法: ディレクトリ ツリー (LINQ) (Visual Basic) で重複するファイルのクエリ</span><span class="sxs-lookup"><span data-stu-id="a1f5f-102">How to: Query for Duplicate Files in a Directory Tree (LINQ) (Visual Basic)</span></span>
+<span data-ttu-id="a1f5f-103">あります&1; つ以上のフォルダーに同じ名前を持つファイルを配置することがあります。</span><span class="sxs-lookup"><span data-stu-id="a1f5f-103">Sometimes files that have the same name may be located in more than one folder.</span></span> <span data-ttu-id="a1f5f-104">たとえばの Visual Studio インストール フォルダーは、いくつかのフォルダーと、readme.htm ファイルがあります。</span><span class="sxs-lookup"><span data-stu-id="a1f5f-104">For example, under the Visual Studio installation folder, several folders have a readme.htm file.</span></span> <span data-ttu-id="a1f5f-105">この例では、指定したルート フォルダーの下にある場合は、このような重複するファイル名を照会する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="a1f5f-105">This example shows how to query for such duplicate file names under a specified root folder.</span></span> <span data-ttu-id="a1f5f-106">2 番目の例では、ファイル サイズを照会する方法と作成時間にも一致します。</span><span class="sxs-lookup"><span data-stu-id="a1f5f-106">The second example shows how to query for files whose size and creation times also match.</span></span>  
   
-## <a name="example"></a>例  
+## <a name="example"></a><span data-ttu-id="a1f5f-107">例</span><span class="sxs-lookup"><span data-stu-id="a1f5f-107">Example</span></span>  
   
 ```vb  
 Module QueryDuplicateFileNames  
@@ -115,11 +116,11 @@ Module QueryDuplicateFileNames
 End Module  
 ```  
   
- 最初のクエリでは、単純なキーを使用して、一致を判断しますこれは、同じ名前が同じ内容であるファイルを見つけます。 2 番目のクエリの&3; つのプロパティと照合する複合キーを使用して、<xref:System.IO.FileInfo>オブジェクト</xref:System.IO.FileInfo>。 このクエリは、同じ名前と同じまたはよく似たコンテンツを持つファイルを検索する可能性が高くなります。  
+ <span data-ttu-id="a1f5f-108">最初のクエリでは、単純なキーを使用して、一致を判断しますこれは、同じ名前が同じ内容であるファイルを見つけます。</span><span class="sxs-lookup"><span data-stu-id="a1f5f-108">The first query uses a simple key to determine a match; this finds files that have the same name but whose contents might be different.</span></span> <span data-ttu-id="a1f5f-109">2 番目のクエリの&3; つのプロパティと照合する複合キーを使用して、<xref:System.IO.FileInfo>オブジェクト</xref:System.IO.FileInfo>。</span><span class="sxs-lookup"><span data-stu-id="a1f5f-109">The second query uses a compound key to match against three properties of the <xref:System.IO.FileInfo> object.</span></span> <span data-ttu-id="a1f5f-110">このクエリは、同じ名前と同じまたはよく似たコンテンツを持つファイルを検索する可能性が高くなります。</span><span class="sxs-lookup"><span data-stu-id="a1f5f-110">This query is much more likely to find files that have the same name and similar or identical content.</span></span>  
   
-## <a name="compiling-the-code"></a>コードのコンパイル  
- .NET Framework version 3.5 またはそれ以上、System.Core.dll への参照を対象とするプロジェクトを作成し、 `Imports` System.Linq 名前空間のステートメントです。  
+## <a name="compiling-the-code"></a><span data-ttu-id="a1f5f-111">コードのコンパイル</span><span class="sxs-lookup"><span data-stu-id="a1f5f-111">Compiling the Code</span></span>  
+ <span data-ttu-id="a1f5f-112">.NET Framework version 3.5 またはそれ以上、System.Core.dll への参照を対象とするプロジェクトを作成し、 `Imports` System.Linq 名前空間のステートメントです。</span><span class="sxs-lookup"><span data-stu-id="a1f5f-112">Create a project that targets the .NET Framework version 3.5 or higher with a reference to System.Core.dll and a `Imports` statement for the System.Linq namespace.</span></span>  
   
-## <a name="see-also"></a>関連項目  
- [LINQ to Objects (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-objects.md)   
- [LINQ とファイル ディレクトリ (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-file-directories.md)
+## <a name="see-also"></a><span data-ttu-id="a1f5f-113">関連項目</span><span class="sxs-lookup"><span data-stu-id="a1f5f-113">See Also</span></span>  
+ <span data-ttu-id="a1f5f-114">[LINQ to Objects (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-objects.md) </span><span class="sxs-lookup"><span data-stu-id="a1f5f-114">[LINQ to Objects (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-objects.md) </span></span>  
+<span data-ttu-id="a1f5f-115"> [LINQ とファイル ディレクトリ (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-file-directories.md)</span><span class="sxs-lookup"><span data-stu-id="a1f5f-115"> [LINQ and File Directories (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-file-directories.md)</span></span>

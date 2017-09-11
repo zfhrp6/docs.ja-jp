@@ -38,32 +38,32 @@ ms.contentlocale: ja-jp
 ms.lasthandoff: 07/28/2017
 
 ---
-# <a name="performing-network-operations-visual-basic"></a>ネットワーク操作の実行 (Visual Basic)
-次の表は、`My.Computer.Network` オブジェクトに関連付けられているタスクの一覧です。  
+# <a name="performing-network-operations-visual-basic"></a><span data-ttu-id="36cd9-102">ネットワーク操作の実行 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="36cd9-102">Performing Network Operations (Visual Basic)</span></span>
+<span data-ttu-id="36cd9-103">次の表は、`My.Computer.Network` オブジェクトに関連付けられているタスクの一覧です。</span><span class="sxs-lookup"><span data-stu-id="36cd9-103">The following tables list tasks associated with the `My.Computer.Network` object.</span></span>  
   
-## <a name="in-this-section"></a>このセクションの内容  
- [方法 : ファイルをアップロードする](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-upload-a-file.md)  
- `My.Computer.Network` を使ってファイルをアップロードしてリモートの場所に格納する方法を示します。  
+## <a name="in-this-section"></a><span data-ttu-id="36cd9-104">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="36cd9-104">In This Section</span></span>  
+ [<span data-ttu-id="36cd9-105">方法 : ファイルをアップロードする</span><span class="sxs-lookup"><span data-stu-id="36cd9-105">How to: Upload a File</span></span>](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-upload-a-file.md)  
+ <span data-ttu-id="36cd9-106">`My.Computer.Network` を使ってファイルをアップロードしてリモートの場所に格納する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="36cd9-106">Demonstrates how to upload a file and store it to a remote location using `My.Computer.Network`.</span></span>  
   
- [方法 : ファイルをダウンロードする](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-download-a-file.md)  
- `My.Computer.Network` を使ってファイルをリモートの場所からダウンロードする方法を示します。  
+ [<span data-ttu-id="36cd9-107">方法 : ファイルをダウンロードする</span><span class="sxs-lookup"><span data-stu-id="36cd9-107">How to: Download a File</span></span>](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-download-a-file.md)  
+ <span data-ttu-id="36cd9-108">`My.Computer.Network` を使ってファイルをリモートの場所からダウンロードする方法を示します。</span><span class="sxs-lookup"><span data-stu-id="36cd9-108">Demonstrates how to download a file from a remote location using `My.Computer.Network`.</span></span>  
   
- [方法 : 接続ステータスをチェックする](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-check-connection-status.md)  
- コンピューターに動作しているネットワーク接続があるかどうかを確認する方法を示します。  
+ [<span data-ttu-id="36cd9-109">方法 : 接続ステータスをチェックする</span><span class="sxs-lookup"><span data-stu-id="36cd9-109">How to: Check Connection Status</span></span>](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-check-connection-status.md)  
+ <span data-ttu-id="36cd9-110">コンピューターに動作しているネットワーク接続があるかどうかを確認する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="36cd9-110">Shows how to determine whether the computer has a working network connection.</span></span>  
   
-## <a name="reference"></a>参照  
+## <a name="reference"></a><span data-ttu-id="36cd9-111">参照</span><span class="sxs-lookup"><span data-stu-id="36cd9-111">Reference</span></span>  
  <xref:Microsoft.VisualBasic.Devices.Network>  
- ネットワークを操作するためのメソッド、プロパティ、イベントの一覧を示します。  
+ <span data-ttu-id="36cd9-112">ネットワークを操作するためのメソッド、プロパティ、イベントの一覧を示します。</span><span class="sxs-lookup"><span data-stu-id="36cd9-112">Lists methods, properties, and events for working with the network.</span></span>  
   
  <xref:Microsoft.VisualBasic.Devices.Network.DownloadFile%2A>  
- `DownloadFile` メソッドについて説明します。  
+ <span data-ttu-id="36cd9-113">`DownloadFile` メソッドについて説明します。</span><span class="sxs-lookup"><span data-stu-id="36cd9-113">Describes the `DownloadFile` method.</span></span>  
   
  <xref:Microsoft.VisualBasic.Devices.Network.Ping%2A>  
- `Ping` メソッドについて説明します。  
+ <span data-ttu-id="36cd9-114">`Ping` メソッドについて説明します。</span><span class="sxs-lookup"><span data-stu-id="36cd9-114">Describes the `Ping` method.</span></span>  
   
  <xref:Microsoft.VisualBasic.Devices.Network.UploadFile%2A>  
- `UploadFile` メソッドについて説明します。  
+ <span data-ttu-id="36cd9-115">`UploadFile` メソッドについて説明します。</span><span class="sxs-lookup"><span data-stu-id="36cd9-115">Describes the `UploadFile` method.</span></span>  
   
  <xref:Microsoft.VisualBasic.Devices.Network.IsAvailable%2A>  
- `IsAvailable` プロパティについて説明します。
+ <span data-ttu-id="36cd9-116">`IsAvailable` プロパティについて説明します。</span><span class="sxs-lookup"><span data-stu-id="36cd9-116">Describes the `IsAvailable` property.</span></span>
 

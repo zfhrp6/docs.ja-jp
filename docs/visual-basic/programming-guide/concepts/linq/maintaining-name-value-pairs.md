@@ -15,39 +15,40 @@ ms.assetid: 57ac2072-d9f5-432b-84f0-a889c62fd813
 caps.latest.revision: 3
 author: dotnet-bot
 ms.author: dotnetcontent
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 54db297ecd39e37492dcf8bb4de4f64476662670
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
+ms.openlocfilehash: 30e40c73430f385815b7a08a2507343db0fafd4f
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/12/2017
 
 
 ---
-# <a name="maintaining-namevalue-pairs-visual-basic"></a>(Visual Basic) の名前/値ペアの保持
-多くのアプリケーションでは、情報を名前と値のペアとして保持するのが最適な場合があります。 このような情報には、構成情報やグローバル設定などがあります。 [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)] には、名前と値のペアのセットを簡単に保持できるようにするメソッドがあります。 情報を属性として保持することも、子要素のセットとして保持することもできます。  
+# <a name="maintaining-namevalue-pairs-visual-basic"></a><span data-ttu-id="0f567-102">(Visual Basic) の名前/値ペアの保持</span><span class="sxs-lookup"><span data-stu-id="0f567-102">Maintaining Name/Value Pairs (Visual Basic)</span></span>
+<span data-ttu-id="0f567-103">多くのアプリケーションでは、情報を名前と値のペアとして保持するのが最適な場合があります。</span><span class="sxs-lookup"><span data-stu-id="0f567-103">Many applications have to maintain information that is best kept as name/value pairs.</span></span> <span data-ttu-id="0f567-104">このような情報には、構成情報やグローバル設定などがあります。</span><span class="sxs-lookup"><span data-stu-id="0f567-104">This information might be configuration information or global settings.</span></span> [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)]<span data-ttu-id="0f567-105"> には、名前と値のペアのセットを簡単に保持できるようにするメソッドがあります。</span><span class="sxs-lookup"><span data-stu-id="0f567-105"> contains some methods that make it easy to keep a set of name/value pairs.</span></span> <span data-ttu-id="0f567-106">情報を属性として保持することも、子要素のセットとして保持することもできます。</span><span class="sxs-lookup"><span data-stu-id="0f567-106">You can either keep the information as attributes or as a set of child elements.</span></span>  
   
- 情報を属性として保持する場合と子要素として保持する場合の違いの&1; つは、要素の特定の名前を持つ属性は&1; つしか存在できないという制約が属性にはあることです。 この制限は子要素には適用されません。  
+ <span data-ttu-id="0f567-107">情報を属性として保持する場合と子要素として保持する場合の違いの&1; つは、要素の特定の名前を持つ属性は&1; つしか存在できないという制約が属性にはあることです。</span><span class="sxs-lookup"><span data-stu-id="0f567-107">One difference between keeping the information as attributes or as child elements is that attributes have the constraint that there can be only one attribute with a particular name for an element.</span></span> <span data-ttu-id="0f567-108">この制限は子要素には適用されません。</span><span class="sxs-lookup"><span data-stu-id="0f567-108">This limitation does not apply to child elements.</span></span>  
   
-## <a name="setattributevalue-and-setelementvalue"></a>SetAttributeValue と SetElementValue  
- 名前と値の保持を容易にする&2; つのメソッドのペアは<xref:System.Xml.Linq.XElement.SetAttributeValue%2A><xref:System.Xml.Linq.XElement.SetElementValue%2A>.</xref:System.Xml.Linq.XElement.SetElementValue%2A> </xref:System.Xml.Linq.XElement.SetAttributeValue%2A> これらの&2; つのメソッドは、よく似たセマンティクスを持っています。  
+## <a name="setattributevalue-and-setelementvalue"></a><span data-ttu-id="0f567-109">SetAttributeValue と SetElementValue</span><span class="sxs-lookup"><span data-stu-id="0f567-109">SetAttributeValue and SetElementValue</span></span>  
+ <span data-ttu-id="0f567-110">名前と値の保持を容易にする&2; つのメソッドのペアは<xref:System.Xml.Linq.XElement.SetAttributeValue%2A><xref:System.Xml.Linq.XElement.SetElementValue%2A>.</xref:System.Xml.Linq.XElement.SetElementValue%2A> </xref:System.Xml.Linq.XElement.SetAttributeValue%2A></span><span class="sxs-lookup"><span data-stu-id="0f567-110">The two methods that facilitate keeping name/value pairs are <xref:System.Xml.Linq.XElement.SetAttributeValue%2A> and <xref:System.Xml.Linq.XElement.SetElementValue%2A>.</span></span> <span data-ttu-id="0f567-111">これらの&2; つのメソッドは、よく似たセマンティクスを持っています。</span><span class="sxs-lookup"><span data-stu-id="0f567-111">These two methods have similar semantics.</span></span>  
   
- <xref:System.Xml.Linq.XElement.SetAttributeValue%2A>できますを追加、変更、または、要素の属性を削除します。</xref:System.Xml.Linq.XElement.SetAttributeValue%2A>  
+ <span data-ttu-id="0f567-112"><xref:System.Xml.Linq.XElement.SetAttributeValue%2A>できますを追加、変更、または、要素の属性を削除します。</xref:System.Xml.Linq.XElement.SetAttributeValue%2A></span><span class="sxs-lookup"><span data-stu-id="0f567-112"><xref:System.Xml.Linq.XElement.SetAttributeValue%2A> can add, modify, or remove attributes of an element.</span></span>  
   
--   呼び出した場合<xref:System.Xml.Linq.XElement.SetAttributeValue%2A>が存在しない属性の名前を持つメソッドが新しい属性を作成し、指定された要素に追加します</xref:System.Xml.Linq.XElement.SetAttributeValue%2A>。  
+-   <span data-ttu-id="0f567-113">呼び出した場合<xref:System.Xml.Linq.XElement.SetAttributeValue%2A>が存在しない属性の名前を持つメソッドが新しい属性を作成し、指定された要素に追加します</xref:System.Xml.Linq.XElement.SetAttributeValue%2A>。</span><span class="sxs-lookup"><span data-stu-id="0f567-113">If you call <xref:System.Xml.Linq.XElement.SetAttributeValue%2A> with a name of an attribute that does not exist, the method creates a new attribute and adds it to the specified element.</span></span>  
   
--   呼び出した場合<xref:System.Xml.Linq.XElement.SetAttributeValue%2A>コンテンツの既存の属性の名前、および指定の属性のコンテンツが指定された内容で置き換えられます</xref:System.Xml.Linq.XElement.SetAttributeValue%2A>。  
+-   <span data-ttu-id="0f567-114">呼び出した場合<xref:System.Xml.Linq.XElement.SetAttributeValue%2A>コンテンツの既存の属性の名前、および指定の属性のコンテンツが指定された内容で置き換えられます</xref:System.Xml.Linq.XElement.SetAttributeValue%2A>。</span><span class="sxs-lookup"><span data-stu-id="0f567-114">If you call <xref:System.Xml.Linq.XElement.SetAttributeValue%2A> with a name of an existing attribute and with some specified content, the contents of the attribute are replaced with the specified content.</span></span>  
   
--   呼び出した場合<xref:System.Xml.Linq.XElement.SetAttributeValue%2A>、既存の名前を持つ属性があり、指定されたコンテンツの null 属性は親から削除するが</xref:System.Xml.Linq.XElement.SetAttributeValue%2A>。  
+-   <span data-ttu-id="0f567-115">呼び出した場合<xref:System.Xml.Linq.XElement.SetAttributeValue%2A>、既存の名前を持つ属性があり、指定されたコンテンツの null 属性は親から削除するが</xref:System.Xml.Linq.XElement.SetAttributeValue%2A>。</span><span class="sxs-lookup"><span data-stu-id="0f567-115">If you call <xref:System.Xml.Linq.XElement.SetAttributeValue%2A> with a name of an existing attribute, and specify null for the content, the attribute is removed from its parent.</span></span>  
   
- <xref:System.Xml.Linq.XElement.SetElementValue%2A>できる追加、変更、または要素の子要素を削除します。</xref:System.Xml.Linq.XElement.SetElementValue%2A>  
+ <span data-ttu-id="0f567-116"><xref:System.Xml.Linq.XElement.SetElementValue%2A>できる追加、変更、または要素の子要素を削除します。</xref:System.Xml.Linq.XElement.SetElementValue%2A></span><span class="sxs-lookup"><span data-stu-id="0f567-116"><xref:System.Xml.Linq.XElement.SetElementValue%2A> can add, modify, or remove child elements of an element.</span></span>  
   
--   呼び出した場合<xref:System.Xml.Linq.XElement.SetElementValue%2A>が存在しない子要素の名前を持つメソッドが新しい要素を作成し、指定された要素に追加します</xref:System.Xml.Linq.XElement.SetElementValue%2A>。  
+-   <span data-ttu-id="0f567-117">呼び出した場合<xref:System.Xml.Linq.XElement.SetElementValue%2A>が存在しない子要素の名前を持つメソッドが新しい要素を作成し、指定された要素に追加します</xref:System.Xml.Linq.XElement.SetElementValue%2A>。</span><span class="sxs-lookup"><span data-stu-id="0f567-117">If you call <xref:System.Xml.Linq.XElement.SetElementValue%2A> with a name of a child element that does not exist, the method creates a new element and adds it to the specified element.</span></span>  
   
--   呼び出した場合<xref:System.Xml.Linq.XElement.SetElementValue%2A>コンテンツの既存の要素の名前、および指定の要素のコンテンツが指定された内容で置き換えられます</xref:System.Xml.Linq.XElement.SetElementValue%2A>。  
+-   <span data-ttu-id="0f567-118">呼び出した場合<xref:System.Xml.Linq.XElement.SetElementValue%2A>コンテンツの既存の要素の名前、および指定の要素のコンテンツが指定された内容で置き換えられます</xref:System.Xml.Linq.XElement.SetElementValue%2A>。</span><span class="sxs-lookup"><span data-stu-id="0f567-118">If you call <xref:System.Xml.Linq.XElement.SetElementValue%2A> with a name of an existing element and with some specified content, the contents of the element are replaced with the specified content.</span></span>  
   
--   呼び出した場合<xref:System.Xml.Linq.XElement.SetElementValue%2A>既存の要素の名前を持つ null コンテンツを指定して、要素が親から削除します</xref:System.Xml.Linq.XElement.SetElementValue%2A>。  
+-   <span data-ttu-id="0f567-119">呼び出した場合<xref:System.Xml.Linq.XElement.SetElementValue%2A>既存の要素の名前を持つ null コンテンツを指定して、要素が親から削除します</xref:System.Xml.Linq.XElement.SetElementValue%2A>。</span><span class="sxs-lookup"><span data-stu-id="0f567-119">If you call <xref:System.Xml.Linq.XElement.SetElementValue%2A> with a name of an existing element, and specify null for the content, the element is removed from its parent.</span></span>  
   
-## <a name="example"></a>例  
- 次の例では、属性を持たない要素を作成します。 次を使用して、<xref:System.Xml.Linq.XElement.SetAttributeValue%2A>メソッドを作成し、名前/値ペアのリストを維持します</xref:System.Xml.Linq.XElement.SetAttributeValue%2A>。  
+## <a name="example"></a><span data-ttu-id="0f567-120">例</span><span class="sxs-lookup"><span data-stu-id="0f567-120">Example</span></span>  
+ <span data-ttu-id="0f567-121">次の例では、属性を持たない要素を作成します。</span><span class="sxs-lookup"><span data-stu-id="0f567-121">The following example creates an element with no attributes.</span></span> <span data-ttu-id="0f567-122">次を使用して、<xref:System.Xml.Linq.XElement.SetAttributeValue%2A>メソッドを作成し、名前/値ペアのリストを維持します</xref:System.Xml.Linq.XElement.SetAttributeValue%2A>。</span><span class="sxs-lookup"><span data-stu-id="0f567-122">It then uses the <xref:System.Xml.Linq.XElement.SetAttributeValue%2A> method to create and maintain a list of name/value pairs.</span></span>  
   
 ```vb  
 ' Create an element with no content.  
@@ -70,7 +71,7 @@ root.SetAttributeValue("DefaultColor", Nothing)
 Console.WriteLine(root)  
 ```  
   
- この例を実行すると、次の出力が生成されます。  
+ <span data-ttu-id="0f567-123">この例を実行すると、次の出力が生成されます。</span><span class="sxs-lookup"><span data-stu-id="0f567-123">This example produces the following output:</span></span>  
   
 ```  
 <Root Top="22" Left="20" Bottom="122" Right="300" DefaultColor="Color.Red" />  
@@ -78,8 +79,8 @@ Console.WriteLine(root)
 <Root Top="10" Left="20" Bottom="122" Right="300" />  
 ```  
   
-## <a name="example"></a>例  
- 次の例では、子要素を持たない要素を作成します。 次を使用して、<xref:System.Xml.Linq.XElement.SetElementValue%2A>メソッドを作成し、名前/値ペアのリストを維持します</xref:System.Xml.Linq.XElement.SetElementValue%2A>。  
+## <a name="example"></a><span data-ttu-id="0f567-124">例</span><span class="sxs-lookup"><span data-stu-id="0f567-124">Example</span></span>  
+ <span data-ttu-id="0f567-125">次の例では、子要素を持たない要素を作成します。</span><span class="sxs-lookup"><span data-stu-id="0f567-125">The following example creates an element with no child elements.</span></span> <span data-ttu-id="0f567-126">次を使用して、<xref:System.Xml.Linq.XElement.SetElementValue%2A>メソッドを作成し、名前/値ペアのリストを維持します</xref:System.Xml.Linq.XElement.SetElementValue%2A>。</span><span class="sxs-lookup"><span data-stu-id="0f567-126">It then uses the <xref:System.Xml.Linq.XElement.SetElementValue%2A> method to create and maintain a list of name/value pairs.</span></span>  
   
 ```vb  
 ' Create an element with no content.  
@@ -105,7 +106,7 @@ Console.WriteLine(root)
   
 ```  
   
- この例を実行すると、次の出力が生成されます。  
+ <span data-ttu-id="0f567-127">この例を実行すると、次の出力が生成されます。</span><span class="sxs-lookup"><span data-stu-id="0f567-127">This example produces the following output:</span></span>  
   
 ```  
 <Root>  
@@ -132,7 +133,7 @@ Console.WriteLine(root)
 </Root>  
 ```  
   
-## <a name="see-also"></a>関連項目  
- <xref:System.Xml.Linq.XElement.SetAttributeValue%2A></xref:System.Xml.Linq.XElement.SetAttributeValue%2A>   
- <xref:System.Xml.Linq.XElement.SetElementValue%2A></xref:System.Xml.Linq.XElement.SetElementValue%2A>   
- [XML ツリー (LINQ to XML) の変更 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/modifying-xml-trees-linq-to-xml.md)
+## <a name="see-also"></a><span data-ttu-id="0f567-128">関連項目</span><span class="sxs-lookup"><span data-stu-id="0f567-128">See Also</span></span>  
+ <span data-ttu-id="0f567-129"><xref:System.Xml.Linq.XElement.SetAttributeValue%2A></xref:System.Xml.Linq.XElement.SetAttributeValue%2A></span><span class="sxs-lookup"><span data-stu-id="0f567-129"><xref:System.Xml.Linq.XElement.SetAttributeValue%2A></span></span>   
+ <span data-ttu-id="0f567-130"><xref:System.Xml.Linq.XElement.SetElementValue%2A></xref:System.Xml.Linq.XElement.SetElementValue%2A></span><span class="sxs-lookup"><span data-stu-id="0f567-130"><xref:System.Xml.Linq.XElement.SetElementValue%2A></span></span>   
+<span data-ttu-id="0f567-131"> [XML ツリー (LINQ to XML) の変更 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/modifying-xml-trees-linq-to-xml.md)</span><span class="sxs-lookup"><span data-stu-id="0f567-131"> [Modifying XML Trees (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/modifying-xml-trees-linq-to-xml.md)</span></span>

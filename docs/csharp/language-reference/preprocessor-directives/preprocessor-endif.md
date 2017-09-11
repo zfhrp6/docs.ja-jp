@@ -36,8 +36,8 @@ ms.contentlocale: ja-jp
 ms.lasthandoff: 07/28/2017
 
 ---
-# <a name="endif-c-reference"></a>#endif (C# リファレンス)
-`#endif` は [#if](../../../csharp/language-reference/preprocessor-directives/preprocessor-if.md)ディレクティブで始まる、条件付きディレクティブの終了を指定します。 次に例を示します。  
+# <a name="endif-c-reference"></a><span data-ttu-id="9141c-102">#endif (C# リファレンス)</span><span class="sxs-lookup"><span data-stu-id="9141c-102">#endif (C# Reference)</span></span>
+<span data-ttu-id="9141c-103">`#endif` は [#if](../../../csharp/language-reference/preprocessor-directives/preprocessor-if.md)ディレクティブで始まる、条件付きディレクティブの終了を指定します。</span><span class="sxs-lookup"><span data-stu-id="9141c-103">`#endif` specifies the end of a conditional directive, which began with the [#if](../../../csharp/language-reference/preprocessor-directives/preprocessor-if.md) directive.</span></span> <span data-ttu-id="9141c-104">次に例を示します。</span><span class="sxs-lookup"><span data-stu-id="9141c-104">For example,</span></span>  
   
 ```csharp
 #define DEBUG  
@@ -47,11 +47,11 @@ ms.lasthandoff: 07/28/2017
 #endif  
 ```  
   
-## <a name="remarks"></a>コメント  
- `#if` ディレクティブで始まる条件付きディレクティブは、`#endif` ディレクティブで明示的に終了させる必要があります。 `#endif` の使用例については、「[#if](../../../csharp/language-reference/preprocessor-directives/preprocessor-if.md)」を参照してください。  
+## <a name="remarks"></a><span data-ttu-id="9141c-105">コメント</span><span class="sxs-lookup"><span data-stu-id="9141c-105">Remarks</span></span>  
+ <span data-ttu-id="9141c-106">`#if` ディレクティブで始まる条件付きディレクティブは、`#endif` ディレクティブで明示的に終了させる必要があります。</span><span class="sxs-lookup"><span data-stu-id="9141c-106">A conditional directive, beginning with a `#if` directive, must explicitly be terminated with a `#endif` directive.</span></span> <span data-ttu-id="9141c-107">`#endif` の使用例については、「[#if](../../../csharp/language-reference/preprocessor-directives/preprocessor-if.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="9141c-107">See [#if](../../../csharp/language-reference/preprocessor-directives/preprocessor-if.md) for an example of how to use `#endif`.</span></span>  
   
-## <a name="see-also"></a>関連項目  
- [C# リファレンス](../../../csharp/language-reference/index.md)   
- [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
- [C# プリプロセッサ ディレクティブ](../../../csharp/language-reference/preprocessor-directives/index.md)
+## <a name="see-also"></a><span data-ttu-id="9141c-108">関連項目</span><span class="sxs-lookup"><span data-stu-id="9141c-108">See Also</span></span>  
+ <span data-ttu-id="9141c-109">[C# リファレンス](../../../csharp/language-reference/index.md) </span><span class="sxs-lookup"><span data-stu-id="9141c-109">[C# Reference](../../../csharp/language-reference/index.md) </span></span>  
+ <span data-ttu-id="9141c-110">[C# プログラミング ガイド](../../../csharp/programming-guide/index.md) </span><span class="sxs-lookup"><span data-stu-id="9141c-110">[C# Programming Guide](../../../csharp/programming-guide/index.md) </span></span>  
+ [<span data-ttu-id="9141c-111">C# プリプロセッサ ディレクティブ</span><span class="sxs-lookup"><span data-stu-id="9141c-111">C# Preprocessor Directives</span></span>](../../../csharp/language-reference/preprocessor-directives/index.md)
 

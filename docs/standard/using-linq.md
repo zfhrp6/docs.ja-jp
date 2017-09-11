@@ -18,13 +18,13 @@ ms.lasthandoff: 08/21/2017
 
 ---
 
-# <a name="linq-language-integrated-query"></a>LINQ (統合言語クエリ)
+# <a name="linq-language-integrated-query"></a><span data-ttu-id="ecfa8-104">LINQ (統合言語クエリ)</span><span class="sxs-lookup"><span data-stu-id="ecfa8-104">LINQ (Language Integrated Query)</span></span>
 
-## <a name="what-is-it"></a>LINQ とは
+## <a name="what-is-it"></a><span data-ttu-id="ecfa8-105">LINQ とは</span><span class="sxs-lookup"><span data-stu-id="ecfa8-105">What is it?</span></span>
 
-LINQ では、言語レベルのクエリ機能と、表現力豊かな宣言コードを記述する方法として C# および VB に[高階関数](https://en.wikipedia.org/wiki/Higher-order_function) API が提供されます。
+<span data-ttu-id="ecfa8-106">LINQ では、言語レベルのクエリ機能と、表現力豊かな宣言コードを記述する方法として C# および VB に[高階関数](https://en.wikipedia.org/wiki/Higher-order_function) API が提供されます。</span><span class="sxs-lookup"><span data-stu-id="ecfa8-106">LINQ provides language-level querying capabilities and a [higher-order function](https://en.wikipedia.org/wiki/Higher-order_function) API to C# and VB as a way to write expressive, declarative code.</span></span>
 
-言語レベルのクエリ構文:
+<span data-ttu-id="ecfa8-107">言語レベルのクエリ構文:</span><span class="sxs-lookup"><span data-stu-id="ecfa8-107">Language-level query syntax:</span></span>
 
 ```csharp
 var linqExperts = from p in programmers
@@ -32,18 +32,18 @@ var linqExperts = from p in programmers
                   select new LINQExpert(p);
 ```
 
-上記を `IEnumerable<T>` API を使用して表した場合の例:
+<span data-ttu-id="ecfa8-108">上記を `IEnumerable<T>` API を使用して表した場合の例:</span><span class="sxs-lookup"><span data-stu-id="ecfa8-108">Same example using the `IEnumerable<T>` API:</span></span>
 
 ```csharp
 var linqExperts = programmers.Where(p => IsNewToLINQ)
                              .Select(p => new LINQExpert(p));
 ```
 
-## <a name="linq-is-expressive"></a>LINQ は表現力が豊か
+## <a name="linq-is-expressive"></a><span data-ttu-id="ecfa8-109">LINQ は表現力が豊か</span><span class="sxs-lookup"><span data-stu-id="ecfa8-109">LINQ is Expressive</span></span>
 
-たとえば、ペットのリストはあるが、`RFID` 値で直接ペットにアクセスできる辞書に変換する必要があるとします。
+<span data-ttu-id="ecfa8-110">たとえば、ペットのリストはあるが、`RFID` 値で直接ペットにアクセスできる辞書に変換する必要があるとします。</span><span class="sxs-lookup"><span data-stu-id="ecfa8-110">Imagine you have a list of pets, but want to convert it into a dictionary where you can access a pet directly by its `RFID` value.</span></span>
 
-従来の命令型コード:
+<span data-ttu-id="ecfa8-111">従来の命令型コード:</span><span class="sxs-lookup"><span data-stu-id="ecfa8-111">Traditional imperative code:</span></span>
 
 ```csharp
 var petLookup = new Dictionary<int, Pet>();
@@ -54,21 +54,21 @@ foreach (var pet in pets)
 }
 ```
 
-コードの目的は、新しい `Dictionary<int, Pet>` を作成し、ループを使用して追加することではなく、既存のリストを辞書に変換することです。 LINQ ではこの目的が維持されますが、命令型コードでは維持されません。
+<span data-ttu-id="ecfa8-112">コードの目的は、新しい `Dictionary<int, Pet>` を作成し、ループを使用して追加することではなく、既存のリストを辞書に変換することです。</span><span class="sxs-lookup"><span data-stu-id="ecfa8-112">The intention behind the code is not to create a new `Dictionary<int, Pet>` and add to it via a loop, it is to convert an existing list into a dictionary!</span></span> <span data-ttu-id="ecfa8-113">LINQ ではこの目的が維持されますが、命令型コードでは維持されません。</span><span class="sxs-lookup"><span data-stu-id="ecfa8-113">LINQ preserves the intention whereas the imperative code does not.</span></span>
 
-同等の LINQ 式:
+<span data-ttu-id="ecfa8-114">同等の LINQ 式:</span><span class="sxs-lookup"><span data-stu-id="ecfa8-114">Equivalent LINQ expression:</span></span>
 
 ```csharp
 var petLookup = pets.ToDictionary(pet => pet.RFID);
 ```
 
-プログラマーとして考えると、目的とコードを同等にするため、LINQ を使用するコードのほうが有益です。 また、コードが簡潔であるという利点があります。 上記のように、コードベースの大部分を 3 分の 1 に減らせることを考えれば、 賢明な選択です。
+<span data-ttu-id="ecfa8-115">プログラマーとして考えると、目的とコードを同等にするため、LINQ を使用するコードのほうが有益です。</span><span class="sxs-lookup"><span data-stu-id="ecfa8-115">The code using LINQ is valuable because it evens the playing field between intent and code when reasoning as a programmer.</span></span> <span data-ttu-id="ecfa8-116">また、コードが簡潔であるという利点があります。</span><span class="sxs-lookup"><span data-stu-id="ecfa8-116">Another bonus is code brevity.</span></span> <span data-ttu-id="ecfa8-117">上記のように、コードベースの大部分を 3 分の 1 に減らせることを考えれば、</span><span class="sxs-lookup"><span data-stu-id="ecfa8-117">Imagine reducing large portions of a codebase by 1/3 as done above.</span></span> <span data-ttu-id="ecfa8-118">賢明な選択です。</span><span class="sxs-lookup"><span data-stu-id="ecfa8-118">Pretty sweet deal, right?</span></span>
 
-## <a name="linq-providers-simplify-data-access"></a>LINQ プロバイダーでデータ アクセスが簡単に
+## <a name="linq-providers-simplify-data-access"></a><span data-ttu-id="ecfa8-119">LINQ プロバイダーでデータ アクセスが簡単に</span><span class="sxs-lookup"><span data-stu-id="ecfa8-119">LINQ Providers Simplify Data Access</span></span>
 
-実環境の非常に多くのソフトウェアでは、すべてのことが一部のソース (データベース、JSON、XML など) からのデータ処理を中心に展開されます。 多くの場合、これには面倒なデータ ソースごとの新しい API の学習が含まれます。 LINQ は、データ アクセスの一般的な要素を、選択されたデータ ソースに関係なく同じようなクエリ構文に抽象化することで、これを簡略化します。
+<span data-ttu-id="ecfa8-120">実環境の非常に多くのソフトウェアでは、すべてのことが一部のソース (データベース、JSON、XML など) からのデータ処理を中心に展開されます。</span><span class="sxs-lookup"><span data-stu-id="ecfa8-120">For a significant chunk of software out in the wild, everything revolves around dealing with data from some source (Databases, JSON, XML, etc).</span></span> <span data-ttu-id="ecfa8-121">多くの場合、これには面倒なデータ ソースごとの新しい API の学習が含まれます。</span><span class="sxs-lookup"><span data-stu-id="ecfa8-121">Often this involves learning a new API for each data source, which can be annoying.</span></span> <span data-ttu-id="ecfa8-122">LINQ は、データ アクセスの一般的な要素を、選択されたデータ ソースに関係なく同じようなクエリ構文に抽象化することで、これを簡略化します。</span><span class="sxs-lookup"><span data-stu-id="ecfa8-122">LINQ simplifies this by abstracting common elements of data access into a query syntax which looks the same no matter which data source you pick.</span></span>
 
-たとえば、特定の属性値を持つ XML 要素をすべて検索するとします。
+<span data-ttu-id="ecfa8-123">たとえば、特定の属性値を持つ XML 要素をすべて検索するとします。</span><span class="sxs-lookup"><span data-stu-id="ecfa8-123">Consider the following: finding all XML elements with a specific attribute value.</span></span>
 
 ```csharp
 public static IEnumerable<XElement> FindAllElementsWithAttribute(XElement documentRoot, string elementName,
@@ -80,19 +80,19 @@ public static IEnumerable<XElement> FindAllElementsWithAttribute(XElement docume
 }
 ```
 
-コードを記述して XML ドキュメントを手動でスキャンし、このタスクを実行するのはとても難しいことです。
+<span data-ttu-id="ecfa8-124">コードを記述して XML ドキュメントを手動でスキャンし、このタスクを実行するのはとても難しいことです。</span><span class="sxs-lookup"><span data-stu-id="ecfa8-124">Writing code to manually traverse the XML document to perform this task would be far more challenging.</span></span>
 
-XML との対話が、LINQ プロバイダーでできる唯一のことではありません。 [Linq to SQL](https://msdn.microsoft.com/library/bb386976.aspx) は、MSSQL Server データベースの必要最低限のオブジェクト リレーショナル マッパー (ORM) です。 [JSON.NET](http://www.newtonsoft.com/json/help/html/LINQtoJSON.htm) ライブラリでは、LINQ を使用して効率的に JSON ドキュメントをトラバースできます。 さらに、必要な作業を行うライブラリがない場合は、[独自の LINQ プロバイダーを記述する](https://msdn.microsoft.com/library/Bb546158.aspx)こともできます。
+<span data-ttu-id="ecfa8-125">XML との対話が、LINQ プロバイダーでできる唯一のことではありません。</span><span class="sxs-lookup"><span data-stu-id="ecfa8-125">Interacting with XML isn’t the only thing you can do with LINQ Providers.</span></span> <span data-ttu-id="ecfa8-126">[Linq to SQL](https://msdn.microsoft.com/library/bb386976.aspx) は、MSSQL Server データベースの必要最低限のオブジェクト リレーショナル マッパー (ORM) です。</span><span class="sxs-lookup"><span data-stu-id="ecfa8-126">[Linq to SQL](https://msdn.microsoft.com/library/bb386976.aspx) is a fairly bare-bones Object-Relational Mapper (ORM) for an MSSQL Server Database.</span></span> <span data-ttu-id="ecfa8-127">[JSON.NET](http://www.newtonsoft.com/json/help/html/LINQtoJSON.htm) ライブラリでは、LINQ を使用して効率的に JSON ドキュメントをトラバースできます。</span><span class="sxs-lookup"><span data-stu-id="ecfa8-127">The [JSON.NET](http://www.newtonsoft.com/json/help/html/LINQtoJSON.htm) library provides efficient JSON Document traversal via LINQ.</span></span> <span data-ttu-id="ecfa8-128">さらに、必要な作業を行うライブラリがない場合は、[独自の LINQ プロバイダーを記述する](https://msdn.microsoft.com/library/Bb546158.aspx)こともできます。</span><span class="sxs-lookup"><span data-stu-id="ecfa8-128">Furthermore, if there isn’t a library which does what you need, you can also [write your own LINQ Provider](https://msdn.microsoft.com/library/Bb546158.aspx)!</span></span>
 
-## <a name="why-use-the-query-syntax"></a>クエリ構文を使用する理由
+## <a name="why-use-the-query-syntax"></a><span data-ttu-id="ecfa8-129">クエリ構文を使用する理由</span><span class="sxs-lookup"><span data-stu-id="ecfa8-129">Why Use the Query Syntax?</span></span>
 
-これはよくある質問です。 いずれにせよ、
+<span data-ttu-id="ecfa8-130">これはよくある質問です。</span><span class="sxs-lookup"><span data-stu-id="ecfa8-130">This is a question which often comes up.</span></span> <span data-ttu-id="ecfa8-131">いずれにせよ、</span><span class="sxs-lookup"><span data-stu-id="ecfa8-131">After all, this,</span></span>
 
 ```csharp
 var filteredItems = myItems.Where(item => item.Foo);
 ```
 
-上の構文は下の構文よりもずっと簡潔です。
+<span data-ttu-id="ecfa8-132">上の構文は下の構文よりもずっと簡潔です。</span><span class="sxs-lookup"><span data-stu-id="ecfa8-132">is a lot more concise than this:</span></span>
 
 ```csharp
 var filteredItems = from item in myItems
@@ -100,31 +100,31 @@ var filteredItems = from item in myItems
                     select item;
 ```
 
-API 構文は単に、クエリ構文を実行するより簡潔な方法であるだけでしょうか? 
+<span data-ttu-id="ecfa8-133">API 構文は単に、クエリ構文を実行するより簡潔な方法であるだけでしょうか? </span><span class="sxs-lookup"><span data-stu-id="ecfa8-133">Isn’t the API syntax just a more concise way to do the query syntax?</span></span>
 
-いいえ。 クエリ構文では **let** 句を使用できます。したがって、式の後ろの部分でこの句を使用すれば、式のスコープ内で変数を導入してバインドすることができます。 API 構文だけでも同じコードを再現できますが、コードが読み取りにくくなる可能性が高くなります。
+<span data-ttu-id="ecfa8-134">いいえ。</span><span class="sxs-lookup"><span data-stu-id="ecfa8-134">No.</span></span> <span data-ttu-id="ecfa8-135">クエリ構文では **let** 句を使用できます。したがって、式の後ろの部分でこの句を使用すれば、式のスコープ内で変数を導入してバインドすることができます。</span><span class="sxs-lookup"><span data-stu-id="ecfa8-135">The query syntax allows for the use the **let** clause, which allows you to introduce and bind a variable within the scope of the expression, using it in subsequent pieces of the expression.</span></span> <span data-ttu-id="ecfa8-136">API 構文だけでも同じコードを再現できますが、コードが読み取りにくくなる可能性が高くなります。</span><span class="sxs-lookup"><span data-stu-id="ecfa8-136">Reproducing the same code with only the API syntax can be done, but will most likely lead to code which is hard to read.</span></span>
 
-そこで、**クエリ構文を使用する必要があるかどうか**ですが、
+<span data-ttu-id="ecfa8-137">そこで、**クエリ構文を使用する必要があるかどうか**ですが、</span><span class="sxs-lookup"><span data-stu-id="ecfa8-137">So this begs the question, **should you just use the query syntax?**</span></span>
 
-次のような場合には、使用する必要が**あります**。
+<span data-ttu-id="ecfa8-138">次のような場合には、使用する必要が**あります**。</span><span class="sxs-lookup"><span data-stu-id="ecfa8-138">The answer to this question is **yes** if...</span></span>
 
-*   既存のコードベースで既にクエリ構文を使用している。
-*   複雑になるため、クエリ内で変数をスコープする必要がある。
-*   クエリ構文が好ましく、コードベースから注意がそれることはない。
+*   <span data-ttu-id="ecfa8-139">既存のコードベースで既にクエリ構文を使用している。</span><span class="sxs-lookup"><span data-stu-id="ecfa8-139">Your existing codebase already uses the query syntax</span></span>
+*   <span data-ttu-id="ecfa8-140">複雑になるため、クエリ内で変数をスコープする必要がある。</span><span class="sxs-lookup"><span data-stu-id="ecfa8-140">You need to scope variables within your queries due to complexity</span></span>
+*   <span data-ttu-id="ecfa8-141">クエリ構文が好ましく、コードベースから注意がそれることはない。</span><span class="sxs-lookup"><span data-stu-id="ecfa8-141">You prefer the query syntax and it won’t distract from your codebase</span></span>
 
-次のような場合には、使用する必要は**ありません**。
+<span data-ttu-id="ecfa8-142">次のような場合には、使用する必要は**ありません**。</span><span class="sxs-lookup"><span data-stu-id="ecfa8-142">The answer to this question is **no** if...</span></span>
 
-*   既存のコードベースで既に API 構文を使用している。
-*   クエリ内で変数をスコープする必要はない。
-*   API 構文が好ましく、コードベースから注意がそれることはない。
+*   <span data-ttu-id="ecfa8-143">既存のコードベースで既に API 構文を使用している。</span><span class="sxs-lookup"><span data-stu-id="ecfa8-143">Your existing codebase already uses the API syntax</span></span>
+*   <span data-ttu-id="ecfa8-144">クエリ内で変数をスコープする必要はない。</span><span class="sxs-lookup"><span data-stu-id="ecfa8-144">You have no need to scope variables within your queries</span></span>
+*   <span data-ttu-id="ecfa8-145">API 構文が好ましく、コードベースから注意がそれることはない。</span><span class="sxs-lookup"><span data-stu-id="ecfa8-145">You prefer the API syntax and it won’t distract from your codebase</span></span>
 
-## <a name="essential-samples"></a>重要なサンプル
+## <a name="essential-samples"></a><span data-ttu-id="ecfa8-146">重要なサンプル</span><span class="sxs-lookup"><span data-stu-id="ecfa8-146">Essential Samples</span></span>
 
-LINQ サンプルの一覧については、「[101 LINQ Samples](https://code.msdn.microsoft.com/101-LINQ-Samples-3fb9811b)」 (101 個の LINQ サンプル) を参照してください。
+<span data-ttu-id="ecfa8-147">LINQ サンプルの一覧については、「[101 LINQ Samples](https://code.msdn.microsoft.com/101-LINQ-Samples-3fb9811b)」 (101 個の LINQ サンプル) を参照してください。</span><span class="sxs-lookup"><span data-stu-id="ecfa8-147">For a truly comprehensive list of LINQ samples, visit [101 LINQ Samples](https://code.msdn.microsoft.com/101-LINQ-Samples-3fb9811b).</span></span>
 
-以下に、LINQ の重要な要素をいくつか簡単に示します。 これは決して包括的なものではありません。LINQ ではここで紹介するものよりはるかに多くの機能が提供されます。
+<span data-ttu-id="ecfa8-148">以下に、LINQ の重要な要素をいくつか簡単に示します。</span><span class="sxs-lookup"><span data-stu-id="ecfa8-148">The following is a quick demonstration of some of the essential pieces of LINQ.</span></span> <span data-ttu-id="ecfa8-149">これは決して包括的なものではありません。LINQ ではここで紹介するものよりはるかに多くの機能が提供されます。</span><span class="sxs-lookup"><span data-stu-id="ecfa8-149">This is in no way comprehensive, as LINQ provides significantly more functionality than what is showcased here.</span></span>
 
-*   最も基本的かつ重要な要素 - `Where`、`Select`、および `Aggregate`:
+*   <span data-ttu-id="ecfa8-150">最も基本的かつ重要な要素 - `Where`、`Select`、および `Aggregate`:</span><span class="sxs-lookup"><span data-stu-id="ecfa8-150">The bread and butter - `Where`, `Select`, and `Aggregate`:</span></span>
 
 ```csharp
 // Filtering a list
@@ -147,14 +147,14 @@ int seed = 0;
 int sumOfStrings = strings.Aggregate(seed, (s1, s2) => s1.Length + s2.Length);
 ```
 
-*   リストをまとめてフラット化する場合:
+*   <span data-ttu-id="ecfa8-151">リストをまとめてフラット化する場合:</span><span class="sxs-lookup"><span data-stu-id="ecfa8-151">Flattening a list of lists:</span></span>
 
 ```csharp
 // Transforms the list of kennels into a list of all their dogs.
 var allDogsFromKennels = kennels.SelectMany(kennel => kennel.Dogs);
 ```
 
-*   2 つのセットの和集合 (カスタム比較子を含む):
+*   <span data-ttu-id="ecfa8-152">2 つのセットの和集合 (カスタム比較子を含む):</span><span class="sxs-lookup"><span data-stu-id="ecfa8-152">Union between two sets (with custom comparator):</span></span>
 
 ```csharp
 public class DogHairLengthComparer : IEqualityComparer<Dog>
@@ -189,7 +189,7 @@ public class DogHairLengthComparer : IEqualityComparer<Dog>
 var allShortHairedDogs = kennel1.Dogs.Union(kennel2.Dogs, new DogHairLengthComparer());
 ```
 
-*   2 つのセットの積集合:
+*   <span data-ttu-id="ecfa8-153">2 つのセットの積集合:</span><span class="sxs-lookup"><span data-stu-id="ecfa8-153">Intersection between two sets:</span></span>
 
 ```csharp
 // Gets the volunteers who spend share time with two humane societies.
@@ -197,7 +197,7 @@ var volunteers = humaneSociety1.Volunteers.Intersect(humaneSociety2.Volunteers,
                                                      new VolunteerTimeComparer());
 ```
 
-*   並べ替え:
+*   <span data-ttu-id="ecfa8-154">並べ替え:</span><span class="sxs-lookup"><span data-stu-id="ecfa8-154">Ordering:</span></span>
 
 ```csharp
 // Get driving directions, ordering by if it's toll-free before estimated driving time.
@@ -206,7 +206,7 @@ var results = DirectionsProcessor.GetDirections(start, end)
               .ThenBy(direction => direction.EstimatedTime);
 ```
 
-*   最後に、より高度なサンプルを以下に示します。同じ型の 2 つのインスタンスのプロパティ値が等しいかどうかを判断します ([この StackOverflow の投稿](http://stackoverflow.com/a/844855)から借用し、変更したもの)。
+*   <span data-ttu-id="ecfa8-155">最後に、より高度なサンプルを以下に示します。同じ型の 2 つのインスタンスのプロパティ値が等しいかどうかを判断します ([この StackOverflow の投稿](http://stackoverflow.com/a/844855)から借用し、変更したもの)。</span><span class="sxs-lookup"><span data-stu-id="ecfa8-155">Finally, a more advanced sample: determining if the values of the properties of two instances of the same type are equal (Borrowed and modified from [this StackOverflow post](http://stackoverflow.com/a/844855)):</span></span>
 
 ```csharp
 public static bool PublicInstancePropertiesEqual<T>(this T self, T to, params string[] ignore) where T : class
@@ -230,11 +230,11 @@ public static bool PublicInstancePropertiesEqual<T>(this T self, T to, params st
 }
 ```
 
-## <a name="plinq"></a>PLINQ
+## <a name="plinq"></a><span data-ttu-id="ecfa8-156">PLINQ</span><span class="sxs-lookup"><span data-stu-id="ecfa8-156">PLINQ</span></span>
 
-PLINQ (Parallel LINQ) は、LINQ 式の並列実行エンジンです。 つまり、LINQ の正規表現は、任意の数のスレッドで普通に並列化できます。 これは、式の前に `AsParallel()` を指定して呼び出すことで実行できます。
+<span data-ttu-id="ecfa8-157">PLINQ (Parallel LINQ) は、LINQ 式の並列実行エンジンです。</span><span class="sxs-lookup"><span data-stu-id="ecfa8-157">PLINQ, or Parallel LINQ, is a parallel execution engine for LINQ expressions.</span></span> <span data-ttu-id="ecfa8-158">つまり、LINQ の正規表現は、任意の数のスレッドで普通に並列化できます。</span><span class="sxs-lookup"><span data-stu-id="ecfa8-158">In other words, a regular LINQ expressions can be trivially parallelized across any number of threads.</span></span> <span data-ttu-id="ecfa8-159">これは、式の前に `AsParallel()` を指定して呼び出すことで実行できます。</span><span class="sxs-lookup"><span data-stu-id="ecfa8-159">This is accomplished via a call to `AsParallel()` preceding the expression.</span></span>
 
-次に例を示します。
+<span data-ttu-id="ecfa8-160">次に例を示します。</span><span class="sxs-lookup"><span data-stu-id="ecfa8-160">Consider the following:</span></span>
 
 ```csharp
 public static string GetAllFacebookUserLikesMessage(IEnumerable<FacebookUser> facebookUsers)
@@ -250,17 +250,17 @@ public static string GetAllFacebookUserLikesMessage(IEnumerable<FacebookUser> fa
 }
 ```
 
-このコードでは、必要に応じてシステム スレッドにまたがる `facebookUsers` をパーティション分割し、各スレッドの "いいね!" の数を合計し、スレッドごとの計算結果を合計して、その結果を適切な文字列に投影します。
+<span data-ttu-id="ecfa8-161">このコードでは、必要に応じてシステム スレッドにまたがる `facebookUsers` をパーティション分割し、各スレッドの "いいね!" の数を合計し、スレッドごとの計算結果を合計して、その結果を適切な文字列に投影します。</span><span class="sxs-lookup"><span data-stu-id="ecfa8-161">This code will partition `facebookUsers` across system threads as necessary, sum up the total likes on each thread in parallel, sum the results computed by each thread, and project that result into a nice string.</span></span>
 
-図で表すと次のようになります。
+<span data-ttu-id="ecfa8-162">図で表すと次のようになります。</span><span class="sxs-lookup"><span data-stu-id="ecfa8-162">In diagram form:</span></span>
 
 ![PLINQ の図](./media/using-linq/plinq-diagram.png)
 
-LINQ で簡単に表すことができる (つまり、純粋関数で副作用のない) 並列化可能な CPU 制約のあるジョブは、PLINQ の候補として最適です。 副作用の_ある_ジョブの場合は、[タスク並列ライブラリ](https://msdn.microsoft.com/library/dd460717.aspx)の使用を検討してください。
+<span data-ttu-id="ecfa8-164">LINQ で簡単に表すことができる (つまり、純粋関数で副作用のない) 並列化可能な CPU 制約のあるジョブは、PLINQ の候補として最適です。</span><span class="sxs-lookup"><span data-stu-id="ecfa8-164">Parallelizable CPU-bound jobs which can be easily expressed via LINQ (in other words, are pure functions and have no side effects) are a great candidate for PLINQ.</span></span> <span data-ttu-id="ecfa8-165">副作用の_ある_ジョブの場合は、[タスク並列ライブラリ](https://msdn.microsoft.com/library/dd460717.aspx)の使用を検討してください。</span><span class="sxs-lookup"><span data-stu-id="ecfa8-165">For jobs which _do_ have a side effect, consider using the [Task Parallel Library](https://msdn.microsoft.com/library/dd460717.aspx).</span></span>
 
-## <a name="further-resources"></a>他のリソース:
+## <a name="further-resources"></a><span data-ttu-id="ecfa8-166">他のリソース:</span><span class="sxs-lookup"><span data-stu-id="ecfa8-166">Further Resources:</span></span>
 
-*   [101 個の LINQ サンプル](https://code.msdn.microsoft.com/101-LINQ-Samples-3fb9811b)
-*   [Linqpad](https://www.linqpad.net/)。プレイグラウンド環境とデータベース クエリ エンジン (C#/F#/VB 用)
-*   [EduLinq](http://codeblog.jonskeet.uk/2011/02/23/reimplementing-linq-to-objects-part-45-conclusion-and-list-of-posts/)。LINQ to Objects の実装方法を学習するための電子書籍
+*   [<span data-ttu-id="ecfa8-167">101 個の LINQ サンプル</span><span class="sxs-lookup"><span data-stu-id="ecfa8-167">101 LINQ Samples</span></span>](https://code.msdn.microsoft.com/101-LINQ-Samples-3fb9811b)
+*   <span data-ttu-id="ecfa8-168">[Linqpad](https://www.linqpad.net/)。プレイグラウンド環境とデータベース クエリ エンジン (C#/F#/VB 用)</span><span class="sxs-lookup"><span data-stu-id="ecfa8-168">[Linqpad](https://www.linqpad.net/), a playground environment and Database querying engine for C#/F#/VB</span></span>
+*   <span data-ttu-id="ecfa8-169">[EduLinq](http://codeblog.jonskeet.uk/2011/02/23/reimplementing-linq-to-objects-part-45-conclusion-and-list-of-posts/)。LINQ to Objects の実装方法を学習するための電子書籍</span><span class="sxs-lookup"><span data-stu-id="ecfa8-169">[EduLinq](http://codeblog.jonskeet.uk/2011/02/23/reimplementing-linq-to-objects-part-45-conclusion-and-list-of-posts/), an e-book for learning how LINQ-to-objects is implemented</span></span>
 

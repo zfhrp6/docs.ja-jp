@@ -20,17 +20,18 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: c6df61013b0007e5943060f8926b21d189a01519
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
+ms.openlocfilehash: d791bcb47243f1b9b2580617c7881d77b11aef1d
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/12/2017
 
 ---
-# <a name="how-to-validate-using-xsd-linq-to-xml-visual-basic"></a>方法: XSD (LINQ to XML) を使用して検証 (Visual Basic)
-<xref:System.Xml.Schema>名前空間には、XML スキーマ定義言語 (XSD) ファイルに対して XML ツリーを検証するが簡単にする拡張メソッドが含まれています</xref:System.Xml.Schema>。 詳細については、次を参照してください、<xref:System.Xml.Schema.Extensions.Validate%2A>メソッドのドキュメント。</xref:System.Xml.Schema.Extensions.Validate%2A> 。  
+# <a name="how-to-validate-using-xsd-linq-to-xml-visual-basic"></a><span data-ttu-id="a5c4d-102">方法: XSD (LINQ to XML) を使用して検証 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="a5c4d-102">How to: Validate Using XSD (LINQ to XML) (Visual Basic)</span></span>
+<span data-ttu-id="a5c4d-103"><xref:System.Xml.Schema>名前空間には、XML スキーマ定義言語 (XSD) ファイルに対して XML ツリーを検証するが簡単にする拡張メソッドが含まれています</xref:System.Xml.Schema>。</span><span class="sxs-lookup"><span data-stu-id="a5c4d-103">The <xref:System.Xml.Schema> namespace contains extension methods that make it easy to validate an XML tree against an XML Schema Definition Language (XSD) file.</span></span> <span data-ttu-id="a5c4d-104">詳細については、次を参照してください、<xref:System.Xml.Schema.Extensions.Validate%2A>メソッドのドキュメント。</xref:System.Xml.Schema.Extensions.Validate%2A> 。</span><span class="sxs-lookup"><span data-stu-id="a5c4d-104">For more information, see the <xref:System.Xml.Schema.Extensions.Validate%2A> method documentation.</span></span>  
   
-## <a name="example"></a>例  
- 次の例を作成し、 <xref:System.Xml.Schema.XmlSchemaSet>、2 つを検証<xref:System.Xml.Linq.XDocument>スキーマ セットに対してオブジェクト</xref:System.Xml.Linq.XDocument></xref:System.Xml.Schema.XmlSchemaSet>。 ドキュメントの&1; つは有効ですが、その他のドキュメントは無効です。  
+## <a name="example"></a><span data-ttu-id="a5c4d-105">例</span><span class="sxs-lookup"><span data-stu-id="a5c4d-105">Example</span></span>  
+ <span data-ttu-id="a5c4d-106">次の例を作成し、 <xref:System.Xml.Schema.XmlSchemaSet>、2 つを検証<xref:System.Xml.Linq.XDocument>スキーマ セットに対してオブジェクト</xref:System.Xml.Linq.XDocument></xref:System.Xml.Schema.XmlSchemaSet>。</span><span class="sxs-lookup"><span data-stu-id="a5c4d-106">The following example creates an <xref:System.Xml.Schema.XmlSchemaSet>, then validates two <xref:System.Xml.Linq.XDocument> objects against the schema set.</span></span> <span data-ttu-id="a5c4d-107">ドキュメントの&1; つは有効ですが、その他のドキュメントは無効です。</span><span class="sxs-lookup"><span data-stu-id="a5c4d-107">One of the documents is valid, the other is not.</span></span>  
   
 ```vb  
 Dim errors As Boolean = False  
@@ -82,7 +83,7 @@ Sub Main()
 End Sub  
 ```  
   
- この例を実行すると、次の出力が生成されます。  
+ <span data-ttu-id="a5c4d-108">この例を実行すると、次の出力が生成されます。</span><span class="sxs-lookup"><span data-stu-id="a5c4d-108">This example produces the following output:</span></span>  
   
 ```  
 Validating doc1  
@@ -93,12 +94,12 @@ The element 'Root' has invalid child element 'Child3'. List of possible elements
 doc2 did not validate  
 ```  
   
-## <a name="example"></a>例  
- 次の例では、XML ドキュメントからことを検証[サンプル XML ファイル: 顧客と注文 (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml.md)のスキーマに従った有効[サンプル XSD ファイル: 顧客と注文](../../../../visual-basic/programming-guide/concepts/linq/sample-xsd-file-customers-and-orders.md)します。 次に、ソース XML ドキュメントを変更します。 変更するのは最初の顧客の `CustomerID` 属性です。 変更が完了すると、存在しない顧客を注文が参照するようになります。したがって、この XML ドキュメントは有効ではなくなります。  
+## <a name="example"></a><span data-ttu-id="a5c4d-109">例</span><span class="sxs-lookup"><span data-stu-id="a5c4d-109">Example</span></span>  
+ <span data-ttu-id="a5c4d-110">次の例では、XML ドキュメントからことを検証[サンプル XML ファイル: 顧客と注文 (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml.md)のスキーマに従った有効[サンプル XSD ファイル: 顧客と注文](../../../../visual-basic/programming-guide/concepts/linq/sample-xsd-file-customers-and-orders.md)します。</span><span class="sxs-lookup"><span data-stu-id="a5c4d-110">The following example validates that the XML document from [Sample XML File: Customers and Orders (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml.md) is valid per the schema from [Sample XSD File: Customers and Orders](../../../../visual-basic/programming-guide/concepts/linq/sample-xsd-file-customers-and-orders.md).</span></span> <span data-ttu-id="a5c4d-111">次に、ソース XML ドキュメントを変更します。</span><span class="sxs-lookup"><span data-stu-id="a5c4d-111">It then modifies the source XML document.</span></span> <span data-ttu-id="a5c4d-112">変更するのは最初の顧客の `CustomerID` 属性です。</span><span class="sxs-lookup"><span data-stu-id="a5c4d-112">It changes the `CustomerID` attribute on the first customer.</span></span> <span data-ttu-id="a5c4d-113">変更が完了すると、存在しない顧客を注文が参照するようになります。したがって、この XML ドキュメントは有効ではなくなります。</span><span class="sxs-lookup"><span data-stu-id="a5c4d-113">After the change, orders will then refer to a customer that does not exist, so the XML document will no longer validate.</span></span>  
   
- この例は、次の XML ドキュメントを使用して:[サンプル XML ファイル: 顧客と注文 (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml.md)します。  
+ <span data-ttu-id="a5c4d-114">この例は、次の XML ドキュメントを使用して:[サンプル XML ファイル: 顧客と注文 (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml.md)します。</span><span class="sxs-lookup"><span data-stu-id="a5c4d-114">This example uses the following XML document: [Sample XML File: Customers and Orders (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml.md).</span></span>  
   
- この例は、次の XSD スキーマを使用して:[サンプル XSD ファイル: 顧客と注文](../../../../visual-basic/programming-guide/concepts/linq/sample-xsd-file-customers-and-orders.md)します。  
+ <span data-ttu-id="a5c4d-115">この例は、次の XSD スキーマを使用して:[サンプル XSD ファイル: 顧客と注文](../../../../visual-basic/programming-guide/concepts/linq/sample-xsd-file-customers-and-orders.md)します。</span><span class="sxs-lookup"><span data-stu-id="a5c4d-115">This example uses the following XSD schema: [Sample XSD File: Customers and Orders](../../../../visual-basic/programming-guide/concepts/linq/sample-xsd-file-customers-and-orders.md).</span></span>  
   
 ```vb  
 Dim errors As Boolean = False  
@@ -128,7 +129,7 @@ Sub Main()
 End Sub  
 ```  
   
- この例を実行すると、次の出力が生成されます。  
+ <span data-ttu-id="a5c4d-116">この例を実行すると、次の出力が生成されます。</span><span class="sxs-lookup"><span data-stu-id="a5c4d-116">This example produces the following output:</span></span>  
   
 ```  
 Attempting to validate  
@@ -139,6 +140,6 @@ The key sequence 'AAAAA' in Keyref fails to refer to some key.
 custOrdDoc did not validate  
 ```  
   
-## <a name="see-also"></a>関連項目  
- <xref:System.Xml.Schema.Extensions.Validate%2A></xref:System.Xml.Schema.Extensions.Validate%2A>   
- [XML ツリー (Visual Basic) の作成](../../../../visual-basic/programming-guide/concepts/linq/creating-xml-trees.md)
+## <a name="see-also"></a><span data-ttu-id="a5c4d-117">関連項目</span><span class="sxs-lookup"><span data-stu-id="a5c4d-117">See Also</span></span>  
+ <span data-ttu-id="a5c4d-118"><xref:System.Xml.Schema.Extensions.Validate%2A></xref:System.Xml.Schema.Extensions.Validate%2A></span><span class="sxs-lookup"><span data-stu-id="a5c4d-118"><xref:System.Xml.Schema.Extensions.Validate%2A></span></span>   
+<span data-ttu-id="a5c4d-119"> [XML ツリー (Visual Basic) の作成](../../../../visual-basic/programming-guide/concepts/linq/creating-xml-trees.md)</span><span class="sxs-lookup"><span data-stu-id="a5c4d-119"> [Creating XML Trees (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/creating-xml-trees.md)</span></span>

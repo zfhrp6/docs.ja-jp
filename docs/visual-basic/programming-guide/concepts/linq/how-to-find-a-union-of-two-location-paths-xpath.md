@@ -16,26 +16,26 @@ caps.latest.revision: 3
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 90fe1bd9a7992c5e3f4c57f5596a88e5be506917
+ms.sourcegitcommit: 14abadaf548e228244a1ff7ca72fa3896ef4eb5d
+ms.openlocfilehash: 63c3399a60f8c26e39ef9d575a569b85bd7c5f68
 ms.contentlocale: ja-jp
-ms.lasthandoff: 03/13/2017
+ms.lasthandoff: 05/23/2017
 
 
 ---
-# <a name="how-to-find-a-union-of-two-location-paths-xpath-linq-to-xml-visual-basic"></a>方法:&2; つの場所のパス (XPATH-LINQ to XML) の和集合を検索 (Visual Basic)
-XPath を使用すると、2 つの XPath ロケーション パスの結果の和集合を検索できます。  
+# <a name="how-to-find-a-union-of-two-location-paths-xpath-linq-to-xml-visual-basic"></a><span data-ttu-id="cf01b-102">方法:&2; つの場所のパス (XPATH-LINQ to XML) の和集合を検索 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="cf01b-102">How to: Find a Union of Two Location Paths (XPath-LINQ to XML) (Visual Basic)</span></span>
+<span data-ttu-id="cf01b-103">XPath を使用すると、2 つの XPath ロケーション パスの結果の和集合を検索できます。</span><span class="sxs-lookup"><span data-stu-id="cf01b-103">XPath allows you to find the union of the results of two XPath location paths.</span></span>  
   
- XPath 式を次に示します。  
+ <span data-ttu-id="cf01b-104">XPath 式を次に示します。</span><span class="sxs-lookup"><span data-stu-id="cf01b-104">The XPath expression is:</span></span>  
   
  `//Category|//Price`  
   
- 使用して、同じ結果を得ることができます、<xref:System.Linq.Enumerable.Concat%2A>標準クエリ演算子です</xref:System.Linq.Enumerable.Concat%2A>。  
+ <span data-ttu-id="cf01b-105">使用して、同じ結果を得ることができます、<xref:System.Linq.Enumerable.Concat%2A>標準クエリ演算子です</xref:System.Linq.Enumerable.Concat%2A>。</span><span class="sxs-lookup"><span data-stu-id="cf01b-105">You can achieve the same results by using the <xref:System.Linq.Enumerable.Concat%2A> standard query operator.</span></span>  
   
-## <a name="example"></a>例  
- この例では、`Category` 要素と `Price` 要素をすべて検索し、それらを&1; つのコレクションに連結します。 注意してください、[!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)]呼び出しをクエリ<xref:System.Xml.Linq.Extensions.InDocumentOrder%2A>結果の順序</xref:System.Xml.Linq.Extensions.InDocumentOrder%2A>。 XPath 式の評価結果もドキュメント順になります。  
+## <a name="example"></a><span data-ttu-id="cf01b-106">例</span><span class="sxs-lookup"><span data-stu-id="cf01b-106">Example</span></span>  
+ <span data-ttu-id="cf01b-107">この例では、`Category` 要素と `Price` 要素をすべて検索し、それらを&1; つのコレクションに連結します。</span><span class="sxs-lookup"><span data-stu-id="cf01b-107">This example finds all of the `Category` elements and all of the `Price` elements, and concatenates them into a single collection.</span></span> <span data-ttu-id="cf01b-108">注意してください、[!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)]呼び出しをクエリ<xref:System.Xml.Linq.Extensions.InDocumentOrder%2A>結果の順序</xref:System.Xml.Linq.Extensions.InDocumentOrder%2A>。</span><span class="sxs-lookup"><span data-stu-id="cf01b-108">Note that the [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)] query calls <xref:System.Xml.Linq.Extensions.InDocumentOrder%2A> to order the results.</span></span> <span data-ttu-id="cf01b-109">XPath 式の評価結果もドキュメント順になります。</span><span class="sxs-lookup"><span data-stu-id="cf01b-109">The results of the XPath expression evaluation are also in document order.</span></span>  
   
- この例は、次の XML ドキュメントを使用して:[サンプル XML ファイル: 数値データ (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-numerical-data-linq-to-xml.md)します。  
+ <span data-ttu-id="cf01b-110">この例は、次の XML ドキュメントを使用して:[サンプル XML ファイル: 数値データ (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-numerical-data-linq-to-xml.md)します。</span><span class="sxs-lookup"><span data-stu-id="cf01b-110">This example uses the following XML document: [Sample XML File: Numerical Data (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-numerical-data-linq-to-xml.md).</span></span>  
   
 ```vb  
 Dim data As XDocument = XDocument.Load("Data.xml")  
@@ -59,7 +59,7 @@ For Each el As XElement In list1
 Next  
 ```  
   
- この例を実行すると、次の出力が生成されます。  
+ <span data-ttu-id="cf01b-111">この例を実行すると、次の出力が生成されます。</span><span class="sxs-lookup"><span data-stu-id="cf01b-111">This example produces the following output:</span></span>  
   
 ```  
 Results are identical  
@@ -79,6 +79,6 @@ Results are identical
 <Price>6.99</Price>  
 ```  
   
-## <a name="see-also"></a>関連項目  
- [LINQ to XML の XPath ユーザー (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)
+## <a name="see-also"></a><span data-ttu-id="cf01b-112">関連項目</span><span class="sxs-lookup"><span data-stu-id="cf01b-112">See Also</span></span>  
+ [<span data-ttu-id="cf01b-113">LINQ to XML の XPath ユーザー (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="cf01b-113">LINQ to XML for XPath Users (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)
 

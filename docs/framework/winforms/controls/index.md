@@ -27,31 +27,31 @@ ms.contentlocale: ja-jp
 ms.lasthandoff: 05/22/2017
 
 ---
-# <a name="windows-forms-controls"></a>Windows フォーム コントロール
-Windows フォーム アプリケーションのユーザー インターフェイスを設計および変更するときは、コントロールを追加、整列、配置する必要があります。 コントロールは、フォーム オブジェクトに含まれるオブジェクトです。 コントロールの各種類には、そのコントロールを特定の目的に適したものにする固有のプロパティ、メソッド、イベントのセットがあります。 デザイナーでコントロールを操作し、実行時にコントロールを動的に追加するコードを記述できます。  
+# <a name="windows-forms-controls"></a><span data-ttu-id="58a9c-102">Windows フォーム コントロール</span><span class="sxs-lookup"><span data-stu-id="58a9c-102">Windows Forms Controls</span></span>
+<span data-ttu-id="58a9c-103">Windows フォーム アプリケーションのユーザー インターフェイスを設計および変更するときは、コントロールを追加、整列、配置する必要があります。</span><span class="sxs-lookup"><span data-stu-id="58a9c-103">As you design and modify the user interface of your Windows Forms applications, you will need to add, align, and position controls.</span></span> <span data-ttu-id="58a9c-104">コントロールは、フォーム オブジェクトに含まれるオブジェクトです。</span><span class="sxs-lookup"><span data-stu-id="58a9c-104">Controls are objects that are contained within form objects.</span></span> <span data-ttu-id="58a9c-105">コントロールの各種類には、そのコントロールを特定の目的に適したものにする固有のプロパティ、メソッド、イベントのセットがあります。</span><span class="sxs-lookup"><span data-stu-id="58a9c-105">Each type of control has its own set of properties, methods, and events that make it suitable for a particular purpose.</span></span> <span data-ttu-id="58a9c-106">デザイナーでコントロールを操作し、実行時にコントロールを動的に追加するコードを記述できます。</span><span class="sxs-lookup"><span data-stu-id="58a9c-106">You can manipulate controls in the designer and write code to add controls dynamically at run time.</span></span>  
   
-## <a name="in-this-section"></a>このセクションの内容  
- [Windows フォームへのコントロールの追加](../../../../docs/framework/winforms/controls/putting-controls-on-windows-forms.md)  
- フォームへのコントロールの追加に関連するリンクを提供します。  
+## <a name="in-this-section"></a><span data-ttu-id="58a9c-107">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="58a9c-107">In This Section</span></span>  
+ [<span data-ttu-id="58a9c-108">Windows フォームへのコントロールの追加</span><span class="sxs-lookup"><span data-stu-id="58a9c-108">Putting Controls on Windows Forms</span></span>](../../../../docs/framework/winforms/controls/putting-controls-on-windows-forms.md)  
+ <span data-ttu-id="58a9c-109">フォームへのコントロールの追加に関連するリンクを提供します。</span><span class="sxs-lookup"><span data-stu-id="58a9c-109">Provides links related to putting controls on forms.</span></span>  
   
- [Windows フォームでのコントロールの配置](../../../../docs/framework/winforms/controls/arranging-controls-on-windows-forms.md)  
- フォームへのコントロールの配置に関連するリンクを提供します。  
+ [<span data-ttu-id="58a9c-110">Windows フォームでのコントロールの配置</span><span class="sxs-lookup"><span data-stu-id="58a9c-110">Arranging Controls on Windows Forms</span></span>](../../../../docs/framework/winforms/controls/arranging-controls-on-windows-forms.md)  
+ <span data-ttu-id="58a9c-111">フォームへのコントロールの配置に関連するリンクを提供します。</span><span class="sxs-lookup"><span data-stu-id="58a9c-111">Provides links related to arranging controls on forms.</span></span>  
   
- [各 Windows フォーム コントロールのラベル設定とショートカットの作成](../../../../docs/framework/winforms/controls/labeling-individual-windows-forms-controls-and-providing-shortcuts-to-them.md)  
- キーボード ショートカット、コントロールのテキスト ラベル、修飾キーの使い方について説明します。  
+ [<span data-ttu-id="58a9c-112">各 Windows フォーム コントロールのラベル設定とショートカットの作成</span><span class="sxs-lookup"><span data-stu-id="58a9c-112">Labeling Individual Windows Forms Controls and Providing Shortcuts to Them</span></span>](../../../../docs/framework/winforms/controls/labeling-individual-windows-forms-controls-and-providing-shortcuts-to-them.md)  
+ <span data-ttu-id="58a9c-113">キーボード ショートカット、コントロールのテキスト ラベル、修飾キーの使い方について説明します。</span><span class="sxs-lookup"><span data-stu-id="58a9c-113">Describes the uses of keyboard shortcuts, text labels on controls, and modifier keys.</span></span>  
   
- [Windows フォームで使用するコントロール](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)  
- Windows フォームで使うことができるコントロールの一覧、および各コントロールで実行できる基本的な事柄を示します。  
+ [<span data-ttu-id="58a9c-114">Windows フォームで使用するコントロール</span><span class="sxs-lookup"><span data-stu-id="58a9c-114">Controls to Use on Windows Forms</span></span>](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)  
+ <span data-ttu-id="58a9c-115">Windows フォームで使うことができるコントロールの一覧、および各コントロールで実行できる基本的な事柄を示します。</span><span class="sxs-lookup"><span data-stu-id="58a9c-115">Lists the controls that work with Windows Forms, and basic things you can accomplish with each control.</span></span>  
   
- [.NET Framework を使用したカスタム Windows フォーム コントロールの開発](../../../../docs/framework/winforms/controls/developing-custom-windows-forms-controls.md)  
- カスタム Windows フォーム コントロールの開発に役立つ背景情報とサンプルを提供します。  
+ [<span data-ttu-id="58a9c-116">.NET Framework を使用したカスタム Windows フォーム コントロールの開発</span><span class="sxs-lookup"><span data-stu-id="58a9c-116">Developing Custom Windows Forms Controls with the .NET Framework</span></span>](../../../../docs/framework/winforms/controls/developing-custom-windows-forms-controls.md)  
+ <span data-ttu-id="58a9c-117">カスタム Windows フォーム コントロールの開発に役立つ背景情報とサンプルを提供します。</span><span class="sxs-lookup"><span data-stu-id="58a9c-117">Provides background information and samples to help users develop custom Windows Forms controls.</span></span>  
   
- [デザイン時の Windows フォーム コントロールの開発](../../../../docs/framework/winforms/controls/developing-windows-forms-controls-at-design-time.md)  
- デザインと継承を使ってカスタム コントロールを作成するための手法について説明します。  
+ [<span data-ttu-id="58a9c-118">デザイン時の Windows フォーム コントロールの開発</span><span class="sxs-lookup"><span data-stu-id="58a9c-118">Developing Windows Forms Controls at Design Time</span></span>](../../../../docs/framework/winforms/controls/developing-windows-forms-controls-at-design-time.md)  
+ <span data-ttu-id="58a9c-119">デザインと継承を使ってカスタム コントロールを作成するための手法について説明します。</span><span class="sxs-lookup"><span data-stu-id="58a9c-119">Describes techniques for creating custom controls through design and inheritance.</span></span>  
   
-## <a name="related-sections"></a>関連項目  
- [クライアント アプリケーション](../../../../docs/framework/develop-client-apps.md)  
- Windows ベースのアプリケーションの開発の概要を説明します。  
+## <a name="related-sections"></a><span data-ttu-id="58a9c-120">関連項目</span><span class="sxs-lookup"><span data-stu-id="58a9c-120">Related Sections</span></span>  
+ [<span data-ttu-id="58a9c-121">クライアント アプリケーション</span><span class="sxs-lookup"><span data-stu-id="58a9c-121">Client Applications</span></span>](../../../../docs/framework/develop-client-apps.md)  
+ <span data-ttu-id="58a9c-122">Windows ベースのアプリケーションの開発の概要を説明します。</span><span class="sxs-lookup"><span data-stu-id="58a9c-122">Provides an overview of developing Windows-based applications.</span></span>  
   
- [Windows フォームのチュートリアル](http://msdn.microsoft.com/en-us/fd44d13d-4733-416f-aefc-32592e59e5d9)  
- Windows フォームとコントロールに関するチュートリアル トピックの一覧を示します。
+ [<span data-ttu-id="58a9c-123">Windows フォームのチュートリアル</span><span class="sxs-lookup"><span data-stu-id="58a9c-123">Windows Forms Walkthroughs</span></span>](http://msdn.microsoft.com/en-us/fd44d13d-4733-416f-aefc-32592e59e5d9)  
+ <span data-ttu-id="58a9c-124">Windows フォームとコントロールに関するチュートリアル トピックの一覧を示します。</span><span class="sxs-lookup"><span data-stu-id="58a9c-124">Lists walkthrough topics about Windows Forms and controls.</span></span>

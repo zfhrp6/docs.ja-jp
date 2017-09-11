@@ -1,1 +1,1 @@
-プラットフォーム呼び出しサービス (PInvoke)
+<span data-ttu-id="7f80d-101">プラットフォーム呼び出しサービス (PInvoke)</span><span class="sxs-lookup"><span data-stu-id="7f80d-101">Platform Invocation Services (PInvoke)</span></span>

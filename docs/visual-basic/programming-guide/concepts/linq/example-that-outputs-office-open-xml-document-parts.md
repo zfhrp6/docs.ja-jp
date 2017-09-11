@@ -15,20 +15,21 @@ ms.assetid: a951925b-c985-48ed-b215-2a68b58f1ae5
 caps.latest.revision: 3
 author: dotnet-bot
 ms.author: dotnetcontent
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 72e8cd6126cd049cafff6e18e1ef609f600cf7c9
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
+ms.openlocfilehash: 5657e146f323b57eb594a778473307b10e43690c
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/12/2017
 
 
 ---
-# <a name="example-that-outputs-office-open-xml-document-parts-visual-basic"></a>Office Open XML ドキュメント パーツ (Visual Basic) を出力する例
-このトピックでは、Office Open XML ドキュメントを開き、ドキュメント内のパーツにアクセスする方法について説明します。  
+# <a name="example-that-outputs-office-open-xml-document-parts-visual-basic"></a><span data-ttu-id="0ef65-102">Office Open XML ドキュメント パーツ (Visual Basic) を出力する例</span><span class="sxs-lookup"><span data-stu-id="0ef65-102">Example that Outputs Office Open XML Document Parts (Visual Basic)</span></span>
+<span data-ttu-id="0ef65-103">このトピックでは、Office Open XML ドキュメントを開き、ドキュメント内のパーツにアクセスする方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="0ef65-103">This topic shows how to open an Office Open XML document and access parts within it.</span></span>  
   
-## <a name="example"></a>例  
- 次の例では、Office Open XML ドキュメントを開き、ドキュメント パーツとスタイル パーツをコンソールに出力します。  
+## <a name="example"></a><span data-ttu-id="0ef65-104">例</span><span class="sxs-lookup"><span data-stu-id="0ef65-104">Example</span></span>  
+ <span data-ttu-id="0ef65-105">次の例では、Office Open XML ドキュメントを開き、ドキュメント パーツとスタイル パーツをコンソールに出力します。</span><span class="sxs-lookup"><span data-stu-id="0ef65-105">The following example opens an Office Open XML document, and prints the document part and the style part to the console.</span></span>  
   
- この例では、WindowsBase アセンブリのクラスを使用します。 内の型を使用して、<xref:System.IO.Packaging?displayProperty=fullName>名前空間</xref:System.IO.Packaging?displayProperty=fullName>。  
+ <span data-ttu-id="0ef65-106">この例では、WindowsBase アセンブリのクラスを使用します。</span><span class="sxs-lookup"><span data-stu-id="0ef65-106">This example uses classes from the WindowsBase assembly.</span></span> <span data-ttu-id="0ef65-107">内の型を使用して、<xref:System.IO.Packaging?displayProperty=fullName>名前空間</xref:System.IO.Packaging?displayProperty=fullName>。</span><span class="sxs-lookup"><span data-stu-id="0ef65-107">It uses types in the <xref:System.IO.Packaging?displayProperty=fullName> namespace.</span></span>  
   
 ```vb  
 Const fileName As String = "SampleDoc.docx"  
@@ -77,5 +78,5 @@ Using wdPackage As Package = Package.Open(fileName, FileMode.Open, FileAccess.Re
 End Using  
 ```  
   
-## <a name="see-also"></a>関連項目  
- [Office の詳細については Open XML WordprocessingML ドキュメント (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/details-of-office-open-xml-wordprocessingml-documents.md)
+## <a name="see-also"></a><span data-ttu-id="0ef65-108">関連項目</span><span class="sxs-lookup"><span data-stu-id="0ef65-108">See Also</span></span>  
+ [<span data-ttu-id="0ef65-109">Office の詳細については Open XML WordprocessingML ドキュメント (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="0ef65-109">Details of Office Open XML WordprocessingML Documents (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/details-of-office-open-xml-wordprocessingml-documents.md)

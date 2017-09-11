@@ -1,1 +1,1 @@
-WPF イメージング
+<span data-ttu-id="10cb9-101">WPF イメージング</span><span class="sxs-lookup"><span data-stu-id="10cb9-101">WPF Imaging</span></span>

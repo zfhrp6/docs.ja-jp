@@ -34,31 +34,31 @@ ms.contentlocale: ja-jp
 ms.lasthandoff: 07/28/2017
 
 ---
-# <a name="pointer-comparison-c-programming-guide"></a>ポインター比較 (C# プログラミング ガイド)
-次の演算子を適用して、任意の型のポインターを比較できます。  
+# <a name="pointer-comparison-c-programming-guide"></a><span data-ttu-id="16708-102">ポインター比較 (C# プログラミング ガイド)</span><span class="sxs-lookup"><span data-stu-id="16708-102">Pointer Comparison (C# Programming Guide)</span></span>
+<span data-ttu-id="16708-103">次の演算子を適用して、任意の型のポインターを比較できます。</span><span class="sxs-lookup"><span data-stu-id="16708-103">You can apply the following operators to compare pointers of any type:</span></span>  
   
- **==   !=   \<   >   \<=   >=**  
+ <span data-ttu-id="16708-104">**==   !=   \<   >   \<=   >=**</span><span class="sxs-lookup"><span data-stu-id="16708-104">**==   !=   \<   >   \<=   >=**</span></span>  
   
- 比較演算子は、2 つのオペランドのアドレスを符号なし整数のように比較します。  
+ <span data-ttu-id="16708-105">比較演算子は、2 つのオペランドのアドレスを符号なし整数のように比較します。</span><span class="sxs-lookup"><span data-stu-id="16708-105">The comparison operators compare the addresses of the two operands as if they are unsigned integers.</span></span>  
   
-## <a name="example"></a>例  
- [!code-cs[csProgGuidePointers#16](../../../csharp/programming-guide/unsafe-code-pointers/codesnippet/CSharp/pointer-comparison_1.cs)]  
+## <a name="example"></a><span data-ttu-id="16708-106">例</span><span class="sxs-lookup"><span data-stu-id="16708-106">Example</span></span>  
+ <span data-ttu-id="16708-107">[!code-cs[csProgGuidePointers#16](../../../csharp/programming-guide/unsafe-code-pointers/codesnippet/CSharp/pointer-comparison_1.cs)]</span><span class="sxs-lookup"><span data-stu-id="16708-107">[!code-cs[csProgGuidePointers#16](../../../csharp/programming-guide/unsafe-code-pointers/codesnippet/CSharp/pointer-comparison_1.cs)]</span></span>  
   
- [!code-cs[csProgGuidePointers#17](../../../csharp/programming-guide/unsafe-code-pointers/codesnippet/CSharp/pointer-comparison_2.cs)]  
+ <span data-ttu-id="16708-108">[!code-cs[csProgGuidePointers#17](../../../csharp/programming-guide/unsafe-code-pointers/codesnippet/CSharp/pointer-comparison_2.cs)]</span><span class="sxs-lookup"><span data-stu-id="16708-108">[!code-cs[csProgGuidePointers#17](../../../csharp/programming-guide/unsafe-code-pointers/codesnippet/CSharp/pointer-comparison_2.cs)]</span></span>  
   
-## <a name="sample-output"></a>出力例  
+## <a name="sample-output"></a><span data-ttu-id="16708-109">出力例</span><span class="sxs-lookup"><span data-stu-id="16708-109">Sample Output</span></span>  
  `True`  
   
  `False`  
   
-## <a name="see-also"></a>関連項目  
- [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
- [ポインター式](../../../csharp/programming-guide/unsafe-code-pointers/pointer-expressions.md)   
- [C# 演算子](../../../csharp/language-reference/operators/index.md)   
- [ポインターの操作](../../../csharp/programming-guide/unsafe-code-pointers/manipulating-pointers.md)   
- [ポインター型](../../../csharp/programming-guide/unsafe-code-pointers/pointer-types.md)   
- [型](../../../csharp/language-reference/keywords/types.md)   
- [unsafe](../../../csharp/language-reference/keywords/unsafe.md)   
- [fixed ステートメント](../../../csharp/language-reference/keywords/fixed-statement.md)   
- [stackalloc](../../../csharp/language-reference/keywords/stackalloc.md)
+## <a name="see-also"></a><span data-ttu-id="16708-110">関連項目</span><span class="sxs-lookup"><span data-stu-id="16708-110">See Also</span></span>  
+ <span data-ttu-id="16708-111">[C# プログラミング ガイド](../../../csharp/programming-guide/index.md) </span><span class="sxs-lookup"><span data-stu-id="16708-111">[C# Programming Guide](../../../csharp/programming-guide/index.md) </span></span>  
+ <span data-ttu-id="16708-112">[ポインター式](../../../csharp/programming-guide/unsafe-code-pointers/pointer-expressions.md) </span><span class="sxs-lookup"><span data-stu-id="16708-112">[Pointer Expressions](../../../csharp/programming-guide/unsafe-code-pointers/pointer-expressions.md) </span></span>  
+ <span data-ttu-id="16708-113">[C# 演算子](../../../csharp/language-reference/operators/index.md) </span><span class="sxs-lookup"><span data-stu-id="16708-113">[C# Operators](../../../csharp/language-reference/operators/index.md) </span></span>  
+ <span data-ttu-id="16708-114">[ポインターの操作](../../../csharp/programming-guide/unsafe-code-pointers/manipulating-pointers.md) </span><span class="sxs-lookup"><span data-stu-id="16708-114">[Manipulating Pointers](../../../csharp/programming-guide/unsafe-code-pointers/manipulating-pointers.md) </span></span>  
+ <span data-ttu-id="16708-115">[ポインター型](../../../csharp/programming-guide/unsafe-code-pointers/pointer-types.md) </span><span class="sxs-lookup"><span data-stu-id="16708-115">[Pointer types](../../../csharp/programming-guide/unsafe-code-pointers/pointer-types.md) </span></span>  
+ <span data-ttu-id="16708-116">[型](../../../csharp/language-reference/keywords/types.md) </span><span class="sxs-lookup"><span data-stu-id="16708-116">[Types](../../../csharp/language-reference/keywords/types.md) </span></span>  
+ <span data-ttu-id="16708-117">[unsafe](../../../csharp/language-reference/keywords/unsafe.md) </span><span class="sxs-lookup"><span data-stu-id="16708-117">[unsafe](../../../csharp/language-reference/keywords/unsafe.md) </span></span>  
+ <span data-ttu-id="16708-118">[fixed ステートメント](../../../csharp/language-reference/keywords/fixed-statement.md) </span><span class="sxs-lookup"><span data-stu-id="16708-118">[fixed Statement](../../../csharp/language-reference/keywords/fixed-statement.md) </span></span>  
+ [<span data-ttu-id="16708-119">stackalloc</span><span class="sxs-lookup"><span data-stu-id="16708-119">stackalloc</span></span>](../../../csharp/language-reference/keywords/stackalloc.md)
 

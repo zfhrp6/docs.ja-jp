@@ -21,15 +21,15 @@ ms.contentlocale: ja-jp
 ms.lasthandoff: 07/28/2017
 
 ---
-# <a name="how-to-find-a-child-element-xpath-linq-to-xml-c"></a>方法: 子要素を検索する (XPath-LINQ to XML) (C#)
-このトピックでは、XPath の子要素軸と [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] <xref:System.Xml.Linq.XContainer.Element%2A> メソッドを比較します。  
+# <a name="how-to-find-a-child-element-xpath-linq-to-xml-c"></a><span data-ttu-id="ca2fe-102">方法: 子要素を検索する (XPath-LINQ to XML) (C#)</span><span class="sxs-lookup"><span data-stu-id="ca2fe-102">How to: Find a Child Element (XPath-LINQ to XML) (C#)</span></span>
+<span data-ttu-id="ca2fe-103">このトピックでは、XPath の子要素軸と [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] <xref:System.Xml.Linq.XContainer.Element%2A> メソッドを比較します。</span><span class="sxs-lookup"><span data-stu-id="ca2fe-103">This topic compares the XPath child element axis to the [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] <xref:System.Xml.Linq.XContainer.Element%2A> method.</span></span>  
   
- XPath 式は `DeliveryNotes` です。  
+ <span data-ttu-id="ca2fe-104">XPath 式は `DeliveryNotes` です。</span><span class="sxs-lookup"><span data-stu-id="ca2fe-104">The XPath expression is `DeliveryNotes`.</span></span>  
   
-## <a name="example"></a>例  
- この例では、`DeliveryNotes` 子要素を検索します。  
+## <a name="example"></a><span data-ttu-id="ca2fe-105">例</span><span class="sxs-lookup"><span data-stu-id="ca2fe-105">Example</span></span>  
+ <span data-ttu-id="ca2fe-106">この例では、`DeliveryNotes` 子要素を検索します。</span><span class="sxs-lookup"><span data-stu-id="ca2fe-106">This example finds the child element `DeliveryNotes`.</span></span>  
   
- この例では、「[サンプル XML ファイル: 複数の購買発注書 (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-multiple-purchase-orders-linq-to-xml.md)」の XML ドキュメントを使用します。  
+ <span data-ttu-id="ca2fe-107">この例では、「[サンプル XML ファイル: 複数の購買発注書 (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-multiple-purchase-orders-linq-to-xml.md)」の XML ドキュメントを使用します。</span><span class="sxs-lookup"><span data-stu-id="ca2fe-107">This example uses the following XML document: [Sample XML File: Multiple Purchase Orders (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-multiple-purchase-orders-linq-to-xml.md).</span></span>  
   
 ```csharp  
 XDocument cpo = XDocument.Load("PurchaseOrders.xml");  
@@ -50,13 +50,13 @@ else
 Console.WriteLine(el1);  
 ```  
   
- この例を実行すると、次の出力が生成されます。  
+ <span data-ttu-id="ca2fe-108">この例を実行すると、次の出力が生成されます。</span><span class="sxs-lookup"><span data-stu-id="ca2fe-108">This example produces the following output:</span></span>  
   
 ```  
 Results are identical  
 <DeliveryNotes>Please leave packages in shed by driveway.</DeliveryNotes>  
 ```  
   
-## <a name="see-also"></a>関連項目  
- [XPath ユーザー向けの LINQ to XML (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)
+## <a name="see-also"></a><span data-ttu-id="ca2fe-109">関連項目</span><span class="sxs-lookup"><span data-stu-id="ca2fe-109">See Also</span></span>  
+ [<span data-ttu-id="ca2fe-110">XPath ユーザー向けの LINQ to XML (C#)</span><span class="sxs-lookup"><span data-stu-id="ca2fe-110">LINQ to XML for XPath Users (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)
 

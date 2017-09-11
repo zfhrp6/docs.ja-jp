@@ -1,1 +1,1 @@
-Exchangeable Image File (Exif)
+<span data-ttu-id="5132b-101">Exchangeable Image File (Exif)</span><span class="sxs-lookup"><span data-stu-id="5132b-101">Exchangeable image file (Exif)</span></span>

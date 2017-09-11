@@ -30,21 +30,22 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 56fc47ba2523825224aae3264e965d462cf4c3b6
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
+ms.openlocfilehash: 2d7685c688e96b506cfc2ddddc44ce534625e3b7
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/12/2017
 
 ---
-# <a name="nothing-and-strings-in-visual-basic"></a>Visual Basic の Nothing と文字列
-[!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]ランタイムと[!INCLUDE[dnprdnshort](../../../../csharp/getting-started/includes/dnprdnshort_md.md)]評価`Nothing`が異なるとなる文字列。  
+# <a name="nothing-and-strings-in-visual-basic"></a><span data-ttu-id="008d5-102">Visual Basic の Nothing と文字列</span><span class="sxs-lookup"><span data-stu-id="008d5-102">Nothing and Strings in Visual Basic</span></span>
+<span data-ttu-id="008d5-103">[!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]ランタイムと[!INCLUDE[dnprdnshort](../../../../csharp/getting-started/includes/dnprdnshort_md.md)]評価`Nothing`が異なるとなる文字列。</span><span class="sxs-lookup"><span data-stu-id="008d5-103">The [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] runtime and the [!INCLUDE[dnprdnshort](../../../../csharp/getting-started/includes/dnprdnshort_md.md)] evaluate `Nothing` differently when it comes to strings.</span></span>  
   
-## <a name="visual-basic-runtime-and-the-net-framework"></a>Visual Basic ランタイムおよび .NET Framework  
- 次に例を示します。  
+## <a name="visual-basic-runtime-and-the-net-framework"></a><span data-ttu-id="008d5-104">Visual Basic ランタイムおよび .NET Framework</span><span class="sxs-lookup"><span data-stu-id="008d5-104">Visual Basic Runtime and the .NET Framework</span></span>  
+ <span data-ttu-id="008d5-105">次に例を示します。</span><span class="sxs-lookup"><span data-stu-id="008d5-105">Consider the following example:</span></span>  
   
- [!code-vb[VbVbalrStrings #&47;](../../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/nothing-and-strings_1.vb)]  
+ <span data-ttu-id="008d5-106">[!code-vb[VbVbalrStrings #&47;](../../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/nothing-and-strings_1.vb)]</span><span class="sxs-lookup"><span data-stu-id="008d5-106">[!code-vb[VbVbalrStrings#47](../../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/nothing-and-strings_1.vb)]</span></span>  
   
- [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]共通言語ランタイムは通常評価`Nothing`として空の文字列 ("") です。 [!INCLUDE[dnprdnshort](../../../../csharp/getting-started/includes/dnprdnshort_md.md)]ただし、していないと、文字列操作を実行する試みが行われるたびに、例外をスロー`Nothing`します。  
+ <span data-ttu-id="008d5-107">[!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]共通言語ランタイムは通常評価`Nothing`として空の文字列 ("") です。</span><span class="sxs-lookup"><span data-stu-id="008d5-107">The [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] runtime usually evaluates `Nothing` as an empty string ("").</span></span> <span data-ttu-id="008d5-108">[!INCLUDE[dnprdnshort](../../../../csharp/getting-started/includes/dnprdnshort_md.md)]ただし、していないと、文字列操作を実行する試みが行われるたびに、例外をスロー`Nothing`します。</span><span class="sxs-lookup"><span data-stu-id="008d5-108">The [!INCLUDE[dnprdnshort](../../../../csharp/getting-started/includes/dnprdnshort_md.md)] does not, however, and throws an exception whenever an attempt is made to perform a string operation on `Nothing`.</span></span>  
   
-## <a name="see-also"></a>関連項目  
- [Visual Basic における文字列の概要](../../../../visual-basic/programming-guide/language-features/strings/introduction-to-strings.md)
+## <a name="see-also"></a><span data-ttu-id="008d5-109">関連項目</span><span class="sxs-lookup"><span data-stu-id="008d5-109">See Also</span></span>  
+ [<span data-ttu-id="008d5-110">Visual Basic における文字列の概要</span><span class="sxs-lookup"><span data-stu-id="008d5-110">Introduction to Strings in Visual Basic</span></span>](../../../../visual-basic/programming-guide/language-features/strings/introduction-to-strings.md)

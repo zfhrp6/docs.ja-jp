@@ -34,19 +34,19 @@ ms.contentlocale: ja-jp
 ms.lasthandoff: 07/28/2017
 
 ---
-# <a name="literal-keywords-c-reference"></a>リテラル キーワード (C# リファレンス)
-C# には、次のリテラル キーワードがあります。  
+# <a name="literal-keywords-c-reference"></a><span data-ttu-id="ef2e9-102">リテラル キーワード (C# リファレンス)</span><span class="sxs-lookup"><span data-stu-id="ef2e9-102">Literal Keywords (C# Reference)</span></span>
+<span data-ttu-id="ef2e9-103">C# には、次のリテラル キーワードがあります。</span><span class="sxs-lookup"><span data-stu-id="ef2e9-103">C# has the following literal keywords:</span></span>  
   
--   [null](../../../csharp/language-reference/keywords/null.md)  
+-   [<span data-ttu-id="ef2e9-104">null</span><span class="sxs-lookup"><span data-stu-id="ef2e9-104">null</span></span>](../../../csharp/language-reference/keywords/null.md)  
   
--   [true](../../../csharp/language-reference/keywords/true.md)  
+-   [<span data-ttu-id="ef2e9-105">true</span><span class="sxs-lookup"><span data-stu-id="ef2e9-105">true</span></span>](../../../csharp/language-reference/keywords/true.md)  
   
--   [false](../../../csharp/language-reference/keywords/false.md)  
+-   [<span data-ttu-id="ef2e9-106">false</span><span class="sxs-lookup"><span data-stu-id="ef2e9-106">false</span></span>](../../../csharp/language-reference/keywords/false.md)  
   
--   [default](../../../csharp/language-reference/keywords/default.md)  
+-   [<span data-ttu-id="ef2e9-107">default</span><span class="sxs-lookup"><span data-stu-id="ef2e9-107">default</span></span>](../../../csharp/language-reference/keywords/default.md)  
   
-## <a name="see-also"></a>関連項目  
- [C# リファレンス](../../../csharp/language-reference/index.md)   
- [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
- [C# のキーワード](../../../csharp/language-reference/keywords/index.md)
+## <a name="see-also"></a><span data-ttu-id="ef2e9-108">関連項目</span><span class="sxs-lookup"><span data-stu-id="ef2e9-108">See Also</span></span>  
+ <span data-ttu-id="ef2e9-109">[C# リファレンス](../../../csharp/language-reference/index.md) </span><span class="sxs-lookup"><span data-stu-id="ef2e9-109">[C# Reference](../../../csharp/language-reference/index.md) </span></span>  
+ <span data-ttu-id="ef2e9-110">[C# プログラミング ガイド](../../../csharp/programming-guide/index.md) </span><span class="sxs-lookup"><span data-stu-id="ef2e9-110">[C# Programming Guide](../../../csharp/programming-guide/index.md) </span></span>  
+ [<span data-ttu-id="ef2e9-111">C# のキーワード</span><span class="sxs-lookup"><span data-stu-id="ef2e9-111">C# Keywords</span></span>](../../../csharp/language-reference/keywords/index.md)
 

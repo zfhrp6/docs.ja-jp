@@ -29,124 +29,125 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 9c379a937f798a02badd7b7cd8470f2e1ce3b072
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
+ms.openlocfilehash: ae85d1ac5cf2bff05df25cf0cfc623f6266063b4
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/12/2017
 
 ---
-# <a name="visual-basic-compiler-options-listed-by-category"></a>Visual Basic コンパイラ オプション一覧 (カテゴリ別)
-[!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] コマンド ライン コンパイラは、[!INCLUDE[vsprvs](../../../csharp/includes/vsprvs_md.md)] 統合開発環境 (IDE) 内からプログラムをコンパイルする方法の代替手段として提供されています。 機能のカテゴリ順に並べ替えた [!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] コマンド ライン コンパイラ オプションの一覧を次に示します。  
+# <a name="visual-basic-compiler-options-listed-by-category"></a><span data-ttu-id="d87e5-102">Visual Basic コンパイラ オプション一覧 (カテゴリ別)</span><span class="sxs-lookup"><span data-stu-id="d87e5-102">Visual Basic Compiler Options Listed by Category</span></span>
+<span data-ttu-id="d87e5-103">[!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] コマンド ライン コンパイラは、[!INCLUDE[vsprvs](../../../csharp/includes/vsprvs_md.md)] 統合開発環境 (IDE) 内からプログラムをコンパイルする方法の代替手段として提供されています。</span><span class="sxs-lookup"><span data-stu-id="d87e5-103">The [!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] command-line compiler is provided as an alternative to compiling programs from within the [!INCLUDE[vsprvs](../../../csharp/includes/vsprvs_md.md)] integrated development environment (IDE).</span></span> <span data-ttu-id="d87e5-104">機能のカテゴリ順に並べ替えた [!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] コマンド ライン コンパイラ オプションの一覧を次に示します。</span><span class="sxs-lookup"><span data-stu-id="d87e5-104">The following is a list of the [!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] command-line compiler options sorted by functional category.</span></span>  
   
-## <a name="compiler-output"></a>コンパイラ出力  
+## <a name="compiler-output"></a><span data-ttu-id="d87e5-105">コンパイラ出力</span><span class="sxs-lookup"><span data-stu-id="d87e5-105">Compiler Output</span></span>  
   
-|オプション|目的|  
+|<span data-ttu-id="d87e5-106">オプション</span><span class="sxs-lookup"><span data-stu-id="d87e5-106">Option</span></span>|<span data-ttu-id="d87e5-107">目的</span><span class="sxs-lookup"><span data-stu-id="d87e5-107">Purpose</span></span>|  
 |---|---|  
-|[/nologo](../../../visual-basic/reference/command-line-compiler/nologo.md)|コンパイラの著作権情報が表示されないようにします。|  
-|[/utf8output](../../../visual-basic/reference/command-line-compiler/utf8output.md)|UTF-8 エンコードを使用してコンパイラ出力を表示します。|  
-|[/verbose](../../../visual-basic/reference/command-line-compiler/verbose.md)|コンパイル中に追加の情報を出力します。|  
-|`/modulename:<string>`|ソース モジュールの名前を指定します。|  
-|[/preferreduilang](../../../csharp/language-reference/compiler-options/preferreduilang-compiler-option.md)|コンパイラ出力用の言語を指定します。|  
+|[<span data-ttu-id="d87e5-108">/nologo</span><span class="sxs-lookup"><span data-stu-id="d87e5-108">/nologo</span></span>](../../../visual-basic/reference/command-line-compiler/nologo.md)|<span data-ttu-id="d87e5-109">コンパイラの著作権情報が表示されないようにします。</span><span class="sxs-lookup"><span data-stu-id="d87e5-109">Suppresses compiler banner information.</span></span>|  
+|[<span data-ttu-id="d87e5-110">/utf8output</span><span class="sxs-lookup"><span data-stu-id="d87e5-110">/utf8output</span></span>](../../../visual-basic/reference/command-line-compiler/utf8output.md)|<span data-ttu-id="d87e5-111">UTF-8 エンコードを使用してコンパイラ出力を表示します。</span><span class="sxs-lookup"><span data-stu-id="d87e5-111">Displays compiler output using UTF-8 encoding.</span></span>|  
+|[<span data-ttu-id="d87e5-112">/verbose</span><span class="sxs-lookup"><span data-stu-id="d87e5-112">/verbose</span></span>](../../../visual-basic/reference/command-line-compiler/verbose.md)|<span data-ttu-id="d87e5-113">コンパイル中に追加の情報を出力します。</span><span class="sxs-lookup"><span data-stu-id="d87e5-113">Outputs extra information during compilation.</span></span>|  
+|`/modulename:<string>`|<span data-ttu-id="d87e5-114">ソース モジュールの名前を指定します。</span><span class="sxs-lookup"><span data-stu-id="d87e5-114">Specify the name of the source module</span></span>|  
+|[<span data-ttu-id="d87e5-115">/preferreduilang</span><span class="sxs-lookup"><span data-stu-id="d87e5-115">/preferreduilang</span></span>](../../../csharp/language-reference/compiler-options/preferreduilang-compiler-option.md)|<span data-ttu-id="d87e5-116">コンパイラ出力用の言語を指定します。</span><span class="sxs-lookup"><span data-stu-id="d87e5-116">Specify a language for compiler output.</span></span>|  
   
-## <a name="optimization"></a>最適化  
+## <a name="optimization"></a><span data-ttu-id="d87e5-117">最適化</span><span class="sxs-lookup"><span data-stu-id="d87e5-117">Optimization</span></span>  
   
-|オプション|目的|  
+|<span data-ttu-id="d87e5-118">オプション</span><span class="sxs-lookup"><span data-stu-id="d87e5-118">Option</span></span>|<span data-ttu-id="d87e5-119">目的</span><span class="sxs-lookup"><span data-stu-id="d87e5-119">Purpose</span></span>|  
 |---|---|  
-|[/filealign](../../../visual-basic/reference/command-line-compiler/filealign.md)|出力ファイルでセクションをアラインするサイズを指定します。|  
-|[/optimize](../../../visual-basic/reference/command-line-compiler/optimize.md)|最適化を有効または無効にします。|  
+|[<span data-ttu-id="d87e5-120">/filealign</span><span class="sxs-lookup"><span data-stu-id="d87e5-120">/filealign</span></span>](../../../visual-basic/reference/command-line-compiler/filealign.md)|<span data-ttu-id="d87e5-121">出力ファイルでセクションをアラインするサイズを指定します。</span><span class="sxs-lookup"><span data-stu-id="d87e5-121">Specifies where to align the sections of the output file.</span></span>|  
+|[<span data-ttu-id="d87e5-122">/optimize</span><span class="sxs-lookup"><span data-stu-id="d87e5-122">/optimize</span></span>](../../../visual-basic/reference/command-line-compiler/optimize.md)|<span data-ttu-id="d87e5-123">最適化を有効または無効にします。</span><span class="sxs-lookup"><span data-stu-id="d87e5-123">Enables/disables optimizations.</span></span>|  
   
-## <a name="output-files"></a>出力ファイル  
+## <a name="output-files"></a><span data-ttu-id="d87e5-124">出力ファイル</span><span class="sxs-lookup"><span data-stu-id="d87e5-124">Output Files</span></span>  
   
-|オプション|目的|  
+|<span data-ttu-id="d87e5-125">オプション</span><span class="sxs-lookup"><span data-stu-id="d87e5-125">Option</span></span>|<span data-ttu-id="d87e5-126">目的</span><span class="sxs-lookup"><span data-stu-id="d87e5-126">Purpose</span></span>|  
 |---|---|  
-|[/doc](../../../visual-basic/reference/command-line-compiler/doc.md)|ドキュメント コメントを XML ファイルに出力します。|  
-|[/netcf](../../../visual-basic/reference/command-line-compiler/netcf.md)|[!INCLUDE[Compact](../../../visual-basic/reference/command-line-compiler/includes/compact_md.md)] が対象になるようにコンパイラを設定します。|  
-|[/out](../../../visual-basic/reference/command-line-compiler/out.md)|出力ファイルを指定します。|  
-|[/target](../../../visual-basic/reference/command-line-compiler/target.md)|出力の形式を指定します。|  
+|[<span data-ttu-id="d87e5-127">/doc</span><span class="sxs-lookup"><span data-stu-id="d87e5-127">/doc</span></span>](../../../visual-basic/reference/command-line-compiler/doc.md)|<span data-ttu-id="d87e5-128">ドキュメント コメントを XML ファイルに出力します。</span><span class="sxs-lookup"><span data-stu-id="d87e5-128">Process documentation comments to an XML file.</span></span>|  
+|[<span data-ttu-id="d87e5-129">/netcf</span><span class="sxs-lookup"><span data-stu-id="d87e5-129">/netcf</span></span>](../../../visual-basic/reference/command-line-compiler/netcf.md)|<span data-ttu-id="d87e5-130">[!INCLUDE[Compact](../../../visual-basic/reference/command-line-compiler/includes/compact_md.md)] が対象になるようにコンパイラを設定します。</span><span class="sxs-lookup"><span data-stu-id="d87e5-130">Sets the compiler to target the [!INCLUDE[Compact](../../../visual-basic/reference/command-line-compiler/includes/compact_md.md)].</span></span>|  
+|[<span data-ttu-id="d87e5-131">/out</span><span class="sxs-lookup"><span data-stu-id="d87e5-131">/out</span></span>](../../../visual-basic/reference/command-line-compiler/out.md)|<span data-ttu-id="d87e5-132">出力ファイルを指定します。</span><span class="sxs-lookup"><span data-stu-id="d87e5-132">Specifies an output file.</span></span>|  
+|[<span data-ttu-id="d87e5-133">/target</span><span class="sxs-lookup"><span data-stu-id="d87e5-133">/target</span></span>](../../../visual-basic/reference/command-line-compiler/target.md)|<span data-ttu-id="d87e5-134">出力の形式を指定します。</span><span class="sxs-lookup"><span data-stu-id="d87e5-134">Specifies the format of the output.</span></span>|  
   
-## <a name="net-assemblies"></a>.NET アセンブリ  
+## <a name="net-assemblies"></a><span data-ttu-id="d87e5-135">.NET アセンブリ</span><span class="sxs-lookup"><span data-stu-id="d87e5-135">.NET Assemblies</span></span>  
   
-|オプション|目的|  
+|<span data-ttu-id="d87e5-136">オプション</span><span class="sxs-lookup"><span data-stu-id="d87e5-136">Option</span></span>|<span data-ttu-id="d87e5-137">目的</span><span class="sxs-lookup"><span data-stu-id="d87e5-137">Purpose</span></span>|  
 |---|---|  
-|[/addmodule](../../../visual-basic/reference/command-line-compiler/addmodule.md)|指定ファイル内のすべての型情報を現在のコンパイル対象のプロジェクトで使用できるようにします。|  
-|[/delaysign](../../../visual-basic/reference/command-line-compiler/delaysign.md)|アセンブリに完全に署名するか、部分的に署名するかを指定します。|  
-|[/imports](../../../visual-basic/reference/command-line-compiler/imports.md)|指定したアセンブリから名前空間をインポートします。|  
-|[/keycontainer](../../../visual-basic/reference/command-line-compiler/keycontainer.md)|アセンブリに厳密な名前を付けるキー ペアのキー コンテナー名を指定します。|  
-|[/keyfile](../../../visual-basic/reference/command-line-compiler/keyfile.md)|アセンブリに厳密な名前を付けるキーまたはキー ペアを含むファイルを指定します。|  
-|[/libpath](../../../visual-basic/reference/command-line-compiler/libpath.md)|によって参照されるアセンブリの場所を指定、 [/reference](../../../visual-basic/reference/command-line-compiler/reference.md)オプション。|  
-|[/reference](../../../visual-basic/reference/command-line-compiler/reference.md)|アセンブリからメタデータをインポートします。|  
-|[/moduleassemblyname](../../../visual-basic/reference/command-line-compiler/moduleassemblyname.md)|モジュールが一部となるアセンブリの名前を指定します。|  
-|`/analyzer`|このアセンブリからアナライザーを実行します (短縮形: /a)。|  
-|`/additionalfile`|コードの生成に直接影響はないが、エラーまたは警告を生成するためにアナライザーが使用できる追加のファイルを指定します。|  
+|[<span data-ttu-id="d87e5-138">/addmodule</span><span class="sxs-lookup"><span data-stu-id="d87e5-138">/addmodule</span></span>](../../../visual-basic/reference/command-line-compiler/addmodule.md)|<span data-ttu-id="d87e5-139">指定ファイル内のすべての型情報を現在のコンパイル対象のプロジェクトで使用できるようにします。</span><span class="sxs-lookup"><span data-stu-id="d87e5-139">Causes the compiler to make all type information from the specified file(s) available to the project you are currently compiling.</span></span>|  
+|[<span data-ttu-id="d87e5-140">/delaysign</span><span class="sxs-lookup"><span data-stu-id="d87e5-140">/delaysign</span></span>](../../../visual-basic/reference/command-line-compiler/delaysign.md)|<span data-ttu-id="d87e5-141">アセンブリに完全に署名するか、部分的に署名するかを指定します。</span><span class="sxs-lookup"><span data-stu-id="d87e5-141">Specifies whether the assembly will be fully or partially signed.</span></span>|  
+|[<span data-ttu-id="d87e5-142">/imports</span><span class="sxs-lookup"><span data-stu-id="d87e5-142">/imports</span></span>](../../../visual-basic/reference/command-line-compiler/imports.md)|<span data-ttu-id="d87e5-143">指定したアセンブリから名前空間をインポートします。</span><span class="sxs-lookup"><span data-stu-id="d87e5-143">Imports a namespace from a specified assembly.</span></span>|  
+|[<span data-ttu-id="d87e5-144">/keycontainer</span><span class="sxs-lookup"><span data-stu-id="d87e5-144">/keycontainer</span></span>](../../../visual-basic/reference/command-line-compiler/keycontainer.md)|<span data-ttu-id="d87e5-145">アセンブリに厳密な名前を付けるキー ペアのキー コンテナー名を指定します。</span><span class="sxs-lookup"><span data-stu-id="d87e5-145">Specifies a key container name for a key pair to give an assembly a strong name.</span></span>|  
+|[<span data-ttu-id="d87e5-146">/keyfile</span><span class="sxs-lookup"><span data-stu-id="d87e5-146">/keyfile</span></span>](../../../visual-basic/reference/command-line-compiler/keyfile.md)|<span data-ttu-id="d87e5-147">アセンブリに厳密な名前を付けるキーまたはキー ペアを含むファイルを指定します。</span><span class="sxs-lookup"><span data-stu-id="d87e5-147">Specifies a file containing a key or key pair to give an assembly a strong name.</span></span>|  
+|[<span data-ttu-id="d87e5-148">/libpath</span><span class="sxs-lookup"><span data-stu-id="d87e5-148">/libpath</span></span>](../../../visual-basic/reference/command-line-compiler/libpath.md)|<span data-ttu-id="d87e5-149">によって参照されるアセンブリの場所を指定、 [/reference](../../../visual-basic/reference/command-line-compiler/reference.md)オプション。</span><span class="sxs-lookup"><span data-stu-id="d87e5-149">Specifies the location of assemblies referenced by the [/reference](../../../visual-basic/reference/command-line-compiler/reference.md) option.</span></span>|  
+|[<span data-ttu-id="d87e5-150">/reference</span><span class="sxs-lookup"><span data-stu-id="d87e5-150">/reference</span></span>](../../../visual-basic/reference/command-line-compiler/reference.md)|<span data-ttu-id="d87e5-151">アセンブリからメタデータをインポートします。</span><span class="sxs-lookup"><span data-stu-id="d87e5-151">Imports metadata from an assembly.</span></span>|  
+|[<span data-ttu-id="d87e5-152">/moduleassemblyname</span><span class="sxs-lookup"><span data-stu-id="d87e5-152">/moduleassemblyname</span></span>](../../../visual-basic/reference/command-line-compiler/moduleassemblyname.md)|<span data-ttu-id="d87e5-153">モジュールが一部となるアセンブリの名前を指定します。</span><span class="sxs-lookup"><span data-stu-id="d87e5-153">Specifies the name of the assembly that a module will be a part of.</span></span>|  
+|`/analyzer`|<span data-ttu-id="d87e5-154">このアセンブリからアナライザーを実行します (短縮形: /a)。</span><span class="sxs-lookup"><span data-stu-id="d87e5-154">Run the analyzers from this assembly (Short form: /a)</span></span>|  
+|`/additionalfile`|<span data-ttu-id="d87e5-155">コードの生成に直接影響はないが、エラーまたは警告を生成するためにアナライザーが使用できる追加のファイルを指定します。</span><span class="sxs-lookup"><span data-stu-id="d87e5-155">Names additional files that don't directly affect code generation but may be used by analyzers for producing errors or warnings.</span></span>|  
   
-## <a name="debuggingerror-checking"></a>デバッグ/エラー チェック  
+## <a name="debuggingerror-checking"></a><span data-ttu-id="d87e5-156">デバッグ/エラー チェック</span><span class="sxs-lookup"><span data-stu-id="d87e5-156">Debugging/Error Checking</span></span>  
   
-|オプション|目的|  
+|<span data-ttu-id="d87e5-157">オプション</span><span class="sxs-lookup"><span data-stu-id="d87e5-157">Option</span></span>|<span data-ttu-id="d87e5-158">目的</span><span class="sxs-lookup"><span data-stu-id="d87e5-158">Purpose</span></span>|  
 |---|---|  
-|[/bugreport](../../../visual-basic/reference/command-line-compiler/bugreport.md)|バグを簡単に報告するための情報を含むファイルを作成します。|  
-|[/debug](../../../visual-basic/reference/command-line-compiler/debug.md)|デバッグ情報を生成します。|  
-|[/nowarn](../../../visual-basic/reference/command-line-compiler/nowarn.md)|警告を生成するコンパイラの機能を無効にします。|  
-|[/quiet](../../../visual-basic/reference/command-line-compiler/quiet.md)|コンパイラで構文関連のエラーと警告のコードが表示されないようにします。|  
-|[/removeintchecks](../../../visual-basic/reference/command-line-compiler/removeintchecks.md)|整数オーバーフローのチェックを無効にします。|  
-|[/warnaserror](../../../visual-basic/reference/command-line-compiler/warnaserror.md)|警告をエラーに昇格します。|  
-|`/ruleset:<file>`|特定の診断を無効にするルールセット ファイルを指定します。|  
+|[<span data-ttu-id="d87e5-159">/bugreport</span><span class="sxs-lookup"><span data-stu-id="d87e5-159">/bugreport</span></span>](../../../visual-basic/reference/command-line-compiler/bugreport.md)|<span data-ttu-id="d87e5-160">バグを簡単に報告するための情報を含むファイルを作成します。</span><span class="sxs-lookup"><span data-stu-id="d87e5-160">Creates a file that contains information that makes it easy to report a bug.</span></span>|  
+|[<span data-ttu-id="d87e5-161">/debug</span><span class="sxs-lookup"><span data-stu-id="d87e5-161">/debug</span></span>](../../../visual-basic/reference/command-line-compiler/debug.md)|<span data-ttu-id="d87e5-162">デバッグ情報を生成します。</span><span class="sxs-lookup"><span data-stu-id="d87e5-162">Produces debugging information.</span></span>|  
+|[<span data-ttu-id="d87e5-163">/nowarn</span><span class="sxs-lookup"><span data-stu-id="d87e5-163">/nowarn</span></span>](../../../visual-basic/reference/command-line-compiler/nowarn.md)|<span data-ttu-id="d87e5-164">警告を生成するコンパイラの機能を無効にします。</span><span class="sxs-lookup"><span data-stu-id="d87e5-164">Suppresses the compiler's ability to generate warnings.</span></span>|  
+|[<span data-ttu-id="d87e5-165">/quiet</span><span class="sxs-lookup"><span data-stu-id="d87e5-165">/quiet</span></span>](../../../visual-basic/reference/command-line-compiler/quiet.md)|<span data-ttu-id="d87e5-166">コンパイラで構文関連のエラーと警告のコードが表示されないようにします。</span><span class="sxs-lookup"><span data-stu-id="d87e5-166">Prevents the compiler from displaying code for syntax-related errors and warnings.</span></span>|  
+|[<span data-ttu-id="d87e5-167">/removeintchecks</span><span class="sxs-lookup"><span data-stu-id="d87e5-167">/removeintchecks</span></span>](../../../visual-basic/reference/command-line-compiler/removeintchecks.md)|<span data-ttu-id="d87e5-168">整数オーバーフローのチェックを無効にします。</span><span class="sxs-lookup"><span data-stu-id="d87e5-168">Disables integer overflow checking.</span></span>|  
+|[<span data-ttu-id="d87e5-169">/warnaserror</span><span class="sxs-lookup"><span data-stu-id="d87e5-169">/warnaserror</span></span>](../../../visual-basic/reference/command-line-compiler/warnaserror.md)|<span data-ttu-id="d87e5-170">警告をエラーに昇格します。</span><span class="sxs-lookup"><span data-stu-id="d87e5-170">Promotes warnings to errors.</span></span>|  
+|`/ruleset:<file>`|<span data-ttu-id="d87e5-171">特定の診断を無効にするルールセット ファイルを指定します。</span><span class="sxs-lookup"><span data-stu-id="d87e5-171">Specify a ruleset file that disables specific diagnostics.</span></span>|  
   
-## <a name="help"></a>ヘルプ  
+## <a name="help"></a><span data-ttu-id="d87e5-172">ヘルプ</span><span class="sxs-lookup"><span data-stu-id="d87e5-172">Help</span></span>  
   
-|オプション|目的|  
+|<span data-ttu-id="d87e5-173">オプション</span><span class="sxs-lookup"><span data-stu-id="d87e5-173">Option</span></span>|<span data-ttu-id="d87e5-174">目的</span><span class="sxs-lookup"><span data-stu-id="d87e5-174">Purpose</span></span>|  
 |---|---|  
-|[/?](../../../visual-basic/reference/command-line-compiler/help.md)|コンパイラ オプションを出力します。 このコマンドは、`/help` オプションの指定と同じです。 コンパイルは発生しません。|  
-|[/help](../../../visual-basic/reference/command-line-compiler/help.md)|コンパイラ オプションを出力します。 このコマンドは、`/?` オプションの指定と同じです。 コンパイルは発生しません。|  
+|[<span data-ttu-id="d87e5-175">/?</span><span class="sxs-lookup"><span data-stu-id="d87e5-175">/?</span></span>](../../../visual-basic/reference/command-line-compiler/help.md)|<span data-ttu-id="d87e5-176">コンパイラ オプションを出力します。</span><span class="sxs-lookup"><span data-stu-id="d87e5-176">Displays the compiler options.</span></span> <span data-ttu-id="d87e5-177">このコマンドは、`/help` オプションの指定と同じです。</span><span class="sxs-lookup"><span data-stu-id="d87e5-177">This command is the same as specifying the `/help` option.</span></span> <span data-ttu-id="d87e5-178">コンパイルは発生しません。</span><span class="sxs-lookup"><span data-stu-id="d87e5-178">No compilation occurs.</span></span>|  
+|[<span data-ttu-id="d87e5-179">/help</span><span class="sxs-lookup"><span data-stu-id="d87e5-179">/help</span></span>](../../../visual-basic/reference/command-line-compiler/help.md)|<span data-ttu-id="d87e5-180">コンパイラ オプションを出力します。</span><span class="sxs-lookup"><span data-stu-id="d87e5-180">Displays the compiler options.</span></span> <span data-ttu-id="d87e5-181">このコマンドは、`/?` オプションの指定と同じです。</span><span class="sxs-lookup"><span data-stu-id="d87e5-181">This command is the same as specifying the `/?` option.</span></span> <span data-ttu-id="d87e5-182">コンパイルは発生しません。</span><span class="sxs-lookup"><span data-stu-id="d87e5-182">No compilation occurs.</span></span>|  
   
-## <a name="language"></a>言語  
+## <a name="language"></a><span data-ttu-id="d87e5-183">言語</span><span class="sxs-lookup"><span data-stu-id="d87e5-183">Language</span></span>  
   
-|オプション|目的|  
+|<span data-ttu-id="d87e5-184">オプション</span><span class="sxs-lookup"><span data-stu-id="d87e5-184">Option</span></span>|<span data-ttu-id="d87e5-185">目的</span><span class="sxs-lookup"><span data-stu-id="d87e5-185">Purpose</span></span>|  
 |---|---|  
-|[/langversion](../../../visual-basic/reference/command-line-compiler/langversion.md)|言語バージョンを指定します。 9 | 9.0 | 10 | 10.0 | 11 | 11.0 です。|  
-|[/optionexplicit](../../../visual-basic/reference/command-line-compiler/optionexplicit.md)|変数の明示的な宣言を強制的に適用します。|  
-|[/optionstrict](../../../visual-basic/reference/command-line-compiler/optionstrict.md)|厳密な型のセマンティクスを強制的に適用します。|  
-|[/optioncompare](../../../visual-basic/reference/command-line-compiler/optioncompare.md)|文字列比較をバイナリにするか、ロケール固有のテキストのセマンティクスを使用するかどうかを指定します。|  
-|[/optioninfer](../../../visual-basic/reference/command-line-compiler/optioninfer.md)|変数宣言でローカル型推論を使用できるようにします。|  
+|[<span data-ttu-id="d87e5-186">/langversion</span><span class="sxs-lookup"><span data-stu-id="d87e5-186">/langversion</span></span>](../../../visual-basic/reference/command-line-compiler/langversion.md)|<span data-ttu-id="d87e5-187">言語バージョンを指定します。 9 | 9.0 | 10 | 10.0 | 11 | 11.0 です。</span><span class="sxs-lookup"><span data-stu-id="d87e5-187">Specify language version: 9&#124;9.0&#124;10&#124;10.0&#124;11&#124;11.0.</span></span>|  
+|[<span data-ttu-id="d87e5-188">/optionexplicit</span><span class="sxs-lookup"><span data-stu-id="d87e5-188">/optionexplicit</span></span>](../../../visual-basic/reference/command-line-compiler/optionexplicit.md)|<span data-ttu-id="d87e5-189">変数の明示的な宣言を強制的に適用します。</span><span class="sxs-lookup"><span data-stu-id="d87e5-189">Enforces explicit declaration of variables.</span></span>|  
+|[<span data-ttu-id="d87e5-190">/optionstrict</span><span class="sxs-lookup"><span data-stu-id="d87e5-190">/optionstrict</span></span>](../../../visual-basic/reference/command-line-compiler/optionstrict.md)|<span data-ttu-id="d87e5-191">厳密な型のセマンティクスを強制的に適用します。</span><span class="sxs-lookup"><span data-stu-id="d87e5-191">Enforces strict type semantics.</span></span>|  
+|[<span data-ttu-id="d87e5-192">/optioncompare</span><span class="sxs-lookup"><span data-stu-id="d87e5-192">/optioncompare</span></span>](../../../visual-basic/reference/command-line-compiler/optioncompare.md)|<span data-ttu-id="d87e5-193">文字列比較をバイナリにするか、ロケール固有のテキストのセマンティクスを使用するかどうかを指定します。</span><span class="sxs-lookup"><span data-stu-id="d87e5-193">Specifies whether string comparisons should be binary or use locale-specific text semantics.</span></span>|  
+|[<span data-ttu-id="d87e5-194">/optioninfer</span><span class="sxs-lookup"><span data-stu-id="d87e5-194">/optioninfer</span></span>](../../../visual-basic/reference/command-line-compiler/optioninfer.md)|<span data-ttu-id="d87e5-195">変数宣言でローカル型推論を使用できるようにします。</span><span class="sxs-lookup"><span data-stu-id="d87e5-195">Enables the use of local type inference in variable declarations.</span></span>|  
   
-## <a name="preprocessor"></a>プリプロセッサ  
+## <a name="preprocessor"></a><span data-ttu-id="d87e5-196">プリプロセッサ</span><span class="sxs-lookup"><span data-stu-id="d87e5-196">Preprocessor</span></span>  
   
-|オプション|目的|  
+|<span data-ttu-id="d87e5-197">オプション</span><span class="sxs-lookup"><span data-stu-id="d87e5-197">Option</span></span>|<span data-ttu-id="d87e5-198">目的</span><span class="sxs-lookup"><span data-stu-id="d87e5-198">Purpose</span></span>|  
 |---|---|  
-|[/define](../../../visual-basic/reference/command-line-compiler/define.md)|条件付きコンパイルのシンボルを定義します。|  
+|[<span data-ttu-id="d87e5-199">/define</span><span class="sxs-lookup"><span data-stu-id="d87e5-199">/define</span></span>](../../../visual-basic/reference/command-line-compiler/define.md)|<span data-ttu-id="d87e5-200">条件付きコンパイルのシンボルを定義します。</span><span class="sxs-lookup"><span data-stu-id="d87e5-200">Defines symbols for conditional compilation.</span></span>|  
   
-## <a name="resources"></a>リソース  
+## <a name="resources"></a><span data-ttu-id="d87e5-201">リソース</span><span class="sxs-lookup"><span data-stu-id="d87e5-201">Resources</span></span>  
   
-|オプション|目的|  
+|<span data-ttu-id="d87e5-202">オプション</span><span class="sxs-lookup"><span data-stu-id="d87e5-202">Option</span></span>|<span data-ttu-id="d87e5-203">目的</span><span class="sxs-lookup"><span data-stu-id="d87e5-203">Purpose</span></span>|  
 |---|---|  
-|[/linkresource](../../../visual-basic/reference/command-line-compiler/linkresource.md)|マネージ リソースへのリンクを作成します。|  
-|[/resource](../../../visual-basic/reference/command-line-compiler/resource.md)|マネージ リソースをアセンブリに埋め込みます。|  
-|[/win32icon](../../../visual-basic/reference/command-line-compiler/win32icon.md)|.ico ファイルを出力ファイルに挿入します。|  
-|[/win32resource](../../../visual-basic/reference/command-line-compiler/win32resource.md)|Win32 リソースを出力ファイルに挿入します。|  
+|[<span data-ttu-id="d87e5-204">/linkresource</span><span class="sxs-lookup"><span data-stu-id="d87e5-204">/linkresource</span></span>](../../../visual-basic/reference/command-line-compiler/linkresource.md)|<span data-ttu-id="d87e5-205">マネージ リソースへのリンクを作成します。</span><span class="sxs-lookup"><span data-stu-id="d87e5-205">Creates a link to a managed resource.</span></span>|  
+|[<span data-ttu-id="d87e5-206">/resource</span><span class="sxs-lookup"><span data-stu-id="d87e5-206">/resource</span></span>](../../../visual-basic/reference/command-line-compiler/resource.md)|<span data-ttu-id="d87e5-207">マネージ リソースをアセンブリに埋め込みます。</span><span class="sxs-lookup"><span data-stu-id="d87e5-207">Embeds a managed resource in an assembly.</span></span>|  
+|[<span data-ttu-id="d87e5-208">/win32icon</span><span class="sxs-lookup"><span data-stu-id="d87e5-208">/win32icon</span></span>](../../../visual-basic/reference/command-line-compiler/win32icon.md)|<span data-ttu-id="d87e5-209">.ico ファイルを出力ファイルに挿入します。</span><span class="sxs-lookup"><span data-stu-id="d87e5-209">Inserts an .ico file into the output file.</span></span>|  
+|[<span data-ttu-id="d87e5-210">/win32resource</span><span class="sxs-lookup"><span data-stu-id="d87e5-210">/win32resource</span></span>](../../../visual-basic/reference/command-line-compiler/win32resource.md)|<span data-ttu-id="d87e5-211">Win32 リソースを出力ファイルに挿入します。</span><span class="sxs-lookup"><span data-stu-id="d87e5-211">Inserts a Win32 resource into the output file.</span></span>|  
   
-## <a name="miscellaneous"></a>その他の指定  
+## <a name="miscellaneous"></a><span data-ttu-id="d87e5-212">その他の指定</span><span class="sxs-lookup"><span data-stu-id="d87e5-212">Miscellaneous</span></span>  
   
-|オプション|目的|  
+|<span data-ttu-id="d87e5-213">オプション</span><span class="sxs-lookup"><span data-stu-id="d87e5-213">Option</span></span>|<span data-ttu-id="d87e5-214">目的</span><span class="sxs-lookup"><span data-stu-id="d87e5-214">Purpose</span></span>|  
 |---|---|  
-|[@ (応答ファイルの指定)](../../../visual-basic/reference/command-line-compiler/specify-response-file.md)|応答ファイルを指定します。|  
-|[/baseaddress](../../../visual-basic/reference/command-line-compiler/baseaddress.md)|DLL のベース アドレスを指定します。|  
-|[/codepage](../../../visual-basic/reference/command-line-compiler/codepage.md)|コンパイルですべてのソース コード ファイルに使用するコード ページを指定します。|  
-|[/errorreport](../../../visual-basic/reference/command-line-compiler/errorreport.md)|[!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] コンパイラで内部コンパイル エラーを報告するかどうかを指定します。|  
-|[/highentropyva](../../../visual-basic/reference/command-line-compiler/highentropyva.md)|特定の実行可能ファイルで高エントロピ ASLR (Address Space Layout Randomization) をサポートするかどうかを Windows カーネルに示します。|  
-|[/main](../../../visual-basic/reference/command-line-compiler/main.md)|含むクラスの指定、`Sub``Main`起動時に使用するプロシージャです。|  
-|[/noconfig](../../../visual-basic/reference/command-line-compiler/noconfig.md)|コンパイルに Vbc.rsp が使用されないようにします。|  
-|[/nostdlib](../../../visual-basic/reference/command-line-compiler/nostdlib.md)|コンパイラが標準ライブラリを参照しないようにします。|  
-|[/nowin32manifest](../../../visual-basic/reference/command-line-compiler/nowin32manifest.md)|アプリケーション マニフェストを実行可能ファイルに埋め込まないようコンパイラに指定します。|  
-|[/platform](../../../visual-basic/reference/command-line-compiler/platform.md)|コンパイラによる出力ファイルの対象となるプロセッサ プラットフォームを指定します。|  
-|[/recurse](../../../visual-basic/reference/command-line-compiler/recurse.md)|コンパイルするソース ファイルをサブディレクトリで検索します。|  
-|[/rootnamespace](../../../visual-basic/reference/command-line-compiler/rootnamespace.md)|すべての型宣言に対して名前空間を指定します。|  
-|[/sdkpath](../../../visual-basic/reference/command-line-compiler/sdkpath.md)|Mscorlib.dll および Microsoft.VisualBasic.dll の位置を指定します。|  
-|[/vbruntime](../../../visual-basic/reference/command-line-compiler/vbruntime.md)|コンパイラが Visual Basic Runtime Library を参照せずにコンパイルするか、特定のランタイム ライブラリを参照してコンパイルするかを指定します。|  
-|[/win32manifest](../../../visual-basic/reference/command-line-compiler/win32manifest.md)|プロジェクトのポータブル実行可能 (PE) ファイルに埋め込まれる、ユーザー定義の Win32 アプリケーション マニフェスト ファイルを識別します。|  
-|`/parallel[+&#124;-]`|同時実行ビルドを使用する (+) かどうかを指定します。|  
-|`/checksumalgorithm:<alg>`|PDB に格納されているソース ファイルのチェックサムを計算するためのアルゴリズムを指定します。  サポートされる値は、SHA1 (既定値) または SHA256 です。|  
+|[<span data-ttu-id="d87e5-215">@ (応答ファイルの指定)</span><span class="sxs-lookup"><span data-stu-id="d87e5-215">@ (Specify Response File)</span></span>](../../../visual-basic/reference/command-line-compiler/specify-response-file.md)|<span data-ttu-id="d87e5-216">応答ファイルを指定します。</span><span class="sxs-lookup"><span data-stu-id="d87e5-216">Specifies a response file.</span></span>|  
+|[<span data-ttu-id="d87e5-217">/baseaddress</span><span class="sxs-lookup"><span data-stu-id="d87e5-217">/baseaddress</span></span>](../../../visual-basic/reference/command-line-compiler/baseaddress.md)|<span data-ttu-id="d87e5-218">DLL のベース アドレスを指定します。</span><span class="sxs-lookup"><span data-stu-id="d87e5-218">Specifies the base address of a DLL.</span></span>|  
+|[<span data-ttu-id="d87e5-219">/codepage</span><span class="sxs-lookup"><span data-stu-id="d87e5-219">/codepage</span></span>](../../../visual-basic/reference/command-line-compiler/codepage.md)|<span data-ttu-id="d87e5-220">コンパイルですべてのソース コード ファイルに使用するコード ページを指定します。</span><span class="sxs-lookup"><span data-stu-id="d87e5-220">Specifies the code page to use for all source code files in the compilation.</span></span>|  
+|[<span data-ttu-id="d87e5-221">/errorreport</span><span class="sxs-lookup"><span data-stu-id="d87e5-221">/errorreport</span></span>](../../../visual-basic/reference/command-line-compiler/errorreport.md)|<span data-ttu-id="d87e5-222">[!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] コンパイラで内部コンパイル エラーを報告するかどうかを指定します。</span><span class="sxs-lookup"><span data-stu-id="d87e5-222">Specifies how the [!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] compiler should report internal compiler errors.</span></span>|  
+|[<span data-ttu-id="d87e5-223">/highentropyva</span><span class="sxs-lookup"><span data-stu-id="d87e5-223">/highentropyva</span></span>](../../../visual-basic/reference/command-line-compiler/highentropyva.md)|<span data-ttu-id="d87e5-224">特定の実行可能ファイルで高エントロピ ASLR (Address Space Layout Randomization) をサポートするかどうかを Windows カーネルに示します。</span><span class="sxs-lookup"><span data-stu-id="d87e5-224">Tells the Windows kernel whether a particular executable supports high entropy Address Space Layout Randomization (ASLR).</span></span>|  
+|[<span data-ttu-id="d87e5-225">/main</span><span class="sxs-lookup"><span data-stu-id="d87e5-225">/main</span></span>](../../../visual-basic/reference/command-line-compiler/main.md)|<span data-ttu-id="d87e5-226">含むクラスの指定、`Sub``Main`起動時に使用するプロシージャです。</span><span class="sxs-lookup"><span data-stu-id="d87e5-226">Specifies the class that contains the `Sub``Main` procedure to use at startup.</span></span>|  
+|[<span data-ttu-id="d87e5-227">/noconfig</span><span class="sxs-lookup"><span data-stu-id="d87e5-227">/noconfig</span></span>](../../../visual-basic/reference/command-line-compiler/noconfig.md)|<span data-ttu-id="d87e5-228">コンパイルに Vbc.rsp が使用されないようにします。</span><span class="sxs-lookup"><span data-stu-id="d87e5-228">Do not compile with Vbc.rsp</span></span>|  
+|[<span data-ttu-id="d87e5-229">/nostdlib</span><span class="sxs-lookup"><span data-stu-id="d87e5-229">/nostdlib</span></span>](../../../visual-basic/reference/command-line-compiler/nostdlib.md)|<span data-ttu-id="d87e5-230">コンパイラが標準ライブラリを参照しないようにします。</span><span class="sxs-lookup"><span data-stu-id="d87e5-230">Causes the compiler not to reference the standard libraries.</span></span>|  
+|[<span data-ttu-id="d87e5-231">/nowin32manifest</span><span class="sxs-lookup"><span data-stu-id="d87e5-231">/nowin32manifest</span></span>](../../../visual-basic/reference/command-line-compiler/nowin32manifest.md)|<span data-ttu-id="d87e5-232">アプリケーション マニフェストを実行可能ファイルに埋め込まないようコンパイラに指定します。</span><span class="sxs-lookup"><span data-stu-id="d87e5-232">Instructs the compiler not to embed any application manifest into the executable file.</span></span>|  
+|[<span data-ttu-id="d87e5-233">/platform</span><span class="sxs-lookup"><span data-stu-id="d87e5-233">/platform</span></span>](../../../visual-basic/reference/command-line-compiler/platform.md)|<span data-ttu-id="d87e5-234">コンパイラによる出力ファイルの対象となるプロセッサ プラットフォームを指定します。</span><span class="sxs-lookup"><span data-stu-id="d87e5-234">Specifies the processor platform the compiler targets for the output file.</span></span>|  
+|[<span data-ttu-id="d87e5-235">/recurse</span><span class="sxs-lookup"><span data-stu-id="d87e5-235">/recurse</span></span>](../../../visual-basic/reference/command-line-compiler/recurse.md)|<span data-ttu-id="d87e5-236">コンパイルするソース ファイルをサブディレクトリで検索します。</span><span class="sxs-lookup"><span data-stu-id="d87e5-236">Searches subdirectories for source files to compile.</span></span>|  
+|[<span data-ttu-id="d87e5-237">/rootnamespace</span><span class="sxs-lookup"><span data-stu-id="d87e5-237">/rootnamespace</span></span>](../../../visual-basic/reference/command-line-compiler/rootnamespace.md)|<span data-ttu-id="d87e5-238">すべての型宣言に対して名前空間を指定します。</span><span class="sxs-lookup"><span data-stu-id="d87e5-238">Specifies a namespace for all type declarations.</span></span>|  
+|[<span data-ttu-id="d87e5-239">/sdkpath</span><span class="sxs-lookup"><span data-stu-id="d87e5-239">/sdkpath</span></span>](../../../visual-basic/reference/command-line-compiler/sdkpath.md)|<span data-ttu-id="d87e5-240">Mscorlib.dll および Microsoft.VisualBasic.dll の位置を指定します。</span><span class="sxs-lookup"><span data-stu-id="d87e5-240">Specifies the location of Mscorlib.dll and Microsoft.VisualBasic.dll.</span></span>|  
+|[<span data-ttu-id="d87e5-241">/vbruntime</span><span class="sxs-lookup"><span data-stu-id="d87e5-241">/vbruntime</span></span>](../../../visual-basic/reference/command-line-compiler/vbruntime.md)|<span data-ttu-id="d87e5-242">コンパイラが Visual Basic Runtime Library を参照せずにコンパイルするか、特定のランタイム ライブラリを参照してコンパイルするかを指定します。</span><span class="sxs-lookup"><span data-stu-id="d87e5-242">Specifies that the compiler should compile without a reference to the Visual Basic Runtime Library, or with a reference to a specific runtime library.</span></span>|  
+|[<span data-ttu-id="d87e5-243">/win32manifest</span><span class="sxs-lookup"><span data-stu-id="d87e5-243">/win32manifest</span></span>](../../../visual-basic/reference/command-line-compiler/win32manifest.md)|<span data-ttu-id="d87e5-244">プロジェクトのポータブル実行可能 (PE) ファイルに埋め込まれる、ユーザー定義の Win32 アプリケーション マニフェスト ファイルを識別します。</span><span class="sxs-lookup"><span data-stu-id="d87e5-244">Identifies a user-defined Win32 application manifest file to be embedded into a project's portable executable (PE) file.</span></span>|  
+|`/parallel[+&#124;-]`|<span data-ttu-id="d87e5-245">同時実行ビルドを使用する (+) かどうかを指定します。</span><span class="sxs-lookup"><span data-stu-id="d87e5-245">Specifies whether to use concurrent build (+).</span></span>|  
+|`/checksumalgorithm:<alg>`|<span data-ttu-id="d87e5-246">PDB に格納されているソース ファイルのチェックサムを計算するためのアルゴリズムを指定します。</span><span class="sxs-lookup"><span data-stu-id="d87e5-246">Specify the algorithm for calculating the source file checksum stored in PDB.</span></span>  <span data-ttu-id="d87e5-247">サポートされる値は、SHA1 (既定値) または SHA256 です。</span><span class="sxs-lookup"><span data-stu-id="d87e5-247">Supported values are: SHA1 (default) or SHA256.</span></span>|  
   
-## <a name="see-also"></a>関連項目  
- [Visual Basic コンパイラ オプションをアルファベット順に表示](../../../visual-basic/reference/command-line-compiler/compiler-options-listed-alphabetically.md)   
- [プロジェクト デザイナーの概要](http://msdn.microsoft.com/en-us/898dd854-c98d-430c-ba1b-a913ce3c73d7)   
- [C# コンパイラ オプションの一覧 (アルファベット順)](../../../csharp/language-reference/compiler-options/listed-alphabetically.md)   
- [カテゴリ別の C# コンパイラ オプションの一覧](../../../csharp/language-reference/compiler-options/listed-by-category.md)
+## <a name="see-also"></a><span data-ttu-id="d87e5-248">関連項目</span><span class="sxs-lookup"><span data-stu-id="d87e5-248">See Also</span></span>  
+ <span data-ttu-id="d87e5-249">[Visual Basic コンパイラ オプションをアルファベット順に表示](../../../visual-basic/reference/command-line-compiler/compiler-options-listed-alphabetically.md) </span><span class="sxs-lookup"><span data-stu-id="d87e5-249">[Visual Basic Compiler Options Listed Alphabetically](../../../visual-basic/reference/command-line-compiler/compiler-options-listed-alphabetically.md) </span></span>  
+<span data-ttu-id="d87e5-250"> [プロジェクト デザイナーの概要](http://msdn.microsoft.com/en-us/898dd854-c98d-430c-ba1b-a913ce3c73d7) </span><span class="sxs-lookup"><span data-stu-id="d87e5-250"> [Introduction to the Project Designer](http://msdn.microsoft.com/en-us/898dd854-c98d-430c-ba1b-a913ce3c73d7) </span></span>  
+<span data-ttu-id="d87e5-251"> [C# コンパイラ オプションの一覧 (アルファベット順)](../../../csharp/language-reference/compiler-options/listed-alphabetically.md) </span><span class="sxs-lookup"><span data-stu-id="d87e5-251"> [C# Compiler Options Listed Alphabetically](../../../csharp/language-reference/compiler-options/listed-alphabetically.md) </span></span>  
+<span data-ttu-id="d87e5-252"> [カテゴリ別の C# コンパイラ オプションの一覧](../../../csharp/language-reference/compiler-options/listed-by-category.md)</span><span class="sxs-lookup"><span data-stu-id="d87e5-252"> [C# Compiler Options Listed by Category](../../../csharp/language-reference/compiler-options/listed-by-category.md)</span></span>

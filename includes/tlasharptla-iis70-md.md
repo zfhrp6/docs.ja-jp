@@ -1,1 +1,1 @@
-Microsoft インターネット インフォメーション サービス (IIS) 7.0
+<span data-ttu-id="a27f4-101">Microsoft インターネット インフォメーション サービス (IIS) 7.0</span><span class="sxs-lookup"><span data-stu-id="a27f4-101">Microsoft Internet Information Services (IIS) 7.0</span></span>

@@ -18,45 +18,45 @@ ms.lasthandoff: 07/28/2017
 
 ---
 
-# <a name="managing-dependencies-with-net-core-sdk-10"></a>.NET Core SDK 1.0 での依存関係の管理
+# <a name="managing-dependencies-with-net-core-sdk-10"></a><span data-ttu-id="04584-104">.NET Core SDK 1.0 での依存関係の管理</span><span class="sxs-lookup"><span data-stu-id="04584-104">Managing dependencies with .NET Core SDK 1.0</span></span>
 
-.NET Core プロジェクトでの project.json から csproj と MSBuild への移行では、多額の投資も行われ、その結果、プロジェクト ファイルとアセットが統合され、依存関係を追跡できるようになりました。 .NET Core プロジェクトでの依存関係の追跡は、project.json と似ています。 NuGet の依存関係を追跡するための独立した JSON または XML ファイルはありません。 この変更により、`<PackageReference>` と呼ばれる別の*参照*の型も csproj 構文に導入されました。 
+<span data-ttu-id="04584-105">.NET Core プロジェクトでの project.json から csproj と MSBuild への移行では、多額の投資も行われ、その結果、プロジェクト ファイルとアセットが統合され、依存関係を追跡できるようになりました。</span><span class="sxs-lookup"><span data-stu-id="04584-105">With the move of .NET Core projects from project.json to csproj and MSBuild, a significant investment also happened that resulted in unification of the project file and assets that allow tracking of dependencies.</span></span> <span data-ttu-id="04584-106">.NET Core プロジェクトでの依存関係の追跡は、project.json と似ています。</span><span class="sxs-lookup"><span data-stu-id="04584-106">For .NET Core projects this is similar to what project.json did.</span></span> <span data-ttu-id="04584-107">NuGet の依存関係を追跡するための独立した JSON または XML ファイルはありません。</span><span class="sxs-lookup"><span data-stu-id="04584-107">There is no separate JSON or XML file that tracks NuGet dependencies.</span></span> <span data-ttu-id="04584-108">この変更により、`<PackageReference>` と呼ばれる別の*参照*の型も csproj 構文に導入されました。</span><span class="sxs-lookup"><span data-stu-id="04584-108">With this change, we've also introduced another type of *reference* into the csproj syntax called the `<PackageReference>`.</span></span> 
 
-ここでは、新しい参照型について説明します。 また、この新しい参照型を使ってプロジェクトにパッケージの依存関係を追加する方法も示します。 
+<span data-ttu-id="04584-109">ここでは、新しい参照型について説明します。</span><span class="sxs-lookup"><span data-stu-id="04584-109">This document describes the new reference type.</span></span> <span data-ttu-id="04584-110">また、この新しい参照型を使ってプロジェクトにパッケージの依存関係を追加する方法も示します。</span><span class="sxs-lookup"><span data-stu-id="04584-110">It also shows how to add a package dependency using this new reference type to your project.</span></span> 
 
-## <a name="the-new-packagereference-element"></a>新しい \<PackageReference> 要素
-`<PackageReference>` の基本的な構造は次のとおりです。
+## <a name="the-new-packagereference-element"></a><span data-ttu-id="04584-111">新しい \<PackageReference> 要素</span><span class="sxs-lookup"><span data-stu-id="04584-111">The new \<PackageReference> element</span></span>
+<span data-ttu-id="04584-112">`<PackageReference>` の基本的な構造は次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="04584-112">The `<PackageReference>` has the following basic structure:</span></span>
 
 ```xml
 <PackageReference Include="PACKAGE_ID" Version="PACKAGE_VERSION" />
 ```
 
-MSBuild に詳しい場合は、既に存在する他の参照型と似ていることが分かります。 重要なのは、`Include` ステートメントではプロジェクトに追加するパッケージ ID を指定することです。 `<Version>` 子要素は取得するバージョンを指定します。 バージョンは、[NuGet のバージョン ルール](/nuget/create-packages/dependency-versions#version-ranges)に従って指定します。
+<span data-ttu-id="04584-113">MSBuild に詳しい場合は、既に存在する他の参照型と似ていることが分かります。</span><span class="sxs-lookup"><span data-stu-id="04584-113">If you are familiar with MSBuild, it will look familiar to the other reference types that already exist.</span></span> <span data-ttu-id="04584-114">重要なのは、`Include` ステートメントではプロジェクトに追加するパッケージ ID を指定することです。</span><span class="sxs-lookup"><span data-stu-id="04584-114">The key is the `Include` statement which specifies the package id that you wish to add to the project.</span></span> <span data-ttu-id="04584-115">`<Version>` 子要素は取得するバージョンを指定します。</span><span class="sxs-lookup"><span data-stu-id="04584-115">The `<Version>` child element specifies the version to get.</span></span> <span data-ttu-id="04584-116">バージョンは、[NuGet のバージョン ルール](/nuget/create-packages/dependency-versions#version-ranges)に従って指定します。</span><span class="sxs-lookup"><span data-stu-id="04584-116">The versions are specified as per [NuGet version rules](/nuget/create-packages/dependency-versions#version-ranges).</span></span>
 
 > [!NOTE]
-> `csproj` の構文に詳しくない場合は、詳細について、[MSBuild プロジェクトのリファレンス](/visualstudio/msbuild/msbuild-project-file-schema-reference) ドキュメントを参照してください。  
+> <span data-ttu-id="04584-117">`csproj` の構文に詳しくない場合は、詳細について、[MSBuild プロジェクトのリファレンス](/visualstudio/msbuild/msbuild-project-file-schema-reference) ドキュメントを参照してください。</span><span class="sxs-lookup"><span data-stu-id="04584-117">If you are not familiar with the overall `csproj` syntax, see the [MSBuild project reference](/visualstudio/msbuild/msbuild-project-file-schema-reference) documentation for more information.</span></span>  
 
-特定のターゲットでのみ使用可能な依存関係を追加するには、次の例のような条件を使用します。
+<span data-ttu-id="04584-118">特定のターゲットでのみ使用可能な依存関係を追加するには、次の例のような条件を使用します。</span><span class="sxs-lookup"><span data-stu-id="04584-118">Adding a dependency that is available only in a specific target is done using conditions like in the following example:</span></span>
 
 ```xml
 <PackageReference Include="PACKAGE_ID" Version="PACKAGE_VERSION" Condition="'$(TargetFramework)' == 'netcoreapp1.0'" />
 ```
 
-これは、ビルドがその特定のターゲットに対して行われる場合にのみ依存関係が有効であることを意味します。 条件の `$(TargetFramework)` は、プロジェクトで設定されている MSBuild プロパティです。 最も一般的な .NET Core アプリケーションの場合、これを行う必要はありません。 
+<span data-ttu-id="04584-119">これは、ビルドがその特定のターゲットに対して行われる場合にのみ依存関係が有効であることを意味します。</span><span class="sxs-lookup"><span data-stu-id="04584-119">The above means that the dependency will only be valid if the build is happening for that given target.</span></span> <span data-ttu-id="04584-120">条件の `$(TargetFramework)` は、プロジェクトで設定されている MSBuild プロパティです。</span><span class="sxs-lookup"><span data-stu-id="04584-120">The `$(TargetFramework)` in the condition is a MSBuild property that is being set in the project.</span></span> <span data-ttu-id="04584-121">最も一般的な .NET Core アプリケーションの場合、これを行う必要はありません。</span><span class="sxs-lookup"><span data-stu-id="04584-121">For most common .NET Core applications, you will not need to do this.</span></span> 
 
-## <a name="adding-a-dependency-to-your-project"></a>プロジェクトへの依存関係の追加
-簡単に依存関係をプロジェクトに追加できます。 ここでは、Json.NET バージョン `9.0.1` をプロジェクトに追加する方法の例を示します。 もちろん、NuGet の他の依存関係にも適用できます。 
+## <a name="adding-a-dependency-to-your-project"></a><span data-ttu-id="04584-122">プロジェクトへの依存関係の追加</span><span class="sxs-lookup"><span data-stu-id="04584-122">Adding a dependency to your project</span></span>
+<span data-ttu-id="04584-123">簡単に依存関係をプロジェクトに追加できます。</span><span class="sxs-lookup"><span data-stu-id="04584-123">Adding a dependency to your project is straightforward.</span></span> <span data-ttu-id="04584-124">ここでは、Json.NET バージョン `9.0.1` をプロジェクトに追加する方法の例を示します。</span><span class="sxs-lookup"><span data-stu-id="04584-124">Here is an example of how to add Json.NET version `9.0.1` to your project.</span></span> <span data-ttu-id="04584-125">もちろん、NuGet の他の依存関係にも適用できます。</span><span class="sxs-lookup"><span data-stu-id="04584-125">Of course, it is applicable to any other NuGet dependency.</span></span> 
 
-プロジェクト ファイルを開くと、2 つ以上の `<ItemGroup>` ノードがあります。 ノードの 1 つには `<PackageReference>` 要素が既にあります。 このノードに新しい依存関係を追加することも、新しいノードを追加することもできます。結果は同じなので開発者次第です。 
+<span data-ttu-id="04584-126">プロジェクト ファイルを開くと、2 つ以上の `<ItemGroup>` ノードがあります。</span><span class="sxs-lookup"><span data-stu-id="04584-126">When you open your project file, you will see two or more `<ItemGroup>` nodes.</span></span> <span data-ttu-id="04584-127">ノードの 1 つには `<PackageReference>` 要素が既にあります。</span><span class="sxs-lookup"><span data-stu-id="04584-127">You will notice that one of the nodes already has `<PackageReference>` elements in it.</span></span> <span data-ttu-id="04584-128">このノードに新しい依存関係を追加することも、新しいノードを追加することもできます。結果は同じなので開発者次第です。</span><span class="sxs-lookup"><span data-stu-id="04584-128">You can add your new dependency to this node, or create a new one; it is completely up to you as the result will be the same.</span></span> 
 
-この例では、`dotnet new console` によって削除される既定のテンプレートを使います。 これは、簡単なコンソール アプリケーションです。 プロジェクトを開き、最初に `<PackageReference>` が既に存在する `<ItemGroup>` を探します。 次に、以下のコードをそれに追加します。
+<span data-ttu-id="04584-129">この例では、`dotnet new console` によって削除される既定のテンプレートを使います。</span><span class="sxs-lookup"><span data-stu-id="04584-129">In this example we will use the default template that is dropped by `dotnet new console`.</span></span> <span data-ttu-id="04584-130">これは、簡単なコンソール アプリケーションです。</span><span class="sxs-lookup"><span data-stu-id="04584-130">This is a simple console application.</span></span> <span data-ttu-id="04584-131">プロジェクトを開き、最初に `<PackageReference>` が既に存在する `<ItemGroup>` を探します。</span><span class="sxs-lookup"><span data-stu-id="04584-131">When we open up the project, we first find the `<ItemGroup>` with already existing `<PackageReference>` in it.</span></span> <span data-ttu-id="04584-132">次に、以下のコードをそれに追加します。</span><span class="sxs-lookup"><span data-stu-id="04584-132">We then add the following to it:</span></span>
 
 ```xml
 <PackageReference Include="Newtonsoft.Json" Version="9.0.1" />
 ```
-その後、プロジェクトを保存し、`dotnet restore` コマンドを実行して依存関係をインストールします。 
+<span data-ttu-id="04584-133">その後、プロジェクトを保存し、`dotnet restore` コマンドを実行して依存関係をインストールします。</span><span class="sxs-lookup"><span data-stu-id="04584-133">After this, we save the project and run the `dotnet restore` command to install the dependency.</span></span> 
 
-完全なプロジェクトは次のようになります。
+<span data-ttu-id="04584-134">完全なプロジェクトは次のようになります。</span><span class="sxs-lookup"><span data-stu-id="04584-134">The full project looks like this:</span></span>
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
@@ -71,6 +71,6 @@ MSBuild に詳しい場合は、既に存在する他の参照型と似ている
 </Project>
 ```
 
-## <a name="removing-a-dependency-from-the-project"></a>プロジェクトからの依存関係の削除
-プロジェクト ファイルから依存関係を削除するには、プロジェクト ファイルから `<PackageReference>` を削除するだけです。
+## <a name="removing-a-dependency-from-the-project"></a><span data-ttu-id="04584-135">プロジェクトからの依存関係の削除</span><span class="sxs-lookup"><span data-stu-id="04584-135">Removing a dependency from the project</span></span>
+<span data-ttu-id="04584-136">プロジェクト ファイルから依存関係を削除するには、プロジェクト ファイルから `<PackageReference>` を削除するだけです。</span><span class="sxs-lookup"><span data-stu-id="04584-136">Removing a dependency from the project file involves simply removing the `<PackageReference>` from the project file.</span></span>
 

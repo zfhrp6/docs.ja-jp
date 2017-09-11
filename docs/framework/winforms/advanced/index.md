@@ -26,55 +26,55 @@ ms.contentlocale: ja-jp
 ms.lasthandoff: 05/22/2017
 
 ---
-# <a name="enhancing-windows-forms-applications"></a>Windows フォーム アプリケーションの拡張
-Windows フォームには、ユーザーの固有のニーズに合わせて、Windows ベースのアプリケーションを強化するために使用できる多くの機能が含まれます。 次のトピックは、これらの機能とその使用方法について説明します。  
+# <a name="enhancing-windows-forms-applications"></a><span data-ttu-id="1584f-102">Windows フォーム アプリケーションの拡張</span><span class="sxs-lookup"><span data-stu-id="1584f-102">Enhancing Windows Forms Applications</span></span>
+<span data-ttu-id="1584f-103">Windows フォームには、ユーザーの固有のニーズに合わせて、Windows ベースのアプリケーションを強化するために使用できる多くの機能が含まれます。</span><span class="sxs-lookup"><span data-stu-id="1584f-103">Windows Forms contains many features that you can use to enhance your Windows-based applications to meet the specific needs of your users.</span></span> <span data-ttu-id="1584f-104">次のトピックは、これらの機能とその使用方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="1584f-104">The following topics describe these features and how to use them.</span></span>  
   
-## <a name="in-this-section"></a>このセクションの内容  
- [Windows フォームにおけるグラフィックスと描画](../../../../docs/framework/winforms/advanced/graphics-and-drawing-in-windows-forms.md)  
- Windows フォームでグラフィックスのインターフェイスを使用する方法について説明したトピックへのリンクが含まれます。  
+## <a name="in-this-section"></a><span data-ttu-id="1584f-105">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="1584f-105">In This Section</span></span>  
+ [<span data-ttu-id="1584f-106">Windows フォームにおけるグラフィックスと描画</span><span class="sxs-lookup"><span data-stu-id="1584f-106">Graphics and Drawing in Windows Forms</span></span>](../../../../docs/framework/winforms/advanced/graphics-and-drawing-in-windows-forms.md)  
+ <span data-ttu-id="1584f-107">Windows フォームでグラフィックスのインターフェイスを使用する方法について説明したトピックへのリンクが含まれます。</span><span class="sxs-lookup"><span data-stu-id="1584f-107">Contains links to topics that describe and show how to use the graphics interface in Windows Forms.</span></span>  
   
- [Windows フォームのアプリケーション設定](../../../../docs/framework/winforms/advanced/application-settings-for-windows-forms.md)  
- **アプリケーション設定**機能を使う方法について説明したトピックへのリンクが含まれます。  
+ <span data-ttu-id="1584f-108">[Windows フォームのアプリケーション設定](../../../../docs/framework/winforms/advanced/application-settings-for-windows-forms.md)</span><span class="sxs-lookup"><span data-stu-id="1584f-108">[Application Settings for Windows Forms](../../../../docs/framework/winforms/advanced/application-settings-for-windows-forms.md).</span></span>  
+ <span data-ttu-id="1584f-109">**アプリケーション設定**機能を使う方法について説明したトピックへのリンクが含まれます。</span><span class="sxs-lookup"><span data-stu-id="1584f-109">Contains links to topics that describe and show how to use the **Application Settings** feature.</span></span>  
   
- [Windows フォームにおける印刷のサポート](../../../../docs/framework/winforms/advanced/windows-forms-print-support.md)  
- Windows フォーム アプリケーションからファイルを印刷する方法について説明したトピックへのリンクを示します。  
+ [<span data-ttu-id="1584f-110">Windows フォームにおける印刷のサポート</span><span class="sxs-lookup"><span data-stu-id="1584f-110">Windows Forms Print Support</span></span>](../../../../docs/framework/winforms/advanced/windows-forms-print-support.md)  
+ <span data-ttu-id="1584f-111">Windows フォーム アプリケーションからファイルを印刷する方法について説明したトピックへのリンクを示します。</span><span class="sxs-lookup"><span data-stu-id="1584f-111">Contains links to topics that describe and show how to print files from Windows Forms applications.</span></span>  
   
- [ドラッグ アンド ドロップ操作とクリップボードのサポート](../../../../docs/framework/winforms/advanced/drag-and-drop-operations-and-clipboard-support.md)  
- Windows フォームのドラッグ アンド ドロップ機能とクリップボードを使用する方法について説明したトピックへのリンクが含まれます。  
+ [<span data-ttu-id="1584f-112">ドラッグ アンド ドロップ操作とクリップボードのサポート</span><span class="sxs-lookup"><span data-stu-id="1584f-112">Drag-and-Drop Operations and Clipboard Support</span></span>](../../../../docs/framework/winforms/advanced/drag-and-drop-operations-and-clipboard-support.md)  
+ <span data-ttu-id="1584f-113">Windows フォームのドラッグ アンド ドロップ機能とクリップボードを使用する方法について説明したトピックへのリンクが含まれます。</span><span class="sxs-lookup"><span data-stu-id="1584f-113">Contains links to topics that describe and show how to use the drag-and-drop feature and the Clipboard in Windows Forms.</span></span>  
   
- [Windows フォーム アプリケーションにおけるネットワーク](../../../../docs/framework/winforms/advanced/networking-in-windows-forms-applications.md)  
- Windows フォームのネットワーキングを使用する方法について説明したトピックへのリンクが含まれます。  
+ [<span data-ttu-id="1584f-114">Windows フォーム アプリケーションにおけるネットワーク</span><span class="sxs-lookup"><span data-stu-id="1584f-114">Networking in Windows Forms Applications</span></span>](../../../../docs/framework/winforms/advanced/networking-in-windows-forms-applications.md)  
+ <span data-ttu-id="1584f-115">Windows フォームのネットワーキングを使用する方法について説明したトピックへのリンクが含まれます。</span><span class="sxs-lookup"><span data-stu-id="1584f-115">Contains links to topics that describe and show how to use networking in Windows Forms.</span></span>  
   
- [Windows フォームのグローバル化](../../../../docs/framework/winforms/advanced/globalizing-windows-forms.md)  
- Windows フォーム アプリケーションをグローバル化する方法を示すトピックへのリンクが含まれます。  
+ [<span data-ttu-id="1584f-116">Windows フォームのグローバル化</span><span class="sxs-lookup"><span data-stu-id="1584f-116">Globalizing Windows Forms</span></span>](../../../../docs/framework/winforms/advanced/globalizing-windows-forms.md)  
+ <span data-ttu-id="1584f-117">Windows フォーム アプリケーションをグローバル化する方法を示すトピックへのリンクが含まれます。</span><span class="sxs-lookup"><span data-stu-id="1584f-117">Contains links to topics that show how to globalize Windows Forms applications.</span></span>  
   
- [Windows フォームとアンマネージ アプリケーション](../../../../docs/framework/winforms/advanced/windows-forms-and-unmanaged-applications.md)  
- Windows フォーム アプリケーションから COM コンポーネントにアクセスする方法について説明したトピックへのリンクを示します。  
+ [<span data-ttu-id="1584f-118">Windows フォームとアンマネージ アプリケーション</span><span class="sxs-lookup"><span data-stu-id="1584f-118">Windows Forms and Unmanaged Applications</span></span>](../../../../docs/framework/winforms/advanced/windows-forms-and-unmanaged-applications.md)  
+ <span data-ttu-id="1584f-119">Windows フォーム アプリケーションから COM コンポーネントにアクセスする方法について説明したトピックへのリンクを示します。</span><span class="sxs-lookup"><span data-stu-id="1584f-119">Contains links to topics that describe and show how to access COM components from Windows Form applications.</span></span>  
   
- [システム情報と Windows フォーム](../../../../docs/framework/winforms/advanced/system-information-and-windows-forms.md)  
- Windows フォームでのシステム情報を使用する方法について説明します。  
+ [<span data-ttu-id="1584f-120">システム情報と Windows フォーム</span><span class="sxs-lookup"><span data-stu-id="1584f-120">System Information and Windows Forms</span></span>](../../../../docs/framework/winforms/advanced/system-information-and-windows-forms.md)  
+ <span data-ttu-id="1584f-121">Windows フォームでのシステム情報を使用する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="1584f-121">Describes how to use system information in Windows Forms.</span></span>  
   
- [Windows フォームでの電源管理](../../../../docs/framework/winforms/advanced/power-management-in-windows-forms.md)  
- Windows フォーム アプリケーションでの電力使用を管理する方法について説明します。  
+ [<span data-ttu-id="1584f-122">Windows フォームでの電源管理</span><span class="sxs-lookup"><span data-stu-id="1584f-122">Power Management in Windows Forms</span></span>](../../../../docs/framework/winforms/advanced/power-management-in-windows-forms.md)  
+ <span data-ttu-id="1584f-123">Windows フォーム アプリケーションでの電力使用を管理する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="1584f-123">Describes how to manage power use in Windows Forms applications.</span></span>  
   
- [Windows フォームのビジュアルの継承](../../../../docs/framework/winforms/advanced/windows-forms-visual-inheritance.md)  
- 基本フォームから継承する方法について説明します。  
+ [<span data-ttu-id="1584f-124">Windows フォームのビジュアルの継承</span><span class="sxs-lookup"><span data-stu-id="1584f-124">Windows Forms Visual Inheritance</span></span>](../../../../docs/framework/winforms/advanced/windows-forms-visual-inheritance.md)  
+ <span data-ttu-id="1584f-125">基本フォームから継承する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="1584f-125">Describes how to inherit from a base form.</span></span>  
   
- [マルチ ドキュメント インターフェイス (MDI) アプリケーション](../../../../docs/framework/winforms/advanced/multiple-document-interface-mdi-applications.md)  
- 複数のマルチ ドキュメント インターフェイス (MDI) アプリケーションを作成する方法について説明します。  
+ [<span data-ttu-id="1584f-126">マルチ ドキュメント インターフェイス (MDI) アプリケーション</span><span class="sxs-lookup"><span data-stu-id="1584f-126">Multiple-Document Interface (MDI) Applications</span></span>](../../../../docs/framework/winforms/advanced/multiple-document-interface-mdi-applications.md)  
+ <span data-ttu-id="1584f-127">複数のマルチ ドキュメント インターフェイス (MDI) アプリケーションを作成する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="1584f-127">Describes how to create multiple-document interface (MDI) applications.</span></span>  
   
- [Windows フォームでのヘルプの統合](../../../../docs/framework/winforms/advanced/integrating-user-help-in-windows-forms.md)  
- アプリケーションでユーザー ヘルプを統合する方法について説明します。  
+ [<span data-ttu-id="1584f-128">Windows フォームでのヘルプの統合</span><span class="sxs-lookup"><span data-stu-id="1584f-128">Integrating User Help in Windows Forms</span></span>](../../../../docs/framework/winforms/advanced/integrating-user-help-in-windows-forms.md)  
+ <span data-ttu-id="1584f-129">アプリケーションでユーザー ヘルプを統合する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="1584f-129">Describes how to integrate user help in your applications.</span></span>  
   
- [Windows フォームのユーザー補助](../../../../docs/framework/winforms/advanced/windows-forms-accessibility.md)  
- さまざまなユーザーがアプリケーションを使用できるようにする方法について説明します。  
+ [<span data-ttu-id="1584f-130">Windows フォームのユーザー補助</span><span class="sxs-lookup"><span data-stu-id="1584f-130">Windows Forms Accessibility</span></span>](../../../../docs/framework/winforms/advanced/windows-forms-accessibility.md)  
+ <span data-ttu-id="1584f-131">さまざまなユーザーがアプリケーションを使用できるようにする方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="1584f-131">Describes how to make your applications available to a wide variety of users.</span></span>  
   
- [WPF コントロールの使用](../../../../docs/framework/winforms/advanced/using-wpf-controls.md)  
- Windows フォーム ベースのアプリケーションで WPF コントロールを使用する方法について説明します。  
+ [<span data-ttu-id="1584f-132">WPF コントロールの使用</span><span class="sxs-lookup"><span data-stu-id="1584f-132">Using WPF Controls</span></span>](../../../../docs/framework/winforms/advanced/using-wpf-controls.md)  
+ <span data-ttu-id="1584f-133">Windows フォーム ベースのアプリケーションで WPF コントロールを使用する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="1584f-133">Describes how to use WPF controls in your Windows Forms-based applications.</span></span>  
   
-## <a name="related-sections"></a>関連項目  
- [Windows フォーム アプリケーションのヘルプ システム](../../../../docs/framework/winforms/advanced/help-systems-in-windows-forms-applications.md)  
- Windows フォーム アプリケーションでユーザーにヘルプを提供する方法について説明したトピックへのリンクを示します。  
+## <a name="related-sections"></a><span data-ttu-id="1584f-134">関連項目</span><span class="sxs-lookup"><span data-stu-id="1584f-134">Related Sections</span></span>  
+ [<span data-ttu-id="1584f-135">Windows フォーム アプリケーションのヘルプ システム</span><span class="sxs-lookup"><span data-stu-id="1584f-135">Help Systems in Windows Forms Applications</span></span>](../../../../docs/framework/winforms/advanced/help-systems-in-windows-forms-applications.md)  
+ <span data-ttu-id="1584f-136">Windows フォーム アプリケーションでユーザーにヘルプを提供する方法について説明したトピックへのリンクを示します。</span><span class="sxs-lookup"><span data-stu-id="1584f-136">Contains links to topics that describe and show how to provide user help in Windows Forms applications.</span></span>  
   
- [Windows フォームについて](../../../../docs/framework/winforms/getting-started-with-windows-forms.md)  
- Windows フォームで基本的な機能を使用する方法を説明するトピックへのリンクが含まれます。
+ [<span data-ttu-id="1584f-137">Windows フォームについて</span><span class="sxs-lookup"><span data-stu-id="1584f-137">Getting Started with Windows Forms</span></span>](../../../../docs/framework/winforms/getting-started-with-windows-forms.md)  
+ <span data-ttu-id="1584f-138">Windows フォームで基本的な機能を使用する方法を説明するトピックへのリンクが含まれます。</span><span class="sxs-lookup"><span data-stu-id="1584f-138">Contains links to topics that describe how to use the basic features of Windows Forms.</span></span>

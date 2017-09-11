@@ -1,1 +1,1 @@
-グローバル一意識別子 (GUID)
+<span data-ttu-id="bbfe9-101">グローバル一意識別子 (GUID)</span><span class="sxs-lookup"><span data-stu-id="bbfe9-101">globally unique identifier (GUID)</span></span>

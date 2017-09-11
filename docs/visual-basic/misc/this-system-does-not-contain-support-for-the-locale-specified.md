@@ -26,20 +26,21 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: b9898fd7d1e3e1774c45d50388c045c6364efeb3
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
+ms.openlocfilehash: ed2dda6372b005267b8361792ba895e097cdc191
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/12/2017
 
 ---
-# <a name="this-system-does-not-contain-support-for-the-locale-specified"></a>このシステムには、指定されたロケールのサポートは含まれていません。
-`VbStrConv` 列挙型を使用しようとしましたが、システムは指定したロケールをサポートしていません。  
+# <a name="this-system-does-not-contain-support-for-the-locale-specified"></a><span data-ttu-id="31b75-102">このシステムには、指定されたロケールのサポートは含まれていません。</span><span class="sxs-lookup"><span data-stu-id="31b75-102">This system does not contain support for the Locale specified</span></span>
+<span data-ttu-id="31b75-103">`VbStrConv` 列挙型を使用しようとしましたが、システムは指定したロケールをサポートしていません。</span><span class="sxs-lookup"><span data-stu-id="31b75-103">You are attempting to use the `VbStrConv` enumeration, but your system does not support the specified locale.</span></span>  
   
-## <a name="to-correct-this-error"></a>このエラーを解決するには  
+## <a name="to-correct-this-error"></a><span data-ttu-id="31b75-104">このエラーを解決するには</span><span class="sxs-lookup"><span data-stu-id="31b75-104">To correct this error</span></span>  
   
-1.  ロケールをサポートするようにコンピューターをアップグレードするか、ロケールをサポートするコンピューターでアプリケーションを実行します。  
+1.  <span data-ttu-id="31b75-105">ロケールをサポートするようにコンピューターをアップグレードするか、ロケールをサポートするコンピューターでアプリケーションを実行します。</span><span class="sxs-lookup"><span data-stu-id="31b75-105">Upgrade the machine to support the locale, or run the application on a machine that supports it.</span></span>  
   
-## <a name="see-also"></a>関連項目  
- <xref:System.Globalization>   
- [NOTINBUILD VbStrConv 列挙型](http://msdn.microsoft.com/en-us/59f83dd9-6361-47df-a836-02ba9d4cb936)   
- [.NET Framework ベースの国際対応アプリケーションの概要](https://docs.microsoft.com/visualstudio/ide/introduction-to-international-applications-based-on-the-dotnet-framework)
+## <a name="see-also"></a><span data-ttu-id="31b75-106">関連項目</span><span class="sxs-lookup"><span data-stu-id="31b75-106">See Also</span></span>  
+ <span data-ttu-id="31b75-107"><xref:System.Globalization></span><span class="sxs-lookup"><span data-stu-id="31b75-107"><xref:System.Globalization></span></span>   
+<span data-ttu-id="31b75-108"> [NOTINBUILD VbStrConv 列挙型](http://msdn.microsoft.com/en-us/59f83dd9-6361-47df-a836-02ba9d4cb936) </span><span class="sxs-lookup"><span data-stu-id="31b75-108"> [NOTINBUILD VbStrConv Enumeration](http://msdn.microsoft.com/en-us/59f83dd9-6361-47df-a836-02ba9d4cb936) </span></span>  
+<span data-ttu-id="31b75-109"> [.NET Framework ベースの国際対応アプリケーションの概要](https://docs.microsoft.com/visualstudio/ide/introduction-to-international-applications-based-on-the-dotnet-framework)</span><span class="sxs-lookup"><span data-stu-id="31b75-109"> [Introduction to International Applications Based on the .NET Framework](https://docs.microsoft.com/visualstudio/ide/introduction-to-international-applications-based-on-the-dotnet-framework)</span></span>

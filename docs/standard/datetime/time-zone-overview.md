@@ -1,77 +1,64 @@
 ---
-title: "タイム ゾーンの概要 | Microsoft Docs"
-ms.custom: ""
-ms.date: "04/10/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "調整規則 [.NET Framework]"
-  - "あいまいな時刻 [.NET Framework]"
-  - "夏時間 [.NET Framework]"
-  - "固定規則 [.NET Framework]"
-  - "浮動規則 [.NET Framework]"
-  - "無効な時刻 [.NET Framework]"
-  - "タイム ゾーン [.NET Framework], タイム ゾーンの概要"
-  - "タイム ゾーン [.NET Framework], 作成"
-  - "タイム ゾーン [.NET Framework], 用語"
-  - "TimeZoneInfo クラス, TimeZoneInfo クラスの概要"
-  - "切り替え時刻 [.NET Framework]"
-ms.assetid: c4b7ed01-5e38-4959-a3b6-ef9765d6ccf1
-caps.latest.revision: 11
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 11
+title: "タイム ゾーンの概要"
+description: "タイム ゾーンの概要"
+keywords: .NET, .NET Core
+author: stevehoag
+ms.author: shoag
+ms.date: 08/16/2016
+ms.topic: article
+ms.prod: .net
+ms.technology: dotnet-standard
+ms.devlang: dotnet
+ms.assetid: e3a10f62-d403-4441-8621-adc964e32c07
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 90fe68f7f3c4b46502b5d3770b1a2d57c6af748a
+ms.openlocfilehash: 200d502d12750a28d2a54058f53b4bbef78973c7
+ms.contentlocale: ja-jp
+ms.lasthandoff: 03/02/2017
+
 ---
-# タイム ゾーンの概要
-<xref:System.TimeZoneInfo> クラスを使用すると、タイム ゾーンに対応したアプリケーションを簡単に作成できます。  <xref:System.TimeZone> クラスは、ローカル タイム ゾーンと世界協定時刻 \(UTC: Coordinated Universal Time\) の処理をサポートします。  <xref:System.TimeZoneInfo> クラスは、これら両方のゾーンに加えて、レジストリで情報が定義されている任意のタイム ゾーンもサポートします。  また、<xref:System.TimeZoneInfo> を使用すると、システムに情報のないカスタム タイム ゾーンを定義することもできます。  
-  
-## タイム ゾーンの基本事項  
- タイム ゾーンとは、同じ時間を使用する地理的な領域です。  必ずではありませんが、一般には、隣接するタイム ゾーンの時間差は 1 時間です。  世界のすべてのタイム ゾーンの時刻は、UTC からのオフセットとして表すことができます。  
-  
- 世界のタイム ゾーンの多くは、夏時間をサポートしています。  夏時間とは、日中の時間を最大にするために、春または初夏に時刻を 1 時間進めて、晩夏または秋に通常の \(標準の\) 時刻に戻すことです。  標準時刻に対するこのような変更は、調整規則と呼ばれます。  
-  
- 特定のタイム ゾーンにおける夏時間の開始および終了時の切り替えは、固定調整規則または浮動調整規則のいずれかで定義できます。  固定調整規則では、夏時間への切り替えや夏時間からの切り替えを毎年同じ日に行います。  たとえば、夏時間から標準時間への切り替えを毎年 10 月 25 日に行うのは、固定調整規則です。  これよりも一般的なのが浮動調整規則で、特定の月の特定の週の特定の曜日に、夏時間への切り替えや夏時間からの切り替えを行います。  たとえば、標準時間から夏時間への切り替えを、3 月の第 3 日曜日に行うのは、浮動調整規則です。  
-  
- 調整規則をサポートするタイム ゾーンでは、標準時間と夏時間の切り替えの際に、2 種類の異常な時刻、つまり無効な時刻とあいまいな時刻が発生します。  無効な時刻とは、標準時間から夏時間への切り替えによって発生する、存在しない時刻です。  たとえば、この遷移が発生し、日 2:00 で発生し、午前 3:00 の通常の間隔と午前 2:00 間の 2:59 に変更する時間の場合: 99 の場合は無効です。  あいまいな時刻とは、1 つのタイム ゾーン内の 2 つの異なる時刻に対応する可能性のある時刻です。  このような時刻は、夏時間から標準時間への切り替えによって発生します。  たとえば、この遷移が発生し、日 2:00 で発生し、午前 1:00 の通常の間隔と午前 1:00 間の 1:59 に変更する時間の場合: 99 の場合、標準時か夏時間数として解釈できます。  
-  
-## タイム ゾーンの用語  
- 次の表では、タイム ゾーンを使用するとき、およびタイム ゾーンに対応するアプリケーションを開発するときによく使用される用語を定義します。  
-  
-|語句|定義|  
-|--------|--------|  
-|調整規則|標準時間から夏時間への切り替え、および夏時間から標準時間への切り替えをいつ行うかを定義する規則。  各調整規則には、規則の適用期間を定義する開始日と終了日 \(たとえば、1986 年 1 月 1 日から 2006 年 12 月 31 日まで適用される調整規則\)、デルタ \(調整規則を適用した結果として標準時間から変化する時間数\)、および調整の期間中に切り替えを行う特定の日時に関する情報が含まれます。  切り替えは、固定規則または浮動規則に従って行うことができます。|  
-|あいまいな時刻|1 つのタイム ゾーン内の 2 つの異なる時刻に対応する可能性のある時刻。  このようなことは、あるタイム ゾーンで夏時間から標準時間に移行する際など、クロック時刻を元に戻すときに発生します。  たとえば、この遷移が発生し、日 2:00 で発生し、午前 1:00 の通常の間隔と午前 1:00 間の 1:59 に変更する時間の場合: 99 の場合、標準時か夏時間数として解釈できます。|  
-|固定規則|夏時間への切り替えまたは夏時間からの切り替えを特定の日付に設定する調整規則。  たとえば、夏時間から標準時間への切り替えを毎年 10 月 25 日に行うのは、固定調整規則です。|  
-|可変規則|夏時間への切り替えまたは夏時間からの切り替えを、特定の月の特定の週の特定の曜日に設定する調整規則。  たとえば、標準時間から夏時間への切り替えを、3 月の第 3 日曜日に行うのは、浮動調整規則です。|  
-|無効な時刻|標準時間から夏時間への切り替えによって発生する、存在しない時刻。  このようなことは、あるタイム ゾーンで標準時間から夏時間に移行する際など、クロック時刻を先に進めるときに発生します。  たとえば、この遷移が発生し、日 2:00 で発生し、午前 3:00 の通常の間隔と午前 2:00 間の 2:59 に変更する時間の場合: 99 の場合は無効です。|  
-|切り替え時間|特定のタイム ゾーンで実施される夏時間と標準時間との間の切り替えなど、特定の時間切り替えに関する情報。|  
-  
-## タイム ゾーンと TimeZoneInfo クラス  
- .NET Framework では、<xref:System.TimeZoneInfo> オブジェクトがタイム ゾーンを表します。  <xref:System.TimeZoneInfo> クラスに含まれる <xref:System.TimeZoneInfo.GetAdjustmentRules%2A> メソッドは、<xref:System.TimeZoneInfo.AdjustmentRule> オブジェクトの配列を返します。  この配列の各要素は、特定の期間における夏時間の切り替えに関する情報を提供します \(夏時間をサポートしないタイム ゾーンの場合、メソッドは空の配列を返します\)。各 <xref:System.TimeZoneInfo.AdjustmentRule> オブジェクトには <xref:System.TimeZoneInfo.AdjustmentRule.DaylightTransitionStart%2A> プロパティと <xref:System.TimeZoneInfo.AdjustmentRule.DaylightTransitionEnd%2A> プロパティがあり、夏時間への切り替えおよび夏時間からの切り替えを行う特定の日時を定義します。  <xref:System.TimeZoneInfo.TransitionTime.IsFixedDateRule%2A> プロパティは、切り替えが固定か浮動かを示します。  
-  
- .NET Framework は、Windows オペレーティング システムによって提供されてレジストリに格納されているタイム ゾーン情報に依存します。  地球には多くのタイム ゾーンがあるため、既存の全タイム ゾーンをレジストリで表すことはできません。  さらに、レジストリは動的な構造なので、定義されているタイム ゾーンが追加または削除される場合があります。  そして、レジストリにタイム ゾーンの履歴データが残されているとは限りません。  たとえば、Windows XP では、レジストリには 1 セットのタイム ゾーン調整に関するデータしか格納されません。  Windows Vista では、動的なタイム ゾーン データがサポートされています。つまり、1 つのタイム ゾーンに複数の調整規則を保持することができ、それぞれの規則は特定の年範囲に適用されます。  ただし、Windows Vista のレジストリで定義されていて、夏時間をサポートするほとんどのタイム ゾーンには、1 つまたは 2 つの調整規則しか定義されていません。  
-  
- <xref:System.TimeZoneInfo> クラスがレジストリに依存するということは、タイム ゾーンに対応するアプリケーションにとって、特定のタイム ゾーンがレジストリで定義されているかどうかは不確定であることを意味します。  したがって、特定のタイム ゾーン \(ローカル タイム ゾーンまたは UTC を表すタイム ゾーンを除く\) をインスタンス化しようとする場合は、例外処理を行う必要があります。  また、必要な <xref:System.TimeZoneInfo> オブジェクトをレジストリからインスタンス化できない場合でも、アプリケーションが動作を続けられるようにするなんらかの手段を用意する必要があります。  
-  
- 必要なタイム ゾーンがない状況に対応できるように、<xref:System.TimeZoneInfo> クラスには <xref:System.TimeZoneInfo.CreateCustomTimeZone%2A> メソッドが含まれており、レジストリで見つからないカスタム タイム ゾーンを作成するために使用できます。  カスタム タイム ゾーンの作成の詳細については、「[方法 : 調整規則のないタイム ゾーンを作成する](../../../docs/standard/datetime/create-time-zones-without-adjustment-rules.md)」および「[方法 : 調整規則のあるタイム ゾーンを作成する](../../../docs/standard/datetime/create-time-zones-with-adjustment-rules.md)」を参照してください。  さらに、<xref:System.TimeZoneInfo.ToSerializedString%2A> メソッドを使用すると、新しく作成したタイム ゾーンを文字列に変換し、データ ストア \(データベース、テキスト ファイル、レジストリ、アプリケーション リソースなど\) に保存できます。  その後で <xref:System.TimeZoneInfo.FromSerializedString%2A> メソッドを使用して、この文字列を <xref:System.TimeZoneInfo> オブジェクトに変換して戻すことができます。  詳細については、「[方法 : 埋め込みリソースにタイム ゾーンを保存する](../../../docs/standard/datetime/save-time-zones-to-an-embedded-resource.md)」および「[方法 : 埋め込みリソースからタイム ゾーンを復元する](../../../docs/standard/datetime/restore-time-zones-from-an-embedded-resource.md)」を参照してください。  
-  
- 各タイム ゾーンは、UTC からのベース オフセットおよび既存の調整規則を反映する UTC からのオフセットによって表されるので、あるタイム ゾーンの時刻は、他のタイム ゾーンの時刻に簡単に変換できます。  この目的のため、<xref:System.TimeZoneInfo> オブジェクトには次のような変換メソッドが含まれます。  
-  
--   <xref:System.TimeZoneInfo.ConvertTimeFromUtc%2A> は、指定したタイム ゾーンの時刻に UTC を変換します。  
-  
--   <xref:System.TimeZoneInfo.ConvertTimeToUtc%2A> は、指定したタイム ゾーンの時刻を UTC に変換します。  
-  
--   <xref:System.TimeZoneInfo.ConvertTime%2A> は、指定したあるタイム ゾーンの時刻を、指定した別のタイム ゾーンの時刻に変換します。  
-  
--   <xref:System.TimeZoneInfo.ConvertTimeBySystemTimeZoneId%2A> は、パラメーターとして \(<xref:System.TimeZoneInfo> オブジェクトではなく\) タイム ゾーン ID を使用し、指定したあるタイム ゾーンの時刻を、指定した別のタイム ゾーンの時刻に変換します。  
-  
- タイム ゾーン間での時刻の変換の詳細については、「[タイム ゾーン間での時刻の変換](../../../docs/standard/datetime/converting-between-time-zones.md)」を参照してください。  
-  
-## 参照  
- [日付、時刻、およびタイム ゾーン](../../../docs/standard/datetime/index.md)
+
+# <a name="time-zone-overview"></a><span data-ttu-id="d01ae-104">タイム ゾーンの概要</span><span class="sxs-lookup"><span data-stu-id="d01ae-104">Time zone overview</span></span>
+
+<span data-ttu-id="d01ae-105">[System.TimeZoneInfo](xref:System.TimeZoneInfo) クラスを使用すると、タイム ゾーン対応アプリケーションを簡単に作成できます。</span><span class="sxs-lookup"><span data-stu-id="d01ae-105">The [System.TimeZoneInfo](xref:System.TimeZoneInfo) class simplifies the creation of time zone-aware applications.</span></span> <span data-ttu-id="d01ae-106">[TimeZoneInfo](xref:System.TimeZoneInfo) クラスは、ローカル タイム ゾーンと世界協定時刻 (UTC) での使用をサポートしています。また、レジストリに事前に定義されている情報については、任意のタイム ゾーンを使用できます。</span><span class="sxs-lookup"><span data-stu-id="d01ae-106">The [TimeZoneInfo](xref:System.TimeZoneInfo) class supports working with the local time zone and Coordinated Universal Time (UTC), as well as any time zone about which information is predefined in the registry.</span></span> <span data-ttu-id="d01ae-107">[TimeZoneInfo](xref:System.TimeZoneInfo) を使用して、システムに情報がないカスタムのタイム ゾーンを定義することもできます。</span><span class="sxs-lookup"><span data-stu-id="d01ae-107">You can also use [TimeZoneInfo](xref:System.TimeZoneInfo) to define custom time zones that the system has no information about.</span></span>
+
+## <a name="time-zone-essentials"></a><span data-ttu-id="d01ae-108">タイム ゾーンの基本</span><span class="sxs-lookup"><span data-stu-id="d01ae-108">Time Zone Essentials</span></span>
+
+<span data-ttu-id="d01ae-109">タイム ゾーンは、同じ時刻が使用されている地域です。</span><span class="sxs-lookup"><span data-stu-id="d01ae-109">A time zone is a geographical region in which the same time is used.</span></span> <span data-ttu-id="d01ae-110">常にではありませんが、通常、隣接するタイム ゾーンは&1; 時間違いです。</span><span class="sxs-lookup"><span data-stu-id="d01ae-110">Typically, but not always, adjacent time zones are one hour apart.</span></span> <span data-ttu-id="d01ae-111">世界のタイム ゾーンの時刻は、世界協定時刻 (UTC) からのオフセットとして表されます。</span><span class="sxs-lookup"><span data-stu-id="d01ae-111">The time in any of the world's time zones can be expressed as an offset from Coordinated Universal Time (UTC).</span></span>
+
+<span data-ttu-id="d01ae-112">世界のタイム ゾーンの多くは、夏時間をサポートしています。</span><span class="sxs-lookup"><span data-stu-id="d01ae-112">Many of the world's time zones support daylight saving time.</span></span> <span data-ttu-id="d01ae-113">夏時間では、春や初夏には時刻を&1; 時間進め、晩夏や秋には通常 (または標準) の時間に戻すことで、日中の時間を最大化しようと試みます。</span><span class="sxs-lookup"><span data-stu-id="d01ae-113">Daylight saving time tries to maximize daylight hours by advancing the time forward by one hour in the spring or early summer, and returning to the normal (or standard) time in the late summer or fall.</span></span> <span data-ttu-id="d01ae-114">こうした標準時間前後の変更は、調整規則と呼ばれます。</span><span class="sxs-lookup"><span data-stu-id="d01ae-114">These changes to and from standard time are known as adjustment rules.</span></span>
+
+<span data-ttu-id="d01ae-115">特定のタイム ゾーンの夏時間前後の移行は、固定調整規則または浮動調整規則で定義できます。</span><span class="sxs-lookup"><span data-stu-id="d01ae-115">The transition to and from daylight saving time in a particular time zone can be defined either by a fixed or a floating adjustment rule.</span></span> <span data-ttu-id="d01ae-116">固定調整規則では、毎年、夏時間前後の移行が行われる特定の日付を設定します。</span><span class="sxs-lookup"><span data-stu-id="d01ae-116">A fixed adjustment rule sets a particular date on which the transition to or from daylight saving time occurs each year.</span></span> <span data-ttu-id="d01ae-117">たとえば、毎年 10 月 25 日に行われる夏時間から標準時間への移行は、固定調整規則に従います。</span><span class="sxs-lookup"><span data-stu-id="d01ae-117">For example, a transition from daylight saving time to standard time that occurs each year on October 25 follows a fixed adjustment rule.</span></span> <span data-ttu-id="d01ae-118">浮動調整規則の方がはるかに一般的です。浮動調整規則では、夏時間への移行、または夏時間からの移行について特定の月の特定の週の特定の曜日が設定されます。</span><span class="sxs-lookup"><span data-stu-id="d01ae-118">Much more common are floating adjustment rules, which set a particular day of a particular week of a particular month for the transition to or from daylight saving time.</span></span> <span data-ttu-id="d01ae-119">たとえば、3 月の第&3; 日曜日に行われる標準時間から夏時間への移行は、浮動調整規則に従います。</span><span class="sxs-lookup"><span data-stu-id="d01ae-119">For example, a transition from standard time to daylight saving time that occurs on the third Sunday of March follows a floating adjustment rule.</span></span>
+
+<span data-ttu-id="d01ae-120">調整規則をサポートするタイム ゾーンの場合、夏時間前後の移行によって、2 つの変則的な時刻が生じます。無効な時刻とあいまいな時刻です。</span><span class="sxs-lookup"><span data-stu-id="d01ae-120">For time zones that support adjustment rules, the transition to and from daylight saving time creates two kinds of anomalous times: invalid times and ambiguous times.</span></span> <span data-ttu-id="d01ae-121">無効な時刻は、標準時間から夏時間への移行で生じる存在しない時刻です。</span><span class="sxs-lookup"><span data-stu-id="d01ae-121">An invalid time is a nonexistent time created by the transition from standard time to daylight saving time.</span></span> <span data-ttu-id="d01ae-122">たとえば、移行が特定の日付の午前 2:00 に行われ、</span><span class="sxs-lookup"><span data-stu-id="d01ae-122">For example, if this transition occurs on a particular day at 2:00 A.M.</span></span> <span data-ttu-id="d01ae-123">時刻が午前 3:00 に変更される場合、午前 2:00 から</span><span class="sxs-lookup"><span data-stu-id="d01ae-123">and causes the time to change to 3:00 A.M., each time interval between 2:00 A.M.</span></span> <span data-ttu-id="d01ae-124">午前 2:59:99 までの時刻は</span><span class="sxs-lookup"><span data-stu-id="d01ae-124">and 2:59:99 A.M.</span></span> <span data-ttu-id="d01ae-125">無効です。</span><span class="sxs-lookup"><span data-stu-id="d01ae-125">is invalid.</span></span> <span data-ttu-id="d01ae-126">あいまいな時刻は、1 つのタイム ゾーンで&2; つの時刻にマップできる時刻です。</span><span class="sxs-lookup"><span data-stu-id="d01ae-126">An ambiguous time is a time that can be mapped to two different times in a single time zone.</span></span> <span data-ttu-id="d01ae-127">あいまいな時刻は夏時間から標準時間への移行で生じます。</span><span class="sxs-lookup"><span data-stu-id="d01ae-127">It is created by the transition from daylight saving time to standard time.</span></span> <span data-ttu-id="d01ae-128">たとえば、移行が特定の日付の午前 2:00 に行われ、</span><span class="sxs-lookup"><span data-stu-id="d01ae-128">For example, if this transition occurs on a particular day at 2:00 A.M.</span></span> <span data-ttu-id="d01ae-129">時刻が午前 1:00 に変更される場合、午前 1:00 から</span><span class="sxs-lookup"><span data-stu-id="d01ae-129">and causes the time to change to 1:00 A.M., each time interval between 1:00 A.M.</span></span> <span data-ttu-id="d01ae-130">午前 1:59:99 までの時刻は</span><span class="sxs-lookup"><span data-stu-id="d01ae-130">and 1:59:99 A.M.</span></span> <span data-ttu-id="d01ae-131">標準時間または夏時間のいずれにでも解釈できます。</span><span class="sxs-lookup"><span data-stu-id="d01ae-131">can be interpreted as either a standard time or a daylight saving time.</span></span> 
+
+## <a name="time-zone-terminology"></a><span data-ttu-id="d01ae-132">タイム ゾーンの用語</span><span class="sxs-lookup"><span data-stu-id="d01ae-132">Time Zone Terminology</span></span>
+
+<span data-ttu-id="d01ae-133">次の表は、タイム ゾーンを使用し、タイム ゾーン対応アプリケーションを開発するときに一般的に使用される用語の定義一覧です。</span><span class="sxs-lookup"><span data-stu-id="d01ae-133">The following table defines terms commonly used when working with time zones and developing time zone-aware applications.</span></span>
+
+<span data-ttu-id="d01ae-134">用語</span><span class="sxs-lookup"><span data-stu-id="d01ae-134">Term</span></span> | <span data-ttu-id="d01ae-135">定義</span><span class="sxs-lookup"><span data-stu-id="d01ae-135">Definition</span></span>
+---- | ----------
+<span data-ttu-id="d01ae-136">調整規則</span><span class="sxs-lookup"><span data-stu-id="d01ae-136">Adjustment rule</span></span> | <span data-ttu-id="d01ae-137">標準時間から夏時間へ、および夏時間から標準時間への移行が行われるタイミングを定義した規則。</span><span class="sxs-lookup"><span data-stu-id="d01ae-137">A rule that defines when the transition from standard time to daylight saving time and back from daylight saving time to standard time occurs.</span></span> <span data-ttu-id="d01ae-138">各調整規則には、規則を適用する期間を定義する開始日と終了日 (たとえば、1986 年 1 月 1 日から 2020 年 12 月 31 日に調整規則が適用されます)、差分 (調整規則を適用した結果として標準時間が変更される時間)、調整期間中に移行が行われる特定の日付と時刻に関する情報が含まれています。</span><span class="sxs-lookup"><span data-stu-id="d01ae-138">Each adjustment rule has a start and end date that defines when the rule is in place (for example, the adjustment rule is in place from January 1, 1986, to December 31, 2020), a delta (the amount of time by which the standard time changes as a result of the application of the adjustment rule), and information about the specific date and time that the transitions are to occur during the adjustment period.</span></span> <span data-ttu-id="d01ae-139">移行は、固定規則または浮動規則に従う可能性があります。</span><span class="sxs-lookup"><span data-stu-id="d01ae-139">Transitions can follow either a fixed rule or a floating rule.</span></span>
+<span data-ttu-id="d01ae-140">あいまいな時刻</span><span class="sxs-lookup"><span data-stu-id="d01ae-140">Ambiguous time</span></span> | <span data-ttu-id="d01ae-141">1 つのタイム ゾーンで&2; つの時刻にマップできる時刻です。</span><span class="sxs-lookup"><span data-stu-id="d01ae-141">A time that can be mapped to two different times in a single time zone.</span></span> <span data-ttu-id="d01ae-142">あいまいな時刻は、あるタイム ゾーンの夏時間から標準時間に移行する際など、時計の時刻を前に戻すときに発生します。</span><span class="sxs-lookup"><span data-stu-id="d01ae-142">It occurs when the clock time is adjusted back in time, such as during the transition from a time zone's daylight saving time to its standard time.</span></span> <span data-ttu-id="d01ae-143">たとえば、移行が特定の日付の午前 2:00 に行われ、</span><span class="sxs-lookup"><span data-stu-id="d01ae-143">For example, if this transition occurs on a particular day at 2:00 A.M.</span></span> <span data-ttu-id="d01ae-144">時刻が午前 1:00 に変更される場合、午前 1:00 から</span><span class="sxs-lookup"><span data-stu-id="d01ae-144">and causes the time to change to 1:00 A.M., each time interval between 1:00 A.M.</span></span> <span data-ttu-id="d01ae-145">午前 1:59:99 までの時刻は</span><span class="sxs-lookup"><span data-stu-id="d01ae-145">and 1:59:99 A.M.</span></span> <span data-ttu-id="d01ae-146">標準時間または夏時間のいずれにでも解釈できます。</span><span class="sxs-lookup"><span data-stu-id="d01ae-146">can be interpreted as either a standard time or a daylight saving time.</span></span> 
+<span data-ttu-id="d01ae-147">固定規則</span><span class="sxs-lookup"><span data-stu-id="d01ae-147">Fixed rule</span></span> | <span data-ttu-id="d01ae-148">夏時間前後の移行について特定の日付を設定する調整規則。</span><span class="sxs-lookup"><span data-stu-id="d01ae-148">An adjustment rule that sets a particular date for the transition to or from daylight saving time.</span></span> <span data-ttu-id="d01ae-149">たとえば、毎年 10 月 25 日に行われる夏時間から標準時間への移行は、固定調整規則に従います。</span><span class="sxs-lookup"><span data-stu-id="d01ae-149">For example, a transition from daylight saving time to standard time that occurs each year on October 25 follows a fixed adjustment rule.</span></span>
+<span data-ttu-id="d01ae-150">浮動規則</span><span class="sxs-lookup"><span data-stu-id="d01ae-150">Floating rule</span></span> | <span data-ttu-id="d01ae-151">浮動調整規則の方がはるかに一般的です。浮動調整規則では、夏時間への移行、または夏時間からの移行について特定の月の特定の週の特定の曜日が設定されます。</span><span class="sxs-lookup"><span data-stu-id="d01ae-151">An adjustment rule that sets a particular day of a particular week of a particular month for the transition to or from daylight saving time.</span></span> <span data-ttu-id="d01ae-152">たとえば、3 月の第&3; 日曜日に行われる標準時間から夏時間への移行は、浮動調整規則に従います。</span><span class="sxs-lookup"><span data-stu-id="d01ae-152">For example, a transition from standard time to daylight saving time that occurs on the third Sunday of March follows a floating adjustment rule.</span></span>
+<span data-ttu-id="d01ae-153">無効な時刻</span><span class="sxs-lookup"><span data-stu-id="d01ae-153">Invalid time</span></span> | <span data-ttu-id="d01ae-154">標準時間から夏時間への移行中に生じる存在しない時刻。</span><span class="sxs-lookup"><span data-stu-id="d01ae-154">A nonexistent time that is an artifact of the transition from standard time to daylight saving time.</span></span> <span data-ttu-id="d01ae-155">無効な時刻は、あるタイム ゾーンの標準時間から夏時間に移行する際など、時計の時刻を前に進めるときに発生します。</span><span class="sxs-lookup"><span data-stu-id="d01ae-155">It occurs when the clock time is adjusted forward in time, such as during the transition from a time zone's standard time to its daylight saving time.</span></span> <span data-ttu-id="d01ae-156">たとえば、移行が特定の日付の午前 2:00 に行われ、</span><span class="sxs-lookup"><span data-stu-id="d01ae-156">For example, if this transition occurs on a particular day at 2:00 A.M.</span></span> <span data-ttu-id="d01ae-157">時刻が午前 3:00 に変更される場合、午前 2:00 から</span><span class="sxs-lookup"><span data-stu-id="d01ae-157">and causes the time to change to 3:00 A.M., each time interval between 2:00 A.M.</span></span> <span data-ttu-id="d01ae-158">午前 2:59:99 までの時刻は</span><span class="sxs-lookup"><span data-stu-id="d01ae-158">and 2:59:99 A.M.</span></span> <span data-ttu-id="d01ae-159">無効です。</span><span class="sxs-lookup"><span data-stu-id="d01ae-159">is invalid.</span></span>
+<span data-ttu-id="d01ae-160">移行時間</span><span class="sxs-lookup"><span data-stu-id="d01ae-160">Transition time</span></span> | <span data-ttu-id="d01ae-161">特定のタイム ゾーンで実施される夏時間と標準時間の切り替えなど、特定の時間切り替えに関する情報。</span><span class="sxs-lookup"><span data-stu-id="d01ae-161">Information about a specific time change, such as the change from daylight saving time to standard time or vice versa, in a particular time zone.</span></span>
+
+## <a name="time-zones-and-the-timezoneinfo-class"></a><span data-ttu-id="d01ae-162">タイム ゾーンと TimeZoneInfo クラス</span><span class="sxs-lookup"><span data-stu-id="d01ae-162">Time Zones and the TimeZoneInfo Class</span></span>
+
+<span data-ttu-id="d01ae-163">.NET の [System.TimeZoneInfo](xref:System.TimeZoneInfo) オブジェクトは、オペレーティング システムで提供されている情報に基づいて、タイム ゾーンを表します。</span><span class="sxs-lookup"><span data-stu-id="d01ae-163">In .NET, a [System.TimeZoneInfo](xref:System.TimeZoneInfo) object represents a time zone, based on information provided by the operating system.</span></span> <span data-ttu-id="d01ae-164">オペレーティング システム上の [TimeZoneInfo](xref:System.TimeZoneInfo) クラスの依存関係は、タイム ゾーン対応アプリケーションが、すべてのオペレーティング システムで特定のタイム ゾーンが定義されていることを特定できないことを示します。</span><span class="sxs-lookup"><span data-stu-id="d01ae-164">The dependence of the [TimeZoneInfo](xref:System.TimeZoneInfo) class on the operating system means that a time zone-aware application cannot be certain that a particular time zone is defined on all operating systems.</span></span> <span data-ttu-id="d01ae-165">そのため、(ローカルのタイム ゾーンまたは UTC を示すタイム ゾーン以外の) 特定のタイム ゾーンをインスタンス化する場合、例外処理を使用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="d01ae-165">As a result, the attempt to instantiate a specific time zone (other than the local time zone or the time zone that represents UTC) should use exception handling.</span></span> <span data-ttu-id="d01ae-166">また、必要な [TimeZoneInfo](xref:System.TimeZoneInfo) オブジェクトをインスタンス化できない場合でもアプリケーションを続行できる何らかの方法も用意する必要があります。</span><span class="sxs-lookup"><span data-stu-id="d01ae-166">It should also provide some method of letting the application to continue if a required [TimeZoneInfo](xref:System.TimeZoneInfo) object cannot be instantiated.</span></span>
+
+<span data-ttu-id="d01ae-167">各タイム ゾーンは、UTC からのベース オフセットと、既存の調整規則を反映した UTC からのオフセットによって表されるため、あるタイム ゾーンの時刻は、簡単に別のタイム ゾーンの時間に変換できます。</span><span class="sxs-lookup"><span data-stu-id="d01ae-167">Because each time zone is characterized by a base offset from UTC, as well as by an offset from UTC that reflects any existing adjustment rules, a time in one time zone can be easily converted to the time in another time zone.</span></span> <span data-ttu-id="d01ae-168">この目的で、[TimeZoneInfo](xref:System.TimeZoneInfo) オブジェクトには、次のようにいくつかの変換メソッドが含まれています。</span><span class="sxs-lookup"><span data-stu-id="d01ae-168">For this purpose, the [TimeZoneInfo](xref:System.TimeZoneInfo) object includes several conversion methods, including:</span></span>
+
+* <span data-ttu-id="d01ae-169">[ConvertTime(DateTime, TimeZoneInfo)](xref:System.TimeZoneInfo.ConvertTime(System.DateTime,System.TimeZoneInfo))。[System.DateTime](xref:System.DateTime) を特定のタイム ゾーンの時間に変換します。</span><span class="sxs-lookup"><span data-stu-id="d01ae-169">[ConvertTime(DateTime, TimeZoneInfo)](xref:System.TimeZoneInfo.ConvertTime(System.DateTime,System.TimeZoneInfo)), which converts a [System.DateTime](xref:System.DateTime) to the time in a particular time zone.</span></span>
+
+* <span data-ttu-id="d01ae-170">[ConvertTime(DateTime, TimeZoneInfo, TimeZoneInfo)](xref:System.TimeZoneInfo.ConvertTime(System.DateTime,System.TimeZoneInfo,System.TimeZoneInfo))。[DateTime](xref:System.DateTime) をあるタイム ゾーンから別のタイム ゾーンに変換します。</span><span class="sxs-lookup"><span data-stu-id="d01ae-170">[ConvertTime(DateTime, TimeZoneInfo, TimeZoneInfo)](xref:System.TimeZoneInfo.ConvertTime(System.DateTime,System.TimeZoneInfo,System.TimeZoneInfo)), which converts a [DateTime](xref:System.DateTime) from one time zone to another.</span></span>
+
+* <span data-ttu-id="d01ae-171">[ConvertTime(DateTimeOffset, TimeZoneInfo)](xref:System.TimeZoneInfo.ConvertTime(System.DateTimeOffset,System.TimeZoneInfo))。[System.DateTimeOffset](xref:System.DateTimeOffset) を特定のタイム ゾーンの時間に変換します。</span><span class="sxs-lookup"><span data-stu-id="d01ae-171">[ConvertTime(DateTimeOffset, TimeZoneInfo)](xref:System.TimeZoneInfo.ConvertTime(System.DateTimeOffset,System.TimeZoneInfo)), which converts a [System.DateTimeOffset](xref:System.DateTimeOffset) to the time in a particular time zone.</span></span> 
+
+<span data-ttu-id="d01ae-172">タイム ゾーン間の時間を変換する方法の詳細については、「[タイム ゾーン間での時刻の変換](converting-between-time-zones.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="d01ae-172">For details on converting times between time zones, see [Converting times between time zones](converting-between-time-zones.md).</span></span>
+
+## <a name="see-also"></a><span data-ttu-id="d01ae-173">関連項目</span><span class="sxs-lookup"><span data-stu-id="d01ae-173">See Also</span></span>
+
+[<span data-ttu-id="d01ae-174">日付、時刻およびタイム ゾーン</span><span class="sxs-lookup"><span data-stu-id="d01ae-174">Dates, times, and time zones</span></span>](index.md)

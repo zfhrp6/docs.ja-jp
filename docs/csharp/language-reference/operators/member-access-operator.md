@@ -38,38 +38,38 @@ ms.contentlocale: ja-jp
 ms.lasthandoff: 07/28/2017
 
 ---
-# <a name="-operator-c-reference"></a>」を参照してください。 演算子 (C# リファレンス)
-ドット演算子 (`.`) は、メンバー アクセスに使用されます。 ドット演算子は、型または名前空間のメンバーを指定します。 たとえば、ドット演算子は、.NET Framework クラス ライブラリ内の特定のメソッドにアクセスするために使用されます。  
+# <a name="-operator-c-reference"></a><span data-ttu-id="47680-103">」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="47680-103">.</span></span> <span data-ttu-id="47680-104">演算子 (C# リファレンス)</span><span class="sxs-lookup"><span data-stu-id="47680-104">Operator (C# Reference)</span></span>
+<span data-ttu-id="47680-105">ドット演算子 (`.`) は、メンバー アクセスに使用されます。</span><span class="sxs-lookup"><span data-stu-id="47680-105">The dot operator (`.`) is used for member access.</span></span> <span data-ttu-id="47680-106">ドット演算子は、型または名前空間のメンバーを指定します。</span><span class="sxs-lookup"><span data-stu-id="47680-106">The dot operator specifies a member of a type or namespace.</span></span> <span data-ttu-id="47680-107">たとえば、ドット演算子は、.NET Framework クラス ライブラリ内の特定のメソッドにアクセスするために使用されます。</span><span class="sxs-lookup"><span data-stu-id="47680-107">For example, the dot operator is used to access specific methods within the .NET Framework class libraries:</span></span>  
   
- [!code-cs[csRefOperators#16](../../../csharp/language-reference/operators/codesnippet/CSharp/member-access-operator_1.cs)]  
+ <span data-ttu-id="47680-108">[!code-cs[csRefOperators#16](../../../csharp/language-reference/operators/codesnippet/CSharp/member-access-operator_1.cs)]</span><span class="sxs-lookup"><span data-stu-id="47680-108">[!code-cs[csRefOperators#16](../../../csharp/language-reference/operators/codesnippet/CSharp/member-access-operator_1.cs)]</span></span>  
   
- たとえば、次のクラスを考えます。  
+ <span data-ttu-id="47680-109">たとえば、次のクラスを考えます。</span><span class="sxs-lookup"><span data-stu-id="47680-109">For example, consider the following class:</span></span>  
   
- [!code-cs[csRefOperators#17](../../../csharp/language-reference/operators/codesnippet/CSharp/member-access-operator_2.cs)]  
+ <span data-ttu-id="47680-110">[!code-cs[csRefOperators#17](../../../csharp/language-reference/operators/codesnippet/CSharp/member-access-operator_2.cs)]</span><span class="sxs-lookup"><span data-stu-id="47680-110">[!code-cs[csRefOperators#17](../../../csharp/language-reference/operators/codesnippet/CSharp/member-access-operator_2.cs)]</span></span>  
   
- [!code-cs[csRefOperators#18](../../../csharp/language-reference/operators/codesnippet/CSharp/member-access-operator_3.cs)]  
+ <span data-ttu-id="47680-111">[!code-cs[csRefOperators#18](../../../csharp/language-reference/operators/codesnippet/CSharp/member-access-operator_3.cs)]</span><span class="sxs-lookup"><span data-stu-id="47680-111">[!code-cs[csRefOperators#18](../../../csharp/language-reference/operators/codesnippet/CSharp/member-access-operator_3.cs)]</span></span>  
   
- `s` 変数には 2 つのメンバー (`a` と `b`) があり、それらのメンバーにアクセスするために、ドット演算子を使用します。  
+ <span data-ttu-id="47680-112">`s` 変数には 2 つのメンバー (`a` と `b`) があり、それらのメンバーにアクセスするために、ドット演算子を使用します。</span><span class="sxs-lookup"><span data-stu-id="47680-112">The variable `s` has two members, `a` and `b`; to access them, use the dot operator:</span></span>  
   
- [!code-cs[csRefOperators#19](../../../csharp/language-reference/operators/codesnippet/CSharp/member-access-operator_4.cs)]  
+ <span data-ttu-id="47680-113">[!code-cs[csRefOperators#19](../../../csharp/language-reference/operators/codesnippet/CSharp/member-access-operator_4.cs)]</span><span class="sxs-lookup"><span data-stu-id="47680-113">[!code-cs[csRefOperators#19](../../../csharp/language-reference/operators/codesnippet/CSharp/member-access-operator_4.cs)]</span></span>  
   
- ドットは、修飾名を形成するためにも使用されます。この修飾名は、たとえば、属している名前空間やインターフェイスを指定する名前です。  
+ <span data-ttu-id="47680-114">ドットは、修飾名を形成するためにも使用されます。この修飾名は、たとえば、属している名前空間やインターフェイスを指定する名前です。</span><span class="sxs-lookup"><span data-stu-id="47680-114">The dot is also used to form qualified names, which are names that specify the namespace or interface, for example, to which they belong.</span></span>  
   
- [!code-cs[csRefOperators#20](../../../csharp/language-reference/operators/codesnippet/CSharp/member-access-operator_5.cs)]  
+ <span data-ttu-id="47680-115">[!code-cs[csRefOperators#20](../../../csharp/language-reference/operators/codesnippet/CSharp/member-access-operator_5.cs)]</span><span class="sxs-lookup"><span data-stu-id="47680-115">[!code-cs[csRefOperators#20](../../../csharp/language-reference/operators/codesnippet/CSharp/member-access-operator_5.cs)]</span></span>  
   
- ディレクティブを使用すると、オプションで名前を限定することができます。  
+ <span data-ttu-id="47680-116">ディレクティブを使用すると、オプションで名前を限定することができます。</span><span class="sxs-lookup"><span data-stu-id="47680-116">The using directive makes some name qualification optional:</span></span>  
   
- [!code-cs[csRefOperators#21](../../../csharp/language-reference/operators/codesnippet/CSharp/member-access-operator_6.cs)]  
+ <span data-ttu-id="47680-117">[!code-cs[csRefOperators#21](../../../csharp/language-reference/operators/codesnippet/CSharp/member-access-operator_6.cs)]</span><span class="sxs-lookup"><span data-stu-id="47680-117">[!code-cs[csRefOperators#21](../../../csharp/language-reference/operators/codesnippet/CSharp/member-access-operator_6.cs)]</span></span>  
   
- ただし、識別子があいまいな場合は、修飾する必要があります。  
+ <span data-ttu-id="47680-118">ただし、識別子があいまいな場合は、修飾する必要があります。</span><span class="sxs-lookup"><span data-stu-id="47680-118">But when an identifier is ambiguous, it must be qualified:</span></span>  
   
- [!code-cs[csRefOperators#22](../../../csharp/language-reference/operators/codesnippet/CSharp/member-access-operator_7.cs)]  
+ <span data-ttu-id="47680-119">[!code-cs[csRefOperators#22](../../../csharp/language-reference/operators/codesnippet/CSharp/member-access-operator_7.cs)]</span><span class="sxs-lookup"><span data-stu-id="47680-119">[!code-cs[csRefOperators#22](../../../csharp/language-reference/operators/codesnippet/CSharp/member-access-operator_7.cs)]</span></span>  
   
-## <a name="c-language-specification"></a>C# 言語仕様  
+## <a name="c-language-specification"></a><span data-ttu-id="47680-120">C# 言語仕様</span><span class="sxs-lookup"><span data-stu-id="47680-120">C# Language Specification</span></span>  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
-## <a name="see-also"></a>関連項目  
- [C# リファレンス](../../../csharp/language-reference/index.md)   
- [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
- [C# 演算子](../../../csharp/language-reference/operators/index.md)
+## <a name="see-also"></a><span data-ttu-id="47680-121">関連項目</span><span class="sxs-lookup"><span data-stu-id="47680-121">See Also</span></span>  
+ <span data-ttu-id="47680-122">[C# リファレンス](../../../csharp/language-reference/index.md) </span><span class="sxs-lookup"><span data-stu-id="47680-122">[C# Reference](../../../csharp/language-reference/index.md) </span></span>  
+ <span data-ttu-id="47680-123">[C# プログラミング ガイド](../../../csharp/programming-guide/index.md) </span><span class="sxs-lookup"><span data-stu-id="47680-123">[C# Programming Guide](../../../csharp/programming-guide/index.md) </span></span>  
+ [<span data-ttu-id="47680-124">C# 演算子</span><span class="sxs-lookup"><span data-stu-id="47680-124">C# Operators</span></span>](../../../csharp/language-reference/operators/index.md)
 

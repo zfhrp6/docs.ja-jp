@@ -37,14 +37,14 @@ ms.contentlocale: ja-jp
 ms.lasthandoff: 07/28/2017
 
 ---
-# <a name="global-c-reference"></a>global (C# リファレンス)
-[:: 演算子](../../../csharp/language-reference/operators/namespace-alias-qualifer.md)の前に来るとき、`global` コンテキスト キーワードは、C# プログラムの既定の名前空間であるグローバル名前空間を参照し、そうでない場合は名前のないグローバル名前空間を参照します。 詳細については、「[方法: グローバル名前空間エイリアスを使用する](../../../csharp/programming-guide/namespaces/how-to-use-the-global-namespace-alias.md)」を参照してください。  
+# <a name="global-c-reference"></a><span data-ttu-id="a2bd1-102">global (C# リファレンス)</span><span class="sxs-lookup"><span data-stu-id="a2bd1-102">global (C# Reference)</span></span>
+<span data-ttu-id="a2bd1-103">[:: 演算子](../../../csharp/language-reference/operators/namespace-alias-qualifer.md)の前に来るとき、`global` コンテキスト キーワードは、C# プログラムの既定の名前空間であるグローバル名前空間を参照し、そうでない場合は名前のないグローバル名前空間を参照します。</span><span class="sxs-lookup"><span data-stu-id="a2bd1-103">The `global` contextual keyword, when it comes before the [:: operator](../../../csharp/language-reference/operators/namespace-alias-qualifer.md), refers to the global namespace, which is the default namespace for any C# program and is otherwise unnamed.</span></span> <span data-ttu-id="a2bd1-104">詳細については、「[方法: グローバル名前空間エイリアスを使用する](../../../csharp/programming-guide/namespaces/how-to-use-the-global-namespace-alias.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="a2bd1-104">For more information, see [How to: Use the Global Namespace Alias](../../../csharp/programming-guide/namespaces/how-to-use-the-global-namespace-alias.md).</span></span>  
   
-## <a name="example"></a>例  
- 次の例では、コンテキスト キーワード `global` を利用し、グローバル名前空間でクラス `TestApp` が定義されることを指定しています。  
+## <a name="example"></a><span data-ttu-id="a2bd1-105">例</span><span class="sxs-lookup"><span data-stu-id="a2bd1-105">Example</span></span>  
+ <span data-ttu-id="a2bd1-106">次の例では、コンテキスト キーワード `global` を利用し、グローバル名前空間でクラス `TestApp` が定義されることを指定しています。</span><span class="sxs-lookup"><span data-stu-id="a2bd1-106">The following example shows how to use the `global` contextual keyword to specify that the class `TestApp` is defined in the global namespace:</span></span>  
   
- [!code-cs[csrefKeywordsContextual#13](../../../csharp/language-reference/keywords/codesnippet/CSharp/global_1.cs)]  
+ <span data-ttu-id="a2bd1-107">[!code-cs[csrefKeywordsContextual#13](../../../csharp/language-reference/keywords/codesnippet/CSharp/global_1.cs)]</span><span class="sxs-lookup"><span data-stu-id="a2bd1-107">[!code-cs[csrefKeywordsContextual#13](../../../csharp/language-reference/keywords/codesnippet/CSharp/global_1.cs)]</span></span>  
   
-## <a name="see-also"></a>関連項目  
- [名前空間](../../../csharp/programming-guide/namespaces/index.md)
+## <a name="see-also"></a><span data-ttu-id="a2bd1-108">関連項目</span><span class="sxs-lookup"><span data-stu-id="a2bd1-108">See Also</span></span>  
+ [<span data-ttu-id="a2bd1-109">名前空間</span><span class="sxs-lookup"><span data-stu-id="a2bd1-109">Namespaces</span></span>](../../../csharp/programming-guide/namespaces/index.md)
 

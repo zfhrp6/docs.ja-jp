@@ -20,33 +20,34 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 46c5cb9328f2fa1a4ffc5116d318bc3286419e13
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
+ms.openlocfilehash: 91cecc84899c9a87307ed5799485ec60ef341e65
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/12/2017
 
 ---
-# <a name="how-to-extend-the-async-walkthrough-by-using-taskwhenall-visual-basic"></a>方法: Task.WhenAll (Visual Basic) を使用して Asyncwalkthrough を拡張
-非同期ソリューションのパフォーマンスを向上できる[チュートリアル: を使用して Async と Await (Visual Basic の場合) により、Web にアクセスする](../../../../visual-basic/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md)を使用して、<xref:System.Threading.Tasks.Task.WhenAll%2A?displayProperty=fullName>メソッド</xref:System.Threading.Tasks.Task.WhenAll%2A?displayProperty=fullName>。 このメソッドは、タスクのコレクションとして表される、複数の非同期操作を非同期に待機します。  
+# <a name="how-to-extend-the-async-walkthrough-by-using-taskwhenall-visual-basic"></a><span data-ttu-id="c4db1-102">方法: Task.WhenAll (Visual Basic) を使用して Asyncwalkthrough を拡張</span><span class="sxs-lookup"><span data-stu-id="c4db1-102">How to: Extend the Async Walkthrough by Using Task.WhenAll (Visual Basic)</span></span>
+<span data-ttu-id="c4db1-103">非同期ソリューションのパフォーマンスを向上できる[チュートリアル: を使用して Async と Await (Visual Basic の場合) により、Web にアクセスする](../../../../visual-basic/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md)を使用して、<xref:System.Threading.Tasks.Task.WhenAll%2A?displayProperty=fullName>メソッド</xref:System.Threading.Tasks.Task.WhenAll%2A?displayProperty=fullName>。</span><span class="sxs-lookup"><span data-stu-id="c4db1-103">You can improve the performance of the async solution in [Walkthrough: Accessing the Web by Using Async and Await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md) by using the <xref:System.Threading.Tasks.Task.WhenAll%2A?displayProperty=fullName> method.</span></span> <span data-ttu-id="c4db1-104">このメソッドは、タスクのコレクションとして表される、複数の非同期操作を非同期に待機します。</span><span class="sxs-lookup"><span data-stu-id="c4db1-104">This method asynchronously awaits multiple asynchronous operations, which are represented as a collection of tasks.</span></span>  
   
- このチュートリアルでは、Web サイトが異なる速度でダウンロードされることに気付きます。 Web サイトの&1; つが非常に低速な場合があります。これは残りのすべてのダウンロードを遅延させます。 このチュートリアルで構築した非同期ソリューションを実行すると、プログラムを待たない場合には簡単に終了することができますが、よりよい方法は、すべてのダウンロードを同時に開始して、遅延したダウンロードを待たずに早いダウンロードが継続できるようにすることです。  
+ <span data-ttu-id="c4db1-105">このチュートリアルでは、Web サイトが異なる速度でダウンロードされることに気付きます。</span><span class="sxs-lookup"><span data-stu-id="c4db1-105">You might have noticed in the walkthrough that the websites download at different rates.</span></span> <span data-ttu-id="c4db1-106">Web サイトの&1; つが非常に低速な場合があります。これは残りのすべてのダウンロードを遅延させます。</span><span class="sxs-lookup"><span data-stu-id="c4db1-106">Sometimes one of the websites is very slow, which delays all the remaining downloads.</span></span> <span data-ttu-id="c4db1-107">このチュートリアルで構築した非同期ソリューションを実行すると、プログラムを待たない場合には簡単に終了することができますが、よりよい方法は、すべてのダウンロードを同時に開始して、遅延したダウンロードを待たずに早いダウンロードが継続できるようにすることです。</span><span class="sxs-lookup"><span data-stu-id="c4db1-107">When you run the asynchronous solutions that you build in the walkthrough, you can end the program easily if you don't want to wait, but a better option would be to start all the downloads at the same time and let faster downloads continue without waiting for the one that’s delayed.</span></span>  
   
- タスクのコレクションに `Task.WhenAll` メソッドを適用します。 `WhenAll` を適用すると、コレクション内のすべてのタスクが完了するまで完了しない&1; つのタスクを返します。 タスクは並列で実行されるように見えますが、追加のスレッドは作成されません。 タスクは任意の順序で完了します。  
+ <span data-ttu-id="c4db1-108">タスクのコレクションに `Task.WhenAll` メソッドを適用します。</span><span class="sxs-lookup"><span data-stu-id="c4db1-108">You apply the `Task.WhenAll` method to a collection of tasks.</span></span> <span data-ttu-id="c4db1-109">`WhenAll` を適用すると、コレクション内のすべてのタスクが完了するまで完了しない&1; つのタスクを返します。</span><span class="sxs-lookup"><span data-stu-id="c4db1-109">The application of `WhenAll` returns a single task that isn’t complete until every task in the collection is completed.</span></span> <span data-ttu-id="c4db1-110">タスクは並列で実行されるように見えますが、追加のスレッドは作成されません。</span><span class="sxs-lookup"><span data-stu-id="c4db1-110">The tasks appear to run in parallel, but no additional threads are created.</span></span> <span data-ttu-id="c4db1-111">タスクは任意の順序で完了します。</span><span class="sxs-lookup"><span data-stu-id="c4db1-111">The tasks can complete in any order.</span></span>  
   
 > [!IMPORTANT]
->  次の手順で開発された非同期アプリケーションの拡張機能を説明する[チュートリアル: を使用して Async と Await (Visual Basic の場合) により、Web にアクセスする](../../../../visual-basic/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md)です。 アプリケーションを開発するには、このチュートリアルを完了するかからコードをダウンロードする[デベロッパー サンプル コード集](http://go.microsoft.com/fwlink/?LinkId=255191)します。  
+>  <span data-ttu-id="c4db1-112">次の手順で開発された非同期アプリケーションの拡張機能を説明する[チュートリアル: を使用して Async と Await (Visual Basic の場合) により、Web にアクセスする](../../../../visual-basic/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md)です。</span><span class="sxs-lookup"><span data-stu-id="c4db1-112">The following procedures describe extensions to the async applications that are developed in [Walkthrough: Accessing the Web by Using Async and Await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md).</span></span> <span data-ttu-id="c4db1-113">アプリケーションを開発するには、このチュートリアルを完了するかからコードをダウンロードする[デベロッパー サンプル コード集](http://go.microsoft.com/fwlink/?LinkId=255191)します。</span><span class="sxs-lookup"><span data-stu-id="c4db1-113">You can develop the applications by either completing the walkthrough or downloading the code from [Developer Code Samples](http://go.microsoft.com/fwlink/?LinkId=255191).</span></span>  
 >   
->  例を実行するには、Visual Studio 2012 が必要または後で、コンピューターにインストールします。  
+>  <span data-ttu-id="c4db1-114">例を実行するには、Visual Studio 2012 が必要または後で、コンピューターにインストールします。</span><span class="sxs-lookup"><span data-stu-id="c4db1-114">To run the example, you must have Visual Studio 2012 or later installed on your computer.</span></span>  
   
-### <a name="to-add-taskwhenall-to-your-geturlcontentsasync-solution"></a>GetURLContentsAsync ソリューションに Task.WhenAll を追加するには  
+### <a name="to-add-taskwhenall-to-your-geturlcontentsasync-solution"></a><span data-ttu-id="c4db1-115">GetURLContentsAsync ソリューションに Task.WhenAll を追加するには</span><span class="sxs-lookup"><span data-stu-id="c4db1-115">To add Task.WhenAll to your GetURLContentsAsync solution</span></span>  
   
-1.  追加、`ProcessURLAsync`メソッドで開発された最初のアプリケーションを[チュートリアル: を使用して Async と Await (Visual Basic の場合) により、Web にアクセスする](../../../../visual-basic/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md)です。  
+1.  <span data-ttu-id="c4db1-116">追加、`ProcessURLAsync`メソッドで開発された最初のアプリケーションを[チュートリアル: を使用して Async と Await (Visual Basic の場合) により、Web にアクセスする](../../../../visual-basic/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md)です。</span><span class="sxs-lookup"><span data-stu-id="c4db1-116">Add the `ProcessURLAsync` method to the first application that's developed in [Walkthrough: Accessing the Web by Using Async and Await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md).</span></span>  
   
-    -   コードをダウンロードしている場合[デベロッパー サンプル コード集](http://go.microsoft.com/fwlink/?LinkId=255191)AsyncWalkthrough プロジェクトを開き、追加`ProcessURLAsync`MainWindow.xaml.vb ファイルにします。  
+    -   <span data-ttu-id="c4db1-117">コードをダウンロードしている場合[デベロッパー サンプル コード集](http://go.microsoft.com/fwlink/?LinkId=255191)AsyncWalkthrough プロジェクトを開き、追加`ProcessURLAsync`MainWindow.xaml.vb ファイルにします。</span><span class="sxs-lookup"><span data-stu-id="c4db1-117">If you downloaded the code from  [Developer Code Samples](http://go.microsoft.com/fwlink/?LinkId=255191), open the AsyncWalkthrough project, and then add `ProcessURLAsync` to the MainWindow.xaml.vb file.</span></span>  
   
-    -   チュートリアルを実行してコードを開発する場合は、`ProcessURLAsync` メソッドを含むアプリケーションに `GetURLContentsAsync` を追加します。 このアプリケーションの MainWindow.xaml.vb ファイルは、"完全なコード例から」の「チュートリアルの最初の例です。  
+    -   <span data-ttu-id="c4db1-118">チュートリアルを実行してコードを開発する場合は、`ProcessURLAsync` メソッドを含むアプリケーションに `GetURLContentsAsync` を追加します。</span><span class="sxs-lookup"><span data-stu-id="c4db1-118">If you developed the code by completing the walkthrough, add `ProcessURLAsync` to the application that includes the `GetURLContentsAsync` method.</span></span> <span data-ttu-id="c4db1-119">このアプリケーションの MainWindow.xaml.vb ファイルは、"完全なコード例から」の「チュートリアルの最初の例です。</span><span class="sxs-lookup"><span data-stu-id="c4db1-119">The MainWindow.xaml.vb file for this application is the first example in the "Complete Code Examples from the Walkthrough" section.</span></span>  
   
-     `ProcessURLAsync`メソッドの本体のアクションを統合する、`For Each`ループ`SumPageSizesAsync`元のチュートリアルです。 このメソッドは、指定した Web サイトのコンテンツをバイト配列として非同期的にダウンロードし、バイト配列の長さを表示して返します。  
+     <span data-ttu-id="c4db1-120">`ProcessURLAsync`メソッドの本体のアクションを統合する、`For Each`ループ`SumPageSizesAsync`元のチュートリアルです。</span><span class="sxs-lookup"><span data-stu-id="c4db1-120">The `ProcessURLAsync` method consolidates the actions in the body of the `For Each` loop in `SumPageSizesAsync` in the original walkthrough.</span></span> <span data-ttu-id="c4db1-121">このメソッドは、指定した Web サイトのコンテンツをバイト配列として非同期的にダウンロードし、バイト配列の長さを表示して返します。</span><span class="sxs-lookup"><span data-stu-id="c4db1-121">The method asynchronously downloads the contents of a specified website as a byte array, and then displays and returns the length of the byte array.</span></span>  
   
     ```vb  
     Private Async Function ProcessURLAsync(url As String) As Task(Of Integer)  
@@ -57,7 +58,7 @@ ms.lasthandoff: 03/13/2017
     End Function  
     ```  
   
-2.  コメント アウトまたは削除、`For Each`でのループ`SumPageSizesAsync`次のコードを示します。  
+2.  <span data-ttu-id="c4db1-122">コメント アウトまたは削除、`For Each`でのループ`SumPageSizesAsync`次のコードを示します。</span><span class="sxs-lookup"><span data-stu-id="c4db1-122">Comment out or delete the `For Each` loop in `SumPageSizesAsync`, as the following code shows.</span></span>  
   
     ```vb  
     'Dim total = 0  
@@ -79,9 +80,9 @@ ms.lasthandoff: 03/13/2017
     'Next  
     ```  
   
-3.  タスクのコレクションを作成します。 次のコード定義、[クエリ](http://msdn.microsoft.com/library/a73c4aec-5d15-4e98-b962-1274021ea93d)、によって実行されると、<xref:System.Linq.Enumerable.ToArray%2A>メソッドは、各 web サイトのコンテンツをダウンロードするタスクのコレクションを作成します</xref:System.Linq.Enumerable.ToArray%2A>。 タスクは、クエリが評価されるときに開始されます。  
+3.  <span data-ttu-id="c4db1-123">タスクのコレクションを作成します。</span><span class="sxs-lookup"><span data-stu-id="c4db1-123">Create a collection of tasks.</span></span> <span data-ttu-id="c4db1-124">次のコード定義、[クエリ](http://msdn.microsoft.com/library/a73c4aec-5d15-4e98-b962-1274021ea93d)、によって実行されると、<xref:System.Linq.Enumerable.ToArray%2A>メソッドは、各 web サイトのコンテンツをダウンロードするタスクのコレクションを作成します</xref:System.Linq.Enumerable.ToArray%2A>。</span><span class="sxs-lookup"><span data-stu-id="c4db1-124">The following code defines a [query](http://msdn.microsoft.com/library/a73c4aec-5d15-4e98-b962-1274021ea93d) that, when executed by the <xref:System.Linq.Enumerable.ToArray%2A> method, creates a collection of tasks that download the contents of each website.</span></span> <span data-ttu-id="c4db1-125">タスクは、クエリが評価されるときに開始されます。</span><span class="sxs-lookup"><span data-stu-id="c4db1-125">The tasks are started when the query is evaluated.</span></span>  
   
-     `SumPageSizesAsync` の宣言の後の `urlList` メソッドに、次のコードを追加します。  
+     <span data-ttu-id="c4db1-126">`SumPageSizesAsync` の宣言の後の `urlList` メソッドに、次のコードを追加します。</span><span class="sxs-lookup"><span data-stu-id="c4db1-126">Add the following code to method `SumPageSizesAsync` after the declaration of `urlList`.</span></span>  
   
     ```vb  
     ' Create a query.   
@@ -92,9 +93,9 @@ ms.lasthandoff: 03/13/2017
     Dim downloadTasks As Task(Of Integer)() = downloadTasksQuery.ToArray()  
     ```  
   
-4.  `Task.WhenAll` をタスクのコレクション `downloadTasks` に適用します。 `Task.WhenAll` は、タスクのコレクションのすべてのタスクが完了すると完了する、単一のタスクを返します。  
+4.  <span data-ttu-id="c4db1-127">`Task.WhenAll` をタスクのコレクション `downloadTasks` に適用します。</span><span class="sxs-lookup"><span data-stu-id="c4db1-127">Apply `Task.WhenAll` to the collection of tasks, `downloadTasks`.</span></span> <span data-ttu-id="c4db1-128">`Task.WhenAll` は、タスクのコレクションのすべてのタスクが完了すると完了する、単一のタスクを返します。</span><span class="sxs-lookup"><span data-stu-id="c4db1-128">`Task.WhenAll` returns a single task that finishes when all the tasks in the collection of tasks have completed.</span></span>  
   
-     次の例では、`Await`式は&1; つの完了を待機タスクは、その`WhenAll`を返します。 式は、各整数がダウンロードされたサイトの長さである、整数の配列に評価します。 `SumPageSizesAsync` の、前の手順で追加したコードの直後に、次のコードを追加します。  
+     <span data-ttu-id="c4db1-129">次の例では、`Await`式は&1; つの完了を待機タスクは、その`WhenAll`を返します。</span><span class="sxs-lookup"><span data-stu-id="c4db1-129">In the following example, the `Await` expression awaits the completion of the single task that `WhenAll` returns.</span></span> <span data-ttu-id="c4db1-130">式は、各整数がダウンロードされたサイトの長さである、整数の配列に評価します。</span><span class="sxs-lookup"><span data-stu-id="c4db1-130">The expression evaluates to an array of integers, where each integer is the length of a downloaded website.</span></span> <span data-ttu-id="c4db1-131">`SumPageSizesAsync` の、前の手順で追加したコードの直後に、次のコードを追加します。</span><span class="sxs-lookup"><span data-stu-id="c4db1-131">Add the following code to `SumPageSizesAsync`, just after the code that you added in the previous step.</span></span>  
   
     ```vb  
     ' Await the completion of all the running tasks.  
@@ -105,23 +106,23 @@ ms.lasthandoff: 03/13/2017
     'Dim lengths As Integer() = Await whenAllTask  
     ```  
   
-5.  最後に、使用して、<xref:System.Linq.Enumerable.Sum%2A>メソッドすべての web サイトの長さの合計を計算します</xref:System.Linq.Enumerable.Sum%2A>。 `SumPageSizesAsync` に次の行を追加します。  
+5.  <span data-ttu-id="c4db1-132">最後に、使用して、<xref:System.Linq.Enumerable.Sum%2A>メソッドすべての web サイトの長さの合計を計算します</xref:System.Linq.Enumerable.Sum%2A>。</span><span class="sxs-lookup"><span data-stu-id="c4db1-132">Finally, use the <xref:System.Linq.Enumerable.Sum%2A> method to calculate the sum of the lengths of all the websites.</span></span> <span data-ttu-id="c4db1-133">`SumPageSizesAsync` に次の行を追加します。</span><span class="sxs-lookup"><span data-stu-id="c4db1-133">Add the following line to `SumPageSizesAsync`.</span></span>  
   
     ```vb  
     Dim total = lengths.Sum()  
     ```  
   
-### <a name="to-add-taskwhenall-to-the-httpclientgetbytearrayasync-solution"></a>HttpClient.GetByteArrayAsync ソリューションに Task.WhenAll を追加するには  
+### <a name="to-add-taskwhenall-to-the-httpclientgetbytearrayasync-solution"></a><span data-ttu-id="c4db1-134">HttpClient.GetByteArrayAsync ソリューションに Task.WhenAll を追加するには</span><span class="sxs-lookup"><span data-stu-id="c4db1-134">To add Task.WhenAll to the HttpClient.GetByteArrayAsync solution</span></span>  
   
-1.  次のバージョンの追加`ProcessURLAsync`で開発された&2; つ目のアプリケーションに[チュートリアル: を使用して Async と Await (Visual Basic の場合) により、Web にアクセスする](../../../../visual-basic/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md)です。  
+1.  <span data-ttu-id="c4db1-135">次のバージョンの追加`ProcessURLAsync`で開発された&2; つ目のアプリケーションに[チュートリアル: を使用して Async と Await (Visual Basic の場合) により、Web にアクセスする](../../../../visual-basic/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md)です。</span><span class="sxs-lookup"><span data-stu-id="c4db1-135">Add the following version of `ProcessURLAsync` to the second application that's developed in [Walkthrough: Accessing the Web by Using Async and Await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md).</span></span>  
   
-    -   コードをダウンロードしている場合[デベロッパー サンプル コード集](http://go.microsoft.com/fwlink/?LinkId=255191)AsyncWalkthrough_HttpClient プロジェクトを開き、追加`ProcessURLAsync`MainWindow.xaml.vb ファイルにします。  
+    -   <span data-ttu-id="c4db1-136">コードをダウンロードしている場合[デベロッパー サンプル コード集](http://go.microsoft.com/fwlink/?LinkId=255191)AsyncWalkthrough_HttpClient プロジェクトを開き、追加`ProcessURLAsync`MainWindow.xaml.vb ファイルにします。</span><span class="sxs-lookup"><span data-stu-id="c4db1-136">If you downloaded the code from [Developer Code Samples](http://go.microsoft.com/fwlink/?LinkId=255191), open the AsyncWalkthrough_HttpClient project, and then add `ProcessURLAsync` to the MainWindow.xaml.vb file.</span></span>  
   
-    -   チュートリアルを実行してコードを開発する場合は、`ProcessURLAsync` メソッドを使うアプリケーションに `HttpClient.GetByteArrayAsync` を追加します。 このアプリケーションの MainWindow.xaml.vb ファイルは、「完全なコード チュートリアルの例」セクションで&2; つ目例を示します。  
+    -   <span data-ttu-id="c4db1-137">チュートリアルを実行してコードを開発する場合は、`ProcessURLAsync` メソッドを使うアプリケーションに `HttpClient.GetByteArrayAsync` を追加します。</span><span class="sxs-lookup"><span data-stu-id="c4db1-137">If you developed the code by completing the walkthrough, add `ProcessURLAsync` to the application that uses the `HttpClient.GetByteArrayAsync` method.</span></span> <span data-ttu-id="c4db1-138">このアプリケーションの MainWindow.xaml.vb ファイルは、「完全なコード チュートリアルの例」セクションで&2; つ目例を示します。</span><span class="sxs-lookup"><span data-stu-id="c4db1-138">The MainWindow.xaml.vb file for this application is the second example in the "Complete Code Examples from the Walkthrough" section.</span></span>  
   
-     `ProcessURLAsync`メソッドの本体のアクションを統合する、`For Each`ループ`SumPageSizesAsync`元のチュートリアルです。 このメソッドは、指定した Web サイトのコンテンツをバイト配列として非同期的にダウンロードし、バイト配列の長さを表示して返します。  
+     <span data-ttu-id="c4db1-139">`ProcessURLAsync`メソッドの本体のアクションを統合する、`For Each`ループ`SumPageSizesAsync`元のチュートリアルです。</span><span class="sxs-lookup"><span data-stu-id="c4db1-139">The `ProcessURLAsync` method consolidates the actions in the body of the `For Each` loop in `SumPageSizesAsync` in the original walkthrough.</span></span> <span data-ttu-id="c4db1-140">このメソッドは、指定した Web サイトのコンテンツをバイト配列として非同期的にダウンロードし、バイト配列の長さを表示して返します。</span><span class="sxs-lookup"><span data-stu-id="c4db1-140">The method asynchronously downloads the contents of a specified website as a byte array, and then displays and returns the length of the byte array.</span></span>  
   
-     唯一の相違、`ProcessURLAsync`メソッド、前の手順では、使用、<xref:System.Net.Http.HttpClient>インスタンス、 `client`</xref:System.Net.Http.HttpClient> 。  
+     <span data-ttu-id="c4db1-141">唯一の相違、`ProcessURLAsync`メソッド、前の手順では、使用、<xref:System.Net.Http.HttpClient>インスタンス、 `client`</xref:System.Net.Http.HttpClient> 。</span><span class="sxs-lookup"><span data-stu-id="c4db1-141">The only difference from the `ProcessURLAsync` method in the previous procedure is the use of the <xref:System.Net.Http.HttpClient> instance, `client`.</span></span>  
   
     ```vb  
     Private Async Function ProcessURLAsync(url As String, client As HttpClient) As Task(Of Integer)  
@@ -132,7 +133,7 @@ ms.lasthandoff: 03/13/2017
     End Function  
     ```  
   
-2.  コメント アウトまたは削除、`For Each`でのループ`SumPageSizesAsync`次のコードを示します。  
+2.  <span data-ttu-id="c4db1-142">コメント アウトまたは削除、`For Each`でのループ`SumPageSizesAsync`次のコードを示します。</span><span class="sxs-lookup"><span data-stu-id="c4db1-142">Comment out or delete the `For Each` loop in `SumPageSizesAsync`, as the following code shows.</span></span>  
   
     ```vb  
     'Dim total = 0   
@@ -153,9 +154,9 @@ ms.lasthandoff: 03/13/2017
   
     ```  
   
-3.  定義、[クエリ](http://msdn.microsoft.com/library/a73c4aec-5d15-4e98-b962-1274021ea93d)、によって実行されると、<xref:System.Linq.Enumerable.ToArray%2A>メソッドは、各 web サイトのコンテンツをダウンロードするタスクのコレクションを作成します</xref:System.Linq.Enumerable.ToArray%2A>。 タスクは、クエリが評価されるときに開始されます。  
+3.  <span data-ttu-id="c4db1-143">定義、[クエリ](http://msdn.microsoft.com/library/a73c4aec-5d15-4e98-b962-1274021ea93d)、によって実行されると、<xref:System.Linq.Enumerable.ToArray%2A>メソッドは、各 web サイトのコンテンツをダウンロードするタスクのコレクションを作成します</xref:System.Linq.Enumerable.ToArray%2A>。</span><span class="sxs-lookup"><span data-stu-id="c4db1-143">Define a [query](http://msdn.microsoft.com/library/a73c4aec-5d15-4e98-b962-1274021ea93d) that, when executed by the <xref:System.Linq.Enumerable.ToArray%2A> method, creates a collection of tasks that download the contents of each website.</span></span> <span data-ttu-id="c4db1-144">タスクは、クエリが評価されるときに開始されます。</span><span class="sxs-lookup"><span data-stu-id="c4db1-144">The tasks are started when the query is evaluated.</span></span>  
   
-     `SumPageSizesAsync` および `client` の宣言の後の `urlList` メソッドに、次のコードを追加します。  
+     <span data-ttu-id="c4db1-145">`SumPageSizesAsync` および `client` の宣言の後の `urlList` メソッドに、次のコードを追加します。</span><span class="sxs-lookup"><span data-stu-id="c4db1-145">Add the following code to method `SumPageSizesAsync` after the declaration of `client` and `urlList`.</span></span>  
   
     ```vb  
     ' Create a query.  
@@ -166,9 +167,9 @@ ms.lasthandoff: 03/13/2017
     Dim downloadTasks As Task(Of Integer)() = downloadTasksQuery.ToArray()  
     ```  
   
-4.  次に、`Task.WhenAll` をタスクのコレクション `downloadTasks` に適用します。 `Task.WhenAll` は、タスクのコレクションのすべてのタスクが完了すると完了する、単一のタスクを返します。  
+4.  <span data-ttu-id="c4db1-146">次に、`Task.WhenAll` をタスクのコレクション `downloadTasks` に適用します。</span><span class="sxs-lookup"><span data-stu-id="c4db1-146">Next, apply `Task.WhenAll` to the collection of tasks, `downloadTasks`.</span></span> <span data-ttu-id="c4db1-147">`Task.WhenAll` は、タスクのコレクションのすべてのタスクが完了すると完了する、単一のタスクを返します。</span><span class="sxs-lookup"><span data-stu-id="c4db1-147">`Task.WhenAll` returns a single task that finishes when all the tasks in the collection of tasks have completed.</span></span>  
   
-     次の例では、`Await`式は&1; つの完了を待機タスクは、その`WhenAll`を返します。 完了すると、`Await`式は、各整数がダウンロードされた web サイトの長さが整数の配列に評価します。 `SumPageSizesAsync` の、前の手順で追加したコードの直後に、次のコードを追加します。  
+     <span data-ttu-id="c4db1-148">次の例では、`Await`式は&1; つの完了を待機タスクは、その`WhenAll`を返します。</span><span class="sxs-lookup"><span data-stu-id="c4db1-148">In the following example, the `Await` expression awaits the completion of the single task that `WhenAll` returns.</span></span> <span data-ttu-id="c4db1-149">完了すると、`Await`式は、各整数がダウンロードされた web サイトの長さが整数の配列に評価します。</span><span class="sxs-lookup"><span data-stu-id="c4db1-149">When complete, the `Await` expression evaluates to an array of integers, where each integer is the length of a downloaded website.</span></span> <span data-ttu-id="c4db1-150">`SumPageSizesAsync` の、前の手順で追加したコードの直後に、次のコードを追加します。</span><span class="sxs-lookup"><span data-stu-id="c4db1-150">Add the following code to `SumPageSizesAsync`, just after the code that you added in the previous step.</span></span>  
   
     ```vb  
     ' Await the completion of all the running tasks.  
@@ -179,18 +180,18 @@ ms.lasthandoff: 03/13/2017
     'Dim lengths As Integer() = Await whenAllTask  
     ```  
   
-5.  最後に、使用して、<xref:System.Linq.Enumerable.Sum%2A>すべての web サイトの長さの合計を取得します</xref:System.Linq.Enumerable.Sum%2A>。 `SumPageSizesAsync` に次の行を追加します。  
+5.  <span data-ttu-id="c4db1-151">最後に、使用して、<xref:System.Linq.Enumerable.Sum%2A>すべての web サイトの長さの合計を取得します</xref:System.Linq.Enumerable.Sum%2A>。</span><span class="sxs-lookup"><span data-stu-id="c4db1-151">Finally, use the <xref:System.Linq.Enumerable.Sum%2A> method to get the sum of the lengths of all the websites.</span></span> <span data-ttu-id="c4db1-152">`SumPageSizesAsync` に次の行を追加します。</span><span class="sxs-lookup"><span data-stu-id="c4db1-152">Add the following line to `SumPageSizesAsync`.</span></span>  
   
     ```vb  
     Dim total = lengths.Sum()  
     ```  
   
-### <a name="to-test-the-taskwhenall-solutions"></a>Task.WhenAll ソリューションをテストするには  
+### <a name="to-test-the-taskwhenall-solutions"></a><span data-ttu-id="c4db1-153">Task.WhenAll ソリューションをテストするには</span><span class="sxs-lookup"><span data-stu-id="c4db1-153">To test the Task.WhenAll solutions</span></span>  
   
--   ソリューションで、プログラムの実行に F5 キーを選択し、選択、**開始** ボタンをクリックします。 出力の非同期のソリューションからの出力のようになります[チュートリアル: を使用して Async と Await (Visual Basic の場合) により、Web にアクセスする](../../../../visual-basic/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md)です。 ただし、Web サイトは毎回、異なる順序で表示されることに注意してください。  
+-   <span data-ttu-id="c4db1-154">ソリューションで、プログラムの実行に F5 キーを選択し、選択、**開始** ボタンをクリックします。</span><span class="sxs-lookup"><span data-stu-id="c4db1-154">For either solution, choose the F5 key to run the program, and then choose the **Start** button.</span></span> <span data-ttu-id="c4db1-155">出力の非同期のソリューションからの出力のようになります[チュートリアル: を使用して Async と Await (Visual Basic の場合) により、Web にアクセスする](../../../../visual-basic/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md)です。</span><span class="sxs-lookup"><span data-stu-id="c4db1-155">The output should resemble the output from the async solutions in [Walkthrough: Accessing the Web by Using Async and Await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md).</span></span> <span data-ttu-id="c4db1-156">ただし、Web サイトは毎回、異なる順序で表示されることに注意してください。</span><span class="sxs-lookup"><span data-stu-id="c4db1-156">However, notice that the websites appear in a different order each time.</span></span>  
   
-## <a name="example"></a>例  
- 次のコードは、`GetURLContentsAsync` メソッドを使用して Web からコンテンツをダウンロードするプロジェクトの拡張機能を示します。  
+## <a name="example"></a><span data-ttu-id="c4db1-157">例</span><span class="sxs-lookup"><span data-stu-id="c4db1-157">Example</span></span>  
+ <span data-ttu-id="c4db1-158">次のコードは、`GetURLContentsAsync` メソッドを使用して Web からコンテンツをダウンロードするプロジェクトの拡張機能を示します。</span><span class="sxs-lookup"><span data-stu-id="c4db1-158">The following code shows the extensions to the project that uses the `GetURLContentsAsync` method to download content from the web.</span></span>  
   
 ```vb  
 ' Add the following Imports statements, and add a reference for System.Net.Http.  
@@ -322,8 +323,8 @@ Class MainWindow
 End Class  
 ```  
   
-## <a name="example"></a>例  
- 次のコードは、`HttpClient.GetByteArrayAsync` メソッドを使用して Web からコンテンツをダウンロードするプロジェクトの拡張機能を示します。  
+## <a name="example"></a><span data-ttu-id="c4db1-159">例</span><span class="sxs-lookup"><span data-stu-id="c4db1-159">Example</span></span>  
+ <span data-ttu-id="c4db1-160">次のコードは、`HttpClient.GetByteArrayAsync` メソッドを使用して Web からコンテンツをダウンロードするプロジェクトの拡張機能を示します。</span><span class="sxs-lookup"><span data-stu-id="c4db1-160">The following code shows the extensions to the project that uses method `HttpClient.GetByteArrayAsync` to download content from the web.</span></span>  
   
 ```vb  
 ' Add the following Imports statements, and add a reference for System.Net.Http.  
@@ -437,6 +438,6 @@ Class MainWindow
 End Class  
 ```  
   
-## <a name="see-also"></a>関連項目  
- <xref:System.Threading.Tasks.Task.WhenAll%2A?displayProperty=fullName></xref:System.Threading.Tasks.Task.WhenAll%2A?displayProperty=fullName>   
- [チュートリアル: Async を使用して Web へのアクセスと Await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md)
+## <a name="see-also"></a><span data-ttu-id="c4db1-161">関連項目</span><span class="sxs-lookup"><span data-stu-id="c4db1-161">See Also</span></span>  
+ <span data-ttu-id="c4db1-162"><xref:System.Threading.Tasks.Task.WhenAll%2A?displayProperty=fullName></xref:System.Threading.Tasks.Task.WhenAll%2A?displayProperty=fullName></span><span class="sxs-lookup"><span data-stu-id="c4db1-162"><xref:System.Threading.Tasks.Task.WhenAll%2A?displayProperty=fullName></span></span>   
+<span data-ttu-id="c4db1-163"> [チュートリアル: Async を使用して Web へのアクセスと Await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md)</span><span class="sxs-lookup"><span data-stu-id="c4db1-163"> [Walkthrough: Accessing the Web by Using Async and Await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md)</span></span>

@@ -1,1 +1,1 @@
-Microsoft ActiveX データ オブジェクト (ADO)
+<span data-ttu-id="c7f7e-101">Microsoft ActiveX データ オブジェクト (ADO)</span><span class="sxs-lookup"><span data-stu-id="c7f7e-101">Microsoft ActiveX Data Objects (ADO)</span></span>

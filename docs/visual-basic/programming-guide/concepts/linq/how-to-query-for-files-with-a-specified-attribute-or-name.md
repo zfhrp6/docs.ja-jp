@@ -20,16 +20,17 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: db0e3f415df80e8e4c551bd8493814cb3f4fe5ee
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
+ms.openlocfilehash: d28cb398f316fd0df4f20bb038956b184cec7a8b
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/12/2017
 
 ---
-# <a name="how-to-query-for-files-with-a-specified-attribute-or-name-visual-basic"></a>方法: 指定された属性または名前 (Visual Basic) のファイルをクエリ
-この例は、指定したディレクトリ ツリーで、指定したファイル名拡張子 (たとえば".txt") を持つすべてのファイルを検索する方法を示します。 また、作成時に基づくツリー内の最も新しいか古いファイルを取得する方法も示します。  
+# <a name="how-to-query-for-files-with-a-specified-attribute-or-name-visual-basic"></a><span data-ttu-id="04bbd-102">方法: 指定された属性または名前 (Visual Basic) のファイルをクエリ</span><span class="sxs-lookup"><span data-stu-id="04bbd-102">How to: Query for Files with a Specified Attribute or Name (Visual Basic)</span></span>
+<span data-ttu-id="04bbd-103">この例は、指定したディレクトリ ツリーで、指定したファイル名拡張子 (たとえば".txt") を持つすべてのファイルを検索する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="04bbd-103">This example shows how to find all files that have a specified file name extension (for example ".txt") in a specified directory tree.</span></span> <span data-ttu-id="04bbd-104">また、作成時に基づくツリー内の最も新しいか古いファイルを取得する方法も示します。</span><span class="sxs-lookup"><span data-stu-id="04bbd-104">It also shows how to return either the newest or oldest file in the tree based on the creation time.</span></span>  
   
-## <a name="example"></a>例  
+## <a name="example"></a><span data-ttu-id="04bbd-105">例</span><span class="sxs-lookup"><span data-stu-id="04bbd-105">Example</span></span>  
   
 ```vb  
 Module FindFileByExtension  
@@ -77,9 +78,9 @@ Module FindFileByExtension
 End Module  
 ```  
   
-## <a name="compiling-the-code"></a>コードのコンパイル  
- .NET Framework version 3.5 またはそれ以上、System.Core.dll への参照を対象とするプロジェクトを作成し、 `Imports` System.Linq 名前空間のステートメントです。  
+## <a name="compiling-the-code"></a><span data-ttu-id="04bbd-106">コードのコンパイル</span><span class="sxs-lookup"><span data-stu-id="04bbd-106">Compiling the Code</span></span>  
+ <span data-ttu-id="04bbd-107">.NET Framework version 3.5 またはそれ以上、System.Core.dll への参照を対象とするプロジェクトを作成し、 `Imports` System.Linq 名前空間のステートメントです。</span><span class="sxs-lookup"><span data-stu-id="04bbd-107">Create a project that targets the .NET Framework version 3.5 or higher with a reference to System.Core.dll and a   `Imports` statement for the System.Linq namespace.</span></span>  
   
-## <a name="see-also"></a>関連項目  
- [LINQ to Objects (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-objects.md)   
- [LINQ とファイル ディレクトリ (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-file-directories.md)
+## <a name="see-also"></a><span data-ttu-id="04bbd-108">関連項目</span><span class="sxs-lookup"><span data-stu-id="04bbd-108">See Also</span></span>  
+ <span data-ttu-id="04bbd-109">[LINQ to Objects (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-objects.md) </span><span class="sxs-lookup"><span data-stu-id="04bbd-109">[LINQ to Objects (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-objects.md) </span></span>  
+<span data-ttu-id="04bbd-110"> [LINQ とファイル ディレクトリ (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-file-directories.md)</span><span class="sxs-lookup"><span data-stu-id="04bbd-110"> [LINQ and File Directories (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-file-directories.md)</span></span>

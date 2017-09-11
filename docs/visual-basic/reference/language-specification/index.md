@@ -36,17 +36,17 @@ ms.contentlocale: ja-jp
 ms.lasthandoff: 08/03/2017
 
 ---
-# <a name="visual-basic-language-specification"></a>Visual Basic 言語仕様
-[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] 言語仕様は、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] の文法と構文に関するあらゆる疑問に答える信頼性のある情報源です。 これには、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] リファレンス ドキュメントで取り上げられていない、言語に関する詳細な情報が網羅されています。  
+# <a name="visual-basic-language-specification"></a><span data-ttu-id="b1c88-102">Visual Basic 言語仕様</span><span class="sxs-lookup"><span data-stu-id="b1c88-102">Visual Basic Language Specification</span></span>
+<span data-ttu-id="b1c88-103">[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] 言語仕様は、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] の文法と構文に関するあらゆる疑問に答える信頼性のある情報源です。</span><span class="sxs-lookup"><span data-stu-id="b1c88-103">The [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] Language Specification is the authoritative source for answers to all questions about [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] grammar and syntax.</span></span> <span data-ttu-id="b1c88-104">これには、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] リファレンス ドキュメントで取り上げられていない、言語に関する詳細な情報が網羅されています。</span><span class="sxs-lookup"><span data-stu-id="b1c88-104">It contains detailed information about the language, including many points not covered in the [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] reference documentation.</span></span>  
   
- この仕様は、[Microsoft ダウンロード センター](http://go.microsoft.com/fwlink/?LinkId=188623)で入手できます。  
+ <span data-ttu-id="b1c88-105">この仕様は、[Microsoft ダウンロード センター](http://go.microsoft.com/fwlink/?LinkId=188623)で入手できます。</span><span class="sxs-lookup"><span data-stu-id="b1c88-105">The specification is available on the [Microsoft Download Center](http://go.microsoft.com/fwlink/?LinkId=188623).</span></span>  
   
-このサイトには、[VB 11 仕様](../../../../_vblang/spec/introduction.md)が含まれています。 この仕様は、[dotnet/vblang GitHub レポジトリ](https://github.com/dotnet/vblang/blob/master/spec/README.md) に含まれるマークダウン ファイルからビルドされています。
+<span data-ttu-id="b1c88-106">このサイトには、[VB 11 仕様](../../../../_vblang/spec/introduction.md)が含まれています。</span><span class="sxs-lookup"><span data-stu-id="b1c88-106">This site contains the [VB 11 specification](../../../../_vblang/spec/introduction.md).</span></span> <span data-ttu-id="b1c88-107">この仕様は、[dotnet/vblang GitHub レポジトリ](https://github.com/dotnet/vblang/blob/master/spec/README.md) に含まれるマークダウン ファイルからビルドされています。</span><span class="sxs-lookup"><span data-stu-id="b1c88-107">It's built from the Markdown files contained in [the dotnet/vblang GitHub repository](https://github.com/dotnet/vblang/blob/master/spec/README.md).</span></span>
 
-仕様の問題は [dotnet/vblang](https://github.com/dotnet/vblang/issues) リポジトリで作成する必要があります。 見つけたエラーを修正したい場合は、同じレポジトリに[プル要求](https://github.com/dotnet/vblang/pulls)を送信できます。
+<span data-ttu-id="b1c88-108">仕様の問題は [dotnet/vblang](https://github.com/dotnet/vblang/issues) リポジトリで作成する必要があります。</span><span class="sxs-lookup"><span data-stu-id="b1c88-108">Issues on the specification should be created in the [dotnet/vblang](https://github.com/dotnet/vblang/issues) repository.</span></span> <span data-ttu-id="b1c88-109">見つけたエラーを修正したい場合は、同じレポジトリに[プル要求](https://github.com/dotnet/vblang/pulls)を送信できます。</span><span class="sxs-lookup"><span data-stu-id="b1c88-109">Or, if you're interested in fixing any errors you find, you may submit a [Pull Request](https://github.com/dotnet/vblang/pulls) to the same repository.</span></span>
 
-## <a name="see-also"></a>関連項目  
- [Visual Basic の言語リファレンス](../../../visual-basic/language-reference/index.md)
+## <a name="see-also"></a><span data-ttu-id="b1c88-110">関連項目</span><span class="sxs-lookup"><span data-stu-id="b1c88-110">See Also</span></span>  
+ [<span data-ttu-id="b1c88-111">Visual Basic の言語リファレンス</span><span class="sxs-lookup"><span data-stu-id="b1c88-111">Visual Basic Language Reference</span></span>](../../../visual-basic/language-reference/index.md)
 
 >[!div class="step-by-step"]
-[次へ](../../../../_vblang/spec/introduction.md)
+[<span data-ttu-id="b1c88-112">次へ</span><span class="sxs-lookup"><span data-stu-id="b1c88-112">Next</span></span>](../../../../_vblang/spec/introduction.md)

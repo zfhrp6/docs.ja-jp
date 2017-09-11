@@ -37,15 +37,15 @@ ms.contentlocale: ja-jp
 ms.lasthandoff: 07/28/2017
 
 ---
-# <a name="in-c-reference"></a>in (C# リファレンス)
-`in` コンテキスト キーワードが次の 3 つのコンテキストで使用されます。  
+# <a name="in-c-reference"></a><span data-ttu-id="4d2ba-102">in (C# リファレンス)</span><span class="sxs-lookup"><span data-stu-id="4d2ba-102">in (C# Reference)</span></span>
+<span data-ttu-id="4d2ba-103">`in` コンテキスト キーワードが次の 3 つのコンテキストで使用されます。</span><span class="sxs-lookup"><span data-stu-id="4d2ba-103">The `in` contextual keyword is used in three contexts:</span></span>  
   
--   [foreach](../../../csharp/language-reference/keywords/foreach-in.md) ステートメント  
+-   <span data-ttu-id="4d2ba-104">[foreach](../../../csharp/language-reference/keywords/foreach-in.md) ステートメント</span><span class="sxs-lookup"><span data-stu-id="4d2ba-104">[foreach](../../../csharp/language-reference/keywords/foreach-in.md) statements</span></span>  
   
--   クエリ式内の [join 句](../../../csharp/language-reference/keywords/join-clause.md)  
+-   <span data-ttu-id="4d2ba-105">クエリ式内の [join 句](../../../csharp/language-reference/keywords/join-clause.md)</span><span class="sxs-lookup"><span data-stu-id="4d2ba-105">[join clauses](../../../csharp/language-reference/keywords/join-clause.md) in query expressions</span></span>  
   
--   ジェネリック インターフェイスとデリゲートの[ジェネリック型パラメーター](../../../csharp/language-reference/keywords/in-generic-modifier.md)  
+-   <span data-ttu-id="4d2ba-106">ジェネリック インターフェイスとデリゲートの[ジェネリック型パラメーター](../../../csharp/language-reference/keywords/in-generic-modifier.md)</span><span class="sxs-lookup"><span data-stu-id="4d2ba-106">[generic type parameters](../../../csharp/language-reference/keywords/in-generic-modifier.md) in generic interfaces and delegates.</span></span>  
   
-## <a name="see-also"></a>関連項目  
- [C# リファレンス](../../../csharp/language-reference/index.md)
+## <a name="see-also"></a><span data-ttu-id="4d2ba-107">関連項目</span><span class="sxs-lookup"><span data-stu-id="4d2ba-107">See Also</span></span>  
+ [<span data-ttu-id="4d2ba-108">C# リファレンス</span><span class="sxs-lookup"><span data-stu-id="4d2ba-108">C# Reference</span></span>](../../../csharp/language-reference/index.md)
 

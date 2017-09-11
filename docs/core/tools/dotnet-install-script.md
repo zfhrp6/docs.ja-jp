@@ -4,202 +4,148 @@ description: ".NET Core CLI ツールと共有ランタイムをインストー�
 keywords: "dotnet-install, dotnet-install スクリプト, .NET Core"
 author: blackdwarf
 ms.author: mairaw
-ms.date: 07/10/2017
+ms.date: 08/28/2017
 ms.topic: article
 ms.prod: .net-core
 ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: b64e7e6f-ffb4-4fc8-b43b-5731c89479c2
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 8af168e96f8f5b57626b126135d8b5e509fbb059
+ms.sourcegitcommit: c6e199800a86bc8b275fed4e3ba3ea6f77c7d2fa
+ms.openlocfilehash: 92c2b4dcd446d3bf68783768db25ad55b14fac44
 ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
+ms.lasthandoff: 09/01/2017
 
 ---
 
-# <a name="dotnet-install-scripts-reference"></a>dotnet-install スクリプト参照
+# <a name="dotnet-install-scripts-reference"></a><span data-ttu-id="42eb9-104">dotnet-install スクリプト参照</span><span class="sxs-lookup"><span data-stu-id="42eb9-104">dotnet-install scripts reference</span></span>
 
-## <a name="name"></a>名前
+## <a name="name"></a><span data-ttu-id="42eb9-105">名前</span><span class="sxs-lookup"><span data-stu-id="42eb9-105">Name</span></span>
 
-`dotnet-install.ps1` | `dotnet-install.sh` - .NET Core コマンドライン インターフェイス (CLI) ツールと共有ランタイムをインストールするために使うスクリプトです。
+<span data-ttu-id="42eb9-106">`dotnet-install.ps1` | `dotnet-install.sh` - .NET Core CLI ツールと共有ランタイムをインストールするために使うスクリプトです。</span><span class="sxs-lookup"><span data-stu-id="42eb9-106">`dotnet-install.ps1` | `dotnet-install.sh` - Script used to install the .NET Core CLI tools and the shared runtime.</span></span>
 
-## <a name="synopsis"></a>構文
+## <a name="synopsis"></a><span data-ttu-id="42eb9-107">構文</span><span class="sxs-lookup"><span data-stu-id="42eb9-107">Synopsis</span></span>
 
-Windows の場合:
+<span data-ttu-id="42eb9-108">Windows の場合:</span><span class="sxs-lookup"><span data-stu-id="42eb9-108">Windows:</span></span>
 
-`dotnet-install.ps1 [-Channel] [-Version] [-InstallDir] [-Architecture] [-SharedRuntime] [-DebugSymbols] [-DryRun] [-NoPath] [-AzureFeed] [-ProxyAddress]`
+`dotnet-install.ps1 [-Channel] [-Version] [-InstallDir] [-Architecture] [-SharedRuntime] [-DryRun] [-NoPath] [-AzureFeed] [-ProxyAddress] [--Verbose] [--Help]`
 
-macOS/Linux の場合:
+<span data-ttu-id="42eb9-109">macOS/Linux の場合:</span><span class="sxs-lookup"><span data-stu-id="42eb9-109">macOS/Linux:</span></span>
 
-`dotnet-install.sh [--channel] [--version] [--install-dir] [--architecture] [--shared-runtime] [--debug-symbols] [--dry-run] [--no-path] [--verbose] [--azure-feed] [--help]`
+`dotnet-install.sh [--channel] [--version] [--install-dir] [--architecture] [--shared-runtime] [--dry-run] [--no-path] [--azure-feed] [--verbose] [--help]`
 
-## <a name="description"></a>説明
+## <a name="description"></a><span data-ttu-id="42eb9-110">説明</span><span class="sxs-lookup"><span data-stu-id="42eb9-110">Description</span></span>
 
-`dotnet-install` スクリプトは、CLI ツールチェーンと共有ランタイムの非管理者インストールを実行するために使用されます。 スクリプトは [CLI GitHub リポジトリ](https://github.com/dotnet/cli/tree/rel/1.0.0/scripts/obtain)からダウンロードできます。 
+<span data-ttu-id="42eb9-111">`dotnet-install` スクリプトは、.NET Core CLI ツールや共有ランタイムが含まれる .NET Core SDK の非管理者インストールを実行するために使用されます。</span><span class="sxs-lookup"><span data-stu-id="42eb9-111">The `dotnet-install` scripts are used to perform a non-admin installation of the .NET Core SDK, which includes the .NET Core CLI tools and the shared runtime.</span></span>
 
-これらのスクリプトの主な有用性は、オートメーションのシナリオと管理者以外のインストールにおいてです。 2 つのスクリプトがあります。1 つは、Windows で動作する PowerShell スクリプトです。 もう 1 つは、Linux/OS X で動作する bash スクリプトです。どちらのスクリプトも動作は同じです。 bash スクリプトは PowerShell のスイッチも読み取るので、Linux/OS X システムのスクリプトで PowerShell のスイッチを使うことができます。 
+<span data-ttu-id="42eb9-112">[.NET Core のメインの Web サイト](https://dot.net)でホストされる安定したバージョンを使用することをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="42eb9-112">We recommend that you use the stable version that is hosted on [.NET Core main website](https://dot.net).</span></span> <span data-ttu-id="42eb9-113">スクリプトへの直接パスは次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="42eb9-113">The direct paths to the scripts are:</span></span>
 
-インストール スクリプトは CLI ビルド ドロップから ZIP/tarball ファイルをダウンロードし、既定の場所または `-InstallDir|--install-dir` で指定された場所へのインストールに進みます。 既定では、インストール スクリプトは SDK をダウンロードしてインストールします。 共有ランタイムの取得だけを行いたい場合は、`--shared-runtime` 引数を指定します。 
+* <span data-ttu-id="42eb9-114">https://dot.net/v1/dotnet-install.sh (bash、UNIX)</span><span class="sxs-lookup"><span data-stu-id="42eb9-114">https://dot.net/v1/dotnet-install.sh (bash, UNIX)</span></span>
+* <span data-ttu-id="42eb9-115">https://dot.net/v1/dotnet-install.ps1 (Powershell、Windows)</span><span class="sxs-lookup"><span data-stu-id="42eb9-115">https://dot.net/v1/dotnet-install.ps1 (Powershell, Windows)</span></span>
 
-既定では、スクリプトはインストールの場所を現在のセッションの $PATH に追加します。 `--no-path` 引数を指定することによってこの既定の動作をオーバーライドします。 
+<span data-ttu-id="42eb9-116">これらのスクリプトの主な有用性は、オートメーションのシナリオと管理者以外のインストールにおいてです。</span><span class="sxs-lookup"><span data-stu-id="42eb9-116">The main usefulness of these scripts is in automation scenarios and non-admin installations.</span></span> <span data-ttu-id="42eb9-117">2 つのスクリプトがあります。1 つは、Windows で動作する PowerShell スクリプトです。</span><span class="sxs-lookup"><span data-stu-id="42eb9-117">There are two scripts: One is a PowerShell script that works on Windows.</span></span> <span data-ttu-id="42eb9-118">その他のスクリプトは、Linux/macOS で動作する bash スクリプトです。</span><span class="sxs-lookup"><span data-stu-id="42eb9-118">The other script is a bash script that works on Linux/macOS.</span></span> <span data-ttu-id="42eb9-119">スクリプトの動作は両方とも同じです。</span><span class="sxs-lookup"><span data-stu-id="42eb9-119">Both scripts have the same behavior.</span></span> <span data-ttu-id="42eb9-120">bash スクリプトは PowerShell のスイッチも読み取るので、Linux/macOS システムのスクリプトで PowerShell のスイッチを使うことができます。</span><span class="sxs-lookup"><span data-stu-id="42eb9-120">The bash script also reads PowerShell switches, so you can use PowerShell switches with the script on Linux/macOS systems.</span></span> 
 
-スクリプトを実行する前に、必要な[依存関係](https://github.com/dotnet/core/blob/master/Documentation/prereqs.md)をすべてインストールします。
+<span data-ttu-id="42eb9-121">インストール スクリプトは CLI ビルド ドロップから ZIP/tarball ファイルをダウンロードし、既定の場所または `-InstallDir|--install-dir` で指定された場所へのインストールに進みます。</span><span class="sxs-lookup"><span data-stu-id="42eb9-121">The installation scripts download the ZIP/tarball file from the CLI build drops and proceed to install it in either the default location or in a location specified by `-InstallDir|--install-dir`.</span></span> <span data-ttu-id="42eb9-122">既定では、インストール スクリプトは SDK をダウンロードしてインストールします。</span><span class="sxs-lookup"><span data-stu-id="42eb9-122">By default, the installation scripts download the SDK and install it.</span></span> <span data-ttu-id="42eb9-123">共有ランタイムの取得だけを行いたい場合は、`--shared-runtime` 引数を指定します。</span><span class="sxs-lookup"><span data-stu-id="42eb9-123">If you wish to only obtain the shared runtime, specify the `--shared-runtime` argument.</span></span> 
 
-`--version` 引数を使用して、特定のバージョンをインストールすることができます。 バージョンは 3 つの部分からなるバージョン (1.0.0-13232 など) を指定する必要があります。 省略した場合、既定で、`version` プロパティを含む、スクリプトが呼び出されるフォルダーの上の階層にある最初の [global.json](global-json.md) ファイルに設定されます。 それが存在しない場合は、最新のバージョンが使われます。
+<span data-ttu-id="42eb9-124">既定では、スクリプトはインストールの場所を現在のセッションの $PATH に追加します。</span><span class="sxs-lookup"><span data-stu-id="42eb9-124">By default, the script adds the install location to the $PATH for the current session.</span></span> <span data-ttu-id="42eb9-125">`--no-path` 引数を指定することによってこの既定の動作をオーバーライドします。</span><span class="sxs-lookup"><span data-stu-id="42eb9-125">Override this default behavior by specifying the `--no-path` argument.</span></span> 
 
-このスクリプトで `--debug` 引数を使って、デバッグ シンボルを含む SDK または共有ランタイム デバッグ バイナリを取得することもできます。 最初のインストールでこの実行に失敗し、デバッグ シンボルが必要であることに後になって気付いた場合は、`--debug` 引数とインストールした SDK のバージョンを指定してスクリプトを実行し直し、デバッグ シンボルを取得できます。 
+<span data-ttu-id="42eb9-126">スクリプトを実行する前に、必要な[依存関係](https://github.com/dotnet/core/blob/master/Documentation/prereqs.md)をすべてインストールします。</span><span class="sxs-lookup"><span data-stu-id="42eb9-126">Before running the script, install the required [dependencies](https://github.com/dotnet/core/blob/master/Documentation/prereqs.md).</span></span>
 
-## <a name="options"></a>オプション
+<span data-ttu-id="42eb9-127">`--version` 引数を使用して、特定のバージョンをインストールすることができます。</span><span class="sxs-lookup"><span data-stu-id="42eb9-127">You can install a specific version using the `--version` argument.</span></span> <span data-ttu-id="42eb9-128">バージョンは 3 つの部分からなるバージョン (1.0.0-13232 など) を指定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="42eb9-128">The version must be specified as a 3-part version (for example, 1.0.0-13232).</span></span> <span data-ttu-id="42eb9-129">省略した場合、`latest` バージョンを使用します。</span><span class="sxs-lookup"><span data-stu-id="42eb9-129">If omitted, it uses the `latest` version.</span></span>
 
-注: オプションはスクリプトの実装によって異なります。 
-
-### <a name="powershell-windows"></a>PowerShell (Windows)
+## <a name="options"></a><span data-ttu-id="42eb9-130">オプション</span><span class="sxs-lookup"><span data-stu-id="42eb9-130">Options</span></span>
 
 `-Channel <CHANNEL>`
 
-インストールのソース チャネルを指定します。 次の値を指定できます。
+<span data-ttu-id="42eb9-131">インストールのソース チャネルを指定します。</span><span class="sxs-lookup"><span data-stu-id="42eb9-131">Specifies the source channel for the installation.</span></span> <span data-ttu-id="42eb9-132">次の値を指定できます。</span><span class="sxs-lookup"><span data-stu-id="42eb9-132">The possible values are:</span></span>
 
-- `Current` - 最新リリース
-- `LTS`- 長期的なサポート チャネル (サポートされている最新リリース)
-- 特定のリリースを表す X.Y 形式の 2 部構成のバージョン (たとえば、`2.0` または `1.0`)
-- ブランチ名 [たとえば、`master` ブランチの最新は `release/2.0.0`、`release/2.0.0-preview2`、または `master` ("bleeding edge (最先端)" のナイトリー リリース)]
+- <span data-ttu-id="42eb9-133">`Current` - 最新リリース</span><span class="sxs-lookup"><span data-stu-id="42eb9-133">`Current` - Current release</span></span>
+- <span data-ttu-id="42eb9-134">`LTS`- 長期的なサポート チャネル (サポートされている最新リリース)</span><span class="sxs-lookup"><span data-stu-id="42eb9-134">`LTS` - Long-Term Support channel (current supported release)</span></span>
+- <span data-ttu-id="42eb9-135">特定のリリースを表す X.Y 形式の 2 部構成のバージョン (たとえば、`2.0` または `1.0`)</span><span class="sxs-lookup"><span data-stu-id="42eb9-135">Two-part version in X.Y format representing a specific release (for example, `2.0` or `1.0`)</span></span>
+- <span data-ttu-id="42eb9-136">ブランチ名 [たとえば、`master` ブランチの最新は `release/2.0.0`、`release/2.0.0-preview2`、または `master` ("bleeding edge (最先端)" のナイトリー リリース)]</span><span class="sxs-lookup"><span data-stu-id="42eb9-136">Branch name [for example, `release/2.0.0`, `release/2.0.0-preview2`, or `master` for the latest from the `master` branch ("bleeding edge" nightly releases)]</span></span>
 
-既定値は `LTS` です。 .NET のサポート チャネルの詳細については、[.NET Core サポート ライフサイクル](https://www.microsoft.com/net/core/support)に関するトピックをご覧ください。
+<span data-ttu-id="42eb9-137">既定値は `LTS` です。</span><span class="sxs-lookup"><span data-stu-id="42eb9-137">The default value is `LTS`.</span></span> <span data-ttu-id="42eb9-138">.NET のサポート チャネルの詳細については、[.NET Core サポート ライフサイクル](https://www.microsoft.com/net/core/support)に関するトピックをご覧ください。</span><span class="sxs-lookup"><span data-stu-id="42eb9-138">For more information on .NET support channels, see the [.NET Core Support Lifecycle](https://www.microsoft.com/net/core/support) topic.</span></span>
 
 `-Version <VERSION>`
 
-ソース チャネルでのビルド バージョンを表します (`-Channel` オプションをご覧ください)。 次の値を指定できます。
+<span data-ttu-id="42eb9-139">特定のビルド バージョンを表します。</span><span class="sxs-lookup"><span data-stu-id="42eb9-139">Represents a specific build version.</span></span> <span data-ttu-id="42eb9-140">次の値を指定できます。</span><span class="sxs-lookup"><span data-stu-id="42eb9-140">The possible values are:</span></span>
 
-- `latest` - チャネルの最新ビルド
-- `coherent` - チャネルの最新のコヒーレント ビルド。最新の安定版パッケージの組み合わせを使用します。
-- 特定のビルド バージョンを表す X.Y.Z 形式の 3 部構成のバージョン (たとえば、`1.0.x` の `x` は、パッチ バージョン、または `2.0.0-preview2-006120` などの特定のビルドを表します)。
+- <span data-ttu-id="42eb9-141">`latest` - チャネルの最新ビルド (`-Channel` オプションで使用)</span><span class="sxs-lookup"><span data-stu-id="42eb9-141">`latest` - Latest build on the channel (used with the `-Channel` option)</span></span>
+- <span data-ttu-id="42eb9-142">`coherent` - チャネルの最新のコヒーレント ビルド。最新の安定版パッケージの組み合わせを使用します (ブランチ名の `-Channel` オプションで使用)</span><span class="sxs-lookup"><span data-stu-id="42eb9-142">`coherent` - Latest coherent build on the channel; uses the latest stable package combination (used with Branch name `-Channel` options)</span></span>
+- <span data-ttu-id="42eb9-143">特定のビルド バージョンを表す X.Y.Z 形式の 3 部構成のバージョン。`-Channel` オプションよりも優先されます。</span><span class="sxs-lookup"><span data-stu-id="42eb9-143">Three-part version in X.Y.Z format representing a specific build version; supersedes the `-Channel` option.</span></span> <span data-ttu-id="42eb9-144">例: `2.0.0-preview2-006120`</span><span class="sxs-lookup"><span data-stu-id="42eb9-144">For example: `2.0.0-preview2-006120`</span></span>
 
-省略した場合、`-Version` は既定で、`version` メンバーを含む最初の [global.json](global-json.md) となります。 それが存在しない場合、`-Version` の既定値は `latest` です。
+<span data-ttu-id="42eb9-145">省略した場合、`-Version` の既定値は `latest` になります。</span><span class="sxs-lookup"><span data-stu-id="42eb9-145">If omitted, `-Version` defaults to `latest`.</span></span>
 
 `-InstallDir <DIRECTORY>`
 
-インストール パスを指定します。 存在しない場合は、ディレクトリが作成されます。 既定値は *%LocalAppData%\.dotnet* です。 ディレクトリに直接バイナリを配置していることに注意してください。
+<span data-ttu-id="42eb9-146">インストール パスを指定します。</span><span class="sxs-lookup"><span data-stu-id="42eb9-146">Specifies the installation path.</span></span> <span data-ttu-id="42eb9-147">存在しない場合は、ディレクトリが作成されます。</span><span class="sxs-lookup"><span data-stu-id="42eb9-147">The directory is created if it doesn't exist.</span></span> <span data-ttu-id="42eb9-148">既定値は *%LocalAppData%\.dotnet* です。</span><span class="sxs-lookup"><span data-stu-id="42eb9-148">The default value is *%LocalAppData%\.dotnet*.</span></span> <span data-ttu-id="42eb9-149">ディレクトリに直接バイナリを配置していることに注意してください。</span><span class="sxs-lookup"><span data-stu-id="42eb9-149">Note that binaries are placed directly in the directory.</span></span>
 
 `-Architecture <ARCHITECTURE>`
 
-インストールする .NET Core バイナリのアーキテクチャです。 可能性のある値は、`auto`、`x64`、および `x86` です。 既定値は `auto` です。これは実行中の OS アーキテクチャを示します。
+<span data-ttu-id="42eb9-150">インストールする .NET Core バイナリのアーキテクチャです。</span><span class="sxs-lookup"><span data-stu-id="42eb9-150">Architecture of the .NET Core binaries to install.</span></span> <span data-ttu-id="42eb9-151">可能性のある値は、`auto`、`x64`、および `x86` です。</span><span class="sxs-lookup"><span data-stu-id="42eb9-151">Possible values are `auto`, `x64`, and `x86`.</span></span> <span data-ttu-id="42eb9-152">既定値は `auto` です。これは実行中の OS アーキテクチャを示します。</span><span class="sxs-lookup"><span data-stu-id="42eb9-152">The default value is `auto`, which represents the currently running OS architecture.</span></span>
 
 `-SharedRuntime`
 
-設定すると、このスイッチは共有ランタイムにインストールを制限します。 SDK 全体はインストールされません。
-
-`-DebugSymbols` (注を参照)
-
-設定すると、インストールにデバッグ シンボルが含まれます。
-
-> [!NOTE]
-> `-DebugSymbols` スイッチは現在は使用できませんが、将来のリリースでは計画されています。
+<span data-ttu-id="42eb9-153">設定すると、このスイッチは共有ランタイムにインストールを制限します。</span><span class="sxs-lookup"><span data-stu-id="42eb9-153">If set, this switch limits installation to the shared runtime.</span></span> <span data-ttu-id="42eb9-154">SDK 全体はインストールされません。</span><span class="sxs-lookup"><span data-stu-id="42eb9-154">The entire SDK isn't installed.</span></span>
 
 `-DryRun`
 
-設定すると、スクリプトでインストールは実行されませんが、現在要求されているバージョンの .NET Core CLI を一貫してインストールするために使用するコマンド ラインが表示されます。 たとえば、バージョン `latest` を指定すると、そのバージョンのリンクが表示されるので、ビルド スクリプトで確定的にこのコマンドを使用できます。 また、自分でインストールまたはダウンロードしたい場合、バイナリの場所も表示されます。
+<span data-ttu-id="42eb9-155">設定すると、スクリプトでインストールは実行されませんが、現在要求されているバージョンの .NET Core CLI を一貫してインストールするために使用するコマンド ラインが表示されます。</span><span class="sxs-lookup"><span data-stu-id="42eb9-155">If set, the script won't perform the installation; but instead, it displays what command line to use to consistently install the currently requested version of the .NET Core CLI.</span></span> <span data-ttu-id="42eb9-156">たとえば、バージョン `latest` を指定すると、そのバージョンのリンクが表示されるので、ビルド スクリプトで確定的にこのコマンドを使用できます。</span><span class="sxs-lookup"><span data-stu-id="42eb9-156">For example if you specify version `latest`, it displays a link with the specific version so that this command can be used deterministically in a build script.</span></span> <span data-ttu-id="42eb9-157">また、自分でインストールまたはダウンロードしたい場合、バイナリの場所も表示されます。</span><span class="sxs-lookup"><span data-stu-id="42eb9-157">It also displays the binary's location if you prefer to install or download it yourself.</span></span>
 
 `-NoPath`
 
-設定すると、prefix/installdir は現在のセッションのパスにはエクスポートされません。 既定では、スクリプトによって PATH が変更されます。その結果、インストール後すぐに CLI ツールを使用できるようになります。
+<span data-ttu-id="42eb9-158">設定すると、prefix/installdir は現在のセッションのパスにはエクスポートされません。</span><span class="sxs-lookup"><span data-stu-id="42eb9-158">If set, the prefix/installdir are not exported to the path for the current session.</span></span> <span data-ttu-id="42eb9-159">既定では、スクリプトによって PATH が変更されます。その結果、インストール後すぐに CLI ツールを使用できるようになります。</span><span class="sxs-lookup"><span data-stu-id="42eb9-159">By default, the script will modify the PATH, which makes the CLI tools available immediately after install.</span></span>
 
 `-AzureFeed`
 
-Azure フィードの URL をインストーラーに指定します。 この値は変更しないことをお勧めします。 既定値は、`https://dotnetcli.azureedge.net/dotnet` です。
+<span data-ttu-id="42eb9-160">Azure フィードの URL をインストーラーに指定します。</span><span class="sxs-lookup"><span data-stu-id="42eb9-160">Specifies the URL for the Azure feed to the installer.</span></span> <span data-ttu-id="42eb9-161">この値は変更しないことをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="42eb9-161">It isn't recommended that you change this value.</span></span> <span data-ttu-id="42eb9-162">既定値は、`https://dotnetcli.azureedge.net/dotnet` です。</span><span class="sxs-lookup"><span data-stu-id="42eb9-162">The default is `https://dotnetcli.azureedge.net/dotnet`.</span></span>
 
 `-ProxyAddress`
 
-設定すると、インストーラーで Web 要求を行うときにプロキシが使われます。
-
-### <a name="bash-macoslinux"></a>Bash (macOS/Linux)
-
-`dotnet-install.sh [--channel] [--version] [--install-dir] [--architecture] [--shared-runtime] [--debug-symbols] [--dry-run] [--no-path] [--verbose] [--azure-feed] [--help]`
-
-`-Channel <CHANNEL>`
-
-インストールのソース チャネルを指定します。 次の値を指定できます。
-
-- `Current` - 最新リリース
-- `LTS`- 長期的なサポート チャネル (サポートされている最新リリース)
-- 特定のリリースを表す X.Y 形式の 2 部構成のバージョン (たとえば、`2.0` または `1.0`)
-- ブランチ名 [たとえば、`master` ブランチの最新は `release/2.0.0`、`release/2.0.0-preview2`、または `master` ("bleeding edge (最先端)" のナイトリー リリース)]
-
-既定値は `LTS` です。 .NET のサポート チャネルの詳細については、[.NET Core サポート ライフサイクル](https://www.microsoft.com/net/core/support)に関するトピックをご覧ください。
-
-`-Version <VERSION>`
-
-ソース チャネルでのビルド バージョンを表します (`-Channel` オプションをご覧ください)。 次の値を指定できます。
-
-- `latest` - チャネルの最新ビルド
-- `coherent` - チャネルの最新のコヒーレント ビルド。最新の安定版パッケージの組み合わせを使用します。
-- 特定のビルド バージョンを表す X.Y.Z 形式の 3 部構成のバージョン (たとえば、`1.0.x` の `x` は、パッチ バージョン、または `2.0.0-preview2-006120` などの特定のビルドを表します)。
-
-省略した場合、`-Version` は既定で、`version` メンバーを含む最初の [global.json](global-json.md) となります。 それが存在しない場合、`-Version` の既定値は `latest` です。
-
-`--install-dir <DIRECTORY>`
-
-インストール パスを指定します。 存在しない場合は、ディレクトリが作成されます。 既定値は `$HOME/.dotnet` です。
-
-`--architecture <ARCHITECTURE>`
-
-インストールする .NET Core バイナリのアーキテクチャです。 指定できる値は、`auto`、`x64`、`amd64` です。 既定値は `auto` です。これは実行中の OS アーキテクチャを示します。
-
-`--shared-runtime`
-
-設定すると、このスイッチは共有ランタイムにインストールを制限します。 SDK 全体はインストールされません。
-
-`--debug-symbols`
-
-設定すると、インストールにデバッグ シンボルが含まれます。
-
-> [!NOTE]
-> このスイッチは現在は使えませんが、将来のリリースでは計画されています。
-
-`--dry-run`
-
-設定すると、スクリプトでインストールは実行されませんが、現在要求されているバージョンの .NET Core CLI を一貫してインストールするために使用するコマンド ラインが表示されます。 たとえば、バージョン `latest` を指定すると、そのバージョンのリンクが表示されるので、ビルド スクリプトで確定的にこのコマンドを使用できます。 また、自分でインストールまたはダウンロードしたい場合、バイナリの場所も表示されます。
-
-`--no-path`
-
-設定すると、prefix/installdir は現在のセッションのパスにはエクスポートされません。 既定では、スクリプトによって PATH が変更されます。その結果、インストール後すぐに CLI ツールを使用できるようになります。
+<span data-ttu-id="42eb9-163">設定すると、インストーラーで Web 要求を行うときにプロキシが使われます。</span><span class="sxs-lookup"><span data-stu-id="42eb9-163">If set, the installer uses the proxy when making web requests.</span></span> <span data-ttu-id="42eb9-164">(Windows でのみ有効)</span><span class="sxs-lookup"><span data-stu-id="42eb9-164">(Only valid for Windows)</span></span>
 
 `--verbose`
 
-診断情報を表示します。
-
-`--azure-feed`
-
-Azure フィードの URL をインストーラーに指定します。 この値は変更しないことをお勧めします。 既定値は、`https://dotnetcli.azureedge.net/dotnet` です。
+<span data-ttu-id="42eb9-165">診断情報を表示します。</span><span class="sxs-lookup"><span data-stu-id="42eb9-165">Display diagnostics information.</span></span>
 
 `--help`
 
-スクリプトのヘルプを出力します。
+<span data-ttu-id="42eb9-166">スクリプトのヘルプを出力します。</span><span class="sxs-lookup"><span data-stu-id="42eb9-166">Prints out help for the script.</span></span>
 
-## <a name="examples"></a>例
+## <a name="examples"></a><span data-ttu-id="42eb9-167">例</span><span class="sxs-lookup"><span data-stu-id="42eb9-167">Examples</span></span>
 
-最新の開発バージョンを既定の場所にインストールします。
+<span data-ttu-id="42eb9-168">最新の長期サポート (LST) バージョンを既定の場所にインストールします。</span><span class="sxs-lookup"><span data-stu-id="42eb9-168">Install the latest long-term supported (LTS) version to the default location:</span></span>
 
-Windows の場合:
+<span data-ttu-id="42eb9-169">Windows の場合:</span><span class="sxs-lookup"><span data-stu-id="42eb9-169">Windows:</span></span>
 
-`./dotnet-install.ps1 -Channel Future`
+`./dotnet-install.ps1 -Channel LTS`
 
-macOS/Linux の場合:
+<span data-ttu-id="42eb9-170">macOS/Linux の場合:</span><span class="sxs-lookup"><span data-stu-id="42eb9-170">macOS/Linux:</span></span>
 
-`./dotnet-install.sh --channel Future`
+`./dotnet-install.sh --channel LTS`
 
-指定した場所に最新のプレビューをインストールします。
+<span data-ttu-id="42eb9-171">2.0 チャネルから、最新バージョンを指定した場所にインストールします。</span><span class="sxs-lookup"><span data-stu-id="42eb9-171">Install the latest version from 2.0 channel to the specified location:</span></span>
 
-Windows の場合:
+<span data-ttu-id="42eb9-172">Windows の場合:</span><span class="sxs-lookup"><span data-stu-id="42eb9-172">Windows:</span></span>
 
-`./dotnet-install.ps1 -Channel preview -InstallDir C:\cli`
+`./dotnet-install.ps1 -Channel 2.0 -InstallDir C:\cli`
 
-macOS/Linux の場合:
+<span data-ttu-id="42eb9-173">macOS/Linux の場合:</span><span class="sxs-lookup"><span data-stu-id="42eb9-173">macOS/Linux:</span></span>
 
-`./dotnet-install.sh --channel preview --install-dir ~/cli`
+`./dotnet-install.sh --channel 2.0 --install-dir ~/cli`
 
-## <a name="see-also"></a>関連項目
+<span data-ttu-id="42eb9-174">共有ランタイムの 1.1.0 バージョンをインストールします。</span><span class="sxs-lookup"><span data-stu-id="42eb9-174">Install the 1.1.0 version of the shared runtime:</span></span>
 
-[.NET Core のリリース](https://github.com/dotnet/core/releases)   
-[.NET Core ランタイムと SDK ダウンロード アーカイブ](https://github.com/dotnet/core/blob/master/release-notes/download-archive.md)
+<span data-ttu-id="42eb9-175">Windows の場合:</span><span class="sxs-lookup"><span data-stu-id="42eb9-175">Windows:</span></span>
+
+`./dotnet-install.ps1 -SharedRuntime -Version 1.1.0`
+
+<span data-ttu-id="42eb9-176">macOS/Linux の場合:</span><span class="sxs-lookup"><span data-stu-id="42eb9-176">macOS/Linux:</span></span>
+
+`./dotnet-install.sh --shared-runtime --version 1.1.0`
+
+## <a name="see-also"></a><span data-ttu-id="42eb9-177">関連項目</span><span class="sxs-lookup"><span data-stu-id="42eb9-177">See also</span></span>
+
+<span data-ttu-id="42eb9-178">[.NET Core のリリース](https://github.com/dotnet/core/releases) </span><span class="sxs-lookup"><span data-stu-id="42eb9-178">[.NET Core releases](https://github.com/dotnet/core/releases) </span></span>  
+[<span data-ttu-id="42eb9-179">.NET Core ランタイムと SDK ダウンロード アーカイブ</span><span class="sxs-lookup"><span data-stu-id="42eb9-179">.NET Core Runtime and SDK download archive</span></span>](https://github.com/dotnet/core/blob/master/release-notes/download-archive.md)
 

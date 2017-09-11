@@ -37,14 +37,14 @@ ms.contentlocale: ja-jp
 ms.lasthandoff: 07/28/2017
 
 ---
-# <a name="equals-c-reference"></a>equals (C# リファレンス)
-`equals` コンテキスト キーワードは、クエリ式の `join` 句で、2 つのシーケンスの要素を比較するときに使用されます。 詳細については、「[join 句](../../../csharp/language-reference/keywords/join-clause.md)」を参照してください。  
+# <a name="equals-c-reference"></a><span data-ttu-id="100ae-102">equals (C# リファレンス)</span><span class="sxs-lookup"><span data-stu-id="100ae-102">equals (C# Reference)</span></span>
+<span data-ttu-id="100ae-103">`equals` コンテキスト キーワードは、クエリ式の `join` 句で、2 つのシーケンスの要素を比較するときに使用されます。</span><span class="sxs-lookup"><span data-stu-id="100ae-103">The `equals` contextual keyword is used in a `join` clause in a query expression to compare the elements of two sequences.</span></span> <span data-ttu-id="100ae-104">詳細については、「[join 句](../../../csharp/language-reference/keywords/join-clause.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="100ae-104">For more information, see [join clause](../../../csharp/language-reference/keywords/join-clause.md).</span></span>  
   
-## <a name="example"></a>例  
- `join` 句での `equals` キーワードの使用例を次に示します。  
+## <a name="example"></a><span data-ttu-id="100ae-105">例</span><span class="sxs-lookup"><span data-stu-id="100ae-105">Example</span></span>  
+ <span data-ttu-id="100ae-106">`join` 句での `equals` キーワードの使用例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="100ae-106">The following example shows the use of the `equals` keyword in a `join` clause.</span></span>  
   
- [!code-cs[csrefKeywordsContextual#12](../../../csharp/language-reference/keywords/codesnippet/CSharp/equals_1.cs)]  
+ <span data-ttu-id="100ae-107">[!code-cs[csrefKeywordsContextual#12](../../../csharp/language-reference/keywords/codesnippet/CSharp/equals_1.cs)]</span><span class="sxs-lookup"><span data-stu-id="100ae-107">[!code-cs[csrefKeywordsContextual#12](../../../csharp/language-reference/keywords/codesnippet/CSharp/equals_1.cs)]</span></span>  
   
-## <a name="see-also"></a>関連項目  
- [LINQ クエリ式](../../../csharp/programming-guide/linq-query-expressions/index.md)
+## <a name="see-also"></a><span data-ttu-id="100ae-108">関連項目</span><span class="sxs-lookup"><span data-stu-id="100ae-108">See Also</span></span>  
+ [<span data-ttu-id="100ae-109">LINQ クエリ式</span><span class="sxs-lookup"><span data-stu-id="100ae-109">LINQ Query Expressions</span></span>](../../../csharp/programming-guide/linq-query-expressions/index.md)
 

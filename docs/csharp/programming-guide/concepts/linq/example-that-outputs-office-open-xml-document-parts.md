@@ -21,13 +21,13 @@ ms.contentlocale: ja-jp
 ms.lasthandoff: 07/28/2017
 
 ---
-# <a name="example-that-outputs-office-open-xml-document-parts-c"></a>Office Open XML ドキュメント パーツを出力する例 (C#)
-このトピックでは、Office Open XML ドキュメントを開き、ドキュメント内のパーツにアクセスする方法について説明します。  
+# <a name="example-that-outputs-office-open-xml-document-parts-c"></a><span data-ttu-id="449e4-102">Office Open XML ドキュメント パーツを出力する例 (C#)</span><span class="sxs-lookup"><span data-stu-id="449e4-102">Example that Outputs Office Open XML Document Parts (C#)</span></span>
+<span data-ttu-id="449e4-103">このトピックでは、Office Open XML ドキュメントを開き、ドキュメント内のパーツにアクセスする方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="449e4-103">This topic shows how to open an Office Open XML document and access parts within it.</span></span>  
   
-## <a name="example"></a>例  
- 次の例では、Office Open XML ドキュメントを開き、ドキュメント パーツとスタイル パーツをコンソールに出力します。  
+## <a name="example"></a><span data-ttu-id="449e4-104">例</span><span class="sxs-lookup"><span data-stu-id="449e4-104">Example</span></span>  
+ <span data-ttu-id="449e4-105">次の例では、Office Open XML ドキュメントを開き、ドキュメント パーツとスタイル パーツをコンソールに出力します。</span><span class="sxs-lookup"><span data-stu-id="449e4-105">The following example opens an Office Open XML document, and prints the document part and the style part to the console.</span></span>  
   
- この例では、WindowsBase アセンブリのクラスを使用します。 また、<xref:System.IO.Packaging?displayProperty=fullName> 名前空間内の型を使用します。  
+ <span data-ttu-id="449e4-106">この例では、WindowsBase アセンブリのクラスを使用します。</span><span class="sxs-lookup"><span data-stu-id="449e4-106">This example uses classes from the WindowsBase assembly.</span></span> <span data-ttu-id="449e4-107">また、<xref:System.IO.Packaging?displayProperty=fullName> 名前空間内の型を使用します。</span><span class="sxs-lookup"><span data-stu-id="449e4-107">It uses types in the <xref:System.IO.Packaging?displayProperty=fullName> namespace.</span></span>  
   
 ```csharp  
 const string fileName = "SampleDoc.docx";  
@@ -78,6 +78,6 @@ using (Package wdPackage = Package.Open(fileName, FileMode.Open, FileAccess.Read
 }  
 ```  
   
-## <a name="see-also"></a>関連項目  
- [Office Open XML WordprocessingML ドキュメントの詳細 (C#)](../../../../csharp/programming-guide/concepts/linq/details-of-office-open-xml-wordprocessingml-documents.md)
+## <a name="see-also"></a><span data-ttu-id="449e4-108">関連項目</span><span class="sxs-lookup"><span data-stu-id="449e4-108">See Also</span></span>  
+ [<span data-ttu-id="449e4-109">Office Open XML WordprocessingML ドキュメントの詳細 (C#)</span><span class="sxs-lookup"><span data-stu-id="449e4-109">Details of Office Open XML WordprocessingML Documents (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/details-of-office-open-xml-wordprocessingml-documents.md)
 

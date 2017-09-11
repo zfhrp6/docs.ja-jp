@@ -26,10 +26,10 @@ ms.contentlocale: ja-jp
 ms.lasthandoff: 07/28/2017
 
 ---
-# <a name="how-to-count-occurrences-of-a-word-in-a-string-linq-c"></a>方法: 文字列での単語の出現回数をカウントする (LINQ) (C#)
-この例では、LINQ クエリを使用して、指定された単語が文字列内に出現する回数をカウントする方法を示します。 カウントを実行するには、まず <xref:System.String.Split%2A> メソッドを呼び出して単語の配列を作成します。 <xref:System.String.Split%2A> メソッドを呼び出すと、パフォーマンスが低下します。 文字列に対する操作が単語のカウントのみである場合は、<xref:System.Text.RegularExpressions.Regex.Matches%2A> または <xref:System.String.IndexOf%2A> メソッドの使用を検討してください。 ただし、パフォーマンスが重要でない場合や、他の種類のクエリを実行する目的で事前に文章を分割している場合は、LINQ を使用して単語や語句をカウントすることにも意味があります。  
+# <a name="how-to-count-occurrences-of-a-word-in-a-string-linq-c"></a><span data-ttu-id="5b282-102">方法: 文字列での単語の出現回数をカウントする (LINQ) (C#)</span><span class="sxs-lookup"><span data-stu-id="5b282-102">How to: Count Occurrences of a Word in a String (LINQ) (C#)</span></span>
+<span data-ttu-id="5b282-103">この例では、LINQ クエリを使用して、指定された単語が文字列内に出現する回数をカウントする方法を示します。</span><span class="sxs-lookup"><span data-stu-id="5b282-103">This example shows how to use a LINQ query to count the occurrences of a specified word in a string.</span></span> <span data-ttu-id="5b282-104">カウントを実行するには、まず <xref:System.String.Split%2A> メソッドを呼び出して単語の配列を作成します。</span><span class="sxs-lookup"><span data-stu-id="5b282-104">Note that to perform the count, first the <xref:System.String.Split%2A> method is called to create an array of words.</span></span> <span data-ttu-id="5b282-105"><xref:System.String.Split%2A> メソッドを呼び出すと、パフォーマンスが低下します。</span><span class="sxs-lookup"><span data-stu-id="5b282-105">There is a performance cost to the <xref:System.String.Split%2A> method.</span></span> <span data-ttu-id="5b282-106">文字列に対する操作が単語のカウントのみである場合は、<xref:System.Text.RegularExpressions.Regex.Matches%2A> または <xref:System.String.IndexOf%2A> メソッドの使用を検討してください。</span><span class="sxs-lookup"><span data-stu-id="5b282-106">If the only operation on the string is to count the words, you should consider using the <xref:System.Text.RegularExpressions.Regex.Matches%2A> or <xref:System.String.IndexOf%2A> methods instead.</span></span> <span data-ttu-id="5b282-107">ただし、パフォーマンスが重要でない場合や、他の種類のクエリを実行する目的で事前に文章を分割している場合は、LINQ を使用して単語や語句をカウントすることにも意味があります。</span><span class="sxs-lookup"><span data-stu-id="5b282-107">However, if performance is not a critical issue, or you have already split the sentence in order to perform other types of queries over it, then it makes sense to use LINQ to count the words or phrases as well.</span></span>  
   
-## <a name="example"></a>例  
+## <a name="example"></a><span data-ttu-id="5b282-108">例</span><span class="sxs-lookup"><span data-stu-id="5b282-108">Example</span></span>  
   
 ```csharp  
 class CountWords  
@@ -71,9 +71,9 @@ class CountWords
 */  
 ```  
   
-## <a name="compiling-the-code"></a>コードのコンパイル  
- .NET Framework Version 3.5 以降を対象とするプロジェクトを作成します。System.Core.dll を参照設定し、System.Linq 名前空間と System.IO 名前空間を `using` ディレクティブで指定します。  
+## <a name="compiling-the-code"></a><span data-ttu-id="5b282-109">コードのコンパイル</span><span class="sxs-lookup"><span data-stu-id="5b282-109">Compiling the Code</span></span>  
+ <span data-ttu-id="5b282-110">.NET Framework Version 3.5 以降を対象とするプロジェクトを作成します。System.Core.dll を参照設定し、System.Linq 名前空間と System.IO 名前空間を `using` ディレクティブで指定します。</span><span class="sxs-lookup"><span data-stu-id="5b282-110">Create a project that targets the .NET Framework  version 3.5 or higher, with a reference to System.Core.dll and `using` directives for the System.Linq and System.IO namespaces.</span></span>  
   
-## <a name="see-also"></a>関連項目  
- [LINQ と文字列 (C#)](../../../../csharp/programming-guide/concepts/linq/linq-and-strings.md)
+## <a name="see-also"></a><span data-ttu-id="5b282-111">関連項目</span><span class="sxs-lookup"><span data-stu-id="5b282-111">See Also</span></span>  
+ [<span data-ttu-id="5b282-112">LINQ と文字列 (C#)</span><span class="sxs-lookup"><span data-stu-id="5b282-112">LINQ and Strings (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/linq-and-strings.md)
 

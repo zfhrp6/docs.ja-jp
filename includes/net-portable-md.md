@@ -1,1 +1,1 @@
-ポータブル クラス ライブラリ
+<span data-ttu-id="3d810-101">ポータブル クラス ライブラリ</span><span class="sxs-lookup"><span data-stu-id="3d810-101">Portable Class Library</span></span>

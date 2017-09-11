@@ -37,17 +37,17 @@ ms.contentlocale: ja-jp
 ms.lasthandoff: 07/28/2017
 
 ---
-# <a name="accessing-application-web-services-visual-basic"></a>アプリケーションの Web サービスへのアクセス (Visual Basic)
-`My.WebServices` オブジェクトは、現在のプロジェクトにより参照されている各 Web サービスのインスタンスを提供します。 各インスタンスは要求に応じてインスタンス化されます。 これらの Web サービスには `My.WebServices` オブジェクトのプロパティを介してアクセスできます。 プロパティの名前は、プロパティがアクセスする Web サービスの名前と同じになります。 <xref:System.Web.Services.Protocols.SoapHttpClientProtocol> から継承されたクラスはすべて Web サービスです。  
+# <a name="accessing-application-web-services-visual-basic"></a><span data-ttu-id="5658d-102">アプリケーションの Web サービスへのアクセス (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="5658d-102">Accessing Application Web Services (Visual Basic)</span></span>
+<span data-ttu-id="5658d-103">`My.WebServices` オブジェクトは、現在のプロジェクトにより参照されている各 Web サービスのインスタンスを提供します。</span><span class="sxs-lookup"><span data-stu-id="5658d-103">The `My.WebServices` object provides an instance of each Web service referenced by the current project.</span></span> <span data-ttu-id="5658d-104">各インスタンスは要求に応じてインスタンス化されます。</span><span class="sxs-lookup"><span data-stu-id="5658d-104">Each instance is instantiated on demand.</span></span> <span data-ttu-id="5658d-105">これらの Web サービスには `My.WebServices` オブジェクトのプロパティを介してアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="5658d-105">You can access these Web services through the properties of the `My.WebServices` object.</span></span> <span data-ttu-id="5658d-106">プロパティの名前は、プロパティがアクセスする Web サービスの名前と同じになります。</span><span class="sxs-lookup"><span data-stu-id="5658d-106">The name of the property is the same as the name of the Web service that the property accesses.</span></span> <span data-ttu-id="5658d-107"><xref:System.Web.Services.Protocols.SoapHttpClientProtocol> から継承されたクラスはすべて Web サービスです。</span><span class="sxs-lookup"><span data-stu-id="5658d-107">Any class that inherits from <xref:System.Web.Services.Protocols.SoapHttpClientProtocol> is a Web service.</span></span>  
   
-## <a name="tasks"></a>タスク  
- 次の表は、アプリケーションにより参照される Web サービスにアクセスする方法を一覧にしたものです。  
+## <a name="tasks"></a><span data-ttu-id="5658d-108">タスク</span><span class="sxs-lookup"><span data-stu-id="5658d-108">Tasks</span></span>  
+ <span data-ttu-id="5658d-109">次の表は、アプリケーションにより参照される Web サービスにアクセスする方法を一覧にしたものです。</span><span class="sxs-lookup"><span data-stu-id="5658d-109">The following table lists possible ways to access Web services referenced by an application.</span></span>  
   
-|目的|参照トピック|  
+|<span data-ttu-id="5658d-110">目的</span><span class="sxs-lookup"><span data-stu-id="5658d-110">To</span></span>|<span data-ttu-id="5658d-111">参照トピック</span><span class="sxs-lookup"><span data-stu-id="5658d-111">See</span></span>|  
 |---|---|   
-|Web サービスを呼び出す|[My.WebServices オブジェクト](../../../visual-basic/language-reference/objects/my-webservices-object.md)|  
-|Web サービスを非同期で呼び出し、完了時にイベントを処理する|[方法 : Web サービスを非同期で呼び出す](../../../visual-basic/developing-apps/programming/how-to-call-a-web-service-asynchronously.md)|  
+|<span data-ttu-id="5658d-112">Web サービスを呼び出す</span><span class="sxs-lookup"><span data-stu-id="5658d-112">Call a Web service</span></span>|[<span data-ttu-id="5658d-113">My.WebServices オブジェクト</span><span class="sxs-lookup"><span data-stu-id="5658d-113">My.WebServices Object</span></span>](../../../visual-basic/language-reference/objects/my-webservices-object.md)|  
+|<span data-ttu-id="5658d-114">Web サービスを非同期で呼び出し、完了時にイベントを処理する</span><span class="sxs-lookup"><span data-stu-id="5658d-114">Call a Web service asynchronously and handle an event when it completes</span></span>|[<span data-ttu-id="5658d-115">方法 : Web サービスを非同期で呼び出す</span><span class="sxs-lookup"><span data-stu-id="5658d-115">How to: Call a Web Service Asynchronously</span></span>](../../../visual-basic/developing-apps/programming/how-to-call-a-web-service-asynchronously.md)|  
   
-## <a name="see-also"></a>関連項目  
- [My.WebServices オブジェクト](../../../visual-basic/language-reference/objects/my-webservices-object.md)
+## <a name="see-also"></a><span data-ttu-id="5658d-116">関連項目</span><span class="sxs-lookup"><span data-stu-id="5658d-116">See Also</span></span>  
+ [<span data-ttu-id="5658d-117">My.WebServices オブジェクト</span><span class="sxs-lookup"><span data-stu-id="5658d-117">My.WebServices Object</span></span>](../../../visual-basic/language-reference/objects/my-webservices-object.md)
 

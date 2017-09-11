@@ -36,155 +36,156 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 3bf0d4939f24c38392d7ca4764c41d12366067b5
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
+ms.openlocfilehash: 055565082757318334e89410d12ed7067e5814cb
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/12/2017
 
 ---
-# <a name="option-strict-statement"></a>Option Strict Statement
-暗黙的なデータ型の変換のみ拡大変換を制限、遅延バインディングが禁止およびが発生する暗黙の型指定を許可しません、`Object`型です。  
+# <a name="option-strict-statement"></a><span data-ttu-id="b4af8-102">Option Strict Statement</span><span class="sxs-lookup"><span data-stu-id="b4af8-102">Option Strict Statement</span></span>
+<span data-ttu-id="b4af8-103">暗黙的なデータ型の変換のみ拡大変換を制限、遅延バインディングが禁止およびが発生する暗黙の型指定を許可しません、`Object`型です。</span><span class="sxs-lookup"><span data-stu-id="b4af8-103">Restricts implicit data type conversions to only widening conversions, disallows late binding, and disallows implicit typing that results in an `Object` type.</span></span>  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a><span data-ttu-id="b4af8-104">構文</span><span class="sxs-lookup"><span data-stu-id="b4af8-104">Syntax</span></span>  
   
 ```  
 Option Strict { On | Off }  
 ```  
   
-## <a name="parts"></a>指定項目  
+## <a name="parts"></a><span data-ttu-id="b4af8-105">指定項目</span><span class="sxs-lookup"><span data-stu-id="b4af8-105">Parts</span></span>  
   
-|用語|定義|  
+|<span data-ttu-id="b4af8-106">用語</span><span class="sxs-lookup"><span data-stu-id="b4af8-106">Term</span></span>|<span data-ttu-id="b4af8-107">定義</span><span class="sxs-lookup"><span data-stu-id="b4af8-107">Definition</span></span>|  
 |---|---|  
-|`On`|省略可能です。 により、`Option Strict`をチェックします。|  
-|`Off`|省略可能です。 無効に`Option Strict`をチェックします。|  
+|`On`|<span data-ttu-id="b4af8-108">省略可能です。</span><span class="sxs-lookup"><span data-stu-id="b4af8-108">Optional.</span></span> <span data-ttu-id="b4af8-109">により、`Option Strict`をチェックします。</span><span class="sxs-lookup"><span data-stu-id="b4af8-109">Enables `Option Strict` checking.</span></span>|  
+|`Off`|<span data-ttu-id="b4af8-110">省略可能です。</span><span class="sxs-lookup"><span data-stu-id="b4af8-110">Optional.</span></span> <span data-ttu-id="b4af8-111">無効に`Option Strict`をチェックします。</span><span class="sxs-lookup"><span data-stu-id="b4af8-111">Disables `Option Strict` checking.</span></span>|  
   
-## <a name="remarks"></a>コメント  
- `Option Strict On`または`Option Strict`ファイルにコンパイル エラーが発生する、次の条件が表示されます。  
+## <a name="remarks"></a><span data-ttu-id="b4af8-112">コメント</span><span class="sxs-lookup"><span data-stu-id="b4af8-112">Remarks</span></span>  
+ <span data-ttu-id="b4af8-113">`Option Strict On`または`Option Strict`ファイルにコンパイル エラーが発生する、次の条件が表示されます。</span><span class="sxs-lookup"><span data-stu-id="b4af8-113">When `Option Strict On` or `Option Strict` appears in a file, the following conditions cause a compile-time error:</span></span>  
   
--   暗黙的な縮小変換  
+-   <span data-ttu-id="b4af8-114">暗黙的な縮小変換</span><span class="sxs-lookup"><span data-stu-id="b4af8-114">Implicit narrowing conversions</span></span>  
   
--   遅延バインディング  
+-   <span data-ttu-id="b4af8-115">遅延バインディング</span><span class="sxs-lookup"><span data-stu-id="b4af8-115">Late binding</span></span>  
   
--   発生する暗黙の型指定、`Object`型  
+-   <span data-ttu-id="b4af8-116">発生する暗黙の型指定、`Object`型</span><span class="sxs-lookup"><span data-stu-id="b4af8-116">Implicit typing that results in an `Object` type</span></span>  
   
 > [!NOTE]
->  に対して設定した警告の構成で、[コンパイル ページで、プロジェクト デザイナー) (Visual Basic)](https://docs.microsoft.com/visualstudio/ide/reference/compile-page-project-designer-visual-basic)コンパイル時エラーが発生する&3; つの条件に対応する&3; つの設定があります。 これらの設定を使用する方法については、次を参照してください。 [IDE で警告の構成を設定する](../../../visual-basic/language-reference/statements/option-strict-statement.md#conditions)このトピックで後述します。  
+>  <span data-ttu-id="b4af8-117">に対して設定した警告の構成で、[コンパイル ページで、プロジェクト デザイナー) (Visual Basic)](https://docs.microsoft.com/visualstudio/ide/reference/compile-page-project-designer-visual-basic)コンパイル時エラーが発生する&3; つの条件に対応する&3; つの設定があります。</span><span class="sxs-lookup"><span data-stu-id="b4af8-117">In the warning configurations that you can set on the [Compile Page, Project Designer (Visual Basic)](https://docs.microsoft.com/visualstudio/ide/reference/compile-page-project-designer-visual-basic), there are three settings that correspond to the three conditions that cause a compile-time error.</span></span> <span data-ttu-id="b4af8-118">これらの設定を使用する方法については、次を参照してください。 [IDE で警告の構成を設定する](../../../visual-basic/language-reference/statements/option-strict-statement.md#conditions)このトピックで後述します。</span><span class="sxs-lookup"><span data-stu-id="b4af8-118">For information about how to use these settings, see [To set warning configurations in the IDE](../../../visual-basic/language-reference/statements/option-strict-statement.md#conditions) later in this topic.</span></span>  
   
- `Option Strict Off`ステートメントは、関連付けられている IDE 設定を指定すると、これらのエラーまたは警告を有効にする場合でもエラーと警告は、次の&3; つのすべての条件のチェックをオフにします。 `Option Strict On`関連する IDE 設定を指定すると、これらのエラーまたは警告をオフにする場合でも、ステートメントがエラーと警告は、次の&3; つのすべての条件のチェックをオンにします。  
+ <span data-ttu-id="b4af8-119">`Option Strict Off`ステートメントは、関連付けられている IDE 設定を指定すると、これらのエラーまたは警告を有効にする場合でもエラーと警告は、次の&3; つのすべての条件のチェックをオフにします。</span><span class="sxs-lookup"><span data-stu-id="b4af8-119">The `Option Strict Off` statement turns off error and warning checking for all three conditions, even if the associated IDE settings specify to turn on these errors or warnings.</span></span> <span data-ttu-id="b4af8-120">`Option Strict On`関連する IDE 設定を指定すると、これらのエラーまたは警告をオフにする場合でも、ステートメントがエラーと警告は、次の&3; つのすべての条件のチェックをオンにします。</span><span class="sxs-lookup"><span data-stu-id="b4af8-120">The `Option Strict On` statement turns on error and warning checking for all three conditions, even if the associated IDE settings specify to turn off these errors or warnings.</span></span>  
   
- 使用する場合、`Option Strict`ステートメントは、ファイル内の他のコード ステートメントの前に出現する必要があります。  
+ <span data-ttu-id="b4af8-121">使用する場合、`Option Strict`ステートメントは、ファイル内の他のコード ステートメントの前に出現する必要があります。</span><span class="sxs-lookup"><span data-stu-id="b4af8-121">If used, the `Option Strict` statement must appear before any other code statements in a file.</span></span>  
   
- 設定すると`Option Strict`に`On`、Visual Basic では、すべてのプログラミングの要素のデータ型が指定されているを確認します。 データ型を明示的に指定またはローカル型推論を使用して指定します。 プログラミングのすべての要素のデータ型を指定することをお勧め、次の理由。  
+ <span data-ttu-id="b4af8-122">設定すると`Option Strict`に`On`、Visual Basic では、すべてのプログラミングの要素のデータ型が指定されているを確認します。</span><span class="sxs-lookup"><span data-stu-id="b4af8-122">When you set `Option Strict` to `On`, Visual Basic checks that data types are specified for all programming elements.</span></span> <span data-ttu-id="b4af8-123">データ型を明示的に指定またはローカル型推論を使用して指定します。</span><span class="sxs-lookup"><span data-stu-id="b4af8-123">Data types can be specified explicitly, or specified by using local type inference.</span></span> <span data-ttu-id="b4af8-124">プログラミングのすべての要素のデータ型を指定することをお勧め、次の理由。</span><span class="sxs-lookup"><span data-stu-id="b4af8-124">Specifying data types for all your programming elements is recommended, for the following reasons:</span></span>  
   
--   これにより、IntelliSense で変数とパラメーターをサポートできます。 これにより、コードを入力すると、そのプロパティおよびその他のメンバーを参照してください。  
+-   <span data-ttu-id="b4af8-125">これにより、IntelliSense で変数とパラメーターをサポートできます。</span><span class="sxs-lookup"><span data-stu-id="b4af8-125">It enables IntelliSense support for your variables and parameters.</span></span> <span data-ttu-id="b4af8-126">これにより、コードを入力すると、そのプロパティおよびその他のメンバーを参照してください。</span><span class="sxs-lookup"><span data-stu-id="b4af8-126">This enables you to see their properties and other members as you type code.</span></span>  
   
--   コンパイラが型チェックを実行するようになります。 型チェックでは、型変換エラーのため、実行時に失敗するステートメントを検索できます。 また、これらのメソッドをサポートしていないオブジェクトに対するメソッドの呼び出しを識別します。  
+-   <span data-ttu-id="b4af8-127">コンパイラが型チェックを実行するようになります。</span><span class="sxs-lookup"><span data-stu-id="b4af8-127">It enables the compiler to perform type checking.</span></span> <span data-ttu-id="b4af8-128">型チェックでは、型変換エラーのため、実行時に失敗するステートメントを検索できます。</span><span class="sxs-lookup"><span data-stu-id="b4af8-128">Type checking helps you find statements that can fail at run time because of type conversion errors.</span></span> <span data-ttu-id="b4af8-129">また、これらのメソッドをサポートしていないオブジェクトに対するメソッドの呼び出しを識別します。</span><span class="sxs-lookup"><span data-stu-id="b4af8-129">It also identifies calls to methods on objects that do not support those methods.</span></span>  
   
--   コードの実行の速度が向上します。 この理由の&1; つは、プログラミングの要素のデータ型を指定しない場合、Visual Basic コンパイラが割り当てる、`Object`型です。 コンパイルされたコードは、間を変換する必要があります`Object`およびその他のデータ型は、パフォーマンスが低下します。  
+-   <span data-ttu-id="b4af8-130">コードの実行の速度が向上します。</span><span class="sxs-lookup"><span data-stu-id="b4af8-130">It speeds up the execution of code.</span></span> <span data-ttu-id="b4af8-131">この理由の&1; つは、プログラミングの要素のデータ型を指定しない場合、Visual Basic コンパイラが割り当てる、`Object`型です。</span><span class="sxs-lookup"><span data-stu-id="b4af8-131">One reason for this is that if you do not specify a data type for a programming element, the Visual Basic compiler assigns it the `Object` type.</span></span> <span data-ttu-id="b4af8-132">コンパイルされたコードは、間を変換する必要があります`Object`およびその他のデータ型は、パフォーマンスが低下します。</span><span class="sxs-lookup"><span data-stu-id="b4af8-132">Compiled code might have to convert back and forth between `Object` and other data types, which reduces performance.</span></span>  
   
-## <a name="implicit-narrowing-conversion-errors"></a>暗黙的な縮小変換エラー  
- 縮小変換であるデータ型の変換がある場合に、暗黙的な縮小変換エラーが発生します。  
+## <a name="implicit-narrowing-conversion-errors"></a><span data-ttu-id="b4af8-133">暗黙的な縮小変換エラー</span><span class="sxs-lookup"><span data-stu-id="b4af8-133">Implicit Narrowing Conversion Errors</span></span>  
+ <span data-ttu-id="b4af8-134">縮小変換であるデータ型の変換がある場合に、暗黙的な縮小変換エラーが発生します。</span><span class="sxs-lookup"><span data-stu-id="b4af8-134">Implicit narrowing conversion errors occur when there is an implicit data type conversion that is a narrowing conversion.</span></span>  
   
- [!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]多くのデータ型を他のデータ型に変換できます。 精度が低いまたは小規模な容量を持つデータ型に&1; つのデータ型の値が変換されるときに、データ損失が発生することができます。 このような縮小変換が失敗した場合、実行時エラーが発生します。 `Option Strict`それらを回避するようには、これらの縮小変換のコンパイル時に通知を確実にします。 詳細については、次を参照してください。[暗黙的および明示的な変換](../../../visual-basic/programming-guide/language-features/data-types/implicit-and-explicit-conversions.md)と[拡大変換と縮小変換](../../../visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions.md)します。  
+ [!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]<span data-ttu-id="b4af8-135">多くのデータ型を他のデータ型に変換できます。</span><span class="sxs-lookup"><span data-stu-id="b4af8-135"> can convert many data types to other data types.</span></span> <span data-ttu-id="b4af8-136">精度が低いまたは小規模な容量を持つデータ型に&1; つのデータ型の値が変換されるときに、データ損失が発生することができます。</span><span class="sxs-lookup"><span data-stu-id="b4af8-136">Data loss can occur when the value of one data type is converted to a data type that has less precision or a smaller capacity.</span></span> <span data-ttu-id="b4af8-137">このような縮小変換が失敗した場合、実行時エラーが発生します。</span><span class="sxs-lookup"><span data-stu-id="b4af8-137">A run-time error occurs if such a narrowing conversion fails.</span></span> <span data-ttu-id="b4af8-138">`Option Strict`それらを回避するようには、これらの縮小変換のコンパイル時に通知を確実にします。</span><span class="sxs-lookup"><span data-stu-id="b4af8-138">`Option Strict` ensures compile-time notification of these narrowing conversions so that you can avoid them.</span></span> <span data-ttu-id="b4af8-139">詳細については、次を参照してください。[暗黙的および明示的な変換](../../../visual-basic/programming-guide/language-features/data-types/implicit-and-explicit-conversions.md)と[拡大変換と縮小変換](../../../visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions.md)します。</span><span class="sxs-lookup"><span data-stu-id="b4af8-139">For more information, see [Implicit and Explicit Conversions](../../../visual-basic/programming-guide/language-features/data-types/implicit-and-explicit-conversions.md) and [Widening and Narrowing Conversions](../../../visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions.md).</span></span>  
   
- エラーが発生する変換には、式で発生する暗黙的な変換が含まれます。 詳細については、次のトピックを参照してください。  
+ <span data-ttu-id="b4af8-140">エラーが発生する変換には、式で発生する暗黙的な変換が含まれます。</span><span class="sxs-lookup"><span data-stu-id="b4af8-140">Conversions that can cause errors include implicit conversions that occur in expressions.</span></span> <span data-ttu-id="b4af8-141">詳細については、次のトピックを参照してください。</span><span class="sxs-lookup"><span data-stu-id="b4af8-141">For more information, see the following topics:</span></span>  
   
--   [+ 演算子](../../../visual-basic/language-reference/operators/addition-operator.md)  
+-   [<span data-ttu-id="b4af8-142">+ 演算子</span><span class="sxs-lookup"><span data-stu-id="b4af8-142">+ Operator</span></span>](../../../visual-basic/language-reference/operators/addition-operator.md)  
   
--   [+= 演算子](../../../visual-basic/language-reference/operators/addition-assignment-operator.md)  
+-   [<span data-ttu-id="b4af8-143">+= 演算子</span><span class="sxs-lookup"><span data-stu-id="b4af8-143">+= Operator</span></span>](../../../visual-basic/language-reference/operators/addition-assignment-operator.md)  
   
--   [\ 演算子 (Visual Basic)](../../../visual-basic/language-reference/operators/integer-division-operator.md)  
+-   [<span data-ttu-id="b4af8-144">\ 演算子 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="b4af8-144">\ Operator (Visual Basic)</span></span>](../../../visual-basic/language-reference/operators/integer-division-operator.md)  
   
--   [/= 演算子 (Visual Basic)](../../../visual-basic/language-reference/operators/floating-point-division-assignment-operator.md)  
+-   [<span data-ttu-id="b4af8-145">/= 演算子 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="b4af8-145">/= Operator (Visual Basic)</span></span>](../../../visual-basic/language-reference/operators/floating-point-division-assignment-operator.md)  
   
--   [Char データ型](../../../visual-basic/language-reference/data-types/char-data-type.md)  
+-   [<span data-ttu-id="b4af8-146">Char データ型</span><span class="sxs-lookup"><span data-stu-id="b4af8-146">Char Data Type</span></span>](../../../visual-basic/language-reference/data-types/char-data-type.md)  
   
- 使用して文字列を連結すると、 [>/documents/report1.rdl」の演算子](../../../visual-basic/language-reference/operators/concatenation-operator.md)文字列へのすべての変換は拡大変換と見なされます。 これらの変換は暗黙的な縮小変換のエラーであってを生成しないように`Option Strict`にします。  
+ <span data-ttu-id="b4af8-147">使用して文字列を連結すると、 [>/documents/report1.rdl」の演算子](../../../visual-basic/language-reference/operators/concatenation-operator.md)文字列へのすべての変換は拡大変換と見なされます。</span><span class="sxs-lookup"><span data-stu-id="b4af8-147">When you concatenate strings by using the [& Operator](../../../visual-basic/language-reference/operators/concatenation-operator.md), all conversions to the strings are considered to be widening.</span></span> <span data-ttu-id="b4af8-148">これらの変換は暗黙的な縮小変換のエラーであってを生成しないように`Option Strict`にします。</span><span class="sxs-lookup"><span data-stu-id="b4af8-148">So these conversions do not generate an implicit narrowing conversion error, even if `Option Strict` is on.</span></span>  
   
- 場合に縮小変換がコンパイル時エラーになります、対応するパラメーターと異なるデータ型を持つ引数を持つメソッドを呼び出すと、`Option Strict`にします。 拡大変換または明示的な変換を使用して、コンパイル時エラーを回避できます。  
+ <span data-ttu-id="b4af8-149">場合に縮小変換がコンパイル時エラーになります、対応するパラメーターと異なるデータ型を持つ引数を持つメソッドを呼び出すと、`Option Strict`にします。</span><span class="sxs-lookup"><span data-stu-id="b4af8-149">When you call a method that has an argument that has a data type different from the corresponding parameter, a narrowing conversion causes a compile-time error if `Option Strict` is on.</span></span> <span data-ttu-id="b4af8-150">拡大変換または明示的な変換を使用して、コンパイル時エラーを回避できます。</span><span class="sxs-lookup"><span data-stu-id="b4af8-150">You can avoid the compile-time error by using a widening conversion or an explicit conversion.</span></span>  
   
- コンパイル単位内の要素からの変換で暗黙的な縮小変換エラーが抑制されている、`For Each…Next`ループ制御変数のコレクション。 これが発生した場合でも`Option Strict`にします。 詳細については、「縮小変換」」セクションを参照してください[ごとにしています.。次のステートメントの](../../../visual-basic/language-reference/statements/for-each-next-statement.md)です。  
+ <span data-ttu-id="b4af8-151">コンパイル単位内の要素からの変換で暗黙的な縮小変換エラーが抑制されている、`For Each…Next`ループ制御変数のコレクション。</span><span class="sxs-lookup"><span data-stu-id="b4af8-151">Implicit narrowing conversion errors are suppressed at compile-time for conversions from the elements in a `For Each…Next` collection to the loop control variable.</span></span> <span data-ttu-id="b4af8-152">これが発生した場合でも`Option Strict`にします。</span><span class="sxs-lookup"><span data-stu-id="b4af8-152">This occurs even if `Option Strict` is on.</span></span> <span data-ttu-id="b4af8-153">詳細については、「縮小変換」」セクションを参照してください[ごとにしています.。次のステートメントの](../../../visual-basic/language-reference/statements/for-each-next-statement.md)です。</span><span class="sxs-lookup"><span data-stu-id="b4af8-153">For more information, see the "Narrowing Conversions" section in [For Each...Next Statement](../../../visual-basic/language-reference/statements/for-each-next-statement.md).</span></span>  
   
-## <a name="late-binding-errors"></a>遅延バインド エラー  
- プロパティまたはメソッドの型に宣言されている変数に代入される場合、オブジェクトは遅延バインディング`Object`します。 詳細については、次を参照してください。[早期と遅延バインディング](../../../visual-basic/programming-guide/language-features/early-late-binding/index.md)します。  
+## <a name="late-binding-errors"></a><span data-ttu-id="b4af8-154">遅延バインド エラー</span><span class="sxs-lookup"><span data-stu-id="b4af8-154">Late Binding Errors</span></span>  
+ <span data-ttu-id="b4af8-155">プロパティまたはメソッドの型に宣言されている変数に代入される場合、オブジェクトは遅延バインディング`Object`します。</span><span class="sxs-lookup"><span data-stu-id="b4af8-155">An object is late bound when it is assigned to a property or method of a variable that is declared to be of type `Object`.</span></span> <span data-ttu-id="b4af8-156">詳細については、次を参照してください。[早期と遅延バインディング](../../../visual-basic/programming-guide/language-features/early-late-binding/index.md)します。</span><span class="sxs-lookup"><span data-stu-id="b4af8-156">For more information, see [Early and Late Binding](../../../visual-basic/programming-guide/language-features/early-late-binding/index.md).</span></span>  
   
-## <a name="implicit-object-type-errors"></a>暗黙の型のオブジェクトの種類のエラー  
- 適切な型ができない場合に暗黙の型のオブジェクトの種類のエラーが発生するための型で宣言された変数の推論`Object`は一切関係ありません。 これを使用する場合、主に発生する、`Dim`ステートメントを使用せずに変数を宣言する、`As`句、および`Option Infer`は無効になっています。 詳細については、次を参照してください。 [Option Infer ステートメント](../../../visual-basic/language-reference/statements/option-infer-statement.md)と[Visual Basic 言語仕様](../../../visual-basic/reference/language-specification.md)します。  
+## <a name="implicit-object-type-errors"></a><span data-ttu-id="b4af8-157">暗黙の型のオブジェクトの種類のエラー</span><span class="sxs-lookup"><span data-stu-id="b4af8-157">Implicit Object Type Errors</span></span>  
+ <span data-ttu-id="b4af8-158">適切な型ができない場合に暗黙の型のオブジェクトの種類のエラーが発生するための型で宣言された変数の推論`Object`は一切関係ありません。</span><span class="sxs-lookup"><span data-stu-id="b4af8-158">Implicit object type errors occur when an appropriate type cannot be inferred for a declared variable, so a type of `Object` is inferred.</span></span> <span data-ttu-id="b4af8-159">これを使用する場合、主に発生する、`Dim`ステートメントを使用せずに変数を宣言する、`As`句、および`Option Infer`は無効になっています。</span><span class="sxs-lookup"><span data-stu-id="b4af8-159">This primarily occurs when you use a `Dim` statement to declare a variable without using an `As` clause, and `Option Infer` is off.</span></span> <span data-ttu-id="b4af8-160">詳細については、次を参照してください。 [Option Infer ステートメント](../../../visual-basic/language-reference/statements/option-infer-statement.md)と[Visual Basic 言語仕様](../../../visual-basic/reference/language-specification.md)します。</span><span class="sxs-lookup"><span data-stu-id="b4af8-160">For more information, see [Option Infer Statement](../../../visual-basic/language-reference/statements/option-infer-statement.md) and the [Visual Basic Language Specification](../../../visual-basic/reference/language-specification.md).</span></span>  
   
- メソッド パラメーターの`As`句は省略可能な場合`Option Strict`は無効になっています。 ただし、1 つのパラメーターを使用している場合、`As`句、これらはすべて使用する必要です。 場合`Option Strict`が有効で、`As`句が各パラメーター定義が必要です。  
+ <span data-ttu-id="b4af8-161">メソッド パラメーターの`As`句は省略可能な場合`Option Strict`は無効になっています。</span><span class="sxs-lookup"><span data-stu-id="b4af8-161">For method parameters, the `As` clause is optional if `Option Strict` is off.</span></span> <span data-ttu-id="b4af8-162">ただし、1 つのパラメーターを使用している場合、`As`句、これらはすべて使用する必要です。</span><span class="sxs-lookup"><span data-stu-id="b4af8-162">However, if any one parameter uses an `As` clause, they all must use it.</span></span> <span data-ttu-id="b4af8-163">場合`Option Strict`が有効で、`As`句が各パラメーター定義が必要です。</span><span class="sxs-lookup"><span data-stu-id="b4af8-163">If `Option Strict` is on, the `As` clause is required for every parameter definition.</span></span>  
   
- 使用せずに変数を宣言する場合、`As`句に設定し、 `Nothing`、変数の型を持つ`Object`です。 コンパイル時エラーが発生しないここでとき`Option Strict`上と`Option Infer`にします。 この例は、`Dim something = Nothing`です。  
+ <span data-ttu-id="b4af8-164">使用せずに変数を宣言する場合、`As`句に設定し、 `Nothing`、変数の型を持つ`Object`です。</span><span class="sxs-lookup"><span data-stu-id="b4af8-164">If you declare a variable without using an `As` clause and set it to `Nothing`, the variable has a type of `Object`.</span></span> <span data-ttu-id="b4af8-165">コンパイル時エラーが発生しないここでとき`Option Strict`上と`Option Infer`にします。</span><span class="sxs-lookup"><span data-stu-id="b4af8-165">No compile-time error occurs in this case when `Option Strict` is on and `Option Infer` is on.</span></span> <span data-ttu-id="b4af8-166">この例は、`Dim something = Nothing`です。</span><span class="sxs-lookup"><span data-stu-id="b4af8-166">An example of this is `Dim something = Nothing`.</span></span>  
   
-### <a name="default-data-types-and-values"></a>既定のデータ型と値  
- 次の表に、データ型との初期化子を指定するさまざまな組み合わせの結果、 [Dim ステートメント](../../../visual-basic/language-reference/statements/dim-statement.md)します。  
+### <a name="default-data-types-and-values"></a><span data-ttu-id="b4af8-167">既定のデータ型と値</span><span class="sxs-lookup"><span data-stu-id="b4af8-167">Default Data Types and Values</span></span>  
+ <span data-ttu-id="b4af8-168">次の表に、データ型との初期化子を指定するさまざまな組み合わせの結果、 [Dim ステートメント](../../../visual-basic/language-reference/statements/dim-statement.md)します。</span><span class="sxs-lookup"><span data-stu-id="b4af8-168">The following table describes the results of various combinations of specifying the data type and initializer in a [Dim Statement](../../../visual-basic/language-reference/statements/dim-statement.md).</span></span>  
   
-|データ型が指定されているか|初期化子が指定されているか|例|結果|  
+|<span data-ttu-id="b4af8-169">データ型が指定されているか</span><span class="sxs-lookup"><span data-stu-id="b4af8-169">Data type specified?</span></span>|<span data-ttu-id="b4af8-170">初期化子が指定されているか</span><span class="sxs-lookup"><span data-stu-id="b4af8-170">Initializer specified?</span></span>|<span data-ttu-id="b4af8-171">例</span><span class="sxs-lookup"><span data-stu-id="b4af8-171">Example</span></span>|<span data-ttu-id="b4af8-172">結果</span><span class="sxs-lookup"><span data-stu-id="b4af8-172">Result</span></span>|  
 |---|---|---|---|  
-|Ｘ|Ｘ|`Dim qty`|
-          `Option Strict` がオフ (既定値) の場合、変数は `Nothing` に設定されます。<br /><br /> `Option Strict` がオンの場合、コンパイル時エラーが発生します。|  
-|Ｘ|○|`Dim qty = 5`|`Option Infer` がオン (既定値) の場合、変数は初期化子のデータ型になります。 参照してください[ローカル型推論](../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md)します。<br /><br /> `Option Infer` がオフで、`Option Strict` がオフの場合、変数は `Object` のデータ型になります。<br /><br /> `Option Infer` がオフで、`Option Strict` がオンの場合、コンパイル時エラーが発生します。|  
-|○|Ｘ|`Dim qty As Integer`|変数は、データ型の既定値に初期化されます。 詳細については、次を参照してください。 [Dim ステートメント](../../../visual-basic/language-reference/statements/dim-statement.md)します。|  
-|はい|○|`Dim qty  As Integer = 5`|初期化子のデータ型を指定したデータ型に変換できない場合は、コンパイル時エラーが発生します。|  
+|<span data-ttu-id="b4af8-173">Ｘ</span><span class="sxs-lookup"><span data-stu-id="b4af8-173">No</span></span>|<span data-ttu-id="b4af8-174">Ｘ</span><span class="sxs-lookup"><span data-stu-id="b4af8-174">No</span></span>|`Dim qty`|<span data-ttu-id="b4af8-175">
+          `Option Strict` がオフ (既定値) の場合、変数は `Nothing` に設定されます。</span><span class="sxs-lookup"><span data-stu-id="b4af8-175">If `Option Strict` is off (the default), the variable is set to `Nothing`.</span></span><br /><br /> <span data-ttu-id="b4af8-176">`Option Strict` がオンの場合、コンパイル時エラーが発生します。</span><span class="sxs-lookup"><span data-stu-id="b4af8-176">If `Option Strict` is on, a compile-time error occurs.</span></span>|  
+|<span data-ttu-id="b4af8-177">Ｘ</span><span class="sxs-lookup"><span data-stu-id="b4af8-177">No</span></span>|<span data-ttu-id="b4af8-178">○</span><span class="sxs-lookup"><span data-stu-id="b4af8-178">Yes</span></span>|`Dim qty = 5`|<span data-ttu-id="b4af8-179">`Option Infer` がオン (既定値) の場合、変数は初期化子のデータ型になります。</span><span class="sxs-lookup"><span data-stu-id="b4af8-179">If `Option Infer` is on (the default), the variable takes the data type of the initializer.</span></span> <span data-ttu-id="b4af8-180">参照してください[ローカル型推論](../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md)します。</span><span class="sxs-lookup"><span data-stu-id="b4af8-180">See [Local Type Inference](../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md).</span></span><br /><br /> <span data-ttu-id="b4af8-181">`Option Infer` がオフで、`Option Strict` がオフの場合、変数は `Object` のデータ型になります。</span><span class="sxs-lookup"><span data-stu-id="b4af8-181">If `Option Infer` is off and `Option Strict` is off, the variable takes the data type of `Object`.</span></span><br /><br /> <span data-ttu-id="b4af8-182">`Option Infer` がオフで、`Option Strict` がオンの場合、コンパイル時エラーが発生します。</span><span class="sxs-lookup"><span data-stu-id="b4af8-182">If `Option Infer` is off and `Option Strict` is on, a compile-time error occurs.</span></span>|  
+|<span data-ttu-id="b4af8-183">○</span><span class="sxs-lookup"><span data-stu-id="b4af8-183">Yes</span></span>|<span data-ttu-id="b4af8-184">Ｘ</span><span class="sxs-lookup"><span data-stu-id="b4af8-184">No</span></span>|`Dim qty As Integer`|<span data-ttu-id="b4af8-185">変数は、データ型の既定値に初期化されます。</span><span class="sxs-lookup"><span data-stu-id="b4af8-185">The variable is initialized to the default value for the data type.</span></span> <span data-ttu-id="b4af8-186">詳細については、次を参照してください。 [Dim ステートメント](../../../visual-basic/language-reference/statements/dim-statement.md)します。</span><span class="sxs-lookup"><span data-stu-id="b4af8-186">For more information, see [Dim Statement](../../../visual-basic/language-reference/statements/dim-statement.md).</span></span>|  
+|<span data-ttu-id="b4af8-187">はい</span><span class="sxs-lookup"><span data-stu-id="b4af8-187">Yes</span></span>|<span data-ttu-id="b4af8-188">○</span><span class="sxs-lookup"><span data-stu-id="b4af8-188">Yes</span></span>|`Dim qty  As Integer = 5`|<span data-ttu-id="b4af8-189">初期化子のデータ型を指定したデータ型に変換できない場合は、コンパイル時エラーが発生します。</span><span class="sxs-lookup"><span data-stu-id="b4af8-189">If the data type of the initializer is not convertible to the specified data type, a compile-time error occurs.</span></span>|  
   
-## <a name="when-an-option-strict-statement-is-not-present"></a>Option Strict ステートメントが存在しない場合  
- ソース コードが含まれていない場合、`Option Strict`ステートメント、 **Option strict**の設定、[コンパイル ページで、プロジェクト デザイナー) (Visual Basic)](https://docs.microsoft.com/visualstudio/ide/reference/compile-page-project-designer-visual-basic)を使用します。 **[コンパイル] ページ**はエラーが生成される条件をさらに制御を提供する設定があります。  
+## <a name="when-an-option-strict-statement-is-not-present"></a><span data-ttu-id="b4af8-190">Option Strict ステートメントが存在しない場合</span><span class="sxs-lookup"><span data-stu-id="b4af8-190">When an Option Strict Statement Is Not Present</span></span>  
+ <span data-ttu-id="b4af8-191">ソース コードが含まれていない場合、`Option Strict`ステートメント、 **Option strict**の設定、[コンパイル ページで、プロジェクト デザイナー) (Visual Basic)](https://docs.microsoft.com/visualstudio/ide/reference/compile-page-project-designer-visual-basic)を使用します。</span><span class="sxs-lookup"><span data-stu-id="b4af8-191">If the source code does not contain an `Option Strict` statement, the **Option strict** setting on the [Compile Page, Project Designer (Visual Basic)](https://docs.microsoft.com/visualstudio/ide/reference/compile-page-project-designer-visual-basic) is used.</span></span> <span data-ttu-id="b4af8-192">**[コンパイル] ページ**はエラーが生成される条件をさらに制御を提供する設定があります。</span><span class="sxs-lookup"><span data-stu-id="b4af8-192">The **Compile Page** has settings that provide additional control over the conditions that generate an error.</span></span>  
   
- 使用することができます、コマンド ライン コンパイラを使用している場合、 [/optionstrict](../../../visual-basic/reference/command-line-compiler/optionstrict.md)コンパイラ オプションの設定を指定する`Option Strict`です。  
+ <span data-ttu-id="b4af8-193">使用することができます、コマンド ライン コンパイラを使用している場合、 [/optionstrict](../../../visual-basic/reference/command-line-compiler/optionstrict.md)コンパイラ オプションの設定を指定する`Option Strict`です。</span><span class="sxs-lookup"><span data-stu-id="b4af8-193">If you are using the command-line compiler, you can use the [/optionstrict](../../../visual-basic/reference/command-line-compiler/optionstrict.md) compiler option to specify a setting for `Option Strict`.</span></span>  
   
-### <a name="to-set-option-strict-in-the-ide"></a>IDE で Option Strict を設定するには  
+### <a name="to-set-option-strict-in-the-ide"></a><span data-ttu-id="b4af8-194">IDE で Option Strict を設定するには</span><span class="sxs-lookup"><span data-stu-id="b4af8-194">To set Option Strict in the IDE</span></span>  
 [!INCLUDE[note_settings_general](../../../csharp/language-reference/compiler-messages/includes/note_settings_general_md.md)]  
   
-1.  **ソリューション エクスプ ローラー**プロジェクトを選択します。 **プロジェクト** メニューのをクリックして**プロパティ**します。 詳細については、「[プロジェクト デザイナーの概要](http://msdn.microsoft.com/en-us/898dd854-c98d-430c-ba1b-a913ce3c73d7)」を参照してください。  
+1.  <span data-ttu-id="b4af8-195">**ソリューション エクスプ ローラー**プロジェクトを選択します。</span><span class="sxs-lookup"><span data-stu-id="b4af8-195">In **Solution Explorer**, select a project.</span></span> <span data-ttu-id="b4af8-196">**プロジェクト** メニューのをクリックして**プロパティ**します。</span><span class="sxs-lookup"><span data-stu-id="b4af8-196">On the **Project** menu, click **Properties**.</span></span> <span data-ttu-id="b4af8-197">詳細については、「[プロジェクト デザイナーの概要](http://msdn.microsoft.com/en-us/898dd854-c98d-430c-ba1b-a913ce3c73d7)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="b4af8-197">For more information, see [Introduction to the Project Designer](http://msdn.microsoft.com/en-us/898dd854-c98d-430c-ba1b-a913ce3c73d7).</span></span>  
   
-2.  **コンパイル** タブの値を設定、 **Option Strict**ボックス。  
+2.  <span data-ttu-id="b4af8-198">**コンパイル** タブの値を設定、 **Option Strict**ボックス。</span><span class="sxs-lookup"><span data-stu-id="b4af8-198">On the **Compile** tab, set the value in the **Option Strict** box.</span></span>  
   
-###  <a name="conditions"></a>IDE で警告の構成を設定するには  
- 使用すると、[コンパイル ページで、プロジェクト デザイナー) (Visual Basic)](https://docs.microsoft.com/visualstudio/ide/reference/compile-page-project-designer-visual-basic)の代わりに、`Option Strict`ステートメントがあるエラーが生成される条件をさらに制御します。 **警告の構成**のセクション、 **[コンパイル] ページ**がコンパイル時エラーが発生する&3; つの条件に対応する設定と`Option Strict`にします。 これらの設定を次に示します。  
+###  <span data-ttu-id="b4af8-199"><a name="conditions"></a>IDE で警告の構成を設定するには</span><span class="sxs-lookup"><span data-stu-id="b4af8-199"><a name="conditions"></a> To set warning configurations in the IDE</span></span>  
+ <span data-ttu-id="b4af8-200">使用すると、[コンパイル ページで、プロジェクト デザイナー) (Visual Basic)](https://docs.microsoft.com/visualstudio/ide/reference/compile-page-project-designer-visual-basic)の代わりに、`Option Strict`ステートメントがあるエラーが生成される条件をさらに制御します。</span><span class="sxs-lookup"><span data-stu-id="b4af8-200">When you use the [Compile Page, Project Designer (Visual Basic)](https://docs.microsoft.com/visualstudio/ide/reference/compile-page-project-designer-visual-basic) instead of an `Option Strict` statement, you have additional control over the conditions that generate errors.</span></span> <span data-ttu-id="b4af8-201">**警告の構成**のセクション、 **[コンパイル] ページ**がコンパイル時エラーが発生する&3; つの条件に対応する設定と`Option Strict`にします。</span><span class="sxs-lookup"><span data-stu-id="b4af8-201">The **Warning configurations** section of the **Compile Page** has settings that correspond to the three conditions that cause a compile-time error when `Option Strict` is on.</span></span> <span data-ttu-id="b4af8-202">これらの設定を次に示します。</span><span class="sxs-lookup"><span data-stu-id="b4af8-202">Following are these settings:</span></span>  
   
--   **暗黙の変換**  
+-   <span data-ttu-id="b4af8-203">**暗黙の変換**</span><span class="sxs-lookup"><span data-stu-id="b4af8-203">**Implicit conversion**</span></span>  
   
--   **遅延バインディングです。呼び出しが実行時に失敗する可能性があります。**  
+-   <span data-ttu-id="b4af8-204">**遅延バインディングです。呼び出しが実行時に失敗する可能性があります。**</span><span class="sxs-lookup"><span data-stu-id="b4af8-204">**Late binding; call could fail at run time**</span></span>  
   
--   **暗黙の型。オブジェクトと見なされます**  
+-   <span data-ttu-id="b4af8-205">**暗黙の型。オブジェクトと見なされます**</span><span class="sxs-lookup"><span data-stu-id="b4af8-205">**Implicit type; object assumed**</span></span>  
   
- 設定すると**Option Strict**に**に**、これらの警告の構成設定の&3; つすべてに設定されて**エラー**します。 設定すると**Option Strict**に**オフ**、3 つすべての設定が  **None**します。  
+ <span data-ttu-id="b4af8-206">設定すると**Option Strict**に**に**、これらの警告の構成設定の&3; つすべてに設定されて**エラー**します。</span><span class="sxs-lookup"><span data-stu-id="b4af8-206">When you set **Option Strict** to **On**, all three of these warning configuration settings are set to **Error**.</span></span> <span data-ttu-id="b4af8-207">設定すると**Option Strict**に**オフ**、3 つすべての設定が  **None**します。</span><span class="sxs-lookup"><span data-stu-id="b4af8-207">When you set **Option Strict** to **Off**, all three settings are set to **None**.</span></span>  
   
- 各警告する構成設定を個別に変更できます**None**、**警告**、または**エラー**します。 次の&3; つのすべての警告の構成設定が設定されている場合**エラー**、`On`で表示される、`Option strict`ボックス。 3 つすべてが設定されている場合**None**、`Off`このボックスに表示されます。 これらの設定の他の任意の組み合わせの**(カスタム)**が表示されます。  
+ <span data-ttu-id="b4af8-208">各警告する構成設定を個別に変更できます**None**、**警告**、または**エラー**します。</span><span class="sxs-lookup"><span data-stu-id="b4af8-208">You can individually change each warning configuration setting to **None**, **Warning**, or **Error**.</span></span> <span data-ttu-id="b4af8-209">次の&3; つのすべての警告の構成設定が設定されている場合**エラー**、`On`で表示される、`Option strict`ボックス。</span><span class="sxs-lookup"><span data-stu-id="b4af8-209">If all three warning configuration settings are set to **Error**, `On` appears in the `Option strict` box.</span></span> <span data-ttu-id="b4af8-210">3 つすべてが設定されている場合**None**、`Off`このボックスに表示されます。</span><span class="sxs-lookup"><span data-stu-id="b4af8-210">If all three are set to **None**, `Off` appears in this box.</span></span> <span data-ttu-id="b4af8-211">これらの設定の他の任意の組み合わせの**(カスタム)**が表示されます。</span><span class="sxs-lookup"><span data-stu-id="b4af8-211">For any other combination of these settings, **(custom)** appears.</span></span>  
   
-### <a name="to-set-the-option-strict-default-setting-for-new-projects"></a>新しいプロジェクトの Option Strict の既定の設定を設定するには  
- プロジェクトを作成するときに、 **Option Strict**の設定、**コンパイル**に設定されているタブ、 **Option Strict**で設定、**オプション** ダイアログ ボックス。  
+### <a name="to-set-the-option-strict-default-setting-for-new-projects"></a><span data-ttu-id="b4af8-212">新しいプロジェクトの Option Strict の既定の設定を設定するには</span><span class="sxs-lookup"><span data-stu-id="b4af8-212">To set the Option Strict default setting for new projects</span></span>  
+ <span data-ttu-id="b4af8-213">プロジェクトを作成するときに、 **Option Strict**の設定、**コンパイル**に設定されているタブ、 **Option Strict**で設定、**オプション** ダイアログ ボックス。</span><span class="sxs-lookup"><span data-stu-id="b4af8-213">When you create a project, the **Option Strict** setting on the **Compile** tab is set to the **Option Strict** setting in the **Options** dialog box.</span></span>  
   
- 設定する`Option Strict`この ダイアログ ボックスで、**ツール** メニューのをクリックして**オプション**します。 **オプション** ダイアログ ボックスで、展開**プロジェクトおよびソリューション**、 をクリックし、 **VB が既定で**します。 初期の既定の設定**VB 既定**は`Off`です。  
+ <span data-ttu-id="b4af8-214">設定する`Option Strict`この ダイアログ ボックスで、**ツール** メニューのをクリックして**オプション**します。</span><span class="sxs-lookup"><span data-stu-id="b4af8-214">To set `Option Strict` in this dialog box, on the **Tools** menu, click **Options**.</span></span> <span data-ttu-id="b4af8-215">**オプション** ダイアログ ボックスで、展開**プロジェクトおよびソリューション**、 をクリックし、 **VB が既定で**します。</span><span class="sxs-lookup"><span data-stu-id="b4af8-215">In the **Options** dialog box, expand **Projects and Solutions**, and then click **VB Defaults**.</span></span> <span data-ttu-id="b4af8-216">初期の既定の設定**VB 既定**は`Off`です。</span><span class="sxs-lookup"><span data-stu-id="b4af8-216">The initial default setting in **VB Defaults** is `Off`.</span></span>  
   
-### <a name="to-set-option-strict-on-the-command-line"></a>コマンドラインで Option Strict を設定するには  
- 含める、 [/optionstrict](../../../visual-basic/reference/command-line-compiler/optionstrict.md)コンパイラ オプションで、 **vbc**コマンドです。  
+### <a name="to-set-option-strict-on-the-command-line"></a><span data-ttu-id="b4af8-217">コマンドラインで Option Strict を設定するには</span><span class="sxs-lookup"><span data-stu-id="b4af8-217">To set Option Strict on the command line</span></span>  
+ <span data-ttu-id="b4af8-218">含める、 [/optionstrict](../../../visual-basic/reference/command-line-compiler/optionstrict.md)コンパイラ オプションで、 **vbc**コマンドです。</span><span class="sxs-lookup"><span data-stu-id="b4af8-218">Include the [/optionstrict](../../../visual-basic/reference/command-line-compiler/optionstrict.md) compiler option in the **vbc** command.</span></span>  
   
-## <a name="example"></a>例  
- 次の例では、変換は縮小変換を暗黙の型変換によって発生したコンパイル時エラーを示します。 このようなエラーは、**暗黙的な変換**条件、 **[コンパイル] ページ**します。  
+## <a name="example"></a><span data-ttu-id="b4af8-219">例</span><span class="sxs-lookup"><span data-stu-id="b4af8-219">Example</span></span>  
+ <span data-ttu-id="b4af8-220">次の例では、変換は縮小変換を暗黙の型変換によって発生したコンパイル時エラーを示します。</span><span class="sxs-lookup"><span data-stu-id="b4af8-220">The following examples demonstrate compile-time errors caused by implicit type conversions that are narrowing conversions.</span></span> <span data-ttu-id="b4af8-221">このようなエラーは、**暗黙的な変換**条件、 **[コンパイル] ページ**します。</span><span class="sxs-lookup"><span data-stu-id="b4af8-221">This category of errors corresponds to the **Implicit conversion** condition on the **Compile Page**.</span></span>  
   
- [!code-vb[VbVbalrStatements #&161;](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/option-strict-statement_1.vb)]  
+ <span data-ttu-id="b4af8-222">[!code-vb[VbVbalrStatements #&161;](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/option-strict-statement_1.vb)]</span><span class="sxs-lookup"><span data-stu-id="b4af8-222">[!code-vb[VbVbalrStatements#161](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/option-strict-statement_1.vb)]</span></span>  
   
-## <a name="example"></a>例  
- 次の例では、遅延バインディングによるコンパイル時エラーを示します。 対応してこのようなエラー、**遅延バインディングです。 呼び出しが実行時に失敗でした**条件、 **[コンパイル] ページ**します。  
+## <a name="example"></a><span data-ttu-id="b4af8-223">例</span><span class="sxs-lookup"><span data-stu-id="b4af8-223">Example</span></span>  
+ <span data-ttu-id="b4af8-224">次の例では、遅延バインディングによるコンパイル時エラーを示します。</span><span class="sxs-lookup"><span data-stu-id="b4af8-224">The following example demonstrates a compile-time error caused by late binding.</span></span> <span data-ttu-id="b4af8-225">対応してこのようなエラー、**遅延バインディングです。 呼び出しが実行時に失敗でした**条件、 **[コンパイル] ページ**します。</span><span class="sxs-lookup"><span data-stu-id="b4af8-225">This category of errors corresponds to the **Late binding; call could fail at run time** condition on the **Compile Page**.</span></span>  
   
- [!code-vb[VbVbalrStatements #&162;](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/option-strict-statement_2.vb)]  
+ <span data-ttu-id="b4af8-226">[!code-vb[VbVbalrStatements #&162;](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/option-strict-statement_2.vb)]</span><span class="sxs-lookup"><span data-stu-id="b4af8-226">[!code-vb[VbVbalrStatements#162](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/option-strict-statement_2.vb)]</span></span>  
   
-## <a name="example"></a>例  
- 次の例では、暗黙の型で宣言されている変数によって発生したエラー`Object`します。 このようなエラーは、**暗黙的な型; object と見なされます**条件、 **[コンパイル] ページ**します。  
+## <a name="example"></a><span data-ttu-id="b4af8-227">例</span><span class="sxs-lookup"><span data-stu-id="b4af8-227">Example</span></span>  
+ <span data-ttu-id="b4af8-228">次の例では、暗黙の型で宣言されている変数によって発生したエラー`Object`します。</span><span class="sxs-lookup"><span data-stu-id="b4af8-228">The following examples demonstrate errors caused by variables that are declared with an implicit type of `Object`.</span></span> <span data-ttu-id="b4af8-229">このようなエラーは、**暗黙的な型; object と見なされます**条件、 **[コンパイル] ページ**します。</span><span class="sxs-lookup"><span data-stu-id="b4af8-229">This category of errors corresponds to the **Implicit type; object assumed** condition on the **Compile Page**.</span></span>  
   
- [!code-vb[VbVbalrStatements #&163;](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/option-strict-statement_3.vb)]  
+ <span data-ttu-id="b4af8-230">[!code-vb[VbVbalrStatements #&163;](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/option-strict-statement_3.vb)]</span><span class="sxs-lookup"><span data-stu-id="b4af8-230">[!code-vb[VbVbalrStatements#163](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/option-strict-statement_3.vb)]</span></span>  
   
- [!code-vb[VbVbalrStatements #&164;](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/option-strict-statement_4.vb)]  
+ <span data-ttu-id="b4af8-231">[!code-vb[VbVbalrStatements #&164;](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/option-strict-statement_4.vb)]</span><span class="sxs-lookup"><span data-stu-id="b4af8-231">[!code-vb[VbVbalrStatements#164](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/option-strict-statement_4.vb)]</span></span>  
   
-## <a name="see-also"></a>関連項目  
- [拡大変換と縮小変換](../../../visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions.md)   
- [明示的および暗黙的な変換](../../../visual-basic/programming-guide/language-features/data-types/implicit-and-explicit-conversions.md)   
- [[コンパイル] ページ、プロジェクト デザイナー (Visual Basic)](https://docs.microsoft.com/visualstudio/ide/reference/compile-page-project-designer-visual-basic)   
- [Option Explicit ステートメント](../../../visual-basic/language-reference/statements/option-explicit-statement.md)   
- [型変換関数](../../../visual-basic/language-reference/functions/type-conversion-functions.md)   
- [方法: オブジェクトのメンバーにアクセス](../../../visual-basic/programming-guide/language-features/variables/how-to-access-members-of-an-object.md)   
- [XML での埋め込み式](../../../visual-basic/programming-guide/language-features/xml/embedded-expressions-in-xml.md)   
- [厳密でないデリゲート変換](../../../visual-basic/programming-guide/language-features/delegates/relaxed-delegate-conversion.md)   
- [Office ソリューションの遅延バインディング](https://msdn.microsoft.com/library/3xxe951d)   
- [/optionstrict](../../../visual-basic/reference/command-line-compiler/optionstrict.md)   
- [[Visual Basic の既定値] ([オプション] ダイアログ ボックス - [プロジェクト])](https://docs.microsoft.com/visualstudio/ide/reference/visual-basic-defaults-projects-options-dialog-box)
+## <a name="see-also"></a><span data-ttu-id="b4af8-232">関連項目</span><span class="sxs-lookup"><span data-stu-id="b4af8-232">See Also</span></span>  
+ <span data-ttu-id="b4af8-233">[拡大変換と縮小変換](../../../visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions.md) </span><span class="sxs-lookup"><span data-stu-id="b4af8-233">[Widening and Narrowing Conversions](../../../visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions.md) </span></span>  
+<span data-ttu-id="b4af8-234"> [明示的および暗黙的な変換](../../../visual-basic/programming-guide/language-features/data-types/implicit-and-explicit-conversions.md) </span><span class="sxs-lookup"><span data-stu-id="b4af8-234"> [Implicit and Explicit Conversions](../../../visual-basic/programming-guide/language-features/data-types/implicit-and-explicit-conversions.md) </span></span>  
+<span data-ttu-id="b4af8-235"> [[コンパイル] ページ、プロジェクト デザイナー (Visual Basic)](https://docs.microsoft.com/visualstudio/ide/reference/compile-page-project-designer-visual-basic) </span><span class="sxs-lookup"><span data-stu-id="b4af8-235"> [Compile Page, Project Designer (Visual Basic)](https://docs.microsoft.com/visualstudio/ide/reference/compile-page-project-designer-visual-basic) </span></span>  
+<span data-ttu-id="b4af8-236"> [Option Explicit ステートメント](../../../visual-basic/language-reference/statements/option-explicit-statement.md) </span><span class="sxs-lookup"><span data-stu-id="b4af8-236"> [Option Explicit Statement](../../../visual-basic/language-reference/statements/option-explicit-statement.md) </span></span>  
+<span data-ttu-id="b4af8-237"> [型変換関数](../../../visual-basic/language-reference/functions/type-conversion-functions.md) </span><span class="sxs-lookup"><span data-stu-id="b4af8-237"> [Type Conversion Functions](../../../visual-basic/language-reference/functions/type-conversion-functions.md) </span></span>  
+<span data-ttu-id="b4af8-238"> [方法: オブジェクトのメンバーにアクセス](../../../visual-basic/programming-guide/language-features/variables/how-to-access-members-of-an-object.md) </span><span class="sxs-lookup"><span data-stu-id="b4af8-238"> [How to: Access Members of an Object](../../../visual-basic/programming-guide/language-features/variables/how-to-access-members-of-an-object.md) </span></span>  
+<span data-ttu-id="b4af8-239"> [XML での埋め込み式](../../../visual-basic/programming-guide/language-features/xml/embedded-expressions-in-xml.md) </span><span class="sxs-lookup"><span data-stu-id="b4af8-239"> [Embedded Expressions in XML](../../../visual-basic/programming-guide/language-features/xml/embedded-expressions-in-xml.md) </span></span>  
+<span data-ttu-id="b4af8-240"> [厳密でないデリゲート変換](../../../visual-basic/programming-guide/language-features/delegates/relaxed-delegate-conversion.md) </span><span class="sxs-lookup"><span data-stu-id="b4af8-240"> [Relaxed Delegate Conversion](../../../visual-basic/programming-guide/language-features/delegates/relaxed-delegate-conversion.md) </span></span>  
+<span data-ttu-id="b4af8-241"> [Office ソリューションの遅延バインディング](https://msdn.microsoft.com/library/3xxe951d) </span><span class="sxs-lookup"><span data-stu-id="b4af8-241"> [Late Binding in Office Solutions](https://msdn.microsoft.com/library/3xxe951d) </span></span>  
+<span data-ttu-id="b4af8-242"> [/optionstrict](../../../visual-basic/reference/command-line-compiler/optionstrict.md) </span><span class="sxs-lookup"><span data-stu-id="b4af8-242"> [/optionstrict](../../../visual-basic/reference/command-line-compiler/optionstrict.md) </span></span>  
+<span data-ttu-id="b4af8-243"> [[Visual Basic の既定値] ([オプション] ダイアログ ボックス - [プロジェクト])](https://docs.microsoft.com/visualstudio/ide/reference/visual-basic-defaults-projects-options-dialog-box)</span><span class="sxs-lookup"><span data-stu-id="b4af8-243"> [Visual Basic Defaults, Projects, Options Dialog Box](https://docs.microsoft.com/visualstudio/ide/reference/visual-basic-defaults-projects-options-dialog-box)</span></span>

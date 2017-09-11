@@ -38,20 +38,20 @@ ms.contentlocale: ja-jp
 ms.lasthandoff: 07/28/2017
 
 ---
-# <a name="utf8output-c-compiler-options"></a>/utf8output (C# コンパイラ オプション)
-**/utf8output** オプションは UTF-8 エンコードを使用してコンパイラ出力を表示します。  
+# <a name="utf8output-c-compiler-options"></a><span data-ttu-id="e95a6-102">/utf8output (C# コンパイラ オプション)</span><span class="sxs-lookup"><span data-stu-id="e95a6-102">/utf8output (C# Compiler Options)</span></span>
+<span data-ttu-id="e95a6-103">**/utf8output** オプションは UTF-8 エンコードを使用してコンパイラ出力を表示します。</span><span class="sxs-lookup"><span data-stu-id="e95a6-103">The **/utf8output** option displays compiler output using UTF-8 encoding.</span></span>  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a><span data-ttu-id="e95a6-104">構文</span><span class="sxs-lookup"><span data-stu-id="e95a6-104">Syntax</span></span>  
   
 ```console  
 /utf8output  
 ```  
   
-## <a name="remarks"></a>コメント  
- 国際化の設定によっては、コンパイラの出力が正しくコンソールに表示できない場合があります。 これらの設定では、**/utf8output** を使用してコンパイラ出力をファイルにリダイレクトします。  
+## <a name="remarks"></a><span data-ttu-id="e95a6-105">コメント</span><span class="sxs-lookup"><span data-stu-id="e95a6-105">Remarks</span></span>  
+ <span data-ttu-id="e95a6-106">国際化の設定によっては、コンパイラの出力が正しくコンソールに表示できない場合があります。</span><span class="sxs-lookup"><span data-stu-id="e95a6-106">In some international configurations, compiler output cannot correctly be displayed in the console.</span></span> <span data-ttu-id="e95a6-107">これらの設定では、**/utf8output** を使用してコンパイラ出力をファイルにリダイレクトします。</span><span class="sxs-lookup"><span data-stu-id="e95a6-107">In these configurations, use **/utf8output** and redirect compiler output to a file.</span></span>  
   
- このコンパイラ オプションは Visual Studio では使用できず、プログラムで変更することはできません。  
+ <span data-ttu-id="e95a6-108">このコンパイラ オプションは Visual Studio では使用できず、プログラムで変更することはできません。</span><span class="sxs-lookup"><span data-stu-id="e95a6-108">This compiler option is unavailable in Visual Studio and cannot be changed programmatically.</span></span>  
   
-## <a name="see-also"></a>関連項目  
- [C# コンパイラ オプション](../../../csharp/language-reference/compiler-options/index.md)
+## <a name="see-also"></a><span data-ttu-id="e95a6-109">関連項目</span><span class="sxs-lookup"><span data-stu-id="e95a6-109">See Also</span></span>  
+ [<span data-ttu-id="e95a6-110">C# コンパイラ オプション</span><span class="sxs-lookup"><span data-stu-id="e95a6-110">C# Compiler Options</span></span>](../../../csharp/language-reference/compiler-options/index.md)
 

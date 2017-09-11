@@ -15,26 +15,27 @@ ms.assetid: 9d094a4a-ec8c-41b0-b7ab-a3deb2a01d45
 caps.latest.revision: 3
 author: dotnet-bot
 ms.author: dotnetcontent
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 041e99f4fd70008208a8f661f6763159ac7f4479
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
+ms.openlocfilehash: 22d97c95a1dec52c0290555daeedce51c5a567e3
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/12/2017
 
 
 ---
-# <a name="finding-the-default-paragraph-style-visual-basic"></a>既定の段落スタイル (Visual Basic) の検索
-WordprocessingML ドキュメントのチュートリアルでの情報の操作の最初のタスクでは、ドキュメント内の段落の既定のスタイルを検索します。  
+# <a name="finding-the-default-paragraph-style-visual-basic"></a><span data-ttu-id="4ef8c-102">既定の段落スタイル (Visual Basic) の検索</span><span class="sxs-lookup"><span data-stu-id="4ef8c-102">Finding the Default Paragraph Style (Visual Basic)</span></span>
+<span data-ttu-id="4ef8c-103">WordprocessingML ドキュメントのチュートリアルでの情報の操作の最初のタスクでは、ドキュメント内の段落の既定のスタイルを検索します。</span><span class="sxs-lookup"><span data-stu-id="4ef8c-103">The first task in the Manipulating Information in a WordprocessingML Document tutorial is to find the default style of paragraphs in the document.</span></span>  
   
-## <a name="example"></a>例  
+## <a name="example"></a><span data-ttu-id="4ef8c-104">例</span><span class="sxs-lookup"><span data-stu-id="4ef8c-104">Example</span></span>  
   
-### <a name="description"></a>説明  
- 次の例では、Office Open XML WordprocessingML ドキュメントを開き、パッケージのドキュメント パーツとスタイル パーツを検索した後、既定のスタイル名を検索するクエリを実行します。 Office Open XML ドキュメントのパッケージと構成のパーツについては、次を参照してください。[詳細の Office Open XML WordprocessingML ドキュメント (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/details-of-office-open-xml-wordprocessingml-documents.md)します。  
+### <a name="description"></a><span data-ttu-id="4ef8c-105">説明</span><span class="sxs-lookup"><span data-stu-id="4ef8c-105">Description</span></span>  
+ <span data-ttu-id="4ef8c-106">次の例では、Office Open XML WordprocessingML ドキュメントを開き、パッケージのドキュメント パーツとスタイル パーツを検索した後、既定のスタイル名を検索するクエリを実行します。</span><span class="sxs-lookup"><span data-stu-id="4ef8c-106">The following example opens an Office Open XML WordprocessingML document, finds the document and style parts of the package, and then executes a query that finds the default style name.</span></span> <span data-ttu-id="4ef8c-107">Office Open XML ドキュメントのパッケージと構成のパーツについては、次を参照してください。[詳細の Office Open XML WordprocessingML ドキュメント (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/details-of-office-open-xml-wordprocessingml-documents.md)します。</span><span class="sxs-lookup"><span data-stu-id="4ef8c-107">For information about Office Open XML document packages, and the parts they consist of, see [Details of Office Open XML WordprocessingML Documents (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/details-of-office-open-xml-wordprocessingml-documents.md).</span></span>  
   
- このクエリは、値が "paragraph" である `w:style` という名前の属性と、値が "1" である `w:type` という名前の属性を持つ `w:default` という名前のノードを検索します。 クエリを使用してこれらの属性を持つ XML ノードを&1; つがありますので、<xref:System.Linq.Enumerable.First%2A?displayProperty=fullName>コレクションをシングルトンに変換する演算子</xref:System.Linq.Enumerable.First%2A?displayProperty=fullName>。 次に、`w:styleId` という名前の属性の値を取得します。  
+ <span data-ttu-id="4ef8c-108">このクエリは、値が "paragraph" である `w:style` という名前の属性と、値が "1" である `w:type` という名前の属性を持つ `w:default` という名前のノードを検索します。</span><span class="sxs-lookup"><span data-stu-id="4ef8c-108">The query finds a node named `w:style` that has an attribute named `w:type` with a value of "paragraph", and also has an attribute named `w:default` with a value of "1".</span></span> <span data-ttu-id="4ef8c-109">クエリを使用してこれらの属性を持つ XML ノードを&1; つがありますので、<xref:System.Linq.Enumerable.First%2A?displayProperty=fullName>コレクションをシングルトンに変換する演算子</xref:System.Linq.Enumerable.First%2A?displayProperty=fullName>。</span><span class="sxs-lookup"><span data-stu-id="4ef8c-109">Because there will be only one XML node with these attributes, the query uses the <xref:System.Linq.Enumerable.First%2A?displayProperty=fullName> operator to convert a collection to a singleton.</span></span> <span data-ttu-id="4ef8c-110">次に、`w:styleId` という名前の属性の値を取得します。</span><span class="sxs-lookup"><span data-stu-id="4ef8c-110">It then gets the value of the attribute with the name `w:styleId`.</span></span>  
   
- この例では、WindowsBase アセンブリのクラスを使用します。 内の型を使用して、<xref:System.IO.Packaging?displayProperty=fullName>名前空間</xref:System.IO.Packaging?displayProperty=fullName>。  
+ <span data-ttu-id="4ef8c-111">この例では、WindowsBase アセンブリのクラスを使用します。</span><span class="sxs-lookup"><span data-stu-id="4ef8c-111">This example uses classes from the WindowsBase assembly.</span></span> <span data-ttu-id="4ef8c-112">内の型を使用して、<xref:System.IO.Packaging?displayProperty=fullName>名前空間</xref:System.IO.Packaging?displayProperty=fullName>。</span><span class="sxs-lookup"><span data-stu-id="4ef8c-112">It uses types in the <xref:System.IO.Packaging?displayProperty=fullName> namespace.</span></span>  
   
-### <a name="code"></a>コード  
+### <a name="code"></a><span data-ttu-id="4ef8c-113">コード</span><span class="sxs-lookup"><span data-stu-id="4ef8c-113">Code</span></span>  
   
 ```vb  
 Imports <xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">  
@@ -92,17 +93,17 @@ Module Module1
 End Module  
 ```  
   
-### <a name="comments"></a>コメント  
- この例を実行すると、次の出力が生成されます。  
+### <a name="comments"></a><span data-ttu-id="4ef8c-114">コメント</span><span class="sxs-lookup"><span data-stu-id="4ef8c-114">Comments</span></span>  
+ <span data-ttu-id="4ef8c-115">この例を実行すると、次の出力が生成されます。</span><span class="sxs-lookup"><span data-stu-id="4ef8c-115">This example produces the following output:</span></span>  
   
 ```  
 The default style is: Normal  
 ```  
   
-## <a name="next-steps"></a>次の手順  
- 次の例では、ドキュメントとそのスタイル内のすべての段落を検索する同様のクエリを作成します。  
+## <a name="next-steps"></a><span data-ttu-id="4ef8c-116">次の手順</span><span class="sxs-lookup"><span data-stu-id="4ef8c-116">Next Steps</span></span>  
+ <span data-ttu-id="4ef8c-117">次の例では、ドキュメントとそのスタイル内のすべての段落を検索する同様のクエリを作成します。</span><span class="sxs-lookup"><span data-stu-id="4ef8c-117">In the next example, you'll create a similar query that finds all the paragraphs in a document and their styles:</span></span>  
   
--   [段落とそのスタイル (Visual Basic) の取得](../../../../visual-basic/programming-guide/concepts/linq/retrieving-the-paragraphs-and-their-styles.md)  
+-   [<span data-ttu-id="4ef8c-118">段落とそのスタイル (Visual Basic) の取得</span><span class="sxs-lookup"><span data-stu-id="4ef8c-118">Retrieving the Paragraphs and Their Styles (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/retrieving-the-paragraphs-and-their-styles.md)  
   
-## <a name="see-also"></a>関連項目  
- [チュートリアル: WordprocessingML ドキュメント (Visual Basic) 内のコンテンツの操作](../../../../visual-basic/programming-guide/concepts/linq/tutorial-manipulating-content-in-a-wordprocessingml-document.md)
+## <a name="see-also"></a><span data-ttu-id="4ef8c-119">関連項目</span><span class="sxs-lookup"><span data-stu-id="4ef8c-119">See Also</span></span>  
+ [<span data-ttu-id="4ef8c-120">チュートリアル: WordprocessingML ドキュメント (Visual Basic) 内のコンテンツの操作</span><span class="sxs-lookup"><span data-stu-id="4ef8c-120">Tutorial: Manipulating Content in a WordprocessingML Document (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/tutorial-manipulating-content-in-a-wordprocessingml-document.md)

@@ -26,11 +26,11 @@ ms.contentlocale: ja-jp
 ms.lasthandoff: 07/28/2017
 
 ---
-# <a name="how-to-serialize-using-xmlserializer-c"></a>方法: XmlSerializer を使用してシリアル化する (C#)
-このトピックでは、<xref:System.Xml.Serialization.XmlSerializer> を使用してシリアル化および逆シリアル化を行う例について説明します。  
+# <a name="how-to-serialize-using-xmlserializer-c"></a><span data-ttu-id="408ac-102">方法: XmlSerializer を使用してシリアル化する (C#)</span><span class="sxs-lookup"><span data-stu-id="408ac-102">How to: Serialize Using XmlSerializer (C#)</span></span>
+<span data-ttu-id="408ac-103">このトピックでは、<xref:System.Xml.Serialization.XmlSerializer> を使用してシリアル化および逆シリアル化を行う例について説明します。</span><span class="sxs-lookup"><span data-stu-id="408ac-103">This topic shows an example that serializes and deserializes using <xref:System.Xml.Serialization.XmlSerializer>.</span></span>  
   
-## <a name="example"></a>例  
- 次の例では、<xref:System.Xml.Linq.XElement> オブジェクトを含んでいる多数のオブジェクトを作成します。 次に、それらのオブジェクトをメモリ ストリームにシリアル化し、メモリ ストリームから逆シリアル化します。  
+## <a name="example"></a><span data-ttu-id="408ac-104">例</span><span class="sxs-lookup"><span data-stu-id="408ac-104">Example</span></span>  
+ <span data-ttu-id="408ac-105">次の例では、<xref:System.Xml.Linq.XElement> オブジェクトを含んでいる多数のオブジェクトを作成します。</span><span class="sxs-lookup"><span data-stu-id="408ac-105">The following example creates a number of objects that contain <xref:System.Xml.Linq.XElement> objects.</span></span> <span data-ttu-id="408ac-106">次に、それらのオブジェクトをメモリ ストリームにシリアル化し、メモリ ストリームから逆シリアル化します。</span><span class="sxs-lookup"><span data-stu-id="408ac-106">It then serializes them to a memory stream, and then deserializes them from the memory stream.</span></span>  
   
 ```csharp  
 using System;  
@@ -95,7 +95,7 @@ class XLinqTest
 }  
 ```  
   
- この例を実行すると、次の出力が生成されます。  
+ <span data-ttu-id="408ac-107">この例を実行すると、次の出力が生成されます。</span><span class="sxs-lookup"><span data-stu-id="408ac-107">This example produces the following output:</span></span>  
   
 ```  
 Testing for type: XElementNullContainer  
@@ -106,6 +106,6 @@ Testing for type: XElementContainer
   Deserialized type: XElementContainer  
 ```  
   
-## <a name="see-also"></a>関連項目  
- [XElement オブジェクトを含むオブジェクト グラフのシリアル化 (C#)](../../../../csharp/programming-guide/concepts/linq/serializing-object-graphs-that-contain-xelement-objects.md)
+## <a name="see-also"></a><span data-ttu-id="408ac-108">関連項目</span><span class="sxs-lookup"><span data-stu-id="408ac-108">See Also</span></span>  
+ [<span data-ttu-id="408ac-109">XElement オブジェクトを含むオブジェクト グラフのシリアル化 (C#)</span><span class="sxs-lookup"><span data-stu-id="408ac-109">Serializing Object Graphs that Contain XElement Objects (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/serializing-object-graphs-that-contain-xelement-objects.md)
 

@@ -18,100 +18,100 @@ ms.lasthandoff: 08/19/2017
 
 ---
 
-# <a name="c-tuple-types"></a>C# のタプル型 #
+# <a name="c-tuple-types"></a><span data-ttu-id="faf6f-104">C# のタプル型</span><span class="sxs-lookup"><span data-stu-id="faf6f-104">C# Tuple types</span></span> #
 
-C# のタプルは、軽量構文を使用して定義する型で、 構文がシンプルである、変換の規則が要素の数 ("基数" と呼ばれます) と種類に基づく、コピーと割り当ての規則が一貫している、などのメリットがあります。 そのトレードオフとして、タプルでは、継承に関連するオブジェクト指向の表現形式の一部がサポートされていません。 概要については、[C# 7 の新機能のタプル](whats-new/csharp-7.md#tuples)に関するトピックのセクションをご覧ください。
+<span data-ttu-id="faf6f-105">C# のタプルは、軽量構文を使用して定義する型で、</span><span class="sxs-lookup"><span data-stu-id="faf6f-105">C# Tuples are types that you define using a lightweight syntax.</span></span> <span data-ttu-id="faf6f-106">構文がシンプルである、変換の規則が要素の数 ("基数" と呼ばれます) と種類に基づく、コピーと割り当ての規則が一貫している、などのメリットがあります。</span><span class="sxs-lookup"><span data-stu-id="faf6f-106">The advantages include a simpler syntax, rules for conversions based on number (referred to as cardinality) and types of elements, and consistent rules for copies and assignments.</span></span> <span data-ttu-id="faf6f-107">そのトレードオフとして、タプルでは、継承に関連するオブジェクト指向の表現形式の一部がサポートされていません。</span><span class="sxs-lookup"><span data-stu-id="faf6f-107">As a tradeoff, Tuples do not support some of the object oriented idioms associated with inheritance.</span></span> <span data-ttu-id="faf6f-108">概要については、[C# 7 の新機能のタプル](whats-new/csharp-7.md#tuples)に関するトピックのセクションをご覧ください。</span><span class="sxs-lookup"><span data-stu-id="faf6f-108">You can get an overview in the section on [Tuples in the What's new in C# 7](whats-new/csharp-7.md#tuples) topic.</span></span>
 
-このトピックでは、C# 7 でタプルに適用される言語の規則、タプルの使用方法、およびタプルを操作するための入門的ガイダンスについて説明します。
+<span data-ttu-id="faf6f-109">このトピックでは、C# 7 でタプルに適用される言語の規則、タプルの使用方法、およびタプルを操作するための入門的ガイダンスについて説明します。</span><span class="sxs-lookup"><span data-stu-id="faf6f-109">In this topic, you'll learn the language rules governing Tuples in C# 7, different ways to use them, and initial guidance on working with Tuples.</span></span>
 
 > [!NOTE]
-> 新しいタプル機能を使用するには、@System.ValueTuple 型が必要です。
-> 型が含まれていないプラットフォームで使用する場合は、NuGet パッケージ [`System.ValueTuple`](https://www.nuget.org/packages/System.ValueTuple/) を追加する必要があります。
+> <span data-ttu-id="faf6f-110">新しいタプル機能を使用するには、@System.ValueTuple 型が必要です。</span><span class="sxs-lookup"><span data-stu-id="faf6f-110">The new tuples features require the @System.ValueTuple types.</span></span>
+> <span data-ttu-id="faf6f-111">型が含まれていないプラットフォームで使用する場合は、NuGet パッケージ [`System.ValueTuple`](https://www.nuget.org/packages/System.ValueTuple/) を追加する必要があります。</span><span class="sxs-lookup"><span data-stu-id="faf6f-111">You must add the NuGet package [`System.ValueTuple`](https://www.nuget.org/packages/System.ValueTuple/) in order to use it on platforms that do not include the types.</span></span>
 >
-> これは、フレームワークで提供される型に依存するその他の言語機能に似ています。 たとえば、`INotifyCompletion` インターフェイスに依存する `async` や `await`、`IEnumerable<T>` に依存する LINQ などがあります。 ただし、.NET がプラットフォームにさらに依存しなくなりつつあるため、配信メカニズムもそれに応じて変わりつつあります。 .NET Framework が、言語コンパイラと同じ周期で配布されるとは限りません。 新しい言語機能が新しい型に依存する場合、それらの型は、言語機能の配布時に NuGet パッケージとして入手できます。 これらの新しい型は .NET 標準 API に追加され、フレームワークの一部として配信されるため、NuGet パッケージは必要なくなります。
+> <span data-ttu-id="faf6f-112">これは、フレームワークで提供される型に依存するその他の言語機能に似ています。</span><span class="sxs-lookup"><span data-stu-id="faf6f-112">This is similar to other language features that rely on types delivered in the framework.</span></span> <span data-ttu-id="faf6f-113">たとえば、`INotifyCompletion` インターフェイスに依存する `async` や `await`、`IEnumerable<T>` に依存する LINQ などがあります。</span><span class="sxs-lookup"><span data-stu-id="faf6f-113">Examples include `async` and `await` relying on the `INotifyCompletion` interface, and LINQ relying on `IEnumerable<T>`.</span></span> <span data-ttu-id="faf6f-114">ただし、.NET がプラットフォームにさらに依存しなくなりつつあるため、配信メカニズムもそれに応じて変わりつつあります。</span><span class="sxs-lookup"><span data-stu-id="faf6f-114">However, the delivery mechanism is changing as .NET is becoming more platform independent.</span></span> <span data-ttu-id="faf6f-115">.NET Framework が、言語コンパイラと同じ周期で配布されるとは限りません。</span><span class="sxs-lookup"><span data-stu-id="faf6f-115">The .NET Framework may not always ship on the same cadence as the language compiler.</span></span> <span data-ttu-id="faf6f-116">新しい言語機能が新しい型に依存する場合、それらの型は、言語機能の配布時に NuGet パッケージとして入手できます。</span><span class="sxs-lookup"><span data-stu-id="faf6f-116">When new language features rely on new types, those types will be available as NuGet packages when the language features ship.</span></span> <span data-ttu-id="faf6f-117">これらの新しい型は .NET 標準 API に追加され、フレームワークの一部として配信されるため、NuGet パッケージは必要なくなります。</span><span class="sxs-lookup"><span data-stu-id="faf6f-117">As these new types get added to the .NET Standard API and delivered as part of the framework, the NuGet package requirement will be removed.</span></span>
 
-詳しく見ていく前に、新しいタプルのサポートを追加した理由について説明します。 メソッドが返すのは 1 つのオブジェクトです。 タプルを使用すると、その 1 つのオブジェクトに複数の値を簡単にパッケージできます。
+<span data-ttu-id="faf6f-118">詳しく見ていく前に、新しいタプルのサポートを追加した理由について説明します。</span><span class="sxs-lookup"><span data-stu-id="faf6f-118">Let's start with the reasons for adding new Tuple support.</span></span> <span data-ttu-id="faf6f-119">メソッドが返すのは 1 つのオブジェクトです。</span><span class="sxs-lookup"><span data-stu-id="faf6f-119">Methods return a single object.</span></span> <span data-ttu-id="faf6f-120">タプルを使用すると、その 1 つのオブジェクトに複数の値を簡単にパッケージできます。</span><span class="sxs-lookup"><span data-stu-id="faf6f-120">Tuples enable you to package multiple values in that single object more easily.</span></span>
 
-.NET Framework には `Tuple` ジェネリック クラスが既にありますが、 このクラスには 2 つの大きな制限がありました。 1 つは、`Tuple` クラスのプロパティに `Item1`、`Item2` という名前が付けられるというものです。 その名前にはセマンティック情報が保持されていません。 つまり、この `Tuple` 型を使用しても、各プロパティの情報を伝達することはできません。 新しい言語機能を使用すると、タプルの要素に意味的にわかりやすい名前を宣言して使用できます。
+<span data-ttu-id="faf6f-121">.NET Framework には `Tuple` ジェネリック クラスが既にありますが、</span><span class="sxs-lookup"><span data-stu-id="faf6f-121">The .NET Framework already has generic `Tuple` classes.</span></span> <span data-ttu-id="faf6f-122">このクラスには 2 つの大きな制限がありました。</span><span class="sxs-lookup"><span data-stu-id="faf6f-122">These classes, however, had two major limitations.</span></span> <span data-ttu-id="faf6f-123">1 つは、`Tuple` クラスのプロパティに `Item1`、`Item2` という名前が付けられるというものです。</span><span class="sxs-lookup"><span data-stu-id="faf6f-123">For one, the `Tuple` classes named their properties `Item1`, `Item2`, and so on.</span></span> <span data-ttu-id="faf6f-124">その名前にはセマンティック情報が保持されていません。</span><span class="sxs-lookup"><span data-stu-id="faf6f-124">Those names carry no semantic information.</span></span> <span data-ttu-id="faf6f-125">つまり、この `Tuple` 型を使用しても、各プロパティの情報を伝達することはできません。</span><span class="sxs-lookup"><span data-stu-id="faf6f-125">Using these `Tuple` types does not enable communicating the meaning of each of the properties.</span></span> <span data-ttu-id="faf6f-126">新しい言語機能を使用すると、タプルの要素に意味的にわかりやすい名前を宣言して使用できます。</span><span class="sxs-lookup"><span data-stu-id="faf6f-126">The new language features enable you to declare and use semantically meaningful names for the elements in a tuple.</span></span>
 
-さらに、`Tuple` クラスが参照型であるのも、懸念事項の 1 つです。 `Tuple` 型を使用するには、オブジェクトを割り当てる必要があります。 ホット パスでは、これがアプリケーションのパフォーマンスに大きな影響を及ぼすことがあります。 そのため、タプルの言語サポートでは、新しい `ValueTuple` 構造体を活用します。
+<span data-ttu-id="faf6f-127">さらに、`Tuple` クラスが参照型であるのも、懸念事項の 1 つです。</span><span class="sxs-lookup"><span data-stu-id="faf6f-127">Another concern is that the `Tuple` classes are reference types.</span></span> <span data-ttu-id="faf6f-128">`Tuple` 型を使用するには、オブジェクトを割り当てる必要があります。</span><span class="sxs-lookup"><span data-stu-id="faf6f-128">Using one of the `Tuple` types means allocating objects.</span></span> <span data-ttu-id="faf6f-129">ホット パスでは、これがアプリケーションのパフォーマンスに大きな影響を及ぼすことがあります。</span><span class="sxs-lookup"><span data-stu-id="faf6f-129">On hot paths, this can have a measurable impact on your application's performance.</span></span> <span data-ttu-id="faf6f-130">そのため、タプルの言語サポートでは、新しい `ValueTuple` 構造体を活用します。</span><span class="sxs-lookup"><span data-stu-id="faf6f-130">Therefore, the language support for tuples leverages the new `ValueTuple` structs.</span></span>
 
-`class` や `struct` を作成して複数の要素を伝達すれば、この弱点を回避できますが、 その分、手間が増え、設計の意図がわかりにくくなります。 `struct` や `class` を作成すると、データと動作の両方で型を定義しなければなりませんが、 1 つのオブジェクトに複数の値を格納したいだけという状況もよくあります。
+<span data-ttu-id="faf6f-131">`class` や `struct` を作成して複数の要素を伝達すれば、この弱点を回避できますが、</span><span class="sxs-lookup"><span data-stu-id="faf6f-131">To avoid those deficiencies, you could create a `class` or a `struct` to carry multiple elements.</span></span> <span data-ttu-id="faf6f-132">その分、手間が増え、設計の意図がわかりにくくなります。</span><span class="sxs-lookup"><span data-stu-id="faf6f-132">Unfortunately, that's more work for you, and it obscures your design intent.</span></span> <span data-ttu-id="faf6f-133">`struct` や `class` を作成すると、データと動作の両方で型を定義しなければなりませんが、</span><span class="sxs-lookup"><span data-stu-id="faf6f-133">Making a `struct` or `class` implies that you are defining a type with both data and behavior.</span></span> <span data-ttu-id="faf6f-134">1 つのオブジェクトに複数の値を格納したいだけという状況もよくあります。</span><span class="sxs-lookup"><span data-stu-id="faf6f-134">Many times, you simply want to store multiple values in a single object.</span></span>
 
-これらの機能と `ValueTuple` ジェネリック構造体では、タプル型に動作 (メソッド) を追加できないという規則が適用されます。
-すべての `ValueTuple` 型が "*mutable 構造体*" で、 各メンバー フィールドがパブリック フィールドであるため、 非常に軽量です。 ただし、不変性が重要な場合は、タプルを使用しないでください。
+<span data-ttu-id="faf6f-135">これらの機能と `ValueTuple` ジェネリック構造体では、タプル型に動作 (メソッド) を追加できないという規則が適用されます。</span><span class="sxs-lookup"><span data-stu-id="faf6f-135">The language features and the `ValueTuple` generic structs enforce the rule that you cannot add any behavior (methods) to these tuple types.</span></span>
+<span data-ttu-id="faf6f-136">すべての `ValueTuple` 型が "*mutable 構造体*" で、</span><span class="sxs-lookup"><span data-stu-id="faf6f-136">All the `ValueTuple` types are *mutable structs*.</span></span> <span data-ttu-id="faf6f-137">各メンバー フィールドがパブリック フィールドであるため、</span><span class="sxs-lookup"><span data-stu-id="faf6f-137">Each member field is a public field.</span></span> <span data-ttu-id="faf6f-138">非常に軽量です。</span><span class="sxs-lookup"><span data-stu-id="faf6f-138">That makes them very lightweight.</span></span> <span data-ttu-id="faf6f-139">ただし、不変性が重要な場合は、タプルを使用しないでください。</span><span class="sxs-lookup"><span data-stu-id="faf6f-139">However, that means tuples should not be used where immutability is important.</span></span>
 
-タプルは、`class` 型や `struct` 型に比べて、シンプルで柔軟なデータ コンテナーです。 両者の違いを見てみましょう。
+<span data-ttu-id="faf6f-140">タプルは、`class` 型や `struct` 型に比べて、シンプルで柔軟なデータ コンテナーです。</span><span class="sxs-lookup"><span data-stu-id="faf6f-140">Tuples are both simpler and more flexible data containers than `class` and `struct` types.</span></span> <span data-ttu-id="faf6f-141">両者の違いを見てみましょう。</span><span class="sxs-lookup"><span data-stu-id="faf6f-141">Let's explore those differences.</span></span>
 
-## <a name="named-and-unnamed-tuples"></a>名前付きのタプルと名前がないタプル
+## <a name="named-and-unnamed-tuples"></a><span data-ttu-id="faf6f-142">名前付きのタプルと名前がないタプル</span><span class="sxs-lookup"><span data-stu-id="faf6f-142">Named and unnamed tuples</span></span>
 
-既存の `Tuple` 型で定義されたプロパティと同様、`ValueTuple` 構造体のフィールドには `Item1`、`Item2`、`Item3` といった名前が付いています。
-"*名前のないタプル*" には、この名前しか使用できません。 タプルに代替フィールド名を付けなかった場合は、名前のないタプルが作成されます。
+<span data-ttu-id="faf6f-143">既存の `Tuple` 型で定義されたプロパティと同様、`ValueTuple` 構造体のフィールドには `Item1`、`Item2`、`Item3` といった名前が付いています。</span><span class="sxs-lookup"><span data-stu-id="faf6f-143">The `ValueTuple` struct has fields named `Item1`, `Item2`, `Item3` and so on, similar to the properties defined in the existing `Tuple` types.</span></span>
+<span data-ttu-id="faf6f-144">"*名前のないタプル*" には、この名前しか使用できません。</span><span class="sxs-lookup"><span data-stu-id="faf6f-144">These names are the only names you can use for *unnamed tuples*.</span></span> <span data-ttu-id="faf6f-145">タプルに代替フィールド名を付けなかった場合は、名前のないタプルが作成されます。</span><span class="sxs-lookup"><span data-stu-id="faf6f-145">When you do not provide any alternative field names to a tuple, you've created an unnamed tuple:</span></span>
 
-[!code-csharp[UnnamedTuple](../../samples/snippets/csharp/tuples/tuples/program.cs#01_UnNamedTuple "名前のないタプル")]
+<span data-ttu-id="faf6f-146">[!code-csharp[UnnamedTuple](../../samples/snippets/csharp/tuples/tuples/program.cs#01_UnNamedTuple "名前のないタプル")]</span><span class="sxs-lookup"><span data-stu-id="faf6f-146">[!code-csharp[UnnamedTuple](../../samples/snippets/csharp/tuples/tuples/program.cs#01_UnNamedTuple "Unnamed tuple")]</span></span>
 
-前の例のタプルは、リテラル定数を使って初期化されており、C# 7.1 の*タプル フィールド名プロジェクション*を使って作成された要素名はありません。
+<span data-ttu-id="faf6f-147">前の例のタプルは、リテラル定数を使って初期化されており、C# 7.1 の*タプル フィールド名プロジェクション*を使って作成された要素名はありません。</span><span class="sxs-lookup"><span data-stu-id="faf6f-147">The tuple in the previous example was initialized using literal constants and won't have element names created using *Tuple field name projections* in C# 7.1.</span></span>
 
-タプルを初期化する際に、新しい機能を使用して、各フィールドにわかりやすい名前を付けることができます。 これによって、"*名前付きタプル*" が作成されます。
-名前付きタプルには `Item1`、`Item2`、`Item3` という名前の要素がまだ存在しますが、
-名前を付けた要素に対してシノニムも設定されます。
-名前付きタプルを作成するには、各要素の名前を指定します。 たとえば、タプル初期化の一環として名前を指定できます。
+<span data-ttu-id="faf6f-148">タプルを初期化する際に、新しい機能を使用して、各フィールドにわかりやすい名前を付けることができます。</span><span class="sxs-lookup"><span data-stu-id="faf6f-148">However, when you initialize a tuple, you can use new language features that give better names to each field.</span></span> <span data-ttu-id="faf6f-149">これによって、"*名前付きタプル*" が作成されます。</span><span class="sxs-lookup"><span data-stu-id="faf6f-149">Doing so creates a *named tuple*.</span></span>
+<span data-ttu-id="faf6f-150">名前付きタプルには `Item1`、`Item2`、`Item3` という名前の要素がまだ存在しますが、</span><span class="sxs-lookup"><span data-stu-id="faf6f-150">Named tuples still have elements named `Item1`, `Item2`, `Item3` and so on.</span></span>
+<span data-ttu-id="faf6f-151">名前を付けた要素に対してシノニムも設定されます。</span><span class="sxs-lookup"><span data-stu-id="faf6f-151">But they also have synonyms for any of those elements that you have named.</span></span>
+<span data-ttu-id="faf6f-152">名前付きタプルを作成するには、各要素の名前を指定します。</span><span class="sxs-lookup"><span data-stu-id="faf6f-152">You create a named tuple by specifying the names for each element.</span></span> <span data-ttu-id="faf6f-153">たとえば、タプル初期化の一環として名前を指定できます。</span><span class="sxs-lookup"><span data-stu-id="faf6f-153">One way is to specify the names as part of the tuple initialization:</span></span>
 
-[!code-csharp[NamedTuple](../../samples/snippets/csharp/tuples/tuples/program.cs#02_NamedTuple "名前付きタプル")]
+<span data-ttu-id="faf6f-154">[!code-csharp[NamedTuple](../../samples/snippets/csharp/tuples/tuples/program.cs#02_NamedTuple "名前付きタプル")]</span><span class="sxs-lookup"><span data-stu-id="faf6f-154">[!code-csharp[NamedTuple](../../samples/snippets/csharp/tuples/tuples/program.cs#02_NamedTuple "Named tuple")]</span></span>
 
-コンパイラと言語によってシノニムが処理されるため、名前付きタプルを効果的に使用できるようになります。 IDE やエディターは Roslyn API を使用して、セマンティック名を読み取ります。 これにより、同じアセンブリ内の任意の場所で、セマンティック名によって名前付きタプルの要素を参照できます。 定義した名前は、コンパイル済み出力が生成されるときに、対応する `Item*` に置き換えられます。 これらの要素に設定した名前は、コンパイルされた Microsoft Intermediate Language (MSIL) には含まれません。
+<span data-ttu-id="faf6f-155">コンパイラと言語によってシノニムが処理されるため、名前付きタプルを効果的に使用できるようになります。</span><span class="sxs-lookup"><span data-stu-id="faf6f-155">These synonyms are handled by the compiler and the language so that you can use named tuples effectively.</span></span> <span data-ttu-id="faf6f-156">IDE やエディターは Roslyn API を使用して、セマンティック名を読み取ります。</span><span class="sxs-lookup"><span data-stu-id="faf6f-156">IDEs and editors can read these semantic names using the Roslyn APIs.</span></span> <span data-ttu-id="faf6f-157">これにより、同じアセンブリ内の任意の場所で、セマンティック名によって名前付きタプルの要素を参照できます。</span><span class="sxs-lookup"><span data-stu-id="faf6f-157">This enables you to reference the elements of a named tuple by those semantic names anywhere in the same assembly.</span></span> <span data-ttu-id="faf6f-158">定義した名前は、コンパイル済み出力が生成されるときに、対応する `Item*` に置き換えられます。</span><span class="sxs-lookup"><span data-stu-id="faf6f-158">The compiler replaces the names you've defined with `Item*` equivalents when generating the compiled output.</span></span> <span data-ttu-id="faf6f-159">これらの要素に設定した名前は、コンパイルされた Microsoft Intermediate Language (MSIL) には含まれません。</span><span class="sxs-lookup"><span data-stu-id="faf6f-159">The compiled Microsoft Intermediate Language (MSIL) does not include the names you've given these elements.</span></span>
 
-C# 7.1 以降、タプルのフィールド名は、タプルの初期化に使用した変数によって指定される場合があります。 これは、**[タプル プロジェクション初期化子](#tuple-projection-initializers)**と呼ばれます。 次のコードでは、要素 `count` (整数)、および `sum` (倍精度浮動小数点型) で `accumulation` という名前のタプルを作成します。
+<span data-ttu-id="faf6f-160">C# 7.1 以降、タプルのフィールド名は、タプルの初期化に使用した変数によって指定される場合があります。</span><span class="sxs-lookup"><span data-stu-id="faf6f-160">Beginning with C# 7.1, the field names for a tuple may be provided from the variables used to initialize the tuple.</span></span> <span data-ttu-id="faf6f-161">これは、**[タプル プロジェクション初期化子](#tuple-projection-initializers)**と呼ばれます。</span><span class="sxs-lookup"><span data-stu-id="faf6f-161">This is referred to as **[tuple projection initializers](#tuple-projection-initializers)**.</span></span> <span data-ttu-id="faf6f-162">次のコードでは、要素 `count` (整数)、および `sum` (倍精度浮動小数点型) で `accumulation` という名前のタプルを作成します。</span><span class="sxs-lookup"><span data-stu-id="faf6f-162">The following code creates a tuple named `accumulation` with elements `count` (an integer), and `sum` (a double).</span></span>
 
-[!code-csharp[ProjectedTuple](../../samples/snippets/csharp/tuples/tuples/program.cs#ProjectedTupleNames "名前付きタプル")]
+<span data-ttu-id="faf6f-163">[!code-csharp[ProjectedTuple](../../samples/snippets/csharp/tuples/tuples/program.cs#ProjectedTupleNames "名前付きタプル")]</span><span class="sxs-lookup"><span data-stu-id="faf6f-163">[!code-csharp[ProjectedTuple](../../samples/snippets/csharp/tuples/tuples/program.cs#ProjectedTupleNames "Named tuple")]</span></span>
 
-コンパイラは、パブリック メソッドまたはプロパティから返されたタプルに指定されている名前を伝える必要があります。 このような場合、コンパイラはメソッドに @System.Runtime.CompilerServices.TupleElementNames 属性を追加します。 この属性には、タプルの各要素に付けられた名前が含まれた @System.Runtime.CompilerServices.TupleElementNames.TransformNames リスト プロパティが含まれています。
+<span data-ttu-id="faf6f-164">コンパイラは、パブリック メソッドまたはプロパティから返されたタプルに指定されている名前を伝える必要があります。</span><span class="sxs-lookup"><span data-stu-id="faf6f-164">The compiler must communicate those names you created for tuples that are returned from public methods or properties.</span></span> <span data-ttu-id="faf6f-165">このような場合、コンパイラはメソッドに @System.Runtime.CompilerServices.TupleElementNames 属性を追加します。</span><span class="sxs-lookup"><span data-stu-id="faf6f-165">In those cases, the compiler adds a @System.Runtime.CompilerServices.TupleElementNames attribute on the method.</span></span> <span data-ttu-id="faf6f-166">この属性には、タプルの各要素に付けられた名前が含まれた @System.Runtime.CompilerServices.TupleElementNames.TransformNames リスト プロパティが含まれています。</span><span class="sxs-lookup"><span data-stu-id="faf6f-166">This attribute contains a @System.Runtime.CompilerServices.TupleElementNames.TransformNames list property that contains the names given to each of the elements in the Tuple.</span></span>
 
 > [!NOTE]
-> Visual Studio などの開発ツールも、そのメタデータを読み取り、メタデータ フィールド名を使用する IntelliSense などの機能を提供します。
+> <span data-ttu-id="faf6f-167">Visual Studio などの開発ツールも、そのメタデータを読み取り、メタデータ フィールド名を使用する IntelliSense などの機能を提供します。</span><span class="sxs-lookup"><span data-stu-id="faf6f-167">Development Tools, such as Visual Studio, also read that metadata, and provide IntelliSense and other features using the metadata field names.</span></span>
 
-名前付きタプルを相互に割り当てるための規則を理解するには、新しいタプルと `ValueTuple` 型の基本を理解しておくことが重要です。
+<span data-ttu-id="faf6f-168">名前付きタプルを相互に割り当てるための規則を理解するには、新しいタプルと `ValueTuple` 型の基本を理解しておくことが重要です。</span><span class="sxs-lookup"><span data-stu-id="faf6f-168">It is important to understand these underlying fundamentals of the new tuples and the `ValueTuple` type in order to understand the rules for assigning named tuples to each other.</span></span>
 
-## <a name="tuple-projection-initializers"></a>タプル プロジェクション初期化子
+## <a name="tuple-projection-initializers"></a><span data-ttu-id="faf6f-169">タプル プロジェクション初期化子</span><span class="sxs-lookup"><span data-stu-id="faf6f-169">Tuple projection initializers</span></span>
 
-一般に、タプル プロジェクション初期化子は、タプルの初期化ステートメントの右側にある変数またはフィールド名を使用して機能します。
-明示的な名前が指定された場合は、射影された名前より優先されます。 たとえば、次の初期化子では、要素は `localVariableOne` や `localVariableTwo` ではなく、`explicitFieldOne` と `explicitFieldTwo` になります。
+<span data-ttu-id="faf6f-170">一般に、タプル プロジェクション初期化子は、タプルの初期化ステートメントの右側にある変数またはフィールド名を使用して機能します。</span><span class="sxs-lookup"><span data-stu-id="faf6f-170">In general, tuple projection initializers work by using the variable or field names from the right-hand side of a tuple initialization statement.</span></span>
+<span data-ttu-id="faf6f-171">明示的な名前が指定された場合は、射影された名前より優先されます。</span><span class="sxs-lookup"><span data-stu-id="faf6f-171">If an explicit name is given, that takes precedence over any projected name.</span></span> <span data-ttu-id="faf6f-172">たとえば、次の初期化子では、要素は `localVariableOne` や `localVariableTwo` ではなく、`explicitFieldOne` と `explicitFieldTwo` になります。</span><span class="sxs-lookup"><span data-stu-id="faf6f-172">For example, in the following initializer, the elements are `explicitFieldOne` and `explicitFieldTwo`, not `localVariableOne` and `localVariableTwo`:</span></span>
 
-[!code-csharp[ExplicitNamedTuple](../../samples/snippets/csharp/tuples/tuples/program.cs#ProjectionExample_Explicit "明示的に名前が指定されたタプル")]
+<span data-ttu-id="faf6f-173">[!code-csharp[ExplicitNamedTuple](../../samples/snippets/csharp/tuples/tuples/program.cs#ProjectionExample_Explicit "明示的に名前が指定されたタプル")]</span><span class="sxs-lookup"><span data-stu-id="faf6f-173">[!code-csharp[ExplicitNamedTuple](../../samples/snippets/csharp/tuples/tuples/program.cs#ProjectionExample_Explicit "Explicitly named tuple")]</span></span>
 
-明示的な名前が指定されていないフィールドの場合、適用可能な暗黙的な名前が射影されます。 明示的または暗黙的のいずれかで、セマンティック名を指定するための要件はありません。 次の初期化子には、フィールド名 `Item1` があり、その値は `42` と `StringContent` で、その値は "The answer to everything" です。
+<span data-ttu-id="faf6f-174">明示的な名前が指定されていないフィールドの場合、適用可能な暗黙的な名前が射影されます。</span><span class="sxs-lookup"><span data-stu-id="faf6f-174">For any field where an explicit name is not provided, an applicable implicit name will be projected.</span></span> <span data-ttu-id="faf6f-175">明示的または暗黙的のいずれかで、セマンティック名を指定するための要件はありません。</span><span class="sxs-lookup"><span data-stu-id="faf6f-175">Note that there is no requirement to provide semantic names, either explicitly or implicitly.</span></span> <span data-ttu-id="faf6f-176">次の初期化子には、フィールド名 `Item1` があり、その値は `42` と `StringContent` で、その値は "The answer to everything" です。</span><span class="sxs-lookup"><span data-stu-id="faf6f-176">The folowing initializer will have field names `Item1`, whose value is `42` and `StringContent`, whose value is "The answer to everything":</span></span>
 
-[!code-csharp[MixedTuple](../../samples/snippets/csharp/tuples/tuples/program.cs#MixedTuple "複合タプル")]
+<span data-ttu-id="faf6f-177">[!code-csharp[MixedTuple](../../samples/snippets/csharp/tuples/tuples/program.cs#MixedTuple "複合タプル")]</span><span class="sxs-lookup"><span data-stu-id="faf6f-177">[!code-csharp[MixedTuple](../../samples/snippets/csharp/tuples/tuples/program.cs#MixedTuple "mixed tuple")]</span></span>
 
-候補フィールド名がタプル フィールドに射影されない場合の条件は 2 つあります。
+<span data-ttu-id="faf6f-178">候補フィールド名がタプル フィールドに射影されない場合の条件は 2 つあります。</span><span class="sxs-lookup"><span data-stu-id="faf6f-178">There are two conditions where candidate field names are not projected onto the tuple field:</span></span>
 
-1. 候補名が予約されているタプル名の場合。 例としては、`Item3`、`ToString` または `Rest` です。
-1. 候補名が、別のタプル フィールド名 (明示的または暗黙的のいずれか) の複製である場合。
+1. <span data-ttu-id="faf6f-179">候補名が予約されているタプル名の場合。</span><span class="sxs-lookup"><span data-stu-id="faf6f-179">When the candidate name is a reserved tuple name.</span></span> <span data-ttu-id="faf6f-180">例としては、`Item3`、`ToString` または `Rest` です。</span><span class="sxs-lookup"><span data-stu-id="faf6f-180">Examples include `Item3`, `ToString` or `Rest`.</span></span>
+1. <span data-ttu-id="faf6f-181">候補名が、別のタプル フィールド名 (明示的または暗黙的のいずれか) の複製である場合。</span><span class="sxs-lookup"><span data-stu-id="faf6f-181">When the candidate name is a duplicate of another tuple field name, either explicit or implicit.</span></span>
 
-これらの条件によってあいまいさを回避します。 この名前がタプルのフィールドのフィールド名として使用される場合、あいまいさの原因となります。 この条件はどちらも、コンパイル時エラーを発生させることはありません。 代わりに、射影された名前のない要素には、射影されたセマンティック名がありません。  これらの条件の例を以下に示します。
+<span data-ttu-id="faf6f-182">これらの条件によってあいまいさを回避します。</span><span class="sxs-lookup"><span data-stu-id="faf6f-182">These conditions avoid ambiguity.</span></span> <span data-ttu-id="faf6f-183">この名前がタプルのフィールドのフィールド名として使用される場合、あいまいさの原因となります。</span><span class="sxs-lookup"><span data-stu-id="faf6f-183">These names would cause an ambiguity if they were used as the field names for a field in a tuple.</span></span> <span data-ttu-id="faf6f-184">この条件はどちらも、コンパイル時エラーを発生させることはありません。</span><span class="sxs-lookup"><span data-stu-id="faf6f-184">Neither of these conditions cause compile time errors.</span></span> <span data-ttu-id="faf6f-185">代わりに、射影された名前のない要素には、射影されたセマンティック名がありません。</span><span class="sxs-lookup"><span data-stu-id="faf6f-185">Instead, the elements without projected names do not have semantic names projected for them.</span></span>  <span data-ttu-id="faf6f-186">これらの条件の例を以下に示します。</span><span class="sxs-lookup"><span data-stu-id="faf6f-186">The following examples demonstrate these conditions:</span></span>
 
-[!code-csharp[Ambiguity](../../samples/snippets/csharp/tuples/tuples/program.cs#ProjectionAmbiguities "プロジェクションが実行されないタプル")]
+<span data-ttu-id="faf6f-187">[!code-csharp[Ambiguity](../../samples/snippets/csharp/tuples/tuples/program.cs#ProjectionAmbiguities "プロジェクションが実行されないタプル")]</span><span class="sxs-lookup"><span data-stu-id="faf6f-187">[!code-csharp[Ambiguity](../../samples/snippets/csharp/tuples/tuples/program.cs#ProjectionAmbiguities "tuples where projections are not performed")]</span></span>
 
-これらの条件は、タプル フィールド名プロジェクションが利用できなかった場合、C# 7.0 で記述されたコードに対する重大な変更になるため、コンパイラ エラーが発生することはありません。
+<span data-ttu-id="faf6f-188">これらの条件は、タプル フィールド名プロジェクションが利用できなかった場合、C# 7.0 で記述されたコードに対する重大な変更になるため、コンパイラ エラーが発生することはありません。</span><span class="sxs-lookup"><span data-stu-id="faf6f-188">These situations do not cause compiler errors because that would be a breaking change for code written with C# 7.0, when tuple field name projections were not available.</span></span>
 
-## <a name="assignment-and-tuples"></a>割り当てとタプル
+## <a name="assignment-and-tuples"></a><span data-ttu-id="faf6f-189">割り当てとタプル</span><span class="sxs-lookup"><span data-stu-id="faf6f-189">Assignment and tuples</span></span>
 
-要素の数が同じで、これらの各要素に型の暗黙的な変換があるタプル型間での、代入がサポートされています。 他の変換は、割り当てでは考慮されません。 タプル型間で許可されている割り当ての種類を見てみましょう。
+<span data-ttu-id="faf6f-190">要素の数が同じで、これらの各要素に型の暗黙的な変換があるタプル型間での、代入がサポートされています。</span><span class="sxs-lookup"><span data-stu-id="faf6f-190">The language supports assignment between tuple types that have the same number of elements and implicit conversions for the types for each of those elements.</span></span> <span data-ttu-id="faf6f-191">他の変換は、割り当てでは考慮されません。</span><span class="sxs-lookup"><span data-stu-id="faf6f-191">Other conversions are not considered for assignments.</span></span> <span data-ttu-id="faf6f-192">タプル型間で許可されている割り当ての種類を見てみましょう。</span><span class="sxs-lookup"><span data-stu-id="faf6f-192">Let's look at the kinds of assignments that are allowed between tuple types.</span></span>
 
-以降の例で使用されている変数について考えます。
+<span data-ttu-id="faf6f-193">以降の例で使用されている変数について考えます。</span><span class="sxs-lookup"><span data-stu-id="faf6f-193">Consider these variables used in the following examples:</span></span>
 
-[!code-csharp[VariableCreation](../../samples/snippets/csharp/tuples/tuples/program.cs#03_VariableCreation "変数の作成")]
+<span data-ttu-id="faf6f-194">[!code-csharp[VariableCreation](../../samples/snippets/csharp/tuples/tuples/program.cs#03_VariableCreation "変数の作成")]</span><span class="sxs-lookup"><span data-stu-id="faf6f-194">[!code-csharp[VariableCreation](../../samples/snippets/csharp/tuples/tuples/program.cs#03_VariableCreation "Variable creation")]</span></span>
 
-最初の 2 つの変数 `unnamed` および `anonymous` では、要素にセマンティック名が割り当てられていません。 フィールド名は `Item1` と `Item2` になります。
-最後の 2 つの変数 `named` および `differentName` では、要素にセマンティック名が付けられています。 この 2 つのタプルでは、要素名が異なっていることに注意してください。
+<span data-ttu-id="faf6f-195">最初の 2 つの変数 `unnamed` および `anonymous` では、要素にセマンティック名が割り当てられていません。</span><span class="sxs-lookup"><span data-stu-id="faf6f-195">The first two variables, `unnamed` and `anonymous` do not have semantic names provided for the elements.</span></span> <span data-ttu-id="faf6f-196">フィールド名は `Item1` と `Item2` になります。</span><span class="sxs-lookup"><span data-stu-id="faf6f-196">The field names are `Item1` and `Item2`.</span></span>
+<span data-ttu-id="faf6f-197">最後の 2 つの変数 `named` および `differentName` では、要素にセマンティック名が付けられています。</span><span class="sxs-lookup"><span data-stu-id="faf6f-197">The last two variables, `named` and `differentName` have semantic names given for the elements.</span></span> <span data-ttu-id="faf6f-198">この 2 つのタプルでは、要素名が異なっていることに注意してください。</span><span class="sxs-lookup"><span data-stu-id="faf6f-198">Note that these two tuples have different names for the elements.</span></span>
 
-この 4 つのタプルに含まれている要素の数 ("基数" と呼ばれます) と要素の型は同じです。 このため、これらの割り当てはすべて機能します。
+<span data-ttu-id="faf6f-199">この 4 つのタプルに含まれている要素の数 ("基数" と呼ばれます) と要素の型は同じです。</span><span class="sxs-lookup"><span data-stu-id="faf6f-199">All four of these tuples have the same number of elements (referred to as 'cardinality') and the types of those elements are identical.</span></span> <span data-ttu-id="faf6f-200">このため、これらの割り当てはすべて機能します。</span><span class="sxs-lookup"><span data-stu-id="faf6f-200">Therefore, all of these assignments work:</span></span>
 
-[!code-csharp[VariableAssignment](../../samples/snippets/csharp/tuples/tuples/program.cs#04_VariableAssignment "変数の割り当て")]
+<span data-ttu-id="faf6f-201">[!code-csharp[VariableAssignment](../../samples/snippets/csharp/tuples/tuples/program.cs#04_VariableAssignment "変数の割り当て")]</span><span class="sxs-lookup"><span data-stu-id="faf6f-201">[!code-csharp[VariableAssignment](../../samples/snippets/csharp/tuples/tuples/program.cs#04_VariableAssignment "Variable assignment")]</span></span>
 
-タプルの名前が割り当てられていないことに注意してください。 要素の値は、タプルの要素の順序に従って割り当てられます。
+<span data-ttu-id="faf6f-202">タプルの名前が割り当てられていないことに注意してください。</span><span class="sxs-lookup"><span data-stu-id="faf6f-202">Notice that the names of the tuples are not assigned.</span></span> <span data-ttu-id="faf6f-203">要素の値は、タプルの要素の順序に従って割り当てられます。</span><span class="sxs-lookup"><span data-stu-id="faf6f-203">The values of the elements are assigned following the order of the elements in the tuple.</span></span>
 
-要素の型または数が異なるタプルを割り当てることはできません。
+<span data-ttu-id="faf6f-204">要素の型または数が異なるタプルを割り当てることはできません。</span><span class="sxs-lookup"><span data-stu-id="faf6f-204">Tuples of different types or numbers of elements are not assignable:</span></span>
 
 ```csharp
 // Does not compile.
@@ -120,44 +120,44 @@ var differentShape = (1, 2, 3);
 named = differentShape;
 ```
 
-## <a name="tuples-as-method-return-values"></a>メソッドの戻り値としてのタプル
+## <a name="tuples-as-method-return-values"></a><span data-ttu-id="faf6f-205">メソッドの戻り値としてのタプル</span><span class="sxs-lookup"><span data-stu-id="faf6f-205">Tuples as method return values</span></span>
 
-タプルはメソッドの戻り値として使用できます。これはタプルの一般的な使用方法の 1 つです。 その例を見てみましょう。 数値シーケンスの標準偏差を計算する次のメソッドについて考えます。
+<span data-ttu-id="faf6f-206">タプルはメソッドの戻り値として使用できます。これはタプルの一般的な使用方法の 1 つです。</span><span class="sxs-lookup"><span data-stu-id="faf6f-206">One of the most common uses for Tuples is as a method return value.</span></span> <span data-ttu-id="faf6f-207">その例を見てみましょう。</span><span class="sxs-lookup"><span data-stu-id="faf6f-207">Let's walk through one example.</span></span> <span data-ttu-id="faf6f-208">数値シーケンスの標準偏差を計算する次のメソッドについて考えます。</span><span class="sxs-lookup"><span data-stu-id="faf6f-208">Consider this method that computes the standard deviation for a sequence of numbers:</span></span>
 
-[!code-csharp[StandardDeviation](../../samples/snippets/csharp/tuples/tuples/statistics.cs#05_StandardDeviation "標準偏差を計算する")]
+<span data-ttu-id="faf6f-209">[!code-csharp[StandardDeviation](../../samples/snippets/csharp/tuples/tuples/statistics.cs#05_StandardDeviation "標準偏差を計算する")]</span><span class="sxs-lookup"><span data-stu-id="faf6f-209">[!code-csharp[StandardDeviation](../../samples/snippets/csharp/tuples/tuples/statistics.cs#05_StandardDeviation "Compute Standard Deviation")]</span></span>
 
 > [!NOTE]
-> この例では、未修正のサンプル標準偏差を計算します。
-> 修正後のサンプル標準偏差式は、`Average` 拡張メソッドで行われるのと同様に、平均値との差の二乗和を、N ではなく (N-1) で除算します。 標準偏差のこうした数式の間に生じる差の詳細については、統計値のテキストを参照してください。
+> <span data-ttu-id="faf6f-210">この例では、未修正のサンプル標準偏差を計算します。</span><span class="sxs-lookup"><span data-stu-id="faf6f-210">These examples compute the uncorrected sample standard deviation.</span></span>
+> <span data-ttu-id="faf6f-211">修正後のサンプル標準偏差式は、`Average` 拡張メソッドで行われるのと同様に、平均値との差の二乗和を、N ではなく (N-1) で除算します。</span><span class="sxs-lookup"><span data-stu-id="faf6f-211">The corrected sample standard deviation formula would divide the sum of the squared differences from the mean by (N-1) instead of N, as the `Average` extension method does.</span></span> <span data-ttu-id="faf6f-212">標準偏差のこうした数式の間に生じる差の詳細については、統計値のテキストを参照してください。</span><span class="sxs-lookup"><span data-stu-id="faf6f-212">Consult a statistics text for more details on the differences between these formulas for standard deviation.</span></span>
 
-これは、標準偏差の教科書どおりの数式に従っています。 正しい答えが生成されますが、きわめて非効率的な実装です。 このメソッドは、シーケンスを 2 回列挙します。1 回は平均値を生成するため、もう 1 回は平均値との差を 2 乗して、その平均値を生成するためです 
-(前述のとおり、LINQ クエリは遅延評価されるため、平均値との差と、その差の平均値の計算で生成される列挙は 1 つだけです)。
+<span data-ttu-id="faf6f-213">これは、標準偏差の教科書どおりの数式に従っています。</span><span class="sxs-lookup"><span data-stu-id="faf6f-213">This follows the textbook formula for the standard deviation.</span></span> <span data-ttu-id="faf6f-214">正しい答えが生成されますが、きわめて非効率的な実装です。</span><span class="sxs-lookup"><span data-stu-id="faf6f-214">It produces the correct answer, but it's a very inefficient implementation.</span></span> <span data-ttu-id="faf6f-215">このメソッドは、シーケンスを 2 回列挙します。1 回は平均値を生成するため、もう 1 回は平均値との差を 2 乗して、その平均値を生成するためです </span><span class="sxs-lookup"><span data-stu-id="faf6f-215">This method enumerates the sequence twice: Once to produce the average, and once to produce the average of the square of the difference of the average.</span></span>
+<span data-ttu-id="faf6f-216">(前述のとおり、LINQ クエリは遅延評価されるため、平均値との差と、その差の平均値の計算で生成される列挙は 1 つだけです)。</span><span class="sxs-lookup"><span data-stu-id="faf6f-216">(Remember that LINQ queries are evaluated lazily, so the computation of the differences from the mean and the average of those differences makes only one enumeration.)</span></span>
 
-シーケンスの列挙を 1 つだけ使用して標準偏差を計算する、別の数式があります。  この計算では、シーケンスを列挙しながら、2 つの値が生成されます。1 つはシーケンス内のすべての項目の合計、もう 1 つは各値の二乗和です。
+<span data-ttu-id="faf6f-217">シーケンスの列挙を 1 つだけ使用して標準偏差を計算する、別の数式があります。</span><span class="sxs-lookup"><span data-stu-id="faf6f-217">There is an alternative formula that computes standard deviation using only one enumeration of the sequence.</span></span>  <span data-ttu-id="faf6f-218">この計算では、シーケンスを列挙しながら、2 つの値が生成されます。1 つはシーケンス内のすべての項目の合計、もう 1 つは各値の二乗和です。</span><span class="sxs-lookup"><span data-stu-id="faf6f-218">This computation produces two values as it enumerates the sequence: the sum of all items in the sequence, and the sum of the each value squared:</span></span>
 
-[!code-csharp[SumOfSquaresFormula](../../samples/snippets/csharp/tuples/tuples/statistics.cs#06_SumOfSquaresFormula "二乗和を使用して標準偏差を計算する")]
+<span data-ttu-id="faf6f-219">[!code-csharp[SumOfSquaresFormula](../../samples/snippets/csharp/tuples/tuples/statistics.cs#06_SumOfSquaresFormula "二乗和を使用して標準偏差を計算する")]</span><span class="sxs-lookup"><span data-stu-id="faf6f-219">[!code-csharp[SumOfSquaresFormula](../../samples/snippets/csharp/tuples/tuples/statistics.cs#06_SumOfSquaresFormula "Compute Standard Deviation using the sum of squares")]</span></span>
 
-このバージョンでは、シーケンスを 1 回だけ列挙しますが、 最適な再利用可能なコードとは言えません。 操作を続けていくと、さまざまな統計計算処理の多くが、シーケンス内の項目数、シーケンスの合計、およびシーケンスの二乗和を使用していることがわかります。 このメソッドをリファクタリングし、その 3 つの値すべてを生成するユーティリティ メソッドを作成しましょう。
+<span data-ttu-id="faf6f-220">このバージョンでは、シーケンスを 1 回だけ列挙しますが、</span><span class="sxs-lookup"><span data-stu-id="faf6f-220">This version enumerates the sequence exactly once.</span></span> <span data-ttu-id="faf6f-221">最適な再利用可能なコードとは言えません。</span><span class="sxs-lookup"><span data-stu-id="faf6f-221">But, it's not very reusable code.</span></span> <span data-ttu-id="faf6f-222">操作を続けていくと、さまざまな統計計算処理の多くが、シーケンス内の項目数、シーケンスの合計、およびシーケンスの二乗和を使用していることがわかります。</span><span class="sxs-lookup"><span data-stu-id="faf6f-222">As you keep working, you'll find that many different statistical computations use the number of items in the sequence, the sum of the sequence, and the sum of the squares of the sequence.</span></span> <span data-ttu-id="faf6f-223">このメソッドをリファクタリングし、その 3 つの値すべてを生成するユーティリティ メソッドを作成しましょう。</span><span class="sxs-lookup"><span data-stu-id="faf6f-223">Let's refactor this method and write a utility method that produces all three of those values.</span></span>
 
-ここで、タプルが非常に役に立ちます。 
+<span data-ttu-id="faf6f-224">ここで、タプルが非常に役に立ちます。</span><span class="sxs-lookup"><span data-stu-id="faf6f-224">This is where tuples come in very useful.</span></span> 
 
-このメソッドを更新して、列挙中に計算された 3 つの値をタプルに格納しましょう。 そうすると、次のバージョンが作成されます。
+<span data-ttu-id="faf6f-225">このメソッドを更新して、列挙中に計算された 3 つの値をタプルに格納しましょう。</span><span class="sxs-lookup"><span data-stu-id="faf6f-225">Let's update this method so the three values computed during the enumeration are stored in a tuple.</span></span> <span data-ttu-id="faf6f-226">そうすると、次のバージョンが作成されます。</span><span class="sxs-lookup"><span data-stu-id="faf6f-226">That creates this version:</span></span>
 
-[!code-csharp[TupleVersion](../../samples/snippets/csharp/tuples/tuples/statistics.cs#07_TupleVersion "リファクタリングしてタプルを使用する")]
+<span data-ttu-id="faf6f-227">[!code-csharp[TupleVersion](../../samples/snippets/csharp/tuples/tuples/statistics.cs#07_TupleVersion "リファクタリングしてタプルを使用する")]</span><span class="sxs-lookup"><span data-stu-id="faf6f-227">[!code-csharp[TupleVersion](../../samples/snippets/csharp/tuples/tuples/statistics.cs#07_TupleVersion "Refactor to use tuples")]</span></span>
 
-Visual Studio のリファクタリング サポートにより、主要な統計情報の機能をプライベート メソッドに抽出できます。 これにより、3 つの値 `Sum`、`SumOfSquares`、`Count` を含むタプル型を返す `private static` メソッドが作成されます。
+<span data-ttu-id="faf6f-228">Visual Studio のリファクタリング サポートにより、主要な統計情報の機能をプライベート メソッドに抽出できます。</span><span class="sxs-lookup"><span data-stu-id="faf6f-228">Visual Studio's Refactoring suport makes it easy to extract the functionality for the core statistics into a private method.</span></span> <span data-ttu-id="faf6f-229">これにより、3 つの値 `Sum`、`SumOfSquares`、`Count` を含むタプル型を返す `private static` メソッドが作成されます。</span><span class="sxs-lookup"><span data-stu-id="faf6f-229">That gives you a `private static` method that returns the tuple type with the three values of `Sum`, `SumOfSquares`, and `Count`:</span></span>
 
-[!code-csharp[TupleMethodVersion](../../samples/snippets/csharp/tuples/tuples/statistics.cs#08_TupleMethodVersion "ユーティリティ メソッドの抽出後")]
+<span data-ttu-id="faf6f-230">[!code-csharp[TupleMethodVersion](../../samples/snippets/csharp/tuples/tuples/statistics.cs#08_TupleMethodVersion "ユーティリティ メソッドの抽出後")]</span><span class="sxs-lookup"><span data-stu-id="faf6f-230">[!code-csharp[TupleMethodVersion](../../samples/snippets/csharp/tuples/tuples/statistics.cs#08_TupleMethodVersion "After extracting utility method")]</span></span>
  
-編集を手動ですばやく行う必要がある場合は、使用できるオプションが他にもいくつかあります。 まず、`var` 宣言を使用することで、`ComputeSumAndSumOfSquares` メソッド呼び出しのタプルの結果を初期化できます。 `ComputeSumAndSumOfSquares` メソッド内に異なる 3 つの変数を作成することもできます。 最終的なバージョンは以下のようになります。
+<span data-ttu-id="faf6f-231">編集を手動ですばやく行う必要がある場合は、使用できるオプションが他にもいくつかあります。</span><span class="sxs-lookup"><span data-stu-id="faf6f-231">The language enables a couple more options that you can use, if you want to make a few quick edits by hand.</span></span> <span data-ttu-id="faf6f-232">まず、`var` 宣言を使用することで、`ComputeSumAndSumOfSquares` メソッド呼び出しのタプルの結果を初期化できます。</span><span class="sxs-lookup"><span data-stu-id="faf6f-232">First, you can use the `var` declaration to initialize the tuple result from the `ComputeSumAndSumOfSquares` method call.</span></span> <span data-ttu-id="faf6f-233">`ComputeSumAndSumOfSquares` メソッド内に異なる 3 つの変数を作成することもできます。</span><span class="sxs-lookup"><span data-stu-id="faf6f-233">You can also create three discrete variables inside the `ComputeSumAndSumOfSquares` method.</span></span> <span data-ttu-id="faf6f-234">最終的なバージョンは以下のようになります。</span><span class="sxs-lookup"><span data-stu-id="faf6f-234">The final version is below:</span></span>
 
-[!code-csharp[CleanedTupleVersion](../../samples/snippets/csharp/tuples/tuples/statistics.cs#09_CleanedTupleVersion "最後のクリーンアップ後")]
+<span data-ttu-id="faf6f-235">[!code-csharp[CleanedTupleVersion](../../samples/snippets/csharp/tuples/tuples/statistics.cs#09_CleanedTupleVersion "最後のクリーンアップ後")]</span><span class="sxs-lookup"><span data-stu-id="faf6f-235">[!code-csharp[CleanedTupleVersion](../../samples/snippets/csharp/tuples/tuples/statistics.cs#09_CleanedTupleVersion "After final cleanup")]</span></span>
 
-この最終バージョンは、この 3 つの値を必要とするすべてのメソッド、またはそのサブセットで使用できます。
+<span data-ttu-id="faf6f-236">この最終バージョンは、この 3 つの値を必要とするすべてのメソッド、またはそのサブセットで使用できます。</span><span class="sxs-lookup"><span data-stu-id="faf6f-236">This final version can be used for any method that needs those three values, or any subset of them.</span></span>
 
-このようなタプルを返すメソッドで要素の名前を管理するオプションが他にもサポートされています。
+<span data-ttu-id="faf6f-237">このようなタプルを返すメソッドで要素の名前を管理するオプションが他にもサポートされています。</span><span class="sxs-lookup"><span data-stu-id="faf6f-237">The language supports other options in managing the names of the elements in these tuple-returning methods.</span></span>
 
-戻り値の宣言からフィールド名を削除して、名前のないタプルを返すことができます。
+<span data-ttu-id="faf6f-238">戻り値の宣言からフィールド名を削除して、名前のないタプルを返すことができます。</span><span class="sxs-lookup"><span data-stu-id="faf6f-238">You can remove the field names from the return value declaration and return an unnamed tuple:</span></span>
 
 ```csharp
 private static (double, double, int) ComputeSumAndSumOfSquares(IEnumerable<double> sequence)
@@ -177,72 +177,72 @@ private static (double, double, int) ComputeSumAndSumOfSquares(IEnumerable<doubl
 }
 ```
 
-このタプルのフィールドは、`Item1`、`Item2`、`Item3` として扱う必要があります。
-メソッドから返されたタプルの要素には、セマンティック名を指定することをお勧めします。
+<span data-ttu-id="faf6f-239">このタプルのフィールドは、`Item1`、`Item2`、`Item3` として扱う必要があります。</span><span class="sxs-lookup"><span data-stu-id="faf6f-239">You must address the fields of this tuple as `Item1`, `Item2`, and `Item3`.</span></span>
+<span data-ttu-id="faf6f-240">メソッドから返されたタプルの要素には、セマンティック名を指定することをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="faf6f-240">It's recommended that you provide semantic names to the elements of tuples returned from methods.</span></span>
 
-また、作成している LINQ クエリの最終的な結果が、選択したオブジェクトのプロパティが一部だけ含まれるプロジェクションとなるときも、タプルが非常に便利です。
+<span data-ttu-id="faf6f-241">また、作成している LINQ クエリの最終的な結果が、選択したオブジェクトのプロパティが一部だけ含まれるプロジェクションとなるときも、タプルが非常に便利です。</span><span class="sxs-lookup"><span data-stu-id="faf6f-241">Another idiom where tuples can be very useful is when you are authoring LINQ queries where the final result is a projection that contains some, but not all, of the properties of the objects being selected.</span></span>
 
-従来、クエリの結果は、匿名型のオブジェクトのシーケンスに射影していましたが、 この方法には多くの制限が伴いました。メソッドの戻り値の型では、匿名型に名前を付けるのが簡単ではなかったからです。 代替手段として `object` や `dynamic` を結果の型に使用すると、パフォーマンス コストは大きくなります。
+<span data-ttu-id="faf6f-242">従来、クエリの結果は、匿名型のオブジェクトのシーケンスに射影していましたが、</span><span class="sxs-lookup"><span data-stu-id="faf6f-242">You would traditionally project the results of the query into a sequence of objects that were an anonymous type.</span></span> <span data-ttu-id="faf6f-243">この方法には多くの制限が伴いました。メソッドの戻り値の型では、匿名型に名前を付けるのが簡単ではなかったからです。</span><span class="sxs-lookup"><span data-stu-id="faf6f-243">That presented many limitations, primarily because anonymous types could not conveniently be named in the return type for a method.</span></span> <span data-ttu-id="faf6f-244">代替手段として `object` や `dynamic` を結果の型に使用すると、パフォーマンス コストは大きくなります。</span><span class="sxs-lookup"><span data-stu-id="faf6f-244">Alternatives using `object` or `dynamic` as the type of the result came with significant performance costs.</span></span>
 
-タプル型のシーケンスを返すのは簡単です。要素の名前と型は、コンパイル時に IDE ツールで使用することができます。
-たとえば、次の ToDo アプリケーションを考えてみます。 ToDo リストの 1 つのエントリを表すために、次のようなクラスを定義します。
+<span data-ttu-id="faf6f-245">タプル型のシーケンスを返すのは簡単です。要素の名前と型は、コンパイル時に IDE ツールで使用することができます。</span><span class="sxs-lookup"><span data-stu-id="faf6f-245">Returning a sequence of a tuple type is easy, and the names and types of the elements are available at compile time and through IDE tools.</span></span>
+<span data-ttu-id="faf6f-246">たとえば、次の ToDo アプリケーションを考えてみます。</span><span class="sxs-lookup"><span data-stu-id="faf6f-246">For example, consider a ToDo application.</span></span> <span data-ttu-id="faf6f-247">ToDo リストの 1 つのエントリを表すために、次のようなクラスを定義します。</span><span class="sxs-lookup"><span data-stu-id="faf6f-247">You might define a class similar to the following to represent a single entry in the ToDo list:</span></span>
 
-[!code-csharp[ToDoItem](../../samples/snippets/csharp/tuples/tuples/projectionsample.cs#14_ToDoItem "To Do 項目")]
+<span data-ttu-id="faf6f-248">[!code-csharp[ToDoItem](../../samples/snippets/csharp/tuples/tuples/projectionsample.cs#14_ToDoItem "To Do 項目")]</span><span class="sxs-lookup"><span data-stu-id="faf6f-248">[!code-csharp[ToDoItem](../../samples/snippets/csharp/tuples/tuples/projectionsample.cs#14_ToDoItem "To Do Item")]</span></span>
 
-モバイル アプリケーションでサポートされるのは、タイトルしか表示されないコンパクト形式の現在の ToDo 項目です。 その LINQ クエリでは、ID とタイトルのみが含まれるプロジェクションが作成されます。 タプルのシーケンスを返すメソッドは、その設計を適切に表現しています。
+<span data-ttu-id="faf6f-249">モバイル アプリケーションでサポートされるのは、タイトルしか表示されないコンパクト形式の現在の ToDo 項目です。</span><span class="sxs-lookup"><span data-stu-id="faf6f-249">Your mobile applications may support a compact form of the current ToDo items that only displays the title.</span></span> <span data-ttu-id="faf6f-250">その LINQ クエリでは、ID とタイトルのみが含まれるプロジェクションが作成されます。</span><span class="sxs-lookup"><span data-stu-id="faf6f-250">That LINQ query would make a projection that includes only the ID and the title.</span></span> <span data-ttu-id="faf6f-251">タプルのシーケンスを返すメソッドは、その設計を適切に表現しています。</span><span class="sxs-lookup"><span data-stu-id="faf6f-251">A method that returns a sequence of tuples expresses that design very well:</span></span>
 
-[!code-csharp[QueryReturningTuple](../../samples/snippets/csharp/tuples/tuples/projectionsample.cs#15_QueryReturningTuple "タプルを返すクエリ")]
+<span data-ttu-id="faf6f-252">[!code-csharp[QueryReturningTuple](../../samples/snippets/csharp/tuples/tuples/projectionsample.cs#15_QueryReturningTuple "タプルを返すクエリ")]</span><span class="sxs-lookup"><span data-stu-id="faf6f-252">[!code-csharp[QueryReturningTuple](../../samples/snippets/csharp/tuples/tuples/projectionsample.cs#15_QueryReturningTuple "Query returning a tuple")]</span></span>
 
 > [!NOTE]
-> C# 7.1 では、タプル プロジェクションを使用して、匿名型で名前が付けられたプロパティと同様の方法で、要素を使用する名前付きタプルを作成できます。 上記のコードでは、クエリ プロジェクションの `select` ステートメントで、要素 `ID` と `Title` を含むタプルを作成します。
+> <span data-ttu-id="faf6f-253">C# 7.1 では、タプル プロジェクションを使用して、匿名型で名前が付けられたプロパティと同様の方法で、要素を使用する名前付きタプルを作成できます。</span><span class="sxs-lookup"><span data-stu-id="faf6f-253">In C# 7.1, tuple projections enable you to create named tuples using elements, in a manner similar to the property naming in anonymous types.</span></span> <span data-ttu-id="faf6f-254">上記のコードでは、クエリ プロジェクションの `select` ステートメントで、要素 `ID` と `Title` を含むタプルを作成します。</span><span class="sxs-lookup"><span data-stu-id="faf6f-254">In the above code, the `select` statement in the query projection creates a tuple that has elements `ID` and `Title`.</span></span>
 
-名前付きタプルは、署名に含めることができます。 これによって、コンパイラと IDE ツールは静的チェックを行い、結果が正しく使用されていることを確認できます。 名前付きタプルには静的情報も含まれているため、リフレクション、動的バインドなど、コストのかかるランタイム機能を使用して結果を操作する必要がありません。
+<span data-ttu-id="faf6f-255">名前付きタプルは、署名に含めることができます。</span><span class="sxs-lookup"><span data-stu-id="faf6f-255">The named tuple can be part of the signature.</span></span> <span data-ttu-id="faf6f-256">これによって、コンパイラと IDE ツールは静的チェックを行い、結果が正しく使用されていることを確認できます。</span><span class="sxs-lookup"><span data-stu-id="faf6f-256">It lets the compiler and IDE tools provide static checking that you are using the result correctly.</span></span> <span data-ttu-id="faf6f-257">名前付きタプルには静的情報も含まれているため、リフレクション、動的バインドなど、コストのかかるランタイム機能を使用して結果を操作する必要がありません。</span><span class="sxs-lookup"><span data-stu-id="faf6f-257">The named tuple also carries the static type information so there is no need to use expensive run time features like reflection or dynamic binding to work with the results.</span></span>
 
-## <a name="deconstruction"></a>分解
+## <a name="deconstruction"></a><span data-ttu-id="faf6f-258">分解</span><span class="sxs-lookup"><span data-stu-id="faf6f-258">Deconstruction</span></span>
 
-タプル内のすべての項目を展開するには、メソッドによって返されるタプルを*分解*します。 タプルは 2 とおりの方法で分解できます。  まず、かっこの中で各フィールドの型を明示的に宣言して、タプルの要素ごとに個別の変数を作成することができます。
+<span data-ttu-id="faf6f-259">タプル内のすべての項目を展開するには、メソッドによって返されるタプルを*分解*します。</span><span class="sxs-lookup"><span data-stu-id="faf6f-259">You can unpackage all the items in a tuple by *deconstructing* the tuple returned by a method.</span></span> <span data-ttu-id="faf6f-260">タプルは 2 とおりの方法で分解できます。</span><span class="sxs-lookup"><span data-stu-id="faf6f-260">There are two different approaches to deconstructing tuples.</span></span>  <span data-ttu-id="faf6f-261">まず、かっこの中で各フィールドの型を明示的に宣言して、タプルの要素ごとに個別の変数を作成することができます。</span><span class="sxs-lookup"><span data-stu-id="faf6f-261">First, you can explicitly declare the type of each field inside parentheses to create discrete variables for each of the elements in the tuple:</span></span>
 
-[!code-csharp[Deconstruct](../../samples/snippets/csharp/tuples/tuples/statistics.cs#10_Deconstruct "分解する")]
+<span data-ttu-id="faf6f-262">[!code-csharp[Deconstruct](../../samples/snippets/csharp/tuples/tuples/statistics.cs#10_Deconstruct "分解する")]</span><span class="sxs-lookup"><span data-stu-id="faf6f-262">[!code-csharp[Deconstruct](../../samples/snippets/csharp/tuples/tuples/statistics.cs#10_Deconstruct "Deconstruct")]</span></span>
 
-また、かっこの外に `var` キーワードを使用して、タプルの各フィールドに対して暗黙的に型指定された変数を宣言することもできます。
+<span data-ttu-id="faf6f-263">また、かっこの外に `var` キーワードを使用して、タプルの各フィールドに対して暗黙的に型指定された変数を宣言することもできます。</span><span class="sxs-lookup"><span data-stu-id="faf6f-263">You can also declare implicitly typed variables for each field in a tuple by using the `var` keyword outside the parentheses:</span></span>
 
-[!code-csharp[DeconstructToVar](../../samples/snippets/csharp/tuples/tuples/statistics.cs#11_DeconstructToVar "Var に分解する")]
+<span data-ttu-id="faf6f-264">[!code-csharp[DeconstructToVar](../../samples/snippets/csharp/tuples/tuples/statistics.cs#11_DeconstructToVar "Var に分解する")]</span><span class="sxs-lookup"><span data-stu-id="faf6f-264">[!code-csharp[DeconstructToVar](../../samples/snippets/csharp/tuples/tuples/statistics.cs#11_DeconstructToVar "Deconstruct to Var")]</span></span>
 
-`var` キーワードは、かっこ内のいずれか 1 つの変数宣言に使用することも、すべての変数宣言に使用することもできます。 
+<span data-ttu-id="faf6f-265">`var` キーワードは、かっこ内のいずれか 1 つの変数宣言に使用することも、すべての変数宣言に使用することもできます。</span><span class="sxs-lookup"><span data-stu-id="faf6f-265">It is also legal to use the `var` keyword with any, or all of the variable declarations inside the parentheses.</span></span> 
 
 ```csharp
 (double sum, var sumOfSquares, var count) = ComputeSumAndSumOfSquares(sequence);
 ```
 
-タプル内のフィールドすべての型が同じでも、かっこ外では使用できない型があることに注意してください。
+<span data-ttu-id="faf6f-266">タプル内のフィールドすべての型が同じでも、かっこ外では使用できない型があることに注意してください。</span><span class="sxs-lookup"><span data-stu-id="faf6f-266">Note that you cannot use a specific type outside the parentheses, even if every field in the tuple has the same type.</span></span>
 
-### <a name="deconstructing-user-defined-types"></a>ユーザー定義型の分解
+### <a name="deconstructing-user-defined-types"></a><span data-ttu-id="faf6f-267">ユーザー定義型の分解</span><span class="sxs-lookup"><span data-stu-id="faf6f-267">Deconstructing user defined types</span></span>
 
-上に示したように、すべてのタプル型を分解できます。 また、ユーザー定義型 (クラス、構造体、またはインターフェイス) も簡単に分解できます。
+<span data-ttu-id="faf6f-268">上に示したように、すべてのタプル型を分解できます。</span><span class="sxs-lookup"><span data-stu-id="faf6f-268">Any tuple type can be deconstructed as shown above.</span></span> <span data-ttu-id="faf6f-269">また、ユーザー定義型 (クラス、構造体、またはインターフェイス) も簡単に分解できます。</span><span class="sxs-lookup"><span data-stu-id="faf6f-269">It's also easy to enable deconstruction on any user defined type (classes, structs, or even interfaces).</span></span>
 
-型の作成者は、型を構成するデータ要素を表す任意の数の `out` 変数に対して値を割り当てる `Deconstruct` メソッドを 1 つ以上定義できます。 たとえば、次の `Person` 型は、person オブジェクトを、名と姓を表す要素に分解する `Deconstruct` メソッドを定義しています。
+<span data-ttu-id="faf6f-270">型の作成者は、型を構成するデータ要素を表す任意の数の `out` 変数に対して値を割り当てる `Deconstruct` メソッドを 1 つ以上定義できます。</span><span class="sxs-lookup"><span data-stu-id="faf6f-270">The type author can define one or more `Deconstruct` methods that assign values to any number of `out` variables representing the data elements that make up the type.</span></span> <span data-ttu-id="faf6f-271">たとえば、次の `Person` 型は、person オブジェクトを、名と姓を表す要素に分解する `Deconstruct` メソッドを定義しています。</span><span class="sxs-lookup"><span data-stu-id="faf6f-271">For example, the following `Person` type defines a `Deconstruct` method that deconstructs a person object into the elements representing the first name and last name:</span></span>
 
-[!code-csharp[TypeWithDeconstructMethod](../../samples/snippets/csharp/tuples/tuples/person.cs#12_TypeWithDeconstructMethod "deconstruct メソッドと型")]
+<span data-ttu-id="faf6f-272">[!code-csharp[TypeWithDeconstructMethod](../../samples/snippets/csharp/tuples/tuples/person.cs#12_TypeWithDeconstructMethod "deconstruct メソッドと型")]</span><span class="sxs-lookup"><span data-stu-id="faf6f-272">[!code-csharp[TypeWithDeconstructMethod](../../samples/snippets/csharp/tuples/tuples/person.cs#12_TypeWithDeconstructMethod "Type with a deconstruct method")]</span></span>
 
-deconstruct メソッドを使用すると、`Person` から、`FirstName` プロパティと `LastName` プロパティを表す 2 つの文字列を割り当てることができます。
+<span data-ttu-id="faf6f-273">deconstruct メソッドを使用すると、`Person` から、`FirstName` プロパティと `LastName` プロパティを表す 2 つの文字列を割り当てることができます。</span><span class="sxs-lookup"><span data-stu-id="faf6f-273">The deconstruct method enables assignment from a `Person` to two strings, representing the `FirstName` and `LastName` properties:</span></span>
 
-[!code-csharp[Deconstruct Type](../../samples/snippets/csharp/tuples/tuples/program.cs#12A_DeconstructType "クラス型を分解する")]
+<span data-ttu-id="faf6f-274">[!code-csharp[Deconstruct Type](../../samples/snippets/csharp/tuples/tuples/program.cs#12A_DeconstructType "クラス型を分解する")]</span><span class="sxs-lookup"><span data-stu-id="faf6f-274">[!code-csharp[Deconstruct Type](../../samples/snippets/csharp/tuples/tuples/program.cs#12A_DeconstructType "Deconstruct a class type")]</span></span>
 
-自分で作成していない型を分解することもできます。
-`Deconstruct` メソッドは、オブジェクトのアクセス可能なデータ メンバーを展開する拡張メソッドとして使用できます。 次の例は、`Person` から派生した `Student` 型と、`Student` を 3 つの変数 `FirstName`、`LastName`、`GPA` に分解する拡張メソッドを示しています。
+<span data-ttu-id="faf6f-275">自分で作成していない型を分解することもできます。</span><span class="sxs-lookup"><span data-stu-id="faf6f-275">You can enable deconstruction even for types you did not author.</span></span>
+<span data-ttu-id="faf6f-276">`Deconstruct` メソッドは、オブジェクトのアクセス可能なデータ メンバーを展開する拡張メソッドとして使用できます。</span><span class="sxs-lookup"><span data-stu-id="faf6f-276">The `Deconstruct` method can be an extension method that unpackages the accessible data members of an object.</span></span> <span data-ttu-id="faf6f-277">次の例は、`Person` から派生した `Student` 型と、`Student` を 3 つの変数 `FirstName`、`LastName`、`GPA` に分解する拡張メソッドを示しています。</span><span class="sxs-lookup"><span data-stu-id="faf6f-277">The example below shows a `Student` type, derived from the `Person` type, and an extension method that deconstructs a `Student` into three variables, representing the `FirstName`, the `LastName` and the `GPA`:</span></span>
 
-[!code-csharp[ExtensionDeconstructMethod](../../samples/snippets/csharp/tuples/tuples/person.cs#13_ExtensionDeconstructMethod "deconstruct 拡張メソッドと型")]
+<span data-ttu-id="faf6f-278">[!code-csharp[ExtensionDeconstructMethod](../../samples/snippets/csharp/tuples/tuples/person.cs#13_ExtensionDeconstructMethod "deconstruct 拡張メソッドと型")]</span><span class="sxs-lookup"><span data-stu-id="faf6f-278">[!code-csharp[ExtensionDeconstructMethod](../../samples/snippets/csharp/tuples/tuples/person.cs#13_ExtensionDeconstructMethod "Type with a deconstruct extension method")]</span></span>
 
-`Student` オブジェクトには、アクセス可能な `Deconstruct` メソッドが 2 つあります。`Student` 型に対して宣言された拡張メソッドと、`Person` 型のメンバーです。 両方ともスコープ内にあり、`Student` を 2 つまたは 3 つの変数に分解できます。
-student を 3 つの変数に割り当てると、名、姓、GPA のすべてが返されます。 student を 2 つの変数に割り当てると、名と姓のみが返されます。
+<span data-ttu-id="faf6f-279">`Student` オブジェクトには、アクセス可能な `Deconstruct` メソッドが 2 つあります。`Student` 型に対して宣言された拡張メソッドと、`Person` 型のメンバーです。</span><span class="sxs-lookup"><span data-stu-id="faf6f-279">A `Student` object now has two accessible `Deconstruct` methods: the extension method declared for `Student` types, and the member of the `Person` type.</span></span> <span data-ttu-id="faf6f-280">両方ともスコープ内にあり、`Student` を 2 つまたは 3 つの変数に分解できます。</span><span class="sxs-lookup"><span data-stu-id="faf6f-280">Both are in scope, and that enables a `Student` to be deconstructed into either two variables or three.</span></span>
+<span data-ttu-id="faf6f-281">student を 3 つの変数に割り当てると、名、姓、GPA のすべてが返されます。</span><span class="sxs-lookup"><span data-stu-id="faf6f-281">If you assign a student to three variables, the first name, last name, and GPA are all returned.</span></span> <span data-ttu-id="faf6f-282">student を 2 つの変数に割り当てると、名と姓のみが返されます。</span><span class="sxs-lookup"><span data-stu-id="faf6f-282">If you assign a student to two variables, only the first name and the last name are returned.</span></span>
 
-[!code-csharp[Deconstruct extension method](../../samples/snippets/csharp/tuples/tuples/program.cs#13A_DeconstructExtension "拡張メソッドを使用してクラス型を分解する")]
+<span data-ttu-id="faf6f-283">[!code-csharp[Deconstruct extension method](../../samples/snippets/csharp/tuples/tuples/program.cs#13A_DeconstructExtension "拡張メソッドを使用してクラス型を分解する")]</span><span class="sxs-lookup"><span data-stu-id="faf6f-283">[!code-csharp[Deconstruct extension method](../../samples/snippets/csharp/tuples/tuples/program.cs#13A_DeconstructExtension "Deconstruct a class type using an extension method")]</span></span>
 
-クラスまたはクラス階層で複数の `Deconstruct` メソッドを定義するときには注意が必要です。 `out` パラメーターの数が同じ `Deconstruct` メソッドが複数あると、あいまいさが生じ、 呼び出し元が、必要な `Deconstruct` メソッドを簡単には呼び出せなくなる場合があります。
+<span data-ttu-id="faf6f-284">クラスまたはクラス階層で複数の `Deconstruct` メソッドを定義するときには注意が必要です。</span><span class="sxs-lookup"><span data-stu-id="faf6f-284">You should be very careful defining multiple `Deconstruct` methods in a class or a class hierarchy.</span></span> <span data-ttu-id="faf6f-285">`out` パラメーターの数が同じ `Deconstruct` メソッドが複数あると、あいまいさが生じ、</span><span class="sxs-lookup"><span data-stu-id="faf6f-285">Multiple `Deconstruct` methods that have the same number of `out` parameters can quickly cause ambiguities.</span></span> <span data-ttu-id="faf6f-286">呼び出し元が、必要な `Deconstruct` メソッドを簡単には呼び出せなくなる場合があります。</span><span class="sxs-lookup"><span data-stu-id="faf6f-286">Callers may not be able to easily call the desired `Deconstruct` method.</span></span>
 
-この例では、出力パラメーターが `Person` の `Deconstruct` メソッドには 2 つ、`Student` の `Deconstruct` メソッドには 3 つ含まれるため、呼び出しが不明確になる可能性は最小限に抑えられています。
+<span data-ttu-id="faf6f-287">この例では、出力パラメーターが `Person` の `Deconstruct` メソッドには 2 つ、`Student` の `Deconstruct` メソッドには 3 つ含まれるため、呼び出しが不明確になる可能性は最小限に抑えられています。</span><span class="sxs-lookup"><span data-stu-id="faf6f-287">In this example, there is minimal chance for an ambiguous call because the `Deconstruct` method for `Person` has two output parameters, and the `Deconstruct` method for `Student` has three.</span></span>
 
-## <a name="conclusion"></a>まとめ 
+## <a name="conclusion"></a><span data-ttu-id="faf6f-288">まとめ</span><span class="sxs-lookup"><span data-stu-id="faf6f-288">Conclusion</span></span> 
 
-クラスや構造体では動作の定義が必要であるため、新しい言語とライブラリで名前付きタプルがサポートされたことで、動作を定義せずに複数の要素を格納するデータ構造設計が格段に扱いやすくなりました。 こうした型に対してタプルを使用するのは簡単です。 詳細な `class` または `struct` 構文を使用して型を作成しなくても、静的な型チェックのすべてのメリットを利用できます。 とは言っても、class や struct は、`private` や `internal` のユーティリティ メソッドにとっては非常に便利です。 複数の要素を含む値がパブリック メソッドによって返される場合は、ユーザー定義型、`class` または`struct` を作成します。
+<span data-ttu-id="faf6f-289">クラスや構造体では動作の定義が必要であるため、新しい言語とライブラリで名前付きタプルがサポートされたことで、動作を定義せずに複数の要素を格納するデータ構造設計が格段に扱いやすくなりました。</span><span class="sxs-lookup"><span data-stu-id="faf6f-289">The new language and library support for named tuples makes it much easier to work with designs that use data structures that store multiple elements but do not define behavior, as classes and structs do.</span></span> <span data-ttu-id="faf6f-290">こうした型に対してタプルを使用するのは簡単です。</span><span class="sxs-lookup"><span data-stu-id="faf6f-290">It's easy and concise to use tuples for those types.</span></span> <span data-ttu-id="faf6f-291">詳細な `class` または `struct` 構文を使用して型を作成しなくても、静的な型チェックのすべてのメリットを利用できます。</span><span class="sxs-lookup"><span data-stu-id="faf6f-291">You get all the benefits of static type checking, without needing to author types using the more verbose `class` or `struct` syntax.</span></span> <span data-ttu-id="faf6f-292">とは言っても、class や struct は、`private` や `internal` のユーティリティ メソッドにとっては非常に便利です。</span><span class="sxs-lookup"><span data-stu-id="faf6f-292">Even so, they are most useful for utility methods that are `private`, or `internal`.</span></span> <span data-ttu-id="faf6f-293">複数の要素を含む値がパブリック メソッドによって返される場合は、ユーザー定義型、`class` または`struct` を作成します。</span><span class="sxs-lookup"><span data-stu-id="faf6f-293">Create user defined types, either `class` or `struct` types when your public methods return a value that has multiple elements.</span></span>
 

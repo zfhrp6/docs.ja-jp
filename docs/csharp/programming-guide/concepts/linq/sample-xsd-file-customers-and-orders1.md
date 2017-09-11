@@ -26,12 +26,12 @@ ms.contentlocale: ja-jp
 ms.lasthandoff: 07/28/2017
 
 ---
-# <a name="sample-xsd-file-customers-and-orders"></a>サンプル XSD ファイル : 顧客と注文
-次の XSD ファイルは、[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] ドキュメントのさまざまな例で使用されます。 このファイルには、「[サンプル XML ファイル: 顧客と注文 (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml-2.md)」のスキーマ定義が含まれています。 このスキーマは、XSD の `xs:key` 機能と `xs:keyref` 機能を使用して、`CustomerID` 要素の `Customer` 属性がキーであることを確立し、各 `CustomerID` 要素の `Order` 要素と各 `CustomerID` 要素の `Customer` 属性の間にリレーションシップを確立します。  
+# <a name="sample-xsd-file-customers-and-orders"></a><span data-ttu-id="a8628-102">サンプル XSD ファイル : 顧客と注文</span><span class="sxs-lookup"><span data-stu-id="a8628-102">Sample XSD File: Customers and Orders</span></span>
+<span data-ttu-id="a8628-103">次の XSD ファイルは、[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] ドキュメントのさまざまな例で使用されます。</span><span class="sxs-lookup"><span data-stu-id="a8628-103">The following XSD file is used in various examples in the [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] documentation.</span></span> <span data-ttu-id="a8628-104">このファイルには、「[サンプル XML ファイル: 顧客と注文 (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml-2.md)」のスキーマ定義が含まれています。</span><span class="sxs-lookup"><span data-stu-id="a8628-104">This file contains a schema definition for the [Sample XML File: Customers and Orders (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml-2.md).</span></span> <span data-ttu-id="a8628-105">このスキーマは、XSD の `xs:key` 機能と `xs:keyref` 機能を使用して、`CustomerID` 要素の `Customer` 属性がキーであることを確立し、各 `CustomerID` 要素の `Order` 要素と各 `CustomerID` 要素の `Customer` 属性の間にリレーションシップを確立します。</span><span class="sxs-lookup"><span data-stu-id="a8628-105">The schema uses the `xs:key` and `xs:keyref` features of XSD to establish that the `CustomerID` attribute of the `Customer` element is a key, and to establish a relationship between the `CustomerID` element in each `Order` element and the `CustomerID` attribute in each `Customer` element.</span></span>  
   
- `Join` 句を使用してこのリレーションシップを利用する LINQ クエリの作成例については、「[方法: 2 つのコレクションを結合する (C#) (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/how-to-join-two-collections-linq-to-xml.md)」を参照してください。  
+ <span data-ttu-id="a8628-106">`Join` 句を使用してこのリレーションシップを利用する LINQ クエリの作成例については、「[方法: 2 つのコレクションを結合する (C#) (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/how-to-join-two-collections-linq-to-xml.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="a8628-106">For an example of writing LINQ queries that take advantage of this relationship using the `Join` clause, see [How to: Join Two Collections (LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-join-two-collections-linq-to-xml.md).</span></span>  
   
-## <a name="customersordersxsd"></a>CustomersOrders.xsd  
+## <a name="customersordersxsd"></a><span data-ttu-id="a8628-107">CustomersOrders.xsd</span><span class="sxs-lookup"><span data-stu-id="a8628-107">CustomersOrders.xsd</span></span>  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8" ?>  
@@ -110,6 +110,6 @@ ms.lasthandoff: 07/28/2017
 </xs:schema>  
 ```  
   
-## <a name="see-also"></a>関連項目  
- [サンプル XML ドキュメント (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-documents-linq-to-xml.md)
+## <a name="see-also"></a><span data-ttu-id="a8628-108">関連項目</span><span class="sxs-lookup"><span data-stu-id="a8628-108">See Also</span></span>  
+ [<span data-ttu-id="a8628-109">サンプル XML ドキュメント (LINQ to XML)</span><span class="sxs-lookup"><span data-stu-id="a8628-109">Sample XML Documents (LINQ to XML)</span></span>](../../../../csharp/programming-guide/concepts/linq/sample-xml-documents-linq-to-xml.md)
 

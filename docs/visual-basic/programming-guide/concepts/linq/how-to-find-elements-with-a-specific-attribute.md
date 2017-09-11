@@ -16,22 +16,22 @@ caps.latest.revision: 3
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: d5f052084651fe96d2bdcb2a86f8c3d23ac246e1
+ms.sourcegitcommit: 14abadaf548e228244a1ff7ca72fa3896ef4eb5d
+ms.openlocfilehash: 2819f0e9789218d3c2658d7c46c2d97f065ac23b
 ms.contentlocale: ja-jp
-ms.lasthandoff: 03/13/2017
+ms.lasthandoff: 05/23/2017
 
 
 ---
-# <a name="how-to-find-elements-with-a-specific-attribute-xpath-linq-to-xml-visual-basic"></a>方法: 特定の属性 (XPATH-LINQ to XML) で要素を検索する (Visual Basic)
-特定の属性を持つすべての要素を検索しなければならない場合があります。 属性の内容は問わず、 属性の存在に基づいて選択を行うような場合です。  
+# <a name="how-to-find-elements-with-a-specific-attribute-xpath-linq-to-xml-visual-basic"></a><span data-ttu-id="0aeb0-102">方法: 特定の属性 (XPATH-LINQ to XML) で要素を検索する (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="0aeb0-102">How to: Find Elements with a Specific Attribute (XPath-LINQ to XML) (Visual Basic)</span></span>
+<span data-ttu-id="0aeb0-103">特定の属性を持つすべての要素を検索しなければならない場合があります。</span><span class="sxs-lookup"><span data-stu-id="0aeb0-103">Sometimes you want to find all elements that have a specific attribute.</span></span> <span data-ttu-id="0aeb0-104">属性の内容は問わず、</span><span class="sxs-lookup"><span data-stu-id="0aeb0-104">You are not concerned about the contents of the attribute.</span></span> <span data-ttu-id="0aeb0-105">属性の存在に基づいて選択を行うような場合です。</span><span class="sxs-lookup"><span data-stu-id="0aeb0-105">Instead, you want to select based on the existence of the attribute.</span></span>  
   
- XPath 式を次に示します。  
+ <span data-ttu-id="0aeb0-106">XPath 式を次に示します。</span><span class="sxs-lookup"><span data-stu-id="0aeb0-106">The XPath expression is:</span></span>  
   
  `./*[@Select]`  
   
-## <a name="example"></a>例  
- 次のコードは、`Select` 属性を持つ要素のみを選択します。  
+## <a name="example"></a><span data-ttu-id="0aeb0-107">例</span><span class="sxs-lookup"><span data-stu-id="0aeb0-107">Example</span></span>  
+ <span data-ttu-id="0aeb0-108">次のコードは、`Select` 属性を持つ要素のみを選択します。</span><span class="sxs-lookup"><span data-stu-id="0aeb0-108">The following code selects just the elements that have the `Select` attribute.</span></span>  
   
 ```vb  
 Dim doc As XElement = _   
@@ -65,7 +65,7 @@ For Each el As XElement In list1
 Next  
 ```  
   
- この例を実行すると、次の出力が生成されます。  
+ <span data-ttu-id="0aeb0-109">この例を実行すると、次の出力が生成されます。</span><span class="sxs-lookup"><span data-stu-id="0aeb0-109">This example produces the following output:</span></span>  
   
 ```  
 Results are identical  
@@ -73,6 +73,6 @@ Results are identical
 <Child4 Select="true">4</Child4>  
 ```  
   
-## <a name="see-also"></a>関連項目  
- [LINQ to XML の XPath ユーザー (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)
+## <a name="see-also"></a><span data-ttu-id="0aeb0-110">関連項目</span><span class="sxs-lookup"><span data-stu-id="0aeb0-110">See Also</span></span>  
+ [<span data-ttu-id="0aeb0-111">LINQ to XML の XPath ユーザー (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="0aeb0-111">LINQ to XML for XPath Users (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)
 

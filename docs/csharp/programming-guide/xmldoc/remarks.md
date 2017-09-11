@@ -38,26 +38,26 @@ ms.contentlocale: ja-jp
 ms.lasthandoff: 07/28/2017
 
 ---
-# <a name="ltremarksgt-c-programming-guide"></a>&lt;remarks&gt; (C# プログラミング ガイド)
-## <a name="syntax"></a>構文  
+# <a name="ltremarksgt-c-programming-guide"></a><span data-ttu-id="d50a6-102">&lt;remarks&gt; (C# プログラミング ガイド)</span><span class="sxs-lookup"><span data-stu-id="d50a6-102">&lt;remarks&gt; (C# Programming Guide)</span></span>
+## <a name="syntax"></a><span data-ttu-id="d50a6-103">構文</span><span class="sxs-lookup"><span data-stu-id="d50a6-103">Syntax</span></span>  
   
 ```xml  
 <remarks>description</remarks>  
 ```  
   
-#### <a name="parameters"></a>パラメーター  
+#### <a name="parameters"></a><span data-ttu-id="d50a6-104">パラメーター</span><span class="sxs-lookup"><span data-stu-id="d50a6-104">Parameters</span></span>  
  `Description`  
- メンバーの説明。  
+ <span data-ttu-id="d50a6-105">メンバーの説明。</span><span class="sxs-lookup"><span data-stu-id="d50a6-105">A description of the member.</span></span>  
   
-## <a name="remarks"></a>コメント  
- \<remarks> タグを使用して、型の情報を追加し、[\<summary>](../../../csharp/programming-guide/xmldoc/summary.md) で指定された情報を補足します。 この情報はオブジェクト ブラウザー ウィンドウに表示されます。  
+## <a name="remarks"></a><span data-ttu-id="d50a6-106">コメント</span><span class="sxs-lookup"><span data-stu-id="d50a6-106">Remarks</span></span>  
+ <span data-ttu-id="d50a6-107">\<remarks> タグを使用して、型の情報を追加し、[\<summary>](../../../csharp/programming-guide/xmldoc/summary.md) で指定された情報を補足します。</span><span class="sxs-lookup"><span data-stu-id="d50a6-107">The \<remarks> tag is used to add information about a type, supplementing the information specified with [\<summary>](../../../csharp/programming-guide/xmldoc/summary.md).</span></span> <span data-ttu-id="d50a6-108">この情報はオブジェクト ブラウザー ウィンドウに表示されます。</span><span class="sxs-lookup"><span data-stu-id="d50a6-108">This information is displayed in the Object Browser window.</span></span>  
   
- コンパイル時に [/doc](../../../csharp/language-reference/compiler-options/doc-compiler-option.md) を指定して、ドキュメント コメントをファイルに出力します。  
+ <span data-ttu-id="d50a6-109">コンパイル時に [/doc](../../../csharp/language-reference/compiler-options/doc-compiler-option.md) を指定して、ドキュメント コメントをファイルに出力します。</span><span class="sxs-lookup"><span data-stu-id="d50a6-109">Compile with [/doc](../../../csharp/language-reference/compiler-options/doc-compiler-option.md) to process documentation comments to a file.</span></span>  
   
-## <a name="example"></a>例  
- [!code-cs[csProgGuideDocComments#9](../../../csharp/programming-guide/xmldoc/codesnippet/CSharp/remarks_1.cs)]  
+## <a name="example"></a><span data-ttu-id="d50a6-110">例</span><span class="sxs-lookup"><span data-stu-id="d50a6-110">Example</span></span>  
+ <span data-ttu-id="d50a6-111">[!code-cs[csProgGuideDocComments#9](../../../csharp/programming-guide/xmldoc/codesnippet/CSharp/remarks_1.cs)]</span><span class="sxs-lookup"><span data-stu-id="d50a6-111">[!code-cs[csProgGuideDocComments#9](../../../csharp/programming-guide/xmldoc/codesnippet/CSharp/remarks_1.cs)]</span></span>  
   
-## <a name="see-also"></a>関連項目  
- [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
- [ドキュメント コメントとして推奨されるタグ](../../../csharp/programming-guide/xmldoc/recommended-tags-for-documentation-comments.md)
+## <a name="see-also"></a><span data-ttu-id="d50a6-112">関連項目</span><span class="sxs-lookup"><span data-stu-id="d50a6-112">See Also</span></span>  
+ <span data-ttu-id="d50a6-113">[C# プログラミング ガイド](../../../csharp/programming-guide/index.md) </span><span class="sxs-lookup"><span data-stu-id="d50a6-113">[C# Programming Guide](../../../csharp/programming-guide/index.md) </span></span>  
+ [<span data-ttu-id="d50a6-114">ドキュメント コメントとして推奨されるタグ</span><span class="sxs-lookup"><span data-stu-id="d50a6-114">Recommended Tags for Documentation Comments</span></span>](../../../csharp/programming-guide/xmldoc/recommended-tags-for-documentation-comments.md)
 

@@ -20,27 +20,28 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 1ce4f89c88fd856d3471e4f32c4f69d15e8ccb4c
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
+ms.openlocfilehash: 48571deff37bf4adfcbddbb1f4cc6630cb96303e
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/12/2017
 
 ---
-# <a name="how-to-compare-the-contents-of-two-folders-linq-visual-basic"></a>方法:&2; つのフォルダー (LINQ) (Visual Basic) の内容を比較します。
-この例では、2 つのファイル リストを比較する&3; つの方法を示します。  
+# <a name="how-to-compare-the-contents-of-two-folders-linq-visual-basic"></a><span data-ttu-id="c5fd4-102">方法:&2; つのフォルダー (LINQ) (Visual Basic) の内容を比較します。</span><span class="sxs-lookup"><span data-stu-id="c5fd4-102">How to: Compare the Contents of Two Folders (LINQ) (Visual Basic)</span></span>
+<span data-ttu-id="c5fd4-103">この例では、2 つのファイル リストを比較する&3; つの方法を示します。</span><span class="sxs-lookup"><span data-stu-id="c5fd4-103">This example demonstrates three ways to compare two file listings:</span></span>  
   
--   2 つのファイルのリストかどうかを指定するブール値を照会すると同じです。  
+-   <span data-ttu-id="c5fd4-104">2 つのファイルのリストかどうかを指定するブール値を照会すると同じです。</span><span class="sxs-lookup"><span data-stu-id="c5fd4-104">By querying for a Boolean value that specifies whether the two file lists are identical.</span></span>  
   
--   両方のフォルダー内にあるファイルを取得する共通部分にクエリを実行します。  
+-   <span data-ttu-id="c5fd4-105">両方のフォルダー内にあるファイルを取得する共通部分にクエリを実行します。</span><span class="sxs-lookup"><span data-stu-id="c5fd4-105">By querying for the intersection to retrieve the files that are in both folders.</span></span>  
   
--   違いについては、セットを&1; つのフォルダーにあるファイルを取得するクエリを実行します。  
+-   <span data-ttu-id="c5fd4-106">違いについては、セットを&1; つのフォルダーにあるファイルを取得するクエリを実行します。</span><span class="sxs-lookup"><span data-stu-id="c5fd4-106">By querying for the set difference to retrieve the files that are in one folder but not the other.</span></span>  
   
     > [!NOTE]
-    >  次に示す方法は、任意の型のオブジェクトのシーケンスを比較する適合させることができます。  
+    >  <span data-ttu-id="c5fd4-107">次に示す方法は、任意の型のオブジェクトのシーケンスを比較する適合させることができます。</span><span class="sxs-lookup"><span data-stu-id="c5fd4-107">The techniques shown here can be adapted to compare sequences of objects of any type.</span></span>  
   
- `FileComparer`ここに示すクラスが、標準クエリ演算子と共にカスタム比較子クラスを使用する方法を示します。 クラスは、実際のシナリオで使用するものではありません。 のみを使用します名前と長さ (各ファイルのバイト単位) 各フォルダーの内容と同じしているかどうかを確認します。 実際のシナリオより厳密に等しいかどうかチェックを実行するこの比較演算子を変更してください。  
+ <span data-ttu-id="c5fd4-108">`FileComparer`ここに示すクラスが、標準クエリ演算子と共にカスタム比較子クラスを使用する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="c5fd4-108">The `FileComparer` class shown here demonstrates how to use a custom comparer class together with the Standard Query Operators.</span></span> <span data-ttu-id="c5fd4-109">クラスは、実際のシナリオで使用するものではありません。</span><span class="sxs-lookup"><span data-stu-id="c5fd4-109">The class is not intended for use in real-world scenarios.</span></span> <span data-ttu-id="c5fd4-110">のみを使用します名前と長さ (各ファイルのバイト単位) 各フォルダーの内容と同じしているかどうかを確認します。</span><span class="sxs-lookup"><span data-stu-id="c5fd4-110">It just uses the name and length in bytes of each file to determine whether the contents of each folder are identical or not.</span></span> <span data-ttu-id="c5fd4-111">実際のシナリオより厳密に等しいかどうかチェックを実行するこの比較演算子を変更してください。</span><span class="sxs-lookup"><span data-stu-id="c5fd4-111">In a real-world scenario, you should modify this comparer to perform a more rigorous equality check.</span></span>  
   
-## <a name="example"></a>例  
+## <a name="example"></a><span data-ttu-id="c5fd4-112">例</span><span class="sxs-lookup"><span data-stu-id="c5fd4-112">Example</span></span>  
   
 ```vb  
 Module CompareDirs  
@@ -130,9 +131,9 @@ Module CompareDirs
 End Module  
 ```  
   
-## <a name="compiling-the-code"></a>コードのコンパイル  
- .NET Framework version 3.5 またはそれ以上、System.Core.dll への参照を対象とするプロジェクトを作成し、 `Imports` System.Linq 名前空間のステートメントです。  
+## <a name="compiling-the-code"></a><span data-ttu-id="c5fd4-113">コードのコンパイル</span><span class="sxs-lookup"><span data-stu-id="c5fd4-113">Compiling the Code</span></span>  
+ <span data-ttu-id="c5fd4-114">.NET Framework version 3.5 またはそれ以上、System.Core.dll への参照を対象とするプロジェクトを作成し、 `Imports` System.Linq 名前空間のステートメントです。</span><span class="sxs-lookup"><span data-stu-id="c5fd4-114">Create a project that targets the .NET Framework version 3.5 or higher with a reference to System.Core.dll and a `Imports` statement for the System.Linq namespace.</span></span>  
   
-## <a name="see-also"></a>関連項目  
- [LINQ to Objects (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-objects.md)   
- [LINQ とファイル ディレクトリ (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-file-directories.md)
+## <a name="see-also"></a><span data-ttu-id="c5fd4-115">関連項目</span><span class="sxs-lookup"><span data-stu-id="c5fd4-115">See Also</span></span>  
+ <span data-ttu-id="c5fd4-116">[LINQ to Objects (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-objects.md) </span><span class="sxs-lookup"><span data-stu-id="c5fd4-116">[LINQ to Objects (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-objects.md) </span></span>  
+<span data-ttu-id="c5fd4-117"> [LINQ とファイル ディレクトリ (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-file-directories.md)</span><span class="sxs-lookup"><span data-stu-id="c5fd4-117"> [LINQ and File Directories (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-file-directories.md)</span></span>

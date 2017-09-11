@@ -34,15 +34,15 @@ ms.contentlocale: ja-jp
 ms.lasthandoff: 07/28/2017
 
 ---
-# <a name="cref-attribute-c-programming-guide"></a>cref 属性 (C# プログラミング ガイド)
-XML ドキュメント タグの `cref` 属性は "コード参照" を意味します。 タグの内部テキストが、型、メソッド、プロパティなど、コード要素であることを指定します。 [Sandcastle](https://github.com/EWSoftware/SHFB) のようなドキュメント ツールは `cref` 属性を利用し、型やメンバーが文書化されるページのハイパーリンクを自動的に生成します。  
+# <a name="cref-attribute-c-programming-guide"></a><span data-ttu-id="244c3-102">cref 属性 (C# プログラミング ガイド)</span><span class="sxs-lookup"><span data-stu-id="244c3-102">cref Attribute (C# Programming Guide)</span></span>
+<span data-ttu-id="244c3-103">XML ドキュメント タグの `cref` 属性は "コード参照" を意味します。</span><span class="sxs-lookup"><span data-stu-id="244c3-103">The `cref` attribute in an XML documentation tag means "code reference."</span></span> <span data-ttu-id="244c3-104">タグの内部テキストが、型、メソッド、プロパティなど、コード要素であることを指定します。</span><span class="sxs-lookup"><span data-stu-id="244c3-104">It specifies that the inner text of the tag is a code element, such as a type, method, or property.</span></span> <span data-ttu-id="244c3-105">[Sandcastle](https://github.com/EWSoftware/SHFB) のようなドキュメント ツールは `cref` 属性を利用し、型やメンバーが文書化されるページのハイパーリンクを自動的に生成します。</span><span class="sxs-lookup"><span data-stu-id="244c3-105">Documentation tools like [Sandcastle](https://github.com/EWSoftware/SHFB) use the `cref` attributes to automatically generate hyperlinks to the page where the type or member is documented.</span></span>  
   
-## <a name="example"></a>例  
- 次の例は、[\<see>](../../../csharp/programming-guide/xmldoc/see.md) タグで使用される `cref` 属性のものです。  
+## <a name="example"></a><span data-ttu-id="244c3-106">例</span><span class="sxs-lookup"><span data-stu-id="244c3-106">Example</span></span>  
+ <span data-ttu-id="244c3-107">次の例は、[\<see>](../../../csharp/programming-guide/xmldoc/see.md) タグで使用される `cref` 属性のものです。</span><span class="sxs-lookup"><span data-stu-id="244c3-107">The following example shows `cref` attributes used in [\<see>](../../../csharp/programming-guide/xmldoc/see.md) tags.</span></span>  
   
- [!code-cs[csProgGuideDocComments#3](../../../csharp/programming-guide/xmldoc/codesnippet/CSharp/cref-attribute_1.cs)]  
+ <span data-ttu-id="244c3-108">[!code-cs[csProgGuideDocComments#3](../../../csharp/programming-guide/xmldoc/codesnippet/CSharp/cref-attribute_1.cs)]</span><span class="sxs-lookup"><span data-stu-id="244c3-108">[!code-cs[csProgGuideDocComments#3](../../../csharp/programming-guide/xmldoc/codesnippet/CSharp/cref-attribute_1.cs)]</span></span>  
   
- コンパイルすると、このプログラムの XML 出力は次のようになります。 たとえば、`GetZero` メソッドの `cref` 属性がコンパイラにより `"M:TestNamespace.TestClass.GetZero"` に変換されていることに注意してください。 "M:" プレフィックスは "method" という意味であり、Sandcastle のようなドキュメント ツールで認識される規約です。 プレフィックスの完全一覧については、「[XML ファイルの処理](../../../csharp/programming-guide/xmldoc/processing-the-xml-file.md)」を参照してください。  
+ <span data-ttu-id="244c3-109">コンパイルすると、このプログラムの XML 出力は次のようになります。</span><span class="sxs-lookup"><span data-stu-id="244c3-109">When compiled, the program produces the following XML file.</span></span> <span data-ttu-id="244c3-110">たとえば、`GetZero` メソッドの `cref` 属性がコンパイラにより `"M:TestNamespace.TestClass.GetZero"` に変換されていることに注意してください。</span><span class="sxs-lookup"><span data-stu-id="244c3-110">Notice that the `cref` attribute for the `GetZero` method, for example, has been transformed by the compiler to `"M:TestNamespace.TestClass.GetZero"`.</span></span> <span data-ttu-id="244c3-111">"M:" プレフィックスは "method" という意味であり、Sandcastle のようなドキュメント ツールで認識される規約です。</span><span class="sxs-lookup"><span data-stu-id="244c3-111">The "M:" prefix means "method" and is a convention that is recognized by documentation tools such as Sandcastle.</span></span> <span data-ttu-id="244c3-112">プレフィックスの完全一覧については、「[XML ファイルの処理](../../../csharp/programming-guide/xmldoc/processing-the-xml-file.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="244c3-112">For a complete list of prefixes, see [Processing the XML File](../../../csharp/programming-guide/xmldoc/processing-the-xml-file.md).</span></span>  
   
 ```xml  
 <?xml version="1.0"?>  
@@ -141,7 +141,7 @@ XML ドキュメント タグの `cref` 属性は "コード参照" を意味し
 </doc>  
 ```  
   
-## <a name="see-also"></a>関連項目  
- [XML ドキュメント コメント](../../../csharp/programming-guide/xmldoc/xml-documentation-comments.md)   
- [ドキュメント コメントとして推奨されるタグ](../../../csharp/programming-guide/xmldoc/recommended-tags-for-documentation-comments.md)
+## <a name="see-also"></a><span data-ttu-id="244c3-113">関連項目</span><span class="sxs-lookup"><span data-stu-id="244c3-113">See Also</span></span>  
+ <span data-ttu-id="244c3-114">[XML ドキュメント コメント](../../../csharp/programming-guide/xmldoc/xml-documentation-comments.md) </span><span class="sxs-lookup"><span data-stu-id="244c3-114">[XML Documentation Comments](../../../csharp/programming-guide/xmldoc/xml-documentation-comments.md) </span></span>  
+ [<span data-ttu-id="244c3-115">ドキュメント コメントとして推奨されるタグ</span><span class="sxs-lookup"><span data-stu-id="244c3-115">Recommended Tags for Documentation Comments</span></span>](../../../csharp/programming-guide/xmldoc/recommended-tags-for-documentation-comments.md)
 

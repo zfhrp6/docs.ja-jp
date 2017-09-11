@@ -20,33 +20,34 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: efbd8c19947c45b3ba15ce7b574000d56526ef45
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
+ms.openlocfilehash: 84de749afad6abb748d0622561f8ee7cd399ed54
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/12/2017
 
 ---
-# <a name="debugging-expression-trees-in-visual-studio-visual-basic"></a>Visual Studio (Visual Basic) で式ツリーのデバッグ
-アプリケーションをデバッグするときは、構造と式ツリーの内容を分析できます。 式ツリー構造の簡単な概要を取得するには、使用することができます、`DebugView`プロパティで、デバッグ モードでのみ使用できます。 デバッグの詳細については、次を参照してください。 [Visual Studio でのデバッグ](https://docs.microsoft.com/visualstudio/debugger/debugging-in-visual-studio)します。  
+# <a name="debugging-expression-trees-in-visual-studio-visual-basic"></a><span data-ttu-id="1aabb-102">Visual Studio (Visual Basic) で式ツリーのデバッグ</span><span class="sxs-lookup"><span data-stu-id="1aabb-102">Debugging Expression Trees in Visual Studio (Visual Basic)</span></span>
+<span data-ttu-id="1aabb-103">アプリケーションをデバッグするときは、構造と式ツリーの内容を分析できます。</span><span class="sxs-lookup"><span data-stu-id="1aabb-103">You can analyze the structure and content of expression trees when you debug your applications.</span></span> <span data-ttu-id="1aabb-104">式ツリー構造の簡単な概要を取得するには、使用することができます、`DebugView`プロパティで、デバッグ モードでのみ使用できます。</span><span class="sxs-lookup"><span data-stu-id="1aabb-104">To get a quick overview of the expression tree structure, you can use the `DebugView` property, which is available only in debug mode.</span></span> <span data-ttu-id="1aabb-105">デバッグの詳細については、次を参照してください。 [Visual Studio でのデバッグ](https://docs.microsoft.com/visualstudio/debugger/debugging-in-visual-studio)します。</span><span class="sxs-lookup"><span data-stu-id="1aabb-105">For more information about debugging, see [Debugging in Visual Studio](https://docs.microsoft.com/visualstudio/debugger/debugging-in-visual-studio).</span></span>  
   
- 式ツリーの内容をわかりやすく示した、`DebugView`プロパティは、Visual Studio ビジュアライザーを使用します。 詳細については、次を参照してください。[カスタム ビジュアライザーの作成](https://docs.microsoft.com/visualstudio/debugger/create-custom-visualizers-of-data)します。  
+ <span data-ttu-id="1aabb-106">式ツリーの内容をわかりやすく示した、`DebugView`プロパティは、Visual Studio ビジュアライザーを使用します。</span><span class="sxs-lookup"><span data-stu-id="1aabb-106">To better represent the content of expression trees, the `DebugView` property uses Visual Studio visualizers.</span></span> <span data-ttu-id="1aabb-107">詳細については、次を参照してください。[カスタム ビジュアライザーの作成](https://docs.microsoft.com/visualstudio/debugger/create-custom-visualizers-of-data)します。</span><span class="sxs-lookup"><span data-stu-id="1aabb-107">For more information, see [Create Custom Visualizers](https://docs.microsoft.com/visualstudio/debugger/create-custom-visualizers-of-data).</span></span>  
   
-### <a name="to-open-a-visualizer-for-an-expression-tree"></a>式ツリーのビジュアライザーを開く  
+### <a name="to-open-a-visualizer-for-an-expression-tree"></a><span data-ttu-id="1aabb-108">式ツリーのビジュアライザーを開く</span><span class="sxs-lookup"><span data-stu-id="1aabb-108">To open a visualizer for an expression tree</span></span>  
   
-1.  横に表示される、虫眼鏡アイコンをクリックして、`DebugView`プロパティで、式ツリーの**データヒント**、**ウォッチ**ウィンドウで、 **[自動変数]**ウィンドウで、または**[ローカル]**ウィンドウです。  
+1.  <span data-ttu-id="1aabb-109">横に表示される、虫眼鏡アイコンをクリックして、`DebugView`プロパティで、式ツリーの**データヒント**、**ウォッチ**ウィンドウで、 **[自動変数]**ウィンドウで、または**[ローカル]**ウィンドウです。</span><span class="sxs-lookup"><span data-stu-id="1aabb-109">Click the magnifying glass icon that appears next to the `DebugView` property of an expression tree in **DataTips**, a **Watch** window, the **Autos** window, or the **Locals** window.</span></span>  
   
-     ビジュアライザーの一覧が表示されます。  
+     <span data-ttu-id="1aabb-110">ビジュアライザーの一覧が表示されます。</span><span class="sxs-lookup"><span data-stu-id="1aabb-110">A list of visualizers is displayed.</span></span>  
   
-2.  使用するビジュアライザーをクリックします。  
+2.  <span data-ttu-id="1aabb-111">使用するビジュアライザーをクリックします。</span><span class="sxs-lookup"><span data-stu-id="1aabb-111">Click the visualizer you want to use.</span></span>  
   
- 各式の型は、次のセクションで説明されているビジュアライザーに表示されます。  
+ <span data-ttu-id="1aabb-112">各式の型は、次のセクションで説明されているビジュアライザーに表示されます。</span><span class="sxs-lookup"><span data-stu-id="1aabb-112">Each expression type is displayed in the visualizer as described in the following sections.</span></span>  
   
-## <a name="parameterexpressions"></a>ParameterExpressions  
- <xref:System.Linq.Expressions.ParameterExpression>変数名には、先頭に「$」記号が表示されます。</xref:System.Linq.Expressions.ParameterExpression>  
+## <a name="parameterexpressions"></a><span data-ttu-id="1aabb-113">ParameterExpressions</span><span class="sxs-lookup"><span data-stu-id="1aabb-113">ParameterExpressions</span></span>  
+ <span data-ttu-id="1aabb-114"><xref:System.Linq.Expressions.ParameterExpression>変数名には、先頭に「$」記号が表示されます。</xref:System.Linq.Expressions.ParameterExpression></span><span class="sxs-lookup"><span data-stu-id="1aabb-114"><xref:System.Linq.Expressions.ParameterExpression> variable names are displayed with a "$" symbol at the beginning.</span></span>  
   
- パラメーターが名前を持たない場合、名前が割り当てられます、自動的に生成されたなど`$var1`または`$var2`です。  
+ <span data-ttu-id="1aabb-115">パラメーターが名前を持たない場合、名前が割り当てられます、自動的に生成されたなど`$var1`または`$var2`です。</span><span class="sxs-lookup"><span data-stu-id="1aabb-115">If a parameter does not have a name, it is assigned an automatically generated name, such as `$var1` or `$var2`.</span></span>  
   
-### <a name="examples"></a>例  
+### <a name="examples"></a><span data-ttu-id="1aabb-116">例</span><span class="sxs-lookup"><span data-stu-id="1aabb-116">Examples</span></span>  
   
 -   `Expression`  
   
@@ -55,7 +56,7 @@ ms.lasthandoff: 03/13/2017
     Expression.Parameter(GetType(Integer), "num")  
     ```  
   
-     `DebugView` プロパティ  
+     <span data-ttu-id="1aabb-117">`DebugView` プロパティ</span><span class="sxs-lookup"><span data-stu-id="1aabb-117">`DebugView` property</span></span>  
   
      `$num`  
   
@@ -66,14 +67,14 @@ ms.lasthandoff: 03/13/2017
     Expression.Parameter(GetType(Integer))  
     ```  
   
-     `DebugView` プロパティ  
+     <span data-ttu-id="1aabb-118">`DebugView` プロパティ</span><span class="sxs-lookup"><span data-stu-id="1aabb-118">`DebugView` property</span></span>  
   
      `$var1`  
   
-## <a name="constantexpressions"></a>ConstantExpressions  
- <xref:System.Linq.Expressions.ConstantExpression>、文字列、整数値を表すオブジェクトと`null`定数の値が表示されます</xref:System.Linq.Expressions.ConstantExpression>。  
+## <a name="constantexpressions"></a><span data-ttu-id="1aabb-119">ConstantExpressions</span><span class="sxs-lookup"><span data-stu-id="1aabb-119">ConstantExpressions</span></span>  
+ <span data-ttu-id="1aabb-120"><xref:System.Linq.Expressions.ConstantExpression>、文字列、整数値を表すオブジェクトと`null`定数の値が表示されます</xref:System.Linq.Expressions.ConstantExpression>。</span><span class="sxs-lookup"><span data-stu-id="1aabb-120">For <xref:System.Linq.Expressions.ConstantExpression> objects that represent integer values, strings, and `null`, the value of the constant is displayed.</span></span>  
   
-### <a name="examples"></a>例  
+### <a name="examples"></a><span data-ttu-id="1aabb-121">例</span><span class="sxs-lookup"><span data-stu-id="1aabb-121">Examples</span></span>  
   
 -   `Expression`  
   
@@ -82,9 +83,9 @@ ms.lasthandoff: 03/13/2017
     Dim expr As ConstantExpression = Expression.Constant(num)  
     ```  
   
-     `DebugView` プロパティ  
+     <span data-ttu-id="1aabb-122">`DebugView` プロパティ</span><span class="sxs-lookup"><span data-stu-id="1aabb-122">`DebugView` property</span></span>  
   
-     10  
+     <span data-ttu-id="1aabb-123">10</span><span class="sxs-lookup"><span data-stu-id="1aabb-123">10</span></span>  
   
 -   `Expression`  
   
@@ -93,14 +94,14 @@ ms.lasthandoff: 03/13/2017
     Dim expr As ConstantExpression = Expression.Constant(num)  
     ```  
   
-     `DebugView` プロパティ  
+     <span data-ttu-id="1aabb-124">`DebugView` プロパティ</span><span class="sxs-lookup"><span data-stu-id="1aabb-124">`DebugView` property</span></span>  
   
-     10 日  
+     <span data-ttu-id="1aabb-125">10 日</span><span class="sxs-lookup"><span data-stu-id="1aabb-125">10D</span></span>  
   
-## <a name="blockexpression"></a>BlockExpression  
- 場合の種類、<xref:System.Linq.Expressions.BlockExpression>オブジェクトは、ブロックの最後の式の型とは異なるに、型を表示、`DebugInfo`山かっこでプロパティ (\<と >).</xref:System.Linq.Expressions.BlockExpression> それ以外の場合の種類、<xref:System.Linq.Expressions.BlockExpression>オブジェクトは表示されません</xref:System.Linq.Expressions.BlockExpression>。  
+## <a name="blockexpression"></a><span data-ttu-id="1aabb-126">BlockExpression</span><span class="sxs-lookup"><span data-stu-id="1aabb-126">BlockExpression</span></span>  
+ <span data-ttu-id="1aabb-127">場合の種類、<xref:System.Linq.Expressions.BlockExpression>オブジェクトは、ブロックの最後の式の型とは異なるに、型を表示、`DebugInfo`山かっこでプロパティ (\<と >).</xref:System.Linq.Expressions.BlockExpression></span><span class="sxs-lookup"><span data-stu-id="1aabb-127">If the type of a <xref:System.Linq.Expressions.BlockExpression> object differs from the type of the last expression in the block, the type is displayed in the `DebugInfo` property in angle brackets (\< and >).</span></span> <span data-ttu-id="1aabb-128">それ以外の場合の種類、<xref:System.Linq.Expressions.BlockExpression>オブジェクトは表示されません</xref:System.Linq.Expressions.BlockExpression>。</span><span class="sxs-lookup"><span data-stu-id="1aabb-128">Otherwise, the type of the <xref:System.Linq.Expressions.BlockExpression> object is not displayed.</span></span>  
   
-### <a name="examples"></a>例  
+### <a name="examples"></a><span data-ttu-id="1aabb-129">例</span><span class="sxs-lookup"><span data-stu-id="1aabb-129">Examples</span></span>  
   
 -   `Expression`  
   
@@ -108,7 +109,7 @@ ms.lasthandoff: 03/13/2017
     Dim block As BlockExpression = Expression.Block(Expression.Constant("test"))  
     ```  
   
-     `DebugView` プロパティ  
+     <span data-ttu-id="1aabb-130">`DebugView` プロパティ</span><span class="sxs-lookup"><span data-stu-id="1aabb-130">`DebugView` property</span></span>  
   
      `.Block() {`  
   
@@ -123,7 +124,7 @@ ms.lasthandoff: 03/13/2017
     Expression.Block(GetType(Object), Expression.Constant("test"))  
     ```  
   
-     `DebugView` プロパティ  
+     <span data-ttu-id="1aabb-131">`DebugView` プロパティ</span><span class="sxs-lookup"><span data-stu-id="1aabb-131">`DebugView` property</span></span>  
   
      `.Block<System.Object>() {`  
   
@@ -131,12 +132,12 @@ ms.lasthandoff: 03/13/2017
   
      `}`  
   
-## <a name="lambdaexpression"></a>LambdaExpression  
- <xref:System.Linq.Expressions.LambdaExpression>オブジェクトは、デリゲート型と共に表示されます。</xref:System.Linq.Expressions.LambdaExpression>  
+## <a name="lambdaexpression"></a><span data-ttu-id="1aabb-132">LambdaExpression</span><span class="sxs-lookup"><span data-stu-id="1aabb-132">LambdaExpression</span></span>  
+ <span data-ttu-id="1aabb-133"><xref:System.Linq.Expressions.LambdaExpression>オブジェクトは、デリゲート型と共に表示されます。</xref:System.Linq.Expressions.LambdaExpression></span><span class="sxs-lookup"><span data-stu-id="1aabb-133"><xref:System.Linq.Expressions.LambdaExpression> objects are displayed together with their delegate types.</span></span>  
   
- ラムダ式が名を持たない場合、名前が割り当てられます、自動的に生成されたなど`#Lambda1`または`#Lambda2`です。  
+ <span data-ttu-id="1aabb-134">ラムダ式が名を持たない場合、名前が割り当てられます、自動的に生成されたなど`#Lambda1`または`#Lambda2`です。</span><span class="sxs-lookup"><span data-stu-id="1aabb-134">If a lambda expression does not have a name, it is assigned an automatically generated name, such as `#Lambda1` or `#Lambda2`.</span></span>  
   
-### <a name="examples"></a>例  
+### <a name="examples"></a><span data-ttu-id="1aabb-135">例</span><span class="sxs-lookup"><span data-stu-id="1aabb-135">Examples</span></span>  
   
 -   `Expression`  
   
@@ -145,7 +146,7 @@ ms.lasthandoff: 03/13/2017
     Expression.Lambda(Of Func(Of Integer))(Expression.Constant(1))  
     ```  
   
-     `DebugView` プロパティ  
+     <span data-ttu-id="1aabb-136">`DebugView` プロパティ</span><span class="sxs-lookup"><span data-stu-id="1aabb-136">`DebugView` property</span></span>  
   
      `.Lambda #Lambda1<System.Func'1[System.Int32]>() {`  
   
@@ -160,7 +161,7 @@ ms.lasthandoff: 03/13/2017
     Expression.Lambda(Of Func(Of Integer))(Expression.Constant(1), "SampleLamda", Nothing)  
     ```  
   
-     `DebugView` プロパティ  
+     <span data-ttu-id="1aabb-137">`DebugView` プロパティ</span><span class="sxs-lookup"><span data-stu-id="1aabb-137">`DebugView` property</span></span>  
   
      `.Lambda SampleLambda<System.Func'1[System.Int32]>() {`  
   
@@ -168,14 +169,14 @@ ms.lasthandoff: 03/13/2017
   
      `}`  
   
-## <a name="labelexpression"></a>LabelExpression  
- 既定値を指定する場合、<xref:System.Linq.Expressions.LabelExpression>オブジェクトの前にこの値が表示されて、<xref:System.Linq.Expressions.LabelTarget>オブジェクト</xref:System.Linq.Expressions.LabelTarget></xref:System.Linq.Expressions.LabelExpression>。  
+## <a name="labelexpression"></a><span data-ttu-id="1aabb-138">LabelExpression</span><span class="sxs-lookup"><span data-stu-id="1aabb-138">LabelExpression</span></span>  
+ <span data-ttu-id="1aabb-139">既定値を指定する場合、<xref:System.Linq.Expressions.LabelExpression>オブジェクトの前にこの値が表示されて、<xref:System.Linq.Expressions.LabelTarget>オブジェクト</xref:System.Linq.Expressions.LabelTarget></xref:System.Linq.Expressions.LabelExpression>。</span><span class="sxs-lookup"><span data-stu-id="1aabb-139">If you specify a default value for the <xref:System.Linq.Expressions.LabelExpression> object, this value is displayed before the <xref:System.Linq.Expressions.LabelTarget> object.</span></span>  
   
- `.Label`トークンは、ラベルの先頭を指定します。 `.LabelTarget`トークンにジャンプ先のターゲットの送信先を示します。  
+ <span data-ttu-id="1aabb-140">`.Label`トークンは、ラベルの先頭を指定します。</span><span class="sxs-lookup"><span data-stu-id="1aabb-140">The `.Label` token indicates the start of the label.</span></span> <span data-ttu-id="1aabb-141">`.LabelTarget`トークンにジャンプ先のターゲットの送信先を示します。</span><span class="sxs-lookup"><span data-stu-id="1aabb-141">The `.LabelTarget` token indicates the destination of the target to jump to.</span></span>  
   
- ラベルが名前を持たない場合、名前が割り当てられます、自動的に生成されたなど`#Label1`または`#Label2`です。  
+ <span data-ttu-id="1aabb-142">ラベルが名前を持たない場合、名前が割り当てられます、自動的に生成されたなど`#Label1`または`#Label2`です。</span><span class="sxs-lookup"><span data-stu-id="1aabb-142">If a label does not have a name, it is assigned an automatically generated name, such as `#Label1` or `#Label2`.</span></span>  
   
-### <a name="examples"></a>例  
+### <a name="examples"></a><span data-ttu-id="1aabb-143">例</span><span class="sxs-lookup"><span data-stu-id="1aabb-143">Examples</span></span>  
   
 -   `Expression`  
   
@@ -186,7 +187,7 @@ ms.lasthandoff: 03/13/2017
     Expression.Label(target, Expression.Constant(-1)))  
     ```  
   
-     `DebugView` プロパティ  
+     <span data-ttu-id="1aabb-144">`DebugView` プロパティ</span><span class="sxs-lookup"><span data-stu-id="1aabb-144">`DebugView` property</span></span>  
   
      `.Block() {`  
   
@@ -208,7 +209,7 @@ ms.lasthandoff: 03/13/2017
     Expression.Goto(target), Expression.Label(target))  
     ```  
   
-     `DebugView` プロパティ  
+     <span data-ttu-id="1aabb-145">`DebugView` プロパティ</span><span class="sxs-lookup"><span data-stu-id="1aabb-145">`DebugView` property</span></span>  
   
      `.Block() {`  
   
@@ -220,10 +221,10 @@ ms.lasthandoff: 03/13/2017
   
      `}`  
   
-## <a name="checked-operators"></a>Checked 演算子  
- Checked 演算子は、演算子の前に「#」記号が表示されます。 チェックされた加算演算子として表示するなどの`#+`です。  
+## <a name="checked-operators"></a><span data-ttu-id="1aabb-146">Checked 演算子</span><span class="sxs-lookup"><span data-stu-id="1aabb-146">Checked Operators</span></span>  
+ <span data-ttu-id="1aabb-147">Checked 演算子は、演算子の前に「#」記号が表示されます。</span><span class="sxs-lookup"><span data-stu-id="1aabb-147">Checked operators are displayed with the "#" symbol in front of the operator.</span></span> <span data-ttu-id="1aabb-148">チェックされた加算演算子として表示するなどの`#+`です。</span><span class="sxs-lookup"><span data-stu-id="1aabb-148">For example, the checked addition operator is displayed as `#+`.</span></span>  
   
-### <a name="examples"></a>例  
+### <a name="examples"></a><span data-ttu-id="1aabb-149">例</span><span class="sxs-lookup"><span data-stu-id="1aabb-149">Examples</span></span>  
   
 -   `Expression`  
   
@@ -232,7 +233,7 @@ ms.lasthandoff: 03/13/2017
     Expression.Constant(1), Expression.Constant(2))  
     ```  
   
-     `DebugView` プロパティ  
+     <span data-ttu-id="1aabb-150">`DebugView` プロパティ</span><span class="sxs-lookup"><span data-stu-id="1aabb-150">`DebugView` property</span></span>  
   
      `1 #+ 2`  
   
@@ -243,11 +244,11 @@ ms.lasthandoff: 03/13/2017
     Expression.Constant(10.0), GetType(Integer))  
     ```  
   
-     `DebugView` プロパティ  
+     <span data-ttu-id="1aabb-151">`DebugView` プロパティ</span><span class="sxs-lookup"><span data-stu-id="1aabb-151">`DebugView` property</span></span>  
   
      `#(System.Int32)10D`  
   
-## <a name="see-also"></a>関連項目  
- [式ツリー (Visual Basic)](../../../../visual-basic/programming-guide/concepts/expression-trees/index.md)   
- [Visual Studio でのデバッグ](https://docs.microsoft.com/visualstudio/debugger/debugging-in-visual-studio)   
- [カスタム ビジュアライザーを作成します。](https://docs.microsoft.com/visualstudio/debugger/create-custom-visualizers-of-data)
+## <a name="see-also"></a><span data-ttu-id="1aabb-152">関連項目</span><span class="sxs-lookup"><span data-stu-id="1aabb-152">See Also</span></span>  
+ <span data-ttu-id="1aabb-153">[式ツリー (Visual Basic)](../../../../visual-basic/programming-guide/concepts/expression-trees/index.md) </span><span class="sxs-lookup"><span data-stu-id="1aabb-153">[Expression Trees (Visual Basic)](../../../../visual-basic/programming-guide/concepts/expression-trees/index.md) </span></span>  
+<span data-ttu-id="1aabb-154"> [Visual Studio でのデバッグ](https://docs.microsoft.com/visualstudio/debugger/debugging-in-visual-studio) </span><span class="sxs-lookup"><span data-stu-id="1aabb-154"> [Debugging in Visual Studio](https://docs.microsoft.com/visualstudio/debugger/debugging-in-visual-studio) </span></span>  
+<span data-ttu-id="1aabb-155"> [カスタム ビジュアライザーを作成します。](https://docs.microsoft.com/visualstudio/debugger/create-custom-visualizers-of-data)</span><span class="sxs-lookup"><span data-stu-id="1aabb-155"> [Create Custom Visualizers](https://docs.microsoft.com/visualstudio/debugger/create-custom-visualizers-of-data)</span></span>

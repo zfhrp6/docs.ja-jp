@@ -1,1 +1,1 @@
-依存関係プロパティの識別子フィールド:
+<span data-ttu-id="f425c-101">依存関係プロパティの識別子フィールド:</span><span class="sxs-lookup"><span data-stu-id="f425c-101">Dependency property identifier field:</span></span>

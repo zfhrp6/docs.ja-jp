@@ -20,17 +20,18 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: b6f1d67ad5dd0a8c6b1500ea9b0b953b70251b93
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
+ms.openlocfilehash: dd357346ed323df2e923414e394a1626edba53bb
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/12/2017
 
 ---
-# <a name="how-to-build-linq-to-xml-examples-visual-basic"></a>方法: linq TO XML の例 (Visual Basic) をビルド
-このドキュメントに含まれている各種のスニペットおよびコード例では、さまざまな名前空間のクラスと型が使用されます。 Visual Basic のコードをコンパイルする場合は、適切な `Imports` ステートメントを指定する必要があります。  
+# <a name="how-to-build-linq-to-xml-examples-visual-basic"></a><span data-ttu-id="ea1b8-102">方法: linq TO XML の例 (Visual Basic) をビルド</span><span class="sxs-lookup"><span data-stu-id="ea1b8-102">How to: Build LINQ to XML Examples (Visual Basic)</span></span>
+<span data-ttu-id="ea1b8-103">このドキュメントに含まれている各種のスニペットおよびコード例では、さまざまな名前空間のクラスと型が使用されます。</span><span class="sxs-lookup"><span data-stu-id="ea1b8-103">The various snippets and examples in this documentation use classes and types from a variety of namespaces.</span></span> <span data-ttu-id="ea1b8-104">Visual Basic のコードをコンパイルする場合は、適切な `Imports` ステートメントを指定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="ea1b8-104">When compiling Visual Basic code, you need to supply appropriate `Imports` statements.</span></span>  
   
-## <a name="example"></a>例  
- 次のコードには、Visual Basic のコード例をビルドおよび実行するために必要な `Imports` ステートメントが含まれています。 すべての `Imports` ステートメントがすべてのコード例で必要になるわけではありません。  
+## <a name="example"></a><span data-ttu-id="ea1b8-105">例</span><span class="sxs-lookup"><span data-stu-id="ea1b8-105">Example</span></span>  
+ <span data-ttu-id="ea1b8-106">次のコードには、Visual Basic のコード例をビルドおよび実行するために必要な `Imports` ステートメントが含まれています。</span><span class="sxs-lookup"><span data-stu-id="ea1b8-106">The following code contains the `Imports` statements that the Visual Basic examples require to build and run.</span></span> <span data-ttu-id="ea1b8-107">すべての `Imports` ステートメントがすべてのコード例で必要になるわけではありません。</span><span class="sxs-lookup"><span data-stu-id="ea1b8-107">Not all `Imports` statements are required for every example.</span></span>  
   
 ```vb  
 Imports System  
@@ -51,5 +52,5 @@ Imports System.Reflection
 Imports System.IO.Packaging  
 ```  
   
-## <a name="see-also"></a>関連項目  
- [LINQ to XML プログラミングの概要 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-programming-overview.md)
+## <a name="see-also"></a><span data-ttu-id="ea1b8-108">関連項目</span><span class="sxs-lookup"><span data-stu-id="ea1b8-108">See Also</span></span>  
+ [<span data-ttu-id="ea1b8-109">LINQ to XML プログラミングの概要 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="ea1b8-109">LINQ to XML Programming Overview (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-programming-overview.md)

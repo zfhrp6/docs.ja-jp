@@ -20,17 +20,18 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 81cbcb066d60851ba83bd4d783d34f8dd3bd1fac
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
+ms.openlocfilehash: 9c86a75b1c9b4dc25e29d8323d23f89232b8de80
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/12/2017
 
 ---
-# <a name="cloning-vs-attaching-visual-basic"></a>複製とアタッチ (Visual Basic)
-追加するときに<xref:System.Xml.Linq.XNode>(を含む<xref:System.Xml.Linq.XElement>) または<xref:System.Xml.Linq.XAttribute>を新しいツリー オブジェクトのオブジェクトが単に、XML ツリーにアタッチ、新しいコンテンツに親があるない場合</xref:System.Xml.Linq.XAttribute></xref:System.Xml.Linq.XElement></xref:System.Xml.Linq.XNode>。 新しいコンテンツに既に親があり、別の XML ツリーの一部となっている場合は、新しいコンテンツが複製されます。 新しく複製されたコンテンツは、XML ツリーにアタッチされます。  
+# <a name="cloning-vs-attaching-visual-basic"></a><span data-ttu-id="fa85f-102">複製とアタッチ (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="fa85f-102">Cloning vs. Attaching (Visual Basic)</span></span>
+<span data-ttu-id="fa85f-103">追加するときに<xref:System.Xml.Linq.XNode>(を含む<xref:System.Xml.Linq.XElement>) または<xref:System.Xml.Linq.XAttribute>を新しいツリー オブジェクトのオブジェクトが単に、XML ツリーにアタッチ、新しいコンテンツに親があるない場合</xref:System.Xml.Linq.XAttribute></xref:System.Xml.Linq.XElement></xref:System.Xml.Linq.XNode>。</span><span class="sxs-lookup"><span data-stu-id="fa85f-103">When adding <xref:System.Xml.Linq.XNode> (including <xref:System.Xml.Linq.XElement>) or <xref:System.Xml.Linq.XAttribute> objects to a new tree, if the new content has no parent, the objects are simply attached to the XML tree.</span></span> <span data-ttu-id="fa85f-104">新しいコンテンツに既に親があり、別の XML ツリーの一部となっている場合は、新しいコンテンツが複製されます。</span><span class="sxs-lookup"><span data-stu-id="fa85f-104">If the new content already is parented, and is part of another XML tree, the new content is cloned.</span></span> <span data-ttu-id="fa85f-105">新しく複製されたコンテンツは、XML ツリーにアタッチされます。</span><span class="sxs-lookup"><span data-stu-id="fa85f-105">The newly cloned content is then attached to the XML tree.</span></span>  
   
-## <a name="example"></a>例  
- 次のコードでは、親を持つ要素をツリーに追加する場合と親を持たない要素をツリーに追加する場合の動作を示します。  
+## <a name="example"></a><span data-ttu-id="fa85f-106">例</span><span class="sxs-lookup"><span data-stu-id="fa85f-106">Example</span></span>  
+ <span data-ttu-id="fa85f-107">次のコードでは、親を持つ要素をツリーに追加する場合と親を持たない要素をツリーに追加する場合の動作を示します。</span><span class="sxs-lookup"><span data-stu-id="fa85f-107">The following code demonstrates the behavior when you add a parented element to a tree, and when you add an element with no parent to a tree.</span></span>  
   
 ```vb  
 ' Create a tree with a child element.  
@@ -60,12 +61,12 @@ Console.WriteLine("Child2 was {0}", _
     "attached", "cloned"))  
 ```  
   
- この例を実行すると、次の出力が生成されます。  
+ <span data-ttu-id="fa85f-108">この例を実行すると、次の出力が生成されます。</span><span class="sxs-lookup"><span data-stu-id="fa85f-108">This example produces the following output:</span></span>  
   
 ```  
 Child1 was cloned  
 Child2 was attached  
 ```  
   
-## <a name="see-also"></a>関連項目  
- [XML ツリー (Visual Basic) の作成](../../../../visual-basic/programming-guide/concepts/linq/creating-xml-trees.md)
+## <a name="see-also"></a><span data-ttu-id="fa85f-109">関連項目</span><span class="sxs-lookup"><span data-stu-id="fa85f-109">See Also</span></span>  
+ [<span data-ttu-id="fa85f-110">XML ツリー (Visual Basic) の作成</span><span class="sxs-lookup"><span data-stu-id="fa85f-110">Creating XML Trees (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/creating-xml-trees.md)

@@ -36,17 +36,17 @@ ms.contentlocale: ja-jp
 ms.lasthandoff: 07/28/2017
 
 ---
-# <a name="conversion-keywords-c-reference"></a>変換キーワード (C# リファレンス)
-ここでは、型変換で使用されるキーワードについて説明します。  
+# <a name="conversion-keywords-c-reference"></a><span data-ttu-id="16e78-102">変換キーワード (C# リファレンス)</span><span class="sxs-lookup"><span data-stu-id="16e78-102">Conversion Keywords (C# Reference)</span></span>
+<span data-ttu-id="16e78-103">ここでは、型変換で使用されるキーワードについて説明します。</span><span class="sxs-lookup"><span data-stu-id="16e78-103">This section describes keywords used in type conversions:</span></span>  
   
--   [explicit](../../../csharp/language-reference/keywords/explicit.md)  
+-   [<span data-ttu-id="16e78-104">explicit</span><span class="sxs-lookup"><span data-stu-id="16e78-104">explicit</span></span>](../../../csharp/language-reference/keywords/explicit.md)  
   
--   [implicit](../../../csharp/language-reference/keywords/implicit.md)  
+-   [<span data-ttu-id="16e78-105">implicit</span><span class="sxs-lookup"><span data-stu-id="16e78-105">implicit</span></span>](../../../csharp/language-reference/keywords/implicit.md)  
   
--   [operator](../../../csharp/language-reference/keywords/operator.md)  
+-   [<span data-ttu-id="16e78-106">operator</span><span class="sxs-lookup"><span data-stu-id="16e78-106">operator</span></span>](../../../csharp/language-reference/keywords/operator.md)  
   
-## <a name="see-also"></a>関連項目  
- [C# リファレンス](../../../csharp/language-reference/index.md)   
- [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
- [C# のキーワード](../../../csharp/language-reference/keywords/index.md)
+## <a name="see-also"></a><span data-ttu-id="16e78-107">関連項目</span><span class="sxs-lookup"><span data-stu-id="16e78-107">See Also</span></span>  
+ <span data-ttu-id="16e78-108">[C# リファレンス](../../../csharp/language-reference/index.md) </span><span class="sxs-lookup"><span data-stu-id="16e78-108">[C# Reference](../../../csharp/language-reference/index.md) </span></span>  
+ <span data-ttu-id="16e78-109">[C# プログラミング ガイド](../../../csharp/programming-guide/index.md) </span><span class="sxs-lookup"><span data-stu-id="16e78-109">[C# Programming Guide](../../../csharp/programming-guide/index.md) </span></span>  
+ [<span data-ttu-id="16e78-110">C# のキーワード</span><span class="sxs-lookup"><span data-stu-id="16e78-110">C# Keywords</span></span>](../../../csharp/language-reference/keywords/index.md)
 

@@ -1,1 +1,1 @@
-4.6 以降、.NET ネイティブのみで使用できます
+<span data-ttu-id="554fd-101">4.6 以降、.NET ネイティブのみで使用できます</span><span class="sxs-lookup"><span data-stu-id="554fd-101">Available since 4.6, .NET Native only</span></span>

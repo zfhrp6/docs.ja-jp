@@ -26,20 +26,21 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 9849428343d130bd363b8b53c8d143c4b8bf996a
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
+ms.openlocfilehash: 45edd22788c6e93efe335dec45c818cbcf233847
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/12/2017
 
 ---
-# <a name="stop-statement-encountered"></a>Stop ステートメントで中断しました
-実行を中断する `Stop` ステートメントが見つかりました。  
+# <a name="stop-statement-encountered"></a><span data-ttu-id="2e694-102">Stop ステートメントで中断しました</span><span class="sxs-lookup"><span data-stu-id="2e694-102">Stop statement encountered</span></span>
+<span data-ttu-id="2e694-103">実行を中断する `Stop` ステートメントが見つかりました。</span><span class="sxs-lookup"><span data-stu-id="2e694-103">A `Stop` statement, which suspends execution, was encountered.</span></span>  
   
-## <a name="to-correct-this-error"></a>このエラーを解決するには  
+## <a name="to-correct-this-error"></a><span data-ttu-id="2e694-104">このエラーを解決するには</span><span class="sxs-lookup"><span data-stu-id="2e694-104">To correct this error</span></span>  
   
-1.  `Stop` ステートメントを削除します。  
+1.  <span data-ttu-id="2e694-105">`Stop` ステートメントを削除します。</span><span class="sxs-lookup"><span data-stu-id="2e694-105">Remove the `Stop` statement.</span></span>  
   
-## <a name="see-also"></a>関連項目  
- [Stop ステートメント](../../visual-basic/language-reference/statements/stop-statement.md)   
- [制御フローの概要](../../visual-basic/language-reference/keywords/control-flow-summary.md)   
- [Visual Basic の Stop ステートメント](https://docs.microsoft.com/visualstudio/debugger/stop-statements-in-visual-basic)
+## <a name="see-also"></a><span data-ttu-id="2e694-106">関連項目</span><span class="sxs-lookup"><span data-stu-id="2e694-106">See Also</span></span>  
+ <span data-ttu-id="2e694-107">[Stop ステートメント](../../visual-basic/language-reference/statements/stop-statement.md) </span><span class="sxs-lookup"><span data-stu-id="2e694-107">[Stop Statement](../../visual-basic/language-reference/statements/stop-statement.md) </span></span>  
+<span data-ttu-id="2e694-108"> [制御フローの概要](../../visual-basic/language-reference/keywords/control-flow-summary.md) </span><span class="sxs-lookup"><span data-stu-id="2e694-108"> [Control Flow Summary](../../visual-basic/language-reference/keywords/control-flow-summary.md) </span></span>  
+<span data-ttu-id="2e694-109"> [Visual Basic の Stop ステートメント](https://docs.microsoft.com/visualstudio/debugger/stop-statements-in-visual-basic)</span><span class="sxs-lookup"><span data-stu-id="2e694-109"> [Stop Statements in Visual Basic](https://docs.microsoft.com/visualstudio/debugger/stop-statements-in-visual-basic)</span></span>

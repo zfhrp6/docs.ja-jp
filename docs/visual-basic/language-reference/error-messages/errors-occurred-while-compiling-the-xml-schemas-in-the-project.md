@@ -32,30 +32,31 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: cf04e85da98db53d1c78269169571936f708cd21
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
+ms.openlocfilehash: 7e6a835f84f2e37f4f583bc16c24cf9bb28cc92a
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/12/2017
 
 ---
-# <a name="errors-occurred-while-compiling-the-xml-schemas-in-the-project"></a>プロジェクトで、XML スキーマのコンパイル中にエラーが発生しました
-プロジェクトでは、XML スキーマのコンパイル中にエラーが発生しました。 このため、XML IntelliSense は使用できません。  
+# <a name="errors-occurred-while-compiling-the-xml-schemas-in-the-project"></a><span data-ttu-id="7bdb9-102">プロジェクトで、XML スキーマのコンパイル中にエラーが発生しました</span><span class="sxs-lookup"><span data-stu-id="7bdb9-102">Errors occurred while compiling the XML schemas in the project</span></span>
+<span data-ttu-id="7bdb9-103">プロジェクトでは、XML スキーマのコンパイル中にエラーが発生しました。</span><span class="sxs-lookup"><span data-stu-id="7bdb9-103">Errors occurred while compiling the XML schemas in the project.</span></span> <span data-ttu-id="7bdb9-104">このため、XML IntelliSense は使用できません。</span><span class="sxs-lookup"><span data-stu-id="7bdb9-104">Because of this, XML IntelliSense is not available.</span></span>  
   
- プロジェクトに含まれる XML スキーマ定義 (XSD) スキーマでエラーがあります。 このエラーは、既存の XSD スキーマとの競合がプロジェクトに設定する XSD スキーマ (.xsd) ファイルを追加するときに発生します。  
+ <span data-ttu-id="7bdb9-105">プロジェクトに含まれる XML スキーマ定義 (XSD) スキーマでエラーがあります。</span><span class="sxs-lookup"><span data-stu-id="7bdb9-105">There is an error in an XML Schema Definition (XSD) schema included in the project.</span></span> <span data-ttu-id="7bdb9-106">このエラーは、既存の XSD スキーマとの競合がプロジェクトに設定する XSD スキーマ (.xsd) ファイルを追加するときに発生します。</span><span class="sxs-lookup"><span data-stu-id="7bdb9-106">This error occurs when you add an XSD schema (.xsd) file that conflicts with the existing XSD schema set for the project.</span></span>  
   
- **エラー ID:** BC36810  
+ <span data-ttu-id="7bdb9-107">**エラー ID:** BC36810</span><span class="sxs-lookup"><span data-stu-id="7bdb9-107">**Error ID:** BC36810</span></span>  
   
-## <a name="to-correct-this-error"></a>このエラーを解決するには  
+## <a name="to-correct-this-error"></a><span data-ttu-id="7bdb9-108">このエラーを解決するには</span><span class="sxs-lookup"><span data-stu-id="7bdb9-108">To correct this error</span></span>  
   
--   警告をダブルクリック、**エラー リスト**ウィンドウです。 Visual Basic をクリックすると、警告の原因となった XSD ファイル内の場所。 XSD スキーマのエラーを修正します。  
+-   <span data-ttu-id="7bdb9-109">警告をダブルクリック、**エラー リスト**ウィンドウです。</span><span class="sxs-lookup"><span data-stu-id="7bdb9-109">Double-click the warning in the **Errors List** window.</span></span> <span data-ttu-id="7bdb9-110">Visual Basic をクリックすると、警告の原因となった XSD ファイル内の場所。</span><span class="sxs-lookup"><span data-stu-id="7bdb9-110">Visual Basic will take you to the location in the XSD file that is the source of the warning.</span></span> <span data-ttu-id="7bdb9-111">XSD スキーマのエラーを修正します。</span><span class="sxs-lookup"><span data-stu-id="7bdb9-111">Correct the error in the XSD schema.</span></span>  
   
--   必要なすべての XSD スキーマ (.xsd) ファイルがプロジェクトに含まれていることを確認します。 をクリックする必要があります**すべてのファイル**上、**プロジェクト**にファイルを .xsd を表示するメニュー**ソリューション エクスプ ローラー**します。 .Xsd ファイルを右クリックし、**プロジェクトに含める**プロジェクトにファイルを追加します。  
+-   <span data-ttu-id="7bdb9-112">必要なすべての XSD スキーマ (.xsd) ファイルがプロジェクトに含まれていることを確認します。</span><span class="sxs-lookup"><span data-stu-id="7bdb9-112">Ensure that all required XSD schema (.xsd) files are included in the project.</span></span> <span data-ttu-id="7bdb9-113">をクリックする必要があります**すべてのファイル**上、**プロジェクト**にファイルを .xsd を表示するメニュー**ソリューション エクスプ ローラー**します。</span><span class="sxs-lookup"><span data-stu-id="7bdb9-113">You may need to click **Show All Files** on the **Project** menu to see your .xsd files in **Solution Explorer**.</span></span> <span data-ttu-id="7bdb9-114">.Xsd ファイルを右クリックし、**プロジェクトに含める**プロジェクトにファイルを追加します。</span><span class="sxs-lookup"><span data-stu-id="7bdb9-114">Right-click an .xsd file and then click **Include In Project** to include the file in your project.</span></span>  
   
--   XML to Schema ウィザードを使用するいると、同じソースから&2; 回以上のスキーマを推論する場合にこのエラーが発生することができます。 この場合、既存の XSD スキーマ ファイルを削除するには、プロジェクトから新しい XML スキーマ項目テンプレートを追加とし、XML to Schema ウィザードに提供適用可能なすべての XML ソース プロジェクトにします。  
+-   <span data-ttu-id="7bdb9-115">XML to Schema ウィザードを使用するいると、同じソースから&2; 回以上のスキーマを推論する場合にこのエラーが発生することができます。</span><span class="sxs-lookup"><span data-stu-id="7bdb9-115">If you are using the XML to Schema Wizard, this error can occur if you infer schemas more than one time from the same source.</span></span> <span data-ttu-id="7bdb9-116">この場合、既存の XSD スキーマ ファイルを削除するには、プロジェクトから新しい XML スキーマ項目テンプレートを追加とし、XML to Schema ウィザードに提供適用可能なすべての XML ソース プロジェクトにします。</span><span class="sxs-lookup"><span data-stu-id="7bdb9-116">In this case, you can remove the existing XSD schema files from the project, add a new XML to Schema item template, and then provide the XML to Schema Wizard with all the applicable XML sources for your project.</span></span>  
   
--   XSD スキーマでエラーが指定されていない場合、XML コンパイラは十分な情報、詳細なエラー メッセージを提供することはできません。 プロジェクト一致に含まれる .xsd ファイルの XML 名前空間が、Visual Studio で設定する XML スキーマで特定された XML 名前空間を使用することを確認する場合は、詳細なエラー情報を取得することができます。  
+-   <span data-ttu-id="7bdb9-117">XSD スキーマでエラーが指定されていない場合、XML コンパイラは十分な情報、詳細なエラー メッセージを提供することはできません。</span><span class="sxs-lookup"><span data-stu-id="7bdb9-117">If no error is identified in your XSD schema, the XML compiler may not have enough information to provide a detailed error message.</span></span> <span data-ttu-id="7bdb9-118">プロジェクト一致に含まれる .xsd ファイルの XML 名前空間が、Visual Studio で設定する XML スキーマで特定された XML 名前空間を使用することを確認する場合は、詳細なエラー情報を取得することができます。</span><span class="sxs-lookup"><span data-stu-id="7bdb9-118">You may be able to get more detailed error information if you ensure that the XML namespaces for the .xsd files included in your project match the XML namespaces identified for the XML Schema set in Visual Studio.</span></span>  
   
-## <a name="see-also"></a>関連項目  
- [エラー一覧 ウィンドウ](https://docs.microsoft.com/visualstudio/ide/reference/error-list-window)   
- [Visual Basic における XML IntelliSense](../../../visual-basic/programming-guide/language-features/xml/xml-intellisense.md)   
- [XML](../../../visual-basic/programming-guide/language-features/xml/index.md)
+## <a name="see-also"></a><span data-ttu-id="7bdb9-119">関連項目</span><span class="sxs-lookup"><span data-stu-id="7bdb9-119">See Also</span></span>  
+ <span data-ttu-id="7bdb9-120">[エラー一覧 ウィンドウ](https://docs.microsoft.com/visualstudio/ide/reference/error-list-window) </span><span class="sxs-lookup"><span data-stu-id="7bdb9-120">[Error List Window](https://docs.microsoft.com/visualstudio/ide/reference/error-list-window) </span></span>  
+<span data-ttu-id="7bdb9-121"> [Visual Basic における XML IntelliSense](../../../visual-basic/programming-guide/language-features/xml/xml-intellisense.md) </span><span class="sxs-lookup"><span data-stu-id="7bdb9-121"> [XML IntelliSense in Visual Basic](../../../visual-basic/programming-guide/language-features/xml/xml-intellisense.md) </span></span>  
+<span data-ttu-id="7bdb9-122"> [XML](../../../visual-basic/programming-guide/language-features/xml/index.md)</span><span class="sxs-lookup"><span data-stu-id="7bdb9-122"> [XML](../../../visual-basic/programming-guide/language-features/xml/index.md)</span></span>

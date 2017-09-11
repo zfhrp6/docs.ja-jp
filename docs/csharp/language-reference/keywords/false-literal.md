@@ -34,18 +34,18 @@ ms.contentlocale: ja-jp
 ms.lasthandoff: 07/28/2017
 
 ---
-# <a name="false-literal-c-reference"></a>false リテラル (C# リファレンス)
-ブール値 false を表します。  
+# <a name="false-literal-c-reference"></a><span data-ttu-id="03e7e-102">false リテラル (C# リファレンス)</span><span class="sxs-lookup"><span data-stu-id="03e7e-102">false Literal (C# Reference)</span></span>
+<span data-ttu-id="03e7e-103">ブール値 false を表します。</span><span class="sxs-lookup"><span data-stu-id="03e7e-103">Represents the boolean value false.</span></span>  
   
-## <a name="example"></a>例  
- [!code-cs[csrefKeywordsOperator#3](../../../csharp/language-reference/keywords/codesnippet/CSharp/false-literal_1.cs)]  
+## <a name="example"></a><span data-ttu-id="03e7e-104">例</span><span class="sxs-lookup"><span data-stu-id="03e7e-104">Example</span></span>  
+ <span data-ttu-id="03e7e-105">[!code-cs[csrefKeywordsOperator#3](../../../csharp/language-reference/keywords/codesnippet/CSharp/false-literal_1.cs)]</span><span class="sxs-lookup"><span data-stu-id="03e7e-105">[!code-cs[csrefKeywordsOperator#3](../../../csharp/language-reference/keywords/codesnippet/CSharp/false-literal_1.cs)]</span></span>  
   
-## <a name="c-language-specification"></a>C# 言語仕様  
+## <a name="c-language-specification"></a><span data-ttu-id="03e7e-106">C# 言語仕様</span><span class="sxs-lookup"><span data-stu-id="03e7e-106">C# Language Specification</span></span>  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
-## <a name="see-also"></a>関連項目  
- [C# リファレンス](../../../csharp/language-reference/index.md)   
- [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
- [C# のキーワード](../../../csharp/language-reference/keywords/index.md)   
- [true](../../../csharp/language-reference/keywords/true.md)
+## <a name="see-also"></a><span data-ttu-id="03e7e-107">関連項目</span><span class="sxs-lookup"><span data-stu-id="03e7e-107">See Also</span></span>  
+ <span data-ttu-id="03e7e-108">[C# リファレンス](../../../csharp/language-reference/index.md) </span><span class="sxs-lookup"><span data-stu-id="03e7e-108">[C# Reference](../../../csharp/language-reference/index.md) </span></span>  
+ <span data-ttu-id="03e7e-109">[C# プログラミング ガイド](../../../csharp/programming-guide/index.md) </span><span class="sxs-lookup"><span data-stu-id="03e7e-109">[C# Programming Guide](../../../csharp/programming-guide/index.md) </span></span>  
+ <span data-ttu-id="03e7e-110">[C# のキーワード](../../../csharp/language-reference/keywords/index.md) </span><span class="sxs-lookup"><span data-stu-id="03e7e-110">[C# Keywords](../../../csharp/language-reference/keywords/index.md) </span></span>  
+ [<span data-ttu-id="03e7e-111">true</span><span class="sxs-lookup"><span data-stu-id="03e7e-111">true</span></span>](../../../csharp/language-reference/keywords/true.md)
 

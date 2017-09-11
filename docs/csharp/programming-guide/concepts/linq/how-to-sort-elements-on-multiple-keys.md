@@ -21,13 +21,13 @@ ms.contentlocale: ja-jp
 ms.lasthandoff: 07/28/2017
 
 ---
-# <a name="how-to-sort-elements-on-multiple-keys-c"></a>方法: 複数のキーに基づいて要素を並べ替える (C#)
-このトピックでは、複数のキーに基づく並べ替えの方法について説明します。  
+# <a name="how-to-sort-elements-on-multiple-keys-c"></a><span data-ttu-id="6e067-102">方法: 複数のキーに基づいて要素を並べ替える (C#)</span><span class="sxs-lookup"><span data-stu-id="6e067-102">How to: Sort Elements on Multiple Keys (C#)</span></span>
+<span data-ttu-id="6e067-103">このトピックでは、複数のキーに基づく並べ替えの方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="6e067-103">This topic shows how to sort on multiple keys.</span></span>  
   
-## <a name="example"></a>例  
- この例の結果は、まず出荷先の郵便番号順に並べ替えられ、次に発注日順に並べ替えられます。  
+## <a name="example"></a><span data-ttu-id="6e067-104">例</span><span class="sxs-lookup"><span data-stu-id="6e067-104">Example</span></span>  
+ <span data-ttu-id="6e067-105">この例の結果は、まず出荷先の郵便番号順に並べ替えられ、次に発注日順に並べ替えられます。</span><span class="sxs-lookup"><span data-stu-id="6e067-105">In this example, the results are ordered first by the shipping postal code, then by the order date.</span></span>  
   
- この例では、「[サンプル XML ファイル: 顧客と注文 (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml-2.md)」の XML ドキュメントを使用します。  
+ <span data-ttu-id="6e067-106">この例では、「[サンプル XML ファイル: 顧客と注文 (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml-2.md)」の XML ドキュメントを使用します。</span><span class="sxs-lookup"><span data-stu-id="6e067-106">This example uses the following XML document: [Sample XML File: Customers and Orders (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml-2.md).</span></span>  
   
 ```csharp  
 XElement co = XElement.Load("CustomersOrders.xml");  
@@ -46,7 +46,7 @@ foreach (var r in sortedElements)
         r.CustomerID, r.EmployeeID, r.ShipPostalCode, r.OrderDate);  
 ```  
   
- このコードを実行すると、次の出力が生成されます。  
+ <span data-ttu-id="6e067-107">このコードを実行すると、次の出力が生成されます。</span><span class="sxs-lookup"><span data-stu-id="6e067-107">This code produces the following output:</span></span>  
   
 ```  
 CustomerID:LETSS EmployeeID:1 ShipPostalCode:94117 OrderDate:6/25/1997  
@@ -73,10 +73,10 @@ CustomerID:LAZYK EmployeeID:1 ShipPostalCode:99362 OrderDate:3/21/1997
 CustomerID:LAZYK EmployeeID:8 ShipPostalCode:99362 OrderDate:5/22/1997  
 ```  
   
-## <a name="example"></a>例  
- 次の例は名前空間に含まれている XML 用のクエリです。これらのクエリは上の例と同じ機能を表しています。 詳細については、「[XML 名前空間の使用 (C#)](../../../../csharp/programming-guide/concepts/linq/working-with-xml-namespaces.md)」を参照してください。  
+## <a name="example"></a><span data-ttu-id="6e067-108">例</span><span class="sxs-lookup"><span data-stu-id="6e067-108">Example</span></span>  
+ <span data-ttu-id="6e067-109">次の例は名前空間に含まれている XML 用のクエリです。これらのクエリは上の例と同じ機能を表しています。</span><span class="sxs-lookup"><span data-stu-id="6e067-109">The following example shows the same query for XML that is in a namespace.</span></span> <span data-ttu-id="6e067-110">詳細については、「[XML 名前空間の使用 (C#)](../../../../csharp/programming-guide/concepts/linq/working-with-xml-namespaces.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="6e067-110">For more information, see [Working with XML Namespaces (C#)](../../../../csharp/programming-guide/concepts/linq/working-with-xml-namespaces.md).</span></span>  
   
- この例では、「[サンプル XML ファイル: 名前空間内の顧客と注文](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-in-a-namespace.md)」の XML ドキュメントを使用します。  
+ <span data-ttu-id="6e067-111">この例では、「[サンプル XML ファイル: 名前空間内の顧客と注文](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-in-a-namespace.md)」の XML ドキュメントを使用します。</span><span class="sxs-lookup"><span data-stu-id="6e067-111">This example uses the following XML document: [Sample XML File: Customers and Orders in a Namespace](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-in-a-namespace.md).</span></span>  
   
 ```csharp  
 XElement co = XElement.Load("CustomersOrdersInNamespace.xml");  
@@ -97,7 +97,7 @@ foreach (var r in sortedElements)
         r.CustomerID, r.EmployeeID, r.ShipPostalCode, r.OrderDate);  
 ```  
   
- このコードを実行すると、次の出力が生成されます。  
+ <span data-ttu-id="6e067-112">このコードを実行すると、次の出力が生成されます。</span><span class="sxs-lookup"><span data-stu-id="6e067-112">This code produces the following output:</span></span>  
   
 ```  
 CustomerID:LETSS EmployeeID:1 ShipPostalCode:94117 OrderDate:6/25/1997  
@@ -124,6 +124,6 @@ CustomerID:LAZYK EmployeeID:1 ShipPostalCode:99362 OrderDate:3/21/1997
 CustomerID:LAZYK EmployeeID:8 ShipPostalCode:99362 OrderDate:5/22/1997  
 ```  
   
-## <a name="see-also"></a>関連項目  
- [基本的なクエリ (LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/basic-queries-linq-to-xml.md)
+## <a name="see-also"></a><span data-ttu-id="6e067-113">関連項目</span><span class="sxs-lookup"><span data-stu-id="6e067-113">See Also</span></span>  
+ [<span data-ttu-id="6e067-114">基本的なクエリ (LINQ to XML) (C#)</span><span class="sxs-lookup"><span data-stu-id="6e067-114">Basic Queries (LINQ to XML) (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/basic-queries-linq-to-xml.md)
 

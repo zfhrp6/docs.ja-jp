@@ -36,8 +36,8 @@ ms.contentlocale: ja-jp
 ms.lasthandoff: 07/28/2017
 
 ---
-# <a name="endregion-c-reference"></a>#endregion (C# リファレンス)
-`#endregion` は [#region](../../../csharp/language-reference/preprocessor-directives/preprocessor-region.md) ブロックの終了を示します。 例:  
+# <a name="endregion-c-reference"></a><span data-ttu-id="8d723-102">#endregion (C# リファレンス)</span><span class="sxs-lookup"><span data-stu-id="8d723-102">#endregion (C# Reference)</span></span>
+<span data-ttu-id="8d723-103">`#endregion` は [#region](../../../csharp/language-reference/preprocessor-directives/preprocessor-region.md) ブロックの終了を示します。</span><span class="sxs-lookup"><span data-stu-id="8d723-103">`#endregion` marks the end of a [#region](../../../csharp/language-reference/preprocessor-directives/preprocessor-region.md) block.</span></span> <span data-ttu-id="8d723-104">例:</span><span class="sxs-lookup"><span data-stu-id="8d723-104">For example:</span></span>  
   
 ```csharp
 #region MyClass definition  
@@ -50,8 +50,8 @@ class MyClass
 #endregion  
 ```  
   
-## <a name="see-also"></a>関連項目  
- [C# リファレンス](../../../csharp/language-reference/index.md)   
- [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
- [C# プリプロセッサ ディレクティブ](../../../csharp/language-reference/preprocessor-directives/index.md)
+## <a name="see-also"></a><span data-ttu-id="8d723-105">関連項目</span><span class="sxs-lookup"><span data-stu-id="8d723-105">See Also</span></span>  
+ <span data-ttu-id="8d723-106">[C# リファレンス](../../../csharp/language-reference/index.md) </span><span class="sxs-lookup"><span data-stu-id="8d723-106">[C# Reference](../../../csharp/language-reference/index.md) </span></span>  
+ <span data-ttu-id="8d723-107">[C# プログラミング ガイド](../../../csharp/programming-guide/index.md) </span><span class="sxs-lookup"><span data-stu-id="8d723-107">[C# Programming Guide](../../../csharp/programming-guide/index.md) </span></span>  
+ [<span data-ttu-id="8d723-108">C# プリプロセッサ ディレクティブ</span><span class="sxs-lookup"><span data-stu-id="8d723-108">C# Preprocessor Directives</span></span>](../../../csharp/language-reference/preprocessor-directives/index.md)
 

@@ -34,32 +34,32 @@ ms.contentlocale: ja-jp
 ms.lasthandoff: 07/28/2017
 
 ---
-# <a name="restrictions-on-using-accessibility-levels-c-reference"></a>アクセシビリティ レベルの使用に関する制限事項 (C# リファレンス)
-宣言で型を指定する場合、その型のアクセシビリティ レベルがメンバーまたは他の型のアクセシビリティ レベルに依存するかどうかをチェックしてください。 たとえば、直接基底クラスは、少なくともその派生クラスと同程度にアクセス可能である必要があります。 次の宣言はコンパイラ エラーになりますが、それは基底クラス `BaseClass` のアクセシビリティが `MyClass` のアクセシビリティよりも低いためです。  
+# <a name="restrictions-on-using-accessibility-levels-c-reference"></a><span data-ttu-id="55010-102">アクセシビリティ レベルの使用に関する制限事項 (C# リファレンス)</span><span class="sxs-lookup"><span data-stu-id="55010-102">Restrictions on Using Accessibility Levels (C# Reference)</span></span>
+<span data-ttu-id="55010-103">宣言で型を指定する場合、その型のアクセシビリティ レベルがメンバーまたは他の型のアクセシビリティ レベルに依存するかどうかをチェックしてください。</span><span class="sxs-lookup"><span data-stu-id="55010-103">When you specify a type in a declaration, check whether the accessibility level of the type is dependent on the accessibility level of a member or of another type.</span></span> <span data-ttu-id="55010-104">たとえば、直接基底クラスは、少なくともその派生クラスと同程度にアクセス可能である必要があります。</span><span class="sxs-lookup"><span data-stu-id="55010-104">For example, the direct base class must be at least as accessible as the derived class.</span></span> <span data-ttu-id="55010-105">次の宣言はコンパイラ エラーになりますが、それは基底クラス `BaseClass` のアクセシビリティが `MyClass` のアクセシビリティよりも低いためです。</span><span class="sxs-lookup"><span data-stu-id="55010-105">The following declarations cause a compiler error because the base class `BaseClass` is less accessible than `MyClass`:</span></span>  
   
 ```  
 class BaseClass {...}  
 public class MyClass: BaseClass {...} // Error  
 ```  
   
- 宣言されたアクセシビリティ レベルの制限を次の表にまとめます。  
+ <span data-ttu-id="55010-106">宣言されたアクセシビリティ レベルの制限を次の表にまとめます。</span><span class="sxs-lookup"><span data-stu-id="55010-106">The following table summarizes the restrictions on declared accessibility levels.</span></span>  
   
-|コンテキスト|コメント|  
+|<span data-ttu-id="55010-107">コンテキスト</span><span class="sxs-lookup"><span data-stu-id="55010-107">Context</span></span>|<span data-ttu-id="55010-108">コメント</span><span class="sxs-lookup"><span data-stu-id="55010-108">Remarks</span></span>|  
 |-------------|-------------|  
-|[クラス](../../../csharp/programming-guide/classes-and-structs/classes.md)|クラスの型の直接基底クラスは、少なくとも、クラスの型自体と同程度にアクセス可能である必要があります。|  
-|[インターフェイス](../../../csharp/programming-guide/interfaces/index.md)|インターフェイスの型の明示的な基本インターフェイスは、少なくとも、インターフェイスの型自体と同程度にアクセス可能である必要があります。|  
-|[デリゲート](../../../csharp/programming-guide/delegates/index.md)|デリゲート型の戻り値の型およびパラメーターの型は、少なくとも、デリゲート型自体と同程度にアクセス可能である必要があります。|  
-|[定数](../../../csharp/programming-guide/classes-and-structs/constants.md)|定数の型は、少なくとも定数自体と同程度にアクセス可能である必要があります。|  
-|[フィールド](../../../csharp/programming-guide/classes-and-structs/fields.md)|フィールドの型は、少なくともフィールド自体と同程度にアクセス可能である必要があります。|  
-|[メソッド](../../../csharp/programming-guide/classes-and-structs/methods.md)|メソッドの戻り値の型およびパラメーターの型は、少なくとも、メソッド自体と同程度にアクセス可能である必要があります。|  
-|[プロパティ](../../../csharp/programming-guide/classes-and-structs/properties.md)|プロパティの型は、少なくともプロパティ自体と同程度にアクセス可能である必要があります。|  
-|[イベント](../../../csharp/programming-guide/events/index.md)|イベントの型は、少なくともイベント自体と同程度にアクセス可能である必要があります。|  
-|[インデクサー](../../../csharp/programming-guide/indexers/index.md)|インデクサーの型とパラメーターの型は、少なくとも、インデクサー自体と同程度にアクセス可能である必要があります。|  
-|[演算子](../../../csharp/programming-guide/statements-expressions-operators/operators.md)|演算子の戻り値の型とパラメーターの型は、少なくとも、演算子自体と同程度にアクセス可能である必要があります。|  
-|[コンストラクター](../../../csharp/programming-guide/classes-and-structs/constructors.md)|コンストラクターのパラメーターの型は、少なくとも、コンストラクター自体と同程度にアクセス可能である必要があります。|  
+|[<span data-ttu-id="55010-109">クラス</span><span class="sxs-lookup"><span data-stu-id="55010-109">Classes</span></span>](../../../csharp/programming-guide/classes-and-structs/classes.md)|<span data-ttu-id="55010-110">クラスの型の直接基底クラスは、少なくとも、クラスの型自体と同程度にアクセス可能である必要があります。</span><span class="sxs-lookup"><span data-stu-id="55010-110">The direct base class of a class type must be at least as accessible as the class type itself.</span></span>|  
+|[<span data-ttu-id="55010-111">インターフェイス</span><span class="sxs-lookup"><span data-stu-id="55010-111">Interfaces</span></span>](../../../csharp/programming-guide/interfaces/index.md)|<span data-ttu-id="55010-112">インターフェイスの型の明示的な基本インターフェイスは、少なくとも、インターフェイスの型自体と同程度にアクセス可能である必要があります。</span><span class="sxs-lookup"><span data-stu-id="55010-112">The explicit base interfaces of an interface type must be at least as accessible as the interface type itself.</span></span>|  
+|[<span data-ttu-id="55010-113">デリゲート</span><span class="sxs-lookup"><span data-stu-id="55010-113">Delegates</span></span>](../../../csharp/programming-guide/delegates/index.md)|<span data-ttu-id="55010-114">デリゲート型の戻り値の型およびパラメーターの型は、少なくとも、デリゲート型自体と同程度にアクセス可能である必要があります。</span><span class="sxs-lookup"><span data-stu-id="55010-114">The return type and parameter types of a delegate type must be at least as accessible as the delegate type itself.</span></span>|  
+|[<span data-ttu-id="55010-115">定数</span><span class="sxs-lookup"><span data-stu-id="55010-115">Constants</span></span>](../../../csharp/programming-guide/classes-and-structs/constants.md)|<span data-ttu-id="55010-116">定数の型は、少なくとも定数自体と同程度にアクセス可能である必要があります。</span><span class="sxs-lookup"><span data-stu-id="55010-116">The type of a constant must be at least as accessible as the constant itself.</span></span>|  
+|[<span data-ttu-id="55010-117">フィールド</span><span class="sxs-lookup"><span data-stu-id="55010-117">Fields</span></span>](../../../csharp/programming-guide/classes-and-structs/fields.md)|<span data-ttu-id="55010-118">フィールドの型は、少なくともフィールド自体と同程度にアクセス可能である必要があります。</span><span class="sxs-lookup"><span data-stu-id="55010-118">The type of a field must be at least as accessible as the field itself.</span></span>|  
+|[<span data-ttu-id="55010-119">メソッド</span><span class="sxs-lookup"><span data-stu-id="55010-119">Methods</span></span>](../../../csharp/programming-guide/classes-and-structs/methods.md)|<span data-ttu-id="55010-120">メソッドの戻り値の型およびパラメーターの型は、少なくとも、メソッド自体と同程度にアクセス可能である必要があります。</span><span class="sxs-lookup"><span data-stu-id="55010-120">The return type and parameter types of a method must be at least as accessible as the method itself.</span></span>|  
+|[<span data-ttu-id="55010-121">プロパティ</span><span class="sxs-lookup"><span data-stu-id="55010-121">Properties</span></span>](../../../csharp/programming-guide/classes-and-structs/properties.md)|<span data-ttu-id="55010-122">プロパティの型は、少なくともプロパティ自体と同程度にアクセス可能である必要があります。</span><span class="sxs-lookup"><span data-stu-id="55010-122">The type of a property must be at least as accessible as the property itself.</span></span>|  
+|[<span data-ttu-id="55010-123">イベント</span><span class="sxs-lookup"><span data-stu-id="55010-123">Events</span></span>](../../../csharp/programming-guide/events/index.md)|<span data-ttu-id="55010-124">イベントの型は、少なくともイベント自体と同程度にアクセス可能である必要があります。</span><span class="sxs-lookup"><span data-stu-id="55010-124">The type of an event must be at least as accessible as the event itself.</span></span>|  
+|[<span data-ttu-id="55010-125">インデクサー</span><span class="sxs-lookup"><span data-stu-id="55010-125">Indexers</span></span>](../../../csharp/programming-guide/indexers/index.md)|<span data-ttu-id="55010-126">インデクサーの型とパラメーターの型は、少なくとも、インデクサー自体と同程度にアクセス可能である必要があります。</span><span class="sxs-lookup"><span data-stu-id="55010-126">The type and parameter types of an indexer must be at least as accessible as the indexer itself.</span></span>|  
+|[<span data-ttu-id="55010-127">演算子</span><span class="sxs-lookup"><span data-stu-id="55010-127">Operators</span></span>](../../../csharp/programming-guide/statements-expressions-operators/operators.md)|<span data-ttu-id="55010-128">演算子の戻り値の型とパラメーターの型は、少なくとも、演算子自体と同程度にアクセス可能である必要があります。</span><span class="sxs-lookup"><span data-stu-id="55010-128">The return type and parameter types of an operator must be at least as accessible as the operator itself.</span></span>|  
+|[<span data-ttu-id="55010-129">コンストラクター</span><span class="sxs-lookup"><span data-stu-id="55010-129">Constructors</span></span>](../../../csharp/programming-guide/classes-and-structs/constructors.md)|<span data-ttu-id="55010-130">コンストラクターのパラメーターの型は、少なくとも、コンストラクター自体と同程度にアクセス可能である必要があります。</span><span class="sxs-lookup"><span data-stu-id="55010-130">The parameter types of a constructor must be at least as accessible as the constructor itself.</span></span>|  
   
-## <a name="example"></a>例  
- さまざまな型の不適切な宣言の例を次に示します。 各宣言の後のコメントは、予期されるコンパイラ エラーを示しています。  
+## <a name="example"></a><span data-ttu-id="55010-131">例</span><span class="sxs-lookup"><span data-stu-id="55010-131">Example</span></span>  
+ <span data-ttu-id="55010-132">さまざまな型の不適切な宣言の例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="55010-132">The following example contains erroneous declarations of different types.</span></span> <span data-ttu-id="55010-133">各宣言の後のコメントは、予期されるコンパイラ エラーを示しています。</span><span class="sxs-lookup"><span data-stu-id="55010-133">The comment following each declaration indicates the expected compiler error.</span></span>  
   
 ```  
 // Restrictions on Using Accessibility Levels  
@@ -124,19 +124,19 @@ public class A
 }  
 ```  
   
-## <a name="c-language-specification"></a>C# 言語仕様  
+## <a name="c-language-specification"></a><span data-ttu-id="55010-134">C# 言語仕様</span><span class="sxs-lookup"><span data-stu-id="55010-134">C# Language Specification</span></span>  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
-## <a name="see-also"></a>関連項目  
- [C# リファレンス](../../../csharp/language-reference/index.md)   
- [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
- [C# のキーワード](../../../csharp/language-reference/keywords/index.md)   
- [アクセス修飾子](../../../csharp/language-reference/keywords/access-modifiers.md)   
- [アクセシビリティ ドメイン](../../../csharp/language-reference/keywords/accessibility-domain.md)   
- [アクセシビリティ レベル](../../../csharp/language-reference/keywords/accessibility-levels.md)   
- [アクセス修飾子](../../../csharp/programming-guide/classes-and-structs/access-modifiers.md)   
- [public](../../../csharp/language-reference/keywords/public.md)   
- [private](../../../csharp/language-reference/keywords/private.md)   
- [protected](../../../csharp/language-reference/keywords/protected.md)   
- [internal](../../../csharp/language-reference/keywords/internal.md)
+## <a name="see-also"></a><span data-ttu-id="55010-135">関連項目</span><span class="sxs-lookup"><span data-stu-id="55010-135">See Also</span></span>  
+ <span data-ttu-id="55010-136">[C# リファレンス](../../../csharp/language-reference/index.md) </span><span class="sxs-lookup"><span data-stu-id="55010-136">[C# Reference](../../../csharp/language-reference/index.md) </span></span>  
+ <span data-ttu-id="55010-137">[C# プログラミング ガイド](../../../csharp/programming-guide/index.md) </span><span class="sxs-lookup"><span data-stu-id="55010-137">[C# Programming Guide](../../../csharp/programming-guide/index.md) </span></span>  
+ <span data-ttu-id="55010-138">[C# のキーワード](../../../csharp/language-reference/keywords/index.md) </span><span class="sxs-lookup"><span data-stu-id="55010-138">[C# Keywords](../../../csharp/language-reference/keywords/index.md) </span></span>  
+ <span data-ttu-id="55010-139">[アクセス修飾子](../../../csharp/language-reference/keywords/access-modifiers.md) </span><span class="sxs-lookup"><span data-stu-id="55010-139">[Access Modifiers](../../../csharp/language-reference/keywords/access-modifiers.md) </span></span>  
+ <span data-ttu-id="55010-140">[アクセシビリティ ドメイン](../../../csharp/language-reference/keywords/accessibility-domain.md) </span><span class="sxs-lookup"><span data-stu-id="55010-140">[Accessibility Domain](../../../csharp/language-reference/keywords/accessibility-domain.md) </span></span>  
+ <span data-ttu-id="55010-141">[アクセシビリティ レベル](../../../csharp/language-reference/keywords/accessibility-levels.md) </span><span class="sxs-lookup"><span data-stu-id="55010-141">[Accessibility Levels](../../../csharp/language-reference/keywords/accessibility-levels.md) </span></span>  
+ <span data-ttu-id="55010-142">[アクセス修飾子](../../../csharp/programming-guide/classes-and-structs/access-modifiers.md) </span><span class="sxs-lookup"><span data-stu-id="55010-142">[Access Modifiers](../../../csharp/programming-guide/classes-and-structs/access-modifiers.md) </span></span>  
+ <span data-ttu-id="55010-143">[public](../../../csharp/language-reference/keywords/public.md) </span><span class="sxs-lookup"><span data-stu-id="55010-143">[public](../../../csharp/language-reference/keywords/public.md) </span></span>  
+ <span data-ttu-id="55010-144">[private](../../../csharp/language-reference/keywords/private.md) </span><span class="sxs-lookup"><span data-stu-id="55010-144">[private](../../../csharp/language-reference/keywords/private.md) </span></span>  
+ <span data-ttu-id="55010-145">[protected](../../../csharp/language-reference/keywords/protected.md) </span><span class="sxs-lookup"><span data-stu-id="55010-145">[protected](../../../csharp/language-reference/keywords/protected.md) </span></span>  
+ [<span data-ttu-id="55010-146">internal</span><span class="sxs-lookup"><span data-stu-id="55010-146">internal</span></span>](../../../csharp/language-reference/keywords/internal.md)
 

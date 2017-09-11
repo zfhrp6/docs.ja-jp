@@ -21,13 +21,13 @@ ms.contentlocale: ja-jp
 ms.lasthandoff: 07/28/2017
 
 ---
-# <a name="how-to-create-hierarchy-using-grouping-c"></a>方法: グループ化を使用して階層を作成する (C#)
-この例では、データをグループ化し、そのグループ化に基づいて XML を生成する方法を示します。  
+# <a name="how-to-create-hierarchy-using-grouping-c"></a><span data-ttu-id="6a5e0-102">方法: グループ化を使用して階層を作成する (C#)</span><span class="sxs-lookup"><span data-stu-id="6a5e0-102">How to: Create Hierarchy Using Grouping (C#)</span></span>
+<span data-ttu-id="6a5e0-103">この例では、データをグループ化し、そのグループ化に基づいて XML を生成する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="6a5e0-103">This example shows how to group data, and then generate XML based on the grouping.</span></span>  
   
-## <a name="example"></a>例  
- この例では、まずデータをカテゴリごとにグループ化し、次にグループ化を反映した XML 階層を含む新しい XML ファイルを生成します。  
+## <a name="example"></a><span data-ttu-id="6a5e0-104">例</span><span class="sxs-lookup"><span data-stu-id="6a5e0-104">Example</span></span>  
+ <span data-ttu-id="6a5e0-105">この例では、まずデータをカテゴリごとにグループ化し、次にグループ化を反映した XML 階層を含む新しい XML ファイルを生成します。</span><span class="sxs-lookup"><span data-stu-id="6a5e0-105">This example first groups data by a category, then generates a new XML file in which the XML hierarchy reflects the grouping.</span></span>  
   
- この例では、「[サンプル XML ファイル: 数値データ (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-numerical-data-linq-to-xml.md)」の XML ドキュメントを使用します。  
+ <span data-ttu-id="6a5e0-106">この例では、「[サンプル XML ファイル: 数値データ (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-numerical-data-linq-to-xml.md)」の XML ドキュメントを使用します。</span><span class="sxs-lookup"><span data-stu-id="6a5e0-106">This example uses the following XML document: [Sample XML File: Numerical Data (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-numerical-data-linq-to-xml.md).</span></span>  
   
 ```csharp  
 XElement doc = XElement.Load("Data.xml");  
@@ -47,7 +47,7 @@ var newData =
 Console.WriteLine(newData);  
 ```  
   
- この例を実行すると、次の出力が生成されます。  
+ <span data-ttu-id="6a5e0-107">この例を実行すると、次の出力が生成されます。</span><span class="sxs-lookup"><span data-stu-id="6a5e0-107">This example produces the following output:</span></span>  
   
 ```xml  
 <Root>  
@@ -86,6 +86,6 @@ Console.WriteLine(newData);
 </Root>  
 ```  
   
-## <a name="see-also"></a>関連項目  
- [高度なクエリ手法 (LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/advanced-query-techniques-linq-to-xml.md)
+## <a name="see-also"></a><span data-ttu-id="6a5e0-108">関連項目</span><span class="sxs-lookup"><span data-stu-id="6a5e0-108">See Also</span></span>  
+ [<span data-ttu-id="6a5e0-109">高度なクエリ手法 (LINQ to XML) (C#)</span><span class="sxs-lookup"><span data-stu-id="6a5e0-109">Advanced Query Techniques (LINQ to XML) (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/advanced-query-techniques-linq-to-xml.md)
 

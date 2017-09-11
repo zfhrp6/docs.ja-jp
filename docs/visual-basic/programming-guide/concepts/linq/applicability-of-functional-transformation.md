@@ -15,37 +15,38 @@ ms.assetid: 3b74e134-e19b-44bc-8d06-e26c48305040
 caps.latest.revision: 4
 author: dotnet-bot
 ms.author: dotnetcontent
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 20195c2bb528a5ca295b3bff6e9bb8401211e5b7
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
+ms.openlocfilehash: 45e83c86b2cfd7bceef57dbf354e29cc35c56051
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/12/2017
 
 
 ---
-# <a name="applicability-of-functional-transformation-visual-basic"></a>関数型変換 (Visual Basic) の適用範囲
-純粋関数型変換は、さまざまな状況で適用できます。  
+# <a name="applicability-of-functional-transformation-visual-basic"></a><span data-ttu-id="5ce37-102">関数型変換 (Visual Basic) の適用範囲</span><span class="sxs-lookup"><span data-stu-id="5ce37-102">Applicability of Functional Transformation (Visual Basic)</span></span>
+<span data-ttu-id="5ce37-103">純粋関数型変換は、さまざまな状況で適用できます。</span><span class="sxs-lookup"><span data-stu-id="5ce37-103">Pure functional transformations are applicable in a wide variety of situations.</span></span>  
   
- 関数型変換の方法は、構造化されたデータのクエリと操作に適しているため、LINQ テクノロジに適切に対応できます。 ただし、関数型変換の適用範囲は、LINQ で使用する場合に比べてはるかに広範です。 データ形式の変換を中心とする処理はすべて、関数型変換の適用対象と考えることができます。  
+ <span data-ttu-id="5ce37-104">関数型変換の方法は、構造化されたデータのクエリと操作に適しているため、LINQ テクノロジに適切に対応できます。</span><span class="sxs-lookup"><span data-stu-id="5ce37-104">The functional transformation approach is ideally suited for querying and manipulating structured data; therefore it fits well with LINQ technologies.</span></span> <span data-ttu-id="5ce37-105">ただし、関数型変換の適用範囲は、LINQ で使用する場合に比べてはるかに広範です。</span><span class="sxs-lookup"><span data-stu-id="5ce37-105">However, functional transformation has a much wider applicability than use with LINQ.</span></span> <span data-ttu-id="5ce37-106">データ形式の変換を中心とする処理はすべて、関数型変換の適用対象と考えることができます。</span><span class="sxs-lookup"><span data-stu-id="5ce37-106">Any process where the main focus is on transforming data from one form to another should probably be considered as a candidate for functional transformation.</span></span>  
   
- この方法は、一見して適用対象とは思われない数多くの問題に適用できます。 次に示す適用対象では、関数型変換を LINQ と組み合わせて、または切り離して使用することを検討する必要があります。  
+ <span data-ttu-id="5ce37-107">この方法は、一見して適用対象とは思われない数多くの問題に適用できます。</span><span class="sxs-lookup"><span data-stu-id="5ce37-107">This approach is applicable to many problems that might not appear at first glance to be a candidate.</span></span> <span data-ttu-id="5ce37-108">次に示す適用対象では、関数型変換を LINQ と組み合わせて、または切り離して使用することを検討する必要があります。</span><span class="sxs-lookup"><span data-stu-id="5ce37-108">Used in conjunction with or separately from LINQ, functional transformation should be considered for the following areas:</span></span>  
   
--   XML ベースのドキュメント。 XML 言語の整形式データは、関数型変換を通じて容易に操作できます。 詳細については、次を参照してください。[関数型変換の XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/functional-transformation-of-xml.md)します。  
+-   <span data-ttu-id="5ce37-109">XML ベースのドキュメント。</span><span class="sxs-lookup"><span data-stu-id="5ce37-109">XML-based documents.</span></span> <span data-ttu-id="5ce37-110">XML 言語の整形式データは、関数型変換を通じて容易に操作できます。</span><span class="sxs-lookup"><span data-stu-id="5ce37-110">Well-formed data of any XML dialect can be easily manipulated through functional transformation.</span></span> <span data-ttu-id="5ce37-111">詳細については、次を参照してください。[関数型変換の XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/functional-transformation-of-xml.md)します。</span><span class="sxs-lookup"><span data-stu-id="5ce37-111">For more information, see [Functional Transformation of XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/functional-transformation-of-xml.md).</span></span>  
   
--   その他の構造化されたファイル形式。 Windows.ini ファイルからプレーンテキストのドキュメントに至るほとんどのファイルは、分析や変換に適した構造を備えています。  
+-   <span data-ttu-id="5ce37-112">その他の構造化されたファイル形式。</span><span class="sxs-lookup"><span data-stu-id="5ce37-112">Other structured file formats.</span></span> <span data-ttu-id="5ce37-113">Windows.ini ファイルからプレーンテキストのドキュメントに至るほとんどのファイルは、分析や変換に適した構造を備えています。</span><span class="sxs-lookup"><span data-stu-id="5ce37-113">From Windows.ini files to plain text documents, most files have some structure that lends itself to analysis and transformation.</span></span>  
   
--   データ ストリーミング プロトコル。 通信プロトコルへのデータのエンコードおよび通信プロトコルからのデータのデコードは、単純な関数型変換で表せる場合がほとんどです。  
+-   <span data-ttu-id="5ce37-114">データ ストリーミング プロトコル。</span><span class="sxs-lookup"><span data-stu-id="5ce37-114">Data streaming protocols.</span></span> <span data-ttu-id="5ce37-115">通信プロトコルへのデータのエンコードおよび通信プロトコルからのデータのデコードは、単純な関数型変換で表せる場合がほとんどです。</span><span class="sxs-lookup"><span data-stu-id="5ce37-115">Encoding data into and decoding data from communication protocols can often be represented by a simple functional transform.</span></span>  
   
--   RDBMS データと OODBMS データ。 リレーショナル データベースおよびオブジェクト指向データベースは、構造化されたデータ ソースとして XML と同様に広く使用されています。  
+-   <span data-ttu-id="5ce37-116">RDBMS データと OODBMS データ。</span><span class="sxs-lookup"><span data-stu-id="5ce37-116">RDBMS and OODBMS data.</span></span> <span data-ttu-id="5ce37-117">リレーショナル データベースおよびオブジェクト指向データベースは、構造化されたデータ ソースとして XML と同様に広く使用されています。</span><span class="sxs-lookup"><span data-stu-id="5ce37-117">Relational and object-oriented databases, just like XML, are widely-used structured data sources.</span></span>  
   
--   数学的、統計的、および科学的なソリューション。 これらの分野では、視覚化、予測、重要な問題の解決などを支援する際に、大きなデータ セットが操作される傾向があります。  
+-   <span data-ttu-id="5ce37-118">数学的、統計的、および科学的なソリューション。</span><span class="sxs-lookup"><span data-stu-id="5ce37-118">Mathematic, statistic, and science solutions.</span></span> <span data-ttu-id="5ce37-119">これらの分野では、視覚化、予測、重要な問題の解決などを支援する際に、大きなデータ セットが操作される傾向があります。</span><span class="sxs-lookup"><span data-stu-id="5ce37-119">These fields tend to manipulate large data sets to assist the user in visualizing, estimating, or actually solving non-trivial problems.</span></span>  
   
- 」の説明に従って[リファクタリングの純粋関数 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/refactoring-into-pure-functions.md)、関数型プログラミングの例は、純粋関数を使用します。 純粋関数は、その直接的な利点に加えて、関数型変換の観点から問題について考える場合に役立ちます。 この方法は、プログラムおよびクラスの設計にも大きな影響を与えます。 上に示したように、問題がデータ変換ソリューションに関連している場合は、特に影響を受けます。  
+ <span data-ttu-id="5ce37-120">」の説明に従って[リファクタリングの純粋関数 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/refactoring-into-pure-functions.md)、関数型プログラミングの例は、純粋関数を使用します。</span><span class="sxs-lookup"><span data-stu-id="5ce37-120">As described in [Refactoring Into Pure Functions (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/refactoring-into-pure-functions.md), using pure functions is an example of functional programming.</span></span> <span data-ttu-id="5ce37-121">純粋関数は、その直接的な利点に加えて、関数型変換の観点から問題について考える場合に役立ちます。</span><span class="sxs-lookup"><span data-stu-id="5ce37-121">In additional to their immediate benefits, using pure functions provides valuable experience in thinking about problems from a functional transformation perspective.</span></span> <span data-ttu-id="5ce37-122">この方法は、プログラムおよびクラスの設計にも大きな影響を与えます。</span><span class="sxs-lookup"><span data-stu-id="5ce37-122">This approach can also have major impact on program and class design.</span></span> <span data-ttu-id="5ce37-123">上に示したように、問題がデータ変換ソリューションに関連している場合は、特に影響を受けます。</span><span class="sxs-lookup"><span data-stu-id="5ce37-123">This is especially true when a problem lends itself to a data transformation solution as described above.</span></span>  
   
- このチュートリアルでは扱いませんが、関数型変換の観点から影響を受ける設計は、アクターとしてオブジェクトよりもプロセスに重点を置く傾向があり、その結果であるソリューションは、個別のオブジェクト状態変更ではなく一連の大規模な変換として実装される傾向にあります。  
+ <span data-ttu-id="5ce37-124">このチュートリアルでは扱いませんが、関数型変換の観点から影響を受ける設計は、アクターとしてオブジェクトよりもプロセスに重点を置く傾向があり、その結果であるソリューションは、個別のオブジェクト状態変更ではなく一連の大規模な変換として実装される傾向にあります。</span><span class="sxs-lookup"><span data-stu-id="5ce37-124">Although they are beyond the scope of this tutorial, designs that are influenced by the functional transformation perspective tend to center on processes more than on objects as actors, and the resulting solution tends to be implemented as series of large-scale transformations, rather than individual object state changes.</span></span>  
   
- ここでも、Visual Basic では、ため、アプリケーションにとって最善の設計は、両方の要素を組み込むことが、命令型と関数の両方の方法がサポートしていることに注意してください。  
+ <span data-ttu-id="5ce37-125">ここでも、Visual Basic では、ため、アプリケーションにとって最善の設計は、両方の要素を組み込むことが、命令型と関数の両方の方法がサポートしていることに注意してください。</span><span class="sxs-lookup"><span data-stu-id="5ce37-125">Again, remember that Visual Basic supports both imperative and functional approaches, so the best design for your application might incorporate elements of both.</span></span>  
   
-## <a name="see-also"></a>関連項目  
- [純粋関数型変換 (Visual Basic) の概要](../../../../visual-basic/programming-guide/concepts/linq/introduction-to-pure-functional-transformations.md)   
- [XML (Visual Basic) の関数型変換](../../../../visual-basic/programming-guide/concepts/linq/functional-transformation-of-xml.md)   
- [純粋関数 (Visual Basic) へのリファクタリング](../../../../visual-basic/programming-guide/concepts/linq/refactoring-into-pure-functions.md)
+## <a name="see-also"></a><span data-ttu-id="5ce37-126">関連項目</span><span class="sxs-lookup"><span data-stu-id="5ce37-126">See Also</span></span>  
+ <span data-ttu-id="5ce37-127">[純粋関数型変換 (Visual Basic) の概要](../../../../visual-basic/programming-guide/concepts/linq/introduction-to-pure-functional-transformations.md) </span><span class="sxs-lookup"><span data-stu-id="5ce37-127">[Introduction to Pure Functional Transformations (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/introduction-to-pure-functional-transformations.md) </span></span>  
+<span data-ttu-id="5ce37-128"> [XML (Visual Basic) の関数型変換](../../../../visual-basic/programming-guide/concepts/linq/functional-transformation-of-xml.md) </span><span class="sxs-lookup"><span data-stu-id="5ce37-128"> [Functional Transformation of XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/functional-transformation-of-xml.md) </span></span>  
+<span data-ttu-id="5ce37-129"> [純粋関数 (Visual Basic) へのリファクタリング](../../../../visual-basic/programming-guide/concepts/linq/refactoring-into-pure-functions.md)</span><span class="sxs-lookup"><span data-stu-id="5ce37-129"> [Refactoring Into Pure Functions (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/refactoring-into-pure-functions.md)</span></span>

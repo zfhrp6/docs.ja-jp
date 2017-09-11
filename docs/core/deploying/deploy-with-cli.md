@@ -17,65 +17,65 @@ ms.lasthandoff: 07/28/2017
 
 ---
 
-# <a name="deploying-net-core-apps-with-command-line-interface-cli-tools"></a>コマンド ライン インターフェイス (CLI) ツールを使用して .NET Core アプリを展開する
+# <a name="deploying-net-core-apps-with-command-line-interface-cli-tools"></a><span data-ttu-id="59b70-104">コマンド ライン インターフェイス (CLI) ツールを使用して .NET Core アプリを展開する</span><span class="sxs-lookup"><span data-stu-id="59b70-104">Deploying .NET Core apps with command-line interface (CLI) tools</span></span>
 
-.NET Core アプリケーションは、アプリケーション バイナリは含むが対象のシステムに .NET Core バイナリが存在することに依存する*フレームワークに依存する展開*か、アプリケーションと .NET Core のバイナリの両方を含む*自己完結型の配置*のいずれかで展開できます。 概要については、「[.NET Core アプリケーション展開](index.md)」を参照してください。
+<span data-ttu-id="59b70-105">.NET Core アプリケーションは、アプリケーション バイナリは含むが対象のシステムに .NET Core バイナリが存在することに依存する*フレームワークに依存する展開*か、アプリケーションと .NET Core のバイナリの両方を含む*自己完結型の配置*のいずれかで展開できます。</span><span class="sxs-lookup"><span data-stu-id="59b70-105">You can deploy a .NET Core application either as a *framework-dependent deployment*, which includes your application binaries but depends on the presence of .NET Core on the target system, or as a *self-contained deployment*, which includes both your application and the .NET Core binaries.</span></span> <span data-ttu-id="59b70-106">概要については、「[.NET Core アプリケーション展開](index.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="59b70-106">For an overview, see [.NET Core Application Deployment](index.md).</span></span>
 
-以降のセクションでは、次のような展開を作成するために [.NET Core コマンド ライン インターフェイス ツール](../tools/index.md)を使用する方法を説明します。
+<span data-ttu-id="59b70-107">以降のセクションでは、次のような展開を作成するために [.NET Core コマンド ライン インターフェイス ツール](../tools/index.md)を使用する方法を説明します。</span><span class="sxs-lookup"><span data-stu-id="59b70-107">The following sections show how to use [.NET Core command-line interface tools](../tools/index.md) to create the following kinds of deployments:</span></span>
 
-- フレームワークに依存する展開
-- サードパーティの依存関係を含む、フレームワークに依存する展開
-- 自己完結型の展開
-- サードパーティの依存関係を含む、自己完結型の展開
+- <span data-ttu-id="59b70-108">フレームワークに依存する展開</span><span class="sxs-lookup"><span data-stu-id="59b70-108">Framework-dependent deployment</span></span>
+- <span data-ttu-id="59b70-109">サードパーティの依存関係を含む、フレームワークに依存する展開</span><span class="sxs-lookup"><span data-stu-id="59b70-109">Framework-dependent deployment with third-party dependencies</span></span>
+- <span data-ttu-id="59b70-110">自己完結型の展開</span><span class="sxs-lookup"><span data-stu-id="59b70-110">Self-contained deployment</span></span>
+- <span data-ttu-id="59b70-111">サードパーティの依存関係を含む、自己完結型の展開</span><span class="sxs-lookup"><span data-stu-id="59b70-111">Self-contained deployment with third-party dependencies</span></span>
 
-コマンド ラインを使用する場合は、任意のプログラム エディターを使用できます。 プログラム エディターが [Visual Studio Code](https://code.visualstudio.com) の場合、[**表示**] > [**統合ターミナル**] を選択して、Visual Studio Code 環境内にコマンド コンソールを開くことができます。
+<span data-ttu-id="59b70-112">コマンド ラインを使用する場合は、任意のプログラム エディターを使用できます。</span><span class="sxs-lookup"><span data-stu-id="59b70-112">When working from the command line, you can use a program editor of your choice.</span></span> <span data-ttu-id="59b70-113">プログラム エディターが [Visual Studio Code](https://code.visualstudio.com) の場合、[**表示**] > [**統合ターミナル**] を選択して、Visual Studio Code 環境内にコマンド コンソールを開くことができます。</span><span class="sxs-lookup"><span data-stu-id="59b70-113">If your program editor is [Visual Studio Code](https://code.visualstudio.com), you can open a command console inside your Visual Studio Code environment by selecting **View** > **Integrated Terminal**.</span></span>
 
-## <a name="framework-dependent-deployment"></a>フレームワークに依存する展開
+## <a name="framework-dependent-deployment"></a><span data-ttu-id="59b70-114">フレームワークに依存する展開</span><span class="sxs-lookup"><span data-stu-id="59b70-114">Framework-dependent deployment</span></span>
 
-サードパーティの依存関係を含まない、フレームワークに依存する展開を展開するプロセスには、アプリのビルド、テスト、および発行が含まれます。 C# で記述された次の単純な例は、このプロセスを示しています。 
+<span data-ttu-id="59b70-115">サードパーティの依存関係を含まない、フレームワークに依存する展開を展開するプロセスには、アプリのビルド、テスト、および発行が含まれます。</span><span class="sxs-lookup"><span data-stu-id="59b70-115">Deploying a framework-dependent deployment with no third-party dependencies simply involves building, testing, and publishing the app.</span></span> <span data-ttu-id="59b70-116">C# で記述された次の単純な例は、このプロセスを示しています。</span><span class="sxs-lookup"><span data-stu-id="59b70-116">A simple example written in C# illustrates the process.</span></span> 
 
-1. プロジェクトのディレクトリを作成します。
+1. <span data-ttu-id="59b70-117">プロジェクトのディレクトリを作成します。</span><span class="sxs-lookup"><span data-stu-id="59b70-117">Create a project directory.</span></span>
 
-   プロジェクトのディレクトリを作成し、それを現在のディレクトリにします。
+   <span data-ttu-id="59b70-118">プロジェクトのディレクトリを作成し、それを現在のディレクトリにします。</span><span class="sxs-lookup"><span data-stu-id="59b70-118">Create a directory for your project and make it your current directory.</span></span>
 
-1. プロジェクトを作成します。
+1. <span data-ttu-id="59b70-119">プロジェクトを作成します。</span><span class="sxs-lookup"><span data-stu-id="59b70-119">Create the project.</span></span>
 
-   コマンド ラインに [dotnet new console](../tools/dotnet-new.md) と入力して、そのディレクトリに新しい C# コンソール プロジェクトを作成します。
+   <span data-ttu-id="59b70-120">コマンド ラインに [dotnet new console](../tools/dotnet-new.md) と入力して、そのディレクトリに新しい C# コンソール プロジェクトを作成します。</span><span class="sxs-lookup"><span data-stu-id="59b70-120">From the command line, type [dotnet new console](../tools/dotnet-new.md) to create a new C# console project in that directory.</span></span>
 
-1. アプリケーションのソース コードを追加します。
+1. <span data-ttu-id="59b70-121">アプリケーションのソース コードを追加します。</span><span class="sxs-lookup"><span data-stu-id="59b70-121">Add the application's source code.</span></span>
 
-   エディターで *Program.cs* ファイルを開き、自動生成されたコードを次のコードに置き換えます。 テキストの入力を求めるプロンプトが表示されてから、ユーザーが入力した個々の単語が表示されます。 正規表現 `\w+` を使用して、入力テキストの単語を分離します。
+   <span data-ttu-id="59b70-122">エディターで *Program.cs* ファイルを開き、自動生成されたコードを次のコードに置き換えます。</span><span class="sxs-lookup"><span data-stu-id="59b70-122">Open the *Program.cs* file in your editor and replace the auto-generated code with the following code.</span></span> <span data-ttu-id="59b70-123">テキストの入力を求めるプロンプトが表示されてから、ユーザーが入力した個々の単語が表示されます。</span><span class="sxs-lookup"><span data-stu-id="59b70-123">It prompts the user to enter text and displays the individual words entered by the user.</span></span> <span data-ttu-id="59b70-124">正規表現 `\w+` を使用して、入力テキストの単語を分離します。</span><span class="sxs-lookup"><span data-stu-id="59b70-124">It uses the regular expression `\w+` to separate the words in the input text.</span></span>
 
-   [!code-cs[deployment#1](../../../samples/snippets/core/deploying/deployment-example.cs)]
+   <span data-ttu-id="59b70-125">[!code-cs[deployment#1](../../../samples/snippets/core/deploying/deployment-example.cs)]</span><span class="sxs-lookup"><span data-stu-id="59b70-125">[!code-cs[deployment#1](../../../samples/snippets/core/deploying/deployment-example.cs)]</span></span>
 
-1. プロジェクトの依存関係とツールを更新します。
+1. <span data-ttu-id="59b70-126">プロジェクトの依存関係とツールを更新します。</span><span class="sxs-lookup"><span data-stu-id="59b70-126">Update the project's dependencies and tools.</span></span>
  
-   [dotnet restore](../tools/dotnet-restore.md) コマンドを実行して、プロジェクトで指定された依存関係を復元します。
+   <span data-ttu-id="59b70-127">[dotnet restore](../tools/dotnet-restore.md) コマンドを実行して、プロジェクトで指定された依存関係を復元します。</span><span class="sxs-lookup"><span data-stu-id="59b70-127">Run the [dotnet restore](../tools/dotnet-restore.md) command to restore the dependencies specified in your project.</span></span>
 
-1. アプリのデバッグ ビルドを作成します。
+1. <span data-ttu-id="59b70-128">アプリのデバッグ ビルドを作成します。</span><span class="sxs-lookup"><span data-stu-id="59b70-128">Create a Debug build of your app.</span></span>
 
-   [dotnet build](../tools/dotnet-build.md) コマンドを使用すると、アプリケーションをビルドでき、[dotnet run](../tools/dotnet-run.md) コマンドを使用すると、それをビルドして実行できます。
+   <span data-ttu-id="59b70-129">[dotnet build](../tools/dotnet-build.md) コマンドを使用すると、アプリケーションをビルドでき、[dotnet run](../tools/dotnet-run.md) コマンドを使用すると、それをビルドして実行できます。</span><span class="sxs-lookup"><span data-stu-id="59b70-129">Use the [dotnet build](../tools/dotnet-build.md) command to build your application or the [dotnet run](../tools/dotnet-run.md) command to build and run it.</span></span>
 
-1. アプリを展開します。
+1. <span data-ttu-id="59b70-130">アプリを展開します。</span><span class="sxs-lookup"><span data-stu-id="59b70-130">Deploy your app.</span></span>
 
-   プログラムをテストし、デバッグした後は、次のコマンドを使用して、展開を作成します。
+   <span data-ttu-id="59b70-131">プログラムをテストし、デバッグした後は、次のコマンドを使用して、展開を作成します。</span><span class="sxs-lookup"><span data-stu-id="59b70-131">After you've debugged and tested the program, create the deployment by using the following command:</span></span>
 
       ```console
       dotnet publish -f netcoreapp1.1 -c Release
       ```
-   これにより、リリース (デバッグではなく) バージョンのアプリが作成されます。 作成されたファイルは、プロジェクトの *bin* ディレクトリのサブディレクトリ内にある *publish* という名前のディレクトリに配置されます。
+   <span data-ttu-id="59b70-132">これにより、リリース (デバッグではなく) バージョンのアプリが作成されます。</span><span class="sxs-lookup"><span data-stu-id="59b70-132">This creates a Release (rather than a Debug) version of your app.</span></span> <span data-ttu-id="59b70-133">作成されたファイルは、プロジェクトの *bin* ディレクトリのサブディレクトリ内にある *publish* という名前のディレクトリに配置されます。</span><span class="sxs-lookup"><span data-stu-id="59b70-133">The resulting files are placed in a directory named *publish* that's in a subdirectory of your project's *bin* directory.</span></span>
 
-アプリケーションのファイルと共に、発行プロセスは、アプリに関するデバッグ情報を含むプログラム データベース (.pdb) ファイルを出力します。 このファイルは、主に例外のデバッグに役立ちます。 これは、アプリケーションのファイルと一緒には配布しないよう選択できます。 ただし、アプリのリリース ビルドをデバッグする場合のために、保存しておくことをお勧めします。
+<span data-ttu-id="59b70-134">アプリケーションのファイルと共に、発行プロセスは、アプリに関するデバッグ情報を含むプログラム データベース (.pdb) ファイルを出力します。</span><span class="sxs-lookup"><span data-stu-id="59b70-134">Along with your application's files, the publishing process emits a program database (.pdb) file that contains debugging information about your app.</span></span> <span data-ttu-id="59b70-135">このファイルは、主に例外のデバッグに役立ちます。</span><span class="sxs-lookup"><span data-stu-id="59b70-135">The file is useful primarily for debugging exceptions.</span></span> <span data-ttu-id="59b70-136">これは、アプリケーションのファイルと一緒には配布しないよう選択できます。</span><span class="sxs-lookup"><span data-stu-id="59b70-136">You can choose not to distribute it with your application's files.</span></span> <span data-ttu-id="59b70-137">ただし、アプリのリリース ビルドをデバッグする場合のために、保存しておくことをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="59b70-137">You should, however, save it in the event that you want to debug the Release build of your app.</span></span>
 
-アプリケーション ファイルの完全なセットは、任意の方法で展開できます。 たとえば、Zip ファイルにパッケージ化したり、単純な `copy` コマンドを使用したり、任意のインストール パッケージで展開したりできます。 一度インストールすると、ユーザーは `dotnet` コマンドを使用して、`dotnet fdd.dll` などのアプリケーションのファイル名を入力してアプリケーションを実行できます。
+<span data-ttu-id="59b70-138">アプリケーション ファイルの完全なセットは、任意の方法で展開できます。</span><span class="sxs-lookup"><span data-stu-id="59b70-138">You can deploy the complete set of application files in any way you like.</span></span> <span data-ttu-id="59b70-139">たとえば、Zip ファイルにパッケージ化したり、単純な `copy` コマンドを使用したり、任意のインストール パッケージで展開したりできます。</span><span class="sxs-lookup"><span data-stu-id="59b70-139">For example, you can package them in a Zip file, use a simple `copy` command, or deploy them with any installation package of your choice.</span></span> <span data-ttu-id="59b70-140">一度インストールすると、ユーザーは `dotnet` コマンドを使用して、`dotnet fdd.dll` などのアプリケーションのファイル名を入力してアプリケーションを実行できます。</span><span class="sxs-lookup"><span data-stu-id="59b70-140">Once installed, users can execute your application by using the `dotnet` command and providing the application filename, such as `dotnet fdd.dll`.</span></span>
 
-また、アプリケーション インストールの一環として、インストーラーはアプリケーション バイナリに加えて、共有フレームワーク インストーラーをバンドルするか、または前提条件として共有フレームワークがあるか確認する必要があります。  共有フレームワークをインストールするには、管理者またはルートの権限が必要です。
+<span data-ttu-id="59b70-141">また、アプリケーション インストールの一環として、インストーラーはアプリケーション バイナリに加えて、共有フレームワーク インストーラーをバンドルするか、または前提条件として共有フレームワークがあるか確認する必要があります。</span><span class="sxs-lookup"><span data-stu-id="59b70-141">In addition to the application binaries, your installer should also either bundle the shared framework installer or check for it as a prerequisite as part of the application installation.</span></span>  <span data-ttu-id="59b70-142">共有フレームワークをインストールするには、管理者またはルートの権限が必要です。</span><span class="sxs-lookup"><span data-stu-id="59b70-142">Installation of the shared framework requires Administrator/root access.</span></span>
 
-## <a name="framework-dependent-deployment-with-third-party-dependencies"></a>サードパーティの依存関係を含む、フレームワークに依存する展開
+## <a name="framework-dependent-deployment-with-third-party-dependencies"></a><span data-ttu-id="59b70-143">サードパーティの依存関係を含む、フレームワークに依存する展開</span><span class="sxs-lookup"><span data-stu-id="59b70-143">Framework-dependent deployment with third-party dependencies</span></span>
 
-1 つ以上のサードパーティの依存関係を備えたフレームワークに依存する展開を展開するには、それらの依存関係がプロジェクトで使用できる必要があります。 `dotnet restore` コマンドを実行する前に、次の 2 つの追加手順を実行する必要があります。
+<span data-ttu-id="59b70-144">1 つ以上のサードパーティの依存関係を備えたフレームワークに依存する展開を展開するには、それらの依存関係がプロジェクトで使用できる必要があります。</span><span class="sxs-lookup"><span data-stu-id="59b70-144">Deploying a framework-dependent deployment with one or more third-party dependencies requires that those dependencies be available to your project.</span></span> <span data-ttu-id="59b70-145">`dotnet restore` コマンドを実行する前に、次の 2 つの追加手順を実行する必要があります。</span><span class="sxs-lookup"><span data-stu-id="59b70-145">Two additional steps are required before you can run the `dotnet restore` command:</span></span>
 
-1. *csproj* ファイルの `<ItemGroup>` セクションに、必要なサードパーティ ライブラリへの参照を追加します。 次の `<ItemGroup>` セクションには、サードパーティ ライブラリとして [Json.NET](http://www.newtonsoft.com/json) への依存関係があります。
+1. <span data-ttu-id="59b70-146">*csproj* ファイルの `<ItemGroup>` セクションに、必要なサードパーティ ライブラリへの参照を追加します。</span><span class="sxs-lookup"><span data-stu-id="59b70-146">Add references to required third-party libraries to the `<ItemGroup>` section of your *csproj* file.</span></span> <span data-ttu-id="59b70-147">次の `<ItemGroup>` セクションには、サードパーティ ライブラリとして [Json.NET](http://www.newtonsoft.com/json) への依存関係があります。</span><span class="sxs-lookup"><span data-stu-id="59b70-147">The following `<ItemGroup>` section contains a dependency on [Json.NET](http://www.newtonsoft.com/json) as a third-party library:</span></span>
 
       ```xml
       <ItemGroup>
@@ -83,33 +83,33 @@ ms.lasthandoff: 07/28/2017
       </ItemGroup>
       ```
 
-1. サードパーティの依存関係を含む NuGet パッケージをまだダウンロードしていない場合は、ダウンロードします。 パッケージをダウンロードするには、依存関係を追加した後で `dotnet restore` コマンドを実行します。 発行時に依存関係はローカルの NuGet キャッシュからが解決されるので、システムで使用可能になる必要があります。
+1. <span data-ttu-id="59b70-148">サードパーティの依存関係を含む NuGet パッケージをまだダウンロードしていない場合は、ダウンロードします。</span><span class="sxs-lookup"><span data-stu-id="59b70-148">If you haven't already, download the NuGet package containing the third-party dependency.</span></span> <span data-ttu-id="59b70-149">パッケージをダウンロードするには、依存関係を追加した後で `dotnet restore` コマンドを実行します。</span><span class="sxs-lookup"><span data-stu-id="59b70-149">To download the package, execute the `dotnet restore` command after adding the dependency.</span></span> <span data-ttu-id="59b70-150">発行時に依存関係はローカルの NuGet キャッシュからが解決されるので、システムで使用可能になる必要があります。</span><span class="sxs-lookup"><span data-stu-id="59b70-150">Because the dependency is resolved out of the local NuGet cache at publish time, it must be available on your system.</span></span>
 
-サードパーティの依存関係を含む、フレームワークに依存する展開は、サードパーティの依存関係と同じ移植性を持つことに注意してください。 たとえば、サードパーティ ライブラリが macOS のみをサポートする場合、そのアプリを Windows システムに移植することはできません。 この状況は、サードパーティの依存関係自体がネイティブ コードに依存する場合に生じる可能性があります。 このよい例は、[libuv](https://github.com/libuv/libuv) に対してネイティブの依存関係が必要な [Kestrel サーバー](/aspnet/core/fundamentals/servers/kestrel)です。 このようなサードパーティの依存関係を含むアプリケーションに対して FDD が作成されると、発行された出力には、ネイティブの依存関係がサポートする (そして、その NuGet パッケージ内に存在する) 各[ランタイム識別子 (RID)](../rid-catalog.md#what-are-rids) のフォルダーが含まれます。
+<span data-ttu-id="59b70-151">サードパーティの依存関係を含む、フレームワークに依存する展開は、サードパーティの依存関係と同じ移植性を持つことに注意してください。</span><span class="sxs-lookup"><span data-stu-id="59b70-151">Note that a framework-dependent deployment with third-party dependencies is only as portable as its third-party dependencies.</span></span> <span data-ttu-id="59b70-152">たとえば、サードパーティ ライブラリが macOS のみをサポートする場合、そのアプリを Windows システムに移植することはできません。</span><span class="sxs-lookup"><span data-stu-id="59b70-152">For example, if a third-party library only supports macOS, the app isn't portable to Windows systems.</span></span> <span data-ttu-id="59b70-153">この状況は、サードパーティの依存関係自体がネイティブ コードに依存する場合に生じる可能性があります。</span><span class="sxs-lookup"><span data-stu-id="59b70-153">This happens if the third-party dependency itself depends on native code.</span></span> <span data-ttu-id="59b70-154">このよい例は、[libuv](https://github.com/libuv/libuv) に対してネイティブの依存関係が必要な [Kestrel サーバー](/aspnet/core/fundamentals/servers/kestrel)です。</span><span class="sxs-lookup"><span data-stu-id="59b70-154">A good example of this is [Kestrel server](/aspnet/core/fundamentals/servers/kestrel), which requires a native dependency on [libuv](https://github.com/libuv/libuv).</span></span> <span data-ttu-id="59b70-155">このようなサードパーティの依存関係を含むアプリケーションに対して FDD が作成されると、発行された出力には、ネイティブの依存関係がサポートする (そして、その NuGet パッケージ内に存在する) 各[ランタイム識別子 (RID)](../rid-catalog.md#what-are-rids) のフォルダーが含まれます。</span><span class="sxs-lookup"><span data-stu-id="59b70-155">When an FDD is created for an application with this kind of third-party dependency, the published output contains a folder for each [Runtime Identifier (RID)](../rid-catalog.md#what-are-rids) that the native dependency supports (and that exists in its NuGet package).</span></span>
 
-## <a name="simpleSelf"></a> サードパーティの依存関係を含まない、自己完結型の展開
+## <span data-ttu-id="59b70-156"><a name="simpleSelf"></a> サードパーティの依存関係を含まない、自己完結型の展開</span><span class="sxs-lookup"><span data-stu-id="59b70-156"><a name="simpleSelf"></a> Self-contained deployment without third-party dependencies</span></span>
 
-サードパーティの依存関係を含まない自己完結型の展開を展開するプロセスには、プロジェクトの作成、*csproj* ファイルの変更、アプリのビルド、テスト、および発行が含まれます。 C# で記述された次の単純な例は、このプロセスを示しています。 この例では、コマンド ラインから [dotnet ユーティリティ](../tools/dotnet.md)を使用して、自己完結型の展開を作成する方法を示します。
+<span data-ttu-id="59b70-157">サードパーティの依存関係を含まない自己完結型の展開を展開するプロセスには、プロジェクトの作成、*csproj* ファイルの変更、アプリのビルド、テスト、および発行が含まれます。</span><span class="sxs-lookup"><span data-stu-id="59b70-157">Deploying a self-contained deployment without third-party dependencies involves creating the project, modifying the *csproj* file, building, testing, and publishing the app.</span></span> <span data-ttu-id="59b70-158">C# で記述された次の単純な例は、このプロセスを示しています。</span><span class="sxs-lookup"><span data-stu-id="59b70-158">A simple example written in C# illustrates the process.</span></span> <span data-ttu-id="59b70-159">この例では、コマンド ラインから [dotnet ユーティリティ](../tools/dotnet.md)を使用して、自己完結型の展開を作成する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="59b70-159">The example shows how to create a self-contained deployment using the [dotnet utility](../tools/dotnet.md) from the command line.</span></span>
 
-1. プロジェクトのディレクトリを作成します。
+1. <span data-ttu-id="59b70-160">プロジェクトのディレクトリを作成します。</span><span class="sxs-lookup"><span data-stu-id="59b70-160">Create a directory for the project.</span></span>
 
-   プロジェクトのディレクトリを作成し、それを現在のディレクトリにします。
+   <span data-ttu-id="59b70-161">プロジェクトのディレクトリを作成し、それを現在のディレクトリにします。</span><span class="sxs-lookup"><span data-stu-id="59b70-161">Create a directory for your project, and make it your current directory.</span></span>
 
-1. プロジェクトを作成します。
+1. <span data-ttu-id="59b70-162">プロジェクトを作成します。</span><span class="sxs-lookup"><span data-stu-id="59b70-162">Create the project.</span></span>
 
-   コマンド ラインに [dotnet new console](../tools/dotnet-new.md) と入力して、そのディレクトリに新しい C# コンソール プロジェクトを作成します。
+   <span data-ttu-id="59b70-163">コマンド ラインに [dotnet new console](../tools/dotnet-new.md) と入力して、そのディレクトリに新しい C# コンソール プロジェクトを作成します。</span><span class="sxs-lookup"><span data-stu-id="59b70-163">From the command line, type [dotnet new console](../tools/dotnet-new.md) to create a new C# console project in that directory.</span></span>
 
-1. アプリケーションのソース コードを追加します。
+1. <span data-ttu-id="59b70-164">アプリケーションのソース コードを追加します。</span><span class="sxs-lookup"><span data-stu-id="59b70-164">Add the application's source code.</span></span>
 
-   エディターで *Program.cs* ファイルを開き、自動生成されたコードを次のコードに置き換えます。 テキストの入力を求めるプロンプトが表示されてから、ユーザーが入力した個々の単語が表示されます。 正規表現 `\w+` を使用して、入力テキストの単語を分離します。
+   <span data-ttu-id="59b70-165">エディターで *Program.cs* ファイルを開き、自動生成されたコードを次のコードに置き換えます。</span><span class="sxs-lookup"><span data-stu-id="59b70-165">Open the *Program.cs* file in your editor and replace the auto-generated code with the following code.</span></span> <span data-ttu-id="59b70-166">テキストの入力を求めるプロンプトが表示されてから、ユーザーが入力した個々の単語が表示されます。</span><span class="sxs-lookup"><span data-stu-id="59b70-166">It prompts the user to enter text and displays the individual words entered by the user.</span></span> <span data-ttu-id="59b70-167">正規表現 `\w+` を使用して、入力テキストの単語を分離します。</span><span class="sxs-lookup"><span data-stu-id="59b70-167">It uses the regular expression `\w+` to separate the words in the input text.</span></span>
 
-   [!code-cs[deployment#1](../../../samples/snippets/core/deploying/deployment-example.cs)]
+   <span data-ttu-id="59b70-168">[!code-cs[deployment#1](../../../samples/snippets/core/deploying/deployment-example.cs)]</span><span class="sxs-lookup"><span data-stu-id="59b70-168">[!code-cs[deployment#1](../../../samples/snippets/core/deploying/deployment-example.cs)]</span></span>
 
-1. アプリの対象プラットフォームを定義します。
+1. <span data-ttu-id="59b70-169">アプリの対象プラットフォームを定義します。</span><span class="sxs-lookup"><span data-stu-id="59b70-169">Define the platforms that your app will target.</span></span>
 
-   *csproj* ファイルで、アプリが対象とするプラットフォームを定義する `<RuntimeIdentifiers>` タグを `<PropertyGroup>` セクションに作成し、対象とする各プラットフォームのランタイム識別子 (RID) を指定します。 なお、RID の分離にはセミコロンを追加する必要があることに注意してください。 ランタイム識別子の一覧については、「[Runtime IDentifier catalog](../rid-catalog.md)」 (ランタイム識別子のカタログ) を参照してください。 
+   <span data-ttu-id="59b70-170">*csproj* ファイルで、アプリが対象とするプラットフォームを定義する `<RuntimeIdentifiers>` タグを `<PropertyGroup>` セクションに作成し、対象とする各プラットフォームのランタイム識別子 (RID) を指定します。</span><span class="sxs-lookup"><span data-stu-id="59b70-170">Create a `<RuntimeIdentifiers>` tag in the `<PropertyGroup>` section of your *csproj* file that defines the platforms your app targets and specify the runtime identifier (RID) for each platform that you target.</span></span> <span data-ttu-id="59b70-171">なお、RID の分離にはセミコロンを追加する必要があることに注意してください。</span><span class="sxs-lookup"><span data-stu-id="59b70-171">Note that you also need to add a semicolon to separate the RIDs.</span></span> <span data-ttu-id="59b70-172">ランタイム識別子の一覧については、「[Runtime IDentifier catalog](../rid-catalog.md)」 (ランタイム識別子のカタログ) を参照してください。</span><span class="sxs-lookup"><span data-stu-id="59b70-172">See [Runtime IDentifier catalog](../rid-catalog.md) for a list of runtime identifiers.</span></span> 
 
-   たとえば、次の `<PropertyGroup>` セクションは、アプリが 64 ビット Windows 10 オペレーティング システムおよび 64 ビット OS X バージョン 10.11 オペレーティング システムで実行されることを示します。
+   <span data-ttu-id="59b70-173">たとえば、次の `<PropertyGroup>` セクションは、アプリが 64 ビット Windows 10 オペレーティング システムおよび 64 ビット OS X バージョン 10.11 オペレーティング システムで実行されることを示します。</span><span class="sxs-lookup"><span data-stu-id="59b70-173">For example, the following `<PropertyGroup>` section indicates that the app runs on 64-bit Windows 10 operating systems and the 64-bit OS X Version 10.11 operating system.</span></span>
 
      ```xml
      <PropertyGroup>
@@ -117,32 +117,32 @@ ms.lasthandoff: 07/28/2017
      </PropertyGroup>
      ```
 
-   `<RuntimeIdentifiers>` 要素は、*csproj* ファイルの任意の `<PropertyGroup>` に含めることができます。 *csproj* ファイルの完全なサンプルは、このセクションの後の部分で示しています。
+   <span data-ttu-id="59b70-174">`<RuntimeIdentifiers>` 要素は、*csproj* ファイルの任意の `<PropertyGroup>` に含めることができます。</span><span class="sxs-lookup"><span data-stu-id="59b70-174">Note that the `<RuntimeIdentifiers>` element can appear in any `<PropertyGroup>` in your *csproj* file.</span></span> <span data-ttu-id="59b70-175">*csproj* ファイルの完全なサンプルは、このセクションの後の部分で示しています。</span><span class="sxs-lookup"><span data-stu-id="59b70-175">A complete sample *csproj* file appears later in this section.</span></span>
 
-1. プロジェクトの依存関係とツールを更新します。
+1. <span data-ttu-id="59b70-176">プロジェクトの依存関係とツールを更新します。</span><span class="sxs-lookup"><span data-stu-id="59b70-176">Update the project's dependencies and tools.</span></span>
 
-   [dotnet restore](../tools/dotnet-restore.md) コマンドを実行して、プロジェクトで指定された依存関係を復元します。
+   <span data-ttu-id="59b70-177">[dotnet restore](../tools/dotnet-restore.md) コマンドを実行して、プロジェクトで指定された依存関係を復元します。</span><span class="sxs-lookup"><span data-stu-id="59b70-177">Run the [dotnet restore](../tools/dotnet-restore.md) command to restore the dependencies specified in your project.</span></span>
 
-1. アプリのデバッグ ビルドを作成します。
+1. <span data-ttu-id="59b70-178">アプリのデバッグ ビルドを作成します。</span><span class="sxs-lookup"><span data-stu-id="59b70-178">Create a Debug build of your app.</span></span>
 
-   コマンド ラインから、[dotnet build](../tools/dotnet-build.md) コマンドを使用します。
+   <span data-ttu-id="59b70-179">コマンド ラインから、[dotnet build](../tools/dotnet-build.md) コマンドを使用します。</span><span class="sxs-lookup"><span data-stu-id="59b70-179">From the command line, use the [dotnet build](../tools/dotnet-build.md) command.</span></span>
 
-1. プログラムをデバッグしてテストしたら、アプリと共に展開するファイルをアプリの対象のプラットフォームごとに作成します。
+1. <span data-ttu-id="59b70-180">プログラムをデバッグしてテストしたら、アプリと共に展開するファイルをアプリの対象のプラットフォームごとに作成します。</span><span class="sxs-lookup"><span data-stu-id="59b70-180">After you've debugged and tested the program, create the files to be deployed with your app for each platform that it targets.</span></span>
 
-   両方の対象プラットフォームに、次のように `dotnet publish` コマンドを使用します。
+   <span data-ttu-id="59b70-181">両方の対象プラットフォームに、次のように `dotnet publish` コマンドを使用します。</span><span class="sxs-lookup"><span data-stu-id="59b70-181">Use the `dotnet publish` command for both target platforms as follows:</span></span>
 
       ```console
       dotnet publish -c Release -r win10-x64
       dotnet publish -c Release -r osx.10.11-x64
       ```
 
-   これにより、各ターゲット プラットフォームに対してアプリのリリース (デバッグではなく) バージョンが作成されます。 作成されたファイルは、プロジェクトの *.\bin\Release\netcoreapp1.1\<runtime_identifier>* サブディレクトリにある *publish* という名前のサブディレクトリに配置されます。 各サブディレクトリには、アプリの起動に必要なファイルの完全なセット (アプリ ファイルとすべての .NET Core ファイルの両方) が含まれています。
+   <span data-ttu-id="59b70-182">これにより、各ターゲット プラットフォームに対してアプリのリリース (デバッグではなく) バージョンが作成されます。</span><span class="sxs-lookup"><span data-stu-id="59b70-182">This creates a Release (rather than a Debug) version of your app for each target platform.</span></span> <span data-ttu-id="59b70-183">作成されたファイルは、プロジェクトの *.\bin\Release\netcoreapp1.1\<runtime_identifier>* サブディレクトリにある *publish* という名前のサブディレクトリに配置されます。</span><span class="sxs-lookup"><span data-stu-id="59b70-183">The resulting files are placed in a subdirectory named *publish* that's in a subdirectory of your project's *.\bin\Release\netcoreapp1.1\<runtime_identifier>* subdirectory.</span></span> <span data-ttu-id="59b70-184">各サブディレクトリには、アプリの起動に必要なファイルの完全なセット (アプリ ファイルとすべての .NET Core ファイルの両方) が含まれています。</span><span class="sxs-lookup"><span data-stu-id="59b70-184">Note that each subdirectory contains the complete set of files (both your app files and all .NET Core files) needed to launch your app.</span></span>
 
-アプリケーションのファイルと共に、発行プロセスは、アプリに関するデバッグ情報を含むプログラム データベース (.pdb) ファイルを出力します。 このファイルは、主に例外のデバッグに役立ちます。 これを、アプリケーションのファイルにはパッケージ化しないよう選択できます。 ただし、アプリのリリース ビルドをデバッグする場合のために、保存しておくことをお勧めします。
+<span data-ttu-id="59b70-185">アプリケーションのファイルと共に、発行プロセスは、アプリに関するデバッグ情報を含むプログラム データベース (.pdb) ファイルを出力します。</span><span class="sxs-lookup"><span data-stu-id="59b70-185">Along with your application's files, the publishing process emits a program database (.pdb) file that contains debugging information about your app.</span></span> <span data-ttu-id="59b70-186">このファイルは、主に例外のデバッグに役立ちます。</span><span class="sxs-lookup"><span data-stu-id="59b70-186">The file is useful primarily for debugging exceptions.</span></span> <span data-ttu-id="59b70-187">これを、アプリケーションのファイルにはパッケージ化しないよう選択できます。</span><span class="sxs-lookup"><span data-stu-id="59b70-187">You can choose not to package it with your application's files.</span></span> <span data-ttu-id="59b70-188">ただし、アプリのリリース ビルドをデバッグする場合のために、保存しておくことをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="59b70-188">You should, however, save it in the event that you want to debug the Release build of your app.</span></span>
 
-発行したファイルは、任意の方法で展開できます。 たとえば、Zip ファイルにパッケージ化したり、単純な `copy` コマンドを使用したり、任意のインストール パッケージで展開したりできます。
+<span data-ttu-id="59b70-189">発行したファイルは、任意の方法で展開できます。</span><span class="sxs-lookup"><span data-stu-id="59b70-189">Deploy the published files in any way you like.</span></span> <span data-ttu-id="59b70-190">たとえば、Zip ファイルにパッケージ化したり、単純な `copy` コマンドを使用したり、任意のインストール パッケージで展開したりできます。</span><span class="sxs-lookup"><span data-stu-id="59b70-190">For example, you can package them in a Zip file, use a simple `copy` command, or deploy them with any installation package of your choice.</span></span>
 
-このプロジェクトの完全な *csproj* ファイルを次に示します。
+<span data-ttu-id="59b70-191">このプロジェクトの完全な *csproj* ファイルを次に示します。</span><span class="sxs-lookup"><span data-stu-id="59b70-191">The following is the complete *csproj* file for this project.</span></span>
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
@@ -154,11 +154,11 @@ ms.lasthandoff: 07/28/2017
 </Project>
 ```
 
-## <a name="self-contained-deployment-with-third-party-dependencies"></a>サードパーティの依存関係を含む、自己完結型の展開
+## <a name="self-contained-deployment-with-third-party-dependencies"></a><span data-ttu-id="59b70-192">サードパーティの依存関係を含む、自己完結型の展開</span><span class="sxs-lookup"><span data-stu-id="59b70-192">Self-contained deployment with third-party dependencies</span></span>
 
-1 つまたは複数のサードパーティの依存関係を含む自己完結型の展開を展開するプロセスには、依存関係の追加が含まれます。 `dotnet restore` コマンドを実行する前に、次の 2 つの追加手順を実行する必要があります。
+<span data-ttu-id="59b70-193">1 つまたは複数のサードパーティの依存関係を含む自己完結型の展開を展開するプロセスには、依存関係の追加が含まれます。</span><span class="sxs-lookup"><span data-stu-id="59b70-193">Deploying a self-contained deployment with one or more third-party dependencies involves adding the dependencies.</span></span> <span data-ttu-id="59b70-194">`dotnet restore` コマンドを実行する前に、次の 2 つの追加手順を実行する必要があります。</span><span class="sxs-lookup"><span data-stu-id="59b70-194">Two additional steps are required before you can run the `dotnet restore` command:</span></span>
 
-1. 任意のサードパーティ ライブラリへの参照を *csproj* ファイルの `<ItemGroup>` セクションに追加します。 次の `<ItemGroup>` セクションは、サードパーティ ライブラリとして Json.NET を使用します。
+1. <span data-ttu-id="59b70-195">任意のサードパーティ ライブラリへの参照を *csproj* ファイルの `<ItemGroup>` セクションに追加します。</span><span class="sxs-lookup"><span data-stu-id="59b70-195">Add references to any third-party libraries to the `<ItemGroup>` section of your *csproj* file.</span></span> <span data-ttu-id="59b70-196">次の `<ItemGroup>` セクションは、サードパーティ ライブラリとして Json.NET を使用します。</span><span class="sxs-lookup"><span data-stu-id="59b70-196">The following `<ItemGroup>` section uses Json.NET as a third-party library.</span></span>
 
     ```xml
       <ItemGroup>
@@ -166,9 +166,9 @@ ms.lasthandoff: 07/28/2017
       </ItemGroup>
     ```
 
-1. サードパーティの依存関係を含む NuGet パッケージをシステムにまだダウンロードしていない場合は、ダウンロードします。 依存関係をアプリで使用できるようにするには、依存関係を追加してから、`dotnet restore` コマンドを実行します。 発行時に依存関係はローカルの NuGet キャッシュからが解決されるので、システムで使用可能になる必要があります。
+1. <span data-ttu-id="59b70-197">サードパーティの依存関係を含む NuGet パッケージをシステムにまだダウンロードしていない場合は、ダウンロードします。</span><span class="sxs-lookup"><span data-stu-id="59b70-197">If you haven't already, download the NuGet package containing the third-party dependency to your system.</span></span> <span data-ttu-id="59b70-198">依存関係をアプリで使用できるようにするには、依存関係を追加してから、`dotnet restore` コマンドを実行します。</span><span class="sxs-lookup"><span data-stu-id="59b70-198">To make the dependency available to your app, execute the `dotnet restore` command after adding the dependency.</span></span> <span data-ttu-id="59b70-199">発行時に依存関係はローカルの NuGet キャッシュからが解決されるので、システムで使用可能になる必要があります。</span><span class="sxs-lookup"><span data-stu-id="59b70-199">Because the dependency is resolved out of the local NuGet cache at publish time, it must be available on your system.</span></span>
 
-このプロジェクトの完全な *csproj* ファイルを次に示します。
+<span data-ttu-id="59b70-200">このプロジェクトの完全な *csproj* ファイルを次に示します。</span><span class="sxs-lookup"><span data-stu-id="59b70-200">The following is the complete *csproj* file for this project:</span></span>
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
@@ -183,12 +183,12 @@ ms.lasthandoff: 07/28/2017
 </Project>
 ```
 
-アプリケーションを展開すると、アプリで使用されるすべてのサードパーティの依存関係も、アプリケーション ファイルに含まれています。 アプリが実行されているシステムには、サードパーティ ライブラリは必要ありません。
+<span data-ttu-id="59b70-201">アプリケーションを展開すると、アプリで使用されるすべてのサードパーティの依存関係も、アプリケーション ファイルに含まれています。</span><span class="sxs-lookup"><span data-stu-id="59b70-201">When you deploy your application, any third-party dependencies used in your app are also contained with your application files.</span></span> <span data-ttu-id="59b70-202">アプリが実行されているシステムには、サードパーティ ライブラリは必要ありません。</span><span class="sxs-lookup"><span data-stu-id="59b70-202">Third-party libraries aren't required on the system on which the app is running.</span></span>
 
-サードパーティ ライブラリを含む自己完結型の展開は、そのライブラリでサポートされるプラットフォームにのみ展開できます。 これは、フレームワークに依存する展開にサード パーティの依存関係とネイティブの依存関係があり、ネイティブの依存関係はアプリがインストールされたプラットフォームと対応している必要がある場合と似ています。
+<span data-ttu-id="59b70-203">サードパーティ ライブラリを含む自己完結型の展開は、そのライブラリでサポートされるプラットフォームにのみ展開できます。</span><span class="sxs-lookup"><span data-stu-id="59b70-203">Note that you can only deploy a self-contained deployment with a third-party library to platforms supported by that library.</span></span> <span data-ttu-id="59b70-204">これは、フレームワークに依存する展開にサード パーティの依存関係とネイティブの依存関係があり、ネイティブの依存関係はアプリがインストールされたプラットフォームと対応している必要がある場合と似ています。</span><span class="sxs-lookup"><span data-stu-id="59b70-204">This is similar to having third-party dependencies with native dependencies in a framework-dependent deployment, where the native dependencies must be compatible with the platform to which the app is deployed.</span></span>
 
-# <a name="see-also"></a>関連項目
+# <a name="see-also"></a><span data-ttu-id="59b70-205">関連項目</span><span class="sxs-lookup"><span data-stu-id="59b70-205">See also</span></span>
 
-[.NET Core アプリケーションの展開](index.md)   
-[.NET Core のランタイム識別子 (RID) のカタログ](../rid-catalog.md)   
+<span data-ttu-id="59b70-206">[.NET Core アプリケーションの展開](index.md) </span><span class="sxs-lookup"><span data-stu-id="59b70-206">[.NET Core Application Deployment](index.md) </span></span>  
+[<span data-ttu-id="59b70-207">.NET Core のランタイム識別子 (RID) のカタログ</span><span class="sxs-lookup"><span data-stu-id="59b70-207">.NET Core Runtime IDentifier (RID) catalog</span></span>](../rid-catalog.md)   
 

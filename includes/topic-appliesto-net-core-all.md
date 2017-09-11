@@ -1,1 +1,1 @@
-**このトピックは: ✓** .NET Core 1.x **✓** .NET Core 2.x。
+<span data-ttu-id="44d9e-101">**このトピックは: ✓** .NET Core 1.x **✓** .NET Core 2.x。</span><span class="sxs-lookup"><span data-stu-id="44d9e-101">**This topic applies to: ✓** .NET Core 1.x **✓** .NET Core 2.x</span></span>

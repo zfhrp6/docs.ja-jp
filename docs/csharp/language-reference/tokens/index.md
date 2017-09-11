@@ -41,16 +41,16 @@ ms.lasthandoff: 07/28/2017
 
 ---
 
-# <a name="c-special-characters"></a>C# の特殊文字
+# <a name="c-special-characters"></a><span data-ttu-id="c133c-102">C# の特殊文字</span><span class="sxs-lookup"><span data-stu-id="c133c-102">C# Special Characters</span></span>
 
-特殊文字は、それが付加されたプログラム要素 (リテラル文字列、識別子、または属性名) を変更する、コンテキストに応じた定義済みの文字です。 C# では、次の特殊文字がサポートされています。 
+<span data-ttu-id="c133c-103">特殊文字は、それが付加されたプログラム要素 (リテラル文字列、識別子、または属性名) を変更する、コンテキストに応じた定義済みの文字です。</span><span class="sxs-lookup"><span data-stu-id="c133c-103">Special characters are predefined, contextual characters that modifies the program element (a literal string, an identifier, or an attribute name) to which they are prepended.</span></span> <span data-ttu-id="c133c-104">C# では、次の特殊文字がサポートされています。</span><span class="sxs-lookup"><span data-stu-id="c133c-104">C# supports the following special characters:</span></span> 
 
-- [@](../../../csharp/language-reference/tokens/verbatim.md): 逐語的識別子の文字。 
+- <span data-ttu-id="c133c-105">[@](../../../csharp/language-reference/tokens/verbatim.md): 逐語的識別子の文字。</span><span class="sxs-lookup"><span data-stu-id="c133c-105">[@](../../../csharp/language-reference/tokens/verbatim.md), the verbatim identifier character.</span></span> 
 
-- [$](../../../csharp/language-reference/tokens/interpolated.md): 挿入文字列の文字。
+- <span data-ttu-id="c133c-106">[$](../../../csharp/language-reference/tokens/interpolated.md): 挿入文字列の文字。</span><span class="sxs-lookup"><span data-stu-id="c133c-106">[$](../../../csharp/language-reference/tokens/interpolated.md), the interpolated string character.</span></span>
 
-## <a name="see-also"></a>関連項目  
- [C# リファレンス](../../../csharp/language-reference/index.md)   
- [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)
+## <a name="see-also"></a><span data-ttu-id="c133c-107">関連項目</span><span class="sxs-lookup"><span data-stu-id="c133c-107">See Also</span></span>  
+ <span data-ttu-id="c133c-108">[C# リファレンス](../../../csharp/language-reference/index.md) </span><span class="sxs-lookup"><span data-stu-id="c133c-108">[C# Reference](../../../csharp/language-reference/index.md) </span></span>  
+ [<span data-ttu-id="c133c-109">C# プログラミング ガイド</span><span class="sxs-lookup"><span data-stu-id="c133c-109">C# Programming Guide</span></span>](../../../csharp/programming-guide/index.md)
 
 

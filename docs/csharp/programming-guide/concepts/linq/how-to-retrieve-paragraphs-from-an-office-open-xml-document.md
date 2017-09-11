@@ -21,19 +21,19 @@ ms.contentlocale: ja-jp
 ms.lasthandoff: 07/28/2017
 
 ---
-# <a name="how-to-retrieve-paragraphs-from-an-office-open-xml-document-c"></a>方法: Office Open XML ドキュメントから段落を取得する (C#)
-このトピックでは、Office Open XML ドキュメントを開き、そのドキュメント内のすべての段落のコレクションを取得する例について説明します。  
+# <a name="how-to-retrieve-paragraphs-from-an-office-open-xml-document-c"></a><span data-ttu-id="26bbc-102">方法: Office Open XML ドキュメントから段落を取得する (C#)</span><span class="sxs-lookup"><span data-stu-id="26bbc-102">How to: Retrieve Paragraphs from an Office Open XML Document (C#)</span></span>
+<span data-ttu-id="26bbc-103">このトピックでは、Office Open XML ドキュメントを開き、そのドキュメント内のすべての段落のコレクションを取得する例について説明します。</span><span class="sxs-lookup"><span data-stu-id="26bbc-103">This topic presents an example that opens an Office Open XML document, and retrieves a collection of all of the paragraphs in the document.</span></span>  
   
- Office Open XML の詳細については、[www.openxmldeveloper.org](http://go.microsoft.com/fwlink/?LinkID=95573) を参照してください。  
+ <span data-ttu-id="26bbc-104">Office Open XML の詳細については、[www.openxmldeveloper.org](http://go.microsoft.com/fwlink/?LinkID=95573) を参照してください。</span><span class="sxs-lookup"><span data-stu-id="26bbc-104">For more information on Office Open XML, see [www.openxmldeveloper.org](http://go.microsoft.com/fwlink/?LinkID=95573).</span></span>  
   
-## <a name="example"></a>例  
- この例では、Office Open XML パッケージを開き、Open XML パッケージ内のリレーションシップを使用してドキュメントとスタイル パーツを検索します。 次に、ドキュメントに対してクエリを実行して、段落 <xref:System.Xml.Linq.XElement> ノード、各段落のスタイル名、および各段落のテキストを含む匿名型のコレクションを射影します。  
+## <a name="example"></a><span data-ttu-id="26bbc-105">例</span><span class="sxs-lookup"><span data-stu-id="26bbc-105">Example</span></span>  
+ <span data-ttu-id="26bbc-106">この例では、Office Open XML パッケージを開き、Open XML パッケージ内のリレーションシップを使用してドキュメントとスタイル パーツを検索します。</span><span class="sxs-lookup"><span data-stu-id="26bbc-106">This example opens an Office Open XML package, uses the relationships within the Open XML package to find the document and the style parts.</span></span> <span data-ttu-id="26bbc-107">次に、ドキュメントに対してクエリを実行して、段落 <xref:System.Xml.Linq.XElement> ノード、各段落のスタイル名、および各段落のテキストを含む匿名型のコレクションを射影します。</span><span class="sxs-lookup"><span data-stu-id="26bbc-107">It then queries the document, projecting a collection of an anonymous type that contains the paragraph <xref:System.Xml.Linq.XElement> node, the style name of each paragraph, and the text of each paragraph.</span></span>  
   
- この例では、例の中でも提供される `StringConcatenate` という名前の拡張メソッドを使用します。  
+ <span data-ttu-id="26bbc-108">この例では、例の中でも提供される `StringConcatenate` という名前の拡張メソッドを使用します。</span><span class="sxs-lookup"><span data-stu-id="26bbc-108">The example uses an extension method named `StringConcatenate`, which is also supplied in the example.</span></span>  
   
- この例の処理を説明した詳細なチュートリアルについては、「[XML の純粋関数型変換 (C#)](../../../../csharp/programming-guide/concepts/linq/pure-functional-transformations-of-xml.md)」を参照してください。  
+ <span data-ttu-id="26bbc-109">この例の処理を説明した詳細なチュートリアルについては、「[XML の純粋関数型変換 (C#)](../../../../csharp/programming-guide/concepts/linq/pure-functional-transformations-of-xml.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="26bbc-109">For a detailed tutorial that explains how this example works, see [Pure Functional Transformations of XML (C#)](../../../../csharp/programming-guide/concepts/linq/pure-functional-transformations-of-xml.md).</span></span>  
   
- この例では、WindowsBase アセンブリに含まれるクラスを使用します。 また、<xref:System.IO.Packaging?displayProperty=fullName> 名前空間内の型を使用します。  
+ <span data-ttu-id="26bbc-110">この例では、WindowsBase アセンブリに含まれるクラスを使用します。</span><span class="sxs-lookup"><span data-stu-id="26bbc-110">This example uses classes found in the WindowsBase assembly.</span></span> <span data-ttu-id="26bbc-111">また、<xref:System.IO.Packaging?displayProperty=fullName> 名前空間内の型を使用します。</span><span class="sxs-lookup"><span data-stu-id="26bbc-111">It uses types in the <xref:System.IO.Packaging?displayProperty=fullName> namespace.</span></span>  
   
 ```csharp  
 public static class LocalExtensions  
@@ -175,7 +175,7 @@ class Program
 }  
 ```  
   
- この例で「[ソースとなる Office Open XML ドキュメントの作成 (C#)](../../../../csharp/programming-guide/concepts/linq/creating-the-source-office-open-xml-document.md)」に記載されているサンプルの Open XML ドキュメントを使用して実行すると、次のように出力されます。  
+ <span data-ttu-id="26bbc-112">この例で「[ソースとなる Office Open XML ドキュメントの作成 (C#)](../../../../csharp/programming-guide/concepts/linq/creating-the-source-office-open-xml-document.md)」に記載されているサンプルの Open XML ドキュメントを使用して実行すると、次のように出力されます。</span><span class="sxs-lookup"><span data-stu-id="26bbc-112">When run with the sample Open XML document described in [Creating the Source Office Open XML Document (C#)](../../../../csharp/programming-guide/concepts/linq/creating-the-source-office-open-xml-document.md), this example produces the following output:</span></span>  
   
 ```  
 StyleName:Heading1 >Parsing WordprocessingML with LINQ to XML<  
@@ -195,6 +195,6 @@ StyleName:Normal ><
 StyleName:Code >Hello World<  
 ```  
   
-## <a name="see-also"></a>関連項目  
- [高度なクエリ手法 (LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/advanced-query-techniques-linq-to-xml.md)
+## <a name="see-also"></a><span data-ttu-id="26bbc-113">関連項目</span><span class="sxs-lookup"><span data-stu-id="26bbc-113">See Also</span></span>  
+ [<span data-ttu-id="26bbc-114">高度なクエリ手法 (LINQ to XML) (C#)</span><span class="sxs-lookup"><span data-stu-id="26bbc-114">Advanced Query Techniques (LINQ to XML) (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/advanced-query-techniques-linq-to-xml.md)
 

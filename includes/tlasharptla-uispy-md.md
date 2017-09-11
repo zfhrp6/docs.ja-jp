@@ -1,1 +1,1 @@
-UI Spy
+<span data-ttu-id="c5449-101">UI Spy</span><span class="sxs-lookup"><span data-stu-id="c5449-101">UI Spy</span></span>

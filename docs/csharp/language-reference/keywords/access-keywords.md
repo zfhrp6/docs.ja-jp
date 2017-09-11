@@ -34,20 +34,20 @@ ms.contentlocale: ja-jp
 ms.lasthandoff: 07/28/2017
 
 ---
-# <a name="access-keywords-c-reference"></a>アクセス キーワード (C# リファレンス)
-このセクションでは、以下のアクセス キーワードについて説明します。  
+# <a name="access-keywords-c-reference"></a><span data-ttu-id="695f9-102">アクセス キーワード (C# リファレンス)</span><span class="sxs-lookup"><span data-stu-id="695f9-102">Access Keywords (C# Reference)</span></span>
+<span data-ttu-id="695f9-103">このセクションでは、以下のアクセス キーワードについて説明します。</span><span class="sxs-lookup"><span data-stu-id="695f9-103">This section introduces the following access keywords:</span></span>  
   
--   [base](../../../csharp/language-reference/keywords/base.md)  
+-   [<span data-ttu-id="695f9-104">base</span><span class="sxs-lookup"><span data-stu-id="695f9-104">base</span></span>](../../../csharp/language-reference/keywords/base.md)  
   
-     基底クラスのメンバーにアクセスします。  
+     <span data-ttu-id="695f9-105">基底クラスのメンバーにアクセスします。</span><span class="sxs-lookup"><span data-stu-id="695f9-105">Accesses the members of the base class.</span></span>  
   
--   [this](../../../csharp/language-reference/keywords/this.md)  
+-   [<span data-ttu-id="695f9-106">this</span><span class="sxs-lookup"><span data-stu-id="695f9-106">this</span></span>](../../../csharp/language-reference/keywords/this.md)  
   
-     クラスの現在のインスタンスを参照します。  
+     <span data-ttu-id="695f9-107">クラスの現在のインスタンスを参照します。</span><span class="sxs-lookup"><span data-stu-id="695f9-107">Refers to the current instance of the class.</span></span>  
   
-## <a name="see-also"></a>関連項目  
- [C# リファレンス](../../../csharp/language-reference/index.md)   
- [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
- [アクセス修飾子](../../../csharp/language-reference/keywords/access-modifiers.md)   
- [C# のキーワード](../../../csharp/language-reference/keywords/index.md)
+## <a name="see-also"></a><span data-ttu-id="695f9-108">関連項目</span><span class="sxs-lookup"><span data-stu-id="695f9-108">See Also</span></span>  
+ <span data-ttu-id="695f9-109">[C# リファレンス](../../../csharp/language-reference/index.md) </span><span class="sxs-lookup"><span data-stu-id="695f9-109">[C# Reference](../../../csharp/language-reference/index.md) </span></span>  
+ <span data-ttu-id="695f9-110">[C# プログラミング ガイド](../../../csharp/programming-guide/index.md) </span><span class="sxs-lookup"><span data-stu-id="695f9-110">[C# Programming Guide](../../../csharp/programming-guide/index.md) </span></span>  
+ <span data-ttu-id="695f9-111">[アクセス修飾子](../../../csharp/language-reference/keywords/access-modifiers.md) </span><span class="sxs-lookup"><span data-stu-id="695f9-111">[Access Modifiers](../../../csharp/language-reference/keywords/access-modifiers.md) </span></span>  
+ [<span data-ttu-id="695f9-112">C# のキーワード</span><span class="sxs-lookup"><span data-stu-id="695f9-112">C# Keywords</span></span>](../../../csharp/language-reference/keywords/index.md)
 

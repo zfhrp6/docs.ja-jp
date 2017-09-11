@@ -1,1 +1,1 @@
-Windows°7 オペレーティング システム
+<span data-ttu-id="2c766-101">Windows°7 オペレーティング システム</span><span class="sxs-lookup"><span data-stu-id="2c766-101">Windows°7 operating system</span></span>

@@ -1,1 +1,1 @@
-Visual Studio 2012
+<span data-ttu-id="fa4c6-101">Visual Studio 2012</span><span class="sxs-lookup"><span data-stu-id="fa4c6-101">Visual Studio 2012</span></span>

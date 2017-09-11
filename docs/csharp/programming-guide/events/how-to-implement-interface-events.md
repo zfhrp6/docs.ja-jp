@@ -35,12 +35,12 @@ ms.contentlocale: ja-jp
 ms.lasthandoff: 07/28/2017
 
 ---
-# <a name="how-to-implement-interface-events-c-programming-guide"></a>方法 : インターフェイス イベントを実装する (C# プログラミング ガイド)
-[インターフェイス](../../../csharp/language-reference/keywords/interface.md)では[イベント](../../../csharp/language-reference/keywords/event.md)を宣言できます。 次の例では、クラス内にインターフェイス イベントを実装する方法について説明します。 基本的な原則は、インターフェイスのメソッドやプロパティを実装する場合と同じです。  
+# <a name="how-to-implement-interface-events-c-programming-guide"></a><span data-ttu-id="148b2-102">方法 : インターフェイス イベントを実装する (C# プログラミング ガイド)</span><span class="sxs-lookup"><span data-stu-id="148b2-102">How to: Implement Interface Events (C# Programming Guide)</span></span>
+<span data-ttu-id="148b2-103">[インターフェイス](../../../csharp/language-reference/keywords/interface.md)では[イベント](../../../csharp/language-reference/keywords/event.md)を宣言できます。</span><span class="sxs-lookup"><span data-stu-id="148b2-103">An [interface](../../../csharp/language-reference/keywords/interface.md) can declare an [event](../../../csharp/language-reference/keywords/event.md).</span></span> <span data-ttu-id="148b2-104">次の例では、クラス内にインターフェイス イベントを実装する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="148b2-104">The following example shows how to implement interface events in a class.</span></span> <span data-ttu-id="148b2-105">基本的な原則は、インターフェイスのメソッドやプロパティを実装する場合と同じです。</span><span class="sxs-lookup"><span data-stu-id="148b2-105">Basically the rules are the same as when you implement any interface method or property.</span></span>  
   
-### <a name="to-implement-interface-events-in-a-class"></a>クラス内でインターフェイス イベントを実装するには  
+### <a name="to-implement-interface-events-in-a-class"></a><span data-ttu-id="148b2-106">クラス内でインターフェイス イベントを実装するには</span><span class="sxs-lookup"><span data-stu-id="148b2-106">To implement interface events in a class</span></span>  
   
--   クラス内でイベントを宣言してから、適切な領域でそのイベントを呼び出します。  
+-   <span data-ttu-id="148b2-107">クラス内でイベントを宣言してから、適切な領域でそのイベントを呼び出します。</span><span class="sxs-lookup"><span data-stu-id="148b2-107">Declare the event in your class and then invoke it in the appropriate areas.</span></span>  
   
     ```  
     namespace ImplementInterfaceEvents  
@@ -76,17 +76,17 @@ ms.lasthandoff: 07/28/2017
     }  
     ```  
   
-## <a name="example"></a>例  
- 次の例では、同じ名前のイベント名がある 2 つ以上のインターフェイスからクラスを継承するという、あまり一般的でない状況の対処方法を示します。 このような場合は、1 つ以上のイベントに対して明示的なインターフェイスの実装を指定する必要があります。 イベントに対する明示的なインターフェイスの実装を記述する場合、`add` および `remove` の各イベント アクセサーも記述する必要があります。 通常ではこれらのアクセサーはコンパイラで指定しますが、この例ではコンパイラで指定することはできません。  
+## <a name="example"></a><span data-ttu-id="148b2-108">例</span><span class="sxs-lookup"><span data-stu-id="148b2-108">Example</span></span>  
+ <span data-ttu-id="148b2-109">次の例では、同じ名前のイベント名がある 2 つ以上のインターフェイスからクラスを継承するという、あまり一般的でない状況の対処方法を示します。</span><span class="sxs-lookup"><span data-stu-id="148b2-109">The following example shows how to handle the less-common situation in which your class inherits from two or more interfaces and each interface has an event with the same name.</span></span> <span data-ttu-id="148b2-110">このような場合は、1 つ以上のイベントに対して明示的なインターフェイスの実装を指定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="148b2-110">In this situation, you must provide an explicit interface implementation for at least one of the events.</span></span> <span data-ttu-id="148b2-111">イベントに対する明示的なインターフェイスの実装を記述する場合、`add` および `remove` の各イベント アクセサーも記述する必要があります。</span><span class="sxs-lookup"><span data-stu-id="148b2-111">When you write an explicit interface implementation for an event, you must also write the `add` and `remove` event accessors.</span></span> <span data-ttu-id="148b2-112">通常ではこれらのアクセサーはコンパイラで指定しますが、この例ではコンパイラで指定することはできません。</span><span class="sxs-lookup"><span data-stu-id="148b2-112">Normally these are provided by the compiler, but in this case the compiler cannot provide them.</span></span>  
   
- 独自のアクセサーを指定することで、2 つのイベントがクラス内の同一イベントと別々のイベントのどちらによって表されるかを指定できます。 たとえば、インターフェイスの仕様上、イベントを複数回発生させる必要がある場合は、各イベントをクラス内の別々の実装に関連付けます。 次の例では、サブスクライバーで `IShape` または `IDrawingObject` のいずれかに図形参照をキャストして、どちらの `OnDraw` イベントを受信するかを決定しています。  
+ <span data-ttu-id="148b2-113">独自のアクセサーを指定することで、2 つのイベントがクラス内の同一イベントと別々のイベントのどちらによって表されるかを指定できます。</span><span class="sxs-lookup"><span data-stu-id="148b2-113">By providing your own accessors, you can specify whether the two events are represented by the same event in your class, or by different events.</span></span> <span data-ttu-id="148b2-114">たとえば、インターフェイスの仕様上、イベントを複数回発生させる必要がある場合は、各イベントをクラス内の別々の実装に関連付けます。</span><span class="sxs-lookup"><span data-stu-id="148b2-114">For example, if the events should be raised at different times according to the interface specifications, you can associate each event with a separate implementation in your class.</span></span> <span data-ttu-id="148b2-115">次の例では、サブスクライバーで `IShape` または `IDrawingObject` のいずれかに図形参照をキャストして、どちらの `OnDraw` イベントを受信するかを決定しています。</span><span class="sxs-lookup"><span data-stu-id="148b2-115">In the following example, subscribers determine which `OnDraw` event they will receive by casting the shape reference to either an `IShape` or an `IDrawingObject`.</span></span>  
   
- [!code-cs[csProgGuideEvents#10](../../../csharp/programming-guide/events/codesnippet/CSharp/how-to-implement-interface-events_1.cs)]  
+ <span data-ttu-id="148b2-116">[!code-cs[csProgGuideEvents#10](../../../csharp/programming-guide/events/codesnippet/CSharp/how-to-implement-interface-events_1.cs)]</span><span class="sxs-lookup"><span data-stu-id="148b2-116">[!code-cs[csProgGuideEvents#10](../../../csharp/programming-guide/events/codesnippet/CSharp/how-to-implement-interface-events_1.cs)]</span></span>  
   
-## <a name="see-also"></a>関連項目  
- [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
- [イベント](../../../csharp/programming-guide/events/index.md)   
- [デリゲート](../../../csharp/programming-guide/delegates/index.md)   
- [明示的なインターフェイスの実装](../../../csharp/programming-guide/interfaces/explicit-interface-implementation.md)   
- [方法: 派生クラスから基本クラス イベントを発生させる](../../../csharp/programming-guide/events/how-to-raise-base-class-events-in-derived-classes.md)
+## <a name="see-also"></a><span data-ttu-id="148b2-117">関連項目</span><span class="sxs-lookup"><span data-stu-id="148b2-117">See Also</span></span>  
+ <span data-ttu-id="148b2-118">[C# プログラミング ガイド](../../../csharp/programming-guide/index.md) </span><span class="sxs-lookup"><span data-stu-id="148b2-118">[C# Programming Guide](../../../csharp/programming-guide/index.md) </span></span>  
+ <span data-ttu-id="148b2-119">[イベント](../../../csharp/programming-guide/events/index.md) </span><span class="sxs-lookup"><span data-stu-id="148b2-119">[Events](../../../csharp/programming-guide/events/index.md) </span></span>  
+ <span data-ttu-id="148b2-120">[デリゲート](../../../csharp/programming-guide/delegates/index.md) </span><span class="sxs-lookup"><span data-stu-id="148b2-120">[Delegates](../../../csharp/programming-guide/delegates/index.md) </span></span>  
+ <span data-ttu-id="148b2-121">[明示的なインターフェイスの実装](../../../csharp/programming-guide/interfaces/explicit-interface-implementation.md) </span><span class="sxs-lookup"><span data-stu-id="148b2-121">[Explicit Interface Implementation](../../../csharp/programming-guide/interfaces/explicit-interface-implementation.md) </span></span>  
+ [<span data-ttu-id="148b2-122">方法: 派生クラスから基本クラス イベントを発生させる</span><span class="sxs-lookup"><span data-stu-id="148b2-122">How to: Raise Base Class Events in Derived Classes</span></span>](../../../csharp/programming-guide/events/how-to-raise-base-class-events-in-derived-classes.md)
 

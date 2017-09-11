@@ -1,1 +1,1 @@
-マルチドキュメント インターフェイス (MDI)
+<span data-ttu-id="c6cd4-101">マルチドキュメント インターフェイス (MDI)</span><span class="sxs-lookup"><span data-stu-id="c6cd4-101">multiple-document interface (MDI)</span></span>

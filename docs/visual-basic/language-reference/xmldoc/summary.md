@@ -32,36 +32,36 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 ms.translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: ad2053e21e58c49205fe869a484cb2dffd2169ee
+ms.sourcegitcommit: a32f50ce8a92fa22d9627a1510a4b3ec1087364e
+ms.openlocfilehash: 42321daf092c4b637d2f75fb7f6d7e95201791ba
 ms.contentlocale: ja-jp
-ms.lasthandoff: 03/13/2017
+ms.lasthandoff: 06/01/2017
 
 ---
-# <a name="ltsummarygt-visual-basic"></a>&lt;概要&gt;(Visual Basic)
-メンバーの概要を指定します。  
+# <a name="ltsummarygt-visual-basic"></a><span data-ttu-id="bc8d4-102">&lt;概要&gt;(Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="bc8d4-102">&lt;summary&gt; (Visual Basic)</span></span>
+<span data-ttu-id="bc8d4-103">メンバーの概要を指定します。</span><span class="sxs-lookup"><span data-stu-id="bc8d4-103">Specifies the summary of the member.</span></span>  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a><span data-ttu-id="bc8d4-104">構文</span><span class="sxs-lookup"><span data-stu-id="bc8d4-104">Syntax</span></span>  
   
 ```xml  
 <summary>description</summary>  
 ```  
   
-#### <a name="parameters"></a>パラメーター  
+#### <a name="parameters"></a><span data-ttu-id="bc8d4-105">パラメーター</span><span class="sxs-lookup"><span data-stu-id="bc8d4-105">Parameters</span></span>  
  `description`  
- オブジェクトの概要です。  
+ <span data-ttu-id="bc8d4-106">オブジェクトの概要です。</span><span class="sxs-lookup"><span data-stu-id="bc8d4-106">A summary of the object.</span></span>  
   
-## <a name="remarks"></a>コメント  
- 使用して、`<summary>`型または型のメンバーを記述するタグです。 使用[\<解説 >](../../../visual-basic/language-reference/xmldoc/remarks.md)型の説明に補足情報を追加します。  
+## <a name="remarks"></a><span data-ttu-id="bc8d4-107">コメント</span><span class="sxs-lookup"><span data-stu-id="bc8d4-107">Remarks</span></span>  
+ <span data-ttu-id="bc8d4-108">使用して、`<summary>`型または型のメンバーを記述するタグです。</span><span class="sxs-lookup"><span data-stu-id="bc8d4-108">Use the `<summary>` tag to describe a type or a type member.</span></span> <span data-ttu-id="bc8d4-109">使用[\<解説 >](../../../visual-basic/language-reference/xmldoc/remarks.md)型の説明に補足情報を追加します。</span><span class="sxs-lookup"><span data-stu-id="bc8d4-109">Use [\<remarks>](../../../visual-basic/language-reference/xmldoc/remarks.md) to add supplemental information to a type description.</span></span>  
   
- テキストを`<summary>`タグは、IntelliSense の種類に関する情報の唯一のソースであり、オブジェクト ブラウザーでも表示されます。 オブジェクト ブラウザーの詳細については、次を参照してください。[コードの構造を表示する](https://docs.microsoft.com/visualstudio/ide/viewing-the-structure-of-code)です。  
+ <span data-ttu-id="bc8d4-110">テキストを`<summary>`タグは、IntelliSense の種類に関する情報の唯一のソースであり、オブジェクト ブラウザーでも表示されます。</span><span class="sxs-lookup"><span data-stu-id="bc8d4-110">The text for the `<summary>` tag is the only source of information about the type in IntelliSense, and is also displayed in the Object Browser.</span></span> <span data-ttu-id="bc8d4-111">オブジェクト ブラウザーの詳細については、次を参照してください。[コードの構造を表示する](https://docs.microsoft.com/visualstudio/ide/viewing-the-structure-of-code)です。</span><span class="sxs-lookup"><span data-stu-id="bc8d4-111">For information about the Object Browser, see [Viewing the Structure of Code](https://docs.microsoft.com/visualstudio/ide/viewing-the-structure-of-code).</span></span>  
   
- 使用してコンパイル[/doc](../../../visual-basic/reference/command-line-compiler/doc.md)してドキュメント コメントをファイルにします。  
+ <span data-ttu-id="bc8d4-112">使用してコンパイル[/doc](../../../visual-basic/reference/command-line-compiler/doc.md)してドキュメント コメントをファイルにします。</span><span class="sxs-lookup"><span data-stu-id="bc8d4-112">Compile with [/doc](../../../visual-basic/reference/command-line-compiler/doc.md) to process documentation comments to a file.</span></span>  
   
-## <a name="example"></a>例  
- この例では、`<summary>`を記述するタグ、`ResetCounter`メソッドと`Counter`プロパティです。  
+## <a name="example"></a><span data-ttu-id="bc8d4-113">例</span><span class="sxs-lookup"><span data-stu-id="bc8d4-113">Example</span></span>  
+ <span data-ttu-id="bc8d4-114">この例では、`<summary>`を記述するタグ、`ResetCounter`メソッドと`Counter`プロパティです。</span><span class="sxs-lookup"><span data-stu-id="bc8d4-114">This example uses the `<summary>` tag to describe the `ResetCounter` method and `Counter` property.</span></span>  
   
- [!code-vb[VbVbcnXmlDocComments&#1;](../../../visual-basic/language-reference/xmldoc/codesnippet/VisualBasic/summary_1.vb)]  
+ <span data-ttu-id="bc8d4-115">[!code-vb[VbVbcnXmlDocComments&#1;](../../../visual-basic/language-reference/xmldoc/codesnippet/VisualBasic/summary_1.vb)]</span><span class="sxs-lookup"><span data-stu-id="bc8d4-115">[!code-vb[VbVbcnXmlDocComments#1](../../../visual-basic/language-reference/xmldoc/codesnippet/VisualBasic/summary_1.vb)]</span></span>  
   
-## <a name="see-also"></a>関連項目  
- [XML のコメント用タグ](../../../visual-basic/language-reference/xmldoc/recommended-xml-tags-for-documentation-comments.md)
+## <a name="see-also"></a><span data-ttu-id="bc8d4-116">関連項目</span><span class="sxs-lookup"><span data-stu-id="bc8d4-116">See Also</span></span>  
+ [<span data-ttu-id="bc8d4-117">XML のコメント用タグ</span><span class="sxs-lookup"><span data-stu-id="bc8d4-117">XML Comment Tags</span></span>](../../../visual-basic/language-reference/xmldoc/recommended-xml-tags-for-documentation-comments.md)

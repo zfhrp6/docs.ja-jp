@@ -21,15 +21,15 @@ ms.contentlocale: ja-jp
 ms.lasthandoff: 07/28/2017
 
 ---
-# <a name="how-to-find-descendants-of-a-child-element-xpath-linq-to-xml-c"></a>方法: 子要素の子孫を検索する (XPath-LINQ to XML) (C#)
-このトピックでは、特定の名前を持つ子要素の子孫要素を取得する方法について説明します。  
+# <a name="how-to-find-descendants-of-a-child-element-xpath-linq-to-xml-c"></a><span data-ttu-id="efc4b-102">方法: 子要素の子孫を検索する (XPath-LINQ to XML) (C#)</span><span class="sxs-lookup"><span data-stu-id="efc4b-102">How to: Find Descendants of a Child Element (XPath-LINQ to XML) (C#)</span></span>
+<span data-ttu-id="efc4b-103">このトピックでは、特定の名前を持つ子要素の子孫要素を取得する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="efc4b-103">This topic shows how to get the descendant elements of a child element with a particular name.</span></span>  
   
- XPath 式を次に示します。  
+ <span data-ttu-id="efc4b-104">XPath 式を次に示します。</span><span class="sxs-lookup"><span data-stu-id="efc4b-104">The XPath expression is:</span></span>  
   
  `./Paragraph//Text/text()`  
   
-## <a name="example"></a>例  
- この例では、ワード プロセッシング ドキュメントの XML 表現からテキストを抽出する際に発生する問題をシミュレートします。 最初にすべての `Paragraph` 要素を選択し、次に各 `Text` 要素の `Paragraph` 子孫要素をすべて選択します。 `Text` 要素の `Comment` 子孫要素は選択しません。  
+## <a name="example"></a><span data-ttu-id="efc4b-105">例</span><span class="sxs-lookup"><span data-stu-id="efc4b-105">Example</span></span>  
+ <span data-ttu-id="efc4b-106">この例では、ワード プロセッシング ドキュメントの XML 表現からテキストを抽出する際に発生する問題をシミュレートします。</span><span class="sxs-lookup"><span data-stu-id="efc4b-106">This example simulates the problems of extracting text from an XML representation of a word processing document.</span></span> <span data-ttu-id="efc4b-107">最初にすべての `Paragraph` 要素を選択し、次に各 `Text` 要素の `Paragraph` 子孫要素をすべて選択します。</span><span class="sxs-lookup"><span data-stu-id="efc4b-107">It first selects all `Paragraph` elements, and then it selects all `Text` descendant elements of each `Paragraph` element.</span></span> <span data-ttu-id="efc4b-108">`Text` 要素の `Comment` 子孫要素は選択しません。</span><span class="sxs-lookup"><span data-stu-id="efc4b-108">This doesn't select the descendant `Text` elements of the `Comment` element.</span></span>  
   
 ```csharp  
 XElement root = XElement.Parse(  
@@ -80,13 +80,13 @@ else
 Console.WriteLine(str2);  
 ```  
   
- この例を実行すると、次の出力が生成されます。  
+ <span data-ttu-id="efc4b-109">この例を実行すると、次の出力が生成されます。</span><span class="sxs-lookup"><span data-stu-id="efc4b-109">This example produces the following output:</span></span>  
   
 ```  
 Results are identical  
 This is the start of a sentence.  This is a second sentence.  
 ```  
   
-## <a name="see-also"></a>関連項目  
- [XPath ユーザー向けの LINQ to XML (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)
+## <a name="see-also"></a><span data-ttu-id="efc4b-110">関連項目</span><span class="sxs-lookup"><span data-stu-id="efc4b-110">See Also</span></span>  
+ [<span data-ttu-id="efc4b-111">XPath ユーザー向けの LINQ to XML (C#)</span><span class="sxs-lookup"><span data-stu-id="efc4b-111">LINQ to XML for XPath Users (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)
 

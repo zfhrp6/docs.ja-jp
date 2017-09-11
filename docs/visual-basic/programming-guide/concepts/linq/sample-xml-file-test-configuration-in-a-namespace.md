@@ -20,16 +20,17 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 176524376e10ab157c7d6bc33f254b1431fd6478
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
+ms.openlocfilehash: 93a32c80e29d5b78bb4787f5528e3c9ed4bed20e
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/12/2017
 
 ---
-# <a name="sample-xml-file-test-configuration-in-a-namespace"></a>サンプル XML ファイル : 名前空間内のテスト構成
-次の XML ファイルは、[!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)] ドキュメントのさまざまな例で使用されます。 これはテスト構成ファイルです。 XML は名前空間に含まれています。  
+# <a name="sample-xml-file-test-configuration-in-a-namespace"></a><span data-ttu-id="4d5c0-102">サンプル XML ファイル : 名前空間内のテスト構成</span><span class="sxs-lookup"><span data-stu-id="4d5c0-102">Sample XML File: Test Configuration in a Namespace</span></span>
+<span data-ttu-id="4d5c0-103">次の XML ファイルは、[!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)] ドキュメントのさまざまな例で使用されます。</span><span class="sxs-lookup"><span data-stu-id="4d5c0-103">The following XML file is used in various examples in the [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)] documentation.</span></span> <span data-ttu-id="4d5c0-104">これはテスト構成ファイルです。</span><span class="sxs-lookup"><span data-stu-id="4d5c0-104">This is a test configuration file.</span></span> <span data-ttu-id="4d5c0-105">XML は名前空間に含まれています。</span><span class="sxs-lookup"><span data-stu-id="4d5c0-105">The XML is in a namespace.</span></span>  
   
-## <a name="testconfiginnamespacexml"></a>TestConfigInNamespace.xml  
+## <a name="testconfiginnamespacexml"></a><span data-ttu-id="4d5c0-106">TestConfigInNamespace.xml</span><span class="sxs-lookup"><span data-stu-id="4d5c0-106">TestConfigInNamespace.xml</span></span>  
   
 ```xml  
 <?xml version="1.0"?>  
@@ -73,5 +74,5 @@ ms.lasthandoff: 03/13/2017
 </Tests>  
 ```  
   
-## <a name="see-also"></a>関連項目  
- [サンプル XML ドキュメント (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-documents-linq-to-xml.md)
+## <a name="see-also"></a><span data-ttu-id="4d5c0-107">関連項目</span><span class="sxs-lookup"><span data-stu-id="4d5c0-107">See Also</span></span>  
+ [<span data-ttu-id="4d5c0-108">サンプル XML ドキュメント (LINQ to XML)</span><span class="sxs-lookup"><span data-stu-id="4d5c0-108">Sample XML Documents (LINQ to XML)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-documents-linq-to-xml.md)

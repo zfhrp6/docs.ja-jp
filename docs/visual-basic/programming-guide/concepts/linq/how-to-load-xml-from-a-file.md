@@ -20,26 +20,27 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 54755384eaf74fa008f93198f3de5e44fb095bda
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
+ms.openlocfilehash: 0b336816a7a557a4cd820b31f64ee42a791f3649
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/12/2017
 
 ---
-# <a name="how-to-load-xml-from-a-file-visual-basic"></a>方法: ファイル (Visual Basic の場合) から XML を読み込む
-このトピックで説明を使用して、URI から XML を読み込む方法、<xref:System.Xml.Linq.XElement.Load%2A?displayProperty=fullName>メソッド</xref:System.Xml.Linq.XElement.Load%2A?displayProperty=fullName>。  
+# <a name="how-to-load-xml-from-a-file-visual-basic"></a><span data-ttu-id="6ec18-102">方法: ファイル (Visual Basic の場合) から XML を読み込む</span><span class="sxs-lookup"><span data-stu-id="6ec18-102">How to: Load XML from a File (Visual Basic)</span></span>
+<span data-ttu-id="6ec18-103">このトピックで説明を使用して、URI から XML を読み込む方法、<xref:System.Xml.Linq.XElement.Load%2A?displayProperty=fullName>メソッド</xref:System.Xml.Linq.XElement.Load%2A?displayProperty=fullName>。</span><span class="sxs-lookup"><span data-stu-id="6ec18-103">This topic shows how to load XML from a URI by using the <xref:System.Xml.Linq.XElement.Load%2A?displayProperty=fullName> method.</span></span>  
   
-## <a name="example"></a>例  
- 次の例では、ファイルから XML ドキュメントを読み込む方法を示します。 この例では、books.xml を読み込んで、XML ツリーをコンソールに出力します。  
+## <a name="example"></a><span data-ttu-id="6ec18-104">例</span><span class="sxs-lookup"><span data-stu-id="6ec18-104">Example</span></span>  
+ <span data-ttu-id="6ec18-105">次の例では、ファイルから XML ドキュメントを読み込む方法を示します。</span><span class="sxs-lookup"><span data-stu-id="6ec18-105">The following example shows how to load an XML document from a file.</span></span> <span data-ttu-id="6ec18-106">この例では、books.xml を読み込んで、XML ツリーをコンソールに出力します。</span><span class="sxs-lookup"><span data-stu-id="6ec18-106">The following example loads books.xml and outputs the XML tree to the console.</span></span>  
   
- この例は、次の XML ドキュメントを使用して:[サンプル XML ファイル: 書籍 (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-books-linq-to-xml.md)します。  
+ <span data-ttu-id="6ec18-107">この例は、次の XML ドキュメントを使用して:[サンプル XML ファイル: 書籍 (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-books-linq-to-xml.md)します。</span><span class="sxs-lookup"><span data-stu-id="6ec18-107">This example uses the following XML document: [Sample XML File: Books (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-books-linq-to-xml.md).</span></span>  
   
 ```vb  
 Dim booksFromFile As XElement = XElement.Load("books.xml")  
 Console.WriteLine(booksFromFile)  
 ```  
   
- このコードを実行すると、次の出力が生成されます。  
+ <span data-ttu-id="6ec18-108">このコードを実行すると、次の出力が生成されます。</span><span class="sxs-lookup"><span data-stu-id="6ec18-108">This code produces the following output:</span></span>  
   
 ```xml  
 <Catalog>  
@@ -65,5 +66,5 @@ Console.WriteLine(booksFromFile)
 </Catalog>  
 ```  
   
-## <a name="see-also"></a>関連項目  
- [(Visual Basic) の XML の解析](../../../../visual-basic/programming-guide/concepts/linq/parsing-xml.md)
+## <a name="see-also"></a><span data-ttu-id="6ec18-109">関連項目</span><span class="sxs-lookup"><span data-stu-id="6ec18-109">See Also</span></span>  
+ [<span data-ttu-id="6ec18-110">(Visual Basic) の XML の解析</span><span class="sxs-lookup"><span data-stu-id="6ec18-110">Parsing XML (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/parsing-xml.md)

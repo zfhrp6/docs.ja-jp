@@ -26,20 +26,21 @@ caps.latest.revision: 97
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-translationtype: Human Translation
-ms.sourcegitcommit: c50b3e328998b65ec47efe6d7457b36116813c77
-ms.openlocfilehash: d12492626a57fd4f09c25f97fb5a12c8bbf22ea1
-ms.lasthandoff: 04/08/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
+ms.openlocfilehash: 47f68a3410eda53c2f5505b17aa319d516df335d
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/02/2017
 
 ---
-# <a name="windows-presentation-foundation"></a>Windows Presentation Foundation
-Visual Studio 2015 の Windows Presentation Foundation (WPF) は、Windows 上の最新の基幹業務デスクトップ アプリケーションを構築するための統一されたプログラミング モデルを開発者に提供します。  
+# <a name="windows-presentation-foundation"></a><span data-ttu-id="0ed95-102">Windows Presentation Foundation</span><span class="sxs-lookup"><span data-stu-id="0ed95-102">Windows Presentation Foundation</span></span>
+<span data-ttu-id="0ed95-103">Visual Studio 2015 の Windows Presentation Foundation (WPF) は、Windows 上の最新の基幹業務デスクトップ アプリケーションを構築するための統一されたプログラミング モデルを開発者に提供します。</span><span class="sxs-lookup"><span data-stu-id="0ed95-103">Windows Presentation Foundation (WPF) in Visual Studio 2015 provides developers with a unified programming model for building modern line-of-business desktop applications on Windows.</span></span>  
   
 > [!NOTE]
->  Mozilla Firefox ブラウザーでは、Microsoft Framework Assistant の拡張機能が無効化されます。 Firefox から拡張機能を削除する方法は、「[.NET Framework Assistant for Firefox を削除する方法](https://support.microsoft.com/en-us/kb/963707)」を参照してください。  
+>  <span data-ttu-id="0ed95-104">Mozilla Firefox ブラウザーでは、Microsoft Framework Assistant の拡張機能が無効化されます。</span><span class="sxs-lookup"><span data-stu-id="0ed95-104">The Mozilla Firefox browser disables the Microsoft Framework Assistant extension.</span></span> <span data-ttu-id="0ed95-105">Firefox から拡張機能を削除する方法は、「[.NET Framework Assistant for Firefox を削除する方法](https://support.microsoft.com/en-us/kb/963707)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="0ed95-105">See [How to remove the .NET Framework Assistant for Firefox](https://support.microsoft.com/en-us/kb/963707) for information on how to remove the extension from Firefox.</span></span>  
   
- [Windows Presentation Foundation での最新のデスクトップ アプリケーションの作成](http://msdn.microsoft.com/library/8d6c7295-ff64-4681-b01c-5056e8504569)  
+ [<span data-ttu-id="0ed95-106">Windows Presentation Foundation での最新のデスクトップ アプリケーションの作成</span><span class="sxs-lookup"><span data-stu-id="0ed95-106">Create Modern Desktop Applications with Windows Presentation Foundation</span></span>](http://msdn.microsoft.com/library/8d6c7295-ff64-4681-b01c-5056e8504569)  
   
- [Visual Studio および Blend for Visual Studio での XAML の設計](http://msdn.microsoft.com/library/288e2415-9fcf-408e-bc35-9848315e14fd)  
+ [<span data-ttu-id="0ed95-107">Visual Studio および Blend for Visual Studio での XAML の設計</span><span class="sxs-lookup"><span data-stu-id="0ed95-107">Designing XAML in Visual Studio and Blend for Visual Studio</span></span>](http://msdn.microsoft.com/library/288e2415-9fcf-408e-bc35-9848315e14fd)  
   
- [Visual Studio の入手](https://www.visualstudio.com/features/wpf-vs)
+ [<span data-ttu-id="0ed95-108">Visual Studio の入手</span><span class="sxs-lookup"><span data-stu-id="0ed95-108">Get Visual Studio</span></span>](https://www.visualstudio.com/features/wpf-vs)

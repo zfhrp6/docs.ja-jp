@@ -17,7 +17,7 @@ ms.lasthandoff: 07/28/2017
 
 ---
 
-# <a name="getting-started-with-aspnet-core"></a>ASP.NET Core の概要    
+# <a name="getting-started-with-aspnet-core"></a><span data-ttu-id="555e4-104">ASP.NET Core の概要</span><span class="sxs-lookup"><span data-stu-id="555e4-104">Getting started with ASP.NET Core</span></span>    
     
-ASP.NET Core Web アプリケーションの開発に関するチュートリアルについては、「[ASP.NET Core documentation](/aspnet/core/)」 (ASP.NET Core のドキュメント) を参照することをお勧めしています。
+<span data-ttu-id="555e4-105">ASP.NET Core Web アプリケーションの開発に関するチュートリアルについては、「[ASP.NET Core documentation](/aspnet/core/)」 (ASP.NET Core のドキュメント) を参照することをお勧めしています。</span><span class="sxs-lookup"><span data-stu-id="555e4-105">For tutorials about developing ASP.NET Core web applications, we suggest you head over to [ASP.NET Core documentation](/aspnet/core/).</span></span>
 

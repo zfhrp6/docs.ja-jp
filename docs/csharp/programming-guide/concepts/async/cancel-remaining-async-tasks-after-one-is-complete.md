@@ -26,39 +26,39 @@ ms.contentlocale: ja-jp
 ms.lasthandoff: 07/28/2017
 
 ---
-# <a name="cancel-remaining-async-tasks-after-one-is-complete-c"></a>完了後の残りの非同期タスクのキャンセル (C#)
-<xref:System.Threading.Tasks.Task.WhenAny%2A?displayProperty=fullName> メソッドを <xref:System.Threading.CancellationToken> と共に使用すると、1 つのタスクが完了したときに残りのすべてのタスクを取り消しできます。 `WhenAny` メソッドは、タスクのコレクションである引数を受け取ります。 このメソッドは、すべてのタスクを開始し、単一のタスクを返します。 単一のタスクは、コレクションのいずれかのタスクが完了すると完了します。  
+# <a name="cancel-remaining-async-tasks-after-one-is-complete-c"></a><span data-ttu-id="7d2a3-102">完了後の残りの非同期タスクのキャンセル (C#)</span><span class="sxs-lookup"><span data-stu-id="7d2a3-102">Cancel Remaining Async Tasks after One Is Complete (C#)</span></span>
+<span data-ttu-id="7d2a3-103"><xref:System.Threading.Tasks.Task.WhenAny%2A?displayProperty=fullName> メソッドを <xref:System.Threading.CancellationToken> と共に使用すると、1 つのタスクが完了したときに残りのすべてのタスクを取り消しできます。</span><span class="sxs-lookup"><span data-stu-id="7d2a3-103">By using the <xref:System.Threading.Tasks.Task.WhenAny%2A?displayProperty=fullName> method together with a <xref:System.Threading.CancellationToken>, you can cancel all remaining tasks when one task is complete.</span></span> <span data-ttu-id="7d2a3-104">`WhenAny` メソッドは、タスクのコレクションである引数を受け取ります。</span><span class="sxs-lookup"><span data-stu-id="7d2a3-104">The `WhenAny` method takes an argument that’s a collection of tasks.</span></span> <span data-ttu-id="7d2a3-105">このメソッドは、すべてのタスクを開始し、単一のタスクを返します。</span><span class="sxs-lookup"><span data-stu-id="7d2a3-105">The method starts all the tasks and returns a single task.</span></span> <span data-ttu-id="7d2a3-106">単一のタスクは、コレクションのいずれかのタスクが完了すると完了します。</span><span class="sxs-lookup"><span data-stu-id="7d2a3-106">The single task is complete when any task in the collection is complete.</span></span>  
   
- この例では、キャンセル トークンを `WhenAny` と共に使用して、タスクのコレクションから最初のタスクを終了まで保持し、残りのタスクを取り消す方法を示しています。 各タスクは、Web サイトのコンテンツをダウンロードします。 この例は最初のダウンロードが完了したコンテンツの長さを表示し、他のダウンロードを取り消します。  
+ <span data-ttu-id="7d2a3-107">この例では、キャンセル トークンを `WhenAny` と共に使用して、タスクのコレクションから最初のタスクを終了まで保持し、残りのタスクを取り消す方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="7d2a3-107">This example demonstrates how to use a cancellation token in conjunction with `WhenAny` to hold onto the first task to finish from the collection of tasks and to cancel the remaining tasks.</span></span> <span data-ttu-id="7d2a3-108">各タスクは、Web サイトのコンテンツをダウンロードします。</span><span class="sxs-lookup"><span data-stu-id="7d2a3-108">Each task downloads the contents of a website.</span></span> <span data-ttu-id="7d2a3-109">この例は最初のダウンロードが完了したコンテンツの長さを表示し、他のダウンロードを取り消します。</span><span class="sxs-lookup"><span data-stu-id="7d2a3-109">The example displays the length of the contents of the first download to complete and cancels the other downloads.</span></span>  
   
 > [!NOTE]
->  この例を実行するには、コンピューターに Visual Studio 2012 以降および .NET Framework 4.5 以降がインストールされている必要があります。  
+>  <span data-ttu-id="7d2a3-110">この例を実行するには、コンピューターに Visual Studio 2012 以降および .NET Framework 4.5 以降がインストールされている必要があります。</span><span class="sxs-lookup"><span data-stu-id="7d2a3-110">To run the examples, you must have Visual Studio 2012 or newer and the .NET Framework 4.5 or newer installed on your computer.</span></span>  
   
-## <a name="downloading-the-example"></a>例をダウンロードする  
- 完全な Windows Presentation Foundation (WPF) プロジェクトは「[Async Sample: Fine Tuning Your Application (非同期のサンプル: アプリケーションの微調整)](http://go.microsoft.com/fwlink/?LinkId=255046)」からダウンロードできます。ダウンロード後、次の手順に従います。  
+## <a name="downloading-the-example"></a><span data-ttu-id="7d2a3-111">例をダウンロードする</span><span class="sxs-lookup"><span data-stu-id="7d2a3-111">Downloading the Example</span></span>  
+ <span data-ttu-id="7d2a3-112">完全な Windows Presentation Foundation (WPF) プロジェクトは「[Async Sample: Fine Tuning Your Application (非同期のサンプル: アプリケーションの微調整)](http://go.microsoft.com/fwlink/?LinkId=255046)」からダウンロードできます。ダウンロード後、次の手順に従います。</span><span class="sxs-lookup"><span data-stu-id="7d2a3-112">You can download the complete Windows Presentation Foundation (WPF) project from [Async Sample: Fine Tuning Your Application](http://go.microsoft.com/fwlink/?LinkId=255046) and then follow these steps.</span></span>  
   
-1.  ダウンロードしたファイルを圧縮解除し、Visual Studio を起動します。  
+1.  <span data-ttu-id="7d2a3-113">ダウンロードしたファイルを圧縮解除し、Visual Studio を起動します。</span><span class="sxs-lookup"><span data-stu-id="7d2a3-113">Decompress the file that you downloaded, and then start Visual Studio.</span></span>  
   
-2.  メニュー バーで **[ファイル]**、 **[開く]**、 **[プロジェクト/ソリューション]**の順に選択します。  
+2.  <span data-ttu-id="7d2a3-114">メニュー バーで **[ファイル]**、 **[開く]**、 **[プロジェクト/ソリューション]**の順に選択します。</span><span class="sxs-lookup"><span data-stu-id="7d2a3-114">On the menu bar, choose **File**, **Open**, **Project/Solution**.</span></span>  
   
-3.  **[プロジェクトを開く]** ダイアログ ボックスで、圧縮解除したサンプル コードを含むフォルダーを開き、AsyncFineTuningCS のソリューション (.sln) ファイルを開きます。  
+3.  <span data-ttu-id="7d2a3-115">**[プロジェクトを開く]** ダイアログ ボックスで、圧縮解除したサンプル コードを含むフォルダーを開き、AsyncFineTuningCS のソリューション (.sln) ファイルを開きます。</span><span class="sxs-lookup"><span data-stu-id="7d2a3-115">In the **Open Project** dialog box, open the folder that holds the sample code that you decompressed, and then open the solution (.sln) file for AsyncFineTuningCS.</span></span>  
   
-4.  **ソリューション エクスプローラー**で、**CancelAfterOneTask** プロジェクトのショートカット メニューを開き、**[スタートアップ プロジェクトに設定]** をクリックします。  
+4.  <span data-ttu-id="7d2a3-116">**ソリューション エクスプローラー**で、**CancelAfterOneTask** プロジェクトのショートカット メニューを開き、**[スタートアップ プロジェクトに設定]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="7d2a3-116">In **Solution Explorer**, open the shortcut menu for the **CancelAfterOneTask** project, and then choose **Set as StartUp Project**.</span></span>  
   
-5.  F5 キーを押してプロジェクトを実行します。  
+5.  <span data-ttu-id="7d2a3-117">F5 キーを押してプロジェクトを実行します。</span><span class="sxs-lookup"><span data-stu-id="7d2a3-117">Choose the F5 key to run the project.</span></span>  
   
-     Ctrl + F5 キーを押して、デバッグを行わずにプロジェクトを実行します。  
+     <span data-ttu-id="7d2a3-118">Ctrl + F5 キーを押して、デバッグを行わずにプロジェクトを実行します。</span><span class="sxs-lookup"><span data-stu-id="7d2a3-118">Choose the Ctrl+F5 keys to run the project without debugging it.</span></span>  
   
-6.  プログラムを複数回実行し、最初に終了するダウンロードが異なることを確認します。  
+6.  <span data-ttu-id="7d2a3-119">プログラムを複数回実行し、最初に終了するダウンロードが異なることを確認します。</span><span class="sxs-lookup"><span data-stu-id="7d2a3-119">Run the program several times to verify that different downloads finish first.</span></span>  
   
- プロジェクトをダウンロードしない場合は、このトピックの最後の MainWindow.xaml.cs ファイルをレビューできます。  
+ <span data-ttu-id="7d2a3-120">プロジェクトをダウンロードしない場合は、このトピックの最後の MainWindow.xaml.cs ファイルをレビューできます。</span><span class="sxs-lookup"><span data-stu-id="7d2a3-120">If you don't want to download the project, you can review the MainWindow.xaml.cs file at the end of this topic.</span></span>  
   
-## <a name="building-the-example"></a>例のビルド  
- このトピックの例では、「[非同期タスクまたはタスクの一覧のキャンセル (C#)](../../../../csharp/programming-guide/concepts/async/cancel-an-async-task-or-a-list-of-tasks.md)」で開発したプロジェクトに追加して、タスクのリストをキャンセルします。 この例では、[**キャンセル**] ボタンは明示的に使用していませんが、同じ UI を使用します。  
+## <a name="building-the-example"></a><span data-ttu-id="7d2a3-121">例のビルド</span><span class="sxs-lookup"><span data-stu-id="7d2a3-121">Building the Example</span></span>  
+ <span data-ttu-id="7d2a3-122">このトピックの例では、「[非同期タスクまたはタスクの一覧のキャンセル (C#)](../../../../csharp/programming-guide/concepts/async/cancel-an-async-task-or-a-list-of-tasks.md)」で開発したプロジェクトに追加して、タスクのリストをキャンセルします。</span><span class="sxs-lookup"><span data-stu-id="7d2a3-122">The example in this topic adds to the project that's developed in [Cancel an Async Task or a List of Tasks (C#)](../../../../csharp/programming-guide/concepts/async/cancel-an-async-task-or-a-list-of-tasks.md) to cancel a list of tasks.</span></span> <span data-ttu-id="7d2a3-123">この例では、[**キャンセル**] ボタンは明示的に使用していませんが、同じ UI を使用します。</span><span class="sxs-lookup"><span data-stu-id="7d2a3-123">The example uses the same UI, although the **Cancel** button isn’t used explicitly.</span></span>  
   
- この例を自分で 1 つずつビルドするには、"例をダウンロードする" セクションの手順に従います。ただし、**[スタートアップ プロジェクト]** として **CancelAListOfTasks** を選択します。 そのプロジェクトに、このトピックでの変更を追加します。  
+ <span data-ttu-id="7d2a3-124">この例を自分で 1 つずつビルドするには、"例をダウンロードする" セクションの手順に従います。ただし、**[スタートアップ プロジェクト]** として **CancelAListOfTasks** を選択します。</span><span class="sxs-lookup"><span data-stu-id="7d2a3-124">To build the example yourself, step by step, follow the instructions in the "Downloading the Example" section, but choose **CancelAListOfTasks** as the **StartUp Project**.</span></span> <span data-ttu-id="7d2a3-125">そのプロジェクトに、このトピックでの変更を追加します。</span><span class="sxs-lookup"><span data-stu-id="7d2a3-125">Add the changes in this topic to that project.</span></span>  
   
- **CancelAListOfTasks** プロジェクトの MainWindow.xaml.cs ファイルで、各 Web サイトの処理ステップを `AccessTheWebAsync` のループから次の非同期メソッドに移動して、遷移を開始します。  
+ <span data-ttu-id="7d2a3-126">**CancelAListOfTasks** プロジェクトの MainWindow.xaml.cs ファイルで、各 Web サイトの処理ステップを `AccessTheWebAsync` のループから次の非同期メソッドに移動して、遷移を開始します。</span><span class="sxs-lookup"><span data-stu-id="7d2a3-126">In the MainWindow.xaml.cs file of the **CancelAListOfTasks** project, start the transition by moving the processing steps for each website from the loop in `AccessTheWebAsync` to the following async method.</span></span>  
   
 ```csharp  
 / ***Bundle the processing steps for a website into one async method.  
@@ -74,13 +74,13 @@ async Task<int> ProcessURLAsync(string url, HttpClient client, CancellationToken
 }  
 ```  
   
- この例では、`AccessTheWebAsync` で、<xref:System.Linq.Enumerable.ToArray%2A> メソッドのクエリと `WhenAny` メソッドを使用して、タスクの配列を作成して開始します。 配列への `WhenAny` のアプリケーションは、待機したときに、タスクの配列で完了に到達する最初のタスクを評価する 1 つのタスクを返します。  
+ <span data-ttu-id="7d2a3-127">この例では、`AccessTheWebAsync` で、<xref:System.Linq.Enumerable.ToArray%2A> メソッドのクエリと `WhenAny` メソッドを使用して、タスクの配列を作成して開始します。</span><span class="sxs-lookup"><span data-stu-id="7d2a3-127">In `AccessTheWebAsync`, this example uses a query, the  <xref:System.Linq.Enumerable.ToArray%2A> method, and the `WhenAny` method to create and start an array of tasks.</span></span> <span data-ttu-id="7d2a3-128">配列への `WhenAny` のアプリケーションは、待機したときに、タスクの配列で完了に到達する最初のタスクを評価する 1 つのタスクを返します。</span><span class="sxs-lookup"><span data-stu-id="7d2a3-128">The application of `WhenAny` to the array returns a single task that, when awaited, evaluates to the first task to reach completion in the array of tasks.</span></span>  
   
- `AccessTheWebAsync` で次の変更を行います。 アスタリスクはコード ファイルの変更点を示しています。  
+ <span data-ttu-id="7d2a3-129">`AccessTheWebAsync` で次の変更を行います。</span><span class="sxs-lookup"><span data-stu-id="7d2a3-129">Make the following changes in `AccessTheWebAsync`.</span></span> <span data-ttu-id="7d2a3-130">アスタリスクはコード ファイルの変更点を示しています。</span><span class="sxs-lookup"><span data-stu-id="7d2a3-130">Asterisks mark the changes in the code file.</span></span>  
   
-1.  ループをコメント アウトするか、削除します。  
+1.  <span data-ttu-id="7d2a3-131">ループをコメント アウトするか、削除します。</span><span class="sxs-lookup"><span data-stu-id="7d2a3-131">Comment out or delete the loop.</span></span>  
   
-2.  実行されると、一般的なタスクのコレクションを生成するクエリを作成します。 `ProcessURLAsync` に対する各呼び出しは、<xref:System.Threading.Tasks.Task%601> が整数である `TResult` を返します。  
+2.  <span data-ttu-id="7d2a3-132">実行されると、一般的なタスクのコレクションを生成するクエリを作成します。</span><span class="sxs-lookup"><span data-stu-id="7d2a3-132">Create a query that, when executed, produces a collection of generic tasks.</span></span> <span data-ttu-id="7d2a3-133">`ProcessURLAsync` に対する各呼び出しは、<xref:System.Threading.Tasks.Task%601> が整数である `TResult` を返します。</span><span class="sxs-lookup"><span data-stu-id="7d2a3-133">Each call to `ProcessURLAsync` returns a <xref:System.Threading.Tasks.Task%601> where `TResult` is an integer.</span></span>  
   
     ```csharp  
     // ***Create a query that, when executed, returns a collection of tasks.  
@@ -88,14 +88,14 @@ async Task<int> ProcessURLAsync(string url, HttpClient client, CancellationToken
         from url in urlList select ProcessURLAsync(url, client, ct);  
     ```  
   
-3.  `ToArray` を呼び出してクエリを実行し、タスクを開始します。 次の手順で `WhenAny` メソッドのアプリケーションは、`ToArray` を使用せずにクエリを実行してタスクを開始しますが、他のメソッドはそうでない場合があります。 最も安全な方法は、クエリの実行を明示的に強制することです。  
+3.  <span data-ttu-id="7d2a3-134">`ToArray` を呼び出してクエリを実行し、タスクを開始します。</span><span class="sxs-lookup"><span data-stu-id="7d2a3-134">Call `ToArray` to execute the query and start the tasks.</span></span> <span data-ttu-id="7d2a3-135">次の手順で `WhenAny` メソッドのアプリケーションは、`ToArray` を使用せずにクエリを実行してタスクを開始しますが、他のメソッドはそうでない場合があります。</span><span class="sxs-lookup"><span data-stu-id="7d2a3-135">The application of the `WhenAny` method in the next step would execute the query and start the tasks without using `ToArray`, but other methods might not.</span></span> <span data-ttu-id="7d2a3-136">最も安全な方法は、クエリの実行を明示的に強制することです。</span><span class="sxs-lookup"><span data-stu-id="7d2a3-136">The safest practice is to force execution of the query explicitly.</span></span>  
   
     ```csharp  
     // ***Use ToArray to execute the query and start the download tasks.   
     Task<int>[] downloadTasks = downloadTasksQuery.ToArray();  
     ```  
   
-4.  タスクのコレクションで `WhenAny` を呼び出します。 `WhenAny` は `Task(Of Task(Of Integer))` または `Task<Task<int>>` を返します。  つまり、`WhenAny` は、待機すると、単一の `Task(Of Integer)` または `Task<int>` に評価するタスクを返します。 その単一のタスクが、コレクションで最初に終了するタスクです。 最初に終了したタスクは `firstFinishedTask` に割り当てられます。 `firstFinishedTask` の型は、<xref:System.Threading.Tasks.Task%601> が整数である `TResult` です。それは `ProcessURLAsync` の戻り値の型であるためです。  
+4.  <span data-ttu-id="7d2a3-137">タスクのコレクションで `WhenAny` を呼び出します。</span><span class="sxs-lookup"><span data-stu-id="7d2a3-137">Call `WhenAny` on the collection of tasks.</span></span> <span data-ttu-id="7d2a3-138">`WhenAny` は `Task(Of Task(Of Integer))` または `Task<Task<int>>` を返します。</span><span class="sxs-lookup"><span data-stu-id="7d2a3-138">`WhenAny` returns a `Task(Of Task(Of Integer))` or `Task<Task<int>>`.</span></span>  <span data-ttu-id="7d2a3-139">つまり、`WhenAny` は、待機すると、単一の `Task(Of Integer)` または `Task<int>` に評価するタスクを返します。</span><span class="sxs-lookup"><span data-stu-id="7d2a3-139">That is, `WhenAny` returns a task that evaluates to a single `Task(Of Integer)` or `Task<int>` when it’s awaited.</span></span> <span data-ttu-id="7d2a3-140">その単一のタスクが、コレクションで最初に終了するタスクです。</span><span class="sxs-lookup"><span data-stu-id="7d2a3-140">That single task is the first task in the collection to finish.</span></span> <span data-ttu-id="7d2a3-141">最初に終了したタスクは `firstFinishedTask` に割り当てられます。</span><span class="sxs-lookup"><span data-stu-id="7d2a3-141">The task that finished first is assigned to `firstFinishedTask`.</span></span> <span data-ttu-id="7d2a3-142">`firstFinishedTask` の型は、<xref:System.Threading.Tasks.Task%601> が整数である `TResult` です。それは `ProcessURLAsync` の戻り値の型であるためです。</span><span class="sxs-lookup"><span data-stu-id="7d2a3-142">The type of `firstFinishedTask` is <xref:System.Threading.Tasks.Task%601> where `TResult` is an integer because that's the return type of `ProcessURLAsync`.</span></span>  
   
     ```csharp  
     // ***Call WhenAny and then await the result. The task that finishes   
@@ -103,28 +103,28 @@ async Task<int> ProcessURLAsync(string url, HttpClient client, CancellationToken
     Task<int> firstFinishedTask = await Task.WhenAny(downloadTasks);  
     ```  
   
-5.  この例では、最初に終了したタスクにのみ焦点を当てています。 したがって、<xref:System.Threading.CancellationTokenSource.Cancel%2A?displayProperty=fullName> を使用して、残りのタスクを取り消します。  
+5.  <span data-ttu-id="7d2a3-143">この例では、最初に終了したタスクにのみ焦点を当てています。</span><span class="sxs-lookup"><span data-stu-id="7d2a3-143">In this example, you’re interested only in the task that finishes first.</span></span> <span data-ttu-id="7d2a3-144">したがって、<xref:System.Threading.CancellationTokenSource.Cancel%2A?displayProperty=fullName> を使用して、残りのタスクを取り消します。</span><span class="sxs-lookup"><span data-stu-id="7d2a3-144">Therefore, use <xref:System.Threading.CancellationTokenSource.Cancel%2A?displayProperty=fullName> to cancel the remaining tasks.</span></span>  
   
     ```csharp  
     // ***Cancel the rest of the downloads. You just want the first one.  
     cts.Cancel();  
     ```  
   
-6.  最後に、`firstFinishedTask` を待機して、ダウンロードされたコンテンツの長さを取得します。  
+6.  <span data-ttu-id="7d2a3-145">最後に、`firstFinishedTask` を待機して、ダウンロードされたコンテンツの長さを取得します。</span><span class="sxs-lookup"><span data-stu-id="7d2a3-145">Finally, await `firstFinishedTask` to retrieve the length of the downloaded content.</span></span>  
   
     ```csharp  
     var length = await firstFinishedTask;  
     resultsTextBox.Text += String.Format("\r\nLength of the downloaded website:  {0}\r\n", length);  
     ```  
   
- プログラムを複数回実行し、最初に終了するダウンロードが異なることを確認します。  
+ <span data-ttu-id="7d2a3-146">プログラムを複数回実行し、最初に終了するダウンロードが異なることを確認します。</span><span class="sxs-lookup"><span data-stu-id="7d2a3-146">Run the program several times to verify that different downloads finish first.</span></span>  
   
-## <a name="complete-example"></a>コード例全体  
- 次のコードは、この例で使用した MainWindow.xaml.cs ファイルの全体です。 アスタリスクはこの例のために追加された要素を示しています。  
+## <a name="complete-example"></a><span data-ttu-id="7d2a3-147">コード例全体</span><span class="sxs-lookup"><span data-stu-id="7d2a3-147">Complete Example</span></span>  
+ <span data-ttu-id="7d2a3-148">次のコードは、この例で使用した MainWindow.xaml.cs ファイルの全体です。</span><span class="sxs-lookup"><span data-stu-id="7d2a3-148">The following code is the complete MainWindow.xaml.cs file for the example.</span></span> <span data-ttu-id="7d2a3-149">アスタリスクはこの例のために追加された要素を示しています。</span><span class="sxs-lookup"><span data-stu-id="7d2a3-149">Asterisks mark the elements that were added for this example.</span></span>  
   
- <xref:System.Net.Http> の参照を追加する必要があることに注意してください。  
+ <span data-ttu-id="7d2a3-150"><xref:System.Net.Http> の参照を追加する必要があることに注意してください。</span><span class="sxs-lookup"><span data-stu-id="7d2a3-150">Notice that you must add a reference for <xref:System.Net.Http>.</span></span>  
   
- このプロジェクトは「[Async Sample: Fine Tuning Your Application (非同期のサンプル: アプリケーションの微調整)](http://go.microsoft.com/fwlink/?LinkId=255046)」からダウンロードできます。  
+ <span data-ttu-id="7d2a3-151">このプロジェクトは「[Async Sample: Fine Tuning Your Application (非同期のサンプル: アプリケーションの微調整)](http://go.microsoft.com/fwlink/?LinkId=255046)」からダウンロードできます。</span><span class="sxs-lookup"><span data-stu-id="7d2a3-151">You can download the project from [Async Sample: Fine Tuning Your Application](http://go.microsoft.com/fwlink/?LinkId=255046).</span></span>  
   
 ```csharp  
 using System;  
@@ -274,9 +274,9 @@ namespace CancelAfterOneTask
 }  
 ```  
   
-## <a name="see-also"></a>関連項目  
- <xref:System.Threading.Tasks.Task.WhenAny%2A>   
- [非同期アプリケーションの微調整 (C#)](../../../../csharp/programming-guide/concepts/async/fine-tuning-your-async-application.md)   
- [Async および Await を使用した非同期プログラミング (C#)](../../../../csharp/programming-guide/concepts/async/index.md)   
- [非同期のサンプル: アプリケーションの微調整](http://go.microsoft.com/fwlink/?LinkId=255046)
+## <a name="see-also"></a><span data-ttu-id="7d2a3-152">関連項目</span><span class="sxs-lookup"><span data-stu-id="7d2a3-152">See Also</span></span>  
+ <span data-ttu-id="7d2a3-153"><xref:System.Threading.Tasks.Task.WhenAny%2A></span><span class="sxs-lookup"><span data-stu-id="7d2a3-153"><xref:System.Threading.Tasks.Task.WhenAny%2A></span></span>   
+ <span data-ttu-id="7d2a3-154">[非同期アプリケーションの微調整 (C#)](../../../../csharp/programming-guide/concepts/async/fine-tuning-your-async-application.md) </span><span class="sxs-lookup"><span data-stu-id="7d2a3-154">[Fine-Tuning Your Async Application (C#)](../../../../csharp/programming-guide/concepts/async/fine-tuning-your-async-application.md) </span></span>  
+ <span data-ttu-id="7d2a3-155">[Async および Await を使用した非同期プログラミング (C#)](../../../../csharp/programming-guide/concepts/async/index.md) </span><span class="sxs-lookup"><span data-stu-id="7d2a3-155">[Asynchronous Programming with async and await (C#)](../../../../csharp/programming-guide/concepts/async/index.md) </span></span>  
+ [<span data-ttu-id="7d2a3-156">非同期のサンプル: アプリケーションの微調整</span><span class="sxs-lookup"><span data-stu-id="7d2a3-156">Async Sample: Fine Tuning Your Application</span></span>](http://go.microsoft.com/fwlink/?LinkId=255046)
 

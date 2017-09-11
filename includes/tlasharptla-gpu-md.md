@@ -1,1 +1,1 @@
-グラフィック処理装置 (GPU)
+<span data-ttu-id="3411b-101">グラフィック処理装置 (GPU)</span><span class="sxs-lookup"><span data-stu-id="3411b-101">graphics processing unit (GPU)</span></span>

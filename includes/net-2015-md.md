@@ -1,1 +1,1 @@
-.NET Framework 4.6
+<span data-ttu-id="1de1e-101">.NET Framework 4.6</span><span class="sxs-lookup"><span data-stu-id="1de1e-101">.NET Framework 4.6</span></span>

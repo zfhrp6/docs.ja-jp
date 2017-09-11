@@ -32,33 +32,34 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 2861ef22c9307e5bd7d2eabf4f6e37bbd9086345
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
+ms.openlocfilehash: 27e83344c68d73c992d2395ab5d1bfcdb67520b0
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/12/2017
 
 ---
-# <a name="non-cls-compliant-ltmembernamegt-is-not-allowed-in-a-cls-compliant-interface"></a>非 CLS 準拠&lt;membername&gt; CLS 準拠インターフェイスでは許可されません
-プロパティ、プロシージャ、またはインターフェイスのイベントとしてマークされている`<CLSCompliant(True)>`インターフェイス自体としてマークされている場合`<CLSCompliant(False)>`またはマークされていません。  
+# <a name="non-cls-compliant-ltmembernamegt-is-not-allowed-in-a-cls-compliant-interface"></a><span data-ttu-id="c24c1-102">非 CLS 準拠&lt;membername&gt; CLS 準拠インターフェイスでは許可されません</span><span class="sxs-lookup"><span data-stu-id="c24c1-102">Non-CLS-compliant &lt;membername&gt; is not allowed in a CLS-compliant interface</span></span>
+<span data-ttu-id="c24c1-103">プロパティ、プロシージャ、またはインターフェイスのイベントとしてマークされている`<CLSCompliant(True)>`インターフェイス自体としてマークされている場合`<CLSCompliant(False)>`またはマークされていません。</span><span class="sxs-lookup"><span data-stu-id="c24c1-103">A property, procedure, or event in an interface is marked as `<CLSCompliant(True)>` when the interface itself is marked as `<CLSCompliant(False)>` or is not marked.</span></span>  
   
- インターフェイスに対応して、[言語非依存および言語非依存コンポーネント](https://msdn.microsoft.com/library/12a7a7h3)(CLS) には、すべてのメンバーは、対応である必要があります。  
+ <span data-ttu-id="c24c1-104">インターフェイスに対応して、[言語非依存および言語非依存コンポーネント](https://msdn.microsoft.com/library/12a7a7h3)(CLS) には、すべてのメンバーは、対応である必要があります。</span><span class="sxs-lookup"><span data-stu-id="c24c1-104">For an interface to be compliant with the [Language Independence and Language-Independent Components](https://msdn.microsoft.com/library/12a7a7h3) (CLS), all its members must be compliant.</span></span>  
   
- 適用すると、<xref:System.CLSCompliantAttribute>プログラミング要素に属性を設定する`isCompliant`するか、パラメーター`True`または`False`を対応または非対応を示します</xref:System.CLSCompliantAttribute>。 このパラメーターには既定値がありません。値を指定する必要があります。  
+ <span data-ttu-id="c24c1-105">適用すると、<xref:System.CLSCompliantAttribute>プログラミング要素に属性を設定する`isCompliant`するか、パラメーター`True`または`False`を対応または非対応を示します</xref:System.CLSCompliantAttribute>。</span><span class="sxs-lookup"><span data-stu-id="c24c1-105">When you apply the <xref:System.CLSCompliantAttribute> to a programming element, you set the attribute's `isCompliant` parameter to either `True` or `False` to indicate compliance or noncompliance.</span></span> <span data-ttu-id="c24c1-106">このパラメーターには既定値がありません。値を指定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="c24c1-106">There is no default for this parameter, and you must supply a value.</span></span>  
   
- 適用しない場合、<xref:System.CLSCompliantAttribute>要素に準拠するいないと見なされます</xref:System.CLSCompliantAttribute>。  
+ <span data-ttu-id="c24c1-107">適用しない場合、<xref:System.CLSCompliantAttribute>要素に準拠するいないと見なされます</xref:System.CLSCompliantAttribute>。</span><span class="sxs-lookup"><span data-stu-id="c24c1-107">If you do not apply the <xref:System.CLSCompliantAttribute> to an element, it is considered to be noncompliant.</span></span>  
   
- 既定では、このメッセージは警告です。 警告を非表示にする方法や、警告をエラーとして扱う方法の詳細については、「 [Configuring Warnings in Visual Basic](https://docs.microsoft.com/visualstudio/ide/configuring-warnings-in-visual-basic)」を参照してください。  
+ <span data-ttu-id="c24c1-108">既定では、このメッセージは警告です。</span><span class="sxs-lookup"><span data-stu-id="c24c1-108">By default, this message is a warning.</span></span> <span data-ttu-id="c24c1-109">警告を非表示にする方法や、警告をエラーとして扱う方法の詳細については、「 [Configuring Warnings in Visual Basic](https://docs.microsoft.com/visualstudio/ide/configuring-warnings-in-visual-basic)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="c24c1-109">For information on hiding warnings or treating warnings as errors, see [Configuring Warnings in Visual Basic](https://docs.microsoft.com/visualstudio/ide/configuring-warnings-in-visual-basic).</span></span>  
   
- **エラー ID:** BC40033  
+ <span data-ttu-id="c24c1-110">**エラー ID:** BC40033</span><span class="sxs-lookup"><span data-stu-id="c24c1-110">**Error ID:** BC40033</span></span>  
   
-## <a name="to-correct-this-error"></a>このエラーを解決するには  
+## <a name="to-correct-this-error"></a><span data-ttu-id="c24c1-111">このエラーを解決するには</span><span class="sxs-lookup"><span data-stu-id="c24c1-111">To correct this error</span></span>  
   
--   CLS 準拠をする必要があり、インターフェイスのソース コードに制御をマークされているインターフェイス`<CLSCompliant(True)>`すべてのメンバーに対応している場合。  
+-   <span data-ttu-id="c24c1-112">CLS 準拠をする必要があり、インターフェイスのソース コードに制御をマークされているインターフェイス`<CLSCompliant(True)>`すべてのメンバーに対応している場合。</span><span class="sxs-lookup"><span data-stu-id="c24c1-112">If you require CLS compliance and have control over the interface source code, mark the interface as `<CLSCompliant(True)>` if all its members are compliant.</span></span>  
   
--   CLS 準拠を必要となり、インターフェイスのソース コードを管理していない場合、または準拠しているが明確でない場合は、このメンバーを別のインターフェイスを定義します。  
+-   <span data-ttu-id="c24c1-113">CLS 準拠を必要となり、インターフェイスのソース コードを管理していない場合、または準拠しているが明確でない場合は、このメンバーを別のインターフェイスを定義します。</span><span class="sxs-lookup"><span data-stu-id="c24c1-113">If you require CLS compliance and do not have control over the interface source code, or if it does not qualify to be compliant, define this member within a different interface.</span></span>  
   
--   このメンバーが、現在のインターフェイス内に残ることが必要な場合は、削除、<xref:System.CLSCompliantAttribute>その定義からまたはとしてマークして`<CLSCompliant(False)>`</xref:System.CLSCompliantAttribute>。  
+-   <span data-ttu-id="c24c1-114">このメンバーが、現在のインターフェイス内に残ることが必要な場合は、削除、<xref:System.CLSCompliantAttribute>その定義からまたはとしてマークして`<CLSCompliant(False)>`</xref:System.CLSCompliantAttribute>。</span><span class="sxs-lookup"><span data-stu-id="c24c1-114">If you require that this member remain within its current interface, remove the <xref:System.CLSCompliantAttribute> from its definition or mark it as `<CLSCompliant(False)>`.</span></span>  
   
-## <a name="see-also"></a>関連項目  
- [Interface ステートメント](../../../visual-basic/language-reference/statements/interface-statement.md)   
- [\<経由で PAVE > CLS 準拠のコードの記述](http://msdn.microsoft.com/en-us/4c705105-69a2-4e5e-b24e-0633bc32c7f3)
+## <a name="see-also"></a><span data-ttu-id="c24c1-115">関連項目</span><span class="sxs-lookup"><span data-stu-id="c24c1-115">See Also</span></span>  
+ <span data-ttu-id="c24c1-116">[Interface ステートメント](../../../visual-basic/language-reference/statements/interface-statement.md) </span><span class="sxs-lookup"><span data-stu-id="c24c1-116">[Interface Statement](../../../visual-basic/language-reference/statements/interface-statement.md) </span></span>  
+<span data-ttu-id="c24c1-117"> [\<経由で PAVE > CLS 準拠のコードの記述](http://msdn.microsoft.com/en-us/4c705105-69a2-4e5e-b24e-0633bc32c7f3)</span><span class="sxs-lookup"><span data-stu-id="c24c1-117"> [\<PAVE OVER> Writing CLS-Compliant Code](http://msdn.microsoft.com/en-us/4c705105-69a2-4e5e-b24e-0633bc32c7f3)</span></span>

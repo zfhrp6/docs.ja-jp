@@ -35,18 +35,18 @@ ms.contentlocale: ja-jp
 ms.lasthandoff: 07/28/2017
 
 ---
-# <a name="how-to-convert-a-string-to-a-datetime-c-programming-guide"></a>方法 : 文字列を DateTime に変換する (C# プログラミング ガイド)
-プログラムでは、ユーザーが文字列値として日付を入力できるようにするのが一般的です。 文字列ベースの日付を <xref:System.DateTime?displayProperty=fullName> オブジェクトに変換するには、次の例に示すように、 <xref:System.Convert.ToDateTime%28System.String%29?displayProperty=fullName> メソッドまたは <xref:System.DateTime.Parse%28System.String%29?displayProperty=fullName> 静的メソッドを使用することができます。  
+# <a name="how-to-convert-a-string-to-a-datetime-c-programming-guide"></a><span data-ttu-id="2ba71-102">方法 : 文字列を DateTime に変換する (C# プログラミング ガイド)</span><span class="sxs-lookup"><span data-stu-id="2ba71-102">How to: Convert a String to a DateTime (C# Programming Guide)</span></span>
+<span data-ttu-id="2ba71-103">プログラムでは、ユーザーが文字列値として日付を入力できるようにするのが一般的です。</span><span class="sxs-lookup"><span data-stu-id="2ba71-103">It is common for programs to enable users to enter dates as string values.</span></span> <span data-ttu-id="2ba71-104">文字列ベースの日付を <xref:System.DateTime?displayProperty=fullName> オブジェクトに変換するには、次の例に示すように、 <xref:System.Convert.ToDateTime%28System.String%29?displayProperty=fullName> メソッドまたは <xref:System.DateTime.Parse%28System.String%29?displayProperty=fullName> 静的メソッドを使用することができます。</span><span class="sxs-lookup"><span data-stu-id="2ba71-104">To convert a string-based date to a <xref:System.DateTime?displayProperty=fullName> object, you can use the <xref:System.Convert.ToDateTime%28System.String%29?displayProperty=fullName> method or the <xref:System.DateTime.Parse%28System.String%29?displayProperty=fullName> static method, as shown in the following example.</span></span>  
   
- **カルチャ**。  カルチャが異なると、日付文字列の記述方法も異なり場合があります。  たとえば、米国では 2008 年 1 月 20 日を 01/20/2008 と記述します。  フランスでは、この値に対して InvalidFormatException がスローされます。 これは、フランスでは日付時刻を日/月/年として読み込み、米国では月/日/年として読み込むためです。  
+ <span data-ttu-id="2ba71-105">**カルチャ**。</span><span class="sxs-lookup"><span data-stu-id="2ba71-105">**Culture**.</span></span>  <span data-ttu-id="2ba71-106">カルチャが異なると、日付文字列の記述方法も異なり場合があります。</span><span class="sxs-lookup"><span data-stu-id="2ba71-106">Different cultures in the world write date strings in different ways.</span></span>  <span data-ttu-id="2ba71-107">たとえば、米国では 2008 年 1 月 20 日を 01/20/2008 と記述します。</span><span class="sxs-lookup"><span data-stu-id="2ba71-107">For example, in the US 01/20/2008 is January 20th, 2008.</span></span>  <span data-ttu-id="2ba71-108">フランスでは、この値に対して InvalidFormatException がスローされます。</span><span class="sxs-lookup"><span data-stu-id="2ba71-108">In France this will throw an InvalidFormatException.</span></span> <span data-ttu-id="2ba71-109">これは、フランスでは日付時刻を日/月/年として読み込み、米国では月/日/年として読み込むためです。</span><span class="sxs-lookup"><span data-stu-id="2ba71-109">This is because France reads date-times as Day/Month/Year, and in the US it is Month/Day/Year.</span></span>  
   
- その結果、フランスでは 20/01/2008 の文字列は、2008 年 1 月 20 日と解釈されますが、米国では InvalidFormatException がスローされます。  
+ <span data-ttu-id="2ba71-110">その結果、フランスでは 20/01/2008 の文字列は、2008 年 1 月 20 日と解釈されますが、米国では InvalidFormatException がスローされます。</span><span class="sxs-lookup"><span data-stu-id="2ba71-110">Consequently, a string like 20/01/2008 will parse to January 20th, 2008 in France, and then throw an InvalidFormatException in the US.</span></span>  
   
- 現在のカルチャ設定を確認するには、System.Globalization.CultureInfo.CurrentCulture を使用します。  
+ <span data-ttu-id="2ba71-111">現在のカルチャ設定を確認するには、System.Globalization.CultureInfo.CurrentCulture を使用します。</span><span class="sxs-lookup"><span data-stu-id="2ba71-111">To determine your current culture settings, you can use System.Globalization.CultureInfo.CurrentCulture.</span></span>  
   
- 文字列を dateTime に変換する簡単な例については、次の例を参照してください。  
+ <span data-ttu-id="2ba71-112">文字列を dateTime に変換する簡単な例については、次の例を参照してください。</span><span class="sxs-lookup"><span data-stu-id="2ba71-112">See the example below for a simple example of converting a string to dateTime.</span></span>  
   
- 日付文字列の例については、「 <xref:System.Convert.ToDateTime%28System.String%29?displayProperty=fullName>」を参照してください。  
+ <span data-ttu-id="2ba71-113">日付文字列の例については、「 <xref:System.Convert.ToDateTime%28System.String%29?displayProperty=fullName>」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="2ba71-113">For more examples of date strings, see <xref:System.Convert.ToDateTime%28System.String%29?displayProperty=fullName>.</span></span>  
   
 ```csharp  
 string dateTime = "01/08/2008 14:50:50.42";  
@@ -69,9 +69,9 @@ Press any key to continue . . .
  */  
 ```  
   
-## <a name="example"></a>例  
- [!code-cs[csProgGuideStrings#13](../../../csharp/programming-guide/strings/codesnippet/CSharp/how-to-convert-a-string-to-a-datetime_1.cs)]  
+## <a name="example"></a><span data-ttu-id="2ba71-114">例</span><span class="sxs-lookup"><span data-stu-id="2ba71-114">Example</span></span>  
+ <span data-ttu-id="2ba71-115">[!code-cs[csProgGuideStrings#13](../../../csharp/programming-guide/strings/codesnippet/CSharp/how-to-convert-a-string-to-a-datetime_1.cs)]</span><span class="sxs-lookup"><span data-stu-id="2ba71-115">[!code-cs[csProgGuideStrings#13](../../../csharp/programming-guide/strings/codesnippet/CSharp/how-to-convert-a-string-to-a-datetime_1.cs)]</span></span>  
   
-## <a name="see-also"></a>関連項目  
- [文字列](../../../csharp/programming-guide/strings/index.md)
+## <a name="see-also"></a><span data-ttu-id="2ba71-116">関連項目</span><span class="sxs-lookup"><span data-stu-id="2ba71-116">See Also</span></span>  
+ [<span data-ttu-id="2ba71-117">文字列</span><span class="sxs-lookup"><span data-stu-id="2ba71-117">Strings</span></span>](../../../csharp/programming-guide/strings/index.md)
 

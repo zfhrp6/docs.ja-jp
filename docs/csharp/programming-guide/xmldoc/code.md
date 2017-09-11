@@ -38,26 +38,26 @@ ms.contentlocale: ja-jp
 ms.lasthandoff: 07/28/2017
 
 ---
-# <a name="ltcodegt-c-programming-guide"></a>&lt;code&gt; (C# プログラミング ガイド)
-## <a name="syntax"></a>構文  
+# <a name="ltcodegt-c-programming-guide"></a><span data-ttu-id="828eb-102">&lt;code&gt; (C# プログラミング ガイド)</span><span class="sxs-lookup"><span data-stu-id="828eb-102">&lt;code&gt; (C# Programming Guide)</span></span>
+## <a name="syntax"></a><span data-ttu-id="828eb-103">構文</span><span class="sxs-lookup"><span data-stu-id="828eb-103">Syntax</span></span>  
   
 ```xml  
 <code>content</code>  
 ```  
   
-#### <a name="parameters"></a>パラメーター  
+#### <a name="parameters"></a><span data-ttu-id="828eb-104">パラメーター</span><span class="sxs-lookup"><span data-stu-id="828eb-104">Parameters</span></span>  
  `content`  
- コードとしてマークするテキストです。  
+ <span data-ttu-id="828eb-105">コードとしてマークするテキストです。</span><span class="sxs-lookup"><span data-stu-id="828eb-105">The text you want marked as code.</span></span>  
   
-## <a name="remarks"></a>コメント  
- \<code> タグを使用すると、複数行をコードとして指定できます。 説明内のテキストをコードとしてマークする場合は、[\<c](../../../csharp/programming-guide/xmldoc/code-inline.md) タグを使用します。  
+## <a name="remarks"></a><span data-ttu-id="828eb-106">コメント</span><span class="sxs-lookup"><span data-stu-id="828eb-106">Remarks</span></span>  
+ <span data-ttu-id="828eb-107">\<code> タグを使用すると、複数行をコードとして指定できます。</span><span class="sxs-lookup"><span data-stu-id="828eb-107">The \<code> tag gives you a way to indicate multiple lines as code.</span></span> <span data-ttu-id="828eb-108">説明内のテキストをコードとしてマークする場合は、[\<c](../../../csharp/programming-guide/xmldoc/code-inline.md) タグを使用します。</span><span class="sxs-lookup"><span data-stu-id="828eb-108">Use [\<c>](../../../csharp/programming-guide/xmldoc/code-inline.md) to indicate that text within a description should be marked as code.</span></span>  
   
- コンパイル時に [/doc](../../../csharp/language-reference/compiler-options/doc-compiler-option.md) を指定してドキュメント コメントをファイルに出力します。  
+ <span data-ttu-id="828eb-109">コンパイル時に [/doc](../../../csharp/language-reference/compiler-options/doc-compiler-option.md) を指定してドキュメント コメントをファイルに出力します。</span><span class="sxs-lookup"><span data-stu-id="828eb-109">Compile with [/doc](../../../csharp/language-reference/compiler-options/doc-compiler-option.md) to process documentation comments to a file.</span></span>  
   
-## <a name="example"></a>例  
- \<code> タグの使用例については、「[\<example](../../../csharp/programming-guide/xmldoc/example.md)」を参照してください。  
+## <a name="example"></a><span data-ttu-id="828eb-110">例</span><span class="sxs-lookup"><span data-stu-id="828eb-110">Example</span></span>  
+ <span data-ttu-id="828eb-111">\<code> タグの使用例については、「[\<example](../../../csharp/programming-guide/xmldoc/example.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="828eb-111">See the [\<example>](../../../csharp/programming-guide/xmldoc/example.md) topic for an example of how to use the \<code> tag.</span></span>  
   
-## <a name="see-also"></a>関連項目  
- [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
- [ドキュメント コメントとして推奨されるタグ](../../../csharp/programming-guide/xmldoc/recommended-tags-for-documentation-comments.md)
+## <a name="see-also"></a><span data-ttu-id="828eb-112">関連項目</span><span class="sxs-lookup"><span data-stu-id="828eb-112">See Also</span></span>  
+ <span data-ttu-id="828eb-113">[C# プログラミング ガイド](../../../csharp/programming-guide/index.md) </span><span class="sxs-lookup"><span data-stu-id="828eb-113">[C# Programming Guide](../../../csharp/programming-guide/index.md) </span></span>  
+ [<span data-ttu-id="828eb-114">ドキュメント コメントとして推奨されるタグ</span><span class="sxs-lookup"><span data-stu-id="828eb-114">Recommended Tags for Documentation Comments</span></span>](../../../csharp/programming-guide/xmldoc/recommended-tags-for-documentation-comments.md)
 

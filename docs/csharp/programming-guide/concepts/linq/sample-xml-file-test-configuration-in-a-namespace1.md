@@ -26,10 +26,10 @@ ms.contentlocale: ja-jp
 ms.lasthandoff: 07/28/2017
 
 ---
-# <a name="sample-xml-file-test-configuration-in-a-namespace"></a>サンプル XML ファイル : 名前空間内のテスト構成
-次の XML ファイルは、[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] ドキュメントのさまざまな例で使用されます。 これはテスト構成ファイルです。 XML は名前空間に含まれています。  
+# <a name="sample-xml-file-test-configuration-in-a-namespace"></a><span data-ttu-id="76ba4-102">サンプル XML ファイル : 名前空間内のテスト構成</span><span class="sxs-lookup"><span data-stu-id="76ba4-102">Sample XML File: Test Configuration in a Namespace</span></span>
+<span data-ttu-id="76ba4-103">次の XML ファイルは、[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] ドキュメントのさまざまな例で使用されます。</span><span class="sxs-lookup"><span data-stu-id="76ba4-103">The following XML file is used in various examples in the [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] documentation.</span></span> <span data-ttu-id="76ba4-104">これはテスト構成ファイルです。</span><span class="sxs-lookup"><span data-stu-id="76ba4-104">This is a test configuration file.</span></span> <span data-ttu-id="76ba4-105">XML は名前空間に含まれています。</span><span class="sxs-lookup"><span data-stu-id="76ba4-105">The XML is in a namespace.</span></span>  
   
-## <a name="testconfiginnamespacexml"></a>TestConfigInNamespace.xml  
+## <a name="testconfiginnamespacexml"></a><span data-ttu-id="76ba4-106">TestConfigInNamespace.xml</span><span class="sxs-lookup"><span data-stu-id="76ba4-106">TestConfigInNamespace.xml</span></span>  
   
 ```xml  
 <?xml version="1.0"?>  
@@ -73,6 +73,6 @@ ms.lasthandoff: 07/28/2017
 </Tests>  
 ```  
   
-## <a name="see-also"></a>関連項目  
- [サンプル XML ドキュメント (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-documents-linq-to-xml.md)
+## <a name="see-also"></a><span data-ttu-id="76ba4-107">関連項目</span><span class="sxs-lookup"><span data-stu-id="76ba4-107">See Also</span></span>  
+ [<span data-ttu-id="76ba4-108">サンプル XML ドキュメント (LINQ to XML)</span><span class="sxs-lookup"><span data-stu-id="76ba4-108">Sample XML Documents (LINQ to XML)</span></span>](../../../../csharp/programming-guide/concepts/linq/sample-xml-documents-linq-to-xml.md)
 

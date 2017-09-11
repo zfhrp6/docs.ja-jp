@@ -18,31 +18,32 @@ ms.lasthandoff: 07/28/2017
 
 ---
 
-# <a name="structs"></a>構造体
+# <a name="structs"></a><span data-ttu-id="7907b-104">構造体</span><span class="sxs-lookup"><span data-stu-id="7907b-104">Structs</span></span>
 
-***構造体***は、クラスと同様に、データ メンバーおよび関数メンバーを含むことができるデータ構造ですが、値型でありヒープ割り当てを必要としない点でクラスと異なります。 構造体型の変数は、構造体のデータを直接格納しますが、クラス型の変数は、動的に割り当てられたオブジェクトへの参照を格納します。 構造体型はユーザー指定の継承をサポートせず、すべての構造体型は暗黙的に <xref:System.ValueType> 型を継承し、この型はさらに `object` を暗黙的に継承します。
+<span data-ttu-id="7907b-105">***構造体***は、クラスと同様に、データ メンバーおよび関数メンバーを含むことができるデータ構造ですが、値型でありヒープ割り当てを必要としない点でクラスと異なります。</span><span class="sxs-lookup"><span data-stu-id="7907b-105">Like classes, ***structs*** are data structures that can contain data members and function members, but unlike classes, structs are value types and do not require heap allocation.</span></span> <span data-ttu-id="7907b-106">構造体型の変数は、構造体のデータを直接格納しますが、クラス型の変数は、動的に割り当てられたオブジェクトへの参照を格納します。</span><span class="sxs-lookup"><span data-stu-id="7907b-106">A variable of a struct type directly stores the data of the struct, whereas a variable of a class type stores a reference to a dynamically allocated object.</span></span> <span data-ttu-id="7907b-107">構造体型はユーザー指定の継承をサポートせず、すべての構造体型は暗黙的に <xref:System.ValueType> 型を継承し、この型はさらに `object` を暗黙的に継承します。</span><span class="sxs-lookup"><span data-stu-id="7907b-107">Struct types do not support user-specified inheritance, and all struct types implicitly inherit from type <xref:System.ValueType>, which in turn implicitly inherits from `object`.</span></span>
 
-構造体は、値セマンティクスを持つ小規模なデータ構造に特に便利です。 構造体の主な例としては、複素数、座標系のポイント、ディクショナリのキーと値のペアなどがあります。 小規模なデータ構造には、クラスよりむしろ構造体を使用するほうが、アプリケーションが実行するメモリ割り当ての数を大幅に減らすことができます。 たとえば、次のプログラムでは、100 個のポイントの配列を作成し初期化します。 `Point` をクラスとして実装すると、101 個の別々のオブジェクトがインスタンス化されます。配列に1 個、残りは 100 個の要素に 1 個ずつです。
+<span data-ttu-id="7907b-108">構造体は、値セマンティクスを持つ小規模なデータ構造に特に便利です。</span><span class="sxs-lookup"><span data-stu-id="7907b-108">Structs are particularly useful for small data structures that have value semantics.</span></span> <span data-ttu-id="7907b-109">構造体の主な例としては、複素数、座標系のポイント、ディクショナリのキーと値のペアなどがあります。</span><span class="sxs-lookup"><span data-stu-id="7907b-109">Complex numbers, points in a coordinate system, or key-value pairs in a dictionary are all good examples of structs.</span></span> <span data-ttu-id="7907b-110">小規模なデータ構造には、クラスよりむしろ構造体を使用するほうが、アプリケーションが実行するメモリ割り当ての数を大幅に減らすことができます。</span><span class="sxs-lookup"><span data-stu-id="7907b-110">The use of structs rather than classes for small data structures can make a large difference in the number of memory allocations an application performs.</span></span> <span data-ttu-id="7907b-111">たとえば、次のプログラムでは、100 個のポイントの配列を作成し初期化します。</span><span class="sxs-lookup"><span data-stu-id="7907b-111">For example, the following program creates and initializes an array of 100 points.</span></span> <span data-ttu-id="7907b-112">`Point` をクラスとして実装すると、101 個の別々のオブジェクトがインスタンス化されます。配列に1 個、残りは 100 個の要素に 1 個ずつです。</span><span class="sxs-lookup"><span data-stu-id="7907b-112">With `Point` implemented as a class, 101 separate objects are instantiated—one for the array and one each for the 100 elements.</span></span>
 
-[!code-csharp[PointClassUse](../../../samples/snippets/csharp/tour/structs/Program.cs#L5-L13)]
+<span data-ttu-id="7907b-113">[!code-csharp[PointClassUse](../../../samples/snippets/csharp/tour/structs/Program.cs#L5-L13)]</span><span class="sxs-lookup"><span data-stu-id="7907b-113">[!code-csharp[PointClassUse](../../../samples/snippets/csharp/tour/structs/Program.cs#L5-L13)]</span></span>
 
-これに代わる方法が、ポイントを構造体にすることです。
+<span data-ttu-id="7907b-114">これに代わる方法が、ポイントを構造体にすることです。</span><span class="sxs-lookup"><span data-stu-id="7907b-114">An alternative is to make Point a struct.</span></span>
 
-[!code-csharp[PointStruct](../../../samples/snippets/csharp/tour/structs/Point.cs#L3-L11)]
+<span data-ttu-id="7907b-115">[!code-csharp[PointStruct](../../../samples/snippets/csharp/tour/structs/Point.cs#L3-L11)]</span><span class="sxs-lookup"><span data-stu-id="7907b-115">[!code-csharp[PointStruct](../../../samples/snippets/csharp/tour/structs/Point.cs#L3-L11)]</span></span>
 
-ここでは 1 つのオブジェクトのみがインスタンス化されます。すなわち、配列に 1 個です。そして、`Point` インスタンスがその配列内にインラインで格納されます。
+<span data-ttu-id="7907b-116">ここでは 1 つのオブジェクトのみがインスタンス化されます。すなわち、配列に 1 個です。そして、`Point` インスタンスがその配列内にインラインで格納されます。</span><span class="sxs-lookup"><span data-stu-id="7907b-116">Now, only one object is instantiated—the one for the array—and the `Point` instances are stored in-line in the array.</span></span>
 
-構造体コンストラクターはこの新しい演算子を使って呼び出されますが、メモリが割り当てられていると意味するものではありません。 オブジェクトを動的に割り当てそこへの参照を返す代わりに、構造体コンストラクターは単に構造体の値自体 (通常、スタック上の一時的な場所) を返し、この値は必要に応じてコピーされます。
+<span data-ttu-id="7907b-117">構造体コンストラクターはこの新しい演算子を使って呼び出されますが、メモリが割り当てられていると意味するものではありません。</span><span class="sxs-lookup"><span data-stu-id="7907b-117">Struct constructors are invoked with the new operator, but that does not imply that memory is being allocated.</span></span> <span data-ttu-id="7907b-118">オブジェクトを動的に割り当てそこへの参照を返す代わりに、構造体コンストラクターは単に構造体の値自体 (通常、スタック上の一時的な場所) を返し、この値は必要に応じてコピーされます。</span><span class="sxs-lookup"><span data-stu-id="7907b-118">Instead of dynamically allocating an object and returning a reference to it, a struct constructor simply returns the struct value itself (typically in a temporary location on the stack), and this value is then copied as necessary.</span></span>
 
-クラスを使用すると、2 つの変数が同じオブジェクトを参照できるため、1 つの変数に対する操作によって、もう一方の変数によって参照されるオブジェクトに影響を与えることができます。 構造体を使用すると、各々の変数がデータのコピーを各々で持ち、1 つに対する操作がもう一方に影響を与えることはできません。 たとえば、次のコードによって生成される出力は、ポイントがクラスであるか構造体であるかによって異なります。
+<span data-ttu-id="7907b-119">クラスを使用すると、2 つの変数が同じオブジェクトを参照できるため、1 つの変数に対する操作によって、もう一方の変数によって参照されるオブジェクトに影響を与えることができます。</span><span class="sxs-lookup"><span data-stu-id="7907b-119">With classes, it is possible for two variables to reference the same object and thus possible for operations on one variable to affect the object referenced by the other variable.</span></span> <span data-ttu-id="7907b-120">構造体を使用すると、各々の変数がデータのコピーを各々で持ち、1 つに対する操作がもう一方に影響を与えることはできません。</span><span class="sxs-lookup"><span data-stu-id="7907b-120">With structs, the variables each have their own copy of the data, and it is not possible for operations on one to affect the other.</span></span> <span data-ttu-id="7907b-121">たとえば、次のコードによって生成される出力は、ポイントがクラスであるか構造体であるかによって異なります。</span><span class="sxs-lookup"><span data-stu-id="7907b-121">For example, the output produced by the following code fragment depends on whether Point is a class or a struct.</span></span>
 
-[!code-csharp[PointUse](../../../samples/snippets/csharp/tour/structs/Program.cs#L19-L22)]
+<span data-ttu-id="7907b-122">[!code-csharp[PointUse](../../../samples/snippets/csharp/tour/structs/Program.cs#L19-L22)]</span><span class="sxs-lookup"><span data-stu-id="7907b-122">[!code-csharp[PointUse](../../../samples/snippets/csharp/tour/structs/Program.cs#L19-L22)]</span></span>
 
-`Point` がクラスである場合、a と b は同じオブジェクトを参照しているので、出力は 20 です。 ポイントが構造体である場合、出力は 10 です。`a` の `b` への割り当ては値のコピーを作成し、このコピーは後続の `a.x` への割り当てには影響されないからです。
+<span data-ttu-id="7907b-123">`Point` がクラスである場合、a と b は同じオブジェクトを参照しているので、出力は 20 です。</span><span class="sxs-lookup"><span data-stu-id="7907b-123">If `Point` is a class, the output is 20 because a and b reference the same object.</span></span> <span data-ttu-id="7907b-124">ポイントが構造体である場合、出力は 10 です。`a` の `b` への割り当ては値のコピーを作成し、このコピーは後続の `a.x` への割り当てには影響されないからです。</span><span class="sxs-lookup"><span data-stu-id="7907b-124">If Point is a struct, the output is 10 because the assignment of `a` to `b` creates a copy of the value, and this copy is unaffected by the subsequent assignment to `a.x`.</span></span>
 
-前述の例では、構造体の 2 つの制限事項が強調されています。 1 つめは、構造体全体をコピーすることは通常、オブジェクト参照をコピーするよりも非効率であり、割り当てと値パラメーターの引き渡しは参照型よりも構造体のほうが手がかかるということです。 2 つめは、`ref` および `out` パラメーターを除いて、構造体への参照を作成することはできず、そのために構造体を使用できない状況が数多くあるということです。
+<span data-ttu-id="7907b-125">前述の例では、構造体の 2 つの制限事項が強調されています。</span><span class="sxs-lookup"><span data-stu-id="7907b-125">The previous example highlights two of the limitations of structs.</span></span> <span data-ttu-id="7907b-126">1 つめは、構造体全体をコピーすることは通常、オブジェクト参照をコピーするよりも非効率であり、割り当てと値パラメーターの引き渡しは参照型よりも構造体のほうが手がかかるということです。</span><span class="sxs-lookup"><span data-stu-id="7907b-126">First, copying an entire struct is typically less efficient than copying an object reference, so assignment and value parameter passing can be more expensive with structs than with reference types.</span></span> <span data-ttu-id="7907b-127">2 つめは、`ref` および `out` パラメーターを除いて、構造体への参照を作成することはできず、そのために構造体を使用できない状況が数多くあるということです。</span><span class="sxs-lookup"><span data-stu-id="7907b-127">Second, except for `ref` and `out` parameters, it is not possible to create references to structs, which rules out their usage in a number of situations.</span></span>
 
 >[!div class="step-by-step"]
-[前へ](classes-and-objects.md)
-[次へ](arrays.md)
+<span data-ttu-id="7907b-128">[前へ](classes-and-objects.md)
+[次へ](arrays.md)</span><span class="sxs-lookup"><span data-stu-id="7907b-128">[Previous](classes-and-objects.md)
+[Next](arrays.md)</span></span>
 

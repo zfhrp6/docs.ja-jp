@@ -1,1 +1,1 @@
-独立系ソフトウェア ベンダー (ISV)
+<span data-ttu-id="84bf3-101">独立系ソフトウェア ベンダー (ISV)</span><span class="sxs-lookup"><span data-stu-id="84bf3-101">independent software vendor (ISV)</span></span>

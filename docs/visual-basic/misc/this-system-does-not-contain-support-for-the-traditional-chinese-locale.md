@@ -26,20 +26,21 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 767fa7d78015b4f077b96badab14c22ca62a63d5
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
+ms.openlocfilehash: 314189c881fe6897c54a55f595b4d092f30f0f1f
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/12/2017
 
 ---
-# <a name="this-system-does-not-contain-support-for-the-traditional-chinese-locale"></a>このシステムには、繁体字中国語ロケールのサポートは含まれていません
-`VbStrConv.TraditionalChinese` 列挙体メンバーの使用が試行されましたが、システムは繁体字中国語ロケールをサポートしていません。  
+# <a name="this-system-does-not-contain-support-for-the-traditional-chinese-locale"></a><span data-ttu-id="7502f-102">このシステムには、繁体字中国語ロケールのサポートは含まれていません</span><span class="sxs-lookup"><span data-stu-id="7502f-102">This system does not contain support for the Traditional Chinese locale</span></span>
+<span data-ttu-id="7502f-103">`VbStrConv.TraditionalChinese` 列挙体メンバーの使用が試行されましたが、システムは繁体字中国語ロケールをサポートしていません。</span><span class="sxs-lookup"><span data-stu-id="7502f-103">You attempted to use the `VbStrConv.TraditionalChinese` enumeration member, but your system does not support the Traditional Chinese locale.</span></span>  
   
-## <a name="to-correct-this-error"></a>このエラーを解決するには  
+## <a name="to-correct-this-error"></a><span data-ttu-id="7502f-104">このエラーを解決するには</span><span class="sxs-lookup"><span data-stu-id="7502f-104">To correct this error</span></span>  
   
-1.  繁体字中国語ロケールをサポートするためにコンピューターをアップグレードするか、またはロケールをサポートするコンピューターでアプリケーションを実行します。  
+1.  <span data-ttu-id="7502f-105">繁体字中国語ロケールをサポートするためにコンピューターをアップグレードするか、またはロケールをサポートするコンピューターでアプリケーションを実行します。</span><span class="sxs-lookup"><span data-stu-id="7502f-105">Upgrade the machine to support the Traditional Chinese locale, or run the application on a machine that supports the locale.</span></span>  
   
-## <a name="see-also"></a>関連項目  
- <xref:System.Globalization>   
- [NOTINBUILD VbStrConv 列挙型](http://msdn.microsoft.com/en-us/59f83dd9-6361-47df-a836-02ba9d4cb936)   
- [.NET Framework ベースの国際対応アプリケーションの概要](https://docs.microsoft.com/visualstudio/ide/introduction-to-international-applications-based-on-the-dotnet-framework)
+## <a name="see-also"></a><span data-ttu-id="7502f-106">関連項目</span><span class="sxs-lookup"><span data-stu-id="7502f-106">See Also</span></span>  
+ <span data-ttu-id="7502f-107"><xref:System.Globalization></span><span class="sxs-lookup"><span data-stu-id="7502f-107"><xref:System.Globalization></span></span>   
+<span data-ttu-id="7502f-108"> [NOTINBUILD VbStrConv 列挙型](http://msdn.microsoft.com/en-us/59f83dd9-6361-47df-a836-02ba9d4cb936) </span><span class="sxs-lookup"><span data-stu-id="7502f-108"> [NOTINBUILD VbStrConv Enumeration](http://msdn.microsoft.com/en-us/59f83dd9-6361-47df-a836-02ba9d4cb936) </span></span>  
+<span data-ttu-id="7502f-109"> [.NET Framework ベースの国際対応アプリケーションの概要](https://docs.microsoft.com/visualstudio/ide/introduction-to-international-applications-based-on-the-dotnet-framework)</span><span class="sxs-lookup"><span data-stu-id="7502f-109"> [Introduction to International Applications Based on the .NET Framework](https://docs.microsoft.com/visualstudio/ide/introduction-to-international-applications-based-on-the-dotnet-framework)</span></span>

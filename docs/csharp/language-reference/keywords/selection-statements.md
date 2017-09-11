@@ -34,24 +34,24 @@ ms.contentlocale: ja-jp
 ms.lasthandoff: 07/28/2017
 
 ---
-# <a name="selection-statements-c-reference"></a>選択ステートメント (C# リファレンス)
-選択ステートメントは、特定の条件が `true` かどうかに基づいて、プログラムの制御を特定のフローに移します。  
+# <a name="selection-statements-c-reference"></a><span data-ttu-id="775e3-102">選択ステートメント (C# リファレンス)</span><span class="sxs-lookup"><span data-stu-id="775e3-102">Selection Statements (C# Reference)</span></span>
+<span data-ttu-id="775e3-103">選択ステートメントは、特定の条件が `true` かどうかに基づいて、プログラムの制御を特定のフローに移します。</span><span class="sxs-lookup"><span data-stu-id="775e3-103">A selection statement causes the program control to be transferred to a specific flow based upon whether a certain condition is `true` or not.</span></span>  
   
- 選択ステートメントでは次のキーワードが使われます。  
+ <span data-ttu-id="775e3-104">選択ステートメントでは次のキーワードが使われます。</span><span class="sxs-lookup"><span data-stu-id="775e3-104">The following keywords are used in selection statements:</span></span>  
   
--   [if](../../../csharp/language-reference/keywords/if-else.md)  
+-   [<span data-ttu-id="775e3-105">if</span><span class="sxs-lookup"><span data-stu-id="775e3-105">if</span></span>](../../../csharp/language-reference/keywords/if-else.md)  
   
--   [else](../../../csharp/language-reference/keywords/if-else.md)  
+-   [<span data-ttu-id="775e3-106">else</span><span class="sxs-lookup"><span data-stu-id="775e3-106">else</span></span>](../../../csharp/language-reference/keywords/if-else.md)  
   
--   [switch](../../../csharp/language-reference/keywords/switch.md)  
+-   [<span data-ttu-id="775e3-107">switch</span><span class="sxs-lookup"><span data-stu-id="775e3-107">switch</span></span>](../../../csharp/language-reference/keywords/switch.md)  
   
--   [case](../../../csharp/language-reference/keywords/switch.md)  
+-   [<span data-ttu-id="775e3-108">case</span><span class="sxs-lookup"><span data-stu-id="775e3-108">case</span></span>](../../../csharp/language-reference/keywords/switch.md)  
   
--   [default](../../../csharp/language-reference/keywords/switch.md)  
+-   [<span data-ttu-id="775e3-109">default</span><span class="sxs-lookup"><span data-stu-id="775e3-109">default</span></span>](../../../csharp/language-reference/keywords/switch.md)  
 
-## <a name="see-also"></a>関連項目  
- [C# リファレンス](../../../csharp/language-reference/index.md)   
- [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
- [C# のキーワード](../../../csharp/language-reference/keywords/index.md)   
- [ステートメントのキーワード](../../../csharp/language-reference/keywords/statement-keywords.md)
+## <a name="see-also"></a><span data-ttu-id="775e3-110">関連項目</span><span class="sxs-lookup"><span data-stu-id="775e3-110">See Also</span></span>  
+ <span data-ttu-id="775e3-111">[C# リファレンス](../../../csharp/language-reference/index.md) </span><span class="sxs-lookup"><span data-stu-id="775e3-111">[C# Reference](../../../csharp/language-reference/index.md) </span></span>  
+ <span data-ttu-id="775e3-112">[C# プログラミング ガイド](../../../csharp/programming-guide/index.md) </span><span class="sxs-lookup"><span data-stu-id="775e3-112">[C# Programming Guide](../../../csharp/programming-guide/index.md) </span></span>  
+ <span data-ttu-id="775e3-113">[C# のキーワード](../../../csharp/language-reference/keywords/index.md) </span><span class="sxs-lookup"><span data-stu-id="775e3-113">[C# Keywords](../../../csharp/language-reference/keywords/index.md) </span></span>  
+ [<span data-ttu-id="775e3-114">ステートメントのキーワード</span><span class="sxs-lookup"><span data-stu-id="775e3-114">Statement Keywords</span></span>](../../../csharp/language-reference/keywords/statement-keywords.md)
 

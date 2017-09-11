@@ -37,19 +37,19 @@ ms.contentlocale: ja-jp
 ms.lasthandoff: 08/23/2017
 
 ---
-# <a name="c-60-draft-language-specification"></a>C# 6.0 のドラフト言語仕様
-C# 言語仕様は、C# の構文と使用法に関する信頼性のある情報源です。 この仕様には、Visual C# のドキュメントで取り上げられていない多数の点を含め、C# 言語に関する詳細情報が全面的に網羅されています。
+# <a name="c-60-draft-language-specification"></a><span data-ttu-id="14c94-102">C# 6.0 のドラフト言語仕様</span><span class="sxs-lookup"><span data-stu-id="14c94-102">C# 6.0 draft Language Specification</span></span>
+<span data-ttu-id="14c94-103">C# 言語仕様は、C# の構文と使用法に関する信頼性のある情報源です。</span><span class="sxs-lookup"><span data-stu-id="14c94-103">The C# Language Specification is the definitive source for C# syntax and usage.</span></span> <span data-ttu-id="14c94-104">この仕様には、Visual C# のドキュメントで取り上げられていない多数の点を含め、C# 言語に関する詳細情報が全面的に網羅されています。</span><span class="sxs-lookup"><span data-stu-id="14c94-104">This specification contains detailed information about all aspects of the language, including many points that the documentation for Visual C# doesn't cover.</span></span>
 
-この仕様のバージョン 5.0 を [Microsoft ダウンロード センター](http://www.microsoft.com/download/details.aspx?id=7029)からダウンロードすることができます。 Visual Studio 2015 をインストールした場合は、そのコンピューターの Program Files (x86)/Microsoft Visual Studio 14.0/VC#/Specifications/1033 フォルダーにも仕様が含まれています。 別のバージョンの Visual Studio をインストールした場合、または英語以外の言語で Visual Studio をインストールした場合は、適切なパスに変更してください。
+<span data-ttu-id="14c94-105">この仕様のバージョン 5.0 を [Microsoft ダウンロード センター](http://www.microsoft.com/download/details.aspx?id=7029)からダウンロードすることができます。</span><span class="sxs-lookup"><span data-stu-id="14c94-105">You can download version 5.0 of this specification from the [Microsoft Download Center](http://www.microsoft.com/download/details.aspx?id=7029).</span></span> <span data-ttu-id="14c94-106">Visual Studio 2015 をインストールした場合は、そのコンピューターの Program Files (x86)/Microsoft Visual Studio 14.0/VC#/Specifications/1033 フォルダーにも仕様が含まれています。</span><span class="sxs-lookup"><span data-stu-id="14c94-106">If you've installed Visual Studio 2015, you can also find the specification on your computer in the Program Files (x86)/Microsoft Visual Studio 14.0/VC#/Specifications/1033 folder.</span></span> <span data-ttu-id="14c94-107">別のバージョンの Visual Studio をインストールした場合、または英語以外の言語で Visual Studio をインストールした場合は、適切なパスに変更してください。</span><span class="sxs-lookup"><span data-stu-id="14c94-107">If you have another version of Visual Studio installed or if you installed Visual Studio in a language other than English, change the path as appropriate.</span></span>
 
-バージョン 6.0 の仕様は標準として承認されていません。 このサイトには、[*ドラフト*の C# 6.0 仕様](../../../../_csharplang/spec/lexical-structure.md)が含まれています。 [dotnet/csharplang GitHub レポジトリ](https://github.com/dotnet/csharplang/blob/master/spec/README.md)に含まれているマークダウン ファイルから作成されています。
+<span data-ttu-id="14c94-108">バージョン 6.0 の仕様は標準として承認されていません。</span><span class="sxs-lookup"><span data-stu-id="14c94-108">Version 6.0 of the specification has not been approved as a standard.</span></span> <span data-ttu-id="14c94-109">このサイトには、[*ドラフト*の C# 6.0 仕様](../../../../_csharplang/spec/lexical-structure.md)が含まれています。</span><span class="sxs-lookup"><span data-stu-id="14c94-109">This site contains the [*draft* C# 6.0 specification](../../../../_csharplang/spec/lexical-structure.md).</span></span> <span data-ttu-id="14c94-110">[dotnet/csharplang GitHub レポジトリ](https://github.com/dotnet/csharplang/blob/master/spec/README.md)に含まれているマークダウン ファイルから作成されています。</span><span class="sxs-lookup"><span data-stu-id="14c94-110">It is built from the markdown files contained in [the dotnet/csharplang GitHub repository](https://github.com/dotnet/csharplang/blob/master/spec/README.md).</span></span>
 
-ドラフト仕様の問題は [dotnet/csharplang](https://github.com/dotnet/csharplang/issues) リポジトリで作成する必要があります。 見つけたエラーを修正したい場合は、同じレポジトリに[プル要求](https://github.com/dotnet/csharplang/pulls)を送信できます。
+<span data-ttu-id="14c94-111">ドラフト仕様の問題は [dotnet/csharplang](https://github.com/dotnet/csharplang/issues) リポジトリで作成する必要があります。</span><span class="sxs-lookup"><span data-stu-id="14c94-111">Issues on the draft specification should be created in the [dotnet/csharplang](https://github.com/dotnet/csharplang/issues) repository.</span></span> <span data-ttu-id="14c94-112">見つけたエラーを修正したい場合は、同じレポジトリに[プル要求](https://github.com/dotnet/csharplang/pulls)を送信できます。</span><span class="sxs-lookup"><span data-stu-id="14c94-112">Or, if you are interested in fixing any errors you find, you may submit a [Pull Request](https://github.com/dotnet/csharplang/pulls) to the same repository.</span></span>
 
-## <a name="see-also"></a>関連項目  
- [C# リファレンス](../../language-reference/index.md)  
- [C# プログラミング ガイド](../../programming-guide/index.md)
+## <a name="see-also"></a><span data-ttu-id="14c94-113">関連項目</span><span class="sxs-lookup"><span data-stu-id="14c94-113">See Also</span></span>  
+ [<span data-ttu-id="14c94-114">C# リファレンス</span><span class="sxs-lookup"><span data-stu-id="14c94-114">C# Reference</span></span>](../../language-reference/index.md)  
+ [<span data-ttu-id="14c94-115">C# プログラミング ガイド</span><span class="sxs-lookup"><span data-stu-id="14c94-115">C# Programming Guide</span></span>](../../programming-guide/index.md)
 
 >[!div class="step-by-step"]
-[次へ](../../../../_csharplang/spec/lexical-structure.md)
+[<span data-ttu-id="14c94-116">次へ</span><span class="sxs-lookup"><span data-stu-id="14c94-116">Next</span></span>](../../../../_csharplang/spec/lexical-structure.md)
 

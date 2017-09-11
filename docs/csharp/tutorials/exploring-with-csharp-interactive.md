@@ -17,16 +17,16 @@ ms.lasthandoff: 07/28/2017
 
 ---
 
-# <a name="-using-c-interactive-to-explore-and-experiment"></a>🔧 C# インタラクティブを使用した探索および実験
+# <a name="-using-c-interactive-to-explore-and-experiment"></a><span data-ttu-id="80d10-105">🔧 C# インタラクティブを使用した探索および実験</span><span class="sxs-lookup"><span data-stu-id="80d10-105">🔧 Using C# Interactive to explore and experiment</span></span>
 
-> **注:**
+> <span data-ttu-id="80d10-106">**注:**</span><span class="sxs-lookup"><span data-stu-id="80d10-106">**Note**</span></span>
 > 
-> このトピックはまだ作成されておりません。 
+> <span data-ttu-id="80d10-107">このトピックはまだ作成されておりません。</span><span class="sxs-lookup"><span data-stu-id="80d10-107">This topic hasn’t been written yet!</span></span> 
 >
-> 適用範囲や方法を具体化するのに役立つ皆様からのご意見をお待ちしております。 GitHub で状態の追跡やこの[件](https://github.com/dotnet/docs/issues/949)に関するご意見を投稿することができます。
+> <span data-ttu-id="80d10-108">適用範囲や方法を具体化するのに役立つ皆様からのご意見をお待ちしております。</span><span class="sxs-lookup"><span data-stu-id="80d10-108">We welcome your input to help shape the scope and approach.</span></span> <span data-ttu-id="80d10-109">GitHub で状態の追跡やこの[件](https://github.com/dotnet/docs/issues/949)に関するご意見を投稿することができます。</span><span class="sxs-lookup"><span data-stu-id="80d10-109">You can track the status and provide input on this [issue](https://github.com/dotnet/docs/issues/949) at GitHub.</span></span>
 > 
-> このトピックの初期ドラフトや概要の確認をご希望の場合は、この件の連絡先情報を含むメモを入力してください。
+> <span data-ttu-id="80d10-110">このトピックの初期ドラフトや概要の確認をご希望の場合は、この件の連絡先情報を含むメモを入力してください。</span><span class="sxs-lookup"><span data-stu-id="80d10-110">If you would like to review early drafts and outlines of this topic, please leave a note with your contact information in the issue.</span></span>
 >
-> ご意見の投稿方法の詳細については、[GitHub](https://github.com/dotnet/docs/blob/master/CONTRIBUTING.md) でご確認ください。
+> <span data-ttu-id="80d10-111">ご意見の投稿方法の詳細については、[GitHub](https://github.com/dotnet/docs/blob/master/CONTRIBUTING.md) でご確認ください。</span><span class="sxs-lookup"><span data-stu-id="80d10-111">Learn more about how you can contribute on [GitHub](https://github.com/dotnet/docs/blob/master/CONTRIBUTING.md).</span></span>
 >
 

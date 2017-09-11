@@ -26,10 +26,10 @@ ms.contentlocale: ja-jp
 ms.lasthandoff: 07/28/2017
 
 ---
-# <a name="sample-xml-file-multiple-purchase-orders-linq-to-xml"></a>サンプル XML ファイル : 複数の購買発注書 (LINQ to XML)
-次の XML ファイルは、[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] ドキュメントのさまざまな例で使用されます。 このファイルには、複数の購買発注書が含まれています。  
+# <a name="sample-xml-file-multiple-purchase-orders-linq-to-xml"></a><span data-ttu-id="59692-102">サンプル XML ファイル : 複数の購買発注書 (LINQ to XML)</span><span class="sxs-lookup"><span data-stu-id="59692-102">Sample XML File: Multiple Purchase Orders (LINQ to XML)</span></span>
+<span data-ttu-id="59692-103">次の XML ファイルは、[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] ドキュメントのさまざまな例で使用されます。</span><span class="sxs-lookup"><span data-stu-id="59692-103">The following XML file is used in various examples in the [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] documentation.</span></span> <span data-ttu-id="59692-104">このファイルには、複数の購買発注書が含まれています。</span><span class="sxs-lookup"><span data-stu-id="59692-104">This file contains several purchase orders.</span></span>  
   
-## <a name="purchaseordersxml"></a>PurchaseOrders.xml  
+## <a name="purchaseordersxml"></a><span data-ttu-id="59692-105">PurchaseOrders.xml</span><span class="sxs-lookup"><span data-stu-id="59692-105">PurchaseOrders.xml</span></span>  
   
 ```xml  
 <?xml version="1.0"?>  
@@ -126,6 +126,6 @@ ms.lasthandoff: 07/28/2017
 </PurchaseOrders>  
 ```  
   
-## <a name="see-also"></a>関連項目  
- [サンプル XML ドキュメント (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-documents-linq-to-xml.md)
+## <a name="see-also"></a><span data-ttu-id="59692-106">関連項目</span><span class="sxs-lookup"><span data-stu-id="59692-106">See Also</span></span>  
+ [<span data-ttu-id="59692-107">サンプル XML ドキュメント (LINQ to XML)</span><span class="sxs-lookup"><span data-stu-id="59692-107">Sample XML Documents (LINQ to XML)</span></span>](../../../../csharp/programming-guide/concepts/linq/sample-xml-documents-linq-to-xml.md)
 

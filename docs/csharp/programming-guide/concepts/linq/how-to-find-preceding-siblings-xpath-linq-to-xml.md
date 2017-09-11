@@ -21,19 +21,19 @@ ms.contentlocale: ja-jp
 ms.lasthandoff: 07/28/2017
 
 ---
-# <a name="how-to-find-preceding-siblings-xpath-linq-to-xml-c"></a>方法: 先行する兄弟を検索する (XPath-LINQ to XML) (C#)
-このトピックでは、XPath の `preceding-sibling` 軸と [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] の子 <xref:System.Xml.Linq.XNode.ElementsBeforeSelf%2A?displayProperty=fullName> 軸を比較します。  
+# <a name="how-to-find-preceding-siblings-xpath-linq-to-xml-c"></a><span data-ttu-id="0e733-102">方法: 先行する兄弟を検索する (XPath-LINQ to XML) (C#)</span><span class="sxs-lookup"><span data-stu-id="0e733-102">How to: Find Preceding Siblings (XPath-LINQ to XML) (C#)</span></span>
+<span data-ttu-id="0e733-103">このトピックでは、XPath の `preceding-sibling` 軸と [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] の子 <xref:System.Xml.Linq.XNode.ElementsBeforeSelf%2A?displayProperty=fullName> 軸を比較します。</span><span class="sxs-lookup"><span data-stu-id="0e733-103">This topic compares the XPath `preceding-sibling` axis to the [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] child <xref:System.Xml.Linq.XNode.ElementsBeforeSelf%2A?displayProperty=fullName> axis.</span></span>  
   
- XPath 式を次に示します。  
+ <span data-ttu-id="0e733-104">XPath 式を次に示します。</span><span class="sxs-lookup"><span data-stu-id="0e733-104">The XPath expression is:</span></span>  
   
  `preceding-sibling::*`  
   
- <xref:System.Xml.XPath.Extensions.XPathSelectElements%2A> と <xref:System.Xml.Linq.XNode.ElementsBeforeSelf%2A?displayProperty=fullName> の結果はドキュメント順になることに注意してください。  
+ <span data-ttu-id="0e733-105"><xref:System.Xml.XPath.Extensions.XPathSelectElements%2A> と <xref:System.Xml.Linq.XNode.ElementsBeforeSelf%2A?displayProperty=fullName> の結果はドキュメント順になることに注意してください。</span><span class="sxs-lookup"><span data-stu-id="0e733-105">Note that the results of both <xref:System.Xml.XPath.Extensions.XPathSelectElements%2A> and <xref:System.Xml.Linq.XNode.ElementsBeforeSelf%2A?displayProperty=fullName> are in document order.</span></span>  
   
-## <a name="example"></a>例  
- 次の例では、`FullAddress` 要素を検索し、次に `preceding-sibling` 軸を使用して前の要素を取得します。  
+## <a name="example"></a><span data-ttu-id="0e733-106">例</span><span class="sxs-lookup"><span data-stu-id="0e733-106">Example</span></span>  
+ <span data-ttu-id="0e733-107">次の例では、`FullAddress` 要素を検索し、次に `preceding-sibling` 軸を使用して前の要素を取得します。</span><span class="sxs-lookup"><span data-stu-id="0e733-107">The following example finds the `FullAddress` element, and then retrieves the previous elements using the `preceding-sibling` axis.</span></span>  
   
- この例では、「[サンプル XML ファイル: 顧客と注文 (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml-2.md)」の XML ドキュメントを使用します。  
+ <span data-ttu-id="0e733-108">この例では、「[サンプル XML ファイル: 顧客と注文 (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml-2.md)」の XML ドキュメントを使用します。</span><span class="sxs-lookup"><span data-stu-id="0e733-108">This example uses the following XML document: [Sample XML File: Customers and Orders (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml-2.md).</span></span>  
   
 ```csharp  
 XElement co = XElement.Load("CustomersOrders.xml");  
@@ -55,7 +55,7 @@ foreach (XElement el in list2)
     Console.WriteLine(el);  
 ```  
   
- この例を実行すると、次の出力が生成されます。  
+ <span data-ttu-id="0e733-109">この例を実行すると、次の出力が生成されます。</span><span class="sxs-lookup"><span data-stu-id="0e733-109">This example produces the following output:</span></span>  
   
 ```  
 Results are identical  
@@ -65,6 +65,6 @@ Results are identical
 <Phone>(503) 555-7555</Phone>  
 ```  
   
-## <a name="see-also"></a>関連項目  
- [XPath ユーザー向けの LINQ to XML (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)
+## <a name="see-also"></a><span data-ttu-id="0e733-110">関連項目</span><span class="sxs-lookup"><span data-stu-id="0e733-110">See Also</span></span>  
+ [<span data-ttu-id="0e733-111">XPath ユーザー向けの LINQ to XML (C#)</span><span class="sxs-lookup"><span data-stu-id="0e733-111">LINQ to XML for XPath Users (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)
 

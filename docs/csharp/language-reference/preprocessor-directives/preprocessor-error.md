@@ -36,19 +36,19 @@ ms.contentlocale: ja-jp
 ms.lasthandoff: 07/28/2017
 
 ---
-# <a name="error-c-reference"></a>#error (C# リファレンス)
-`#error` を使用すると、コード内の特定の場所からエラーを生成できます。 例:  
+# <a name="error-c-reference"></a><span data-ttu-id="976ff-102">#error (C# リファレンス)</span><span class="sxs-lookup"><span data-stu-id="976ff-102">#error (C# Reference)</span></span>
+<span data-ttu-id="976ff-103">`#error` を使用すると、コード内の特定の場所からエラーを生成できます。</span><span class="sxs-lookup"><span data-stu-id="976ff-103">`#error` lets you generate an error from a specific location in your code.</span></span> <span data-ttu-id="976ff-104">例:</span><span class="sxs-lookup"><span data-stu-id="976ff-104">For example:</span></span>  
   
 ```csharp
 #error Deprecated code in this method.  
 ```  
   
-## <a name="remarks"></a>コメント  
- `#error` は条件付きディレクティブ内で一般的に使用されます。  
+## <a name="remarks"></a><span data-ttu-id="976ff-105">コメント</span><span class="sxs-lookup"><span data-stu-id="976ff-105">Remarks</span></span>  
+ <span data-ttu-id="976ff-106">`#error` は条件付きディレクティブ内で一般的に使用されます。</span><span class="sxs-lookup"><span data-stu-id="976ff-106">A common use of `#error` is in a conditional directive.</span></span>  
   
- [#warning](../../../csharp/language-reference/preprocessor-directives/preprocessor-warning.md) を使用してユーザー定義の警告を生成することもできます。  
+ <span data-ttu-id="976ff-107">[#warning](../../../csharp/language-reference/preprocessor-directives/preprocessor-warning.md) を使用してユーザー定義の警告を生成することもできます。</span><span class="sxs-lookup"><span data-stu-id="976ff-107">It is also possible to generate a user-defined warning with [#warning](../../../csharp/language-reference/preprocessor-directives/preprocessor-warning.md).</span></span>  
   
-## <a name="example"></a>例  
+## <a name="example"></a><span data-ttu-id="976ff-108">例</span><span class="sxs-lookup"><span data-stu-id="976ff-108">Example</span></span>  
   
 ```csharp
 // preprocessor_error.cs  
@@ -65,8 +65,8 @@ class MainClass
 }  
 ```  
   
-## <a name="see-also"></a>関連項目  
- [C# リファレンス](../../../csharp/language-reference/index.md)   
- [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
- [C# プリプロセッサ ディレクティブ](../../../csharp/language-reference/preprocessor-directives/index.md)
+## <a name="see-also"></a><span data-ttu-id="976ff-109">関連項目</span><span class="sxs-lookup"><span data-stu-id="976ff-109">See Also</span></span>  
+ <span data-ttu-id="976ff-110">[C# リファレンス](../../../csharp/language-reference/index.md) </span><span class="sxs-lookup"><span data-stu-id="976ff-110">[C# Reference](../../../csharp/language-reference/index.md) </span></span>  
+ <span data-ttu-id="976ff-111">[C# プログラミング ガイド](../../../csharp/programming-guide/index.md) </span><span class="sxs-lookup"><span data-stu-id="976ff-111">[C# Programming Guide](../../../csharp/programming-guide/index.md) </span></span>  
+ [<span data-ttu-id="976ff-112">C# プリプロセッサ ディレクティブ</span><span class="sxs-lookup"><span data-stu-id="976ff-112">C# Preprocessor Directives</span></span>](../../../csharp/language-reference/preprocessor-directives/index.md)
 

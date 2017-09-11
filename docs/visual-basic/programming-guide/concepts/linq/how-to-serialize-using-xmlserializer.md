@@ -21,17 +21,17 @@ translation.priority.mt:
 - pt-br
 - tr-tr
 ms.translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 4503774e8d6fc9b0a71c3a4ee390f98b485cc003
+ms.sourcegitcommit: 14abadaf548e228244a1ff7ca72fa3896ef4eb5d
+ms.openlocfilehash: 9cb53837ea2d272efa6bbb9b9f64231c84c42274
 ms.contentlocale: ja-jp
-ms.lasthandoff: 03/13/2017
+ms.lasthandoff: 05/23/2017
 
 ---
-# <a name="how-to-serialize-using-xmlserializer-visual-basic"></a>方法: XmlSerializer (Visual Basic) を使用してシリアル化
-このトピックは、シリアル化および<xref:System.Xml.Serialization.XmlSerializer>。</xref:System.Xml.Serialization.XmlSerializer>を使用して逆シリアル化を行う例を示しています。  
+# <a name="how-to-serialize-using-xmlserializer-visual-basic"></a><span data-ttu-id="1b360-102">方法: XmlSerializer (Visual Basic) を使用してシリアル化</span><span class="sxs-lookup"><span data-stu-id="1b360-102">How to: Serialize Using XmlSerializer (Visual Basic)</span></span>
+<span data-ttu-id="1b360-103">このトピックは、シリアル化および<xref:System.Xml.Serialization.XmlSerializer>。</xref:System.Xml.Serialization.XmlSerializer>を使用して逆シリアル化を行う例を示しています。</span><span class="sxs-lookup"><span data-stu-id="1b360-103">This topic shows an example that serializes and deserializes using <xref:System.Xml.Serialization.XmlSerializer>.</span></span>  
   
-## <a name="example"></a>例  
- 次の例を含むオブジェクトのいくつか作成<xref:System.Xml.Linq.XElement>オブジェクト</xref:System.Xml.Linq.XElement>。 次に、それらのオブジェクトをメモリ ストリームにシリアル化し、メモリ ストリームから逆シリアル化します。  
+## <a name="example"></a><span data-ttu-id="1b360-104">例</span><span class="sxs-lookup"><span data-stu-id="1b360-104">Example</span></span>  
+ <span data-ttu-id="1b360-105">次の例を含むオブジェクトのいくつか作成<xref:System.Xml.Linq.XElement>オブジェクト</xref:System.Xml.Linq.XElement>。</span><span class="sxs-lookup"><span data-stu-id="1b360-105">The following example creates a number of objects that contain <xref:System.Xml.Linq.XElement> objects.</span></span> <span data-ttu-id="1b360-106">次に、それらのオブジェクトをメモリ ストリームにシリアル化し、メモリ ストリームから逆シリアル化します。</span><span class="sxs-lookup"><span data-stu-id="1b360-106">It then serializes them to a memory stream, and then deserializes them from the memory stream.</span></span>  
   
 ```vb  
 Imports System  
@@ -87,7 +87,7 @@ Public Class XLinqTest
 End Class  
 ```  
   
- この例を実行すると、次の出力が生成されます。  
+ <span data-ttu-id="1b360-107">この例を実行すると、次の出力が生成されます。</span><span class="sxs-lookup"><span data-stu-id="1b360-107">This example produces the following output:</span></span>  
   
 ```  
 Testing for type: XElementNullContainer  
@@ -98,6 +98,6 @@ Testing for type: XElementContainer
   Deserialized type: XElementContainer  
 ```  
   
-## <a name="see-also"></a>関連項目  
- [XElement オブジェクト (Visual Basic) を含むオブジェクト グラフをシリアル化します。](../../../../visual-basic/programming-guide/concepts/linq/serializing-object-graphs-that-contain-xelement-objects.md)
+## <a name="see-also"></a><span data-ttu-id="1b360-108">関連項目</span><span class="sxs-lookup"><span data-stu-id="1b360-108">See Also</span></span>  
+ [<span data-ttu-id="1b360-109">XElement オブジェクト (Visual Basic) を含むオブジェクト グラフをシリアル化します。</span><span class="sxs-lookup"><span data-stu-id="1b360-109">Serializing Object Graphs that Contain XElement Objects (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/serializing-object-graphs-that-contain-xelement-objects.md)
 

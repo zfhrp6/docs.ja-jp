@@ -20,16 +20,17 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: f3ea94c23ae1c8a565c8d457791ae0ed0d52f61d
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
+ms.openlocfilehash: 96039a8f425d5af1b5875557c16f8decab6cc7a6
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/12/2017
 
 ---
-# <a name="sample-xml-file-numerical-data-in-a-namespace"></a>サンプル XML ファイル : 名前空間内の数値データ
-次の XML ファイルは、[!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)] ドキュメントのさまざまな例で使用されます。 このファイルには、集計、平均、およびグループ化用の数値データが含まれています。 XML は名前空間に含まれています。  
+# <a name="sample-xml-file-numerical-data-in-a-namespace"></a><span data-ttu-id="19c5a-102">サンプル XML ファイル : 名前空間内の数値データ</span><span class="sxs-lookup"><span data-stu-id="19c5a-102">Sample XML File: Numerical Data in a Namespace</span></span>
+<span data-ttu-id="19c5a-103">次の XML ファイルは、[!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)] ドキュメントのさまざまな例で使用されます。</span><span class="sxs-lookup"><span data-stu-id="19c5a-103">The following XML file is used in various examples in the [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)] documentation.</span></span> <span data-ttu-id="19c5a-104">このファイルには、集計、平均、およびグループ化用の数値データが含まれています。</span><span class="sxs-lookup"><span data-stu-id="19c5a-104">This file contains numerical data for summing, averaging, and grouping.</span></span> <span data-ttu-id="19c5a-105">XML は名前空間に含まれています。</span><span class="sxs-lookup"><span data-stu-id="19c5a-105">The XML is in a namespace.</span></span>  
   
-## <a name="data"></a>データ  
+## <a name="data"></a><span data-ttu-id="19c5a-106">データ</span><span class="sxs-lookup"><span data-stu-id="19c5a-106">Data</span></span>  
   
 ```xml  
 <Root xmlns='http://www.adatum.com'>  
@@ -72,5 +73,5 @@ ms.lasthandoff: 03/13/2017
 </Root>  
 ```  
   
-## <a name="see-also"></a>関連項目  
- [サンプル XML ドキュメント (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-documents-linq-to-xml.md)
+## <a name="see-also"></a><span data-ttu-id="19c5a-107">関連項目</span><span class="sxs-lookup"><span data-stu-id="19c5a-107">See Also</span></span>  
+ [<span data-ttu-id="19c5a-108">サンプル XML ドキュメント (LINQ to XML)</span><span class="sxs-lookup"><span data-stu-id="19c5a-108">Sample XML Documents (LINQ to XML)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-documents-linq-to-xml.md)

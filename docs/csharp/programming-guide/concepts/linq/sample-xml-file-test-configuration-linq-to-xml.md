@@ -26,10 +26,10 @@ ms.contentlocale: ja-jp
 ms.lasthandoff: 07/28/2017
 
 ---
-# <a name="sample-xml-file-test-configuration-linq-to-xml"></a>サンプル XML ファイル : テスト構成 (LINQ to XML)
-次の XML ファイルは、[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] ドキュメントのさまざまな例で使用されます。 これはテスト構成ファイルです。  
+# <a name="sample-xml-file-test-configuration-linq-to-xml"></a><span data-ttu-id="ae311-102">サンプル XML ファイル : テスト構成 (LINQ to XML)</span><span class="sxs-lookup"><span data-stu-id="ae311-102">Sample XML File: Test Configuration (LINQ to XML)</span></span>
+<span data-ttu-id="ae311-103">次の XML ファイルは、[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] ドキュメントのさまざまな例で使用されます。</span><span class="sxs-lookup"><span data-stu-id="ae311-103">The following XML file is used in various examples in the [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] documentation.</span></span> <span data-ttu-id="ae311-104">これはテスト構成ファイルです。</span><span class="sxs-lookup"><span data-stu-id="ae311-104">This is a test configuration file.</span></span>  
   
-## <a name="testconfigxml"></a>TestConfig.xml  
+## <a name="testconfigxml"></a><span data-ttu-id="ae311-105">TestConfig.xml</span><span class="sxs-lookup"><span data-stu-id="ae311-105">TestConfig.xml</span></span>  
   
 ```xml  
 <?xml version="1.0"?>  
@@ -73,6 +73,6 @@ ms.lasthandoff: 07/28/2017
 </Tests>  
 ```  
   
-## <a name="see-also"></a>関連項目  
- [サンプル XML ドキュメント (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-documents-linq-to-xml.md)
+## <a name="see-also"></a><span data-ttu-id="ae311-106">関連項目</span><span class="sxs-lookup"><span data-stu-id="ae311-106">See Also</span></span>  
+ [<span data-ttu-id="ae311-107">サンプル XML ドキュメント (LINQ to XML)</span><span class="sxs-lookup"><span data-stu-id="ae311-107">Sample XML Documents (LINQ to XML)</span></span>](../../../../csharp/programming-guide/concepts/linq/sample-xml-documents-linq-to-xml.md)
 

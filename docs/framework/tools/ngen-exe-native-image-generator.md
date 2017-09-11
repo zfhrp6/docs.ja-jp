@@ -32,45 +32,45 @@ author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 75c329c2d57e1731c1f3cd0d34f680c3706763ce
+ms.sourcegitcommit: c6e199800a86bc8b275fed4e3ba3ea6f77c7d2fa
+ms.openlocfilehash: e7fd4049228d4361f4c0d4d61e15ca7f5ea0594f
 ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
+ms.lasthandoff: 09/01/2017
 
 ---
-# <a name="ngenexe-native-image-generator"></a>Ngen.exe (ネイティブ イメージ ジェネレーター)
-ネイティブ イメージ ジェネレーター (Ngen.exe) は、マネージ アプリケーションのパフォーマンスを向上するツールです。 Ngen.exe は、コンパイルされたプロセッサ固有のマシン コードを含むファイルであるネイティブ イメージを作成してローカル コンピューターのネイティブ イメージ キャッシュにインストールします。 ランタイムは、Just-In-Time (JIT) コンパイラを使用してオリジナルのアセンブリをコンパイルする代わりに、キャッシュにあるネイティブ イメージを使用できます。  
+# <a name="ngenexe-native-image-generator"></a><span data-ttu-id="44e35-102">Ngen.exe (ネイティブ イメージ ジェネレーター)</span><span class="sxs-lookup"><span data-stu-id="44e35-102">Ngen.exe (Native Image Generator)</span></span>
+<span data-ttu-id="44e35-103">ネイティブ イメージ ジェネレーター (Ngen.exe) は、マネージ アプリケーションのパフォーマンスを向上するツールです。</span><span class="sxs-lookup"><span data-stu-id="44e35-103">The Native Image Generator (Ngen.exe) is a tool that improves the performance of managed applications.</span></span> <span data-ttu-id="44e35-104">Ngen.exe は、コンパイルされたプロセッサ固有のマシン コードを含むファイルであるネイティブ イメージを作成してローカル コンピューターのネイティブ イメージ キャッシュにインストールします。</span><span class="sxs-lookup"><span data-stu-id="44e35-104">Ngen.exe creates native images, which are files containing compiled processor-specific machine code, and installs them into the native image cache on the local computer.</span></span> <span data-ttu-id="44e35-105">ランタイムは、Just-In-Time (JIT) コンパイラを使用してオリジナルのアセンブリをコンパイルする代わりに、キャッシュにあるネイティブ イメージを使用できます。</span><span class="sxs-lookup"><span data-stu-id="44e35-105">The runtime can use native images from the cache instead of using the just-in-time (JIT) compiler to compile the original assembly.</span></span>  
   
- [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)] では、次の変更が Ngen.exe に加えられました。  
+ <span data-ttu-id="44e35-106">[!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)] では、次の変更が Ngen.exe に加えられました。</span><span class="sxs-lookup"><span data-stu-id="44e35-106">Changes to Ngen.exe in the [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)]:</span></span>  
   
--   Ngen.exe によるアセンブリのコンパイルが完全信頼で行われるようになり、コード アクセス セキュリティ (CAS: Code Access Security) ポリシーが評価されなくなりました。  
+-   <span data-ttu-id="44e35-107">Ngen.exe によるアセンブリのコンパイルが完全信頼で行われるようになり、コード アクセス セキュリティ (CAS: Code Access Security) ポリシーが評価されなくなりました。</span><span class="sxs-lookup"><span data-stu-id="44e35-107">Ngen.exe now compiles assemblies with full trust, and code access security (CAS) policy is no longer evaluated.</span></span>  
   
--   Ngen.exe で生成されたネイティブ イメージを、部分信頼で実行されているアプリケーションに読み込むことができなくなりました。  
+-   <span data-ttu-id="44e35-108">Ngen.exe で生成されたネイティブ イメージを、部分信頼で実行されているアプリケーションに読み込むことができなくなりました。</span><span class="sxs-lookup"><span data-stu-id="44e35-108">Native images that are generated with Ngen.exe can no longer be loaded into applications that are running in partial trust.</span></span>  
   
- .NET Framework Version 2.0 では、次の変更が Ngen.exe に加えられました。  
+ <span data-ttu-id="44e35-109">.NET Framework Version 2.0 では、次の変更が Ngen.exe に加えられました。</span><span class="sxs-lookup"><span data-stu-id="44e35-109">Changes to Ngen.exe in the .NET Framework version 2.0:</span></span>  
   
--   アセンブリと共にその依存関係もインストールされることで、Ngen.exe の構文が簡略化されました。  
+-   <span data-ttu-id="44e35-110">アセンブリと共にその依存関係もインストールされることで、Ngen.exe の構文が簡略化されました。</span><span class="sxs-lookup"><span data-stu-id="44e35-110">Installing an assembly also installs its dependencies, simplifying the syntax of Ngen.exe.</span></span>  
   
--   ネイティブ イメージをアプリケーション ドメイン間で共有できるようになりました。  
+-   <span data-ttu-id="44e35-111">ネイティブ イメージをアプリケーション ドメイン間で共有できるようになりました。</span><span class="sxs-lookup"><span data-stu-id="44e35-111">Native images can now be shared across application domains.</span></span>  
   
--   新しいアクションの `update` は、無効になっていたイメージを再作成します。  
+-   <span data-ttu-id="44e35-112">新しいアクションの `update` は、無効になっていたイメージを再作成します。</span><span class="sxs-lookup"><span data-stu-id="44e35-112">A new action, `update`, re-creates images that have been invalidated.</span></span>  
   
--   アクションの実行は、コンピューターのアイドル時間を使用してイメージを生成してインストールするサービスによって遅らせることができます。  
+-   <span data-ttu-id="44e35-113">アクションの実行は、コンピューターのアイドル時間を使用してイメージを生成してインストールするサービスによって遅らせることができます。</span><span class="sxs-lookup"><span data-stu-id="44e35-113">Actions can be deferred for execution by a service that uses idle time on the computer to generate and install images.</span></span>  
   
--   イメージを無効化する原因の一部が解決されました。  
+-   <span data-ttu-id="44e35-114">イメージを無効化する原因の一部が解決されました。</span><span class="sxs-lookup"><span data-stu-id="44e35-114">Some causes of image invalidation have been eliminated.</span></span>  
   
- Windows 8 の場合、「[ネイティブ イメージ タスク](http://msdn.microsoft.com/en-us/9b1f7590-4e0d-4737-90ef-eaf696932afb)」を参照してください。  
+ <span data-ttu-id="44e35-115">Windows 8 の場合、「[ネイティブ イメージ タスク](http://msdn.microsoft.com/en-us/9b1f7590-4e0d-4737-90ef-eaf696932afb)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="44e35-115">On Windows 8, see [Native Image Task](http://msdn.microsoft.com/en-us/9b1f7590-4e0d-4737-90ef-eaf696932afb).</span></span>  
   
- Ngen.exe とネイティブ イメージ サービスの使用に関する追加情報については、「[ネイティブ イメージ サービス](http://msdn.microsoft.com/en-us/b15e0e32-59cb-4ae4-967c-6c9527781309)」を参照してください。  
+ <span data-ttu-id="44e35-116">Ngen.exe とネイティブ イメージ サービスの使用に関する追加情報については、「[ネイティブ イメージ サービス](http://msdn.microsoft.com/en-us/b15e0e32-59cb-4ae4-967c-6c9527781309)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="44e35-116">For additional information on using Ngen.exe and the native image service, see [Native Image Service](http://msdn.microsoft.com/en-us/b15e0e32-59cb-4ae4-967c-6c9527781309).</span></span>  
   
 > [!NOTE]
->  .NET Framework バージョン 1.0 とバージョン 1.1 の Ngen.exe 構文は、「[ネイティブ イメージ ジェネレーター (Ngen.exe) のレガシ構文](http://msdn.microsoft.com/en-us/5a69fc7a-103f-4afc-8ab4-606adcb46324)」に記されています。  
+>  <span data-ttu-id="44e35-117">.NET Framework バージョン 1.0 とバージョン 1.1 の Ngen.exe 構文は、「[ネイティブ イメージ ジェネレーター (Ngen.exe) のレガシ構文](http://msdn.microsoft.com/en-us/5a69fc7a-103f-4afc-8ab4-606adcb46324)」に記されています。</span><span class="sxs-lookup"><span data-stu-id="44e35-117">Ngen.exe syntax for versions 1.0 and 1.1 of the .NET Framework can be found in [Native Image Generator (Ngen.exe) Legacy Syntax](http://msdn.microsoft.com/en-us/5a69fc7a-103f-4afc-8ab4-606adcb46324).</span></span>  
   
- このツールは、Visual Studio と共に自動的にインストールされます。 このツールを実行するには、開発者コマンド プロンプト (または、Windows 7 の Visual Studio コマンド プロンプト) を使用します。 詳細については、「[コマンド プロンプト](../../../docs/framework/tools/developer-command-prompt-for-vs.md)」を参照してください。  
+ <span data-ttu-id="44e35-118">このツールは、Visual Studio と共に自動的にインストールされます。</span><span class="sxs-lookup"><span data-stu-id="44e35-118">This tool is automatically installed with Visual Studio.</span></span> <span data-ttu-id="44e35-119">このツールを実行するには、開発者コマンド プロンプト (または、Windows 7 の Visual Studio コマンド プロンプト) を使用します。</span><span class="sxs-lookup"><span data-stu-id="44e35-119">To run the tool, use the Developer Command Prompt (or the Visual Studio Command Prompt in Windows 7).</span></span> <span data-ttu-id="44e35-120">詳細については、「[コマンド プロンプト](../../../docs/framework/tools/developer-command-prompt-for-vs.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="44e35-120">For more information, see [Command Prompts](../../../docs/framework/tools/developer-command-prompt-for-vs.md).</span></span>  
   
- コマンド プロンプトに次のように入力します。  
+ <span data-ttu-id="44e35-121">コマンド プロンプトに次のように入力します。</span><span class="sxs-lookup"><span data-stu-id="44e35-121">At the command prompt, type the following:</span></span>  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a><span data-ttu-id="44e35-122">構文</span><span class="sxs-lookup"><span data-stu-id="44e35-122">Syntax</span></span>  
   
 ```  
 ngen action [options]  
@@ -80,218 +80,218 @@ ngen action [options]
 ngen /? | /help  
 ```  
   
-## <a name="actions"></a>アクション  
- 各 `action` の構文を示す表を次に示します。 `action` の各部分の説明については、「[引数](#ArgumentTable)」、「[優先順位](#PriorityTable)」、「[シナリオ](#ScenarioTable)」、および「[構成](#ConfigTable)」の各表を参照してください。 `options` およびヘルプ スイッチについては、「[オプション](#OptionTable)」の表を参照してください。  
+## <a name="actions"></a><span data-ttu-id="44e35-123">アクション</span><span class="sxs-lookup"><span data-stu-id="44e35-123">Actions</span></span>  
+ <span data-ttu-id="44e35-124">各 `action` の構文を示す表を次に示します。</span><span class="sxs-lookup"><span data-stu-id="44e35-124">The following table shows the syntax of each `action`.</span></span> <span data-ttu-id="44e35-125">`action` の各部分の説明については、「[引数](#ArgumentTable)」、「[優先順位](#PriorityTable)」、「[シナリオ](#ScenarioTable)」、および「[構成](#ConfigTable)」の各表を参照してください。</span><span class="sxs-lookup"><span data-stu-id="44e35-125">For descriptions of the individual parts of an `action`, see the [Arguments](#ArgumentTable), [Priority Levels](#PriorityTable), [Scenarios](#ScenarioTable), and [Config](#ConfigTable) tables.</span></span> <span data-ttu-id="44e35-126">`options` およびヘルプ スイッチについては、「[オプション](#OptionTable)」の表を参照してください。</span><span class="sxs-lookup"><span data-stu-id="44e35-126">The [Options](#OptionTable) table describes the `options` and the help switches.</span></span>  
   
-|操作|説明|  
+|<span data-ttu-id="44e35-127">操作</span><span class="sxs-lookup"><span data-stu-id="44e35-127">Action</span></span>|<span data-ttu-id="44e35-128">説明</span><span class="sxs-lookup"><span data-stu-id="44e35-128">Description</span></span>|  
 |------------|-----------------|  
-|`install` [`assemblyName` &#124; `assemblyPath`] [`scenarios`] [`config`] [`/queue`[`:`{`1`&#124;`2`&#124;`3`}]]|アセンブリおよびそれに依存する項目のネイティブ イメージを生成してネイティブ イメージ キャッシュにインストールします。<br /><br /> `/queue` を指定すると、アクションはネイティブ イメージ サービスのキューに置かれます。 既定の優先順位は 3 です。 「[優先順位](#PriorityTable)」の表を参照してください。|  
-|`uninstall` [`assemblyName` &#124; `assemblyPath`] [`scenarios`] [`config`]|アセンブリのネイティブ イメージとその依存関係をネイティブ イメージ キャッシュから削除します。<br /><br /> 単一のイメージとその依存関係をアンインストールするには、そのイメージをインストールしたときと同じコマンド ライン引数を使用します。 **メモ:** [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)] 以降では、アクション `uninstall` * はサポートされなくなりました。|  
-|`update` [`/queue`]|無効になったネイティブ イメージを更新します。<br /><br /> `/queue` を指定すると、更新はネイティブ イメージ サービスのキューに置かれます。 更新は常に優先順位 3 でスケジュールされるため、コンピューターがアイドル状態のときに実行されます。|  
-|`display` [`assemblyName` &#124; `assemblyPath`]|アセンブリのネイティブ イメージとその依存関係の状態を表示します。<br /><br /> 引数を指定しなければ、ネイティブ イメージ キャッシュのすべての内容が表示されます。|  
-|`executeQueuedItems` [`1``&#124;``2``&#124;``3`]<br /><br /> または<br /><br /> `eqi` [1&#124;2&#124;3]|キューに置かれているコンパイル ジョブを実行します。<br /><br /> 優先順位を指定すると、優先順位が高いかまたは同じコンパイル ジョブが実行されます。 優先順位を指定しなければ、キューに置かれているすべてのコンパイル ジョブが実行されます。|  
-|`queue` {`pause` &#124; `continue` &#124; `status`}|ネイティブ イメージ サービスを一時停止するか、停止しているサービスを再開するか、またはサービスの状態を照会します。|  
+|<span data-ttu-id="44e35-129">`install` [`assemblyName` &#124; `assemblyPath`] [`scenarios`] [`config`] [`/queue`[`:`{`1`&#124;`2`&#124;`3`}]]</span><span class="sxs-lookup"><span data-stu-id="44e35-129">`install` [`assemblyName` &#124; `assemblyPath`] [`scenarios`] [`config`] [`/queue`[`:`{`1`&#124;`2`&#124;`3`}]]</span></span>|<span data-ttu-id="44e35-130">アセンブリおよびそれに依存する項目のネイティブ イメージを生成してネイティブ イメージ キャッシュにインストールします。</span><span class="sxs-lookup"><span data-stu-id="44e35-130">Generate native images for an assembly and its dependencies and install the images in the native image cache.</span></span><br /><br /> <span data-ttu-id="44e35-131">`/queue` を指定すると、アクションはネイティブ イメージ サービスのキューに置かれます。</span><span class="sxs-lookup"><span data-stu-id="44e35-131">If `/queue` is specified, the action is queued for the native image service.</span></span> <span data-ttu-id="44e35-132">既定の優先順位は 3 です。</span><span class="sxs-lookup"><span data-stu-id="44e35-132">The default priority is 3.</span></span> <span data-ttu-id="44e35-133">「[優先順位](#PriorityTable)」の表を参照してください。</span><span class="sxs-lookup"><span data-stu-id="44e35-133">See the [Priority Levels](#PriorityTable) table.</span></span>|  
+|<span data-ttu-id="44e35-134">`uninstall` [`assemblyName` &#124; `assemblyPath`] [`scenarios`] [`config`]</span><span class="sxs-lookup"><span data-stu-id="44e35-134">`uninstall` [`assemblyName` &#124; `assemblyPath`] [`scenarios`] [`config`]</span></span>|<span data-ttu-id="44e35-135">アセンブリのネイティブ イメージとその依存関係をネイティブ イメージ キャッシュから削除します。</span><span class="sxs-lookup"><span data-stu-id="44e35-135">Delete the native images of an assembly and its dependencies from the native image cache.</span></span><br /><br /> <span data-ttu-id="44e35-136">単一のイメージとその依存関係をアンインストールするには、そのイメージをインストールしたときと同じコマンド ライン引数を使用します。</span><span class="sxs-lookup"><span data-stu-id="44e35-136">To uninstall a single image and its dependencies, use the same command-line arguments that were used to install the image.</span></span> <span data-ttu-id="44e35-137">**メモ:** [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)] 以降では、アクション `uninstall` * はサポートされなくなりました。</span><span class="sxs-lookup"><span data-stu-id="44e35-137">**Note:**  Starting with the [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)], the action `uninstall` * is no longer supported.</span></span>|  
+|<span data-ttu-id="44e35-138">`update` [`/queue`]</span><span class="sxs-lookup"><span data-stu-id="44e35-138">`update` [`/queue`]</span></span>|<span data-ttu-id="44e35-139">無効になったネイティブ イメージを更新します。</span><span class="sxs-lookup"><span data-stu-id="44e35-139">Update native images that have become invalid.</span></span><br /><br /> <span data-ttu-id="44e35-140">`/queue` を指定すると、更新はネイティブ イメージ サービスのキューに置かれます。</span><span class="sxs-lookup"><span data-stu-id="44e35-140">If `/queue` is specified, the updates are queued for the native image service.</span></span> <span data-ttu-id="44e35-141">更新は常に優先順位 3 でスケジュールされるため、コンピューターがアイドル状態のときに実行されます。</span><span class="sxs-lookup"><span data-stu-id="44e35-141">Updates are always scheduled at priority 3, so they run when the computer is idle.</span></span>|  
+|<span data-ttu-id="44e35-142">`display` [`assemblyName` &#124; `assemblyPath`]</span><span class="sxs-lookup"><span data-stu-id="44e35-142">`display` [`assemblyName` &#124; `assemblyPath`]</span></span>|<span data-ttu-id="44e35-143">アセンブリのネイティブ イメージとその依存関係の状態を表示します。</span><span class="sxs-lookup"><span data-stu-id="44e35-143">Display the state of the native images for an assembly and its dependencies.</span></span><br /><br /> <span data-ttu-id="44e35-144">引数を指定しなければ、ネイティブ イメージ キャッシュのすべての内容が表示されます。</span><span class="sxs-lookup"><span data-stu-id="44e35-144">If no argument is supplied, everything in the native image cache is displayed.</span></span>|  
+|<span data-ttu-id="44e35-145">`executeQueuedItems` [`1``&#124;``2``&#124;``3`]</span><span class="sxs-lookup"><span data-stu-id="44e35-145">`executeQueuedItems` [`1``&#124;``2``&#124;``3`]</span></span><br /><br /> <span data-ttu-id="44e35-146">または</span><span class="sxs-lookup"><span data-stu-id="44e35-146">-or-</span></span><br /><br /> <span data-ttu-id="44e35-147">`eqi` [1&#124;2&#124;3]</span><span class="sxs-lookup"><span data-stu-id="44e35-147">`eqi` [1&#124;2&#124;3]</span></span>|<span data-ttu-id="44e35-148">キューに置かれているコンパイル ジョブを実行します。</span><span class="sxs-lookup"><span data-stu-id="44e35-148">Execute queued compilation jobs.</span></span><br /><br /> <span data-ttu-id="44e35-149">優先順位を指定すると、優先順位が高いかまたは同じコンパイル ジョブが実行されます。</span><span class="sxs-lookup"><span data-stu-id="44e35-149">If a priority is specified, compilation jobs with greater or equal priority are executed.</span></span> <span data-ttu-id="44e35-150">優先順位を指定しなければ、キューに置かれているすべてのコンパイル ジョブが実行されます。</span><span class="sxs-lookup"><span data-stu-id="44e35-150">If no priority is specified, all queued compilation jobs are executed.</span></span>|  
+|<span data-ttu-id="44e35-151">`queue` {`pause` &#124; `continue` &#124; `status`}</span><span class="sxs-lookup"><span data-stu-id="44e35-151">`queue` {`pause` &#124; `continue` &#124; `status`}</span></span>|<span data-ttu-id="44e35-152">ネイティブ イメージ サービスを一時停止するか、停止しているサービスを再開するか、またはサービスの状態を照会します。</span><span class="sxs-lookup"><span data-stu-id="44e35-152">Pause the native image service, allow the paused service to continue, or query the status of the service.</span></span>|  
   
 <a name="ArgumentTable"></a>   
-## <a name="arguments"></a>引数  
+## <a name="arguments"></a><span data-ttu-id="44e35-153">引数</span><span class="sxs-lookup"><span data-stu-id="44e35-153">Arguments</span></span>  
   
-|引数|説明|  
+|<span data-ttu-id="44e35-154">引数</span><span class="sxs-lookup"><span data-stu-id="44e35-154">Argument</span></span>|<span data-ttu-id="44e35-155">説明</span><span class="sxs-lookup"><span data-stu-id="44e35-155">Description</span></span>|  
 |--------------|-----------------|  
-|`assemblyName`|アセンブリの完全な表示名。 たとえば、`"myAssembly, Version=2.0.0.0, Culture=neutral, PublicKeyToken=0038abc9deabfle5"` のようにします。 **メモ:** `display` アクションおよび `uninstall` アクションに対しては、`myAssembly` などのように部分的なアセンブリ名を指定できます。 <br /><br /> Ngen.exe の各コマンド ラインに指定できるアセンブリは 1 つだけです。|  
-|`assemblyPath`|アセンブリの明示的なパスを返します。 フル パスまたは相対パスを指定できます。<br /><br /> パスを指定せずにファイル名を指定する場合、アセンブリは現在のディレクトリに存在する必要があります。<br /><br /> Ngen.exe の各コマンド ラインに指定できるアセンブリは 1 つだけです。|  
+|`assemblyName`|<span data-ttu-id="44e35-156">アセンブリの完全な表示名。</span><span class="sxs-lookup"><span data-stu-id="44e35-156">The full display name of the assembly.</span></span> <span data-ttu-id="44e35-157">たとえば、`"myAssembly, Version=2.0.0.0, Culture=neutral, PublicKeyToken=0038abc9deabfle5"` のようにします。</span><span class="sxs-lookup"><span data-stu-id="44e35-157">For example, `"myAssembly, Version=2.0.0.0, Culture=neutral, PublicKeyToken=0038abc9deabfle5"`.</span></span> <span data-ttu-id="44e35-158">**メモ:** `display` アクションおよび `uninstall` アクションに対しては、`myAssembly` などのように部分的なアセンブリ名を指定できます。</span><span class="sxs-lookup"><span data-stu-id="44e35-158">**Note:**  You can supply a partial assembly name, such as `myAssembly`, for the `display` and `uninstall` actions.</span></span> <br /><br /> <span data-ttu-id="44e35-159">Ngen.exe の各コマンド ラインに指定できるアセンブリは 1 つだけです。</span><span class="sxs-lookup"><span data-stu-id="44e35-159">Only one assembly can be specified per Ngen.exe command line.</span></span>|  
+|`assemblyPath`|<span data-ttu-id="44e35-160">アセンブリの明示的なパスを返します。</span><span class="sxs-lookup"><span data-stu-id="44e35-160">The explicit path of the assembly.</span></span> <span data-ttu-id="44e35-161">フル パスまたは相対パスを指定できます。</span><span class="sxs-lookup"><span data-stu-id="44e35-161">You can specify a full or relative path.</span></span><br /><br /> <span data-ttu-id="44e35-162">パスを指定せずにファイル名を指定する場合、アセンブリは現在のディレクトリに存在する必要があります。</span><span class="sxs-lookup"><span data-stu-id="44e35-162">If you specify a file name without a path, the assembly must be located in the current directory.</span></span><br /><br /> <span data-ttu-id="44e35-163">Ngen.exe の各コマンド ラインに指定できるアセンブリは 1 つだけです。</span><span class="sxs-lookup"><span data-stu-id="44e35-163">Only one assembly can be specified per Ngen.exe command line.</span></span>|  
   
 <a name="PriorityTable"></a>   
-## <a name="priority-levels"></a>優先順位  
+## <a name="priority-levels"></a><span data-ttu-id="44e35-164">優先順位</span><span class="sxs-lookup"><span data-stu-id="44e35-164">Priority Levels</span></span>  
   
-|優先度|説明|  
+|<span data-ttu-id="44e35-165">優先度</span><span class="sxs-lookup"><span data-stu-id="44e35-165">Priority</span></span>|<span data-ttu-id="44e35-166">説明</span><span class="sxs-lookup"><span data-stu-id="44e35-166">Description</span></span>|  
 |--------------|-----------------|  
-|`1`|ネイティブ イメージが生成され、アイドル時間まで待たずに直ちにインストールされます。|  
-|`2`|ネイティブ イメージが生成され、アイドル時間まで待たずにインストールされますが、優先順位 1 のすべてのアクション (およびその依存関係) が完了した後にインストールされます。|  
-|`3`|コンピューターがアイドル状態になったことをネイティブ イメージ サービスが検出するとネイティブ イメージがインストールされます。 「[ネイティブ イメージ サービス](http://msdn.microsoft.com/en-us/b15e0e32-59cb-4ae4-967c-6c9527781309)」を参照してください。|  
+|`1`|<span data-ttu-id="44e35-167">ネイティブ イメージが生成され、アイドル時間まで待たずに直ちにインストールされます。</span><span class="sxs-lookup"><span data-stu-id="44e35-167">Native images are generated and installed immediately, without waiting for idle time.</span></span>|  
+|`2`|<span data-ttu-id="44e35-168">ネイティブ イメージが生成され、アイドル時間まで待たずにインストールされますが、優先順位 1 のすべてのアクション (およびその依存関係) が完了した後にインストールされます。</span><span class="sxs-lookup"><span data-stu-id="44e35-168">Native images are generated and installed without waiting for idle time, but after all priority 1 actions (and their dependencies) have completed.</span></span>|  
+|`3`|<span data-ttu-id="44e35-169">コンピューターがアイドル状態になったことをネイティブ イメージ サービスが検出するとネイティブ イメージがインストールされます。</span><span class="sxs-lookup"><span data-stu-id="44e35-169">Native images are installed when the native image service detects that the computer is idle.</span></span> <span data-ttu-id="44e35-170">「[ネイティブ イメージ サービス](http://msdn.microsoft.com/en-us/b15e0e32-59cb-4ae4-967c-6c9527781309)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="44e35-170">See [Native Image Service](http://msdn.microsoft.com/en-us/b15e0e32-59cb-4ae4-967c-6c9527781309).</span></span>|  
   
 <a name="ScenarioTable"></a>   
-## <a name="scenarios"></a>シナリオ  
+## <a name="scenarios"></a><span data-ttu-id="44e35-171">シナリオ</span><span class="sxs-lookup"><span data-stu-id="44e35-171">Scenarios</span></span>  
   
-|シナリオ|説明|  
+|<span data-ttu-id="44e35-172">シナリオ</span><span class="sxs-lookup"><span data-stu-id="44e35-172">Scenario</span></span>|<span data-ttu-id="44e35-173">説明</span><span class="sxs-lookup"><span data-stu-id="44e35-173">Description</span></span>|  
 |--------------|-----------------|  
-|`/Debug`|デバッガーで使用できるネイティブ イメージを生成します。|  
-|`/Profile`|プロファイラーで使用できるネイティブ イメージを生成します。|  
-|`/NoDependencies`|指定されたシナリオのオプションに必要なネイティブ イメージの最小数を生成します。|  
+|`/Debug`|<span data-ttu-id="44e35-174">デバッガーで使用できるネイティブ イメージを生成します。</span><span class="sxs-lookup"><span data-stu-id="44e35-174">Generate native images that can be used under a debugger.</span></span>|  
+|`/Profile`|<span data-ttu-id="44e35-175">プロファイラーで使用できるネイティブ イメージを生成します。</span><span class="sxs-lookup"><span data-stu-id="44e35-175">Generate native images that can be used under a profiler.</span></span>|  
+|`/NoDependencies`|<span data-ttu-id="44e35-176">指定されたシナリオのオプションに必要なネイティブ イメージの最小数を生成します。</span><span class="sxs-lookup"><span data-stu-id="44e35-176">Generate the minimum number of native images required by the specified scenario options.</span></span>|  
   
 <a name="ConfigTable"></a>   
-## <a name="config"></a>構成  
+## <a name="config"></a><span data-ttu-id="44e35-177">構成</span><span class="sxs-lookup"><span data-stu-id="44e35-177">Config</span></span>  
   
-|構成|説明|  
+|<span data-ttu-id="44e35-178">構成</span><span class="sxs-lookup"><span data-stu-id="44e35-178">Configuration</span></span>|<span data-ttu-id="44e35-179">説明</span><span class="sxs-lookup"><span data-stu-id="44e35-179">Description</span></span>|  
 |-------------------|-----------------|  
-|`/ExeConfig:` `exePath`|指定された実行可能アセンブリの構成を使用します。<br /><br /> Ngen.exe は、依存関係にバインドする際に、ローダーと同じ決定をする必要があります。 <xref:System.Reflection.Assembly.Load%2A> メソッドを使用して共有コンポーネントが実行時に読み込まれると、読み込まれた依存関係のバージョンなどの共有コンポーネント用に読み込まれた依存関係はアプリケーションの構成ファイルによって決定されます。 `/ExeConfig` スイッチは、実行時にどの依存関係を読み込むかに関するガイダンスを Ngen.exe に提供します。|  
-|`/AppBase:` `directoryPath`|依存関係を検索するときは、アプリケーション ベースに指定されているディレクトリを使用します。|  
+|<span data-ttu-id="44e35-180">`/ExeConfig:` `exePath`</span><span class="sxs-lookup"><span data-stu-id="44e35-180">`/ExeConfig:` `exePath`</span></span>|<span data-ttu-id="44e35-181">指定された実行可能アセンブリの構成を使用します。</span><span class="sxs-lookup"><span data-stu-id="44e35-181">Use the configuration of the specified executable assembly.</span></span><br /><br /> <span data-ttu-id="44e35-182">Ngen.exe は、依存関係にバインドする際に、ローダーと同じ決定をする必要があります。</span><span class="sxs-lookup"><span data-stu-id="44e35-182">Ngen.exe needs to make the same decisions as the loader when binding to dependencies.</span></span> <span data-ttu-id="44e35-183"><xref:System.Reflection.Assembly.Load%2A> メソッドを使用して共有コンポーネントが実行時に読み込まれると、読み込まれた依存関係のバージョンなどの共有コンポーネント用に読み込まれた依存関係はアプリケーションの構成ファイルによって決定されます。</span><span class="sxs-lookup"><span data-stu-id="44e35-183">When a shared component is loaded at run time, using the <xref:System.Reflection.Assembly.Load%2A> method, the application's configuration file determines the dependencies that are loaded for the shared component — for example, the version of a dependency that is loaded.</span></span> <span data-ttu-id="44e35-184">`/ExeConfig` スイッチは、実行時にどの依存関係を読み込むかに関するガイダンスを Ngen.exe に提供します。</span><span class="sxs-lookup"><span data-stu-id="44e35-184">The `/ExeConfig` switch gives Ngen.exe guidance on which dependencies would be loaded at run time.</span></span>|  
+|<span data-ttu-id="44e35-185">`/AppBase:` `directoryPath`</span><span class="sxs-lookup"><span data-stu-id="44e35-185">`/AppBase:` `directoryPath`</span></span>|<span data-ttu-id="44e35-186">依存関係を検索するときは、アプリケーション ベースに指定されているディレクトリを使用します。</span><span class="sxs-lookup"><span data-stu-id="44e35-186">When locating dependencies, use the specified directory as the application base.</span></span>|  
   
 <a name="OptionTable"></a>   
-## <a name="options"></a>オプション  
+## <a name="options"></a><span data-ttu-id="44e35-187">オプション</span><span class="sxs-lookup"><span data-stu-id="44e35-187">Options</span></span>  
   
-|オプション|説明|  
+|<span data-ttu-id="44e35-188">オプション</span><span class="sxs-lookup"><span data-stu-id="44e35-188">Option</span></span>|<span data-ttu-id="44e35-189">説明</span><span class="sxs-lookup"><span data-stu-id="44e35-189">Description</span></span>|  
 |------------|-----------------|  
-|`/nologo`|Microsoft 著作権情報を表示しません。|  
-|`/silent`|成功メッセージを表示しません。|  
-|`/verbose`|デバッグの詳細情報を表示します。 **メモ:** オペレーティング システムの制限により、Windows 98 と Windows Millennium Edition では追加情報は表示されません。|  
-|`/help`, `/?`|現在のリリースのコマンド構文とオプションを表示します。|  
+|`/nologo`|<span data-ttu-id="44e35-190">Microsoft 著作権情報を表示しません。</span><span class="sxs-lookup"><span data-stu-id="44e35-190">Suppress the Microsoft startup banner display.</span></span>|  
+|`/silent`|<span data-ttu-id="44e35-191">成功メッセージを表示しません。</span><span class="sxs-lookup"><span data-stu-id="44e35-191">Suppress the display of success messages.</span></span>|  
+|`/verbose`|<span data-ttu-id="44e35-192">デバッグの詳細情報を表示します。</span><span class="sxs-lookup"><span data-stu-id="44e35-192">Display detailed information for debugging.</span></span> <span data-ttu-id="44e35-193">**メモ:** オペレーティング システムの制限により、Windows 98 と Windows Millennium Edition では追加情報は表示されません。</span><span class="sxs-lookup"><span data-stu-id="44e35-193">**Note:**  Due to operating system limitations, this option does not display as much additional information on Windows 98 and Windows Millennium Edition.</span></span>|  
+|<span data-ttu-id="44e35-194">`/help`, `/?`</span><span class="sxs-lookup"><span data-stu-id="44e35-194">`/help`, `/?`</span></span>|<span data-ttu-id="44e35-195">現在のリリースのコマンド構文とオプションを表示します。</span><span class="sxs-lookup"><span data-stu-id="44e35-195">Display command syntax and options for the current release.</span></span>|  
   
-## <a name="remarks"></a>コメント  
- Ngen.exe を実行するには、管理特権が必要です。  
+## <a name="remarks"></a><span data-ttu-id="44e35-196">コメント</span><span class="sxs-lookup"><span data-stu-id="44e35-196">Remarks</span></span>  
+ <span data-ttu-id="44e35-197">Ngen.exe を実行するには、管理特権が必要です。</span><span class="sxs-lookup"><span data-stu-id="44e35-197">To run Ngen.exe, you must have administrative privileges.</span></span>  
   
 > [!CAUTION]
->  完全に信頼されていないアセンブリで Ngen.exe を実行しないでください。 [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)] 以降では、Ngen.exe によるアセンブリのコンパイルが完全信頼で行われるようになり、コード アクセス セキュリティ (CAS) ポリシーが評価されなくなりました。  
+>  <span data-ttu-id="44e35-198">完全に信頼されていないアセンブリで Ngen.exe を実行しないでください。</span><span class="sxs-lookup"><span data-stu-id="44e35-198">Do not run Ngen.exe on assemblies that are not fully trusted.</span></span> <span data-ttu-id="44e35-199">[!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)] 以降では、Ngen.exe によるアセンブリのコンパイルが完全信頼で行われるようになり、コード アクセス セキュリティ (CAS) ポリシーが評価されなくなりました。</span><span class="sxs-lookup"><span data-stu-id="44e35-199">Starting with the [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)], Ngen.exe compiles assemblies with full trust, and code access security (CAS) policy is no longer evaluated.</span></span>  
   
- [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] 以降では、Ngen.exe で生成されたネイティブ イメージを、部分信頼で実行されているアプリケーションに読み込むことができなくなりました。 代わりに、Just-In-Time (JIT) コンパイラが呼び出されます。  
+ <span data-ttu-id="44e35-200">[!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] 以降では、Ngen.exe で生成されたネイティブ イメージを、部分信頼で実行されているアプリケーションに読み込むことができなくなりました。</span><span class="sxs-lookup"><span data-stu-id="44e35-200">Starting with the [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)], the native images that are generated with Ngen.exe can no longer be loaded into applications that are running in partial trust.</span></span> <span data-ttu-id="44e35-201">代わりに、Just-In-Time (JIT) コンパイラが呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="44e35-201">Instead, the just-in-time (JIT) compiler is invoked.</span></span>  
   
- Ngen.exe は、`install` アクションへの `assemblyname` 引数で指定されたアセンブリおよびそのすべての依存項目のネイティブ イメージを生成します。 依存関係は、アセンブリ マニフェストを参照して決定されます。 依存関係を別個にインストールする必要があるのは、アプリケーションがリフレクションを使用して依存関係を読み込む場合だけです。たとえば <xref:System.Reflection.Assembly.Load%2A?displayProperty=fullName> メソッドを呼び出して依存関係を読み込む場合などです。  
+ <span data-ttu-id="44e35-202">Ngen.exe は、`install` アクションへの `assemblyname` 引数で指定されたアセンブリおよびそのすべての依存項目のネイティブ イメージを生成します。</span><span class="sxs-lookup"><span data-stu-id="44e35-202">Ngen.exe generates native images for the assembly specified by the `assemblyname` argument to the `install` action and all its dependencies.</span></span> <span data-ttu-id="44e35-203">依存関係は、アセンブリ マニフェストを参照して決定されます。</span><span class="sxs-lookup"><span data-stu-id="44e35-203">Dependencies are determined from references in the assembly manifest.</span></span> <span data-ttu-id="44e35-204">依存関係を別個にインストールする必要があるのは、アプリケーションがリフレクションを使用して依存関係を読み込む場合だけです。たとえば <xref:System.Reflection.Assembly.Load%2A?displayProperty=fullName> メソッドを呼び出して依存関係を読み込む場合などです。</span><span class="sxs-lookup"><span data-stu-id="44e35-204">The only scenario in which you need to install a dependency separately is when the application loads it using reflection, for example by calling the <xref:System.Reflection.Assembly.Load%2A?displayProperty=fullName> method.</span></span>  
   
 > [!IMPORTANT]
->  ネイティブ イメージに <xref:System.Reflection.Assembly.LoadFrom%2A?displayProperty=fullName> メソッドは使用しないでください。 実行コンテキストの他のアセンブリは、このメソッドを使用して読み込まれるイメージを使用できません。  
+>  <span data-ttu-id="44e35-205">ネイティブ イメージに <xref:System.Reflection.Assembly.LoadFrom%2A?displayProperty=fullName> メソッドは使用しないでください。</span><span class="sxs-lookup"><span data-stu-id="44e35-205">Do not use the <xref:System.Reflection.Assembly.LoadFrom%2A?displayProperty=fullName> method with native images.</span></span> <span data-ttu-id="44e35-206">実行コンテキストの他のアセンブリは、このメソッドを使用して読み込まれるイメージを使用できません。</span><span class="sxs-lookup"><span data-stu-id="44e35-206">An image loaded with this method cannot be used by other assemblies in the execution context.</span></span>  
   
- Ngen.exe は依存関係のカウントを保持します。 たとえば、`MyAssembly.exe` と `YourAssembly.exe` がネイティブ イメージ キャッシュにインストールされており、この両方とも `OurDependency.dll` を参照するとします。 `MyAssembly.exe` がアンインストールされても、`OurDependency.dll` はアンインストールされません。 これが削除されるのは、`YourAssembly.exe` もアンインストールされた場合だけです。  
+ <span data-ttu-id="44e35-207">Ngen.exe は依存関係のカウントを保持します。</span><span class="sxs-lookup"><span data-stu-id="44e35-207">Ngen.exe maintains a count on dependencies.</span></span> <span data-ttu-id="44e35-208">たとえば、`MyAssembly.exe` と `YourAssembly.exe` がネイティブ イメージ キャッシュにインストールされており、この両方とも `OurDependency.dll` を参照するとします。</span><span class="sxs-lookup"><span data-stu-id="44e35-208">For example, suppose `MyAssembly.exe` and `YourAssembly.exe` are both installed in the native image cache, and both have references to `OurDependency.dll`.</span></span> <span data-ttu-id="44e35-209">`MyAssembly.exe` がアンインストールされても、`OurDependency.dll` はアンインストールされません。</span><span class="sxs-lookup"><span data-stu-id="44e35-209">If `MyAssembly.exe` is uninstalled, `OurDependency.dll` is not uninstalled.</span></span> <span data-ttu-id="44e35-210">これが削除されるのは、`YourAssembly.exe` もアンインストールされた場合だけです。</span><span class="sxs-lookup"><span data-stu-id="44e35-210">It is only removed when `YourAssembly.exe` is also uninstalled.</span></span>  
   
- アセンブリのネイティブ イメージをグローバル アセンブリ キャッシュに生成している場合は表示名を指定します。 「<xref:System.Reflection.Assembly.FullName%2A?displayProperty=fullName>」を参照してください。  
+ <span data-ttu-id="44e35-211">アセンブリのネイティブ イメージをグローバル アセンブリ キャッシュに生成している場合は表示名を指定します。</span><span class="sxs-lookup"><span data-stu-id="44e35-211">If you are generating a native image for an assembly in the global assembly cache, specify its display name.</span></span> <span data-ttu-id="44e35-212">「<xref:System.Reflection.Assembly.FullName%2A?displayProperty=fullName>」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="44e35-212">See <xref:System.Reflection.Assembly.FullName%2A?displayProperty=fullName>.</span></span>  
   
- Ngen.exe が生成するネイティブ イメージは、アプリケーション ドメイン間で共有できます。 つまり、アプリケーション ドメイン間でアセンブリを共有する必要のあるアプリケーション シナリオでは Ngen.exe を使用できます。 ドメイン中立性は、次の手順で指定します。  
+ <span data-ttu-id="44e35-213">Ngen.exe が生成するネイティブ イメージは、アプリケーション ドメイン間で共有できます。</span><span class="sxs-lookup"><span data-stu-id="44e35-213">The native images that Ngen.exe generates can be shared across application domains.</span></span> <span data-ttu-id="44e35-214">つまり、アプリケーション ドメイン間でアセンブリを共有する必要のあるアプリケーション シナリオでは Ngen.exe を使用できます。</span><span class="sxs-lookup"><span data-stu-id="44e35-214">This means you can use Ngen.exe in application scenarios that require assemblies to be shared across application domains.</span></span> <span data-ttu-id="44e35-215">ドメイン中立性は、次の手順で指定します。</span><span class="sxs-lookup"><span data-stu-id="44e35-215">To specify domain neutrality:</span></span>  
   
--   アプリケーションに <xref:System.LoaderOptimizationAttribute> 属性を適用します。  
+-   <span data-ttu-id="44e35-216">アプリケーションに <xref:System.LoaderOptimizationAttribute> 属性を適用します。</span><span class="sxs-lookup"><span data-stu-id="44e35-216">Apply the <xref:System.LoaderOptimizationAttribute> attribute to your application.</span></span>  
   
--   新しいアプリケーション ドメインのセットアップ情報を作成するときは、<xref:System.AppDomainSetup.LoaderOptimization%2A?displayProperty=fullName> プロパティを設定します。  
+-   <span data-ttu-id="44e35-217">新しいアプリケーション ドメインのセットアップ情報を作成するときは、<xref:System.AppDomainSetup.LoaderOptimization%2A?displayProperty=fullName> プロパティを設定します。</span><span class="sxs-lookup"><span data-stu-id="44e35-217">Set the <xref:System.AppDomainSetup.LoaderOptimization%2A?displayProperty=fullName> property when you create setup information for a new application domain.</span></span>  
   
- 複数のアプリケーション ドメインに同じアセンブリを読み込むときは、必ずドメイン中立のコードを使用します。 共有ドメインに読み込んだ後に非共有アプリケーション ドメインに読み込んだネイティブ イメージは使用できません。  
+ <span data-ttu-id="44e35-218">複数のアプリケーション ドメインに同じアセンブリを読み込むときは、必ずドメイン中立のコードを使用します。</span><span class="sxs-lookup"><span data-stu-id="44e35-218">Always use domain-neutral code when loading the same assembly into multiple application domains.</span></span> <span data-ttu-id="44e35-219">共有ドメインに読み込んだ後に非共有アプリケーション ドメインに読み込んだネイティブ イメージは使用できません。</span><span class="sxs-lookup"><span data-stu-id="44e35-219">If a native image is loaded into a nonshared application domain after having been loaded into a shared domain, it cannot be used.</span></span>  
   
 > [!NOTE]
->  ドメイン中立コードはアンロードできません。また、特に静的メンバーにアクセスする際にパフォーマンスがわずかに低下します。  
+>  <span data-ttu-id="44e35-220">ドメイン中立コードはアンロードできません。また、特に静的メンバーにアクセスする際にパフォーマンスがわずかに低下します。</span><span class="sxs-lookup"><span data-stu-id="44e35-220">Domain-neutral code cannot be unloaded, and performance may be slightly slower, particularly when accessing static members.</span></span>  
   
- 「解説」セクションの内容:  
+ <span data-ttu-id="44e35-221">「解説」セクションの内容:</span><span class="sxs-lookup"><span data-stu-id="44e35-221">In this Remarks section:</span></span>  
   
--   [別のシナリオのためのイメージの生成](#Scenarios)  
+-   [<span data-ttu-id="44e35-222">別のシナリオのためのイメージの生成</span><span class="sxs-lookup"><span data-stu-id="44e35-222">Generating images for different scenarios</span></span>](#Scenarios)  
   
--   [ネイティブ イメージを使用する状況の決定](#WhenToUse)  
+-   [<span data-ttu-id="44e35-223">ネイティブ イメージを使用する状況の決定</span><span class="sxs-lookup"><span data-stu-id="44e35-223">Determining when to Use native images</span></span>](#WhenToUse)  
   
-    -   [メモリ使用の改善](#Memory)  
+    -   [<span data-ttu-id="44e35-224">メモリ使用の改善</span><span class="sxs-lookup"><span data-stu-id="44e35-224">Improved memory use</span></span>](#Memory)  
   
-    -   [アプリケーションの起動の高速化](#Startup)  
+    -   [<span data-ttu-id="44e35-225">アプリケーションの起動の高速化</span><span class="sxs-lookup"><span data-stu-id="44e35-225">Faster application startup</span></span>](#Startup)  
   
-    -   [使用における考慮事項のまとめ](#UsageSummary)  
+    -   [<span data-ttu-id="44e35-226">使用における考慮事項のまとめ</span><span class="sxs-lookup"><span data-stu-id="44e35-226">Summary of usage considerations</span></span>](#UsageSummary)  
   
--   [アセンブリのベース アドレスの重要性](#BaseAddresses)  
+-   [<span data-ttu-id="44e35-227">アセンブリのベース アドレスの重要性</span><span class="sxs-lookup"><span data-stu-id="44e35-227">Importance of assembly base addresses</span></span>](#BaseAddresses)  
   
--   [ハード バインディング](#HardBinding)  
+-   [<span data-ttu-id="44e35-228">ハード バインディング</span><span class="sxs-lookup"><span data-stu-id="44e35-228">Hard binding</span></span>](#HardBinding)  
   
-    -   [依存関係のバインディング ヒントの指定](#DependencyHint)  
+    -   [<span data-ttu-id="44e35-229">依存関係のバインディング ヒントの指定</span><span class="sxs-lookup"><span data-stu-id="44e35-229">Specifying a binding hint for a dependency</span></span>](#DependencyHint)  
   
-    -   [アセンブリの既定のバインディング ヒントの指定](#AssemblyHint)  
+    -   [<span data-ttu-id="44e35-230">アセンブリの既定のバインディング ヒントの指定</span><span class="sxs-lookup"><span data-stu-id="44e35-230">Specifying a default binding hint for an assembly</span></span>](#AssemblyHint)  
   
--   [遅延処理](#Deferred)  
+-   [<span data-ttu-id="44e35-231">遅延処理</span><span class="sxs-lookup"><span data-stu-id="44e35-231">Deferred processing</span></span>](#Deferred)  
   
--   [ネイティブ イメージと JIT コンパイル](#JITCompilation)  
+-   [<span data-ttu-id="44e35-232">ネイティブ イメージと JIT コンパイル</span><span class="sxs-lookup"><span data-stu-id="44e35-232">Native images and JIT compilation</span></span>](#JITCompilation)  
   
-    -   [無効なイメージ](#InvalidImages)  
+    -   [<span data-ttu-id="44e35-233">無効なイメージ</span><span class="sxs-lookup"><span data-stu-id="44e35-233">Invalid images</span></span>](#InvalidImages)  
   
--   [トラブルシューティング](#Troubleshooting)  
+-   [<span data-ttu-id="44e35-234">トラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="44e35-234">Troubleshooting</span></span>](#Troubleshooting)  
   
-    -   [アセンブリ バインディング ログ ビューアー](#Fusion)  
+    -   [<span data-ttu-id="44e35-235">アセンブリ バインディング ログ ビューアー</span><span class="sxs-lookup"><span data-stu-id="44e35-235">Assembly Binding Log Viewer</span></span>](#Fusion)  
   
-    -   [JITCompilationStart マネージ デバッグ アシスタント](#MDA)  
+    -   [<span data-ttu-id="44e35-236">JITCompilationStart マネージ デバッグ アシスタント</span><span class="sxs-lookup"><span data-stu-id="44e35-236">The JITCompilationStart managed debugging assistant</span></span>](#MDA)  
   
-    -   [ネイティブ イメージ生成の中止](#OptOut)  
+    -   [<span data-ttu-id="44e35-237">ネイティブ イメージ生成の中止</span><span class="sxs-lookup"><span data-stu-id="44e35-237">Opting out of native image generation</span></span>](#OptOut)  
   
 <a name="Scenarios"></a>   
-## <a name="generating-images-for-----different-scenarios"></a>別のシナリオのためのイメージの生成  
- アセンブリのネイティブ イメージが生成された後でそのアセンブリを実行する場合、ランタイムは、常にこのネイティブ イメージを自動的に検索して使用しようとします。 使用シナリオによっては、複数のイメージを生成できます。  
+## <a name="generating-images-for-----different-scenarios"></a><span data-ttu-id="44e35-238">別のシナリオのためのイメージの生成</span><span class="sxs-lookup"><span data-stu-id="44e35-238">Generating images for     different scenarios</span></span>  
+ <span data-ttu-id="44e35-239">アセンブリのネイティブ イメージが生成された後でそのアセンブリを実行する場合、ランタイムは、常にこのネイティブ イメージを自動的に検索して使用しようとします。</span><span class="sxs-lookup"><span data-stu-id="44e35-239">After you have generated a native image for an assembly, the runtime automatically attempts to locate and use this native   image each time it runs the assembly.</span></span> <span data-ttu-id="44e35-240">使用シナリオによっては、複数のイメージを生成できます。</span><span class="sxs-lookup"><span data-stu-id="44e35-240">Multiple images can be generated, depending on usage scenarios.</span></span>  
   
- たとえば、デバッグまたはプロファイルの目的でアセンブリを実行する場合、ランタイムは、`/Debug` または `/Profile` の各オプションを指定して生成されたネイティブ イメージを検索します。 一致するネイティブ イメージが見つからない場合、ランタイムは標準の JIT コンパイルに戻ります。 ネイティブ イメージをデバッグする唯一の方法は、`/Debug` オプションを使用してネイティブ イメージを作成することです。  
+ <span data-ttu-id="44e35-241">たとえば、デバッグまたはプロファイルの目的でアセンブリを実行する場合、ランタイムは、`/Debug` または `/Profile` の各オプションを指定して生成されたネイティブ イメージを検索します。</span><span class="sxs-lookup"><span data-stu-id="44e35-241">For example, if you run an assembly in a debugging or profiling scenario, the runtime looks for a native image that was generated with the `/Debug` or `/Profile` options.</span></span> <span data-ttu-id="44e35-242">一致するネイティブ イメージが見つからない場合、ランタイムは標準の JIT コンパイルに戻ります。</span><span class="sxs-lookup"><span data-stu-id="44e35-242">If it is unable to find a matching native image, the runtime reverts to standard JIT compilation.</span></span> <span data-ttu-id="44e35-243">ネイティブ イメージをデバッグする唯一の方法は、`/Debug` オプションを使用してネイティブ イメージを作成することです。</span><span class="sxs-lookup"><span data-stu-id="44e35-243">The only way to debug native images is to create a native image with the `/Debug` option.</span></span>  
   
- `uninstall` アクションもシナリオを認識するため、すべてのシナリオまたは指定したシナリオだけをアンインストールできます。  
+ <span data-ttu-id="44e35-244">`uninstall` アクションもシナリオを認識するため、すべてのシナリオまたは指定したシナリオだけをアンインストールできます。</span><span class="sxs-lookup"><span data-stu-id="44e35-244">The `uninstall` action also recognize scenarios, so you can uninstall all scenarios or only selected scenarios.</span></span>  
   
 <a name="WhenToUse"></a>   
-## <a name="determining-when-to-use-native-images"></a>ネイティブ イメージを使用する状況の決定  
- ネイティブ イメージによって、メモリ使用の改善と起動時間の短縮の 2 つの領域においてパフォーマンスが向上します。  
+## <a name="determining-when-to-use-native-images"></a><span data-ttu-id="44e35-245">ネイティブ イメージを使用する状況の決定</span><span class="sxs-lookup"><span data-stu-id="44e35-245">Determining when to Use native images</span></span>  
+ <span data-ttu-id="44e35-246">ネイティブ イメージによって、メモリ使用の改善と起動時間の短縮の 2 つの領域においてパフォーマンスが向上します。</span><span class="sxs-lookup"><span data-stu-id="44e35-246">Native images can provide performance improvements in two areas: improved memory use and reduced startup time.</span></span>  
   
 > [!NOTE]
->  ネイティブ イメージのパフォーマンスは、コード、データ アクセス パターン、モジュール境界を超える呼び出しの数、他のアプリケーションによって既に読み込まれている依存関係の数などの多くの要素に依存するため分析が困難です。 ネイティブ イメージがアプリケーションの利益になるかどうかを確認する唯一の方法は、主な配置シナリオにおいて慎重にパフォーマンスを測定することです。  
+>  <span data-ttu-id="44e35-247">ネイティブ イメージのパフォーマンスは、コード、データ アクセス パターン、モジュール境界を超える呼び出しの数、他のアプリケーションによって既に読み込まれている依存関係の数などの多くの要素に依存するため分析が困難です。</span><span class="sxs-lookup"><span data-stu-id="44e35-247">Performance of native images depends on a number of factors that make analysis difficult, such as code and data access patterns, how many calls are made across module boundaries, and how many dependencies have already been loaded by other applications.</span></span> <span data-ttu-id="44e35-248">ネイティブ イメージがアプリケーションの利益になるかどうかを確認する唯一の方法は、主な配置シナリオにおいて慎重にパフォーマンスを測定することです。</span><span class="sxs-lookup"><span data-stu-id="44e35-248">The only way to determine whether native images benefit your application is by careful performance measurements in your key deployment scenarios.</span></span>  
   
 <a name="Memory"></a>   
-### <a name="improved-memory-use"></a>メモリ使用の改善  
- プロセス間でコードを共有する場合は、ネイティブ イメージによってメモリ使用を大いに改善できます。 ネイティブ イメージは Windows PE ファイルのため、.dll ファイルの単一のコピーを複数のプロセスで共有できます。これに対して、JIT コンパイラが生成するネイティブ コードは、プライベート メモリに格納されるため共有できません。  
+### <a name="improved-memory-use"></a><span data-ttu-id="44e35-249">メモリ使用の改善</span><span class="sxs-lookup"><span data-stu-id="44e35-249">Improved memory use</span></span>  
+ <span data-ttu-id="44e35-250">プロセス間でコードを共有する場合は、ネイティブ イメージによってメモリ使用を大いに改善できます。</span><span class="sxs-lookup"><span data-stu-id="44e35-250">Native images can significantly improve memory use when code is shared between processes.</span></span> <span data-ttu-id="44e35-251">ネイティブ イメージは Windows PE ファイルのため、.dll ファイルの単一のコピーを複数のプロセスで共有できます。これに対して、JIT コンパイラが生成するネイティブ コードは、プライベート メモリに格納されるため共有できません。</span><span class="sxs-lookup"><span data-stu-id="44e35-251">Native images are Windows PE files, so a single copy of a .dll file can be shared by multiple processes; by contrast, native code produced by the JIT compiler is stored in private memory and cannot be shared.</span></span>  
   
- ターミナル サービスで実行されるアプリケーションも、共有されたコード ページの恩恵を受けることができます。  
+ <span data-ttu-id="44e35-252">ターミナル サービスで実行されるアプリケーションも、共有されたコード ページの恩恵を受けることができます。</span><span class="sxs-lookup"><span data-stu-id="44e35-252">Applications that are run under terminal services can also benefit from shared code pages.</span></span>  
   
- さらに、JIT コンパイラを読み込まないため、各アプリケーション インスタンスが使用する固定メモリの量も減らすことができます。  
+ <span data-ttu-id="44e35-253">さらに、JIT コンパイラを読み込まないため、各アプリケーション インスタンスが使用する固定メモリの量も減らすことができます。</span><span class="sxs-lookup"><span data-stu-id="44e35-253">In addition, not loading the JIT compiler saves a fixed amount of memory for each application instance.</span></span>  
   
 <a name="Startup"></a>   
-### <a name="faster-application-startup"></a>アプリケーションの起動の高速化  
- Ngen.exe によってアセンブリをプリコンパイルすることにより、一部のアプリケーションの起動時間が短縮されます。 一般に、最初のアプリケーションが起動されると、その後のアプリケーションが使用する共有コンポーネントが読み込まれるため、アプリケーションがコンポーネント アセンブリを共有している場合にアプリケーションの起動時間が短縮されます。 アプリケーションのすべてのアセンブリをハード ディスクから読み込む必要があるコールド スタートでは、ハード ディスクのアクセス時間の影響の方が大きいため、ネイティブ イメージから受け取る恩恵はそれほど大きくありません。  
+### <a name="faster-application-startup"></a><span data-ttu-id="44e35-254">アプリケーションの起動の高速化</span><span class="sxs-lookup"><span data-stu-id="44e35-254">Faster application startup</span></span>  
+ <span data-ttu-id="44e35-255">Ngen.exe によってアセンブリをプリコンパイルすることにより、一部のアプリケーションの起動時間が短縮されます。</span><span class="sxs-lookup"><span data-stu-id="44e35-255">Precompiling assemblies with Ngen.exe can improve the startup time for some applications.</span></span> <span data-ttu-id="44e35-256">一般に、最初のアプリケーションが起動されると、その後のアプリケーションが使用する共有コンポーネントが読み込まれるため、アプリケーションがコンポーネント アセンブリを共有している場合にアプリケーションの起動時間が短縮されます。</span><span class="sxs-lookup"><span data-stu-id="44e35-256">In general, gains can be made when applications share component assemblies because after the first application has been started the shared components are already loaded for subsequent applications.</span></span> <span data-ttu-id="44e35-257">アプリケーションのすべてのアセンブリをハード ディスクから読み込む必要があるコールド スタートでは、ハード ディスクのアクセス時間の影響の方が大きいため、ネイティブ イメージから受け取る恩恵はそれほど大きくありません。</span><span class="sxs-lookup"><span data-stu-id="44e35-257">Cold startup, in which all the assemblies in an application must be loaded from the hard disk, does not benefit as much from native images because the hard disk access time predominates.</span></span>  
   
- メイン アプリケーション アセンブリにハード バインディングされているすべてのイメージは同時に読み込む必要があるため、ハード バインディングは起動時間に影響します。  
+ <span data-ttu-id="44e35-258">メイン アプリケーション アセンブリにハード バインディングされているすべてのイメージは同時に読み込む必要があるため、ハード バインディングは起動時間に影響します。</span><span class="sxs-lookup"><span data-stu-id="44e35-258">Hard binding can affect startup time, because all images that are hard bound to the main application assembly must be loaded at the same time.</span></span>  
   
 > [!NOTE]
->  [!INCLUDE[net_v35SP1_long](../../../includes/net-v35sp1-long-md.md)] より前のバージョンでは、厳密な名前付きの共有コンポーネントをグローバル アセンブリ キャッシュに配置する必要があります。これは、グローバル アセンブリ キャッシュ以外に配置されている厳密な名前付きのアセンブリに対してローダーが余分な検証を行うため、起動時間は短縮されず、実質的にネイティブ イメージを使用する意味がなくなります。 [!INCLUDE[net_v35SP1_short](../../../includes/net-v35sp1-short-md.md)] で導入された最適化により、この余分な検証は削除されました。  
+>  <span data-ttu-id="44e35-259">[!INCLUDE[net_v35SP1_long](../../../includes/net-v35sp1-long-md.md)] より前のバージョンでは、厳密な名前付きの共有コンポーネントをグローバル アセンブリ キャッシュに配置する必要があります。これは、グローバル アセンブリ キャッシュ以外に配置されている厳密な名前付きのアセンブリに対してローダーが余分な検証を行うため、起動時間は短縮されず、実質的にネイティブ イメージを使用する意味がなくなります。</span><span class="sxs-lookup"><span data-stu-id="44e35-259">Before the [!INCLUDE[net_v35SP1_long](../../../includes/net-v35sp1-long-md.md)], you should put shared, strong-named components in the global assembly cache, because the loader performs extra validation on strong-named assemblies that are not in the global assembly cache, effectively eliminating any improvement in startup time gained by using native images.</span></span> <span data-ttu-id="44e35-260">[!INCLUDE[net_v35SP1_short](../../../includes/net-v35sp1-short-md.md)] で導入された最適化により、この余分な検証は削除されました。</span><span class="sxs-lookup"><span data-stu-id="44e35-260">Optimizations that were introduced in the [!INCLUDE[net_v35SP1_short](../../../includes/net-v35sp1-short-md.md)] removed the extra validation.</span></span>  
   
 <a name="UsageSummary"></a>   
-### <a name="summary-of-usage-considerations"></a>使用における考慮事項のまとめ  
- 次の一般的な考慮事項とアプリケーションの考慮事項は、アプリケーションにネイティブ イメージを使用するかどうかを評価する際に役立ちます。  
+### <a name="summary-of-usage-considerations"></a><span data-ttu-id="44e35-261">使用における考慮事項のまとめ</span><span class="sxs-lookup"><span data-stu-id="44e35-261">Summary of usage considerations</span></span>  
+ <span data-ttu-id="44e35-262">次の一般的な考慮事項とアプリケーションの考慮事項は、アプリケーションにネイティブ イメージを使用するかどうかを評価する際に役立ちます。</span><span class="sxs-lookup"><span data-stu-id="44e35-262">The following general considerations and application considerations may assist you in deciding whether to undertake the effort of evaluating native images for your application:</span></span>  
   
--   ネイティブ イメージでは、JIT コンパイル、タイプ セーフ検証などの多くの起動時アクティビティが不要なため、MSIL より読み込みが高速になります。  
+-   <span data-ttu-id="44e35-263">ネイティブ イメージでは、JIT コンパイル、タイプ セーフ検証などの多くの起動時アクティビティが不要なため、MSIL より読み込みが高速になります。</span><span class="sxs-lookup"><span data-stu-id="44e35-263">Native images load faster than MSIL because they eliminate the need for many startup activities, such as JIT compilation and type-safety verification.</span></span>  
   
--   ネイティブ イメージでは JIT コンパイラが不要なため、必要な初期作業セットが少なくてすみます。  
+-   <span data-ttu-id="44e35-264">ネイティブ イメージでは JIT コンパイラが不要なため、必要な初期作業セットが少なくてすみます。</span><span class="sxs-lookup"><span data-stu-id="44e35-264">Native images require a smaller initial working set because there is no need for the JIT compiler.</span></span>  
   
--   ネイティブ イメージによって、プロセス間でコードを共有できます。  
+-   <span data-ttu-id="44e35-265">ネイティブ イメージによって、プロセス間でコードを共有できます。</span><span class="sxs-lookup"><span data-stu-id="44e35-265">Native images enable code sharing between processes.</span></span>  
   
--   ネイティブ イメージは MSIL アセンブリよりも多くのハード ディスク容量を必要とし、生成にかなりの時間を要する場合があります。  
+-   <span data-ttu-id="44e35-266">ネイティブ イメージは MSIL アセンブリよりも多くのハード ディスク容量を必要とし、生成にかなりの時間を要する場合があります。</span><span class="sxs-lookup"><span data-stu-id="44e35-266">Native images require more hard disk space than MSIL assemblies and may require considerable time to generate.</span></span>  
   
--   ネイティブ イメージは保持する必要があります。  
+-   <span data-ttu-id="44e35-267">ネイティブ イメージは保持する必要があります。</span><span class="sxs-lookup"><span data-stu-id="44e35-267">Native images must be maintained.</span></span>  
   
-    -   元のアセンブリまたはその依存関係のいずれかに対してサービスを提供する場合は、イメージを再生成する必要があります。  
+    -   <span data-ttu-id="44e35-268">元のアセンブリまたはその依存関係のいずれかに対してサービスを提供する場合は、イメージを再生成する必要があります。</span><span class="sxs-lookup"><span data-stu-id="44e35-268">Images need to be regenerated when the original assembly or one of its dependencies is serviced.</span></span>  
   
-    -   アプリケーションまたはシナリオごとに異なるネイティブ イメージを使用する場合、1 つのアセンブリで複数のネイティブ イメージが必要な場合があります。 たとえば、2 つのアプリケーションの構成情報で、同じ依存アセンブリに対してバインディング決定が異なる場合です。  
+    -   <span data-ttu-id="44e35-269">アプリケーションまたはシナリオごとに異なるネイティブ イメージを使用する場合、1 つのアセンブリで複数のネイティブ イメージが必要な場合があります。</span><span class="sxs-lookup"><span data-stu-id="44e35-269">A single assembly may need multiple native images for use in different applications or different scenarios.</span></span> <span data-ttu-id="44e35-270">たとえば、2 つのアプリケーションの構成情報で、同じ依存アセンブリに対してバインディング決定が異なる場合です。</span><span class="sxs-lookup"><span data-stu-id="44e35-270">For example, the configuration information in two applications might result in different binding decisions for the same dependent assembly.</span></span>  
   
-    -   ネイティブ イメージは管理者が作成する必要があります。つまり Administrators グループの Windows アカウントから作成します。  
+    -   <span data-ttu-id="44e35-271">ネイティブ イメージは管理者が作成する必要があります。つまり Administrators グループの Windows アカウントから作成します。</span><span class="sxs-lookup"><span data-stu-id="44e35-271">Native images must be generated by an administrator; that is, from a Windows account in the Administrators group.</span></span>  
   
- このような一般的な考慮事項に加えて、ネイティブ イメージによってパフォーマンスが向上するかどうかを検討する場合は、アプリケーションの特性も考慮する必要があります。  
+ <span data-ttu-id="44e35-272">このような一般的な考慮事項に加えて、ネイティブ イメージによってパフォーマンスが向上するかどうかを検討する場合は、アプリケーションの特性も考慮する必要があります。</span><span class="sxs-lookup"><span data-stu-id="44e35-272">In addition to these general considerations, the nature of your application must be considered when determining whether native images might provide a performance benefit:</span></span>  
   
--   多くの共有コンポーネントを使用する環境でアプリケーションを実行する場合は、ネイティブ イメージによってコンポーネントを複数のプロセスで共有できます。  
+-   <span data-ttu-id="44e35-273">多くの共有コンポーネントを使用する環境でアプリケーションを実行する場合は、ネイティブ イメージによってコンポーネントを複数のプロセスで共有できます。</span><span class="sxs-lookup"><span data-stu-id="44e35-273">If your application runs in an environment that uses many shared components, native images allow the components to be shared by multiple processes.</span></span>  
   
--   アプリケーションが複数のアプリケーション ドメインを使用する場合は、ネイティブ イメージによってドメイン間でコード ページを共有できます。  
+-   <span data-ttu-id="44e35-274">アプリケーションが複数のアプリケーション ドメインを使用する場合は、ネイティブ イメージによってドメイン間でコード ページを共有できます。</span><span class="sxs-lookup"><span data-stu-id="44e35-274">If your application uses multiple application domains, native images allow code pages to be shared across domains.</span></span>  
   
     > [!NOTE]
-    >  .NET Framework Version 1.0 と 1.1 では、アプリケーション ドメイン間でネイティブ イメージを共有することはできません。 Version 2.0 以降では可能です。  
+    >  <span data-ttu-id="44e35-275">.NET Framework Version 1.0 と 1.1 では、アプリケーション ドメイン間でネイティブ イメージを共有することはできません。</span><span class="sxs-lookup"><span data-stu-id="44e35-275">In the .NET Framework versions 1.0 and 1.1, native images cannot be shared across application domains.</span></span> <span data-ttu-id="44e35-276">Version 2.0 以降では可能です。</span><span class="sxs-lookup"><span data-stu-id="44e35-276">This is not the case in version 2.0 or later.</span></span>  
   
--   アプリケーションをターミナル サーバーで実行する場合は、ネイティブ イメージによってコード ページを共有できます。  
+-   <span data-ttu-id="44e35-277">アプリケーションをターミナル サーバーで実行する場合は、ネイティブ イメージによってコード ページを共有できます。</span><span class="sxs-lookup"><span data-stu-id="44e35-277">If your application will be run under Terminal Server, native images allow sharing of code pages.</span></span>  
   
--   サイズの大きなアプリケーションでは、一般にネイティブ イメージにコンパイルすることでパフォーマンスが向上します。 サイズの小さなアプリケーションでは、一般にあまり有効ではありません。  
+-   <span data-ttu-id="44e35-278">サイズの大きなアプリケーションでは、一般にネイティブ イメージにコンパイルすることでパフォーマンスが向上します。</span><span class="sxs-lookup"><span data-stu-id="44e35-278">Large applications generally benefit from compilation to native images.</span></span> <span data-ttu-id="44e35-279">サイズの小さなアプリケーションでは、一般にあまり有効ではありません。</span><span class="sxs-lookup"><span data-stu-id="44e35-279">Small applications generally do not benefit.</span></span>  
   
--   長時間実行するアプリケーションでは、ランタイム JIT コンパイルのパフォーマンスの方がネイティブ イメージよりも若干優れています。 ハード バインディングによって、このパフォーマンスの違いをある程度緩和できます。  
+-   <span data-ttu-id="44e35-280">長時間実行するアプリケーションでは、ランタイム JIT コンパイルのパフォーマンスの方がネイティブ イメージよりも若干優れています。</span><span class="sxs-lookup"><span data-stu-id="44e35-280">For long-running applications, run-time JIT compilation performs slightly better than native images.</span></span> <span data-ttu-id="44e35-281">ハード バインディングによって、このパフォーマンスの違いをある程度緩和できます。</span><span class="sxs-lookup"><span data-stu-id="44e35-281">(Hard binding can mitigate this performance difference to some degree.)</span></span>  
   
 <a name="BaseAddresses"></a>   
-## <a name="importance-of-assembly-base-addresses"></a>アセンブリのベース アドレスの重要性  
- ネイティブ イメージは Windows PE ファイルのため、他の実行可能ファイルと同様に再ベースの問題があります。 ハード バインディングを使用する場合、再配置のパフォーマンス コストはさらに増大します。  
+## <a name="importance-of-assembly-base-addresses"></a><span data-ttu-id="44e35-282">アセンブリのベース アドレスの重要性</span><span class="sxs-lookup"><span data-stu-id="44e35-282">Importance of assembly base addresses</span></span>  
+ <span data-ttu-id="44e35-283">ネイティブ イメージは Windows PE ファイルのため、他の実行可能ファイルと同様に再ベースの問題があります。</span><span class="sxs-lookup"><span data-stu-id="44e35-283">Because native images are Windows PE files, they are subject to the same rebasing issues as other executable files.</span></span> <span data-ttu-id="44e35-284">ハード バインディングを使用する場合、再配置のパフォーマンス コストはさらに増大します。</span><span class="sxs-lookup"><span data-stu-id="44e35-284">The performance cost of relocation is even more pronounced if hard binding is employed.</span></span>  
   
- ネイティブ イメージにベース アドレスを設定するには、コンパイラの適切なオプションを使用してアセンブリのベース アドレスを設定します。 Ngen.exe は、このベース アドレスをネイティブ イメージに使用します。  
+ <span data-ttu-id="44e35-285">ネイティブ イメージにベース アドレスを設定するには、コンパイラの適切なオプションを使用してアセンブリのベース アドレスを設定します。</span><span class="sxs-lookup"><span data-stu-id="44e35-285">To set the base address for a native image, use the appropriate option of your compiler to set the base address for the assembly.</span></span> <span data-ttu-id="44e35-286">Ngen.exe は、このベース アドレスをネイティブ イメージに使用します。</span><span class="sxs-lookup"><span data-stu-id="44e35-286">Ngen.exe uses this base address for the native image.</span></span>  
   
 > [!NOTE]
->  ネイティブ イメージは、元になるマネージ アセンブリより大きくなります。 ベース アドレスは、この大きなサイズを考慮して算出する必要があります。  
+>  <span data-ttu-id="44e35-287">ネイティブ イメージは、元になるマネージ アセンブリより大きくなります。</span><span class="sxs-lookup"><span data-stu-id="44e35-287">Native images are larger than the managed assemblies from which they were created.</span></span> <span data-ttu-id="44e35-288">ベース アドレスは、この大きなサイズを考慮して算出する必要があります。</span><span class="sxs-lookup"><span data-stu-id="44e35-288">Base addresses must be calculated to allow for these larger sizes.</span></span>  
   
- dumpbin.exe などのツールを使用すると、ネイティブ イメージの推奨ベース アドレスを表示できます。  
+ <span data-ttu-id="44e35-289">dumpbin.exe などのツールを使用すると、ネイティブ イメージの推奨ベース アドレスを表示できます。</span><span class="sxs-lookup"><span data-stu-id="44e35-289">You can use a tool such as dumpbin.exe to view the preferred base address of a native image.</span></span>  
   
 <a name="HardBinding"></a>   
-## <a name="hard-binding"></a>ハード バインディング  
- ハード バインディングによってスループットが向上し、ネイティブ イメージの作業セットのサイズが小さくなります。 ハード バインディングの短所は、アセンブリを読み込む際にアセンブリにハード バインディングされているすべてのイメージを読み込む必要があることです。 これによって、大きなアプリケーションの起動時間がかなり長くなります。  
+## <a name="hard-binding"></a><span data-ttu-id="44e35-290">ハード バインディング</span><span class="sxs-lookup"><span data-stu-id="44e35-290">Hard binding</span></span>  
+ <span data-ttu-id="44e35-291">ハード バインディングによってスループットが向上し、ネイティブ イメージの作業セットのサイズが小さくなります。</span><span class="sxs-lookup"><span data-stu-id="44e35-291">Hard binding increases throughput and reduces working set size for native images.</span></span> <span data-ttu-id="44e35-292">ハード バインディングの短所は、アセンブリを読み込む際にアセンブリにハード バインディングされているすべてのイメージを読み込む必要があることです。</span><span class="sxs-lookup"><span data-stu-id="44e35-292">The disadvantage of hard binding is that all the images that are hard bound to an assembly must be loaded when the assembly is loaded.</span></span> <span data-ttu-id="44e35-293">これによって、大きなアプリケーションの起動時間がかなり長くなります。</span><span class="sxs-lookup"><span data-stu-id="44e35-293">This can significantly increase startup time for a large application.</span></span>  
   
- ハード バインディングは、すべてのアプリケーションのパフォーマンスが重要な意味を持つシナリオで読み込まれる依存関係に適しています。 ネイティブ イメージの使用のすべての局面において言えることですが、ハード バインディングによってアプリケーションのパフォーマンスが向上するかどうかを確認する唯一の方法は、パフォーマンスを慎重に測定することです。  
+ <span data-ttu-id="44e35-294">ハード バインディングは、すべてのアプリケーションのパフォーマンスが重要な意味を持つシナリオで読み込まれる依存関係に適しています。</span><span class="sxs-lookup"><span data-stu-id="44e35-294">Hard binding is appropriate for dependencies that are loaded in all your application's performance-critical scenarios.</span></span> <span data-ttu-id="44e35-295">ネイティブ イメージの使用のすべての局面において言えることですが、ハード バインディングによってアプリケーションのパフォーマンスが向上するかどうかを確認する唯一の方法は、パフォーマンスを慎重に測定することです。</span><span class="sxs-lookup"><span data-stu-id="44e35-295">As with any aspect of native image use, careful performance measurements are the only way to determine whether hard binding improves your application's performance.</span></span>  
   
- <xref:System.Runtime.CompilerServices.DependencyAttribute> 属性と <xref:System.Runtime.CompilerServices.DefaultDependencyAttribute> 属性によって、ハード バインディング ヒントを Ngen.exe に提供できます。  
+ <span data-ttu-id="44e35-296"><xref:System.Runtime.CompilerServices.DependencyAttribute> 属性と <xref:System.Runtime.CompilerServices.DefaultDependencyAttribute> 属性によって、ハード バインディング ヒントを Ngen.exe に提供できます。</span><span class="sxs-lookup"><span data-stu-id="44e35-296">The <xref:System.Runtime.CompilerServices.DependencyAttribute> and <xref:System.Runtime.CompilerServices.DefaultDependencyAttribute> attributes allow you to provide hard binding hints to Ngen.exe.</span></span>  
   
 > [!NOTE]
->  この 2 つの属性は、コマンドではなく Ngen.exe へのヒントです。 これらの属性を使用してもハード バインディングは保証されません。 属性の意味は、今後のリリースで変更される可能性があります。  
+>  <span data-ttu-id="44e35-297">この 2 つの属性は、コマンドではなく Ngen.exe へのヒントです。</span><span class="sxs-lookup"><span data-stu-id="44e35-297">These attributes are hints to Ngen.exe, not commands.</span></span> <span data-ttu-id="44e35-298">これらの属性を使用してもハード バインディングは保証されません。</span><span class="sxs-lookup"><span data-stu-id="44e35-298">Using them does not guarantee hard binding.</span></span> <span data-ttu-id="44e35-299">属性の意味は、今後のリリースで変更される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="44e35-299">The meaning of these attributes may change in future releases.</span></span>  
   
 <a name="DependencyHint"></a>   
-### <a name="specifying-a-binding-hint-for-a-dependency"></a>依存関係のバインディング ヒントの指定  
- アセンブリに <xref:System.Runtime.CompilerServices.DependencyAttribute> を適用して、指定された依存関係が読み込まれるかどうかを示します <xref:System.Runtime.CompilerServices.LoadHint.Always?displayProperty=fullName> は、ハード バインディングが適切であることを示します。<xref:System.Runtime.CompilerServices.LoadHint.Default> は、依存関係の既定値を使用する必要があることを示します。<xref:System.Runtime.CompilerServices.LoadHint.Sometimes> は、ハード バインディングが適切ではないことを示します。  
+### <a name="specifying-a-binding-hint-for-a-dependency"></a><span data-ttu-id="44e35-300">依存関係のバインディング ヒントの指定</span><span class="sxs-lookup"><span data-stu-id="44e35-300">Specifying a binding hint for a dependency</span></span>  
+ <span data-ttu-id="44e35-301">アセンブリに <xref:System.Runtime.CompilerServices.DependencyAttribute> を適用して、指定された依存関係が読み込まれるかどうかを示します</span><span class="sxs-lookup"><span data-stu-id="44e35-301">Apply the <xref:System.Runtime.CompilerServices.DependencyAttribute> to an assembly to indicate the likelihood that a specified dependency will be loaded.</span></span> <span data-ttu-id="44e35-302"><xref:System.Runtime.CompilerServices.LoadHint.Always?displayProperty=fullName> は、ハード バインディングが適切であることを示します。<xref:System.Runtime.CompilerServices.LoadHint.Default> は、依存関係の既定値を使用する必要があることを示します。<xref:System.Runtime.CompilerServices.LoadHint.Sometimes> は、ハード バインディングが適切ではないことを示します。</span><span class="sxs-lookup"><span data-stu-id="44e35-302"><xref:System.Runtime.CompilerServices.LoadHint.Always?displayProperty=fullName> indicates that hard binding is appropriate, <xref:System.Runtime.CompilerServices.LoadHint.Default> indicates that the default for the dependency should be used, and <xref:System.Runtime.CompilerServices.LoadHint.Sometimes> indicates that hard binding is not appropriate.</span></span>  
   
- 2 つの依存関係があるアセンブリのための属性のコードを次に示します。 最初の依存関係 (Assembly1) はハード バインディングに適しており、2 番目 (Assembly2) は適していません。  
+ <span data-ttu-id="44e35-303">2 つの依存関係があるアセンブリのための属性のコードを次に示します。</span><span class="sxs-lookup"><span data-stu-id="44e35-303">The following code shows the attributes for an assembly that has two dependencies.</span></span> <span data-ttu-id="44e35-304">最初の依存関係 (Assembly1) はハード バインディングに適しており、2 番目 (Assembly2) は適していません。</span><span class="sxs-lookup"><span data-stu-id="44e35-304">The first dependency (Assembly1) is an appropriate candidate for hard binding, and the second (Assembly2) is not.</span></span>  
   
 ```vb  
 Imports System.Runtime.CompilerServices  
@@ -311,131 +311,131 @@ using namespace System::Runtime::CompilerServices;
 [assembly:DependencyAttribute("Assembly2", LoadHint.Sometimes)];  
 ```  
   
- アセンブリ名には、ファイル名拡張子は含めません。 表示名を使用できます。  
+ <span data-ttu-id="44e35-305">アセンブリ名には、ファイル名拡張子は含めません。</span><span class="sxs-lookup"><span data-stu-id="44e35-305">The assembly name does not include the file name extension.</span></span> <span data-ttu-id="44e35-306">表示名を使用できます。</span><span class="sxs-lookup"><span data-stu-id="44e35-306">Display names can be used.</span></span>  
   
 <a name="AssemblyHint"></a>   
-### <a name="specifying-a-default-binding-hint-for-an-assembly"></a>アセンブリの既定のバインディング ヒントの指定  
- 既定のバインディング ヒントは、依存するアプリケーションが即座に頻繁に使用するアセンブリだけに必要です。 そのようなアセンブリには、<xref:System.Runtime.CompilerServices.DefaultDependencyAttribute> と共に <xref:System.Runtime.CompilerServices.LoadHint.Always?displayProperty=fullName> を適用して、ハード バインディングを使用することを指定します。  
+### <a name="specifying-a-default-binding-hint-for-an-assembly"></a><span data-ttu-id="44e35-307">アセンブリの既定のバインディング ヒントの指定</span><span class="sxs-lookup"><span data-stu-id="44e35-307">Specifying a default binding hint for an assembly</span></span>  
+ <span data-ttu-id="44e35-308">既定のバインディング ヒントは、依存するアプリケーションが即座に頻繁に使用するアセンブリだけに必要です。</span><span class="sxs-lookup"><span data-stu-id="44e35-308">Default binding hints are only needed for assemblies that will be used immediately and frequently by any application that has a dependency on them.</span></span> <span data-ttu-id="44e35-309">そのようなアセンブリには、<xref:System.Runtime.CompilerServices.DefaultDependencyAttribute> と共に <xref:System.Runtime.CompilerServices.LoadHint.Always?displayProperty=fullName> を適用して、ハード バインディングを使用することを指定します。</span><span class="sxs-lookup"><span data-stu-id="44e35-309">Apply the <xref:System.Runtime.CompilerServices.DefaultDependencyAttribute> with <xref:System.Runtime.CompilerServices.LoadHint.Always?displayProperty=fullName> to such assemblies to specify that hard binding should be used.</span></span>  
   
 > [!NOTE]
->  <xref:System.Runtime.CompilerServices.DefaultDependencyAttribute> 以外の値を使用してこの属性を適用しても、この属性をまったく適用しない場合と結果は同じため、このカテゴリに属さない .dll アセンブリに <xref:System.Runtime.CompilerServices.LoadHint.Always?displayProperty=fullName> を適用する理由はありません。  
+>  <span data-ttu-id="44e35-310"><xref:System.Runtime.CompilerServices.DefaultDependencyAttribute> 以外の値を使用してこの属性を適用しても、この属性をまったく適用しない場合と結果は同じため、このカテゴリに属さない .dll アセンブリに <xref:System.Runtime.CompilerServices.LoadHint.Always?displayProperty=fullName> を適用する理由はありません。</span><span class="sxs-lookup"><span data-stu-id="44e35-310">There is no reason to apply <xref:System.Runtime.CompilerServices.DefaultDependencyAttribute> to .dll assemblies that do not fall into this category, because applying the attribute with any value other than <xref:System.Runtime.CompilerServices.LoadHint.Always?displayProperty=fullName> has the same effect as not applying the attribute at all.</span></span>  
   
- Microsoft では、<xref:System.Runtime.CompilerServices.DefaultDependencyAttribute> を使用して、mscorlib.dll などのごく一部の .NET Framework のアセンブリの既定値としてハード バインディングを指定します。  
+ <span data-ttu-id="44e35-311">Microsoft では、<xref:System.Runtime.CompilerServices.DefaultDependencyAttribute> を使用して、mscorlib.dll などのごく一部の .NET Framework のアセンブリの既定値としてハード バインディングを指定します。</span><span class="sxs-lookup"><span data-stu-id="44e35-311">Microsoft uses the <xref:System.Runtime.CompilerServices.DefaultDependencyAttribute> to specify that hard binding is the default for a very small number of assemblies in the .NET Framework, such as mscorlib.dll.</span></span>  
   
 <a name="Deferred"></a>   
-## <a name="deferred-processing"></a>遅延処理  
- 非常に大きいアプリケーションのネイティブ イメージの生成には、かなりの時間がかかります。 同様に、共有コンポーネントへの変更またはコンピューター設定への変更には、多くのネイティブ イメージの更新が必要になります。 `install` アクションと `update` アクションには `/queue` オプションがあり、これによって、ネイティブ イメージ サービスによる遅延実行をキューに置くことができます。 さらに、Ngen.exe には、サービスを制御するための `queue` アクションと `executeQueuedItems` アクションがあります。 詳細については、「[ネイティブ イメージ サービス](http://msdn.microsoft.com/en-us/b15e0e32-59cb-4ae4-967c-6c9527781309)」を参照してください。  
+## <a name="deferred-processing"></a><span data-ttu-id="44e35-312">遅延処理</span><span class="sxs-lookup"><span data-stu-id="44e35-312">Deferred processing</span></span>  
+ <span data-ttu-id="44e35-313">非常に大きいアプリケーションのネイティブ イメージの生成には、かなりの時間がかかります。</span><span class="sxs-lookup"><span data-stu-id="44e35-313">Generation of native images for a very large application can take considerable time.</span></span> <span data-ttu-id="44e35-314">同様に、共有コンポーネントへの変更またはコンピューター設定への変更には、多くのネイティブ イメージの更新が必要になります。</span><span class="sxs-lookup"><span data-stu-id="44e35-314">Similarly, changes to a shared component or changes to computer settings might require many native images to be updated.</span></span> <span data-ttu-id="44e35-315">`install` アクションと `update` アクションには `/queue` オプションがあり、これによって、ネイティブ イメージ サービスによる遅延実行をキューに置くことができます。</span><span class="sxs-lookup"><span data-stu-id="44e35-315">The `install` and `update` actions have a `/queue` option that queues the operation for deferred execution by the native image service.</span></span> <span data-ttu-id="44e35-316">さらに、Ngen.exe には、サービスを制御するための `queue` アクションと `executeQueuedItems` アクションがあります。</span><span class="sxs-lookup"><span data-stu-id="44e35-316">In addition, Ngen.exe has `queue` and `executeQueuedItems` actions that provide some control over the service.</span></span> <span data-ttu-id="44e35-317">詳細については、「[ネイティブ イメージ サービス](http://msdn.microsoft.com/en-us/b15e0e32-59cb-4ae4-967c-6c9527781309)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="44e35-317">For more information, see [Native Image Service](http://msdn.microsoft.com/en-us/b15e0e32-59cb-4ae4-967c-6c9527781309).</span></span>  
   
 <a name="JITCompilation"></a>   
-## <a name="native-images-and-jit-compilation"></a>ネイティブ イメージと JIT コンパイル  
- 生成できないメソッドがアセンブリ内にある場合、Ngen.exe が生成するネイティブ イメージにそのメソッドは含まれません。 ランタイムは、このアセンブリの実行中に JIT コンパイルに戻し、ネイティブ イメージから除外されたこれらのメソッドを処理します。  
+## <a name="native-images-and-jit-compilation"></a><span data-ttu-id="44e35-318">ネイティブ イメージと JIT コンパイル</span><span class="sxs-lookup"><span data-stu-id="44e35-318">Native images and JIT compilation</span></span>  
+ <span data-ttu-id="44e35-319">生成できないメソッドがアセンブリ内にある場合、Ngen.exe が生成するネイティブ イメージにそのメソッドは含まれません。</span><span class="sxs-lookup"><span data-stu-id="44e35-319">If Ngen.exe encounters any methods in an assembly that it cannot generate, it excludes them from the native image.</span></span> <span data-ttu-id="44e35-320">ランタイムは、このアセンブリの実行中に JIT コンパイルに戻し、ネイティブ イメージから除外されたこれらのメソッドを処理します。</span><span class="sxs-lookup"><span data-stu-id="44e35-320">When the runtime executes this assembly, it reverts to JIT compilation for the methods that were not included in the native image.</span></span>  
   
- さらに、アセンブリがアップグレードされた場合、または何らかの理解によってイメージが無効になった場合、ネイティブ イメージは使用されません。  
+ <span data-ttu-id="44e35-321">さらに、アセンブリがアップグレードされた場合、または何らかの理解によってイメージが無効になった場合、ネイティブ イメージは使用されません。</span><span class="sxs-lookup"><span data-stu-id="44e35-321">In addition, native images are not used if the assembly has been upgraded, or if the image has been invalidated for any reason.</span></span>  
   
 <a name="InvalidImages"></a>   
-### <a name="invalid-images"></a>無効なイメージ  
- Ngen.exe を使用してアセンブリのネイティブ イメージを作成する場合、出力は指定したコマンド ライン オプションおよび使用するコンピューター上の設定に依存します。 影響のある設定は次のとおりです。  
+### <a name="invalid-images"></a><span data-ttu-id="44e35-322">無効なイメージ</span><span class="sxs-lookup"><span data-stu-id="44e35-322">Invalid images</span></span>  
+ <span data-ttu-id="44e35-323">Ngen.exe を使用してアセンブリのネイティブ イメージを作成する場合、出力は指定したコマンド ライン オプションおよび使用するコンピューター上の設定に依存します。</span><span class="sxs-lookup"><span data-stu-id="44e35-323">When you use Ngen.exe to create a native image of an assembly, the output depends upon the command-line options that you specify and certain settings on your computer.</span></span> <span data-ttu-id="44e35-324">影響のある設定は次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="44e35-324">These settings include the following:</span></span>  
   
--   .NET Framework Version。  
+-   <span data-ttu-id="44e35-325">.NET Framework Version。</span><span class="sxs-lookup"><span data-stu-id="44e35-325">The version of the .NET Framework.</span></span>  
   
--   オペレーティング システムのバージョン (Windows 9x ファミリから Windows NT ファミリに変更した場合)。  
+-   <span data-ttu-id="44e35-326">オペレーティング システムのバージョン (Windows 9x ファミリから Windows NT ファミリに変更した場合)。</span><span class="sxs-lookup"><span data-stu-id="44e35-326">The version of the operating system, if the change is from the Windows 9x family to the Windows NT family.</span></span>  
   
--   アセンブリの正確な ID (ID は再コンパイル時に変更されます)。  
+-   <span data-ttu-id="44e35-327">アセンブリの正確な ID (ID は再コンパイル時に変更されます)。</span><span class="sxs-lookup"><span data-stu-id="44e35-327">The exact identity of the assembly (recompilation changes identity).</span></span>  
   
--   アセンブリが参照するすべてのアセンブリの正確な ID (ID は再コンパイル時に変更されます)。  
+-   <span data-ttu-id="44e35-328">アセンブリが参照するすべてのアセンブリの正確な ID (ID は再コンパイル時に変更されます)。</span><span class="sxs-lookup"><span data-stu-id="44e35-328">The exact identity of all assemblies that the assembly references (recompilation changes identity).</span></span>  
   
--   セキュリティ関連の要因。  
+-   <span data-ttu-id="44e35-329">セキュリティ関連の要因。</span><span class="sxs-lookup"><span data-stu-id="44e35-329">Security factors.</span></span>  
   
- Ngen.exe は、ネイティブ イメージを生成するときに上記の情報を記録します。 アセンブリが実行されると、ランタイムは、コンピューターの現在の環境と一致するオプションおよび設定を指定して生成されたネイティブ イメージを検索します。 一致するネイティブ イメージが見つからない場合、ランタイムはアセンブリを JIT コンパイルに戻します。 コンピューターの設定および環境が次のように変更されると、ネイティブ イメージは無効になります。  
+ <span data-ttu-id="44e35-330">Ngen.exe は、ネイティブ イメージを生成するときに上記の情報を記録します。</span><span class="sxs-lookup"><span data-stu-id="44e35-330">Ngen.exe records this information when it generates a native image.</span></span> <span data-ttu-id="44e35-331">アセンブリが実行されると、ランタイムは、コンピューターの現在の環境と一致するオプションおよび設定を指定して生成されたネイティブ イメージを検索します。</span><span class="sxs-lookup"><span data-stu-id="44e35-331">When you execute an assembly, the runtime looks for the native image generated with options and settings that match the computer's current environment.</span></span> <span data-ttu-id="44e35-332">一致するネイティブ イメージが見つからない場合、ランタイムはアセンブリを JIT コンパイルに戻します。</span><span class="sxs-lookup"><span data-stu-id="44e35-332">The runtime reverts to JIT compilation of an assembly if it cannot find a matching native image.</span></span> <span data-ttu-id="44e35-333">コンピューターの設定および環境が次のように変更されると、ネイティブ イメージは無効になります。</span><span class="sxs-lookup"><span data-stu-id="44e35-333">The following changes to a computer's settings and environment cause native images to become invalid:</span></span>  
   
--   .NET Framework Version。  
+-   <span data-ttu-id="44e35-334">.NET Framework Version。</span><span class="sxs-lookup"><span data-stu-id="44e35-334">The version of the .NET Framework.</span></span>  
   
-     更新プログラムを .NET Framework に適用すると、Ngen.exe を使用して作成したすべてのネイティブ イメージは、無効になります。 したがって、.NET Framework の更新では、常に `Ngen Update` コマンドが実行されてすべてのネイティブ イメージが再生成されます。 .NET Framework は、インストールする .NET Framework ライブラリの新しいネイティブ イメージを自動的に作成します。  
+     <span data-ttu-id="44e35-335">更新プログラムを .NET Framework に適用すると、Ngen.exe を使用して作成したすべてのネイティブ イメージは、無効になります。</span><span class="sxs-lookup"><span data-stu-id="44e35-335">If you apply an update to the .NET Framework, all native images that you have created using Ngen.exe become invalid.</span></span> <span data-ttu-id="44e35-336">したがって、.NET Framework の更新では、常に `Ngen Update` コマンドが実行されてすべてのネイティブ イメージが再生成されます。</span><span class="sxs-lookup"><span data-stu-id="44e35-336">For this reason, all updates of the .NET Framework execute the `Ngen Update` command, to ensure that all native images are regenerated.</span></span> <span data-ttu-id="44e35-337">.NET Framework は、インストールする .NET Framework ライブラリの新しいネイティブ イメージを自動的に作成します。</span><span class="sxs-lookup"><span data-stu-id="44e35-337">The .NET Framework automatically creates new native images for the .NET Framework libraries that it installs.</span></span>  
   
--   オペレーティング システムのバージョン (Windows 9x ファミリから Windows NT ファミリに変更した場合)。  
+-   <span data-ttu-id="44e35-338">オペレーティング システムのバージョン (Windows 9x ファミリから Windows NT ファミリに変更した場合)。</span><span class="sxs-lookup"><span data-stu-id="44e35-338">The version of the operating system, if the change is from the Windows 9x family to the Windows NT family.</span></span>  
   
-     たとえば、コンピューターで稼動しているオペレーティング システムのバージョンが Windows 98 から Windows XP に変更されると、ネイティブ イメージ キャッシュに格納されたすべてのネイティブ イメージは無効になります。 ただし、オペレーティング システムを Windows 2000 から Windows XP に変更した場合は、イメージは無効になりません。  
+     <span data-ttu-id="44e35-339">たとえば、コンピューターで稼動しているオペレーティング システムのバージョンが Windows 98 から Windows XP に変更されると、ネイティブ イメージ キャッシュに格納されたすべてのネイティブ イメージは無効になります。</span><span class="sxs-lookup"><span data-stu-id="44e35-339">For example, if the version of the operating system running on a computer changes from Windows 98 to Windows XP, all native images stored in the native image cache become invalid.</span></span> <span data-ttu-id="44e35-340">ただし、オペレーティング システムを Windows 2000 から Windows XP に変更した場合は、イメージは無効になりません。</span><span class="sxs-lookup"><span data-stu-id="44e35-340">However, if the operating system changes from Windows 2000 to Windows XP, the images are not invalidated.</span></span>  
   
--   アセンブリの正確な ID。  
+-   <span data-ttu-id="44e35-341">アセンブリの正確な ID。</span><span class="sxs-lookup"><span data-stu-id="44e35-341">The exact identity of the assembly.</span></span>  
   
-     アセンブリを再コンパイルすると、アセンブリの対応するネイティブ イメージは無効になります。  
+     <span data-ttu-id="44e35-342">アセンブリを再コンパイルすると、アセンブリの対応するネイティブ イメージは無効になります。</span><span class="sxs-lookup"><span data-stu-id="44e35-342">If you recompile an assembly, the assembly's corresponding native image becomes invalid.</span></span>  
   
--   アセンブリが参照するすべてのアセンブリの正確な ID。  
+-   <span data-ttu-id="44e35-343">アセンブリが参照するすべてのアセンブリの正確な ID。</span><span class="sxs-lookup"><span data-stu-id="44e35-343">The exact identity of any assemblies the assembly references.</span></span>  
   
-     マネージ アセンブリを更新する場合、そのアセンブリに直接または間接に依存するすべてのネイティブ イメージが無効になるため、これらを再生成する必要があります。 これには、通常の参照と強くバインドされた依存関係も含まれます。 ソフトウェア更新プログラムを適用するときには、インストール プログラムで `Ngen Update` コマンドを実行して、依存するすべてのネイティブ イメージを再生成する必要があります。  
+     <span data-ttu-id="44e35-344">マネージ アセンブリを更新する場合、そのアセンブリに直接または間接に依存するすべてのネイティブ イメージが無効になるため、これらを再生成する必要があります。</span><span class="sxs-lookup"><span data-stu-id="44e35-344">If you update a managed assembly, all native images that directly or indirectly depend on that assembly become invalid and need to be regenerated.</span></span> <span data-ttu-id="44e35-345">これには、通常の参照と強くバインドされた依存関係も含まれます。</span><span class="sxs-lookup"><span data-stu-id="44e35-345">This includes both ordinary references and hard-bound dependencies.</span></span> <span data-ttu-id="44e35-346">ソフトウェア更新プログラムを適用するときには、インストール プログラムで `Ngen Update` コマンドを実行して、依存するすべてのネイティブ イメージを再生成する必要があります。</span><span class="sxs-lookup"><span data-stu-id="44e35-346">Whenever a software update is applied, the installation program should execute an `Ngen Update` command to ensure that all dependent native images are regenerated.</span></span>  
   
--   セキュリティ関連の要因。  
+-   <span data-ttu-id="44e35-347">セキュリティ関連の要因。</span><span class="sxs-lookup"><span data-stu-id="44e35-347">Security factors.</span></span>  
   
-     アセンブリに事前に与えられていたアクセス許可を制限するマシン セキュリティ ポリシーを変更すると、そのアセンブリのコンパイル済みのネイティブ イメージが無効になることがあります。  
+     <span data-ttu-id="44e35-348">アセンブリに事前に与えられていたアクセス許可を制限するマシン セキュリティ ポリシーを変更すると、そのアセンブリのコンパイル済みのネイティブ イメージが無効になることがあります。</span><span class="sxs-lookup"><span data-stu-id="44e35-348">Changing machine security policy to restrict permissions previously granted to an assembly can cause a previously compiled native image for that assembly to become invalid.</span></span>  
   
-     共通言語ランタイムがコード アクセス セキュリティを管理する方法と、アクセス許可を使用する方法の詳細については、「[コード アクセス セキュリティ](../../../docs/framework/misc/code-access-security.md)」を参照してください。  
+     <span data-ttu-id="44e35-349">共通言語ランタイムがコード アクセス セキュリティを管理する方法と、アクセス許可を使用する方法の詳細については、「[コード アクセス セキュリティ](../../../docs/framework/misc/code-access-security.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="44e35-349">For detailed information about how the common language runtime administers code access security and how to use permissions, see [Code Access Security](../../../docs/framework/misc/code-access-security.md).</span></span>  
   
 <a name="Troubleshooting"></a>   
-## <a name="troubleshooting"></a>トラブルシューティング  
- 次のトラブルシューティングのトピックでは、アプリケーションで使用されているネイティブ イメージと使用できないネイティブ イメージ、JIT コンパイラがメソッドのコンパイルを開始するタイミングの判別、および指定されたメソッドのネイティブ イメージ コンパイルを中止する方法を示します。  
+## <a name="troubleshooting"></a><span data-ttu-id="44e35-350">トラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="44e35-350">Troubleshooting</span></span>  
+ <span data-ttu-id="44e35-351">次のトラブルシューティングのトピックでは、アプリケーションで使用されているネイティブ イメージと使用できないネイティブ イメージ、JIT コンパイラがメソッドのコンパイルを開始するタイミングの判別、および指定されたメソッドのネイティブ イメージ コンパイルを中止する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="44e35-351">The following troubleshooting topics allow you to see which native images are being used and which cannot be used by your application, to determine when the JIT compiler starts to compile a method, and shows how to opt out of native image compilation of specified methods.</span></span>  
   
 <a name="Fusion"></a>   
-### <a name="assembly-binding-log-viewer"></a>アセンブリ バインディング ログ ビューアー  
- アプリケーションでネイティブ イメージが使用されているかどうかを確認するには、[Fuslogvw.exe (アセンブリ バインディング ログ ビューアー)](../../../docs/framework/tools/fuslogvw-exe-assembly-binding-log-viewer.md) を使用できます。 バインディング ログ ビューアーのウィンドウの **[ログのカテゴリ]** ボックスで、**[ネイティブ イメージ]** をクリックします。 Fuslogvw.exe は、ネイティブ イメージが拒否された理由に関する情報を提供します。  
+### <a name="assembly-binding-log-viewer"></a><span data-ttu-id="44e35-352">アセンブリ バインディング ログ ビューアー</span><span class="sxs-lookup"><span data-stu-id="44e35-352">Assembly Binding Log Viewer</span></span>  
+ <span data-ttu-id="44e35-353">アプリケーションでネイティブ イメージが使用されているかどうかを確認するには、[Fuslogvw.exe (アセンブリ バインディング ログ ビューアー)](../../../docs/framework/tools/fuslogvw-exe-assembly-binding-log-viewer.md) を使用できます。</span><span class="sxs-lookup"><span data-stu-id="44e35-353">To confirm that native images are being used by your application, you can use the [Fuslogvw.exe (Assembly Binding Log Viewer)](../../../docs/framework/tools/fuslogvw-exe-assembly-binding-log-viewer.md).</span></span> <span data-ttu-id="44e35-354">バインディング ログ ビューアーのウィンドウの **[ログのカテゴリ]** ボックスで、**[ネイティブ イメージ]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="44e35-354">Select **Native Images** in the **Log Categories** box on the binding log viewer window.</span></span> <span data-ttu-id="44e35-355">Fuslogvw.exe は、ネイティブ イメージが拒否された理由に関する情報を提供します。</span><span class="sxs-lookup"><span data-stu-id="44e35-355">Fuslogvw.exe provides information about why a native image was rejected.</span></span>  
   
 <a name="MDA"></a>   
-### <a name="the-jitcompilationstart-managed-debugging-assistant"></a>JITCompilationStart マネージ デバッグ アシスタント  
- [jitCompilationStart](../../../docs/framework/debug-trace-profile/jitcompilationstart-mda.md) マネージ デバッグ アシスタント (MDA) を使用すると、JIT コンパイラが関数のコンパイルを開始するタイミングを判別できます。  
+### <a name="the-jitcompilationstart-managed-debugging-assistant"></a><span data-ttu-id="44e35-356">JITCompilationStart マネージ デバッグ アシスタント</span><span class="sxs-lookup"><span data-stu-id="44e35-356">The JITCompilationStart managed debugging assistant</span></span>  
+ <span data-ttu-id="44e35-357">[jitCompilationStart](../../../docs/framework/debug-trace-profile/jitcompilationstart-mda.md) マネージ デバッグ アシスタント (MDA) を使用すると、JIT コンパイラが関数のコンパイルを開始するタイミングを判別できます。</span><span class="sxs-lookup"><span data-stu-id="44e35-357">You can use the [jitCompilationStart](../../../docs/framework/debug-trace-profile/jitcompilationstart-mda.md) managed debugging assistant (MDA) to determine when the JIT compiler starts to compile a function.</span></span>  
   
 <a name="OptOut"></a>   
-### <a name="opting-out-of-native-image-generation"></a>ネイティブ イメージ生成の中止  
- 場合によっては、NGen.exe が特定のメソッドのネイティブ イメージを生成することが困難であったり、メソッドをネイティブ イメージにコンパイルするのではなく JIT コンパイルしたいことがあります。 そのような場合、`System.Runtime.BypassNGenAttribute` 属性を使用して、NGen.exe が特定のメソッドのネイティブ イメージを生成するのを防ぐことができます。 この属性は、ネイティブ イメージに含めたくないコードを持つ各メソッドに個別に適用する必要があります。 NGen.exe はこの属性を認識し、対応するメソッドのネイティブ イメージにコードを生成しません。  
+### <a name="opting-out-of-native-image-generation"></a><span data-ttu-id="44e35-358">ネイティブ イメージ生成の中止</span><span class="sxs-lookup"><span data-stu-id="44e35-358">Opting out of native image generation</span></span>  
+ <span data-ttu-id="44e35-359">場合によっては、NGen.exe が特定のメソッドのネイティブ イメージを生成することが困難であったり、メソッドをネイティブ イメージにコンパイルするのではなく JIT コンパイルしたいことがあります。</span><span class="sxs-lookup"><span data-stu-id="44e35-359">In some cases, NGen.exe may have difficulty generating a native image for a specific method, or you may prefer that the method be JIT compiled rather then compiled to a native image.</span></span> <span data-ttu-id="44e35-360">そのような場合、`System.Runtime.BypassNGenAttribute` 属性を使用して、NGen.exe が特定のメソッドのネイティブ イメージを生成するのを防ぐことができます。</span><span class="sxs-lookup"><span data-stu-id="44e35-360">In this case, you can use the `System.Runtime.BypassNGenAttribute` attribute to prevent NGen.exe from generating a native image for a particular method.</span></span> <span data-ttu-id="44e35-361">この属性は、ネイティブ イメージに含めたくないコードを持つ各メソッドに個別に適用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="44e35-361">The attribute must be applied individually to each method whose code you do not want to include in the native image.</span></span> <span data-ttu-id="44e35-362">NGen.exe はこの属性を認識し、対応するメソッドのネイティブ イメージにコードを生成しません。</span><span class="sxs-lookup"><span data-stu-id="44e35-362">NGen.exe recognizes the attribute and does not generate code in the native image for the corresponding method.</span></span>  
   
- ただし、`BypassNGenAttribute` は .NET Framework クラス ライブラリ内の型としては定義されていません。 コード内で属性を使用するには、最初に次のように定義する必要があります。  
+ <span data-ttu-id="44e35-363">ただし、`BypassNGenAttribute` は .NET Framework クラス ライブラリ内の型としては定義されていません。</span><span class="sxs-lookup"><span data-stu-id="44e35-363">Note, however, that `BypassNGenAttribute` is not defined as a type in the .NET Framework Class library.</span></span> <span data-ttu-id="44e35-364">コード内で属性を使用するには、最初に次のように定義する必要があります。</span><span class="sxs-lookup"><span data-stu-id="44e35-364">In order to consume the attribute in your code, you must first define it as follows:</span></span>  
   
- [!code-csharp[System.Runtime.BypassNGenAttribute#1](../../../samples/snippets/csharp/VS_Snippets_CLR_System/System.Runtime.BypassNGenAttribute/cs/Optout1.cs#1)] [!code-vb[System.Runtime.BypassNGenAttribute#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/System.Runtime.BypassNGenAttribute/vb/Optout1.vb#1)]  
+ <span data-ttu-id="44e35-365">[!code-csharp[System.Runtime.BypassNGenAttribute#1](../../../samples/snippets/csharp/VS_Snippets_CLR_System/System.Runtime.BypassNGenAttribute/cs/Optout1.cs#1)] [!code-vb[System.Runtime.BypassNGenAttribute#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/System.Runtime.BypassNGenAttribute/vb/Optout1.vb#1)]</span><span class="sxs-lookup"><span data-stu-id="44e35-365">[!code-csharp[System.Runtime.BypassNGenAttribute#1](../../../samples/snippets/csharp/VS_Snippets_CLR_System/System.Runtime.BypassNGenAttribute/cs/Optout1.cs#1)] [!code-vb[System.Runtime.BypassNGenAttribute#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/System.Runtime.BypassNGenAttribute/vb/Optout1.vb#1)]</span></span>  
   
- この後、メソッドごとに属性を適用できるようになります。 次の例は、`ExampleClass.ToJITCompile` メソッドのネイティブ イメージを生成しないようにネイティブ イメージ ジェネレーターに指示しています。  
+ <span data-ttu-id="44e35-366">この後、メソッドごとに属性を適用できるようになります。</span><span class="sxs-lookup"><span data-stu-id="44e35-366">You can then apply the attribute on a per-method basis.</span></span> <span data-ttu-id="44e35-367">次の例は、`ExampleClass.ToJITCompile` メソッドのネイティブ イメージを生成しないようにネイティブ イメージ ジェネレーターに指示しています。</span><span class="sxs-lookup"><span data-stu-id="44e35-367">The following example instructs the Native Image Generator that it should not generate a native image for the `ExampleClass.ToJITCompile` method.</span></span>  
   
- [!code-csharp[System.Runtime.BypassNGenAttribute#2](../../../samples/snippets/csharp/VS_Snippets_CLR_System/System.Runtime.BypassNGenAttribute/cs/Optout1.cs#2)] [!code-vb[System.Runtime.BypassNGenAttribute#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/System.Runtime.BypassNGenAttribute/vb/Optout1.vb#2)]  
+ <span data-ttu-id="44e35-368">[!code-csharp[System.Runtime.BypassNGenAttribute#2](../../../samples/snippets/csharp/VS_Snippets_CLR_System/System.Runtime.BypassNGenAttribute/cs/Optout1.cs#2)] [!code-vb[System.Runtime.BypassNGenAttribute#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/System.Runtime.BypassNGenAttribute/vb/Optout1.vb#2)]</span><span class="sxs-lookup"><span data-stu-id="44e35-368">[!code-csharp[System.Runtime.BypassNGenAttribute#2](../../../samples/snippets/csharp/VS_Snippets_CLR_System/System.Runtime.BypassNGenAttribute/cs/Optout1.cs#2)] [!code-vb[System.Runtime.BypassNGenAttribute#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/System.Runtime.BypassNGenAttribute/vb/Optout1.vb#2)]</span></span>  
   
-## <a name="examples"></a>使用例  
- 次のコマンドは、現在のディレクトリにある `ClientApp.exe` のネイティブ イメージを生成し、ネイティブ イメージ キャッシュにインストールします。 アセンブリの構成ファイルが存在する場合、Ngen.exe はその構成ファイルを使用します。 さらに、ネイティブ イメージは、`ClientApp.exe` が参照するあらゆる .dll ファイルに対して生成されます。  
+## <a name="examples"></a><span data-ttu-id="44e35-369">使用例</span><span class="sxs-lookup"><span data-stu-id="44e35-369">Examples</span></span>  
+ <span data-ttu-id="44e35-370">次のコマンドは、現在のディレクトリにある `ClientApp.exe` のネイティブ イメージを生成し、ネイティブ イメージ キャッシュにインストールします。</span><span class="sxs-lookup"><span data-stu-id="44e35-370">The following command generates a native image for `ClientApp.exe`, located in the current directory, and installs the image in the native image cache.</span></span> <span data-ttu-id="44e35-371">アセンブリの構成ファイルが存在する場合、Ngen.exe はその構成ファイルを使用します。</span><span class="sxs-lookup"><span data-stu-id="44e35-371">If a configuration file exists for the assembly, Ngen.exe uses it.</span></span> <span data-ttu-id="44e35-372">さらに、ネイティブ イメージは、`ClientApp.exe` が参照するあらゆる .dll ファイルに対して生成されます。</span><span class="sxs-lookup"><span data-stu-id="44e35-372">In addition, native images are generated for any .dll files that `ClientApp.exe` references.</span></span>  
   
 ```  
 ngen install ClientApp.exe  
 ```  
   
- Ngen.exe によってインストールされるイメージは、ルートとも呼ばれます。 ルートは、アプリケーションまたは共有コンポーネントです。  
+ <span data-ttu-id="44e35-373">Ngen.exe によってインストールされるイメージは、ルートとも呼ばれます。</span><span class="sxs-lookup"><span data-stu-id="44e35-373">An image installed with Ngen.exe is also called a root.</span></span> <span data-ttu-id="44e35-374">ルートは、アプリケーションまたは共有コンポーネントです。</span><span class="sxs-lookup"><span data-stu-id="44e35-374">A root can be an application or a shared component.</span></span>  
   
- 指定したパスにある `MyAssembly.exe` のネイティブ イメージを生成するコマンドを次に示します。  
+ <span data-ttu-id="44e35-375">指定したパスにある `MyAssembly.exe` のネイティブ イメージを生成するコマンドを次に示します。</span><span class="sxs-lookup"><span data-stu-id="44e35-375">The following command generates a native image for `MyAssembly.exe` with the specified path.</span></span>  
   
 ```  
 ngen install c:\myfiles\MyAssembly.exe  
 ```  
   
- アセンブリおよびその依存関係を検索する場合、Ngen.exe は共通言語ランタイムと同じプローブ ロジックを使用します。 既定では、`ClientApp.exe` が格納されているディレクトリがアプリケーションのベース ディレクトリとして使用され、すべてのアセンブリのプローブはこのディレクトリから始まります。 この動作は、`/AppBase` オプションを使用してオーバーライドできます。  
+ <span data-ttu-id="44e35-376">アセンブリおよびその依存関係を検索する場合、Ngen.exe は共通言語ランタイムと同じプローブ ロジックを使用します。</span><span class="sxs-lookup"><span data-stu-id="44e35-376">When locating assemblies and their dependencies, Ngen.exe uses the same probing logic used by the common language runtime.</span></span> <span data-ttu-id="44e35-377">既定では、`ClientApp.exe` が格納されているディレクトリがアプリケーションのベース ディレクトリとして使用され、すべてのアセンブリのプローブはこのディレクトリから始まります。</span><span class="sxs-lookup"><span data-stu-id="44e35-377">By default, the directory that contains `ClientApp.exe` is used as the application base directory, and all assembly probing begins in this directory.</span></span> <span data-ttu-id="44e35-378">この動作は、`/AppBase` オプションを使用してオーバーライドできます。</span><span class="sxs-lookup"><span data-stu-id="44e35-378">You can override this behavior by using the `/AppBase` option.</span></span>  
   
 > [!NOTE]
->  この動作は、アプリケーション ベースが現在のディレクトリに設定される .NET Framework Version 1.0 と 1.1 における Ngen.exe から変更されています。  
+>  <span data-ttu-id="44e35-379">この動作は、アプリケーション ベースが現在のディレクトリに設定される .NET Framework Version 1.0 と 1.1 における Ngen.exe から変更されています。</span><span class="sxs-lookup"><span data-stu-id="44e35-379">This is a change from Ngen.exe behavior in the .NET Framework versions 1.0 and 1.1, where the application base is set to the current directory.</span></span>  
   
- アセンブリは、参照を伴わない依存関係を持つことができます。たとえば、<xref:System.Reflection.Assembly.Load%2A?displayProperty=fullName> メソッドを使用して .dll ファイルを読み込む場合などです。 アプリケーション アセンブリの構成情報と `/ExeConfig` オプションを使用して、このような .dll ファイルのネイティブ イメージを作成できます。 `MyLib.dll,` の構成情報を使用して `MyApp.exe` のネイティブ イメージを生成するコマンドを次に示します。  
+ <span data-ttu-id="44e35-380">アセンブリは、参照を伴わない依存関係を持つことができます。たとえば、<xref:System.Reflection.Assembly.Load%2A?displayProperty=fullName> メソッドを使用して .dll ファイルを読み込む場合などです。</span><span class="sxs-lookup"><span data-stu-id="44e35-380">An assembly can have a dependency without a reference, for example if it loads a .dll file by using the <xref:System.Reflection.Assembly.Load%2A?displayProperty=fullName> method.</span></span> <span data-ttu-id="44e35-381">アプリケーション アセンブリの構成情報と `/ExeConfig` オプションを使用して、このような .dll ファイルのネイティブ イメージを作成できます。</span><span class="sxs-lookup"><span data-stu-id="44e35-381">You can create a native image for such a .dll file by using configuration information for the application assembly, with the `/ExeConfig` option.</span></span> <span data-ttu-id="44e35-382">`MyLib.dll,` の構成情報を使用して `MyApp.exe` のネイティブ イメージを生成するコマンドを次に示します。</span><span class="sxs-lookup"><span data-stu-id="44e35-382">The following command generates a native image for `MyLib.dll,` using the configuration information from `MyApp.exe`.</span></span>  
   
 ```  
 ngen install c:\myfiles\MyLib.dll /ExeConfig:c:\myapps\MyApp.exe  
 ```  
   
- この方法でインストールされたアセンブリは、アプリケーションと共に削除されません。  
+ <span data-ttu-id="44e35-383">この方法でインストールされたアセンブリは、アプリケーションと共に削除されません。</span><span class="sxs-lookup"><span data-stu-id="44e35-383">Assemblies installed in this way are not removed when the application is removed.</span></span>  
   
- 依存関係をアンインストールするには、それをインストールしたときと同じコマンド ライン オプションを使用します。 前の例から `MyLib.dll` をアンインストールするコマンドを次に示します。  
+ <span data-ttu-id="44e35-384">依存関係をアンインストールするには、それをインストールしたときと同じコマンド ライン オプションを使用します。</span><span class="sxs-lookup"><span data-stu-id="44e35-384">To uninstall a dependency, use the same command-line options that were used to install it.</span></span> <span data-ttu-id="44e35-385">前の例から `MyLib.dll` をアンインストールするコマンドを次に示します。</span><span class="sxs-lookup"><span data-stu-id="44e35-385">The following command uninstalls the `MyLib.dll` from the previous example.</span></span>  
   
 ```  
 ngen uninstall c:\myfiles\MyLib.dll /ExeConfig:c:\myapps\MyApp.exe  
 ```  
   
- グローバル アセンブリ キャッシュにアセンブリのネイティブ イメージを作成するには、アセンブリの表示名を使用します。 次に例を示します。  
+ <span data-ttu-id="44e35-386">グローバル アセンブリ キャッシュにアセンブリのネイティブ イメージを作成するには、アセンブリの表示名を使用します。</span><span class="sxs-lookup"><span data-stu-id="44e35-386">To create a native image for an assembly in the global assembly cache, use the display name of the assembly.</span></span> <span data-ttu-id="44e35-387">次に例を示します。</span><span class="sxs-lookup"><span data-stu-id="44e35-387">For example:</span></span>  
   
 ```  
 ngen install "ClientApp, Version=1.0.0.0, Culture=neutral,   
   PublicKeyToken=3c7ba247adcd2081, processorArchitecture=MSIL"  
 ```  
   
- NGen.exe は、インストールする各シナリオに対して個別のイメージ セットを生成します。 たとえば、次のコマンドはネイティブ イメージの通常操作用の完全なセット、デバッグ用の完全なセット、およびプロファイル用の第 3 のセットをインストールします。  
+ <span data-ttu-id="44e35-388">NGen.exe は、インストールする各シナリオに対して個別のイメージ セットを生成します。</span><span class="sxs-lookup"><span data-stu-id="44e35-388">NGen.exe generates a separate set of images for each scenario you install.</span></span> <span data-ttu-id="44e35-389">たとえば、次のコマンドはネイティブ イメージの通常操作用の完全なセット、デバッグ用の完全なセット、およびプロファイル用の第 3 のセットをインストールします。</span><span class="sxs-lookup"><span data-stu-id="44e35-389">For example, the following commands install a complete set of native images for normal operation, another complete set for debugging, and a third for profiling:</span></span>  
   
 ```  
 ngen install MyApp.exe  
@@ -443,73 +443,73 @@ ngen install MyApp.exe /debug
 ngen install MyApp.exe /profile  
 ```  
   
-### <a name="displaying-the-native-image-cache"></a>ネイティブ イメージ キャッシュの表示  
- ネイティブ イメージは、キャッシュにインストールすると、Ngen.exe を使用して表示できます。 ネイティブ イメージ キャッシュ内のすべてのネイティブ イメージを表示するコマンドを次に示します。  
+### <a name="displaying-the-native-image-cache"></a><span data-ttu-id="44e35-390">ネイティブ イメージ キャッシュの表示</span><span class="sxs-lookup"><span data-stu-id="44e35-390">Displaying the Native Image Cache</span></span>  
+ <span data-ttu-id="44e35-391">ネイティブ イメージは、キャッシュにインストールすると、Ngen.exe を使用して表示できます。</span><span class="sxs-lookup"><span data-stu-id="44e35-391">Once native images are installed in the cache, they can be displayed using Ngen.exe.</span></span> <span data-ttu-id="44e35-392">ネイティブ イメージ キャッシュ内のすべてのネイティブ イメージを表示するコマンドを次に示します。</span><span class="sxs-lookup"><span data-stu-id="44e35-392">The following command displays all native images in the native image cache.</span></span>  
   
 ```  
 ngen display  
 ```  
   
- `display` アクションは最初にすべてのルート アセンブリを表示し、次にコンピューター上のすべてのネイティブ イメージの一覧を表示します。  
+ <span data-ttu-id="44e35-393">`display` アクションは最初にすべてのルート アセンブリを表示し、次にコンピューター上のすべてのネイティブ イメージの一覧を表示します。</span><span class="sxs-lookup"><span data-stu-id="44e35-393">The `display` action lists all the root assemblies first, followed by a list of all the native images on the computer.</span></span>  
   
- アセンブリの情報だけを表示する場合は、アセンブリの簡易名を使用します。 次のコマンドは、部分名 `MyAssembly` に一致するネイティブ イメージ キャッシュのすべてのネイティブ イメージ、その依存関係、および `MyAssembly` に依存するすべてのルートを表示します。  
+ <span data-ttu-id="44e35-394">アセンブリの情報だけを表示する場合は、アセンブリの簡易名を使用します。</span><span class="sxs-lookup"><span data-stu-id="44e35-394">Use the simple name of an assembly to display information only for that assembly.</span></span> <span data-ttu-id="44e35-395">次のコマンドは、部分名 `MyAssembly` に一致するネイティブ イメージ キャッシュのすべてのネイティブ イメージ、その依存関係、および `MyAssembly` に依存するすべてのルートを表示します。</span><span class="sxs-lookup"><span data-stu-id="44e35-395">The following command displays all native images in the native image cache that match the partial name `MyAssembly`, their dependencies, and all roots that have a dependency on `MyAssembly`:</span></span>  
   
 ```  
 ngen display MyAssembly  
 ```  
   
- 共有コンポーネント アセンブリに依存するルートを知ることは、共有コンポーネントがアップグレードされた後の `update` アクションの影響を予測する際に役立ちます。  
+ <span data-ttu-id="44e35-396">共有コンポーネント アセンブリに依存するルートを知ることは、共有コンポーネントがアップグレードされた後の `update` アクションの影響を予測する際に役立ちます。</span><span class="sxs-lookup"><span data-stu-id="44e35-396">Knowing what roots depend on a shared component assembly is useful in gauging the impact of an `update` action after the shared component is upgraded.</span></span>  
   
- アセンブリのファイル拡張子を指定する場合は、パスを指定するか、またはアセンブリが格納されているディレクトリから Ngen.exe を実行する必要があります。  
+ <span data-ttu-id="44e35-397">アセンブリのファイル拡張子を指定する場合は、パスを指定するか、またはアセンブリが格納されているディレクトリから Ngen.exe を実行する必要があります。</span><span class="sxs-lookup"><span data-stu-id="44e35-397">If you specify an assembly's file extension, you must either specify the path or execute Ngen.exe from the directory containing the assembly:</span></span>  
   
 ```  
 ngen display c:\myApps\MyAssembly.exe  
 ```  
   
- ネイティブ イメージ キャッシュ内で `MyAssembly` という名前を持ち、バージョン 1.0.0.0 であるすべてのネイティブ イメージを表示するコマンドを次に示します。  
+ <span data-ttu-id="44e35-398">ネイティブ イメージ キャッシュ内で `MyAssembly` という名前を持ち、バージョン 1.0.0.0 であるすべてのネイティブ イメージを表示するコマンドを次に示します。</span><span class="sxs-lookup"><span data-stu-id="44e35-398">The following command displays all native images in the native image cache with the name `MyAssembly` and the version 1.0.0.0.</span></span>  
   
 ```  
 ngen display "myAssembly, version=1.0.0.0"  
 ```  
   
-### <a name="updating-images"></a>イメージの更新  
- 一般に、共有コンポーネントがアップグレードされると、イメージが更新されます。 イメージまたは依存関係が変更されたすべてのネイティブ イメージを更新するには、引数なしで `update` アクションを使用します。  
+### <a name="updating-images"></a><span data-ttu-id="44e35-399">イメージの更新</span><span class="sxs-lookup"><span data-stu-id="44e35-399">Updating Images</span></span>  
+ <span data-ttu-id="44e35-400">一般に、共有コンポーネントがアップグレードされると、イメージが更新されます。</span><span class="sxs-lookup"><span data-stu-id="44e35-400">Images are typically updated after a shared component has been upgraded.</span></span> <span data-ttu-id="44e35-401">イメージまたは依存関係が変更されたすべてのネイティブ イメージを更新するには、引数なしで `update` アクションを使用します。</span><span class="sxs-lookup"><span data-stu-id="44e35-401">To update all native images that have changed, or whose dependencies have changed, use the `update` action with no arguments.</span></span>  
   
 ```  
 ngen update  
 ```  
   
- すべてのイメージを更新するプロセスは、長くなることがあります。 ネイティブ イメージ サービスによる更新は、`/queue` オプションを使用してキューに置くことができます。 `/queue` オプションとインストールの優先順位の詳細については、「[ネイティブ イメージ サービス](http://msdn.microsoft.com/en-us/b15e0e32-59cb-4ae4-967c-6c9527781309)」を参照してください。  
+ <span data-ttu-id="44e35-402">すべてのイメージを更新するプロセスは、長くなることがあります。</span><span class="sxs-lookup"><span data-stu-id="44e35-402">Updating all images can be a lengthy process.</span></span> <span data-ttu-id="44e35-403">ネイティブ イメージ サービスによる更新は、`/queue` オプションを使用してキューに置くことができます。</span><span class="sxs-lookup"><span data-stu-id="44e35-403">You can queue the updates for execution by the native image service by using the `/queue` option.</span></span> <span data-ttu-id="44e35-404">`/queue` オプションとインストールの優先順位の詳細については、「[ネイティブ イメージ サービス](http://msdn.microsoft.com/en-us/b15e0e32-59cb-4ae4-967c-6c9527781309)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="44e35-404">For more information on the `/queue` option and installation priorities, see [Native Image Service](http://msdn.microsoft.com/en-us/b15e0e32-59cb-4ae4-967c-6c9527781309).</span></span>  
   
 ```  
 ngen update /queue  
 ```  
   
-### <a name="uninstalling-images"></a>イメージのアンインストール  
- Ngen.exe は、共有コンポーネントに依存するすべてのアセンブリが削除された場合だけ共有コンポーネントが削除されるように依存関係の一覧を維持します。 また、ルートとしてインストールされた共有コンポーネントは削除されません。  
+### <a name="uninstalling-images"></a><span data-ttu-id="44e35-405">イメージのアンインストール</span><span class="sxs-lookup"><span data-stu-id="44e35-405">Uninstalling Images</span></span>  
+ <span data-ttu-id="44e35-406">Ngen.exe は、共有コンポーネントに依存するすべてのアセンブリが削除された場合だけ共有コンポーネントが削除されるように依存関係の一覧を維持します。</span><span class="sxs-lookup"><span data-stu-id="44e35-406">Ngen.exe maintains a list of dependencies, so that shared components are removed only when all assemblies that depend on them have been removed.</span></span> <span data-ttu-id="44e35-407">また、ルートとしてインストールされた共有コンポーネントは削除されません。</span><span class="sxs-lookup"><span data-stu-id="44e35-407">In addition, a shared component is not removed if it has been installed as a root.</span></span>  
   
- 次のコマンドは、ルートの `ClientApp.exe` のすべてのシナリオをアンインストールします。  
+ <span data-ttu-id="44e35-408">次のコマンドは、ルートの `ClientApp.exe` のすべてのシナリオをアンインストールします。</span><span class="sxs-lookup"><span data-stu-id="44e35-408">The following command uninstalls all scenarios for the root `ClientApp.exe`:</span></span>  
   
 ```  
 ngen uninstall ClientApp  
 ```  
   
- `uninstall` アクションは、特定のシナリオを削除するために使用できます。 次のコマンドは、ルートの `ClientApp.exe` のすべてのデバッグ シナリオをアンインストールします。  
+ <span data-ttu-id="44e35-409">`uninstall` アクションは、特定のシナリオを削除するために使用できます。</span><span class="sxs-lookup"><span data-stu-id="44e35-409">The `uninstall` action can be used to remove specific scenarios.</span></span> <span data-ttu-id="44e35-410">次のコマンドは、ルートの `ClientApp.exe` のすべてのデバッグ シナリオをアンインストールします。</span><span class="sxs-lookup"><span data-stu-id="44e35-410">The following command uninstalls all debug scenarios for `ClientApp.exe`:</span></span>  
   
 ```  
 ngen uninstall ClientApp /debug  
 ```  
   
 > [!NOTE]
->  `/debug` シナリオをアンインストールしても、`/profile` と `/debug.` の両方を含むシナリオはアンインストールされません。  
+>  <span data-ttu-id="44e35-411">`/debug` シナリオをアンインストールしても、`/profile` と `/debug.` の両方を含むシナリオはアンインストールされません。</span><span class="sxs-lookup"><span data-stu-id="44e35-411">Uninstalling `/debug` scenarios does not uninstall a scenario that includes both `/profile` and `/debug.`</span></span>  
   
- 次のコマンドは、`ClientApp.exe` の特定のバージョンのすべてのシナリオをアンインストールします。  
+ <span data-ttu-id="44e35-412">次のコマンドは、`ClientApp.exe` の特定のバージョンのすべてのシナリオをアンインストールします。</span><span class="sxs-lookup"><span data-stu-id="44e35-412">The following command uninstalls all scenarios for a specific version of `ClientApp.exe`:</span></span>  
   
 ```  
 ngen uninstall "ClientApp, Version=1.0.0.0"  
 ```  
   
- 次のコマンドは、`"ClientApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=3c7ba247adcd2081, processorArchitecture=MSIL",` のすべてのシナリオまたはアセンブリのデバッグ シナリオだけをアンインストールします。  
+ <span data-ttu-id="44e35-413">次のコマンドは、`"ClientApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=3c7ba247adcd2081, processorArchitecture=MSIL",` のすべてのシナリオまたはアセンブリのデバッグ シナリオだけをアンインストールします。</span><span class="sxs-lookup"><span data-stu-id="44e35-413">The following commands uninstall all scenarios for `"ClientApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=3c7ba247adcd2081, processorArchitecture=MSIL",` or just the debug scenario for that assembly:</span></span>  
   
 ```  
 ngen uninstall "ClientApp, Version=1.0.0.0, Culture=neutral,   
@@ -518,60 +518,60 @@ ngen uninstall "ClientApp, Version=1.0.0.0, Culture=neutral,
   PublicKeyToken=3c7ba247adcd2081, processorArchitecture=MSIL" /debug  
 ```  
   
- `install` アクションと同様に、拡張子を指定する場合は、アセンブリが格納されているディレクトリから Ngen.exe を実行するか、またはフル パスを指定する必要があります。  
+ <span data-ttu-id="44e35-414">`install` アクションと同様に、拡張子を指定する場合は、アセンブリが格納されているディレクトリから Ngen.exe を実行するか、またはフル パスを指定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="44e35-414">As with the `install` action, supplying an extension requires either executing Ngen.exe from the directory containing the assembly or specifying a full path.</span></span>  
   
- ネイティブ イメージ サービスに関連する例については、「[ネイティブ イメージ サービス](http://msdn.microsoft.com/en-us/b15e0e32-59cb-4ae4-967c-6c9527781309)」を参照してください。  
+ <span data-ttu-id="44e35-415">ネイティブ イメージ サービスに関連する例については、「[ネイティブ イメージ サービス](http://msdn.microsoft.com/en-us/b15e0e32-59cb-4ae4-967c-6c9527781309)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="44e35-415">For examples relating to the native image service, see [Native Image Service](http://msdn.microsoft.com/en-us/b15e0e32-59cb-4ae4-967c-6c9527781309).</span></span>  
   
-## <a name="native-image-task"></a>ネイティブ イメージ タスク  
- ネイティブ イメージ タスクは、ネイティブ イメージを生成および保持する Windows タスクです。 ネイティブ イメージ タスクは、サポートされるシナリオでネイティブ イメージを自動的に生成し、解放します。 (「[ネイティブ イメージの作成](http://msdn.microsoft.com/en-us/2bc8b678-dd8d-4742-ad82-319e9bf52418)」を参照してください)。また、インストーラーが、[Ngen.exe (ネイティブ イメージ ジェネレーター)](../../../docs/framework/tools/ngen-exe-native-image-generator.md) を使用して、遅延時にネイティブ イメージを生成および更新できるようにします。  
+## <a name="native-image-task"></a><span data-ttu-id="44e35-416">ネイティブ イメージ タスク</span><span class="sxs-lookup"><span data-stu-id="44e35-416">Native Image Task</span></span>  
+ <span data-ttu-id="44e35-417">ネイティブ イメージ タスクは、ネイティブ イメージを生成および保持する Windows タスクです。</span><span class="sxs-lookup"><span data-stu-id="44e35-417">The native image task is a Windows task that generates and maintains native images.</span></span> <span data-ttu-id="44e35-418">ネイティブ イメージ タスクは、サポートされるシナリオでネイティブ イメージを自動的に生成し、解放します。</span><span class="sxs-lookup"><span data-stu-id="44e35-418">The native image task generates and reclaims native images automatically for supported scenarios.</span></span> <span data-ttu-id="44e35-419">(「[ネイティブ イメージの作成](http://msdn.microsoft.com/en-us/2bc8b678-dd8d-4742-ad82-319e9bf52418)」を参照してください)。また、インストーラーが、[Ngen.exe (ネイティブ イメージ ジェネレーター)](../../../docs/framework/tools/ngen-exe-native-image-generator.md) を使用して、遅延時にネイティブ イメージを生成および更新できるようにします。</span><span class="sxs-lookup"><span data-stu-id="44e35-419">(See [Creating Native Images](http://msdn.microsoft.com/en-us/2bc8b678-dd8d-4742-ad82-319e9bf52418).) It also enables installers to use [Ngen.exe (Native Image Generator)](../../../docs/framework/tools/ngen-exe-native-image-generator.md) to create and update native images at a deferred time.</span></span>  
   
- 各アーキテクチャを対象とするアプリケーションのコンパイルを許可するために、ネイティブ イメージ タスクはコンピューターでサポートされる CPU アーキテクチャごとに一度登録されます。  
+ <span data-ttu-id="44e35-420">各アーキテクチャを対象とするアプリケーションのコンパイルを許可するために、ネイティブ イメージ タスクはコンピューターでサポートされる CPU アーキテクチャごとに一度登録されます。</span><span class="sxs-lookup"><span data-stu-id="44e35-420">The native image task is registered once for each CPU architecture supported on a computer, to allow compilation for applications that target each architecture:</span></span>  
   
-|タスク名|32 ビット コンピューター|64 ビット コンピューター|  
+|<span data-ttu-id="44e35-421">タスク名</span><span class="sxs-lookup"><span data-stu-id="44e35-421">Task name</span></span>|<span data-ttu-id="44e35-422">32 ビット コンピューター</span><span class="sxs-lookup"><span data-stu-id="44e35-422">32-bit computer</span></span>|<span data-ttu-id="44e35-423">64 ビット コンピューター</span><span class="sxs-lookup"><span data-stu-id="44e35-423">64-bit computer</span></span>|  
 |---------------|----------------------|----------------------|  
-|NET Framework NGEN v4.0.30319|はい|はい|  
-|NET Framework NGEN v4.0.30319 64|いいえ|はい|  
+|<span data-ttu-id="44e35-424">NET Framework NGEN v4.0.30319</span><span class="sxs-lookup"><span data-stu-id="44e35-424">NET Framework NGEN v4.0.30319</span></span>|<span data-ttu-id="44e35-425">はい</span><span class="sxs-lookup"><span data-stu-id="44e35-425">Yes</span></span>|<span data-ttu-id="44e35-426">はい</span><span class="sxs-lookup"><span data-stu-id="44e35-426">Yes</span></span>|  
+|<span data-ttu-id="44e35-427">NET Framework NGEN v4.0.30319 64</span><span class="sxs-lookup"><span data-stu-id="44e35-427">NET Framework NGEN v4.0.30319 64</span></span>|<span data-ttu-id="44e35-428">いいえ</span><span class="sxs-lookup"><span data-stu-id="44e35-428">No</span></span>|<span data-ttu-id="44e35-429">はい</span><span class="sxs-lookup"><span data-stu-id="44e35-429">Yes</span></span>|  
   
- ネイティブ イメージ タスクは、Windows 8 以降の実行時に .NET Framework 4.5 以降のバージョンで使用できます。 Windows の以前のバージョンでは、.NET Framework は[ネイティブ イメージ サービス](http://msdn.microsoft.com/en-us/b15e0e32-59cb-4ae4-967c-6c9527781309)を使用します。  
+ <span data-ttu-id="44e35-430">ネイティブ イメージ タスクは、Windows 8 以降の実行時に .NET Framework 4.5 以降のバージョンで使用できます。</span><span class="sxs-lookup"><span data-stu-id="44e35-430">The native image task is is available in the .NET Framework 4.5 and later versions, when running on Windows 8 or later.</span></span> <span data-ttu-id="44e35-431">Windows の以前のバージョンでは、.NET Framework は[ネイティブ イメージ サービス](http://msdn.microsoft.com/en-us/b15e0e32-59cb-4ae4-967c-6c9527781309)を使用します。</span><span class="sxs-lookup"><span data-stu-id="44e35-431">On earlier versions of Windows, the .NET Framework uses the [Native Image Service](http://msdn.microsoft.com/en-us/b15e0e32-59cb-4ae4-967c-6c9527781309).</span></span>  
   
-### <a name="task-lifetime"></a>タスクの有効期間  
- 一般に、Windows タスク スケジューラは、毎晩、コンピューターがアイドル状態のときにネイティブ イメージ タスクを開始します。 このタスクでは、アプリケーション インストーラーによってキューに入れられている遅延作業、遅延されているネイティブ イメージ更新要求、自動イメージ作成がないかどうかをチェックします。 このタスクは未完了の作業項目を完了すると、停止します。 このタスクの実行中にコンピューターがアイドル状態になると、タスクは停止します。  
+### <a name="task-lifetime"></a><span data-ttu-id="44e35-432">タスクの有効期間</span><span class="sxs-lookup"><span data-stu-id="44e35-432">Task Lifetime</span></span>  
+ <span data-ttu-id="44e35-433">一般に、Windows タスク スケジューラは、毎晩、コンピューターがアイドル状態のときにネイティブ イメージ タスクを開始します。</span><span class="sxs-lookup"><span data-stu-id="44e35-433">In general, the Windows Task Scheduler starts the native image task every night when the computer is idle.</span></span> <span data-ttu-id="44e35-434">このタスクでは、アプリケーション インストーラーによってキューに入れられている遅延作業、遅延されているネイティブ イメージ更新要求、自動イメージ作成がないかどうかをチェックします。</span><span class="sxs-lookup"><span data-stu-id="44e35-434">The task checks for any deferred work that is queued by application installers, any deferred native image update requests, and any automatic image creation.</span></span> <span data-ttu-id="44e35-435">このタスクは未完了の作業項目を完了すると、停止します。</span><span class="sxs-lookup"><span data-stu-id="44e35-435">The task completes outstanding work items and then shuts down.</span></span> <span data-ttu-id="44e35-436">このタスクの実行中にコンピューターがアイドル状態になると、タスクは停止します。</span><span class="sxs-lookup"><span data-stu-id="44e35-436">If the computer stops being idle while the task is running, the task stops.</span></span>  
   
- また、ネイティブ イメージ タスクは手動で開始することもできます。その場合には、タスク スケジューラ UI を使用するか、NGen.exe を手動で呼び出します。 このいずれかの方法でこのタスクを開始すると、コンピューターがアイドル状態でなくなると実行を続行します。 NGen.exe を使用して手動で作成されたイメージは、アプリケーション インストーラーで予測可能な動作を有効にするために優先順位が設定されます。  
+ <span data-ttu-id="44e35-437">また、ネイティブ イメージ タスクは手動で開始することもできます。その場合には、タスク スケジューラ UI を使用するか、NGen.exe を手動で呼び出します。</span><span class="sxs-lookup"><span data-stu-id="44e35-437">You can also start the native image task manually through the Task Scheduler UI or through manual calls to NGen.exe.</span></span> <span data-ttu-id="44e35-438">このいずれかの方法でこのタスクを開始すると、コンピューターがアイドル状態でなくなると実行を続行します。</span><span class="sxs-lookup"><span data-stu-id="44e35-438">If the task is started through either of these methods, it will continue running when the computer is no longer idle.</span></span> <span data-ttu-id="44e35-439">NGen.exe を使用して手動で作成されたイメージは、アプリケーション インストーラーで予測可能な動作を有効にするために優先順位が設定されます。</span><span class="sxs-lookup"><span data-stu-id="44e35-439">Images created manually by using NGen.exe are prioritized to enable predictable behavior for application installers.</span></span>  
   
-## <a name="native-image-service"></a>ネイティブ イメージ サービス  
- ネイティブ イメージ サービスは、ネイティブ イメージを生成および保持する Windows サービスです。 ネイティブ イメージ サービスによって、開発者はコンピューターがアイドル状態になるまでネイティブ イメージのインストールと更新を遅延できます。  
+## <a name="native-image-service"></a><span data-ttu-id="44e35-440">ネイティブ イメージ サービス</span><span class="sxs-lookup"><span data-stu-id="44e35-440">Native Image Service</span></span>  
+ <span data-ttu-id="44e35-441">ネイティブ イメージ サービスは、ネイティブ イメージを生成および保持する Windows サービスです。</span><span class="sxs-lookup"><span data-stu-id="44e35-441">The native image service is a Windows service that generates and maintains native images.</span></span> <span data-ttu-id="44e35-442">ネイティブ イメージ サービスによって、開発者はコンピューターがアイドル状態になるまでネイティブ イメージのインストールと更新を遅延できます。</span><span class="sxs-lookup"><span data-stu-id="44e35-442">The native image service allows the developer to defer the installation and update of native images to periods when the computer is idle.</span></span>  
   
- 通常ネイティブ イメージ サービスは、アプリケーションまたはアップデートのインストール プログラム (インストーラー) によって開始されます。 優先順位 3 のアクションでは、サービスはコンピューターのアイドル時間に実行します。 このサービスは自身の状態を保存するため、再起動を繰り返しても必要に応じて続けて実行できます。 複数のイメージ コンパイルをキューに配置できます。  
+ <span data-ttu-id="44e35-443">通常ネイティブ イメージ サービスは、アプリケーションまたはアップデートのインストール プログラム (インストーラー) によって開始されます。</span><span class="sxs-lookup"><span data-stu-id="44e35-443">Normally, the native image service is initiated by the installation program (installer) for an application or update.</span></span> <span data-ttu-id="44e35-444">優先順位 3 のアクションでは、サービスはコンピューターのアイドル時間に実行します。</span><span class="sxs-lookup"><span data-stu-id="44e35-444">For priority 3 actions, the service executes during idle time on the computer.</span></span> <span data-ttu-id="44e35-445">このサービスは自身の状態を保存するため、再起動を繰り返しても必要に応じて続けて実行できます。</span><span class="sxs-lookup"><span data-stu-id="44e35-445">The service saves its state and is capable of continuing through multiple reboots if necessary.</span></span> <span data-ttu-id="44e35-446">複数のイメージ コンパイルをキューに配置できます。</span><span class="sxs-lookup"><span data-stu-id="44e35-446">Multiple image compilations can be queued.</span></span>  
   
- このサービスは、手動の Ngen.exe コマンドともやり取りします。 手動で実行するコマンドは、バックグラウンド アクティビティより優先されます。  
+ <span data-ttu-id="44e35-447">このサービスは、手動の Ngen.exe コマンドともやり取りします。</span><span class="sxs-lookup"><span data-stu-id="44e35-447">The service also interacts with the manual Ngen.exe command.</span></span> <span data-ttu-id="44e35-448">手動で実行するコマンドは、バックグラウンド アクティビティより優先されます。</span><span class="sxs-lookup"><span data-stu-id="44e35-448">Manual commands take precedence over background activity.</span></span>  
   
 > [!NOTE]
->  Windows Vista では、ネイティブ イメージ サービスに表示される名前は "Microsoft.NET Framework NGEN v2.0.50727_X86" または "Microsoft.NET Framework NGEN v2.0.50727_X64" です。 これより前のすべてのバージョンの Microsoft Windows では、名前は ".NET Runtime Optimization Service v2.0.50727_X86" または ".NET Runtime Optimization Service v2.0.50727_X64" です。  
+>  <span data-ttu-id="44e35-449">Windows Vista では、ネイティブ イメージ サービスに表示される名前は "Microsoft.NET Framework NGEN v2.0.50727_X86" または "Microsoft.NET Framework NGEN v2.0.50727_X64" です。</span><span class="sxs-lookup"><span data-stu-id="44e35-449">On Windows Vista, the name displayed for the native image service is "Microsoft.NET Framework NGEN v2.0.50727_X86" or "Microsoft.NET Framework NGEN v2.0.50727_X64".</span></span> <span data-ttu-id="44e35-450">これより前のすべてのバージョンの Microsoft Windows では、名前は ".NET Runtime Optimization Service v2.0.50727_X86" または ".NET Runtime Optimization Service v2.0.50727_X64" です。</span><span class="sxs-lookup"><span data-stu-id="44e35-450">On all earlier versions of Microsoft Windows, the name is ".NET Runtime Optimization Service v2.0.50727_X86" or ".NET Runtime Optimization Service v2.0.50727_X64".</span></span>  
   
-### <a name="launching-deferred-operations"></a>遅延の操作の起動  
- インストールまたはアップグレードを開始する前に、サービスを停止する必要があります。 これによって、インストーラーがファイルをコピーするか、またはアセンブリをグローバル アセンブリ キャッシュに格納している間に、サービスが実行されないようにできます。 次の Ngen.exe のコマンド ラインによって、サービスを停止します。  
+### <a name="launching-deferred-operations"></a><span data-ttu-id="44e35-451">遅延の操作の起動</span><span class="sxs-lookup"><span data-stu-id="44e35-451">Launching Deferred Operations</span></span>  
+ <span data-ttu-id="44e35-452">インストールまたはアップグレードを開始する前に、サービスを停止する必要があります。</span><span class="sxs-lookup"><span data-stu-id="44e35-452">Before beginning an installation or upgrade, pausing the service is recommended.</span></span> <span data-ttu-id="44e35-453">これによって、インストーラーがファイルをコピーするか、またはアセンブリをグローバル アセンブリ キャッシュに格納している間に、サービスが実行されないようにできます。</span><span class="sxs-lookup"><span data-stu-id="44e35-453">This ensures that the service does not execute while the installer is copying files or putting assemblies in the global assembly cache.</span></span> <span data-ttu-id="44e35-454">次の Ngen.exe のコマンド ラインによって、サービスを停止します。</span><span class="sxs-lookup"><span data-stu-id="44e35-454">The following Ngen.exe command line pauses the service:</span></span>  
   
 ```  
 ngen queue pause  
 ```  
   
- すべての遅延操作がキューに置かれた後に、次のコマンドによってサービスを再開します。  
+ <span data-ttu-id="44e35-455">すべての遅延操作がキューに置かれた後に、次のコマンドによってサービスを再開します。</span><span class="sxs-lookup"><span data-stu-id="44e35-455">When all deferred operations have been queued, the following command allows the service to resume:</span></span>  
   
 ```  
 ngen queue continue  
 ```  
   
- 新しいアプリケーションをインストールする場合または共有コンポーネントを更新する場合にネイティブ イメージの生成を遅延するには、`install` アクションまたは `update` アクションで `/queue` オプションを使用します。 次の Ngen.exe のコマンド ラインは、共有コンポーネントのネイティブ イメージをインストールし、影響を受けるすべてのルートの更新を実行します。  
+ <span data-ttu-id="44e35-456">新しいアプリケーションをインストールする場合または共有コンポーネントを更新する場合にネイティブ イメージの生成を遅延するには、`install` アクションまたは `update` アクションで `/queue` オプションを使用します。</span><span class="sxs-lookup"><span data-stu-id="44e35-456">To defer native image generation when installing a new application or when updating a shared component, use the `/queue` option with the `install` or `update` actions.</span></span> <span data-ttu-id="44e35-457">次の Ngen.exe のコマンド ラインは、共有コンポーネントのネイティブ イメージをインストールし、影響を受けるすべてのルートの更新を実行します。</span><span class="sxs-lookup"><span data-stu-id="44e35-457">The following Ngen.exe command lines install a native image for a shared component and perform an update of all roots that may have been affected:</span></span>  
   
 ```  
 ngen install MyComponent /queue  
 ngen update /queue  
 ```  
   
- `update` アクションは、`MyComponent` を使用するネイティブ イメージだけでなく、無効になったすべてのネイティブ イメージを再作成します。  
+ <span data-ttu-id="44e35-458">`update` アクションは、`MyComponent` を使用するネイティブ イメージだけでなく、無効になったすべてのネイティブ イメージを再作成します。</span><span class="sxs-lookup"><span data-stu-id="44e35-458">The `update` action regenerates all native images that have been invalidated, not just those that use `MyComponent`.</span></span>  
   
- 多くのルートで構成されるアプリケーションでは、遅延されたアクションの優先順位を指定できます。 次のコマンドは、次の 3 つのルートのインストールをキューに置きます。 `Assembly1` がアイドル時間まで待たずに最初にインストールされます。 `Assembly2` もアイドル時間まで待たずにインストールされますが、優先順位 1 のアクションがすべてインストールされた後にインストールされます。 `Assembly3` は、コンピューターがアイドル状態になったことをサービスが検出するとインストールされます。  
+ <span data-ttu-id="44e35-459">多くのルートで構成されるアプリケーションでは、遅延されたアクションの優先順位を指定できます。</span><span class="sxs-lookup"><span data-stu-id="44e35-459">If your application consists of many roots, you can control the priority of the deferred actions.</span></span> <span data-ttu-id="44e35-460">次のコマンドは、次の 3 つのルートのインストールをキューに置きます。</span><span class="sxs-lookup"><span data-stu-id="44e35-460">The following commands queue the installation of three roots.</span></span> <span data-ttu-id="44e35-461">`Assembly1` がアイドル時間まで待たずに最初にインストールされます。</span><span class="sxs-lookup"><span data-stu-id="44e35-461">`Assembly1` is installed first, without waiting for idle time.</span></span> <span data-ttu-id="44e35-462">`Assembly2` もアイドル時間まで待たずにインストールされますが、優先順位 1 のアクションがすべてインストールされた後にインストールされます。</span><span class="sxs-lookup"><span data-stu-id="44e35-462">`Assembly2` is also installed without waiting for idle time, but after all priority 1 actions have completed.</span></span> <span data-ttu-id="44e35-463">`Assembly3` は、コンピューターがアイドル状態になったことをサービスが検出するとインストールされます。</span><span class="sxs-lookup"><span data-stu-id="44e35-463">`Assembly3` is installed when the service detects that the computer is idle.</span></span>  
   
 ```  
 ngen install Assembly1 /queue:1  
@@ -579,25 +579,25 @@ ngen install Assembly2 /queue:2
 ngen install Assembly3 /queue:3  
 ```  
   
- `executeQueuedItems` アクションを使用すると、キューに置かれているアクションを同時に強制的に実行できます。 オプションの優先順位を指定すると、このアクションは同等またはそれ以下の優先順位を持っているキュー内のアクションだけに適用されます。 既定の優先順位は 3 であるため、次の Ngen.exe コマンドは、キューに置かれているすべてのアクションを即座に処理し、その処理が完了するまで戻りません。  
+ <span data-ttu-id="44e35-464">`executeQueuedItems` アクションを使用すると、キューに置かれているアクションを同時に強制的に実行できます。</span><span class="sxs-lookup"><span data-stu-id="44e35-464">You can force queued actions to occur synchronously by using the `executeQueuedItems` action.</span></span> <span data-ttu-id="44e35-465">オプションの優先順位を指定すると、このアクションは同等またはそれ以下の優先順位を持っているキュー内のアクションだけに適用されます。</span><span class="sxs-lookup"><span data-stu-id="44e35-465">If you supply the optional priority, this action affects only the queued actions that have equal or lower priority.</span></span> <span data-ttu-id="44e35-466">既定の優先順位は 3 であるため、次の Ngen.exe コマンドは、キューに置かれているすべてのアクションを即座に処理し、その処理が完了するまで戻りません。</span><span class="sxs-lookup"><span data-stu-id="44e35-466">The default priority is 3, so the following Ngen.exe command processes all queued actions immediately, and does not return until they are finished:</span></span>  
   
 ```  
 ngen executeQueuedItems  
 ```  
   
- Ngen.exe は同期コマンドを実行し、ネイティブ イメージ サービスは使用しません。 ネイティブ イメージ サービスの実行中に Ngen.exe を使用してアクションを実行できます。  
+ <span data-ttu-id="44e35-467">Ngen.exe は同期コマンドを実行し、ネイティブ イメージ サービスは使用しません。</span><span class="sxs-lookup"><span data-stu-id="44e35-467">Synchronous commands are executed by Ngen.exe and do not use the native image service.</span></span> <span data-ttu-id="44e35-468">ネイティブ イメージ サービスの実行中に Ngen.exe を使用してアクションを実行できます。</span><span class="sxs-lookup"><span data-stu-id="44e35-468">You can execute actions using Ngen.exe while the native image service is running.</span></span>  
   
-### <a name="service-shutdown"></a>サービスのシャットダウン  
- `/queue` オプションを組み込んだ Ngen.exe コマンドの実行によって開始されたサービスは、すべてのアクションが完了するまでバックグラウンドで実行されます。 このサービスは自身の状態を保存するため、再起動を繰り返しても必要に応じて処理を継続できます。 キューに待機しているアクションがないことを検出したサービスは、次回コンピューターの再起動のときに再起動されないように自身の状態をリセットしてから、シャットダウンします。  
+### <a name="service-shutdown"></a><span data-ttu-id="44e35-469">サービスのシャットダウン</span><span class="sxs-lookup"><span data-stu-id="44e35-469">Service Shutdown</span></span>  
+ <span data-ttu-id="44e35-470">`/queue` オプションを組み込んだ Ngen.exe コマンドの実行によって開始されたサービスは、すべてのアクションが完了するまでバックグラウンドで実行されます。</span><span class="sxs-lookup"><span data-stu-id="44e35-470">After being initiated by the execution of an Ngen.exe command that includes the `/queue` option, the service runs in the background until all actions have been completed.</span></span> <span data-ttu-id="44e35-471">このサービスは自身の状態を保存するため、再起動を繰り返しても必要に応じて処理を継続できます。</span><span class="sxs-lookup"><span data-stu-id="44e35-471">The service saves its state so that it can continue through multiple reboots if necessary.</span></span> <span data-ttu-id="44e35-472">キューに待機しているアクションがないことを検出したサービスは、次回コンピューターの再起動のときに再起動されないように自身の状態をリセットしてから、シャットダウンします。</span><span class="sxs-lookup"><span data-stu-id="44e35-472">When the service detects that there are no more actions queued, it resets its status so that it will not restart the next time the computer is booted, and then it shuts itself down.</span></span>  
   
-### <a name="service-interaction-with-clients"></a>クライアントとサービスとのやり取り  
- .NET Framework Version 2.0 では、必ず Ngen.exe というコマンド ライン ツールを使用してネイティブ イメージ サービスとやり取りします。 インストール スクリプトでコマンド ライン ツールを使用してネイティブ イメージ サービスのアクションをキューに置いたり、サービスとやり取りしたりします。  
+### <a name="service-interaction-with-clients"></a><span data-ttu-id="44e35-473">クライアントとサービスとのやり取り</span><span class="sxs-lookup"><span data-stu-id="44e35-473">Service Interaction with Clients</span></span>  
+ <span data-ttu-id="44e35-474">.NET Framework Version 2.0 では、必ず Ngen.exe というコマンド ライン ツールを使用してネイティブ イメージ サービスとやり取りします。</span><span class="sxs-lookup"><span data-stu-id="44e35-474">In the .NET Framework version 2.0, the only interaction with the native image service is through the command-line tool Ngen.exe.</span></span> <span data-ttu-id="44e35-475">インストール スクリプトでコマンド ライン ツールを使用してネイティブ イメージ サービスのアクションをキューに置いたり、サービスとやり取りしたりします。</span><span class="sxs-lookup"><span data-stu-id="44e35-475">Use the command-line tool in installation scripts to queue actions for the native image service and to interact with the service.</span></span>  
   
-## <a name="see-also"></a>関連項目  
- [ネイティブ イメージ サービス](http://msdn.microsoft.com/en-us/b15e0e32-59cb-4ae4-967c-6c9527781309)   
- [ネイティブ イメージ タスク](http://msdn.microsoft.com/en-us/9b1f7590-4e0d-4737-90ef-eaf696932afb)   
- [ツール](../../../docs/framework/tools/index.md)   
- [マネージ実行プロセス](../../../docs/standard/managed-execution-process.md)   
- [ランタイムがアセンブリを検索する方法](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)   
- [コマンド プロンプト](../../../docs/framework/tools/developer-command-prompt-for-vs.md)
+## <a name="see-also"></a><span data-ttu-id="44e35-476">関連項目</span><span class="sxs-lookup"><span data-stu-id="44e35-476">See Also</span></span>  
+ <span data-ttu-id="44e35-477">[ネイティブ イメージ サービス](http://msdn.microsoft.com/en-us/b15e0e32-59cb-4ae4-967c-6c9527781309) </span><span class="sxs-lookup"><span data-stu-id="44e35-477">[Native Image Service](http://msdn.microsoft.com/en-us/b15e0e32-59cb-4ae4-967c-6c9527781309) </span></span>  
+ <span data-ttu-id="44e35-478">[ネイティブ イメージ タスク](http://msdn.microsoft.com/en-us/9b1f7590-4e0d-4737-90ef-eaf696932afb) </span><span class="sxs-lookup"><span data-stu-id="44e35-478">[Native Image Task](http://msdn.microsoft.com/en-us/9b1f7590-4e0d-4737-90ef-eaf696932afb) </span></span>  
+ <span data-ttu-id="44e35-479">[ツール](../../../docs/framework/tools/index.md) </span><span class="sxs-lookup"><span data-stu-id="44e35-479">[Tools](../../../docs/framework/tools/index.md) </span></span>  
+ <span data-ttu-id="44e35-480">[マネージ実行プロセス](../../../docs/standard/managed-execution-process.md) </span><span class="sxs-lookup"><span data-stu-id="44e35-480">[Managed Execution Process](../../../docs/standard/managed-execution-process.md) </span></span>  
+ <span data-ttu-id="44e35-481">[ランタイムがアセンブリを検索する方法](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md) </span><span class="sxs-lookup"><span data-stu-id="44e35-481">[How the Runtime Locates Assemblies](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md) </span></span>  
+ [<span data-ttu-id="44e35-482">コマンド プロンプト</span><span class="sxs-lookup"><span data-stu-id="44e35-482">Command Prompts</span></span>](../../../docs/framework/tools/developer-command-prompt-for-vs.md)
 

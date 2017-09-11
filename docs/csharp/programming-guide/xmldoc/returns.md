@@ -38,26 +38,26 @@ ms.contentlocale: ja-jp
 ms.lasthandoff: 07/28/2017
 
 ---
-# <a name="ltreturnsgt-c-programming-guide"></a>&lt;returns&gt; (C# プログラミング ガイド)
-## <a name="syntax"></a>構文  
+# <a name="ltreturnsgt-c-programming-guide"></a><span data-ttu-id="9fdb2-102">&lt;returns&gt; (C# プログラミング ガイド)</span><span class="sxs-lookup"><span data-stu-id="9fdb2-102">&lt;returns&gt; (C# Programming Guide)</span></span>
+## <a name="syntax"></a><span data-ttu-id="9fdb2-103">構文</span><span class="sxs-lookup"><span data-stu-id="9fdb2-103">Syntax</span></span>  
   
 ```xml  
 <returns>description</returns>  
 ```  
   
-#### <a name="parameters"></a>パラメーター  
+#### <a name="parameters"></a><span data-ttu-id="9fdb2-104">パラメーター</span><span class="sxs-lookup"><span data-stu-id="9fdb2-104">Parameters</span></span>  
  `description`  
- 戻り値の説明。  
+ <span data-ttu-id="9fdb2-105">戻り値の説明。</span><span class="sxs-lookup"><span data-stu-id="9fdb2-105">A description of the return value.</span></span>  
   
-## <a name="remarks"></a>コメント  
- \<returns> タグは、戻り値を説明するためにメソッドの宣言のコメントで使用する必要があります。  
+## <a name="remarks"></a><span data-ttu-id="9fdb2-106">コメント</span><span class="sxs-lookup"><span data-stu-id="9fdb2-106">Remarks</span></span>  
+ <span data-ttu-id="9fdb2-107">\<returns> タグは、戻り値を説明するためにメソッドの宣言のコメントで使用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="9fdb2-107">The \<returns> tag should be used in the comment for a method declaration to describe the return value.</span></span>  
   
- コンパイル時に [/doc](../../../csharp/language-reference/compiler-options/doc-compiler-option.md) を指定して、ドキュメント コメントをファイルに出力します。  
+ <span data-ttu-id="9fdb2-108">コンパイル時に [/doc](../../../csharp/language-reference/compiler-options/doc-compiler-option.md) を指定して、ドキュメント コメントをファイルに出力します。</span><span class="sxs-lookup"><span data-stu-id="9fdb2-108">Compile with [/doc](../../../csharp/language-reference/compiler-options/doc-compiler-option.md) to process documentation comments to a file.</span></span>  
   
-## <a name="example"></a>例  
- [!code-cs[csProgGuideDocComments#10](../../../csharp/programming-guide/xmldoc/codesnippet/CSharp/returns_1.cs)]  
+## <a name="example"></a><span data-ttu-id="9fdb2-109">例</span><span class="sxs-lookup"><span data-stu-id="9fdb2-109">Example</span></span>  
+ <span data-ttu-id="9fdb2-110">[!code-cs[csProgGuideDocComments#10](../../../csharp/programming-guide/xmldoc/codesnippet/CSharp/returns_1.cs)]</span><span class="sxs-lookup"><span data-stu-id="9fdb2-110">[!code-cs[csProgGuideDocComments#10](../../../csharp/programming-guide/xmldoc/codesnippet/CSharp/returns_1.cs)]</span></span>  
   
-## <a name="see-also"></a>関連項目  
- [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
- [ドキュメント コメントとして推奨されるタグ](../../../csharp/programming-guide/xmldoc/recommended-tags-for-documentation-comments.md)
+## <a name="see-also"></a><span data-ttu-id="9fdb2-111">関連項目</span><span class="sxs-lookup"><span data-stu-id="9fdb2-111">See Also</span></span>  
+ <span data-ttu-id="9fdb2-112">[C# プログラミング ガイド](../../../csharp/programming-guide/index.md) </span><span class="sxs-lookup"><span data-stu-id="9fdb2-112">[C# Programming Guide](../../../csharp/programming-guide/index.md) </span></span>  
+ [<span data-ttu-id="9fdb2-113">ドキュメント コメントとして推奨されるタグ</span><span class="sxs-lookup"><span data-stu-id="9fdb2-113">Recommended Tags for Documentation Comments</span></span>](../../../csharp/programming-guide/xmldoc/recommended-tags-for-documentation-comments.md)
 

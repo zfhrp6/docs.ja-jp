@@ -1,1 +1,1 @@
-エクスプローラー
+<span data-ttu-id="f7776-101">エクスプローラー</span><span class="sxs-lookup"><span data-stu-id="f7776-101">File Explorer</span></span>

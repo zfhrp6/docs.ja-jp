@@ -37,16 +37,16 @@ ms.contentlocale: ja-jp
 ms.lasthandoff: 07/28/2017
 
 ---
-# <a name="descending-c-reference"></a>descending (C# リファレンス)
-`descending` コンテキスト キーワードは、クエリ式の [orderby 句](../../../csharp/language-reference/keywords/orderby-clause.md)で使用され、並べ替え順序として降順を指定します。  
+# <a name="descending-c-reference"></a><span data-ttu-id="d3e66-102">descending (C# リファレンス)</span><span class="sxs-lookup"><span data-stu-id="d3e66-102">descending (C# Reference)</span></span>
+<span data-ttu-id="d3e66-103">`descending` コンテキスト キーワードは、クエリ式の [orderby 句](../../../csharp/language-reference/keywords/orderby-clause.md)で使用され、並べ替え順序として降順を指定します。</span><span class="sxs-lookup"><span data-stu-id="d3e66-103">The `descending` contextual keyword is used in the [orderby clause](../../../csharp/language-reference/keywords/orderby-clause.md) in query expressions to specify that the sort order is from largest to smallest.</span></span>  
   
-## <a name="example"></a>例  
- [orderby 句](../../../csharp/language-reference/keywords/orderby-clause.md)での `descending` の使用例を次に示します。  
+## <a name="example"></a><span data-ttu-id="d3e66-104">例</span><span class="sxs-lookup"><span data-stu-id="d3e66-104">Example</span></span>  
+ <span data-ttu-id="d3e66-105">[orderby 句](../../../csharp/language-reference/keywords/orderby-clause.md)での `descending` の使用例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="d3e66-105">The following example shows the use of `descending` in an [orderby clause](../../../csharp/language-reference/keywords/orderby-clause.md).</span></span>  
   
- [!code-cs[csrefKeywordsContextual#11](../../../csharp/language-reference/keywords/codesnippet/CSharp/descending_1.cs)]  
+ <span data-ttu-id="d3e66-106">[!code-cs[csrefKeywordsContextual#11](../../../csharp/language-reference/keywords/codesnippet/CSharp/descending_1.cs)]</span><span class="sxs-lookup"><span data-stu-id="d3e66-106">[!code-cs[csrefKeywordsContextual#11](../../../csharp/language-reference/keywords/codesnippet/CSharp/descending_1.cs)]</span></span>  
   
-## <a name="see-also"></a>関連項目  
- [C# リファレンス](../../../csharp/language-reference/index.md)   
- [LINQ クエリ式](../../../csharp/programming-guide/linq-query-expressions/index.md)   
- [ascending](../../../csharp/language-reference/keywords/ascending.md)
+## <a name="see-also"></a><span data-ttu-id="d3e66-107">関連項目</span><span class="sxs-lookup"><span data-stu-id="d3e66-107">See Also</span></span>  
+ <span data-ttu-id="d3e66-108">[C# リファレンス](../../../csharp/language-reference/index.md) </span><span class="sxs-lookup"><span data-stu-id="d3e66-108">[C# Reference](../../../csharp/language-reference/index.md) </span></span>  
+ <span data-ttu-id="d3e66-109">[LINQ クエリ式](../../../csharp/programming-guide/linq-query-expressions/index.md) </span><span class="sxs-lookup"><span data-stu-id="d3e66-109">[LINQ Query Expressions](../../../csharp/programming-guide/linq-query-expressions/index.md) </span></span>  
+ [<span data-ttu-id="d3e66-110">ascending</span><span class="sxs-lookup"><span data-stu-id="d3e66-110">ascending</span></span>](../../../csharp/language-reference/keywords/ascending.md)
 

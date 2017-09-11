@@ -16,18 +16,18 @@ caps.latest.revision: 3
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: a1661b1ea00eb7e377fc4d8a57ba27a558052b46
+ms.sourcegitcommit: a32f50ce8a92fa22d9627a1510a4b3ec1087364e
+ms.openlocfilehash: 6ecc1368832b9c98efeae65c95438efb80f164f6
 ms.contentlocale: ja-jp
-ms.lasthandoff: 03/13/2017
+ms.lasthandoff: 06/01/2017
 
 
 ---
-# <a name="how-to-retrieve-the-value-of-an-attribute-linq-to-xml-visual-basic"></a>方法: 属性 (LINQ to XML) の値を取得 (Visual Basic)
-このトピックでは、属性の値を取得する方法について説明します。 2 つの主な方法があります: をキャストすること、<xref:System.Xml.Linq.XAttribute>目的の型に明示的な変換演算子のコンテンツ変換要素または属性を指定した型にします</xref:System.Xml.Linq.XAttribute>。 また、使用することができます、<xref:System.Xml.Linq.XAttribute.Value%2A>プロパティ</xref:System.Xml.Linq.XAttribute.Value%2A>。 ただし、通常はキャストがより適切な方法です。 属性を NULL 値が許容される型にキャストすると、存在が不明確な属性の値を取得する場合にコードをより簡単に記述できます。 この手法の例については、次を参照してください。[方法: 要素 (LINQ to XML) の値を取得 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-retrieve-the-value-of-an-element-linq-to-xml.md)します。  
+# <a name="how-to-retrieve-the-value-of-an-attribute-linq-to-xml-visual-basic"></a><span data-ttu-id="ff0fb-102">方法: 属性 (LINQ to XML) の値を取得 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="ff0fb-102">How to: Retrieve the Value of an Attribute (LINQ to XML) (Visual Basic)</span></span>
+<span data-ttu-id="ff0fb-103">このトピックでは、属性の値を取得する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="ff0fb-103">This topic shows how to obtain the value of attributes.</span></span> <span data-ttu-id="ff0fb-104">2 つの主な方法があります: をキャストすること、<xref:System.Xml.Linq.XAttribute>目的の型に明示的な変換演算子のコンテンツ変換要素または属性を指定した型にします</xref:System.Xml.Linq.XAttribute>。</span><span class="sxs-lookup"><span data-stu-id="ff0fb-104">There are two main ways: You can cast an <xref:System.Xml.Linq.XAttribute> to the desired type; the explicit conversion operator then converts the contents of the element or attribute to the specified type.</span></span> <span data-ttu-id="ff0fb-105">また、使用することができます、<xref:System.Xml.Linq.XAttribute.Value%2A>プロパティ</xref:System.Xml.Linq.XAttribute.Value%2A>。</span><span class="sxs-lookup"><span data-stu-id="ff0fb-105">Alternatively, you can use the <xref:System.Xml.Linq.XAttribute.Value%2A> property.</span></span> <span data-ttu-id="ff0fb-106">ただし、通常はキャストがより適切な方法です。</span><span class="sxs-lookup"><span data-stu-id="ff0fb-106">However, casting is generally the better approach.</span></span> <span data-ttu-id="ff0fb-107">属性を NULL 値が許容される型にキャストすると、存在が不明確な属性の値を取得する場合にコードをより簡単に記述できます。</span><span class="sxs-lookup"><span data-stu-id="ff0fb-107">If you cast the attribute to a nullable type, the code is simpler to write when retrieving the value of an attribute that might or might not exist.</span></span> <span data-ttu-id="ff0fb-108">この手法の例については、次を参照してください。[方法: 要素 (LINQ to XML) の値を取得 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-retrieve-the-value-of-an-element-linq-to-xml.md)します。</span><span class="sxs-lookup"><span data-stu-id="ff0fb-108">For examples of this technique, see [How to: Retrieve the Value of an Element (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-retrieve-the-value-of-an-element-linq-to-xml.md).</span></span>  
   
-## <a name="example"></a>例  
- Visual Basic では、統合属性プロパティを使用して属性の値を取得できます。  
+## <a name="example"></a><span data-ttu-id="ff0fb-109">例</span><span class="sxs-lookup"><span data-stu-id="ff0fb-109">Example</span></span>  
+ <span data-ttu-id="ff0fb-110">Visual Basic では、統合属性プロパティを使用して属性の値を取得できます。</span><span class="sxs-lookup"><span data-stu-id="ff0fb-110">In Visual Basic, you can use the integrated attribute property to retrieve the value of an attribute.</span></span>  
   
 ```vb  
 Dim root As XElement = <Root Attr="abcde"/>  
@@ -36,15 +36,15 @@ Dim str As String = root.@Attr
 Console.WriteLine(str)  
 ```  
   
- この例を実行すると、次の出力が生成されます。  
+ <span data-ttu-id="ff0fb-111">この例を実行すると、次の出力が生成されます。</span><span class="sxs-lookup"><span data-stu-id="ff0fb-111">This example produces the following output:</span></span>  
   
 ```xml  
 <Root Attr="abcde" />  
 abcde  
 ```  
   
-## <a name="example"></a>例  
- Visual Basic では、統合属性プロパティを使用して属性の値を設定できます。 また、統合属性プロパティを使用して存在しない属性の値を設定すると、その属性が作成されます。  
+## <a name="example"></a><span data-ttu-id="ff0fb-112">例</span><span class="sxs-lookup"><span data-stu-id="ff0fb-112">Example</span></span>  
+ <span data-ttu-id="ff0fb-113">Visual Basic では、統合属性プロパティを使用して属性の値を設定できます。</span><span class="sxs-lookup"><span data-stu-id="ff0fb-113">In Visual Basic, you can use the integrated attribute property to set the value of an attribute.</span></span> <span data-ttu-id="ff0fb-114">また、統合属性プロパティを使用して存在しない属性の値を設定すると、その属性が作成されます。</span><span class="sxs-lookup"><span data-stu-id="ff0fb-114">Further, if you use the integrated attribute property to set the value of an attribute that does not exist, the attribute will be created.</span></span>  
   
 ```vb  
 Dim root As XElement = <Root Att1="content"/>  
@@ -53,14 +53,14 @@ root.@Att2 = "new attribute"
 Console.WriteLine(root)  
 ```  
   
- この例を実行すると、次の出力が生成されます。  
+ <span data-ttu-id="ff0fb-115">この例を実行すると、次の出力が生成されます。</span><span class="sxs-lookup"><span data-stu-id="ff0fb-115">This example produces the following output:</span></span>  
   
 ```xml  
 <Root Att1="new content" Att2="new attribute" />  
 ```  
   
-## <a name="example"></a>例  
- 属性が名前空間内にある場合にその属性の値を取得する方法を次の例に示します。 詳細については、次を参照してください。 [XML 名前空間 (Visual Basic) の使用](../../../../visual-basic/programming-guide/concepts/linq/working-with-xml-namespaces.md)します。  
+## <a name="example"></a><span data-ttu-id="ff0fb-116">例</span><span class="sxs-lookup"><span data-stu-id="ff0fb-116">Example</span></span>  
+ <span data-ttu-id="ff0fb-117">属性が名前空間内にある場合にその属性の値を取得する方法を次の例に示します。</span><span class="sxs-lookup"><span data-stu-id="ff0fb-117">The following example shows how to retrieve the value of an attribute where the attribute is in a namespace.</span></span> <span data-ttu-id="ff0fb-118">詳細については、次を参照してください。 [XML 名前空間 (Visual Basic) の使用](../../../../visual-basic/programming-guide/concepts/linq/working-with-xml-namespaces.md)します。</span><span class="sxs-lookup"><span data-stu-id="ff0fb-118">For more information, see [Working with XML Namespaces (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/working-with-xml-namespaces.md).</span></span>  
   
 ```vb  
 Imports <xmlns:aw="http://www.adventure-works.com">  
@@ -74,11 +74,11 @@ Module Module1
 End Module  
 ```  
   
- この例を実行すると、次の出力が生成されます。  
+ <span data-ttu-id="ff0fb-119">この例を実行すると、次の出力が生成されます。</span><span class="sxs-lookup"><span data-stu-id="ff0fb-119">This example produces the following output:</span></span>  
   
 ```  
 abcde  
 ```  
   
-## <a name="see-also"></a>関連項目  
- [LINQ to XML 軸 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-axes.md)
+## <a name="see-also"></a><span data-ttu-id="ff0fb-120">関連項目</span><span class="sxs-lookup"><span data-stu-id="ff0fb-120">See Also</span></span>  
+ [<span data-ttu-id="ff0fb-121">LINQ to XML 軸 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="ff0fb-121">LINQ to XML Axes (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-axes.md)

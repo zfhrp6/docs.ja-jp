@@ -34,28 +34,29 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 845c81cec69b6095b05682917e07c5d578127e20
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
+ms.openlocfilehash: eacb7b69ac848ef5a44728dcd85aaf3857fa00eb
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/12/2017
 
 ---
-# <a name="validating-strings-in-visual-basic"></a>Visual Basic における文字列の検証
-ここで文字列を検証する方法について説明[!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]します。  
+# <a name="validating-strings-in-visual-basic"></a><span data-ttu-id="3c796-102">Visual Basic における文字列の検証</span><span class="sxs-lookup"><span data-stu-id="3c796-102">Validating Strings in Visual Basic</span></span>
+<span data-ttu-id="3c796-103">ここで文字列を検証する方法について説明[!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]します。</span><span class="sxs-lookup"><span data-stu-id="3c796-103">This section discusses how to validate strings in [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)].</span></span>  
   
-## <a name="in-this-section"></a>このセクションの内容  
- [方法: Visual Basic でファイル名とパスの検証](../../../../visual-basic/programming-guide/language-features/strings/how-to-validate-file-names-and-paths.md)  
- 文字列が、ファイル名またはパスを表すかどうかを確認する方法です。  
+## <a name="in-this-section"></a><span data-ttu-id="3c796-104">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="3c796-104">In This Section</span></span>  
+ [<span data-ttu-id="3c796-105">方法: Visual Basic でファイル名とパスの検証</span><span class="sxs-lookup"><span data-stu-id="3c796-105">How to: Validate File Names and Paths in Visual Basic</span></span>](../../../../visual-basic/programming-guide/language-features/strings/how-to-validate-file-names-and-paths.md)  
+ <span data-ttu-id="3c796-106">文字列が、ファイル名またはパスを表すかどうかを確認する方法です。</span><span class="sxs-lookup"><span data-stu-id="3c796-106">How to determine whether a string represents a file name or path.</span></span>  
   
- [方法: 日付または時刻を表す文字列を検証する](../../../../visual-basic/programming-guide/language-features/strings/how-to-validate-strings-that-represent-dates-or-times.md)  
- 文字列が有効な日付を表すかどうかを確認する方法です。  
+ [<span data-ttu-id="3c796-107">方法: 日付または時刻を表す文字列を検証する</span><span class="sxs-lookup"><span data-stu-id="3c796-107">How to: Validate Strings That Represent Dates or Times</span></span>](../../../../visual-basic/programming-guide/language-features/strings/how-to-validate-strings-that-represent-dates-or-times.md)  
+ <span data-ttu-id="3c796-108">文字列が有効な日付を表すかどうかを確認する方法です。</span><span class="sxs-lookup"><span data-stu-id="3c796-108">How to determine whether a string represents a valid date.</span></span>  
   
- [Visual Basic の MaskedTextBox コントロールによる正規表現の使用](../../../../visual-basic/programming-guide/language-features/strings/using-regular-expressions-with-the-maskedtextbox-control.md)  
- 使用する単純な正規表現に変換する方法を示しています、<xref:System.Windows.Forms.MaskedTextBox>コントロール</xref:System.Windows.Forms.MaskedTextBox>。  
+ [<span data-ttu-id="3c796-109">Visual Basic の MaskedTextBox コントロールによる正規表現の使用</span><span class="sxs-lookup"><span data-stu-id="3c796-109">Using Regular Expressions with the MaskedTextBox Control in Visual Basic</span></span>](../../../../visual-basic/programming-guide/language-features/strings/using-regular-expressions-with-the-maskedtextbox-control.md)  
+ <span data-ttu-id="3c796-110">使用する単純な正規表現に変換する方法を示しています、<xref:System.Windows.Forms.MaskedTextBox>コントロール</xref:System.Windows.Forms.MaskedTextBox>。</span><span class="sxs-lookup"><span data-stu-id="3c796-110">Demonstrates how to convert simple regular expressions to work with the <xref:System.Windows.Forms.MaskedTextBox> control.</span></span>  
   
- [チュートリアル: パスワードの複雑さの検証](../../../../visual-basic/programming-guide/language-features/strings/walkthrough-validating-that-passwords-are-complex.md)  
- 文字列に強力なパスワードの特性があるかどうかを判断する方法。  
+ [<span data-ttu-id="3c796-111">チュートリアル: パスワードの複雑さの検証</span><span class="sxs-lookup"><span data-stu-id="3c796-111">Walkthrough: Validating That Passwords Are Complex</span></span>](../../../../visual-basic/programming-guide/language-features/strings/walkthrough-validating-that-passwords-are-complex.md)  
+ <span data-ttu-id="3c796-112">文字列に強力なパスワードの特性があるかどうかを判断する方法。</span><span class="sxs-lookup"><span data-stu-id="3c796-112">How to determine whether a string has the characteristics of a strong password.</span></span>  
   
-## <a name="see-also"></a>関連項目  
- [文字列](../../../../visual-basic/programming-guide/language-features/strings/index.md)   
- [MaskedTextBox コントロール](http://msdn.microsoft.com/library/235d6121-027d-481d-8d59-4f6794d15d0c)
+## <a name="see-also"></a><span data-ttu-id="3c796-113">関連項目</span><span class="sxs-lookup"><span data-stu-id="3c796-113">See Also</span></span>  
+ <span data-ttu-id="3c796-114">[文字列](../../../../visual-basic/programming-guide/language-features/strings/index.md) </span><span class="sxs-lookup"><span data-stu-id="3c796-114">[Strings](../../../../visual-basic/programming-guide/language-features/strings/index.md) </span></span>  
+<span data-ttu-id="3c796-115"> [MaskedTextBox コントロール](http://msdn.microsoft.com/library/235d6121-027d-481d-8d59-4f6794d15d0c)</span><span class="sxs-lookup"><span data-stu-id="3c796-115"> [MaskedTextBox Control](http://msdn.microsoft.com/library/235d6121-027d-481d-8d59-4f6794d15d0c)</span></span>

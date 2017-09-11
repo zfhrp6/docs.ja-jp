@@ -29,21 +29,22 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: fa15daee8f3b6ddcc137356896a20cf82e0cc1d0
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
+ms.openlocfilehash: 009b4ab71c185aec0cf54bb2360dcd897cdf7850
+ms.contentlocale: ja-jp
+ms.lasthandoff: 04/12/2017
 
 ---
-# <a name="async-visual-basic"></a>Async (Visual Basic)
-`Async`修飾子をメソッドまたは[ラムダ式](../../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md)が非同期で修飾します。 このようなメソッドは、参照として*非同期メソッド*します。  
+# <a name="async-visual-basic"></a><span data-ttu-id="f9597-102">Async (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="f9597-102">Async (Visual Basic)</span></span>
+<span data-ttu-id="f9597-103">`Async`修飾子をメソッドまたは[ラムダ式](../../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md)が非同期で修飾します。</span><span class="sxs-lookup"><span data-stu-id="f9597-103">The `Async` modifier indicates that the method or [lambda expression](../../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md) that it modifies is asynchronous.</span></span> <span data-ttu-id="f9597-104">このようなメソッドは、参照として*非同期メソッド*します。</span><span class="sxs-lookup"><span data-stu-id="f9597-104">Such methods are referred to as *async methods*.</span></span>  
   
- 非同期メソッドは、呼び出し元のスレッドをブロックすることなく、実行に時間のかかる可能性のある処理を行うことができる、便利な方法です。 非同期メソッドの呼び出し元は、非同期メソッドの完了を待たずに作業を再開できます。  
+ <span data-ttu-id="f9597-105">非同期メソッドは、呼び出し元のスレッドをブロックすることなく、実行に時間のかかる可能性のある処理を行うことができる、便利な方法です。</span><span class="sxs-lookup"><span data-stu-id="f9597-105">An async method provides a convenient way to do potentially long-running work without blocking the caller's thread.</span></span> <span data-ttu-id="f9597-106">非同期メソッドの呼び出し元は、非同期メソッドの完了を待たずに作業を再開できます。</span><span class="sxs-lookup"><span data-stu-id="f9597-106">The caller of an async method can resume its work without waiting for the async method to finish.</span></span>  
   
 > [!NOTE]
->  `Async` キーワードおよび `Await` キーワードは、Visual Studio 2012 で導入されました。 非同期のプログラミングの概要については、次を参照してください。 [Async および Await を使用した非同期プログラミング](../../../visual-basic/programming-guide/concepts/async/index.md)します。  
+>  <span data-ttu-id="f9597-107">`Async` キーワードおよび `Await` キーワードは、Visual Studio 2012 で導入されました。</span><span class="sxs-lookup"><span data-stu-id="f9597-107">The `Async` and `Await` keywords were introduced in Visual Studio 2012.</span></span> <span data-ttu-id="f9597-108">非同期のプログラミングの概要については、次を参照してください。 [Async および Await を使用した非同期プログラミング](../../../visual-basic/programming-guide/concepts/async/index.md)します。</span><span class="sxs-lookup"><span data-stu-id="f9597-108">For an introduction to async programming, see [Asynchronous Programming with Async and Await](../../../visual-basic/programming-guide/concepts/async/index.md).</span></span>  
   
- 次の例は、非同期メソッドの構造を示しています。 規則により、非同期メソッドの名前の末尾は "Async" になります。  
+ <span data-ttu-id="f9597-109">次の例は、非同期メソッドの構造を示しています。</span><span class="sxs-lookup"><span data-stu-id="f9597-109">The following example shows the structure of an async method.</span></span> <span data-ttu-id="f9597-110">規則により、非同期メソッドの名前の末尾は "Async" になります。</span><span class="sxs-lookup"><span data-stu-id="f9597-110">By convention, async method names end in "Async."</span></span>  
   
 ```vb  
   
@@ -64,21 +65,21 @@ Public Async Function ExampleMethodAsync() As Task(Of Integer)
 End Function  
 ```  
   
- 通常で修飾されているメソッド、`Async`キーワードは、少なくとも&1; つを含む[Await](../../../visual-basic/language-reference/modifiers/async.md)式またはステートメントです。 メソッドは、最初の `Await` に到達するまで同期的に実行されますが、この時点で、待機していたタスクが完了するまで中断されます。 その間、コントロールはメソッドの呼び出し元に戻されます。 メソッドに `Await` 式またはステートメントが含まれていない場合、メソッドは中断されず、同期メソッドのように実行されます。 `Await` が含まれていない非同期メソッドが存在する場合は、その状態がエラーを示す可能性があるため、コンパイラによって警告が通知されます。 詳細については、次を参照してください。、[コンパイラ エラー](../../../visual-basic/language-reference/error-messages/because-this-call-is-not-awaited-the-current-method-continues-to-run.md)します。  
+ <span data-ttu-id="f9597-111">通常で修飾されているメソッド、`Async`キーワードは、少なくとも&1; つを含む[Await](../../../visual-basic/language-reference/modifiers/async.md)式またはステートメントです。</span><span class="sxs-lookup"><span data-stu-id="f9597-111">Typically, a method modified by the `Async` keyword contains at least one [Await](../../../visual-basic/language-reference/modifiers/async.md) expression or statement.</span></span> <span data-ttu-id="f9597-112">メソッドは、最初の `Await` に到達するまで同期的に実行されますが、この時点で、待機していたタスクが完了するまで中断されます。</span><span class="sxs-lookup"><span data-stu-id="f9597-112">The method runs synchronously until it reaches the first `Await`, at which point it suspends until the awaited task completes.</span></span> <span data-ttu-id="f9597-113">その間、コントロールはメソッドの呼び出し元に戻されます。</span><span class="sxs-lookup"><span data-stu-id="f9597-113">In the meantime, control is returned to the caller of the method.</span></span> <span data-ttu-id="f9597-114">メソッドに `Await` 式またはステートメントが含まれていない場合、メソッドは中断されず、同期メソッドのように実行されます。</span><span class="sxs-lookup"><span data-stu-id="f9597-114">If the method doesn’t contain an `Await` expression or statement, the method isn’t suspended and executes as a synchronous method does.</span></span> <span data-ttu-id="f9597-115">`Await` が含まれていない非同期メソッドが存在する場合は、その状態がエラーを示す可能性があるため、コンパイラによって警告が通知されます。</span><span class="sxs-lookup"><span data-stu-id="f9597-115">A compiler warning alerts you to any async methods that don't contain `Await` because that situation might indicate an error.</span></span> <span data-ttu-id="f9597-116">詳細については、次を参照してください。、[コンパイラ エラー](../../../visual-basic/language-reference/error-messages/because-this-call-is-not-awaited-the-current-method-continues-to-run.md)します。</span><span class="sxs-lookup"><span data-stu-id="f9597-116">For more information, see the [compiler error](../../../visual-basic/language-reference/error-messages/because-this-call-is-not-awaited-the-current-method-continues-to-run.md).</span></span>  
   
- `Async` キーワードは、予約されていないキーワードです。 メソッドまたはラムダ式を修飾する場合にキーワードとなります。 それ以外の場合は、識別子として解釈されます。  
+ <span data-ttu-id="f9597-117">`Async` キーワードは、予約されていないキーワードです。</span><span class="sxs-lookup"><span data-stu-id="f9597-117">The `Async` keyword is an unreserved keyword.</span></span> <span data-ttu-id="f9597-118">メソッドまたはラムダ式を修飾する場合にキーワードとなります。</span><span class="sxs-lookup"><span data-stu-id="f9597-118">It is a keyword when it modifies a method or a lambda expression.</span></span> <span data-ttu-id="f9597-119">それ以外の場合は、識別子として解釈されます。</span><span class="sxs-lookup"><span data-stu-id="f9597-119">In all other contexts, it is interpreted as an identifier.</span></span>  
   
-## <a name="return-types"></a>戻り値の型  
- 非同期のメソッドは、いずれか、 [Sub](../../../visual-basic/programming-guide/language-features/procedures/sub-procedures.md)プロシージャ、または[関数](../../../visual-basic/programming-guide/language-features/procedures/function-procedures.md)<xref:System.Threading.Tasks.Task>または<xref:System.Threading.Tasks.Task%601>.</xref:System.Threading.Tasks.Task%601></xref:System.Threading.Tasks.Task>の戻り値の型を含むプロシージャ メソッドを宣言できません[ByRef](../../../visual-basic/language-reference/modifiers/byref.md)パラメーター。  
+## <a name="return-types"></a><span data-ttu-id="f9597-120">戻り値の型</span><span class="sxs-lookup"><span data-stu-id="f9597-120">Return Types</span></span>  
+ <span data-ttu-id="f9597-121">非同期のメソッドは、いずれか、 [Sub](../../../visual-basic/programming-guide/language-features/procedures/sub-procedures.md)プロシージャ、または[関数](../../../visual-basic/programming-guide/language-features/procedures/function-procedures.md)<xref:System.Threading.Tasks.Task>または<xref:System.Threading.Tasks.Task%601>.</xref:System.Threading.Tasks.Task%601></xref:System.Threading.Tasks.Task>の戻り値の型を含むプロシージャ</span><span class="sxs-lookup"><span data-stu-id="f9597-121">An async method is either a [Sub](../../../visual-basic/programming-guide/language-features/procedures/sub-procedures.md) procedure, or a [Function](../../../visual-basic/programming-guide/language-features/procedures/function-procedures.md) procedure that has a return type of <xref:System.Threading.Tasks.Task> or <xref:System.Threading.Tasks.Task%601>.</span></span> <span data-ttu-id="f9597-122">メソッドを宣言できません[ByRef](../../../visual-basic/language-reference/modifiers/byref.md)パラメーター。</span><span class="sxs-lookup"><span data-stu-id="f9597-122">The method cannot declare any [ByRef](../../../visual-basic/language-reference/modifiers/byref.md) parameters.</span></span>  
   
- 指定した`Task(Of TResult)`、非同期メソッドの戻り値の型の場合、[返す](../../../visual-basic/language-reference/statements/return-statement.md)メソッドのステートメントに TResult 型のオペランド。 メソッドの完了時に意味のある値を返さない場合は、`Task` を使用します。 これにより、メソッドの呼び出しでは `Task` が返されますが、`Task` の完了時に、`Await` を待機している `Task` ステートメントは結果値を生成しません。  
+ <span data-ttu-id="f9597-123">指定した`Task(Of TResult)`、非同期メソッドの戻り値の型の場合、[返す](../../../visual-basic/language-reference/statements/return-statement.md)メソッドのステートメントに TResult 型のオペランド。</span><span class="sxs-lookup"><span data-stu-id="f9597-123">You specify `Task(Of TResult)` for the return type of an async method if the [Return](../../../visual-basic/language-reference/statements/return-statement.md) statement of the method has an operand of type TResult.</span></span> <span data-ttu-id="f9597-124">メソッドの完了時に意味のある値を返さない場合は、`Task` を使用します。</span><span class="sxs-lookup"><span data-stu-id="f9597-124">You use `Task` if no meaningful value is returned when the method is completed.</span></span> <span data-ttu-id="f9597-125">これにより、メソッドの呼び出しでは `Task` が返されますが、`Task` の完了時に、`Await` を待機している `Task` ステートメントは結果値を生成しません。</span><span class="sxs-lookup"><span data-stu-id="f9597-125">That is, a call to the method returns a `Task`, but when the `Task` is completed, any `Await` statement that's awaiting the `Task` doesn’t produce a result value.</span></span>  
   
- 非同期サブルーチンは主として、`Sub` プロシージャが必要なイベント ハンドラーの定義に使用されます。 非同期サブルーチンの呼び出し元は、このサブルーチンを待機できず、このメソッドがスローする例外をキャッチできません。  
+ <span data-ttu-id="f9597-126">非同期サブルーチンは主として、`Sub` プロシージャが必要なイベント ハンドラーの定義に使用されます。</span><span class="sxs-lookup"><span data-stu-id="f9597-126">Async subroutines are used primarily to define event handlers where a `Sub` procedure is required.</span></span> <span data-ttu-id="f9597-127">非同期サブルーチンの呼び出し元は、このサブルーチンを待機できず、このメソッドがスローする例外をキャッチできません。</span><span class="sxs-lookup"><span data-stu-id="f9597-127">The caller of an async subroutine can't await it and can't catch exceptions that the method throws.</span></span>  
   
- 詳細と例については、次を参照してください。 [Async を返す型](../../../visual-basic/programming-guide/concepts/async/async-return-types.md)します。  
+ <span data-ttu-id="f9597-128">詳細と例については、次を参照してください。 [Async を返す型](../../../visual-basic/programming-guide/concepts/async/async-return-types.md)します。</span><span class="sxs-lookup"><span data-stu-id="f9597-128">For more information and examples, see [Async Return Types](../../../visual-basic/programming-guide/concepts/async/async-return-types.md).</span></span>  
   
-## <a name="example"></a>例  
- 次の例は、非同期のイベント ハンドラー、非同期ラムダ式、および非同期メソッドを示しています。 これらの要素を使用する完全な例を参照してください。[チュートリアル: を使用して Async と Await による Web にアクセスする](../../../visual-basic/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md)です。 このチュートリアルのコードからをダウンロードする[デベロッパー サンプル コード集](http://go.microsoft.com/fwlink/?LinkId=255191)します。  
+## <a name="example"></a><span data-ttu-id="f9597-129">例</span><span class="sxs-lookup"><span data-stu-id="f9597-129">Example</span></span>  
+ <span data-ttu-id="f9597-130">次の例は、非同期のイベント ハンドラー、非同期ラムダ式、および非同期メソッドを示しています。</span><span class="sxs-lookup"><span data-stu-id="f9597-130">The following examples show an async event handler, an async lambda expression, and an async method.</span></span> <span data-ttu-id="f9597-131">これらの要素を使用する完全な例を参照してください。[チュートリアル: を使用して Async と Await による Web にアクセスする](../../../visual-basic/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md)です。</span><span class="sxs-lookup"><span data-stu-id="f9597-131">For a full example that uses these elements, see [Walkthrough: Accessing the Web by Using Async and Await](../../../visual-basic/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md).</span></span> <span data-ttu-id="f9597-132">このチュートリアルのコードからをダウンロードする[デベロッパー サンプル コード集](http://go.microsoft.com/fwlink/?LinkId=255191)します。</span><span class="sxs-lookup"><span data-stu-id="f9597-132">You can download the walkthrough code from [Developer Code Samples](http://go.microsoft.com/fwlink/?LinkId=255191).</span></span>  
   
 ```vb  
   
@@ -127,8 +128,8 @@ End Function
   
 ```  
   
-## <a name="see-also"></a>関連項目  
- <xref:System.Runtime.CompilerServices.AsyncStateMachineAttribute></xref:System.Runtime.CompilerServices.AsyncStateMachineAttribute>   
- [Await 演算子](../../../visual-basic/language-reference/operators/await-operator.md)   
- [非同期プログラミングを Async と Await](../../../visual-basic/programming-guide/concepts/async/index.md)   
- [チュートリアル: Async と Await を使用した Web へのアクセス](../../../visual-basic/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md)
+## <a name="see-also"></a><span data-ttu-id="f9597-133">関連項目</span><span class="sxs-lookup"><span data-stu-id="f9597-133">See Also</span></span>  
+ <span data-ttu-id="f9597-134"><xref:System.Runtime.CompilerServices.AsyncStateMachineAttribute></xref:System.Runtime.CompilerServices.AsyncStateMachineAttribute></span><span class="sxs-lookup"><span data-stu-id="f9597-134"><xref:System.Runtime.CompilerServices.AsyncStateMachineAttribute></span></span>   
+<span data-ttu-id="f9597-135"> [Await 演算子](../../../visual-basic/language-reference/operators/await-operator.md) </span><span class="sxs-lookup"><span data-stu-id="f9597-135"> [Await Operator](../../../visual-basic/language-reference/operators/await-operator.md) </span></span>  
+<span data-ttu-id="f9597-136"> [非同期プログラミングを Async と Await](../../../visual-basic/programming-guide/concepts/async/index.md) </span><span class="sxs-lookup"><span data-stu-id="f9597-136"> [Asynchronous Programming with Async and Await](../../../visual-basic/programming-guide/concepts/async/index.md) </span></span>  
+<span data-ttu-id="f9597-137"> [チュートリアル: Async と Await を使用した Web へのアクセス](../../../visual-basic/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md)</span><span class="sxs-lookup"><span data-stu-id="f9597-137"> [Walkthrough: Accessing the Web by Using Async and Await](../../../visual-basic/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md)</span></span>

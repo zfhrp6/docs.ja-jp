@@ -1,1 +1,1 @@
-LINQ to DataSet
+<span data-ttu-id="0590f-101">LINQ to DataSet</span><span class="sxs-lookup"><span data-stu-id="0590f-101">LINQ to DataSet</span></span>
