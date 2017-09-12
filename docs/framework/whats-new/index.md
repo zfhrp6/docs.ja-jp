@@ -17,10 +17,10 @@ author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.translationtype: HT
-ms.sourcegitcommit: 3155295489e1188640dae5aa5bf9fdceb7480ed6
-ms.openlocfilehash: f922abca6898e91748158ee16f89ca7f57a81bf7
+ms.sourcegitcommit: b37d1d7ff75aebfcdf3e849931a5d2b3924d5d7a
+ms.openlocfilehash: 8d0818b770d94511736baf5d51abeba74a90c848
 ms.contentlocale: ja-jp
-ms.lasthandoff: 08/05/2017
+ms.lasthandoff: 09/06/2017
 
 ---
 
@@ -1171,7 +1171,7 @@ Dim utc As New Date(2016, 11, 07, 3, 0, 0, DateTimeKind.Utc)
 
 - マルチコア プロセッサでオプションで使用できるバックグラウンドの Just-in-time (JIT) コンパイルを使用すると、アプリケーションのパフォーマンスが向上します。 「<xref:System.Runtime.ProfileOptimization>」を参照してください。
 
-- 正規表現エンジンがタイムアウトする前に、正規表現の解決を試みる時間に制限を設ける機能。 <xref:System.Text.RegularExpressions.Regex.MatchTimeout%2A?displayProperty=fullName> プロパティを参照してください。
+- 正規表現エンジンがタイムアウトする前に、正規表現の解決を試みる時間に制限を設ける機能。<xref:System.Text.RegularExpressions.Regex.MatchTimeout%2A?displayProperty=fullName> プロパティを参照してください。
 
 - アプリケーション ドメインの既定のカルチャを定義する機能。 詳細については、<xref:System.Globalization.CultureInfo> クラスのトピックを参照してください。
 
