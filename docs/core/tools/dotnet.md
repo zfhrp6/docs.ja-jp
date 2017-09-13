@@ -1,24 +1,22 @@
 ---
 title: "dotnet コマンド - .NET Core CLI"
 description: "dotnet コマンド (.NET Core CLI ツールの一般的なドライバー) とその使用法について説明します。"
-keywords: "dotnet, CLI, CLI コマンド, .NET Core"
-author: blackdwarf
+author: mairaw
 ms.author: mairaw
-ms.date: 03/20/2017
+ms.date: 08/14/2017
 ms.topic: article
 ms.prod: .net-core
 ms.technology: dotnet-cli
-ms.devlang: dotnet
-ms.assetid: 256e468e-eaaa-4715-b5fb-8cbddcf80e69
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 1f377ea55278ae382f56a0dc0cbcf1bb99f49eca
+ms.sourcegitcommit: fa2e5ecbf41dc2a8cd90aabc6f7291db597e657e
+ms.openlocfilehash: 4c1c0e4ed1b1222abbcd104b2c10a44b1b99be8d
 ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
+ms.lasthandoff: 08/17/2017
 
 ---
-
 # <a name="dotnet-command"></a>dotnet コマンド
+
+[!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
 
 ## <a name="name"></a>名前
 
@@ -26,7 +24,15 @@ ms.lasthandoff: 07/28/2017
 
 ## <a name="synopsis"></a>構文
 
-`dotnet [command] [arguments] [--version] [--info] [-d|--diagnostics] [-v|--verbose] [--fx-version] [--additionalprobingpath] [-h|--help]`
+# <a name="net-core-2xtabnetcore2x"></a>[.NET Core 2.x](#tab/netcore2x)
+```
+dotnet [command] [arguments] [--additional-deps] [--additionalprobingpath] [-d|--diagnostics] [--fx-version] [-h|--help] [--info] [--roll-forward-on-no-candidate-fx] [-v|--verbose] [--version]
+```
+# <a name="net-core-1xtabnetcore1x"></a>[.NET Core 1.x](#tab/netcore1x)
+```
+dotnet [command] [arguments] [--additionalprobingpath] [-d|--diagnostics] [--fx-version] [-h|--help] [--info] [-v|--verbose] [--version]
+```
+---
 
 ## <a name="description"></a>説明
 
@@ -38,9 +44,15 @@ ms.lasthandoff: 07/28/2017
 
 ## <a name="options"></a>オプション
 
-`-v|--verbose`
+# <a name="net-core-2xtabnetcore2x"></a>[.NET Core 2.x](#tab/netcore2x)
 
-詳細出力を有効にします。
+`--additionaldeps <PATH>`
+
+追加の *deps.json* ファイルへのパスです。
+
+`--additionalprobingpath <PATH>`
+
+プローブ ポリシーとプローブするアセンブリを含むパスです。
 
 `-d|--diagnostics`
 
@@ -48,64 +60,122 @@ ms.lasthandoff: 07/28/2017
 
 `--fx-version <VERSION>`
 
-アプリケーションを実行するために使用するインストール済みの Shared Framework のバージョンです。
-
-`--additionalprobingpath <PATH>`
-
-プローブ ポリシーとプローブするアセンブリを含むパスです。
-
-`--version`
-
-CLI ツールのバージョンを印刷します。
-
-`--info`
-
-現在のオペレーティング システム、バージョンのコミット SHA、およびその他の情報など、CLI ツールと環境の詳細情報を印刷します。
+アプリケーションを実行するために使用するインストール済み .NET Core ランタイムのバージョンです。
 
 `-h|--help`
 
 コマンドの短いヘルプを印刷します。 `dotnet` で使用すると、使用可能なコマンドのリストも印刷されます。
 
+`--info`
+
+現在のオペレーティング システム、バージョンのコミット SHA、およびその他の情報など、CLI ツールと環境の詳細情報を印刷します。
+
+`--roll-forward-on-no-candidate-fx`
+
+ 共有フレームワークの候補なしでロールフォワードします。
+
+`-v|--verbose`
+
+詳細出力を有効にします。
+
+`--version`
+
+使用中の .NET Core SDK のバージョンを印刷します。
+
+# <a name="net-core-1xtabnetcore1x"></a>[.NET Core 1.x](#tab/netcore1x)
+
+`--additionalprobingpath <PATH>`
+
+プローブ ポリシーとプローブするアセンブリを含むパスです。
+
+`-d|--diagnostics`
+
+診断出力を有効にします。
+
+`--fx-version <VERSION>`
+
+アプリケーションを実行するために使用するインストール済み .NET Core ランタイムのバージョンです。
+
+`-h|--help`
+
+コマンドの短いヘルプを印刷します。 `dotnet` で使用すると、使用可能なコマンドのリストも印刷されます。
+
+`--info`
+
+現在のオペレーティング システム、バージョンのコミット SHA、およびその他の情報など、CLI ツールと環境の詳細情報を印刷します。
+
+`-v|--verbose`
+
+詳細出力を有効にします。
+
+`--version`
+
+使用中の .NET Core SDK のバージョンを印刷します。
+
+---
+
 ## <a name="dotnet-commands"></a>dotnet コマンド
 
 ### <a name="general"></a>全般
 
-コマンド | 関数
---- | ---
-[dotnet-build](dotnet-build.md) | .NET Core アプリケーションをビルドします。
-[dotnet-clean](dotnet-clean.md) | クリーン ビルド出力。
-[dotnet-migrate](dotnet-migrate.md) | 有効な Preview 2 プロジェクトを .NET Core SDK 1.0 プロジェクトに移行します。
-[dotnet-msbuild](dotnet-msbuild.md) | MSBuild コマンド ラインへのアクセスを提供します。
-[dotnet-new](dotnet-new.md) | 指定されたテンプレートの C# または F# プロジェクトを初期化します。
-[dotnet-pack](dotnet-pack.md) | コードの NuGet パッケージを作成します。
-[dotnet-publish](dotnet-publish.md) | .NET Framework に依存するアプリケーションまたは自己完結型アプリケーションを発行します。
-[dotnet-restore](dotnet-restore.md) | 指定されたアプリケーションの依存関係を復元します。
-[dotnet-run](dotnet-run.md) | ソースからアプリケーションを実行します。
-[dotnet-sln](dotnet-sln.md) | ソリューション ファイルのプロジェクトを追加、削除、一覧表示するオプション。
-[dotnet-test](dotnet-test.md) | テスト ランナーを使用してテストを実行します。
+# <a name="net-core-2xtabnetcore2x"></a>[.NET Core 2.x](#tab/netcore2x)
+
+| コマンド                             | 関数                                                            |
+| ----------------------------------- | ------------------------------------------------------------------- |
+| [dotnet build](dotnet-build.md)     | .NET Core アプリケーションをビルドします。                                     |
+| [dotnet clean](dotnet-clean.md)     | クリーン ビルド出力です。                                              |
+| [dotnet help](dotnet-help.md)       | コマンドのより詳細なドキュメントをオンラインで表示します。           |
+| [dotnet migrate](dotnet-migrate.md) | 有効な Preview 2 プロジェクトを .NET Core SDK 1.0 プロジェクトに移行します。  |
+| [dotnet msbuild](dotnet-msbuild.md) | MSBuild コマンド ラインへのアクセスを提供します。                        |
+| [dotnet new](dotnet-new.md)         | 指定されたテンプレートの C# または F# プロジェクトを初期化します。                |
+| [dotnet pack](dotnet-pack.md)       | コードの NuGet パッケージを作成します。                               |
+| [dotnet publish](dotnet-publish.md) | .NET Framework に依存するアプリケーションまたは自己完結型アプリケーションを発行します。 |
+| [dotnet restore](dotnet-restore.md) | 指定されたアプリケーションの依存関係を復元します。                  |
+| [dotnet run](dotnet-run.md)         | ソースからアプリケーションを実行します。                                   |
+| [dotnet sln](dotnet-sln.md)         | ソリューション ファイルのプロジェクトを追加、削除、一覧表示するオプション。       |
+| [dotnet store](dotnet-store.md)     | ランタイム パッケージ ストアにアセンブリを格納します。                     |
+| [dotnet test](dotnet-test.md)       | テスト ランナーを使用してテストを実行します。                                     |
+
+# <a name="net-core-1xtabnetcore1x"></a>[.NET Core 1.x](#tab/netcore1x)
+
+| コマンド                             | 関数                                                            |
+| ----------------------------------- | ------------------------------------------------------------------- |
+| [dotnet build](dotnet-build.md)     | .NET Core アプリケーションをビルドします。                                     |
+| [dotnet clean](dotnet-clean.md)     | クリーン ビルド出力です。                                              |
+| [dotnet migrate](dotnet-migrate.md) | 有効な Preview 2 プロジェクトを .NET Core SDK 1.0 プロジェクトに移行します。  |
+| [dotnet msbuild](dotnet-msbuild.md) | MSBuild コマンド ラインへのアクセスを提供します。                        |
+| [dotnet new](dotnet-new.md)         | 指定されたテンプレートの C# または F# プロジェクトを初期化します。                |
+| [dotnet pack](dotnet-pack.md)       | コードの NuGet パッケージを作成します。                               |
+| [dotnet publish](dotnet-publish.md) | .NET Framework に依存するアプリケーションまたは自己完結型アプリケーションを発行します。 |
+| [dotnet restore](dotnet-restore.md) | 指定されたアプリケーションの依存関係を復元します。                  |
+| [dotnet run](dotnet-run.md)         | ソースからアプリケーションを実行します。                                   |
+| [dotnet sln](dotnet-sln.md)         | ソリューション ファイルのプロジェクトを追加、削除、一覧表示するオプション。       |
+| [dotnet test](dotnet-test.md)       | テスト ランナーを使用してテストを実行します。                                     |
+
+---
 
 ### <a name="project-references"></a>プロジェクト参照
 
 コマンド | 関数
 --- | ---
-[dotnet-add 参照](dotnet-add-reference.md) | プロジェクト参照を追加します。
-[dotnet-list 参照](dotnet-list-reference.md) | プロジェクト参照をリストします。
-[dotnet-remove 参照](dotnet-remove-reference.md) | プロジェクト参照を削除します。
+[dotnet add reference](dotnet-add-reference.md) | プロジェクト参照を追加します。
+[dotnet list reference](dotnet-list-reference.md) | プロジェクト参照をリストします。
+[dotnet remove reference](dotnet-remove-reference.md) | プロジェクト参照を削除します。
 
 ### <a name="nuget-packages"></a>NuGet パッケージ
 
 コマンド | 関数
 --- | ---
-[dotnet-add パッケージ](dotnet-add-package.md) | NuGet パッケージを追加します。
-[dotnet-remove パッケージ](dotnet-remove-package.md) | NuGet パッケージを削除します。
+[dotnet add package](dotnet-add-package.md) | NuGet パッケージを追加します。
+[dotnet remove package](dotnet-remove-package.md) | NuGet パッケージを削除します。
 
 ### <a name="nuget-commands"></a>NuGet コマンド
 
 コマンド | 関数
 --- | ---
-[dotnet-nuget delete](dotnet-nuget-delete.md) | サーバーからパッケージを削除または一覧から削除します。
-[dotnet-nuget locals](dotnet-nuget-locals.md) | HTTP 要求キャッシュ、一時的なキャッシュ、コンピューター全体のグローバル パッケージ フォルダーなどのローカルの NuGet リソースをクリアまたは一覧表示します。
-[dotnet-nuget push](dotnet-nuget-push.md) | パッケージをサーバーにプッシュして発行します。
+[dotnet nuget delete](dotnet-nuget-delete.md) | サーバーからパッケージを削除または一覧から削除します。
+[dotnet nuget locals](dotnet-nuget-locals.md) | HTTP 要求キャッシュ、一時的なキャッシュ、コンピューター全体のグローバル パッケージ フォルダーなどのローカルの NuGet リソースをクリアまたは一覧表示します。
+[dotnet nuget push](dotnet-nuget-push.md) | パッケージをサーバーにプッシュして発行します。
 
 ## <a name="examples"></a>例
 
