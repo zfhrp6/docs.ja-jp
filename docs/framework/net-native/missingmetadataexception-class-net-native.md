@@ -1,94 +1,100 @@
 ---
-title: "MissingMetadataException クラス (.NET ネイティブ) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "MissingMetadataException クラス (.NET ネイティブ)"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 408f25c4-6d60-475c-92b1-7b52b777c6db
 caps.latest.revision: 18
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 18
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 42f47b1cc184dcd789dbf38b1e5d9f03608daa04
+ms.contentlocale: ja-jp
+ms.lasthandoff: 08/21/2017
+
 ---
-# MissingMetadataException クラス (.NET ネイティブ)
-**Windows 10 の Windows アプリ用 .NET \([!INCLUDE[net_native](../../../includes/net-native-md.md)]のみ\)**  
+# <a name="missingmetadataexception-class-net-native"></a>MissingMetadataException クラス (.NET ネイティブ)
+**Windows 10 の Windows アプリ用 .NET ([!INCLUDE[net_native](../../../includes/net-native-md.md)]のみ)**  
   
  この例外は、存在しないメタデータを取得するためにリフレクションが使用された場合にスローされます。  
   
  **名前空間:** System.Reflection  
   
 > [!IMPORTANT]
->  `MissingMetadataException` クラスは [!INCLUDE[net_native](../../../includes/net-native-md.md)] ツール チェーンによる内部使用のみを目的としています。  サード パーティのコードで使用することを目的としていません。また、アプリケーション コードで、例外を処理する必要はありません。  代わりに、[ランタイム ディレクティブ ファイル](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)にエントリを追加することにより、例外を除去します。  詳細については、「解説」を参照してください。  
+>  `MissingMetadataException` クラスは [!INCLUDE[net_native](../../../includes/net-native-md.md)] ツール チェーンによる内部使用のみを目的としています。 サード パーティのコードで使用することを目的としていません。また、アプリケーション コードで、例外を処理する必要はありません。 代わりに、[ランタイム ディレクティブ ファイル](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)にエントリを追加することにより、例外を除去します。 詳細については、「解説」を参照してください。  
   
-## 構文  
+## <a name="syntax"></a>構文  
  [!code-csharp[ProjectN#4](../../../samples/snippets/csharp/VS_Snippets_CLR/projectn/cs/missingmetadataexception_syntax1.cs#4)]  
   
  `MissingMetadataException` クラスが <xref:System.TypeAccessException> から派生していることに注意してください。  
   
- `MissingMetadataException` クラスには、次のメンバーがあります。  
+ `MissingMetadataException` クラスには次のメンバーがあります。  
   
-## コンストラクター  
+## <a name="constructors"></a>コンストラクター  
   
 |コンストラクター|説明|  
-|--------------|--------|  
+|-----------------|-----------------|  
 |`public MissingMetadataException()`|エラーを説明するシステム提供のメッセージを使用して、`MissingMetadataException` クラスの新しいインスタンスを初期化します。<br /><br /> このコンストラクターは [!INCLUDE[net_native](../../../includes/net-native-md.md)] ツール チェーンによる内部使用専用です。|  
 |`public MissingMetadataException(String message)`|指定したエラー メッセージを使用して、`MissingMetadataException` クラスの新しいインスタンスを初期化します。<br /><br /> このコンストラクターは [!INCLUDE[net_native](../../../includes/net-native-md.md)] ツール チェーンによる内部使用専用です。|  
   
-## プロパティ  
+## <a name="properties"></a>プロパティ  
   
 |プロパティ|説明|  
-|-----------|--------|  
-|`public IDictionary Data { get; }`|例外に関する追加のユーザー定義情報を提供する、キー\/値ペアのコレクションを取得します。  \(<xref:System.Exception?displayProperty=fullName> から継承。\)|  
-|`public string HelpLink { get; set; }`|この例外に関連付けられているヘルプ ファイルへのリンクを取得または設定します。  \(<xref:System.Exception?displayProperty=fullName> から継承。\)|  
-|`public int HResult { get; protected set; }`|特定の例外に割り当てられた、コード化された数値である、`HRESULT` を取得または設定します。  \(<xref:System.Exception?displayProperty=fullName> から継承。\)|  
-|`public Exception InnerException { get; }`|現在の例外を引き起こした例外を取得します。  \(<xref:System.Exception?displayProperty=fullName> から継承。\)|  
-|`public string Message { get; }`|現在の例外を説明するメッセージを取得します。  \(<xref:System.TypeLoadException> から継承。\)|  
-|`public string Source { get; set; }`|エラーの原因になったアプリケーションまたはオブジェクトの名前を取得または設定します。  \(<xref:System.Exception?displayProperty=fullName> から継承。\)|  
-|`public string StackTrace { get; }`|呼び出し履歴で直前のフレームの文字列形式を取得します。  \(<xref:System.Exception?displayProperty=fullName> から継承。\)|  
-|`public MethodBase TargetSite { get; }`|現在の例外をスローしたメソッドを取得します。  \(<xref:System.Exception?displayProperty=fullName> から継承。\)|  
-|`public string TypeName { get; ]`|メタデータが欠落している型の完全修飾名を取得します。  \(<xref:System.TypeLoadException> から継承。\)|  
+|--------------|-----------------|  
+|`public IDictionary Data { get; }`|例外に関する追加のユーザー定義情報を提供する、キー/値ペアのコレクションを取得します。 (<xref:System.Exception?displayProperty=fullName> から継承。)|  
+|`public string HelpLink { get; set; }`|この例外に関連付けられているヘルプ ファイルへのリンクを取得または設定します。 (<xref:System.Exception?displayProperty=fullName> から継承。)|  
+|`public int HResult { get; protected set; }`|特定の例外に割り当てられた、コード化された数値である、`HRESULT` を取得または設定します。 (<xref:System.Exception?displayProperty=fullName> から継承。)|  
+|`public Exception InnerException { get; }`|現在の例外を引き起こした例外を取得します。 (<xref:System.Exception?displayProperty=fullName> から継承。)|  
+|`public string Message { get; }`|現在の例外を説明するメッセージを取得します。 (<xref:System.TypeLoadException> から継承。)|  
+|`public string Source { get; set; }`|エラーの原因になったアプリケーションまたはオブジェクトの名前を取得または設定します。 (<xref:System.Exception?displayProperty=fullName> から継承。)|  
+|`public string StackTrace { get; }`|呼び出し履歴で直前のフレームの文字列形式を取得します。 (<xref:System.Exception?displayProperty=fullName> から継承。)|  
+|`public MethodBase TargetSite { get; }`|現在の例外をスローしたメソッドを取得します。 (<xref:System.Exception?displayProperty=fullName> から継承。)|  
+|`public string TypeName { get; ]`|メタデータが欠落している型の完全修飾名を取得します。 (<xref:System.TypeLoadException> から継承。)|  
   
-## メソッド  
+## <a name="methods"></a>メソッド  
   
 |メソッド|説明|  
-|----------|--------|  
-|`public bool Equals(Object obj)`|指定のオブジェクトが現在のオブジェクトと等しいかどうかを判断します。  \(<xref:System.Exception?displayProperty=fullName> から継承。\)|  
-|`protected void Finalize()`|オブジェクトが、ガベージ コレクションによって収集される前に、リソースの解放とその他のクリーンアップ操作の実行を試みることができるようにします。  \(<xref:System.Object> から継承。\)|  
-|`public Exception GetBaseException()`|1 つ以上の後続の例外の根本原因である例外を返します。  \(<xref:System.Exception?displayProperty=fullName> から継承。\)|  
-|`public int GetHashCode()`|`MissingMetadataException` インスタンスのハッシュ コードを返します。  \(<xref:System.Object> から継承。\)|  
-|`public void GetObjectData(SerializationInfo info, StreamingContext context)`|例外に関する情報を使用して、<xref:System.Runtime.Serialization.SerializationInfo> オブジェクトを設定します。  \(<xref:System.TypeLoadException> から継承。\)|  
-|`public Type GetType()`|現在のインスタンスのランタイム型を取得します。  \(<xref:System.Exception?displayProperty=fullName> から継承。\)|  
-|`protected Object MemberwiseClone()`|現在のオブジェクトの簡易コピーを作成します。  \(<xref:System.Object> から継承。\)|  
-|`public string ToString()`|現在の例外の文字列形式を返します。  \(<xref:System.Exception?displayProperty=fullName> から継承。\)|  
+|------------|-----------------|  
+|`public bool Equals(Object obj)`|指定したオブジェクトが、現在のオブジェクトと等しいかどうかを判断します。  (<xref:System.Exception?displayProperty=fullName> から継承。)|  
+|`protected void Finalize()`|オブジェクトが、ガベージ コレクションによって収集される前に、リソースの解放とその他のクリーンアップ操作の実行を試みることができるようにします。 (<xref:System.Object> から継承。)|  
+|`public Exception GetBaseException()`|1 つ以上の後続の例外の根本原因である例外を返します。 (<xref:System.Exception?displayProperty=fullName> から継承。)|  
+|`public int GetHashCode()`|`MissingMetadataException` インスタンスのハッシュ コードを返します。   (<xref:System.Object> から継承。)|  
+|`public void GetObjectData(SerializationInfo info, StreamingContext context)`|例外に関する情報を使用して、<xref:System.Runtime.Serialization.SerializationInfo> オブジェクトを設定します。  (<xref:System.TypeLoadException> から継承。)|  
+|`public Type GetType()`|現在のインスタンスのランタイム型を取得します。 (<xref:System.Exception?displayProperty=fullName> から継承。)|  
+|`protected Object MemberwiseClone()`|現在のオブジェクトの簡易コピーを作成します。 (<xref:System.Object> から継承。)|  
+|`public string ToString()`|現在の例外の文字列形式を返します。 (<xref:System.Exception?displayProperty=fullName> から継承。)|  
   
-## イベント  
+## <a name="events"></a>イベント  
   
 |Event|説明|  
-|-----------|--------|  
-|`protected event EventHandler<SafeSerializationEventArgs> SerializeObjectState`|例外がシリアル化され、例外に関するシリアル化されたデータを含む例外状態オブジェクトが作成されたときに発生します。  \(<xref:System.Exception?displayProperty=fullName> から継承。\)|  
+|-----------|-----------------|  
+|`protected event EventHandler<SafeSerializationEventArgs> SerializeObjectState`|例外がシリアル化され、例外に関するシリアル化されたデータを含む例外状態オブジェクトが作成されたときに発生します。 (<xref:System.Exception?displayProperty=fullName> から継承。)|  
   
-## 使用方法の詳細  
+## <a name="usage-details"></a>使用方法の詳細  
  `MissingMetadataException` 例外は、アセンブリで使用できないメタデータにアクセスするためにリフレクションが使用されるとスローされます。  
   
- 実行時にアプリで使用できるメタデータは、ランタイム ディレクティブ \(XML 構成\) ファイルの \*.rd.xml により定義されます。  アプリからこの例外がスローされないようにするには、\*.rd.xml を変更して、実行時に存在する必要があるメタデータを定義する必要があります。  \*.rd.xml ファイルの形式の詳細については、「[ランタイム ディレクティブ \(rd.xml\) 構成ファイル リファレンス](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)」を参照してください。  
+ 実行時にアプリで使用できるメタデータは、ランタイム ディレクティブ (XML 構成) ファイルの *.rd.xml により定義されます。 アプリからこの例外がスローされないようにするには、\*.rd.xml を変更して、実行時に存在する必要があるメタデータを定義する必要があります。 \*.rd.xml ファイルの形式の詳細については、「[Runtime Directives (rd.xml) Configuration File Reference](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)」(ランタイム ディレクティブ (rd.xml) 構成ファイル リファレンス) を参照してください。  
   
 > [!IMPORTANT]
->  この例外はアプリケーションで必要なメタデータを実行時に使用できないことを示しているため、この例外に `try`\/`catch` ブロックで対処しないでください。  代わりに、ランタイム ディレクティブ ファイルを使用して、例外の原因を診断して排除する必要があります。  例外を除去するためにランタイム ディレクティブ ファイルに追加できるエントリを取得するには、次の 2 つのトラブルシューティング ツールのいずれかを使用できます。  
+>  この例外はアプリケーションで必要なメタデータを実行時に使用できないことを示しているため、この例外に `try`/`catch` ブロックで対処しないでください。 代わりに、ランタイム ディレクティブ ファイルを使用して、例外の原因を診断して排除する必要があります。 例外を除去するためにランタイム ディレクティブ ファイルに追加できるエントリを取得するには、次の 2 つのトラブルシューティング ツールのいずれかを使用できます。  
 >   
->  -   [MissingMetadataException のトラブルシューティング ツール](http://dotnet.github.io/native/troubleshooter/type.html) \(型の場合\)。  
-> -   [MissingMetadataException のトラブルシューティング ツール](http://dotnet.github.io/native/troubleshooter/method.html) \(メソッドの場合\)。  
+>  -   [MissingMetadataException トラブルシューティング ツール](http://dotnet.github.io/native/troubleshooter/type.html) (型の場合)。  
+> -   [MissingMetadataException トラブルシューティング ツール](http://dotnet.github.io/native/troubleshooter/method.html) (メソッドの場合)。  
   
  `MissingMetadataException` クラスには一意のメンバーは含まれていません。メンバーはすべて基底クラスの <xref:System.TypeAccessException> から継承されます。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Exception?displayProperty=fullName>   
  <xref:System.TypeAccessException>   
  [MissingInteropDataException クラス](../../../docs/framework/net-native/missinginteropdataexception-class-net-native.md)   
  [MissingRuntimeArtifactException クラス](../../../docs/framework/net-native/missingruntimeartifactexception-class-net-native.md)   
- [ランタイム ディレクティブ \(rd.xml\) 構成ファイル リファレンス](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)
+ [ランタイム ディレクティブ (rd.xml) 構成ファイル リファレンス](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)
+

@@ -1,78 +1,83 @@
 ---
-title: "文字セットの指定 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "属性フィールド (プラットフォーム呼び出しにおける), CharSet"
-  - "CharSet フィールド"
-  - "プラットフォーム呼び出し, 属性フィールド"
+title: "文字セットの指定"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- VB
+- CSharp
+- C++
+- jsharp
+helpviewer_keywords:
+- platform invoke, attribute fields
+- attribute fields in platform invoke, CharSet
+- CharSet field
 ms.assetid: a8347eb1-295f-46b9-8a78-63331f9ecc50
 caps.latest.revision: 10
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 10
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: a1b0e444ef73deac6f6e353c8e1b67d1cf361ab2
+ms.contentlocale: ja-jp
+ms.lasthandoff: 08/21/2017
+
 ---
-# 文字セットの指定
-<xref:System.Runtime.InteropServices.DllImportAttribute.CharSet?displayProperty=fullName> フィールドは、文字列のマーシャリングを制御したり、プラットフォーム呼び出しで DLL 内の関数名を検索する方法を決定したりします。  このトピックでは、両方の動作について説明します。  
+# <a name="specifying-a-character-set"></a>文字セットの指定
+<xref:System.Runtime.InteropServices.DllImportAttribute.CharSet?displayProperty=fullName> フィールドは文字列のマーシャリングを制御し、DLL の関数名をプラットフォーム呼び出しが見つけるしくみを決定します。 このトピックでは、両方の動作について説明します。  
   
- 一部の API は、文字列引数がナロー \(ANSI\) とワイド \(Unicode\) の 2 つの関数のバージョンをエクスポートします。  たとえば Win32 API には、**MessageBox** 関数に対して次のエントリ ポイント名が含まれています。  
+ 一部の API は、文字列引数、ナロー (ANSI) とワイド (Unicode) を受け取る 2 種類の関数をエクスポートします。 たとえば、Win32 API には、**MessageBox** 関数の次のエントリ ポイント名が含まれています。  
   
 -   **MessageBoxA**  
   
-     1 バイト文字 ANSI 形式を提供します。エントリ ポイント名の末尾の "A" で区別されます。  **MessageBoxA** への呼び出しでは、Windows 95 プラットフォームおよび Windows 98 プラットフォームで通常行われているように、文字列は常に ANSI 形式でマーシャリングされます。  
+     1 バイト文字の ANSI 書式設定を提供します。エントリ ポイント名に "A" が追加されます。 Windows 95 プラットフォームと Windows 98 プラットフォームで一般的であったように、**MessageBoxA** を呼び出すと、常に ANSI 形式で文字列がマーシャリングされます。  
   
 -   **MessageBoxW**  
   
-     2 バイト文字 Unicode 形式を提供します。エントリ ポイント名の末尾の "W" で区別されます。  **MessageBoxW** への呼び出しでは、Windows NT、Windows 2000、Windows XP の各プラットフォームで通常行われているように、文字列は常に Unicode 形式でマーシャリングされます。  
+     2 バイト文字の Unicode 書式設定を提供します。エントリ ポイント名に "W" が追加されます。 Windows NT、Windows 2000、Windows XP プラットフォームで一般的であったように、**MessageBoxW** を呼び出すと、常に Unicode 形式で文字列がマーシャリングされます。  
   
-## 文字列のマーシャリングと名前の一致  
- **CharSet** フィールドは、次の値を受け入れます。  
+## <a name="string-marshaling-and-name-matching"></a>文字列のマーシャリングと名前の一致  
+ **CharSet** フィールドは次の値を受け取ります。  
   
- **CharSet.Ansi** \(既定値\)  
+ **CharSet.Ansi** (既定値)  
   
 -   文字列のマーシャリング  
   
-     プラットフォーム呼び出しでは、文字列をマネージ形式 \(Unicode\) から ANSI 形式にマーシャリングします。  
+     プラットフォーム呼び出しは、その管理対象形式 (Unicode) から ANSI 形式に文字列をマーシャリングします。  
   
 -   名前の一致  
   
-     <xref:System.Runtime.InteropServices.DllImportAttribute.ExactSpelling?displayProperty=fullName> フィールドが **true** \([!INCLUDE[vbprvblong](../../../includes/vbprvblong-md.md)] の既定値\) の場合、プラットフォーム呼び出しでは、指定した名前だけが検索されます。  たとえば **MessageBox** と指定すると、プラットフォーム呼び出しでは **MessageBox** を検索し、正確に一致する名前が見つからない場合には失敗します。  
+     <xref:System.Runtime.InteropServices.DllImportAttribute.ExactSpelling?displayProperty=fullName> フィールドが **true** の場合 ([!INCLUDE[vbprvblong](../../../includes/vbprvblong-md.md)] の既定値)、プラットフォーム呼び出しは、指定された名前だけを検索します。 たとえば、**MessageBox** を指定した場合、プラットフォーム呼び出しは **MessageBox** を検索し、厳密に一致する綴りが見つからない場合、検索失敗となります。  
   
-     **ExactSpelling** フィールドが **false** \(C\+\+ および C\# の既定値\) の場合、プラットフォーム呼び出しでは、変形処理されていない名前 \(**MessageBox**\) を最初に検索し、それが見つからない場合には、変形処理された名前 \(**MessageBoxA**\) を検索します。  名前の一致の動作は、ANSI と Unicode とでは異なります。  
+     **ExactSpelling** フィールドが **false** のとき (C++ と C# で既定)、プラットフォーム呼び出しは最初に修飾なしのエイリアスを探し (**MessageBox**)、見つからなければ、修飾ありの名前を探します (**MessageBoxA**)。 ANSI の名前一致動作と Unicode の名前一致動作は異なることにご注意ください。  
   
  **CharSet.Unicode**  
   
 -   文字列のマーシャリング  
   
-     プラットフォーム呼び出しでは、文字列をマネージ形式 \(Unicode\) から Unicode 形式にコピーします。  
+     プラットフォーム呼び出しは、その管理対象形式 (Unicode) から Unicode 形式に文字列をコピーします。  
   
 -   名前の一致  
   
-     **フィールドが** true[!INCLUDE[vbprvblong](../../../includes/vbprvblong-md.md)] の既定値\) の場合、プラットフォーム呼び出しでは、指定した名前だけが検索されます。  たとえば **MessageBox** と指定すると、プラットフォーム呼び出しでは **MessageBox** を検索し、正確に一致する名前が見つからない場合には失敗します。  
+     **ExactSpelling** フィールドが **true** の場合 ([!INCLUDE[vbprvblong](../../../includes/vbprvblong-md.md)] の既定値)、プラットフォーム呼び出しは、指定された名前だけを検索します。 たとえば、**MessageBox** を指定した場合、プラットフォーム呼び出しは **MessageBox** を検索し、厳密に一致する綴りが見つからない場合、検索失敗となります。  
   
-     **ExactSpelling** フィールドが **false** \(C\+\+ および C\# の既定値\) の場合、プラットフォーム呼び出しでは、変形処理された名前 \(**MessageBoxW**\) を最初に検索し、それが見つからない場合には、変形処理されていない名前 \(**MessageBox**\) を検索します。  名前の一致の動作は、Unicode と ANSI とでは異なります。  
+     **ExactSpelling** フィールドが **false** のとき (C++ と C# で既定)、プラットフォーム呼び出しは最初に修飾ありの名前を探し (**MessageBoxW**)、見つからなければ、修飾なしのエイリアスを探します (**MessageBox**)。 Unicode の名前一致動作と ANSI の名前一致動作は異なることにご注意ください。  
   
  **CharSet.Auto**  
   
--   プラットフォーム呼び出しでは、対象となるプラットフォームに応じて、実行時に ANSI 形式または Unicode 形式を選択します。  
+-   プラットフォーム呼び出しは、対象プラットフォームに基づき、ANSI 形式または Unicode 形式を選択します。  
   
-## Visual Basic での文字セットの指定  
- **MessageBox** 関数を 3 回宣言し、そのそれぞれで異なる文字セットを指定する例を次に示します。  Visual Basic で文字セットを指定するには、宣言ステートメントに **Ansi**、**Unicode**、または **Auto** キーワードを追加します。  
+## <a name="specifying-a-character-set-in-visual-basic"></a>Visual Basic で文字セットを指定する  
+ 次の例では **MessageBox** 関数を 3 回宣言しています。宣言のたびに文字セット動作が変わっています。 Visual Basic では、文字セット動作を指定できます。宣言ステートメントにキーワードとして **Ansi**、**Unicode**、**Auto** を追加します。  
   
- この例の最初の宣言ステートメントのように、文字セット キーワードを省略すると、<xref:System.Runtime.InteropServices.DllImportAttribute.CharSet?displayProperty=fullName> フィールドは既定で ANSI 文字セットに設定されます。  この例の第 2 および第 3 のステートメントでは、キーワードを使用して明示的に文字セットを指定しています。  
+ 最初の宣言ステートメントのように、文字セット キーワードを省略した場合、<xref:System.Runtime.InteropServices.DllImportAttribute.CharSet?displayProperty=fullName> フィールドは既定で ANSI 文字セットに設定されます。 例の 2 番目と 3 番目のステートメントは、キーワードで文字セットを明示的に指定しています。  
   
 ```vb  
 Imports System.Runtime.InteropServices  
@@ -92,14 +97,13 @@ Public Class Win32
 End Class  
 ```  
   
-## C\# および C\+\+ での文字セットの指定  
- <xref:System.Runtime.InteropServices.DllImportAttribute.CharSet?displayProperty=fullName> フィールドでは、基になる文字セットを ANSI または Unicode として識別します。  この文字セットは、メソッドに対する文字列引数をマーシャリングする方法を制御します。  文字セットを指示するには、次のいずれかの書式を使用します。  
+## <a name="specifying-a-character-set-in-c-and-c"></a>C# と C++ で文字セットを指定する  
+ <xref:System.Runtime.InteropServices.DllImportAttribute.CharSet?displayProperty=fullName> フィールドは、基礎となる文字セットとして ANSI または Unicode を識別します。 この文字セットは、メソッドの文字列引数をマーシャリングする方法を制御します。 次の形式の 1 つを使用し、文字セットを指示します。  
   
 ```csharp  
 [DllImport("dllname", CharSet=CharSet.Ansi)]  
 [DllImport("dllname", CharSet=CharSet.Unicode)]  
 [DllImport("dllname", CharSet=CharSet.Auto)]  
-  
 ```  
   
 ```cpp  
@@ -108,7 +112,7 @@ End Class
 [DllImport("dllname", CharSet=CharSet::Auto)]  
 ```  
   
- 文字セットを指定する **MessageBox** 関数の 3 種類のマネージ定義の例を次に示します。  最初の定義では、省略によって、**CharSet** フィールドが既定の ANSI 文字セットに設定されます。  
+ 次の例では、**MessageBox** 関数の 3 つの管理対象定義を確認できます。これにより文字セットが指定されます。 最初の定義で、その省略により、**CharSet** フィールドは ANSI 文字セットに初期設定されます。  
   
 ```csharp  
 [DllImport("user32.dll")]  
@@ -120,7 +124,6 @@ End Class
 [DllImport("user32.dll", CharSet=CharSet.Auto)]  
     public static extern int MessageBox(int hWnd, String text,   
         String caption, uint type);  
-  
 ```  
   
 ```cpp  
@@ -148,8 +151,9 @@ extern "C" int MessageBox(HWND hWnd,
                           unsigned int uType);  
 ```  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Runtime.InteropServices.DllImportAttribute>   
  [マネージ コードでのプロトタイプの作成](../../../docs/framework/interop/creating-prototypes-in-managed-code.md)   
  [プラットフォーム呼び出しの例](../../../docs/framework/interop/platform-invoke-examples.md)   
  [プラットフォーム呼び出しによるデータのマーシャリング](../../../docs/framework/interop/marshaling-data-with-platform-invoke.md)
+

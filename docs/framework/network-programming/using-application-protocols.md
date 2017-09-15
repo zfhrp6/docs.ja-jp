@@ -1,39 +1,45 @@
 ---
-title: "アプリケーション プロトコルの使用 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "アプリケーション プロトコル、種類"
-  - "プロトコル、アプリケーション"
-  - "ダウンロード (インターネット リソースの)、アプリケーション プロトコル"
-  - "送信 (データを)、アプリケーション プロトコル"
-  - "インターネット、アプリケーション プロトコル"
-  - "ネットワーク リソース、アプリケーション プロトコル"
-  - "応答 (インターネット要求へ)、アプリケーション プロトコル"
-  - "アプリケーション プロトコル"
-  - "受信 (データを)、アプリケーション プロトコル"
-  - "要求 (インターネットからデータを)、アプリケーション プロトコル"
+title: "アプリケーション プロトコルの使用"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- VB
+- CSharp
+- C++
+- jsharp
+helpviewer_keywords:
+- application protocols, types
+- protocols, application
+- downloading Internet resources, application protocols
+- sending data, application protocols
+- Internet, application protocols
+- network resources, application protocols
+- response to Internet request, application protocols
+- application protocols
+- receiving data, application protocols
+- requesting data from Internet, application protocols
 ms.assetid: 3aab4bcc-8397-4e1a-a1b6-bbd837a21430
 caps.latest.revision: 11
-author: "mcleblanc"
-ms.author: "markl"
-manager: "markl"
-caps.handback.revision: 9
+author: mcleblanc
+ms.author: markl
+manager: markl
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 8e7cd2ec072666c039e8bd9fa89aeb70cfd0bb31
+ms.contentlocale: ja-jp
+ms.lasthandoff: 08/21/2017
+
 ---
 # アプリケーション プロトコルの使用
-.NET Framework サポートの一般的なインターネット プロトコル アプリケーション。  このセクションでは、注文のプロトコルを実行するに [&#91;Windows ソケット&#93;](../../../docs/framework/network-programming/sockets.md) インターフェイスの使用の [&#91;HTTP&#93;](../../../docs/framework/network-programming/http.md)の [&#91;TCP&#93;](../../../docs/framework/network-programming/tcp-udp.md)、および [UDP](../../../docs/framework/network-programming/tcp-udp.md) プロトコル、使用、情報の情報が含まれます。  
+.NET Framework は、一般的に使用されているインターネット アプリケーション プロトコルをサポートしています。 ここでは、[HTTP](../../../docs/framework/network-programming/http.md)、"TCP"、"UDP" プロトコルの使用方法と、[Windows ソケット](../../../docs/framework/network-programming/sockets.md) インターフェイスを使用してカスタム ソケットを実装する方法について説明します。  
   
-## 参照  
+## 関連項目  
  [.NET Framework のネットワーク プログラミング](../../../docs/framework/network-programming/index.md)   
  [ネットワーク プログラミングのサンプル](../../../docs/framework/network-programming/network-programming-samples.md)   
- [MSDN Code Gallery .NET のネットワーキングのサンプル](http://code.msdn.microsoft.com/Wiki/View.aspx?ProjectName=nclsamples)
+ [MSDN Code Gallery 上の .NET 用のネットワークのサンプル](http://code.msdn.microsoft.com/Wiki/View.aspx?ProjectName=nclsamples)
+

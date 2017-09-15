@@ -1,56 +1,61 @@
 ---
-title: "非同期要求を行う | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "インターネット、非同期アクセス"
-  - "ネットワーク"
-  - "非同期要求、インターネット リソース"
-  - "ネットワーク リソース"
-  - "WebRequest クラス、非同期アクセス"
+title: "非同期要求を行う"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- VB
+- CSharp
+- C++
+- jsharp
+helpviewer_keywords:
+- Internet, asynchronous access
+- Networking
+- asynchronous requests, Internet resources
+- Network Resources
+- WebRequest class, asynchronous access
 ms.assetid: 735d3fce-f80c-437f-b02c-5c47f5739674
 caps.latest.revision: 12
-author: "mcleblanc"
-ms.author: "markl"
-manager: "markl"
-caps.handback.revision: 12
+author: mcleblanc
+ms.author: markl
+manager: markl
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 6854ddc10e35c2a5ff1de200a44c95f34c186609
+ms.contentlocale: ja-jp
+ms.lasthandoff: 08/21/2017
+
 ---
-# 非同期要求を行う
-<xref:System.Net> クラスは、インターネットのリソースに非同期なアクセス用に .NET フレームワークの標準非同期プログラミング モデルを使用します。  <xref:System.Net.WebRequest> クラスのライフサイクル <xref:System.Net.WebRequest.BeginGetResponse%2A> と <xref:System.Net.WebRequest.EndGetResponse%2A> 方法は、インターネットのリソースの非同期要求を完了します。  
+# <a name="making-asynchronous-requests"></a>非同期要求を行う
+<xref:System.Net> クラスは、インターネット リソースへの非同期アクセスに .NET Framework の標準非同期プログラミング モデルを使用します。 <xref:System.Net.WebRequest> クラスの <xref:System.Net.WebRequest.BeginGetResponse%2A> および <xref:System.Net.WebRequest.EndGetResponse%2A> メソッドは、インターネット リソースの非同期要求の開始と完了を行います。  
   
 > [!NOTE]
->  非同期方法の同期のコールバック電話を使用して厳しいパフォーマンスのペナルティが生成できます。  **\[WebRequest\]** で行ったインターネット要求と子孫は <xref:System.Net.WebResponse.GetResponseStream%2A?displayProperty=fullName> 方法によって返されたストリームの読み取りに <xref:System.IO.Stream.BeginRead%2A?displayProperty=fullName> を使用する必要があります。  
+>  非同期コールバック メソッドで同期呼び出しを使用すると、パフォーマンスが大幅に低下する可能性があります。 **WebRequest** とその子孫を使用して作成されたインターネット要求で、<xref:System.Net.WebResponse.GetResponseStream%2A?displayProperty=fullName> メソッドで返されたストリームを読み取るには、<xref:System.IO.Stream.BeginRead%2A?displayProperty=fullName> を使用する必要があります。  
   
- 次のサンプル コードは **\[WebRequest\]** のクラスと非同期通話を使用する方法を示します。  サンプル URI は、インターネットで入庫されるため、コマンド ラインから URI のコンソールのプログラム、必要とするリソースを選択し、次にコンソールに印刷するデータです。  
+ 次のサンプル コードは、**WebRequest** クラスで非同期呼び出しを使用する方法の例です。 このサンプルは、コマンド ラインから URI を取得し、その URI のリソースを要求し、インターネットから受信したデータをコンソールに出力するコンソール プログラムです。  
   
- プログラムは独自の使用のための 2 種類のクラスを、非同期の呼び出しにわたってデータを渡す、およびインターネットのリソースに非同期要求を実行する **ClientGetAsync** クラスを定義します **RequestState** クラス。  
+ このプログラムでは、独自の用途がある 2 つのクラスを定義しています。非同期呼び出し全体にデータを渡す **RequestState** クラスと、インターネット リソースに対する非同期要求を実装する **ClientGetAsync** クラスです。  
   
- **RequestState** のクラスが要求をサービスする非同期な方法に電話に要求のステータスを管理します。  これは **\[WebRequest\]** とそれに対応受信なリソースおよびストリームに現在の要求、インターネット現在のリソースから受け取ったデータを含む、<xref:System.Text.StringBuilder> を含むバッファ <xref:System.IO.Stream> のインスタンスが含まれます完全な応答があります。  **RequestState**は、*州の* パラメータとして <xref:System.AsyncCallback> 方法が **WebRequest.BeginGetResponse**と登録時に渡されます。  
+ **RequestState** クラスは、要求を処理する非同期メソッドの呼び出し全体について要求の状態を保持します。 たとえば、リソースに対する現在の要求と応答で受信したストリームを含む **WebRequest** および <xref:System.IO.Stream> インスタンス、インターネット リソースから現在受信しているデータを含むバッファー、完全な応答を含む <xref:System.Text.StringBuilder> があります。 <xref:System.AsyncCallback> メソッドが **WebRequest.BeginGetResponse** に登録されている場合、**RequestState** は *state* パラメーターとして渡されます。  
   
- **ClientGetAsync** クラスは、インターネットのリソースに非同期要求を実行し、コンソールへの応答結果を書き込みます。  これは次の一覧で記述方法、およびプロパティがあります。  
+ **ClientGetAsync** クラスは、インターネット リソースに対する非同期要求を実装し、結果の応答をコンソールに出力します。 次の一覧で説明するメソッドとプロパティがあります。  
   
--   `allDone` のプロパティは要求の完了を通知する <xref:System.Threading.ManualResetEvent> クラスのインスタンスが含まれます。  
+-   `allDone` プロパティには、要求の完了を通知する <xref:System.Threading.ManualResetEvent> クラスのインスタンスが含まれています。  
   
--   `Main()` 方法は、コマンド ラインを読み、インターネット指定のリソースの要求されます。  これはコールバックが完了するまでアプリケーションで終了しないように **\[WebRequest\]**`wreq` と **RequestState**`rs`を作成し、要求を処理する際に **BeginGetResponse** を追加し、`allDone.WaitOne()`方法を追加します。  応答をインターネットのリソースから読み取りと、`Main()` はコンソールで作成し、アプリケーションは終了。  
+-   `Main()` メソッドは、コマンド ラインを読み取り、指定されたインターネット リソースの要求を開始します。 **WebRequest** `wreq` および **RequestState** `rs` を作成し、**BeginGetResponse** を呼び出して要求の処理を開始し、`allDone.WaitOne()` メソッドを呼び出して、コールバックが完了するまでアプリケーションが終了しないようにします。 インターネット リソースから応答を読み取ると、`Main()` はその応答をコンソールに出力し、アプリケーションは終了します。  
   
--   `showusage()` 方法はコンソールの例のコマンド ラインを書き込みます。  これは `Main()` によって URI のコマンド ラインで出荷されていないと呼ばれます。  
+-   `showusage()` メソッドは、コンソールにコマンド ライン例を出力します。 これは、コマンド ラインに URI が指定されていない場合に `Main()` から呼び出されます。  
   
--   `RespCallBack()` 方法は、インターネット要求のコールバック非同期なメソッドを実行します。  これは、インターネットのリソースからの応答を含む **WebResponse** のインスタンスの作成および応答のベースを取得し、ストリームからデータを非同期的に読み取ることを開始します。  
+-   `RespCallBack()` メソッドは、インターネット要求の非同期コールバック メソッドを実装します。 インターネット リソースからの応答を含む **WebResponse** インスタンスを作成し、応答ストリームを取得し、非同期にストリームからデータの読み取りを開始します。  
   
--   `ReadCallBack()` 方法が応答のベースの読み取り対して非同期なコールバック メソッドを実行します。  これは、インターネットのリソースからデータが返品されるまで応答のベースの読み取り **RequestState** のインスタンスの **\[ResponseData\]** のプロパティに表示されるデータを移しましたりと別の非同期を開始します。  すべてのデータを読まれたら、`ReadCallBack()` が応答のベースを閉じ、全体の回答を **\[ResponseData\]**に指定するに `allDone.Set()` 方法を追加します。  
+-   `ReadCallBack()` メソッドは、応答ストリームを読み取るための非同期コールバック メソッドを実装します。 インターネット リソースから受信したデータを **RequestState** インスタンスの **ResponseData** プロパティに転送し、データが返されなくなるまで、応答ストリームの非同期読み取りを再び開始します。 すべてのデータが読み取られたら、`ReadCallBack()` は応答ストリームを終了し、`allDone.Set()` メソッドを呼び出して、応答全体が **ResponseData** 内にあることを示します。  
   
     > [!NOTE]
-    >  すべてのネットワーク ストリームが閉じられることが重要です。  各要求のベースと回答を閉じなければ、アプリケーションは、サーバーへの接続を使い果たし、追加情報を処理できなくなります。  
+    >  すべてのネットワーク ストリームが終了していることが重要です。 各要求と応答ストリームが終了していない場合、アプリケーションからサーバーへの接続が不足し、追加の要求を処理できなくなります。  
   
 ```csharp  
 using System;  
@@ -341,5 +346,6 @@ Class ClientGetAsync
 End Class  
 ```  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [データの要求](../../../docs/framework/network-programming/requesting-data.md)
+

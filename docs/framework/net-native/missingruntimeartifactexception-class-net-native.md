@@ -1,90 +1,96 @@
 ---
-title: "MissingRuntimeArtifactException クラス (.NET ネイティブ) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "MissingRuntimeArtifactException クラス (.NET ネイティブ)"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: d5b3d13e-689f-4584-8ba6-44f5167a8590
 caps.latest.revision: 8
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 8
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 6089336f0b4c37e0bf867fbb18376705848b4104
+ms.contentlocale: ja-jp
+ms.lasthandoff: 08/21/2017
+
 ---
-# MissingRuntimeArtifactException クラス (.NET ネイティブ)
-**Windows 10 の Windows アプリ用 .NET \([!INCLUDE[net_native](../../../includes/net-native-md.md)]のみ\)**  
+# <a name="missingruntimeartifactexception-class-net-native"></a>MissingRuntimeArtifactException クラス (.NET ネイティブ)
+**Windows 10 の Windows アプリ用 .NET ([!INCLUDE[net_native](../../../includes/net-native-md.md)]のみ)**  
   
  この例外は、型または型のメンバーのメタデータは使用可能だが、その実装が削除されている場合にスローされます。  
   
  **名前空間:** System.Reflection  
   
 > [!IMPORTANT]
->  `MissingRuntimeArtifactException` クラスは [!INCLUDE[net_native](../../../includes/net-native-md.md)] ツール チェーンによる内部使用のみを目的としています。  サード パーティのコードで使用することを目的としていません。また、アプリケーション コードで、例外を処理する必要はありません。  代わりに、[ランタイム ディレクティブ ファイル](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)にエントリを追加することにより、例外を除去します。  詳細については、「解説」を参照してください。  
+>  `MissingRuntimeArtifactException` クラスは [!INCLUDE[net_native](../../../includes/net-native-md.md)] ツール チェーンによる内部使用のみを目的としています。 サード パーティのコードで使用することを目的としていません。また、アプリケーション コードで、例外を処理する必要はありません。 代わりに、[ランタイム ディレクティブ ファイル](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)にエントリを追加することにより、例外を除去します。 詳細については、「解説」を参照してください。  
   
-## 構文  
+## <a name="syntax"></a>構文  
  [!code-csharp[ProjectN#22](../../../samples/snippets/csharp/VS_Snippets_CLR/projectn/cs/missingruntimeartifactexception_syntax1.cs#22)]  
   
  `MissingRuntimeArtifactException` クラスが <xref:System.MemberAccessException> から派生していることに注意してください。  
   
- `MissingRuntimeArtifactException` クラスには、次のメンバーがあります。  
+ `MissingRuntimeArtifactException` クラスには次のメンバーがあります。  
   
-## コンストラクター  
+## <a name="constructors"></a>コンストラクター  
   
 |コンストラクター|説明|  
-|--------------|--------|  
+|-----------------|-----------------|  
 |`public MissingRuntimeArtifactException()`|エラーを説明するシステム提供のメッセージを使用して、`MissingRuntimeArtifactException` クラスの新しいインスタンスを初期化します。<br /><br /> このコンストラクターは [!INCLUDE[net_native](../../../includes/net-native-md.md)] ツール チェーンによる内部使用専用です。|  
 |`public MissingRuntimeArtifactException(String message)`|指定したエラー メッセージを使用して、`MissingRuntimeArtifactException` クラスの新しいインスタンスを初期化します。<br /><br /> このコンストラクターは [!INCLUDE[net_native](../../../includes/net-native-md.md)] ツール チェーンによる内部使用専用です。|  
   
-## プロパティ  
+## <a name="properties"></a>プロパティ  
   
 |プロパティ|説明|  
-|-----------|--------|  
-|`public IDictionary Data { get; }`|例外に関する追加のユーザー定義情報を提供する、キー\/値ペアのコレクションを取得します。  \(<xref:System.Exception?displayProperty=fullName> から継承。\)|  
-|`public string HelpLink { get; set; }`|この例外に関連付けられているヘルプ ファイルへのリンクを取得または設定します。  \(<xref:System.Exception?displayProperty=fullName> から継承。\)|  
-|`public int HResult { get; protected set; }`|特定の例外に割り当てられた、コード化された数値である、`HRESULT` を取得または設定します。  \(<xref:System.Exception?displayProperty=fullName> から継承。\)|  
-|`public Exception InnerException { get; }`|現在の例外を引き起こした例外を取得します。  \(<xref:System.Exception?displayProperty=fullName> から継承。\)|  
-|`public string Message { get; }`|現在の例外を説明するメッセージを取得します。  \(<xref:System.Exception?displayProperty=fullName> から継承。\)|  
-|`public string Source { get; set; }`|エラーの原因になったアプリケーションまたはオブジェクトの名前を取得または設定します。  \(<xref:System.Exception?displayProperty=fullName> から継承。\)|  
-|`public string StackTrace { get; }`|呼び出し履歴で直前のフレームの文字列形式を取得します。  \(<xref:System.Exception?displayProperty=fullName> から継承。\)|  
-|`public MethodBase TargetSite { get; }`|現在の例外をスローしたメソッドを取得します。  \(<xref:System.Exception?displayProperty=fullName> から継承。\)|  
+|--------------|-----------------|  
+|`public IDictionary Data { get; }`|例外に関する追加のユーザー定義情報を提供する、キー/値ペアのコレクションを取得します。 (<xref:System.Exception?displayProperty=fullName> から継承。)|  
+|`public string HelpLink { get; set; }`|この例外に関連付けられているヘルプ ファイルへのリンクを取得または設定します。 (<xref:System.Exception?displayProperty=fullName> から継承。)|  
+|`public int HResult { get; protected set; }`|特定の例外に割り当てられた、コード化された数値である、`HRESULT` を取得または設定します。 (<xref:System.Exception?displayProperty=fullName> から継承。)|  
+|`public Exception InnerException { get; }`|現在の例外を引き起こした例外を取得します。 (<xref:System.Exception?displayProperty=fullName> から継承。)|  
+|`public string Message { get; }`|現在の例外を説明するメッセージを取得します。 (<xref:System.Exception?displayProperty=fullName> から継承。)|  
+|`public string Source { get; set; }`|エラーの原因になったアプリケーションまたはオブジェクトの名前を取得または設定します。 (<xref:System.Exception?displayProperty=fullName> から継承。)|  
+|`public string StackTrace { get; }`|呼び出し履歴で直前のフレームの文字列形式を取得します。 (<xref:System.Exception?displayProperty=fullName> から継承。)|  
+|`public MethodBase TargetSite { get; }`|現在の例外をスローしたメソッドを取得します。 (<xref:System.Exception?displayProperty=fullName> から継承。)|  
   
-## メソッド  
+## <a name="methods"></a>メソッド  
   
 |メソッド|説明|  
-|----------|--------|  
-|`public bool Equals(Object obj)`|指定のオブジェクトが現在のオブジェクトと等しいかどうかを判断します。  \(<xref:System.Object> から継承。\)|  
-|`protected void Finalize()`|オブジェクトが、ガベージ コレクションによって収集される前に、リソースの解放とその他のクリーンアップ操作の実行を試みることができるようにします。  \(<xref:System.Object> から継承。\)|  
-|`public Exception GetBaseException()`|1 つ以上の後続の例外の根本原因である例外を返します。  \(<xref:System.Exception?displayProperty=fullName> から継承。\)|  
-|`public int GetHashCode()`|`MissingRuntimeArtifactException` インスタンスのハッシュ コードを返します。  \(<xref:System.Object> から継承。\)|  
-|`public void GetObjectData(SerializationInfo info, StreamingContext context)`|例外に関する情報を使用して、<xref:System.Runtime.Serialization.SerializationInfo> オブジェクトを設定します。  \(<xref:System.Exception?displayProperty=fullName> から継承。\)|  
-|`public Type GetType()`|現在のインスタンスのランタイム型を取得します。  \(<xref:System.Exception?displayProperty=fullName> から継承。\)|  
-|`protected Object MemberwiseClone()`|現在のオブジェクトの簡易コピーを作成します。  \(<xref:System.Object> から継承。\)|  
-|`public string ToString()`|現在の例外の文字列形式を返します。  \(<xref:System.Exception?displayProperty=fullName> から継承。\)|  
+|------------|-----------------|  
+|`public bool Equals(Object obj)`|指定したオブジェクトが、現在のオブジェクトと等しいかどうかを判断します。  (<xref:System.Object> から継承。)|  
+|`protected void Finalize()`|オブジェクトが、ガベージ コレクションによって収集される前に、リソースの解放とその他のクリーンアップ操作の実行を試みることができるようにします。 (<xref:System.Object> から継承。)|  
+|`public Exception GetBaseException()`|1 つ以上の後続の例外の根本原因である例外を返します。 (<xref:System.Exception?displayProperty=fullName> から継承。)|  
+|`public int GetHashCode()`|`MissingRuntimeArtifactException` インスタンスのハッシュ コードを返します。   (<xref:System.Object> から継承。)|  
+|`public void GetObjectData(SerializationInfo info, StreamingContext context)`|例外に関する情報を使用して、<xref:System.Runtime.Serialization.SerializationInfo> オブジェクトを設定します。  (<xref:System.Exception?displayProperty=fullName> から継承。)|  
+|`public Type GetType()`|現在のインスタンスのランタイム型を取得します。 (<xref:System.Exception?displayProperty=fullName> から継承。)|  
+|`protected Object MemberwiseClone()`|現在のオブジェクトの簡易コピーを作成します。 (<xref:System.Object> から継承。)|  
+|`public string ToString()`|現在の例外の文字列形式を返します。 (<xref:System.Exception?displayProperty=fullName> から継承。)|  
   
-## イベント  
+## <a name="events"></a>イベント  
   
 |Event|説明|  
-|-----------|--------|  
-|`protected event EventHandler<SafeSerializationEventArgs> SerializeObjectState`|例外がシリアル化され、例外に関するシリアル化されたデータを含む例外状態オブジェクトが作成されたときに発生します。  \(<xref:System.Exception?displayProperty=fullName> から継承。\)|  
+|-----------|-----------------|  
+|`protected event EventHandler<SafeSerializationEventArgs> SerializeObjectState`|例外がシリアル化され、例外に関するシリアル化されたデータを含む例外状態オブジェクトが作成されたときに発生します。 (<xref:System.Exception?displayProperty=fullName> から継承。)|  
   
-## 使用方法の詳細  
+## <a name="usage-details"></a>使用方法の詳細  
  `MissingRuntimeArtifactException` 例外は、型のインスタンス化または型のメンバーの呼び出しが試行され、その型またはメンバーのメタデータは存在するが、実装が削除されている場合にスローされます。  
   
- メソッドを動的に実行するためのメタデータと実装コードが実行時にアプリで使用可能かどうかは、ランタイム ディレクティブ \(XML 構成\) ファイルの \*.rd.xml により定義されます。  アプリからこの例外がスローされないようにするには、\*.rd.xml を変更して、型または型のメンバーが必要とするメタデータが実行時に確実に存在するようにする必要があります。  \*.rd.xml ファイルの形式の詳細については、「[ランタイム ディレクティブ \(rd.xml\) 構成ファイル リファレンス](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)」を参照してください。  
+ メソッドを動的に実行するためのメタデータと実装コードが実行時にアプリで使用可能かどうかは、ランタイム ディレクティブ (XML 構成) ファイルの *.rd.xml により定義されます。 アプリからこの例外がスローされないようにするには、\*.rd.xml を変更して、型または型のメンバーが必要とするメタデータが実行時に確実に存在するようにする必要があります。 \*.rd.xml ファイルの形式の詳細については、「[Runtime Directives (rd.xml) Configuration File Reference](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)」(ランタイム ディレクティブ (rd.xml) 構成ファイル リファレンス) を参照してください。  
   
 > [!IMPORTANT]
->  この例外はアプリケーションで必要な実装コードを実行時に使用できないことを示しているため、この例外を `try`\/`catch` ブロックで処理しないでください。  代わりに、ランタイム ディレクティブ ファイルを使用して、例外の原因を診断して排除する必要があります。  通常は、ランタイム ディレクティブ ファイル \(\*.rd.xml ファイル\) 内のプログラム要素に適切な `Activate` ポリシーまたは `Dynamic` ポリシーを指定することで、この例外を排除します。  例外を除去するためにランタイム ディレクティブ ファイルに追加できるエントリを取得するには、次の 2 つのトラブルシューティング ツールのいずれかを使用できます。  
+>  この例外はアプリケーションで必要な実装コードを実行時に使用できないことを示しているため、この例外を `try`/`catch` ブロックで処理しないでください。 代わりに、ランタイム ディレクティブ ファイルを使用して、例外の原因を診断して排除する必要があります。 通常は、ランタイム ディレクティブ ファイル (*.rd.xml ファイル) 内のプログラム要素に適切な `Activate` ポリシーまたは `Dynamic` ポリシーを指定することで、この例外を排除します。 例外を除去するためにランタイム ディレクティブ ファイルに追加できるエントリを取得するには、次の 2 つのトラブルシューティング ツールのいずれかを使用できます。  
 >   
->  -   [MissingMetadataException のトラブルシューティング ツール](http://dotnet.github.io/native/troubleshooter/type.html) \(型の場合\)。  
-> -   [MissingMetadataException のトラブルシューティング ツール](http://dotnet.github.io/native/troubleshooter/method.html) \(メソッドの場合\)。  
+>  -   [MissingMetadataException トラブルシューティング ツール](http://dotnet.github.io/native/troubleshooter/type.html) (型の場合)。  
+> -   [MissingMetadataException トラブルシューティング ツール](http://dotnet.github.io/native/troubleshooter/method.html) (メソッドの場合)。  
   
  `MissingRuntimeArtifactException` クラスには一意のメンバーは含まれていません。メンバーはすべて基底クラスの <xref:System.MemberAccessException> から継承されます。  
   
-## 参照  
- [ランタイム ディレクティブ \(rd.xml\) 構成ファイル リファレンス](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)   
+## <a name="see-also"></a>関連項目  
+ [ランタイム ディレクティブ (rd.xml) 構成ファイル リファレンス](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)   
  [ランタイム ディレクティブ ポリシーの設定](../../../docs/framework/net-native/runtime-directive-policy-settings.md)
+

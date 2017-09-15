@@ -1,48 +1,54 @@
 ---
-title: "Web およびソケットのアクセス許可 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "ネットワーク"
-  - "位置 [.NET Framework]、受け入れ"
-  - "ソケット、アクセス許可"
-  - "ネットワーク、アクセス許可"
-  - "インターネット、アクセス許可"
-  - "ネットワーク リソース"
-  - "SocketPermission クラス、SocketPermission クラスについて"
-  - "位置 [.NET Framework]、接続"
-  - "WebPermission クラス、WebPermission クラスについて"
-  - "アクセス許可 [.NET Framework]、ソケット"
-  - "セキュリティ [.NET Framework]、インターネット"
-  - "位置 [.NET Framework]、付与"
+title: "Web およびソケットのアクセス許可"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- VB
+- CSharp
+- C++
+- jsharp
+helpviewer_keywords:
+- Networking
+- positions [.NET Framework], accepting
+- sockets, permissions
+- network, permissions
+- Internet, permissions
+- Network Resources
+- SocketPermission class, about SocketPermission class
+- positions [.NET Framework], connecting
+- WebPermission class, about WebPermission class
+- permissions [.NET Framework], sockets
+- security [.NET Framework], Internet
+- positions [.NET Framework], granting
 ms.assetid: d51ad8cb-03ae-4a51-bfcd-cfcf6b98afa9
 caps.latest.revision: 9
-author: "mcleblanc"
-ms.author: "markl"
-manager: "markl"
-caps.handback.revision: 9
+author: mcleblanc
+ms.author: markl
+manager: markl
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 6071c69799cf289ad0ecf163dc2de038efefecc1
+ms.contentlocale: ja-jp
+ms.lasthandoff: 08/21/2017
+
 ---
-# Web およびソケットのアクセス許可
-<xref:System.Net> の名前空間を使用してアプリケーションのインターネットのセキュリティは <xref:System.Net.WebPermission> と <xref:System.Net.SocketPermission> クラスが提供されます。  **\[WebPermission\]** のクラスが URI のデータが必要か、またはインターネットに URI に役立つアプリケーションの権限を制御します。  **\[SocketPermission\]** クラスは、ローカル ポートのデータを受け入れるか、ソケット ホストのポート番号、および転送プロトコルのような住所で転送プロトコルを使用して、リモート デバイスに連絡するに <xref:System.Net.Sockets.Socket> を使用するアプリケーションの権限を制御します。  
+# <a name="web-and-socket-permissions"></a>Web およびソケットのアクセス許可
+<xref:System.Net> 名前空間を使用したアプリケーションのインターネット セキュリティは、<xref:System.Net.WebPermission> クラスと <xref:System.Net.SocketPermission> クラスで提供されます。 **WebPermission** クラスは、URI からデータを要求するか、URI をインターネットに提供するアプリケーションの権限を制御します。 **SocketPermission** クラスは、ソケットのホスト、ポート番号、およびトランスポート プロトコルに基づいて、アプリケーションが <xref:System.Net.Sockets.Socket> を使用してローカル ポートでデータを受け入れる権利、または別のアドレスでトランスポート プロトコルを使用してリモート デバイスに接続する権利を制御します。  
   
- アクセス許可、クラスを使用するかは、のアプリケ ション タイプによって。  <xref:System.Net.WebRequest> と子孫を使用するアプリケーションは、アクセス許可を管理するに **\[WebPermission\]** クラスを使用する必要があります。  ソケット レベルのアクセスを使用するアプリケーションは、アクセス許可を管理するに **\[SocketPermission\]** クラスを使用する必要があります。  
+ 使用するアクセス許可クラスは、アプリケーションの種類によって変わります。 <xref:System.Net.WebRequest> とその子孫を使用するアプリケーションでアクセス許可を管理するには、**WebPermission** クラスを使用するようにします。 ソケットレベルのアクセスを使用するアプリケーションでアクセス許可を管理するには、**SocketPermission** クラスを使用するようにします。  
   
- **\[WebPermission\]** と **\[SocketPermission\]** は、2 種類のアクセス許可を定義します: 受け入れ、接続します。  承認はアプリケーションに別のパーティーからフォワード接続を応答権限を与えます。  接続をアプリケーションに別のパーティーへの接続を開始する権限を与えます。  
+ **WebPermission** と **SocketPermission** は、受け入れと接続という 2 つのアクセス許可を定義します。 受け入れは、別のパーティーからの受信接続に応答する権利をアプリケーションに付与します。 接続は、別のパーティーへの接続を開始する権利をアプリケーションに付与します。  
   
- **\[SocketPermission\]** のインスタンスに、承認は、アプリケーションがローカル配送先住所を接続を受け付けるできることを示します; アプリケーションがリモート \(またはローカル\) 配送先住所に接続できることを示します接続します。  
+ **SocketPermission** インスタンスの場合、受け入れとは、アプリケーションがローカル トランスポート アドレスで受信接続を受け入れ可能であることを意味し、接続とは、アプリケーションが何らかのリモート (またはローカル) トランスポート アドレスに接続できることを意味します。  
   
- **\[WebPermission\]** のインスタンスに、承認は、アプリケーションが世界に **\[WebPermission\]** によって制御される URI をエクスポートするということです; \(、またはローカルかどうか\) アプリケーションでその URI にアクセスできるようにする接続します。  
+ **WebPermission** インスタンスの場合、受け入れとは、**WebPermission** が制御する URI を世界にエクスポートできることを意味し、接続とは、アプリケーションがその URI (リモートまたはローカル) にアクセスできることを意味します。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [セキュリティ](../../../docs/standard/security/index.md)   
  [ネットワーク プログラミングにおけるセキュリティ](../../../docs/framework/network-programming/security-in-network-programming.md)
+

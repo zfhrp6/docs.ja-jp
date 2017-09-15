@@ -1,36 +1,41 @@
 ---
-title: "方法: Tlbimp.exe を使用してプライマリ相互運用機能アセンブリを生成する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "プライマリ相互運用機能アセンブリ, 生成"
-  - "Tlbimp.exe"
-  - "タイプ ライブラリ インポーター"
+title: "方法: Tlbimp.exe を使用してプライマリ相互運用機能アセンブリを生成する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- VB
+- CSharp
+- C++
+- jsharp
+helpviewer_keywords:
+- primary interop assemblies, generating
+- Tlbimp.exe
+- Type Library Importer
 ms.assetid: 5419011c-6e57-40f6-8c65-386db8f7a651
 caps.latest.revision: 10
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 10
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 253fb49742cc1969a5412248b01be295a45c282f
+ms.contentlocale: ja-jp
+ms.lasthandoff: 08/21/2017
+
 ---
-# 方法: Tlbimp.exe を使用してプライマリ相互運用機能アセンブリを生成する
+# <a name="how-to-generate-primary-interop-assemblies-using-tlbimpexe"></a>方法: Tlbimp.exe を使用してプライマリ相互運用機能アセンブリを生成する
 プライマリ相互運用機能アセンブリを生成するには、次の 2 つの方法があります。  
   
--   [!INCLUDE[winsdklong](../../../includes/winsdklong-md.md)] によって提供される[タイプ ライブラリ インポーター \(Tlbimp.exe\)](../../../docs/framework/tools/tlbimp-exe-type-library-importer.md) を使用します。  
+-   [!INCLUDE[winsdklong](../../../includes/winsdklong-md.md)] によって提供される[タイプ ライブラリ インポーター (Tlbimp.exe)](../../../docs/framework/tools/tlbimp-exe-type-library-importer.md) を使用します。  
   
-     プライマリ相互運用機能アセンブリを生成する最も直接的な方法は、[Tlbimp.exe \(タイプ ライブラリ インポーター\)](../../../docs/framework/tools/tlbimp-exe-type-library-importer.md) を使用することです。  Tlbimp.exe は、次の保護機能を提供します。  
+     プライマリ相互運用機能アセンブリを生成する最も簡単な方法は、[Tlbimp.exe (タイプ ライブラリ インポーター)](../../../docs/framework/tools/tlbimp-exe-type-library-importer.md) を使用することです。 Tlbimp.exe は、次の保護機能を提供します。  
   
     -   新規の相互運用機能アセンブリを作成するときには、その前に登録されている他のプライマリ相互運用機能アセンブリを調べて、入れ子になったタイプ ライブラリの参照がないかを確認してください。  
   
@@ -40,42 +45,43 @@ caps.handback.revision: 10
   
     -   プライマリ相互運用機能アセンブリではない依存アセンブリへの参照を追加した場合は、プライマリ相互運用機能アセンブリの生成に失敗します。  
   
--   C\# などの共通言語仕様 \(CLS\) に準拠した言語を使用して、ソース コードで手動によりプライマリ相互運用機能アセンブリを作成します。  この方法は、タイプ ライブラリが使用できない場合に便利です。  
+-   C# などの共通言語仕様 (CLS) に準拠した言語を使用して、ソース コードで手動によりプライマリ相互運用機能アセンブリを作成します。 この方法は、タイプ ライブラリが使用できない場合に便利です。  
   
- 厳密な名前でアセンブリに署名するには、暗号キー ペアが必要です。  詳しくは、「[キー ペアを作成する](../../../docs/framework/app-domains/how-to-create-a-public-private-key-pair.md)」を参照してください。  
+ 厳密な名前でアセンブリに署名するには、暗号キー ペアが必要です。 詳細については、「[キー ペアを作成する](../../../docs/framework/app-domains/how-to-create-a-public-private-key-pair.md)」を参照してください。  
   
-### Tlbimp.exe を使用してプライマリ相互運用機能アセンブリを生成する方法  
+### <a name="to-generate-a-primary-interop-assembly-using-tlbimpexe"></a>Tlbimp.exe を使用してプライマリ相互運用機能アセンブリを生成する方法  
   
-1.  コマンド プロンプトで次のように入力します。  
+1.  コマンド プロンプトで、次のコマンドを入力します。  
   
-     **tlbimp** *tlbfile*  **\/primary\/keyfile:** *filename* **\/out:** *assemblyname*  
+     **tlbimp** *tlbfile*  **/primary /keyfile:** *filename* **/out:** *assemblyname*  
   
-     このコマンドで、*tlbfile* は COM タイプ ライブラリを含むファイル、*filename* はキー ペアを含むコンテナーまたはファイルの名前、*assemblyname* は厳密な名前で署名するアセンブリの名前です。  
+     このコマンドの *tlbfile* は COM タイプ ライブラリを含むファイル、*filename* はキー ペアを含むコンテナーまたはファイルの名前、*assemblyname* は厳密な名前で署名するアセンブリの名前です。  
   
- プライマリ相互運用機能アセンブリは、他のプライマリ相互運用機能アセンブリのみを参照できます。  アセンブリがサードパーティの COM タイプ ライブラリからタイプを参照する場合、プライマリ相互運用機能アセンブリを生成する前に、発行者からプライマリ相互運用機能アセンブリを取得する必要があります。  発行者である場合は、参照元のプライマリ相互運用機能アセンブリを生成する前に、依存タイプ ライブラリのプライマリ相互運用機能アセンブリを生成する必要があります。  
+ プライマリ相互運用機能アセンブリは、他のプライマリ相互運用機能アセンブリのみを参照できます。 アセンブリがサードパーティの COM タイプ ライブラリからタイプを参照する場合、プライマリ相互運用機能アセンブリを生成する前に、発行者からプライマリ相互運用機能アセンブリを取得する必要があります。 発行者である場合は、参照元のプライマリ相互運用機能アセンブリを生成する前に、依存タイプ ライブラリのプライマリ相互運用機能アセンブリを生成する必要があります。  
   
- 元のタイプ ライブラリとは異なるバージョン番号の依存プライマリ相互運用機能アセンブリは、現在のディレクトリにインストールされている場合、検出できません。  依存プライマリ相互運用機能アセンブリを Windows レジストリに登録するか、または **\/reference** オプションを使用して、Tlbimp.exe が依存 DLL を検出できるようにする必要があります。  
+ 元のタイプ ライブラリとは異なるバージョン番号の依存プライマリ相互運用機能アセンブリは、現在のディレクトリにインストールされている場合、検出できません。 依存プライマリ相互運用機能アセンブリを Windows レジストリに登録するか、または **/reference** オプションを使用して、Tlbimp.exe が依存 DLL を検出できるようにする必要があります。  
   
- 複数のバージョンのタイプ ライブラリをラップすることもできます。  その方法については、「[How to: Wrap Multiple Versions of Type Libraries](http://msdn.microsoft.com/ja-jp/79eefe04-a770-4bc3-8ea2-e90ddb8ec31f)」を参照してください。  
+ 複数のバージョンのタイプ ライブラリをラップすることもできます。 その方法については、「[方法: 複数のバージョンのタイプ ライブラリをラップする](http://msdn.microsoft.com/en-us/79eefe04-a770-4bc3-8ea2-e90ddb8ec31f)」を参照してください。  
   
-## 使用例  
- 次の例は、COM タイプ ライブラリ `LibUtil.tlb` をインポートし、アセンブリ `LibUtil.dll` にキー ファイル `CompanyA.snk` を使用して厳密な名前で署名します。  この例では、特定の名前空間名を省略することにより、既定の名前空間 `LibUtil` を生成します。  
+## <a name="example"></a>例  
+ 次の例は、COM タイプ ライブラリ `LibUtil.tlb` をインポートし、アセンブリ `LibUtil.dll` にキー ファイル `CompanyA.snk` を使用して厳密な名前で署名します。 この例では、特定の名前空間名を省略することにより、既定の名前空間 `LibUtil` を生成します。  
   
 ```  
 tlbimp LibUtil.tlb /primary /keyfile:CompanyA.snk /out:LibUtil.dll  
 ```  
   
- 名前を \(*VendorName*.*LibraryName* の名前付けガイドラインを使用して\) より分かりやすくするために、次の例では既定のアセンブリ ファイル名と名前空間名をオーバーライドします。  
+ 名前を (*VendorName*.*LibraryName* の名前付けガイドラインを使用して) より分かりやすくするために、次の例では既定のアセンブリ ファイル名と名前空間名をオーバーライドします。  
   
 ```  
 tlbimp LibUtil.tlb /primary /keyfile:CompanyA.snk /namespace:CompanyA.LibUtil /out:CompanyA.LibUtil.dll  
 ```  
   
- 次の例では、`CompanyA.LibUtil.dll` を参照する `MyLib.tlb` をインポートし、アセンブリ `CompanyB.MyLib.dll` にキー ファイル `CompanyB.snk` を使用して厳密な名前で署名します。  名前空間 `CompanyB.MyLib` は、既定の名前空間名をオーバーライドします。  
+ 次の例では、`CompanyA.LibUtil.dll` を参照する `MyLib.tlb` をインポートし、アセンブリ `CompanyB.MyLib.dll` にキー ファイル `CompanyB.snk` を使用して厳密な名前で署名します。 名前空間 `CompanyB.MyLib` は、既定の名前空間名をオーバーライドします。  
   
 ```  
 tlbimp MyLib.tlb /primary /keyfile:CompanyB.snk /namespace:CompanyB.MyLib /reference:CompanyA.LibUtil.dll /out:CompanyB.MyLib.dll  
 ```  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [方法: プライマリ相互運用機能アセンブリを登録する](../../../docs/framework/interop/how-to-register-primary-interop-assemblies.md)
+

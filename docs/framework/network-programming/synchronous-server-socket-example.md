@@ -1,30 +1,35 @@
 ---
-title: "同期サーバー ソケットの例 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "同期サーバー ソケット"
-  - "ソケット、コード例"
-  - "ソケット、同期サーバー ソケット"
+title: "同期サーバー ソケットの例"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- VB
+- CSharp
+- C++
+- jsharp
+helpviewer_keywords:
+- synchronous server sockets
+- sockets, code examples
+- sockets, synchronous server sockets
 ms.assetid: 5916c764-879f-4716-99fb-1d21c6237f1c
 caps.latest.revision: 8
-author: "mcleblanc"
-ms.author: "markl"
-manager: "markl"
-caps.handback.revision: 8
+author: mcleblanc
+ms.author: markl
+manager: markl
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 6918042ac04a24f646ce8fd10a86d64c2aa4fd39
+ms.contentlocale: ja-jp
+ms.lasthandoff: 08/21/2017
+
 ---
-# 同期サーバー ソケットの例
-次の例では、クライアントから接続要求を受け取るサーバーを作成します。  サーバーはソケット同期によって基づいているので、クライアントから接続を待つ間、サーバー アプリケーションの実行が中止されます。  アプリケーションはクライアントの文字列が表示され、コンソールの文字列を表示し、クライアントには文字列をエコーします。  The string クライアントから文字列「」を\<EOF\>メッセージの終了を通知するために含める必要があります。  
+# <a name="synchronous-server-socket-example"></a>同期サーバー ソケットの例
+次のサンプル プログラムでは、クライアントからの接続要求を受け取るサーバーが作成されます。 このサーバーは同期ソケットで構築されます。そのため、サーバー アプリケーションの実行は、クライアントからの接続を待っている間、一時停止となります。 このアプリケーションはクライアントから文字列を受信し、それをコンソールに表示し、クライアントにエコー バックします。 クライアントからの文字列には、文字列 "\<EOF>" が含まれている必要があります。これは、メッセージの終わりを信号で伝えるためのものです。  
   
 ```vb  
 Imports System  
@@ -86,7 +91,6 @@ Public Class SynchronousSocketListener
     End Sub  
   
 End Class 'SynchronousSocketListener  
-  
 ```  
   
 ```csharp  
@@ -165,7 +169,8 @@ public class SynchronousSocketListener {
 }  
 ```  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [同期クライアント ソケットの例](../../../docs/framework/network-programming/synchronous-client-socket-example.md)   
  [同期サーバー ソケットの使用](../../../docs/framework/network-programming/using-a-synchronous-server-socket.md)   
  [ソケットのコード例](../../../docs/framework/network-programming/socket-code-examples.md)
+

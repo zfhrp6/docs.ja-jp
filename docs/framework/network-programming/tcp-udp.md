@@ -1,51 +1,57 @@
 ---
-title: "TCP/UDP | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "プロトコル、TCP/UDP"
-  - "ネットワーク リソース、TCP/UDP"
-  - "送信 (データを)、TCP/UDP"
-  - "TCP/UDP"
-  - "TcpClient クラス、TcpClient クラスの概要"
-  - "アプリケーション プロトコル、TCP/UDP"
-  - "受信 (データを)、TCP/UDP"
-  - "TcpListener クラス、TcpListener クラスの概要"
-  - "Socket クラス、Socket クラスの概要"
-  - "UDP"
-  - "データ要求、TCP/UDP"
-  - "要求 (インターネットからデータを)、TCP/UDP"
-  - "インターネット、TCP/UDP"
+title: TCP-UDP
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- VB
+- CSharp
+- C++
+- jsharp
+helpviewer_keywords:
+- protocols, TCP/UDP
+- network resources, TCP/UDP
+- sending data, TCP/UDP
+- TCP/UDP
+- TcpClient class, about TcpClient class
+- application protocols, TCP/UDP
+- receiving data, TCP/UDP
+- TcpListener class, about TcpListener class
+- Socket class, about Socket class
+- UDP
+- data requests, TCP/UDP
+- requesting data from Internet, TCP/UDP
+- Internet, TCP/UDP
 ms.assetid: df29b4b0-49e8-4923-82b9-13150dfc40f5
 caps.latest.revision: 8
-author: "mcleblanc"
-ms.author: "markl"
-manager: "markl"
-caps.handback.revision: 8
+author: mcleblanc
+ms.author: markl
+manager: markl
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: f067d24b59fbb5b49803605a625cef52d12fdbea
+ms.contentlocale: ja-jp
+ms.lasthandoff: 08/21/2017
+
 ---
-# TCP/UDP
-アプリケーションは、サービス <xref:System.Net.Sockets.TcpClient>、<xref:System.Net.Sockets.TcpListener>と <xref:System.Net.Sockets.UdpClient> クラスの伝送制御 Protocol \(TCP\) およびユーザー データグラム Protocol \(UDP\) の使用できます。  これらのプロトコル クラスは、<xref:System.Net.Sockets.Socket?displayProperty=fullName> クラスの上に構築、移動のデータの詳細を使用します。  
+# <a name="tcp-udp"></a>TCP-UDP
+アプリケーションは、<xref:System.Net.Sockets.TcpClient>、<xref:System.Net.Sockets.TcpListener>、<xref:System.Net.Sockets.UdpClient> クラスで伝送制御プロトコル (TCP) サービスとユーザー データグラム プロトコル (UDP) サービスを利用できます。 これらのプロトコルのクラスは <xref:System.Net.Sockets.Socket?displayProperty=fullName> クラスの上に構築され、データ転送の詳細を処理します。  
   
- プロトコル クラスは、管理のステータス情報やセキュリティ対応するソケットの設定の詳細を把握することの間接費なしでネットワーク サービスに簡単で、簡単なアクセスを提供するに **\[ソケット\]** クラスの同期方法を使用します。  への **\[ソケット\]** 非同期な方法を使用するには、<xref:System.Net.Sockets.NetworkStream> クラスによって指定された非同期な方法を使用できます。  **\[ソケット\]** への機能にアクセスするには、プロトコル クラスによって公開されていない **\[ソケット\]** クラスを使用して分類します。  
+ このプロトコル クラスは **Socket** クラスの同期メソッドを利用し、ネットワーク サービスへの簡単なアクセスを提供します。状態情報を維持する必要がなく、プロトコル特有のソケットを設定するための詳細を知る必要もありません。 非同期 **Socket** メソッドを使用するには、<xref:System.Net.Sockets.NetworkStream> クラスが提供する非同期メソッドを使用できます。 プロトコル クラスでは公開されない **Socket** クラスの機能にアクセスするには、**Socket** クラスを使用する必要があります。  
   
- **TcpClient** と **TcpListener** は **\[NetworkStream\]** クラスを使用してネットワークを表します。  ネットワーク ストリームを戻すために <xref:System.Net.Sockets.TcpClient.GetStream%2A> 方法を使用し、ベースの <xref:System.Net.Sockets.NetworkStream.Read%2A> と <xref:System.Net.Sockets.NetworkStream.Write%2A> 方法を追加します。  **\[NetworkStream\]** はプロトコル クラスの下にあるソケットを所有ので、それを閉じるにはソケットに影響しません。  
+ **TcpClient** と **TcpListener** は、**NetworkStream** クラスを利用するネットワークを表します。 <xref:System.Net.Sockets.TcpClient.GetStream%2A> メソッドを利用してネットワーク ストリームを返し、ストリームの <xref:System.Net.Sockets.NetworkStream.Read%2A> メソッドと <xref:System.Net.Sockets.NetworkStream.Write%2A> メソッドを呼び出します。 **NetworkStream** にはプロトコル クラスの基盤となるソケットがありません。そのため、閉じてもソケットに影響はありません。  
   
- **UdpClient** のクラスは、UDP データグラムを保留にバイトのアレイを使用します。  仕入データグラムを表示する場合は、ネットワーク、<xref:System.Net.Sockets.UdpClient.Receive%2A> 方法にデータを送信するに <xref:System.Net.Sockets.UdpClient.Send%2A> 方法を使用します。  
+ **UdpClient** クラスはバイトの配列を利用し、UDP データグラムを保持します。 <xref:System.Net.Sockets.UdpClient.Send%2A> メソッドを利用してデータをネットワークに送信し、<xref:System.Net.Sockets.UdpClient.Receive%2A> メソッドを利用し、入ってくるデータグラムを受信します。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [TCP サービスの使用](../../../docs/framework/network-programming/using-tcp-services.md)   
  [UDP サービスの使用](../../../docs/framework/network-programming/using-udp-services.md)   
  [ネットワーク上でストリームを使用する](../../../docs/framework/network-programming/using-streams-on-the-network.md)   
  [非同期サーバー ソケットの使用](../../../docs/framework/network-programming/using-an-asynchronous-server-socket.md)   
  [非同期クライアント ソケットの使用](../../../docs/framework/network-programming/using-an-asynchronous-client-socket.md)   
  [アプリケーション プロトコルの使用](../../../docs/framework/network-programming/using-application-protocols.md)
+

@@ -1,28 +1,34 @@
 ---
-title: "カスタムのトークン ハンドラー | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "カスタムのトークン ハンドラー"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 5062669f-8bfc-420a-a25d-d8ab992ab10e
 caps.latest.revision: 4
-author: "BrucePerlerMS"
-ms.author: "bruceper"
-manager: "mbaldwin"
-caps.handback.revision: 4
+author: BrucePerlerMS
+ms.author: bruceper
+manager: mbaldwin
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: d471e860e74c9a01770c95671401bdbbc23643cb
+ms.contentlocale: ja-jp
+ms.lasthandoff: 08/21/2017
+
 ---
-# カスタムのトークン ハンドラー
-このトピックでは、WIF にトークンの処理にどのように使用するかトークン ハンドラーについて説明します。  WIF トピックでは、既定ではサポートされていないトークンの種類のカスタム トークン ハンドラーを作成する必要のあるものについて説明します。  
+# <a name="custom-token-handlers"></a>カスタムのトークン ハンドラー
+このトピックでは、WIF のトークン ハンドラーと、それらを使用してトークンをどのように処理するかを説明します。 また、WIF で既定ではサポートされていないトークンの種類用にカスタム トークン ハンドラーを作成するために必要なことについても説明します。  
   
-## WIF トークン ハンドラーの概要  
- WIF は、セキュリティ トークンのハンドラーに、作成するために、書き込み、依存し、証明書利用者の \(RP\) アプリケーションまたはセキュリティ トークン サービス \(STS\) のトークンを検証します。  トークン ハンドラーは WIF パイプラインのカスタム トークン ハンドラーを追加したり、既存のトークン ハンドラーがトークンを管理する方法をカスタマイズする機能拡張ポイントです。  WIF、必要に応じて機能を変更できるように変更するか、完全にオーバーライドできる 9 種類の組み込みセキュリティ トークンのハンドラーを提供します。  
+## <a name="introduction-to-token-handlers-in-wif"></a>WIF のトークン ハンドラーの概要  
+ WIF は、証明書利用者 (RP) アプリケーションまたはセキュリティ トークン サービス (STS) のトークンの作成、読み取り、書き込み、および検証を行う際に、セキュリティ トークン ハンドラーに依存します。 トークン ハンドラーは WIF パイプラインでカスタム トークン ハンドラーを追加したり、既存のトークン ハンドラーがトークンを管理する方法をカスタマイズするための機能拡張ポイントです。 WIF では 9 つの組み込みセキュリティ トークン ハンドラーが提供されます。必要に応じて、これらを変更または完全にオーバーライドして機能を変更することができます。  
   
-## WIF の組み込みセキュリティ トークンのハンドラー  
- WIF 4.5 は、抽象基本クラスから派生 <xref:System.IdentityModel.Tokens.SecurityTokenHandler>9 種類のセキュリティ トークンのハンドラー クラスが含まれています:  
+## <a name="built-in-security-token-handlers-in-wif"></a>WIF の組み込みセキュリティ トークン ハンドラー  
+ WIF 4.5 には、抽象基本クラス <xref:System.IdentityModel.Tokens.SecurityTokenHandler> から派生する次の 9 つのセキュリティ トークン ハンドラー クラスが含まれています。  
   
 -   <xref:System.IdentityModel.Tokens.EncryptedSecurityTokenHandler>  
   
@@ -42,14 +48,14 @@ caps.handback.revision: 4
   
 -   <xref:System.IdentityModel.Tokens.X509SecurityTokenHandler>  
   
-## カスタム トークン ハンドラーの追加  
- 簡単な Web トークン \(SWT\) と JSON Web トークン \(JWT\) など、トークンの種類に、WIF に用意されている組み込みのトークン ハンドラーはありません。  これらのトークンの種類と組み込みハンドラーがないそのほか、カスタム トークン ハンドラーを作成するには、次の手順を実行する必要があります。  
+## <a name="adding-a-custom-token-handler"></a>カスタム トークン ハンドラーの追加  
+ SWT (Simple Web Token) や JWT (JSON Web Token) など、一部のトークン型には、WIF によって提供される組み込みトークン ハンドラーがありません。 これらのトークン型や、組み込みハンドラーがない他のトークン型の場合は、以下の手順を実行して、カスタム トークン ハンドラーを作成する必要があります。  
   
-#### カスタム トークン ハンドラーの追加  
+#### <a name="adding-a-custom-token-handler"></a>カスタム トークン ハンドラーの追加  
   
-1.  <xref:System.IdentityModel.Tokens.SecurityTokenHandler>から派生する新しいクラスを作成します。  
+1.  <xref:System.IdentityModel.Tokens.SecurityTokenHandler> から派生する新しいクラスを作成します。  
   
-2.  次のメソッドをオーバーライドして、独自の実装を提供する:  
+2.  以下のメソッドをオーバーライドし、独自の実装を指定します。  
   
     -   <xref:System.IdentityModel.Tokens.SecurityTokenHandler.CanReadToken%2A>  
   
@@ -63,9 +69,9 @@ caps.handback.revision: 4
   
     -   <xref:System.IdentityModel.Tokens.SecurityTokenHandler.ValidateToken%2A>  
   
-3.  WIF に適用する **\<system.identityModel\>** のセクション内の *Web.config* または *App.config* の新しいカスタム トークン ハンドラーへの参照を追加します。  たとえば、次の構成のマークアップは **MyCustomTokenHandler** という名前の **CustomToken** の名前空間を設定する新しいトークン ハンドラーを指定します。  
+3.  WIF に適用される **\<system.identityModel>** セクション内の、*Web.config* または *App.config* ファイルの新しいカスタム トークン ハンドラーへの参照を追加します。 たとえば、次の構成マークアップでは、**CustomToken** 名前空間に存在する **MyCustomTokenHandler** という名前の新しいトークン ハンドラーを指定します。  
   
-    ```  
+    ```xml  
     <system.identityModel>  
         <identityConfiguration saveBootstrapContext="true">  
             <securityTokenHandlers>  
@@ -75,15 +81,16 @@ caps.handback.revision: 4
     </system.identityModel>  
     ```  
   
-     既に組み込みのトークン ハンドラーを持つ型トークンを処理する独自のトークン ハンドラーを提供する場合は、既定のハンドラーを削除して、カスタム ハンドラーを使用するように **\<remove\>** の要素を追加する必要があることに注意してください。  たとえば、次の構成にカスタム トークン ハンドラーで既定値を置き換えます <xref:System.IdentityModel.Tokens.SamlSecurityTokenHandler> :  
+     既に組み込みトークン ハンドラーがあるトークン型を処理する独自のトークン ハンドラーを指定する場合は、**\<remove>** 要素を追加して、既定のハンドラーを削除し、代わりにカスタム ハンドラーを使用する必要があります。 たとえば、次の構成では、既定の <xref:System.IdentityModel.Tokens.SamlSecurityTokenHandler> をカスタム トークン ハンドラーに置き換えます。  
   
-    ```  
+    ```xml  
     <system.identityModel>  
         <identityConfiguration saveBootstrapContext="true">  
             <securityTokenHandlers>  
-                <remove type=”System.IdentityModel.Tokens.SamlSecurityTokenHandler, System.IdentityModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=abcdefg123456789”>  
+                <remove type="System.IdentityModel.Tokens.SamlSecurityTokenHandler, System.IdentityModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=abcdefg123456789">  
                 <add type="CustomToken.MyCustomTokenHandler, CustomToken" />  
             </securityTokenHandlers>  
         </identityConfiguration>  
     </system.identityModel>  
     ```
+

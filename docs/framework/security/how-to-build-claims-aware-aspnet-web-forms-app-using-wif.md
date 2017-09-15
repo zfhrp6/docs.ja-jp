@@ -1,73 +1,79 @@
 ---
-title: "方法: WIF を使用してクレーム対応 ASP.NET Web フォーム アプリケーションをビルドする | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "方法: WIF を使用してクレーム対応 ASP.NET Web フォーム アプリケーションをビルドする"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: efb264dd-f47b-49a9-85ee-9f45d4425765
 caps.latest.revision: 7
-author: "BrucePerlerMS"
-ms.author: "bruceper"
-manager: "mbaldwin"
-caps.handback.revision: 7
+author: BrucePerlerMS
+ms.author: bruceper
+manager: mbaldwin
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: d5b81e20ed1b39c7750329718729905484eb7fa1
+ms.contentlocale: ja-jp
+ms.lasthandoff: 08/21/2017
+
 ---
-# 方法: WIF を使用してクレーム対応 ASP.NET Web フォーム アプリケーションをビルドする
-## 対象  
+# <a name="how-to-build-claims-aware-aspnet-web-forms-application-using-wif"></a>方法: WIF を使用してクレーム対応 ASP.NET Web フォーム アプリケーションをビルドする
+## <a name="applies-to"></a>対象  
   
--   Microsoft® Windows® の ID Foundation \(WIF\)  
+-   Microsoft® Windows® Identity Foundation (WIF)  
   
--   Web フォーム ASP.NET®  
+-   ASP.NET® Web フォーム  
   
-## 概要  
- ここでは、単純な要求対応の ASP.NET Web フォーム アプリケーションを作成する詳細な手順を示します。  また、方法についてフェデレーションな認証の正常な実装の単純な要求対応の ASP.NET Web フォーム アプリケーションをテストできます。  ここでは、セキュリティ トークン Services \(STS\) を作成するための詳細な手順がなく、既に STS を構成していることを前提としています。  
+## <a name="summary"></a>概要  
+ この操作方法では、簡単なクレーム対応 ASP.NET Web フォーム アプリケーションを作成するための詳細な手順を示します。 また、フェデレーション認証を正常に実装するために簡単なクレーム対応 ASP.NET Web フォーム アプリケーションをテストする方法も示します。 この操作方法には、セキュリティ トークン サービス (STS) の詳細な作成手順は含まれていません。既に STS が構成済みであると想定します。  
   
-## 内容  
+## <a name="contents"></a>目次  
   
--   対象  
+-   目的  
   
--   手順の概要  
+-   手順の要約  
   
--   手順 1 \- 単純な ASP.NET Web フォーム アプリケーションを作成します。  
+-   手順 1 – 簡単な ASP.NET Web フォーム アプリケーションを作成する  
   
--   手順 2 \- クレームベース認証用の ASP.NET Web フォーム アプリケーションを構成します。  
+-   手順 2 – クレーム ベースの認証用の ASP.NET Web フォーム アプリケーションを構成する  
   
--   手順 3 \- ソリューションをテストします。  
+-   手順 3 – ソリューションをテストする  
   
-## 対象  
+## <a name="objectives"></a>目的  
   
--   クレームベース認証用の ASP.NET Web フォーム アプリケーションを構成します。  
+-   クレーム ベースの認証用の ASP.NET Web フォーム アプリケーションを構成する  
   
--   正常な要求対応の ASP.NET Web フォーム アプリケーションをテストします。  
+-   クレーム対応 ASP.NET Web フォーム アプリケーションが正常であることをテストする  
   
-## 手順の概要  
+## <a name="summary-of-steps"></a>手順の要約  
   
--   手順 1 \- 単純な ASP.NET Web フォーム アプリケーションを作成します。  
+-   手順 1 – 簡単な ASP.NET Web フォーム アプリケーションを作成する  
   
--   手順 2 \- フェデレーションな認証用の ASP.NET Web フォーム アプリケーションを構成します。  
+-   手順 2 – フェデレーション認証用の ASP.NET Web フォーム アプリケーションを構成する  
   
--   手順 3 \- ソリューションをテストします。  
+-   手順 3 – ソリューションをテストする  
   
-## 手順 1 \- 単純な ASP.NET Web フォーム アプリケーションを作成します。  
+## <a name="step-1--create-a-simple-aspnet-web-forms-application"></a>手順 1 – 簡単な ASP.NET Web フォーム アプリケーションを作成する  
  この手順では、新しい ASP.NET Web フォーム アプリケーションを作成します。  
   
-#### 単純な ASP.NET アプリケーションを作成するには  
+#### <a name="to-create-a-simple-aspnet-application"></a>簡単な ASP.NET アプリケーションを作成するには  
   
-1.  次に、Visual Studio を起動し、**ファイル**、**新規作成**と **プロジェクト**をクリックします。  
+1.  Visual Studio を起動し、**[ファイル]**、**[新規作成]**、**[プロジェクト]** の順にクリックします。  
   
-2.  **新しいプロジェクト** のペインで、**ASP.NET Web フォーム アプリケーション**をクリックします。  
+2.  **[新しいプロジェクト]** ウィンドウで、**[ASP.NET Web フォーム アプリケーション]** をクリックします。  
   
-3.  **名前**では、`TestApp` を入力し、**OK**を押します。  
+3.  **[名前]** で、「`TestApp`」と入力して **[OK]** を押します。  
   
-## 手順 2 \- クレームベース認証用の ASP.NET Web フォーム アプリケーションを構成します。  
- この手順で必要な認識するように ASP.NET Web フォーム アプリケーションの *Web.config 構成ファイル* に構成エントリを追加します。  
+## <a name="step-2--configure-aspnet-web-forms-application-for-claims-based-authentication"></a>手順 2 – クレーム ベースの認証用の ASP.NET Web フォーム アプリケーションを構成する  
+ この手順では、構成エントリを ASP.NET Web フォーム アプリケーションの *Web.config* 構成ファイルに追加して、クレーム対応にします。  
   
-#### クレームベース認証を使用するように ASP.NET アプリケーションを構成するには  
+#### <a name="to-configure-aspnet-application-for-claims-based-authentication"></a>クレーム ベースの認証用の ASP.NET アプリケーションを構成するには  
   
-1.  **\<configuration\>** の開始要素の直後の *Web.config 構成ファイル* に次の構成セクションのエントリを追加します:  
+1.  **\<configuration>** 開始要素のすぐ後の *Web.config* 構成ファイルに、次の構成セクション エントリを追加します。  
   
     ```xml  
     <configSections>  
@@ -76,7 +82,7 @@ caps.handback.revision: 7
     </configSections>  
     ```  
   
-2.  アプリケーションのフェデレーションのメタデータへのアクセスを可能にする **\<location\>** の要素を追加します:  
+2.  次のように、アプリケーションのフェデレーション メタデータへのアクセスを有効にする **\<location>** 要素を追加します。  
   
     ```xml  
     <location path="FederationMetadata">  
@@ -88,7 +94,7 @@ caps.handback.revision: 7
     </location>  
     ```  
   
-3.  ユーザーを拒否するに **\<system.web\>** の要素内に次の構成エントリを追加してネイティブの認証を無効にし、認証を管理できます。は WIF ができます。  
+3.  **\<system.web>** 要素内で以下の構成エントリを追加して、ユーザーを拒否し、ネイティブ認証を無効にし、認証を管理するために WIF を有効にします。  
   
     ```xml  
     <authorization>  
@@ -97,9 +103,9 @@ caps.handback.revision: 7
     <authentication mode="None" />  
     ```  
   
-4.  フェデレーションな認証のモジュールを定義する **\<system.webServer\>** の要素を追加します。  *PublicKeyToken の* 属性が **\<configSections\>** のエントリの *PublicKeyToken の* 属性が、前に追加した同じであることに注意してください:  
+4.  フェデレーション認証用のモジュールを定義する **\<system.webServer>** 要素を追加します。 *PublicKeyToken* 属性は、前の手順で追加した **\<configSections>** エントリの *PublicKeyToken* 属性と同じである必要があることに注意してください。  
   
-    ```  
+    ```xml  
     <system.webServer>  
       <modules>  
         <add name="WSFederationAuthenticationModule" type="System.IdentityModel.Services.WSFederationAuthenticationModule, System.IdentityModel.Services, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" preCondition="managedHandler" />  
@@ -108,7 +114,7 @@ caps.handback.revision: 7
     </system.webServer>  
     ```  
   
-5.  次の Windows ID の基本関連構成エントリを追加し、ASP.NET アプリケーションの URL とポート番号が **\<wsFederation\>** の要素の **\<audienceUris\>** エントリ、**領域** の属性、および **\<wsFederation\>** の要素の **応答** の属性の値が一致することを確認します。  また **発行者** の値がセキュリティ トークン サービスの \(STS\) の URL を満たしていることを確認します。  
+5.  以下の Windows Identity Foundation 関連の構成エントリを追加し、ASP.NET アプリケーションの URL とポート番号が、**\<audienceUris>** エントリ、**\<wsFederation>** 要素の **realm** 属性、および **\<wsFederation>** 要素の **reply** 属性の値と一致することを確認します。 また、**issuer** の値がセキュリティ トークン サービス (STS) URL に適したものであることを確認します。  
   
     ```xml  
     <system.identityModel>  
@@ -132,16 +138,16 @@ caps.handback.revision: 7
     </system.identityModel.services>  
     ```  
   
-6.  [System.IdentityModel](assetId:///System.IdentityModel?qualifyHint=False&amp;autoUpgrade=True) のアセンブリへの参照を追加します。  
+6.  <xref:System.IdentityModel> アセンブリに参照を追加します。  
   
-7.  エラーを得るためにソリューションをコンパイルします。  
+7.  ソリューションをコンパイルして、エラーがないかどうかを確認します。  
   
-## 手順 3 \- ソリューションをテストします。  
- この手順で構成されたクレームベース認証の ASP.NET Web フォーム アプリケーションをテストします。  基本的なテストを実行するには、コードをそのセキュリティ トークン Services \(STS\) によって発行されたトークンの表示の要求追加します。  
+## <a name="step-3--test-your-solution"></a>手順 3 – ソリューションをテストする  
+ この手順では、クレーム ベースの認証用に構成された ASP.NET Web フォーム アプリケーションをテストします。 基本テストを実行するには、セキュリティ トークン サービス (STS) で発行されたトークンでクレームを表示するコードを追加します。  
   
-#### ASP.NET Web をテストするにはクレームベース認証を使用するようにアプリケーションを設定します  
+#### <a name="to-test-your-aspnet-web-form-application-for-claims-based-authentication"></a>クレーム ベースの認証用の ASP.NET Web フォーム アプリケーションをテストするには  
   
-1.  **Default.aspx** ファイルを **TestApp** のプロジェクトで開き、既存のマークアップに置き換えます。:  
+1.  **TestApp** プロジェクトの下にある **Default.aspx** ファイルを開き、既存のマークアップを次のマークアップに置き換えます。  
   
     ```  
     %@ Page Language="C#" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="_Default" %>  
@@ -163,12 +169,12 @@ caps.handback.revision: 7
     </html>  
     ```  
   
-2.  **Default.aspx**を保存し、ファイルによって指定 **Default.aspx.cs**の後ろにコードを開きます。  
+2.  **Default.aspx** を保存し、**Default.aspx.cs** という名前の分離コード ファイルを開きます。  
   
     > [!NOTE]
-    >  **Default.aspx.cs** は、ソリューション エクスプローラーの **Default.aspx** の下に非表示になる場合があります。  **Default.aspx.cs** が表示されない場合は、その横の三角形をクリックして **Default.aspx** を展開します。  
+    >  **Default.aspx.cs** は、ソリューション エクスプローラーで **Default.aspx** の下に隠れていることがあります。 **Default.aspx.cs** が表示されない場合は、**Default.aspx** の横の三角形をクリックして展開します。  
   
-3.  次のコードで **Default.aspx.cs** の **Page\_Load** のメソッドの既存のコードに置き換えます。:  
+3.  **Default.aspx.cs** の **Page_Load** メソッド内の既存のコードを次のコードに置き換えます。  
   
     ```csharp  
     using System;  
@@ -207,8 +213,9 @@ caps.handback.revision: 7
     }  
     ```  
   
-4.  **Default.aspx.cs**を保存し、ソリューションをビルドします。  
+4.  **Default.aspx.cs** を保存して、ソリューションをビルドします。  
   
-5.  **F5** キーを押してソリューションを実行します。  
+5.  **F5** キーを押して、ソリューションを実行します。  
   
-6.  セキュリティ トークン サービスにより、に発行されたトークンの要求を表示するページという名前を付ける必要があります。
+6.  セキュリティ トークン サービスで発行されたトークンでクレームを表示するページが表示されます。
+

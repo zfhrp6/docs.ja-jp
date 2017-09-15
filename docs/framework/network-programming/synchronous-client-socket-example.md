@@ -1,30 +1,35 @@
 ---
-title: "同期クライアント ソケットの例 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "ソケット、コード例"
-  - "同期クライアント ソケット"
-  - "ソケット、同期クライアント ソケット"
+title: "同期クライアント ソケットの例"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- VB
+- CSharp
+- C++
+- jsharp
+helpviewer_keywords:
+- sockets, code examples
+- synchronous client sockets
+- sockets, synchronous client sockets
 ms.assetid: 2c7d5be7-2221-467c-a839-5744ec4d576d
 caps.latest.revision: 8
-author: "mcleblanc"
-ms.author: "markl"
-manager: "markl"
-caps.handback.revision: 8
+author: mcleblanc
+ms.author: markl
+manager: markl
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 759585d1029742f6f45e9f7253282af05accc82e
+ms.contentlocale: ja-jp
+ms.lasthandoff: 08/21/2017
+
 ---
-# 同期クライアント ソケットの例
-次の例では、サーバーに接続するクライアントを作成します。  クライアントはソケット同期して構築ため、サーバーが応答を返すまでクライアント アプリケーションの実行が中止されます。  アプリケーション サーバーには、文字列を送信し、次にコンソール サーバーによって返された文字列が表示されます。  
+# <a name="synchronous-client-socket-example"></a>同期クライアント ソケットの例
+次のサンプル プログラムでは、サーバーに接続するクライアントが作成されます。 このクライアントは同期ソケットで構築されます。そのため、クライアント アプリケーションの実行は、サーバーが応答を返すまで一時停止となります。 このアプリケーションは文字列をサーバーに送信し、サーバーが返した文字列をコンソールに表示します。  
   
 ```vb  
 Imports System  
@@ -92,7 +97,7 @@ public class SynchronousSocketClient {
         try {  
             // Establish the remote endpoint for the socket.  
             // This example uses port 11000 on the local computer.  
-            IPHostEntry ipHostInfo = Dns.Resolve(Dns.GetHostName())  
+            IPHostEntry ipHostInfo = Dns.Resolve(Dns.GetHostName());  
             IPAddress ipAddress = ipHostInfo.AddressList[0];  
             IPEndPoint remoteEP = new IPEndPoint(ipAddress,11000);  
   
@@ -142,7 +147,8 @@ public class SynchronousSocketClient {
 }  
 ```  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [同期サーバー ソケットの例](../../../docs/framework/network-programming/synchronous-server-socket-example.md)   
  [同期クライアント ソケットの使用](../../../docs/framework/network-programming/using-a-synchronous-client-socket.md)   
  [ソケットのコード例](../../../docs/framework/network-programming/socket-code-examples.md)
+

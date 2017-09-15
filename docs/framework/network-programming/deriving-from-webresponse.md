@@ -1,56 +1,62 @@
 ---
-title: "WebResponse からの派生 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "WebResponse からの派生"
+title: "WebResponse からの派生"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- VB
+- CSharp
+- C++
+- jsharp
+helpviewer_keywords:
+- Deriving from WebResponse
 ms.assetid: f11d4866-a199-4087-9306-a5a4c18b13db
 caps.latest.revision: 7
-author: "mcleblanc"
-ms.author: "markl"
-manager: "markl"
-caps.handback.revision: 7
+author: mcleblanc
+ms.author: markl
+manager: markl
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 627e5170dbf33b9b42ec7e46e77e6ff2fa874463
+ms.contentlocale: ja-jp
+ms.lasthandoff: 08/21/2017
+
 ---
-# WebResponse からの派生
-<xref:System.Net.WebResponse> クラスは、.NET Framework プラグインの可能なプロトコル モデルを満たすプロトコル対応する応答を作成する基本およびメソッド プロパティを提供する抽象的な基本クラスです。  リソースのデータを要求するに <xref:System.Net.WebRequest> クラスを使用するアプリケーションは **WebResponse**の応答が表示されます。  **WebResponse** プロトコル対応その子孫は **WebResponse** クラスの抽象的なメンバを行う必要があります。  
+# <a name="deriving-from-webresponse"></a>WebResponse からの派生
+<xref:System.Net.WebResponse> クラスは、.NET Framework プラグ可能なプロトコル モデルに適合するプロトコル固有の応答を作成するための基本メソッドとプロパティを提供する抽象基底クラスです。 <xref:System.Net.WebRequest> クラスを使用してリソースからデータを要求するアプリケーションは、**WebResponse** で応答を受信します。 プロトコル固有の **WebResponse**の子孫は、**WebResponse** クラスの抽象メンバーを実装する必要があります。  
   
- **\[WebRequest\]** のクラスは、**WebResponse** その子孫を作成する必要があります。  たとえば、<xref:System.Net.HttpWebResponse> のインスタンスは <xref:System.Net.HttpWebRequest.GetResponse%2A?displayProperty=fullName> または <xref:System.Net.HttpWebRequest.EndGetResponse%2A?displayProperty=fullName>を呼び出しの結果のみ作成されます。  各 **WebResponse** は、リソースの要求の結果を含み、再利用ものではありません。  
+ 関連付けられた **WebRequest** クラスは、**WebResponse** の子孫を作成する必要があります。 たとえば、<xref:System.Net.HttpWebResponse> インスタンスは、<xref:System.Net.HttpWebRequest.GetResponse%2A?displayProperty=fullName> または <xref:System.Net.HttpWebRequest.EndGetResponse%2A?displayProperty=fullName> の呼び出しの結果としてのみ作成されます。 各 **WebResponse** には、リソースへの要求の結果が含まれており、再利用されることを意図していません。  
   
-## ContentLength のプロパティ  
- <xref:System.Net.WebResponse.ContentLength%2A> のプロパティは <xref:System.Net.WebResponse.GetResponseStream%2A> 方法によって返されたストリームから使用可能なデータのバイト数を示します。  **\[ContentLength\]** のプロパティはサーバーが返品ヘッダーまたはメタデータ情報のバイト数を参照する; これは、要求されたリソースのデータのバイト数を自体を示します。  
+## <a name="contentlength-property"></a>ContentLength プロパティ  
+ <xref:System.Net.WebResponse.ContentLength%2A> プロパティは、<xref:System.Net.WebResponse.GetResponseStream%2A> メソッドによって返されるストリームから利用可能なデータのバイト数を示します。 **ContentLength** プロパティは、サーバーによって返されるヘッダーのバイト数またはメタデータ情報を示しません。要求されたリソース自体のデータのバイト数のみを示します。  
   
-## ContentType のプロパティ  
- <xref:System.Net.WebResponse.ContentType%2A> のプロパティは送信サーバーが格納されるデータのタイプを識別するために、セキュリティはクライアントにするように要求すると特殊な情報を提供します。  通常、これは返品データ要素の MIME のコンテンツ タイプです。  
+## <a name="contenttype-property"></a>ContentType プロパティ  
+ <xref:System.Net.WebResponse.ContentType%2A> プロパティは、サーバーによって送信中のコンテンツ タイプを識別するためにクライアントに送信するようにプロトコルで求められる特別な情報を提供します。 通常、これは返される任意のデータの MIME コンテンツ タイプです。  
   
-## ヘッダーのプロパティ  
- <xref:System.Net.WebResponse.Headers%2A> のプロパティが応答に関連付けられているメタデータの名前と値の組み合わせのコレクション オプションが含まれます。  名前と値の組み合わせで表すことができるプロトコルが必要とするしたメタデータが **\[ヘッダー\]** のプロパティに含めることができます。  
+## <a name="headers-property"></a>Headers プロパティ  
+ <xref:System.Net.WebResponse.Headers%2A> プロパティには、応答に関連付けられているメタデータの名前/値ペアの任意のコレクションが含まれています。 名前/値のペアとして表すことができるプロトコルで必要なすべてのメタデータは、**Headers** プロパティに含めることができます。  
   
- ヘッダーのメタデータを使用するに **\[ヘッダー\]** のプロパティを使用する必要はありません。  プロトコル対応のメタデータをプロパティとして公開できます。; たとえば、<xref:System.Net.HttpWebResponse.LastModified%2A?displayProperty=fullName> のプロパティは **Last\-Modified** の HTTP ヘッダーを公開します。  プロパティとしてヘッダーのメタデータを公開すると、同じプロパティが **\[ヘッダー\]** のプロパティを使用するように設定できません。  
+ ヘッダー メタデータを使用するために **Headers** プロパティを使用する必要はありません。 プロトコル固有のメタデータをプロパティとして公開することができます。たとえば、<xref:System.Net.HttpWebResponse.LastModified%2A?displayProperty=fullName> プロパティは、**Last-Modified** HTTP ヘッダーを公開します。 ヘッダー メタデータをプロパティとして公開する場合、**Headers** プロパティを使用して同じプロパティが設定されないようにする必要があります。  
   
-## ResponseUri のプロパティ  
- <xref:System.Net.WebResponse.ResponseUri%2A> のプロパティは、実際に回答を提供したリソースの URI が含まれます。  リダイレクトをサポート プロトコルとして、**ResponseUri** が応答を作成した **\[WebRequest\]** の <xref:System.Net.WebRequest.RequestUri%2A> のプロパティと同じです。  プロトコルが要求の方向を変更することをサポートしている場合は、**ResponseUri** URI の応答が含まれます。  
+## <a name="responseuri-property"></a>ResponseUri プロパティ  
+ <xref:System.Net.WebResponse.ResponseUri%2A> プロパティには、実際に応答を提供したリソースの URI が含まれています。 リダイレクトをサポートしないプロトコルの場合、**ResponseUri** は応答を作成した **WebRequest** の <xref:System.Net.WebRequest.RequestUri%2A> プロパティと同じになります。 プロトコルが要求のリダイレクトをサポートしている場合は、**ResponseUri** に応答の URI が含まれます。  
   
-## 原価計算方法  
- <xref:System.Net.WebResponse.Close%2A> 方法は要求と回答による接続を閉じ、応答で使用されるリソースを遵守します。  **\[閉じる\]** 方法が応答で使用されるストリームのインスタンスを閉じますが応答のベースが <xref:System.IO.Stream.Close%2A?displayProperty=fullName> のメソッドへの呼び出しによって前に閉じられたら例外を投げません。  
+## <a name="close-method"></a>Close メソッド  
+ <xref:System.Net.WebResponse.Close%2A> メソッドは、要求と応答によって作成されたすべての接続を閉じ、応答で使用されているリソースをクリーンアップします。 **Close** メソッドは、応答で使用されたすべてのストリーム インスタンスを閉じますが、応答ストリームが <xref:System.IO.Stream.Close%2A?displayProperty=fullName> メソッドへの呼び出しにより以前に閉じられた場合は、例外をスローしません。  
   
-## GetResponseStream 方法  
- <xref:System.Net.WebResponse.GetResponseStream%2A> 方法は、要求されたリソースから回答を含むストリームを返します。  回答のベースは、リソースから返されたデータのみが含まれます; 応答に含まれるヘッダーまたはメタデータをプロトコル対応するプロパティまたは **\[ヘッダー\]** のプロパティを使用してアプリケーションへの応答から削除され、公開する必要があります。  
+## <a name="getresponsestream-method"></a>GetResponseStream メソッド  
+ <xref:System.Net.WebResponse.GetResponseStream%2A> メソッドは要求されたリソースからの応答を含むストリームを返します。 応答ストリームには、リソースによって返されるデータのみが含まれています。応答に含まれるヘッダーやメタデータをすべて応答から除去し、プロトコル固有のプロパティまたは **Headers** プロパティ使用して、アプリケーションに公開する必要があります。  
   
- **GetResponseStream** 方法によって返されたストリームのインスタンスはアプリケーションが所有して、**WebResponse**を閉じないで決済できます。  慣例に、**\[WebResponse.Close\]** 方法を追加すると、**GetResponse**によって返されたストリームを閉じます。  
+ **GetResponseStream** メソッドによって返されるストリーム インスタンスは、アプリケーションによって所有され、**WebResponse** を閉じずに閉じることができます。 規則により、**WebResponse.Close** メソッドの呼び出しも **GetResponse** で返されるストリームを閉じます。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Net.WebResponse>   
  <xref:System.Net.HttpWebResponse>   
  <xref:System.Net.FileWebResponse>   
  [プラグ可能なプロトコルのプログラミング](../../../docs/framework/network-programming/programming-pluggable-protocols.md)   
  [WebRequest からの派生](../../../docs/framework/network-programming/deriving-from-webrequest.md)
+

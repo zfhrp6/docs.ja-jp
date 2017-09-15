@@ -1,53 +1,58 @@
 ---
-title: "構成 (インターネット アプリケーションを) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "ダウンロード (インターネット リソースの)、既定のプロキシ"
-  - "送信 (データを)、既定のプロキシ"
-  - "受信 (データを)、既定のプロキシ"
-  - "ダウンロード (インターネット リソースの)、構成 (インターネット アプリケーションを)"
-  - "プロトコル固有のモジュール"
-  - "カスタム認証モジュール"
-  - "受信 (データを)、構成 (インターネット アプリケーションを)"
-  - "構成の設定 [.NET Framework]、インターネット アプリケーション"
-  - "要求 (インターネットからデータを)、構成 (インターネット アプリケーションを)"
-  - "要求 (インターネットからデータを)、既定のプロキシ"
-  - "インターネット要求への応答、既定のプロキシ"
-  - "インターネット、構成 (インターネット アプリケーションを)"
-  - "インターネット要求への応答、構成 (インターネット アプリケーションを)"
-  - "既定のプロキシ"
-  - "ネットワークのリソース、既定のプロキシ"
-  - "送信 (データを)、構成 (インターネット アプリケーションを)"
-  - "ネットワーク リソース、構成 (インターネット アプリケーションを)"
-  - "インターネット、既定のプロキシ"
+title: "構成 (インターネット アプリケーションを)"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- VB
+- CSharp
+- C++
+- jsharp
+helpviewer_keywords:
+- downloading Internet resources, default proxy
+- sending data, default proxy
+- receiving data, default proxy
+- downloading Internet resources, configuring Internet applications
+- protocol-specific modules
+- custom authentication modules
+- receiving data, configuring Internet applications
+- configuration settings [.NET Framework], Internet applications
+- requesting data from Internet, configuring Internet applications
+- requesting data from Internet, default proxy
+- response to Internet request, default proxy
+- Internet, configuring Internet applications
+- response to Internet request, configuring Internet applications
+- default proxy
+- network resources, default proxy
+- sending data, configuring Internet applications
+- network resources, configuring Internet applications
+- Internet, default proxy
 ms.assetid: bb707c72-eed2-4a82-8800-c9e68df2fd4f
 caps.latest.revision: 15
-author: "mcleblanc"
-ms.author: "markl"
-manager: "markl"
-caps.handback.revision: 15
+author: mcleblanc
+ms.author: markl
+manager: markl
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: a4a013b8a4ff60222bb88c6e9c4f14badd689b5d
+ms.contentlocale: ja-jp
+ms.lasthandoff: 08/21/2017
+
 ---
-# 構成 (インターネット アプリケーションを)
-[\<system.Net\> 要素 \(ネットワーク設定\)](../../../docs/framework/configure-apps/file-schema/network/system-net-element-network-settings.md) の構成要素は、アプリケーションのネットワーク コンフィギュレーション情報が含まれます。  [\<system.Net\> 要素 \(ネットワーク設定\)](../../../docs/framework/configure-apps/file-schema/network/system-net-element-network-settings.md) の要素を使用して、プロキシ サーバーを設定できます。接続管理パラメータの設定、自分のアプリケーションに注文の認証および要求のモジュールが含まれます。  
+# <a name="configuring-internet-applications"></a>構成 (インターネット アプリケーションを)
+[\<system.Net> 要素 (ネットワーク設定)](../../../docs/framework/configure-apps/file-schema/network/system-net-element-network-settings.md) 構成要素には、アプリケーションのネットワーク構成情報が含まれています。 [\<system.Net> 要素 (ネットワーク設定)](../../../docs/framework/configure-apps/file-schema/network/system-net-element-network-settings.md) 要素を使用すると、プロキシ サーバーを設定し、接続管理パラメーターを設定し、カスタム認証および要求モジュールをアプリケーションに組み込むことができます。  
   
- [\<defaultProxy\> 要素 \(ネットワーク設定\)](../../../docs/framework/configure-apps/file-schema/network/defaultproxy-element-network-settings.md) の要素は `GlobalProxySelection` クラスによって返されたプロキシ サーバーを定義します。  どの <xref:System.Net.HttpWebRequest> 特定の値に <xref:System.Net.HttpWebRequest.Proxy%2A> 固有のプロパティがない既定のプロキシを使用します。  プロキシの住所の設定に加えて、プロキシを使用せず、プロキシがこの住所に使用する必要があることを指定できますサーバー住所の一覧を作成します。  
+ [\<defaultProxy> 要素 (ネットワーク設定)](../../../docs/framework/configure-apps/file-schema/network/defaultproxy-element-network-settings.md) 要素は、`GlobalProxySelection` クラスによって返されるプロキシ サーバーを定義します。 独自の <xref:System.Net.HttpWebRequest.Proxy%2A> プロパティが特定の値に設定されていない <xref:System.Net.HttpWebRequest> はすべて、既定のプロキシを使用します。 プロキシ アドレスを設定するだけでなく、プロキシを使用しないサーバー アドレスの一覧を作成し、ローカル アドレスにプロキシを使用しないように指定できます。  
   
- 、Microsoft Internet Explorer の設定がコンポーネントの設定と組み合わせて、取得後の優先順位でことを確認することが重要です。  
+ Microsoft Internet Explorer の設定は構成の設定と組み合わせて使用され、構成の設定が優先されることに注意してください。  
   
- 次の例では、プロキシがこの住所に使用する必要がない contoso.com のドメインにあるサーバーへのすべての要求がプロキシをスキップするように指定されますがことを http:\/\/proxyserver に既定のプロキシ サーバーの住所を、および。  
+ 次の例では、既定のプロキシ サーバー アドレスを http://proxyserver に設定し、ローカル アドレスにプロキシを使用しないようにし、contoso.com ドメインにあるサーバーへのすべての要求でプロキシをバイパスするように指定しています。  
   
-```  
+```xml  
 <configuration>  
     <system.net>  
         <defaultProxy>  
@@ -64,9 +69,9 @@ caps.handback.revision: 15
 </configuration>  
 ```  
   
- 特定のサーバーまたは他のすべてのサーバーにするには、耐久性がある接続数をコンフィギュレーションするに [\<connectionManagement\> 要素 \(ネットワーク設定\)](../../../docs/framework/configure-apps/file-schema/network/connectionmanagement-element-network-settings.md) の要素を使用します。  次の例では、サーバーへの www.contoso.com 2 種類の耐久性がある接続、IP アドレス 192.168.1.2 のサーバーへの 4 種類の耐久性がある接続、およびそのほかすべてのサーバーへの 1 種類の耐久性がある接続を使用するアプリケーションのコンフィギュレーションを示します。  
+ 特定のサーバーまたは他のすべてのサーバーに対して行うことができる持続接続の数を構成する場合は、[\<connectionManagement> 要素 (ネットワーク設定)](../../../docs/framework/configure-apps/file-schema/network/connectionmanagement-element-network-settings.md) 要素を使用します。 次の例では、サーバー www.contoso.com への 2 つの持続接続、IP アドレス 192.168.1.2 を持つサーバーへの 4 つの持続接続、および他のすべてのサーバーへの 1 つの持続接続を使用するようにアプリケーションを構成します。  
   
-```  
+```xml  
 <configuration>  
     <system.net>  
         <connectionManagement>  
@@ -78,11 +83,11 @@ caps.handback.revision: 15
 </configuration>  
 ```  
   
- 注文の認証のモジュールの [\<authenticationModules\> 要素 \(ネットワーク設定\)](../../../docs/framework/configure-apps/file-schema/network/authenticationmodules-element-network-settings.md) の要素をコンフィギュレーションします。  注文の認証のモジュールの <xref:System.Net.IAuthenticationModule> インターフェイスを行う必要があります。  
+ カスタム認証モジュールは、[\<authenticationModules> 要素 (ネットワーク設定)](../../../docs/framework/configure-apps/file-schema/network/authenticationmodules-element-network-settings.md) 要素で構成されます。 カスタム認証モジュールは <xref:System.Net.IAuthenticationModule> インターフェイスを実装する必要があります。  
   
- 次の例では、注文の認証モジュールのコンフィギュレーションを示します。  
+ 次の例では、カスタム認証モジュールを構成します。  
   
-```  
+```xml  
 <configuration>  
     <system.net>  
         <authenticationModules>  
@@ -92,9 +97,9 @@ caps.handback.revision: 15
 </configuration>  
 ```  
   
- インターネットのリソースの情報を要求するに対応する注文プロトコル モジュールを使用するようにアプリケーションをコンフィギュレーションするに [\<webRequestModules\> 要素 \(ネットワーク設定\)](../../../docs/framework/configure-apps/file-schema/network/webrequestmodules-element-network-settings.md) の要素を使用できます。  モジュールは指定 <xref:System.Net.IWebRequestCreate> インターフェイスを行う必要があります。  次の例のようにコンフィギュレーション ファイルで、カスタムのモジュールを指定して、既定の HTTP、HTTPS とファイルのモジュールを上書きできます。  
+ [\<webRequestModules> 要素 (ネットワーク設定)](../../../docs/framework/configure-apps/file-schema/network/webrequestmodules-element-network-settings.md) 要素を使用し、カスタム プロトコル固有のモジュールを使用してインターネット リソースから情報を要求するようにアプリケーションを構成することができます。 指定されたモジュールは <xref:System.Net.IWebRequestCreate> インターフェイスを実装する必要があります。 既定の HTTP、HTTPS、およびファイル要求モジュールは、次の例のように、構成ファイルでカスタム モジュールを指定してオーバーライドすることができます。  
   
-```  
+```xml  
 <configuration>  
     <system.net>  
         <webRequestModules>  
@@ -107,7 +112,8 @@ caps.handback.revision: 15
 </configuration>  
 ```  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [.NET Framework のネットワーク プログラミング](../../../docs/framework/network-programming/index.md)   
  [ネットワーク設定スキーマ](../../../docs/framework/configure-apps/file-schema/network/index.md)   
- [\<system.Net\> 要素 \(ネットワーク設定\)](../../../docs/framework/configure-apps/file-schema/network/system-net-element-network-settings.md)
+ [\<system.Net> 要素 (ネットワーク設定)](../../../docs/framework/configure-apps/file-schema/network/system-net-element-network-settings.md)
+

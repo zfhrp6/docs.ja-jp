@@ -1,81 +1,86 @@
 ---
-title: "エラー処理 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "インターネット、WebRequest クラスおよび WebResponse クラスの例外"
-  - "Status プロパティ"
-  - "WebExceptions クラス, WebExceptions クラスの概要"
-  - "Timeout 列挙型のメンバー"
-  - "ConnectFailure 列挙型のメンバー"
-  - "TrustFailure 列挙型のメンバー"
-  - "WebRequest クラス、例外"
-  - "要求 (インターネットからデータを)、エラー処理"
-  - "Success 列挙型のメンバー"
-  - "受信 (データを)、エラー"
-  - "ProtocolError 列挙型のメンバー"
-  - "ダウンロード (インターネット リソースの)、エラー処理"
-  - "WebResponse クラス、例外"
-  - "SendFailure 列挙型のメンバー"
-  - "エラー [.NET Framework]、WebRequest クラスと WebResponse クラスの例外"
-  - "送信 (データを)、エラー"
-  - "インターネット要求への応答、エラー処理"
-  - "NameResolutionFailure 列挙型のメンバー"
-  - "KeepAliveFailure 列挙型のメンバー"
-  - "ネットワーク リソース、WebRequest クラスと WebResponse クラスの例外"
-  - "RequestCanceled 列挙型のメンバー"
-  - "ReceiveFailure 列挙型のメンバー"
-  - "ServerProtocolViolation 列挙型のメンバー"
-  - "ConnectionClosed 列挙型のメンバー"
-  - "SecureChannelFailure 列挙型のメンバー"
+title: "エラー処理"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- VB
+- CSharp
+- C++
+- jsharp
+helpviewer_keywords:
+- Internet, WebRequest and WebResponse classes exceptions
+- Status property
+- WebExceptions class, about WebExceptions class
+- Timeout enumeration member
+- ConnectFailure enumeration member
+- TrustFailure enumeration member
+- WebRequest class, exceptions
+- requesting data from Internet, error handling
+- Success enumeration member
+- receiving data, errors
+- ProtocolError enumeration member
+- downloading Internet resources, error handling
+- WebResponse class, exceptions
+- SendFailure enumeration member
+- errors [.NET Framework], WebRequest and WebResponse classes exceptions
+- sending data, errors
+- response to Internet request, error handling
+- NameResolutionFailure enumeration member
+- KeepAliveFailure enumeration member
+- network resources, WebRequest and WebResponse classes exceptions
+- RequestCanceled enumeration member
+- ReceiveFailure enumeration member
+- ServerProtocolViolation enumeration member
+- ConnectionClosed enumeration member
+- SecureChannelFailure enumeration member
 ms.assetid: 657141cd-5cf5-4fdb-a4b2-4c040eba84b5
 caps.latest.revision: 12
-author: "mcleblanc"
-ms.author: "markl"
-manager: "markl"
-caps.handback.revision: 10
+author: mcleblanc
+ms.author: markl
+manager: markl
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: ca755d123589f4ee07ea9caadf8bd420c94adae4
+ms.contentlocale: ja-jp
+ms.lasthandoff: 08/21/2017
+
 ---
-# エラー処理
-<xref:System.Net.WebRequest> と <xref:System.Net.WebResponse> \(クラス <xref:System.Net.WebRequest.GetResponse%2A> 方法で投げられる [WebExceptions](frlrfsystemnetwebexceptionclasstopic) であるシステムの両方\) 例外 \(<xref:System.ArgumentException>など\) および Web 特定の例外投げます。  
+# <a name="handling-errors"></a>エラー処理
+<xref:System.Net.WebRequest> および <xref:System.Net.WebResponse> クラスでは、システム例外 (<xref:System.ArgumentException> など) と Web 固有の例外 (<xref:System.Net.WebRequest.GetResponse%2A> メソッドでスローされる <xref:System.Net.WebException>) の両方がスローされます。  
   
- 各 **WebException** は <xref:System.Net.WebExceptionStatus> の列挙型の値を含む <xref:System.Net.WebException.Status%2A> のプロパティがあります。  エラーを確認するに **\[状態\]** のプロパティを確認し、未収エラーを解決するために必要な手順を実行します。  
+ 各 **WebException** には、<xref:System.Net.WebExceptionStatus> 列挙体からの値を含む <xref:System.Net.WebException.Status%2A> プロパティがあります。 **Status** プロパティを調べることで、発生したエラーを特定し、エラーを解決するための適切な手順を実行することができます。  
   
- 次の表に、**\[状態\]** のプロパティの使用可能な値を示します。  
+ **Status** プロパティの有効な値を次の表に示します。  
   
-|状態|説明|  
-|--------|--------|  
-|ConnectFailure|リモートに、サービス レベルで連絡できませんでした。|  
-|ConnectionClosed|関連付けは、時期早尚に閉じられました。|  
-|KeepAliveFailure|サーバーはキープアライブ ヘッダーのセットによる接続を閉じました。|  
-|NameResolutionFailure|名前のサービスをホスト名を解決しませんでした。|  
-|ProtocolError|サーバーから受信された回答が完了が、セキュリティ レベルでエラーが指定された。|  
-|ReceiveFailure|リモート サーバーから完全な応答が受信されませんでした。|  
+|Status|説明|  
+|------------|-----------------|  
+|ConnectFailure|トランスポート レベルでリモート サービスに接続できませんでした。|  
+|ConnectionClosed|接続は処理の途中で中断されました。|  
+|KeepAliveFailure|サーバーは、Keep-alive ヘッダーの設定による接続を閉じました。|  
+|NameResolutionFailure|ドメイン サービスがホスト名を解決できませんでした。|  
+|ProtocolError|サーバーから受信された応答は完全でしたが、プロトコル レベルのエラーが示されています。|  
+|ReceiveFailure|完全な応答がリモート サーバーから受信されませんでした。|  
 |RequestCanceled|要求は取り消されました。|  
-|SecureChannelFailure|エラーは保護されたチャネルのリンクにしました。|  
-|SendFailure|完全な要求をリモート サーバーに送信できませんでした。|  
-|ServerProtocolViolation|サーバー応答が有効な HTTP 応答ではありません。|  
+|SecureChannelFailure|セキュリティで保護されたチャネル リンクでエラーが発生しました。|  
+|SendFailure|リモート サーバーに完全な要求を送信できませでした。|  
+|ServerProtocolViolation|サーバーの応答が有効な HTTP 応答ではありません。|  
 |成功|エラーは発生しませんでした。|  
-|タイムアウト|予想される反応はありません要求のタイムアウトのセット内で受領されています。|  
+|Timeout|要求に対して設定されたタイムアウト時間内で応答が受信されませんでした。|  
 |TrustFailure|サーバー証明書を検証できませんでした。|  
-|MessageLengthLimitExceeded|サーバーに要求を送信、またはサーバーからの応答を受信しているときに、制限長を超えるメッセージが渡されました。|  
+|MessageLengthLimitExceeded|要求の送信時またはサーバーから応答の受信時に指定された制限を超えるメッセージが受信されました。|  
 |保留|内部非同期要求が保留中です。|  
-|PipelineFailure|この値は、.NET Framework の下部組織をサポートし、自分のコードで直接使用されるものではありません。|  
-|ProxyNameResolutionFailure|名前解決サービスがプロキシ ホスト名を解決できませんでした。|  
-|UnknownError|未知の種類の例外が発生しました。|  
+|PipelineFailure|この値は .NET Framework インフラストラクチャをサポートします。独自に作成したコードで直接使用するためのものではありません。|  
+|ProxyNameResolutionFailure|ネーム リゾルバー サービスがプロキシ ホスト名を解決できませんでした。|  
+|UnknownError|不明な種類の例外が発生しました。|  
   
- サーバーからの応答を含む **\[状態\]** のプロパティが **WebExceptionStatus.ProtocolError**すると、**WebResponse** が使用できます。  プロトコル エラーの実際のソースを決定するためにこの応答を確認できます。  
+ **Status** プロパティが **WebExceptionStatus.ProtocolError** である場合は、サーバーからの応答を含む **WebResponse** を使用できます。 この応答を調べることで、プロトコル エラーの実際の原因を判別できます。  
   
- 次の例で **WebException**をつかまえる方法を示します。  
+ 次の例は、**WebException** をキャッチする方法を示しています。  
   
 ```csharp  
 try   
@@ -170,10 +175,11 @@ Catch e As Exception
 End Try  
 ```  
   
- エラーが Windows のソケットで計上ときに <xref:System.Net.Sockets.Socket> クラスの投球 [SocketExceptions](frlrfsystemnetsocketssocketexceptionclasstopic) を使用するアプリケーション。  [TCPListener](frlrfsystemnetsocketstcplistenerclasstopic)と [UDPClient](frlrfsystemnetsocketsudpclientclasstopic) の [&#91;TCPClient&#93;](frlrfsystemnetsocketstcpclientclasstopic)、クラスは、**\[ソケット\]** クラスの上に構築、**SocketExceptions** も投げます。  
+ Windows ソケットでエラーが発生した場合、<xref:System.Net.Sockets.Socket> クラスを使用するアプリケーションは <xref:System.Net.Sockets.SocketException> をスローします。 <xref:System.Net.Sockets.TcpClient>、<xref:System.Net.Sockets.TcpListener>、および <xref:System.Net.Sockets.UdpClient> は **Socket** クラスに基づくものであり、同様に **SocketExceptions** をスローします。  
   
- **SocketException** が投げられると、**SocketException** のクラスが未収最後のオペレーティング システムのソケットのエラーに <xref:System.Net.Sockets.SocketException.ErrorCode%2A> のプロパティを設定します。  ソケットのエラー コードの詳細については、MSDN の Winsock 2.0 の API のエラー コードのドキュメントを参照してください。  
+ **SocketException** がスローされると、**SocketException** クラスは <xref:System.Net.Sockets.SocketException.ErrorCode%2A> プロパティを、最後に発生したオペレーティング システムのソケット エラーに設定します。 ソケット エラー コードの詳細については、MSDN の Winsock 2.0 API エラー コードに関するドキュメントを参照してください。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [例外処理の基本事項](../../../docs/standard/exceptions/exception-handling-fundamentals.md)   
  [データの要求](../../../docs/framework/network-programming/requesting-data.md)
+
