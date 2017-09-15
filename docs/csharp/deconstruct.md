@@ -1,7 +1,7 @@
 ---
-title: "タプルとその他の型の分解 | Microsoft Docs"
-description: "タプルとその他の型を分解する方法について説明します"
-keywords: .NET, .NET Core, C#0
+title: "タプルとその他の型の分解"
+description: "タプルとその他の型を分解する方法について説明します。"
+keywords: ".NET、.NET Core、C#"
 author: rpetrusha
 ms-author: ronpet
 ms.date: 07/18/2016
@@ -11,13 +11,12 @@ ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 0b0c4b0f-4a47-4f66-9b8e-f5c63b195960
 ms.translationtype: HT
-ms.sourcegitcommit: 9fc16c63a6e0e0dd31ee4a68fca8b945b8281e04
-ms.openlocfilehash: f0946db700301a63109f23be5536f3a0505f4d60
+ms.sourcegitcommit: 863940512f33568ee10569da4712e7e646bc3ba7
+ms.openlocfilehash: ad0ed6568da073683545727ef47f6a223942c8d6
 ms.contentlocale: ja-jp
-ms.lasthandoff: 08/01/2017
+ms.lasthandoff: 08/12/2017
 
 ---
-
 # <a name="deconstructing-tuples-and-other-types"></a>タプルとその他の型の分解 #
 
 タプルでは、軽量な処理でメソッドの呼び出しから複数の値を取得することができます。 ただし、タプルを取得した場合は、その個々の要素を処理する必要があります。 このような処理を要素ごとに行うことは手間がかかります。次に例を示します。 `QueryCityData` メソッドは 3 つのタプルを返し、その各要素は別の操作の変数に割り当てられます。
@@ -44,21 +43,21 @@ var (name, address, city, zip) = contact.GetAddressInfo();
 
 - C# で各変数の型を推定するには、`var` キーワードを使用できます。 `var` キーワードはかっこの外に配置します。 次の例では、`QueryCityData` メソッドから返される 3 タプルを分解するときに型の推定を使用します。
  
-      [!code-csharp[Deconstruction-Infer](../../samples/snippets/csharp/programming-guide/deconstructing-tuples/deconstruct-tuple3.cs#1)]
+    [!code-csharp[Deconstruction-Infer](../../samples/snippets/csharp/programming-guide/deconstructing-tuples/deconstruct-tuple3.cs#1)]
 
     また、かっこ内の変数宣言のいずれかまたはすべてについて、個々に `var` キーワードを使用することもできます。 
 
-      [!code-csharp[Deconstruction-Infer-Some](../../samples/snippets/csharp/programming-guide/deconstructing-tuples/deconstruct-tuple4.cs#1)]
+    [!code-csharp[Deconstruction-Infer-Some](../../samples/snippets/csharp/programming-guide/deconstructing-tuples/deconstruct-tuple4.cs#1)]
 
     ただし、この処理は煩雑なため推奨されません。
 
-タプル内のフィールドすべての型が同じでも、かっこ外では指定できない型があることに注意してください。 この場合、コンパイル エラー CS8136 "`var (...)` フォームは特定の種類の `var` を許可しません" が生成されます。
+タプル内のフィールドすべての型が同じでも、かっこ外では指定できない型があることに注意してください。 この場合、コンパイル エラー CS8136 "分解 `変数 (...)` フォームは特定の種類の '変数' を許可しません" が生成されます。
 
 また、タプルの各要素も変数に割り当てる必要があります。 いずれかの要素を省略すると、コンパイラでエラー CS8132 " 'x' 要素のタプルを 'y' 変数に分解することはできません" が生成されます。
 
 ## <a name="deconstructing-tuple-elements-with-discards"></a>破棄によるタプル要素の分解
 
-タプルを分解する場合、一部の要素の値のみが必要なことがよくあります。 C# 7 以降、C# の*破棄*のサポートを利用できるようになりました。破棄は、無視対象と選択した値が指定された書き込み専用の変数です。 破棄を指定するには、割り当て内でアンダースコア文字 ("_") を使用します。 必要に応じて任意の数の値を破棄できます。そのため、すべての値を 1 つの破棄 `_` で表すことができます。
+タプルを分解する場合、一部の要素の値のみが必要なことがよくあります。 C# 7 以降、C# の*破棄*のサポートを利用できるようになりました。破棄は、無視対象と選択した値が指定された書き込み専用の変数です。 破棄を指定するには、割り当て内でアンダースコア文字 ("\_") を使用します。 必要に応じて任意の数の値を破棄できます。そのため、すべての値を 1 つの破棄 `_` で表すことができます。
 
 破棄を含むタプルの使用例を次に示します。 `QueryCityDataForYears` メソッドは、市区町村名、その地域、年、市区町村のその年の人口、2 つ目の年、市区町村のその 2 つ目の年の人口という 6 つのタプルを返します。 この例は、2 つの年の間に変化した人口数を示しています。 タプルから使用できるデータのうち、市区町村の地域は使用しません。また、指定時に市区町村名と 2 つの日付はわかっています。 そのため、タプルに格納されている 2 つの人口値のみが必要であり、残りの値は破棄対象として処理できます。  
 
@@ -90,7 +89,7 @@ var (name, address, city, zip) = contact.GetAddressInfo();
 
 ## <a name="deconstructing-a-user-defined-type-with-discards"></a>破棄によるユーザー定義型の分解
 
-[タプル](#deconstructing-tuple-elements-with-discards)の場合と同様に、破棄を使用して、`Deconstruct` メソッドから返される項目のうち、選択した項目を無視できます。 各破棄は "_" という変数で定義されます。また、1 つの破棄操作に複数の破棄を含めることができます。
+[タプル](#deconstructing-tuple-elements-with-discards)の場合と同様に、破棄を使用して、`Deconstruct` メソッドから返される項目のうち、選択した項目を無視できます。 各破棄は "\_" という変数で定義されます。また、1 つの破棄操作に複数の破棄を含めることができます。
 
 `Person` オブジェクトを 4 つの文字列 (名、姓、市区町村、州) に分解し、姓と州を破棄する例を次に示します。
 
