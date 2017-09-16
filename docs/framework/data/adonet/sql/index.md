@@ -1,30 +1,35 @@
 ---
-title: "SQL Server と ADO.NET | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "SQL Server と ADO.NET"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: c18b1fb1-2af1-4de7-80a4-95e56fd976cb
 caps.latest.revision: 7
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 7
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: effff61b424f914584ba1ffd963c100afbc3d745
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/05/2017
+
 ---
-# SQL Server と ADO.NET
-このセクションでは、.NET Framework Data Provider for SQL Server \(<xref:System.Data.SqlClient>\) 固有の機能および動作について説明します。  
+# <a name="sql-server-and-adonet"></a>SQL Server と ADO.NET
+このセクションでは、.NET Framework Data Provider for SQL Server (<xref:System.Data.SqlClient>) 固有の機能および動作について説明します。  
   
- <xref:System.Data.SqlClient> は SQL Server のバージョンへのアクセスを提供し、データベース固有のプロトコルをカプセル化します。  このデータ プロバイダーの機能は、OLE DB、ODBC、および Oracle に対する .NET Framework データ プロバイダーの機能と同等になるように設計されています。  <xref:System.Data.SqlClient> には、SQL Server と直接通信するための表形式データ ストリーム \(TDS\) パーサーが含まれています。  
+ <xref:System.Data.SqlClient> は SQL Server のバージョンへのアクセスを提供し、データベース固有のプロトコルをカプセル化します。 このデータ プロバイダーの機能は、OLE DB、ODBC、および Oracle に対する .NET Framework データ プロバイダーの機能と同等になるように設計されています。 <xref:System.Data.SqlClient> には、SQL Server と直接通信するための表形式データ ストリーム (TDS) パーサーが含まれています。  
   
 > [!NOTE]
 >  .NET Framework Data Provider for SQL Server を使用するには、アプリケーションで <xref:System.Data.SqlClient> 名前空間を参照する必要があります。  
   
-## このセクションの内容  
+## <a name="in-this-section"></a>このセクションの内容  
  [SQL Server のセキュリティ](../../../../../docs/framework/data/adonet/sql/sql-server-security.md)  
  SQL Server のセキュリティの概要を説明し、アプリケーションのシナリオを交えながら、SQL Server を対象とした安全な ADO.NET アプリケーションを作成するための指針を提供します。  
   
@@ -35,7 +40,7 @@ caps.handback.revision: 7
  SQL Server で大きな値のデータを扱う方法について説明します。  
   
  [ADO.NET における SQL Server データ操作](../../../../../docs/framework/data/adonet/sql/sql-server-data-operations.md)  
- SQL Server でのデータの操作方法について説明します。  一括コピー操作、MARS、非同期操作、およびテーブル値パラメーターに関するセクションがあります。  
+ SQL Server でのデータの操作方法について説明します。 一括コピー操作、MARS、非同期操作、およびテーブル値パラメーターに関するセクションがあります。  
   
  [SQL Server の機能と ADO.NET](../../../../../docs/framework/data/adonet/sql/sql-server-features-and-adonet.md)  
  ADO.NET アプリケーション開発者にとって役立つ SQL Server の機能について説明します。  
@@ -47,9 +52,10 @@ caps.handback.revision: 7
   
  [SQL Server オンライン ブック](http://msdn.microsoft.com/library/ms130214.aspx)  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [ADO.NET アプリケーションのセキュリティ保護](../../../../../docs/framework/data/adonet/securing-ado-net-applications.md)   
  [ADO.NET でのデータ型のマッピング](../../../../../docs/framework/data/adonet/data-type-mappings-in-ado-net.md)   
- [DataSets、DataTables、および DataViews](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)   
+ [DataSet、DataTable、および DataView](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)   
  [ADO.NET でのデータの取得および変更](../../../../../docs/framework/data/adonet/retrieving-and-modifying-data.md)   
- [ADO.NET Managed Providers and DataSet Developer Center \(ADO.NET マネージ プロバイダーと DataSet デベロッパー センター\)](http://go.microsoft.com/fwlink/?LinkId=217917)
+ [ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター](http://go.microsoft.com/fwlink/?LinkId=217917)
+

@@ -1,58 +1,63 @@
 ---
-title: "コンパイラおよび言語プロバイダー設定のスキーマ | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "コンパイラ構成要素"
-  - "コンパイラ構成要素, スキーマ"
-  - "コンパイラ構成設定"
-  - "コンパイラ構成設定, スキーマ"
-  - "構成スキーマ [.NET Framework], コンパイラ設定"
-  - "構成の設定 [.NET Framework], コンパイラ"
-  - "言語プロバイダー"
-  - "言語プロバイダー, 設定スキーマ"
+title: "コンパイラおよび言語プロバイダー設定のスキーマ"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- VB
+- CSharp
+- C++
+- jsharp
+helpviewer_keywords:
+- configuration settings [.NET Framework], compilers
+- compiler configuration elements, schema
+- compiler configuration elements
+- language providers
+- compiler configuration settings, schema
+- configuration schema [.NET Framework], compiler settings
+- language providers, settings schema
+- compiler configuration settings
 ms.assetid: c020b139-8699-4f0d-9ac9-70d0c5b2a8c8
 caps.latest.revision: 9
-author: "mcleblanc"
-ms.author: "markl"
-manager: "markl"
-caps.handback.revision: 9
+author: mcleblanc
+ms.author: markl
+manager: markl
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: cb1eb3078714e0de5416fc4c7f9695f52bab3a96
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/05/2017
+
 ---
-# コンパイラおよび言語プロバイダー設定のスキーマ
-コンパイラおよび言語プロバイダー設定では、利用可能な言語プロバイダー用のコンパイラの設定要素を指定します。  各コンパイラ設定要素では、コード プロバイダーの型名、コンパイラ パラメーター、サポートされる言語名、およびサポートされるファイル拡張子を指定します。  
+# <a name="compiler-and-language-provider-settings-schema"></a>コンパイラおよび言語プロバイダー設定のスキーマ
+コンパイラおよび言語プロバイダー設定は、使用可能な言語プロバイダーのコンパイラ構成要素を指定します。 各コンパイラ構成要素は、コード プロバイダーの型名、コンパイラ パラメーター、サポートされる言語名、およびサポートされるファイル拡張子を指定します。  
   
- .NET Framework では、マシン構成ファイル \(Machine.config\) にコンパイラの初期設定を定義します。  開発者やコンパイラの販売元では、新しい <xref:System.CodeDom.Compiler.CodeDomProvider> 実装用に構成の設定を追加できます。  コンピューター上の言語プロバイダーおよびコンパイラの構成の設定をプログラムで列挙するには、<xref:System.CodeDom.Compiler.CodeDomProvider.GetAllCompilerInfo%2A?displayProperty=fullName> メソッドを使用します。  
+ .NET Framework は、マシン構成ファイル (Machine.config) 内でコンパイラの初期設定を定義します。 開発者やコンパイラ ベンダーは、新しい <xref:System.CodeDom.Compiler.CodeDomProvider> の実装のために構成設定を追加することができます。 <xref:System.CodeDom.Compiler.CodeDomProvider.GetAllCompilerInfo%2A?displayProperty=fullName> メソッドを使用して、プログラムによってコンピューターの言語プロバイダーとコンパイラ構成の設定を列挙します。  
   
- [\<configuration\> 要素](../../../../../docs/framework/configure-apps/file-schema/configuration-element.md)  
+ [\<configuration> 要素](../../../../../docs/framework/configure-apps/file-schema/configuration-element.md)  
   
- [\<system.codedom\>](../../../../../docs/framework/configure-apps/file-schema/compiler/system-codedom-element.md)  
+ [\<system.codedom>](../../../../../docs/framework/configure-apps/file-schema/compiler/system-codedom-element.md)  
   
- [\<コンパイラ\>](../../../../../docs/framework/configure-apps/file-schema/compiler/compilers-element.md)  
+ [\<compilers>](../../../../../docs/framework/configure-apps/file-schema/compiler/compilers-element.md)  
   
- [\<コンパイラ\>](../../../../../docs/framework/configure-apps/file-schema/compiler/compiler-element.md)  
+ [\<compiler>](../../../../../docs/framework/configure-apps/file-schema/compiler/compiler-element.md)  
   
 |要素|説明|  
-|--------|--------|  
-|[\<system.codedom\>](../../../../../docs/framework/configure-apps/file-schema/compiler/system-codedom-element.md)|利用可能な言語プロバイダー用のコンパイラ構成設定を指定します。|  
-|[\<コンパイラ\>](../../../../../docs/framework/configure-apps/file-schema/compiler/compilers-element.md)|コンパイラの設定要素のコンテナー; [\<コンパイラ\>](../../../../../docs/framework/configure-apps/file-schema/compiler/compiler-element.md) 内に含まれています。また、より多くの要素を示します。|  
-|[\<コンパイラ\>](../../../../../docs/framework/configure-apps/file-schema/compiler/compiler-element.md)|言語プロバイダーのコンパイラ設定属性を指定します。|  
+|-------------|-----------------|  
+|[\<system.codedom>](../../../../../docs/framework/configure-apps/file-schema/compiler/system-codedom-element.md)|使用可能な言語プロバイダーのコンパイラ構成設定を指定します。|  
+|[\<compilers>](../../../../../docs/framework/configure-apps/file-schema/compiler/compilers-element.md)|0 個以上の [\<compiler>](../../../../../docs/framework/configure-apps/file-schema/compiler/compiler-element.md) 要素を含むコンパイラ構成要素のコンテナー。|  
+|[\<compiler>](../../../../../docs/framework/configure-apps/file-schema/compiler/compiler-element.md)|言語プロバイダーのコンパイラ構成属性を指定します。|  
   
-## 使用例  
- 一般的なコンパイラ設定要素を次の例に示します。  
+## <a name="example"></a>例  
+ 次の例は、一般的なコンパイラ構成要素を示しています。  
   
-```  
+```xml  
 <configuration>  
    <system.codedom>  
      <compilers>  
@@ -68,8 +73,9 @@ caps.handback.revision: 9
 </configuration>  
 ```  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.CodeDom.Compiler.CompilerInfo>   
  <xref:System.CodeDom.Compiler.CodeDomProvider>   
  [構成ファイル スキーマ](../../../../../docs/framework/configure-apps/file-schema/index.md)   
- [\<compiler\> 要素](../../../../../docs/framework/configure-apps/file-schema/compiler/compiler-element.md)
+ [\<compiler> 要素](../../../../../docs/framework/configure-apps/file-schema/compiler/compiler-element.md)
+

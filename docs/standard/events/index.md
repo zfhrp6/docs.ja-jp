@@ -1,5 +1,5 @@
 ---
-title: "イベントの処理と発生 | Microsoft Docs"
+title: "イベントの処理と発生"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net
@@ -17,10 +17,11 @@ caps.latest.revision: 23
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-translationtype: Human Translation
-ms.sourcegitcommit: c50b3e328998b65ec47efe6d7457b36116813c77
-ms.openlocfilehash: 59e11b0da28f28008f4440ca5c88ca8210fc2191
-ms.lasthandoff: 04/08/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: ae0776501bffc23ae07cc88c7f0d1729ed01b6f7
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/05/2017
 
 ---
 # <a name="handling-and-raising-events"></a>イベントの処理と発生
@@ -29,7 +30,7 @@ ms.lasthandoff: 04/08/2017
  [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] アプリでのイベントの処理については、「[イベントとルーティング イベントの概要 (Windows ストア アプリ)](http://go.microsoft.com/fwlink/p/?LinkId=261485)」を参照してください。  
   
 ## <a name="events"></a>イベント  
- イベントは、アクションの発生を知らせるために、オブジェクトによって送信されるメッセージです。 アクションは、ユーザーがボタンのクリックなどの対話的操作を行った場合や、プロパティの値の変更など、なんらかのプログラム ロジックによって発生します。 イベントを発生させるオブジェクトを "*イベントの送信元*" と呼びます。 イベントの送信元は、発生させたイベントをどのオブジェクトまたはメソッドが受信する (処理する) かについての情報を持っていません。 一般に、このイベントはイベント送信元のメンバーです。たとえば、<xref:System.Web.UI.WebControls.Button.Click> イベントは <xref:System.Web.UI.WebControls.Button> クラスのメンバーであり、<xref:System.ComponentModel.INotifyPropertyChanged.PropertyChanged> イベントは <xref:System.ComponentModel.INotifyPropertyChanged> インターフェイスを実装するクラスのメンバーです。  
+ イベントは、アクションの発生を知らせるために、オブジェクトによって送信されるメッセージです。 アクションは、ユーザーがボタンのクリックなどの対話的操作を行った場合や、プロパティの値の変更など、なんらかのプログラム ロジックによって発生します。 イベントを発生させるオブジェクトを "*イベントの送信元*" と呼びます。 イベントの送信元は、発生させたイベントをどのオブジェクトまたはメソッドが受信する (処理する) かについての情報を持っていません。 このイベントはイベントの送信元のメンバーです。たとえば、<xref:System.Web.UI.WebControls.Button.Click> イベントは <xref:System.Web.UI.WebControls.Button> クラスのメンバーであり、<xref:System.ComponentModel.INotifyPropertyChanged.PropertyChanged> イベントは <xref:System.ComponentModel.INotifyPropertyChanged> インターフェイスを実装するクラスのメンバーです。  
   
  イベントを定義するには、イベント クラスのシグネチャで `event` (C# の場合) または `Event` (Visual Basic の場合) のキーワードを使用し、イベントにデリゲートの型を指定します。 デリゲートについては、次のセクションで説明します。  
   
@@ -37,8 +38,7 @@ ms.lasthandoff: 04/08/2017
   
  次の例は、`ThresholdReached` という名前のイベントを宣言する方法を示しています。 イベントは <xref:System.EventHandler> デリゲートに関連付けられ、`OnThresholdReached` という名前のメソッドで発生します。  
   
- [!code-csharp[EventsOverview#1](../../../samples/snippets/csharp/VS_Snippets_CLR/eventsoverview/cs/programtruncated.cs#1)]
- [!code-vb[EventsOverview#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/eventsoverview/vb/module1truncated.vb#1)]  
+ [!code-csharp[EventsOverview#1](../../../samples/snippets/csharp/VS_Snippets_CLR/eventsoverview/cs/programtruncated.cs#1)] [!code-vb[EventsOverview#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/eventsoverview/vb/module1truncated.vb#1)]  
   
 ## <a name="delegates"></a>デリゲート  
  デリゲートは、メソッドへの参照を保持する型です。 デリゲートは、自身が参照するメソッドの戻り値とパラメーターを表示するシグネチャで宣言され、このシグネチャに一致するメソッドへの参照だけを保持できます。 これにより、デリゲートはタイプ セーフな関数ポインターやコールバックと同等の機能を持つことができます。 デリゲート クラスは、宣言すると、定義は不要です。  
@@ -51,31 +51,28 @@ ms.lasthandoff: 04/08/2017
   
  <xref:System.EventHandler> デリゲートおよび <xref:System.EventHandler%601> デリゲートが動作しないシナリオについては、デリゲートを定義できます。 デリゲートの定義が必要なシナリオは非常にまれで、たとえば、ジェネリックを認識しないコードを使用する必要がある場合などです。 デリゲートには、宣言内で `delegate` キーワード (C# の場合) および `Delegate` キーワード (Visual Basic の場合) を使用してマークします。 次の例は、`ThresholdReachedEventHandler` という名前のデリゲートを宣言する方法を示しています。  
   
- [!code-csharp[EventsOverview#4](../../../samples/snippets/csharp/VS_Snippets_CLR/eventsoverview/cs/programtruncated.cs#4)]
- [!code-vb[EventsOverview#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR/eventsoverview/vb/module1truncated.vb#4)]  
+ [!code-csharp[EventsOverview#4](../../../samples/snippets/csharp/VS_Snippets_CLR/eventsoverview/cs/programtruncated.cs#4)] [!code-vb[EventsOverview#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR/eventsoverview/vb/module1truncated.vb#4)]  
   
 ## <a name="event-data"></a>イベント データ  
- イベントに関連付けられたデータは、イベント データ クラスを使用して提供できます。 .NET Framework には、アプリケーションで使用できるイベント データ クラスが多数用意されています。 たとえば、<xref:System.IO.Ports.SerialDataReceivedEventArgs> クラスは <xref:System.IO.Ports.SerialPort.DataReceived?displayProperty=fullName> イベントのイベント データ クラスです。 .NET Framework の名前付けパターンでは、すべてのイベント データ クラス名の末尾に `EventArgs` が付きます。 イベントに関連付けられているイベント データ クラスは、そのイベントのデリゲートを見ればわかります。 たとえば、<xref:System.IO.Ports.SerialDataReceivedEventHandler> デリゲートには、パラメーターの 1 つとして <xref:System.IO.Ports.SerialDataReceivedEventArgs> クラスが含まれています。  
+ イベントに関連付けられたデータは、イベント データ クラスを使用して提供できます。 .NET Framework には、アプリケーションで使用できるイベント データ クラスが多数用意されています。 たとえば、<xref:System.IO.Ports.SerialDataReceivedEventArgs> クラスは、<xref:System.IO.Ports.SerialPort.DataReceived?displayProperty=fullName> イベントのイベント データ クラスです。 .NET Framework の名前付けパターンでは、すべてのイベント データ クラス名の末尾に `EventArgs` が付きます。 イベントに関連付けられているイベント データ クラスは、そのイベントのデリゲートを見ればわかります。 たとえば、<xref:System.IO.Ports.SerialDataReceivedEventHandler> デリゲートには、パラメーターの 1 つとして <xref:System.IO.Ports.SerialDataReceivedEventArgs> クラスが含まれます。  
   
- <xref:System.EventArgs> クラスは、すべてのイベント データ クラスの基本型です。 また、<xref:System.EventArgs> は、イベントにデータが関連付けられていないときに使用するクラスでもあります。 何かが発生したことを他のクラスに通知することのみが目的のイベント、つまり、データの受け渡しを必要としないイベントを作成する場合は、デリゲートの 2 番目のパラメーターとして <xref:System.EventArgs> クラスを追加します。 データが指定されない場合、<xref:System.EventArgs.Empty?displayProperty=fullName> 値を渡すことができます。 <xref:System.EventHandler> デリゲートには、パラメーターとして <xref:System.EventArgs> クラスが含まれています。  
+ <xref:System.EventArgs> は、すべてのイベント データ クラスの基本型です。 また、<xref:System.EventArgs> は、イベントにデータが関連付けられていないときに使用するクラスでもあります。 何かが発生したことを他のクラスに通知することのみが目的のイベント、つまり、データの受け渡しを必要としないイベントを作成する場合は、デリゲートの 2 番目のパラメーターとして <xref:System.EventArgs> クラスを追加します。 データが指定されていない場合は、<xref:System.EventArgs.Empty?displayProperty=fullName> 値を渡すことができます。 <xref:System.EventHandler> デリゲートには、パラメーターとして <xref:System.EventArgs> クラスが含まれます。  
   
- カスタマイズされたイベント データ クラスを作成する場合は、<xref:System.EventArgs> から派生したクラスを作成し、イベントに関連するデータを渡すのに必要なメンバーを指定します。 通常は、.NET Framework と同じ名前付けパターンを使用する必要があり、イベント データ クラス名の末尾には `EventArgs` が付きます。  
+ カスタマイズされたイベント データ クラスを作成する場合は、<xref:System.EventArgs>から派生したクラスを作成し、イベントに関連するデータを渡すのに必要なメンバーを指定します。 通常は、.NET Framework と同じ名前付けパターンを使用する必要があり、イベント データ クラス名の末尾には `EventArgs` が付きます。  
   
  次の例は、`ThresholdReachedEventArgs` という名前のイベント データを示しています。 これには、発生したイベントに応じた特定のプロパティが含まれます。  
   
- [!code-csharp[EventsOverview#3](../../../samples/snippets/csharp/VS_Snippets_CLR/eventsoverview/cs/programtruncated.cs#3)]
- [!code-vb[EventsOverview#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/eventsoverview/vb/module1truncated.vb#3)]  
+ [!code-csharp[EventsOverview#3](../../../samples/snippets/csharp/VS_Snippets_CLR/eventsoverview/cs/programtruncated.cs#3)] [!code-vb[EventsOverview#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/eventsoverview/vb/module1truncated.vb#3)]  
   
 ## <a name="event-handlers"></a>イベント ハンドラー  
  イベントに応答するには、イベント レシーバーのイベント ハンドラー メソッドを定義します。 このメソッドは、処理するイベントのデリゲートのシグネチャと一致する必要があります。 イベント ハンドラーでは、ユーザーがボタンをクリックしたときにユーザー入力を収集するなど、イベントが発生したときに必要なアクションを実行します。 イベントが発生したときに通知を受け取るには、イベント ハンドラー メソッドがイベントをサブスクライブする必要があります。  
   
- 次の例は、<xref:System.EventHandler> デリゲートのシグネチャと一致する、`c_ThresholdReached` という名前のイベント ハンドラー メソッドを示しています。 メソッドは、`ThresholdReached` イベントをサブスクライブします。  
+ 次の例は、`c_ThresholdReached` デリゲートのシグネチャと一致する、<xref:System.EventHandler> という名前のイベント ハンドラー メソッドを示しています。 メソッドは、`ThresholdReached` イベントをサブスクライブします。  
   
- [!code-csharp[EventsOverview#2](../../../samples/snippets/csharp/VS_Snippets_CLR/eventsoverview/cs/programtruncated.cs#2)]
- [!code-vb[EventsOverview#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/eventsoverview/vb/module1truncated.vb#2)]  
+ [!code-csharp[EventsOverview#2](../../../samples/snippets/csharp/VS_Snippets_CLR/eventsoverview/cs/programtruncated.cs#2)] [!code-vb[EventsOverview#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/eventsoverview/vb/module1truncated.vb#2)]  
   
 ## <a name="static-and-dynamic-event-handlers"></a>静的イベント ハンドラーと動的イベント ハンドラー  
- .NET Framework を使用すると、静的または動的にイベント通知のためのサブスクライバーを登録できます。 静的なイベント ハンドラーは、処理対象のイベントのクラスの有効期間にわたって有効になります。 動的なイベント ハンドラーは、プログラムの実行中、通常は条件付きのプログラム ロジックに応答する形で、明示的にアクティブ化または非アクティブ化されます。 たとえば、特定の条件下でのみイベント通知が必要な場合や、複数のイベント ハンドラーを持つアプリケーションで、実行時の条件に応じて適切なハンドラーを決定する場合などに使用できます。 前のセクションの例は、イベント ハンドラーを動的に追加する方法を示しています。 詳細については、「[イベント](http://msdn.microsoft.com/library/8fb0353a-e41b-4e23-b78f-da65db832f70)」および「[イベント](http://msdn.microsoft.com/library/a8e51b22-d294-44fb-9539-0072f06c4cb3)」を参照してください。  
+ .NET Framework を使用すると、静的または動的にイベント通知のためのサブスクライバーを登録できます。 静的なイベント ハンドラーは、処理対象のイベントのクラスの有効期間にわたって有効になります。 動的なイベント ハンドラーは、プログラムの実行中、通常は条件付きのプログラム ロジックに応答する形で、明示的にアクティブ化または非アクティブ化されます。 たとえば、特定の条件下でのみイベント通知が必要な場合や、複数のイベント ハンドラーを持つアプリケーションで、実行時の条件に応じて適切なハンドラーを決定する場合などに使用できます。 前のセクションの例は、イベント ハンドラーを動的に追加する方法を示しています。 詳細については、「[イベント](../../visual-basic/programming-guide/language-features/events/index.md)」および「[イベント](../../csharp/programming-guide/events/index.md)」を参照してください。  
   
 ## <a name="raising-multiple-events"></a>複数のイベントの発生  
  クラスで複数のイベントを発生させる場合、コンパイラでは、イベント デリゲートのインスタンスごとに 1 つのフィールドが生成されます。 イベントの数が多い場合は、デリゲート 1 つあたり 1 フィールドというストレージ コストが許容されない可能性があります。 このような状況に備えて、.NET Framework には、イベント デリゲートを格納するために任意に選択した別のデータ構造と一緒に使用できる、イベント プロパティが用意されています。  
@@ -97,5 +94,6 @@ ms.lasthandoff: 04/08/2017
  <xref:System.EventArgs>   
  <xref:System.Delegate>   
  [イベントとルーティング イベントの概要 (Windows ストア アプリ)](http://go.microsoft.com/fwlink/?LinkId=261485)   
- [イベント](http://msdn.microsoft.com/library/8fb0353a-e41b-4e23-b78f-da65db832f70)   
- [イベント](http://msdn.microsoft.com/library/a8e51b22-d294-44fb-9539-0072f06c4cb3)
+ [イベント (Visual Basic)](../../visual-basic/programming-guide/language-features/events/index.md)   
+ [イベント (C# プログラミング ガイド)](../../csharp/programming-guide/events/index.md)
+

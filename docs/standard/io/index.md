@@ -1,5 +1,5 @@
 ---
-title: "ファイルおよびストリーム入出力 | Microsoft Docs"
+title: "ファイルおよびストリーム入出力"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net
@@ -20,11 +20,11 @@ caps.latest.revision: 33
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 1fabc43044b6e0fa765a7c2f225add8b7eb923f5
-ms.openlocfilehash: 1d0c203313b33aeba26aded268467b1a1b181118
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: fbd31e6bff5502291fd24b57b55c81046da330d3
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/02/2017
+ms.lasthandoff: 09/05/2017
 
 ---
 # <a name="file-and-stream-io"></a>ファイルおよびストリーム入出力
@@ -100,7 +100,7 @@ ms.lasthandoff: 05/02/2017
 ## <a name="asynchronous-io-operations"></a>非同期 I/O 操作  
  大量のデータを読み取ったり書き込んだりすると、リソースが大量に消費されることがあります。 アプリケーションのユーザーに対する応答性を維持する必要がある場合は、これらのタスクを非同期的に実行する必要があります。 同期 I/O 操作の場合、大量のリソースを消費する操作が完了するまで UI スレッドがブロックされます。  [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] アプリを開発するときには非同期 I/O 操作を使用して、アプリが動作しなくなったと受け取られないようにします。  
   
- <xref:System.IO.Stream.CopyToAsync%2A>、<xref:System.IO.Stream.FlushAsync%2A>、<xref:System.IO.Stream.ReadAsync%2A>、および <xref:System.IO.Stream.WriteAsync%2A> の各メソッドのように、非同期メンバーの名前には `Async` が含まれています。 これらのメソッドは、`async` キーワードおよび `await` キーワードと共に使用します。  
+ `Async`、<xref:System.IO.Stream.CopyToAsync%2A>、<xref:System.IO.Stream.FlushAsync%2A>、および <xref:System.IO.Stream.ReadAsync%2A> の各メソッドのように、非同期メンバーの名前には <xref:System.IO.Stream.WriteAsync%2A> が含まれています。 これらのメソッドは、`async` キーワードおよび `await` キーワードと共に使用します。  
   
  詳細については、「[非同期ファイル I/O](../../../docs/standard/io/asynchronous-file-i-o.md)」を参照してください。  
   
