@@ -2,21 +2,20 @@
 title: ".NET にようこそ"
 description: ".NET ファミリのテクノロジの概要です。"
 keywords: ".NET, .NET Core, はじめに, ニュース"
-author: richlander
+author: mairaw
 ms.author: mairaw
-ms.date: 07/03/2017
+ms.date: 08/14/2017
 ms.topic: article
 ms.prod: .net
 ms.devlang: dotnet
 ms.assetid: cb788dcf-2120-467f-9c34-c02a90e1f68f
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 0c6d4d9efbf51d8ae6308a34cbc4f522cceea001
+ms.sourcegitcommit: 03d1e3f0897713e25be7d7f893861a3eb4dac211
+ms.openlocfilehash: 303219086339a059a905e303a4ecd490e91ba7cc
 ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
+ms.lasthandoff: 09/11/2017
 
 ---
-
 # <a name="welcome-to-net"></a>.NET にようこそ
 
 .NET Core アプリの作成方法については、「[Getting Started with .NET Core (.NET Core の概要)](core/get-started.md)」をご覧ください。
@@ -25,12 +24,15 @@ ms.lasthandoff: 07/28/2017
 
 ## <a name="news"></a>ニュース
 
+- [.NET Core 2.0 がリリースされました](https://channel9.msdn.com/Blogs/dotnet/NET-Core-20-Released)
+- [.NET Core 2.0 の発表](https://blogs.msdn.microsoft.com/dotnet/2017/08/14/announcing-net-core-2-0/)
+- [.NET Standard 2.0 の発表](https://blogs.msdn.microsoft.com/dotnet/2017/08/14/announcing-net-standard-2-0/)
+- [ASP.NET Core 2.0 の発表](https://blogs.msdn.microsoft.com/webdev/2017/08/14/announcing-asp-net-core-2-0/)
+- [Entity Framework Core 2.0 の発表](https://blogs.msdn.microsoft.com/dotnet/2017/08/14/announcing-entity-framework-core-2-0/)
+- [Visual Basic の新機能: .NET Standard クラス ライブラリと dotnet CLI](https://blogs.msdn.microsoft.com/vbteam/2017/08/14/new-for-visual-basic-net-standard-class-libraries-and-the-dotnet-cli/)
+- [Visual Studio 2017 バージョン 15.3 がリリースされました](https://blogs.msdn.microsoft.com/visualstudio/2017/08/14/visual-studio-2017-version-15-3-released/)
 - [.NET Standard の概要](https://blogs.msdn.microsoft.com/dotnet/2016/09/26/introducing-net-standard/)
-- [.NET Core 2.0 Preview 2 の発表](https://blogs.msdn.microsoft.com/dotnet/2017/06/28/announcing-net-core-2-0-preview-2/)
-- [ASP.NET Core 2.0 Preview 2 の紹介](https://blogs.msdn.microsoft.com/webdev/2017/06/28/introducing-asp-net-core-2-0-preview-2/)
-- [Visual Studio 2017 と次のプレビューの新しい更新プログラム](https://blogs.msdn.microsoft.com/visualstudio/2017/05/10/update-to-visual-studio-2017-and-next-preview/)
 - [Visual Studio for Mac: 一般公開されました](https://blogs.msdn.microsoft.com/visualstudio/2017/05/10/visual-studio-for-mac-now-generally-available/)
-- [.NET Core Tools 1.0 (.NET Core 1.0.4、.NET Core 1.1.1、.NET Core SDK 1.0.1) の発表](https://blogs.msdn.microsoft.com/dotnet/2017/03/07/announcing-net-core-tools-1-0/)
 - [Visual Studio 2017 の一般提供開始の発表](https://blogs.msdn.microsoft.com/visualstudio/2017/03/07/announcing-visual-studio-2017-general-availability-and-more/)
 - [.NET Core と Visual Studio 2017 の新機能 (ビデオ)](https://channel9.msdn.com/events/Visual-Studio/Visual-Studio-2017-Launch/T108)
 - [.NET Framework 4.7 の発表](https://blogs.msdn.microsoft.com/dotnet/2017/04/05/announcing-the-net-framework-4-7/)
@@ -44,7 +46,7 @@ ms.lasthandoff: 07/28/2017
 
 このドキュメントでは、.NET 全体のプラットフォームおよび言語について説明します。  次のいずれかのセクションから .NET とその言語の作業を開始できます。
 
-- [.NET プラットフォーム ガイド](standard/index.md)
+- [.NET のガイド](standard/index.md)
 - [.NET Core のガイド](core/index.md)
 - [.NET Framework ガイド](framework/index.md)
 - [C# のガイド](csharp/index.md)
@@ -55,7 +57,7 @@ ms.lasthandoff: 07/28/2017
 
 ## <a name="open-source"></a>ソースを開く
 
-このドキュメントは、完全な[オープン ソース](https://github.com/dotnet/docs)です。  問題の作成からドキュメントの作成まで、好みに応じて投稿することができます。  さらに、.NET 自体のほとんどがオープン ソースです。
+このドキュメントは、完全な[オープン ソース](https://github.com/dotnet/docs)です。 問題の作成からドキュメントの作成まで、好みに応じて投稿することができます。  さらに、.NET 自体のほとんどがオープン ソースです。
 
 - [.NET Core ホーム](https://github.com/dotnet/core)
 - [.NET ライブラリ](https://github.com/dotnet/corefx)
