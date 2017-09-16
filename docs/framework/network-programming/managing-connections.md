@@ -1,51 +1,56 @@
 ---
-title: "接続の管理 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "インターネット、接続"
-  - "HTTP、クラス (接続用の)"
-  - "要求 (インターネットからデータを)、接続"
-  - "送信 (データを)、接続"
-  - "受信 (データを)、接続"
-  - "ServicePoint クラス、ServicePoint クラスの概要"
-  - "インターネット要求への応答、接続"
-  - "接続 [.NET Framework]、クラス"
-  - "ネットワーク リソース、接続"
-  - "ダウンロード (インターネット リソースの)、接続"
-  - "ServicePointManager クラス、ServicePointManager クラスの概要"
+title: "接続の管理"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- VB
+- CSharp
+- C++
+- jsharp
+helpviewer_keywords:
+- Internet, connections
+- HTTP, classes for connecting
+- requesting data from Internet, connections
+- sending data, connections
+- receiving data, connections
+- ServicePoint class, about ServicePoint class
+- response to Internet request, connections
+- connections [.NET Framework], classes
+- network resources, connections
+- downloading Internet resources, connections
+- ServicePointManager class, about ServicePointManager class
 ms.assetid: 9b3d3de7-189f-4f7d-81ae-9c29c441aaaa
 caps.latest.revision: 9
-author: "mcleblanc"
-ms.author: "markl"
-manager: "markl"
-caps.handback.revision: 9
+author: mcleblanc
+ms.author: markl
+manager: markl
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 53170432e108a6d866bc2b96ef1ebf8b5bee6f28
+ms.contentlocale: ja-jp
+ms.lasthandoff: 08/21/2017
+
 ---
-# 接続の管理
-データ リソースに接続して HTTP を使用するアプリケーションは、インターネットへの接続を管理し、最適なスケール、パフォーマンスの実現にするには、.NET フレームワークの <xref:System.Net.ServicePoint> と <xref:System.Net.ServicePointManager> クラスを使用できます。  
+# <a name="managing-connections"></a>接続の管理
+HTTP を使用してデータ リソースに接続するアプリケーションは、.NET Framework の <xref:System.Net.ServicePoint> クラスと <xref:System.Net.ServicePointManager> クラスを使用してインターネットに対する接続を管理し、最適なスケールとパフォーマンスを達成することができます。  
   
- **ServicePoint** クラスは、インターネットのリソースにアクセスするアプリケーションが接続できるエンドポイントをアプリケーションが提供されます。  各 **ServicePoint** は、パフォーマンスを改善するにヘルプが接続間の最適化情報を共有することで、インターネット サーバーがとの接続を最適化する情報が含まれます。  
+ **ServicePoint** クラスは、アプリケーションがインターネット リソースにアクセスするときに、接続に使用できるエンドポイントを提供します。 各 **ServicePoint** には、接続間で最適化情報を共有してパフォーマンスを改善することで、インターネット サーバーとの接続を最適化できる情報が含まれています。  
   
- 各 **ServicePoint** は Uniform Resource Identifier \(URI\) が確認され、URI の設定の ID とホストの片に従って並べ替えられます。  たとえば、**ServicePoint** 同じ URI のインスタンスは http:\/\/www.contoso.com\/index.htm、http:\/\/www.contoso.com\/news.htm?date\=today に同じ設定の ID \(http\) とホストの片 \(www.contoso.com\) がある要求を提供します。  既にアプリケーションにサーバーへの接続が www.contoso.com 耐久性がある場合、2 種類の接続を作成する必要が回避両方の要求を取得するためにその接続を使用します。  
+ 各 **ServicePoint** は、Uniform Resource Identifier (URI) で識別され、URI のスキーム識別子とホスト フラグメントに従って分類されます。 たとえば、スキーム識別子 (http) とホスト フラグメント (www.contoso.com) が同じため、1 つの **ServicePoint** インスタンスから URI http://www.contoso.com/index.htm と http://www.contoso.com/news.htm?date=today に対して要求が提供されます。 サーバー www.contoso.com に対する永続的な接続が既にあるアプリケーションの場合、2 つの接続を作成する必要がないように、その接続を使用して両方の要求が取得されます。  
   
- **ServicePointManager** は **ServicePoint** のインスタンスの作成と管理を破壊する静的クラスです。  **ServicePointManager** は、アプリケーションが **ServicePoint** のあるインスタンスのグループにない Internet のリソースが必要な場合 **ServicePoint** を作成します。  **ServicePoint** のインスタンスは最大のアイドル時間を超えた場合、または **ServicePoint** のあるインスタンスの数がアプリケーションの **ServicePoint** のインスタンスの最大数を超えた場合に、破壊されます。  **ServicePointManager**の <xref:System.Net.ServicePointManager.MaxServicePointIdleTime%2A> と <xref:System.Net.ServicePointManager.MaxServicePoints%2A> のプロパティの設定によって **ServicePoint** のインスタンスの既定の最大のアイドル時間と最大数の両方を制御できます。  
+ **ServicePointManager** は、**ServicePoint** インスタンスの作成と破棄を管理する静的クラスです。 既存の **ServicePoint** インスタンスのコレクション内にないインターネット リソースをアプリケーションから要求された場合、**ServicePointManager** によって **ServicePoint** が作成されます。 最大アイドル時間を超えた場合、または既存の **ServicePoint** インスタンスがアプリケーションの最大 **ServicePoint** インスタンス数を超えた場合、**ServicePoint** インスタンスは破棄されます。 既定の最大アイドル時間と最大 **ServicePoint** インスタンス数はいずれも、**ServicePointManager** で <xref:System.Net.ServicePointManager.MaxServicePointIdleTime%2A> プロパティと <xref:System.Net.ServicePointManager.MaxServicePoints%2A> プロパティを設定して制御できます。  
   
- クライアントとサーバー間の接続数は、アプリケーションのスループットの劇的な影響することができます。  既定では、<xref:System.Net.HttpWebRequest> クラスを使用してアプリケーションは最大特定のサーバーへの 2 種類の耐久性がある接続を使用して、アプリケーション基準の接続ごとの最大数を設定できます。  
+ クライアントとサーバー間の接続数は、アプリケーションのスループットに大きな影響を及ぼす可能性があります。 既定で、<xref:System.Net.HttpWebRequest> クラスを使用するアプリケーションは、特定のサーバーに対して最大で 2 つの永続的な接続を使用しますが、最大接続数はアプリケーションごとに設定できます。  
   
 > [!NOTE]
->  制限 HTTP\/1.1 標準アプリケーションからサーバー 1 通の 2 種類の接続に接続する番号。  
+>  HTTP/1.1 仕様では、アプリケーションからの接続数をサーバーごとに 2 接続に制限しています。  
   
- 接続の最適な番号は、アプリケーションで実行される実際の要件によって異なります。  使用可能なアプリケーションに接続の数は、増やすことは、アプリケーションのパフォーマンスに影響しない場合があります。  接続数を変えて中詳細に接続の影響を決定するため、実行パフォーマンステスト。  次のサンプル コードに示すように、アプリケーションでアプリケーションの初期設定に **ServicePointManager** クラスの <xref:System.Net.ServicePointManager.DefaultConnectionLimit%2A> の静的なプロパティの変更で使用する接続数を変更できます。  
+ 最適な接続数は、アプリケーションが実行されている実際の条件によって変わります。 アプリケーションに使用できる接続数を増やしても、アプリケーションのパフォーマンスに影響しない可能性があります。 接続数を増やした場合の影響を判断するには、接続数を変えながらパフォーマンス テストを実行します。 アプリケーションが使用する接続数を変更するには、次のコード例のように、アプリケーションの初期化時に **ServicePointManager** クラスの静的な <xref:System.Net.ServicePointManager.DefaultConnectionLimit%2A> プロパティを変更します。  
   
 ```csharp  
 // Set the maximum number of connections per server to 4.  
@@ -57,7 +62,7 @@ ServicePointManager.DefaultConnectionLimit = 4;
 ServicePointManager.DefaultConnectionLimit = 4  
 ```  
   
- **\[ServicePointManager.DefaultConnectionLimit\]** のプロパティを変更すると、前に **ServicePoint** の初期化したインスタンスには影響しません。  次のコードは `newLimit`に格納されている値にサーバーの http:\/\/www.contoso.com 既存の **ServicePoint** の接続の限度を変更することを示します。  
+ **ServicePointManager.DefaultConnectionLimit** プロパティを変更しても、既に初期化されている **ServicePoint** インスタンスに影響はありません。 次のコードは、サーバー http://www.contoso.com の既存の **ServicePoint** の接続制限を、`newLimit` に保存されている値に変更する例を示しています。  
   
 ```csharp  
 Uri uri = new Uri("http://www.contoso.com/");  
@@ -71,6 +76,7 @@ Dim sp As ServicePoint = ServicePointManager.FindServicePoint(uri)
 sp.ConnectionLimit = newLimit  
 ```  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [接続のグループ化](../../../docs/framework/network-programming/connection-grouping.md)   
  [アプリケーション プロトコルの使用](../../../docs/framework/network-programming/using-application-protocols.md)
+

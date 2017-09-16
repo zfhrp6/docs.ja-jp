@@ -1,44 +1,50 @@
 ---
-title: "WebRequest の問題と例外について | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
+title: "WebRequest の問題と例外について"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- VB
+- CSharp
+- C++
+- jsharp
 ms.assetid: 74a361a5-e912-42d3-8f2e-8e9a96880a2b
 caps.latest.revision: 6
-author: "mcleblanc"
-ms.author: "markl"
-manager: "markl"
-caps.handback.revision: 6
+author: mcleblanc
+ms.author: markl
+manager: markl
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 918528e99396bd71f8c44dadcef7f6dfa6a7a47e
+ms.contentlocale: ja-jp
+ms.lasthandoff: 08/21/2017
+
 ---
-# WebRequest の問題と例外について
-<xref:System.Net.WebRequest> および派生クラス \(<xref:System.Net.HttpWebRequest>、<xref:System.Net.FtpWebRequest>と <xref:System.Net.FileWebRequest>\) が非常にステータスを通知するための例外を投げます。  場合によってはこれらの問題の解決策は明らかではありません。  
+# <a name="understanding-webrequest-problems-and-exceptions"></a>WebRequest の問題と例外について
+<xref:System.Net.WebRequest> とその派生クラス (<xref:System.Net.HttpWebRequest>、<xref:System.Net.FtpWebRequest>、<xref:System.Net.FileWebRequest>) は例外をスローし、異常な状態を信号で伝えます。 このような問題の解決はすぐにわからないことがあります。  
   
-## 解決策  
- 問題を確認するに <xref:System.Net.WebException> の <xref:System.Net.WebException.Status%2A> のプロパティを確認します。  次の表に、複数のステータスの値と考えられる決済を示します。  
+## <a name="solutions"></a>解決策  
+ <xref:System.Net.WebException> の <xref:System.Net.WebException.Status%2A> プロパティを調べ、問題を判断します。 次の表は、いくつかの状態値と可能な解決策をまとめたものです。  
   
-|状態|詳細|解決方法|  
-|--------|--------|----------|  
-|<xref:System.Net.WebExceptionStatus><br /><br /> または<br /><br /> <xref:System.Net.WebExceptionStatus>|基になるソケットに問題があります。  接続がリセットされる場合があります。|要求を再接続し、再送信します。<br /><br /> 最新のサービス パックをインストールしてください。<br /><br /> <xref:System.Net.ServicePointManager.MaxServicePointIdleTime%2A?displayProperty=fullName> のプロパティの値を増やします。<br /><br /> \[<xref:System.Net.HttpWebRequest.KeepAlive%2A?displayProperty=fullName>\] を \[`false`\] に設定します。<br /><br /> <xref:System.Net.ServicePointManager.DefaultConnectionLimit%2A> のプロパティを含む最大の接続数を上げます。<br /><br /> プロキシ コンフィギュレーションを確認します。<br /><br /> SSL を使用している場合は、サーバー プロセスに証明書ストアをアクセス許可があることを確認します。<br /><br /> 大量のデータを送信する場合は、`false`に <xref:System.Net.HttpWebRequest.AllowWriteStreamBuffering%2A> を設定します。|  
-|<xref:System.Net.WebExceptionStatus>|サーバーる証明書ができませんでした。|Internet Explorer を使用して URI を開くとします。  IE によって表示される警報セキュリティを設定します。  セキュリティ警報を解決できない場合、<xref:System.Net.ICertificatePolicy> を `true`返品を実行し、<xref:System.Net.ServicePointManager.CertificatePolicy%2A>に渡す証明書のポリシーのクラスを作成できます。<br /><br /> 参照 [http:\/\/support.microsoft.com\/?id\=823177](http://go.microsoft.com/fwlink/?LinkID=179653)します。<br /><br /> サーバー証明書に署名する証明機関の証明書が Internet Explorer の信頼済証明機関の一覧に追加されることを確認します。<br /><br /> URL のホスト名がサーバー証明書の共通名と一致していることを確認します。|  
-|<xref:System.Net.WebExceptionStatus>|エラーが SSL のトランザクションの未収、または証明書問題があります。|.NET Framework Version 1.1 が SSL のバージョンのみ 3.0 はできません。  サーバーが TLS のバージョン 1.0 または 2.0 SSL のバージョンを使用すると、例外が投げられます。  .NET Framework Version 2.0 をにアップグレードし、サーバーに合わせて <xref:System.Net.ServicePointManager.SecurityProtocol%2A> を設定します。<br /><br /> 証明書クライアントとサーバーが信頼しない証明機関 \(CA\) が署名されています。  CA 証明書のサーバーをインストール。  " "を参照してください。[http:\/\/support.microsoft.com\/?id\=332077](http://go.microsoft.com/fwlink/?LinkID=179654)<br /><br /> 最新のサービス パックをインストールする必要があります。|  
-|<xref:System.Net.WebExceptionStatus>|接続に失敗しました。|ファイアウォールまたはプロキシは接続をブロック。  接続を許可する場合は、ファイアウォールまたはプロキシを変更します。<br /><br /> 明示的に <xref:System.Net.WebProxy> のコンストラクターの呼び出し、クライアント アプリケーションの <xref:System.Net.WebProxy> を表示します \(WebServiceProxyClass.Proxy \= 新しい WebProxy \([http:\/\/server:80](http://server/)、など\)。\)<br /><br /> ワーカー プロセス ID に WSPWSP.dll、HKLM \\ SYSTEM \\ CurrentControlSet \\ Services \\ DnsCache アクセスを必要なアクセス許可がまたは HKLM \\ SYSTEM \\ CurrentControlSet \\ Services \\ WinSock2 あることを確認するに Filemon または Regmon を実行します。|  
-|<xref:System.Net.WebExceptionStatus>|ドメイン ネーム サービスをホスト名を解決しませんでした。|プロキシを正しくコンフィギュレーションします。  " "を参照してください。[http:\/\/support.microsoft.com\/?id\=318140](http://go.microsoft.com/fwlink/?LinkID=179655)<br /><br /> インストール アンチウィルスのソフトウェアまたはファイアウォールが接続をブロックことを確認します。|  
-|<xref:System.Net.WebExceptionStatus>|<xref:System.Net.WebRequest.Abort%2A> 名前はされた、またはエラーが発生しました。|この問題は、クライアントまたはサーバーの連結負荷によって起こされる場合があります。  負荷の引き下げ。<br /><br /> <xref:System.Net.ServicePointManager.DefaultConnectionLimit%2A> の配置を上げます。<br /><br /> Web サービスの提供の設定を変更するに [http:\/\/support.microsoft.com\/?id\=821268](http://go.microsoft.com/fwlink/?LinkID=179656) は、" "を参照してください。|  
-|<xref:System.Net.WebExceptionStatus>|アプリケーションが既に閉じられているソケットに作成するに努めました。|クライアントまたはサーバーには過ぎられます。  負荷の引き下げ。<br /><br /> <xref:System.Net.ServicePointManager.DefaultConnectionLimit%2A> の配置を上げます。<br /><br /> Web サービスの提供の設定を変更するに [http:\/\/support.microsoft.com\/?id\=821268](http://go.microsoft.com/fwlink/?LinkID=179656) は、" "を参照してください。|  
-|<xref:System.Net.WebExceptionStatus>|メッセージの長さのそのほか \(<xref:System.Net.HttpWebRequest.MaximumResponseHeadersLength%2A>\) を超えています。|<xref:System.Net.HttpWebRequest.MaximumResponseHeadersLength%2A> のプロパティの値を増やします。|  
-|<xref:System.Net.WebExceptionStatus>|ドメイン ネーム サービスがプロキシのホスト名を解決しませんでした。|プロキシを正しくコンフィギュレーションします。  " "を参照してください。[http:\/\/support.microsoft.com\/?id\=318140](http://go.microsoft.com/fwlink/?LinkID=179655)<br /><br /> `null`に <xref:System.Net.HttpWebRequest.Proxy%2A> のプロパティを設定することにより、プロキシを使用するには、<xref:System.Net.HttpWebRequest> を強制的にします。|  
-|<xref:System.Net.WebExceptionStatus>|サーバーからの応答は有効な HTTP 応答ではありません。  この問題は HTTP サーバー 1.1 の RFC に適合しないことを .NET Framework が検出する際に。  この問題が応答に正しくないヘッダーを追加、または誤ったヘッダー delimiters.RFC 2616 がサーバーからの応答の HTTP 1.1 と有効な形式を定義するときに発生することがあります。  詳細については、[http:\/\/www.ietf.org](http://go.microsoft.com/fwlink/?LinkID=147388)" "を参照してください。|トランザクションのネットワーク追跡を取得し、回答のヘッダーを確認します。<br /><br /> \(これはセキュリティ問題にすることもできます\)、アプリケーションで分析せずにサーバーの応答が必要な場合は、コンフィギュレーション ファイルの `true` に `useUnsafeHeaderParsing` を設定します。  「[\<httpWebRequest\> 要素 \(ネットワーク設定\)](../../../docs/framework/configure-apps/file-schema/network/httpwebrequest-element-network-settings.md)」を参照してください。|  
+|状態|詳細|ソリューション|  
+|------------|-------------|--------------|  
+|<xref:System.Net.WebExceptionStatus.SendFailure><br /><br /> または<br /><br /> <xref:System.Net.WebExceptionStatus.ReceiveFailure>|基盤となるソケットに問題があります。 接続がリセットされた可能性があります。|再接続し、要求を再送信します。<br /><br /> 最新のサービス パックがインストールされていることを確認します。<br /><br /> <xref:System.Net.ServicePointManager.MaxServicePointIdleTime%2A?displayProperty=fullName> プロパティの値を増やします。<br /><br /> <xref:System.Net.HttpWebRequest.KeepAlive%2A?displayProperty=fullName> を `false` に設定します。<br /><br /> <xref:System.Net.ServicePointManager.DefaultConnectionLimit%2A> プロパティで最大接続数を増やします。<br /><br /> プロキシ構成を確認します。<br /><br /> SSL を利用するとき、証明書ストアにアクセスするアクセス許可がサーバー プロセスに与えられていることを確認してください。<br /><br /> 大量のデータを送信する場合、<xref:System.Net.HttpWebRequest.AllowWriteStreamBuffering%2A> を `false` に設定します。|  
+|<xref:System.Net.WebExceptionStatus.TrustFailure>|サーバー証明書を検証できませんでした。|Internet Explorer で URI を開いてみてください。 セキュリティ警告が IE で表示されたら、それを解決します。 セキュリティ警告を解決できない場合、`true` を返す <xref:System.Net.ICertificatePolicy> を実装する証明書ポリシー クラスを作成し、それを <xref:System.Net.ServicePointManager.CertificatePolicy%2A> に渡すことができます。<br /><br /> [http://support.microsoft.com/?id=823177](http://go.microsoft.com/fwlink/?LinkID=179653) を参照してください。<br /><br /> サーバー証明書に署名した証明書機関の証明書が Internet Explorer の信頼された証明機関一覧に追加されていることを確認してください。<br /><br /> URL 内のホスト名がサーバー証明書の共通名と一致していることを確認してください。|  
+|<xref:System.Net.WebExceptionStatus.SecureChannelFailure>|SSL トランザクションでエラーが発生しました。あるいは、証明書に問題があります。|.NET Framework バージョン 1.1 は、SSL バージョン 3.0 にのみ対応しています。 サーバーが TLS バージョン 1.0 か SSL バージョン 2.0 だけを利用している場合、例外がスローされます。 .NET Framework バージョン 2.0 にアップグレードし、サーバーに合わせて <xref:System.Net.ServicePointManager.SecurityProtocol%2A> を設定します。<br /><br /> クライアント証明書に署名した証明書機関 (CA) をサーバーは信頼していません。 サーバーに CA の証明書をインストールしてください。 [http://support.microsoft.com/?id=332077](http://go.microsoft.com/fwlink/?LinkID=179654) をご覧ください。<br /><br /> 最新のサービス パックがインストールされていることを確認します。|  
+|<xref:System.Net.WebExceptionStatus.ConnectFailure>|接続に失敗しました。|ファイアウォールまたはプロキシが接続をブロックしています。 接続を許可するようにファイアウォールまたはプロキシを変更します。<br /><br /> <xref:System.Net.WebProxy> コンストラクタ (WebServiceProxyClass.Proxy = new WebProxy([http://server:80](http://server/), true)) を呼び出し、クライアント アプリケーションに <xref:System.Net.WebProxy> を明示的に指名します。<br /><br /> Filemon または Regmon を実行し、ワーカー プロセス ID に WSPWSP.dll、HKLM\System\CurrentControlSet\Services\DnsCache または HKLM\System\CurrentControlSet\Services\WinSock2 にアクセスするために必要なアクセス許可が与えられていることを確認します。|  
+|<xref:System.Net.WebExceptionStatus.NameResolutionFailure>|ドメイン ネーム サービスがホスト名を解決できませんでした。|プロキシを正しく構成します。 [http://support.microsoft.com/?id=318140](http://go.microsoft.com/fwlink/?LinkID=179655) をご覧ください。<br /><br /> インストールしているアンチウイルス ソフトウェアまたはファイアウォールが接続をブロックしていないことを確認してください。|  
+|<xref:System.Net.WebExceptionStatus.RequestCanceled>|<xref:System.Net.WebRequest.Abort%2A> が呼び出されたか、エラーが発生しました。|この問題は、クライアントまたはサーバーの負荷が大きいことで発生する場合もあります。 負荷を減らしてください。<br /><br /> <xref:System.Net.ServicePointManager.DefaultConnectionLimit%2A> 設定を増やします。<br /><br /> Web サービス パフォーマンス設定の変更方法については、[http://support.microsoft.com/?id=821268](http://go.microsoft.com/fwlink/?LinkID=179656) をご覧ください。|  
+|<xref:System.Net.WebExceptionStatus.ConnectionClosed>|既に閉じられているソケットへの書き込みをアプリケーションが試行しました。|クライアントまたはサーバーがオーバーロードの状態になっています。 負荷を減らしてください。<br /><br /> <xref:System.Net.ServicePointManager.DefaultConnectionLimit%2A> 設定を増やします。<br /><br /> Web サービス パフォーマンス設定の変更方法については、[http://support.microsoft.com/?id=821268](http://go.microsoft.com/fwlink/?LinkID=179656) をご覧ください。|  
+|<xref:System.Net.WebExceptionStatus.MessageLengthLimitExceeded>|メッセージ長に設定された制限 (<xref:System.Net.HttpWebRequest.MaximumResponseHeadersLength%2A>) を超えています。|<xref:System.Net.HttpWebRequest.MaximumResponseHeadersLength%2A> プロパティの値を増やします。|  
+|<xref:System.Net.WebExceptionStatus.ProxyNameResolutionFailure>|ドメイン ネーム サービスがプロキシ ホスト名を解決できませんでした。|プロキシを正しく構成します。 [http://support.microsoft.com/?id=318140](http://go.microsoft.com/fwlink/?LinkID=179655) をご覧ください。<br /><br /> <xref:System.Net.HttpWebRequest.Proxy%2A> プロパティを `null` に設定し、プロキシを使用しないことを <xref:System.Net.HttpWebRequest> に適用します。|  
+|<xref:System.Net.WebExceptionStatus.ServerProtocolViolation>|サーバーからの応答が有効な HTTP 応答ではありません。 サーバー応答が HTTP 1.1 RFC に準拠しないことを .NET Framework が検出したとき、この問題が発生します。 応答に含まれるヘッダーまたはヘッダー区切り文字が正しくないとき、この問題が発生することがあります。RFC 2616 は HTTP 1.1 とサーバーからの応答の有効な形式を定義します。 詳細については、[http://www.ietf.org](http://go.microsoft.com/fwlink/?LinkID=147388) を参照してください。|トランザクションのネットワーク トレースを取得し、応答のヘッダーを調べます。<br /><br /> アプリケーションが解析せずに (セキュリティ上、これは問題になる可能性があります) サーバー応答を要求する場合、構成ファイルで `useUnsafeHeaderParsing` を `true` に設定します。 [\<httpWebRequest> 要素 (ネットワーク設定)](../../../docs/framework/configure-apps/file-schema/network/httpwebrequest-element-network-settings.md) を参照してください。|  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Net.HttpWebRequest>   
  <xref:System.Net.HttpWebResponse>   
  <xref:System.Net.Dns>
+

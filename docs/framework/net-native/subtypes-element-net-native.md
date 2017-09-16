@@ -1,28 +1,32 @@
 ---
-title: "&lt;Subtypes&gt; 要素 (.NET ネイティブ) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "&lt;Subtypes&gt; 要素 (.NET ネイティブ)"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: fb854070-248b-46cf-9dab-c322e2b4d624
 caps.latest.revision: 11
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 11
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: e945c4c6a6b56422fc1aa228bc7a5f388406f16d
+ms.contentlocale: ja-jp
+ms.lasthandoff: 08/21/2017
+
 ---
-# &lt;Subtypes&gt; 要素 (.NET ネイティブ)
+# <a name="ltsubtypesgt-element-net-native"></a>&lt;Subtypes&gt; 要素 (.NET ネイティブ)
 それを含む型から継承されたすべてのクラスに実行時ポリシーを適用します。  
   
 ## <a name="syntax"></a>構文  
   
 ```xml  
-  
 <Subtypes Activate="policy_type"  
           Browse="policy_type"  
           Dynamic="policy_type"  
@@ -33,7 +37,6 @@ caps.handback.revision: 11
           MarshalObject="policy_setting"  
           MarshalDelegate="policy_setting"  
           MarshalStructure="policy_setting" />  
-  
 ```  
   
 ## <a name="attributes-and-elements"></a>属性および要素  
@@ -43,13 +46,13 @@ caps.handback.revision: 11
   
 |属性|属性の型|説明|  
 |---------------|--------------------|-----------------|  
-|`Activate`|反射|省略可能な属性です。 コンストラクターへの実行時アクセスを制御して、インスタンスのアクティブ化を有効にします。|  
-|`Browse`|反射|省略可能な属性です。 プログラム要素に関する情報の照会を制御しますが、実行時アクセスは有効にしません。|  
-|`Dynamic`|反射|省略可能な属性です。 コンストラクター、メソッド、フィールド、プロパティ、およびイベントを含むすべての型のメンバーへの実行時アクセスを制御して、動的プログラミングを有効にします。|  
+|`Activate`|リフレクション|省略可能な属性です。 コンストラクターへの実行時アクセスを制御して、インスタンスのアクティブ化を有効にします。|  
+|`Browse`|リフレクション|省略可能な属性です。 プログラム要素に関する情報の照会を制御しますが、実行時アクセスは有効にしません。|  
+|`Dynamic`|リフレクション|省略可能な属性です。 コンストラクター、メソッド、フィールド、プロパティ、およびイベントを含むすべての型のメンバーへの実行時アクセスを制御して、動的プログラミングを有効にします。|  
 |`Serialize`|シリアル化|省略可能な属性です。 コンストラクター、フィールド、およびプロパティへの実行時アクセスを制御し、Newtonsoft の JSON シリアライザーなどのライブラリによって型インスタンスをシリアル化および逆シリアル化できるようにします。|  
-|`DataContractSerializer`|シリアル化|省略可能な属性です。 使用するシリアル化のポリシーを制御、 <xref:System.Runtime.Serialization.DataContractSerializer?displayProperty=fullName>クラスです。|  
-|`DataContractJsonSerializer`|シリアル化|省略可能な属性です。 ポリシーを使用する JSON シリアル化を制御、 <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer?displayProperty=fullName>クラスです。|  
-|`XmlSerializer`|シリアル化|省略可能な属性です。 使用する XML シリアル化のポリシーを制御、<xref:System.Xml.Serialization.XmlSerializer?displayProperty=fullName>クラスです。|  
+|`DataContractSerializer`|シリアル化|省略可能な属性です。 <xref:System.Runtime.Serialization.DataContractSerializer?displayProperty=fullName> クラスを使用するシリアル化のポリシーを制御します。|  
+|`DataContractJsonSerializer`|シリアル化|省略可能な属性です。 <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer?displayProperty=fullName> クラスを使用する JSON シリアル化のポリシーを制御します。|  
+|`XmlSerializer`|シリアル化|省略可能な属性です。 <xref:System.Xml.Serialization.XmlSerializer?displayProperty=fullName> クラスを使用する XML シリアル化のポリシーを制御します。|  
 |`MarshalObject`|Interop|省略可能な属性です。 Windows ランタイムと COM に参照型をマーシャリングするためのポリシーを制御します。|  
 |`MarshalDelegate`|Interop|省略可能な属性です。 ネイティブ コードへの関数ポインターとしてデリゲート型をマーシャリングするためのポリシーを制御します。|  
 |`MarshalStructure`|Interop|省略可能な属性です。 値型をネイティブ コードにマーシャリングするためのポリシーを制御します。|  
@@ -58,7 +61,7 @@ caps.handback.revision: 11
   
 |値|説明|  
 |-----------|-----------------|  
-|*policy_setting*|このポリシーの種類に適用する設定です。 指定できる値は、`All`、`Auto`、`Excluded`、`Public`、`PublicAndInternal`、`Required Public`、`Required PublicAndInternal`、および `Required All` です。 詳細については、次を参照してください。[ランタイム ディレクティブのポリシー設定](../../../docs/framework/net-native/runtime-directive-policy-settings.md)します。|  
+|*policy_setting*|このポリシーの種類に適用する設定です。 指定できる値は、`All`、`Auto`、`Excluded`、`Public`、`PublicAndInternal`、`Required Public`、`Required PublicAndInternal`、および `Required All` です。 詳細については、「[ランタイム ディレクティブのポリシー設定](../../../docs/framework/net-native/runtime-directive-policy-settings.md)」を参照してください。|  
   
 ### <a name="child-elements"></a>子要素  
  なし。  
@@ -67,12 +70,12 @@ caps.handback.revision: 11
   
 |要素|説明|  
 |-------------|-----------------|  
-|[<>\>](../../../docs/framework/net-native/type-element-net-native.md)|型とそのすべてのメンバーにリフレクション ポリシーを適用します。|  
+|[\<Type>](../../../docs/framework/net-native/type-element-net-native.md)|型とそのすべてのメンバーにリフレクション ポリシーを適用します。|  
   
 ## <a name="remarks"></a>コメント  
  `<Subtypes>` 要素は、それを含む型のすべてのサブタイプにポリシーを適用します。 派生型および基底クラスに異なるポリシーを適用する場合に使用します。  
   
- リフレクション、シリアル化、および相互運用属性はいずれも省略可能ですが、そのうち少なくとも&1; つが存在する必要があります。  
+ リフレクション、シリアル化、および相互運用属性はいずれも省略可能ですが、そのうち少なくとも 1 つが存在する必要があります。  
   
 ## <a name="example"></a>例  
  次の例では、`BaseClass` という名前のクラスと `Derived1` という名前のサブクラスを定義します。  
@@ -82,7 +85,6 @@ caps.handback.revision: 11
  次のコードに示すように、ランタイム ディレクティブ ファイルは、`Dynamic` の `Activate` ポリシーと `BaseClass` ポリシーを明示的に `Excluded` に設定します。 このため、`BaseClass` 型のオブジェクトは動的に、または `BaseClass` クラス コンストラクターの呼び出しによってインスタンス化できません。 ただし、`<Subtypes>` 要素では、`BaseClass` から派生されたクラスの動的なおよびクラス コンストラクターの呼び出しによるインスタンス化は行えません。  
   
 ```xml  
-  
 <Directives xmlns="http://schemas.microsoft.com/netfx/2013/01/metadata">  
   <Application>  
    <Assembly Name="*Application*" Dynamic="Required All" />  
@@ -91,15 +93,15 @@ caps.handback.revision: 11
      </Type>  
   </Application>  
 </Directives>  
-  
 ```  
   
- ため、`<Subtypes>`ディレクティブ、次のコードをインスタンス化する、`Derived1`呼び出すことによって動的にインスタンス、 <xref:System.Activator.CreateInstance%28System.Type%29?displayProperty=fullName>メソッドが正常に実行されます。  ここでブロック変数は、 <xref:System.Windows.Controls.TextBlock>空の Windows ストア アプリケーション内のオブジェクト。  
+ `<Subtypes>` ディレクティブによって、`Derived1` インスタンスを <xref:System.Activator.CreateInstance%28System.Type%29?displayProperty=fullName> メソッドを呼び出すことによって動的にインスタンス化する次のコードが正常に実行されます。  ここでブロック変数は、空の Windows ストア アプリの <xref:System.Windows.Controls.TextBlock> オブジェクトです。  
   
  [!code-csharp[ProjectN_Reflection#5](../../../samples/snippets/csharp/VS_Snippets_CLR/projectn_reflection/cs/subtypes.cs#5)]  
   
 ## <a name="see-also"></a>関連項目  
- [<>\>要素](../../../docs/framework/net-native/type-element-net-native.md)   
+ [\<Type> 要素](../../../docs/framework/net-native/type-element-net-native.md)   
  [ランタイム ディレクティブ (rd.xml) 構成ファイル リファレンス](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)   
  [ランタイム ディレクティブ要素](../../../docs/framework/net-native/runtime-directive-elements.md)   
  [ランタイム ディレクティブ ポリシーの設定](../../../docs/framework/net-native/runtime-directive-policy-settings.md)
+

@@ -1,56 +1,63 @@
 ---
-title: "WIF API リファレンス | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "WIF API リファレンス"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: a027d902-9314-4bfd-b172-4e81847b1d68
 caps.latest.revision: 4
-author: "BrucePerlerMS"
-ms.author: "bruceper"
-manager: "mbaldwin"
-caps.handback.revision: 4
+author: BrucePerlerMS
+ms.author: bruceper
+manager: mbaldwin
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: ef439ff502fc39074d36f63d139fd23e42471d42
+ms.contentlocale: ja-jp
+ms.lasthandoff: 08/21/2017
+
 ---
-# WIF API リファレンス
-Windows Identity Foundation \(WIF\) classes are split across the following assemblies: `mscorlib` \(mscorlib.dll\), `System.IdentityModel` \(System.IdentityModel.dll\), `System.IdentityModel.Services` \(System.IdentityModel.Services.dll\), and `System.ServiceModel` \(System.ServiceModel.dll\).  This topic provides links to the WIF namespaces and brief explanations of the classes that each namespace contains.  
+# <a name="wif-api-reference"></a>WIF API リファレンス
+Windows Identity Foundation (WIF) クラスは、`mscorlib` (mscorlib.dll)、`System.IdentityModel` (System.IdentityModel.dll)、`System.IdentityModel.Services` (System.IdentityModel.Services.dll)、および `System.ServiceModel` (System.ServiceModel.dll) というアセンブリに分割されています。 このトピックでは、WIF 名前空間のリンクを紹介し、各名前空間に含まれるクラスについて簡単に説明します。  
   
 > [!IMPORTANT]
->  The following `System.IdentityModel` namespaces contain classes that implement the WCF claims\-based identity model: <xref:System.IdentityModel.Claims?displayProperty=fullName>, <xref:System.IdentityModel.Policy?displayProperty=fullName>, and <xref:System.IdentityModel.Selectors?displayProperty=fullName>.  Starting with .NET Framework 4.5, the WCF claims\-based identity model is superseded by WIF.  You should not use classes in these three namespaces when building solutions based on WIF.  
+>  `System.IdentityModel`、<xref:System.IdentityModel.Claims?displayProperty=fullName>、および <xref:System.IdentityModel.Policy?displayProperty=fullName> という <xref:System.IdentityModel.Selectors?displayProperty=fullName> 名前空間には、WCF クレーム ベースの ID モデルを実装するクラスが含まれます。 .NET Framework 4.5 以降、WCF クレーム ベース ID モデルは WIF に置き換えられています。 WIF に基づいてソリューションをビルドする際は、これら 3 つの名前空間でクラスを使用しないでください。  
   
  <xref:System.IdentityModel?displayProperty=fullName>  
- Contains classes that represent cookie transforms, security token services, and specialized XML dictionary readers.  
+ クッキーの変換、セキュリティ トークン サービス、および特殊な XML ディクショナリ リーダーを表すクラスが含まれます。  
   
  <xref:System.IdentityModel.Configuration?displayProperty=fullName>  
- Contains classes that provide configuration for applications and services built using the Windows Identity Foundation \(WIF\).  この名前空間のクラスは [\<identityConfiguration\>](../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/identityconfiguration.md) の要素下の設定を表します。  
+ Windows Identity Foundation (WIF) を使用して構築されたアプリケーションとサービスの構成を提供するクラスが含まれます。 この名前空間のクラスは、[\<identityConfiguration>](../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/identityconfiguration.md) 要素の設定を表しています。  
   
  <xref:System.IdentityModel.Metadata?displayProperty=fullName>  
- Contains classes that represent elements in a Federation Metadata document.  
+ フェデレーション メタデータ ドキュメントの要素を表すクラスが含まれます。  
   
  <xref:System.IdentityModel.Protocols.WSTrust?displayProperty=fullName>  
- Contains classes that represent WS\-Trust artifacts.  
+ WS-Trust 成果物を表すクラスが含まれます。  
   
  <xref:System.IdentityModel.Services?displayProperty=fullName>  
- Contains classes that are used in passive \(WS\-Federation\) scenarios.  Also contains some classes that represent settings under the [\<system.identityModel.services\>](../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/system-identitymodel-services.md) element.  Settings under this element configure WS\-Federation for applications.  The `System.IdentityModel.Services.Configuration` namespace contains most of the classes that are used to configure WS\-Federation.  
+ 受動的な (WS-Federation) シナリオで使用されるクラスが含まれます。 また、[\<system.identityModel.services>](../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/system-identitymodel-services.md) 要素の設定を表すクラスもいくつか含まれています。 この要素の設定で、アプリケーションの WS-Federation を構成します。 `System.IdentityModel.Services.Configuration` 名前空間には、WS-Federation の構成に使用されるほとんどのクラスが含まれます。  
   
  <xref:System.IdentityModel.Services.Configuration?displayProperty=fullName>  
- Contains classes that provide configuration for WIF applications that use the WS\-Federation protocol.  この名前空間のクラスは [\<system.identityModel.services\>](../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/system-identitymodel-services.md) の要素下の設定を表します。  The `System.IdentityModel.Services` namespace also contains some classes that are used to configure WS\-Federation.  
+ WS-Federation プロトコルを使用する WIF アプリケーションに構成を提供するクラスが含まれます。 この名前空間内のクラスは、[\<system.identityModel.services>](../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/system-identitymodel-services.md) 要素の設定を表します。 また、`System.IdentityModel.Services` 名前空間には、WS-Federation の構成に使用されるいくつかのクラスが含まれます。  
   
  <xref:System.IdentityModel.Services.Tokens?displayProperty=fullName>  
- Contains specialized security token handlers for Web farm scenarios.  
+ Web ファーム シナリオの特殊なセキュリティ トークン ハンドラーが含まれます。  
   
  <xref:System.IdentityModel.Tokens?displayProperty=fullName>  
- Contains classes that represent security tokens, security token handlers, and other security token artifacts.  
+ セキュリティ トークン、セキュリティ トークン ハンドラー、およびその他のセキュリティ トークンの成果物を表すクラスが含まれます。  
   
  <xref:System.Security.Claims?displayProperty=fullName>  
- Contains classes that represent claims, claims\-based identities, claims\-based principals, and other claims\-based identity model artifacts.  
+ クレーム、クレーム ベースの ID、クレーム ベースの原則、およびその他のクレーム ベースの ID モデル成果物を表すクラスが含まれます。  
   
  <xref:System.ServiceModel.Security?displayProperty=fullName>  
- Contains classes that represent WCF contracts, channels, service hosts and other artifacts that are used in active \(WS\-Trust\) scenarios.  This namespace also contains classes that are specific to Windows Communication Foundation \(WCF\) and that are not used by WIF.  
+ アクティブな (WS-Trust) シナリオで使用される WCF のコントラクト、チャネル、サービス ホスト、およびその他の成果物を表すクラスが含まれています。 この名前空間には、Windows Communication Foundation (WCF) 固有で、WIF が使用していないクラスも含まれています。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [WIF 構成のリファレンス](../../../docs/framework/security/wif-configuration-reference.md)   
  [WIF 3.5 と WIF 4.5 間での名前空間マッピング](../../../docs/framework/security/namespace-mapping-between-wif-3-5-and-wif-4-5.md)
+

@@ -11,10 +11,10 @@ ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 77deec51-a14d-46d4-9bb3-faf449477149
 ms.translationtype: HT
-ms.sourcegitcommit: 195b2206eec0a8f070454aed1ddefe56ee92adc9
-ms.openlocfilehash: 7b7cb235e2ba5bc3c9a21603058eb20475766ea7
+ms.sourcegitcommit: df0438dd742db802bb0f935d840006236d5d9bf9
+ms.openlocfilehash: 0a328f62a02aea223340fcc00e839e841041a7d6
 ms.contentlocale: ja-jp
-ms.lasthandoff: 08/15/2017
+ms.lasthandoff: 08/29/2017
 
 ---
 
@@ -25,9 +25,12 @@ ms.lasthandoff: 08/15/2017
 > [!IMPORTANT]
 > C# 言語のこれらの機能のいくつかは、*標準ライブラリ*の型とメソッドに依存します。 一例として、例外処理があります。 すべての `throw` ステートメントまたは式は、スローされたオブジェクトが @System.Exception から派生していることを確認するために、チェックされます。 同様に、すべての `catch` は、キャッチされた型が @System.Exception から派生していることを確認するために、チェックされます。 バージョンごとに新しい要件が追加されている場合があります。 古い環境で言語の最新機能を使用するには、特定のライブラリをインストールする必要がある場合があります。 このことについては、特定のバージョンごとに用意されたページに記載されています。 詳細については、この依存関係のバックグラウンドにある[言語とライブラリ間の関係](relationships-between-language-and-library.md)に関する記事をご覧ください。 
 
-* [C# 7](csharp-7.md):
-    - このページでは C# 言語の最新の機能について説明します。 [Visual Studio 2017](https://www.visualstudio.com/vs/whatsnew/) で現在利用可能な C# 7 の内容について説明します。
+* [C# 7.1](csharp-7-1.md):
+    - このページでは C# 言語の最新の機能について説明します。 [Visual Studio 2017 バージョン 15.3](https://www.visualstudio.com/vs/whatsnew/) および [.NET Core 2.0 SDK](../../core/whats-new/index.md) で現在利用可能な C# 7.1 の内容について説明します。
 
+* [C# 7](csharp-7.md):
+    - このページでは、C# 7 で追加された機能について説明します。 これらは [Visual Studio 2017](https://www.visualstudio.com/vs/whatsnew/) および [.NET Core 1.0](../../core/whats-new/index.md) 以降で追加されました
+     
 * [C# 6](csharp-6.md):
     - このページでは、C# 6 で追加された機能について説明します。 これらの機能は、Windows 開発者は Visual Studio 2015 で利用でき、macOS および Linux で C# を使用する開発者は .NET Core 1.0 で利用できます。
 

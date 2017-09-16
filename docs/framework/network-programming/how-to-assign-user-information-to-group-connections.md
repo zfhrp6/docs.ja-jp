@@ -1,32 +1,37 @@
 ---
-title: "方法: グループの接続にユーザー情報を割り当てる | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
+title: "方法: グループの接続にユーザー情報を割り当てる"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- VB
+- CSharp
+- C++
+- jsharp
 ms.assetid: 7ce550d6-8f7c-4ea7-add8-5bc27a7b51be
 caps.latest.revision: 9
-author: "mcleblanc"
-ms.author: "markl"
-manager: "markl"
-caps.handback.revision: 8
+author: mcleblanc
+ms.author: markl
+manager: markl
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: b148066a9de0d41c0f798ca35d94737a78746598
+ms.contentlocale: ja-jp
+ms.lasthandoff: 08/21/2017
+
 ---
-# 方法: グループの接続にユーザー情報を割り当てる
-[コード サンプル](#tskhowtoassignuserinformationtogroupconnectionsanchor1)  
+# <a name="how-to-assign-user-information-to-group-connections"></a>方法: グループの接続にユーザー情報を割り当てる
+
   
- 次の例では、このセクションのコードが呼び出される前に、*ユーザー名は* 一意であるアプリケーションで変数の *ユーザー名*、*SecurelyStoredPassword*と *ドメインを* 設定するグループとの接続情報にユーザーを割り当てる方法を示します。  
+ 次の例では、グループの接続にユーザー情報を割り当てる方法を示します。このセクションのコードが呼び出される前に、アプリケーションで変数の *UserName*、*SecurelyStoredPassword*、および *Domain* が設定されており、*UserName* が一意であると想定します。  
   
-### ユーザー グループの情報を接続に割り当てます。  
+### <a name="to-assign-user-information-to-a-group-connection"></a>グループの接続にユーザー情報を割り当てるには  
   
-1.  接続のグループ名を作成します。  
+1.  接続グループ名を作成します。  
   
     ```csharp  
     SHA1Managed Sha1 = new SHA1Managed();  
@@ -40,7 +45,7 @@ caps.handback.revision: 8
     Dim secureGroupName As [String] = Encoding.Default.GetString(updHash)  
     ```  
   
-2.  特定の URL 依頼を作成します。  たとえば、次のコードは URL `http://www.contoso.com.`依頼を作成します  
+2.  特定の URL の要求を作成します。 たとえば、次のコードでは URL `http://www.contoso.com.` の要求が作成されます。  
   
     ```csharp  
     WebRequest myWebRequest=WebRequest.Create("http://www.contoso.com");  
@@ -50,7 +55,7 @@ caps.handback.revision: 8
     Dim myWebRequest As WebRequest = WebRequest.Create("http://www.contoso.com")  
     ```  
   
-3.  **WebResponse** のオブジェクトを取得する Web 要求および通話時間 **GetResponse** の資格情報、接続 GroupName を設定します。  
+3.  Web 要求の資格情報と ConnectionGroupName を設定し、**GetResponse** を呼び出して **WebResponse** オブジェクトを取得します。  
   
     ```csharp  
     myWebRequest.Credentials = new NetworkCredential(UserName, SecurelyStoredPassword, Domain);   
@@ -64,14 +69,12 @@ caps.handback.revision: 8
     myWebRequest.ConnectionGroupName = secureGroupName  
   
     Dim myWebResponse As WebResponse = myWebRequest.GetResponse()  
-  
     ```  
   
-4.  WebRespose のオブジェクトを使用すると応答のベースを閉じます。  
+4.  WebRespose オブジェクトを使用した後、応答ストリームを閉じます。  
   
     ```csharp  
     MyWebResponse.Close();  
-  
     ```  
   
     ```vb  
@@ -97,7 +100,6 @@ WebResponse myWebResponse=myWebRequest.GetResponse();
 // Insert the code that uses myWebResponse.  
   
 MyWebResponse.Close();  
-  
 ```  
   
 ```vb  
@@ -118,6 +120,7 @@ Dim myWebResponse As WebResponse = myWebRequest.GetResponse()
 MyWebResponse.Close()  
 ```  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [接続の管理](../../../docs/framework/network-programming/managing-connections.md)   
  [接続のグループ化](../../../docs/framework/network-programming/connection-grouping.md)
+

@@ -4,17 +4,17 @@ description: "以下の C# のチュートリアルでは、C# プログラム�
 keywords: .NET, .NET Core
 author: BillWagner
 ms.author: wiwagn
-ms.date: 06/20/2016
+ms.date: 09/07/2017
 ms.topic: article
 ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: fcc83b5b-fb68-4e48-9132-0882677d8056
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 43d6efd6535e4002be79af1c51dd58e6d26d218d
+ms.sourcegitcommit: 680f9f83e07d6b5e3ee1031fb1a2f6d04765e18d
+ms.openlocfilehash: 52f6b8a1000a8b8623c36cc1f76671f0a7a764b7
 ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
+ms.lasthandoff: 09/07/2017
 
 ---
 
@@ -30,8 +30,6 @@ ms.lasthandoff: 07/28/2017
 * [LINQ の操作](working-with-linq.md): LINQ の多くの機能と、それをサポートする言語要素について説明します。
 
 * [Docker でホストされているマイクロサービス](microservices.md): ASP.NET Core のマイクロサービスの構築と、これを Docker でホストする方法について説明します。
-
-* [継承](inheritance.md): C# におけるクラスとインターフェイスの継承によるコードの再利用について説明します。
 
 * [文字列補間](string-interpolation.md): C# における `$`文字列補間のさまざまな使用方法について説明します。
 

@@ -1,85 +1,91 @@
 ---
-title: "方法: Windows 認証を使用するクレーム対応 ASP.NET アプリケーションをビルドする | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "方法: Windows 認証を使用するクレーム対応 ASP.NET アプリケーションをビルドする"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 11c53d9d-d34a-44b4-8b5e-22e3eaeaee93
 caps.latest.revision: 5
-author: "BrucePerlerMS"
-ms.author: "bruceper"
-manager: "mbaldwin"
-caps.handback.revision: 5
+author: BrucePerlerMS
+ms.author: bruceper
+manager: mbaldwin
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 676a03678cbdf6fe08e628806df2a1853fb71718
+ms.contentlocale: ja-jp
+ms.lasthandoff: 08/21/2017
+
 ---
-# 方法: Windows 認証を使用するクレーム対応 ASP.NET アプリケーションをビルドする
-## 対象  
+# <a name="how-to-build-claims-aware-aspnet-application-using-windows-authentication"></a>方法: Windows 認証を使用するクレーム対応 ASP.NET アプリケーションをビルドする
+## <a name="applies-to"></a>対象  
   
--   Microsoft® Windows® の ID Foundation \(WIF\)  
+-   Microsoft® Windows® Identity Foundation (WIF)  
   
--   Web フォーム ASP.NET®  
+-   ASP.NET® Web フォーム  
   
-## 概要  
- ここでは、Windows 認証を使用する単純な要求対応の ASP.NET Web フォーム アプリケーションを作成する詳細な手順を示します。  また、方法にユーザーが Windows 認証を使用して署名を行う場合は、命令が必要であることを確認するアプリケーションをテストできます。  
+## <a name="summary"></a>概要  
+ この操作方法では、Windows 認証を使用する簡単なクレーム対応 ASP.NET Web フォーム アプリケーションを作成するための詳細な手順を示します。 また、Windows 認証を使用してユーザーがサインインするときにクレームが表示されることを確認するために、アプリケーションをテストする方法についても説明します。  
   
-## 内容  
+## <a name="contents"></a>目次  
   
--   対象  
+-   目的  
   
 -   概要  
   
--   手順の概要  
+-   手順の要約  
   
--   手順 1 \- 単純な ASP.NET Web フォーム アプリケーションを作成します。  
+-   手順 1 – 簡単な ASP.NET Web フォーム アプリケーションを作成する  
   
--   手順 2 \- Windows 認証を使用する要求の ASP.NET Web フォーム アプリケーションを構成します。  
+-   手順 2 – Windows 認証を使用してクレーム用の ASP.NET Web フォーム アプリケーションを構成する  
   
--   手順 3 \- ソリューションをテストします。  
+-   手順 3 – ソリューションをテストする  
   
-## 対象  
+## <a name="objectives"></a>目的  
   
--   Windows 認証を使用する要求の ASP.NET Web フォーム アプリケーションを構成します。  
+-   Windows 認証を使用してクレーム用の ASP.NET Web フォーム アプリケーションを構成する  
   
--   正常に動作しているかどうかを ASP.NET Web フォーム アプリケーションをテストします。  
+-   ASP.NET Web フォーム アプリケーションをテストして正しく機能することを確認する  
   
-## 概要  
- .NET 4.5 では、要求と WIF ベースの承認はフレームワークの重要な部分として含まれていました。  以前は、ASP.NET ユーザーからの要求が必要な場合は、WIF をインストールするように要求し `Thread.CurrentPrincipal` または `HttpContext.Current.User`などの主なオブジェクトにインターフェイスをキャストします。  これで、要求はこれらの主なオブジェクトによって自動的に処理されます。  
+## <a name="overview"></a>概要  
+ .NET 4.5 には、WIF とそのクレーム ベースの認証が、Framework の不可欠な部分として組み込まれています。 以前は、ASP.NET ユーザーからのクレームが必要な場合に、WIF をインストールしてから、`Thread.CurrentPrincipal` または `HttpContext.Current.User` などのプリンシパル オブジェクトにインターフェイスをキャストする必要がありました。 現在は、これらのプリンシパル オブジェクトで自動的にクレームが処理されます。  
   
- Windows 認証は、.NET 4.5 の WIF に含まれないよう Windows の資格情報に、認証されているすべてのユーザーに自動的に関連付けられた要求があるためパフォーマンスが向上しました。  示します。これとして Windows 認証を使用する ASP.NET アプリケーションでこれらの要求をすぐに、どのように使用できます。  
+ Windows 認証では、.NET 4.5 に組み込まれている WIF による利点が得られます。Windows 資格情報で認証されたすべてのユーザーには自動的にクレームが関連付けられるためです。 この操作方法で示すように、Windows 認証を使用する ASP.NET アプリケーションでは、これらのクレームの使用をすぐに開始することができます。  
   
-## 手順の概要  
+## <a name="summary-of-steps"></a>手順の要約  
   
--   手順 1 \- 単純な ASP.NET Web フォーム アプリケーションを作成します。  
+-   手順 1 – 簡単な ASP.NET Web フォーム アプリケーションを作成する  
   
--   手順 2 \- Windows 認証を使用する要求の ASP.NET Web フォーム アプリケーションを構成します。  
+-   手順 2 – Windows 認証を使用してクレーム用の ASP.NET Web フォーム アプリケーションを構成する  
   
--   手順 3 \- ソリューションをテストします。  
+-   手順 3 – ソリューションをテストする  
   
-## 手順 1 \- 単純な ASP.NET Web フォーム アプリケーションを作成します。  
+## <a name="step-1--create-a-simple-aspnet-web-forms-application"></a>手順 1 – 簡単な ASP.NET Web フォーム アプリケーションを作成する  
  この手順では、新しい ASP.NET Web フォーム アプリケーションを作成します。  
   
-#### 単純な ASP.NET アプリケーションを作成するには  
+#### <a name="to-create-a-simple-aspnet-application"></a>簡単な ASP.NET アプリケーションを作成するには  
   
-1.  次に、Visual Studio を起動し、**ファイル**、**新規作成**と **プロジェクト**をクリックします。  
+1.  Visual Studio を起動してから、**[ファイル]**、**[新規作成]**、**[プロジェクト]** の順にクリックします。  
   
-2.  **新しいプロジェクト** のペインで、**ASP.NET Web フォーム アプリケーション**をクリックします。  
+2.  **[新しいプロジェクト]** ウィンドウで、**[ASP.NET Web フォーム アプリケーション]** をクリックします。  
   
-3.  **名前**では、`TestApp` を入力し、**OK**を押します。  
+3.  **[名前]** で、「`TestApp`」と入力して **[OK]** を押します。  
   
-4.  **TestApp** のプロジェクトを作成したら、その **ソリューション エクスプローラー**のをクリックします。  プロジェクトのプロパティは **ソリューション エクスプローラー**の下に **プロパティ** のペインに表示されます。  **有効**に **Windows 認証** のプロパティを設定します。  
+4.  **TestApp** プロジェクトが作成されたら、**ソリューション エクスプローラー**でそれをクリックします。 プロジェクトのプロパティが、**ソリューション エクスプローラー**の下の **[プロパティ]** ウィンドウに表示されます。 **[Windows 認証]** プロパティを **[有効]** に設定します。  
   
     > [!WARNING]
-    >  Windows 認証は、新しい ASP.NET アプリケーションで既定で無効になっているため、手動で有効にする必要があります。  
+    >  新しい ASP.NET アプリケーションでは Windows 認証が既定で無効になるため、手動で有効にする必要があります。  
   
-## 手順 2 \- Windows 認証を使用する要求の ASP.NET Web フォーム アプリケーションを構成します。  
- この手順では、*Web.config* 構成ファイルに構成エントリを追加し、アカウントの要求情報を表示するに *Default.aspx* を変更します。  
+## <a name="step-2--configure-aspnet-web-forms-application-for-claims-using-windows-authentication"></a>手順 2 – Windows 認証を使用してクレーム用の ASP.NET Web フォーム アプリケーションを構成する  
+ この手順では、構成エントリを *Web.config* 構成ファイルに追加し、アカウントのクレーム情報を表示するように *Default.aspx* ファイルを変更します。  
   
-#### 要求の ASP.NET アプリケーションが Windows 認証を使用して構成するには  
+#### <a name="to-configure-aspnet-application-for-claims-using-windows-authentication"></a>Windows 認証を使用してクレーム用の ASP.NET アプリケーションを構成するには  
   
-1.  **TestApp** のプロジェクトで *Default.aspx ファイル* では、既存のマークアップに置き換えます。:  
+1.  **TestApp** プロジェクトの *Default.aspx* ファイルで、既存のマークアップを次のものに置き換えます。  
   
     ```  
     <%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true"  
@@ -97,12 +103,11 @@ caps.handback.revision: 5
             </asp:GridView>  
         </p>  
     </asp:Content>  
-  
     ```  
   
-     この手順は、Windows 認証から取得された要求が設定された *Default.aspx ページ* に GridView コントロールを追加します。  
+     この手順では GridView コントロールを *Default.aspx* ページに追加します。このページには、Windows 認証から取得されたクレームが取り込まれます。  
   
-2.  Save the *Default.aspx* ファイルを保存して、*Default.aspx.cs*という名前の分離コード ファイルを開きます。  次に、既存のコードに置き換えます。:  
+2.  *Default.aspx* ファイルを保存し、*Default.aspx.cs* という名前の分離コード ファイルを開きます。 既存のコードを次のコードに置き換えます。  
   
     ```csharp  
     using System;  
@@ -123,25 +128,26 @@ caps.handback.revision: 5
     }  
     ```  
   
-     上のコードは認証されたユーザーに関する要求が表示されます。  
+     上記のコードでは、認証ユーザーに関するクレームが表示されます。  
   
-3.  次の構成エントリだけを含むように、アプリケーションの認証タイプを変更するには、プロジェクトのルートの *Web.config ファイル* の **\<system.web\>** のセクションの **\<authentication\>** ブロックを変更する:  
+3.  アプリケーションの認証の種類を変更するには、プロジェクトのルート *Web.config* ファイルの **\<system.web>** セクション内の **\<authentication>** ブロックを変更して、以下の構成エントリのみが含まれるようにします。  
   
-    ```  
+    ```xml  
     <authentication mode="Windows" />  
     ```  
   
-4.  最後に、認証を強制的に同じ *Web.config ファイル* の **\<system.web\>** のセクションの **\<authorization\>** ブロックを変更する:  
+4.  最後に、同じ *Web.config* ファイルの **\<system.web>** セクション内の **\<authorization>** ブロックを変更して、認証を強制します。  
   
-    ```  
+    ```xml  
     <authorization>  
         <deny users="?" />  
     </authorization>  
     ```  
   
-## 手順 3 \- ソリューションをテストします。  
- この手順では、ASP.NET Web フォーム アプリケーションをテストし、ユーザーが Windows 認証を使用する場合、要求があることを確認します。  
+## <a name="step-3--test-your-solution"></a>手順 3 – ソリューションをテストする  
+ この手順では、ASP.NET Web フォーム アプリケーションをテストし、ユーザーが Windows 認証を使用してサインインするときに、クレームが表示されることを確認します。  
   
-#### 要求の ASP.NET Web フォーム アプリケーションを Windows 認証を使用してテストするには  
+#### <a name="to-test-your-aspnet-web-forms-application-for-claims-using-windows-authentication"></a>Windows 認証を使用してクレーム用の ASP.NET Web フォーム アプリケーションをテストするには  
   
-1.  F5 キーを押してアプリケーションをビルドし、実行します。  *Default.aspx*、という名前の Windows アカウント名は、ページの右上の認証済みユーザーとしてドメイン名 \(など\) が表示されます。  ページの内容は、Windows のアカウントから取得された要求が設定されているテーブルを含める必要があります。
+1.  **F5** キーを押してアプリケーションをビルドし、実行します。 *Default.aspx* が表示されます。Windows アカウント名 (ドメイン名を含む) は、ページの右上に認証ユーザーとして既に表示されています。 ページの内容には、Windows アカウントから取得されたクレームが入力されたテーブルが含まれています。
+

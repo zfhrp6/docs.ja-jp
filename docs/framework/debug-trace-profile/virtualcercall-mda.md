@@ -1,49 +1,54 @@
 ---
-title: "virtualCERCall MDA | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "MDAs (managed debugging assistants), CER calls"
-  - "virtualCERCall MDA"
-  - "virtual CER calls"
-  - "constrained execution regions"
-  - "CER calls"
-  - "managed debugging assistants (MDAs), CER calls"
+title: virtualCERCall MDA
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- VB
+- CSharp
+- C++
+- jsharp
+helpviewer_keywords:
+- MDAs (managed debugging assistants), CER calls
+- virtualCERCall MDA
+- virtual CER calls
+- constrained execution regions
+- CER calls
+- managed debugging assistants (MDAs), CER calls
 ms.assetid: 1eb18c7a-f5e0-443f-80fb-67bfbb047da2
 caps.latest.revision: 13
-author: "mairaw"
-ms.author: "mairaw"
-manager: "wpickett"
-caps.handback.revision: 13
+author: mairaw
+ms.author: mairaw
+manager: wpickett
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 334900cbcc04cb1883b93a6bac17309add9ec159
+ms.contentlocale: ja-jp
+ms.lasthandoff: 08/21/2017
+
 ---
-# virtualCERCall MDA
-`virtualCERCall` マネージ デバッグ アシスタント \(MDA\) は、制約された実行領域 \(CER: Constrained Execution Region\) 呼び出し先内の呼び出しサイトが仮想ターゲット \(つまり、最終でない仮想メソッドの呼び出しまたはインターフェイスを使用した呼び出し\) を参照していることを示す警告としてアクティブになります。  共通言語ランタイム \(CLR: Common Language Runtime\) では、中間言語とメタデータ分析のみに基づいて、これらの呼び出しの対象メソッドを予測することはできません。  その結果、コール ツリーを CER グラフの一部として作成できず、そのサブツリーにおけるスレッドの中止を自動的に回避できません。  この MDA は、実行時に呼び出し対象の計算に必要な追加情報が明らかになると、<xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareMethod%2A> メソッドを明示的に呼び出して CER を拡張する必要がある場合に警告を行います。  
+# <a name="virtualcercall-mda"></a>virtualCERCall MDA
+`virtualCERCall` マネージ デバッグ アシスタント (MDA) は、制約された実行領域 (CER) 呼び出し先の呼び出しサイトが、仮想ターゲット (つまり、インターフェイスを使用した最終ではない仮想メソッドまたは呼び出しの仮想呼び出し) を参照していることを示す警告としてアクティブ化されます。 共通言語ランタイム (CLR) は、中間言語およびメタデータの分析だけでは、これらの呼び出しの呼び出し先メソッドを予測できません。 その結果、CER グラフの一部としてコール ツリーを準備できません。また、そのサブツリー内のスレッドの中止を自動的にブロックできません。 呼び出し対象の計算に必要な追加情報が実行時に判明すると、<xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareMethod%2A> メソッドの明示的な呼び出しを使用して CER の拡張が必要な可能性がある場合に、この MDA は警告します。  
   
-## 症状  
- スレッドが中止されている場合や、アプリケーション ドメインがアンロードされている場合に、CER が実行されません。  
+## <a name="symptoms"></a>症状  
+ スレッドが中止されたとき、またはアプリケーション ドメインがアンロードされたときに CER が実行されません。  
   
-## 原因  
- 自動的に作成できない仮想メソッドの呼び出しが CER に含まれています。  
+## <a name="cause"></a>原因  
+ CER に、自動的に準備できない仮想メソッドの呼び出しが含まれています。  
   
-## 解決策  
+## <a name="resolution"></a>解決策  
  仮想メソッドの <xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareMethod%2A> を呼び出します。  
   
-## ランタイムへの影響  
- この MDA は、CLR への影響はありません。  
+## <a name="effect-on-the-runtime"></a>ランタイムへの影響  
+ この MDA は CLR に影響しません。  
   
-## 出力  
+## <a name="output"></a>出力  
   
 ```  
 Method 'MethodWithCer', while executing within a constrained execution region, makes a call  
@@ -56,9 +61,9 @@ declaringType name="VirtualCERCall+MyClass"
     callsite name="MethodWithCer" offset="0x0024"  
 ```  
   
-## 構成  
+## <a name="configuration"></a>構成  
   
-```  
+```xml  
 <mdaConfig>  
   <assistants>  
     < VirtualCERCall />  
@@ -66,7 +71,7 @@ declaringType name="VirtualCERCall+MyClass"
 </mdaConfig>  
 ```  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 class MyClass  
@@ -106,7 +111,8 @@ void MethodWithCer(MyClass object)
 }  
 ```  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Runtime.InteropServices.MarshalAsAttribute>   
- [Diagnosing Errors with Managed Debugging Assistants](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)   
+ [マネージ デバッグ アシスタントによるエラーの診断](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)   
  [相互運用マーシャリング](../../../docs/framework/interop/interop-marshaling.md)
+

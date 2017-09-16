@@ -1,52 +1,58 @@
 ---
-title: "Web 設定スキーマ | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "ASP.NET 構成システム, Web 設定スキーマ"
-  - "構成ファイル [ASP.NET]"
-  - "構成スキーマ [.NET Framework], [Web 設定]"
-  - "スキーマ Web 設定"
-  - "[Web 設定], スキーマ [ASP.NET]"
-  - "Web.config 構成ファイル [ASP.NET]"
+title: "Web 設定スキーマ"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- VB
+- CSharp
+- C++
+- jsharp
+helpviewer_keywords:
+- Web.config configuration file [ASP.NET]
+- ASP.NET configuration system, Web settings schema
+- schema Web settings
+- Web settings, schema [ASP.NET]
+- configuration files [ASP.NET]
+- configuration schema [.NET Framework], Web settings
 ms.assetid: ae1ac356-267d-4753-8d7a-7a04eb45a9be
 caps.latest.revision: 6
-author: "mcleblanc"
-ms.author: "markl"
-manager: "markl"
-caps.handback.revision: 6
+author: mcleblanc
+ms.author: markl
+manager: markl
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: fb6a19f5fb03c17f4ac5f3627f7c02ca354ddb1f
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/05/2017
+
 ---
-# Web 設定スキーマ
-Web 設定では、ASP.NET ホスト層で管理されるプロセス全体の動作に適用する、CPU および実行レベルの ASP.NET 設定を指定します。  これらの設定は、ASP.NET アプリケーションの Web.config ファイルで指定されるアプリケーション ドメイン型の設定とは異なります。  
+# <a name="web-settings-schema"></a>Web 設定スキーマ
+Web 設定は、CPU と、ASP.NET ホスト層によって管理されているプロセス全体の動作に適用される CPU および ASP.NET 設定の実行レベルを指定します。 これらの設定は、ASP.NET アプリケーションの Web.config ファイルで指定されているアプリケーション ドメインの種類の設定とは異なります。  
   
- Web 設定は、.NET Framework の各バージョンのインストール フォルダーにある Aspnet.config ファイルに含まれています。  たとえば、[!INCLUDE[dnprdnext](../../../../../includes/dnprdnext-md.md)] の Aspnet.config ファイルは、次のフォルダーにあります。  
+ Web 設定は、.NET Framework のバージョンのインストール フォルダーに配置された Aspnet.config ファイルに格納されます。 たとえば、[!INCLUDE[dnprdnext](../../../../../includes/dnprdnext-md.md)] の Aspnet.config ファイルは次のフォルダーにあります。  
   
  `C:\Windows\Microsoft.NET\Framework\v2.0.50727\`  
   
- Web 設定は、machine.config ファイル、ルートの Web.config ファイル、アプリケーション レベルの Web.config ファイルなどのその他の構成ファイルでは使用されません。  
+ Web 設定は、machine.config ファイル、ルート、Web.config ファイル、アプリケーション レベルの Web.config ファイルなどの他の構成ファイルでは使用されません。  
   
- [\<configuration\> 要素](../../../../../docs/framework/configure-apps/file-schema/configuration-element.md)  
+ [\<configuration> 要素](../../../../../docs/framework/configure-apps/file-schema/configuration-element.md)  
   
- [\<system.web\> 要素 \(Web 設定\)](../../../../../docs/framework/configure-apps/file-schema/web/system-web-element-web-settings.md)  
+ [\<system.web> 要素 (Web 設定)](../../../../../docs/framework/configure-apps/file-schema/web/system-web-element-web-settings.md)  
   
- [\<applicationPool\> 要素 \(Web 設定\)](../../../../../docs/framework/configure-apps/file-schema/web/applicationpool-element-web-settings.md)  
+ [\<applicationPool> 要素 (Web 設定)](../../../../../docs/framework/configure-apps/file-schema/web/applicationpool-element-web-settings.md)  
   
 |要素|説明|  
-|--------|--------|  
-|[\<system.web\>](../../../../../docs/framework/configure-apps/file-schema/web/system-web-element-web-settings.md)|ASP.NET ホスト層で使用される情報が含まれています。|  
-|[\<applicationPool\>](../../../../../docs/framework/configure-apps/file-schema/web/applicationpool-element-web-settings.md)|ASP.NET ホスト層で管理されるプロセス全体の動作に適用する、CPU および実行レベルの ASP.NET 設定を指定します。|  
+|-------------|-----------------|  
+|[\<system.web >](../../../../../docs/framework/configure-apps/file-schema/web/system-web-element-web-settings.md)|ASP.NET ホスト層が使用する情報が含まれています。|  
+|[\<applicationPool>](../../../../../docs/framework/configure-apps/file-schema/web/applicationpool-element-web-settings.md)|CPU と、ASP.NET ホスト層によって管理されているプロセス全体の動作に適用される CPU および ASP.NET 設定の実行レベルを指定します。|  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [構成ファイル スキーマ](../../../../../docs/framework/configure-apps/file-schema/index.md)
+

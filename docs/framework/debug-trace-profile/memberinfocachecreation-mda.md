@@ -1,57 +1,62 @@
 ---
-title: "memberInfoCacheCreation MDA | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "member info cache creation"
-  - "MemberInfoCacheCreation MDA"
-  - "reflection, run-time errors"
-  - "MDAs (managed debugging assistants), cache"
-  - "cache [.NET Framework], reflection"
-  - "managed debugging assistants (MDAs), cache"
-  - "MemberInfo cache"
+title: memberInfoCacheCreation MDA
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- VB
+- CSharp
+- C++
+- jsharp
+helpviewer_keywords:
+- member info cache creation
+- MemberInfoCacheCreation MDA
+- reflection, run-time errors
+- MDAs (managed debugging assistants), cache
+- cache [.NET Framework], reflection
+- managed debugging assistants (MDAs), cache
+- MemberInfo cache
 ms.assetid: 5abdad23-1335-4744-8acb-934002c0b6fe
 caps.latest.revision: 8
-author: "mairaw"
-ms.author: "mairaw"
-manager: "wpickett"
-caps.handback.revision: 8
+author: mairaw
+ms.author: mairaw
+manager: wpickett
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 991055f537bfcbb2a533384ffc787c070a0122d4
+ms.contentlocale: ja-jp
+ms.lasthandoff: 08/21/2017
+
 ---
-# memberInfoCacheCreation MDA
-`memberInfoCacheCreation` マネージ デバッグ アシスタント \(MDA: Managed Debugging Assistant\) は、<xref:System.Reflection.MemberInfo> キャッシュが作成されるとアクティブになります。  これにより、リソース ロードの大きいリフレクション機能を利用しているプログラムがあることがはっきりとわかります。  
+# <a name="memberinfocachecreation-mda"></a>memberInfoCacheCreation MDA
+`memberInfoCacheCreation` マネージ デバッグ アシスタント (MDA) は、<xref:System.Reflection.MemberInfo> キャッシュが作成されるとアクティブになります。 これは、リソースに大きな負荷のかかるリフレクション機能をプログラムが使っていることを明確に示すものです。  
   
-## 症状  
- プログラムがリソース ロードの大きいリフレクションを使用しているため、プログラムの作業セットが増大します。  
+## <a name="symptoms"></a>症状  
+ プログラムがリソースに負荷のかかるリフレクションを使っているため、プログラムのワーキング セットが増加します。  
   
-## 原因  
- <xref:System.Reflection.MemberInfo> オブジェクトを使用するリフレクション操作はリソース ロードの大きい操作と見なされます。このような操作では、コールド ページに格納されているメタデータを読み取る必要があり、通常、プログラムである種の遅延バインディング シナリオを使用する必要があるためです。  
+## <a name="cause"></a>原因  
+ <xref:System.Reflection.MemberInfo> オブジェクトが関係するリフレクション操作は、コールド ページに格納されているメタデータを読み取る必要があり、一般にプログラムが何らかの種類の遅延バインディング シナリオを使っていることを示すため、リソースに負荷がかかるものと見なされます。  
   
-## 解決策  
- プログラムでリフレクションが使用されている場所を特定するには、この MDA を有効にしたうえで、コードをデバッガーで実行するか、または MDA がアクティブになったときにデバッガーに接続します。  デバッガーで、<xref:System.Reflection.MemberInfo> キャッシュの作成場所を示すスタック トレースを取得し、その場所から、プログラムがリフレクションを使用している場所を判別できます。  
+## <a name="resolution"></a>解決策  
+ この MDA を有効にした後にデバッガーでコードを実行するか、または MDA がアクティブになっているときにデバッガーとアタッチすることにより、プログラム内でリフレクションで使われている場所を特定できます。 デバッガーで実行すると、<xref:System.Reflection.MemberInfo> キャッシュが作成された場所を示すスタック トレースが取得され、その情報からプログラムがリフレクションを使っている場所を判断できます。  
   
- 解決策は、コードの目的によって異なります。  この MDA により、プログラムが遅延バインディング シナリオを使用していることが警告されます。  事前バインディング シナリオに置き換えることができるかどうかを確認したり、遅延バインディング シナリオのパフォーマンスを検討したりする必要があります。  
+ 解決策は、コードの目的によって異なります。 この MDA は、プログラムに遅延バインディング シナリオがあることを警告します。 事前バインディング シナリオに置き換えることができるかどうかを判断したり、遅延バインディング シナリオのパフォーマンスを検討したりできます。  
   
-## ランタイムへの影響  
- この MDA は、作成されるすべての <xref:System.Reflection.MemberInfo> キャッシュに対してアクティブになります。  パフォーマンスへの影響はほとんどありません。  
+## <a name="effect-on-the-runtime"></a>ランタイムへの影響  
+ この MDA は、作成されるすべての <xref:System.Reflection.MemberInfo> キャッシュに対してアクティブ化されます。 パフォーマンスに与える影響はごくわずかです。  
   
-## 出力  
- MDA は、<xref:System.Reflection.MemberInfo> キャッシュが作成されたことを示すメッセージを出力します。  デバッガーを使用して、プログラムがリフレクションを使用している場所を示すスタック トレースを取得します。  
+## <a name="output"></a>出力  
+ MDA は、<xref:System.Reflection.MemberInfo> キャッシュが作成されたことを示すメッセージを出力します。 プログラムがリフレクションを使っている場所を示すスタック トレースを取得するには、デバッガーを使います。  
   
-## 構成  
+## <a name="configuration"></a>構成  
   
-```  
+```xml  
 <mdaConfig>  
   <assistants>  
     <memberInfoCacheCreation/>  
@@ -59,8 +64,8 @@ caps.handback.revision: 8
 </mdaConfig>  
 ```  
   
-## 使用例  
- `memberInfoCacheCreation` MDA をアクティブにするサンプル コードを次に示します。  
+## <a name="example"></a>例  
+ 次のサンプル コードは、`memberInfoCacheCreation` MDA をアクティブ化します。  
   
 ```  
 using System;  
@@ -74,6 +79,7 @@ public class Exe
 }  
 ```  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Reflection.MemberInfo>   
- [Diagnosing Errors with Managed Debugging Assistants](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)
+ [マネージ デバッグ アシスタントによるエラーの診断](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)
+

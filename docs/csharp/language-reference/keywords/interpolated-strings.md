@@ -51,7 +51,7 @@ Console.WriteLine("Name = {0}, hours = {1:hh}", name, hours);
 挿入文字列の構造は次のとおりです。  
   
 ```  
-$"<text> {<interpolated-expression> [,<field-width>] [<:format-string>] } <text> ..."  
+$"<text> {<interpolated-expression> [,<field-width>] [:<format-string>] } <text> ..."  
 ```  
 
 ここで、 

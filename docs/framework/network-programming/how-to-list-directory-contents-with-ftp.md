@@ -1,28 +1,33 @@
 ---
-title: "方法: FTP でディレクトリの内容を一覧表示する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
+title: "方法: FTP でディレクトリの内容を一覧表示する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- VB
+- CSharp
+- C++
+- jsharp
 ms.assetid: 130c64c9-7b7f-4672-9b3b-d946bd2616c5
 caps.latest.revision: 5
-author: "mcleblanc"
-ms.author: "markl"
-manager: "markl"
-caps.handback.revision: 5
+author: mcleblanc
+ms.author: markl
+manager: markl
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 08edb5be23d55a9a825ca80a8e575cb02b5f07a8
+ms.contentlocale: ja-jp
+ms.lasthandoff: 08/21/2017
+
 ---
-# 方法: FTP でディレクトリの内容を一覧表示する
-このオプションは、FTP サーバー ディレクトリの内容を一覧方法を示します。  
+# <a name="how-to-list-directory-contents-with-ftp"></a>方法: FTP でディレクトリの内容を一覧表示する
+このサンプルでは、FTP サーバーのディレクトリの内容を一覧表示する方法を示します。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```csharp  
 using System;  
@@ -58,11 +63,12 @@ namespace Examples.System.Net
 }  
 ```  
   
-## コードのコンパイル  
- この例には、次の項目が必要です。  
+## <a name="compiling-the-code"></a>コードのコンパイル  
+ この例で必要な要素は次のとおりです。  
   
--   **\[System.Net\]** の名前空間への参照。  
+-   **System.Net** 名前空間への参照。  
   
-## 信頼性の高いプログラミング  
+## <a name="robust-programming"></a>信頼性の高いプログラミング  
   
-## .NET Framework セキュリティ
+## <a name="net-framework-security"></a>.NET Framework セキュリティ
+

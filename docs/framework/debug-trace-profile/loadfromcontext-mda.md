@@ -1,60 +1,65 @@
 ---
-title: "loadFromContext MDA | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "MDAs (managed debugging assistants), LoadFrom context"
-  - "managed debugging assistants (MDAs), LoadFrom context"
-  - "LoadFrom context"
-  - "LoadFromContext MDA"
+title: loadFromContext MDA
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- VB
+- CSharp
+- C++
+- jsharp
+helpviewer_keywords:
+- MDAs (managed debugging assistants), LoadFrom context
+- managed debugging assistants (MDAs), LoadFrom context
+- LoadFrom context
+- LoadFromContext MDA
 ms.assetid: a9b14db1-d3a9-4150-a767-dcf3aea0071a
 caps.latest.revision: 8
-author: "mairaw"
-ms.author: "mairaw"
-manager: "wpickett"
-caps.handback.revision: 8
+author: mairaw
+ms.author: mairaw
+manager: wpickett
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: d693272adeb0b1bcfea196edb1a23e8b448516cb
+ms.contentlocale: ja-jp
+ms.lasthandoff: 08/21/2017
+
 ---
-# loadFromContext MDA
-`loadFromContext` マネージ デバッグ アシスタント \(MDA: Managed Debugging Assistant\) は、アセンブリが `LoadFrom` コンテキストに読み込まれるとアクティブ化されます。  <xref:System.Reflection.Assembly.LoadFrom%2A?displayProperty=fullName> メソッド、またはその他の類似メソッドを呼び出すと、この状況が発生することがあります。  
+# <a name="loadfromcontext-mda"></a>loadFromContext MDA
+アセンブリが `LoadFrom` コンテキストに読み込まれると、`loadFromContext` マネージ デバッグ アシスタント (MDA) がアクティブになります。 このような状況は、<xref:System.Reflection.Assembly.LoadFrom%2A?displayProperty=fullName> または他の同様のメソッドを呼び出した結果として発生する可能性があります。  
   
-## 症状  
- 一部のローダー メソッドを使用すると、アセンブリが `LoadFrom` コンテキストに読み込まれることがあります。  このコンテキストを使用すると、シリアル化、キャスト処理、依存関係解決などで、予期しない動作が発生する可能性があります。  一般的に、この問題を回避するには、アセンブリが `Load` コンテキストに読み込まれるようにしてください。  この MDA を使用しないと、アセンブリが読み込まれたコンテキストを判断するのは困難です。  
+## <a name="symptoms"></a>症状  
+ 一部のローダー メソッドは、使用すると、`LoadFrom` コンテキストでアセンブリが呼び出される結果になる可能性があります。 このコンテキストを使用すると、シリアル化、キャスティング、依存関係の解決について予期しない結果になる可能性があります。 一般的に、このような問題を回避するために、アセンブリを `Load` コンテキストに読み込むことをお勧めします。 この MDA を使用せずに、アセンブリが読み込まれたコンテキストを判断することは困難です。  
   
-## 原因  
- 一般に、グローバル アセンブリ キャッシュや <xref:System.AppDomainSetup.ApplicationBase%2A?displayProperty=fullName> プロパティなど、`Load` コンテキストの外部のパスからアセンブリが読み込まれると、そのアセンブリは `LoadFrom` コンテキストに読み込まれます。  
+## <a name="cause"></a>原因  
+ 一般的に、アセンブリは `Load` コンテキスト以外のパス (グローバル アセンブリ キャッシュや <xref:System.AppDomainSetup.ApplicationBase%2A?displayProperty=fullName> プロパティなど) から読み込まれた場合、`LoadFrom` コンテキストに読み込まれていました。  
   
-## 解決策  
- <xref:System.Reflection.Assembly.LoadFrom%2A> 呼び出しが必要なくなるように、アプリケーションを設定します。  これを行うのに使用するテクニックを次に示します。  
+## <a name="resolution"></a>解決策  
+ <xref:System.Reflection.Assembly.LoadFrom%2A> の呼び出しが不要になるようにアプリケーションを構成します。 そのためには、次の手法を使用できます。  
   
--   アセンブリをグローバル アセンブリ キャッシュにインストールします。  
+-   グローバル アセンブリ キャッシュにアセンブリをインストールします。  
   
--   <xref:System.AppDomain> の <xref:System.AppDomainSetup.ApplicationBase%2A> ディレクトリにアセンブリを配置します。  既定ドメインの場合、<xref:System.AppDomainSetup.ApplicationBase%2A> ディレクトリは、プロセスを開始する実行可能ファイルが含まれるディレクトリです。  アセンブリを移動することが簡単ではない場合は、新規の <xref:System.AppDomain> を作成する必要もあります。  
+-   アセンブリを <xref:System.AppDomain> の <xref:System.AppDomainSetup.ApplicationBase%2A> ディレクトリに配置します。 既定のドメインの場合、<xref:System.AppDomainSetup.ApplicationBase%2A> ディレクトリは、プロセスを開始した実行可能ファイルを含むディレクトリです。 また、アセンブリを移動したくない場合は、必要に応じて新しい <xref:System.AppDomain> を作成します。  
   
--   依存アセンブリが実行可能ファイルに関連した子ディレクトリ内にある場合は、アプリケーションの構成 \(.config\) ファイルまたは第 2 のアプリケーション ドメインに、プローブ パスを追加します。  
+-   依存するアセンブリが、実行可能ファイルの相対的な子ディレクトリ内にある場合、アプリケーション構成 (.config) ファイルまたはセカンダリ アプリケーション ドメインのプローブ パスを追加します。  
   
- いずれの場合も、<xref:System.Reflection.Assembly.Load%2A?displayProperty=fullName> メソッドを使用するように、コードを変更できます。  
+ いずれの場合でも、<xref:System.Reflection.Assembly.Load%2A?displayProperty=fullName> メソッドを使用するようにコードを変更できます。  
   
-## ランタイムへの影響  
- この MDA は、CLR に影響ありません。  読み込み要求の結果使用されたコンテキストが報告されます。  
+## <a name="effect-on-the-runtime"></a>ランタイムへの影響  
+ MDA は、CLR にまったく影響がありません。 MDA では、読み込み要求の結果として使用されたコンテキストが報告されます。  
   
-## 出力  
- MDA では、アセンブリが `LoadFrom` コンテキストに読み込まれたことが報告されます。  アセンブリの簡易名およびパスが指定されます。  また、`LoadFrom` コンテキストの使用を避けるための代替方法も提案されます。  
+## <a name="output"></a>出力  
+ MDA では、アセンブリが `LoadFrom` コンテキストに読み込まれたことが報告されます。 また、アセンブリの簡易名とパスが指定されます。 `LoadFrom` コンテキストの使用を回避する軽減策も提案されます。  
   
-## 構成  
+## <a name="configuration"></a>構成  
   
-```  
+```xml  
 <mdaConfig>  
   <assistants>  
     <loadFromContext />  
@@ -62,8 +67,8 @@ caps.handback.revision: 8
 </mdaConfig>  
 ```  
   
-## 使用例  
- この MDA をアクティブ化する場合のコード例を次に示します。  
+## <a name="example"></a>例  
+ 次のコードの例は、この MDA がアクティブ化されることのある状況を示しています。  
   
 ```  
 using System.Reflection;  
@@ -82,5 +87,6 @@ namespace ConsoleApplication1
 }  
 ```  
   
-## 参照  
- [Diagnosing Errors with Managed Debugging Assistants](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)
+## <a name="see-also"></a>関連項目  
+ [マネージ デバッグ アシスタントによるエラーの診断](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)
+

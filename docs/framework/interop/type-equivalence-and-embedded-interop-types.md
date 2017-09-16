@@ -1,66 +1,72 @@
 ---
-title: "型の等価性と埋め込まれた相互運用機能型 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "埋め込まれた相互運用機能型"
-  - "NoPIA"
-  - "プライマリ相互運用機能アセンブリ, 不要 (CLR バージョン 4)"
-  - "型の等価性"
+title: "型の等価性と埋め込まれた相互運用機能型"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- VB
+- CSharp
+- C++
+- jsharp
+helpviewer_keywords:
+- type equivalence
+- embedded interop types
+- primary interop assemblies,not necessary in CLR version 4
+- NoPIA
 ms.assetid: 78892eba-2a58-4165-b4b1-0250ee2f41dc
 caps.latest.revision: 17
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 17
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: e9a7b39047edcd8e2c770e17a33dd73e75ee5083
+ms.contentlocale: ja-jp
+ms.lasthandoff: 08/21/2017
+
 ---
-# 型の等価性と埋め込まれた相互運用機能型
-[!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)] 以降の共通言語ランタイムでは、COM 型の型情報をマネージ アセンブリに直接埋め込むことができ、マネージ アセンブリで COM 型の型情報を相互運用機能アセンブリから取得する必要はありません。  埋め込み型情報に含まれるのはマネージ アセンブリで実際に使用される型とメンバーだけなので、同じ COM 型のビューでも 2 つのマネージ アセンブリで大きく異なる場合があります。  各マネージ アセンブリには、COM 型のビューを表す異なる <xref:System.Type> オブジェクトがあります。  共通言語ランタイムでは、インターフェイス、構造体、列挙体、およびデリゲートについて、これらの異なるビュー間における型の等価性をサポートしています。  
+# <a name="type-equivalence-and-embedded-interop-types"></a>型の等価性と埋め込まれた相互運用機能型
+[!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)] 以降、共通言語ランタイムでは、マネージ アセンブリに COM 型の型情報を直接埋め込めるようになりました。マネージ アセンブリで相互運用アセンブリから COM 型の型情報を取得する必要がありません。 埋め込まれる型情報にはマネージ アセンブリに実際に使用される型とメンバーのみが含まれるため、2 つのマネージ アセンブリで同じ COM 型の表示が非常に異なることが考えられます。 マネージ アセンブリごとに、COM 型の表示を表す異なる <xref:System.Type> オブジェクトが与えられます。 共通言語ランタイムでは、インターフェイス、構造、列挙、委任といった異なる表示間で型の等価性が与えられます。  
   
- 型の等価性とは、あるマネージ アセンブリから別のマネージ アセンブリに渡される COM オブジェクトを、受け取り側のアセンブリの適切なマネージ型にキャストできることです。  
+ 型の等価性とは、マネージ アセンブリ間で渡される COM オブジェクトを受け取り側のアセンブリで適切なマネージ型に変換できることを意味します。  
   
 > [!NOTE]
->  型の等価性と埋め込まれた相互運用機能型を利用すると、アプリケーションで相互運用機能アセンブリを配置する必要がなくなるため、COM コンポーネントを使用するアプリケーションおよびアドインの配置が簡単になります。  共有 COM コンポーネントの開発者は、それらのコンポーネントを以前のバージョンの .NET Framework で使用するには、これまで同様、プライマリ相互運用機能アセンブリ \(PIA: Primary Interop Assemblies\) を作成する必要があります。  
+>  型の等価性と埋め込まれた相互運用機能型により、COM コンポーネントを利用するアプリケーションとアドインの展開が簡単になります。アプリケーションで相互運用アセンブリを展開する必要がないためです。 ただし、以前のバージョンの .NET Framework でコンポーネントを利用する場合、共有 COM コンポーネントの開発者はプライマリ相互運用アセンブリ (PIA) を作成する必要があります。  
   
-## 型の等価性  
- COM 型の等価性は、インターフェイス、構造体、列挙体、およびデリゲートに対してサポートされます。  COM 型が等価と見なされるのは、次の条件がすべて満たされた場合です。  
+## <a name="type-equivalence"></a>型の等価性  
+ COM 型の等価性は、インターフェイス、構造、列挙、委任でサポートされています。 COM 型は、次のすべてに該当する場合に等価となります。  
   
--   型が、どちらもインターフェイス、構造体、列挙体、またはデリゲートである。  
+-   型がいずれもインターフェイスであるか、いずれも構造であるか、いずれも列挙であるか、いずれも委任である。  
   
--   型の ID が同じである。詳細については、次の節を参照してください。  
+-   型の ID が同じである (次のセクションに詳細あり)。  
   
--   どちらの型も型の等価性を利用できる。詳細については、「[型の等価性を利用できるように COM 型を指定する](#type_equiv)」を参照してください。  
+-   いずれの型も、型の等価性に適合する (「[型の等価性の資格ありとして COM 型を設定する](#type_equiv)」セクションに詳細あり)。  
   
-### 型の ID  
- 2 つの型の ID が同じと見なされるのは、それらの型のスコープと ID が一致する場合です。つまり、それぞれの型に <xref:System.Runtime.InteropServices.TypeIdentifierAttribute> 属性があり、この 2 つの属性の <xref:System.Runtime.InteropServices.TypeIdentifierAttribute.Scope%2A> プロパティと <xref:System.Runtime.InteropServices.TypeIdentifierAttribute.Identifier%2A> プロパティが一致する場合です。  <xref:System.Runtime.InteropServices.TypeIdentifierAttribute.Scope%2A> の比較では、大文字と小文字が区別されません。  
+### <a name="type-identity"></a>型の ID  
+ 範囲と ID が一致するとき、言い換えると、それぞれに <xref:System.Runtime.InteropServices.TypeIdentifierAttribute> 属性が含まれ、2 つの属性の <xref:System.Runtime.InteropServices.TypeIdentifierAttribute.Scope%2A> プロパティと <xref:System.Runtime.InteropServices.TypeIdentifierAttribute.Identifier%2A> プロパティが一致する場合、2 つの型の ID が同じであると判断されます。 <xref:System.Runtime.InteropServices.TypeIdentifierAttribute.Scope%2A> の比較では、大文字と小文字が区別されません。  
   
- 型に <xref:System.Runtime.InteropServices.TypeIdentifierAttribute> 属性がない場合でも、または <xref:System.Runtime.InteropServices.TypeIdentifierAttribute> 属性はあるがスコープと ID が指定されていない場合でも、次のように、等価かどうか評価されます。  
+ 型に <xref:System.Runtime.InteropServices.TypeIdentifierAttribute> 属性が含まれない場合、あるいは範囲や識別子を指定しない <xref:System.Runtime.InteropServices.TypeIdentifierAttribute> 属性が型に含まれる場合も、型は次のように等価性適用として考慮されます。  
   
--   インターフェイスの場合、<xref:System.Runtime.InteropServices.GuidAttribute> の値が <xref:System.Runtime.InteropServices.TypeIdentifierAttribute.Scope%2A?displayProperty=fullName> プロパティの代わりに使用され、<xref:System.Type.FullName%2A?displayProperty=fullName> プロパティ \(つまり、名前空間を含む型名\) が <xref:System.Runtime.InteropServices.TypeIdentifierAttribute.Identifier%2A?displayProperty=fullName> プロパティの代わりに使用されます。  
+-   インターフェイスの場合、<xref:System.Runtime.InteropServices.GuidAttribute> の値が <xref:System.Runtime.InteropServices.TypeIdentifierAttribute.Scope%2A?displayProperty=fullName> プロパティの代わりに使用されます。<xref:System.Type.FullName%2A?displayProperty=fullName> プロパティ (つまり、名前空間を含む、型の名前) が <xref:System.Runtime.InteropServices.TypeIdentifierAttribute.Identifier%2A?displayProperty=fullName> プロパティの代わりに使用されます。  
   
--   構造体、列挙体、およびデリゲートの場合、それらを含んでいるアセンブリの <xref:System.Runtime.InteropServices.GuidAttribute> が <xref:System.Runtime.InteropServices.TypeIdentifierAttribute.Scope%2A> プロパティの代わりに使用され、<xref:System.Type.FullName%2A?displayProperty=fullName> プロパティが <xref:System.Runtime.InteropServices.TypeIdentifierAttribute.Identifier%2A> プロパティの代わりに使用されます。  
+-   構造、列挙、委任の場合、含んでいるアセンブリの <xref:System.Runtime.InteropServices.GuidAttribute> が <xref:System.Runtime.InteropServices.TypeIdentifierAttribute.Scope%2A> プロパティの代わりに使用されます。<xref:System.Type.FullName%2A?displayProperty=fullName> プロパティが <xref:System.Runtime.InteropServices.TypeIdentifierAttribute.Identifier%2A> プロパティの代わりに使用されます。  
   
 <a name="type_equiv"></a>   
-### 型の等価性を利用できるように COM 型を指定する  
- 型の等価性を利用できるように型を指定するには、次の 2 つの方法があります。  
+### <a name="marking-com-types-for-type-equivalence"></a>型の等価性に適合するものとして COM 型を設定する  
+ 型の等価性に適合するものとして 2 つの方法で型を設定できます。  
   
--   <xref:System.Runtime.InteropServices.TypeIdentifierAttribute> 属性を型に適用します。  
+-   型に <xref:System.Runtime.InteropServices.TypeIdentifierAttribute> 属性を適用します。  
   
--   型を COM インポート型にします。  インターフェイスは、<xref:System.Runtime.InteropServices.ComImportAttribute> 属性が設定されている場合、COM インポート型になります。  インターフェイス、構造体、列挙体、またはデリゲートは、その定義元のアセンブリに <xref:System.Runtime.InteropServices.ImportedFromTypeLibAttribute> 属性が設定されている場合、COM インポート型になります。  
+-   型を COM インポート型にします。 <xref:System.Runtime.InteropServices.ComImportAttribute> 属性が与えられていると、インターフェイスは COM インポート型となります。 それが定義されているアセンブリに <xref:System.Runtime.InteropServices.ImportedFromTypeLibAttribute> 属性が含まれる場合、インターフェイス、構造、列挙、委任は COM インポート型となります。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Type.IsEquivalentTo%2A>   
- [Using COM Types in Managed Code](http://msdn.microsoft.com/ja-jp/1a95a8ca-c8b8-4464-90b0-5ee1a1135b66)   
+ [マネージ コードでの COM 型の使用](http://msdn.microsoft.com/en-us/1a95a8ca-c8b8-4464-90b0-5ee1a1135b66)   
  [タイプ ライブラリのアセンブリとしてのインポート](../../../docs/framework/interop/importing-a-type-library-as-an-assembly.md)
+

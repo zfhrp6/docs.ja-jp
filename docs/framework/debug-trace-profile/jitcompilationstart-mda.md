@@ -1,57 +1,62 @@
 ---
-title: "jitCompilationStart MDA | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "JIT compilation"
-  - "MDAs (managed debugging assistants), JIT compilation"
-  - "JitCompilationStart MDA"
-  - "managed debugging assistants (MDAs), JIT compilation"
+title: jitCompilationStart MDA
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- VB
+- CSharp
+- C++
+- jsharp
+helpviewer_keywords:
+- JIT compilation
+- MDAs (managed debugging assistants), JIT compilation
+- JitCompilationStart MDA
+- managed debugging assistants (MDAs), JIT compilation
 ms.assetid: 5ffd2857-d0ba-4342-9824-9ffe04ec135d
 caps.latest.revision: 11
-author: "mairaw"
-ms.author: "mairaw"
-manager: "wpickett"
-caps.handback.revision: 11
+author: mairaw
+ms.author: mairaw
+manager: wpickett
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: eb6a36b9427c7d55aceba226a865cd51d076f448
+ms.contentlocale: ja-jp
+ms.lasthandoff: 08/21/2017
+
 ---
-# jitCompilationStart MDA
-`jitCompilationStart` マネージ デバッグ アシスタント \(MDA:Managed Debugging Assistant\) は、Just\-In\-Time \(JIT\) コンパイラが関数のコンパイルを開始したことを報告するためにアクティブ化されます。  
+# <a name="jitcompilationstart-mda"></a>jitCompilationStart MDA
+`jitCompilationStart` マネージ デバッグ アシスタント (MDA: Managed Debugging Assistant) が起動すると、Just-In-Time (JIT) コンパイラが関数のコンパイルを開始した時刻が報告されます。  
   
-## 症状  
- mscorjit.dll がプロセスに読み込まれたため、既にネイティブ イメージの形式内にあるプログラムのワーキング セットのサイズが増加します。  
+## <a name="symptoms"></a>症状  
+ mscorjit.dll がプロセスに読み込まれるため、既にネイティブの画像形式になっているプログラムで、ワーキング セット サイズが増えます。  
   
-## 原因  
- プログラムが依存するアセンブリの一部が、ネイティブ形式に生成されていないか、正しく登録されていません。  
+## <a name="cause"></a>原因  
+ プログラムが依存するアセンブリの一部がネイティブ形式に生成されていないか、生成されていても正しく登録されていません。  
   
-## 解決策  
- この MDA を有効にすると、JIT コンパイルされた関数を確認できます。  関数を含むアセンブリがネイティブ形式に生成され、正しく登録されているかどうかを確認します。  
+## <a name="resolution"></a>解決策  
+ この MDA を有効にすると、JIT コンパイルされている関数を判断できます。 関数が含まれるアセンブリがネイティブ形式に生成され、正しく登録されているかどうかを判断します。  
   
-## ランタイムへの影響  
- この MDA は、メソッドが JIT コンパイルされる直前に、メッセージを記録します。そのため、この MDA を有効にすると、パフォーマンスに大きな影響を与えます。  メソッドがインラインである場合、この MDA は別のメッセージを生成しないことに注意してください。  
+## <a name="effect-on-the-runtime"></a>ランタイムへの影響  
+ この MDA は、メソッドが JIT コンパイルされる前にメッセージをログに記録します。そのため、この MDA を有効にすると、パフォーマンスに大きな影響が出ます。 メソッドがインラインの場合、この MDA は別個のメッセージを生成しません。  
   
-## 出力  
- サンプル出力を次のコード例に示します。  この出力例では、アセンブリ Test で、クラス "ns2.CO" のメソッド "m" が JIT コンパイルされたことを示します。  
+## <a name="output"></a>出力  
+ 次のコード サンプルでは、サンプル出力を確認できます。 ここでは、アセンブリ Test で、クラス "ns2.CO" のメソッド "m" が JIT コンパイルされたことを出力で確認できます。  
   
 ```  
 method name="Test!ns2.C0::m"  
 ```  
   
-## 構成  
- 最初に JIT コンパイルされたときに報告されたメソッドをフィルター処理するために使用できるさまざまなフィルターを、次の構成ファイルに示します。  name 属性の値を \* に設定すると、報告されたすべてのメソッドを指定できます。  
+## <a name="configuration"></a>構成  
+ 次の構成ファイルでは、最初に JIT コンパイルされたときに報告されるメソッドを絞り込むためのさまざまなフィルターを確認できます。 名前属性の値を * に設定することで、すべてのメソッドを報告するように指定できます。  
   
-```  
+```xml  
 <mdaConfig>  
   <assistants>  
     <jitCompilationStart>  
@@ -69,8 +74,8 @@ method name="Test!ns2.C0::m"
 </mdaConfig>  
 ```  
   
-## 使用例  
- 前の構成ファイルで使用するコード サンプルを次に示します。  
+## <a name="example"></a>例  
+ 次のコード サンプルは、先の構成ファイルとの併用を意図しています。  
   
 ```  
 using System;  
@@ -167,7 +172,8 @@ namespace ns2
 }  
 ```  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Runtime.InteropServices.MarshalAsAttribute>   
- [Diagnosing Errors with Managed Debugging Assistants](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)   
+ [マネージ デバッグ アシスタントによるエラーの診断](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)   
  [相互運用マーシャリング](../../../docs/framework/interop/interop-marshaling.md)
+

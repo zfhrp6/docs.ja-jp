@@ -1,52 +1,57 @@
 ---
-title: "UDP サービスの使用 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "プロトコル、UDP"
-  - "ネットワーク リソース、UDP"
-  - "要求 (インターネットからデータを)、UDP"
-  - "UDP"
-  - "受信 (データを)、UDP"
-  - "インターネット、UDP"
-  - "複数のアドレスへのメッセージのブロードキャスト"
-  - "データ要求、UDP"
-  - "UdpClient クラス、UdpClient クラスについて"
-  - "送信 (データを)、UDP"
-  - "アプリケーション プロトコル、UDP"
+title: "UDP サービスの使用"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- VB
+- CSharp
+- C++
+- jsharp
+helpviewer_keywords:
+- protocols, UDP
+- network resources, UDP
+- requesting data from Internet, UDP
+- UDP
+- receiving data, UDP
+- Internet, UDP
+- broadcasting messages to multiple addresses
+- data requests, UDP
+- UdpClient class, about UdpClient class
+- sending data, UDP
+- application protocols, UDP
 ms.assetid: d5c3477a-e798-454c-a890-738ba14c5707
 caps.latest.revision: 15
-author: "mcleblanc"
-ms.author: "markl"
-manager: "markl"
-caps.handback.revision: 13
+author: mcleblanc
+ms.author: markl
+manager: markl
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 2986feda76b035e3651712609364b4194378a64c
+ms.contentlocale: ja-jp
+ms.lasthandoff: 08/21/2017
+
 ---
-# UDP サービスの使用
-<xref:System.Net.Sockets.UdpClient> のクラスは、UDP を使用してネットワーク サービスと通信します。  <xref:System.Net.Sockets.UdpClient> クラスおよびメソッドのプロパティは、UDP を使用してデータを要求と入荷の <xref:System.Net.Sockets.Socket> の作成の詳細を追加します。  
+# <a name="using-udp-services"></a>UDP サービスの使用
+<xref:System.Net.Sockets.UdpClient> クラスは、UDP を使用してネットワーク サービスと通信します。 <xref:System.Net.Sockets.UdpClient> クラスのプロパティとメソッドは、UDP を使用したデータの要求と受信用に <xref:System.Net.Sockets.Socket> を作成する詳細を抽象化します。  
   
- ユーザー データグラム Protocol \(UDP\) はリモート ホストにデータを提供するのに最適な努力をする簡単なプロトコルです。  ただし、UDP プロトコルがコネクションレスなプロトコルであるため、リモート エンドポイントに送信される UDP データグラムが着荷対して保証する \(送信\) 同じ順序で到着に対して保証します。  UDP を使用するアプリケーションが不足している、重複および注文が狂ってデータグラムを処理するために準備する必要があります。  
+ ユーザー データグラム プロトコル (UDP) は、ベスト エフォートでリモート ホストにデータを配信する簡易プロトコルです。 ただし、UDP プロトコルは接続プロトコルなので、リモート エンドポイントに送信された UDP データグラムの到達は保証されていません。また、送信されたときと同じ順序で到達することも保証されていません。 UDP を使用するアプリケーションには、データグラムの欠落、重複、順序の変更を処理する準備が必要です。  
   
- に UDP を使用してデータグラムを送信するには、通信するために、サービスを利用する UDP ポート番号必要なサービスをホストしているネットワーク デバイスのネットワーク アドレスを把握している必要があります。  インター ネット住所を \(Iana\) 管理、共通のサービスのポート番号を定義します \(www.iana.org\/assignments\/port\-numbers\) を参照してください。  Iana の一覧のサービスはない範囲 1,024 に 65,535 のポート番号を使用できます。  
+ UDP を使用してデータグラムを送信するには、必要なサービスをホストするネットワーク デバイスのネットワーク アドレスと、サービスが通信に使用する UDP ポート番号を知っている必要があります。 Internet Assigned Numbers Authority (IANA) は、一般的なサービスのポート番号を定義しています (www.iana.org/assignments/port-numbers を参照してください)。 IANA の一覧に掲載されていないサービスが、1,024 から 65,535 の範囲のポート番号を使用している可能性があります。  
   
- 特別ネットワーク IP アドレスがベースのネットワーク UDP 配信メッセージをサポートするために使用されます。  次の議論は、インターネットで、例として使用される IP \(バージョン 4 の住所のファミリーを使用します。  
+ IP ベースのネットワークで UDP ブロードキャスト メッセージをサポートするために、特殊なネットワーク アドレスが使用されています。 次の説明では、例としてインターネット上で使用される IPv4 アドレスを使用しています。  
   
- IP \(バージョン 4 の住所がネットワーク アドレスを指定するには、32 ビットのコードを使用します。  255.255.255.0 の netmask を使用してクラス C の住所に、これらのオブジェクトは 4 人のオクテットに分けられます。  小数点以下 10 桁で表現した場合、4 人のオクテットは 192.168.100.2 など、知られた点を打クォードの表記を、フォームで行います。  最初の 2 人のオクテット \(この例では、192.168\) は、ネットワーク番号を、3 番目のオクテット \(100\) を定義します \(2\) によってホストの ID である最終オクテットとサブネットが表示されます。  
+ IPv4 アドレスでは、32 ビットを使用してネットワーク アドレスを指定します。 255.255.255.0 のネットマスクを使用するクラス C アドレスの場合、これらのビットは 4 オクテットに区切られます。 10 進数で表現する場合、4 オクテットで、192.168.100.2 などの使い慣れたドットで 4 つに区切った表記が形成されます。 最初の 2 つのオクテット (この例では 192.168) はネットワーク番号を形成し、3 番目のオクテット (100) はサブネットを定義し、最後のオクテット (2) はホスト識別子です。  
   
- 1 種類の IP アドレスのすべてのオブジェクト、またはフォームの 255.255.255.255 制限されます。住所を設定します  この住所 UDP データグラムの送信は、ローカル ネットワークの区分のすべてのホストにメッセージを提供します。  このアドレスに送信される、ルーターの順方向メッセージの区分のネットワーク ホスト配信のみメッセージが表示されないので。  
+ IP アドレスのすべてのビットを 1、つまり 255.255.255.255 に設定すると、制限されたブロードキャスト アドレスが形成されます。 UDP データグラムをこのアドレスに設定すると、ローカル ネットワーク セグメント上のすべてのホストにメッセージが配信されます。 ルーターは、このアドレスに送信されたメッセージを転送しないため、ネットワーク セグメント上のホストのみがブロードキャスト メッセージを受信します。  
   
- 配信は、ネットワークの特定の部分でホストの ID のすべてのオブジェクトの設定によって指示できます。  たとえば、192.168.1 と開始する IP アドレスによって識別されるすべてのネットワーク ホストのに配信を送信するに 192.168.1.255 住所を使用します。  
+ ブロードキャストをネットワークの特定の部分に送信するには、ホスト識別子のすべてのビットを設定します。 たとえば、192.168.1 から始まる IP アドレスで識別されるネットワーク上のすべてにホストにブロードキャストを送信するには、アドレス 192.168.1.255 を使用します。  
   
- 次のコード例は、ポート 11,000 の指示済配信 192.168.1.255 アドレスに送信される UDP データグラム聴覚にそばを立てるに <xref:System.Net.Sockets.UdpClient> を使用します。  クライアントはメッセージの文字列が表示され、コンソールに書き込んだり。  
+ 次のコード例では、<xref:System.Net.Sockets.UdpClient> を使用して、ポート 11,000 上の指定されたブロードキャスト アドレス 192.168.1.255 に送信される UDP データグラムをリッスンしています。 クライアントは、メッセージ文字列を受信し、そのメッセージをコンソールに書き込みます。  
   
 ```vb  
 Imports System  
@@ -134,7 +139,7 @@ public class UDPListener
 }  
 ```  
   
- 次の例は、ポート 11,000 コードを使用して指示済配信住所 192.168.1.255 に UDP データグラムを送信するに <xref:System.Net.Sockets.UdpClient> を使用します。  クライアントはコマンド ラインで指定されたメッセージの文字列を送信します。  
+ 次のコード例では、<xref:System.Net.Sockets.UdpClient> を使用して、ポート 11,000 を使用して、指定されたブロードキャスト アドレス 192.168.1.255 に UDP データグラムを送信しています。 クライアントは、コマンド ラインに指定されたメッセージ文字列を送信します。  
   
 ```vb  
 Imports System  
@@ -181,7 +186,8 @@ class Program
 }  
 ```  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Net.Sockets.UdpClient>   
  <xref:System.Net.IPAddress>   
- [TCP\/UDP](../../../docs/framework/network-programming/tcp-udp.md)
+ 
+

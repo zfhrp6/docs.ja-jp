@@ -29,10 +29,10 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 227241d1b290dde2e9de66e6c0e3c904b432bae0
+ms.sourcegitcommit: 59e445ac27f07c85d9e98c5f595cf5f935f75443
+ms.openlocfilehash: 9a0a488c6f444608a335cd990847774fb6fe9e3f
 ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
+ms.lasthandoff: 08/31/2017
 
 ---
 # <a name="out-parameter-modifier-c-reference"></a>out パラメーター修飾子 (C# リファレンス)
@@ -77,15 +77,15 @@ class CS0663_Example
   
  [!code-cs[csrefKeywordsMethodParams#4](../../../../samples/snippets/csharp/language-reference/keywords/out/out-4.cs)]  
 
- [Try パターン](/visualstudio/code-quality/ca1021-avoid-out-parameters#try-pattern-methods.md)には、操作が成功したか失敗したかを示す `bool` を返す処理と、操作によって生成された値を `out` 引数で返す処理が含まれます。 @System.DateTime.TryParse(System.String,@System.DateTime) メソッドなど、多くの解析メソッドでこのパターンが使用されます。
+ [Try パターン](/visualstudio/code-quality/ca1021-avoid-out-parameters#try-pattern-methods.md)には、操作が成功したか失敗したかを示す `bool` を返す処理と、操作によって生成された値を `out` 引数で返す処理が含まれます。 [DateTime.TryParse](xref:System.DateTime.TryParse(System.String,System.DateTime@)) メソッドなど、多くの解析メソッドでこのパターンが使用されます。
    
 ## <a name="calling-a-method-with-an-out-argument"></a>`out` 引数を含むメソッドの呼び出し
 
-C# 6 以前では、変数を別のステートメントで宣言してから `out` 引数として渡す必要があります。 次の例では、`number` という名前の変数を宣言してから、文字列を数値に変換する [Int32.TryParse](xref:System.Int32.TryParse(System.String,@System.Int32) メソッドに渡しています。
+C# 6 以前では、変数を別のステートメントで宣言してから `out` 引数として渡す必要があります。 次の例では、`number` という名前の変数を宣言してから、文字列を数値に変換する [Int32.TryParse](xref:System.Int32.TryParse(System.String,System.Int32@)) メソッドに渡しています。
 
  [!code-cs[csrefKeywordsMethodParams#5](../../../../samples/snippets/csharp/language-reference/keywords/out/out-5.cs)]  
 
-C# 7 以降では、`out` 変数を、別の変数宣言内ではなく、メソッド呼び出しの引数リスト内で宣言できます。 これにより、よりコンパクトで読みやすいコードが生成されます。また、メソッド呼び出しの前に誤って変数に値を割り当てることもなくなります。 次の例は前の例と似ていますが、[Int32.TryParse](xref:System.Int32.TryParse(System.String,@System.Int32) メソッドの呼び出しで `number` 変数を定義している点が異なります。
+C# 7 以降では、`out` 変数を、別の変数宣言内ではなく、メソッド呼び出しの引数リスト内で宣言できます。 これにより、よりコンパクトで読みやすいコードが生成されます。また、メソッド呼び出しの前に誤って変数に値を割り当てることもなくなります。 次の例は前の例と似ていますが、[Int32.TryParse](xref:System.Int32.TryParse(System.String,System.Int32@)) メソッドの呼び出しで `number` 変数を定義している点が異なります。
 
  [!code-cs[csrefKeywordsMethodParams#6](../../../../samples/snippets/csharp/language-reference/keywords/out/out-6.cs)]  
    

@@ -1,37 +1,44 @@
 ---
-title: "WIF セッション管理 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "WIF セッション管理"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 98bce126-18a9-401b-b20d-67ee462a5f8a
 caps.latest.revision: 7
-author: "BrucePerlerMS"
-ms.author: "bruceper"
-manager: "mbaldwin"
-caps.handback.revision: 7
+author: BrucePerlerMS
+ms.author: bruceper
+manager: mbaldwin
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: d71b83231140dcc18e6d2351091fbfd4985e90a2
+ms.contentlocale: ja-jp
+ms.lasthandoff: 08/21/2017
+
 ---
-# WIF セッション管理
-クライアントが最初に証明書利用者によってホスト保護されたリソースにアクセスしようとしたときに、クライアント証明書は、ユーザーによって信頼されるセキュリティ トークン Services \(STS\) に最初に認証する必要があります。  STS はクライアントに、セキュリティ トークンを発行します。  クライアントは、保護されているリソースへのクライアント アクセスを許可する証明書利用者にこのトークンを示します。  ただし、特に証明書利用者と同じコンピューターにまたは同じドメイン内に存在しない場合があるため、クライアントへの各要求に関する STS に再認証する側に必要です。  代わりに、Windows ID Foundation \(WIF\) は、クライアント証明書利用者にすべての要求の証明書利用者に認証にクライアントがセッションのセキュリティ トークンを後の最初の要求を使用するセッション設定されている。  証明書利用者はクッキー内に格納されているクライアントの <xref:System.Security.Claims.ClaimsPrincipal?displayProperty=fullName>を再度確立するためにこのセッションのセキュリティ トークンを使用できます。  
+# <a name="wif-session-management"></a>WIF セッション管理
+証明書利用者によりホストされている保護リソースにクライアントが初めてアクセスしようとするとき、クライアントは最初に、証明書利用者が信頼しているセキュリティ トークン サービス (STS) に身元を証明する必要があります。 認証後、STS はセキュリティ トークンをクライアントに発行します。 クライアントは証明書利用者にこのトークンを提示します。証明書利用者は保護リソースへのアクセスをクライアントに許可します。 ただし、要求のたびにクライアントが STS に再認証するということは望ましくありません。コンピューターやドメインが証明書利用者のものと同じではないことがあるためです。 代わりに、Windows Identity Foundation (WIF) はクライアントと証明書利用者にセッションを確立させ、そのセッションで、最初の要求後のすべての要求に関して、クライアントはセッション セキュリティ トークンを利用して証明書利用者に身元を証明します。 証明書利用者は Cookie 内に保存されるこのセッション セキュリティ トークンを利用し、クライアントの <xref:System.Security.Claims.ClaimsPrincipal?displayProperty=fullName> を再構築できます。  
   
- STS は、認証を提供するクライアントがあるかを定義します。  ただし、クライアントが STS に認証できる複数の資格情報がある場合があります。  たとえば、Windows Live からトークン、ユーザー名とパスワード、および証明書 smartkey がある場合があります。  この場合、STS はクライアントに示す資格情報の 1 種類に対応するクライアントに各 ID を持つ複数の ID を与えます。  証明書利用者はクライアントに与えられる許可するアクセスのレベルを決定するときにこれらの ID を一つ以上使用できます。  
+ STS は、クライアントが提供する必要のある認証を定義します。 ただし、STS に身元を証明するための資格情報がクライアントに複数与えられていることがあります。 たとえば、Windows Live のトークン、ユーザー名とパスワード、証明書、スマートキーが与えられていることがあります。 その場合、STS はクライアントにいくつかの ID を与えます。それぞれの ID が、クライアントが提示する資格情報の 1 つに対応します。 証明書利用者は、クライアントに与えるアクセス レベルを決定するとき、そのような ID の 1 つまたは複数を利用できます。  
   
- <xref:System.IdentityModel.Tokens.SessionSecurityToken?displayProperty=fullName> がクライアントの <xref:System.Security.Claims.ClaimsPrincipal?displayProperty=fullName>を再確立するために使用されます。<xref:System.Security.Claims.ClaimsPrincipal.Identities%2A>でクライアント ID をすべて備えた。  コレクションの各 <xref:System.Security.Claims.ClaimsIdentity?displayProperty=fullName> は、その ID に関連付けられているブートストラップのトークンが含まれています。  
+ <xref:System.IdentityModel.Tokens.SessionSecurityToken?displayProperty=fullName> は、<xref:System.Security.Claims.ClaimsPrincipal.Identities%2A> にクライアントのすべての ID を含む、クライアントの <xref:System.Security.Claims.ClaimsPrincipal?displayProperty=fullName> の再構築に使用されます。 コレクションの各 <xref:System.Security.Claims.ClaimsIdentity?displayProperty=fullName> には、その ID に関連付けられているブートストラップ トークンが含まれます。  
   
- 新しいセッションのトークンが元のセッションのトークンのセッション ID に問題 <xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler?displayProperty=fullName> トークンは、キャッシュのセッションのトークンを更新しません。  一意のセッション ID を持つセッションのトークンを常にインスタンス化する必要があります  
+ 新しいセッション トークンが元のセッション トークンのセッション ID で発行されている場合、<xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler?displayProperty=fullName> は、トークン キャッシュのセッション トークンを更新しません。 セッション トークンは常に一意のセッション ID でインスタンス化する必要があります。  
   
 > [!NOTE]
->  Session.SecurityTokenHandler.ReadToken は無効な入力を受け取る場合は <xref:System.Xml.XmlException> の例外をスローします; たとえば、セッションのトークンを含むクッキーの破損。  この例外をキャッチする推奨し、アプリケーション固有の動作を提供します。  
+>  Session.SecurityTokenHandler.ReadToken は、無効な入力を受け取ると、<xref:System.Xml.XmlException> 例外をスローします。たとえば、セッション トークンが含まれる Cookie が壊れている場合です。 この例外をキャッチし、アプリケーション固有の動作を提供することが推奨されます。  
   
- 保護された Web ページが保護されたドメインにあるリソースの多くが含まれている場合、グラフィックスなど\) は、クライアント証明書利用者にこれらのリソースをダウンロードするに再認証する必要があります。  セッションの認証トークンの使用は、要求ごとの STS に認証する必要はありませんが、多くのクッキーが送信されることを意味します。まだ  マイナー項目が保護されていないドメインに格納され、メイン Web ページからリンク間に、重要なデータやリソースが保護されたドメインに格納するために Web ページを設定することがあります。  また、保護されたドメインだけを参照するようにクッキーのパスを設定します。  
+ 保護されている Web ページに、保護ドメインにも存在するたくさんのリソースが含まれる場合 (小さなグラフィックスなど)、各リソースをダウンロードするには、クライアントは証明書利用者に対して身元を再証明する必要があります。 セッション認証トークンを利用することで、要求のたびに STS に認証する必要がなくなります。ただし、Cookie がたくさん送信されることは変わりません。 重要なデータとリソースを保護ドメインに保存し、重要ではない項目を保護のないドメインに保存し、メインの Web ページにリンクさせる方法が Web ページの構築方法として推奨されます。 また、Cookie パスは、保護ドメインだけを参照するように設定します。  
   
- 参照モードで動作するように、マイクロソフトは、ハンドラーを **global.asax.cs** ファイルの <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SessionSecurityTokenCreated> のイベントに提供し、<xref:System.IdentityModel.Services.SessionSecurityTokenCreatedEventArgs.SessionToken%2A> のプロパティに渡されるトークンで **IsReferenceMode** のプロパティを設定することをお勧めします。  これらの更新はセッションのトークンを要求ごとの参照モードで動作し、のみセッションの認証モジュールの <xref:System.IdentityModel.Services.SessionAuthenticationModule.IsReferenceMode%2A> のプロパティを設定することでサポートされていることを確認します。  
+ 参照モードで操作する際、**global.asax.cs** ファイルに <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SessionSecurityTokenCreated> イベントのハンドラーを指定し、<xref:System.IdentityModel.Services.SessionSecurityTokenCreatedEventArgs.SessionToken%2A> プロパティで渡されるトークンで **IsReferenceMode** プロパティを設定することを Microsoft は推奨しています。 以上の更新により、セッション トークンは要求のたびに参照モードで動作し、セッション認証モジュールで設定した <xref:System.IdentityModel.Services.SessionAuthenticationModule.IsReferenceMode%2A> プロパティより優先されます。  
   
-## 機能拡張  
- セッション管理機構を拡張できます。  このの 1 種類の理由は、パフォーマンスを向上させることです。  たとえば、メモリの状態間のセッションのセキュリティ トークンを示しますがクッキーになる変換するか、最適化するクッキーのカスタム ハンドラーを作成できます。  そのためには、<xref:System.IdentityModel.Services.CookieHandler?displayProperty=fullName>から派生したカスタムのクッキーのハンドラーを使用するように <xref:System.IdentityModel.Services.SessionAuthenticationModule?displayProperty=fullName> の <xref:System.IdentityModel.Services.SessionAuthenticationModule.CookieHandler%2A?displayProperty=fullName> のプロパティを構成できます。  <xref:System.IdentityModel.Services.ChunkedCookieHandler?displayProperty=fullName> は、クッキーのハイパーテキスト転送プロトコル \(HTTP\) に対する許容サイズを超えるため、既定のクッキーのハンドラーです; カスタムのクッキーのハンドラーを使用すると、chunking を実装する必要があります。  
+## <a name="extensibility"></a>機能拡張  
+ セッション管理メカニズムを拡張できます。 その理由の 1 つは、パフォーマンスを改善できることにあります。 たとえば、メモリ内の状態と Cookie の内容を比較し、セッション セキュリティ トークンを変換したり、最適化したりするカスタム Cookie ハンドラーを作成できます。 その場合、<xref:System.IdentityModel.Services.SessionAuthenticationModule?displayProperty=fullName> の <xref:System.IdentityModel.Services.SessionAuthenticationModule.CookieHandler%2A?displayProperty=fullName> プロパティを構成し、<xref:System.IdentityModel.Services.CookieHandler?displayProperty=fullName> から誘導されたカスタム Cookie ハンドラーを使用できます。 <xref:System.IdentityModel.Services.ChunkedCookieHandler?displayProperty=fullName> が既定の Cookie ハンドラーです。Cookie はハイパーテキスト転送プロトコル (HTTP) の許容サイズを超えるためです。代わりにカスタム Cookie ハンドラーを使用する場合、チャンクを実装してください。  
   
- 詳細については、" [ClaimsAwareWebFarm](http://go.microsoft.com/fwlink/?LinkID=248408) " \(http:\/\/go.microsoft.com\/fwlink\/?LinkID\=248408\) のサンプル。  この例は、参照によって大きいクッキーを交換する代わりに、セッションを使用できるように準備完了ファームにセッション キャッシュを示します \(tokenreplycache ではなく\) ; このサンプルには、ファームのクッキーを保護する簡単な方法を示します。  セッション キャッシュは、WCF ベースです。  保護しているセッションに関連するサンプルは、web.config の適切なスニペットを単純に貼り付けてアクティブにできる MachineKey に基づいて、クッキーの変換の WIF 4.5 の新機能について示します。  サンプル自体は「されませんが」、ファームのファーム アプリケーションを準備完了ようにするために必要な情報を示します。
+ 詳細については、[ClaimsAwareWebFarm](http://go.microsoft.com/fwlink/?LinkID=248408) (http://go.microsoft.com/fwlink/?LinkID=248408) サンプルをご覧ください。 このサンプルでは、(tokenreplycache ではなく) ファーム対応セッション キャッシュを確認できます。大きな Cookie を交換せず、参照でセッションを利用できます。このサンプルではまた、ファームで Cookie を保護する簡単な方法を確認できます。 このセッション キャッシュは WCF ベースです。 セッション セキュリティに関しては、このサンプルでは、MachineKey に基づく、Cookie 変換の WIF 4.5 の新機能を確認できます。これは、web.config に適切なスニペットを貼り付けるだけで有効にできます。サンプル自体は "ファーム化" されていませんが、アプリをファーム対応にするために必要なことを示します。
+

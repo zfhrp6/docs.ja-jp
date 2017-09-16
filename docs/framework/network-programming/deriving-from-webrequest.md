@@ -1,106 +1,112 @@
 ---
-title: "WebRequest からの派生 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "WebRequest クラス、プラグ可能なプロトコル"
-  - "プロトコル固有の要求ハンドラー"
-  - "送信 (データを)、プラグ可能なプロトコル"
-  - "プラグ可能なプロトコル、クラスの基準"
-  - "インターネット、プラグ可能なプロトコル"
-  - "受信 (データを)、プラグ可能なプロトコル"
-  - "プロトコル、プラグ可能"
+title: "WebRequest からの派生"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- VB
+- CSharp
+- C++
+- jsharp
+helpviewer_keywords:
+- WebRequest class, pluggable protocols
+- protocol-specific request handler
+- sending data, pluggable protocols
+- pluggable protocols, class criteria
+- Internet, pluggable protocols
+- receiving data, pluggable protocols
+- protocols, pluggable
 ms.assetid: 9810c177-973e-43d7-823c-14960bd625ea
 caps.latest.revision: 9
-author: "mcleblanc"
-ms.author: "markl"
-manager: "markl"
-caps.handback.revision: 7
+author: mcleblanc
+ms.author: markl
+manager: markl
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 2ea66dd7fcb474977511b872ba3f917eee90ed2f
+ms.contentlocale: ja-jp
+ms.lasthandoff: 08/21/2017
+
 ---
-# WebRequest からの派生
-<xref:System.Net.WebRequest> クラスは、.NET Framework プラグインの可能なプロトコル モデルに対応するプロトコル ハンドラーの要求を作成する基本およびメソッド プロパティを提供する抽象的な基本クラスです。  **\[WebRequest\]** クラスを使用するアプリケーションは、サポートされるプロトコルを使用して使用されるプロトコルを指定する必要なく、データを要求できます。  
+# <a name="deriving-from-webrequest"></a>WebRequest からの派生
+<xref:System.Net.WebRequest> クラスは、.NET Framework プラグ可能なプロトコル モデルに適合するプロトコル固有の要求ハンドラーを作成するための基本メソッドとプロパティを提供する抽象基底クラスです。 **WebRequest** クラスを使用するアプリケーションは、使用されるプロトコルを指定することなく、サポートされている任意のプロトコルを使用してデータを要求できます。  
   
- 2 種類の基準はプラグイン可能なプロトコルとして使用するプロトコル対応クラスに対して満たす必要があります: クラスは、<xref:System.Net.IWebRequestCreate> インターフェイスを実装し <xref:System.Net.WebRequest.RegisterPrefix%2A?displayProperty=fullName> 方法と登録する必要があります。  クラスはプラグイン可能なインターフェイスを提供する **\[WebRequest\]** のすべての抽象的な方法およびプロパティを必要があります。  
+ プロトコル固有のクラスがプラグ可能なプロトコルとして使用されるようにするには、クラスが <xref:System.Net.IWebRequestCreate> インターフェイスを実装する、およびそれを <xref:System.Net.WebRequest.RegisterPrefix%2A?displayProperty=fullName> メソッドに登録するという 2 つの条件を満たす必要があります。 クラスは、**WebRequest** のすべての抽象メソッドとプロパティをオーバーライドし、プラグ可能なインターフェイスを提供する必要があります。  
   
- **\[WebRequest\]** のインスタンスは一度だけの使用を意図しています; 別の要求をする場合は、新しい **\[WebRequest\]**を作成します。  **\[WebRequest\]** は、テンプレート **\[WebRequest\]** を XML し、追加要求のテンプレートを再構築する開発者のを有効にするに <xref:System.Runtime.Serialization.ISerializable> インターフェイスをサポートします。  
+ **WebRequest** インスタンスは 1 回限りの使用を意図しており、別の要求を作成する場合は、新しい **WebRequest** を作成します。 **WebRequest** は、開発者がテンプレート **WebRequest** をシリアル化して、そのテンプレートを追加の要求用に再構成できるように、<xref:System.Runtime.Serialization.ISerializable> インターフェイスをサポートしています。  
   
-## IWebRequest が方法を作成します  
- <xref:System.Net.IWebRequestCreate.Create%2A> 方法はプロトコル対応クラスの新しいインスタンスを初期化する責任があります。  新しい **\[WebRequest\]** が作成されると、<xref:System.Net.WebRequest.Create%2A?displayProperty=fullName> 方法は **RegisterPrefix** 方法と登録された URI の接頭辞に要求された URI を照合します。  適切な対応プロトコルその子孫の **\[作成\]** 方法に変更されるプロトコル対応するフィールドは必要ではありませんプロトコルの標準的な要求または応答のトランザクションを実行できる子孫の初期化したインスタンスを戻す必要があります。  
+## <a name="iwebrequest-create-method"></a>IWebRequest Create メソッド  
+ <xref:System.Net.IWebRequestCreate.Create%2A> メソッドは、プロトコル固有のクラスの新しいインスタンスの初期化を行います。 新しい **WebRequest** が作成されると、<xref:System.Net.WebRequest.Create%2A?displayProperty=fullName> メソッドは要求された URI を **RegisterPrefix** メソッドに登録されている URI プレフィックスと照合します。 適切なプロトコル固有の子孫の **Create** メソッドは、プロトコル固有のフィールドを変更することなく、プロトコルの標準的な要求/応答のトランザクションを実行できる子孫の初期化されたインスタンスを返す必要があります。  
   
-## ConnectionGroupName のプロパティ  
- 複数の要求を単一の接続を作成できるように <xref:System.Net.WebRequest.ConnectionGroupName%2A> のプロパティがリソース グループへの接続を表示するために使用します。  接続共有を実行するには、割り当てる接続プール プロトコル対応方法を使用します。  たとえば、<xref:System.Net.HttpWebRequest> クラスで共有する出荷済 <xref:System.Net.ServicePointManager> クラスの実装のつながり。  各接続のグループを特定のサーバーへの接続を提供する **ServicePointManager** のクラスが <xref:System.Net.ServicePoint> を作成します。  
+## <a name="connectiongroupname-property"></a>ConnectionGroupName プロパティ  
+ <xref:System.Net.WebRequest.ConnectionGroupName%2A> プロパティは、1 つの接続を介して複数の要求が作成できるように、リソースへの接続のグループを指定するために使用されます。 接続の共有を実装するには、プーリングと接続の割り当てのプロトコル固有のメソッドを使用する必要があります。 たとえば、指定した <xref:System.Net.ServicePointManager> クラスは <xref:System.Net.HttpWebRequest> クラスの接続の共有を実装します。 **ServicePointManager** クラスは、各接続グループに特定のサーバーへの接続を提供する <xref:System.Net.ServicePoint> を作成します。  
   
-## ContentLength のプロパティ  
- <xref:System.Net.WebRequest.ContentLength%2A> のプロパティはデータをアップロードするとサーバーに送信されるデータのバイト数を指定します。  
+## <a name="contentlength-property"></a>ContentLength プロパティ  
+ <xref:System.Net.WebRequest.ContentLength%2A> プロパティは、データをアップロードするときに、サーバーに送信されるデータのバイト数を指定します。  
   
- 通常、アップロードが **\[ContentLength\]** のプロパティがゼロより大きい値に設定されている場合行われていることを示すには <xref:System.Net.WebRequest.Method%2A> のプロパティが設定されている必要があります。  
+ 通常、<xref:System.Net.WebRequest.Method%2A> プロパティは、**ContentLength** プロパティが 0 より大きい値に設定されている場合に、アップロードが行われることを示すために設定する必要があります。  
   
-## ContentType のプロパティ  
- <xref:System.Net.WebRequest.ContentType%2A> のプロパティは、送信されるコンテンツ タイプを識別するために、プロトコルとサーバーに送信するように要求すると特殊な情報を提供します。  通常、これはアップロードされるすべてのデータの MIME のコンテンツ タイプです。  
+## <a name="contenttype-property"></a>ContentType プロパティ  
+ <xref:System.Net.WebRequest.ContentType%2A> プロパティは、送信中のコンテンツ タイプを識別するためにサーバーに送信するようにプロトコルで求められる特別な情報を提供します。 通常、これはアップロードされる任意のデータの MIME コンテンツ タイプです。  
   
-## 資格情報のプロパティ  
- <xref:System.Net.WebRequest.Credentials%2A> のプロパティは、サーバーと要求を認証するための情報が含まれます。  自分のプロトコルと認証プロセスの詳細を行う必要があります。  <xref:System.Net.AuthenticationManager> のクラスが要求を認証および認証トークンを提供する責任があります。  自分のプロトコルで使用される資格情報を提供するクラスが <xref:System.Net.ICredentials> インターフェイスを行う必要があります。  
+## <a name="credentials-property"></a>Credentials プロパティ  
+ <xref:System.Net.WebRequest.Credentials%2A> プロパティには、サーバーでの要求の認証に必要な情報が含まれています。 プロトコルの認証プロセスの詳細を実装する必要があります。 <xref:System.Net.AuthenticationManager> クラスは、要求の認証と認証トークンの提供を行います。 プロトコルで使用する資格情報を提供するクラスは、<xref:System.Net.ICredentials> インターフェイスを実装する必要があります。  
   
-## ヘッダーのプロパティ  
- <xref:System.Net.WebRequest.Headers%2A> のプロパティは要求に関連付けられたメタデータの名前と値の組み合わせのコレクション オプションが含まれます。  名前と値の組み合わせで表すことができるプロトコルが必要とするしたメタデータが **\[ヘッダー\]** のプロパティに含めることができます。  通常この情報は <xref:System.Net.WebRequest.GetRequestStream%2A> または <xref:System.Net.WebRequest.GetResponse%2A> 方法を追加する前に設定する必要があります; 一度要求は、メタデータ、見なされます読み取り専用に作成されます。  
+## <a name="headers-property"></a>Headers プロパティ  
+ <xref:System.Net.WebRequest.Headers%2A> プロパティには、要求に関連付けられているメタデータの名前/値ペアの任意のコレクションが含まれています。 名前/値のペアとして表すことができるプロトコルで必要なすべてのメタデータは、**Headers** プロパティに含めることができます。 通常、この情報は、<xref:System.Net.WebRequest.GetRequestStream%2A> メソッドまたは <xref:System.Net.WebRequest.GetResponse%2A> メソッドを呼び出す前に設定する必要があります。要求が作成されると、メタデータは読み取り専用と見なされます。  
   
- ヘッダーのメタデータを使用するに **\[ヘッダー\]** のプロパティを使用する必要はありません。  プロトコル対応のメタデータをプロパティとして公開できます。; たとえば、<xref:System.Net.HttpWebRequest.UserAgent%2A?displayProperty=fullName> のプロパティは **User\-Agent** の HTTP ヘッダーを公開します。  プロパティとしてヘッダーのメタデータを公開すると、同じプロパティが **\[ヘッダー\]** のプロパティを使用するように設定できません。  
+ ヘッダー メタデータを使用するために **Headers** プロパティを使用する必要はありません。 プロトコル固有のメタデータをプロパティとして公開することができます。たとえば、<xref:System.Net.HttpWebRequest.UserAgent%2A?displayProperty=fullName> プロパティは、**User-agent** HTTP ヘッダーを公開します。 ヘッダー メタデータをプロパティとして公開する場合、**Headers** プロパティを使用して同じプロパティが設定されないようにする必要があります。  
   
-## 方法のプロパティ  
- <xref:System.Net.WebRequest.Method%2A> のプロパティは要求がサーバーに実行するように依頼するか動詞アクションが含まれます。  **\[メソッド\]** プロパティの既定値はプロトコル対応するプロパティがある必要はありませんの標準的な要求または応答のアクションを有効にする必要があります。  たとえば、Web サーバーからリソースを要求し、応答を返品 [HttpWebResponse](frlrfSystemNetHttpWebResponseClassMethodTopic) 方法は得るためになります。  
+## <a name="method-property"></a>Method プロパティ  
+ <xref:System.Net.WebRequest.Method%2A> プロパティには、要求がサーバーに実行を求める動詞やアクションが含まれています。 **Method** プロパティの既定値は、プロトコル固有のプロパティを設定しなくても、標準的な要求/応答アクションを有効にする必要があります。 たとえば、<xref:System.Net.HttpWebResponse.Method%2A> メソッドの既定値は GET で、Web サーバーからリソースを要求し、応答を返します。  
   
- 通常ある場合 **\[ContentLength\]** の **\[メソッド\]** のプロパティがアップロードが行われていることを示します動詞アクションまたはに設定されている場合プロパティが大きい値に設定する必要があります。  
+ **Method** プロパティが、アップロードが行われることを示す動詞またはアクションに設定されている場合、通常、**ContentLength** プロパティは 0 より大きい値に設定されている必要があります。  
   
-## PreAuthenticate のプロパティ  
- アプリケーションは認証情報が必要であることを示すに <xref:System.Net.WebRequest.PreAuthenticate%2A> のプロパティを設定チャレンジを待機しています。認証ではなく、初期需要ととも。  **\[前もって認証\]** のプロパティはプロトコルが最初の要求に送信される資格情報を認証をサポート場合にのみ意味を使用しています。  
+## <a name="preauthenticate-property"></a>PreAuthenticate プロパティ  
+ アプリケーションは <xref:System.Net.WebRequest.PreAuthenticate%2A> プロパティを設定して、認証チャレンジを待機するのではなく、最初の要求で認証情報が送信されることを示します。 **PreAuthenticate** プロパティは、プロトコルが最初の要求で送信された認証資格情報をサポートしている場合にのみ意味があります。  
   
-## プロキシのプロパティ  
- <xref:System.Net.WebRequest.Proxy%2A> のプロパティは、要求されたリソースのアクセスに使用される <xref:System.Net.IWebProxy> インターフェイスが含まれます。  **\[プロキシ\]** のプロパティは、プロトコルが proxied 要求をサポートする場合にのみ意味を使用しています。  1 種類が、プロトコルによって要求される既定のプロキシを設定する必要があります。  
+## <a name="proxy-property"></a>Proxy プロパティ  
+ <xref:System.Net.WebRequest.Proxy%2A> プロパティには、要求されたリソースへのアクセスに使用される <xref:System.Net.IWebProxy> インターフェイスが含まれています。 **Proxy** プロパティは、プロトコルがプロキシ処理された要求をサポートしている場合にのみ意味があります。 プロトコルで既定のプロキシが必要な場合は、それを設定する必要があります。  
   
- 会社のファイアウォールの後などのある環境では、プロキシを使用するには、プロトコルが必要な場合があります。  この場合、プロトコルで働くプロキシ クラスを作成するに **IWebProxy** インターフェイスを行う必要があります。  
+ 企業のファイアウォールの背後などの一部の環境では、プロトコルでプロキシの使用が必要な場合があります。 その場合、**IWebProxy** インターフェイスを実装して、プロトコルで機能するプロキシ クラスを作成する必要があります。  
   
-## RequestUri のプロパティ  
- <xref:System.Net.WebRequest.RequestUri%2A> のプロパティは **\[WebRequest.Create\]** 方法に渡した URI が含まれます。  これは **\[WebRequest\]** が作成されている場合は読み取り専用で、変更することはできません。  自分のプロトコルがリダイレクトをサポートしている場合、応答を別の URI によって識別されるリソースから取得できます。  応募した URI へのアクセスを許可する必要がある場合は、その URI を含む追加のプロパティを指定する必要があります。  
+## <a name="requesturi-property"></a>RequestUri プロパティ  
+ <xref:System.Net.WebRequest.RequestUri%2A> プロパティには、**WebRequest.Create** メソッドに渡された URI が含まれます。 これは読み取り専用で、**WebRequest** が作成されると変更できません。 プロトコルでリダイレクトがサポートされている場合は、別の URI で識別されたリソースからの応答を受け取れます。 応答した URI へのアクセスを提供する必要がある場合は、その URI を含む追加のプロパティを指定する必要があります。  
   
-## タイムアウトのプロパティ  
- <xref:System.Net.WebRequest.Timeout%2A> のプロパティは、時間 \(ミリ秒単位で、要求の前に待機時間を時間を日時投げます例外が含まれます。  **\[タイムアウト\]** は <xref:System.Net.WebRequest.GetResponse%2A> 方法との同期要求に対してのみです; 非同期要求が保留中で要求を取り消すために <xref:System.Net.WebRequest.Abort%2A> 方法を使用する必要があります。  
+## <a name="timeout-property"></a>Timeout プロパティ  
+ <xref:System.Net.WebRequest.Timeout%2A> プロパティには、待機する時間の長さ (ミリ秒) が含まれます。この時間を超えると、要求がタイムアウトになり、例外がスローされます。 **Timeout** は、<xref:System.Net.WebRequest.GetResponse%2A> メソッドで作成された同期要求のみに適用されます。 非同期要求は、<xref:System.Net.WebRequest.Abort%2A> メソッドを使用して保留中の要求をキャンセルする必要があります。  
   
- **\[タイムアウト\]** のプロパティの設定はプロトコル対応クラスのタイムアウト プロセスを実行する場合にのみ意味を使用しています。  
+ **Timeout** プロパティの設定は、プロトコル固有のクラスがタイムアウト プロセスを実装する場合にのみ意味があります。  
   
-## 中止方法  
- <xref:System.Net.WebRequest.Abort%2A> 方法は、サーバーは保留中の非同期要求を取り消します。  要求が取り消された後、**GetResponse**を、**BeginGetResponse**すると、**EndGetResponse**、**GetRequestStream**、**BeginGetRequestStream**、または **EndGetRequestStream** は [RequestCanceled](frlrfSystemNetWebExceptionStatusClassTopic)に <xref:System.Net.WebException.Status%2A> のプロパティとの <xref:System.Net.WebException> を投げます。  
+## <a name="abort-method"></a>Abort メソッド  
+ <xref:System.Net.WebRequest.Abort%2A> メソッドは、保留中のサーバーへの非同期要求をキャンセルします。 要求がキャンセルされた後に、**GetResponse**、**BeginGetResponse**、**EndGetResponse**、**GetRequestStream**、**BeginGetRequestStream**、**EndGetRequestStream** のいずれかを呼び出すと、<xref:System.Net.WebExceptionStatus> に設定された <xref:System.Net.WebException.Status%2A> プロパティで <xref:System.Net.WebException> がスローされます。  
   
-## BeginGetRequestStream と EndGetRequestStream 方法  
- <xref:System.Net.WebRequest.BeginGetRequestStream%2A> 方法は、サーバーにデータをアップロードするために使用されるストリームの非同期要求を開始します。  <xref:System.Net.WebRequest.EndGetRequestStream%2A> 方法は非同期要求を完了して、要求されたストリームを返します。  これらの方法には標準 .NET Framework 非同期のパターンを使用して **GetRequestStream** 方法を実行します。  
+## <a name="begingetrequeststream-and-endgetrequeststream-methods"></a>BeginGetRequestStream メソッドと EndGetRequestStream メソッド  
+ <xref:System.Net.WebRequest.BeginGetRequestStream%2A> メソッドは、サーバーへのデータのアップロードに使用されるストリームへの非同期要求を開始します。 <xref:System.Net.WebRequest.EndGetRequestStream%2A> メソッドは非同期要求を完了し、要求されたストリームを返します。 これらのメソッドは標準の .NET Framework 非同期パターンを使用して、**GetRequestStream** メソッドを実装します。  
   
-## BeginGetResponse と EndGetResponse 方法  
- <xref:System.Net.WebRequest.BeginGetResponse%2A> 方法は非同期サーバーに要求を開始します。  <xref:System.Net.WebRequest.EndGetResponse%2A> 方法は非同期要求を完了して、要求された応答を返します。  これらの方法には標準 .NET Framework 非同期のパターンを使用して **GetResponse** 方法を実行します。  
+## <a name="begingetresponse-and-endgetresponse-methods"></a>BeginGetResponse メソッドと EndGetResponse メソッド  
+ <xref:System.Net.WebRequest.BeginGetResponse%2A> メソッドは、サーバーへの非同期要求を開始します。 <xref:System.Net.WebRequest.EndGetResponse%2A> メソッドは非同期要求を完了し、要求された応答を返します。 これらのメソッドは標準の .NET Framework 非同期パターンを使用して、**GetResponse** メソッドを実装します。  
   
-## GetRequestStream 方法  
- <xref:System.Net.WebRequest.GetRequestStream%2A> 方法は、要求されたサーバーにデータを入力するために使用されるストリームを返します。  返品ストリームは検索する書き込み専用ストリーム必要です; これは、サーバーに書き込まれる一方の通行データのベースとして使用されます。  ストリームは <xref:System.IO.Stream.CanRead%2A> と <xref:System.IO.Stream.CanSeek%2A> のプロパティの false を返品した <xref:System.IO.Stream.CanWrite%2A> のプロパティに調整します。  
+## <a name="getrequeststream-method"></a>GetRequestStream メソッド  
+ <xref:System.Net.WebRequest.GetRequestStream%2A> メソッドは要求されたサーバーにデータを書き込むために使用されるストリームを返します。 返されたストリームは、シークしない書き込み専用ストリームにする必要があります。これはサーバーに書き込まれるデータの一方向のストリームとすることを目的にしています。 ストリームは <xref:System.IO.Stream.CanRead%2A> プロパティと <xref:System.IO.Stream.CanSeek%2A> プロパティに false を返し、<xref:System.IO.Stream.CanWrite%2A> プロパティに true を返します。  
   
- **GetRequestStream** 方法はストリームを行う前に、データがサーバーに送信することをサーバーへの接続を開き、ヘッダー情報を表示します。  **GetRequestStream** が要求を開始するので、**ヘッダー** プロパテや **\[ContentLength\]** のプロパティの設定は **GetRequestStream**を追加した後、通常は許可されません。  
+ 通常、**GetRequestStream** メソッドはサーバーへの接続を開き、データがサーバーに送信中であることを示すヘッダー情報を送信してからストリームを返します。 **Getrequeststream** が要求を開始するため、**GetRequestStream** を呼び出した後に、**Header** プロパティまたは **ContentLength** プロパティを設定することは、通常許可されません。  
   
-## GetResponse 方法  
- <xref:System.Net.WebRequest.GetResponse%2A> 方法がサーバーからの応答を表す <xref:System.Net.WebResponse> クラス プロトコル対応その子孫を返します。  要求が **GetRequestStream** 方法で既に始められなかったら、**GetResponse** 方法は **RequestUri**に応じて、請求要求のタイプを示す送信ヘッダー情報への接続を作成して識別されるリソース、リソースからの応答が表示されます。  
+## <a name="getresponse-method"></a>GetResponse メソッド  
+ <xref:System.Net.WebRequest.GetResponse%2A> メソッドは、サーバーからの応答を表す <xref:System.Net.WebResponse> クラスのプロトコル固有の子孫を返します。 **GetRequestStream** メソッドによって要求がすでに開始されている場合を除き、**GetResponse** メソッドは **RequestUri** で識別されたリソースへの接続を作成し、作成されている要求のタイプを示すヘッダー情報を送信してから、リソースからの応答を受け取ります。  
   
- **GetResponse** 方法が呼び出されなかった場合、すべてのプロパティは読み取り専用に考慮する必要があります。  **\[WebRequest\]** のインスタンスは一度だけの使用を意図しています; 別の要求をする場合は、新しい **\[WebRequest\]**を作成する必要があります。  
+ **GetResponse** メソッドが呼び出されると、すべてのプロパティは読み取り専用と見なされます。 **WebRequest** インスタンスは 1 回限りの使用を意図しており、別の要求を作成する場合は、新しい **WebRequest** を作成する必要があります。  
   
- **GetResponse** 方法は、受信する応答を含めるに **WebResponse** の適切な子孫を作成する担当者があります。  
+ **GetResponse** メソッドは、受信した応答を含めるための適切な **WebResponse** の子孫を作成します。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Net.WebRequest>   
  <xref:System.Net.HttpWebRequest>   
  <xref:System.Net.FileWebRequest>   
  [プラグ可能なプロトコルのプログラミング](../../../docs/framework/network-programming/programming-pluggable-protocols.md)   
  [WebResponse からの派生](../../../docs/framework/network-programming/deriving-from-webresponse.md)
+

@@ -1,28 +1,33 @@
 ---
-title: "方法: FTP を使用してファイルをダウンロードする | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
+title: "方法: FTP を使用してファイルをダウンロードする"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- VB
+- CSharp
+- C++
+- jsharp
 ms.assetid: 892548b8-954a-4f6a-9bca-2ae620c3700f
 caps.latest.revision: 5
-author: "mcleblanc"
-ms.author: "markl"
-manager: "markl"
-caps.handback.revision: 5
+author: mcleblanc
+ms.author: markl
+manager: markl
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: cd72ac27b2aaaf2afe7e2c307fcc1b40cde841da
+ms.contentlocale: ja-jp
+ms.lasthandoff: 08/21/2017
+
 ---
-# 方法: FTP を使用してファイルをダウンロードする
-このオプションは、FTP サーバーからファイルをダウンロードする方法を示します。  
+# <a name="how-to-download-files-with-ftp"></a>方法: FTP を使用してファイルをダウンロードする
+このサンプルでは、FTP サーバーからファイルをダウンロードする方法を示します。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```csharp  
 using System;  
@@ -58,11 +63,12 @@ namespace Examples.System.Net
 }  
 ```  
   
-## コードのコンパイル  
- この例には、次の項目が必要です。  
+## <a name="compiling-the-code"></a>コードのコンパイル  
+ この例で必要な要素は次のとおりです。  
   
--   **\[System.Net\]** の名前空間への参照。  
+-   **System.Net** 名前空間への参照。  
   
-## 信頼性の高いプログラミング  
+## <a name="robust-programming"></a>信頼性の高いプログラミング  
   
-## .NET Framework セキュリティ
+## <a name="net-framework-security"></a>.NET Framework セキュリティ
+

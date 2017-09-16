@@ -1,30 +1,35 @@
 ---
-title: "方法: インターフェイス情報とプロトコル情報を取得する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "ネットワーク"
+title: "方法: インターフェイス情報とプロトコル情報を取得する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- VB
+- CSharp
+- C++
+- jsharp
+helpviewer_keywords:
+- Network
 ms.assetid: fd88d26c-4063-495e-a253-736ac3e6b23f
 caps.latest.revision: 4
-author: "mcleblanc"
-ms.author: "markl"
-manager: "markl"
-caps.handback.revision: 4
+author: mcleblanc
+ms.author: markl
+manager: markl
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 41d7e88de47067da4c96723ca3465f16595f4291
+ms.contentlocale: ja-jp
+ms.lasthandoff: 08/21/2017
+
 ---
 # 方法: インターフェイス情報とプロトコル情報を取得する
-このオプションは、ネットワーク インターフェイスの TCP 統計量を読み込む方法を示します。  
+このサンプルでは、ネットワーク インターフェイスの TCP 統計情報を読み取る方法を示します。  
   
-## 使用例  
+## 例  
   
 ```  
 public static void ShowTcpStatistics(NetworkInterfaceComponent version)  
@@ -80,6 +85,7 @@ public static void ShowTcpStatistics(NetworkInterfaceComponent version)
 ```  
   
 ## コードのコンパイル  
- この例には、次の項目が必要です。  
+ この例で必要な要素は次のとおりです。  
   
--   **\[System.Net\]** の名前空間への参照。
+-   **System.Net** 名前空間への参照。
+

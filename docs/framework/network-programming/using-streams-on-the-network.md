@@ -1,48 +1,53 @@
 ---
-title: "ネットワーク上でストリームを使用する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "要求 (インターネットからデータを)、ストリーム"
-  - "ネットワーク"
-  - "インターネット要求への応答、ストリーム"
-  - "ネットワーク リソース、ストリームの機能"
-  - "受信 (データを)、ストリームの機能"
-  - "ネットワーク リソース"
-  - "送信 (データを)、ストリームの機能"
-  - "ダウンロード (インターネット リソースの)、ストリーム"
-  - "ストリーム、機能"
-  - "インターネット、ストリーム"
-  - "ストリーム"
+title: "ネットワーク上でストリームを使用する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- VB
+- CSharp
+- C++
+- jsharp
+helpviewer_keywords:
+- requesting data from Internet, streams
+- Networking
+- response to Internet request, streams
+- network resources, stream capabilities
+- receiving data, stream capabilities
+- Network Resources
+- sending data, stream capabilities
+- downloading Internet resources, streams
+- streams, capabilities
+- Internet, streams
+- streams
 ms.assetid: 02b05fba-7235-45ce-94e5-060436ee0875
 caps.latest.revision: 10
-author: "mcleblanc"
-ms.author: "markl"
-manager: "markl"
-caps.handback.revision: 10
+author: mcleblanc
+ms.author: markl
+manager: markl
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: fa27a458e05254a14cf9f6408422f1d824b5a32c
+ms.contentlocale: ja-jp
+ms.lasthandoff: 08/21/2017
+
 ---
-# ネットワーク上でストリームを使用する
-ネットワーク リソース ベースとしては、.NET Framework で表されます。  ストリームを総称的に処理することによって、.NET Framework は次の機能を提供します:  
+# <a name="using-streams-on-the-network"></a>ネットワーク上でストリームを使用する
+.NET Framework では、ネットワーク リソースはストリームとして表されます。 .NET Framework は、ストリームを汎用的に扱うことで、次の機能を提供しています。  
   
--   Web データを送受信する一般的な方法。  データを送受信するために、HTML — XML ファイル、または物別のタイプ—の実際の内容が、アプリケーション <xref:System.IO.Stream.Write%2A?displayProperty=fullName> と <xref:System.IO.Stream.Read%2A?displayProperty=fullName> を使用する任意。  
+-   Web データを送受信する一般的な方法。 ファイルの実際のコンテンツ (HTML、XML など) にかかわらず、アプリケーションは <xref:System.IO.Stream.Write%2A?displayProperty=fullName> と <xref:System.IO.Stream.Read%2A?displayProperty=fullName> を使用してデータを送受信します。  
   
--   .NET Framework にストリームと互換性。  ストリームは、.NET Framework 使用されますが、それらを処理するための下部組織で、豊富な。  たとえば、ストリームを初期化するいくつかのコード行を変更して <xref:System.Net.Sockets.NetworkStream> のデータを代わりに読み取る場合に <xref:System.IO.FileStream> の XML データの読み取りアプリケーションを変更できます。  **\[NetworkStream\]** クラスと他のベースとの主な違いは、<xref:System.Net.Sockets.NetworkStream.CanSeek%2A> のプロパティ常に返します **false**を **\[NetworkStream\]** が seekable ではないことで、<xref:System.Net.Sockets.NetworkStream.Seek%2A> と <xref:System.Net.Sockets.NetworkStream.Position%2A> 方法は <xref:System.NotSupportedException>を投げます。  
+-   .NET Framework 全体のストリームとの互換性。 ストリームは、.NET Framework 全体で使用されます。.NET Framework には、ストリームを処理する高機能なインフラストラクチャがあります。 たとえば、ストリームを初期化するコードの数行を変更するだけで、<xref:System.IO.FileStream> から XML データを読み取るアプリケーションを、<xref:System.Net.Sockets.NetworkStream> からデータを読み取るように変更することができます。 **NetworkStream** クラスと他のストリームの主な違いは、**NetworkStream** はシーク不可能であり、<xref:System.Net.Sockets.NetworkStream.CanSeek%2A> プロパティは常に **false** を返し、<xref:System.Net.Sockets.NetworkStream.Seek%2A> メソッドと <xref:System.Net.Sockets.NetworkStream.Position%2A> メソッドは <xref:System.NotSupportedException> をスローする点です。  
   
--   間に合うようにデータの処理。  ストリームは提供します。ダウンロードする全体のデータ セットを待つ、アプリケーションを強制的する代わりに、ネットワークから入庫としてデータへのアクセスを。  
+-   データ受信時のデータの処理。 ストリームは、アプリケーションに対して、ダウンロード対象として設定されたデータ全体を強制的に待機させるのではなく、ネットワークからデータを受信したときにデータへのアクセスを提供します。  
   
- <xref:System.Net.Sockets> の名前空間は、ネットワーク リソース用の <xref:System.IO.Stream> クラスのみを実行する **\[NetworkStream\]** クラスなどがあります。  <xref:System.Net.Sockets> の名前空間のクラスがストリームを表すために **\[NetworkStream\]** クラスを使用します。  
+ <xref:System.Net.Sockets> 名前空間には、特にネットワーク リソースに使用される <xref:System.IO.Stream> クラスを実装する **NetworkStream** クラスが含まれています。 <xref:System.Net.Sockets> 名前空間のクラスは、**NetworkStream** クラスを使用してストリームを表します。  
   
- 返品ストリームを使用してネットワークにデータを送信するには、の <xref:System.Net.WebRequest>の <xref:System.Net.WebRequest.GetRequestStream%2A> を追加します。  **\[WebRequest\]** はサーバーに要求を送信;ヘッダー その後、ネットワーク リソースに戻すストリームの <xref:System.IO.Stream.BeginWrite%2A>、<xref:System.IO.Stream.EndWrite%2A>、または <xref:System.IO.Stream.Write%2A> メソッド呼び出し、データを送信できます。  あるプロトコル、HTTP などのデータを送信する前にプロトコル対応するプロパティを設定する必要があります。  次のコード例では、データを送信するための Http 固有のプロパティを設定する方法を示します。  変数 `sendData` が送信するデータを含むされている変数 `sendLength` が送信するデータのバイト数であるとします。  
+ 返されたストリームを使用してネットワークにデータを送信するには、<xref:System.Net.WebRequest> で <xref:System.Net.WebRequest.GetRequestStream%2A> を呼び出します。 **WebRequest** は要求のヘッダーをサーバーに送信します。その後は、返されるストリームで <xref:System.IO.Stream.BeginWrite%2A>、<xref:System.IO.Stream.EndWrite%2A>、または <xref:System.IO.Stream.Write%2A> メソッドを呼び出して、ネットワーク リソースにデータを送信できるようになります。 HTTP など、一部のプロトコルでは、データを送信する前にプロトコル固有のプロパティを設定する必要があります。 データを送信するために、HTTP 固有のプロパティを設定する方法を示すコード例を次に示します。 変数 `sendData` には送信するデータが含まれ、変数 `sendLength` は送信するデータのバイト数を示しているとします。  
   
 ```csharp  
 HttpWebRequest request =   
@@ -59,7 +64,6 @@ catch
 {  
    // Handle errors . . .  
 }  
-  
 ```  
   
 ```vb  
@@ -76,19 +80,19 @@ Catch
 End Try  
 ```  
   
- ネットワークからデータを取得するには、の <xref:System.Net.WebResponse>の <xref:System.Net.WebResponse.GetResponseStream%2A> を追加します。  <xref:System.IO.Stream.BeginRead%2A>、<xref:System.IO.Stream.EndRead%2A>、または返品ストリームで <xref:System.IO.Stream.Read%2A> の方法として、ネットワーク リソースのデータの読み取りできます。  
+ ネットワークからデータを受信するには、<xref:System.Net.WebResponse> で <xref:System.Net.WebResponse.GetResponseStream%2A> を呼び出します。 その後は、返されるストリームで <xref:System.IO.Stream.BeginRead%2A>、<xref:System.IO.Stream.EndRead%2A>、または <xref:System.IO.Stream.Read%2A> メソッドを呼び出すことで、ネットワーク リソースからデータを読み取ることができるようになります。  
   
- ネットワーク リソースからストリームを使用する場合、次の点を考えに留めてしてください:  
+ ネットワーク リソースからストリームを使用する場合は、次の点に留意してください。  
   
--   **\[CanSeek\]** のプロパティは **\[NetworkStream\]** クラスがストリームの位置を変更できなくなります **false** を常に返します。  **\[シーク\]** と **\[位置\]** 方法は **NotSupportedException**を投げます。  
+-   **CanSeek** プロパティは常に **false** を返します。これは、**NetworkStream** クラスがストリーム内の位置を変更できないためです。 **Seek** メソッドと **Position** メソッドは **NotSupportedException** をスローします。  
   
--   **\[WebRequest\]** と **WebResponse**を使用すると、**GetResponseStream** の呼び出し、作成されたストリームのインスタンスは読み取り専用です **GetRequestStream** の呼び出し、作成されたストリームのインスタンスは、評価減専用です。  
+-   **WebRequest** と **WebResponse** を使用すると、**GetResponseStream** を呼び出して作成されるストリーム インスタンスは読み取り専用に、**GetRequestStream** を呼び出して作成されるストリーム インスタンスは書き込み専用になります。  
   
--   エンコードを容易にするために <xref:System.IO.StreamReader> クラスを使用します。  次の例は **WebResponse** コードの ASCII ストリームを読み取るエンコードされたに **StreamReader** を使用します \(例は、要求を作成することなく\) を示します。  
+-   <xref:System.IO.StreamReader> クラスを使用すると、エンコードが簡単になります。 次のコード例では、**StreamReader** を使用して ASCII エンコードされたストリームを **WebResponse** から読み取ります (この例では要求の作成を示していません)。  
   
--   **GetResponse** への電話のネットワーク リソースを使用できない場合はブロックできます。  <xref:System.Net.WebRequest.BeginGetResponse%2A> と <xref:System.Net.WebRequest.EndGetResponse%2A> 方法の非同期要求を使用することを考慮する必要があります。  
+-   ネットワーク リソースを使用できない場合、**GetResponse** の呼び出しがブロックされる可能性があります。 <xref:System.Net.WebRequest.BeginGetResponse%2A> メソッドと <xref:System.Net.WebRequest.EndGetResponse%2A> メソッドによる非同期要求を使用することを検討してください。  
   
--   **GetRequestStream** への電話のサーバーへの接続が作成され、ブロックできます。  <xref:System.Net.WebRequest.BeginGetRequestStream%2A> と <xref:System.Net.WebRequest.EndGetRequestStream%2A> 方法のベースに対して非同期要求を使用することを考慮する必要があります。  
+-   サーバーへの接続を作成するときに、**GetRequestStream** の呼び出しがブロックされる可能性があります。 <xref:System.Net.WebRequest.BeginGetRequestStream%2A> メソッドと <xref:System.Net.WebRequest.EndGetRequestStream%2A> メソッドによるストリームの非同期要求を使用することを検討してください。  
   
 ```csharp  
 // Create a response object.  
@@ -110,6 +114,7 @@ Dim sr As _
 sr.Close()  
 ```  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [方法: WebRequest クラスを使用してデータを要求する](../../../docs/framework/network-programming/how-to-request-data-using-the-webrequest-class.md)   
  [データの要求](../../../docs/framework/network-programming/requesting-data.md)
+

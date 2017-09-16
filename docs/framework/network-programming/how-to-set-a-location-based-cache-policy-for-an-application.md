@@ -1,42 +1,47 @@
 ---
-title: "方法: アプリケーションの場所ベースのキャッシュ ポリシーを設定します。 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "キャッシュ動作の明示的な定義"
-  - "場所ベースのキャッシュ ポリシー"
-  - "ローカル キャッシュ"
-  - "要求のキャッシュ ポリシー"
-  - "キャッシュ [.NET Framework]、場所ベースのポリシー"
+title: "方法: アプリケーションの場所ベースのキャッシュ ポリシーを設定します。"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- VB
+- CSharp
+- C++
+- jsharp
+helpviewer_keywords:
+- expliciting defining cache behavior
+- location-based cache policies
+- local cache
+- request cache policies
+- cache [.NET Framework], location-based policies
 ms.assetid: 683bb88e-3411-4f46-9686-3411b6ba511c
 caps.latest.revision: 10
-author: "mcleblanc"
-ms.author: "markl"
-manager: "markl"
-caps.handback.revision: 10
+author: mcleblanc
+ms.author: markl
+manager: markl
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: bcfd166b108dc0cf99381869e39952b09fcfca6b
+ms.contentlocale: ja-jp
+ms.lasthandoff: 08/21/2017
+
 ---
-# 方法: アプリケーションの場所ベースのキャッシュ ポリシーを設定します。
-場所に基づくキャッシュのポリシーがオフに要求されたリソースの場所に基づいてキャッシュの動作を定義するアプリケーションができます。  このトピックでは、キャッシュのポリシーを割り当てる的にすることを示します。  コンフィギュレーション ファイルを使用してアプリケーションのポリシーを設定することについては、[\<requestCaching\> 要素 \(ネットワーク設定\)](../../../docs/framework/configure-apps/file-schema/network/requestcaching-element-network-settings.md)を参照してください。  
+# <a name="how-to-set-a-location-based-cache-policy-for-an-application"></a>方法: アプリケーションの場所ベースのキャッシュ ポリシーを設定します。
+場所ベースのキャッシュ ポリシーを使用すると、要求されたリソースの場所を基にしてアプリケーションでキャッシュの動作を明示的に定義することができます。 このトピックでは、キャッシュ ポリシーをプログラムで設定する方法を示します。 構成ファイルを使用してアプリケーションのポリシーを設定する方法については、「[\<requestCaching> 要素 (ネットワーク設定)](../../../docs/framework/configure-apps/file-schema/network/requestcaching-element-network-settings.md)」を参照してください。  
   
-### アプリケーションの場所に基づくキャッシュのポリシーを設定する  
+### <a name="to-set-a-location-based-cache-policy-for-an-application"></a>アプリケーションの場所ベースのキャッシュ ポリシーを設定するには  
   
-1.  <xref:System.Net.Cache.RequestCachePolicy> または <xref:System.Net.Cache.HttpRequestCachePolicy> のオブジェクトを作成します。  
+1.  <xref:System.Net.Cache.RequestCachePolicy> または <xref:System.Net.Cache.HttpRequestCachePolicy> オブジェクトを作成します。  
   
-2.  アプリケーション ドメインの既定値としてポリシーのオブジェクトを設定します。  
+2.  アプリケーション ドメインの既定値として、ポリシー オブジェクトを設定します。  
   
-### キャッシュから要求されたリソースのポリシーを設定する  
+### <a name="to-set-a-policy-that-takes-requested-resources-from-a-cache"></a>要求されたリソースをキャッシュから取得するポリシーを設定するには  
   
--   必要に応じてキャッシュから要求されたリソースの、別の方法で送信すると、要求の作成 <xref:System.Net.Cache.HttpRequestCacheLevel>にキャッシュのレベルに設定することにより、サーバーを、ポリシー。  要求は、キャッシュを含むクライアントとサーバー間のすべてのキャッシュによって、実行できます。  
+-   可能な場合は要求されたリソースをキャッシュから取得するポリシーを作成します。それ以外の場合は、キャッシュのレベルを <xref:System.Net.Cache.HttpRequestCacheLevel.CacheIfAvailable> に設定して、サーバーに要求を送信します。 要求は、リモートのキャッシュを含めて、クライアントとサーバー間にある任意のキャッシュによって満たすことができます。  
   
     ```csharp  
     public static void UseCacheIfAvailable()  
@@ -45,7 +50,6 @@ caps.handback.revision: 10
             (HttpRequestCacheLevel.CacheIfAvailable);  
         HttpWebRequest.DefaultCachePolicy = policy;  
     }  
-  
     ```  
   
     ```vb  
@@ -56,9 +60,9 @@ caps.handback.revision: 10
     End Sub  
     ```  
   
-### 供給のリソースからキャッシュがポリシーを設定する  
+### <a name="to-set-a-policy-that-prevents-any-cache-from-supplying-resources"></a>どのキャッシュもリソースを提供しないようにするポリシーを設定するには  
   
--   すべてのキャッシュが <xref:System.Net.Cache.HttpRequestCacheLevel>ことをキャッシュのレベルに設定することにより、要求されたリソースを供給することを妨げるポリシーを作成します。  このポリシー レベルは、ローカル キャッシュからこれらは、リソースを削除することを存在する場合\)、削除、キャッシュにリソースを示します。  
+-   どのキャッシュも要求されたリソースを提供しないようにするポリシーを作成するには、キャッシュ レベルを <xref:System.Net.Cache.HttpRequestCacheLevel.NoCacheNoStore> に設定します。 このポリシー レベルは、リソースが存在する場合にローカル キャッシュからリソースを削除し、さらにリモート キャッシュにもリソースを削除するように指示します。  
   
     ```csharp  
     public static void DoNotUseCache()  
@@ -77,9 +81,9 @@ caps.handback.revision: 10
     End Sub  
     ```  
   
-### ローカル キャッシュ場合にのみ、要求されたリソースを返品ポリシーを設定する  
+### <a name="to-set-a-policy-that-returns-requested-resources-only-if-they-are-in-the-local-cache"></a>リソースがローカル キャッシュ内にある場合にのみ、要求されたリソースを返すポリシーを設定するには  
   
--   ローカル キャッシュにキャッシュの <xref:System.Net.Cache.HttpRequestCacheLevel>にレベルに設定してある場合にのみ、要求されたリソースを返品ポリシーを作成します。  要求されたリソースがキャッシュにある場合は、<xref:System.Net.WebException> の例外は投げられます。  
+-   リソースがローカル キャッシュ内にある場合にのみ、要求されたリソースを返すポリシーを作成するには、キャッシュ レベルを <xref:System.Net.Cache.HttpRequestCacheLevel.CacheOnly> に設定します。 要求されたリソースがキャッシュにない場合、<xref:System.Net.WebException> 例外がスローされます。  
   
     ```csharp  
     public static void OnlyUseCache()  
@@ -98,9 +102,9 @@ caps.handback.revision: 10
     End Sub  
     ```  
   
-### 供給のリソースからキャッシュがローカル ポリシーを設定する  
+### <a name="to-set-a-policy-that-prevents-the-local-cache-from-supplying-resources"></a>ローカル キャッシュがリソースを提供しないようにするポリシーを設定するには  
   
--   ローカル キャッシュが <xref:System.Net.Cache.HttpRequestCacheLevel>ことをキャッシュのレベルに設定することにより、要求されたリソースを供給することを妨げるポリシーを作成します。  要求されたリソースが中間キャッシュに、正常に revalidated、中間キャッシュは、要求されたリソースを提供できます。  
+-   ローカル キャッシュが要求されたリソースを提供しないようにするポリシーを作成するには、キャッシュ レベルを <xref:System.Net.Cache.HttpRequestCacheLevel.Refresh> に設定します。 要求されたリソースが中間のキャッシュに存在し、正常に再検証された場合は、中間のキャッシュが要求されたリソースを提供できます。  
   
     ```csharp  
     public static void DoNotUseLocalCache()  
@@ -119,9 +123,9 @@ caps.handback.revision: 10
     End Sub  
     ```  
   
-### すべてのキャッシュが要求されたリソースを供給することを妨げるポリシーを設定する  
+### <a name="to-set-a-policy-that-prevents-any-cache-from-supplying-requested-resources"></a>どのキャッシュも要求されたリソースを提供しないようにするポリシーを設定するには  
   
--   すべてのキャッシュが <xref:System.Net.Cache.HttpRequestCacheLevel>ことをキャッシュのレベルに設定することにより、要求されたリソースを供給することを妨げるポリシーを作成します。  サーバーが返品リソースは、キャッシュに保存できます。  
+-   どのキャッシュも要求されたリソースを提供しないようにするポリシーを作成するには、キャッシュ レベルを <xref:System.Net.Cache.HttpRequestCacheLevel.Reload> に設定します。 サーバーによって返されるリソースは、キャッシュに格納できます。  
   
     ```csharp  
     public static void SendToServer()  
@@ -140,9 +144,9 @@ caps.handback.revision: 10
     End Sub  
     ```  
   
-### サーバーのリソースがキャッシュが要求されたリソースを提供するためにするキャッシュされたコピーを新しくなければポリシーを設定する  
+### <a name="to-set-a-policy-that-allows-any-cache-to-supply-requested-resources-if-the-resource-on-the-server-is-not-newer-than-the-cached-copy"></a>サーバー上のリソースがキャッシュされたコピーよりも新しいバージョンではない場合に、要求されたリソースをキャッシュが提供することを許可するポリシーを設定するには  
   
--   サーバーのリソースがキャッシュが <xref:System.Net.Cache.HttpRequestCacheLevel>にキャッシュのレベルに設定することにより、キャッシュされたコピーを新しくなかったら要求されたリソースを提供するためにするポリシーを作成します。  
+-   サーバー上のリソースがキャッシュされたコピーよりも新しいバージョンではない場合に、要求されたリソースをキャッシュが提供することを許可するポリシーを作成するには、キャッシュ レベルを <xref:System.Net.Cache.HttpRequestCacheLevel.Revalidate> に設定します。  
   
     ```csharp  
     public static void CheckServer()  
@@ -161,9 +165,10 @@ caps.handback.revision: 10
     End Sub  
     ```  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [ネットワーク アプリケーションのキャッシュ管理](../../../docs/framework/network-programming/cache-management-for-network-applications.md)   
  [キャッシュ ポリシー](../../../docs/framework/network-programming/cache-policy.md)   
  [場所ベースのキャッシュ ポリシー](../../../docs/framework/network-programming/location-based-cache-policies.md)   
  [時間ベースのキャッシュ ポリシー](../../../docs/framework/network-programming/time-based-cache-policies.md)   
- [\<requestCaching\> 要素 \(ネットワーク設定\)](../../../docs/framework/configure-apps/file-schema/network/requestcaching-element-network-settings.md)
+ [\<requestCaching> 要素 (ネットワーク設定)](../../../docs/framework/configure-apps/file-schema/network/requestcaching-element-network-settings.md)
+

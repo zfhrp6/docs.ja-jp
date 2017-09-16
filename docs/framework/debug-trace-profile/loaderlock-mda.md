@@ -1,63 +1,68 @@
 ---
-title: "loaderLock MDA | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "deadlocks [.NET Framework]"
-  - "LoaderLock MDA"
-  - "MDAs (managed debugging assistants), loader locks"
-  - "managed debugging assistants (MDAs), loader locks"
-  - "operating system loader locks"
-  - "loader locks"
-  - "locks, threads"
+title: loaderLock MDA
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- VB
+- CSharp
+- C++
+- jsharp
+helpviewer_keywords:
+- deadlocks [.NET Framework]
+- LoaderLock MDA
+- MDAs (managed debugging assistants), loader locks
+- managed debugging assistants (MDAs), loader locks
+- operating system loader locks
+- loader locks
+- locks, threads
 ms.assetid: 8c10fa02-1b9c-4be5-ab03-451d943ac1ee
 caps.latest.revision: 13
-author: "mairaw"
-ms.author: "mairaw"
-manager: "wpickett"
-caps.handback.revision: 13
+author: mairaw
+ms.author: mairaw
+manager: wpickett
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 632f46593f3e9ab5acba06d00f3a919cca31611f
+ms.contentlocale: ja-jp
+ms.lasthandoff: 08/21/2017
+
 ---
-# loaderLock MDA
-`loaderLock` マネージ デバッグ アシスタント \(MDA: Managed Debugging Assistant\) は、Microsoft Windows オペレーティング システムのローダー ロックを保持するスレッドでマネージ コードを実行しようとする試みを検出します。このような実行は不正であり、デッドロックの発生につながり、DLL がオペレーティング システムのローダーによって初期化される前に使用される可能性があります。  
+# <a name="loaderlock-mda"></a>loaderLock MDA
+`loaderLock` マネージ デバッグ アシスタント (MDA) は、Microsoft Windows オペレーティング システムのローダー ロックを保持しているスレッド上でマネージ コードを実行する試行を検出します。  このような実行は、デッドロックの原因になる可能性があり、オペレーティング システムのローダーが初期化する前に DLL が使用される可能性があるため、不適切です。  
   
-## 症状  
- オペレーティング システムのローダー ロック内でコードを実行したときの最も一般的なエラーは、ローダー ロックを必要とする他の Win32 関数の呼び出しを試行したときにスレッドがデッドロックするというエラーです。このような関数には、`LoadLibrary`、`GetProcAddress`、`FreeLibrary`、`GetModuleHandle` などがあります。これらの関数はアプリケーションが直接呼び出すのではなく、<xref:System.Reflection.Assembly.Load%2A> のような高水準の呼び出しや、プラットフォーム呼び出しメソッドの最初の呼び出しの結果として、共通言語ランタイム \(CLR: Common Language Runtime\) によって呼び出されます。  
+## <a name="symptoms"></a>症状  
+ オペレーティング システムのローダー ロック内でコードを実行する場合に発生する最も一般的なエラーは、ローダー ロックを必要とする他の Win32 関数を呼び出そうとしたときにスレッドがデッドロックする問題です。  このような関数の例として、`LoadLibrary`、`GetProcAddress`、`FreeLibrary`、`GetModuleHandle` があります。  アプリケーションはこれらの関数を直接呼び出さない可能性があります。<xref:System.Reflection.Assembly.Load%2A> など高位の呼び出しや、プラットフォーム呼び出しメソッドの最初の呼び出しの結果として共通言語ランタイム (CLR) からこれらの関数が呼び出される可能性があります。  
   
- デッドロックは、スレッドが別のスレッドが開始または終了するのに待機している場合にも発生することがあります。スレッドが実行を開始または終了したときは、オペレーティング システムのローダー ロックを取得して、影響を受ける DLL にイベントを配信する必要があります。  
+ スレッドが別スレッドの開始または完了を待機している場合にもデッドロックが発生する可能性があります。  スレッドが実行を開始または完了した場合、影響を受ける DLL にイベントを配信するためにオペレーティング システムのローダー ロックを獲得する必要があります。  
   
- さらに、オペレーティング システムのローダーによって DLL が適切に初期化される前に、その DLL への呼び出しが発生することもあります。デッドロック エラーは、デッドロックに関連するすべてのスレッドのスタックをチェックすることにより診断できますが、初期化されていない DLL が使用されていないかどうかの診断は、この MDA を使用しないと非常に困難です。  
+ 最後に、オペレーティング システムのローダーが DLL を適切に初期化する前に、それらの DLL の呼び出しが発生する場合があります。  デッドロック エラーの場合、デッドロックに関係する全スレッドのスタックを調べることで診断できますが、この MDA を使用せずに初期化されていない DLL の使用を診断することは非常に困難です。  
   
-## 原因  
- .NET Framework Version 1.0 または 1.1 用に構築された、マネージとアンマネージの混合 C\+\+ アセンブリは、**\/NOENTRY** とのリンクなど、特別に注意していない場合には、通常、ローダー ロック内でマネージ コードを実行しようとします。このような問題の詳細については、MSDN ライブラリの「Mixed DLL Loading Problem」を参照してください。  
+## <a name="cause"></a>原因  
+ .NET Framework バージョン 1.0 または 1.1 用に構築されたマネージ/アンマネージ混在 C++ アセンブリの場合、特別な措置 (**/NOENTRY** とリンクするなど) を取っていなければ、一般的にローダー ロック内でマネージ コードを実行しようとします。  このような問題の詳細な説明については、MSDN ライブラリの「混在モード DLL 読み込み時の問題」を参照してください。  
   
- .NET Framework Version 2.0 用に構築されたマネージとアンマネージの混合 C\+\+ アセンブリの場合は、このような問題が発生する可能性が低く、オペレーティング システムの規則に違反するアンマネージ DLL を使用するアプリケーションと同様にリスクが低減されています。たとえば、アンマネージ DLL の `DllMain` エントリ ポイントで、`CoCreateInstance` を呼び出して COM に公開されているマネージ オブジェクトを取得しようとすると、ローダー ロック内でマネージ コードの実行が試みられます。  .NET Framework Version 2.0 以降のローダー ロックに関する問題の詳細については、「[混在アセンブリの初期化](../Topic/Initialization%20of%20Mixed%20Assemblies.md)」を参照してください。  
+ .NET Framework バージョン 2.0 用に構築されたマネージ/アンマネージ混在 C++ アセンブリの場合、このような問題の影響をあまり受けません。オペレーティング システムのルールに違反するアンマネージ DLL を使用するアプリケーションと同程度に少ないリスクです。  たとえば、アンマネージ DLL の `DllMain` エントリ ポイントが `CoCreateInstance` を呼び出して、COM に公開されているマネージ オブジェクトを取得する場合、結果として、ローダー ロック内のマネージ コードを実行することになります。 .NET Framework バージョン 2.0 以降のローダー ロックの問題については、「[混在アセンブリの初期化](/cpp/dotnet/initialization-of-mixed-assemblies)」を参照してください。  
   
-## 解決策  
- Visual C\+\+ .NET 2002 および Visual C\+\+ .NET 2003 では、`/clr` コンパイラ オプションを指定してコンパイルされた DLL は、読み込み時に非確定的にデッドロックを生じる可能性があります。この問題は、混在モード DLL 読み込み時の問題 \(またはローダー ロックの問題\) と呼ばれていました。  Visual C\+\+ 2005 以降では、混在モード DLL の読み込みプロセスで、確定的でない場合にこのような問題が発生することがほとんどなくなりました。  ただし、ローダー ロックが \(確定的に\) 発生する可能性のあるシナリオはいくつか残っています。  残っているローダー ロックの問題の原因と解決方法の詳細については、「[混在アセンブリの初期化](../Topic/Initialization%20of%20Mixed%20Assemblies.md)」を参照してください。  このトピックに記載されていないローダー ロックの問題については、スレッドのスタックをチェックして、ローダー ロックが発生している原因と問題の解決方法を確認する必要があります。  スタック トレースをチェックして、この MDA をアクティブにしたスレッドを見つけます。このスレッドは、オペレーティング システムのローダー ロックを保持しながら、マネージ コードへの不正な呼び出しを試みています。DLL の `DllMain` または同等のエントリ ポイントがスタックで確認される可能性があります。このようなエントリ ポイントの内部から正当に実行できる操作は、オペレーティング システムの規則によって非常に制限されています。これらの規則では、すべてのマネージ実行が不可能になっています。  
+## <a name="resolution"></a>解決策  
+ Visual C++ .NET 2002 および Visual C++ .NET 2003 では、`/clr` コンパイラ オプションを指定してコンパイルされた DLL は、読み込み時に非確定的にデッドロックを生じる可能性があります。この問題は、混在モード DLL 読み込み時の問題 (またはローダー ロックの問題) と呼ばれていました。 Visual C++ 2005 以降の場合、混在モード DLL の読み込みプロセスで、このような確定的でない場合の問題はほとんどなくなりました。 ただし、ローダー ロックが (確定的に) 発生する可能性のあるシナリオはいくつか残っています。 その他のローダー ロック問題の原因と解決策の詳細については、「[混在アセンブリの初期化](/cpp/dotnet/initialization-of-mixed-assemblies)」を参照してください。 このトピックでローダー ロックの問題が特定できない場合は、スレッドのスタックを調べて、ローダー ロックが発生している理由と問題の解決方法を判断する必要があります。 この MDA をアクティブにしたスレッドのスタック トレースを確認してください。  オペレーティング システムのローダー ロックを保持しているときに、スレッドが不正にマネージ コードを呼び出そうとしています。  スタックに DLL の `DllMain` または同等のエントリ ポイントが存在するはずです。  このようなエントリ ポイント内から実行が許可されることについて、オペレーティング システムのルールは非常に制限されています。  オペレーティング システムのルールでは、あらゆるマネージ実行が除外されています。  
   
-## ランタイムへの影響  
- 通常、プロセス内部のいくつかのスレッドがデッドロックします。これらのスレッドには、ガベージ コレクションを実行するスレッドが含まれている可能性があるため、このデッドロックによってプロセス全体が重大な影響を受けることがあります。さらに、アセンブリや DLL の読み込みとアンロード、スレッドの開始と終了など、オペレーティング システムのローダー ロックが必要な追加の操作ができなくなります。  
+## <a name="effect-on-the-runtime"></a>ランタイムへの影響  
+ 通常、プロセス内の複数のスレッドでデッドロックが発生します。  多くの場合、このようなスレッドの 1 つはガベージ コレクションの実行を担当しているため、このデッドロックによってプロセス全体に重大な影響が及ぶ可能性があります。  さらに、オペレーティング システムのローダー ロックが必要な追加の操作も実行できなくなります。たとえば、アセンブリの読み込みまたはアンロード、スレッドの開始や終了などの操作です。  
   
- また、場合によっては、初期化される前に呼び出された DLL でアクセス違反などの問題が発生することもまれにあります。  
+ まれではありますが、初期化される前に呼び出された DLL で、アクセス違反などの問題が発生する可能性もあります。  
   
-## 出力  
- この MDA は、不正なマネージ実行が試みられていることを報告します。スレッドのスタックをチェックして、ローダー ロックが発生している原因と問題の解決方法を確認する必要があります。  
+## <a name="output"></a>出力  
+ この MDA は、不正なマネージ実行が試行されていることを報告しています。  スレッドのスタックを調べて、ローダー ロックが発生している理由と問題の解決方法を判断する必要があります。  
   
-## 構成  
+## <a name="configuration"></a>構成  
   
-```  
+```xml  
 <mdaConfig>  
   <assistants>  
     <loaderLock/>  
@@ -65,5 +70,6 @@ caps.handback.revision: 13
 </mdaConfig>  
 ```  
   
-## 参照  
- [Diagnosing Errors with Managed Debugging Assistants](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)
+## <a name="see-also"></a>関連項目  
+ [マネージ デバッグ アシスタントによるエラーの診断](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)
+

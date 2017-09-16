@@ -1,126 +1,132 @@
 ---
-title: "タスク並列ライブラリおよび PLINQ での ETW イベント | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "タスク、ETW イベント"
+title: "タスク並列ライブラリおよび PLINQ での ETW イベント"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- tasks, ETW events
 ms.assetid: 87a9cff5-d86f-4e44-a06e-d12764d0dce2
 caps.latest.revision: 7
-author: "mairaw"
-ms.author: "mairaw"
-manager: "wpickett"
-caps.handback.revision: 7
+author: mairaw
+ms.author: mairaw
+manager: wpickett
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 9de80f9f2319caefbb7b716e17c43fddf9db67e4
+ms.contentlocale: ja-jp
+ms.lasthandoff: 08/21/2017
+
 ---
-# タスク並列ライブラリおよび PLINQ での ETW イベント
-タスク並列ライブラリと PLINQ は、どちらも Event Trace for Windows \(ETW\) イベントを生成します。これらのイベントと Windows パフォーマンス最適化ツールなどのツールを使用すると、アプリケーションのプロファイリンやトラブルシューティングを行うことができます。  ただし、ほとんどのシナリオでは、並列アプリケーション コードのプロファイリングを行うための最善の方法は、[!INCLUDE[vsUltShort](../../../includes/vsultshort-md.md)]で [同時実行ビジュアライザー](../Topic/Concurrency%20Visualizer.md) を使用します。  
+# <a name="etw-events-in-task-parallel-library-and-plinq"></a>タスク並列ライブラリおよび PLINQ での ETW イベント
+タスク並列ライブラリおよび PLINQ は、どちらも Windows イベント トレーシング (ETW) イベントを生成します。ETW イベントは、Windows パフォーマンス アナライザーなどのツールを使用して、アプリケーションのプロファイルやトラブルシューティングに使用できます。 ただし、ほとんどのシナリオでは、並列アプリケーション コードをプロファイルする最善の方法は、[!INCLUDE[vsUltShort](../../../includes/vsultshort-md.md)] で[同時実行ビジュアライザー](/visualstudio/profiling/concurrency-visualizer)を使用することです。  
   
-## タスク並列ライブラリでの ETW イベント  
- EVENT\_HEADER 構造体で、<xref:System.Threading.Tasks.Parallel.For%2A?displayProperty=fullName>、<xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=fullName>、および <xref:System.Threading.Tasks.Parallel.Invoke%2A?displayProperty=fullName> によって生成されるイベントの ProviderId GUID を次に示します。  
+## <a name="task-parallel-library-etw-events"></a>タスク並列ライブラリの ETW イベント  
+ EVENT_HEADER 構造体では、<xref:System.Threading.Tasks.Parallel.For%2A?displayProperty=fullName>、<xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=fullName>、および <xref:System.Threading.Tasks.Parallel.Invoke%2A?displayProperty=fullName> で生成されたイベントの ProviderId GUID は、次のとおりです。  
   
 ```  
 0x2e5dba47, 0xa3d2, 0x4d16, 0x8e, 0xe0, 0x66, 0x71, 0xff, 0xdc, 0xd7, 0xb5  
 ```  
   
-### 並列ループの開始  
- EVENT\_DESCRIPTOR.Task \= 1  
+### <a name="parallel-loop-begin"></a>並列ループの開始  
+ EVENT_DESCRIPTOR.Task = 1  
   
- EVENT\_DESCRIPTOR.Id \= 1  
+ EVENT_DESCRIPTOR.Id = 1  
   
-#### \[ユーザー データ\]  
+#### <a name="user-data"></a>ユーザー データ  
   
-|**名前**|**型**|**説明**|  
-|------------|-----------|------------|  
+|**名前**|**Type**|**説明**|  
+|--------------|--------------|---------------------|  
 |OriginatingTaskSchedulerID|<xref:System.Int32?displayProperty=fullName>|ループを開始した TaskScheduler の ID。|  
 |OriginatingTaskID|<xref:System.Int32?displayProperty=fullName>|ループを開始したタスクの ID。|  
-|ForkJoinContextID|<xref:System.Int32?displayProperty=fullName>|fork\/join セマンティクスのあるイベントの入れ子とペアの関係を示すために使用される一意の識別子。|  
-|OperationType|<xref:System.Int32?displayProperty=fullName>|ループの種類。<br /><br /> 1 \= ParallelInvoke<br /><br /> 2 \= ParallelFor<br /><br /> 3 \= ParallelForEach|  
-|InclusiveFrom|<xref:System.Int64?displayProperty=fullName>|ループ カウンターの開始値。|  
-|ExclusiveTo|<xref:System.Int64?displayProperty=fullName>|ループ カウンターの終了値。|  
+|ForkJoinContextID|<xref:System.Int32?displayProperty=fullName>|入れ子と fork/join セマンティクスでのイベントのペアを示すために使用される一意の識別子。|  
+|OperationType|<xref:System.Int32?displayProperty=fullName>|ループの種類:<br /><br /> 1 = ParallelInvoke<br /><br /> 2 = ParallelFor<br /><br /> 3 = ParallelForEach|  
+|InclusiveFrom|<xref:System.Int64?displayProperty=fullName>|ループ カウンターの開始値|  
+|ExclusiveTo|<xref:System.Int64?displayProperty=fullName>|ループ カウンターの終了値|  
   
-### 並列ループの終了  
- EVENT\_DESCRIPTOR.Task \= 2  
+### <a name="parallel-loop-end"></a>並列ループの終了  
+ EVENT_DESCRIPTOR.Task = 2  
   
- EVENT\_DESCRIPTOR.Id \= 2  
+ EVENT_DESCRIPTOR.Id = 2  
   
-#### \[ユーザー データ\]  
+#### <a name="user-data"></a>ユーザー データ  
   
-|**名前**|**型**|**説明**|  
-|------------|-----------|------------|  
+|**名前**|**Type**|**説明**|  
+|--------------|--------------|---------------------|  
 |OriginatingTaskSchedulerID|<xref:System.Int32?displayProperty=fullName>|ループを開始した TaskScheduler の ID。|  
 |OriginatingTaskID|<xref:System.Int32?displayProperty=fullName>|ループを開始したタスクの ID。|  
-|ForkJoinContextID|<xref:System.Int32?displayProperty=fullName>|fork\/join セマンティクスのあるイベントの入れ子とペアの関係を示すために使用される一意の識別子。|  
-|totalIterations|<xref:System.Int64?displayProperty=fullName>|イテレーションの総数。|  
+|ForkJoinContextID|<xref:System.Int32?displayProperty=fullName>|入れ子と fork/join セマンティクスでのイベントのペアを示すために使用される一意の識別子。|  
+|totalIterations|<xref:System.Int64?displayProperty=fullName>|イテレーションの合計数|  
   
-### 並列呼び出しの開始  
- EVENT\_DESCRIPTOR.Task \= 3  
+### <a name="parallel-invoke-begin"></a>並列呼び出しの開始  
+ EVENT_DESCRIPTOR.Task = 3  
   
- EVENT\_DESCRIPTOR.Id \= 3  
+ EVENT_DESCRIPTOR.Id = 3  
   
-#### \[ユーザー データ\]  
+#### <a name="user-data"></a>ユーザー データ  
   
-|**名前**|**型**|**説明**|  
-|------------|-----------|------------|  
+|**名前**|**Type**|**説明**|  
+|--------------|--------------|---------------------|  
 |OriginatingTaskSchedulerID|<xref:System.Int32?displayProperty=fullName>|ループを開始した TaskScheduler の ID。|  
 |OriginatingTaskID|<xref:System.Int32?displayProperty=fullName>|ループを開始したタスクの ID。|  
-|ForkJoinContextID|<xref:System.Int32?displayProperty=fullName>|fork\/join セマンティクスのあるイベントの入れ子とペアの関係を示すために使用される一意の識別子。|  
-|totalIterations|<xref:System.Int64?displayProperty=fullName>|イテレーションの総数。|  
-|operationType|<xref:System.Int32?displayProperty=fullName>|ループの種類。<br /><br /> 1 \= ParallelInvoke<br /><br /> 2 \= ParallelFor<br /><br /> 3 \= ParallelForEach|  
+|ForkJoinContextID|<xref:System.Int32?displayProperty=fullName>|入れ子と fork/join セマンティクスでのイベントのペアを示すために使用される一意の識別子。|  
+|totalIterations|<xref:System.Int64?displayProperty=fullName>|イテレーションの合計数|  
+|operationType|<xref:System.Int32?displayProperty=fullName>|ループの種類:<br /><br /> 1 = ParallelInvoke<br /><br /> 2 = ParallelFor<br /><br /> 3 = ParallelForEach|  
 |ActionCount|<xref:System.Int32?displayProperty=fullName>|並列呼び出しで実行されるアクションの数。|  
   
-### 並列呼び出しの終了  
- EVENT\_DESCRIPTOR.Task \= 4  
+### <a name="parallel-invoke-end"></a>並列呼び出しの終了  
+ EVENT_DESCRIPTOR.Task = 4  
   
- EVENT\_DESCRIPTOR.Id \= 4  
+ EVENT_DESCRIPTOR.Id = 4  
   
-#### \[ユーザー データ\]  
+#### <a name="user-data"></a>ユーザー データ  
   
-|**名前**|**型**|**説明**|  
-|------------|-----------|------------|  
+|**名前**|**Type**|**説明**|  
+|--------------|--------------|---------------------|  
 |OriginatingTaskSchedulerID|<xref:System.Int32?displayProperty=fullName>|ループを開始した TaskScheduler の ID。|  
 |OriginatingTaskID|<xref:System.Int32?displayProperty=fullName>|ループを開始したタスクの ID。|  
-|ForkJoinContextID|<xref:System.Int32?displayProperty=fullName>|fork\/join セマンティクスのあるイベントの入れ子とペアの関係を示すために使用される一意の識別子。|  
+|ForkJoinContextID|<xref:System.Int32?displayProperty=fullName>|入れ子と fork/join セマンティクスでのイベントのペアを示すために使用される一意の識別子。|  
   
-## PLINQ での ETW イベント  
- PLINQ での EVENT\_HEADER.ProviderId GUID を次に示します。  
+## <a name="plinq-etw-events"></a>PLINQ ETW イベント  
+ PLINQ の EVENT_HEADER.ProviderId GUID は次のとおりです。  
   
 ```  
 0x159eeeec, 0x4a14, 0x4418, 0xa8, 0xfe, 0xfa, 0xab, 0xcd, 0x98, 0x78, 0x87  
 ```  
   
-### 並列クエリの開始  
- EVENT\_DESCRIPTOR.Task \= 1  
+### <a name="parallel-query-begin"></a>並列クエリの開始  
+ EVENT_DESCRIPTOR.Task = 1  
   
- EVENT\_DESCRIPTOR.Id \= 1  
+ EVENT_DESCRIPTOR.Id = 1  
   
-#### \[ユーザー データ\]  
+#### <a name="user-data"></a>ユーザー データ  
   
-|**名前**|**型**|**説明**|  
-|------------|-----------|------------|  
+|**名前**|**Type**|**説明**|  
+|--------------|--------------|---------------------|  
 |OriginatingTaskSchedulerID|<xref:System.Int32?displayProperty=fullName>|ループを開始した TaskScheduler の ID。|  
 |OriginatingTaskID|<xref:System.Int32?displayProperty=fullName>|ループを開始したタスクの ID。|  
-|QueryID|<xref:System.Int32?displayProperty=fullName>|一意のクエリ識別子。|  
+|QueryID|<xref:System.Int32?displayProperty=fullName>|一意のクエリの識別子。|  
   
-### 並列クエリの終了  
- EVENT\_DESCRIPTOR.Task \= 2  
+### <a name="parallel-query-end"></a>並列クエリの終了  
+ EVENT_DESCRIPTOR.Task = 2  
   
- EVENT\_DESCRIPTOR.Id \= 2  
+ EVENT_DESCRIPTOR.Id = 2  
   
-#### \[ユーザー データ\]  
+#### <a name="user-data"></a>ユーザー データ  
   
-|**名前**|**型**|**説明**|  
-|------------|-----------|------------|  
+|**名前**|**Type**|**説明**|  
+|--------------|--------------|---------------------|  
 |OriginatingTaskSchedulerID|<xref:System.Int32?displayProperty=fullName>|ループを開始した TaskScheduler の ID。|  
 |OriginatingTaskID|<xref:System.Int32?displayProperty=fullName>|ループを開始したタスクの ID。|  
-|QueryID|<xref:System.Int32?displayProperty=fullName>|一意のクエリ識別子。|  
+|QueryID|<xref:System.Int32?displayProperty=fullName>|一意のクエリの識別子。|  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [.NET Framework の ETW イベント](../../../docs/framework/performance/etw-events.md)   
- [Task Parallel Library \(TPL\)](../../../docs/standard/parallel-programming/task-parallel-library-tpl.md)   
- [Parallel LINQ \(PLINQ\)](../../../docs/standard/parallel-programming/parallel-linq-plinq.md)
+ [タスク並列ライブラリ (TPL)](../../../docs/standard/parallel-programming/task-parallel-library-tpl.md)   
+ [Parallel LINQ (PLINQ)](../../../docs/standard/parallel-programming/parallel-linq-plinq.md)
+

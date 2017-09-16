@@ -1,46 +1,51 @@
 ---
-title: "非同期クライアント ソケットの使用 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "アプリケーション プロトコル、ソケット"
-  - "送信 (データの)、ソケット"
-  - "データ要求、ソケット"
-  - "非同期クライアント ソケット"
-  - "Socket クラス、非同期クライアント ソケット"
-  - "要求 (インターネットからデータを)、ソケット"
-  - "ソケット、非同期クライアント ソケット"
-  - "受信 (データの)、ソケット"
-  - "プロトコル、ソケット"
-  - "インターネット、ソケット"
-  - "クライアント ソケット"
+title: "非同期クライアント ソケットの使用"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- VB
+- CSharp
+- C++
+- jsharp
+helpviewer_keywords:
+- application protocols, sockets
+- sending data, sockets
+- data requests, sockets
+- asynchronous client sockets
+- Socket class, asynchronous client sockets
+- requesting data from Internet, sockets
+- sockets, asynchronous client sockets
+- receiving data, sockets
+- protocols, sockets
+- Internet, sockets
+- client sockets
 ms.assetid: fd85bc88-e06c-467d-a30d-9fd7cffcfca1
 caps.latest.revision: 14
-author: "mcleblanc"
-ms.author: "markl"
-manager: "markl"
-caps.handback.revision: 12
+author: mcleblanc
+ms.author: markl
+manager: markl
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 3f8bffcd94f3fb9c516e2201bd932480ab51c1a5
+ms.contentlocale: ja-jp
+ms.lasthandoff: 08/21/2017
+
 ---
-# 非同期クライアント ソケットの使用
-非同期なクライアントのネットワークはソケット実行するアクションを待つ間アプリケーションを中断されなくなります。  代わりに、アプリケーションが元のスレッドで実行される作業のスレッド間、1 種類のネットワーク接続を処理するには、標準 .NET Framework 非同期のプログラミング モデルを使用します。  非同期なソケットは、大量を使用するか、ネットワークの進む前に実行する工程ネットワークを待つことができないアプリケーション用に適切です。  
+# <a name="using-an-asynchronous-client-socket"></a>非同期クライアント ソケットの使用
+ネットワーク操作が完了するまで待機している間、非同期クライアント ソケットはアプリケーションを一時停止しません。 標準の .NET Framework 非同期プログラミング モデルを使用して、1 つのスレッドでネットワーク接続を処理しながら、アプリケーションは元のスレッドで実行を継続します。 ネットワークの使用量が多いアプリケーションや、ネットワーク操作が完了するのを待機してから完了することができないアプリケーションの場合、非同期ソケットが適しています。  
   
- <xref:System.Net.Sockets.Socket> クラスは非同期な方法の .NET Framework のパターンに示す;。たとえば、同期の <xref:System.Net.Sockets.Socket.Receive%2A> 方法は <xref:System.Net.Sockets.Socket.EndReceive%2A> の非同期な <xref:System.Net.Sockets.Socket.BeginReceive%2A> および方法に対応します。  
+ 非同期メソッドの場合、<xref:System.Net.Sockets.Socket> クラスは .NET Framework の名前付けパターンに従います。たとえば、同期の <xref:System.Net.Sockets.Socket.Receive%2A> メソッドは非同期の <xref:System.Net.Sockets.Socket.BeginReceive%2A> メソッドと <xref:System.Net.Sockets.Socket.EndReceive%2A> メソッドに対応します。  
   
- 非同期処理はコールバック方法は、工程の結果が返される必要があります。  自分のアプリケーションで結果を知る必要がなければ、コールバック方法は必要ではありません。  このセクションのコードの例は、方法を完了するには、ネットワークのデバイスがコールバック方法データおよびデータとコールバック方法を受け取ることを開始するために送信を完了するためのコールバック方法の送信を開始する接続を完了する方法、およびメソッドに接続を開始するにはなく、データが表示されます。  
+ 非同期操作には、操作の結果を返すコールバック メソッドが必要です。 結果を知る必要がないアプリケーションの場合、コールバック メソッドは必要ありません。 このセクションのコード例では、ネットワーク デバイスへの接続を開始するメソッドと接続を完了するコールバック メソッド、データの送信を開始するメソッドと送信を完了するコールバック メソッド、およびデータの受信を開始するメソッドとデータの受信を終了するコールバック メソッドの使用方法を説明します。  
   
- 非同期なソケットは、ネットワーク接続を処理するためにシステムのスレッド プールから複数のスレッドを使用します。  1 種類のスレッドは、データの送受信を開始する責任があります; そのほかすべてのネットワーク デバイスと送信への接続に通すまたはデータが表示されます。  次の例では、メイン スレッドの実行を中断し、実行をいつ続行するかを通知に、<xref:System.Threading.ManualResetEvent?displayProperty=fullName> クラスのインスタンスが使用されます。  
+ 非同期ソケットは、システム スレッド プールの複数のスレッドを使用して、ネットワーク接続を処理します。 1 つのスレッドは、データの送信または受信の開始を担当し、他のスレッドは、ネットワーク デバイスへの接続を完了し、データを送信または受信します。 以下の例では、<xref:System.Threading.ManualResetEvent?displayProperty=fullName> クラスのインスタンスを使用してメイン スレッドの実行を停止し、実行を続行できるようになったらシグナルを送ります。  
   
- 次の例では、非同期なソケットをネットワークのデバイスに接続するには、`Connect`方法は **\[ソケット\]** を初期化し、ネットワーク デバイス、接続のコールバック方法と非同期通話中のステータス情報を渡すために使用される、ステータス **\[ソケット\]**オブジェクト \(クライアント\) を表す、エンドポイントを渡す [BeginConnect](frlrfsystemnetsocketssocketclassconnecttopic) 方法を追加します。  例は、指定されたエンドポイントに指定 **\[ソケット\]** を関連付ける場合は、`Connect` 方法を実行します。  これは `connectDone`というグローバルな **\[ManualResetEvent\]** とします。  
+ 次の例では、非同期ソケットをネットワーク デバイスに接続するために、`Connect` メソッドで **Socket** を開始してから <xref:System.Net.Sockets.Socket.Connect%2A?displayProperty=fullName> メソッドを呼び出し、ネットワーク デバイスを表すリモート エンドポイント、connect のコールバック メソッド、および状態オブジェクト (クライアントの **Socket**) を渡します。このオブジェクトは、非同期呼び出しの間で状態を渡すために使用されます。 この例では、指定した **Socket** を指定したエンドポイントに接続する `Connect` メソッドを実装します。 `connectDone` というグローバル **ManualResetEvent** があるとします。  
   
 ```vb  
 Public Shared Sub Connect(remoteEP As EndPoint, client As Socket)  
@@ -60,7 +65,7 @@ public static void Connect(EndPoint remoteEP, Socket client) {
 }  
 ```  
   
- 接続のコールバック方法 `ConnectCallback` は <xref:System.AsyncCallback> の委任を実行します。  これは、リモート接続が **\[ManualResetEvent\]** デバイスに `connectDone`の配置に完全であることリモート デバイスが使用可能な接続し、アプリケーションのスレッドに信号を求める場合。  次のコードは `ConnectCallback` 方法を実行します。  
+ connect のコールバック メソッド `ConnectCallback` は <xref:System.AsyncCallback> デリゲートを実装します。 リモート デバイスが使用できるようになるとリモート デバイスに接続してから、**ManualResetEvent** `connectDone` を設定して接続が完了したというシグナルをアプリケーションのスレッドに送ります。 次のコードでは、`ConnectCallback` メソッドを実装します。  
   
 ```vb  
 Private Shared Sub ConnectCallback(ar As IAsyncResult)  
@@ -80,7 +85,6 @@ Private Shared Sub ConnectCallback(ar As IAsyncResult)
         Console.WriteLine(e.ToString())  
     End Try  
 End Sub 'ConnectCallback  
-  
 ```  
   
 ```csharp  
@@ -103,7 +107,7 @@ private static void ConnectCallback(IAsyncResult ar) {
 }  
 ```  
   
- 例 `Send` 指定方法はソケットで表されるネットワークのデバイスに ASCII 形式と送信の特定の文字列のデータを、非同期的にエンコードします。  次の例では、`Send` 方法を実行します。  
+ 例のメソッド `Send` は指定した文字列データを ASCII 形式でエンコードし、指定したソケットが示すネットワーク デバイスに非同期に送信します。 次の例では、`Send` メソッドを実装します。  
   
 ```vb  
 Private Shared Sub Send(client As Socket, data As [String])  
@@ -114,7 +118,6 @@ Private Shared Sub Send(client As Socket, data As [String])
     client.BeginSend(byteData, 0, byteData.Length, SocketFlags.None, _  
         AddressOf SendCallback, client)  
 End Sub 'Send  
-  
 ```  
   
 ```csharp  
@@ -128,7 +131,7 @@ private static void Send(Socket client, String data) {
 }  
 ```  
   
- コールバック送信方法 `SendCallback` は <xref:System.AsyncCallback> の委任を実行します。  これは、ネットワークのデバイスが受信する準備が整ったら、データを送信します。  次の例では、`SendCallback` 方法の手順を示します。  これは `sendDone`というグローバルな **\[ManualResetEvent\]** とします。  
+ send のコールバック メソッド `SendCallback` は <xref:System.AsyncCallback> デリゲートを実装します。 ネットワーク デバイスに受信する準備が整ったらデータを送信します。 次の例では、`SendCallback` メソッドを実装します。 `sendDone` というグローバル **ManualResetEvent** があるとします。  
   
 ```vb  
 Private Shared Sub SendCallback(ar As IAsyncResult)  
@@ -146,7 +149,6 @@ Private Shared Sub SendCallback(ar As IAsyncResult)
         Console.WriteLine(e.ToString())  
     End Try  
 End Sub 'SendCallback  
-  
 ```  
   
 ```csharp  
@@ -167,7 +169,7 @@ private static void SendCallback(IAsyncResult ar) {
 }  
 ```  
   
- クライアントのソケットからのデータの読み取りと、非同期の呼び出しの間での値に合格ステータス オブジェクトが必要です。  次のクラスはソケットのクライアントからデータを取得するための例のステータス オブジェクトです。  これは、設定データの文字列を保留に表示されるデータのクライアントのソケット、バッファ、<xref:System.Text.StringBuilder> のフィールドが含まれます。  ステータス オブジェクトにこれらのフィールドの設定はソケット値でクライアントからデータを読み取る際に複数の呼び出しに管理されます。  
+ クライアント ソケットからデータを読み取るには、非同期呼び出しの間で値を渡す状態オブジェクトが必要です。 次のクラスは、クライアント ソケットからデータを受信する状態オブジェクトの例です。 クライアント ソケットのフィールド、受信したデータのバッキング フィールド、受信データ文字列を保持する <xref:System.Text.StringBuilder> が含まれています。 これらのフィールドを状態オブジェクトに格納することで、複数の呼び出し間で値を保持し、クライアント ソケットからデータ読み取ることができます。  
   
 ```vb  
 Public Class StateObject  
@@ -180,7 +182,6 @@ Public Class StateObject
     ' Received data string.  
     Public sb As New StringBuilder()  
 End Class 'StateObject  
-  
 ```  
   
 ```csharp  
@@ -196,7 +197,7 @@ public class StateObject {
 }  
 ```  
   
- 例 `Receive` の方法は、ステータス対象を設定し、クライアントのソケットからデータを非同期的に読み取る場合に **BeginReceive** 方法を追加します。  次の例では、`Receive` 方法を実行します。  
+ 例の `Receive` メソッドは、状態オブジェクトを設定してから、**BeginReceive** メソッドを呼び出してクライアント ソケットからデータを非同期に読み取ります。 `Receive` メソッドを実装する例を次に示します。  
   
 ```vb  
 Private Shared Sub Receive(client As Socket)  
@@ -212,7 +213,6 @@ Private Shared Sub Receive(client As Socket)
         Console.WriteLine(e.ToString())  
     End Try  
 End Sub 'Receive  
-  
 ```  
   
 ```csharp  
@@ -231,9 +231,9 @@ private static void Receive(Socket client) {
 }  
 ```  
   
- 入庫のコールバック方法 `ReceiveCallback` は **AsyncCallback** の委任を実行します。  これは、ネットワークのデバイスからデータを取得し、メッセージの文字列を基づきます。  これは、バッファ データにクライアントが送信するデータが完了するまでネットワーク上のデータのバイトを読込み、を **BeginReceive** 方法をもう一度呼び出すします。  すべてのデータがクライアントから読まれれば、`ReceiveCallback`、データを **\[ManualResetEvent\]** `sendDone`の配置に完全であることアプリケーションのスレッドに信号を送信します。  
+ receive のコールバック メソッド `ReceiveCallback` は **AsyncCallback** デリゲートを実装します。 このコールバック メソッドはネットワーク デバイスからデータを受信し、メッセージ文字列を構築します。 また、ネットワークからデータ バッファーに 1 から数バイトのデータを読み取ってから、クライアントから送信されたデータが完了するまで、**BeginReceive** メソッドを再び呼び出します。 クライアントからすべてのデータを読み取ると、`ReceiveCallback` は **ManualResetEvent** `sendDone` を設定することで、データが完了したというシグナルをアプリケーション スレッドに送ります。  
   
- 次のコードの例は、`ReceiveCallback`方法を実行します。  これは `response` という `receiveDone`受信したという文字列とグローバルな **\[ManualResetEvent\]** を保持するグローバルな文字列とします。  サーバーは、ネットワークのセッションを終了ためのクライアントのソケットを優雅に締めなければ必要があります。  
+ 次のコード例では、`ReceiveCallback` メソッドを実装します。 受け取った文字列を保持する `response` というグローバル文字列と、`receiveDone` というグローバル **ManualResetEvent** があります。 ネットワーク セッションを正常に終了するには、サーバーがクライアント ソケットをシャットダウンする必要があります。  
   
 ```vb  
 Private Shared Sub ReceiveCallback(ar As IAsyncResult)  
@@ -266,7 +266,6 @@ Private Shared Sub ReceiveCallback(ar As IAsyncResult)
         Console.WriteLine(e.ToString())  
     End Try  
 End Sub 'ReceiveCallback  
-  
 ```  
   
 ```csharp  
@@ -298,7 +297,8 @@ private static void ReceiveCallback( IAsyncResult ar ) {
 }  
 ```  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [同期クライアント ソケットの使用](../../../docs/framework/network-programming/using-a-synchronous-client-socket.md)   
- [リッスン \(ソケットで\)](../../../docs/framework/network-programming/listening-with-sockets.md)   
+ [リッスン (ソケットで)](../../../docs/framework/network-programming/listening-with-sockets.md)   
  [非同期クライアント ソケットの例](../../../docs/framework/network-programming/asynchronous-client-socket-example.md)
+

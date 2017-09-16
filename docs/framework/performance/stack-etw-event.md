@@ -1,48 +1,54 @@
 ---
-title: "スタック ETW イベント | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "ETW, スタック イベント (CLR)"
-  - "スタック イベント [.NET Framework]"
+title: "スタック ETW イベント"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- stack event [.NET Framework]
+- ETW, stack event (CLR)
 ms.assetid: f612fa5b-4b62-4593-a19e-85c9b1018dce
 caps.latest.revision: 5
-author: "mairaw"
-ms.author: "mairaw"
-manager: "wpickett"
-caps.handback.revision: 5
+author: mairaw
+ms.author: mairaw
+manager: wpickett
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 55219fe755f49b6edbd3b53cc686bf4f9087aa08
+ms.contentlocale: ja-jp
+ms.lasthandoff: 08/21/2017
+
 ---
-# スタック ETW イベント
-スタック イベントは、イベントの発生後にスタック トレースを生成するために他のイベントと組み合わせて使用します。  このイベントは、ランタイム プロバイダーが有効になっている場合に記録されます。  他のランタイム イベントが発生するたびに発生するため、非常に発生頻度が高く、  使用する際には注意が必要です。  
+# <a name="stack-etw-event"></a>スタック ETW イベント
+イベントの発生後にスタック トレースを生成するには、スタック イベントを他のイベントと併用する必要があります。 ランタイム プロバイダーが有効になると、ログに記録されます。 これは頻度が非常に高いイベントです。別のランタイム イベントが発生するたびに発生するためです。 そのような理由から、このイベントの使用には注意が必要です。  
   
- 次の表に、キーワードとレベルを示します。\(詳細については、「[CLR ETW キーワードおよびレベル](../../../docs/framework/performance/clr-etw-keywords-and-levels.md)」を参照してください\)。  
+ 次の表に、キーワードとレベルを示します。 (詳細については、「 [CLR ETW Keywords and Levels](../../../docs/framework/performance/clr-etw-keywords-and-levels.md)」を参照してください)。  
   
-|イベントを発生させるキーワード|Level|  
-|---------------------|-----------|  
-|`StackKeyword` \(0x40000000\)|LogAlways\(0\)|  
+|イベントを発生させるキーワード|レベル|  
+|-----------------------------------|-----------|  
+|`StackKeyword` (0x40000000)|LogAlways(0)|  
   
  次の表に、イベント情報を示します。  
   
 |イベント|イベント ID|いつ発生するか|  
-|----------|-------------|-------------|  
-|`CLRStackWalk`|82|他のイベントとの組み合わせによって発生し、イベントの発生後にスタック トレースを生成します。|  
+|-----------|--------------|-----------------|  
+|`CLRStackWalk`|82|他のイベントを併用し、イベント後にスタック トレースを生成します。|  
   
  次の表に、イベント データを示します。  
   
 |フィールド名|データ型|説明|  
-|------------|----------|--------|  
+|----------------|---------------|-----------------|  
 |ClrInstanceID|win:Uint16|一意のランタイム識別子。|  
 |Reserved1|win:UInt8|予約済み。|  
 |Reserved2|win:UInt8|予約済み。|  
-|FrameCount|win:UInt32|スタック トレース内のフレーム数。|  
+|FrameCount|win:UInt32|スタック トレースのフレーム数。|  
 |Stack|win:Pointer|命令ポインターの列。|  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [CLR ETW イベント](../../../docs/framework/performance/clr-etw-events.md)
+

@@ -1,33 +1,38 @@
 ---
-title: "文字列に対する既定のマーシャリング | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "相互運用マーシャリング, 文字列"
-  - "文字列, 相互運用マーシャリング"
+title: "文字列に対する既定のマーシャリング"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- VB
+- CSharp
+- C++
+- jsharp
+helpviewer_keywords:
+- strings, interop marshaling
+- interop marshaling, strings
 ms.assetid: 9baea3ce-27b3-4b4f-af98-9ad0f9467e6f
 caps.latest.revision: 18
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 15
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: d5e78bebf15630589a90a684f2299565728728c7
+ms.contentlocale: ja-jp
+ms.lasthandoff: 08/21/2017
+
 ---
-# 文字列に対する既定のマーシャリング
+# <a name="default-marshaling-for-strings"></a>文字列に対する既定のマーシャリング
 <xref:System.String?displayProperty=fullName> と <xref:System.Text.StringBuilder?displayProperty=fullName> クラスのマーシャリング動作は類似しています。  
   
- 文字列は、COM スタイル `BSTR` 型または null で終わる文字列 \(null 文字で終わる文字配列\) としてマーシャリングされます。  文字列内の文字は、Unicode \(Windows システムでの既定値\) または ANSI としてマーシャリングすることができます。  
+ 文字列は、COM スタイル `BSTR` 型または null で終わる文字列 (null 文字で終わる文字配列) としてマーシャリングされます。 文字列内の文字は、Unicode (Windows システムでの既定値) または ANSI としてマーシャリングすることができます。  
   
  このトピックでは、文字列型のマーシャリングに関する以下の情報を示します。  
   
@@ -40,16 +45,16 @@ caps.handback.revision: 15
 -   [固定長文字列バッファー](#cpcondefaultmarshalingforstringsanchor3)  
   
 <a name="cpcondefaultmarshalingforstringsanchor1"></a>   
-## インターフェイスで使用される文字列  
- 次の表は、アンマネージ コードへのメソッド引数としてマーシャリングするときの、文字列データ型のマーシャリングのオプションを示しています。  <xref:System.Runtime.InteropServices.MarshalAsAttribute> 属性は、COM インターフェイスへの文字列をマーシャリングする <xref:System.Runtime.InteropServices.UnmanagedType> 列挙値を提供します。  
+## <a name="strings-used-in-interfaces"></a>インターフェイスで使用される文字列  
+ 次の表は、アンマネージ コードへのメソッド引数としてマーシャリングするときの、文字列データ型のマーシャリングのオプションを示しています。 <xref:System.Runtime.InteropServices.MarshalAsAttribute> 属性は、COM インターフェイスへの文字列をマーシャリングする <xref:System.Runtime.InteropServices.UnmanagedType> 列挙値を提供します。  
   
 |列挙型|アンマネージ形式の説明|  
-|---------|-----------------|  
-|`UnmanagedType.BStr` \(既定値\)|長さと Unicode 文字がプレフィックスされた COM スタイル `BSTR`。|  
+|----------------------|-------------------------------------|  
+|`UnmanagedType.BStr` (既定値)|長さと Unicode 文字がプレフィックスされた COM スタイル `BSTR`。|  
 |`UnmanagedType.LPStr`|ANSI 文字の null で終わる配列へのポインター。|  
 |`UnmanagedType.LPWStr`|Unicode 文字の null で終わる配列へのポインター。|  
   
- この表は文字列に適用されます。  ただし、<xref:System.Text.StringBuilder> の場合、許可される唯一のオプションは `UnmanagedType.LPStr` と `UnmanagedType.LPWStr`です。  
+ この表は文字列に適用されます。 ただし、<xref:System.Text.StringBuilder> の場合、許可される唯一のオプションは `UnmanagedType.LPStr` と `UnmanagedType.LPWStr`です。  
   
  以下の例では、`IStringWorker` インターフェイスで宣言された文字列を示します。  
   
@@ -83,22 +88,22 @@ HRESULT PassStringRef4([in, out] LPWStr *s);
 ```  
   
 <a name="cpcondefaultmarshalingforstringsanchor5"></a>   
-## プラットフォーム呼び出しで使用される文字列  
- プラットフォーム呼び出しは、文字列の引数を、.NET Framework 形式 \(Unicode\) から、プラットフォーム アンマネージ形式に変換してコピーします。  文字列は不変であり、呼び出しが戻るときに、アンマネージ メモリから元のマネージ メモリにコピーされることはありません。  
+## <a name="strings-used-in-platform-invoke"></a>プラットフォーム呼び出しで使用される文字列  
+ プラットフォーム呼び出しは、文字列の引数を、.NET Framework 形式 (Unicode) から、プラットフォーム アンマネージ形式に変換してコピーします。 文字列は不変であり、呼び出しが戻るときに、アンマネージ メモリから元のマネージ メモリにコピーされることはありません。  
   
- 次の表は、文字列をプラットフォーム呼び出しのメソッド引数としてマーシャリングする際のマーシャリング オプションをリストしています。  <xref:System.Runtime.InteropServices.MarshalAsAttribute> 属性は、文字列をマーシャリングする <xref:System.Runtime.InteropServices.UnmanagedType> 列挙値を提供します。  
+ 次の表は、文字列をプラットフォーム呼び出しのメソッド引数としてマーシャリングする際のマーシャリング オプションをリストしています。 <xref:System.Runtime.InteropServices.MarshalAsAttribute> 属性は、文字列をマーシャリングする <xref:System.Runtime.InteropServices.UnmanagedType> 列挙値を提供します。  
   
 |列挙型|アンマネージ形式の説明|  
-|---------|-----------------|  
+|----------------------|-------------------------------------|  
 |`UnmanagedType.AnsiBStr`|長さと ANSI 文字がプレフィックスされた COM スタイル `BSTR`。|  
 |`UnmanagedType.BStr`|長さと Unicode 文字がプレフィックスされた COM スタイル `BSTR`。|  
 |`UnmanagedType.LPStr`|ANSI 文字の null で終わる配列へのポインター。|  
-|`UnmanagedType.LPTStr` \(既定値\)|プラットフォーム依存文字の null で終わる配列へのポインター。|  
+|`UnmanagedType.LPTStr`|プラットフォーム依存文字の null で終わる配列へのポインター。|  
 |`UnmanagedType.LPWStr`|Unicode 文字の null で終わる配列へのポインター。|  
 |`UnmanagedType.TBStr`|長さとプラットフォーム依存文字がプレフィックスされた COM スタイル `BSTR`。|  
-|`VBByRefStr`|Visual Basic .NET で、アンマネージ コードの文字列を変更し、結果をマネージ コードに反映できるようにする値。  この値は、プラットフォーム呼び出しでだけサポートされます。|  
+|`VBByRefStr`|Visual Basic .NET で、アンマネージ コードの文字列を変更し、結果をマネージ コードに反映できるようにする値。 この値は、プラットフォーム呼び出しでだけサポートされます。 これが、`ByVal` 文字列の Visual Basic での既定値です。|  
   
- この表は文字列に適用されます。  ただし、<xref:System.Text.StringBuilder> の場合、許可される唯一のオプションは `LPStr`、`LPTStr`、および `LPWStr` です。  
+ この表は文字列に適用されます。 ただし、<xref:System.Text.StringBuilder> の場合、許可される唯一のオプションは `LPStr`、`LPTStr`、および `LPWStr` です。  
   
  次の型定義は、プラットフォーム呼び出しで `MarshalAsAttribute` を使用するための正しい方法を示しています。  
   
@@ -117,7 +122,6 @@ Public Declare Auto Sub PassAnsiBStr Lib "StringLib.Dll" _
 Public Declare Auto Sub PassTBStr Lib "StringLib.Dll" _  
 (<MarshalAs(UnmanagedType.TBStr)> s As String)  
 End Class  
-  
 ```  
   
 ```csharp  
@@ -144,22 +148,22 @@ String s);
 ```  
   
 <a name="cpcondefaultmarshalingforstringsanchor2"></a>   
-## 構造体で使用される文字列  
- 文字列は構造体の有効なメンバーです。ただし、<xref:System.Text.StringBuilder> バッファーは構造体では無効です。  次の表は、型をフィールドとしてマーシャリングするときの、文字列データ型のマーシャリングのオプションを示しています。  <xref:System.Runtime.InteropServices.MarshalAsAttribute> 属性は、文字列をフィールドにマーシャリングする <xref:System.Runtime.InteropServices.UnmanagedType> 列挙値を提供します。  
+## <a name="strings-used-in-structures"></a>構造体で使用される文字列  
+ 文字列は構造体の有効なメンバーです。ただし、<xref:System.Text.StringBuilder> バッファーは構造体では無効です。 次の表は、型をフィールドとしてマーシャリングするときの、文字列データ型のマーシャリングのオプションを示しています。 <xref:System.Runtime.InteropServices.MarshalAsAttribute> 属性は、文字列をフィールドにマーシャリングする <xref:System.Runtime.InteropServices.UnmanagedType> 列挙値を提供します。  
   
 |列挙型|アンマネージ形式の説明|  
-|---------|-----------------|  
+|----------------------|-------------------------------------|  
 |`UnmanagedType.BStr`|長さと Unicode 文字がプレフィックスされた COM スタイル `BSTR`。|  
 |`UnmanagedType.LPStr`|ANSI 文字の null で終わる配列へのポインター。|  
 |`UnmanagedType.LPTStr`|プラットフォーム依存文字の null で終わる配列へのポインター。|  
 |`UnmanagedType.LPWStr`|Unicode 文字の null で終わる配列へのポインター。|  
 |`UnmanagedType.ByValTStr`|固定長の文字配列。配列の型は、包含構造体の文字セットによって決まります。|  
   
- `ByValTStr` 型は、構造体に定義されているインライン固定長文字配列で使用します。  その他の型は、文字列へのポインターを含む構造体に含まれている文字列参照に適用されます。  
+ `ByValTStr` 型は、構造体に定義されているインライン固定長文字配列で使用します。 その他の型は、文字列へのポインターを含む構造体に含まれている文字列参照に適用されます。  
   
- 包含構造体に適用される <xref:System.Runtime.InteropServices.StructLayoutAttribute> 属性の `CharSet` 引数によって、構造体内の文字列の文字形式が決まります。  以下の構造体の例には、文字列参照とインライン文字列、そして ANSI、Unicode、およびプラットフォーム依存文字が含まれています。  
+ 包含構造体に適用される <xref:System.Runtime.InteropServices.StructLayoutAttribute> 属性の `CharSet` 引数によって、構造体内の文字列の文字形式が決まります。 以下の構造体の例には、文字列参照とインライン文字列、そして ANSI、Unicode、およびプラットフォーム依存文字が含まれています。  
   
-### タイプ ライブラリの表現  
+### <a name="type-library-representation"></a>タイプ ライブラリの表現  
   
 ```  
 struct StringInfoA {  
@@ -199,7 +203,6 @@ Structure StringInfoT
 <MarshalAs(UnmanagedType.ByValTStr, SizeConst := 256)> _  
 Public f2 As String  
 End Structure  
-  
 ```  
   
 ```csharp  
@@ -222,12 +225,12 @@ struct StringInfoT {
 ```  
   
 <a name="cpcondefaultmarshalingforstringsanchor3"></a>   
-## 固定長文字列バッファー  
- 状況によっては、固定長の文字列バッファーを、操作するためにアンマネージ コードに渡す必要があります。  この場合、呼び出し先は渡されたバッファーの内容を修正できないので、単に文字列を渡すだけでは不十分です。  文字列が参照によって渡された場合でも、バッファーを特定のサイズに初期化する方法はありません。  
+## <a name="fixed-length-string-buffers"></a>固定長文字列バッファー  
+ 状況によっては、固定長の文字列バッファーを、操作するためにアンマネージ コードに渡す必要があります。 この場合、呼び出し先は渡されたバッファーの内容を修正できないので、単に文字列を渡すだけでは不十分です。 文字列が参照によって渡された場合でも、バッファーを特定のサイズに初期化する方法はありません。  
   
- この解決策は、<xref:System.Text.StringBuilder> バッファーを文字列ではなく引数として渡すことです。  呼び出し先は、`StringBuilder` の容量を超えない範囲で、`StringBuilder` を逆参照したり変更したりすることができます。  また、固定長に初期化することもできます。  たとえば、`StringBuilder` バッファーを初期化してその容量を `N` にする場合、マーシャラーは \(`N`\+1\) 文字のサイズのバッファーを提供します。  \+1 は、アンマネージ文字列に null 終了文字があることをしめしています。`StringBuilder` にはそれがありません。  
+ この解決策は、<xref:System.Text.StringBuilder> バッファーを文字列ではなく引数として渡すことです。 呼び出し先は、`StringBuilder` の容量を超えない範囲で、`StringBuilder` を逆参照したり変更したりすることができます。 また、固定長に初期化することもできます。 たとえば、`StringBuilder` バッファーを初期化してその容量を `N` にする場合、マーシャラーは (`N`+1) 文字のサイズのバッファーを提供します。 +1 は、アンマネージ文字列に null 終了文字があることをしめしています。`StringBuilder` にはそれがありません。  
   
- たとえば、Microsoft Win32 API `GetWindowText` \(Windows.h に定義されている\) 関数は、固定長の文字バッファーを操作するアンマネージ コードを渡す必要があります。  `LpString` は、呼び出し元が割り当てたサイズ `nMaxCount` のバッファーを示します。  呼び出し元は、バッファーを割り当てて、`nMaxCount` 引数を割り当てられたバッファーのサイズに設定することが期待されています。  次のコードは、Windows.h で定義されている `GetWindowText` 関数宣言を示しています。  
+ たとえば、Microsoft Win32 API `GetWindowText` (Windows.h に定義されている) 関数は、固定長の文字バッファーを操作するアンマネージ コードを渡す必要があります。 `LpString` は、呼び出し元が割り当てたサイズ `nMaxCount` のバッファーを示します。 呼び出し元は、バッファーを割り当てて、`nMaxCount` 引数を割り当てられたバッファーのサイズに設定することが期待されています。 次のコードは、Windows.h で定義されている `GetWindowText` 関数宣言を示しています。  
   
 ```  
 int GetWindowText(  
@@ -237,7 +240,7 @@ int nMaxCount     // Maximum number of characters to copy.
 );  
 ```  
   
- 呼び出し先は、`StringBuilder` の容量を超えない範囲で、`StringBuilder` を逆参照したり変更したりすることができます。  次のコード例は、`StringBuilder` を固定長に初期化する方法を示しています。  
+ 呼び出し先は、`StringBuilder` の容量を超えない範囲で、`StringBuilder` を逆参照したり変更したりすることができます。 次のコード例は、`StringBuilder` を固定長に初期化する方法を示しています。  
   
 ```vb  
 Public Class Win32API  
@@ -252,7 +255,6 @@ Public Class Window
    Return sb.ToString()  
    End Function  
 End Class  
-  
 ```  
   
 ```csharp  
@@ -271,8 +273,9 @@ public class Window {
 }  
 ```  
   
-## 参照  
- [既定のマーシャリングの動作](../../../docs/framework/interop/default-marshaling-behavior.md)   
+## <a name="see-also"></a>関連項目  
+ [既定のマーシャリング動作](../../../docs/framework/interop/default-marshaling-behavior.md)   
  [Blittable 型と非 Blittable 型](../../../docs/framework/interop/blittable-and-non-blittable-types.md)   
- [Directional Attributes](http://msdn.microsoft.com/ja-jp/241ac5b5-928e-4969-8f58-1dbc048f9ea2)   
+ [方向属性](http://msdn.microsoft.com/en-us/241ac5b5-928e-4969-8f58-1dbc048f9ea2)   
  [コピーと固定](../../../docs/framework/interop/copying-and-pinning.md)
+

@@ -1,77 +1,80 @@
 ---
-title: "WIF 要求プログラミング モデル | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "WIF 要求プログラミング モデル"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 149cb875-9b1c-4695-b88a-fbf1725a02f9
 caps.latest.revision: 8
-author: "BrucePerlerMS"
-ms.author: "bruceper"
-manager: "mbaldwin"
-caps.handback.revision: 8
+author: BrucePerlerMS
+ms.author: bruceper
+manager: mbaldwin
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 9cfc3491b18d312b80ba69991edb9930f59d47cc
+ms.contentlocale: ja-jp
+ms.lasthandoff: 08/21/2017
+
 ---
-# WIF 要求プログラミング モデル
-ASP。NET と Windows 通信基盤 \(WCF\) の開発者は、IIdentity と IPrincipal インターフェイスを使用して、ユーザーの id 情報を使用通常。  します。NET 4.5、たんだ Windows アイデンティティ基盤 \(ぜ） が統合されています要求が常に存在を次の図に示すように、プリンシパルが。  
+# <a name="wif-claims-programming-model"></a>WIF 要求プログラミング モデル
+ASP.NET と Windows Communication Foundation (WCF) の開発者は、通常、IIdentity インターフェイスや IPrincipal インターフェイスを利用し、ユーザーの ID 情報を処理します。 .NET 4.5 では、Windows Identity Foundation (WIF) が統合され、あらゆるプリンシパルに対して常に要求が表示されるようになりました。次の図をご覧ください。  
   
  ![WIF 要求プログラミング モデル](../../../docs/framework/security/media/wifclaimsprogrammingmodel.png "WIFClaimsProgrammingModel")  
   
- します。NET の 4.5 には System.Security.Claims に \(上の図を参照\)、新しい ClaimsPrincipal と ClaimsIdentity のクラスが含まれています。  すべてのプリンシパル。今すぐ NET から ClaimsPrincipal を派生します。  組み込みアイデンティティのすべてのクラスと FormsIdentity ASP。今すぐ NET と WindowsIdentity を ClaimsIdentity を派生します。  同様に、組み込みのすべてのプリンシパル クラス GenericPrincipal および WindowsPrincipal ClaimsPrincipal から派生します。  
+ .NET 4.5 では、System.Security.Claims に新しい ClaimsPrincipal クラスと ClaimsIdentity クラスが含まれます (上の図をご覧ください)。 .NET のすべてのプリンシパルは ClaimsPrincipal から派生するようになりました。 ASP.NET の FormsIdentity や WindowsIdentity のような、組み込み ID クラスはすべて ClaimsIdentity から派生するようになりました。 同様に、GenericPrincipal や WindowsPrincipal など、組み込みのプリンシパル クラスはすべて ClaimsPrincipal から派生します。  
   
- 要求によって表される<xref:System.Security.Claims.Claim>クラス。  このクラスには、次の重要なプロパティがあります。  
+ 要求は <xref:System.Security.Claims.Claim> クラスにより表されます。 このクラスには、次の重要なプロパティがあります。  
   
--   <xref:System.Security.Claims.Claim.Type%2A>クレームの種類を表すし、URI は通常です。  たとえば、として電子メール アドレスの要求が表示されます`http://schemas.microsoft.com/ws/2008/06/identity/claims/email`。  
+-   <xref:System.Security.Claims.Claim.Type%2A> は要求の種類を表し、通常は URI です。 たとえば、電子メール アドレス要求は `http://schemas.microsoft.com/ws/2008/06/identity/claims/email` として表されます。  
   
--   <xref:System.Security.Claims.Claim.Value%2A>要求の値が含まれているし、文字列として表されます。  たとえば、電子メール アドレス"someone@contoso.com"として表されます。  
+-   <xref:System.Security.Claims.Claim.Value%2A> には要求の値が含まれ、文字列として表されます。 たとえば、電子メール アドレスは "someone@contoso.com" として表されます。  
   
--   <xref:System.Security.Claims.Claim.ValueType%2A>要求の値の型を表すし、URI は通常です。  例えば、string 型として表されます`http://www.w3.org/2001/XMLSchema#string`。  値型は、QName に XML スキーマに従って必要があります。  形式を指定する必要があります`namespace#format`は有効な QName 値を出力するには、たんだぜを有効にします。  名前空間を明確に定義された名前空間ではない場合、されませんので、公開されている XSD ファイルをその名前空間も、生成された XML スキーマの検証、おそらくすることはできません。  既定値の型は`http://www.w3.org/2001/XMLSchema#string`。  参照してください[http:\/\/www.w3.org\/2001\/XMLSchema](http://go.microsoft.com/fwlink/?LinkId=209155)既知の値の型の安全に使用できます。  
+-   <xref:System.Security.Claims.Claim.ValueType%2A> は要求値の種類を表し、通常は URI です。 たとえば、文字列型は `http://www.w3.org/2001/XMLSchema#string` として表されます。 値の型は、XML スキーマに基づく QName になります。 WIF で有効な QName 値を出力するには、値の形式を `namespace#format` にする必要があります。 名前空間が適切に定義された名前空間ではない場合、生成された XML がスキーマ検証できない場合があります。その名前空間には XSD ファイルが発行されないためです。 既定の値の型は `http://www.w3.org/2001/XMLSchema#string` です。 安全に使えることが確認されている値の型については、[http://www.w3.org/2001/XMLSchema](http://go.microsoft.com/fwlink/?LinkId=209155) をご覧ください。  
   
--   <xref:System.Security.Claims.Claim.Issuer%2A>要求を発行するセキュリティ トークン サービス \(STS\) の識別子です。  これは、STS のように、STS を表す名前 URL として表すことができます`https://sts1.contoso.com/sts`。  
+-   <xref:System.Security.Claims.Claim.Issuer%2A> は、要求を発行したセキュリティ トークン サービス (STS) の識別子です。 これは STS の URL か、STS を表す名前として表されます。たとえば、`https://sts1.contoso.com/sts` のようになります。  
   
--   <xref:System.Security.Claims.Claim.OriginalIssuer%2A>STSs の数に関係なく、要求が最初にリリース、STS の識別子は、チェーン内です。  これと同じように表されます<xref:System.Security.Claims.Claim.Issuer%2A>。  
+-   <xref:System.Security.Claims.Claim.OriginalIssuer%2A> は、チェーン内の STS の数に関係なく、要求を最初に発行した STS の識別子です。 これは <xref:System.Security.Claims.Claim.Issuer%2A> のように表されます。  
   
--   <xref:System.Security.Claims.Claim.Subject%2A>id を調べている主題です。  これには、<xref:System.Security.Claims.ClaimsIdentity> が含まれます。  
+-   <xref:System.Security.Claims.Claim.Subject%2A> はサブジェクトであり、その ID が調べられます。 これには、<xref:System.Security.Claims.ClaimsIdentity> が含まれます。  
   
--   <xref:System.Security.Claims.Claim.Properties%2A>開発することができますは、辞書と他のプロパティでは、ワイヤの転送するアプリケーション固有のデータを提供し、カスタムの検証に使用できます。  
+-   <xref:System.Security.Claims.Claim.Properties%2A> はディクショナリであり、開発者はアプリケーション固有のデータを他のプロパティと共に送信できます。カスタム検証に利用できます。  
   
-## Id の委任  
- 重要なプロパティの<xref:System.Security.Claims.ClaimsIdentity>です<xref:System.Security.Claims.ClaimsIdentity.Actor%2A>。  このプロパティで、バックエンド サービスに要求を作成するのには、クライアントと中間層を動作する多層システムで資格情報の委任を有効になります。  
+## <a name="identity-delegation"></a>ID 委任  
+ <xref:System.Security.Claims.ClaimsIdentity> の重要なプロパティは <xref:System.Security.Claims.ClaimsIdentity.Actor%2A> です。 中間層がクライアントとして機能し、バックエンド サービスに要求を行う多層システムで、このプロパティは資格情報の委任を可能にします。  
   
-### Thread.CurrentPrincipal からクレームへのアクセス  
- 使用して、現在のユーザーの一連のクレームを RP のアプリケーションにアクセスするには、 `Thread.CurrentPrincipal`。  
+### <a name="accessing-claims-through-threadcurrentprincipal"></a>Thread.CurrentPrincipal 経由で要求にアクセスする  
+ RP アプリケーションで現在のユーザーの要求セットにアクセスするには、`Thread.CurrentPrincipal` を使用します。  
   
- 次のコード例は、System.Security.Claims.ClaimsIdentity を取得するには、このメソッドの使用方法を示しています。  
+ 次のコード サンプルでは、このメソッドを利用し、System.Security.Claims.ClaimsIdentity を取得するしくみを確認できます。  
   
 ```  
 ClaimsPrincipal claimsPrincipal = Thread.CurrentPrincipal as ClaimsPrincipal;  
-  
 ```  
   
  詳細については、「<xref:System.Security.Claims>」を参照してください。  
   
-### 役割要求の種類  
- RP アプリケーションの構成の一部であるどのような役割を決定する要求の種類をする必要があります。  この要求の種類は、System.Security.Claims.ClaimsPrincipal.IsInRole\(System.String\) が使用されます。  既定の要求の種類は`http://schemas.microsoft.com/ws/2008/06/identity/claims/role`。  
+### <a name="role-claim-type"></a>役割という要求の種類  
+ RP アプリケーションの構成の一環として、役割という要求の種類を決定します。 この種類の要求は、System.Security.Claims.ClaimsPrincipal.IsInRole(System.String) で利用されます。 既定の要求の種類は `http://schemas.microsoft.com/ws/2008/06/identity/claims/role` です。  
   
-### クレームの Windows アイデンティティの基盤のトークンの種類からを抽出します。  
- たんだぜ、ボックスの外の認証メカニズムのいくつかの組み合わせをサポートしています。  たんだぜのさまざまな種類のトークンを抽出し、要求を次に示します。  
+### <a name="claims-extracted-by-windows-identity-foundation-from-different-token-types"></a>さまざまな種類のトークンから Windows Identity Foundation により抽出された要求  
+ WIF は、すぐに使える、さまざまな認証メカニズムの組み合わせに対応しています。 次の表は、さまざまな種類のトークンから WIF が抽出する要求をまとめたものです。  
   
-||||  
+|トークン型|生成された要求|Windows アクセス トークンにマッピング|  
 |-|-|-|  
-|トークンの種類|請求書の生成|マップする Windows アクセス トークン|  
-|SAML 1.1|1.  System.IdentityModel.SecurityTokenService.GetOutputClaimsIdentity\(System.Security.Claims.ClaimsPrincipal,System.IdentityModel.Protocols.WSTrust.RequestSecurityToken,System.IdentityModel.Scope\) からのすべての要求。<br />2.  `http://schemas.microsoft.com/ws/2008/06/identity/claims/confirmationkey`トークン、証明トークンが含まれている場合は、確認キーの XML シリアル化を含む請求します。<br />3.  `http://schemas.microsoft.com/ws/2008/06/identity/claims/samlissuername`から発行者要素を要求します。<br />4.  トークンは、認証のステートメントが含まれている場合は、AuthenticationMethod と AuthenticationInstant 請求。|要求するだけでなく表示「SAML」型に 1.1、請求を除く`http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name`、Windows 認証に関連するクレームを追加すると、id WindowsClaimsIdentity で表されます。|  
-|SAML 2.0|「SAML 1.1」と同じです。|「SAML 1.1 の Windows アカウントにマップされている」と同じです。|  
-|X509|1.  主張に、x500 識別名、使用、dnsName、SimpleName、UpnName、UrlName、拇印 \(このできますされる抽出、RSACryptoServiceProvider.ExportParameters メソッドは、X509Certificate2.PublicKey.Key プロパティを使用して\) RsaKey、\(このできますされる抽出、DSACryptoServiceProvider.ExportParameters メソッドは、X509Certificate2.PublicKey.Key プロパティを使用して\)、DsaKey、SerialNumber プロパティが x509 証明書。<br />2.  AuthenticationMethod 要求値`http://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/x509`。  AuthenticationInstant を主張する XmlSchema DateTime 形式で証明書を検証した場合、時間の値を使用します。|1.  Windows アカウントの完全修飾ドメイン名としてを使用して、 `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name`値を要求します。  .<br />2.  X509 証明書が Windows には、マップされていないからのクレームとクレーム Windows に証明書をマップすることによって取得した windows アカウントから。|  
-|UPN|1.  クレームは、Windows 認証での要求のようです。<br />2.  AuthenticationMethod 要求値`http://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/password`。  AuthenticationInstant 要求 XmlSchema DateTime 形式でパスワードを検証した場合、時間の値を使用します。||  
-|Windows \(Kerberos または NTLM\)|1.  などからのアクセス トークンを生成するクレーム： PrimarySID、DenyOnlyPrimarySID、PrimaryGroupSID、DenyOnlyPrimaryGroupSID、GroupSID、DenyOnlySID、および名前<br />2.  AuthenticationMethod 値`http://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/windows`。  AuthenticationInstant、Windows トークンをアクセスするとき、時刻の値が、XMLSchema を DateTime 形式でが作成されました。||  
-|RSA キー ペア|1.  `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/rsa` 、RSAKeyValue の値を要求します。<br />2.  AuthenticationMethod 要求値`http://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/signature`。  AuthenticationInstant 要求と RSA キーは認証されて、時間の値 \(つまり、署名が検証された\) XMLSchema DateTime 形式で。||  
+|SAML 1.1|1.System.IdentityModel.SecurityTokenService.GetOutputClaimsIdentity(System.Security.Claims.ClaimsPrincipal,System.IdentityModel.Protocols.WSTrust.RequestSecurityToken,System.IdentityModel.Scope) からのすべての要求。<br />2.トークンに証明トークンが含まれる場合、XML でシリアル化した確認キーが含まれる `http://schemas.microsoft.com/ws/2008/06/identity/claims/confirmationkey` 要求。<br />3.Issuer 要素からの `http://schemas.microsoft.com/ws/2008/06/identity/claims/samlissuername` 要求。<br />4.トークンに認証ステートメントが含まれる場合、AuthenticationMethod 要求と AuthenticationInstant 要求。|"SAML 1.1" の一覧に含まれる要求に加え、`http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name` タイプの要求を除き、Windows 認証関連の要求が加わり、ID は WindowsClaimsIdentity で表されます。|  
+|SAML 2.0|"SAML 1.1" と同じ。|"Windows アカウントにマップされた SAML 1.1" と同じ。|  
+|X509|1.X500 の識別名、emailName、dnsName、SimpleName、UpnName、UrlName、拇印、RsaKey (これは X509Certificate2.PublicKey.Keyy プロパティから RSACryptoServiceProvider.ExportParameters メソッドを利用して抽出できます)、DsaKey (これは X509Certificate2.PublicKey.Key プロパティから DSACryptoServiceProvider.ExportParameters メソッドを利用して抽出できます)、X509 証明書の SerialNumber プロパティを持つ要求。<br />2.値 `http://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/x509` を持つ AuthenticationMethod 要求。 証明書が XmlSchema DateTime 形式で検証されたときの値を持つ AuthenticationInstant 要求。|1.Windows アカウントの完全修飾ドメイン名が `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name` 要求値として使用されます。 」を参照してください。<br />2.Windows にマッピングされていない X509 証明書からの要求と、Windows に証明書をマッピングして取得した Windows アカウントからの要求。|  
+|UPN|1.要求は、Windows 認証セクションの要求と似ています。<br />2.値 `http://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/password` を持つ AuthenticationMethod 要求。 パスワードが XmlSchema DateTime 形式で検証されたときの値を持つ AuthenticationInstant 要求。||  
+|Windows (Kerberos または NTLM)|1.PrimarySID、DenyOnlyPrimarySID、PrimaryGroupSID、DenyOnlyPrimaryGroupSID、GroupSID、DenyOnlySID、Name など、アクセス トークンから生成された要求。<br />2.値 `http://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/windows` を持つ AuthenticationMethod。 Windows アクセス トークンが XMLSchema DateTime 形式で作成されたときの値を持つ AuthenticationInstant。||  
+|RSA キー ペア|1.値 RSAKeyValue を持つ `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/rsa` 要求。<br />2.値 `http://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/signature` を持つ AuthenticationMethod 要求。 RSA キーが XMLSchema DateTime 形式で認証された (つまり、署名が検証された) ときの値を持つ AuthenticationInstant 要求。||  
   
-|||  
+|認証の種類|"AuthenticationMethod" 要求の URI|  
 |-|-|  
-|認証の種類|「AuthenticationMethod」要求で放射される URI|  
 |パスワード|`urn:oasis:names:tc:SAML:1.0:am:password`|  
 |Kerberos|`urn:ietf:rfc:1510`|  
 |SecureRemotePassword|`urn:ietf:rfc:2945`|  
@@ -80,4 +83,5 @@ ClaimsPrincipal claimsPrincipal = Thread.CurrentPrincipal as ClaimsPrincipal;
 |PGP|`urn:oasis:names:tc:SAML:1.0:am:PGP`|  
 |Spki|`urn:oasis:names:tc:SAML:1.0:am:SPKI`|  
 |XmlDSig|`urn:ietf:rfc:3075`|  
-|Unspecified|`urn:oasis:names:tc:SAML:1.0:am:unspecified`|
+|指定されていません。|`urn:oasis:names:tc:SAML:1.0:am:unspecified`|
+

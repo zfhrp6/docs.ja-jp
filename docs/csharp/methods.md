@@ -11,10 +11,10 @@ ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 577a8527-1081-4b36-9b9e-0685b6553c6e
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 6b5e01f7244b8b7b83fbc76a80eae0c1432c936a
+ms.sourcegitcommit: b041fbec3ff22157d00af2447e76a7ce242007fc
+ms.openlocfilehash: df8733c5c4532dc188ceb95d7bf236bcd2182b9f
 ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
+ms.lasthandoff: 09/14/2017
 
 ---
 # <a name="methods"></a>メソッド #
@@ -22,7 +22,7 @@ ms.lasthandoff: 07/28/2017
 メソッドは、一連のステートメントが含まれているコード ブロックです。 必要なメソッド引数を指定してプログラムからメソッドを呼び出すと、メソッド内のステートメントが実行されます。 C# では、実行されるすべての命令がメソッドのコンテキストで実行されます。 `Main` メソッドは、すべての C# アプリケーションのエントリ ポイントです。プログラムが開始されると、このメソッドが共通言語ランタイム (CLR) によって呼び出されます。
 
 > [!NOTE]
-> このトピックでは、名前付きメソッドについて説明します。 匿名関数については、「[匿名関数](https://msdn.microsoft.com/library/bb882516.aspx)」を参照してください。
+> このトピックでは、名前付きメソッドについて説明します。 匿名関数については、「[匿名関数](programming-guide/statements-expressions-operators/anonymous-functions.md)」を参照してください。
 
 このトピックは、次のセクションで構成されています。
 
@@ -252,14 +252,14 @@ if (person != null)
 
 拡張メソッドでは、型自体を変更せずに、あるいは継承された型に新しいメソッドを実装せずに、既存の型にメソッドを "追加" できます。 また、拡張メソッドは、それが拡張する型と同じアセンブリに置く必要がありません。 型の定義済みメンバーのように拡張メソッドを呼び出します。
 
-詳細については、「[拡張メソッド](https://msdn.microsoft.com/library/bb383977.aspx)」を参照してください。
+詳細については、「[拡張メソッド](programming-guide/classes-and-structs/extension-methods.md)」を参照してください。
 
 <a name="async"></a>
 ## <a name="async-methods"></a>非同期メソッド ##
 
 非同期機能を使用することによって、明示的なコールバックを使用せずに、または複数のメソッドやラムダ式にわたって手動でコードを分割することなく、非同期メソッドを呼び出すことができます。
 
-メソッドに [async](https://msdn.microsoft.com/library/hh156513.aspx) 修飾子を付けると、そのメソッドで [await](https://msdn.microsoft.com/library/hh156528.aspx) 演算子を使用できます。 コントロールが非同期メソッドの `await` 式に到達すると、待機中のタスクが完了していない場合、コントロールが呼び出し元に戻ります。`await` キーワードが与えられたメソッドの進行は、待機中のタスクが完了するまで中断されます。 タスクが完了すると、メソッドで実行を再開できます。
+メソッドに [async](language-reference/keywords/async.md) 修飾子を付けると、そのメソッドで [await](language-reference/keywords/await.md) 演算子を使用できます。 コントロールが非同期メソッドの `await` 式に到達すると、待機中のタスクが完了していない場合、コントロールが呼び出し元に戻ります。`await` キーワードが与えられたメソッドの進行は、待機中のタスクが完了するまで中断されます。 タスクが完了すると、メソッドで実行を再開できます。
 
 > [!NOTE]
 > 非同期メソッドは、まだ完了していない待機中の最初のオブジェクトに達するか、または非同期メソッドの最後に達すると、呼び出し元に戻ります。
@@ -270,9 +270,9 @@ if (person != null)
 
 [!code-csharp[csSnippets.Methods#102](../../samples/snippets/csharp/concepts/methods/async1.cs#102)]
 
-非同期メソッドで [ref](https://msdn.microsoft.com/library/14akc2c7.aspx) パラメーターまたは [out](https://msdn.microsoft.com/library/t3c3bfhx.aspx) パラメーターを宣言することはできませんが、これらのパラメーターが含まれたメソッドを呼び出すことはできます。
+非同期メソッドで [ref](language-reference/keywords/ref.md) パラメーターまたは [out](language-reference/keywords/out.md) パラメーターを宣言することはできませんが、これらのパラメーターを持つメソッドを呼び出すことはできます。
 
- 非同期メソッドの詳細については、「[Async および Await を使用した非同期プログラミング](https://msdn.microsoft.com/library/mt674882.aspx)」、「[非同期プログラムにおける制御フロー](https://msdn.microsoft.com/library/mt674892.aspx)」、「[非同期の戻り値の型](https://msdn.microsoft.com/library/mt674893.aspx)」を参照してください。
+ 非同期メソッドの詳細については、「[Async および Await を使用した非同期プログラミング](async.md)」、「[非同期プログラムにおける制御フロー](programming-guide/concepts/async/control-flow-in-async-programs.md)」、「[非同期の戻り値の型](programming-guide/concepts/async/async-return-types.md)」を参照してください。
 
 <a name="expr"></a>
 ## <a name="expression-bodied-members"></a>式形式のメンバー ##
@@ -293,20 +293,20 @@ public Customer this[long id] => store.LookupCustomer(id);
 <a name="iterators"></a>
 ## <a name="iterators"></a>反復子 ##
 
-反復子は、リストや配列など、コレクションに対するカスタム イテレーションを実行します。 反復子は、[yield return](https://msdn.microsoft.com/library/9k7k7cf0.aspx) ステートメントを使用して、各要素を 1 回に 1 つ返します。 `yield return` ステートメントに到達すると、現在の場所が記録されます。呼び出し元は、シーケンス内の次の要素を要求できます。
+反復子は、リストや配列など、コレクションに対するカスタム イテレーションを実行します。 反復子は、[yield return](language-reference/keywords/yield.md) ステートメントを使用して、各要素を 1 回に 1 つ返します。 `yield return` ステートメントに到達すると、現在の場所が記録されます。呼び出し元は、シーケンス内の次の要素を要求できます。
 
 反復子の戻り値の型には、@System.Collections.IEnumerable、@System.Collections.Generic.IEnumerable%601、@System.Collections.IEnumerator、@System.Collections.Generic.IEnumerator%601 を指定できます。
 
-詳細については、「[反復子](https://msdn.microsoft.com/library/mt639331.aspx)」をご覧ください。
+詳細については、「[反復子](programming-guide/concepts/iterators.md)」をご覧ください。
 
 ## <a name="see-also"></a>関連項目 ##
 
-[アクセス修飾子](https://msdn.microsoft.com/library/wxh6fsc7.aspx)   
-[静的クラスと静的クラス メンバー](https://msdn.microsoft.com/library/79b3xss3.aspx)   
-[継承](https://msdn.microsoft.com/library/ms173149.aspx)   
-[抽象クラスとシール クラス、およびクラス メンバー](https://msdn.microsoft.com/library/ms173150.aspx)   
-[params](https://msdn.microsoft.com/library/w5zay9db.aspx)   
-[out](https://msdn.microsoft.com/library/t3c3bfhx.aspx)   
-[ref](https://msdn.microsoft.com/library/14akc2c7.aspx)   
-[パラメーターの引き渡し](https://msdn.microsoft.com/library/0f66670z.aspx)
+[アクセス修飾子](language-reference/keywords/access-modifiers.md)   
+[静的クラスと静的クラス メンバー](programming-guide/classes-and-structs/static-classes-and-static-class-members.md)   
+[継承](programming-guide/classes-and-structs/inheritance.md)   
+[抽象クラスとシール クラス、およびクラス メンバー](programming-guide/classes-and-structs/abstract-and-sealed-classes-and-class-members.md)   
+[params](language-reference/keywords/params.md)   
+[out](language-reference/keywords/out.md)   
+[ref](language-reference/keywords/ref.md)   
+[パラメーターの引き渡し](programming-guide/classes-and-structs/passing-parameters.md)
 

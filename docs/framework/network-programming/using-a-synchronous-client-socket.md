@@ -1,46 +1,50 @@
 ---
-title: "同期クライアント ソケットの使用 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "アプリケーション プロトコル、ソケット"
-  - "送信 (データの)、ソケット"
-  - "データ要求、ソケット"
-  - "要求 (インターネットからデータを)、ソケット"
-  - "同期クライアント ソケット"
-  - "Socket クラス、同期クライアント ソケット"
-  - "受信 (データの)、ソケット"
-  - "ソケット、同期クライアント ソケット"
-  - "プロトコル、ソケット"
-  - "インターネット、ソケット"
-  - "クライアント ソケット"
+title: "同期クライアント ソケットの使用"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- VB
+- CSharp
+- C++
+- jsharp
+helpviewer_keywords:
+- application protocols, sockets
+- sending data, sockets
+- data requests, sockets
+- requesting data from Internet, sockets
+- synchronous client sockets
+- Socket class, synchronous client sockets
+- receiving data, sockets
+- sockets, synchronous client sockets
+- protocols, sockets
+- Internet, sockets
+- client sockets
 ms.assetid: 945d00c6-7202-466c-9df9-140b84156d43
 caps.latest.revision: 12
-author: "mcleblanc"
-ms.author: "markl"
-manager: "markl"
-caps.handback.revision: 12
+author: mcleblanc
+ms.author: markl
+manager: markl
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 8562670aad8a20a28eddcd2ebbe434a0402aff59
+ms.contentlocale: ja-jp
+ms.lasthandoff: 08/21/2017
+
 ---
-# 同期クライアント ソケットの使用
-クライアントの同期はソケット ネットワーク アクションが完了すると、アプリケーション プログラムを中断します。  同期はソケット工程のネットワーク大量に使用できる、他のアプリケーションのネットワーク サービスへの簡単なアクセスできるようにすることもできますアプリケーションに適していない。  
+# <a name="using-a-synchronous-client-socket"></a>同期クライアント ソケットの使用
+ネットワーク操作が完了するまで、同期クライアント ソケットはアプリケーション プログラムを一時停止させます。 同期ソケットは動作のためにネットワークを多用するアプリケーションには適しませんが、それ以外のアプリケーションの場合、ネットワーク サービスへの簡単アクセスを可能にします。  
   
- データを送信するには、<xref:System.Net.Sockets.Socket> クラスの送信データの方法のうち 1 バイトを配列に出荷します \(<xref:System.Net.Sockets.Socket.Send%2A> と <xref:System.Net.Sockets.Socket.SendTo%2A>\)。  次の例では、<xref:System.Text.Encoding.ASCII%2A?displayProperty=fullName> のプロパティを使用してバイト配列のバッファ、文字列をエンコードし、ネットワークのデバイスに **\[送信\]** 方法を使用してバッファを送信します。  **\[送信\]** 方法は、ネットワークのデバイスに送信されるバイト数を返します。  
+ データを送信するには、<xref:System.Net.Sockets.Socket> クラスのデータ送信メソッド (<xref:System.Net.Sockets.Socket.Send%2A> と <xref:System.Net.Sockets.Socket.SendTo%2A>) のいずれかにバイト配列を渡します。 次の例では、<xref:System.Text.Encoding.ASCII%2A?displayProperty=fullName> プロパティを利用してバイト配列バッファーに文字列をエンコードし、**Send** メソッドを利用してネットワーク デバイスにバッファーを送信しています。 **Send** メソッドは、ネットワーク デバイスに送信されたバイトの数を返します。  
   
 ```vb  
 Dim msg As Byte() = _  
     System.Text.Encoding.ASCII.GetBytes("This is a test.")  
 Dim bytesSent As Integer = s.Send(msg)  
-  
 ```  
   
 ```csharp  
@@ -48,16 +52,15 @@ byte[] msg = System.Text.Encoding.ASCII.GetBytes("This is a test");
 int bytesSent = s.Send(msg);  
 ```  
   
- **\[送信\]** 方法はバッファからバイトが削除され、ネットワークのデバイスに送信されるネットワークのインターフェイスでの列を作らせます。  接続が <xref:System.Net.Sockets.Socket.Shutdown%2A> 方法として通常、終了、ネットワークのインターフェイスはデータを直ちになく場合がありますが、最終的を送信します。  
+ **Send** メソッドは、バッファーからバイトを取り除き、ネットワーク インターフェイスで、ネットワーク デバイスに送信するための待ち行列に入れます。 ネットワーク インターフェイスはデータをすぐには送信しないかもしれませんが、<xref:System.Net.Sockets.Socket.Shutdown%2A> メソッドで接続が通常どおり閉じられる限り、いずれは送信します。  
   
- ネットワークのデバイスからデータを取得するには、**\[ソケット\]** クラスの受信データ メソッドのバッファを 1 に出荷します \(<xref:System.Net.Sockets.Socket.Receive%2A> と <xref:System.Net.Sockets.Socket.ReceiveFrom%2A>\)。  同期はバイト ソケットがネットワークから入庫またはソケットが閉じられるまでアプリケーションを中断します。  次の例では、ネットワーク、表示のデータをコンソールで表示されます。  たとえば、ネットワークから送られてくるデータが ASCII エンコードしたテキストであるとします。  **\[受信\]** 方法は、ネットワークから受け取ったバイト数を返します。  
+ ネットワーク デバイスからデータを受け取るには、**Socket** クラスのデータ受信メソッド (<xref:System.Net.Sockets.Socket.Receive%2A> と <xref:System.Net.Sockets.Socket.ReceiveFrom%2A>) のいずれかにバッファーを渡します。 同期ソケットは、ネットワークからバイトが届くまで、あるいは、ソケットが閉じられるまで、アプリケーションを一時停止させます。 次の例では、ネットワークからデータを受信し、コンソールに表示しています。 この例では、ネットワークから届くデータが ASCII エンコード テキストであると想定しています。 **Receive** メソッドは、ネットワークから受信したバイト数を返します。  
   
 ```vb  
 Dim bytes(1024) As Byte  
 Dim bytesRec = s.Receive(bytes)  
 Console.WriteLine("Echoed text = {0}", _  
     System.Text.Encoding.ASCII.GetString(bytes, 0, bytesRec))  
-  
 ```  
   
 ```csharp  
@@ -67,7 +70,7 @@ Console.WriteLine("Echoed text = {0}",
     System.Text.Encoding.ASCII.GetString(bytes, 0, bytesRec));  
 ```  
   
- ソケットが不要にしない場合、<xref:System.Net.Sockets.Socket.Shutdown%2A> 方法を追加し、**\[閉じる\]** 方法をとしてそれをリリースする必要があります。  次の例では、**\[ソケット\]**をリリースします。  <xref:System.Net.Sockets.SocketShutdown> の列挙型はソケット、受け入れた送信については、またはの両方に終了するかどうかを指定する定数を定義します。  
+ ソケットが不要になったら、解放する必要があります。<xref:System.Net.Sockets.Socket.Shutdown%2A> メソッドを呼び出し、**Close** メソッドを呼び出します。 次の例では、**Socket** を解放しています。 <xref:System.Net.Sockets.SocketShutdown> 列挙は、送信、受信、あるいは両方のためにソケットを閉じるかどうかを示す定数を定義します。  
   
 ```vb  
 s.Shutdown(SocketShutdown.Both)  
@@ -79,7 +82,8 @@ s.Shutdown(SocketShutdown.Both);
 s.Close();  
 ```  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [非同期クライアント ソケットの使用](../../../docs/framework/network-programming/using-an-asynchronous-client-socket.md)   
- [リッスン \(ソケットで\)](../../../docs/framework/network-programming/listening-with-sockets.md)   
+ [リッスン (ソケットで)](../../../docs/framework/network-programming/listening-with-sockets.md)   
  [同期クライアント ソケットの例](../../../docs/framework/network-programming/synchronous-client-socket-example.md)
+

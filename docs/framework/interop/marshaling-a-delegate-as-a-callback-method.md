@@ -1,64 +1,66 @@
 ---
-title: "コールバック メソッドとしてのデリゲートのマーシャ リング | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "データ マーシャリング, Callback サンプル"
-  - "マーシャリング, Callback サンプル"
+title: "コールバック メソッドとしてのデリゲートのマーシャ リング"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- VB
+- CSharp
+- C++
+- jsharp
+helpviewer_keywords:
+- data marshaling, Callback sample
+- marshaling, Callback sample
 ms.assetid: 6ddd7866-9804-4571-84de-83f5cc017a5a
 caps.latest.revision: 13
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 13
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: bc18c5c6cfef523d55a8f24477ac3e82b720b568
+ms.contentlocale: ja-jp
+ms.lasthandoff: 08/21/2017
+
 ---
-# コールバック メソッドとしてのデリゲートのマーシャ リング
-このサンプルでは、関数ポインターを要求するアンマネージ関数にデリゲートを渡す方法を示します。  デリゲートは、メソッドへの参照を保持できるクラスのことであり、タイプ セーフ関数ポインターまたはコールバック関数と等価です。  
+# <a name="marshaling-a-delegate-as-a-callback-method"></a>コールバック メソッドとしてのデリゲートのマーシャ リング
+このサンプルでは、関数ポインターを要求するアンマネージ関数にデリゲートを渡す方法を示します。 デリゲートは、メソッドへの参照を保持できるクラスであり、タイプ セーフな関数ポインターまたはコールバック関数と同等のものです。  
   
 > [!NOTE]
->  呼び出しの中でデリゲートを使用する場合、共通言語ランタイムは、呼び出しの間にデリゲートがガベージ コレクトされないように保護します。  ただし、呼び出しが完了した後で使用するためにアンマネージ関数がデリゲートを格納する場合には、アンマネージ関数がデリゲートを終了するまでの間、手動でガベージ コレクションを防ぐ必要があります。  詳細については、「[HandleRef のサンプル](http://msdn.microsoft.com/ja-jp/ab23b04e-1d53-4ec7-b27a-e892d9298959)」および「[GCHandle のサンプル](http://msdn.microsoft.com/ja-jp/6acce798-0385-4ded-a790-77da842c113f)」を参照してください。  
+>  呼び出しの中でデリゲートを使うと、共通言語ランタイムがデリゲートをその呼び出しの期間中ガベージ コレクションから保護します。 ただし、アンマネージ関数が呼び出し完了後に使うためにデリゲートを保存する場合は、アンマネージ関数がデリゲートを終了するまで手動でガベージ コレクションを防ぐ必要があります。 詳細については、「[HandleRef Sample](http://msdn.microsoft.com/en-us/ab23b04e-1d53-4ec7-b27a-e892d9298959)」(HandleRef のサンプル) および「[GCHandle Sample](http://msdn.microsoft.com/en-us/6acce798-0385-4ded-a790-77da842c113f)」(GCHandle のサンプル) をご覧ください。  
   
- Callback のサンプルで使用するアンマネージ関数とその関数宣言を次に示します。  
+ Callback のサンプルで使用するアンマネージ関数とその元の関数宣言を次に示します。  
   
--   PinvokeLib.dll からエクスポートされる **TestCallBack**  
+-   PinvokeLib.dll からエクスポートされる **TestCallBack**。  
   
     ```  
     void TestCallBack(FPTR pf, int value);  
     ```  
   
--   PinvokeLib.dll からエクスポートされる **TestCallBack2**  
+-   PinvokeLib.dll からエクスポートされる **TestCallBack2**。  
   
     ```  
     void TestCallBack2(FPTR2 pf2, char* value);  
     ```  
   
- [PinvokeLib.dll](http://msdn.microsoft.com/ja-jp/5d1438d7-9946-489d-8ede-6c694a08f614) はカスタム アンマネージ ライブラリであり、上記の関数に関する実装を含みます。  
+ [PinvokeLib.dll](http://msdn.microsoft.com/en-us/5d1438d7-9946-489d-8ede-6c694a08f614) はカスタム アンマネージ ライブラリであり、上で示した関数の実装を含んでいます。  
   
- このサンプルでは、`LibWrap` クラスには `TestCallBack` メソッドと `TestCallBack2` メソッドに関するマネージ プロトタイプが含まれます。  どちらのメソッドも、コールバック関数にパラメーターとしてデリゲートを渡します。  デリゲートのシグネチャは、その参照先メソッドのシグネチャと一致する必要があります。  たとえば、デリゲートの `FPtr` と `FPtr2` は、`DoSomething` メソッドおよび `DoSomething2` メソッドと同じシグネチャを持ちます。  
+ このサンプルでは、`LibWrap` クラスには、`TestCallBack` メソッドと `TestCallBack2` メソッドのマネージ プロトタイプが含まれます。 どちらのメソッドも、コールバック関数にパラメーターとしてデリゲートを渡します。 デリゲートのシグネチャは、それが参照しているメソッドのシグネチャと一致する必要があります。 たとえば、`FPtr` および `FPtr2` デリゲートのシグネチャは、`DoSomething` および `DoSomething2` メソッドと同じです。  
   
-## プロトタイプの宣言  
- [!code-cpp[Conceptual.Interop.Marshaling#37](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.interop.marshaling/cpp/callback.cpp#37)]
- [!code-csharp[Conceptual.Interop.Marshaling#37](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.interop.marshaling/cs/callback.cs#37)]
- [!code-vb[Conceptual.Interop.Marshaling#37](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.interop.marshaling/vb/callback.vb#37)]  
+## <a name="declaring-prototypes"></a>プロトタイプの宣言  
+ [!code-cpp[Conceptual.Interop.Marshaling#37](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.interop.marshaling/cpp/callback.cpp#37)] [!code-csharp[Conceptual.Interop.Marshaling#37](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.interop.marshaling/cs/callback.cs#37)] [!code-vb[Conceptual.Interop.Marshaling#37](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.interop.marshaling/vb/callback.vb#37)]  
   
-## 関数の呼び出し  
- [!code-cpp[Conceptual.Interop.Marshaling#38](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.interop.marshaling/cpp/callback.cpp#38)]
- [!code-csharp[Conceptual.Interop.Marshaling#38](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.interop.marshaling/cs/callback.cs#38)]
- [!code-vb[Conceptual.Interop.Marshaling#38](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.interop.marshaling/vb/callback.vb#38)]  
+## <a name="calling-functions"></a>関数の呼び出し  
+ [!code-cpp[Conceptual.Interop.Marshaling#38](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.interop.marshaling/cpp/callback.cpp#38)] [!code-csharp[Conceptual.Interop.Marshaling#38](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.interop.marshaling/cs/callback.cs#38)] [!code-vb[Conceptual.Interop.Marshaling#38](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.interop.marshaling/vb/callback.vb#38)]  
   
-## 参照  
- [Miscellaneous Marshaling Samples](http://msdn.microsoft.com/ja-jp/a915c948-54e9-4d0f-a525-95a77fd8ed70)   
- [Platform Invoke Data Types](http://msdn.microsoft.com/ja-jp/16014d9f-d6bd-481e-83f0-df11377c550f)   
+## <a name="see-also"></a>関連項目  
+ [各種のマーシャリングのサンプル](http://msdn.microsoft.com/en-us/a915c948-54e9-4d0f-a525-95a77fd8ed70)   
+ [プラットフォーム呼び出しのデータ型](http://msdn.microsoft.com/en-us/16014d9f-d6bd-481e-83f0-df11377c550f)   
  [マネージ コードでのプロトタイプの作成](../../../docs/framework/interop/creating-prototypes-in-managed-code.md)
+

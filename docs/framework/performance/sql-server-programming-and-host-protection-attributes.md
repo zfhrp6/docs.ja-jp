@@ -1,50 +1,55 @@
 ---
-title: "SQL Server プログラミングとホスト保護属性 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "ホスト保護属性"
-  - "HostProtectionAttribute クラス, 信頼性"
-  - "ホスト, 信頼性"
-  - "マネージ コード, SQL Server"
-  - "アクセス許可セット, SQL Server"
-  - "信頼性 [.NET Framework]"
-  - "SQL Server [.NET Framework]"
-  - "SQL Server プログラミングとホスト保護属性"
-  - "記述 (信頼性の高いコードを)"
+title: "SQL Server プログラミングとホスト保護属性"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- SQL Server [.NET Framework]
+- permission sets, SQL Server
+- SQL Server Programming and Host Protection Attributes
+- managed code, SQL Server
+- reliability [.NET Framework]
+- writing reliable code
+- hosts, reliability
+- host protection attributes
+- HostProtectionAttribute class, reliability
 ms.assetid: 7dfa36b4-e773-4c75-a3ff-ff1af3ce4c4f
 caps.latest.revision: 13
-author: "mairaw"
-ms.author: "mairaw"
-manager: "wpickett"
-caps.handback.revision: 13
+author: mairaw
+ms.author: mairaw
+manager: wpickett
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 3181237540bd7379fd25c8b58c0f2c6f188148ea
+ms.contentlocale: ja-jp
+ms.lasthandoff: 08/21/2017
+
 ---
-# SQL Server プログラミングとホスト保護属性
-SQL Server ホストでマネージ コードを読み込んで実行するには、コード アクセス セキュリティとホスト リソース保護の両方に対するホストの要件を満たす必要があります。コード アクセス セキュリティ要件は、SAFE、EXTERNAL\-ACCESS、UNSAFE という 3 つの SQL Server アクセス許可セットのうちのいずれかによって指定されます。  SAFE アクセス許可セットまたは EXTERNAL\-ACCESS アクセス許可セット内で実行するコードでは、<xref:System.Security.Permissions.HostProtectionAttribute> 属性が適用されている特定の型またはメンバーの使用を避ける必要があります。  <xref:System.Security.Permissions.HostProtectionAttribute> は、ホストによって許可されない可能性がある特定のコード コンストラクター \(型またはメソッド\) を識別するという点で、信頼性の保証に相当するほどのセキュリティ アクセス許可とは言えません。<xref:System.Security.Permissions.HostProtectionAttribute> を使用すると、ホストの安定性を保護するのに役立つプログラミング モデルが適用されます。  
+# <a name="sql-server-programming-and-host-protection-attributes"></a>SQL Server プログラミングとホスト保護属性
+SQL Server ホストにマネージ コードを読み込み、実行する機能を利用するには、コード アクセス セキュリティとホスト リソース保護の両方においてホストの要件を満たす必要があります。  コード アクセス セキュリティの要件は、SAFE、EXTERNAL-ACCESS、UNSAFE という 3 つの SQL Server アクセス許可セットのいずれかにより指定されます。 SAFE アクセス許可セット内か EXTERNAL-ACCESS アクセス許可セット内でコードを実行する場合、<xref:System.Security.Permissions.HostProtectionAttribute> 属性が適用されている特定の型またはメンバーを避ける必要があります。 <xref:System.Security.Permissions.HostProtectionAttribute> はセキュリティ アクセス許可ではなく、むしろ信頼性保証であり、ホストが許可しない可能性がある特定のコード コンストラクト (型またはメソッド) を識別します。  <xref:System.Security.Permissions.HostProtectionAttribute> を使用することで、ホストの安定性を保護するプログラミング モデルを適用します。  
   
-## ホスト保護属性  
- ホスト保護属性は、ホスト プログラミング モデルに適合せず、次のような信頼性に対する脅威を表す型やメンバーを識別します。  
+## <a name="host-protection-attributes"></a>ホスト保護属性  
+ ホスト保護属性は、ホスト プログラミング モデルに合わない型またはメンバーを特定し、以下の信頼性レベルの脅威の増加を表します。  
   
--   ホスト プログラミング モデルに適合しないこと以外に問題がない。  
+-   それ以外は害がない。  
   
--   サーバー管理ユーザー コードの不安定化につながる可能性がある。  
+-   サーバーが管理するユーザー コードが不安定になる可能性がある。  
   
--   サーバー プロセス自体の不安定化につながる可能性がある。  
+-   サーバー プロセス自体が不安定になる可能性がある。  
   
- SQL Server は、<xref:System.Security.Permissions.HostProtectionResource>、<xref:System.Security.Permissions.HostProtectionResource>、<xref:System.Security.Permissions.HostProtectionResource>、または <xref:System.Security.Permissions.HostProtectionResource> の <xref:System.Security.Permissions.HostProtectionResource> 値を指定する <xref:System.Security.Permissions.HostProtectionAttribute> を持つ型またはメンバーを許可しません。  これにより、共有状態を有効にしたり、同期を実行したり、終了時にリソース リークの原因になったり、SQL Server プロセスの整合性に影響したりするメンバーのアセンブリによる呼び出しが防止されます。  
+ SQL Server は、<xref:System.Security.Permissions.HostProtectionResource> 値として <xref:System.Security.Permissions.HostProtectionResource.SharedState>、<xref:System.Security.Permissions.HostProtectionResource.Synchronization>、<xref:System.Security.Permissions.HostProtectionResource.MayLeakOnAbort>、<xref:System.Security.Permissions.HostProtectionResource.ExternalProcessMgmt> を指定する <xref:System.Security.Permissions.HostProtectionAttribute> を持つ型またはメンバーの使用を禁止します。 これにより、共有状態を有効にし、同期を実行し、終了時にリソースを漏洩する可能性があり、SQL Server プロセスの整合性に影響を与えるメンバーの呼び出しをアセンブリに禁止します。  
   
-### 許可されない型およびメンバー  
- <xref:System.Security.Permissions.HostProtectionResource> 値が SQL Server によって許可されない型とメンバーを次の表に示します。  
+### <a name="disallowed-types-and-members"></a>禁止されている型とメンバー  
+ 次の表は、<xref:System.Security.Permissions.HostProtectionResource> 値が SQL Server により禁止される型とメンバーをまとめたものです。  
   
 |名前空間|型またはメンバー|  
-|----------|--------------|  
+|---------------|--------------------|  
 |`Microsoft.Win32`|<xref:Microsoft.Win32.PowerModeChangedEventArgs> クラス<br /><br /> <xref:Microsoft.Win32.PowerModeChangedEventHandler> デリゲート<br /><br /> <xref:Microsoft.Win32.SessionEndedEventArgs> クラス<br /><br /> <xref:Microsoft.Win32.SessionEndedEventHandler> デリゲート<br /><br /> <xref:Microsoft.Win32.SessionEndingEventArgs> クラス<br /><br /> <xref:Microsoft.Win32.SessionEndingEventHandler> デリゲート<br /><br /> <xref:Microsoft.Win32.SessionSwitchEventArgs> クラス<br /><br /> <xref:Microsoft.Win32.SessionSwitchEventHandler> デリゲート<br /><br /> <xref:Microsoft.Win32.SystemEvents> クラス<br /><br /> <xref:Microsoft.Win32.TimerElapsedEventArgs> クラス<br /><br /> <xref:Microsoft.Win32.TimerElapsedEventHandler> デリゲート<br /><br /> <xref:Microsoft.Win32.UserPreferenceChangedEventArgs> クラス<br /><br /> <xref:Microsoft.Win32.UserPreferenceChangingEventArgs> クラス|  
 |`System.Collections`|<xref:System.Collections.ArrayList.Synchronized%2A?displayProperty=fullName> メソッド<br /><br /> <xref:System.Collections.Hashtable.Synchronized%2A?displayProperty=fullName> メソッド<br /><br /> <xref:System.Collections.Queue.Synchronized%2A?displayProperty=fullName> メソッド<br /><br /> <xref:System.Collections.SortedList.Synchronized%2A?displayProperty=fullName> メソッド<br /><br /> <xref:System.Collections.Stack.Synchronized%2A?displayProperty=fullName> メソッド|  
 |`System.ComponentModel`|<xref:System.ComponentModel.AddingNewEventArgs> クラス<br /><br /> <xref:System.ComponentModel.AddingNewEventHandler> デリゲート<br /><br /> <xref:System.ComponentModel.ArrayConverter> クラス<br /><br /> <xref:System.ComponentModel.AsyncCompletedEventArgs> クラス<br /><br /> <xref:System.ComponentModel.AsyncCompletedEventHandler> デリゲート<br /><br /> <xref:System.ComponentModel.AsyncOperation> クラス<br /><br /> <xref:System.ComponentModel.AsyncOperationManager> クラス<br /><br /> <xref:System.ComponentModel.AttributeCollection> クラス<br /><br /> <xref:System.ComponentModel.BackgroundWorker> クラス<br /><br /> <xref:System.ComponentModel.BaseNumberConverter> クラス<br /><br /> <xref:System.ComponentModel.BindingList%601> クラス<br /><br /> <xref:System.ComponentModel.BooleanConverter> クラス<br /><br /> <xref:System.ComponentModel.ByteConverter> クラス<br /><br /> <xref:System.ComponentModel.CancelEventArgs> クラス<br /><br /> <xref:System.ComponentModel.CancelEventHandler> デリゲート<br /><br /> <xref:System.ComponentModel.CharConverter> クラス<br /><br /> <xref:System.ComponentModel.CollectionChangeEventArgs> クラス<br /><br /> <xref:System.ComponentModel.CollectionChangeEventHandler> デリゲート<br /><br /> <xref:System.ComponentModel.CollectionConverter> クラス<br /><br /> <xref:System.ComponentModel.ComponentCollection> クラス<br /><br /> <xref:System.ComponentModel.ComponentConverter> クラス<br /><br /> <xref:System.ComponentModel.ComponentEditor> クラス<br /><br /> <xref:System.ComponentModel.ComponentResourceManager> クラス<br /><br /> <xref:System.ComponentModel.Container> クラス<br /><br /> <xref:System.ComponentModel.ContainerFilterService> クラス<br /><br /> <xref:System.ComponentModel.CultureInfoConverter> クラス<br /><br /> <xref:System.ComponentModel.CustomTypeDescriptor> クラス<br /><br /> <xref:System.ComponentModel.DateTimeConverter> クラス<br /><br /> <xref:System.ComponentModel.DecimalConverter> クラス<br /><br /> <xref:System.ComponentModel.Design.ActiveDesignerEventArgs> クラス<br /><br /> <xref:System.ComponentModel.Design.ActiveDesignerEventHandler> デリゲート<br /><br /> <xref:System.ComponentModel.Design.CheckoutException> クラス<br /><br /> <xref:System.ComponentModel.Design.CommandID> クラス<br /><br /> <xref:System.ComponentModel.Design.ComponentChangedEventArgs> クラス<br /><br /> <xref:System.ComponentModel.Design.ComponentChangedEventHandler> デリゲート<br /><br /> <xref:System.ComponentModel.Design.ComponentChangingEventArgs> クラス<br /><br /> <xref:System.ComponentModel.Design.ComponentChangingEventHandler> デリゲート<br /><br /> <xref:System.ComponentModel.Design.ComponentEventArgs> クラス<br /><br /> <xref:System.ComponentModel.Design.ComponentEventHandler> デリゲート<br /><br /> <xref:System.ComponentModel.Design.ComponentRenameEventArgs> クラス<br /><br /> <xref:System.ComponentModel.Design.ComponentRenameEventHandler> デリゲート<br /><br /> <xref:System.ComponentModel.Design.DesignerCollection> クラス<br /><br /> <xref:System.ComponentModel.Design.DesignerEventArgs> クラス<br /><br /> <xref:System.ComponentModel.Design.DesignerEventHandler> デリゲート<br /><br /> <xref:System.ComponentModel.Design.DesignerOptionService> クラス<br /><br /> <xref:System.ComponentModel.Design.DesignerTransaction> クラス<br /><br /> <xref:System.ComponentModel.Design.DesignerTransactionCloseEventArgs> クラス<br /><br /> <xref:System.ComponentModel.Design.DesignerTransactionCloseEventHandler> デリゲート<br /><br /> <xref:System.ComponentModel.Design.DesignerVerb> クラス<br /><br /> <xref:System.ComponentModel.Design.DesignerVerbCollection> クラス<br /><br /> <xref:System.ComponentModel.Design.DesigntimeLicenseContext> クラス<br /><br /> <xref:System.ComponentModel.Design.DesigntimeLicenseContextSerializer> クラス<br /><br /> <xref:System.ComponentModel.Design.MenuCommand> クラス<br /><br /> <xref:System.ComponentModel.Design.Serialization.ComponentSerializationService> クラス<br /><br /> <xref:System.ComponentModel.Design.Serialization.ContextStack> クラス<br /><br /> <xref:System.ComponentModel.Design.Serialization.DesignerLoader> クラス<br /><br /> <xref:System.ComponentModel.Design.Serialization.InstanceDescriptor> クラス<br /><br /> <xref:System.ComponentModel.Design.Serialization.MemberRelationshipService> クラス<br /><br /> <xref:System.ComponentModel.Design.Serialization.ResolveNameEventArgs> クラス<br /><br /> <xref:System.ComponentModel.Design.Serialization.ResolveNameEventHandler> デリゲート<br /><br /> <xref:System.ComponentModel.Design.Serialization.SerializationStore> クラス<br /><br /> <xref:System.ComponentModel.Design.ServiceContainer> クラス<br /><br /> <xref:System.ComponentModel.Design.ServiceCreatorCallback> デリゲート<br /><br /> <xref:System.ComponentModel.Design.StandardCommands> クラス<br /><br /> <xref:System.ComponentModel.Design.StandardToolWindows> クラス<br /><br /> <xref:System.ComponentModel.DoubleConverter> クラス<br /><br /> <xref:System.ComponentModel.DoWorkEventArgs> クラス<br /><br /> <xref:System.ComponentModel.DoWorkEventHandler> デリゲート<br /><br /> <xref:System.ComponentModel.EnumConverter> クラス<br /><br /> <xref:System.ComponentModel.EventDescriptor> クラス<br /><br /> <xref:System.ComponentModel.EventDescriptorCollection> クラス<br /><br /> <xref:System.ComponentModel.EventHandlerList> クラス<br /><br /> <xref:System.ComponentModel.ExpandableObjectConverter> クラス<br /><br /> <xref:System.ComponentModel.HandledEventArgs> クラス<br /><br /> <xref:System.ComponentModel.HandledEventHandler> デリゲート<br /><br /> <xref:System.ComponentModel.InstanceCreationEditor> クラス<br /><br /> <xref:System.ComponentModel.Int16Converter> クラス<br /><br /> <xref:System.ComponentModel.Int32Converter> クラス<br /><br /> <xref:System.ComponentModel.Int64Converter> クラス<br /><br /> <xref:System.ComponentModel.InvalidAsynchronousStateException> クラス<br /><br /> <xref:System.ComponentModel.InvalidEnumArgumentException> クラス<br /><br /> <xref:System.ComponentModel.ISynchronizeInvoke.BeginInvoke%2A> メソッド<br /><br /> <xref:System.ComponentModel.License> クラス<br /><br /> <xref:System.ComponentModel.LicenseContext> クラス<br /><br /> <xref:System.ComponentModel.LicenseException> クラス<br /><br /> <xref:System.ComponentModel.LicenseManager> クラス<br /><br /> <xref:System.ComponentModel.LicenseProvider> クラス<br /><br /> <xref:System.ComponentModel.LicFileLicenseProvider> クラス<br /><br /> <xref:System.ComponentModel.ListChangedEventArgs> クラス<br /><br /> <xref:System.ComponentModel.ListChangedEventHandler> デリゲート<br /><br /> <xref:System.ComponentModel.ListSortDescription> クラス<br /><br /> <xref:System.ComponentModel.ListSortDescriptionCollection> クラス<br /><br /> <xref:System.ComponentModel.MaskedTextProvider> クラス<br /><br /> <xref:System.ComponentModel.MemberDescriptor> クラス<br /><br /> <xref:System.ComponentModel.MultilineStringConverter> クラス<br /><br /> <xref:System.ComponentModel.NestedContainer> クラス<br /><br /> <xref:System.ComponentModel.NullableConverter> クラス<br /><br /> <xref:System.ComponentModel.ProgressChangedEventArgs> クラス<br /><br /> <xref:System.ComponentModel.ProgressChangedEventHandler> デリゲート<br /><br /> <xref:System.ComponentModel.PropertyChangedEventArgs> クラス<br /><br /> <xref:System.ComponentModel.PropertyChangedEventHandler> デリゲート<br /><br /> <xref:System.ComponentModel.PropertyDescriptor> クラス<br /><br /> <xref:System.ComponentModel.PropertyDescriptorCollection> クラス<br /><br /> <xref:System.ComponentModel.ReferenceConverter> クラス<br /><br /> <xref:System.ComponentModel.RefreshEventArgs> クラス<br /><br /> <xref:System.ComponentModel.RefreshEventHandler> デリゲート<br /><br /> <xref:System.ComponentModel.RunWorkerCompletedEventArgs> クラス<br /><br /> <xref:System.ComponentModel.RunWorkerCompletedEventHandler> デリゲート<br /><br /> <xref:System.ComponentModel.SByteConverter> クラス<br /><br /> <xref:System.ComponentModel.SingleConverter> クラス<br /><br /> <xref:System.ComponentModel.StringConverter> クラス<br /><br /> <xref:System.ComponentModel.SyntaxCheck> クラス<br /><br /> <xref:System.ComponentModel.TimeSpanConverter> クラス<br /><br /> <xref:System.ComponentModel.TypeConverter> クラス<br /><br /> <xref:System.ComponentModel.TypeDescriptionProvider> クラス<br /><br /> <xref:System.ComponentModel.TypeDescriptor> クラス<br /><br /> <xref:System.ComponentModel.TypeListConverter> クラス<br /><br /> <xref:System.ComponentModel.UInt16Converter> クラス<br /><br /> <xref:System.ComponentModel.UInt32Converter> クラス<br /><br /> <xref:System.ComponentModel.UInt64Converter> クラス<br /><br /> <xref:System.ComponentModel.WarningException> クラス<br /><br /> <xref:System.ComponentModel.Win32Exception> クラス|  
@@ -57,29 +62,30 @@ SQL Server ホストでマネージ コードを読み込んで実行するに�
 |`System.Web.Configuration`|<xref:System.Web.Configuration.MachineKeyValidationConverter> クラス|  
 |`System.Windows.Forms`|<xref:System.Windows.Forms.AutoCompleteStringCollection.SyncRoot%2A?displayProperty=fullName> プロパティ|  
   
-## SQL Server アクセス許可セット  
- SQL Server では、データベースに配置されるコードの信頼性要件をユーザーが指定できます。  アセンブリをデータベースにアップロードする際に、アセンブリの作成者は、そのアセンブリのアクセス許可セットとして、SAFE、EXTERNAL\-ACCESS、UNSAFE の 3 つのうちのいずれかを指定できます。  
+## <a name="sql-server-permission-sets"></a>SQL Server アクセス許可セット  
+ SQL Server では、データベースに展開されたコードの信頼性要件をユーザーは指定できます。 アセンブリがデータベースにアップロードされるとき、アセンブリの作者はそのアセンブリの 3 つのアクセス許可セット (SAFE、EXTERNAL-ACCESS、UNSAFE) のいずれかを指定できます。  
   
-|アクセス許可セット|SAFE|EXTERNAL\-ACCESS|UNSAFE|  
-|---------------|----------|----------------------|------------|  
-|コード アクセス セキュリティ|実行のみ|実行 \+ 外部リソースへのアクセス|制限なし|  
-|プログラミング モデルの制限|Yes|Yes|制限なし|  
-|検証可能性の要求|Yes|Yes|No|  
-|ネイティブ コードの呼び出し|No|No|Yes|  
+|アクセス許可セット|SAFE|EXTERNAL-ACCESS|UNSAFE|  
+|--------------------|----------|----------------------|------------|  
+|コード アクセス セキュリティ|実行のみ|実行 + 外部リソースへのアクセス|無制限|  
+|プログラミング モデルの制限|はい|はい|無制限|  
+|検証の必要性|はい|はい|いいえ|  
+|ネイティブ コードを呼び出す機能|いいえ|いいえ|はい|  
   
- SAFE は、許可されるプログラミング モデルに関連付けられている制限を持つ、最も信頼できる安全なモードです。  SAFE コードは、高い信頼性とセキュリティ機能を備えています。  SAFE アセンブリには、動作、計算の実行、およびローカル データベースへのアクセスに関して十分なアクセス許可が与えられます。  SAFE アセンブリは、検証可能という点でタイプ セーフである必要があり、アンマネージ コードを呼び出すことができません。  
+ SAFE は、許可されるプログラミング モデルに関して、制限が関連付けられた、最も信頼性があり、安全なモードです。 SAFE コードには、信頼性とセキュリティの高い機能があります。 SAFE アセンブリには、実行、計算の実行、ローカル データベースにアクセスするために十分なアクセス許可が与えられます。 SAFE アセンブリは検証可能なタイプ セーフでなければなりません。また、アンマネージ コードの呼び出しを禁止する必要があります。  
   
- EXTERNAL\-ACCESS は中間的なセキュリティ オプションであり、コードに対してデータベース外部のリソースへのアクセスを許可しますが、SAFE と同じ信頼性と安全性を備えています。  
+ EXTERNAL-ACCESS はセキュリティとして中間の選択肢であり、データベースの外にあるリソースへのアクセスをコードに許可しますが、SAFE の信頼性と安全性も備えています。  
   
- UNSAFE は、データベース管理者のみが作成できる信頼性の高いコードを対象にしています。  この信頼されたコードにはコード アクセス制限がなく、アンマネージ \(ネイティブ\) コードを呼び出すことができます。  
+ UNSAFE は信頼性が高いコードであり、データベース管理者のみが作成できます。 信頼性の高いこのコードにはコード アクセス制限がなく、アンマネージ (ネイティブ) コードを呼び出すことができます。  
   
- SQL Server では、ホスト レベルのコード アクセス セキュリティ ポリシー レイヤーを使って、SQL Server カタログに格納されているアクセス許可セットを基に 3 つのアクセス許可セットのいずれかを付与するホスト ポリシーを設定します。  データベース内部で動作するマネージ コードは、常にこれらのコード アクセス許可セットのいずれかを取得します。  
+ SQL Server はホスト レベルのコード アクセス セキュリティ ポリシー層を利用し、SQL Server カタログに保存されているアクセス許可セットに基づき、3 つのアクセス許可セットのいずれかを与えるホスト ポリシーを設定します。 マネージ コードをデータベース内で実行するとき、常に、3 つのコード アクセス許可セットのいずれかが取得されます。  
   
-## プログラミング モデルの制限  
- SQL Server におけるマネージ コードのプログラミング モデルでは、複数の呼び出しにまたがって保持される状態を使用したり、複数のユーザー セッションにまたがって状態を共有したりする必要がない関数、プロシージャ、および型が必要です。  さらに、前述したように共有状態が存在すると、アプリケーションのスケーラビリティと信頼性に影響する重大な例外が発生する可能性があります。  
+## <a name="programming-model-restrictions"></a>プログラミング モデルの制限  
+ SQL Server のマネージ コードのプログラミング モデルは、複数の呼び出しで状態を維持すること、または、複数のユーザー セッションで状態を共有することを要求しない関数、プロシージャ、型を必要とします。 また、前述のように、共有状態の存在は、アプリケーションの拡張性と信頼性に影響を与える重大な例外を引き起こす可能性があります。  
   
- これらの考慮事項により、SQL Server では、静的変数と静的データ メンバーを使用できません。  SAFE アセンブリや EXTERNAL\-ACCESS アセンブリでは、SQL Server は、CREATE ASSEMBLY の実行時にアセンブリのメタデータを調べ、静的データ メンバーや静的変数の使用が認められた場合には、これらのアセンブリを作成しません。  
+ 以上を考慮した上で、SQL Server は静的変数と静的データ メンバーの使用を禁止します。 SAFE アセンブリと EXTERNAL-ACCESS アセンブリに関しては、SQL Server は CREATE ASSEMBLY 時にアセンブリのメタデータを調べ、静的データ メンバーや静的変数の使用が見つかった場合、SAFE アセンブリまたは EXTERNAL-ACCESS アセンブリの作成に失敗します。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Security.Permissions.HostProtectionAttribute>   
  <xref:System.Security.Permissions.HostProtectionResource>
+

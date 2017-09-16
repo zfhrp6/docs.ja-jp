@@ -1,46 +1,50 @@
 ---
-title: "クライアント ソケットの使用 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "アプリケーション プロトコル、ソケット"
-  - "送信 (データの)、ソケット"
-  - "データ要求、ソケット"
-  - "要求 (インターネットからデータを)、ソケット"
-  - "受信 (データの)、ソケット"
-  - "ソケット クラス、クライアント ソケット"
-  - "プロトコル、ソケット"
-  - "インターネット、ソケット"
-  - "ソケット、クライアント ソケット"
-  - "クライアント ソケット"
+title: "クライアント ソケットの使用"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- VB
+- CSharp
+- C++
+- jsharp
+helpviewer_keywords:
+- application protocols, sockets
+- sending data, sockets
+- data requests, sockets
+- requesting data from Internet, sockets
+- receiving data, sockets
+- Socket class, client sockets
+- protocols, sockets
+- Internet, sockets
+- sockets, client sockets
+- client sockets
 ms.assetid: 81de9f59-8177-4d98-b25d-43fc32a98383
 caps.latest.revision: 12
-author: "mcleblanc"
-ms.author: "markl"
-manager: "markl"
-caps.handback.revision: 10
+author: mcleblanc
+ms.author: markl
+manager: markl
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 6d18e1f2575481522e54c6c50256418ac026dfb7
+ms.contentlocale: ja-jp
+ms.lasthandoff: 08/21/2017
+
 ---
-# クライアント ソケットの使用
-<xref:System.Net.Sockets.Socket>によって通話内容を開始する前に、アプリケーションとリモート デバイス間でデータのパイプを作成する必要があります。  そのほかのネットワーク アドレスとプロトコル ファミリがあるが、この例に示します。サービスへのリモート接続 TCP\/IP を作成する方法に。  
+# <a name="using-client-sockets"></a>クライアント ソケットの使用
+<xref:System.Net.Sockets.Socket> を使用して会話を開始するには、まずアプリケーションとリモート デバイス間にデータ パイプを作成する必要があります。 他のネットワーク アドレス ファミリとプロトコルもありますが、この例では、リモート サービスとの TCP/IP 接続を作成する方法を説明します。  
   
- TCP\/IP は、ネットワーク アドレスとサービスを識別するためにサービスのポート番号を使用します。  ネットワーク アドレスは、ネットワークの特定のデバイスを識別します; ポート番号は、関連付ける場合は、そのデバイスの特定のサービスを識別します。  ネットワーク アドレス、およびサービスのポートの組み合わせが <xref:System.Net.EndPoint> クラスが .NET Framework で使用するエンドポイントと呼ばれます。  **EndPoint** その子孫は、サポート住所ファミリに対して定義です; IP アドレス ファミリについては、クラスは、<xref:System.Net.IPEndPoint>です。  
+ TCP/IP はネットワーク アドレスとサービス ポート番号を使用して、サービスを一意に識別しています。 ネットワーク アドレスは、ネットワーク上の特定のデバイスを識別します。ポート番号は、そのデバイス上の特定のサービスの接続先を識別します。 ネットワーク アドレスとサービス ポートの組み合わせはエンドポイントと呼ばれます。.NET Framework では、エンドポイントは <xref:System.Net.EndPoint> クラスで表されます。 **EndPoint** の子孫は、サポートされるアドレス ファミリごとに定義されます。IP アドレス ファミリの場合、クラスは <xref:System.Net.IPEndPoint> です。  
   
- <xref:System.Net.Dns> クラスには、TCP\/IP インターネット サービスを使用するアプリケーションにドメインの名前でサービスを提供します。  <xref:System.Net.Dns.Resolve%2A> 方法は、数値インターネット アドレスにわかりやすいのドメイン名を host.contoso.com \(「」など\) にマップします。DNS サーバーをクエリ \(192.168.1.1\)。  **Resolve** は [IPHostEnty](frlrfsystemnetiphostentryclasstopic) を返します要求された名前の住所とエイリアスの一覧が表示されます。  ほとんどの場合、<xref:System.Net.IPHostEntry.AddressList%2A> のアレイで再び最初の住所を使用できます。  次のコードは host.contoso.com サーバーの IP アドレスを含む <xref:System.Net.IPAddress> が表示されます。  
+ <xref:System.Net.Dns> クラスは、TCP/IP インターネット サービスを使用するアプリケーションにドメインネーム サービスを提供します。 <xref:System.Net.Dns.Resolve%2A> メソッドは、ユーザー フレンドリなドメイン名 ("host.contoso.com" など) を数値のインターネット アドレス (192.168.1.1 など) にマップするクエリを DNS サーバーに送信します。 **Resolve** は、要求した名前のアドレスとエイリアスの一覧を含む <xref:System.Net.IPHostEntry> を返します。 ほとんどの場合、<xref:System.Net.IPHostEntry.AddressList%2A> 配列で返された最初のアドレスを使用できます。 次のコードでは、サーバー host.contoso.com の IP アドレスを含む <xref:System.Net.IPAddress> を取得します。  
   
 ```vb  
 Dim ipHostInfo As IPHostEntry = Dns.Resolve("host.contoso.com")  
 Dim ipAddress As IPAddress = ipHostInfo.AddressList(0)  
-  
 ```  
   
 ```csharp  
@@ -48,18 +52,17 @@ IPHostEntry ipHostInfo = Dns.Resolve("host.contoso.com");
 IPAddress ipAddress = ipHostInfo.AddressList[0];  
 ```  
   
- インター ネット住所を \(Iana\) 管理、共通のサービスのポート番号を定義します \(詳細については、www.iana.org\/assignments\/port\-numbers\) を参照してください。  他のサービス範囲は 1,024 に 65,535 のポート番号を登録できます。  次のコードはポート番号がリモート接続のエンドポイントを作成するには、host.contoso.com の IP アドレスを連結します。  
+ Internet Assigned Numbers Authority (IANA) は、一般的なサービスのポート番号を定義しています (詳細については、www.iana.org/assignments/port-numbers を参照してください)。 他のサービスが、1,024 から 65,535 の範囲内でポート番号を登録している可能性があります。 次のコードでは、host.contoso.com の IP アドレスとポート番号を組み合わせて、接続のリモート エンドポイントを作成します。  
   
 ```vb  
 Dim ipe As New IPEndPoint(ipAddress, 11000)  
-  
 ```  
   
 ```csharp  
 IPEndPoint ipe = new IPEndPoint(ipAddress,11000);  
 ```  
   
- リモート デバイスの住所を決定する、接続に使用するポートを選択するとアプリケーションはリモート デバイスを使用して接続の設定を試みることができます。  次の例では、リモート デバイスに接続して既存の **IPEndPoint** を使用して、投げられる例外をつかまえます。  
+ リモート デバイスのアドレスを決定し、接続に使用するポートを選択すると、アプリケーションはそのリモート デバイスと接続の確立を試行できるようになります。 次の例では、既存の **IPEndPoint** を使用してリモート デバイスに接続し、スローされるすべての例外をキャッチします。  
   
 ```vb  
 Try  
@@ -72,7 +75,6 @@ Catch se As SocketException
 Catch e As Exception  
     Console.WriteLine("Unexpected exception : {0}", e.ToString())  
 End Try  
-  
 ```  
   
 ```csharp  
@@ -87,8 +89,9 @@ try {
 }  
 ```  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [同期クライアント ソケットの使用](../../../docs/framework/network-programming/using-a-synchronous-client-socket.md)   
  [非同期クライアント ソケットの使用](../../../docs/framework/network-programming/using-an-asynchronous-client-socket.md)   
  [方法: ソケットを作成する](../../../docs/framework/network-programming/how-to-create-a-socket.md)   
  [ソケット](../../../docs/framework/network-programming/sockets.md)
+

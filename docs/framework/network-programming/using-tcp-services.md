@@ -1,43 +1,48 @@
 ---
-title: "TCP サービスの使用 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "要求 (インターネットからデータを)、TCP"
-  - "受信 (データを)、TCP"
-  - "TcpClient クラス、TcpClient クラスについて"
-  - "データ要求、TCP"
-  - "アプリケーション プロトコル、TCP"
-  - "ネットワーク リソース、TCP"
-  - "送信 (データを)、TCP"
-  - "TCP"
-  - "プロトコル、TCP"
-  - "インターネット、TCP"
+title: "TCP サービスの使用"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- VB
+- CSharp
+- C++
+- jsharp
+helpviewer_keywords:
+- requesting data from Internet, TCP
+- receiving data, TCP
+- TcpClient class, about TcpClient class
+- data requests, TCP
+- application protocols, TCP
+- network resources, TCP
+- sending data, TCP
+- TCP
+- protocols, TCP
+- Internet, TCP
 ms.assetid: d2811830-3bcb-495c-b82d-cda9cf919aad
 caps.latest.revision: 11
-author: "mcleblanc"
-ms.author: "markl"
-manager: "markl"
-caps.handback.revision: 9
+author: mcleblanc
+ms.author: markl
+manager: markl
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: f462e99ecc78ddd6bcf3f231f712da8b04c71850
+ms.contentlocale: ja-jp
+ms.lasthandoff: 08/21/2017
+
 ---
-# TCP サービスの使用
-<xref:System.Net.Sockets.TcpClient> のクラスが TCP を使用してインターネットのリソースのデータが必要です。  **TcpClient** 方法およびプロパティは、TCP を使用してデータを要求と入荷の <xref:System.Net.Sockets.Socket> を作成するための詳細を追加します。  デバイスへのリモート接続がストリームとして示されるため、データが技術をストリーム処理と .NET Framework 読み取られ、作成できます。  
+# <a name="using-tcp-services"></a>TCP サービスの使用
+<xref:System.Net.Sockets.TcpClient> クラスは、TCP を使用してインターネット リソースのデータを要求します。 **TcpClient** のメソッドとプロパティは、TCP を使用したデータの要求と受信用に <xref:System.Net.Sockets.Socket> を作成する詳細を抽象化します。 リモート デバイスへの接続はストリームとして表されるため、.NET Framework のストリーム処理技術を使用してデータの読み取りと書き込みを行うことができます。  
   
- 次に TCP プロトコルは、データ パケットを送受信する接続エンドポイントと使用による接続を設定します。  TCP が着荷ときにデータ パケットがエンドポイントに送信され、正しい順序で組み立てことを確認する担当者があります。  
+ TCP プロトコルは、リモート エンドポイントとの接続を確立してから、その接続を使用してデータ パケットを送受信します。 TCP は、データ パケットをエンドポイントに送信し、受信時に正しい順序で構成されるようにする処理を担当します。  
   
- TCP への接続を確立するには、必要な通信するために使用するサービスが TCP ポートはサービスをホストするネットワークのデバイスの住所がわかります。  インター ネット住所を \(Iana\) 管理、共通のサービスのポート番号を定義します \(www.iana.org\/assignments\/port\-numbers\) を参照してください。  Iana の一覧のサービスはない範囲 1,024 に 65,535 のポート番号を使用できます。  
+ TCP 接続を確立するには、必要なサービスをホストするネットワーク デバイスのアドレスを知っている必要があります。また、サービスが通信に使用する TCP ポートも知っている必要があります。 Internet Assigned Numbers Authority (IANA) は、一般的なサービスのポート番号を定義しています (www.iana.org/assignments/port-numbers を参照してください)。 IANA の一覧に掲載されていないサービスが、1,024 から 65,535 の範囲のポート番号を使用している可能性があります。  
   
- 次の例では、TCP ポート 13 でタイム サーバーに接続する **TcpClient** が設定されていることを示します。  
+ TCP ポート 13 でタイム サーバーに接続するように **TcpClient** を設定する例を次に示します。  
   
 ```vb  
 Imports System  
@@ -74,7 +79,6 @@ Public Class TcpTimeClient
         Return 0  
     End Function 'Main  
 End Class 'TcpTimeClient  
-  
 ```  
   
 ```csharp  
@@ -108,9 +112,9 @@ public class TcpTimeClient {
 }  
 ```  
   
- <xref:System.Net.Sockets.TcpListener> がクライアントへの接続を管理する着呼要求の TCP ポートを監視し、**\[ソケット\]** を **TcpClient** を作成するために使用されます。  <xref:System.Net.Sockets.TcpListener.Start%2A> 方法がリッスン有効にし、<xref:System.Net.Sockets.TcpListener.Stop%2A> 方法でポートがリッスン無効にします。  <xref:System.Net.Sockets.TcpListener.AcceptTcpClient%2A> 方法は、フォワード接続を承認し、要求を処理するために **TcpClient** を作成および <xref:System.Net.Sockets.TcpListener.AcceptSocket%2A> 方法の承認を接続を要求の処理に **\[ソケット\]** を要求し、作成します。  
+ <xref:System.Net.Sockets.TcpListener> を使用して、受信要求の TCP ポートを監視します。次に、クライアントへの接続を管理する **Socket** または **TcpClient** を作成します。 <xref:System.Net.Sockets.TcpListener.Start%2A> メソッドでリッスンが有効になり、<xref:System.Net.Sockets.TcpListener.Stop%2A> メソッドでポートのリッスンが無効になります。 <xref:System.Net.Sockets.TcpListener.AcceptTcpClient%2A> メソッドは受信接続要求を受け取り、**TcpClient** を作成して要求を処理します。<xref:System.Net.Sockets.TcpListener.AcceptSocket%2A> メソッドは受信接続要求を受け取り、**Socket** を作成して要求を処理します。  
   
- 次の例は、モニターの TCP ポート 13 に **TcpListener** を使用してネットワークのタイム サーバーを作成することを示します。  フォワード接続の要求が承認されると、タイム サーバーがホスト サーバーから現在の日時に回答します。  
+ **TcpListener** を使用して TCP ポート 13 を監視するネットワーク タイム サーバーを作成する例を次に示します。 受信接続要求が受け取られると、タイム サーバーはホスト サーバーの現在の日時で応答します。  
   
 ```vb  
 Imports System  
@@ -202,5 +206,6 @@ public class TcpTimeServer {
 }  
 ```  
   
-## 参照  
- [TCP\/UDP](../../../docs/framework/network-programming/tcp-udp.md)
+## <a name="see-also"></a>関連項目  
+ 
+
