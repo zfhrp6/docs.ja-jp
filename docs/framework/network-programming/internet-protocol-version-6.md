@@ -1,73 +1,79 @@
 ---
-title: "インターネット プロトコル バージョン 6 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "IPv6、強化"
-  - "IPv4"
-  - "IPv6"
-  - "インターネット プロトコル バージョン 6、強化"
-  - "インターネット プロトコル バージョン 6"
+title: "インターネット プロトコル バージョン 6"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- VB
+- CSharp
+- C++
+- jsharp
+helpviewer_keywords:
+- IPv6, improvements
+- IPv4
+- IPv6
+- Internet Protocol version 6, improvements
+- Internet Protocol version 6
 ms.assetid: e6fa8ebd-010a-4c48-a5ec-a5102c53c06f
 caps.latest.revision: 11
-author: "mcleblanc"
-ms.author: "markl"
-manager: "markl"
-caps.handback.revision: 11
+author: mcleblanc
+ms.author: markl
+manager: markl
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 7901084f38099d74f3bcde086342bd3c90b34348
+ms.contentlocale: ja-jp
+ms.lasthandoff: 08/21/2017
+
 ---
 # インターネット プロトコル バージョン 6
-Internet Protocol version 6 \(IPv6\) は、インターネットでのネットワーク層の標準プロトコル新しいスイートです。  IPv6、住所の枯渇、セキュリティ、自動設定、拡張性に関連してインターネット プロトコル Suite 現在のバージョンの複数の問題 \(IPv4 と呼ぶこともあります\) 決済する場合などに設計されています。  IPv6 は、新しい種類のピアツーピアおよび移動式アプリケーションを含む、アプリケーションを有効にするには、インターネット機能を展開します。  次に、期限内に IPv4 プロトコルの主な問題点です:  
+インターネット プロトコル バージョン 6 (IPv6) は、インターネットのネットワーク層の標準プロトコルの新しいスイートです。 IPv6 は、アドレスの不足、セキュリティ、自動構成、拡張性などに関して、インターネット プロトコル スイートの現在のバージョン (IPv4) が抱える多くの問題を解決するために設計されています。 IPv6 は、インターネットの機能を拡張して、ピア ツー ピア アプリケーションやモバイル アプリケーションなどの新しい種類のアプリケーションを有効にします。 現在の IPv4 プロトコルの主な問題を次に示します。  
   
--   住所領域のまとめます。枯渇。  
+-   アドレス空間の急減。  
   
-     これは、ネットワーク アドレスの訳者 \(NATs\) を使用して一つのパブリック IP アドレスにそのマップの複数の個人住所を導きました。  このメカニズムによって作成された主要な問題エンドツーエンドの接続および間接費の不足を処理します。  
+     これが、複数のプライベート アドレスを 1 つのパブリック IP アドレスにマップするネットワーク アドレス変換器 (NAT) の使用につながってきました。 このメカニズムによって生じた主な問題は、処理オーバーヘッドとエンド ツー エンドの接続の欠如です。  
   
--   階層の例の不足。  
+-   階層サポートの不足。  
   
-     固有の定義済クラスの組織では、IPv4 が true の階層にサポートを持たないされます。  偽りのネットワーク トポロジをマップする方法で IP アドレスを含めることが不可能です。  この重要な設計上の欠陥には、工順テーブルの必要性をインターネットのすべての場所で IPv4 パケットの出荷を作成します。  
+     IPv4 固有の定義済みクラス組織により、IPv4 には真の階層サポートが不足しています。 真にネットワーク トポロジをマップする方法で IP アドレスを構成することはできません。 この重大な設計上の欠陥により、IPv4 パケットをインターネット上の任意の場所に配信するために大規模なルーティング テーブルが必要となっています。  
   
--   複合ネットワークのコンフィギュレーション。  
+-   複雑なネットワーク構成。  
   
-     IPv4 によって、住所が静的に割り当てる DHCP などのコンフィギュレーションのセキュリティを使用します。  理想的な状況では、ホストは DHCP の下部組織の管理に依存必要はありません。  代わりに、ネットワークのある区分に基づいて自体をコンフィギュレーションできます。  
+     IPv4 では、アドレスを静的に、または DHCP などの構成プロトコルを使用して割り当てる必要があります。 理想的な状況では、ホストは DHCP インフラストラクチャの管理に依存する必要はありません。 代わりに、ホストが配置されているネットワーク セグメントに基づいてホスト自身で構成できます。  
   
--   ビルトインな認証および機密の不足。  
+-   組み込み認証と機密性の不足。  
   
-     IPv4 は、交換されたデータの認証または暗号化を提供するすべてのメカニズムにサポートは必要ではありません。  これは IPv6 に変更されます。  選択すると、IPv6 サポートする必要があります。  
+     IPv4 では、交換されるデータの認証または暗号化を提供する任意のメカニズムのサポートは必要ありません。 IPv6 ではこれが変わります。 インターネット プロトコル セキュリティ (IPSec) は、IPv6 のサポート要件です。  
   
- 新しいプロトコルのスイートは、次の基本条件を満たす必要があります:  
+ 新しいプロトコル スイートは、次の基本的な要件を満たす必要があります。  
   
--   間接費と、大規模な工順と住所。  
+-   大規模なルーティングと低いオーバーヘッドでのアドレス指定。  
   
--   さまざまな接続ステータスの自動設定。  
+-   さまざまな接続状況の自動構成。  
   
--   ビルトインな認証および機密。  
+-   組み込み認証と機密性。  
   
  詳細については、「[IPv6 アドレス指定](../../../docs/framework/network-programming/ipv6-addressing.md)」、「[IPv6 のルーティング](../../../docs/framework/network-programming/ipv6-routing.md)」、「[IPv6 の自動構成](../../../docs/framework/network-programming/ipv6-auto-configuration.md)」、「[IPv6 の有効化と無効化](../../../docs/framework/network-programming/enabling-and-disabling-ipv6.md)」、および「[方法: IPv6 のサポートを有効にするようにコンピューター構成ファイルを変更する](../../../docs/framework/network-programming/how-to-modify-the-computer-configuration-file-to-enable-ipv6-support.md)」を参照してください。  
   
 ## 参照  
- 次は、インターネット技術的なサービス委員会の拠点に表示できる、選択した RFC のドキュメントです \([http:\/\/www.ietf.org](http://www.ietf.org/)\) :  
+ インターネット技術標準化委員会サイト ([http://www.ietf.org](http://www.ietf.org/)) で検索できる厳選した RFC ドキュメントを次に示します。  
   
--   将来のインターネット アーキテクチャに対する 1287 RFC。  
+-   RFC 1287、Towards the Future Internet Architecture (将来のインターネットアーキテクチャに向けて)  
   
--   RFC 1454 の IP の次のバージョンの提案を比較。  
+-   RFC 1454、Comparison of Proposals for Next Version of IP (IP の次のバージョンのための提案の比較)  
   
--   RFC 2373 の IP アドレスのバージョン 6 のアーキテクチャ。  
+-   RFC 2373、IP Version 6 Addressing Architecture (IP バージョン 6 のアドレス指定アーキテクチャ)  
   
--   RFC 2374 の IPv6 の Aggregatable のグローバルなユニキャストの住所形式。  
+-   RFC 2374、An IPv6 Aggregatable Global Unicast Address Format (IPv6 の集約可能なグローバル ユニキャスト アドレス形式)  
   
- 、の [Technet の IPv6 の領域](http://go.microsoft.com/fwlink/?LinkID=179658)IPv6 関連情報を確認できます。  
+ [Technet の IPv6 分野](http://go.microsoft.com/fwlink/?LinkID=179658)でも IPv6 関連の情報を見つけることができます。  
   
-## 参照  
- [IPv6 のソケットのサンプル](http://go.microsoft.com/fwlink/?LinkID=179568)   
+## 関連項目  
+ [IPv6 ソケットのサンプル](http://go.microsoft.com/fwlink/?LinkID=179568)   
  [ネットワーク プログラミングのサンプル](../../../docs/framework/network-programming/network-programming-samples.md)   
  [ソケット](../../../docs/framework/network-programming/sockets.md)
+

@@ -1,30 +1,35 @@
 ---
-title: "非同期クライアント ソケットの例 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "非同期クライアント ソケット"
-  - "ソケット、コード例"
-  - "ソケット、非同期クライアント ソケット"
+title: "非同期クライアント ソケットの例"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- VB
+- CSharp
+- C++
+- jsharp
+helpviewer_keywords:
+- asynchronous client sockets
+- sockets, code examples
+- sockets, asynchronous client sockets
 ms.assetid: d4ac53a0-b50b-4232-9726-d47d25fcc38a
 caps.latest.revision: 8
-author: "mcleblanc"
-ms.author: "markl"
-manager: "markl"
-caps.handback.revision: 8
+author: mcleblanc
+ms.author: markl
+manager: markl
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 42ef1745942f5c91a979e352d66c111cf7e52973
+ms.contentlocale: ja-jp
+ms.lasthandoff: 08/21/2017
+
 ---
-# 非同期クライアント ソケットの例
-次の例では、サーバーに接続するクライアントを作成します。  クライアントは非同期なソケットして構築ため、サーバーが応答を戻すと、クライアント アプリケーションの実行が中断されません。  アプリケーション サーバーには、文字列を送信し、次にコンソール サーバーによって返された文字列が表示されます。  
+# <a name="asynchronous-client-socket-example"></a>非同期クライアント ソケットの例
+次のプログラム例では、サーバーに接続するクライアントを作成します。 このクライアントは非同期ソケットで構築されます。そのため、サーバーが応答を返す間にクライアント アプリケーションの実行が中断されることはありません。 このアプリケーションは文字列をサーバーに送信し、サーバーが返した文字列をコンソールに表示します。  
   
 ```vb  
 Imports System  
@@ -328,7 +333,8 @@ public class AsynchronousClient {
 }  
 ```  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [非同期サーバー ソケットの例](../../../docs/framework/network-programming/asynchronous-server-socket-example.md)   
  [同期サーバー ソケットの使用](../../../docs/framework/network-programming/using-a-synchronous-server-socket.md)   
  [ソケットのコード例](../../../docs/framework/network-programming/socket-code-examples.md)
+

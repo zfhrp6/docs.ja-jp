@@ -1,62 +1,67 @@
 ---
-title: "reentrancy MDA | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "unmanaged code, debugging"
-  - "transitioning threads unmanaged to managed code"
-  - "reentrancy MDA"
-  - "reentrancy without an orderly transition"
-  - "managed debugging assistants (MDAs), reentrancy"
-  - "illegal reentrancy"
-  - "MDAs (managed debugging assistants), reentrancy"
-  - "threading [.NET Framework], managed debugging assistants"
-  - "managed code, debugging"
-  - "native debugging, MDAs"
+title: reentrancy MDA
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- VB
+- CSharp
+- C++
+- jsharp
+helpviewer_keywords:
+- unmanaged code, debugging
+- transitioning threads unmanaged to managed code
+- reentrancy MDA
+- reentrancy without an orderly transition
+- managed debugging assistants (MDAs), reentrancy
+- illegal reentrancy
+- MDAs (managed debugging assistants), reentrancy
+- threading [.NET Framework], managed debugging assistants
+- managed code, debugging
+- native debugging, MDAs
 ms.assetid: 7240c3f3-7df8-4b03-bbf1-17cdce142d45
 caps.latest.revision: 8
-author: "mairaw"
-ms.author: "mairaw"
-manager: "wpickett"
-caps.handback.revision: 8
+author: mairaw
+ms.author: mairaw
+manager: wpickett
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: beefdb130c953c30d50d948ef9add7ad9d867e45
+ms.contentlocale: ja-jp
+ms.lasthandoff: 08/21/2017
+
 ---
-# reentrancy MDA
-`reentrancy` マネージ デバッグ アシスタント \(MDA: Managed Debugging Assistant\) は、マネージ コードからネイティブ コードへの以前の切り替えが順序正しい遷移によって行われなかった場合に、ネイティブ コードからマネージ コードへの遷移を実行しようとするとアクティブになります。  
+# <a name="reentrancy-mda"></a>reentrancy MDA
+`reentrancy` マネージ デバッグ アシスタント (MDA) は、前のマネージ コードからネイティブ コードへの切り替えが遷移順序を守って実行されなかった場合に、ネイティブ コードからマネージ コードへの遷移が試みられるとアクティブになります。  
   
-## 症状  
- ネイティブ コードからマネージ コードに遷移するときに、オブジェクト ヒープが破損したり、その他の重大なエラーが発生したりします。  
+## <a name="symptoms"></a>症状  
+ ネイティブ コードからマネージ コードに遷移するときに、オブジェクト ヒープが壊れたり、他の重大なエラーが発生しています。  
   
- ネイティブ コードとマネージ コードの間で両方向に切り替わるスレッドでは、正しい順序で遷移を実行する必要があります。  ただし、ベクトル化例外ハンドラーなど、オペレーティング システムの下位の機能拡張ポイントでは、正しい順序で遷移を実行しなくてもマネージ コードからネイティブ コードに切り替えることができます。このような切り替えは、共通言語ランタイム \(CLR\) ではなく、オペレーティング システムの制御に従います。これらの機能拡張ポイント内で実行されるネイティブ コードでは、マネージ コードへのコールバックを避ける必要があります。  
+ ネイティブ コードとマネージ コードの間でどちらかの方向に切り替えるスレッドは、適切な遷移順序を実行する必要があります。 ただし、ベクトル化例外ハンドラーなど、オペレーティング システムの特定の低レベル拡張ポイントでは、適切な遷移順序を実行しなくてもマネージ コードからネイティブ コードに切り替えることができます。  これらの切り替えは、共通言語ランタイム (CLR) の管理下ではなく、オペレーティング システムの管理下にあります。  これらの拡張ポイント内で実行されるネイティブ コードでは、マネージ コードへのコールバックを避ける必要があります。  
   
-## 原因  
- ベクトル化例外ハンドラーなどの、オペレーティング システムの下位の機能拡張ポイントが、マネージ コードの実行時にアクティブになっています。この機能拡張ポイントを介して呼び出されたアプリケーション コードが、マネージ コードへのコールバックを実行しようとしています。  
+## <a name="cause"></a>原因  
+ ベクトル化例外ハンドラーなどの低レベルのオペレーティング システム拡張ポイントは、マネージ コードの実行中にアクティブになります。  そのような拡張ポイントを介して呼び出されたアプリケーション コードが、マネージ コードにコールバックしようとしています。  
   
- この問題の原因は、常にアプリケーション コードにあります。  
+ この問題は常に、アプリケーション コードが原因で発生します。  
   
-## 解決策  
- スタック トレースを調べて、この MDA をアクティブにしているスレッドがないか確認します。そのスレッドが、マネージ コードへの無効な呼び出しを試みています。スタック トレースを調べることにより、該当する機能拡張ポイントを使用しているアプリケーション コード、この機能拡張ポイントを提供しているオペレーティング システム コード、および機能拡張ポイントによって中断されたマネージ コードが明らかになります。  
+## <a name="resolution"></a>解決策  
+ この MDA をアクティブにしたスレッドのスタック トレースを確認します。  スレッドがマネージ コードの不正な呼び出しを試みています。  スタック トレースでは、この拡張ポイントを使っているアプリケーションのコード、この拡張ポイントを提供しているオペレーティング システムのコード、および拡張ポイントによって中断されたマネージ コードが、示されているはずです。  
   
- たとえば、ベクトル化例外ハンドラーの内部からマネージ コードの呼び出しを試みると MDA がアクティブになります。スタックをチェックすると、オペレーティング システムの例外処理コードと一部のマネージ コードが、<xref:System.DivideByZeroException> や <xref:System.AccessViolationException> などの例外の原因となっていることがわかります。  
+ たとえば、ベクトル化例外ハンドラー内からのマネージ コードの呼び出しの試みによってアクティブ化された MDA が表示されます。  スタックには、オペレーティング システムの例外処理コードと、<xref:System.DivideByZeroException> や <xref:System.AccessViolationException> などの例外をトリガーするマネージ コードが表示されます。  
   
- この場合、ベクトル化例外ハンドラーをアンマネージ コードに完全に実装することが適切な解決策です。  
+ この例の正しい解決策は、アンマネージ コードでベクトル化例外ハンドラーを完全に実装することです。  
   
-## ランタイムへの影響  
- この MDA は、CLR への影響はありません。  
+## <a name="effect-on-the-runtime"></a>ランタイムへの影響  
+ この MDA は CLR に影響しません。  
   
-## 出力  
- この MDA によって、無効な再入が試みられていることが報告されます。スレッドのスタックをチェックし、この問題の原因と解決方法を判断します。  出力例を次に示します。  
+## <a name="output"></a>出力  
+ MDA は、無効な再入が試みられていることを報告します。  これが発生している理由と、問題の解決方法を確認するには、スレッドのスタックを調べます。 サンプルの出力を次に示します。  
   
 ```  
 Additional Information: Attempting to call into managed code without   
@@ -66,9 +71,9 @@ low-level native extensibility points. Managed Debugging Assistant
 ConsoleApplication1\bin\Debug\ConsoleApplication1.vshost.exe'.  
 ```  
   
-## 構成  
+## <a name="configuration"></a>構成  
   
-```  
+```xml  
 <mdaConfig>  
   <assistants>  
     <reentrancy />  
@@ -76,8 +81,8 @@ ConsoleApplication1\bin\Debug\ConsoleApplication1.vshost.exe'.
 </mdaConfig>  
 ```  
   
-## 使用例  
- 次のコード例では、<xref:System.AccessViolationException> がスローされます。この例外がスローされると、ベクター例外処理をサポートする Windows の各バージョンでは、マネージ ベクトル化例外ハンドラーが呼び出されます。`reentrancy` MDA が有効になっていると、オペレーティング システムのベクトル化例外処理サポート コードから `MyHandler` の呼び出しが試みられたときに、この MDA がアクティブになります。  
+## <a name="example"></a>例  
+ 次のコード例では、<xref:System.AccessViolationException> がスローされます。  ベクトル化例外処理をサポートする Windows のバージョンでは、これによりマネージ ベクトル化例外ハンドラーが呼び出されます。  `reentrancy` MDA が有効にされている場合、オペレーティング システムのベクトル化例外処理サポート コードから `MyHandler` の呼び出しが試みられると、MDA がアクティブになります。  
   
 ```  
 using System;  
@@ -114,5 +119,6 @@ public class Reenter
 }  
 ```  
   
-## 参照  
- [Diagnosing Errors with Managed Debugging Assistants](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)
+## <a name="see-also"></a>関連項目  
+ [マネージ デバッグ アシスタントによるエラーの診断](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)
+

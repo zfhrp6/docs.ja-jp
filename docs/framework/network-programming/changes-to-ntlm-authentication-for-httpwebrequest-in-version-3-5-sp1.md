@@ -1,66 +1,72 @@
 ---
-title: "バージョン 3.5 SP1 における HttpWebRequest の NTLM 認証への変更 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
+title: "バージョン 3.5 SP1 における HttpWebRequest の NTLM 認証への変更"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- VB
+- CSharp
+- C++
+- jsharp
 ms.assetid: 8bf0b428-5a21-4299-8d6e-bf8251fd978a
 caps.latest.revision: 8
-author: "mcleblanc"
-ms.author: "markl"
-manager: "markl"
-caps.handback.revision: 8
+author: mcleblanc
+ms.author: markl
+manager: markl
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 24abe4d2cc9a540f134ea32dbd6a44a630ff5524
+ms.contentlocale: ja-jp
+ms.lasthandoff: 08/21/2017
+
 ---
-# バージョン 3.5 SP1 における HttpWebRequest の NTLM 認証への変更
-.NET Framework Version の 3.5 SP1、後でその影響のセキュリティの変更は、統合 Windows 認証が System.Net の名前空間の <xref:System.Net.HttpWebRequest>、<xref:System.Net.HttpListener>、および関連 <xref:System.Net.Security.NegotiateStream>クラス内をどのように処理されるか。されています。  これらの変更は、Web を要求し、NTLM に基づく統合 Windows 認証が使用される応答を受け取るには、これらのクラスを使用するアプリケーションに影響を与える可能性があります。  この変更は、統合 Windows 認証を使用するようにコンフィギュレーションされているクライアント アプリケーションと Web サーバーに影響を与える可能性があります。  
+# <a name="changes-to-ntlm-authentication-for-httpwebrequest-in-version-35-sp1"></a>バージョン 3.5 SP1 における HttpWebRequest の NTLM 認証への変更
+セキュリティの変更は、System.Net 名前空間の <xref:System.Net.HttpWebRequest>、<xref:System.Net.HttpListener>、<xref:System.Net.Security.NegotiateStream>、および関連クラスによる統合 Windows 認証の処理方法に影響を与える、.NET Framework Version 3.5 SP1 以降で行われました。 これらの変更は、これらのクラスを使用して Web 要求を作成し、NTLM に基づく統合 Windows 認証が使用されている応答を受信するアプリケーションに影響を及ぼす場合があります。 この変更は、統合 Windows 認証を使用するように構成されている Web サーバーおよびクライアント アプリケーションに影響を与える可能性があります。  
   
-## 概要  
- Windows 統合認証のデザインを使用して、します。クレデンシャルの回答を普遍的にするには、には再利用したりできるようになります。  この特定のデザイン制限は、認証が必要であるプロトコル、ターゲットの特定の情報を伴う、特定の情報をまかなう必要です。  サービスは、クレデンシャルの回答をサービスプリンシパル \(SPN\) 名など、サービス別の情報を含んでいることを確認する拡張保護を提供できます。  クレデンシャル交換にこの情報を使用して、サービスは Administrators に計上する可能性があるクレデンシャルの応答悪意のある使用への対策を上書きできます。  
+## <a name="overview"></a>概要  
+ 統合 Windows 認証の設計では、一部の資格情報の応答をユニバーサルにすることを許可しています。つまり、これらを再利用または転送することができます。 この設計機能が特に必要ではない場合は、認証プロトコルで、ターゲット固有の情報とチャネル固有の情報を伝達する必要があります。 これによりサービスは拡張保護を提供して、資格情報の応答にサービス プリンシパル名 (SPN) などのサービス固有の情報が確実に含まれるようにすることができます。 資格情報の交換でこの情報を使用すると、不適切に使用されている可能性がある資格情報の応答の不適切な取得に対してサービスの保護を強化することができます。  
   
- <xref:System.Net> の複数のコンポーネントと <xref:System.Net.Security> の名前空間の名前はアプリケーションに代わって統合 Windows 認証を実行します。  このセクションでは、統合 Windows 認証内の拡張保護を追加するに System.Net のコンポーネントに対する変更について説明します。  
+ <xref:System.Net> 名前空間と <xref:System.Net.Security> 名前空間内の複数のコンポーネントは、呼び出し元のアプリケーションに代わって統合 Windows 認証を実行します。 このセクションでは、統合 Windows 認証の使用で拡張保護を追加するための System.Net コンポーネントへの変更について説明します。  
   
-## 変更  
- Windows 統合認証に使用する NTLM 認証プロセスは先のコンピュータ設定して問題、クライアント コンピュータにレシート実行する課題が含まれます。  コンピュータがそれ自身を生成した課題を受け取る場合、認証が接続がループバックの接続 \(IPv4 の住所 127.0.0.1 など\) である失敗します。  
+## <a name="changes"></a>変更  
+ 統合 Windows 認証で使用される NTLM 認証プロセスには、クライアント コンピューターに送り返される、ターゲット コンピューターによって発行されるチャレンジが含まれています。 コンピューター自体が生成したチャレンジをコンピューターが受け取った場合、接続がループ バック接続 (たとえば、IPv4 アドレス 127.0.0.1) でない限り、認証は失敗します。  
   
- 内部 Web サーバーで実行中のサービスにアクセスと http:\/\/contoso\/service または https:\/\/contoso\/service と同様に、URL を使用してサービスにアクセスするために、共通です。  名前「」contoso は、多くの場合、サービスの展開 \(コンピュータのコンピュータ名ではありません。  Active Directory、DNS、NetBIOS を使用して <xref:System.Net> および関連する名前空間の場合、ローカル コンピュータのホスト \(通常は WWINDOWS\\system32\\drivers\\etc\\hosts など\) ファイルの名前、住所にを決済する場合は、またはローカル コンピュータの lmhosts \(通常 WINDOWS\\system32\\drivers\\etc\\lmhosts など\) ファイルします。  「」contoso に送信する要求が適切なサーバー コンピューターに送信して名前「」contoso が決済されます。  
+ 内部 Web サーバー上で実行されているサービスにアクセスする場合、http://contoso/service や https://contoso/service のような URL を使用してサービスにアクセスするのが一般的です。 "contoso" という名前は、多くの場合、サービスが展開されているコンピューターの名前ではありません。 <xref:System.Net> と関連する名前空間は、名前をアドレスに解決するために、Active Directory、DNS、NetBIOS、ローカル コンピューターのホスト ファイル (通常は WINDOWS\system32\drivers\etc\hosts など)、またはローカル コンピューターの lmhosts ファイル名 (通常は WINDOWS\system32\drivers\etc\lmhosts など) の使用をサポートしています。 "contoso" という名前は、"contoso" に送信された要求が適切なサーバー コンピューターに送信されるように解決されます。  
   
- 大規模な配置用にコンフィギュレーションされたときに、そのは、クライアント アプリケーションおよびエンド ユーザーが使用する的なコンピュータの名前で設定するにつれ、単一の仮想サーバーの名前に、共通ではありません。  たとえば、「」contoso のサーバーと内部ネットワークの単に電話 www.contoso.com する場合があります。  この名前は、クライアントのヘルプのホスト要求のヘッダーと呼ばれます。  HTTP プロトコルで指定されるように、ホスト ヘッダーのフィールドは必要なリソースのインターネット ホストとポート番号を指定します。  この情報は、ユーザーが提供またはリソース \(一般に、HTTP URL\) を参照する元の URI から取得されます。  .NET Framework Version 4 で、この情報には、<xref:System.Net.HttpWebRequest.Host%2A> の新しいプロパティを使用するクライアントに設定できます。  
+ 大規模な展開用に構成されている場合、クライアント アプリケーションとエンド ユーザーが使用しない基礎のコンピューター名に単一の仮想サーバー名を展開に指定することも一般的です。 たとえば、サーバー www.contoso.com を呼び出しても、内部ネットワークは単に "contoso" を使用することがあります。 この名前は、クライアント Web 要求で Host ヘッダーと呼ばれます。 HTTP プロトコルの指定に従い、Host 要求ヘッダー フィールドは、要求されているリソースのインターネット ホストとポート番号を指定します。 この情報は、ユーザーまたは参照リソース (HTTP URL で生成されるもの) に指定された元の URI から取得されます。 .NET Framework Version 4 では、この情報は、新しい <xref:System.Net.HttpWebRequest.Host%2A> プロパティを使用して設定することもできます。  
   
- <xref:System.Net.AuthenticationManager> のクラスが <xref:System.Net.WebRequest> の派生クラスおよび的な <xref:System.Net.WebClient> クラスで使用される管理の認証のコンポーネント \(「」\) モジュールを制御します。  <xref:System.Net.AuthenticationManager> のクラスが <xref:System.Net.AuthenticationManager.CustomTargetNameDictionary%2A?displayProperty=fullName> のオブジェクトを公開する URI の文字列によって作成されるプロパティされたアプリケーションを認証時に使用される注文の SPN の文字列を提供する提供します。  
+ <xref:System.Net.AuthenticationManager> クラスは、<xref:System.Net.WebRequest> 派生クラスと <xref:System.Net.WebClient> クラスが使用するマネージ認証コンポーネント ("モジュール") を制御します。 <xref:System.Net.AuthenticationManager> クラスは、<xref:System.Net.AuthenticationManager.CustomTargetNameDictionary%2A?displayProperty=fullName> オブジェクトを公開するプロパティを提供します。このオブジェクトは、URI 文字列でインデックスが作成され、認証中に使用されるカスタム SPN 文字列をアプリケーションが提供するために使用されます。  
   
- Version 3.5 SP1 の既定では、<xref:System.Net.AuthenticationManager.CustomTargetNameDictionary%2A> プロパティが設定されていない場合、要求 URL で使用されているホスト名が NTLM \(NT LAN Manager\) 認証交換の SPN に指定されます。  要求 URL で使用されているホスト名は、クライアント要求の <xref:System.Net.HttpRequestHeader?displayProperty=fullName> に指定されている Host ヘッダーと異なる場合があります。  要求 URL で使用されているホスト名は、サーバーの実際のホスト名、サーバーのコンピューター名、コンピューターの IP アドレス、またはループバック アドレスと異なる場合があります。  このような場合は、Windows で認証要求が失敗します。  問題を処理するために、クライアント要求 \(「」contoso 使用されるホスト名がなど\) の URL で実際にローカル コンピュータの Windows 代替名であることを通知する必要があります。  
+ Version 3.5 SP1 の既定では、<xref:System.Net.AuthenticationManager.CustomTargetNameDictionary%2A> プロパティが設定されていない場合、NTLM (NT LAN マネージャー) 認証交換の SPN の要求 URL で使用されたホスト名を指定します。 要求 URL で使用されたホスト名は、クライアント要求の <xref:System.Net.HttpRequestHeader?displayProperty=fullName> に指定された Host ヘッダーとは異なる可能性があります。 要求 URL に使用されているホスト名は、サーバーの実際のホスト名、サーバーのコンピューター名、コンピューターの IP アドレス、またはループバック アドレスとは異なる可能性があります。 このような場合、Windows は認証要求に失敗します。 この問題を解決するには、クライアント要求の要求 URL に使用されているホスト名 (たとえば "contoso") が、実際はローカル コンピューターの代替名であると Windows に通知する必要があります。  
   
- この変更を行うに関してサーバー アプリケーションのいくつかの可能な方法があります。  推奨される方法は、サーバーの `BackConnectionHostNames` レジストリ キーに要求の URL で使用されるホスト名をマップします。  `BackConnectionHostNames` のレジストリ キーは、通常、ループバック住所にホスト名をマップするために使用されます。  手順は次一覧。  
+ サーバー アプリケーションがこの変更を回避するには、いくつかの方法があります。 推奨されるアプローチは、要求 URL に使用されているホスト名を、サーバーのレジストリ内の `BackConnectionHostNames` キーにマップすることです。 通常、`BackConnectionHostNames` レジストリ キーは、ホスト名をループバック アドレスにマップするために使用されます。 手順は次のとおりです。  
   
- ループバック住所にマップされ、ローカル コンピュータの Web サイトに接続できるホスト名を指定するには、次の手順に従います。:  
+ ループバック アドレスにマップされているホスト名を指定し、ローカル コンピューター上の Web サイトに接続するには、次の手順を実行します。  
   
- 1.  \[スタート\] ボタンをクリックし、\[ファイル名を指定して実行\] をクリックして「regedit」と入力し、\[OK\] をクリックします。  
+ 1. [スタート] ボタンをクリックし、[ファイル名を指定して実行] をクリックして「regedit」と入力し、[OK] をクリックします。  
   
- 2.  レジストリ エディターで、次のレジストリ キーを指定して、をクリックします:  
+ 2. レジストリ エディターで、次のレジストリ キーを探してクリックします。  
   
  `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa\MSV1_0`  
   
- 3.  MSV1\_0 を右クリックし、新しいをポイントして、を複数の文字列の値をクリックします。  
+ 3. [MSV1_0] を右クリックし、[新規作成] をポイントし、[複数行文字列値] をクリックします。  
   
- 4.  「`BackConnectionHostNames`」と入力して、Enter キーを押します。  
+ 4. 「`BackConnectionHostNames`」と入力して Enter キーを押します。  
   
- 5.  `BackConnectionHostNames`を右クリックし、変更をクリックします。  
+ 5. `BackConnectionHostNames` を右クリックし、[変更] をクリックします。  
   
- 6.  値のデータではローカル コンピュータにある入力し、OK をクリックします。入力します。、のホスト名を拠点サービス \(要求の URL で使用されるホスト名\)。  
+ 6. [値のデータ] ボックスに、サイトの 1 つまたは複数のホスト名 (要求 URL に使用されているホスト名) を入力し、[OK] をクリックします。  
   
- 7.  レジストリ エディターを従業員が退職、を IISAdmin のサービスおよび実行 IISReset を再起動します。  
+ 7. レジストリ エディターを終了し、IISAdmin サービスを再起動して、IISReset を実行します。  
   
- より、安全な作業はループバックの小切手の説明に [http:\/\/support.microsoft.com\/kb\/896861](http://go.microsoft.com/fwlink/?LinkID=179657)従って無効にすることです。  これは、反映されるの攻撃への対策を無効にします。  したがって、機械が実際に使用する予定だけに代替名のセットを強いることをお勧めします。  
+ [http://support.microsoft.com/kb/896861](http://go.microsoft.com/fwlink/?LinkID=179657) で説明されているように、あまり安全ではない回避策はループ バック チェックを無効にすることです。 これによって、リフレクション攻撃に対する保護が無効になります。 そのため、実際に使用するコンピューターと想定するコンピューターにのみ、代替名のセットを制限することをお勧めします。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Net.AuthenticationManager.CustomTargetNameDictionary%2A?displayProperty=fullName>   
  <xref:System.Net.HttpRequestHeader?displayProperty=fullName>   
  <xref:System.Net.HttpWebRequest.Host%2A?displayProperty=fullName>
+

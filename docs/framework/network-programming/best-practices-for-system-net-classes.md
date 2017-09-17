@@ -1,44 +1,50 @@
 ---
-title: "System.Net クラスのベスト プラクティス | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "データ送信、ベスト プラクティス"
-  - "要求 (インターネットからデータを)、ベスト プラクティス"
-  - "WebRequest クラス、ベスト プラクティス"
-  - "データ要求、ベスト プラクティス"
-  - "WebResponse クラス、ベスト プラクティス"
-  - "ベスト プラクティス、データ要求"
-  - "データ受信、ベスト プラクティス"
+title: "System.Net クラスのベスト プラクティス"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- VB
+- CSharp
+- C++
+- jsharp
+helpviewer_keywords:
+- sending data, best practices
+- requesting data from Internet, best practices
+- WebRequest class, best practices
+- data requests, best practices
+- WebResponse class, best practices
+- best practices, data requests
+- receiving data, best practices
 ms.assetid: 716decc6-5952-47b7-9c5a-ba6fc5698684
 caps.latest.revision: 9
-author: "mcleblanc"
-ms.author: "markl"
-manager: "markl"
-caps.handback.revision: 8
+author: mcleblanc
+ms.author: markl
+manager: markl
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 4fb997efc1ba23620cad4a63bd7fa683020a9056
+ms.contentlocale: ja-jp
+ms.lasthandoff: 08/21/2017
+
 ---
-# System.Net クラスのベスト プラクティス
-次の推奨で最適な利点に <xref:System.Net> に含まれているクラスを使用できます:  
+# <a name="best-practices-for-systemnet-classes"></a>System.Net クラスのベスト プラクティス
+次の推奨事項は、<xref:System.Net> に含まれるクラスを最大限に活用するのに役立ちます。  
   
--   子孫クラスにキャスト型の代わりに <xref:System.Net.WebRequest> 可能な場合、<xref:System.Net.WebResponse> を使用します。  **\[WebRequest\]** と **WebResponse** を使用するアプリケーションは広範なコードは必要ではありません変更、新しいインターネット プロトコルを使用できます。  
+-   派生クラスに型キャストするのではなく、可能な限り、<xref:System.Net.WebRequest> および <xref:System.Net.WebResponse> を使用します。 **WebRequest** と **WebResponse** を使用するアプリケーションでは、コードを大幅に変更せずに新しいインターネット プロトコルを利用できます。  
   
--   **\[System.Net\]** クラスを使用しているサーバーで実行 ASP.NET のアプリケーションを書き込む場合 <xref:System.Net.WebRequest.GetResponse%2A> と <xref:System.Net.WebResponse.GetResponseStream%2A>に対して非同期な方法を使用するには、通常、パフォーマンスの視点から、ほど。  
+-   **System.Net** クラスを使用するサーバー上で実行する ASP.NET アプリケーションを作成する場合、一般に、パフォーマンスを考慮して、非同期メソッドを <xref:System.Net.WebRequest.GetResponse%2A> および <xref:System.Net.WebResponse.GetResponseStream%2A> に対して使用することをお勧めします。  
   
--   開くインターネットのリソースへの接続数は、ネットワーク パフォーマンス、スループットの重要な影響することができます。  **\[System.Net\]** がホストごとのアプリケーションごとの 2 種類の接続を既定で使用されます。  自分のアプリケーションの <xref:System.Net.ServicePoint> の <xref:System.Net.ServicePoint.ConnectionLimit%2A> のプロパティの設定はホストするには、この数は、増やすことができます。  <xref:System.Net.ServicePointManager.DefaultPersistentConnectionLimit?displayProperty=fullName> のプロパティを設定すると、すべてのホストするために、この既定値を高めることができます。  
+-   インターネット リソースに対して開いている接続の数が、ネットワークのパフォーマンスやスループットに大きく影響する場合があります。 既定では、**System.Net** は、各ホストのアプリケーションごとに 2 つの接続を使用します。 アプリケーションの <xref:System.Net.ServicePoint> に <xref:System.Net.ServicePoint.ConnectionLimit%2A> プロパティを設定すると、特定のホストでこの数を増やすことができます。 <xref:System.Net.ServicePointManager.DefaultPersistentConnectionLimit?displayProperty=fullName> プロパティを設定すると、すべてのホストでこの既定値を増やすことができます。  
   
--   <xref:System.Net.Sockets.Socket>に入力する代わりに [&#91;TCPClient&#93;](frlrfsystemnetsocketstcpclientclasstopic) または [UDPClient](frlrfsystemnetsocketsudpclientclasstopic) を直接可能であれば使用するソケット レベルのセキュリティを書き込んだ場合、送信  これら二つのクラスはクライアント接続の詳細の処理に必要とせずに TCP UDP ソケットの作成をカプセル化。  
+-   ソケット レベルのプロトコルを作成する場合は、<xref:System.Net.Sockets.Socket>に直接書き込むのではなく、可能な限り、<xref:System.Net.Sockets.TcpClient> または <xref:System.Net.Sockets.UdpClient> を使用するようにしてください。 これら 2 つのクライアント クラスは TCP ソケットおよび UDP ソケットの作成をカプセル化するため、接続の詳細を処理する必要がなくなります。  
   
--   資格情報を要求するアクセスと、サービス拠点を使用して、すべての要求を供給する代わりに、資格情報のキャッシュを作成するに <xref:System.Net.CredentialCache> をクラス。  **\[CredentialCache\]** のクラスが URL に基づいて資格情報を作成および表示職責の軽減する要求を示す適切な信任状を検索するようにキャッシュが検索されます。  
+-   資格情報を必要とするサイトにアクセスする場合、要求ごとに資格情報を入力するのではなく、<xref:System.Net.CredentialCache> クラスを使用して資格情報のキャッシュを作成します。 **CredentialCache** クラスがキャッシュを検索して要求で表示する適切な資格情報を検索するため、ユーザーは URL に基づいて資格情報を作成したり、表示したりする必要がなくなります。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [.NET Framework のネットワーク プログラミング](../../../docs/framework/network-programming/index.md)
+

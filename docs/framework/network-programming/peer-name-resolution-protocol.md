@@ -1,63 +1,81 @@
 ---
-title: "Peer Name Resolution Protocol | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
+title: Peer Name Resolution Protocol
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- VB
+- CSharp
+- C++
+- jsharp
 ms.assetid: 11940511-c124-4d91-ae31-d4ed6e81ee58
 caps.latest.revision: 14
-author: "mcleblanc"
-ms.author: "markl"
-manager: "markl"
-caps.handback.revision: 14
+author: mcleblanc
+ms.author: markl
+manager: markl
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 0deccc8be5616c76f4c447c50f22544fe0fabe47
+ms.contentlocale: ja-jp
+ms.lasthandoff: 08/21/2017
+
 ---
 # Peer Name Resolution Protocol
-ID の名前またはそのほかの型のそれぞれのネットワーク上の場所 \(アドレスとポート、プロトコル\) を決済するピアツーピア環境ピアの使用、特定の名前の決済システム。  ピア以前の名前解決策は、ドメイン ネーム システム内の一時本来 \(DNS\) 接続、他の短所が複雑になります。  
+ピアツーピア環境において、ピアは特定の名前解決システムを使用して、互いのネットワーク上の場所 (アドレス、プロトコル、およびポート) をその名前や他の識別子から解決します。 これまで、ドメイン ネーム システム (DNS) でのピア名の解決は、本質的に一時的な接続やその他の不具合によって複雑化していました。  
   
- Microsoft® Windows® のピアツーピア ネットワーキングのプラットフォーム ピア決済 Protocol \(PNRP\) 名は、最初に Windows XP に対して作成され、Windows Vista の™で更新される安全で、スケーラブル、動的名前の登録と名前決済のプロトコルこの問題を解決します。  PNRP の作業アプリケーション開発者向けの還付の新しい可能性を作成する従来の名前の決済システムと非常別々に。  
+ Microsoft® Windows® ピアツーピア ネットワーク プラットフォームは、ピア名解決プロトコル (PNRP) を使用してこの問題を解決します。PNRP は、セキュリティで保護されたスケーラブルかつ動的な名前登録および名前解決プロトコルで、当初 Windows XP 用に開発され、Windows Vista™ でアップグレードされました。 PNRP は、従来の名前解決システムとは機能が大きく異なり、アプリケーション開発者にとってエキサイティングかつ新しい可能性を開拓します。  
   
- PNRP を使用すると、ピアの名前は、機械の機械、または個々のアプリケーションまたはサービス適用できます。  ピア決済の名前、住所、ポートに公開拡張積荷が含まれます。  このシステムのメリットは、フォールト トレランス、その古い住所を戻さないボトルネックと名前が含まれません;決済 プロトコル携帯電話にユーザーを検索する優秀な解決策をします。  
+ PNRP によって、コンピューターまたはコンピューター上の個々のアプリケーションやサービスにピア名を適用できます。 ピア名解決では、アドレス、ポート、拡張ペイロードの名前解決が可能です。 このシステムには、フォールト トレランスがある、ボトルネックが存在しない、古いアドレスが返されない名前解決という利点があり、そのためこのプロトコルは、モバイル ユーザーを検索するための優れたソリューションになります。  
   
- セキュリティの点で、ピアの名前は保護された \(protected\) または保証のない公開できます \(unprotected\)。  PNRP はからかうに対して安全なピアの名前を保護するために公開キーを使用してインターネット; コンピューターとサービスは、PNRP と名前を付けることができます。  
+ セキュリティに関しては、セキュリティで保護するか、セキュリティで保護せずにピア名を公開できます。 PNRP は公開キーの暗号化を使用して、セキュリティで保護されたピア名のなりすましを防止します。コンピューターとサービスの両方に PNRP で名前を付けることができます。  
   
--   ピア名決済プロトコルは、次のプロパティを表示します:  
+-   ピア名解決プロトコルには次の特性があります。  
   
--   配分するとほとんど完全に serverless。  サーバーはブートストラップ プロセスに限られます。  
+-   分散型で、ほぼすべてサーバーレス。 サーバーはブートストラップ プロセスのみに必要です。  
   
--   サード パーティの介入なしに、名前書をセキュリティ保護します。  DNS 名書とは異なり、PNRP の名前は、当座書と財務の原価を伴わないです。  
+-   第三者が関与しないセキュリティで保護された名前の公開。 DNS の名前公開とは異なり、PNRP では即時に名前を公開でき、金銭的コストがかかりません。  
   
--   古い住所の決済されないリアルタイムの PNRP の更新。  
+-   PNRP はリアルタイムで更新されるため、古いアドレスの解決が発生しません。  
   
--   PNRP での名前の解決策は、コンピュータ以外に、サービスの名前決済を許可して、拡張。  
+-   PNRP による名前の解決はコンピューター以外にも拡張でき、サービスの名前解決も可能です。  
   
-## System.Net.PeerToPeer の名前空間  
+-  
   
--   PNRP 機能は、.NET Framework Version 3.5 内の <xref:System.Net.PeerToPeer> の名前空間によって定義されます。  これは、使用可能な PNRP のサービスを使用するピアの名前を登録し、解決するために使用できる一連の型を提供します。  
+## System.Net.PeerToPeer 名前空間  
   
--   \(PNRP と注文のピアのリゾルバーは <xref:System.ServiceModel.PeerResolvers> の名前空間に表示される型を使用して作成され、インスタンスを作成できます\)。  
+-   PNRP の機能は、.NET Framework Version 3.5 内で <xref:System.Net.PeerToPeer> 名前空間によって定義されます。 この機能は、使用可能な PNRP サービスにピア名を登録して解決するために使用できる型のセットを提供します。  
   
--   次のように使用可能な PNRP のサービスを使用する名前を登録し、決済する基本的なタイプがあります:  
+-  
   
--   :<xref:System.Net.PeerToPeer.Cloud>範囲など、使用可能な PNRP のクラウドを表す情報を定義します。  
+-   (<xref:System.ServiceModel.PeerResolvers> 名前空間で提供される型を使用して、PNRP とカスタム ピア リゾルバーを作成し、インスタンス化することができます。)  
   
--   :<xref:System.Net.PeerToPeer.PeerName>クラウド内のピアを登録し、その後解決するために使用できるピアの名前を定義します。  
+-  
   
--   :<xref:System.Net.PeerToPeer.PeerNameRecord>ピアが連絡できるネットワーク エンドポイントを含む、ピアの登録情報を含む PNRP のクラウド レコードを定義します。  
+-   使用可能な PNRP サービスに名前を登録して解決するために使用する基本的な型は、次のとおりです。  
   
--   :<xref:System.Net.PeerToPeer.PeerNameRegistration>方法を含むピア名の登録プロセスを、ピアの名前の登録を開始および停止するに定義します。  
+-  
   
--   :<xref:System.Net.PeerToPeer.PeerNameResolver>決済の同期、非同期な方法をエンドポイントに含めるネットワーク ピア名を解決するためのプロセスを定義します。  
+-   <xref:System.Net.PeerToPeer.Cloud>: 使用可能な PNRP クラウドとそのスコープを説明する情報を定義します。  
   
-## 参照  
+-   <xref:System.Net.PeerToPeer.PeerName>: クラウド内でピアを登録し、その後解決するために使用できるピア名を定義します。  
+  
+-   <xref:System.Net.PeerToPeer.PeerNameRecord>: ピアの登録情報を含む、PNRP クラウド内のレコードを定義します。この情報は、ピアに接続できるネットワーク エンドポイントを含みます。  
+  
+-   <xref:System.Net.PeerToPeer.PeerNameRegistration>: ピア名の登録を開始および停止するメソッドを含む、ピア名の登録プロセスを定義します。  
+  
+-   <xref:System.Net.PeerToPeer.PeerNameResolver>: 解決の同期および非同期のメソッドなど、ピア名をネットワーク エンドポイントに解決するためのプロセスを定義します。  
+  
+-  
+  
+-  
+  
+## 関連項目  
  <xref:System.ServiceModel.PeerResolvers>   
  <xref:System.Net.PeerToPeer>   
  [ネットワーク プログラミングのサンプル](../../../docs/framework/network-programming/network-programming-samples.md)   
- [サンプルのピアツーピア技術](http://go.microsoft.com/fwlink/?LinkID=179571)
+ [PeerToPeer テクノロジのサンプル](http://go.microsoft.com/fwlink/?LinkID=179571)
+

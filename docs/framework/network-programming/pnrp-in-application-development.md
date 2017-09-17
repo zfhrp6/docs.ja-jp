@@ -1,33 +1,39 @@
 ---
-title: "アプリケーション開発での PNRP | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
+title: "アプリケーション開発での PNRP"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- VB
+- CSharp
+- C++
+- jsharp
 ms.assetid: 265615d6-4423-4b5d-8626-752e456f4f4e
 caps.latest.revision: 6
-author: "mcleblanc"
-ms.author: "markl"
-manager: "markl"
-caps.handback.revision: 6
+author: mcleblanc
+ms.author: markl
+manager: markl
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 9f20dd62b5b872b932639a10df1e1636798ba963
+ms.contentlocale: ja-jp
+ms.lasthandoff: 08/21/2017
+
 ---
-# アプリケーション開発での PNRP
-Windows Vista では、ネットワーキング アプリケーションは、単純 PNRP のアプリケーション プログラミング インターフェイス \(API\) を使用して名前の書と決済機能にアクセスできます。  
+# <a name="pnrp-in-application-development"></a>アプリケーション開発での PNRP
+Windows Vista では、ネットワーク アプリケーションは、簡単な PNRP アプリケーション プログラミング インターフェイス (API) を通して名前発行および名前解決機能にアクセスできます。  
   
-## ピア名決済プロトコルの実行  
- 簡単 PNRP API によって名前と住所を登録するには、クラウド明示的に指定されて; PNRP のコンポーネントが入力するに自動的に適切なクラウドとクラウド内の公開への住所が決まります。  
+## <a name="implementing-the-peer-name-resolution-protocol"></a>ピア名解決プロトコルの実装  
+ 簡略化された PNRP API では、名前とアドレスを登録するためにクラウドを明示的に指定することはありません。PNRP コンポーネントは、参加する適切なクラウドと、クラウド内で公開するアドレスを、自動的に決定ます。  
   
- Windows Vista の非常に簡単 PNRP 決済の名前については、PNRP の名前は getaddrinfo\(\) Windows ソケット機能に、連結されます。  IPv6 の住所に名前を決済するに PNRP を使用するには、アプリケーションは完全修飾ドメイン名 name.prnp \(FQDN\) を決済するには getaddrinfo\(\) 機能を使用できます。  名前が解決されるピア名である正味。  pnrp。  正味ドメインの名前は PNRP 決済の Windows Vista の引当ドメインです。  
+ Windows Vista の非常に簡略化された PNRP 名前解決では、Windows Sockets 関数 getaddrinfo() に PNRP 名が組み込まれています。 PNRP を使って名前を IPv6 アドレスに変換する場合、getaddrinfo() 関数を使って完全修飾ドメイン名 (FQDN) name.prnp.net を解決できます。ここで name は解決されるピア名です。 pnrp.net ドメインは、PNRP 名前解決のために Windows Vista で予約されているドメインです。  
   
- ピアツーピア アプリケーション間のメッセージ パッシングは、PeerChannel、WCF [大規模なデータおよびストリーミング](http://go.microsoft.com/fwlink/?LinkID=179652)などの基になるアーキテクチャによって行われます。  
+ PeerToPeer アプリケーション間でのメッセージの受け渡しは、依然として PeerChannel や WCF の[大規模データとストリーミング](http://go.microsoft.com/fwlink/?LinkID=179652)などの、基盤のアーキテクチャによって処理されます。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Net.PeerToPeer>
+

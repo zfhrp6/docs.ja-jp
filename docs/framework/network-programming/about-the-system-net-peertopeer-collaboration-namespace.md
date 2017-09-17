@@ -1,53 +1,59 @@
 ---
-title: "System.Net.PeerToPeer.Collaboration 名前空間について | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
+title: "System.Net.PeerToPeer.Collaboration 名前空間について"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- VB
+- CSharp
+- C++
+- jsharp
 ms.assetid: b5d8c1c1-6844-4947-9759-c7f1b564bded
 caps.latest.revision: 4
-author: "mcleblanc"
-ms.author: "markl"
-manager: "markl"
-caps.handback.revision: 4
+author: mcleblanc
+ms.author: markl
+manager: markl
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: f446e20f37a83e9effd2a378ce576640bca99763
+ms.contentlocale: ja-jp
+ms.lasthandoff: 08/21/2017
+
 ---
-# System.Net.PeerToPeer.Collaboration 名前空間について
-<xref:System.Net.PeerToPeer.Collaboration> の名前空間がピアツーピア コラボレーションの下部組織を使用してピアのコラボレーション活動を実行するために使用されるおよびクラス API を提供します。  
+# <a name="about-the-systemnetpeertopeercollaboration-namespace"></a>System.Net.PeerToPeer.Collaboration 名前空間について
+<xref:System.Net.PeerToPeer.Collaboration> 名前空間は、ピア ツー ピア共同作業インフラストラクチャを使用してピア共同作業アクティビティを実装するために使用されるクラスと API を提供します。  
   
-## クラス  
- コラボレーション ピアツーピア活動の実装に使用される主類は次のとおりです:  
+## <a name="classes"></a>クラス  
+ ピア ツー ピア共同作業アクティビティの実装に使用される主なクラスは次のとおりです。  
   
--   ピアの取引連絡先を保存するために使用できる <xref:System.Net.PeerToPeer.Collaboration.ContactManager>。  
+-   ピアの連絡先を格納するために使用できる <xref:System.Net.PeerToPeer.Collaboration.ContactManager>。  
   
--   ゲーム チャット、のクライアントまたは協議ソリューションなど、連携して動作する <xref:System.Net.PeerToPeer.Collaboration.PeerApplication>。  
+-   ゲーム、チャット クライアント、または会議ソリューションなど、共同作業を行う <xref:System.Net.PeerToPeer.Collaboration.PeerApplication>。  
   
--   活動で協力するピア。  これらの <xref:System.Net.PeerToPeer.Collaboration.PeerContact>ピアは、<xref:System.Net.PeerToPeer.Collaboration.PeerNearMe>、または <xref:System.Net.PeerToPeer.Collaboration.PeerEndPoint> の対象として表すことができます。  
+-   アクティビティで共同作業を行うピア。  これらのピアは <xref:System.Net.PeerToPeer.Collaboration.PeerContact>、<xref:System.Net.PeerToPeer.Collaboration.PeerNearMe>、または <xref:System.Net.PeerToPeer.Collaboration.PeerEndPoint> オブジェクトとして表すことができます。  
   
--   どのアプリケーションを使用できるように、どのピアは、参加するかを指定する <xref:System.Net.PeerToPeer.Collaboration.PeerCollaboration> の静的なクラス自体。  
+-   使用可能なアプリケーションと、そのアプリケーションに参加するピアを指定する、静的な <xref:System.Net.PeerToPeer.Collaboration.PeerCollaboration> クラス自体。  
   
- <xref:System.Net.PeerToPeer.Collaboration.PeerContact.Invite%2A> 方法がコラボレーション セッションにピアを依頼するために使用されます。  ピア呼び出しの信号にアプリケーションは、コラボレーションのセッションで提携するオブジェクト、プレゼンス情報を更新するイベントの別のピアに配属できます。  すべての入力がピアに割り当てるか指定するにプレゼンスのクラスが <xref:System.Net.PeerToPeer.Collaboration.Peer> がコラボレーションに使用できる、<xref:System.Net.PeerToPeer.Collaboration.PeerScope> のクラスを使用していますかどうかを指定します: <xref:System.Net.PeerToPeer.Collaboration.PeerScope> \(グローバル\)、<xref:System.Net.PeerToPeer.Collaboration.PeerScope>、\(サブネット\) または <xref:System.Net.PeerToPeer.Collaboration.PeerScope>。  
+ <xref:System.Net.PeerToPeer.Collaboration.PeerContact.Invite%2A> メソッドは、共同作業セッションにピアを招待するために使用されます。  呼び出し元のピアは、共同作業セッションに関連付けられているアプリケーション、オブジェクト、またはプレゼンス情報の更新を通知するイベントの別のピアにサブスクライブできます。 プレゼンス クラスは <xref:System.Net.PeerToPeer.Collaboration.Peer> が共同作業で使用可能かどうかを指定し、<xref:System.Net.PeerToPeer.Collaboration.PeerScope> クラスはピアに許可される参加レベルとして <xref:System.Net.PeerToPeer.Collaboration.PeerScope.Internet> (グローバル)、<xref:System.Net.PeerToPeer.Collaboration.PeerScope.NearMe> (サブネット) または <xref:System.Net.PeerToPeer.Collaboration.PeerScope.None> を指定するために使用されます。  
   
- コラボレーションのセッションは、4 種類の手順で構成されます:  
+ 共同作業セッションは、次の 4 つの手順で構成されます。  
   
--   検出。  ピア、アプリケーションやプレゼンス情報を見つけたまたは配分します。  たとえば、同じゲームをインストールする保管場所のサブネットの他の従業員を検索します。  
+-   検出。 アプリケーション、ピア、およびプレゼンス情報を検出または公開します。  たとえば、同じゲームをインストールしている、ローカル サブネット上の他のユーザーを見つけます。  
   
--   招待状。  <xref:System.Net.PeerToPeer.Collaboration.PeerCollaboration> セッションを開始、または入力するリモート ピアの安全な招待状を送信、承認します。  
+-   招待。 <xref:System.Net.PeerToPeer.Collaboration.PeerCollaboration> セッションを開始する、またはそのセッションに参加するリモート ピア (複数可) のセキュリティで保護された招待状を送信および承諾します。  
   
--   連絡先の管理。  検出された <xref:System.Net.PeerToPeer.Collaboration.ContactManager>に取引連絡先としてピアを追加します。  
+-   連絡先の管理。 <xref:System.Net.PeerToPeer.Collaboration.ContactManager> に連絡先として検出されたピアを追加します。  
   
--   通信。  通信を確立されると、<xref:System.Net> API、<xref:System.Net.PeerToPeer> API を使用すると、Windows Communication Foundation ピアのチャンネルは複数政党制通信用の分類されます。  
+-   通信。 通信が確立されたら、<xref:System.Net> API、<xref:System.Net.PeerToPeer> API、または Windows Communication Foundation のピア チャネル クラス (マルチパーティ通信用) を使用します。  
   
- たとえば、ホストのピアは、コラボレーション セッションを開始し、ホスト ピアの連絡先のマネージャに保管場所のピアのリモート ピアと 1 追加するに <xref:System.Net.PeerToPeer.Collaboration.ContactManager.CreateContact%2A> 方法を使用します。  3 人のユーザーが自分のプライベート コラボレーションのセッションに加わります。  
+ たとえば、ホスト ピアは共同作業セッションを開始し、<xref:System.Net.PeerToPeer.Collaboration.ContactManager.CreateContact%2A> メソッドを利用して、リモート ピアとそのローカル ピアのいずれかをホスト ピアの Contact Manager に追加します。  その後、3 人のユーザーは独自のプライベート共同作業セッションに参加します。  
   
- 一般的な P2P のアプリケーションは次のとおりです: 関連の注記がまたは whiteboarding の電話会議、serverless チャット、アプリケーションの対話な広告、オンライン賭博セッション。  
+ 一般的な P2P アプリケーションには、共有ノート作成機能またはホワイトボードを利用する電話会議、サーバーレスのチャット アプリケーション、双方向広告、およびオンライン ゲーム セッションなどがあります。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Net.PeerToPeer.Collaboration>
+

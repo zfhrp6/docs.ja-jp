@@ -1,35 +1,41 @@
 ---
-title: "接続のグループ化 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "インターネット、接続"
-  - "接続 [.NET Framework]、グループ化"
-  - "WebRequest クラス、接続のグループ化"
-  - "ネットワーク リソース、接続"
-  - "接続プール"
+title: "接続のグループ化"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- VB
+- CSharp
+- C++
+- jsharp
+helpviewer_keywords:
+- Internet, connections
+- connections [.NET Framework], grouping
+- WebRequest class, connection grouping
+- network resources, connections
+- connection pooling
 ms.assetid: 2ec502e8-4ba0-4c22-9410-f28eaf4eee63
 caps.latest.revision: 7
-author: "mcleblanc"
-ms.author: "markl"
-manager: "markl"
-caps.handback.revision: 7
+author: mcleblanc
+ms.author: markl
+manager: markl
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 8f16a539bb7c2bef494c7b5551e1f12bc71de60f
+ms.contentlocale: ja-jp
+ms.lasthandoff: 08/21/2017
+
 ---
-# 接続のグループ化
-接続のグループは、フォームで定義した接続プールに一つのアプリケーション内の特定の要求を関連付けます。  これは、中間層アプリケーションによってユーザーに代わって後部サーバーに要求する接続し、Kerberos など\) または独自の資格情報を提供する次の例のように中間層アプリケーションによって、委任をサポートする認証プロトコルを使用します。  たとえば、ユーザーをその支払名簿の情報を表示する内部 Web サイトとします。健一郎してください。  健一郎を認証すると、支払名簿の情報を取得するために、中間層のアプリケーション サーバーは後部サーバーに接続するに健一郎の資格情報を使用します。  次に、スーザンは、サービス拠点を参照して、自分の支払名簿情報が必要です。  中間層アプリケーションが健一郎の資格情報を使用して既にを接続しているため、後部サーバーは、健一郎の情報と回答します。  ただし、アプリケーションで作成された接続のグループにユーザー名から後部サーバーに送信される各要求を割り当てると、各ユーザー別の接続プールに属していて、別のユーザーに誤って認証情報を共有することはできません。  
+# <a name="connection-grouping"></a>接続のグループ化
+接続のグループ化では、1 つのアプリケーション内の特定の要求を定義済みの接続プールに関連付けます。 これは、ユーザーの代わりにバック エンド サーバーに接続し、デリゲートをサポートする認証プロトコル (Kerberos など) を使用する中間層アプリケーションや、以下の例のように、独自の資格情報を指定する中間層アプリケーションで必要になる場合があります。 たとえば、Joe というユーザーが、自分の給与情報を表示する内部 Web サイトにアクセスするとします。 Joe の認証後、中間層アプリケーション サーバーは、Joe の資格情報を使用してバック エンド サーバーに接続し、Joe の給与情報を取得します。 次に、Susan がサイトにアクセスし、自分の給与情報を要求します。 中間層アプリケーションが Joe の資格情報を使用して既に接続しているため、バック エンド サーバーは Joe の情報で応答します。 ただし、アプリケーションがバック エンド サーバーに送信される各要求をユーザー名から形成される接続グループに割り当てると、各ユーザーは個別の接続プールに属すことになり、誤って他のユーザーと認証情報を共有することがなくなります。  
   
- 特定の接続のグループに要求を割り当てるには、の <xref:System.Net.WebRequest> の <xref:System.Net.WebRequest.ConnectionGroupName%2A> のプロパティに要求する前に名前を割り当てる必要があります。  
+ 要求を特定の接続グループに割り当てるには、要求を行う前に、<xref:System.Net.WebRequest> の <xref:System.Net.WebRequest.ConnectionGroupName%2A> プロパティに名前を割り当てる必要があります。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [接続の管理](../../../docs/framework/network-programming/managing-connections.md)   
  [方法: グループの接続にユーザー情報を割り当てる](../../../docs/framework/network-programming/how-to-assign-user-information-to-group-connections.md)
+

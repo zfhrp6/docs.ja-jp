@@ -1,38 +1,43 @@
 ---
-title: "構造体の受け渡し | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "プラットフォーム呼び出し, 呼び出し (アンマネージ関数の)"
+title: "構造体の受け渡し"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- VB
+- CSharp
+- C++
+- jsharp
+helpviewer_keywords:
+- platform invoke, calling unmanaged functions
 ms.assetid: 9b92ac73-32b7-4e1b-862e-6d8d950cf169
 caps.latest.revision: 16
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 15
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 0e0cd4b8c76eca00ad7fbfcb03162a6705f72768
+ms.contentlocale: ja-jp
+ms.lasthandoff: 08/21/2017
+
 ---
-# 構造体の受け渡し
-多くのアンマネージ関数では、構造体のメンバー \(Visual Basic ではユーザー定義型\) またはマネージ コードで定義されたクラスのメンバーがパラメーターとして渡されることを期待しています。  プラットフォーム呼び出しを使って構造体またはクラスをアンマネージ コードに渡す場合は、元のレイアウトやアラインメントを保持するための追加情報を提供する必要があります。  このトピックでは、フォーマットされた型を定義するために使用する <xref:System.Runtime.InteropServices.StructLayoutAttribute> 属性について説明します。  マネージ構造体やマネージ クラスの場合は、**LayoutKind** 列挙型によって提供される想定されたレイアウト動作から選択できます。  
+# <a name="passing-structures"></a>構造体の受け渡し
+多くのアンマネージ関数では、構造体のメンバー (Visual Basic ではユーザー定義型) またはマネージ コードで定義されたクラスのメンバーがパラメーターとして渡されることを期待しています。 プラットフォーム呼び出しを使って構造体またはクラスをアンマネージ コードに渡す場合は、元のレイアウトやアラインメントを保持するための追加情報を提供する必要があります。 このトピックでは、フォーマットされた型を定義するために使用する <xref:System.Runtime.InteropServices.StructLayoutAttribute> 属性について説明します。 マネージ構造体やマネージ クラスの場合は、**LayoutKind** 列挙型によって提供される想定されたレイアウト動作から選択できます。  
   
- ここで説明する概念の中心は、構造体の型とクラスの型の相違点です。  構造体は値型であり、クラスは参照型です。クラスは常に最低 1 つのレベルのメモリの間接参照 \(値へのポインター\) を提供します。  アンマネージ関数は、次の表の第 1 列のシグネチャに示されているように、間接参照を必要とすることが多いため、この違いは重要です。  他の列のマネージ構造体およびマネージ クラスの宣言は、宣言でどの程度間接参照のレベルを調整できるかを示しています。  宣言は、Visual Basic および Visual C\# の両方で利用できます。  
+ ここで説明する概念の中心は、構造体の型とクラスの型の相違点です。 構造体は値型であり、クラスは参照型です。クラスは常に最低 1 つのレベルのメモリの間接参照 (値へのポインター) を提供します。 アンマネージ関数は、次の表の第 1 列のシグネチャに示されているように、間接参照を必要とすることが多いため、この違いは重要です。 他の列のマネージ構造体およびマネージ クラスの宣言は、宣言でどの程度間接参照のレベルを調整できるかを示しています。宣言は、Visual Basic と Visual C# の両方で指定されています。  
   
-|アンマネージ シグネチャ|マネージ宣言               <br /> 間接参照なし               <br />  `Structure MyType`  <br />  `struct MyType;`|マネージ宣言               <br /> 1 レベルの間接参照               <br />  `Class MyType`  <br />  `class MyType;`|  
-|------------------|-----------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------|  
-|`DoWork(MyType x);`<br /><br /> 0 レベルの間接参照を必要とします。|`DoWork(ByVal x As MyType)`  <br />  `DoWork(MyType x)`<br /><br /> 0 レベルの間接参照を追加します。|既に 1 レベルの間接参照が存在するため調整できません。|  
-|`DoWork(MyType* x);`<br /><br /> 1 レベルの間接参照を必要とします。|`DoWork(ByRef x As MyType)`  <br />  `DoWork(ref MyType x)`<br /><br /> 1 レベルの間接参照を追加します。|`DoWork(ByVal x As MyType)`  <br />  `DoWork(MyType x)`<br /><br /> 0 レベルの間接参照を追加します。|  
-|`DoWork(MyType** x);`<br /><br /> 2 レベルの間接参照を必要とします。|**ByRef** **ByRef** または `ref` `ref` を使用できないため調整できません。|`DoWork(ByRef x As MyType)`  <br />  `DoWork(ref MyType x)`<br /><br /> 1 レベルの間接参照を追加します。|  
+|アンマネージ シグネチャ|マネージ宣言 <br />間接参照なし<br />`Structure MyType`<br />`struct MyType;`|マネージ宣言 <br />1 レベルの間接参照<br />`Class MyType`<br />`class MyType;`|  
+|-------------------------|---------------------------------------------------------------------------------|--------------------------------------------------------------------------------------|  
+|`DoWork(MyType x);`<br /><br /> 0 レベルの間接参照を必要とします。|`DoWork(ByVal x As MyType)` <br /> `DoWork(MyType x)`<br /><br /> 0 レベルの間接参照を追加します。|既に 1 レベルの間接参照が存在するため調整できません。|  
+|`DoWork(MyType* x);`<br /><br /> 1 レベルの間接参照を必要とします。|`DoWork(ByRef x As MyType)` <br /> `DoWork(ref MyType x)`<br /><br /> 1 レベルの間接参照を追加します。|`DoWork(ByVal x As MyType)` <br /> `DoWork(MyType x)`<br /><br /> 0 レベルの間接参照を追加します。|  
+|`DoWork(MyType** x);`<br /><br /> 2 レベルの間接参照を必要とします。|**ByRef** **ByRef** または `ref` `ref` を使用できないため調整できません。|`DoWork(ByRef x As MyType)` <br /> `DoWork(ref MyType x)`<br /><br /> 1 レベルの間接参照を追加します。|  
   
  この表は、プラットフォーム呼び出しの宣言について次のようなガイドラインを示しています。  
   
@@ -42,8 +47,8 @@ caps.handback.revision: 15
   
 -   アンマネージ関数が 2 レベルの間接参照を必要とする場合は、参照渡しによるクラスを使用します。  
   
-## 構造体の宣言と受け渡し  
- マネージ コードで `Point` 型および `Rect` 型を定義し、これらの型を User32.dll ファイル内の **PtInRect** 関数にパラメーターとして渡す方法の例を次に示します。  **PtInRect** は、次に示すアンマネージ シグネチャを持っています。  
+## <a name="declaring-and-passing-structures"></a>構造体の宣言と受け渡し  
+ マネージ コードで `Point` 型および `Rect` 型を定義し、これらの型を User32.dll ファイル内の **PtInRect** 関数にパラメーターとして渡す方法の例を次に示します。 **PtInRect** は、次に示すアンマネージ シグネチャを持っています。  
   
 ```  
 BOOL PtInRect(const RECT *lprc, POINT pt);  
@@ -70,7 +75,6 @@ Class Win32API
     Declare Auto Function PtInRect Lib "user32.dll" _  
     (ByRef r As Rect, p As Point) As Boolean  
 End Class  
-  
 ```  
   
 ```csharp  
@@ -96,8 +100,8 @@ class Win32API {
 }  
 ```  
   
-## クラスの宣言と受け渡し  
- クラスが固定したメンバー レイアウトを持っている場合に限り、クラスのメンバーをアンマネージ DLL 関数に渡すことができます。  定義の順序で固定されている `MySystemTime` クラスのメンバーを User32.dll ファイル内の **GetSystemTime** に渡す方法の例を次に示します。  **GetSystemTime** は、次に示すアンマネージ シグネチャを持っています。  
+## <a name="declaring-and-passing-classes"></a>クラスの宣言と受け渡し  
+ クラスが固定したメンバー レイアウトを持っている場合に限り、クラスのメンバーをアンマネージ DLL 関数に渡すことができます。 定義の順序で固定されている `MySystemTime` クラスのメンバーを User32.dll ファイル内の **GetSystemTime** に渡す方法の例を次に示します。 **GetSystemTime** は、次に示すアンマネージ シグネチャを持っています。  
   
 ```  
 void GetSystemTime(SYSTEMTIME* SystemTime);  
@@ -142,7 +146,6 @@ Public Class TestPlatformInvoke
         Win32.MessageBox(IntPtr.Zero, dt, "Platform Invoke Sample", 0)        
     End Sub  
 End Class  
-  
 ```  
   
 ```csharp  
@@ -184,8 +187,9 @@ public class TestPlatformInvoke
 }  
 ```  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [DLL 関数の呼び出し](../../../docs/framework/interop/calling-a-dll-function.md)   
- [StructLayoutAttribute クラス](frlrfSystemRuntimeInteropServicesStructLayoutAttributeClassTopic)   
- [StructLayoutAttribute クラス](frlrfSystemRuntimeInteropServicesStructLayoutAttributeClassTopic)   
- [FieldOffsetAttribute クラス](frlrfSystemRuntimeInteropServicesFieldOffsetAttributeClassTopic)
+ <xref:System.Runtime.InteropServices.StructLayoutAttribute>   
+ <xref:System.Runtime.InteropServices.StructLayoutAttribute>   
+ <xref:System.Runtime.InteropServices.FieldOffsetAttribute>
+

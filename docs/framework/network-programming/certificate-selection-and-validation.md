@@ -1,67 +1,73 @@
 ---
-title: "証明書の選択と検証 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
+title: "証明書の選択と検証"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- VB
+- CSharp
+- C++
+- jsharp
 ms.assetid: c933aca2-4cd0-4ff1-9df9-267143f25a6f
 caps.latest.revision: 15
-author: "mcleblanc"
-ms.author: "markl"
-manager: "markl"
-caps.handback.revision: 15
+author: mcleblanc
+ms.author: markl
+manager: markl
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 6c926968b9cc5e5b0bf8db0c6bac88e676f45375
+ms.contentlocale: ja-jp
+ms.lasthandoff: 08/21/2017
+
 ---
-# 証明書の選択と検証
-<xref:System.Net> クラスを選択する方法がサポートされ、<xref:System.Security.Cryptography.X509Certificates> の検証するには、Secure Socket Layer \(SSL\) 接続の。  クライアントとサーバーにはなくを認証する一つ以上の証明書を選択できます。  サーバーは、クライアントに認証証明書の一つ以上の特定の属性を持つように要求することもできます。  
+# <a name="certificate-selection-and-validation"></a>証明書の選択と検証
+<xref:System.Net> クラスは、Secure Socket Layer (SSL) 接続の <xref:System.Security.Cryptography.X509Certificates> を選択および検証する方法を複数サポートしています。 クライアントは、サーバーに対する認証に 1 つまたは複数の証明書を選択できます。 サーバーは、クライアント証明書の認証に固有の属性が 1 つまたは複数あることを必須にすることができます。  
   
-## 定義  
- 証明書は公開キー \(属性、バージョン番号、シリアル番号、有効期限など\) および証明機関からのデジタル署名を含む ASCII のバイト ストリームです。  証明書の暗号化された接続を設定またはサーバーにクライアントを認証するために使用されます。  
+## <a name="definition"></a>定義  
+ 証明書は、公開キー、属性 (バージョン番号、シリアル番号、有効期限など)、および証明機関のデジタル署名を含む ASCII バイト ストリームです。 証明書は、暗号化された接続を確立するため、またはサーバーに対してクライアントを認証するために使用されます。  
   
-## クライアント証明書の選択と検証  
- クライアント接続で SSL は、特定の一つ以上の証明書を選択できます。  クライアント証明書は Web サーバーまたは SMTP メール サーバーへの接続 SSL に関連付けることができます。  クライアントが <xref:System.Security.Cryptography.X509Certificates.X509Certificate> または <xref:System.Security.Cryptography.X509Certificates.X509Certificate2> クラス オブジェクト コレクションに資格を追加します。  、例として、電子メールを使用して、証明書の集合 <xref:System.Net.Mail.SmtpClient> クラスの <xref:System.Net.Mail.SmtpClient.ClientCertificates%2A> のプロパティに関連付けられている <xref:System.Security.Cryptography.X509Certificates.X509CertificateCollection>のインスタンスです\)。  <xref:System.Net.HttpWebRequest> クラスに <xref:System.Net.HttpWebRequest.ClientCertificates%2A> の同様のプロパティがあります。  
+## <a name="client-certificate-selection-and-validation"></a>クライアント証明書の選択と検証  
+ クライアントは、特定の SSL 接続に 1 つまたは複数の証明書を選択できます。 クライアント証明書は、Web サーバーまたは SMTP メール サーバーとの SSL 接続と関連付けることができます。 クライアントは、<xref:System.Security.Cryptography.X509Certificates.X509Certificate> または <xref:System.Security.Cryptography.X509Certificates.X509Certificate2> クラス オブジェクトのコレクションに証明書を追加します。 たとえば、電子メールを使用する場合、証明書コレクションは、<xref:System.Net.Mail.SmtpClient> クラスの <xref:System.Net.Mail.SmtpClient.ClientCertificates%2A> プロパティと関連付けられた <xref:System.Security.Cryptography.X509Certificates.X509CertificateCollection> のインスタンスです。 <xref:System.Net.HttpWebRequest> クラスには類似した <xref:System.Net.HttpWebRequest.ClientCertificates%2A> プロパティがあります。  
   
- <xref:System.Security.Cryptography.X509Certificates.X509Certificate> と <xref:System.Security.Cryptography.X509Certificates.X509Certificate2> クラス間の主な違いは秘密キーが <xref:System.Security.Cryptography.X509Certificates.X509Certificate> クラスの証明書ストアに存在する必要があります。  
+ <xref:System.Security.Cryptography.X509Certificates.X509Certificate> クラスと <xref:System.Security.Cryptography.X509Certificates.X509Certificate2> クラスの主な違いは、秘密キーが <xref:System.Security.Cryptography.X509Certificates.X509Certificate> クラスの証明書ストアに存在する必要がある点です。  
   
- 証明書のグループに追加され、SSL が特定の接続に関連付けられている、証明書がサーバーにサーバーがその要求を送信する。  複数のクライアント接続証明書がに設定されている場合、最適な 1 がサーバーによって提供される証明書のフィールドの一覧とクライアント証明書のフィールドの名前との一致を考慮するアルゴリズムに基づいて使用されます。  
+ 証明書がコレクションに追加され、特定の SSL コレクションと関連付けられている場合でも、サーバーが必須としていない場合、サーバーに証明書は送信されません。 1 つの接続で複数のクライアント証明書が送信された場合、サーバーから提供された証明書発行者の一覧と、クライアント証明書の発行者名との一致を考慮したアルゴリズムに基づいて、最適な証明書が使用されます。  
   
- <xref:System.Net.Security.SslStream> のクラスが SSL のハンドシェイクの設定をさらに詳細提供します。  クライアントは、ピッキングに使用するクライアント証明書委任を指定できます。  
+ <xref:System.Net.Security.SslStream> クラスは、SSL ハンドシェイクをさらに細かく制御できます。 クライアントは、使用するクライアント証明書を選択するデリゲートを指定できます。  
   
- リモート サーバーは、クライアント、証明書が有効期限、適切な証明機関によって署名できることを確認できます。  委任は <xref:System.Net.ServicePointManager.ServerCertificateValidationCallback%2A> に証明書の検証を適用するに追加できます。  
+ リモート サーバーは、クライアント証明書が有効で最新であり、適切な証明機関が署名していることを検証できます。 デリゲートを <xref:System.Net.ServicePointManager.ServerCertificateValidationCallback%2A> に追加して、証明書の検証を行うことができます。  
   
-## クライアント証明書の選択  
- .NET Framework サーバーには次のように表示するクライアント証明書を選択します:  
+## <a name="client-certificate-selection"></a>クライアント証明書の選択  
+ .NET Framework は、次の方法でサーバーに提示するクライアント証明書を選択します。  
   
-1.  クライアント証明書がサーバーに指定された場合、証明書が最初に指定されたときにキャッシュされ、それ以降のクライアント証明書の要求に再利用されます。  
+1.  以前にクライアント証明書がサーバーに提示されていた場合、最初に提示されたときに証明書はキャッシュされ、以降のクライアント証明書要求があった場合に再利用されます。  
   
-2.  必須の場合は、選択するにはクライアント証明書として必須の結果を常に使用します。  委任が null 値を返品した証明書のコレクションが空白でない可能な月にキャッシュされた証明書を使用するとしますが、キャッシュされた匿名認証情報を使用しないでください。  
+2.  デリゲートが存在する場合は、選択するクライアント証明書として常にデリゲートの結果が使用されます。 可能な限りキャッシュされた証明書の使用を試行してください。ただし、デリゲートが null を返し、証明書コレクションが空ではない場合、キャッシュされた匿名の資格情報は使用しないでください。  
   
-3.  これがクライアント証明書の最初の課題の場合、フレームワークは <xref:System.Security.Cryptography.X509Certificates.X509Certificate> の証明書またはサーバーで提供される証明書のフィールドの一覧とクライアント証明書のフィールドの名前との一致を検索する接続に関連付けられている <xref:System.Security.Cryptography.X509Certificates.X509Certificate2> オブジェクト クラスを列挙。  一致する最初の証明書はサーバーに送信されます。  証明書が一致していないか、証明書のコレクションが空の場合、匿名信任状はサーバーに送信されます。  
+3.  これがクライアント証明書の最初のチャレンジの場合、.NET Framework は、接続に関連付けられている <xref:System.Security.Cryptography.X509Certificates.X509Certificate> または <xref:System.Security.Cryptography.X509Certificates.X509Certificate2> クラス オブジェクトの証明書を列挙し、サーバーから提供された証明書発行元の一覧と、クライアント証明書の発行元の名前との一致を検索します。 一致した最初の証明書がサーバーに送信されます。 一致する証明書がない場合、または証明書コレクションが空の場合、匿名の資格情報がサーバーに送信されます。  
   
-## 証明書のコンフィギュレーションのツール  
- いくつかのツールはクライアントとサーバー証明書の構成に使用できます。  
+## <a name="tools-for-certificate-configuration"></a>証明書構成のツール  
+ クライアントとサーバーの証明書構成には複数のツールを使用できます。  
   
- *\[Winhttpcertcfg.exe\]* のツールがクライアント証明書をコンフィギュレーションすることもできます。  *\[Winhttpcertcfg.exe\]* のツールは、Windows Server 2003 のリソース キットをツールの 1 種類として指定します。  このツールは www.microsoft.com に Windows Server 2003 のリソースのキットのツールの一部としてダウンロードとしても使用できます。  
+ *Winhttpcertcfg.exe* ツールは、クライアント証明書の構成に使用できます。 *Winhttpcertcfg.exe* ツールは、Windows Server 2003 リソース キットに付属するツールの 1 つとして提供されています。 このツールは、Windows Server 2003 リソース キット ツールの一部として www.microsoft.com からダウンロードすることもできます。  
   
- *HttpCfg.exe* のツールが <xref:System.Net.HttpListener> クラスの証明書サーバーをコンフィギュレーションすることもできます。  *\[HttpCfg.exe\]* のツールは、Windows Server 2003 および Windows XP Service Pack 2 のサポート ツールの 1 種類として入力されます。  *\[HttpCfg.exe\]* サポートなどのツールは、Windows Server 2003 または Windows XP に既定では、インストール。  Windows Server 2003。  サポート ツールは、以下のフォルダとは別に、インストール、Windows Server 2003 のファイル CD\-ROM にします:  
+ *HttpCfg.exe* ツールは、<xref:System.Net.HttpListener> クラスのサーバー証明書の構成に使用できます。 *HttpCfg.exe* ツールは、Windows Server 2003 および Windows XP Service Pack 2 のサポート ツールの 1 つとして提供されています。 *HttpCfg.exe* とその他のサポート ツールは、Windows Server 2003 または Windows XP の既定ではインストールされません。 Windows Server 2003 の場合、 サポート ツールは、Windows Server 2003 CD-ROM 上の次のフォルダーとファイルとは別にインストールされます。  
   
- \\Support\\Tools\\Suptools.msi  
+ \Support\Tools\Suptools.msi  
   
- Windows XP Service Pack 2 の使用については、Windows XP サポート ツールは www.microsoft.com からダウンロードとして使用できます。  
+ Windows XP Service Pack 2 で使用する場合、Windows XP サポート ツールは、www.microsoft.com からのダウンロードとして使用できます。  
   
- *\[HttpCfg.exe\]* ツールのバージョンのソース・コードは、Windows Server の SDK としてサンプルを指定します。  *\[HttpCfg.exe\]* のサンプルのソース・コードが次のフォルダの下の Windows SDK の一部としてネットワーキングのサンプルなど既定では、インストール:  
+ *HttpCfg.exe* ツールのバージョンのソース コードは、Windows Server SDK にサンプルとしても付属しています。 *HttpCfg.exe* サンプルのソース コードは、Windows SDK の一部としてネットワーク サンプルの既定で次のフォルダーにインストールされます。  
   
- *C:\\Program Files\\Microsoft SDKs\\Windows\\v1.0\\Samples\\NetDS\\http\\serviceconfig*  
+ *C:\Program Files\Microsoft SDKs\Windows\v1.0\Samples\NetDS\http\serviceconfig*  
   
- これらのツールに加えて、<xref:System.Security.Cryptography.X509Certificates.X509Certificate> と <xref:System.Security.Cryptography.X509Certificates.X509Certificate2> クラス、ファイル システムから証明書を読み込むする方法を提供します。  
+ これらのツールに加え、<xref:System.Security.Cryptography.X509Certificates.X509Certificate> クラスと <xref:System.Security.Cryptography.X509Certificates.X509Certificate2> クラスには、ファイル システムから証明書を読み込むメソッドがあります。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [ネットワーク プログラミングにおけるセキュリティ](../../../docs/framework/network-programming/security-in-network-programming.md)   
  [.NET Framework のネットワーク プログラミング](../../../docs/framework/network-programming/index.md)
+

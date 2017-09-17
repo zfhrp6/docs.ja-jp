@@ -1,46 +1,52 @@
 ---
-title: "PNRP クラウド | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
+title: "PNRP クラウド"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- VB
+- CSharp
+- C++
+- jsharp
 ms.assetid: a82e2bf1-62ab-4c2d-83f3-3217a6aead2e
 caps.latest.revision: 4
-author: "mcleblanc"
-ms.author: "markl"
-manager: "markl"
-caps.handback.revision: 4
+author: mcleblanc
+ms.author: markl
+manager: markl
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 17770f43d04916ae55b1b62010c8b43e0e4c95e3
+ms.contentlocale: ja-jp
+ms.lasthandoff: 08/21/2017
+
 ---
-# PNRP クラウド
-PNRP 「」クラウドは、ネットワークを通じて互いに通信できる一連のノードを表します。  " 「クラウド ピア メッシュ」および「」ピアツーピア グラフとは」、「同義です。  
+# <a name="pnrp-clouds"></a>PNRP クラウド
+PNRP "クラウド" は、ネットワーク経由で相互に通信できるノードのセットを表します。 "クラウド" という用語は、"ピア メッシュ" や "ピアツーピア グラフ" と同義です。  
   
- ノード間の通信は、異なるクラウドにまたがって行うことはできません。  <xref:System.Net.PeerToPeer.Cloud> インスタンスは、大文字と小文字が区別される名前によって一意に識別されます。  1 つのピアまたはノードを、複数のクラウドに割り当てることができます。  
+ 異なるクラウド間でノード間通信を行うことはできません。 <xref:System.Net.PeerToPeer.Cloud> インスタンスは、名前によって一意に識別されます。名前は大文字と小文字が区別されます。 1 つのピアまたはノードを、複数のクラウドに接続できます。  
   
- クラウドは、ネットワーク インターフェイスと密接な関係があります。  別々のサブネットにアタッチされた 2 枚のネットワーク カードを搭載しているマルチホーム コンピューターでは、3 つのクラウドが返されます。インターフェイスごとの各リンクローカル アドレスに対して 1 つずつのクラウドと、1 つのグローバル スコープ クラウドです。  
+ クラウドは、ネットワーク インターフェイスに非常に密接に結び付けられています。  異なるサブネットに接続された 2 つのネットワーク カードを備えるマルチホーム コンピューターでは、3 つのクラウドが返されます。1 インターフェイスにつきリンクローカル アドレスごとに 1 つ、グローバル スコープ クラウド用に 1 つです。  
   
- PNRP の使用は 3 範囲は互いに検索できるコンピュータ グループ範囲にある「」を曇らせます:  
+ PNRP は 3 つのクラウド "スコープ" を使います。スコープとは、互いに検出可能なコンピューターをグループ化したものです。  
   
--   グローバルなクラウドは、グローバルな IPv6 の住所の範囲とグローバル アドレスに対応し、全体の IPv6 のインターネットすべてのコンピュータを表します。  単一のグローバルなクラウドだけです。  
+-   グローバル クラウドはグローバル IPv6 アドレス スコープとグローバル アドレスに対応し、IPv6 インターネット全体のすべてのコンピューターを表しています。 グローバル クラウドは 1 つしか存在しません。  
   
--   ローカルのリンク クラウド リンクはローカルの IPv6 の住所の範囲とリンク ローカルの住所に対応します。  ローカルのリンク クラウドは、ローカルに関連付けられているサブネットとして通常同じである特定のリンクではです。  複数のローカルのリンク クラウドがあります。  
+-   リンクローカル クラウドは、リンクローカル IPv6 アドレス スコープとリンクローカル アドレスに対応します。 リンクローカル クラウドは特定のリンクに使います。このリンクは通常、ローカルにアタッチされているサブネットに相当します。 リンクローカル クラウドは複数存在できます。  
   
- 3 番目のクラウド、サービス拠点特定のクラウドは、サービスの拠点 IPv6 の住所の範囲とサービス拠点ローカルの住所に対応します。  このクラウドは、PNRP でサポートされているが、非難されています。  
+ 3 番目のクラウドであるサイト固有クラウドは、IPv6 アドレス スコープとサイトローカル アドレスに対応します。 サイト固有クラウドは古いクラウドですが、PNRP ではまだサポートされています。  
   
-## クラウド  
- PNRP のクラウドは <xref:System.Net.PeerToPeer.Cloud> クラスのインスタンスで表されます。  クラウド グループは <xref:System.Net.PeerToPeer.CloudCollection> の enumerable クラスのインスタンスを表しますピアを使用します。  期限内なピアにわかる <xref:System.Net.PeerToPeer.Cloud.GetAvailableClouds%2A> の静的な方法を呼び出し、PNRP のクラウドの集合取得できます。  
+## <a name="clouds"></a>クラウド  
+ PNRP クラウドは、<xref:System.Net.PeerToPeer.Cloud> クラスのインスタンスで表されます。 ピアを使うクラウドのグループは、列挙可能な <xref:System.Net.PeerToPeer.CloudCollection> クラスのインスタンスによって表されます。 現在のピアに認識される PNRP クラウドのコレクションは、静的 <xref:System.Net.PeerToPeer.Cloud.GetAvailableClouds%2A> メソッドを呼び出すことによって取得できます。  
   
- 個々のクラウドに 256 文字は Unicode の文字列として表示される一意の名前があります。  これらの名前は、前の範囲とともに、クラウド クラスの固有インスタンスの製造に使用されます。  キューブのインスタンスは耐久性がある使用する XML され、再構築することができます。  
+ 個々のクラウドには、256 文字の Unicode 文字列として表される一意の名前があります。 これらの名前および上記のスコープは、クラウド クラスの一意のインスタンスを作成するために使われます。 これらのインスタンスは、永続的な使用のためにシリアル化および再構築できます。  
   
- 一度クラウドのインスタンスが作成されます既知のピアのメッシュを作成する場合は、または派生、ピアの名前は、に登録できます。  
+ クラウド インスタンスを作成または取得した後は、それにピア名を登録して、既知のピアのメッシュを作成できます。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Net.PeerToPeer.Cloud>   
- [Peer Name Resolution Protocol](../../../docs/framework/network-programming/peer-name-resolution-protocol.md)
+ [ピア名解決プロトコル](../../../docs/framework/network-programming/peer-name-resolution-protocol.md)
+

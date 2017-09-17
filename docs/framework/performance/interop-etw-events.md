@@ -1,26 +1,31 @@
 ---
-title: "相互運用 ETW イベント | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "ETW, 相互運用イベント (CLR)"
-  - "相互運用イベント [.NET Framework]"
+title: "相互運用 ETW イベント"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- interop events [.NET Framework]
+- ETW, interop events (CLR)
 ms.assetid: eb6eac2e-45f4-4923-a32c-38f203da66df
 caps.latest.revision: 8
-author: "mairaw"
-ms.author: "mairaw"
-manager: "wpickett"
-caps.handback.revision: 8
+author: mairaw
+ms.author: mairaw
+manager: wpickett
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 55097e38161ea5c76f4e46584241344ec5a52cb9
+ms.contentlocale: ja-jp
+ms.lasthandoff: 08/21/2017
+
 ---
-# 相互運用 ETW イベント
-<a name="top"></a> 相互運用イベントは、Microsoft intermediate language \(MSIL\) のスタブ生成とキャッシュに関する情報をキャプチャします。  
+# <a name="interop-etw-events"></a>相互運用 ETW イベント
+<a name="top"></a> 相互運用イベントは、Microsoft intermediate language (MSIL) のスタブ生成とキャッシュに関する情報をキャプチャします。  
   
  このカテゴリは、次のイベントで構成されます。  
   
@@ -29,26 +34,26 @@ caps.handback.revision: 8
 -   [ILStubCacheHit イベント](#ilstubcachehit_event)  
   
 <a name="ilstubgenerated_event"></a>   
-## ILStubGenerated イベント  
- 次の表に、キーワードとレベルを示します。 \(詳細については、「[CLR ETW キーワードおよびレベル](../../../docs/framework/performance/clr-etw-keywords-and-levels.md)」を参照してください\)。  
+## <a name="ilstubgenerated-event"></a>ILStubGenerated イベント  
+ 次の表に、キーワードとレベルを示します。 (詳細については、「 [CLR ETW Keywords and Levels](../../../docs/framework/performance/clr-etw-keywords-and-levels.md)」を参照してください)。  
   
 |イベントを発生させるキーワード|レベル|  
-|---------------------|---------|  
-|`InteropKeyword` \(0x2000\)|情報通知 \(4\)|  
+|-----------------------------------|-----------|  
+|`InteropKeyword` (0x2000)|情報通知 (4)|  
   
  次の表に、イベント情報を示します。  
   
 |イベント|イベント ID|いつ発生するか|  
-|----------|-------------|-------------|  
+|-----------|--------------|-----------------|  
 |`ILStubGenerated`|88|MSIL スタブが生成された。|  
   
  次の表に、イベント データを示します。  
   
 |フィールド名|データ型|説明|  
-|------------|----------|--------|  
+|----------------|---------------|-----------------|  
 |ModuleID|win:UInt16|モジュールの識別子。|  
 |StubMethodID|win:UInt64|スタブのメソッド識別子。|  
-|StubFlags|win:UInt64|スタブのフラグ:<br /><br /> 0x1 \- 逆方向の相互運用。<br /><br /> 0x2 \- COM 相互運用。<br /><br /> 0x4 \- NGen.exe で生成されたスタブ。<br /><br /> 0x8 \- デリゲート。<br /><br /> 0x10 \- 可変個引数。<br /><br /> 0x20 \- アンマネージ呼び出し先。|  
+|StubFlags|win:UInt64|スタブのフラグ:<br /><br /> 0x1 - 逆方向の相互運用。<br /><br /> 0x2 - COM 相互運用。<br /><br /> 0x4 - NGen.exe で生成されたスタブ。<br /><br /> 0x8 - デリゲート。<br /><br /> 0x10 - 可変個引数。<br /><br /> 0x20 - アンマネージ呼び出し先。|  
 |ManagedInteropMethodToken|win:UInt32|マネージ相互運用メソッドのトークンです。|  
 |ManagedInteropMethodNameSpace|win:UnicodeString|マネージ相互運用メソッドの名前空間。|  
 |ManagedInteropMethodName|win:UnicodeString|マネージ相互運用メソッドの名前。|  
@@ -61,23 +66,23 @@ caps.handback.revision: 8
  [ページのトップへ](#top)  
   
 <a name="ilstubcachehit_event"></a>   
-## ILStubCacheHit イベント  
+## <a name="ilstubcachehit-event"></a>ILStubCacheHit イベント  
  次の表に、キーワードとレベルを示します。  
   
 |イベントを発生させるキーワード|レベル|  
-|---------------------|---------|  
-|`InteropKeyword` \(0x2000\)|情報通知 \(4\)|  
+|-----------------------------------|-----------|  
+|`InteropKeyword` (0x2000)|情報通知 (4)|  
   
  次の表に、イベント情報を示します。  
   
 |イベント|イベント ID|いつ発生するか|  
-|----------|-------------|-------------|  
+|-----------|--------------|-----------------|  
 |`ILStubCacheHit`|89|MSIL のキャッシュにアクセスがあった。|  
   
  次の表に、イベント データを示します。  
   
 |フィールド名|データ型|説明|  
-|------------|----------|--------|  
+|----------------|---------------|-----------------|  
 |ModuleID|win:UInt16|モジュールの識別子。|  
 |StubMethodID|win:UInt64|スタブのメソッド識別子。|  
 |ManagedInteropMethodToken|win:UInt32|マネージ相互運用メソッドのトークンです。|  
@@ -88,5 +93,6 @@ caps.handback.revision: 8
   
  [ページのトップへ](#top)  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [CLR ETW イベント](../../../docs/framework/performance/clr-etw-events.md)
+
