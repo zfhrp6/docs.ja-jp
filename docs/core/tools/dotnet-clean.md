@@ -1,32 +1,40 @@
 ---
-title: "dotnet-clean コマンド - .NET Core CLI"
-description: "dotnet-clean コマンドは現在のディレクトリを消去します。"
-keywords: "dotnet-clean, CLI, CLI コマンド, .NET Core"
-author: blackdwarf
+title: "dotnet clean コマンド - .NET Core CLI"
+description: "dotnet clean コマンドは現在のディレクトリを消去します。"
+author: mairaw
 ms.author: mairaw
-ms.date: 03/15/2017
+ms.date: 08/13/2017
 ms.topic: article
 ms.prod: .net-core
 ms.technology: dotnet-cli
-ms.devlang: dotnet
-ms.assetid: eff65fa1-bab4-4421-8260-d0a284b690b2
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 10222781d5bff596d1b7883bc73097758e878235
+ms.sourcegitcommit: a19ab54a6cc44bd7acd1e40a4ca94da52bf14297
+ms.openlocfilehash: 4836f07ec1a8b59c343b4d0181587e602f61d45e
 ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
+ms.lasthandoff: 08/14/2017
 
 ---
-
 # <a name="dotnet-clean"></a>dotnet-clean
+
+[!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
 
 ## <a name="name"></a>名前
 
-`dotnet-clean` - プロジェクトの出力を消去します。 
+`dotnet clean` - プロジェクトの出力を消去します。
 
 ## <a name="synopsis"></a>構文
 
-`dotnet clean [<PROJECT>] [-o|--output] [-f|--framework] [-c|--configuration] [-v|--verbosity] [-h|--help]`
+# <a name="net-core-2xtabnetcore2x"></a>[.NET Core 2.x](#tab/netcore2x)
+```
+dotnet clean [<PROJECT>] [-c|--configuration] [-f|--framework] [-o|--output] [-r|--runtime] [-v|--verbosity]
+dotnet clean [-h|--help]
+```
+# <a name="net-core-1xtabnetcore1x"></a>[.NET Core 1.x](#tab/netcore1x)
+```
+dotnet clean [<PROJECT>] [-c|--configuration] [-f|--framework] [-o|--output] [-v|--verbosity]
+dotnet clean [-h|--help]
+```
+---
 
 ## <a name="description"></a>説明
 
@@ -40,6 +48,16 @@ ms.lasthandoff: 07/28/2017
 
 ## <a name="options"></a>オプション
 
+# <a name="net-core-2xtabnetcore2x"></a>[.NET Core 2.x](#tab/netcore2x)
+
+`-c|--configuration {Debug|Release}`
+
+ビルド構成を定義します。 既定値は `Debug` です。 このオプションは、ビルド時に指定した場合にのみ、消去時にも必要です。
+
+`-f|--framework <FRAMEWORK>`
+
+ビルド時に指定された[フレームワーク](../../standard/frameworks.md)です。 フレームワークは、[プロジェクト ファイル](csproj.md)で定義する必要があります。 ビルド時にフレームワークを指定した場合は、消去時にフレームワークを指定する必要があります。
+
 `-h|--help`
 
 コマンドの短いヘルプを印刷します。
@@ -48,17 +66,37 @@ ms.lasthandoff: 07/28/2017
 
 ビルド出力が配置されたディレクトリです。 プロジェクトのビルド時にフレームワークを指定した場合、出力ディレクトリ スイッチと共に `-f|--framework <FRAMEWORK>` スイッチを指定します。
 
-`-f|--framework <FRAMEWORK>`
+`-r|--runtime <RUNTIME_IDENTIFIER>`
 
-ビルド時に指定された[フレームワーク](../../standard/frameworks.md)です。 フレームワークは、[プロジェクト ファイル](csproj.md)で定義する必要があります。 ビルド時にフレームワークを指定した場合は、消去時にフレームワークを指定する必要があります。
-
-`-c|--configuration <CONFIGURATION>`
-
-構成を定義します。 省略した場合は、既定で `Debug` に設定されます。 このプロパティは、ビルド時に指定した場合にのみ、消去時にも必要です。
+指定したランタイムの出力フォルダーをクリーンアップします。 これは、[自己完結型の展開](../deploying/index.md#self-contained-deployments-scd)が作成された場合に使用されます。
 
 `-v|--verbosity <LEVEL>`
 
 コマンドの詳細レベルを設定します。 指定できるレベルは、q[uiet]、m[inimal]、n[ormal]、d[etailed]、diag[nostic] です。
+
+# <a name="net-core-1xtabnetcore1x"></a>[.NET Core 1.x](#tab/netcore1x)
+
+`-c|--configuration {Debug|Release}`
+
+ビルド構成を定義します。 既定値は `Debug` です。 このオプションは、ビルド時に指定した場合にのみ、消去時にも必要です。
+
+`-f|--framework <FRAMEWORK>`
+
+ビルド時に指定された[フレームワーク](../../standard/frameworks.md)です。 フレームワークは、[プロジェクト ファイル](csproj.md)で定義する必要があります。 ビルド時にフレームワークを指定した場合は、消去時にフレームワークを指定する必要があります。
+
+`-h|--help`
+
+コマンドの短いヘルプを印刷します。
+
+`-o|--output <OUTPUT_DIRECTORY>`
+
+ビルド出力が配置されたディレクトリです。 プロジェクトのビルド時にフレームワークを指定した場合、出力ディレクトリ スイッチと共に `-f|--framework <FRAMEWORK>` スイッチを指定します。
+
+`-v|--verbosity <LEVEL>`
+
+コマンドの詳細レベルを設定します。 指定できるレベルは、q[uiet]、m[inimal]、n[ormal]、d[etailed]、diag[nostic] です。
+
+---
 
 ## <a name="examples"></a>例
 

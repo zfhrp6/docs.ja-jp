@@ -1,24 +1,22 @@
 ---
-title: "dotnet-sln コマンド - .NET Core CLI"
+title: "dotnet sln コマンド - .NET Core CLI"
 description: "dotnet-sln コマンドは、ソリューション ファイルでプロジェクトを追加、削除、一覧表示するための便利なオプションを提供します。"
-keywords: "dotnet-sln, CLI, CLI コマンド, .NET Core"
-author: spboyer
+author: mairaw
 ms.author: mairaw
-ms.date: 04/11/2017
+ms.date: 08/14/2017
 ms.topic: article
 ms.prod: .net-core
 ms.technology: dotnet-cli
-ms.devlang: dotnet
-ms.assetid: e5a72d3e-c14b-4b0a-a978-c5e54a0988c6
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 606929fbcafddf47abf5da6d3c8ce97d5af06909
+ms.sourcegitcommit: a19ab54a6cc44bd7acd1e40a4ca94da52bf14297
+ms.openlocfilehash: 5071cb80be0fb14829a0fdffd0f5a2d2371b6ba8
 ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
+ms.lasthandoff: 08/14/2017
 
 ---
+# <a name="dotnet-sln"></a>dotnet sln
 
-# <a name="dotnet-sln"></a>dotnet-sln
+[!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
 
 ## <a name="name"></a>名前
 
@@ -94,4 +92,3 @@ glob パターンを使用して、C# ソリューションに複数のプロジ
 glob パターンを使用して、C# ソリューションから複数のプロジェクトを削除する:
 
 `dotnet sln todo.sln remove **/*.csproj`
-

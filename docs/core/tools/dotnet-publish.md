@@ -1,79 +1,152 @@
 ---
-title: "dotnet-publish コマンド - .NET Core CLI"
-description: "dotnet-publish コマンドは、.NET Core プロジェクトをディレクトリに発行します。"
+title: "dotnet publish コマンド - .NET Core CLI"
+description: "dotnet publish コマンドは、.NET Core プロジェクトをディレクトリに発行します。"
 keywords: "dotnet-publish, CLI, CLI コマンド, .NET Core"
 author: blackdwarf
 ms.author: mairaw
-ms.date: 03/15/2017
+ms.date: 08/12/2017
 ms.topic: article
 ms.prod: .net-core
 ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: f2ef275a-7c5e-430a-8c30-65f52af62771
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: a8a37b1eacab13682d4f4a2bea2f9ea248cdd9eb
+ms.sourcegitcommit: a19ab54a6cc44bd7acd1e40a4ca94da52bf14297
+ms.openlocfilehash: db6e527a6132be0b6362c68945bb68884f5ad619
 ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
+ms.lasthandoff: 08/14/2017
 
 ---
+# <a name="dotnet-publish"></a>dotnet publish
 
-# <a name="dotnet-publish"></a>dotnet-publish
+[!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
 
 ## <a name="name"></a>名前
 
-`dotnet-publish` - ホスティング システムへの展開のため、アプリケーションとその依存関係をフォルダーにパックします。
+`dotnet publish` - ホスティング システムへの展開のため、アプリケーションとその依存関係をフォルダーにパックします。
 
 ## <a name="synopsis"></a>構文
 
-`dotnet publish [<PROJECT>] [-f|--framework] [-r|--runtime] [-o|--output] [-c|--configuration] [--version-suffix] [-v|--verbosity] [-h|--help]`
+# <a name="net-core-2xtabnetcore2x"></a>[.NET Core 2.x](#tab/netcore2x)
+
+```
+dotnet publish [<PROJECT>] [-c|--configuration] [-f|--framework] [--force] [--manifest] [no-dependencies] [--no-restore] [-o|--output] [-r|--runtime] [--self-contained] [-v|--verbosity] [--version-suffix]
+dotnet publish [-h|--help]
+```
+
+# <a name="net-core-1xtabnetcore1x"></a>[.NET Core 1.x](#tab/netcore1x)
+
+```
+dotnet publish [<PROJECT>] [-c|--configuration] [-f|--framework] [-o|--output] [-r|--runtime] [-v|--verbosity] [--version-suffix]
+dotnet publish [-h|--help]
+```
+
+---
 
 ## <a name="description"></a>説明
 
 `dotnet publish` はアプリケーションをコンパイルし、プロジェクト ファイルに指定されたその依存関係を読み取り、結果のファイル セットをディレクトリに発行します。 出力の内容は次のとおりです。
 
-* アセンブリの中間言語 (IL) コード (拡張子 `*.dll`)。
-* *\*.deps.json* ファイル。プロジェクトのすべての依存関係が含まれます。
-* *\*.runtime.config.json* ファイル。アプリケーションが想定する共有ランタイムと、ランタイムの他の構成オプション (ガベージ コレクションの種類など) を指定します。
+* アセンブリの中間言語 (IL) コード (*dll* 拡張子)。
+* *.deps.json* ファイル。プロジェクトのすべての依存関係が含まれます。
+* *.runtime.config.json* ファイル。アプリケーションが想定する共有ランタイムと、ランタイムの他の構成オプション (ガベージ コレクションの種類など) を指定します。
 * アプリケーションの依存関係。 これらは NuGet キャッシュから出力フォルダーにコピーされます。
 
 `dotnet publish` コマンドの出力は、ホスティング システム (サーバー、PC、Mac、ラップトップなど) に展開して実行できる状態になっており、展開用にアプリケーションを準備するための正式にサポートされる唯一の方法です。 プロジェクトに指定されている展開の種類によっては、ホスティング システムに .NET Core 共有ランタイムがインストールされている場合とされていない場合があります。 詳しくは、「[.NET Core アプリケーション展開](../deploying/index.md)」をご覧ください。 発行されるアプリケーションのディレクトリ構造については、「[Directory structure](/aspnet/core/hosting/directory-structure)」 (ディレクトリ構造) をご覧ください。
 
 ## <a name="arguments"></a>引数
 
-`PROJECT` 
+`PROJECT`
 
-発行するプロジェクトです。指定されていない場合は、既定で現在のディレクトリに設定されます。 
+発行するプロジェクトです。指定されていない場合は、既定で現在のディレクトリに設定されます。
 
 ## <a name="options"></a>オプション
 
-`-h|--help`
+# <a name="net-core-2xtabnetcore2x"></a>[.NET Core 2.x](#tab/netcore2x)
 
-コマンドの短いヘルプを印刷します。  
+`-c|--configuration {Debug|Release}`
+
+ビルド構成を定義します。 既定値は `Debug` です。
 
 `-f|--framework <FRAMEWORK>`
 
 指定した[ターゲット フレームワーク](../../standard/frameworks.md)のアプリケーションを発行します。 ターゲット フレームワークはプロジェクト ファイルで指定する必要があります。
 
-`-r|--runtime <RUNTIME_IDENTIFIER>`
+`--force`
 
-指定されたランタイムのアプリケーションを発行します。 これは、[自己完結型の展開 (SCD)](../deploying/index.md#self-contained-deployments-scd) を作成するときに使われます。 ランタイム ID (RID) の一覧については、[RID カタログ](../rid-catalog.md)に関するページをご覧ください。 既定では、[フレームワークに依存する展開 (FDD)](../deploying/index.md#framework-dependent-deployments-fdd) が発行されます。
+最後の復元が成功した場合でも、すべての依存関係が強制的に解決されます。 これは、*project.assets.json* ファイルを削除する処理に相当します。
+
+`-h|--help`
+
+コマンドの短いヘルプを印刷します。
+
+`--manifest <PATH_TO_MANIFEST_FILE>`
+
+アプリによって公開された一連のパッケージをトリミングするために使用する[ターゲット マニフェスト](../deploying/runtime-store.md)を 1 つまたは複数指定します。 マニフェスト ファイルは、[`dotnet store` コマンド](dotnet-store.md)の出力の一部です。 複数のマニフェストを指定するには、マニフェストごとに `--manifest` を追加します。 このオプションは、.NET Core 2.0 SDK 以降で使用できます。
+
+`--no-dependencies`
+
+プロジェクト間参照を無視し、ルート プロジェクトのみを復元します。
+
+`--no-restore`
+
+コマンドを実行するときに、暗黙的な復元を実行しません。
 
 `-o|--output <OUTPUT_DIRECTORY>`
 
 出力ディレクトリのパスを指定します。 指定しないと、既定で、フレームワークに依存する展開の場合は *./bin/[configuration]/[framework]/* に、自己完結型の展開の場合は *./bin/[configuration]/[framework]/[runtime]* に設定されます。
 
-`-c|--configuration <CONFIGURATION>`
+`--self-contained`
 
-プロジェクトのビルド時に使用する構成です。 既定値は `Debug` です。
+アプリケーションと一緒に .NET Core ランタイムを発行します。これにより、ランタイムをターゲット コンピューターにインストールする必要がなくなります。 ランタイム識別子を指定した場合、その既定値は `true` となります。 さまざまな展開方法の詳細については、[「.NET Core アプリケーションの展開」](../deploying/index.md)を参照してください。
+
+`-r|--runtime <RUNTIME_IDENTIFIER>`
+
+指定されたランタイムのアプリケーションを発行します。 これは、[自己完結型の展開 (SCD)](../deploying/index.md#self-contained-deployments-scd) を作成するときに使われます。 ランタイム ID (RID) の一覧については、[RID カタログ](../rid-catalog.md)に関するページをご覧ください。 既定では、[フレームワークに依存する展開 (FDD)](../deploying/index.md#framework-dependent-deployments-fdd) が発行されます。
+
+`-v|--verbosity <LEVEL>`
+
+コマンドの詳細レベルを設定します。 指定できる値は、`q[uiet]`、`m[inimal]`、`n[ormal]`、`d[etailed]`、および `diag[nostic]` です。
 
 `--version-suffix <VERSION_SUFFIX>`
 
 プロジェクト ファイルのバージョン フィールドでアスタリスク (`*`) を置き換えるバージョン サフィックスを定義します。
 
+# <a name="net-core-1xtabnetcore1x"></a>[.NET Core 1.x](#tab/netcore1x)
+
+`-c|--configuration {Debug|Release}`
+
+ビルド構成を定義します。 既定値は `Debug` です。
+
+`-f|--framework <FRAMEWORK>`
+
+指定した[ターゲット フレームワーク](../../standard/frameworks.md)のアプリケーションを発行します。 ターゲット フレームワークはプロジェクト ファイルで指定する必要があります。
+
+`-h|--help`
+
+コマンドの短いヘルプを印刷します。
+
+`--manifest <PATH_TO_MANIFEST_FILE>`
+
+アプリによって公開された一連のパッケージをトリミングするために使用する[ターゲット マニフェスト](../deploying/runtime-store.md)を 1 つまたは複数指定します。 マニフェスト ファイルは、[`dotnet store` コマンド](dotnet-store.md)の出力の一部です。 複数のマニフェストを指定するには、マニフェストごとに `--manifest` を追加します。 このオプションは、.NET Core 2.0 SDK 以降で使用できます。
+
+`-o|--output <OUTPUT_DIRECTORY>`
+
+出力ディレクトリのパスを指定します。 指定しないと、既定で、フレームワークに依存する展開の場合は *./bin/[configuration]/[framework]/* に、自己完結型の展開の場合は *./bin/[configuration]/[framework]/[runtime]* に設定されます。
+
+`-r|--runtime <RUNTIME_IDENTIFIER>`
+
+指定されたランタイムのアプリケーションを発行します。 これは、[自己完結型の展開 (SCD)](../deploying/index.md#self-contained-deployments-scd) を作成するときに使われます。 ランタイム ID (RID) の一覧については、[RID カタログ](../rid-catalog.md)に関するページをご覧ください。 既定では、[フレームワークに依存する展開 (FDD)](../deploying/index.md#framework-dependent-deployments-fdd) が発行されます。
+
 `-v|--verbosity <LEVEL>`
 
 コマンドの詳細レベルを設定します。 指定できる値は、`q[uiet]`、`m[inimal]`、`n[ormal]`、`d[etailed]`、および `diag[nostic]` です。
+
+`--version-suffix <VERSION_SUFFIX>`
+
+プロジェクト ファイルのバージョン フィールドでアスタリスク (`*`) を置き換えるバージョン サフィックスを定義します。
+
+---
 
 ## <a name="examples"></a>例
 
