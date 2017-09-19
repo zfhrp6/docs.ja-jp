@@ -31,7 +31,7 @@ ms.translationtype: HT
 ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
 ms.openlocfilehash: 18a19fe34b8ec13bd9fc6d25335d0931a22ce4a3
 ms.contentlocale: ja-jp
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 09/19/2017
 
 ---
 # <a name="how-to-catch-a-non-cls-exception"></a>方法 : CLS 準拠でない例外をキャッチする
