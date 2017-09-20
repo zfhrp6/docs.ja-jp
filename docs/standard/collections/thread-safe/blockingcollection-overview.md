@@ -19,7 +19,7 @@ ms.translationtype: HT
 ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
 ms.openlocfilehash: 10e59c246914c17c4a0803de52cf891b2e0d3a3f
 ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
+ms.lasthandoff: 09/19/2017
 
 ---
 # <a name="blockingcollection-overview"></a>BlockingCollection の概要
@@ -50,7 +50,8 @@ ms.lasthandoff: 07/28/2017
   
  コレクションには、複数のスレッドやタスクが同時に項目を追加できます。コレクションが指定された最大容量に達すると、producer スレッドは項目が削除されるまでブロックします。 複数の cosumer が同時に項目を削除できます。コレクションが空になった場合、consumer スレッドは、producer が項目を追加するまでブロックします。 producer スレッドでは、それ以上項目が追加されないことを示すために、<xref:System.Collections.Concurrent.BlockingCollection%601.CompleteAdding%2A> を呼び出すことができます。 consumer では、<xref:System.Collections.Concurrent.BlockingCollection%601.IsCompleted%2A> プロパティを監視して、コレクションが空になったときや、それ以上の項目は追加されないことになったときを把握できます。 次の例は、容量の上限が 100 に設定された単純な BlockingCollection を示しています。 いくつかの外部条件が true である間、producer タスクはコレクションに項目を追加し、<xref:System.Collections.Concurrent.BlockingCollection%601.CompleteAdding%2A> を呼び出します。 consumer タスクは、<xref:System.Collections.Concurrent.BlockingCollection%601.IsCompleted%2A> プロパティが true になるまで項目を取得します。  
   
- [!code-csharp[CDS_BlockingCollection#04](../../../../samples/snippets/csharp/VS_Snippets_Misc/cds_blockingcollection/cs/blockingcollection.cs#04)] [!code-vb[CDS_BlockingCollection#04](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/cds_blockingcollection/vb/introsnippetsbc.vb#04)]  
+ [!code-csharp[CDS_BlockingCollection#04](../../../../samples/snippets/csharp/VS_Snippets_Misc/cds_blockingcollection/cs/blockingcollection.cs#04)]
+ [!code-vb[CDS_BlockingCollection#04](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/cds_blockingcollection/vb/introsnippetsbc.vb#04)]  
   
  コード例全体については、「[方法: BlockingCollection の項目を個別に追加および取得する](../../../../docs/standard/collections/thread-safe/how-to-add-and-take-items.md)」を参照してください。  
   
@@ -60,7 +61,8 @@ ms.lasthandoff: 07/28/2017
 ## <a name="cancelling-add-and-take-operations"></a>追加操作と取得操作の取り消し  
  追加操作と取得操作は、通常、ループ内で実行されます。 <xref:System.Collections.Concurrent.BlockingCollection%601.TryAdd%2A> メソッドまたは <xref:System.Collections.Concurrent.BlockingCollection%601.TryTake%2A> メソッドに <xref:System.Threading.CancellationToken> を渡し、各イテレーションでトークンの <xref:System.Threading.CancellationToken.IsCancellationRequested%2A> プロパティの値を確認するようにすると、ループを取り消すことができます。 値が true である場合は、キャンセル要求に応答するかどうかを決定できます。応答するには、リソースをクリーンアップし、ループを終了します。 次の例は、キャンセル トークンを受け取る <xref:System.Collections.Concurrent.BlockingCollection%601.TryAdd%2A> のオーバーロードと、それを使用するコードを示しています。  
   
- [!code-csharp[CDS_BlockingCollection#05](../../../../samples/snippets/csharp/VS_Snippets_Misc/cds_blockingcollection/cs/blockingcollection.cs#05)] [!code-vb[CDS_BlockingCollection#05](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/cds_blockingcollection/vb/introsnippetsbc.vb#05)]  
+ [!code-csharp[CDS_BlockingCollection#05](../../../../samples/snippets/csharp/VS_Snippets_Misc/cds_blockingcollection/cs/blockingcollection.cs#05)]
+ [!code-vb[CDS_BlockingCollection#05](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/cds_blockingcollection/vb/introsnippetsbc.vb#05)]  
   
  キャンセル サポートの追加方法の例については、「[方法: BlockingCollection の項目を個別に追加および取得する](../../../../docs/standard/collections/thread-safe/how-to-add-and-take-items.md)」の 2 番目の例を参照してください。  
   
