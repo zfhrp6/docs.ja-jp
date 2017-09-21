@@ -1,33 +1,38 @@
 ---
-title: "バージョン 2.0 での System.Uri 名前空間の変更 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
+title: "バージョン 2.0 での System.Uri 名前空間の変更"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- VB
+- CSharp
+- C++
+- jsharp
 ms.assetid: 35883fe9-2d09-4d8b-80ca-cf23a941e459
 caps.latest.revision: 9
-author: "mcleblanc"
-ms.author: "markl"
-manager: "markl"
-caps.handback.revision: 9
+author: mcleblanc
+ms.author: markl
+manager: markl
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 7ce81e348b3e5de285a3517d70b8bc477198d3e4
+ms.contentlocale: ja-jp
+ms.lasthandoff: 08/21/2017
+
 ---
-# バージョン 2.0 での System.Uri 名前空間の変更
-<xref:System.Uri?displayProperty=fullName> クラスに複数の変更が行われています。  これらの変更は、間違った態度、拡張有用性およびセキュリティを強化フィックス。  
+# <a name="changes-to-the-systemuri-namespace-in-version-20"></a>バージョン 2.0 での System.Uri 名前空間の変更
+<xref:System.Uri?displayProperty=fullName> クラスには、いくつかの変更が加えられました。 これらの変更は、不適切な動作を修正し、利便性とセキュリティを強化するものです。  
   
-## 古いおよび使用されていないメンバ  
- :コンストラクター  
+## <a name="obsolete-and-deprecated-members"></a>廃止および非推奨になったメンバー  
+ コンストラクター:  
   
--   `dontEscape`パラメータがあるすべてのコンストラクター。  
+-   `dontEscape` パラメーターを持つすべてのコンストラクター。  
   
- 方法:  
+ メソッド:  
   
 -   <xref:System.Uri.CheckSecurity%2A>  
   
@@ -45,39 +50,40 @@ caps.handback.revision: 9
   
 -   <xref:System.Uri.EscapeString%2A>  
   
-## 変更  
+## <a name="changes"></a>変更  
   
--   クエリの品目が ftp ファイル \(、など\) に慣れているない URI の設定「または" 行が、<xref:System.Uri.Query%2A> の一部の先頭に常に脱出し、には考慮されません。  
+-   クエリ部分 (ファイル、FTP など) がないとわかっている URI スキーマの場合、'?' 文字は常にエスケープされ、<xref:System.Uri.Query%2A> 部分の先頭とは見なされません。  
   
--   暗黙ファイルの URI \("C:\\directory\\file@name.txt"\) の、フラグメント文字 \('\#'\) は完全に unescaping 要求するまたは <xref:System.Uri.LocalPath%2A> です `true`常にします脱出 。  
+-   暗黙的なファイル URI の場合 ("c:\directory\file@name.txt" の形式)、完全なエスケープ解除が要求されている場合、または <xref:System.Uri.LocalPath%2A> が `true` の場合を除き、フラグメント文字 ('#') は常にエスケープされます。  
   
--   ホストネーム UNC のサポートが削除されました。; 国際ホストネームを表すための IDN の仕様は採用されました。  
+-   UNC ホスト名のサポートは削除されました。国際対応のホスト名を表す IDN 仕様が採用されました。  
   
--   <xref:System.Uri.LocalPath%2A> は完全に unescaped 文字列を常に返します。  
+-   <xref:System.Uri.LocalPath%2A> は、常に完全にエスケープされていない文字列を返します。  
   
--   <xref:System.Uri.ToString%2A> するには脱出「」、「unescape か。」、「\#」文字。  
+-   <xref:System.Uri.ToString%2A> は、エスケープされた '%'、'?'、または '#' 文字のエスケープを解除しません。  
   
--   <xref:System.Uri.Equals%2A> は平等の小切手と終了 <xref:System.Uri.Query%2A> の一部が含まれます。  
+-   <xref:System.Uri.Equals%2A> には、等価性チェックの <xref:System.Uri.Query%2A> 部分が含まれるようになりました。  
   
--   オペレータ「」および「\! \=\=\=」上書きされ、<xref:System.Uri.Equals%2A> 方法をにリンク。  
+-   演算子 "==" と "!=" はオーバーライドされ、<xref:System.Uri.Equals%2A> メソッドにリンクされます。  
   
--   <xref:System.Uri.IsLoopback%2A> は、一貫した結果を少し異なります。  
+-   <xref:System.Uri.IsLoopback%2A> から、一貫性のある結果が生成されるようになりました。  
   
--   `file:///path`URI 「file:\/\/path」」と「に、変換されません。  
+-   URI "`file:///path`" は、"file://path" に変換されなくなりました。  
   
--   」終了「&#124; ホスト名のターミネーターとして認識されます。  つまり、「http:\/\/consoto.com\#fragment」http:\/\/contoso.com\/\#fragment」と「に変換されます。  
+-   "#" は、ホスト名終端文字として認識されるようになりました。 つまり、"http://consoto.com#fragment" は "http://contoso.com/#fragment" に変換されるようになりました。  
   
--   基準を URI 片と組み合わせるフィックスときにバグ。  
+-   基本 URI とフラグメントを結合するときのバグが修正されました。  
   
--   <xref:System.Uri.HostNameType%2A> のバグはフィックス。  
+-   <xref:System.Uri.HostNameType%2A> のバグが修正されました。  
   
--   分析する NNTP のバグはフィックス。  
+-   NNTP 解析のバグが修正されました。  
   
--   フォームの URI HTTP:contoso.com は、分析の例外を投げます。  
+-   HTTP:contoso.com という形式 URI では、解説例外をスローされるようになりました。  
   
--   フレームワークが正しく URI の userinfo を処理します。  
+-   .NET Framework は、URI のユーザー情報を正しく処理します。  
   
--   URI のパス圧縮は URI の内訳がルート上のファイル システムをスキャンするようにフィックス。  
+-   URI パスの圧縮は、破損した URI がルートを越えてファイル システムを通過しないように修正されました。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Uri?displayProperty=fullName>
+

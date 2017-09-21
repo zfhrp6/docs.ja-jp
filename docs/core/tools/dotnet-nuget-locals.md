@@ -1,28 +1,26 @@
 ---
-title: "dotnet-nuget-locals コマンド - .NET Core CLI"
-description: "dotnet-nuget-locals コマンドは、HTTP 要求キャッシュ、一時的なキャッシュ、コンピューター全体のグローバル パッケージ フォルダーなどのローカルの NuGet リソースをクリアまたは一覧表示します。"
-keywords: "dotnet-nuget-locals, CLI, CLI コマンド, .NET Core"
+title: "dotnet nuget locals コマンド - .NET Core CLI"
+description: "dotnet nuget locals コマンドは、HTTP 要求キャッシュ、一時的なキャッシュ、コンピューター全体のグローバル パッケージ フォルダーなどのローカルの NuGet リソースをクリアまたは一覧表示します。"
 author: karann-msft
 ms.author: mairaw
-ms.date: 03/15/2017
+ms.date: 08/14/2017
 ms.topic: article
 ms.prod: .net-core
 ms.technology: dotnet-cli
-ms.devlang: dotnet
-ms.assetid: 8440229e-317e-4dc1-9463-cba5fdb12c3b
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 2c9ea7b3b7c61b347cb7c56254773290f04a0cd6
+ms.sourcegitcommit: a19ab54a6cc44bd7acd1e40a4ca94da52bf14297
+ms.openlocfilehash: 2b66198ac3e33c640abda0c96fb05944f5ea91df
 ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
+ms.lasthandoff: 08/14/2017
 
 ---
+# <a name="dotnet-nuget-locals"></a>dotnet nuget locals
 
-# <a name="dotnet-nuget-locals"></a>dotnet-nuget locals
+[!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
 
 ## <a name="name"></a>名前
 
-`dotnet-nuget locals` - ローカル NuGet リソースをクリアまたはリストします。 
+`dotnet nuget locals` - ローカル NuGet リソースをクリアまたはリストします。
 
 ## <a name="synopsis"></a>構文
 
@@ -38,27 +36,16 @@ ms.lasthandoff: 07/28/2017
 
 次のいずれかの値です。
 
-`all`
-
-指定された操作をすべてのキャッシュの種類 (HTTP 要求キャッシュ、グローバル パッケージ キャッシュ、一時的なキャッシュ) に適用することを指定します。
-
-`http-cache`
-
-指定した操作を HTTP 要求キャッシュのみに適用することを指定します。 その他のキャッシュの場所には影響しません。
-
-`global-packages`
-
-指定した操作をグローバル パッケージ キャッシュのみに適用することを指定します。 その他のキャッシュの場所には影響しません。
-
-`temp`
-
-指定した操作を一時キャッシュのみに適用することを指定します。 その他のキャッシュの場所には影響しません。
+* `all` - 指定された操作をすべてのキャッシュの種類 (HTTP 要求キャッシュ、グローバル パッケージ キャッシュ、一時的なキャッシュ) に適用することを指定します。
+* `http-cache` - 指定した操作を HTTP 要求キャッシュのみに適用することを指定します。 その他のキャッシュの場所には影響しません。
+* `global-packages` - 指定した操作をグローバル パッケージ キャッシュのみに適用することを指定します。 その他のキャッシュの場所には影響しません。
+* `temp` - 指定した操作を一時キャッシュのみに適用することを指定します。 その他のキャッシュの場所には影響しません。
 
 ## <a name="options"></a>オプション
 
 `-h|--help`
 
-コマンドの短いヘルプを印刷します。  
+コマンドの短いヘルプを印刷します。
 
 `-c|--clear`
 
@@ -97,4 +84,3 @@ ms.lasthandoff: 07/28/2017
 ## <a name="troubleshooting"></a>トラブルシューティング
 
 `dotnet nuget locals` コマンドを使うときの一般的な問題やエラーについては、「[Managing the NuGet cache](/nuget/consume-packages/managing-the-nuget-cache)」 (NuGet キャッシュを管理する) をご覧ください。
-

@@ -1,62 +1,67 @@
 ---
-title: "invalidCERCall MDA | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "invalid CER calls"
-  - "InvalidCERCall MDA"
-  - "MDAs (managed debugging assistants), CER calls"
-  - "constrained execution regions"
-  - "CER calls"
-  - "managed debugging assistants (MDAs), CER calls"
+title: invalidCERCall MDA
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- VB
+- CSharp
+- C++
+- jsharp
+helpviewer_keywords:
+- invalid CER calls
+- InvalidCERCall MDA
+- MDAs (managed debugging assistants), CER calls
+- constrained execution regions
+- CER calls
+- managed debugging assistants (MDAs), CER calls
 ms.assetid: c4577410-602e-44e5-9dab-fea7c55bcdfe
 caps.latest.revision: 14
-author: "mairaw"
-ms.author: "mairaw"
-manager: "wpickett"
-caps.handback.revision: 14
+author: mairaw
+ms.author: mairaw
+manager: wpickett
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 8fda91296ffb27a7661f8e9c5ea4bc664e570ce8
+ms.contentlocale: ja-jp
+ms.lasthandoff: 08/21/2017
+
 ---
-# invalidCERCall MDA
-`invalidCERCall` マネージ デバッグ アシスタント \(MDA: Managed Debugging Assistant\) は、信頼性のコントラクトを持たないメソッド、または極度に脆弱なコントラクトを持つメソッドへの呼び出しが、制約された実行領域 \(CER: Constrained Execution Region\) グラフ内で行われたときにアクティブになります。  脆弱なコントラクトとは、最悪の場合の状態破損が、呼び出しに渡されるインスタンスよりもスコープが大きいこと、つまり、<xref:System.AppDomain> やプロセスの状態が破損すること、または CER 内で呼び出されたときに呼び出し結果が常に確定的に計算できるとは限らないことを宣言するコントラクトです。  
+# <a name="invalidcercall-mda"></a>invalidCERCall MDA
+`invalidCERCall` マネージ デバッグ アシスタント (MDA) は、制約された実行領域 (CER) グラフ内で信頼契約がないかまたは過度に脆弱な契約を持つメソッドの呼び出しがある場合に、アクティブ化されます。 脆弱な契約とは、最悪のケースの状態の破損が、呼び出しに渡されるインスタンスよりも大きい範囲であることを宣言する契約です。つまり、<xref:System.AppDomain> またはプロセスの状態が破損するか、または CER 内で呼び出されたときにその結果を常に確定的に計算できるとは限りません。  
   
-## 症状  
- CER でのコードの実行時に予想外の結果が生じます。  症状は限定されていません。  症状としては、信頼性の低いメソッドへの呼び出し時に予想外の <xref:System.OutOfMemoryException> や <xref:System.Threading.ThreadAbortException> などの例外が発生する可能性があります。これは、ランタイムが、事前にその呼び出しを準備していなかったり、実行時に <xref:System.Threading.ThreadAbortException> 例外から保護していなかったりするためです。  より大きな脅威は、実行時にメソッドから生じる例外により、<xref:System.AppDomain> やプロセスが不安定な状態になる可能性があることです。これは、CER の目的とは正反対です。  CER の作成目的は、このような状態破損を回避することだからです。  破損状態の症状は、一貫した状態の定義がアプリケーションによって異なるため、それぞれのアプリケーションに固有です。  
+## <a name="symptoms"></a>症状  
+ CER でコードを実行するときの予期しない結果。 この現象は固有ではありません。 ランタイムがメソッドを事前に準備しないか、実行時に <xref:System.Threading.ThreadAbortException> 例外から保護しないため、信頼できないメソッドの呼び出し時に予期しない <xref:System.OutOfMemoryException>、<xref:System.Threading.ThreadAbortException>、または他の例外が発生する可能性があります。 より大きな脅威は、実行時にメソッドから結果として発生する例外が <xref:System.AppDomain> またはプロセスを CER の目的とは反対の不安定な状態にする可能性があることです。 CER が作成される理由は、このような状態の破損を避けるためです。 一貫性のある状態の定義がアプリケーション間で異なるために、破損状態の現象はアプリケーションに固有です。  
   
-## 原因  
- CER 内のコードが、<xref:System.Runtime.ConstrainedExecution.ReliabilityContractAttribute> を持たない、または CER で実行できない脆弱な <xref:System.Runtime.ConstrainedExecution.ReliabilityContractAttribute> を持つ関数を呼び出しています。  
+## <a name="cause"></a>原因  
+ CER 内のコードが、<xref:System.Runtime.ConstrainedExecution.ReliabilityContractAttribute> を持たない関数、または CER での実行と互換性のない脆弱な <xref:System.Runtime.ConstrainedExecution.ReliabilityContractAttribute> を持つ関数を呼び出しています。  
   
- 信頼性のコントラクトの構文という点からすると、脆弱なコントラクトとは、<xref:System.Runtime.ConstrainedExecution.Consistency> 列挙値を指定しないコントラクトや、<xref:System.Runtime.ConstrainedExecution.Consistency>、<xref:System.Runtime.ConstrainedExecution.Consistency>、または <xref:System.Runtime.ConstrainedExecution.Cer> の <xref:System.Runtime.ConstrainedExecution.Consistency> 値を指定するコントラクトです。  これらの条件はいずれも、呼び出されるコードにより、CER 内で一貫した状態を維持しようとする他のコードの試みが阻害される可能性があることを意味します。CER では、コードによってエラーを確定的な方法で処理できるため、アプリケーションにとって重要な内部のインバリアントを保持し、メモリ不足例外などの一時的なエラーが発生した場合にアプリケーションが動作を継続できます。  
+ 信頼契約の構文の観点から、脆弱な契約とは、<xref:System.Runtime.ConstrainedExecution.Consistency> 列挙値を指定しない契約、または <xref:System.Runtime.ConstrainedExecution.Consistency.MayCorruptProcess>、<xref:System.Runtime.ConstrainedExecution.Consistency.MayCorruptAppDomain>、<xref:System.Runtime.ConstrainedExecution.Cer.None> の <xref:System.Runtime.ConstrainedExecution.Consistency> 値を指定する契約です。 これらのどの状態も、呼び出されるコードが一貫性のある状態を維持するための CER の他のコードの処理を妨げる可能性があることを示します。  CER では、エラーを非常に明確な方法で処理し、アプリケーションにとって重要な内部の不変性を維持し、メモリ不足の例外などの一時的なエラーが発生したときにアプリケーションの実行を継続することができます。  
   
- この MDA がアクティブになった場合は、CER で呼び出されているメソッドが呼び出し元が予期しない形で失敗したり、<xref:System.AppDomain> やプロセスの状態を破損または回復不可能なままにして失敗したりする可能性があります。  呼び出されたコードが正しく実行され、コントラクトの欠落だけが問題となることもあります。  ただし、信頼性の高いコードの記述に関連する問題は軽微であり、コントラクトの欠落は、コードを正しく実行できないことを示す良好な指標です。  コントラクトは、プログラマが信頼できる形でコードを作成していることを示し、またコードの今後のバージョンで信頼性の保証が変わらないと約束していることを示す指標です。つまり、コントラクトとは意志の宣言であり、単なる実装詳細ではありません。  
+ この MDA がアクティブ化は、CER で呼び出されるメソッドが、呼び出し元が予期しない方法で失敗する可能性があるか、<xref:System.AppDomain> またはプロセスの状態が破損または回復不能な状態になることを示します。 当然ながら、呼び出されたコードが正しく実行され、問題が単純な契約の不足である場合があります。 ただし、信頼できるコードの記述に関連する問題は微妙であり、契約がない状況は、コードが正しく実行できないことを示す有効な指標です。 契約は、プログラマが確実にコードを記述したことを示すインジケーターであり、コードの将来のリビジョンで保証が変更されないことを約束します。  つまり、契約は、単なる実装の詳細ではなく、意図の宣言です。  
   
- 脆弱なコントラクトを持つメソッドやコントラクトが存在しないメソッドは、予測不可能なさまざまな形で失敗する可能性があるため、ランタイムは、ロードの小さい JIT コンパイル、ジェネリック ディクショナリの読み込み、スレッドの中止などによってもたらされる、予測不可能な固有のエラーをメソッドから削除しようとしません。  つまり、この MDA がアクティブになったときは、ランタイムには、呼び出されたメソッドが、定義されている CER に含まれておらず、このサブツリーの準備を継続すると、潜在的なエラーがマスクされるため、呼び出し先がこのノードで終了したことを示します。  
+ 弱い契約または存在しない契約を持つメソッドは、予期しない方法で失敗する可能性があるため、ランタイムは、レイジーな JIT コンパイル、ジェネリック ディクショナリの読み込み、スレッドの中断などによって発生する、メソッドからの独自の予期しないエラーを削除しようとしません。 つまり、この MDA がアクティブになっているときは、ランタイムが、定義されている CER に呼び出されたメソッドを含めなかったことを意味します。引き続きこのサブツリーを準備すると潜在的なエラーが隠される可能性があるので、呼び出し先はこのノードで終了しました。  
   
-## 解決策  
- 有効な信頼性のコントラクトを関数に追加するか、その関数呼び出しの使用を避けます。  
+## <a name="resolution"></a>解決策  
+ 有効な信頼契約を関数に追加するか、その関数呼び出しを使用しないでください。  
   
-## ランタイムへの影響  
- 脆弱なコントラクトを CER から呼び出すと、CER エラーが発生し、CER の操作が終了する可能性があります。  これにより、<xref:System.AppDomain> プロセス状態が破損することがあります。  
+## <a name="effect-on-the-runtime"></a>ランタイムへの影響  
+ CER から脆弱な契約を呼び出そうとする、CER でその操作を完了できない可能性があります。 これにより、<xref:System.AppDomain> プロセス ツリーが破損する可能性があります。  
   
-## 出力  
- この MDA のサンプル出力を次に示します。  
+## <a name="output"></a>出力  
+ この MDA の出力サンプルを次に示します。  
   
  `Method 'MethodWithCer', while executing within a constrained execution region, makes a call at IL offset 0x000C to 'MethodWithWeakContract', which does not have a sufficiently strong reliability contract and might cause non-deterministic results.`  
   
-## 構成  
+## <a name="configuration"></a>構成  
   
-```  
+```xml  
 <mdaConfig>  
   <assistants>  
     <invalidCERCall />  
@@ -64,7 +69,8 @@ caps.handback.revision: 14
 </mdaConfig>  
 ```  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareMethod%2A>   
  <xref:System.Runtime.ConstrainedExecution>   
- [Diagnosing Errors with Managed Debugging Assistants](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)
+ [マネージ デバッグ アシスタントによるエラーの診断](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)
+

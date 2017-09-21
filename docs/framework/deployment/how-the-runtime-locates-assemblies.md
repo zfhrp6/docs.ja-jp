@@ -30,7 +30,7 @@ ms.translationtype: HT
 ms.sourcegitcommit: 934373d61407c8cc19b7d6424898a582880f9c21
 ms.openlocfilehash: 6ab1d59ec9ce4f77b3ded2951d01f675f096069f
 ms.contentlocale: ja-jp
-ms.lasthandoff: 08/10/2017
+ms.lasthandoff: 09/19/2017
 
 ---
 # <a name="how-the-runtime-locates-assemblies"></a>ランタイムがアセンブリを検索する方法
@@ -93,7 +93,7 @@ ms.lasthandoff: 08/10/2017
 ### <a name="application-configuration-file"></a>アプリケーション構成ファイル  
  最初に、共通言語ランタイムは、アプリケーション構成ファイル内に呼び出し元アセンブリのマニフェストに格納されているバージョン情報をオーバーライドする情報がないかどうかをチェックします。 アプリケーション構成ファイルはアプリケーションと共に配置できますが、アプリケーションの実行にとっては必須ではありません。 通常、このファイルはほとんど瞬時に取得できますが、Internet Explorer Web ベースのシナリオの場合のように、アプリケーション ベースがリモート コンピューターに存在するときは、構成ファイルをダウンロードする必要があります。  
   
- クライアント実行可能ファイルの場合、アプリケーション構成ファイルは、アプリケーションの実行可能ファイルと同じディレクトリに配置され、実行可能ファイルと同じ名前に拡張子 .config を付けた基本名が割り当てられます。 たとえば、C:\Program Files\Myapp\Myapp.exe の構成ファイルは、C:\Program Files\Myapp\Myapp.exe.config です。 ブラウザー ベースのシナリオでは、HTML ファイルは明示的に構成ファイルを指すために **\<link>** 要素を使用する必要があります。  
+ クライアント実行可能ファイルの場合、アプリケーション構成ファイルは、アプリケーションの実行可能ファイルと同じディレクトリに配置され、実行可能ファイルと同じ名前に拡張子 .config を付けた基本名が割り当てられます。 たとえば、C:\Program Files\Myapp\Myapp.exe の構成ファイルは、C:\Program Files\Myapp\Myapp.exe.config です。ブラウザー ベースのシナリオでは、HTML ファイルは明示的に構成ファイルを指すために **\<link>** 要素を使用する必要があります。  
   
  次のコードは、アプリケーション構成ファイルの簡単な例を示します。 この例では、 <xref:System.Diagnostics.TextWriterTraceListener> を <xref:System.Diagnostics.Debug.Listeners%2A> コレクションに追加し、デバッグ情報のファイルへの記録を有効にします。  
   

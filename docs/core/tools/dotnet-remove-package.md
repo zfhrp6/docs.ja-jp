@@ -1,28 +1,26 @@
 ---
-title: "dotnet-remove パッケージ コマンド - .NET Core CLI"
-description: "dotnet-remove パッケージ コマンドは、NuGet パッケージ参照をプロジェクトから削除する便利なオプションを提供します。"
-keywords: "dotnet-remove, CLI, CLI コマンド, .NET Core"
-author: spboyer
+title: "dotnet remove package コマンド - .NET Core CLI"
+description: "dotnet remove package コマンドは、プロジェクトへの NuGet パッケージ参照を削除する便利なオプションを提供します。"
+author: mairaw
 ms.author: mairaw
-ms.date: 03/15/2017
+ms.date: 08/14/2017
 ms.topic: article
 ms.prod: .net-core
 ms.technology: dotnet-cli
-ms.devlang: dotnet
-ms.assetid: 2fcc8d37-16b3-4581-8038-832160e72d36
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: a3fef846d5850e2c2a158ccd1f30a84e8f23f793
+ms.sourcegitcommit: a19ab54a6cc44bd7acd1e40a4ca94da52bf14297
+ms.openlocfilehash: 4167f5465571259975572669e27f20c586b910da
 ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
+ms.lasthandoff: 08/14/2017
 
 ---
+# <a name="dotnet-remove-package"></a>dotnet remove package
 
-# <a name="dotnet-remove-package"></a>dotnet-remove パッケージ
+[!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
 
 ## <a name="name"></a>名前
 
-`dotnet-remove package` - プロジェクト ファイルからパッケージ参照を削除します。
+`dotnet remove package` - プロジェクト ファイルからパッケージ参照を削除します。
 
 ## <a name="synopsis"></a>構文
 

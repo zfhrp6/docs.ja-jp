@@ -1,59 +1,64 @@
 ---
-title: "自動プロキシ検出 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "自動プロキシ検出"
-  - "Web プロキシの自動検出"
-  - "Web プロキシ"
-  - "検出 (プロキシを自動的に)"
-  - "WebProxy クラス、自動プロキシ検出"
-  - "プロキシ、自動検出"
-  - "ネットワーク"
-  - "WPAD (Web プロキシ自動検出)"
+title: "自動プロキシ検出"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- VB
+- CSharp
+- C++
+- jsharp
+helpviewer_keywords:
+- automatic proxy detections
+- Web Proxy Auto-Discovery
+- Web proxy
+- detecting proxies automatically
+- WebProxy class, automatic proxy detections
+- proxies, automatically detecting
+- network
+- WPAD (Web Proxy Auto-Discovery)
 ms.assetid: fcd9c3bd-93de-4c92-8ff3-837327ad18de
 caps.latest.revision: 18
-author: "mcleblanc"
-ms.author: "markl"
-manager: "markl"
-caps.handback.revision: 18
+author: mcleblanc
+ms.author: markl
+manager: markl
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 9f0c1a0d462768229c730f06a6514d040a3e5c1c
+ms.contentlocale: ja-jp
+ms.lasthandoff: 08/21/2017
+
 ---
-# 自動プロキシ検出
-自動プロキシの検出は Web プロキシ サーバーがシステムによって確認され、クライアントに代わって要求を送信するに使用されるプロセスです。  この機能は、WPAD \(Web Proxy Auto\-Discovery\) とも呼ばれます。  自動ときにプロキシの検出、要求に使用できるプロキシのセットを返品する担当プロキシ コンポーネントのスクリプトを探すシステムの再試行有効になります。  プロキシ コンポーネントのスクリプトがある場合は、スクリプトがプロキシ情報、要求のストリーム、つまり回答が <xref:System.Net.WebProxy> のインスタンスを使用する要求に対して取得した場合、コンパイル、ローカル コンピュータのダウンロード実行されます。  
+# <a name="automatic-proxy-detection"></a>自動プロキシ検出
+自動プロキシ検出は、Web プロキシ サーバーがシステムによって確認され、クライアントに代わって要求を送信する際に使用されるプロセスです。 この機能は、Web プロキシの自動検出 (WPAD) とも呼ばれます。 自動プロキシ検出を有効にすると、システムは、要求に使用できるプロキシのセットを返すプロキシ構成スクリプトを検索しようとします。 プロキシ構成スクリプトが見つかった場合、プロキシ情報、要求ストリーム、または <xref:System.Net.WebProxy> インスタンスを使用する要求に対する応答が取得されたときに、ローカル コンピューター上でスクリプトがダウンロード、コンパイル、および実行されます。  
   
- 自動プロキシの検出は <xref:System.Net.WebProxy> クラスが実行され、コンフィギュレーション ファイルの要求レベルの設定、Internet Explorer の **\[ローカル エリア ネットワーク \(LAN\)\]** のダイアログ ボックスを使用して指定した設定、および設定を使用することもできます。  
-  
-> [!NOTE]
->  Internet Explorer のメイン メニューから **\[ツール\]** を選択し、**\[インターネット オプション\]**を選択することにより、Internet Explorer の **\[ローカル エリア ネットワーク \(LAN\) の設定\]** のダイアログ ボックスを表示できます。  次 **\[接続\]**、のタブをクリックし、**\[LAN の設定\]**をクリックします。  
-  
- 自動ときに検出プロキシには、次のように、スクリプト プロキシのコンフィギュレーションを検索 <xref:System.Net.WebProxy> クラスの再試行有効化されます:  
-  
-1.  WinInet の `InternetQueryOption` 機能が最新 Internet Explorer プロキシのコンフィギュレーションが検出するスクリプトの検索に使用されます。  
-  
-2.  スクリプトが見つけられなければ、<xref:System.Net.WebProxy> クラスは、スクリプトの検索に動的ホスト コンフィギュレーション Protocol \(DHCP\) を使用します。  DHCP サーバー、スクリプトの場所 \(ホスト名\) またはスクリプトの完全な URL と応答できます。  
-  
-3.  DHCP が WPAD のホストを識別する名前は、DNS またはエイリアスとして WPAD のホストにただされます。  
-  
-4.  ホストされていないプロキシを識別し、コンフィギュレーションのスクリプトの場所が Internet Explorer の LAN 設定やコンフィギュレーション ファイルを使用して指定されている場合、この場所が使用されます。  
+ 自動プロキシ検出は <xref:System.Net.WebProxy> クラスによって実行され、要求レベルの設定、構成ファイルの設定、および Internet Explorer の**ローカル エリア ネットワーク (LAN)** ダイアログ ボックスを使用して指定された設定を使用できます。  
   
 > [!NOTE]
->  NT として実行が開始アプリケーションのユーザーの Internet Explorer のプロキシ サーバーの設定 \(利用可能な場合\) サービスまたは ASP.NET の一部として使用されます。  これらの設定は、すべてのサービス アプリケーションに使用可能ではない場合があります。  
+>  Internet Explorer の **[ローカル エリア ネットワーク (LAN) の設定]** ダイアログ ボックスを表示するには、Internet Explorer のメイン メニューで **[ツール]** を選択してから **[インターネット オプション]** を選択します。 次に、**[接続]** タブを選択して、**[LAN の設定]** をクリックします。  
   
- プロキシに基づいて単位で connectoid でコンフィギュレーションされます。  connectoid は、ネットワーク接続ダイアログの品目で、物理ネットワークのデバイス \(またはモデム イーサネット カード\) または仮想のインターフェイスのいずれかです \(ネットワークのデバイスに実行の接続 VPN など\)。  connectoid が \(たとえば、無線接続がアクセス ポイントを変更、または VPN が有効になります\) 変更すると、プロキシの検出のアルゴリズムを再度実行されます。  
+ 自動プロキシ検出を有効にすると、<xref:System.Net.WebProxy> クラスは次のようにプロキシ構成スクリプトを検索しようとします。  
   
- 既定では、Internet Explorer のプロキシ設定がプロキシを検出するために使用されます。  自分のアプリケーションが非対話型アカウントで \(IE プロキシの設定をコンフィギュレーションする便利な方法で\) を実行中または IE の設定とは異なるプロキシ設定を使用する場合は、定義された [\<defaultProxy\> 要素 \(ネットワーク設定\)](../../../docs/framework/configure-apps/file-schema/network/defaultproxy-element-network-settings.md) と [\<proxy\> 要素 \(ネットワーク設定\)](../../../docs/framework/configure-apps/file-schema/network/proxy-element-network-settings.md) の要素でコンフィギュレーション ファイルの作成に応じて、プロキシをコンフィギュレーションできます。  
+1.  WinINet の `InternetQueryOption` 関数を使用して、Internet Explorer によって最後に検出されたプロキシ構成スクリプトを検索します。  
   
- 作成した要求の場合、次のコード例で示すように要求を含む空白の <xref:System.Net.WebRequest.Proxy%2A> を使用して、レベル自動プロキシの検出を依頼して無効にすることができます。  
+2.  スクリプトが見つからない場合、<xref:System.Net.WebProxy> クラスは動的ホスト構成プロトコル (DHCP) を使用してスクリプトを検索します。 DHCP サーバーは、スクリプトの場所 (ホスト名)、またはスクリプトの完全な URL で応答できます。  
+  
+3.  DHCP で WPAD ホストが識別されない場合は、名前またはエイリアスとして WPAD を使用して、ホストについて DNS が照会されます。  
+  
+4.  ホストが識別されず、プロキシ構成スクリプトの場所が Internet Explorer の LAN の設定または構成ファイルで指定されている場合は、この場所が使用されます。  
+  
+> [!NOTE]
+>  NT サービスまたは ASP.NET の一部として実行されているアプリケーションでは、呼び出しユーザーの Internet Explorer のプロキシ サーバー設定が使用されます (使用可能な場合)。 これらの設定が、すべてのサービス アプリケーションで使用できるとは限りません。  
+  
+ プロキシは、connectoid ごとに構成されます。 connectoid は、ネットワーク接続ダイアログにある項目で、物理ネットワーク デバイス (モデムまたはイーサネット カード) または仮想インターフェイス (ネットワーク デバイス経由で実行されている VPN 接続など) を指定することができます。 connectoid が変更された場合 (ワイヤレス接続でアクセス ポイントが変更された場合や、VPN が有効になった場合など)、プロキシ検出アルゴリズムが再度実行されます。  
+  
+ 既定では、プロキシの検出には Internet Explorer のプロキシ設定が使用されます。 アプリケーションが、対話型ではないアカウント (つまり、IE のプロキシ設定を構成するための便利な手段を持たないアカウント) で実行されている場合、または IE の設定とは異なるプロキシ設定を使用する必要がある場合は、[\<defaultProxy> 要素 (ネットワーク設定)](../../../docs/framework/configure-apps/file-schema/network/defaultproxy-element-network-settings.md) と [\<proxy> 要素 (ネットワーク設定)](../../../docs/framework/configure-apps/file-schema/network/proxy-element-network-settings.md) 要素が定義された構成ファイルを作成することで、プロキシを構成できます。  
+  
+ 要求を自分で作成する場合は、次のコード例に示すように、null の <xref:System.Net.WebRequest.Proxy%2A> を要求で使用することにより、要求レベルで自動プロキシ検出を無効にできます。  
   
 ```csharp  
 public static void DisableForMyRequest (Uri resource)  
@@ -72,9 +77,10 @@ Public Shared Sub DisableForMyRequest(ByVal resource As Uri)
     End Sub   
 ```  
   
- <xref:System.Net.WebRequest.DefaultWebProxy%2A> のプロパティに使用可能であるプロキシの使用が自分のアプリケーション ドメインの既定のプロキシない要求。  
+ プロキシがない要求では、アプリケーション ドメインの既定のプロキシが使用されます。この既定のプロキシは <xref:System.Net.WebRequest.DefaultWebProxy%2A> プロパティで使用できます。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Net.WebProxy>   
  <xref:System.Net.WebRequest>   
- [\<system.Net\> 要素 \(ネットワーク設定\)](../../../docs/framework/configure-apps/file-schema/network/system-net-element-network-settings.md)
+ [\<system.Net> 要素 (ネットワーク設定)](../../../docs/framework/configure-apps/file-schema/network/system-net-element-network-settings.md)
+

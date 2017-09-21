@@ -1,55 +1,61 @@
 ---
-title: "インターネット認証 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "認証 [.NET Framework]、クラス"
-  - "IAuthenticationModule インターフェイス"
-  - "ICredentialLookup インターフェイス"
-  - "CredentialCache クラス、CredentialCache クラスについて"
-  - "受信 (データの)、認証"
-  - "AuthenticationManager クラス、AuthenticationManager クラスについて"
-  - "インターネット、認証"
-  - "送信 (データの)、認証"
-  - "ネットワーク リソース、認証"
-  - "ユーザー認証、認証用のクラス"
-  - "NetworkCredential クラス、NetworkCredential クラスについて"
-  - "クライアント認証、認証用のクラス"
+title: "インターネット認証"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- VB
+- CSharp
+- C++
+- jsharp
+helpviewer_keywords:
+- authentication [.NET Framework], classes
+- IAuthenticationModule interface
+- ICredentialLookup interface
+- CredentialCache class, about CredentialCache class
+- receiving data, authentication
+- AuthenticationManager class, about AuthenticationManager class
+- Internet, authentication
+- sending data, authentication
+- network resources, authentication
+- user authentication, classes for authentication
+- NetworkCredential class, about NetworkCredential class
+- client authentication, classes for authentication
 ms.assetid: d342e87c-f672-4660-a513-41a2f2b80c4a
 caps.latest.revision: 11
-author: "mcleblanc"
-ms.author: "markl"
-manager: "markl"
-caps.handback.revision: 9
+author: mcleblanc
+ms.author: markl
+manager: markl
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: a26811b5dd62e30b371af88bc79d06843ef58d05
+ms.contentlocale: ja-jp
+ms.lasthandoff: 08/21/2017
+
 ---
-# インターネット認証
-<xref:System.Net> クラス、ダイジェスト基本支えましたり、標準的なインターネット認証方法など、さまざまなクライアント認証方法が、NTLM 認証および Kerberos、作成できるカスタム メソッド交渉します。  
+# <a name="internet-authentication"></a>インターネット認証
+<xref:System.Net> クラスは、さまざまなクライアント認証メカニズムをサポートしています。これには、基本、ダイジェスト、ネゴシエート、NTLM、および Kerberos の標準のインターネット認証方法の他に、ユーザーが作成できるカスタム メソッドも含まれます。  
   
- 認証の資格情報は、<xref:System.Net.ICredentials> のインターフェイスを実装する <xref:System.Net.NetworkCredential> と <xref:System.Net.CredentialCache> クラスに保存されます。  これらのクラスの 1 種類が資格ついてはただされると、**NetworkCredential** クラスのインスタンスを返します。  認証プロセスは <xref:System.Net.AuthenticationManager> クラスによって管理され、実際の認証プロセスは <xref:System.Net.IAuthenticationModule> のインターフェイスを実装する認証のモジュール クラスによって行われます。  使用する前に **AuthenticationManager** の注文の認証のモジュールを登録する必要があります; 基本のモジュール、ダイジェスト、NTLM 交渉 Kerberos 認証および認証方法は既定で登録されます。  
+ 認証の資格情報は、<xref:System.Net.ICredentials> インターフェイスを実装する <xref:System.Net.NetworkCredential> クラスと <xref:System.Net.CredentialCache> クラスに格納されています。 資格情報についてこれらのいずれかのクラスが照会されると、そのクラスが **NetworkCredential** クラスのインスタンスを返します。 認証プロセスは <xref:System.Net.AuthenticationManager> クラスで管理され、実際の認証プロセスは <xref:System.Net.IAuthenticationModule> インターフェイスを実装する認証モジュール クラスによって実行されます。 カスタム認証モジュールは、**AuthenticationManager** に登録してから使用する必要があります。基本、ダイジェスト、ネゴシエート、NTLM、および Kerberos の各認証方法は、既定で登録されています。  
   
- **NetworkCredential** は URI によって識別される一つのインターネットのリソースに関連付けられている一連の資格情報を保存したり、必要に応じて <xref:System.Net.NetworkCredential.GetCredential%2A> 方法にそれらを返します。  **NetworkCredential** クラスは、インターネットでのリソースまたは資格情報のセットを同じどちらの場合も使用するアプリケーションによる制限数をアプリケーション アクセスして通常使用されます。  
+ **NetworkCredential** は、URI で識別される 1 つのインターネット リソースに関連付けられている一連の資格情報を格納し、<xref:System.Net.NetworkCredential.GetCredential%2A> メソッドへの任意の呼び出しに応答してそれらを返します。 **NetworkCredential** クラスは通常、限定された数のインターネット リソースにアクセスするアプリケーション、またはどんな場合でも同じ資格情報のセットを使用するアプリケーションで使用されます。  
   
- **\[CredentialCache\]** クラスは、さまざまな Web のリソースの資格情報の収集を格納します。  <xref:System.Net.CredentialCache.GetCredential%2A> 方法が呼び出されたときに、**\[CredentialCache\]** は Web リソースおよび要求された認証スキームの URI によって決定されるように適切な資格情報のセットを、返します。  **\[CredentialCache\]** クラスを使用した異なる認証スキームのさまざまなインターネットのリソースを対象に使用するアプリケーションは、必要に応じてすべての資格情報を保存するため、それらを提供します。  
+ **CredentialCache** クラスは、さまざまな Web リソースの資格情報のコレクションを格納します。 <xref:System.Net.CredentialCache.GetCredential%2A> メソッドが呼び出されると、**CredentialCache** は、適切な資格情報のセットを返します。これは Web リソースの URI と要求された認証スキームによって決まります。 異なる認証スキームでさまざまなインターネット リソースを使用するアプリケーションは、**CredentialCache** クラスを使用することでメリットが得られます。それは、このクラスがすべての資格情報を格納し、要求に応じてそれらを提供するからです。  
   
- インターネットのリソースが認証が必要な場合、<xref:System.Net.WebRequest.GetResponse%2A?displayProperty=fullName> 方法は、資格情報の要求とともに **AuthenticationManager** に <xref:System.Net.WebRequest> を送信します。  要求は次のプロセスに従って、認証します:  
+ インターネット リソースが認証を要求すると、<xref:System.Net.WebRequest.GetResponse%2A?displayProperty=fullName> メソッドは資格情報の要求と共に <xref:System.Net.WebRequest> を **AuthenticationManager** に送信します。 そして要求は、次のプロセスに従って認証されます。  
   
-1.  **AuthenticationManager** は、が登録された順序で登録認証のモジュールそれぞれに <xref:System.Net.IAuthenticationModule.Authenticate%2A> 方法を追加します。  **AuthenticationManager** は、認証プロセスを実行するに **null** を戻さない最初のモジュールを使用します。  プロセスの詳細が含まれる認証のモジュールのタイプによって異なります。  
+1.  **AuthenticationManager** が登録済みの各認証モジュールで、登録された順番で <xref:System.Net.IAuthenticationModule.Authenticate%2A> メソッドを呼び出します。 **AuthenticationManager** は **null** を返さない 1 つ目のモジュールを使用して認証プロセスを実行します。 プロセスの詳細は、使用する認証モジュールの種類によって異なります。  
   
-2.  認証プロセスが完了すると、インターネット リソースのアクセスを必要な情報を含む認証のモジュールの **\[WebRequest\]** に <xref:System.Net.Authorization> を返します。  
+2.  認証プロセスが完了すると、認証モジュールが <xref:System.Net.Authorization> をインターネット リソースにアクセスするために必要な情報を含む **WebRequest** に返します。  
   
- ある認証スキームは、リソースのユーザーを認証要求できます。  したがって、アプリケーションは、リソースがより高いユーザーを preauthenticating すると時間を節約できます。サーバーに 1 回以上ラウンド トリップを削除します。  または、プログラムの起動時にユーザーによって関連で認証を後で実行できます。  preauthentication を使用して認証スキームは **true**に [&#91;CanPreAuthenticate&#93;](frlrfsystemnetiauthenticationmoduleclasspreauthenticatetopic) のプロパティを設定します。  
+ 一部の認証スキームでは、最初にリソースの要求を作成しなくても、ユーザーを認証することができます。 リソースでユーザーを事前認証することで、サーバーへのラウンド トリップを少なくとも 1 回減らせるため、アプリケーションが時間を節約できます。 または、後でユーザーへの応答性を高めるため、プログラムの起動中に認証を実行できます。 事前認証を使用できる認証スキームで <xref:System.Net.IAuthenticationModule.PreAuthenticate%2A> プロパティを **true** に設定します。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [基本認証とダイジェスト認証](../../../docs/framework/network-programming/basic-and-digest-authentication.md)   
  [NTLM 認証および Kerberos 認証](../../../docs/framework/network-programming/ntlm-and-kerberos-authentication.md)   
  [ネットワーク プログラミングにおけるセキュリティ](../../../docs/framework/network-programming/security-in-network-programming.md)
+

@@ -1,34 +1,39 @@
 ---
-title: "COM 相互運用機能のサンプル: COM クライアントおよび .NET サーバー | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "COM 相互運用機能, サンプル"
-  - "相互運用 (アンマネージ コードとの), サンプル"
+title: "COM 相互運用機能のサンプル: COM クライアントおよび .NET サーバー"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- VB
+- CSharp
+- C++
+- jsharp
+helpviewer_keywords:
+- interoperation with unmanaged code, samples
+- COM interop, samples
 ms.assetid: a219cb2c-9fa2-4c90-9b26-939e0788f178
 caps.latest.revision: 7
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 7
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: e8f87b17cc451b05186eee1e3228c38a05c945fd
+ms.contentlocale: ja-jp
+ms.lasthandoff: 08/21/2017
+
 ---
-# COM 相互運用機能のサンプル: COM クライアントおよび .NET サーバー
-[COM クライアント](#cpconcominteropsamplecomclientnetserveranchor1)と [.NET Server](#cpconcominteropsamplecomclientnetserveranchor2) を相互運用して、住宅ローンの計算を行うサンプルを次に示します。  この例では、クライアントはマネージ `Loan` クラスのインスタンスを作成して呼び出し、4 つの引数 \(そのうち 1 つは 0\) をこのインスタンスに渡し、計算結果を表示します。  このセクション全体をとおして、このサンプル内のコード例を使用します。  
+# <a name="com-interop-sample-com-client-and-net-server"></a>COM 相互運用機能のサンプル: COM クライアントおよび .NET サーバー
+[COM クライアント](#cpconcominteropsamplecomclientnetserveranchor1)と [.NET サーバー](#cpconcominteropsamplecomclientnetserveranchor2)を相互運用して、住宅ローンの計算を行うサンプルを次に示します。 この例では、クライアントはマネージ `Loan` クラスのインスタンスを作成して呼び出し、4 つの引数 (そのうち 1 つは 0) をこのインスタンスに渡し、計算結果を表示します。 このセクション全体で、このサンプルのコード例を使用します。  
   
 <a name="cpconcominteropsamplecomclientnetserveranchor1"></a>   
-## COM クライアント  
+## <a name="com-client"></a>COM クライアント  
   
 ```cpp  
 // ConLoan.cpp : Defines the entry point for the console application.  
@@ -95,7 +100,7 @@ int main(int argc, char* argv[])
 ```  
   
 <a name="cpconcominteropsamplecomclientnetserveranchor2"></a>   
-## .NET Server  
+## <a name="net-server"></a>.NET サーバー  
   
 ```vb  
 Imports System  
@@ -270,7 +275,6 @@ Namespace LoanLib
     End Class  
   
 End Namespace  
-  
 ```  
   
 ```csharp  
@@ -397,5 +401,6 @@ namespace LoanLib {
 }  
 ```  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [COM への .NET Framework コンポーネントの公開](../../../docs/framework/interop/exposing-dotnet-components-to-com.md)
+

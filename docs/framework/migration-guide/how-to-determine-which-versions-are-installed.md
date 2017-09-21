@@ -1,13 +1,9 @@
 ---
 title: "方法: インストールされている .NET Framework バージョンを確認する"
-ms.custom: 
-ms.date: 04/07/2017
+ms.date: 08/09/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - dotnet-clr
-ms.tgt_pltfrm: 
 ms.topic: article
 helpviewer_keywords:
 - versions, determining for .NET Framework
@@ -18,10 +14,10 @@ author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: cddee407d1245568054871d71f2840f463859535
+ms.sourcegitcommit: 775e4512a5ff31c7059961f6332c6bdc0dc5247a
+ms.openlocfilehash: afb01fd47ed2ce3b9c5838f3a8f61c8d34147378
 ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
+ms.lasthandoff: 08/11/2017
 
 ---
 # <a name="how-to-determine-which-net-framework-versions-are-installed"></a>方法 : インストールされている .NET Framework バージョンを確認する
@@ -37,6 +33,7 @@ ms.lasthandoff: 07/28/2017
  [レジストリの表示 (バージョン 4.5 以降)](#net_b)  
  [コードによるレジストリの照会 (バージョン 1 ～ 4)](#net_c)  
  [コードによるレジストリの照会 (バージョン 4.5 以降)](#net_d)  
+ [PowerShell を使用したレジストリの照会 (バージョン 4.5 以降)](#ps_a)  
   
  CLR のバージョンを検索するには、ツールまたはコードを使用できます。  
   
@@ -153,6 +150,27 @@ ms.lasthandoff: 07/28/2017
     - `Release` エントリの値が既知のリリース キー値*以上*かどうかをチェックします。
 
     - 最新バージョンから最も古いバージョンの順にチェックします。
+
+<a name="ps_a"></a> 
+#### <a name="to-check-for-a-minimum-required-net-framework-version-by-querying-the-registry-in-powershell-net-framework-45-and-later"></a>PowerShell でレジストリを照会して .NET Framework の最低限必要なバージョンを確認するには(.NET Framework 4.5 以降)
+
+- 次の例では、`Release` キーワードの値を確認して、Windows オペレーティング システムのバージョンに関係なく、.NET Framework 4.6.2 以降がインストールされているかどうかを判断します (インストールされている場合は `True` を返し、それ以外の場合は `False`を返します)。
+
+    ```PowerShell
+    Get-ChildItem "hklm:SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full\" | Get-ItemPropertyValue -Name Release | % { $_ -ge 394802 } 
+    ```
+
+    前の例で、`394802` を次の表の別の値に置き換えて、別の最低限必要な .NET Framework バージョンを確認することができます。
+  
+    |バージョン|Release DWORD の最小値|
+    |-------------|--------------------------------|
+    |.NET Framework 4.5|378389|
+    |.NET Framework 4.5.1|378675|
+    |.NET Framework 4.5.2|379893|
+    |[!INCLUDE[net_v46](../../../includes/net-v46-md.md)]|393295|
+    |[!INCLUDE[net_v461](../../../includes/net-v461-md.md)]|394254|
+    |[!INCLUDE[net_v462](../../../includes/net-v462-md.md)]|394802|
+    |.NET Framework 4.7|460798|
 
 <a name="clr_a"></a> 
 #### <a name="to-find-the-current-runtime-version-by-using-the-clrver-tool"></a>Clrver ツールを使用して現在のランタイムのバージョンを確認する方法

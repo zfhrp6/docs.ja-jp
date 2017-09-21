@@ -1,33 +1,38 @@
 ---
-title: "方法: WebRequest クラスを使用してデータを送信する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "WebRequest クラス、ホストにデータを送信する"
-  - "ホストにデータを送信する、WebRequest クラスを使用する"
+title: "方法: WebRequest クラスを使用してデータを送信する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- VB
+- CSharp
+- C++
+- jsharp
+helpviewer_keywords:
+- WebRequest class, sending data to a host
+- Sending data to a host, using WebRequest class
 ms.assetid: 66686878-38ac-4aa6-bf42-ffb568ffc459
 caps.latest.revision: 12
-author: "mcleblanc"
-ms.author: "markl"
-manager: "markl"
-caps.handback.revision: 12
+author: mcleblanc
+ms.author: markl
+manager: markl
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: c840792182c012ba74b3ba3ef297748f58e4b92a
+ms.contentlocale: ja-jp
+ms.lasthandoff: 08/21/2017
+
 ---
-# 方法: WebRequest クラスを使用してデータを送信する
-次のプロシージャはサーバーにデータを送信するために使用するステップについて説明します。  このプロシージャは一般的 Web ページへのデータの掲示する必要があります。  
+# <a name="how-to-send-data-using-the-webrequest-class"></a>方法: WebRequest クラスを使用してデータを送信する
+次の手順では、サーバーにデータを送信するための手順について説明します。 この手順は、通常、Web ページへのデータをポストするときに使用されます。  
   
-### データをホスト サーバーに送信します。  
+### <a name="to-send-data-to-a-host-server"></a>ホスト サーバーにデータを送信するには  
   
-1.  データ、たとえば、ASP.NET のスクリプトまたはページを使用するリソースの URI の <xref:System.Net.WebRequest.Create%2A> の呼び出し、<xref:System.Net.WebRequest> のインスタンスを作成します。  
+1.  たとえばスクリプトや ASP.NET ページなどの、データを受け取るリソースの URI を指定して <xref:System.Net.WebRequest.Create%2A> を呼び出すことによって <xref:System.Net.WebRequest> インスタンスを作成します。  
   
     ```csharp  
     WebRequest request = WebRequest.Create("http://www.contoso.com/");  
@@ -35,13 +40,12 @@ caps.handback.revision: 12
   
     ```vb  
     Dim request as WebRequest = WebRequest.Create("http://www.contoso.com/")  
-  
     ```  
   
     > [!NOTE]
-    >  .NET Framework は、「http で始まる URI に **\[WebRequest\]** と **WebResponse** から派生したプロトコル対応クラスを提供します: 」、「https:'' 「ftp: 」、および「ファイル: 」  他のプロトコルを使用してリソースにアクセスするには、**\[WebRequest\]** と **WebResponse**から取得プロトコル対応クラスを行う必要があります。  詳細については、「[プラグ可能なプロトコルのプログラミング](../../../docs/framework/network-programming/programming-pluggable-protocols.md)」を参照してください。  
+    >  .NET Framework は、"http:"、"https:'、"ftp:" および"file:" で始まる URI に対応する **WebRequest** と **WebResponse** から派生したプロトコル固有のクラスを提供します。 その他のプロトコルを使用してリソースにアクセスするには、**WebRequest** と **WebResponse** から派生したプロトコル固有のクラスを実装する必要があります。 詳細については、「[Programming Pluggable Protocols](../../../docs/framework/network-programming/programming-pluggable-protocols.md)」(プラグ可能なプロトコルのプログラミング) を参照してください。  
   
-2.  、**\[WebRequest\]**で必要なプロパティ値を設定します。  たとえば、認証を有効にするには、<xref:System.Net.NetworkCredential> クラスのインスタンスに **\[資格情報\]** のプロパティを設定します。  
+2.  **WebRequest** で必要なプロパティの値を設定します。 たとえば、認証を有効にするには、**Credentials** プロパティを <xref:System.Net.NetworkCredential> クラスのインスタンスに設定します。  
   
     ```csharp  
     request.Credentials = CredentialCache.DefaultCredentials;  
@@ -49,10 +53,9 @@ caps.handback.revision: 12
   
     ```vb  
     request.Credentials = CredentialCache.DefaultCredentials  
-  
     ```  
   
-     ほとんどの場合、**\[WebRequest\]** のインスタンス自体はデータを送信十分です。  ただし、プロトコル対応するプロパティを設定する必要があるプロトコル タイプに対応 **\[WebRequest\]** をキャスト必要があります。  たとえば、<xref:System.Net.HttpWebRequest>の Http 固有のプロパティにアクセスするには、**HttpWebRequest** の参照に **\[WebRequest\]** をキャスト。  次の例は <xref:System.Net.HttpWebRequest.UserAgent%2A> コードの Http 固有のプロパティを設定する方法を示します。  
+     ほとんどの場合、データを送信するには、**WebRequest** インスタンスだけで十分です。 ただし、プロトコル固有のプロパティを設定する必要がある場合、**WebRequest** をプロトコル固有の型にキャストする必要があります。 たとえば、<xref:System.Net.HttpWebRequest> の HTTP 固有のプロパティにアクセスするには、**WebRequest** を **HttpWebRequest** 参照にキャストします。 次のコードの例は、HTTP 固有の <xref:System.Net.HttpWebRequest.UserAgent%2A> プロパティを設定する方法を示しています。  
   
     ```csharp  
     ((HttpWebRequest)request).UserAgent = ".NET Framework Example Client";  
@@ -62,7 +65,7 @@ caps.handback.revision: 12
     Ctype(request,HttpWebRequest).UserAgent = ".NET Framework Example Client"  
     ```  
   
-3.  データの要求に送信して HTTP の **\[投稿\]** する方法など、プロトコル方法を指定します。  
+3.  HTTP **POST** メソッドなど、要求と共にデータを送信することを許可するプロトコル メソッドを指定します。  
   
     ```csharp  
     request.Method = "POST";  
@@ -72,7 +75,7 @@ caps.handback.revision: 12
     request.Method = "POST"  
     ```  
   
-4.  **\[ContentLength\]** のプロパティを設定します。  
+4.  **ContentLength** プロパティを設定します。  
   
     ```csharp  
     request.ContentLength = byteArray.Length;  
@@ -82,7 +85,7 @@ caps.handback.revision: 12
     request.ContentLength = byteArray.Length  
     ```  
   
-5.  適切な値に **\[ContentType\]** のプロパティを設定します。  
+5.  **ContentType** プロパティを適切な値に設定します。  
   
     ```csharp  
     request.ContentType = "application/x-www-form-urlencoded";  
@@ -92,7 +95,7 @@ caps.handback.revision: 12
     request.ContentType = "application/x-www-form-urlencoded"  
     ```  
   
-6.  <xref:System.Net.WebRequest.GetRequestStream%2A> メソッド呼び出し、要求データを保持するストリームを取得します。  
+6.  <xref:System.Net.WebRequest.GetRequestStream%2A> メソッドを呼び出すことで、要求のデータを保持するストリームを取得します。  
   
     ```csharp  
     Stream dataStream = request.GetRequestStream ();  
@@ -102,7 +105,7 @@ caps.handback.revision: 12
     Stream dataStream = request.GetRequestStream ()  
     ```  
   
-7.  この方法により、返品 <xref:System.IO.Stream> の対象にデータを記述します。  
+7.  このメソッドによって返される <xref:System.IO.Stream> オブジェクトにデータを書き込みます。  
   
     ```csharp  
     dataStream.Write (byteArray, 0, byteArray.Length);  
@@ -112,7 +115,7 @@ caps.handback.revision: 12
     dataStream.Write (byteArray, 0, byteArray.Length)  
     ```  
   
-8.  **\[Stream.Close\]** メソッド呼び出し、要求のベースを閉じます。  
+8.  **Stream.Close** メソッドを呼び出すことで、要求のストリームを閉じます。  
   
     ```csharp  
     dataStream.Close ();  
@@ -122,7 +125,7 @@ caps.handback.revision: 12
     dataStream.Close ()  
     ```  
   
-9. <xref:System.Net.WebRequest.GetResponse%2A>の呼び出し、サーバーに要求を送信します。  この方法は、サーバーの応答を含むオブジェクトを返します。  <xref:System.Net.WebResponse> の返品オブジェクト タイプが需要 URI の設定によって決まります。  
+9. <xref:System.Net.WebRequest.GetResponse%2A> を呼び出してサーバーに要求を送信します。 このメソッドは、サーバーの応答を格納するオブジェクトを返します。 返された <xref:System.Net.WebResponse> オブジェクトの型は、要求の URI のスキームで決定されます。  
   
     ```csharp  
     WebResponse response = request.GetResponse();  
@@ -130,13 +133,12 @@ caps.handback.revision: 12
   
     ```vb  
     Dim response As WebResponse = request.GetResponse()  
-  
     ```  
   
     > [!NOTE]
-    >  <xref:System.Net.WebResponse> のオブジェクトを終了したら、<xref:System.Net.WebResponse.Close%2A> 方法の名前と閉じなければ必要があります。  または応答オブジェクトからの応答ストリームを獲得したとき、<xref:System.IO.Stream.Close%2A?displayProperty=fullName> メソッド呼び出し、ストリームを決済できます。  応答またはストリームを閉じなければ、アプリケーションは、追加情報を処理してサーバーへの接続を使い果たし、なくすることができます。  
+    >  <xref:System.Net.WebResponse> オブジェクトの使用が完了した後、<xref:System.Net.WebResponse.Close%2A> メソッドを呼び出して閉じる必要があります。 代わりに、応答オブジェクトから応答ストリームを取得した場合、<xref:System.IO.Stream.Close%2A?displayProperty=fullName> メソッドを呼び出してストリームを閉じることができます。 応答またはストリームを閉じない場合、アプリケーションからサーバーへの接続が不足し、追加の要求を処理できなくなります。  
   
-10. **WebResponse** のプロパティをアクセス プロトコルまたは対応のインスタンスに対応プロトコルのプロパティを読み取る場合に **WebResponse** をキャストできます。  たとえば、<xref:System.Net.HttpWebResponse>の Http 固有のプロパティにアクセスするには、**HttpWebResponse** の参照に **WebResponse** をキャスト。  
+10. **WebResponse** のプロパティにアクセスするか、または **WebResponse** をプロトコル固有インスタンスにキャストして、プロトコル固有のプロパティを読み取ることができます。 たとえば、<xref:System.Net.HttpWebResponse> の HTTP 固有のプロパティにアクセスするには、**WebResponse** を **HttpWebResponse** 参照にキャストします。  
   
     ```csharp  
     Console.WriteLine (((HttpWebResponse)response).StatusDescription);  
@@ -146,7 +148,7 @@ caps.handback.revision: 12
     Console.WriteLine(CType(response, HttpWebResponse).StatusDescription)  
     ```  
   
-11. サーバーが送信する応答のデータを含むストリームを取得するには **WebResponse**の <xref:System.Net.WebResponse.GetResponseStream%2A> 方法を追加します。  
+11. サーバーによって送信された応答データを格納しているストリームを取得するには、**WebResponse** の <xref:System.Net.WebResponse.GetResponseStream%2A> メソッドを呼び出します。  
   
     ```csharp  
     Stream data = response.GetResponseStream;  
@@ -156,7 +158,7 @@ caps.handback.revision: 12
     Dim data As Stream = response.GetResponseStream  
     ```  
   
-12. 応答からのデータを読んだと、**\[Stream.Close\]** 方法を使用して応答のベースを決算または **\[WebResponse.Close\]** 方法を使用して応答を閉じなければ必要があります。  両方の **\[閉じる\]** 方法を応答のベースと **WebResponse**というする必要はありませんが、編集することで、破壊試験ではありません。  
+12. 応答からのデータの読み取り後、**Stream.Close** メソッドを使用して応答ストリームを閉じるか、**WebResponse.Close** メソッドを使用して応答を閉じる必要があります。 応答ストリームと **WebResponse** の両方で **Close** メソッドを呼び出す必要はありませんが、そのようにしても問題はありません。  
   
     ```csharp  
     response.Close();  
@@ -164,10 +166,9 @@ caps.handback.revision: 12
   
     ```vb  
     response.Close()  
-  
     ```  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```csharp  
 using System;  
@@ -264,12 +265,12 @@ Namespace Examples.System.Net
         End Sub  
     End Class  
 End Namespace  
-  
 ```  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [インターネット要求の作成](../../../docs/framework/network-programming/creating-internet-requests.md)   
  [ネットワーク上でストリームを使用する](../../../docs/framework/network-programming/using-streams-on-the-network.md)   
  [プロキシを介したインターネットへのアクセス](../../../docs/framework/network-programming/accessing-the-internet-through-a-proxy.md)   
  [データの要求](../../../docs/framework/network-programming/requesting-data.md)   
  [方法: WebRequest クラスを使用してデータを要求する](../../../docs/framework/network-programming/how-to-request-data-using-the-webrequest-class.md)
+

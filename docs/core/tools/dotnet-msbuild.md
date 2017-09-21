@@ -1,28 +1,26 @@
 ---
-title: "dotnet-msbuild コマンド - .NET Core CLI"
-description: "dotnet-msbuild コマンドは、MSBuild コマンド ラインへのアクセスを提供します。"
-keywords: "dotnet-msmsbuild, CLI, CLI コマンド, .NET Core"
-author: blackdwarf
+title: "dotnet msbuild コマンド - .NET Core CLI"
+description: "dotnet msbuild コマンドは、MSBuild コマンド ラインへのアクセスを提供します。"
+author: mairaw
 ms.author: mairaw
-ms.date: 05/24/2017
+ms.date: 08/14/2017
 ms.topic: article
 ms.prod: .net-core
 ms.technology: dotnet-cli
-ms.devlang: dotnet
-ms.assetid: ffdc40ba-ef33-463e-aa35-b0af1fe615a2
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 1f02dcd779b9ed249ebd2fedb973383b1dcd8963
+ms.sourcegitcommit: a19ab54a6cc44bd7acd1e40a4ca94da52bf14297
+ms.openlocfilehash: 96e4eac528abad2b336a979a98c9be2bee5d17ee
 ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
+ms.lasthandoff: 08/14/2017
 
 ---
+# <a name="dotnet-msbuild"></a>dotnet msbuild
 
-# <a name="dotnet-msbuild"></a>dotnet-msbuild
+[!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
 
 ## <a name="name"></a>名前
 
-`dotnet-msbuild` - プロジェクトとそのすべての依存関係をビルドします。
+`dotnet msbuild` - プロジェクトとそのすべての依存関係をビルドします。
 
 ## <a name="synopsis"></a>構文
 

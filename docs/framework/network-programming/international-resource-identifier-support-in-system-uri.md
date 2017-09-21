@@ -1,60 +1,66 @@
 ---
-title: "System.Uri での International Resource Identifier のサポート | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
+title: "System.Uri での International Resource Identifier のサポート"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- VB
+- CSharp
+- C++
+- jsharp
 ms.assetid: b5e994c3-3535-4aff-8e1b-b69be22e9a22
 caps.latest.revision: 9
-author: "mcleblanc"
-ms.author: "markl"
-manager: "markl"
-caps.handback.revision: 9
+author: mcleblanc
+ms.author: markl
+manager: markl
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: bb81ee9db5c4c8dc7dfa9a7a193adf47ee37b604
+ms.contentlocale: ja-jp
+ms.lasthandoff: 08/21/2017
+
 ---
-# System.Uri での International Resource Identifier のサポート
-<xref:System.Uri?displayProperty=fullName> クラスは、国際 Resource Identifier \(IRI\) およびドメイン名国際化 \(IDN\) のサポートが追加されました。  これらの改善は、.NET Framework 3.5、3.0 SP1 と 2.0 SP1 で使用できます。  
+# <a name="international-resource-identifier-support-in-systemuri"></a>System.Uri での International Resource Identifier のサポート
+<xref:System.Uri?displayProperty=fullName> クラスは、International Resource Identifier (IRI) および国際化ドメイン名 (IDN) のサポートにより拡張されました。 これらの機能拡張は、.NET Framework 3.5、3.0 SP1、および 2.0 SP1 で使用できます。  
   
-## IRI と IDN サポート  
- Web アドレスは非常に、一連の文字で構成される Uniform Resource Identifier \(URI\) を使用して通常使用されます:  
+## <a name="iri-and-idn-support"></a>IRI と IDN のサポート  
+ Web アドレスは通常、次の非常に限られた文字のセットで構成される Uniform Resource Identifier (URI) を使用して表されます。  
   
--   英語のアルファベットの大文字および小文字の ASCII 文字。  
+-   英文字の大文字と小文字の ASCII 文字。  
   
--   0 ～ 9 の数字。  
+-   0 から 9 の数字。  
   
--   その他少数の ASCII 記号。  
+-   その他の少数の ASCII シンボル。  
   
- URI の仕様は、インターネット技術標準化委員会 \(IETF: Internet Engineering Task Force\) から発行された RFC 2396 および RFC 3986 に記述されています。  
+ URI の仕様は、インターネット技術標準化委員会 (IETF) が公開している RFC 2396 および RFC 3986 で規定されています。  
   
- インターネットの普及と共に、英語以外の言語を使用してリソースを識別する必要も増えてきました。  このニーズを満たし、かつ非 ASCII 文字 \(Unicode\/ISO 10646 文字セットの文字\) を使用できる識別子に、IRI \(International Resource Identifier\) があります。  IRI の仕様は、IETF から発行された RFC 3987 に記述されています。  IRI を使用すると、URL に Unicode 文字を含めることができます。  
+ インターネットの成長により、英語以外の言語を使用するリソースを識別する必要性が高まっています。 このニーズに対応し、非 ASCII 文字 (Unicode/ISO 10646 の文字セット内の文字) を許可する識別子が、International Resource Identifier (IRI) として知られています。 IRI の仕様は、IETF によって発行された RFC 3987 で規定されています。 IRI を使用すると、URL に Unicode 文字を含めることができます。  
   
- <xref:System.Uri?displayProperty=fullName> の既存のクラスが RFC 3987 に基づいて IRI サポートを提供することによって延期されました。  現在のユーザーには、明確に IRI を有効にしない限り、.NET Framework 2.0 の動作からの変更点は分かりません。  これにより、以前のバージョンの .NET Framework との互換性が確保されます。  
+ 既存の <xref:System.Uri?displayProperty=fullName> クラスは、RFC 3987 に基づいて IRI サポートを提供するために拡張されています。 現在のユーザーは、自分で明確に IRI を有効にしない限り、.NET Framework 2.0 の動作からは変更に気付きません。 これにより、.NET Framework の以前のバージョンとのアプリケーションの互換性を保証します。  
   
- アプリケーションはドメイン名に IRI の分析のルールを適用するかどうかどうかを分析する国際化 \(IDN\) ドメイン名を使用するに適用される、および指定できます。  これは machine.config ファイルまたは app.config ファイルで行うことができます。  
+ アプリケーションで、ドメイン名に適用する国際ドメイン名 (IDN) 解析を使用するかどうか、および IRI 解析規則を適用すべきかどうかを指定できます。 これは、machine.config ファイルまたは app.config ファイルで指定できます。  
   
- IDN を有効にすると、ドメイン名に含まれるすべての Unicode ラベルが等価の Punycode に変換されます。  Punycode 名は ASCII 文字だけで構成され、必ず xn\-\- というプレフィックスで始まります。  この目的は、インターネット上の既存の DNS サーバーをサポートすることです。ほとんどの DNS サーバーは、ASCII 文字しかサポートしていません \(RFC 3940 を参照\)。  
+ IDN を有効にすると、ドメイン名に含まれるすべての Unicode のラベルが Punycode のラベルに変換されます。 Punycode 名には ASCII 文字のみが含まれ、常に xn-- プレフィックスで始まります。 この理由は、ほとんどの DNS サーバーは ASCII 文字しかサポートしていないため、インターネットで既存の DNS サーバーをサポートするためです (RFC 3940 を参照)。  
   
- IRI および IDN を有効にすると、<xref:System.Uri.DnsSafeHost%2A?displayProperty=fullName> プロパティの値に影響します。  IRI および IDN を有効にすると、<xref:System.Uri.Equals%2A?displayProperty=fullName>, <xref:System.Uri.OriginalString%2A?displayProperty=fullName> メソッド、<xref:System.Uri.GetComponents%2A?displayProperty=fullName> メソッド、および <xref:System.Uri.IsWellFormedOriginalString%2A> メソッドの動作が変わる場合もあります。  
+ IRI と IDN を有効にすると、<xref:System.Uri.DnsSafeHost%2A?displayProperty=fullName> プロパティの値に影響します。 IRI と IDN を有効にすると、<xref:System.Uri.Equals%2A?displayProperty=fullName>、<xref:System.Uri.OriginalString%2A?displayProperty=fullName>、<xref:System.Uri.GetComponents%2A?displayProperty=fullName>、および <xref:System.Uri.IsWellFormedOriginalString%2A> メソッドの動作を変更することもできます。  
   
- <xref:System.GenericUriParser?displayProperty=fullName> クラスも、IRI および IDN をサポートするカスタマイズ可能なパーサーを作成できるように拡張されました。  <xref:System.GenericUriParser?displayProperty=fullName> オブジェクトの動作は、<xref:System.GenericUriParserOptions?displayProperty=fullName> 列挙体で使用可能な値のビットごとの組み合わせを <xref:System.GenericUriParser?displayProperty=fullName> コンストラクターに渡すことによって指定されます。  <xref:System.GenericUriParserOptions?displayProperty=fullName> 型は、このパーサーが、IRI \(International Resource Identifiers\) の RFC 3987 で指定された解析規則をサポートすることを示します。  IRI は、実際に使用されるかを IRI が有効な場合に依存します。  
+ IRI と IDN をサポートするカスタマイズ可能なパーサーを作成できるように、<xref:System.GenericUriParser?displayProperty=fullName> クラスも拡張されています。 <xref:System.GenericUriParser?displayProperty=fullName> オブジェクトの動作は、<xref:System.GenericUriParserOptions?displayProperty=fullName> 列挙型で使用可能な値のビットごとの組み合わせを <xref:System.GenericUriParser?displayProperty=fullName> コンストラクターに渡すことによって指定されます。 <xref:System.GenericUriParserOptions.IriParsing?displayProperty=fullName> 型は、パーサーが International Resource Identifiers (IRI) の RFC 3987 で規定された解析規則をサポートしていることを示します。 IRI が実際に使用されるかどうかは、IRI が有効になっているかどうかに依存します。  
   
- <xref:System.GenericUriParserOptions?displayProperty=fullName> 型は、このパーサーが、国際化ドメイン名 \(IDN: Internationalized Domain Name\) によるホスト名の解析をサポートしていることを示します。  IDN は、実際に使用されるかを IDN が有効な場合に依存します。  
+ <xref:System.GenericUriParserOptions.Idn?displayProperty=fullName> 型は、パーサーがホスト名の国際化ドメイン名 (IDN) の解析をサポートしていることを示します。 IDN が実際に使用されるかどうかは、IDN が有効になっているかどうかに依存します。  
   
- 分析する IRI を有効にすると、RFC 3987 の最新の IRI のルールに従って確認すると文字を正規化します。  既定値が無効になるために分析する IRI の正規化するため、および文字確認が RFC 2396 と 3986 RFC に従って実行されます。  
+ IRI 解析を有効にすると、RFC 3987 の最新の IRI 規則に従って、正規化と文字チェックが実行されます。 RFC 2396 および RFC 3986 に従って正規化と文字チェックが実行されるように、既定値では IRI 解析は無効になっています。  
   
- <xref:System.Uri?displayProperty=fullName> クラスを処理する IRI と IDN は、<xref:System.Configuration.IriParsingElement?displayProperty=fullName> と <xref:System.Configuration.IdnElement?displayProperty=fullName> のコンフィギュレーション設定のクラスを使用して管理されます。  <xref:System.Configuration.IriParsingElement?displayProperty=fullName> の設定により、<xref:System.Uri?displayProperty=fullName> クラスでの IRI 処理が有効または無効になります。  <xref:System.Configuration.IdnElement?displayProperty=fullName> の設定により、<xref:System.Uri> クラスでの IDN 処理が有効または無効になります。  <xref:System.Configuration.IriParsingElement?displayProperty=fullName> の設定も、IDN を間接的に制御します。  IDN 処理を可能にするには、IRI 処理を有効にする必要があります。  IRI 処理が無効な場合、IDN 処理は既定の設定値に設定されるため、互換性のために .NET Framework 2.0 の動作が使用されて、IDN 名は使用されません。  
+ <xref:System.Uri?displayProperty=fullName> クラスでの IRI と IDN の処理は、<xref:System.Configuration.IriParsingElement?displayProperty=fullName> および <xref:System.Configuration.IdnElement?displayProperty=fullName> の構成設定クラスを使用しても制御することができます。 <xref:System.Configuration.IriParsingElement?displayProperty=fullName> 設定は、<xref:System.Uri?displayProperty=fullName> クラスでの IRI 処理を有効または無効にします。 <xref:System.Configuration.IdnElement?displayProperty=fullName> 設定は、<xref:System.Uri> クラスでの IDN 処理を有効または無効にします。 <xref:System.Configuration.IriParsingElement?displayProperty=fullName> 設定も間接的に IDN を制御します。 IDN 処理を可能にするためには、IRI 処理を有効にする必要があります。 IRI 処理が無効になっている場合、IDN 処理は既定の設定に設定されます。既定の設定では、互換性のために .NET Framework 2.0 の動作が使用され、IDN 名は使用されません。  
   
- <xref:System.Configuration.IriParsingElement?displayProperty=fullName> と <xref:System.Configuration.IdnElement?displayProperty=fullName> のコンポーネント クラスのコンフィギュレーション設定が <xref:System.Uri?displayProperty=fullName> の最初のクラスが一度組み立て場合です。  それ以降の構成設定の変更は無視されます。  
+ <xref:System.Configuration.IriParsingElement?displayProperty=fullName> 構成クラスと <xref:System.Configuration.IdnElement?displayProperty=fullName> 構成クラスの構成設定は、最初の <xref:System.Uri?displayProperty=fullName> クラスが構築されるときに 1 回、読み取られます。 それ以降の構成設定の変更は無視されます。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Configuration.IdnElement?displayProperty=fullName>   
  <xref:System.Configuration.IriParsingElement?displayProperty=fullName>   
  <xref:System.Uri?displayProperty=fullName>   
  <xref:System.Uri.DnsSafeHost%2A?displayProperty=fullName>
+

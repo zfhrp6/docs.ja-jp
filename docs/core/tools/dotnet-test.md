@@ -1,32 +1,44 @@
 ---
-title: "dotnet-test コマンド - .NET Core CLI"
-description: "`dotnet test` コマンドは、指定されたプロジェクトで単体テストを実行する場合に使用されます。"
-keywords: "dotnet-test, CLI, CLI コマンド, .NET Core"
-author: blackdwarf
+title: "dotnet test コマンド - .NET Core CLI"
+description: "dotnet test コマンドは、指定されたプロジェクトで単体テストを実行する場合に使用されます。"
+author: mairaw
 ms.author: mairaw
-ms.date: 03/25/2017
+ms.date: 08/14/2017
 ms.topic: article
 ms.prod: .net-core
 ms.technology: dotnet-cli
-ms.devlang: dotnet
-ms.assetid: 4bf0aef4-148a-41c6-bb95-0a9e1af8762e
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 3308488672df2621c04de40f642c732f81284019
+ms.sourcegitcommit: a19ab54a6cc44bd7acd1e40a4ca94da52bf14297
+ms.openlocfilehash: 55329bed71be21a787d6e77d8c0ea67d607676b8
 ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
+ms.lasthandoff: 08/14/2017
 
 ---
+# <a name="dotnet-test"></a>dotnet test
 
-#<a name="dotnet-test"></a>dotnet-test
+[!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
 
 ## <a name="name"></a>名前
 
-`dotnet-test` - 単体テストを実行するために使用される .NET テスト ドライバー。
+`dotnet test` - 単体テストを実行するために使用される .NET テスト ドライバー。
 
 ## <a name="synopsis"></a>構文
 
-`dotnet test [<PROJECT>] [-s|--settings] [-t|--list-tests] [--filter] [-a|--test-adapter-path] [-l|--logger] [-c|--configuration] [-f|--framework] [-o|--output] [-d|--diag] [--no-build] [-v|--verbosity] [-h|--help]`
+# <a name="net-core-2xtabnetcore2x"></a>[.NET Core 2.x](#tab/netcore2x)
+
+
+```
+dotnet test [<PROJECT>] [-a|--test-adapter-path] [-c|--configuration] [--collect] [-d|--diag] [-f|--framework] [--filter] [-l|--logger] [--no-build] [--no-restore] [-o|--output] [-r|--results-directory] [-s|--settings] [-t|--list-tests] [-v|--verbosity]
+dotnet test [-h|--help]
+```
+
+# <a name="net-core-1xtabnetcore1x"></a>[.NET Core 1.x](#tab/netcore1x)
+
+```
+dotnet test [<PROJECT>] [-a|--test-adapter-path] [-c|--configuration] [-d|--diag] [-f|--framework] [--filter] [-l|--logger] [--no-build] [-o|--output] [-s|--settings] [-t|--list-tests]  [-v|--verbosity]
+dotnet test [-h|--help]
+```
+---
 
 ## <a name="description"></a>説明
 
@@ -36,65 +48,133 @@ ms.lasthandoff: 07/28/2017
 
 [!code-xml[XUnit 基本テンプレート](../../../samples/snippets/csharp/xunit-test/xunit-test.csproj)]
 
-## <a name="options"></a>オプション
+## <a name="arguments"></a>引数
 
 `PROJECT`
-    
+
 テスト プロジェクトへのパスを指定します。 省略すると、既定で現在のディレクトリに設定されます。
 
-`-h|--help`
+## <a name="options"></a>オプション
 
-コマンドの短いヘルプを印刷します。
-
-`-s|--settings <SETTINGS_FILE>`
-
-テストの実行時に使用される設定です。 
-
-`-t|--list-tests`
-
-現在のプロジェクトで検出されたすべてのテストを一覧表示します。 
-
-`--filter <EXPRESSION>`
-
-指定された式を使用して、現在のプロジェクト内のテストを除外します。 詳細については、「[フィルター オプションの詳細](#filter-option-details)」セクションをご覧ください。 選択的単体テストのフィルター処理の使用方法に関する詳細と例については、「[Running selective unit tests (選択的単体テストの実行)](../testing/selective-unit-tests.md)」をご覧ください。
+# <a name="net-core-2xtabnetcore2x"></a>[.NET Core 2.x](#tab/netcore2x)
 
 `-a|--test-adapter-path <PATH_TO_ADAPTER>`
 
-テスト実行で指定されたパスからカスタムのテスト アダプターを使用します。 
+テスト実行で指定されたパスからカスタムのテスト アダプターを使用します。
 
-`-l|--logger <LoggerUri/FriendlyName>`
+`-c|--configuration {Debug|Release}`
 
-テスト結果のロガーを指定します。 
+ビルド構成を定義します。 既定値は `Debug` ですが、プロジェクトの構成がこの既定の SDK 設定に優先する可能性があります。
 
-`-c|--configuration <CONFIGURATION>`
+`--collect <DATA_COLLECTOR_FRIENDLY_NAME>`
 
-ビルドに使用する構成です。 既定値は `Debug` ですが、プロジェクトの構成がこの既定の SDK 設定に優先する可能性があります。
+テストの実行のためのデータ コレクターを有効にします。 詳細については、[「Monitor and analyze test run」](https://aka.ms/vstest-collect) (テストの実行のモニターと分析) を参照してください。
+
+`-d|--diag <PATH_TO_DIAGNOSTICS_FILE>`
+
+テスト プラットフォームの診断モードを有効にし、指定したファイルに診断メッセージを出力します。
 
 `-f|--framework <FRAMEWORK>`
 
 特定の[フレームワーク](../../standard/frameworks.md)のテスト バイナリを検索します。
 
+`--filter <EXPRESSION>`
+
+指定された式を使用して、現在のプロジェクト内のテストを除外します。 詳細については、「[フィルター オプションの詳細](#filter-option-details)」セクションをご覧ください。 選択的単体テストのフィルター処理の使用方法に関する詳細と例については、「[Running selective unit tests (選択的単体テストの実行)](../testing/selective-unit-tests.md)」をご覧ください。
+
+`-h|--help`
+
+コマンドの短いヘルプを印刷します。
+
+`-l|--logger <LoggerUri/FriendlyName>`
+
+テスト結果のロガーを指定します。
+
+`--no-build`
+
+実行の前にテスト プロジェクトをビルドしません。
+
+`--no-restore`
+
+コマンドを実行するときに、暗黙的な復元を実行しません。
+
 `-o|--output <OUTPUT_DIRECTORY>`
 
 実行するバイナリを検索するディレクトリです。
 
-`-d|--diag <PATH_TO_DIAGNOSTICS_FILE>`
+`-r|--results-directory <PATH>`
 
-テスト プラットフォームの診断モードを有効にし、指定したファイルに診断メッセージを出力します。 
+テスト結果が配置されるディレクトリです。 存在しない場合は、指定のディレクトリが作成されます。
 
-`--no-build` 
+`-s|--settings <SETTINGS_FILE>`
 
-実行の前にテスト プロジェクトをビルドしません。
+テストの実行時に使用される設定です。
+
+`-t|--list-tests`
+
+現在のプロジェクトで検出されたすべてのテストを一覧表示します。
 
 `-v|--verbosity <LEVEL>`
 
 コマンドの詳細レベルを設定します。 指定できる値は、`q[uiet]`、`m[inimal]`、`n[ormal]`、`d[etailed]`、および `diag[nostic]` です。
 
+# <a name="net-core-1xtabnetcore1x"></a>[.NET Core 1.x](#tab/netcore1x)
+
+`-a|--test-adapter-path <PATH_TO_ADAPTER>`
+
+テスト実行で指定されたパスからカスタムのテスト アダプターを使用します。
+
+`-c|--configuration {Debug|Release}`
+
+ビルド構成を定義します。 既定値は `Debug` ですが、プロジェクトの構成がこの既定の SDK 設定に優先する可能性があります。
+
+`-d|--diag <PATH_TO_DIAGNOSTICS_FILE>`
+
+テスト プラットフォームの診断モードを有効にし、指定したファイルに診断メッセージを出力します。
+
+`-f|--framework <FRAMEWORK>`
+
+特定の[フレームワーク](../../standard/frameworks.md)のテスト バイナリを検索します。
+
+`--filter <EXPRESSION>`
+
+指定された式を使用して、現在のプロジェクト内のテストを除外します。 詳細については、「[フィルター オプションの詳細](#filter-option-details)」セクションをご覧ください。 選択的単体テストのフィルター処理の使用方法に関する詳細と例については、「[Running selective unit tests (選択的単体テストの実行)](../testing/selective-unit-tests.md)」をご覧ください。
+
+`-h|--help`
+
+コマンドの短いヘルプを印刷します。
+
+`-l|--logger <LoggerUri/FriendlyName>`
+
+テスト結果のロガーを指定します。
+
+`--no-build`
+
+実行の前にテスト プロジェクトをビルドしません。
+
+`-o|--output <OUTPUT_DIRECTORY>`
+
+実行するバイナリを検索するディレクトリです。
+
+`-s|--settings <SETTINGS_FILE>`
+
+テストの実行時に使用される設定です。
+
+`-t|--list-tests`
+
+現在のプロジェクトで検出されたすべてのテストを一覧表示します。
+
+`-v|--verbosity <LEVEL>`
+
+コマンドの詳細レベルを設定します。 指定できる値は、`q[uiet]`、`m[inimal]`、`n[ormal]`、`d[etailed]`、および `diag[nostic]` です。
+
+---
+
 ## <a name="examples"></a>例
 
 現在のディレクトリのプロジェクトでテストを実行します。
 
-`dotnet test` 
+`dotnet test`
 
 `test1` プロジェクトでテストを実行します。
 
@@ -138,6 +218,6 @@ ms.lasthandoff: 07/28/2017
 
 ## <a name="see-also"></a>関連項目
 
-[フレームワークとターゲット](../../standard/frameworks.md)   
-[.NET Core のランタイム識別子 (RID) のカタログ](../rid-catalog.md)
+ [フレームワークとターゲット](../../standard/frameworks.md)   
+ [.NET Core のランタイム識別子 (RID) のカタログ](../rid-catalog.md)
 

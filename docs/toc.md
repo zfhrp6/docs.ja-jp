@@ -66,7 +66,6 @@
 ## [.NET Core の新機能](core/whats-new/index.md)
 ## [チュートリアル](core/tutorials/index.md)
 ### [Visual Studio 2017 を使用した Windows での完全な .NET Core ソリューションの構築](core/tutorials/using-on-windows-full-solution.md)
-### [C# および Visual Studio Code の使用を開始する](core/tutorials/with-visual-studio-code.md)
 ### [macOS での .NET Core の概要](core/tutorials/using-on-macos.md)
 ### [Visual Studio for Mac を使用した macOS での .NET Core の概要](core/tutorials/using-on-mac-vs.md)
 ### [Visual Studio for Mac を使用した macOS での完全な .NET Core ソリューションの構築](core/tutorials/using-on-mac-vs-full-solution.md)
@@ -96,7 +95,10 @@
 ## [単体テスト](core/testing/index.md)
 ### [dotnet テストおよび xUnit を使用した単体テスト](core/testing/unit-testing-with-dotnet-test.md)
 ### [dotnet テストおよび MSTest を使用した単体テスト](core/testing/unit-testing-with-mstest.md)
+### [dotnet テストおよび xUnit を使用した F# 単体テスト]()
+### [dotnet テストおよび MSTest を使用した F# 単体テスト]()
 ### [選択的単体テストの実行](core/testing/selective-unit-tests.md)
+### [Visual Studio を使用した .NET Core プロジェクトの Live Unit Testing]()
 ## [バージョン管理](core/versions/index.md)
 ### [.NET Core サポート](core/versions/lts-current.md)
 <!--### [🔧 Servicing](core/versions/servicing.md)-->

@@ -1,30 +1,35 @@
 ---
-title: "非同期サーバー ソケットの例 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "ソケット、非同期サーバー ソケット"
-  - "ソケット、コード例"
-  - "非同期サーバー ソケット"
+title: "非同期サーバー ソケットの例"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- VB
+- CSharp
+- C++
+- jsharp
+helpviewer_keywords:
+- sockets, asynchronous server sockets
+- sockets, code examples
+- asynchronous server sockets
 ms.assetid: 13624cd3-f5c5-4950-8cda-31273b1fa6d1
 caps.latest.revision: 10
-author: "mcleblanc"
-ms.author: "markl"
-manager: "markl"
-caps.handback.revision: 10
+author: mcleblanc
+ms.author: markl
+manager: markl
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 9cf150a1ac5465a898ca9e330b186659ec6423f0
+ms.contentlocale: ja-jp
+ms.lasthandoff: 08/21/2017
+
 ---
-# 非同期サーバー ソケットの例
-次の例では、クライアントから接続要求を受け取るサーバーを作成します。  サーバーはソケット非同期な構築しているので、クライアントから接続を待つ間、サーバー アプリケーションの実行が中断されません。  アプリケーションはクライアントの文字列が表示され、コンソールの文字列を表示し、クライアントには文字列をエコーします。  The string クライアントから文字列「」を\<EOF\>メッセージの終了を通知するために含める必要があります。  
+# <a name="asynchronous-server-socket-example"></a>非同期サーバー ソケットの例
+次のプログラム例では、クライアントからの接続要求を受け取るサーバーを作成します。 このサーバーは非同期ソケットで構築されます。そのため、クライアントからの接続を待機している間に、サーバー アプリケーションの実行が中断されることはありません。 このアプリケーションはクライアントから文字列を受信し、それをコンソールに表示してから、クライアントにエコーで返します。 クライアントからの文字列には、文字列 "\<EOF>" が含まれている必要があります。これは、メッセージの終わりを伝えるためのものです。  
   
 ```vb  
 Imports System  
@@ -302,7 +307,8 @@ public class AsynchronousSocketListener {
 }  
 ```  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [非同期クライアント ソケットの例](../../../docs/framework/network-programming/asynchronous-client-socket-example.md)   
  [非同期サーバー ソケットの使用](../../../docs/framework/network-programming/using-an-asynchronous-server-socket.md)   
  [ソケットのコード例](../../../docs/framework/network-programming/socket-code-examples.md)
+

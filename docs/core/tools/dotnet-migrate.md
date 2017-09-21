@@ -1,28 +1,26 @@
 ---
-title: "dotnet-migrate コマンド - .NET Core CLI"
-description: "dotnet-migrate コマンドは、プロジェクトとそのすべての依存関係を移行します。"
-keywords: "dotnet-migrate, CLI, CLI コマンド, .NET Core"
-author: blackdwarf
+title: "dotnet migrate コマンド - .NET Core CLI"
+description: "dotnet migrate コマンドは、プロジェクトとそのすべての依存関係を移行します。"
+author: mairaw
 ms.author: mairaw
-ms.date: 03/15/2017
+ms.date: 08/14/2017
 ms.topic: article
 ms.prod: .net-core
 ms.technology: dotnet-cli
-ms.devlang: dotnet
-ms.assetid: 0da07253-5ae1-42e9-9455-bffee9950952
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: e8491d69b2e0df7b3bd2741e34abdb9631777019
+ms.sourcegitcommit: a19ab54a6cc44bd7acd1e40a4ca94da52bf14297
+ms.openlocfilehash: 674b19f9fc546e057c7b7fa4b024a0b013eda7e5
 ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
+ms.lasthandoff: 08/14/2017
 
 ---
+# <a name="dotnet-migrate"></a>dotnet の移行
 
-# <a name="dotnet-migrate"></a>dotnet-migrate
+[!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
 
 ## <a name="name"></a>名前
 
-`dotnet-migrate` - Preview 2 .NET Core プロジェクトを .NET Core SDK 1.0 プロジェクトに移行します。
+`dotnet migrate` - Preview 2 .NET Core プロジェクトを .NET Core SDK 1.0 プロジェクトに移行します。
 
 ## <a name="synopsis"></a>構文
 
@@ -41,7 +39,7 @@ ms.lasthandoff: 07/28/2017
 * *solution.sln* ファイル。ソリューションで参照されているプロジェクトを移行します。
 * 特定のディレクトリのすべてのサブディレクトリ (再帰的)。
 
-`dotnet migrate` コマンドは、`backup` ディレクトリ内に移行された *project.json* ファイルを保持します。ディレクトリが存在しない場合は作成されます。 この動作は、`--skip-backup` オプションを使ってオーバーライドされます。 
+`dotnet migrate` コマンドは、`backup` ディレクトリ内に移行された *project.json* ファイルを保持します。ディレクトリが存在しない場合は作成されます。 この動作は、`--skip-backup` オプションを使ってオーバーライドされます。
 
 既定では、移行操作は、標準出力 (STDOUT) に移行プロセスの状態を出力します。 `--report-file <REPORT_FILE>` オプションを使うと、指定したファイルに出力が保存を指定します。 
 
@@ -64,11 +62,11 @@ ms.lasthandoff: 07/28/2017
 
 `-h|--help`
 
-コマンドの短いヘルプを印刷します。  
+コマンドの短いヘルプを印刷します。
 
 `-t|--template-file <TEMPLATE_FILE>`
 
-移行に使用するテンプレートの csproj ファイル。 既定では、`dotnet new console` によってドロップされるテンプレートと同じテンプレートが使用されます。 
+移行に使用するテンプレートの csproj ファイル。 既定では、`dotnet new console` によってドロップされるテンプレートと同じテンプレートが使用されます。
 
 `-v|--sdk-package-version <VERSION>`
 
@@ -107,4 +105,3 @@ ms.lasthandoff: 07/28/2017
 現在のプロジェクトのみを移行し、プロジェクト間 (P2P) の依存関係は移行しません。 また、特定の SDK バージョンを使います。
 
 `dotnet migrate -s -v 1.0.0-preview4`
-

@@ -1,5 +1,5 @@
 ---
-title: "軽減策: グリッド コントロールの *-column へのディスク領域の割り当て"
+title: "軽減策: グリッド コントロールの -column へのディスク領域の割り当て"
 ms.custom: 
 ms.date: 04/07/2017
 ms.prod: .net-framework
@@ -24,7 +24,7 @@ ms.contentlocale: ja-jp
 ms.lasthandoff: 07/28/2017
 
 ---
-# <a name="mitigation-grid-control39s-space-allocation-to-star-columns"></a>軽減策: グリッド コントロールの *-column へのディスク領域の割り当て
+# <a name="mitigation-grid-control39s-space-allocation-to-star-columns"></a>軽減策: グリッド コントロールの -column へのディスク領域の割り当て
 
 .NET Framework 4.7 以降を対象とするアプリでは、WPF は <xref:System.Windows.Controls.Grid> コントロールが \*-column に領域を割り当てるために使用するアルゴリズムを置き換えます。 
 

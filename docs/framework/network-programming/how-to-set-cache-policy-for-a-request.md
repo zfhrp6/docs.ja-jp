@@ -1,31 +1,36 @@
 ---
-title: "方法: 要求のキャッシュ ポリシーを設定する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "要求のキャッシュ ポリシー"
+title: "方法: 要求のキャッシュ ポリシーを設定する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- VB
+- CSharp
+- C++
+- jsharp
+helpviewer_keywords:
+- request cache policies
 ms.assetid: 39c15e40-586b-4ac9-9cce-146f74b7e545
 caps.latest.revision: 11
-author: "mcleblanc"
-ms.author: "markl"
-manager: "markl"
-caps.handback.revision: 11
+author: mcleblanc
+ms.author: markl
+manager: markl
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 4acef4b118422a8276260d083a5c31c41472eb68
+ms.contentlocale: ja-jp
+ms.lasthandoff: 08/21/2017
+
 ---
-# 方法: 要求のキャッシュ ポリシーを設定する
-次の例では、要求のキャッシュのポリシーを設定することを示します。  例の入力は http:\/\/www.contoso.com\/ などの URI です。  
+# <a name="how-to-set-cache-policy-for-a-request"></a>方法: 要求のキャッシュ ポリシーを設定する
+次の例では、要求のキャッシュ ポリシーの設定方法を示します。 入力の例は、http://www.contoso.com/ などの URI です。  
   
-## 使用例  
- 次の例では、コードは 1 日にキャッシュ場合、要求されたリソースがキャッシュから使用される場合と同様にするキャッシュのポリシーを作成します。  たとえば、リソースがキャッシュの例で使用されているかどうか、`"The response was retrieved from the cache : False."`—表示およびリソースを示すメッセージが表示されます。  要求はクライアントとサーバー間のすべてのキャッシュして実行できます。  
+## <a name="example"></a>例  
+ 次のコード例では、リソースがキャッシュ内にある時間が 1 日より短い場合に、要求されたリソースの使用を許可するキャッシュ ポリシーを作成します。 この例では、リソースがキャッシュから使用されたかどうかを示すメッセージ ( たとえば、`"The response was retrieved from the cache : False."`) が表示され、リソースが表示されます。 要求は、クライアントとサーバー間にある任意のキャッシュによって満たすことができます。  
   
 ```csharp  
 using System;  
@@ -110,12 +115,12 @@ Namespace Examples.System.Net.Cache
         End Sub  
     End Class  
 End Namespace  
-  
 ```  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [ネットワーク アプリケーションのキャッシュ管理](../../../docs/framework/network-programming/cache-management-for-network-applications.md)   
  [キャッシュ ポリシー](../../../docs/framework/network-programming/cache-policy.md)   
  [場所ベースのキャッシュ ポリシー](../../../docs/framework/network-programming/location-based-cache-policies.md)   
  [時間ベースのキャッシュ ポリシー](../../../docs/framework/network-programming/time-based-cache-policies.md)   
- [\<requestCaching\> 要素 \(ネットワーク設定\)](../../../docs/framework/configure-apps/file-schema/network/requestcaching-element-network-settings.md)
+ [\<requestCaching> 要素 (ネットワーク設定)](../../../docs/framework/configure-apps/file-schema/network/requestcaching-element-network-settings.md)
+

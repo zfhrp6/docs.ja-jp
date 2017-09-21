@@ -1,28 +1,26 @@
 ---
 title: "dotnet-add 参照コマンド - .NET Core CLI"
-description: "dotnet-add 参照コマンドは、プロジェクト間参照を追加する便利なオプションを提供します。"
-keywords: "dotnet-add, CLI, CLI コマンド, .NET Core"
-author: spboyer
+description: "dotnet add 参照コマンドは、プロジェクト間参照を追加する便利なオプションを提供します。"
+author: mairaw
 ms.author: mairaw
-ms.date: 03/15/2017
+ms.date: 08/13/2017
 ms.topic: article
 ms.prod: .net-core
 ms.technology: dotnet-cli
-ms.devlang: dotnet
-ms.assetid: 5e2a3efd-443c-4f23-a1b1-a662a5387879
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 98491efc183ad62f47275d0832a32dde5899373d
+ms.sourcegitcommit: a19ab54a6cc44bd7acd1e40a4ca94da52bf14297
+ms.openlocfilehash: 18e3ce22c1b9a4506b2690262d8d0c4e13a58ed1
 ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
+ms.lasthandoff: 08/14/2017
 
 ---
-
 # <a name="dotnet-add-reference"></a>dotnet-add 参照
+
+[!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
 
 ## <a name="name"></a>名前
 
-`dotnet-add reference` - プロジェクト間 (P2P) 参照を追加します。
+`dotnet add reference` - プロジェクト間 (P2P) 参照を追加します。
 
 ## <a name="synopsis"></a>構文
 
@@ -73,4 +71,3 @@ ms.lasthandoff: 07/28/2017
 Linux/Unix で glob パターンを使って複数のプロジェクト参照を追加する:
 
 `dotnet add app/app.csproj reference **/*.csproj`
-

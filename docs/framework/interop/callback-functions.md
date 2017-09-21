@@ -1,41 +1,47 @@
 ---
-title: "コールバック関数 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "callback 関数"
-  - "プラットフォーム呼び出し, 呼び出し (アンマネージ関数の)"
+title: "コールバック関数"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- VB
+- CSharp
+- C++
+- jsharp
+helpviewer_keywords:
+- callback function
+- platform invoke, calling unmanaged functions
 ms.assetid: c0aa8533-3b3b-42e8-9f60-84919793098c
 caps.latest.revision: 6
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 6
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: a81751f83a66ce12cbc2e898cd3d0a178b955344
+ms.contentlocale: ja-jp
+ms.lasthandoff: 08/21/2017
+
 ---
-# コールバック関数
-コールバック関数は、アンマネージ DLL 関数が作業を完了できるようにするためのマネージ アプリケーション内のコードです。  コールバック関数への呼び出しは、マネージ アプリケーションから DLL 関数を通じて間接的に渡され、マネージ実装に返されます。  プラットフォーム呼び出しで呼び出される DLL 関数の中には、マネージ コードにコールバック関数が記述されていないと、正しく実行できない関数があります。  
+# <a name="callback-functions"></a>コールバック関数
+コールバック関数は、アンマネージ DLL 関数がタスクを完了できるように支援するマネージ アプリケーション内のコードです。 コールバック関数の呼び出しは、マネージ アプリケーションから、DLL 関数を介して、マネージ実装へと間接的に渡されます。 多数ある DLL 関数の一部はプラットフォーム呼び出しと呼ばれ、正常に実行されるには、マネージ コード内にコールバック関数が必要です。  
   
- ほとんどの DLL 関数の場合、マネージ コードから呼び出すには関数のマネージ定義を作成して、それを呼び出します。  この処理は簡単です。  
+ ほとんどの DLL 関数は、マネージ コードから呼び出す場合、関数のマネージ定義を作成してから、それを呼び出します。 このプロセスは簡単です。  
   
- コールバック関数を必要とする DLL 関数を使用する場合は、追加の手順が必要になります。  最初に、関数のドキュメントを参照して、その関数がコールバックを必要とするかどうかを判断します。  次に、マネージ アプリケーション内にコールバック関数を作成します。  最後に、コールバック関数に引数としてポインターを渡し、DLL 関数を呼び出します。  これらのステップを要約した図を次に示します。  
+ コールバック関数を必要とする DLL 関数を使用する場合は、追加の手順がいくつかあります。 まず、関数のドキュメントを参照して、その関数にコールバックが必要かどうかを判断する必要があります。 次に、マネージ アプリケーションにコールバック関数を作成する必要があります。 最後に、DLL 関数を呼び出し、引数としてコールバック関数のポインターを渡します。 次の図は、この手順をまとめたものです。  
   
  ![プラットフォーム呼び出しコールバック](../../../docs/framework/interop/media/pinvokecallback.gif "pinvokecallback")  
-コールバック関数とその実装  
+コールバック関数と実装  
   
- コールバック関数は、繰り返し実行されるタスクがある状況での使用に適しています。  もう 1 つの一般的な使い方として、Win32 API の **EnumFontFamilies**、**EnumPrinters**、**EnumWindows** などの列挙関数と組み合わせる方法があります。  **EnumWindows** 関数は、コンピューター上の既存のウィンドウすべてで列挙し、コールバック関数を呼び出して各ウィンドウでタスクを実行します。  手順と例については、「[方法 : コールバック関数を実装する](../../../docs/framework/interop/how-to-implement-callback-functions.md)」を参照してください。  
+ コールバック関数は、タスクが繰り返し実行される状況での使用に最適です。 また、一般的な用途として、Win32 API の **EnumFontFamilies**、**EnumPrinters**、**EnumWindows** などの列挙関数があります。 **EnumWindows** 関数は、各ウィンドウでタスクを実行するコールバック関数を呼び出して、コンピューター上のすべての既存のウィンドウを列挙します。 手順と例については、「[How to: Implement Callback Functions](../../../docs/framework/interop/how-to-implement-callback-functions.md)」(方法: コールバック関数を実装する) を参照してください。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [方法: コールバック関数を実装する](../../../docs/framework/interop/how-to-implement-callback-functions.md)   
  [DLL 関数の呼び出し](../../../docs/framework/interop/calling-a-dll-function.md)
+

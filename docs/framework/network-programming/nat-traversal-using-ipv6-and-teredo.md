@@ -1,60 +1,65 @@
 ---
-title: "IPv6 および Teredo を使用した NAT トラバーサル | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
+title: "IPv6 および Teredo を使用した NAT トラバーサル"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- VB
+- CSharp
+- C++
+- jsharp
 ms.assetid: 568cd245-3300-49ef-a995-d81bf845d961
 caps.latest.revision: 6
-author: "mcleblanc"
-ms.author: "markl"
-manager: "markl"
-caps.handback.revision: 6
+author: mcleblanc
+ms.author: markl
+manager: markl
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: d1730e5af0ee3f837f46071992c80e81b118af1e
+ms.contentlocale: ja-jp
+ms.lasthandoff: 08/21/2017
+
 ---
-# IPv6 および Teredo を使用した NAT トラバーサル
-ネットワーク アドレス変換 \(NAT\) の横断をサポートする改善が行われた。  これらの変更は、IPv6 と Teredo 用に設計されていますが、技術にトンネルを掘る他の IP に、適用されるです。  これらの改善は <xref:System.Net> および関連する名前空間のクラスに影響します。  
+# <a name="nat-traversal-using-ipv6-and-teredo"></a>IPv6 および Teredo を使用した NAT トラバーサル
+ネットワーク アドレス変換 (NAT) トラバーサルをサポートする機能強化が行われました。 これらの変更は、IPv6 および Teredo での使用を想定して設計されていますが、他の IP トンネリング テクノロジにも適用されます。 これらの拡張機能は、<xref:System.Net> および関連する名前空間のクラスに影響します。  
   
- 技術にトンネルを掘る IP の使用を計画するこれらの変更は、クライアントとサーバー アプリケーションに影響を与える可能性があります。  
+ これらの変更は、IP トンネリング テクノロジを使用するクライアント サーバー アプリケーションに影響を与える可能性があります。  
   
- サポート NAT.横断への変更は、.NET Framework Version 4.を使用してアプリケーションにのみ使用できます。  これらの機能は、.NET Framework の以前のバージョンでは使用できません。  
+ NAT トラバーサルをサポートするための変更は、.NET Framework Version 4 を使用しているアプリケーションでのみ機能します。 これらの機能は、.NET Framework の以前のバージョンではご利用いただけません。  
   
-## 概要  
- Internet Protocol version 4 \(IPv4\) は、32 ビットのコードと IPv4 の住所をで定義します。  したがって、IPv4 は、約 40億固有の IP アドレス \(2^32\) がサポートされます。  90 時間に配置されたインターネット上のコンピュータおよびネットワーク デバイスの数として IPv4 の住所領域の限度が明確になります。  
+## <a name="overview"></a>概要  
+ Internet Protocol version 4 (IPv4) では、IPv4 アドレスが 32 ビット長として定義されました。 その結果、IPv4 は約 40 億個の一意の IP アドレスをサポートしています (2 ^32)。 1990 年代にインターネット上のコンピューターやネットワーク デバイスの数が拡大したため、IPv4 アドレス空間の逼迫が明らかになりました。  
   
- IPv4 の有効期間を延長するために使用されている技術の 1 が、単一の固有パブリック IP アドレスが複数のプライベート IP アドレス \(プライベート イントラネット\) を表すように NAT を展開します。  NAT.デバイスの後のプライベート IP アドレスは、パブリック IPv4 の住所を共有します。  NAT.デバイスは、専用のハードウェア デバイス \(低な無線アクセス ポイントおよびルーターなど\) または NAT を提供するサービスを実行しているコンピュータである場合があります。  この、各種の IP アドレスのデバイスまたはサービスは、インターネットをプライベート イントラネット間の IP のネットワーク パケットを変換します。  
+ IPv4 の枯渇を遅らせるために採用された複数の手法の 1 つが、単一の一意なパブリック IP アドレスで多数のプライベート IP アドレス (プライベート イントラネット) を表すことができる NAT の展開でした。 NAT デバイスの背後にあるプライベート IP アドレスは、単一のパブリック IPv4 アドレスを共有しています。 専用ハードウェア デバイス (安価なワイヤレス アクセス ポイントとルーターなど) や、NAT を提供するサービスを実行しているコンピューターを NAT デバイスとすることができます。 このパブリック IP アドレスを提供するデバイスまたはサービスは、パブリック インターネットとプライベート イントラネットの間で IP ネットワーク パケットを変換します。  
   
- この設定は、プライベート イントラネットで実行されるインターネット他の IP アドレス \(通常は\) サーバーに要求を送信クライアント アプリケーションの場合によくあります。  応答を送信または応答することがわかっている戻す場合 NAT.サーバーまたはデバイスがクライアントのマッピングその要求を保持することができます。  ただし、この設定は NAT.デバイスの後でプライベート イントラネットで実行されるサービスを提供するとともにそばパケット聴覚を立て、対応するアプリケーションの問題を提起します。  これはピアツーピア アプリケーション用に、ケースです。  
+ プライベート イントラネットで実行され、インターネット上の他の IP アドレス (通常はサーバー) に要求を送信するクライアント アプリケーションの場合、このスキームが効果的です。 NAT デバイスまたはサーバーはクライアント要求のマッピングを維持しており、応答が返されたときに応答の送信先を認識できます。 一方、NAT デバイスの背後のプライベート イントラネットで実行され、サービスを提供し、パケットをリッスンして応答するアプリケーションの場合、このスキームには問題があります。 ピアツーピア アプリケーションの場合は特に顕著です。  
   
- IPv6 プロトコルは 128 ビットのコードと IPv4 の住所をで定義します。  したがって、IPv6 は非常に大きな 3.2 x 10^38 個の固有 IP アドレス　\(2^128 個\) をサポートします。  この住所領域のサイズによって、一意な住所が許可されるインターネットに関連するすべてのデバイスにできます。  この問題があります。  世界の大部分はまだ IPv4 のみ使用します。  特に、既存のルーター複数の会社と小世帯と、組織が使用する無線アクセス ポイントは IPv6 はサポートされません。  これらの顧客に使用するインターネット サービス プロバイダが IPv6 のサポートをサポートしていませんとコンフィギュレーションしていません。  
+ IPv6 プロトコルは、IPv4 アドレスを 128 ビット長と定義しています。 その結果、IPv6 は、3.2 x 10^38 個の一意のアドレス (2 ^128) が使用できる非常に大規模な IP アドレス空間をサポートしています。 このサイズのアドレス空間があるため、インターネットに接続されたすべてのデバイスに、それぞれ固有のアドレスを付与することができます。 ところが、これには問題があります。 世界の大部分では、まだ IPv4 だけを使用しています。 具体的には、小規模な企業、組織、家庭で使用されている既存のルーターやワイヤレス アクセス ポイントは、IPv6 をサポートしていません。 それらの顧客にサービスを提供する一部のインターネット サービス プロバイダーも、IPv6 をサポートしていないか、IPv6 のサポートを構成に組み込んでいません。  
   
- 複数の IPv6 の切り替えテクノロジは IPv4 のパケットの IPv6 の住所にトンネルを掘るは、セキュリティ面。  これらのテクノロジには、他の IPv6 のネットワークに到達するため IPv6 のネットワーク ホストが IP4 をスキャンする必要がある場合 6to4、ISATAP とユニキャストの IPv6 のトラフィックに住所指定およびホストでホストの自動トンネリングを提供する Teredo のトンネルが含まれます。  パケットの IPv6 は IPv4 のパケットとしてトンネルを掘られて送信されます。  NAT.デバイスを使用して IPv6 の住所の NAT.横断ようにするトンネリング テクノロジが使用されます。  
+ IPv4 パケットで IPv6 アドレスをトンネリングするために、複数の IPv6 移行テクノロジが開発されています。 そのようなテクノロジとして、6to4、ISATAP、Teredo のトンネルがあります。これらのテクノロジは、IPv6 ホストが他の IPv6 ネットワークに到達するために IPv4 ネットワークを経由する必要があるときに、ユニキャスト IPv6 トラフィックに対するアドレス割り当てとホスト間の自動トンネリングを提供します。 IPv6 パケットは、IPv4 パケットとしてトンネリングされて送信されます。 NAT デバイスを介した IPv6 アドレスの NAT トラバーサルを可能にする複数のトンネリング手法が使用されています。  
   
- Teredo は IPv4 のネットワークに IPv6 の接続が移動 IPv6 の切り替えテクノロジの 1 つです。  Teredo は、インターネット技術的な委員会 \(IETF\) が発行される RFC 4380 に記載されます。  Windows XP SP2 が範囲 2001:0::\/32 パブリック IPv6 の住所を提供する仮想の Teredo アダプタに、後でサポートを提供します。  この IPv6 の住所は、インターネットからフォワードに接続そば聴覚を立てるには、リッスン サービスに接続する IPv6 によって有効にするクライアントに提供できます。  これは、問題をからアプリケーションで IPv6 の Teredo の住所を使用してに接続できるため、アプリケーションを NAT.デバイスの後のコンピュータ住所をリリースします。  
+ Teredo は、IPv4 ネットワークで IPv6 接続を実現する IPv6 移行テクノロジの 1 つです。 Teredo は、インターネット技術標準化委員会 (IETF) が公開している RFC 4380 で規定されています。 Windows XP SP2 以降では、2001:0::/32 の範囲でパブリック IPv6 アドレスを提供する仮想 Teredo アダプターがサポートされています。 この IPv6 アドレスは、インターネットからの着信接続をリッスンするために使用でき、リッスンしているサービスに接続しようとする IPv6 対応クライアントに提供できます。 これにより、IPv6 Teredo アドレスを使用してそのコンピューターに接続できるようになるため、アプリケーションは NAT デバイスの背後にあるコンピューターのアドレスを指定する方法について考慮する必要がなくなります。  
   
-## NAT.横断と Teredo をサポートする改良  
- 改良は NAT.横断をサポートするための <xref:System.Net>、<xref:System.Net.NetworkInformation>と IPv6 と Teredo を使用して <xref:System.Net.Sockets> の名前空間に追加されます。  
+## <a name="enhancements-to-support-nat-traversal-and-teredo"></a>NAT トラバーサルと Teredo をサポートするための機能強化  
+ IPv6 および Teredo を使用した NAT トラバーサルをサポートするために、<xref:System.Net>、<xref:System.Net.NetworkInformation>、および <xref:System.Net.Sockets> 名前空間に強化機能が追加されました。  
   
- 複数の方法は <xref:System.Net.NetworkInformation.IPGlobalProperties?displayProperty=fullName> クラスでホストのユニキャストの IP アドレスの一覧を取得するために追加されます。  <xref:System.Net.NetworkInformation.IPGlobalProperties.BeginGetUnicastAddresses%2A> 方法がローカル コンピュータの安定したユニキャストの IP アドレスのテーブルを取得する非同期要求されます。  <xref:System.Net.NetworkInformation.IPGlobalProperties.EndGetUnicastAddresses%2A> 方法がローカル コンピュータの安定したユニキャストの IP アドレスのテーブルを取得する保留中非同期要求を終了。  <xref:System.Net.NetworkInformation.IPGlobalProperties.GetUnicastAddresses%2A> 方法は、アドレス テーブルを必要に応じて紹介するまで待機するローカル コンピュータの安定したユニキャストの IP アドレスのテーブルを同期取得する要求です。  
+ <xref:System.Net.NetworkInformation.IPGlobalProperties?displayProperty=fullName> クラスに、ホスト上のユニキャスト IP アドレスの一覧を取得するための複数のメソッドが追加されています。 <xref:System.Net.NetworkInformation.IPGlobalProperties.BeginGetUnicastAddresses%2A> メソッドは、ローカル コンピューター上の安定したユニキャスト IP アドレス テーブルを取得するための非同期要求を開始します。 <xref:System.Net.NetworkInformation.IPGlobalProperties.EndGetUnicastAddresses%2A> メソッドは、ローカル コンピューター上の安定したユニキャスト IP アドレス テーブルを取得するための保留中の非同期要求を終了します。 <xref:System.Net.NetworkInformation.IPGlobalProperties.GetUnicastAddresses%2A> メソッドは、ローカル コンピューター上の安定したユニキャスト IP アドレス テーブルを取得するための同期要求であり、アドレス テーブルが安定化されるまで必要に応じて待機します。  
   
- <xref:System.Net.IPAddress.IsIPv6Teredo%2A?displayProperty=fullName> のプロパティが <xref:System.Net.IPAddress> が IPv6 の Teredo 住所であるかどうかを判断するために使用できます。  
+ <xref:System.Net.IPAddress.IsIPv6Teredo%2A?displayProperty=fullName> プロパティは、<xref:System.Net.IPAddress> が IPv6 Teredo アドレスであるかどうかを確認するために使用できます。  
   
- <xref:System.Net.IPAddress.IsIPv6Teredo%2A> のプロパティを添付これらの新しい <xref:System.Net.NetworkInformation.IPGlobalProperties> クラスの方法を使用して簡単に Teredo の住所を検索するアプリケーションができます。  アプリケーションはリモート アプリケーションにこの情報が含まれている場合に保管場所の Teredo の住所を従業員全体に知らせたくない場合にのみ必要があります。通常  たとえば、ピアツーピア アプリケーションは、アプリケーション配送を有効にする場合は、他に凝視するそれらをようにするマッチメーク サーバーに IPv6 すべての住所を送信する場合があります。  
+ これらの新しい <xref:System.Net.NetworkInformation.IPGlobalProperties> クラス メソッドを <xref:System.Net.IPAddress.IsIPv6Teredo%2A> プロパティと組み合わせて使用することで、アプリケーションは Teredo アドレスを簡単に見つけることができます。 通常、アプリケーションが知る必要があるのは、ローカルの Teredo アドレスだけです (アプリケーションがこの情報をリモート アプリケーションに送信する場合)。 たとえば、ピアツーピア アプリケーションがすべての IPv6 アドレスをマッチメイキング サーバーに送信し、サーバーが受け取ったアドレスを他のピアに転送して直接通信ができるようにする場合です。  
   
- アプリケーションは保管場所の住所 Teredo のではなく <xref:System.Net.IPAddress.IPv6Any?displayProperty=fullName> のリッスンは、リッスン サービスを設定する必要があります。  したがって、リモート クライアントまたはピアがリッスン サービスのホストに直接 IPv6 の工順がある場合は、クライアントまたはピア IPv6 を使用してに直接接続し、を Teredo パケットにトンネルを掘るに使用する必要がない場合。  
+ アプリケーションは通常、ローカルの Teredo アドレスではなく <xref:System.Net.IPAddress.IPv6Any?displayProperty=fullName> でリッスンするようにリッスン サービスを設定する必要があります。 そのため、リモート クライアントまたはピアが、リッスンしているサービスのホストへの直接的な IPv6 ルートを持っている場合、クライアントまたはピアは、IPv6 を使用して直接接続することができ、Teredo を使用してパケットをトンネリングする必要はありません。  
   
- TCP のアプリケーション用に、<xref:System.Net.Sockets.TcpListener?displayProperty=fullName> クラスに NAT.横断を有効にする <xref:System.Net.Sockets.TcpListener.AllowNatTraversal%2A> の方法があります。  UDP アプリケーションの場合は、<xref:System.Net.Sockets.UdpClient?displayProperty=fullName> クラスに NAT.横断を有効にする <xref:System.Net.Sockets.UdpClient.AllowNatTraversal%2A> の方法があります。  
+ TCP アプリケーションの場合、<xref:System.Net.Sockets.TcpListener?displayProperty=fullName> クラスに、NAT トラバーサルを有効にする <xref:System.Net.Sockets.TcpListener.AllowNatTraversal%2A> メソッドがあります。 UDP アプリケーションの場合、<xref:System.Net.Sockets.UdpClient?displayProperty=fullName> クラスに、NAT トラバーサルを有効にする <xref:System.Net.Sockets.UdpClient.AllowNatTraversal%2A> メソッドがあります。  
   
- <xref:System.Net.Sockets.Socket?displayProperty=fullName> を使用し、関連する <xref:System.Net.Sockets.Socket.GetSocketOption%2A> クラス、および <xref:System.Net.Sockets.Socket.SetSocketOption%2A> 方法がの <xref:System.Net.Sockets.SocketOptionName?displayProperty=fullName> ソケット オプションおよび照会するに使用できるアプリケーションに対して有効または NAT.横断を無効にします。  
+ <xref:System.Net.Sockets.Socket?displayProperty=fullName> および関連したクラスを使用するアプリケーションでは、<xref:System.Net.Sockets.Socket.GetSocketOption%2A> メソッドと <xref:System.Net.Sockets.Socket.SetSocketOption%2A> メソッドを <xref:System.Net.Sockets.SocketOptionName.IPProtectionLevel?displayProperty=fullName> ソケット オプションと共に使用して、NAT トラバーサルのクエリ、有効化、または無効化を行うことができます。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Net.IPAddress.IsIPv6Teredo%2A?displayProperty=fullName>   
  <xref:System.Net.NetworkInformation.IPGlobalProperties.BeginGetUnicastAddresses%2A?displayProperty=fullName>   
  <xref:System.Net.NetworkInformation.IPGlobalProperties.EndGetUnicastAddresses%2A?displayProperty=fullName>   
@@ -63,3 +68,4 @@ caps.handback.revision: 6
  <xref:System.Net.Sockets.Socket.SetIPProtectionLevel%2A?displayProperty=fullName>   
  <xref:System.Net.Sockets.TcpListener.AllowNatTraversal%2A?displayProperty=fullName>   
  <xref:System.Net.Sockets.UdpClient.AllowNatTraversal%2A?displayProperty=fullName>
+

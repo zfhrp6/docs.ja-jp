@@ -1,65 +1,71 @@
 ---
-title: "相互運用のための .NET 型の要件 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "COM 相互運用機能, 公開 (COM コンポーネントを)"
-  - "COM 相互運用機能, 要件 (.NET 型の)"
-  - "公開 (COM に .NET Framework コンポーネントを)"
-  - "相互運用 (アンマネージ コードとの), 公開 (.NET Framework コンポーネントを)"
-  - "相互運用 (アンマネージ コードとの), 要件 (.NET 型の)"
-  - "要件 (相互運用のための .NET 型の)"
+title: "相互運用のための .NET 型の要件"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- VB
+- CSharp
+- C++
+- jsharp
+helpviewer_keywords:
+- exposing .NET Framework components to COM
+- COM interop, qualifying .NET types
+- qualifying .NET types for interoperation
+- interoperation with unmanaged code, qualifying .NET types
+- interoperation with unmanaged code, exposing .NET Framework components
+- COM interop, exposing COM components
 ms.assetid: 4b8afb52-fb8d-4e65-b47c-fd82956a3cdd
 caps.latest.revision: 10
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 10
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 68ecd5e4c562f1eecb31ee539adb70d67455a584
+ms.contentlocale: ja-jp
+ms.lasthandoff: 08/21/2017
+
 ---
-# 相互運用のための .NET 型の要件
-アセンブリ内の型を COM アプリケーションに公開する場合は、デザイン時に COM 相互運用機能の要件について検討する必要があります。  マネージ型 \(クラス、インターフェイス、構造体、列挙型\) は、次のガイドラインに従うことで、COM 型とシームレスに統合されます。  
+# <a name="qualifying-net-types-for-interoperation"></a>相互運用のための .NET 型の要件
+COM アプリケーションにアセンブリ内の型を公開する場合は、設計時に COM 相互運用の要件を検討する必要があります。 以下のガイドラインに従うと、マネージ型 (クラス、インターフェイス、構造体、列挙型) は COM の型とシームレスに統合します。  
   
--   クラスでは、インターフェイスを明示的に実装する必要があります。  
+-   クラスは、インターフェイスを明示的に実装する必要があります。  
   
-     COM 相互運用機能では、クラスのすべてのメンバーと、その基本クラスのメンバーを含んだインターフェイスを自動的に生成する機能が提供されますが、インターフェイスを明示的に実装する方がはるかに優れています。  自動的に生成されるインターフェイスをクラス インターフェイスと呼びます。  ガイドラインについては、「[クラス インターフェイスの概要](http://msdn.microsoft.com/ja-jp/733c0dd2-12e5-46e6-8de1-39d5b25df024)」を参照してください。  
+     COM 相互運用は、クラスのすべてのメンバーとその基底クラスのメンバーを含むインターフェイスを自動的に生成するメカニズムを備えていますが、明示的なインターフェイスを提供する方がはるかによい方法です。 自動的に生成されるインターフェイスは、クラス インターフェイスと呼ばれます。 ガイドラインについては、「[クラス インターフェイスの概要](http://msdn.microsoft.com/en-us/733c0dd2-12e5-46e6-8de1-39d5b25df024)」を参照してください。  
   
-     [!INCLUDE[vbprvblong](../../../includes/vbprvblong-md.md)]、C\#、C\+\+ を使うと、インターフェイス定義言語 \(IDL: Interface Definition Language\) またはそれに相当する他の言語を使わなくても、インターフェイス定義をコードに組み込むことができます。  構文の詳細については、使用する言語のドキュメントを参照してください。  
+     インターフェイス定義言語 (IDL) またはそれと同等のものを使う代わりに、[!INCLUDE[vbprvblong](../../../includes/vbprvblong-md.md)]、C#、C++ を使ってコードにインターフェイス定義を組み込むことができます。 構文の詳細については、言語のドキュメントを参照してください。  
   
--   マネージ型はパブリックである必要があります。  
+-   マネージ型はパブリックにする必要があります。  
   
-     アセンブリ内で、登録されたり、タイプ ライブラリにエクスポートされたりするのはパブリック型だけです。  そのため、COM から参照できるのはパブリック型だけです。  
+     アセンブリ内のパブリック型のみが登録されて、タイプ ライブラリにエクスポートされます。 その結果、パブリック型のみが COM に表示されます。  
   
-     マネージ型は他のマネージ コードに対して、COM には公開されない機能を公開します。  たとえば、パラメーター化されたコンストラクター、静的メソッド、定数フィールドは、COM クライアントには公開されません。  また、ランタイムは型のデータを入出力双方にマーシャリングするため、データはコピーまたは変換されることがあります。  
+     マネージ型は、COM に公開されない可能性がある他のマネージ コードに機能を公開します。 たとえば、パラメーター化されたコンストラクター、静的メソッド、および定数フィールドは、COM クライアントに公開されません。 さらに、ランタイムが、ある型に、またはある型からデータをマーシャリングすると、データがコピーまたは変換される可能性があります。  
   
--   メソッド、プロパティ、フィールド、およびイベントはパブリックである必要があります。  
+-   メソッド、プロパティ、フィールド、イベントは、パブリックである必要があります。  
   
-     パブリック型のメンバーも、COM から参照できるようにする場合には、パブリックである必要があります。  アセンブリ、パブリック型、またはパブリック型のパブリック メンバーの参照可能範囲を制限するには、<xref:System.Runtime.InteropServices.ComVisibleAttribute> を適用します。  既定では、すべてのパブリック型およびメンバーが参照可能です。  
+     また、パブリック型のメンバーを COM に表示させる場合は、メンバーもパブリックにする必要があります。 アセンブリ、パブリック型、またはパブリック型のパブリック メンバーの可視性は、<xref:System.Runtime.InteropServices.ComVisibleAttribute> を適用することにより制限できます。 既定では、すべてのパブリック型とメンバーが可視になります。  
   
--   型は、COM からアクティブ化されるパブリックな既定のコンストラクターを持つ必要があります。  
+-   型では、既定のパブリック コンストラクターを COM からアクティブ化する必要があります。  
   
-     パブリックなマネージ型は COM から参照できます。  ただし、パブリックな既定のコンストラクター \(引数を持たないコンストラクター\) がない場合、COM クライアントでは型を作成できません。  その他のなんらかの方法でアクティブ化された COM クライアントなら、型を使用できます。  
+     マネージ パブリック型のみが COM に表示されます。 ただし、既定のパブリック コンストラクター (引数のないコンストラクター) がないと、COM クライアントは型を作成できません。 その場合でも、型が他の方法でアクティブ化されると、COM クライアントは型を使うことができます。  
   
--   型を抽象型にすることはできません。  
+-   型を抽象にすることはできません。  
   
-     COM クライアントでも、.NET クライアントでも、抽象型は生成できません。  
+     COM クライアントも .NET クライアントも、抽象型は作成できません。  
   
- マネージ型の継承の階層構造は、COM にエクスポートされると平坦になり、階層がなくなります。  マネージ環境とアンマネージ環境では、バージョン管理も異なります。  COM に公開される型は、他のマネージ型と同じバージョン管理特性を持ちません。  
+ COM にエクスポートされるとき、マネージ型の継承階層はフラット化されます。 マネージ環境とアンマネージ環境では、バージョン管理も異なります。 COM に公開された型は、他のマネージ型とバージョン管理特性が異なります。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Runtime.InteropServices.ComVisibleAttribute>   
  [COM への .NET Framework コンポーネントの公開](../../../docs/framework/interop/exposing-dotnet-components-to-com.md)   
- [Introducing the Class Interface](http://msdn.microsoft.com/ja-jp/733c0dd2-12e5-46e6-8de1-39d5b25df024)   
+ [クラス インターフェイスの概要](http://msdn.microsoft.com/en-us/733c0dd2-12e5-46e6-8de1-39d5b25df024)   
  [相互運用固有の属性の適用](../../../docs/framework/interop/applying-interop-attributes.md)   
  [COM 用のアセンブリのパッケージ化](../../../docs/framework/interop/packaging-an-assembly-for-com.md)
+
