@@ -4,16 +4,16 @@ description: "Linux マシンで .NET Core アプリケーションを開発、�
 keywords: .NET, .NET Core, Linux, debian, ubuntu, RHEL, centOS,
 author: jralexander
 ms.author: johalex
-ms.date: 09/01/2017
+ms.date: 09/07/2017
 ms.topic: article
 ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: c33b1241-ab66-4583-9eba-52cf51146f5a
 ms.translationtype: HT
-ms.sourcegitcommit: 7bbb8405f39a52d2798fd1dbc78f3116cb3bedbb
-ms.openlocfilehash: 9864ffa31caa007cb649a9e6e8913863d9cb2c35
+ms.sourcegitcommit: 1b0379156f44b0a3e765f8d832c7a1ca74ee3598
+ms.openlocfilehash: d9da6ea27293e95e36ff8edc42ef8bafbc86c8ec
 ms.contentlocale: ja-jp
-ms.lasthandoff: 09/05/2017
+ms.lasthandoff: 09/08/2017
 
 ---
 
@@ -30,7 +30,7 @@ ms.lasthandoff: 09/05/2017
 
 .NET Core 2.0 は、1 つのオペレーティング システムとして Linux を扱います。 サポートされている Linux ディストリビューション用に、1 つの Linux ビルド (チップ アーキテクチャあたり) があります。
 
-NET Core 2.x は、次の Linux x64 ディストリビューション/バージョンでサポートされています。
+.NET Core 2.x は、次の Linux 64 ビット (`x86_64` または `amd64`) ディストリビューション/バージョンでサポートされています。
 
  * Red Hat Enterprise Linux 7
  * CentOS 7
@@ -46,7 +46,7 @@ NET Core 2.x は、次の Linux x64 ディストリビューション/バージ�
 
 # <a name="net-core-1xtabnetcore1x"></a>[.NET Core 1.x](#tab/netcore1x)
 
-.NET Core 1.x は、次の Linux x64 ディストリビューション/バージョンでサポートされています。
+.NET Core 1.x は、次の Linux 64 ビット (`x86_64` または `amd64`) ディストリビューション/バージョンでサポートされています。
 
 * Red Hat Enterprise Linux 7
 * CentOS 7
@@ -325,7 +325,7 @@ Debian 8 または Debian 9 (64 ビット) 用の .NET Core をインストー�
    sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/microsoft-debian-jessie-prod jessie main" > /etc/apt/sources.list.d/dotnetdev.list'
    ```
    
-5. .NET Core SDK バイナリを抽出します。
+5. .NET Core SDK をインストールします。
 
    ```bash
    sudo apt-get update
@@ -337,6 +337,13 @@ Debian 8 または Debian 9 (64 ビット) 用の .NET Core をインストー�
    ```bash
    export PATH=$PATH:$HOME/dotnet
    ```
+   
+7. `dotnet --version` コマンドを実行して、インストールが成功したことを確認します。
+
+   ```bash
+   dotnet --version
+   ```   
+  
 
 # <a name="net-core-1xtabnetcore1x"></a>[.NET Core 1.x](#tab/netcore1x)
 
@@ -364,17 +371,17 @@ Debian 8 または Debian 9 (64 ビット) 用の .NET Core をインストー�
    sudo ln -s /opt/dotnet/dotnet /usr/local/bin
    ```
 
----
-
 6. `dotnet --version` コマンドを実行して、インストールが成功したことを確認します。
 
    ```bash
    dotnet --version
    ```
 
+---
+
 ## <a name="install-net-core-for-fedora-24-fedora-25-or-fedora-26-64-bit"></a>.NET Core for Fedora 24、Fedora 25、または Fedora 26 (64 ビット) をインストールする
 
-.NET Core for Fedora 26、Fedora 25 (.NET Core 2.x)、または Fedora 24 (.NET Core 1.x) をインストールするには:
+.NET Core 2.x を Fedora 26 または Fedora 25 にインストールするか、.NET Core 1.x を Fedora 24 にインストールするには、次のようにします。
 
 1. システムから**以前のプレビュー** バージョンの .NET Core を削除します。
 
@@ -449,7 +456,7 @@ Debian 8 または Debian 9 (64 ビット) 用の .NET Core をインストー�
 
 ## <a name="install-net-core-for-centos-71-64-bit--oracle-linux-71-64-bit"></a>CentOS 7.1 (64 bit) および Oracle Linux 7.1 (64 bit) 用の .NET Core をインストールする
 
-CentOS 7.1 (64 bit) および Oracle Linux 7.1 (64 bit) 用の .NET Core をインストールするには
+CentOS 7.1 (64 ビット) および Oracle Linux 7.1 (64 ビット) 用の .NET Core をインストールするには、次のようにします。
 
 1. システムから**以前のプレビュー** バージョンの .NET Core を削除します。
 
@@ -520,7 +527,7 @@ CentOS 7.1 (64 bit) および Oracle Linux 7.1 (64 bit) 用の .NET Core をイ�
 
 ## <a name="install-net-core-for-suse-linux-enterprise-server-64-bit"></a>.NET Core for SUSE Linux Enterprise Server (64 ビット) をインストールする
 
-.NET Core 2.x for SUSE Linux Enterprise Server (SLES) 12 SP2 (64 ビット) をインストールするには:
+SUSE Linux Enterprise Server (SLES) 12 SP2 (64 ビット) 用の .NET Core 2.x をインストールするには、次のようにします。
 
 1. システムから**以前のプレビュー** バージョンの .NET Core を削除します。
 
@@ -553,7 +560,7 @@ CentOS 7.1 (64 bit) および Oracle Linux 7.1 (64 bit) 用の .NET Core をイ�
    
 ## <a name="install-net-core-for-opensuse-64-bit"></a>.NET Core for openSUSE (64 ビット) をインストールする
 
-.NET Core 2.x for openSUSE または .NET Core 1.x for openSUSE (64 ビット) をインストールするには:
+openSUSE 用の .NET Core 2.x または openSUSE (64 ビット) 用の .NET Core 1.x をインストールするには、次のようにします。
 
 1. システムから**以前のプレビュー** バージョンの .NET Core を削除します。
 
