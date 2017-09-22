@@ -35,10 +35,10 @@ ms.lasthandoff: 07/28/2017
   
 |メソッド名|説明|C# のクエリ式の構文|説明|  
 |-----------------|-----------------|---------------------------------|----------------------|  
-|DefaultIfEmpty|空のコレクションを、既定値を持つシングルトン コレクションに置き換えます。|該当なし。|<xref:System.Linq.Enumerable.DefaultIfEmpty%2A?displayProperty=fullName><br /><br /> <xref:System.Linq.Queryable.DefaultIfEmpty%2A?displayProperty=fullName>|  
-|Empty|空のコレクションを返します。|該当なし。|<xref:System.Linq.Enumerable.Empty%2A?displayProperty=fullName>|  
-|範囲|一連の数値を含むコレクションを生成します。|該当なし。|<xref:System.Linq.Enumerable.Range%2A?displayProperty=fullName>|  
-|Repeat|繰り返される 1 つの値を含むコレクションを生成します。|該当なし。|<xref:System.Linq.Enumerable.Repeat%2A?displayProperty=fullName>|  
+|DefaultIfEmpty|空のコレクションを、既定値を持つシングルトン コレクションに置き換えます。|該当なし。|<xref:System.Linq.Enumerable.DefaultIfEmpty%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.DefaultIfEmpty%2A?displayProperty=nameWithType>|  
+|Empty|空のコレクションを返します。|該当なし。|<xref:System.Linq.Enumerable.Empty%2A?displayProperty=nameWithType>|  
+|範囲|一連の数値を含むコレクションを生成します。|該当なし。|<xref:System.Linq.Enumerable.Range%2A?displayProperty=nameWithType>|  
+|Repeat|繰り返される 1 つの値を含むコレクションを生成します。|該当なし。|<xref:System.Linq.Enumerable.Repeat%2A?displayProperty=nameWithType>|  
   
 ## <a name="see-also"></a>関連項目  
  <xref:System.Linq>   

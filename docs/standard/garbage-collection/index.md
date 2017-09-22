@@ -53,21 +53,21 @@ ms.lasthandoff: 09/05/2017
 |[弱い参照](../../../docs/standard/garbage-collection/weak-references.md)|アプリケーションからオブジェクトへのアクセスを許容したまま、そのオブジェクトをガベージ コレクターが収集できるようにする機能について説明します。|  
   
 ## <a name="reference"></a>参照  
- <xref:System.GC?displayProperty=fullName>  
+ <xref:System.GC?displayProperty=nameWithType>  
   
- <xref:System.GCCollectionMode?displayProperty=fullName>  
+ <xref:System.GCCollectionMode?displayProperty=nameWithType>  
   
- <xref:System.GCNotificationStatus?displayProperty=fullName>  
+ <xref:System.GCNotificationStatus?displayProperty=nameWithType>  
   
- <xref:System.Runtime.GCLatencyMode?displayProperty=fullName>  
+ <xref:System.Runtime.GCLatencyMode?displayProperty=nameWithType>  
   
- <xref:System.Runtime.GCSettings?displayProperty=fullName>  
+ <xref:System.Runtime.GCSettings?displayProperty=nameWithType>  
   
- <xref:System.Runtime.GCSettings.LargeObjectHeapCompactionMode%2A?displayProperty=fullName>  
+ <xref:System.Runtime.GCSettings.LargeObjectHeapCompactionMode%2A?displayProperty=nameWithType>  
   
- <xref:System.Object.Finalize%2A?displayProperty=fullName>  
+ <xref:System.Object.Finalize%2A?displayProperty=nameWithType>  
   
- <xref:System.IDisposable?displayProperty=fullName>  
+ <xref:System.IDisposable?displayProperty=nameWithType>  
   
 ## <a name="see-also"></a>関連項目  
  [アンマネージ リソースのクリーンアップ](../../../docs/standard/garbage-collection/unmanaged.md)

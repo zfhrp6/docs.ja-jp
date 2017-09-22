@@ -35,8 +35,8 @@ ms.lasthandoff: 07/28/2017
   
 |メソッド名|説明|C# のクエリ式の構文|説明|  
 |-----------------|-----------------|---------------------------------|----------------------|  
-|選択|変換関数に基づいて値を射影します。|`select`|<xref:System.Linq.Enumerable.Select%2A?displayProperty=fullName><br /><br /> <xref:System.Linq.Queryable.Select%2A?displayProperty=fullName>|  
-|SelectMany|変換関数に基づいて値のシーケンスを射影し、それを 1 つのシーケンスに平坦化します。|複数の `from` 句を使用|<xref:System.Linq.Enumerable.SelectMany%2A?displayProperty=fullName><br /><br /> <xref:System.Linq.Queryable.SelectMany%2A?displayProperty=fullName>|  
+|選択|変換関数に基づいて値を射影します。|`select`|<xref:System.Linq.Enumerable.Select%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.Select%2A?displayProperty=nameWithType>|  
+|SelectMany|変換関数に基づいて値のシーケンスを射影し、それを 1 つのシーケンスに平坦化します。|複数の `from` 句を使用|<xref:System.Linq.Enumerable.SelectMany%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.SelectMany%2A?displayProperty=nameWithType>|  
   
 ## <a name="query-expression-syntax-examples"></a>クエリ式の構文例  
   

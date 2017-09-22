@@ -52,10 +52,10 @@ ms.lasthandoff: 07/28/2017
  完全な [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] 言語仕様へのリンクを示します。ここには、この言語のあらゆる側面に関する詳細な情報が掲載されています。  
   
 ## <a name="reference"></a>参照  
- <xref:Microsoft.VisualBasic.PowerPacks?displayProperty=fullName>  
+ <xref:Microsoft.VisualBasic.PowerPacks?displayProperty=nameWithType>  
  この名前空間には、Visual Basic Power Packs コントロールのクラスが含まれています。 Visual Basic Power Packs コントロールは、追加の Windows フォーム コントロールです。  
   
- <xref:Microsoft.VisualBasic.PowerPacks.Printing?displayProperty=fullName>  
+ <xref:Microsoft.VisualBasic.PowerPacks.Printing?displayProperty=nameWithType>  
  この名前空間は、画面に表示されているとおりにフォームの複製を印刷できるようにするコンポーネントを提供します。  
   
 ## <a name="related-sections"></a>関連項目  
