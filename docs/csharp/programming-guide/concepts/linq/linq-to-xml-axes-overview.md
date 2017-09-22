@@ -37,34 +37,34 @@ XML ツリーを作成した後、または XML ドキュメントを XML ツリ
   
 |メソッド|説明|  
 |------------|-----------------|  
-|<xref:System.Xml.Linq.XNode.Ancestors%2A?displayProperty=fullName>|この要素の祖先の <xref:System.Collections.Generic.IEnumerable%601> の <xref:System.Xml.Linq.XElement> を返します。 オーバーロードでは、指定された <xref:System.Collections.Generic.IEnumerable%601> を持つ祖先の <xref:System.Xml.Linq.XElement> の <xref:System.Xml.Linq.XName> を返します。|  
-|<xref:System.Xml.Linq.XContainer.Descendants%2A?displayProperty=fullName>|この要素の子孫の <xref:System.Collections.Generic.IEnumerable%601> の <xref:System.Xml.Linq.XElement> を返します。 オーバーロードでは、指定された <xref:System.Collections.Generic.IEnumerable%601> を持つ子孫の <xref:System.Xml.Linq.XElement> の <xref:System.Xml.Linq.XName> を返します。|  
-|<xref:System.Xml.Linq.XContainer.Elements%2A?displayProperty=fullName>|この要素の子要素の <xref:System.Collections.Generic.IEnumerable%601> の <xref:System.Xml.Linq.XElement> を返します。 オーバーロードでは、指定された <xref:System.Collections.Generic.IEnumerable%601> を持つ子要素の <xref:System.Xml.Linq.XElement> の <xref:System.Xml.Linq.XName> を返します。|  
-|<xref:System.Xml.Linq.XNode.ElementsAfterSelf%2A?displayProperty=fullName>|この要素の後にある要素の <xref:System.Collections.Generic.IEnumerable%601> の <xref:System.Xml.Linq.XElement> を返します。 オーバーロードでは、指定された <xref:System.Collections.Generic.IEnumerable%601> を持つ、この要素の後にある要素の <xref:System.Xml.Linq.XElement> の <xref:System.Xml.Linq.XName> を返します。|  
-|<xref:System.Xml.Linq.XNode.ElementsBeforeSelf%2A?displayProperty=fullName>|この要素の前にある要素の <xref:System.Collections.Generic.IEnumerable%601> の <xref:System.Xml.Linq.XElement> を返します。 オーバーロードでは、指定された <xref:System.Collections.Generic.IEnumerable%601> を持つ、この要素の前にある要素の <xref:System.Xml.Linq.XElement> の <xref:System.Xml.Linq.XName> を返します。|  
-|<xref:System.Xml.Linq.XElement.AncestorsAndSelf%2A?displayProperty=fullName>|この要素とその祖先の <xref:System.Collections.Generic.IEnumerable%601> の <xref:System.Xml.Linq.XElement> を返します。 オーバーロードでは、指定された <xref:System.Collections.Generic.IEnumerable%601> を持つ要素の <xref:System.Xml.Linq.XElement> の <xref:System.Xml.Linq.XName> を返します。|  
-|<xref:System.Xml.Linq.XElement.DescendantsAndSelf%2A?displayProperty=fullName>|この要素とその子孫の <xref:System.Collections.Generic.IEnumerable%601> の <xref:System.Xml.Linq.XElement> を返します。 オーバーロードでは、指定された <xref:System.Collections.Generic.IEnumerable%601> を持つ要素の <xref:System.Xml.Linq.XElement> の <xref:System.Xml.Linq.XName> を返します。|  
+|<xref:System.Xml.Linq.XNode.Ancestors%2A?displayProperty=nameWithType>|この要素の祖先の <xref:System.Collections.Generic.IEnumerable%601> の <xref:System.Xml.Linq.XElement> を返します。 オーバーロードでは、指定された <xref:System.Collections.Generic.IEnumerable%601> を持つ祖先の <xref:System.Xml.Linq.XElement> の <xref:System.Xml.Linq.XName> を返します。|  
+|<xref:System.Xml.Linq.XContainer.Descendants%2A?displayProperty=nameWithType>|この要素の子孫の <xref:System.Collections.Generic.IEnumerable%601> の <xref:System.Xml.Linq.XElement> を返します。 オーバーロードでは、指定された <xref:System.Collections.Generic.IEnumerable%601> を持つ子孫の <xref:System.Xml.Linq.XElement> の <xref:System.Xml.Linq.XName> を返します。|  
+|<xref:System.Xml.Linq.XContainer.Elements%2A?displayProperty=nameWithType>|この要素の子要素の <xref:System.Collections.Generic.IEnumerable%601> の <xref:System.Xml.Linq.XElement> を返します。 オーバーロードでは、指定された <xref:System.Collections.Generic.IEnumerable%601> を持つ子要素の <xref:System.Xml.Linq.XElement> の <xref:System.Xml.Linq.XName> を返します。|  
+|<xref:System.Xml.Linq.XNode.ElementsAfterSelf%2A?displayProperty=nameWithType>|この要素の後にある要素の <xref:System.Collections.Generic.IEnumerable%601> の <xref:System.Xml.Linq.XElement> を返します。 オーバーロードでは、指定された <xref:System.Collections.Generic.IEnumerable%601> を持つ、この要素の後にある要素の <xref:System.Xml.Linq.XElement> の <xref:System.Xml.Linq.XName> を返します。|  
+|<xref:System.Xml.Linq.XNode.ElementsBeforeSelf%2A?displayProperty=nameWithType>|この要素の前にある要素の <xref:System.Collections.Generic.IEnumerable%601> の <xref:System.Xml.Linq.XElement> を返します。 オーバーロードでは、指定された <xref:System.Collections.Generic.IEnumerable%601> を持つ、この要素の前にある要素の <xref:System.Xml.Linq.XElement> の <xref:System.Xml.Linq.XName> を返します。|  
+|<xref:System.Xml.Linq.XElement.AncestorsAndSelf%2A?displayProperty=nameWithType>|この要素とその祖先の <xref:System.Collections.Generic.IEnumerable%601> の <xref:System.Xml.Linq.XElement> を返します。 オーバーロードでは、指定された <xref:System.Collections.Generic.IEnumerable%601> を持つ要素の <xref:System.Xml.Linq.XElement> の <xref:System.Xml.Linq.XName> を返します。|  
+|<xref:System.Xml.Linq.XElement.DescendantsAndSelf%2A?displayProperty=nameWithType>|この要素とその子孫の <xref:System.Collections.Generic.IEnumerable%601> の <xref:System.Xml.Linq.XElement> を返します。 オーバーロードでは、指定された <xref:System.Collections.Generic.IEnumerable%601> を持つ要素の <xref:System.Xml.Linq.XElement> の <xref:System.Xml.Linq.XName> を返します。|  
   
 ## <a name="method-for-retrieving-a-single-element"></a>1 つの要素を取得するメソッド  
  次のメソッドは、<xref:System.Xml.Linq.XElement> オブジェクトから 1 つの子を取得します。  
   
 |メソッド|説明|  
 |------------|-----------------|  
-|<xref:System.Xml.Linq.XContainer.Element%2A?displayProperty=fullName>|指定された <xref:System.Xml.Linq.XElement> を持つ最初の子 <xref:System.Xml.Linq.XName> オブジェクトを返します。|  
+|<xref:System.Xml.Linq.XContainer.Element%2A?displayProperty=nameWithType>|指定された <xref:System.Xml.Linq.XElement> を持つ最初の子 <xref:System.Xml.Linq.XName> オブジェクトを返します。|  
   
 ## <a name="method-for-retrieving-a-collection-of-attributes"></a>属性のコレクションを取得するメソッド  
  次のメソッドは、<xref:System.Xml.Linq.XElement> オブジェクトから属性を取得します。  
   
 |メソッド|説明|  
 |------------|-----------------|  
-|<xref:System.Xml.Linq.XElement.Attributes%2A?displayProperty=fullName>|すべての属性の <xref:System.Collections.Generic.IEnumerable%601> の <xref:System.Xml.Linq.XAttribute> を返します。|  
+|<xref:System.Xml.Linq.XElement.Attributes%2A?displayProperty=nameWithType>|すべての属性の <xref:System.Collections.Generic.IEnumerable%601> の <xref:System.Xml.Linq.XAttribute> を返します。|  
   
 ## <a name="method-for-retrieving-a-single-attribute"></a>1 つの属性を取得するメソッド  
  次のメソッドは、<xref:System.Xml.Linq.XElement> オブジェクトから 1 つの属性を取得します。  
   
 |メソッド|説明|  
 |------------|-----------------|  
-|<xref:System.Xml.Linq.XElement.Attribute%2A?displayProperty=fullName>|指定された <xref:System.Xml.Linq.XAttribute> を持つ <xref:System.Xml.Linq.XName> を返します。|  
+|<xref:System.Xml.Linq.XElement.Attribute%2A?displayProperty=nameWithType>|指定された <xref:System.Xml.Linq.XAttribute> を持つ <xref:System.Xml.Linq.XName> を返します。|  
   
 ## <a name="see-also"></a>関連項目  
  [LINQ to XML 軸 (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-xml-axes.md)

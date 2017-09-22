@@ -33,7 +33,7 @@ ms.lasthandoff: 07/28/2017
   
 |メソッド名|説明|C# のクエリ式の構文|説明|  
 |-----------------|-----------------|---------------------------------|----------------------|  
-|SequenceEqual|要素をペアにして比較することで、2 つのシーケンスが等しいかどうかを判断します。|該当なし。|<xref:System.Linq.Enumerable.SequenceEqual%2A?displayProperty=fullName><br /><br /> <xref:System.Linq.Queryable.SequenceEqual%2A?displayProperty=fullName>|  
+|SequenceEqual|要素をペアにして比較することで、2 つのシーケンスが等しいかどうかを判断します。|該当なし。|<xref:System.Linq.Enumerable.SequenceEqual%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.SequenceEqual%2A?displayProperty=nameWithType>|  
   
 ## <a name="see-also"></a>関連項目  
  <xref:System.Linq>   

@@ -76,10 +76,10 @@ ms.lasthandoff: 08/21/2017
   
 |クラス|説明|  
 |-----------|-----------------|  
-|<xref:System.Diagnostics.PerformanceCounter?displayProperty=fullName>|Windows NT パフォーマンス カウンター コンポーネントを表します。 既存の定義済みカウンターやカスタム カウンターを読み取ったり、カスタム カウンターにパフォーマンス データを書き込むには、このクラスを使用します。|  
-|<xref:System.Diagnostics.PerformanceCounterCategory?displayProperty=fullName>|コンピューター上のカウンターおよびカウンター カテゴリと対話するためのいくつかのメソッドを提供します。|  
-|<xref:System.Diagnostics.PerformanceCounterInstaller?displayProperty=fullName>|`PerformanceCounter` コンポーネントのインストーラーを指定します。|  
-|<xref:System.Diagnostics.PerformanceCounterType?displayProperty=fullName>|`NextValue` の `PerformanceCounter`メソッドを計算する数式を指定します。|  
+|<xref:System.Diagnostics.PerformanceCounter?displayProperty=nameWithType>|Windows NT パフォーマンス カウンター コンポーネントを表します。 既存の定義済みカウンターやカスタム カウンターを読み取ったり、カスタム カウンターにパフォーマンス データを書き込むには、このクラスを使用します。|  
+|<xref:System.Diagnostics.PerformanceCounterCategory?displayProperty=nameWithType>|コンピューター上のカウンターおよびカウンター カテゴリと対話するためのいくつかのメソッドを提供します。|  
+|<xref:System.Diagnostics.PerformanceCounterInstaller?displayProperty=nameWithType>|`PerformanceCounter` コンポーネントのインストーラーを指定します。|  
+|<xref:System.Diagnostics.PerformanceCounterType?displayProperty=nameWithType>|`NextValue` の `PerformanceCounter`メソッドを計算する数式を指定します。|  
   
 ## <a name="see-also"></a>関連項目  
  [Performance Counters](../../../docs/framework/debug-trace-profile/performance-counters.md)

@@ -39,7 +39,7 @@ ms.lasthandoff: 07/28/2017
   
 |メソッド名|説明|C# のクエリ式の構文|説明|  
 |-----------------|-----------------|---------------------------------|----------------------|  
-|Concat|2 つのシーケンスを連結して 1 つのシーケンスにします。|該当なし。|<xref:System.Linq.Enumerable.Concat%2A?displayProperty=fullName><br /><br /> <xref:System.Linq.Queryable.Concat%2A?displayProperty=fullName>|  
+|Concat|2 つのシーケンスを連結して 1 つのシーケンスにします。|該当なし。|<xref:System.Linq.Enumerable.Concat%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.Concat%2A?displayProperty=nameWithType>|  
   
 ## <a name="see-also"></a>関連項目  
  <xref:System.Linq>   

@@ -39,10 +39,10 @@ LINQ におけるパーティション分割とは、要素を並べ替えずに
   
 |演算子名|説明|C# のクエリ式の構文|説明|  
 |-------------------|-----------------|---------------------------------|----------------------|  
-|Skip|シーケンス内の指定した位置まで要素をスキップします。|該当なし。|<xref:System.Linq.Enumerable.Skip%2A?displayProperty=fullName><br /><br /> <xref:System.Linq.Queryable.Skip%2A?displayProperty=fullName>|  
-|SkipWhile|述語関数に基づき、条件を満たさない要素が出現する位置まで要素をスキップします。|該当なし。|<xref:System.Linq.Enumerable.SkipWhile%2A?displayProperty=fullName><br /><br /> <xref:System.Linq.Queryable.SkipWhile%2A?displayProperty=fullName>|  
-|Take|シーケンス内の指定した位置までの要素を取得します。|該当なし。|<xref:System.Linq.Enumerable.Take%2A?displayProperty=fullName><br /><br /> <xref:System.Linq.Queryable.Take%2A?displayProperty=fullName>|  
-|TakeWhile|述語関数に基づき、条件を満たさない要素が出現する位置までの要素を取得します。|該当なし。|<xref:System.Linq.Enumerable.TakeWhile%2A?displayProperty=fullName><br /><br /> <xref:System.Linq.Queryable.TakeWhile%2A?displayProperty=fullName>|  
+|Skip|シーケンス内の指定した位置まで要素をスキップします。|該当なし。|<xref:System.Linq.Enumerable.Skip%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.Skip%2A?displayProperty=nameWithType>|  
+|SkipWhile|述語関数に基づき、条件を満たさない要素が出現する位置まで要素をスキップします。|該当なし。|<xref:System.Linq.Enumerable.SkipWhile%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.SkipWhile%2A?displayProperty=nameWithType>|  
+|Take|シーケンス内の指定した位置までの要素を取得します。|該当なし。|<xref:System.Linq.Enumerable.Take%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.Take%2A?displayProperty=nameWithType>|  
+|TakeWhile|述語関数に基づき、条件を満たさない要素が出現する位置までの要素を取得します。|該当なし。|<xref:System.Linq.Enumerable.TakeWhile%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.TakeWhile%2A?displayProperty=nameWithType>|  
   
 ## <a name="see-also"></a>関連項目  
  <xref:System.Linq>   
