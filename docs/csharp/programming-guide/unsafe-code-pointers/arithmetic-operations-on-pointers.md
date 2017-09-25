@@ -31,11 +31,11 @@ ms.translationtype: HT
 ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
 ms.openlocfilehash: d40d44f8be590a909ff059b0fa84efb598fcf263
 ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
+ms.lasthandoff: 09/25/2017
 
 ---
 # <a name="arithmetic-operations-on-pointers-c-programming-guide"></a>ポインターに対する算術演算 (C# プログラミング ガイド)
-このトピックでは、算術演算子 `+` と  **-**  を使用したポインター操作について説明します。  
+このトピックでは、算術演算子 `+` と ** - ** を使用したポインター操作について説明します。  
   
 > [!NOTE]
 >  void ポインターには、算術演算を実行できません。  

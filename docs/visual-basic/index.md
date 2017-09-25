@@ -33,7 +33,7 @@ ms.translationtype: HT
 ms.sourcegitcommit: 64a6edc4c58e96132f20848a066542be57e8667f
 ms.openlocfilehash: cae4d2571bc9bde6239e1324dbe4e725ef5e12c7
 ms.contentlocale: ja-jp
-ms.lasthandoff: 08/30/2017
+ms.lasthandoff: 09/25/2017
 
 ---
 # <a name="visual-basic-guide"></a>Visual Basic のガイド

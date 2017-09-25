@@ -34,22 +34,22 @@ ms.translationtype: HT
 ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
 ms.openlocfilehash: 88603864ae0a31a193cab211b8ce8061ec63c169
 ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
+ms.lasthandoff: 09/25/2017
 
 ---
 # <a name="get-c-reference"></a>get (C# リファレンス)
 
 `get` キーワードは、プロパティの*アクセサー*メソッド、またはプロパティ値かインデクサー要素を返すインデクサーを定義します。 詳しくは、「[プロパティ (C# プログラミング ガイド)](../../../csharp/programming-guide/classes-and-structs/properties.md)」、「[自動実装するプロパティ (C# プログラミング ガイド)](../../../csharp/programming-guide/classes-and-structs/auto-implemented-properties.md)」、および「[インデクサー (C# プログラミング ガイド)](../../../csharp/programming-guide/indexers/index.md)」をご覧ください。  
   
-次の例では、`Seconds` という名前のプロパティの `get` アクセサーと `set` アクセサーを定義します。 `_seconds` という名前のプライベート フィールドを使って、プロパティの値を戻します。  
+次の例では、`Seconds` という名前のプロパティの `get` アクセサーと `set` アクセサーを定義します。 また、`_seconds` という名前のプライベート フィールドを使って、プロパティの値を戻しています。  
  
  [!code-cs[get#1](../../../../samples/snippets/csharp/language-reference/keywords/get/get-1.cs)]  
   
-前の例のように、多くの場合、`get` アクセサーは値を返す 1 つのステートメントで構成されます。 C# 7 以降では、式形式のメンバーとして `get` アクセサーを実装できます。 次の例では、`get` アクセサーと `set` アクセサーの両方を、式形式のメンバーとして実装しています。
+多くの場合、前の例のように、`get` アクセサーは値を返す 1 つのステートメントで構成されます。 C# 7 以降では、式形式のメンバーとして `get` アクセサーを実装できます。 次の例では、`get` アクセサーと `set` アクセサーの両方を、式形式のメンバーとして実装しています。
 
  [!code-cs[get#3](../../../../samples/snippets/csharp/language-reference/keywords/get/get-3.cs)]   
  
-プロパティの `get` および `set` アクセサーがプライベート バッキング フィールドの値を設定または取得する以外の操作を実行しない単純なケースでは、自動実装プロパティに対する C# コンパイラのサポートを利用できます。 次の例では、自動実装プロパティとして `Hours` を実装しています。 
+プロパティの `get` アクセサーと `set` アクセサーがプライベート バッキング フィールドの値の設定と取得以外の操作を実行しない単純な場合では、自動実装プロパティに対する C# コンパイラのサポートを利用できます。 次の例では、自動実装プロパティとして `Hours` を実装しています。 
   
  [!code-cs[get#2](../../../../samples/snippets/csharp/language-reference/keywords/get/get-2.cs)]  
   

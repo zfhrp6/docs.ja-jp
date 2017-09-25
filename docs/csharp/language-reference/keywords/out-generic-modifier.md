@@ -32,7 +32,7 @@ ms.translationtype: HT
 ms.sourcegitcommit: 775e4512a5ff31c7059961f6332c6bdc0dc5247a
 ms.openlocfilehash: a560a0307723d32750a7e26ad4ee1afec360a849
 ms.contentlocale: ja-jp
-ms.lasthandoff: 08/11/2017
+ms.lasthandoff: 09/25/2017
 
 ---
 # <a name="out-generic-modifier-c-reference"></a>out (ジェネリック修飾子) (C# リファレンス)

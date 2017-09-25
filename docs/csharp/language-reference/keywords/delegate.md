@@ -36,7 +36,7 @@ ms.translationtype: HT
 ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
 ms.openlocfilehash: 402eedd0c59b5c95e1a9b44faca66ccb4d4e04e7
 ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
+ms.lasthandoff: 09/25/2017
 
 ---
 # <a name="delegate-c-reference"></a>delegate (C# リファレンス)

@@ -27,10 +27,10 @@ author: mairaw
 ms.author: mairaw
 manager: wpickett
 ms.translationtype: HT
-ms.sourcegitcommit: 934373d61407c8cc19b7d6424898a582880f9c21
-ms.openlocfilehash: 6ab1d59ec9ce4f77b3ded2951d01f675f096069f
+ms.sourcegitcommit: 81117b1419c2a9c3babd6a7429052e2b23e08a70
+ms.openlocfilehash: 75353ad43d76ceecd60bb9edd207c56c759e52c2
 ms.contentlocale: ja-jp
-ms.lasthandoff: 09/19/2017
+ms.lasthandoff: 09/25/2017
 
 ---
 # <a name="how-the-runtime-locates-assemblies"></a>ランタイムがアセンブリを検索する方法
@@ -42,13 +42,13 @@ ms.lasthandoff: 09/19/2017
 >  [に含まれている](../../../docs/framework/tools/fuslogvw-exe-assembly-binding-log-viewer.md)アセンブリ バインディング ログ ビューアー (Fuslogvw.exe) [!INCLUDE[winsdklong](../../../includes/winsdklong-md.md)]を使用すると、ログ ファイル内のバインディング情報を表示できます。  
   
 ## <a name="initiating-the-bind"></a>バインドの開始  
- アセンブリを検索し、バインドするプロセスは、ランタイムが別のアセンブリへの参照を解決しようとしたときに開始します。 この参照は、静的参照または動的参照のいずれかです。 コンパイラは、ビルド時に静的参照をアセンブリ マニフェストのメタデータに記録します。 動的参照は、 <xref:System.Reflection.Assembly.Load%2A?displayProperty=fullName>など、各種のメソッド呼び出しの結果として実行時に生成されます。  
+ アセンブリを検索し、バインドするプロセスは、ランタイムが別のアセンブリへの参照を解決しようとしたときに開始します。 この参照は、静的参照または動的参照のいずれかです。 コンパイラは、ビルド時に静的参照をアセンブリ マニフェストのメタデータに記録します。 動的参照は、 <xref:System.Reflection.Assembly.Load%2A?displayProperty=nameWithType>など、各種のメソッド呼び出しの結果として実行時に生成されます。  
   
  お勧めするアセンブリの参照方法は、アセンブリ名、バージョン、カルチャ、および公開キー トークン (存在する場合) を含む完全参照を使用することです。 ランタイムはこれらの情報を使用して、このセクションで後述する手順に従ってアセンブリを検索します。 静的アセンブリまたは動的アセンブリのいずれかへの参照に関係なく、ランタイムは同じ解決プロセスを使用します。  
   
- アセンブリ名だけを指定するなど、アセンブリについての情報の一部だけを指定した呼び出しメソッドを提供することで、アセンブリを動的に参照することもできます。 その場合は、アセンブリの検索はアプリケーション ディレクトリ内だけでなされ、その他のチェックは実行されません。 <xref:System.Reflection.Assembly.Load%2A?displayProperty=fullName> や <xref:System.AppDomain.Load%2A?displayProperty=fullName>などのアセンブリの読み込み用のさまざまなメソッドを使用した部分参照を作成します。  
+ アセンブリ名だけを指定するなど、アセンブリについての情報の一部だけを指定した呼び出しメソッドを提供することで、アセンブリを動的に参照することもできます。 その場合は、アセンブリの検索はアプリケーション ディレクトリ内だけでなされ、その他のチェックは実行されません。 <xref:System.Reflection.Assembly.Load%2A?displayProperty=nameWithType> や <xref:System.AppDomain.Load%2A?displayProperty=nameWithType>などのアセンブリの読み込み用のさまざまなメソッドを使用した部分参照を作成します。  
   
- 最後に、<xref:System.Reflection.Assembly.Load*?displayProperty=fullName> などのメソッドを使用して動的参照を作成し、情報の一部だけを提供できます。その後で、アプリケーション構成ファイル内の [\<qualifyAssembly>](../../../docs/framework/configure-apps/file-schema/runtime/qualifyassembly-element.md) 要素を使用してその参照を修飾します。 この要素を使用すると、完全な参照情報 (名前、バージョン、カルチャ、および適用可能な場合は公開キー トークン) をコード内ではなく、アプリケーション構成ファイル内に提供できます。 アプリケーション ディレクトリ外部のアセンブリへの参照を完全に限定する必要がある場合、またはグローバル アセンブリ キャッシュ内のアセンブリを参照するが、完全参照をコード内ではなく構成ファイル内に指定する方が便利な場合は、この手法を使用します。  
+ 最後に、<xref:System.Reflection.Assembly.Load*?displayProperty=nameWithType> などのメソッドを使用して動的参照を作成し、情報の一部だけを提供できます。その後で、アプリケーション構成ファイル内の [\<qualifyAssembly>](../../../docs/framework/configure-apps/file-schema/runtime/qualifyassembly-element.md) 要素を使用してその参照を修飾します。 この要素を使用すると、完全な参照情報 (名前、バージョン、カルチャ、および適用可能な場合は公開キー トークン) をコード内ではなく、アプリケーション構成ファイル内に提供できます。 アプリケーション ディレクトリ外部のアセンブリへの参照を完全に限定する必要がある場合、またはグローバル アセンブリ キャッシュ内のアセンブリを参照するが、完全参照をコード内ではなく構成ファイル内に指定する方が便利な場合は、この手法を使用します。  
   
 > [!NOTE]
 >  このタイプの部分参照は、複数のアプリケーションで共有されるアセンブリに対しては使用しないでください。 構成設定はアセンブリ別ではなくアプリケーション別に適用されるため、このタイプの部分参照を使用する共有アセンブリについては、その共有アセンブリを使用するアプリケーションごとに、そのアプリケーションの構成ファイル内に限定情報を含める必要があります。  
@@ -66,7 +66,7 @@ ms.lasthandoff: 09/19/2017
   
 4.  次の手順を使用することによって、[アセンブリのプローブ](#step4) を実行します。  
   
-    1.  構成と発行者ポリシーが元の参照に影響しない場合およびバインド要求が <xref:System.Reflection.Assembly.LoadFrom%2A?displayProperty=fullName> メソッドを使用することによって作成されている場合、ランタイムは位置ヒントをチェックします。  
+    1.  構成と発行者ポリシーが元の参照に影響しない場合およびバインド要求が <xref:System.Reflection.Assembly.LoadFrom%2A?displayProperty=nameWithType> メソッドを使用することによって作成されている場合、ランタイムは位置ヒントをチェックします。  
   
     2.  構成ファイル内でコードベースが見つかった場合、ランタイムはその場所だけをチェックします。 このプローブが失敗した場合、ランタイムはバインド要求が失敗したと判断し、それ以上のプローブは実行しません。  
   
@@ -258,7 +258,7 @@ Al.exe /link:asm6.exe.config /out:policy.3.0.asm6.dll /keyfile: compatkey.dat /v
 ```  
   
 #### <a name="other-locations-probed"></a>プローブされるその他の場所  
- 現在のバインディング コンテキストを使用して、アセンブリの場所を特定することもできます。 この方法が最もよく使用されるのは、 <xref:System.Reflection.Assembly.LoadFrom%2A?displayProperty=fullName> メソッドが使用されている場合と、COM 相互運用のシナリオの場合です。 アセンブリが <xref:System.Reflection.Assembly.LoadFrom%2A> メソッドを使用して別のアセンブリを参照している場合は、呼び出し元アセンブリの場所が、参照先アセンブリを検索する場所についてのヒントと見なされます。 一致するものが見つかった場合は、そのアセンブリが読み込まれます。 一致するものが見つからない場合は、ランタイムは、その検索セマンティクスを続行した後、Windows Installer に問い合わせて、アセンブリを提供するように求めます。 バインド要求と一致するアセンブリが提供されない場合は、例外がスローされます。 この例外は、型を参照していた場合はマネージ コード内の <xref:System.TypeLoadException> であり、読み込もうとするアセンブリが見つからなかった場合は、 <xref:System.IO.FileNotFoundException> です。  
+ 現在のバインディング コンテキストを使用して、アセンブリの場所を特定することもできます。 この方法が最もよく使用されるのは、 <xref:System.Reflection.Assembly.LoadFrom%2A?displayProperty=nameWithType> メソッドが使用されている場合と、COM 相互運用のシナリオの場合です。 アセンブリが <xref:System.Reflection.Assembly.LoadFrom%2A> メソッドを使用して別のアセンブリを参照している場合は、呼び出し元アセンブリの場所が、参照先アセンブリを検索する場所についてのヒントと見なされます。 一致するものが見つかった場合は、そのアセンブリが読み込まれます。 一致するものが見つからない場合は、ランタイムは、その検索セマンティクスを続行した後、Windows Installer に問い合わせて、アセンブリを提供するように求めます。 バインド要求と一致するアセンブリが提供されない場合は、例外がスローされます。 この例外は、型を参照していた場合はマネージ コード内の <xref:System.TypeLoadException> であり、読み込もうとするアセンブリが見つからなかった場合は、 <xref:System.IO.FileNotFoundException> です。  
   
  たとえば、Assembly1 が Assembly2 を参照し、Assembly1 が http://www.code.microsoft.com/utils からダウンロードされていた場合、この場所が、Assembly2.dll を検索する場所についてのヒントと見なされます。 次に、ランタイムは http://www.code.microsoft.com/utils/Assembly2.dll と http://www.code.microsoft.com/utils/Assembly2/Assembly2.dll のアセンブリをプローブします。 どちらの場所でも Assembly2 が見つからなかった場合は、ランタイムは Windows Installer に問い合わせます。  
   
