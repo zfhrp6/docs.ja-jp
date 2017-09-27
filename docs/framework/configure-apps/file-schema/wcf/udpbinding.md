@@ -1,37 +1,43 @@
 ---
-title: "&lt;udpBinding&gt; | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: '&lt;udpBinding&gt;'
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: fa291901-8340-45c6-9c44-5d9281c70bc3
 caps.latest.revision: 3
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 3
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 20e488b57b0d17e9c6705c32dc4c4b6b8387fabf
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/25/2017
+
 ---
-# &lt;udpBinding&gt;
+# <a name="ltudpbindinggt"></a>&lt;udpBinding&gt;
 <xref:System.ServiceModel.UdpBinding> バインディングの構成に使用する構成要素です。  
   
-## 構文  
+ \<システムです。ServiceModel >  
+\<バインド >  
+\<udpBinding >  
   
-```  
+## <a name="syntax"></a>構文  
   
+```xml  
 <udpBinding>  
    <binding   
        closeTimeout="TimeSpan"   
-       duplicateMessageHistoryLength=”Integer"  
+       duplicateMessageHistoryLength="Integer"  
        maxBufferPoolSize="Integer"  
-       maxBufferSize="Integer"  
-       maxPendingMessagesTotalSize=”Integer”  
-       maxReceivedMessageSize="Integer"  
-       maxRetransmitCount=”Integer”  
+       maxBufferSize="Integer"       maxPendingMessagesTotalSize="Integer"  
+       maxReceivedMessageSize="Integer"       maxRetransmitCount="Integer"  
        multicastInterfaceId="Integer"  
               name="string"   
        openTimeout="TimeSpan"   
@@ -42,52 +48,50 @@ caps.handback.revision: 3
        <readerQuotas   
             maxArrayLength="Integer"  
             maxBytesPerRead="Integer"  
-            maxDepth="Integer"   
-            maxNameTableCharCount="Integer"      
-            maxStringContentLength="Integer" />  
+            maxDepth="Integer"             maxNameTableCharCount="Integer"                maxStringContentLength="Integer" />  
    </binding>  
 </basicHttpBinding>  
 ```  
   
-## 属性および要素  
+## <a name="attributes-and-elements"></a>属性および要素  
  以降のセクションでは、属性、子要素、および親要素について説明します。  
   
-### 属性  
+### <a name="attributes"></a>属性  
   
 |属性|説明|  
-|--------|--------|  
-|`closeTimeout`|クローズ操作が完了するまでの期間を指定する <xref:System.TimeSpan> 値。  この値は必ず <xref:System.TimeSpan.Zero> 以上である必要があります。  既定値は 00:01:00 です。|  
+|---------------|-----------------|  
+|`closeTimeout`|クローズ操作が完了するまでの期間を指定する <xref:System.TimeSpan> 値。 この値は必ず <xref:System.TimeSpan.Zero> 以上である必要があります。 既定値は 00:01:00 です。|  
 |`duplicateMessageHistoryLength`|重複するメッセージの履歴の長さを指定する整数値。|  
-|`maxBufferPoolSize`|チャネルからメッセージを受け取るメッセージ バッファーのマネージャーが使用するために割り当てられる、最大メモリ量を指定する整数値。  既定値は 524288 \(0x80000\) バイトです。|  
-|`maxBufferSize`|このバインディングで構成されるエンドポイントのメッセージが処理されるときのメッセージを格納するバッファーの最大サイズを指定する整数値 \(バイト単位\)。  既定値は 65,536 バイトです。|  
+|`maxBufferPoolSize`|チャネルからメッセージを受け取るメッセージ バッファーのマネージャーが使用するために割り当てられる、最大メモリ量を指定する整数値。 既定値は 524288 (0x80000) バイトです。|  
+|`maxBufferSize`|このバインディングで構成されるエンドポイントのメッセージが処理されるときのメッセージを格納するバッファーの最大サイズを指定する整数値 (バイト単位)。 既定値は 65,536 バイトです。|  
 |`maxPendingMessagesTotalSize`|受信して、各チャネル インスタンスの入力キューからまだ削除していないメッセージの最大数を指定する整数値。|  
-|`maxReceivedMessageSize`|このバインディングで構成されるチャネルが受信可能なメッセージの最大メッセージ サイズ \(ヘッダーを含む\) をバイト単位で定義する正の整数。  受信側のメッセージが大きすぎると、送信側は SOAP エラーを受け取ります。  メッセージは受信者によって破棄され、トレース ログにこのイベントのエントリが作成されます。  既定値は 65,536 バイトです。|  
+|`maxReceivedMessageSize`|このバインディングで構成されるチャネルが受信可能なメッセージの最大メッセージ サイズ (ヘッダーを含む) をバイト単位で定義する正の整数。 受信側のメッセージが大きすぎると、送信側は SOAP エラーを受け取ります。 メッセージは受信者によって破棄され、トレース ログにこのイベントのエントリが作成されます。 既定値は 65,536 バイトです。|  
 |`maxRetransmitCount`|再送信メッセージの最大数を指定する整数値。|  
 |`multicastInterfaceId`|マルチキャストのインターフェイス ID を指定する整数値。|  
-|`name`|バインディングの構成名を格納する文字列です。  この値は、バインディングの ID として使用されるため、一意にする必要があります。  各バインドには、サービスのメタデータでこれをまとめて一意に識別する `name` および `namespace` 属性が含まれています。  また、この名前は、同じ種類のバインディング間で一意です。  [!INCLUDE[netfx40_short](../../../../../includes/netfx40-short-md.md)] 以降では、バインディングおよび動作に名前を付ける必要はありません。  既定の構成、および名前のないバインディングと動作の詳細については、「[簡略化された構成](../../../../../docs/framework/wcf/simplified-configuration.md)」および「[WCF サービスの簡略化された構成](../../../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md)」を参照してください。|  
-|`openTimeout`|実行中の操作が完了するまでの時間間隔を指定する <xref:System.TimeSpan> 値です。  この値は必ず <xref:System.TimeSpan.Zero> 以上である必要があります。  既定値は 00:01:00 です。|  
-|`receiveTimeout`|受信操作が完了するまでの時間間隔を指定する <xref:System.TimeSpan> 値です。  この値は必ず <xref:System.TimeSpan.Zero> 以上である必要があります。  既定値は 00:10:00 です。|  
-|`sendTimeout`|送信操作が完了するまでの時間間隔を指定する <xref:System.TimeSpan> 値です。  この値は必ず <xref:System.TimeSpan.Zero> 以上である必要があります。  既定値は 00:01:00 です。|  
-|`textEncoding`|バインディングでメッセージの発行に使用される文字セット エンコーディングを設定します。  以下の値が有効です。<br /><br /> -   BigEndianUnicode: Unicode BigEndian エンコーディング。<br />-   Unicode: 16 ビット エンコーディング。<br />-   UTF8: 8 ビット エンコーディング。<br /><br /> 既定値は UTF8 です。  この属性は <xref:System.Text.Encoding> 型です。|  
+|`name`|バインディングの構成名を格納する文字列です。 この値は、バインディングの ID として使用されるため、一意にする必要があります。 各バインドには、サービスのメタデータでこれをまとめて一意に識別する `name` および `namespace` 属性が含まれています。 また、この名前は、同じ種類のバインディング間で一意です。 [!INCLUDE[netfx40_short](../../../../../includes/netfx40-short-md.md)] 以降では、バインディングおよび動作に名前を付ける必要はありません。 既定の構成と無名のバインディングおよび動作の詳細については、次を参照してください。[簡略化された構成](../../../../../docs/framework/wcf/simplified-configuration.md)と[WCF サービスの構成を簡略化](../../../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md)です。|  
+|`openTimeout`|実行中の操作が完了するまでの時間間隔を指定する <xref:System.TimeSpan> 値です。 この値は必ず <xref:System.TimeSpan.Zero> 以上である必要があります。 既定値は 00:01:00 です。|  
+|`receiveTimeout`|受信操作が完了するまでの時間間隔を指定する <xref:System.TimeSpan> 値です。 この値は必ず <xref:System.TimeSpan.Zero> 以上である必要があります。 既定値は 00:10:00 です。|  
+|`sendTimeout`|送信操作が完了するまでの時間間隔を指定する <xref:System.TimeSpan> 値です。 この値は必ず <xref:System.TimeSpan.Zero> 以上である必要があります。 既定値は 00:01:00 です。|  
+|`textEncoding`|バインディングでメッセージの発行に使用される文字セット エンコーディングを設定します。 以下の値が有効です。<br /><br /> -BigEndianUnicode: Unicode BigEndian エンコーディングします。<br />Unicode: 16 ビット エンコーディング。<br />UTF8: 8 ビットのエンコーディング<br /><br /> 既定値は UTF8 です。 この属性は <xref:System.Text.Encoding> 型です。|  
 |`timeToLive`|バインディングに対する有効期間を指定する期間値。|  
   
-### 子要素  
+### <a name="child-elements"></a>子要素  
   
 |要素|説明|  
-|--------|--------|  
-|[\<readerQuotas\>](../Topic/%3CreaderQuotas%3E.md)|このバインドを使用して設定されるエンドポイントにより処理可能な、SOAP メッセージの複雑さに対する制約を定義します。  この要素は <xref:System.ServiceModel.Configuration.XmlDictionaryReaderQuotasElement> 型です。|  
+|-------------|-----------------|  
+|[\<ある readerQuotas >](http://msdn.microsoft.com/library/3e5e42ff-cef8-478f-bf14-034449239bfd)|このバインドを使用して設定されるエンドポイントにより処理可能な、SOAP メッセージの複雑さに対する制約を定義します。 この要素は <xref:System.ServiceModel.Configuration.XmlDictionaryReaderQuotasElement> 型です。|  
   
-### 親要素  
+### <a name="parent-elements"></a>親要素  
   
 |要素|説明|  
-|--------|--------|  
-|[\<bindings\>](../../../../../docs/framework/configure-apps/file-schema/wcf/bindings.md)|この要素には、標準バインディングおよびカスタム バインディングのコレクションが保持されます。|  
+|-------------|-----------------|  
+|[\<バインド >](../../../../../docs/framework/configure-apps/file-schema/wcf/bindings.md)|この要素には、標準バインディングおよびカスタム バインディングのコレクションが保持されます。|  
   
-## 解説  
- UdpBinding により、WCF サービスが UDP トランスポートを介して通信することができます。  ここでは、クライアントがサービスにメッセージを送信し、応答は返されない "ファイア アンド フォーゲット \(撃ち放し\)" メッセージ交換を使用します。  
+## <a name="remarks"></a>コメント  
+ UdpBinding により、WCF サービスが UDP トランスポートを介して通信することができます。 クライアントがサービスにメッセージを送信し、応答することはできません、メッセージ交換の「ファイア アンド忘れた」ことができます。  
   
-## 使用例  
- \<`udpBinding`\> 要素を使用して <xref:System.ServiceModel.UdpBinding> を構成する方法を次の例に示します。  
+## <a name="example"></a>例  
+ <<xref:System.ServiceModel.UdpBinding>> 要素を使用して `udpBinding` を構成する方法を次の例に示します。  
   
 ```xml  
 <udpBinding>  
@@ -109,12 +113,13 @@ caps.handback.revision: 3
       </udpBinding>  
 ```  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.ServiceModel.Channels.Binding>   
  <xref:System.ServiceModel.Channels.BindingElement>   
  <xref:System.ServiceModel.BasicHttpBinding>   
  <xref:System.ServiceModel.Configuration.BasicHttpBindingElement>   
- [バインディング](../../../../../docs/framework/wcf/bindings.md)   
- [システムが提供するバインディングの構成](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)   
- [Using Bindings to Configure Windows Communication Foundation Services and Clients](http://msdn.microsoft.com/ja-jp/bd8b277b-932f-472f-a42a-b02bb5257dfb)   
- [\<binding\>](../../../../../docs/framework/misc/binding.md)
+ [バインド](../../../../../docs/framework/wcf/bindings.md)   
+ [システム指定のバインディングを構成します。](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)   
+ [バインディングを使用して、Windows Communication Foundation サービスとクライアントを構成するには](http://msdn.microsoft.com/en-us/bd8b277b-932f-472f-a42a-b02bb5257dfb)   
+ [\<バインド >](../../../../../docs/framework/misc/binding.md)
+

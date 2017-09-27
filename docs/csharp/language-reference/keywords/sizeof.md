@@ -66,7 +66,7 @@ int intSize = sizeof(int);
 |`sizeof(ushort)`|2|  
 |`sizeof(int)`|4|  
 |`sizeof(uint)`|4|  
-|`sizeof(long)`|9|  
+|`sizeof(long)`|8|  
 |`sizeof(ulong)`|8|  
 |`sizeof(char)`|2 (Unicode)|  
 |`sizeof(float)`|4|  
