@@ -70,7 +70,7 @@ int intSize = sizeof(int);
 |`sizeof(ulong)`|8|  
 |`sizeof(char)`|2 (Unicode)|  
 |`sizeof(float)`|4|  
-|`sizeof(double)`|9|  
+|`sizeof(double)`|8|  
 |`sizeof(decimal)`|16|  
 |`sizeof(bool)`|1|  
   
