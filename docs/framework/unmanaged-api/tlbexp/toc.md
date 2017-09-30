@@ -1,0 +1,5 @@
+# [Tlbexp ヘルパー関数します。](index.md)
+## [GetTypeLibInfo 関数](gettypelibinfo-function.md)
+## [LoadTypeLibWithResolver 関数](loadtypelibwithresolver-function.md)
+## [ITypeLibResolver インターフェイス](itypelibresolver-interface.md)
+### [ResolveTypeLib メソッド](resolvetypelib-method.md)
