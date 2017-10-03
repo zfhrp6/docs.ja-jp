@@ -82,7 +82,7 @@ dotnet store --manifest <PATH_TO_MANIFEST_FILE> --runtime <RUNTIME_IDENTIFIER> -
 **例**
 
 ```console
-dotnet store --manifest packages.csproj --runtime win10-x64 --framework netstandard2.0 --framework-version 2.0.0
+dotnet store --manifest packages.csproj --runtime win10-x64 --framework netcoreapp2.0 --framework-version 2.0.0
 ```
 
 複数のターゲット パッケージ ストアのマニフェストのパスは、コマンドにオプションとパスを繰り返すことで、単一の [`dotnet store`](../tools/dotnet-store.md) コマンドで渡すことができます。

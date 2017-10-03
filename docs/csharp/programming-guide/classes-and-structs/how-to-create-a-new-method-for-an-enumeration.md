@@ -33,7 +33,7 @@ ms.translationtype: HT
 ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
 ms.openlocfilehash: 22feed835b8a868cca2839467a8e5cc7118db39a
 ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
+ms.lasthandoff: 09/25/2017
 
 ---
 # <a name="how-to-create-a-new-method-for-an-enumeration-c-programming-guide"></a>方法 : 列挙型対応の新しいメソッドを作成する (C# プログラミング ガイド)

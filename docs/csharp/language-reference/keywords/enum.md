@@ -31,10 +31,10 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: cf12724ec9e450a2bc237db614f235d7f03a4a7e
+ms.sourcegitcommit: 81117b1419c2a9c3babd6a7429052e2b23e08a70
+ms.openlocfilehash: fbadbcf92a6ac8ed46c3e81fa9eda1ceac8f6631
 ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
+ms.lasthandoff: 09/25/2017
 
 ---
 # <a name="enum-c-reference"></a>enum (C# リファレンス)
@@ -56,7 +56,7 @@ enum Days {Sat=1, Sun, Mon, Tue, Wed, Thu, Fri};
   
  この列挙型では、要素の並びは `1` からではなく、 `0`から開始します。 ただし、列挙型には値が 0 となる定数を含めておくことをお勧めします。 詳細については、[列挙型](../../../csharp/programming-guide/enumeration-types.md)を参照してください。  
   
- すべての列挙型には基になる型があり、基になる型には [char](../../../csharp/language-reference/keywords/char.md) 以外の任意の整数型を指定できます。 列挙要素の基になる既定の型は [int](../../../csharp/language-reference/keywords/int.md)です。 [byte](../../../csharp/language-reference/keywords/byte.md)など、他の整数型の列挙型を宣言するには、次の例に示すように、識別子に続けてコロンを使用し、その後に型を記述します。  
+ すべての列挙型には基になる型があり、基になる型には [char](../../../csharp/language-reference/keywords/char.md) 以外の任意の整数型を指定できます。 列挙要素の基になる既定の型は [int](../../../csharp/language-reference/keywords/int.md)です。[byte](../../../csharp/language-reference/keywords/byte.md)など、他の整数型の列挙型を宣言するには、次の例に示すように、識別子に続けてコロンを使用し、その後に型を記述します。  
   
 ```  
 enum Days : byte {Sat=1, Sun, Mon, Tue, Wed, Thu, Fri};  
@@ -77,7 +77,7 @@ enum Days : byte {Sat=1, Sun, Mon, Tue, Wed, Thu, Fri};
 int x = (int)Days.Sun;  
 ```  
   
- 列挙型に <xref:System.FlagsAttribute?displayProperty=fullName> を適用し、その要素をビットごとの `OR` 演算と組み合わせると、一部のツールを使用したときに、 `enum` の動作に属性が反映されます。 このような変更は、 <xref:System.Console> クラス メソッドや式エバリュエーターなどのツールを使用して確認できます。 (3 番目の使用例をご参照ください。)  
+ 列挙型に <xref:System.FlagsAttribute?displayProperty=nameWithType> を適用し、その要素をビットごとの `OR` 演算と組み合わせると、一部のツールを使用したときに、 `enum` の動作に属性が反映されます。 このような変更は、 <xref:System.Console> クラス メソッドや式エバリュエーターなどのツールを使用して確認できます。 (3 番目の使用例をご参照ください。)  
   
 ## <a name="robust-programming"></a>信頼性の高いプログラミング  
  定数の場合と同様に、列挙型の個々の値へのすべての参照はコンパイル時に数値リテラルに変換されます。 これにより、「[定数](../../../csharp/programming-guide/classes-and-structs/constants.md)」で説明しているように、バージョン管理の問題が発生する可能性があります。  
@@ -97,7 +97,7 @@ int x = (int)Days.Sun;
  [!code-cs[csrefKeywordsTypes#11](../../../csharp/language-reference/keywords/codesnippet/CSharp/enum_2.cs)]  
   
 ## <a name="example"></a>例  
- 次のコード例では、 <xref:System.FlagsAttribute?displayProperty=fullName> 宣言での `enum` 属性の使用とその効果を示します。  
+ 次のコード例では、 <xref:System.FlagsAttribute?displayProperty=nameWithType> 宣言での `enum` 属性の使用とその効果を示します。  
   
  [!code-cs[csrefKeywordsTypes#12](../../../csharp/language-reference/keywords/codesnippet/CSharp/enum_3.cs)]  
   

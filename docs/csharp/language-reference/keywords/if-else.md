@@ -38,7 +38,7 @@ ms.translationtype: HT
 ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
 ms.openlocfilehash: 694761a9b03fadf2dff97e61e37c0af52658f9e4
 ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
+ms.lasthandoff: 09/25/2017
 
 ---
 # <a name="if-else-c-reference"></a>if-else (C# リファレンス)

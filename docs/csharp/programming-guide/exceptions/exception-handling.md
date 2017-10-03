@@ -32,7 +32,7 @@ ms.translationtype: HT
 ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
 ms.openlocfilehash: ab03e00a6b62d0c737c90fdb489be2a78f7ab6af
 ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
+ms.lasthandoff: 09/25/2017
 
 ---
 # <a name="exception-handling-c-programming-guide"></a>例外処理 (C# プログラミング ガイド)

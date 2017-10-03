@@ -34,7 +34,7 @@ ms.translationtype: HT
 ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
 ms.openlocfilehash: 1da61947cbc85e5b3045513e99e013d1e4fae4b3
 ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
+ms.lasthandoff: 09/25/2017
 
 ---
 # <a name="ampamp-operator-c-reference"></a>&amp;&amp; 演算子 (C# リファレンス)

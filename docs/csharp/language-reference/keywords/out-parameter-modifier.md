@@ -32,7 +32,7 @@ ms.translationtype: HT
 ms.sourcegitcommit: 59e445ac27f07c85d9e98c5f595cf5f935f75443
 ms.openlocfilehash: 9a0a488c6f444608a335cd990847774fb6fe9e3f
 ms.contentlocale: ja-jp
-ms.lasthandoff: 08/31/2017
+ms.lasthandoff: 09/25/2017
 
 ---
 # <a name="out-parameter-modifier-c-reference"></a>out パラメーター修飾子 (C# リファレンス)

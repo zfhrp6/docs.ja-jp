@@ -33,7 +33,7 @@ ms.translationtype: HT
 ms.sourcegitcommit: 9bb64ea7199f5699ff166d1affb7f8126dcc6612
 ms.openlocfilehash: c7fac541dd233111bfffb9c0f67ba048f8d271be
 ms.contentlocale: ja-jp
-ms.lasthandoff: 09/02/2017
+ms.lasthandoff: 09/25/2017
 
 ---
 # <a name="introduction-to-the-c-language-and-the-net-framework"></a>C# 言語と .NET Framework の概要
