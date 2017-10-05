@@ -41,11 +41,11 @@ ms.lasthandoff: 08/21/2017
 |<xref:System.Byte?displayProperty=fullName>|符号なし|1|0|255|  
 |<xref:System.Int16?displayProperty=fullName>|符号付き|2|-32,768|32,767|  
 |<xref:System.Int32?displayProperty=fullName>|符号付き|4|-2,147,483,648|2,147,483,647|  
-|<xref:System.Int64?displayProperty=fullName>|符号付き|9|-9,223,372,036,854,775,808|9,223,372,036,854,775,807|  
+|<xref:System.Int64?displayProperty=fullName>|符号付き|8|-9,223,372,036,854,775,808|9,223,372,036,854,775,807|  
 |<xref:System.SByte?displayProperty=fullName>|符号付き|1|-128|127|  
 |<xref:System.UInt16?displayProperty=fullName>|符号なし|2|0|65,535|  
 |<xref:System.UInt32?displayProperty=fullName>|符号なし|4|0|4,294,967,295|  
-|<xref:System.UInt64?displayProperty=fullName>|符号なし|9|0|18,446,744,073,709,551,615|  
+|<xref:System.UInt64?displayProperty=fullName>|符号なし|8|0|18,446,744,073,709,551,615|  
   
  各整数型は、算術、比較、等価、明示的な変換、および暗黙的な変換の演算子の標準セットをサポートします。 各整数には、等価比較と相対比較、数値の文字列形式から整数への変換、および整数から文字列形式への変換を実行するメソッドも含まれています。 丸め処理や 2 つの整数のより小さいか大きい値の識別など、標準の演算子によって処理される上記以外の数値演算は、<xref:System.Math> クラスから使用可能です。 <xref:System.BitConverter> クラスを使用して、整数値の個々 のビットを操作することもできます。  
   
@@ -56,7 +56,7 @@ ms.lasthandoff: 08/21/2017
   
 |型|サイズ (バイト単位)|最小要件|最大|  
 |----------|-----------------------|-------------|-------------|  
-|<xref:System.Double?displayProperty=fullName>|9|-1.79769313486232e308|1.79769313486232e308|  
+|<xref:System.Double?displayProperty=fullName>|8|-1.79769313486232e308|1.79769313486232e308|  
 |<xref:System.Single?displayProperty=fullName>|4|-3.402823e38|3.402823e38|  
 |<xref:System.Decimal?displayProperty=fullName>|16|-79,228,162,514,264,337,593,543,950,335|79,228,162,514,264,337,593,543,950,335|  
   
