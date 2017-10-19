@@ -1,0 +1,159 @@
+### YamlMime:YamlDocument
+documentType: Tutorial
+title: 'コレクション (C#)'
+metadata:
+  title: 'C# でのコレクション。 C# でのシーケンスとそのコレクションの使用について説明します。'
+  description: 'このチュートリアルでは、c# の対話形式で学習するのにブラウザーを使用します。 C# コードを記述してコンパイルして、ブラウザーで直接実行するコードの結果を参照してください。'
+  audience: Developer
+  level: Beginner
+  displayType: two-column
+  interactive: csharp
+items:
+  - durationInMinutes: 1
+    content: |
+      このチュートリアルで説明する C# の場合、対話的にお使いのブラウザーを使用して c# を記述しをコンパイルして、コードの実行の結果を参照してください。 一連作成、変更、およびコレクションと配列を調査するレッスンにはが含まれています。
+  - title: リストを作成します。
+    durationInMinutes: 2
+    content: |
+      対話型のウィンドウで次のコードを実行します。 手順を実行するには、対話型ウィンドウで次のコード ブロックを入力 (交換"<name>"、名前を持つ) をクリックし、**実行**ボタン。
+
+      ```csharp
+      var names = new List<string> { "<name>", "Ana", "Felipe" };
+      foreach (var name in names)
+      {
+        Console.WriteLine($"Hello {name.ToUpper()}!");
+      }
+      ```
+
+      だけ文字列のリストを作成、そのリストに 3 つの名前を追加してすべて大文字で名前を印刷します。 一覧をループする以前のクイック スタートで学習した概念を使用しています。
+
+      名前を表示するコードでは、使用**補間文字列**です。  前に指定するときに、`string`で、`$`文字、文字列の宣言での c# コードを埋め込むことができます。 実際の文字列を生成値に c# コードを置き換えます。 この例では置き換えられます、`{name.ToUpper()}`各名前を持つために、変換英大文字、呼び出したのと、<xref:System.String.ToUpper%2A>メソッドです。
+
+      みましょうの探索してください。
+
+      > [!NOTE]
+      > このオンライン コーディング エクスペリエンスはプレビュー モードです。 問題が発生した場合に報告してくださいに[dotnet/試用リポジトリで](https://github.com/dotnet/try/issues)です。
+  - title: 変更内容の一覧表示
+    durationInMinutes: 3
+    content: |
+      使用して作成したコレクション、<xref:System.Collections.Generic.List%601>型です。 この型は、要素のシーケンスを格納します。 山かっこ間の要素の種類を指定するとします。
+
+      この 1 つの重要な側面<xref:System.Collections.Generic.List%601>型は、拡大または縮小、でく要素を追加または削除できるようにすることです。 既に記述したコードの下の次のコードを追加します。
+
+      ```csharp
+      Console.WriteLine();
+      names.Add("Maria");
+      names.Add("Bill");
+      names.Remove("Ana");
+      foreach (var name in names)
+      {
+        Console.WriteLine($"Hello {name.ToUpper()}!");
+      }
+      ```
+
+      2 つ以上の名前は、リストの末尾に追加されました。 したも 1 つも削除します。
+
+      <xref:System.Collections.Generic.List%601>個々 のアイテムを参照することができます**インデックス**もします。 使用した項目にアクセスする、`[`と`]`トークンです。 どのような書き込んだしようとすること、次のコードを追加します。
+
+      ```csharp
+      Console.WriteLine($"My name is {names[0]}.");
+      Console.WriteLine($"I've added {names[2]} and {names[3]} to the list.");
+      ```
+
+      リストの末尾へのアクセスを許可していません。 一覧がどのくらいの期間を使用しているかをチェックすることができます、<xref:System.Collections.Generic.List%601.Count%2A>プロパティです。 試してみように次のコードを追加します。
+
+      ```csharp
+      Console.WriteLine($"The list has {names.Count} people in it");
+      ```
+
+      をクリックして**実行**結果を表示するには、もう一度です。 C# の場合、インデックスは 0 から始まる、有効なインデックスの最大値であるため、リスト内の項目の数よりも小さいです。
+
+      > [!NOTE]
+      > このオンライン コーディング エクスペリエンスはプレビュー モードです。 問題が発生した場合に報告してくださいに[dotnet/試用リポジトリで](https://github.com/dotnet/try/issues)です。
+  - title: 検索および並べ替えリスト
+    durationInMinutes: 5
+    content: |
+      サンプルは、比較的小さいリストを使用してですが、アプリケーションで、多くの詳細要素と、数千に達しますのリストを作成ことが多くの場合、可能性があります。 これらの大規模なコレクション内の要素を検索、さまざまなアイテムの一覧を検索する必要があります。 <xref:System.Collections.Generic.List%601.IndexOf%2A>メソッド アイテムを検索し、項目のインデックスを返します。 この動作を確認してください。  これまで入力した、次のコードを追加します。
+
+      ```csharp
+      var index = names.IndexOf("Felipe");
+      if (index != -1)
+        Console.WriteLine($"The name {names[index]} is at index {index}");
+
+      var notFound = names.IndexOf("Not Found");
+        Console.WriteLine($"When an item is not found, IndexOf returns {notFound}");
+      ```
+
+      わからないかどうか、項目は一覧で、によって返されるインデックスを常に確認する必要がありますので<xref:System.Collections.Generic.List%601.IndexOf%2A>です。 -1 の場合、項目は見つかりませんでした。
+
+      リスト内の項目も並べ替えられます。 <xref:System.Collections.Generic.List%601.Sort%2A>メソッド (文字列) の場合にアルファベット順に、通常の順序で一覧のすべての項目を並べ替えます。 このコードを追加し、もう一度実行します。
+
+      ```csharp
+      names.Sort();
+      foreach (var name in names)
+      {
+        Console.WriteLine($"Hello {name.ToUpper()}!");
+      }
+      ```
+
+      > [!NOTE]
+      > このオンライン コーディング エクスペリエンスはプレビュー モードです。 問題が発生した場合に報告してくださいに[dotnet/試用リポジトリで](https://github.com/dotnet/try/issues)です。
+  - title: その他の種類の一覧
+    durationInMinutes: 5
+    content: |
+      使用した、`string`これまでのリストを入力します。 こちらから、<xref:System.Collections.Generic.List%601>別の種類を使用します。 数値のセットを構築してみましょう。 これまでに記述したコードを削除し、これを置き換えます。
+
+      ```csharp
+      var fibonacciNumbers = new List<int> {1, 1};
+      ```
+
+      整数のリストを作成し、最初の 2 つの整数を値 1 に設定します。 これは、値は、最初の 2 つの*フィボナッチ シーケンス*一連の数値。 各次のフィボナッチ数は、前の 2 つの数値の合計を取得して検出されます。 このコードを追加します。
+
+      ```csharp
+      var previous = fibonacciNumbers[fibonacciNumbers.Count - 1];
+      var previous2 = fibonacciNumbers[fibonacciNumbers.Count - 2];
+
+      fibonacciNumbers.Add(previous + previous2);
+
+      foreach(var item in fibonacciNumbers)
+          Console.WriteLine(item);
+      ```
+
+      キーを押して**実行**; 結果を表示するには
+
+      > [!NOTE]
+      > このオンライン コーディング エクスペリエンスはプレビュー モードです。 問題が発生した場合に報告してくださいに[dotnet/試用リポジトリで](https://github.com/dotnet/try/issues)です。
+  - title: チャレンジ
+    durationInMinutes: 10
+    content: |
+      一緒に配置できるかどうかを参照してください。 ここから、前のレッスンの一部のレッスンです。 新機能を作成したらこれまでフィボナッチの数列を展開します。 シーケンスの最初の 20 個の番号を生成するコードを記述してください。
+
+      > [!NOTE]
+      > このオンライン コーディング エクスペリエンスはプレビュー モードです。 問題が発生した場合に報告してくださいに[dotnet/試用リポジトリで](https://github.com/dotnet/try/issues)です。
+  - title: 完全なチャレンジ
+    durationInMinutes: 3
+    content: |
+      でした用意するおくと次のようにしますか。
+
+      ```csharp
+      var fibonacciNumbers = new List<int> {1, 1};
+
+      while (fibonacciNumbers.Count < 20)
+      {
+          var previous = fibonacciNumbers[fibonacciNumbers.Count - 1];
+          var previous2 = fibonacciNumbers[fibonacciNumbers.Count - 2];
+          
+          fibonacciNumbers.Add(previous + previous2);
+      }
+      foreach(var item in fibonacciNumbers)
+          Console.WriteLine(item);
+      ```
+
+      一覧にその値を追加、集計、および、ループの反復ごとの最後の 2 つの整数の一覧でに移動しています。 ループは、20 個のアイテムを一覧に追加するまで繰り返されます。
+
+      > [!NOTE]
+      > このオンライン コーディング エクスペリエンスはプレビュー モードです。 問題が発生した場合に報告してくださいに[dotnet/試用リポジトリで](https://github.com/dotnet/try/issues)です。
+  - content: |
+      リストのチュートリアルを完了しました。
+
+      作業方法について学習することができます、`List`に入力、 [.NET ガイド](../../standard/index.md)に関するトピック[コレクション](../../standard/collections/index.md)です。 その他の多くのコレクション型についても学習します。
