@@ -1,7 +1,7 @@
 ---
-title: "C# のクイック スタート - コレクションのガイド"
-description: "このクイック スタートでは、そのリスト コレクションを表示することによって (C#) を説明します。"
-keywords: "C# の場合、最初に、チュートリアル、コレクション、ボックスの一覧"
+title: "クイック スタート - コレクション - C# ガイド"
+description: "このクイック スタートでは、リスト コレクションについて確認して C# を学習します。"
+keywords: "C#, 使用開始, チュートリアル, コレクション, リスト"
 author: billwagner
 ms.author: wiwagn
 ms.date: 10/13/2017
@@ -15,20 +15,20 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/18/2017
 ---
-# <a name="c-quick-start-collections"></a>C# の場合は、クイック スタート: コレクション #
+# <a name="c-quick-start-collections"></a>C# クイック スタート: コレクション #
 
-このチュートリアルでは、c# 言語の基本的な概要については、<xref:System.Collections.Generic.List%601>クラスです。
+このチュートリアルでは、C# 言語の概要と <xref:System.Collections.Generic.List%601> クラスの基本を説明します。
 
-## <a name="a-simple-list-example"></a>単純なリストの使用例です。
+## <a name="a-simple-list-example"></a>単純なリストの例
 
 > [!NOTE]
-> 記述したコードから開始する場合は[dot.net](https://dot.net/)、このセクションで記述されたコードがあります。 ジャンプ[一覧の内容を変更](#modify-list-contents)です。
+> [dot.net](https://dot.net/) で記述したコードから開始する場合、既にこのセクションにコードが記述されています。 「[リスト コンテンツを変更する](#modify-list-contents)」へ進んでください。
 
-このレッスンでは、オンラインのクイック スタートが終了したら、インストールされている前提としています、 [.NET Core SDK](http://dot.net/core)と[Visual Studio Code](https://code.visualstudio.com/)です。 
+このレッスンでは、オンラインのクイック スタートを終了していることと、[.NET Core SDK](http://dot.net/core) と [Visual Studio Code](https://code.visualstudio.com/) がインストール済みであることを前提としています。 
 
-という名前のディレクトリを作成する**リスト クイック スタート**です。 いることを現在のディレクトリと実行`dotnet new console`です。
+「**list-quickstart**」という名前のディレクトリを作成します。 それを現在のディレクトリとし、`dotnet new console` を実行します。
 
-開いている**Program.cs**好みのエディターと置換、既存のコードを次に。
+好みのエディターで **Program.cs** を開き、既存のコードを次のコードで置き換えます。
 
 ```csharp
 using System;
@@ -50,19 +50,19 @@ namespace list_quickstart
 }
 ```
 
-置き換える`<name>`名に置き換えています。 保存**Program.cs**です。 型`dotnet run`コンソール ウィンドウしてみてください。
+`<name>` をユーザー名で置き換えます。 **Program.cs** を保存します。 コンソール ウィンドウに「`dotnet run`」と入力して試します。
 
-だけ文字列のリストを作成、そのリストに 3 つの名前を追加してすべて大文字で名前を印刷します。 一覧をループする以前のクイック スタートで学習した概念を使用しています。
+文字列のリストを作成し、そのリストに 3 つの名前を追加し、それらの名前をすべて大文字で出力しました。 先のクイック スタートで学習した概念を使用して、リストをループしています。
 
-名前を表示するコードでは、使用**補間文字列**です。  前に指定するときに、`string`で、`$`文字、文字列の宣言での c# コードを埋め込むことができます。 実際の文字列を生成値に c# コードを置き換えます。 この例では置き換えられます、`{name.ToUpper()}`各名前を持つために、変換英大文字、呼び出したのと、<xref:System.String.ToUpper%2A>メソッドです。
+名前を表示するコードは、**補間文字列**を使用します。  `string` の前に文字 `$` を配置すると、文字列宣言に C# コードを埋め込むことができます。 実際の文字列は、生成する値でその C# コードを置き換えます。 この例では、<xref:System.String.ToUpper%2A> メソッドを呼び出したため、文字列は `{name.ToUpper()}` をそれぞれの名前に置き換え、文字を大文字に変換しています。
 
-みましょうの探索してください。
+続けて確認していきましょう。
     
-## <a name="modify-list-contents"></a>変更内容の一覧表示
+## <a name="modify-list-contents"></a>リスト コンテンツを変更する
 
-使用して作成したコレクション、<xref:System.Collections.Generic.List%601>型です。 この型は、要素のシーケンスを格納します。 山かっこ間の要素の種類を指定するとします。
+作成したコレクションは <xref:System.Collections.Generic.List%601> 型を使用します。 この型は、要素のシーケンスを格納します。 要素の型を山かっこの内側で指定します。
     
-この 1 つの重要な側面<xref:System.Collections.Generic.List%601>型は、拡大または縮小、でく要素を追加または削除できるようにすることです。 終了する前にこのコードを追加`}`で、`Main`メソッド。
+この <xref:System.Collections.Generic.List%601> 型の重要な点は増減が可能で、要素を追加したり削除したりできることです。 `Main` メソッドの閉じかっこ `}` の前に、次のコードを追加します。
 
 ```csharp
 Console.WriteLine();
@@ -75,25 +75,25 @@ foreach (var name in names)
 }
 ```
 
-2 つ以上の名前は、リストの末尾に追加されました。 したも 1 つも削除します。 ファイル、および種類保存`dotnet run`してみてください。
+さらに 2 つの名前をリストの末尾に追加しました。 また、1 つを削除しました。 ファイルを保存し、「`dotnet run`」と入力して試します。
     
-<xref:System.Collections.Generic.List%601>個々 のアイテムを参照することができます**インデックス**もします。 間でインデックスを配置する`[`と`]`リスト名の後にトークンです。 C# の場合 0 を最初のインデックスを使用します。 追加したコードのすぐ下には、このコードを追加して、それを再試行してください。
+<xref:System.Collections.Generic.List%601> を使用すると、**インデックス**でも個々の項目を参照できます。 リスト名に続く `[` と `]` のトークンの間にインデックスを記述します。 C# では、初めのインデックスには 0 を使用します。 追加したコードのすぐ下に次のコードを追加して試します。
 
 ```csharp
 Console.WriteLine($"My name is {names[0]}");
 Console.WriteLine($"I've added {names[2]} and {names[3]} to the list");
 ```
 
-リストの末尾を越えるインデックスにアクセスすることはできません。 インデックスは、有効なインデックスの最大値であるため、0 から始まりますリスト内の項目の数よりも小さいです。 一覧がどのくらいの期間を使用しているかをチェックすることができます、<xref:System.Collections.Generic.List%601.Count%2A>プロパティです。 Main メソッドの最後に、次のコードを追加します。
+リストの末尾を越えてインデックスにアクセスすることはできません。 インデックスは 0 から始まるため、有効なインデックスの最大値はリスト内の項目の数より 1 小さくなることに注意してください。 <xref:System.Collections.Generic.List%601.Count%2A> プロパティを使用すれば、リストの長さを確認できます。 次のコードを Main メソッドの末尾に追加します。
 
 ```csharp
 Console.WriteLine($"The list has {names.Count} people in it");
  ```
 
-ファイル、および種類保存`dotnet run`結果を表示するには、もう一度です。    
+ファイルを保存し、もう一度「`dotnet run`」と入力して結果を確認します。    
 
-## <a name="search-and-sort-lists"></a>検索および並べ替えリスト
-サンプルは、比較的小さいリストを使用してですが、アプリケーションで、多くの詳細要素と、数千に達しますのリストを作成ことが多くの場合、可能性があります。 これらの大規模なコレクション内の要素を検索、さまざまなアイテムの一覧を検索する必要があります。 <xref:System.Collections.Generic.List%601.IndexOf%2A>メソッド アイテムを検索し、項目のインデックスを返します。 下に次のコードを追加、`Main`メソッド。
+## <a name="search-and-sort-lists"></a>リストを検索して並び替える
+サンプルでは比較的小さいリストを使用していますが、ご利用のアプリケーションでは、より多くの (場合によっては何千もの) 要素が含まれるリストを作成することもよくあるかもしれません。 そうした大規模なコレクションの中から要素を見つけるには、別々の項目をリストで検索する必要があります。 <xref:System.Collections.Generic.List%601.IndexOf%2A> メソッドは項目を検索し、その項目のインデックスを返します。 `Main` メソッドの下部に次のコードを追加します。
 
 ```csharp
 var index = names.IndexOf("Felipe");
@@ -116,7 +116,7 @@ if (index == -1)
 }
 ```
 
-リスト内の項目も並べ替えられます。 <xref:System.Collections.Generic.List%601.Sort%2A>メソッド (文字列) の場合にアルファベット順に、通常の順序で一覧のすべての項目を並べ替えます。 下に次のコードを追加、`Main`メソッド。
+同じように、リスト内の項目を並び替えできます。 <xref:System.Collections.Generic.List%601.Sort%2A> メソッドは、リスト内のすべての項目を正規順序 (文字列の場合はアルファベット順) で並び替えます。 `Main` メソッドの下部に次のコードを追加します。
 
 ```csharp
 names.Sort();
@@ -126,9 +126,9 @@ foreach (var name in names)
 }
 ```
 
-ファイルの保存と型`dotnet run`を最新のバージョンを実行してください。
+ファイルを保存し、「`dotnet run`」と入力してこの最新バージョンを試します。
 
-次のセクションを開始する前に別のメソッドに現在コードに移動してみましょう。 これにより新しい例の操作を開始します。 名前を変更、`Main`メソッドを`WorkingWithStrings`と新しい書き込み`Main`メソッドを呼び出す`WorkingWithStrings`です。 完了したら、コードは次のようになります。
+次のセクションを開始する前に、現在のコードを別のメソッドに移動してみましょう。 移動しておくと、新しい例で作業を開始するときに楽になります。 `Main` メソッドの名前を `WorkingWithStrings` に変更し、`WorkingWithStrings` を呼び出す新しい `Main` メソッドを記述します。 完成したコードは次のようになります。
 
 ```csharp
 using System;
@@ -181,17 +181,17 @@ namespace list_quickstart
 }
 ```
 
-## <a name="lists-of-other-types"></a>その他の種類の一覧
+## <a name="lists-of-other-types"></a>その他の型のリスト
 
-使用した、`string`これまでのリストを入力します。 こちらから、<xref:System.Collections.Generic.List%601>別の種類を使用します。 数値のセットを構築してみましょう。 
+ここまでは、リスト内で `string` 型を使用してきました。 別の型を使用して <xref:System.Collections.Generic.List%601> を作成してみましょう。 数値のセットを作成します。 
 
-新しいの下部に次のコードを追加`Main`メソッド。
+新しい `Main` メソッドの下部に次のコードを追加します。
 
 ```csharp
 var fibonacciNumbers = new List<int> {1, 1};
 ```
 
-整数のリストを作成し、最初の 2 つの整数を値 1 に設定します。 これは、値は、最初の 2 つの*フィボナッチ シーケンス*一連の数値。 各次のフィボナッチ数は、前の 2 つの数値の合計を取得して検出されます。 このコードを追加します。
+これにより整数のリストが作成され、最初の 2 つの整数が値 1 に設定されます。 これらは、数列の 1 つである*フィボナッチ数列*の最初の 2 つの値です。 次のフィボナッチ数はそれぞれ、その直前の 2 つの数値の合計を取得することによって得られます。 このコードを追加します。
 
 ```csharp
 var previous = fibonacciNumbers[fibonacciNumbers.Count - 1];
@@ -203,20 +203,20 @@ foreach(var item in fibonacciNumbers)
     Console.WriteLine(item);
 ```
 
-ファイルの保存と型`dotnet run`結果を確認します。 
+ファイルを保存し、「`dotnet run`」と入力して結果を確認します。 
 
 > [!TIP]
-> このセクションでを重点的にすることができますをコメント アウトを呼び出すコード`WorkingWithStrings();`です。 2 つの配置だけ`/`次のように、呼び出しの前に文字:`// WorkingWithStrings();`です。 
+> このセクションにだけ集中したいときは、`WorkingWithStrings();` を呼び出すコードはコメント アウトしてかまいません。 `// WorkingWithStrings();` のように、呼び出しの前に `/` 文字を 2 つ記述します。 
 
-## <a name="challenge"></a>チャレンジ
-一緒に配置できるかどうかを参照してください。 ここから、前のレッスンの一部のレッスンです。 新機能を作成したらこれまでフィボナッチの数列を展開します。 シーケンスの最初の 20 個の番号を生成するコードを記述してください。
+## <a name="challenge"></a>課題
+このレッスンと以前のレッスンの中から、いくつかのレッスンの内容をまとめて理解できているかどうかを確認してみましょう。 ここまでフィボナッチ数を使用して作成してきたコードを使ってください。 シーケンスの最初の 20 個の数を生成するコードを記述してみましょう。
 
-## <a name="complete-challenge"></a>完全なチャレンジ
+## <a name="complete-challenge"></a>課題完了
 
-ソリューションの例を確認できます[GitHub の完成後のサンプル コードを見る](https://github.com/dotnet/docs/tree/master/samples/csharp/list-quickstart/Program.cs)
+[GitHub にある完成したサンプル コード](https://github.com/dotnet/docs/tree/master/samples/csharp/list-quickstart/Program.cs)で、ソリューションの例を確認できます。
 
-一覧にその値を追加、集計、および、ループの反復ごとの最後の 2 つの整数の一覧でに移動しています。 ループは、20 個のアイテムを一覧に追加するまで繰り返されます。
+ループの繰り返しごとに、リストの最後の 2 つの整数を取得して合計し、その値をリストに追加しています。 このループは、20 個の項目がリストに追加されるまで繰り返されます。
 
-これで、一覧のチュートリアルを完了しました。
+おつかれさまでした。リストについてのチュートリアルはこれで終了です。
 
-作業方法について学習することができます、`List`に入力、 [.NET ガイド](../../standard/index.md)に関するトピック[コレクション](../../standard/collections/index.md)です。 その他の多くのコレクション型についても学習します。
+`List` 型の使用方法の詳細については、[.NET ガイド](../../standard/index.md)の[コレクション](../../standard/collections/index.md)に関するトピックで学習できます。 その他の多くのコレクション型についても学習できます。
